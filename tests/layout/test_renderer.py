@@ -1951,8 +1951,8 @@ def test_curation_summary_shown_by_default(sample_config):
     assert "5 articles selected" in html
 
 
-def test_curation_summary_absent_when_none(sample_config):
-    """Curation summary div is not rendered when summary is None."""
+def test_curation_summary_absent_when_none_explicit(sample_config):
+    """Curation summary div is not rendered when summary is explicitly None."""
     from offscroll.models import CuratedEdition, EditionMeta
 
     edition = CuratedEdition(

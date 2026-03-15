@@ -472,7 +472,10 @@ def feeds_add(url: str, name: str | None) -> None:
     config_path = Path.home() / ".offscroll" / "config.yaml"
 
     if not config_path.exists():
-        click.echo(f"Config file not found at {config_path}. Run 'offscroll setup' first.", err=True)
+        click.echo(
+            f"Config file not found at {config_path}. Run 'offscroll setup' first.",
+            err=True,
+        )
         sys.exit(1)
 
     # Load the raw config
