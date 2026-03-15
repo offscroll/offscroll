@@ -25,8 +25,8 @@ control what you read. Your data stays on your machine.
 - **Email digest** -- optional HTML email delivery
 - **Fully local by default** -- uses Ollama for embeddings and
   curation. No cloud API keys required.
-- **Cloud LLM option** -- optionally use Claude or OpenAI for
-  higher-quality curation
+- **Cloud LLM option** *(planned)* -- Claude and OpenAI curation
+  support is planned but not yet implemented
 - **Self-hosted** -- runs on your hardware, from a Raspberry Pi to
   a full desktop
 
@@ -106,20 +106,24 @@ Edit `~/.offscroll/config.yaml`. See `config.example.yaml` for all
 options including:
 
 - Feed sources (RSS, Mastodon, Bluesky, OPML import)
-- Embedding provider (Ollama, OpenAI, sentence-transformers)
-- Curation model (Ollama, Claude, OpenAI)
+- Embedding provider (Ollama; OpenAI and sentence-transformers planned)
+- Curation model (Ollama; Claude and OpenAI planned)
 - Newspaper settings (title, page count, columns, page size)
 - Email digest (SMTP settings)
 - Output directory and retention
 - Scheduling (compile day/time)
 
-### Cloud Providers (Optional)
+### Cloud Providers *(Planned — not yet implemented)*
+
+Cloud LLM curation (Claude, OpenAI) is on the roadmap but not yet
+functional. The `[cloud]` extras install the client libraries, but the
+curation pipeline does not use them yet. Only Ollama works today.
 
 ```bash
-pip install -e ".[cloud]"
-export ANTHROPIC_API_KEY="sk-ant-..."
-# or
-export OPENAI_API_KEY="sk-..."
+# Not yet functional — planned for a future release:
+# pip install -e ".[cloud]"
+# export ANTHROPIC_API_KEY="sk-ant-..."
+# export OPENAI_API_KEY="sk-..."
 ```
 
 ## Hardware Requirements
@@ -129,7 +133,7 @@ export OPENAI_API_KEY="sk-..."
 | Desktop with `llama3.1:8b` | 8 GB+ | ~6 GB | Recommended |
 | Raspberry Pi 5 (8 GB) with `llama3.2:3b` | 8 GB | ~3 GB | Works, curation slower |
 | Raspberry Pi 4 (4 GB) with `llama3.2:3b` | 4 GB | ~3 GB | Marginal, may swap |
-| Low-RAM devices | -- | -- | Use cloud provider option |
+| Low-RAM devices | -- | -- | Cloud provider option planned; use smallest Ollama model for now |
 
 For low-RAM devices, use the smaller model:
 
