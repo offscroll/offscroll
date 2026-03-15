@@ -1,0 +1,29 @@
+{
+  "edition": {
+    "date": "2026-03-02",
+    "title": "Edition with Empty Section",
+    "subtitle": "Vol. 1, No. 2",
+    "editorial_note": "Testing edge case: empty sections."
+  },
+  "sections": [
+    {
+      "heading": "Top Stories",
+      "items": [
+        {
+          "item_id": "rss-001",
+          "display_text": "A story.",
+          "author": "Alice",
+          "layout_hint": "standard",
+          "word_count": 2
+        }
+      ]
+    },
+    {
+      "heading": "Empty Section (Should Not Render)",
+      "items": []
+    }
+  ],
+  "pull_quotes": [],
+  "page_target": 10,
+  "estimated_content_pages": 0.2
+}

@@ -1,0 +1,11 @@
+{# Colophon -- closing element for the last page #}
+{% if show_colophon %}
+<div class="colophon">
+    <hr class="colophon-rule">
+    <div class="colophon-content">
+        <p class="colophon-title">{{ edition.title }}</p>
+        <p class="colophon-meta">{{ edition.subtitle }} · {{ edition.date }}</p>
+        <p class="colophon-note">Curated and composed automatically.</p>
+    </div>
+</div>
+{% endif %}

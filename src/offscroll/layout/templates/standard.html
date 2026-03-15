@@ -1,0 +1,41 @@
+<div class="item-block{% if item.word_count > 200 %} long-article{% endif %}">
+    {% if item.title %}<h3>{{ item.title }}</h3>{% endif %}
+    <div class="author">{{ item.author }}{% if item.source_name and item.source_name != item.author %} · {{ item.source_name }}{% endif %}{% if item.item_url %} <span class="source-url">{{ item.item_url }}</span>{% endif %}</div>
+    {% if item.images %}
+    {% with image=item.images[0] %}
+    {% include "image_block.html" %}
+    {% endwith %}
+    {% endif %}
+    {# : Filter orphaned captions in standard template.
+       Previously only the feature template cleaned captions. When articles
+       render through the standard path, raw HTML fragments, image captions,
+       and merchandise links appeared as body paragraphs. #}
+    {% set paragraphs = filter_orphaned_captions(split_text_paragraphs(item.display_text)) %}
+    {% set extra_images = item.images[1:] if item.images|length > 1 else [] %}
+    {% set insert_map = image_insert_indices(paragraphs|length, extra_images|length) %}
+    {# : Interleave pull quotes within long articles.
+       For articles over 1000 words, place a pull quote ~40% into the body
+       to break the gray texture and provide a visual resting point. #}
+    {% set item_pqs = pull_quotes_by_item[item.item_id] if pull_quotes_by_item is defined and item.item_id in pull_quotes_by_item else [] %}
+    {% set pq_para_idx = (paragraphs|length * 2 // 5) if (item.word_count > 1000 and item_pqs|length > 0 and paragraphs|length > 3) else -1 %}
+    <div class="article-body">
+    {% for para in paragraphs %}
+    <p>{{ para }}</p>
+    {% if loop.index in insert_map %}
+    {% set img_idx = insert_map[loop.index] %}
+    <div class="item-image inline-image">
+        <img src="{{ resolve_image_path(extra_images[img_idx].local_path) }}" alt="{{ extra_images[img_idx].caption or '' }}">
+        {% if extra_images[img_idx].caption %}
+        <div class="caption">{{ extra_images[img_idx].caption }}</div>
+        {% endif %}
+    </div>
+    {% endif %}
+    {% if loop.index == pq_para_idx %}
+    {% set quote = item_pqs[0] %}
+    {% include "pull_quote.html" %}
+    {% endif %}
+    {% endfor %}
+    </div>
+    {% if item._edited_for_length %}<div class="edited-note">(Edited for length)</div>{% endif %}
+    {% include "editorial_note.html" %}
+</div>

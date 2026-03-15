@@ -1,0 +1,132 @@
+# ~/.offscroll/config.yaml
+# =====================
+# OffScroll configuration. Copy from config.example.yaml and edit.
+# Or run `offscroll setup` for an interactive wizard.
+#
+# OffScroll uses Ollama by default for embeddings and curation.
+# No cloud API keys are required for the default setup.
+
+# --- Feed sources ---
+feeds:
+  # List of RSS/Atom feed URLs
+  rss:
+    - url: "https://example.com/feed.xml"
+      name: "Example Blog"
+    - url: "https://another.example.com/rss"
+
+  # Mastodon accounts to follow
+  mastodon:
+    - instance: "https://mastodon.social"
+      # Access token for the Mastodon API.
+      # Generate at: https://<instance>/settings/applications
+      access_token_env: "OFFSCROLL_MASTODON_TOKEN"
+      # Which timeline to ingest: "home", "public", or "list:<list_id>"
+      timeline: "home"
+
+  # Bluesky accounts
+  bluesky:
+    - handle: "user.bsky.social"
+      app_password_env: "OFFSCROLL_BLUESKY_PASSWORD"
+      # Which feed: "timeline" or "author:<did>"
+      feed: "timeline"
+
+  # OPML file import (adds all feeds from the file)
+  opml_files: []
+    # - "~/feeds.opml"
+
+# --- Ingestion settings ---
+ingestion:
+  # How often to poll feeds (minutes). Minimum 15.
+  poll_interval_minutes: 60
+  # Maximum items to store per feed per poll cycle
+  max_items_per_feed: 100
+  # Download images from feed items
+  download_images: true
+  # Minimum image dimension (pixels) to keep
+  min_image_dimension: 200
+
+# --- Embedding settings ---
+# Default provider: Ollama (local, free, no API key needed)
+embedding:
+  # Provider: "ollama" (default), "openai", or "sentence_transformers"
+  # Cloud providers require `pip install '.[cloud]'` and API keys.
+  provider: "ollama"
+  # Ollama settings (default provider)
+  ollama_model: "nomic-embed-text"
+  ollama_url: "http://localhost:11434"
+  # OpenAI settings (optional, when provider is "openai")
+  # openai_model: "text-embedding-3-small"
+  # openai_api_key_env: "OPENAI_API_KEY"
+  # sentence-transformers settings (optional, when provider is
+  # "sentence_transformers")
+  # st_model: "all-MiniLM-L6-v2"
+
+# --- Curation settings ---
+# Default provider: Ollama (local, free, no API key needed)
+curation:
+  # LLM provider: "ollama" (default), "claude", or "openai"
+  # Cloud providers require `pip install '.[cloud]'` and API keys.
+  model: "ollama"
+  # Ollama settings (default provider)
+  ollama_model: "llama3.1:8b"
+  ollama_url: "http://localhost:11434"
+  # Claude settings (optional, when model is "claude")
+  # claude_model: "claude-sonnet-4-20250514"
+  # claude_api_key_env: "ANTHROPIC_API_KEY"
+  # OpenAI settings (optional, when model is "openai")
+  # openai_model: "gpt-4o"
+  # openai_api_key_env: "OPENAI_API_KEY"
+  # Loss function weights (tune these based on editorial preference)
+  weights:
+    coverage: 1.0
+    redundancy: 1.0
+    quality: 1.0
+    diversity: 1.0
+    fit: 1.0
+  # Greedy optimizer iterations
+  optimizer_iterations: 500
+
+# --- Newspaper settings ---
+newspaper:
+  title: "The Morning Dispatch"
+  subtitle_pattern: "Vol. {volume}, No. {issue}"
+  page_target: 10
+  columns: 3
+  page_size: "letter"        # "letter" or "a4"
+  # Margins in inches
+  margin_top: 0.5
+  margin_bottom: 0.5
+  margin_left: 0.5
+  margin_right: 0.5
+  column_gap: 0.2
+
+# --- Email digest settings ---
+email:
+  enabled: false
+  # SMTP settings
+  smtp_host: "smtp.example.com"
+  smtp_port: 587
+  smtp_user_env: "OFFSCROLL_SMTP_USER"
+  smtp_password_env: "OFFSCROLL_SMTP_PASSWORD"
+  from_address: "offscroll@example.com"
+  to_addresses:
+    - "reader@example.com"
+
+# --- Output settings ---
+output:
+  # Where to write generated files
+  data_dir: "~/.offscroll/data"
+  # Keep editions for this many weeks (0 = keep forever)
+  retention_weeks: 0
+
+# --- Schedule ---
+schedule:
+  # Day to compile the edition
+  compile_day: "saturday"
+  compile_time: "21:00"
+  timezone: "America/New_York"
+
+# --- Logging ---
+logging:
+  level: "INFO"              # DEBUG, INFO, WARNING, ERROR
+  file: "~/.offscroll/offscroll.log"

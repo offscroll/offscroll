@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>Test Blog</title>
+    <link>https://example.com</link>
+    <description>A test RSS feed</description>
+    <item>
+      <title>First Test Post</title>
+      <link>https://example.com/post-1</link>
+      <description>This is the body of the first test post. It contains
+      enough text to be meaningful for testing the curation and layout
+      pipeline. Topics include technology, sovereignty, and the joy of
+      reading a physical newspaper.</description>
+      <author>alice@example.com (Alice)</author>
+      <pubDate>Sat, 01 Mar 2026 10:00:00 +0000</pubDate>
+      <guid>https://example.com/post-1</guid>
+    </item>
+    <item>
+      <title>Second Test Post</title>
+      <link>https://example.com/post-2</link>
+      <description>A shorter post about a different topic entirely.
+      This tests that the curation engine handles variable content
+      length gracefully.</description>
+      <author>bob@example.com (Bob)</author>
+      <pubDate>Sat, 01 Mar 2026 12:00:00 +0000</pubDate>
+      <guid>https://example.com/post-2</guid>
+      <enclosure url="https://example.com/image.jpg" type="image/jpeg" length="12345" />
+    </item>
+    <item>
+      <title>Third Test Post: A Long-Form Piece</title>
+      <link>https://example.com/post-3</link>
+      <description>This is a much longer post that tests how the system
+      handles full-length articles. RSS feeds from blogs often contain
+      entire articles, not just snippets. The curation engine needs to
+      handle content ranging from a single sentence to thousands of
+      words. This post intentionally includes multiple paragraphs.
+
+      Second paragraph: The layout engine must render long content in
+      newspaper columns without awkward breaks. WeasyPrint handles this
+      with CSS break-inside rules.
+
+      Third paragraph: The loss function's L_fit term estimates page
+      count from word count. Longer items consume more of the page
+      budget, which means fewer total items in the selection.</description>
+      <author>carol@example.com (Carol)</author>
+      <pubDate>Sat, 01 Mar 2026 14:00:00 +0000</pubDate>
+      <guid>https://example.com/post-3</guid>
+    </item>
+  </channel>
+</rss>

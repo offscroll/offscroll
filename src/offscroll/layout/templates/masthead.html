@@ -1,0 +1,8 @@
+<div class="masthead">
+    <div class="masthead-title">{{ edition.title }}</div>
+    <div class="masthead-subtitle">{{ edition.subtitle }}</div>
+    <div class="masthead-date">{{ edition.date }}</div>
+    {% if debug_mode and edition.editorial_note %}
+    <div class="masthead-editorial">{{ edition.editorial_note }}</div>
+    {% endif %}
+</div>

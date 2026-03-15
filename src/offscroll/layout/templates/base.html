@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>{{ edition.title }} - {{ edition.subtitle }}</title>
+    <style>
+{{ css_content|safe }}
+{% if page_size == "a4" %}
+    @page { size: 210mm 297mm; }
+{% endif %}
+    </style>
+</head>
+<body>
+
+    {% block footer %}
+    {% include "footer.html" %}
+    {% endblock %}
+
+    {% block masthead %}
+    {% include "masthead.html" %}
+    {% endblock %}
+
+    {% include "curation_summary.html" %}
+
+    {# Rule 1: Feature article on page 1 with masthead #}
+    {% if front_feature %}
+    {% with item=front_feature %}
+    {% include "feature.html" %}
+    {# : Suppress after-article pull quote when it was
+       already placed inline within the feature body. The inline placement
+       condition mirrors feature.html: word_count > 1000, has pull quotes,
+       and body has > 3 paragraphs. #}
+    {% set feat_split = split_feature_text(item.display_text) %}
+    {% set feat_body_paras = feat_split[1] if feat_split[1] else [] %}
+    {% set feat_pqs = pull_quotes_by_item[item.item_id] if pull_quotes_by_item is defined and item.item_id in pull_quotes_by_item else [] %}
+    {% set feat_inline_placed = (item.word_count > 1000 and feat_pqs|length > 0 and feat_body_paras|length > 3) %}
+    {% if pull_quotes_by_item and item.item_id in pull_quotes_by_item and not feat_inline_placed %}
+    {% for quote in pull_quotes_by_item[item.item_id] %}
+        {% include "pull_quote.html" %}
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
+    {% endif %}
+
+    {# Section headers are rendered as inline labels inside
+       the first column of the first row. The heading is stored in the
+       row dict by the renderer, so we check row["section_heading"].
+       This prevents WeasyPrint from stranding headers on their own
+       pages . #}
+    {% block content %}
+    {% for section in sections %}
+
+    {% if section.heading in section_rows %}
+    {% for row in section_rows[section.heading] %}
+    <div class="row">
+        {% for col in row["columns"] %}
+        <div class="col-{{ col["width"] }}{% if col["ruled"] %} col-ruled{% endif %}">
+            {% if loop.first and row["section_heading"] is defined and row["section_heading"] %}
+            <div class="section-label">
+                <h2>{{ row["section_heading"] }}</h2>
+            </div>
+            {% endif %}
+            {% for item in col["col_items"] %}
+                {% if item.thread_id is defined %}
+                    {% include "thread.html" %}
+                {% elif item.layout_hint is defined and item.layout_hint.value == "feature" %}
+                    {% include "feature.html" %}
+                {% else %}
+                    {% include "standard.html" %}
+                {% endif %}
+            {% endfor %}
+            {% if col["briefs"] is defined and col["briefs"] %}
+            {% set briefs = col["briefs"] %}
+            {% include "brief_group.html" %}
+            {% endif %}
+            {# For single-column rows, render pull quotes
+               inside the column to keep them near source content.
+               Multi-column rows still render pull quotes after the
+               row (full-width between rows). #}
+            {% if row["columns"]|length == 1 and row["pull_quotes"] %}
+            {% for quote in row["pull_quotes"] %}
+                {% include "pull_quote.html" %}
+            {% endfor %}
+            {% endif %}
+        </div>
+        {% endfor %}
+    </div>
+    {# Multi-column rows render pull quotes after the row
+       at full width. Single-column rows handled above. #}
+    {% if row["columns"]|length > 1 and row["pull_quotes"] %}
+    {% for quote in row["pull_quotes"] %}
+        {% include "pull_quote.html" %}
+    {% endfor %}
+    {% endif %}
+    {% endfor %}
+    {% else %}
+    <div class="section-label">
+        <h2>{{ section.heading }}</h2>
+    </div>
+    {% endif %}
+
+    {% endfor %}
+
+    {# Render unmatched pull quotes in a Notable Quotes block #}
+    {% if unmatched_pull_quotes %}
+    <div class="notable-quotes">
+    {% for quote in unmatched_pull_quotes %}
+        {% include "pull_quote.html" %}
+    {% endfor %}
+    </div>
+    {% endif %}
+
+    {% endblock %}
+
+    {# Colophon closing element #}
+    {% include "colophon.html" %}
+
+</body>
+</html>

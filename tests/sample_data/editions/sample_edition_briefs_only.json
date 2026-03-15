@@ -1,0 +1,53 @@
+{
+  "edition": {
+    "date": "2026-03-03",
+    "title": "Quick Digest",
+    "subtitle": "Vol. 1, No. 3",
+    "editorial_note": "An edition with only brief items for rapid scanning."
+  },
+  "sections": [
+    {
+      "heading": "News Briefs",
+      "items": [
+        {
+          "item_id": "brief-001",
+          "display_text": "First brief item.",
+          "author": "NewsBot",
+          "layout_hint": "brief",
+          "word_count": 3
+        },
+        {
+          "item_id": "brief-002",
+          "display_text": "Second brief item.",
+          "author": "NewsBot",
+          "layout_hint": "brief",
+          "word_count": 3
+        },
+        {
+          "item_id": "brief-003",
+          "display_text": "Third brief item.",
+          "author": "NewsBot",
+          "layout_hint": "brief",
+          "word_count": 3
+        },
+        {
+          "item_id": "brief-004",
+          "display_text": "Fourth brief item.",
+          "author": "NewsBot",
+          "layout_hint": "brief",
+          "word_count": 3
+        },
+        {
+          "item_id": "brief-005",
+          "display_text": "Fifth brief item.",
+          "author": "NewsBot",
+          "layout_hint": "brief",
+          "word_count": 3
+        }
+      ]
+    }
+  ],
+  "pull_quotes": [],
+  "page_target": 10,
+  "estimated_content_pages": 0.5
+}

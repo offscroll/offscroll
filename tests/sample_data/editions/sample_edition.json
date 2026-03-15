@@ -1,0 +1,85 @@
+{
+  "edition": {
+    "date": "2026-03-01",
+    "title": "The Test Gazette",
+    "subtitle": "Vol. 1, No. 1",
+    "editorial_note": "Welcome to the first edition of The Test Gazette."
+  },
+  "sections": [
+    {
+      "heading": "Top Stories",
+      "items": [
+        {
+          "item_id": "rss-001",
+          "display_text": "The open web is alive and well. Despite years of predictions about the death of RSS, millions of feeds continue to publish every day. The protocol's simplicity is its greatest strength: a plain XML file that any reader can parse. No API keys, no rate limits, no authentication. Just content, structured and free.",
+          "author": "Alice",
+          "title": "The Enduring Web",
+          "images": [],
+          "editorial_note": "A reminder that the best technology is often the simplest.",
+          "layout_hint": "feature",
+          "word_count": 67
+        },
+        {
+          "item_id": "rss-002",
+          "display_text": "Self-hosting continues its steady growth. The community around home servers, Raspberry Pis, and open-source alternatives to cloud services has never been larger.",
+          "author": "Bob",
+          "title": "The Self-Hosting Movement",
+          "images": [
+            {
+              "local_path": "images/placeholder.jpg",
+              "caption": "A Raspberry Pi running a home server stack",
+              "width": 800,
+              "height": 600
+            }
+          ],
+          "layout_hint": "standard",
+          "word_count": 28
+        }
+      ]
+    },
+    {
+      "heading": "From the Fediverse",
+      "items": [
+        {
+          "item_id": "mastodon-001",
+          "display_text": "Just migrated my instance to a new server. The beauty of ActivityPub: my followers didn't notice a thing.",
+          "author": "@carol@mastodon.social",
+          "layout_hint": "brief",
+          "word_count": 22
+        },
+        {
+          "thread_id": "thread-001",
+          "headline": "Why Decentralization Matters",
+          "author": "@dave@fosstodon.org",
+          "items": [
+            {
+              "item_id": "mastodon-002a",
+              "display_text": "Thread: I've been thinking about why decentralized protocols keep winning in the long run, even when centralized platforms seem dominant.",
+              "author": "@dave@fosstodon.org",
+              "layout_hint": "standard",
+              "word_count": 23
+            },
+            {
+              "item_id": "mastodon-002b",
+              "display_text": "The answer is resilience. Centralized platforms have a single point of failure: the company behind them. When Twitter changed, millions lost their communities overnight.",
+              "author": "@dave@fosstodon.org",
+              "layout_hint": "standard",
+              "word_count": 28
+            }
+          ],
+          "editorial_note": "A thoughtful thread on decentralization from the Fediverse.",
+          "layout_hint": "thread"
+        }
+      ]
+    }
+  ],
+  "pull_quotes": [
+    {
+      "text": "The protocol's simplicity is its greatest strength.",
+      "attribution": "Alice",
+      "source_item_id": "rss-001"
+    }
+  ],
+  "page_target": 10,
+  "estimated_content_pages": 1.5
+}

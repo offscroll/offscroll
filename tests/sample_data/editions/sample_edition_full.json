@@ -1,0 +1,135 @@
+{
+  "edition": {
+    "date": "2026-03-08",
+    "title": "The Independent",
+    "subtitle": "Vol. 2, No. 11",
+    "editorial_note": "This week we explore the intersection of technology, individual sovereignty, and the future of decentralized systems. Our curators have selected the most thought-provoking pieces from the open web and the fediverse."
+  },
+  "sections": [
+    {
+      "heading": "Front Page",
+      "items": [
+        {
+          "item_id": "feature-001",
+          "display_text": "Local Area Networks are experiencing a renaissance as more people realize the value of owning their own infrastructure. Rather than relying on cloud providers, individuals and small communities are building resilient systems that work offline and maintain control over their data. This movement represents a fundamental shift in how we think about computing: from renting from corporations to owning our digital lives.",
+          "author": "Sarah Chen",
+          "author_url": "https://sarahchen.tech",
+          "source_name": "TechIndependent",
+          "title": "The Rise of Home Servers",
+          "editorial_note": "A comprehensive look at the practical benefits and challenges of running your own infrastructure.",
+          "layout_hint": "feature",
+          "word_count": 87
+        },
+        {
+          "item_id": "standard-001",
+          "display_text": "Raspberry Pi 5 has become the go-to platform for self-hosting projects. With improved performance and lower power consumption, it makes running a personal cloud server feasible even in rural areas with limited electricity. The ecosystem of free and open-source software has matured significantly, making setup accessible to non-technical users.",
+          "author": "Marcus Webb",
+          "source_name": "HardwareToday",
+          "title": "Why Raspberry Pi 5 Changed Everything",
+          "images": [
+            {
+              "local_path": "images/rpi5-board.jpg",
+              "caption": "Raspberry Pi 5 motherboard with heatsinks",
+              "width": 800,
+              "height": 600
+            }
+          ],
+          "word_count": 65
+        }
+      ]
+    },
+    {
+      "heading": "Technology & Society",
+      "items": [
+        {
+          "item_id": "standard-002",
+          "display_text": "Email remains the most resilient communication protocol on the internet. Unlike social media platforms that can disappear overnight, email has survived for decades because it is decentralized and standards-based. Experts predict email will outlast every current social platform by decades.",
+          "author": "Dr. James Wilson",
+          "title": "Why Email Will Never Die",
+          "word_count": 48
+        },
+        {
+          "item_id": "brief-001",
+          "display_text": "The ActivityPub protocol has gained traction beyond Mastodon, with implementations now available for blogs, photo galleries, and video platforms.",
+          "author": "@fedidev@fosstodon.org",
+          "word_count": 21
+        },
+        {
+          "thread_id": "thread-2026-03-08-001",
+          "headline": "The Cost of Convenience: A Reckoning",
+          "author": "@alex@techdebate.net",
+          "author_url": "https://techdebate.net/@alex",
+          "editorial_note": "A multi-part discussion on the hidden costs of outsourcing our digital lives to platforms we don't control.",
+          "items": [
+            {
+              "item_id": "thread-001-1",
+              "display_text": "Thread: For the last 20 years we've been told that the cloud is more secure, more reliable, and more efficient than anything we could build ourselves. But what we've actually outsourced is control over our own data and our ability to communicate without intermediaries.",
+              "author": "@alex@techdebate.net",
+              "layout_hint": "standard",
+              "word_count": 53
+            },
+            {
+              "item_id": "thread-001-2",
+              "display_text": "Every time we use a centralized platform, we're voting with our data. We're telling corporations that it's okay to collect, analyze, and monetize our personal information. The cost of convenience has been our privacy and autonomy.",
+              "author": "@alex@techdebate.net",
+              "layout_hint": "standard",
+              "word_count": 38
+            },
+            {
+              "item_id": "thread-001-3",
+              "display_text": "The good news? We're starting to see a real alternative emerge. Open protocols, federated systems, and local-first software are becoming practical and user-friendly. The path back to digital autonomy is becoming clearer.",
+              "author": "@alex@techdebate.net",
+              "layout_hint": "standard",
+              "word_count": 36
+            }
+          ],
+          "layout_hint": "thread"
+        }
+      ]
+    },
+    {
+      "heading": "Perspectives",
+      "items": [
+        {
+          "item_id": "feature-002",
+          "display_text": "Digital sovereignty isn't just a technical problem—it's a philosophical one. It's about asking fundamental questions: Who owns my data? Who decides what I can see? Who profits from my attention? These are no longer abstract concerns; they are urgent practical questions that affect billions of people daily. The movement toward decentralized systems isn't driven by technologists alone; it's driven by ordinary people who are tired of surrendering control. From small towns building community networks to individuals running home servers in closets, the infrastructure of digital freedom is being built brick by brick.",
+          "author": "Elena Rodriguez",
+          "title": "Building Our Own Digital Future",
+          "word_count": 124
+        },
+        {
+          "item_id": "standard-003",
+          "display_text": "Open source development has democratized the tools of the digital age. Anyone with a computer and internet connection can now build and deploy software that rivals commercial offerings. This shift has profound implications for who gets to shape technology and whose interests it serves.",
+          "author": "Dev Team at LibreProject",
+          "title": "The Developer Uprising",
+          "word_count": 45
+        },
+        {
+          "item_id": "brief-002",
+          "display_text": "Matrix protocol adoption continues to grow among organizations that value encrypted, decentralized communication.",
+          "author": "@cryptocomm@example.org",
+          "word_count": 18
+        }
+      ]
+    }
+  ],
+  "pull_quotes": [
+    {
+      "text": "Email has survived for decades because it is decentralized and standards-based.",
+      "attribution": "Dr. James Wilson",
+      "source_item_id": "standard-002"
+    },
+    {
+      "text": "The cost of convenience has been our privacy and autonomy.",
+      "attribution": "@alex@techdebate.net",
+      "source_item_id": "thread-001-2"
+    },
+    {
+      "text": "The infrastructure of digital freedom is being built brick by brick.",
+      "attribution": "Elena Rodriguez",
+      "source_item_id": "feature-002"
+    }
+  ],
+  "page_target": 10,
+  "estimated_content_pages": 5.5
+}

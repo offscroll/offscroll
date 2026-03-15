@@ -1,0 +1,16 @@
+<div class="item-block thread">
+    <h3>{{ item.headline }}</h3>
+    <div class="author">{{ item.author }}{% if item.source_name %} · {{ item.source_name }}{% endif %}</div>
+    {% if item.editorial_note %}
+    <div class="thread-deck">{{ item.editorial_note }}</div>
+    {% endif %}
+    <div class="thread-items">
+        {% set total = item.items|length %}
+        {% for sub in item.items %}
+        <div class="thread-post">
+            <span class="thread-number">{{ loop.index }}/{{ total }}</span>
+            <p>{{ sub.display_text }}</p>
+        </div>
+        {% endfor %}
+    </div>
+</div>

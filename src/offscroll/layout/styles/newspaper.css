@@ -1,0 +1,607 @@
+/* OffScroll Newspaper Stylesheet */
+ */
+
+/* --- Custom Properties (design system) --- */
+
+:root {
+    --body-font-size: 10pt;
+    --body-line-height: 1.45;
+    --headline-size-feature: 28pt;
+    --headline-size-thread: 18pt;
+    --headline-size-standard: 14pt;
+    --headline-line-height: 1.15;
+    --metadata-size: 9pt;
+    --caption-size: 8pt;
+    --pull-quote-size: 18pt;
+    --brief-size: 9pt;
+    --column-gap: 0.25in;
+    --margin-top: 0.5in;
+    --margin-bottom: 0.5in;
+    --margin-left: 0.5in;
+    --margin-right: 0.5in;
+}
+
+/* --- Page Rules (CSS Paged Media) --- */
+
+@page {
+    size: 8.5in 11in;
+    margin: var(--margin-top) var(--margin-right) var(--margin-bottom) var(--margin-left);
+    @bottom-center {
+        content: element(running-footer);
+    }
+}
+
+@page:first {
+    @bottom-center {
+        content: none;
+    }
+}
+
+/* --- Reset --- */
+
+* {
+    box-sizing: border-box;
+}
+
+/* --- Base Typography --- */
+
+body {
+    font-family: "Source Serif 4", Georgia, "Times New Roman", serif;
+    font-size: var(--body-font-size);
+    line-height: var(--body-line-height);
+    color: #1a1a1a;
+    margin: 0;
+    padding: 0;
+}
+
+/* --- Masthead --- */
+
+.masthead {
+    text-align: center;
+    padding-bottom: 0.08in;
+    margin-bottom: 0.1in;
+    border-bottom: 3pt solid #1a1a1a;
+}
+
+.masthead-title {
+    font-family: "Source Sans 3", "Helvetica Neue", Arial, sans-serif;
+    font-size: 48pt;
+    font-weight: bold;
+    letter-spacing: 0.04em;
+    margin: 0 0 0.05in 0;
+    padding: 0;
+    line-height: 1.1;
+}
+
+.masthead-subtitle {
+    font-family: "Source Sans 3", "Helvetica Neue", Arial, sans-serif;
+    font-size: var(--body-font-size);
+    font-weight: normal;
+    color: #444;
+    margin: 0 0 0.05in 0;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.masthead-date {
+    font-family: "Source Sans 3", "Helvetica Neue", Arial, sans-serif;
+    font-size: var(--metadata-size);
+    color: #666;
+    margin: 0;
+}
+
+.masthead-editorial {
+    font-family: "Source Serif 4", Georgia, "Times New Roman", serif;
+    font-size: var(--metadata-size);
+    font-style: italic;
+    color: #444;
+    margin: 0.1in 0.5in 0;
+    line-height: 1.4;
+}
+
+/* --- Flexbox Grid System  --- */
+
+.row {
+    display: flex;
+    gap: var(--column-gap);
+}
+
+.col-1 {
+    flex: 1;
+    min-width: 0;
+}
+
+.col-2 {
+    flex: 2;
+    min-width: 0;
+}
+
+.col-3 {
+    flex: 3;
+    min-width: 0;
+}
+
+/* Column divider via left border */
+.col-ruled {
+    border-left: 0.5pt solid #ddd;
+    padding-left: 0.18in;
+}
+
+/* Paragraph defaults in columns */
+.col-1 p, .col-2 p, .col-3 p {
+    text-align: justify;
+    hyphens: auto;
+    margin-bottom: 0.06in;
+}
+
+/* --- Section Headers --- */
+
+/* Section headers rendered as inline labels inside the
+   first column of the first row. The label is physically part of
+   the article flow -- it cannot be stranded on its own page.
+    */
+
+.section-label {
+    margin-top: 0.15in;
+    margin-bottom: 0.08in;
+    padding-top: 0.06in;
+    border-top: 2px solid #1a1a1a;
+}
+
+.section-label h2 {
+    font-family: "Source Sans 3", "Helvetica Neue", Arial, sans-serif;
+    font-size: 14pt;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin: 0;
+    padding: 0;
+    line-height: 1.2;
+}
+
+/* Legacy .section-header retained for backward compat */
+.section-header {
+    break-before: auto;
+    break-after: avoid;
+    margin-top: 0.15in;
+    margin-bottom: 0.1in;
+    padding-top: 0.08in;
+    border-top: 2px solid #1a1a1a;
+}
+
+.section-header h2 {
+    font-family: "Source Sans 3", "Helvetica Neue", Arial, sans-serif;
+    font-size: 18pt;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin: 0;
+    padding: 0;
+    line-height: 1.2;
+}
+
+/* --- Item Blocks --- */
+
+.item-block {
+    break-inside: avoid;
+    margin-bottom: 0.15in;
+}
+
+/* Long articles get CSS multi-column layout */
+.item-block.long-article .article-body {
+    column-count: 2;
+    column-gap: 0.25in;
+}
+
+.item-block h3 {
+    font-family: "Source Sans 3", "Helvetica Neue", Arial, sans-serif;
+    font-size: var(--headline-size-standard);
+    font-weight: bold;
+    margin: 0 0 0.03in 0;
+    line-height: var(--headline-line-height);
+    break-after: avoid;
+}
+
+.item-block .author {
+    font-family: "Source Sans 3", "Helvetica Neue", Arial, sans-serif;
+    font-size: var(--metadata-size);
+    font-style: italic;
+    color: #666;
+    margin-bottom: 0.05in;
+}
+
+.item-block p {
+    margin: 0 0 0.05in 0;
+    text-align: justify;
+    hyphens: auto;
+}
+
+/* --- Item Images (standard items) --- */
+
+.item-image {
+    margin: 0.05in 0 0.08in 0;
+    overflow: hidden;
+    max-height: 4.5in;
+}
+
+.item-image img {
+    width: 100%;
+    max-height: 4in;
+    min-height: 1in;
+    object-fit: contain;
+    display: block;
+}
+
+/* Inline images within article body */
+.inline-image {
+    break-inside: avoid;
+    column-span: all;
+}
+
+.item-image .caption {
+    font-family: "Source Sans 3", "Helvetica Neue", Arial, sans-serif;
+    font-size: var(--caption-size);
+    color: #666;
+    margin-top: 0.03in;
+    line-height: var(--body-line-height);
+}
+
+/* --- Thread Blocks (Rule 5: left border, numbered posts, deck line) --- */
+
+.item-block.thread h3 {
+    font-size: var(--headline-size-thread);
+}
+
+.thread-deck {
+    font-family: "Source Serif 4", Georgia, "Times New Roman", serif;
+    font-size: var(--metadata-size);
+    font-style: italic;
+    color: #444;
+    margin: 0.03in 0 0.08in 0;
+    padding-bottom: 0.05in;
+    border-bottom: 0.5pt solid #ccc;
+    line-height: var(--body-line-height);
+}
+
+.item-block.thread .thread-items {
+    border-left: 2pt solid #999;
+    padding-left: 0.12in;
+    margin-top: 0.05in;
+}
+
+.item-block.thread .thread-post {
+    margin-bottom: 0.08in;
+    position: relative;
+}
+
+.item-block.thread .thread-number {
+    font-family: "Source Sans 3", "Helvetica Neue", Arial, sans-serif;
+    font-size: 7pt;
+    font-weight: bold;
+    color: #999;
+    display: block;
+    margin-bottom: 0.02in;
+}
+
+.item-block.thread .thread-items p {
+    margin: 0 0 0.03in 0;
+}
+
+.item-block.thread .editorial-note {
+    font-size: var(--caption-size);
+    font-style: italic;
+    color: #666;
+    margin-top: 0.05in;
+}
+
+/* --- Editorial Notes --- */
+
+.editorial-note {
+    font-size: var(--caption-size);
+    font-style: italic;
+    color: #555;
+    margin-top: 0.03in;
+}
+
+/* --- Curation Summary --- */
+
+.curation-summary {
+    font-family: "Source Sans 3", "Helvetica Neue", Arial, sans-serif;
+    font-size: 8pt;
+    color: #888;
+    margin: 0.05in 0 0.1in 0;
+    line-height: 1.3;
+}
+
+/* --- Running Footer (running) --- */
+
+.page-footer {
+    position: running(running-footer);
+    font-family: "Source Sans 3", "Helvetica Neue", Arial, sans-serif;
+    font-size: 7pt;
+    color: #999;
+    text-align: center;
+    padding-top: 0.05in;
+    border-top: 0.5px solid #ccc;
+}
+
+/* --- Feature Items (kicker + deck) --- */
+
+.item-block.feature {
+    break-inside: auto;
+    margin-bottom: 0.2in;
+    padding-bottom: 0.15in;
+    border-bottom: 1px solid #ccc;
+}
+
+.feature-kicker {
+    font-family: "Source Sans 3", "Helvetica Neue", Arial, sans-serif;
+    font-size: var(--metadata-size);
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #666;
+    margin: 0 0 0.03in 0;
+}
+
+.feature-title {
+    font-family: "Source Sans 3", "Helvetica Neue", Arial, sans-serif;
+    font-size: var(--headline-size-feature);
+    font-weight: bold;
+    line-height: var(--headline-line-height);
+    margin: 0 0 0.05in 0;
+    break-after: avoid;
+}
+
+.feature-deck {
+    font-family: "Source Serif 4", Georgia, "Times New Roman", serif;
+    font-size: var(--body-font-size);
+    font-style: italic;
+    color: #444;
+    line-height: var(--body-line-height);
+    margin: 0 0 0.08in 0;
+}
+
+/* Feature hero image -- full-width above headline */
+.feature-hero-image {
+    width: 100%;
+    margin: 0 0 0.1in 0;
+}
+
+.feature-hero-image img {
+    width: 100%;
+    max-height: 4in;
+    min-height: 1in;
+    object-fit: contain;
+    display: block;
+}
+
+.feature-hero-image .caption {
+    font-family: "Source Sans 3", "Helvetica Neue", Arial, sans-serif;
+    font-size: 7pt;
+    color: #666;
+    margin-top: 0.03in;
+    line-height: var(--body-line-height);
+}
+
+/* Legacy float class retained for backward compat */
+.feature-image {
+    float: right;
+    width: 45%;
+    margin: 0 0 0.1in 0.15in;
+}
+
+.feature-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.feature-image .caption {
+    font-family: "Source Sans 3", "Helvetica Neue", Arial, sans-serif;
+    font-size: 7pt;
+    color: #666;
+    margin-top: 0.03in;
+    line-height: var(--body-line-height);
+}
+
+.feature-lead {
+    font-size: 10.5pt;
+    line-height: 1.38;
+    text-align: justify;
+    hyphens: auto;
+    margin-bottom: 0.08in;
+}
+
+.feature-text {
+    margin: 0 0 0.05in 0;
+    text-align: justify;
+    hyphens: auto;
+}
+
+/* --- Brief Items --- */
+
+.item-block.brief {
+    margin-bottom: 0.08in;
+    padding-bottom: 0.05in;
+    border-bottom: 0.5px solid #eee;
+    font-size: var(--brief-size);
+    line-height: var(--body-line-height);
+}
+
+.brief-author {
+    font-weight: bold;
+}
+
+.brief-text {
+    /* Inline with author */
+}
+
+/* --- Brief Group (Rule 4: cluster briefs under label) --- */
+
+.brief-group {
+    break-inside: avoid;
+    margin-top: 0.1in;
+    padding-top: 0.05in;
+    border-top: 0.5pt solid #ccc;
+}
+
+.brief-group-header {
+    font-family: "Source Sans 3", "Helvetica Neue", Arial, sans-serif;
+    font-size: var(--metadata-size);
+    font-weight: bold;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #666;
+    margin-bottom: 0.06in;
+}
+
+/* --- Pull Quotes --- */
+
+.pull-quote {
+    text-align: center;
+    margin: 0.08in 0.6in;
+    padding: 0.08in 0;
+    border-top: 1pt solid #1a1a1a;
+    border-bottom: 1pt solid #1a1a1a;
+    break-before: avoid;
+    break-after: avoid;
+    break-inside: avoid;
+    /* Reduce max-width and add page-break awareness.
+       Pull quotes should stay compact and visually connected to
+       surrounding content. */
+    max-width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.pull-quote blockquote {
+    font-family: "Source Serif 4", Georgia, "Times New Roman", serif;
+    font-size: 14pt;
+    font-style: italic;
+    line-height: 1.35;
+    margin: 0;
+    padding: 0;
+    quotes: none;
+}
+
+.pull-quote cite {
+    display: block;
+    font-family: "Source Sans 3", "Helvetica Neue", Arial, sans-serif;
+    font-size: var(--metadata-size);
+    font-style: normal;
+    color: #666;
+    margin-top: 0.04in;
+}
+
+/* --- Feature Body (CSS multi-column replaces flexbox) --- */
+
+.feature-body {
+    column-count: 2;
+    column-gap: 0.25in;
+    column-rule: 0.5pt solid #ddd;
+}
+
+/* --- Source URL (Issue 14) --- */
+
+.source-url {
+    font-family: "Source Code Pro", monospace;
+    font-size: 7pt;
+    color: #999;
+    display: block;
+    margin-top: 0.02in;
+}
+
+/* : Hide source URLs in print layout.
+   URLs serve no purpose on paper -- readers cannot click them.
+   WeasyPrint renders using print media, so this suppresses URLs
+   in PDF output while preserving them for browser viewing. */
+@media print {
+    .source-url {
+        display: none;
+    }
+}
+
+/* --- Continuation Indicators  --- */
+/* WeasyPrint cannot generate true "continued on next page" markers.
+   Instead, we use a visual cue: long articles and features that
+   break across pages show a subtle gradient fade at the bottom
+   to signal continuation. */
+
+.item-block.long-article {
+    break-inside: auto;
+}
+
+.item-block.feature .feature-body,
+.item-block.long-article .article-body {
+    /* Subtle bottom padding to separate from page break */
+    padding-bottom: 0.08in;
+}
+
+/* --- Notable Quotes (fallback for unmatched pull quotes) --- */
+
+.notable-quotes {
+    margin-top: 0.2in;
+    padding-top: 0.1in;
+    border-top: 1pt solid #1a1a1a;
+}
+
+/* --- Drop Cap (for typography) --- */
+
+.drop-cap {
+    float: left;
+    font-family: "Source Sans 3", "Helvetica Neue", Arial, sans-serif;
+    font-size: 36pt;
+    font-weight: bold;
+    line-height: 0.78;
+    margin: 0.02in 0.06in 0 0;
+    color: #1a1a1a;
+}
+
+/* --- Colophon (closing element) --- */
+
+.colophon {
+    margin-top: 0.3in;
+    padding-top: 0.15in;
+    break-inside: avoid;
+}
+
+.colophon-rule {
+    border: none;
+    border-top: 2pt solid #1a1a1a;
+    margin-bottom: 0.1in;
+}
+
+.colophon-content {
+    text-align: center;
+    font-family: "Source Sans 3", "Helvetica Neue", Arial, sans-serif;
+}
+
+.colophon-title {
+    font-size: 12pt;
+    font-weight: bold;
+    margin: 0.05in 0;
+    color: #1a1a1a;
+}
+
+.colophon-meta {
+    font-size: 8pt;
+    color: #666;
+    margin: 0.03in 0;
+}
+
+.colophon-note {
+    font-size: 7pt;
+    font-style: italic;
+    color: #999;
+    margin: 0.03in 0;
+}
+
+/* Edited for length note (replaces inline ellipsis stripping) */
+.edited-note {
+    font-size: 7pt;
+    font-style: italic;
+    color: #999;
+    margin-top: 0.05in;
+    text-align: right;
+}

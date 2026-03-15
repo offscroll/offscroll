@@ -1,0 +1,42 @@
+<div class="item-block feature">
+    {% if item.images %}
+    <div class="feature-hero-image">
+        <img src="{{ resolve_image_path(item.images[0].local_path) }}" alt="{{ item.images[0].caption or '' }}">
+        {% if item.images[0].caption %}
+        <div class="caption">{{ item.images[0].caption }}</div>
+        {% endif %}
+    </div>
+    {% endif %}
+    <div class="feature-kicker">{{ item.kicker or 'Cover Story' }}</div>
+    {% if item.title %}<h2 class="feature-title">{{ item.title }}</h2>{% endif %}
+    {% set deck = generate_feature_deck(item.display_text) %}
+    {% if deck %}
+    <div class="feature-deck">{{ deck }}</div>
+    {% endif %}
+    <div class="author">{{ item.author }}{% if item.source_name and item.source_name != item.author %} · {{ item.source_name }}{% endif %}{% if item.item_url %} <span class="source-url">{{ item.item_url }}</span>{% endif %}</div>
+    {# : Pass deck to split_feature_text so it can
+       strip the deck sentence from the lead paragraph, preventing the
+       stuttering effect where the same sentence appears twice. #}
+    {% set split = split_feature_text(item.display_text, deck=deck) %}
+    {% set fi = first_alpha_index(split[0]) %}
+    <p class="feature-lead">{{ split[0][:fi] }}<span class="drop-cap">{{ split[0][fi] }}</span>{{ split[0][fi+1:] }}</p>
+    {% if split[1] %}
+    {# : Interleave pull quotes within long feature articles. #}
+    {% set item_pqs = pull_quotes_by_item[item.item_id] if pull_quotes_by_item is defined and item.item_id in pull_quotes_by_item else [] %}
+    {# : Filter orphaned image captions from body paragraphs. #}
+    {% set body_paras = filter_orphaned_captions(split[1]) %}
+    {% set pq_para_idx = (body_paras|length * 2 // 5) if (item.word_count > 1000 and item_pqs|length > 0 and body_paras|length > 3) else -1 %}
+    <div class="feature-body">
+        {% for para in body_paras %}
+        {% if para.strip() %}
+        <p class="feature-text">{{ para }}</p>
+        {% endif %}
+        {% if loop.index == pq_para_idx %}
+        {% set quote = item_pqs[0] %}
+        {% include "pull_quote.html" %}
+        {% endif %}
+        {% endfor %}
+    </div>
+    {% endif %}
+    {% if item._edited_for_length %}<div class="edited-note">(Edited for length)</div>{% endif %}
+</div>

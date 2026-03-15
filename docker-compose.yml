@@ -1,0 +1,46 @@
+# OffScroll Docker Compose
+#
+# Usage:
+#   docker compose up -d
+#   docker compose run offscroll ingest
+#   docker compose run offscroll setup
+#   docker compose logs -f
+
+services:
+  offscroll:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: offscroll/offscroll:latest
+    volumes:
+      # Config persists on host
+      - ./config:/home/offscroll/.offscroll
+      # Data (DB, images, PDFs) persists on host
+      - ./data:/home/offscroll/data
+    env_file:
+      - .env
+    environment:
+      - TZ=${TZ:-America/New_York}
+      # Point OffScroll at the Ollama companion
+      - OLLAMA_HOST=http://ollama:11434
+    depends_on:
+      - ollama
+    restart: unless-stopped
+
+  ollama:
+    image: ollama/ollama:latest
+    volumes:
+      # Ollama model cache persists on host
+      - ollama_data:/root/.ollama
+    ports:
+      - "11434:11434"
+    restart: unless-stopped
+    # GPU access (uncomment if available):
+    # deploy:
+    #   resources:
+    #     reservations:
+    #       devices:
+    #         - capabilities: [gpu]
+
+volumes:
+  ollama_data:

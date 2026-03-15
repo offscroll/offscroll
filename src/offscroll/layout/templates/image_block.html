@@ -1,0 +1,8 @@
+{% if image and image.local_path %}
+<div class="item-image">
+    <img src="{{ resolve_image_path(image.local_path) }}" alt="{{ image.caption or '' }}">
+    {% if image.caption %}
+    <div class="caption">{{ image.caption }}</div>
+    {% endif %}
+</div>
+{% endif %}

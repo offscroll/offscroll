@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="2.0">
+  <head>
+    <title>Sample OPML for Testing</title>
+    <dateCreated>2026-03-01T10:00:00Z</dateCreated>
+  </head>
+  <body>
+    <outline text="Tech Blogs" title="Tech Blogs">
+      <outline type="rss" text="Example Tech Blog" title="Example Tech Blog" xmlUrl="https://example.com/tech-feed.xml" />
+      <outline type="rss" text="Another Tech Blog" title="Another Tech Blog" xmlUrl="https://example.com/another-tech-feed.xml" />
+    </outline>
+    <outline text="News" title="News">
+      <outline type="rss" text="News Feed 1" title="News Feed 1" xmlUrl="https://news.example.com/feed.xml" />
+      <outline type="rss" text="News Feed 2" title="News Feed 2" xmlUrl="https://news.example.com/feed2.xml" />
+      <outline type="rss" text="News Feed 3" title="News Feed 3" xmlUrl="https://news.example.com/feed3.xml" />
+    </outline>
+    <outline text="Personal Blogs" title="Personal Blogs">
+      <outline type="rss" text="Alice's Blog" title="Alice's Blog" xmlUrl="https://alice.example.com/feed.xml" />
+      <outline type="rss" text="Bob's Blog" title="Bob's Blog" xmlUrl="https://bob.example.com/feed.xml" />
+      <outline type="rss" text="Carol's Blog" title="Carol's Blog" xmlUrl="https://carol.example.com/feed.xml" />
+      <outline type="rss" text="Dave's Blog" title="Dave's Blog" xmlUrl="https://dave.example.com/feed.xml" />
+      <outline type="rss" text="Eve's Blog" title="Eve's Blog" xmlUrl="https://eve.example.com/feed.xml" />
+    </outline>
+  </body>
+</opml>

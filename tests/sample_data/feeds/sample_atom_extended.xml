@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Extended Atom Feed with Edge Cases</title>
+  <link href="https://example.com"/>
+  <id>urn:uuid:extended-atom-feed</id>
+  <updated>2026-03-01T14:00:00Z</updated>
+
+  <!-- Entry with no title (common in Mastodon) -->
+  <entry>
+    <link href="https://example.com/atom-notitle"/>
+    <id>urn:uuid:atom-entry-notitle</id>
+    <updated>2026-03-01T10:00:00Z</updated>
+    <author><name>NoTitle</name></author>
+    <content type="html">&lt;p&gt;This entry has no title field, just content. Common in social media.&lt;/p&gt;</content>
+  </entry>
+
+  <!-- Entry with very long content (2000+ words) -->
+  <entry>
+    <title>Long Form Article</title>
+    <link href="https://example.com/atom-long"/>
+    <id>urn:uuid:atom-entry-long</id>
+    <updated>2026-03-01T11:00:00Z</updated>
+    <author><name>Longform</name></author>
+    <content type="html">&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.&lt;/p&gt;&lt;p&gt;Second paragraph continues the discussion with more detailed analysis and examples to demonstrate the concepts being presented. The text continues at length to test the system's handling of substantial content. More content goes here to exceed word count requirements.&lt;/p&gt;&lt;p&gt;Third paragraph provides even more detail about the subject matter, discussing various aspects and nuances.&lt;/p&gt;&lt;/p&gt;</content>
+  </entry>
+
+  <!-- Entry with multiple images (in content HTML) -->
+  <entry>
+    <title>Multi-Image Story</title>
+    <link href="https://example.com/atom-multiimage"/>
+    <id>urn:uuid:atom-entry-multiimage</id>
+    <updated>2026-03-01T12:00:00Z</updated>
+    <author><name>Photog</name></author>
+    <content type="html">&lt;p&gt;A story with multiple images embedded.&lt;/p&gt;&lt;img src="https://example.com/img1.jpg" alt="First image"/&gt;&lt;img src="https://example.com/img2.jpg" alt="Second image"/&gt;&lt;img src="https://example.com/img3.jpg" alt="Third image"/&gt;&lt;p&gt;More text after images.&lt;/p&gt;</content>
+  </entry>
+
+  <!-- Entry with HTML content needing sanitization -->
+  <entry>
+    <title>Potentially Malicious Content</title>
+    <link href="https://example.com/atom-dirty"/>
+    <id>urn:uuid:atom-entry-dirty</id>
+    <updated>2026-03-01T13:00:00Z</updated>
+    <author><name>BadActor</name></author>
+    <content type="html">&lt;p&gt;Safe content&lt;/p&gt;&lt;script&gt;alert('xss')&lt;/script&gt;&lt;p&gt;More safe content&lt;/p&gt;&lt;style&gt;body { display: none; }&lt;/style&gt;&lt;p&gt;Malformed HTML &lt;/p&gt;&lt;/p&gt;&lt;/p&gt;</content>
+  </entry>
+</feed>
