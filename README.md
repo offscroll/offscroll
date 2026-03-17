@@ -91,14 +91,59 @@ offscroll db stats        # Show item/feed/edition counts
 
 ## Docker
 
-Docker Compose includes an Ollama companion container -- no host
-Ollama install needed.
+Docker is the recommended deployment method. The Compose file
+includes an Ollama companion container so no host Ollama install
+is needed.
 
 ```bash
+# Clone and build
+git clone https://github.com/offscroll/offscroll.git
+cd offscroll
 docker compose build
-docker compose up -d
-docker compose run offscroll ingest
+
+# Create host directories for persistent data
+mkdir -p config data
+
+# Copy example config and edit
+cp config.example.yaml config/config.yaml
+# Edit config/config.yaml with your feeds, newspaper name, etc.
+
+# Pull Ollama models (first run only)
+docker compose up -d ollama
+docker compose exec ollama ollama pull nomic-embed-text
+docker compose exec ollama ollama pull llama3.1:8b
+
+# Run the full pipeline
+docker compose run --rm offscroll run
+
+# Or run individual steps
+docker compose run --rm offscroll ingest
+docker compose run --rm offscroll curate
+docker compose run --rm offscroll render pdf
+docker compose run --rm offscroll status
 ```
+
+Set your timezone in `.env` or export it:
+
+```bash
+echo "TZ=America/New_York" > .env
+```
+
+For Raspberry Pi or low-RAM devices, use the smaller curation
+model in your `config/config.yaml`:
+
+```yaml
+curation:
+  ollama_model: "llama3.2:3b"
+```
+
+### Automation with Docker
+
+```bash
+# Daily newspaper at 6am (add to crontab):
+0 6 * * * cd /path/to/offscroll && docker compose run --rm offscroll -q run >> data/cron.log 2>&1
+```
+
 
 ## Configuration
 
@@ -142,14 +187,11 @@ curation:
   ollama_model: "llama3.2:3b"
 ```
 
-## Automation
+## Automation (bare-metal)
 
 ```bash
 # Daily newspaper at 6am (cron):
-0 6 * * * cd /path/to/offscroll && .venv/bin/offscroll run >> ~/.offscroll/cron.log 2>&1
-
-# Docker:
-0 6 * * * cd /path/to/offscroll && docker compose run --rm offscroll run >> ~/.offscroll/cron.log 2>&1
+0 6 * * * cd /path/to/offscroll && .venv/bin/offscroll -q run >> ~/.offscroll/cron.log 2>&1
 ```
 
 ## Architecture
@@ -166,6 +208,34 @@ src/offscroll/
     templates/         # HTML templates (newspaper components)
     styles/            # CSS (newspaper layout, typography)
     fonts/             # Source Sans/Serif/Code Pro (bundled)
+```
+
+## Known Issues / Platform Status
+
+| Platform | Status | Notes |
+|----------|--------|-------|
+| x86_64 Linux | **Tested** | Primary development and CI platform |
+| arm64 Linux (Raspberry Pi 5, etc.) | Untested | Dockerfile builds for arm64 via buildx; WeasyPrint deps available in Debian arm64 but not yet verified at runtime |
+| Apple Silicon (Docker Desktop) | Untested | Should work via arm64 image; font rendering may differ from Linux |
+| Windows (Docker Desktop / WSL2) | Untested | Expected to work via x86_64 image |
+
+**WeasyPrint font rendering** may vary across architectures and
+host font configurations. OffScroll bundles Source Sans/Serif/Code
+Pro and runs `fc-cache` at image build time, but system-level
+font fallback behavior can differ between amd64 and arm64 base
+images.
+
+**PDF generation on arm64:** WeasyPrint's native dependencies
+(`libcairo`, `libpango`, `libgdk-pixbuf`) are available in
+Debian arm64 repositories. If PDF rendering fails, the CLI falls
+back to HTML-only output gracefully.
+
+**Multi-arch Docker images** are built with `docker buildx` for
+`linux/amd64` and `linux/arm64`. Tagged releases are published
+automatically to GHCR. To pull a specific architecture:
+
+```bash
+docker pull --platform linux/arm64 ghcr.io/offscroll/offscroll:latest
 ```
 
 ## Development
