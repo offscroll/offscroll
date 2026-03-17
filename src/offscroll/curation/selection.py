@@ -312,7 +312,7 @@ def select_items(
             "quality", "diversity", "fit". Default: all 1.0.
         target_pages: Page budget target.
         max_iterations: Maximum swap iterations for hill-climbing.
-        min_items: Minimum number of items to select.  
+        min_items: Minimum number of items to select.
             : ensures content density even when a few long
             articles would fill the page budget alone.
 
@@ -435,25 +435,43 @@ def select_items(
 
 
 # ---------------------------------------------------------------------------
-# Layout Hint Assignment 
+# Layout Hint Assignment
 # ---------------------------------------------------------------------------
 
 
 # : Pull quote quality rules.
 # Never truncate mid-sentence, never select the first sentence,
 # prefer strong declarative claims, min 8 words, max 40 words.
-_STRONG_CLAIM_WORDS = frozenset([
-    "is", "are", "was", "were", "must", "never", "always", "every",
-    "nothing", "everything", "nobody", "turns out", "means", "proves",
-    "shows", "reveals", "demands", "requires", "transforms",
-])
+_STRONG_CLAIM_WORDS = frozenset(
+    [
+        "is",
+        "are",
+        "was",
+        "were",
+        "must",
+        "never",
+        "always",
+        "every",
+        "nothing",
+        "everything",
+        "nobody",
+        "turns out",
+        "means",
+        "proves",
+        "shows",
+        "reveals",
+        "demands",
+        "requires",
+        "transforms",
+    ]
+)
 
 
 #  Regex to fix subheading concatenation before pull
 # quote selection. Matches "word.Uppercase" where a sentence-ending
 # punctuation is immediately followed by an uppercase letter with
 # no space. Same pattern as renderer._CONCAT_FIX_RE.
-_CONCAT_FIX_RE = re.compile(r'([.!?])([A-Z])')
+_CONCAT_FIX_RE = re.compile(r"([.!?])([A-Z])")
 
 
 def _select_pull_quote(text: str) -> str | None:
@@ -476,11 +494,11 @@ def _select_pull_quote(text: str) -> str | None:
         return None
 
     # Fix concatenated sentences (e.g. "remarkable.This" -> "remarkable. This")
-    text = _CONCAT_FIX_RE.sub(r'\1 \2', text)
+    text = _CONCAT_FIX_RE.sub(r"\1 \2", text)
 
     # Split into sentences on ". ", "! ", "? " boundaries
     # Keep the punctuation with each sentence
-    raw_sentences = re.split(r'(?<=[.!?])\s+', text)
+    raw_sentences = re.split(r"(?<=[.!?])\s+", text)
     if len(raw_sentences) < 2:
         return None
 
@@ -497,7 +515,7 @@ def _select_pull_quote(text: str) -> str | None:
         if wc < 8 or wc > 40:
             continue
         # Must end with sentence-ending punctuation
-        if sent[-1] not in '.!?':
+        if sent[-1] not in ".!?":
             continue
         candidates.append(sent)
 
@@ -544,7 +562,7 @@ def _assign_layout_hint(item: FeedItem, *, is_cover: bool = False) -> LayoutHint
 
 
 # ---------------------------------------------------------------------------
-# Edition Builder 
+# Edition Builder
 # ---------------------------------------------------------------------------
 
 
@@ -800,11 +818,7 @@ def validate_edition(edition: CuratedEdition) -> CuratedEdition:
         # Check for LLM refusal in heading
         if any(pat.search(heading) for pat in _VALIDATION_REFUSAL_PATTERNS):
             # Fall back to first item's title or generic heading
-            titles = [
-                item.title
-                for item in section.items
-                if hasattr(item, "title") and item.title
-            ]
+            titles = [item.title for item in section.items if hasattr(item, "title") and item.title]
             section.heading = titles[0][:40] if titles else "News"
             logger.warning("Replaced refusal heading with fallback: %s", section.heading)
         # Truncate overly long headings
@@ -829,9 +843,7 @@ def validate_edition(edition: CuratedEdition) -> CuratedEdition:
                 continue
 
             # Reject short boilerplate-only items
-            if wc < 20 and any(
-                pat.search(text) for pat in _BOILERPLATE_ITEM_PATTERNS
-            ):
+            if wc < 20 and any(pat.search(text) for pat in _BOILERPLATE_ITEM_PATTERNS):
                 logger.info("Filtered boilerplate item: %s", item.item_id)
                 continue
 
@@ -857,7 +869,7 @@ def validate_edition(edition: CuratedEdition) -> CuratedEdition:
 
 
 # ---------------------------------------------------------------------------
-# Ranked Edition Builder 
+# Ranked Edition Builder
 # ---------------------------------------------------------------------------
 
 
@@ -993,9 +1005,7 @@ def _build_ranked_edition(
             skip = True
             skip_reason = f"Too short ({item.word_count} words)"
 
-        section = _assign_section_label(
-            item, item.cluster_id, cluster_section_map
-        )
+        section = _assign_section_label(item, item.cluster_id, cluster_section_map)
 
         ranked_items.append(
             RankedItem(
@@ -1041,9 +1051,7 @@ def _build_ranked_edition(
     # Edition metadata
     newspaper_config = config.get("newspaper", {})
     title = newspaper_config.get("title", "The Morning Dispatch")
-    subtitle_pattern = newspaper_config.get(
-        "subtitle_pattern", "Vol. {volume}, No. {issue}"
-    )
+    subtitle_pattern = newspaper_config.get("subtitle_pattern", "Vol. {volume}, No. {issue}")
     issue_number = get_edition_count(config) + 1
     subtitle = subtitle_pattern.format(volume=1, issue=issue_number)
     page_target = newspaper_config.get("page_target", 7)
@@ -1056,9 +1064,7 @@ def _build_ranked_edition(
     )
 
     n_viable = sum(1 for ri in ranked_items if not ri.skip)
-    curation_summary = (
-        f"{n_viable} viable items ranked from {len(pool)} candidates"
-    )
+    curation_summary = f"{n_viable} viable items ranked from {len(pool)} candidates"
 
     return RankedEdition(
         edition=edition_meta,
@@ -1067,7 +1073,6 @@ def _build_ranked_edition(
         page_target=page_target,
         curation_summary=curation_summary,
     )
-
 
 
 def _apply_editorial_to_ranked(

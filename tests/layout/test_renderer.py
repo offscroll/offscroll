@@ -55,7 +55,7 @@ def test_build_html_contains_date(sample_curated_edition, sample_config):
 
 
 def test_build_html_contains_editorial_note(sample_curated_edition, sample_config):
-    """ Edition editorial_note is suppressed in production mode.
+    """Edition editorial_note is suppressed in production mode.
 
     The masthead now only renders the editorial note when debug_mode
     is True (task 12.5). In default/production mode, it is hidden.
@@ -675,7 +675,7 @@ def test_all_architecture_templates_exist():
 
 
 def test_editorial_note_renders_in_standard_debug_mode(sample_config):
-    """ Editorial notes render only in debug_mode."""
+    """Editorial notes render only in debug_mode."""
     from offscroll.models import CuratedEdition, CuratedItem, EditionMeta, LayoutHint, Section
 
     edition = CuratedEdition(
@@ -1085,7 +1085,7 @@ def test_pull_quote_for_thread_sub_item(sample_config):
 
 
 def test_flexbox_css_present(sample_curated_edition, sample_config):
-    """ CSS contains flexbox grid rules instead of columns.
+    """CSS contains flexbox grid rules instead of columns.
 
     update: column-count is now used for long-article
     multi-column body text (task 11.5), so that assertion is removed.
@@ -1100,19 +1100,19 @@ def test_flexbox_css_present(sample_curated_edition, sample_config):
 
 
 def test_no_content_area_div(sample_curated_edition, sample_config):
-    """ No content-area div -- replaced by flex rows."""
+    """No content-area div -- replaced by flex rows."""
     html = _build_html(sample_curated_edition, sample_config)
     assert '<div class="content-area">' not in html
 
 
 def test_flex_row_in_html(sample_curated_edition, sample_config):
-    """ Sections produce flex row divs."""
+    """Sections produce flex row divs."""
     html = _build_html(sample_curated_edition, sample_config)
     assert '<div class="row">' in html
 
 
 def test_col_ruled_in_multi_col_row(sample_config):
-    """ Second column in a multi-column row gets col-ruled."""
+    """Second column in a multi-column row gets col-ruled."""
     from offscroll.models import (
         CuratedEdition,
         CuratedItem,
@@ -1376,7 +1376,7 @@ def test_compose_section_rows_pull_quotes_attached():
 
 
 def test_feature_body_uses_css_multicolumn(sample_config):
-    """ Feature body uses CSS multi-column, not flexbox.
+    """Feature body uses CSS multi-column, not flexbox.
 
     Replaces flexbox two-column layout with a single .feature-body
     div that uses column-count: 2 via CSS. Each paragraph is its
@@ -1423,14 +1423,14 @@ def test_feature_body_uses_css_multicolumn(sample_config):
 
 
 def test_running_footer_suppressed_first_page(sample_curated_edition, sample_config):
-    """ CSS suppresses footer on first page via @page:first."""
+    """CSS suppresses footer on first page via @page:first."""
     html = _build_html(sample_curated_edition, sample_config)
     assert "@page:first" in html
     assert "content: none" in html
 
 
 def test_drop_cap_css_present(sample_curated_edition, sample_config):
-    """ CSS includes drop cap styles from design ceiling."""
+    """CSS includes drop cap styles from design ceiling."""
     html = _build_html(sample_curated_edition, sample_config)
     assert ".drop-cap" in html
     assert "float: left" in html
@@ -1442,7 +1442,7 @@ def test_drop_cap_css_present(sample_curated_edition, sample_config):
 
 
 def test_feature_kicker_renders(sample_curated_edition, sample_config):
-    """ Feature has a 'Cover Story' kicker above the headline."""
+    """Feature has a 'Cover Story' kicker above the headline."""
     html = _build_html(sample_curated_edition, sample_config)
     assert "feature-kicker" in html
     assert "Cover Story" in html
@@ -1453,14 +1453,14 @@ def test_feature_kicker_renders(sample_curated_edition, sample_config):
 
 
 def test_feature_kicker_css(sample_curated_edition, sample_config):
-    """ CSS contains .feature-kicker rules."""
+    """CSS contains .feature-kicker rules."""
     html = _build_html(sample_curated_edition, sample_config)
     assert ".feature-kicker" in html
     assert "text-transform: uppercase" in html
 
 
 def test_feature_deck_removed_sprint_11(sample_config):
-    """ Feature deck (editorial_note) no longer renders.
+    """Feature deck (editorial_note) no longer renders.
 
     The editorial_note was being used as a deck line, but it contains
     LLM-generated curation summaries, not editorial content. It was
@@ -1497,7 +1497,7 @@ def test_feature_deck_removed_sprint_11(sample_config):
 
 
 def test_feature_deck_absent_without_editorial_note(sample_config):
-    """ Feature deck div absent when no editorial_note."""
+    """Feature deck div absent when no editorial_note."""
     from offscroll.models import CuratedEdition, CuratedItem, EditionMeta, LayoutHint, Section
 
     edition = CuratedEdition(
@@ -1528,14 +1528,14 @@ def test_feature_deck_absent_without_editorial_note(sample_config):
 
 
 def test_feature_deck_css(sample_curated_edition, sample_config):
-    """ CSS contains .feature-deck rules."""
+    """CSS contains .feature-deck rules."""
     html = _build_html(sample_curated_edition, sample_config)
     assert ".feature-deck" in html
     assert "font-style: italic" in html
 
 
 def test_feature_drop_cap_in_html(sample_config):
-    """ Feature lead paragraph has a drop cap span."""
+    """Feature lead paragraph has a drop cap span."""
     from offscroll.models import CuratedEdition, CuratedItem, EditionMeta, LayoutHint, Section
 
     edition = CuratedEdition(
@@ -1566,7 +1566,7 @@ def test_feature_drop_cap_in_html(sample_config):
 
 
 def test_feature_drop_cap_single_paragraph(sample_config):
-    """ Drop cap works with single-paragraph features."""
+    """Drop cap works with single-paragraph features."""
     from offscroll.models import CuratedEdition, CuratedItem, EditionMeta, LayoutHint, Section
 
     edition = CuratedEdition(
@@ -1597,7 +1597,7 @@ def test_feature_drop_cap_single_paragraph(sample_config):
 
 
 def test_feature_editorial_note_suppressed(sample_config):
-    """ Feature editorial_note fully suppressed in production."""
+    """Feature editorial_note fully suppressed in production."""
     from offscroll.models import CuratedEdition, CuratedItem, EditionMeta, LayoutHint, Section
 
     edition = CuratedEdition(
@@ -1629,7 +1629,7 @@ def test_feature_editorial_note_suppressed(sample_config):
 
 
 def test_compose_thread_packs_with_standard():
-    """ Thread + standard share a 2-col row."""
+    """Thread + standard share a 2-col row."""
     from offscroll.models import CuratedItem, CuratedThread, LayoutHint, Section
 
     section = Section(
@@ -1670,7 +1670,7 @@ def test_compose_thread_packs_with_standard():
 
 
 def test_compose_thread_packs_with_standard_and_briefs():
-    """ Thread + standard + briefs share a 3-col row."""
+    """Thread + standard + briefs share a 3-col row."""
     from offscroll.models import CuratedItem, CuratedThread, LayoutHint, Section
 
     section = Section(
@@ -1717,7 +1717,7 @@ def test_compose_thread_packs_with_standard_and_briefs():
 
 
 def test_compose_thread_alone_still_works():
-    """ Thread alone still gets its own row."""
+    """Thread alone still gets its own row."""
     from offscroll.models import CuratedItem, CuratedThread, LayoutHint, Section
 
     section = Section(
@@ -1745,7 +1745,7 @@ def test_compose_thread_alone_still_works():
 
 
 def test_compose_thread_with_briefs_no_standard():
-    """ Thread + briefs (no standard) -> 2-col row."""
+    """Thread + briefs (no standard) -> 2-col row."""
     from offscroll.models import CuratedItem, CuratedThread, LayoutHint, Section
 
     section = Section(
@@ -1782,7 +1782,7 @@ def test_compose_thread_with_briefs_no_standard():
 
 
 def test_compose_multiple_threads_pack_with_standards():
-    """ Multiple threads each pack with a standard."""
+    """Multiple threads each pack with a standard."""
     from offscroll.models import CuratedItem, CuratedThread, LayoutHint, Section
 
     section = Section(
@@ -1842,7 +1842,7 @@ def test_compose_multiple_threads_pack_with_standards():
 
 
 def test_column_rules_on_packed_row(sample_config):
-    """ Column rules appear on thread+standard packed rows."""
+    """Column rules appear on thread+standard packed rows."""
     from offscroll.models import (
         CuratedEdition,
         CuratedItem,
@@ -2247,9 +2247,7 @@ def test_sprint11_no_wall_of_text(sample_config):
     from offscroll.models import CuratedEdition, CuratedItem, EditionMeta, LayoutHint, Section
 
     long_text = (
-        "Paragraph one with enough text.\n\n"
-        "Paragraph two continues.\n\n"
-        "Paragraph three finishes."
+        "Paragraph one with enough text.\n\nParagraph two continues.\n\nParagraph three finishes."
     )
     edition = CuratedEdition(
         edition=EditionMeta(
@@ -2839,7 +2837,7 @@ def test_masthead_editorial_note_visible_debug(sample_curated_edition, sample_co
 
 
 def test_feature_body_css_multicolumn(sample_curated_edition, sample_config):
-    """ CSS includes feature-body with column-count: 2."""
+    """CSS includes feature-body with column-count: 2."""
     html = _build_html(sample_curated_edition, sample_config)
     # The CSS should include feature-body with CSS multi-column
     assert "column-count: 2" in html
@@ -2850,7 +2848,7 @@ def test_feature_body_css_multicolumn(sample_curated_edition, sample_config):
 
 
 def test_has_editorial_ellipsis():
-    """ Editorial ellipsis markers are detected but preserved."""
+    """Editorial ellipsis markers are detected but preserved."""
     from offscroll.layout.renderer import _has_editorial_ellipsis
 
     assert _has_editorial_ellipsis("before [\u2026] after") is True
@@ -2861,7 +2859,7 @@ def test_has_editorial_ellipsis():
 
 
 def test_unescape_html_entities():
-    """ HTML entities in display text are unescaped."""
+    """HTML entities in display text are unescaped."""
     from offscroll.layout.renderer import _unescape_html_entities
 
     assert _unescape_html_entities("&#8220;hello&#8221;") == "\u201chello\u201d"
@@ -2872,7 +2870,7 @@ def test_unescape_html_entities():
 
 
 def test_image_insert_indices():
-    """ Images are distributed evenly through paragraphs."""
+    """Images are distributed evenly through paragraphs."""
     from offscroll.layout.renderer import image_insert_indices
 
     # 10 paragraphs, 2 images -> after paras 3 and 6
@@ -2893,7 +2891,7 @@ def test_image_insert_indices():
 
 
 def test_image_insert_indices_single_image():
-    """ Single image placed at midpoint."""
+    """Single image placed at midpoint."""
     from offscroll.layout.renderer import image_insert_indices
 
     result = image_insert_indices(6, 1)
@@ -2904,7 +2902,7 @@ def test_image_insert_indices_single_image():
 
 
 def test_image_cap_standard(sample_curated_edition, sample_config):
-    """ Standard articles capped at MAX_IMAGES_STANDARD images."""
+    """Standard articles capped at MAX_IMAGES_STANDARD images."""
 
     # Add many images to a standard item
     from offscroll.models import CuratedImage
@@ -2913,8 +2911,7 @@ def test_image_cap_standard(sample_curated_edition, sample_config):
         for item in section.items:
             if hasattr(item, "layout_hint") and item.layout_hint == LayoutHint.STANDARD:
                 item.images = [
-                    CuratedImage(local_path=f"img{i}.jpg", caption=f"Image {i}")
-                    for i in range(8)
+                    CuratedImage(local_path=f"img{i}.jpg", caption=f"Image {i}") for i in range(8)
                 ]
                 break
         else:
@@ -2928,7 +2925,7 @@ def test_image_cap_standard(sample_curated_edition, sample_config):
 
 
 def test_html_entities_cleaned_in_render(sample_config):
-    """ HTML entities in display_text are unescaped at render time."""
+    """HTML entities in display_text are unescaped at render time."""
     from offscroll.models import CuratedEdition, CuratedItem, EditionMeta, Section
 
     ed = CuratedEdition(
@@ -2962,7 +2959,7 @@ def test_html_entities_cleaned_in_render(sample_config):
 
 
 def test_editorial_ellipsis_preserved_in_render(sample_config):
-    """ Editorial ellipsis [\u2026] preserved in render output,
+    """Editorial ellipsis [\u2026] preserved in render output,
     with '(Edited for length)' note added."""
     from offscroll.models import CuratedEdition, CuratedItem, EditionMeta, Section
 
@@ -2997,7 +2994,7 @@ def test_editorial_ellipsis_preserved_in_render(sample_config):
 
 
 def test_pull_quote_css_compact(sample_curated_edition, sample_config):
-    """ Pull quote CSS uses smaller font size."""
+    """Pull quote CSS uses smaller font size."""
     html = _build_html(sample_curated_edition, sample_config)
     assert "font-size: 14pt" in html
 
@@ -3008,7 +3005,7 @@ def test_pull_quote_css_compact(sample_curated_edition, sample_config):
 
 
 def test_split_text_paragraphs_single_newline_subsplit():
-    """ Large paragraphs after double-newline split get
+    """Large paragraphs after double-newline split get
     further split on single newlines.
 
     This was an issue flagged across three consecutive design
@@ -3033,7 +3030,7 @@ def test_split_text_paragraphs_single_newline_subsplit():
 
 
 def test_split_text_paragraphs_no_subsplit_short():
-    """ Short paragraphs after double-newline split are NOT
+    """Short paragraphs after double-newline split are NOT
     further split on single newlines."""
     from offscroll.layout.renderer import split_text_paragraphs
 
@@ -3044,7 +3041,7 @@ def test_split_text_paragraphs_no_subsplit_short():
 
 
 def test_split_text_paragraphs_marginalian_pattern():
-    """ Simulate The Marginalian pattern -- few \\n\\n, many \\n."""
+    """Simulate The Marginalian pattern -- few \\n\\n, many \\n."""
     from offscroll.layout.renderer import split_text_paragraphs
 
     # Build text: short intro \\n\\n then 20 \\n-separated paragraphs \\n\\n closing
@@ -3055,7 +3052,7 @@ def test_split_text_paragraphs_marginalian_pattern():
 
 
 def test_generate_feature_deck_returns_sentence():
-    """ Deck generation extracts first sentence for feature articles."""
+    """Deck generation extracts first sentence for feature articles."""
     from offscroll.layout.renderer import _generate_feature_deck
 
     text = (
@@ -3069,7 +3066,7 @@ def test_generate_feature_deck_returns_sentence():
 
 
 def test_generate_feature_deck_none_for_short():
-    """ No deck for very short text."""
+    """No deck for very short text."""
     from offscroll.layout.renderer import _generate_feature_deck
 
     assert _generate_feature_deck("Short.") is None
@@ -3078,7 +3075,7 @@ def test_generate_feature_deck_none_for_short():
 
 
 def test_feature_deck_rendered_in_html(sample_config):
-    """ Feature deck line appears in rendered HTML."""
+    """Feature deck line appears in rendered HTML."""
     from offscroll.layout.renderer import _build_html
 
     edition = CuratedEdition(
@@ -3097,8 +3094,7 @@ def test_feature_deck_rendered_in_html(sample_config):
                         display_text=(
                             "This is a perfectly sized sentence for a deck line in our newspaper. "
                             "Then more text follows with enough content "
-                            "to make this a substantial article. "
-                            * 10
+                            "to make this a substantial article. " * 10
                         ),
                         author="Test Author",
                         word_count=500,
@@ -3116,7 +3112,7 @@ def test_feature_deck_rendered_in_html(sample_config):
 
 
 def test_select_pull_quote_fixes_concatenation():
-    """ Pull quote selector fixes concatenated sentences
+    """Pull quote selector fixes concatenated sentences
     before splitting, avoiding multi-sentence blobs."""
     from offscroll.curation.selection import _select_pull_quote
 

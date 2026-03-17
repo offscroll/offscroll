@@ -160,7 +160,7 @@ def test_parse_feed_empty():
 
 
 # ---------------------------------------------------------------------------
-# ingest_all_feeds 
+# ingest_all_feeds
 # ---------------------------------------------------------------------------
 
 
@@ -785,8 +785,7 @@ def test_strip_boilerplate_marginalian_complement():
     from offscroll.ingestion.feeds import _strip_boilerplate
 
     article = (
-        "A thoughtful essay on living.\n\n"
-        "complement these labors of love by becoming a patron"
+        "A thoughtful essay on living.\n\ncomplement these labors of love by becoming a patron"
     )
     result = _strip_boilerplate(article)
     assert "thoughtful essay" in result
@@ -823,9 +822,9 @@ def test_extract_images_from_html_srcset():
     """12.7: _extract_images_from_html picks best srcset candidate."""
     from offscroll.ingestion.feeds import _extract_images_from_html
 
-    html = '''
+    html = """
     <img src="small.jpg" srcset="medium.jpg 800w, large.jpg 1200w" alt="Test">
-    '''
+    """
     images = _extract_images_from_html(html)
     assert len(images) == 1
     # Should pick the largest srcset candidate (1200w)
@@ -837,11 +836,11 @@ def test_extract_images_from_html_deduplicates():
     """12.7: _extract_images_from_html de-duplicates by URL."""
     from offscroll.ingestion.feeds import _extract_images_from_html
 
-    html = '''
+    html = """
     <img src="same.jpg" alt="First">
     <img src="same.jpg" alt="Duplicate">
     <img src="different.jpg" alt="Other">
-    '''
+    """
     images = _extract_images_from_html(html)
     assert len(images) == 2
     urls = [img.url for img in images]

@@ -410,12 +410,15 @@ def test_build_ranked_edition_produces_ranked_items(sample_config):
         for i in range(10)
     ]
 
-    with patch(
-        "offscroll.curation.selection.get_feed_name_map",
-        return_value={"https://example.com/feed.xml": "Test Feed"},
-    ), patch(
-        "offscroll.curation.selection.get_edition_count",
-        return_value=4,
+    with (
+        patch(
+            "offscroll.curation.selection.get_feed_name_map",
+            return_value={"https://example.com/feed.xml": "Test Feed"},
+        ),
+        patch(
+            "offscroll.curation.selection.get_edition_count",
+            return_value=4,
+        ),
     ):
         ranked = _build_ranked_edition(pool, n_clusters=3, config=sample_config)
 
@@ -461,12 +464,15 @@ def test_build_ranked_edition_flags_empty_items(sample_config):
         ),
     ]
 
-    with patch(
-        "offscroll.curation.selection.get_feed_name_map",
-        return_value={},
-    ), patch(
-        "offscroll.curation.selection.get_edition_count",
-        return_value=0,
+    with (
+        patch(
+            "offscroll.curation.selection.get_feed_name_map",
+            return_value={},
+        ),
+        patch(
+            "offscroll.curation.selection.get_edition_count",
+            return_value=0,
+        ),
     ):
         ranked = _build_ranked_edition(pool, n_clusters=3, config=sample_config)
 
@@ -501,12 +507,15 @@ def test_build_ranked_edition_pull_quotes(sample_config):
         for i in range(6)
     ]
 
-    with patch(
-        "offscroll.curation.selection.get_feed_name_map",
-        return_value={},
-    ), patch(
-        "offscroll.curation.selection.get_edition_count",
-        return_value=0,
+    with (
+        patch(
+            "offscroll.curation.selection.get_feed_name_map",
+            return_value={},
+        ),
+        patch(
+            "offscroll.curation.selection.get_edition_count",
+            return_value=0,
+        ),
     ):
         ranked = _build_ranked_edition(pool, n_clusters=6, config=sample_config)
 
@@ -589,11 +598,7 @@ def test_place_ranked_items_skips_flagged(sample_config):
     )
 
     curated = _place_ranked_items(ranked, sample_config)
-    all_ids = [
-        item.item_id
-        for section in curated.sections
-        for item in section.items
-    ]
+    all_ids = [item.item_id for section in curated.sections for item in section.items]
     assert "skipped" not in all_ids
     assert "good" in all_ids
     assert "also-good" in all_ids
@@ -636,7 +641,7 @@ def test_place_ranked_items_fills_to_80_percent(sample_config):
 
 
 def test_colophon_present_in_html(sample_curated_edition, sample_config):
-    """ Colophon appears in rendered HTML."""
+    """Colophon appears in rendered HTML."""
     from offscroll.layout.renderer import _build_html
 
     html = _build_html(sample_curated_edition, sample_config)
@@ -659,10 +664,8 @@ def test_colophon_contains_edition_meta(sample_curated_edition, sample_config):
 # ---------------------------------------------------------------------------
 
 
-def test_build_html_still_works_with_curated_edition(
-    sample_curated_edition, sample_config
-):
-    """Existing CuratedEdition rendering still works after """
+def test_build_html_still_works_with_curated_edition(sample_curated_edition, sample_config):
+    """Existing CuratedEdition rendering still works after"""
     from offscroll.layout.renderer import _build_html
 
     html = _build_html(sample_curated_edition, sample_config)

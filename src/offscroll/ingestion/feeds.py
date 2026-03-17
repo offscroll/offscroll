@@ -256,8 +256,7 @@ def _extract_images_from_html(html_str: str) -> list[ImageContent]:
 
         # Skip common tracking pixels
         is_pixel = (
-            'width="1"' in tag or "width='1'" in tag
-            or 'height="1"' in tag or "height='1'" in tag
+            'width="1"' in tag or "width='1'" in tag or 'height="1"' in tag or "height='1'" in tag
         )
         if is_pixel:
             continue

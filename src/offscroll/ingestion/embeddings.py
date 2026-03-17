@@ -57,9 +57,7 @@ def _embed_ollama(
     try:
         import ollama as ollama_client
     except ImportError as e:
-        raise ImportError(
-            "ollama package not installed. Install with: pip install ollama"
-        ) from e
+        raise ImportError("ollama package not installed. Install with: pip install ollama") from e
 
     embedding_config = config.get("embedding", {})
     model_name = embedding_config.get("ollama_model", "nomic-embed-text")

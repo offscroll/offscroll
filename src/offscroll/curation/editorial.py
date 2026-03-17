@@ -198,9 +198,7 @@ def generate_section_headings(
             else:
                 # Fallback: use first item's title, truncated
                 titles = [
-                    item.title
-                    for item in section.items
-                    if hasattr(item, "title") and item.title
+                    item.title for item in section.items if hasattr(item, "title") and item.title
                 ]
                 if titles:
                     section.heading = titles[0][:40]

@@ -577,7 +577,7 @@ def test_clean_pull_quote_strips_surrounding_quotes():
     from offscroll.curation.editorial import _clean_pull_quote
 
     assert _clean_pull_quote('"A quoted sentence."') == "A quoted sentence."
-    assert _clean_pull_quote('\u201cA curly-quoted sentence.\u201d') == "A curly-quoted sentence."
+    assert _clean_pull_quote("\u201cA curly-quoted sentence.\u201d") == "A curly-quoted sentence."
 
 
 def test_clean_pull_quote_rejects_preamble():

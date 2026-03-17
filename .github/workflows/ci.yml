@@ -7,17 +7,58 @@ on:
     branches: [ main, master ]
 
 jobs:
+  smoke:
+    name: Smoke test (import + lint)
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Set up Python 3.12
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.12'
+
+    - name: Install system dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y libcairo2-dev libpango1.0-dev libgdk-pixbuf2.0-dev
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -e ".[dev]"
+
+    - name: Import smoke test
+      run: |
+        python -c "from offscroll.config import load_config, DEFAULTS"
+        python -c "from offscroll.ingestion.feeds import parse_feed, ingest_all_feeds"
+        python -c "from offscroll.ingestion.store import init_db, store_item"
+        python -c "from offscroll.curation.selection import curate_edition"
+        python -c "from offscroll.layout.renderer import render_newspaper_pdf, render_newspaper_html"
+        python -c "from offscroll.models import FeedItem, CuratedEdition, RankedEdition"
+        python -c "from offscroll.cli import main"
+
+    - name: Lint with ruff
+      run: |
+        ruff check src/ tests/
+
+    - name: Format check with ruff
+      run: |
+        ruff format --check src/ tests/
+
   test:
+    name: Test (Python ${{ matrix.python-version }})
+    needs: smoke
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: ['3.11', '3.12']
+        python-version: ['3.11', '3.12', '3.13']
 
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
 
     - name: Set up Python ${{ matrix.python-version }}
-      uses: actions/setup-python@v4
+      uses: actions/setup-python@v5
       with:
         python-version: ${{ matrix.python-version }}
 
@@ -31,22 +72,15 @@ jobs:
         python -m pip install --upgrade pip
         pip install -e ".[dev]"
 
-    - name: Lint with ruff
-      run: |
-        ruff check src/ tests/
-
-    - name: Format check with ruff
-      run: |
-        ruff format --check src/ tests/
-
     - name: Type check with mypy
       run: |
         mypy src/offscroll/
 
-    - name: Test with pytest
+    - name: Run unit tests
       run: |
-        pytest -m "not slow"
+        pytest -m "not slow" --tb=short
 
     - name: Coverage report
+      if: matrix.python-version == '3.12'
       run: |
         pytest --cov=offscroll --cov-report=term-missing -m "not slow"

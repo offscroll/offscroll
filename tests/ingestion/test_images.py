@@ -296,9 +296,7 @@ class TestImageDimensionMeasurement:
         png_bytes = buf.getvalue()
 
         with patch("offscroll.ingestion.images.httpx.get") as mock_get:
-            mock_get.return_value = _make_response(
-                content=png_bytes, content_type="image/png"
-            )
+            mock_get.return_value = _make_response(content=png_bytes, content_type="image/png")
             count = download_images(config, [item])
 
         assert count == 1

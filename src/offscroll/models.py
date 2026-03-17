@@ -367,20 +367,13 @@ class RankedEdition:
                 RankedItem(
                     **{
                         **item_data,
-                        "images": [
-                            CuratedImage(**img)
-                            for img in item_data.get("images", [])
-                        ],
-                        "layout_hint": LayoutHint(
-                            item_data.get("layout_hint", "standard")
-                        ),
+                        "images": [CuratedImage(**img) for img in item_data.get("images", [])],
+                        "layout_hint": LayoutHint(item_data.get("layout_hint", "standard")),
                     }
                 )
             )
 
-        pull_quote_pool = [
-            PullQuote(**pq) for pq in data.get("pull_quote_pool", [])
-        ]
+        pull_quote_pool = [PullQuote(**pq) for pq in data.get("pull_quote_pool", [])]
 
         return cls(
             edition=edition,
@@ -400,9 +393,7 @@ class RankedEdition:
         This allows the existing renderer and editorial layer to
         work with ranked editions without modification.
         """
-        items_to_place = [
-            ri for ri in self.ranked_items if not ri.skip
-        ]
+        items_to_place = [ri for ri in self.ranked_items if not ri.skip]
         if placed_count is not None:
             items_to_place = items_to_place[:placed_count]
 
@@ -433,8 +424,7 @@ class RankedEdition:
             )
 
         sections = [
-            Section(heading=heading, items=section_map[heading])
-            for heading in section_order
+            Section(heading=heading, items=section_map[heading]) for heading in section_order
         ]
 
         return CuratedEdition(

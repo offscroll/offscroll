@@ -598,3 +598,84 @@ def update_cluster_ids(config: dict, items: list[FeedItem]) -> int:
         return count
     finally:
         conn.close()
+
+
+def get_feed_health(config: dict) -> list[dict]:
+    """Return health indicators for each feed source.
+
+    Returns a list of dicts with keys: url, name, source_type,
+    item_count, last_ingested (ISO string or None), status
+    ("ok", "stale", "empty").
+    """
+    conn = _get_connection(config)
+    conn.row_factory = sqlite3.Row
+    try:
+        rows = conn.execute(
+            """SELECT fs.url, fs.name, fs.source_type,
+                      COUNT(fi.item_id) as item_count,
+                      MAX(fi.ingested_at) as last_ingested
+               FROM feed_sources fs
+               LEFT JOIN feed_items fi ON fs.url = fi.feed_url
+               GROUP BY fs.url
+               ORDER BY fs.name"""
+        ).fetchall()
+        now = datetime.now(UTC)
+        results = []
+        for row in rows:
+            item_count = row["item_count"]
+            last_ingested = row["last_ingested"]
+            if item_count == 0:
+                status = "empty"
+            elif last_ingested:
+                last_dt = datetime.fromisoformat(last_ingested)
+                # If the last_dt is naive, assume UTC
+                if last_dt.tzinfo is None:
+                    last_dt = last_dt.replace(tzinfo=UTC)
+                age = now - last_dt
+                status = "stale" if age > timedelta(days=7) else "ok"
+            else:
+                status = "empty"
+            results.append(
+                {
+                    "url": row["url"],
+                    "name": row["name"],
+                    "source_type": row["source_type"],
+                    "item_count": item_count,
+                    "last_ingested": last_ingested,
+                    "status": status,
+                }
+            )
+        return results
+    finally:
+        conn.close()
+
+
+def get_latest_edition_info(config: dict) -> dict | None:
+    """Return info about the latest edition, or None if no editions exist.
+
+    Returns a dict with keys: edition_id, created_at, json_path, status,
+    item_count.
+    """
+    conn = _get_connection(config)
+    conn.row_factory = sqlite3.Row
+    try:
+        row = conn.execute(
+            """SELECT e.edition_id, e.created_at, e.json_path, e.status,
+                      COUNT(ei.item_id) as item_count
+               FROM editions e
+               LEFT JOIN edition_items ei ON e.edition_id = ei.edition_id
+               GROUP BY e.edition_id
+               ORDER BY e.created_at DESC
+               LIMIT 1"""
+        ).fetchone()
+        if row is None:
+            return None
+        return {
+            "edition_id": row["edition_id"],
+            "created_at": row["created_at"],
+            "json_path": row["json_path"],
+            "status": row["status"],
+            "item_count": row["item_count"],
+        }
+    finally:
+        conn.close()

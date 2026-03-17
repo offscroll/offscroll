@@ -370,7 +370,7 @@ def test_record_edition_query(tmp_path):
 
 
 # ---------------------------------------------------------------------------
-# get_edition_count 
+# get_edition_count
 # ---------------------------------------------------------------------------
 
 
@@ -407,7 +407,7 @@ def test_get_edition_count_after_editions(tmp_path):
 
 
 # ---------------------------------------------------------------------------
-# update_image_paths 
+# update_image_paths
 # ---------------------------------------------------------------------------
 
 
@@ -561,7 +561,7 @@ def test_get_feed_name_map_multiple(tmp_path):
 
 
 def test_repair_missing_images(tmp_path):
-    """ repair_missing_images re-extracts images from content_html."""
+    """repair_missing_images re-extracts images from content_html."""
     from offscroll.ingestion.store import init_db, repair_missing_images, store_item
     from offscroll.models import FeedItem, SourceType
 

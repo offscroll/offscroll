@@ -63,12 +63,12 @@ def _strip_display_boilerplate(text: str) -> str:
 # is immediately followed by an uppercase letter with no space
 # ( "new.Streamlined schedulingAdding").
 # This handles data already in the DB from before the ingestion fix.
-_CONCAT_FIX_RE = re.compile(r'([.!?])([A-Z])')
+_CONCAT_FIX_RE = re.compile(r"([.!?])([A-Z])")
 
 # : Extended concatenation fix.
 # Also catches colon+uppercase ("new:Include") where inline tags like
 # <strong> or <h3> were stripped without whitespace insertion.
-_CONCAT_COLON_RE = re.compile(r'(:)([A-Z])')
+_CONCAT_COLON_RE = re.compile(r"(:)([A-Z])")
 
 
 def _fix_subheading_concatenation(text: str) -> str:
@@ -87,15 +87,15 @@ def _fix_subheading_concatenation(text: str) -> str:
     """
     if not text:
         return text
-    text = _CONCAT_FIX_RE.sub(r'\1 \2', text)
-    text = _CONCAT_COLON_RE.sub(r'\1 \2', text)
+    text = _CONCAT_FIX_RE.sub(r"\1 \2", text)
+    text = _CONCAT_COLON_RE.sub(r"\1 \2", text)
     return text
 
 
 #  Detect editorial ellipsis markers [\u2026] and [...].
 # These are preserved (not stripped) -- they serve editorial
 # transparency by showing where content was trimmed.
-_EDITORIAL_ELLIPSIS_RE = re.compile(r'\[\u2026\]|\[\.{3}\]')
+_EDITORIAL_ELLIPSIS_RE = re.compile(r"\[\u2026\]|\[\.{3}\]")
 
 
 def _has_editorial_ellipsis(text: str) -> bool:
@@ -121,7 +121,7 @@ def _split_sentences(text: str) -> list[str]:
     letter, a quote character, or end of string.
     """
     # First, do a naive split on sentence-ending punctuation + whitespace
-    raw = re.split(r'(?<=[.!?])\s+', text)
+    raw = re.split(r"(?<=[.!?])\s+", text)
     if not raw:
         return []
 
@@ -164,7 +164,7 @@ def _generate_feature_deck(text: str) -> str | None:
         return None
 
     # Fix concatenated sentences first
-    fixed = _CONCAT_FIX_RE.sub(r'\1 \2', text)
+    fixed = _CONCAT_FIX_RE.sub(r"\1 \2", text)
 
     # Find sentences.
     # : Use _split_sentences() which handles
@@ -193,7 +193,7 @@ def _generate_feature_deck(text: str) -> str | None:
 
     # If first sentence is between 10-30 words and ends with
     # punctuation, use it directly
-    if 10 <= wc <= 30 and first[-1:] in '.!?':
+    if 10 <= wc <= 30 and first[-1:] in ".!?":
         return first
 
     # If first sentence is short, combine with next sentence
@@ -201,14 +201,14 @@ def _generate_feature_deck(text: str) -> str | None:
         second = sentences[start_idx + 1].strip()
         combined = first + " " + second
         cwc = len(combined.split())
-        if cwc <= 35 and combined[-1:] in '.!?':
+        if cwc <= 35 and combined[-1:] in ".!?":
             return combined
 
     # If first sentence too long, truncate at sentence boundary
     if wc > 30:
-        cut = first[:180].rfind('. ')
+        cut = first[:180].rfind(". ")
         if cut > 50:
-            return first[:cut + 1]
+            return first[: cut + 1]
 
     # : Broader fallback -- scan deeper into the
     # article for any suitable deck sentence. Skip quoted text and
@@ -222,7 +222,7 @@ def _generate_feature_deck(text: str) -> str | None:
         if candidate[0] in '\u201c"\u2018\u0027':
             continue
         cwc = len(candidate.split())
-        if 10 <= cwc <= 30 and candidate[-1:] in '.!?':
+        if 10 <= cwc <= 30 and candidate[-1:] in ".!?":
             return candidate
 
     return None
@@ -239,19 +239,19 @@ def _generate_feature_deck(text: str) -> str | None:
 # CTA labels ("newsletter", "subscribe", "share").
 _CAPTION_PATTERNS = [
     re.compile(
-        r'^\(?\s*(?:Photograph|Photo|Illustration|Image|Drawing|Painting)'
-        r'\s+(?:by|from|courtesy)',
+        r"^\(?\s*(?:Photograph|Photo|Illustration|Image|Drawing|Painting)"
+        r"\s+(?:by|from|courtesy)",
         re.IGNORECASE,
     ),
-    re.compile(r'^A page from\b', re.IGNORECASE),
+    re.compile(r"^A page from\b", re.IGNORECASE),
     re.compile(
-        r'(?:Photograph|Photo|Illustration|Image)'
-        r'\s+(?:by|from|courtesy)\s+\w+',
+        r"(?:Photograph|Photo|Illustration|Image)"
+        r"\s+(?:by|from|courtesy)\s+\w+",
         re.IGNORECASE,
     ),
     #  Art attributions ("Art by Ryoji Arai from...")
     re.compile(
-        r'^Art\s+(?:by|from)\s+',
+        r"^Art\s+(?:by|from)\s+",
         re.IGNORECASE,
     ),
     #  Artwork/painting attributions
@@ -260,11 +260,11 @@ _CAPTION_PATTERNS = [
     # or "Karl Drais with his velocipede"
     # Pattern: starts with a capitalized word, contains " by ", short.
     re.compile(
-        r'^[A-Z][^.]{5,60}\s+by\s+[A-Z][a-z]',
+        r"^[A-Z][^.]{5,60}\s+by\s+[A-Z][a-z]",
     ),
     #  Merchandise/print links
     re.compile(
-        r'\(Available\s+as\s+a\s+print',
+        r"\(Available\s+as\s+a\s+print",
         re.IGNORECASE,
     ),
     #  Raw HTML fragment leaking into text
@@ -273,7 +273,7 @@ _CAPTION_PATTERNS = [
     ),
     #  Single-word CTA labels
     re.compile(
-        r'^(?:newsletter|subscribe|share|donate|follow)$',
+        r"^(?:newsletter|subscribe|share|donate|follow)$",
         re.IGNORECASE,
     ),
     #  Standalone name attributions (1-4 capitalized words).
@@ -292,15 +292,24 @@ _CAPTION_MAX_WORDS = 30
 # "framework-desktop.jpg") exposes the production pipeline to the
 # reader and must be suppressed.
 _IMAGE_EXTENSIONS = {
-    '.jpg', '.jpeg', '.png', '.webp', '.gif', '.svg', '.bmp',
-    '.tiff', '.tif', '.ico', '.avif',
+    ".jpg",
+    ".jpeg",
+    ".png",
+    ".webp",
+    ".gif",
+    ".svg",
+    ".bmp",
+    ".tiff",
+    ".tif",
+    ".ico",
+    ".avif",
 }
 
 # : Regex for filename-like captions.
 # Matches strings that look like filenames: no spaces, contains dots
 # or hyphens, and ends with an image extension.
 _FILENAME_CAPTION_RE = re.compile(
-    r'^[^\s]+\.(?:jpe?g|png|webp|gif|svg|bmp|tiff?|ico|avif)$',
+    r"^[^\s]+\.(?:jpe?g|png|webp|gif|svg|bmp|tiff?|ico|avif)$",
     re.IGNORECASE,
 )
 
@@ -383,6 +392,7 @@ MAX_IMAGES_FEATURE = 4
 MAX_IMAGES_STANDARD = 3
 
 STYLES_DIR = Path(__file__).parent / "styles"
+
 
 def split_text_paragraphs(text: str, target_len: int = 800) -> list[str]:
     """Split text into paragraphs using a multi-tier strategy.
@@ -474,7 +484,7 @@ def split_feature_text(text: str, max_lead_chars: int = 500, deck: str | None = 
     # encounters the same sentence twice -- once as the italic deck,
     # once as the opening of the lead paragraph with a drop cap.
     if deck and lead.startswith(deck):
-        lead = lead[len(deck):].lstrip()
+        lead = lead[len(deck) :].lstrip()
         # If stripping the deck empties the lead, promote first body
         # paragraph to lead
         if not lead and body:
@@ -503,7 +513,7 @@ def _find_sentence_boundary(text: str, target: int) -> int:
     # Search backward from target (prefer ending before target)
     search_start = max(0, target - 200)
     best = None
-    for m in re.finditer(r'[.!?]\s', text[search_start:target + 100]):
+    for m in re.finditer(r"[.!?]\s", text[search_start : target + 100]):
         pos = search_start + m.start() + 1  # After the punctuation
         if pos <= target + 50:
             best = pos
@@ -512,13 +522,11 @@ def _find_sentence_boundary(text: str, target: int) -> int:
         return best
 
     # Fallback: split at target on a space boundary
-    space_pos = text.rfind(' ', max(0, target - 50), target + 50)
+    space_pos = text.rfind(" ", max(0, target - 50), target + 50)
     if space_pos > 0:
         return space_pos + 1
 
     return target
-
-
 
 
 def image_insert_indices(
@@ -600,10 +608,7 @@ def _place_ranked_items(
 
     # Select pull quotes that match placed items
     placed_ids = {ri.item_id for ri in placed_items}
-    matched_pqs = [
-        pq for pq in ranked.pull_quote_pool
-        if pq.source_item_id in placed_ids
-    ]
+    matched_pqs = [pq for pq in ranked.pull_quote_pool if pq.source_item_id in placed_ids]
     # If no matched pull quotes, use unmatched ones for filler
     if not matched_pqs and ranked.pull_quote_pool:
         matched_pqs = list(ranked.pull_quote_pool[:2])
@@ -673,7 +678,7 @@ def _load_edition(
     editions = sorted(data_dir.glob("edition-*.json"), reverse=True)
     if not editions:
         raise FileNotFoundError(
-            f"No edition files found in {data_dir}. Run \'offscroll curate\' first."
+            f"No edition files found in {data_dir}. Run 'offscroll curate' first."
         )
     path = editions[0]
     fmt = detect_edition_format(path)
@@ -920,8 +925,8 @@ def _compose_section_rows(
     # Long articles (>500 words) get their own full-width row
     # to avoid quarter-width columns .
     remaining_stds = [s for si, s in enumerate(standards) if si not in standards_placed]
-    long_stds = [s for s in remaining_stds if getattr(s, 'word_count', 0) > 500]
-    short_stds = [s for s in remaining_stds if getattr(s, 'word_count', 0) <= 500]
+    long_stds = [s for s in remaining_stds if getattr(s, "word_count", 0) > 500]
+    short_stds = [s for s in remaining_stds if getattr(s, "word_count", 0) <= 500]
 
     # Place long articles first, each in their own full-width row
     for item_a in long_stds:
@@ -1018,7 +1023,7 @@ def _compose_section_rows(
     # This prevents section headers from being stranded on their own pages
     #  by making the header part of the row content.
     if rows:
-        rows[0]['section_heading'] = getattr(section, 'heading', None)
+        rows[0]["section_heading"] = getattr(section, "heading", None)
 
     return rows
 
@@ -1091,27 +1096,27 @@ def _build_html(edition: CuratedEdition, config: dict) -> str:
     page_size = config.get("newspaper", {}).get("page_size", "letter")
 
     #  Strip boilerplate from display_text at render time
-    #  Also fix subheading concatenation 
+    #  Also fix subheading concatenation
     #  Unescape HTML entities, strip editorial ellipsis,
     #            cap images per article
     for section in edition.sections:
         for item in section.items:
-            if hasattr(item, 'display_text') and item.display_text:
+            if hasattr(item, "display_text") and item.display_text:
                 item.display_text = _unescape_html_entities(item.display_text)
                 item.display_text = _strip_display_boilerplate(item.display_text)
                 item.display_text = _fix_subheading_concatenation(item.display_text)
                 item._edited_for_length = _has_editorial_ellipsis(item.display_text)
             #  Unescape image captions
             # : Suppress filename captions
-            if hasattr(item, 'images'):
-                item_title = getattr(item, 'title', None)
+            if hasattr(item, "images"):
+                item_title = getattr(item, "title", None)
                 for img in item.images:
-                    if hasattr(img, 'caption') and img.caption:
+                    if hasattr(img, "caption") and img.caption:
                         img.caption = _unescape_html_entities(img.caption)
                         if _is_filename_caption(img.caption, item_title):
                             img.caption = None
             #  Cap images per article
-            if hasattr(item, 'images') and hasattr(item, 'layout_hint'):
+            if hasattr(item, "images") and hasattr(item, "layout_hint"):
                 max_imgs = (
                     MAX_IMAGES_FEATURE
                     if item.layout_hint == LayoutHint.FEATURE
@@ -1121,7 +1126,7 @@ def _build_html(edition: CuratedEdition, config: dict) -> str:
                     item.images = item.images[:max_imgs]
             if isinstance(item, CuratedThread):
                 for sub in item.items:
-                    if hasattr(sub, 'display_text') and sub.display_text:
+                    if hasattr(sub, "display_text") and sub.display_text:
                         sub.display_text = _unescape_html_entities(sub.display_text)
                         sub.display_text = _strip_display_boilerplate(sub.display_text)
                         sub.display_text = _fix_subheading_concatenation(sub.display_text)
@@ -1145,7 +1150,7 @@ def _build_html(edition: CuratedEdition, config: dict) -> str:
     #  Fix concatenation on front feature too
     if (
         front_feature is not None
-        and hasattr(front_feature, 'display_text')
+        and hasattr(front_feature, "display_text")
         and front_feature.display_text
     ):
         front_feature.display_text = _unescape_html_entities(front_feature.display_text)
@@ -1155,9 +1160,9 @@ def _build_html(edition: CuratedEdition, config: dict) -> str:
         #  Unescape front feature image captions and cap images
         # : Suppress filename captions
         if front_feature.images:
-            ff_title = getattr(front_feature, 'title', None)
+            ff_title = getattr(front_feature, "title", None)
             for img in front_feature.images:
-                if hasattr(img, 'caption') and img.caption:
+                if hasattr(img, "caption") and img.caption:
                     img.caption = _unescape_html_entities(img.caption)
                     if _is_filename_caption(img.caption, ff_title):
                         img.caption = None
@@ -1183,9 +1188,9 @@ def _build_html(edition: CuratedEdition, config: dict) -> str:
         all_item_ids.add(front_feature.item_id)
 
     unmatched_pqs = [
-        pq for pq in edition.pull_quotes
-        if pq.source_item_id == "unknown"
-        or pq.source_item_id not in all_item_ids
+        pq
+        for pq in edition.pull_quotes
+        if pq.source_item_id == "unknown" or pq.source_item_id not in all_item_ids
     ]
 
     #  Assign kicker labels to feature items.

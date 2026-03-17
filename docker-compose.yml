@@ -1,9 +1,11 @@
 # OffScroll Docker Compose
 #
 # Usage:
-#   docker compose up -d
-#   docker compose run offscroll ingest
-#   docker compose run offscroll setup
+#   docker compose up -d          # Start services
+#   docker compose run --rm offscroll status
+#   docker compose run --rm offscroll ingest
+#   docker compose run --rm offscroll run
+#   docker compose run --rm offscroll setup
 #   docker compose logs -f
 
 services:
@@ -17,8 +19,6 @@ services:
       - ./config:/home/offscroll/.offscroll
       # Data (DB, images, PDFs) persists on host
       - ./data:/home/offscroll/data
-    env_file:
-      - .env
     environment:
       - TZ=${TZ:-America/New_York}
       # Point OffScroll at the Ollama companion

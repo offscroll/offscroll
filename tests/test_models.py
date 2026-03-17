@@ -264,9 +264,7 @@ def test_curated_image_optional_dimensions():
     assert img.height is None
 
     # With dimensions
-    img2 = CuratedImage(
-        local_path="images/test.jpg", caption="Test", width=800, height=600
-    )
+    img2 = CuratedImage(local_path="images/test.jpg", caption="Test", width=800, height=600)
     assert img2.width == 800
     assert img2.height == 600
 

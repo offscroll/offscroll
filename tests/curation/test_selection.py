@@ -546,7 +546,7 @@ def test_combined_loss_weights_applied():
 
 
 # ---------------------------------------------------------------------------
-# curate_edition pipeline 
+# curate_edition pipeline
 # ---------------------------------------------------------------------------
 
 
@@ -733,7 +733,9 @@ def test_curate_edition_pull_quote(tmp_path):
             cluster_id=0,
             embedding=[1.0],
             word_count=200,
-            content_text="First sentence here. Second sentence is longer. Third.",
+            content_text=(
+                "First sentence here. The second sentence is long enough to be a pull quote. Third."
+            ),
             author="QuoteAuthor",
         ),
     ]
@@ -810,7 +812,7 @@ def test_build_curated_edition_issue_number_increments(tmp_path):
 
 
 def test_assign_layout_hint_feature():
-    """ 300+ words only gets FEATURE when is_cover=True."""
+    """300+ words only gets FEATURE when is_cover=True."""
     item = _item(word_count=300)
     assert _assign_layout_hint(item, is_cover=True) == LayoutHint.FEATURE
     item = _item(word_count=500)
@@ -900,7 +902,7 @@ def test_select_pull_quote_single_sentence():
 
 
 # ---------------------------------------------------------------------------
-# Integration Tests: Full curate_edition Pipeline 
+# Integration Tests: Full curate_edition Pipeline
 # ---------------------------------------------------------------------------
 
 
@@ -1395,7 +1397,7 @@ def test_sprint11_html_entity_decoding():
         source_type=SourceType.RSS,
         feed_url="https://example.com/feed.xml",
         author="Writer",
-        content_text='She said &#8220;hello&#8221; &amp; smiled &ndash; beautifully.',
+        content_text="She said &#8220;hello&#8221; &amp; smiled &ndash; beautifully.",
         cluster_id=0,
     )
     config = {
