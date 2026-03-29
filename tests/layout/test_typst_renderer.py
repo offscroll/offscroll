@@ -363,3 +363,58 @@ class TestTypstPdfCompilation:
         data_dir = Path(config["output"]["data_dir"])
         typ_files = list(data_dir.glob("*.typ"))
         assert len(typ_files) >= 1
+
+
+SAMPLE_DATA = Path(__file__).parent.parent / "sample_data"
+
+
+@pytest.mark.slow
+class TestTypstSampleEditionSmoke:
+    """Smoke tests: render sample editions with Typst and check zero exit code."""
+
+    @pytest.fixture(autouse=True)
+    def check_typst(self):
+        if shutil.which("typst") is None:
+            pytest.skip("Typst CLI not installed")
+
+    @pytest.fixture
+    def config(self, tmp_path) -> dict:
+        data_dir = tmp_path / "data"
+        data_dir.mkdir()
+        return {
+            "output": {"data_dir": str(data_dir)},
+            "newspaper": {"debug_mode": False},
+        }
+
+    def test_sample_edition_full(self, config):
+        """sample_edition_full compiles to PDF without error."""
+        from offscroll.layout.typst_renderer import render_typst_pdf
+
+        edition = CuratedEdition.from_json(
+            SAMPLE_DATA / "editions" / "sample_edition_full.json"
+        )
+        pdf_path = render_typst_pdf(config, edition)
+        assert pdf_path.exists()
+        assert pdf_path.stat().st_size > 1000
+
+    def test_sample_edition(self, config):
+        """sample_edition compiles to PDF without error."""
+        from offscroll.layout.typst_renderer import render_typst_pdf
+
+        edition = CuratedEdition.from_json(
+            SAMPLE_DATA / "editions" / "sample_edition.json"
+        )
+        pdf_path = render_typst_pdf(config, edition)
+        assert pdf_path.exists()
+        assert pdf_path.stat().st_size > 1000
+
+    def test_sample_edition_briefs_only(self, config):
+        """sample_edition_briefs_only compiles to PDF without error."""
+        from offscroll.layout.typst_renderer import render_typst_pdf
+
+        edition = CuratedEdition.from_json(
+            SAMPLE_DATA / "editions" / "sample_edition_briefs_only.json"
+        )
+        pdf_path = render_typst_pdf(config, edition)
+        assert pdf_path.exists()
+        assert pdf_path.stat().st_size > 1000
