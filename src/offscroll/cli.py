@@ -510,6 +510,54 @@ def run(ctx: click.Context) -> None:
 
 
 @cli.group()
+def crawl() -> None:
+    """Run browser-based crawlers for walled-garden platforms."""
+    pass
+
+
+@crawl.command("x")
+@click.pass_context
+def crawl_x(ctx: click.Context) -> None:
+    """Crawl X (Twitter) home timeline via headed Firefox."""
+    config = _require_config(ctx)
+    try:
+        from offscroll.ingestion.browser.x_crawler import XCrawler
+    except ImportError:
+        click.echo(
+            "playwright not installed. Run: pip install -e '.[browser]' && playwright install firefox",
+            err=True,
+        )
+        sys.exit(1)
+
+    import asyncio
+
+    crawler = XCrawler(config)
+    new_count = asyncio.run(crawler.run())
+    click.echo(f"X crawl complete: {new_count} new items.")
+
+
+@crawl.command("facebook")
+@click.pass_context
+def crawl_facebook(ctx: click.Context) -> None:
+    """Crawl Facebook news feed via headed Firefox."""
+    config = _require_config(ctx)
+    try:
+        from offscroll.ingestion.browser.fb_crawler import FacebookCrawler
+    except ImportError:
+        click.echo(
+            "playwright not installed. Run: pip install -e '.[browser]' && playwright install firefox",
+            err=True,
+        )
+        sys.exit(1)
+
+    import asyncio
+
+    crawler = FacebookCrawler(config)
+    new_count = asyncio.run(crawler.run())
+    click.echo(f"Facebook crawl complete: {new_count} new items.")
+
+
+@cli.group()
 def feeds() -> None:
     """Manage feed sources."""
     pass

@@ -24,6 +24,8 @@ class SourceType(Enum):
     ATOM = "atom"
     MASTODON = "mastodon"
     BLUESKY = "bluesky"
+    TWITTER = "twitter"
+    FACEBOOK = "facebook"
 
 
 class LayoutHint(Enum):

@@ -44,7 +44,7 @@ def init_db(config: dict) -> None:
         CREATE TABLE IF NOT EXISTS feed_sources (
             url             TEXT PRIMARY KEY,
             source_type     TEXT NOT NULL CHECK(
-                source_type IN ('rss', 'atom', 'mastodon', 'bluesky')
+                source_type IN ('rss', 'atom', 'mastodon', 'bluesky', 'twitter', 'facebook')
             ),
             name            TEXT,
             last_polled     TEXT,
@@ -57,7 +57,7 @@ def init_db(config: dict) -> None:
         CREATE TABLE IF NOT EXISTS feed_items (
             item_id         TEXT PRIMARY KEY,
             source_type     TEXT NOT NULL CHECK(
-                source_type IN ('rss', 'atom', 'mastodon', 'bluesky')
+                source_type IN ('rss', 'atom', 'mastodon', 'bluesky', 'twitter', 'facebook')
             ),
             feed_url        TEXT NOT NULL,
             item_url        TEXT,

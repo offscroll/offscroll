@@ -53,6 +53,9 @@ cloud = [
     "anthropic>=0.39",
     "openai>=1.50",
 ]
+browser = [
+    "playwright>=1.40",
+]
 fediverse = [
     "Mastodon.py>=1.8",
     "atproto>=0.0.50",
