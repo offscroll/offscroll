@@ -304,6 +304,55 @@ def ingest(ctx: click.Context) -> None:
     click.echo(f"Ingested {total} new items.")
 
 
+@cli.group()
+def crawl() -> None:
+    """Browser-based crawlers for walled-garden platforms."""
+
+
+@crawl.command("x")
+@click.option("--headless", is_flag=True, help="Run headless (not recommended — breaks stealth)")
+@click.pass_context
+def crawl_x(ctx: click.Context, headless: bool) -> None:
+    """Crawl X (Twitter) home feed via headed Firefox."""
+    config = _require_config(ctx)
+    try:
+        from offscroll.ingestion.browser.x_crawler import XCrawler
+    except ImportError:
+        click.echo(
+            "Playwright not installed. Run: pip install -e '.[browser]' && playwright install firefox",
+            err=True,
+        )
+        return
+
+    import asyncio
+
+    crawler = XCrawler(config, headless=headless)
+    total = asyncio.run(crawler.crawl())
+    click.echo(f"X crawl complete. {total} new items stored.")
+
+
+@crawl.command("facebook")
+@click.option("--headless", is_flag=True, help="Run headless (not recommended — breaks stealth)")
+@click.pass_context
+def crawl_facebook(ctx: click.Context, headless: bool) -> None:
+    """Crawl Facebook news feed via headed Firefox."""
+    config = _require_config(ctx)
+    try:
+        from offscroll.ingestion.browser.fb_crawler import FacebookCrawler
+    except ImportError:
+        click.echo(
+            "Playwright not installed. Run: pip install -e '.[browser]' && playwright install firefox",
+            err=True,
+        )
+        return
+
+    import asyncio
+
+    crawler = FacebookCrawler(config, headless=headless)
+    total = asyncio.run(crawler.crawl())
+    click.echo(f"Facebook crawl complete. {total} new items stored.")
+
+
 @cli.command()
 @click.pass_context
 def embed(ctx: click.Context) -> None:

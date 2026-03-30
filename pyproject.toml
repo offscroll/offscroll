@@ -57,6 +57,9 @@ fediverse = [
     "Mastodon.py>=1.8",
     "atproto>=0.0.50",
 ]
+browser = [
+    "playwright>=1.40",
+]
 
 [project.urls]
 Homepage = "https://github.com/offscroll/offscroll"
