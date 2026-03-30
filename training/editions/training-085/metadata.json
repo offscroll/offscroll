@@ -1,0 +1,416 @@
+{
+  "config_id": "training-085",
+  "archetype": "web-dev",
+  "date_generated": "2026-03-30T01:51:40.746043+00:00",
+  "page_target": 14,
+  "num_pages": 24,
+  "num_items": 42,
+  "feeds_contributed": [
+    "Expedia Group Tech",
+    "Fabulous Adventures in Coding (Eric Lippert)",
+    "Findmypast Tech",
+    "Nikola Breznjak",
+    "Evan Miller",
+    "Ruslan Spivak",
+    "The Daily WTF",
+    "Babbel Tech Blog",
+    "Wojtek Gawronski (afronski)",
+    "Bartlomiej Filipek (C++ Stories)",
+    "Smashing Magazine",
+    "Lazarus Lazaridis (iridakos)",
+    "Nic Raboy (polyglot developer)",
+    "Toptal Engineering",
+    "Zach Holman",
+    "Stitch Fix Multithreaded",
+    "Haptik Tech",
+    "Mary Rose Cook",
+    "Wealthfront Engineering",
+    "Punch (drinks)",
+    "Eli Bendersky",
+    "Lambda the Ultimate"
+  ],
+  "render_time_s": 0.46,
+  "pages": [
+    {
+      "page_number": 1,
+      "png_path": "training-085/pages/page-001.png",
+      "width_pt": 612.0,
+      "height_pt": 792.0
+    },
+    {
+      "page_number": 2,
+      "png_path": "training-085/pages/page-002.png",
+      "width_pt": 612.0,
+      "height_pt": 792.0
+    },
+    {
+      "page_number": 3,
+      "png_path": "training-085/pages/page-003.png",
+      "width_pt": 612.0,
+      "height_pt": 792.0
+    },
+    {
+      "page_number": 4,
+      "png_path": "training-085/pages/page-004.png",
+      "width_pt": 612.0,
+      "height_pt": 792.0
+    },
+    {
+      "page_number": 5,
+      "png_path": "training-085/pages/page-005.png",
+      "width_pt": 612.0,
+      "height_pt": 792.0
+    },
+    {
+      "page_number": 6,
+      "png_path": "training-085/pages/page-006.png",
+      "width_pt": 612.0,
+      "height_pt": 792.0
+    },
+    {
+      "page_number": 7,
+      "png_path": "training-085/pages/page-007.png",
+      "width_pt": 612.0,
+      "height_pt": 792.0
+    },
+    {
+      "page_number": 8,
+      "png_path": "training-085/pages/page-008.png",
+      "width_pt": 612.0,
+      "height_pt": 792.0
+    },
+    {
+      "page_number": 9,
+      "png_path": "training-085/pages/page-009.png",
+      "width_pt": 612.0,
+      "height_pt": 792.0
+    },
+    {
+      "page_number": 10,
+      "png_path": "training-085/pages/page-010.png",
+      "width_pt": 612.0,
+      "height_pt": 792.0
+    },
+    {
+      "page_number": 11,
+      "png_path": "training-085/pages/page-011.png",
+      "width_pt": 612.0,
+      "height_pt": 792.0
+    },
+    {
+      "page_number": 12,
+      "png_path": "training-085/pages/page-012.png",
+      "width_pt": 612.0,
+      "height_pt": 792.0
+    },
+    {
+      "page_number": 13,
+      "png_path": "training-085/pages/page-013.png",
+      "width_pt": 612.0,
+      "height_pt": 792.0
+    },
+    {
+      "page_number": 14,
+      "png_path": "training-085/pages/page-014.png",
+      "width_pt": 612.0,
+      "height_pt": 792.0
+    },
+    {
+      "page_number": 15,
+      "png_path": "training-085/pages/page-015.png",
+      "width_pt": 612.0,
+      "height_pt": 792.0
+    },
+    {
+      "page_number": 16,
+      "png_path": "training-085/pages/page-016.png",
+      "width_pt": 612.0,
+      "height_pt": 792.0
+    },
+    {
+      "page_number": 17,
+      "png_path": "training-085/pages/page-017.png",
+      "width_pt": 612.0,
+      "height_pt": 792.0
+    },
+    {
+      "page_number": 18,
+      "png_path": "training-085/pages/page-018.png",
+      "width_pt": 612.0,
+      "height_pt": 792.0
+    },
+    {
+      "page_number": 19,
+      "png_path": "training-085/pages/page-019.png",
+      "width_pt": 612.0,
+      "height_pt": 792.0
+    },
+    {
+      "page_number": 20,
+      "png_path": "training-085/pages/page-020.png",
+      "width_pt": 612.0,
+      "height_pt": 792.0
+    },
+    {
+      "page_number": 21,
+      "png_path": "training-085/pages/page-021.png",
+      "width_pt": 612.0,
+      "height_pt": 792.0
+    },
+    {
+      "page_number": 22,
+      "png_path": "training-085/pages/page-022.png",
+      "width_pt": 612.0,
+      "height_pt": 792.0
+    },
+    {
+      "page_number": 23,
+      "png_path": "training-085/pages/page-023.png",
+      "width_pt": 612.0,
+      "height_pt": 792.0
+    },
+    {
+      "page_number": 24,
+      "png_path": "training-085/pages/page-024.png",
+      "width_pt": 612.0,
+      "height_pt": 792.0
+    }
+  ],
+  "spreads": [
+    {
+      "spread_id": "s-085-001",
+      "edition_id": "training-085",
+      "type": "solo",
+      "pages": [
+        {
+          "page_number": 1,
+          "png_path": "training-085/pages/page-001.png",
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        }
+      ]
+    },
+    {
+      "spread_id": "s-085-002",
+      "edition_id": "training-085",
+      "type": "spread",
+      "pages": [
+        {
+          "page_number": 2,
+          "png_path": "training-085/pages/page-002.png",
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_number": 3,
+          "png_path": "training-085/pages/page-003.png",
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        }
+      ]
+    },
+    {
+      "spread_id": "s-085-003",
+      "edition_id": "training-085",
+      "type": "spread",
+      "pages": [
+        {
+          "page_number": 4,
+          "png_path": "training-085/pages/page-004.png",
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_number": 5,
+          "png_path": "training-085/pages/page-005.png",
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        }
+      ]
+    },
+    {
+      "spread_id": "s-085-004",
+      "edition_id": "training-085",
+      "type": "spread",
+      "pages": [
+        {
+          "page_number": 6,
+          "png_path": "training-085/pages/page-006.png",
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_number": 7,
+          "png_path": "training-085/pages/page-007.png",
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        }
+      ]
+    },
+    {
+      "spread_id": "s-085-005",
+      "edition_id": "training-085",
+      "type": "spread",
+      "pages": [
+        {
+          "page_number": 8,
+          "png_path": "training-085/pages/page-008.png",
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_number": 9,
+          "png_path": "training-085/pages/page-009.png",
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        }
+      ]
+    },
+    {
+      "spread_id": "s-085-006",
+      "edition_id": "training-085",
+      "type": "spread",
+      "pages": [
+        {
+          "page_number": 10,
+          "png_path": "training-085/pages/page-010.png",
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_number": 11,
+          "png_path": "training-085/pages/page-011.png",
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        }
+      ]
+    },
+    {
+      "spread_id": "s-085-007",
+      "edition_id": "training-085",
+      "type": "spread",
+      "pages": [
+        {
+          "page_number": 12,
+          "png_path": "training-085/pages/page-012.png",
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_number": 13,
+          "png_path": "training-085/pages/page-013.png",
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        }
+      ]
+    },
+    {
+      "spread_id": "s-085-008",
+      "edition_id": "training-085",
+      "type": "spread",
+      "pages": [
+        {
+          "page_number": 14,
+          "png_path": "training-085/pages/page-014.png",
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_number": 15,
+          "png_path": "training-085/pages/page-015.png",
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        }
+      ]
+    },
+    {
+      "spread_id": "s-085-009",
+      "edition_id": "training-085",
+      "type": "spread",
+      "pages": [
+        {
+          "page_number": 16,
+          "png_path": "training-085/pages/page-016.png",
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_number": 17,
+          "png_path": "training-085/pages/page-017.png",
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        }
+      ]
+    },
+    {
+      "spread_id": "s-085-010",
+      "edition_id": "training-085",
+      "type": "spread",
+      "pages": [
+        {
+          "page_number": 18,
+          "png_path": "training-085/pages/page-018.png",
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_number": 19,
+          "png_path": "training-085/pages/page-019.png",
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        }
+      ]
+    },
+    {
+      "spread_id": "s-085-011",
+      "edition_id": "training-085",
+      "type": "spread",
+      "pages": [
+        {
+          "page_number": 20,
+          "png_path": "training-085/pages/page-020.png",
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_number": 21,
+          "png_path": "training-085/pages/page-021.png",
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        }
+      ]
+    },
+    {
+      "spread_id": "s-085-012",
+      "edition_id": "training-085",
+      "type": "spread",
+      "pages": [
+        {
+          "page_number": 22,
+          "png_path": "training-085/pages/page-022.png",
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_number": 23,
+          "png_path": "training-085/pages/page-023.png",
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        }
+      ]
+    },
+    {
+      "spread_id": "s-085-013",
+      "edition_id": "training-085",
+      "type": "solo",
+      "pages": [
+        {
+          "page_number": 24,
+          "png_path": "training-085/pages/page-024.png",
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        }
+      ]
+    }
+  ]
+}

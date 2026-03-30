@@ -23,32 +23,55 @@
 
 // --- Front Page Feature ---
 #feature-article(
-  title: [Why this battery company is pivoting to AI],
+  title: [Announcing Cloudflare Account Abuse Protection: prevent fraudulent attacks from bots and humans],
   kicker: [Cover Story],
-  author: [Casey Crownhart],
-  source-name: [MIT Technology Review],
-  deck: [Qichao Hu doesn’t mince words about how he sees the state of the battery industry.],
-  lead-text: "“Almost every Western battery company has either died or is going to die. It’s kind of the reality,” he says.",
-  lead-first-alpha: 1,
+  author: [Jin-Hee Lee],
+  source-name: [Cloudflare Blog],
+  deck: [Today, Cloudflare is introducing a new suite of fraud prevention capabilities designed to stop account abuse before it starts.],
+  lead-pre: [],
+  lead-cap: [W],
+  lead-rest: [e've spent years empowering Cloudflare customers to protect their applications from automated attacks, but the threat landscape has evolved. The industrialization of hybrid automated-and-human abuse presents a complex security challenge to website owners. Consider, for instance, a single account that’s accessed from New York, London, and San Francisco in the same five minutes. The core question in this case is not “Is this automated?” but rather “Is this authentic?”],
   body-paragraphs: (
-  [Hu is the CEO of SES AI, a Massachusetts-based battery company. It once had aims of making huge amounts of advanced lithium metal batteries for major industries like electric vehicles—but now the company is placing its bets on AI materials discovery.],
-  [Hu sees the pivot as an essential one. “It’s just not possible for a Western company to build a sustainable business,” he says. The company is still making some batteries, but only for smaller markets like drones rather than those that would require higher volumes, like EVs. The new focus is the company’s battery materials discovery platform—which it can either license to other battery companies or use to develop materials to sell.],
-  [Some leading US EV battery companies have folded in recent months, and others, like SES AI, are making dramatic changes in strategy. This shift in who’s building batteries and where they’re doing it could shape the future geopolitics of energy.],
-  [The work that would eventually evolve into SES AI began at MIT, where Hu completed his graduate research. His battery work was aimed at applications in oil and gas exploration. The industry uses sensors that go deep underground, where temperatures can top 120 °C (about 250 °F). The team hoped to develop a battery that could withstand those high temperatures and last longer on a single charge.],
-  [The chosen technology was a solid polymer lithium metal battery. These cells use lithium metal for their anode and a polymer for their electrolyte (the material that ions move through in a battery cell). Together, these components can increase the energy density of a cell significantly, relative to the lithium-ion batteries that are common in personal devices and EVs today. (Lithium-ion batteries generally use a graphite material for their anode and a liquid for the electrolyte.)],
-  [That solid-state battery technology became the foundation of Solid Energy, a startup Hu founded that spun out from MIT in 2012 and raised its first private investment in 2013.],
-  [The team eventually realized that underground oil exploration was a small market, so after several years of operation they began to focus on electric vehicles, which were starting to come into the mainstream. After the team tweaked the chemistry to work better at lower temperatures, the company built its first pilot facility in Massachusetts and eventually another facility in Shanghai.],
-  [By 2021, the battery industry was booming, Hu recalls, and EVs were the hottest industry to be in. There was a ton of interest in next-generation battery technology from major automakers at the time, and Solid Energy started developing technology with GM, Hyundai, and Honda.],
-  [Larger vehicles, like SUVs and trucks, seemed like a good fit for next-generation batteries, Hu says. Massive vehicles like the ones Americans like to drive would need lighter batteries so they could have a reasonable range without being prohibitively heavy.],
-  [The company also shifted its chemistry focus, and in 2022 it announced a battery with a silicon anode rather than a lithium metal one. That shift could help make the battery easier to manufacture.],
-  [Since then, growth in the EV market has slowed, at least in the US, partly because of major pullbacks in funding from the Trump administration. EV tax credits for drivers, a key piece of support pushing Americans toward electric options, ended in late 2025 . With the market for large electric cars in trouble, Hu says, “now we have to look at every market.”],
-  [The AI materials discovery platform on which it’s pinning many of its hopes is called Molecular Universe. The company seeks not only to provide its software to other battery companies but also to identify new battery materials and either license them or sell them to those companies.],
-  [The platform has already identified six new electrolyte materials, according to the company. Hu says one is an additive that could help improve the lifetime of batteries with silicon anodes.],
-  [One of the challenges with silicon anodes is that they tend to swell a lot during use, which can cause physical damage and prevent efficient charging and discharging. To address the problem, the industry typically uses a material called fluoroethylene carbonate (FEC), which can help form an elastic film on the anode so the battery can still charge effectively. That additive can degrade at high temperatures, though, producing gases that can harm a battery’s lifetime. The SES platform identified a compound that works like FEC but doesn’t release those gases.],
-  [The company’s long history and deep battery knowledge could help make its platform a useful tool, Hu says. He sees the actual model as less crucial than SES’s domain expertise and data from years of making and testing batteries.],
-  [“By not actually making the physical battery, we’re actually able to scale and then generate revenue faster,” he says.],
-  [But some experts are skeptical about the near-term prospects for AI materials discovery to revive the industry. “New materials development, as much as we thought that was what people wanted (and, frankly, it should be what the cell makers want)—I don’t know that that seems to be the real linchpin of the battery industry’s progress,” says Kara Rodby, a technical principal at Volta Energy Technologies, a venture capital firm that focuses on the energy storage industry.],
-  [Investors are pulling back, and a slowdown in public support is making things difficult for some parts of the battery industry, she adds: “I don’t know that the ability to discover any new material is going to unlock anything new for the battery industry at this point in time.”],
+  [Website owners need the tools to stop abuse on their website, no matter who it’s coming from .],
+  [During our Birthday Week in 2024, we gifted leaked credentials detection to all customers, including everyone on a Free plan. Since then, we've added account takeover detection IDs as part of our bot management solution to help identify bots attacking your login pages.],
+  [Now, we’re combining these powerful tools with new ones. Disposable email check and email risk help you enforce security preferences for users who sign up with throwaway email addresses, a common tactic for fake account creation and promotion abuse, or whose emails are deemed risky based on email patterns and infrastructure. We’re also thrilled to introduce Hashed User IDs — per-domain identifiers generated by cryptographically hashing usernames — that give customers better insight into suspicious account activity and greater ability to mitigate potentially fraudulent traffic, without compromising end user privacy.],
+  [The new capabilities we’re announcing today go beyond automation, identifying abusive behavior and risky identities among human users and bots. Account Abuse Protection is available in Early Access, and any Bot Management Enterprise customer can use these features at no additional cost for a limited period, until the general availability of Cloudflare Fraud Prevention later this year. If you want to learn more about this Early Access capability, sign up here .],
+  [Leaked credentials make logins all too vulnerable],
+  [The barrier to entry for fraudulent behavior is dangerously low, especially with the availability of massive datasets and access to automated tools that commit account fraud at scale. Website owners aren’t just dealing with individual hackers, but industrialized fraud. Last year, we highlighted how 41% of logins across our network use leaked credentials . This number has only grown following the exposure of a database holding 16 billion records , and multiple high-profile breaches have since come to light.],
+  [What’s more, users reuse passwords across multiple platforms, meaning a single leak from years ago can still unlock a high-value retail or even a bank account today. Our leaked credential check is a free feature that checks whether a password has been leaked in a known data breach of another service or application on the Internet. This is a privacy-preserving credential checking service that helps protect our users from compromised credentials, meaning Cloudflare performs these checks without accessing or storing plaintext end user passwords. Passwords are hashed — i.e., converted into a random string of characters using a cryptographic algorithm — for the purpose of comparing them against a database of leaked credentials. If you haven’t already turned on our leaked credential check , enable it now to keep your accounts safe from easy hacks!],
+  [Access to a large database of leaked credentials is only useful if an attacker can cycle through them quickly across many sites to identify which accounts are still vulnerable due to password reuse. In our Black Friday analysis in 2024, we observed that more than 60% of traffic to login pages across our network was automated . That’s a lot of bots trying to break in.],
+  [To help customers protect their login endpoints from constant bombardment, we added account takeover (ATO)-specific detections to highlight suspicious traffic patterns. This is part of our recent focus on per-customer detections , in which we provide behavioral anomaly detection unique to each bot management customer. Today, bot management customers can see and mitigate attempted ATO attacks in their login requests directly on the Security analytics dashboard.],
+  [In the card on the left within the Security analytics dashboard, you can view and address attempted account takeover attacks.],
+  [In the last week, our ATO detections combined caught an average of 6.9 billion suspicious login attempts daily, across our network. These ATO detections, along with the many other detection mechanisms in our bot management solution, create a layered defense against ATO and other malicious automated attacks.],
+  [From automation to intent and identity],
+  [To discern automation, or to discern intent and identity? That is the question. Our answer: yes and yes, as both are critical layers of a robust security posture. Attackers now operate at a scale previously reserved for enterprise services: they leverage massive credential leaks, use human-powered fraud farms to spoof devices and locations, and create synthetic identities to maintain thousands — even millions — of fake accounts for promotion and platform abuse. A human being with automated tools could be draining accounts, abusing promotions, committing payment fraud, or all of the above.],
+  [Beyond that, automation is accessible like never before, particularly as users become better acquainted with using AI agents and even long-standing, “traditional” browsers move toward having agentic capabilities by default. Whether it’s a lone actor using an AI agent or a coordinated fraud campaign, the threat isn’t as simple as a single script — it can involve human intent, with automated execution.],
+  [Consider the following scenarios we’ve heard from our customers:],
+  [We have 1,000 new users this month, but more than half of them are fake identities who benefit from a free trial, then disappear.],
+  [The attacker logged in with the correct password, so how do I know that it isn’t the real user?],
+  [This entity is acting at human pace, and they are draining accounts.],
+  [These problems can't be solved by only assessing automation; they require checking for authenticity and integrity. This is the gap that our dedicated fraud prevention capabilities address.],
+  [Assessing suspicious emails],
+  [Let’s start by assessing the earliest point of potential account abuse: account creation. Fake or bulk account creation is one of the biggest topics in conversations about website fraud, as it can open the door for attackers to access an application — or even an entire business model.],
+  [Cloudflare is giving customers the tools to assess suspicious account creation at the source in two ways:],
+  [Disposable email check : Detect when users sign up with disposable, or throwaway, email addresses commonly used for promotion abuse and fake account creation. These disposable email services allow attackers to spin up thousands of "unique" accounts without maintaining real infrastructure, particularly unauthenticated disposable emails that provide instant access without account creation or free unlimited email aliases. Customers can use this binary field as they build rules to enforce security preferences, choosing to block all disposable emails outright, or perhaps issuing a challenge to anyone attempting to create an account with a disposable email.],
+  [Email risk: Cloudflare analyzes email patterns and infrastructure to provide risk tiers (low, medium, high) that customers can use in security rules. We know that not all email addresses are created equal; an address with the format firstname.lastname\@knowndomain.com carries different risk characteristics than xk7q9m2p\@newdomain.xyz . Email risk tiers allow customers to express their tolerance for risk and friction at the point of account creation.],
+  [Both disposable email check and email risk are now available in security analytics and security rules, equipping website owners to protect their account creation flow. These detections address a fundamental problem: by the time an account is committing abuse, it's already too late. The website owner has already paid acquisition costs, the fraudulent user has consumed promotional credits, and remediation requires manual review. Mitigating suspicious emails means adding the appropriate friction at signup — the moment it matters most.],
+  [Introducing Hashed User IDs],
+  [Understanding patterns of abuse requires visibility : not only into the network, but of account activity. Traditionally, security has meant looking through the lens of IPs and isolated HTTP requests to spot automated activity, but website owners aren’t just thinking in terms of network signals; they are also considering their users and known accounts. That’s why we’re expanding our mitigation toolbox to match the way applications are actually structured, focusing on user-based detection of fraudulent activity.],
+  [Attackers can effortlessly rotate IPs to hide their tracks. But forcing them to repeatedly generate new, credible accounts introduces massive friction, especially when combined with account creation protections. When we look past the network layer and map fraudulent actions to a given compromised or abusive account, we can spot targeted behavior tied to a single, persistent actor and put a stop to the abuse. In this way, we’re shifting the defense strategy to the account level, instead of playing whack-a-mole with rotating IP addresses and residential proxies. This means that our customers can mitigate abusive behavior based on the way their applications separate identity .],
+  [To arm website owners with this capability, Cloudflare is releasing a Hashed User ID that customers can use in Security analytics , Security rules , and Managed Transforms . User IDs are per-domain, cryptographically hashed versions of the values in the username field, and each user ID is an encrypted, unique, and stable identifier generated for a given username on a customer application. Importantly, the actual username is not logged or stored by Cloudflare as part of this service. As with leaked credentials check and ATO detections, which identify login traffic and then encrypt credentials for comparison, we are prioritizing end user privacy while empowering our customers to take action against fraudulent behavior.],
+  [With access to Hashed User IDs, website owners can:],
+  [See top users: Which accounts have the most activity?],
+  [See when a unique user logs in from a country they usually don’t — or multiple countries in one day!],
+  [Mitigate traffic based on unique user, such as blocking a user with historically suspicious activity.],
+  [Combine fields to see when accounts are being targeted with leaked credentials.],
+  [See what network patterns or signals are associated with unique users.],
+  [The expanded view of a single Hashed User ID within the Security analytics dashboard, showing the activity details of that unique user, including their login location and their browser.],
+  [This user-level visibility transforms how website owners can investigate and mitigate traffic. Instead of examining individual requests in isolation, our customers can see the full picture of how attackers are targeting and hiding among legitimate users.],
+  [Take the next step in account protection today],
+  [If you want to learn more about this Early Access capability, sign up here . All Bot Management Enterprise customers are eligible to add these new Account Abuse Protection features today, and we’d love to open the conversation with any and all prospective Bot Management customers .],
+  [While bot detections will continue to answer the question of automation and intent, fraud detections delve into the question of authenticity. Together, they give website owners comprehensive tools to fight against the full spectrum of account abuse. This suite is one step in our ongoing investment to protect the entire user journey — from account creation and login to secure checkouts and the integrity of every interaction.],
 ),
   edited-for-length: false,
 )
@@ -57,539 +80,2012 @@
 {
   #section-label([Features])
   #standard-article(
-  title: [Unstacking CSS Stacking Contexts],
-  author: [Gabriel Shoyombo],
-  source-name: [Smashing Magazine],
+  title: [Exploring Regular Expressions, Part II: Regular Languages and Finite-State Automata],
+  author: [Reginald Braithwaite],
+  source-name: [Reginald Braithwaite (raganwald)],
   images: (),
   paragraphs: (
-  [Have you ever set z-index: 99999 on an element in your CSS, and it doesn’t come out on top of other elements? A value that large should easily place that element visually on top of anything else, assuming all the different elements are set at either a lower value or not set at all.],
-  [A webpage is usually represented in a two-dimensional space; however, by applying specific CSS properties, an imaginary z-axis plane is introduced to convey depth. This plane is perpendicular to the screen, and from it, the user perceives the order of elements, one on top of the other. The idea behind the imaginary z-axis, the user’s perception of stacked elements, is that the CSS properties that create it combine to form what we call a stacking context .],
-  [We’re going to talk about how elements are “stacked” on a webpage, what controls the stacking order, and practical approaches to “unstack” elements when needed.],
-  [Imagine your webpage as a desk. As you add HTML elements, you’re laying pieces of paper, one after the other, on the desk. The last piece of paper placed is equivalent to the most recently added HTML element, and it sits on top of all the other papers placed before it. This is the normal document flow, even for nested elements. The desk itself represents the root stacking context, formed by the element, which contains all other folders.],
-  [Now, specific CSS properties come into play.],
-  [Properties like position (with z-index ), opacity , transform , and contain ) act like a folder. This folder takes an element and all of its children, extracts them from the main stack, and groups them into a separate sub-stack, creating what we call a stacking context . For positioned elements, this happens when we declare a z-index value other than auto . For properties like opacity , transform , and filter , the stacking context is created automatically when specific values are applied.],
-  [Try to understand this: Once a piece of paper (i.e., a child element) is inside a folder (i.e., the parent’s stacking context), it can never exit that folder or be placed between papers in a different folder. Its z-index is now only relevant inside its own folder.],
-  [In the illustration below, Paper B is now within the stacking context of Folder B, and can only be ordered with other papers in the folder.],
-  [Imagine, if you will, that you have two folders on your desk:],
-  [Folder A 
- Folder B],
-  [.folder-a { z-index: 1; }
-.folder-b { z-index: 2; }],
-  [Let’s update the markup a bit. Inside Folder A is a special page, z-index: 9999 . Inside Folder B is a plain page, z-index: 5 .],
-  [.special-page { z-index: 9999; }
-.plain-page { z-index: 5; }],
-  [Which page is on top?],
-  [It’s the .plain-page in Folder B. The browser ignores the child papers and stacks the two folders first. It sees Folder B ( z-index: 2 ) and places it on top of Folder A ( z-index: 1 ) because we know that two is greater than one. Meanwhile, the .special-page set to z-index: 9999 page is at the bottom of the stack even though its z-index is set to the highest possible value.],
-  [Stacking contexts can also be nested (folders inside folders), creating a “family tree.” The same principle applies: a child can never escape its parents’ folder.],
-  [Now that you get how stacking contexts behave like folders that group and reorder layers, it’s worth asking: why do certain properties — like transform and opacity — create new stacking contexts?],
-  [Here’s the thing: these properties don’t create stacking contexts because of how they look; they do it because of how the browser works under the hood. When you apply transform , opacity , filter , or perspective , you’re telling the browser, “Hey, this element might move, rotate, or fade, so be ready!”],
-  [When you use these properties, the browser creates a new stacking context to manage rendering more efficiently. This allows the browser to handle animations, transforms, and visual effects independently, reducing the need to recalculate how these elements interact with the rest of the page. Think of it as the browser saying, “I’ll handle this folder separately so I don’t have to reshuffle the entire desk every time something inside it changes.”],
-  [But there’s a side effect. Once the browser lifts an element into its own layer, it must “flatten” everything within it, creating a new stacking context. It’s like taking a folder off the desk to handle it separately; everything inside that folder gets grouped, and the browser now treats it as a single unit when deciding what sits on top of what.],
-  [So even though the transform and opacity properties might not appear to affect the way that elements stack visually, they do, and it’s for performance optimisation. Several other CSS properties can also create stacking contexts for similar reasons. MDN provides a complete list if you want to dig deeper. There are quite a few, which only illustrates how easy it is to inadvertently create a stacking context without knowing it.],
-  [The “Unstacking” Problem],
-  [Stacking issues can arise for many reasons, but some are more common than others. Modal components are a classic pattern because they require toggling the component to “open” on a top layer above all other elements, then removing it from the top layer when it is “closed.”],
-  [I’m pretty confident that all of us have run into a situation where we open a modal and, for whatever reason, it doesn’t appear. It’s not that it didn’t open properly, but that it is out of view in a lower layer of the stacking context.],
-  [This leaves you to wonder “how come?” since you set:],
-  [.overlay {
- position: fixed; /\* creates the stacking context \*/
- z-index: 1; /\* puts the element on a layer above everything else \*/
- inset: 0; 
- width: 100%; 
- height: 100vh; 
- overflow: hidden;
- background-color: \#00000080;
-}],
-  [This looks correct, but if the parent element containing the modal trigger is a child element within another parent element that’s also set to z-index: 1 , that technically places the modal in a sublayer obscured by the main folder. Let’s look at that specific scenario and a couple of other common stacking-context pitfalls. I think you’ll see not only how easy it is to inadvertently create stacking contexts, but also how to mismanage them. Also, how you return to a managed state depends on the situation.],
-  [Scenario 1: The Trapped Modal],
-  [You can immediately see your modal trapped in a low-level layer and identify the parent.],
-  [Smart developers have built extensions to help. Tools like this “CSS Stacking Context Inspector” Chrome extension add an extra z-index tab to your DevTools to show you information about elements that create a stacking context.],
-  [IDE Extensions],
-  [You can even spot issues during development with an extension like this one for VS Code , which highlights potential stacking context issues directly in your editor.],
-  [After we’ve identified the root cause, the next step is to deal with it. There are several approaches you can take to tackle this problem, and I’ll list them in order. You can choose anyone at any level, though; no one can complain or obstruct another.],
-  [Change The HTML Structure],
-  [This is considered the optimal fix. For you to run into a stacking context issue, you must have placed some elements in funny positions within your HTML. Restructuring the page will help you reshape the DOM and eliminate the stacking context problem. Find the problematic element and remove it from the trapping element in the HTML markup. For instance, we can solve the first scenario, “The Trapped Modal,” by moving the .modal-container out of the header and placing it in the element by itself.],
-  [Header 
- Open Modal 
- 
- 
- 
- Main Content 
- This content has a z-index of 2 and will still not cover the modal.],
-  [Modal Title 
- Now, I'm not behind anything. I've gotten a better position as a result of DOM restructuring. 
- Close],
-  [When you click the “Open Modal” button, the modal is positioned in front of everything else as it’s supposed to be.],
-  [Adjust The Parent Stacking Context In CSS],
-  [What if the element is one you can’t move without breaking the layout? It’s better to address the issue: the parent establishes the context. Find the CSS property (or properties) responsible for triggering the context and remove it. If it has a purpose and cannot be removed, give the parent a higher z-index value than its sibling elements to lift the entire container. With a higher z-index value, the parent container moves to the top, and its children appear closer to the user.],
-  [Based on what we learned in “ The Submerged Dropdown ” scenario, we can’t move the dropdown out of the navbar; it wouldn’t make sense. However, we can increase the z-index value of the .navbar container to be greater than the .content element’s z-index value.],
-  [.navbar {
- background: \#333;
- /\* z-index: 1; \*/
- z-index: 3;
- position: relative;
-}],
-  [With this change, the .dropdown-menu now appears in front of the content without any issue.],
-  [See the Pen Scenario 2: The Submerged Dropdown (Solution) [forked] by Shoyombo Gabriel Ayomide .],
-  [Try Portals, If Using A Framework],
-  [In frameworks like React or Vue , a Portal is a feature that lets you render a component outside its normal parent hierarchy in the DOM. Portals are like a teleportation device for your components. They let you render a component’s HTML anywhere in the document (typically right into document.body ) while keeping it logically connected to its original parent for props, state, and events. This is perfect for escaping stacking context traps since the rendered output literally appears outside the problematic parent container.],
-  [ReactDOM.createPortal(
- ,
- document.body
-);],
-  [This ensures your dropdown content isn’t hidden behind its parent, even if the parent has overflow: hidden or a lower z-index .],
-  [In the “The Clipped Tooltip” scenario we looked at earlier, I used a Portal to rescue the tooltip from the overflow: hidden clip by placing it in the document body and positioning it above the trigger within the container.],
-  [See the Pen Scenario 3: The Clipped Tooltip (Solution) [forked] by Shoyombo Gabriel Ayomide .],
-  [Introducing Stacking Context Without Side Effects],
-  [All the approaches explained in the previous section are aimed at “unstacking” elements from problematic stacking contexts, but there are some situations where you’ll actually need or want to create a stacking context.],
-  [Creating a new stacking context is easy, but all approaches come with a side effect. That is, except for using isolation: isolate . When applied to an element, the stacking context of that element’s children is determined relative to each child and within that context, rather than being influenced by elements outside of it. A classic example is assigning that element a negative value, such as z-index: -1 .],
-  [Imagine you have a .card component. You want to add a decorative shape that sits behind the .card ’s text, but on top of the card’s background. Without a stacking context on the card, z-index: -1 sends the shape to the bottom of the root stacking context (the whole page). This makes it disappear behind the .card ’s white background:],
-  [To solve this, we declare isolation: isolate on the parent .card :],
-  [Now, the .card element itself becomes a stacking context. When its child element — the decorative shape created on the :before pseudo-element — has z-index: -1 , it goes to the very bottom of the parent’s stacking context. It sits perfectly behind the text and on top of the card’s background, as intended.],
-  [Remember: the next time your z-index seems out of control, it’s a trapped stacking context.],
-  [Stacking context (MDN)],
-  [Z-index and stacking contexts (web.dev)],
-  [“ How to Create a New Stacking Context with the Isolation Property in CSS ”, Natalie Pina],
-  [“ What The Heck, z-index?? ”, Josh Comeau],
-  [Further Reading On SmashingMag],
-  [“ Managing CSS Z-Index In Large Projects ”, Steven Frieson],
-  [“ Sticky Headers And Full-Height Elements: A Tricky Combination ”, Philip Braunen],
-  [“ Managing Z-Index In A Component-Based Web Application ”, Pavel Pomerantsev],
-  [“ The Z-Index CSS Property: A Comprehensive Look ”, Louis Lazaris],
-),
-  insert-map: (:),
-  inline-pq: pull-quote([modal-container out of the header and placing it in the element by itself.], [Gabriel Shoyombo]),
-  inline-pq-idx: 26,
-  word-count: 2086,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-}
-
-{
-  #standard-article(
-  title: [Persuasive Design: Ten Years Later],
-  author: [Anders Toxboe],
-  source-name: [Smashing Magazine],
-  images: (),
-  paragraphs: (
-  [Ten years ago, persuasive design was a relatively new frontier in the field of UX. In a 2015 Smashing article, I was among those who showed a way for practitioners to move from being primarily focused on improving usability and removing friction to also guide users toward a desired outcome. The premise was simple: by leveraging psychology , we could influence user behavior and drive outcomes like higher sign-ups, faster and richer onboarding, and stronger retention and engagement.],
-  [A decade later, that promise has proven true — but not in the same way many of us expected. Most product teams still face familiar problems: high bounce rates, weak activation, and users dropping off before experiencing core value. Usability improvements help, but they don’t always address the behavioral gap that sits underneath these patterns.],
-  [Persuasive design didn’t disappear — it matured.],
-  [Today, the more useful version of this work is often called behavioral design : a way to align product experiences with the real drivers of human behavior, with an ethical mindset. Done well, it can improve conversion, onboarding completion, engagement, and long-term use without slipping into manipulation.],
-  [Here’s what I’ll cover:],
-  [What has held up from the last decade of persuasive design;],
-  [What didn’t hold up, especially the limits of pattern-first gamification;],
-  [What changed in how we model behavior, from triggers to context and systems;],
-  [How to use modern behavioral frameworks to improve both discovery and ideation;],
-  [A practical way to run this work as a team, using a five-exercise workshop sequence , you can adapt to your product.],
-  [The goal is not to add more tactics to your toolkit. It’s to help you build a repeatable, shared approach to diagnosing behavioral barriers and designing solutions that support both users’ goals and business outcomes.],
-  [Is Persuasion The Same As Deception?],
-  [Behavioral Design is not about slapping deceptive patterns or superficial “growth hacks” onto your UI. It’s about understanding what truly enables or hinders your users on their way to achieving their goal and then designing experiences that guide them to success.],
-  [Behavioral design is more about bridging the gap between what users want (achieving their goals, feeling value) and what businesses need (activation, retention, revenue), creating win-win outcomes where good UX and good business results align.],
-  [But like with all powerful tools, they can be used both for good and bad. The difference lies in the intention of the designer . Some designers argue for not promoting behavioral or persuasive design, while others argue that we need to understand the tools to learn how to use them well and how we can easily, and often mindlessly, fall into the trap of promoting an unethical lens.],
-  [If we are not enlightened, then how can we judge what represents good and bad practice? If we do not understand how psychology works, then we lack the awareness needed to spot our biases. If we don’t understand these tools, we can’t spot when they’re misused.],
-  [The difference between persuasion and deception is intention, plus accountability.],
-  [A Decade Later, What Have We learned?],
-  [In the early 2010s, many teams treated persuasive design as almost synonymous with gamification. If you added points, badges, and leaderboards, you were doing psychology. And to be fair, those surface mechanics did work in some cases, at least in the short term. They could nudge people through onboarding flows or encourage a few extra logins. But over the decade, their limits became clear. Once the novelty wore off, many of these systems felt shallow. Users learned to ignore streaks that did not connect to anything meaningful or dropped out when they realized the game layer was not helping them reach a real goal.],
-  [This is where self-determination theory has quietly reshaped how serious teams think about motivation. It distinguishes between extrinsic motivators , such as rewards, points, and status, and intrinsic drivers like autonomy, competence, and relatedness. Put simply, if your “gamification” fights against what people actually care about, it will eventually fail. The interventions that have survived are the ones that support intrinsic needs. A language learning streak that makes you feel more capable and shows progress can work because it makes the core activity feel more meaningful and manageable. A badge that only exists to move a dashboard number, on the other hand, quickly becomes noise.],
-  [Lesson 1: From Quick Fixes To Behavioral Strategy],
-  [One key lesson from the past decade is that behavioral design creates the most value when it moves beyond isolated fixes and becomes a deliberate strategy . Many product teams start with a narrow goal: improve a sign-up rate, reduce drop-off, or boost early retention. When standard UX optimizations plateau, they turn to psychology for a quick lift, often with success.],
-  [The biggest opportunity is not one more uplift on a stubborn metric, but having a systematic way to understand and shape behavior across the product.],
-  [Behavioral design isn’t about hacks.
-It’s about helping people succeed.],
-  [Common signals are easy to recognize: people sign up but never finish onboarding; they click around once and never return; key features sit unused. A behavioral strategy doesn’t just ask “ What can we change on this screen?” It asks what is happening in the user’s mind and context at those moments.],
-  [That might lead you to design an onboarding experience that uses curiosity and the goal-gradient effect to guide people to a clear first win, instead of hoping they read a help doc. Or it might lead you to design for exploration and commitment over time: social proof where it actually matters, appropriate challenges that stretch but don’t overwhelm, progressive disclosure so advanced features show up when people are ready, and the right triggers at the most opportune moment instead of random nags.],
-  [Great products aren’t just easy to use.
-They’re easier to commit to.],
-  [Product psychology has shifted from scattered hypotheses to a growing library of repeatable patterns . Those patterns only shine when they sit inside a coherent behavioral model: what users are trying to achieve, what blocks them, and which levers the team will pull at each stage.],
-  [Simple nudges, inspired by Thaler and Sunstein , have helped popularize behavioral thinking in design. But we’ve also learned that nudges alone rarely solve deeper behavioral challenges . A behavioral strategy goes further: it blends tactics, grounds them in real motivations, and ties experiments to a clear theory of change. The goal is not a one-off win on today’s dashboard, but a way of working that compounds over time.],
-  [Lesson 2: Game Mechanics Alone Are Not Enough],
-  [Game mechanics alone are no longer a credible behavioral strategy. Ten years ago, adding points, badges, and leaderboards was almost shorthand for “we’re doing psychology.” Today, most teams have learned the hard way that this is decoration unless it serves a real need.],
-  [A behavioral approach starts with a blunt question: What is the game layer in service of, and for whom? Does it help people make progress that matters to them, or does it just keep a dashboard happy? If it ignores intrinsic motivation, it will look clever in a slide deck and brittle in production.],
-  [In practice, that means points and streaks are not treated as automatic upgrades anymore. Teams ask whether a mechanic helps users feel more competent, more in control, or more connected to others. A streak only makes sense if it reflects real progress in a skill the user cares about. A leaderboard only adds value if people actually want to compare themselves and if the ranking helps them decide what to do next. If it does not pass those tests, it is clutter, not a motivational engine.],
-  [Streaks and badges only work when they support something users truly value.],
-  [The most effective products now start with the intrinsic side. They are clear about what the product helps users become or achieve, and only then ask whether a game mechanic can amplify that journey. When game elements are added, they live in the core loop rather than on top of it. They show mastery, mark meaningful milestones, and reinforce self-driven goals. That is the difference between treating gamification as a paint job and using it to support users on a path they already care about.],
-  [Lesson 3: From Cause And Effect To Holistic Systems Thinking],
-  [Early persuasive design often assumed a simple logic: find the broken step, add the right lever, and users move forward. Nice on a slide, rarely true in reality.],
-  [People don’t act for a single reason. They have context, history, competing goals, mood, time pressure, trust issues, and different definitions of success. Two users can take the same step for completely different reasons. The same user can behave differently on a different day.],
-  [That’s why systems thinking matters. Behavior is shaped by feedback loops and delays, not just one trigger. Outcomes we care about, trust, competence, and habit, are built over time. A change that boosts this week’s conversion can still weaken next month’s retention.],
-  [If you have ever shipped a “conversion win” and then watched support tickets, refunds, or churn go up, you have felt this. The local metric improved. The system got worse.],
-  [Your design structures either enable people or box them in. Defaults, navigation, feedback, pacing, rewards — each of these decisions reshapes the system and therefore the journeys people take through it.],
-  [So the job is not to perfect a single funnel. It is to build an environment where multiple valid paths can succeed, and where the system supports long-term goals, not just short-term clicks.],
-  [The job isn’t to perfect one funnel, but to support multiple valid paths.],
-  [A mature behavioral strategy is explicit about that. It is designed for several paths instead of one “happy flow,” supports autonomy instead of forcing compliance, and looks at downstream effects instead of only first-step conversion.],
-  [Lesson 4: From Triggers To Context],
-  [The same shift has happened in the frameworks we use. A decade ago, the Fogg Behavior Model (FBM) was everywhere. It gave teams a simple trio: motivation, ability, trigger — and a clear message: shouting louder with prompts does not fix low motivation or poor ability. That alone was a useful upgrade.],
-  [Fogg’s own work has moved on, too. With Tiny Habits, the focus leans more on identity, emotion, and making behaviors feel easy and personally meaningful. That mirrors a broader shift in the field: away from “fire more prompts” and toward designing environments where the right behavior feels natural.],
-  [Teams eventually ran into the same wall: prompts do not fix low capability or missing opportunity. You cannot nag people into skills they do not have or into contexts that do not exist. That is where many teams that work deeply with behavior change have gravitated toward COM-B as a more complete foundation.],
-  [COM-B breaks behavior into capability , opportunity , and motivation . It starts with a blunt check: can people actually do this, and does their environment let them? That maps well to modern products, where behavior happens across devices, channels, and moments, not on a single screen. It also plugs into broader behavior change work in health and public policy, so we do not have to reinvent everything inside UX.],
-  [Thinking this way nudges teams away from simple cause-and-effect stories. A drop in completion rate is no longer “the button is bad” or “we need more reminders,” but a question about how skills, context, and motivation interact. A capability issue might need a better interface and better education. An opportunity issue might be about device access, timing, or social surroundings, not layout. Motivation might be shaped as much by pricing and brand trust as by any in-product message.],
-  [Modern behavioral design is less about activating clicks and more about shaping conditions where action feels easy and meaningful.],
-  [This broader lens also makes cross-functional work simpler. Product, design, marketing, and data can share one behavior model and still see their own responsibilities in it. Designers shape perceived capability and opportunity in the interface, marketing shapes motivational framing and triggers, and operations shape the structural opportunity in the service. Instead of everyone pushing their own levers in isolation, COM-B helps teams see that they are working on different parts of the same system.],
-  [Lesson 5: Psychology Can Also Be Used To Design And Decode Discovery],
-  [COM-B is often used as a bridge between discovery and ideation. On the discovery side, it gives structure to research. You can use it to design interview guides, read analytics, and make sense of observational studies. It was built to diagnose what needs to change for a behavior to shift, which maps neatly onto early product discovery.],
-  [Good discovery doesn’t just ask what users say, but examines what their behavior reveals.],
-  [Instead of asking “Why did you stop using the product?” and writing down the first answer, you deliberately walk through capability, opportunity, and motivation. You ask things like:],
-  [Can users actually do this, given their skills and knowledge?],
-  [Does their context help or hinder them in practice?],
-  [How strong is their motivation compared with other demands on their time and money?],
-  [You walk through recent experiences in detail: which device they used, what time of day it was, who else was around, and what else they were juggling. You talk about how important this behavior is compared with everything else in their life and what trade-offs they make. To participants, these questions feel natural. Under the hood, you are systematically covering all three parts of COM-B, in line with how behavior change practitioners use the model in qualitative work.],
-  [You can look at behavioral data in the same way. Funnel drop-offs, time on task, and click patterns are clues: are people stuck because they cannot progress, because the environment gets in the way, or because they do not care enough to continue? Modern analytics tools make it easier to watch what people actually do rather than only what they report, and combining quantitative and qualitative data gives you a fuller picture than either alone.],
-  [When there is a gap between what people say and what they do, you treat it as a signal rather than an irritation. Someone might say that saving for retirement is very important, but never set up a recurring transfer. A user might claim that onboarding was simple, while their session shows repeated back and forth between steps. Those mismatches are often where biases, habits, and emotional barriers live. By labelling them in terms of capability, opportunity, and motivation, and linking them to specific barriers like risk aversion , analysis paralysis , status quo bias or present bias , you move from vague “insights” to a structured map of what is actually in the way.],
-  [The gap between what people say and what they do is not noise — it’s the map.],
-  [The output of this kind of discovery is not just personas and journeys. You also get a clear statement of the current behavior, the target behavior, and the behavioral barriers and enablers that sit between them.],
-  [Lesson 6: Use Behavioral Discovery In Your Ideation],
-  [The bridge from discovery to ideation can be a single sentence template:],
-  [From current behavior to target behavior , by doing X , because of barrier Y .],
-  [This “from–to–by–why” framing forces teams to say what they actually believe. You are not just saying “add a checklist.” You are saying: “We believe a checklist will help new users feel more capable, which will increase the chance they complete setup in their first session.” Now it is a behavioral hypothesis you can test with experiments , not just a design idea you hope for.],
-  [From there, you can generate several variants that express the same principle in different ways and design experiments around them. You might try a few messages that all lean on loss aversion , or several ways of simplifying a high-friction step, or different forms of social proof that vary in tone and proximity.],
-  [The important shift is that you are no longer throwing ideas at the wall. You are deliberately targeting the capability, opportunity, or motivation issues that discovery surfaced, and testing which levers actually work in your context.],
-  [Every idea should answer one question: which barrier are we trying to change?],
-  [Over time, this loop between behavioral discovery and ideation turns into a local playbook. You learn that in your product, some principles reliably help your users and others fall flat. You also learn that patterns from glowing case studies do not automatically transfer. Even gamification and behavior change research often emphasize context-specific , user-centred implementations rather than generic recipes.],
-  [This dual use of psychology in discovery and ideation is one of the bigger shifts of the past decade. A product trio can look at a stubborn drop-off point and ask, together, “Is this a capability, opportunity, or motivation issue?” Then they generate ideas that target that part of the system instead of guessing. That shared language makes behavioral design less of a specialist add-on and more of a normal way for cross-functional teams to reason about their work.],
-  [A Decade Later: What Has Proven To Work In Practice],
-  [If the first decade of persuasive design taught us anything, it is that behavioral insight is cheap until a team can act on it together.],
-  [Methods matter.],
-  [Over time, a small set of workshop formats has consistently helped product teams uncover behavioral barriers, align on opportunities, and generate solutions grounded in real psychology instead of surface patterns. As behavioral design has grown from tactical nudges into a strategic discipline, an obvious question keeps coming up: How do teams actually do this work together in practice?],
-  [How do product managers, designers, researchers, and engineers move from scattered observations (“people seem confused here”) to a shared behavioral diagnosis, and then to targeted ideas that reflect the real drivers of capability, opportunity, and motivation?],
-  [One effective way to make this concrete is through a workshop format. The aim is to help teams:],
-  [Interpret research through a behavioral lens,],
-  [Surface capability, opportunity, and motivation gaps,],
-  [Prioritize high-potential opportunities, and],
-  [Generate ideas that are both psychologically sound and ethically considered.],
-  [Real product work is messy and full of feedback loops; nobody follows a perfect step-by-step checklist. But for learning, and especially for introducing behavioral design into a team for the first time, a structured sequence of exercises gives people a mental model. It shows the journey from early discovery to behavioral clarity, from opportunities to ideas, and finally to interventions that have been stress-tested through an ethical lens.],
-  [The exercises below are one such recipe. The order is intentional: each step builds on the previous one to move from empathy and insight to prioritized opportunities, concrete concepts, and responsible solutions. No team will follow it letter-perfect every time, but it reflects how behavioral design work tends to unfold when it goes well.],
-  [Before diving into the details, here is the full recipe and how each exercise contributes to the bigger behavioral design process:],
-  [Behavioral Empathy Mapping 
-Builds a shared understanding of the user’s psychological landscape: emotions, habits, misconceptions, and sources of friction.],
-  [Behavioral Journey Mapping 
-Maps the user’s flow over time, and overlays behavioral enablers and obstacles.],
-  [Behavior Scoring 
-Prioritizes which behavioral opportunities to tackle first based on impact, feasibility, and evidence.],
-  [Ideas First, Patterns Later 
-Encourages context-first ideation, then uses persuasive patterns to refine and strengthen promising concepts.],
-  [Dark Reality 
-Evaluates ethical risks, unintended consequences, and potential misuse.],
-  [A note on timing: In practice, this sequence can be run in different formats depending on constraints. For a compact format, teams often run Exercises 1–3 in a half-day workshop, and Exercises 4–5 in a second half-day session. With more time, the work can be spread across a full week: discovery synthesis early in the week, prioritization mid-week, and ideation plus ethical review toward the end. The structure matters more than the schedule; the goal is to preserve the progression from understanding → prioritization → ideation → reflection.],
-  [Below is a brief walkthrough of each exercise as I typically facilitate them in workshops in tandem with a library of persuasive patterns .],
-  [Exercise 1: Behavioral Empathy Mapping],
-  [The first step is building a shared, psychologically informed understanding of users. Behavioral Empathy Mapping extends traditional empathy mapping by paying attention to what users attempt, avoid, postpone, misunderstand, or feel uncertain about. These subtle behavioral signals often reveal more than stated needs or pain points.],
-  [Goal: Understand what drives or blocks the target behavior by capturing what users think, feel, say, and do — and spotting behavioral barriers and enablers.],
-  [Steps:],
-  [On a whiteboard or large paper, draw an empathy map: Thinking & Feeling, Seeing, Saying & Doing, and Hearing .],
-  [Add research insights by letting everyone silently add sticky notes from interviews, data, support logs, or observations into the quadrants. One insight per note.],
-  [Identify barriers and enablers. 
-Cluster notes that make the behavior harder (barriers) or easier (enablers).],
-  [Output: A focused map of the psychological and contextual forces shaping the target behavior, ready to feed into Behavioral Journey Mapping.],
-  [Exercise 2: Behavioral Journey Mapping],
-  [Once you understand the user’s mindset and context, the next step is to map how those forces play out across time. Behavioral Journey Mapping overlays the user’s goals, actions, emotions, and environment onto the product journey, highlighting the specific moments where behavior tends to stall or shift.],
-  [Unlike traditional journey maps, the behavioral version focuses on where capability breaks down, where the environment works against the user, and where motivation fades or conflicts arise. These become early signals of where change is both needed and possible.],
-  [The output shows the team precisely where the product is asking too much, where users lack support, or where additional motivation or clarity might be required.],
-  [Goal: Map the steps from the user’s starting point to the target behavior, and capture the key enablers and barriers along the way.],
-  [Steps:],
-  [Draw a horizontal line from A (starting point) to B (target behavior).],
-  [Have everyone write the steps a user takes from A to B on sticky notes (one per note). Include actions inside and outside the product.],
-  [Place the notes in order along the line. Merge duplicates and align on a shared sequence.],
-  [Extend the vertical axis with two rows:],
-  [Enablers (what could help users move forward),],
-  [Barriers (what could slow or stop users).],
-  [Look for steps with many barriers or few enablers. These are behavioral hot spots.],
-  [Highlight the steps where a good nudge could meaningfully help users complete the journey.],
-  [Output: A clear, behavior-focused journey showing where users struggle, why, and which moments offer the most leverage for change .],
-  [Exercise 3: Behavior Scoring],
-  [With a clearer picture of the user journey and what moments could benefit from a behaviorally helpful hand, you are now ready to identify the behavior it makes most sense to focus on trying to influence.],
-  [Goal: Decide which potential target behaviors are worth focusing on first , based on impact, ease of change, and ease of measurement.],
-  [Steps:],
-  [List potential target behaviors. Based on the output of the Behavioral Journey Mapping, list behaviors that could potentially be targeted. One behavior per sticky note. Be as concrete as possible (what users do, where, and when).],
-  [Create a table with the following columns:],
-  [Impact of behavior change (how much it could move the goal),],
-  [Ease of change (how realistic it is to influence),],
-  [Ease of measurement (how straightforward it is to track).],
-  [Potential target behaviors 
- Impact of behavior change 
- Ease of change 
- Ease of measurement 
- Total 
- 
- 
- 
- 
- … 
- 
- 
- 
- 
- 
- 
- … 
- 
- 
- 
- 
- 
- 
- …],
-  [Enter each listed behavior into the table and score them from 0 to 10 in each column.],
-  [Sort behaviors by total score and discuss the highest-scoring ones:],
-  [Do they make sense given what you know about users and constraints?],
-  [Select the primary target behaviors you want to carry into the next exercises.
-Optionally, note “bonus behaviors” that might follow as a side effect.],
-  [Output: A small set of prioritized target behaviors with a clear rationale for why they matter now, and a list of lower-priority behaviors you may revisit later.],
-  [A filled-out Behavior Scoring table could look like this:],
-  [Potential target behaviors 
- Impact of behavior change 
- Ease of change 
- Ease of measurement 
- Total 
- 
- 
- 
- 
- User completes onboarding checklist in first session. 
- 8 
- 6 
- 9 
- 23 
- 
- 
- User invites at least one teammate within 7 days. 
- 9 
- 4 
- 8 
- 21 
- 
- 
- User watches the full product tour video. 
- 4 
- 7 
- 6 
- 17 
- 
- 
- User reads help documentation during onboarding. 
- 3 
- 5 
- 4 
- 12],
-  [In this case, the checklist completion emerges as the strongest initial focus: it has high impact, is realistically influenceable through design changes, and can be measured reliably. Inviting a teammate may be strategically important, but it may require broader changes beyond interface design, making it a secondary focus.],
-  [Exercise 4: Ideas First, Patterns Later],
-  [Once the team has agreed on which behavior matters most, the next risk is jumping too quickly to familiar psychological tricks. One of the clearest lessons has been that starting with “the pattern” often leads to generic solutions that feel clever but fail in context.],
-  [This exercise deliberately separates idea generation from psychological framing .],
-  [Goal: Generate solutions grounded in user context first, then use psychological principles to sharpen and strengthen them.],
-  [Steps:],
-  [Start by restating the prioritized target behavior and the key barrier identified during journey mapping. Keep this visible throughout the exercise.],
-  [Then give the team a short, focused ideation window (10–15 minutes).
-The rule here is simple: no references to behavioral models, cognitive biases, or persuasive patterns yet. Ideas should come directly from the user context, constraints, and moments uncovered earlier.],
-  [Collect ideas on a shared surface and group similar concepts. Look for multiple ways of solving the same underlying problem (cluster them together).],
-  [Only now do you introduce a library of psychological principles and techniques. I developed the persuasive patterns for this exact purpose. The goal of this step is not to replace ideas, but to refine them:],
-  [Which ideas could be strengthened by reducing friction?],
-  [Which might benefit from clearer feedback, social signals, or better timing?],
-  [Are there alternative ways to achieve the same effect more respectfully or more clearly?],
-  [Patterns are used as lenses, not prescriptions. If a pattern does not improve clarity, agency, or usefulness in this context, it is simply ignored.],
-  [Output: A refined set of solution concepts that are grounded in real user context and supported, where appropriate, by behavioral principles rather than driven by them.],
-  [This sequencing helps teams avoid “pattern-first design,” where ideas are reverse-engineered to fit a theory instead of addressing real human situations.],
-  [Exercise 5: Dark Reality],
-  [Before ideas turn into experiments or shipped features, they need one final test. Not for feasibility or metrics, but for ethics .],
-  [Over the years, this step has proven critical. Many persuasive solutions only reveal their downside when you imagine them working too well, or being applied in the wrong hands, or used on the wrong day by the wrong person.],
-  [Goal: Surface ethical risks, unintended consequences, and potential misuse before implementation.],
-  [Steps:],
-  [Take one or two of the strongest ideas from the previous exercise.],
-  [Imagine worst-case scenarios by asking the team to deliberately shift perspective:],
-  [What if a competitor used this against us?],
-  [What if this nudges users when they’re stressed, tired, or vulnerable?],
-  [What happens if this works repeatedly over months, not once?],
-  [Could this create pressure, guilt, or dependence?],
-  [Capture concerns around autonomy, trust, fairness, inclusivity, or long-term well-being.],
-  [For each risk, explore ways to soften or counterbalance the effect:],
-  [Clearer intent or transparency,],
-  [Lower frequency or gentler timing,],
-  [Explicit opt-outs,],
-  [Alternative paths forward.],
-  [Some ideas are reshaped. Some are paused.
-Some survive intact, but now with greater confidence.],
-  [Output: Solutions that have been stress-tested ethically, with known risks acknowledged and mitigated rather than ignored.],
-  [Building A Shared Vocabulary For Product Psychology],
-  [The teams that get the most out of behavioral design rarely have a single “psychology expert.” Instead, their team shares a vocabulary around product psychology and knows how to communicate around customer problem behaviorally.],
-  [A shared vocabulary turns psychology into cross-functional work.],
-  [When patterns and principles are shared:],
-  [Product, design, engineering, and marketing can talk about behavior without talking past each other.],
-  [Discovery insights are easier to interpret because common barriers and drivers have names.],
-  [Ideas can be framed as behavioral hypotheses (“we believe this will increase early competence…”) instead of vague guesses.],
-  [The Persuasive Patterns collection grew from this need: giving teams a common language and a concrete set of examples to point at. Whether used as a printed deck in a workshop or as long-form references during everyday work, the goal is the same: make product psychology something the whole team can see and discuss.],
-  [Persuasive design was often framed as a bag of tricks. Today, the work looks different:],
-  [Game mechanics are used to support intrinsic motivation , not drive vanity engagement.],
-  [Frameworks like COM-B and systems thinking help teams see behavior in context , not as a single trigger.],
-  [Behavioral insight is used to shape discovery and ideation , not just last-minute copy changes.],
-  [Ethics is part of the design brief, not an afterthought.],
-  [The next step is not more sophisticated nudges. It is a more systematic practice: simple methods, shared language, and a habit of asking “What is really going on in our users’ lives here?”],
-  [If you start by focusing on one behavioral problem, use a couple of the exercises in this article, and give your team a shared set of patterns to reference, you are already practicing persuasive design in the way it has evolved over the last ten years: grounded in evidence, respectful of users, and aimed at outcomes that matter on both sides of the screen.],
-),
-  insert-map: (:),
-  inline-pq: pull-quote([A capability issue might need a better interface and better education.], [Anders Toxboe]),
-  inline-pq-idx: 73,
-  word-count: 4952,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-}
-
-{
-  #standard-article(
-  title: [Closures as Win32 window procedures],
-  author: [Chris Wellons (null program)],
-  source-name: [Chris Wellons (null program)],
-  images: (),
-  paragraphs: (
-  [Back in 2017 I wrote about a technique for creating closures in C],
-  [using JIT-compiled wrapper. It’s neat, though rarely necessary in],
-  [real programs, so I don’t think about it often. I applied it to qsort ,],
-  [which sadly accepts no context pointer. More practical would be],
-  [working around insufficient custom allocator interfaces , to],
-  [create allocation functions at run-time bound to a particular allocation],
-  [region. I’ve learned a lot since I last wrote about this subject, and a],
-  [recent article had me thinking about it again, and how I could do],
-  [better than before. In this article I will enhance Win32 window procedure],
-  [callbacks with a fifth argument, allowing us to more directly pass extra],
-  [context. I’m using w64devkit on x64, but the everything here should],
-  [work out-of-the-box with any x64 toolchain that speaks GNU assembly.],
-  [A window procedure has this prototype:],
-  [To create a window we must first register a class with RegisterClass ,
-which accepts a set of properties describing a window class, including a
-pointer to one of these functions.],
-  [RegisterClassA ( & ( WNDCLASSA ){ 
- \/\/ ... 
- . lpfnWndProc = my\_wndproc , 
- . lpszClassName = "my\_class" , 
- \/\/ ... 
- });],
-  [HWND hwnd = CreateWindowExA ( "my\_class" , ..., state );],
-  [The thread drives a message pump with events from the operating system,
-dispatching them to this procedure, which then manipulates the program
-state in response:],
-  [class="highlight"\> for ( MSG msg ; GetMessageW ( & msg , 0 , 0 , 0 );) { 
- TranslateMessage ( & msg ); 
- DispatchMessageW ( & msg ); \/\/ calls the window procedure 
+  [This is Part II of “Exploring Regular Expressions.” If you haven’t already, you may want to read Part I first, where we wrote a compiler that translates formal regular expressions into finite-state recognizers .],
+  [You may also want another look at the essay, A Brutal Look at Balanced Parentheses, Computing Machines, and Pushdown Automata . It covers the concepts behind finite-state machines and the the kinds of “languages” they can and cannot recognize.],
+  [id="table-of-contents"\> Table of Contents],
+  [id="the-essentials-from-part-i"\> The Essentials from Part I],
+  [the shunting yard],
+  [the stack machine],
+  [evaluating arithmetic expressions],
+  [compiling formal regular expressions],
+  [automation and verification],
+  [For Every Regular Expression, There Exists an Equivalent Finite-State Recognizer],
+  [id="beyond-formal-regular-expressions"\> Beyond Formal Regular Expressions],
+  [a hierarchy of regex functionality],
+  [beyond our hierarchy],
+  [implementing quantification operators with transpilation],
+  [implementing the dot operator],
+  [implementing shorthand character classes],
+  [thoughts about custom character classes],
+  [eschewing transpilation],
+  [intersection],
+  [difference],
+  [complement],
+  [What Level Two Features Tell Us, and What They Don’t],
+  [id="for-every-finite-state-recognizer-there-exists-an-equivalent-formal-regular-expression"\> For Every Finite-State Recognizer, There Exists An Equivalent Formal Regular Expression],
+  [the regularExpression function],
+  [the between function],
+  [using the regularExpression function],
+  [a test suite for the regularExpression function],
+  [conclusion],
+  [id="the-essentials-from-part-i-1"\>The Essentials from Part I],
+  [If you’re familiar with formal regular expressions, and are very comfortable with the code we presented in Part I , or just plain impatient, you can skip ahead to Beyond Formal Regular Expressions .],
+  [But for those who want a refresher, we’ll quickly recap regular expressions and the code we have so far.],
+  [id="regular-expressions"\>Regular Expressions],
+  [In Part I , and again in this essay, we will spend a lot of time talking about formal regular expressions . Formal regular expressions are a minimal way to describe “regular” languages, and serve as the building blocks for the regexen we find in most programming languages.],
+  [Formal regular expressions describe languages as sets of sentences. The three basic building blocks for formal regular expressions are the empty set, the empty string, and literal symbols:],
+  [The symbol ∅ describes the language with no sentences, { } , also called “the empty set.”],
+  [The symbol ε describes the language containing only the empty string, { '' } .],
+  [Literals such as x , y , or z describe languages containing single sentences, containing single symbols. e.g. The literal r describes the language { 'r' } .],
+  [What makes formal regular expressions powerful, is that we have operators for alternating, catenating, and quantifying regular expressions. Given that x is a regular expression describing some language X , and y is a regular expression describing some language Y :],
+  [The expression x | y describes the union of the languages X and Y , meaning, the sentence w belongs to x|y if and only if w belongs to the language X , or w belongs to the language Y . We can also say that x | y represents the alternation of x and y .],
+  [The expression xy describes the language XY , where a sentence ab belongs to the language XY if and only if a belongs to the language X , and b belongs to the language Y . We can also say that xy represents the catenation of the expressions x and y .],
+  [The expression x \* describes the language Z , where the sentence ε (the empty string) belongs to Z , and, the sentence pq belongs to Z if and only if p is a sentence belonging to X , and q is a sentence belonging to Z . We can also say that x \* represents a quantification of x .],
+  [Before we add the last rule for regular expressions, let’s clarify these three rules with some examples. Given the constants a , b , and c , resolving to the languages { 'a' } , { 'b' } , and { 'b' } :],
+  [The expression b|c describes the language { 'b', 'c' } , by rule 1.],
+  [The expression ab describes the language { 'ab' } by rule 2.],
+  [The expression a\* describes the language { '', 'a', 'aa', 'aaa', ... } by rule 3.],
+  [Our operations have a precedence, and it is the order of the rules as presented. So:],
+  [The expression a|bc describes the language { 'a', 'bc' } by rules 1 and 2.],
+  [The expression ab\* describes the language { 'a', 'ab', 'abb', 'abbb', ... } by rules 2 and 3.],
+  [The expression b|c\* describes the language { '', 'b', 'c', 'cc', 'ccc', ... } by rules 1 and 3.],
+  [As with the algebraic notation we are familiar with, we can use parentheses:],
+  [Given a regular expression x , the expression ( x ) describes the language described by x .],
+  [This allows us to alter the way the operators are combined. As we have seen, the expression b|c\* describes the language { '', 'b', 'c', 'cc', 'ccc', ... } . But the expression (b|c)\* describes the language { '', 'b', 'c', 'bb', 'cc', 'bbb', 'ccc', ... } .],
+  [It is quite obvious that regexen borrowed a lot of their syntax and semantics from regular expressions. Leaving aside the mechanism of capturing and extracting portions of a match, almost every regular expressions is also a regex. For example, /reggiee\*\/ is a regular expression that matches words like reggie , reggiee , and reggieee anywhere in a string.],
+  [id="our-code-so-far"\>Our Code So Far],
+  [In Part I , we established that for every formal regular expression , there is an equivalent finite-state recognizer , establishing that the set of all languages described by formal regular expressions–that is to say, regular languages –is a subset of the set of all languages recognized by finite-state automata.],
+  [We did this in constructive proof fashion by writing a compiler that takes any formal regular expression as input, and returns a JSON description of an equivalent finite-state recognizer. We also wrote an automator that turns the description of a finite state recognizer into a JavaScript function that takes any string as input and answers whether the string is recognized.],
+  [Thus, we can take any formal regular expression and get a function that recognizes strings in the language described by the formal regular expression. And because the implementation is a finite-state automaton, we know that it can recognize strings in at most linear time, which can be an improvement over some regex implementations for certain regular expressions.],
+  [We’re going to revisit the final version of most of our functions.],
+  [id="the-shunting-yard"\>the shunting yard],
+  [Our pipeline of tools starts with a shunting yard function that takes a regular expression in infix notation, and translates it into reverse-polish representation . It also takes a definition dictionary that configures the shunting yard by defining operators, a default operator to handle catenation, and some details on how to handle escaping symbols like parentheses that would otherwise be treated as operators.],
+  [It is hard-wired to treat ( and ) as parentheses for controlling the order of evaluation.],
+  [function peek ( stack ) { 
+ return stack \[ stack . length - 1 \]; 
  }],
-  [Global variables. Yucky but easy. Frequently seen in tutorials.],
-  [A GWLP\_USERDATA pointer attached to the window.],
-  [The second option takes some setup. Win32 passes the last CreateWindowEx 
-argument to the window procedure when the window created, via WM\_CREATE .
-The procedure attaches the pointer to its window as GWLP\_USERDATA . This
-pointer is passed indirectly, through a CREATESTRUCT . So ultimately it
-looks like this:],
-  [class="highlight"\> case WM\_CREATE : 
- CREATESTRUCT \* cs = ( CREATESTRUCT \* ) lParam ; 
- void \* arg = ( struct state \* ) cs -\> lpCreateParams ; 
- SetWindowLongPtr ( hwnd , GWLP\_USERDATA , ( LONG\_PTR ) arg ); 
- \/\/ ...],
-  [In future messages we can retrieve it with GetWindowLongPtr . Every time
-I go through this I wish there was a better way. What if there was a fifth
-window procedure parameter though which we could pass a context?],
-  [We’ll build just this as a trampoline. The x64 calling convention 
-passes the first four arguments in registers, and the rest are pushed on
-the stack, including this new parameter. Our trampoline cannot just stuff
-the extra parameter in the register, but will actually have to build a
-stack frame. Slightly more complicated, but barely so.],
-  [id="allocating-executable-memory"\>Allocating executable memory],
-  [In previous articles, and in the programs where I’ve applied techniques
-like this, I’ve allocated executable memory with VirtualAlloc (or mmap 
-elsewhere). This introduces a small challenge for solving the problem
-generally: Allocations may be arbitrarily far from our code and data, out
-of reach of relative addressing. If they’re further than 2G apart, we need
-to encode absolute addresses, and in the simple case would just assume
-they’re always too far apart.],
-  [These days I’ve more experience with executable formats, and allocation,
-and I immediately see a better solution: Request a block of writable,
-executable memory from the loader, then allocate our trampolines from it.
-Other than being executable, this memory isn’t special, and allocation
-works the usual way , using functions unaware it’s executable. By
-allocating through the loader, this memory will be part of our loaded
-image, guaranteed to be close to our other code and data, allowing our JIT
-compiler to assume a small code model .],
-  [There are a number of ways to do this, and here’s one way to do it with
-GNU-styled toolchains targeting COFF:],
-  [Arena get\_exebuf () 
+  [function shuntingYard ( 
+ infixExpression , 
  { 
- extern char exebuf [ 1],
-  [Str clone ( Arena \* a , Str s ) 
- { 
- Str r = s ; 
- r . data = new ( a , r . len , char ); 
- memcpy ( r . data , s . data , ( size\_t ) r . len ); 
- return r ; 
- }],
-  [Which have been discussed at length in previous articles.],
-  [id="trampoline-compiler"\>Trampoline compiler],
-  [From here the plan is to create a function that accepts a Wndproc5 and a
-context pointer to bind, and returns a classic WNDPROC :],
-  [Our window procedure now gets a fifth argument with the program state:],
-  [When registering the class we wrap it in a trampoline compatible with
- RegisterClass :],
-  [All windows using this class will readily have access to this state object
-through their fifth parameter. It turns out setting up exebuf was the
-more complicated part, and make\_wndproc is quite simple!],
-  [class="highlight"\> WNDPROC make\_wndproc ( Arena \* a , Wndproc5 proc , void \* arg ) 
- { 
- Str thunk = S ( 
- " \\x48\\x83\\xec\\x28 " \/\/ sub \$40, %rsp 
- " \\x48\\xb8 ........" \/\/ movq \$arg, %rax 
- " \\x48\\x89\\x44\\x24\\x20 " \/\/ mov %rax, 32(%rsp) 
- " \\xe8 ...." \/\/ call proc 
- " \\x48\\x83\\xc4\\x28 " \/\/ add \$40, %rsp 
- " \\xc3 " \/\/ ret 
- ); 
- Str r = clone ( a , thunk ); 
- int rel = ( int )(( uintptr\_t ) proc - ( uintptr\_t )( r . data + 24 )); 
- memcpy ( r . data + 6 , & arg , sizeof ( arg )); 
- memcpy ( r . data + 20 , & rel , sizeof ( rel )); 
- return ( WNDPROC ) r . data ; 
- }],
-  [The assembly allocates a new stack frame, with callee shadow space, and
-with room for the new argument, which also happens to re-align the stack.
-It stores the new argument for the Wndproc5 just above the shadow space.
-Then calls into the Wndproc5 without touching other parameters. There
-are two “patches” to fill out, which I’ve initially filled with dots: the
-context pointer itself, and a 32-bit signed relative address for the call.
-It’s going to be very near the callee. The only thing I don’t like about
-this function is that I’ve manually worked out the patch offsets.],
-  [It’s probably not useful, but it’s easy to update the context pointer at
-any time if hold onto the trampoline pointer:],
-  [So, for instance:],
-  [class="highlight"\> MyState \* state [ 2 ] = ...; \/\/ multiple states 
- WNDPROC proc = make\_wndproc ( a , my\_wndproc , state [ 0 ]); 
- \/\/ ... 
- set\_wndproc\_arg ( proc , state [ 1 ]); \/\/ switch states],
-  [Though I expect the most common case is just creating multiple procedures:],
-  [To my slight surprise these trampolines still work with an active Control
-Flow Guard system policy. Trampolines do not have stack unwind
-entries, and I thought Windows might refuse to pass control to them.],
-  [Here’s a complete, runnable example if you’d like to try it yourself:
- main.c and exebuf.s],
-  [id="better-cases"\>Better cases],
-  [This is more work than going through GWLP\_USERDATA , and real programs
-have a small, fixed number of window procedures — typically one — so this
-isn’t the best example, but I wanted to illustrate with a real interface.
-Again, perhaps the best real use is a library with a weak custom allocator
-interface:],
-  [void \* arena\_malloc ( size\_t , Arena \* );],
-  [\/\/ ...],
-  [Allocator perm\_allocator = { 
- . malloc = make\_trampoline ( exearena , arena\_malloc , perm ); 
- . free = noop\_free , 
+ operators , 
+ defaultOperator , 
+ escapeSymbol = ' \` ' , 
+ escapedValue = string =\> string 
+ } 
+ ) { 
+ const operatorsMap = new Map ( 
+ Object . entries ( operators ) 
+ );],
+  [const representationOf = 
+ something =\> { 
+ if ( operatorsMap . has ( something )) { 
+ const { symbol } = operatorsMap . get ( something );],
+  [return symbol ; 
+ } else if ( typeof something === ' string ' ) { 
+ return something ; 
+ } else { 
+ error ( \` \${ something } is not a value\` ); 
+ } 
  }; 
- Allocator scratch\_allocator = { 
- . malloc = make\_trampoline ( exearena , arena\_malloc , scratch ); 
- . free = noop\_free , 
+ const typeOf = 
+ symbol =\> operatorsMap . has ( symbol ) ? operatorsMap . get ( symbol ). type : ' value ' ; 
+ const isInfix = 
+ symbol =\> typeOf ( symbol ) === ' infix ' ; 
+ const isPrefix = 
+ symbol =\> typeOf ( symbol ) === ' prefix ' ; 
+ const isPostfix = 
+ symbol =\> typeOf ( symbol ) === ' postfix ' ; 
+ const isCombinator = 
+ symbol =\> isInfix ( symbol ) || isPrefix ( symbol ) || isPostfix ( symbol ); 
+ const awaitsValue = 
+ symbol =\> isInfix ( symbol ) || isPrefix ( symbol );],
+  [const input = infixExpression . split ( '' ); 
+ const operatorStack = \[\]; 
+ const reversePolishRepresentation = \[\]; 
+ let awaitingValue = true ;],
+  [while ( input . length \> 0 ) { 
+ const symbol = input . shift ();],
+  [if ( symbol === escapeSymbol ) { 
+ if ( input . length === 0 ) { 
+ error ( ' Escape symbol \${escapeSymbol} has no following symbol ' ); 
+ } else { 
+ const valueSymbol = input . shift ();],
+  [if ( awaitingValue ) { 
+ \/\\/ push the escaped value of the symbol],
+  [reversePolishRepresentation . push ( escapedValue ( valueSymbol )); 
+ } else { 
+ \/\\/ value catenation],
+  [input . unshift ( valueSymbol ); 
+ input . unshift ( escapeSymbol ); 
+ input . unshift ( defaultOperator ); 
+ } 
+ awaitingValue = false ; 
+ } 
+ } else if ( symbol === ' ( ' && awaitingValue ) { 
+ \/\\/ opening parenthesis case, going to build 
+ \/\\/ a value 
+ operatorStack . push ( symbol ); 
+ awaitingValue = true ; 
+ } else if ( symbol === ' ( ' ) { 
+ \/\\/ value catenation],
+  [input . unshift ( symbol ); 
+ input . unshift ( defaultOperator ); 
+ awaitingValue = false ; 
+ } else if ( symbol === ' ) ' ) { 
+ \/\\/ closing parenthesis case, clear the 
+ \/\\/ operator stack],
+  [while ( operatorStack . length \> 0 && peek ( operatorStack ) !== ' ( ' ) { 
+ const op = operatorStack . pop ();],
+  [reversePolishRepresentation . push ( representationOf ( op )); 
+ }],
+  [if ( peek ( operatorStack ) === ' ( ' ) { 
+ operatorStack . pop (); 
+ awaitingValue = false ; 
+ } else { 
+ error ( ' Unbalanced parentheses ' ); 
+ } 
+ } else if ( isPrefix ( symbol )) { 
+ if ( awaitingValue ) { 
+ const { precedence } = operatorsMap . get ( symbol );],
+  [\/\\/ pop higher-precedence operators off the operator stack 
+ while ( isCombinator ( symbol ) && operatorStack . length \> 0 && peek ( operatorStack ) !== ' ( ' ) { 
+ const opPrecedence = operatorsMap . get ( peek ( operatorStack )). precedence ;],
+  [if ( precedence 0 && peek ( operatorStack ) !== ' ( ' ) { 
+ const opPrecedence = operatorsMap . get ( peek ( operatorStack )). precedence ;],
+  [if ( precedence 0 ) { 
+ const op = operatorStack . pop ();],
+  [if ( operatorsMap . has ( op )) { 
+ const { symbol : opSymbol } = operatorsMap . get ( op ); 
+ reversePolishRepresentation . push ( opSymbol ); 
+ } else { 
+ error ( \`Don't know how to push operator \${ op } \` ); 
+ } 
+ }],
+  [return reversePolishRepresentation ; 
+ }],
+  [id="the-stack-machine"\>the stack machine],
+  [We then use a stack machine to evaluate the reverse-polish representation. It uses the same definition dictionary to evaluate the effect of operators.],
+  [class="highlight"\> function stateMachine ( representationList , { 
+ operators , 
+ toValue 
+ }) { 
+ const functions = new Map ( 
+ Object . entries ( operators ). map ( 
+ (\[ key , { symbol , fn }\]) =\> \[ symbol , fn \] 
+ ) 
+ );],
+  [const stack = \[\];],
+  [for ( const element of representationList ) { 
+ if ( typeof element === ' string ' ) { 
+ stack . push ( toValue ( element )); 
+ } else if ( functions . has ( element )) { 
+ const fn = functions . get ( element ); 
+ const arity = fn . length ;],
+  [if ( stack . length 1 ) { 
+ error ( \`should only be one value to return, but there were \${ stack . length } values on the stack\` ); 
+ } else { 
+ return stack \[ 0 \]; 
+ } 
+ }],
+  [id="evaluating-arithmetic-expressions"\>evaluating arithmetic expressions],
+  [To evaluate an infix expression, the expression and definition dictionary are fed to the shunting yard, and then the resulting reverse-polish representation and definition dictionary are fed to the stack machine. For convenience, we have an evaluation function to do that:],
+  [The evaluate function takes a definition dictionary as an argument, and passes it to both the shunting yard and the state machine. If we pass in one kind of definition, we have a primitive evaluator for arithmetic expressions:],
+  [class="highlight"\> const arithmetic = { 
+ operators : { 
+ ' + ' : { 
+ symbol : Symbol ( ' + ' ), 
+ type : ' infix ' , 
+ precedence : 1 , 
+ fn : ( a , b ) =\> a + b 
+ }, 
+ ' - ' : { 
+ symbol : Symbol ( ' - ' ), 
+ type : ' infix ' , 
+ precedence : 1 , 
+ fn : ( a , b ) =\> a - b 
+ }, 
+ ' \* ' : { 
+ symbol : Symbol ( ' \* ' ), 
+ type : ' infix ' , 
+ precedence : 3 , 
+ fn : ( a , b ) =\> a \* b 
+ }, 
+ ' \/ ' : { 
+ symbol : Symbol ( ' \/ ' ), 
+ type : ' infix ' , 
+ precedence : 2 , 
+ fn : ( a , b ) =\> a \/ b 
+ }, 
+ ' ! ' : { 
+ symbol : Symbol ( ' ! ' ), 
+ type : ' postfix ' , 
+ precedence : 4 , 
+ fn : function factorial ( a , memo = 1 ) { 
+ if ( a + n 
  };],
-  [Something to keep in my back pocket for the future.],
+  [evaluate ( ' (1+2)3! ' , arithmetic ) 
+ \/\/=\> 18],
+  [The code for both the shunting yard and stack machine have been extracted into a Github repository .],
+  [id="compiling-formal-regular-expressions"\>compiling formal regular expressions],
+  [With a different definition dictionary, we can compile formal regular expressions to a finite-state recognizer description:],
+  [class="highlight"\> const formalRegularExpressions = { 
+ operators : { 
+ ' ∅ ' : { 
+ symbol : Symbol ( ' ∅ ' ), 
+ type : ' atomic ' , 
+ fn : emptySet 
+ }, 
+ ' ε ' : { 
+ symbol : Symbol ( ' ε ' ), 
+ type : ' atomic ' , 
+ fn : emptyString 
+ }, 
+ ' | ' : { 
+ symbol : Symbol ( ' | ' ), 
+ type : ' infix ' , 
+ precedence : 10 , 
+ fn : union2merged 
+ }, 
+ ' → ' : { 
+ symbol : Symbol ( ' → ' ), 
+ type : ' infix ' , 
+ precedence : 20 , 
+ fn : catenation2 
+ }, 
+ ' \* ' : { 
+ symbol : Symbol ( ' \* ' ), 
+ type : ' postfix ' , 
+ precedence : 30 , 
+ fn : zeroOrMore 
+ } 
+ }, 
+ defaultOperator : ' → ' , 
+ toValue ( string ) { 
+ return literal ( string ); 
+ } 
+ };],
+  [We will not reproduce all of the code needed to implement emptySet , emptyString , union2merged , catenation2 , and zeroOrMore here in the text, but the full implementations can be found here .],
+  [Here it is working:],
+  [class="highlight"\> evaluate ( ' 0|1(0|1)\* ' , formalRegularExpressions ); 
+ \/\/=\> 
+ { 
+ " start " : " G37 " , 
+ " transitions " : \[ 
+ { " from " : " G37 " , " consume " : " 0 " , " to " : " G23 " }, 
+ { " from " : " G37 " , " consume " : " 1 " , " to " : " G25 " }, 
+ { " from " : " G25 " , " consume " : " 0 " , " to " : " G25 " }, 
+ { " from " : " G25 " , " consume " : " 1 " , " to " : " G25 " } 
+ \], 
+ " accepting " : \[ " G23 " , " G25 " \] 
+ }],
+  [This is a description in JSON, of this finite-state recognizer:],
+  [It recognizes the language consisting of the set of all binary numbers.],
+  [id="automation-and-verification"\>automation and verification],
+  [We don’t rely strictly on inspection to have confidence that the finite-state recognizers created by evaluate recognize the languages described by regular expressions. We use two tools.],
+  [First, we have an automate function that takes a JSON description of a finite-state recognizer as an argument, and returns a JavaScript recognizer function . The recognizer function takes a string as an argument, and returns true if the string belongs to the language recognized by that finite-state recognizer, and false if it doesn’t.],
+  [This is the core automate function:],
+  [class="highlight"\> function automate ( description ) { 
+ if ( description instanceof RegExp ) { 
+ return string =\> !! description . exec ( string ) 
+ } else { 
+ const { 
+ stateMap , 
+ start , 
+ acceptingSet , 
+ transitions 
+ } = validatedAndProcessed ( description );],
+  [return function ( input ) { 
+ let state = start ;],
+  [for ( const symbol of input ) { 
+ const transitionsForThisState = stateMap . get ( state ) || \[\]; 
+ const transition = 
+ transitionsForThisState . find ( 
+ ({ consume }) =\> consume === symbol 
+ );],
+  [if ( transition == null ) { 
+ return false ; 
+ }],
+  [state = transition . to ; 
+ }],
+  [\/\\/ reached the end. do we accept? 
+ return acceptingSet . has ( state ); 
+ } 
+ } 
+ }],
+  [automate interprets the finite-state recognizers as it goes, and could be faster. But for the purposes of running test cases, it is sufficient for our needs. Its supporting functions can be found here .],
+  [Speaking of running tests, we use a general-purpose verify function that works for any function, and for convenience, a verifyEvaluate function that uses evaluate and automate to convert any expression into a recognizer function first:],
+  [if ( obj1 === obj2 ) \/\\/ it's just the same object. No need to compare. 
+ return true ;],
+  [if ( isPrimitive ( obj1 ) && isPrimitive ( obj2 )) \/\\/ compare primitives 
+ return obj1 === obj2 ;],
+  [if ( Object . keys ( obj1 ). length !== Object . keys ( obj2 ). length ) 
+ return false ;],
+  [\/\\/ compare objects with same number of keys 
+ for ( let key in obj1 ) { 
+ if ( ! ( key in obj2 )) return false ; \/\/other object doesn't have this prop 
+ if ( ! deepEqual ( obj1 \[ key \], obj2 \[ key \])) return false ; 
+ }],
+  [return true ; 
+ }],
+  [const pp = value =\> value instanceof Array ? value . map ( x =\> x . toString ()) : value ;],
+  [function verify ( fn , tests , ... additionalArgs ) { 
+ try { 
+ const testList = 
+ typeof tests . entries === ' function ' 
+ ? \[... tests . entries ()\] 
+ : Object . entries ( tests ); 
+ const numberOfTests = testList . length ;],
+  [const outcomes = testList . map ( 
+ (\[ example , expected \]) =\> { 
+ const actual = fn ( example , ... additionalArgs );],
+  [if ( deepEqual ( actual , expected )) { 
+ return ' pass ' ; 
+ } else { 
+ return \`fail: \${ JSON . stringify ({ example , expected : pp ( expected ), actual : pp ( actual ) })} \` ; 
+ } 
+ } 
+ )],
+  [const failures = outcomes . filter ( result =\> result !== ' pass ' ); 
+ const numberOfFailures = failures . length ; 
+ const numberOfPasses = numberOfTests - numberOfFailures ;],
+  [if ( numberOfFailures === 0 ) { 
+ console . log ( \`All \${ numberOfPasses } tests passing\` ); 
+ } else { 
+ console . log ( \` \${ numberOfFailures } tests failing: \${ failures . join ( ' ; ' )} \` ); 
+ } 
+ } catch ( error ) { 
+ console . log ( \`Failed to validate: \${ error } \` ) 
+ } 
+ }],
+  [function verifyEvaluate ( expression , definition , examples ) { 
+ return verify ( 
+ automate ( evaluate ( expression , definition )), 
+ examples 
+ ); 
+ }],
+  [We can put it all together and verify our “binary numbers” expression:],
+  [class="highlight"\> verifyEvaluate ( ' 0|1(0|1)\* ' , formalRegularExpressions , { 
+ '' : false , 
+ ' an odd number of characters ' : false , 
+ ' an even number of characters ' : false , 
+ ' 0 ' : true , 
+ ' 10 ' : true , 
+ ' 101 ' : true , 
+ ' 1010 ' : true , 
+ ' 10101 ' : true 
+ });],
+  [id="for-every-regular-expression-there-exists-an-equivalent-finite-state-recognizer"\>For Every Regular Expression, There Exists an Equivalent Finite-State Recognizer],
+  [Armed with the code that compiles a formal regular expression to an equivalent finite-state recognizer, we have a constructive demonstration of the fact that for every regular expression, there exists an equivalent finite-state recognizer.],
+  [If someone were to hand us a formal regular expression and claim that there is no equivalent finite-state recognizer for that expression, we would feed the expression into our evaluate function, it would return an equivalent finite-state recognizer, and would thus invalidate their alleged counter-example.],
+  [Another way to put this is to state that the set of all languages described by formal regular expressions is a subset of the set of all languages recognized by finite-state recognizers. In the essay, we will establish, amongst other things, that the set of all languages described by formal regular expressions is equal to the set of all languages recognized by finite-state recognizers.],
+  [In other words, we will also show that for every finite-state recognizer, there exists an equivalent formal regular expression. We’ll begin by looking at some ways to extend formal regular expressions, while still being equivalent to finite-state recognizers.],
+  [id="beyond-formal-regular-expressions-1"\>Beyond Formal Regular Expressions],
+  [Formal regular expressions are–deliberately–as minimal as possible. There are only three kinds of literals ( ∅ , ε , and literal symbols), and three operations (alternation with | , catenation, and quantification with \* ). Minimalism is extremely important from a computer science perspective, but unwieldy when trying to “Get Stuff Done.”],
+  [Thus, all regexen provide functionality above and beyond formal regular expressions.],
+  [id="a-hierarchy-of-regex-functionality"\>a hierarchy of regex functionality],
+  [Functionality in regexen can be organized into a rough hierarchy. Level Zero of the hierarchy is functionality provided by formal regular expressions. Everything we’ve written in Part I is at this base level.],
+  [Level One of the hierarchy is functionality that can be directly implemented in terms of formal regular expressions. For example, regexen provide a ? postfix operator that provides “zero or one” quantification, and a + postfix operator that provides “one or more” quantification.],
+  [As we know from our implementation of the kleene star, “zero or one” can be implemented in a formal regular expression very easily. If a is a regular expression, ε|a is a regular expression that matches zero or one sentences that a accepts. So intuitively, a regex flavour that supports the expression a? doesn’t do anything we couldn’t have done by hand with ε|a],
+  [The same reasoning goes for + : If we have the kleene star (which ironically we implemented on top of one-or-more), we can always express “one or more” using catenation and the kleene star. If a is a regular expression, aa\* is a regular expression that matches one or more sentences that a accepts. Again, a regex flavour supports the expression a+ doesn’t do anything we couldn’t have done by hand with aa\* .],
+  [Level Two of the hierarchy is functionality that cannot be directly implemented in terms of formal regular expressions, however it still compiles to finite-state recognizers. As we mentioned in the prelude, and will show later, for every finite-state recognizer, there is an equivalent formal regular expression.],
+  [So if a particular piece of functionality can be implemented as a finite-state recognizer, then it certainly can be implemented in terms of a formal regular expression, however compiling an expression to a finite-state machine and then deriving an equivalent formal regular expression is “going the long way ‘round,” and thus we classify such functionality as being directly implemented as a finite-state recognizer, and only indirectly implemented in terms of formal regular expressions.],
+  [Examples of Level Two functionality include complementation (if a is a regular expression, ¬a is an expression matching any sentence that a does not match), and intersection (if a and b are regular expressions, a∩b is an expression matching any sentence that both a and b match).],
+  [id="beyond-our-hierarchy"\>beyond our hierarchy],
+  [There are higher levels of functionality, however they involve functionality that cannot be implemented with finite-state recognizers.],
+  [The Chomsky–Schützenberger hierarchy categorizes grammars from Type-3 to Type-0. Type-3 grammars define regular languages. They can be expressed with formal regular expressions and recognized with finite-state recognizers. Our Level Zero, Level One, and Level Two functionalities do not provide any additional power to recognize Type-2, Type-1, or Type-0 grammars.],
+  [As we recall from A Brutal Look at Balanced Parentheses, Computing Machines, and Pushdown Automata , languages like “balanced parentheses” are a Type-2 grammar, and cannot be recognized by a finite-state automata. Thus, features that some regexen provide like recursive regular expressions are beyond our levels.],
+  [In addition to features that enable regexen to recognize languages beyond the capabilities of finite-state recognizers, regexen also provide plenty of features for extracting match or partial match data, like capture groups. This functionality is also outside of our levels, as we are strictly concerned with recognizing sentences.],
+  [id="implementing-level-one-features"\>Implementing Level One Features],
+  [As mentioned, the ? and + operators from regexen can be implemented as “Level One” functionality. a? can be expressed as ε|a , and a+ can be expressed as aa\* .],
+  [The easiest way to implement these new operators is to write new operator functions. Let’s begin by extending our existing operators:],
+  [const map = new Map ( 
+ \[... allStates \]. map ( 
+ old =\> \[ old , names (). next (). value \] 
+ ) 
+ );],
+  [const start = map . get ( oldStart ); 
+ const transitions = 
+ oldTransitions . map ( 
+ ({ from , consume , to }) =\> ({ from : map . get ( from ), consume , to : map . get ( to ) }) 
+ ); 
+ const accepting = 
+ oldAccepting . map ( 
+ state =\> map . get ( state ) 
+ )],
+  [return { start , transitions , accepting }; 
+ }],
+  [const extended = { 
+ operators : {],
+  [\/\\/ ...existing operators...],
+  [' ? ' : { 
+ symbol : Symbol ( ' ? ' ), 
+ type : ' postfix ' , 
+ precedence : 30 , 
+ fn : a =\> union2merged ( emptyString (), a ) 
+ }, 
+ ' + ' : { 
+ symbol : Symbol ( ' + ' ), 
+ type : ' postfix ' , 
+ precedence : 30 , 
+ fn : a =\> catenation2 ( a , zeroOrMore ( dup ( a ))) 
+ } 
+ }, 
+ defaultOperator : ' → ' , 
+ toValue ( string ) { 
+ return literal ( string ); 
+ } 
+ };],
+  [verifyEvaluate ( ' (R|r)eg(gie(e+!)?)? ' , extended , { 
+ '' : false , 
+ ' r ' : false , 
+ ' reg ' : true , 
+ ' Reg ' : true , 
+ ' Regg ' : false , 
+ ' Reggie ' : true , 
+ ' Reggieeeeeee! ' : true 
+ }); 
+ \/\/=\> All 7 tests passing],
+  [This is fine. It’s only drawback is that our faith that we are not doing anything a regular expression couldn’t do is based on carefully inspecting the functions we wrote ( a =\> union2merged(emptyString(), a) and catenation2(a, zeroOrMore(dup(a))) ) to ensure that we are replicating functionality that is baked into formal regular expressions. 1],
+  [But that isn’t in the spirit of our work so far. What we are claiming is that for every regex containing the formal regular expression grammar plus the quantification operators ? and + , there is an equivalent formal regular expression containing only the formal regular expression grammar.],
+  [Instead of appealing to intuition, instead of asking people to believe that union2merged(emptyString(), a) is equivalent to ε|a , what we ought to do is directly translate expressions containing ? and/or + into formal regular expressions.],
+  [id="implementing-quantification-operators-with-transpilation"\>implementing quantification operators with transpilation],
+  [We demonstrated that there is a finite-state recognizer for every formal regular expression by writing a function to compile formal regular expressions into finite-state recognizers. We will take the same approach of demonstrating that there is a Level Zero (a/k/a “formal”) regular expression for every Level One (a/k/a extended) regular expression:],
+  [We’ll write a function to compile Level One to Level Zero regular expressions. And we’ll begin with our evaluator.],
+  [Recall that our basic evaluator can compile an infix expression into a postfix list of symbols, which it then evaluates. But it knows nothing about what its operators do. If we supply operators that perform arithmetic, we have a calculator. If we supply operators that create and combine finite-state recognizers, we have a regular-expression to finite-state recognizer compiler.],
+  [We can build a transpiler exactly the same way: Use our evaluator, but supply a different set of operator definitions. We’ll start by creating a transpiler that transpiles formal regular expressions to formal regular expressions. The way it will work is by assembling an expression in text instead of assembling a finite-state recognizer.],
+  [Here’s the first crack at it:],
+  [class="highlight"\> function p ( expr ) { 
+ if ( expr . length === 1 ) { 
+ return expr ; 
+ } else if ( expr \[ 0 \] === ' \` ' ) { 
+ return expr ; 
+ } else if ( expr \[ 0 \] === ' ( ' && expr \[ expr . length - 1 \] === ' ) ' ) { 
+ return expr ; 
+ } else { 
+ return \`( \${ expr } )\` ; 
+ } 
+ };],
+  [const toValueExpr = string =\> { 
+ if ( ' ∅ε|→\*() ' . indexOf ( string ) \>= 0 ) { 
+ return ' \` ' + string ; 
+ } else { 
+ return string ; 
+ } 
+ };],
+  [const transpile0to0 = { 
+ operators : { 
+ ' ∅ ' : { 
+ symbol : Symbol ( ' ∅ ' ), 
+ type : ' atomic ' , 
+ fn : () =\> ' ∅ ' 
+ }, 
+ ' ε ' : { 
+ symbol : Symbol ( ' ε ' ), 
+ type : ' atomic ' , 
+ fn : () =\> ' ε ' 
+ }, 
+ ' | ' : { 
+ symbol : Symbol ( ' | ' ), 
+ type : ' infix ' , 
+ precedence : 10 , 
+ fn : ( a , b ) =\> \` \${ p ( a )} | \${ p ( b )} \` 
+ }, 
+ ' → ' : { 
+ symbol : Symbol ( ' → ' ), 
+ type : ' infix ' , 
+ precedence : 20 , 
+ fn : ( a , b ) =\> \` \${ p ( a )} → \${ p ( b )} \` 
+ }, 
+ ' \* ' : { 
+ symbol : Symbol ( ' \* ' ), 
+ type : ' postfix ' , 
+ precedence : 30 , 
+ fn : a =\> \` \${ p ( a )} \*\` 
+ } 
+ }, 
+ defaultOperator : ' → ' , 
+ toValue : toValueExpr 
+ };],
+  [const before = ' (R|r)eg(ε|gie(ε|ee\*!)) ' ;],
+  [verifyEvaluate ( before , formalRegularExpressions , { 
+ '' : false , 
+ ' r ' : false , 
+ ' reg ' : true , 
+ ' Reg ' : true , 
+ ' Regg ' : false , 
+ ' Reggie ' : true , 
+ ' Reggieeeeeee! ' : true 
+ }); 
+ \/\/=\> All 7 tests passing],
+  [const after = evaluate ( before , transpile0to0 );],
+  [verifyEvaluate ( after , formalRegularExpressions , { 
+ '' : false , 
+ ' r ' : false , 
+ ' reg ' : true , 
+ ' Reg ' : true , 
+ ' Regg ' : false , 
+ ' Reggie ' : true , 
+ ' Reggieeeeeee! ' : true 
+ }); 
+ \/\/=\> All 7 tests passing],
+  [The result has an excess of parentheses, and does not take advantage of catenation being the default, but it works just fine.],
+  [Extending it is now trivial:],
+  [\/\\/ ...as above...],
+  [' ? ' : { 
+ symbol : Symbol ( ' ? ' ), 
+ type : ' postfix ' , 
+ precedence : 30 , 
+ fn : a =\> \`ε| \${ p ( a )} \` 
+ }, 
+ ' + ' : { 
+ symbol : Symbol ( ' + ' ), 
+ type : ' postfix ' , 
+ precedence : 30 , 
+ fn : a =\> \` \${ p ( a )}\${ p ( a )} \*\` 
+ } 
+ },],
+  [\/\\/ ... 
+ };],
+  [const beforeLevel1 = ' (R|r)eg(gie(e+!)?)? ' ; 
+ const afterLevel1 = evaluate ( beforeLevel1 , transpile1to0q ); 
+ \/\/=\> '(R|r)→(e→(g→(ε|(g→(i→(e→(ε|((ee\*)→!))))))))'],
+  [verifyEvaluate ( afterLevel1 , formalRegularExpressions , { 
+ '' : false , 
+ ' r ' : false , 
+ ' reg ' : true , 
+ ' Reg ' : true , 
+ ' Regg ' : false , 
+ ' Reggie ' : true , 
+ ' Reggieeeeeee! ' : true 
+ }); 
+ \/\/=\> All 7 tests passing],
+  [Note that the postfix operators ? and + are associated with functions that create formal regular expressions, rather than functions that manipulate finite-state recognizers.],
+  [id="implementing-the-dot-operator"\>implementing the dot operator],
+  [Regexen provide a convenient shorthand– . –for an expression matching any one symbol. This is often used in conjunction with quantification, so .? is an expression matching zero or one symbols, .+ is an expression matching one or more symbols, and .\* is an expression matching zero or more symbols.],
+  [Implementing . is straightforward. All regular languages are associated with some kind of total alphabet representing all of the possible symbols in the language. Regexen have the idea of a total alphabet as well, but it’s usually implied to be whatever the underlying platform supports as characters.],
+  [For our code, we need to make it explicit, for example:],
+  [class="highlight"\> const ALPHA = 
+ ' abcdefghijklmnopqrstuvwxyz ' + 
+ ' ABCDEFGHIJKLMNOPQRSTUVWXYZ ' ; 
+ const DIGITS = ' 1234567890 ' ; 
+ const PUNCTUATION = 
+ \`~!\@\#\$%^&\*()\_+=- \\\` -={}|\[\]\\\\:";'\<\>?,./\` ; 
+ const WHITESPACE = ' \\t\\r\\n ' ;],
+  [const TOTAL\_ALPHABET = ALPHA + DIGITS + PUNCTUATION + WHITESPACE ;],
+  [What does the . represent? Any one of the characters in TOTAL\_ALPHABET . We can implement that with alternation, like this:],
+  [{ 
+ operators : {],
+  [\/\\/ ...as above...],
+  [' . ' : { 
+ symbol : Symbol ( ' . ' ), 
+ type : ' atomic ' , 
+ fn : () =\> dotExpr 
+ } 
+ },],
+  [\/\\/ ... 
+ };],
+  [There are, of course, more compact (and faster) ways to implement this if we were writing a regular expression engine from the ground up, but since the computer is doing all the work for us, let’s carry on.],
+  [id="implementing-shorthand-character-classes"\>implementing shorthand character classes],
+  [In addition to convenient operators like ? and + , regexen also shorthand character classes–such as \\d , \\w , and \`\\s–to make regexen easy to write and read.],
+  [In regexen, instead of associating shorthand character classes with their own symbols, the regexen syntax overloads the escape character \\ so that it usually means “Match this character as a character, ignoring any special meaning,” but sometimes–as with \\d , \\w , and with \\s –it means “match this shorthand character class.”],
+  [Fortunately, we left a back-door in our shunting yard function just for the purpose of overloading the escape character’s behaviour. Here’s the full definition:],
+  [const digitsExpression = 
+ DIGITS . split ( '' ). join ( ' | ' ); 
+ const wordExpression = 
+ ( ALPHA + DIGITS + UNDERSCORE ). split ( '' ). join ( ' | ' ); 
+ const whitespaceExpression = 
+ WHITESPACE . split ( '' ). join ( ' | ' );],
+  [const digitsSymbol = Symbol ( ' \`d ' ); 
+ const wordSymbol = Symbol ( ' \`w ' ); 
+ const whitespaceSymbol = Symbol ( ' \`s ' );],
+  [const transpile1to0qs = {],
+  [operators : {],
+  [' ∅ ' : {],
+  [symbol : Symbol ( ' ∅ ' ),],
+  [type : ' atomic ' ,],
+  [fn : () =\> ' ∅ '],
+  [},],
+  [' ε ' : {],
+  [symbol : Symbol ( ' ε ' ),],
+  [type : ' atomic ' ,],
+  [fn : () =\> ' ε '],
+  [},],
+  [' | ' : {],
+  [symbol : Symbol ( ' | ' ),],
+  [type : ' infix ' ,],
+  [precedence : 10 ,],
+  [fn : ( a , b ) =\> \` \${ p ( a )} | \${ p ( b )} \`],
+  [},],
+  [' → ' : {],
+  [symbol : Symbol ( ' → ' ),],
+  [type : ' infix ' ,],
+  [precedence : 20 ,],
+  [fn : ( a , b ) =\> \` \${ p ( a )} → \${ p ( b )} \`],
+  [},],
+  [' \* ' : {],
+  [symbol : Symbol ( ' \* ' ),],
+  [type : ' postfix ' ,],
+  [precedence : 30 ,],
+  [fn : a =\> \` \${ p ( a )} \*\`],
+  [},],
+  [' ? ' : {],
+  [symbol : Symbol ( ' ? ' ),],
+  [type : ' postfix ' ,],
+  [precedence : 30 ,],
+  [fn : a =\> \`ε| \${ p ( a )} \`],
+  [},],
+  [' + ' : {],
+  [symbol : Symbol ( ' + ' ),],
+  [type : ' postfix ' ,],
+  [precedence : 30 ,],
+  [fn : a =\> \` \${ p ( a )}\${ p ( a )} \*\`],
+  [},],
+  [' \_\_DIGITS\_\_ ' : {],
+  [symbol : digitsSymbol ,],
+  [type : ' atomic ' ,],
+  [fn : () =\> digitsExpression],
+  [},],
+  [' \_\_WORD\_\_ ' : {],
+  [symbol : wordSymbol ,],
+  [type : ' atomic ' ,],
+  [fn : () =\> wordExpression],
+  [},],
+  [' \_\_WHITESPACE\_\_ ' : {],
+  [symbol : whitespaceSymbol ,],
+  [type : ' atomic ' ,],
+  [fn : () =\> whitespaceExpression],
+  [}],
+  [},],
+  [defaultOperator : ' → ' ,],
+  [escapedValue ( symbol ) {],
+  [if ( symbol === ' d ' ) {],
+  [return digitsSymbol ;],
+  [} else if ( symbol === ' w ' ) {],
+  [return wordSymbol ;],
+  [} else if ( symbol === ' s ' ) {],
+  [return whitespaceSymbol ;],
+  [} else {],
+  [return symbol ;],
+  [}],
+  [},],
+  [toValue ( string ) {],
+  [if ( ' ∅ε|→\* ' . indexOf ( string ) \>= 0 ) {],
+  [return ' \` ' + string ;],
+  [} else {],
+  [return string ;],
+  [}],
+  [}],
+  [};],
+  [As you can see, we don’t allow writing one-symbol operators, but we do support using back-ticks with d , w , and s just like with regexen:],
+  [verifyEvaluate ( afterLevel1qs , formalRegularExpressions , { 
+ '' : false , 
+ ' 1234 ' : false , 
+ ' 123 4567 ' : true , 
+ ' 987-6543 ' : true , 
+ ' 416-555-1234 ' : true , 
+ ' 1 416-555-0123 ' : true , 
+ ' 011-888-888-8888! ' : false 
+ });],
+  [Excellent!],
+  [id="thoughts-about-custom-character-classes"\>thoughts about custom character classes],
+  [regexen allow users to define their own character classes “on the fly.” In a regex, \[abc\] is an expression matching an a , a b , or a c . In that form, it means exactly the same thing as (a|b|c) . Custom character classes enable us to write gr\[ae\]y to match grey and gray , which saves us one character as compared to writing gr(a|e)y .],
+  [If that’s all they did, they would add very little value: They’re only slightly more compact, and they add the cognitive load of embedding an irregular kind of syntax inside of regular expressions.],
+  [But custom character classes add some other affordances. We can write \[a-f\] as a shorthand for (a|b|c|d|e|f) , or \[0-9\] as a shorthand for (0|1|2|3|4|5|6|7|8|9) . We can combine those affordances, e.g. we can write \[0-9a-fA-F\] as a shorthand for (0|1|2|3|4|5|6|7|8|9|a|b|c|d|e|f|A|B|C|D|E|F) . That is considerably more compact, and arguably communicates the intent of matching a hexadecimal character more cleanly.],
+  [And if we preface our custom character classes with a ^ , we can match a character that is not a member of the character class, e.g. \[^abc\] matches any character except an a , b , or c . That can be enormously useful.],
+  [Custom character classes are a language within a language. However, implementing the full syntax would be a grand excursion into parsing the syntax, while the implementation of the character classes would not be particularly interesting. We will, however, be visiting the subject of negating expressions when we discuss level two functionality. We will develop an elegant way to achieve expressions like \[^abc\] with the syntax ^(a|b|c) , and we’ll also develop the ¬ prefix operator that will work with any expression.],
+  [id="eschewing-transpilation"\>eschewing transpilation],
+  [There are lots of other regexen features we can implement using this transpilation technique, 2 but having implemented a feature using transpilation, we’ve demonstrated that it provides not functional advantage over formal regular expressions. Having done so, we can return to implementing the features directly in JavaScript, which saves adding a transpilation step to our evaluator.],
+  [So we’ll wrap Level One up with:],
+  [class="highlight"\> const zeroOrOne = 
+ a =\> union2merged ( emptyString (), a ); 
+ const oneOrMore = 
+ a =\> catenation2 ( a , zeroOrMore ( dup ( a ))); 
+ const anySymbol = 
+ () =\> TOTAL\_ALPHABET . split ( '' ). map ( literal ). reduce ( union2merged ); 
+ const anyDigit = 
+ () =\> DIGITS . split ( '' ). map ( literal ). reduce ( union2merged ); 
+ const anyWord = 
+ () =\> ( ALPHA + DIGITS + UNDERSCORE ). map ( literal ). reduce ( union2merged ); 
+ const anyWhitespace = 
+ () =\> WHITESPACE . map ( literal ). reduce ( union2merged );],
+  [const levelOneExpressions = { 
+ operators : { 
+ \/\\/ formal regular expressions],
+  [' ∅ ' : { 
+ symbol : Symbol ( ' ∅ ' ), 
+ type : ' atomic ' , 
+ fn : emptySet 
+ }, 
+ ' ε ' : { 
+ symbol : Symbol ( ' ε ' ), 
+ type : ' atomic ' , 
+ fn : emptyString 
+ }, 
+ ' | ' : { 
+ symbol : Symbol ( ' | ' ), 
+ type : ' infix ' , 
+ precedence : 10 , 
+ fn : union2merged 
+ }, 
+ ' → ' : { 
+ symbol : Symbol ( ' → ' ), 
+ type : ' infix ' , 
+ precedence : 20 , 
+ fn : catenation2 
+ }, 
+ ' \* ' : { 
+ symbol : Symbol ( ' \* ' ), 
+ type : ' postfix ' , 
+ precedence : 30 , 
+ fn : zeroOrMore 
+ },],
+  [\/\\/ extended operators],
+  [' ? ' : {],
+  [symbol : Symbol ( ' ? ' ),],
+  [type : ' postfix ' ,],
+  [precedence : 30 ,],
+  [fn : zeroOrOne],
+  [},],
+  [' + ' : {],
+  [symbol : Symbol ( ' + ' ),],
+  [type : ' postfix ' ,],
+  [precedence : 30 ,],
+  [fn : oneOrMore],
+  [},],
+  [' . ' : {],
+  [symbol : Symbol ( ' . ' ),],
+  [type : ' atomic ' ,],
+  [fn : anySymbol],
+  [},],
+  [' \_\_DIGITS\_\_ ' : {],
+  [symbol : digitsSymbol ,],
+  [type : ' atomic ' ,],
+  [fn : anyDigit],
+  [},],
+  [' \_\_WORD\_\_ ' : {],
+  [symbol : wordSymbol ,],
+  [type : ' atomic ' ,],
+  [fn : anyWord],
+  [},],
+  [' \_\_WHITESPACE\_\_ ' : {],
+  [symbol : whitespaceSymbol ,],
+  [type : ' atomic ' ,],
+  [fn : anyWhitespace],
+  [}],
+  [},],
+  [defaultOperator : ' → ' ,],
+  [escapedValue ( symbol ) {],
+  [if ( symbol === ' d ' ) {],
+  [return digitsSymbol ;],
+  [} else if ( symbol === ' w ' ) {],
+  [return wordSymbol ;],
+  [} else if ( symbol === ' s ' ) {],
+  [return whitespaceSymbol ;],
+  [} else {],
+  [return symbol ;],
+  [}],
+  [},],
+  [toValue ( string ) {],
+  [return literal ( string );],
+  [}],
+  [};],
+  [And now it’s time to look at implementing Level Two features.],
+  [id="implementing-level-two-features"\>Implementing Level Two Features],
+  [Let’s turn our attention to extending regular expressions with features that cannot be implemented with simple transpilation. We begin by revisiting union2 :],
+  [class="highlight"\> function productOperation ( a , b , setOperator ) { 
+ const { 
+ states : aDeclaredStates , 
+ accepting : aAccepting 
+ } = validatedAndProcessed ( a ); 
+ const aStates = \[ null \]. concat ( aDeclaredStates );],
+  [const { 
+ states : bDeclaredStates , 
+ accepting : bAccepting 
+ } = validatedAndProcessed ( b ); 
+ const bStates = \[ null \]. concat ( bDeclaredStates );],
+  [\/\\/ P is a mapping from a pair of states (or any set, but in union2 it's always a pair) 
+ \/\\/ to a new state representing the tuple of those states 
+ const P = new StateAggregator ();],
+  [const productAB = product ( a , b , P ); 
+ const { start , transitions } = productAB ;],
+  [const statesAAccepts = new Set ( 
+ aAccepting . flatMap ( 
+ aAcceptingState =\> bStates . map ( bState =\> P . stateFromSet ( aAcceptingState , bState )) 
+ ) 
+ ); 
+ const statesBAccepts = new Set ( 
+ bAccepting . flatMap ( 
+ bAcceptingState =\> aStates . map ( aState =\> P . stateFromSet ( aState , bAcceptingState )) 
+ ) 
+ );],
+  [const allAcceptingStates = 
+ \[... setOperator ( statesAAccepts , statesBAccepts )\];],
+  [const { stateSet : reachableStates } = validatedAndProcessed ( productAB ); 
+ const accepting = allAcceptingStates . filter ( state =\> reachableStates . has ( state ));],
+  [return { start , accepting , transitions }; 
+ }],
+  [function union2merged ( a , b ) { 
+ return mergeEquivalentStates ( 
+ union2 ( a , b ) 
+ ); 
+ }],
+  [We recall that the above code takes the product of two recognizers, and then computes the accepting states for the product from the union of the accepting states of the two recognizers.],
+  [Let’s refactor, and extract the set union:],
+  [class="highlight"\> function productOperation ( a , b , setOperator ) { 
+ const { 
+ states : aDeclaredStates , 
+ accepting : aAccepting 
+ } = validatedAndProcessed ( a ); 
+ const aStates = \[ null \]. concat ( aDeclaredStates );],
+  [const { 
+ states : bDeclaredStates , 
+ accepting : bAccepting 
+ } = validatedAndProcessed ( b ); 
+ const bStates = \[ null \]. concat ( bDeclaredStates );],
+  [\/\\/ P is a mapping from a pair of states (or any set, but in union2 it's always a pair) 
+ \/\\/ to a new state representing the tuple of those states 
+ const P = new StateAggregator ();],
+  [const productAB = product ( a , b , P ); 
+ const { start , transitions } = productAB ;],
+  [const statesAAccepts = 
+ aAccepting . flatMap ( 
+ aAcceptingState =\> bStates . map ( bState =\> P . stateFromSet ( aAcceptingState , bState )) 
+ ); 
+ const statesBAccepts = 
+ bAccepting . flatMap ( 
+ bAcceptingState =\> aStates . map ( aState =\> P . stateFromSet ( aState , bAcceptingState )) 
+ );],
+  [const allAcceptingStates = 
+ \[... setOperator ( statesAAccepts , statesBAccepts )\];],
+  [const { stateSet : reachableStates } = validatedAndProcessed ( productAB ); 
+ const accepting = allAcceptingStates . filter ( state =\> reachableStates . has ( state ));],
+  [return { start , accepting , transitions }; 
+ }],
+  [function setUnion ( set1 , set2 ) { 
+ return new Set (\[... set1 , ... set2 \]); 
+ }],
+  [function unionMerged ( a , b ) { 
+ return mergeEquivalentStates ( 
+ productOperation ( a , b , setUnion ) 
+ ); 
+ }],
+  [We’ll create a new set union operator for this:],
+  [\/\\/ ... other operators from formal regular expressions ...],
+  [' ∪ ' : { 
+ symbol : Symbol ( ' ∪ ' ), 
+ type : ' infix ' , 
+ precedence : 10 , 
+ fn : union 
+ } 
+ }, 
+ defaultOperator : ' → ' , 
+ toValue ( string ) { 
+ return literal ( string ); 
+ } 
+ };],
+  [verifyEvaluate ( ' (a|b|c)|(b|c|d) ' , levelTwoExpressions , { 
+ '' : false , 
+ ' a ' : true , 
+ ' b ' : true , 
+ ' c ' : true , 
+ ' d ' : true 
+ }); 
+ \/\/=\> All 5 tests passing],
+  [verifyEvaluate ( ' (a|b|c)∪(b|c|d) ' , levelTwoExpressions , { 
+ '' : false , 
+ ' a ' : true , 
+ ' b ' : true , 
+ ' c ' : true , 
+ ' d ' : true 
+ }); 
+ \/\/=\> All 5 tests passing],
+  [It does exactly what our original union2merged function does, as we expect. But now that we’ve extracted the set union operation, what if we substitute a different set operation?],
+  [id="intersection"\>intersection],
+  [function intersection ( a , b ) { 
+ return mergeEquivalentStates ( 
+ productOperation ( a , b , setIntersection ) 
+ ); 
+ }],
+  [const levelTwoExpressions = { 
+ operators : {],
+  [\/\\/ ... other operators from formal regular expressions ...],
+  [' ∪ ' : { 
+ symbol : Symbol ( ' ∪ ' ), 
+ type : ' infix ' , 
+ precedence : 10 , 
+ fn : union 
+ }, 
+ ' ∩ ' : { 
+ symbol : Symbol ( ' ∩ ' ), 
+ type : ' infix ' , 
+ precedence : 10 , 
+ fn : intersection 
+ } 
+ }, 
+ defaultOperator : ' → ' , 
+ toValue ( string ) { 
+ return literal ( string ); 
+ } 
+ };],
+  [verifyEvaluate ( ' (a|b|c)∩(b|c|d) ' , levelTwoExpressions , { 
+ '' : false , 
+ ' a ' : false , 
+ ' b ' : true , 
+ ' c ' : true , 
+ ' d ' : false 
+ });],
+  [This is something new:],
+  [If a is a regular expression describing the language A , and b is a regular expression describing the language B , the expression a∩b describes the language Z where a sentence z belongs to Z if and only if z belongs to A , and z belongs to B .],
+  [Intersection can be useful for writing expressions that separate concerns. For example, if we already have 0|1(0|1)\* as the expression for the language containing all binary numbers, and .(..)\* as the expression for the language containing an odd number of symbols, then (0|1(0|1)\*)∩(.(..)\*) gives the the language containing all binary numbers with an odd number of digits.],
+  [id="difference"\>difference],
+  [Here’s another:],
+  [function difference ( a , b ) { 
+ return mergeEquivalentStates ( 
+ productOperation ( a , b , setDifference ) 
+ ); 
+ }],
+  [const levelTwoExpressions = { 
+ operators : {],
+  [\/\\/ ... other operators from formal regular expressions ...],
+  [' ∪ ' : { 
+ symbol : Symbol ( ' ∪ ' ), 
+ type : ' infix ' , 
+ precedence : 10 , 
+ fn : union 
+ }, 
+ ' ∩ ' : { 
+ symbol : Symbol ( ' ∩ ' ), 
+ type : ' infix ' , 
+ precedence : 10 , 
+ fn : intersection 
+ }, 
+ ' \\\\ ' : { 
+ symbol : Symbol ( ' - ' ), 
+ type : ' infix ' , 
+ precedence : 10 , 
+ fn : difference 
+ } 
+ }, 
+ defaultOperator : ' → ' , 
+ toValue ( string ) { 
+ return literal ( string ); 
+ } 
+ };],
+  [verifyEvaluate ( ' (a|b|c) \\\\ (b|c|d) ' , levelTwoExpressions , { 
+ '' : false , 
+ ' a ' : true , 
+ ' b ' : false , 
+ ' c ' : false , 
+ ' d ' : false 
+ });],
+  [\\ is the set difference, or relative complement operator: 3],
+  [If a is a regular expression describing the language A , and b is a regular expression describing the language B , the expression a\\b describes the language Z where a sentence z belongs to Z if and only if z belongs to A , and z does not belong to B .],
+  [Where intersection was useful for separating concerns, difference is very useful for sentences that do not belong to a particular language. For example, We may want to match all sentences that contain the word “Braithwaite”, but not “Reggie Braithwaite:”],
+  [class="highlight"\> verifyEvaluate ( ' .\*Braithwaite.\* \\\\ .\*Reggie Braithwaite.\* ' , levelTwoExpressions , { 
+ ' Braithwaite ' : true , 
+ ' Reg Braithwaite ' : true , 
+ ' The Reg Braithwaite! ' : true , 
+ ' The Notorious Reggie Braithwaite ' : false , 
+ ' Reggie, but not Braithwaite? ' : true , 
+ ' Is Reggie a Braithwaite? ' : true 
+ });],
+  [verifyEvaluate ( ' (.\* \\\\ .\*Reggie )(Braithwaite.\*) ' , levelTwoExpressions , { 
+ ' Braithwaite ' : true , 
+ ' Reg Braithwaite ' : true , 
+ ' The Reg Braithwaite! ' : true , 
+ ' The Notorious Reggie Braithwaite ' : false , 
+ ' Reggie, but not Braithwaite? ' : true , 
+ ' Is Reggie a Braithwaite? ' : true 
+ });],
+  [The second test above includes an interesting pattern.],
+  [id="complement"\>complement],
+  [If s is an expression, then .\*\\s is the complement of the expression s . In set theory, the complement of a set S is everything that does not belong to S . If we presume the existence of a universal set U , where u belongs to U for any u , then the complement of a set S is the difference between U and S .],
+  [In sentences of symbols, if we have a total alphabet that we use to derive the dot operator . , then .\* is an expression for every possible sentence, and .\*\\s is the difference between every possible sentence and the sentences in the language S . And that is the complement of S.],
+  [We can implement complement as a prefix operator:],
+  [const levelTwoExpressions = { 
+ operators : {],
+  [\/\\/ ... other operators ...],
+  [' ¬ ' : { 
+ symbol : Symbol ( ' ¬ ' ), 
+ type : ' prefix ' , 
+ precedence : 40 , 
+ fn : complement 
+ }],
+  [}],
+  [\/\\/ ... other definition ...],
+  [};],
+  [verifyEvaluate ( ' ¬(.\*Reggie )Braithwaite.\* ' , levelTwoExpressions , { 
+ ' Braithwaite ' : true , 
+ ' Reg Braithwaite ' : true , 
+ ' The Reg Braithwaite! ' : true , 
+ ' The Notorious Reggie Braithwaite ' : false , 
+ ' Reggie, but not Braithwaite? ' : true , 
+ ' Is Reggie a Braithwaite? ' : true 
+ }); 
+ \/\/=\> All 6 tests passing],
+  [complement can surprise the unwary. The expression ¬(.\*Reggie )Braithwaite.\* matches strings containing Braithwaite but not Reggie Braithwaite . But if we expect .\*¬(Reggie )Braithwaite.\* to do the same thing, we’ll be unpleasantly surprised:],
+  [class="highlight"\> verifyEvaluate ( ' .\*¬(Reggie )Braithwaite.\* ' , levelTwoExpressions , { 
+ ' Braithwaite ' : true , 
+ ' Reg Braithwaite ' : true , 
+ ' The Reg Braithwaite! ' : true , 
+ ' The Notorious Reggie Braithwaite ' : false , 
+ ' Reggie, but not Braithwaite? ' : true , 
+ ' Is Reggie a Braithwaite? ' : true 
+ }); 
+ \/\/=\> 1 tests failing: fail: {"example":"The Notorious Reggie Braithwaite","expected":false,"actual":true}],
+  [The reason this failed is because the three “clauses” of our level two regular expression matched something like the following:],
+  [.\* matched The Notorious Reggie ;],
+  [¬(Reggie ) matched '' (also known as ε );],
+  [Braithwaite.\* matched Braithwaite .],
+  [That’s why we need to write our clause as ¬(.\* Reggie ) if we are trying to exclude the symbols Reggie appearing just before Braithwaite . For similar reasons, the expression ¬(a|b|c) is not equivalent to the \[^abc\] character class from regex syntax. Not only will the empty string match that expression, but so will strings longer than with more than one symbol.],
+  [If we want to emulate \[^abc\] , we want the intersection of . , which matches exactly one symbol, and ¬(a|b|c) , which matches any expression except a or b or c .],
+  [We can represent \[^abc\] with .∩¬(a|b|c) :],
+  [class="highlight"\> verifyEvaluate ( ' .∩¬(a|b|c) ' , levelTwoExpressions , { 
+ '' : false , 
+ ' a ' : false , 
+ ' b ' : false , 
+ ' c ' : false , 
+ ' d ' : true , 
+ ' e ' : true , 
+ ' f ' : true , 
+ ' ab ' : false , 
+ ' abc ' : false 
+ }); 
+ \/\/=\> All 9 tests passing],
+  [That’s handy, so let’s make it an operator:],
+  [const levelTwoExpressions = { 
+ operators : {],
+  [\/\\/ ... other operators ...],
+  [' ^ ' : { 
+ symbol : Symbol ( ' ^ ' ), 
+ type : ' prefix ' , 
+ precedence : 50 , 
+ fn : characterComplement 
+ }],
+  [}],
+  [\/\\/ ... other definition ...],
+  [};],
+  [verifyEvaluate ( ' ^(a|b|c) ' , levelTwoExpressions , { 
+ '' : false , 
+ ' a ' : false , 
+ ' b ' : false , 
+ ' c ' : false , 
+ ' d ' : true , 
+ ' e ' : true , 
+ ' f ' : true , 
+ ' ab ' : false , 
+ ' abc ' : false 
+ }); 
+ \/\/=\> All 9 tests passing],
+  [The syntax ^(a|b|c) is close enough to \[^abc\] for our purposes.],
+  [id="what-level-two-features-tell-us-and-what-they-dont"\>What Level Two Features Tell Us, and What They Don’t],
+  [The Level Two features we’ve implemented are useful, and they demonstrate some important results:],
+  [We already know that:],
+  [if x is a finite state recognizer that recognizes sentences in the language X , and y is a finite-state recognizer that recognizes sentences in the language Y , there exists a finite-state recognizer z that recognizes sentences in the language Z , where a sentence a belongs to Z if and only if a belongs to either X or Y . We demonstrated this by writing functions like union2 that take x and y as arguments and return z .],
+  [if x is a finite state recognizer that recognizes sentences in the language X , and y is a finite-state recognizer that recognizes sentences in the language Y , there exists a finite-state recognizer z that recognizes sentences in the language Z , where a sentence ab belongs to Z if and only if a belongs to X and b belongs to Y . We demonstrated this by writing the function catenation2 that takes x and y as arguments and returns z .],
+  [if x is a finite state recognizer that recognizes sentences in the language X , there exists a finite-state recognizer z that recognizes sentences in the language Z , where a sentence ab belongs to Z if and only if a is either the empty string or a sentence belonging to X, and b is a sentence belonging to Z . We demonstrated this by writing the function zeroOrMore that takes x as an argument and returns z\`.],
+  [These three results tell us that the set of finite-state recognizers is closed under alternation, catenation, and quantification.],
+  [Implementing our Level Two features has also demonstrated that:],
+  [if x is a finite state recognizer that recognizes sentences in the language X , and y is a finite-state recognizer that recognizes sentences in the language Y , there exists a finite-state recognizer z that recognizes sentences in the language Z , where a sentence a belongs to Z if and only if a belongs to both X and Y . We demonstrated this by writing the function intersection that takes x and y as arguments and returns z .],
+  [if x is a finite state recognizer that recognizes sentences in the language X , and y is a finite-state recognizer that recognizes sentences in the language Y , there exists a finite-state recognizer z that recognizes sentences in the language Z , where a sentence a belongs to Z if and only if a belongs to X and a does not belong to Y . We demonstrated this by writing the function difference that takes x and y as arguments and returns z .],
+  [if x is a finite state recognizer that recognizes sentences in the language X , there exists a finite-state recognizer z that recognizes sentences in the language Z , where a sentence a belongs to Z if and only if a does not belong to X. We demonstrated this by writing the function complement that takes x as an argument and returns z\`.],
+  [These three results also tell us that the set of finite-state recognizers is closed under intersection, difference, and complementation.],
+  [Writing Level Three features does come with a known limitation. Obviously, we can translate any Level Three regular expression into a finite-state recognizer. This tells us that the set of languages defined by Level Three regular expressions is a subset of the set of languages recognized by finte-state recognizers.],
+  [But what we don’t know is whether the set of languages defined by Level Three regular expressions is a equivalent to the set of languages defined by formal regular expressions. We don’t have an algorithm for translating Level Three regular expressions to Level Zero regular expressions. Given what we have explored so far, it is possible that the set of languages recognized by finite-state recognizers is larger than the set of languages defined by formal regular expressions (“Level Zero”).],
+  [If that were the case, it could be that some Level Three regular expression compiles to a finite-state recognizer, but there is no Level Zero expression that compiles to an equivalent finite-state recognizer.],
+  [How would we know if this were true?],
+  [With Level One expressions, we showed that for every Level One expression, there is an equivalent Level Zero expression by writing a Level One to Level Zero transpiler. With Level Two expressions, we’ll take a different tack: We’ll show that for every finite-state recognizer, there is an equivalent Level Zero expression.],
+  [If we know that for every finite-state recognizer, there is an equivalent Level Zero expression, and we also know that for every Level Zero expression, there is an equivalent finite-state recognizer, then we know that the set of languages recognized by finite-state recognizers is equal to the set of languages recognized by Level Zero expressions, a/k/a Regular Languages .],
+  [And if we know that for every Level Two expression, there is an equivalent finite-state recognizer, then it would follow that for every Level two expression, there is an equivalent Level Zero expression, and it would follow that the set of all languages described by Level Two expressions is the set of regular languages.],
+  [id="for-every-finite-state-recognizer-there-exists-an-equivalent-formal-regular-expression-1"\>For Every Finite-State Recognizer, There Exists An Equivalent Formal Regular Expression],
+  [It is time to demonstrate that for every finite-state recognizer, there exists an equivalent formal regular expression. We’re going to follow Stephen Kleene’s marvellous proof, very much leaning on Shunichi Toida’s excellent notes for CS390 Introduction to Theoretical Computer Science Structures The proof of this aspect of Kleene’s Theorem can be found here .],
+  [Our constructive proof -like approach will be to write a function that takes as its argument a description of a finite-state recognizer, and returns an equivalent formal regular expression in our syntax. The approach will be an old one in computer science:],
+  [For any pair of states ( any par implies that both states could be the same state) in a finite-state recognizer, we will find all the paths from one to another, and for each path, we can write a regular expression representing that path using catenation. When we have more than one path between them, we can combine them together using alternation. We’ll explain how quantification comes into that in a moment.],
+  [But if we had such a function, we could apply it to the start state and any accepting states, getting a formal regular expression for the paths from the start state to each accepting state. And if there are more than one accepting states, we could use alternation to combine the regular expressions into one big regular expression that is equivalent to the finite-state recognizer.],
+  [id="the-regularexpression-function"\>the regularExpression function],
+  [Let’s get started writing this in JavaScript. Given a description like:],
+  [class="highlight"\> const binary = { 
+ "start" : "start" , 
+ "transitions" : \[ 
+ { "from" : "start" , "consume" : "0" , "to" : "zero" }, 
+ { "from" : "start" , "consume" : "1" , "to" : "notZero" }, 
+ { "from" : "notZero" , "consume" : "0" , "to" : "notZero" }, 
+ { "from" : "notZero" , "consume" : "1" , "to" : "notZero" } 
+ \], 
+ "accepting" : \[ "zero" , "notZero" \] 
+ }],
+  [It will be a matter of finding the regular expressions for the paths from start to zero , and from start to notZero , and taking the union of those paths. We're going to do that with a function we'll call between . Our function will take an argument for the state from , another for the state to , and a third argument called viaStates\` that we’ll explain in a moment. 4],
+  [Note that from , to , and via can be any of the states in the recognizer, including being the same state.],
+  [Here’s an empty function for what we want to begin with:],
+  [class="highlight"\> function regularExpression ( description ) { 
+ const pruned = 
+ reachableFromStart ( 
+ mergeEquivalentStates ( 
+ description 
+ ) 
+ ); 
+ const { 
+ start , 
+ transitions , 
+ accepting , 
+ stateSet 
+ } = validatedAndProcessed ( pruned );],
+  [\/\\/ ... TBD],
+  [function between ({ from , to , viaStates }) { 
+ \/\\/ ... TBD 
+ } 
+ };],
+  [Let’s get the most degenerate case out of the way first. If a finite-state recognizer has no accepting states, then its formal regular expression is the empty set:],
+  [class="highlight"\> function regularExpression ( description ) { 
+ const pruned = 
+ reachableFromStart ( 
+ mergeEquivalentStates ( 
+ description 
+ ) 
+ ); 
+ const { 
+ start , 
+ transitions , 
+ accepting , 
+ acceptingSet , 
+ stateSet 
+ } = validatedAndProcessed ( pruned );],
+  [if ( accepting . length === 0 ) { 
+ return ' ∅ ' ; 
+ } else { 
+ \/\\/ ... TBD],
+  [function between ({ from , to , viaStates }) { 
+ \/\\/ ... TBD 
+ } 
+ } 
+ };],
+  [\/\\/ ----------],
+  [verify ( regularExpression , new Map (\[ 
+ \[ emptySet (), ' ∅ ' \] 
+ \]));],
+  [Now what if there are accepting states? As described, the final regular expression must represent the union of all the expressions for getting from the start state to each accepting state. Let’s fill that in for a moment, deliberately omitting viaStates :],
+  [class="highlight"\> function alternateExpr (... exprs ) { 
+ const uniques = \[... new Set ( exprs )\]; 
+ const notEmptySets = uniques . filter ( x =\> x !== ' ∅ ' );],
+  [if ( notEmptySets . length === 0 ) { 
+ return ' ∅ ' ; 
+ } else if ( notEmptySets . length === 1 ) { 
+ return notEmptySets \[ 0 \]; 
+ } else { 
+ return notEmptySets . map ( p ). join ( ' | ' ); 
+ } 
+ }],
+  [function regularExpression ( description ) { 
+ const pruned = 
+ reachableFromStart ( 
+ mergeEquivalentStates ( 
+ description 
+ ) 
+ ); 
+ const { 
+ start , 
+ transitions , 
+ accepting , 
+ acceptingSet , 
+ stateSet 
+ } = validatedAndProcessed ( pruned );],
+  [if ( accepting . length === 0 ) { 
+ return ' ∅ ' ; 
+ } else { 
+ const from = start ; 
+ const pathExpressions = 
+ accepting . map ( 
+ to =\> expression ({ from , to }) 
+ );],
+  [const acceptsEmptyString = accepting . indexOf ( start ) \>= 0 ;],
+  [if ( acceptsEmptyString ) { 
+ return alternateExpr ( ' ε ' , ... pathExpressions ); 
+ } else { 
+ return alternateExpr (... pathExpressions ); 
+ }],
+  [function between ({ from , to , viaStates }) { 
+ \/\\/ ... TBD 
+ } 
+ } 
+ };],
+  [There’s another special case thrown in: Although we haven’t written our between function yet, we know that if a finite-state recognizer beins in an accepting state, then it accepts the empty string, and thus we can take all the other expressions for getting from a start state to an accepting state, and union them with ε .],
+  [Now how about the between function?],
+  [id="the-between-function"\>the between function],
+  [The between function returns a formal regular expression representing all of the possible ways a finite-state recognizer can consume strings to get from the from state to the to state.],
+  [The way it works is to divide-and-conquer. We begin by choosing any state as the via state. We can divide up all the paths as follows:],
+  [All the paths from from to to that go through some state we shall call via least once, and;],
+  [All the paths from from to to that do not go through via at all.],
+  [If we could compute formal regular expressions for each of these two sets of paths, we could return the union of the two regular expressions and be done. So let’s begin by picking a viaState . Kleene numbered the states and begin with the largest state, we will simply take whatever state is first in the viaStates set’s enumeration:],
+  [class="highlight"\> function between ({ from , to , viaStates = \[... allStates \] }) { 
+ if ( viaStates . size === 0 ) { 
+ \/\\/ .. TBD 
+ } else { 
+ const \[ via \] = viaStates ;],
+  [\/\\/ ... TBD 
+ } 
+ }],
+  [We have left room for the degenerate case where viaStates is empty. We’ll get to that in a moment. The first part of our case is to write an expression for all the paths from from to to that go through via at least once. Here’s the formulation for that:],
+  [The expression representing all the paths from from to via that do not go through via , catenated with;],
+  [The expression representing all the paths from via looping back to via that do not go through vi , repeated any number of times , catenated with;],
+  [The expression representing all the paths from via to to that do not go through via .],
+  [Our normal case is going to look something like this:],
+  [class="highlight"\> function zeroOrMoreExpr ( a ) { 
+ if ( a === ' ∅ ' || a === ' ε ' ) { 
+ return ' ε ' ; 
+ } else { 
+ return \` \${ p ( a )} \*\` ; 
+ } 
+ }],
+  [function catenateExpr (... exprs ) { 
+ if ( exprs . some ( x =\> x === ' ∅ ' )) { 
+ return ' ∅ ' ; 
+ } else { 
+ const notEmptyStrings = exprs . filter ( x =\> x !== ' ε ' );],
+  [if ( notEmptyStrings . length === 0 ) { 
+ return ' ε ' ; 
+ } else if ( notEmptyStrings . length === 1 ) { 
+ return notEmptyStrings \[ 0 \]; 
+ } else { 
+ return notEmptyStrings . map ( p ). join ( '' ); 
+ } 
+ } 
+ }],
+  [function between ({ from , to , viaStates = allStates }) { 
+ if ( viaStates . size === 0 ) { 
+ \/\\/ .. TBD 
+ } else { 
+ const \[ via \] = viaStates ;],
+  [const fromToVia = expression ({ from , to : via }); 
+ const viaToVia = zeroOrMoreExpr ( 
+ expression ({ from : via , to : via }) 
+ ); 
+ const viaToTo = expression ({ from : via , to , });],
+  [const throughVia = catenateExpr ( fromToVia , viaToVia , viaToTo ); 
+ } 
+ }],
+  [That being said, we have left out what to pass for viaStates . Well, we want our routine to do the computation for paths not passing through the state via , so we really want is all the remaining states except via :],
+  [class="highlight"\> function between ({ from , to , viaStates = \[... allStates \] }) { 
+ if ( viaStates . length === 0 ) { 
+ \/\\/ .. TBD 
+ } else { 
+ const \[ via , ... exceptVia \] = viaStates ;],
+  [const fromToVia = expression ({ from , to : via , viaStates : exceptVia }); 
+ const viaToVia = zeroOrMoreExpr ( 
+ expression ({ from : via , to : via , viaStates : exceptVia }) 
+ ); 
+ const viaToTo = expression ({ from : via , to , viaStates : exceptVia });],
+  [const throughVia = catenateExpr ( fromToVia , viaToVia , viaToTo ); 
+ } 
+ }],
+  [Now how about the second part of our case? It’s the expression for all the paths from from to to that do not go through via . Which we then alternate with the expression for all the paths going through via :],
+  [class="highlight"\> function between ({ from , to , viaStates = \[... allStates \] }) { 
+ if ( viaStates . length === 0 ) { 
+ \/\\/ .. TBD 
+ } else { 
+ const \[ via , ... exceptVia \] = viaStates ;],
+  [const fromToVia = expression ({ from , to : via , viaStates : exceptVia }); 
+ const viaToVia = zeroOrMoreExpr ( 
+ expression ({ from : via , to : via , viaStates : exceptVia }) 
+ ); 
+ const viaToTo = expression ({ from : via , to , viaStates : exceptVia });],
+  [const throughVia = catenateExpr ( fromToVia , viaToVia , viaToTo ); 
+ const notThroughVia = expression ({ from , to , viaStates : exceptVia });],
+  [return alternateExpr ( throughVia , notThroughVia ); 
+ } 
+ }],
+  [Eventually, 5 this function will end up calling itself and passing an empty list of states. That’s our degenerate case. Given two states, what are all the paths between them that don’t go through any other states? Why, just the transitions directly between them. And the expressions for those are the symbols consumed, plus some allowance for symbols we have to escape.],
+  [class="highlight"\> function between ({ from , to , viaStates = \[... allStates \] }) { 
+ if ( viaStates . length === 0 ) { 
+ const directExpressions = 
+ transitions 
+ . filter ( ({ from : tFrom , to : tTo }) =\> from === tFrom && to === tTo ) 
+ . map ( ({ consume }) =\> toValueExpr ( consume ) );],
+  [return alternateExpr (... directExpressions ); 
+ } else { 
+ const \[ via , ... exceptVia \] = viaStates ;],
+  [const fromToVia = expression ({ from , to : via , viaStates : exceptVia }); 
+ const viaToVia = zeroOrMoreExpr ( 
+ expression ({ from : via , to : via , viaStates : exceptVia }) 
+ ); 
+ const viaToTo = expression ({ from : via , to , viaStates : exceptVia });],
+  [const throughVia = catenateExpr ( fromToVia , viaToVia , viaToTo ); 
+ const notThroughVia = expression ({ from , to , viaStates : exceptVia });],
+  [return alternateExpr ( throughVia , notThroughVia ); 
+ } 
+ }],
+  [const a = evaluate ( ' a ' , formalRegularExpressions );],
+  [regularExpression ( a ) 
+ \/\/=\> ((((∅|a)∅∅)|∅)(((∅|a)∅∅)|∅)(((∅|a)∅∅)|(∅|a)))|(((∅|a)∅∅)|(∅|a))],
+  [This is a valid regular expression, but all the ∅ s make it unreadable. We’re not going to get into functions for finding the minimal expression for a finite-state recognizer, but we can make things less ridiculous with five easy optimizations:],
+  [catenating any expression a with the empty set returns the empty set.],
+  [alternating any expression a with the empty set returns the expression a .],
+  [Repeating the empty zeroOrMore times returns the empty set.],
+  [class="highlight"\> function alternateExpr (... exprs ) { 
+ const uniques = \[... new Set ( exprs )\]; 
+ const notEmptySets = uniques . filter ( x =\> x !== ' ∅ ' );],
+  [if ( notEmptySets . length === 0 ) { 
+ return ' ∅ ' ; 
+ } else if ( notEmptySets . length === 1 ) { 
+ return notEmptySets \[ 0 \]; 
+ } else { 
+ return notEmptySets . map ( p ). join ( ' | ' ); 
+ } 
+ }],
+  [function catenateExpr (... exprs ) { 
+ if ( exprs . some ( x =\> x === ' ∅ ' )) { 
+ return ' ∅ ' ; 
+ } else { 
+ const notEmptyStrings = exprs . filter ( x =\> x !== ' ε ' );],
+  [if ( notEmptyStrings . length === 0 ) { 
+ return ' ε ' ; 
+ } else if ( notEmptyStrings . length === 1 ) { 
+ return notEmptyStrings \[ 0 \]; 
+ } else { 
+ return notEmptyStrings . map ( p ). join ( '' ); 
+ } 
+ } 
+ }],
+  [function zeroOrMoreExpr ( a ) { 
+ if ( a === ' ∅ ' || a === ' ε ' ) { 
+ return ' ε ' ; 
+ } else { 
+ return \` \${ p ( a )} \*\` ; 
+ } 
+ }],
+  [function regularExpression ( description ) { 
+ const pruned = 
+ reachableFromStart ( 
+ mergeEquivalentStates ( 
+ description 
+ ) 
+ ); 
+ const { 
+ start , 
+ transitions , 
+ accepting , 
+ allStates 
+ } = validatedAndProcessed ( pruned );],
+  [if ( accepting . length === 0 ) { 
+ return ' ∅ ' ; 
+ } else { 
+ const from = start ; 
+ const pathExpressions = 
+ accepting . map ( 
+ to =\> expression ({ from , to }) 
+ );],
+  [const acceptsEmptyString = accepting . indexOf ( start ) \>= 0 ;],
+  [if ( acceptsEmptyString ) { 
+ return alternateExpr ( ' ε ' , ... pathExpressions ); 
+ } else { 
+ return alternateExpr (... pathExpressions ); 
+ }],
+  [function between ({ from , to , viaStates = \[... allStates \] }) { 
+ if ( viaStates . length === 0 ) { 
+ const directExpressions = 
+ transitions 
+ . filter ( ({ from : tFrom , to : tTo }) =\> from === tFrom && to === tTo ) 
+ . map ( ({ consume }) =\> toValueExpr ( consume ) );],
+  [return alternateExpr (... directExpressions ); 
+ } else { 
+ const \[ via , ... exceptVia \] = viaStates ;],
+  [const fromToVia = expression ({ from , to : via , viaStates : exceptVia }); 
+ const viaToVia = zeroOrMoreExpr ( 
+ expression ({ from : via , to : via , viaStates : exceptVia }) 
+ ); 
+ const viaToTo = expression ({ from : via , to , viaStates : exceptVia });],
+  [const throughVia = catenateExpr ( fromToVia , viaToVia , viaToTo ); 
+ const notThroughVia = expression ({ from , to , viaStates : exceptVia });],
+  [return alternateExpr ( throughVia , notThroughVia ); 
+ } 
+ } 
+ } 
+ };],
+  [Done! Now let’s look at what it does:],
+  [id="using-the-regularexpression-function"\>using the regularExpression function],
+  [First, let’s take an arbitrary finite-state recognizer, and convert it to a formal regular expression:],
+  [The result, 0|((1((0|1)\*)(0|1))|1) , isn’t the most compact or readable regular expression, but if we look at it carefully, we can see that it produces the same result: It matches a zero, or a one, or a one followed by a either a zero or one followed by either a zero or one zero or more times. Basically, it’s equivalent to 0|1|1(0|1)(0|1)\* . And 1|1(0|1)(0|1)\* is equivalent to 1(0|1)\* , so 0|((1((0|1)\*)(0|1))|1) is equivalent to 0|1(0|1)\* .],
+  [Let’s check it:],
+  [class="highlight"\> verifyRecognizer ( binary , { 
+ '' : false , 
+ ' 0 ' : true , 
+ ' 1 ' : true , 
+ ' 00 ' : false , 
+ ' 01 ' : false , 
+ ' 10 ' : true , 
+ ' 11 ' : true , 
+ ' 000 ' : false , 
+ ' 001 ' : false , 
+ ' 010 ' : false , 
+ ' 011 ' : false , 
+ ' 100 ' : true , 
+ ' 101 ' : true , 
+ ' 110 ' : true , 
+ ' 111 ' : true , 
+ ' 10100011011000001010011100101110111 ' : true 
+ }); 
+ \/\/=\> All 16 tests passing],
+  [const reconstitutedBinaryExpr = regularExpression ( binary ); 
+ \/\/=\> 0|((1((0|1)\*)(0|1))|1)],
+  [verifyEvaluate ( reconstitutedBinaryExpr , formalRegularExpressions , { 
+ '' : false , 
+ ' 0 ' : true , 
+ ' 1 ' : true , 
+ ' 00 ' : false , 
+ ' 01 ' : false , 
+ ' 10 ' : true , 
+ ' 11 ' : true , 
+ ' 000 ' : false , 
+ ' 001 ' : false , 
+ ' 010 ' : false , 
+ ' 011 ' : false , 
+ ' 100 ' : true , 
+ ' 101 ' : true , 
+ ' 110 ' : true , 
+ ' 111 ' : true , 
+ ' 10100011011000001010011100101110111 ' : true 
+ }); 
+ \/\/=\> All 16 tests passing],
+  [0|((1((0|1)\*)(0|1))|1) may be a fugly way to describe binary numbers, but it is equivalent to 0|1(0|1)\* , and what counts is that for any finite-state recognizer, our function finds an equivalent formal regular expression. And if we know that for every finite-state recognizer, there is an equivalent formal-state recognizer, then we now have a universal demonstration that our Level One and Level Two features describe regular languages just like formal regular expressions. This is true even if–like our Level Two features–there is no obvious and direct translation to a formal regular expression.],
+  [However, testing binary doesn’t actually demonstrate that the finite-state recognizer produced by compiling a Level Two expression to a finite-state recognizer can be compiled back to an equivalent finite-state recognizer. We already know that binary numbers is a regular language. So let’s try our function with some level two examples.],
+  [id="a-test-suite-for--the-regularexpression-function"\>a test suite for the regularExpression function],
+  [We can check a few more results to give us confidence. But instead of reasoning through each one, we’ll check the equivalence using test cases. What we’ll do is take a regular expression and run it through test cases. Then we’ll evaluate it to produce a finite-state recognizer, translate the finite-state recognizer to a formal regular expression with regularExpression , and run it through the same text cases again.],
+  [If all the tests pass, we’ll declare that our regularExpression function does indeed demonstrate that there is an equivalent formal regular expression for every finite-state recognizer. Here’s our test function, and an example of trying it with 0|1(0|1)\* :],
+  [verifyRecognizer ( recognizer , tests );],
+  [const formalExpression = regularExpression ( recognizer );],
+  [verifyEvaluate ( formalExpression , formalRegularExpressions , tests ); 
+ }],
+  [verifyRegularExpression ( ' 0|1(0|1)\* ' , { 
+ '' : false , 
+ ' 0 ' : true , 
+ ' 1 ' : true , 
+ ' 00 ' : false , 
+ ' 01 ' : false , 
+ ' 10 ' : true , 
+ ' 11 ' : true , 
+ ' 000 ' : false , 
+ ' 001 ' : false , 
+ ' 010 ' : false , 
+ ' 011 ' : false , 
+ ' 100 ' : true , 
+ ' 101 ' : true , 
+ ' 110 ' : true , 
+ ' 111 ' : true , 
+ ' 10100011011000001010011100101110111 ' : true 
+ });],
+  [And now to try it with some Level Two examples:],
+  [class="highlight"\> 
+ verifyRegularExpression ( ' (a|b|c)∪(b|c|d) ' , { 
+ '' : false , 
+ ' a ' : true , 
+ ' b ' : true , 
+ ' c ' : true , 
+ ' d ' : true 
+ });],
+  [verifyRegularExpression ( ' (ab|bc|cd)∪(bc|cd|de) ' , { 
+ '' : false , 
+ ' ab ' : true , 
+ ' bc ' : true , 
+ ' cd ' : true , 
+ ' de ' : true 
+ });],
+  [verifyRegularExpression ( ' (a|b|c)∩(b|c|d) ' , { 
+ '' : false , 
+ ' a ' : false , 
+ ' b ' : true , 
+ ' c ' : true , 
+ ' d ' : false 
+ });],
+  [verifyRegularExpression ( ' (ab|bc|cd)∩(bc|cd|de) ' , { 
+ '' : false , 
+ ' ab ' : false , 
+ ' bc ' : true , 
+ ' cd ' : true , 
+ ' de ' : false 
+ });],
+  [verifyRegularExpression ( ' (a|b|c) \\\\ (b|c|d) ' , { 
+ '' : false , 
+ ' a ' : true , 
+ ' b ' : false , 
+ ' c ' : false , 
+ ' d ' : false 
+ });],
+  [verifyRegularExpression ( ' (ab|bc|cd) \\\\ (bc|cd|de) ' , { 
+ '' : false , 
+ ' ab ' : true , 
+ ' bc ' : false , 
+ ' cd ' : false , 
+ ' de ' : false 
+ });],
+  [Success! There is an equivalent formal regular expression for the finite-state recognizers we generate with our Level Two features.],
+  [id="conclusion"\>conclusion],
+  [We have now demonstrated, in constructive fashion, that for every finite-state recognizer, there is an equivalent formal regular expression.],
+  [This implies several important things. First and foremost, since we have also established that for every formal regular expression, there is an equivalent finite-state recognizer, we now know that The set of languages described by formal regular expressions–regular languages–is identical to the set of languages recognized by finite-state automata. Finite-state automata recognize regular languages, and regular languages can be recognized by finite-state automata.],
+  [Second, if we devise any arbitrary extension to formal regular languages–or even an entirely new kind of language, and we also devise a way to compile such descriptions to finite-state recognizers, then we know that the languages we can describe with these extensions or languages are still regular languages.],
+  [Although we are not emphasizing performance, we also know that sentences in any such extensions or languages we may care to create can still be recognized in at worst linear time, because finite-state recognizers recognize sentences in at worst linear time.],
+  [(discuss on Hacker News )],
+  [id="notes"\>Notes],
+  [id="fn:dup"\>],
+  [A more subtle issue is that all of our code for manipulating finite-state recognizers depends upon them having unique state names. Invoking union2(a, a) or catenation2(a, a) will not work properly because the names will clash. To make such expressions work, we have to make a duplicate of one of the arguments, e.g. union2(a, dup(a)) or catenation2(a, dup(a)) . In this case, we invoked catenation2(a, zeroOrMore(dup(a))) .],
+  [None of this is a consideration with our existing code, because it always generates brand new recognizers with unique states. But when we manually write our own expressions in JavaScript, we have to guard against name clashes by hand. Which is another argument against writing expressions in JavaScript. aa and a|a in a formal regular expression “just work.” union2(a, a) and catenation2(a, a) don’t. ↩],
+  [id="fn:times"\>],
+  [If you feel like having a go at one more, try implementing another quantification operator, explicit repetition. In many regexen flavours, we can write (expr){5} to indicate we wish to match (expr)(expr)(expr)(expr)(expr) . The syntax allows other possibilities, such as (expr){2,3} and (expr){3,} , but ignoring those, the effect of (expr){n} for any n from 1 to 9 could be emulated with an infix operator, such as ⊗ , so that (expr)⊗5 would be transpiled to (expr)(expr)(expr)(expr)(expr) . ↩],
+  [id="fn:backslashbackslash"\>],
+  [Our source code uses a lot of double back-slashes, but this is an artefact of JavaScript the programming language using a backslash as its escape operator. The actual strings use a single backslash internally. ↩],
+  [id="fn:nomenclature"\>],
+  [In most proofs, this function is called L , and its arguments are called p , q , and k . One-character names are terrific when writing proofs by hand using chalk and a blackboard, but we’ve moved on since 1951 and we’ll use descriptive names. Likewise, Kleene numbered the states in order to create an ordering that is easy to work with by hand. We’ll work with sets instead of numbers, because once again, we have computers do do all the bookkeeping for us. ↩],
+  [id="fn:eventually"\>],
+  [How eventually? With enough states in a recognizer, it could take a very long time. This particular algorithm has exponential running time! But that being said, we are writing it to prove that it can be done, we don’t actually need to do it to actually recognize sentences. ↩],
 ),
   insert-map: (:),
-  word-count: 1565,
+  inline-pq: pull-quote([” In a regex, \[abc\] is an expression matching an a , a b , or a c.], [Reginald Braithwaite]),
+  inline-pq-idx: 228,
+  word-count: 14566,
   edited-for-length: false,
   debug-mode: false,
 )
+
+}
+
+{
+  #standard-article(
+  title: [Anime vs. Marvel/DC: Designing Digital Products With Emotion In Flow],
+  author: [Alan Cohen],
+  source-name: [Smashing Magazine],
+  images: (),
+  paragraphs: (
+  [Design isn’t only pixels and patterns. It’s pacing and feelings, too. Some products feel cinematic as they guide us through uncertainty, relief, confidence, and calm without yanking us around. That’s Emotion in Flow . Others undercut their own moments with a joke in the wrong place, a surprise pop-up, or a jumpy transition. That’s Emotion in Conflict .],
+  [These aren’t UX-only ideas. You can see them everywhere in entertainment. And the clearest way to feel the difference is to compare how anime handles emotional shifts versus how Marvel and DC films stumble. We’ll use two specific examples, one from Dan da Dan (anime series on Netflix) and one from James Gunn’s Superman movie, to define the two concepts, and then translate them into practical product design patterns you can apply right away.],
+  [Note : We’ll focus on digital products , including apps, SaaS, and web.],
+  [Emotion In Flow (Anime: Dan da Dan)],
+  [In Dan da Dan , the tonal range is wild, horror, comedy, tenderness, yet it flows .],
+  [Example: In one arc, the protagonists are on a bizarre, comedic quest involving the “golden genitals” of one of the main characters (yes, really), and in another, we’re drawn into a heartbreaking story of a mother whose child is kidnapped. On paper, that shift should be a car crash. On screen, it’s coherent and emotionally legible.],
+  [Why does this work on screen?],
+  [Continuity of stakes. 
+Even when a gag lands, the characters’ goals and danger stay intact. Humor releases tension after a mini‑resolution; it doesn’t deny the threat.],
+  [Clear mood cues. 
+Music, framing, pacing, and character reactions telegraph the next feeling. You’re primed for the shift, so you ride it rather than getting yanked.],
+  [One emotional anchor. 
+Relationships remain the North Star, so the scene’s heart doesn’t get lost when the tone moves.],
+  [How does this translate to UX?],
+  [Good products do the same: prepare , transition , resolve , so users stay immersed as the emotional tone shifts.],
+  [Emotion In Conflict (Marvel/DC: James Gunn’s Superman)],
+  [Lois & Clark are having a heartfelt, intimate conversation, a slow, human moment, while in the background a running gag plays out (a monster getting clobbered with a giant baseball bat). The gag steals the focus right when the scene asks you to feel something real. The result is a tonal clash that punctures the emotion instead of releasing it.],
+  [Why does this fail on screen?],
+  [Increased cognitive load. 
+What’s happening here maps directly to cognitive load theory. When a scene (or interface) asks users to process two competing emotional signals at once, it introduces extraneous cognitive load , mental effort that has nothing to do with the task or moment itself. Instead of focusing on the emotional beat, attention is split between signals that don’t resolve each other. In products, this is what happens when humor, promotions, or unexpected UI changes intrude on high-stakes moments: users are forced to interpret tone and intent at the same time they’re trying to act, which slows comprehension and increases stress.],
+  [Competing beats at the same time. 
+The joke overlaps the climax of a serious beat; the audience pays attention to the switch rather than the feeling.],
+  [No tonal handoff. 
+There’s no transition that lands the intimacy before humor arrives, so the moment feels undercut rather than resolved.],
+  [How does this translate to UX?],
+  [In products, this is the confetti-before-confirmation problem, the cheeky error in a money flow, or the promo modal that appears right in the middle of a critical task. This also spikes cognitive load: users must process the humor while trying to fix a problem, which slows them down and increases stress.],
+  [Emotion in Flow 
+Emotional shifts feel earned, telegraphed, and timed so they resolve prior beats. Immersion holds.],
+  [Emotion in Conflict 
+A jarring switch (or hard cut) that punctures a live emotional beat. Immersion breaks.],
+  [Now that we’ve named it: how does this connect to UX?],
+  [How Emotions Shape Product Memorability],
+  [People don’t remember the average of an experience; they remember peaks and the ending. If your flow’s peak is frustration, or your ending is messy, that’s what sticks. So design the emotional curve on purpose.],
+  [Emotions live across three layers (from Don Norman’s Emotional Design ), and your product needs to line them up:],
+  [Visceral (gut): First-impression signals: visuals, motion, haptics, sound.
+ Examples: A steady skeleton loader calms more than a jittery spinner; a gentle success chime/haptic tap lets the win land without shouting; consistent easing/direction tells the eye what changed.],
+  [Behavioral (doing): Can I complete my task smoothly? Friction here means stress.
+ Examples: Three clear payment steps with predictable progress; error states that explain what happened and how to recover; inline validation instead of end-of-form explosions.],
+  [Reflective (meaning): The story I tell myself after, “Was that worth it? Do I trust this?” 
+ Examples: A tidy wrap-up screen (“Done. You’ll get X by Friday.”) gives closure; a small recap (“You saved €18 this year”) creates pride without fireworks.],
+  [Microinteractions are the emotional glue. Each one has a trigger (I tap Pay), rules (what the system does), feedback (progress and a clear result), and loops or modes (what happens if the user tries again). Get these right, and your transitions bridge feelings. Get them wrong, and they break the flow.],
+  [The emotional beat sheet maps cleanly onto Norman’s layers of experience:],
+  [Uncertainty lives in the visceral and early behavioral layers, where users rely on sensory cues (motion, clarity, feedback) to understand what’s happening.],
+  [Clarity is firmly in the behavioral layer, the moment when the system’s intent and the user’s next action lock into place.],
+  [Anticipation is a blend of behavioral (the user is doing something with purpose) and reflective (the user is already predicting the outcome and imagining what comes next).],
+  [Achievement is a reflective peak , where the user evaluates success, trust, and whether the experience “felt right.”],
+  [Calm/Closure is primarily reflective , helping users wrap up the meaning of the interaction and decide if the product is trustworthy and worth returning to.],
+  [In real products, this sequence doesn’t disappear when things go wrong. Errors, latency, and degraded states are not exceptions to the emotional arc — they are part of it. Seen through a narrative lens, these moments are the obstacles in the hero’s journey. A well-designed recovery state acknowledges the setback, clarifies what happened, and guides the next step without introducing new emotional noise. When failure is treated as a beat instead of a rupture, emotional flow can be preserved even under stress.],
+  [UX Examples: Emotion In Flow vs. Emotion In Conflict],
+  [Checkout done right (Stripe/Apple Pay style): short steps, clear progress, and a crisp success state (a checkmark with an optional soft haptic). The peak (success) lands, and the end gives closure (receipt or next step).],
+  [Pickup status (ride‑hailing apps, e.g., Uber, Free Now, or Bolt): progressive updates maintain orientation and reduce anxiety (“Driver arriving”, “2 min away”, “Arrived”). Uncertainty turns into clarity, with gentle motion preparing each transition.],
+  [Note : We’re not naming specific products here — we respect the work behind them. Instead, we’re showing the patterns that cause emotional conflict and exactly how to fix them.],
+  [Jokes in serious moments. 
+Cheeky copy-in-error states for money/health/security. Users are stressed; humor amplifies irritation.],
+  [Celebration before resolution. 
+Confetti, fireworks, or loud sounds before confirmation. The party interrupts the climax.],
+  [Hard state jumps. 
+Surprise modals/promos mid‑task, full‑screen takeovers without preparation. Feels like an abrupt cut during an emotional beat.],
+  [What You Can Do To Ensure Emotion in Flow],
+  [Here’s a Notion page with the full template you can duplicate:],
+  [Emotional beat sheet template .],
+  [1. Write The Emotional Beat Sheet First],
+  [For each core flow (onboarding, payment, recovery), map the feelings per step: uncertainty → clarity → anticipation → achievement → calm. Attach copy, motion, and microinteractions to each beat. (Who carries the emotion where?)],
+  [2. Align Tone With Task Risk],
+  [Create a tone matrix (risk level × state). In high‑risk errors, be calm, plain, and solution‑oriented. Save playfulness for low‑risk contexts.],
+  [Template snippets:],
+  [High‑risk error : “We couldn’t verify your ID. Try again or contact support.”],
+  [Low‑risk empty state : “Nothing here yet. Want to start with a sample?”],
+  [This is where many mature products quietly drift into emotional conflict. Over time, teams add delight by habit rather than intent.],
+  [A useful self-check is to ask: If we removed every playful or celebratory element from this step, would the flow still feel humane — or were those elements masking friction?],
+  [Good emotional design clarifies experience; great emotional design doesn’t need decoration to compensate for confusion.],
+  [3. Design Peak And End On Purpose],
+  [Engineer one clear peak (the moment of success) and one clean end (confirmation and what happens next). Measure recall and satisfaction at both points.],
+  [4. Use Microinteractions As Bridges, Not Spotlights],
+  [Prepare: Small, consistent motion hints before a big state change.],
+  [Confirm: Success gets a subtle settle, with a slightly slower ease-out and an optional light haptic.],
+  [Recover: Repeated failure gracefully shifts tone from upbeat to supportive and guides the next step.],
+  [5. Test For Emotional Continuity],
+  [In usability sessions, don’t just ask “Was that easy?” Instead, you can ask “What feeling changed here?” If you hear “confused → amused → confused,” you’ve got conflict, not flow. Iterate transitions, not just screens.],
+  [How To Avoid Emotion in Conflict: Fast Checklist],
+  [Red flags → fixes:],
+  [Jokes in serious moments → swap for calm, direct language, and a clear recovery path.],
+  [Celebration before resolution → move celebration to after confirmation; tone it down for high‑risk tasks.],
+  [Hard state jumps → pre‑announce transitions; keep framing consistent; use meaningful motion to preserve continuity.],
+  [Cross‑team tone drift → centralize voice & tone guidelines with examples per risk level and state.],
+  [There are moments when breaking emotional flow is intentional and necessary. Security warnings, legal confirmations, and safety-critical alerts often benefit from abrupt tonal shifts. In these cases, disruption signals importance and demands attention. The problem isn’t emotional conflict itself; it’s accidental conflict . When designers choose disruption deliberately, users understand the stakes instead of feeling whiplash.],
+  [Great experiences are directed experiences. Dan da Dan shows how to move through feelings without losing us: it prepares, transitions, and resolves. The Superman scene shows the opposite: a gag colliding with a heartfelt beat.],
+  [Do the former. Map your emotional beats, align tone to task risk, and let microinteractions bridge feelings so users remember the right peak and the right end, not the whiplash in the middle.],
+),
+  insert-map: (:),
+  word-count: 1750,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+}
+
+{
+  #standard-article(
+  title: [From Higher-Order Functions to Libraries And Frameworks],
+  author: [Reginald Braithwaite],
+  source-name: [Reginald Braithwaite (raganwald)],
+  images: (),
+  paragraphs: (
+  [In this essay, we will take a look at some higher-order functions, with an eye to seeing how they can be used to make our programs more expressive, while balancing that against the need to limit the perceived complexity of our programs.],
+  [id="introduction-expressiveness"\>introduction: expressiveness],
+  [One of the most basic ideas in programming is that functions can invoke other functions. 1],
+  [When a function invokes other functions, and when one function can be invoked by more than one other function, we have a very good thing. When we have a many-to-many relationship between functions, we have a more expressive power than when we have a one-to-many relationship. We have the ability to give each function a single responsibility, and name that responsibility. We also have the ability to ensure that one and only one function has that responsibility.],
+  [A many-to-many relationship between functions is what enables us to create a one-to-one relationship between functions and responsibilities.],
+  [Programmers often speak of languages as being expressive . Although there is no single universal definition for this word, most programmers agree that an important aspect of “expressiveness” is that the language makes it easy to write programs that are not unnecessarily verbose. If functions have many responsibilities, they become large and unwieldy. If the same responsibility needs to be implemented more than once, there is de facto redundancy.],
+  [Programs where functions have single responsibilities, and where responsibilities are implemented by single functions, avoid unnecessary verbosity.],
+  [Thus, facilitating the many-to-many relationship between functions makes it possible to write programs that are more expressive than those that do not have a many-to-many relationship between functions.],
+  [id="the-dark-side-perceived-complexity"\>the dark side: perceived complexity],
+  [However, “With great power comes great responsibility.” 2 The downside of a many-to-many relationship between functions is that the ‘space of things a program might do’ grows very rapidly as the size increases. “Expressiveness” is often in tension with “Perceived Complexity.”],
+  [One way to think about this by analogy is to imagine we are drawing a graph. Each function is a vertex, and the calling relationship between them is an edge. Assuming that there is no “dead code,” every structured program forms a connected graph .],
+  [Given a known number of nodes, the number of different ways to draw a connected graph between them is the A001187 integer sequence. Its first eleven terms are: 1, 1, 1, 4, 38, 728, 26704, 1866256, 251548592, 66296291072, 34496488594816 . Meaning that there are more than thirty-four trillion ways to organize a program with just ten functions.],
+  [This explosion of flexibility is so great that programmers have to temper it. The benefits of creating one-to-one relationships between functions and responsibilities can become overwhelmed by the difficulty of understanding programs with unconstrained potential complexity.],
+  [JavaScript has tools to help. Its blocks create namespaces, and so do its formal modules. It may soon have private object properties.],
+  [Namespaces constrain large graphs into many smaller graphs, each of which has a constrained set of ways they can be connected to other graphs. It’s still a large graph, but the number of possible ways to draw it is smaller, and by analogy, it is easier to sort out what it does, and how.],
+  [What we have described is a heuristic for designing good software systems: Provide the flexibility to use many-to-many relationships between entities, while simultaneously providing ways for programmers to intentionally limit the ways that entities can be connected .],
+  [But notice that we’re not saying that one mechanism does both jobs. No, we’re saying that one tool helps us increase expressivity, while another helps us limit the perceived complexity of our programs, and the two work in tension with each other.],
+  [Now that we’ve established our heuristic, let’s look at some higher-order functions, and see what they can tell us about expressiveness and perceived complexity.],
+  [Brown Mandelbrot, © 2008 docnic, Some rights reserved],
+  [id="higher-order-functions"\>higher-order functions],
+  [Functions that accept functions as parameters, and/or return functions as values, are called Higher-Order Functions , or “HOFs.” Languages that support HOFs also support the idea of functions as first-class values , and nearly always support the idea of dynamically creating functions .],
+  [HOFs give programmers even more ways to decompose and compose programs, and thus more ways to write programs where there is a one-to-one relationship between functions and responsibilities. Let’s look at an example.],
+  [Rumour has it that there are excellent companies that ask coöp students to write code as part of the interview process. A typical problem will ask the student to demonstrate their facility solving a problem that ought to be familiar to a computer science or computer engineering student.],
+  [For example, merging two sorted lists. This is something a student will have at least looked at, and it does have some applicability to modern service architectures. Here’s a naïve implementation:],
+  [class="highlight"\> function merge ({ list1 , list2 }) { 
+ if ( list1 . length === 0 || list2 . length === 0 ) { 
+ return list1 . concat ( list2 ); 
+ } else { 
+ let atom , remainder ;],
+  [if ( list1 \[ 0 \] \[1, 2, 3, 4, 5, 6, 7, 8\]],
+  [And here’s a function that finds the sum of a list of numbers:],
+  [class="highlight"\> function sum ( list ) { 
+ if ( list . length === 0 ) { 
+ return 0 ; 
+ } else { 
+ const \[ atom , ... remainder \] = list ; 
+ const left = atom ; 
+ const right = sum ( remainder );],
+  [return left + right ; 
+ } 
+ }],
+  [sum (\[ 42 , 3 , - 1 \]) 
+ \/\/=\> 44],
+  [We’ve written them so that both have the same structure, they are linearly recursive . Can we extract this structure?],
+  [id="linrec"\>linrec],
+  [Linear recursion has a simple form:],
+  [Look at the input. Can we break an element off?],
+  [If not, what value do we return?],
+  [If we can break a chunk off, divide the input into the element and a remainder],
+  [Run our linearly recursive function on the remainder, then],
+  [Combine our chunk with the result of our linearly recursive function on the remainder],
+  [Both of our examples above have this form, and we will write a higher-order function to implement linear recursion. To get started with our extraction, it helps to take an example of the function we want to implement, and extract its future parameters as constants:],
+  [class="highlight"\> function sum ( list ) { 
+ const indivisible = ( list ) =\> list . length === 0 ; 
+ const value = () =\> 0 ; 
+ const divide = ( list ) =\> { 
+ const \[ atom , ... remainder \] = list ;],
+  [return { atom , remainder } 
+ }; 
+ const combine = ({ left , right }) =\> left + right ;],
+  [if ( indivisible ( list )) { 
+ return value ( list ); 
+ } else { 
+ const { atom , remainder } = divide ( list ); 
+ const left = atom ; 
+ const right = sum ( remainder );],
+  [return combine ({ left , right }); 
+ } 
+ }],
+  [We’re just about ready to make our higher-order function. Our penultimate step is to rename sum to myself , and list to input :],
+  [class="highlight"\> function myself ( input ) { 
+ const indivisible = ( list ) =\> list . length === 0 ; 
+ const value = () =\> 0 ; 
+ const divide = ( list ) =\> { 
+ const \[ atom , ... remainder \] = list ;],
+  [return { atom , remainder } 
+ }; 
+ const combine = ({ left , right }) =\> left + right ;],
+  [if ( indivisible ( input )) { 
+ return value ( input ); 
+ } else { 
+ const { atom , remainder } = divide ( input ); 
+ const left = atom ; 
+ const right = myself ( remainder );],
+  [return combine ({ left , right }); 
+ } 
+ }],
+  [The final step is to turn our constant functions into parameters of a function that returns our myself function:],
+  [class="highlight"\> function linrec ({ indivisible , value , divide , combine }) { 
+ return function myself ( input ) { 
+ if ( indivisible ( input )) { 
+ return value ( input ); 
+ } else { 
+ const { atom , remainder } = divide ( input ); 
+ const left = atom ; 
+ const right = myself ( remainder );],
+  [return combine ({ left , right }); 
+ } 
+ } 
+ }],
+  [const sum = linrec ({ 
+ indivisible : ( list ) =\> list . length === 0 , 
+ value : () =\> 0 , 
+ divide : ( list ) =\> { 
+ const \[ atom , ... remainder \] = list ;],
+  [return { atom , remainder } 
+ }, 
+ combine : ({ left , right }) =\> left + right 
+ });],
+  [And now we can exploit the similarities between sum and merge , by using linrec to write merge as well:],
+  [class="highlight"\> const merge = linrec ({ 
+ indivisible : ({ list1 , list2 }) =\> list1 . length === 0 || list2 . length === 0 , 
+ value : ({ list1 , list2 }) =\> list1 . concat ( list2 ), 
+ divide : ({ list1 , list2 }) =\> { 
+ if ( list1 \[ 0 \] \[ left , ... right \] 
+ });],
+  [But why stop there?],
+  [id="binrec"\>binrec],
+  [binrec is a higher-order function for implementing binary recursion . Remember our coöp student implementing a merge between sorted lists? One of the cool things you can do with a merge function is write a merge sort , and advanced students are often asked to at least sketch out how it would work.],
+  [binrec is actually simpler than linrec in at least one respect, because instead of having an element and a remainder, binrec divides a problem into two parts and applies the same algorithm to both halves:],
+  [class="highlight"\> function binrec ({ indivisible , value , divide , combine }) { 
+ return function myself ( input ) { 
+ if ( indivisible ( input )) { 
+ return value ( input ); 
+ } else { 
+ let { left , right } = divide ( input );],
+  [left = myself ( left ); 
+ right = myself ( right );],
+  [return combine ({ left , right }); 
+ } 
+ } 
+ }],
+  [const mergeSort = binrec ({ 
+ indivisible : ( list ) =\> list . length list , 
+ divide : ( list ) =\> ({ 
+ left : list . slice ( 0 , list . length \/ 2 ), 
+ right : list . slice ( list . length \/ 2 ) 
+ }), 
+ combine : ({ left : list1 , right : list2 }) =\> merge ({ list1 , list2 }) 
+ });],
+  [mergeSort (\[ 1 , 42 , 4 , 5 \]) 
+ \/\/=\> \[1, 4, 5, 42\]],
+  [From binrec , we can derive multirec , which divides the problem into an arbitrary number of symmetrical parts:],
+  [function multirec ({ indivisible , value , divide , combine }) { 
+ return function myself ( input ) { 
+ if ( indivisible ( input )) { 
+ return value ( input ); 
+ } else { 
+ const parts = divide ( input ); 
+ const solutions = mapWith ( myself )( parts );],
+  [return combine ( solutions ); 
+ } 
+ } 
+ }],
+  [const mergeSort = multirec ({ 
+ indivisible : ( list ) =\> list . length list , 
+ divide : ( list ) =\> \[ 
+ list . slice ( 0 , list . length \/ 2 ), 
+ list . slice ( list . length \/ 2 ) 
+ \], 
+ combine : (\[ list1 , list2 \]) =\> merge ({ list1 , list2 }) 
+ });],
+  [There are an infinitude of higher-order functions we could explore, but these are enough for now. Let’s return to thinking about the relationship between expressiveness and perceived complexity.],
+  [id="the-relationship-between-higher-order-functions-expressiveness-and-complexity"\>the relationship between higher-order functions, expressiveness, and complexity],
+  [In typical programming, functions invoke each other, and by creating many-to-many relationships between functions, we increase expressiveness by making sure that one and only one functions implements any one responsibility. If two functions implement the same responsibility, we are less DRY, and less expressive.],
+  [How do higher-order functions come into this? Well, as we saw, merge and sum have different responsibilities in the solution domain–merging lists and summing lists. But they share a common implementation structure, linear recursion. Therefore, they both are responsible for implementing a linearly recursive algorithm.],
+  [By extracting this algorithm into linrec , we once again make sure that one and only one entity– linrec is responsible for implementing linear recursion. Thus, we find that a feature like first-class functions does give us the power of greater expressiveness, as it gives us at least one more way to create many-to-many relationships between functions.],
+  [And we also know that this can increase perceived complexity if we do not also temper this increased expressiveness with language features or architectural designs that allow us to define groups of functions that have rich relationships within themselves, but only limited relationships with other groups.],
+  [Photo © 2010 Denis Mihailov, some rights reserved],
+  [id="one-to-many-and-many-to-many"\>one-to-many and many-to-many],
+  [There’s more to it than that. Let’s compare binrec and multirec . Or rather, let’s compare how we write mergeSort using binrec and multirec :],
+  [class="highlight"\> const mergeSort1 = binrec ({ 
+ indivisible : ( list ) =\> list . length list , 
+ divide : ( list ) =\> ({ 
+ left : list . slice ( 0 , list . length \/ 2 ), 
+ right : list . slice ( list . length \/ 2 ) 
+ }), 
+ combine : ({ left : list1 , right : list2 }) =\> merge ({ list1 , list2 }) 
+ });],
+  [const mergeSort2 = multirec ({ 
+ indivisible : ( list ) =\> list . length list , 
+ divide : ( list ) =\> \[ 
+ list . slice ( 0 , list . length \/ 2 ), 
+ list . slice ( list . length \/ 2 ) 
+ \], 
+ combine : (\[ list1 , list2 \]) =\> merge ({ list1 , list2 }) 
+ });],
+  [The interesting thing for us are the functions we supply as arguments. Let’s name them:],
+  [class="highlight"\> const hasAtMostOne = ( list ) =\> list . length list ; 
+ const bisectLeftAndRight = ( list ) =\> ({ 
+ left : list . slice ( 0 , list . length \/ 2 ), 
+ right : list . slice ( list . length \/ 2 ) 
+ }); 
+ const bisect = ( list ) =\> \[ 
+ list . slice ( 0 , list . length \/ 2 ), 
+ list . slice ( list . length \/ 2 ) 
+ \]; 
+ const mergeLeftAndRight = ({ left : list1 , right : list2 }) =\> merge ({ list1 , list2 }); 
+ const mergeBisected = (\[ list1 , list2 \]) =\> merge ({ list1 , list2 });],
+  [Looking at the names and at what the functions do, it seems that some, namely hasAtMostOne , Identity , and bisect feel like general-purpose functions that we might find ourselves using throughout one or many programs. And in fact, they can often be found in general-purpose function utility libraries. They express universal operations on lists.],
+  [Whereas, bisectLeftAndRight , and mergeLeftAndRight , seem more specialized. They are unlikely to be used anywhere else. mergeBisected is a toss-up. We might need it elsewhere, we might not.],
+  [We can also say that there is a many-to-many relationship between functions in our programs and the hasAtMostOne , Identity , and bisect functions. Functions like mergeSort2 call many other functions, and functions like bisect can be called by many other functions.],
+  [And as noted in the beginning, this “many-to-many-ness” contributes to expressiveness and to ensuring that we can write software where there is a one-to-one relationship between entities and responsibilities. For example, bisect is the authority on bisecting lists. We can arrange to write all of our code to invoke bisect , rather than duplicating its functionality.],
+  [Our heuristic is that the more general-purpose the interface and behavioural “contract” that a function provides, and the more focused and simple a responsibility it has, the greater its “many-to-many-ness.” Therefore, when we write higher-order functions like multirec , we should strive to design them to accept general-purpose parameters with simple responsibilities.],
+  [But we can also write functions like bisectLeftAndRight and mergeLeftAndRight . But when we do, there will be a one-to-many relationship, because we have little use for them outside of our specific merge application. This does allow us to structure our code and extract commonality like how to perform a binary recursion, but by limiting the many-to-many-ness of our program, we limit its expressiveness.],
+  [Unfortunately, this limitation of expressiveness does not directly translate to limiting the perceived complexity of our programs. We can tell from detailed inspection that a function like bisectLeftAndRight will not be useful elsewhere in the program, but if we do not employ a tool like module scoping to enforce this and make it obvious at a glance, we do not really limit its perceived complexity.],
+  [From this we can observe that many programming techniques, such as writing highly specialized interfaces for functions, or having complex responsibilities, can serve to limit a program’s expressiveness without providing the benefit of limiting its perceived complexity.],
+  [Framework, © 2006 kaz k, some rights reserved],
+  [id="what-higher-order-functions-tell-us-about-frameworks-and-libraries"\>what higher-order functions tell us about frameworks and libraries],
+  [Roughly speaking, both frameworks and libraries are collections of classes, functions, and other code that we blend with our own code to write programs. But frameworks are designed to call our code, while libraries are designed to be called by our code.],
+  [Frameworks typically expect us to write functions or create entities with very specific, proprietary interfaces and behavioural contracts. For example, Ember requires us to extend its own base classes for things like component classes, instead of using ordinary JavaScript ES-6 classes. As we noted above, when we have specific interfaces, we limit the expressiveness of our programs, but not the incidental complexity.],
+  [The underlying assumption is that we are writing code for the framework, so the framework’s author is not concerned with setting-up a many-to-many relationship between the framework’s code and our code. For example, we cannot use JavaScript mixins, subclass factories, or method advice with the classes we write in Ember. We have to use the specific, proprietary meta-programming facilities that Ember provides, or are provided in specific plugins written for Ember.],
+  [Framework-oriented code tends to be more one-to-many than many-to-many, and thus tends to be less expressive .],
+  [Whereas, libraries are designed to be called by our code. And more importantly, by the code of many, many different teams, each of whom have their own programming style and approach. This leads library authors in general to write functions with generic interfaces and simple responsibilities.],
+  [Library-oriented code tends to be more many-to-many than one-to-many, and thus can be more expressive .],
+  [Is framework-oriented code a bad thing? It’s a tradeoff. Frameworks provide standard ways to do things. Frameworks hold out the promise of doing more things for us, and especially doing more complex things for us.],
+  [Ideally, although our code may be less expressive with a framework, our goal should be that we write less code against a framework than we would using libraries, and that we use other mechanisms to limit the perceived complexity of our code.],
+  [But from our exploration of linrec , binrec , and multirec , we can see that higher-order functions teach us something about specific and general interfaces, and that teaches us something about the tradeoffs between using frameworks and libraries.],
+  [id="afterward"\>afterward],
+  [There is more to read about multirec in the follow-up essay, Why recursive data structures? , and the final chapter, Time, Space, and Life As We Know It .],
+  [Have an observation? Spot an error? You can open an issue , discuss this on reddit , or even edit this post yourself.],
+  [And hey: If you like this essay, you’ll love JavaScript Allongé . It’s free to read online!],
+  [id="notes"\>notes],
+  [id="fn:methods"\>],
+  [Although this essay is going to talk about functions, everything we look at is applicable to methods and by analogy, to classes. We’re just sticking to talking about functions for simplicity’s sake. ↩],
+  [id="fn:quote"\>],
+  [“Ils doivent envisager qu’une grande responsabilité est la suite inséparable d’un grand pouvoir.”— quoteinvestigator.com ↩],
+),
+  insert-map: (:),
+  word-count: 3412,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+}
+
+{
+  #standard-article(
+  title: [Ghost CMS & Linux - Fixing "No Space Left on Device" Issue],
+  author: [Dean Hume],
+  source-name: [Dean Hume],
+  images: (),
+  paragraphs: (
+  [A few years ago, I transitioned my blog from a custom ASP. NET website to Ghost CMS . I've been really happy with Ghost - it's easy to set up and get running, and the Ghost community is really great.],
+  [Life often gets in the way of blogging, and I haven't made any new posts to this blog for a while. I've had a few on and off issues with Amazon EC2 Linux instances and this blog over time, but generally things were working as expected. The blog has largely remained untouched for a year or so. Which is why I was quite surprised to found out that I was greeted with an annoying HTTP 503 error on my site over the Christmas period.],
+  [I thought this might just be an issue with the site, so I tried the usual Stop Instance and Restart Instance . That didn't help.],
+  [After taking a closer look at the logs on Amazon, it turns out that I had actually run out of disk space on the instance. This is a bit weird considering I had 10 GB assigned to the volume - after all, this is only a small blog!],
+  [id="increasing-the-size-of-the-volume"\>Increasing the size of the volume],
+  [My first thoughts were to get the site back up and running by increasing the size of the volume (or disk space) assigned to the instance. You can do this from the EC2 Management Console by selecting the instance, choosing Storage and the clicking on the Volume ID (highlighted in yellow below).],
+  [Select the Volume to update],
+  [Next, select from the Actions drop down menu and choose Modify Volume .],
+  [Choose the new size of the volume and select OK.],
+  [id="using-growpart"\>Using Growpart],
+  [Once you've increased the size of the volume, it turns out that there is still one more step that needs to take place. You need to tell the partition to use the "new space" that you've just given it. Without doing this, it is still assigned the old volume size and you haven't actually made use of the new space you've given it.],
+  [You can see this by SSH'ing into the instance and typing lsblk in the terminal.],
+  [NAME MAJ: MIN RM SIZE RO TYPE MOUNTPOINT
+xvda 202:0 0 40G 0 disk
+└─xvda1 202:1 0 10G 0 part /
+loop1 7:1 0 97.9M 1 loop /snap/core/10444
+loop3 7:3 0 97.9M 1 loop /snap/core/10577
+loop4 7:4 0 55.4M 1 loop /snap/core18/1932
+loop6 7:6 0 55.4M 1 loop /snap/core18/1944],
+  [In my case the partition xvda1 is still assigned 10 GB, but the root xvda uses 40 GB.],
+  [The simple solution is to run the following command on the root partition and tell it to start using the new space it has been allocated:],
+  [\$ sudo growpart /dev/xvda 1],
+  [However, when I did this I was presented with the following error:],
+  [mkdir: cannot create directory ‘/tmp/growpart.2626’: No space left on device],
+  [Arrrgh! This meant that I didn't even have enough disk space to expand the disk space. I was screwed! One of the suggestions that was mentioned online was to use the \$ apt-get autoremove command to remove those dependencies that were installed with applications and are no longer used by anything else on the system. Unfortunately, I was also met with the " No space left on device " error when I ran the command.],
+  [I searched for other files to remove, but being a bit of an amateur with Linux, I decided to delete the safest files....the log files. I did this by typing the following command in the terminal:],
+  [\$ find /var/log -type f -delete],
+  [Whew! This bought me an additional 300 Mb which was just enough to run the growpart command again.],
+  [\$ sudo growpart /dev/xvda 1],
+  [Success! If I run the lsblk command to verify that partition 1 is expanded to 40 GB, I see the following:],
+  [NAME MAJ: MIN RM SIZE RO TYPE MOUNTPOINT
+xvda 202:0 0 40G 0 disk
+└─xvda1 202:1 0 40G 0 part /
+loop1 7:1 0 97.9M 1 loop /snap/core/10444
+loop3 7:3 0 97.9M 1 loop /snap/core/10577
+loop4 7:4 0 55.4M 1 loop /snap/core18/1932
+loop6 7:6 0 55.4M 1 loop /snap/core18/1944],
+  [I ran the resize2fs command to resize my file system. It can be used to enlarge or shrink an unmounted file system located on device.],
+  [\$ sudo resize2fs /dev/xvda1],
+  [Finally, I started the Ghost CMS again with the following command :],
+  [sudo /opt/bitnami/ctlscript.sh start],
+  [Once I ran that command I was greeted with:],
+  [ℹ Checking if logged in user is directory owner \[skipped\]
+✔ Checking current folder permissions
+✔ Validating config
+✔ Checking memory availability
+✔ Starting Ghost
+You can access your publication at http:\/\/xx.xxx.xx.x:80
+Your admin interface is located at http:\/\/xx.xxx.xx.x:80/ghost/],
+  [I never thought I'd be so happy to see the output from a terminal!],
+  [id="summary"\>Summary],
+  [I still haven't been able to get to the bottom of why a small Ghost CMS should be taking up such a large amount of disk space, but for the moment I am happy that my site is up and running. I have Cloudwatch alarms in place to alert me if the disk space grows too large now.],
+  [If anyone has any guesses as to why this happens with Ghost hosted on Linux, let me know!],
+),
+  insert-map: (:),
+  word-count: 873,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+}
+
+{
+  #standard-article(
+  title: [You've got the Rails basics. So why do you feel so slow?],
+  author: [Justin Weiss],
+  source-name: [Justin Weiss],
+  images: (),
+  paragraphs: (
+  [You’re confident about the core ideas behind Rails. You can write working code, no problem. And you’re learning more about code quality, refactoring, writing great tests, and object-oriented design.],
+  [By this point, you’re starting to feel like you’re getting it, that you’re on the path to becoming an expert. When you look backwards, you see just how far you’ve come, and you’re pretty happy with your progress.],
+  [So why do you feel so slow? Now that you care about testing, maintainability, and design, it feels like it takes you way more time to ship anything!],
+  [Is it even possible to ship high quality code quickly?],
+  [id="its-all-part-of-the-process"\>It’s all part of the process],
+  [This feeling is incredibly common, no matter what you’re learning.],
+  [Now that you’re no longer a beginner, you’re starting to see all the different shapes that your code could have. You have more alternatives to think through whenever you put down a line of code. You have to test edge cases you never recognized before.],
+  [You’ve learned lots of helpful skills. But right now, they still take a lot of thought. You have to weigh every decision you make, so you feel comfortable that you’re making the right decision based on the things you’ve learned.],
+  [It will get faster, though. The skills you’ve learned will become more automatic. You’ll build intuition. And you’ll be able to make better decisions more quickly.],
+  [Which is nice to know, but it doesn’t help you right now . So what can you do now, to finish things faster?],
+  [id="take-it-in-stages"\>Take it in stages],
+  [If you’re obsessed with writing perfect, high-quality, highly-maintainable code every time you put your fingers on the keyboard, you’ll never get anything done.],
+  [When I get stuck, I write code the same way I write articles. You’d start with a rough draft. Maybe sketch out some tests, code, or comments. Or even write some ideas out on paper. At this point, you wouldn’t worry about structure, you’re just using code to clear up the vague ideas you have in your head.],
+  [Then, I turn those ideas into a straightforward implementation. What you might call “The simplest thing that could possibly work.” It’s not perfect, and not even close. But don’t worry about it. Because once the code works, you’ll do a tidying pass. TDD edge cases, refactor obviously bad code, or make names clearer.],
+  [These “refined drafts” are usually good enough to ship. But I’ll usually do a few more passes. Not too many, though – you’ll soon start to see diminishing returns. You’ll spend more time cleaning up the code than it’s worth.],
+  [Then, if you really want to end up with the cleanest possible code, let it settle for a while. Come back to it in a few weeks or months, and do another pass at it. By that time, you’ll know more about your system, and you’ll have learned more about how to write great, highly-maintainable code. So you’ll do an even better job.],
+  [Just like writing, that process is:],
+  [Sketch out a rough outline, draft, or prototype.],
+  [Write a simple, unedited, straightforward implementation (often guided by TDD, or written along with tests).],
+  [Refine, refactor, and clean up that implementation a little bit.],
+  [Let it settle.],
+  [Come back to it, and do one more pass.],
+  [It sounds like a lot more work. But when you go in stages like this, you’ll move faster, without always second-guessing yourself. And you won’t end up overthinking decisions between a few just-as-good options.],
+  [This article was inspired by a question from Topher on my advice page . If you’re stuck on questions about Ruby and Rails, and need some help or advice, ask me there !],
+),
+  insert-map: (:),
+  word-count: 614,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+  #pull-quote([Not too many, though – you’ll soon start to see diminishing returns.], [Justin Weiss])
 
 }
 
@@ -669,134 +2165,51 @@ interface:],
 
 {
   #standard-article(
-  title: [A JavaScript Constructor Problem, and Three Solutions],
-  author: [Reginald Braithwaite],
-  source-name: [Reginald Braithwaite (raganwald)],
+  title: [Goodbye Irida],
+  author: [Lazarus Lazaridis (iridakos)],
+  source-name: [Lazarus Lazaridis (iridakos)],
   images: (),
   paragraphs: (
-  [id="preamble"\>preamble],
-  [As you know, you can create new objects in JavaScript using a Constructor Function , like this:],
-  [var snafu = new Fubar ( " Situation Normal " , " All Fsked Up " );],
-  [When you “call” the constructor with the new keyword, you get a new object allocated, and the constructor is called with the new object as the current context. If you don’t explicitly return anything from the constructor, you get the new object as the result.],
-  [Thus, the body of the constructor function is used to initialize the newly created object. There’s another thing: The newly created object is initialized to have a prototype. What prototype? The contents of the constructor’s prototype property. So we can write:],
-  [snafu . concatenated () 
- \/\/=\> 'Situation Normal All Fsked Up'],
-  [Thanks to the internal mechanics of JavaScript’s instanceof operator, we can use it to test whether an object is likely to have been created with a particular constructor:],
-  [(It’s possible to “fool” instanceof when working with more advanced idioms, or if you’re the kind of malicious troglodyte who collects language corner cases and enjoys inflicting them on candidates in job interviews. But it works well enough for our purposes.)],
-  [id="the-problem"\>the problem],
-  [What happens if we call the constructor, but accidentally omit the new keyword?],
-  [fubar 
- \/\/=\> undefined],
-  [William-Thomas-Fredreich!? We’ve called an ordinary function that doesn’t return anything. so fubar is undefined. That’s not what we want. Actually, it’s worse than that:],
-  [JavaScript sets this to the global environment by default for calling an ordinary function, so we’ve just blundered about in the global environment. We can fix that somewhat:],
-  [this . \_foo = foo ; 
- this . \_bar = bar ; 
- }],
-  [Fubar ( " Situation Normal " , " All Fsked Up " ); 
- \/\/=\> TypeError: Cannot set property '\_foo' of undefined],
-  [Although "use strict" might be omitted from code in blog posts and books (mea culpa!), in production it is very nearly mandatory for reasons just like this. But nevertheless, constructors that do not take into account the possibility of being called without the new keyword are a potential problem.],
-  [So what can we do?],
-  [id="solution-auto-instantiation"\>solution: auto-instantiation],
-  [In Effective JavaScript , David Herman describes auto-instantiation . When we call a constructor with new , The pseudo-variable this is set to a new instance of our “class,” so-to-speak. We can use this to detect whether our constructor has been called with new :],
-  [var obj , 
- ret ;],
-  [if ( this instanceof Fubar ) { 
- this . \_foo = foo ; 
- this . \_bar = bar ; 
- } 
- else return new Fubar ( foo , bar ); 
- }],
-  [Fubar ( " Situation Normal " , " All Fsked Up " ); 
- \/\/=\> 
- { \_foo : ' Situation Normal ' , 
- \_bar : ' All Fsked Up ' }],
-  [Why bother making it work without new ? One problem this solves is that new Fubar(...) does not compose . Consider:],
-  [class="highlight"\> function logsArguments ( fn ) { 
- return function () { 
- console . log . apply ( this , arguments ); 
- return fn . apply ( this , arguments ) 
- } 
- }],
-  [function sum2 ( a , b ) { 
- return a + b ; 
- }],
-  [var logsSum = logsArguments ( sum2 );],
-  [logsSum ( 2 , 2 ) 
- \/\/=\> 
- 2 2 
- 4],
-  [logsArguments decorates a function by returning a version of the function that logs its arguments. Let’s try it on the original Fubar :],
-  [class="highlight"\> function Fubar ( foo , bar ) { 
- this . \_foo = foo ; 
- this . \_bar = bar ; 
- } 
- Fubar . prototype . concatenated = function () { 
- return this . \_foo + " " + this . \_bar ; 
- }],
-  [var LoggingFubar = logsArguments ( Fubar );],
-  [var snafu = new LoggingFubar ( " Situation Normal " , " All Fsked Up " ); 
- \/\/=\> Situation Normal All Fsked Up],
-  [snafu . concatenated () 
- \/\/=\> TypeError: Object [object Object] has no method 'concatenated'],
-  [This doesn’t work because snafu is actually an instance of LoggingFubar , not of Fubar . But if we use the auto-instantiating version of Fubar :],
-  [var obj , 
- ret ;],
-  [if ( this instanceof Fubar ) { 
- this . \_foo = foo ; 
- this . \_bar = bar ; 
- } 
- else { 
- obj = new Fubar (); 
- ret = Fubar . apply ( obj , arguments ); 
- return ret === undefined 
- ? obj 
- : ret ; 
- } 
- } 
- Fubar . prototype . concatenated = function () { 
- return this . \_foo + " " + this . \_bar ; 
- }],
-  [var LoggingFubar = logsArguments ( Fubar );],
-  [var snafu = new LoggingFubar ( " Situation Normal " , " All Fsked Up " ); 
- \/\/=\> Situation Normal All Fsked Up],
-  [snafu . concatenated () 
- \/\/=\> 'Situation Normal All Fsked Up'],
-  [Now it works, but of course snafu is an instance of Fubar , not of LoggingFubar . Is that what you want? Who knows!? This isn’t a justification for the pattern, as much as an explanation that it is a useful, but leaky abstraction. It’s doesn’t “just work,” but it can make certain things possible (like decorating constructors) that are otherwise even more awkward to implement.],
-  [id="solution-overload-its-meaning"\>solution: overload its meaning],
-  [It can be very handy to have a function that tests for an object being an instance of a particular class. If we can stomach the idea of one function doing two different things, we can make the constructor its own instanceof test:],
-  [if ( this instanceof Fubar ) { 
- this . \_foo = foo ; 
- this . \_bar = bar ; 
- } 
- else return arguments [ 0 ] instanceof Fubar ; 
- }],
-  [var snafu = new Fubar ( " Situation Normal " , " All Fsked Up " );],
-  [snafu 
- \/\/=\> 
- { \_foo : ' Situation Normal ' , 
- \_bar : ' All Fsked Up ' }],
-  [Fubar ({}) 
- \/\/=\> false 
- Fubar ( snafu ) 
- \/\/=\> true],
-  [This allows us to use the constructor as an argument in predicate and multiple dispatch , or as a filter:],
-  [id="solution-kill-it-with-fire"\>solution: kill it with fire],
-  [If we don’t have some pressing need for auto-instantiation, and if we care not for overloaded functions, we may wish to avoid accidentally calling a constructor without using new . We saw that "use strict" can help, but it’s not a panacea. It won’t throw an error if we don’t actually try to assign a value to the global environment. And if we try to do something before assigning a value, it will do that thing no matter what.],
-  [Perhaps it’s better to take matters into our own hands. Olivier Scherrer suggests the following pattern:],
-  [if ( ! ( this instanceof Fubar )) { 
- throw new Error ( " Fubar needs to be called with the new keyword " ); 
- }],
-  [this . \_foo = foo ; 
- this . \_bar = bar ; 
- }],
-  [Fubar ( " Situation Normal " , " All Fsked Up " ); 
- \/\/=\> Error: Fubar needs to be called with the new keyword],
-  [Simple and safer than only relying on "use strict" . If you like having a simple instanceof test, you can bake it into the constructor as a function method:],
-  [var arrayOfSevereProblems = problems . filter ( Fubar . is );],
-  [There you have it: Constructors that fail when called without new are a potential problem, and three solutions we can use are, respectively, auto-instantiation, overloading the constructor, or killing such calls with fire.],
+  [On Monday I had to put my beloved cat, Irida, to sleep.],
+  [id="who-is-irida"\>Who is Irida],
+  [Twelve years ago, I wanted to get a pet. My friends helped me find one via a post about a stray young cat which was found under a truck in my area. After two days the cat was in my house and that's how one my most beloved beings came into my life.],
+  [I was thinking of names and I ended up naming her "Irida" (which is a variation of Iris ) after a server in my university. It worked well for me that everybody thought the name was given due to her special look .],
+  [This blog is named after her.],
+  [id="living-with-irida"\>Living with Irida],
+  [If you are a cat owner you must already know that you are the only person that really knows and understands his/her behavior. Cats are not as expressive as dogs are, but sooner or later we do feel their love and we can understand their mood and their needs.],
+  [In my case, living with Irida was as if I had another person in the house. We had conversations that always ended when her look was telling me "You do know I can't speak, you're speaking alone".],
+  [As the years were passing by, our relationship was changing and even more feelings were being expressed from both parts.],
+  [Every single post of this blog has been written with this thing on the side.],
+  [Whenever I was in the house, Irida was next to me. She was following me everywhere I was going.],
+  [After the first two or three years she started "requesting" my arm to sleep on it during the night.],
+  [In the winter, she was scratching the blankets to force me elevate my hand and create some kind of a nest for her to lay down.],
+  [So many more things to say in this section. View photos instead.],
+  [Very interesting.],
+  [I fits.],
+  [Can't find Minerva],
+  [I don't like reggae],
+  [Watching a thriller],
+  [The sickness],
+  [In September, while I was petting her, I noticed something like a pimple outside her mouth. After a very stressful process of tests instructed by our vet, she was diagnosed with Squamous cell Carcinoma on her jaw.],
+  [The cancer was really aggressive and we had to act fast. The doctors said that we can remove the bottom right part of the jaw which was the part that the tumor was located at. It was very hard to take a decision when you couldn't know how things would turn up. Would she be able to use her mouth afterwards? How much time would she gain? Would she be suffering after such a surgery?],
+  [We decided to have the surgery. And everything went fine.],
+  [The first days she couldn't eat on her own and we used a tube in order to feed her.],
+  [I feared that this might be it, she might not be able to use her mouth.],
+  [After 3 days she started eating on her own. And not only canned food which was soft. She started eating her dry food as if nothing had happened. The surgery went fine, the doctors did a really good job.],
+  [Everything was fine until recently. Irida was happy, she was playing with her toys, purring and doing her usual crazy moves when she was bored.],
+  [During Christmas though, she started keeping her mouth open. The scheduled tests (including scans) didn't show anything in her lungs or somewhere else. The doctors couldn't see anything developing in her mouth either. I was hoping that something else was the cause of this, like the feline asthma or the exposure to the heat of the radiators.],
+  [Few weeks ago though, she started having difficulties after eating: she was choking and she was heavily breathing. The doctors used general anesthesia and checked her larynx and that's where the problem was. There was a metastasis in her base of her tongue. The tumor was not huge but big enough to cause big discomfort.],
+  [Even if a surgery was doable, everyone was not convinced that it should be done. I didn't want her to suffer again with such a bad prognosis. When the moment came that even canned food diluted with water was hard to be consumed, putting her to sleep was what should be done.],
+  [id="what-now"\>What now],
+  [I cried a lot, I am in pain but as the days pass by I'm feeling a bitter sweet better. We had some really good moments till the last days. The loss would hurt me the same if not more if she died in a few years from now. I feel better thinking that she didn't die too young or in pain.],
+  [When she was two, I got another cat, Phoebe, thinking that they both would make a good company the hours that I was away from home. This never happened, Irida was the boss and Phoebe was always afraid of her. But, in hard times (ex. when the vacuum cleaner is on or when about to visit the vet) they were hiding, one next to the other as if they were hugging, under the bed.],
+  [Phoebe is now the cat of the house, enjoying a full time care. She is a totally different character, more independent but very cute.],
+  [When I feel ready again, I will get another cat so that Phoebe can hug her under the bed.],
 ),
   insert-map: (:),
-  word-count: 1441,
+  inline-pq: pull-quote([Irida was happy, she was playing with her toys, purring and doing her usual crazy moves when she was bored.], [Lazarus Lazaridis (iridakos)]),
+  inline-pq-idx: 14,
+  word-count: 1028,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -890,7 +2303,7 @@ interface:],
  ClusterName = "\${var.cluster\_name}"
  }],
   [alarm\_description = "High cluster resource usage"
- alarm\_actions = ["\${aws\_autoscaling\_policy.scale\_up\_blue.arn}"]
+ alarm\_actions = \["\${aws\_autoscaling\_policy.scale\_up\_blue.arn}"\]
 }],
   [resource "aws\_cloudwatch\_metric\_alarm" "cluster\_scale\_status\_low\_blue" {
  count = "\${var.autoscale\_enabled}"
@@ -906,7 +2319,7 @@ interface:],
  ClusterName = "\${var.cluster\_name}"
  }],
   [alarm\_description = "Low cluster resource usage"
- alarm\_actions = ["\${aws\_autoscaling\_policy.scale\_down\_blue.arn}"]
+ alarm\_actions = \["\${aws\_autoscaling\_policy.scale\_down\_blue.arn}"\]
 }],
   [variable "alarm\_high" {
  type = "map"],
@@ -1081,8 +2494,8 @@ main () {
  set\_host\_ip],
   [DATADOG\_HOST = \` get\_data\_dog\_host \`],
   [\# location the fat jar 
- BIN\_JAR = \` ls /app/bin/ \* .jar | head \`],
-  [LOG\_PATH = "/var/log/ \${ HOSTNAME } "],
+ BIN\_JAR = \` ls /app/bin\/ \* .jar | head \`],
+  [LOG\_PATH = "/var/log\/ \${ HOSTNAME } "],
   [mkdir -p \${ LOG\_PATH } 
  mkdir -p /heap\_dumps],
   [JVM\_OPTS = """
@@ -1109,12 +2522,12 @@ main () {
  \# by querying the EC2 metadata api 
  \# if there is no response after the timeout we'll default to localhost 
 set\_host\_ip () { 
- if [ "200" == " \$( /usr/bin/curl --connect-timeout 2 --max-time 2 -s -o /dev/null -w "%{http\_code}" 169.254.169.254/latest/meta-data/local-ipv4 ) " ] 
+ if \[ "200" == " \$( /usr/bin/curl --connect-timeout 2 --max-time 2 -s -o /dev/null -w "%{http\_code}" 169.254.169.254/latest/meta-data/local-ipv4 ) " \] 
  then
  HOST\_IP = \$( curl 169.254.169.254/latest/meta-data/local-ipv4 ) 
  else
  HOST\_IP = " \$( hostname ) "],
-  [if [ " \${ HOST\_IP } " = " \${ HOSTNAME } " ] 
+  [if \[ " \${ HOST\_IP } " = " \${ HOSTNAME } " \] 
  then
  HOST\_IP = "localhost" 
  fi
@@ -1136,7 +2549,7 @@ main \$\@],
   [ECS was really easy to get started on, but as with any production system there are always gotcha’s. Overall we’re really pleased with the experience, even though it wasn’t pain free. In the end, we can now deploy in seconds, rollback in seconds, and still enjoy a pseudo immutable infrastructure that is simple to reason about as well as locally reproducible!],
 ),
   insert-map: (:),
-  inline-pq: pull-quote([For example, our Terraform ECS cluster module in QA looks like this  class="highlighter-rouge"\>  class="highlight"\> module "ecs\_cluster\_default\_bg" {  source = "github.], [Curalate Engineering]),
+  inline-pq: pull-quote([That said, containers are transient; they come and go all the time.], [Curalate Engineering]),
   inline-pq-idx: 50,
   word-count: 3424,
   edited-for-length: false,
@@ -1147,182 +2560,51 @@ main \$\@],
 
 {
   #standard-article(
-  title: [Frankenwine: Multiple personas in a Wine process],
-  author: [Chris Wellons (null program)],
-  source-name: [Chris Wellons (null program)],
+  title: [Azure Function Timer Trigger not firing - NCrontab],
+  author: [Dean Hume],
+  source-name: [Dean Hume],
   images: (),
   paragraphs: (
-  [I came across a recent article on making Linux system calls from a Wine
-process . Windows programs running under Wine are still normal Linux
-processes and may interact with the Linux kernel like any other process.
-None of this was surprising, and the demonstration works just as I expect.
-Still, it got the wheels spinning and I realized an almost practical
-application: build my pkg-config implementation such that on Windows
- pkg-config.exe behaves as a native pkg-config, but when run under Wine
-this same binary takes the persona of a Linux program and becomes a cross
-toolchain pkg-config, bypassing Win32 and talking directly with the Linux
-kernel. Cosmopolitcan Libc cleverly does this out-of-the-box, but
-in this article we’ll mash together a couple existing sources with a bit
-of glue.],
-  [The results are in the merge-demo branch of u-config, and took
-hardly any work:],
-  [A platform layer, main\_wine.c , is a merge of two existing platform
-layers, one of which required unavoidable tweaks. We’ll get to those
-details in a moment. First we’ll need to detect if we’re running under
-Wine, and the best solution I found was to locate
- ntdll!wine\_get\_version . If this function exists, we’re in Wine. That
-works out to a pretty one-liner because ntdll.dll is already loaded:],
-  [An x86-64 Linux syscall wrapper with thorough inline assembly :],
-  [class="highlight"\> ptrdiff\_t syscall3 ( int n , ptrdiff\_t a , ptrdiff\_t b , ptrdiff\_t c ) 
- { 
- ptrdiff\_t r ; 
- asm volatile ( 
- "syscall" 
- : "=a" ( r ) 
- : "a" ( n ), "D" ( a ), "S" ( b ), "d" ( c ) 
- : "rcx" , "r11" , "memory" 
- ); 
- return r ; 
- }],
-  [ptrdiff\_t write ( int fd , void \* buf , ptrdiff\_t len ) 
- { 
- return syscall3 ( SYS\_write , fd , ( ptrdiff\_t ) buf , len ); 
- }],
-  [I’d normally use long for all these integers because Linux is LP64 
-( long is pointer-sized), but Windows is LLP64 (only long long is 64
-bits). It’s so bizarre to interface with Linux from LLP64, and this will
-have consequences later. With these pieces we can see the basic shape of a
-split personality program:],
-  [class="highlight"\> if ( running\_on\_wine ()) { 
- write ( 1 , "hello, wine \\n " , 12 ); 
- } else { 
- HANDLE h = GetStdHandle ( STD\_OUTPUT\_HANDLE ); 
- WriteFile ( h , "hello, windows \\n " , 15 , 0 , 0 ); 
- }],
-  [We can cram two programs into this binary and select which program at run
-time depending on what we see. In typical programs locating and calling
-into glibc would be a challenge, particularly with the incompatible ABIs
-involved. We’re avoiding it here by interfacing directly with the kernel.],
-  [id="application-to-u-config"\>Application to u-config],
-  [Luckily u-config has completely-optional platform layers implemented with
-Linux system calls. The POSIX platform layer works fine, and that’s what
-distributions should generally use, but these bonus platforms are unhosted
-and do not require libc. That means we can shove it into a Windows build
-with relatively little trouble.],
-  [Before we do that, let’s think about what we’re doing. Debian has great
-cross toolchain support , including Mingw-w64. There are even a few
-Windows libraries in the Debian package repository, such as zlib , and
-we can build Windows programs against them. If you’re cross-building and
-using pkg-config, you ought to use the cross toolchain pkg-config, which
-in GNU ecosystems gets an architecture prefix like the other cross tools.
-Debian cross toolchains each include a cross pkg-config, and it sometimes
- almost works correctly! Here’s what I get on Debian 13:],
-  [Note the architecture in the -I and -L options. It really is querying
-the cross sysroot . Though these paths are in the cross sysroot,
-and so should not be listed by pkg-config. It’s unoptimal and indicates
-this pkg-config is probably misconfigured. In other cases it’s far from
-correct:],
-  [A tool prefixed x86\_64-w64-mingw32- should not produce paths containing
- x86\_64-linux-gnu (the host architecture in this case). Our version won’t
-have these issues.],
-  [The u-config platform interface is five functions:],
-  [class="highlight"\> filemap os\_mapfile ( os \* , arena \* , s8 path ); \/\/ read whole files 
- s8node \* os\_listing ( os \* , arena \* , s8 path ); \/\/ list directories 
- void os\_write ( os \* , i32 fd , s8 ); \/\/ standard out/err 
- void os\_fail ( os \* ); \/\/ non-zero exit],
-  [void uconfig ( config \* );],
-  [Platforms implement the first four functions, and call uconfig() with
-the platform’s configuration, context pointer ( os \* ), command line
-arguments, environment, and some memory (all in the config object). My
-strategy is to link two platforms into the binary, and the first challenge
-is they both define os\_write , etc. I did not plan nor intend for one
-binary to contain more than one platform layer. Unity builds offer a fix
-without changing a single line of code:],
-  [class="highlight"\> \#define os\_fail win32\_fail
-\#define os\_listing win32\_listing
-\#define os\_mapfile win32\_mapfile
-\#define os\_write win32\_write
-\#include "main\_windows.c" 
-\#undef os\_write
-\#undef os\_mapfile
-\#undef os\_listing
-\#undef os\_fail
- 
- \#define os\_fail linux\_fail
-\#define os\_listing linux\_listing
-\#define os\_mapfile linux\_mapfile
-\#define os\_write linux\_write
-\#include "main\_linux\_amd64.c" 
-\#undef os\_write
-\#undef os\_mapfile
-\#undef os\_listing
-\#undef os\_fail],
-  [This dirty, but effective trick may look familiar . It also doesn’t
-interfere with the other builds. Next I define the real platform functions
-as a dispatch based on our run-time situation:],
-  [filemap os\_mapfile ( os \* ctx , arena \* a , s8 path ) 
- { 
- if ( wine\_detected ) { 
- return linux\_mapfile ( ctx , a , path ); 
- } else { 
- return win32\_mapfile ( ctx , a , path ); 
- } 
- }],
-  [If I were serious about keeping this experiment, I’d lift os as I did
-the functions (as win32\_os , linux\_os ) and include wine\_detected in
-the context, eliminating this global variable. That cannot be done with
-simple hacks and macros.],
-  [The next challenge is that I wrote the Linux platform layer assuming LP64,
-and so it uses long instead of an equivalent platform-agnostic type like
- ptrdiff\_t . I never thought this would be an issue because this source
-literally contains asm blocks and no conditional compilation, yet here
-we are. Lesson learned. I wanted to try an extremely janky \#define on
- long to fix it, but this source file has a couple long long that won’t
-play along. These multi-token type names of C are antithetical to its
-preprocessor! So I adjusted the source manually instead.],
-  [The Windows and Linux platform entry points are completely different, both
-in name and form, and so co-exist naturally. The merged platform layer is
-a new entry point that will pass control to the appropriate entry point:],
-  [On Linux stack is the initial value of the stack pointer , which
- points to argc , argv , envp , and auxv . We’ll need construct
-an artificial “stack” for the Linux platform layer to harvest. On Windows
-this is the process entry point , and it will find the rest on its
-own as a normal Windows process. Ultimately this ended up simpler than I
-expected:],
-  [class="highlight"\> void \_\_stdcall merge\_entrypoint () 
- { 
- wine\_detected = running\_on\_wine (); 
- if ( wine\_detected ) { 
- u8 \* fakestack [ CMDLINE\_ARGV\_MAX + 1 ]; 
- c16 \* cmd = GetCommandLineW (); 
- fakestack [ 0 ] = ( u8 \* )( iz ) cmdline\_to\_argv8 ( cmd , fakestack + 1 ); 
- \/\/ TODO: append envp to the fake stack 
- entrypoint (( iz \* ) fakestack ); 
- } else { 
- mainCRTStartup (); 
- } 
- }],
-  [Where cmdline\_to\_argv8 is my Windows argument parser , already
-used by u-config, and I reserve one element at the front to store argc .
-Since this is just a proof-of-concept I didn’t bother fabricating and
-pushing envp onto the fake stack. The Linux entry point doesn’t need
- auxv and can be omitted. Once in the Linux entry point it’s essentially
-a Linux process from then on, except the x64 calling convention still in
-use internally.],
-  [Finally, I configure the Linux platform layer for Debian’s cross sysroot:],
-  [And that’s it! We have our platform merge. Build ( w64devkit ):],
-  [On Debian use x86\_64-w64-mingw32-gcc for cc . The -e linker option
-selects the new, higher level entry point. After installing Wine
-binfmt , here’s how it looks on Debian:],
-  [That’s the correct output, but is it using the cross sysroot? Ask it to
-include the -I argument despite it being in the cross sysroot:],
-  [Looking good! It passes the pc\_path test, too:],
-  [Running this same binary on Windows after installing zlib in w64devkit:],
-  [Also:],
-  [My Frankenwine is a success!],
+  [If you've recently ventured into the world of Azure Functions , you're likely familiar with the versatility they offer when it comes to scheduling tasks. In this guide, we'll delve into using Azure Functions' Time Trigger function with Node.js and Visual Studio Code, uncovering some important nuances along the way.],
+  [This article assumes that you have some familiarity with Node.js and a basic understanding of Azure.],
+  [id="getting-started"\>Getting Started],
+  [To begin, you'll need Node.js and Visual Studio Code installed, along with the Azure Functions extension. When you create a new function, it comes with some boilerplate code that includes a schedule property defining when the function should run. By default, it's set to run every 5 minutes.],
+  [const { app } = require('\@azure/functions');],
+  [app.timer('timerTrigger2', {
+ schedule: '0 \*/5 \* \* \* \*',
+ handler: (myTimer, context) =\> {
+ context.log('Timer function processed request.');
+ }
+});],
+  [The schedule parameter in the above code tells the Azure Function how often to fire.],
+  [id="the-challenge"\>The Challenge],
+  [But what if you want your function to run every 11 hours during a day? Crafting the right Cron expression can be tricky, and that's where I encountered some difficulties. I turned to an online Cron expression generator, hoping it would simplify the process. Here's what it gave me:],
+  [0 0 \*/11 \* \*],
+  [Feeling confident, I integrated this expression into my code above and deployed the Azure Function. However, it didn't work as expected. I scoured the logs for clues but found nothing. To troubleshoot and debug locally, I temporarily changed the Cron expression to run every minute, and it worked flawlessly. So why wasn't it firing every few hours?],
+  [id="the-revelation"\>The Revelation],
+  [After some online research, I uncovered the reason behind the issue. Azure Functions use an NCRONTAB expression , which requires a six-part format instead of the traditional five-part Cron expression. The online generator that I found online had provided a five-part expression, leading to the problem.],
+  [To be fair, the Visual Studio Code extension for Azure Functions provides the correct six-part format by default. My mistake was changing it using a five-part expression from an online tool - d'oh!],
+  [id="the-solution"\>The Solution],
+  [To rectify this, I recommend using the NCrontab Expression Tester . This user-friendly tool not only helps you test your expressions but also generates the correct six-part Cron expressions tailored for Azure Functions.],
+  [When I updated my code to use the 6 part format:],
+  [0 0 \*/11 \* \* \*],
+  [It ran perfectly!],
+  [id="why-ncrontab"\>Why NCrontab?],
+  [You might be wondering why Azure Functions use the NCrontab six-part format instead of the traditional five-part format. The answer lies in its flexibility. The six-part format allows you to specify seconds, enabling you to run your functions with higher precision and frequency.],
+  [\* \* \* \* \* \*
+- - - - - -
+| | | | | |
+| | | | | +--- day of week (0 - 6) (Sunday=0)
+| | | | +----- month (1 - 12)
+| | | +------- day of month (1 - 31)
+| | +--------- hour (0 - 23)
+| +----------- min (0 - 59)
++------------- sec (0 - 59)],
+  [For further details on NCrontab expressions, you can visit the GitHub repository here .],
+  [Happy coding!],
 ),
   insert-map: (:),
-  word-count: 1599,
+  word-count: 535,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -1348,13 +2630,13 @@ include the -I argument despite it being in the cross sysroot:],
   [Lists were represented as linked lists of cons cells, with each cell’s head pointing to an element and the tail pointing to another cons cell.],
   [Having these instructions be very fast was important to those early designers: They were working on one of the first high-level languages (COBOL and FORTRAN being the others), and computers in the late 1950s were extremely small and slow by today’s standards. Although the 704 used core memory, it still used vacuum tubes for its logic. Thus, the design of programming languages and algorithms was driven by what could be accomplished with limited memory and performance.],
   [Here’s the scheme in JavaScript, using two-element arrays to represent cons cells:],
-  [class="highlight"\> const cons = ( a , d ) =\> [ a , d ], 
- car = ([ a , d ]) =\> a , 
- cdr = ([ a , d ]) =\> d ;],
+  [class="highlight"\> const cons = ( a , d ) =\> \[ a , d \], 
+ car = (\[ a , d \]) =\> a , 
+ cdr = (\[ a , d \]) =\> d ;],
   [We can make a list by calling cons repeatedly, and terminating it with null :],
   [oneToFive 
- \/\/=\> [1,[2,[3,[4,[5, null]]]]]],
-  [Notice that though JavaScript displays our list as if it is composed of arrays nested within each other like Russian Dolls, in reality the arrays refer to each other with references, so [1,[2,[3,[4,[5,null]]]]] is our way to represent:],
+ \/\/=\> \[1,\[2,\[3,\[4,\[5, null\]\]\]\]\]],
+  [Notice that though JavaScript displays our list as if it is composed of arrays nested within each other like Russian Dolls, in reality the arrays refer to each other with references, so \[1,\[2,\[3,\[4,\[5,null\]\]\]\]\] is our way to represent:],
   [This is a Linked List , it’s just that those early Lispers used the names car and cdr after the hardware instructions, whereas today we use words like element and next . But it works the same way: If we want the head of a list, we call car on it:],
   [car is very fast, it simply extracts the first element of the cons cell. And what about the rest of the list? cdr does the trick:],
   [That’s another linked list too:],
@@ -1364,9 +2646,9 @@ include the -I argument despite it being in the cross sysroot:],
   [Symbolics, Inc. was a computer manufacturer headquartered in Cambridge, Massachusetts, and later in Concord, Massachusetts, with manufacturing facilities in Chatsworth, California. Symbolics designed and manufactured a line of Lisp machines, single-user computers optimized to run the Lisp programming language.],
   [id="operating-on-lists"\>operating on lists],
   [As we can see, it was always fast to get the first element of a list and the rest of a list. Now, you could get every element of a list by traversing the list pointer by pointer. So if you wanted to do something with a list, like sum the elements of a list, you’d write a linearly recursive function like this:],
-  [class="highlight"\> const cons = ( a , d ) =\> [ a , d ], 
- car = ([ a , d ]) =\> a , 
- cdr = ([ a , d ]) =\> d ;],
+  [class="highlight"\> const cons = ( a , d ) =\> \[ a , d \], 
+ car = (\[ a , d \]) =\> a , 
+ cdr = (\[ a , d \]) =\> d ;],
   [function sum ( linkedList , runningTotal = 0 ) { 
  if ( linkedList == null ) { 
  return runningTotal ; 
@@ -1382,20 +2664,20 @@ include the -I argument despite it being in the cross sysroot:],
   [If we ignore the fact that the original cons cells were many many orders of magnitude faster than using arrays with two elements, we have the general idea:],
   [It was ridiculously fast to separate a list into the first and rest , and as a result, many linear algorithms written in Lisp were organized around repeatedly (by recursion or looping) getting the first and rest of a list.],
   [id="garbage-garbage-everywhere"\>Garbage, Garbage Everywhere],
-  [But what about today’s JavaScript? Today, we can write a list with an array. And we can get the first and rest with [0] and .slice(1) :],
+  [But what about today’s JavaScript? Today, we can write a list with an array. And we can get the first and rest with \[0\] and .slice(1) :],
   [class="highlight"\> function sum ( array , runningTotal = 0 ) { 
  if ( array . length === 0 ) { 
  return runningTotal ; 
  } else { 
- const first = array [ 0 ]; 
+ const first = array \[ 0 \]; 
  const rest = array . slice ( 1 );],
   [return sum ( rest , runningTotal + first ); 
  } 
  }],
-  [const oneToFive = [ 1 , 2 , 3 , 4 , 5 ];],
+  [const oneToFive = \[ 1 , 2 , 3 , 4 , 5 \];],
   [sum ( oneToFive ) 
  \/\/=\> 15],
-  [Like car , calling array[0] is fast. But when we invoke array.slice(1) , JavaScript makes a new array that is a copy of the old array, omitting element 0 . That is much slower, and since these copies are temporary, hammers away at the garbage collector.],
+  [Like car , calling array\[0\] is fast. But when we invoke array.slice(1) , JavaScript makes a new array that is a copy of the old array, omitting element 0 . That is much slower, and since these copies are temporary, hammers away at the garbage collector.],
   [We’re only working with five elements at a time, so we can afford to chuckle at the performance implications. But if we start operating on long lists, all that copying is going to bury us under a mound of garbage. Of course, we could switch to linked lists in JavaScript. But the cure would be worse than the disease.],
   [Nobody wants to read code that looks like cons(1, cons(2, cons(3, cons(4, cons(5, null))))) . And sometimes, we want to access arbitrary elements of a list. With a linked list, we have to traverse the list element by element to get it: 3],
   [class="highlight"\> function at ( linkedList , index ) { 
@@ -1407,7 +2689,7 @@ include the -I argument despite it being in the cross sysroot:],
  return at ( cdr ( linkedList ), index - 1 ); 
  } 
  }],
-  [const oneToFive = [ 1 , 2 , 3 , 4 , 5 ];],
+  [const oneToFive = \[ 1 , 2 , 3 , 4 , 5 \];],
   [at ( oneToFive , 4 ) 
  \/\/=\> 5],
   [Accessing arbitrary elements of a linked list is the “Shlemiel The Painter” of Computer Science:],
@@ -1417,27 +2699,27 @@ include the -I argument despite it being in the cross sysroot:],
   [If only there was a way to have the elegance of Lisp, and the performance of Arrays when accessing arbitrary elements.],
   [Let’s work our way up to that. Where do we begin?],
   [id="slicing-and-structural-sharing"\>slicing and structural sharing],
-  [Let’s start with a couple of very modest requirements. First, what we’re building is for the case when we want to process arrays in a [0] and .slice(1) , style, usually recursively.],
+  [Let’s start with a couple of very modest requirements. First, what we’re building is for the case when we want to process arrays in a \[0\] and .slice(1) , style, usually recursively.],
   [(Most of the time, we don’t want to do process lists in this style. But when we do–perhaps we are playing with a recursive algorithm we read about in a book like SICP , perhaps we want to refactor such an algorithm step-by-step–we want the performance to be “not embarrassing.”)],
   [Second, we are going to presume that the array we’re dealing with will not be mutated, at least not while we’re working with it. That’s certainly the case when writing functions that fold a list, like sum .],
   [Given those two constraints, what problem are we trying to solve? As we noted, .slice(1) is expensive because it is implemented by copying arrays. Imagine an array with 10,000 elements!!! The first slice creates another array with 9,999 elements, the next with 9,998 elements, and so on.],
   [So: Our beginning step will be to make .slice less expensive.],
   [The technique we are going to use is called structural sharing . Let’s review our two-element array implementation of linked lists from above:],
-  [class="highlight"\> const cons = ( a , d ) =\> [ a , d ], 
- car = ([ a , d ]) =\> a , 
- cdr = ([ a , d ]) =\> d ;],
+  [class="highlight"\> const cons = ( a , d ) =\> \[ a , d \], 
+ car = (\[ a , d \]) =\> a , 
+ cdr = (\[ a , d \]) =\> d ;],
   [const oneToFive = cons ( 1 , cons ( 2 , cons ( 3 , cons ( 4 , cons ( 5 , null ))))); 
  const twoToFive = cdr ( oneToFive );],
   [The variable twoToFive points to the second element in oneToFive ’s list, and both of these lists share the same four elements :],
   [As long as we don’t want to destructively modify any part of a list that is being shared, this scheme works beautifully.],
   [We are not going to use cons cells or two-element arrays, but we are going to share structure, and as noted, we are going to have to avoid any kind of operation that modifies an existing list in such a way that it affects other variables that are sharing its structure.],
-  [So what will our technique be? Well, we are going to create a data structure that behaves enough like an array that we can write things like const first = arrayLikeDataStructure[0]; and const rest = arrayLikeDataStructure.slice(1) , and they will work. But of course, our implementation won’t copy arrays. Instead, it will share the array.],
+  [So what will our technique be? Well, we are going to create a data structure that behaves enough like an array that we can write things like const first = arrayLikeDataStructure\[0\]; and const rest = arrayLikeDataStructure.slice(1) , and they will work. But of course, our implementation won’t copy arrays. Instead, it will share the array.],
   [We’ll begin with a class representing a slice of an array. Although we don’t need them directly for our purposes, we’ll implement an iterator, a .join method, and a .toString() method, for debugging purpose: 4],
-  [[... fromTwo ] 
- \/\/=\> [3, 4, 5]],
+  [\[... fromTwo \] 
+ \/\/=\> \[3, 4, 5\]],
   [Instances of Slice encapsulate the idea of a slice of an array, without making another array:],
-  [We’ll now add support for [0] and .slice(1) . The function .slice is a little different from the constructor, because the constructor is concerned with initializing the object’s properties, while .slice mimics the semantics of Array.prototype.slice . And we’ll extract some duplication while we’re at it:],
-  [To make it work with [0] , we need to implement [] . Implementing [] just for 0 is easy, but if we implement just [0] , we’re begging for a bug later when somebody thinks they can use [1] . What we want instead is a way to allow any indexed access, and properly access the correct element of the underlying array, and without allowing access beyond our slice’s dimension.],
+  [We’ll now add support for \[0\] and .slice(1) . The function .slice is a little different from the constructor, because the constructor is concerned with initializing the object’s properties, while .slice mimics the semantics of Array.prototype.slice . And we’ll extract some duplication while we’re at it:],
+  [To make it work with \[0\] , we need to implement \[\] . Implementing \[\] just for 0 is easy, but if we implement just \[0\] , we’re begging for a bug later when somebody thinks they can use \[1\] . What we want instead is a way to allow any indexed access, and properly access the correct element of the underlying array, and without allowing access beyond our slice’s dimension.],
   [To do that, we’ll use a Proxy to handle indexed access.],
   [id="meta-programming-with-proxies"\>meta-programming with proxies],
   [A Proxy is an object that “stands in” for another object, called the target in JavaScript’s documentation. The idea is that the proxy implements the desired behaviour of the object, so we can interact with the proxy as if it was the original.],
@@ -1447,12 +2729,12 @@ include the -I argument despite it being in the cross sysroot:],
   [A proxy associates a target object with a handler object that contains—surprise—handlers for various hooks. Each hook controls a specific type of behaviour.],
   [Initially, we’ll add a has hook and a get hook to our Slice objects. The net effect of the has hook is that every time another piece of code tries to determine whether our slice instances have a particular property, the handler intercepts the detection and can return true or false itself.],
   [The get hook works similarly, only it is responsible for returning a value whenever another piece of code performs a property access. As a rule, it makes sense to implement these two methods in tandem.],
-  [In our case, our Slice instances do not have any properties for 0 , 1 , 2 , &c. So if we want to be able to access the elements of the underlying array with code like someSlice[3] , we need to handle the attempt to get(slice, '3') and forward it to a method we’ll write on Slice , at(...) .],
+  [In our case, our Slice instances do not have any properties for 0 , 1 , 2 , &c. So if we want to be able to access the elements of the underlying array with code like someSlice\[3\] , we need to handle the attempt to get(slice, '3') and forward it to a method we’ll write on Slice , at(...) .],
   [Of course, methods in JavaScript are functions bound to properties, so our has and get handlers always check to see if the target slice already has a property. If so, it delegates the access back to the target.],
   [if ( typeof property === ' symbol ' ) { 
  return false ; 
  }],
-  [const matchInt = property . match ( /^ \\d +\$/ ); 
+  [const matchInt = property . match ( /^ \\d +\$\/ ); 
  if ( matchInt != null ) { 
  const i = parseInt ( property );],
   [return slice . has ( i ); 
@@ -1460,12 +2742,12 @@ include the -I argument despite it being in the cross sysroot:],
  },],
   [get ( slice , property ) { 
  if ( property in slice ) { 
- return slice [ property ]; 
+ return slice \[ property \]; 
  }],
   [if ( typeof property === ' symbol ' ) { 
  return ; 
  }],
-  [const matchInt = property . match ( /^ \\d +\$/ ); 
+  [const matchInt = property . match ( /^ \\d +\$\/ ); 
  if ( matchInt != null ) { 
  const i = parseInt ( property ); 
  return slice . at ( i ); 
@@ -1480,11 +2762,11 @@ include the -I argument despite it being in the cross sysroot:],
  this . length = normalizedLength ( array , from , length );],
   [return new Proxy ( this , SliceHandler ); 
  }],
-  [\/\/ ...],
+  [\/\\/ ...],
   [has ( i ) { 
  const { array , from , length } = this ;],
   [if ( i \>= 0 && i = 0 && i 1 
- fromLast [ 0 ] 
+ fromLast \[ 0 \] 
  \/\/=\> 5],
   [In effect, our slice is a proxy (lower-case “p”) for the underlying array, and we are now returning a Proxy (upper-case “P”) for the slice. That’s two layers of proxies, and doubtless we are all thinking of the famous aphorism “All problems in computer engineering can be solved by another level of indirection, except for the problem of too many layers of indirection.” 5],
   [And now we can implement one last thing, a static factory method for making Slice objects out of other things. With of , we can to use Slice to make our recursive functions “not embarrassing.”],
@@ -1500,11 +2782,11 @@ include the -I argument despite it being in the cross sysroot:],
  to = normalizedTo ( object , from , to );],
   [return new this ( object , from , to - from ); 
  } 
- if ( typeof object [ Symbol . iterator ] === ' function ' ) { 
- return this . of ([... object ], from , to ); 
+ if ( typeof object \[ Symbol . iterator \] === ' function ' ) { 
+ return this . of (\[... object \], from , to ); 
  } 
  }],
-  [\/\/ ... 
+  [\/\\/ ... 
  }],
   [function sum ( array ) { 
  return sumOfSlice ( Slice . of ( array ), 0 );],
@@ -1512,13 +2794,13 @@ include the -I argument despite it being in the cross sysroot:],
  if ( remaining . length === 0 ) { 
  return runningTotal ; 
  } else { 
- const first = remaining [ 0 ]; 
+ const first = remaining \[ 0 \]; 
  const rest = remaining . slice ( 1 );],
   [return sumOfSlice ( rest , runningTotal + first ); 
  } 
  } 
  }],
-  [const oneToSix = [ 1 , 2 , 3 , 4 , 5 , 6 ];],
+  [const oneToSix = \[ 1 , 2 , 3 , 4 , 5 , 6 \];],
   [sum ( oneToSix ) 
  \/\/=\> 21],
   [No more copying entire arrays! And because our .of static method allows us to create a new slice of something and specify the range being sliced, we can also write our function like this: 6],
@@ -1526,51 +2808,51 @@ include the -I argument despite it being in the cross sysroot:],
  if ( remaining . length === 0 ) { 
  return runningTotal ; 
  } else { 
- const first = remaining [ 0 ]; 
+ const first = remaining \[ 0 \]; 
  const rest = Slice . of ( remaining , 1 );],
   [return sumOfSlice ( rest , runningTotal + first ); 
  } 
  } 
  }],
-  [const oneToSeven = [ 1 , 2 , 3 , 4 , 5 , 6 , 7 ];],
+  [const oneToSeven = \[ 1 , 2 , 3 , 4 , 5 , 6 , 7 \];],
   [sum ( oneToSeven ) 
  \/\/=\> 28],
   [Naturally, it’s called of , because we use it to take a slice of some list-like object.],
   [id="more-array-ish-behaviour"\>more array-ish behaviour],
   [We didn’t need to implement an iterator, but it should be noted that since it has an iterator, we get a lot of JavaScript array-ish behaviour. For example, in strict mode, the iterator is used when destructuring. So if we want to, we can write:],
-  [class="highlight"\> const a1to5 = [ 1 , 2 , 3 , 4 , 5 ]; 
+  [class="highlight"\> const a1to5 = \[ 1 , 2 , 3 , 4 , 5 \]; 
  const oneToFive = Slice . of ( a1to5 ); 
- const [ first , ... rest ] = oneToFive ;],
+ const \[ first , ... rest \] = oneToFive ;],
   [first 
  \/\/=\> 1 
  rest 
- \/\/=\> [2, 3, 4, 5]],
-  [Unfortunately, destructuring an iterable with the spread operator always creates a new array in JavaScript, so our Slice class can’t help us make const [first, ...rest] = someSlice; not embarrassing. Iterators work with the spread operator in expressions as well:],
-  [[... abc , ... oneTwoThree ] 
- \/\/=\> ["a", "b", "c", 1, 2, 3]],
+ \/\/=\> \[2, 3, 4, 5\]],
+  [Unfortunately, destructuring an iterable with the spread operator always creates a new array in JavaScript, so our Slice class can’t help us make const \[first, ...rest\] = someSlice; not embarrassing. Iterators work with the spread operator in expressions as well:],
+  [\[... abc , ... oneTwoThree \] 
+ \/\/=\> \["a", "b", "c", 1, 2, 3\]],
   [And they get us for... of loops:],
   [const alphabet = {};],
   [for ( const letter of Slice . of ( abc )) { 
- alphabet [ letter ] = letter ; 
+ alphabet \[ letter \] = letter ; 
  }],
   [alphabet 
  /=\> { a : " a " , b : " b " , c : " c " }],
   [When we dive deeply into the spec, we uncover Symbol.isConcatSpreadable . Forcing it to be true gets us array spread concatenation behaviour. While we’re at it, we can implement .concat :],
-  [\/\/ ...],
+  [\/\\/ ...],
   [concat (... args ) { 
  const { array , from , length } = this ;],
   [return Slice . of ( array . slice ( from , length ). concat (... args )); 
  }],
-  [get [ Symbol . isConcatSpreadable ]() { 
+  [get \[ Symbol . isConcatSpreadable \]() { 
  return true ; 
  } 
  }],
-  [const abc = [ ' a ' , ' b ' , ' c ' ]; 
- const oneTwoThree = Slice . of ([ 1 , 2 , 3 ]);],
+  [const abc = \[ ' a ' , ' b ' , ' c ' \]; 
+ const oneTwoThree = Slice . of (\[ 1 , 2 , 3 \]);],
   [abc . concat ( oneTwoThree ) 
- \/\/=\> ["a", "b", "c", 1, 2, 3] 
+ \/\/=\> \["a", "b", "c", 1, 2, 3\] 
  oneTwoThree . concat ( abc ) 
- \/\/=\> [ 1, 2, 3, "a", "b", "c"]],
+ \/\/=\> \[ 1, 2, 3, "a", "b", "c"\]],
   [Of course, the biggest array-like behaviour our slices are missing is that we haven’t implemented any of the methods for modifying our slices. We’ll do that in Part II . But before moving on, let’s summarize what we’ve done so far.],
   [id="wrapping-up"\>wrapping up],
   [We set out with the purpose of writing some code that would allow us to use JavaScript arrays in a Lisp-like style, without the heavy penalty of making lots and lots of copies. To do that, we implemented structural sharing . We added a Proxy to give our new class indexed access to the elements of our Slice class.],
@@ -1587,40 +2869,40 @@ include the -I argument despite it being in the cross sysroot:],
   [if ( typeof property === ' symbol ' ) { 
  return false ; 
  }],
-  [const matchInt = property . match ( /^ \\d +\$/ ); 
+  [const matchInt = property . match ( /^ \\d +\$\/ ); 
  if ( matchInt != null ) { 
  const i = parseInt ( property );],
   [return slice . has ( i ); 
  }],
-  [const matchCarCdr = property . match ( /^c ([ ad ] + ) r\$/ ); 
+  [const matchCarCdr = property . match ( /^c (\[ ad \] + ) r\$\/ ); 
  if ( matchCarCdr != null ) { 
  return true ; 
  } 
  },],
   [get ( slice , property ) { 
  if ( property in slice ) { 
- return slice [ property ]; 
+ return slice \[ property \]; 
  }],
   [if ( typeof property === ' symbol ' ) { 
  return ; 
  }],
-  [const matchInt = property . match ( /^ \\d +\$/ ); 
+  [const matchInt = property . match ( /^ \\d +\$\/ ); 
  if ( matchInt != null ) { 
  const i = parseInt ( property ); 
  return slice . at ( i ); 
  }],
-  [const matchCarCdr = property . match ( /^c ([ ad ] + ) r\$/ ); 
+  [const matchCarCdr = property . match ( /^c (\[ ad \] + ) r\$\/ ); 
  if ( matchCarCdr != null ) { 
- const [, accessorString ] = matchCarCdr ; 
+ const \[, accessorString \] = matchCarCdr ; 
  const accessors = accessorString . split ( '' ). map ( ad =\> \`c \${ ad } r\` ); 
  return accessors . reduceRight ( 
- ( value , accessor ) =\> Slice . of ( value )[ accessor ], 
+ ( value , accessor ) =\> Slice . of ( value )\[ accessor \], 
  slice ); 
  } 
  } 
  };],
   [class Slice {],
-  [\/\/ ...],
+  [\/\\/ ...],
   [get car () { 
  return this . at ( 0 ); 
  }],
@@ -1628,14 +2910,14 @@ include the -I argument despite it being in the cross sysroot:],
  return this . slice ( 1 ); 
  }],
   [}],
-  [const oneToFive = Slice . of ([ 1 , 2 , 3 , 4 , 5 ]);],
+  [const oneToFive = Slice . of (\[ 1 , 2 , 3 , 4 , 5 \]);],
   [const { car : first , cadr : second , cddr : rest } = oneToFive ;],
   [first 
  \/\/=\> 1 
  second 
  \/\/=\> 2 
- [... rest ] 
- \/\/=\> [3, 4, 5]],
+ \[... rest \] 
+ \/\/=\> \[3, 4, 5\]],
   [id="the-complete-code"\>The Complete Code],
   [id="end-notes"\>End Notes],
   [id="fn:lisp"\>],
@@ -1661,34 +2943,41 @@ include the -I argument despite it being in the cross sysroot:],
 
 {
   #standard-article(
-  title: [Get Urgent Care from One Medical],
-  author: [kevin],
-  source-name: [Kevin Burke],
+  title: [Mountains],
+  author: [Lazarus Lazaridis (iridakos)],
+  source-name: [Lazarus Lazaridis (iridakos)],
   images: (),
   paragraphs: (
-  [On Sunday morning at 1am I had a lot of stomach pain. I am a One Medical
-customer, had heard that they offered urgent care, and so I searched on their
-website for information.],
-  [Unfortunately their urgent care option does not show up in the list of care
-options on their website:],
-  [I concluded that their urgent care offering didn't actually exist and paid for
-a competing provider's product, so I could talk to a doctor at 1am.],
-  [This morning I was informed that their urgent care option does exist, but only
-in their mobile apps. So you have to go into the iOS app and then you will see
-"Video Call Now" as an option.],
-  [This is a baffling design choice to me. I don't understand why, as a company,
-you'd only put features in one of the several ways customers can use your
-product. Or at the very least you could put "Video Call" in the list of options
-on the website, and then have a popup that says "open the app." But they didn't
-do that.],
-  [So if you are looking to get urgent care or use any One Medical feature try the
-app.],
-  [If this post was useful please send the One Medical twitter
-account a DM saying so so they can update their
-product.],
+  [After painting the meadow with acrylic colors , I bought oil colors which are the ones Bob Ross uses in “The joy of painting” show.
+This time I followed the episode 10 from season 13 of the show, called “Mountain Summit” .],
+  [I am very satisfied by the outcome but being a beginner, I faced a lot of difficulties and the painting has a number of errors.],
+  [id="facts"\>Facts],
+  [I used],
+  [the wet-on-wet technique],
+  [oil colors],
+  [50x80 canvas],
+  [id="difficulties"\>Difficulties],
+  [My paintbrushes were not the same as Bob Ross’ ones (size and material) and the paint didn’t apply the way I wanted (I will search for tips and tricks when it comes to buying paintbrushes for oil colors)],
+  [I couldn’t find all the colors listed in the episode and I had to mix mine many times to achieve something similar],
+  [I had such a huge difficulty creating the bushes. I am still not sure what the exact problem was but I believe it is a combination of the following three items:],
+  [wrong paintbrush],
+  [very thick paint (according to Bob Ross, thin paint sticks on thick)],
+  [wrong moves by me (maybe more/less pressure on the paintbrush)],
+  [The mountains, even though they look nice, were so hard to be created with the palette knife. It surely has to do with practice.],
+  [id="errors"\>Errors],
+  [The tallest mountain has an unnatural curve on its bottom side which doesn’t make sense],
+  [The left side of the mountains ends somewhere behind the trees without a logical explanation (in the episode the trees cover all the left part of the painting)],
+  [The path in the front right section of the painting is a failure. In case you don’t locate it (which is very reasonable), I am talking about the black and gray waterfall that starts at the root of a tree. Yes, that is supposed to be a path.],
+  [In the same part of the painting, the bushes didn’t want to stick at all. I cleaned and re-painted the section at least 3 times.],
+  [id="resources"\>Resources],
+  [Bob Ross - Mountain Summit (Season 13 Episode 10)],
+  [https:\/\/www.youtube.com/watch?v=kasGRkfkiPM],
+  [Bob Ross - Final Reflections (Season 1 Episode 13)],
+  [A "must see" episode because it's actually Q&A of what might go wrong.],
+  [https:\/\/www.youtube.com/watch?v=IEQWfszfRlA],
 ),
   insert-map: (:),
-  word-count: 219,
+  word-count: 368,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -1698,55 +2987,168 @@ product.],
 {
   #section-label([Analysis])
   #standard-article(
-  title: [Announcing Cloudflare Account Abuse Protection: prevent fraudulent attacks from bots and humans],
-  author: [Jin-Hee Lee],
-  source-name: [Cloudflare Blog],
+  title: [CSS \<code\>\@scope\</code\>: An Alternative To Naming Conventions And Heavy Abstractions],
+  author: [Blake Lundquist],
+  source-name: [Smashing Magazine],
   images: (),
   paragraphs: (
-  [Today, Cloudflare is introducing a new suite of fraud prevention capabilities designed to stop account abuse before it starts. We've spent years empowering Cloudflare customers to protect their applications from automated attacks, but the threat landscape has evolved. The industrialization of hybrid automated-and-human abuse presents a complex security challenge to website owners. Consider, for instance, a single account that’s accessed from New York, London, and San Francisco in the same five minutes. The core question in this case is not “Is this automated?” but rather “Is this authentic?”],
-  [Website owners need the tools to stop abuse on their website, no matter who it’s coming from .],
-  [During our Birthday Week in 2024, we gifted leaked credentials detection to all customers, including everyone on a Free plan. Since then, we've added account takeover detection IDs as part of our bot management solution to help identify bots attacking your login pages.],
-  [Now, we’re combining these powerful tools with new ones. Disposable email check and email risk help you enforce security preferences for users who sign up with throwaway email addresses, a common tactic for fake account creation and promotion abuse, or whose emails are deemed risky based on email patterns and infrastructure. We’re also thrilled to introduce Hashed User IDs — per-domain identifiers generated by cryptographically hashing usernames — that give customers better insight into suspicious account activity and greater ability to mitigate potentially fraudulent traffic, without compromising end user privacy.],
-  [The new capabilities we’re announcing today go beyond automation, identifying abusive behavior and risky identities among human users and bots. Account Abuse Protection is available in Early Access, and any Bot Management Enterprise customer can use these features at no additional cost for a limited period, until the general availability of Cloudflare Fraud Prevention later this year. If you want to learn more about this Early Access capability, sign up here .],
-  [Leaked credentials make logins all too vulnerable],
-  [The barrier to entry for fraudulent behavior is dangerously low, especially with the availability of massive datasets and access to automated tools that commit account fraud at scale. Website owners aren’t just dealing with individual hackers, but industrialized fraud. Last year, we highlighted how 41% of logins across our network use leaked credentials . This number has only grown following the exposure of a database holding 16 billion records , and multiple high-profile breaches have since come to light.],
-  [What’s more, users reuse passwords across multiple platforms, meaning a single leak from years ago can still unlock a high-value retail or even a bank account today. Our leaked credential check is a free feature that checks whether a password has been leaked in a known data breach of another service or application on the Internet. This is a privacy-preserving credential checking service that helps protect our users from compromised credentials, meaning Cloudflare performs these checks without accessing or storing plaintext end user passwords. Passwords are hashed — i.e., converted into a random string of characters using a cryptographic algorithm — for the purpose of comparing them against a database of leaked credentials. If you haven’t already turned on our leaked credential check , enable it now to keep your accounts safe from easy hacks!],
-  [Access to a large database of leaked credentials is only useful if an attacker can cycle through them quickly across many sites to identify which accounts are still vulnerable due to password reuse. In our Black Friday analysis in 2024, we observed that more than 60% of traffic to login pages across our network was automated . That’s a lot of bots trying to break in.],
-  [To help customers protect their login endpoints from constant bombardment, we added account takeover (ATO)-specific detections to highlight suspicious traffic patterns. This is part of our recent focus on per-customer detections , in which we provide behavioral anomaly detection unique to each bot management customer. Today, bot management customers can see and mitigate attempted ATO attacks in their login requests directly on the Security analytics dashboard.],
-  [In the card on the left within the Security analytics dashboard, you can view and address attempted account takeover attacks.],
-  [In the last week, our ATO detections combined caught an average of 6.9 billion suspicious login attempts daily, across our network. These ATO detections, along with the many other detection mechanisms in our bot management solution, create a layered defense against ATO and other malicious automated attacks.],
-  [From automation to intent and identity],
-  [To discern automation, or to discern intent and identity? That is the question. Our answer: yes and yes, as both are critical layers of a robust security posture. Attackers now operate at a scale previously reserved for enterprise services: they leverage massive credential leaks, use human-powered fraud farms to spoof devices and locations, and create synthetic identities to maintain thousands — even millions — of fake accounts for promotion and platform abuse. A human being with automated tools could be draining accounts, abusing promotions, committing payment fraud, or all of the above.],
-  [Beyond that, automation is accessible like never before, particularly as users become better acquainted with using AI agents and even long-standing, “traditional” browsers move toward having agentic capabilities by default. Whether it’s a lone actor using an AI agent or a coordinated fraud campaign, the threat isn’t as simple as a single script — it can involve human intent, with automated execution.],
-  [Consider the following scenarios we’ve heard from our customers:],
-  [We have 1,000 new users this month, but more than half of them are fake identities who benefit from a free trial, then disappear.],
-  [The attacker logged in with the correct password, so how do I know that it isn’t the real user?],
-  [This entity is acting at human pace, and they are draining accounts.],
-  [These problems can't be solved by only assessing automation; they require checking for authenticity and integrity. This is the gap that our dedicated fraud prevention capabilities address.],
-  [Assessing suspicious emails],
-  [Let’s start by assessing the earliest point of potential account abuse: account creation. Fake or bulk account creation is one of the biggest topics in conversations about website fraud, as it can open the door for attackers to access an application — or even an entire business model.],
-  [Cloudflare is giving customers the tools to assess suspicious account creation at the source in two ways:],
-  [Disposable email check : Detect when users sign up with disposable, or throwaway, email addresses commonly used for promotion abuse and fake account creation. These disposable email services allow attackers to spin up thousands of "unique" accounts without maintaining real infrastructure, particularly unauthenticated disposable emails that provide instant access without account creation or free unlimited email aliases. Customers can use this binary field as they build rules to enforce security preferences, choosing to block all disposable emails outright, or perhaps issuing a challenge to anyone attempting to create an account with a disposable email.],
-  [Email risk: Cloudflare analyzes email patterns and infrastructure to provide risk tiers (low, medium, high) that customers can use in security rules. We know that not all email addresses are created equal; an address with the format firstname.lastname\@knowndomain.com carries different risk characteristics than xk7q9m2p\@newdomain.xyz . Email risk tiers allow customers to express their tolerance for risk and friction at the point of account creation.],
-  [Both disposable email check and email risk are now available in security analytics and security rules, equipping website owners to protect their account creation flow. These detections address a fundamental problem: by the time an account is committing abuse, it's already too late. The website owner has already paid acquisition costs, the fraudulent user has consumed promotional credits, and remediation requires manual review. Mitigating suspicious emails means adding the appropriate friction at signup — the moment it matters most.],
-  [Introducing Hashed User IDs],
-  [Understanding patterns of abuse requires visibility : not only into the network, but of account activity. Traditionally, security has meant looking through the lens of IPs and isolated HTTP requests to spot automated activity, but website owners aren’t just thinking in terms of network signals; they are also considering their users and known accounts. That’s why we’re expanding our mitigation toolbox to match the way applications are actually structured, focusing on user-based detection of fraudulent activity.],
-  [Attackers can effortlessly rotate IPs to hide their tracks. But forcing them to repeatedly generate new, credible accounts introduces massive friction, especially when combined with account creation protections. When we look past the network layer and map fraudulent actions to a given compromised or abusive account, we can spot targeted behavior tied to a single, persistent actor and put a stop to the abuse. In this way, we’re shifting the defense strategy to the account level, instead of playing whack-a-mole with rotating IP addresses and residential proxies. This means that our customers can mitigate abusive behavior based on the way their applications separate identity .],
-  [To arm website owners with this capability, Cloudflare is releasing a Hashed User ID that customers can use in Security analytics , Security rules , and Managed Transforms . User IDs are per-domain, cryptographically hashed versions of the values in the username field, and each user ID is an encrypted, unique, and stable identifier generated for a given username on a customer application. Importantly, the actual username is not logged or stored by Cloudflare as part of this service. As with leaked credentials check and ATO detections, which identify login traffic and then encrypt credentials for comparison, we are prioritizing end user privacy while empowering our customers to take action against fraudulent behavior.],
-  [With access to Hashed User IDs, website owners can:],
-  [See top users: Which accounts have the most activity?],
-  [See when a unique user logs in from a country they usually don’t — or multiple countries in one day!],
-  [Mitigate traffic based on unique user, such as blocking a user with historically suspicious activity.],
-  [Combine fields to see when accounts are being targeted with leaked credentials.],
-  [See what network patterns or signals are associated with unique users.],
-  [The expanded view of a single Hashed User ID within the Security analytics dashboard, showing the activity details of that unique user, including their login location and their browser.],
-  [This user-level visibility transforms how website owners can investigate and mitigate traffic. Instead of examining individual requests in isolation, our customers can see the full picture of how attackers are targeting and hiding among legitimate users.],
-  [Take the next step in account protection today],
-  [If you want to learn more about this Early Access capability, sign up here . All Bot Management Enterprise customers are eligible to add these new Account Abuse Protection features today, and we’d love to open the conversation with any and all prospective Bot Management customers .],
-  [While bot detections will continue to answer the question of automation and intent, fraud detections delve into the question of authenticity. Together, they give website owners comprehensive tools to fight against the full spectrum of account abuse. This suite is one step in our ongoing investment to protect the entire user journey — from account creation and login to secure checkouts and the integrity of every interaction.],
+  [When learning the principles of basic CSS, one is taught to write modular, reusable, and descriptive styles to ensure maintainability. But when developers become involved with real-world applications, it often feels impossible to add UI features without styles leaking into unintended areas.],
+  [This issue often snowballs into a self-fulfilling loop; styles that are theoretically scoped to one element or class start showing up where they don’t belong. This forces the developer to create even more specific selectors to override the leaked styles, which then accidentally override global styles, and so on.],
+  [Rigid class name conventions, such as BEM , are one theoretical solution to this issue. The BEM (Block, Element, Modifier) methodology is a systematic way of naming CSS classes to ensure reusability and structure within CSS files. Naming conventions like this can reduce cognitive load by leveraging domain language to describe elements and their state , and if implemented correctly, can make styles for large applications easier to maintain .],
+  [In the real world, however, it doesn’t always work out like that. Priorities can change, and with change, implementation becomes inconsistent. Small changes to the HTML structure can require many CSS class name revisions. With highly interactive front-end applications, class names following the BEM pattern can become long and unwieldy (e.g., app-user-overview\_\_status--is-authenticating ), and not fully adhering to the naming rules breaks the system’s structure, thereby negating its benefits.],
+  [Given these challenges, it’s no wonder that developers have turned to frameworks, Tailwind being the most popular CSS framework . Rather than trying to fight what seems like an unwinnable specificity war between styles, it is easier to give up on the CSS Cascade and use tools that guarantee complete isolation.],
+  [Developers Lean More On Utilities],
+  [How do we know that some developers are keen on avoiding cascaded styles? It’s the rise of “modern” front-end tooling — like CSS-in-JS frameworks — designed specifically for that purpose. Working with isolated styles that are tightly scoped to specific components can seem like a breath of fresh air. It removes the need to name things — still one of the most hated and time-consuming front-end tasks — and allows developers to be productive without fully understanding or leveraging the benefits of CSS inheritance.],
+  [But ditching the CSS Cascade comes with its own problems. For instance, composing styles in JavaScript requires heavy build configurations and often leads to styles awkwardly intermingling with component markup or HTML. Instead of carefully considered naming conventions, we allow build tools to autogenerate selectors and identifiers for us (e.g., .jsx-3130221066 ), requiring developers to keep up with yet another pseudo-language in and of itself. (As if the cognitive load of understanding what all your component’s useEffect s do weren’t already enough!)],
+  [Further abstracting the job of naming classes to tooling means that basic debugging is often constrained to specific application versions compiled for development, rather than leveraging native browser features that support live debugging, such as Developer Tools.],
+  [It’s almost like we need to develop tools to debug the tools we’re using to abstract what the web already provides — all for the sake of running away from the “pain” of writing standard CSS.],
+  [Luckily, modern CSS features not only make writing standard CSS more flexible but also give developers like us a great deal more power to manage the cascade and make it work for us. CSS Cascade Layers are a great example, but there’s another feature that gets a surprising lack of attention — although that is changing now that it has recently become Baseline compatible .],
+  [The CSS \@scope At-Rule],
+  [I consider the CSS \@scope at-rule to be a potential cure for the sort of style-leak-induced anxiety we’ve covered, one that does not force us to compromise native web advantages for abstractions and extra build tooling.],
+  [“The \@scope CSS at-rule enables you to select elements in specific DOM subtrees, targeting elements precisely without writing overly-specific selectors that are hard to override, and without coupling your selectors too tightly to the DOM structure.”],
+  [— MDN],
+  [In other words, we can work with isolated styles in specific instances without sacrificing inheritance, cascading, or even the basic separation of concerns that has been a long-running guiding principle of front-end development.],
+  [Plus, it has excellent browser coverage . In fact, Firefox 146 added support for \@scope in December, making it Baseline compatible for the first time. Here is a simple comparison between a button using the BEM pattern versus the \@scope rule:],
+  [Click me 
+ →],
+  [.button .button\_\_text { /\* button text styles \*\/ }
+ .button .button\_\_icon { /\* button icon styles \*\/ }
+ .button--primary { primary button styles \*\/ }],
+  [Click me 
+ →],
+  [\@scope (.primary-button) {
+ span:first-child { /\* button text styles \*\/ }
+ span:last-child { /\* button icon styles \*\/ }
+ }],
+  [The \@scope rule allows for precision with less complexity . The developer no longer needs to create boundaries using class names, which, in turn, allows them to write selectors based on native HTML elements, thereby eliminating the need for prescriptive CSS class name patterns. By simply removing the need for class name management, \@scope can alleviate the fear associated with CSS in large projects.],
+  [To get started, add the \@scope rule to your CSS and insert a root selector to which styles will be scoped:],
+  [\@scope ( ) {
+ /\* Styles scoped to the \*/
+}],
+  [So, for example, if we were to scope styles to a element, it may look something like this:],
+  [\@scope (nav) {
+ a { /\* Link styles within nav scope \*\/ }],
+  [a:active { /\* Active link styles \*\/ }],
+  [a:active::before { /\* Active link with pseudo-element for extra styling \*\/ }],
+  [\@media (max-width: 768px) {
+ a { /\* Responsive adjustments \*\/ }
+ }
+}],
+  [This, on its own, is not a groundbreaking feature. However, a second argument can be added to the scope to create a lower boundary , effectively defining the scope’s start and end points.],
+  [/\* Any a element inside ul will not have the styles applied \*/
+\@scope (nav) to (ul) {
+ a {
+ font-size: 14px;
+ }
+}],
+  [This practice is called donut scoping , and there are several approaches one could use, including a series of similar, highly specific selectors coupled tightly to the DOM structure, a :not pseudo-selector, or assigning specific class names to elements within the to handle the differing CSS.],
+  [Regardless of those other approaches, the \@scope method is much more concise. More importantly, it prevents the risk of broken styles if classnames change or are misused or if the HTML structure were to be modified. Now that \@scope is Baseline compatible, we no longer need workarounds!],
+  [We can take this idea further with multiple end boundaries to create a “style figure eight”:],
+  [/\* Any or element inside or will not have the styles applied \*/
+\@scope (main) to (aside, nav) {
+ a {
+ font-size: 14px;
+ }
+ p {
+ line-height: 16px;
+ color: darkgrey;
+ }
+}],
+  [Compare that to a version handled without the \@scope rule, where the developer has to “reset” styles to their defaults:],
+  [main a {
+ font-size: 14px;
+}],
+  [main p {
+ line-height: 16px;
+ color: darkgrey;
+}],
+  [main aside a,
+main nav a {
+ font-size: inherit; /\* or whatever the default should be \*/
+}],
+  [main aside p,
+main nav p {
+ line-height: inherit; /\* or whatever the default should be \*/
+ color: inherit; /\* or a specific color \*/
+}],
+  [Check out the following example. Do you notice how simple it is to target some nested selectors while exempting others?],
+  [Consider a scenario where unique styles need to be applied to slotted content within web components . When slotting content into a web component, that content becomes part of the Shadow DOM, but still inherits styles from the parent document. The developer might want to implement different styles depending on which web component the content is slotted into:],
+  [content, different contexts --\>
+ 
+ 
+ 
+ Jane Doe],
+  [In this example, the developer might want the to have distinct styles only if it is rendered inside :],
+  [\@scope (team-roster) {
+ user-card {
+ display: inline-flex;
+ align-items: center;
+ gap: 0.5rem;
+ }],
+  [user-card img {
+ border-radius: 50%;
+ width: 40px;
+ height: 40px;
+ }
+}],
+  [There are additional ways that \@scope can remove the need for class management without resorting to utilities or JavaScript-generated class names. For example, \@scope opens up the possibility to easily target descendants of any selector , not just class names:],
+  [/\* Only div elements with a direct child button are included in the root scope \*/
+\@scope (div:has(\> button)) {
+ p {
+ font-size: 14px;
+ }
+}],
+  [And they can be nested , creating scopes within scopes:],
+  [\@scope (main) {
+ p {
+ font-size: 16px;
+ color: black;
+ }
+ \@scope (section) {
+ p {
+ font-size: 14px;
+ color: blue;
+ }
+ \@scope (.highlight) {
+ p {
+ background-color: yellow;
+ font-weight: bold;
+ }
+ }
+ }
+}],
+  [Plus, the root scope can be easily referenced within the \@scope rule:],
+  [/\* Applies to elements inside direct child section elements of main , but stops at any direct aside that is a direct chiled of those sections \*/
+\@scope (main \> section) to (:scope \> aside) {
+ p {
+ background-color: lightblue;
+ color: blue;
+ }
+ /\* Applies to ul elements that are immediate siblings of root scope \*/
+ :scope + ul {
+ list-style: none;
+ }
+}],
+  [The \@scope at-rule also introduces a new proximity dimension to CSS specificity resolution. In traditional CSS, when two selectors match the same element, the selector with the higher specificity wins. With \@scope , when two elements have equal specificity, the one whose scope root is closer to the matched element wins. This eliminates the need to override parent styles by manually increasing an element’s specificity, since inner components naturally supersede outer element styles.],
+  [\@scope (.container) {
+ .title { color: green; } 
+ }
+ is closer to .container than to .sidebar so "color: green" wins. --\>
+ \@scope (.sidebar) {
+ .title { color: red; }
+ }],
+  [Utility-first CSS frameworks, such as Tailwind, work well for prototyping and smaller projects. Their benefits quickly diminish, however, when used in larger projects involving more than a couple of developers.],
+  [Front-end development has become increasingly overcomplicated in the last few years, and CSS is no exception. While the \@scope rule isn’t a cure-all, it can reduce the need for complex tooling. When used in place of, or alongside strategic class naming, \@scope can make it easier and more fun to write maintainable CSS.],
+  [CSS \@scope (MDN)],
+  [“ CSS \@scope ”, Juan Diego Rodríguez (CSS-Tricks)],
+  [Firefox 146 Release Notes (Firefox)],
+  [Browser Support (CanIUse)],
+  [Popular CSS Frameworks (State of CSS 2024)],
+  [“ The “C” in CSS: Cascade ”, Thomas Yip (CSS-Tricks)],
+  [BEM Introduction (Get BEM)],
 ),
   insert-map: (:),
-  word-count: 1848,
+  word-count: 1786,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -1755,1549 +3157,134 @@ product.],
 
 {
   #standard-article(
-  title: [Exploring Regular Expressions, Part II: Regular Languages and Finite-State Automata],
+  title: [A JavaScript Constructor Problem, and Three Solutions],
   author: [Reginald Braithwaite],
   source-name: [Reginald Braithwaite (raganwald)],
   images: (),
   paragraphs: (
-  [This is Part II of “Exploring Regular Expressions.” If you haven’t already, you may want to read Part I first, where we wrote a compiler that translates formal regular expressions into finite-state recognizers .],
-  [You may also want another look at the essay, A Brutal Look at Balanced Parentheses, Computing Machines, and Pushdown Automata . It covers the concepts behind finite-state machines and the the kinds of “languages” they can and cannot recognize.],
-  [id="table-of-contents"\> Table of Contents],
-  [id="the-essentials-from-part-i"\> The Essentials from Part I],
-  [the shunting yard],
-  [the stack machine],
-  [evaluating arithmetic expressions],
-  [compiling formal regular expressions],
-  [automation and verification],
-  [For Every Regular Expression, There Exists an Equivalent Finite-State Recognizer],
-  [id="beyond-formal-regular-expressions"\> Beyond Formal Regular Expressions],
-  [a hierarchy of regex functionality],
-  [beyond our hierarchy],
-  [implementing quantification operators with transpilation],
-  [implementing the dot operator],
-  [implementing shorthand character classes],
-  [thoughts about custom character classes],
-  [eschewing transpilation],
-  [intersection],
-  [difference],
-  [complement],
-  [What Level Two Features Tell Us, and What They Don’t],
-  [id="for-every-finite-state-recognizer-there-exists-an-equivalent-formal-regular-expression"\> For Every Finite-State Recognizer, There Exists An Equivalent Formal Regular Expression],
-  [the regularExpression function],
-  [the between function],
-  [using the regularExpression function],
-  [a test suite for the regularExpression function],
-  [conclusion],
-  [id="the-essentials-from-part-i-1"\>The Essentials from Part I],
-  [If you’re familiar with formal regular expressions, and are very comfortable with the code we presented in Part I , or just plain impatient, you can skip ahead to Beyond Formal Regular Expressions .],
-  [But for those who want a refresher, we’ll quickly recap regular expressions and the code we have so far.],
-  [id="regular-expressions"\>Regular Expressions],
-  [In Part I , and again in this essay, we will spend a lot of time talking about formal regular expressions . Formal regular expressions are a minimal way to describe “regular” languages, and serve as the building blocks for the regexen we find in most programming languages.],
-  [Formal regular expressions describe languages as sets of sentences. The three basic building blocks for formal regular expressions are the empty set, the empty string, and literal symbols:],
-  [The symbol ∅ describes the language with no sentences, { } , also called “the empty set.”],
-  [The symbol ε describes the language containing only the empty string, { '' } .],
-  [Literals such as x , y , or z describe languages containing single sentences, containing single symbols. e.g. The literal r describes the language { 'r' } .],
-  [What makes formal regular expressions powerful, is that we have operators for alternating, catenating, and quantifying regular expressions. Given that x is a regular expression describing some language X , and y is a regular expression describing some language Y :],
-  [The expression x | y describes the union of the languages X and Y , meaning, the sentence w belongs to x|y if and only if w belongs to the language X , or w belongs to the language Y . We can also say that x | y represents the alternation of x and y .],
-  [The expression xy describes the language XY , where a sentence ab belongs to the language XY if and only if a belongs to the language X , and b belongs to the language Y . We can also say that xy represents the catenation of the expressions x and y .],
-  [The expression x \* describes the language Z , where the sentence ε (the empty string) belongs to Z , and, the sentence pq belongs to Z if and only if p is a sentence belonging to X , and q is a sentence belonging to Z . We can also say that x \* represents a quantification of x .],
-  [Before we add the last rule for regular expressions, let’s clarify these three rules with some examples. Given the constants a , b , and c , resolving to the languages { 'a' } , { 'b' } , and { 'b' } :],
-  [The expression b|c describes the language { 'b', 'c' } , by rule 1.],
-  [The expression ab describes the language { 'ab' } by rule 2.],
-  [The expression a\* describes the language { '', 'a', 'aa', 'aaa', ... } by rule 3.],
-  [Our operations have a precedence, and it is the order of the rules as presented. So:],
-  [The expression a|bc describes the language { 'a', 'bc' } by rules 1 and 2.],
-  [The expression ab\* describes the language { 'a', 'ab', 'abb', 'abbb', ... } by rules 2 and 3.],
-  [The expression b|c\* describes the language { '', 'b', 'c', 'cc', 'ccc', ... } by rules 1 and 3.],
-  [As with the algebraic notation we are familiar with, we can use parentheses:],
-  [Given a regular expression x , the expression ( x ) describes the language described by x .],
-  [This allows us to alter the way the operators are combined. As we have seen, the expression b|c\* describes the language { '', 'b', 'c', 'cc', 'ccc', ... } . But the expression (b|c)\* describes the language { '', 'b', 'c', 'bb', 'cc', 'bbb', 'ccc', ... } .],
-  [It is quite obvious that regexen borrowed a lot of their syntax and semantics from regular expressions. Leaving aside the mechanism of capturing and extracting portions of a match, almost every regular expressions is also a regex. For example, /reggiee\*/ is a regular expression that matches words like reggie , reggiee , and reggieee anywhere in a string.],
-  [id="our-code-so-far"\>Our Code So Far],
-  [In Part I , we established that for every formal regular expression , there is an equivalent finite-state recognizer , establishing that the set of all languages described by formal regular expressions–that is to say, regular languages –is a subset of the set of all languages recognized by finite-state automata.],
-  [We did this in constructive proof fashion by writing a compiler that takes any formal regular expression as input, and returns a JSON description of an equivalent finite-state recognizer. We also wrote an automator that turns the description of a finite state recognizer into a JavaScript function that takes any string as input and answers whether the string is recognized.],
-  [Thus, we can take any formal regular expression and get a function that recognizes strings in the language described by the formal regular expression. And because the implementation is a finite-state automaton, we know that it can recognize strings in at most linear time, which can be an improvement over some regex implementations for certain regular expressions.],
-  [We’re going to revisit the final version of most of our functions.],
-  [id="the-shunting-yard"\>the shunting yard],
-  [Our pipeline of tools starts with a shunting yard function that takes a regular expression in infix notation, and translates it into reverse-polish representation . It also takes a definition dictionary that configures the shunting yard by defining operators, a default operator to handle catenation, and some details on how to handle escaping symbols like parentheses that would otherwise be treated as operators.],
-  [It is hard-wired to treat ( and ) as parentheses for controlling the order of evaluation.],
-  [function peek ( stack ) { 
- return stack [ stack . length - 1 ]; 
+  [id="preamble"\>preamble],
+  [As you know, you can create new objects in JavaScript using a Constructor Function , like this:],
+  [var snafu = new Fubar ( " Situation Normal " , " All Fsked Up " );],
+  [When you “call” the constructor with the new keyword, you get a new object allocated, and the constructor is called with the new object as the current context. If you don’t explicitly return anything from the constructor, you get the new object as the result.],
+  [Thus, the body of the constructor function is used to initialize the newly created object. There’s another thing: The newly created object is initialized to have a prototype. What prototype? The contents of the constructor’s prototype property. So we can write:],
+  [snafu . concatenated () 
+ \/\/=\> 'Situation Normal All Fsked Up'],
+  [Thanks to the internal mechanics of JavaScript’s instanceof operator, we can use it to test whether an object is likely to have been created with a particular constructor:],
+  [(It’s possible to “fool” instanceof when working with more advanced idioms, or if you’re the kind of malicious troglodyte who collects language corner cases and enjoys inflicting them on candidates in job interviews. But it works well enough for our purposes.)],
+  [id="the-problem"\>the problem],
+  [What happens if we call the constructor, but accidentally omit the new keyword?],
+  [fubar 
+ \/\/=\> undefined],
+  [William-Thomas-Fredreich!? We’ve called an ordinary function that doesn’t return anything. so fubar is undefined. That’s not what we want. Actually, it’s worse than that:],
+  [JavaScript sets this to the global environment by default for calling an ordinary function, so we’ve just blundered about in the global environment. We can fix that somewhat:],
+  [this . \_foo = foo ; 
+ this . \_bar = bar ; 
  }],
-  [function shuntingYard ( 
- infixExpression , 
- { 
- operators , 
- defaultOperator , 
- escapeSymbol = ' \` ' , 
- escapedValue = string =\> string 
+  [Fubar ( " Situation Normal " , " All Fsked Up " ); 
+ \/\/=\> TypeError: Cannot set property '\_foo' of undefined],
+  [Although "use strict" might be omitted from code in blog posts and books (mea culpa!), in production it is very nearly mandatory for reasons just like this. But nevertheless, constructors that do not take into account the possibility of being called without the new keyword are a potential problem.],
+  [So what can we do?],
+  [id="solution-auto-instantiation"\>solution: auto-instantiation],
+  [In Effective JavaScript , David Herman describes auto-instantiation . When we call a constructor with new , The pseudo-variable this is set to a new instance of our “class,” so-to-speak. We can use this to detect whether our constructor has been called with new :],
+  [var obj , 
+ ret ;],
+  [if ( this instanceof Fubar ) { 
+ this . \_foo = foo ; 
+ this . \_bar = bar ; 
  } 
- ) { 
- const operatorsMap = new Map ( 
- Object . entries ( operators ) 
- );],
-  [const representationOf = 
- something =\> { 
- if ( operatorsMap . has ( something )) { 
- const { symbol } = operatorsMap . get ( something );],
-  [return symbol ; 
- } else if ( typeof something === ' string ' ) { 
- return something ; 
- } else { 
- error ( \` \${ something } is not a value\` ); 
- } 
- }; 
- const typeOf = 
- symbol =\> operatorsMap . has ( symbol ) ? operatorsMap . get ( symbol ). type : ' value ' ; 
- const isInfix = 
- symbol =\> typeOf ( symbol ) === ' infix ' ; 
- const isPrefix = 
- symbol =\> typeOf ( symbol ) === ' prefix ' ; 
- const isPostfix = 
- symbol =\> typeOf ( symbol ) === ' postfix ' ; 
- const isCombinator = 
- symbol =\> isInfix ( symbol ) || isPrefix ( symbol ) || isPostfix ( symbol ); 
- const awaitsValue = 
- symbol =\> isInfix ( symbol ) || isPrefix ( symbol );],
-  [const input = infixExpression . split ( '' ); 
- const operatorStack = []; 
- const reversePolishRepresentation = []; 
- let awaitingValue = true ;],
-  [while ( input . length \> 0 ) { 
- const symbol = input . shift ();],
-  [if ( symbol === escapeSymbol ) { 
- if ( input . length === 0 ) { 
- error ( ' Escape symbol \${escapeSymbol} has no following symbol ' ); 
- } else { 
- const valueSymbol = input . shift ();],
-  [if ( awaitingValue ) { 
- \/\/ push the escaped value of the symbol],
-  [reversePolishRepresentation . push ( escapedValue ( valueSymbol )); 
- } else { 
- \/\/ value catenation],
-  [input . unshift ( valueSymbol ); 
- input . unshift ( escapeSymbol ); 
- input . unshift ( defaultOperator ); 
- } 
- awaitingValue = false ; 
- } 
- } else if ( symbol === ' ( ' && awaitingValue ) { 
- \/\/ opening parenthesis case, going to build 
- \/\/ a value 
- operatorStack . push ( symbol ); 
- awaitingValue = true ; 
- } else if ( symbol === ' ( ' ) { 
- \/\/ value catenation],
-  [input . unshift ( symbol ); 
- input . unshift ( defaultOperator ); 
- awaitingValue = false ; 
- } else if ( symbol === ' ) ' ) { 
- \/\/ closing parenthesis case, clear the 
- \/\/ operator stack],
-  [while ( operatorStack . length \> 0 && peek ( operatorStack ) !== ' ( ' ) { 
- const op = operatorStack . pop ();],
-  [reversePolishRepresentation . push ( representationOf ( op )); 
+ else return new Fubar ( foo , bar ); 
  }],
-  [if ( peek ( operatorStack ) === ' ( ' ) { 
- operatorStack . pop (); 
- awaitingValue = false ; 
- } else { 
- error ( ' Unbalanced parentheses ' ); 
- } 
- } else if ( isPrefix ( symbol )) { 
- if ( awaitingValue ) { 
- const { precedence } = operatorsMap . get ( symbol );],
-  [\/\/ pop higher-precedence operators off the operator stack 
- while ( isCombinator ( symbol ) && operatorStack . length \> 0 && peek ( operatorStack ) !== ' ( ' ) { 
- const opPrecedence = operatorsMap . get ( peek ( operatorStack )). precedence ;],
-  [if ( precedence 0 && peek ( operatorStack ) !== ' ( ' ) { 
- const opPrecedence = operatorsMap . get ( peek ( operatorStack )). precedence ;],
-  [if ( precedence 0 ) { 
- const op = operatorStack . pop ();],
-  [if ( operatorsMap . has ( op )) { 
- const { symbol : opSymbol } = operatorsMap . get ( op ); 
- reversePolishRepresentation . push ( opSymbol ); 
- } else { 
- error ( \`Don't know how to push operator \${ op } \` ); 
- } 
- }],
-  [return reversePolishRepresentation ; 
- }],
-  [id="the-stack-machine"\>the stack machine],
-  [We then use a stack machine to evaluate the reverse-polish representation. It uses the same definition dictionary to evaluate the effect of operators.],
-  [class="highlight"\> function stateMachine ( representationList , { 
- operators , 
- toValue 
- }) { 
- const functions = new Map ( 
- Object . entries ( operators ). map ( 
- ([ key , { symbol , fn }]) =\> [ symbol , fn ] 
- ) 
- );],
-  [const stack = [];],
-  [for ( const element of representationList ) { 
- if ( typeof element === ' string ' ) { 
- stack . push ( toValue ( element )); 
- } else if ( functions . has ( element )) { 
- const fn = functions . get ( element ); 
- const arity = fn . length ;],
-  [if ( stack . length 1 ) { 
- error ( \`should only be one value to return, but there were \${ stack . length } values on the stack\` ); 
- } else { 
- return stack [ 0 ]; 
- } 
- }],
-  [id="evaluating-arithmetic-expressions"\>evaluating arithmetic expressions],
-  [To evaluate an infix expression, the expression and definition dictionary are fed to the shunting yard, and then the resulting reverse-polish representation and definition dictionary are fed to the stack machine. For convenience, we have an evaluation function to do that:],
-  [The evaluate function takes a definition dictionary as an argument, and passes it to both the shunting yard and the state machine. If we pass in one kind of definition, we have a primitive evaluator for arithmetic expressions:],
-  [class="highlight"\> const arithmetic = { 
- operators : { 
- ' + ' : { 
- symbol : Symbol ( ' + ' ), 
- type : ' infix ' , 
- precedence : 1 , 
- fn : ( a , b ) =\> a + b 
- }, 
- ' - ' : { 
- symbol : Symbol ( ' - ' ), 
- type : ' infix ' , 
- precedence : 1 , 
- fn : ( a , b ) =\> a - b 
- }, 
- ' \* ' : { 
- symbol : Symbol ( ' \* ' ), 
- type : ' infix ' , 
- precedence : 3 , 
- fn : ( a , b ) =\> a \* b 
- }, 
- ' / ' : { 
- symbol : Symbol ( ' / ' ), 
- type : ' infix ' , 
- precedence : 2 , 
- fn : ( a , b ) =\> a / b 
- }, 
- ' ! ' : { 
- symbol : Symbol ( ' ! ' ), 
- type : ' postfix ' , 
- precedence : 4 , 
- fn : function factorial ( a , memo = 1 ) { 
- if ( a + n 
- };],
-  [evaluate ( ' (1+2)3! ' , arithmetic ) 
- \/\/=\> 18],
-  [The code for both the shunting yard and stack machine have been extracted into a Github repository .],
-  [id="compiling-formal-regular-expressions"\>compiling formal regular expressions],
-  [With a different definition dictionary, we can compile formal regular expressions to a finite-state recognizer description:],
-  [class="highlight"\> const formalRegularExpressions = { 
- operators : { 
- ' ∅ ' : { 
- symbol : Symbol ( ' ∅ ' ), 
- type : ' atomic ' , 
- fn : emptySet 
- }, 
- ' ε ' : { 
- symbol : Symbol ( ' ε ' ), 
- type : ' atomic ' , 
- fn : emptyString 
- }, 
- ' | ' : { 
- symbol : Symbol ( ' | ' ), 
- type : ' infix ' , 
- precedence : 10 , 
- fn : union2merged 
- }, 
- ' → ' : { 
- symbol : Symbol ( ' → ' ), 
- type : ' infix ' , 
- precedence : 20 , 
- fn : catenation2 
- }, 
- ' \* ' : { 
- symbol : Symbol ( ' \* ' ), 
- type : ' postfix ' , 
- precedence : 30 , 
- fn : zeroOrMore 
- } 
- }, 
- defaultOperator : ' → ' , 
- toValue ( string ) { 
- return literal ( string ); 
- } 
- };],
-  [We will not reproduce all of the code needed to implement emptySet , emptyString , union2merged , catenation2 , and zeroOrMore here in the text, but the full implementations can be found here .],
-  [Here it is working:],
-  [class="highlight"\> evaluate ( ' 0|1(0|1)\* ' , formalRegularExpressions ); 
+  [Fubar ( " Situation Normal " , " All Fsked Up " ); 
  \/\/=\> 
- { 
- " start " : " G37 " , 
- " transitions " : [ 
- { " from " : " G37 " , " consume " : " 0 " , " to " : " G23 " }, 
- { " from " : " G37 " , " consume " : " 1 " , " to " : " G25 " }, 
- { " from " : " G25 " , " consume " : " 0 " , " to " : " G25 " }, 
- { " from " : " G25 " , " consume " : " 1 " , " to " : " G25 " } 
- ], 
- " accepting " : [ " G23 " , " G25 " ] 
- }],
-  [This is a description in JSON, of this finite-state recognizer:],
-  [It recognizes the language consisting of the set of all binary numbers.],
-  [id="automation-and-verification"\>automation and verification],
-  [We don’t rely strictly on inspection to have confidence that the finite-state recognizers created by evaluate recognize the languages described by regular expressions. We use two tools.],
-  [First, we have an automate function that takes a JSON description of a finite-state recognizer as an argument, and returns a JavaScript recognizer function . The recognizer function takes a string as an argument, and returns true if the string belongs to the language recognized by that finite-state recognizer, and false if it doesn’t.],
-  [This is the core automate function:],
-  [class="highlight"\> function automate ( description ) { 
- if ( description instanceof RegExp ) { 
- return string =\> !! description . exec ( string ) 
- } else { 
- const { 
- stateMap , 
- start , 
- acceptingSet , 
- transitions 
- } = validatedAndProcessed ( description );],
-  [return function ( input ) { 
- let state = start ;],
-  [for ( const symbol of input ) { 
- const transitionsForThisState = stateMap . get ( state ) || []; 
- const transition = 
- transitionsForThisState . find ( 
- ({ consume }) =\> consume === symbol 
- );],
-  [if ( transition == null ) { 
- return false ; 
- }],
-  [state = transition . to ; 
- }],
-  [\/\/ reached the end. do we accept? 
- return acceptingSet . has ( state ); 
- } 
+ { \_foo : ' Situation Normal ' , 
+ \_bar : ' All Fsked Up ' }],
+  [Why bother making it work without new ? One problem this solves is that new Fubar(...) does not compose . Consider:],
+  [class="highlight"\> function logsArguments ( fn ) { 
+ return function () { 
+ console . log . apply ( this , arguments ); 
+ return fn . apply ( this , arguments ) 
  } 
  }],
-  [automate interprets the finite-state recognizers as it goes, and could be faster. But for the purposes of running test cases, it is sufficient for our needs. Its supporting functions can be found here .],
-  [Speaking of running tests, we use a general-purpose verify function that works for any function, and for convenience, a verifyEvaluate function that uses evaluate and automate to convert any expression into a recognizer function first:],
-  [if ( obj1 === obj2 ) \/\/ it's just the same object. No need to compare. 
- return true ;],
-  [if ( isPrimitive ( obj1 ) && isPrimitive ( obj2 )) \/\/ compare primitives 
- return obj1 === obj2 ;],
-  [if ( Object . keys ( obj1 ). length !== Object . keys ( obj2 ). length ) 
- return false ;],
-  [\/\/ compare objects with same number of keys 
- for ( let key in obj1 ) { 
- if ( ! ( key in obj2 )) return false ; \/\/other object doesn't have this prop 
- if ( ! deepEqual ( obj1 [ key ], obj2 [ key ])) return false ; 
+  [function sum2 ( a , b ) { 
+ return a + b ; 
  }],
-  [return true ; 
+  [var logsSum = logsArguments ( sum2 );],
+  [logsSum ( 2 , 2 ) 
+ \/\/=\> 
+ 2 2 
+ 4],
+  [logsArguments decorates a function by returning a version of the function that logs its arguments. Let’s try it on the original Fubar :],
+  [class="highlight"\> function Fubar ( foo , bar ) { 
+ this . \_foo = foo ; 
+ this . \_bar = bar ; 
+ } 
+ Fubar . prototype . concatenated = function () { 
+ return this . \_foo + " " + this . \_bar ; 
  }],
-  [const pp = value =\> value instanceof Array ? value . map ( x =\> x . toString ()) : value ;],
-  [function verify ( fn , tests , ... additionalArgs ) { 
- try { 
- const testList = 
- typeof tests . entries === ' function ' 
- ? [... tests . entries ()] 
- : Object . entries ( tests ); 
- const numberOfTests = testList . length ;],
-  [const outcomes = testList . map ( 
- ([ example , expected ]) =\> { 
- const actual = fn ( example , ... additionalArgs );],
-  [if ( deepEqual ( actual , expected )) { 
- return ' pass ' ; 
- } else { 
- return \`fail: \${ JSON . stringify ({ example , expected : pp ( expected ), actual : pp ( actual ) })} \` ; 
+  [var LoggingFubar = logsArguments ( Fubar );],
+  [var snafu = new LoggingFubar ( " Situation Normal " , " All Fsked Up " ); 
+ \/\/=\> Situation Normal All Fsked Up],
+  [snafu . concatenated () 
+ \/\/=\> TypeError: Object \[object Object\] has no method 'concatenated'],
+  [This doesn’t work because snafu is actually an instance of LoggingFubar , not of Fubar . But if we use the auto-instantiating version of Fubar :],
+  [var obj , 
+ ret ;],
+  [if ( this instanceof Fubar ) { 
+ this . \_foo = foo ; 
+ this . \_bar = bar ; 
+ } 
+ else { 
+ obj = new Fubar (); 
+ ret = Fubar . apply ( obj , arguments ); 
+ return ret === undefined 
+ ? obj 
+ : ret ; 
  } 
  } 
- )],
-  [const failures = outcomes . filter ( result =\> result !== ' pass ' ); 
- const numberOfFailures = failures . length ; 
- const numberOfPasses = numberOfTests - numberOfFailures ;],
-  [if ( numberOfFailures === 0 ) { 
- console . log ( \`All \${ numberOfPasses } tests passing\` ); 
- } else { 
- console . log ( \` \${ numberOfFailures } tests failing: \${ failures . join ( ' ; ' )} \` ); 
- } 
- } catch ( error ) { 
- console . log ( \`Failed to validate: \${ error } \` ) 
- } 
+ Fubar . prototype . concatenated = function () { 
+ return this . \_foo + " " + this . \_bar ; 
  }],
-  [function verifyEvaluate ( expression , definition , examples ) { 
- return verify ( 
- automate ( evaluate ( expression , definition )), 
- examples 
- ); 
+  [var LoggingFubar = logsArguments ( Fubar );],
+  [var snafu = new LoggingFubar ( " Situation Normal " , " All Fsked Up " ); 
+ \/\/=\> Situation Normal All Fsked Up],
+  [snafu . concatenated () 
+ \/\/=\> 'Situation Normal All Fsked Up'],
+  [Now it works, but of course snafu is an instance of Fubar , not of LoggingFubar . Is that what you want? Who knows!? This isn’t a justification for the pattern, as much as an explanation that it is a useful, but leaky abstraction. It’s doesn’t “just work,” but it can make certain things possible (like decorating constructors) that are otherwise even more awkward to implement.],
+  [id="solution-overload-its-meaning"\>solution: overload its meaning],
+  [It can be very handy to have a function that tests for an object being an instance of a particular class. If we can stomach the idea of one function doing two different things, we can make the constructor its own instanceof test:],
+  [if ( this instanceof Fubar ) { 
+ this . \_foo = foo ; 
+ this . \_bar = bar ; 
+ } 
+ else return arguments \[ 0 \] instanceof Fubar ; 
  }],
-  [We can put it all together and verify our “binary numbers” expression:],
-  [class="highlight"\> verifyEvaluate ( ' 0|1(0|1)\* ' , formalRegularExpressions , { 
- '' : false , 
- ' an odd number of characters ' : false , 
- ' an even number of characters ' : false , 
- ' 0 ' : true , 
- ' 10 ' : true , 
- ' 101 ' : true , 
- ' 1010 ' : true , 
- ' 10101 ' : true 
- });],
-  [id="for-every-regular-expression-there-exists-an-equivalent-finite-state-recognizer"\>For Every Regular Expression, There Exists an Equivalent Finite-State Recognizer],
-  [Armed with the code that compiles a formal regular expression to an equivalent finite-state recognizer, we have a constructive demonstration of the fact that for every regular expression, there exists an equivalent finite-state recognizer.],
-  [If someone were to hand us a formal regular expression and claim that there is no equivalent finite-state recognizer for that expression, we would feed the expression into our evaluate function, it would return an equivalent finite-state recognizer, and would thus invalidate their alleged counter-example.],
-  [Another way to put this is to state that the set of all languages described by formal regular expressions is a subset of the set of all languages recognized by finite-state recognizers. In the essay, we will establish, amongst other things, that the set of all languages described by formal regular expressions is equal to the set of all languages recognized by finite-state recognizers.],
-  [In other words, we will also show that for every finite-state recognizer, there exists an equivalent formal regular expression. We’ll begin by looking at some ways to extend formal regular expressions, while still being equivalent to finite-state recognizers.],
-  [id="beyond-formal-regular-expressions-1"\>Beyond Formal Regular Expressions],
-  [Formal regular expressions are–deliberately–as minimal as possible. There are only three kinds of literals ( ∅ , ε , and literal symbols), and three operations (alternation with | , catenation, and quantification with \* ). Minimalism is extremely important from a computer science perspective, but unwieldy when trying to “Get Stuff Done.”],
-  [Thus, all regexen provide functionality above and beyond formal regular expressions.],
-  [id="a-hierarchy-of-regex-functionality"\>a hierarchy of regex functionality],
-  [Functionality in regexen can be organized into a rough hierarchy. Level Zero of the hierarchy is functionality provided by formal regular expressions. Everything we’ve written in Part I is at this base level.],
-  [Level One of the hierarchy is functionality that can be directly implemented in terms of formal regular expressions. For example, regexen provide a ? postfix operator that provides “zero or one” quantification, and a + postfix operator that provides “one or more” quantification.],
-  [As we know from our implementation of the kleene star, “zero or one” can be implemented in a formal regular expression very easily. If a is a regular expression, ε|a is a regular expression that matches zero or one sentences that a accepts. So intuitively, a regex flavour that supports the expression a? doesn’t do anything we couldn’t have done by hand with ε|a],
-  [The same reasoning goes for + : If we have the kleene star (which ironically we implemented on top of one-or-more), we can always express “one or more” using catenation and the kleene star. If a is a regular expression, aa\* is a regular expression that matches one or more sentences that a accepts. Again, a regex flavour supports the expression a+ doesn’t do anything we couldn’t have done by hand with aa\* .],
-  [Level Two of the hierarchy is functionality that cannot be directly implemented in terms of formal regular expressions, however it still compiles to finite-state recognizers. As we mentioned in the prelude, and will show later, for every finite-state recognizer, there is an equivalent formal regular expression.],
-  [So if a particular piece of functionality can be implemented as a finite-state recognizer, then it certainly can be implemented in terms of a formal regular expression, however compiling an expression to a finite-state machine and then deriving an equivalent formal regular expression is “going the long way ‘round,” and thus we classify such functionality as being directly implemented as a finite-state recognizer, and only indirectly implemented in terms of formal regular expressions.],
-  [Examples of Level Two functionality include complementation (if a is a regular expression, ¬a is an expression matching any sentence that a does not match), and intersection (if a and b are regular expressions, a∩b is an expression matching any sentence that both a and b match).],
-  [id="beyond-our-hierarchy"\>beyond our hierarchy],
-  [There are higher levels of functionality, however they involve functionality that cannot be implemented with finite-state recognizers.],
-  [The Chomsky–Schützenberger hierarchy categorizes grammars from Type-3 to Type-0. Type-3 grammars define regular languages. They can be expressed with formal regular expressions and recognized with finite-state recognizers. Our Level Zero, Level One, and Level Two functionalities do not provide any additional power to recognize Type-2, Type-1, or Type-0 grammars.],
-  [As we recall from A Brutal Look at Balanced Parentheses, Computing Machines, and Pushdown Automata , languages like “balanced parentheses” are a Type-2 grammar, and cannot be recognized by a finite-state automata. Thus, features that some regexen provide like recursive regular expressions are beyond our levels.],
-  [In addition to features that enable regexen to recognize languages beyond the capabilities of finite-state recognizers, regexen also provide plenty of features for extracting match or partial match data, like capture groups. This functionality is also outside of our levels, as we are strictly concerned with recognizing sentences.],
-  [id="implementing-level-one-features"\>Implementing Level One Features],
-  [As mentioned, the ? and + operators from regexen can be implemented as “Level One” functionality. a? can be expressed as ε|a , and a+ can be expressed as aa\* .],
-  [The easiest way to implement these new operators is to write new operator functions. Let’s begin by extending our existing operators:],
-  [const map = new Map ( 
- [... allStates ]. map ( 
- old =\> [ old , names (). next (). value ] 
- ) 
- );],
-  [const start = map . get ( oldStart ); 
- const transitions = 
- oldTransitions . map ( 
- ({ from , consume , to }) =\> ({ from : map . get ( from ), consume , to : map . get ( to ) }) 
- ); 
- const accepting = 
- oldAccepting . map ( 
- state =\> map . get ( state ) 
- )],
-  [return { start , transitions , accepting }; 
+  [var snafu = new Fubar ( " Situation Normal " , " All Fsked Up " );],
+  [snafu 
+ \/\/=\> 
+ { \_foo : ' Situation Normal ' , 
+ \_bar : ' All Fsked Up ' }],
+  [Fubar ({}) 
+ \/\/=\> false 
+ Fubar ( snafu ) 
+ \/\/=\> true],
+  [This allows us to use the constructor as an argument in predicate and multiple dispatch , or as a filter:],
+  [id="solution-kill-it-with-fire"\>solution: kill it with fire],
+  [If we don’t have some pressing need for auto-instantiation, and if we care not for overloaded functions, we may wish to avoid accidentally calling a constructor without using new . We saw that "use strict" can help, but it’s not a panacea. It won’t throw an error if we don’t actually try to assign a value to the global environment. And if we try to do something before assigning a value, it will do that thing no matter what.],
+  [Perhaps it’s better to take matters into our own hands. Olivier Scherrer suggests the following pattern:],
+  [if ( ! ( this instanceof Fubar )) { 
+ throw new Error ( " Fubar needs to be called with the new keyword " ); 
  }],
-  [const extended = { 
- operators : {],
-  [\/\/ ...existing operators...],
-  [' ? ' : { 
- symbol : Symbol ( ' ? ' ), 
- type : ' postfix ' , 
- precedence : 30 , 
- fn : a =\> union2merged ( emptyString (), a ) 
- }, 
- ' + ' : { 
- symbol : Symbol ( ' + ' ), 
- type : ' postfix ' , 
- precedence : 30 , 
- fn : a =\> catenation2 ( a , zeroOrMore ( dup ( a ))) 
- } 
- }, 
- defaultOperator : ' → ' , 
- toValue ( string ) { 
- return literal ( string ); 
- } 
- };],
-  [verifyEvaluate ( ' (R|r)eg(gie(e+!)?)? ' , extended , { 
- '' : false , 
- ' r ' : false , 
- ' reg ' : true , 
- ' Reg ' : true , 
- ' Regg ' : false , 
- ' Reggie ' : true , 
- ' Reggieeeeeee! ' : true 
- }); 
- \/\/=\> All 7 tests passing],
-  [This is fine. It’s only drawback is that our faith that we are not doing anything a regular expression couldn’t do is based on carefully inspecting the functions we wrote ( a =\> union2merged(emptyString(), a) and catenation2(a, zeroOrMore(dup(a))) ) to ensure that we are replicating functionality that is baked into formal regular expressions. 1],
-  [But that isn’t in the spirit of our work so far. What we are claiming is that for every regex containing the formal regular expression grammar plus the quantification operators ? and + , there is an equivalent formal regular expression containing only the formal regular expression grammar.],
-  [Instead of appealing to intuition, instead of asking people to believe that union2merged(emptyString(), a) is equivalent to ε|a , what we ought to do is directly translate expressions containing ? and/or + into formal regular expressions.],
-  [id="implementing-quantification-operators-with-transpilation"\>implementing quantification operators with transpilation],
-  [We demonstrated that there is a finite-state recognizer for every formal regular expression by writing a function to compile formal regular expressions into finite-state recognizers. We will take the same approach of demonstrating that there is a Level Zero (a/k/a “formal”) regular expression for every Level One (a/k/a extended) regular expression:],
-  [We’ll write a function to compile Level One to Level Zero regular expressions. And we’ll begin with our evaluator.],
-  [Recall that our basic evaluator can compile an infix expression into a postfix list of symbols, which it then evaluates. But it knows nothing about what its operators do. If we supply operators that perform arithmetic, we have a calculator. If we supply operators that create and combine finite-state recognizers, we have a regular-expression to finite-state recognizer compiler.],
-  [We can build a transpiler exactly the same way: Use our evaluator, but supply a different set of operator definitions. We’ll start by creating a transpiler that transpiles formal regular expressions to formal regular expressions. The way it will work is by assembling an expression in text instead of assembling a finite-state recognizer.],
-  [Here’s the first crack at it:],
-  [class="highlight"\> function p ( expr ) { 
- if ( expr . length === 1 ) { 
- return expr ; 
- } else if ( expr [ 0 ] === ' \` ' ) { 
- return expr ; 
- } else if ( expr [ 0 ] === ' ( ' && expr [ expr . length - 1 ] === ' ) ' ) { 
- return expr ; 
- } else { 
- return \`( \${ expr } )\` ; 
- } 
- };],
-  [const toValueExpr = string =\> { 
- if ( ' ∅ε|→\*() ' . indexOf ( string ) \>= 0 ) { 
- return ' \` ' + string ; 
- } else { 
- return string ; 
- } 
- };],
-  [const transpile0to0 = { 
- operators : { 
- ' ∅ ' : { 
- symbol : Symbol ( ' ∅ ' ), 
- type : ' atomic ' , 
- fn : () =\> ' ∅ ' 
- }, 
- ' ε ' : { 
- symbol : Symbol ( ' ε ' ), 
- type : ' atomic ' , 
- fn : () =\> ' ε ' 
- }, 
- ' | ' : { 
- symbol : Symbol ( ' | ' ), 
- type : ' infix ' , 
- precedence : 10 , 
- fn : ( a , b ) =\> \` \${ p ( a )} | \${ p ( b )} \` 
- }, 
- ' → ' : { 
- symbol : Symbol ( ' → ' ), 
- type : ' infix ' , 
- precedence : 20 , 
- fn : ( a , b ) =\> \` \${ p ( a )} → \${ p ( b )} \` 
- }, 
- ' \* ' : { 
- symbol : Symbol ( ' \* ' ), 
- type : ' postfix ' , 
- precedence : 30 , 
- fn : a =\> \` \${ p ( a )} \*\` 
- } 
- }, 
- defaultOperator : ' → ' , 
- toValue : toValueExpr 
- };],
-  [const before = ' (R|r)eg(ε|gie(ε|ee\*!)) ' ;],
-  [verifyEvaluate ( before , formalRegularExpressions , { 
- '' : false , 
- ' r ' : false , 
- ' reg ' : true , 
- ' Reg ' : true , 
- ' Regg ' : false , 
- ' Reggie ' : true , 
- ' Reggieeeeeee! ' : true 
- }); 
- \/\/=\> All 7 tests passing],
-  [const after = evaluate ( before , transpile0to0 );],
-  [verifyEvaluate ( after , formalRegularExpressions , { 
- '' : false , 
- ' r ' : false , 
- ' reg ' : true , 
- ' Reg ' : true , 
- ' Regg ' : false , 
- ' Reggie ' : true , 
- ' Reggieeeeeee! ' : true 
- }); 
- \/\/=\> All 7 tests passing],
-  [The result has an excess of parentheses, and does not take advantage of catenation being the default, but it works just fine.],
-  [Extending it is now trivial:],
-  [\/\/ ...as above...],
-  [' ? ' : { 
- symbol : Symbol ( ' ? ' ), 
- type : ' postfix ' , 
- precedence : 30 , 
- fn : a =\> \`ε| \${ p ( a )} \` 
- }, 
- ' + ' : { 
- symbol : Symbol ( ' + ' ), 
- type : ' postfix ' , 
- precedence : 30 , 
- fn : a =\> \` \${ p ( a )}\${ p ( a )} \*\` 
- } 
- },],
-  [\/\/ ... 
- };],
-  [const beforeLevel1 = ' (R|r)eg(gie(e+!)?)? ' ; 
- const afterLevel1 = evaluate ( beforeLevel1 , transpile1to0q ); 
- \/\/=\> '(R|r)→(e→(g→(ε|(g→(i→(e→(ε|((ee\*)→!))))))))'],
-  [verifyEvaluate ( afterLevel1 , formalRegularExpressions , { 
- '' : false , 
- ' r ' : false , 
- ' reg ' : true , 
- ' Reg ' : true , 
- ' Regg ' : false , 
- ' Reggie ' : true , 
- ' Reggieeeeeee! ' : true 
- }); 
- \/\/=\> All 7 tests passing],
-  [Note that the postfix operators ? and + are associated with functions that create formal regular expressions, rather than functions that manipulate finite-state recognizers.],
-  [id="implementing-the-dot-operator"\>implementing the dot operator],
-  [Regexen provide a convenient shorthand– . –for an expression matching any one symbol. This is often used in conjunction with quantification, so .? is an expression matching zero or one symbols, .+ is an expression matching one or more symbols, and .\* is an expression matching zero or more symbols.],
-  [Implementing . is straightforward. All regular languages are associated with some kind of total alphabet representing all of the possible symbols in the language. Regexen have the idea of a total alphabet as well, but it’s usually implied to be whatever the underlying platform supports as characters.],
-  [For our code, we need to make it explicit, for example:],
-  [class="highlight"\> const ALPHA = 
- ' abcdefghijklmnopqrstuvwxyz ' + 
- ' ABCDEFGHIJKLMNOPQRSTUVWXYZ ' ; 
- const DIGITS = ' 1234567890 ' ; 
- const PUNCTUATION = 
- \`~!\@\#\$%^&\*()\_+=- \\\` -={}|[]\\\\:";'\<\>?,./\` ; 
- const WHITESPACE = ' \\t\\r\\n ' ;],
-  [const TOTAL\_ALPHABET = ALPHA + DIGITS + PUNCTUATION + WHITESPACE ;],
-  [What does the . represent? Any one of the characters in TOTAL\_ALPHABET . We can implement that with alternation, like this:],
-  [{ 
- operators : {],
-  [\/\/ ...as above...],
-  [' . ' : { 
- symbol : Symbol ( ' . ' ), 
- type : ' atomic ' , 
- fn : () =\> dotExpr 
- } 
- },],
-  [\/\/ ... 
- };],
-  [There are, of course, more compact (and faster) ways to implement this if we were writing a regular expression engine from the ground up, but since the computer is doing all the work for us, let’s carry on.],
-  [id="implementing-shorthand-character-classes"\>implementing shorthand character classes],
-  [In addition to convenient operators like ? and + , regexen also shorthand character classes–such as \\d , \\w , and \`\\s–to make regexen easy to write and read.],
-  [In regexen, instead of associating shorthand character classes with their own symbols, the regexen syntax overloads the escape character \\ so that it usually means “Match this character as a character, ignoring any special meaning,” but sometimes–as with \\d , \\w , and with \\s –it means “match this shorthand character class.”],
-  [Fortunately, we left a back-door in our shunting yard function just for the purpose of overloading the escape character’s behaviour. Here’s the full definition:],
-  [const digitsExpression = 
- DIGITS . split ( '' ). join ( ' | ' ); 
- const wordExpression = 
- ( ALPHA + DIGITS + UNDERSCORE ). split ( '' ). join ( ' | ' ); 
- const whitespaceExpression = 
- WHITESPACE . split ( '' ). join ( ' | ' );],
-  [const digitsSymbol = Symbol ( ' \`d ' ); 
- const wordSymbol = Symbol ( ' \`w ' ); 
- const whitespaceSymbol = Symbol ( ' \`s ' );],
-  [const transpile1to0qs = {],
-  [operators : {],
-  [' ∅ ' : {],
-  [symbol : Symbol ( ' ∅ ' ),],
-  [type : ' atomic ' ,],
-  [fn : () =\> ' ∅ '],
-  [},],
-  [' ε ' : {],
-  [symbol : Symbol ( ' ε ' ),],
-  [type : ' atomic ' ,],
-  [fn : () =\> ' ε '],
-  [},],
-  [' | ' : {],
-  [symbol : Symbol ( ' | ' ),],
-  [type : ' infix ' ,],
-  [precedence : 10 ,],
-  [fn : ( a , b ) =\> \` \${ p ( a )} | \${ p ( b )} \`],
-  [},],
-  [' → ' : {],
-  [symbol : Symbol ( ' → ' ),],
-  [type : ' infix ' ,],
-  [precedence : 20 ,],
-  [fn : ( a , b ) =\> \` \${ p ( a )} → \${ p ( b )} \`],
-  [},],
-  [' \* ' : {],
-  [symbol : Symbol ( ' \* ' ),],
-  [type : ' postfix ' ,],
-  [precedence : 30 ,],
-  [fn : a =\> \` \${ p ( a )} \*\`],
-  [},],
-  [' ? ' : {],
-  [symbol : Symbol ( ' ? ' ),],
-  [type : ' postfix ' ,],
-  [precedence : 30 ,],
-  [fn : a =\> \`ε| \${ p ( a )} \`],
-  [},],
-  [' + ' : {],
-  [symbol : Symbol ( ' + ' ),],
-  [type : ' postfix ' ,],
-  [precedence : 30 ,],
-  [fn : a =\> \` \${ p ( a )}\${ p ( a )} \*\`],
-  [},],
-  [' \_\_DIGITS\_\_ ' : {],
-  [symbol : digitsSymbol ,],
-  [type : ' atomic ' ,],
-  [fn : () =\> digitsExpression],
-  [},],
-  [' \_\_WORD\_\_ ' : {],
-  [symbol : wordSymbol ,],
-  [type : ' atomic ' ,],
-  [fn : () =\> wordExpression],
-  [},],
-  [' \_\_WHITESPACE\_\_ ' : {],
-  [symbol : whitespaceSymbol ,],
-  [type : ' atomic ' ,],
-  [fn : () =\> whitespaceExpression],
-  [}],
-  [},],
-  [defaultOperator : ' → ' ,],
-  [escapedValue ( symbol ) {],
-  [if ( symbol === ' d ' ) {],
-  [return digitsSymbol ;],
-  [} else if ( symbol === ' w ' ) {],
-  [return wordSymbol ;],
-  [} else if ( symbol === ' s ' ) {],
-  [return whitespaceSymbol ;],
-  [} else {],
-  [return symbol ;],
-  [}],
-  [},],
-  [toValue ( string ) {],
-  [if ( ' ∅ε|→\* ' . indexOf ( string ) \>= 0 ) {],
-  [return ' \` ' + string ;],
-  [} else {],
-  [return string ;],
-  [}],
-  [}],
-  [};],
-  [As you can see, we don’t allow writing one-symbol operators, but we do support using back-ticks with d , w , and s just like with regexen:],
-  [verifyEvaluate ( afterLevel1qs , formalRegularExpressions , { 
- '' : false , 
- ' 1234 ' : false , 
- ' 123 4567 ' : true , 
- ' 987-6543 ' : true , 
- ' 416-555-1234 ' : true , 
- ' 1 416-555-0123 ' : true , 
- ' 011-888-888-8888! ' : false 
- });],
-  [Excellent!],
-  [id="thoughts-about-custom-character-classes"\>thoughts about custom character classes],
-  [regexen allow users to define their own character classes “on the fly.” In a regex, [abc] is an expression matching an a , a b , or a c . In that form, it means exactly the same thing as (a|b|c) . Custom character classes enable us to write gr[ae]y to match grey and gray , which saves us one character as compared to writing gr(a|e)y .],
-  [If that’s all they did, they would add very little value: They’re only slightly more compact, and they add the cognitive load of embedding an irregular kind of syntax inside of regular expressions.],
-  [But custom character classes add some other affordances. We can write [a-f] as a shorthand for (a|b|c|d|e|f) , or [0-9] as a shorthand for (0|1|2|3|4|5|6|7|8|9) . We can combine those affordances, e.g. we can write [0-9a-fA-F] as a shorthand for (0|1|2|3|4|5|6|7|8|9|a|b|c|d|e|f|A|B|C|D|E|F) . That is considerably more compact, and arguably communicates the intent of matching a hexadecimal character more cleanly.],
-  [And if we preface our custom character classes with a ^ , we can match a character that is not a member of the character class, e.g. [^abc] matches any character except an a , b , or c . That can be enormously useful.],
-  [Custom character classes are a language within a language. However, implementing the full syntax would be a grand excursion into parsing the syntax, while the implementation of the character classes would not be particularly interesting. We will, however, be visiting the subject of negating expressions when we discuss level two functionality. We will develop an elegant way to achieve expressions like [^abc] with the syntax ^(a|b|c) , and we’ll also develop the ¬ prefix operator that will work with any expression.],
-  [id="eschewing-transpilation"\>eschewing transpilation],
-  [There are lots of other regexen features we can implement using this transpilation technique, 2 but having implemented a feature using transpilation, we’ve demonstrated that it provides not functional advantage over formal regular expressions. Having done so, we can return to implementing the features directly in JavaScript, which saves adding a transpilation step to our evaluator.],
-  [So we’ll wrap Level One up with:],
-  [class="highlight"\> const zeroOrOne = 
- a =\> union2merged ( emptyString (), a ); 
- const oneOrMore = 
- a =\> catenation2 ( a , zeroOrMore ( dup ( a ))); 
- const anySymbol = 
- () =\> TOTAL\_ALPHABET . split ( '' ). map ( literal ). reduce ( union2merged ); 
- const anyDigit = 
- () =\> DIGITS . split ( '' ). map ( literal ). reduce ( union2merged ); 
- const anyWord = 
- () =\> ( ALPHA + DIGITS + UNDERSCORE ). map ( literal ). reduce ( union2merged ); 
- const anyWhitespace = 
- () =\> WHITESPACE . map ( literal ). reduce ( union2merged );],
-  [const levelOneExpressions = { 
- operators : { 
- \/\/ formal regular expressions],
-  [' ∅ ' : { 
- symbol : Symbol ( ' ∅ ' ), 
- type : ' atomic ' , 
- fn : emptySet 
- }, 
- ' ε ' : { 
- symbol : Symbol ( ' ε ' ), 
- type : ' atomic ' , 
- fn : emptyString 
- }, 
- ' | ' : { 
- symbol : Symbol ( ' | ' ), 
- type : ' infix ' , 
- precedence : 10 , 
- fn : union2merged 
- }, 
- ' → ' : { 
- symbol : Symbol ( ' → ' ), 
- type : ' infix ' , 
- precedence : 20 , 
- fn : catenation2 
- }, 
- ' \* ' : { 
- symbol : Symbol ( ' \* ' ), 
- type : ' postfix ' , 
- precedence : 30 , 
- fn : zeroOrMore 
- },],
-  [\/\/ extended operators],
-  [' ? ' : {],
-  [symbol : Symbol ( ' ? ' ),],
-  [type : ' postfix ' ,],
-  [precedence : 30 ,],
-  [fn : zeroOrOne],
-  [},],
-  [' + ' : {],
-  [symbol : Symbol ( ' + ' ),],
-  [type : ' postfix ' ,],
-  [precedence : 30 ,],
-  [fn : oneOrMore],
-  [},],
-  [' . ' : {],
-  [symbol : Symbol ( ' . ' ),],
-  [type : ' atomic ' ,],
-  [fn : anySymbol],
-  [},],
-  [' \_\_DIGITS\_\_ ' : {],
-  [symbol : digitsSymbol ,],
-  [type : ' atomic ' ,],
-  [fn : anyDigit],
-  [},],
-  [' \_\_WORD\_\_ ' : {],
-  [symbol : wordSymbol ,],
-  [type : ' atomic ' ,],
-  [fn : anyWord],
-  [},],
-  [' \_\_WHITESPACE\_\_ ' : {],
-  [symbol : whitespaceSymbol ,],
-  [type : ' atomic ' ,],
-  [fn : anyWhitespace],
-  [}],
-  [},],
-  [defaultOperator : ' → ' ,],
-  [escapedValue ( symbol ) {],
-  [if ( symbol === ' d ' ) {],
-  [return digitsSymbol ;],
-  [} else if ( symbol === ' w ' ) {],
-  [return wordSymbol ;],
-  [} else if ( symbol === ' s ' ) {],
-  [return whitespaceSymbol ;],
-  [} else {],
-  [return symbol ;],
-  [}],
-  [},],
-  [toValue ( string ) {],
-  [return literal ( string );],
-  [}],
-  [};],
-  [And now it’s time to look at implementing Level Two features.],
-  [id="implementing-level-two-features"\>Implementing Level Two Features],
-  [Let’s turn our attention to extending regular expressions with features that cannot be implemented with simple transpilation. We begin by revisiting union2 :],
-  [class="highlight"\> function productOperation ( a , b , setOperator ) { 
- const { 
- states : aDeclaredStates , 
- accepting : aAccepting 
- } = validatedAndProcessed ( a ); 
- const aStates = [ null ]. concat ( aDeclaredStates );],
-  [const { 
- states : bDeclaredStates , 
- accepting : bAccepting 
- } = validatedAndProcessed ( b ); 
- const bStates = [ null ]. concat ( bDeclaredStates );],
-  [\/\/ P is a mapping from a pair of states (or any set, but in union2 it's always a pair) 
- \/\/ to a new state representing the tuple of those states 
- const P = new StateAggregator ();],
-  [const productAB = product ( a , b , P ); 
- const { start , transitions } = productAB ;],
-  [const statesAAccepts = new Set ( 
- aAccepting . flatMap ( 
- aAcceptingState =\> bStates . map ( bState =\> P . stateFromSet ( aAcceptingState , bState )) 
- ) 
- ); 
- const statesBAccepts = new Set ( 
- bAccepting . flatMap ( 
- bAcceptingState =\> aStates . map ( aState =\> P . stateFromSet ( aState , bAcceptingState )) 
- ) 
- );],
-  [const allAcceptingStates = 
- [... setOperator ( statesAAccepts , statesBAccepts )];],
-  [const { stateSet : reachableStates } = validatedAndProcessed ( productAB ); 
- const accepting = allAcceptingStates . filter ( state =\> reachableStates . has ( state ));],
-  [return { start , accepting , transitions }; 
+  [this . \_foo = foo ; 
+ this . \_bar = bar ; 
  }],
-  [function union2merged ( a , b ) { 
- return mergeEquivalentStates ( 
- union2 ( a , b ) 
- ); 
- }],
-  [We recall that the above code takes the product of two recognizers, and then computes the accepting states for the product from the union of the accepting states of the two recognizers.],
-  [Let’s refactor, and extract the set union:],
-  [class="highlight"\> function productOperation ( a , b , setOperator ) { 
- const { 
- states : aDeclaredStates , 
- accepting : aAccepting 
- } = validatedAndProcessed ( a ); 
- const aStates = [ null ]. concat ( aDeclaredStates );],
-  [const { 
- states : bDeclaredStates , 
- accepting : bAccepting 
- } = validatedAndProcessed ( b ); 
- const bStates = [ null ]. concat ( bDeclaredStates );],
-  [\/\/ P is a mapping from a pair of states (or any set, but in union2 it's always a pair) 
- \/\/ to a new state representing the tuple of those states 
- const P = new StateAggregator ();],
-  [const productAB = product ( a , b , P ); 
- const { start , transitions } = productAB ;],
-  [const statesAAccepts = 
- aAccepting . flatMap ( 
- aAcceptingState =\> bStates . map ( bState =\> P . stateFromSet ( aAcceptingState , bState )) 
- ); 
- const statesBAccepts = 
- bAccepting . flatMap ( 
- bAcceptingState =\> aStates . map ( aState =\> P . stateFromSet ( aState , bAcceptingState )) 
- );],
-  [const allAcceptingStates = 
- [... setOperator ( statesAAccepts , statesBAccepts )];],
-  [const { stateSet : reachableStates } = validatedAndProcessed ( productAB ); 
- const accepting = allAcceptingStates . filter ( state =\> reachableStates . has ( state ));],
-  [return { start , accepting , transitions }; 
- }],
-  [function setUnion ( set1 , set2 ) { 
- return new Set ([... set1 , ... set2 ]); 
- }],
-  [function unionMerged ( a , b ) { 
- return mergeEquivalentStates ( 
- productOperation ( a , b , setUnion ) 
- ); 
- }],
-  [We’ll create a new set union operator for this:],
-  [\/\/ ... other operators from formal regular expressions ...],
-  [' ∪ ' : { 
- symbol : Symbol ( ' ∪ ' ), 
- type : ' infix ' , 
- precedence : 10 , 
- fn : union 
- } 
- }, 
- defaultOperator : ' → ' , 
- toValue ( string ) { 
- return literal ( string ); 
- } 
- };],
-  [verifyEvaluate ( ' (a|b|c)|(b|c|d) ' , levelTwoExpressions , { 
- '' : false , 
- ' a ' : true , 
- ' b ' : true , 
- ' c ' : true , 
- ' d ' : true 
- }); 
- \/\/=\> All 5 tests passing],
-  [verifyEvaluate ( ' (a|b|c)∪(b|c|d) ' , levelTwoExpressions , { 
- '' : false , 
- ' a ' : true , 
- ' b ' : true , 
- ' c ' : true , 
- ' d ' : true 
- }); 
- \/\/=\> All 5 tests passing],
-  [It does exactly what our original union2merged function does, as we expect. But now that we’ve extracted the set union operation, what if we substitute a different set operation?],
-  [id="intersection"\>intersection],
-  [function intersection ( a , b ) { 
- return mergeEquivalentStates ( 
- productOperation ( a , b , setIntersection ) 
- ); 
- }],
-  [const levelTwoExpressions = { 
- operators : {],
-  [\/\/ ... other operators from formal regular expressions ...],
-  [' ∪ ' : { 
- symbol : Symbol ( ' ∪ ' ), 
- type : ' infix ' , 
- precedence : 10 , 
- fn : union 
- }, 
- ' ∩ ' : { 
- symbol : Symbol ( ' ∩ ' ), 
- type : ' infix ' , 
- precedence : 10 , 
- fn : intersection 
- } 
- }, 
- defaultOperator : ' → ' , 
- toValue ( string ) { 
- return literal ( string ); 
- } 
- };],
-  [verifyEvaluate ( ' (a|b|c)∩(b|c|d) ' , levelTwoExpressions , { 
- '' : false , 
- ' a ' : false , 
- ' b ' : true , 
- ' c ' : true , 
- ' d ' : false 
- });],
-  [This is something new:],
-  [If a is a regular expression describing the language A , and b is a regular expression describing the language B , the expression a∩b describes the language Z where a sentence z belongs to Z if and only if z belongs to A , and z belongs to B .],
-  [Intersection can be useful for writing expressions that separate concerns. For example, if we already have 0|1(0|1)\* as the expression for the language containing all binary numbers, and .(..)\* as the expression for the language containing an odd number of symbols, then (0|1(0|1)\*)∩(.(..)\*) gives the the language containing all binary numbers with an odd number of digits.],
-  [id="difference"\>difference],
-  [Here’s another:],
-  [function difference ( a , b ) { 
- return mergeEquivalentStates ( 
- productOperation ( a , b , setDifference ) 
- ); 
- }],
-  [const levelTwoExpressions = { 
- operators : {],
-  [\/\/ ... other operators from formal regular expressions ...],
-  [' ∪ ' : { 
- symbol : Symbol ( ' ∪ ' ), 
- type : ' infix ' , 
- precedence : 10 , 
- fn : union 
- }, 
- ' ∩ ' : { 
- symbol : Symbol ( ' ∩ ' ), 
- type : ' infix ' , 
- precedence : 10 , 
- fn : intersection 
- }, 
- ' \\\\ ' : { 
- symbol : Symbol ( ' - ' ), 
- type : ' infix ' , 
- precedence : 10 , 
- fn : difference 
- } 
- }, 
- defaultOperator : ' → ' , 
- toValue ( string ) { 
- return literal ( string ); 
- } 
- };],
-  [verifyEvaluate ( ' (a|b|c) \\\\ (b|c|d) ' , levelTwoExpressions , { 
- '' : false , 
- ' a ' : true , 
- ' b ' : false , 
- ' c ' : false , 
- ' d ' : false 
- });],
-  [\\ is the set difference, or relative complement operator: 3],
-  [If a is a regular expression describing the language A , and b is a regular expression describing the language B , the expression a\\b describes the language Z where a sentence z belongs to Z if and only if z belongs to A , and z does not belong to B .],
-  [Where intersection was useful for separating concerns, difference is very useful for sentences that do not belong to a particular language. For example, We may want to match all sentences that contain the word “Braithwaite”, but not “Reggie Braithwaite:”],
-  [class="highlight"\> verifyEvaluate ( ' .\*Braithwaite.\* \\\\ .\*Reggie Braithwaite.\* ' , levelTwoExpressions , { 
- ' Braithwaite ' : true , 
- ' Reg Braithwaite ' : true , 
- ' The Reg Braithwaite! ' : true , 
- ' The Notorious Reggie Braithwaite ' : false , 
- ' Reggie, but not Braithwaite? ' : true , 
- ' Is Reggie a Braithwaite? ' : true 
- });],
-  [verifyEvaluate ( ' (.\* \\\\ .\*Reggie )(Braithwaite.\*) ' , levelTwoExpressions , { 
- ' Braithwaite ' : true , 
- ' Reg Braithwaite ' : true , 
- ' The Reg Braithwaite! ' : true , 
- ' The Notorious Reggie Braithwaite ' : false , 
- ' Reggie, but not Braithwaite? ' : true , 
- ' Is Reggie a Braithwaite? ' : true 
- });],
-  [The second test above includes an interesting pattern.],
-  [id="complement"\>complement],
-  [If s is an expression, then .\*\\s is the complement of the expression s . In set theory, the complement of a set S is everything that does not belong to S . If we presume the existence of a universal set U , where u belongs to U for any u , then the complement of a set S is the difference between U and S .],
-  [In sentences of symbols, if we have a total alphabet that we use to derive the dot operator . , then .\* is an expression for every possible sentence, and .\*\\s is the difference between every possible sentence and the sentences in the language S . And that is the complement of S.],
-  [We can implement complement as a prefix operator:],
-  [const levelTwoExpressions = { 
- operators : {],
-  [\/\/ ... other operators ...],
-  [' ¬ ' : { 
- symbol : Symbol ( ' ¬ ' ), 
- type : ' prefix ' , 
- precedence : 40 , 
- fn : complement 
- }],
-  [}],
-  [\/\/ ... other definition ...],
-  [};],
-  [verifyEvaluate ( ' ¬(.\*Reggie )Braithwaite.\* ' , levelTwoExpressions , { 
- ' Braithwaite ' : true , 
- ' Reg Braithwaite ' : true , 
- ' The Reg Braithwaite! ' : true , 
- ' The Notorious Reggie Braithwaite ' : false , 
- ' Reggie, but not Braithwaite? ' : true , 
- ' Is Reggie a Braithwaite? ' : true 
- }); 
- \/\/=\> All 6 tests passing],
-  [complement can surprise the unwary. The expression ¬(.\*Reggie )Braithwaite.\* matches strings containing Braithwaite but not Reggie Braithwaite . But if we expect .\*¬(Reggie )Braithwaite.\* to do the same thing, we’ll be unpleasantly surprised:],
-  [class="highlight"\> verifyEvaluate ( ' .\*¬(Reggie )Braithwaite.\* ' , levelTwoExpressions , { 
- ' Braithwaite ' : true , 
- ' Reg Braithwaite ' : true , 
- ' The Reg Braithwaite! ' : true , 
- ' The Notorious Reggie Braithwaite ' : false , 
- ' Reggie, but not Braithwaite? ' : true , 
- ' Is Reggie a Braithwaite? ' : true 
- }); 
- \/\/=\> 1 tests failing: fail: {"example":"The Notorious Reggie Braithwaite","expected":false,"actual":true}],
-  [The reason this failed is because the three “clauses” of our level two regular expression matched something like the following:],
-  [.\* matched The Notorious Reggie ;],
-  [¬(Reggie ) matched '' (also known as ε );],
-  [Braithwaite.\* matched Braithwaite .],
-  [That’s why we need to write our clause as ¬(.\* Reggie ) if we are trying to exclude the symbols Reggie appearing just before Braithwaite . For similar reasons, the expression ¬(a|b|c) is not equivalent to the [^abc] character class from regex syntax. Not only will the empty string match that expression, but so will strings longer than with more than one symbol.],
-  [If we want to emulate [^abc] , we want the intersection of . , which matches exactly one symbol, and ¬(a|b|c) , which matches any expression except a or b or c .],
-  [We can represent [^abc] with .∩¬(a|b|c) :],
-  [class="highlight"\> verifyEvaluate ( ' .∩¬(a|b|c) ' , levelTwoExpressions , { 
- '' : false , 
- ' a ' : false , 
- ' b ' : false , 
- ' c ' : false , 
- ' d ' : true , 
- ' e ' : true , 
- ' f ' : true , 
- ' ab ' : false , 
- ' abc ' : false 
- }); 
- \/\/=\> All 9 tests passing],
-  [That’s handy, so let’s make it an operator:],
-  [const levelTwoExpressions = { 
- operators : {],
-  [\/\/ ... other operators ...],
-  [' ^ ' : { 
- symbol : Symbol ( ' ^ ' ), 
- type : ' prefix ' , 
- precedence : 50 , 
- fn : characterComplement 
- }],
-  [}],
-  [\/\/ ... other definition ...],
-  [};],
-  [verifyEvaluate ( ' ^(a|b|c) ' , levelTwoExpressions , { 
- '' : false , 
- ' a ' : false , 
- ' b ' : false , 
- ' c ' : false , 
- ' d ' : true , 
- ' e ' : true , 
- ' f ' : true , 
- ' ab ' : false , 
- ' abc ' : false 
- }); 
- \/\/=\> All 9 tests passing],
-  [The syntax ^(a|b|c) is close enough to [^abc] for our purposes.],
-  [id="what-level-two-features-tell-us-and-what-they-dont"\>What Level Two Features Tell Us, and What They Don’t],
-  [The Level Two features we’ve implemented are useful, and they demonstrate some important results:],
-  [We already know that:],
-  [if x is a finite state recognizer that recognizes sentences in the language X , and y is a finite-state recognizer that recognizes sentences in the language Y , there exists a finite-state recognizer z that recognizes sentences in the language Z , where a sentence a belongs to Z if and only if a belongs to either X or Y . We demonstrated this by writing functions like union2 that take x and y as arguments and return z .],
-  [if x is a finite state recognizer that recognizes sentences in the language X , and y is a finite-state recognizer that recognizes sentences in the language Y , there exists a finite-state recognizer z that recognizes sentences in the language Z , where a sentence ab belongs to Z if and only if a belongs to X and b belongs to Y . We demonstrated this by writing the function catenation2 that takes x and y as arguments and returns z .],
-  [if x is a finite state recognizer that recognizes sentences in the language X , there exists a finite-state recognizer z that recognizes sentences in the language Z , where a sentence ab belongs to Z if and only if a is either the empty string or a sentence belonging to X, and b is a sentence belonging to Z . We demonstrated this by writing the function zeroOrMore that takes x as an argument and returns z\`.],
-  [These three results tell us that the set of finite-state recognizers is closed under alternation, catenation, and quantification.],
-  [Implementing our Level Two features has also demonstrated that:],
-  [if x is a finite state recognizer that recognizes sentences in the language X , and y is a finite-state recognizer that recognizes sentences in the language Y , there exists a finite-state recognizer z that recognizes sentences in the language Z , where a sentence a belongs to Z if and only if a belongs to both X and Y . We demonstrated this by writing the function intersection that takes x and y as arguments and returns z .],
-  [if x is a finite state recognizer that recognizes sentences in the language X , and y is a finite-state recognizer that recognizes sentences in the language Y , there exists a finite-state recognizer z that recognizes sentences in the language Z , where a sentence a belongs to Z if and only if a belongs to X and a does not belong to Y . We demonstrated this by writing the function difference that takes x and y as arguments and returns z .],
-  [if x is a finite state recognizer that recognizes sentences in the language X , there exists a finite-state recognizer z that recognizes sentences in the language Z , where a sentence a belongs to Z if and only if a does not belong to X. We demonstrated this by writing the function complement that takes x as an argument and returns z\`.],
-  [These three results also tell us that the set of finite-state recognizers is closed under intersection, difference, and complementation.],
-  [Writing Level Three features does come with a known limitation. Obviously, we can translate any Level Three regular expression into a finite-state recognizer. This tells us that the set of languages defined by Level Three regular expressions is a subset of the set of languages recognized by finte-state recognizers.],
-  [But what we don’t know is whether the set of languages defined by Level Three regular expressions is a equivalent to the set of languages defined by formal regular expressions. We don’t have an algorithm for translating Level Three regular expressions to Level Zero regular expressions. Given what we have explored so far, it is possible that the set of languages recognized by finite-state recognizers is larger than the set of languages defined by formal regular expressions (“Level Zero”).],
-  [If that were the case, it could be that some Level Three regular expression compiles to a finite-state recognizer, but there is no Level Zero expression that compiles to an equivalent finite-state recognizer.],
-  [How would we know if this were true?],
-  [With Level One expressions, we showed that for every Level One expression, there is an equivalent Level Zero expression by writing a Level One to Level Zero transpiler. With Level Two expressions, we’ll take a different tack: We’ll show that for every finite-state recognizer, there is an equivalent Level Zero expression.],
-  [If we know that for every finite-state recognizer, there is an equivalent Level Zero expression, and we also know that for every Level Zero expression, there is an equivalent finite-state recognizer, then we know that the set of languages recognized by finite-state recognizers is equal to the set of languages recognized by Level Zero expressions, a/k/a Regular Languages .],
-  [And if we know that for every Level Two expression, there is an equivalent finite-state recognizer, then it would follow that for every Level two expression, there is an equivalent Level Zero expression, and it would follow that the set of all languages described by Level Two expressions is the set of regular languages.],
-  [id="for-every-finite-state-recognizer-there-exists-an-equivalent-formal-regular-expression-1"\>For Every Finite-State Recognizer, There Exists An Equivalent Formal Regular Expression],
-  [It is time to demonstrate that for every finite-state recognizer, there exists an equivalent formal regular expression. We’re going to follow Stephen Kleene’s marvellous proof, very much leaning on Shunichi Toida’s excellent notes for CS390 Introduction to Theoretical Computer Science Structures The proof of this aspect of Kleene’s Theorem can be found here .],
-  [Our constructive proof -like approach will be to write a function that takes as its argument a description of a finite-state recognizer, and returns an equivalent formal regular expression in our syntax. The approach will be an old one in computer science:],
-  [For any pair of states ( any par implies that both states could be the same state) in a finite-state recognizer, we will find all the paths from one to another, and for each path, we can write a regular expression representing that path using catenation. When we have more than one path between them, we can combine them together using alternation. We’ll explain how quantification comes into that in a moment.],
-  [But if we had such a function, we could apply it to the start state and any accepting states, getting a formal regular expression for the paths from the start state to each accepting state. And if there are more than one accepting states, we could use alternation to combine the regular expressions into one big regular expression that is equivalent to the finite-state recognizer.],
-  [id="the-regularexpression-function"\>the regularExpression function],
-  [Let’s get started writing this in JavaScript. Given a description like:],
-  [class="highlight"\> const binary = { 
- "start" : "start" , 
- "transitions" : [ 
- { "from" : "start" , "consume" : "0" , "to" : "zero" }, 
- { "from" : "start" , "consume" : "1" , "to" : "notZero" }, 
- { "from" : "notZero" , "consume" : "0" , "to" : "notZero" }, 
- { "from" : "notZero" , "consume" : "1" , "to" : "notZero" } 
- ], 
- "accepting" : [ "zero" , "notZero" ] 
- }],
-  [It will be a matter of finding the regular expressions for the paths from start to zero , and from start to notZero , and taking the union of those paths. We're going to do that with a function we'll call between . Our function will take an argument for the state from , another for the state to , and a third argument called viaStates\` that we’ll explain in a moment. 4],
-  [Note that from , to , and via can be any of the states in the recognizer, including being the same state.],
-  [Here’s an empty function for what we want to begin with:],
-  [class="highlight"\> function regularExpression ( description ) { 
- const pruned = 
- reachableFromStart ( 
- mergeEquivalentStates ( 
- description 
- ) 
- ); 
- const { 
- start , 
- transitions , 
- accepting , 
- stateSet 
- } = validatedAndProcessed ( pruned );],
-  [\/\/ ... TBD],
-  [function between ({ from , to , viaStates }) { 
- \/\/ ... TBD 
- } 
- };],
-  [Let’s get the most degenerate case out of the way first. If a finite-state recognizer has no accepting states, then its formal regular expression is the empty set:],
-  [class="highlight"\> function regularExpression ( description ) { 
- const pruned = 
- reachableFromStart ( 
- mergeEquivalentStates ( 
- description 
- ) 
- ); 
- const { 
- start , 
- transitions , 
- accepting , 
- acceptingSet , 
- stateSet 
- } = validatedAndProcessed ( pruned );],
-  [if ( accepting . length === 0 ) { 
- return ' ∅ ' ; 
- } else { 
- \/\/ ... TBD],
-  [function between ({ from , to , viaStates }) { 
- \/\/ ... TBD 
- } 
- } 
- };],
-  [\/\/ ----------],
-  [verify ( regularExpression , new Map ([ 
- [ emptySet (), ' ∅ ' ] 
- ]));],
-  [Now what if there are accepting states? As described, the final regular expression must represent the union of all the expressions for getting from the start state to each accepting state. Let’s fill that in for a moment, deliberately omitting viaStates :],
-  [class="highlight"\> function alternateExpr (... exprs ) { 
- const uniques = [... new Set ( exprs )]; 
- const notEmptySets = uniques . filter ( x =\> x !== ' ∅ ' );],
-  [if ( notEmptySets . length === 0 ) { 
- return ' ∅ ' ; 
- } else if ( notEmptySets . length === 1 ) { 
- return notEmptySets [ 0 ]; 
- } else { 
- return notEmptySets . map ( p ). join ( ' | ' ); 
- } 
- }],
-  [function regularExpression ( description ) { 
- const pruned = 
- reachableFromStart ( 
- mergeEquivalentStates ( 
- description 
- ) 
- ); 
- const { 
- start , 
- transitions , 
- accepting , 
- acceptingSet , 
- stateSet 
- } = validatedAndProcessed ( pruned );],
-  [if ( accepting . length === 0 ) { 
- return ' ∅ ' ; 
- } else { 
- const from = start ; 
- const pathExpressions = 
- accepting . map ( 
- to =\> expression ({ from , to }) 
- );],
-  [const acceptsEmptyString = accepting . indexOf ( start ) \>= 0 ;],
-  [if ( acceptsEmptyString ) { 
- return alternateExpr ( ' ε ' , ... pathExpressions ); 
- } else { 
- return alternateExpr (... pathExpressions ); 
- }],
-  [function between ({ from , to , viaStates }) { 
- \/\/ ... TBD 
- } 
- } 
- };],
-  [There’s another special case thrown in: Although we haven’t written our between function yet, we know that if a finite-state recognizer beins in an accepting state, then it accepts the empty string, and thus we can take all the other expressions for getting from a start state to an accepting state, and union them with ε .],
-  [Now how about the between function?],
-  [id="the-between-function"\>the between function],
-  [The between function returns a formal regular expression representing all of the possible ways a finite-state recognizer can consume strings to get from the from state to the to state.],
-  [The way it works is to divide-and-conquer. We begin by choosing any state as the via state. We can divide up all the paths as follows:],
-  [All the paths from from to to that go through some state we shall call via least once, and;],
-  [All the paths from from to to that do not go through via at all.],
-  [If we could compute formal regular expressions for each of these two sets of paths, we could return the union of the two regular expressions and be done. So let’s begin by picking a viaState . Kleene numbered the states and begin with the largest state, we will simply take whatever state is first in the viaStates set’s enumeration:],
-  [class="highlight"\> function between ({ from , to , viaStates = [... allStates ] }) { 
- if ( viaStates . size === 0 ) { 
- \/\/ .. TBD 
- } else { 
- const [ via ] = viaStates ;],
-  [\/\/ ... TBD 
- } 
- }],
-  [We have left room for the degenerate case where viaStates is empty. We’ll get to that in a moment. The first part of our case is to write an expression for all the paths from from to to that go through via at least once. Here’s the formulation for that:],
-  [The expression representing all the paths from from to via that do not go through via , catenated with;],
-  [The expression representing all the paths from via looping back to via that do not go through vi , repeated any number of times , catenated with;],
-  [The expression representing all the paths from via to to that do not go through via .],
-  [Our normal case is going to look something like this:],
-  [class="highlight"\> function zeroOrMoreExpr ( a ) { 
- if ( a === ' ∅ ' || a === ' ε ' ) { 
- return ' ε ' ; 
- } else { 
- return \` \${ p ( a )} \*\` ; 
- } 
- }],
-  [function catenateExpr (... exprs ) { 
- if ( exprs . some ( x =\> x === ' ∅ ' )) { 
- return ' ∅ ' ; 
- } else { 
- const notEmptyStrings = exprs . filter ( x =\> x !== ' ε ' );],
-  [if ( notEmptyStrings . length === 0 ) { 
- return ' ε ' ; 
- } else if ( notEmptyStrings . length === 1 ) { 
- return notEmptyStrings [ 0 ]; 
- } else { 
- return notEmptyStrings . map ( p ). join ( '' ); 
- } 
- } 
- }],
-  [function between ({ from , to , viaStates = allStates }) { 
- if ( viaStates . size === 0 ) { 
- \/\/ .. TBD 
- } else { 
- const [ via ] = viaStates ;],
-  [const fromToVia = expression ({ from , to : via }); 
- const viaToVia = zeroOrMoreExpr ( 
- expression ({ from : via , to : via }) 
- ); 
- const viaToTo = expression ({ from : via , to , });],
-  [const throughVia = catenateExpr ( fromToVia , viaToVia , viaToTo ); 
- } 
- }],
-  [That being said, we have left out what to pass for viaStates . Well, we want our routine to do the computation for paths not passing through the state via , so we really want is all the remaining states except via :],
-  [class="highlight"\> function between ({ from , to , viaStates = [... allStates ] }) { 
- if ( viaStates . length === 0 ) { 
- \/\/ .. TBD 
- } else { 
- const [ via , ... exceptVia ] = viaStates ;],
-  [const fromToVia = expression ({ from , to : via , viaStates : exceptVia }); 
- const viaToVia = zeroOrMoreExpr ( 
- expression ({ from : via , to : via , viaStates : exceptVia }) 
- ); 
- const viaToTo = expression ({ from : via , to , viaStates : exceptVia });],
-  [const throughVia = catenateExpr ( fromToVia , viaToVia , viaToTo ); 
- } 
- }],
-  [Now how about the second part of our case? It’s the expression for all the paths from from to to that do not go through via . Which we then alternate with the expression for all the paths going through via :],
-  [class="highlight"\> function between ({ from , to , viaStates = [... allStates ] }) { 
- if ( viaStates . length === 0 ) { 
- \/\/ .. TBD 
- } else { 
- const [ via , ... exceptVia ] = viaStates ;],
-  [const fromToVia = expression ({ from , to : via , viaStates : exceptVia }); 
- const viaToVia = zeroOrMoreExpr ( 
- expression ({ from : via , to : via , viaStates : exceptVia }) 
- ); 
- const viaToTo = expression ({ from : via , to , viaStates : exceptVia });],
-  [const throughVia = catenateExpr ( fromToVia , viaToVia , viaToTo ); 
- const notThroughVia = expression ({ from , to , viaStates : exceptVia });],
-  [return alternateExpr ( throughVia , notThroughVia ); 
- } 
- }],
-  [Eventually, 5 this function will end up calling itself and passing an empty list of states. That’s our degenerate case. Given two states, what are all the paths between them that don’t go through any other states? Why, just the transitions directly between them. And the expressions for those are the symbols consumed, plus some allowance for symbols we have to escape.],
-  [class="highlight"\> function between ({ from , to , viaStates = [... allStates ] }) { 
- if ( viaStates . length === 0 ) { 
- const directExpressions = 
- transitions 
- . filter ( ({ from : tFrom , to : tTo }) =\> from === tFrom && to === tTo ) 
- . map ( ({ consume }) =\> toValueExpr ( consume ) );],
-  [return alternateExpr (... directExpressions ); 
- } else { 
- const [ via , ... exceptVia ] = viaStates ;],
-  [const fromToVia = expression ({ from , to : via , viaStates : exceptVia }); 
- const viaToVia = zeroOrMoreExpr ( 
- expression ({ from : via , to : via , viaStates : exceptVia }) 
- ); 
- const viaToTo = expression ({ from : via , to , viaStates : exceptVia });],
-  [const throughVia = catenateExpr ( fromToVia , viaToVia , viaToTo ); 
- const notThroughVia = expression ({ from , to , viaStates : exceptVia });],
-  [return alternateExpr ( throughVia , notThroughVia ); 
- } 
- }],
-  [const a = evaluate ( ' a ' , formalRegularExpressions );],
-  [regularExpression ( a ) 
- \/\/=\> ((((∅|a)∅∅)|∅)(((∅|a)∅∅)|∅)(((∅|a)∅∅)|(∅|a)))|(((∅|a)∅∅)|(∅|a))],
-  [This is a valid regular expression, but all the ∅ s make it unreadable. We’re not going to get into functions for finding the minimal expression for a finite-state recognizer, but we can make things less ridiculous with five easy optimizations:],
-  [catenating any expression a with the empty set returns the empty set.],
-  [alternating any expression a with the empty set returns the expression a .],
-  [Repeating the empty zeroOrMore times returns the empty set.],
-  [class="highlight"\> function alternateExpr (... exprs ) { 
- const uniques = [... new Set ( exprs )]; 
- const notEmptySets = uniques . filter ( x =\> x !== ' ∅ ' );],
-  [if ( notEmptySets . length === 0 ) { 
- return ' ∅ ' ; 
- } else if ( notEmptySets . length === 1 ) { 
- return notEmptySets [ 0 ]; 
- } else { 
- return notEmptySets . map ( p ). join ( ' | ' ); 
- } 
- }],
-  [function catenateExpr (... exprs ) { 
- if ( exprs . some ( x =\> x === ' ∅ ' )) { 
- return ' ∅ ' ; 
- } else { 
- const notEmptyStrings = exprs . filter ( x =\> x !== ' ε ' );],
-  [if ( notEmptyStrings . length === 0 ) { 
- return ' ε ' ; 
- } else if ( notEmptyStrings . length === 1 ) { 
- return notEmptyStrings [ 0 ]; 
- } else { 
- return notEmptyStrings . map ( p ). join ( '' ); 
- } 
- } 
- }],
-  [function zeroOrMoreExpr ( a ) { 
- if ( a === ' ∅ ' || a === ' ε ' ) { 
- return ' ε ' ; 
- } else { 
- return \` \${ p ( a )} \*\` ; 
- } 
- }],
-  [function regularExpression ( description ) { 
- const pruned = 
- reachableFromStart ( 
- mergeEquivalentStates ( 
- description 
- ) 
- ); 
- const { 
- start , 
- transitions , 
- accepting , 
- allStates 
- } = validatedAndProcessed ( pruned );],
-  [if ( accepting . length === 0 ) { 
- return ' ∅ ' ; 
- } else { 
- const from = start ; 
- const pathExpressions = 
- accepting . map ( 
- to =\> expression ({ from , to }) 
- );],
-  [const acceptsEmptyString = accepting . indexOf ( start ) \>= 0 ;],
-  [if ( acceptsEmptyString ) { 
- return alternateExpr ( ' ε ' , ... pathExpressions ); 
- } else { 
- return alternateExpr (... pathExpressions ); 
- }],
-  [function between ({ from , to , viaStates = [... allStates ] }) { 
- if ( viaStates . length === 0 ) { 
- const directExpressions = 
- transitions 
- . filter ( ({ from : tFrom , to : tTo }) =\> from === tFrom && to === tTo ) 
- . map ( ({ consume }) =\> toValueExpr ( consume ) );],
-  [return alternateExpr (... directExpressions ); 
- } else { 
- const [ via , ... exceptVia ] = viaStates ;],
-  [const fromToVia = expression ({ from , to : via , viaStates : exceptVia }); 
- const viaToVia = zeroOrMoreExpr ( 
- expression ({ from : via , to : via , viaStates : exceptVia }) 
- ); 
- const viaToTo = expression ({ from : via , to , viaStates : exceptVia });],
-  [const throughVia = catenateExpr ( fromToVia , viaToVia , viaToTo ); 
- const notThroughVia = expression ({ from , to , viaStates : exceptVia });],
-  [return alternateExpr ( throughVia , notThroughVia ); 
- } 
- } 
- } 
- };],
-  [Done! Now let’s look at what it does:],
-  [id="using-the-regularexpression-function"\>using the regularExpression function],
-  [First, let’s take an arbitrary finite-state recognizer, and convert it to a formal regular expression:],
-  [The result, 0|((1((0|1)\*)(0|1))|1) , isn’t the most compact or readable regular expression, but if we look at it carefully, we can see that it produces the same result: It matches a zero, or a one, or a one followed by a either a zero or one followed by either a zero or one zero or more times. Basically, it’s equivalent to 0|1|1(0|1)(0|1)\* . And 1|1(0|1)(0|1)\* is equivalent to 1(0|1)\* , so 0|((1((0|1)\*)(0|1))|1) is equivalent to 0|1(0|1)\* .],
-  [Let’s check it:],
-  [class="highlight"\> verifyRecognizer ( binary , { 
- '' : false , 
- ' 0 ' : true , 
- ' 1 ' : true , 
- ' 00 ' : false , 
- ' 01 ' : false , 
- ' 10 ' : true , 
- ' 11 ' : true , 
- ' 000 ' : false , 
- ' 001 ' : false , 
- ' 010 ' : false , 
- ' 011 ' : false , 
- ' 100 ' : true , 
- ' 101 ' : true , 
- ' 110 ' : true , 
- ' 111 ' : true , 
- ' 10100011011000001010011100101110111 ' : true 
- }); 
- \/\/=\> All 16 tests passing],
-  [const reconstitutedBinaryExpr = regularExpression ( binary ); 
- \/\/=\> 0|((1((0|1)\*)(0|1))|1)],
-  [verifyEvaluate ( reconstitutedBinaryExpr , formalRegularExpressions , { 
- '' : false , 
- ' 0 ' : true , 
- ' 1 ' : true , 
- ' 00 ' : false , 
- ' 01 ' : false , 
- ' 10 ' : true , 
- ' 11 ' : true , 
- ' 000 ' : false , 
- ' 001 ' : false , 
- ' 010 ' : false , 
- ' 011 ' : false , 
- ' 100 ' : true , 
- ' 101 ' : true , 
- ' 110 ' : true , 
- ' 111 ' : true , 
- ' 10100011011000001010011100101110111 ' : true 
- }); 
- \/\/=\> All 16 tests passing],
-  [0|((1((0|1)\*)(0|1))|1) may be a fugly way to describe binary numbers, but it is equivalent to 0|1(0|1)\* , and what counts is that for any finite-state recognizer, our function finds an equivalent formal regular expression. And if we know that for every finite-state recognizer, there is an equivalent formal-state recognizer, then we now have a universal demonstration that our Level One and Level Two features describe regular languages just like formal regular expressions. This is true even if–like our Level Two features–there is no obvious and direct translation to a formal regular expression.],
-  [However, testing binary doesn’t actually demonstrate that the finite-state recognizer produced by compiling a Level Two expression to a finite-state recognizer can be compiled back to an equivalent finite-state recognizer. We already know that binary numbers is a regular language. So let’s try our function with some level two examples.],
-  [id="a-test-suite-for--the-regularexpression-function"\>a test suite for the regularExpression function],
-  [We can check a few more results to give us confidence. But instead of reasoning through each one, we’ll check the equivalence using test cases. What we’ll do is take a regular expression and run it through test cases. Then we’ll evaluate it to produce a finite-state recognizer, translate the finite-state recognizer to a formal regular expression with regularExpression , and run it through the same text cases again.],
-  [If all the tests pass, we’ll declare that our regularExpression function does indeed demonstrate that there is an equivalent formal regular expression for every finite-state recognizer. Here’s our test function, and an example of trying it with 0|1(0|1)\* :],
-  [verifyRecognizer ( recognizer , tests );],
-  [const formalExpression = regularExpression ( recognizer );],
-  [verifyEvaluate ( formalExpression , formalRegularExpressions , tests ); 
- }],
-  [verifyRegularExpression ( ' 0|1(0|1)\* ' , { 
- '' : false , 
- ' 0 ' : true , 
- ' 1 ' : true , 
- ' 00 ' : false , 
- ' 01 ' : false , 
- ' 10 ' : true , 
- ' 11 ' : true , 
- ' 000 ' : false , 
- ' 001 ' : false , 
- ' 010 ' : false , 
- ' 011 ' : false , 
- ' 100 ' : true , 
- ' 101 ' : true , 
- ' 110 ' : true , 
- ' 111 ' : true , 
- ' 10100011011000001010011100101110111 ' : true 
- });],
-  [And now to try it with some Level Two examples:],
-  [class="highlight"\> 
- verifyRegularExpression ( ' (a|b|c)∪(b|c|d) ' , { 
- '' : false , 
- ' a ' : true , 
- ' b ' : true , 
- ' c ' : true , 
- ' d ' : true 
- });],
-  [verifyRegularExpression ( ' (ab|bc|cd)∪(bc|cd|de) ' , { 
- '' : false , 
- ' ab ' : true , 
- ' bc ' : true , 
- ' cd ' : true , 
- ' de ' : true 
- });],
-  [verifyRegularExpression ( ' (a|b|c)∩(b|c|d) ' , { 
- '' : false , 
- ' a ' : false , 
- ' b ' : true , 
- ' c ' : true , 
- ' d ' : false 
- });],
-  [verifyRegularExpression ( ' (ab|bc|cd)∩(bc|cd|de) ' , { 
- '' : false , 
- ' ab ' : false , 
- ' bc ' : true , 
- ' cd ' : true , 
- ' de ' : false 
- });],
-  [verifyRegularExpression ( ' (a|b|c) \\\\ (b|c|d) ' , { 
- '' : false , 
- ' a ' : true , 
- ' b ' : false , 
- ' c ' : false , 
- ' d ' : false 
- });],
-  [verifyRegularExpression ( ' (ab|bc|cd) \\\\ (bc|cd|de) ' , { 
- '' : false , 
- ' ab ' : true , 
- ' bc ' : false , 
- ' cd ' : false , 
- ' de ' : false 
- });],
-  [Success! There is an equivalent formal regular expression for the finite-state recognizers we generate with our Level Two features.],
-  [id="conclusion"\>conclusion],
-  [We have now demonstrated, in constructive fashion, that for every finite-state recognizer, there is an equivalent formal regular expression.],
-  [This implies several important things. First and foremost, since we have also established that for every formal regular expression, there is an equivalent finite-state recognizer, we now know that The set of languages described by formal regular expressions–regular languages–is identical to the set of languages recognized by finite-state automata. Finite-state automata recognize regular languages, and regular languages can be recognized by finite-state automata.],
-  [Second, if we devise any arbitrary extension to formal regular languages–or even an entirely new kind of language, and we also devise a way to compile such descriptions to finite-state recognizers, then we know that the languages we can describe with these extensions or languages are still regular languages.],
-  [Although we are not emphasizing performance, we also know that sentences in any such extensions or languages we may care to create can still be recognized in at worst linear time, because finite-state recognizers recognize sentences in at worst linear time.],
-  [(discuss on Hacker News )],
-  [id="notes"\>Notes],
-  [id="fn:dup"\>],
-  [A more subtle issue is that all of our code for manipulating finite-state recognizers depends upon them having unique state names. Invoking union2(a, a) or catenation2(a, a) will not work properly because the names will clash. To make such expressions work, we have to make a duplicate of one of the arguments, e.g. union2(a, dup(a)) or catenation2(a, dup(a)) . In this case, we invoked catenation2(a, zeroOrMore(dup(a))) .],
-  [None of this is a consideration with our existing code, because it always generates brand new recognizers with unique states. But when we manually write our own expressions in JavaScript, we have to guard against name clashes by hand. Which is another argument against writing expressions in JavaScript. aa and a|a in a formal regular expression “just work.” union2(a, a) and catenation2(a, a) don’t. ↩],
-  [id="fn:times"\>],
-  [If you feel like having a go at one more, try implementing another quantification operator, explicit repetition. In many regexen flavours, we can write (expr){5} to indicate we wish to match (expr)(expr)(expr)(expr)(expr) . The syntax allows other possibilities, such as (expr){2,3} and (expr){3,} , but ignoring those, the effect of (expr){n} for any n from 1 to 9 could be emulated with an infix operator, such as ⊗ , so that (expr)⊗5 would be transpiled to (expr)(expr)(expr)(expr)(expr) . ↩],
-  [id="fn:backslashbackslash"\>],
-  [Our source code uses a lot of double back-slashes, but this is an artefact of JavaScript the programming language using a backslash as its escape operator. The actual strings use a single backslash internally. ↩],
-  [id="fn:nomenclature"\>],
-  [In most proofs, this function is called L , and its arguments are called p , q , and k . One-character names are terrific when writing proofs by hand using chalk and a blackboard, but we’ve moved on since 1951 and we’ll use descriptive names. Likewise, Kleene numbered the states in order to create an ordering that is easy to work with by hand. We’ll work with sets instead of numbers, because once again, we have computers do do all the bookkeeping for us. ↩],
-  [id="fn:eventually"\>],
-  [How eventually? With enough states in a recognizer, it could take a very long time. This particular algorithm has exponential running time! But that being said, we are writing it to prove that it can be done, we don’t actually need to do it to actually recognize sentences. ↩],
+  [Fubar ( " Situation Normal " , " All Fsked Up " ); 
+ \/\/=\> Error: Fubar needs to be called with the new keyword],
+  [Simple and safer than only relying on "use strict" . If you like having a simple instanceof test, you can bake it into the constructor as a function method:],
+  [var arrayOfSevereProblems = problems . filter ( Fubar . is );],
+  [There you have it: Constructors that fail when called without new are a potential problem, and three solutions we can use are, respectively, auto-instantiation, overloading the constructor, or killing such calls with fire.],
 ),
   insert-map: (:),
-  word-count: 14566,
+  word-count: 1441,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -3306,303 +3293,183 @@ product.],
 
 {
   #standard-article(
-  title: [From Higher-Order Functions to Libraries And Frameworks],
-  author: [Reginald Braithwaite],
-  source-name: [Reginald Braithwaite (raganwald)],
+  title: [How to write better emails],
+  author: [Lazarus Lazaridis (iridakos)],
+  source-name: [Lazarus Lazaridis (iridakos)],
   images: (),
   paragraphs: (
-  [In this essay, we will take a look at some higher-order functions, with an eye to seeing how they can be used to make our programs more expressive, while balancing that against the need to limit the perceived complexity of our programs.],
-  [id="introduction-expressiveness"\>introduction: expressiveness],
-  [One of the most basic ideas in programming is that functions can invoke other functions. 1],
-  [When a function invokes other functions, and when one function can be invoked by more than one other function, we have a very good thing. When we have a many-to-many relationship between functions, we have a more expressive power than when we have a one-to-many relationship. We have the ability to give each function a single responsibility, and name that responsibility. We also have the ability to ensure that one and only one function has that responsibility.],
-  [A many-to-many relationship between functions is what enables us to create a one-to-one relationship between functions and responsibilities.],
-  [Programmers often speak of languages as being expressive . Although there is no single universal definition for this word, most programmers agree that an important aspect of “expressiveness” is that the language makes it easy to write programs that are not unnecessarily verbose. If functions have many responsibilities, they become large and unwieldy. If the same responsibility needs to be implemented more than once, there is de facto redundancy.],
-  [Programs where functions have single responsibilities, and where responsibilities are implemented by single functions, avoid unnecessary verbosity.],
-  [Thus, facilitating the many-to-many relationship between functions makes it possible to write programs that are more expressive than those that do not have a many-to-many relationship between functions.],
-  [id="the-dark-side-perceived-complexity"\>the dark side: perceived complexity],
-  [However, “With great power comes great responsibility.” 2 The downside of a many-to-many relationship between functions is that the ‘space of things a program might do’ grows very rapidly as the size increases. “Expressiveness” is often in tension with “Perceived Complexity.”],
-  [One way to think about this by analogy is to imagine we are drawing a graph. Each function is a vertex, and the calling relationship between them is an edge. Assuming that there is no “dead code,” every structured program forms a connected graph .],
-  [Given a known number of nodes, the number of different ways to draw a connected graph between them is the A001187 integer sequence. Its first eleven terms are: 1, 1, 1, 4, 38, 728, 26704, 1866256, 251548592, 66296291072, 34496488594816 . Meaning that there are more than thirty-four trillion ways to organize a program with just ten functions.],
-  [This explosion of flexibility is so great that programmers have to temper it. The benefits of creating one-to-one relationships between functions and responsibilities can become overwhelmed by the difficulty of understanding programs with unconstrained potential complexity.],
-  [JavaScript has tools to help. Its blocks create namespaces, and so do its formal modules. It may soon have private object properties.],
-  [Namespaces constrain large graphs into many smaller graphs, each of which has a constrained set of ways they can be connected to other graphs. It’s still a large graph, but the number of possible ways to draw it is smaller, and by analogy, it is easier to sort out what it does, and how.],
-  [What we have described is a heuristic for designing good software systems: Provide the flexibility to use many-to-many relationships between entities, while simultaneously providing ways for programmers to intentionally limit the ways that entities can be connected .],
-  [But notice that we’re not saying that one mechanism does both jobs. No, we’re saying that one tool helps us increase expressivity, while another helps us limit the perceived complexity of our programs, and the two work in tension with each other.],
-  [Now that we’ve established our heuristic, let’s look at some higher-order functions, and see what they can tell us about expressiveness and perceived complexity.],
-  [Brown Mandelbrot, © 2008 docnic, Some rights reserved],
-  [id="higher-order-functions"\>higher-order functions],
-  [Functions that accept functions as parameters, and/or return functions as values, are called Higher-Order Functions , or “HOFs.” Languages that support HOFs also support the idea of functions as first-class values , and nearly always support the idea of dynamically creating functions .],
-  [HOFs give programmers even more ways to decompose and compose programs, and thus more ways to write programs where there is a one-to-one relationship between functions and responsibilities. Let’s look at an example.],
-  [Rumour has it that there are excellent companies that ask coöp students to write code as part of the interview process. A typical problem will ask the student to demonstrate their facility solving a problem that ought to be familiar to a computer science or computer engineering student.],
-  [For example, merging two sorted lists. This is something a student will have at least looked at, and it does have some applicability to modern service architectures. Here’s a naïve implementation:],
-  [class="highlight"\> function merge ({ list1 , list2 }) { 
- if ( list1 . length === 0 || list2 . length === 0 ) { 
- return list1 . concat ( list2 ); 
- } else { 
- let atom , remainder ;],
-  [if ( list1 [ 0 ] [1, 2, 3, 4, 5, 6, 7, 8]],
-  [And here’s a function that finds the sum of a list of numbers:],
-  [class="highlight"\> function sum ( list ) { 
- if ( list . length === 0 ) { 
- return 0 ; 
- } else { 
- const [ atom , ... remainder ] = list ; 
- const left = atom ; 
- const right = sum ( remainder );],
-  [return left + right ; 
- } 
- }],
-  [sum ([ 42 , 3 , - 1 ]) 
- \/\/=\> 44],
-  [We’ve written them so that both have the same structure, they are linearly recursive . Can we extract this structure?],
-  [id="linrec"\>linrec],
-  [Linear recursion has a simple form:],
-  [Look at the input. Can we break an element off?],
-  [If not, what value do we return?],
-  [If we can break a chunk off, divide the input into the element and a remainder],
-  [Run our linearly recursive function on the remainder, then],
-  [Combine our chunk with the result of our linearly recursive function on the remainder],
-  [Both of our examples above have this form, and we will write a higher-order function to implement linear recursion. To get started with our extraction, it helps to take an example of the function we want to implement, and extract its future parameters as constants:],
-  [class="highlight"\> function sum ( list ) { 
- const indivisible = ( list ) =\> list . length === 0 ; 
- const value = () =\> 0 ; 
- const divide = ( list ) =\> { 
- const [ atom , ... remainder ] = list ;],
-  [return { atom , remainder } 
- }; 
- const combine = ({ left , right }) =\> left + right ;],
-  [if ( indivisible ( list )) { 
- return value ( list ); 
- } else { 
- const { atom , remainder } = divide ( list ); 
- const left = atom ; 
- const right = sum ( remainder );],
-  [return combine ({ left , right }); 
- } 
- }],
-  [We’re just about ready to make our higher-order function. Our penultimate step is to rename sum to myself , and list to input :],
-  [class="highlight"\> function myself ( input ) { 
- const indivisible = ( list ) =\> list . length === 0 ; 
- const value = () =\> 0 ; 
- const divide = ( list ) =\> { 
- const [ atom , ... remainder ] = list ;],
-  [return { atom , remainder } 
- }; 
- const combine = ({ left , right }) =\> left + right ;],
-  [if ( indivisible ( input )) { 
- return value ( input ); 
- } else { 
- const { atom , remainder } = divide ( input ); 
- const left = atom ; 
- const right = myself ( remainder );],
-  [return combine ({ left , right }); 
- } 
- }],
-  [The final step is to turn our constant functions into parameters of a function that returns our myself function:],
-  [class="highlight"\> function linrec ({ indivisible , value , divide , combine }) { 
- return function myself ( input ) { 
- if ( indivisible ( input )) { 
- return value ( input ); 
- } else { 
- const { atom , remainder } = divide ( input ); 
- const left = atom ; 
- const right = myself ( remainder );],
-  [return combine ({ left , right }); 
- } 
- } 
- }],
-  [const sum = linrec ({ 
- indivisible : ( list ) =\> list . length === 0 , 
- value : () =\> 0 , 
- divide : ( list ) =\> { 
- const [ atom , ... remainder ] = list ;],
-  [return { atom , remainder } 
- }, 
- combine : ({ left , right }) =\> left + right 
- });],
-  [And now we can exploit the similarities between sum and merge , by using linrec to write merge as well:],
-  [class="highlight"\> const merge = linrec ({ 
- indivisible : ({ list1 , list2 }) =\> list1 . length === 0 || list2 . length === 0 , 
- value : ({ list1 , list2 }) =\> list1 . concat ( list2 ), 
- divide : ({ list1 , list2 }) =\> { 
- if ( list1 [ 0 ] [ left , ... right ] 
- });],
-  [But why stop there?],
-  [id="binrec"\>binrec],
-  [binrec is a higher-order function for implementing binary recursion . Remember our coöp student implementing a merge between sorted lists? One of the cool things you can do with a merge function is write a merge sort , and advanced students are often asked to at least sketch out how it would work.],
-  [binrec is actually simpler than linrec in at least one respect, because instead of having an element and a remainder, binrec divides a problem into two parts and applies the same algorithm to both halves:],
-  [class="highlight"\> function binrec ({ indivisible , value , divide , combine }) { 
- return function myself ( input ) { 
- if ( indivisible ( input )) { 
- return value ( input ); 
- } else { 
- let { left , right } = divide ( input );],
-  [left = myself ( left ); 
- right = myself ( right );],
-  [return combine ({ left , right }); 
- } 
- } 
- }],
-  [const mergeSort = binrec ({ 
- indivisible : ( list ) =\> list . length list , 
- divide : ( list ) =\> ({ 
- left : list . slice ( 0 , list . length / 2 ), 
- right : list . slice ( list . length / 2 ) 
- }), 
- combine : ({ left : list1 , right : list2 }) =\> merge ({ list1 , list2 }) 
- });],
-  [mergeSort ([ 1 , 42 , 4 , 5 ]) 
- \/\/=\> [1, 4, 5, 42]],
-  [From binrec , we can derive multirec , which divides the problem into an arbitrary number of symmetrical parts:],
-  [function multirec ({ indivisible , value , divide , combine }) { 
- return function myself ( input ) { 
- if ( indivisible ( input )) { 
- return value ( input ); 
- } else { 
- const parts = divide ( input ); 
- const solutions = mapWith ( myself )( parts );],
-  [return combine ( solutions ); 
- } 
- } 
- }],
-  [const mergeSort = multirec ({ 
- indivisible : ( list ) =\> list . length list , 
- divide : ( list ) =\> [ 
- list . slice ( 0 , list . length / 2 ), 
- list . slice ( list . length / 2 ) 
- ], 
- combine : ([ list1 , list2 ]) =\> merge ({ list1 , list2 }) 
- });],
-  [There are an infinitude of higher-order functions we could explore, but these are enough for now. Let’s return to thinking about the relationship between expressiveness and perceived complexity.],
-  [id="the-relationship-between-higher-order-functions-expressiveness-and-complexity"\>the relationship between higher-order functions, expressiveness, and complexity],
-  [In typical programming, functions invoke each other, and by creating many-to-many relationships between functions, we increase expressiveness by making sure that one and only one functions implements any one responsibility. If two functions implement the same responsibility, we are less DRY, and less expressive.],
-  [How do higher-order functions come into this? Well, as we saw, merge and sum have different responsibilities in the solution domain–merging lists and summing lists. But they share a common implementation structure, linear recursion. Therefore, they both are responsible for implementing a linearly recursive algorithm.],
-  [By extracting this algorithm into linrec , we once again make sure that one and only one entity– linrec is responsible for implementing linear recursion. Thus, we find that a feature like first-class functions does give us the power of greater expressiveness, as it gives us at least one more way to create many-to-many relationships between functions.],
-  [And we also know that this can increase perceived complexity if we do not also temper this increased expressiveness with language features or architectural designs that allow us to define groups of functions that have rich relationships within themselves, but only limited relationships with other groups.],
-  [Photo © 2010 Denis Mihailov, some rights reserved],
-  [id="one-to-many-and-many-to-many"\>one-to-many and many-to-many],
-  [There’s more to it than that. Let’s compare binrec and multirec . Or rather, let’s compare how we write mergeSort using binrec and multirec :],
-  [class="highlight"\> const mergeSort1 = binrec ({ 
- indivisible : ( list ) =\> list . length list , 
- divide : ( list ) =\> ({ 
- left : list . slice ( 0 , list . length / 2 ), 
- right : list . slice ( list . length / 2 ) 
- }), 
- combine : ({ left : list1 , right : list2 }) =\> merge ({ list1 , list2 }) 
- });],
-  [const mergeSort2 = multirec ({ 
- indivisible : ( list ) =\> list . length list , 
- divide : ( list ) =\> [ 
- list . slice ( 0 , list . length / 2 ), 
- list . slice ( list . length / 2 ) 
- ], 
- combine : ([ list1 , list2 ]) =\> merge ({ list1 , list2 }) 
- });],
-  [The interesting thing for us are the functions we supply as arguments. Let’s name them:],
-  [class="highlight"\> const hasAtMostOne = ( list ) =\> list . length list ; 
- const bisectLeftAndRight = ( list ) =\> ({ 
- left : list . slice ( 0 , list . length / 2 ), 
- right : list . slice ( list . length / 2 ) 
- }); 
- const bisect = ( list ) =\> [ 
- list . slice ( 0 , list . length / 2 ), 
- list . slice ( list . length / 2 ) 
- ]; 
- const mergeLeftAndRight = ({ left : list1 , right : list2 }) =\> merge ({ list1 , list2 }); 
- const mergeBisected = ([ list1 , list2 ]) =\> merge ({ list1 , list2 });],
-  [Looking at the names and at what the functions do, it seems that some, namely hasAtMostOne , Identity , and bisect feel like general-purpose functions that we might find ourselves using throughout one or many programs. And in fact, they can often be found in general-purpose function utility libraries. They express universal operations on lists.],
-  [Whereas, bisectLeftAndRight , and mergeLeftAndRight , seem more specialized. They are unlikely to be used anywhere else. mergeBisected is a toss-up. We might need it elsewhere, we might not.],
-  [We can also say that there is a many-to-many relationship between functions in our programs and the hasAtMostOne , Identity , and bisect functions. Functions like mergeSort2 call many other functions, and functions like bisect can be called by many other functions.],
-  [And as noted in the beginning, this “many-to-many-ness” contributes to expressiveness and to ensuring that we can write software where there is a one-to-one relationship between entities and responsibilities. For example, bisect is the authority on bisecting lists. We can arrange to write all of our code to invoke bisect , rather than duplicating its functionality.],
-  [Our heuristic is that the more general-purpose the interface and behavioural “contract” that a function provides, and the more focused and simple a responsibility it has, the greater its “many-to-many-ness.” Therefore, when we write higher-order functions like multirec , we should strive to design them to accept general-purpose parameters with simple responsibilities.],
-  [But we can also write functions like bisectLeftAndRight and mergeLeftAndRight . But when we do, there will be a one-to-many relationship, because we have little use for them outside of our specific merge application. This does allow us to structure our code and extract commonality like how to perform a binary recursion, but by limiting the many-to-many-ness of our program, we limit its expressiveness.],
-  [Unfortunately, this limitation of expressiveness does not directly translate to limiting the perceived complexity of our programs. We can tell from detailed inspection that a function like bisectLeftAndRight will not be useful elsewhere in the program, but if we do not employ a tool like module scoping to enforce this and make it obvious at a glance, we do not really limit its perceived complexity.],
-  [From this we can observe that many programming techniques, such as writing highly specialized interfaces for functions, or having complex responsibilities, can serve to limit a program’s expressiveness without providing the benefit of limiting its perceived complexity.],
-  [Framework, © 2006 kaz k, some rights reserved],
-  [id="what-higher-order-functions-tell-us-about-frameworks-and-libraries"\>what higher-order functions tell us about frameworks and libraries],
-  [Roughly speaking, both frameworks and libraries are collections of classes, functions, and other code that we blend with our own code to write programs. But frameworks are designed to call our code, while libraries are designed to be called by our code.],
-  [Frameworks typically expect us to write functions or create entities with very specific, proprietary interfaces and behavioural contracts. For example, Ember requires us to extend its own base classes for things like component classes, instead of using ordinary JavaScript ES-6 classes. As we noted above, when we have specific interfaces, we limit the expressiveness of our programs, but not the incidental complexity.],
-  [The underlying assumption is that we are writing code for the framework, so the framework’s author is not concerned with setting-up a many-to-many relationship between the framework’s code and our code. For example, we cannot use JavaScript mixins, subclass factories, or method advice with the classes we write in Ember. We have to use the specific, proprietary meta-programming facilities that Ember provides, or are provided in specific plugins written for Ember.],
-  [Framework-oriented code tends to be more one-to-many than many-to-many, and thus tends to be less expressive .],
-  [Whereas, libraries are designed to be called by our code. And more importantly, by the code of many, many different teams, each of whom have their own programming style and approach. This leads library authors in general to write functions with generic interfaces and simple responsibilities.],
-  [Library-oriented code tends to be more many-to-many than one-to-many, and thus can be more expressive .],
-  [Is framework-oriented code a bad thing? It’s a tradeoff. Frameworks provide standard ways to do things. Frameworks hold out the promise of doing more things for us, and especially doing more complex things for us.],
-  [Ideally, although our code may be less expressive with a framework, our goal should be that we write less code against a framework than we would using libraries, and that we use other mechanisms to limit the perceived complexity of our code.],
-  [But from our exploration of linrec , binrec , and multirec , we can see that higher-order functions teach us something about specific and general interfaces, and that teaches us something about the tradeoffs between using frameworks and libraries.],
-  [id="afterward"\>afterward],
-  [There is more to read about multirec in the follow-up essay, Why recursive data structures? , and the final chapter, Time, Space, and Life As We Know It .],
-  [Have an observation? Spot an error? You can open an issue , discuss this on reddit , or even edit this post yourself.],
-  [And hey: If you like this essay, you’ll love JavaScript Allongé . It’s free to read online!],
-  [id="notes"\>notes],
-  [id="fn:methods"\>],
-  [Although this essay is going to talk about functions, everything we look at is applicable to methods and by analogy, to classes. We’re just sticking to talking about functions for simplicity’s sake. ↩],
-  [id="fn:quote"\>],
-  [“Ils doivent envisager qu’une grande responsabilité est la suite inséparable d’un grand pouvoir.”— quoteinvestigator.com ↩],
+  [Email communication is not my favorite but since I can’t avoid it, I am trying to compose messages in a way that I think it makes it easier for both me and the recipient:],
+  [to quickly address what is being communicated],
+  [avoid misunderstandings],
+  [save time],
+  [Here are some tips. They don’t apply to all type of messages, I provide before and after examples to better describe each case.],
+  [id="emphasize-text-with-boldunderlined-font"\>Emphasize text with bold/underlined font],
+  [Emphasizing the appropriate parts of a message, especially when it’s a long one, you help readers quickly get an idea of what the email is about and easily locate the important stuff after going back to it at some point in the future.],
+  [id="examples"\>Examples],
+  [id="before"\>Before],
+  [I noticed that there are many logs for blabla the last few days and I don't think that it is normal. I believe the problem is the updated version of gem blabla.],
+  [I have opened an issue describing the case in Redmine (\#455) in the current version.
+Feel free to change its priority in case blabla.],
+  [Thanks,
+Lazarus],
+  [id="after"\>After],
+  [I noticed that there are many logs for blabla the last few days and I don't think that it is normal. I believe the problem is the updated version of gem blabla.],
+  [I have opened a Redmine issue (\#455) describing the case in the current version.
+Feel free to change its priority in case blabla.],
+  [Thanks,
+Lazarus],
+  [id="use-specific-dates-instead-of-yesterday-tomorrow-etc"\>Use specific dates instead of yesterday , tomorrow etc],
+  [The moment you send an email is not the moment that it will be read by its recipients. Avoid using only temporal adverbs/nouns like yesterday , today , tomorrow , two hours ago etc but include also the specific dates/times otherwise they might be misunderstood or require from recipients to check the email’s sent date/time to calculate the actual time.],
+  [id="examples-1"\>Examples],
+  [id="before-1"\>Before],
+  [Yesterday we released a fix for the bug 455 on staging and we plan to release it next Monday if you give us the green light by tomorrow end of day.],
+  [Thanks,
+Lazarus],
+  [id="after-1"\>After],
+  [Yesterday , June 25th, 2019 we released a fix for the bug \#455 on staging and we plan to release it on production next Monday (July 1st, 2019) if you give us the green light by tomorrow (June 27th, 2019) end of day.],
+  [Thanks,
+Lazarus],
+  [id="use-links-for-references"\>Use links for references],
+  [Use bookmarkable links when you refer to something that would eventually require from the recipient to search for in another platform.],
+  [This has two benefits:],
+  [Save time],
+  [Eliminate ambiguous references],
+  [id="examples-2"\>Examples],
+  [id="before-2"\>Before],
+  [I didn't understand the process described on the issue about the logging bug. Irida's comment was not very clear either. Can you please help me?],
+  [Thanks,
+Lazarus],
+  [id="after-2"\>After],
+  [I didn't understand the process described on the issue about the logging bug ( Redmine \#453 ). This comment from Irida was not very clear either. Can you please help me?],
+  [Thanks,
+Lazarus],
+  [id="structure-long-messages"\>Structure long messages],
+  [Long messages are in general not very effective and parts of them are prone to be ignored.],
+  [When I have to compose such a message I try to categorize the text in contextual sections and then structure them using headers and paragraphs allowing readers to navigate to them at a glance.],
+  [id="examples-3"\>Examples],
+  [id="before-3"\>Before],
+  [Last week we had a problem with the logs in the production environment. I am talking about the Redmine issue \#453. We noticed a huge increase in the log messages blabla leading to delayed responses because blah blah blah. At some point the server run out of disk and everything fell apart blah blah blah. Administrators backed up the logs and removed them from the server to blah blah blah. We started investigating what is going on immediately and after two days we managed to reproduce the error in the staging environment as well. The problem was the usage of an external library that had a bug which blah blah blah. We removed the library and the bug was no longer reproducable in the staging environment. The buggy library was blah blah blah. We released the fix yesterday and everything seems to be back to normal. We also added some scripts that will notify us immediately if such conditions start to emerge.],
+  [Thank you for your time,
+Lazarus],
+  [id="after-3"\>After],
+  [Background 
+Last week we had a problem with the logs in the production environment. We noticed a huge increase in the log messages blabla.],
+  [Consequences 
+The increase led to delayed responses because blah blah blah. At some point the server run out of disk and everything fell apart blah blah blah.],
+  [Cause of the problem 
+We started investigating what is going on immediately and after two days we managed to reproduce the error in the staging environment as well.
+The problem was the usage of an external library that had a bug which blah blah blah. The buggy library was blah blah blah.],
+  [Actions taken],
+  [1. Administrators backed up the logs and removed them from the server to blah blah blah.
+2. We removed the library and the bug was no longer reproducible in the staging environment.
+3. We released the fix yesterday, June 26th, 2019.
+4. We also added some scripts that will notify us on time if such conditions start to emerge.],
+  [Current status 
+ The server is up and running, everything seems to be back to normal.],
+  [More info 
+ Related Redmine issue \#453 
+ External library - Official bug report],
+  [Thank you for your time,
+Lazarus],
+  [id="be-specific-on-what-you-request-from-whom"\>Be specific on what you request from whom],
+  [I have seen many many many emails for which:],
+  [the sender wanted something by someone],
+  [the recipients],
+  [didn’t think they were the ones to provide it],
+  [understood something else than what the sender asked for],
+  [I try to be very specific and provide details (when possible) on what I need and when there’s more than one recipients I refer to each one explicitly using \@ .],
+  [id="examples-4"\>Examples],
+  [id="before-4"\>Before],
+  [I have pushed a commit that possibly fixes the bug with the logging in staging. I won't be here tomorrow so can you review and release if ok?],
+  [Bye.],
+  [id="after-4"\>After],
+  [I have pushed a commit that possibly fixes the bug (Redmine \#453) with the logging in staging.],
+  [Since I won't be here tomorrow, June 27th , can you please:],
+  [\@captain: review the commit 
+ \@qa: run the suite to validate the fix
+ \@devs: proceed with the production release on June 28th given the green light by the QA team?],
+  [Sorry for the inconvenience,
+Lazarus],
+  [Thank you,],
+  [id="post-scriptum"\>Post Scriptum],
+  [Find attached a photo of my cats.],
+  [For feedback, comments, typos etc. please use this issue .],
+  [Thanks for visiting!],
 ),
   insert-map: (:),
-  word-count: 3412,
+  word-count: 1153,
   edited-for-length: false,
   debug-mode: false,
 )
 
 }
 
-{
-  #standard-article(
-  title: [EUC 2026 first day],
+#article-row((
+  [
+    standard-article(
+  title: [A chess day],
   author: [Petr Mitrichev],
   source-name: [Petr Mitrichev (competitive programming)],
   images: (),
   paragraphs: (
-  [Yesterday I have arrived in Warsaw, which will host ICPC EUC 2026 this Sunday. As you can see on the left, Warsaw in Feburary (much like Wijk aan Zee in January) is very conductive for indoor activities, which is perfect to be able to truly focus on a programming competition.],
-  [I have arrived too late to get to the opening ceremony, but from the slides that were shared it seems that, among other things, Bill has announced the dates for the upcoming ICPC World Finals: November 15-20, 2026 in Dubai (which was already announced before), and September 14-19, 2027 in a yet undisclosed (but seemingly known to the ICPC organizers) location. The ICPC EUC 2027 location was announced last year to be Eindhoven, Netherlands.],
-  [But for now the focus is on the upcoming championship, where 8 teams have already qualified for the Dubai World Finals from the various ERCs and are just competing for fun and glory, while ~8 more teams will qualify tomorrow. Best of luck!],
+  [Yesterday was the day of the Dress Rehearsal and the Tech Trek at \#ICPCBaku. I am planning to solve the mirror contest on Thursday together with Kevin and Mateusz , so we used the Dress Rehearsal time to practice our solving and streaming setup as well (photo on the left). Unfortunately we could not practice the submissions since it seems that the mirror was not available for the Dress Rehearsal, but the rest seems in order. Tune in tomorrow (Thursday) at 11:00 Baku time to my Twitch to watch us compete! You will also be able to look at the official broadcast of the real contest, its scoreboard and  problems  (you can find more links here ), and of course please support the \#ETH team!],
+  [Today is the ICPC Challenge day, with the results due to be announced in a couple of hours. In the evening the Alumni-hosted events  will continue, and I have decided to use my slot for an online chess tournament for the World Finals onsite attendees. Here is how I propose to run it:],
+  [We will run a 5-round Swiss tournament on lichess  with 3+0 time control (3 minutes for each side per game, no increment). This yields a ~30-minute duration but if games finish earlier hopefully it will be a bit faster and everybody will be in time for the push-ups :)],
+  [To join the tournament, you need a lichess account and a phone or a laptop to play. If you do not have a lichess account and want to participate, please create it in advance!],
+  [To join the tournament, you also need to join this team on lichess first. I will need to approve everybody who wants to join the team so that it keeps being an onsite event, so you will need to find me in person for that.],
+  [The easiest way to find me in person will be to come to the Chill Zone in the Marriott Blvd today at 17:30 (or a bit earlier).],
+  [The tournament will start at 17:35, so don't be late! If you are late, you should be able to join the tournament late during the first two rounds as well, but then you will miss some games :)],
+  [If you have any questions, please ask in comments here or on Codeforces!],
 ),
   insert-map: (:),
-  word-count: 177,
+  word-count: 394,
   edited-for-length: false,
   debug-mode: false,
 )
 
-}
+  ],
+  [
+    standard-article(
+  title: [The danger of glamourizing one shots],
+  author: [Scott Hanselman],
+  source-name: [Scott Hanselman],
+  images: (),
+  paragraphs: (
+  [People should not be judging AI-augmented coding by “1 shots.”],
+  [If someone told you that their model did a “one shot of Minecraft” and they’re impressed by that, you need to consider how much semantic heavy lifting the word “Minecraft” is doing in that prompt.],
+  [Ask them to one shot Minecraft without using the word Minecraft.],
+  [It’s not trivial to one shot something unique, because programming is the art of making the ambiguous incredibly specific through sculpting. AI sculpting is less about vibes and more about finding the specificity you want and keeping the system stable through changes. Good SDLC practices still matter, historical context still matters, and knowing how things work matters, shout out to Grady Booch.],
+  [It’s a cool party trick to one shot Mario Brothers or space invaders, but then you’ll end up with the most mid version of both. Literally mid. You’ll get the statistical fat part of the Bell curve version of these mythical games. You’re telling the model to close its eyes and draw the face of these games from memory.],
+  [As high-level programming cedes way to the prose compiler, making your goals and specs well understood to the ambiguity loop and showing good judgment is going to matter more than ever. Consider all of your words and make sure that certain words aren’t carrying all the semantic load, hidden or otherwise.],
+  [© 2025 Scott Hanselman. All rights reserved.],
+  [style="clear: both; padding-top: 0.2em;"\>],
+),
+  insert-map: (:),
+  word-count: 239,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+  ],
+), ruled-indices: (1,))
 
 {
   #section-label([Briefs])
   #brief-group((
-    #brief-item([Trivago Tech], source-name: [Trivago Tech], [I’m happy to share that trivago has released a Prettier plugin which sorts import declarations in TypeSCript and JavaScript modules for a given configured order. Throughout this article, I’ll explain to you the motivation behind this Prettier plugin and how it works in detail.])
+    [#brief-item([DeepMind Blog], source-name: [DeepMind Blog], [Gemini 2.5 Flash is our first fully hybrid reasoning model, giving developers the ability to turn thinking on or off.])],
+    [#brief-item([DeepMind Blog], source-name: [DeepMind Blog], [We partnered with Darren Aronofsky, Eliza McNitt and a team of more than 200 people to make a film using Veo and live-action filmmaking.])],
+    [#brief-item([Trivago Tech], source-name: [Trivago Tech], [At trivago we use Jenkins as our main CI tool. However, when our physical setup was not enough we needed to move it to the cloud and implement an automated slave scaling. This is the definite guide with all the steps we took to implement an auto scaling Jenkins platform.])],
+    [#brief-item([Trivago Tech], source-name: [Trivago Tech], [When I joined trivago a year ago we had problems with our releases. Read how we were able to switch from our bash release process to a new one.])],
+    [#brief-item([Real Python], source-name: [Real Python], [When it comes to Python package managers, the choice often comes down to uv vs pip . You may choose pip for out-of-the-box availability, broad compatibility, and reliable ecosystem support. In contrast, uv is worth considering if you prioritize fast installs, reproducible environments, and clean uninstall behavior, or if you want to streamline workflows for new projects.
 
-    #brief-item([Real Python], source-name: [Real Python], [Would you like to learn how to work with LLMs locally on your own computer? How do you integrate your Python projects with a local model? Christopher Trudeau is back on the show this week with another batch of PyCoder's Weekly articles and projects.])
-
-    #brief-item([Supabase Blog], source-name: [Supabase Blog], [Learn how the team at Epsilon3 use Supabase to help teams execute secure and reliable operations in an industry that project spend runs into the billions.])
-
-    #brief-item([Lazarus Lazaridis (iridakos)], source-name: [Lazarus Lazaridis (iridakos)], [This cat has been in my life for 12 years now.
-
-Whenever I get back home and sit on the sofa, she jumps on my chest and starts licking my nose and my eyebrows.
-
-She stays there until the moment she realizes I could be feeding her instead of relaxing.])
-
-    #brief-item([Supabase Blog], source-name: [Supabase Blog], [On February 1st 2024, AWS will start charging for IPv4 addresses. This is a big deal for the internet, and we're here to help you prepare.])
-
-    #brief-item([DeepMind Blog], source-name: [DeepMind Blog], [Introducing a new, unifying DNA sequence model that advances regulatory variant-effect prediction and promises to shed new light on genome function — now available via API.])
-
-    #brief-item([Supabase Blog], source-name: [Supabase Blog], [Build a movie-viewing app that recommends another movie based on what the user is viewing using OpenAI, Flutter and Supabase.])
-
-    #brief-item([Trivago Tech], source-name: [Trivago Tech], [We're a data-driven company. At trivago we love measuring everything. Collecting metrics and making decisions based on them comes naturally to all our engineers. This workflow also applies to performance, which is key to succeed in the modern Internet.])
-
-    #brief-item([Trivago Tech], source-name: [Trivago Tech], [One of our core values at trivago is fanatic learning. Twice a year, the trivago software developers gather to have a 2 day internal hackathon. This December saw another round of ambitious creativity, relaxed atmosphere, and good food.])
-
-    #brief-item([DeepMind Blog], source-name: [DeepMind Blog], [Google AI Ultra subscribers in the U. S. can try out Project Genie, an experimental research prototype that lets you create and explore worlds.])
-
-    #brief-item([DeepMind Blog], source-name: [DeepMind Blog], [Introducing Lyria 3 Pro, which unlocks longer tracks with structural awareness. We’re also bringing Lyria to more Google products and surfaces.])
-
-    #brief-item([Supabase Blog], source-name: [Supabase Blog], [Announcing official support for the Stripe Sync Engine in the Supabase Dashboard. Get a one-click integration that syncs your Stripe data directly into your Supabase database.])
-
-    #brief-item([Trivago Tech], source-name: [Trivago Tech], [Concepts like separation of concerns, logic decoupling or dependency injection are things we developers have heard more than a couple of times. At trivago, the Android app is developed using the Model View ViewModel (MVVM) architecture, aiming for views as dumb as possible, leaving the decision making to the view models. This leads to an increased test coverage since testing logic in views is something we can’t do that easily.])
-
-    #brief-item([Trivago Tech], source-name: [Trivago Tech], [It has been about a year since we introduce the idea of guilds in trivago Software Engineering department in Düsseldorf. Here we share some of our learnings with it.])
-
-    #brief-item([Trivago Tech], source-name: [Trivago Tech], [Running Cucumber scenarios in parallel can be tricky, especially when a custom test runner is used. That's why we created Cucable - a Maven plugin to split test scenarios into smaller chunks that can be run at the same time.])
-
+In this video course, you’ll compare both tools. To keep this comparison meaningful, you’ll focus on the overlapping features, primarily package installation and dependency management .])],
+    [#brief-item([DeepMind Blog], source-name: [DeepMind Blog], [Gemini 2.0 Flash-Lite is now generally available in the Gemini API for production use in Google AI Studio and for enterprise customers on Vertex AI])],
+    [#brief-item([Trivago Tech], source-name: [Trivago Tech], [It has been about a year since we introduce the idea of guilds in trivago Software Engineering department in Düsseldorf. Here we share some of our learnings with it.])],
+    [#brief-item([DeepMind Blog], source-name: [DeepMind Blog], [Genie 3 can generate dynamic worlds that you can navigate in real time at 24 frames per second, retaining consistency for a few minutes at a resolution of 720p.])],
+    [#brief-item([Trivago Tech], source-name: [Trivago Tech], [Sometimes advertisements just have to be bold. Especially when your goal is to hire creative thinkers, why not give them something to... think about!? That was our goal when we planned a new marketing campaign for Software Engineers.])],
+    [#brief-item([Supabase Blog], source-name: [Supabase Blog], [Build a professional deployment workflow for your Supabase project. Learn essential patterns that prevent 3am panic attacks while keeping your workflow fun, simple, and safe.])],
+    [#brief-item([Supabase Blog], source-name: [Supabase Blog], [Today, PostgREST 10 was released. Let's take a look at some of the new features that go hand in hand with supabase-js v2.])],
+    [#brief-item([Supabase Blog], source-name: [Supabase Blog], [Learn how the team at Epsilon3 use Supabase to help teams execute secure and reliable operations in an industry that project spend runs into the billions.])],
   ))
 }
 

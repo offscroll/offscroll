@@ -65,6 +65,12 @@ def _escape_typst(text: str) -> str:
     text = text.replace("`", "\\`")
     # Typst uses // for comments — escape double slashes in URLs
     text = text.replace("//", "\\/\\/")
+    # Typst uses [] for content blocks — escape when in content text
+    text = text.replace("[", "\\[")
+    text = text.replace("]", "\\]")
+    # Typst treats / at line start as definition list; since source wrapping
+    # is unpredictable, escape all occurrences of "/ " in content
+    text = text.replace("/ ", "\\/ ")
     return text
 
 
@@ -181,8 +187,12 @@ def _render_feature(item, pq_map: dict, data_dir: Path, debug_mode: bool) -> str
     # Lead/body split
     lead, body_paras = split_feature_text(text, deck=deck)
     body_paras = _filter_orphaned_captions(body_paras)
-    lead_escaped = _escape_typst(lead)
     fi = _first_alpha_index(lead)
+    # Split lead into pre-alpha, cap letter, and rest for drop cap
+    # (done in Python to avoid Typst UTF-8 byte boundary issues)
+    lead_pre = _escape_typst(lead[:fi]) if fi > 0 else ""
+    lead_cap = _escape_typst(lead[fi]) if fi < len(lead) else ""
+    lead_rest = _escape_typst(lead[fi + 1:]) if fi + 1 < len(lead) else ""
 
     # Inline pull quote
     item_id = getattr(item, "item_id", "")
@@ -213,8 +223,9 @@ def _render_feature(item, pq_map: dict, data_dir: Path, debug_mode: bool) -> str
         lines.append(f"  hero-caption: [{hero_caption}],")
     if deck_escaped:
         lines.append(f"  deck: [{deck_escaped}],")
-    lines.append(f"  lead-text: [{lead_escaped}],")
-    lines.append(f"  lead-first-alpha: {fi},")
+    lines.append(f"  lead-pre: [{lead_pre}],")
+    lines.append(f"  lead-cap: [{lead_cap}],")
+    lines.append(f"  lead-rest: [{lead_rest}],")
     lines.append(f"  body-paragraphs: {body_array},")
     if inline_pq != "none":
         lines.append(f"  inline-pq: {inline_pq},")
@@ -510,34 +521,32 @@ def build_typst_markup(edition: CuratedEdition, config: dict) -> str:
             section_heading = row.get("section_heading")
 
             if len(columns) == 1:
-                # Single-column row
+                # Single-column row — no wrapper needed, top-level content mode
                 col = columns[0]
-                out.append('{')
                 if section_heading:
-                    out.append(f'  #section-label([{_escape_typst(section_heading)}])')
+                    out.append(f'#section-label([{_escape_typst(section_heading)}])')
 
                 for item in col.get("col_items", []):
                     if isinstance(item, CuratedThread):
-                        out.append('  #' + _render_thread(item, data_dir))
+                        out.append('#' + _render_thread(item, data_dir))
                     elif hasattr(item, "layout_hint") and item.layout_hint == LayoutHint.FEATURE:
-                        out.append('  #' + _render_feature(item, pq_map, data_dir, debug_mode))
+                        out.append('#' + _render_feature(item, pq_map, data_dir, debug_mode))
                     else:
-                        out.append('  #' + _render_standard(item, pq_map, data_dir, debug_mode))
+                        out.append('#' + _render_standard(item, pq_map, data_dir, debug_mode))
 
                 briefs = col.get("briefs", [])
                 if briefs:
                     brief_items = []
                     for b in briefs:
-                        brief_items.append('    #' + _render_brief(b))
-                    out.append('  #brief-group((')
+                        brief_items.append('  [#' + _render_brief(b).rstrip() + '],')
+                    out.append('#brief-group((')
                     out.extend(brief_items)
-                    out.append('  ))')
+                    out.append('))')
 
-                # Single-column: pull quotes inside column
+                # Single-column: pull quotes after content
                 for pq in row_pqs:
-                    out.append('  #' + _render_pull_quote(pq))
+                    out.append('#' + _render_pull_quote(pq))
 
-                out.append('}')
                 out.append('')
             else:
                 # Multi-column row (grid)
@@ -550,22 +559,22 @@ def build_typst_markup(edition: CuratedEdition, config: dict) -> str:
 
                     col_lines = []
                     if ci == 0 and section_heading:
-                        col_lines.append(f'    section-label([{_escape_typst(section_heading)}])')
+                        col_lines.append(f'    #section-label([{_escape_typst(section_heading)}])')
 
                     for item in col.get("col_items", []):
                         if isinstance(item, CuratedThread):
-                            col_lines.append('    ' + _render_thread(item, data_dir))
+                            col_lines.append('    #' + _render_thread(item, data_dir))
                         elif hasattr(item, "layout_hint") and item.layout_hint == LayoutHint.FEATURE:
-                            col_lines.append('    ' + _render_feature(item, pq_map, data_dir, debug_mode))
+                            col_lines.append('    #' + _render_feature(item, pq_map, data_dir, debug_mode))
                         else:
-                            col_lines.append('    ' + _render_standard(item, pq_map, data_dir, debug_mode))
+                            col_lines.append('    #' + _render_standard(item, pq_map, data_dir, debug_mode))
 
                     briefs = col.get("briefs", [])
                     if briefs:
                         brief_items = []
                         for b in briefs:
-                            brief_items.append('      ' + _render_brief(b))
-                        col_lines.append('    brief-group((')
+                            brief_items.append('      [#' + _render_brief(b).rstrip() + '],')
+                        col_lines.append('    #brief-group((')
                         col_lines.extend(brief_items)
                         col_lines.append('    ))')
 
@@ -627,12 +636,35 @@ def render_typst_pdf(
         FileNotFoundError: If the ``typst`` CLI is not installed.
         subprocess.CalledProcessError: If Typst compilation fails.
     """
+    # Tested against Typst 0.13.1. Templates use content/string semantics
+    # and grid API from this version. Other versions may produce different
+    # output or compilation errors.
+    TESTED_TYPST_VERSION = "0.13.1"
+
     typst_bin = shutil.which("typst")
     if typst_bin is None:
         raise FileNotFoundError(
             "Typst CLI not found. Install it: "
             "https://github.com/typst/typst#installation"
         )
+
+    # Check installed version and warn on mismatch
+    try:
+        ver_result = subprocess.run(
+            [typst_bin, "--version"], capture_output=True, text=True, timeout=10
+        )
+        if ver_result.returncode == 0:
+            installed = ver_result.stdout.strip().split()
+            ver_str = installed[1] if len(installed) > 1 else installed[0]
+            if ver_str != TESTED_TYPST_VERSION:
+                logger.warning(
+                    "Typst version %s detected; templates tested against %s. "
+                    "Output may differ.",
+                    ver_str,
+                    TESTED_TYPST_VERSION,
+                )
+    except (subprocess.TimeoutExpired, OSError):
+        pass  # Non-fatal — proceed with compilation
 
     output_dir = Path(config["output"]["data_dir"])
     output_dir.mkdir(parents=True, exist_ok=True)

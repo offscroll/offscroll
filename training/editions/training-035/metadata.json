@@ -1,34 +1,34 @@
 {
   "config_id": "training-035",
   "archetype": "ai-ml-focus",
-  "date_generated": "2026-03-30T01:21:46.674424+00:00",
+  "date_generated": "2026-03-30T01:46:17.315307+00:00",
   "page_target": 8,
-  "num_pages": 30,
+  "num_pages": 31,
   "num_items": 24,
   "feeds_contributed": [
-    "Microsoft Python Blog",
     "Mark Seemann (ploeh blog)",
-    "Serverless Blog",
     "GitHub Engineering",
-    "Babbel Tech Blog",
-    "Stephen Colebourne (Joda)",
     "Henrik Warne",
+    "Peteris Krumins (catonmat)",
+    "Sam Saffron",
     "Fly.io Blog",
-    "Drew DeVault",
+    "Eugene Yan",
+    "Lilian Weng (OpenAI)",
+    "Nvidia Blog",
+    "Antirez",
     "Science News",
     "Swizec Teller",
-    "Nvidia Blog",
+    "Microsoft Python Blog",
+    "Babbel Tech Blog",
+    "Stephen Colebourne (Joda)",
     "The New Atlantis",
-    "Peteris Krumins (catonmat)",
-    "Eugene Yan",
+    "Drew DeVault",
+    "Serverless Blog",
     "Kotlin Blog",
-    "Khan Academy Engineering",
-    "Lilian Weng (OpenAI)",
-    "Sam Saffron",
-    "Antirez",
-    "High Scalability"
+    "High Scalability",
+    "Khan Academy Engineering"
   ],
-  "render_time_s": 0.35,
+  "render_time_s": 0.38,
   "pages": [
     {
       "page_number": 1,
@@ -207,6 +207,12 @@
     {
       "page_number": 30,
       "png_path": "training-035/pages/page-030.png",
+      "width_pt": 612.0,
+      "height_pt": 792.0
+    },
+    {
+      "page_number": 31,
+      "png_path": "training-035/pages/page-031.png",
       "width_pt": 612.0,
       "height_pt": 792.0
     }
@@ -494,11 +500,17 @@
     {
       "spread_id": "s-035-016",
       "edition_id": "training-035",
-      "type": "solo",
+      "type": "spread",
       "pages": [
         {
           "page_number": 30,
           "png_path": "training-035/pages/page-030.png",
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_number": 31,
+          "png_path": "training-035/pages/page-031.png",
           "width_pt": 612.0,
           "height_pt": 792.0
         }

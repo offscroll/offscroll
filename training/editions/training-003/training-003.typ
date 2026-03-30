@@ -23,15 +23,42 @@
 
 // --- Front Page Feature ---
 #feature-article(
-  title: [Roots of Righteousness: A Glimpse into Ethics as the Moral Fabric of India],
+  title: [Teen builds an award-winning virtual reality prototype thanks to free MIT courses],
   kicker: [Cover Story],
+  author: [Stefanie Koperniak | MIT Open Learning],
+  source-name: [MIT News Education],
+  deck: [dir="ltr"\>When Freesia Gaul discovered MIT Open Learning’s OpenCourseWare at just 14 years old, it opened up a world of learning far beyond what her classrooms could offer.],
+  lead-pre: [],
+  lead-cap: [H],
+  lead-rest: [er parents had started a skiing company, and the seasonal work meant that Gaul had to change schools every six months. Growing up in small towns in Australia and Canada, she relied on the internet to fuel her curiosity.],
+  body-paragraphs: (
+  [dir="ltr"\>“I went to 13 different schools, which was hard because you're in a different educational system every single time,” says Gaul. “That’s one of the reasons I gravitated toward online learning and teaching myself. Knowledge is something that exists beyond a curriculum.”],
+  [dir="ltr"\>The small towns she lived in often didn’t have a lot of resources, she says, so a computer served as a main tool for learning. She enjoyed engaging with Wikipedia, ultimately researching topics and writing and editing content for pages. In 2018, she discovered  MIT OpenCourseWare , part of  MIT Open Learning , and took her first course. OpenCouseWare offers free, online, open educational resources from more than 2,500 MIT undergraduate and graduate courses.],
+  [dir="ltr"\>“I really got started with the OpenCourseWare introductory electrical engineering classes, because I couldn’t find anything else quite like it online,” says Gaul, who was initially drawn to courses on circuits and electronics, such as 6.002 (Circuits and Electronics) and 6.01SC (Introduction to Electrical Engineering and Computer Science). “It really helped me in terms of understanding how electrical engineering worked in a practical sense, and I just started modding things.”],
+  [dir="ltr"\>In true MIT “mens et manus” (“mind and hand”) fashion, Gaul spent much of her childhood building and inventing, especially when she was able to access a 3D printer. She says that a highlight was when she built a life-sized, working version of a Mario Kart, constructed out of materials she had printed.],
+  [dir="ltr"\>Gaul calls herself a “serial learner,” and has taken many OpenCourseWare courses. In addition to classes on circuits and electronics, she also took courses in linear algebra, calculus, and quantum physics — in which she took a particular interest.],
+  [dir="ltr"\>When she was 15, she participated in  Qubit by Qubit . Hosted by The Coding School, in collaboration with universities (including MIT) and tech companies, this two-semester course introduces high schoolers to quantum computing and quantum physics.],
+  [dir="ltr"\>During that time she started a blog called On Zero, representing the “zero state” of a qubit. “The ‘zero state’ in a quantum computer is the representation of creativity from nothing, infinite possibilities,” says Gaul. For the blog, she found different topics and researched them in depth. She would think of a topic or question, such as “What is color?” and then explore it in great detail. What she learned eventually led her to start asking questions such as “What is a hamiltonian?” and  teaching quantum physics alongside PhDs.],
+  [dir="ltr"\>Building on these interests, Gaul chose to study quantum engineering at the University of New South Wales. She notes that on her first day of university, she participated in  iQuHack , the MIT Quantum Hackathon. Her team worked to find a new way to approximate the value of a hyperbolic function using quantum logic, and received an honorable mention for “exceptional creativity.”],
+  [dir="ltr"\>Gaul’s passion for making things continued during her college days, especially in terms of innovating to solve a problem. When she found herself on a train, wanting to code a personal website on a computer with a dying battery, she wondered if there might be a way to make a glove that can act as a type of Bluetooth keyboard — essentially creating a way to type in the air. In her spare time, she started working on such a device, ultimately finding a less expensive way to build a lightweight, haptic, gesture-tracking glove with applications for virtual reality (VR) and robotics.],
+  [dir="ltr"\>Gaul says she has always had an interest in VR, using it to create her own worlds, reconstruct an old childhood house, and play Dungeons and Dragons with friends. She discovered a way to put into a glove some small linear resonant actuators, which can be found in a smartphone or gaming controller, and map to any object in VR so that the user can feel it.],
+  [dir="ltr"\>An early prototype that Gaul put together in her dorm room received a lot of attention on YouTube. She went on to win the People’s Choice award for it at the SxSW Sydney 2025 Tech and Innovation Festival. This design also sparked her co-founding of the tech startup  On Zero , named after her childhood blog dedicated to the love of creation from nothing.],
+  [dir="ltr"\>Gaul sees the device, in general, as a way of “paying it forward,” making improved human-computer interaction available to many — from young students to professional technologists. She hopes to enable creative freedom in as many as she can. “The mind is just such a fun thing. I want to empower others to have the freedom to follow their curiosity, even if it's pointless on paper.],
+  [dir="ltr"\>“I’ve benefited from people going far beyond what they needed to do to help me,” says Gaul. “I see OpenCourseWare as a part of that. The free courses gave me a solid foundation of knowledge and problem-solving abilities. Without these, it wouldn’t be possible to do what I’m doing now.”],
+),
+  edited-for-length: false,
+)
+
+
+{
+  #section-label([Features])
+  #standard-article(
+  title: [Roots of Righteousness: A Glimpse into Ethics as the Moral Fabric of India],
   author: [George Levrier-Jones],
   source-name: [History in 28 Minutes],
-  deck: [class=""\> Ethics are moral principles that govern a person’s behavior in a society.],
-  lead-text: "In very simple terms, they constitute the rights and wrongs that guide people’s conduct. The Indian ethics are generally connected to the principle of anekantavada or many-sidedness, emphasizing that there is “no absolute truth” and no neatly defined binaries of right and wrong. They are based on factors such as the person practicing them, the situation, and the time at which they are practised.",
-  lead-first-alpha: 0,
-  body-paragraphs: (
-  [Indian ethics focus on accepting and encouraging diverse thoughts and beliefs, hence propagating “unity in diversity” and “diversity in unity.”],
+  images: (),
+  paragraphs: (
+  [class=""\> Ethics are moral principles that govern a person’s behavior in a society. In very simple terms, they constitute the rights and wrongs that guide people’s conduct. The Indian ethics are generally connected to the principle of anekantavada or many-sidedness, emphasizing that there is “no absolute truth” and no neatly defined binaries of right and wrong. They are based on factors such as the person practicing them, the situation, and the time at which they are practised. Indian ethics focus on accepting and encouraging diverse thoughts and beliefs, hence propagating “unity in diversity” and “diversity in unity.”],
   [class=""\>“ It is surely extremely strange that whenever, either in Greek, or in Chinese, or in Persian, or in Arab writings, we meet with any attempts at describing the distinguishing features in the national character of the Indians, regard for truth and justice should always be mentioned first. ” — F. Max Müller, Sanskritist and philologist (1882)],
   [class=""\>Composed between 1500–1000 BCE, the Rig Veda mentions the concept of Ritam (cosmic order) through which the physical and the social worlds are sustained. Ritam can be understood as the sense of righteousness. It later developed into the concept of Satyam (truth), with strong ethical implications. Dharma , the building block of Indian ethics, has been translated from the Rig Veda to refer to words such as justice, duty, righteousness, and order, among others. It is important to note that dharma is a multifaceted concept and does not denote a single idea or meaning.],
   [class=""\>Composed between 800 and 500 BCE, the Upanishads reveal further developments in Indian ethical thought. For example, Aham Brahma asmi (1.4.10; Brihadaranyaka Upanishad ) translates to “I am Brahman (the Absolute)” and can be understood as: A person is a part of God (and not separate from this universal consciousness). It is essential to grow cognizant of this identity. Further, the Upanishads highlight that every person has a distinct nature ( svabhava ), function, truth, and path ( svadharma ), echoing the concept of anekantavada . The Puranas also propagate notions like all creation is interconnected and that one can be happy when all are happy.],
@@ -40,7 +67,7 @@
   [class=""\> Vibhishana and Kumbhakarana : Ravana’s brothers Vibhishana and Kumbhakarana in the Ramayana skillfully demonstrated that there is no single path to dharma and no single way of solving an ethical dilemma. Kumbhakarna adhered to the dharma of loyalty to his kin. At the same time, Vibhishana chose to follow the dharma of saving the people from the evil of his brother Ravana by opposing his kin and supporting Rama.],
   [class=""\>Buddhism originated in the Indian subcontinent and mentions a noble eightfold path encompassing the ‘right’ vision, intention/aspiration, speech, action, livelihood, effort, mindfulness, and concentration. Once Buddha preached, “... whenever someone abuses us, we can either choose to accept or decline that anger. Our response will decide who owns and keeps the bad and negative feelings.” This story beautifully encourages the practice of the right speech, action, and mindfulness. Buddhism also talks about having compassion for others. Aligning with this idea, Buddhist economics studies the production, distribution, and consumption of goods/services by changing the focus from self-interest to no-self (generosity), with ‘right’ livelihood and sustainability. While traditional economics emphasizes maximizing profits, Buddhist economics aims to minimize suffering (losses) for all.],
   [class=""\>Jainism also originated in the Indian subcontinent and mentions the Triratna (three jewels) as the ‘right’ faith, knowledge, and walk. Ahimsa (non-violence), Satya (truth), asteya (non-stealing), brahmacharya (chastity), and aparigraha (Non-possession) are its five ethical codes. Detachment (non-attachment or non-possession) is one of its main morals. It can serve as the means to attain the realization of one’s self. Jainism’s concept of violence, acceptable only when absolutely necessary for self-defense, appears to echo with Lord Krishna’s advice from the Mahabharata that dharma cannot be practiced in passivity (at least, in certain situations according to Jainism).],
-  [class=""\>Composed around the 5th century CE by Thiruvallur and consisting of 1,330 short couplets, the Kural is a classic Tamil language text. It is considered a great work on morality, known for its secular nature. Some examples from this work include (a) In prosperity, bend low [be humble], (and) in adversity, stand straight [be strong], and (b) Always aim high—failure then is as good as success. This text provides worldly wisdom and guidance to make ethical decisions.],
+  [class=""\>Composed around the 5th century CE by Thiruvallur and consisting of 1,330 short couplets, the Kural is a classic Tamil language text. It is considered a great work on morality, known for its secular nature. Some examples from this work include (a) In prosperity, bend low \[be humble\], (and) in adversity, stand straight \[be strong\], and (b) Always aim high—failure then is as good as success. This text provides worldly wisdom and guidance to make ethical decisions.],
   [class=""\> Din-i-Ilahi : The Divine Faith was propounded by the Mughal emperor Akbar (1582), who wanted to unite his people so that all of humankind could worship God according to their faith. Its writer, Abu’l-Fazl, expressed, “every sect can assert its doctrine without apprehension, and everyone can worship God after his own fashion.” Discriminations among the different religions of the realm were prohibited. Here, religious harmony emerges as a critical component of dharma .],
   [class=""\> The Story of Panna Dhai : I remember a story my mother told me during childhood. It is the tale of Panna Dhai, a 16th-century maid to Rani Karnavati, who helped her in political matters and the upbringing of the prince, Udai Singh II, along with her own son, Chandan. During the attack on Chittor, Panna sent Udai out to a river while putting her son in Udai’s place on the bed. When Bhanvir, the enemy, came and asked for Udai, Panna pointed at the bed occupied by her son and watched as Banvir murdered him. An epitome of courage and sacrifice, Panna adhered to the dharma of loyalty to her kingdom, where she lived. Saving the prince was more important to her than her child. This incident reflects anekantavada (“no absolute truth”) and dharma that depends on the person, situation, and time of practice. Panna chose her duty as a nursemaid over being a mother. Had she not done so, India might not have known the ancient hero Maharana Pratap, who was later born as the eldest son of Udai Singh II.],
   [class=""\> The Bishnoi Sacrifice : In the year 1730 at Khejadli (Rajasthan), 363 Bishnoi women, children, and men, led by Amrita Devi, sacrificed their lives to protect Khejadli trees while chanting their Guru’s teaching: “If a tree is saved even at the cost of one’s head, it is worth it.” It led the Maharaja of Jodhpur to prohibit tree cutting and animal hunting in all Bishnoi villages, attaching a sense of sacredness to these forms of nature. Such traditions from India are based on the dharma of non-hurting and simple living.],
@@ -49,31 +76,8 @@
   [class=""\>In conclusion, India’s ethics system is based on diverse philosophies, religious teachings, and cultural traditions spanning thousands of years. It is important to note that the information provided in this article is not exhaustive in nature. The complexity associated with ethics reflects India’s pluralistic society, offering insights into living a meaningful life. Understanding the anekantavada aspect of these ethics not only highlights India’s glorious past but also inspires discussions about morality in a rapidly changing world.],
   [class=""\> Apeksha Srivastava is pursuing her Ph. D. at the Indian Institute of Technology (IIT) Gandhinagar, Gujarat, India. She was a visiting researcher at the University of Colorado, Colorado Springs (USA) from April to July 2024.],
 ),
-  edited-for-length: false,
-)
-
-
-{
-  #section-label([Front Page])
-  #standard-article(
-  title: [∞ The Dalrymple Report: Mac mini, touchscreen MacBook, Steve Jobs],
-  author: [Jim Dalrymple],
-  source-name: [The Loop],
-  images: (),
-  paragraphs: (
-  [Apple has reportedly ramped up production of the Mac mini in the U. S. The powerful Mac mini has become a favorite among many users over the years, including for use in AI in recent years. Another Mac in the news is the MacBook. Besides having a rumored touchscreen display, new MacBooks could also feature a 5G modem, allowing users to connect to the internet without having to to share a connection on their iPhone. Dave and I talk a little about Steve Jobs’ birthday and the celebration that was done on the Steve Jobs Archive.],
-  [Follow this podcast],
-  [Show Notes:],
-  [Apple accelerates U. S. manufacturing with Mac mini production],
-  [Apple’s next Macs will finally check every box],
-  [Steve Jobs Archive celebrates Steve’s birthday],
-  [Shows and movies we’re watching],
-  [The Night Of, HBO],
-  [Soul Power: The Legend of the American Basketball Association, Amazon],
-  [The Night Manager, Amazon],
-),
   insert-map: (:),
-  word-count: 145,
+  word-count: 1756,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -81,7 +85,6 @@
 }
 
 {
-  #section-label([Features])
   #standard-article(
   title: [Code reviews for fun and profit],
   author: [Monica Dinculescu],
@@ -131,60 +134,34 @@
 
 {
   #standard-article(
-  title: [The Scandal that Led to Harry S. Truman Becoming President and Marilyn Monroe Getting Married],
-  author: [Stephan Wilkinson],
-  source-name: [HistoryNet],
+  title: [Week 11],
+  author: [Monica Dinculescu],
+  source-name: [Monica Dinculescu],
   images: (),
   paragraphs: (
-  [The Curtiss-Wright Corporation came into being in 1929 through the merger of companies started by pioneering aviators Glenn Curtiss and the Wright brothers . Within the new company, the Curtiss-Wright airplane division made airplanes while the Wright Aeronautical Corporation focused on engines. By the time of World War II, Curtiss-Wright held more defense contracts than any organization other than vastly larger General Motors and had become something of a bully. It used lobbyists, legislators, friends in high places and its own overzealous salesmen to get what it wanted. It made some adequate but unspectacular airplanes and some big radial engines, but why Curtiss-Wright could punch so far above its weight remains something of a mystery.],
-  [Trouble arrived for Curtiss-Wright in 1943 when its engines became the focus of a congressional investigation led by a senator named Harry S. Truman. The inquiry, launched back in March 1941, was formally known as the Senate Special Committee to Investigate the National Defense Program and it helped propel the obscure politician from Missouri into the vice presidency and eventually the White House. Strangely enough, it also impacted the life of actress Marilyn Monroe—but more about that later.],
-  [At the time, the Curtiss P-40 Warhawk was the company’s go-to product. The design was essentially a 1933 radial-engine Curtiss P-36 Hawk fitted with an inline Allison V-12 engine. While not a bad airplane, the P-40 was obsolete by the time the United States entered World War II. Still, it was the best America had at the time. Messerschmitt Me-109s and Mitsubishi A6M Zeros ran rings around it at altitude—the P-40 had just a single-stage supercharger—but it remained an effective ground-attack machine.],
-  [Yet the obsolete P-40 stayed in full production until the end of 1944. Why not ramp up manufacture of the North American P-51 Mustang and Republic P-47 Thunderbolt instead, Truman’s investigative committee asked? But Curtiss liked the easy profit it derived from the simple, proven, utilitarian design, and its attempts to create a successor—the XP-46, XP-60 and XP-62—were uninspired. All were canceled. Curtiss had no aeronautical geniuses like Lockheed’s Kelly Johnson, North American’s Ed Schmued or Republic’s Alexander Kartveli to push it to the forefront. Its best talent was an engineer named Don Berlin, who was held in high regard but never really rose beyond his singular success with the P-40. It is notable that when the British asked North American Aviation to license-build P-40s for the Royal Air Force, the California company said, “Hell, give us three months and the back of an envelope and we’ll design a real fighter for you.” That fighter became the Mustang.],
-  [As the XSB2C, the Helldiver prototype made its maiden flight on December 18, 1940.],
-  [One new airplane the company had to offer was the SB2C Curtiss Helldiver, but it was an ill-handling, poorly manufactured, aerodynamically misshapen beast loathed by pilots, back seaters and maintainers. It was not a Don Berlin design but was credited to Curtiss engineer Raymond C. Blaylock, who seemed to have stepped out of obscurity long enough to head the Helldiver program and then disappear. (In fact, he ultimately became the vice-president of engineering of Chance Vought. He specialized in missiles and was not involved in the design of the remarkable F8 Crusader.)],
-  [To be fair, it wasn’t all Curtiss’s fault. The Navy ordered the SB2C to succeed the Douglas SBD and demanded that a pair of the Curtiss dive bombers had to fit on a fleet carrier’s elevators while at the same time requiring that the SB2C be faster and longer-ranged than the SBD and carry a heavier load of ordnance. This led to the Helldiver receiving an awkwardly short aft fuselage, a huge vertical tail that nonetheless failed to keep the short-coupled airplane longitudinally stable, and a monster wing to lift all that weight at carrier-approach speeds. When Curtiss put a prototype SB2C model into the MIT wind tunnel in 1939, aerodynamicist Otto Koppen said, “If they built more than one of these, they are crazy.”],
-  [The Helldiver’s poor handling characteristics, structural weaknesses—it tended to shed the aft fuselage and empennage under the stress of arrested carrier landings—and lousy stall characteristics at final-approach speeds caught the Truman Committee’s attention. It didn’t help that Helldiver production had been delayed by nine months while the Navy demanded more than 800 modifications. For many months thereafter, Curtiss failed to produce a single SB2C that the Navy considered usable as a combat aircraft. What particularly griped the Truman Committee was that Curtiss had been spending tens of thousands of government dollars advertising the SB2C to the public as “the world’s deadliest dive bomber,” despite the fact that it had not produced a single usable Helldiver.],
-  [There was even a song about the SB2C. It went, “Oh mother, dear mother/Take down the blue star/Replace it with one that is gold/Your son is a Helldiver driver/He’ll never be 30 years old.” The Australians and the British were smart enough to cancel their large orders for the SB2C before more than a few were built.],
-  [Initially, Curtiss was to construct the SB2C at a huge new government-funded factory in Buffalo, New York. Then production was shifted to Columbus, Ohio. For months, nothing happened, and rumors began circulating among the sidelined workers in Columbus that their efforts were being literally sabotaged. Nobody realized that the problem was the fact that Curtiss hadn’t been able to produce a single successful airplane in Buffalo.],
-  [Nevertheless, the U. S. Army Air Forces (AAF) ordered thousands of Helldivers as a variant called the A-25 Shrike dive bomber. Big mistake. The Germans had already learned, with the Junkers Ju-87 Stuka, that terrestrial dive bombing worked only if the bombers had total air superiority and were attacking targets undefended by anti-aircraft guns. That kind of situation was rare enough that Allied air forces had abandoned the concept of dedicated dive bombers by the time the A-25 was ready for delivery.],
-  [Curtiss-Wright aroused the Truman Committee’s ire with exaggerated claims for the problem-plagued Helldiver. Those who became familiar with the SB2C sometimes called it the “Son of a Bitch, Second Class.”],
-  [Things were bad enough with Curtiss airplanes. They were even worse for the engines being produced by the Wright Aeronautical Corporation. Several Army inspectors stationed at Wright’s engine factory at Lockland, Ohio, told Truman that they were being encouraged to ignore proper inspection procedures and to approve faulty materials and even entire engines being delivered to the government for use in the Helldiver and various other aircraft. That engine was the 1,600-hp Wright R-2600 Twin Cyclone.],
-  [The R-2600 was the engine that goaded Pratt & Whitney into designing and producing the R-2800, the best radial of World War II, but the big Wright was an excellent engine itself—when it was built right. It powered thousands of North American B-25 Mitchell medium bombers, including those that flew America’s first offensive strike against Japan—the April 1942 Doolittle Raid.],
-  [A preliminary investigation by Truman’s staff revealed that there were ample grounds for the whistleblowers’ claims, and that the inspection failings were obvious enough that company execs and Army inspectors should have been aware of the problems.],
-  [Well, let’s not be hasty here, the Army said. We’ll look into this and report back. Brig. Gen. Bennett Meyers and his staff did so, and Meyers announced that the Army could find nothing amiss. Meyers either lied or had been duped by his own inspectors, whom the Truman Committee later found to be actively obstructing the investigation.],
-  [The engine division blamed the snitching on “petty bickering over privileges, authority and rights.” The Truman Committee, however, soon uncovered evidence of false tests of R-2600s and the materials that went into them, destruction of records, improper reporting of test results, forged inspection reports, off-the-cuff oral alteration of the tolerances allowed for parts, outright skipping of inspections and, in general, letting Wright’s engine-production needs override the recommendations of both company and Army inspectors.],
-  [There almost certainly had been crashes and deaths caused by the failure of faulty Wright R-2600s, but nobody could identify any specific examples outside the mass of wartime catastrophes attributable to everything from thunderstorms to pilot error. Truman himself said, “The facts are that [Wright was] turning out phony engines, and I have no doubt that a lot of kids in training planes were killed as a result.” The fact that no 1,600-hp Wright Twin Cyclone had ever powered a trainer escaped his attention, but never mind.],
-  [Curtiss P-40 Warhawks undergo assembly at the company’s Buffalo, New York, plant in March 1941. The P-40 was already obsolete by this time.],
-  [As is often the case in such relationships, a culture had grown that encouraged Army inspectors to believe their primary duty was toward Wright rather than the AAF, and that keeping their jobs depended on keeping the company happy. If an Army inspector refused to accept material that he knew was faulty, he got a reputation as a knucklehead who failed to “get along.” Failing to get along meant you risked anything from an inconvenient job transfer to outright losing that job. When one Army inspector produced an honest report on conditions at the Lockland factory, he was immediately prohibited from entering any Wright plant.],
-  [Testimony to the Truman Committee revealed that whenever an Army inspector tried to reject suspect engine material, a Wright exec would insist that the material was “important to the company.” If Wright appealed an inspector’s decision—to the inspector’s supervisor, to an AAF technical advisor, to the Army’s Wright Field itself—the appeal was invariably allowed. Inevitably, Army inspectors came to realize that objections were futile if Wright Aero disagreed.],
-  [Wright denied Army inspectors access to the company’s own precision instruments for their inspections, meaning they were limited to purely visual examinations. If they couldn’t see a crack, it didn’t exist. Wright’s excuse was that the Army inspectors weren’t properly trained in the use of the equipment. This was particularly true, the company said, for a device used to test the hardness of the gears in the R-2600’s drivetrain. It became an open secret that Wright was faking the hardness testing of these gears. The military inspectors were also denied the use of rejection stamps or embossing warnings to identify failed parts or engines, since Wright wanted to sell those wares to unsuspecting commercial and export operators.],
-  [More than a quarter of the R-2600s built at Lockland failed a basic three-hour test run. Randomly selected engines were also put through a 150-hour quality test, but the Truman Committee found that since 1941 not a single engine had completed the test. One of them failed at 28 hours.],
-  [Truman claimed to have personally rejected 400 ready-to-ship Lockland engines. “They were putting defective motors in planes, and the generals couldn’t seem to find anything wrong [with them],” he said. “So we went down, myself and a couple of senators, and we condemned 400 or 500 of those engines. And I sent a couple of generals who had been approving those engines to Leavenworth.” (Fort Leavenworth was the Army stockade in Kansas.)],
-  [Curtiss-Wright adapted the Helldiver for the U. S. Army as the A-25 Shrike. By this point, though, dive bombing was being shown to be ineffective unless conducted under ideal conditions, a rarity in combat.],
-  [Wright company inspectors often weren’t the problem. The AAF’s own people too often wanted to go along to get along. Chief Inspector Lt. Col. Frank Greulich tried to intimidate and discredit witnesses who gave negative testimony to the Truman Committee, and Greulich himself lied to the committee a number of times. As one observer put it, “The Committee witnessed the unpleasant spectacle of a lieutenant colonel, a major and several high civilian officials all telling entirely contradictory stories.”],
-  [Once the Truman people had finished their investigation, the AAF insisted on repeating their work, inevitably making the same negative findings. But those faults led the AAF to a different conclusion: that the record of engines built at Lockland compared favorably with the record of other types of engines built elsewhere. The best they could say of Curtiss-Wright’s products was that “they were not always the best [but] have been usable.”],
-  [One thing became readily apparent. The Lockland scandal was a prime example of what happened when a huge government-built, spare-no-expense factory tried to turn out an enormous quantity of material with inexperienced management and impossible production schedules while maintaining quality in the face of constant changes in tolerances and specifications.],
-  [Middle management was so overextended by the sudden wartime demands that a lot of the execs were simply incompetent, the workers inadequately trained and experienced engineers and supervisors too few. The more plants the government built for Curtiss-Wright, the more diluted the cadre of qualified and talented managerial personnel became. Only two percent of the first batch of applicants for jobs at Curtiss-Wright’s new plant in Columbus, Ohio, had any experience in aircraft production, yet they would soon be building Curtiss SB2C Helldivers, which had been described as the most complex single-engine design of its time. The Lockland plant was the biggest single-story industrial facility in the world, but its inept management soon turned the sleek new factory into a cluttered, crowded, ill-lit dump. One AAF report called it “a disgrace to the company and to the Air Forces.”],
-  [It was thought at the time, at least by some, that Curtiss-Wright was untouchable because its president, Guy Vaughn, was a big-time player on Capitol Hill. Vaughn was a former automobile racer and speed-record holder who had come up through the ranks at Wright Aero. He was responsible, at least in part, for the development of one of the most important aircraft engines ever built, the Wright J-series Whirlwind. Particularly in its nine-cylinder J-5 form, the Whirlwind was the first reliable, bulletproof aircraft engine available. It was so reliable, in fact, that Charles Lindbergh chose it for his 1927 transatlantic flight, and it never missed a beat. (In truth, though, engineer Charles Lawrance did the heavy lifting and designing for the Whirlwind.)],
-  [Vaughn griped that the problems the Truman Committee claimed to be finding were simply “standard and recognized manufacturing and inspection procedures.” During his cross-examination by the committee, Vaughn demanded to know exactly what was wrong with three specific R-2600s that had been crated and ready to ship before being rejected by inspectors. It turned out that one of them lacked a lockwire on a gear, another had corroded cylinders, and the third had a driveshaft gear with a broken tooth and an inoperative magneto—defects that could have led to crashes. Vaughn huffed that he didn’t consider these engines to be defective.],
-  [In the end, the Truman Committee toned down its report and Curtiss-Wright ended up suffering no penalty. This despite the fact that the Lockland plant had plainly turned out defective engines with the cooperation of dishonest AAF and company inspectors, and that some of those engines almost certainly went on to kill pilots and crewmen. The Justice Department did sue Wright and eight of its executives for selling the government known defective aircraft and engines, but the suit was never pursued. Three Army Air Force officers, including Greulich, did end up at Leavenworth, however, after being court-martialed for neglect of duty. (Despite Truman’s claim, none of them were generals.)],
-  [Workers at a plant in Inglewood, California, mount a Curtiss R-2600 engine onto a North American B-25 Mitchell bomber. In general the R-2600 was an effective engine—it powered the B-25s of the Doolittle raid—but the quality control at some Wright Aeronautical plants had become questionable.],
-  [The Truman Committee also concluded that Curtiss-Wright had received “far more contracts from the Army and Navy than warranted by the quality of its products or its ability to produce them.” The committee recommended that all Curtiss-Wright contracts be renegotiated, but this never happened either.],
-  [However, the committee’s investigation marked the beginning of the end for Curtiss-Wright, a company that had once manufactured and sold more different aircraft, engines, propellers, accessories and parts than anybody else in the industry. Curtiss-Wright had become good at cranking out quantity, but less adept at creating quality. It continued to build second-best P-40s, concentrating on increasing the production rate, lowering costs and maximizing the profit.],
-  [By 1947, with war profiteering a distant memory, Curtiss-Wright shut down 16 of its 19 plants. The company’s only possible moneymaking program was an attempt to turn the Curtiss C-46 Commando cargo plane into a pressurized airliner. But C-46s were so cheaply available as surplus that operators were buying and refitting the airplanes themselves. (And none saw the need for pressurization.)],
-  [The CW-32 was to be a four-engine airliner with military airlift capability, but the project was canceled in 1948. The company was testing an all-weather jet interceptor, the XP-87, but when an expensive wing modification appeared necessary, the U. S. Air Force insisted that Curtiss pay a major part of the expense. CEO Guy Vaughn refused, and the Air Force retaliated by canceling the project.],
-  [After 40 years, Curtiss was out of the airplane business.],
-  [Chaos took over the company’s front office as the focus shifted to profit-taking at the expense of R&D. As the excellent book Curtiss-Wright: Greatness and Decline puts it, “A vigorous and well-planned course of action was desperately needed. This, in turn, required a high degree of managerial skill and perhaps a bit of luck. Curtiss-Wright, it seemed, lacked both.” The leadership that took over Curtiss-Wright “came from the world of corporate finance and investment banking,” the book notes, “and had almost no direct connection with, or understanding of, the aviation industry.” By the mid-1950s, Curtiss-Wright “no longer had a distinct identity. The company had no viable product to develop and sell, and overdiversification was dissipating its resources.”],
-  [Today the Curtiss-Wright Corporation has its headquarters in North Carolina and manufactures components for aircraft, but the days when the company dominated the U. S. aviation industry ended long ago.],
-  [In 1944, Harry Truman became Franklin D. Roosevelt’s running mate and advanced to the vice presidency after FDR’s reelection to a fourth term. Some say he was chosen to shut him up, others that it was a reward for years of chasing down fraud, waste and abuse in the defense industry. (This part of Truman’s career is detailed in Steve Drummond’s excellent new book The Watchdog: How the Truman Committee Battled Corruption and Helped Win World War Two .) Truman became president only months later, when Roosevelt died  suddenly  in April 1945.],
-  [Marilyn Monroe is perhaps the most unlikely person to have had her life changed by the Curtiss-Wright catastrophe. That’s due to a young American playwright, Arthur Miller, who would later write Death of a Salesman , The Crucible and other classics. But in 1944 he had written a play that flopped after only three performances on Broadway. He decided that if that was the best he could do, he’d take up accounting, or selling insurance. Fortunately, he decided to give playwriting one more try.],
-  [After his success with All My Sons, Miller went on to become one of America’s most acclaimed playwrights, known for Death of a Salesman, The Crucible and other works. His fame led to a connection with actress Marilyn Monroe and the two wed in 1956.],
-  [In January 1947, Miller’s play All My Sons opened on Broadway, became a huge success and launched his career. Based directly on the Curtiss-Wright scandal, the play told the story of a man who knowingly produced bogus aircraft parts. One batch of his parts—badly cast cylinder heads—resulted in the crashes of 21 P-40s, including one that killed his own son.],
-  [In an odd but fascinating mismatch, the now-celebrated Miller fell for actress and sex symbol Marilyn Monroe. Monroe herself sought escape from her dumb-blonde image, and marriage to a successful playwright and intellectual like Miller, she felt, was her ticket to legitimacy. They wed in 1956 but the marriage, like Curtiss-Wright’s dominance of the U. S. aviation industry, soon came to an end.],
-  [But for Curtiss-Wright’s fall from grace, it never would have happened.],
+  [It’s been another week of people being shit, innit? I know I should be],
+  [used to this by now, but it never ceases to amaze me the capability people have for violence],
+  [and evil, and the capability the patriarchy has to excuse it. “Dude had a bad day”? For real real?],
+  [If that excuse has legs then you’d expect every uterus-holding person to do at LEAST a murder],
+  [per year. And yet it’s always white dudes who haven’t ever thrown up from cramps or had to deal with birth control hormones that feel they’re],
+  [entitled to attention or sex or whatever and go on these racist murder sprees. And they’re],
+  [going to continue to as long as the media excuses them as “bad days”, or gives them a platform by],
+  [encouraging racism and xenophobia. If you’re a Fox news anchor who’s ever said the],
+  [words “china virus” in the last year…these murders are on you pal. I see you, and I deeply hope you don’t have a good night of sleep for the rest of your life.],
+  [I took all this anger and donated to Red Canary Song and also pointlessly stabbed linoleum with it. The goal is to carve things a computer generates, 
+but at the moment that’s a bit too hard for me (I make the computer generate a lot of lines and uhhh that’s a lot of cutting), so I’ve been carving some non-generative stuff. They’re all a bit surrealist, because that is extremely my shit, but I don’t really know what to do with them.],
+  [I also don’t understand my audience. For example, I made this computer plant . I thought it was meh, so I wasn’t gonna put it up in the store, but after tweeting about it, it ended up selling out in a nanosecond. I made this March Madness basketball beet that’s 
+like…actually well carved and in two colours and cute and nobody cared. The same happened with the generative stuff – the chaos attractors I thought were deeply boring sold out instantly, the wings in flight that 
+I absolutely adore are a no-op. I don’t get it, y’all.],
+  [I am back on my procedural bullshit. Adam has been telling me about
+the Mentalist for months now, and holy shit: he was right. A++ procedural murders, be back in 7 seasons.],
+  [Every year I say I’m going to do a March Madness bracket where I ignore the chalk and just pick it on names and mascots, and every year I think the chalk knows best so I don’t and get busted on like day 1. I see you Oral Roberts toothpastes and Loyola wolf boys, I should’ve kept you going to the final 4 like I wanted to, eh?],
+  [Related: defensive fouls in basketball are absolutely bullshit.],
+  [Zach and I are rewatching all of the Marvel movies in story chronological order. This means that I went on
+several really productive 4 am YouTube holes of watching Avengers bloopers, every recorded interview with Robert Downey Jr, and that whole Ally McBeal season he was on. Imagine if I could put that kind of energy in watching videos about quantum mechanics or something. Instead, I can tell you that he met his wife when filming Gothika, that Tom Hiddleston couldn’t stop laughing during that one scene in Avengers 1 when Hulk smashes him into the Stark tower apartment floor, and that Mark Ruffalo is scared of needles so he doesn’t have the Avengers tattoo everyone else got. WHY AM I THIS WAY.],
 ),
   insert-map: (:),
-  word-count: 3333,
+  word-count: 587,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -224,48 +201,6 @@
 
 {
   #standard-article(
-  title: [Good decision-making is good process],
-  author: [Ilya Grigorik],
-  source-name: [Ilya Grigorik],
-  images: (),
-  paragraphs: (
-  [id="own-the-problem-and-define-it-in-own-terms"\> Own the problem and define it in own terms],
-  [When handed a problem, resist the immediate urge to find a solution. Take the time to understand the problem and define it in your own terms, this process helps both you and whoever defined the original statement figure out if: you're solving the right problem, you're aligned on the final desired state, and you're not rushing in without examining alternative routes up the mountain.],
-  [Create an explicit boundary between identifying the problem and finding the solution —e.g., the next hour, day, or week is about understanding and defining the shape of the problem; the bigger the problem, the larger the window.],
-  [Once you understand the problem, it's almost always a good idea to sleep on it . We all get tunnel vision. Build in space for the mind to shift focus and re-examine the problem after you had the break before committing to it.],
-  [id="apply-perspective-taking-to-explore-the-solution-space"\> Apply perspective-taking to explore the solution space],
-  [We all bring cognitive biases. The explicit ones we love to cast as “experience,” and the implicit ones go unacknowledged. One way to dislodge yourself is to practice structured perspective-taking exercises when examining the solution space.],
-  [Apply time travel as a perspective-taking prompt: what would have to be true for this problem to not exist in the first place; what needs to be true 1, 3, or 5 years out for this problem to remain solved?],
-  [Backcast from the finish instead of solution forward. You've crossed the finish line: what did you do to arrive there; what dependencies had to align, and what were the 3/4, halfway, and 1/4 milestone checkpoints and signals of being on or off track?],
-  [Many decisions appear binary on the surface but don't have to be: what would happen if existing options were eliminated; instead of an "OR," what if it's an "AND," and what may that imply?],
-  [id="gather-good-information-assess-and-validate-noise-levels"\> Gather good information, assess and validate noise levels],
-  [When defining the problem, and evaluating solutions, be careful about operating on multi-hop information. With each hop, the signal deteriorates rapidly: missed nuance, selective editing, and retelling. Validate critical facts and assumptions.],
-  [Go to the source: vet critical assumptions and facts across levels and sources.],
-  [Run experiments: run throw-away experiments; hands-on experience is gold.],
-  [Practice asking better questions: don't ask what an expert thinks; ask how they think and derive your own answer.],
-  [id="know-when-to-decide"\> Know when to decide],
-  [Being right is overvalued. Being a good learner is undervalued. The critical meta-skill is distinguishing whether a decision benefits from early- or requires a late-binding process.],
-  [Most reversible decisions benefit from early-binding; a negative result from an early-binding decision is a positive discovery, backtrack and try another route. The learning rate is often far higher—and sometimes only possible through—hands-on experimentation. Hard-to-reverse decisions require more and more thorough upfront due diligence and, if not handled appropriately, can lead to paralysis by analysis. Break down big decisions into small (reversible and early-binding) experiments to evaluate and gather necessary inputs.],
-  [A common pitfall is our universal desire to be right™. Instead of optimizing for the rate of learning, we seek to reduce the error rate, which leads to over-analysis and slower and poorer long-term execution. Commit early, celebrate negative discoveries, and iterate quickly; practice early-binding decision-making.],
-  [Most decisions are reversible and can be made with early-binding context: based on partial information, applied judgment, and a quick feedback cycle to re-aim if necessary. Optimize for learning and hands-on experimentation—see, gather good information—high-quality decision-making is built on a tension of due process, velocity, and judgment.],
-  [Some decisions are hard to reverse and should be made with late-binding context: break down the inputs and questions you need to answer, and run low-cost experiments and simulations to gather better signals. Keep your options open until the decision has to be made, and use the allotted time for hands-on due diligence.],
-  [When the time has come to make a decision, pause and introspect: am I doing it right, or am I meeting a deadline; if emotions are triggered, that's a sign to pause and give yourself a buffer to reevaluate.],
-  [id="developing-judgment-of-others-is-the-essence-of-leadership"\> Developing judgment of others is the essence of leadership],
-  [Good decision-making is a good process used intentionally. Focus on the quality of inputs and be deliberate in distinguishing the type of decision at hand: most are reversible, and many that are cast as one-way can be broken down into smaller reversible experiments.],
-  [Optimize for the rate of learning from both the positive and negative outcomes—a good decision does not always result in a good outcome, that does not mean it was a bad decision . Applied at an individual scale, this is the art of better decision-making and applied well at a group, team, or company scale, it’s the essence of great leadership.],
-),
-  insert-map: (:),
-  word-count: 798,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-  #pull-quote([Go to the source: vet critical assumptions and facts across levels and sources.], [Ilya Grigorik])
-
-}
-
-{
-  #standard-article(
   title: [A U.S. Civil War Spy in Europe: Henry Shelton Sanford],
   author: [George Levrier-Jones],
   source-name: [History in 28 Minutes],
@@ -283,7 +218,7 @@
   [class=""\>Sanford’s agents bribed postal workers to copy or intercept Confederate correspondence. Telegraph clerks were paid to divert or decode messages. Clerks inside factories and shipyards were induced to hand over specifications, contracts, and delivery schedules. Couriers carried intelligence between Belgium, France, and Britain. At times, Sanford simply “borrowed” Confederate letters long enough to read them before returning them to circulation.],
   [class=""\>Through business contacts, he tracked cotton shipments, arms purchases, and financial transactions. When necessary, he quietly pressured European firms not to deal with the South. The aim was not dramatic disruption but steady suffocation.],
   [class=""\>Two Confederate operatives were of particular importance: Caleb Huse and James D. Bulloch. Huse, a West Point–trained officer and former chemistry instructor, served as the Confederacy’s principal arms buyer. Operating across Britain, Austria, Prussia, and beyond, he negotiated most of the weapons contracts that eventually supplied Southern armies. Bulloch oversaw naval procurement, including the construction of commerce raiders in British shipyards. One of them—the Alabama—would devastate U. S. merchant shipping before being sunk off Cherbourg.],
-  [class=""\>Sanford tracked both men closely. He fed intelligence to Adams in London, worked to delay or derail their transactions, and ensured that Washington knew when ships were likely to sail. When formal channels failed, less formal methods were sometimes employed. As Sanford joked to Seward in one letter, “accidents are numerous in the [English] Channel, you know.”],
+  [class=""\>Sanford tracked both men closely. He fed intelligence to Adams in London, worked to delay or derail their transactions, and ensured that Washington knew when ships were likely to sail. When formal channels failed, less formal methods were sometimes employed. As Sanford joked to Seward in one letter, “accidents are numerous in the \[English\] Channel, you know.”],
   [class=""\>Recognition of the Confederate government before 1863 was a central Southern objective. Envoys James Mason and John Slidell were dispatched to Britain and France, though their capture during the Trent Affair nearly triggered war. While Queen Victoria was personally hostile to a slaveholding republic, British politics were complicated. Liverpool merchants depended on Southern cotton. William Gladstone spoke sympathetically of Southern independence. French policy remained opportunistic.],
   [class=""\>Seward responded with another weapon: influence. His instrument was Thurlow Weed, a veteran political operative, newspaper man, and longtime ally. Weed held no diplomatic title—by design. He could move through London and Paris as a private citizen, cultivating editors, financiers, and politicians while quietly countering Confederate propaganda.],
   [class=""\>Weed arrived in Europe in late 1861. He subsidized friendly journalists, planted pro-Union stories, hosted salons and dinners, and gathered intelligence—especially regarding Confederate shipbuilding. Like Sanford, he carried funds and used them where persuasion alone was insufficient. If questioned, Seward could plausibly deny everything. Weed was merely a tourist. Sanford was merely a minister in Brussels. Adams remained the sole visible face of American diplomacy.],
@@ -296,7 +231,7 @@
   [class=""\>Clergy were targeted as well. American ministers were sent to Europe to appeal to priests and pastors, urging them not to lend moral legitimacy to a slaveholding republic. In Britain, Sanford’s agents worked through labor organizations, emphasizing the dignity of free labor and the degradation of chattel slavery. Antislavery demonstrations were sometimes organized to appear spontaneous. On this ground the Confederacy was especially vulnerable: however much cotton mattered, slavery repelled too many Europeans for Southern diplomacy to overcome.],
   [class=""\>None of this resembled conventional diplomacy. When France had attempted similar manipulation of American politics during the 1790s, it had triggered the Genet Affair and nearly wrecked relations between Paris and Washington. By any reasonable standard, Sanford was violating the norms of neutrality and the limits placed on foreign ministers. Had Belgium chosen to protest, it would have been within its rights to demand his recall.],
   [class=""\>As the Union’s military position deteriorated after the failed Peninsula Campaign, Seward feared that Britain and France might push for mediation—an outcome that would have legitimized Confederate independence. Thurlow Weed was therefore sent back across the Atlantic. His mission was to stiffen Adams’s hand by quietly lobbying elites, feeding sympathetic journalists, and using money and charm to blunt Southern influence. Weed reported that European opinion was deeply divided, and that Confederate agents were tireless in their efforts. That only confirmed the necessity of the counteroffensive Sanford was running.],
-  [class=""\> I am determined, if it is possible, to get at the operations of these [Confederate] “commissioners” through their own papers, and the man specially occupied with that knows his business. How it will be done whether through a pretty mistress or an intelligent servant or a spying landlord is nobody’s business; but I lay great stress on getting you full official accounts of their operations here!],
+  [class=""\> I am determined, if it is possible, to get at the operations of these \[Confederate\] “commissioners” through their own papers, and the man specially occupied with that knows his business. How it will be done whether through a pretty mistress or an intelligent servant or a spying landlord is nobody’s business; but I lay great stress on getting you full official accounts of their operations here!],
   [class=""\> I intend on putting an agent or two on my own account on their fellow in Paris. The official agents don’t do all I ask them to and the Chef de Police1 has promised me one of their retired agents in the political department who shall be in relations with the office but not accountable to them for what I set him at.],
   [class=""\> If you do not approve my way of proceeding tell me so frankly. I go on the doctrine that in war as in love, everything is fair that will lead to success!.”],
   [class=""\>This was not ambiguous. Sanford was telling the Secretary of State that he intended to use bribery, infiltration, mail theft, and sexual entrapment to penetrate Confederate operations—and that it would be expensive.],
@@ -366,140 +301,34 @@
 
 {
   #standard-article(
-  title: [Hallucinating with art models],
-  author: [Monica Dinculescu],
-  source-name: [Monica Dinculescu],
-  images: (),
-  paragraphs: (
-  [Wow, long time, no posts! Anyway, about them text-to-art generative models going about, eh? Surprising nobody: I am extremely into them. I’ve been using DALL-E and MidJourney since they came out, and even though tons has been written about them, I wanted to give a slightly different overview: the perspective of someone who isn’t interested that much in their realism skills.],
-  [I think that the most compelling place for ML models in an artist’s life is as a tool that specifically enables , and doesn’t replace , creativity. Machine Learning is amazing at doing something very specific, lots of times, really fast. It’s great at telling me if an image is a cat or a dog. It’s also great at generating one hundred half-dog-half-cats, in different positions, so that I can bypass the dozens of hours I would spend sketching out half-dog-half-cats for a painting that’s actually about the nuclear apocalypse.],
-  [I’ve seen a lot of examples of which model is best at painting “The otter with the pearl earring”, but I haven’t seen a lot of comparisons of these models in terms of their potential for creativity– likely because “creativity” is not really quantifiable. I wanted to do this for myself, if anything so that I can figure out how to use my money and credits better, but thought that I might as well put it out there in case anyone else was curious.],
-  [This post ended up being looooong, so here’s a Table of Contents:],
-  [Boring uses of interesting models],
-  [The (barely scientific) method],
-  [Cherry-picking outputs],
-  [What I look for],
-  [1. “Linocut print of a girl bundled up in bed with a stack of books and a cat”],
-  [2. “Lithograph of an orchid where each flower has a small skull inside”],
-  [3. “Erik Johansson photograph of a woman[sic] hair that is a literal bee hive”],
-  [4. “A toucan wearing a 60s apron, sitting on a mid century modern armchair, talking on a rotary phone, retrofuturism”],
-  [What have I learned?],
-  [id="boring-uses-of-interesting-models"\>Boring uses of interesting models],
-  [I use these new models for a very specific thing, and that is as a brainstorming partner/collaborator. This shouldn’t surprise you: I’ve been going off on using ML for co-creation since the days of working on Magenta , which was the project that forged my views on the topic (shoutout to the smarter-than-me people on the team that let me absorb their well articulated opinions).],
-  [I tend to find DALL-E generations like “dogs playing poker” or “Donald Trump but as a cheeseburger” impressive, but kind of boring: yes, the output is funny, but no, I don’t fall asleep thinking about the deep meaning of an orange cheeseburger with a balding head and very small hands. As an artist who is trying to carve a place for myself in the art world (and for these models in my art), I want them to be my co-creators, my partners in crime, but not take over and compromise my style. I want us to brainstorm together, come up with ideas, and then (in most cases), mold this draft into something that I can look at and say “yeah, that looks like something I made”.],
-  [This is consistent with how I look at the use of music models like the Music Transformer : absolutely impressive compositions, best suited for an elevator. This isn’t the fault of the model, nor its users, and I am truly not shitting on these outputs (unless they’re for NFTs; always here to shit on NFTs 🙃): I think both background music and memes have a value in society, as do procedural TV shows (they’re filming new Criminal Minds!!!), computer generated or not. But personally, as an artist, I feel fairly emotionally detached from them, as I’m pretty sure their authors do.],
-  [The exact same models, when used in a thoughtful and creative way lead to absolutely brilliant things; the ones that make you say “fuck, I wish I had thought of that”. Yacht’s album made with hard creative rules and machine learning is a wonderful example, as is Karen X. Cheng’s use of DALL-E to imagine the scene beyond Girl with a Pearl Earring . This is the bit that I care about.],
-  [I’ve been trying to post updates about how I personally use these models on my artstagram (often with a commentary about the process), but as a recent craft fair that just rejected me had to say: I’m quite shit at the socials. Have this blog post instead?],
-  [id="the-barely-scientific-method"\>The (barely scientific) method],
-  [id="models"\>Models],
-  [I used the 4 models I have access to:],
-  [DALL-E , via the OpenAI website],
-  [Stable Diffusion , via the collab],
-  [MidJourney , via their Discord bot],
-  [DALL-E mini , via the HuggingFace interface.],
-  [I tried to get a Googler to help me run the prompts on Imagen , but I got no bites, so I have no idea how it fits into this story.],
-  [id="cherry-picking-outputs"\>Cherry-picking outputs],
-  [I cherry-picked 4 images for each model as follows:],
-  [DALL-E: Because using it costs real moneydollars these days, I decided to backfit this experiment to prompts I’ve already saved several images for (crucially: this means that I thought the prompt gave interesting enough results for me to care; this is 100% not true of every prompt I try). I also ran each prompt one more time to generate 4 more outputs, and then picked the best 3 out of those. The top left result is always the one I liked the most.],
-  [Stable Diffusion: cherry picked 4 results out of about 9.],
-  [MidJourney: I ran each prompt twice (getting 8 outputs in total), and then I picked the best 4. I didn’t try any parameters or tricks other than just using the prompt itself.],
-  [I tried to be as honest as possible with the results I’m showing, because I don’t have a dog in this race. I just want something useful for me , wherever it comes from. You can zoom over the results to see them slightly bigger.],
-  [id="what-i-look-for"\>What I look for],
-  [The prompts I used are for stuff I am actively working on, so they’re a bit weird, slightly personal, and in some cases, oddly disturbing. Please don’t steal the prompts or the outputs from me; I can’t stop you (such is life on the internet), but it will break my heart.],
-  [I’ll have some more details for each prompt, and how I picked “the most interesting to me”, but the two big rubrics I looked for were:],
-  [Did this model interpret the prompt?],
-  [Would I use one of the model’s generations “in an art” (this is very wishy-washy and not scientific; trust me, I get that)],
-  [Keep in mind that:],
-  [I understand that in some cases if I spent more time working on the prompt, I might get better results. The way I work is that I don’t try to force things into existing – if they don’t work out, I shelve them for a better time.],
-  [Some results are really weird and unsettling, and they’ve made me dislike my prompt. This isn’t the models’ faults, or their authors, nor do I have “bad feels” towards the models; it just means I’ve
-accidentally created an uncanny valley and I need to back away from it until I have a better idea of what I actually want from a model. Or maybe not use bees ever again.],
-  [id="results"\>Results],
-  [I picked 4 prompts, each of which covering a different area I am interested in:],
-  [An easy to imagine concept that exists in real life (can it execute?)],
-  [An easy to imagine concept that doesn’t exist in real life (can it imagine?)],
-  [A hard to imagine concept that doesn’t exist in real life but makes sense linguistically (can it hallucinate a surrealism?)],
-  [Multiple concepts that exist in real life, glued together in a way that doesn’t make sense linguistically nor does it exist it real life (can it be weird?)],
-  [I apologize in advance for \#3 – it’s a bad place – and for the alt text on these images. Summarizing robot art is harder than I thought.],
-  [id="1-linocut-print-of-a-girl-bundled-up-in-bed-with-a-stack-of-books-and-a-cat"\>1. “Linocut print of a girl bundled up in bed with a stack of books and a cat”],
-  [What I am looking for: Something that I can actually carve into linoleum and make prints out of, so sharp lines that I don’t have to spend too much time cleaning up is ideal. The suprise winner in this category was Stable Diffusion who despite not interpreting the prompt correctly, came up with the most interesting results (in my opinion, etc)],
-  [DALL-E . Composition is great (100% gets the prompt), but completely misses the mark on "linocut". I tried to work this into a useable drawing to carve, but because it uses fairly sketchy lines and fills, it ended up being way more work than I wanted.],
-  [Stable diffusion . Composition is pretty good but doesn't actually interpret the prompt well. The "linocut" part is really well done -- I find it amazing that the top left image actually has a signature and a title outside of the print! Despite not getting the point, the top right result is my dream come true and what I'll end up using.],
-  [MidJourney . Also kind of misses the prompt, and doesn't have as many details as the Stable Diffusion results. I really like the bottom left the most, but I don't think it screams "cat with books" enough for me to use.],
-  [DALL-E mini . The results are kind of okay if you squint really hard, but not at all what I'm looking for. I just got laser eyes; I'm not about to go back to squinting.],
-  [id="2-lithograph-of-an-orchid-where-each-flower-has-a-small-skull-inside"\>2. “Lithograph of an orchid where each flower has a small skull inside”],
-  [What I am looking for: any semblance of an orchid not looking like an orchid. The “lithograph” part was a very loose requirement – I just wanted it to feel “pencilly” without looking like a child drew it, which is what DALL-E often does for “pencil drawing”. I spent a lot of time on this prompt with DALL-E (including looking up the technical biology terms for “the bit inside an orchid flower”), and I never got anything at all correct. It wasn’t until this blog post when I went to other models that I regained hope! MidJourney, man!],
-  [DALL-E . I remember I tried many combinations of writing "a skull inside each flower", and
- all I could ever get out of DALL-E was an orchid next to, or coming out of, a skull. I get bored after about half an hour of failing at a prompt; I'm sure there is a way to write this to get what I'm looking for, but I didn't figure it out, and I lost interest.],
-  [Stable diffusion . This one struggled with the prompt too. The bottom two results are really
- pretty, and in particular prettier than the equivalent (and misunderstood) DALL-E results, but still not even in the ballpark of what I was looking for],
-  [MidJourney . I mean, 10/10. These are the spooky orchid boys of my dreams! This prompt came up because I went to an orchid exhibition, and I thought so many of the little flowers looked like skulls or aliens. This was exactly what I had in mind.],
-  [DALL-E mini . Suffers from the same prompt problems as the other models, which makes me think
- that whatever special tweaks MidJourney does to get "creativity" out of a prompt are absolutely
- working.],
-  [id="3-erik-johansson-photograph-of-a-womansic-hair-that-is-a-literal-bee-hive"\>3. “Erik Johansson photograph of a woman[sic] hair that is a literal bee hive”],
-  [I love surrealism. I was watching this 60s movie where a bunch of women had beehive hairdos, and this is how my brain operates: “wouldn’t it be interesting if”? I don’t know what I was expecting to get, but it wasn’t any of this (though as someone who understands how these models work, in retrospect I understand exactly how we got here). I chose Erik Johansson because surreal photography is his jam, and it helped stir DALL-E towards more of the right vibes at the time. Unfortunately, I got really creeped out by most of the results (from all models tbh), and it’s really soured up this prompt for me.],
-  [DALL-E . The uncanny valley of literal bee hives turns out to be deep. The top left image one is the nicest, possibly because a) it doesn't have a face and b) it only has casual bees. It is maybe the closest to what I wanted (out of all the outputs), but it doesn't make me feel great looking at it.],
-  [Stable diffusion . The people. They look like people. I don't like it. I think the top right one is the least disturbing?],
-  [MidJourney . I find it incredibly fascinating that out of 8 images, they all have the same very specific style. Erik Johannson rarely uses people in his photography -- why is this very specific
- woman coming up? Also, I think the cutesy, not really photographic style really helps these outputs, tbh.],
-  [DALL-E mini . Poor model, this is the worst of the bunch, and I expected it. DALL-E mini
- isn't very good at realism; it gives very noisy people, or faces, and then shoves them through a potato. That, combined with (my bad) sheer
- creepiness of the prompt leads to a literal nightmare.],
-  [I cannot apologize enough to these models for making them go through this. You at least could’ve scrolled past this section; they, the poor darlings, couldn’t.],
-  [id="4-a-toucan-wearing-a-60s-apron-sitting-on-a-mid-century-modern-armchair-talking-on-a-rotary-phone-retrofuturism"\>4. “A toucan wearing a 60s apron, sitting on a mid century modern armchair, talking on a rotary phone, retrofuturism”],
-  [And now, a palette cleanser. I had been doing some reading and learnt that DALL-E really likes commas and stacking up contexts, so that’s why this prompt is so detailed.],
-  [DALL-E . I expected DALL-E to do well, and it did. The toucan on the phone is there, the 60s vibe is there, the apron is dubiously missing but we'll give it a pass. It's got the fuzziness of old,
- spacey, retrofuturism posters (though the prompt has absolutely no actual futurism in it)],
-  [Stable diffusion . This isn't bad either. The art style is a little flatter (what is retrofuturism even?), but it's toucans doing their thing, some better than others.],
-  [MidJourney . If you've ever played with MidJourney, this will strike you as having "very MidJourney vibes". This grainy, round style I see often, and I quite like. However, while it captures the style really nicely, the prompt is sort of a wash past the toucan.],
-  [DALL-E mini . This is the first time I a) love this model the most and b) wish that it produced higher resolution images. Look at the aprons! Look at the furniture! In terms of concept, it's absolute perfection. In terms of execution, an absolute potato.],
-  [id="what-have-i-learned"\>What have I learned?],
-  [I think the most important thing I’ve learnt from this experiment is that in terms of what I’m looking for (interesting hallucinations and not realism), DALL-E isn’t the end-all, be-all of models, and nor is MidJourney. The two freely available models are quite alright in some cases, especially if you’re looking for fast and free brainstorming. I think the workflow that I will try out next is to workshop the prompt using StableDiffusion/DALL-E mini, and then take that to the big boi DALL-E herself, and see what I can go from there.],
-  [In terms of model-specific lessons (knowing that it’s based on my weird experience with them, they’re not scientific and not necessarily applicable to what you are working on, etc. Don’t come for me, basically):],
-  [MidJourney can be super creative, but can also fall into stylistic pits (see: the bees, the toucan)],
-  [It’s hard to get DALL-E out of a realism pit without a ton of effort (see: the skull orchids)],
-  [Stable Diffusion works surprisingly well for something I can run off a collab],
-  [I don’t have a gut feeling as to why, but pretty much everyone except for Stable Diffusion is confused by what a linocut is (this is only interesting to me, someone who works on linocuts)],
-  [DALL-E mini really understands what toucans want (JK)],
-  [I should maybe steer clear of bees.],
-  [Thanks to Adam for helping me rework the intro, and giving me a subtitle; I can’t believe I missed a Strangelove opp.],
-),
-  insert-map: (:),
-  inline-pq: pull-quote([class="floatie-bit"\>       Stable diffusion.], [Monica Dinculescu]),
-  inline-pq-idx: 33,
-  word-count: 2744,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-}
-
-{
-  #standard-article(
-  title: [Roman Trade with Modern-Day Sri Lanka],
+  title: [African American Servicemen in Britain During World War 2],
   author: [George Levrier-Jones],
   source-name: [History in 28 Minutes],
   images: (),
   paragraphs: (
-  [class=""\> When Roman sailors and merchants in the first centuries of the Common Era looked southward from the mouth of the Red Sea, the island they called Taprobane, now almost universally identified with Sri Lanka, appeared in their geographies as a rich and mysterious partner in an expanding Indian Ocean trade network. Classical geographers and travel writers treated Taprobane both as a place of fabulous commodities and as a real staple of long-distance exchange: it appears in the Periplus of the Erythraean Sea, in Pliny the Elder's Natural History, and on Ptolemy's maps, and these accounts, read together with archaeological finds around Sri Lanka's ancient ports, make a persuasive case that Greco-Roman traders reached the island's shores, if sometimes indirectly, from the mid-first century CE onward.],
-  [class=""\>The short but vivid Periplus of the Erythraean Sea, a Greek seaman's handbook usually dated to the mid-first century CE, is the most direct contemporary Roman-period testimony to long-distance navigation in the Indian Ocean. Its anonymous author describes routes, seasons and goods, and although Taprobane receives briefer treatment than the western Indian ports, the Periplus places the island within the author's pragmatic commercial map: it is a known source of gems, ivory and other sought-after products and a waypoint for ships that ranged along the eastern Indian seaboard and beyond. The Periplus also reflects the adoption of the monsoon crossing, knowledge of seasonal wind patterns credited to figures such as Hippalus, which made regular oceanic linkages between the Red Sea and South Asia feasible and economically attractive for Roman subjects based in Egypt.],
-  [class=""\>Pliny the Elder and Ptolemy amplify the picture of Taprobane as an object of classical curiosity and commerce. Pliny compiled earlier reports and travelers’ tales into his encyclopedic Natural History and explicitly names Taprobane among the distant islands whose products reached Mediterranean markets; Ptolemy's Geographia, meanwhile, institutionalized Taprobane on maps, even if the island's scale and position were distorted in late antique cartography. These literary testimonies outline what the Roman-world readers believed they were buying from the Indian Ocean: not only luxury items such as pearls, gems, spices and exotic woods, but also useful commodities—elephants for war and ivory for luxury works—that made a voyage to Taprobane, or through agents who dealt with it, commercially worthwhile.],
-  [class=""\>Textual notice must be matched to material traces, and here archaeology supplies concrete, if sometimes contested, evidence. Excavations and survey work at Sri Lanka's ancient trading sites—most notably Mantai (the harbor complex at Mannar), Godavaya and certain finds around the southern ports and the Ruhuna region—have produced imported ceramics, Indo-Roman wares, and metal finds datable to the first few centuries CE. These finds indicate that goods and perhaps persons moved between the island and the wider Indian Ocean economy at the time classical authors wrote. Archaeologists have recovered Roman or Roman-style amphora sherds and Mediterranean imports mixed with local and South Indian ceramics in contexts that often line up with the mid-first through third centuries CE, supporting the textual evidence that Taprobane was part of long-distance trade networks rather than an isolated curiosity.],
-  [class=""\>Numismatics has contributed one of the most headline-grabbing types of evidence: Roman and Indo-Roman coins found on the island and in neighboring Indian ports. Scholars have catalogued a variety of coins—official Roman denominations, later Byzantine and Sasanian pieces, and locally struck imitations, that turn up in hoards and stray finds across Sri Lanka's archaeological record. The presence of Roman gold, silver and bronze specimens, and of imitations that adapt Roman portraiture and types, demonstrates multiple channels of contact: direct importation, trade mediated by South Indian merchants, and the island's participation in a wider monetary ecology that incorporated foreign coinage as bullion or prestige money. At the same time, numismatists caution that coin deposits are slippery evidence for regular commercial routes, coins travel, are hoarded, reused and sometimes arrive centuries after they were minted, so they illuminate connectivity without always proving direct, continuous Roman state involvement.],
-  [class=""\>Material culture beyond coins, such as fragments of Mediterranean amphorae, glassware and certain classically styled objects helps round out the picture. Amphora sherds linked by form and fabric to Mediterranean production argue that Mediterranean foodstuffs (wine, preserved fish or oil) or at least their containers were carried into the Indian Ocean system. Yet many of the "Roman" finds in South Asia were funneled through intermediary entrepôts on the Malabar coast and the Arabian littoral; the principal agents of exchange in this era were often Indian, Arabian and later Southeast Asian merchants who operated the coastal networks and transshipped cargoes to and from Sri Lankan anchors. Consequently, although Roman subjects and merchants surely appear among the actors of this commerce, especially in Egyptian port cities like Berenice and Myos Hormos—the day-to-day movement of goods to Taprobane seems to have been largely run by regional middlemen who connected Mediterranean markets to South Asian and island producers.],
-  [class=""\>Certain Sri Lankan exports made the island especially prized by Mediterranean consumers. Classical authors and later commentators repeatedly emphasize cinnamon (whose precise identification in ancient texts is debated), pearls from the island's offshore banks, high-quality gemstones and ivory. Archaeology confirms the island's role in pearl fishing and its access to precious stones and fine timber, while epigraphic and local traditions record long-standing maritime commerce. The intersection of demand in the Roman world for luxury consumables and Sri Lanka's capacity to supply them produced the economic logic for sustained contact, sometimes direct, sometimes indirect—across the Indian Ocean.],
-  [class=""\>Historians still debate the scale and intimacy of Roman contact with Taprobane. Older popular narratives sometimes implied a flood of Roman merchants and colonial outposts, but modern scholarship tends toward a more nuanced reconstruction: the Roman world was linked into the Indian Ocean by regular traffic and predictable monsoon crossings, yet most trade remained mercantile rather than imperial in character. Exchanges involved ships and traders from many polities, and Roman interest in the island was commercial and mediated through established regional networks. Recent syntheses emphasize networks rather than empires and stress local agency: Sri Lankan rulers and coastal cities actively engaged with incoming traders, negotiated the terms of exchange, and integrated foreign goods into local economies and status displays.],
-  [class=""\>To read the Roman footprint on Sri Lanka is therefore to read an intricate palimpsest: classical texts furnish names, commodities and routes; coins and imported pottery confirm episodes of contact; port archaeology (Mantai, Godavaya and elsewhere) gives archaeological contexts; and numismatic and ceramic studies provide the cautionary notes that turn sensational finds into careful historical argument. Together they show a world in which a Mediterranean empire's appetites met an Indian Ocean island's riches through the wind and skill of monsoon sailors, the networks of Indian and Arabian middlemen, and the receptive markets of the classical Mediterranean. The story of Roman contact with Taprobane is thus not simply one of exotic discovery but of interlocking economic systems whose consequences can still be traced across texts, maps and the soil of Sri Lanka's ancient harbors.],
-  [class=""\>If modern readers take away anything from these fragments of evidence, it should be the image of an ancient globality: long before industrial shipping lanes and steam power, mariners harnessed seasonal winds and a shared appetite for luxury to connect Rome and Taprobane. The contacts were episodic and mediated, yet real—and archaeology keeps revealing fresh details that transform classical blurbs into a living maritime history of exchange, negotiation and cultural contact centered on an island the ancients called Taprobane.],
-  [class=""\>Therefore in conclusion, the story of Roman contact with Taprobane, (modern Sri Lanka), reveals a world far more interconnected than traditional histories of empire and conquest often suggest. It illustrates how commerce, curiosity, and the mastery of the monsoon winds drew distant civilizations into dialogue across thousands of nautical miles. Taprobane stood at the crossroads of the Indian Ocean trade, a hub where the ambitions of Mediterranean merchants, the enterprise of South Asian and Arabian intermediaries, and the wealth of the island's own natural resources converged. Rather than a tale of colonization or conquest, it is one of exchange and adaptation, in which goods, ideas, and cultural influences circulated through the flexible networks of ancient trade.],
-  [class=""\>From the Roman amphora fragments unearthed at Mantai to the gold coins buried in Sri Lankan soil, every discovery underscores that global trade, even in antiquity, was a shared venture driven by mutual interest and the steady rhythm of the monsoon. Taprobane's presence in classical geography, literature, and cartography speaks not only to Roman fascination with distant lands but also to the island's active participation in shaping the maritime world of its time. In the final measure, the legacy of these contacts lies in their reminder that globalization is not a modern invention, it is a continuous human story that began when early sailors learned to follow the winds from the Red Sea to the shining shores of Taprobane.],
-  [class=""\> The site has been offering a wide variety of high-quality, free history content since 2012. If you’d like to say ‘thank you’ and help us with site running costs, please consider donating here .],
-  [class=""\>Hippalus was a Greek navigator and mariner traditionally credited with one of the most important breakthroughs in ancient navigation, the discovery of the direct sea route across the Indian Ocean from the Red Sea to the west coast of India, aided by the predictable seasonal winds known today as the monsoon. His exploits, usually dated to the 1st century BCE, revolutionized maritime trade between the Greco-Roman world and India by allowing sailors to venture directly across the open ocean rather than hugging the dangerous and time-consuming coastlines of Arabia and Persia. Although few details of his life are known, Hippalus's name became synonymous with this vital navigational discovery, with both the southwest monsoon wind and the route itself often referred to in ancient texts as the Hippalus or Hippalus wind.],
-  [class=""\>Before Hippalus's innovation, Greek and Roman merchants relied largely on intermediary traders and coastal navigation routes that followed the Arabian Peninsula, using small vessels ill-suited for deep-sea travel. By observing the regular reversal of the monsoon winds, blowing from the southwest in summer and the northeast in winter, Hippalus realized that a direct crossing from the Red Sea to the Malabar Coast of India was possible. This not only shortened the voyage but also dramatically increased the volume and efficiency of trade. His discovery effectively opened the Indian Ocean to Greco-Roman seafarers and established a reliable maritime corridor that endured for centuries, connecting ports such as Berenice and Myos Hormos in Egypt to Muziris and Barygaza in India.],
-  [class=""\>The Periplus of the Erythraean Sea, a 1st-century CE Greek navigational text, preserves some of the earliest references to Hippalus's route. Although historians debate whether Hippalus himself made the voyage or merely identified the wind pattern, his legacy was profound. Roman merchants soon began to dominate the Indian Ocean trade, importing spices, silks, gemstones, and ivory in exchange for gold and silver. The new route not only enriched the Roman economy but also deepened cultural exchanges between the Mediterranean world and South Asia, influencing art, religion, and material culture on both sides. Thus, even though the man Hippalus remains elusive, his name endures as a symbol of early scientific observation and the spirit of exploration that bridged civilizations across the seas.],
+  [class=""\> Just after 9pm on a cool September evening in 1943, a large group of soldiers calmly walked the mile home to camp where they armed themselves with tommy guns, ammunition and bayonets. Putting themselves into formation, they marched back into town, three-a-breast. The sound of their army-issue boots striking the road for nearly a mile echoed heavily in the pitchy-ink of the blacked-out night-time and is something witnesses remember to this day. It seemed as if a ‘whole company’ of troops was moving through the night, it was said later.],
+  [class=""\> In England, Major Charity E. Adams, Columbia, South Carolina., and Captain Abbie N. Campbell, Tuskegee Institute, Tuskegee, Alabama, inspect the first members of the African American Women's Army Corps assigned to overseas service.],
+  [class=""\>Undoubtedly the troops who were on the move were ready for the fight of their lives – it just wasn’t the official enemy they had in their sights. Because unbelievably this was not happening in mainland Nazi-occupied Europe, but on Britain’s homefront – specifically the market town of Launceston in Cornwall. And these were American soldiers. Military police patrolling the town could sense impending danger. ‘Everything was so tense that evening that we thought that something might start,’ said one. Another added that all evening ‘…you could feel the tenseness in the air.’ Even publicans working in the town’s many drinking houses felt this was the calm before the storm.  One shut early that evening saying how he just sensed ‘…something brewing.’],
+  [class=""\>Suddenly the marching troops appeared ‘in a body’ from out of the darkness to encircle a group of military policemen, fellow Americans, who were standing chatting next to a jeep parked near the town’s war memorial. ‘We saw forty to fifty soldiers coming up the street. They had overcoats on. They walked up almost in formation, and straight toward us… and \[we\] thought trouble was about to begin,’ said one of the surrounded. A man, who seemed to be spokesman for the group, said very quietly: ‘Why don’t you let us come into town, come into the pubs?’. Flashlights snapped on. ‘Hands up!’ was shouted. The military police raised their arms and backed up. As they did, ‘I heard bolts open on rifles,’ said the jeep’s driver. There was just time for the terrifying realisation to sink in that their compatriots were not only armed but already taking aim when: ‘I heard a bolt crack and a shot landed at our feet. Someone hollered ‘DUCK’. I jumped in behind the wheel of a jeep.’ Next, a volley of fire. ‘I felt a bullet whizz past me.’ A flashlight revealed a soldier ‘with a denim hat and overcoat firing a rifle from the hip and he was really pumping them out.’ A pause. Then chaos as British soldiers, civilians, WAAFs and Land Army girls, as well as the Americans under fire, scrambled for cover amid ricocheting bullets. One old man told the Daily Mirror the next day : ‘There hasn’t been anything like this since the days of the smugglers.’],
+  [class=""\>No-one knows for sure exactly how many soldiers were armed and fighting that night. What is universally acknowledged is a large number was involved – from the 581st Ordnance Ammunition Company who were firing at soldiers from the 115th Infantry’s Second Battalion. It was all over in five minutes before the shooters melted away into the night. What they left behind was a shot up town centre, soldiers and citizens shaken, store windows in shatters, two hole-ridden US army jeeps (it subsequently took 20 soldiers to lift them bodily away), two sergeants with mashed-up legs, the visiting US army with its reputation hugely-dented and bullet holes in Cornish bricks and mortar which for more than seventy years were the sole reminder of an all-American gunfight army authorities wanted forgotten and tried their best to obscure. Because the inconvenient truth here was that these were members of an African American ordnance company who were taking on the white soldiers who policed them. The level of injuries given the firepower on hand that night shows precisely that wholesale slaughter was certainly not the intent, although military prosecutors defied their own investigators recommendations and insisted on bringing attempted murder charges alongside mutiny et al. The ‘mutineers’ were making a point and it was one that was needed to be made.],
+  [class=""\>There were around 130,000 African Americans among the 1.5 million US servicemen who were in the United Kingdom at any one time in World War Two – altogether 4 million Americans would come to Britain. But this segregated army had an inherent racial friction which began to spill over into violence with increasing frequency whenever the two races met in Britain’s ‘green and pleasant’ land. Riding on the tide of simmering racial tension in US training camps and explosive riots in five American cities during the long hot ‘bloody’ summer of 1943, this enmity inevitably floated across the Atlantic with each wave of arriving servicemen.],
+  [class=""\>At first it baffled the British. Despite ruling an empire upon which ‘the sun never set’ there were surprisingly few people of colour, roughly 15,000, in Britain during World War 2. Undoubtedly, in such a mono-cultural society, racism was bound to thrive as proved by race riots in 1919 and exemplified by the experiences of Learie Constantine, the West Indian cricketer, who came to live in Britain in the 1920s and described how ‘personal slights’ were ‘an unpleasant part of life in Britain for anyone of my colour.’  But evidence from thousands of censored letters, secret reports from the Ministry of Information’s Home Intelligence division, surveys for Mass Observation (the nascent polling organisation) as well as editorials and letters to newspapers and government departments shows this confusion amongst ordinary Brits soon morphed into outright rejection of the ‘colour bar’ – and decided support for African American troops. From George Orwell who kicked off his first article for Tribune with “The general consensus of opinion seems to be that the only American soldiers with decent manners are the Negroes” to a Blackpool factory worker raging against how “…the American troops literally kick, and I mean kick, the coloured soldiers off the pavement." Whatever British and American officials would have people believe, displays of discrimination and violence shamelessly paraded on British cobbles and village greens provoked a general sympathy amongst ordinary British people for the African American soldiers who came to trial and train for D-Day and put an invisible wedge in Anglo-American relations.],
+  [class=""\> An American Uprising in Second World War England: Mutiny in the Duchy tells the story of the soldiers, the trial and what this meant for Britain, America and what has subsequently been dubbed the ‘special relationship’.],
+  [class=""\>Turning that first page of the original court martial transcript, which arrived courtesy of a freedom of information request, was like beginning a film script. So too was the narrative that developed behind why the shooting happened, which I pieced together using once-secret government documents from various sources including the National Archives, the National Archives of America and the British Library. By the time I found out the targeted soldiers in Launceston happened to be tasked with Omaha Beach on D-day – it felt almost inevitable. The extraordinary timeline around this Launceston uprising made the 581st Ordnance Ammunition Company, the men – and 26 September 1943, the hour. It was a slam dunk of a story and needed to be told, especially since nearly 80 years on nobody knew what had really happened here, why and the ultimate fate of those involved.],
+  [class=""\>The story began with the United States army that came to trial and train for D-Day, which was segregated, mimicking the ‘Jim Crow’ separation of society in the American south.  One in every ten of its soldiers was African American and eventually 130,000 came to the UK before journeying to France after D-Day. With the rare exceptions of units such as the Tuskagee airmen and the 320th Barrage Balloon Battalion, these servicemen soon discovered they would be fighting from the supply side of things -  the decidedly more inglorious face of battle incorporating the Quartermaster Corps, the Corps of Engineers and the Transportation Corps. Their training experience was universally discriminatory, oppressive and – all too often - violent. This fractious rubbing alongside of African American and white soldiers was happening in camps across the nation. The Launceston ‘mutineers’ time in training was embarrassingly typical, according to Walter White, secretary of the National Association for the Advancement of Colored People (NAACP) who discovered they were repeatedly denied the chance for rest and recreation.],
+  [class=""\>Outside United States Army camps, general racial tension spilled over in the long hot ‘ bloody’ summer of 1943 when full-blown fights, riots and clashes flared in five American cities. The Second World War had heightened inequality between black and white communities over housing, work and even who got plaudits for fighting, and feuding broke out first in the streets of Los Angeles. Next it exploded in Detroit leaving 34 dead – 25 of whom were black – before ending in New York when rioting erupted after a policeman killed a black soldier. The ripple effect in the military was almost tangible and inevitably floated across the Atlantic to Britain with each wave of arriving servicemen. It was on this swell that the 581stOrdnance Ammunition Company came riding into Cornwall.],
+  [class=""\>Although ruling ‘an empire on which the sun never sets’, there were surprisingly few people of colour in Britain itself when the Second World War started. The black British community was no bigger than about 15,000 and centred mainly in port cities such as Bristol, Cardiff and Liverpool. Unsurprisingly, in such a mono-cultural nation, racism was bound to exist. Race riots broke out in 1919 around those same British port towns leaving five dead, hundreds injured and 250 arrested. Learie Constantine, the cricketer who moved from the West Indies to Britain in 1923, described how ‘personal slights’ were ‘an unpleasant part of life in Britain for anyone of my colour.’ And this only increased, with depressing predictability, probably more frequently in the upper than lower echelons of British society, once the segregated Americans arrived.],
+  [class=""\>Plentiful anecdotal evidence of American scuffles being played out on English cobbles and greens proliferated as black soldiers were pushed out of pubs, off buses and away from cinemas. However, a fresh look at evidence shows this in fact inspired a powerful British feeling about the visiting American army and race – which was recorded everywhere from Mass Observation and weekly secret Home Intelligence Division reports – to newspaper editorials and letters picked up by the censors. The story was nearly always the same. As George Orwell wrote in his first piece for Tribune: “The general consensus of opinion seems to be that the only American soldiers with decent manners are the Negroes.” Mass Observation, the nascent polling organisation, concluded feelings about Americans was ‘can be fairly sharply divided into feelings about white and coloured troops. As a general rule…the latter have made themselves more liked in his country.’ The feeling came from Blackpool, where one report told: ‘I have personally seen the American troops literally kick, and I mean kick, the coloured soldiers off the pavement’ to Essex when a ‘particularly disgusted’ father protested angrily to the Foreign Office that American white soldiers set upon a black soldier who ‘dared’ to take to the floor with a white woman at a dance.],
+  [class=""\>Put simply, the British sided with the underdog and were beginning to involve themselves in American disputes up and down the country. One of the most extreme cases was in Bamber Bridge, Lancashire, where one soldier was killed and several MPs and soldiers injured in an armed incident sparked by heavy-handed military policing in June 1943. Here, the British servicewomen and locals drinking at Ye Olde Hob Inn Public House backed the African Americans. Two hundred odd miles away in Corsham, Wiltshire, just a few days later again the violence of American military policemen towards African American soldiers caused a near riot. Head of Southern Command Sir Harry Haig reported: ‘A large group of civilians gathered and were heard saying: “They don’t like the blacks”; “Why don’t they leave them alone?”; “They’re as good as they are"; “That’s democracy.” The situation eventually developed into one of mass insubordination by the coloured troops, and at one point a coloured sergeant who had been ordered to bring his Company Commander, replied: “We aint no slaves, this is England.” The clash in Launceston is a perfect reflection of both emotions within the US Army and its outward-facing relations with the British home front at that precise moment in time. After that, things only got worse. A month before D-Day, a US Army morale report noted tersely that ‘the whites dislike the Negroes and the Negroes dislike the whites…The predominant note is that if the invasion doesn’t occur soon, trouble will.’ Clearly, the ‘colour bar’ was a wedge in the American army and it was something the authorities were determined to obfuscate.],
+  [class=""\>By a quirky twist of fate the 581st Ordnance Ammunition Company arrived in Cornwall, slap bang in the heart of GI country, in the dying ebbs of that scratchy summer. The 29th Infantry division relocated from Tidworth Barracks, Wiltshire, in May 1943 to Devon and Cornwall  where it planted its three principal units and it was the Second Battalion of the 115thInfantry Regiment that came to Launceston and built a base for itself at a farm on the top of a hill nearly a mile from the town’s market square - and half a mile from the African American soldiers’ base at Pennygillam. It is difficult to exaggerate just how much swing and glamour forced its way through the cobbles and winding country roads of this market town edging Bodmin Moor as a result of their arrival. Clinging to the coat-tips of incoming US Army arrivals, it meant untold luxuries like Hershey’s chocolate and Lucky Strike cigarettes to visits from big band leader Artie Shaw and boxing legend Joe Louis. But underneath all the glamour pulsed a racial tension beating at the heart of the US Army which turned some British people against white GIs and hurled an invisible lance into Anglo American relations.],
+  [class=""\>Curiouser still, was that the men arrived days after events in Britain polarised feeling about ‘the colour bar’ or segregation once and for all, starting with that most quintessential bastion of British sport – cricket. On September 3, news leaked that Learie Constantine, captain of the West Indies and a professional cricketer in England since the 1920s, had been thrown out of a London hotel because of American complaints. Newspapers had a field day. The response was a national outcry monitored secretly by the British government’s Home Intelligence Unit. Hot on its heels came the case of Amelia King, a young black British woman from Stepney, who was refused entry to the Women’s Land Army because it was felt white farmers would reject her help solely because of her ethnicity. Instead of taking the rejection lying down, she coolly raised it with her MP who voiced the outrageous situation in Parliament four days after the 581st arrived in Britain – and barely a week after the Constantine scandal erupted. It was the deciding blow. What followed was an almighty row about the blindingly unfair treatment of Constantine and King which rumbled on throughout September and October culminating just days before the Paignton court martial opened with a volcanic poll for Mass Observation revealing 75 per cent of respondents felt ‘definite disapproval’ of the colour bar.],
+  [class=""\>When the 581st Ordnance Ammunition Company arrived in September they had been restricted to their last two camps in America. In their first roll call in Cornwall, they were told they were to be restricted for a third time as they did not have the correct ‘dress uniform’ to go into town – although it didn’t seem to stop fellow white soldiers. It was the final straw. The American authorities tried repeatedly to censor the reporting of the shooting that followed; firstly, by trying to ban the reporting of race in the Paignton court martial which had, by law, to be held in public – a move foiled by a plucky objection from the Daily Mirror. Next it banned the public reporting of the sentence. This was precisely because of what the episode said about the state of its army’s internal relations and the truth it revealed at the heart of what would subsequently be dubbed the ‘special relationship’. George Orwell was alive to it, the trial itself caused Churchill ‘grave anxiety’ and it was something the authorities wished would just go away. But it couldn’t because the shoot out that happened in Launceston one September night in 1943 was both a result and reflection of race relations in Britain in that tunnel of time – of the enmity between white and black Americans and the sympathy of Brits for African Americans. It explained the court martial’s bulging press benches – and why it made headlines all over the United Kingdom and the United States.],
+  [class=""\> An American Uprising in Second World War England: Mutiny in the Duchy recounts what happened next in this fascinating episode that crosses over between military and social history. It is available here in the UK through Pen & Sword Books. The book is available to US readers here .],
 ),
   insert-map: (:),
-  word-count: 1892,
+  inline-pq: pull-quote([It was all over in five minutes before the shooters melted away into the night.], [George Levrier-Jones]),
+  inline-pq-idx: 7,
+  word-count: 2940,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -508,14 +337,207 @@ accidentally created an uncanny valley and I need to back away from it until I h
 
 {
   #standard-article(
-  title: [AI Picks Tests To Run On A Bug],
+  title: [Mock The Location Href Property],
   author: [Gleb Bahmutov],
   source-name: [Gleb Bahmutov],
   images: (),
   paragraphs: (
-  [In the blog post Test Tag Suggestions Using AI I described a system to pick a testing tag based on a pull request's title and body text. In this blog post, I will make it useful. Whenever a user opens a GitHub issue and labels it a "bug", an automated workflow will pick an appropriate testing tag (or several) and will execute the tagged Cypress end-to-end tests to give more context to the issue.],
-  [The example application],
-  [I am using a typical TodoMVC with lots of Cypress end-to-end tests tagged using \@bahmutov/cy-grep plugin. You can list all specs with their tags using find-cypress-specs utility.],
+  [Let's say the application changes the URL using the assignment:],
+  [1 
+ location. href = 'https:\/\/acme.com'],
+  [Can we prevent the URL change? For example, we might want to limit our test to the current origin. Let's do it using the following example page:],
+  [index.html 1 
+ 2 
+ 3 
+ 4 
+ 
+ Hello World 
+ 
+ 
+ app.js 1 
+ 2 
+ 3 
+ 4 
+ setTimeout ( () =\> { 
+ console . log ( 'changing window location to acme.com' ) 
+ location. href = 'https:\/\/acme.com' 
+ }, 1000 )],
+  [The initial Cypress test does not prevent the navigation to "acme.com"],
+  [cypress/e2e/spec.cy.js 1 
+ 2 
+ 3 
+ 4 
+ 5 
+ 6 
+ 7 
+ it ( 'sets the location HREF' , () =\> { 
+ cy. visit ( 'index.html' ) 
+ cy. contains ( 'h1' , 'Hello World' ) 
+ \/\\/ confirm but do not allow the application 
+ \/\\/ to navigate away to the new URL 
+ \/\\/ Tip: app sets it using "location.href = ..." command 
+ })],
+  [🎁 The source code for this blog post is located in the repo bahmutov/with-window .],
+  [I have recorded a short video going through this example and my solution],
+  [Cannot stub Location object],
+  [We need to prevent location.href = ... assignment by making the property read-only or better: using a custom object property definition with a setter stub function. Unfortunately, we cannot overwrite the location.href property:],
+  [Ok, maybe we can mock the entire location object? It is a property of the global window object:],
+  [Unfortunately, the location property itself cannot be overwritten either.],
+  [We need another way. In the blog post Stub The Unstubbable I have shown one possible solution that modifies the application's source code to create an intermediate proxy "Location" instance. The E2E test can control that object. It is imperfect solution, as it requires source code modifications, which might be unavailable.],
+  [Let's find another way.],
+  [JavaScript with keyword],
+  [JavaScript has a pretty obscure operator with that you should definitely NOT use in production, but can help us with our testing needs.],
+  [1 
+ 2 
+ 3 
+ with (expression) { 
+ ... 
+ }],
+  [The above syntax adds the expression result into the variable lookup chain. For example:],
+  [1 
+ 2 
+ 3 
+ 4 
+ 5 
+ 6 
+ 7 
+ 8 
+ 9 
+ let a, x, y; 
+ const r = 10 ; 
+ 
+ with ( Math ) { 
+ \/\\/ where is PI, cos, and sin defined? 
+ a = PI \* r \* r; 
+ x = r \* cos ( PI ); 
+ y = r \* sin ( PI \/ 2 ); 
+ }],
+  [In the example above, the PI , cos , and sin are properties of the Math object. By using with (Math) we are forcing the browser to look up these identifiers in the Math object (before going up to the window object).],
+  [Tip: the with (expression) syntax is hard to read and understand. A simple spread operator would be much more preferable way of coding the above example:],
+  [1 
+ 2 
+ 3 
+ 4 
+ 5 
+ 6 
+ let a, x, y; 
+ const r = 10 ; 
+ const { PI , cos, sin } = Math 
+ a = PI \* r \* r; 
+ x = r \* cos ( PI ); 
+ y = r \* sin ( PI \/ 2 );],
+  [The E2E test],
+  [The application's code accessing the location object is loaded by the resource. Let's wrap this code using a fake window object just so we can "sneak" in a fake "location" object of our creation.],
+  [cypress/e2e/solution.cy.js 1 
+ 2 
+ 3 
+ 4 
+ 5 
+ 6 
+ 7 
+ 8 
+ 9 
+ 10 
+ 11 
+ 12 
+ 13 
+ 14 
+ 15 
+ 16 
+ 17 
+ 18 
+ 19 
+ 20 
+ 21 
+ it ( 'sets the location HREF' , () =\> { 
+ cy. intercept ( 'GET' , 'app.js' , ( req ) =\> { 
+ req. continue ( ( res ) =\> { 
+ \/\\/ wrap app's code with a fake window object 
+ \/\\/ that has overwritten location object 
+ res. body = \` 
+ const fakeWindowObject = { 
+ location: { 
+ href: '', 
+ }, 
+ } 
+ with (fakeWindowObject) { 
+ \${res.body} 
+ } 
+ \` 
+ }) 
+ }). as ( 'appJs' ) 
+ cy. visit ( 'index.html' ) 
+ cy. wait ( '\@appJs' ) 
+ cy. contains ( 'h1' , 'Hello World' ) 
+ })],
+  [When the test runs, the application loads app.js and receives the following (modified) script],
+  [app.js 1 
+ 2 
+ 3 
+ 4 
+ 5 
+ 6 
+ 7 
+ 8 
+ 9 
+ 10 
+ 11 
+ const fakeWindowObject = { 
+ location : { 
+ href : '' , 
+ }, 
+ } 
+ with (fakeWindowObject) { 
+ setTimeout ( () =\> { 
+ console . log ( 'changing window location to acme.com' ) 
+ location. href = 'https:\/\/acme.com' 
+ }, 1000 ) 
+ }],
+  [The test stays on the same page, but we do see the application printing "changing window location to acme.com".],
+  [We need to verify the location.href property really changes to acme.com string. We can put the fake window object on the real window object. Then we can get its value using the cy.window command.],
+  [One last tip: the browser caches the app.js resource, thus we need to remove the caching headers in order to receive the full JavaScript source code:],
+  [1 
+ 2 
+ 3 
+ 4 
+ 5 
+ 6 
+ 7 
+ 8 
+ 9 
+ 10 
+ 11 
+ 12 
+ 13 
+ 14 
+ 15 
+ 16 
+ 17 
+ 18 
+ 19 
+ 20 
+ cy. intercept ( 'GET' , 'app.js' , ( req ) =\> { 
+ \/\\/ delete common cache headers 
+ \/\\/ so the browser gets the real app.js source code 
+ delete req. headers \[ 'if-none-match' \] 
+ delete req. headers \[ 'if-modified-since' \] 
+ req. continue ( ( res ) =\> { 
+ \/\\/ wrap app's code with a fake window object 
+ \/\\/ that has overwritten location object 
+ res. body = \` 
+ window.fakeWindowObject = { 
+ location: { 
+ href: '', 
+ }, 
+ } 
+ with (window.fakeWindowObject) { 
+ \${res.body} 
+ } 
+ \` 
+ }) 
+ }). as ( 'appJs' )],
+  [Proxy to the real location],
+  [We don't want to create a completely fake location object, since we want to be able to use the real properties and methods in Location.prototype . Instead of plain object, our fake location can proxy to the real thing:],
   [1],
   [2],
   [3],
@@ -566,74 +588,73 @@ accidentally created an uncanny valley and I need to back away from it until I h
   [48],
   [49],
   [50],
-  [51],
-  [52],
-  [53],
-  [54],
-  [55],
-  [56],
-  [57],
-  [58],
-  [59],
-  [60],
-  [61],
-  [62],
-  [\$ npx find-cypress-specs --names],
-  [cypress/e2e/app-spec.js (15 tests)],
-  [└─ TodoMVC - React],
-  [├─ adds 4 todos [\@smoke, \@add]],
-  [├─ When page is initially opened],
-  [│ └─ should focus on the todo input field],
-  [├─ No Todos],
-  [│ └─ should hide \#main and \#footer [\@misc]],
-  [├─ New Todo [\@add]],
-  [│ ├─ should allow me to add todo items],
-  [│ ├─ adds items],
-  [│ ├─ should clear text input field when an item is added],
-  [│ ├─ should append new items to the bottom of the list],
-  [│ ├─ should trim text input],
-  [│ └─ should show \#main and \#footer when items added],
-  [├─ Item],
-  [│ ├─ should allow me to mark items as complete],
-  [│ ├─ should allow me to un-mark items as complete],
-  [│ └─ should allow me to edit an item],
-  [└─ Clear completed button],
-  [├─ should display the correct text],
-  [├─ should remove completed items when clicked [\@smoke]],
-  [└─ should be hidden when there are no items that are completed],
-  [cypress/e2e/completed-spec.js (3 tests)],
-  [└─ TodoMVC - React],
-  [└─ Mark all as completed [\@complete]],
-  [├─ should allow me to mark all items as completed],
-  [├─ should allow me to clear the complete state of all items],
-  [└─ complete all checkbox should update state when items are completed / cleared],
-  [cypress/e2e/counter-spec.js (2 tests)],
-  [└─ TodoMVC - React],
-  [└─ Counter [\@count]],
-  [├─ should not exist without items],
-  [└─ should display the current number of todo items],
-  [cypress/e2e/editing-spec.js (5 tests)],
-  [└─ TodoMVC - React],
-  [└─ Editing [\@edit]],
-  [├─ should hide other controls when editing],
-  [├─ should save edits on blur [\@smoke]],
-  [├─ should trim entered text],
-  [├─ should remove the item if an empty text string was entered],
-  [└─ should cancel edits on escape],
-  [cypress/e2e/persistence-spec.js (1 test )],
-  [└─ TodoMVC - React],
-  [└─ Persistence [\@persistence]],
-  [└─ should persist its data [\@smoke]],
-  [cypress/e2e/routing-spec.js (5 tests)],
-  [└─ TodoMVC - React],
-  [└─ Routing [\@routing]],
-  [├─ should allow me to display active items],
-  [├─ should respect the back button [\@smoke]],
-  [├─ should allow me to display completed items],
-  [├─ should allow me to display all items \@smoke],
-  [└─ should highlight the currently applied filter],
-  [found 6 specs (31 tests)],
-  [We have a few feature testing tags. Let's count the number of tests by tag],
+  [it ( 'sets the location HREF' , () =\> {],
+  [cy. intercept ( 'GET' , 'app.js' , ( req ) =\> {],
+  [\/\\/ delete common cache headers],
+  [\/\\/ so the browser gets the real app.js source code],
+  [delete req. headers \[ 'if-none-match' \]],
+  [delete req. headers \[ 'if-modified-since' \]],
+  [req. continue ( ( res ) =\> {],
+  [\/\\/ wrap app's code with a fake window object],
+  [\/\\/ that has overwritten location object],
+  [res. body = \`],
+  [let href = ''],
+  [const fakeLocation = new Proxy(location, {],
+  [set(target, prop, value) {],
+  [if (prop === 'href') {],
+  [href = value],
+  [\/\\/ do not allow the app to navigate away],
+  [return false],
+  [}],
+  [target\[prop\] = value],
+  [return true],
+  [},],
+  [get(target, prop) {],
+  [if (prop === 'href') {],
+  [return href],
+  [}],
+  [return target\[prop\]],
+  [},],
+  [})],
+  [window.fakeWindowObject = {],
+  [location: fakeLocation,],
+  [}],
+  [with (window.fakeWindowObject) {],
+  [\${res.body}],
+  [}],
+  [\`],
+  [})],
+  [}). as ( 'appJs' )],
+  [cy. visit ( 'index.html' )],
+  [cy. wait ( '\@appJs' )],
+  [cy. contains ( 'h1' , 'Hello World' )],
+  [\/\\/ confirm but do not allow the application],
+  [\/\\/ to navigate away to the new URL],
+  [\/\\/ Tip: app sets it using "location.href = ..." command],
+  [cy. window ()],
+  [. should ( 'have.property' , 'fakeWindowObject' )],
+  [\/\\/ the query retries until the app sets the location href],
+  [\/\\/ and the test passes],
+  [. its ( 'location' )],
+  [. should ( 'have.property' , 'href' , 'https:\/\/acme.com' )],
+  [})],
+  [To see the proxy in action, I will modify the console.log message the application prints:],
+  [app.js 1 
+ 2 
+ 3 
+ 4 
+ 5 
+ 6 
+ 7 
+ setTimeout ( () =\> { 
+ console . log ( 
+ 'changing window location from %s to acme.com' , 
+ location. hostname , 
+ ) 
+ location. href = 'https:\/\/acme.com' 
+ }, 1000 )],
+  [The test runs and we see the real host name, yet href = ... assignment is trapped.],
+  [Tip: if you do not know the URL value, simply request it to make sure it is valid using cy.request command],
   [1 
  2 
  3 
@@ -641,26 +662,256 @@ accidentally created an uncanny valley and I need to back away from it until I h
  5 
  6 
  7 
- 8 
- 9 
- 10 
- 11 
- 12 
- \$ npx find-cypress-specs --tags 
- 
- Tag Tests 
- ------------ ----- 
- \@add 7 
- \@complete 3 
- \@count 2 
- \@edit 5 
- \@misc 1 
- \@persistence 1 
- \@routing 5 
- \@smoke 5],
-  [The \@smoke tag cuts across all features, following the approach described in How To Tag And Run End-to-End Tests .],
-  [A problem],
-  [Let's say our application has a bug, somehow we introduced a problem into the "toggle all" function logic. No one caught the problem during the code review, and no one bothered to run the end-to-end tests (🙀)],
+ cy. window () 
+ . should ( 'have.property' , 'fakeWindowObject' ) 
+ . its ( 'location' ) 
+ . should ( 'have.property' , 'href' ) 
+ . and ( 'not.be.empty' ) 
+ \/\\/ yields the URL 
+ . then (cy. request )],
+  [If the URL is invalid, or the server responds with an error, cy.request automatically fails.],
+  [Nice.],
+),
+  insert-map: (:),
+  word-count: 1393,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+}
+
+{
+  #standard-article(
+  title: [2017: another year in review],
+  author: [Monica Dinculescu],
+  source-name: [Monica Dinculescu],
+  images: (),
+  paragraphs: (
+  [You can tell I hate writing year in reviews because this one is really, really
+late. I tend to hate bragging, and I definitely hate introspective and, in
+particular, I always think I am underperforming (and that’s fine). However, that’s usually not true,
+and writing a year in review forces me to see the awesome things I did, so even if I did end up
+underperforming, at least I can learn from that. That’s the whole point of post-mortems,
+ right?],
+  [As usual, here’s life as GitHub saw it. Red text is projects I’ve shipped, black text is
+conferences I’ve spoken at. Technically I didn’t speak at Blinkon, but I spoke
+ to people at it so hey, counting it.],
+  [The reason why this post mortem is important to me is that before writing it,
+I literally thought this year was bad and I just “did fewer things”. But that’s
+not actually true!],
+  [I wrote less code than in 2016 (2713 vs 3153 contributions), but that’s totally
+irrelevant? GitHub contributions are a fake idea, and I’m the first one
+to tell you this, so I don’t know why I get worked up about them every year. I contributed
+to weird branches (which don’t get counted), and did a lot of weird explorations that
+obviously never got merged. I planned things. I wrote design documents. I reviewed
+design documents. I formed strong opinions. I learnt Redux. Eat it, contributions graph.],
+  [I gave fewer talks than in 2016 (7 vs 8), but I enjoyed conferences more. I went
+to a conference where I only hung out with badass women. I went to Railscamp, where
+I had no wifi and canoed and wore a headlamp like a giant dork. I MC-ed Chrome Dev Summit
+with Mariko, which was scary, and intimidating and incredibly fun.],
+  [I built more side projects (10 vs 9). One of them got
+featured in The Verge !],
+  [I worked fewer weekends (16 vs 28 days. Goal: 0). And I don’t mean on work-work ,
+I mean, at all . On the weekends I play Stardew Valley, or make pottery,
+or knit, or watch an entire season of Riverdale because I can . Maybe this means
+I’ll work on fewer side-things, and maybe this will hurt my career, but it will keep me happier, not burnt out, and less likely to murder my partner. And that’s p important.],
+  [I joined the Unicode Emoji committee. YES. Really. It took me a year of emails,
+and even now I’m pretty sure I’m the least useful member out of the whole bunch,
+but that’s ok, because I can get better!],
+  [I became broadly aware of a lot of technical things, but not necessarily
+ deeply aware of them. I am really confident I understand Web Components, emoji and web fonts
+ really well , but I still don’t really know how any of our polyfills work, or
+how to fix a sizeable bug in Polymer, or what to do
+about async/await and stuff. In the last couple of months of the year
+I started learning more about http/2 push and link rel=preload , but I feel
+it’s a broad sort of understanding. I don’t know yet what kind of person I want to
+be: “I understand something really well in all its intimate aspects which makes me an expert”, or
+“I understand many things well enough to have opinions and advice, but not well
+enough to be an expert in any of them”. This is the thing I want to figure out this year.],
+  [I learnt how to skateboard. I saw one of my favourite bands in concert.
+I ordered a coffee entirely in Japanese. I learnt how to
+make mugs and bowls and bottles, with my hands. I made new friends, and I didn’t piss off any
+of my current ones (that I know of). I nuzzled dogs, and cats, and an otter.
+I still didn’t spoil Star Wars. I turned 32.],
+  [I don’t do resolutions because they don’t really work for me, but I heard a
+good one from a coworker: do 12 new things next year.],
+  [So, I will.],
+  [id="️"\>❤️],
+  [\/\\/ also available: 2016 and 2015 years in review,
+that were actually on time.],
+),
+  insert-map: (:),
+  word-count: 700,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+}
+
+{
+  #standard-article(
+  title: [Cypress Dependencies Through A Docker Image],
+  author: [Gleb Bahmutov],
+  source-name: [Gleb Bahmutov],
+  images: (),
+  paragraphs: (
+  [If you are testing a website, the DEV dependencies do not change very often. You might bump Cypress version once in a while, add or upgrade a Cypress plugin , but in general the Node dependencies are changed less frequently than the spec files. Thus running npm ci on every test job is bound to be repetitive work that slows down your testing pipelines.],
+  [Of course, each CI allows you to cache dependencies between the jobs - but why do you need to even think about it? You want to cache all dependencies the very first time npm ci runs for the given package.json or package-lock.json file, not the first time each the workflow runs! Most CIs let you control the container image used for running tests; I assume you use one of Cypress Docker images or one of Cypress Docker images with browsers installed . So what if we could create our own Docker image based on Cypress (or any appropriate Docker base image you might want) and run npm ci in that image, and then use that Docker image to simply run our current tests?],
+  [I had the idea of caching separately PROD and DEV images inside Docker containers a loooong time ago, see the bahmutov/double-docker repo. In this blog post, I will show a simple approach that works for repositories with tests only, the situation described in the blog post Separate Application And Tests Repos GitHub Actions Setup . We will use GitHub Actions and the public Docker registry.],
+  [In the nutshell:],
+  [whenever the user changes package.json or Dockerfile , we build a new Docker image with the node\_modules and Cypress binary folders (but no other source code)],
+  [we push the built Docker image to the registry],
+  [every CI run simply pulls that Docker image and checks out the tests into the container],
+  [the tests run immediately after the checkout step, since there is nothing to install],
+  [Let's see the code],
+  [Build and push],
+  [Run on GitHub Actions],
+  [GitHub Container Registry],
+  [🎁 I have the working example in the public repo bahmutov/cypress-tests-image .],
+  [First, let's look a the Dockerfile],
+  [Dockerfile 1],
+  [2],
+  [3],
+  [4],
+  [5],
+  [6],
+  [7],
+  [8],
+  [9],
+  [10],
+  [11],
+  [12],
+  [13],
+  [14],
+  [15],
+  [16],
+  [17],
+  [18],
+  [19],
+  [20],
+  [21],
+  [22],
+  [23],
+  [24],
+  [25],
+  [26],
+  [27],
+  [28],
+  [29],
+  [30],
+  [31],
+  [\# pick the image to build from],
+  [\# either the base or the browsers image],
+  [\# https:\/\/hub.docker.com/r/cypress/base/tags],
+  [FROM cypress/base:24.12.0],
+  [\# https:\/\/hub.docker.com/r/cypress/browsers/tags],
+  [\# FROM cypress/browsers:node-24.12.0-chrome-143.0.7499.169-1-ff-146.0.1-edge-143.0.3650.96-1],
+  [\# diagnostics],
+  [RUN echo "node -v"],
+  [RUN echo "npm -v"],
+  [\# copy ONLY the package.json and package-lock.json files],
+  [WORKDIR /e2e],
+  [COPY package.json package-lock.json ./],
+  [\# install npm dependencies],
+  [\# and put the Cypress binary in the local subfolder],
+  [\# https:\/\/on.cypress.io/installation],
+  [ENV CYPRESS\_CACHE\_FOLDER=/e2e/cypress\_cache],
+  [RUN npm ci],
+  [\# verify Cypress installation],
+  [RUN npx cypress verify],
+  [\# the Docker image should have all Cypress OS dependencies installed],
+  [\# plus inside the "/e2e" folder],
+  [\# we will have],
+  [\# - node\_modules with Cypress installed],
+  [\# - cypress\_cache with the Cypress binary],
+  [Tip: you can use yarn.lock or any other lock file with this approach.],
+  [I am naming my image bahmutov/cy: , you can find them at the Docker hub . Note that it is important to build the image on the same OS architecture as the CI machines, in my case it will be ubuntu-latest .],
+  [The first step in the workflow computes the combined checksum of package.json and Dockerfile files. It also checks if the Docker image tagged with this checksum exists already using action tyriis/docker-image-tag-exists .],
+  [.github/workflows/ci.yml 1],
+  [2],
+  [3],
+  [4],
+  [5],
+  [6],
+  [7],
+  [8],
+  [9],
+  [10],
+  [11],
+  [12],
+  [13],
+  [14],
+  [15],
+  [16],
+  [17],
+  [18],
+  [19],
+  [20],
+  [21],
+  [22],
+  [23],
+  [24],
+  [25],
+  [26],
+  [27],
+  [28],
+  [29],
+  [30],
+  [31],
+  [32],
+  [33],
+  [34],
+  [35],
+  [36],
+  [37],
+  [38],
+  [39],
+  [40],
+  [41],
+  [42],
+  [43],
+  [44],
+  [name: CI],
+  [on: push],
+  [jobs:],
+  [\# computes the hash of package.json and and stores it in the output],
+  [\# also checks if the Docker image with this tag already exists],
+  [\# outputs:],
+  [\# hash: the package.json hash],
+  [\# tag: whether the Docker image with this tag already exists, "found" or "not found"],
+  [package-hash:],
+  [runs-on: ubuntu-latest],
+  [outputs:],
+  [hash: \${{ steps.hash.outputs.checksum }}],
+  [tag: \${{ steps.tag-exists.outputs.tag }}],
+  [steps:],
+  [- name: Checkout 🛎️],
+  [\# https:\/\/github.com/actions/checkout],
+  [\# only needed to get package.json and Dockerfile to compute the hash],
+  [uses: actions/checkout\@v6],
+  [with:],
+  [sparse-checkout: |],
+  [package.json],
+  [- name: Package.json + Dockerfile checksum],
+  [id: hash],
+  [run: echo "checksum=\$ {{ hashFiles('package.json', 'Dockerfile') }} " \>\> \$GITHUB\_OUTPUT],
+  [\# https:\/\/github.com/tyriis/docker-image-tag-exists],
+  [- name: Check if Docker image tag exists],
+  [id: tag-exists],
+  [uses: tyriis/docker-image-tag-exists\@v2.1.0],
+  [with:],
+  [registry: docker.io],
+  [repository: bahmutov/cy],
+  [\# The container image tag],
+  [tag: \${{ steps.hash.outputs.checksum }}],
+  [- name: Report the check results],
+  [\# print the tag result into Github Actions summary],
+  [run: |],
+  [echo "\#\# Docker image check" \>\> \$GITHUB\_STEP\_SUMMARY],
+  [echo "Package.json + Dockerfile hash: \${{ steps.hash.outputs.checksum }}" \>\> \$GITHUB\_STEP\_SUMMARY],
+  [echo "Docker image bahmutov/cy:\${{ steps.hash.outputs.checksum }} \*\*\${{ steps.tag-exists.outputs.tag }}\*\*" \>\> \$GITHUB\_STEP\_SUMMARY],
+  [Build and push],
+  [Great, let's build the Docker image if one is missing. We could have a job with every internal step using a condition:],
   [1 
  2 
  3 
@@ -674,24 +925,108 @@ accidentally created an uncanny valley and I need to back away from it until I h
  11 
  12 
  13 
- app. TodoModel.prototype.toggleAll = function (checked) { 
- \/\/ Note: it's usually better to use immutable data structures since they're 
- \/\/ easier to reason about and React works very well with them. That's why 
- \/\/ we use map() and filter() everywhere instead of mutating the array or 
- \/\/ todo items themselves. 
- this.todos = this.todos.map(function (todo) { 
- - return Utils.extend({}, todo, { completed: checked }) 
- + \/\/ introduce an error on purpose by negating the checked value 
- + return Utils.extend({}, todo, { completed: !checked }) 
- }) 
+ 14 
+ 15 
+ 16 
+ build-docker-image: 
+ \# builds the Docker image and pushes it to the Docker hub 
+ \# but only if it does not exist yet 
+ runs-on: ubuntu-latest 
+ needs: package-hash 
+ steps: 
+ - name: Checkout 🛎️ 
+ if: \${{ needs.package-hash.outputs.tag == 'not found' }} 
+ \# https:\/\/github.com/actions/checkout 
+ uses: actions/checkout\@v6 
  
- this.inform() 
- }],
-  [Hmm, we have deployed the app with a bug, and soon a user opens a GitHub issue. Knowing the typical user, the level of detail in the GH issue is minimal.],
-  [Great. The issue has the title "toggle does not work", an empty body text, and has the label "bug".],
-  [The bug workflow],
-  [Opening or re-opening an issue labeled "bug" triggers the following GitHub Actions workflow],
-  [.github/workflows/bug.yml 1],
+ - name: Log in to Docker Hub 
+ if: \${{ needs.package-hash.outputs.tag == 'not found' }} 
+ \# https:\/\/github.com/docker/login-action 
+ uses: docker/login-action\@f4ef78c080cd8ba55a85445d5b36e214a81df20a 
+ ...],
+  [But I think there is a slightly nicer way. We can control the entire job by the needs.package-hash.outputs.tag value and skip it, if the image exists:],
+  [.github/workflows/ci.yml 1],
+  [2],
+  [3],
+  [4],
+  [5],
+  [6],
+  [7],
+  [8],
+  [9],
+  [10],
+  [11],
+  [12],
+  [13],
+  [14],
+  [15],
+  [16],
+  [17],
+  [18],
+  [19],
+  [20],
+  [21],
+  [22],
+  [23],
+  [24],
+  [25],
+  [26],
+  [27],
+  [28],
+  [29],
+  [30],
+  [31],
+  [32],
+  [33],
+  [34],
+  [35],
+  [36],
+  [37],
+  [38],
+  [39],
+  [40],
+  [41],
+  [42],
+  [43],
+  [name: CI],
+  [on: push],
+  [jobs:],
+  [\# computes the hash of package.json and and stores it in the output],
+  [\# also checks if the Docker image with this tag already exists],
+  [\# outputs:],
+  [\# hash: the package.json hash],
+  [\# tag: whether the Docker image with this tag already exists, "found" or "not found"],
+  [package-hash:],
+  [runs-on: ubuntu-latest],
+  [outputs:],
+  [hash: \${{ steps.hash.outputs.checksum }}],
+  [tag: \${{ steps.tag-exists.outputs.tag }}],
+  [steps:],
+  [...],
+  [build-docker-image:],
+  [\# builds the Docker image and pushes it to the Docker hub],
+  [\# but only if it does not exist yet],
+  [runs-on: ubuntu-latest],
+  [needs: package-hash],
+  [if: \${{ needs.package-hash.outputs.tag == 'not found' }}],
+  [steps:],
+  [- name: Checkout 🛎️],
+  [\# https:\/\/github.com/actions/checkout],
+  [uses: actions/checkout\@v6],
+  [- name: Log in to Docker Hub],
+  [\# https:\/\/github.com/docker/login-action],
+  [uses: docker/login-action\@f4ef78c080cd8ba55a85445d5b36e214a81df20a],
+  [with:],
+  [username: \${{ secrets. DOCKER\_USERNAME }}],
+  [password: \${{ secrets. DOCKER\_PASSWORD }}],
+  [\# we could also use the action],
+  [\# https:\/\/github.com/docker/build-push-action],
+  [- name: Build docker image],
+  [run: docker build -t bahmutov/cy:\${{ needs.package-hash.outputs.hash }} .],
+  [- name: Push Docker images],
+  [run: docker push bahmutov/cy:\${{ needs.package-hash.outputs.hash }}],
+  [Now that we have Docker image build (if needed), let's use it. We can define another job that simply uses the bahmutov/cy: container, but it cannot depend on the build-docker-image job - if the job is skipped on GitHub Actions, any job that depends on it will be skipped too. Luckily, there is an easy fix: simply have yet another job that will simply "ping" build-docker-image job status. Once the build-docker-image job finishes or is skipped, our "ping" job resolves. The "ping" is done using lewagon/wait-on-check-action 3rd-party action. Here is how the last part of the workflow looks:],
+  [.github/workflows/ci.yml 1],
   [2],
   [3],
   [4],
@@ -748,136 +1083,149 @@ accidentally created an uncanny valley and I need to back away from it until I h
   [55],
   [56],
   [57],
-  [58],
-  [59],
-  [60],
-  [61],
-  [62],
-  [63],
-  [64],
-  [65],
-  [66],
-  [67],
-  [68],
-  [69],
-  [70],
-  [71],
-  [72],
-  [73],
-  [74],
-  [75],
-  [76],
-  [77],
-  [78],
-  [79],
-  [80],
-  [81],
-  [82],
-  [83],
-  [84],
-  [85],
-  [86],
-  [87],
-  [88],
-  [89],
-  [90],
-  [\# this workflow runs when a user opens a new issue labeled "bug"],
-  [name: bug],
-  [on:],
-  [issues:],
-  [types: [ opened , reopened ]],
+  [name: CI],
+  [on: push],
   [jobs:],
-  [pick-test-tag:],
-  [if: contains(github.event.issue.labels.\*.name, 'bug' )],
-  [runs-on: ubuntu-24.04],
-  [outputs:],
-  [testTag: \${{ steps.find.outputs.testTag }}],
-  [inputTokens: \${{ steps.find.outputs.inputTokens }}],
-  [outputTokens: \${{ steps.find.outputs.outputTokens }}],
-  [totalTokens: \${{ steps.find.outputs.totalTokens }}],
-  [model: \${{ steps.find.outputs.model }}],
+  [\# computes the hash of package.json and and stores it in the output],
+  [\# also checks if the Docker image with this tag already exists],
+  [\# outputs:],
+  [\# hash: the package.json hash],
+  [\# tag: whether the Docker image with this tag already exists, "found" or "not found"],
+  [package-hash:],
+  [...],
+  [build-docker-image:],
+  [\# builds the Docker image and pushes it to the Docker hub],
+  [\# but only if it does not exist yet],
+  [runs-on: ubuntu-latest],
+  [needs: package-hash],
+  [if: \${{ needs.package-hash.outputs.tag == 'not found' }}],
+  [...],
+  [wait-for-build:],
+  [\# a trick to allow other jobs to run, even if the "build" job is skipped],
+  [\# runs in parallel with the "build" job and keeps checking if it is finished],
+  [\# or is skipped],
+  [runs-on: ubuntu-latest],
+  [needs: package-hash],
   [steps:],
-  [- name: Pick the test tag],
-  [id: find],
-  [uses: bahmutov/run-tests-on-a-bug/.github/actions/pick-test-tag\@main],
+  [- name: Wait for the Docker image build \/ skip],
+  [\# https:\/\/github.com/lewagon/wait-on-check-action],
+  [uses: lewagon/wait-on-check-action\@v1.4.1],
   [with:],
-  [title: \${{ github.event.issue.title }}],
-  [body: \${{ github.event.issue.body }}],
-  [env:],
-  [OPEN\_AI\_API\_KEY: \${{ secrets. OPEN\_AI\_API\_KEY }}],
-  [run-picked-tests:],
-  [if: contains(github.event.issue.labels.\*.name, 'bug' )],
-  [needs: pick-test-tag],
-  [runs-on: ubuntu-24.04],
-  [permissions:],
-  [\# this job needs to check out the source code],
-  [contents: read],
-  [\# give this job permission to comment on the issue],
-  [issues: write],
+  [ref: \${{ github.ref }}],
+  [check-name: build-docker-image],
+  [repo-token: \${{ secrets. GITHUB\_TOKEN }}],
+  [\# seconds between checks],
+  [wait-interval: 10],
+  [test:],
+  [\# this job finishes after the Docker image is built (or exists already)],
+  [runs-on: ubuntu-latest],
+  [needs: \[ package-hash , wait-for-build \]],
+  [container: bahmutov/cy:\${{ needs.package-hash.outputs.hash }}],
   [steps:],
-  [- name: Print issue title and subject],
-  [run: |],
-  [echo "Issue title:"],
-  [echo "\${{ github.event.issue.title }}"],
-  [echo "Issue body:"],
-  [echo "\${{ github.event.issue.body }}"],
-  [echo "Picked test tag(s)"],
-  [echo "\${{ needs.pick-test-tag.outputs.testTag }}"],
-  [- name: Comment on the issue 📝],
-  [\# https:\/\/github.com/peter-evans/create-or-update-comment],
-  [uses: peter-evans/create-or-update-comment\@v4],
-  [id: comment],
-  [with:],
-  [issue-number: \${{ github.event.issue.number }}],
-  [token: \${{ secrets. GITHUB\_TOKEN }}],
-  [body: |],
-  [Thanks for reporting this issue! We will look into it as soon as we can.],
-  [In the meantime, we are running tests tagged with \`\${{ needs.pick-test-tag.outputs.testTag }}\` to see if anything is broken.],
-  [The GitHub Actions run url is here: \${{ github.server\_url }}/\${{ github.repository }}/actions/runs/\${{ github.run\_id }}.],
-  [- name: Checkout 🛎],
-  [uses: actions/checkout\@v5],
-  [- name: Run tagged tests 🧪],
-  [\# https:\/\/github.com/cypress-io/github-action],
-  [uses: cypress-io/github-action\@v6],
-  [with:],
-  [\# let's see which specs and tests we will run],
-  [build: npx find-cypress-specs --names --tagged \${{ needs.pick-test-tag.outputs.testTag }}],
-  [start: npm run start:ci],
-  [wait-on: 'http:\/\/localhost:8888'],
-  [env:],
-  [CYPRESS\_grepTags: \${{ needs.pick-test-tag.outputs.testTag }}],
-  [\# put test results into the comment],
-  [\# https:\/\/github.com/bahmutov/cypress-set-github-status],
-  [GITHUB\_TOKEN: \${{ secrets. GITHUB\_TOKEN }}],
-  [COMMENT\_ID: \${{ steps.comment.outputs.comment-id }}],
-  [\# after the test run completes store videos and any screenshots],
-  [\# https:\/\/github.com/actions/upload-artifact],
-  [- uses: actions/upload-artifact\@v4],
-  [if: failure()],
-  [with:],
-  [name: cypress-screenshots],
-  [path: cypress/screenshots],
-  [if-no-files-found: ignore],
-  [- uses: actions/upload-artifact\@v4],
-  [if: always()],
-  [with:],
-  [name: cypress-videos],
-  [path: cypress/videos],
-  [if-no-files-found: ignore],
-  [Currently, the example application repo is private. I am thinking how to better open source this work.],
-  [The workflow runs only for issues labeled a "bug":],
+  [- name: Checkout 🛎️],
+  [\# https:\/\/github.com/actions/checkout],
+  [uses: actions/checkout\@v6],
+  [\# THE IMPORTANT STEP: symlink the node modules],
+  [\# from the Docker image into the working folder],
+  [\# so we can skip the installation step],
+  [- name: Symlink node modules],
+  [run: ln -s /e2e/node\_modules ./node\_modules],
+  [- name: Print Cypress version],
+  [run: npx cypress --version],
+  [- name: Run Cypress tests],
+  [run: npx cypress run],
+  [The sym linking step is very important. After checkout finishes, the container has the following code],
   [1 
  2 
  3 
- on: 
- issues: 
- types: [ opened , reopened ]],
-  [A response comment appears quickly],
-  [There are two jobs in the workflow: "pick-test-tag" followed by "run-picked-tests"],
-  [Picking the testing tags],
-  [Based on the user's description of the bug (title and body), we want to know if any of the tested features related to the user's report are broken. Because there might be more than a single broken page or user action, we might have a seriously broken app! We want to test everything related to the bug report, and hopefully the test recordings and logs will help us quickly isolate the problem and fix the issue.],
-  [To pick the testing tag based on the user's text, I use the following AI script],
-  [.github/actions/pick-test-tag/pick.js 1],
+ 4 
+ 5 
+ 6 
+ 7 
+ 8 
+ /e2e\/ 
+ cypress\_cache\/ 
+ node\_modules\/ 
+ \/ \/ 
+ cypress\/ 
+ cypress.conf.js 
+ package.json 
+ package-lock.json],
+  [The current directory is set to \/ , so we need to make sure Node and Cypress can find the DEV dependencies. We do it by creating the symlink:],
+  [1 
+ 2 
+ 3 
+ 4 
+ 5 
+ 6 
+ 7 
+ 8 
+ 9 
+ /e2e\/ 
+ cypress\_cache\/ 
+ node\_modules\/ 
+ \/ \/ 
+ node\_modules -\> /e2e/node\_modules\/ 
+ cypress\/ 
+ cypress.conf.js 
+ package.json 
+ package-lock.json],
+  [We tell Cypress NPM module to find its binary in the /e2e/cypress\_cache\/ folder by using the environment variable baked into the Dockerfile: ENV CYPRESS\_CACHE\_FOLDER=/e2e/cypress\_cache .],
+  [Run on GitHub Actions],
+  [Let's confirm that it works. We can push the code for the very first time, or change package.json or Dockerfile],
+  [The build and push step took 1m14s, and the "ping" job that checked the job status every ten seconds finished in 1m22s. The test job simply pulled the Docker container and ran the specs, without any additional installation or resting a cache.],
+  [Pulling the container from the Docker image is by far the longest step in the job.],
+  [Now let's push another commit - maybe we changed the specs, but haven't touched the package.json or Dockerfile . The Docker image should have been found.],
+  [We start testing pretty quickly, since we don't have to install or build anything.],
+  [Many years ago I wrote cypress-io/github-action , and I am happy to report that it works well with the Docker image with baked DEV dependencies. Here is another workflow job that simply uses the action after sym linking:],
+  [1],
+  [2],
+  [3],
+  [4],
+  [5],
+  [6],
+  [7],
+  [8],
+  [9],
+  [10],
+  [11],
+  [12],
+  [13],
+  [14],
+  [15],
+  [16],
+  [17],
+  [18],
+  [19],
+  [20],
+  [21],
+  [22],
+  [23],
+  [test-action:],
+  [\# this job finishes after the Docker image is built (or exists already)],
+  [\# and verifies the Cypress GitHub action works],
+  [runs-on: ubuntu-latest],
+  [needs: \[ package-hash , wait-for-build \]],
+  [container: bahmutov/cy:\${{ needs.package-hash.outputs.hash }}],
+  [steps:],
+  [- name: Checkout 🛎️],
+  [\# https:\/\/github.com/actions/checkout],
+  [uses: actions/checkout\@v6],
+  [\# the important step: symlink the node modules],
+  [\# from the Docker image into the working folder],
+  [\# so we can skip the installation step],
+  [- name: Symlink node modules],
+  [run: ln -s /e2e/node\_modules ./node\_modules],
+  [\# confirm the Cypress action works],
+  [- name: Cypress action],
+  [\# https:\/\/github.com/cypress-io/github-action],
+  [uses: cypress-io/github-action\@v6],
+  [with:],
+  [install: false],
+  [Finally, the GitHub Actions summary tells us if the Docker image exists or not based on the checksum.],
+  [GitHub Container Registry],
+  [If you are using GH Container registry , you can use the same Docker image approach, here is the example workflow from bahmutov/cypress-tests-image repo.],
+  [.github/workflows/ci-ghcr.yml 1],
   [2],
   [3],
   [4],
@@ -989,103 +1337,137 @@ accidentally created an uncanny valley and I need to back away from it until I h
   [110],
   [111],
   [112],
-  [\/\/ \@ts-check],
-  [/\*\*],
-  [\* These are valid test tags used in our test cases,],
-  [\* plus their descriptions],
-  [\*/],
-  [const TEST\_TAGS = {],
-  ['\@smoke' : 'Smoke tests - a small set of tests to check the main features' ,],
-  ['\@misc' : 'Miscellaneous unimportant tests' ,],
-  ['\@add' : 'Tests related to adding new todo items to the list' ,],
-  ['\@edit' : 'Tests related to editing existing todo items in the list' ,],
-  ['\@routing' :],
-  ['Tests related to routing between different views and pages in the app' ,],
-  ['\@complete' : 'Tests related to completing tasks and checking/unchecking' ,],
-  ['\@count' : 'Tests confirming the count of items on the page is correct' ,],
-  ['\@persistence' :],
-  ['Tests related to data persistence: saving and loading items in storage' ,],
-  [}],
-  [async function ask ( instructions, input, core, client ) {],
-  [\/\/ https:\/\/platform.openai.com/docs/models],
-  [\/\/ usually gpt-4.1-mini or gpt-4.1],
-  [const model = 'gpt-4.1'],
-  [const response = await client. responses . create ({],
-  [model,],
-  [instructions,],
-  [input,],
-  [})],
-  [let pickedTestTag = response. output\_text . trim ()],
-  [console . error ( 'model %s response:\\n%s\\n' , model, pickedTestTag)],
-  [console . error ( 'response usage:' )],
-  [console . error (response. usage )],
-  [\/\/ parse test tags and confidence scores],
-  [\/\/ into the variable pickedTestTags],
-  [if (pickedTestTags. length === 0 ) {],
-  [\/\/ if the tag is not in the list, use \@sanity],
-  [console . warn ( \`Could not pick any known tags. Using \@sanity instead.\` )],
-  [pickedTestTags. push ({ tag : '\@smoke' , confidence : 1 })],
-  [}],
-  [\/\/ set actions outputs],
-  [const pickedTags = pickedTestTags. map ( ( tag ) =\> tag. tag ). join ( ',' )],
-  [core. setOutput ( 'testTag' , pickedTags)],
-  [core. setOutput ( 'inputTokens' , response. usage . input\_tokens )],
-  [core. setOutput ( 'outputTokens' , response. usage . output\_tokens )],
-  [core. setOutput ( 'totalTokens' , response. usage . total\_tokens )],
-  [core. setOutput ( 'model' , model)],
-  [console . error ( 'Returning test tag: %s' , pickedTags)],
-  [return pickedTags],
-  [}],
-  [const testTagsText = Object . entries ( TEST\_TAGS )],
-  [. map ( ( [tag, desc] ) =\> {],
-  [return \` \${tag} \${desc} \`],
-  [})],
-  [. join ( '\\n' )],
-  [const instructions =],
-  [\`Given the following end-to-end test tags:],
-  [\${testTagsText}],
-  [\` +],
-  [\`Determine which test tag is applicable to the following code changes.],
-  [Return the list of all applicable test tags, one test tag per line.],
-  [In addition to the test tag, print the confidence score for each tag in parentheses, from 0 to 1, where 1 is the highest confidence.],
-  [For example:],
-  [\@edit (0.9)],
-  [\@persistence (0.8)],
-  [\@add (0.3)],
-  [If no test tag is applicable, return "\@smoke (1.0)".],
-  [\`],
-  [const input = process. env [ 'USER\_TEXT' ]],
-  [if (!input) {],
-  [throw new Error (],
-  ['USER\_TEXT environment variable is required. This should be a string with the pull request title and body' ,],
-  [)],
-  [}],
-  [let openAiApiKey = process. env [ 'OPEN\_AI\_API\_KEY' ]],
-  [if (!openAiApiKey) {],
-  [throw new Error ( 'OPEN\_AI\_API\_KEY environment variable is required' )],
-  [}],
-  [\/\/ output logging into error stream],
-  [const separator = '====='],
-  [console . error ( 'Asking OpenAI using the instructions and input below...' )],
-  [console . error (input)],
-  [console . error (separator)],
-  [console . error (instructions)],
-  [console . error (separator)],
-  [/\*\*],
-  [\* This exported function can be called by the GitHub Action],
-  [\* or from the command line.],
-  [\*/],
-  [module . exports = async ({ core, OpenAI }) =\> {],
-  [const client = new OpenAI ({],
-  [apiKey : openAiApiKey,],
-  [})],
-  [const answer = await ask (instructions, input, core, client)],
-  [\/\/ log just the answer - a single test tag or several test tags separated by commas],
-  [console . log (answer)],
-  [return answer],
-  [}],
-  [This script can be called from the command line or from a reusable GitHub Action, here is my YML file],
-  [.github/actions/pick-test-tag/action.yml 1],
+  [113],
+  [114],
+  [115],
+  [116],
+  [117],
+  [118],
+  [119],
+  [120],
+  [121],
+  [122],
+  [123],
+  [\# this workflow uses Docker images via GitHub Container Registry (GHCR)],
+  [name: CI Using GHCR],
+  [on: push],
+  [env:],
+  [REGISTRY: ghcr.io],
+  [IMAGE\_NAME: \${{ github.repository }}],
+  [jobs:],
+  [\# computes the hash of package.json and and stores it in the output],
+  [\# also checks if the Docker image with this tag already exists],
+  [\# outputs:],
+  [\# hash: the package.json hash],
+  [\# tag: whether the Docker image with this tag already exists, "found" or "not found"],
+  [package-hash:],
+  [runs-on: ubuntu-latest],
+  [outputs:],
+  [hash: \${{ steps.hash.outputs.checksum }}],
+  [tag: \${{ steps.tag-exists.outputs.tag }}],
+  [steps:],
+  [- name: Checkout 🛎️],
+  [\# https:\/\/github.com/actions/checkout],
+  [\# only needed to get package.json and Dockerfile to compute the hash],
+  [uses: actions/checkout\@v6],
+  [with:],
+  [sparse-checkout: |],
+  [package.json],
+  [- name: Package.json + Dockerfile checksum],
+  [id: hash],
+  [run: echo "checksum=\$ {{ hashFiles('package.json', 'Dockerfile') }} " \>\> \$GITHUB\_OUTPUT],
+  [\# https:\/\/github.com/tyriis/docker-image-tag-exists],
+  [- name: Check if Docker image tag exists],
+  [id: tag-exists],
+  [uses: tyriis/docker-image-tag-exists\@v2.1.0],
+  [with:],
+  [registry: \${{ env. REGISTRY }}],
+  [repository: \${{ env. IMAGE\_NAME }}],
+  [\# The container image tag],
+  [tag: \${{ steps.hash.outputs.checksum }}],
+  [- name: Report the check results],
+  [\# print the tag result into Github Actions summary],
+  [run: |],
+  [echo "\#\# Docker image check" \>\> \$GITHUB\_STEP\_SUMMARY],
+  [echo "Registry: \${{ env. REGISTRY }}" \>\> \$GITHUB\_STEP\_SUMMARY],
+  [echo "Image: \${{ env. REGISTRY }}/\${{ env. IMAGE\_NAME }}" \>\> \$GITHUB\_STEP\_SUMMARY],
+  [echo "Package.json + Dockerfile hash: \${{ steps.hash.outputs.checksum }}" \>\> \$GITHUB\_STEP\_SUMMARY],
+  [echo "Docker image \${{ env. REGISTRY }}/\${{ env. IMAGE\_NAME }}:\${{ steps.hash.outputs.checksum }} \*\*\${{ steps.tag-exists.outputs.tag }}\*\*" \>\> \$GITHUB\_STEP\_SUMMARY],
+  [build-docker-image:],
+  [\# builds the Docker image and pushes it to the registry],
+  [\# but only if it does not exist yet],
+  [runs-on: ubuntu-latest],
+  [needs: package-hash],
+  [permissions:],
+  [\# don't forget to allow workflows to write to GHCR],
+  [\# https:\/\/github.com\/ \/ /settings/actions],
+  [packages: write],
+  [if: \${{ needs.package-hash.outputs.tag == 'not found' }}],
+  [steps:],
+  [- name: Checkout 🛎️],
+  [\# https:\/\/github.com/actions/checkout],
+  [uses: actions/checkout\@v6],
+  [- name: Log in to GitHub Container Registry],
+  [\# https:\/\/github.com/docker/login-action],
+  [uses: docker/login-action\@f4ef78c080cd8ba55a85445d5b36e214a81df20a],
+  [with:],
+  [registry: \${{ env. REGISTRY }}],
+  [username: \${{ github.actor }}],
+  [password: \${{ secrets. GITHUB\_TOKEN }}],
+  [\# we could also use the action],
+  [\# https:\/\/github.com/docker/build-push-action],
+  [- name: Build docker image],
+  [run: docker build -t \${{ env. REGISTRY }}/\${{ env. IMAGE\_NAME }}:\${{ needs.package-hash.outputs.hash }} .],
+  [- name: Push Docker image to the correct registry],
+  [run: docker push \${{ env. REGISTRY }}/\${{ env. IMAGE\_NAME }}:\${{ needs.package-hash.outputs.hash }}],
+  [wait-for-build:],
+  [\# a trick to allow other jobs to run, even if the "build" job is skipped],
+  [\# runs in parallel with the "build" job and keeps checking if it is finished],
+  [\# or is skipped],
+  [runs-on: ubuntu-latest],
+  [needs: package-hash],
+  [steps:],
+  [- name: Wait for the Docker image build \/ skip],
+  [\# https:\/\/github.com/lewagon/wait-on-check-action],
+  [uses: lewagon/wait-on-check-action\@v1.4.1],
+  [with:],
+  [ref: \${{ github.ref }}],
+  [check-name: build-docker-image],
+  [repo-token: \${{ secrets. GITHUB\_TOKEN }}],
+  [\# seconds between checks],
+  [wait-interval: 10],
+  [test:],
+  [\# this job finishes after the Docker image is built (or exists already)],
+  [runs-on: ubuntu-latest],
+  [needs: \[ package-hash , wait-for-build \]],
+  [\# seems we cannot use the env variables here],
+  [container: ghcr.io/\${{ github.repository }}:\${{ needs.package-hash.outputs.hash }}],
+  [steps:],
+  [- name: Checkout 🛎️],
+  [\# https:\/\/github.com/actions/checkout],
+  [uses: actions/checkout\@v6],
+  [\# THE IMPORTANT STEP: symlink the node modules],
+  [\# from the Docker image into the working folder],
+  [\# so we can skip the installation step],
+  [- name: Symlink node modules],
+  [run: ln -s /e2e/node\_modules ./node\_modules],
+  [- name: Print Cypress version],
+  [run: npx cypress --version],
+  [- name: Run Cypress tests],
+  [run: npx cypress run],
+  [I tried to make the workflow slightly more generic by moving the registry and the image into the env variables:],
+  [1 
+ 2 
+ 3 
+ env: 
+ REGISTRY: ghcr.io 
+ IMAGE\_NAME: \${{ github.repository }}],
+  [Nice.],
+  [Let's say you want to use private Docker images stored on Google Artifact Registry . You need to create it on GCP, then create a Service Account to access it from CI (this is simpler for me than using Workload identity), see the docs .],
+  [So here is my Artifact Registry called gleb-google-artifact-registry-test running inside us-east4-docker.pkg.dev configured to run under the project helloworld-330918],
+  [We will write and read Docker images using name cypress-tests-image . I will use a single Service Account for this with these permissions],
+  [For this account, grab the JSON key file and set it as GitHub Actions environment secret GCR\_KEY . Now let's build and use images with dependencies. Here is the workflow file from bahmutov/cypress-tests-image .],
+  [.github/workflows/ci-gcp.yml 1],
   [2],
   [3],
   [4],
@@ -1151,71 +1533,204 @@ accidentally created an uncanny valley and I need to back away from it until I h
   [64],
   [65],
   [66],
-  [name: Find the test tag],
-  [description: Suggests a web test tag based on the issue title and body],
-  [inputs:],
-  [title:],
-  [description: 'Issue title'],
-  [type: string],
-  [required: true],
-  [body:],
-  [description: 'Issue body'],
-  [type: string],
-  [required: false],
-  [default: ''],
-  [outputs:],
-  [testTag:],
-  [description: 'Recommended test tag'],
-  [value: \${{ steps.find.outputs.testTag }}],
-  [inputTokens:],
-  [description: 'Number of input tokens used'],
-  [value: \${{ steps.find.outputs.inputTokens }}],
-  [outputTokens:],
-  [description: 'Number of output tokens used'],
-  [value: \${{ steps.find.outputs.outputTokens }}],
-  [totalTokens:],
-  [description: 'Total number of tokens used'],
-  [value: \${{ steps.find.outputs.totalTokens }}],
-  [model:],
-  [description: 'Model used for the request'],
-  [value: \${{ steps.find.outputs.model }}],
-  [runs:],
-  [using: 'composite'],
-  [steps:],
-  [- uses: actions/setup-node\@v4],
-  [with:],
-  [node-version: 22],
-  [- name: Install \*\*limited\*\* dependencies 📦],
-  [\# only install the packages needed to run the script],
-  [run: npm install openai],
-  [shell: bash],
-  [- name: Determine the test tag 🏷️],
-  [id: find],
-  [\# note: this step produces multiple outputs],
-  [\# - testTag],
-  [\# - inputTokens],
-  [\# - outputTokens],
-  [\# - totalTokens],
-  [\# - model],
-  [\# https:\/\/github.com/actions/github-script],
-  [uses: actions/github-script\@v8],
-  [with:],
-  [script: |],
-  [const OpenAI = require('openai')],
-  [const pick = require('\${{ github.action\_path }}/pick.js');],
-  [await pick({ core, OpenAI });],
+  [67],
+  [68],
+  [69],
+  [70],
+  [71],
+  [72],
+  [73],
+  [74],
+  [75],
+  [76],
+  [77],
+  [78],
+  [79],
+  [80],
+  [81],
+  [82],
+  [83],
+  [84],
+  [85],
+  [86],
+  [87],
+  [88],
+  [89],
+  [90],
+  [91],
+  [92],
+  [93],
+  [94],
+  [95],
+  [96],
+  [97],
+  [98],
+  [99],
+  [100],
+  [101],
+  [102],
+  [103],
+  [104],
+  [105],
+  [106],
+  [107],
+  [108],
+  [109],
+  [110],
+  [111],
+  [112],
+  [113],
+  [114],
+  [115],
+  [116],
+  [117],
+  [118],
+  [119],
+  [120],
+  [121],
+  [122],
+  [123],
+  [124],
+  [125],
+  [126],
+  [127],
+  [128],
+  [129],
+  [130],
+  [131],
+  [132],
+  [133],
+  [134],
+  [135],
+  [136],
+  [137],
+  [138],
+  [139],
+  [140],
+  [\# this workflow uses Docker images via Google Artifacts Registry (GCR)],
+  [\# the registry is private, so we will use a Service Account to log in],
+  [name: CI Using Google Artifacts Registry],
+  [on: push],
   [env:],
-  [\# hopefully the text does not have double quotes],
-  [USER\_TEXT: "\$ {{ inputs.title }} \\n\\n\$ {{ inputs.body }} "],
-  [- name: Print the determined tag 🏷️],
-  [shell: bash],
+  [\# gcr.io \/ Artifacts Registry],
+  [REGISTRY: us-east4-docker.pkg.dev],
+  [GCP\_PROJECT: helloworld-330918],
+  [\# Artifacts Registry repository name],
+  [REPOSITORY: gleb-google-artifact-registry-test],
+  [IMAGE\_NAME: cypress-tests-image],
+  [jobs:],
+  [\# computes the hash of package.json and and stores it in the output],
+  [\# also checks if the Docker image with this tag already exists],
+  [\# outputs:],
+  [\# hash: the package.json hash],
+  [\# tag: whether the Docker image with this tag already exists, "found" or "not found"],
+  [package-hash:],
+  [runs-on: ubuntu-latest],
+  [outputs:],
+  [hash: \${{ steps.hash.outputs.checksum }}],
+  [tag: \${{ steps.tag-exists.outputs.tag }}],
+  [steps:],
+  [- name: Checkout 🛎️],
+  [\# https:\/\/github.com/actions/checkout],
+  [\# only needed to get package.json and Dockerfile to compute the hash],
+  [uses: actions/checkout\@v6],
+  [with:],
+  [sparse-checkout: |],
+  [package.json],
+  [- name: Package.json + Dockerfile checksum],
+  [id: hash],
+  [run: echo "checksum=\$ {{ hashFiles('package.json', 'Dockerfile') }} " \>\> \$GITHUB\_OUTPUT],
+  [- name: Log in to Google Artifacts Registry],
+  [\# https:\/\/github.com/docker/login-action],
+  [uses: docker/login-action\@f4ef78c080cd8ba55a85445d5b36e214a81df20a],
+  [with:],
+  [registry: \${{ env. REGISTRY }}],
+  [username: \_json\_key],
+  [password: \${{ secrets. GCR\_KEY }}],
+  [\# https:\/\/github.com/tyriis/docker-image-tag-exists],
+  [- name: Check if Docker image tag exists],
+  [id: tag-exists],
+  [uses: tyriis/docker-image-tag-exists\@v2.1.0],
+  [with:],
+  [registry: \${{ env. REGISTRY }}],
+  [repository: \${{ env. GCP\_PROJECT }}/\${{ env. REPOSITORY }}/\${{ env. IMAGE\_NAME }}],
+  [\# The container image tag],
+  [tag: \${{ steps.hash.outputs.checksum }}],
+  [- name: Report the check results],
+  [\# print the tag result into Github Actions summary],
   [run: |],
-  [echo "The recommended test tag is: \$ {{ steps.find.outputs.testTag }} " \>\> \$GITHUB\_STEP\_SUMMARY],
-  [Great, so what does it find?],
-  [Based on the user's description of the problem "toggle does not work", the LLM picked the testing tag \@complete . Its description "Tests related to completing tasks and checking/unchecking" was the best match to the user text. Personally, I found LLMs to be hit or miss for creating new code, but pretty accurate for picking one of the limited number of variants. After all, the second "L" in LLM stands for "language", it better do such semantic language matches well!],
-  [I even believe that small local LLMs can solve this "pick the closes text" problem, but don't have any proof.],
-  [Running the picked tests],
-  [Once we picked just one testing tag \@complete with 100% confidence, we execute it using the Cypress GitHub Action that I wrote back in the day. Our project uses my plugin cypress-set-github-status to post the individual spec results back into the original comment:],
+  [echo "\#\# Docker image check" \>\> \$GITHUB\_STEP\_SUMMARY],
+  [echo "Registry: \${{ env. REGISTRY }}" \>\> \$GITHUB\_STEP\_SUMMARY],
+  [echo "Image: \${{ env. REGISTRY }}/\${{ env. GCP\_PROJECT }}/\${{ env. REPOSITORY }}/\${{ env. IMAGE\_NAME }}" \>\> \$GITHUB\_STEP\_SUMMARY],
+  [echo "Package.json + Dockerfile hash: \${{ steps.hash.outputs.checksum }}" \>\> \$GITHUB\_STEP\_SUMMARY],
+  [echo "Docker image \${{ env. REGISTRY }}/\${{ env. IMAGE\_NAME }}:\${{ steps.hash.outputs.checksum }} \*\*\${{ steps.tag-exists.outputs.tag }}\*\*" \>\> \$GITHUB\_STEP\_SUMMARY],
+  [build-docker-image:],
+  [\# builds the Docker image and pushes it to the registry],
+  [\# but only if it does not exist yet],
+  [runs-on: ubuntu-latest],
+  [needs: package-hash],
+  [permissions:],
+  [\# don't forget to allow workflows to write to GHCR],
+  [\# https:\/\/github.com\/ \/ /settings/actions],
+  [packages: write],
+  [if: \${{ needs.package-hash.outputs.tag == 'not found' }}],
+  [steps:],
+  [- name: Checkout 🛎️],
+  [\# https:\/\/github.com/actions/checkout],
+  [uses: actions/checkout\@v6],
+  [- name: Log in to Google Artifacts Registry],
+  [\# https:\/\/github.com/docker/login-action],
+  [uses: docker/login-action\@f4ef78c080cd8ba55a85445d5b36e214a81df20a],
+  [with:],
+  [registry: \${{ env. REGISTRY }}],
+  [username: \_json\_key],
+  [password: \${{ secrets. GCR\_KEY }}],
+  [\# we could also use the action],
+  [\# https:\/\/github.com/docker/build-push-action],
+  [- name: Build docker image],
+  [run: docker build -t \${{ env. REGISTRY }}/\${{ env. GCP\_PROJECT }}/\${{ env. REPOSITORY }}/\${{ env. IMAGE\_NAME }}:\${{ needs.package-hash.outputs.hash }} .],
+  [- name: Push Docker image to the correct registry],
+  [run: docker push \${{ env. REGISTRY }}/\${{ env. GCP\_PROJECT }}/\${{ env. REPOSITORY }}/\${{ env. IMAGE\_NAME }}:\${{ needs.package-hash.outputs.hash }}],
+  [wait-for-build:],
+  [\# a trick to allow other jobs to run, even if the "build" job is skipped],
+  [\# runs in parallel with the "build" job and keeps checking if it is finished],
+  [\# or is skipped],
+  [runs-on: ubuntu-latest],
+  [needs: package-hash],
+  [steps:],
+  [- name: Wait for the Docker image build \/ skip],
+  [\# https:\/\/github.com/lewagon/wait-on-check-action],
+  [uses: lewagon/wait-on-check-action\@v1.4.1],
+  [with:],
+  [ref: \${{ github.ref }}],
+  [check-name: build-docker-image],
+  [repo-token: \${{ secrets. GITHUB\_TOKEN }}],
+  [\# seconds between checks],
+  [wait-interval: 10],
+  [test:],
+  [\# this job finishes after the Docker image is built (or exists already)],
+  [runs-on: ubuntu-latest],
+  [needs: \[ package-hash , wait-for-build \]],
+  [\# seems we cannot use the env variables here],
+  [container:],
+  [image: us-east4-docker.pkg.dev/helloworld-330918/gleb-google-artifact-registry-test/cypress-tests-image:\${{ needs.package-hash.outputs.hash }}],
+  [credentials:],
+  [username: \_json\_key],
+  [password: \${{ secrets. GCR\_KEY }}],
+  [steps:],
+  [- name: Checkout 🛎️],
+  [\# https:\/\/github.com/actions/checkout],
+  [uses: actions/checkout\@v6],
+  [\# THE IMPORTANT STEP: symlink the node modules],
+  [\# from the Docker image into the working folder],
+  [\# so we can skip the installation step],
+  [- name: Symlink node modules],
+  [run: ln -s /e2e/node\_modules ./node\_modules],
+  [- name: Print Cypress version],
+  [run: npx cypress --version],
+  [- name: Run Cypress tests],
+  [run: npx cypress run],
+  [Weird GitHub Actions limitation: one cannot use env keys inside the image: ... string, thus we have to duplicate the full Docker string],
   [1 
  2 
  3 
@@ -1230,82 +1745,127 @@ accidentally created an uncanny valley and I need to back away from it until I h
  12 
  13 
  14 
- 15 
- - name: Run tagged tests 🧪 
- \# https:\/\/github.com/cypress-io/github-action 
- uses: cypress-io/github-action\@v6 
- with: 
- \# let's see which specs and tests we will run 
- build: npx find-cypress-specs --names --tagged \${{ needs.pick-test-tag.outputs.testTag }} 
- start: npm run start:ci 
- wait-on: 'http:\/\/localhost:8888' 
  env: 
- \# pass the picked testing tag(s) to the \@bahmutov/cy-grep plugin 
- CYPRESS\_grepTags: \${{ needs.pick-test-tag.outputs.testTag }} 
- \# put test results into the comment 
- \# https:\/\/github.com/bahmutov/cypress-set-github-status 
- GITHUB\_TOKEN: \${{ secrets. GITHUB\_TOKEN }} 
- COMMENT\_ID: \${{ steps.comment.outputs.comment-id }}],
-  [Here is the relevant Cypress config code],
-  [cypress.config.js 1],
-  [2],
-  [3],
-  [4],
-  [5],
-  [6],
-  [7],
-  [8],
-  [9],
-  [10],
-  [11],
-  [12],
-  [13],
-  [14],
-  [15],
-  [16],
-  [17],
-  [18],
-  [19],
-  [20],
-  [21],
-  [22],
-  [23],
-  [24],
-  [25],
-  [26],
-  [\/\/ other config code],
-  [setupNodeEvents ( on, config ) {],
-  [\/\/ if needed, write the test results back into a GitHub comment],
-  [const token = process. env . GITHUB\_TOKEN],
-  [const comment = process. env . COMMENT\_ID],
-  [if (token && comment) {],
-  [console . log (],
-  ['Will write test results into the comment with id %s' ,],
-  [comment,],
-  [)],
-  [require ( 'cypress-set-github-status' )(on, config, {],
-  [owner : 'bahmutov' ,],
-  [repo : 'run-tests-on-a-bug' ,],
-  [token,],
-  [comment,],
-  [})],
-  [}],
-  [\/\/ optional: register cy-grep plugin code],
-  [\/\/ https:\/\/github.com/bahmutov/cy-grep],
-  [require ( '\@bahmutov/cy-grep/src/plugin' )(config)],
-  [\/\/ make sure to return the config object],
-  [\/\/ as it might have been modified by the plugin],
-  [return config],
-  [}],
-  [Once the test results come in, the original issue comment is updated with details: 2 tests failed.],
-  [If our project was recording test traces on the Cypress Dashboard, the comment would include a link to the run URL. For now, we simply go to the GitHub Actions run URL and download the screenshots or videos of the test run.],
-  [Let's download the screenshots. Hmm, the failed test clicked on the "Toggle All" button, yet each item remained incomplete. The test result points us in the right direction; we should be looking at the JavaScript code that is executed in response to the user's click on the "Toggle All" element.],
-  [Great. We automatically ran the relevant tests based on the user's input, collecting lots of information that should help us quickly debug the problem and deploy a fix.],
+ \# gcr.io \/ Artifacts Registry 
+ REGISTRY: us-east4-docker.pkg.dev 
+ GCP\_PROJECT: helloworld-330918 
+ \# Artifacts Registry repository name 
+ REPOSITORY: gleb-google-artifact-registry-test 
+ IMAGE\_NAME: cypress-tests-image 
+ 
+ \# later 
+ container: 
+ image: us-east4-docker.pkg.dev/helloworld-330918/gleb-google-artifact-registry-test/cypress-tests-image:\${{ needs.package-hash.outputs.hash }} 
+ credentials: 
+ username: \_json\_key 
+ password: \${{ secrets. GCR\_KEY }}],
+  [The finished workflow works great],
+  [Just keep the GCR\_KEY secret!],
 ),
   insert-map: (:),
-  inline-pq: pull-quote([testTag }}   start: npm run start:ci   wait-on: 'http:\/\/localhost:8888'   env:   CYPRESS\_grepTags: \${{ needs.], [Gleb Bahmutov]),
-  inline-pq-idx: 282,
-  word-count: 2880,
+  word-count: 3613,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+}
+
+{
+  #standard-article(
+  title: [Roman Trade with Modern-Day Sri Lanka],
+  author: [George Levrier-Jones],
+  source-name: [History in 28 Minutes],
+  images: (),
+  paragraphs: (
+  [class=""\> When Roman sailors and merchants in the first centuries of the Common Era looked southward from the mouth of the Red Sea, the island they called Taprobane, now almost universally identified with Sri Lanka, appeared in their geographies as a rich and mysterious partner in an expanding Indian Ocean trade network. Classical geographers and travel writers treated Taprobane both as a place of fabulous commodities and as a real staple of long-distance exchange: it appears in the Periplus of the Erythraean Sea, in Pliny the Elder's Natural History, and on Ptolemy's maps, and these accounts, read together with archaeological finds around Sri Lanka's ancient ports, make a persuasive case that Greco-Roman traders reached the island's shores, if sometimes indirectly, from the mid-first century CE onward.],
+  [class=""\>The short but vivid Periplus of the Erythraean Sea, a Greek seaman's handbook usually dated to the mid-first century CE, is the most direct contemporary Roman-period testimony to long-distance navigation in the Indian Ocean. Its anonymous author describes routes, seasons and goods, and although Taprobane receives briefer treatment than the western Indian ports, the Periplus places the island within the author's pragmatic commercial map: it is a known source of gems, ivory and other sought-after products and a waypoint for ships that ranged along the eastern Indian seaboard and beyond. The Periplus also reflects the adoption of the monsoon crossing, knowledge of seasonal wind patterns credited to figures such as Hippalus, which made regular oceanic linkages between the Red Sea and South Asia feasible and economically attractive for Roman subjects based in Egypt.],
+  [class=""\>Pliny the Elder and Ptolemy amplify the picture of Taprobane as an object of classical curiosity and commerce. Pliny compiled earlier reports and travelers’ tales into his encyclopedic Natural History and explicitly names Taprobane among the distant islands whose products reached Mediterranean markets; Ptolemy's Geographia, meanwhile, institutionalized Taprobane on maps, even if the island's scale and position were distorted in late antique cartography. These literary testimonies outline what the Roman-world readers believed they were buying from the Indian Ocean: not only luxury items such as pearls, gems, spices and exotic woods, but also useful commodities—elephants for war and ivory for luxury works—that made a voyage to Taprobane, or through agents who dealt with it, commercially worthwhile.],
+  [class=""\>Textual notice must be matched to material traces, and here archaeology supplies concrete, if sometimes contested, evidence. Excavations and survey work at Sri Lanka's ancient trading sites—most notably Mantai (the harbor complex at Mannar), Godavaya and certain finds around the southern ports and the Ruhuna region—have produced imported ceramics, Indo-Roman wares, and metal finds datable to the first few centuries CE. These finds indicate that goods and perhaps persons moved between the island and the wider Indian Ocean economy at the time classical authors wrote. Archaeologists have recovered Roman or Roman-style amphora sherds and Mediterranean imports mixed with local and South Indian ceramics in contexts that often line up with the mid-first through third centuries CE, supporting the textual evidence that Taprobane was part of long-distance trade networks rather than an isolated curiosity.],
+  [class=""\>Numismatics has contributed one of the most headline-grabbing types of evidence: Roman and Indo-Roman coins found on the island and in neighboring Indian ports. Scholars have catalogued a variety of coins—official Roman denominations, later Byzantine and Sasanian pieces, and locally struck imitations, that turn up in hoards and stray finds across Sri Lanka's archaeological record. The presence of Roman gold, silver and bronze specimens, and of imitations that adapt Roman portraiture and types, demonstrates multiple channels of contact: direct importation, trade mediated by South Indian merchants, and the island's participation in a wider monetary ecology that incorporated foreign coinage as bullion or prestige money. At the same time, numismatists caution that coin deposits are slippery evidence for regular commercial routes, coins travel, are hoarded, reused and sometimes arrive centuries after they were minted, so they illuminate connectivity without always proving direct, continuous Roman state involvement.],
+  [class=""\>Material culture beyond coins, such as fragments of Mediterranean amphorae, glassware and certain classically styled objects helps round out the picture. Amphora sherds linked by form and fabric to Mediterranean production argue that Mediterranean foodstuffs (wine, preserved fish or oil) or at least their containers were carried into the Indian Ocean system. Yet many of the "Roman" finds in South Asia were funneled through intermediary entrepôts on the Malabar coast and the Arabian littoral; the principal agents of exchange in this era were often Indian, Arabian and later Southeast Asian merchants who operated the coastal networks and transshipped cargoes to and from Sri Lankan anchors. Consequently, although Roman subjects and merchants surely appear among the actors of this commerce, especially in Egyptian port cities like Berenice and Myos Hormos—the day-to-day movement of goods to Taprobane seems to have been largely run by regional middlemen who connected Mediterranean markets to South Asian and island producers.],
+  [class=""\>Certain Sri Lankan exports made the island especially prized by Mediterranean consumers. Classical authors and later commentators repeatedly emphasize cinnamon (whose precise identification in ancient texts is debated), pearls from the island's offshore banks, high-quality gemstones and ivory. Archaeology confirms the island's role in pearl fishing and its access to precious stones and fine timber, while epigraphic and local traditions record long-standing maritime commerce. The intersection of demand in the Roman world for luxury consumables and Sri Lanka's capacity to supply them produced the economic logic for sustained contact, sometimes direct, sometimes indirect—across the Indian Ocean.],
+  [class=""\>Historians still debate the scale and intimacy of Roman contact with Taprobane. Older popular narratives sometimes implied a flood of Roman merchants and colonial outposts, but modern scholarship tends toward a more nuanced reconstruction: the Roman world was linked into the Indian Ocean by regular traffic and predictable monsoon crossings, yet most trade remained mercantile rather than imperial in character. Exchanges involved ships and traders from many polities, and Roman interest in the island was commercial and mediated through established regional networks. Recent syntheses emphasize networks rather than empires and stress local agency: Sri Lankan rulers and coastal cities actively engaged with incoming traders, negotiated the terms of exchange, and integrated foreign goods into local economies and status displays.],
+  [class=""\>To read the Roman footprint on Sri Lanka is therefore to read an intricate palimpsest: classical texts furnish names, commodities and routes; coins and imported pottery confirm episodes of contact; port archaeology (Mantai, Godavaya and elsewhere) gives archaeological contexts; and numismatic and ceramic studies provide the cautionary notes that turn sensational finds into careful historical argument. Together they show a world in which a Mediterranean empire's appetites met an Indian Ocean island's riches through the wind and skill of monsoon sailors, the networks of Indian and Arabian middlemen, and the receptive markets of the classical Mediterranean. The story of Roman contact with Taprobane is thus not simply one of exotic discovery but of interlocking economic systems whose consequences can still be traced across texts, maps and the soil of Sri Lanka's ancient harbors.],
+  [class=""\>If modern readers take away anything from these fragments of evidence, it should be the image of an ancient globality: long before industrial shipping lanes and steam power, mariners harnessed seasonal winds and a shared appetite for luxury to connect Rome and Taprobane. The contacts were episodic and mediated, yet real—and archaeology keeps revealing fresh details that transform classical blurbs into a living maritime history of exchange, negotiation and cultural contact centered on an island the ancients called Taprobane.],
+  [class=""\>Therefore in conclusion, the story of Roman contact with Taprobane, (modern Sri Lanka), reveals a world far more interconnected than traditional histories of empire and conquest often suggest. It illustrates how commerce, curiosity, and the mastery of the monsoon winds drew distant civilizations into dialogue across thousands of nautical miles. Taprobane stood at the crossroads of the Indian Ocean trade, a hub where the ambitions of Mediterranean merchants, the enterprise of South Asian and Arabian intermediaries, and the wealth of the island's own natural resources converged. Rather than a tale of colonization or conquest, it is one of exchange and adaptation, in which goods, ideas, and cultural influences circulated through the flexible networks of ancient trade.],
+  [class=""\>From the Roman amphora fragments unearthed at Mantai to the gold coins buried in Sri Lankan soil, every discovery underscores that global trade, even in antiquity, was a shared venture driven by mutual interest and the steady rhythm of the monsoon. Taprobane's presence in classical geography, literature, and cartography speaks not only to Roman fascination with distant lands but also to the island's active participation in shaping the maritime world of its time. In the final measure, the legacy of these contacts lies in their reminder that globalization is not a modern invention, it is a continuous human story that began when early sailors learned to follow the winds from the Red Sea to the shining shores of Taprobane.],
+  [class=""\> The site has been offering a wide variety of high-quality, free history content since 2012. If you’d like to say ‘thank you’ and help us with site running costs, please consider donating here .],
+  [class=""\>Hippalus was a Greek navigator and mariner traditionally credited with one of the most important breakthroughs in ancient navigation, the discovery of the direct sea route across the Indian Ocean from the Red Sea to the west coast of India, aided by the predictable seasonal winds known today as the monsoon. His exploits, usually dated to the 1st century BCE, revolutionized maritime trade between the Greco-Roman world and India by allowing sailors to venture directly across the open ocean rather than hugging the dangerous and time-consuming coastlines of Arabia and Persia. Although few details of his life are known, Hippalus's name became synonymous with this vital navigational discovery, with both the southwest monsoon wind and the route itself often referred to in ancient texts as the Hippalus or Hippalus wind.],
+  [class=""\>Before Hippalus's innovation, Greek and Roman merchants relied largely on intermediary traders and coastal navigation routes that followed the Arabian Peninsula, using small vessels ill-suited for deep-sea travel. By observing the regular reversal of the monsoon winds, blowing from the southwest in summer and the northeast in winter, Hippalus realized that a direct crossing from the Red Sea to the Malabar Coast of India was possible. This not only shortened the voyage but also dramatically increased the volume and efficiency of trade. His discovery effectively opened the Indian Ocean to Greco-Roman seafarers and established a reliable maritime corridor that endured for centuries, connecting ports such as Berenice and Myos Hormos in Egypt to Muziris and Barygaza in India.],
+  [class=""\>The Periplus of the Erythraean Sea, a 1st-century CE Greek navigational text, preserves some of the earliest references to Hippalus's route. Although historians debate whether Hippalus himself made the voyage or merely identified the wind pattern, his legacy was profound. Roman merchants soon began to dominate the Indian Ocean trade, importing spices, silks, gemstones, and ivory in exchange for gold and silver. The new route not only enriched the Roman economy but also deepened cultural exchanges between the Mediterranean world and South Asia, influencing art, religion, and material culture on both sides. Thus, even though the man Hippalus remains elusive, his name endures as a symbol of early scientific observation and the spirit of exploration that bridged civilizations across the seas.],
+),
+  insert-map: (:),
+  inline-pq: pull-quote([class=""\>   class=""\> The site has been offering a wide variety of high-quality, free history content since 2012.], [George Levrier-Jones]),
+  inline-pq-idx: 6,
+  word-count: 1892,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+}
+
+{
+  #standard-article(
+  title: [For Southern Antagonists in the Civil War, a Kindred Desire for Peace Goes Awry],
+  author: [Jesse George-Nichol],
+  source-name: [HistoryNet],
+  images: (),
+  paragraphs: (
+  [On December 18, 1860, John J. Crittenden of Kentucky introduced a compromise plan to the U. S. Senate. Just two days later, South Carolina would become the first state to secede from the Union, and within six weeks, six more Southern states would follow suit. But while Dixie fire-eaters were driving their states pell-mell toward disunion, Senator Crittenden and other moderates were working to broker a sectional adjustment — one that could, they hoped, soothe Southern fears about Abraham Lincoln’s election and stay the secession tide in the South.],
+  [The Crittenden Compromise would be central to these efforts during the winter and spring of 1860-1861. It represented an attempt to settle the slavery question once and for all, drawing on the tradition of grand settlements like the Missouri Compromise and the Compromise of 1850. Indeed, the cornerstone of Crittenden’s plan was a constitutional amendment that would divide the remaining Western territories along the old Missouri Compromise line, barring slavery above and protecting slavery below the 36º 30’ parallel.],
+  [Moderates like Crittenden hoped that this might be enough to secure the loyalty of the remaining Southern states to the Union. This might, in turn, make Republicans more willing to let the secession crisis play out, and it might eventually make the seceded states more willing to return to the Union. Yet most Republicans, including Lincoln, refused to countenance any further extension of slavery into the territories. Attempts by moderates to push through the Crittenden Compromise repeatedly foundered against this opposition.],
+  [Compromisers struggled, too, against the opposition of Southern secessionists, who argued that it did not do enough to protect slavery from the threat of an empowered Republican Party. Over the course of the secession crisis, it became clear that the leaders of the seceded states had no interest in negotiation or returning to the Union. Southern rights advocates in the states that had not seceded also complicated the project of compromise; their demands for more concessions meant there was no consensus around Crittenden’s or any other compromise measure even in those states.],
+  [Moderates attempted to push through the Crittenden Compromise, but met opposition from both sides.],
+  [One such antagonist was Virginia’s John Robertson, a prominent Democrat and judge from Richmond. The state legislature sent him as a commissioner to the seceded states in early 1861, and he returned with assurances of the new Confederate States’ sympathies with Virginia. They are “bone of her bone, and flesh of her flesh,” he reported.],
+  [The outbreak of fighting at Fort Sumter on April 12 provided the push for which many Southern hardliners had been hoping. Abraham Lincoln responded by issuing a call for 75,000 troops to put down the rebellion in the South, and in short order Virginia, Arkansas, North Carolina, and Tennessee seceded and joined the new Confederacy. The start of the war seemed to signal triumph for militants like Robertson and disaster for moderates like Crittenden. Yet neither man would accept this as the outcome of his labors.],
+  [Robertson wrote a letter to Crittenden near the end of April that highlighted just how uncertain the future appeared in that moment. Robertson refused to believe that the collision at Fort Sumter necessarily meant war —and rejected, moreover, the idea that war would accomplish the ends of either side in the conflict. He thus suddenly and unexpectedly found his own goals aligned with Crittenden’s, and Robertson begged the old Kentuckian to renew his efforts at conciliation.],
+  [From Robertson’s point of view, civil war did not seem inevitable, even when armies were massing on both sides of the Mason-Dixon Line. The situation represented a dramatic escalation, to be sure, but in the context of the decades-long sectional crisis over slavery (one that had at other points erupted in violence), observers like Robertson could imagine outcomes other than intestine war.],
+  [John Robertson to John J. Crittenden, April 28, 1861],
+  [Dear Sir,],
+  [No man could have more earnestly striven than yourself to \[resolve\] the feuds, whose increasing fury, already advanced to the stage of murderous conflict, threatens to involve thirty millions of men in the horrors of civil war. However I may have differed with you, looking from a Southern view, as to the acceptability of the terms of adjustment you proposed, I never doubted that you regarded them as just, or, at least, as preferable to the evils otherwise to ensue, and as the best which could possibly be obtained. The event has proved that, moderate as they were, the ruling faction \[the Republican Party\] would be content with none but such as would degrade the South. Wellnigh desperate is the condition to which that faction has reduced this country. The fact now stares them in the face that the  Union is dissolved  beyond all hope of restoration, at least, in our day. Yet they are threatening to  preserve  the Union  by force . They read the riot act to millions of men, nay, to sovereign States, who are to be  coerced  into friendship by their foes at the point of a bayonet. But, waving all recrimination, not insisting on the absurdity of the idea, or the impossibility of reducing the South to an ignominious submission, or the certainty that their subjugation,  if possible , would defeat the very object their enemies profess to desire (namely, the preservation or restoration of the Union), by converting States into vassal provinces (in that character alone can they remain or enter into it), let us inquire if there are no means by which the anticipated consequence of our family jars (now an accomplished fact), the separation of the States, may be recognized by the ruling faction at Washington, without deliberately repeating the most atrocious crime, and steeping their hands still deeper in the blood of their brethren. A word from the  long-eared god \[Lincoln\] , who now holds in his hands (as he imagines) the destinies of the country, would be enough.  He  has only to say, “Let there be peace,” and there will be peace. But he and the murderous gang whom he consults already cry ‘Havoc!’ And let slip the dogs of war. And yet the star of hope still twinkles in the clouded firmament. Preposterous as is the idea of peaceful union or reunion, there may still be a peaceful separation; and it is to yourself, sir, who, if allowed to do so, I will still regard, notwithstanding the marked difference of our political sentiments, as a valued friend,—it is mainly to you I look for effecting so glorious a consummation. I do not desire that my name should be connected with an effort which you may, most probably, consider utterly idle, and which, should you think worth trying, be more apt to succeed without it. Before going further at present, permit me to inquire whether it will be agreeable to you to entertain the thoughts which, after much anxious reflection, have entered into, and taken firm possession of, my mind.],
+  [It is proper to say that my appeal to you is wholly without the sanction or knowledge of any constituted authorities, State or federal. It has been suggested even but to two individuals; in the judgment of one of them you would yourself repose great confidence. I have received decided encouragement to make it.],
+  [An immediate answer, if convenient, will greatly oblige me.],
+  [With great and respectful regard, yours,
+John Robertson],
+  [For all of their disagreements, Crittenden must have found some encouragement in Robertson’s kindred desire for peace. Robertson still seemed to hope that secession could be accomplished peacefully, but Crittenden saw peace as a means to promote compromise and reunion, as well. A month after the former’s letter, Crittenden would preside over a convention in Frankfort, Kentucky, which would renew calls for Crittenden’s compromise as a basis for sectional adjustment. “Whether any such constitutional guarantees would have the effect of reconciling any of the seceded States to the government from which they have torn themselves away we cannot say,” the convention declared, “but we allow ourselves to hope that the masses in those States will in time learn that the dangers they were made to fear were greatly exaggerated, and that they will then be disposed to listen to calls of interest and patriotism, and return to the family from which they have gone out.”],
+  [In the meantime, Crittenden would also be instrumental in the effort to keep Kentucky neutral in the Civil War. He would tour the state advocating this policy, arguing that it would leave Kentucky well-placed to act as a mediator in the conflict. Kentuckians might not be able to stop the ensuing fight, but it certainly seemed a better alternative to him than active involvement in war.],
+  [A week before the Frankfort Conference on May 20, 1861, Kentucky’s governor would issue a proclamation declaring the state’s neutrality; in it, he claimed that this course would help promote peace. Such hopes obviously failed to stop the onrushing war that would rage for four years and kill hundreds of thousands of people. No one could foresee what would come, but Kentucky’s neutrality in 1861 — and the efforts of men like Crittenden and, to some extent, Robertson — stood as a monument to their different visions for the future in that moment. Those different visions informed their behavior during the conflict, and at least in the case of Kentucky, those ideas helped shape the broader contours of the Civil War.],
+  [Jesse George-Nichol is a Ph. D. candidate at the University of Virginia.],
+),
+  insert-map: (:),
+  word-count: 1578,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+}
+
+{
+  #standard-article(
+  title: [Turning a childhood interest into a career path with MIT Open Learning resources],
+  author: [Lauren Rebecca Thacker | MIT Open Learning],
+  source-name: [MIT News Education],
+  images: (),
+  paragraphs: (
+  [Hinata Yamahara was 10 years old, on a family trip to Osaka, Japan, when he started riding the train alone. Those train rides sparked an interest in something he didn't have words for at the time — how cities are built, and how people navigate them.],
+  [Now at 17 and applying to colleges, Yamahara has made the connection that investigating cities and how they work is a foundation for urban planning. MIT OpenCourseWare, part of MIT Open Learning, helped him develop knowledge and deepen his passion for walkable, community-oriented urban spaces.],
+  [At the time of his first, fateful Osaka train ride, Yamahara lived in Atlanta, after having spent most of his elementary school years in rural Tennessee. Before that, he and his family had lived in Los Angeles. In all those places, he says, it was difficult for kids to get around. In fact, getting around without a car could be a challenge for anyone.],
+  [Whenever he visited family in Japan, he was in awe of the efficiency of the train system and the ease of learning how to navigate it, in addition to the mixed-use buildings that combined commercial and residential spaces. As a 10-year-old, he simply thought they “were really cool” and quite different from what he saw at home. Now, he reflects on the efficient use of space in a country that is much smaller than the expansive United States.],
+  [Back at home, Yamahara continued to reimagine the spaces around him, often printing out satellite imagery and drawing new possibilities over what existed.],
+  [“Maybe instead of a giant parking lot, I’d draw a subway station and connect it to another part of the map,” he says. “But it was all imaginary. I didn’t know what was possible in terms of regulations or looking at past examples. So, I started to do research and kept coming across OpenCourseWare.”],
+  [He remembers a moment of confusion, followed by one of excitement: “What is OpenCourseWare?” and, “Wait, everything is free!?”],
+  [OpenCourseWare, an open publication of course materials from across the MIT curriculum, allows users to browse content at their own pace. Learners can watch video lectures, read course notes, and hear from faculty experts, with no enrollment fees or start dates.],
+  [Yamahara dove into the content, starting with 11.001J ( Introduction to Urban Design and Development ). He has since accessed a variety of courses and counts 11.948 ( Power of Place: Media Technology, Youth, and City Design and Development ) and 11.304J ( Site and Infrastructure Systems Planning ) among the most memorable.],
+  [Exploring OpenCourseWare resources gave him a strong foundation to take his interest in urban planning and redesign into the real world. In summer 2025, Yamahara completed an internship with an Atlanta-area real estate firm working on a redesign project with a city agency.],
+  [“Right now, this city has a downtown area with a lot of parking lots and empty retail spaces. I’m getting to learn firsthand how to develop it into something else,” he explains. “I’m part of meetings where we brainstorm how to create a community feeling, how to make a space creative and walkable, and how to make it somewhere people really want to be.”],
+  [According to Yamahara, the experience draws on his appreciation for Japanese efficiency, as well as American inclusivity and his deep knowledge of zoning regulations, community-centered design, and transit equity — all gained through OpenCourseWare materials and resources.],
+  [As Yamahara looks toward college and his future, he says he sees two paths influenced by MIT’s free educational resources. On one path, he studies urban planning, as OpenCourseWare materials have only reaffirmed his passion for the field and given him knowledge and confidence. On another path, he imagines using his time as an undergraduate to explore other interests, including aviation and real estate. On that path, OpenCourseWare would allow him to continue his urban planning education independently.],
+  [He’s grateful that he could take advantage of OpenCourseWare resources without submitting an application and considering tuition and financial aid. All he needed was an interest and a determination to learn, and he had both.],
+  [“OpenCourseWare has helped me grow from a kid with questions into a student designing solutions,” Yamahara says. “I still ride the train in the U. S. and Japan, but now, I bring a vision with me, too.”],
+  [To explore additional lifelong learning offerings from MIT, visit MIT Learn .],
+),
+  insert-map: (:),
+  word-count: 728,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -1315,74 +1875,18 @@ accidentally created an uncanny valley and I need to back away from it until I h
 #article-row((
   [
     standard-article(
-  title: [Episode 98 (Under Our Feet)],
+  title: [Episode 115 (A Brief Eulogy for a Commercial Radio Station)],
   author: [The Memory Palace],
   source-name: [The Memory Palace],
   images: (),
   paragraphs: (
   [The Memory Palace is a proud member of Radiotopia , from PRX, a curated network of extraordinary, story-driven shows.],
-  [Notes \* This episode came by special request from my daughter, who heard about Waterhouse Hawkins in her second grade classroom. She came home and said, “Dad, I think I’ve got a good Memory Palace story for you.” \* She and I found a great kids book called The Dinosaurs of Waterhouse Hawkins , by Barbara Kerley. \* Grownup readers might want to check out All in the Bones by Valerie Bramwell and Robert Peek.],
-  [Music \* We start off and finish with Kola, Lighthouse Version by amiina. \* We hear their Leather and Lace as well. \* There’s Mountain Path , by WMD. \* We hear Prelude for Piano and Malaria by Worrytrain. \* We also hear Manny Returns Home from Bernard Hermann’s score to The Wrong Man. \* And Krolock on Sledge from the fantastic score to The Fearless Vampire Killers.],
+  [Keep by Nils Frahm],
+  [She cycles through: Where or When by Hal Kemp & His Orchestra, Smarty (You Know it All) by Fats Waller, Dear Mr. Gable: You Made Me Love You by Judy Garland, Hellhounds on My Trail by Robert Johnson, and The Big Apple by Tommy Dorsey and his Clambake Seven.],
   [Learn about your ad choices: dovetail.prx.org/ad-choices],
 ),
   insert-map: (:),
-  word-count: 168,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-  ],
-  [
-    standard-article(
-  title: [Episode 90: A White Horse],
-  author: [Nate DiMeo],
-  source-name: [The Memory Palace],
-  images: (),
-  paragraphs: (
-  [The Memory Palace is a proud member of Radiotopia from PRX. Radiotopia is a collective of independently owned and operated podcasts that’s a part of PRX, a not-for-profit public media company. If you’d like to directly support this show and independent media, you can make a donation at Radiotopia.fm/donate.],
-  [This episode was originally released in 2016 in the days after the shooting at the Pulse nightclub in Orlando. It is re-released every year on the anniversary of the incident.],
-  [A note on notes: We’d much rather you just went into each episode of The Memory Palace cold. And just let the story take you where it well. So, we don’t suggest looking into the show notes first.],
-  [Notes and Reading:],
-  [\* Most of the specific history of the White Horse was learned from "Sanctuary: the Inside Story of the Nation's Second Oldest Gay Bar" by David Olson, reprinted in its entirety on the White Horse's website .],
-  [\* "Gayola: Police Professionalization and the Politics of San Francisco's Gay Bars, 1950-1968," by Christopher Agee.],
-  [\* June Thomas' series on the past, present, and future of the gay bar from Slate a few years back.],
-  [\* Various articles written on the occasion of the White Horse's 80th anniversary, including this one from SFGATE. Com],
-  [\* Michael Bronski's A Queer History of the United States .],
-  [\* Radically Gay , a collection of Harry Hay's writing.],
-  [\* Incidentally, I watched this interview with Harry Hay from 1996 about gay life in SF in the 30's multiple times because it's amazing.],
-  [\* We start with Water in Your Hands by Tommy Guerrero.],
-  [\* Hit Anne Muller's Walzer fur Robert a couple of times.],
-  [\* Gaussian Curve does Talk to the Church .],
-  [\* We get a loop of Updraught from Zoe Keating.],
-  [\* We finish on Transient Life in Twilight by James Blackshaw],
-),
-  insert-map: (:),
-  word-count: 309,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-  ],
-), ruled-indices: (1,))
-
-#article-row((
-  [
-    standard-article(
-  title: [TMR 24.10: “What Comes Next Is What Remains” [Melvill]],
-  author: [Chad Post],
-  source-name: [Three Percent (U of Rochester)],
-  images: (),
-  paragraphs: (
-  [[Note: If you subscribe on Apple Podcasts, please resubscribe to this feed. And this one if you listen on Spotify. The others will be going away in the near future.]],
-  [Special guest Rodrigo Fresán joins Brian, Chad, and Kaija to celebrate being on the Republic of Consciousness longlist , talk about his novels, his career, the ideas he circles back to time and again, the idea of a writer creating their reader, what’s next for him, and much more.],
-  [Also: The books for Season 25 are announced at the very end.],
-  [The “ Grifters Gonna Grift ” t-shirt is still available and still sexy.],
-  [Stay tuned for the schedule and details about Season 25, coming in February 2025.],
-  [You can find all previous seasons of TMR on our YouTube channel and on Apple Podcasts , Spotify , etc. Please rate and review! It helps more than you know.],
-  [Follow Open Letter, Two Month Review , Chad Post, Kaija Straumanis , and Brian Wood for random thoughts and information about upcoming guests.],
-),
-  insert-map: (:),
-  word-count: 183,
+  word-count: 103,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -1417,21 +1921,17 @@ accidentally created an uncanny valley and I need to back away from it until I h
 #article-row((
   [
     standard-article(
-  title: [TMR 24.4: “How Unreal All This Is!” [Confidence-Man]],
-  author: [Chad Post],
-  source-name: [Three Percent (U of Rochester)],
+  title: [Tackling the Awkward Squad for Reactive Programming],
+  author: [Lambda the Ultimate],
+  source-name: [Lambda the Ultimate],
   images: (),
   paragraphs: (
-  [[Note: If you subscribe on Apple Podcasts, please resubscribe to this feed. The other one will be going away in the near future.]],
-  [Opening with a couple of rants, this week’s podcast is spicy and also tries to make sense of a few of the more perplexing parts of the book. There’s a wonderful interlude in this section from the narrator themselves, and, apparently, nine jokes? And a magic trick involving coins. You’ll have to listen to understand.],
-  [And here’s the “ Grifters Gonna Grift ” t-shirt mentioned in this episode.],
-  [Next episode will cover all of of The Confidence-Man . You can find the full reading schedule here .],
-  [You can find all previous seasons of TMR on our YouTube channel and on Apple Podcasts , Spotify , etc. Please rate and review! It helps more than you know.],
-  [Follow Open Letter, Two Month Review , Chad Post, Kaija Straumanis , and Brian Wood for random thoughts and information about upcoming guests.],
-  [The large image associated with this post is AI generated.],
+  [https:\/\/2020.ecoop.org/details/ecoop-2020-papers/19/Tackling-the-Awkward-Squad-for-Reactive-Programming-The-Actor-Reactor-Model],
+  [Sam Van den Vonder, Thierry Renaux, Bjarno Oeyen, Joeri De Koster, Wolfgang De Meuter],
+  [Reactive programming is a programming paradigm whereby programs are internally represented by a dependency graph, which is used to automatically (re)compute parts of a program whenever its input changes. In practice reactive programming can only be used for some parts of an application: a reactive program is usually embedded in an application that is still written in ordinary imperative languages such as JavaScript or Scala. In this paper we investigate this embedding and we distill “the awkward squad for reactive programming” as 3 concerns that are essential for real-world software development, but that do not fit within reactive programming. They are related to long lasting computations, side-effects, and the coordination between imperative and reactive code. To solve these issues we design a new programming model called the Actor-Reactor Model in which programs are split up in a number of actors and reactors. Actors and reactors enforce a strict separation of imperative and reactive code, and they can be composed via a number of composition operators that make use of data streams. We demonstrate the model via our own implementation in a language called Stella.],
 ),
   insert-map: (:),
-  word-count: 182,
+  word-count: 199,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -1439,28 +1939,587 @@ accidentally created an uncanny valley and I need to back away from it until I h
   ],
   [
     standard-article(
-  title: [∞ The Dalrymple Report: Ear Tips, iPad, MacBook Pro],
-  author: [Jim Dalrymple],
-  source-name: [The Loop],
+  title: [Week 17],
+  author: [Monica Dinculescu],
+  source-name: [Monica Dinculescu],
   images: (),
   paragraphs: (
-  [This week, Dave and I talk about the new AirPod Pro ear tips and whether the fit is better than the last generation. We also talk about Apple’s newest product releases, including the M5 iPad Pro and the M5 MacBook Pro. Then we talk about Vision Pro and the rebranding of Apple TV+.],
-  [Follow this podcast],
-  [Show Notes:],
-  [M5 MacBook Pro],
-  [M5 iPad Pro],
-  [Apple Vision Pro upgraded with the M5 chip and Dual Knit Band],
-  [No Vision Pro trade in for early adopters],
-  [Apple TV Subtracts the + in a Quiet Rebrand],
-  [NBA broadcasting some Laker games in Vision Pro Immersive Video],
-  [Shows and movies we’re watching],
-  [Nobody 2],
-  [Mr. Scorcese, Apple TV],
-  [Superman, HBO],
-  [Kiki’s Delivery Service, HBO],
+  [I’ve been skipping weeks because a) literally nothing happens and b) I don’t have a good
+system to update these notes. They’re a markdown file on a GitHub repo, and I kind of 
+need a computer to edit it, but I also kind of don’t open my computer that much these days?
+I also keep forgetting which day is Monday. Room for improvement.],
+  [I wrote a blog post about how I generated some
+tree rings in JavaScript and then carved them as a linocut. It doesn’t actually contain any
+JavaScript, but it does have a lot of pretty images.],
+  [The last normal thing I did before the panini started was go to Japantown and stock
+up on apocalypse supplies (snackos, mucho ramen, milk tea powder, korean face things). 
+The first normal thing I did with my 1 vaccine shot was go to Japantown and restock 
+all the things. This wasn’t on purpose, but I am pleased with the serendipity. It is cherry blossom season, so it was very pretty, HOWEVER, some racist asshole vandalized two of the oldest cherry trees there in January. Literally chopped down all of the branches, one at a time. What the actual fuck.],
+  [If you’re against plastic (why aren’t you?) and use deodorants, Dove has started selling refillable ones. I got mine from Target. The refill itself 
+still comes in plastic, but overall it’s far less plastic than the obnoxious amount the normal ones have. I’m excited about this not because this deodorant is particularly amazing, but because Dove is a HUGE brand, and 
+having mainstream brands start looking into more reusable, less-plastic products is a small but exciting progress.],
+  [Speaking of waste, Zach bought us me the most amazing thing: a foodcycler !!! We’ve been composting for years, but I’ve recently started getting lazier about putting the compost back in the freezer when I’m done with it, so our idiot dog has been stealing a lot of compost (which is full of bad things for her like coffee grounds, onion peels, literally half a spaghetti squash rind she ate and threw up for 8 hours). This foodcycler thing takes the compost and dehydrates it and grinds it and in 4 hours is done and gives you back fertilizer at like a tenth of the original volume. We’ve had it for a week and it’s honestly THE MOST innovation I’ve seen in my kitchen.],
 ),
   insert-map: (:),
-  word-count: 120,
+  word-count: 399,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+  ],
+), ruled-indices: (1,))
+#pull-quote([The first normal thing I did with my 1 vaccine shot was go to Japantown and restock  all the things.], [Monica Dinculescu])
+
+
+#article-row((
+  [
+    standard-article(
+  title: [Episode 184: Betty Robinson],
+  author: [Nate DiMeo],
+  source-name: [The Memory Palace],
+  images: (),
+  paragraphs: (
+  [The Memory Palace is a proud member of Radiotopia from PRX. Radiotopia is a collective of independently owned and operated podcasts that’s a part of PRX, a not-for-profit public media company. If you’d like to directly support this show and independent media, you can make a donation at Radiotopia.fm/donate.],
+  [A note on notes: We’d much rather you just went into each episode of The Memory Palace cold. And just let the story take you where it well. So, we don’t suggest looking into the show notes first.],
+  [Pollen by H. Takahashi and, later, Photosynthese.],
+  [Wiffle Ball from Joel P. West’s score for Short Term 12],
+  [The title theme to Cani Arrabbiati],
+  [Drunken Aviator by the (great, truly) Ida.],
+  [If you are looking to read more about Betty, I’d suggest Rosanne Montillo’s terrific book, Fire on the Track.],
+),
+  insert-map: (:),
+  word-count: 178,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+  ],
+  [
+    standard-article(
+  title: [Episode 226: A Wild One],
+  author: [Nate DiMeo],
+  source-name: [The Memory Palace],
+  images: (),
+  paragraphs: (
+  [Order The Memory Palace book now, dear listener. On Bookshop.org , on Amazon.com , on Barnes & Noble , or directly from Random House . Or order the audiobook at places like Libro.fm .],
+  [The Memory Palace is a proud member of Radiotopia from PRX. Radiotopia is a collective of independently owned and operated podcasts that’s a part of PRX, a not-for-profit public media company. If you’d like to directly support this show, you can make a donation at Radiotopia.fm/donate. I have recently launched a newsletter. You can subscribe to it at thememorypalacepodcast.substack.com .],
+  [Order Eliza McGraw's wonderful new book, Astride: Women, Horses and a Partnership that Changed America.],
+  [Music
+Hallogallo from Neu!, basically one of the best songs there is. 
+Notes
+There is a lot written about Bessie, including some wonderful children's books. The best thing I read about her was in Ann Farrar (a journalist and biker herself)'s book Hear Me Roar: Women, Motorcycles, and the Rapture of the Road.],
+),
+  insert-map: (:),
+  word-count: 162,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+  ],
+), ruled-indices: (1,))
+
+#article-row((
+  [
+    standard-article(
+  title: [Week 18],
+  author: [Monica Dinculescu],
+  source-name: [Monica Dinculescu],
+  images: (),
+  paragraphs: (
+  [Ya look at that? It’s May already. My dog’s is turning 2 on the 14th, does anyone have any
+good dog cake recipes or should I just give her an almost-empty jar of peanut butter with the same
+success rate?],
+  [I got my second fouchie outchie! (\#teampfizer). I wouldn’t say it bodied me the next day,
+but I felt uncomfortable enough to sit in bed and read not one but TWO Bridgerton novels. I’ve 
+now read 1-4 and I think I’m done for a while.],
+  [Speaking of books, I’m finishing up On Earth We’re Briefly Gorgeous (Ocean Vuong; reads like poetry
+but isn’t. Review next time), and I’m about to start up The Vanishing Half (Brit Bennett; very 2021 book cover). I also finished a book in Romanian, translated from Russian: Zuleiha opens her eyes (Guzel Yakhina. Really beautiful, much more hopeful and uplifting than the Russian literature I’m used to.)],
+  [After 15+ years of living in North America, I think I am “into” oatmeal. Oatmeal isn’t a Romanian thing
+at all – oats are for horses, cream of wheat is for babies, adults don’t eat either. Current
+approach: 1. overnight oats (in water, cashew milk makes them too…intense and I don’t give money
+to the meat industry for cow milk) + either apple sauce (that I make because I keep forgetting to eat apples), or frozen fruit.],
+  [Other food shit I’m obsessed with right now: ingesting industrial quantities of watermelon, these
+ keto peanut butter cookies (I don’t eat keto,
+but pb cookies with no-guilt-sugar are delicius), cashew milk.],
+  [Arts: I am deeply struggling with a 3 layer linocut. I’ve carved it like 3+ times, and no matter how I do it I can’t line up all the 3 layers well. I think it’s time to give up on it and make it into a digital print. Also, I’ve been working on L-systems, which make pretty trees. Should I write a blog post about that when it’s done?],
+),
+  insert-map: (:),
+  word-count: 328,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+  ],
+  [
+    standard-article(
+  title: [What Do Social Media Companies Fear? Time Management.],
+  author: [Study Hacks],
+  source-name: [Study Hacks (Cal Newport)],
+  images: (),
+  paragraphs: (
+  [I recently came across an interesting academic article in the journal Frontiers in Psychology. It was titled, ​“The relationships between social media use, time management, and decision-making styles.”​],
+  [The paper’s author surveyed 612 university students and young adults, asking them, among other things, about their digital habits and levels of personal organization. Using a linear regression analysis, she uncovered the following:],
+  [“Social media use was negatively and significantly associated with overall time management and all its subscales.”],
+  [Here’s the standard interpretation of this result: Social media is distracting, and if you’re distracted, it becomes harder to maintain control over your schedule. So, the more you use social media, the worse you become at time management.],
+  [But I’ve become interested in the reverse form of this argument: the better your planning system, the less time you’ll spend on engagement-based applications like social media .],
+  [Here’s my thinking…],
+  [When you’re following an intentional schedule, your efforts are oriented toward goals that you find important. You also feel a satisfying sense of self-efficacy. These realities engage your long-term reward system, which can override the urges generated by its short-term counterpart, dissipating the drive for quick gratification from activities like glancing at your phone.],
+  [In other words: The more you organize your analog life, the less appealing you’ll find the digital alternative.],
+  [If this is true, then maybe the thing social media companies fear most is not some newly-powerful application-blocking software or impossibly strict regulation, but rather a good old-fashioned daily planner.],
+  [A lot of people I know have been freaked out recently by a viral essay with a grandiose title: ​“Something Big is Happening.”​ I recently released ​a short video​ in which I conduct a close analysis of this piece. (Spoiler alert: I wasn’t impressed.) ​ Check it out. ​],
+  [(More generally, I’ve been considering starting a separate weekly podcast/newsletter dedicated to providing a reality check on recent AI news. It feels like it might be useful to separate this discussion from my existing podcast and newsletter, which are more focused on how individuals can seek depth in a distracted world. But also, maybe this is a bad idea? I’m interested to hear your thoughts about this plan.)],
+  [The post What Do Social Media Companies Fear? Time Management. appeared first on Cal Newport .],
+),
+  insert-map: (:),
+  word-count: 386,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+  ],
+), ruled-indices: (1,))
+#pull-quote([So, the more you use social media, the worse you become at time management.], [Study Hacks])
+
+
+{
+  #standard-article(
+  title: [Episode 166: The Silent Room],
+  author: [The Memory Palace],
+  source-name: [The Memory Palace],
+  images: (),
+  paragraphs: (
+  [The Memory Palace is a proud member of Radiotopia , a collective of independently owned and operated podcasts.],
+  [A note on shownotes. In a perfect world, you go into each episode of the Memory Palace knowing nothing about what's coming. It's pretentious, sure, but that's the intention. So, if you don't want any spoilers or anything, you can click play without reading ahead.],
+  [Dream by John Cage],
+  [The Introduction and Chi C’e Per Farmi i Rici from The Girl of the Golden West],
+  [The story of John Cage in the anechoic chamber was first told to me maybe twenty years ago by my friend Dave Panosky one night while walking around Providence. It was precisely the type of story that I wanted to one day make a show to tell. You can find it in a lot of places including in Cage’s own writing.],
+  [I first came across the second silent room in Alex Ross’ wonderful, The Rest is Noise .],
+  [I also tapped into Puccini and the Girl: History and Reception of Girl of the Golden Wes t by Annie Randall and Rosalind Gray Davis.],
+  [Learn about your ad choices: dovetail.prx.org/ad-choices],
+),
+  insert-map: (:),
+  word-count: 227,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+  #pull-quote([It's pretentious, sure, but that's the intention.], [The Memory Palace])
+
+}
+
+{
+  #section-label([Analysis])
+  #standard-article(
+  title: [Lighting an Ikea Billy Bookcase],
+  author: [Erik Runyon],
+  source-name: [Erik Runyon],
+  images: (),
+  paragraphs: (
+  [This past December I had the opportunity to put together my first proper home office. One aspect of the office is a bookshelf to corral all my books and memorabilia that up to this point have been scattered around the house. For this project I utilized three Ikea Billy bookcases, but to make the project really shine, I added LED lighting. Let’s go over the products and process I followed to set this up.],
+  [id="tldr"\>TL;DR],
+  [LED and wire channels = clean finish],
+  [Cable management = worth the effort],
+  [Splicing wires = most time-consuming],
+  [End result = cozy, nerd-approved display],
+  [id="shopping-list"\>Shopping List],
+  [Ikea Billy bookcase],
+  [Ikea HÖGBO glass doors],
+  [LED Strip Lights - 16.4ft 3000K Dimmable],
+  [LED Strip Channel Diffuser],
+  [Black cable channel],
+  [22/2 AWG Red/Black Electrical Wire],
+  [20 Pack COB 0.31in(8mm) 2-pin Transparent Connector],
+  [id="tools-needed"\>Tools needed],
+  [Electric drill for drilling wiring holes in the back of the case and attaching difuser channel],
+  [Hacksaw for cutting difuser channel],
+  [Tin-snips for cutting cable channel],
+  [Screwdriver and allen wrenches],
+  [Two of the three shelves assembled and ready for wiring],
+  [The HÖGBO doors come with inserts to hide the contents, but since the whole point here is to enjoy the display, I left those off. The reason for the doors is to keep everything inside relatively dust-free. These doors are made for the Billy cases, so they’re relatively easy to install.],
+  [id="step-1-led-channel"\>Step 1: LED channel],
+  [LED diffuser channel installed on underside of shelf],
+  [A big priority for this project was to make the lighting look as clean as possible. So for step one I cut and installed the channel diffuser along the front lip of shelf. The diffuser channel is alumnium, so I used a hacksaw to cut to length. Luckily there was enough space between the shelf mounts and the front lip. To allow space for the wiring to run from the diffuser channel to the cable channel (see step \#2), I cut a small notch.],
+  [Diffuser channel with notch for wiring],
+  [To connect the LED strip to the wiring I used 2-pin transparent connectors. This way the LED strip was only running along the front of the shelf, and the wiring could then do a 90-degree turn to head out the back of the case. If you look close, you would be able to see the connectors at the right end of the LED strip near the wall of the shelf. But I made sure these connections were at the door end of my office, so they’re less noticeable.],
+  [id="step-2-cable-channel"\>Step 2: Cable channel],
+  [Diffuser and cable channel installed],
+  [The cable channel is added to the underside of each shelf to hide the wiring that runs from the LED strips to the back of the shelf where the wiring is joined. For this I drilled a hole just large enough for the wiring. This is a peel-and-stick product, so installation was simply a matter of cutting the plastic channel to fit, and then sticking it to the underside of the shelf. NOTE: Due to how I ran the wiring through the back of the shelf, it does not allow for future adjustment to the height of the shelves. It’s not an issue in my case since I was going for a symmetrical, even-height look.],
+  [id="step-3-connecting-the-wires"\>Step 3: Connecting the wires],
+  [The LED kit I purchased came with two 5-meter (16.4 ft) LED strips. The included controller had two outputs, one for each strip. Since I’m lighting nine separate shelves and the top of the cases, this required quite a bit of wire splicing. But since all of the cables were exiting through the back of the cases, it was easy to hide the mess. Wiring was easily the most labor intensive part of the project as there was quite a bit of experimentation and testing before I found a solution that I liked and worked well.],
+  [One example of splicing the wires running to each strip],
+  [id="step-4-finish-adding-light-strips"\>Step 4: Finish adding light strips],
+  [All wiring connected],
+  [I forgot to take some intermittent shots at this juncture. I installed LED strips along the underside of each shelf for an even glow across all levels. Connecting the light strips was probably the easiest and fastest step in the process. As you can see in the image above, none of the red/black wiring is visible. All that’s left is to finish attaching the top LED strip. After that comes the fun part… DECORATING!],
+  [id="the-finished-product"\>The finished product],
+  [My daughter was a big help in this final step. Much to my wife’s delight, we gathered all of the books and trinkets and began the organizing process. We attempted to organize by theme and genre as much as possible. But given that it’s a mad collection of various books, 80’s toys, and general nerddom trinkets, it was at times a challenge. And I have been adding and removing items as I’ve found more stuff stashed away in boxes. As soon as I can find my original NES, it will joining the collection (I know it’s in a box in the basement somewhere). The end result is a great backdrop for my new home office.],
+  [Lit and decorated (photographed at 100% brightness)],
+  [The lighting kit is dimmable which is great. I almost never run at full brightness. In the morning, I go with 10% brightness. Later in the day I’ll bump up to 25-50%. It just depends on time of day, weather (light coming in through the windows), and general mood.],
+  [If you have a use-case for lighted shelves, I highly recommend this project. It really makes the space feel cozy. However, if you’re not comfortable working with low-voltage wiring, I would recommend finding light strips that are already cut to length.],
+),
+  insert-map: (:),
+  word-count: 950,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+}
+
+{
+  #standard-article(
+  title: [Hallucinating with art models],
+  author: [Monica Dinculescu],
+  source-name: [Monica Dinculescu],
+  images: (),
+  paragraphs: (
+  [Wow, long time, no posts! Anyway, about them text-to-art generative models going about, eh? Surprising nobody: I am extremely into them. I’ve been using DALL-E and MidJourney since they came out, and even though tons has been written about them, I wanted to give a slightly different overview: the perspective of someone who isn’t interested that much in their realism skills.],
+  [I think that the most compelling place for ML models in an artist’s life is as a tool that specifically enables , and doesn’t replace , creativity. Machine Learning is amazing at doing something very specific, lots of times, really fast. It’s great at telling me if an image is a cat or a dog. It’s also great at generating one hundred half-dog-half-cats, in different positions, so that I can bypass the dozens of hours I would spend sketching out half-dog-half-cats for a painting that’s actually about the nuclear apocalypse.],
+  [I’ve seen a lot of examples of which model is best at painting “The otter with the pearl earring”, but I haven’t seen a lot of comparisons of these models in terms of their potential for creativity– likely because “creativity” is not really quantifiable. I wanted to do this for myself, if anything so that I can figure out how to use my money and credits better, but thought that I might as well put it out there in case anyone else was curious.],
+  [This post ended up being looooong, so here’s a Table of Contents:],
+  [Boring uses of interesting models],
+  [The (barely scientific) method],
+  [Cherry-picking outputs],
+  [What I look for],
+  [1. “Linocut print of a girl bundled up in bed with a stack of books and a cat”],
+  [2. “Lithograph of an orchid where each flower has a small skull inside”],
+  [3. “Erik Johansson photograph of a woman\[sic\] hair that is a literal bee hive”],
+  [4. “A toucan wearing a 60s apron, sitting on a mid century modern armchair, talking on a rotary phone, retrofuturism”],
+  [What have I learned?],
+  [id="boring-uses-of-interesting-models"\>Boring uses of interesting models],
+  [I use these new models for a very specific thing, and that is as a brainstorming partner/collaborator. This shouldn’t surprise you: I’ve been going off on using ML for co-creation since the days of working on Magenta , which was the project that forged my views on the topic (shoutout to the smarter-than-me people on the team that let me absorb their well articulated opinions).],
+  [I tend to find DALL-E generations like “dogs playing poker” or “Donald Trump but as a cheeseburger” impressive, but kind of boring: yes, the output is funny, but no, I don’t fall asleep thinking about the deep meaning of an orange cheeseburger with a balding head and very small hands. As an artist who is trying to carve a place for myself in the art world (and for these models in my art), I want them to be my co-creators, my partners in crime, but not take over and compromise my style. I want us to brainstorm together, come up with ideas, and then (in most cases), mold this draft into something that I can look at and say “yeah, that looks like something I made”.],
+  [This is consistent with how I look at the use of music models like the Music Transformer : absolutely impressive compositions, best suited for an elevator. This isn’t the fault of the model, nor its users, and I am truly not shitting on these outputs (unless they’re for NFTs; always here to shit on NFTs 🙃): I think both background music and memes have a value in society, as do procedural TV shows (they’re filming new Criminal Minds!!!), computer generated or not. But personally, as an artist, I feel fairly emotionally detached from them, as I’m pretty sure their authors do.],
+  [The exact same models, when used in a thoughtful and creative way lead to absolutely brilliant things; the ones that make you say “fuck, I wish I had thought of that”. Yacht’s album made with hard creative rules and machine learning is a wonderful example, as is Karen X. Cheng’s use of DALL-E to imagine the scene beyond Girl with a Pearl Earring . This is the bit that I care about.],
+  [I’ve been trying to post updates about how I personally use these models on my artstagram (often with a commentary about the process), but as a recent craft fair that just rejected me had to say: I’m quite shit at the socials. Have this blog post instead?],
+  [id="the-barely-scientific-method"\>The (barely scientific) method],
+  [id="models"\>Models],
+  [I used the 4 models I have access to:],
+  [DALL-E , via the OpenAI website],
+  [Stable Diffusion , via the collab],
+  [MidJourney , via their Discord bot],
+  [DALL-E mini , via the HuggingFace interface.],
+  [I tried to get a Googler to help me run the prompts on Imagen , but I got no bites, so I have no idea how it fits into this story.],
+  [id="cherry-picking-outputs"\>Cherry-picking outputs],
+  [I cherry-picked 4 images for each model as follows:],
+  [DALL-E: Because using it costs real moneydollars these days, I decided to backfit this experiment to prompts I’ve already saved several images for (crucially: this means that I thought the prompt gave interesting enough results for me to care; this is 100% not true of every prompt I try). I also ran each prompt one more time to generate 4 more outputs, and then picked the best 3 out of those. The top left result is always the one I liked the most.],
+  [Stable Diffusion: cherry picked 4 results out of about 9.],
+  [MidJourney: I ran each prompt twice (getting 8 outputs in total), and then I picked the best 4. I didn’t try any parameters or tricks other than just using the prompt itself.],
+  [I tried to be as honest as possible with the results I’m showing, because I don’t have a dog in this race. I just want something useful for me , wherever it comes from. You can zoom over the results to see them slightly bigger.],
+  [id="what-i-look-for"\>What I look for],
+  [The prompts I used are for stuff I am actively working on, so they’re a bit weird, slightly personal, and in some cases, oddly disturbing. Please don’t steal the prompts or the outputs from me; I can’t stop you (such is life on the internet), but it will break my heart.],
+  [I’ll have some more details for each prompt, and how I picked “the most interesting to me”, but the two big rubrics I looked for were:],
+  [Did this model interpret the prompt?],
+  [Would I use one of the model’s generations “in an art” (this is very wishy-washy and not scientific; trust me, I get that)],
+  [Keep in mind that:],
+  [I understand that in some cases if I spent more time working on the prompt, I might get better results. The way I work is that I don’t try to force things into existing – if they don’t work out, I shelve them for a better time.],
+  [Some results are really weird and unsettling, and they’ve made me dislike my prompt. This isn’t the models’ faults, or their authors, nor do I have “bad feels” towards the models; it just means I’ve
+accidentally created an uncanny valley and I need to back away from it until I have a better idea of what I actually want from a model. Or maybe not use bees ever again.],
+  [id="results"\>Results],
+  [I picked 4 prompts, each of which covering a different area I am interested in:],
+  [An easy to imagine concept that exists in real life (can it execute?)],
+  [An easy to imagine concept that doesn’t exist in real life (can it imagine?)],
+  [A hard to imagine concept that doesn’t exist in real life but makes sense linguistically (can it hallucinate a surrealism?)],
+  [Multiple concepts that exist in real life, glued together in a way that doesn’t make sense linguistically nor does it exist it real life (can it be weird?)],
+  [I apologize in advance for \#3 – it’s a bad place – and for the alt text on these images. Summarizing robot art is harder than I thought.],
+  [id="1-linocut-print-of-a-girl-bundled-up-in-bed-with-a-stack-of-books-and-a-cat"\>1. “Linocut print of a girl bundled up in bed with a stack of books and a cat”],
+  [What I am looking for: Something that I can actually carve into linoleum and make prints out of, so sharp lines that I don’t have to spend too much time cleaning up is ideal. The suprise winner in this category was Stable Diffusion who despite not interpreting the prompt correctly, came up with the most interesting results (in my opinion, etc)],
+  [DALL-E . Composition is great (100% gets the prompt), but completely misses the mark on "linocut". I tried to work this into a useable drawing to carve, but because it uses fairly sketchy lines and fills, it ended up being way more work than I wanted.],
+  [Stable diffusion . Composition is pretty good but doesn't actually interpret the prompt well. The "linocut" part is really well done -- I find it amazing that the top left image actually has a signature and a title outside of the print! Despite not getting the point, the top right result is my dream come true and what I'll end up using.],
+  [MidJourney . Also kind of misses the prompt, and doesn't have as many details as the Stable Diffusion results. I really like the bottom left the most, but I don't think it screams "cat with books" enough for me to use.],
+  [DALL-E mini . The results are kind of okay if you squint really hard, but not at all what I'm looking for. I just got laser eyes; I'm not about to go back to squinting.],
+  [id="2-lithograph-of-an-orchid-where-each-flower-has-a-small-skull-inside"\>2. “Lithograph of an orchid where each flower has a small skull inside”],
+  [What I am looking for: any semblance of an orchid not looking like an orchid. The “lithograph” part was a very loose requirement – I just wanted it to feel “pencilly” without looking like a child drew it, which is what DALL-E often does for “pencil drawing”. I spent a lot of time on this prompt with DALL-E (including looking up the technical biology terms for “the bit inside an orchid flower”), and I never got anything at all correct. It wasn’t until this blog post when I went to other models that I regained hope! MidJourney, man!],
+  [DALL-E . I remember I tried many combinations of writing "a skull inside each flower", and
+ all I could ever get out of DALL-E was an orchid next to, or coming out of, a skull. I get bored after about half an hour of failing at a prompt; I'm sure there is a way to write this to get what I'm looking for, but I didn't figure it out, and I lost interest.],
+  [Stable diffusion . This one struggled with the prompt too. The bottom two results are really
+ pretty, and in particular prettier than the equivalent (and misunderstood) DALL-E results, but still not even in the ballpark of what I was looking for],
+  [MidJourney . I mean, 10/10. These are the spooky orchid boys of my dreams! This prompt came up because I went to an orchid exhibition, and I thought so many of the little flowers looked like skulls or aliens. This was exactly what I had in mind.],
+  [DALL-E mini . Suffers from the same prompt problems as the other models, which makes me think
+ that whatever special tweaks MidJourney does to get "creativity" out of a prompt are absolutely
+ working.],
+  [id="3-erik-johansson-photograph-of-a-womansic-hair-that-is-a-literal-bee-hive"\>3. “Erik Johansson photograph of a woman\[sic\] hair that is a literal bee hive”],
+  [I love surrealism. I was watching this 60s movie where a bunch of women had beehive hairdos, and this is how my brain operates: “wouldn’t it be interesting if”? I don’t know what I was expecting to get, but it wasn’t any of this (though as someone who understands how these models work, in retrospect I understand exactly how we got here). I chose Erik Johansson because surreal photography is his jam, and it helped stir DALL-E towards more of the right vibes at the time. Unfortunately, I got really creeped out by most of the results (from all models tbh), and it’s really soured up this prompt for me.],
+  [DALL-E . The uncanny valley of literal bee hives turns out to be deep. The top left image one is the nicest, possibly because a) it doesn't have a face and b) it only has casual bees. It is maybe the closest to what I wanted (out of all the outputs), but it doesn't make me feel great looking at it.],
+  [Stable diffusion . The people. They look like people. I don't like it. I think the top right one is the least disturbing?],
+  [MidJourney . I find it incredibly fascinating that out of 8 images, they all have the same very specific style. Erik Johannson rarely uses people in his photography -- why is this very specific
+ woman coming up? Also, I think the cutesy, not really photographic style really helps these outputs, tbh.],
+  [DALL-E mini . Poor model, this is the worst of the bunch, and I expected it. DALL-E mini
+ isn't very good at realism; it gives very noisy people, or faces, and then shoves them through a potato. That, combined with (my bad) sheer
+ creepiness of the prompt leads to a literal nightmare.],
+  [I cannot apologize enough to these models for making them go through this. You at least could’ve scrolled past this section; they, the poor darlings, couldn’t.],
+  [id="4-a-toucan-wearing-a-60s-apron-sitting-on-a-mid-century-modern-armchair-talking-on-a-rotary-phone-retrofuturism"\>4. “A toucan wearing a 60s apron, sitting on a mid century modern armchair, talking on a rotary phone, retrofuturism”],
+  [And now, a palette cleanser. I had been doing some reading and learnt that DALL-E really likes commas and stacking up contexts, so that’s why this prompt is so detailed.],
+  [DALL-E . I expected DALL-E to do well, and it did. The toucan on the phone is there, the 60s vibe is there, the apron is dubiously missing but we'll give it a pass. It's got the fuzziness of old,
+ spacey, retrofuturism posters (though the prompt has absolutely no actual futurism in it)],
+  [Stable diffusion . This isn't bad either. The art style is a little flatter (what is retrofuturism even?), but it's toucans doing their thing, some better than others.],
+  [MidJourney . If you've ever played with MidJourney, this will strike you as having "very MidJourney vibes". This grainy, round style I see often, and I quite like. However, while it captures the style really nicely, the prompt is sort of a wash past the toucan.],
+  [DALL-E mini . This is the first time I a) love this model the most and b) wish that it produced higher resolution images. Look at the aprons! Look at the furniture! In terms of concept, it's absolute perfection. In terms of execution, an absolute potato.],
+  [id="what-have-i-learned"\>What have I learned?],
+  [I think the most important thing I’ve learnt from this experiment is that in terms of what I’m looking for (interesting hallucinations and not realism), DALL-E isn’t the end-all, be-all of models, and nor is MidJourney. The two freely available models are quite alright in some cases, especially if you’re looking for fast and free brainstorming. I think the workflow that I will try out next is to workshop the prompt using StableDiffusion/DALL-E mini, and then take that to the big boi DALL-E herself, and see what I can go from there.],
+  [In terms of model-specific lessons (knowing that it’s based on my weird experience with them, they’re not scientific and not necessarily applicable to what you are working on, etc. Don’t come for me, basically):],
+  [MidJourney can be super creative, but can also fall into stylistic pits (see: the bees, the toucan)],
+  [It’s hard to get DALL-E out of a realism pit without a ton of effort (see: the skull orchids)],
+  [Stable Diffusion works surprisingly well for something I can run off a collab],
+  [I don’t have a gut feeling as to why, but pretty much everyone except for Stable Diffusion is confused by what a linocut is (this is only interesting to me, someone who works on linocuts)],
+  [DALL-E mini really understands what toucans want (JK)],
+  [I should maybe steer clear of bees.],
+  [Thanks to Adam for helping me rework the intro, and giving me a subtitle; I can’t believe I missed a Strangelove opp.],
+),
+  insert-map: (:),
+  inline-pq: pull-quote([I just got laser eyes; I'm not about to go back to squinting.], [Monica Dinculescu]),
+  inline-pq-idx: 33,
+  word-count: 2744,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+}
+
+{
+  #standard-article(
+  title: [Public Environment Variables For Your Tests Using cypress-expose Plugin],
+  author: [Gleb Bahmutov],
+  source-name: [Gleb Bahmutov],
+  images: (),
+  paragraphs: (
+  [Recently Cypress announced a change in how it will handle environment variables. Variables were always public and accessible to the application under test in the browser (via calling Cypress.env() method), but now you can have truly private values. I published a blog post Migrating From Cypress.env To cy.env and Cypress.expose Methods describing the change.],
+  [Looking at the changes, I noticed a missing area: it is not easy to pass public variables (non-secrets) to Cypress tests. I used a lot of "configuration" values that were meant to be used inside the spec files, and now these values are private by default. For example, let's say we want to run a test only on CI. We could do something like this:],
+  [cypress/e2e/ci.cy.js 1 
+ 2 
+ 3 
+ 4 
+ 5 
+ 6 
+ 7 
+ 8 
+ 9 
+ \/\\/ only run these tests on CI 
+ if ( Cypress . env ( 'ci' )) { 
+ it ( 'has CI variable' , () =\> { 
+ expect ( Cypress . env ( 'ci' ), 'CI variable' ). to . equal ( true ) 
+ expect ( Cypress . env ( 'ciName' ), 'CI name variable' ). to . equal ( 
+ 'GitHub Actions' , 
+ ) 
+ }) 
+ }],
+  [In Cypress before v15 we could have set \/ used "ci" and "ciName" via environment variables, for example, if using Cypress github action :],
+  [.github/workflows/ci.yml 1 
+ 2 
+ 3 
+ 4 
+ 5 
+ 6 
+ 7 
+ 8 
+ 9 
+ 10 
+ 11 
+ 12 
+ 13 
+ 14 
+ 15 
+ 16 
+ 17 
+ 18 
+ name: ci 
+ on: push 
+ 
+ jobs: 
+ test: 
+ runs-on: ubuntu-24.04 
+ steps: 
+ - name: Checkout 🛎 
+ \# https:\/\/github.com/actions/checkout 
+ uses: actions/checkout\@v6 
+ 
+ - name: Run tests 🧪 
+ \# https:\/\/github.com/cypress-io/github-action 
+ uses: cypress-io/github-action\@v7 
+ env: 
+ \# default CI variable 
+ CYPRESS\_ci: true 
+ CYPRESS\_ciName: 'GitHub Actions'],
+  [The test runs, Cypress.env() returns { ci: true, ciName: 'GitHub Actions' } , everyone is happy. But in Cypress v16 the process environment variables that start with CYPRESS\_ are automatically added to the private cy.env space, and are not accessible outside test blocks \/ hooks. We could still pass them, but now we need to use a complete custom cypress run --expose ... command, instead of letting Cypress GitHub Action do its thing!],
+  [This is why I wrote cypress-expose plugin. It grabs every CYPRESS\_EXPOSE\_... process environment variable and sets it into Cypress.expose object, letting the specs access it. This is meant for public data only! Simply add plugin to your setupNodeEvents callback function and pass the config object.],
+  [cypress.config.js 1 
+ 2 
+ 3 
+ 4 
+ 5 
+ 6 
+ 7 
+ 8 
+ 9 
+ 10 
+ 11 
+ 12 
+ 13 
+ 14 
+ 15 
+ 16 
+ 17 
+ 18 
+ 19 
+ const { defineConfig } = require ( 'cypress' ) 
+ const cypressExpose = require ( 'cypress-expose' ) 
+ 
+ module . exports = defineConfig ({ 
+ allowCypressEnv : false , 
+ e2e : { 
+ \/\\/ baseUrl, etc 
+ supportFile : false , 
+ fixturesFolder : false , 
+ 
+ setupNodeEvents ( on, config ) { 
+ cypressExpose (config) 
+ 
+ \/\\/ IMPORTANT: return the config object 
+ \/\\/ to let Cypress know we modified it 
+ return config 
+ }, 
+ }, 
+ })],
+  [Boom, you are all set. Now any CYPRESS\_EXPOSE\_... variable is available under camel-cased name. Let's say we run Cypress using the following command:],
+  [1 
+ 2 
+ 3 
+ \$ CYPRESS\_API\_KEY=123secret! \\ 
+ CYPRESS\_EXPOSE\_ANSWER=42 \\ 
+ cypress open -- env PASS\_WORD=my-password --expose USER\_NAME=Joe],
+  [The api key and the password are going to be reachable via cy.env command, while the answer and the username are publicly accessible using Cypress.expose :],
+  [The EXPOSE\_ANSWER value in the cy.env is null , the plugin overwrites it, but cannot delete it (since Cypress merged any modifications to the env object with the original values). I feel like having null there is enough.],
+  [Take the plugin for a spin, let me know if it works for you.],
+),
+  insert-map: (:),
+  word-count: 593,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+}
+
+{
+  #standard-article(
+  title: [Personal tech, social media, and the “decline of humanity”],
+  author: [Peter Dizikes | MIT News],
+  source-name: [MIT News Education],
+  images: (),
+  paragraphs: (
+  [Social psychologist  Jonathan Haidt presented a forceful analysis of the damage smartphones and social media are doing to our cognition, our civic fabric, and our children’s wellbeing, while calling for renewed action to ward off their effects, in the latest of MIT’s Compton Lectures on Wednesday.],
+  [“Around the world, people are getting diminished,” Haidt said. “Less intelligent, less happy, less competent. And it’s happening very fast … My argument is that if we continue with current trends as AI is coming in, it’s going to accelerate. The decline of humanity is going to accelerate.”],
+  [Haidt is the Thomas Cooley Professor of Ethical Leadership at New York University’s Stern School of Business and the author of the recent bestseller “The Anxious Generation,” which suggests that the widespread adoption of social media in the 2010s has been especially damaging to young women, making them prone to anxiety and depression.],
+  [But as Haidt has continued to examine the effects of social media on society, he has started focusing on additional issues. Our inability to put our phones away, our compulsion to check social media, and the way we spend hours a day watching short-form videos, may be causing problems that go far beyond any rise in anxiety and depression.],
+  [“It turns out, it’s not the biggest thing,” Haidt said. “There’s something bigger. It is the destruction of the human capacity to pay attention. Because this is affecting most people, including most adults. And if you imagine humanity with 10 to 50 percent of its attentional ability sucked out of it, there’s not much left. We’re not very capable of doing things if we can’t focus or stay on a task for more than 30 seconds.”],
+  [Whatever solution may emerge to these problems, Haidt declared, is going to have to come from “human agency. People see a problem, they figure out a way around it. That’s what I’m hoping to promote here \[to\] this very important audience. So please consider what I’m saying, these trends, and then work to change them.”],
+  [Haidt’s lecture, titled, “Life After Babel: Democracy and Human Development in the Fractured, Lonely World That Technology Gave Us,” was delivered before a capacity audience of over 400 people in MIT’s Huntington Hall (Room 10-250).],
+  [The lecture spanned a variety of related topics, with Haidt presenting chart after chart showing the onset of declines in cognition, educational achievement, and happiness, which all have seemed to occur soon after the widespread adoption of smartphones in the 2010s. The individual adoption of smartphones, he notes, has been compounded by the way schools brought internet-connected computing devices into classrooms around the same time.],
+  [“The biggest, the most costly mistake we’ve ever made in the history of American education \[was\] to put computers and high tech on people’s desks,” Haidt said.],
+  [Distractible students with shorter attention spans are reading fewer books, he noted; some cinema students cannot sit through films. The top quartile of students is continuing to do well, he noted, but for most students, proficiency levels have dipped notably since the 2010s.],
+  [“Fifty years of progress in education, 50 years of progress, up in smoke, gone,” Haidt said. “We’re back to where we were 50 years ago. That’s pretty big, that’s pretty serious.”],
+  [As Haidt mentioned multiple times in his remarks, he is not an opponent of all forms of technology, or even personal communication technology, but rather is seeking to mitigate its harmful effects.],
+  [“I love tech, I love modernity, we’re all dependent on it, I love my iPhone,” Haidt said. Just as he finished that sentence, an audience member’s cellphone started ringing loudly — drawing a huge laugh from the audience.],
+  [“I did not plant that, that was a truly spontaneous demonstration of what I’m talking about,” Haidt said.],
+  [Haidt was introduced by MIT President Sally A. Kornbluth, who called him “a leading voice for reforming society’s relationship with technology.” She praised Haidt’s work, noting that he wants to “encourage us to imagine a more positive role for technology in humanity’s future.”],
+  [The Karl Taylor Compton Lecture Series was introduced in 1957. It is named for MIT’s ninth president, who led the Institute from 1930 to 1948 and also served as chair of the MIT Corporation from 1948 to 1954.],
+  [Compton, as Kornbluth observed, helped MIT evolve from being more strictly an engineering school into “a great global university” with “a new focus on fundamental scientific research.” During World War II, she added, Compton “helped invent the longstanding partnership between the federal government and America’s research universities.”],
+  [Haidt received his undergraduate degree from Yale University and his PhD from the University of Pennsylvania. He taught on the faculty at the University of Virginia for 16 years before joining New York University. He has written several widely discussed books about contemporary civic life. Haidt observed that the problems stemming from device distraction and compulsion appear to have hit so-called Gen Z — those born from roughly the mid 1990s to the early 2010s — especially hard, though he emphasized that people in that cohort are essentially victims of circumstance.],
+  [“I am not blaming Gen Z,” Haidt said. “I am saying we raised our kids in a way — we allowed the technology companies to take over childhood. We allowed a few giant companies to own our children’s attention, to show them millions of short videos, to destroy their ability to pay attention, to stop them from reading books, and this is the result.”],
+  [For a portion of his remarks, Haidt also examined the consequences of social media for politics, showing data that chart the global diminishment of democracy since the 2010s, while the world has become soaked in misinformation and conflictual online interactions.],
+  [“That, I think, is what digital technology has done to us,” Haidt said. “It was supposed to connect us, but instead it has broken things, divided us, and made it very, very hard to ever have common facts, common truths, common stories again.”],
+  [Towards the end of his remarks, Haidt also speculated that the effects of using AI will be corrosive as well, intellectually and psychologically.],
+  [“AI is not exactly going to make us better at interacting with human beings,” Haidt said.],
+  [With all this in mind, what is to be done, to limit the intellectual and social damage from tech devices and social media? For one thing, Haidt suggested, we should be less impressed by high-tech innovations and social media.],
+  [“We need to disenthrall ourselves from technology,” Haidt said, paraphrasing a line written by President Abraham Lincoln. He added: “I suggest that we have a generally negative view … of social media and of AI.” This kind of “more emotionally negative or ambivalent view” will make it easier for us to reverse the way technology seems to control us.],
+  [As a practical matter, Haidt suggested, that means taking steps to limit our exposure to technology. His own public-advocacy group, The Anxious Generation Movement, suggests a set of four reforms: No smartphones for kids before they are high-school age; no social media before age 16; making school phone-free, from bell to bell; and giving kids more independence, free play, and responsibility in the world.],
+  [Certainly there is movement toward some of these concepts. Some school districts in the U. S. are banning or limiting phone usage; Australia has also  instituted a ban on social media for anyone under 16, while a handful of other countries have  announced similar plans .],
+  [“There’s a gigantic techlash happening right now,” Haidt suggested. For all the sudden changes technology has introduced within the last 15 years, it is still possible, for now, for people to find a way out of our tech-induced predicament.],
+  [“The good news is, there is human agency,” Haidt said.],
+),
+  insert-map: (:),
+  word-count: 1287,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+}
+
+#article-row((
+  [
+    standard-article(
+  title: [Episode 231: On Dexter Avenue],
+  author: [Nate DiMeo],
+  source-name: [The Memory Palace],
+  images: (),
+  paragraphs: (
+  [Order The Memory Palace book now, dear listener. On Bookshop.org , on Amazon.com , on Barnes & Noble , or directly from Random House . Or order the audiobook at places like Libro.fm .],
+  [During mid-May, 2025, I'm doing a Midwestern book tour, with stops in Minneapolis, Cincinatti, Indianapolis, and Chicago. Find out more at www.thememorypalace.us/events .],
+  [The Memory Palace is a proud member of Radiotopia from PRX. Radiotopia is a collective of independently owned and operated podcasts that’s a part of PRX, a not-for-profit public media company. If you’d like to directly support this show, you can make a donation at Radiotopia.fm/donate. I have recently launched a newsletter. You can subscribe to it at thememorypalacepodcast.substack.com .],
+  [You can access the self-produced history of the Sophie Bibb Chapter of the UDC here. 
+The Alabama Encyclopedia site does a nice job with some of this stuff. 
+You might want to check out Caroline Janney's book, Burying the Dead but Not the Past: Ladies' Mermorial Associations and the Lost Cause.],
+),
+  insert-map: (:),
+  word-count: 183,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+  ],
+  [
+    standard-article(
+  title: [Episode 158: Life's Work],
+  author: [The Memory Palace],
+  source-name: [The Memory Palace],
+  images: (),
+  paragraphs: (
+  [Help support this show and the network that makes it possible by making a donation today. Make your mark at Radiotopia.fm/donate],
+  [A note on shownotes. In a perfect world, you go into each episode of the Memory Palace knowing nothing about what's coming. It's pretentious, sure, but that's the intention. So, if you don't want any spoilers or anything, you can click play without reading ahead.],
+  [I strongly recommend checking out Annelise Orlick's Common Sense and a Little Fire, an exhilarating history of Pauline Newman, Rose Schneiderman and other women at the center of the labor movement in the 20th Century.],
+  [Learn about your ad choices: dovetail.prx.org/ad-choices],
+),
+  insert-map: (:),
+  word-count: 128,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+  ],
+), ruled-indices: (1,))
+
+#article-row((
+  [
+    standard-article(
+  title: [From The Memory Palace Audiobook: Fine New England Granite],
+  author: [Nate DiMeo],
+  source-name: [The Memory Palace],
+  images: (),
+  paragraphs: (
+  [Order The Memory Palace book now, dear listener. On Bookshop.org , on Amazon.com , on Barnes & Noble , or directly from Random House .],
+  [Buy the audiobook wherever you get audiobooks (like libro.fm! )],
+  [The Memory Palace is a proud member of Radiotopia from PRX. Radiotopia is a collective of independently owned and operated podcasts that’s a part of PRX, a not-for-profit public media company. If you’d like to directly support this show, you can make a donation at Radiotopia.fm/donate. I have recently launched a newsletter. You can subscribe to it at thememorypalacepodcast.substack.com .],
+  [Audio excerpted courtesy of Random House Audio from THE MEMORY PALACE by Nate DiMeo, read by a full cast. Excerpt read by Nate DiMeo, © 2024 Nate DiMeo, ℗ 2024 Penguin Random House, LLC. All rights reserved.],
+),
+  insert-map: (:),
+  word-count: 132,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+  ],
+  [
+    standard-article(
+  title: [Episode 92 (Oil, Water)],
+  author: [The Memory Palace],
+  source-name: [The Memory Palace],
+  images: (),
+  paragraphs: (
+  [The Memory Palace is a proud member of Radiotopia, from PRX, a curated network of extraordinary, story-driven shows. Learn more at radiotopia.fm],
+  [SPOILERS BELOW],
+  [Notes \*Great stuff in the Cleveland Plain Dealer from waaaaaay back to fire \#1, if you want to dive in. \* Found Jonathan Joseph Wlasiuk’s dissertation , Refining Nature (etc.) quite helpful in sorting out the early days of the Rockefeller refineries. \* If you want to know more about the complicated relationship of Cleveland and the ’69 fire and the passage of the Clean Water Act, seek out Jonathan H. Adler’s article (and R. E. M. nod), Fables of the Cuyahoga: Reconstructing a History of Environmental Protection . \* I also want to shout out The Killer in the Attic, and More True Tales of Crime and Disaster from Cleveland’s Past, by John Stark Bellamy II, which does a great job with the river fires.],
+  [Music \* Start off with Lacrymae , from Melodium. \* Go to a chopped up Fables , by Girls in Airports. \* Finish off with the eternal Sunflower River Blues by John Fahey.],
+  [Learn about your ad choices: dovetail.prx.org/ad-choices],
+),
+  insert-map: (:),
+  word-count: 187,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -1526,556 +2585,6 @@ DoCoMo, please don’t sue me. Emojineering comes only from the ❤ .],
   ],
   [
     standard-article(
-  title: [Digital Collegium 2025],
-  author: [Erik Runyon],
-  source-name: [Erik Runyon],
-  images: (),
-  paragraphs: (
-  [My presentation for Digital Collegium 2025 was an overview of many recent and forthcoming additions to the web platform, specifically HTML and CSS.],
-  [id="description"\>Description],
-  [id="roll-for-sanity-surviving-the-ever-expanding-web-feature-bestiary"\>Roll for sanity: Surviving the ever-expanding web feature bestiary],
-  [Are you, brave front-end adventurer, feeling your sanity slipping as the Ever-Expanding Web Feature Bestiary grows with each browser update? Have you encountered strange and powerful creatures like “popovers” and “functions” and wondered how to tame them?],
-  [Join us on this perilous quest as we delve into the depths of the latest web platform additions. We will examine these fearsome beasts, dissecting their syntax and revealing their practical applications in the realm of higher ed. We’ll learn to harness their power for real-world encounters, and even glimpse into the future, where new and even more formidable creatures lurk.],
-  [Prepare your character sheets, sharpen your coding blades and roll for sanity as we navigate this challenging and ever-evolving landscape. Will you emerge victorious, a master of the modern web, or will the Bestiary claim your mind?],
-  [id="presentation"\>Presentation],
-  [Conference presentation details],
-  [Presentation/Code],
-  [id="links"\>Links],
-  [Interop 2025 Dashboard],
-  [2026 interop proposals],
-  [CSS Gap Decorations playground],
-  [id="keeping-up-with-new-features"\>Keeping up with new features],
-  [New to the web platform],
-  [Kevin Powell (YouTube)],
-),
-  insert-map: (:),
-  word-count: 209,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-  ],
-), ruled-indices: (1,))
-
-#article-row((
-  [
-    standard-article(
-  title: [Episode 77 (Butterflies)],
-  author: [The Memory Palace],
-  source-name: [The Memory Palace],
-  images: (),
-  paragraphs: (
-  [It's fundraiser time! Do you enjoy the Memory Palace? Do you want to support independent media? Then support the home of the Memory Palace, Radiotopia. Click here and become a sustaining supporter and help keep us going for a long time to come!],
-  [Music\* Under the credits is Harlaamstrat 74 off of John Dankworth's Modesty Blaise score.\* First up is "Adultere bourgeoise," a piece from Paul Misraki's score to A Double tour.\* Then we've got a piece called "Night Time Talk" by Stephen J. Anderson. \* We hit For the Trees by Matmos a couple of times (the bit after: "the facts were these," or whatever I say)\* Frank Durr's theme is P from that first LaBradford album, all those years ago. \* The score for the House of Butterflies is called Fragment II by Library Tapes. It comes back again toward the end.\* We also hear Invidia , by Deadmaus. That's the one we finish on.],
-  [Notes\* Several essays were very helpful in researching this. Among those were: - http:\/\/pittmed.health.pitt.edu/jan\_2001/butterflies.pdf - http:\/\/www.thenation.com/article/secret-history-lead/ - http:\/\/www.wired.com/2013/01/looney-gas-and-lead-poisoning-a-short-sad-history/ \* I found William J. Kovarik's Dissertation, The Ethyl Controversy: How the News Media Set the Agenda for a Public Health Controversy over the use of Leaded Gasoline, 1924-1926, completely fascinating. \* I relied on a number of papers from the W. H. O. when researching the health effects of lead and ozone depletion.\* Here's the New York Times original expose about the House of Butterflies.\* Finally, Thomas Midgely, IV's biography of his grandfather, From the Periodic Table to Production: The Life of Thomas Midgely, Jr., inventor of Leaded Gasoline and Freon Refrigerants , is, while unsurprisingly hagiographic, both well-researched and highly readable.],
-  [Learn about your ad choices: dovetail.prx.org/ad-choices],
-),
-  insert-map: (:),
-  word-count: 282,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-  ],
-  [
-    standard-article(
-  title: [Episode 73 (Notes on an Imagined Plaque to be Added to the Statue of General Nathan Bedford Forrest, Upon Hearing that t],
-  author: [The Memory Palace],
-  source-name: [The Memory Palace],
-  images: (),
-  paragraphs: (
-  [Episode 8 of the 2015 Summer Season],
-  [\* Under the credits is Harlaamstrat 74 off of John Dankworth's Modesty Blaise score.],
-  [\* First up (and returning at the end) is Sandra's Theme, from Heather McIntosh's fantastic score to Compliance , a very good, very disturbing movie.],
-  [\* We hit Frank Glazer leading Charles Ives' Largo for Clarinet, Violin and Piano a couple of times, framing...],
-  [\* Runaway from Olafur Arnalds.],
-  [Notes:],
-  [\*The key to researching this episode turned out to be an article in The Journal of Southern History from 2001 by Court Carnay called, "The Contested Image of Nathan Bedford Forrest." .],
-  [\* Also particularly useful was Nathan Bedford Forrest: a Biography , by Jack Hurst.],
-  [\* As was Lynching in America: A History in Documents , compiled by Christopher Waldrep.],
-  [\* Much of my information about the contents of the ceremony and speeches was gathered from this , the digitized journal and scrapbook of Charles Henry Niehaus, the sculptor of the monument. It's an extraordinary resource.],
-  [\* And let us all read Southern Horrors: Lynch Law in All its Phases , by Ida B. Wells. And let's put her on the \$10 while we're at it.],
-  [Learn about your ad choices: dovetail.prx.org/ad-choices],
-),
-  insert-map: (:),
-  word-count: 205,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-  ],
-), ruled-indices: (1,))
-#pull-quote([\* Also particularly useful was Nathan Bedford Forrest: a Biography , by Jack Hurst.], [The Memory Palace])
-
-
-#article-row((
-  [
-    standard-article(
-  title: [Episode 120 (The Prairie Chicken in Wisconsin: Highlights of a Study of Counts, Behavior, Turnover, Movement, and Habita],
-  author: [The Memory Palace],
-  source-name: [The Memory Palace],
-  images: (),
-  paragraphs: (
-  [The Memory Palace is a proud member of Radiotopia , from PRX, a curated network of extraordinary, story-driven shows.],
-  [We move between three different pieces from Camille Saint-Saens': Suite, Op. 90: II Menuet , and two from Carnival of the Animals: Aviary and the Cuckoo in the Heart of the Woods .],
-  [We hit Juneau from Danny Bensi and Sander Jurriaans' score to Wildlike.],
-  [And The Waltz from their score to 5 to 7.],
-  [And there's a total gem from George Mukabi called Dila Ni Dila in there too.],
-  [Do yourself a favor and read France Hamerstrom's autobiography, My Double Life: Memoirs of a Naturalist.],
-  [Do your kids a favor and Jeannine Atkins take on Frances in her book Girls Who Looked Under Rocks.],
-  [And then watch Frances teach David Letterman how to cook a snake.],
-  [Learn about your ad choices: dovetail.prx.org/ad-choices],
-),
-  insert-map: (:),
-  word-count: 144,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-  ],
-  [
-    standard-article(
-  title: [∞ The Dalrymple Report: Foldable iPhone, Financials, buying a Mac online],
-  author: [Jim Dalrymple],
-  source-name: [The Loop],
-  images: (),
-  paragraphs: (
-  [Rumors continue about Apple coming out with some sort of a foldable iPhone that will be released this year and the follow up designs that will follow. The copany released its quarterly results with revenue boosted by incredible iPhone sales. The way you buy a Mac online has changed. Apple has a new visually pleasing way of presenting the options and the Mac you are buying, while making your choices very clear.],
-  [Follow this podcast],
-  [Brought to you by :],
-  [Squarespace : Check out squarespace.com/DALRYMPLE for a free trial, and when you’re ready to launch, use OFFER CODE: DALRYMPLE to save 10% oﬀ your first purchase of a website or domain.],
-  [Show Notes:],
-  [RIP Catherine O’Hara],
-  [Report: Apple ‘exploring’ clamshell foldable iPhone as potential follow-up model],
-  [Apple has changed the way you buy a Mac online],
-  [Why the Q.ai acquisition could be huge for AI and Siri],
-  [Apple reports first quarter results],
-  [Shows and movies we’re watching],
-  [Mayor of Kingstown, Paramount+],
-  [Tom Scott’s “Podcast Express”],
-  [Second, there’s “For The Record, the 70’s”, Episode 58, WKRP in Cincinnati],
-),
-  insert-map: (:),
-  word-count: 180,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-  ],
-), ruled-indices: (1,))
-
-{
-  #section-label([Analysis])
-  #standard-article(
-  title: [Week 11],
-  author: [Monica Dinculescu],
-  source-name: [Monica Dinculescu],
-  images: (),
-  paragraphs: (
-  [It’s been another week of people being shit, innit? I know I should be],
-  [used to this by now, but it never ceases to amaze me the capability people have for violence],
-  [and evil, and the capability the patriarchy has to excuse it. “Dude had a bad day”? For real real?],
-  [If that excuse has legs then you’d expect every uterus-holding person to do at LEAST a murder],
-  [per year. And yet it’s always white dudes who haven’t ever thrown up from cramps or had to deal with birth control hormones that feel they’re],
-  [entitled to attention or sex or whatever and go on these racist murder sprees. And they’re],
-  [going to continue to as long as the media excuses them as “bad days”, or gives them a platform by],
-  [encouraging racism and xenophobia. If you’re a Fox news anchor who’s ever said the],
-  [words “china virus” in the last year…these murders are on you pal. I see you, and I deeply hope you don’t have a good night of sleep for the rest of your life.],
-  [I took all this anger and donated to Red Canary Song and also pointlessly stabbed linoleum with it. The goal is to carve things a computer generates, 
-but at the moment that’s a bit too hard for me (I make the computer generate a lot of lines and uhhh that’s a lot of cutting), so I’ve been carving some non-generative stuff. They’re all a bit surrealist, because that is extremely my shit, but I don’t really know what to do with them.],
-  [I also don’t understand my audience. For example, I made this computer plant . I thought it was meh, so I wasn’t gonna put it up in the store, but after tweeting about it, it ended up selling out in a nanosecond. I made this March Madness basketball beet that’s 
-like…actually well carved and in two colours and cute and nobody cared. The same happened with the generative stuff – the chaos attractors I thought were deeply boring sold out instantly, the wings in flight that 
-I absolutely adore are a no-op. I don’t get it, y’all.],
-  [I am back on my procedural bullshit. Adam has been telling me about
-the Mentalist for months now, and holy shit: he was right. A++ procedural murders, be back in 7 seasons.],
-  [Every year I say I’m going to do a March Madness bracket where I ignore the chalk and just pick it on names and mascots, and every year I think the chalk knows best so I don’t and get busted on like day 1. I see you Oral Roberts toothpastes and Loyola wolf boys, I should’ve kept you going to the final 4 like I wanted to, eh?],
-  [Related: defensive fouls in basketball are absolutely bullshit.],
-  [Zach and I are rewatching all of the Marvel movies in story chronological order. This means that I went on
-several really productive 4 am YouTube holes of watching Avengers bloopers, every recorded interview with Robert Downey Jr, and that whole Ally McBeal season he was on. Imagine if I could put that kind of energy in watching videos about quantum mechanics or something. Instead, I can tell you that he met his wife when filming Gothika, that Tom Hiddleston couldn’t stop laughing during that one scene in Avengers 1 when Hulk smashes him into the Stark tower apartment floor, and that Mark Ruffalo is scared of needles so he doesn’t have the Avengers tattoo everyone else got. WHY AM I THIS WAY.],
-),
-  insert-map: (:),
-  word-count: 587,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-}
-
-{
-  #standard-article(
-  title: [African American Servicemen in Britain During World War 2],
-  author: [George Levrier-Jones],
-  source-name: [History in 28 Minutes],
-  images: (),
-  paragraphs: (
-  [class=""\> Just after 9pm on a cool September evening in 1943, a large group of soldiers calmly walked the mile home to camp where they armed themselves with tommy guns, ammunition and bayonets. Putting themselves into formation, they marched back into town, three-a-breast. The sound of their army-issue boots striking the road for nearly a mile echoed heavily in the pitchy-ink of the blacked-out night-time and is something witnesses remember to this day. It seemed as if a ‘whole company’ of troops was moving through the night, it was said later.],
-  [class=""\> In England, Major Charity E. Adams, Columbia, South Carolina., and Captain Abbie N. Campbell, Tuskegee Institute, Tuskegee, Alabama, inspect the first members of the African American Women's Army Corps assigned to overseas service.],
-  [class=""\>Undoubtedly the troops who were on the move were ready for the fight of their lives – it just wasn’t the official enemy they had in their sights. Because unbelievably this was not happening in mainland Nazi-occupied Europe, but on Britain’s homefront – specifically the market town of Launceston in Cornwall. And these were American soldiers. Military police patrolling the town could sense impending danger. ‘Everything was so tense that evening that we thought that something might start,’ said one. Another added that all evening ‘…you could feel the tenseness in the air.’ Even publicans working in the town’s many drinking houses felt this was the calm before the storm.  One shut early that evening saying how he just sensed ‘…something brewing.’],
-  [class=""\>Suddenly the marching troops appeared ‘in a body’ from out of the darkness to encircle a group of military policemen, fellow Americans, who were standing chatting next to a jeep parked near the town’s war memorial. ‘We saw forty to fifty soldiers coming up the street. They had overcoats on. They walked up almost in formation, and straight toward us… and [we] thought trouble was about to begin,’ said one of the surrounded. A man, who seemed to be spokesman for the group, said very quietly: ‘Why don’t you let us come into town, come into the pubs?’. Flashlights snapped on. ‘Hands up!’ was shouted. The military police raised their arms and backed up. As they did, ‘I heard bolts open on rifles,’ said the jeep’s driver. There was just time for the terrifying realisation to sink in that their compatriots were not only armed but already taking aim when: ‘I heard a bolt crack and a shot landed at our feet. Someone hollered ‘DUCK’. I jumped in behind the wheel of a jeep.’ Next, a volley of fire. ‘I felt a bullet whizz past me.’ A flashlight revealed a soldier ‘with a denim hat and overcoat firing a rifle from the hip and he was really pumping them out.’ A pause. Then chaos as British soldiers, civilians, WAAFs and Land Army girls, as well as the Americans under fire, scrambled for cover amid ricocheting bullets. One old man told the Daily Mirror the next day : ‘There hasn’t been anything like this since the days of the smugglers.’],
-  [class=""\>No-one knows for sure exactly how many soldiers were armed and fighting that night. What is universally acknowledged is a large number was involved – from the 581st Ordnance Ammunition Company who were firing at soldiers from the 115th Infantry’s Second Battalion. It was all over in five minutes before the shooters melted away into the night. What they left behind was a shot up town centre, soldiers and citizens shaken, store windows in shatters, two hole-ridden US army jeeps (it subsequently took 20 soldiers to lift them bodily away), two sergeants with mashed-up legs, the visiting US army with its reputation hugely-dented and bullet holes in Cornish bricks and mortar which for more than seventy years were the sole reminder of an all-American gunfight army authorities wanted forgotten and tried their best to obscure. Because the inconvenient truth here was that these were members of an African American ordnance company who were taking on the white soldiers who policed them. The level of injuries given the firepower on hand that night shows precisely that wholesale slaughter was certainly not the intent, although military prosecutors defied their own investigators recommendations and insisted on bringing attempted murder charges alongside mutiny et al. The ‘mutineers’ were making a point and it was one that was needed to be made.],
-  [class=""\>There were around 130,000 African Americans among the 1.5 million US servicemen who were in the United Kingdom at any one time in World War Two – altogether 4 million Americans would come to Britain. But this segregated army had an inherent racial friction which began to spill over into violence with increasing frequency whenever the two races met in Britain’s ‘green and pleasant’ land. Riding on the tide of simmering racial tension in US training camps and explosive riots in five American cities during the long hot ‘bloody’ summer of 1943, this enmity inevitably floated across the Atlantic with each wave of arriving servicemen.],
-  [class=""\>At first it baffled the British. Despite ruling an empire upon which ‘the sun never set’ there were surprisingly few people of colour, roughly 15,000, in Britain during World War 2. Undoubtedly, in such a mono-cultural society, racism was bound to thrive as proved by race riots in 1919 and exemplified by the experiences of Learie Constantine, the West Indian cricketer, who came to live in Britain in the 1920s and described how ‘personal slights’ were ‘an unpleasant part of life in Britain for anyone of my colour.’  But evidence from thousands of censored letters, secret reports from the Ministry of Information’s Home Intelligence division, surveys for Mass Observation (the nascent polling organisation) as well as editorials and letters to newspapers and government departments shows this confusion amongst ordinary Brits soon morphed into outright rejection of the ‘colour bar’ – and decided support for African American troops. From George Orwell who kicked off his first article for Tribune with “The general consensus of opinion seems to be that the only American soldiers with decent manners are the Negroes” to a Blackpool factory worker raging against how “…the American troops literally kick, and I mean kick, the coloured soldiers off the pavement." Whatever British and American officials would have people believe, displays of discrimination and violence shamelessly paraded on British cobbles and village greens provoked a general sympathy amongst ordinary British people for the African American soldiers who came to trial and train for D-Day and put an invisible wedge in Anglo-American relations.],
-  [class=""\> An American Uprising in Second World War England: Mutiny in the Duchy tells the story of the soldiers, the trial and what this meant for Britain, America and what has subsequently been dubbed the ‘special relationship’.],
-  [class=""\>Turning that first page of the original court martial transcript, which arrived courtesy of a freedom of information request, was like beginning a film script. So too was the narrative that developed behind why the shooting happened, which I pieced together using once-secret government documents from various sources including the National Archives, the National Archives of America and the British Library. By the time I found out the targeted soldiers in Launceston happened to be tasked with Omaha Beach on D-day – it felt almost inevitable. The extraordinary timeline around this Launceston uprising made the 581st Ordnance Ammunition Company, the men – and 26 September 1943, the hour. It was a slam dunk of a story and needed to be told, especially since nearly 80 years on nobody knew what had really happened here, why and the ultimate fate of those involved.],
-  [class=""\>The story began with the United States army that came to trial and train for D-Day, which was segregated, mimicking the ‘Jim Crow’ separation of society in the American south.  One in every ten of its soldiers was African American and eventually 130,000 came to the UK before journeying to France after D-Day. With the rare exceptions of units such as the Tuskagee airmen and the 320th Barrage Balloon Battalion, these servicemen soon discovered they would be fighting from the supply side of things -  the decidedly more inglorious face of battle incorporating the Quartermaster Corps, the Corps of Engineers and the Transportation Corps. Their training experience was universally discriminatory, oppressive and – all too often - violent. This fractious rubbing alongside of African American and white soldiers was happening in camps across the nation. The Launceston ‘mutineers’ time in training was embarrassingly typical, according to Walter White, secretary of the National Association for the Advancement of Colored People (NAACP) who discovered they were repeatedly denied the chance for rest and recreation.],
-  [class=""\>Outside United States Army camps, general racial tension spilled over in the long hot ‘ bloody’ summer of 1943 when full-blown fights, riots and clashes flared in five American cities. The Second World War had heightened inequality between black and white communities over housing, work and even who got plaudits for fighting, and feuding broke out first in the streets of Los Angeles. Next it exploded in Detroit leaving 34 dead – 25 of whom were black – before ending in New York when rioting erupted after a policeman killed a black soldier. The ripple effect in the military was almost tangible and inevitably floated across the Atlantic to Britain with each wave of arriving servicemen. It was on this swell that the 581stOrdnance Ammunition Company came riding into Cornwall.],
-  [class=""\>Although ruling ‘an empire on which the sun never sets’, there were surprisingly few people of colour in Britain itself when the Second World War started. The black British community was no bigger than about 15,000 and centred mainly in port cities such as Bristol, Cardiff and Liverpool. Unsurprisingly, in such a mono-cultural nation, racism was bound to exist. Race riots broke out in 1919 around those same British port towns leaving five dead, hundreds injured and 250 arrested. Learie Constantine, the cricketer who moved from the West Indies to Britain in 1923, described how ‘personal slights’ were ‘an unpleasant part of life in Britain for anyone of my colour.’ And this only increased, with depressing predictability, probably more frequently in the upper than lower echelons of British society, once the segregated Americans arrived.],
-  [class=""\>Plentiful anecdotal evidence of American scuffles being played out on English cobbles and greens proliferated as black soldiers were pushed out of pubs, off buses and away from cinemas. However, a fresh look at evidence shows this in fact inspired a powerful British feeling about the visiting American army and race – which was recorded everywhere from Mass Observation and weekly secret Home Intelligence Division reports – to newspaper editorials and letters picked up by the censors. The story was nearly always the same. As George Orwell wrote in his first piece for Tribune: “The general consensus of opinion seems to be that the only American soldiers with decent manners are the Negroes.” Mass Observation, the nascent polling organisation, concluded feelings about Americans was ‘can be fairly sharply divided into feelings about white and coloured troops. As a general rule…the latter have made themselves more liked in his country.’ The feeling came from Blackpool, where one report told: ‘I have personally seen the American troops literally kick, and I mean kick, the coloured soldiers off the pavement’ to Essex when a ‘particularly disgusted’ father protested angrily to the Foreign Office that American white soldiers set upon a black soldier who ‘dared’ to take to the floor with a white woman at a dance.],
-  [class=""\>Put simply, the British sided with the underdog and were beginning to involve themselves in American disputes up and down the country. One of the most extreme cases was in Bamber Bridge, Lancashire, where one soldier was killed and several MPs and soldiers injured in an armed incident sparked by heavy-handed military policing in June 1943. Here, the British servicewomen and locals drinking at Ye Olde Hob Inn Public House backed the African Americans. Two hundred odd miles away in Corsham, Wiltshire, just a few days later again the violence of American military policemen towards African American soldiers caused a near riot. Head of Southern Command Sir Harry Haig reported: ‘A large group of civilians gathered and were heard saying: “They don’t like the blacks”; “Why don’t they leave them alone?”; “They’re as good as they are"; “That’s democracy.” The situation eventually developed into one of mass insubordination by the coloured troops, and at one point a coloured sergeant who had been ordered to bring his Company Commander, replied: “We aint no slaves, this is England.” The clash in Launceston is a perfect reflection of both emotions within the US Army and its outward-facing relations with the British home front at that precise moment in time. After that, things only got worse. A month before D-Day, a US Army morale report noted tersely that ‘the whites dislike the Negroes and the Negroes dislike the whites…The predominant note is that if the invasion doesn’t occur soon, trouble will.’ Clearly, the ‘colour bar’ was a wedge in the American army and it was something the authorities were determined to obfuscate.],
-  [class=""\>By a quirky twist of fate the 581st Ordnance Ammunition Company arrived in Cornwall, slap bang in the heart of GI country, in the dying ebbs of that scratchy summer. The 29th Infantry division relocated from Tidworth Barracks, Wiltshire, in May 1943 to Devon and Cornwall  where it planted its three principal units and it was the Second Battalion of the 115thInfantry Regiment that came to Launceston and built a base for itself at a farm on the top of a hill nearly a mile from the town’s market square - and half a mile from the African American soldiers’ base at Pennygillam. It is difficult to exaggerate just how much swing and glamour forced its way through the cobbles and winding country roads of this market town edging Bodmin Moor as a result of their arrival. Clinging to the coat-tips of incoming US Army arrivals, it meant untold luxuries like Hershey’s chocolate and Lucky Strike cigarettes to visits from big band leader Artie Shaw and boxing legend Joe Louis. But underneath all the glamour pulsed a racial tension beating at the heart of the US Army which turned some British people against white GIs and hurled an invisible lance into Anglo American relations.],
-  [class=""\>Curiouser still, was that the men arrived days after events in Britain polarised feeling about ‘the colour bar’ or segregation once and for all, starting with that most quintessential bastion of British sport – cricket. On September 3, news leaked that Learie Constantine, captain of the West Indies and a professional cricketer in England since the 1920s, had been thrown out of a London hotel because of American complaints. Newspapers had a field day. The response was a national outcry monitored secretly by the British government’s Home Intelligence Unit. Hot on its heels came the case of Amelia King, a young black British woman from Stepney, who was refused entry to the Women’s Land Army because it was felt white farmers would reject her help solely because of her ethnicity. Instead of taking the rejection lying down, she coolly raised it with her MP who voiced the outrageous situation in Parliament four days after the 581st arrived in Britain – and barely a week after the Constantine scandal erupted. It was the deciding blow. What followed was an almighty row about the blindingly unfair treatment of Constantine and King which rumbled on throughout September and October culminating just days before the Paignton court martial opened with a volcanic poll for Mass Observation revealing 75 per cent of respondents felt ‘definite disapproval’ of the colour bar.],
-  [class=""\>When the 581st Ordnance Ammunition Company arrived in September they had been restricted to their last two camps in America. In their first roll call in Cornwall, they were told they were to be restricted for a third time as they did not have the correct ‘dress uniform’ to go into town – although it didn’t seem to stop fellow white soldiers. It was the final straw. The American authorities tried repeatedly to censor the reporting of the shooting that followed; firstly, by trying to ban the reporting of race in the Paignton court martial which had, by law, to be held in public – a move foiled by a plucky objection from the Daily Mirror. Next it banned the public reporting of the sentence. This was precisely because of what the episode said about the state of its army’s internal relations and the truth it revealed at the heart of what would subsequently be dubbed the ‘special relationship’. George Orwell was alive to it, the trial itself caused Churchill ‘grave anxiety’ and it was something the authorities wished would just go away. But it couldn’t because the shoot out that happened in Launceston one September night in 1943 was both a result and reflection of race relations in Britain in that tunnel of time – of the enmity between white and black Americans and the sympathy of Brits for African Americans. It explained the court martial’s bulging press benches – and why it made headlines all over the United Kingdom and the United States.],
-  [class=""\> An American Uprising in Second World War England: Mutiny in the Duchy recounts what happened next in this fascinating episode that crosses over between military and social history. It is available here in the UK through Pen & Sword Books. The book is available to US readers here .],
-),
-  insert-map: (:),
-  word-count: 2940,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-}
-
-{
-  #standard-article(
-  title: [2017: another year in review],
-  author: [Monica Dinculescu],
-  source-name: [Monica Dinculescu],
-  images: (),
-  paragraphs: (
-  [You can tell I hate writing year in reviews because this one is really, really
-late. I tend to hate bragging, and I definitely hate introspective and, in
-particular, I always think I am underperforming (and that’s fine). However, that’s usually not true,
-and writing a year in review forces me to see the awesome things I did, so even if I did end up
-underperforming, at least I can learn from that. That’s the whole point of post-mortems,
- right?],
-  [As usual, here’s life as GitHub saw it. Red text is projects I’ve shipped, black text is
-conferences I’ve spoken at. Technically I didn’t speak at Blinkon, but I spoke
- to people at it so hey, counting it.],
-  [The reason why this post mortem is important to me is that before writing it,
-I literally thought this year was bad and I just “did fewer things”. But that’s
-not actually true!],
-  [I wrote less code than in 2016 (2713 vs 3153 contributions), but that’s totally
-irrelevant? GitHub contributions are a fake idea, and I’m the first one
-to tell you this, so I don’t know why I get worked up about them every year. I contributed
-to weird branches (which don’t get counted), and did a lot of weird explorations that
-obviously never got merged. I planned things. I wrote design documents. I reviewed
-design documents. I formed strong opinions. I learnt Redux. Eat it, contributions graph.],
-  [I gave fewer talks than in 2016 (7 vs 8), but I enjoyed conferences more. I went
-to a conference where I only hung out with badass women. I went to Railscamp, where
-I had no wifi and canoed and wore a headlamp like a giant dork. I MC-ed Chrome Dev Summit
-with Mariko, which was scary, and intimidating and incredibly fun.],
-  [I built more side projects (10 vs 9). One of them got
-featured in The Verge !],
-  [I worked fewer weekends (16 vs 28 days. Goal: 0). And I don’t mean on work-work ,
-I mean, at all . On the weekends I play Stardew Valley, or make pottery,
-or knit, or watch an entire season of Riverdale because I can . Maybe this means
-I’ll work on fewer side-things, and maybe this will hurt my career, but it will keep me happier, not burnt out, and less likely to murder my partner. And that’s p important.],
-  [I joined the Unicode Emoji committee. YES. Really. It took me a year of emails,
-and even now I’m pretty sure I’m the least useful member out of the whole bunch,
-but that’s ok, because I can get better!],
-  [I became broadly aware of a lot of technical things, but not necessarily
- deeply aware of them. I am really confident I understand Web Components, emoji and web fonts
- really well , but I still don’t really know how any of our polyfills work, or
-how to fix a sizeable bug in Polymer, or what to do
-about async/await and stuff. In the last couple of months of the year
-I started learning more about http/2 push and link rel=preload , but I feel
-it’s a broad sort of understanding. I don’t know yet what kind of person I want to
-be: “I understand something really well in all its intimate aspects which makes me an expert”, or
-“I understand many things well enough to have opinions and advice, but not well
-enough to be an expert in any of them”. This is the thing I want to figure out this year.],
-  [I learnt how to skateboard. I saw one of my favourite bands in concert.
-I ordered a coffee entirely in Japanese. I learnt how to
-make mugs and bowls and bottles, with my hands. I made new friends, and I didn’t piss off any
-of my current ones (that I know of). I nuzzled dogs, and cats, and an otter.
-I still didn’t spoil Star Wars. I turned 32.],
-  [I don’t do resolutions because they don’t really work for me, but I heard a
-good one from a coworker: do 12 new things next year.],
-  [So, I will.],
-  [id="️"\>❤️],
-  [\/\/ also available: 2016 and 2015 years in review,
-that were actually on time.],
-),
-  insert-map: (:),
-  word-count: 700,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-}
-
-{
-  #standard-article(
-  title: [Cypress vs Playwright; Browser Included],
-  author: [Gleb Bahmutov],
-  source-name: [Gleb Bahmutov],
-  images: (),
-  paragraphs: (
-  [Recently I watched a pretty good video Cypress vs Playwright side-by-side coding comparison. by Artem Bondar. While not as good as my Cypress vs Playwright course , the video is pretty solid. There is one point Artem makes in the beginning that he did not stress enough, but which determines how each tool gives you the access to the browser and your web application under test.],
-  [The browser],
-  [Here is the relevant still from the video:],
-  [Playwright gives you DOM snapshots],
-  [Like Artem says, even in the playwright test --ui mode, what you see is NOT the real browser, but the browser showing the trace of the recorded test. So Artem keeps a separate browser open while testing, looking up selectors, interacting with the app, etc. Cumbersome and inefficient, especially if you need to set up the app into a particular state the test needs.],
-  [Cypress gives you the live app in the real browser],
-  [On the other hand, Cypress runs its tests in the real browser: Electron, Chrome, Firefox, Webkit. The app is included in its own iframe. You can see the markup right there!],
-  [Not just the real DOM thing: you can interact with the application to observe what it does; right here I flip the "Light" switch after the test visits the page.],
-  [Let's say I want to test the color themes. I can click on the "Light" button, inspect the theme selector markup, then quickly write the test.],
-  [Great, got it. Let's expand our test. To better show the developer experience, I will keep Cypress browser and my VSCode side by side.],
-  [Great, the color theme changes from "Light" to "Cosmic", but how can we confirm it? We can simply inspect the application DOM before and after the click.],
-  [🎁 You can find both Cy and Pw specs in the repo bahmutov/cy-vs-pw-browser .],
-  [Having a real browser showing the app is a super power. Of course, both Cypress and Playwright also have time-traveling debugger showing the DOM for each command, but seeing the real app at the end is efficient .],
-  [Can you see the tests run in the real browser in Playwright. Kind of with npx playwright test --debug --ui command. The --debug option opens a headed browser instance, which runs the tests and closes the browser.],
-  [Execute test commands one by one],
-  [Both Playwright and Cypress give you a way to execute individual test commands one by one. Playwright has page.pause and Cypress has cy.pause command.],
-  [Same if you use Playwright Inspect which opens if you use the page.pause method:],
-  [Playwright spec 1 
- 2 
- 3 
- 4 
- 5 
- 6 
- 7 
- 8 
- 9 
- 10 
- 11 
- test ( 'counts seconds' , async ({ page }) =\> { 
- await page. goto ( '/' ) 
- await page. pause () 
- const timer = page. locator ( '\#timer' ) 
- await expect (timer). toHaveText ( '0' ) 
- await expect (timer). toHaveText ( '1' ) 
- await expect (timer). toHaveText ( '2' ) 
- await expect (timer). toHaveText ( '3' ) 
- await expect (timer). toHaveText ( '4' ) 
- await expect (timer). toHaveText ( '5' ) 
- })],
-  [I am running PW using the playwright test --ui --debug command. When the test launches, a real browser instance shows, the test is paused and I can step through the commands using the Pw Inspector window:],
-  [Cypress has an equivalent cy.pause command that let's you step through the commands one-by-one],
-  [Cypress spec 1 
- 2 
- 3 
- 4 
- 5 
- 6 
- 7 
- 8 
- 9 
- it ( 'counts seconds' , { baseUrl : 'http:\/\/localhost:9090' }, () =\> { 
- cy. visit ( '/' ) 
- cy. get ( '\#timer' ). should ( 'have.text' , '0' ). pause () 
- cy. get ( '\#timer' ). should ( 'have.text' , '1' ) 
- cy. get ( '\#timer' ). should ( 'have.text' , '2' ) 
- cy. get ( '\#timer' ). should ( 'have.text' , '3' ) 
- cy. get ( '\#timer' ). should ( 'have.text' , '4' ) 
- cy. get ( '\#timer' ). should ( 'have.text' , '5' ) 
- })],
-  [In both test runners, pausing the test lets the application continue running; the timer keeps ticking every second. If we really want to observe what the application is doing in response to the test command, we MUST pause both the test and the app. Can we do this?],
-  [Debugger in the same event loop],
-  [Cypress waits],
-  [One other interesting aspect of running Cypress tests and the app in the same browser window is that they share the single JavaScript event loop. Which means if you pause the application code using the debugger keyword, the test code pauses too, as this short video shows.],
-  [Note: to pause the app, the DevTools must be opened.],
-  [And vice versa: if you use the Cypress command cy.debug while the DevTools is opened, both the tests AND the application pauses. You can inspect the actual app objects, network calls, storage, everything!],
-  [Playwright does not wait],
-  [Let's see what Playwright does when there is a debugger keyword in the application code. I will run the browser in the debug mode to see if the test pauses while the application is paused:],
-  [Nope. While the application is paused, the test runner keeps executing the test and then failing it, since the timer element has not been updated. What about the other way? If the test is paused, does the application stay frozen? We can use VSCode Playwright extension to put a breakpoint on the test line and run the browser in the debug mode.],
-  [Nope again. The application "keeps ticking" so to speak while the test is frozen at a breakpoint. Trying to debug an application in this way, while the test runner and the app are two separate processes is ... complicated.],
-  [Ok, hope it makes the real difference between Cypress and Playwright a little bit clearer. If you want to learn more, check out my online course Cypress vs Playwright course or even an open-source workshop bahmutov/cypress-workshop-cy-vs-pw .],
-),
-  insert-map: (:),
-  word-count: 983,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-}
-
-#article-row((
-  [
-    standard-article(
-  title: [Episode 176: The Air and the Sea and the Land],
-  author: [The Memory Palace],
-  source-name: [The Memory Palace],
-  images: (),
-  paragraphs: (
-  [The Memory Palace is a proud member of Radiotopia from PRX.],
-  [A note on notes: We’d much rather you just went into each episode of The Memory Palace cold. And just let the story take you where it well. So, we don’t suggest looking into the show notes first.],
-  [Kola - Lighthouse Version by amiina],
-  [A Nearer Sun by the Westerlies],
-  [April by Kanazu Tomoyuki],
-  [The oral history mentioned in this episode is available through the Smithsonian Instittion’’s archives.],
-  [Learn about your ad choices: dovetail.prx.org/ad-choices],
-),
-  insert-map: (:),
-  word-count: 109,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-  ],
-  [
-    standard-article(
-  title: [Week 17],
-  author: [Monica Dinculescu],
-  source-name: [Monica Dinculescu],
-  images: (),
-  paragraphs: (
-  [I’ve been skipping weeks because a) literally nothing happens and b) I don’t have a good
-system to update these notes. They’re a markdown file on a GitHub repo, and I kind of 
-need a computer to edit it, but I also kind of don’t open my computer that much these days?
-I also keep forgetting which day is Monday. Room for improvement.],
-  [I wrote a blog post about how I generated some
-tree rings in JavaScript and then carved them as a linocut. It doesn’t actually contain any
-JavaScript, but it does have a lot of pretty images.],
-  [The last normal thing I did before the panini started was go to Japantown and stock
-up on apocalypse supplies (snackos, mucho ramen, milk tea powder, korean face things). 
-The first normal thing I did with my 1 vaccine shot was go to Japantown and restock 
-all the things. This wasn’t on purpose, but I am pleased with the serendipity. It is cherry blossom season, so it was very pretty, HOWEVER, some racist asshole vandalized two of the oldest cherry trees there in January. Literally chopped down all of the branches, one at a time. What the actual fuck.],
-  [If you’re against plastic (why aren’t you?) and use deodorants, Dove has started selling refillable ones. I got mine from Target. The refill itself 
-still comes in plastic, but overall it’s far less plastic than the obnoxious amount the normal ones have. I’m excited about this not because this deodorant is particularly amazing, but because Dove is a HUGE brand, and 
-having mainstream brands start looking into more reusable, less-plastic products is a small but exciting progress.],
-  [Speaking of waste, Zach bought us me the most amazing thing: a foodcycler !!! We’ve been composting for years, but I’ve recently started getting lazier about putting the compost back in the freezer when I’m done with it, so our idiot dog has been stealing a lot of compost (which is full of bad things for her like coffee grounds, onion peels, literally half a spaghetti squash rind she ate and threw up for 8 hours). This foodcycler thing takes the compost and dehydrates it and grinds it and in 4 hours is done and gives you back fertilizer at like a tenth of the original volume. We’ve had it for a week and it’s honestly THE MOST innovation I’ve seen in my kitchen.],
-),
-  insert-map: (:),
-  word-count: 399,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-  ],
-), ruled-indices: (1,))
-#pull-quote([This wasn’t on purpose, but I am pleased with the serendipity.], [Monica Dinculescu])
-
-
-#article-row((
-  [
-    standard-article(
-  title: [Week 18],
-  author: [Monica Dinculescu],
-  source-name: [Monica Dinculescu],
-  images: (),
-  paragraphs: (
-  [Ya look at that? It’s May already. My dog’s is turning 2 on the 14th, does anyone have any
-good dog cake recipes or should I just give her an almost-empty jar of peanut butter with the same
-success rate?],
-  [I got my second fouchie outchie! (\#teampfizer). I wouldn’t say it bodied me the next day,
-but I felt uncomfortable enough to sit in bed and read not one but TWO Bridgerton novels. I’ve 
-now read 1-4 and I think I’m done for a while.],
-  [Speaking of books, I’m finishing up On Earth We’re Briefly Gorgeous (Ocean Vuong; reads like poetry
-but isn’t. Review next time), and I’m about to start up The Vanishing Half (Brit Bennett; very 2021 book cover). I also finished a book in Romanian, translated from Russian: Zuleiha opens her eyes (Guzel Yakhina. Really beautiful, much more hopeful and uplifting than the Russian literature I’m used to.)],
-  [After 15+ years of living in North America, I think I am “into” oatmeal. Oatmeal isn’t a Romanian thing
-at all – oats are for horses, cream of wheat is for babies, adults don’t eat either. Current
-approach: 1. overnight oats (in water, cashew milk makes them too…intense and I don’t give money
-to the meat industry for cow milk) + either apple sauce (that I make because I keep forgetting to eat apples), or frozen fruit.],
-  [Other food shit I’m obsessed with right now: ingesting industrial quantities of watermelon, these
- keto peanut butter cookies (I don’t eat keto,
-but pb cookies with no-guilt-sugar are delicius), cashew milk.],
-  [Arts: I am deeply struggling with a 3 layer linocut. I’ve carved it like 3+ times, and no matter how I do it I can’t line up all the 3 layers well. I think it’s time to give up on it and make it into a digital print. Also, I’ve been working on L-systems, which make pretty trees. Should I write a blog post about that when it’s done?],
-),
-  insert-map: (:),
-  word-count: 328,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-  ],
-  [
-    standard-article(
-  title: [Episode 241: Stay Gold],
-  author: [Nate DiMeo],
-  source-name: [The Memory Palace],
-  images: (),
-  paragraphs: (
-  [Order The Memory Palace book now, dear listener. On Bookshop.org , on Amazon.com , on Barnes & Noble , or directly from Random House . Or order the audiobook at places like Libro.fm .],
-  [The Memory Palace is a proud member of Radiotopia from PRX. Radiotopia is a collective of independently owned and operated podcasts that’s a part of PRX, a not-for-profit public media company. If you’d like to directly support this show, you can make a donation at Radiotopia.fm/donate.],
-  [Marisa Anderson plays He is Without His Guns
-Bing & Ruth play Broad Channel (Solo Piano)
-Greg Haines plays Peter's Advice],
-  [Notes
-You can listen to the full recording here.],
-),
-  insert-map: (:),
-  word-count: 111,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-  ],
-), ruled-indices: (1,))
-
-#article-row((
-  [
-    standard-article(
-  title: [Graydon Hoare: 21 compilers and 3 orders of magnitude in 60 minutes],
-  author: [Lambda the Ultimate],
-  source-name: [Lambda the Ultimate],
-  images: (),
-  paragraphs: (
-  [In 2019, Graydon Hoare gave a talk to undergraduates (PDF of slides) trying to communicate a sense of what compilers looked like from the perspective of people who did it for a living.],
-  [I've been aware of this talk for over a year and meant to submit a story here, but was overcome by the sheer number of excellent observations. I'll just summarise the groups he uses:],
-  [The giants: by which he means the big compilers that are built the old-fashioned way that throw massive resources at attaining efficiency],
-  [The variants, which use tricks to avoid being so massive:],
-  [Fewer optimisations: be traditional, but be selective and only the optimisations that really pay off],
-  [Use compiler-friendly languages, by which he is really taking about languages that are good for implementing compilers, like Lisp and ML],
-  [Theory-driven meta-languages, esp. how something like yacc allows a traditional Dragon-book style compiler to be written more easily],
-  [Base compiler on a carefully designed IR that is either easy to compile or reasonable to bytecode-interpret],
-  [Exercise discretion to have the object code be a mix of compiled and interpreted],
-  [Use sophisticated partial evaluation],
-  [Forget tradition and implement everything directly by hand],
-  [I really recommend spending time working through these slides. While much of the material I was familiar with, enough was new, and I really appreciated the well-made points, shout-outs to projects that deserve more visibility, such as Nanopass compilers and CakeML, and the presentation of the Futamura projections, a famously tricky concept, at the undergraduate level.],
-),
-  insert-map: (:),
-  word-count: 252,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-  ],
-  [
-    standard-article(
-  title: [Episode 220: The Zipper],
-  author: [Nate DiMeo],
-  source-name: [The Memory Palace],
-  images: (),
-  paragraphs: (
-  [The Memory Palace is a proud member of Radiotopia from PRX. Radiotopia is a collective of independently owned and operated podcasts that’s a part of PRX, a not-for-profit public media company. If you’d like to directly support this show and independent media, you can make a donation at Radiotopia.fm/donate. I have recently launched a newsletter. You can subscribe to it at thememorypalacepodcast.substack.com .],
-  [Swiming by Explosions in the Sky
-Walking Song by Kevin Volans and the Netherlands Wind Ensemble
-I Walk on Guilded Splinters by Johnny Jenkins
-Seduction by the Balanescu Quartet
-Lunette by Les Baxter and Dr. Samuel J. Hoffman
-Running Around by Buddy Ross
-September by Giles Lamb],
-  [Notes
-This episode was pieced together from a ton of little fragments but I wanted to steer folks to a couple of resources in particular: this excellent article from a few years back in the Toronto Star by Katie Daubs, and this documentary from filmmaker, Amy Nicholson, that primarily uses the Zipper as a way to talk about changes at Coney Island but has some great details from Harold Chance and his sons.],
-),
-  insert-map: (:),
-  word-count: 184,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-  ],
-), ruled-indices: (1,))
-
-#article-row((
-  [
-    standard-article(
-  title: [Solo IT Budgeting for a Fading Business],
-  author: [astorm],
-  source-name: [Alan Storm],
-  images: (),
-  paragraphs: (
-  [One of my background projects this year is reducing the paid services that my software company, Pulse Storm, makes use of. These aren’t gigantic costs, but sales of Commerce Bug and No Frills Magento Layout have steadily declined as Adobe has methodically retired the Magento brand and the Open Source version of Magento has become an almost private project used exclusively by official Magento partner agencies. The Services Step one was moving store.pulsestorm.net from Shopify to Gumroad for my SaaS “click this button to buy a thing” provider. Gumroad isn’t free, but its pricing is solely based on a percentage […]],
-),
-  insert-map: (:),
-  word-count: 101,
-  edited-for-length: true,
-  debug-mode: false,
-)
-
-  ],
-  [
-    standard-article(
   title: [Seminoles Taught American Soldiers a Thing or Two About Guerrilla Warfare],
   author: [Jon Guttman],
   source-name: [HistoryNet],
@@ -2097,52 +2606,103 @@ This episode was pieced together from a ton of little fragments but I wanted to 
   ],
 ), ruled-indices: (1,))
 
+#article-row((
+  [
+    standard-article(
+  title: [That Efficiency of Programming Languages Image],
+  author: [astorm],
+  source-name: [Alan Storm],
+  images: (),
+  paragraphs: (
+  [In recent years there’s this image that will make the rounds with a ranking of programming languages by energy efficiency. If you haven’t seen it, it looks like this. I want to be careful here because I’m not a researcher. I don’t design studies and I don’t know how to design studies or anything about the environment folks will typically design studies in. This is intended as a critique of the methodology not a canceling of the research — if I’m off base here please let me know. The first thing that stood out to me was JavaScript had a \[…\]],
+),
+  insert-map: (:),
+  word-count: 101,
+  edited-for-length: true,
+  debug-mode: false,
+)
+
+  ],
+  [
+    standard-article(
+  title: [TMR 24.9: “I Hate Thinking about Thinking about Myself Like This” \[Melvill\]],
+  author: [Chad Post],
+  source-name: [Three Percent (U of Rochester)],
+  images: (),
+  paragraphs: (
+  [In the penultimate episode of this season, there’s a lot of talk about Melville’s relationship with Nathaniel Hawthorne as we get more of Melville’s life as he bounces through time, writes Moby-Dick and the creation of “its own kind of reader: an inexhaustible reader. A reader that didn’t yet exist . . .”],
+  [The “ Grifters Gonna Grift ” t-shirt is still available and still sexy.],
+  [Next episode will be next week at the regularly scheduled time and will cover the end of Rodrigo Fresán’s Melvill . You can find the full reading schedule here .],
+  [This week’s music is “ Vertigo ” by FM Belfast.],
+  [You can find all previous seasons of TMR on our YouTube channel and on Apple Podcasts , Spotify , etc. Please rate and review! It helps more than you know.],
+  [Follow Open Letter, Two Month Review , Chad Post, Kaija Straumanis , and Brian Wood for random thoughts and information about upcoming guests.],
+),
+  insert-map: (:),
+  word-count: 159,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+  ],
+), ruled-indices: (1,))
+
 {
   #section-label([Briefs])
   #brief-group((
-    #brief-item([New Scientist], source-name: [New Scientist], [Their species name is well known, but until recently we’ve understood very little for certain about Homo habilis. Columnist Michael Marshall reveals what new fossils are telling us about the hominins that have been considered the first humans])
+    [#brief-item([New Scientist], source-name: [New Scientist], [In a randomised trial, men who experience premature ejaculation benefitted from using an app to learn techniques for extending intercourse])],
+    [#brief-item([The Memory Palace], source-name: [The Memory Palace], [If you enjoy this story, do tell someone about The Memory Palace. 
 
-    #brief-item([The Memory Palace], source-name: [The Memory Palace], [This special, bonus episode was commissioned by Freepoint Hotel in Cambridge, Massachusetts. It's intended to be listened to while walking around Fresh Pond, across the street from the hotel, though it can be enjoyed anywhere. 
+Thanks.
 
-Learn about your ad choices: dovetail.prx.org/ad-choices])
+Nate
 
-    #brief-item([The Memory Palace], source-name: [The Memory Palace], [If you enjoy this story, please tell a friend about The Memory Palace. 
+Learn about your ad choices: dovetail.prx.org/ad-choices])],
+    [#brief-item([The Memory Palace], source-name: [The Memory Palace], [The Memory Palace is a proud member of Radiotopia , a collective of independently owned and operated podcasts.
 
-Thank you kindly.
+ Music 
 
-Learn about your ad choices: dovetail.prx.org/ad-choices])
+We hear both Baracolle and Ice World from Saloli's album, The Deep End .
 
-    #brief-item([Nate DiMeo], source-name: [The Memory Palace], [The Memory Palace is a proud member of Radiotopia from PRX.
+We hear Ensemble Recherche do Morton Feldman's Something Wild in the City: Mary Ann's Theme. 
+
+As well as De Wolfe Music do Moonbird .
+
+Harry Kalahiki does that Ukelele version of Claire de Lune 
+
+We get a snipped of Eartheater's Peripheral
+
+And E Ruscha V's The Hostess 
+
+Learn about your ad choices: dovetail.prx.org/ad-choices])],
+    [#brief-item([Nate DiMeo], source-name: [The Memory Palace], [The Memory Palace is a proud member of Radiotopia from PRX.
 
 Music
 
-LBS by Duval Timothy
+Traffico from Carlo Rustichelli's score to Divorzio All'Italiana and Una Braveta, from his score to Amici Miei.
+Tema Grottesco from Giovanni Fusco's score to L'avventura.
+ Gloving it from Moondog.
+Musica Bionda from the score to The Sweet Body of Deborah
+The Peter Thomas Sound Orchestra plays Natascha from the score to The Perfect Marriage. 
+Waltz from the Brendan Eder Ensemble
+Christa Schonfeldinger plays Grieg's Smarthold - der Kobold, on the glass armonica.])],
+    [#brief-item([Nate DiMeo], source-name: [The Memory Palace], [The Memory Palace is a proud member of Radiotopia from PRX.
 
-My Favourites, pt. 2 by Patricia Rossborough
-
-Sad Seine by Lambert
-
-Vals Efter Lasse I Lyby by Lofoten Cello Duo])
-
-    #brief-item([Nate DiMeo], source-name: [The Memory Palace], [The Memory Palace is a proud member of Radiotopia from PRX.
+A note on notes: We’d much rather you just went into each episode of The Memory Palace cold. And just let the story take you where it well. So, we don’t suggest looking into the show notes first.
 
 Music
 
-Una Bravata from Carlo Rustichelli’s score to Amici Miei.
+Midnight Moon from Annalisa Tornfelt and Gideon Fraudmann’s album, Spring Breakup: Songs for Alaska.
 
-Sunshine on Fish Skin by Girls in Airports.
+A couple of numbers from Marcelo Zarvos’ wonderful score to the wonderful, Please Give.
 
-The Vienna Glass Armonica Duo performs Mozart’s Adagio for Glass Harmonium.
+A remarkable piece of music called Spectacle of Ritual by Kali Malone
 
-The Fellowship by John Shabason
-
-Notes
-
-The best read on Mills is a 2022 article by Nate Hopper in The New Yorker about the challenges of keeping time on the internet.])
-
-    #brief-item([New Scientist], source-name: [New Scientist], [A device that relies on quantum effects and oversized atoms may be a more reliable way to measure temperature that doesn't require calibration])
-
-    #brief-item([Nate DiMeo], source-name: [The Memory Palace], [Order The Memory Palace book now, dear listener. On Bookshop.org , on Amazon.com , on Barnes & Noble , or directly from Random House . Or order the audiobook at places like Libro.fm .
+And another called Pauvre Simon from Sylvain Chauveau])],
+    [#brief-item([New Scientist], source-name: [New Scientist], [This is the opening of Kim Stanley Robinson's Red Mars, the New Scientist Book Club read for April, as humans come to the planet to settle it])],
+    [#brief-item([New Scientist], source-name: [New Scientist], [We know that a person’s outlook can have a huge effect on their health, and it’s no different when it comes to ageing. Columnist Graham Lawton looks at new evidence of just how powerful our attitude is – and how to use it to age better])],
+    [#brief-item([New Scientist], source-name: [New Scientist], [Ancient DNA reveals that the Goths of eastern Europe, some of whom would ultimately sack the city of Rome, may have been a mix of peoples from three continents])],
+    [#brief-item([New Scientist], source-name: [New Scientist], [Toys powered by AI show a worrying lack of emotional understanding. But we need to understand the risks and benefits of the technology so the industry can be regulated, not outright banned])],
+    [#brief-item([Nate DiMeo], source-name: [The Memory Palace], [Order The Memory Palace book now, dear listener. On Bookshop.org , on Amazon.com , on Barnes & Noble , or directly from Random House . Or order the audiobook at places like Libro.fm .
 
 The Memory Palace is a proud member of Radiotopia from PRX. Radiotopia is a collective of independently owned and operated podcasts that’s a part of PRX, a not-for-profit public media company. If you’d like to directly support this show, you can make a donation at Radiotopia.fm/donate. 
 
@@ -2150,30 +2710,34 @@ Music
 
 On-ness by Tom Rogerson and Eno.
 Etude by Joep Beving
-Ebb Tide by Houston & Dorsey])
+Ebb Tide by Houston & Dorsey])],
+    [#brief-item([jessica.blake\@insidehighered.com], source-name: [Inside Higher Ed], [New Survey Announcements From IES Give Hope for Agency’s Revival 
 
-    #brief-item([New Scientist], source-name: [New Scientist], [Are we evolving to be more stupid? Humans have a relatively high genetic mutation rate, which has been thought to be driving down our physical and mental fitness – but columnist Michael Le Page finds these mutations aren’t the health risk some make them out to be])
+class="field field--name-field-featured-image field--type-entity-reference field--label-hidden field\_\_item"\> 
 
-    #brief-item([New Scientist], source-name: [New Scientist], [All five of the canonical nucleobases – the underpinnings of DNA, RNA and life on Earth – have been found in samples from the asteroid Ryugu])
+ 
+ jessica.blake\@… 
 
-    #brief-item([New Scientist], source-name: [New Scientist], [Mushrooms have been used by ancient humans for millennia, but archaeologists have only just uncovered their pivotal role in shaping civilisation])
+ Fri, 03/27/2026 - 03:00 AM 
+ 
 
-    #brief-item([The Memory Palace], source-name: [The Memory Palace], [If you enjoy this story, please tell a friend about The Memory Palace. 
+Higher ed researchers and policy experts are pleased to see the agency get back to work after losing 80 percent of its staff. But one college access group has concerns about how the Trump administration may use the data it collects.
+
+class="field field--name-field-authors field--type-entity-reference field--label-inline clearfix"\>
+ 
+
+class="field\_\_label"\>Byline(s)
+
+class="field\_\_items"\>
+ 
+
+class="field\_\_item"\> Jessica Blake])],
+    [#brief-item([New Scientist], source-name: [New Scientist], [Researchers have created the first living synthetic bacterium made from non-living parts by killing a bacterial cell and then transplanting the genome of another species into it, blurring the boundary between life and death])],
+    [#brief-item([The Memory Palace], source-name: [The Memory Palace], [If you enjoy this story, please tell a friend about The Memory Palace. 
 
 Thank you kindly.
 
-Learn about your ad choices: dovetail.prx.org/ad-choices])
-
-    #brief-item([The Memory Palace], source-name: [The Memory Palace], [If you enjoy this story, do tell someone about The Memory Palace. 
-
-Thanks.
-
-Nate
-
-Learn about your ad choices: dovetail.prx.org/ad-choices])
-
-    #brief-item([New Scientist], source-name: [New Scientist], [A weather-forecasting AI was used to recommend routes for American Airlines flights between the US and Europe to reduce the formation of contrails, which contribute to global warming])
-
+Learn about your ad choices: dovetail.prx.org/ad-choices])],
   ))
 }
 

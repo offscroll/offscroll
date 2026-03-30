@@ -28,8 +28,9 @@
   author: [Monica Dinculescu],
   source-name: [Monica Dinculescu],
   deck: [A couple of months ago my friend Jana helped organize HashiConf Europe , and asked me to work on generating custom artwork for each of their speakers.],
-  lead-text: "This was my first experience with creating art for someone else, and especially art that had to match someone else’s artistic guidelines. I’ve said this before, but I live and nap by the idea that rules (and editing) are at the core of the artistic process and not having to do that myself was brilliant . I wanted to write a bit about it because a) I did a bunch of work that I’m really proud of and I never got to talk about it and b) I am vain and I want to talk about it.",
-  lead-first-alpha: 0,
+  lead-pre: [],
+  lead-cap: [T],
+  lead-rest: [his was my first experience with creating art for someone else, and especially art that had to match someone else’s artistic guidelines. I’ve said this before, but I live and nap by the idea that rules (and editing) are at the core of the artistic process and not having to do that myself was brilliant . I wanted to write a bit about it because a) I did a bunch of work that I’m really proud of and I never got to talk about it and b) I am vain and I want to talk about it.],
   body-paragraphs: (
   [This was the final poster:],
   [And this is what we wrote about it on the card that accompanied it:],
@@ -78,19 +79,15 @@ cool idea and want to do this for your speakers or employees, send me an email !
 {
   #section-label([Front Page])
   #standard-article(
-  title: [SUMMER SCHOOL 6: Trade & The Better Life],
-  author: [NPR Planet Money],
-  source-name: [NPR Planet Money],
+  title: [Stop Multitasking and Try Timeboxing],
+  author: [Harvard Business Review],
+  source-name: [Harvard Business Review],
   images: (),
   paragraphs: (
-  [International trade is the web of cross-border relationships that binds economies together. Because of trade we have access to cheaper, higher-quality goods, and we get to benefit from other countries' cultures. Economics tells us trade makes society, overall on average, better off, but that doesn't mean everyone wins. Today, the good and bad of trade through the eyes of workers in developing economies who make the things sold around the world. We follow them as they navigate the ever-shifting international trade environment. |At this Summer School, phones ARE allowed during class... Check out this week's PM TikTok! | Listen to past seasons of Summer School here .],
-  [To manage podcast ad preferences, review the links below:],
-  [See pcm.adswizz.com for information about our collection and use of personal data for sponsorship and to manage your podcast sponsorship preferences.],
-  [Learn more about sponsor message choices: podcastchoices.com/adchoices],
-  [NPR Privacy Policy],
+  [There are all kinds of productivity tools out there promising to help you make the most of your day. Some people swear by timeboxing: the method of reserving time on your calendar each day for each task you want to get done, and then truly focusing on that one thing at a time. The return on merging your to-do list with your calendar like this, says Marc Zao-Sanders, is higher productivity, better collaboration, and less distraction and anxiety. He explains how try to the method yourself and the how your team and organization benefit from it, not just you. Zao-Sanders is author of the book "Timeboxing: The Power of Doing One Thing at a Time."],
 ),
   insert-map: (:),
-  word-count: 147,
+  word-count: 115,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -133,21 +130,22 @@ A dull perusing of git log or git reflog should point you to the right sha. Then
   debug-mode: false,
 )
 
+  #pull-quote([A dull perusing of git log or git reflog should point you to the right sha.], [Monica Dinculescu])
+
 }
 
 #article-row((
   [
     standard-article(
-  title: [NBA Star Chris Paul on Mentorship and Taking a Stand],
+  title: [Comedian Sarah Cooper On Bringing Humor to Any Career],
   author: [Harvard Business Review],
   source-name: [Harvard Business Review],
   images: (),
   paragraphs: (
-  [Most of us can point to a few key people who have made a real difference in our lives and careers - a family member, a coach, a boss. And many who get that kind of mentoring build on the lessons they learn to become leaders and role models themselves. Basketball star Chris Paul is a prime example. He had the support of a tight-knit family growing up, was mentored by a great coach in college, and as an NBA rookie looked to league veterans for guidance. Now, at age 38, he's the seasoned vet, a perennial All-Star across multiple teams who led the National Basketball Players Association from 2013 through the 2020 Covid-19 crisis and racial reckoning in the United States and is widely regarded as one of the best point guards of all time. Paul's new book is "Sixty-One: Life Lessons from Papa, On and Off the Court."],
-  [Note: This episode was taped before the start of the 2023 NBA playoffs.],
+  [It's a cliche, but they say it's best to write what you know. That was the case for comedian Sarah Cooper, who rose to viral social media fame in the Trump era through her lip sync TikTok videos. She formerly worked at Yahoo and Google, and she found her way into comedy, in part, by looking at and pointing out the absurdities of corporate culture. She speaks about how humor helped her manage a team, why she took the big risk to quit her job, and how she's navigating the new work world of Hollywood. Cooper is the author of the forthcoming audio book "Let's Catch Up Soon: How I Won Friends and Influenced People Against My Will."],
 ),
   insert-map: (:),
-  word-count: 163,
+  word-count: 118,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -155,16 +153,16 @@ A dull perusing of git log or git reflog should point you to the right sha. Then
   ],
   [
     standard-article(
-  title: [IBM’s Ginni Rometty on Skill-Building and Success],
+  title: [Why Companies Should Stop Political Spending Now],
   author: [Harvard Business Review],
   source-name: [Harvard Business Review],
   images: (),
   paragraphs: (
-  [For years, employers have used university degrees as a major requirement for hiring. But, for many jobs, success depends more on skills -- and the ability to adapt and learn -- than on piece-of-paper credentials. Ginni Rometty, former chairman and CEO of IBM, realized this early on -- first by watching her mother and other female relatives support their families and later by seeing what it took to rise to the top in her own career. At the helm of IBM from 2012 to 2020, she pushed the company to adopt skills-first recruitment and development practices, and now she's encouraging other organizations to do the same through her work at the non-profit OneTen.],
-  [Rometty is coauthor of the HBR article “The New-Collar Workforce,” and the book Good Power: Leading Positive Change in Our Lives, Work, and World.],
+  [A decade ago, the U. S. Supreme Court changed the rules on how businesses could donate to political campaigns. Since then, hundreds of millions of corporate dollars have been spent on local, state, and federal elections, often without transparency. Many CEOs and boards feel this is the only way they can curry favor with policymakers. Dorothy Lund, an associate professor of law at the University of Southern California, and Leo Strine Jr., counsel at Wachtell, Lipton, Rosen, and Katz and a former Chief Justice of the Supreme Court of Delaware, say this isn't just bad for democracy. It's bad for business because it distracts companies from innovation and growth and risks serious backlash from consumers, employees, and shareholders. They suggest ways to dial back corporate political spending and improve the economy for all.],
+  [They are the authors of the HBR article "Corporate Political Spending is Bad Business: How to Minimize the Risks and Focus on What Counts.”],
 ),
   insert-map: (:),
-  word-count: 137,
+  word-count: 156,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -172,44 +170,19 @@ A dull perusing of git log or git reflog should point you to the right sha. Then
   ],
   [
     brief-group((
-      brief-item([Harvard Business Review], source-name: [Harvard Business Review], [Harvard Law School lecturer Heidi K. Gardner discusses how firms gain a competitive edge when specialists collaborate across functional boundaries. But it’s often difficult, expensive, and messy. The former McKinsey consultant is the author of the new book, “Smart Collaboration: How Professionals and Their Firms Succeed by Breaking Down Silos.”])
-
-      brief-item([Harvard Business Review], source-name: [Harvard Business Review], [Ranjay Gulati, professor at Harvard Business School, says the most successful organizations tend to have one thing in common: a soul. Moving beyond culture, the "soul" of a growing start-up -- or a more established company -- is built on clear business intent, a strong connection to customers, and a stellar employee experience. Gulati says that leaders must think hard about preserving all three elements of the soul even as they scale and never lose sight of what makes their company special. He's the author of the HBR article "The Soul of a Start-Up."])
-
-      brief-item([Harvard Business Review], source-name: [Harvard Business Review], [Danielle Brown, Intel Chief Diversity & Inclusion Officer, talks about the corporation’s \$300 million initiative to increase diversity, the largest such investment yet by a technology company. The goal is to make Intel’s U. S. workforce mirror the talent available in the country by 2020. Brown breaks down what exactly Intel is doing, why the corporation is doing it, where it’s going well (recruiting), where it’s not going as well (retention), and what other companies can learn from Intel’s experience.])
-
-      brief-item([Harvard Business Review], source-name: [Harvard Business Review], [The future of AI goes far beyond individuals using ChatGPT. Companies are now integrating artificial intelligence into all aspects of their businesses. One key player in this transition is Nvidia, the AI-driven computing company, which makes both hardware and software for a range of industries. In this episode, HBR editor in chief Adi Ignatius speaks with Nvidia’s CEO and cofounder Jensen Huang at HBR’s Future of Business conference about how he keeps his company agile in the face of accelerating change and where he sees AI going next.])
-
-      brief-item([Harvard Business Review], source-name: [Harvard Business Review], [Noubar Afeyan, cofounder and chair of Moderna Therapeutics and CEO of Flagship Pioneering, says that the breakthrough innovation behind the company’s Covid-19 vaccine came not as a stroke of luck, but from a repeatable process. He outlines a system called “emergent discovery” that involves working back from future ideals, pioneering in novel spaces, encouraging unreasonable ideas, and persistently questioning hypotheses. And he says this process applies to other industries besides life sciences. Afeyan is the coauthor, with HBS professor Gary Pisano, of the HBR article "What Evolution Can Teach Us About Innovation."])
-
-      brief-item([Harvard Business Review], source-name: [Harvard Business Review], [As the Trump administration continues to reshape the U. S. and global business landscape, many have been left wondering why CEOs and other business leaders aren't vocalizing their views. Jeffrey Sonnenfeld is a professor at the Yale School of Management and has conversations every day with leaders of some of the country's biggest companies. He explains how many leaders are navigating the current state of affairs in the U. S., explains examples of collective action that have gotten the Trump administration to change course, and whether he thinks organizations are adjusting to this "new normal."])
-
-      brief-item([Harvard Business Review], source-name: [Harvard Business Review], [Heidi Grant Halvorson, author of "No One Understands You and What to Do About It" and "9 Things Successful People Do Differently," explains how to actually stick to your resolutions this year.'])
-
-      brief-item([Harvard Business Review], source-name: [Harvard Business Review], [Teresa Amabile, professor at Harvard Business School, is approaching her own retirement by researching how ending your work career affects your sense of self. She says important psychological shifts take place leading up to, and during, retirement. That holds especially true for workers who identify strongly with their job and organization. Amabile and her fellow researchers have identified two main processes that retirees go through: life restructuring and identity bridging.])
-
-      brief-item([Cassandra Neyenesch], source-name: [The New Yorker], [She flipped through the diary, looking for her name. Was she hoping not to find herself, or did a perverse part of her want to?])
-
-      brief-item([Ward Meeker], source-name: [Vintage Guitar Magazine], [Like most 13-year-old boys in the early ’60s, Harry Branton was starting to notice girls. Also noticeable was how those girls “noticed” a classmate strumming a guitar at recess. On a Spanish-class field trip to Mexico in the summer of 1963, he bought a cheap steel-string acoustic and immediately started learning chords. Seeing his zeal, […]])
-
-      brief-item([Harvard Business Review], source-name: [Harvard Business Review], [David Smith, associate professor of sociology at the U. S. Naval War College, and Brad Johnson, professor of psychology at the United States Naval Academy, argue that it is vital for more men to mentor women in the workplace. In the post-\#MeToo world, some men have shied away from cross-gender relationships at work. But Smith and Johnson say these relationships offer big gains to mentees, mentors, and organizations. They offer their advice on how men can be thoughtful allies to the women they work with. They are the authors of "Athena Rising: How and Why Men Should Mentor Women.”])
-
-      brief-item([Harvard Business Review], source-name: [Harvard Business Review], [Megan Gerhardt, management professor at Miami University, studies the impact of generational conflict on organizations. She says too many leaders see generational lines as a source of division that hurts productivity. But her research shows that age is often an untapped source of diversity. When age-diverse teams are managed well, members share more knowledge, skills, and networks with each other. To foster intergenerational collaboration, she lays out a four-part framework that starts with questioning assumptions and ends with embracing mutual learning. Gerhardt is a coauthor of the HBR article "Harnessing the Power of Age Diversity.”])
-
-      brief-item([Cynthia Graber and Nicola Twilley], source-name: [Gastropod], [They're added to breakfast cereal, bread, and even Pop-Tarts, giving the sweetest, most processed treats a halo of health. Most people pop an extra dose for good measure, perhaps washing it down with fortified milk. But what are vitamins—and how did their discovery make America's processed food revolution possible? On this episode of Gastropod, author Catherine Price helps us tell the story of vitamins, from Indonesian chickens to Gwyneth Paltrow. (encore)
-Learn more about your ad choices. Visit podcastchoices.com/adchoices])
-
-      brief-item([Ben Carlson], source-name: [A Wealth of Common Sense], [I’m convinced that more economic data is just making us all angrier.
-You can now slice and dice the economic number pie in so many different ways that you are bound to make one group of people mad at all times.
-Ah well. So goes progress sometimes.
-There are two viral charts that have been floating around for the past year or so that have this effect.
-The first is from the National Association of Realtors, which show...])
-
-      brief-item([Maria Paula Mijares Torres], source-name: [Bloomberg], [Signage for Apollo Global Management Inc. in Hong Kong, China, on Thursday, April 11, 2024. Apollo's revamp of its Asia business is starting to pay off: It's raised \$35 billion from the region since the start of 2022 to bolster expansion. Photographer: Paul Yeung/Bloomberg])
-
-      brief-item([Cynthia Graber and Nicola Twilley], source-name: [Gastropod], [Cue the dramatic music, it’s quiz time: Can you identify the people behind these catchphrases? “Yum-O!” “Pukka!” “Bam!” “Peace, love, and taco grease!” The answers are below—but if you’ve already caught on, then you’re well aware of how entrenched TV chefs are in mainstream pop culture. But how did a medium where you can’t actually smell or taste the food get so popular? What was the very first food TV show, and how has food TV changed—and changed us?
-Learn more about your ad choices. Visit podcastchoices.com/adchoices])
-
+      [#brief-item([Harvard Business Review], source-name: [Harvard Business Review], [Joshua Gans, a professor at the University of Toronto’s Rotman School of Management, advises against trying to commercialize a new technology or product before considering all the strategic options. He talks through some questions entrepreneurs should ask themselves — like, collaborate or compete? — and outlines a framework he and his fellow researchers have found to work best for startups. Gans is the coauthor of the article “Do Entrepreneurs Need a Strategy?”])],
+      [#brief-item([Bloomberg], source-name: [Bloomberg], [A Palestinian flag is raised as Houthis rally in solidarity with Iran and Lebanon, in Sanaa, Yemen, on March 27, 2026.])],
+      [#brief-item([Harvard Business Review], source-name: [Harvard Business Review], [Gary Hamel and Michele Zanini, cofounders of the consultancy Management Lab, say that even though we all lament how rigid, parochial, and time sucking bureaucracies can be, they still seem inescapable. The managers who’ve excelled in them often don’t know how to dismantle them — or else they don’t want to. But Zanini and Hamel have studied and collaborated with innovative organizations, and they outline bottom-up ways to empower workers and hack management. Hamel and Zanini wrote the new book “Humanocracy: Creating Organizations as Amazing as the People Inside them.”])],
+      [#brief-item([Cynthia Graber and Nicola Twilley], source-name: [Gastropod], [Cue the dramatic music, it’s quiz time: Can you identify the people behind these catchphrases? “Yum-O!” “Pukka!” “Bam!” “Peace, love, and taco grease!” The answers are below—but if you’ve already caught on, then you’re well aware of how entrenched TV chefs are in mainstream pop culture. But how did a medium where you can’t actually smell or taste the food get so popular? What was the very first food TV show, and how has food TV changed—and changed us?
+Learn more about your ad choices. Visit podcastchoices.com/adchoices])],
+      [#brief-item([Harvard Business Review], source-name: [Harvard Business Review], [Gretchen Rubin, author of "Better than Before: Mastering the Habits of Our Everyday Lives," explains that you've got to know your habit-setting style.])],
+      [#brief-item([Harvard Business Review], source-name: [Harvard Business Review], [Jeff Bussgang, a venture capitalist who teaches entrepreneurship at Harvard Business School, knows from personal experience and having funded many startups that there’s more than one way into that world. You don’t have to have a technical background. Excellent communication skills and a high emotional IQ are startup skills, too. Bussgang, the author of “Entering StartUpLand,” walks through the process of finding your dream job in a new company.])],
+      [#brief-item([Maria Paula Mijares Torres], source-name: [Bloomberg], [Signage for Apollo Global Management Inc. in Hong Kong, China, on Thursday, April 11, 2024. Apollo's revamp of its Asia business is starting to pay off: It's raised \$35 billion from the region since the start of 2022 to bolster expansion. Photographer: Paul Yeung/Bloomberg])],
+      [#brief-item([Harvard Business Review], source-name: [Harvard Business Review], [Erik Brynjolfsson, MIT Sloan School professor, explains how rapid advances in machine learning are presenting new opportunities for businesses. He breaks down how the technology works and what it can and can’t do (yet). He also discusses the potential impact of AI on the economy, how workforces will interact with it in the future, and suggests managers start experimenting now. Brynjolfsson is the co-author, with Andrew McAfee, of the HBR Big Idea article, “The Business of Artificial Intelligence.” They’re also the co-authors of the new book, “Machine, Platform, Crowd: Harnessing Our Digital Future.])],
+      [#brief-item([Harvard Business Review], source-name: [Harvard Business Review], [Josh Baron and Rob Lachenauer, cofounders of BanyanGlobal Family Business Advisors, say that a family-run company has more flexibility than its publicly-traded counterpart to build a legacy and grow sustainably for the long term. But making critical decisions when there are family dynamics can be extremely challenging. They offer approaches to understand the real impact of ownership and effectively manage conflict. Lachenauer and Baron wrote “The Harvard Business Review Family Business Handbook: How to Build and Sustain a Successful, Enduring Enterprise.”])],
+      [#brief-item([Harvard Business Review], source-name: [Harvard Business Review], [You've probably heard about the benefits of mindfulness and how meditation can help you achieve it. But you still can't find the inclination to start or the time to practice regularly. In this short bonus episode, Rasmus Hougaard, the CEO of Potential Project and a meditation expert who has studied with the Dalai Lama, takes us through a short exercise and explains why mindfulness is a game-changer for our careers and well-being. Skeptics welcome!])],
+      [#brief-item([Blake Oestriecher, Contributor], source-name: [Forbes Business], [WWE is known for its magical "WrestleMania moments," and at WrestleMania 42, Oba Femi is one of many stars who should get his.])],
+      [#brief-item([Alice French, Kentaro Tsutsumi], source-name: [Bloomberg], [A screen displays share prices inside the Kabuto One building in Tokyo, Japan, on Monday, March 2, 2026. Japanese shares dropped in early Tokyo trading after US-Israeli strikes on Iran hit risk appetite and pushed oil prices higher. Photographer: Kiyoshi Ota/Bloomberg])],
     ))
   ],
 ), ruled-indices: (1, 2,))
@@ -217,73 +190,16 @@ Learn more about your ad choices. Visit podcastchoices.com/adchoices])
 #article-row((
   [
     standard-article(
-  title: [The United States of McDonald’s],
-  author: [Cynthia Graber and Nicola Twilley],
-  source-name: [Gastropod],
-  images: (),
-  paragraphs: (
-  [McDonald’s is mind-boggling. According to Adam Chandler, author of the recent book, Drive-Thru Dreams, it sells roughly 75 burgers every second and serves 68 million people every day—equivalent to 1 percent of the entire world’s population. “The golden arches are thought to be, according to an independent survey, more recognizable as a symbol than the Christian cross is around the world,” Chandler told us. This episode, we tell the story of McDonald’s—but more importantly, we explore what it has to say about who we are. To do that, we’re also joined by historian Marcia Chatelain, author of the new book Franchise: The Golden Arches in Black America, who helps us unpack the troubled but fascinating relationship between McDonald’s and African Americans. Why did taxpayers end up funding the spread of McDonald’s into the inner city “food deserts” it now dominates? Who invented the hamburger and how did it become America’s national cuisine? From a bustling barbecue stand in San Bernardino to Ray Kroc’s location-scouting airplane rides, and from the McNugget to the McJob, this episode we figure out how McDonald’s became so ubiquitous, and what that means for America.],
-  [Learn more about your ad choices. Visit podcastchoices.com/adchoices],
-),
-  insert-map: (:),
-  word-count: 197,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-  ],
-  [
-    standard-article(
-  title: [Regrets Are Inevitable. Start Learning From Them.],
-  author: [Harvard Business Review],
-  source-name: [Harvard Business Review],
-  images: (),
-  paragraphs: (
-  ["No regrets" might be a popular modern-day mantra, but it's virtually impossible to live your life without wishing you could do certain things over. Some people try to ignore these feelings; others wallow in them. But author Dan Pink, who recently conducted large U. S. and global surveys on this phenomenon, says the right approach is to instead carefully consider what we regret and why so that we can either reverse course or make better decisions in the future, as well as putting them behind us. Whether you're frustrated by bad career moves you've made, business ideas you didn't pursue, or relationships you've let falter, these regrets can be useful tools for personal growth. Pink's new book is “The Power of Regret: How Looking Backward Moves Us Forward.”],
-),
-  insert-map: (:),
-  word-count: 127,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-  ],
-), ruled-indices: (1,))
-
-#article-row((
-  [
-    standard-article(
-  title: [SUMMER SCHOOL 5: Car Parts, Celery & The Labor Market],
+  title: [Summer School 7: Negotiating and the empathetic nibble],
   author: [NPR Planet Money],
   source-name: [NPR Planet Money],
   images: (),
   paragraphs: (
-  [You can learn a lot about a person from their job. The same can be said of an economy. The market for jobs can us a lot about how the economy is doing, but more importantly, it is where we look to see who the economy is working for, and who is left behind. In today's lesson we'll visit two workplaces each facing a different labor puzzle. At one end, there's the question of when to replace a worker with a robot, and what it is like to be that worker waiting for the robots to come. We'll also visit a farm where raising wages aren't enough to attract the workers needed to do the work. How wages are set, and who gets the raises on this session of Summer School. | Subscribe to Planet Money+ in Apple Podcasts or at plus.npr.org/planetmoney . |At this Summer School, phones ARE allowed during class... Check out this week's PM TikTok! | Listen to past seasons of Summer School here .],
-  [To manage podcast ad preferences, review the links below:],
-  [See pcm.adswizz.com for information about our collection and use of personal data for sponsorship and to manage your podcast sponsorship preferences.],
-  [Learn more about sponsor message choices: podcastchoices.com/adchoices],
-  [NPR Privacy Policy],
-),
-  insert-map: (:),
-  word-count: 208,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-  ],
-  [
-    standard-article(
-  title: [AI Podcast 1.0: Rise of the machines],
-  author: [NPR Planet Money],
-  source-name: [NPR Planet Money],
-  images: (),
-  paragraphs: (
-  [We used to think some jobs were safe from automation. Though machines have transformed industries like agriculture and manufacturing, the conventional wisdom was that they could never perform what's called "knowledge work." That the robots could never replace lawyers or accountants — or journalists, like us.],
-  [Well, ever since the release of artificial intelligence tools like ChatGPT, it feels like no job is safe. AI can now write essays, generate computer code, and even pass the bar exam. Will work ever be the same again?],
-  [Here at Planet Money, we are launching a new three-part series to understand what this new AI-powered future looks like. Our goal: to get the machines to make an entire Planet Money show.],
-  [In this first episode, we try to teach the AI how to write a script for us from scratch. Can the AI do research for us, interview our sources, and then stitch everything together in a creative, entertaining way? We're going to find out just how much of our own jobs we can automate — and what work might soon look like for us all.],
-  [(And, in case you're wondering... this text was not written by an AI.)],
-  [This episode was produced by Emma Peaslee and Willa Rubin. It was edited by Keith Romer. Maggie Luthar engineered this episode. It was fact-checked by Sierra Juarez. Jess Jiang is Planet Money's acting executive producer.],
+  [How do you get the best deal? How do you know you're getting the best deal? Whether you're talking down the price of a car or talking up your salary, you don't have to be a jerk to get what you want. Negotiations can be win-win – if you know what to ask for and how to grow the pie.],
+  [We have three stories in today's episode about how to negotiate tactically. First, a hostage negotiator tries to buy a car. Will he get far? Then, one man's encounter at the airline ticket booth may inform how you respond to your next job offer. Finally, how to avoid a food fight and make a deal that benefits everybody.],
+  [We'll learn about something called BATNA, or best alternative to a negotiated agreement, which can tell you when to stand firm and when to walk away. We'll find out how to shift our thinking about what success can look like in a negotiation, and shift your counterpart's thinking too.],
+  [Come learn the techniques of expert negotiators in the penultimate episode of Planet Money Summer School, MBA edition. Next week: Graduation! So, you have one week to negotiate the cost of your cap and gown.],
+  [Our Summer School series is hosted by Robert Smith and produced by Max Freedman. Our project manager is Julia Carney. This episode was edited by our executive producer, Alex Goldmark, and engineered by James Willetts. The show was fact-checked by Sierra Juarez.],
   [Help support Planet Money and get bonus episodes by subscribing to Planet Money+ in Apple Podcasts or at plus.npr.org/planetmoney .],
   [To manage podcast ad preferences, review the links below:],
   [See pcm.adswizz.com for information about our collection and use of personal data for sponsorship and to manage your podcast sponsorship preferences.],
@@ -291,7 +207,77 @@ Learn more about your ad choices. Visit podcastchoices.com/adchoices])
   [NPR Privacy Policy],
 ),
   insert-map: (:),
-  word-count: 291,
+  word-count: 304,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+  ],
+  [
+    standard-article(
+  title: [What AI data centers are doing to your electric bill],
+  author: [NPR Planet Money],
+  source-name: [NPR Planet Money],
+  images: (),
+  paragraphs: (
+  [As a country, we are spending more to get data centers up and running than we spent to build the entire interstate highway system. (Yes, that’s inflation-adjusted.) With tech companies spending hundreds of billions of dollars on AI, data centers have kind of become the thing in the US economy.],
+  [But along with that growth have come a lot of questions. Like where is all the electricity to run these data centers supposed to come from? And how much are residential customers’ electric bills increasing as a result?],
+  [On today’s episode, we go to Ohio to trace one electric bill back to its source, to see what exactly is causing the big price increases people are seeing. We take a tour of a data center hot spot, and get to the bottom of how prices are set from inside the power company.],
+  [Related episodes:
+ - Asking for a friend … which jobs are safe from AI? 
+ - No AI data centers in my backyard! 
+ - What \$10 billion in data centers actually gets you 
+ - Is AI overrated or underrated? 
+ - Green energy gridlock],
+  [Pre-order the Planet Money book and get a free gift . \/ Subscribe to Planet Money+],
+  [Listen free: Apple Podcasts , Spotify , the NPR app or anywhere you get podcasts.],
+  [Facebook \/ Instagram \/ TikTok \/ Our weekly Newsletter .],
+  [Today's show was hosted by Keith Romer and Jeff Guo. It was produced by Sam Yellowhorse Kesler. It was edited by Jess Jiang and fact checked by Sierra Juarez and Vito Emanuel. It was engineered by Cena Loffredo. Alex Goldmark is Planet Money 's executive producer.],
+  [To manage podcast ad preferences, review the links below:],
+  [See pcm.adswizz.com for information about our collection and use of personal data for sponsorship and to manage your podcast sponsorship preferences.],
+  [Learn more about sponsor message choices: podcastchoices.com/adchoices],
+  [NPR Privacy Policy],
+),
+  insert-map: (:),
+  word-count: 311,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+  ],
+), ruled-indices: (1,))
+#pull-quote([Facebook \/ Instagram \/ TikTok \/ Our weekly Newsletter.], [NPR Planet Money])
+
+
+#article-row((
+  [
+    standard-article(
+  title: [Goodbye Bureaucracy, Hello Common Sense],
+  author: [Harvard Business Review],
+  source-name: [Harvard Business Review],
+  images: (),
+  paragraphs: (
+  [Martin Lindstrom, founder and chairman of Lindstrom Company, says that many companies are still held back by doing things the way they've always done them, or failing to break down bureaucracy. For Lindstrom, it's not just about getting away from bureaucratic norms for the sake of innovation, but because so many things workers do each and every day don't actually make much sense. He suggests workers, leaders, and organizations consider ways in which processes can be improved - and the ways these new processes can improve life for everyone. And he argues that companies should actually devote a team or department to making sure common sense is used throughout the organization.],
+  [Lindstrom is the author of the book "The Ministry of Common Sense: How to Eliminate Bureaucratic Red Tape, Bad Excuses, and Corporate BS."],
+),
+  insert-map: (:),
+  word-count: 134,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+  ],
+  [
+    standard-article(
+  title: [The Consumer Psychology of Adopting AI],
+  author: [Harvard Business Review],
+  source-name: [Harvard Business Review],
+  images: (),
+  paragraphs: (
+  [Despite all the ways that artificial intelligence promises to improve our lives, many consumers feel anxious and are averse to AI-powered products and services. For marketers and product managers, it’s vital to understand what is driving that resistance to adoption. Julian De Freitas is an assistant professor in the marketing unit at Harvard Business School. He has identified five main ways people see artificial intelligence negatively: that AI is opaque, emotionless, inflexible, autonomous, and not human enough. Through real-life cases and the latest research, he explains how companies can soothe anxieties and encourage consumer adoption. De Freitas the author of the HBR article "Why People Resist Embracing AI."],
+),
+  insert-map: (:),
+  word-count: 108,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -302,68 +288,17 @@ Learn more about your ad choices. Visit podcastchoices.com/adchoices])
 #article-row((
   [
     standard-article(
-  title: [How much national debt is too much?],
-  author: [NPR Planet Money],
-  source-name: [NPR Planet Money],
-  images: (),
-  paragraphs: (
-  [Most economic textbooks will tell you that there can be real dangers in running up a big national debt. A major concern is how the debt you add now could slow down economic growth in the future. Economists have not been able to nail down how much debt a country can safely take on. But they have tried.],
-  [Back in 2010, two economists took a look at 20 countries over the course of decades, and sometimes centuries, and came back with a number. Their analysis suggested that economic growth slowed significantly once national debt passed 90% of annual GDP... and that is when the fight over debt and growth really took off.],
-  [On today's episode: a deep dive on what we know, and what we don't know, about when exactly national debt becomes a problem. We will also try to figure out how worried we should be about the United States' current debt total of 26 trillion dollars.],
-  [This episode was hosted by Keith Romer and Nick Fountain. It was produced by Willa Rubin and edited by Molly Messick. It was fact-checked by Sierra Juarez with help from Sofia Shchukina and engineered by Cena Loffredo. Alex Goldmark is Planet Money's executive producer.],
-  [Help support Planet Money and hear our bonus episodes by subscribing to Planet Money+ in Apple Podcasts or at plus.npr.org/planetmoney .],
-  [To manage podcast ad preferences, review the links below:],
-  [See pcm.adswizz.com for information about our collection and use of personal data for sponsorship and to manage your podcast sponsorship preferences.],
-  [Learn more about sponsor message choices: podcastchoices.com/adchoices],
-  [NPR Privacy Policy],
-),
-  insert-map: (:),
-  word-count: 263,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-  ],
-  [
-    standard-article(
-  title: [The two companies driving the modern economy],
-  author: [NPR Planet Money],
-  source-name: [NPR Planet Money],
-  images: (),
-  paragraphs: (
-  [At the core of most of the electronics we use today are some very tiny, very powerful chips. Semiconductor chips. And they are mighty: they help power our phones, laptops, and cars. They enable advances in healthcare, military systems, transportation, and clean energy. And they're also critical for artificial intelligence, providing the hardware needed to train complex machine learning.],
-  [On today's episode, we're bringing you two stories from our daily show The Indicator , diving into the two most important semiconductor chip companies, which have transformed the industry over the past 40 years.],
-  [First, we trace NVIDIA's journey from making niche graphics cards for gaming to making the most advanced chips in the world — and briefly becoming the world's biggest company. Next, we see how the Taiwan Semiconductor Manufacturing Company's decision to manufacture chips for its competition instead of itself flipped the entire industry on its head, and moved the vast majority of the world's advanced chip production to Taiwan.],
-  [Help support Planet Money and hear our bonus episode about NVIDIA by subscribing to Planet Money+ in Apple Podcasts or at plus.npr.org/planetmoney .],
-  [To manage podcast ad preferences, review the links below:],
-  [See pcm.adswizz.com for information about our collection and use of personal data for sponsorship and to manage your podcast sponsorship preferences.],
-  [Learn more about sponsor message choices: podcastchoices.com/adchoices],
-  [NPR Privacy Policy],
-),
-  insert-map: (:),
-  word-count: 224,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-  ],
-), ruled-indices: (1,))
-#pull-quote([And they're also critical for artificial intelligence, providing the hardware needed to train complex machine learning.], [NPR Planet Money])
-
-
-#article-row((
-  [
-    standard-article(
-  title: [Here Comes Truffle],
+  title: [No Scrubs: Breeding a Better Bull],
   author: [Cynthia Graber and Nicola Twilley],
   source-name: [Gastropod],
   images: (),
   paragraphs: (
-  [This episode, join us on a hunt for buried treasure at a super-secret location in North Carolina. We follow a million-dollar dog wearing adorable slippers, and then get down on our knees, butts in the air and noses in the dirt, on the trail of a fungus that drives both pigs and people wild. The smell's been described many different ways—cheesy, earthy, garlicky, even sweaty—but there’s only one thing in nature that can make it: truffles. So, how did this knobbly, brown, potato-shaped fungus come to be one of the world's most expensive foods—and is there any science behind its reputation as an aphrodisiac? Listen in this episode as we get down and dirty hunting truffles, exposing truffle fraud, and getting the scoop on one of the world's oldest and most equal partnerships. Just what you wanted for Valentine’s Day!],
-  [Learn more about your ad choices. Visit podcastchoices.com/adchoices],
+  [In 1900, the average dairy cow in America produced 424 gallons of milk each year. By 2000, that figure had more than quadrupled, to 2,116 gallons. In this episode of Gastropod, we explore the incredible science that transformed the American cow into a milk machine—but we also uncover the disturbing history of prejudice and animal cruelty that accompanied it.],
+  [Along the way, we’ll introduce you to the insane logic of the Lifetime Cheese Merit algorithm and the surreal bull trials of the 1920s. This is the untold story behind that most wholesome and quotidian of beverages: milk. Prepare to be horrified and amazed in equal measure.
+Learn more about your ad choices. Visit podcastchoices.com/adchoices],
 ),
   insert-map: (:),
-  word-count: 148,
+  word-count: 114,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -371,53 +306,37 @@ Learn more about your ad choices. Visit podcastchoices.com/adchoices])
   ],
   [
     standard-article(
-  title: [99 Percent Invisible: The White Castle System of Eating Houses],
-  author: [NPR Planet Money],
-  source-name: [NPR Planet Money],
+  title: [Introducing 4 Business Ideas That Changed the World],
+  author: [Harvard Business Review],
+  source-name: [Harvard Business Review],
   images: (),
   paragraphs: (
-  [Today we have a guest episode from 99 Percent Invisible .],
-  [It is about White Castle, the burger chain. Even if you haven't visited, you have tasted its influence because, as we will learn in this episode, White Castle is really the proto-burger chain.],
-  [Our friends at the excellent podcast 99 Percent Invisible bring us the origin story of White Castle and trace its influence on the business of fast food, and on American eating habits. The story is about one man who had an idea for a world where you could get a slider anywhere in the country and get the same tasty, onion-y quality each time. Think of this as a forebear of the modern global economy of sameness.],
-  [This episode is hosted by Roman Mars and reported by Mackenzie Martin. It was produced by Jeyca Maldonado-Medina, and edited by Joe Rosenberg. Mix and sound design by Martín Gonzalez. Music by Swan Real with additional music by Jenny Conlee, Nate Query, and John Neufeld. Fact-checking by Graham Hacia. Kathy Tu is 99 Percent Invisible 's executive producer. Kurt Kohlstedt is their digital director, and Delaney Hall is their senior editor.],
-  [To manage podcast ad preferences, review the links below:],
-  [See pcm.adswizz.com for information about our collection and use of personal data for sponsorship and to manage your podcast sponsorship preferences.],
-  [Learn more about sponsor message choices: podcastchoices.com/adchoices],
-  [NPR Privacy Policy],
+  [Influential business and management ideas have tremendous influence over us. Like it or not, they shape how organizations are run and how people around the world spend their days. And Harvard Business Review has introduced and spread many of these consequential ideas since its founding in 1922.],
+  [HBR IdeaCast is taking this 100th anniversary to ask: how have these ideas changed our lives? And where are they taking us in the future? Each Thursday in October, the podcast feed will feature a bonus series: 4 Business Ideas That Changed the World.],
+  [Each week, a different HBR editor talks to world-class scholars and experts on influential business and management ideas of HBR’s first 100 years: disruptive innovation, scientific management, shareholder value, and emotional intelligence.],
+  [Listen to the conversations to better understand our work life, how far it’s come, and how far it still has to go.],
 ),
   insert-map: (:),
-  word-count: 232,
+  word-count: 145,
   edited-for-length: false,
   debug-mode: false,
 )
 
   ],
 ), ruled-indices: (1,))
-#pull-quote([This episode is hosted by Roman Mars and reported by Mackenzie Martin.], [NPR Planet Money])
-
 
 #article-row((
   [
     standard-article(
-  title: [A trip to the magic mushroom megachurch],
-  author: [NPR Planet Money],
-  source-name: [NPR Planet Money],
+  title: [How to Get Better at Saying No],
+  author: [Harvard Business Review],
+  source-name: [Harvard Business Review],
   images: (),
   paragraphs: (
-  [Book tour dates and ticket info here .],
-  [Just as every market has its first movers, every religion has its martyrs — the people willing to risk everything for what they believe. Pastor Dave Hodges just might be a little bit of both. He’s the spiritual leader of the Zide Door Church of Entheogenic Plants, in Oakland, California which places psilocybin mushrooms at the center of their religious practice.],
-  [Today on the show, like its 130,000+ members, we’re going to take a trip through the psychedelic mushroom megachurch. We’ll meet one of the lawyers trying to keep psychedelic religious leaders like Pastor Dave from running afoul of the law, and get a peek into how the government decides whether a belief system counts as sincere religion.],
-  [This episode was reported with support from The Ferriss – UC Berkeley Psychedelic Journalism Fellowship.],
-  [Listen free: Apple Podcasts , Spotify , the NPR app or anywhere you get podcasts.],
-  [Facebook / Instagram / TikTok / Our weekly Newsletter .],
-  [This episode was hosted by Alexi Horowitz-Ghazi. It was produced by Sam Yellowhorse Kesler and edited by Eric Mennel. It was fact checked by Sierra Juarez and engineered by Kwesi Lee with help from Robert Rodriguez. Alex Goldmark is Planet Money ’s executive producer.],
-  [To manage podcast ad preferences, review the links below:],
-  [See pcm.adswizz.com for information about our collection and use of personal data for sponsorship and to manage your podcast sponsorship preferences.],
-  [Learn more about sponsor message choices: podcastchoices.com/adchoices],
-  [NPR Privacy Policy],
+  [Our families, schools, and workplaces often train us to comply: taking on additional work when asked, agreeing with the group's consensus, and going along to get along with our bosses and colleagues. So, even when we're told to "think different" and "embrace conflict," we often hold ourselves back. But when individuals learn to say no more often, it can have huge benefits for their careers and organizations, says Dr. Sunita Sah. A psychologist and professor at Cornell's SC Johnson College of Business, she shares a research-backed framework for evaluating whether to comply or defy at work and offers advice on how to do both more effectively. Sah is author of the book Defy: The Power of No In a World That Demands Yes.],
 ),
   insert-map: (:),
-  word-count: 250,
+  word-count: 123,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -425,53 +344,50 @@ Learn more about your ad choices. Visit podcastchoices.com/adchoices])
   ],
   [
     standard-article(
-  title: [How Jane Street’s secret billion-dollar trade unraveled],
-  author: [NPR Planet Money],
-  source-name: [NPR Planet Money],
-  images: (),
-  paragraphs: (
-  [On Wall Street, fortunes are often won and lost with the tiniest advantages. And for the past few years, one trading firm has stood out from the rest for both huge profits and careful secrecy — Jane Street Group.],
-  [But last year, one of Jane Street’s biggest and most lucrative trading strategies was unexpectedly revealed in a Manhattan courtroom. The news ricocheted around the world. It drew the attention of competitors and regulatory agencies, destabilized billions of dollars worth of trades, and called into question some of the most fundamental strategies in global finance.],
-  [Some Planet Money episodes about finance: 
- - The rise and fall of Long Term Capital Management 
- - How George Soros forced the UK to devalue the pound],
-  [Further reading: 
- - Jane Street Group, LLC v. Millennium Management LLC, Douglas Schadewald, and Daniel Spottiswood 
- - “ Jane Street’s Indian Options Trade Was Too Good ,” from Bloomberg
- - SEBI's report: "Interim Order in the matter of Index manipulation by Jane Street Group" 
- - “ Jane Street Defends India Trading Activity, Blasts Regulator ,” from Bloomberg],
-  [Listen free: Apple Podcasts , Spotify , the NPR app or anywhere you get podcasts.],
-  [Facebook / Instagram / TikTok / Our weekly Newsletter .],
-  [This episode was hosted by Alexi Horowitz-Ghazi and Mary Childs. It was produced by Eric Mennel, with production help from Sam Yellowhorse Kesler and Cooper Katz-McKim. It was edited by Jess Jiang. Fact-checking by Sierra Juarez. Planet Money ’s executive producer is Alex Goldmark.],
-  [To manage podcast ad preferences, review the links below:],
-  [See pcm.adswizz.com for information about our collection and use of personal data for sponsorship and to manage your podcast sponsorship preferences.],
-  [Learn more about sponsor message choices: podcastchoices.com/adchoices],
-  [NPR Privacy Policy],
-),
-  insert-map: (:),
-  word-count: 287,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-  ],
-), ruled-indices: (1,))
-#pull-quote([It was produced by Eric Mennel, with production help from Sam Yellowhorse Kesler and Cooper Katz-McKim.], [NPR Planet Money])
-
-
-#article-row((
-  [
-    standard-article(
-  title: [We'd Like to Teach The World to Slurp: The Weird and Wonderful Story of Ramen's Rise to Glory],
+  title: [Tiki Time!],
   author: [Cynthia Graber and Nicola Twilley],
   source-name: [Gastropod],
   images: (),
   paragraphs: (
-  [Savory, chewy, and, above all, slurp-able, a delicious bowl of ramen is one of the triumphs of Japanese cuisine. That's also a bit odd, because, for most of Japanese history, heavy, meaty, wheaty noodle soup would have had no place in the archipelago's otherwise bland and mostly pescatarian cuisine. This episode, we bust ramen myths and reveal ramen secrets, with the story of how Chinese influencers, U. S. food aid, and an economic boom built the quintessential Japanese soup—and how ramen was transformed from a quick street-food bite for workers to both the three-minute staple of students everywhere in its instant form and the craft ramen that has people standing in lines for hours. Plus: how ramen noodles helped prevent a prison riot, and Cynthia and Nicky go head-to-head in an epic (failure of a) slurp-off.],
+  [Tiki bars are hot these days: you can enjoy a fruity tropical drink while surrounded by faux-Polynesian décor in most major cities around the U. S. and elsewhere, with new tiki spots opening every month. The trend is a revival of a nearly century-old American tradition—but the knowledge of how to make these classic tiki cocktails had been all but lost over the intervening decades. It took an amateur sleuth who went on a deep dive into cocktail archaeology and recipe cryptography to bring back the lost flavors. But, while the drinks he rediscovered are delicious, does the classic tiki bar interior, adorned with carvings that resemble traditional Polynesian gods, stand the test of time? Listen in for tales of Hollywood celebrities, backyard luaus, and a savvy restaurateur with a wooden leg.],
   [Learn more about your ad choices. Visit podcastchoices.com/adchoices],
 ),
   insert-map: (:),
-  word-count: 143,
+  word-count: 139,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+  ],
+), ruled-indices: (1,))
+
+#article-row((
+  [
+    standard-article(
+  title: [The Rest of the Story, 2025],
+  author: [NPR Planet Money],
+  source-name: [NPR Planet Money],
+  images: (),
+  paragraphs: (
+  [Most stories keep going even after we set down our microphones and the music fades up. That's why, at the end of each year, we look back and we take stock.],
+  [We call this tradition "The Rest of the Story." And we bring you updates on the stories we've reported, and from the people we've met along the way.],
+  [Today, we check in on an engineer and patent attorney who made a safer saw; we get an update on the Planet Money game; an update on money in Gaza; and we have updates on a diamond that may or may not have had a second life.],
+  [Listen to the original stories:],
+  [Planet Money buys a mystery diamond],
+  [In Gaza, money is falling apart],
+  [BOARD GAMES 1: We're making a game],
+  [How to save 10,000 fingers],
+  [Pre-order the Planet Money book and get a free gift . \/ Subscribe to Planet Money+],
+  [Play the new version of our game here. Version 4.],
+  [Listen free: Apple Podcasts , Spotify , the NPR app or anywhere you get podcasts.],
+  [Facebook \/ Instagram \/ TikTok \/ Our weekly Newsletter .],
+  [To manage podcast ad preferences, review the links below:],
+  [See pcm.adswizz.com for information about our collection and use of personal data for sponsorship and to manage your podcast sponsorship preferences.],
+  [Learn more about sponsor message choices: podcastchoices.com/adchoices],
+  [NPR Privacy Policy],
+),
+  insert-map: (:),
+  word-count: 252,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -479,15 +395,68 @@ Learn more about your ad choices. Visit podcastchoices.com/adchoices])
   ],
   [
     standard-article(
-  title: [What's up with all the ads for law firms?],
+  title: [How to get what Greenland has, with permission],
   author: [NPR Planet Money],
   source-name: [NPR Planet Money],
   images: (),
   paragraphs: (
-  [The lawyer commercial is almost an art form unto itself. Learned practitioners of the law doing whatever it takes to get your attention, from impressive dirt bike stunts to running around half naked . All so when you land in trouble, you don't have to think hard to remember their name. Odds are you can name one or two right now.],
-  [This world of law ads did not exist fifty years ago. Then, lawyers were not allowed to advertise. Not by law, by the exclusive organization that decides who gets to be a lawyer: state bars.],
-  [On today's episode, how that changed. How a couple of lawyers placing an ad in a local newspaper led to the inescapable world of law firm ads we know today. And, how the right to advertise got put on the same level as some of the most important, fundamental rights we have.],
-  [This episode was hosted by Nick Fountain and Jeff Guo. It was produced by Sam Yellowhorse Kesler with help from Sean Saldana. It was edited by Jess Jiang. It was fact-checked by Sierra Juarez and engineered by Valentina Rodríguez Sánchez. Alex Goldmark is Planet Money 's executive producer.],
+  [Book tour and ticket info here.],
+  [Greenland has said it is not for sale. Denmark has said it can’t even legally sell Greenland. And at a security conference in Munich over the weekend, U. S. lawmakers spent a lot of time trying to walk back some of President Trump’s recent threats to try to buy, or even take over, the territory.],
+  [But whether Trump can or will or should try to control or purchase a territory that doesn’t want to be sold is not the interesting question. What is interesting is how we got to this moment. And, how we might gracefully get out of it.],
+  [Greenland is valuable for its minerals and because of its physical location in the world. (It’s easy to keep an eye on other countries from Greenland).],
+  [Our latest: How the U. S. dropped the ball on the rare earths race. And one way the U. S. gets strategic locations without threatening to buy or take over an entire territory.],
+  [Further listening:],
+  [- Is Greenland really an untapped land of riches?],
+  [- Add to cart: Greenland],
+  [Pre-order the Planet Money book and get a free gift . \/ Subscribe to Planet Money+],
+  [Listen free: Apple Podcasts , Spotify , the NPR app or anywhere you get podcasts.],
+  [Facebook \/ Instagram \/ TikTok \/ Our weekly Newsletter .],
+  [This episode was produced by Willa Rubin with help from Sam Yellowhorse Kesler. It was edited by Marianne McCune. Fact-checking help from Sierra Juarez. It was engineered by Kwesi Lee and Robert Rodriguez. Alex Goldmark is our executive producer.],
+  [Music: Universal Music Production - "The Attraction,” “Carnivore,” and “Walls Come Out.”],
+  [To manage podcast ad preferences, review the links below:],
+  [See pcm.adswizz.com for information about our collection and use of personal data for sponsorship and to manage your podcast sponsorship preferences.],
+  [Learn more about sponsor message choices: podcastchoices.com/adchoices],
+  [NPR Privacy Policy],
+),
+  insert-map: (:),
+  word-count: 310,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+  ],
+), ruled-indices: (1,))
+#pull-quote([Further listening:    - Is Greenland really an untapped land of riches?    - Add to cart: Greenland    Pre-order the Planet Money book and get a free gift.], [NPR Planet Money])
+
+
+#article-row((
+  [
+    standard-article(
+  title: [Move Over Gin, We’ve Got Tonic Fever],
+  author: [Cynthia Graber and Nicola Twilley],
+  source-name: [Gastropod],
+  images: (),
+  paragraphs: (
+  [Just a few decades ago, gin & tonics were considered rather stodgy and boring, the drink of suburbanites at the golf club. Today, the century-old drink is hot again. In part, that’s due to a boom in craft gin distilling—a ginaissance! But there’s also been a new wave of experimentation with gin’s life partner, tonic water. This episode, we focus on the tonic side of the equation. Which genius came up with the idea of combining quinine, a malaria drug, with soda water and sugar in order to create this refreshing beverage? How did the bark of a South American tree end up in everything from hair-restoring shampoo to cocktails? And is it true that the G&T began life as a pleasant way for the Anglo-Indian elite to take their anti-malarials? This episode, we take a sip of tonic’s history with Kim Walker and Mark Nesbitt, authors of the new book Just the Tonic: A Natural History of Tonic Water. Listen in for all that, plus beef-infused tonic wines, Aperol spritzes, and the gin & tonic’s true origin story. Cheers!],
+  [Learn more about your ad choices. Visit podcastchoices.com/adchoices],
+),
+  insert-map: (:),
+  word-count: 188,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+  ],
+  [
+    standard-article(
+  title: [The Vapes of Wrath],
+  author: [NPR Planet Money],
+  source-name: [NPR Planet Money],
+  images: (),
+  paragraphs: (
+  [When the vape brand Juul first hit the market back in 2015, e-cigarettes were in a kind of regulatory limbo. At the time, the rules that governed tobacco cigarettes did not explicitly apply to e-cigarettes. Then Juul blew up, fueled a public health crisis over teen vaping, and inspired a regulatory crackdown. But when the government finally stepped in to solve the problem of youth vaping, it may have actually made things worse.],
+  [Today's episode is a collaboration with the new podcast series "Backfired: the Vaping Wars." You can listen to the full series at audible.com/Backfired .],
+  [This episode was hosted by Alexi Horowitz-Ghazi and Leon Neyfakh. It was produced by Emma Peaslee and edited by Jess Jiang with help from Annie Brown. It was fact checked by Sofia Shchukina and engineered by Cena Loffredo. Alex Goldmark is Planet Money 's executive producer.],
   [Help support Planet Money and hear our bonus episodes by subscribing to Planet Money + in Apple Podcasts or at plus.npr.org/planetmoney .],
   [To manage podcast ad preferences, review the links below:],
   [See pcm.adswizz.com for information about our collection and use of personal data for sponsorship and to manage your podcast sponsorship preferences.],
@@ -495,7 +464,7 @@ Learn more about your ad choices. Visit podcastchoices.com/adchoices])
   [NPR Privacy Policy],
 ),
   insert-map: (:),
-  word-count: 258,
+  word-count: 205,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -506,16 +475,16 @@ Learn more about your ad choices. Visit podcastchoices.com/adchoices])
 #article-row((
   [
     standard-article(
-  title: [Gut Feeling],
+  title: [Ask Gastropod: Bubblegum, Meal Kits, and the Real Truth About Rooibos],
   author: [Cynthia Graber and Nicola Twilley],
   source-name: [Gastropod],
   images: (),
   paragraphs: (
-  [Do you get butterflies in your stomach when you’re excited? Feel nauseated when you’re nervous? Get a knot in your gut when you're worried something bad is going to happen? Then you’ve experienced what’s called the gut-brain axis: a powerful connection between your brain and your stomach. And, if you’ve been on wellness social media over the last few years, you’ve probably heard that you can hijack this connection to help heal a whole host of mental illnesses, from taking probiotics for PTSD to treating depression with diet. But how much of this is science, and how much is modern-day snake oil? With the help of gastroenterologists, psychologists, and yes, the U. S. military, Gastropod is here to investigate! The answer involves prescription kefir, a trip to an Army base to play video games, and the trials and tribulations of some very melancholy mice—not to mention lots and LOTS of microbes. Listen in for the scoop on how tweaking your gut microbes can change your mind. (But, for your own health, please don’t drink every time we mention our favorite topic during this episode!)],
-  [Learn more about your ad choices. Visit podcastchoices.com/adchoices],
+  [What do bubblegum, rooibos tea, and meal kits have in common? They’re all topics that puzzle and fascinate you, dear Gastropod listeners. This episode, we're getting to the bottom of your most pressing culinary questions! Such as: Are meal kits really better for the planet than buying and cooking dinner from scratch? Can all the rooibos tea in the world reallycome from one mountain range in South Africa? And what the heck is bubblegum flavor, anyway? Join us this episode for the scoop on meal kits, a tale of tea-drinking babies, and a peek behind the scenes at the Willy Wonka world of bubblegum flavor development from a real-life bubblegum scientist.
+Learn more about your ad choices. Visit podcastchoices.com/adchoices],
 ),
   insert-map: (:),
-  word-count: 191,
+  word-count: 119,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -523,16 +492,16 @@ Learn more about your ad choices. Visit podcastchoices.com/adchoices])
   ],
   [
     standard-article(
-  title: [The Great Gastropod Pudding Off (encore)],
+  title: [Meet the Most Famous American You’ve Never Heard Of: His Legacy is Excellent French Fries and Monsanto],
   author: [Cynthia Graber and Nicola Twilley],
   source-name: [Gastropod],
   images: (),
   paragraphs: (
-  [Four bakers, one evening, and one challenge: Who can steam the best spotted dick? On this week’s action-packed episode, Tom Gilliford, Selasi Gbormittah, and Yan Tsou of Great British Bake-Off fame, along with honorary Gastropod member (and Cynthia’s partner) Tim Buntel, compete to see who can master this most classic of British puddings for the first-ever Great Gastropod Pudding Off! But what in the world is spotted dick? “It’s got nostalgia, mystery, horror, and comedy—it’s a perfect British dish,” explained British food designer and jellymonger Sam Bompas, who joined us to judge the competition. Listen in as Tom tries to beat his rival Selasi, Yan revives the flavor combination that robbed her of a Bake Off victory, and Tim tests out his Yankee-style pudding on the Brits. While the four bakers duke it out in the kitchen, we dive into the history and science of British pudding to find out what makes a pudding a pudding, the secret ingredient that will give your pud a lovely light texture, and why anyone would name a dessert “spotted dick.”],
+  [In his day, Luther Burbank was a horticultural rock star: everyone from opera singers to movie stars and European royalty to an Indian guru traveled to Santa Rosa, California, to meet him. Dubbed the "plant wizard," Burbank invented the plumcot and the stoneless plum, the white blackberry, and the potato variety used in every French fry you've ever eaten—as well as some 800 more new-and-improved plants, from walnuts to rhubarb. His fame as a plant inventor put him in the same league as Thomas Edison—but, while Edison patented his light bulb and phonograph, Burbank had no legal way to protect his crop creations. Listen now for the story of Luther Burbank, the most famous American you've never heard of, and how his struggles shaped what's on our supermarket shelves today, but also led to a world in which big companies like Monsanto can patent life. It's a wild ride that involves the death spiral of the Red Delicious and the rise of the Cosmic Crisp apple, as well as coded notebooks, detective agencies, rogue farmers, and a resistance movement led by former New York City mayor (and subsequent airport namesake) Fiorello La Guardia.],
   [Learn more about your ad choices. Visit podcastchoices.com/adchoices],
 ),
   insert-map: (:),
-  word-count: 185,
+  word-count: 201,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -541,6 +510,130 @@ Learn more about your ad choices. Visit podcastchoices.com/adchoices])
 ), ruled-indices: (1,))
 
 #article-row((
+  [
+    standard-article(
+  title: [The trade fraud detective],
+  author: [NPR Planet Money],
+  source-name: [NPR Planet Money],
+  images: (),
+  paragraphs: (
+  [When David Rashid took over US autoparts maker Plews and Edelmann, the company was losing business to its Chinese rival, Qingdao Sunsong. Both companies make power steering hoses, but Sunsong was offering its hoses to retailers at a much lower price.],
+  [Then, in 2018, the Trump administration threw companies like Rashid's a lifeline, by announcing tariffs on a range of Chinese goods, including some autoparts. Rashid thought the tariffs would finally force Sunsong to raise its prices, but, somehow, the company never did.],
+  [It was a mystery. And it led Rashid to take on a new role – amateur trade fraud investigator. How could his competitor, Sunsong, absorb that 25% tax without changing its prices? And why had all of Sunsong's steering hoses stopped coming from China and started coming from Thailand?],
+  [On today's episode, the wide gulf between how tariffs work in theory... and how they actually work in practice. And David Rashid's quest to figure out what, if anything, he could do about it. It's a quest that will involve international detectives, forensic chemists, and a friendship founded on a shared love for hummus.],
+  [This episode was hosted by Keith Romer and Jeff Guo. It was produced by Emma Peaslee and edited by Molly Messick. It was fact-checked by Sierra Juarez and engineered by Ko Takasugi-Czernowin. Alex Goldmark is our executive producer.],
+  [Help support Planet Money and hear our bonus episodes by subscribing to Planet Money + in Apple Podcasts or at plus.npr.org/planetmoney .],
+  [To manage podcast ad preferences, review the links below:],
+  [See pcm.adswizz.com for information about our collection and use of personal data for sponsorship and to manage your podcast sponsorship preferences.],
+  [Learn more about sponsor message choices: podcastchoices.com/adchoices],
+  [NPR Privacy Policy],
+),
+  insert-map: (:),
+  word-count: 286,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+  ],
+  [
+    standard-article(
+  title: [Easy A: The SuperRad Story of Home Economics],
+  author: [Cynthia Graber and Nicola Twilley],
+  source-name: [Gastropod],
+  images: (),
+  paragraphs: (
+  [If you grew up in the U. S., you might remember home economics class as the source of deflated muffins and horrifically distorted sewing projects. You might, like Jonah Hill’s character in Superbad, have thought of home ec as “a joke” that everyone takes “to get an A.” But it wasn’t always so—and, in fact, the field of home economics began as a surprisingly radical endeavor. This episode, we talk with Danielle Dreilinger, author of the new book The Secret History of Home Economics: How Trailblazing Women Harnessed the Power of Home and Changed the Way We Live. How did women a century ago use home economics as a backdoor to build careers as scientists? How did home ec trailblazers electrify rural towns, design the modern kitchen, and create the first nutritional guidelines? And what does Sputnik have to do with the field's decline? Can today's home ec once again meet the lofty goals set by its founders?],
+  [Learn more about your ad choices. Visit podcastchoices.com/adchoices],
+),
+  insert-map: (:),
+  word-count: 165,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+  ],
+), ruled-indices: (1,))
+#pull-quote([And David Rashid's quest to figure out what, if anything, he could do about it.], [NPR Planet Money])
+
+
+#article-row((
+  [
+    standard-article(
+  title: [Inside video game economics (Two Indicators)],
+  author: [NPR Planet Money],
+  source-name: [NPR Planet Money],
+  images: (),
+  paragraphs: (
+  [Why do video game workers offer labor at a discount? How can you design a video game for blind and sighted players? Does that design have lessons for other industries?],
+  [These and other questions about the business of video games answered in todays episode. The Indicator just wrapped a weeklong series decoding the economics of the video game industry, we're excerpting some highlights.],
+  [First, we meet some of the workers who are struggling with the heavy demands placed on them in their booming industry, and how they are fighting back.],
+  [Then, we check in on how game developers are pulling in new audiences by creatively designing for people who couldn't always play. How has accessibility become an increasingly important priority for game developers? And, how can more players join in the fun?],
+  [You can hear the rest of our weeklong series on the gaming industry at this link , or wherever you get your podcasts.],
+  [This episode was hosted by Wailin Wong, Darian Woods, and Adrian Ma. Corey Bridges produced this episode with help from James Sneed. It was edited by Kate Concannon, fact-checked by Sierra Juarez, and engineered by Robert Rodriguez with help from Valentina Rodríguez Sánchez. Alex Goldmark is Planet Money's executive producer.],
+  [Help support Planet Money and hear our bonus episodes by subscribing to Planet Money+ in Apple Podcasts or at plus.npr.org/planetmoney .],
+  [To manage podcast ad preferences, review the links below:],
+  [See pcm.adswizz.com for information about our collection and use of personal data for sponsorship and to manage your podcast sponsorship preferences.],
+  [Learn more about sponsor message choices: podcastchoices.com/adchoices],
+  [NPR Privacy Policy],
+),
+  insert-map: (:),
+  word-count: 266,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+  ],
+  [
+    standard-article(
+  title: [Trump's crypto interests (Two Indicators)],
+  author: [NPR Planet Money],
+  source-name: [NPR Planet Money],
+  images: (),
+  paragraphs: (
+  [Today on the show – our crypto president. Just before President Donald Trump began his second administration in January, he and his business partners launched the \$TRUMP coin. It's a memecoin that quickly raked in hundreds of millions of dollars. And there's a lot of earning potential still left on the table. Is that even legal?],
+  [We bring you two stories from our daily show, The Indicator about President Trump and his ties to crypto. First, the Trump coin. We explain what it is, how the real Donald Trump profits from it, and yes, whether this whole crypto scheme is within the law. Then we take a look at Stablecoins: how they work, how they make money, and for whom.],
+  [The original episodes from The Indicator were produced by Cooper Katz McKim and Corey Bridges. They were engineered by Harry Paul and Robert Rodriguez. They were fact-checked by Sierra Juarez. Kate Concannon edits the show. This episode of Planet Money was produced by James Sneed and edited by Emma Peaslee. Alex Goldmark is Planet Money 's executive producer.],
+  [Find more Planet Money : Facebook \/ Instagram \/ TikTok \/ Our weekly Newsletter .],
+  [Listen free at these links: Apple Podcasts , Spotify , the NPR app or anywhere you get podcasts.],
+  [Help support Planet Money and hear our bonus episodes by subscribing to Planet Money + in Apple Podcasts or at plus.npr.org/planetmoney .],
+  [To manage podcast ad preferences, review the links below:],
+  [See pcm.adswizz.com for information about our collection and use of personal data for sponsorship and to manage your podcast sponsorship preferences.],
+  [Learn more about sponsor message choices: podcastchoices.com/adchoices],
+  [NPR Privacy Policy],
+),
+  insert-map: (:),
+  word-count: 273,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+  ],
+), ruled-indices: (1,))
+
+#article-row((
+  [
+    standard-article(
+  title: [The Chicken Tax (Classic)],
+  author: [NPR Planet Money],
+  source-name: [NPR Planet Money],
+  images: (),
+  paragraphs: (
+  [Note: This episode originally ran in 2015 .],
+  [German families in the 60s loved tasty, cheap American-raised chicken that was suddenly coming in after the war. And Americans were loving fun, cheap Volkswagen Beetles. This arrangement was too good to last.],
+  [Today on the show, how a trade dispute over frozen chicken parts changed the American auto industry as we know it.],
+  [Help support Planet Money and get bonus episodes by subscribing to Planet Money+ in Apple Podcasts or at plus.npr.org/planetmoney .],
+  [To manage podcast ad preferences, review the links below:],
+  [See pcm.adswizz.com for information about our collection and use of personal data for sponsorship and to manage your podcast sponsorship preferences.],
+  [Learn more about sponsor message choices: podcastchoices.com/adchoices],
+  [NPR Privacy Policy],
+),
+  insert-map: (:),
+  word-count: 138,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+  ],
   [
     standard-article(
   title: [Week 6],
@@ -580,18 +673,52 @@ problem is a hell of a thing.],
 )
 
   ],
+), ruled-indices: (1,))
+
+#article-row((
   [
     standard-article(
-  title: [Museums and the Mafia: The Secret History of Citrus (encore)],
-  author: [Cynthia Graber and Nicola Twilley],
-  source-name: [Gastropod],
+  title: [Why is everyone talking about Musk's money?],
+  author: [NPR Planet Money],
+  source-name: [NPR Planet Money],
   images: (),
   paragraphs: (
-  [A slice of lime in your cocktail, a lunchbox clementine, or a glass of OJ at breakfast: citrus is so common today that most of us have at least one lurking on the kitchen counter or in the back of the fridge. But don't be fooled: not only were these fruits so precious that they inspired both museums and the Mafia, they are also under attack by an incurable immune disease that is decimating citrus harvests around the world. Join us on a historical and scientific adventure, starting with a visit to the ark of citrus—a magical grove in California that contains hundreds of varieties you've never heard of, from the rose-scented yellow goo of a bael fruit to the Pop Rocks-sensation of a caviar lime. You'll see that lemon you're about to squeeze in a whole new light. (This is an encore presentation.)],
-  [Learn more about your ad choices. Visit podcastchoices.com/adchoices],
+  [We've lived amongst Elon Musk headlines for so long now that it's easy to forget just how much he sounds like a sci-fi character. He runs a space company and wants to colonize mars. He also runs a company that just implanted a computer chip into a human brain. And he believes there's a pretty high probability everything is a simulation and we are living inside of it.],
+  [But the latest Elon Musk headline-grabbing drama is less something out of sci-fi, and more something pulled from HBO's "Succession."],
+  [Elon Musk helped take Tesla from the brink of bankruptcy to one of the biggest companies in the world. And his compensation for that was an unprecedentedly large pay package that turned him into the richest person on Earth. But a judge made a decision about that pay package that set off a chain of events resulting in quite possibly the most expensive, highest stakes vote in publicly traded company history.],
+  [The ensuing battle over Musk's compensation is not just another wild Elon tale. It's a lesson in how to motivate the people running the biggest companies that – like it or not – are shaping our world. It's a classic economics problem with a very 2024 twist.],
+  [Help support Planet Money and hear our bonus episodes by subscribing to Planet Money+ in Apple Podcasts or at plus.npr.org/planetmoney .],
+  [To manage podcast ad preferences, review the links below:],
+  [See pcm.adswizz.com for information about our collection and use of personal data for sponsorship and to manage your podcast sponsorship preferences.],
+  [Learn more about sponsor message choices: podcastchoices.com/adchoices],
+  [NPR Privacy Policy],
 ),
   insert-map: (:),
-  word-count: 152,
+  word-count: 267,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+  ],
+  [
+    standard-article(
+  title: [The Rest of the Story, 2024],
+  author: [NPR Planet Money],
+  source-name: [NPR Planet Money],
+  images: (),
+  paragraphs: (
+  [After the gift exchange comes another great holiday tradition: returns season. Once again, we are joining the fun in our own Planet Money way. We are returning to stories from years past to see what's changed since we last reported them. It's an episode we call The Rest of the Story.],
+  [We have updates on zombie mortgages, student loan forgiveness, Argentina's economy under its self-described anarcho-capitalist president, and the best place in the world to give birth to twins. Plus, a return to... returns.],
+  [So while you're looking for that holiday sweater in a better size, or waiting in line to trade in your Dutch oven for an air fryer, take a listen to all our latest little audio gifts. And see you in 2025!],
+  [This episode was hosted by Alexi Horowitz-Ghazi. It was produced by Sam Yellowhorse Kesler, and edited by Keith Romer and Jess Jiang. It was fact-checked by Sierra Juarez and engineered by Cena Loffredo. Alex Goldmark is Planet Money 's executive producer.],
+  [Help support Planet Money and hear our bonus episodes by subscribing to Planet Money + in Apple Podcasts or at plus.npr.org/planetmoney .],
+  [To manage podcast ad preferences, review the links below:],
+  [See pcm.adswizz.com for information about our collection and use of personal data for sponsorship and to manage your podcast sponsorship preferences.],
+  [Learn more about sponsor message choices: podcastchoices.com/adchoices],
+  [NPR Privacy Policy],
+),
+  insert-map: (:),
+  word-count: 228,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -602,15 +729,69 @@ problem is a hell of a thing.],
 #article-row((
   [
     standard-article(
-  title: [Why Finance Needs More Humanity, and Why Humanity Needs Finance],
-  author: [Harvard Business Review],
-  source-name: [Harvard Business Review],
+  title: [How refrigeration took over the world],
+  author: [NPR Planet Money],
+  source-name: [NPR Planet Money],
   images: (),
   paragraphs: (
-  [Mihir Desai, professor at Harvard Business School and Harvard Law School, argues for re-humanizing finance. He says the practice of finance, with increasing quantification, has lost touch with its foundations. But he says finance can be principled, ethical, even life-affirming. And demonizing it or ignoring it means that the rest of us – those not in finance – risk misunderstanding it, which has all kinds of implications for how we make decisions and plan for our futures. Desai is the author of the new book, "The Wisdom of Finance: Discovering Humanity in the World of Risk and Return." He also writes about finance and the economy for hbr.org.],
+  [The next time you open your fridge, take a second to behold the miracles inside of it: Raspberries from California, butter from New Zealand, steak from Nebraska. None of that would have been remotely possible before the creation of the cold chain.],
+  [The cold chain is the name for the end-to-end refrigeration of our food from farm to truck to warehouse to grocery store and ultimately to our fridges at home. And it’s one of the great achievements of the modern world.],
+  [On today’s show, Nicola Twilley, food journalist and author of Frostbite: How Refrigeration Changed Our Food, Our Planet, and Ourselves , tells us the story of how our world got cold, and what that’s meant for the economy.],
+  [We’ll hear about two pioneers of cold: The cheapskate meat baron Gustavus Swift, and the train-hopping chemist Polly Pennington. And we’ll take a look at whether all this refrigeration might have created some new problems.],
+  [Listen free: Apple Podcasts , Spotify , the NPR app or anywhere you get podcasts.],
+  [Facebook \/ Instagram \/ TikTok \/ Our weekly Newsletter .],
+  [Today’s episode of Planet Money was hosted by Nick Fountain and Alexi Horowitz-Ghazi. It was produced by James Sneed and edited by Keith Romer. It was fact-checked by Sierra Juarez and engineered by Valentina Rodríguez Sánchez. Alex Goldmark is Planet Money 's executive producer.],
+  [To manage podcast ad preferences, review the links below:],
+  [See pcm.adswizz.com for information about our collection and use of personal data for sponsorship and to manage your podcast sponsorship preferences.],
+  [Learn more about sponsor message choices: podcastchoices.com/adchoices],
+  [NPR Privacy Policy],
 ),
   insert-map: (:),
-  word-count: 108,
+  word-count: 264,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+  ],
+  [
+    standard-article(
+  title: [Grounds for Revolution: the Stimulating Story of How Coffee Shaped the World],
+  author: [Cynthia Graber and Nicola Twilley],
+  source-name: [Gastropod],
+  images: (),
+  paragraphs: (
+  [About 400 years ago, a dark and mysterious stranger arrived in Europe and sent the jitters—really, shock waves—through society. That newcomer was the coffee bean, and it's hard to overstate its effects on the world. From its early days as a religious aid to its pivotal role in the founding of the London Stock Exchange, the first scientific society, and even one of the earliest forms of social media, this bitter brown beverage has democratized culture and sparked innovation, all while fueling capitalism and inequality. With the help of Gastropod's own founding godfather, Michael Pollan, as well as a crew of all-star historians, coffee growers, botanists, and coffee scientists, this episode we're telling the story of how coffee has changed everything it touched, from the humble workday to the fate of nations. This is the first of a two-part series on coffee, sponsored by Nespresso: listen now, and then come back in two weeks for the scientific secrets behind the perfect cup.],
+  [Learn more about your ad choices. Visit podcastchoices.com/adchoices],
+),
+  insert-map: (:),
+  word-count: 170,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+  ],
+), ruled-indices: (1,))
+
+#article-row((
+  [
+    standard-article(
+  title: [The Land of the Duty Free (classic)],
+  author: [NPR Planet Money],
+  source-name: [NPR Planet Money],
+  images: (),
+  paragraphs: (
+  [(Note: This episode originally ran in 2018 .)],
+  [Is it really cheaper to shop at an airport Duty Free store? And why are so many of them alike?],
+  [In the 1940s, if you were flying from New York City to London or Paris you would find yourself making a pit stop for fuel on the western coast of Ireland. The Shannon airport at the time wasn't much to look at, but the passengers arriving there were movie stars and celebrities, basically the super rich. And the people of Shannon realized pretty quickly that they needed to upgrade the local amenities for their wealthy clientele. They hired a man named Brendan O'Regan to make it happen. Being the quick-thinking entrepreneur that he was, O'Regan convinced the Irish government to create a tax loophole. And thus, duty free stores were born.],
+  [Today on the show, we follow the surprising origin of duty free, and try to answer the question: Are they really saving you any money?],
+  [Help support Planet Money and hear our bonus episodes by subscribing to Planet Money + in Apple Podcasts or at plus.npr.org/planetmoney .],
+  [To manage podcast ad preferences, review the links below:],
+  [See pcm.adswizz.com for information about our collection and use of personal data for sponsorship and to manage your podcast sponsorship preferences.],
+  [Learn more about sponsor message choices: podcastchoices.com/adchoices],
+  [NPR Privacy Policy],
+),
+  insert-map: (:),
+  word-count: 226,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -638,22 +819,17 @@ problem is a hell of a thing.],
 #article-row((
   [
     standard-article(
-  title: [Tariffs, grocery prices and other listener questions],
-  author: [NPR Planet Money],
-  source-name: [NPR Planet Money],
+  title: [Find Joy in Any Job: How Do I Improve the Role I Have?],
+  author: [Harvard Business Review],
+  source-name: [Harvard Business Review],
   images: (),
   paragraphs: (
-  [Donald Trump is just about to begin his second presidency. And it may be safe to say that every single person in America has at least one question about what's to come in the next four years.],
-  [So, we thought we'd try to answer your questions — as best we can — about the economics of a second Trump term. Is now the time to shop for new tech? Can Trump actually bring down grocery and oil prices? And, does the president have the power to get rid of NPR?],
-  [This episode of Planet Money was hosted by Amanda Aronczyk. It was produced by Emma Peaslee and edited by Meg Cramer. It was engineered by Neil Tevault and fact-checked by Sierra Juarez. Alex Goldmark is Planet Money's executive producer.],
-  [Help support Planet Money and hear our bonus episodes by subscribing to Planet Money + in Apple Podcasts or at plus.npr.org/planetmoney .],
-  [To manage podcast ad preferences, review the links below:],
-  [See pcm.adswizz.com for information about our collection and use of personal data for sponsorship and to manage your podcast sponsorship preferences.],
-  [Learn more about sponsor message choices: podcastchoices.com/adchoices],
-  [NPR Privacy Policy],
+  [A lot of us are feeling unhappy and disengaged at work – and that started long before the pandemic. A big part of the problem, says Marcus Buckingham, is that we don’t take the initiative to do more of the tasks that we truly love. After identifying what most energizes and excites you about your current role or employer, you can try a host of strategies to shape your work around those things.],
+  [In this special series from HBR, we’re looking at how to find love in your work. In this episode, we explain how to shift your current role to focus on what really drives you.],
+  [IdeaCast co-host Alison Beard speaks with Marcus Buckingham, head of research on people and performance at the ADP Research Institute and author of the new book Love + Work.],
 ),
   insert-map: (:),
-  word-count: 191,
+  word-count: 136,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -661,15 +837,17 @@ problem is a hell of a thing.],
   ],
   [
     standard-article(
-  title: [Brain Tech Is Getting Really Good. Here’s What Managers Need to Know],
-  author: [Harvard Business Review],
-  source-name: [Harvard Business Review],
+  title: [Kale of the Sea],
+  author: [Cynthia Graber and Nicola Twilley],
+  source-name: [Gastropod],
   images: (),
   paragraphs: (
-  [What seemed like science fiction for decades is now a reality: companies are selling wearable tech and monitoring devices that can sense people’s brain activity. Neurotechnology opens incredible opportunities for new products and safer workplaces. It also raises huge red flags for privacy and ethics. And managers and organizational leaders are on the front lines of these dilemmas, says Duke University School of Law professor Nita Farahany. She explains the commercial products based on neurotechnology, the impact on workers and organizations, and the need for regulations and corporate policies. Farahany wrote the book The Battle for Your Brain: Defending the Right to Think Freely in the Age of Neurotechnology.],
+  [Call off the search for the new kale: we’ve found it, and it’s called kelp! In this episode of Gastropod, we explore the science behind the new wave of seaweed farms springing up off the New England coast, and discover seaweed’s starring role in the peopling of the Americas.],
+  [The story of seaweed will take us from a medicine hut in southern Chile to a high-tech seaweed nursery in Stamford, Connecticut, and from biofuels to beer, as we discover the surprising history and bright future of marine vegetables. Along the way, we uncover the role kelp can play in supporting U. S. fishermen, cleaning up coastal waters, and even helping make salmon farms more sustainable.
+Learn more about your ad choices. Visit podcastchoices.com/adchoices],
 ),
   insert-map: (:),
-  word-count: 109,
+  word-count: 122,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -680,30 +858,16 @@ problem is a hell of a thing.],
 #article-row((
   [
     standard-article(
-  title: [Days of our Tariffs],
-  author: [NPR Planet Money],
-  source-name: [NPR Planet Money],
+  title: [The Great Gastropod Pudding Off (encore)],
+  author: [Cynthia Graber and Nicola Twilley],
+  source-name: [Gastropod],
   images: (),
   paragraphs: (
-  [Tariffs. They’ve been announced, unannounced, re-announced, raised and lowered. It’s an on-going saga with billions at stake!],
-  [On today’s episode, we run full-on at the twisty, turny drama of life with broad-based tariffs and tackle perhaps our most asked question: Are we, regular U. S. shoppers, feeling the tariffs yet? When we’re at the grocery store or the coffee shop, are we paying more for things because of the tariffs?],
-  [We now have the data to get a very clear answer to that question. Plus, we hear a cautionary tale from our dear colleague James Sneed, who ordered a collectible doll and wound up with a surprise tariff bill at his door.],
-  [Related episodes:],
-  [Are Trump's tariffs legal?],
-  [What is Temu?],
-  [What "Made in China" actually means],
-  [Pre-order the Planet Money book and get a free gift . / Subscribe to Planet Money+],
-  [Listen free: Apple Podcasts , Spotify , the NPR app or anywhere you get podcasts.],
-  [Facebook / Instagram / TikTok / Our weekly Newsletter .],
-  [This episode was produced by Willa Rubin and edited by Jess Jiang. It was fact-checked by Sierra Juarez with research help from Vito Emanuel. It was engineered by Jimmy Keeley and Maggie Luthar. Alex Goldmark is our executive producer.],
-  [Music: NPR Source Audio - “Mirror,” “Remorse,” “Endless,” “Secrets,” “Schmaltzy,” “Water Mirror.”],
-  [To manage podcast ad preferences, review the links below:],
-  [See pcm.adswizz.com for information about our collection and use of personal data for sponsorship and to manage your podcast sponsorship preferences.],
-  [Learn more about sponsor message choices: podcastchoices.com/adchoices],
-  [NPR Privacy Policy],
+  [Four bakers, one evening, and one challenge: Who can steam the best spotted dick? On this week’s action-packed episode, Tom Gilliford, Selasi Gbormittah, and Yan Tsou of Great British Bake-Off fame, along with honorary Gastropod member (and Cynthia’s partner) Tim Buntel, compete to see who can master this most classic of British puddings for the first-ever Great Gastropod Pudding Off! But what in the world is spotted dick? “It’s got nostalgia, mystery, horror, and comedy—it’s a perfect British dish,” explained British food designer and jellymonger Sam Bompas, who joined us to judge the competition. Listen in as Tom tries to beat his rival Selasi, Yan revives the flavor combination that robbed her of a Bake Off victory, and Tim tests out his Yankee-style pudding on the Brits. While the four bakers duke it out in the kitchen, we dive into the history and science of British pudding to find out what makes a pudding a pudding, the secret ingredient that will give your pud a lovely light texture, and why anyone would name a dessert “spotted dick.”],
+  [Learn more about your ad choices. Visit podcastchoices.com/adchoices],
 ),
   insert-map: (:),
-  word-count: 258,
+  word-count: 185,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -711,18 +875,16 @@ problem is a hell of a thing.],
   ],
   [
     standard-article(
-  title: [How Generative AI Changes Strategy],
-  author: [Harvard Business Review],
-  source-name: [Harvard Business Review],
+  title: [Baked: How Pot Brownies and Pate de Fruits Fueled an Edible Cannabis Revolution],
+  author: [Cynthia Graber and Nicola Twilley],
+  source-name: [Gastropod],
   images: (),
   paragraphs: (
-  [Strategy is about making the future happen, not just reacting to it, according to author Gary Hamel. And with generative artificial intelligence, senior leaders suddenly wield an awesome new tool to change the fortunes of their organizations. The promise of generative AI is more than just a sweet hack to boost productivity and streamline operations. Its deeper potential lies in companies that rethink what they do and conjure brand-new, AI-first products and services. Simply put, generative AI is blasting open new strategic paths to create novel business opportunities, even as it brings serious risks and heightened competition.],
-  [In this episode, How Generative AI Changes Strategy, HBR editor in chief Adi Ignatius speaks to Microsoft’s head of strategy Chris Young and Harvard Business School professor Andy Wu. They lay out the technology, its emerging value chains, and its main providers. They also break down the key choices and tradeoffs that large and small companies alike will be making in this fast-changing market.],
-  [This is the fourth and final episode in the special series How Generative AI Changes Everything. Each week, HBR editor in chief Adi Ignatius and HBR editor Amy Bernstein have been hosting conversations with experts and business leaders about the impact of generative AI. Find those episodes on the impact on productivity, creativity, and organizational culture in the HBR IdeaCast feed.],
-  [And for more on ethics in the age of AI, check out HBR’s Big Idea on implementing the new technology responsibly.],
+  [Edible cannabis products are hot right now: Snoop's got some, Willie Nelson's got some—even Martha Stewart's making fancy French-style gummies. In states where it’s legal, you can buy everything from marshmallows to macarons, all laden with THC, the psychoactive compound in cannabis. This commercial boom may be recent, but the history of edibles goes way, way back to the origins of the plant thousands of years ago in the Himalayas—in fact, people were eating (and drinking) cannabis long before they were inhaling it. So when did cannabis start being smoked instead—and how did it find itself not only banned, but classified as more dangerous than both opium and meth? With the help of the woman whose family ran America's first edibles empire, we also discover why the pot brownie is America’s quintessential edible, and how this humble, slightly mulchy baked good helped make weed legal again. Plus: How today's cannabis chefs are upping the ante and taking weed recipes to new—ahem—highs (please allow us just this one pun).],
+  [Learn more about your ad choices. Visit podcastchoices.com/adchoices],
 ),
   insert-map: (:),
-  word-count: 243,
+  word-count: 176,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -730,18 +892,17 @@ problem is a hell of a thing.],
   ],
 ), ruled-indices: (1,))
 
-#article-row((
-  [
-    standard-article(
-  title: [Predictions: Jobs!],
+{
+  #standard-article(
+  title: [Why are we so bummed about the economy?],
   author: [NPR Planet Money],
   source-name: [NPR Planet Money],
   images: (),
   paragraphs: (
-  [It's time for another installment of ... Planet Money Predictions ! \*air horn\*],
-  [Last year , we invited two economic forecasters to tell us what they saw coming for jobs, the housing market, and inflation. And now they're back. Which means it's time to find out whose predictions were more on the money, and send the victor to the next round, where they face off against a new forecasting phenom.],
-  [Since our last game, housing and inflation have cooled, but the job market keeps going strong. And the possibility of a recession still looms large. Our forecasters tell us what they see in the economy now, and what they expect in the months ahead.],
-  [This episode was produced by James Sneed. It was engineered by Katherine Silva. It was fact-checked by Sierra Juarez and edited by Molly Messick. Jess Jiang is our acting executive producer.],
+  [Would you say that you and your family are better off or worse off, financially, than you were a year ago? Do you think in 12 months we'll have good times, financially, or bad? Generally speaking, do you think now is a good time or a bad time to buy a house?
+ 
+These are the kinds of questions baked into the Consumer Sentiment Index. And while the economy has been humming along surprisingly well lately, sentiment has stayed surprisingly low.],
+  [Today on the show: We are really bummed about the economy, despite the fact that unemployment and inflation are down. So, what gives? We talk to a former Fed economist trying to get to the heart of this paradox, and travel to Michigan to check in on the place where they check the vibes of the economy.],
   [Help support Planet Money and get bonus episodes by subscribing to Planet Money+ in Apple Podcasts or at plus.npr.org/planetmoney .],
   [To manage podcast ad preferences, review the links below:],
   [See pcm.adswizz.com for information about our collection and use of personal data for sponsorship and to manage your podcast sponsorship preferences.],
@@ -749,95 +910,7 @@ problem is a hell of a thing.],
   [NPR Privacy Policy],
 ),
   insert-map: (:),
-  word-count: 205,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-  ],
-  [
-    standard-article(
-  title: [Title Pirates],
-  author: [NPR Planet Money],
-  source-name: [NPR Planet Money],
-  images: (),
-  paragraphs: (
-  [A couple years ago, Gina Leto, a real estate developer, bought a property with her business partner. The process went like it usually did: Lots of paperwork; a virtual closing. Pretty cut-and-dry. Gina and her partner started building a house on the property.],
-  [But \$800,000 into the construction process, Gina got a troubling call from her lawyer. There was something wrong. At first, Gina thought the house had burned down. It turned out that the situation was... maybe worse.],
-  [On today's show: Buying land seems pretty secure, right? There's so much paperwork and verification along the way. But a messy system of how titles are sold, transferred and documented makes a perfect entry point for a new kind of criminal: Title Pirates.],
-  [Today's episode was hosted by Erika Beras and Jeff Guo. It was produced by Sam Yellowhorse Kesler. It was edited by Liza Yeager. Fact-checking by Sarah McClure. Engineering by Valentina Rodríguez Sánchez. Planet Money 's executive producer is Alex Goldmark.],
-  [Help support Planet Money and hear our bonus episodes by subscribing to Planet Money + in Apple Podcasts or at plus.npr.org/planetmoney .],
-  [To manage podcast ad preferences, review the links below:],
-  [See pcm.adswizz.com for information about our collection and use of personal data for sponsorship and to manage your podcast sponsorship preferences.],
-  [Learn more about sponsor message choices: podcastchoices.com/adchoices],
-  [NPR Privacy Policy],
-),
-  insert-map: (:),
-  word-count: 224,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-  ],
-), ruled-indices: (1,))
-
-#article-row((
-  [
-    standard-article(
-  title: [The great German land lottery],
-  author: [NPR Planet Money],
-  source-name: [NPR Planet Money],
-  images: (),
-  paragraphs: (
-  [Every ten years, a group of German farmers gather in the communal farm fields of the Osing for the Osingverlosung , a ritual dating back centuries. Osing refers to the area. And verlosung means "lottery," as in a land lottery. All of the land in this communal land is randomly reassigned to farmers who commit to farming it for the next decade.],
-  [Hundreds of years ago, a community in Germany came up with their own, unique solution for how to best allocate scarce resources. For this community, the lottery is a way to try and make the system of land allotment more fair and avoid conflict.],
-  [Today on the show, we go to the lottery and follow along as every farmer has a shot at getting the perfect piece of land — or the absolute worst piece of land! And we see what we can learn from this living, medieval tradition that tries to balance fairness and efficiency.],
-  [This episode was hosted by Erika Beras and Emma Peaslee. It was produced by Emma Peaslee. It was edited by Jess Jiang. Reporting help from Sofia Shchukina. It was fact checked by Sierra Juarez. It was engineered by Cena Loffredo. Alex Goldmark is Planet Money 's executive producer.],
-  [Help support Planet Money and hear our bonus episodes by subscribing to Planet Money + in Apple Podcasts or at plus.npr.org/planetmoney .],
-  [To manage podcast ad preferences, review the links below:],
-  [See pcm.adswizz.com for information about our collection and use of personal data for sponsorship and to manage your podcast sponsorship preferences.],
-  [Learn more about sponsor message choices: podcastchoices.com/adchoices],
-  [NPR Privacy Policy],
-),
-  insert-map: (:),
-  word-count: 268,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-  ],
-  [
-    standard-article(
-  title: [How Government and Business Can Tackle Big Global Crises Together],
-  author: [Harvard Business Review],
-  source-name: [Harvard Business Review],
-  images: (),
-  paragraphs: (
-  [It feels like a moment of panic for many. While there were some success stories in how public and private sector leaders managed the global pandemic, it isn't over, and many more crises -- from political polarization to climate change to new technological threats -- loom. But one leading political scientist is hopeful that countries and corporations can find ways to overcome their divisions and better collaborate on our most pressing issues over next ten years. He points to historic precedents and makes specific recommendations for the future, noting that in areas where political divisions cause roadblocks, it will be up to corporate leaders to ensure progress.],
-  [Ian Bremmer is the president and founder of the Eurasia Group and author of the book “The Power of Crisis: How Three Threats – and Our Response – Will Change the World.”],
-),
-  insert-map: (:),
-  word-count: 139,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-  ],
-), ruled-indices: (1,))
-#pull-quote([For this community, the lottery is a way to try and make the system of land allotment more fair and avoid conflict.], [NPR Planet Money])
-
-
-{
-  #standard-article(
-  title: [The New Leadership Structures that Unblock Innovation],
-  author: [Harvard Business Review],
-  source-name: [Harvard Business Review],
-  images: (),
-  paragraphs: (
-  [The ability of an organization to innovate over and over again, for the long term, depends on leadership structure, culture, and systems. That's according to Harvard Business School professor Linda Hill, who has spent years researching the true drivers of innovation, taking lessons from the world's most successful companies. She explains why today's leaders need to shift from the focus on decision-making and producing to creating the conditions for collaboration, experimentation, and smart decision-making across teams, silos, and wider ecosystems. She shares examples from Mastercard, Pixar, and more and outlines some newly defined ways of looking at leadership roles: as Architects, Bridgers, and Catalysts. Hill's new book is Genius at Scale: How Great Leaders Drive Innovation.],
-),
-  insert-map: (:),
-  word-count: 116,
+  word-count: 197,
   edited-for-length: false,
   debug-mode: false,
 )

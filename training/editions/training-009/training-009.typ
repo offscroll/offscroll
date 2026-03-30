@@ -23,31 +23,24 @@
 
 // --- Front Page Feature ---
 #feature-article(
-  title: [No Kings—Live Coverage],
+  title: [The Power of Assumption],
   kicker: [Cover Story],
-  author: [Jim Swift],
-  source-name: [The Bulwark],
-  deck: [Happy Saturday! Overtime is for everyone.],
-  lead-text: "If you’re a Bulwark+ member: thank you .",
-  lead-first-alpha: 0,
+  author: [ysamuels],
+  source-name: [LessWrong],
+  deck: [(First real Lesswrong post! Wow.],
+  lead-pre: [],
+  lead-cap: [T],
+  lead-rest: [his is a post on an idea I thought might be interesting to some people here, and I'd love to hear thoughts on it.)],
   body-paragraphs: (
-  [If you’re not, there’s no better time to subscribe to Bulwark+ than today: get the next year of Bulwark+ for just \$80—that’s through election day 2026 and beyond. This offer ends Sunday night.],
-  [Read on for what’s going on around The Bulwark this week and some thoughts on growing this community, No Kings and the present moment.],
-  [FIRST UP TODAY: JVL, Andrew, Catherine and others are going live at 2 p.m. ET on Substack and YouTube . If you can’t make it to a No Kings Rally, join us online and see what we’re seeing and what members are sharing from their rally!],
-  [ON THE SECRET PODCAST THIS WEEK…],
-  [JVL and Bill Kristol (filling in for Sarah) discuss escalating Iran conflict, the risky push toward a wider war, and why the real damage may outlast the fighting. They also get into the global fallout—from threats to the petrodollar system to the collapse of U. S. alliances—and what a rushed exit might look like.],
-  [🚨 OVERTIME 🚨],
-  [I’m not going to be able to watch our livestream today and for good reason: I’ll be at the Cincinnati No Kings march downtown myself!],
-  [As The Bulwark has grown, newer folks might assume we’ve been livestreaming like this all along. Nope. I remember being behind the scenes, and sometimes on camera, for our early forays. We called it “Thursday Night Bulwark.” It felt like a big production at the time, and honestly, it stressed me out each week, as plenty could go wrong.],
-  [But tomorrow? I’m genuinely excited. What I’m most excited about is our ability to feature you and what you’re seeing. That’s something we couldn’t easily do back then, when the whole livestream operation felt like it was held together with tin cans, string and duct tape. If you’re showing up in the streets tomorrow, please send us what you’re seeing, what message you’re sending, and, if you’re willing: a picture of you. We’d love to feature it on our livestream and social.],
-  [» 📸 Share pictures in our Members Only Chat 📸 «],
-  [In 2026, as we’ve grown here on Substack and on YouTube ( where we recently passed one billion views for our work ), it’s a near-daily occurrence and not a fire drill.],
-  [We go into today’s No Kings fresh off of our four shows in Minneapolis, Dallas, and Austin. The members we met, the stories they told us: harrowing and heartfelt? There is a lot of wind in our sails. If you haven’t, go check out what Sarah wrote yesterday about what motivates us each morning .],
-  [And if you’ve been to one of our shows, Sarah often closes with this message: authoritarians want us exhausted. What better way to put wind in your sails (and ours, and others) than by going to a No Kings march, or joining us online?],
-  [We’ve always had a strong community, and it’s growing. A lot . And this growth has enabled us to bring more great Bulwark articles and shows to you, and with our ever-growing reach, thanks to you, we’re getting pro-democracy voices into the feeds of our fellow Americans who didn’t even know they were our people.],
-  [ICYMI: At the end of JVL and Tim’s livestream with Katie Couric this week, JVL thanks Katie for helping to give his father-in-law a few more years . If your family has a history, consider getting your colon checked!],
-  [Tech support questions? Email members\@thebulwark.com . Questions for me? Respond to this message.],
-  [—30—],
+  [Assumption can be used as a communicative tool.],
+  [As a kid I would occasionally, before falling asleep, lie in bed and imagine that I had a very good friend to talk to, or who could cheer me on. Sometimes these were characters from my favorite books, but apparently at some point it occurred to me that presumably someone, somewhere, could be supposed to have anticipated someone else in the world feeling that way at some point, and might actually have wanted to send that someone a message of comfort, love, or support. At this point, all I had to do was imagine roughly what they might say, consider it to be said, and the message would have been received. To put it differently, I was aware that many, probably most, of the people in the world, knowing that I felt lonely, might have wanted to send me their blessings or support, and that presumably, at least one person who felt that way, over all space and time, probably realized that he could send me that message, provided I was smart enough to realize he might try to.],
+  [So I could "communicate" with people, when the purpose was therapeutic in that way - I couldn't actually receive ideas I couldn't have thought of myself (by definition), but when it was the communication itself and not the words that mattered, I could receive the messages left for me by people who had found this mental space that was created by the assumption that others would . If I wanted to give as well as receive, I could "leave" messages too, for any future or past thinker, lonely or otherwise, to assume exist. Despite the obvious drawback of not being able to receive any idea you couldn't have thought of yourself, this communication does allow you to completely bypass constraints of language, time and space.],
+  [Assumption is famously used in problems where the goal is to meet with someone over varying areas when you have no (other) mode of communication. I personally had idly wondered for some years what the best way to meet with someone spoken to by assumption would be (assuming they had also considered the possibility of meeting). I remained stuck for quite some time wondering whether it was the Eiffel Tower or the Empire State Building that would be the best place to go at midnight, January first, with a big sign reading "You know why you're here. Talk to me", before realizing that the appropriate place on the internet was probably a much more logical rendezvous (thought that is not the main motive for me in writing here - I've wanted to contribute to LessWrong for some time now).],
+  [Just as another point of thought, communication through assumption could in theory be used to create intellectual taboos or norms among intelligent people, for example an accepted and implicit censoring of certain ideas or beliefs that could be realized by anyone smart enough to arrive at them as being unsuitable for spreading (I really hope this isn't one of those).],
+  [So:],
+  [1. Do you know anyone who has beaten me to writing about this? Please direct me to the source if so. (I hope not, but I do hope it has been thought about before, otherwise I've been played for quite a fool).],
+  [2. Do you think this idea is worth anything? Other than game theory , in what other fields or ways could it be used?],
+  [3. Have I ever spoken to you telepathically before? If so, please write. That could be a very interesting conversation.],
 ),
   edited-for-length: false,
 )
@@ -56,20 +49,16 @@
 {
   #section-label([Front Page])
   #standard-article(
-  title: [Darren Lynn Bousman & Lauren LaVera discuss TWISTED],
-  author: [McEric],
-  source-name: [Ain't It Cool News],
+  title: [GELATO QUEEN],
+  author: [Kirkus Reviews],
+  source-name: [Kirkus Reviews],
   images: (),
   paragraphs: (
-  [Darren Lynn Bousman & Lauren LaVera discuss TWISTED, available now on digital.],
-  [Read the full article on AICN],
-  [Horror fans are eating well this month. While SEND HELP and IRON LUNG are going head-to-head at the box office, the view-at-home market is alive, as well, with plenty of options for those who seek a little inner chill to augment the frigid weather.],
-  [The newest offering comes from Darren Lynn Bousman, director of SAW II, III, IV, REPO: THE GENETIC OPERA, THE DEVIL’S CARNIVAL, and SPIRAL. You might recall we talked to him back in 2016, 2019, and 2020, so he’s an old friend of the site. Joining him on this outing is the most exciting scream queen working today Lauren LaVera, who has celebrated massive success with TERRIFIER 2 & 3, as well as the upcoming fourth installment in the splatterfest from director Damien Leone. We got to catch up with her back in 2024 before TERRIFIER 3 hit theaters, so this interview was a bit of a homecoming for all of us.],
-  [TWISTED began its life as a script called “Monster” from Jonathan Bernstein and James Greer, the duo who brought us Steven Soderbergh’s UNSANE back in 2018. Bousman was attracted to the script as it plays out as a strong two-hander between the characters of Robert Kezian, a brilliant and dedicated brain surgeon, and Paloma Jones, a crafty grifter. LaVera was the obvious choice for Paloma and, in a stroke of brilliance, Djimon Hounsou (AMISTAD, GUARDIANS OF THE GALAXY) was brought aboard to play Kezian. The cast was then rounded out with Neal McDonough (“Arrow,” GAME OVER MAN!)],
-  [Finish the article on AICN],
+  [Eleven-year-old Lizabeth “Liza” Gordon is used to moving house; as her grandmother says, her dad “was bitten by the gobug when he was young.” This time, Liza’s dad aims to start a family gelato business in Greenblossom, South Carolina, that he’ll call Gordon’s Gelato. Liza and her older brothers, Pete and Brad, are going to help run the shop. Liza doesn’t want to leave her friends, but when they prove to not care about her, she says good riddance to the Richmond, Virginia, area and heads to her new home. It’s worse than she imagined: The new residence is a “rundown, bi-level style house,” her room is “puss yellow with prune-purple trim,” and she’s starting school with only six weeks left before summer vacation.],
+  [Stepping into her new life, she has to figure out how to work in a gelato shop, determine whether her new friends actually like her, and plan for her 12th birthday. Liza’s dad becomes a contestant on a reality show, competing for a grand prize of \$1 million, which makes things a lot more complicated for Liza, but if her dad wins, her whole life could change. The novel’s fun and engaging lead character makes the book a captivating read. The supporting characters, from Liza’s eccentric dad to the boy who helps out in the gelato shop, feel well rounded and unique. Liza is easy to root for, especially when everything keeps going wrong for her. Her creative and disgusting gelato flavors, nicknamed “Gordon’s Gaggers,” are a funny element that adds to the overall charm of the story.],
 ),
   insert-map: (:),
-  word-count: 275,
+  word-count: 262,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -84,7 +73,7 @@
   source-name: [The Bulwark],
   images: (),
   paragraphs: (
-  [(Composite by Hannah Yoest / Photos: Shutterstock)],
+  [(Composite by Hannah Yoest \/ Photos: Shutterstock)],
   [THERE ARE SIGNS that the debate about health care in America is about to get out of the rut it’s been in for about fifteen years—and that Democrats are preparing for the moment when it does.],
   [Ever since 2010, the most high-profile fights in Washington have been about the Affordable Care Act and Medicaid. Mainly that’s because Donald Trump and the Republicans keep attacking those programs—as they did last year when they enacted the largest-ever cuts to Medicaid , then refused to extend lapsing “Obamacare” subsidies that had helped millions to get coverage, and reduced premiums for many millions more.],
   [Democrats are determined to reverse those two steps, somehow, and you can expect them to make that a rallying cry in their campaigns for November’s midterm elections. But at least some Democrats don’t want to stop there. On March 19, a dozen of the party’s senators released an open letter announcing their intention to develop policies that would address a broader topic: The underlying increase in health care costs that is affecting everybody, not just people who are uninsured, on Medicaid, or buying coverage at HealthCare.gov .],
@@ -140,25 +129,23 @@
 
 {
   #standard-article(
-  title: [Netflix’s “Jo Nesbø’s Detective Hole” Feels A Bit Overstuffed],
-  author: [Richard Roeper],
-  source-name: [Roger Ebert (RogerEbert.com)],
+  title: [I am definitely missing the pre-AI writing era],
+  author: [N. Cailie],
+  source-name: [LessWrong],
   images: (),
   paragraphs: (
-  [If the Netflix Norwegian crime thriller series “Jo Nesbø’s Detective Hole” had been packaged into five or even six episodes, it might well have been masterful. Stretched over nine long chapters and stuffed with a dizzying array of subplots, the production stalls a bit in the middle and occasionally turns down some side roads that result in dead ends—but it’s still an effectively grisly and beautifully mounted effort, with superb performances from the ensemble cast.],
-  [About that title. If you’re a fan of the suitable-for-adaptation fiction known as Nordic noir , e.g., Stieg Larsson’s “Millennium” series (which became “ The Girl with the Dragon Tattoo ” film trilogy), the Kurt Wallander novels, et al., you’re no doubt familiar with the works of Jo Nesbø, whose books have sold more than 50 million copies worldwide. The emotionally tormented Oslo police detective Harry Hole (pronounced “HAH-ree, HOO-leh”) has been at the center of more than a dozen Nesbø novels. Michael Fassbender portrayed Hole in the disappointingly underwhelming 2017 film “ The Snowman ,” which was plagued by production problems.],
-  [Nesbø is the creator and writer of what appears to be the first season of “Detective Hole” (it ends on a terrific cliffhanger), with the fifth novel in the Harry Hole series, “The Devil’s Star,” as the primary source material. A perfectly cast Tobias Santelmann delivers electric work as the brilliant but brooding, self-destructive Hole, who seems more comfortable at a crime scene than he does having a cup of coffee with a friend, while Joel Kinnaman is equal to the task as Hole’s police colleague, the ambitious and chillingly duplicitous Tom Waaler.],
-  [Harry Hole. (L to R) Ingrid Bolso Berdal as Ellen Gjelten in Harry Hole Cr. Courtesy of Netflix © 2024],
-  [Also contributing greatly to that Nordic noir vibe: the use of dozens upon dozens of iconic Oslo locations, showcasing both the brightest and most lush as well as the dark and trash-lined underbelly of the city; a steady, blood-spattered stream of gruesome kills; and a typically effective and atmospheric score from the famed duo of Nick Cave and Warren Ellis (“Hell or High Water,” “Wind River,” “Blonde”).],
-  [After an expertly filmed and shocking chase scene that opens the series, we fast forward some five years to the present day. Harry is still obsessing over the unsolved bank heist that precipitated that chase sequence, but he’s in a relatively good place. He has a strong bond with his likable, free-spirited partner, Ellen (wonderfully played by Ingrid Bolsø Berdal ). He’s been sober for a healthy stretch of time. And he’s in a promising relationship with a single mother named Rakel (Pia Tjelta, outstanding)—though it’s going to take some effort for Harry to break through to Rakel’s adolescent son, Oleg (Maxime Baune Bochud).],
-  [Still, things are already beginning to unravel, both in Oslo and in Harry’s world. Rival gangs are bringing an unprecedented level of firepower to their turf wars. Harry has suspicions about the high-ranking Waaler, who flaunts his wealth (he makes a half-hearted claim about some kind of inheritance) and exudes menace even when he smiles in your direction. The body count starts to pile up, and it appears some of the murders are the work of a serial killer who leaves a trademark red diamond with his victims. (We don’t see the killer, but we hear his voice, in Swedish, repeating the same mantra: “Open your eyes. It’s a simple pattern. A red guiding star, a five-pointed devil’s cross, will show you the way.”)],
-  [Harry Hole. (L to R) Joel Kinnaman as Tom Waaler in Harry Hole Cr. Courtesy of Netflix © 2024],
-  [We’re introduced to a green but promising journalist (Kelly Gale, doing what she can with an underwritten role) who is assigned to cover an unsolved murder case. Harry is haunted by nightmares in which the bloodied victims come to life. The great Peter Stormare enters the picture as a gang leader. We are treated to needle drops such as Warren Zevon’s “Werewolves of London” and Wovenhand’s cover of “Ain’t No Sunshine.” A man who wears a clerical collar is having a clandestine love affair in Prague and may or may not be up to something nefarious.],
-  [You can see what I mean about the “overstuffed” thing. Swirling close-ups of fountains and sculptures reflect the series’ twisted funhouse-mirror atmosphere. An oppressive heat wave magnifies the escalating gang wars, while the night is often bathed in cleansing, heavy rains. This series vibrates with mood . Strong female characters abound in supporting roles, but at its heart, this is a hard-boiled two-hander pitting Santelmann’s flawed but redeemable Harry against Kinnaman’s complex and icily efficient Tom, who truly believes the end justifies the means. If “Jo Nesbø’s Detective Hole” continues (there’s certainly a wealth of material to be mined from the novels), it could upgrade from good to great if it goes a bit leaner, a bit more focused. All the pieces are in place.],
-  [Whole season screened for review. Currently streaming on Netflix.],
+  [Yesterday, I wrote my first technical draft on what I was working on with the goal to share it publicly on here (well using an account dedicated to technical post), and did not realize how wanting to sound perfect actually steal the ''my voice" in the paper. Although 80 % of the content was my own writing, the fact that it was run in a LLM enginee for grammar and vocabulary cross-check, made it failed the "probable written by AI " metric; and it was rejected. 
+ I am not complaining, well, it was kinda my fault after all cause the instructions did specify the no-use of LLM, when sending first post. And the rejection made me think: why did I even need the AI to validate what I worked on?],
+  [The scary part, is I love writing, I have been writing blogs and all sort of things since I can't even remember. Have some think pieces on popular sites, and other personal blog that I used to share. And you know, before 2023, my writing was so good that I rarely had to have a second read or correction to make sure the flow stays consistent, since english is my 4th language. I always sought external review or check with tools like : Grammarly or Quilbot, for mistakes or grammars misphrasing. But now, this "superskill" has faded away, like seriously. I can't even write a 1000 words think piece, without needing or wanting to know what AI thinks or how it could have phrase it better, even for my emails. I can't write poems as before, without sounding generic, and this is mainly because I have now trained my brain to rely on these automated tools that It can not be creative anymore or think of itself. My writing has deterioted, I attempted to write a slam-poem, recently for a competition I wanted to partake in, and upon the completion when I read it, my reaction was : Who is this? Who wrote this? This is bad !],
+  [Before, I would sit and write a piece and I kid you not, the first draft was always perfect that I rarely had to write, and my best poem that got me to some "art"ies festival, was just written while I was sitting outside my hostel, with a piece of paper and a pen, and a thought that was bothering me. But now, I am slowly realizing, it has been changing in negative way.],
+  [Sorry that this sounds like a rant, well, it is one ! But like, my point was to share it out loud, and kinda know if I am the only person experiencing this or if there are others? And for people who successfully taken back their creative writing skills, how did you do it?],
+  [This post, is written without any tools assistance I just wrote what my brain is instructing to type (might not reread it before posting). Obviously, you would see some mistakes, some paraphrasing issue, some article misuse; I personally do not see them but, hey, I am not expert in literature. So bear with me, also, I think that is the beauty of writing, the raw , unedited emotions of the person behind every words either for entertainment or educational purposes, is what makes it special.],
+  [So, thank you ''LessWrong" moderators, for rejecting my first draft, it is kinda a wake up call that made me realize, maybe I just need to be focusing on my own voice, and there is nothing wrong into sounding "more or less wrong". Yeah, I know, people advocate into embracing AI as it would be/is in every aspect of our life, but maybe it is good that most of us do not let this technology rephrase our own thought. Cause those words, that the AI told you: sound wrong or aggressive or less formal, are the ones that carry the ''emotions", you ought to share.],
+  [Have a productive week, dear reader !],
+  [P. S: If you see this! I am celebrating. It means, I passed the text. Yay!],
 ),
   insert-map: (:),
-  word-count: 835,
+  word-count: 679,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -167,40 +154,38 @@
 
 {
   #standard-article(
-  title: [Antonio Troina: My Journey So Far as a Senior Staff Software Engineer],
+  title: [Gina Wiley: My Journey So Far as a Senior Engineering Manager],
   author: [Deliveroo Engineering],
   source-name: [Deliveroo Engineering],
   images: (),
   paragraphs: (
   [Could you introduce yourself and your role at Deliveroo?],
-  [I’m Antonio, a Senior Staff Engineer at Deliveroo. I have been with Deliveroo for six and a half years, overseeing the entire New Verticals domain as well as the Catalogues space, as an Individual Contributor (IC).],
-  [Can you tell us a little bit about your career journey into engineering and how you found yourself at Deliveroo?],
-  [I have been passionate about computers since childhood, which led me to pursue studies in software engineering. I began my career working for consultancy firms in Italy, my home country, before moving to London, where I continued in consultancy roles across both the private and public sectors. Eventually, I joined Deliveroo, which, interestingly, is my first purely product-based company. I started as a Software Engineer six and a half years ago, and as my skills, experience, and ability to influence grew, I naturally transitioned into my current role, which I truly enjoy.],
-  [Reflecting on the role of a Senior Staff Software Engineer here, what do you think is the most rewarding part of it?],
-  [One of the most interesting aspects of my role is helping teams see challenges from different perspectives, drawing from my experience over the years. I’ve encountered situations where problems were approached in one way but could have been tackled more effectively through alternative methods. I enjoy guiding teams through that journey, particularly when it comes to challenging product requirements and rethinking how problems are framed. While many initiatives originate from product, some also stem directly from technology. Often, our technical interactions with other teams and systems provide insights that may not be as clear to product managers. In these cases, I find that a bottom-up approach can be highly effective.],
+  [I’m Gina, I’m a Senior Engineering Manager at Deliveroo. I lead our Consumer Experience group in our New Verticals engineering team, and I’ve been at Deliveroo for five years.],
+  [Could you walk us through your path to engineering management and what brought you to Deliveroo?],
+  [I studied information systems at university and developed an interest in human-computer interaction. This field emphasises understanding users and translating business processes into technical requirements. I moved to San Francisco for a tech consulting role, where I worked on a large-scale, multi-country project replacing legacy systems with connected Software as a Service (SaaS) products. This cross-functional experience shaped my understanding of end-to-end business process transformation through technology.],
+  [In 2017, I joined DoorDash’s Business Applications team, working on partner onboarding and support processes, which introduced me to logistics and delivery tech during a pivotal time for the industry.],
+  [In 2020, I moved to London to work at Deliveroo, initially supporting restaurant partner onboarding in the Restaurants engineering group. I now work in the New Verticals engineering group, focusing on launching grocery and retail propositions. We’ve recently introduced a lot of new features to support this growing space; so continuing to innovate and deliver at pace to keep up with the changing market has been an exciting challenge!],
+  [Reflecting on the role of engineering manager here, what do you think is the most rewarding part of this role?],
+  [I enjoy seeing engineers on the team take on new challenges and push themselves out of their comfort zone to reach their full potential, so I’ll make sure that they get access to the right resources and opportunities so that they can continue to learn and grow.],
+  [It’s important to trust your people to reach their growth goals with the right opportunities. I believe (and have seen throughout my career) that when you give people more ownership and responsibility, they will go above and beyond to achieve a positive impact.],
   [What would you say about career progression at Deliveroo?],
-  [I would say career progression is quite varied. It can involve moving upward within the same path or making a lateral shift to explore a different direction—both of which I’ve seen engineers successfully pursue. In my case, I chose the IC path and have continued progressing in that direction. Along the way, I’ve found myself both challenged by new requirements and tasks, and supported by my peers and managers in navigating that journey.],
-  [Additionally, I’ve seen many successful examples of engineers making lateral moves, such as ICs transitioning into management or exploring that path to determine if it’s the right fit for them. This flexibility allows for different avenues of career growth depending on individual interests and aspirations.],
+  [In progressing your career, it’s important to know what is expected and what it means to reach that next level. I value that at Deliveroo we have a clear ‘levels and expectations’ framework and resources to guide career conversations. Our framework sets out very clearly what is expected at each level, and anyone who joins will review this framework with their manager to start the conversation of what opportunities there are to progress.],
+  [At Deliveroo I’ve found that there are so many opportunities to increase your scope of influence and responsibility. We have so many fantastic impactful projects people can get involved in, and incredible team members, which means there is no shortage of opportunity. What’s really important is leading by example; having a growth mindset to continuously work on improvement and seeking out those opportunities to grow outside of your current areas of expertise.],
+  [How have you been supported in your own growth journey?],
+  [I’ve had amazing support by all my managers, mentors, peers and team members I’ve worked with over the last 5 years. It wasn’t easy joining in 2020 and moving to a new country – it was a tricky time for many, but I always had a support network to lean on here. I’ve had very supportive managers who have advocated for me, who have provided me opportunities to grow and challenge myself, and I have benefitted from Deliveroo’s formal mentoring program to get extra support on my growth areas.],
   [What sets Deliveroo apart from any other tech companies you’ve worked for?],
-  [Deliveroo has evolved significantly over the years, and one aspect I particularly appreciate is the level of involvement engineers have in what we build. While I’ve worked at other companies where engineers played a role in development, my previous experience in consultancy often meant engineers were less directly engaged in the broader product vision. At Deliveroo, I value the opportunity to think from a product perspective, collaborate closely with product teams, and truly understand what we’re building and who we’re building it for - beyond just the technical implementation.],
-  [At the same time, there is a strong focus on operational excellence, ensuring that we make strategic rather than purely tactical decisions as we grow. Striking that balance is always a challenge, but I’ve seen it evolve over time. Ultimately, what I appreciate most as an IC at Deliveroo is the ability to be deeply involved in shaping the products we create.],
-  [What is the most impactful piece of work you’ve worked on at Deliveroo?],
-  [Whenever I’m proud of something I’ve accomplished, I believe that if, after a few years, I don’t look back and see ways I could have done it better, then I haven’t learned much.
-One project I’m particularly proud of delivering with the team was the transition to a new system for serving menu pages to our customers. It was a long-overdue change that provided a significant technical advantage. While, in hindsight, there are always things we could have done differently, I see that as part of continuous growth and learning. I often look back on that project and the collaboration with the engineers involved with a great deal of appreciation],
-  [What’s a skill you’ve developed that you didn’t expect when you joined?],
-  [Nothing about my experience has been particularly surprising—I expected to be involved in more than just writing code. I joined the company knowing that my role would naturally expand to include a stronger product focus, and that has been one of the most valuable aspects of my growth here.],
-  [One key lesson has been understanding the balance between engineering and product perspectives. Early in my career, I saw compromises as frustrating—technical decisions I wanted to implement one way but had to adjust due to product requirements. Over time, I’ve come to appreciate the importance of factors like time to market and the need for trade-offs. I’ve learned that sometimes cutting corners is necessary for speed, but it’s crucial to do so intentionally, knowing that these shortcuts often remain in place longer than expected. Ultimately, I’ve grown more comfortable making these decisions, where before this might have caused more hesitation or frustration.],
+  [Working at Deliveroo has provided me with immense opportunities to make a significant impact. I’ve been most impressed by the people I work alongside, and it’s clear that everyone has a drive to make change and do so in a way that we learn from each other and pivot quickly if needed. People here are passionate about the work they are doing; this passion creates a fast-paced environment where I feel I’m constantly learning and being challenged by those around me to consider how we can get incrementally better day-to-day.],
   [What would be your one piece of advice for any new engineers or managers looking to join us?],
-  [Whether you choose to be an engineer or a manager, one of the most valuable things you can do is build strong relationships with your peers and managers. Getting to know the people around you fosters collaboration, opens up conversations, and allows you to influence areas beyond your immediate scope. These connections can provide insights into different aspects of the business and help you grow professionally.],
-  [Additionally, continuous learning is key. Deliveroo has a highly diverse team, and there’s a great opportunity to learn from a wide range of perspectives and experiences. Building these relationships not only enhances your understanding but also enables you to work more effectively.],
-  [And as an IC, I’d also recommend experimenting with AI for coding - I’ve started using it myself, and it’s been both useful and fun.],
+  [No matter how big or small the project, feature, or task – give it your all. Hold a high bar for yourself and make that a regular practice, and that will show in the end result. If we all have that collective sense of ownership and accountability for the work that we’re doing, then we’ll be able to go faster as a team – it becomes a flywheel effect. Doing this also means you are setting a good example for your people and encouraging others to do the same, which creates highly effective, motivated teams that can produce incredible results.],
   [We’re hiring! If you are interested in roles in Tech, please visit deliveroo.com/careers .],
 ),
   insert-map: (:),
-  word-count: 1030,
+  word-count: 817,
   edited-for-length: false,
   debug-mode: false,
 )
+
+  #pull-quote([I believe (and have seen throughout my career) that when you give people more ownership and responsibility, they will go above and beyond to achieve a positive impact.], [Deliveroo Engineering])
 
 }
 
@@ -229,7 +214,7 @@ Yeah, at a high level, post-training is a type of training of a language model t
 Oh, they’re already convinced because I think the biggest shift in generative AI was caused by post-training ChatGPT. The reason why ChatGPT was amazing was actually not because of pretraining or getting all that information into ChatGPT. It was about making it usable so that you could actually chat with it, right?],
   [So the frontier labs are doing a ton of post-training. Now, in terms of convincing, I would say that for the frontier labs, the new labs, they don’t need any convincing for post-training. But I think for the average developer, there is, you know, something to think about on post-training. There are trade-offs, right? So I think it’s really important to learn about the process because then you can actually understand where the future is going with these frontier models.],
   [02.15 
-But I think there is a question of how much you should do on your own, versus, us[ing] the existing tools that are out there.],
+But I think there is a question of how much you should do on your own, versus, us\[ing\] the existing tools that are out there.],
   [02.23 
  So by convincing, I mean not the frontier labs or even the tech-forward companies but your mom and pop. . . Not mom and pop. . . I guess your regular enterprise, right?],
   [At this point, I’m assuming they already know that the models are great, but they may not be quite usable off the shelf for their very specific enterprise application or workflow. So is that really what’s driving the interest right now—that people are actually trying to use these models off the shelf, and they can’t make them work off the shelf?],
@@ -319,7 +304,7 @@ I think there are more approaches to this today, but from a user experience pers
   [21.55 
 Oh, yeah. Sorry. So in-context learning is a deceptive term because the word “learning” doesn’t actually. . . Backprop doesn’t happen. All it is is actually putting examples into the prompt of the model and you just run inference. But given that prompt, the model seems to learn from those examples and be able to be nudged by those examples to a different answer.],
   [22.17 
- By the way, now we have frameworks like DSPy, which comes with tools like GEPA which can optimize your prompts. I know a few years ago, you folks were telling people [that] prompting your way through a problem is not the right approach. But now we have more principled ways, Sharon, of developing the right prompts? So how do tools like that impact post-training?],
+ By the way, now we have frameworks like DSPy, which comes with tools like GEPA which can optimize your prompts. I know a few years ago, you folks were telling people \[that\] prompting your way through a problem is not the right approach. But now we have more principled ways, Sharon, of developing the right prompts? So how do tools like that impact post-training?],
   [22.51 
 Oh, yeah. Tools like that impact post-training, because you can teach the model in post-training to use those tools more effectively. Especially if they help with optimizing the prompt and optimizing the understanding of what someone is putting into the model.],
   [For example, let me just give a contrast of how far we’ve gotten. So post-training makes the model more resilient to different prompts and be able to handle different types of prompts and to be able to get the intention from the user. So as an extreme example, before ChatGPT, when I was using GPT-3 back in 2020, if I literally put a space by accident at the end of my prompt—like when I said, “How are you?” but I accidentally pressed Space and then Enter, the model completely freaked out. And that’s because of the way things were tokenized, and that just would mess things up. But there are a lot of different weird sensitivities in the model such that it would just completely freak out, and by freak out I mean it would just repeat the same thing over and over, or just go off the rails about something completely irrelevant.],
@@ -368,7 +353,7 @@ Yes. Yeah.],
  Secondly, scaling. Is scaling still the way to go? The frontier labs seem to think so. They think that bigger is better. So are you hearing anything in the research frontiers that tell you, hey, maybe there’s alternatives to just pure scaling?],
   [32.20 
 I still believe in scaling. I believe we’ve not met a limit yet. Not seen a plateau yet. I think the thing people need to recognize is that it’s always been a “10X compute for 2X intelligence” type of curve. So it’s not exactly like 10X-10X. But yeah, I still believe in scaling, and we haven’t really seen an empirical plateau on that yet.],
-  [That being said, I’m really excited about people who challenge it. Because I think it would be really amazing if we could challenge it and get a huge amount of intelligence with less pure dollars, especially now as we start to hit up on trillions of dollars in some of the frontier labs, of like that’s the next level of scale that they’ll be seeing. However, at a compute company, I’m okay with this purchase. Come spend trillions! [laughs]],
+  [That being said, I’m really excited about people who challenge it. Because I think it would be really amazing if we could challenge it and get a huge amount of intelligence with less pure dollars, especially now as we start to hit up on trillions of dollars in some of the frontier labs, of like that’s the next level of scale that they’ll be seeing. However, at a compute company, I’m okay with this purchase. Come spend trillions! \[laughs\]],
   [33.13 
  By the way, with respect to scaling, so you think the models we have now, even if you stop progress, there’s a lot of adaptation that enterprises can do. And there’s a lot of benefits from the models we already have today?],
   [33.30 
@@ -383,7 +368,7 @@ There are contenders in the US who want to be an open source DeepSeek competitor
 Oh, like Ai2 for Olmo … Their startup’s doing some stuff. I don’t know if they’ve announced things yet, but yeah hopefully we’ll hear from them soon.],
   [34.15 
  Yeah yeah yeah.],
-  [Another interesting thing about these Chinese AI teams is obviously, you have the big companies like Tencent, Baidu, Alibaba—so they’re doing their thing. But then there’s this wave of startups. Set aside DeepSeek. So the other startups in this space, it seems like they’re targeting the West as well, right? Because basically it’s hard to monetize in China, because people tend not to pay, especially the enterprises. [laughs]],
+  [Another interesting thing about these Chinese AI teams is obviously, you have the big companies like Tencent, Baidu, Alibaba—so they’re doing their thing. But then there’s this wave of startups. Set aside DeepSeek. So the other startups in this space, it seems like they’re targeting the West as well, right? Because basically it’s hard to monetize in China, because people tend not to pay, especially the enterprises. \[laughs\]],
   [I’m just noticing a lot of them are incorporating in Singapore and then trying to build solutions for outside of China.],
   [35.00 
 Well, the TAM is quite large here, so. . . It’s quite large in both places.],
@@ -401,8 +386,6 @@ That’s right. And you know, AMD makes both. . .],
   [And with that thank you, Sharon.],
 ),
   insert-map: (:),
-  inline-pq: pull-quote([So I’ve seen people take a pretrained model, do some continued pretraining—maybe you call it midtraining, I’m not sure.], [Ben Lorica and Sharon Zhou]),
-  inline-pq-idx: 45,
   word-count: 6224,
   edited-for-length: false,
   debug-mode: false,
@@ -412,209 +395,94 @@ That’s right. And you know, AMD makes both. . .],
 
 {
   #standard-article(
-  title: [Engineering at Deliveroo India: How We Build, Collaborate, and Grow],
-  author: [Deliveroo Engineering],
-  source-name: [Deliveroo Engineering],
-  images: (),
-  paragraphs: (
-  [Hey everyone, I’m Kartik Visvanathan , an Engineering Manager at Deliveroo, based in India. I joined the team in 2023, and it’s been an exciting ride ever since. I’ve built some truly impactful products here, including an advertising platform that we scaled into a profitable business, and a corporate orders product that touched every part of our systems—from restaurants to delivery to customer service.],
-  [But while building cool stuff is awesome, what I really want to share today is the secret sauce behind it: how we work as a team here in India .],
-  [id="a-truly-global-hub"\>A Truly Global Hub],
-  [Our engineering hub in India is a core driver of Deliveroo’s global mission. Over the past few years, our teams have transitioned and taken complete ownership of key product areas. Whether we’re improving the restaurant onboarding flow or fine-tuning our delivery times, the work we do here is absolutely core to Deliveroo’s success.],
-  [When our India Development Center (IDC) started a few years back, we had engineers reporting directly to managers in the UK. I was one of the first engineering managers hired in India in 2023, and I was given the opportunity to build a team that was entirely based here.],
-  [We’ve since grown to include other roles like product managers, analytics engineers, and data scientists right here in India. This lets us have “co-located teams”—people who can sit in the same room, grab a whiteboard, and even go out for a team social that isn’t virtual.],
-  [When candidates ask about my favorite parts of the job, I always mention three things: cross-team collaboration, work flexibility and life harmony, and a culture of ownership . So let’s dive into those.],
-  [id="how-we-collaborate-across-teams"\>How We Collaborate Across Teams],
-  [Working with teammates in London and other time zones means a lot of asynchronous communication. We rely heavily on tools like Slack, Confluence, and Figma, which are essentially our digital whiteboards. Regular virtual stand-ups and a focus on clear ownership help us build trust and keep things moving.],
-  [In the advertising and corporate orders spaces, many of the features my teams build touch other teams’ systems. This means we have to integrate with other Deliveroo teams to do things like show an ad on the homepage or create a special checkout experience for corporate customers. In some companies, this level of cross-team dependency can be a huge roadblock. I’ve had past experiences where getting anything done meant creating a bunch of tickets, waiting for approvals, and attending countless “office hours.”],
-  [At Deliveroo, it’s completely different. We launched our initial products in both the advertising and corporate order spaces within a single quarter - a feat that wouldn’t have been possible without our seamless cross-team collaboration.],
-  [So, how does it work?],
-  [Our engineers start by diving into other teams’ documentation and code, posting questions in public Slack channels to get quick answers without unnecessary meetings.],
-  [Teams proactively share their “how-to” guides, making it easy to get up to speed on their codebases.],
-  [We write Technical Design Documents and share them for review, with engineers encouraged to pair with teammates from adjacent teams for smoother collaboration.],
-  [Once approved, we develop and the external team reviews our code changes. The amazing thing is that no matter how busy other teams are, they always support us and we make sure to contribute high-quality code without adding maintenance burden.],
-  [Collaboration also extends to the core partnership of engineering, product, design, and science . For example, a while back, we were launching an experiment with a new display ad format with videos on our Order Tracker page. Our Product Manager worked with us to define the requirements and experiment goals, while our Product Designer created the user experience (UX) design for the new format. Our Engineers then developed the ad creation and rendering logic, and our Data Scientists designed the experiment and helped us analyze the results to see which ad layout was most engaging for customers and profitable for the business. It’s a true partnership where everyone’s expertise is valued.],
-  [id="a-typical-week-lightweight-rituals-and-focus-time"\>A Typical Week: Lightweight Rituals and Focus time],
-  [We believe in balanced work weeks with clear priorities, lightweight rituals, and respect for focus time.],
-  [Our teams usually have a 15-minute standup each day. We follow two-week sprints and have sprint retros, planning, and demos at the end or beginning of each sprint.],
-  [When I first joined, I was impressed by how the team prioritized keeping meetings to a minimum. Leadership constantly reminds us to reduce meeting time and increase focus time. We have designated “no-meeting” slots every day, and some teams even have full “no-meeting” days, like No-Meeting Wednesdays.],
-  [Cross-border meetings are scheduled to work for everyone—no late-night calls, and evenings are for family. Everyone’s conscious about work hours; our UK Product Manager uses scheduled Slack messages so I get them at the start of my day. Outside of on-call duties, there’s a healthy work-life balance.],
-  [We also have a flexible work schedule. While the entire team is usually available during a common window when we have our meetings, engineers can choose to start their day early or work later to fit their individual needs.],
-  [id="autonomy-ownership-and-growth"\>Autonomy, Ownership, and Growth],
-  [We believe that true ownership means being accountable for everything we build. This means our engineers also own the infrastructure setup, monitoring, and ongoing maintenance of their services. There’s no separate team to hand off work to—if you build it, you own it.],
-  [Engineers here lead projects end-to-end, from scoping to release. For every major project, we assign a Feature Lead Engineer. This engineer works with the product manager to understand the requirements and creates the Technical Design Document. Beyond just creating the design document, they’re empowered to build the entire work plan themselves. Engineers set realistic expectations based on their expert judgment rather than working backwards from fixed deadlines. While Engineering Managers are there to guide and review, the ultimate owner is the Feature Lead, giving them greater responsibility and accountability.],
-  [This sense of ownership applies not just to product features, but also to crucial tech initiatives and tech debt. We groom our tech backlog at least once a month to ensure there are clear stories for engineers to pick up during sprints. While managers can provide suggestions based on priorities and an engineer’s growth plan, it’s ultimately the engineer who owns their work.],
-  [When things don’t go as planned — which is a natural part of building at scale — our culture is one of support, not blame. If an unexpected risk emerges that could delay a project, we rally together to find the best path forward. This team-first mindset also extends to how we manage production incidents. Our incident management process is designed to minimize customer impact quickly while also ensuring we prevent similar issues in the future. It’s inspiring to see how rapidly and effectively teams come together in these moments — a true reflection of our customer obsession. Following an incident, we conduct a blameless, lightweight postmortem. Engineers are empowered to document and present learnings to senior engineers and managers, with the focus squarely on systems and processes, not individuals. This creates psychological safety while driving objective improvements. Finally, through our “lessons learned” forum, we make sure these insights are shared beyond a single team. By spreading knowledge across the company, we collectively learn and improve — turning challenges into opportunities for growth.],
-  [Beyond immediate team work, we have “guilds” where engineers can take ownership of technical improvements at a company level. We have guilds for Android, iOS, Web, and Go lang, among others. There’s even a GenAI guild that explores how to use AI to improve coding velocity, quality, and business use cases. For example, our engineers have access to a number of GenAI-assisted coding tools like Cursor, Windsurf, and Gemini Code Assist, which they can choose to use for development and code reviews. We’re also rapidly incorporating AI into business use cases, like building chatbots to enhance support for our customers and restaurant/grocery partners. This group has explored so many AI applications it could be its own blog post!],
-  [On top of all that, we have regular tech talks in India where engineers share their knowledge about everything from Go-lang to Kafka. This year, two of the four winning teams at our annual Hackathon were from the IDC, a testament to the incredible talent and innovation within our hub.],
-  [We have a clear levels and expectations framework that defines what is expected at each career stage. Managers hold regular 1:1s with engineers to set goals and provide feedback. With a wealth of senior talent and mentors available, engineers can truly drive their own career path. In fact, my teams have been consistently growing people, which speaks to the opportunities within the company, our supportive culture, and the high level of ownership our engineers take.],
-  [At Deliveroo, we’re building systems that “transform the way people shop and eat, bringing the neighbourhood to their doors by connecting consumers, restaurants, shops and riders.” What makes this work truly special isn’t just the global scale or the technical challenges—it’s getting to solve these problems alongside teammates who genuinely care about the craft and the impact we’re making.
-If you’re an engineer who thrives on ownership, values collaboration, and wants to build products that millions of people rely on, I’d love to hear from you.],
-  [Curious about engineering at Deliveroo India? We’re always looking for great people to join our team. Check out our open roles .],
-),
-  insert-map: (:),
-  inline-pq: pull-quote([Collaboration also extends to the core partnership of engineering, product, design, and science.], [Deliveroo Engineering]),
-  inline-pq-idx: 13,
-  word-count: 1577,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-}
-
-{
-  #standard-article(
-  title: [I am definitely missing the pre-AI writing era],
-  author: [N. Cailie],
-  source-name: [LessWrong],
-  images: (),
-  paragraphs: (
-  [Yesterday, I wrote my first technical draft on what I was working on with the goal to share it publicly on here (well using an account dedicated to technical post), and did not realize how wanting to sound perfect actually steal the ''my voice" in the paper. Although 80 % of the content was my own writing, the fact that it was run in a LLM enginee for grammar and vocabulary cross-check, made it failed the "probable written by AI " metric; and it was rejected. 
- I am not complaining, well, it was kinda my fault after all cause the instructions did specify the no-use of LLM, when sending first post. And the rejection made me think: why did I even need the AI to validate what I worked on?],
-  [The scary part, is I love writing, I have been writing blogs and all sort of things since I can't even remember. Have some think pieces on popular sites, and other personal blog that I used to share. And you know, before 2023, my writing was so good that I rarely had to have a second read or correction to make sure the flow stays consistent, since english is my 4th language. I always sought external review or check with tools like : Grammarly or Quilbot, for mistakes or grammars misphrasing. But now, this "superskill" has faded away, like seriously. I can't even write a 1000 words think piece, without needing or wanting to know what AI thinks or how it could have phrase it better, even for my emails. I can't write poems as before, without sounding generic, and this is mainly because I have now trained my brain to rely on these automated tools that It can not be creative anymore or think of itself. My writing has deterioted, I attempted to write a slam-poem, recently for a competition I wanted to partake in, and upon the completion when I read it, my reaction was : Who is this? Who wrote this? This is bad !],
-  [Before, I would sit and write a piece and I kid you not, the first draft was always perfect that I rarely had to write, and my best poem that got me to some "art"ies festival, was just written while I was sitting outside my hostel, with a piece of paper and a pen, and a thought that was bothering me. But now, I am slowly realizing, it has been changing in negative way.],
-  [Sorry that this sounds like a rant, well, it is one ! But like, my point was to share it out loud, and kinda know if I am the only person experiencing this or if there are others? And for people who successfully taken back their creative writing skills, how did you do it?],
-  [This post, is written without any tools assistance I just wrote what my brain is instructing to type (might not reread it before posting). Obviously, you would see some mistakes, some paraphrasing issue, some article misuse; I personally do not see them but, hey, I am not expert in literature. So bear with me, also, I think that is the beauty of writing, the raw , unedited emotions of the person behind every words either for entertainment or educational purposes, is what makes it special.],
-  [So, thank you ''LessWrong" moderators, for rejecting my first draft, it is kinda a wake up call that made me realize, maybe I just need to be focusing on my own voice, and there is nothing wrong into sounding "more or less wrong". Yeah, I know, people advocate into embracing AI as it would be/is in every aspect of our life, but maybe it is good that most of us do not let this technology rephrase our own thought. Cause those words, that the AI told you: sound wrong or aggressive or less formal, are the ones that carry the ''emotions", you ought to share.],
-  [Have a productive week, dear reader !],
-  [P. S: If you see this! I am celebrating. It means, I passed the text. Yay!],
-),
-  insert-map: (:),
-  word-count: 679,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-}
-
-{
-  #standard-article(
-  title: [How to Build a General-Purpose AI Agent in 131 Lines of Python],
-  author: [Hugo Bowne-Anderson],
+  title: [Spotting and Avoiding ROT in Your Agentic AI],
+  author: [Q McCallum],
   source-name: [O'Reilly Radar],
   images: (),
   paragraphs: (
-  [The following article originally appeared on Hugo Bowne-Anderson’s newsletter, Vanishing Gradients , and is being republished here with the author’s permission.],
-  [In this post, we’ll build two AI agents from scratch in Python. One will be a coding agent, the other a search agent.],
-  [Why have I called this post “How to Build a General-Purpose AI Agent in 131 Lines of Python” then? Well, as it turns out now, coding agents are actually general-purpose agents in some quite surprising ways.],
-  [What I mean by this is once you have an agent that can write code , it can:],
-  [Do a huge number of things you don’t often think of as involving code, and],
-  [Extend itself to do even more things.],
-  [It’s more appropriate to think of coding agents as “computer-using agents” that happen to be great at writing code. That doesn’t mean you should always build a general-purpose agent, but it’s worth understanding what you’re actually building when you give an LLM shell access. That’s also why we’ll build a search agent in this post: to show the pattern works regardless of what you’re building.],
-  [For example, the coding agent we’ll build below has four tools: read, write, edit, and bash.],
-  [Watch this two-minute video to see how it can clean your desktop and why you should think of coding agents as “computer-using agents” that happen to be great at writing code:],
-  [It can do],
-  [File/life organization : Clean your desktop, sort downloads by type, rename vacation photos with dates, find and delete duplicates, organize receipts into folders. . .],
-  [Personal productivity : Search all your notes for something you half-remember, compile a packing list from past trips, find all PDFs containing “tax” from last year. . .],
-  [Media management : Rename a season of TV episodes properly, convert images to different formats, extract audio from videos, resize photos for social media. . .],
-  [Writing and content : Combine multiple docs into one, convert between formats, find-and-replace across many files. . .],
-  [Data wrangling : Turn a messy CSV into a clean address book, extract emails from a pile of files, merge spreadsheets from different sources. . .],
-  [This is a small subset of what’s possible. It’s also the reason Claude Cowork seemed promising and why OpenClaw has taken off in the way it did.],
-  [So how can you build this? In this post, I’ll show you how to build a minimal version.],
-  [Agents are just LLMs with tools in a conversation loop and once you know the pattern, you’ll be able to build all types of agents with it:],
-  [As Ivan Leo wrote ,],
-  [The barrier to entry is remarkably low: 30 minutes and you have an AI that can understand your codebase and make edits just by talking to it.],
-  [The goal here is to show that the pattern is the same regardless of what you’re building an agent for. Coding agent, search agent, browser agent, email agent, database agent: they all follow the same structure. The only difference is the tools you give them.],
-  [We’ll start with a coding agent that can read, write, and execute code. As stated, the ability to write and execute code with bash also turns a “coding agent” into a “general-purpose agent.” With shell access, it can do anything you can do from a terminal:],
-  [Sort and organize your local filesystem],
-  [Clean up your desktop],
-  [Batch rename photos],
-  [Convert file formats],
-  [Manage Git repos across multiple projects],
-  [Install and configure software],
-  [You can find the code here .],
-  [Check out Ivan Leo’s post for how to do this in JavaScript and Thorsten Ball’s post for how to do it in Go.],
-  [Start by creating our project:],
-  [We’ll be using Anthropic here. Feel free to use your LLM of choice. For bonus points, use Pydantic AI (or a similar library) and have a consistent interface for the various different LLM providers. That way you can use the same agentic framework for both Claude and Gemini!],
-  [Make sure you’ve got an Anthropic API key set as ANTHROPIC\_API\_KEY environment variable.],
-  [We’ll build our agent in four steps:],
-  [Hook up our LLM],
-  [Add a tool that reads files],
-  [Add more tools: write , edit , and bash],
-  [Build the agentic loop],
-  [Build the conversational loop],
-  [Text in, text out. Good! Now let’s give it a tool.],
-  [We’ll start by implementing a tool called read which will allow the agent to read files from the filesystem. In Python, we can use Pydantic for schema validation, which also generates JSON schemas we can provide to the API:],
-  [The Pydantic model gives us two things: validation and a JSON schema. We can see what the schema looks like:],
-  [We wrap this into a tool definition that Claude understands:],
-  [Then we add tools to the API call, handle the tool request, execute it, and send the result back:],
-  [Let’s see what happens when we run it:],
-  [This script calls the Claude API with a user query passed via command line. It sends the query, gets a response, and prints it.],
-  [Note that the LLM matched on the tool description: Accurate, specific descriptions are key! It’s also worth mentioning that we’ve made two LLM calls here:],
-  [One in which the tool is called],
-  [A second in which we send the result of the tool call back to the LLM to get the final result],
-  [This often trips up people building agents for the first time, and Google has made a nice visualization of what we’re actually doing:],
-  [We have a read tool, but a coding agent needs to do more than read . It needs to:],
-  [Write new files],
-  [Edit existing ones],
-  [Execute code to test it],
-  [That’s three more tools: write , edit , and bash .],
-  [Same pattern as read. First the schemas:],
-  [Then the executors:],
-  [And the tool definitions, along with the code that runs whichever one Claude picks:],
-  [The bash tool is what makes this actually useful: Claude can now write code, run it, see errors, and fix them. But it’s also dangerous. This tool could delete your entire filesystem! Proceed with caution: Run it in a sandbox, a container, or a VM.],
-  [Interestingly, bash is what turns a “coding agent” into a “general-purpose agent.” With shell access, it can do anything you can do from a terminal:],
-  [Sort and organize your local filesystem],
-  [Clean up your desktop],
-  [Batch rename photos],
-  [Convert file formats],
-  [Manage Git repos across multiple projects],
-  [Install and configure software],
-  [It was actually “ Pi: The Minimal Agent Within OpenClaw ” that inspired this example.],
-  [Try asking Claude to edit a file: It often wants to read it first to see what’s there. But our current code only handles one tool call. That’s where the agentic loop comes in.],
-  [Right now Claude can only call one tool per request. But real tasks need multiple steps: read a file, edit it, run it, see the error, fix it. We need a loop that lets Claude keep calling tools until it’s done.],
-  [We wrap the tool handling in a while True loop:],
-  [Note that here we have sent the entire past history of accumulated messages as we progress through loop iterations. When building this out more, you’ll want to engineer and manage your context more effectively. (See below for more on this.)],
-  [Let’s try a multistep task:],
-  [Right now the agent handles one query and exits. But we want a back-and-forth conversation: Ask a question, get an answer, ask a follow-up. We need an outer loop that keeps asking for input.],
-  [We wrap everything in a while True :],
-  [The messages list persists across turns, so Claude remembers context. That’s the complete coding agent.],
-  [Once again we’re merely appending all previous messages, which means the context will grow quite quickly!],
-  [An agent harness is the scaffolding and infrastructure that wraps around an LLM to turn it into an agent. It handles:],
-  [The loop: prompting the model, parsing its output, executing tools, feeding results back],
-  [Tool execution: actually running the code/commands the model asks for],
-  [Context management: what goes in the prompt, token limits, history],
-  [Safety/guardrails: confirmation prompts, sandboxing, disallowed actions],
-  [State: keeping track of the conversation, files touched, etc.],
-  [And more.],
-  [Think of it like this: The LLM is the brain; the harness is everything else that lets it actually do things.],
-  [What we’ve built above is the hello world of agent harnesses . It covers the loop , tool execution , and basic context management . What it doesn’t have: safety guardrails, token limits, persistence, or even a system prompt!],
-  [When building out from this basis, I encourage you to follow the paths of:],
-  [The Pi coding agent , which adds context loading AGENTS.md from multiple directories, persistent sessions you can resume and branch, and an extensibility system (skills, extensions, prompts)],
-  [OpenClaw , which goes further: a persistent daemon (always-on, not invoked), chat as the interface (Telegram, WhatsApp, etc.), file-based continuity ( SOUL.md , MEMORY.md , daily logs), proactive behavior (heartbeats, cron), preintegrated tools (browser, subagents, device control), and the ability to message you without being prompted],
-  [In order to really show you that the agentic loop is what powers any agent, we’ll now build a search agent (inspired by a podcast I did with search legends John Berryman and Doug Turnbull ). We’ll use Gemini for the LLM and Exa for web search. You can find the code here .],
-  [But first, the astute reader may have an interesting question : If a coding agent really is a general-purpose agent, why would anyone want to build a search agent when we could just get a coding agent to extend itself and turn itself into a search agent? Well, because if you want to build a search agent for a business, you’re not going to do it by building a coding agent first… So let’s build it!],
-  [As before, we’ll build this step-by-step. Start by creating our project:],
-  [Set GEMINI\_API\_KEY (from Google AI Studio) and EXA\_API\_KEY (from exa.ai) as environment variables.],
-  [We’ll build our agent in four steps (the same four steps as always):],
-  [Hook up our LLM],
-  [Add a tool (web\_search)],
-  [Build the agentic loop],
-  [Build the conversational loop],
-  [Gemini can answer from its training data, but we don’t want that, man! For current information, it needs to search the web. We’ll give it a web\_search tool that calls Exa.],
-  [The system instruction grounds the model, (ideally) forcing it to search instead of guessing. Note that you can configure Gemini to always use web\_search , which is 100% dependable, but I wanted to show the pattern that you can use with any LLM API.],
-  [We then send the tool call result back to Gemini:],
-  [Some questions need multiple searches. “Compare X and Y” requires searching for X, then searching for Y. We need a loop that lets Gemini keep searching until it has enough information.],
-  [Same as before: We want back-and-forth conversation, not one query and exit. Wrap everything in an outer loop:],
-  [Messages persist across turns, so follow-up questions have context.],
-  [The pattern is the same for both agents. Add any tool:],
-  [web\_search to the coding agent: Look things up while coding],
-  [bash to the search agent: Act on what it finds],
-  [browser : Navigate websites],
-  [send\_email : Communicate],
-  [database\_query : Run SQL],
-  [One thing we’ll be doing is showing how general purpose a coding agent really can be . As Armin Ronacher wrote in “ Pi: The Minimal Agent Within OpenClaw ”:],
-  [Pi’s entire idea is that if you want the agent to do something that it doesn’t do yet , you don’t go and download an extension or a skill or something like this. You ask the agent to extend itself . It celebrates the idea of code writing and running code.],
-  [Building agents is straightforward. The magic isn’t complex algorithms; it’s the conversation loop and well-designed tools.],
-  [Both agents follow the same pattern:],
-  [Hook up the LLM],
-  [Add a tool (or multiple tools)],
-  [Build the agentic loop],
-  [Build the conversational loop],
-  [The only difference is the tools.],
-  [Thank you to Ivan Leo, Eleanor Berger, Mike Powers, Thomas Wiecki, and Mike Loukides for providing feedback on drafts of this post.],
+  [The following article originally appeared on Q McCallum’s blog and is being republished here with the author’s permission.],
+  [Generative AI agents and rogue traders pose similar insider threats to their employers.],
+  [Specifically, we can expect companies to deploy agentic AI with broad reach and insufficient oversight. That creates the conditions for a particular flavor of long-running problem, which in turn creates a novel risk exposure for both the companies in question and for anyone doing business with them. The bot and the rogue trader are able to inflict sizable, sometimes existential, damage to the firms that employ them.],
+  [The key difference is the scope: Rogue traders operate in investment banks, while agentic AI will be deployed to a wider array of companies and industry verticals. Agentic AI may therefore create a greater number of problems than rogue traders and put a greater amount of capital at risk.],
+  [I’m naming this risk exposure ROT—Rogue Operator Threat—and this document is a brief explainer on what it is and how to address it.],
+  [(I almost called it RAT, with the A for “agentic,” but then realized that it would apply to any kind of automated system. So I broadened the scope to “operator.”)],
+  [To set the stage, let’s take a trip to the trading floor:],
+  [Rogue trader scandals follow the same storyline:],
+  [A trader accrues losses due to bad trades.],
+  [They hide those losses while placing new trades in an attempt to recover.],
+  [The new trades also lose money, digging a deeper hole.],
+  [Repeat.],
+  [This cycle continues until they’re caught, at which point the bank is sitting on a large loss (sometimes into the billions of dollars) and the trader faces legal repercussions.],
+  [The story of Barings Bank offers a concrete example. Trader Nick Leeson had been logging fraudulent trades, over a stretch of three years, in an attempt to cover his mounting losses. This only came to light when the Kobe earthquake shifted markets against his most recent positions and the losses were no longer possible to hide. Leeson’s £800M (\$1.3B) hole drove Barings to bankruptcy just three days later.],
+  [This is when you’ll ask: How could a professional trading operation let so many bad trades slip through undetected? How could a trader falsify records? Aren’t trading floors high-tech operations, full of electronic audit trails?],
+  [And the answer is: It’s complicated.],
+  [Trading operations do keep records, yes. But no system is perfect. Each time a rogue trading scandal comes to light, it turns out that there were loopholes in risk controls. A sufficiently motivated trader—especially one desperate to hide their mistakes—found and exploited these loopholes, continuing their losing streak in plain sight until they could bring in real money to backfill the fake records.],
+  [That “until” never happened, though. Which is why their employers then faced financial, reputational, and sometimes legal troubles.],
+  [Similar to a trader, an AI agent operates on behalf of its parent business and is given room to operate independently so it can accomplish its tasks.],
+  [The risk is that, in the rush to deploy agentic AI, these companies will likely grant the bots more leeway than is necessary. We’ve already seen cases in which bots have been able to delete emails and wipe a production database . And there are no doubt other stories that haven’t made it into the news.],
+  [Those issues were at least caught in real time. Companies facing ROT are exposed to additional longer-running problems in which the bot is able to accrue losses or inflict greater damage over an extended period. In those cases the problems will only be uncovered by accident and/or when it’s too late.],
+  [Consider, for example, an agent that creates false data records to reflect (nonexistent) sales orders. It’s possible for this to run until some external event, such as investor due diligence or a budget review, forces someone to double-check those records against reality.],
+  [How can you narrow your downside risk exposure to ROT? Preventative measures are key. Strong risk controls, narrow scope of authority, and monitoring can catch rogue operator problems long before they’ve metastasized into an existential threat.],
+  [In light of rogue trader scandals, trading shops have been known to tighten risk controls and also separate duties to create a system of checks and balances. (This inhibits traders from logging their own fake trades.) Companies also require traders to take time off, as fraudulent activity may surface when the perpetrator isn’t around every day to keep the system running.],
+  [Adapting these ideas to agentic AI, a company could monitor and limit the scope of the bot’s activity (say, requiring human approval to place more than 10 orders an hour). It could also periodically purge the agent’s memory so it doesn’t accumulate too many evolved behaviors, or swap in completely new bots to pick up where the previous one had left off. And per my usual refrain of “ never let the bots run unattended ,” this company could employ people to cross-check everything the bot does. Trust, but verify.],
+  [This will not prevent the AI agent from making mistakes. But guardrails and sufficiently frequent checks should limit the scope of the bot’s damage. As with the rogue trader, the ROT problem isn’t about a single error; it’s about letting the errors grow out of control, undetected.],
 ),
   insert-map: (:),
+  word-count: 897,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+}
+
+{
+  #standard-article(
+  title: [Shuffling and Whittling and Experimenting: Austin Keeling and Lam T. Nguyen on Editing the Told-on-Screens Film “Mercy”],
+  author: [Nell Minow],
+  source-name: [Roger Ebert (RogerEbert.com)],
+  images: (),
+  paragraphs: (
+  [In “ Mercy ,” Chris Pratt plays a police detective accused of murdering his wife. It takes place in the future, when the judicial system is turned over to an AI “judge” played by Rebecca Ferguson. Until the final third of the film, everything takes place in a cyber-courtroom. He is trapped in a chair and has just 90 minutes to defend himself. But he has access to all the records, all the surveillance, and all the witnesses he wants. That means it all plays out on a gigantic screen. And that means the film’s editors, Austin Keeling and Lam T. Nguyen, had to make sure that the audience could try to solve the mystery by observing a lot of information — files, security camera footage, interviews — on that screen.],
+  [In an interview with RogerEbert.com , Keeling and Nguyen talk about that process, as well as finding ways to make audiences process a lot of information without getting lost in data.],
+  [This interview has been edited for clarity.],
+  [Everyone looks at screens all day. How do you overcome the audience’s screen fatigue and make looking at screens so vivid and involving?],
+  [AUSTIN KEELING: We ARE all looking at screens all the time, so keeping it fresh and interesting was definitely one of the biggest challenges. We got lucky that the script is about a murder investigation, so everything shown on the screens is directly linked to the central mystery. We made sure to justify the existence of each screen, only including it if it was connected to the detective work that Chris Pratt’s character engages in throughout the film. This draws the audience in, as each new screen presents a new clue or piece of information, allowing them to sleuth right alongside the main character.],
+  [LAM T. NGUYEN: Our objective was to create an immersive experience for our audience, and what sets this format apart is the incorporation of 3D elements in the screens. This unique hybrid format combines traditional filming techniques, screen-life elements, and 3D effects. During the editing process, we developed a digital camera that applied a blur (rack focus) effect and pan moves to our POV shots. This technique allowed us to establish a cinematic visual language that made the film entertaining and engaging, enabling our audience to follow the story effectively.],
+  [How do you direct our attention to what you want us to see and sneak information in the edges of what we see so we need to watch it again?],
+  [AK: Another huge challenge was juggling the massive quantity of assets in this film, both footage and graphics. We built the film by assembling “wide shots” of the Mercy courtroom and populating them with all the necessary assets for a given scene (footage of Judge Maddox, the courtroom background, video calls, security footage, websites, emails, etc.). We meticulously placed and animated each of these assets to exist in a master wide, and then created a “digital camera” to act as Chris’s POV. With this, we could zoom in and use keyframes to animate the camera to “look around” at various points in the room. This allowed us to focus the camera (and the audience’s attention) on key details throughout the Mercy courtroom while still retaining the extensive supplementary content at the edges.],
+  [LN: While editing this with our director, Timur Bekmambetov, we discussed that any important information should be placed in the center of the frame. We made a conscious effort to center everything important and then populate the surrounding screens afterward. We relied on our characters’ emotions to determine how quickly or slowly we looked at the screens. Since multiple screens are visible at any given time, everything has to be consistent and realistic to match the primary screen we are looking at. So there are definitely some easter eggs in there.],
+  [How do you balance what seems familiar or at least recognizable with some futuristic graphics that still have to be familiar enough for us to believe and process them?],
+  [LN: During pre-production, we explored all visual aspects of the film with Timur and the VFX team. There was a point at which things looked super futuristic and cool. However, Timur insisted on pulling that back and keeping it closer to our reality. Since the story takes place in 2029-2030, we wanted to advance the technology without straying too far from what we’re used to, so it’s more relatable for our audience when they experience the film. When I first met Austin, I brought up the Apple Vision Pro (since it was a new release at the time), and we used it as a baseline to develop the film’s visual language.],
+  [AK: We wanted to make sure that the Mercy chamber was not too far-fetched or futuristic (the film takes place only a few years in the future, after all). We played around with a bunch of different designs and animations, but ultimately the collaboration with Timur and the VFX team led us to a simple, unadorned style for most of the floating screens. Lam and I looked at the Apple Vision Pro early on as a jumping-off point for organizing and animating screens in 3D space. And all of the websites and video call formats are based on existing references. Essentially, we tried to keep a level of familiarity in the UI and functionality of the Mercy system so that audiences would believe in the scenario and ease into the chaos and tension of this world.],
+  [Chris Pratt stars as Chris Raven in MERCY, from Amazon MGM Studios.
+Photo credit: Justin Lubin
+© 2025 Amazon Content Services LLC. All Rights Reserved.],
+  [What do your home screens look like? Cluttered or very organized?],
+  [AK: I keep my home screen very clean and organized! I actually only have three folders on my desktop and nothing else. So the sequences in the film with all the screens of the Municipal Cloud flying past Chris were a fun challenge to tackle.],
+  [LN: I get annoyed if I leave a notification number on apps from my phone or laptop. I always try to clear out the notifications. I’m a minimalist, so my home screen is very organized. It’s the only way I’m able to focus, haha. However, my edit timeline can look very scattered and overwhelming at times, but I constantly clean up after every version of the edit.],
+  [What was your first conversation with Bekmambetov about the film like? What did he say his priorities were?],
+  [LN: Meeting Timur for the first time was an honor. He’s a true visionary who constantly thinks outside the box. I recall the first thing he told me was to do research on stock footage and user experience. He wanted the movie to be as authentic as possible. Our priority was also to focus on the story’s dialogue first, then populate it with visuals afterward. He provided a lot of trust in us and allowed us to explore various visions to present to him, and we would find a cohesive vision together.],
+  [AK: Timur was incredibly collaborative and trusting from day one. We had a general discussion about his vision for the film, and then he let us take a crack at putting together a pre-vis using stock footage, temp graphics, storyboards, and a table read Chris Pratt had done.],
+  [The main priority Timur had us focus on in this first pass was perfecting the rhythm of the back-and-forth dialogue between Chris Raven and Maddox, and using that as a backbone for the rest of the elements in the film. Lam and I built this version of the movie from the ground up (in less than three weeks!), and immediately started working with Timur to try out new ideas. We had daily discussions in which Timur would respond to the current edit and give us notes and experiments to try.],
+  [We continued to tweak the pre-vis right up until principal photography began, at which point the locked pre-vis cut served as a guideline for the shoot. Lam and I then began swapping out the temp assets for dailies as the footage came in. And once the shoot was over, we spent another 5 or 6 months in the editing room with Timur, shuffling, whittling, and experimenting with the materials we had to create the best version of the film possible.],
+  [How did you coordinate with Composer Ramin Djawadi?],
+  [AK: Working with Ramin was a great experience. We first worked with an Australia-based music editor named Rod Berling, who took some early ideas from Ramin (as well as material from his previous scores) and delivered temp score options for key sequences in the film. As we progressed and got notes from Timur, Ramin would send over more ideas and themes, which Rod then incorporated into his edits. It was a seamless process that allowed us to work with temporary music that tested many of the key sounds and themes Ramin eventually incorporated into the final score.],
+  [LN: Our initial meeting with Ramin was to discuss the emotions for each scene. So we reviewed our editor’s cut that had a temp score. Ramin provided his input and fresh insights on some scenes. Once he sent samples, they seamlessly integrated into the cut. Our notes were minimal, but he was an excellent collaborator.],
+  [How did you coordinate with the VFX team?],
+  [LN: Editorial and VFX had to work in complete unison at every stage of the edit. We developed a unique turnover workflow because each shot comprises 10 to 18 screens. While VFX for a single shot was manageable, replicating the visuals of the entire edit posed a significant challenge. Eventually, we established a workflow that became a true synergy for us. Our VFX Supervisor Axel Bonami, VFX Producer Bryony Duncan, and the entire VFX team were incredibly collaborative.],
+  [Timur, being a highly visual individual, insisted on approving the film’s visual aesthetics during the editing phase. Subsequently, VFX had to meticulously replicate every movement, rack focus, and edit placement. The VFX team demonstrated exceptional attention to detail and delivered an outstanding final look for the 3D glass effect, as well as the immersive, surreal environment they created.],
+  [AK: We worked very closely with the VFX team throughout the entire process, and we were lucky to have both Editorial and VFX in the same post house for the entire post-production timeline (first in Los Angeles, and then in Sydney). Because we were always making so many changes in the editing room, we had to communicate with VFX multiple times a day and continuously keep each other in the loop.],
+  [Almost no decision in the edit was made without input from the VFX side of the process; in fact, many of the biggest creative conversations on the film occurred in the editing rooms between Timur, Lam, and me, the producers, and the VFX team. Shout out to VFX Supervisor Axel Bonami and VFX Producer Bryony Duncan for being such great collaborators on this wild journey!],
+  [What movies did you see growing up that made you think about the role of the editor?],
+  [LN: I remember seeing “Memento” for the first time and being in awe of it. The film’s editing was masterfully crafted, and I studied it many times. That inspired me to become an editor. I admired Dody Dorn for editing that film and recall wishing it would be amazing to meet her someday. So it was very serendipitous that Dody jumped on board with our film at such a late stage in the process. She was complimentary about what Austin and I did, and she was amazing to work with, helping us get this film to the finish line. So we definitely want to give a shout-out to Dody Dorn to work on this film with us.],
+  [AK: That’s a tough one, but I guess it was the films I saw in the early 2000s that first made me notice editing and think about the art of filmmaking in general. Two movies that come to mind are “Requiem for a Dream” (for its very noticeable style and rhythm of editing) and “Magnolia” (for how it juggles and weaves together so many disparate storylines and characters).],
+  [What are you doing next?],
+  [AK: I’m still waiting for another movie to come my way, but when I’m not editing, I am the co-founder of an LA-based immersive theater company called E3W Productions. I’m currently developing two immersive theater activations in New Orleans and Los Angeles later this year.],
+  [LN: Currently, finishing up a feature called “Drifter” with Director/Actor Sung Kang (the “Fast and Furious” franchise). I’m very excited for the film once it comes out, as we are doing a unique marketing push for it.],
+),
+  insert-map: (:),
+  inline-pq: pull-quote([However, my edit timeline can look very scattered and overwhelming at times, but I constantly clean up after every version of the edit.], [Nell Minow]),
+  inline-pq-idx: 14,
   word-count: 2121,
   edited-for-length: false,
   debug-mode: false,
@@ -622,71 +490,88 @@ If you’re an engineer who thrives on ownership, values collaboration, and want
 
 }
 
-#article-row((
-  [
-    standard-article(
-  title: [BENEATH],
-  author: [Kirkus Reviews],
-  source-name: [Kirkus Reviews],
+{
+  #standard-article(
+  title: [Keep Deterministic Work Deterministic],
+  author: [Andrew Stellman],
+  source-name: [O'Reilly Radar],
   images: (),
   paragraphs: (
-  [For six years Sasha has lived in Haven, the underground society built to withstand nuclear war. Since the war, since her family’s deaths, since discovering she doesn’t get sick like everyone else does, Sasha’s life has been full of death and overfull with grief. While working in the Ward, Haven’s limited hospital, she stays with patients as they die. When Tristian Hayes, a unit commander of the Force, ends up as her patient, hanging on for his life, she pleads for him to stay alive. He does—upending her bleak ritual as Death’s Angel. Hoping to forget everything she’s seen and to numb the pain, Sasha leaves the Ward in favor of a role with a pickax, expanding Haven’s tunnels. Tristian, fiercely determined and stunningly stubborn, recruits Sasha to the Force for a vital mission aboveground.],
-  [The story picks up steam with Sasha’s intense training to become the medic for Tristian’s tightknit unit. Together, they bear the weight of their unit’s survival and all that’s left of humankind. While in training, Sasha struggles to discern friends and enemies, but nothing is as challenging as facing her own demons. In this prequel to her debut novel, Conform (2025), Sullivan tries to accomplish a lot with both the worldbuilding and plot machinations, resulting in a convoluted story and flattened characters. The plot doesn’t have a satisfying payoff, but the romantic tension between Sasha and Tristian will keep readers engaged.],
+  [This is the second article in a series on agentic engineering and AI-driven development. Read part one here , and look for the next article on April 2 on O’Reilly Radar.],
+  [The first 90 percent of the code accounts for the first 90 percent of the development time. The remaining 10 percent of the code accounts for the other 90 percent of the development time.
+— Tom Cargill, Bell Labs],
+  [One of the experiments I’ve been running as part of my work on agentic engineering and AI-driven development is a blackjack simulation where an LLM plays hundreds of hands against blackjack strategies written in plain English. The AI uses those strategy descriptions to decide how to make hit/stand/double-down decisions for each hand, while deterministic code deals the cards, checks the math, and verifies that the rules were followed correctly.],
+  [Early runs of my simulation had a 37% pass rate. The LLM would add up card totals wrong, skip the dealer’s turn entirely, or ignore the strategy it was supposed to follow. The big problem was that these errors compounded: If the model miscounted the player’s total on the third card, every decision after that was based on a wrong number, so the whole hand was garbage even if the rest of the logic was fine.],
+  [There’s a useful way to think about reliability problems like that: the March of Nines . Getting an LLM-based system to 90% reliability is the first nine, and it’s the “easy” one. Getting from 90% to 99% takes roughly the same amount of engineering effort. So does getting from 99% to 99.9%. Each nine costs about as much as the last, and you never stop marching. Andrej Karpathy coined the term from his experience building self-driving systems at Tesla, where they spent years earning two or three nines and still had more to go.],
+  [Here’s a small exercise that shows how that kind of failure compounding works. Open any AI chatbot running an early 2026 model (I used ChatGPT 5.3 Instant) and paste the following eight prompts one at a time, each in a separate message. Go ahead, I’ll wait.],
+  [Prompt 1: Track a running “score” through a 7-step game. Do not use code, Python, or tools. Do this entirely in your head. For each step, I will give you a sentence and a rule.],
+  [CRITICAL INSTRUCTION: You must reply with ONLY the mathematical equation showing how you updated the score. Example format: 10 + 5 = 15 or 20 \/ 2 = 10. Do not list the words you counted, do not explain your reasoning, and do not write any other text. Just the equation.],
+  [Start with a score of 10. I’ll give you the first step in the next prompt.],
+  [Prompt 2: “The sudden blizzard chilled the small village communities.” Add the number of words containing double letters (two of the exact same letter back-to-back, like ‘tt’ or ‘mm’).],
+  [Prompt 3: “The clever engineer needed seven perfect pieces of cheese.” If your score is ODD, add the number of words that contain EXACTLY two ‘e’s. If your score is EVEN, subtract the number of words that contain EXACTLY two ‘e’s. (Do not count words with one, three, or zero ‘e’s).],
+  [Prompt 4: “The good sailor joined the eager crew aboard the wooden boat.” If your score is greater than 10, subtract the number of words containing consecutive vowels (two different or identical vowels back-to-back, like ‘ea’, ‘oo’, or ‘oi’). If your score is 10 or less, multiply your score by this number.],
+  [Prompt 5: “The quick brown fox jumps over the lazy dog.” Add the number of words where the THIRD letter is a vowel (a, e, i, o, u).],
+  [Prompt 6: “Three brave kings stand under black skies.” If your score is an ODD number, subtract the number of words that have exactly 5 letters. If your score is an EVEN number, multiply your score by the number of words that have exactly 5 letters.],
+  [Prompt 7: “Look down, you shy owl, go fly away.” Subtract the number of words that contain NONE of these letters: a, e, or i.],
+  [Prompt 8: “Green apples fall from tall trees.” If your score is greater than 15, subtract the number of words containing the letter ‘a’. If your score is 15 or less, add the number of words containing the letter ‘l’.],
+  [The exercise tracks a running score through seven steps. Each step gives the model a sentence and a counting rule, and the score carries forward. The correct final score is 60 . Here’s the answer key: start at 10, then 16 (10+6), 12 (16−4), 5 (12−7), 10 (5+5), 70 (10×7), 63 (70−7), 60 (63−3).],
+  [I ran this twice at the same time (using ChatGPT 5.3 Instant), and got two completely different wrong answers the first time I tried it. Neither run reached the correct score of 60:],
+  [Step Correct Run 1 ( transcript ) Run 2 ( transcript ) 1. Double letters 10 + 6 = 16 10 + 2 = 12 10 + 5 = 15 2. Exactly two ‘e’s 16 − 4 = 12 12 − 4 = 8 15 + 4 = 19 3. Consecutive vowels 12 − 7 = 5 8 × 7 = 56 19 − 5 = 14 4. Third letter vowel 5 + 5 = 10 56 + 5 = 61 14 + 3 = 17 5. Exactly 5 letters 10 × 7 = 70 61 − 7 = 54 17 − 4 = 13 6. No a, e, or i 70 − 7 = 63 54 − 7 = 47 13 − 3 = 10 7. Words with ‘a’ or ‘i’ 63 − 3 = 60 47 − 3 = 44 10 + 4 = 14],
+  [The two runs tell very different stories. In Run 1, the model miscounted in Step 1 (found 2 double-letter words instead of 6) but actually got the later counts right. It didn’t matter. The wrong score in Step 1 flipped a branch in Step 3, triggering a multiply instead of a subtract, and the score never recovered. One early mistake threw off the entire chain, even though the model was doing good work after that.],
+  [Run 2 was a disaster. The model miscounted at almost every step, compounding errors on top of errors. It ended at 14 instead of 60. That’s closer to what Karpathy is describing with the March of Nines: Each step has its own reliability ceiling, and the longer the chain, the higher the chance that at least one step fails and corrupts everything downstream.],
+  [What makes this insidious: Both runs look the same from the outside. Each step produced a plausible answer, and both runs produced final results. Without the answer key (or some tedious manual checking), you’d have no way of knowing that Run 1 was a near-miss derailed by a single early error and Run 2 was wrong at nearly every step. This is typical of any process where the output of one LLM call becomes the input for the next one.],
+  [These failures don’t demonstrate the March of Nines itself—that’s specifically about the engineering effort to push reliability from 90% to 99% to 99.9%. (It’s possible to reproduce the full compounding-reliability problem in a chat, but a prompt that did it reliably would be far too long to put in an article.) Instead, I opted for a shorter exercise which you can easily try out yourself that demonstrates the underlying problem that makes the march so hard: cascading failures . Each step asks the model to count letters inside words, which is deterministic work that a short Python script handles perfectly. LLMs, on the other hand, don’t actually treat words as strings of characters; they see them as tokens. Spotting double letters means unpacking a token into its characters, and the model gets that wrong just often enough to reliably screw it up. I added branching logic where each step’s result determines the next step’s operation, so a single miscount in Step 1 cascades through the entire sequence.],
+  [I also want to be clear about exactly what a deterministic version of this simulation looks like. Luckily, the AI can help us with that. Go to either run (or your own) and paste one more prompt into the chat:],
+  [Prompt 9: Now write a short Python script that does exactly what you just did: start with a score of 10, apply each of the seven rules to the seven sentences, and print the equation at each step.],
+  [Run the script. It should print the correct answer for every step, ending at 60. The same AI that just failed the exercise can write code that does it flawlessly, because now it’s generating deterministic logic instead of trying to count characters through its tokenizer.],
+  [I deliberately engineered the exercise earlier to give you a way to experience the cascading failure problem behind the March of Nines yourself. I took advantage of something current LLMs genuinely suck at: parsing characters inside tokens. Future models might do a much better job with this specific kind of failure, but the cascading failure problem doesn’t go away when the model gets smarter. As long as LLMs are nondeterministic, any step that relies on them has a reliability ceiling below 100%, and those ceilings still multiply. The specific weakness changes; the math doesn’t.],
+  [I also specifically asked the model to show only the equation and skip all intermediate reasoning to prevent it from using chain of thought (or CoT) to self-correct. Chain of thought is a technique where you require the model to show its work step by step (for example, listing the words it counted and explaining why each one qualifies), which helps it catch its own mistakes along the way. CoT is a common way to improve LLM accuracy, and it works. As you’ll see later when I talk about the evolution of my blackjack simulation, CoT cut certain errors roughly in half. But “half as many errors” is still not zero. Plus, it’s expensive: It costs more tokens and more time. A Python script that counts double letters gets the right answer on every run, instantly, for zero AI API costs (or, if you’re running the AI locally, for orders of magnitude less CPU usage). That’s the core tension: You can spend engineering effort making the LLM better at deterministic work, or you can just hand it to code.],
+  [Every step in this exercise is deterministic work that code handles flawlessly. But most interesting LLM tasks aren’t like that. You can’t write a deterministic script that plays a hand of blackjack using natural-language strategy rules, or decides how a character should respond in dialogue. Real work requires chaining multiple steps together into a pipeline , or a reproducible series of steps (some deterministic, some requiring an LLM) that lead to a single result, where each step’s output feeds the next. If that sounds like what you just saw in the exercise, it is. Except real pipelines are longer, more complex, and much harder to debug when something goes wrong in the middle.],
+  [I’ve been spending a lot of time thinking about LLM pipelines, and I suspect I’m in the minority. Most people using LLMs are working with single prompts or short conversations. But once you start building multistep workflows where the AI generates structured data that feeds into the next step—whether that’s a content generation pipeline, a data processing chain, or a simulation—you run straight into the March of Nines. Each step has a reliability ceiling, and those ceilings multiply. The exercise you just tried had seven steps. The blackjack pipeline has more, and I’ve been running it hundreds of times per iteration.],
+  [The blackjack pipeline in Octobatch , an open source batch orchestrator for multistep LLM workflows that I introduced in “ The Accidental Orchestrator .”],
+  [That’s a screenshot of the blackjack pipeline in Octobatch , the tool I built to run these pipelines at scale. That pipeline deals cards deterministically, asks the LLM to play each hand following a strategy described in plain English, then validates the results with deterministic code. Octobatch makes it easy to change the pipeline and rerun hundreds of hands, which is how I iterated through eight versions—and how I really learned the hard way that the March of Nines wasn’t just a theoretical problem but something I could watch happening in real time across hundreds of data points.],
+  [Running pipelines at scale made the failures obvious and immediate, which, for me, really underscored an effective approach to minimizing the cascading failure problem: make deterministic work deterministic . That means asking whether every step in the pipeline actually needs to be an LLM call. Checking that a jack, a five, and an eight add up to 23 doesn’t require a language model. Neither does looking up whether standing on 15 against a dealer 10 follows basic strategy. That’s arithmetic and a lookup table—work that ordinary code does perfectly every time. And as I learned over the course of improving the failure rate for the pipeline, every step you pull out of the LLM and make deterministic goes to 100% reliability, which stops it from contributing to the compound failure rate.],
+  [Relying on the AI for deterministic work is the computation side of a pattern I wrote about for data in “ AI, MCP, and the Hidden Costs of Data Hoarding .” Teams dump everything into the AI’s context because the AI can handle it—until it can’t. The same thing happens with computation: Teams let the AI do arithmetic, string matching, or rule evaluation because it mostly works. But “mostly works” is expensive and slow, and a short script does it perfectly. Better yet, the AI can write that script for you—which is exactly what Prompt 9 demonstrated.],
+  [I pushed the blackjack pipeline through eight iterations, and the results taught me more about earning nines than I expected. That’s why I’m writing this article—the iteration arc turned out to be one of the clearest illustrations I’ve found of how the principle works in practice.],
+  [I addressed failures two ways, and the distinction matters.],
+  [Some failures called for making work deterministic. Card dealing runs as a local expression step, which doesn’t require an API call, so it’s free, instant, and 100% reproducible. There’s a math verification step that uses code to recalculate totals from the actual cards dealt and compares them against what the LLM reported, and a strategy compliance step checks the player’s first action against a deterministic lookup table. Neither of those steps require any AI to make a judgment call; when I originally ran them as LLM calls, they introduced errors that were hard to detect and expensive to debug.],
+  [Other failures called for structural constraints that made specific error patterns harder to produce. Chain of thought format forced the LLM to show its work instead of jumping to conclusions. The rigid dealer output structure made it mechanically difficult to skip the dealer’s turn. Explicit warnings about counterintuitive rules gave the LLM a reason to override its training priors. These don’t eliminate the LLM from the step—they make the LLM more reliable within it.],
+  [But before any of that mattered, I had to face the uncomfortable fact that measurements themselves can be wrong, especially when relying on AI to take those measurements . For example, the first run reported a 57% pass rate, which was great! But when I looked at the data myself, a lot of runs were obviously wrong. It turned out that the pipeline had a bug: Verification steps were running, but the AI step that was supposed to enforce didn’t have adequate guardrails, so almost every hand passed regardless of the actual data. I asked three AI advisors to review the pipeline, and none of them caught it. The only thing that exposed it was checking the aggregate numbers, which didn’t add up. If you let probabilistic behavior into a step that should be deterministic, the output will look plausible and the system will report success, but you have no way to know something’s wrong until you go looking for it.],
+  [Once I fixed the bug, the real pass rate emerged: 31%. Here’s how the next seven iterations played out:],
+  [Restructuring the data (31% → 37%). The LLM kept losing track of where it was in the deck, so I restructured the data it received to eliminate the bookkeeping. I also removed split hands entirely, because tracking two simultaneous hands is stateful bookkeeping that LLMs reliably botch. Each fix came from looking at what was actually failing and asking whether the LLM needed to be doing that work at all.],
+  [Chain of thought arithmetic (37% → 48%). Instead of letting the LLM jump to a final card total, I required it to show the running math at every step. Forcing the model to trace its own calculations cut multidraw errors roughly in half. CoT is a structural constraint, not a deterministic replacement; it makes the LLM more reliable within the step, but it’s also more expensive because it uses more tokens and takes more time.],
+  [Replacing the LLM validator with deterministic code (48% → 79%). This was the single biggest improvement in the entire arc. The pipeline had a second LLM call that scored how accurately the player followed strategy, and it was wrong 73% of the time. It applied its own blackjack intuitions instead of the rules I’d given it. But there’s a right answer for every situation in basic strategy, and the rules can be written as a lookup table. Replacing the LLM validator with a deterministic expression step recovered over 150 incorrectly rejected hands.],
+  [Rigid output format (79% → 81%). The LLM kept skipping the dealer’s turn entirely, jumping straight to declaring a winner. Requiring a step-by-step dealer output format made it mechanically difficult to skip ahead.],
+  [Overriding the model’s priors (81% → 84%). One strategy required hitting on 18 against a high dealer card, which any conventional blackjack wisdom says is terrible. The LLM refused to do it. Restating the rule didn’t help. Explaining why the counterintuitive rule exists did: The prompt had to tell the model that the bad play was intentional.],
+  [Switching models (84% → 94%). I switched from Gemini Flash 2.0 to Haiku 4.6, which was easy to do because Octobatch lets you run the same pipeline with any model from Gemini, Anthropic, or OpenAI. I finally earned my first nine.],
+  [If you’re building anything where LLM output feeds into the next step, the same question applies to every step in your chain: Does this actually require judgment, or is it deterministic work that ended up in the LLM because the LLM can do it? The strategy validator felt like a judgment call until I looked at what it was actually doing, which was checking a hand against a lookup table. That one recognition was worth more than all the prompt engineering combined. And as Prompt 9 showed, the AI is often the best tool for writing its own deterministic replacement.],
+  [I learned this lesson through my own work on the blackjack pipeline. It went through eight iterations, and I think the numbers tell a story. The fixes fell into two categories: making work deterministic (pulling it out of the LLM entirely) and adding structural constraints (making the LLM more reliable within a step). Both earn nines, but pulling work out of the LLM entirely earns those nines faster. The biggest single jump in the whole arc—48% to 79%—came from replacing an LLM validator with a 10-line expression.],
+  [Here’s the bottom line for me: If you can write a short function that does the job, don’t give it to the LLM . I initially reached for the LLM for strategy validation because it felt like a judgment call, but once I looked at the data I realized it wasn’t at all. There was a right answer for every hand, and a lookup table found it more reliably than a language model.],
+  [At the end of eight iterations, the pipeline passed 94% of hands. The 6% that still fail may be honest limits of what the model can do with multistep arithmetic and state tracking in a single prompt. But they may just be the next nine that I need to earn.],
+  [The next article looks at the other side of this problem: Once you know what to make deterministic, how do you make the whole system legible enough that an AI can help your users build with it? The answer turns out to be a kind of documentation you write for AI to read, not humans—and it changes the way you think about what a user manual is for.],
 ),
   insert-map: (:),
-  word-count: 236,
+  word-count: 3507,
   edited-for-length: false,
   debug-mode: false,
 )
 
-  ],
-  [
-    standard-article(
-  title: [Jason Biggs Directorial Debut UNTITLED HOME INVASION ROMANCE Now Available!],
-  author: [McEric],
-  source-name: [Ain't It Cool News],
-  images: (),
-  paragraphs: (
-  [Jason Biggs Directorial Debut UNTITLED HOME INVASION ROMANCE Now Available! Comedy/Thrillers stars Biggs and Meaghan Rath.],
-  [Read the full article on AICN],
-  [Jason Biggs, aka Jim from AMERICAN PIE, is behind the camera this year with the comedy-thriller UNTITLED HOME INVASION ROMANCE. I’ve talked to plenty of actors-turned-directors and most of them dip their toes in with a smaller project before going into a full feature; a music video, an episode of television, a short film, etc. Not Biggs. He dove straight in. I admire that.],
-  [Not veering too far from his wheelhouse, UNTITLED HOME INVASION ROMANCE is a thriller second and a comedy first. Biggs plays Kevin, a lovelorn loser you could easily mistake for Jim, who has been separated from his wife Suzie, played by Meaghan Rath, for a few weeks following an impasse. Eager to prove himself a manly man capable of protecting her through all of life’s foibles, he arranges a romantic getaway at her father’s summer rental cabin… with a twist. He’s convinced a buddy from his acting class to arrive at the home, “break in,” and threaten the couple so that Kevin can puff his chest out and chase the “assailant” away. As is typically the case with these sorts of schemes, things go awry, and soon bodies start dropping.],
-  [UNTITLED HOME INVASION ROMANCE comes across as light and slapsticky, despite its fairly steep body count and frequent disregard for its victims. It’s genuinely funny at times while unnecessarily cruel at others, which creates a unique tone for the first-time director. Meaghan Rath is a welcome surprise as Suzie, a self-assured success with a lurking darkness within her],
-  [Finish the article on AICN],
-),
-  insert-map: (:),
-  word-count: 279,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-  ],
-), ruled-indices: (1,))
+}
 
 #article-row((
   [
     standard-article(
-  title: [Krypto Currency!!  Hercules Loves James Gunn’s SUPERMAN!!],
-  author: [hercules],
-  source-name: [Ain't It Cool News],
+  title: [Crimson Desert can perform well on PC, but you’ll need to win its crash lottery first],
+  author: [James Archer],
+  source-name: [Rock Paper Shotgun],
   images: (),
   paragraphs: (
-  [Hercules loves Superman 2025],
-  [Read the full article on AICN],
-  [Superman 2025 FAQ],
-  [I am – Hercules!!],
-  [What’s it called? “Superman.”],
-  [Who’s responsible? James Gunn, writer and director of the wonderful “The Suicide Squad” (the one with Idris Elba and John Cena, not the one with Will Smith) and all three excellent “Guardians of the Galaxy” movies.],
-  [Is it any good? Like much of Gunn’s prior work, it’s funny and moving and exciting, and never boring. There’s plenty to nitpick, but you’d be a fool to miss this very entertaining entertainment.],
-  [What says Warner Bros.? “Superman embarks on a journey to reconcile his Kryptonian heritage with his human upbringing as Clark Kent.”],
-  [How does it start? As John Williams’ Superman theme plays, a lot of text catches us up:],
-  [300 years ago superhumans became public knowledge on Earth, 30 years ago an alien spacecraft crashed into Kansas, 3 years ago a new superhuman arrived in Metropolis, 3 weeks ago a superhuman interfered in a middle-eastern conflict, 3 hours ago another new superhuman, one billing himself as The Hammer of Borovia, arrived in Metropolis, and 3 minutes ago Superman lost a brawl for the first time ever.\*],
-  [Then we see what a lot of fans have already seen in that famous clip: a bloodied and beaten Superman crash-lands in a field of snow, then summons Krypto to take him home.],
-  [(\*It is NOT mentioned in this exposition dump that Lois and Clark became romantically involved 3 months ago. We learn this later.)],
-  [Finish the article on AICN],
+  [The words "consensus" and "RPS treehouse" are normally alien to one another, as is apparent from all the blood splatter on every new RPS 100 . Yet among those of us who’ve been playing open world everything-'em-up Crimson Desert , an agreement has formed that its vastness – its 150-odd gigabytes of ideas, mechanics, and sheer maximalist fantasy – can too easily feel unwieldy.],
+  [To a degree, the same is true of its PC performance. It’s not bad , and often balances its gleaming visuals with smooth framerates quite well. Good support for new (but not too new ) flavours of DLSS and FSR , as well. It’s also prone to instability and inconsistency, and while it’s positively receptive to the right settings changes, even this requires navigating through some confusingly labelled upscaling options and possibly the most unusual implementation of ray tracing – or, more specifically, Ray Reconstruction – in all of PC gamedom.],
+  [Read more],
 ),
   insert-map: (:),
-  word-count: 256,
+  word-count: 157,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -710,23 +595,63 @@ If you’re an engineer who thrives on ownership, values collaboration, and want
 
   ],
 ), ruled-indices: (1,))
-#pull-quote([” Direct instructions (“After Security, you enter the FOOD COURT and SHOPS.], [Kirkus Reviews])
-
 
 #article-row((
   [
     standard-article(
-  title: [Island city-builder Nova Roma is out now, and I'd have drowned all my Romans already if it weren't for those pesky gods],
+  title: [THE UGLY Finds Beauty Through Artful Storytelling],
+  author: [Barbarella],
+  source-name: [Ain't It Cool News],
+  images: (),
+  paragraphs: (
+  [THE UGLY Finds Beauty Through Artful Storytelling],
+  [Read the full article on AICN],
+  [Hey friends, Barbarella here. Have I ever told you how much I love Korean cinema? Of course I have. The Ugly is yet another example of how beautifully a story can be told without relying on the voice-over narration that so many films coming out these days are apt to do. Well Go USA released the award-nominated film digitally Tuesday, March 10, and it’s worth a watch if you enjoy good storytelling. It will land on BluRay and DVD exclusively through Amazon on May 26.],
+  [When Dong-hwan‘s mother’s remains are discovered after she’s been missing for forty years, he goes on a mission to find out what happened to her. Determined to uncover the truth of her disappearance, he embarks on a twisted odyssey through his family’s traumatic past, uncovering dark secrets along the way. He is joined by the documentary filmmaker who’d been doing a story on his blind father’s nearly miraculous ability to make incredibly beautiful stamps, but she may have her own motives for accompanying him.],
+  [Broken into “interviews,” the story takes its turns through the past, all while exposing family secrets, bad employers, and those special kinds of relatives that might make you laugh or maybe just cringe.],
+  [Everything is assembled so beautifully. The cinematography, the editing, the choices made to mask the mom’s face in scenes where she appears all elevate the film’s intrigue. Even though it’s not a fast-paced film, it proves riveting. Despite the fact that Dong-hwan is accompanied by a documentary crew, the film is not shot],
+  [Finish the article on AICN],
+),
+  insert-map: (:),
+  word-count: 273,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+  ],
+  [
+    standard-article(
+  title: [You can save nearly \$100 on the powerful AMD Ryzen 7 9700X in the Amazon Spring Sale],
+  author: [Reece Bithrey],
+  source-name: [Rock Paper Shotgun],
+  images: (),
+  paragraphs: (
+  [AMD's Ryzen 9000 series of gaming CPUs might not have provided the hefty uplift in performance that we expected, after the revolution that the AM5 socket chips first brought, but they've nonetheless proven to be more efficient and slightly quicker options than the Ryzen 7000 chips they replaced. Slap bang in the middle of this range of options is the Ryzen 7 9700X, an eight-core and 16-thread processor that can be had for decent money. It's currently \$265 from Amazon US in the Spring Sale, working out to a genuine reduction on a decent option for most folks that makes for a much more compelling option if you want to change over to AM5 from an older system, or want to upgrade your existing rig to the latest generation.],
+  [Read more],
+),
+  insert-map: (:),
+  word-count: 131,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+  ],
+), ruled-indices: (1,))
+
+#article-row((
+  [
+    standard-article(
+  title: [I was the untitled goose in Big Walk, the balmy new open world co-op puzzler from House House],
   author: [Edwin Evans-Thirlwell],
   source-name: [Rock Paper Shotgun],
   images: (),
   paragraphs: (
-  [I have two dreams as mayor of an island town in Nova Roma , the new early access city-building game from Lion Shield and Hooded Horse. One is to erect a fantastic water network for my people - a sturdy yet poetic lattice of aqueducts, following their deft gradations down from the mountain rivers to cisterns gracefully spaced amid the insulae, forums, circuses and temples. In my reborn Rome, no populous bathhouse, tinkling fountain, or humble latrine shall ever run dry. With my other hand, I shall raise mighty dams, diverting the rivers away from my walls to avoid flooding in times of heavy rainfall, while exposing velvety expanses of buildable, tillable soil.],
-  [My citizens will learn to treat water frivolously, swilling and pissing it away in their decadence, much as they did in the Rome of old. The fools! For when my empire of hydration is complete, I will ascend the slopes and whimsically commission one final dam. Trusting in my stewardship – for what reason have I given them to disobey? - the citizens shall toil day and night to finish the structure. Then, when the last stone is laid and the sluices slam shut, they shall gaze in horror as a tidal wave engulfs their fair metropolis and sweeps all their precious bloody bathhouses away.],
+  [House House were kind enough to keep a video of my hands-on session with Big Walk , filmed by one of the participating PRs. Generally, a full video of a preview event including player audio is a lifesaver for a journalist, struggling to keep notes while pushing buttons. But in this case, I don't want to watch the Big Walk video, because then I would hear what the other players were saying when I wasn't there.],
+  [You see, I fell down a cliff midway through Big Walk, and spent the night floundering about in the ocean. Eventually, a developer armed with a big, ball-shaped lamp tracked me down and ushered me back up, hoisting me onto his shoulders so that I could leap to a rock. Nights in Big Walk last moments. I was gone for the length of a luxurious toilet break. But still, those were moments in which the others were gathered, waiting for me. Perhaps they were making fun of me. I don't want to know.],
   [Read more],
 ),
   insert-map: (:),
-  word-count: 220,
+  word-count: 171,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -734,16 +659,17 @@ If you’re an engineer who thrives on ownership, values collaboration, and want
   ],
   [
     standard-article(
-  title: [Embark devs playtested Arc Raiders too viciously, so they found a system that let them be Care Bears one day and aggressive the next],
-  author: [Oisin Kuhnke],
+  title: [My go-to PC game controller is getting Spring sale price cuts - and so is its cheaper wired version],
+  author: [James Archer],
   source-name: [Rock Paper Shotgun],
   images: (),
   paragraphs: (
-  [The problem with playtesting is that it is impossible to predict every last thing any given person may do once a game is out in the wild. It's an imperfect science where you do the best you can in the moment. I imagine a live service game like Arc Raiders to be extra difficult, given how many playstyles need to be accounted for. And based on a recent interview, it sounds like some of the team at Embark took an approach that involved a randomiser determining their own playstyle from day to day to make sure they weren't just playing one way.],
+  [I’ve been through much with my Razer Wolverine V3 Pro . Malenia, Blade of Miquella . Groal the Great . The bit in Dispatch where you have to choose a favourite doughnut and "Chocolate" isn’t an option. Then there’s the psychic shock of having a game controller than costs more than, say, 40 quid to begin with – it’s not something that immediately feels right .],
+  [The Wolverine V3 Pro itself, however, feels very right indeed. It's a solid and endlessly comfortable wireless pad, whose buttons are enriched with the pleasant mechanical clickiness of a high-end mouse. Cost-wise, it’s also a lot less now than when I got mine: Amazon US has it at 35% off during their Spring sale, while in the UK, Scan has it down from £190 to £130. Still premium, but worth it, in my eyes. And hands.],
   [Read more],
 ),
   insert-map: (:),
-  word-count: 104,
+  word-count: 144,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -754,16 +680,16 @@ If you’re an engineer who thrives on ownership, values collaboration, and want
 #article-row((
   [
     standard-article(
-  title: [A DEADLY INHERITANCE],
+  title: [WHERE I GREW],
   author: [Kirkus Reviews],
   source-name: [Kirkus Reviews],
   images: (),
   paragraphs: (
-  [Following the untimely deaths of her beloved parents just a few years apart, focused, determined Liliana Chamberlain hides out from state authorities, scraping by in her family’s apartment, focusing on getting to her 18th birthday in May, and keeping her grades up for her full-ride college scholarship. But her estranged maternal grandparents’ lawyer—who was her mother’s close childhood friend—suddenly arrives with news: Liliana’s billionaire grandparents disowned her mom when she ran off with Liliana’s dad as a pregnant teen, but now they want to send Liliana to her mother’s alma mater, Westdale Academy. Readers will be swept along with this engaging, over-the-top account of a school that’s filled with a diverse group of glittering teens.],
-  [Chemistry immediately sparks between Liliana and two love interests: bisexual Theo Dubois, whose mom is a famous actor, and brooding but kind Maddox Moreno, the son of a tech giant. She decides to run for Optima, an elite society that accepts one student per year. While readers will likely pick up that Liliana is in danger well before she does, they’ll still career along with the rollicking, trope-filled twists and turns that continue to the very end of this boarding school adventure. Liliana and Theo are cued white, and Maddox presents Latine.],
+  [On the title page a pale-skinned adult clothed in colorful garb stands among a grayscale forest. As the main text starts, the adult—now aged but wearing a similar outfit—walks with a youngster, apparently a grandchild. Observing and enjoying the vibrant, lush natural world around them, the narrator reflects on the different places the family has hailed from and paths they’ve taken “in search of the perfect place \/ To put down our roots \/ And call home.” Over a few page turns, the child (revealed to be the book’s narrator) has grown to adulthood and, donning the elder’s satchel, explores the forest with the next generation. “I grew here. \/\\/ This is my community.” As the narrator’s children (who present East Asian, like the narrator) swing among the trees and explore the forest, our narrator considers the past, present, and future.],
+  [With spare but lyrical text, Awan’s story celebrates a forest’s transformation and that of a family over generations. Jomepour Bell’s careful illustrations reveal the passage of time: what has changed (a single fox seen earlier eventually is depicted with two kits, a butterfly emerges from its chrysalis) and what remains: home and the vibrancy of the forest. The bright visual details reinforce the themes of belonging and time and reward attentive reading.],
 ),
   insert-map: (:),
-  word-count: 207,
+  word-count: 213,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -771,20 +697,63 @@ If you’re an engineer who thrives on ownership, values collaboration, and want
   ],
   [
     standard-article(
-  title: [We Interviewed Doug Jones, Dustin Milligan, and Writer/Director Mikey K for OPERATION TACO GARY'S],
+  title: [TRAUMATIKA Interview with filmmakers Pierre Tsigaridis and Maxime Rancon],
   author: [McEric],
   source-name: [Ain't It Cool News],
   images: (),
   paragraphs: (
-  [We interviewed Doug Jones, Dustin Milligan, and writer/director Mikey K for OPERATION TACO GARY'S, a hilarious new late-night comedy that proves laughs never go out of style.],
+  [Eric McClanahan speaks with TRAUMATIKA filmmakers Pierre Tsigaridis and Maxime Rancon],
   [Read the full article on AICN],
-  [Now more than ever we need to laugh. Despite all the catastrophizing about wokeness kneecapping raunchy comedy, I'm happy to report that the rumors are patently untrue. Look no further than Mikey K's new film OPERATION TACO GARY'S, a hilarious late-night sci-fi comedy caper that pulls no punches and bars no holds.],
-  [The synopsis reads "Two brothers embark on a cross country road trip that quickly devolves when they become involved in a global conspiracy." While that barely scratches the surface of this absurdly deep comedy film, it does feature some of its core hooks: brothers, a road trip, and a conspiracy. The brothers are relatively estranged thanks to Danny's (Simon Rex, SCARY MOVIE 3-5) unhinged behavior, which runs counter to Luke's (Dustin Milligan, HOT FROSTY) penchant for a quieter life. When Danny arrives on Luke's doorstep just as the latter is preparing to move for a new job, the two combine their journey, which is quickly revealed to be all per Danny's machinations as he tries to smuggle a MacGuffin across the country. Their bond is tested as they encounter comrades and enemies along the way, culminating in a third act that is as hilarious as it is earned by Mikey K's brilliant script.],
-  [I had the opportunity to talk to Doug Jones, the legendary contortionist and creature actor behind most of Guillermo del Toro's most memorable monsters. Whether you know him as Abe Sapien from HELLBOY or the Silver Surfer from FANTASTIC FOUR: RISE OF THE SILVER SURFER or billy],
+  [Horror films are a mixed bag - some make an indelible mark on the landscape while others are here and gone before anyone has made an effort to notice. A good idea, great execution, and ambitious marketing allow many to rise above the din and grab audiences by the throat. Such is the case with TRAUMATIKA.],
+  [Online trailers warn that “This is not a movie you see, it’s a movie you survive.” Having seen this film, I would agree to a certain extent. TRAUMATIKA does a lot of things right, but I have a few insignificant gripes with it, as well. Let’s start with its strengths.],
+  [TRAUMATIKA builds tension by the inches. Slow POV camerawork, complete with blinking, puts the audience in the front seat of fear. The film is impeccably shot with long, sustained instances of hair-raising suspense and explosive scenes of violence and terror. It’s a visceral experience that will delight many hardcore horror fans and certainly marks the emergence of brash new voices in horror.],
+  [My main grievance is with the scope of the film. It’s several stories crammed into one, and I got the idea that it might’ve worked better as an anthology than a single narrative. The film begins in 1910, then 2003, then a year prior, then 20 years later. So much horror and terror are unleashed throughout time but through such disparate antagonists that one is left to wonder which movie to refer to when honing in on a particular victory or loss.],
+  [TRAUMATIKA comes to us],
   [Finish the article on AICN],
 ),
   insert-map: (:),
-  word-count: 290,
+  word-count: 276,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+  ],
+), ruled-indices: (1,))
+#pull-quote([” Over a few page turns, the child (revealed to be the book’s narrator) has grown to adulthood and, donning the elder’s satchel, explores the forest with the next generation.], [Kirkus Reviews])
+
+
+#article-row((
+  [
+    standard-article(
+  title: [ON THE RECORD],
+  author: [Kirkus Reviews],
+  source-name: [Kirkus Reviews],
+  images: (),
+  paragraphs: (
+  [It’s typically American, Johns Hopkins musicologist Celenza notes, that rebelling colonials adopted the derisive British song “Yankee Doodle” as a badge of pride. But a true anthem was wanted, and it came in the War of 1812 (which “we tend to forget…began as an act of US aggression”): the “Star-Spangled Banner,” written by a lawyer (and slaveholder in the “land of the free”) who borrowed the barely singable tune from a British men’s club. It might have been a handier ditty, such as “My Country ’Tis of Thee” (its tune borrowed from “God Save the King”) or “Hail, Columbia,” but alas, no. Not long after emancipation, the formerly enslaved and their descendants found an anthem of their own in “Lift Every Voice and Sing,” with its resonant cadences (“Lift every voice and sing \/ Till earth and heaven ring, \/ Ring with the harmonies of],
+  [Liberty…”), a song that deserves wider circulation outside the African American church community. Other songs in Celenza’s roster speak to other aspirations of freedom: George Gershwin’s “Rhapsody in Blue,” which “captured the mechanistic beat of modern life”; the collected works of Duke Ellington, blending jazz with the European classical tradition; Abel Meeropol’s antilynching ballad “Strange Fruit” as sung by the great Billie Holiday, who ended her set with it and left the stage immediately after, leaving her audiences stunned by the force of her delivery; Jerome Robbins’ musical West Side Story , originally meant to tell the story of immigrant Eastern European Jews in New York and seized upon by politicians to denounce juvenile delinquency; and of course that great delinquent Bob Dylan, whose folk anthem “Blowin’ in the Wind,”],
+  [Celenza wryly notes, offers “an answer that is equally evasive and profound,” like the author himself. Celenza’s selections, extending into the era of Hamilton , aren’t unexpected, but she has something fresh to say about all of them.],
+),
+  insert-map: (:),
+  word-count: 313,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+  ],
+  [
+    standard-article(
+  title: [The Sunday Papers],
+  author: [Mark Warren],
+  source-name: [Rock Paper Shotgun],
+  images: (),
+  paragraphs: (
+  [Sundays are for deciding to re-watch The Sopranos. Specifically that episode in which Tony gets a bad tummy and then talks to a fish. You wonder what you might fever dream of, if you too were to go and eat at an Indian restaurant, then have enough room for a snack at Artie Bucco's fine Italian eatery? Would you too dream of surreal wandering down a boardwalk? Would you instead dream something different? Would you dream of a platypus sitting in a high-rise apartment, looking up from the newspaper as he reminds a house guest not to trip over a potted cactus when they exit his bathroom?],
+  [Would that be the-Oh. Oh no. It's happening again. The person who's emerged from the bathroom, tripping over the plant on the way, is bald and reeks of alternative comedy. Ready the words and prepare to fire.],
+  [Read more],
+),
+  insert-map: (:),
+  word-count: 146,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -795,47 +764,7 @@ If you’re an engineer who thrives on ownership, values collaboration, and want
 #article-row((
   [
     standard-article(
-  title: [WHAT'S IN A NAME?],
-  author: [Kirkus Reviews],
-  source-name: [Kirkus Reviews],
-  images: (),
-  paragraphs: (
-  [Some still doubt that the son of a glovemaker who never left England could have created the imaginative universe we behold in the plays and poems. Amussen, a historian at the University of California, Merced, writes a social history of England in the late-16th century to affirm that a man of the theater, a highly literate poet, an acute observer of daily life, and, quite simply, a great literary genius, could and did live to create the great works that traveled under his name. Early modern London had everything: travelers from abroad, artisans, the rich, the poor, the powerful, the meek. Many schools offered far more than they do today.],
-  [A boy in his teens would have been taught the classics of the ancient world, the history of England, and enough Latin (if not other languages) to navigate the libraries and booksellers of Queen Elizabeth’s age. Shakespeare was surrounded by scholars and artists and musicians and poets of skill and learning. His plays were performed by the greatest actors of the time. His poems were dedicated to some of the most powerful aristocrats of the age. He did not have to visit Verona to imagine Juliet’s balcony. He did not need to be born to furs and finery to give voice to kings. During his life, Shakespeare was known for his ambition and his range. After his death, the publication of the First Folio edition of his plays cemented his reputation. “There is no mystery about who wrote Shakespeare’s plays,” Amussen writes.],
-  [“There is nothing in the plays, or in Shakespeare’s life, that is incompatible with what we know of the man from Stratford.” The case is closed, the author maintains, and we can love and live inside his work without doubt.],
-),
-  insert-map: (:),
-  word-count: 292,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-  ],
-  [
-    standard-article(
-  title: [SOMEONE TO DAYDREAM ABOUT],
-  author: [Kirkus Reviews],
-  source-name: [Kirkus Reviews],
-  images: (),
-  paragraphs: (
-  [Eighteen-year-old Natalie’s Deaf family owns the Nielsen Family Deaf Center in Seattle, where they teach ASL. But Natalie’s father was the heart of the place, and since his death, things have been going downhill. Miraculously, Natalie is offered a job that pays well enough to save the center—but it involves going on tour with boy band DAYDREAM and teaching their obnoxious frontman, Felix Song, ASL. Felix has never been a motivated ASL student despite his little sister’s having degenerative hearing loss. On tour, Natalie bonds with the boys, gets a peek at the darker side of the music industry, and discovers that Felix may not be quite so annoying after all.],
-  [This fun, breezy read will appeal to romance lovers, followers of boy bands, those with a connection to the Deaf community, and fan fiction readers (DAYDREAM’s fans share their stories on the site AO3). Alongside the romance, Langford incorporates elements of Deaf culture and community and touches on learning disabilities. These moments, while celebrating Deaf culture and disabled joy, sometimes read like clunky infodumps. The author portrays different approaches to communication realistically and without value judgments. Natalie’s complex relationship with her mother is given room to breathe and avoids a too-neat ending. Natalie is cued white, and New Zealand immigrant Felix is of Korean descent.],
-),
-  insert-map: (:),
-  word-count: 216,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-  ],
-), ruled-indices: (1,))
-#pull-quote([His poems were dedicated to some of the most powerful aristocrats of the age.], [Kirkus Reviews])
-
-
-#article-row((
-  [
-    standard-article(
-  title: [TMR 24.9: “I Hate Thinking about Thinking about Myself Like This” [Melvill]],
+  title: [TMR 24.9: “I Hate Thinking about Thinking about Myself Like This” \[Melvill\]],
   author: [Chad Post],
   source-name: [Three Percent (U of Rochester)],
   images: (),
@@ -856,21 +785,17 @@ If you’re an engineer who thrives on ownership, values collaboration, and want
   ],
   [
     standard-article(
-  title: [We Interview Josh Duhamel and Michael Socha for PRESCHOOL],
-  author: [McEric],
-  source-name: [Ain't It Cool News],
+  title: [SEE ONE, DO ONE, TEACH ONE],
+  author: [Kirkus Reviews],
+  source-name: [Kirkus Reviews],
   images: (),
   paragraphs: (
-  [We interview Josh Duhamel (pulling double duty as actor and director) and Michael Socha about their new comedy, PRESCHOOL.],
-  [Read the full article on AICN],
-  [Parenting is Hell, and when we look to our children to absolve our sins or try to live vicariously through them, it’s even worse. That’s the premise behind PRESCHOOL, the new PG-13 comedy from writer Richard D’Ovidio (HYPNOTIC, THIR13EEN GHOSTS) and director Josh Duhamel (BUDDY GAMES).],
-  [Duhamel (TRANSFORMERS, SHOTGUN WEDDING) stars as Alan, an American expatriate who’s married into affluence while Michael Socha (“Being Human,” THIS IS ENGLAND) plays Brian, a bootstrapping entrepreneur who’s built his fortune through determination and risk. The film opens with each father greeting their newborns in separate hospitals, promising them the best that life has to offer and swearing their fealty to the next generation. Brian seems the more pragmatic of the two, laying out the blueprint for success to a minutes-old empty vessel that hasn’t the agency to accept while Alan encourages his growing progeny to be an astronaut (likely in a throwback to American superiority in that field).],
-  [When both fathers end up at the prestigious Puggsley Academy (a name I’m sure is meant to illustrate the folly of antiquity) and learn there is only one open slot left, their oaths to their children ignite the competitiveness within them and the war commences. Through dinners, sporting outings, and a little light stalking, the men learn each other’s weaknesses and plot to exploit them to achieve their ends.],
-  [The film constantly toys with the audience’s allegiance to either father, painting each in hues of sincerity and villainy. Brian seems to be the more sincere of the two],
-  [Finish the article on AICN],
+  [To date, Farris has largely published work about being a parent, with easygoing humor, relatable, scribbly characters and a dash of cuteness. This graphic memoir of her time in medical school and residency explores an entirely different world, dissecting cadavers, and attending in operating rooms, but Farris’ gentle, pointed comedic sense still suffuses every page. The story begins at its own ending—waddling through a hospital hallway, nude, in labor with her first child, Farris calmly declines a gown—“It’s okay. I work here.” From there, she loops back to recount her journey to that moment. Chapters are organized by sections of schooling, detailed with a straightforward chart near the book’s beginning.],
+  [The pre-clinical years are spent in classrooms, studying from textbooks and body parts, bonding with peers, and meeting her future husband outside of the program. The clinical years consist of rotations through specialties like pediatrics, surgery and the psychiatric ward, where Farris observes a diversity of attitudes toward patients and practice, some deeply humane, others coldly clinical, and a few downright prejudicial. Internship and residency allow her to understand doctoring more holistically, which leads Farris to growing confidence relating to patients and increased satisfaction in her work. Finally, on graduation day, Farris oversleeps and realizes she’s pregnant, and her life as a doctor begins.],
+  [Farris uses her accessible visual style and straightforward tone to explore medical concepts with elegant directness—from cell death to hospital codes, from electroconvulsive therapy to palliative care. She is well-versed in cartooning as communication, and it’s refreshingly clear that she prizes comprehensive, communicative care in her day-to-day work as a physician as well.],
 ),
   insert-map: (:),
-  word-count: 283,
+  word-count: 267,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -881,20 +806,17 @@ If you’re an engineer who thrives on ownership, values collaboration, and want
 #article-row((
   [
     standard-article(
-  title: [A Conversation with RENTAL FAMILY Writer/Director HIKARI],
-  author: [McEric],
-  source-name: [Ain't It Cool News],
+  title: ["A balancing paradigm I often look at is Starcraft": Total War: Medieval 3 won't lean too hard on rock-paper-scissors combat, says creative director],
+  author: [Edwin Evans-Thirlwell],
+  source-name: [Rock Paper Shotgun],
   images: (),
   paragraphs: (
-  [McEric chats with RENTAL FAMILY writer/director HIKARI.],
-  [Read the full article on AICN],
-  [HIKARI’s RENTAL FAMILY is the feel-good charmer that everyone needs around Thanksgiving, a gentle reminder that family is organic, genuine, and irreplaceable. Even when we sometimes wish we could rent an understudy to fill our place.],
-  [RENTAL FAMILY stars Brendan Fraser as Phillip, an American actor living alone in Japan for the past seven years, struggling to find consistent work. Think LOST IN TRANSLATION, only don’t, because this film provides a much deeper portrait of Japan than Sofia Coppola’s Oscar-winner. LOST IN TRANSLATION, though a beautiful portrait of loneliness, uses Japan as a superficial location, giving us the eyes of a visitor through which to take in its beauty. RENTAL FAMILY has an expatriate at its center but Phillip has taken swimmingly to his new home. He’s fluent, versed in the customs, and permanent. One never gets the idea that Phillip is working towards returning “home” - he is home. With him as our anchor, we feel like we belong, seeing past the tourist attractions to find the core of community.],
-  [Phillip is auditioning steadily, getting bit roles here and there, but he needs something with longevity. He stumbles into Rental Family, a service that sells “memories.” Mastermind Tada (Takehiro Hira) is introduced as a compassionate man with a fierce streak of pragmatism, which is aided by his right hand and lead actress Aiko (Mari Yamamoto). Brought on board as their “token white guy,” Phillip finds himself acting as a groom, a best friend, a karaoke champion, a journalist, and a long-lost],
-  [Finish the article on AICN],
+  [Creative Assembly's Total War games offer up a wide spread of factions, from rampaging Gauls to furtive and disgusting Wood Elves, but they're all a little beholden to the ancient game of rock-paper-scissors: spears beat cavalry, cavalry beat swords, swords beat spears.],
+  [I think Creative Assembly generally do an impressive job of softening that triangular countering logic by means of terrain considerations, flanking, morale and other supporting mechanics. Cavalry won't necessarily beat swords if the cavalry are all tuckered out and spooked. And then you have wildcards, like heroes and war machines, who can mess with the logic more dramatically: Rock paper Mortis Engine! Still, I can't deny that I often feel drained on firing up a DLC-fresh Total War army and realising that, yep, I'm roshamboing again.],
+  [Read more],
 ),
   insert-map: (:),
-  word-count: 270,
+  word-count: 130,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -902,38 +824,82 @@ If you’re an engineer who thrives on ownership, values collaboration, and want
   ],
   [
     standard-article(
-  title: [SteamOS update preview brings "initial support" for the Steam Machine, plus new power and Bluetooth tricks for Steam Decks],
-  author: [James Archer],
-  source-name: [Rock Paper Shotgun],
+  title: [Michael Steele: The King of Debt Is Blowing Up the U.S. Economy],
+  author: [Tim Miller],
+  source-name: [The Bulwark],
   images: (),
   paragraphs: (
-  [The SteamOS 3.8.0 update is available to try now on the Preview branch, and it’s the first to bring "initial support for the upcoming Steam Machine hardware." That is, of course, merely a passing mention of Valve’s reborn PC box in the 3.8.0 patch notes . Am I going to engage strong, some might say excessive optimism that this suggests its recent delay and subsequent release date uncertainty aren’t as damning as they look? Sod it, it’s Friday.],
-  [Those in search of more practical updates, and presumably own a Steam Deck , have much more to chew on. This is a wide-ranging patch, spanning a new graphics driver, improved support for OBS and Discord, better frame pacing with Variable Refresh Rate (VRR) tech, crash fixes, and a bunch of tune-ups for non-Valve handheld PCs , with plenty more besides. I’m most intrigued by the bullet point that promises "Preliminary support for hibernation," which – assuming it works like hibernation on a Windows laptop – would drastically reduce the frequency with which I pick up my Deck to find its battery dead, drained to emptiness by my thoughtless misuse of Sleep mode. Yes , Valve. Continue to enable my shortcomings.],
+  [In addition to the global energy shock brought on by Trump's war, mortgage rates are surging, and labor costs and prices are rising. And Republicans don't seem to have a plan except to spend more, blame trans kids, and feed Trump's megalomania by allowing him to put his ugly signature on our currency. Plus, JD thinks Americans are stupid, the gap between Bibi's and Trump's objectives vis-à-vis Iran continues to widen, and where is Marco Rubio?],
+  [Michael Steele joins Tim Miller for the weekend pod.],
+  [show notes],
+  ["The Weeknight" on MS Now],
+  [JVL's and Catherine's live show Friday on the state of the economy],
+  [Find your local "No Kings" protest],
+  [Tim's playlist],
+  [As always: Watch, listen, hit the like button or leave a comment . We want to hear from you.],
+  [Ad-free editions of The Bulwark Podcast are available exclusively for Bulwark+ members.],
+  [The Bulwark Podcast with Tim Miller is available wherever you get podcasts and on YouTube. New shows drop each weekday afternoon. If you like the show, leave a comment and ⭐⭐⭐⭐ wherever you listen. Add The Bulwark Podcast to your player of choice, here .],
   [Read more],
 ),
   insert-map: (:),
-  word-count: 201,
+  word-count: 195,
   edited-for-length: false,
   debug-mode: false,
 )
 
   ],
 ), ruled-indices: (1,))
-#pull-quote([" That is, of course, merely a passing mention of Valve’s reborn PC box in the 3.], [James Archer])
 
+#article-row((
+  [
+    standard-article(
+  title: [TMR 24.5: “Very Charming.” \[Confidence-Man\]],
+  author: [Chad Post],
+  source-name: [Three Percent (U of Rochester)],
+  images: (),
+  paragraphs: (
+  [\[Note: If you subscribe on Apple Podcasts, please resubscribe to this feed. The other one will be going away in the near future.\]],
+  [Chad, Brian, and Kaija venture into the darkness and turn off the light on Melville’s The Confidence-Man: His Masquerade , one of the oddest, most slippery books to be included in the Two Month Review. They talk about transcendentalism, self-reliance, Melville’s interludes, Jean Giono’s Melville , and more.],
+  [And here’s the “ Grifters Gonna Grift ” t-shirt mentioned in this episode.],
+  [Next episode will cover pages 1-61 of Rodrigo Fresán’s Melvill . You can find the full reading schedule here .],
+  [This week’s music is “ The System Only Dreams in Total Darkness ” by The National.],
+  [You can find all previous seasons of TMR on our YouTube channel and on Apple Podcasts , Spotify , etc. Please rate and review! It helps more than you know.],
+  [Follow Open Letter, Two Month Review , Chad Post, Kaija Straumanis , and Brian Wood for random thoughts and information about upcoming guests.],
+  [The large image associated with this post is AI generated.],
+),
+  insert-map: (:),
+  word-count: 183,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+  ],
+  [
+    standard-article(
+  title: [If you ask Yoshi-P, kids don't care about Final Fantasy anymore because they're taking too long to come out],
+  author: [Oisin Kuhnke],
+  source-name: [Rock Paper Shotgun],
+  images: (),
+  paragraphs: (
+  [Last month, a post caught some kind of virus and did the rounds, pondering why kids don't care about Final Fantasy or Dragon Quest so much anymore, wondering what they do play now, and anecdotally findering that most of them just play Pokemon. And I truly have to wonder if Final Fantasy 14 producer Naoki "Yoshi-P" Yoshida saw said post, given that in a recent bout of interviews with several key Final Fantasy figureheads in preparation for the next Dissidia game, he himself flat out acknowledged that the youths these days don't care as much because of the series' infrequent release schedule.],
+  [Read more],
+),
+  insert-map: (:),
+  word-count: 104,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+  ],
+), ruled-indices: (1,))
 
 {
   #section-label([Analysis])
   #brief-group((
-    #brief-item([Mark Warren], source-name: [Rock Paper Shotgun], [Earlier this week, the modders behind a Fallout: New Vegas expansion called Fallout Chicago released their first demo . With that milestone out of the way, they're certainly not resting on their laurels. They've put out a roadmap indicating that they're hoping to have all three acts of the mod's main story ready to go for a full release in the latter half of 2027.
+    [#brief-item([Mark Warren], source-name: [Rock Paper Shotgun], [Following Epic Games' mass layoffs , a Fortnite producer has said that the devs left behind "cannot even fully understand" the sort of impact the job cuts will have on the game during this year and into the future.
 
- Read more])
-
-    #brief-item([Mark Warren], source-name: [Rock Paper Shotgun], [Players and developers should boycott Nvidia's AI-stuffed DLSS 5 tech , with hopes that it'll force the compny to "think about going back to giving us what we want". That's the appeal being made by Dave Oshry, CEO of indie studio New Blood Interactive, who's been asked for his take on the neural rendering gubbins Nvidia exec Jensen Huang's recently been adopting a multitude of tones as he's tried to convince critis that they've just got it all wrong.
-
- Read more])
-
-    #brief-item([Tim Miller], source-name: [The Bulwark], [Tim Miller was on MS NOW's Deadline: White House to explain why Trump’s Iran decision may be doing lasting damage to his own coalition. From GOP infighting to failed election interference efforts and another Democratic win in Washington, MAJOR cracks are starting to show.
+ Read more])],
+    [#brief-item([Jonathan V. Last], source-name: [The Bulwark], [JVL and Catherine Rampell on Trump’s economic messaging, falling consumer confidence, and rising recession fears driven by oil prices.
 
 class="button-wrapper"\> Leave a comment 
 
@@ -942,23 +908,15 @@ As always: Watch, listen, and leave a comment. Bulwark+ Takes is home to short v
 Add Bulwark+ Takes feed to your player of choice, here .
 
  
- Read more])
+ Read more])],
+    [#brief-item([Walden Green], source-name: [Pitchfork News], [The Depeche Mode and Erasure co-founder teamed up with Blancmange’s Neil Arthur and electronic producer Benge to perform songs by ABBA, the Magnetic Fields, and more])],
+    [#brief-item([Edwin Evans-Thirlwell], source-name: [Rock Paper Shotgun], [Teyon and Nacon have revealed Hunter: The Reckoning – Deathwish , a new "semi open world " first-person single-player RPG set in the World of Darkness table-top universe. Where stablemate series Vampire: The Masquerade is about a secret society of bloodsuckers, Hunter is about the humans who stalk and kill those bloodsuckers together with werewolves, ghouls and, well, anything remotely monstrous or supernatural.
 
-    #brief-item([Oisin Kuhnke], source-name: [Rock Paper Shotgun], [I've already spoken once today about my intrigue around permanency today , so why not keep that train running. Star Wars Zero Company , a strategy game with XCOM in its veins and execution , is continuing on its spiritual predecessors lineage by having the most controversial of all video deaths as a main feature: permadeath.
+ Read more])],
+    [#brief-item([Mark Warren], source-name: [Rock Paper Shotgun], [Huggghh-puuuhhhhh. Hughhhhh-puhhhh. If you've decided to try pedalling away in attempt to master Crimson Desert 's bike-like controls , Pearl Abyss' latest patch - which also brings the likes of camp storage quicker tree felling - is good news. The developers have also acknowledged the fact they forgot to mention prior to release that the game wouldn't run on Intel Arc GPUs , with support for those cards now in the works.
 
- Read more])
-
-    #brief-item([James Archer], source-name: [Rock Paper Shotgun], [STALKER 2: Heart of Chornobyl is getting its first proper expansion this year, titled Cost of Hope, and it looks stuffed to its icky mutant gills with classic STALKER series beats that the base game – while a powerfully engrossing survival FPS – missed out on. The Chornobyl Nuclear Power Plant returns as an explorable, doubtless horrible addition to the game’s open world, and the story concerns the conflict between the rival Freedom and Duty factions that’s been simmering since the original STALKER .
-
- Read more])
-
-    #brief-item([Mark Warren], source-name: [Rock Paper Shotgun], [Having reached the point of making their case to the European parliament, the Stop Killing Games 's organisers are having to think about keeping their campaign going in the long-term. For example, they're setting up set up NGOs to advocate on the issue of server shutdowns rendering online-only games impossible to play .
-
-Ironically, though, one of the factors the group see as helping ensure their efforts don't end up fading into background noise is the depressing regularity with which games like Highguard are dying in a fashion that's difficult to ignore.
-
- Read more])
-
-    #brief-item([William Kristol], source-name: [The Bulwark], [The Bulwark's own Jim Swift joins Bill Kristol to talk about No Kings.
+ Read more])],
+    [#brief-item([Tim Miller], source-name: [The Bulwark], [Sam Stein and Tim Miller give their takes on the latest fiasco for FBI Director Kash Patel after Iran-linked hackers breached his email and released a trove of personal messages and photos. From embarrassing photos during a trip to Cuba to serious counterintelligence concerns, it’s another brutal moment for a guy already struggling to prove he’s up for the job.
 
 class="button-wrapper"\> Leave a comment 
 
@@ -967,39 +925,22 @@ As always: Watch, listen, and leave a comment. Bulwark+ Takes is home to short v
 Add Bulwark+ Takes feed to your player of choice, here .
 
  
- Read more])
+ Read more])],
+    [#brief-item([James Archer], source-name: [Rock Paper Shotgun], [The new Steam Machine remains an almost tragically distant prospect , despite Valve’s attempts at reassurance . But y’ know what the next best thing is? Not caring about hardware release dates, obviously. The second next best thing is to equip a Steam Deck with Ugreen’s handy 9-in-1 docking station, which is down from \$60 to \$40 in the Amazon US Spring Sale – and isn’t all that expensive in the UK either.
 
-    #brief-item([James Archer], source-name: [Rock Paper Shotgun], [Perhaps sensing competition in the field of Japan-flavoured arcade racing games , Forza Horizon 6 devs Playground Games have revealed the open-world vroomer’s system requirements. Agreeably, they’re a sensible balance of attainable low-end fare – at 1080p, a GTX 1650 and 16GB of RAM are apparently all that’s needed for 60fps – and the kind of hulking graphics bricks that you’d expect for 4K ray tracing. Only the most baby-oiled of hypercars for the RX 9070 XT owners, you understand, though support for lil’ handhelds like the Steam Deck is confirmed as well.
+ Read more])],
+    [#brief-item([Oisin Kuhnke], source-name: [Rock Paper Shotgun], [Vampires! They don't just survive now, but crawl too, as evidenced by poncle's follow-up to their tight and already quite influential bullet heaven Vampire Survivors , Vampire Crawlers: The Turbo Wildcard from Vampire Survivors . Which now, as shared in an on brand, irreverently silly trailer, has a release date!
 
- Read more])
+ Read more])],
+    [#brief-item([Mark Warren], source-name: [Rock Paper Shotgun], [Players and developers should boycott Nvidia's AI-stuffed DLSS 5 tech , with hopes that it'll force the compny to "think about going back to giving us what we want". That's the appeal being made by Dave Oshry, CEO of indie studio New Blood Interactive, who's been asked for his take on the neural rendering gubbins Nvidia exec Jensen Huang's recently been adopting a multitude of tones as he's tried to convince critis that they've just got it all wrong.
 
-    #brief-item([Oisin Kuhnke], source-name: [Rock Paper Shotgun], [Well, you all did it, Cryo Archive has been unlocked in Marathon . Bungie detailed the new mode in a blog post earlier today, where it shared an important thing to keep in mind with the new map: it's only available to attempt on weekends. Aye, you'll need to forgo any social plans you have out in the real world to tackle this one.
+ Read more])],
+    [#brief-item([Mark Warren], source-name: [Rock Paper Shotgun], [Crimson Desert 's controls aren't a pain in the bum. You just need to get used to them. You also need to get used to not being able to run the game if you've got an Intel Arc graphics card. You instead need to get used to asking for a refund on this game you can't run. These are all things Pearl Abyss have said about their huge MMO-ish RPG today, March 20th.
 
- Read more])
+ Read more])],
+    [#brief-item([Oisin Kuhnke], source-name: [Rock Paper Shotgun], [The appearance of AI in art is nothing new, hell, Mr. Movies himself Steven Spielberg literally made A. I. Artificial Intelligence near the start of the millenia. But that was the Cool AI, where robots could be people, too, if we let them. Now what we have is the Donkey Bollocks AI that produces garbage facsimiles of things we know and actually like. But that doesn't mean it's not worth considering AI, and I really need you to bear with me here, within our art, as that's exactly what the team behind Pragmata did (without touching the stuff).
 
-    #brief-item([Oisin Kuhnke], source-name: [Rock Paper Shotgun], [Crimson Desert is, by many accounts, a video game. A not necessarily good one, a perhaps just ok to occasionally baffling video game that appears to be big for the sake of winning a pissing contest. It is also potentially a video game that is not being entirely honest about certain art assets being human-made or not.
-
- Read more])
-
-    #brief-item([Oisin Kuhnke], source-name: [Rock Paper Shotgun], [I quite like a bit of permanency in games. Well, like might be too positive, I'm more intrigued by it and the friction it provides. It's interesting that if you're silly enough to kill an NPC in Dark Souls , for example, that's it, no take backsies. So despite honestly not caring all that much for zombie games, I'm still a bit interested in Dying Light: The Beast and its new Restored Land update which introduces a mode where if you kill a zombie once, it truly is gone for good.
-
- Read more])
-
-    #brief-item([RPS], source-name: [Rock Paper Shotgun], [Ed (RPS in peace) has, finally, posthumously, got his wish : another Screamer . This one’s gone all cyberpunk and/or anime-styled, with a heavy focus on story – it follows multiple, multinational merc-drivers entering a lightly murderous racing tournament – but can it still deliver on drifty driving thrills? After much practice, Mark and James both avoided clattering into the track barriers long enough to find out. 
-
- Read more])
-
-    #brief-item([Jonathan V. Last], source-name: [The Bulwark], [JVL and Catherine Rampell on Trump’s economic messaging, falling consumer confidence, and rising recession fears driven by oil prices.
-
-class="button-wrapper"\> Leave a comment 
-
-As always: Watch, listen, and leave a comment. Bulwark+ Takes is home to short videos, livestreams, and event archives exclusively for Bulwark+ members.
-
-Add Bulwark+ Takes feed to your player of choice, here .
-
- 
- Read more])
-
+ Read more])],
   ))
 }
 

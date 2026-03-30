@@ -23,88 +23,15 @@
 
 // --- Front Page Feature ---
 #feature-article(
-  title: [The Coolest Spring 2026 Jacket Trends For Transitional-Weather Dressing],
-  kicker: [Cover Story],
-  author: [Andrea Bossi],
-  source-name: [Refinery29 Fashion],
-  deck: [It’s that time of year again when we’ve kissed an hour of sleep goodbye in exchange for longer moments with the sun.],
-  lead-text: "That means it’s also time to pack up your puffers and wool coats in preparation for breezy spring weather. While some categories of clothes may be in an anti-trend, classic era, like denim , jackets are doing the complete opposite. They’re full of fun, personality, and an air of cool.",
-  lead-first-alpha: 0,
-  body-paragraphs: (
-  [The hottest jacket styles this spring do everything from putting twists on a classic piece to reimagining a traditional silhouette. A trench coat ? It’s no longer the long, khaki staple but chopped to a shorter proportion and made with fresh materials. Funnel neck coats , which swept the scene last fall, continue their reign. Many of these have trickled down from runways , while others are driven by broader cultural moments.],
-  [“There’s a real focus on versatility. Jackets have become the outfit, not just the finishing layer,” Sarah Bonello , founder of The Park, tells Refinery29. “There’s a desire to feel put-together but not overworked. That’s why you’re seeing these more relaxed, layering-friendly silhouettes like trenches and capes. There’s also a shift toward more intentional dressing, fewer pieces, but styled in a way that feels thoughtful.”],
-  [Read on to discover the coolest spring jacket trends to shop as you start refreshing and revamping your closet, with some tidbits from our favorite fashion people. Plus, peruse our top shopping picks , from more affordable to designer options.],
-  [DashDividers\_1\_500x100],
-  [Capes and Capelets],
-  [In the midst of fashion’s romance revival, it makes sense that capes would come back into the limelight. “They bring this sense of movement and quiet drama that feels fresh,” Bonello says.],
-  [The style feels inextricably linked to fantasy and costume, whether that’s Cate Blanchett playing a seraphic elf in Lord of the Rings or Marilyn Monroe’s cheeky cheetah cape in Gentlemen Prefer Blondes . It’s no surprise that famously whimsical and romantic designers like Alessandro Michele featured capes on his Spring/Summer 2026 Valentino runway; Jonathan Anderson also showed them in his debut show.],
-  [These regal-feeling jackets can pair well with just about anything, whether we’re talking a khaki cropped cape with jeans or a sweeping cape worn over a matching set. Their more subdued interpretation, capelets, are also trending.],
-  [DashDividers\_1\_500x100],
-  [Trench Coats With a Twist],
-  [As fashion photographer Sophie Elgort tells Refinery29, “The trench is a forever piece. It evolves each season but never disappears.” And this spring, trench coats typically go one of two routes: they’re cropped (very petite-friendly ) or have a freaky detail.],
-  [One of the easiest ways to achieve the spring 2026 trend is by simply cropping the traditional trench coat into something that hits at the hips or slightly above. “The proportions are magic and do all the work. Defined waist and legs for days,” designer and creator Carla Rockmore tells Refinery29 on the cropped trench look. “Then, you have all those delicious details: buttons, cuffs, a self-belt, which makes it feel intentional without trying too hard.”],
-  [This spring is also all about trench coats with tweaks to their lapels, like swapping in a shiny leather or checkered fabric for the classic gabardine. These little changes add an edgy and playful touch to something timeless.],
-  [DashDividers\_1\_500x100],
-  [We may have colloquially kissed “girlboss” goodbye, but we certainly haven’t stopped power dressing . This spring’s boxy blazers are distinct from well-tailored jackets that hug the body and highlight the waist. Instead, these spacious and oversized versions don’t constrain movement, but let the body move more freely. This means comfort is built into this style, which projects authority and confidence. We witnessed these rise from runways like Victoria Beckham and Acne Studios to our favorite street style moments .],
-  [“I’ve been really inspired by how tailoring is becoming softer and more fluid. Blazers are effortless,” Bonello says. “I’ll throw one on with our Joy leggings or even just a simple Park bodysuit , and it instantly makes the look feel more considered without trying too hard. It’s one of those pieces that does the work for you.”],
-  [DashDividers\_1\_500x100],
-  [Bomber jackets never lost their appeal, but they seem to be caught up in the wave of those 2016 nostalgic-driven trends coming back ten years later. But today, it’s not just about the classic, cool-girl leather bomber. There are also some other fabrications in the mix, like bubble hem cottons and slinky nylons.],
-  [When Chloé Creative Director Chemena Kamali revealed her own flouncy bombers in her Spring/Summer 2026 collection, she framed her design process as one takes out all the stiffness.” No wonder the trendiest bombers this season balance the classic leather look with something more contemporary and feminine.],
-  [DashDividers\_1\_500x100],
-  [Sporty jackets and windbreakers are classics in their own right, but they’ve gotten fashion makeovers as an unmissable moment on Spring/Summer 2026 runways like Loewe’s. “There’s a continued shift toward casual chic. We still want comfort, but we’re no longer willing to look careless. It’s ease, but with polish and intention,” Rockmore says.],
-  [Tech jackets are often defined by their outer shell, which is usually weather resistant thanks to their performance-based material, and can take on a myriad of aesthetics. Today’s hottest options range from sporty drawstring styles to those inspired by anoraks.],
-  [DashDividers\_1\_500x100],
-  [Workwear-Inspired Jackets],
-  [Workwear jackets have long been staples of, well, exactly that: work. But they’ve increasingly made their mark in fashion, particularly “as they’ve moved from designer to contemporary, which makes them feel more everywhere,” Elgort says. Miu Miu’s Spring/Summer 2026 show , which was widely discussed for its aprons, was a perfect example of this style of jacket’s power over fashion today.],
-  [This spring, utility-forward styles like field jackets, barn jackets , and chore jackets are reigning supreme. All their pockets and how easily they layer make these designs easy favorites. Beyond their advantages in functionality, Elgort adds, they “look cool on camera.”],
-  [DashDividers\_1\_500x100],
-  [Some boxy styles may be trending this spring, but a tailored waist is very much alive. This is great news for someone who likes to play with shape and lines in their outfits. For example, a snatched waist works wonders with wide-leg jeans or a longer, loose skirt because it achieves balance. The best part of the snatched-in look is that it has no limits: You can find this detail across various jacket styles, from utility-inspired pieces to denim jackets.],
-  [DashDividers\_1\_500x100],
-  [Time for Tweed],
-  [Tweed seems to be going through what some are calling the Matthieu Blazy effect . The woolen fabric is experiencing a spring revival thanks to the French designer and Chanel’s creative director. When his first collection hit Chanel boutique shelves mid-March 2026, it was total “pandemonium” and has already inspired a new wave of creators to put together tweed-y, runway-inspired looks. Blazy’s playful and colorful designs are, no doubt, front and center.],
-  [Tweed is naturally not the lightest material, which is why it’s such a staple for fall and a solid choice for the current transitional weather. For a style that can flex days swinging between freezing temps and cool breezes, go for long sleeves. If shopping for a tweed jacket to carry you from spring into summer, look for airy styles that might, for example, have short sleeves.],
-  [DashDividers\_1\_500x100],
-  [By far, one of the biggest trend to hit spring outerwear comes from one small detail: a funnel neck. These coats can range in silhouette and fabrication, but they’ve all got a structured, high neck in common. We’ve seen these across street style and runways, like at Tory Burch and Chloé. It’s easy to embrace the unarguable “cool” feeling that comes with rocking this look, topped off best with a pair of opaque shades .],
-  [Like what you see? How about some more R29 goodness, right here?],
-  [9 Spring Shoe Trends That Put Fun & Comfort First],
-  [What We're Buying From Amazon’s Big Spring Sale],
-  [The Best 2026 Handbag Trends To Carry Around],
-),
-  edited-for-length: false,
-)
-
-
-{
-  #section-label([Front Page])
-  #standard-article(
-  title: [‘Avignon warmed our bones and fed our souls’: readers’ favourite early spring trips to southern Europe],
-  author: [Guardian readers],
-  source-name: [The Guardian Travel],
-  images: (),
-  paragraphs: (
-  [The best places to seek respite from the wintry UK weather in France, Italy and Germany],
-  [• Tell us about a family adventure in Europe – the best tip wins a £200 holiday voucher],
-  [Saint-Jorioz in Haute-Savoie will provide a springtime lift for your spirits. On the shore of Lake Annecy, it’s a short bus ride from the city of Annecy, but less busy and with superior lake and mountain views. Hike to the surrounding peaks, towards the lesser-known Col de l’Arpettaz, or cycle on the excellent greenways. Relax by the cool blue alpine water. Behind you lies the underrated Les Bauges Unesco Geopark . The department only joined France in 1860, and has its own Italian-influenced regional cuisine.
- Brian Lowry],
-  [Continue reading...],
-),
-  insert-map: (:),
-  word-count: 123,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-}
-
-{
-  #section-label([Features])
-  #standard-article(
   title: [The Perfect Ha Long (Bai Tu Long) Cruise with Indochina Junk],
+  kicker: [Cover Story],
   author: [Kristin Addis],
   source-name: [Be My Travel Muse],
-  images: (),
-  paragraphs: (
-  [When people picture Vietnam, they often imagine the soaring limestone karsts of Ha Long Bay, but few realize there’s a quieter, equally stunning neighbor just next door: Bai Tu Long Bay. After experiencing both, I can confidently say this is the secret spot you’ll want to choose, especially if you’re traveling as a family.],
+  deck: [After experiencing both, I can confidently say this is the secret spot you’ll want to choose, especially if you’re traveling as a family.],
+  lead-pre: [],
+  lead-cap: [W],
+  lead-rest: [hen people picture Vietnam, they often imagine the soaring limestone karsts of Ha Long Bay, but few realize there’s a quieter, equally stunning neighbor just next door: Bai Tu Long Bay. After experiencing both, I can confidently say this is the secret spot you’ll want to choose, especially if you’re traveling as a family.],
+  body-paragraphs: (
   [After backpacking through Vietnam 12 years prior and experiencing a very cold and foggy Ha Long Bay (t had been February, after all) I was AMAZED to see what I’d missed last time. We spent three days and two nights aboard the Dragon Legend, one of Indochina Junk’s luxury vessels, and it was easily one of the most unforgettable travel experiences we’ve ever had.],
   [Bai Tu Long Bay looks identical to Ha Long in northern Vietnam , with jade-green water and dramatic cliffs rising straight from the sea, but it’s blissfully uncrowded. Most boats stick to Ha Long’s main routes, leaving Bai Tu Long quiet and pristine. That sense of stillness was what made it feel so special. It was the perfect way to wrap up our 5-day trip to the north of Vietnam with our toddler.],
   [As our boat glided through the misty morning light, with nothing but the sound of the waves and birds overhead, I couldn’t believe how few other ships we saw. It truly felt like we had the bay all to ourselves.],
@@ -121,90 +48,26 @@
   [If you’d like to add Bai Tu Long Bay to your Vietnam itinerary, Muse Bespoke Escapes can seamlessly weave it in, pairing your cruise with a stay at Capella Hanoi for the perfect blend of culture, comfort, and quiet adventure.],
   [\*Big thank you to Indochina Junk for hosting us on this cruise. All thoughts of the amazing experience are my own.],
 ),
-  insert-map: (:),
-  word-count: 697,
   edited-for-length: false,
-  debug-mode: false,
 )
 
-  #pull-quote([They were especially wonderful with kids, patient and kind, and always finding ways to make the experience fun and memorable.], [Kristin Addis])
-
-}
 
 {
+  #section-label([Front Page])
   #standard-article(
-  title: [Last Chance! The Madewell Insider Sale Ends This Weekend],
-  author: [Mercedes Viera],
-  source-name: [Refinery29 Fashion],
+  title: [‘A kaleidoscope of colour and life’: readers’ favourite UK spring days out],
+  author: [Guardian readers],
+  source-name: [The Guardian Travel],
   images: (),
   paragraphs: (
-  [Now that 7 p.m. sunsets are here and the days are getting warmer, we’re eager to clean out our closets and refresh them with new spring outfits . But we’re also not looking to break the bank. The solution? Madewell’s Insiders Event !],
-  [The editor- and reader-favorite brand kicked off its bi-annual mega sale to all Madewell Insiders this week, and you’ve got a couple more days to cash in on the deals. Nearly everything is 25% off with an extra 40% off sale styles (automatically applied at checkout when signed in), both online and in stores. It even includes new arrivals and bestsellers !],
-  [From spring must-haves like trending barrel-leg jeans and woven handbags , you can cart up staples and put together head-to-toe outfits — especially while styles are discounted throughout the weekend until March 23 at 2:59 a.m. EST .],
-  [Ahead, see our favorite styles across spring dresses , denim, matching sets, accessories, and more closet staples to shop while this Madewell sale (and supplies) lasts.],
-  [All linked products are independently selected by our editors. If you purchase any of these products, we may earn a commission.],
-  [Madewell is home to some of Refinery29 editors’ favorite petite , curvy, and plus-size jeans — so if they’re not already on your radar this spring, they should be. Many styles come in petite, standard, tall, and plus sizes, making it easy for everyone to enjoy both classic and on-trend silhouettes. Peruse the extensive on-sale jean selection , and cart up your favorite fits.],
-  [Madewell Plus Ultimate Wide-Leg Jean in Airy Denim, \$, available at Madewell],
-  [Flare Crop Jean in Super Stretch Denim],
-  [Madewell Flare Crop Jean in Super Stretch Denim, \$, available at Madewell],
-  [Pieced Barrel-Leg Jeans],
-  [Madewell Pieced Barrel-Leg Jeans, \$, available at Madewell],
-  [Pieced Barrel-Leg Jeans],
-  [Madewell Pieced Barrel-Leg Jeans, \$, available at Madewell],
-  [Emmy Wide-Leg Jean in Super Stretch Denim],
-  [Madewell Emmy Wide-Leg Jean in Super Stretch Denim, \$, available at Madewell],
-  [Madewell Plus Longline Straight Jean, \$, available at Madewell],
-  [Whether you’re after a tried-and-true midi dress that can go from the office to a park to dinner plans, a casual mini dress for weekend jaunts, or a bold maxi for spring parties, Madewell’s dress section has it all. Think breezy linen, smocked poplin, and stretchy denim dresses — a.k.a. materials that keep you prepared for the transitional weather.],
-  [Madewell Cap-Sleeve Ruched Midi Dress, \$, available at Madewell],
-  [Denim Smocked Boatneck Midi Dress],
-  [Madewell Denim Smocked Boatneck Midi Dress, \$, available at Madewell],
-  [Ribbed A-Line Mini Dress],
-  [Madewell Ribbed A-Line Mini Dress, \$, available at Madewell],
-  [Madewell Smocked Boatneck Midi Dress, \$, available at Madewell],
-  [Madewell Denim Perry Shirtdress, \$, available at Madewell],
-  [Madewell Bags, Shoes & Jewelry On Sale],
-  [The cherry on top of every outfit is accessories, and Madewell’s new and bestselling styles are hidden treasures worth carting up ASAP. Need convincing? This woven shoulder bag has gone TikTok-viral several times. Plus, the brand also has tons of luxe suede bags and belts (both editor favorites), not-so-basic sneakers, and a seriously underrated jewelry selection .],
-  [Madewell Signature Woven Tote, \$, available at Madewell],
-  [Madewell Bags, Shoes & Jewelry On Sale],
-  [The cherry on top of every outfit is accessories, and Madewell’s new and bestselling styles are hidden treasures worth carting up ASAP. Need convincing? This woven shoulder bag has gone TikTok-viral several times. Plus, the brand also has tons of luxe suede bags and belts (both editor favorites), not-so-basic sneakers, and a seriously underrated jewelry selection .],
-  [Madewell The Signature Woven Shoulder Bag, \$, available at Madewell],
-  [Three-Pack Sculptural Resin Bangle Bracelet Set],
-  [Madewell Three-Pack Sculptural Resin Bangle Bracelet Set, \$, available at Madewell],
-  [Domed-Buckle Wide Belt],
-  [Madewell Domed-Buckle Wide Belt, \$, available at Madewell],
-  [Madewell The Oaklynne Sneaker, \$, available at Madewell],
-  [Madewell Medium Silk Bandana, \$, available at Madewell],
-  [Madewell Matching Sets On Sale],
-  [We love a matching set , and clearly, Madewell does too. The brand has plenty of coordinating separates across tops, jackets, skirts, pants, and shorts on sale. Snag these discounted pieces together for a head-to-toe look, or mix and match them into your spring lineup for endless versatility.],
-  [Madewell Drawstring Utility Jacket in Airy Denim, \$, available at Madewell],
-  [Madewell The Ultimate Wide-Leg Pant in Airy Denim, \$, available at Madewell],
-  [Poplin Drawstring Button-Up Shirt & A-Line Midi Skirt],
-  [Madewell Drawstring Button-Up Shirt in Poplin, \$, available at Madewell],
-  [Madewell A-Line Midi Skirt in Poplin, \$, available at Madewell],
-  [Linen Button-Front Shell Top & Zoe Relaxed Straight Pant],
-  [Madewell Button-Front Shell Top in 100% Linen, \$, available at Madewell],
-  [Madewell Zoe Relaxed Straight Pant in 100% Linen, \$, available at Madewell],
-  [Denim Seamed Boatneck Shell Top & Slip Midi Skirt],
-  [Madewell Denim Seamed Boatneck Shell Top, \$, available at Madewell],
-  [Madewell Airy Denim Slip Midi Skirt, \$, available at Madewell],
-  [Airy Denim Boxy Crop Button-Up Shirt & Drawstring Short],
-  [Madewell Boxy Crop Button-Up Shirt in Airy Denim, \$, available at Madewell],
-  [Madewell The Drawstring Short in Airy Denim, \$, available at Madewell],
-  [Seasonal changes (and sale events!) are the perfect excuse to refresh your tops for an easy style upgrade. Look to Madewell for elevated wardrobe staples, like casual tees , sweet blouses, preppy polo tops, and professional button-downs that can easily fit into your existing spring wardrobe .],
-  [Madewell The Blaire Top, \$, available at Madewell],
-  [Madewell Relaxed Polo Shirt in Stripe, \$, available at Madewell],
-  [Madewell Smocked Boatneck Tank, \$, available at Madewell],
-  [Madewell The Easy Shirt, \$, available at Madewell],
-  [Boxy Crop Tee in Allday Jersey],
-  [Madewell Boxy Crop Tee in Allday Jersey, \$, available at Madewell],
-  [Madewell The Easy Crop Crewneck Tee in Soft Slub, \$, available at Madewell],
-  [Like what you see? How about some more R29 goodness, right here?],
-  [Early Amazon Deals To Shop Before The Spring Sale],
-  [What To Buy From Ulta's 21 Days Of Beauty],
-  [The Best Weekend Sales Across Fashion & Beauty],
+  [Your top tips for seasonal outings from birdwatching to gorgeous gardens, amazing architecture and more
+• Tell us about a trip to Spain – the best tip wins a £200 holiday voucher],
+  [Last April, I based myself in Oban and took my teenagers puffin-watching at Lunga, off Mull, in the Treshnish Isles, with an organised tour ( Staffa Tours ) by ferry and foot. It was a real delight. The guides were brilliant and helpful, especially with my mobility issues, and we were surprised and amazed at how tame and friendly the puffins were – allowing us to get great views of their faces from as near as 5ft or so. Next spring, we are going again as this is the best time to see them arriving in their thousands.
+ April],
+  [Continue reading...],
 ),
   insert-map: (:),
-  word-count: 1025,
+  word-count: 133,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -212,6 +75,7 @@
 }
 
 {
+  #section-label([Features])
   #standard-article(
   title: [The Amex Platinum Card: Why It’s Worth it],
   author: [Kristin Addis],
@@ -299,52 +163,79 @@
 
 }
 
-#article-row((
-  [
-    standard-article(
-  title: [Slow train to Turin: a winter journey through the Swiss Alps to Italy],
-  author: [Jonnie Bayfield],
-  source-name: [The Guardian Travel],
-  images: (),
-  paragraphs: (
-  [By travelling during the day on scenic routes, travellers can soak up spectacular landscapes before taking in Turin’s cultural heritage],
-  [Is there a better sensation for a traveller than when a train speeds out of a tunnel? The sudden flood of light, that howling rush of air. Clearly, it’s not just me who thinks trains are the new (old) planes, with 2025 having seen a 7% rise in UK train travel, and more Europeans than ever looking to hit the rails.],
-  [It’s late December, and I’m heading out on a slow-train journey across the historic railways of the Swiss Alps and the Italian lakes. It’s a trip of roughly 1,800 miles (2,900km), crossing five countries, almost entirely by scenic daytime trains.],
-  [Continue reading...],
-),
-  insert-map: (:),
-  word-count: 123,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-  ],
-  [
-    standard-article(
-  title: [V-Cut Flats Are The 2026 Way To Shop The Ballet Shoe Trend],
-  author: [Ruby Ford-Dunker],
+{
+  #standard-article(
+  title: [Spring 2026 Shoe Trends Are Freakier Than Ever: See Our Top 9],
+  author: [Andrea Bossi],
   source-name: [Refinery29 Fashion],
   images: (),
   paragraphs: (
-  [Photo Credit: Joey Andrew],
-  [Ballet flats are undoubtedly one of this season’s defining trends , with the dainty footwear taking over storefronts, closets, and sidewalks alike. Whether rendered as slingbacks, wrap-ties, or Mary Janes, the preppy silhouette is always chic and inherently sweet. But now, a more sophisticated (and dare I say edgy) variation has entered the chat: V-cut flats.],
-  [Major fashion houses can be credited for the surge in angular vamps, with the Chanel pre-fall collection , full of sharp two-tone iterations and Stella McCartney’s spring runway featuring ruby-red takes. These designs prove that the streamlined footwear can take on softer, rounded cuts or dramatic, pointed uppers—much like V-neck sweaters, where some dips are deep and others are barely noticeable. Still, it remains a tapered cut, where the tiniest detail makes all the difference. But the footwear trend didn’t start or end on the catwalk.],
-  [Hollywood It girls have been donning ballet shoes like clockwork, with Kendall Jenner spotted in a black-seamed pair styled alongside an athleisure set. Meanwhile, Zoë Kravitz wore her own V-cut shoes with a flowing dress, and Katie Holmes styled hers with a tiered maxi skirt and simple tee. The wide range of style aesthetics proves how versatile the geometric footwear is, seamlessly integrating into a range of wardrobes—even for those of us who aren’t followed by the paparazzi.],
-  [V-cut flats aren’t only closet friendly, but they’re chameleon-like. Whether you’re headed to the office, grabbing rooftop drinks, or are jet-setting off to your next getaway , the multi-purpose style adapts to a variety of occasions. The appeal lies in the footwear’s streamlined look, consisting of sleek lines, staple hues, and polished details.],
-  [Both luxury designers and more accessible options are also up for grabs, ensuring everyone can find their perfect V-cut flats, no matter the budget. The Row Stella Leather Slippers offer a chocolate-brown glove version, while the Reformation Blaine Flats deliver a minimalist approach. Maximalists may gravitate towards the Anthropologie corset shoes or the Khaite embroidered Marcy Flats .],
-  [If you’re ready to add a pair of polished V-cut flats to your lineup, the below picks are sure to impress.],
+  [As fashion moves away from the clutches of “quiet luxury” and minimalist beige looks, footwear is feeling more fun than ever. In fact, shoes are in their freaky era .],
+  [“Everyone is embracing their whimsy. We’ve moved past quiet luxury, and we’re even numb to logo mania. Style right now is about self-expression, individuality, and having fun with what you wear,” designer Larissa Muehleder tells Refinery29 of what’s defining today’s shoe trends.],
+  [This spring, the coolest kicks are a spirited extension of the self, whether they’re a classic silhouette made with a non-traditional material or a retro style that’s been reborn. We’re not just talking about Tabis, traditionally Japanese footwear with a split-toe, which have been popularized by Maison Margiela. Instead, this season’s eccentric styles toy with the familiar to create something fresh, whether they came from a runway or seem more inspired by street style .],
+  [Read on for the top shoe trends that will dominate the transitional season, like high-vamp heels on the brink of a viral explosion thanks to Chanel’s revival , as well as playfully embellished styles that make florals actually feel groundbreaking for spring.],
+  [DashDividers\_1\_500x100],
+  [Low-Profile Sneakers],
+  [We’re in an era of “minimalist and slim sneakers that are more so lifestyle silhouettes and not designed for working out,” according to women’s sports expert and editor Vinciane Ngomsi . Rather than the bejeweled kicks or chunky dad shoes of recent years, today’s favorite sneakers have gone back to basics, usually championing a slim, low profile that feels reminiscent of nostalgic styles.],
+  [In the same vein, ballerina sneakers — often shortened to “sneakerinas” and also made with thin soles — are having their moment amid this retro-style revival. “There’s a softness and romanticism that continues to evolve in really fresh ways with this \[ballet-inspired\] aesthetic, and it takes us back to the dance aerobics of the ‘80s,” Muehleder says.],
+  [DashDividers\_1\_500x100],
+  [Strappy sandals, with or without heels, are a reliable springtime classic, at least when “fake spring” is over. What makes the look stand out today is how it’s been tweaked from the typically neutral-hued leather version to something more personality-forward. The coolest strappy sandals right now feature dainty straps, colorful finishes, and jewelry-inspired details. “Even with simpler outfits, people want one piece that feels like a conversation starter and right now, that piece is either the handbag or the shoe,” stylist and Vin. designer Claudia Li Johnson says. Strappy sandals are an easy way to get the job done.],
+  [DashDividers\_1\_500x100],
+  [High-Vamp Heels],
+  [Interestingly, a more modest-looking heel has been taking over fashion. Enter, high-vamp heels, distinct for their uppers that cover a noticeable amount of the top of the foot. These, also known as glove pumps , are no longer your grandma’s heels.],
+  [Instead, today’s versions of these vintage-inspired shoes are being made to feel fresh as designers reimagine them in funky colors and singular heel shapes. Chanel — which seems to have been on the lips of all the fashion girls when its spring collection hit shelves mid-March, designed by Creative Director Matthieu Blazy — gave the look a boost thanks to its own array of high-vamp heels .],
+  [DashDividers\_1\_500x100],
+  [Breathable Ballet Flats: Mesh, Jelly, & Crochet],
+  [The mesh ballet flat moment may have first exploded years ago, thanks to then-creative director Pieter Mulier’s new Alaïa design , but the look is still going strong, albeit with modifications. Breathable, sheer styles remain trendy this spring, and it’s not just about mesh anymore. Jelly and crochet, which tend to channel a more fun and colorful vibe, are now dominating.],
+  [Getting ballet flats in jelly materials can also be a lifehack for saving cash when buying designer. After all, they tend to be the cheaper option when looking for a “luxury” version of the ballet flat. For example, just look at Jimmy Choo’s jelly flat that retails for \$495 in comparison to a similar style made in leather that sells for \$950.],
+  [DashDividers\_1\_500x100],
+  [It’s a slingback spring . Though the heeled design of these shoes seems antithetical to comfort, these are a favorite for exactly that reason. Thanks to their mostly open foot and typically lower heel, slingbacks are a great choice for that in-between weather where you still want to walk with ease.],
+  [“As a designer, it genuinely makes me happy to see women embracing their inner child,” Muehleder, who launched her eponymous line in 2014, says. “Authenticity doesn’t have an age limit. Style comes from what ignites joy in you, not what you think is expected of you.”],
+  [There’s no one right way to wear slingbacks. Pick your color and heel height based on what feels best for your personal style. A butter yellow slingback with a kitten heel does just as well as a designer pair that’s slightly taller with bows sewn onto the sides.],
+  [DashDividers\_1\_500x100],
+  [Peep-Toe Mules],
+  [Heels this spring will strongly feature a flash of toe, but rather than full-on pumps, it’s all about mules. These trendy peep-toe styles shine best in buttery leathers, decadent satins, and shimmery patents. For Li Johnson, this shoe’s appeal is in the balance between its jolt of newness with what’s familiar. “It feels less expected than a classic pump, but just as easy to wear,” she adds.],
+  [DashDividers\_1\_500x100],
+  [Flip flops have cast a spell on today’s fashion scene. These thong heels inspired by the classic, relaxed warm-weather shoe seem to be everywhere. Designer labels like Balenciaga and Michael Kors made them a focal point in footwear on their respective Spring/Summer 2026 runways. The best part? Trendy thong sandals don’t all look one way. There’s a great diversity in the shoppable shapes, fabrications, and finishes of this style. Each can be its own conversation starter.],
+  [DashDividers\_1\_500x100],
+  [Sneakers may be in a more pared-back era, but there’s a genre of heels that’s unmistakably on the opposite side of that spectrum. It’s a fun moment in footwear, where “pieces with embellished finishes, appliqués, and anything that speaks before you do \[have\] become highly covetable,” Ngomsi tells Refinery29.],
+  [Heels with pom poms and naturalistic adornments — like Dior’s highly anticipated lily-decorated heels — are queen. Florals for spring might actually feel groundbreaking for once thanks to these beautiful facsimile flowers sewn onto the shoe. These “just instantly make an outfit feel more unique and whimsical,” Li Johnson adds.],
+  [DashDividers\_1\_500x100],
+  [Toe-Ring Sandals],
+  [Perhaps near or at the top of the freaky footwear food chain are toe-ring sandals, which range from being heeled or being low to the ground, but always have some sort of contraption encircling the big toe. These feel playful, without being too fussy or putting comfort on the line. Rather than being born from a long list of recent runways, these feel like a continuation of recent years’ hit shoes . But the ones popular in 2026 span a wider range of styles embellished with jewelry-like touches to plain leather pieces.],
   [Like what you see? How about some more R29 goodness, right here?],
+  [Wedges Are Back—Here’s The 2026 Way To Wear Them],
+  [The 2026 Shoe Trends Dominating The Market],
+  [Capris Are Back—Here’s The Cool Way To Wear Them],
 ),
   insert-map: (:),
-  word-count: 368,
+  word-count: 1188,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+}
+
+#article-row((
+  [
+    standard-article(
+  title: [‘In Switzerland, it’s possible to sledge between two railway stations’: readers’ favourite family adventures in Europe],
+  author: [Guardian readers],
+  source-name: [The Guardian Travel],
+  images: (),
+  paragraphs: (
+  [Alpine playgrounds, unforgettable train rides and white-water rafting feature in our readers’ family trips from Norway to the Netherlands],
+  [• Tell us about a trip to a UK national park or national nature reserve – the best tip wins a £200 holiday voucher],
+  [Travelling by rail in Europe gives you plenty of opportunity for ad-hoc adventure. We were returning from a ski trip in Italy and took the Bernina Express part of the way. We’d heard that if you disembark at Bergün, leave your luggage at the station and take the train back one stop to Preda village it’s possible to sledge between the two stations. So there we found ourselves renting traditional wooden sledges from Preda and walking the short distance to the start of the tobogganing run. What we thought might be a gentle run into town turned into a fast and fun-filled couple of hours as we hurtled down the tree-lined course. At times it felt like we were in the game Mario Kart and at one point a children’s birthday party overtook us, the birthday girl’s sledge trailing balloons. About 5 miles later we arrived back in Bergün, before continuing our train journey onwards.],
+  [Continue reading...],
+),
+  insert-map: (:),
+  word-count: 202,
   edited-for-length: false,
   debug-mode: false,
 )
 
   ],
-), ruled-indices: (1,))
-
-#article-row((
   [
     standard-article(
   title: [miso chicken and rice],
@@ -362,42 +253,26 @@
 )
 
   ],
-  [
-    standard-article(
-  title: [‘I have the island to myself’: how to be a castaway in Cornwall],
-  author: [Carol Donaldson],
-  source-name: [The Guardian Travel],
-  images: (),
-  paragraphs: (
-  [Book an overnight stay in the cosy smuggler’s cottage on Looe Island and you get to enjoy this marine nature reserve after the day trippers have gone home],
-  [It is just after dawn and from a viewpoint on Looe Island, Cornwall, I watch two seals on the beach below. The pair entwine in the surf, her freckled, creamy belly against his, flippers wrapped around each other, eyes closed in blissful bonding. I feel like a peeping Tom, watching from behind a bush. It feels too intimate a moment to be spying upon, but the emerald-eyed cormorants guarding the beach seem unbothered.],
-  [I had arrived on Looe Island, also known as St George’s Island, off the south coast of Cornwall, the previous morning via the romantically named Night Riviera sleeper train from London, changing early in the morning in Liskeard, then 15 minutes across the waves in a small fishing boat. The island is managed by the Cornwall Wildlife Trust and can only be accessed on organised visits, and while most people come on day trips, I’m staying for a little longer. I have come loaded down with all the food and bedding I will need for my three-night visit, but also with the mental baggage of workaday life. Now, that weight lifts as I watch the male seal court his lady in the shallows.],
-  [Continue reading...],
-),
-  insert-map: (:),
-  word-count: 226,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-  ],
 ), ruled-indices: (1,))
+#pull-quote([So there we found ourselves renting traditional wooden sledges from Preda and walking the short distance to the start of the tobogganing run.], [Guardian readers])
+
 
 #article-row((
   [
     standard-article(
-  title: [‘A scramble down to a gorgeous expanse of beach’: readers’ favourite unsung places in Wales],
+  title: [‘No cars, unspoilt beaches and seabirds rule’: readers’ favourite European island escapes],
   author: [Guardian readers],
   source-name: [The Guardian Travel],
   images: (),
   paragraphs: (
-  [From magical swimming spots to museums and pizza joints, our readers share their top Welsh discoveries],
-  [I’m a fan of the lesser-known beaches along the dramatic and rugged Glamorgan Heritage coastline ; Wick, Monknash and Nash Point. One of my favourite routes requires a scenic hike across fields and a precipitous scramble down Cwm Bach ladder. The reward is a gorgeous expanse of rocky beach with only the occasional distant naturist and huge stepped cliffs absolutely full of fossils, including some enormous ammonites. The nearby ancient Plough & Harrow feels like a step back in time and you’re being served beer in someone’s living room.
- P Thomas],
+  [From the rugged north of Scotland to the glittering Aegean, our tipsters recommend islands for slowing down, lazing around and taking in nature
+• Tell us about a spring activity or day out – the best tip wins a £200 holiday voucher],
+  [A short ferry ride from Vigo (daily and overnight visitor numbers are capped) took us to the tiny archipelago of the Cíes Islands , a protected cluster of islands where seabirds rule and tiny beaches remain unspoilt. There are no cars on the island and only a few small restaurants dotted about. There is one campsite, with little else but the waves of the Atlantic to lull you to sleep. I felt as if I had won the lottery when we visited and knew this would be an experience not easily matched.
+ Helen E],
   [Continue reading...],
 ),
   insert-map: (:),
-  word-count: 109,
+  word-count: 138,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -405,18 +280,18 @@
   ],
   [
     standard-article(
-  title: [‘It’s like having a friend everywhere you travel’: after 12 home exchanges, I’ll never book a hotel again],
-  author: [Rory Boland],
+  title: [Walking with the weavers 200 years after the Lancashire uprising],
+  author: [Chris Moss],
   source-name: [The Guardian Travel],
   images: (),
   paragraphs: (
-  [The Which? travel editor on the unexpected joys and considerable savings of house swapping. Plus top tips on how to do it],
-  [Imagine cutting the cost of accommodation on your next holiday to about £5 a day. You can have a whole house, rather than just a bedroom. And you can go almost anywhere in the world and stay as long as you like, within reason. Welcome to house swapping.],
-  [You’re sceptical, I know. I was, too. Our terrace house was too small. Too overflowing with stuff. The 1980s kitchen was too old (and battered). We aren’t in a nice enough neighbourhood. Who would want to stay here? Lots of people, it turned out.],
+  [Former mill towns in the West Pennine Moors tell the story of the workers’ rebellion against power looms, the new machines decimating their livelihoods],
+  [There’s a massive hole in the ground at the top of Whinney Hill – a shale quarry that once supplied raw materials for Accrington’s famous Nori brickworks (as used in the Empire State Building and Blackpool Tower). It’s fitting, as there’s a chasm in history when it comes to this unprepossessing spot on the edge of the West Pennine Moors.],
+  [On the morning of 24 April 1826, about 1,000 weavers met on the hilltop to plan their day and, no doubt, get the lie of the land and the weather before setting off. A banking crisis in December of the previous year – dubbed the Panic of 1825 by historians – had hammered the cotton industry. Lancashire’s weavers, who had already suffered years of declining wages and living standards, faced destitution and even starvation.],
   [Continue reading...],
 ),
   insert-map: (:),
-  word-count: 116,
+  word-count: 160,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -427,18 +302,59 @@
 #article-row((
   [
     standard-article(
-  title: [On the trail of the Romantics in the Welsh borders],
-  author: [Alice Fisher],
+  title: [Holy parades and earthly pleasures in Spain: Easter in Granada],
+  author: [Kitty Corrigan],
   source-name: [The Guardian Travel],
   images: (),
   paragraphs: (
-  [The ruins of Tintern Abbey have inspired artists and poets. Now, the restoration of a historic inn has given visitors a perfect base for exploring this corner of Monmouthshire],
-  [Standing in Tintern Abbey, you can feel the magic that has given this small Monmouthshire village on the banks of the Wye and its famous ruin such an outsized place in culture. JMW Turner, Gainsborough and Samuel Palmer are just some of the artists who have captured this landscape, and Wordsworth and Tennyson famously wrote poems inspired by Tintern. But it was Allen Ginsberg’s Welsh Visitation and his “clouds passing through skeleton arches” that came to mind while I sheltered from a cloudburst in the abbey’s nave. It’s a vast and fascinating site, and seeing it through sheets of rain as the sun went down was really special.],
-  [Ginsberg was here in the 1960s, following in the footsteps of the Romantics. But Tintern’s fame came thanks to its inclusion in travel writer William Gilpin’s 1782 book Observations on the River Wye. Gilpin’s writing about the “picturesque” – landscapes that inspired art through their rugged beauty – was so popular in the late 18th century that the Wye Tour was created to meet tourist demand, one of the first package trips in British travel history.],
+  [The ancient city – with its gardens, hammams and Moorish architecture – comes alive in spring and its Holy Week processions are among the most authentic in Andalucía],
+  [As I turned the corner on a narrow, cobbled street in Granada, I felt as if I had stumbled upon a slightly sinister re-enactment society. Mysterious men dressed in white robes and tall, conical, face-covering hats with slits for their eyes were followed by women in black dresses and mantillas , holding pillar candles and crosses, then children wearing caped cloaks, carrying baskets of prayer cards.],
+  [It was indeed a re-enactment of sorts, but deeply rooted in Catholicism, representing the Passion of Christ, staged during Holy Week ( Semana Santa ), which runs from 29 March to 5 April this year. Easter processions are held across the country, but this Andalucían city hosts one of the most authentic in Spain.],
   [Continue reading...],
 ),
   insert-map: (:),
-  word-count: 215,
+  word-count: 150,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+  ],
+  [
+    standard-article(
+  title: [‘Children see magic in the smallest adventures’: exploring Scotland with my four-year-old],
+  author: [Phoebe Smith],
+  source-name: [The Guardian Travel],
+  images: (),
+  paragraphs: (
+  [On a tight budget, we stayed in a bothy, climbed a mountain, looked for Nessie and – best of all – made memories that money can’t buy],
+  [‘There! There – I can see it!” The cries of my four-year-old echoed around the ruins of 13th-century Urquhart Castle , causing a group of US tourists to come running over to the corbelled bartizans (overhanging turrets) where we stood. “It’s Nessie, I saw her,” he insisted, pointing at the ripples spinning out from the back of a sightseeing vessel on Loch Ness.],
+  [This was day four of a budget, week-long Scotland adventure for the two of us, and we were spending the day in Drumnadrochit, on the shores of the country’s most famous body of water, looking for the fabled monster.],
+  [Continue reading...],
+),
+  insert-map: (:),
+  word-count: 131,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+  ],
+), ruled-indices: (1,))
+
+#article-row((
+  [
+    standard-article(
+  title: [‘The intimate and the epic’: the best way to understand India is to travel by train],
+  author: [Rahul Bhattacharya],
+  source-name: [The Guardian Travel],
+  images: (),
+  paragraphs: (
+  [Being a passenger in this vast country is ‘a full-blooded immersion in the local’, says the novelist whose latest protagonist is lured by the romance of the rails],
+  [I carry my train journeys in my bones, the juddering song of the Indian rail. Our first prime minister, Jawaharlal Nehru, famously likened India to a palimpsest, no layer quite effacing the one that went before. That’s how I think of Indian railway journeys. They inscribe on the mind our fellow travellers, our ways, our thousand languages, our landscapes, our climate.],
+  [I think of a rail journey I made in 1998 – that brutal summer of nuclear testing – setting out from Mumbai, in an ordinary three-tier sleeper, for Dehradun, 1,000 miles (1,600km) north. The frazzled train fell off any semblance of a schedule. The voyage grew longer, past 50 hours; hotter, past 50C. I remember the metallic burn on the window grilles; the hot, killing wind that blew through them; the sizzle of water drops splashed on the face when theyhit the uncovered platforms in the heart of the country; the melt of my rubber soles. A fortnight later, having trekked to the mouth of a tributary of the Ganges, completing my expedition from the Arabian Sea to a Himalayan glacier, it was possible to look back on the rail ordeal with affection.],
+  [Continue reading...],
+),
+  insert-map: (:),
+  word-count: 224,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -509,18 +425,18 @@
 #article-row((
   [
     standard-article(
-  title: [‘The intimate and the epic’: the best way to understand India is to travel by train],
-  author: [Rahul Bhattacharya],
+  title: [New sleeper service will run from Paris to Berlin next year],
+  author: [Monisha Rajesh],
   source-name: [The Guardian Travel],
   images: (),
   paragraphs: (
-  [Being a passenger in this vast country is ‘a full-blooded immersion in the local’, says the novelist whose latest protagonist is lured by the romance of the rails],
-  [I carry my train journeys in my bones, the juddering song of the Indian rail. Our first prime minister, Jawaharlal Nehru, famously likened India to a palimpsest, no layer quite effacing the one that went before. That’s how I think of Indian railway journeys. They inscribe on the mind our fellow travellers, our ways, our thousand languages, our landscapes, our climate.],
-  [I think of a rail journey I made in 1998 – that brutal summer of nuclear testing – setting out from Mumbai, in an ordinary three-tier sleeper, for Dehradun, 1,000 miles (1,600km) north. The frazzled train fell off any semblance of a schedule. The voyage grew longer, past 50 hours; hotter, past 50C. I remember the metallic burn on the window grilles; the hot, killing wind that blew through them; the sizzle of water drops splashed on the face when theyhit the uncovered platforms in the heart of the country; the melt of my rubber soles. A fortnight later, having trekked to the mouth of a tributary of the Ganges, completing my expedition from the Arabian Sea to a Himalayan glacier, it was possible to look back on the rail ordeal with affection.],
+  [European Sleeper will operate the new service from March 2026, replacing the Nightjet train that is being axed next month],
+  [The resurgence of sleeper trains on the continent hit a kink in the tracks in September, when the Austrian state operator ÖBB announced that it would be axing its two Nightjet services – Paris to Vienna and Paris to Berlin – from 14 December. ÖBB cited the French government’s ending of subsidies, dealing a blow to the night-train renaissance .],
+  [However, there is light at the end of the tunnel. European Sleeper has told the Guardian that it will be taking over the route from Paris to Berlin, with the first train to run on 26 March 2026. The train will operate three times a week with departures likely to be from Paris Gare du Nord on Tuesday, Thursday and Sunday evenings and the return service from Berlin Hauptbahnhof and Ostbahnhof on Monday, Wednesday and Friday. The current Nightjet service departs Paris Gare de l’Est just after 7pm and winds east via Strasbourg, Frankfurt, Erfurt and Halle before arriving in Berlin around 8.30am. European Sleeper intends to make the journey via Brussels, with precise route details and timings currently being confirmed with infrastructure managers in France, Belgium and Germany.],
   [Continue reading...],
 ),
   insert-map: (:),
-  word-count: 224,
+  word-count: 211,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -544,147 +460,106 @@
 
   ],
 ), ruled-indices: (1,))
-#pull-quote([I think of a rail journey I made in 1998 – that brutal summer of nuclear testing – setting out from Mumbai, in an ordinary three-tier sleeper, for Dehradun, 1,000 miles (1,600km) north.], [Rahul Bhattacharya])
-
-
-{
-  #standard-article(
-  title: [Seven of the best music festivals to visit by train from the UK],
-  author: [Ben Beaumont-Thomas],
-  source-name: [The Guardian Travel],
-  images: (),
-  paragraphs: (
-  [From jazz in Rotterdam and hip-hop in Paris to brass bands on the beach in Blackpool, the Guardian’s music editor chooses the best European festivals that can be reached by rail],
-  [Paris has some great festivals, such as Cercle (22-24 May), with dance music stars against the backdrop of planes and rockets in an outdoor aerospace museum, but the most accessible and democratic is Fête de la musique, which began in Paris in 1982 but is now popular across the country. It is a loose event encompassing dozens of free, semi-impromptu outdoor performances all over each host city, including plenty in Lille, which is even cheaper and quicker to get to than Paris on the Eurostar from London.],
-  [Continue reading...],
-),
-  insert-map: (:),
-  word-count: 120,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-}
 
 {
   #section-label([Analysis])
   #brief-group((
-    #brief-item([Stacy Randall], source-name: [IKEA Hackers], [Since launching in January 2025, this snap-together storage range has been quietly conquering DIY forums—one hack at a time. The IKEA LÅDMAKARE range offers a straightforward way to create almost endless configurations without a lot of measuring or cutting. People also love the mix of open and closed storage. Will it replace the ever-popular BILLY bookcase? Probably not. But one thing is for sure, we will be seeing more LÅDMAKARE hacks to come. Case in point: Reddit user GrantDigital, who […]])
-
-    #brief-item([Adrianna Adarme], source-name: [A Cozy Kitchen], [This Miso Lemon Salmon is quick, easy, and comes together in under 20 minutes. It’s the perfect weeknight meal that…
+    [#brief-item([Jules Yap], source-name: [IKEA Hackers], [A new IKEA study has confirmed what many of us have suspected while staring into cluttered cabinets: our kitchens just aren’t working for us. The good news? You don’t need a full renovation to turn things around. According to the IKEA Cooking & Eating Report 2026, one of the largest studies of its kind, surveying over 31,000 people across 31 countries, fewer than one in three of us are actually happy with our kitchens. And the number one culprit? Space. \[…\]])],
+    [#brief-item([Adrianna Adarme], source-name: [A Cozy Kitchen], [This Miso Lemon Salmon is quick, easy, and comes together in under 20 minutes. It’s the perfect weeknight meal that…
 
  ( Read more... ) 
 
 Tags: 30 Minute Meal Dinner Healthy lunch Quick and Easy 
 
-The post Easy Miso Lemon Salmon appeared first on A Cozy Kitchen .])
+The post Easy Miso Lemon Salmon appeared first on A Cozy Kitchen .])],
+    [#brief-item([Nicole Samoroukova], source-name: [The Reformed Broker (Josh Brown)], [On episode 118 of The Compound and Friends, Michael Batnick and Downtown Josh Brown are joined by Kevin Simpson to discuss: covered call strategies, the Fed, Warren Buffett’s latest moves, and much more!
+You can listen to the whole thing below, or find it wherever you like to listen to your favorite pods!
 
-    #brief-item([Nicole Samoroukova], source-name: [The Reformed Broker (Josh Brown)], [Join Downtown Josh Brown and Michael Batnick for another round of What Are Your Thoughts? On this week’s episode, Josh and Michael discuss the biggest topics in investing and finance, including:
-►Year End Rally – Choose your weapon – tech almost always leads bull markets.
-►Calm Breaks Out – One man’s calm is another man’s euphoria?
-►Record Corporate Profits – What should accompany ...
+Listen here:
+Apple podcasts
+Spotify podcasts
+Google podcasts
+Everywhere else! 
+Follow Michael’s blog at�...
 
-The post Small Cap Tech Stocks Are Taking Off appeared first on The Reformed Broker .])
+The post The Fed’s Gonna Cut appeared first on The Reformed Broker .])],
+    [#brief-item([Jules Yap], source-name: [IKEA Hackers], [The GREJIG wire shoe rack was always just … there. Doing its job quietly. Now IKEA has built a whole system around it. The IKEA GREJIG shoe rack has never been a headline product. It’s a single-tier wire rack that holds your shoes and costs \$4.99. It works. It doesn’t ask for much. Most people who own one barely remember buying it. Which makes what IKEA has just done with the range all the more interesting. GREJIG is now a \[…\]])],
+    [#brief-item([Nicole Samoroukova], source-name: [The Reformed Broker (Josh Brown)], [OK, we’re trying something new next week for registered financial advisors only. It’s a brand new show we’ve created and you can be there virtually to watch the pilot episode live. As an advisor, you’re going to spend time, money and energy implementing new technology and asset management solutions into your practice. You may as well get good at it.
+register for The Smoke Show live pilot episode h...
 
-    #brief-item([Gina Homolka], source-name: [Skinnytaste], [This lighter, make-ahead overnight baked French toast casserole with Bananas Foster is guaranteed to impress—perfect for Easter morning or any special brunch! Bananas Foster French Toast The challah bread in this French toast casserole absorbs the eggy custard, flavored with vanilla and cinnamon, overnight. The next morning, while it bakes in the oven, you’ll whip […]])
+The post The Smoke Show appeared first on The Reformed Broker .])],
+    [#brief-item([Gina Homolka], source-name: [Skinnytaste], [My homemade Greek salad dressing recipe is simple, fresh, and brightly tangy, but I add an optional secret ingredient that makes it next-level delicious. Scale it up for a party, or scale it down to make a salad for one! Homemade Greek Dressing Recipe There’s absolutely no reason to buy Greek salad dressing at the \[…\]])],
+    [#brief-item([Lale Arikoglu], source-name: [Condé Nast Traveler], [For her latest season with CNN, actor Eva Longoria pursues a passion for French cooking. Lale Arikoglu joins her on set in Burgundy.])],
+    [#brief-item([Joshua M Brown], source-name: [The Reformed Broker (Josh Brown)], [Ladies and gentlemen, this is the final post I will be publishing at The Reformed Broker.
+After today the site will be inactive, forever. I began this blog in November 2008 without any idea where it would take me. I had a negative net worth, was working at a dead-end brokerage firm job and absolutely no career prospects whatsoever – a washed up stock broker at 31 years old in the middle of a global financial crisis....
 
-    #brief-item([Lale Arikoglu], source-name: [Condé Nast Traveler], [For her latest season with CNN, actor Eva Longoria pursues a passion for French cooking. Lale Arikoglu joins her on set in Burgundy.])
-
-    #brief-item([Stacy Randall], source-name: [IKEA Hackers], [The IKEA EKET collection offers versatile storage options that can inspire your next DIY project, empowering you to customize your space. But if you can’t find exactly what you want, don’t worry, there’s a hack for that. Actually, there’s a bunch. These ideas can help you personalize the EKET series and make your space truly yours. Here are 13 interesting ways to reimagine the EKET in your home. Which one will you try first? 13 IKEA EKET Hacks To Inspire […]])
-
-    #brief-item([Gina Homolka], source-name: [Skinnytaste], [Bell Pepper and Potato Frittata. Egg frittatas are my answer to an easy, inexpensive meal solution whether I’m having it for breakfast, lunch or dinner. I served these with a side of berries or fruit. For dinner, I serve with a salad on the side and call it a meal! Four-Leaf Clover Frittata This Bell […]])
-
-    #brief-item([deb], source-name: [Smitten Kitchen], [class="smittenkitchen-print-hide"\>
+The post This is the end appeared first on The Reformed Broker .])],
+    [#brief-item([Gina Homolka], source-name: [Skinnytaste], [Bell Pepper and Potato Frittata. Egg frittatas are my answer to an easy, inexpensive meal solution whether I’m having it for breakfast, lunch or dinner. I served these with a side of berries or fruit. For dinner, I serve with a salad on the side and call it a meal! Four-Leaf Clover Frittata This Bell \[…\]])],
+    [#brief-item([deb], source-name: [Smitten Kitchen], [class="smittenkitchen-print-hide"\>
  
 
  Although spinach gnudi — soft, pillowy cheese dumplings fried in browned butter and sage — are traditionally more of a spring or summer food, I’m here to make the argument we should eat them right now, in prime soup-and-sweater weather. Because did you hear the part about warm cheese? the puddle of brown butter? the earthy sage? It’s a symphony of delicious fall things and if you tell me you don’t want to curl up on the plate and take a nap in it, fine, I’ll believe you but I do think you’re in denial.
 
- Read more »])
-
-    #brief-item([Stacy Randall], source-name: [IKEA Hackers], [Cluttered countertops are the Achilles’ heel of kitchens. Think about it. It doesn’t matter how amazing your kitchen is; if the counters are packed, any desire you had to meal prep or cook disappears. I mean, who wants to pull out a bunch of stuff to cook when they’re already short on counter space? On top of that, it’s harder to clean, and you just feel overwhelmed. The next thing you know, you’re ordering take-out…again! Franziska found a way to […]])
-
-    #brief-item([Adrianna Adarme], source-name: [A Cozy Kitchen], [This Steak Salad with Creamy Chimichurri Dressing is crisp, herby, and satisfying without feeling heavy. Quick-seared steak, tender greens, and…
+ Read more »])],
+    [#brief-item([Adrianna Adarme], source-name: [A Cozy Kitchen], [This Steak Salad with Creamy Chimichurri Dressing is crisp, herby, and satisfying without feeling heavy. Quick-seared steak, tender greens, and…
 
  ( Read more... ) 
 
 Tags: Chimichurri Dinner Dinner for Two Healthy lunch no-toc Salad Steak 
 
-The post Steak Salad with Creamy Chimichurri Dressing appeared first on A Cozy Kitchen .])
+The post Steak Salad with Creamy Chimichurri Dressing appeared first on A Cozy Kitchen .])],
+    [#brief-item([Gina Homolka], source-name: [Skinnytaste], [This lighter, make-ahead overnight baked French toast casserole with Bananas Foster is guaranteed to impress—perfect for Easter morning or any special brunch! Bananas Foster French Toast The challah bread in this French toast casserole absorbs the eggy custard, flavored with vanilla and cinnamon, overnight. The next morning, while it bakes in the oven, you’ll whip \[…\]])],
+    [#brief-item([Gina Homolka], source-name: [Skinnytaste], [Roasted Carrot Hummus is a creamy dip made with sweet roasted carrots, chickpeas, tahini, garlic, and lemon. It’s a bright, flavorful appetizer perfect for spring gatherings and Easter. Roasted Carrot Hummus My friend made this Roasted Carrot Hummus and was so excited for me to try it that I had to recreate it at home. \[…\]])],
+    [#brief-item([Tamara Hinson], source-name: [Condé Nast Traveler], [From the neon-drenched skyline of Hồ Chí Minh City to the rural splendour of mountainous Northern Vietnam, here’s how to spend two glorious weeks in this South East Asian paradise])],
+    [#brief-item([Hannah Chubb], source-name: [Condé Nast Traveler], [Refresh your wardrobe with six rental styles a month for less using these Nuuly promo codes, including \$15 off and exclusive student savings.])],
+    [#brief-item([Joshua M Brown], source-name: [The Reformed Broker (Josh Brown)], [“Armed to the teeth.” This is the phrase that came to mind as I was watching Josh Smith walk us through the demo of VRGL last week. I thought to myself it would be impossible for a mediocre financial advisor to hold onto a client relationship if something like this were in use by a rival advisor.
+The ability to show a prospective client this level of transparency on taxes, fees, allocation decision-making, etc...
 
-    #brief-item([Gina Homolka], source-name: [Skinnytaste], [My go-to tomato soup recipe that’s easy to make with canned tomatoes, carrots, celery, garlic, fresh herbs and Parmesan for a rich, delicious soup the whole family loves. Easy Tomato Soup From Canned Tomatoes Whenever I bake sourdough bread and crave a soup to go with it, I usually make this easy tomato soup. It’s […]])
-
-    #brief-item([Tamara Hinson], source-name: [Condé Nast Traveler], [From the neon-drenched skyline of Hồ Chí Minh City to the rural splendour of mountainous Northern Vietnam, here’s how to spend two glorious weeks in this South East Asian paradise])
-
-    #brief-item([Gina Homolka], source-name: [Skinnytaste], [Easy honey butter glazed carrots made on the stovetop—tender, lightly sweet, and perfect for Easter dinner, Thanksgiving, or any holiday meal. Honey Glazed Carrots My cousin makes these Honey-Butter Glazed Carrots every holiday, and they’re great for when you don’t want to use your oven. The carrots simmer gently on the stovetop with butter, honey, […]])
-
-    #brief-item([Hannah Chubb], source-name: [Condé Nast Traveler], [Refresh your wardrobe with six rental styles a month for less using these Nuuly promo codes, including \$15 off and exclusive student savings.])
-
-    #brief-item([Adrianna Adarme], source-name: [A Cozy Kitchen], [These Animal Style Fries are crispy, cheesy, and topped with sweet caramelized onions and tangy burger sauce. This recipe is…
+The post Armed to the Teeth appeared first on The Reformed Broker .])],
+    [#brief-item([Adrianna Adarme], source-name: [A Cozy Kitchen], [These Animal Style Fries are crispy, cheesy, and topped with sweet caramelized onions and tangy burger sauce. This recipe is…
 
  ( Read more... ) 
 
 Tags: Comfort Food game day Side Vegetarian 
 
-The post Animal Style Fries (In-N-Out Copycat) appeared first on A Cozy Kitchen .])
-
-    #brief-item([Annemarie Dooling], source-name: [Bon Appétit (magazine)], [After a year-long refresh, the restaurant reopened with a 3,800-bottle display, and even the line cooks can recommend God-tier bottles.])
-
-    #brief-item([Hana Al-Khodairi], source-name: [Condé Nast Traveler], [As flight schedules and daily life slowly resume in Dubai, here's what travelers need to know about safety and visiting the city right now])
-
-    #brief-item([Stacy Randall], source-name: [IKEA Hackers], [Just when you think IKEA’s PAX series has everything you need to create a stellar wardrobe, they come out with a new addition to prove you wrong. Last year, they introduced the brilliant end-unit addition, and now there’s a slim mid-unit add-on designed to fit between two PAX frames, giving you extra storage and display space. Bringing a Brand-New Look to the Reliable PAX System More storage is always a plus, but I have to say, this add-on elevates the […]])
-
-    #brief-item([Jessica Sulima], source-name: [Condé Nast Traveler], [Whether you're planning a weekend getaway or a cross-country trip, save on your next vehicle with these Hertz discount codes and member-exclusive offers.])
-
-    #brief-item([Adrianna Adarme], source-name: [A Cozy Kitchen], [This Calabrian Chili Shrimp Pasta is creamy, spicy, and comes together in under 30 minutes. It’s an easy weeknight dinner…
+The post Animal Style Fries (In-N-Out Copycat) appeared first on A Cozy Kitchen .])],
+    [#brief-item([Hana Al-Khodairi], source-name: [Condé Nast Traveler], [As flight schedules and daily life slowly resume in Dubai, here's what travelers need to know about safety and visiting the city right now])],
+    [#brief-item([Jessica Sulima], source-name: [Condé Nast Traveler], [Whether you're planning a weekend getaway or a cross-country trip, save on your next vehicle with these Hertz discount codes and member-exclusive offers.])],
+    [#brief-item([Adrianna Adarme], source-name: [A Cozy Kitchen], [This Calabrian Chili Shrimp Pasta is creamy, spicy, and comes together in under 30 minutes. It’s an easy weeknight dinner…
 
  ( Read more... ) 
 
 Tags: Pasta Quick and Easy Seafood 
 
-The post Calabrian Chili Shrimp Pasta appeared first on A Cozy Kitchen .])
+The post Calabrian Chili Shrimp Pasta appeared first on A Cozy Kitchen .])],
+    [#brief-item([Gina Homolka], source-name: [Skinnytaste], [Creamy Lemon Chicken with Asparagus is an easy one-skillet spring dinner with juicy chicken, tender asparagus, and a bright lemon cream sauce. Creamy Lemon Chicken I don’t know about you, but I’m always excited when spring produce starts showing up. This Creamy Lemon Chicken with Asparagus is an easy, high-protein dinner that feels elegant yet \[…\]])],
+    [#brief-item([Stacy Randall], source-name: [IKEA Hackers], [The IKEA EKET collection offers versatile storage options that can inspire your next DIY project, empowering you to customize your space. But if you can’t find exactly what you want, don’t worry, there’s a hack for that. Actually, there’s a bunch. These ideas can help you personalize the EKET series and make your space truly yours. Here are 13 interesting ways to reimagine the EKET in your home. Which one will you try first? 13 IKEA EKET Hacks To Inspire \[…\]])],
+    [#brief-item([Stacy Randall], source-name: [IKEA Hackers], [You never know when or where inspiration will strike. And if you’ve got a creative spirit, the odds are good that you can find a project pretty much anywhere.  Self-taught sewing artist Bolly took one look at IKEA’s popular FRAKTA and just had to turn it into a funky handbag. I mean, why not? This wouldn’t be the first time we’ve seen the FRAKTA reimagined into a quirky accessory. Clever hackers have turned the big blue bag into everything from \[…\]])],
+    [#brief-item([Editors of Bon Appétit], source-name: [Bon Appétit (magazine)], [Make the first warm days of the year feel effortlessly delicious with a spring vegetable galette, an herby green frittata, and more.])],
+    [#brief-item([Stacy Randall], source-name: [IKEA Hackers], [Just when you think IKEA’s PAX series has everything you need to create a stellar wardrobe, they come out with a new addition to prove you wrong. Last year, they introduced the brilliant end-unit addition, and now there’s a slim mid-unit add-on designed to fit between two PAX frames, giving you extra storage and display space. Bringing a Brand-New Look to the Reliable PAX System More storage is always a plus, but I have to say, this add-on elevates the \[…\]])],
+    [#brief-item([Keyla Vasconcellos], source-name: [Condé Nast Traveler], [In 2026, the City of Trees has fantastic farm-to-table dining, more sports than you'll have time to watch, and major airport upgrades.])],
+    [#brief-item([Kate Kassin], source-name: [Bon Appétit (magazine)], [A dynamic Chicago restaurant's next chapter, Northern Thai cooking in DC, and more reasons to dine out this season around the country.])],
+    [#brief-item([Stacy Randall], source-name: [IKEA Hackers], [Cluttered countertops are the Achilles’ heel of kitchens. Think about it. It doesn’t matter how amazing your kitchen is; if the counters are packed, any desire you had to meal prep or cook disappears. I mean, who wants to pull out a bunch of stuff to cook when they’re already short on counter space? On top of that, it’s harder to clean, and you just feel overwhelmed. The next thing you know, you’re ordering take-out…again! Franziska found a way to \[…\]])],
+    [#brief-item([Nicole Samoroukova], source-name: [The Reformed Broker (Josh Brown)], [Join Downtown Josh Brown and Michael Batnick for another round of What Are Your Thoughts? On this week’s episode, Josh and Michael discuss the biggest topics in investing and finance, including:
+►October CPI – “Positive vs. negative earnings growth has been far more predictive than the political party of the president.”
+►Robots Are Coming – “Here’s what we know about generati...
 
-    #brief-item([Stacy Randall], source-name: [IKEA Hackers], [Nowadays, the closest my hubby and I get to dinner and a show is kicking back on the sofa with takeout. Turns out, we’re not alone. A recent IKEA study just affirmed our tendency for couch dining, finding that 1 in 5 people enjoy dinner on the sofa. We still eat dinner as a family, around an actual dining table, at least once a week. And I’ll sometimes opt to stay in the kitchen, but in the spirit of full […]])
-
-    #brief-item([Joshua M Brown], source-name: [The Reformed Broker (Josh Brown)], [The new online home of Ritholtz Wealth Management has (finally) arrived!
-It’s ironic that we’re a firm with ten content creators and all these big blogs but we’ve never really paid much attention to what our corporate site looks like or how it works. It was just always an afterthought. Until today.
-Our old site was fine. It just didn’t do anything for anyone. A place for clients to log in or to put...
-
-The post Welcome to the all new ritholtzwealth.com appeared first on The Reformed Broker .])
-
-    #brief-item([Jules Yap], source-name: [IKEA Hackers], [Sometimes the best projects come about by accident. That was the case for Aeschinoer, who stumbled upon this clever backlit mirror idea while working on a completely different IKEA hack — a project called “back-lit lunar landscape.” One idea led to another, and the result is a wall-mounted mirror with soft, flattering backlighting that the whole family has come to love. The best part? The build takes roughly two hours from start to finish. A quick, easy DIY project you […]])
-
-    #brief-item([Keyla Vasconcellos], source-name: [Condé Nast Traveler], [In 2026, the City of Trees has fantastic farm-to-table dining, more sports than you'll have time to watch, and major airport upgrades.])
-
-    #brief-item([Jules Yap], source-name: [IKEA Hackers], [You know that feeling when you walk past your IKEA sofa and think, “I love you, but…”? Maybe it’s showing its age, or perhaps that neutral beige that seemed so practical three years ago now feels utterly boring. Sure, you can hop into IKEA for a replacement slipcover, but there are seasons when you want more out of your sofa. What if you’re craving that rich emerald velvet, a bold geometric print, or luxe performance fabric that can actually handle […]])
-
-    #brief-item([Adrianna Adarme], source-name: [A Cozy Kitchen], [Hot Honey Buffalo Chicken Tenders are oven-baked, crispy, and coated in a sweet-spicy glaze that hits every note. They’re simple…
+The post Why Americans Hate Joe Biden’s Economy appeared first on The Reformed Broker .])],
+    [#brief-item([Adrianna Adarme], source-name: [A Cozy Kitchen], [Hot Honey Buffalo Chicken Tenders are oven-baked, crispy, and coated in a sweet-spicy glaze that hits every note. They’re simple…
 
  ( Read more... ) 
 
 Tags: Appetizer game day lunch Snack 
 
-The post Hot Honey Buffalo Chicken Tenders appeared first on A Cozy Kitchen .])
+The post Hot Honey Buffalo Chicken Tenders appeared first on A Cozy Kitchen .])],
+    [#brief-item([Jessica Puckett], source-name: [Condé Nast Traveler], [A basic guide to trip insurance, including a breakdown of “cancel for any reason” (CFAR) upgrades and what's already included in your credit card.])],
+    [#brief-item([Joshua M Brown], source-name: [The Reformed Broker (Josh Brown)], [The new online home of Ritholtz Wealth Management has (finally) arrived!
+It’s ironic that we’re a firm with ten content creators and all these big blogs but we’ve never really paid much attention to what our corporate site looks like or how it works. It was just always an afterthought. Until today.
+Our old site was fine. It just didn’t do anything for anyone. A place for clients to log in or to put...
 
-    #brief-item([Jessica Puckett], source-name: [Condé Nast Traveler], [A basic guide to trip insurance, including a breakdown of “cancel for any reason” (CFAR) upgrades and what's already included in your credit card.])
-
-    #brief-item([Nicole Samoroukova], source-name: [The Reformed Broker (Josh Brown)], [OK, we’re trying something new next week for registered financial advisors only. It’s a brand new show we’ve created and you can be there virtually to watch the pilot episode live. As an advisor, you’re going to spend time, money and energy implementing new technology and asset management solutions into your practice. You may as well get good at it.
-register for The Smoke Show live pilot episode h...
-
-The post The Smoke Show appeared first on The Reformed Broker .])
-
-    #brief-item([Zoe Denenberg, Bon Appétit Staff & Contributors], source-name: [Bon Appétit (magazine)], [Shaved into a salad, roasted until crispy, or puréed into soup, our best asparagus recipes celebrate spring’s most iconic spears.])
-
-    #brief-item([Kate Kassin], source-name: [Bon Appétit (magazine)], [A dynamic Chicago restaurant's next chapter, Northern Thai cooking in DC, and more reasons to dine out this season around the country.])
-
-    #brief-item([Jan Valdez], source-name: [The Kitchn], [Crispy potatoes and a creamy garlic Parmesan sauce are one of my favorite combinations, and this recipe brings both together in the easiest way. I cook the potatoes in a single skillet until they’re golden brown, crisp on the outside, and perfectly tender inside — no oven required. It’s a method I rely on when I want a hearty side dish that also frees up the oven for something bigger, like an Easter baked ham or prime rib roast.
- READ MORE...])
-
-    #brief-item([Nicole Samoroukova], source-name: [The Reformed Broker (Josh Brown)], [And if you haven’t subscribed yet, don’t wait. Check it out below or wherever fine podcasts are played. 
-These are the most read posts on the site this week, in case you missed it: 
-...
-
-The post This Week on TRB appeared first on The Reformed Broker .])
-
+The post Welcome to the all new ritholtzwealth.com appeared first on The Reformed Broker .])],
+    [#brief-item([Stacy Randall], source-name: [IKEA Hackers], [Whoa, whoa, whoa, back up a second, those are BILLY bookcases?! (That’s what you’re thinking right now, isn’t it?) I get it; I did a double-take, too. This built-in bookcase hack from Reddit user Floyd (u/DisastrousPipe8192) is next-level. I mean, it doesn’t even look like the same room when you see the finished product. Granted, he also changed the flooring, furniture, and wall color, but the built-ins undoubtedly steal the show. Floyd shared that he’s learned most of his home \[…\]])],
+    [#brief-item([Gina Homolka], source-name: [Skinnytaste], [Easy honey butter glazed carrots made on the stovetop—tender, lightly sweet, and perfect for Easter dinner, Thanksgiving, or any holiday meal. Honey Glazed Carrots My cousin makes these Honey-Butter Glazed Carrots every holiday, and they’re great for when you don’t want to use your oven. The carrots simmer gently on the stovetop with butter, honey, \[…\]])],
   ))
 }
 

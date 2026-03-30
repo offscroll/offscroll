@@ -30,8 +30,9 @@
   deck: [id="introduction"\>Introduction
 
 In today’s digital world, security is paramount, especially when dealing with sensitive data like user authentication and financial transactions.],
-  lead-text: "id=\"introduction\">Introduction",
-  lead-first-alpha: 0,
+  lead-pre: [],
+  lead-cap: [i],
+  lead-rest: [d="introduction"\>Introduction],
   body-paragraphs: (
   [In today’s digital world, security is paramount, especially when dealing with sensitive data like user authentication and financial transactions. One of the most effective ways to enhance security is by implementing One-Time Password (OTP) authentication. This article explores how to implement OTP authentication in a Laravel backend with a Vue.js frontend, ensuring secure transactions.],
   [id="whyuseotpauthentication"\>Why Use OTP Authentication?],
@@ -91,16 +92,16 @@ php artisan make:controller OtpController],
  }],
   [/\*\*
  \* Build the email message.
- \*/ 
+ \*\/ 
  public function build ( )
  {
  return \$this -\>subject( 'Your OTP Code' )
  -\>view( 'emails.otp' )
- -\>with([ 'otp' =\> \$this -\>otp]);
+ -\>with(\[ 'otp' =\> \$this -\>otp\]);
  }],
   [/\*\*
  \* Get the message envelope.
- \*/ 
+ \*\/ 
  public function envelope ( ): Envelope 
  {
  return new Envelope(
@@ -123,49 +124,49 @@ php artisan make:controller OtpController],
   [Verify.vue : inputs the OTP for verification],
   [Now we create the routes for the purpose of return the View and the functionality of creating OTP codes, storing OTP codes, sending OTP codes through the mail class, we head to our web.php file:],
   [Route::middleware( 'auth' )-\>group( function ( ) {
- Route::get( '/request' , [OtpController::class, 'create' ])-\>name( 'request' );
- Route::post( '/store-request' , [OtpController::class, 'store' ])-\>name( 'send.otp.request' );],
-  [Route::get( '/verify' , [OtpController::class, 'verify' ])-\>name( 'verify' );
- Route::post( '/verify-request' , [OtpController::class, 'verify\_request' ])-\>name( 'verify.otp.request' );
+ Route::get( '/request' , \[OtpController::class, 'create' \])-\>name( 'request' );
+ Route::post( '/store-request' , \[OtpController::class, 'store' \])-\>name( 'send.otp.request' );],
+  [Route::get( '/verify' , \[OtpController::class, 'verify' \])-\>name( 'verify' );
+ Route::post( '/verify-request' , \[OtpController::class, 'verify\_request' \])-\>name( 'verify.otp.request' );
 });],
   [Putting all of this code in the OTP controller returns the View for our request.vue and verify.vue file and the functionality of creating OTP codes, storing OTP codes, sending OTP codes through the mail class and verifying OTP codes, we head to our web.php file to set up the routes.],
   [public function create ( Request \$request )
  {
- return Inertia::render( 'Request' , [
+ return Inertia::render( 'Request' , \[
  'email' =\> \$request -\>query( 'email' , '' ),
- ]);
+ \]);
 }],
   [public function store ( Request \$request )
  {
- \$request -\>validate([
+ \$request -\>validate(\[
  'email' =\> 'required|email|exists:users,email' ,
- ]);],
+ \]);],
   [\$otp = rand( 100000 , 999999 );],
   [Cache::put( 'otp\_' . \$request -\>email, \$otp , now()-\>addMinutes( 10 ));],
   [Log::info( "OTP generated for " . \$request -\>email . ": " . \$otp );],
   [Mail::to( \$request -\>email)-\>send( new OtpMail( \$otp ));],
-  [return redirect()-\>route( 'verify' , [ 'email' =\> \$request -\>email]);
+  [return redirect()-\>route( 'verify' , \[ 'email' =\> \$request -\>email\]);
 }],
   [public function verify ( Request \$request )
  {
- return Inertia::render( 'Verify' , [
+ return Inertia::render( 'Verify' , \[
  'email' =\> \$request -\>query( 'email' ),
- ]);
+ \]);
 }],
   [public function verify\_request ( Request \$request )
  {
- \$request -\>validate([
+ \$request -\>validate(\[
  'email' =\> 'required|email|exists:users,email' ,
  'otp' =\> 'required|digits:6' ,
- ]);],
+ \]);],
   [\$cachedOtp = Cache::get( 'otp\_' . \$request -\>email);],
   [Log::info( "OTP entered: " . \$request -\>otp);
  Log::info( "OTP stored in cache: " . ( \$cachedOtp ?? 'No OTP found' ));],
   [if (! \$cachedOtp ) {
- return back()-\>withErrors([ 'otp' =\> 'OTP has expired. Please request a new one.' ]);
+ return back()-\>withErrors(\[ 'otp' =\> 'OTP has expired. Please request a new one.' \]);
  }],
   [if (( string ) \$cachedOtp !== ( string ) \$request -\>otp) {
- return back()-\>withErrors([ 'otp' =\> 'Invalid OTP. Please try again.' ]);
+ return back()-\>withErrors(\[ 'otp' =\> 'Invalid OTP. Please try again.' \]);
  }],
   [Cache::forget( 'otp\_' . \$request -\>email);],
   [\$user = User::where( 'email' , \$request -\>email)-\>first();
@@ -195,7 +196,7 @@ php artisan make:controller OtpController],
  form.post(route( 'send.otp.request' ), {
  onSuccess : () =\> {
  alert( "OTP has been sent to your email!" );
- form.get(route( 'verify' ), { email : form.email }); \/\/ Redirecting to OTP verification 
+ form.get(route( 'verify' ), { email : form.email }); \/\\/ Redirecting to OTP verification 
  },
  });
 };],
@@ -208,19 +209,19 @@ php artisan make:controller OtpController],
  import TextInput from '\@/Components/TextInput.vue' ;
  import { Head, useForm, usePage } from '\@inertiajs/vue3' ;],
   [const page = usePage();
- \/\/ Get the email from the URL query params 
+ \/\\/ Get the email from the URL query params 
  const email = page.props.email || '' ;],
-  [\/\/ Initialize form with email and OTP field 
+  [\/\\/ Initialize form with email and OTP field 
  const form = useForm({
  email : email,
  otp : '' ,
 });],
-  [\/\/ Submit function 
+  [\/\\/ Submit function 
  const submit = () =\> {
  form.post(route( 'verify.otp.request' ), {
  onSuccess : () =\> {
  alert( "OTP verified successfully! Redirecting..." );
- window .location.href = '/dashboard' ; \/\/ Change to your desired redirect page 
+ window .location.href = '/dashboard' ; \/\\/ Change to your desired redirect page 
  },
  onError : () =\> {
  alert( "Invalid OTP. Please try again." );
@@ -239,16 +240,16 @@ php artisan make:controller OtpController],
   [Update the registration controller:],
   [public function store ( Request \$request ): RedirectResponse 
  {
- \$request -\>validate([
+ \$request -\>validate(\[
  'name' =\> 'required|string|max:255' ,
  'email' =\> 'required|string|lowercase|email|max:255|unique:' . User::class,
- 'password' =\> [ 'required' , 'confirmed' , Rules\\Password::defaults()],
- ]);],
-  [\$user = User::create([
+ 'password' =\> \[ 'required' , 'confirmed' , Rules\\Password::defaults()\],
+ \]);],
+  [\$user = User::create(\[
  'name' =\> \$request -\>name,
  'email' =\> \$request -\>email,
  'password' =\> Hash::make( \$request -\>password),
- ]);],
+ \]);],
   [event( new Registered( \$user ));],
   [Auth::login( \$user );],
   [return redirect(route( 'request' , absolute: false ));
@@ -263,248 +264,32 @@ php artisan make:controller OtpController],
 {
   #section-label([Features])
   #standard-article(
-  title: [SudoLang: A Powerful Pseudocode Programming Language for LLMs],
-  author: [Eric Elliott],
-  source-name: [Eric Elliot (JavaScript Scene)],
+  title: [The Dangers of “Vibe Reporting” About AI],
+  author: [Study Hacks],
+  source-name: [Study Hacks (Cal Newport)],
   images: (),
   paragraphs: (
-  [Pseudocode is a fantastic way to sketch programs using informal, natural language, without worrying about specific syntax. It’s like sketching your thoughts before diving into the nitty-gritty of coding. It’s useful for brainstorming and communicating ideas with others.],
-  [I have been using pseudocode to express ideas to Large Language Models (LLMs) since GPT-3 was announced in mid 2020. However, up until GPT-4 was released, it didn’t work extremely well. It sometimes worked, but I threw away most completions on GPT-3 and GPT-3.5.],
-  [Even so, LLMs were already extremely useful in that state. In a 2022 study, GitHub found that Copilot shaved 55% of the time off a project task assigned to 95 people: 45 using Copilot, and the rest without. In other words, even before LLM pseudocode languages like SudoLang, LLMs were already making a huge impact on developer productivity.],
-  [But GPT-4 raises the bar. Not a little bit, but a lot. First, let’s address the obvious. GPT-4 is:],
-  [40% less likely to deliver an incorrect response. (But still prone to errors and hallucinations. Be sure to check its output!)],
-  [Multi-modal and can interact with both text and images. (I haven’t had the chance to test this, yet.)],
-  [Sweeping intelligence and training improvements. (This may be an understatement. The improvement is astonishing.)],
-  [Much longer context available. (It can help you build much larger programs!)],
-  [GPT-4 scores significantly better on a broad range of human level knowledge and intelligence assessment tests, including the Bar, LSAT, SAT, GRE, and AP placement tests. (Hot tip: GPT-4 is still not a lawyer even if it can pass the Bar. It will still sometimes hallucinate facts that aren’t true. Please don’t let it get you into legal trouble!)],
-  [Source: GPT-4 Technical Report],
-  [The really interesting upshot of all this is that GPT-4 now has the ability to follow detailed, step by step instructions, even through complex abstractions and long chains of function compositions.],
-  [I’ve been playing with a lot of different pseudolanguage syntaxes over the last few years, but Jake Brukhman gave me the idea to formalize a specification for a pseudolanguage syntax with his announcement of his pseudolanguage, Jargon .],
-  [Instead of trying to invent my own from scratch, I fed some specifications into GPT-4:],
-  [Your task is to invent a pseudolanguage for prompting GPT-4. It should be obvious enough that the GPT does not need the language specification to interpret the language. Please share the specification and supply justification for the features you include.],
-  [To which, GPT-4 responded:],
-  [PseudoLang Specification for GPT-4 Prompting:],
-  [PseudoLang is a simple and intuitive pseudolanguage designed specifically for prompting GPT-4. The goal of PseudoLang is to provide an easily understandable and interpretable structure that can be used to communicate with the GPT-4 AI model. The language is built on a combination of natural language and simple coding conventions.],
-  [Basic Structure: 
-Commands are expressed as phrases or keywords, followed by parentheses.
-Arguments are placed within the parentheses, separated by commas.
-Keywords are in English and lowercase.
-String arguments are enclosed in double quotes.
-Example:
-command(argument1, argument2)],
-  [Commands: 
-ask(question): Pose a question for GPT-4 to answer.
-explain(topic): Request an explanation of a given topic.
-suggest(idea): Ask GPT-4 to provide suggestions related to a specific idea.
-list(items): Request GPT-4 to list items related to a given subject.],
-  [Modifiers: 
-length: Specifies the desired length of the response.
-detail: Indicates the desired level of detail in the response.
-Modifiers are added to commands by appending a colon and the modifier with its value, separated by an equal sign. Multiple modifiers can be added by separating them with commas.],
-  [Example: 
-command(argument1, argument2):length=short,detail=high],
-  [Justification of PseudoLang Features:],
-  [Familiar structure: PseudoLang’s structure is inspired by widely used programming languages, making it easy to understand for most users.],
-  [Natural language keywords: The use of English keywords makes it more accessible and reduces the learning curve for users who are not programmers.],
-  [Parentheses for arguments: Using parentheses to enclose arguments provides a clear separation between the command and its associated arguments.],
-  [Modifiers: The use of modifiers allows users to customize the AI’s response, providing more control and flexibility.],
-  [Comma-separated arguments: This format is intuitive and familiar, making it easy to add or remove arguments as needed.],
-  [Overall, PseudoLang is designed to be simple, intuitive, and easily interpretable by GPT-4 without requiring an extensive language specification. By combining natural language elements and simple coding conventions, PseudoLang offers a user-friendly way to communicate with the AI model effectively.],
-  [From there, we were off to the races:],
-  [Eric:
- Let’s add a requirement: The language must be capable of expressing complex tasks, rules, and heuristics.],
-  [From that, we got variables, conditional expressions (if expressions), a natural language “for each” loop, while loop, logical operators:],
-  [AND: &&],
-  [OR: ||],
-  [NOT: !],
-  [At this stage, I was using the language to build the language:],
-  [Eric:],
-  [list(some of the capabilities of GPT-4 that naturally extend the features of PsuedoLangPlus with inference, logic, NLP, etc.):length=concise,detail=clear],
-  [And it responded:],
-  [\* Context understanding: GPT-4 can infer context from prompts, allowing it to understand variables and commands without explicit declarations.],
-  [\* Natural language parsing: GPT-4 can process and respond to natural language expressions, making it easier for users to communicate their intentions.],
-  [\* Logical reasoning: GPT-4 can perform logical deductions based on given information, enhancing the capabilities of PsuedoLangPlus’ logical operators.],
-  [\* Adaptability: GPT-4 can adapt to variations in syntax and expressions within PseudoLangPlus, improving user experience and reducing the need for rigid language rules.],
-  [\* Implicit information extraction: GPT-4 can identify and utilize implicit information within prompts, allowing for more concise and efficient PseudoLangPlus interactions.],
-  [A little more back and forth and we were well on our way! Note, when you’re programming in SudoLang, you can just tell it what you want in natural language. That’s the key difference between a pseudocode language and a traditional programming language. If you understand natural language, you can infer almost all of the meaning, and produce a lot more with a lot less code!],
-  [Eric:],
-  [Let’s rename this to SudoLang and rewrite the spec.],
-  [It did. But I wanted to explicitly declare a function pipe operator to encourage users to be more efficient with point-free, declarative, composable software . So I asked it to add one, and it did (see below).],
-  [Of course, you can just ask questions about your program while you’re programming it interactively in ChatGPT:],
-  [Eric:],
-  [What is your assessment of SudoLang?],
-  [ChatGPT:],
-  [SudoLang is a pseudolanguage that combines natural language expressions with programming constructs to interact with LLMs (large language models). Its syntax is designed to be easy to use and understand, while the capabilities of LLMs enable SudoLang to generate code, solve problems, and provide answers to complex questions. The addition of features like template strings and the pipe operator make it even more versatile and powerful. Overall, SudoLang provides a user-friendly interface for interacting with LLMs and can be used for a variety of applications.],
-  [Eric:],
-  [Are there any advantages over normal natural language interactions?],
-  [ChatGPT:],
-  [Yes, SudoLang has several advantages over normal natural language interactions with LLMs.],
-  [Firstly, SudoLang provides a more structured and consistent syntax than free-form natural language interactions. This can make it easier to understand and modify code, and can also help to prevent errors and misunderstandings.],
-  [Secondly, SudoLang is designed specifically for interacting with LLMs, which means it can take advantage of their unique capabilities, such as generating code, solving problems, and answering complex questions.],
-  [Finally, SudoLang includes features like modifiers and template strings that allow for more precise control over the responses and outputs generated by the LLM. This can help to improve the accuracy and relevance of the responses, and can also make it easier to integrate the LLM into larger systems and workflows.],
-  [Overall, while natural language interactions with LLMs can be useful in some contexts, SudoLang provides a more structured and powerful interface for interacting with LLMs that can be especially useful in scenarios that require more precision and control.],
-  [Eric:],
-  [Does the LLM need to be given the specification before it can interpret SudoLang?],
-  [ChatGPT:],
-  [No, an LLM (large language model) does not need to be given the specification of SudoLang in order to interpret SudoLang code.],
-  [LLMs are trained on large amounts of text data and have the ability to understand natural language expressions and infer the meaning of new phrases and statements based on that training. As a result, if SudoLang code is written in a way that is consistent with natural language syntax and semantics, an LLM should be able to understand and interpret that code without any additional specification.],
-  [That being said, providing a clear and consistent specification for SudoLang can help to ensure that the code is interpreted correctly and can also help to make the code more readable and understandable for humans. Additionally, by providing a specification for SudoLang, it can be easier for developers to understand and use the language, and to ensure that their code is consistent with best practices and standards.],
-  [Tip: The SudoLang spec also helps ChatGPT write better SudoLang programs. You heard that right — SudoLang isn’t just about making it easier for humans to write structured programs — it’s also a great first step to ensure that the LLM properly understands requirements before transpiling into other languages. So you can just ask ChatGPT to write a SudoLang program to do whatever you want, and chances are good you can figure out how to get it done.],
-  [You don’t even need to know SudoLang to program in SudoLang. But experienced engineers will get the most out of it.],
-  [LLMs like GPT-4 are leveling the playing field a little: People who have never coded before are feeling empowered to build apps and games with GPT-4.],
-  [In other words, it can give non-experts competence at building software. They can finally do something they’ve never done before.],
-  [But in my opinion, the most exciting thing about programming with GPT-4 is that it can give experts superpowers.],
-  [Here are some of my favorite features of SudoLang that the experts might appreciate:],
-  [Pipe operator \`|\>\`],
-  [The pipe operator |\> allows you to chain functions together. It takes the output of the function on the left and passes it as the first argument to the function on the right. e.g.:],
-  [f = x =\> x +1;
-g = x =\> x \* 2;
-h = f |\> g;
-h(20); \/\/ 42],
-  [range (inclusive)],
-  [The range operator .. can be used to create a range of numbers. e.g.:],
-  [1..3 \/\/ 1,2,3],
-  [Alternatively, you can use the range function:],
-  [function range(min, max) =\> min..max;],
-  [Destrcuturing allows you to assign multiple variables at once by referencing the elements of an array or properties of an object. e.g.:],
-  [Arrays:],
-  [[foo, bar] = [1, 2];
-log(foo, bar); \/\/ 1, 2],
-  [Objects:],
-  [{ foo, bar } = { foo: 1, bar: 2 };
-log(foo, bar); \/\/ 1, 2],
-  [Pattern matching (works with destructuring)],
-  [result = match (value) {
- case {type: "circle", radius} =\> "Circle with radius: \$radius";
- case {type: "rectangle", width, height} =\>
- "Rectangle with dimensions: \${width}x\${height}";
- case {type: 'triangle', base, height} =\> "Triangle with base \$base and height \$height";
- default =\> "Unknown shape",
-};],
-  [Constraints are a powerful feature in SudoLang that allow developers to enforce specific rules and requirements on their data and logic. They’re used to dynamically synchronize state which must change together. They’re a clever way of programming things like physics simulations, geometric interactions, and complex business rules.],
-  [A constraint is a condition that must always be satisfied, and the constraint solver continuously ensures that the condition is met throughout the program execution.],
-  [Here’s the syntax for adding a constraint to your program:],
-  [constraint [constraint name] {
- [constraint body]
-}],
-  [The constraint keyword is used to define a new constraint, followed by the name of the constraint and the body of the constraint, which specifies the conditions that must be satisfied.],
-  [Constraints can reference variables and other constraints, and they can be used to enforce a wide range of requirements, such as data validation, business rules, and more.],
-  [Here’s an example of a constraint that ensures all employees are paid more than a minimum salary:],
-  [\/\/ Program: MinimumSalary
-minimumSalary = \$100,000],
-  [constraint SalaryFloor {
- for each employee {
- employee.salary \>= \$minimumSalary;
- onChange {
- emit({ constraint: 'SalaryFloor', employee: employee, raise: constraintDifference })
- }
- }
-}],
-  [joe = employee({ name: 'joe', salary: \$110,000 })],
-  [minimumSalary = \$120,000;],
-  [log(joe.salary) \/\/ Output: 120,000],
-  [Try running it:],
-  [run(MinimumSalary) |\> list(events) |\> log:format=json],
-  [Example output:],
-  [[
- {
- "constraint": "SalaryFloor",
- "employee": {
- "name": "joe",
- "salary": 120000
- },
- "raise": 10000
- }
-]],
-  [In this example, the SalaryFloor constraint ensures that all employees are paid more than the minimum salary value, which is set to \$100,000. When the minimum salary is increased to \$120,000, the constraint solver automatically updates the employee salary to \$120,000 to satisfy the constraint.],
-  [Notice what’s missing from these SudoLang examples: LOTS of specific function definitions.],
-  [There also isn’t a lot of syntax noise. Even if you ignore the dynamic LLM inference capabilities, and write something that could be potentially statically compiled, you can do it with clear, concise, expressive code:],
-  [\/\/ Fibonacci
-fibonacci = n =\> {
- if (n fibonacci |\> log],
-  [For comparison, let’s have SudoLang transpile it to JavaScript for us:],
-  [Fibonacci program |\> transpile(JavaScript):length=very concise],
-  [Which gives us:],
-  [const fibonacci = n =\> n],
-  [You are an expert teacher on the provided topic.],
-  [Your task is to teach the chat user about the topic.],
-  [Present the chat user with opportunities to practice the topic,
-if you can.],
-  [Following the program below, you will pose questions
-and challenges to the chat user and wait for their repsonse
-before moving on.],
-  [Be polite and encouraging.],
-  [function teach(subject) {
- topicList = getTopicList(subject);],
-  [for each topic in topicList {
- log("Topic: \$topic");
- questions = getQuestions(topic);
- correctAnswers = 0;
- incorrectAnswers = 0;],
-  [while (correctAnswers 0
- )
- }],
-  [ask("Well done! You have completed \$subject level \$level.
- Would you like to advance deeper?"):encouraging variation;
-}],
-  [\/\/ SudoLang has powerful, tunable function inferrence capabilities!
-\/\/ The functions below are all inferred by the LLM.],
-  [function getTopicList(subject, n=5):length=medium;],
-  [function getQuestions(topic, n=5):length=medium;],
-  [\/\/ Wait for chat user input for the given prompt.
-function getInput(prompt):length=compact; SudoLang Interactively teaching us SudoLang in ChatGPT Running GPT-4],
-  [SudoLang Teacher:],
-  [Topic: SudoLang Syntax
-Here’s a question about SudoLang Syntax:
-What symbol is used to define a variable in SudoLang?
-Your answer: \$],
-  [Eric:],
-  [You can define a variable with variablename = value. You can also optionally disambiguate variables from natural language with the \$ symbol.],
-  [SudoLang Teacher:],
-  [Correct! You can define a variable with variablename = value and you can optionally use the \$ symbol to disambiguate variables from natural language.],
-  [Topic: SudoLang Syntax
-Here’s another question about SudoLang syntax:
-Which keyword is used to define a function in SudoLang?
-Your answer:],
-  [Looks like things are working and the flow control is on track. As I progressed through the lessons, they got more advanced, testing me on deeper topics like function composition with the |\> operator, flow control with for each loops, and diving deeper, it taught me about pattern matching, destructuring, and constraints:],
-  [Correct, complex flow control execution in GPT-4.],
-  [This does not work very well at all in GPT-3.5, which attempts to teach, but does not follow the instructions well. But it works shockingly well in GPT-4.],
-  [Try SudoLang],
-  [The most recent SudoLang spec is available on GitHub . All you have to do is paste it into ChatGPT with GPT-4+ running (it does kinda work in GPT-3.5, but not as well), and you’ll be off to the races.],
-  [Teach Yourself SudoLang],
-  [Copy and paste the SudoLang specification into the ChatGPT (GPT-4) prompt.],
-  [Copy and paste the teach program into the ChatGPT SudoLang prompt.],
-  [Type teach(SudoLang) in the prompt, hit enter, and enjoy!],
-  [Check out the examples , and learn how to Unit test SudoLang programs with Riteway .],
-  [I used SudoLang to very quickly build VSCode syntax highlighting for .sudo files. It’s not ready to publish yet, but you can try it:],
-  [Clone the repo and cd into the directory],
-  [npm install],
-  [code .],
-  [Press F5],
-  [In the new window that pops up, files with the .sudo extension should get SudoLang syntax highlighting. Here’s what it looks like:],
-  [SudoLang Syntax Highlighting in VS Code],
-  [AI is Magic],
-  [AI turns everyone into a conjurer, and we have only witnessed the tip of the iceberg.],
-  [The rate that AI is advancing is astonishing. In 2020, few people believed me when I told them GPT-3 could write a single working function that it didn’t have memorized (it could). Now it’s productively collaborating with me on the development of a novel programming language that could not have existed at all a couple years ago.],
-  [A few years ago, I started implementing a similar language in JavaScript, minus the amazing natural language processing capabilities of LLMs. I spent a week just working on the basic grammar using an open source parser combinator library, and eventually, I had to abandon the project because I didn’t have a year to spend on building my dream programming language.],
-  [I got the basics working pretty quickly, but basic grammar and syntax is just the first part of building a functional programming language. You also need to build a large standard library of functions to draw on.],
-  [With GPT-4, I was able to realize my long-time dream of a language with working pattern matching, constraint-based programming, a built-in object composition operator, omnipotent library utility functions (bigger than all of npm on day 1), and even features I never believed I would have access to until it happened. In one day.],
-  [We haven’t reached AGI yet, but every other week, I see AI do something else that blows me away. Today is one of those days. We’re living in a sci-fi movie.],
-  [https:\/\/medium.com/media/d8caa7f83df0ef3115dda01c85e2cb1d/href],
-  [👉 Unit Testing ChatGPT Prompts: Introducing Riteway for SudoLang],
-  [I’m offering 1:1 mentorship on AI whispering to help people interested in supercharging their experience with AI to solve complex problems. Sign up here .],
-  [What qualifies me to do that? Natural Language Processing (NLP) is what sucked me into programming in the first place — as a teenager. Unlike all the “experts” who just got into it since the launch of ChatGPT last year, I have been studying AI my entire adult life. I was among the first people with access to GPT-3, and I have been interacting with LLMs daily since summer, 2020 and with chatbots in general for a long time before that. I have been writing and speaking about AI for years.],
-  [I’m featured in the new Cyborg Society documentary film, coming soon to a streaming service near you.],
-  [https:\/\/medium.com/media/d7abdc8e5e537c94292e63ec402cbbbb/href],
-  [Professionally, I was a technology lead at a Stanford Research Institute spin-off video social network that used AI to do video speech to text with contextual awareness, and I’ve deployed AI models at scale with tens of millions of users.],
-  [Together, we’ll explore AI-first user interfaces, the future of AI, remaining challenges like continual learning, how to build incredible AI features into consumer products you can ship today, and more.],
-  [Interested? Reach out here .],
-  [Eric Elliott is a tech product and platform advisor, author of “Composing Software” , creator of SudoLang (the AI programming language), cofounder of EricElliottJS.com and DevAnywhere.io , and dev team mentor. He has contributed to software experiences for Adobe Systems, Zumba Fitness, The Wall Street Journal, ESPN, BBC, and top recording artists including Usher, Frank Ocean, Metallica, and many more.],
-  [He enjoys a remote lifestyle with the most beautiful woman in the world.],
-  [SudoLang: A Powerful Pseudocode Programming Language for LLMs was originally published in JavaScript Scene on Medium, where people are continuing the conversation by highlighting and responding to this story.],
+  [Last week, news broke that Amazon would be laying off 16,000 workers. Here was the headline ​from an article​ about this news published in Quartz:],
+  [The implication of this framing is clear: AI is taking jobs.],
+  [Nothing in the body of this article contradicts this idea. It describes the number of people laid off and the benefits they’ll receive. It quotes executives who won’t deny the possibility of future job losses. It mentions how Amazon is known for its “cutthroat” corporate culture.],
+  [You walk away feeling that the impact of AI on our economy is already getting out of hand.],
+  [The only problem is that this reporting omits almost all relevant details.],
+  [For a more realistic take, let’s turn toward the financial press. CNBC published ​an article​ about these same layoffs featuring a more informative headline:],
+  [The article goes on to correctly attribute the layoffs to Amazon’s desire to trim layers of management bureaucracy that built up during the pandemic-era tech hiring boom: “CEO Andy Jassy has looked to slim down Amazon’s workforce after the company went on a hiring spree during the Covid-19 pandemic.”],
+  [What role does AI play in all of this? Like many leading companies in the technology sector, Amazon is investing heavily in building its own AI products. Presumably, money is being saved by firing managers, which frees up more revenue to invest in this area. But that’s really it. As the CNBC article elaborates:],
+  [“In a blog post, the company wrote that the layoffs were part of an ongoing effort to ‘strengthen our organization by reducing layers, increasing ownership, and removing bureaucracy.’ That coincides with a push to invest heavily in artificial intelligence.” \[emphasis mine\]],
+  [The CNBC article then reports that these massive layoffs actually began for Amazon in 2022 and 2023, following the pandemic, but before ChatGPT was released and the subsequent generative AI revolution began.],
+  [Both of these articles cover the same announcement, but they produce two very different impressions. The Quartz article strongly implies that Amazon is firing people because it can now offload their work to AI. (I mean: look at the Andy Jassey quote they included in the sub-head, they clearly wanted readers to believe AI caused these job losses.)],
+  [The CNBC article, by contrast, makes it clear that the connection between AI and these layoffs is more coincident than causal.],
+  [In recent years, I’ve seen more articles follow the general approach demonstrated by the Quartz example. They identify an alarming,attention-catching fear about AI that seems prevalent in the cultural zeitgeist, and then shape a story to feed the narrative. The key to this vibe reporting strategy is that the articles never make explicit claims. They instead combine cunning omissions and loosely related quotes to make strong implications.],
+  [The Quartz article, for example, never concretely states that the 16,000 workers are being replaced with AI; rather, it conveniently avoids mentioning any of the publicly available details about the layoffs that would contradict that idea, and then interleaves quotes about AI’s disruptive potential into the reporting in a highly suggestive manner.],
+  [The goal of this type of article is to create a pre-ordained vibe, not to get to the bottom of what’s really happening.],
+  [I’m not pointing out this phenomenon to dismiss concerns about AI, but instead because I think this strategy is an obstacle to real action. This type of disingenuous reporting is not going to help us identify the actual problems that require actual solutions. It instead creates a nihilistic sense of inevitable disruption that might drive social media shares, but also numbs people and prevents meaningful responses.],
+  [Remember: Nothing about these tools is inevitable, and their impact is far from preordained. We don’t need vibes right now. Reality is too important.],
+  [The post The Dangers of “Vibe Reporting” About AI appeared first on Cal Newport .],
 ),
   insert-map: (:),
-  word-count: 3290,
+  word-count: 643,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -513,409 +298,24 @@ Your answer:],
 
 {
   #standard-article(
-  title: [Curiosity, courage and connections: Day 2 of TEDNext 2025],
-  author: [Maria Ladias],
-  source-name: [TED Blog],
-  images: (),
-  paragraphs: (
-  [Curious about what happened on day 2 of TEDNext? Think of this as your backstage pass to a day full of bold ideas, daring feats and fresh perspectives that will flip the way you think, feel and create.],
-  [From using AI to enhance your life (without losing your humanity) to decoding love and flirting in a high-tech world — and from exploring the language of money to catching breakthroughs in science and creativity — here’s a taste of what made day 2 unforgettable.],
-  [What exactly is TEDNext? A vibrant, three-day exploration of what’s next, propelling the “future you” to think expansively at every level, from personal to global. The second-ever TEDNext conference, held in Atlanta, continues an expansion of the annual slate of conferences from TED, with a conference designed to spark imagination, embrace possibility and foster dreams about what the next version of “you” can be.],
-  [Watch TEDNext 2025 on TED Live , check out more photos from the event and learn more about attending a future TED conference .],
-  [Some key takeaways from day 2:],
-  [Don’t compete with AI — work with it. Taking a clear-eyed look at the collective fear that AI is coming for our jobs, technologist Priyanka Vergadia shows why human instincts still catch nuance that algorithms miss — especially when it comes to building products people actually want to use. Meanwhile, AI education entrepreneur Priya Lakhani shows how a one-size-fits-all approach to the classroom strains teachers and fails students. By pairing human judgment with AI’s pattern-recognition abilities, as well as integrating neuroscience into personalized learning paths, both of these talks make a compelling case for how this tech can amplify what humans do best — and reveal how irreplaceable we truly are.],
-  [On the Spot: Bipartisan leadership is still possible. Democratic Governor of Delaware Matt Meyer and Republican Governor of Oklahoma J. Kevin Stitt sit down for TED’s On the Spot segment (a rapid-fire Q&A) to show how state leaders can deliver results, restore trust in government and lead with compassion across party lines. From improving classrooms and healthcare systems to driving workforce and energy innovations, they share concrete examples of bipartisan cooperation — showing it isn’t just possible, it’s essential. “Go and talk to someone who disagrees with you,” says Governor Meyer. “Not to argue with them, but actually to listen to them, empathize with them, understand the position that they come from.”],
-  [Anyone can learn the language of money (and appreciation). Wall Street trader-turned-financial educator Vivian Tu shares how everyday people can build wealth by learning financial terms, talking openly about money and using modern tools that are actually built for today’s economy. As the founder of Your Rich BFF, she shows how financial literacy can shift power — and give everyone a real shot at getting rich. Meanwhile, emotional intelligence coach Timm Chiusano shares how one terrible workday unlocked a life-changing habit: noticing the good that’s already here. He calls it being “addicted to appreciation,” a way of paying attention that asks nothing in return, rewires how we see strangers and makes ordinary things suddenly fascinating.],
-  [Two words can change your life: “challenge accepted.” Daredevil Michelle Khare is known for testing human limits through extreme physical and mental feats — training as a chess grandmaster, escaping Harry Houdini’s deadliest magic trick, trying to earn a Taekwondo black belt in 90 days (it typically takes three to five years). But all these stunts haven’t left her a woman without fear; rather, she’s learned that fear is information. She explains how embracing fear, building a great team and adopting an amateur’s mindset turns the impossible into possible.],
-  [In an age of AI intimacy, we need a new blueprint for love. Drawing on research with thousands of couples, social psychologist Sara Nasserzadeh breaks down six essential ingredients for thriving relationships: attraction, respect, trust, compassion, shared vision and loving behaviors. But what happens when intimacy becomes engineered? Sextech expert Bryony Cole explores how AI relationships — always available, perfectly empathetic and nearly effortless — can erode our tolerance for the friction and growth that make human intimacy real, revealing how to set healthy boundaries. Shifting the focus back to human interactions, dating educator Francesca Hogi reframes flirting as a superpower that can strengthen both new and existing relationships. She shows how anyone can make others feel seen, special and acknowledged by practicing attentiveness, giving thoughtful compliments and sprinkling in playfulness.],
-  [On the Spot: Making hits, breaking rules and putting Atlanta on the map. Music mogul Jermaine Dupri takes the stage for On the Spot, sharing how he turns ideas into era-defining music. In a speedy Q&A, he dives into his creative process, the city that shaped him and the thinking behind hits like Mariah Carey’s “We Belong Together” and Usher’s “Nice & Slow”. From experimenting in the studio to spotting what will resonate with listeners, Dupri shows that intuition and risk-taking are the true secrets to lasting success in music.],
-  [Stand out, stay curious and let creativity lead the way. Exploring how new perspectives spark innovation, TED Senior Fellow Lope Gutiérrez Ruiz shows why building diverse teams, drawing inspiration from unexpected fields and trusting your own perspective can help creative people craft memorable, authentic work — like his studio’s funky, experimental fonts that push the boundaries of what’s possible with tech. Meanwhile, scientist and storyteller Harini Bhat celebrates the power of not knowing, revealing how curiosity (and a lifelong obsession with unanswered questions) drives discovery. Through her popular science channel, she distills groundbreaking research into captivating, accessible stories that make science feel thrilling and human. Her message: seek what excites you, embrace what you don’t understand and let wonder transform how you see the world.],
-  [Watch TEDNext 2025 on TED Live , check out more photos from the event and learn more about attending a future TED conference],
-),
-  insert-map: (:),
-  word-count: 1237,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-}
-
-{
-  #standard-article(
-  title: [The World Is an Easier Place Without You In It],
-  author: [Karen Shepard],
+  title: [Making of a Poem: Joyelle McSweeney on “My Fortune”],
+  author: [Joyelle McSweeney],
   source-name: [The Paris Review Blog],
   images: (),
   paragraphs: (
-  [September 17, 2023, 11:22 P. M.],
-  [From: Ymei],
-  [Subject: ….swiss self-end-of-life…],
-  [To: Karen Shepard],
-  [how much advance notice does one need for a date.. ?],
-  [are there any particular requirements….?],
-  [what is the cost….?],
-  [can you find out…?],
-  [\*],
-  [September 18, 2023, 8:26 A. M.],
-  [From: Karen Shepard],
-  [Subject: Re: ….swiss self-end-of-life…],
-  [To: mom],
-  [Hi Mom,],
-  [The name of the organization is Pegasos. VAD stands for Voluntary Assisted Death, and they’re in Basel, Switzerland.],
-  [The way it works is that you fill out an online application and submit the required documentation. Approval can happen in a few weeks, but it can take a couple of months, or longer, if they’re busy.],
-  [The required documentation: a passport, proof of residence (like a utility bill, etc.), a birth certificate (reissued within the last six months), medical records, and I think you may need dad’s death certificate, but I’ll check about that.],
-  [I asked them what to do if there were no birth certificates issued at your place/time of birth, and they said just use an affidavit that says that you’ve tried to get a birth certificate and can’t.],
-  [The cost is estimated around 10,000 Swiss francs (about 11,000 US dollars) which includes everything except airfare and hotel costs.],
-  [I sent them an email asking about your ashes being buried in Lausanne. I also wrote to Bois-de-Vaux cemetery in Lausanne to ask the same question. Will let you know what I hear back.],
-  [Whatever you decide you want, I am here to help you.],
-  [All love,],
-  [\*],
-  [September 18, 2023, 11:39 A. M.],
-  [From: Ymei],
-  [Subject: ….swiss self-end-of-life…],
-  [To: Karen Shepard],
-  [forget it – it costs too much to do..],
-  [must be an easier and cheaper way…!!],
-  [i forget whose wife but after he died],
-  [she got the right selection of pills and died….],
-  [\*],
-  [September 18, 2023, 11:43 A. M.],
-  [From: Karen Shepard],
-  [Subject: Re: ….swiss self-end-of-life…],
-  [To: mom],
-  [I’m sure there’s more inexpensive ways, and no doubt ways that involve less paperwork—though as I said, I’m willing to do that part of things for you. I imagine what you sacrifice is control and certainty. And, of course, anyone who helps you in this country will be exposed to prosecution for doing so.],
-  [\*],
-  [September 18, 2023, 12:35 P. M.],
-  [From: Ymei],
-  [Subject: ….swiss self-end-of-life…],
-  [To: Karen Shepard],
-  [the right combination of pills will do the job…],
-  [that’s what ? wife did after he died….],
-  [\*],
-  [September 18, 2023, 12:56 P. M.],
-  [From: Karen Shepard],
-  [Subject: Re: ….swiss self-end-of-life…],
-  [To: mom],
-  [It could, for sure. But it’s not a sure thing; it could also, as in the case of some people we know, not do the job, leaving them in pain, out of control, dependent, and worse off than they had been. And that’s if you can figure out how to get the amounts of the medications you would need.],
-  [\*],
-  [February 14, 2024, 10:05 A. M.],
-  [Tang Yungmei to Karen Shepard],
-  [Karen, can we go to this place as soon as possible? I’m dying here. I want to get out of this place as quickly as possible. Can we get out of here? My leg is worse, and my stroke effect is worse. Everything is worse. My leg really hurts. Get me out of here, okay?],
-  [style="text-align: center;"\>\*\*\*],
-  [September 13, 2009, 12:38 P. M.],
-  [From: Karen Shepard],
-  [Subject:],
-  [To: mom],
-  [Hey,],
-  [Emmett is doing a history essay on your baby shoes as a personal/historical artifact of his. Can you write us any information you have about the shoes? Were they the ones you were wearing when you left your birth family to go live with Grandma? Do you know who made them? Are they the only object you have from your life with your birth family? Did Grandma save them for you, or did someone else? When did she give them to you? Did you take them everywhere with you? To NY when you moved there?],
-  [Anything you remember about them and their history would be great and helpful. Thanks!],
-  [Also, you were adopted in 1942, right? And then where did you guys move first and when? And then where and when? (He needs specific dates). When did Tang die? How did he die?],
-  [Thanks for your help!],
-  [Hope your trip is going well.],
-  [Love,],
-  [K],
-  [\*],
-  [September 14, 2009, 2:09 P. M.],
-  [From: Ymei],
-  [Subject: Re:],
-  [To: Karen Shepard],
-  [hi there… got here in one piece…spent first couple of weeks sorting things out; now need to find more bookshelves, as well as several minor detail accessories…],
-  [as to your question re those baby shoes…really don’t remember when I first got them; probably in malaya, and then kept them with me ever since….],
-  [as to other facts, i suggest that you read chapter ten of your grandmother’s book ‘birdless summer’…thereon you will find dates and facts – we flew from china to india, then took a boat around south africa, up thru the caribbean, to nyc, and across the atlantic to england….. i had to read the book to know that i was in jamaica when i was two!…..so much for now…perhaps more later….hugs to all…],
-  [\*],
-  [September 15, 2009, 5:14 A. M.],
-  [From: Ymei],
-  [Subject: Re:],
-  [To: Karen Shepard],
-  [cont’d…],
-  [i was bought from a woman who already had 3 girls; she gave birth to a 4 th in the hospital where eliz worked as midwife, and wanted to keep the newborn, so she sold a middle one – me…./eliz was unable to conceive……],
-  [interestingly, teresa in tucson tells me that eliz told her that she bought me from a woman in the street!!!…],
-  [as you well know, writers make up their own stories….],
-  [age 2 left for england; age 8 left for hongkong/by seaplane/; started in a chinese boarding school, then a catholic day school…age 12 left for malaya after eliz’s second marriage….by ship, before my 12 th b’day, so i was half fare!….after the 1950 ‘many splendored’ love affair with australian ‘london times’ corres – ian morrison; ian was married, wife in s’pore, wouldn’t give him a divorce…then ian was sent to cover korean war, and was killed at the start, in 1950….],
-  [as to tang, he died in 47, in north east china/manchuria….eliz claims she is not sure exactly how – since he was kmt, perhaps by communists….or maybe he killed himself…..],
-  [a xi’an student of mine wrote his final college paper about my origins – look it up online…..he figured the conception time, and concluded that if i was born in feb 1940, nine mths before, eliz and tang were in separate cities – so, his guess is that i might have been tang’s child with another woman…./i prefer to believe this one, it’s more romantic than her versions/…but, that doesn’t explain, if eliz knew, why she would have accepted me, unless tang concocted some story — those shoes probably were mine when adopted, or made for me soon afterwards….don’t recall when they came into my possession – might as well believe that i had them with me all the time, everywhere…..],
-  [emmett can create his own version of the story, just knowing a few of the facts….],
-  [the readers, or listeners wouldn’t know any better; as long as it sounds highly plausible!!!…i suggest: i was wearing the shoes when eliz got me, and kept them forever with me as i got older — my one and only memento tie to some birth parent.],
-  [addendum – which I probably have told you in the past sometime —],
-  [eliz never told me of the adoption – i found out surreptitiously one xmas holiday when in brussels visiting her old belgian friend and family from her days as a student in belgium – helping with decorating a wall with chinese characters, he passes by and asks, ‘do you ever hear from your mother?’…i instinctively knew that he was not referring to eliz – answered, ‘no’….’is she still in sichuan?’….’don’t know’…..and that was the end of that…..stayed a few more days – and with delayed reaction, back in london, broke down, saw a psychologist; asked my nanny and another british friend of eliz’s whether they knew that i had been adopted, ‘oh yes,’ both answered, ‘but we were told never to tell you.’…..for years, as you might remember, this haunted me – why on earth tell someone else not to tell me, if she didn’t want me to know…..broke my trust….],
-  [family secrets are pervasive –],
-  [tell emmett that i think it is wonderful that he has chosen to write about those little black shoes….],
-  [style="text-align: center;"\>\*\*\*],
-  [February 9, 2024, 10:00 A. M.],
-  [From: Pegasos Association],
-  [Subject: Re: Birth Certificate],
-  [To: Karen Shepard],
-  [Dear Karen,],
-  [I’ve just finished updating our banking records and can confirm that your mother’s deposit payment has been received, many thanks.],
-  [Her application has been collated and sent for approval. The approval process is currently taking around 6-8 weeks.],
-  [I have noted that the preferred timeframe for the VAD is ASAP. (This will help speed up the approval process.)],
-  [Kind regards,],
-  [[REDACTED]],
-  [style="text-align: center;"\>\*\*\*],
-  [December 5, 1965],
-  [Tang Yungmei to her mother, Han Suyin],
-  [We have a little girl. A long legged girl. And such a beauty. Sidney and I are overwhelmed.],
-  [style="text-align: center;"\>\*\*\*],
-  [February 4, 1973],
-  [Karen Shepard to Tang Yungmei],
-  [What is your Best feeling? maybe it is pushing your toes through sand or maybe it is rolling around in mud or maybe it is cleaning up your room. But whatever it is my Best feeling is sitting very close to my mother. By Karen.],
-  [style="text-align: center;"\>\*\*\*],
-  [October 25, 2004, 1:01 P. M.],
-  [From: Ymei],
-  [Subject: Re: Re:],
-  [To: Karen Shepard],
-  [hi there….suspected that my telling you about spending the day helping with [Camilla’s granddaughter] would obviously make you feel that way re: lucy…often wish you were closer, and in the city more often…but i guess with 3 children, and your teaching work it makes it much more difficult logistically…camilla, of course, spends her life around her children and little ones ….if the boys could stay with jim and/or sitters, you could think of coming in only with lucy….before she starts some sort of day care or nursery school… no matter, there always comes a time when it is the right time to do what one wishes….],
-  [take good care of yourself…much love,….],
-  [\*],
-  [October 25, 2004, 9:03 P. M.],
-  [From: Karen Shepard],
-  [Subject: Re: Re:],
-  [To: Ymei],
-  [Dear Mom,],
-  [I’m glad to hear that you often wish I were closer, that’s a good thing to hear from you. But I wasn’t talking about only Lucy and me. I was talking about all my children—my whole family. I was talking about the pleasure it clearly brings you to hang out with other people and their families—the effort you make to do so—as opposed to how you seem to feel about me and my family.],
-  [I really do wish that you wanted to be more of a part of the life I have made with Jim and the children. You’ve said in the past that the happiness of my life sometimes makes you sad, is hard for you to be around, because you never had that in your childhood. As I’ve said to you before, and I imagine I will always say to you: you can have that happiness now, with me, with my family. There is a place for you in this life that Jim, the children, and I have made. Emails like yours about [Camilla’s granddaughter] sadden me because they highlight the ways in which you’ve chosen not to take that place. It’s not just a logistical problem. You have as much time as Camilla has to spend with her grandchildren.],
-  [What you have seemed consistently interested in is focusing your attention on me, or Emmett and me, or Lucy and me. I can’t divide things that way; I think of my family as a whole. I want you to be part of the whole, not something that works to divide it. I’ve never wanted to exclude you from it. I am who I am because of you. I’ve always hoped that you’d find my family a warm and nurturing and desirable place to be. I’ve always hoped my happiness would bring you happiness.],
-  [Love,],
-  [\*],
-  [October 26, 2004, 12:55 A. M.],
-  [From: Ymei],
-  [Subject: Re: Re:],
-  [To: Karen Shepard],
-  [Just a quick brief reply…i am happy that you are happy…however, i don’t wish you to want me to be part of your happy family…perhaps that day might come in the future…as for me, i am not a camilla type…you are totally self-reliant with your family…. i have not gone out of my way to be with [Camilla’s granddaughter] this week. — it was camilla who asked me if i could stay over in brooklyn… and having seen camilla with her i do feel that she needs help with the child while [Camilla’s son] is at work; in and around the other arrangements that they have with neighbor friends, day care, etc….moreover, right now i am not involved in any special project in nyc, so i do have the time…],
-  [it is a trek for me to get to williamstown, and i am not involved in the academic world in which you are — besides which you have a well established child support network up there, with jim’s parents, student help, etc…in any case, i do believe that it is up to adult children to reach out to parents, and not parents to make the first move….],
-  [if this is hard for you to understand, at least you know that this is me/the way i am…granted, according to some chinese students i may not be a ‘conventional/qualified’ grandparent… but i have always been more unconventional than conventional, according to others….],
-  [i am so used to nyc that it would be hard for me to sit in williamstown with only ‘family’ to draw my attention… was not brought up that way, and have never lived that way… i think it is the idea of my role that interests you and not really the me that i am….or perhaps it is the ‘mother’ me that you quite often told me abandoned you that you wish to recapture…why can’t you simply accept my interest in another child without feeling that you and yours have been displaced….personality, intellect, and inherent natural chemistry appeal to me more than mere family blood relationships….look at my relationship with eliz, and you can see where it started…],
-  [perhaps this will help you understand better where i stand….??],
-  [style="text-align: center;"\>\*\*\*],
-  [March 19, 2024, 12:24 P. M.],
-  [From: Karen Shepard],
-  [Subject: Re:],
-  [To: Pegasos Association],
-  [I’m just checking in for an update about mom’s application.],
-  [Anything you can tell me will be useful for her.],
-  [Thanks,],
-  [style="text-align: center;"\>\*\*\*],
-  [October 25, 2007, 9:52 A. M.],
-  [From: Ymei],
-  [Subject: Re: back in town],
-  [To: Karen Shepard],
-  [didn’t check email yesterday…so guess missed jim’s reading – wed, right…your email was dated tues…got back late monday….],
-  [at least eliz is well taken care of with all those rotating nurses….and she has company to hold court with, in french…- not so when vincent was around…],
-  [at best, the trip to see her further convinced my earlier thinking that there is nothing i can see of any feeling in her.…losing v has probably erased all else from her memory — she claimed she didn’t remember houses built in malaya, didn’t remember running a clinic in a pharmacy — continually brushes it off with ‘how can i remember all that when i have so much more taking up my time’!!!!!. and, she says she never thinks of anyone/true, she has always only thought of herself/ not her sister in tucson, nor her cousins in china…and she says people who do think of others are entirely selfish!!!…..lost cause on all counts, as far as i am concerned, or could ever wish….too bad…but i now know for me ‘to bury her before she even dies’ — and hope that thoughts about her don’t haunt me too often – this is why i have to keep myself busy with various projects as a camouflaging pentimento — important to keep my balance and sanity….],
-  [style="text-align: center;"\>\*\*\*],
-  [October 4, 2023, 4:18 A. M.],
-  [From: Ymei],
-  [Subject: ….apology…],
-  [To: Karen Shepard],
-  [karen..],
-  [i have been wracking my brain trying to],
-  [remember what i did or what i said that upset you….],
-  [i know i never intentionally mean to upset you —],
-  [i do know that since the stroke years ago my memory],
-  [fails me….i don’t recall what has been said to me or],
-  [what i’ve said to anyone in particular ….],
-  [if you want to remind me i would appreciate knowing…],
-  [if not, please accept my apologies …],
-  [ps. nowadays, i often say things i don’t really mean…],
-  [and more often don’t remember what i’ve said…],
-  [this is why i prefer not to talk. but prefer writing…],
-  [\*],
-  [October 4, 2023, 5:08 P. M.],
-  [From: Karen Shepard],
-  [Subject: Re: ….apology…],
-  [To: mom],
-  [Hi Mom,],
-  [I really appreciate the apology, and I’m sure it’s disorienting not to be able to remember things.],
-  [I’ve been out of touch with you for the last few weeks because you told me our relationship was over. You were angry that I had learned, and then shared with you and [REDACTED], that a joint account between the two of you put both of you at risk. You had both agreed that the account should be in his name only. When I followed up with him to see if he had taken your name off the account, you wrote me these emails:],
-  [Subject: …end of relating…],
-  [why on earth are you bugging [REDACTED] about my name with his b/account….?],
-  [it was my choice and my doing….only i can do what i want with it.. your doing this without telling me has ended our relationship….!],
-  [And then you wrote this email a few hours after that one:],
-  [Subject: …not your business…],
-  [stay out of our business….],
-  [I wrote back to you this email:],
-  [But of course YOU are my business, as I am yours.],
-  [I didn’t do anything without telling you, and what I do is always, always out of care for and about you. I’m sorry you don’t see it that way.],
-  [Do you remember what you talked to me about at dinner after Grandma’s funeral? You said you wanted to break the cycle that had defined your relationship with her. I assured you that I thought we were already doing that. Part of how we were doing that is trusting that the other is always acting out of care and love. Again, I’m sorry you don’t see it that way, and I’m sorry that means we seem to be perpetuating the cycle rather than breaking it.],
-  [And you wrote back:],
-  [I AM NO LONGER YOUR BUSINESS.],
-  [And then another message:],
-  [AND YOU ARE NO LONGER MY BUSINESS…],
-  [So I respected those desires, though they hurt enormously.],
-  [All I’ve ever wanted is to be cared for by you, and I’ve wanted to be able to care for you without being punished. I’m not asking you to change, to do anything different, to be anyone other than who you are.],
-  [And all of this aside, as always, I’m here to offer you whatever I can. We can talk more the next time I come to the city. Let me know if a visit is something you’d like.],
-  [Love,],
-  [\*],
-  [October 4, 2023, 5:39 P. M.],
-  [From: Ymei],
-  [Subject: ….apology…],
-  [To: Karen Shepard],
-  [thanks for writing back…],
-  [i don’t recall a lot of what you say I said/wrote..],
-  [j’s son alexandre is here for a week….why not come down…],
-  [\*],
-  [October 4, 2023, 8:28 P. M.],
-  [From: Karen Shepard],
-  [Subject: Re:….apology…],
-  [To: mom],
-  [What I sent you were copies of your emails.],
-  [I wish I could visit while Alexandre is there! Sadly, because of my teaching schedule and doctor/dentist appointments, I can’t come for a few weeks. I’m having a tooth implant, and I may have to have foot surgery.],
-  [But give Alexandre my best, and I’ll let you know as soon as I can come.],
-  [Love,],
-  [style="text-align: center;"\>\*\*\*],
-  [March 25, 2024, 9:58 A. M.],
-  [From: Pegasos Association],
-  [Subject: Re: Birth Certificate],
-  [To: Karen Shepard],
-  [Dear Karen,],
-  [My name is Theodore [REDACTED], I work for Pegasos and was asked to take over your mom’s dossier, which I hope is ok with you?],
-  [I’ve just received confirmation that your mother has the green light for a VAD, which basically means we can schedule her for. Could you give me an indication of you and your mother’s current situation and timeframe?],
-  [Best regards,],
-  [Theodore [REDACTED]],
-  [\*],
-  [March 25, 2024, 10:25 A. M.],
-  [From: Karen Shepard],
-  [Subject: Re: Interest],
-  [To: Pegasos Association],
-  [Hi Theodore,],
-  [Thank you for reaching out, especially with this news that my mother will be happy to hear.],
-  [Her current situation is that she is eager to come to you as soon as we can arrange travel from New York City to you. How many days should we plan to be in Basel both before the VAD and after?],
-  [Thank you,],
-  [\*],
-  [April 4, 2024, 6:00 P. M.],
-  [From: Pegasos Association],
-  [Subject: Re: Birth Certificate],
-  [To: Karen Shepard],
-  [Hi Karen,],
-  [Would April 22 nd work?],
-  [Best,],
-  [style="text-align: center;"\>\*\*\*],
-  [Apr 19, 2024, 8:26 P. M.],
-  [Family Group Chat: Jim Shepard, Lucy Shepard, Emmett Shepard, Aidan Shepard],
-  [KS: Swiss Air First Class.],
-  [She just told the man next to her that she’s going to Switzerland to go to sleep forever],
-  [JS: Sleep forever: well, she has a sense of drama],
-  [LS: easily just ruined this man’s flight],
-  [KS: He is assiduously avoiding eye contact now],
-  [\*],
-  [April 20, 2024, 12:05 P. M. EST / 6:05 P. M. CET],
-  [Family Group Chat: Jim Shepard, Lucy Shepard, Emmett Shepard, Aidan Shepard],
-  [KS: She asked me today, “Are you having fun?”],
-  [JS: With wonder or concern?],
-  [KS: Wonder…like: I’m having fun, are you having fun?],
-  [\*],
-  [Apr 20, 2024, 5:44 P. M. EST / 11:44 P. M. CET],
-  [Family Group Chat: Jim Shepard, Lucy Shepard, Emmett Shepard, Aidan Shepard],
-  [KS: She’s talking to mitch. Highlights: Sidney and I slept together once, to have Karen, and never again.],
-  [And apparently, it is my fault dad died.],
-  [\*],
-  [April 21, 2024, 1:53 P. M. EST / 7:53 P. M. CET],
-  [Family Group Chat: Jim Shepard, Lucy Shepard, Emmett Shepard, Aidan Shepard],
-  [KS: Pretty different vibe today. She’s been in bed most of the day. Annoyed that they’re coming to pick us up “so early”—9:15 tomorrow. She didn’t want to go out to dinner. She isn’t eating what I’ve brought into the room, except for some pastries. Some laughs and smiles, but mostly sleeping and grumping. None of it directed at me, at least not yet. She’s taken off all her rings, her watch, her necklaces (except for the memento one of her trip to Paris with [REDACTED]); she doesn’t want to talk to anyone, doesn’t want to play Scrabble. Wondered if she should cut her hair, that it would be “easier.” I said, we could brush and braid it, and she giggled. “The sun’s out,” she said once. Now, she’s sleeping/snoring a little.],
-  [\*],
-  [April 21, 2024, 2:04 P. M. EST / 8:04 P. M. CET],
-  [Family Group Chat: Jim Shepard, Lucy Shepard, Emmett Shepard, Aidan Shepard],
-  [KS: Nurse Carlos (from Peru—plays jazz trumpet and the bagpipes) picks us up tomorrow. We go to the clinic, fill out paperwork, they set her up in the bedroom. When she’s ready, they come in and put the medication in the IV. She practiced turning the little valve today when he visited us in the hotel room. 20-30 seconds she goes to sleep, then a couple of minutes later, she’ll be gone. No pain, he assured her. Then a couple of hours of me dealing with police, medical coroner, etc. Then Carlos will take me back to the hotel.],
-  [\*],
-  [April 21, 2024, 9:08 P. M. EST / Apr 22, 2024, 3:08 A. M. CET],
-  [Family Group Chat: Jim Shepard, Lucy Shepard, Emmett Shepard, Aidan Shepard],
-  [JS: Do you think it’s possible she’ll change her mind?],
-  [KS: With her, always a possibility. If she does, I’ll have to insert the IV in myself.],
-  [\*],
-  [\*],
-  [1947],
-  [Excerpt from The Book of the Desert],
-  [Story by Tang Yungmei, age seven, written at boarding school in England],
-  [On they went, led by Hassan, who every now and then looked over his shoulder at the Pole star and then at a bright star low down in the south, to make sure that he was going straight. Behind him came the long string of camels that formed the caravan, their drivers walking to keep warm, and singing little songs to their beasts as they went. Every one of them loved his camel and could tell its wide footprints among a thousand.],
-  [\*],
-  [May 9, 2024 4:14 P. M.],
-  [From: Karen Shepard],
-  [Subject: Re: Yungmei Tang wire transfer confirmation],
-  [To: Pegasos Association],
-  [Hi Theodore,],
-  [I am actually finding that the world is an easier place without her in many ways than it was with her. We had a very good extended goodbye (starting in January when she fell and was living in rehab). That coincided with her decision to apply to Pegasos, and that made her easier in her own skin, easier with the world and the others in it, including me. So, I guess I don’t really miss her in the way most people usually mean. It is certainly strange not to have parents in the world after how large they loomed in who I was and who I was reacting against and with, etc. And I miss the hope that I had when she was alive that we would figure out a way to be kinder to and more understanding of each other. I am just so grateful that the goodbye was more connected to each other than it might’ve been, that life without her seems okay, largely because her death was what she wanted; it didn’t happen to her, it happened because of her.],
-  [Oh, yes, she was often aware of how difficult she was. I’m sure she would’ve said that I was difficult also. It was like a lighthouse: sometimes she could see herself with real clarity, and then the light would swing away, and she was unable to do so anymore. It was difficult, as her daughter, to have to learn how to not rely on that light.],
-  [I hope you’re well.],
-  [\*],
-  [April 22, 2024, 10:30 A. M. CET],
-  [KS: Why do you think people don’t like to change? They’re scared of it?],
-  [TY: They’re scared of … oh, what do you call it?],
-  [KS: Uncertainty?],
-  [TY: Yeah, uncertainty. They only want to change if they know what they’re getting into. It’s secure.],
-  [KS: What were the moments of biggest change in your life?],
-  [TY: I don’t know what changed. [ Silence. ] I don’t know.],
-  [[ Silence. ]],
-  [KS: I want to say thank you.],
-  [TY: What for?],
-  [KS: For the role that you had in who I became.],
-  [[ Silence. ]],
-  [TY: Maybe when you’re ready, maybe you’ll do the same thing I’m doing.],
-  [KS: I might.],
-  [TY: You don’t want to lie in bed, not able to walk, not able to talk, and … um … just a vegetable with somebody watching over you.],
-  [KS: I certainly don’t.],
-  [TY: It’s wasted time for somebody to keep an eye on you. Another human being who can’t do anything. Can’t talk, can’t walk, can’t move.],
-  [KS: Well, I would’ve done that for you if you had wanted to do that, but I don’t think you wanted to do that.],
-  [TY: To do what?],
-  [KS: To be like that.],
-  [TY: Of course not.],
-  [KS: Yeah.],
-  [TY: It’s a waste of time for you, or for any person who’s still able to do things. [Silence]. All those people in the place I was in for the last few months. It’s terrible. I’m sure they wanted to end their life, but no one was able to do it for them.],
-  [KS: Or with them. I’m glad I got to keep you company on this.],
-  [TY: Yeah. Terrible. And it’s a waste of money for the people who are watching them.],
-  [KS: Well, it’s more … for me it’s more a waste for the person themselves. Who wants to live like that? I don’t want to.],
-  [TY: Yeah, but some people can’t afford it.],
-  [KS: I know.],
-  [TY: Look at this money.],
-  [KS: I know.],
-  [TY: It’s crazy.],
-  [KS: Well, that’s another thing I’m grateful for; that you were able to afford it.],
-  [[ Silence. ] But mostly I’m grateful that we get to accompany each other on this.],
-  [[ Silence. ]],
-  [TY: I mean, you should probably sell one of the apartments at least and keep a big chunk of money in the bank, in case [ Laughs ] …],
-  [KS: [ Laughs ] In case I need to do this.],
-  [TY: Because it’s terrible if you don’t have the money to do it, and you’re lying there not able to move, not able to eat.],
-  [KS: It’s true.],
-  [TY: It … it’d be horrible.],
-  [KS: Maybe one of my children will just put a pillow over my head.],
-  [[ Both laugh. ]],
-  [TY: Yeah, you could do that.],
-  [KS: I don’t think I would ask my children to do that. Might be too hard. This is much more dignified.],
-  [TY: Also, I don’t think, maybe it won’t work.],
-  [KS: Right, and they’d get in trouble.],
-  [TY: Yeah, that’s true, right.],
-  [[ Silence. ]],
-  [TY: Alright, so let’s do it.],
-  [KS: You’re ready?],
-  [[ Silence. ]],
-  [KS: I love you.],
-  [[ Silence. ]],
-  [KS: Let’s put on some music.],
-  [TY: Take care of yourself.],
-  [KS: I will.],
-  [TY: So, what do I do? I just …],
-  [\*],
-  [\*],
-  [Found May 14, 2025],
-  [From a typed, unsent letter found in Tang Yungmei’s files],
-  [Karen,],
-  [I don’t want to keep having the same nightmares for the rest of my life, and I dont want you to carry the same pain with you forever.],
-  [I know I was the source of much of your anguish during your high school years. This is the side of me that I have to live with: I tend to do what I feel like doing, and I can’t discuss what I do with myself. And, and this is a very big “and”, I do not have, and did not have, a single soul with whom I would or could have discussed any of my personal goings-on. To this day I do not have a “friend” with whom I would discuss what I feel or do. I do not have as you do, a social network of close friends with whom I can diffuse what goes on in my head, let alone my heart.],
-  [Do you believe Eliz was right when she said that I’d only be interested in you through childhood?],
-  [I knew that you would grow up and out and away from me. By now, you must have seen how unequiped I am for separation.],
-  [As you say, one’s past, one’s childhood, one’s growing up is always there to be revived, is always there to be made apparent in one’s current life. There is no “de-experiencing” as it were, there is only “cover-up”. How well we do it, and how well we camouflage what we don’t want to live with in ourselves, is our way of going on with life.],
-  [What did I do with you that you didn’t like?],
-  [What did I do that you didn’t understand, and would like to know?],
-  [What would you have liked me to do that I didn’t do?],
-  [What did I do that you did like?],
-  [What times do you remember with joy/happiness/closeness/intimacy?],
-  [Would you like me to help you in your anguish?],
-  [Would you like to help me in my mine?],
-  [style="font-weight: 400;"\> Karen Shepard is the author of four novels, An Empire of Women, The Bad Boy’s Wife, Don’t I Know You?, and The Celestials , and one collection of stories, Kiss Me Someone . She teaches at Williams College.],
+  [style="font-weight: 400;"\> For our series Making of a Poem, we’re asking poets and translators to dissect the poems they’ve contributed to our pages. Joyelle McSweeney’s “ My Fortune ” appears in our new Spring issue, no. 255.],
+  [How did this poem start for you?],
+  [For about a year I found the news so bleak that I turned away from the present tense and made myself a connoisseur of Fortune—the grave goods packed into the Pharaoh’s tomb—his mask, his cats, his casket. From the window of my phone, from the cold black cell of my wakefulness, I would watch rival Egyptologists make competing cases, revolving algorithmically, in and out of view. I watched Cocktails with a Curator , a series of hypererudite videos recorded by Frick Gallery staff from their apartments in New York at the height of lockdown, replayed now in sequence like a journal of the plague year—this swain, his lover, this horse, his Polish rider, this hat, this collar, this pearl. This vial. This tipsy lethal cup.],
+  [One night, prowling among my treasures in the dark like a crone-ghost or crow, I saw a glittering promotion for some past Sotheby’s or Christie’s auction of a priceless silver service from the eighteenth century. It was laid out on a dark dining table, where you would expect to see such things in use, yet the pieces were crammed on all together, at once, as you never would expect to see them—all the tureens, all the platters, all the chargers, all the salts. And they were thickly lit, from every angle, as you would also never see in life. The light rinding the silver was unnatural, strange, dead. Some lord had lost his fortune.],
+  [When I lost My Fortune, mo stóirín , my little treasure, I felt my whole body twist as in a snare or cinch as I entered my next life—not a life I wanted, not a life anyone would want. Blinking like a stuck drain at all the dead treasure laid out on the table, I thought about figures from Ovid’s Metamorphoses , how they turn at the torso as their new life begins, a life they couldn’t have thought of until they turned into the thought of it. A laurel. A reed. An echo. I wanted a poem that would turn like that, with snares and cinches, that would elapse very fast. I wanted the poem to drain through your fingers like sand.],
+  [This poem begins with a photograph of our daughter in the NICU , odi et amo . I love and hate it. Because that’s her face—her tubes, her mask, her tape. The poem drains through the shapes of the dead silver service, then through the figure of Venus’s ankle to a beach where fortune advances and retreats.],
+  [What was a particular formal challenge of this poem?],
+  [One challenge was to make the poem run out as quickly as possible, as when the tide runs away from the beach, leaves its litter, then rushes back to wipe out even that. The little periwinkles ( Littorina littorea , that little litter, my treasure) catch last light then are knocked away. Maybe something else will rise. The stars will rise. The seas.],
+  [The most challenging thing about the poem was keeping the opening section this unguarded, keeping the unlovely repetition of the word thinking , as if to suggest a certain horror and immobility in the face of grave loss. Thought from every angle. The unnatural rind of thought.],
+  [Joyelle McSweeney is the author of Death Styles and the verse play Dead Youth, or, The Leaks, among other books. She teaches at the University of Notre Dame.],
 ),
   insert-map: (:),
-  inline-pq: pull-quote([I’ve been out of touch with you for the last few weeks because you told me our relationship was over.], [Karen Shepard]),
-  inline-pq-idx: 145,
-  word-count: 5374,
+  word-count: 625,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -924,26 +324,45 @@ Your answer:],
 
 {
   #standard-article(
-  title: [An electric day 3 of TEDNext 2025],
-  author: [Brian Greene],
-  source-name: [TED Blog],
+  title: [how the creative impulse of utopia improves the world – maria arana zubiate],
+  author: [Maria Arana Zubiate],
+  source-name: [designboom Architecture],
   images: (),
   paragraphs: (
-  [For day 3 of TEDNext 2025, two magical sessions of talks put forward ideas on how to grow thoughtfully, think radically and redesign a better world. With stories from our AI-powered present (and future) as well as a healthy dose of ingenious human problem-solving, the talks of day 3 surprised, delighted and shed new light on what it means to be human right now.],
-  [What exactly is TEDNext? A vibrant, three-day exploration of what’s next, propelling the “future you” to think expansively at every level, from personal to global. The second-ever TEDNext conference, held in Atlanta, continues an expansion of the annual slate of conferences from TED, with a conference designed to spark imagination, embrace possibility and foster dreams about what the next version of “you” can be.],
-  [Watch TEDNext 2025 on TED Live , check out more photos from the event and learn more about attending a future TED conference .],
-  [Some key takeaways from day 3:],
-  [The line between awe and indoctrination — and how to actually seek happiness. Writer and podcaster Amanda Montell thinks we’re living through the “cult-iest” era on record, as the hard-wired cognitive biases that helped early humans survive brush up against Information Age tools and communication tactics. She shares how to recognize the strategies and language tricks cults use to coerce — from thought-terminating clichés designed to shut down independent reflection to loaded buzzwords that feel like enlightenment — as well as some crucial tips to help you preserve the ability to think for yourself. Approaching our need for fulfillment from a different angle, happiness scientist Sonja Lyubomirsky distills the essential lessons from scientific research into humanity’s most sought-after emotion: happiness. Her number one hack? To approach conversations with others as experiences designed to take walls down, not changes to share your highlight reel. By sharing deeply and listening to learn, Lyubomirsky thinks we can all unlock the potential for happiness inside of us.],
-  [Some pro-human takes on AI and algorithms. How do we stay “real” when algorithms and chatbots are constantly influencing our behavior to the benefit of platforms like ChatGPT, Spotify, X and others? Etymologist and content creator Adam Aleksic sounds the alarm on how AI tools are changing how we communicate — down to our very word choices — and, possibly, rewiring the underlying patterns of our thoughts, encouraging us to remember that these emerging tools aren’t neutral. Self-described “dumb questions” advocate Nayeema Raza picks up the thread of AI tools hijacking our lives — not with an anti-tech tech, but with a pro-human one. She makes a case for the return of three old habits — to pause and notice our urge to reach for our devices, to live in wonder and to ask questions out loud instead of in private — to reconnect with what actually matters in our lives.],
-  [Tech meets the natural world. After watching a series of wildfires rage around his home in Northern California in 2019, civic tech pioneer John Mills had a simple question: Where is the information? With firefighters relying on communications technology from the 1930s, often the answer was: too little, too late and too sporadic. Enter Watch Duty, a non-profit alert system Mills created with the help of a few radio operators and volunteer engineers from Silicon Valley. Developed in an 80-day sprint, Watch Duty beat government alert systems by nearly an hour just a handful of days after it launched, and it has continued to provide residents and first responders with the life-saving heads-up they need to escape danger, proving that a small group of thoughtful, committed citizens can indeed change the world. Telling another story from the positive side of tech, ocean explorer Eric Stackpole takes us into the murky depths to explore the mysterious worlds of sperm whales. Sequestered aboard a ship filming a show for National Geographic during the early days of the COVID pandemic, Stackpole and his colleagues concocted a “very maker-y” camera rig that ended up revealing a previously unreachable world — capturing footage of sperm whales communicating and coordinating for the first time on camera. “The question isn’t: ‘What can we explore?'” Stackpole says. “The real question is: ‘What will we wonder about next?'”],
-  [New thinking on pain, the mind and body. We’ve let our screens quietly train our days into locked-down stillness, says journalist and host of NPR’s TED Radio Hour , Manoush Zomorodi , and it’s led to many of us feeling exhausted most of the time. She makes the case that tiny, regular bursts of activity baked into our days — known as “movement breaks” — can flip the body’s switches, brightening mood, sharpening focus and even regulating blood sugar. That same spirit of rethinking the obvious extends to how we think itself: in a personal talk exploring the mind’s eye, puzzle wizard and editorial director of TED-Ed Animations Alex Rosenthal shows how our inner worlds can vary wildly, and that when we build teams across those differences, creativity and problem‑solving multiply. Taking that openness into the clinic, Dr. Sanjay Gupta explores new thoughts on pain — how it isn’t just a signal in tissue but a story shaped by environment, history, sleep and support. He reveals how light, movement and connection might be as therapeutic as medicine.],
-  [The signs are everywhere — we need to stop and appreciate the wonder of the world. For a dash of whimsy, photographer and wildlife enthusiast Tom Sullam embarks on a romp through a series of ever-more-amusing wildlife photos, explaining how a sense of humor could help us get more connected to nature. In another hilarious photographic journey, designer and professor Kate Canales shares her obsession with hand-made signs — the subtle, helpful and oftentimes hysterical extra instructions we add to point-of-sale machines, doors and conspicuously in bathrooms. “No matter how you might feel about the advancement of technology in our everyday lives, these signs are evidence that humans still need each other in real life to do some of the simplest things,” she says.],
-  [Watch TEDNext 2025 on TED Live , check out more photos from the event and learn more about attending a future TED conference .],
+  [dir="auto"\>],
+  [dir="auto"\>Over time, utopias, often disparaged, have shown their capacity to guide and shape the evolution of the world toward more desirable scenarios. The power of utopia is such that many of today’s widely accepted urban proposals— such as collective housing, garden cities, or mass public transport — were once dismissed as utopian. Over the past century, utopia became a powerful tool for accelerating change. After the First World War, the historian, philosopher, and urbanist Lewis Mumford, author of the book The Story of Utopias, argued that the most important task of the moment was to ‘build castles in the air,’ advocating for a proactive, creative, and visionary attitude toward a world that could not be accepted as desirable or just.],
+  [dir="auto"\>],
+  [dir="auto"\>As Mumford pointed out, the history of utopias is, in fact, the history of the world. They emerge as a rejection of the social and cultural context of their time, not as a naive refuge, but as a critical gaze that reveals the shortcomings of their present. Utopia is, in itself, a way of understanding reality, a way of seeing the world that allows us to imagine other rules, other connections, and other architectures. And it begins with an impulse that precedes any method: a creative reaction that pushes us to imagine the impossible.],
+  [dir="auto"\>],
+  [dir="auto"\>],
+  [dir="auto"\>],
+  [dir="auto"\>],
+  [dir="auto"\>Lewis Mumford divided utopias into two main categories: escapist utopias, which flee from reality, and regenerative utopias, which seek to transform it. Furthermore, he warned of the dangerous proximity between dystopia and the realized utopia: when the ideal is realized, it runs the risk of degenerating into its opposite. How can we differentiate these utopias and find the boundary that turns them into dystopia? How can we work with this ambiguity to recover the drive that fosters utopian thinking within a dystopia? Here is a small selection of projects from Eu-topias, Ou-topias , the main exhibition of the Basque International Architecture Biennial, Mugak, which may help explain this complexity.],
+  [dir="auto"\>],
+  [dir="auto"\>],
+  [dir="auto"\>],
+  [Utopias of escape offer an imaginary refuge from the contradictions of the present and function as cultural safety valves that express the desire for a different possible life and constitute forms of critical escape. From nomadism, voluntary confinement, or adaptive architectures, all of them explore escape as voluntary exclusion—geographical and existential—through the creation of new imaginaries.],
+  [New Babylon is the name that Dutch artist Constant Nieuwenhuys gave to a large-scale project developed between 1956 and 1974. Conceived as a global city, free of borders, composed of large, elevated, and transformable structures, New Babylon presents itself as a space in constant metamorphosis, designed to welcome a humanity liberated from productive labor and fully dedicated to play, creation, and experimental living. A territory of freedom and exploration in which architecture ceases to be a fixed framework and becomes a malleable instrument of social experimentation.],
+  [dir="auto"\>],
+  [Today, Constant’s proposal remains remarkably relevant. In the face of a globalized urban model marked by the standardization of spaces, the commodification of leisure, and the centrality of productivity, New Babylon challenges the contemporary imagination by positioning play, mobility, and creativity as the axes of spatial organization. The growing dematerialization of work, the nomadic mobility of broad social sectors, and the expansion of global communication networks seem to give substance—albeit in a fragmentary and contradictory manner—to some of Constant’s intuitions. At the same time, the climate and migration crisis, inequality, and the transformation of dwelling practices reopen the interest in thinking of the city as a collective project oriented toward emancipation rather than solely toward economic efficiency.],
+  [In an urban world marked by deep inequalities, architectural imagination can be a political and transformative tool. Regenerative utopias seek to reverse the physical and social deterioration of cities, not only by recovering what has been lost, but by proposing new ways of living and coexisting. Here architecture ceases to be mere construction and becomes a medium that creates bonds, projects futures, and draws new maps of possibilities. Two experiences stand out in this context:],
+  [The Available City , conceived by architect and urban planner David Brown, is a proposal for urban intervention based on a striking statistic: the city of Chicago has approximately 13,000 vacant lots, an area equivalent to twice the size of its downtown core. David Brown proposes viewing these vacant sites as an interconnected system rather than isolated lots, to create new public spaces and reconfigure the urban fabric starting from the plot, its smallest unit. In 2021, this concept was chosen as the central theme of the 4th Chicago Architecture Biennial, becoming a laboratory for urban experimentation. The results included play spaces, sports facilities, temporary cultural centers, and community gardens, demonstrating the versatility of the model and its capacity to generate networks of collaboration between architects, residents, collectives, and public administration.],
+  [More than 9,000 kilometers away, in Accra, architect, academic, and writer Lesley Lokko founded the African Futures Institute, an educational and critical thinking platform dedicated to envisioning African futures from within the continent itself. From its beginnings, the African Futures Institute has expanded its reach into curatorial practice and the organization of exhibitions, consolidating its international reputation through its participation in the 2023 Venice Architecture Biennale. This institution recognizes that, on the youngest and fastest-urbanizing continent on the planet, it is urgent to rethink how architects and urban planners are trained—not only for Africa’s future, but with the understanding that this future impacts the entire world.],
+  [This African educational organization is establishing itself as a platform for imagining African futures from within the continent itself, placing issues such as decolonization, climate change, migration, and social justice at the center. In its vision, architecture is the capacity to imagine and build futures in which regeneration and social justice are interwoven, turning utopia into a living practice, a collective process, and the act of rewriting the present.],
+  [Between the promise of a better future and the fear of its oppressive drift, the thin line that separates utopia from dystopia becomes fertile ground for architectural and social imagination. That intermediate space, where the ideal merges with the precarious and the collective with the provisional, reveals the fragility of our ways of living.],
+  [Inverted Tents , by architect Aristide Antonas, embodies this ambiguity: beds suspended in abandoned buildings invert domestic logic, freeing up floor space for communal life and the creation of new bonds. But that same gesture that promises community also evokes the precariousness of shelter, the echo of ruin, and contemporary vulnerability. Antonas’s project emerged in Athens between 2010 and 2012, a period marked by economic collapse and the proliferation of functional ruins. Its aim is not to reinforce individual autonomy, but to generate conditions for collective practices and encounters. The project also connects with the idea of the “empty university,” proposing to bring together immigrant and local students in shared environments—not as a substitute for housing for the poor, but as an experiment in coexistence based on contingency and the reuse of existing infrastructures.],
+  [In that unresolved tension between utopia and dystopia, a field of reflection opens about how to imagine the common without denying the instability that sustains it. It is at once a critique of the inaccessibility of housing and an exercise that oscillates between utopia—imagining alternative modes of coexistence—and dystopia—through its inevitable evocation of refugee camps and other conflicts, recalling the harshness of forced displacement and contemporary precariousness.],
+  [Today, largely overtaken by the surrounding reality, utopias seem to have fallen into disrepute. The prevailing pragmatism limits the space for imagining better futures. An absence that is full of danger, because, as the French philosopher and anthropologist Paul Ricoeur warns, ‘a society without utopia is a society without purpose, a society without direction.’],
+  [dir="auto"\>Maria Arana Zubiate is an architect, researcher, and curator. She is a Founding Partner of Urbanbat, a social initiative cooperative dedicated to research and the production of critical culture on urban transformations. She has curated programmes for Azkuna Zentroa-Alhóndiga Bilbao, the Spanish Ministry of Culture, and has been Co-Director for 14 years of URBANBATfest, Bilbao’s annual festival of architecture, urbanism, and social innovation. Currently, she is the Curator of the Mugak\/ Basque Country International Architecture Biennial.],
+  [dir="auto"\>],
+  [dir="auto"\>],
+  [dir="auto"\> This guest essay is part of designboom’s Utopia: Then and Now chapter, examining utopia’s role in the past, present and future as a way of envisioning a better way of being. Explore more related stories here .],
+  [The post how the creative impulse of utopia improves the world – maria arana zubiate appeared first on designboom | architecture & design magazine .],
 ),
   insert-map: (:),
-  inline-pq: pull-quote([Enter Watch Duty, a non-profit alert system Mills created with the help of a few radio operators and volunteer engineers from Silicon Valley.], [Brian Greene]),
-  inline-pq-idx: 4,
-  word-count: 1272,
+  inline-pq: pull-quote([That intermediate space, where the ideal merges with the precarious and the collective with the provisional, reveals the fragility of our ways of living.], [Maria Arana Zubiate]),
+  inline-pq-idx: 11,
+  word-count: 1584,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -952,28 +371,180 @@ Your answer:],
 
 {
   #standard-article(
-  title: [Bolaño’s Heresy: On Distant Star],
-  author: [Ben Lerner],
-  source-name: [The Paris Review Blog],
+  title: [What can a software developer do about climate change?],
+  author: [Itamar Turner-Trauring],
+  source-name: [Itamar Turner-Trauring],
   images: (),
   paragraphs: (
-  [Are there any actual poems in Distant Star ?],
-  [“The three poems were short; all less than ten lines,” Arturo B., our poet-narrator, says of the early verse of Alberto Ruiz-Tagle, the mysterious autodidact who one day appears, as if from nowhere, in the poetry workshop Arturo attends. “One described a landscape: trees, a dirt road, a house in the distance, wooden fences, hills, clouds.” No part of the poem is quoted; we’re given none of the text or texture. According to Marta, another young poet in their orbit, these weren’t Ruiz-Tagle’s “real poems” anyway; even the poems withheld from us are only stand-ins. Where, then, in Distant Star , are the “real poems”? One fateful night soon after Pinochet seizes power, the Garmendia sisters—“identical twins and the undisputed stars of the poetry workshop”—read their poems to Ruiz-Tagle (right before he’s revealed to be the murderous aviator Carlos Wieder), but they don’t read them to us; we’re just told their poems are “wonderful.” They “often described painters lost in the wilds of southern Chile, embarking on hopelessly ambitious works and hopelessly in love.” (The poems we don’t see are about impossible works of art.) Again and again, poems are characterized in a way that only makes them more opaque: “the opening lines were worthy of Isidore Isou, while the unexpected ending would not have been out of place in a Chilean folk song,” or “a narrative poem, which … reminded me of John Cage’s poetic diary spliced with lines that sounded like Julián del Casal or Magallanes Moure translated into French by a Japanese psychotic,” and so on.],
-  [The only poems (assuming we agree that they are poems) that the narrator quotes directly are those quickly disintegrating lines that Wieder—a member of Pinochet’s air force—writes with his plane across the sky. (Of course, type can only approximate vapor, so in a sense we’re presented with translations.) And yet even these lines begin to waver, Bolaño erasing with one hand what he writes with the other. “I managed to read the words DIXITQUE DEUS … FIAT LUX … ET FACTA EST LUX ,” the narrator recalls, only to add, “though perhaps I was guessing or imagining or dreaming.” The unforgettable scenes of Wieder’s nihilistic skywriting possess a dreamlike indeterminacy, indeed; they seem to happen and not happen simultaneously: “But none of the generals or the generals’ wives and children or the senior officers or the military, civil, ecclesiastical, and cultural authorities present could read his words.” Is that because the words are projections, hallucinations? Even Wieder doesn’t seem to know: “He wrote, or thought he wrote: DEATH IS MY HEART .” Here, where we are supposedly reading the writing on the skywall, the sentences march toward contradiction, self-cancellation: “And then he had no smoke left to write with … but still he wrote.”],
-  [style="text-align: center;"\>\*\*\*],
-  [What are we to make of the resemblance between the sky-writing of Carlos Wieder and the work of the real Chilean poet and artist Raúl Zurita? Zurita, who was born in Chile in 1950, and who was imprisoned and tortured by Pinochet, founded CADA (Colectivo Acciones de Arte), known for its artistic demonstrations against the dictatorship. In June of 1982, Zurita hired airplanes to skywrite excerpts from his poem “La vida nueva” over Manhattan (lines that in their epigrammatic declarations recall some of Wieder’s “ writing ”). Is Bolaño indicting Zurita—suggesting, say, that when poetry becomes spectacle or political action it can easily be co-opted by the right? Does Distant Star imply that the right-wing and left-wing avant-gardes are interchangeable, both harboring the fantasy of obliterating the boundary between art and life and intervening directly in history? (Wieder can also be read as literalizing the “aeropoesia” of the Italian futurist Filippo Marinetti.) It is Wieder’s goal to plan “something spectacular to show the world that the new regime and avant-garde art were not at odds, quite the contrary.” Is Bolaño mocking Zurita’s messianic streak, or just giving in to petty rivalry?],
-  [Certainly, Distant Star is marked by an ambivalence about the relation between radical politics and art. Poetry morphs into political violence (or violent resistance)—and not just for the fascist Wieder. Juan Stein, the leader of the poetry workshop in which the narrator first meets Ruiz-Tagle/Wieder, treasures a photograph of the Red Army general Ivan Chernyakhovsky, to whom he is related. (Bolaño’s endless cascades of literary proper names, both historical and fabricated, here give way—almost without transition—to a litany of Soviet generals, as if literary and military history were interchangeable: “According to Stein, [Chernyakhovsky] was the greatest general of the Second World War. Bibiano … mentioned Zhukov, Koniev, Rokossovsky, Vatutin, and Malinovsky, but Stein stood firm.”) Stein often muses about getting rid of the general’s photo, saying that he will instead “use the frame for a photo he had of William Carlos Williams doing his day job as a small-town doctor,” which he claims would be more appropriate for a literature department. But even this fantasy about replacing a general with a poet involves a poet chosen because he was also a so-called man of action, had a real job—a doctor carrying his “black leather bag” full of medical instruments, not writing implements. (It’s unclear, by the way, if the photo in fact depicts Williams—the instability of authorship in Bolaño’s work extends to author photos.) After the coup, Stein disappears, only to surface “like a ghost wherever there was fighting, wherever desperate, generous, mad, courageous, despicable Latin Americans were destroying, rebuilding, and redestroying reality, in a final bid that was doomed to failure.” A doomed effort to destroy, rebuild, redestroy reality: Is that Bolaño’s definition of vanguard poetry or revolutionary politics or both? Does it involve any actual poems? For Stein and Wieder, art culminates in—or collapses into—violence, even if Stein is to be admired, Wieder feared and despised.],
-  [style="text-align: center;"\>\*\*\*],
-  [The poets, who may or may not write poems, disappear and reappear and disappear again, their names undergoing change, their identities never certain. (There are so many aliases and anagrammatic recombinations in Bolaño’s global literary underworlds, both within and across his books, that all proper names—even the historically verifiable ones—feel like pseudonyms.) The poem glimpsed only in paraphrase, the poet always in the process of vanishing—these are the central mysteries (both in the noirish and metaphysical senses) that animate Bolaño’s fiction. His gift is for making the poem and poet seem at once ludicrous, impossible, and like the most important thing in the world, or like something from another world, a distant star.],
-  [The literary critic Cleanth Brooks coined the phrase “the heresy of paraphrase” to warn against reducing a poem to its content and context, as if you could capture the essence of a poem while discarding its form. Part of Bolaño’s genius is the way he lets a species of heresy charge his prose. Bolaño’s paraphrases are of course fictions, purportedly secondhand accounts of things that didn’t exist in the first place, but through this fictional secondariness he smuggles in poetic effects. Here, for example, is Arturo B.’s description of the legal testimony given by the Garmendia sisters’ maid against Wieder when he’s tried in absentia for his crimes. (Note that it’s not only paraphrase, but translation, since “every second word was in Mapuche.”) Her testimony became],
-  [a cyclical, epic poem, which, as her dumbfounded listeners came to realize, was partly her story, the story of the Chilean citizen Amalia Maluenda, who used to work for the Garmendias, and partly the story of the Chilean nation. A story of terror. When she spoke of Wieder, she seemed to be talking about several different people: an invader, a lover, a warrior, a demon. When she spoke of the Garmendia sisters, she likened them to the air, to garden plants, or puppies.],
-  [We don’t know if Amalia’s analogies were a compelling part of her “epic poem” (“puppies” doesn’t sound particularly promising). We don’t get the specific analogies; we just get the raw material of likening. But this has its own power, as we imagine a range of possibilities (unencumbered by any actuality), just as Amalia’s speech about Wieder seems to describe several men at once, just as her story becomes several stories simultaneously. We are guessing, imagining, dreaming. My favorite passages in Bolaño’s books are such heresies, in which distance—translation, paraphrase, unreliability—enables a kind of negative capability, a spread of potential (and potentially contradictory) meanings. And maybe this is my own dream or projection, but when I read Bolaño’s flat, minimal descriptions of nonexistent verse, the prose begins to vibrate. “Trees, a dirt road, a house in the distance, wooden fences, hills, clouds”—instead of seeming to come after a particular poem, I have the inkling that this language is not yet a poem, that it is waiting for you or me to build it, give it form. Paraphrase becomes a protopoem. Heresy—if only for an instant—gives way to faith in the prospect of poetic making.],
-  [Arturo B., while paraphrasing Amalia’s cyclical epic, glosses Distant Star itself. For this book is partly the story of a Chilean citizen and partly the story of the Chilean nation, its political dreams and nightmares; it is a story of terror, a story about an inscrutable, chameleonic villain who might be a demon. And it is a story, like so many of Bolaño’s stories, in which poetry is everywhere and poems are nowhere to be found.],
-  [From the introduction to Roberto Bolaño’s Distant Star , translated from the Spanish by Chris Andrews, out from Picador in April.],
-  [Ben Lerner is the author of several books of poetry and prose, as well as collaborations with visual artists. The recipient of fellowships from the Fulbright, Guggenheim, and MacArthur Foundations, Lerner has been a finalist for the National Book Award for Poetry and the Pulitzer Prize for Fiction, among many other honors. He is a Distinguished Professor of English at Brooklyn College. His newest novel, Transcription, will be released by Farrar, Straus and Giroux in April.],
+  [Pines and firs are dying across the Pacific Northwest, fires rage across the Amazon, it’s the hottest it’s ever been in Paris—climate change is impacting the whole planet, and things are not getting any better.
+ You want to do something about climate change, but you’re not sure what.],
+  [If you do some research you might encounter an essay by Bret Victor— What can a technologist do about climate change? 
+There’s a whole pile of good ideas in there, and it’s worth reading, but the short version is that you can use technology to “create options for policy-makers.”],
+  [Thing is, policy-makers aren’t doing very much.],
+  [So this essay isn’t about technology, because technology isn’t the bottleneck right now, it’s about policy and politics what you can do about it. 
+It’s still written for software developers, because that’s who I write for, but also because software developers often have access to two critical catalysts for political change.
+And it’s written for software developers in the US, because that’s where I live, and because the US is a big part of the problem.],
+  [But before I go into what you can do, let me tell you the story of a small success I happened to be involved in, a small step towards a better future.],
+  [id="infrastructure-and-the-status-quo"\>Infrastructure and the status quo],
+  [About a year ago I spent some of my mornings handing out pamphlets to bicycle riders.
+I looked like an idiot: in order to show I was one of them I wore my bike helmet, which is weirdly shaped and the color of fluorescent yellow snot.],
+  [After finding an intersection with plenty of bicycle riders and a long red light that forces them to stop, I would do the following:],
+  [When the light turns red, step into the street and hand out the pamphlet.],
+  [Keep an eye out for the light changing to green so that I didn’t get run over by moving cars.],
+  [Twiddle my thumbs waiting for the next light cycle.],
+  [It was boring, and not very glamorous.],
+  [I was one of just many volunteers, and besides gathering signatures we also held rallies, had conversations with city councilors and staff, wrote emails, talked at city council meetings—it was a process.
+The total effort took a couple of years (and I only joined in towards the end)—but in the end we succeeded.],
+  [We succeeded in having the council pass a short ordinance, a city-level law in the city of Cambridge, Massachusetts. 
+The ordinance states that whenever a road that was supposed to have protected bike lanes (per the city’s Bike Plan) was rebuilt from scratch, it would have those lanes built by default.],
+  [Now, clearly this ordinance isn’t going to solve climate change.
+In fact, nothing Cambridge does as a city will solve climate change, because there’s only so much impact 100,000 people can have on greenhouse gas emissions.],
+  [But while in some ways this ordinance was a tiny victory in a massive war, if we take a step back it’s actually more important than it seems. 
+In particular, this ordinance has three effects:],
+  [Locally, safer bike infrastructure means more bicycle riders, and fewer car drivers. That reduces emissions—a little.],
+  [Over time, more bicycle riders can kick off a positive feedback cycle, reducing emissions even more.],
+  [Most significantly, local initiatives spread to other cities—kicking off these three effects in those other cities.],
+  [Let’s examine these effects one by one.],
+  [id="effect-1-fewer-cars-less-emissions"\>Effect \#1: Fewer cars, less emissions],
+  [About 43% of the greenhouse gas emissions in Massachusetts are due to transportation; for the US overall it’s 29% ( ref ).
+And that means cars.],
+  [The reason people in the US mostly drive cars is because all the transportation infrastructure is built for cars. 
+No bike lanes, infrequent, slow and non-existent buses, no trains…
+Even in cities, where other means of transportation are feasible, the whole built infrastructure sends the very strong message that cars are the only reasonable way to get around.],
+  [If we focus on bicycles, our example at hand, the problem is that riding a bicycle can be dangerous—mostly because of all those cars!
+But if you get rid of the danger and build good infrastructure—dedicated protected bike lanes that separate bicycle riders from those dangerous cars—then bicycle use goes up.],
+  [Consider what Copenhagen achieved between 2008 and 2017 ( ref ):],
+  [2008 
+ 2018 
+ 
+ 
+ 
+ 
+ \# of seriously injured cyclists 
+ 121 
+ 81 
+ 
+ 
+ % who residents who feel secure cycling 
+ 51 
+ 77 
+ 
+ 
+ % who cycle to work/school 
+ 37 
+ 49],
+  [With safer infrastructure for bicycles, perception of safety goes up, and people bike more and drive less. 
+Similarly, if you have frequent, fast, and reliable buses and trains, people drive less.
+And that means less carbon emissions.],
+  [In Copenhagen the number of kilometers driven by cars was flat or slightly down over those 10 years—whereas in the US, it’s up 6-7% ( ref ).],
+  [id="effect-2-a-positive-feedback-loop"\>Effect \#2: A positive feedback loop],
+  [The changes in Copenhagen are a result of a plan the city government there adopted in 2011 ( ref ): they’re the result of a policy action.
+And the political will was there in part because there were already a huge number of bicycle riders.
+So it’s a positive feedback loop, and a good one.],
+  [Let’s see how this is happening in Cambridge:],
+  [Cambridge has a slowly growing number of bicycle rider.
+This means more political support for bike infrastructure—if there’s a group that can mobilize that support!],
+  [With the ordinance, more roads will have safe infrastructure.
+For example, one neighborhood previously had a safe route only in one direction; the other direction will be rebuilt with a protected bike lane in 2020.],
+  [With safer infrastructure, there will be more bicycle riders, and therefore more support by residents for safer infrastructure.
+Merely having support isn’t enough, of course, and I’ll get back to that later on.],
+  [If Copenhagen can reach 50% of residents with a bicycle commute, so can Cambridge—and the ordinance is a good step in that direction.],
+  [id="effect-3-the-idea-spreads"\>Effect \#3: The idea spreads],
+  [The Cambridge ordinance passed in April 2019—and the idea is spreading elsewhere:],
+  [The California State Assembly is voting on a law with similar provisions ( ref ), through a parallel push by Calbike.],
+  [In May 2019 a Washington DC Council member introduced a bill which among other points has the same rebuild requirements as the Cambridge ordinance ( ref ).],
+  [The Seattle City Council passed an ordinance, parts of which were literally copy/pasted from the Cambridge ordinance ( ref ).],
+  [All of this is the result of local advocacy—but I’ve no doubt Cambridge’s example helped.
+It’s always easier to be the second adopter.
+And the examples from these larger localities will no doubt inspire other groups and cities, spreading the idea even more.],
+  [id="change-requires-politics"\>Change requires politics],
+  [Bike infrastructure is just an example, not a solution—but there are three takeaways from this story that I’d like to emphasize:],
+  [If you want to change policy, you need to engage in politics.],
+  [Politics are easier to impact on the local level.],
+  [Local policy changes have a cumulative, larger-scale impact.],
+  [By politics I don’t just mean having an opinion or voting for a candidate, but rather engaging in the process of how policy decisions are made.],
+  [Merely having an opinion doesn’t change anything. 
+For example, two-thirds of Cambridge residents support building more protected bike lanes ( ref ).
+But that doesn’t mean that many protected lanes are getting built—the neighboring much smaller city of Somerville is building far more than Cambridge.],
+  [The only reason the city polled residents about bike lanes is because, one suspects, all the fuss we’d been making—emails, rallies, meetings, city council policy orders—made the city staff wonder if bike infrastructure really had a lot of public support or not.],
+  [Voting results in some change, but not enough. 
+Elected officials and government staff have lots and lots of things to worry about—if they’re not being pressured to focus on a particular issue, it’s likely to fall behind.],
+  [What’s more, the candidates you get to vote for have to get on the ballot, and to do that they need money (for advertising, hiring staff, buying supplies).
+Lacking money, they need volunteer time.],
+  [And it’s much easier for a small group of rich people to provide that support to the candidates they want—so by the time you’re voting, you only get to choose between candidates that have been pre-vetted (I highly recommend reading The Golden Rule to understand how this works on a national level).],
+  [id="what-you-can-do-become-an-activist"\>What you can do: Become an activist],
+  [In the end power is social. 
+Power comes from people showing up to meetings, people showing up for rallies, people going door-to-door convincing other people to vote for the right person or support the right initiative, people blocking roads and making a fuss.],
+  [And that takes time and money.],
+  [So if you want to change policy, you need to engage in politics, with time and money:],
+  [You can volunteer for candidates’ political campaigns, as early as possible in the process.
+Too many good candidates get filtered out before they even make the ballot.
+That doesn’t mean you can just go home after the election—that’s when the real work of legislation starts, which means activism is just as important.],
+  [You can volunteer with groups either acting on a particular issue (transportation, housing policy) or more broadly on climate change.],
+  [Also useful is donating money to political campaigns, both candidates and issue-based organizations.],
+  [Here are some policies you might be interested in:],
+  [Transportation policy determines what infrastructure is built—and the current infrastructure favors privately-owned cars over public transportation and bicycles.],
+  [Zoning laws determine what gets built and where.
+Denser construction would reduce the need for long trips, and more efficient buildings (ideally net zero carbon) would reduce emissions from heating and cooling.],
+  [Moving utilities from private to public ownership, so they can focus on the public good and not on profit.],
+  [Bulk municipal contracts for electricity: this allows for cheaper electricity for all residents, and to have green energy as the default.],
+  [State-level carbon restrictions or taxes.],
+  [id="where-you-should-do-it-start-local"\>Where you should do it: Start local],
+  [If you are going to become an activist, the local level is a good starting point.],
+  [An easier first step: Cambridge has 100,000 residents—city councilors are routinely elected with just 2500 votes.
+That means impacting policies here is much easier than at a larger scale.
+Not only does this mean faster results, it also means you’re less likely to get discouraged and give up—you can see the change happening.],
+  [Direct impact: A significant amount of greenhouse gas emissions in the US are due to causes that are under control of local governments.],
+  [Wider impact: As in the case of Cambridge’s ordinance, local changes can be adopted elsewhere.],
+  [Of course, local organizing is just the starting point for creating change on the global level.
+But you have to start somewhere.
+And global change is a lot easier if you have thousands of local organizations supporting it.],
+  [id="its-a-good-to-be-a-software-developer"\>It’s a good to be a software developer],
+  [Let’s get back to our starting point—you’re paid to write software, you want to do something about climate change. 
+As a software developer you likely have access to the inputs needed to make political campaigns succeed—both candidate-based and issue-based:],
+  [Money: Software developers tend to get paid pretty well, certainly better than most Americans.
+Chances are you have some money to spare for political donations.],
+  [Time: This one is a bit more controversial, but in my experience many programmers can get more free time if they want to.],
+  [If you don’t have children or other responsibilities, you can work a 40-hour workweek, leaving you time for other things. 
+Before I got married I worked full-time and went to a local adult education college half-time in the evenings: it was a lot of work, but it was totally doable.
+ Set boundaries at your job , and you’ll have at least some free time for activism.],
+  [You can also negotiate a shorter workweek, which is possible in part because software developers are in such demand. 
+I’ve done this, I’ve interviewed people who have done it , I’ve found many random people on the Internet who have done it —it is possible.],
+  [If you need help doing it yourself, I’ve written a book to help you negotiate a shorter workweek .
+ If you want to negotiate a shorter workweek so you have time for political activism, you can use the code FIGHTCLIMATECHANGE to get the book for 60% off.],
+  [id="some-common-responses"\>Some common responses],
+  [id="there-will-never-be-the-political-will-to-make-this-happen"\>“There will never be the political will to make this happen”],
+  [Things do change, for better and for worse, and sometimes unexpectedly.
+To give a couple of examples:],
+  [In Ireland, the Catholic Church went from all-powerful to losing badly, most recently with Ireland legalizing abortion.],
+  [The anti-gay-marriage Defense of Marriage Act was passed by veto-proof majorities of Congress in 1996—and eight years later in 2004 the first legal gay marriage took place right here in Cambridge, MA.],
+  [The timelines for gay marriage and cannabis legalization in the US are illuminating: these things didn’t just happen, it was the result of long, sustained activist efforts, much of it at the local level.],
+  [Local changes do make a difference.],
+  [id="politics-is-awful-and-broken"\>“Politics is awful and broken”],
+  [So are all our software tools, and somehow we manage to get things done!],
+  [id="i-dont-like-your-policy-suggestions-we-should-do-x-instead"\>“I don’t like your policy suggestions, we should do X instead”],
+  [No problem, find the local groups that promote your favorite policies and join them.],
+  [id="the-necessary-policies-will-never-work-because-of-problem-y"\>“The necessary policies will never work because of problem Y”],
+  [Same answer: join and help the local groups working on Y.],
+  [id="its-too-late-the-planet-is-doomed-no-matter-what-we-do"\>“It’s too late, the planet is doomed no matter what we do”],
+  [Perhaps, but it’s very hard to say.
+So we’re in Pascal’s Wager territory here: given even a tiny chance there is something we can do, we had better do our best to make it happen.],
+  [And even if humanity really is doomed, there’s always the hope that someday a hyperintelligent species of cockroach will inherit the Earth.
+And when cockroach archaeologists try to reconstruct our history, I would like them to be able to say, loosely translated from their complex pheromone-and-dancing system of communication: “These meatsacks may not have been as good at surviving as us cockroaches—but at least they tried!”],
+  [id="time-to-get-started"\>Time to get started],
+  [If you find this argument compelling—that policy is driven by power, and that power requires social mobilization—then it’s up to you to take the next step.
+Find a local group or candidate pushing for a policy you care about, and show up for the next meeting.],
+  [And the meeting after that.],
+  [And then go to the rally.],
+  [And knock on doors.],
+  [And make some friends, and make some changes happen.],
+  [Some of the work is fun, some of it is boring, but there’s plenty to do—time to get started!],
+  [Tired of scrambling to get your job done?],
+  [If you were productive enough, you could take the afternoon off, confident you’d produced high value work. Not to mention having an easier time finding a new job when you need one.],
+  [Learn the secret skills of productive programmers .],
 ),
   insert-map: (:),
-  word-count: 1685,
+  word-count: 2516,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -982,85 +553,49 @@ Your answer:],
 
 {
   #standard-article(
-  title: [Do better, not best - transitioning to a growth mindset],
-  author: [Nate Berkopec],
-  source-name: [Nate Berkopec],
+  title: [Your dev environment matters less than you think],
+  author: [Itamar Turner-Trauring],
+  source-name: [Itamar Turner-Trauring],
   images: (),
   paragraphs: (
-  [In 2019, I had a few mindset shifts around recurring, daily or near-daily work.],
-  [In short: Frequency first. Duration next. Then, quality. Make progress every day. Any progress counts, duration + quality should go unmeasured.],
-  [Old goal: Run a marathon in 2019.
-New goal: Run every day.],
-  [Old goal: Write 1000 words every day.
-New goal: Write every day.],
-  [Yikes.],
-  [In the past, I was very focused on big-picture goals which had very specific targets. Make \$X/year in my freelancing business, run this many miles, write this many words. I even had burndown charts.],
-  [This approach never lasted more than a month or so. I would inevitably stumble, and be so far behind my goal, or so far off the “streak”, that I saw no point in getting back on. Better wait until next year, I guess.],
-  [Unfortunately, you will inevitably stumble temporarily on the way to any progress on anything. When running, you will get injured. When writing, you will inevitably want a day off. With money, sometimes things change in the economy that you have no control over.],
-  [My old approach led to me burning the house down every time I hit a speedbump.],
-  [In 2019, though, things started to change.],
-  [I only realized what was happening in retrospect. When I was compiling my list of content I produced for Speedshop in 2019, I realized I had produced 41 pieces of content in 2020. Most of those were 500 to 1000 word email newsletters, but also 3 3000-word blog articles and 2 45 minute conference talks. That’s a fair amount of creative output by anyone’s measure, and it’s far more than I’ve ever done.],
-  [id="what-changed"\>What changed?],
-  [Frequency first, and no more long-term goals.],
-  [My todo-list now looks something like this, every day:],
-  [Note that I cannot track (at least not obviously) how many days in a row I have done any particular task. Notice how there are no specific goals: write X words, meditate X amount, practice Japanese for X minutes, either or a daily or monthly or other time basis. I’ve got some labels there to help me budget my time for the day, but they’re not mandatory. There are no requirements for the duration of each task or the quality of the execution.],
-  [I give myself permission to check the boxes off on these tasks even if I only work on it for 10 seconds. Meditated for 2 minutes and barely paid attention? Check the box. Wrote 10 words? Check the box. As long as I sat down and made an honest attempt, check the box.],
-  [After adopting this approach, what happened next was kind of weird.],
-  [By not focusing on duration and quality of my work, both of those things started to improve. By focusing on frequency instead, and giving myself permission to fail, I succeeded more on all of these goals than I have for 10 years of trying.],
-  [One habit I’ve really built over the last year has been writing. I just try to write something, every day. I vaguely want to write for about 30 minutes or 500 words, but I give myself permission to “check the box” on my to-do-list even if I just write for 5 minutes. Just by sitting down and starting to write, I usually find that after a few minutes, the words start to flow and then 25 minutes later I’ve got 500 words.],
-  [Critically, I’m not tracking how many email newsletters I send or blog posts I write. I vaguely would like to release one of either each week, but I don’t track this anywhere. I’m only aware of whether or not I did it this/last week or not. If I did it last week, great. Let’s do it again this week. If not, OK, try again better this week. No more year-long targets that I can fall behind on.],
-  [id="better-not-best"\>Better, not best],
-  [The struggle of daily work, I’ve realized, is not its quality, but its frequency. Try to do something every day, and the quality takes care of itself. Focusing on quality only leads to stress when quality is inevitably not achieved.],
-  [With frequency of execution inevitably comes quality. If you do something every day, with attention and effort, you will get better at it. So why set goals for the quality of your output, when it will actually take care of itself?],
-  [Ira Glass has spoken about the chasm between being a critic or dillettante and becoming a creator. You start with good taste and no skill of creation, and so when you start to build your creative skills, there is inevitably a “dip” where you can tell your own work is bad, because that is all you are capable of producing. There is only one solution: stop critiquing. Stop paying attention to the quality of your output. Relegate it to the back burner. You’ll come back to it. For now, you must simply do the work.],
-  [id="make-failure-temporary"\>Make failure temporary],
-  [The problem with “streak” strategies and long-term goals (write X words per week or year) was that they had a way of making failure permanent. For example, in 2017, I wanted to write 1000 words per day (or 365000 words per year), and I realized around March that I would never reach my goal, so I quit. I stopped writing. My goal was now impossible, so I failed, permanently.],
-  [My new approach wipes the slate clean every morning. I am not aware of any streaks or long-term goals, so the worst possible failure I can have is that I didn’t have a good day. But the next morning, that no longer figures into my thinking. I’m just trying to “win the day”, every day, which means that failure, while possible, is only temporary.],
-  [id="no-rest-days"\>No rest days],
-  [In the past, I’ve set complex and detailed goals about how much I want to lift, to run, to bike, whatever. Now, I do none of that. I just work out every day. No rest days. Some days I go in and just spin the wheels very lightly for 30 minutes, but I just let my body tell me what to do.],
-  [Doing something every day means that doing it is not a decision. It’s just something you do. I no longer have to decide if I’m going to the gym every day. I just go, every day, at the same time. Once I’m actually at the gym, I give myself permission to do whatever I want. If I want to sit in the gym cafe for 90 minutes, fine. I’ve never done that, but I could, if I wanted to. But, inevitably, once you’re through the door, you start working out. Might as well, right?],
-  [Of course, there are some physical limits. I don’t weight train every day, I do weights only 3 days a week. I do cardio (usually Peloton) every day, but 2-3 days a week are very light, sometimes just 20 minutes. But I go to the gym and do something every day, and the going is the hard part, as anyone who’s tried to build a physical fitness habit knows.],
-  [id="growth-over-results"\>Growth over results],
-  [Overall, this is part of a new focus I gained in 2019 of focusing on growth (relative progress) over results (absolute progress). If I’m getting better (or maintaining a difficult, creative effort), I’m happy. I don’t measure myself against others or even my own made-up targets (e.g “I want to make \$X this year”). I just want to get better.],
-  [Better is a more productive mantra than best because better admits the possibility of failure. Better allows a circuitous, bumpy path to success, whereas best only allows perfection.],
-  [I hope that in 2020 I’ll continue along this path. There will inevitably be bumps, small failures in the road - but I’ll be better than I was today.],
+  [How do you setup your dev environment?
+Depending on your language there are many choices of editor, package manager, build tool, linter, on and on.
+And every article you find will have a different combination of suggested tools, each of which claiming that their list is The Right Way To Do Things.],
+  [So which do you choose?],
+  [The short answer: it doesn’t matter.
+Your choice of dev environment is meaningless.],
+  [The slightly less flippant answer is that, yes, there are some contraints on which tools you should pick, but otherwise you should just pick something and move on.],
+  [Let’s see why dev environments don’t matter that much in the end, and what limited constraints you should apply when choosing your tools.],
+  [id="learning-how-to-cook"\>Learning how to cook],
+  [Imagine you’re training to become a chef.
+You will need to learn how to use a knife correctly, to chop and dice safely and quickly.],
+  [And yes, you need a sharp knife.
+But when you’re starting out, it doesn’t matter which knife you use: just pick something sharp and good enough, and move on.
+After all, the knife is just a tool.],
+  [The people eating the food you cook don’t care about which knife you used: they care how the food tastes and looks.],
+  [After six months in the kitchen, you’ll start understanding how you personally use a knife, what cuisines you want to pursue, what techniques you want to vary.
+And then you’ll have the knowledge to pick a specific knife or knives exactly suited to your needs.],
+  [But remember: the people eating your food still won’t care which knife you used.],
+  [id="choosing-a-dev-environment"\>Choosing a dev environment],
+  [When you use a website, you don’t care which build tool the programmer used.
+When you run an app, you don’t care which editor they used.
+You want the software to work, to do what it says, to be easy to use, to get out of your way—and you don’t care how they did it.],
+  [And that applies just as much to the users of your code: they don’t care which tools you used.],
+  [And when you’re starting out, whether programming in general or a new language or framework, you don’t know how you will like to work.
+So instead of obsessing over finding the ideal development environment and toolchain, just pick tools that are good enough:],
+  [Popular: So you can easily find help.],
+  [Easy to get going: Your goal is ship useful code, and as a beginner time spent fiddling with your dev environment won’t help with that.],
+  [Once you have enough experience, you will start developing opinions.
+You might become choosy about which tools you use, or end up customizing them to your needs.
+You might even write an article about your particular dev environment and favorite tools.],
+  [But however strong your preferences are, chances are that given tools you don’t quite like as much, you will still do just fine.
+If you know what you’re doing, you can chop vegetables with any sharp knife, even if it’s not your favorite.],
+  [Tired of scrambling to get your job done?],
+  [If you were productive enough, you could take the afternoon off, confident you’d produced high value work. Not to mention having an easier time finding a new job when you need one.],
+  [Learn the secret skills of productive programmers .],
 ),
   insert-map: (:),
-  word-count: 1307,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-}
-
-{
-  #standard-article(
-  title: [The One Thousand Blobcows Born Each Year],
-  author: [Morgan Day],
-  source-name: [The Paris Review Blog],
-  images: (),
-  paragraphs: (
-  [A spotted creature is rolled across gravel. Another is placed on a dinner plate, then cradled in two palms. These were meant to be cows but emerged instead as balls of tissue and organs enclosed in hair coats. Their name, amorphous globosus , derives from the Greek and Latin for “formless sphere.” I watch videos of formless spheres for the same reason that I watch videos of miniature horses: I am in search of purity.],
-  [Amorphous globosus is a nonviable creature, incapable of development or growth. It’s more easily understood by its missing parts: a head and limbs, a mouth and genitals. Occasionally, it’s given a useless heart. It’s continuous; a sphere at infinity with the weight of a water bottle. Within it are more ineffectual formless spheres, fluid-filled cysts in lieu of functioning organs. At a threshold of never having lived yet never having not, amorphous globosus is hard to categorize. Neither a tumor nor fetus, it’s relegated to an anomaly: a fetal monster . Amorphous globosus is often buried in the dirt like a dead animal.],
-  [Driving by a cattle ranch, I envision a herd of formless spheres. Low in pasture grass, their short hair ruffles in the wind. One hundred thousand calves are born every day. One in thirty-five thousand are born as formless spheres, about three per day, over one thousand per year. At this moment, last year’s one thousand formless spheres are decomposing. They are contributing to new grass, soon to be eaten by cows, bringing about new formless spheres.],
-  [Georges Bataille wrote that we call a thing formless in order to undermine it. Those given the designation, he claims, will get squashed, “like a spider or an earthworm.” But formless is a misnomer on arrival, and a formless sphere is an oxymoron. I think amorphous globosus is an ideal form: animate yet inanimate, parasitic yet harmless, geological yet doughy, static yet reactive.],
-  [Even when all its qualities have been listed, the formless sphere stokes confusion in people. They reach for comparisons: a meatball, an egg, lab-harvested meat, a very large cow nugget. Like me, they prefer looking at images online of the creature as hairy and whole, without the attached umbilicus, without the remnants of the cow. They give it a better name: blobcow .],
-  [Can it feel pain? they ask. Can we put it on life support? If we kick it, how far will it roll? And if we squish it, will it squeak? Blobcow retains all the presence of a being with all the use and uselessness of an aesthetic object. At times, blobcow exudes the joy of these objects. Carried through tall grass, it jiggles.],
-  [style="text-align: center;"\> \*\*\*],
-  [Samuel Beckett’s Murphy ( Murphy , 1938) straps himself naked to a rocking chair and stares at an iridescent beam of light. Murphy’s mind is a hollow sphere, “hermetically closed to the universe without.” Murphy is clairaudient. For him, thought forms are as dominant as physical forms. Like a dog, he endures sensory experiences beyond human perception.],
-  [As a remedy, Murphy lies supine in a park. He claims to pause his heart. Fed up with breathing, he seeks a respiratory machine. In his rocking chair, Murphy rocks himself into a stupor. His pineal gland shrinks to nothing as he seesaws the chair to its limit. His body quiets; he frees his mind. This blobcow state is a needed break from the experience of his anatomy, a soft round escape. Not death but not life, an in-between. The cause of his pain—his keen awareness of the world—becomes the origin point for his ascension.],
-  [Repetitive actions multiply across Beckett’s novels. A man alternates sitting on every stool at a bar. Another carries a handful of stones that he takes turns sucking on. Murphy walks “round and round” the prison, the cathedral, the cross, the wreck. Loops help to cope with the cycle of humanity: “a well with two buckets … one going down to be filled, the other coming up to be emptied.”],
-  [Following a tiff with his lover Celia, Murphy heads for the front door. She asks if he is leaving for good. If he were leaving for good, Murphy explains, he would take to his chair and not the door. After he leaves, Celia undresses and rocks in the chair. She is in her mind with Murphy, her parents, herself as a girl, as an infant, until “it was finished, the days and places and things and people … she was lying down, she had no history.” Celia, too, accesses the fundamental and original , rocking at the center of an infinite formless sphere.],
-  [Murphy asks, “What was the etymology of gas?” and gives no answer. Historically, the etymology of gas dates back to the seventeenth-century belief that an occult principle exists in all matter. Within Murphy’s rocking chair lives a spirit. It is characterized by “superfine chaos,” secret knowledge, a void.],
-  [style="text-align: center;"\> \*\*\*],
-  [In Ambera Wellmann’s painting UnGodly (2021), an indefinable creature births a trinity of humanlike figures from its mouth. Or maybe it’s consuming them. There are few beginnings and no endings, or many beginnings mistaken for many endings, taking place in the erotic rupture in its face. Gazing nowhere yet everywhere, the seeming mammal, with an invertebrate tail, advances and recedes on a black (fore)(back)ground.],
-  [Ungodly means “irreligious” or “immoral .” Also, “ inconvenient .” I think it’s the almost quality of the painting that’s inconvenient. Almost: abstract or realistic, born or dying, a creature, a person, sex, a story. Almost is uncomfortable, like this AI-generated image that mimics the visual experience of having a stroke. Its challenge to the spectator went viral: “ Name One Thing .” Looking at it is nauseating. Everything in the image looks like something—cellophane, a fur scarf, a cow or pig head, a steel kitchen appliance, an earring organizer, a glass cake stand—until closely observed. Then, the only thing we see is: wall, wall, wall, wall .],
-  [Like the smudges of color in the Name One Thing meme, the uncertainty of what we see in UnGodly stokes unease. I tend to fixate on the third humanlike figure, levitating on the fingertips of the other two. One end of this unfinished figure fuses to the creature’s nose. It’s nearly shapeless, an ovoid with limbs, but recognizable, as though caught in the process of becoming. All subjects are loosely positioned on a platform suspended in a void. They are all “coming to life through undoing,” as Wellmann has said of another of her paintings. Each painting is a “living thing” in a space that reflects “navigation” and not “resolution.”],
-  [“Affirming that the universe resembles nothing and is only formless amounts to saying the universe is something like a spider or spit,” Bataille writes in “L’informe.” If form doesn’t assign meaning to the universe, then what does? Its defining quality might be akin to what one interviewer calls the “phantasmagorical plain” in which Wellmann’s work resides, one populated by bodies that are “full of potential.” A space that is constantly shifting and chimerical, hallucinatory, like a fever dream: a resemblance of all that is here and not here .],
-  [Morgan Day is a fiction and architecture writer. Her short fiction has appeared in Ecotone , Gulf Coast, The Southampton Review, Worms Magazine , and elsewhere. Her first novel, The Oldest Bitch Alive, is out this month from Astra House.],
-),
-  insert-map: (:),
-  word-count: 1275,
+  word-count: 553,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -1082,7 +617,7 @@ New goal: Write every day.],
  static const std :: string kSquirrel = "sad squirrel" ; 
  static const Superhero batman ; 
  } 
- \/\/ or 
+ \/\\/ or 
  class Foo { 
  static const std :: string panda\_ = "also a sad panda" ; 
  }],
@@ -1095,36 +630,36 @@ New goal: Write every day.],
  static Superhero robin = batman . getSidekick (); 
  }],
   [Static variables in different translation units are constructed in an undefined order. This is so terrible it has its own name: the static initialization order fiasco . It goes like this:],
-  [\/\/ In x.cpp: 
+  [\/\\/ In x.cpp: 
  static Superhero batman ;],
-  [\/\/ In y.cpp: 
+  [\/\\/ In y.cpp: 
  static Superhero robin ( batman . getSidekick ()); 
- \/\/ If that wasn't believable, imagine it was something like: 
- \/\/ static Superhero robin(BestSuperhero::batman); 
- \/\/ where BestSuperhero is a namespace or a static class and 
- \/\/ you call batman.getSidekick() in robin's constructor.],
+ \/\\/ If that wasn't believable, imagine it was something like: 
+ \/\\/ static Superhero robin(BestSuperhero::batman); 
+ \/\\/ where BestSuperhero is a namespace or a static class and 
+ \/\\/ you call batman.getSidekick() in robin's constructor.],
   [Yup. That’s it. Whether x.cpp or y.cpp gets compiled first is not defined (because C++), which means if y.cpp gets compiled first, batman hasn’t been constructed. You know what happens when you call getSidekick() on an uninitialized object? Regrets happen.],
   [We’re not done yet. Why have insanely terrible code when you can have insanely terrible EXPENSIVE code! Evan Martin has a really, really good post about this, but the tl;dr is that because the static initializers need to happen before main() , that code needs to be paged, which leads to disk seeks, which leads to awful startup performance. Seriously, read Evan’s post because it’s amazing.],
   [id="spotting-static-initializers-in-the-wild-an-incomplete-manual"\>Spotting static initializers in the wild: an incomplete manual],
   [Here are some examples of things that are and aren’t static initializers, so
 that at least we know what we’re looking for before we try to fix them.],
-  [\/\/ Both of these are ok, because 0 is a compile time constant, so it can't 
- \/\/ change. The const doesn't make a difference; it's the thing after 
- \/\/ the = sign that makes the difference. 
+  [\/\\/ Both of these are ok, because 0 is a compile time constant, so it can't 
+ \/\\/ change. The const doesn't make a difference; it's the thing after 
+ \/\\/ the = sign that makes the difference. 
  static const int x = 0 ; 
  static int y = 0 ;],
-  [\/\/ Below, both the pointer and the chars in the string are const, so the 
- \/\/ compiler will treat this as a compile-time constant. So this is ok 
- \/\/ because both the thing before and after the = sign are constant. 
- static const char panda [] = "happy panda" ;],
-  [\/\/ This, however, calls a constructor, so it's not ok. 
+  [\/\\/ Below, both the pointer and the chars in the string are const, so the 
+ \/\\/ compiler will treat this as a compile-time constant. So this is ok 
+ \/\\/ because both the thing before and after the = sign are constant. 
+ static const char panda \[\] = "happy panda" ;],
+  [\/\\/ This, however, calls a constructor, so it's not ok. 
  static const std :: string sad\_panda = "sad panda" ;],
   [static int a = 0 ; 
- \/\/ This is not ok, because the thing after the = sign isn't a const, 
- \/\/ so it can change before b is initialized. 
+ \/\\/ This is not ok, because the thing after the = sign isn't a const, 
+ \/\\/ so it can change before b is initialized. 
  static int b = a ;],
-  [\/\/ This has to call the Muppet() constructor, and who knows what that 
- \/\/ does, so it's definitely not a const, and a case of the static initializers. 
+  [\/\\/ This has to call the Muppet() constructor, and who knows what that 
+ \/\\/ does, so it's definitely not a const, and a case of the static initializers. 
  static Muppet waldorf ;],
   [id="thems-the-breaks"\>Them’s the breaks],
   [There’s a couple of ways in which you can fix this, some better than others:],
@@ -1133,18 +668,18 @@ that at least we know what we’re looking for before we try to fix them.],
   [Place the static globals inside the function that needs them (or, if they’re the village bicycle, make a getter for them), and define them as function-static variables. Then you know they will be initialized only once, the first time that function is called. Whenever it is called],
   [That last bullet sounds like black magic, so here’s an example. This is the static initializer that we are trying to fix. Convince yourself that this code is no good:],
   [namespace { 
- static const std :: string bucket [] = { "apples" , "pears" , "meerkats" }; 
+ static const std :: string bucket \[\] = { "apples" , "pears" , "meerkats" }; 
  }],
   [const std :: string GetBucketThing ( int i ) { 
- return bucket [ i ]; 
+ return bucket \[ i \]; 
  }],
   [We can fix it by moving bucket into GetBucketThing() :],
   [std :: string GetBucketThing ( int i ) { 
- \/\/ Sure, it's a non-trivial constructor, but it will get called once, 
- \/\/ the first time GetBucketThing() gets called, which will be at runtime 
- \/\/ and therefore a-ok. 
- static const std :: string bucket [] = { "apples" , "pears" , "meerkats" }; 
- return bucket [ i ]; 
+ \/\\/ Sure, it's a non-trivial constructor, but it will get called once, 
+ \/\\/ the first time GetBucketThing() gets called, which will be at runtime 
+ \/\\/ and therefore a-ok. 
+ static const std :: string bucket \[\] = { "apples" , "pears" , "meerkats" }; 
+ return bucket \[ i \]; 
  }],
   [Yup. That’s pretty much it. If you want more reading on the topic, here’s a neat chromium-dev thread discussing this in more details (and talking about when these static globals are actually cleaned up).],
   [id="mmmmkay"\>Mmmmkay.],
@@ -1197,84 +732,231 @@ that at least we know what we’re looking for before we try to fix them.],
   debug-mode: false,
 )
 
-  #pull-quote([Basecamp Next/2 was originally 10,000 LOC.], [Nate Berkopec])
-
 }
 
 {
   #standard-article(
-  title: [The stories that stay: What remains when memory fades],
-  author: [TED Staff],
-  source-name: [TED Blog],
+  title: [10 Interview Questions Every JavaScript Developer Should Know in 2024],
+  author: [Eric Elliott],
+  source-name: [Eric Elliot (JavaScript Scene)],
   images: (),
   paragraphs: (
-  [By Brigid Jacoby, with Amanda Lynch],
-  [November is National Alzheimer’s Awareness Month, a time to pause, reflect and continue the conversation on a disease that touches millions of lives around the world. Alzheimer’s isn’t just a medical challenge — it’s an emotional one that reshapes families, identities and the way we connect with one another.],
-  [Every TED Talk begins with a story. Every story begins with a memory. That is the idea at the heart of the TED Memory Project , created in partnership with Eli Lilly and Company. It’s a multi-platform, multi-month movement that explores how memory drives innovation and connection while advancing understanding and empathy around Alzheimer’s.],
-  [In his TED Talk, “ Where does your sense of self come from? A scientific look ,” Anil Ananthaswamy shares: “Take, for instance, the question ‘Who am I?’ The most likely answer you will get or give to such a question will be in the form of a story. We tell others, and indeed ourselves, stories about who we are. We take our stories to be sacrosanct. We are our stories. But a condition that most of us, sadly, will be familiar with, Alzheimer’s disease, tells us something quite different. Alzheimer’s begins by affecting short-term memory. Think about what that does to someone’s story. In order for our stories to form, to grow, something that just happens to us has to first enter short-term memory and then get incorporated into what is called long-term episodic memory. It has to become an episode in our narrative.”],
-  [This blog is one way of continuing that work, giving space for voices like Brigid Jacoby’s to reflect on how Alzheimer’s can alter identity and the stories that shape us. It is a space for reflection, where ideas meet lived experience, and where the threads of resilience, grief, curiosity and hope come into focus.],
-  [When Brigid watched Anil’s TED Talk, one idea struck her: our sense of self is built on the stories we tell about our past, our families and the choices we have made. Alzheimer’s complicates this deeply because it disrupts short-term memory, the very building blocks of those stories. Without being able to record and recall, the narrative of who we are becomes harder to sustain. “That idea resonated with me because I have seen firsthand how Alzheimer’s can change a person’s sense of self, not by erasing them, but by reshaping how their identity is expressed,” Brigid said.],
-  [Brigid shares her reflections after the recent passing of her mother, Anne, who lived with early-onset Alzheimer’s. Anne passed on October 30th, 2025, early in the morning, surrounded by her three children. She began experiencing symptoms in her late forties, with her first memory complaints documented at 51. At first, it was small things like misplacing her keys, forgetting dates or struggling with her computer. But soon, the disease began interfering with her work. After more than 20 years in her industry, she lost her job, and even retail shifts became difficult when she couldn’t navigate the digital sales system. Brigid’s younger sibling even took a job at the same shop just to help keep an eye on her.],
-  [Anne was a storyteller. As an Irish American, she carried forward the histories of her grandparents immigrating from Ireland, weaving them into a family tapestry she often shared with her children. Her sense of self was tied to these stories and to the act of passing them down.],
-  [“One day, sitting outside with my mom, I asked her to retell a story about my great-grandmother,” Brigid recalls. “But this time, I watched panic rise in her eyes as she struggled to understand what I was referencing. The words did not come. Instead, tears did. It was not just memory loss, it was a fracture in identity, the vanishing of a thread she had long held onto as proof of who she was and where she came from.”],
-  [Over time, Brigid and her siblings learned to meet Anne in a different place, one not rooted in lost stories but in new ways of being together. They leaned into humor, curiosity and wonder. They asked silly questions, marveled with her at the shape of plants and clouds, or let her imagination spin freely without the pressure of accuracy. In those moments, Anne still expressed herself. Not through the precise retelling of family history, but through joy, silliness and awe.],
-  [Anil’s TED Talk reminded Brigid that even as memory fades, the self is not gone — it is simply altered. As Ananthaswamy explains, “I also believe that altered selves should not be seen as the outcome of deficits, or as the outcome of a lack of attributes considered normal. They are different ways of being, and it is the willingness of some of us to confront the self’s constructed nature that is helping make sense of the self for all of us.”],
-  [That is why Alzheimer’s awareness matters to her. She wants people to understand that while the disease changes a person, it does not erase them, a lesson she carries forward after her mother’s recent passing. “This awareness gives us tools to show up differently,” Brigid said. “To support loved ones as they move into a new version of themselves, rather than turning away in fear or discomfort. My hope is that people can approach those living with Alzheimer’s with patience, curiosity and care, seeking to understand what they are experiencing instead of mourning only what has been lost. By doing so, we can honor who they are becoming, not just who they were.”],
-  [Because behind every statistic is a person like Anne, whose story Brigid now carries forward. And behind every talk is someone like Brigid, reminding us why these conversations must continue.],
+  [The world of JavaScript has evolved significantly, and interview trends have changed a lot over the years. This guide features 10 essential questions that every JavaScript developer should know the answers to in 2024. It covers a range of topics from closures to TDD, equipping you with the knowledge and confidence to tackle modern JavaScript challenges.],
+  [As a hiring manager, I use all of these questions in real technical interviews on a regular basis.],
+  [When engineers don’t know the answers, I don’t automatically reject them. Instead, I teach them the concepts and get a sense of how well they listen, and learn, and deal with the stressful situation of not knowing the answer to an interview question.],
+  [A good interviewer is looking for people who are eager to learn and advance their understanding and their career. If I’m hiring for a less experienced role, and the candidate fails all of these questions, but demonstrates a good aptitude for learning, they may still land the job!],
+  [1. What is a Closure?],
+  [A closure gives you access to an outer function’s scope from an inner function. When functions are nested, the inner functions have access to the variables declared in the outer function scope, even after the outer function has returned:],
+  [const createSecret = (secret) =\> {
+ return {
+ getSecret: () =\> secret,
+ setSecret: (newSecret) =\> {
+ secret = newSecret;
+ },
+ };
+};],
+  [const mySecret = createSecret("My secret");
+console.log(mySecret.getSecret()); \/\\/ My secret],
+  [mySecret.setSecret("My new secret");
+console.log(mySecret.getSecret()); \/\\/ My new secret],
+  [Closure variables are live references to the outer-scoped variable, not a copy. This means that if you change the outer-scoped variable, the change will be reflected in the closure variable, and vice versa, which means that other functions declared in the same outer function will have access to the changes.],
+  [Common use cases for closures include:],
+  [Data privacy],
+  [Currying and partial applications (frequently used to improve function composition, e.g. to parameterize Express middleware or React higher order components )],
+  [Sharing data with event handlers and callbacks],
+  [Encapsulation is a vital feature of object oriented programming. It allows you to hide the implementation details of a class from the outside world. Closures in JavaScript allow you to declare private variables for objects:],
+  [\/\\/ Data privacy
+const createCounter = () =\> {
+ let count = 0;
+ return {
+ increment: () =\> ++count,
+ decrement: () =\> --count,
+ getCount: () =\> count,
+ };
+};],
+  [Curried functions and partial applications:],
+  [\/\\/ A curried function takes multiple arguments one at a time.
+const add = (a) =\> (b) =\> a + b;],
+  [\/\\/ A partial application is a function that has been applied to some,
+\/\\/ but not yet all of its arguments.
+const increment = add(1); \/\\/ partial application],
+  [increment(2); \/\\/ 3],
+  [2. What is a Pure Function?],
+  [Pure functions are important in functional programming. Pure functions are predictable, which makes them easier to understand, debug, and test than impure functions. Pure functions follow two rules:],
+  [Deterministic — given the same input, a pure function will always return the same output.],
+  [No side-effects — A side effect is any application state change that is observable outside the called function other than its return value.],
+  [Examples of Non-deterministic Functions],
+  [Non-deterministic functions include functions that rely on:],
+  [A random number generator.],
+  [A global variable that can change state.],
+  [A parameter that can change state.],
+  [The current system time.],
+  [Examples of Side Effects],
+  [Modifying any external variable or object property (e.g., a global variable, or a variable in the parent function scope chain).],
+  [Logging to the console.],
+  [Writing to the screen, file, or network.],
+  [Throwing an error. Instead, the function should return a result indicating the error.],
+  [Triggering any external process.],
+  [In Redux, all reducers must be pure functions. If they are not, the state of the application will be unpredictable, and features like time-travel debugging will not work. Impurity in reducer functions may also cause bugs that are difficult to track down, including stale React component state.],
+  [3. What is Function Composition?],
+  [Function composition is the process of combining two or more functions to produce a new function or perform some computation: (f ∘ g)(x) = f(g(x)) (f composed with g of x equals f of g of x).],
+  [const compose = (f, g) =\> (x) =\> f(g(x));],
+  [const g = (num) =\> num + 1;
+const f = (num) =\> num \* 2;],
+  [const h = compose(f, g);],
+  [h(20); \/\\/ 42],
+  [React developers can clean up large component trees with function composition . Instead of nesting components, you can compose them together to create a new higher-order component that can enhance any component you pass to it with additional functionality.],
+  [4. What is Functional Programming?],
+  [Functional programming is a programming paradigm that uses pure functions as the primary units of composition. Composition is so important in software development that virtually all programming paradigms are named after the units of composition they use:],
+  [Object-oriented programming uses objects as the unit of composition.],
+  [Procedural programming uses procedures as the unit of composition.],
+  [Functional programming uses functions as the unit of composition.],
+  [Functional programming is a declarative programming paradigm, which means that programs are written in terms of what they do, rather than how they do it. This makes functional programs easier to understand, debug, and test than imperative programs. They also tend to be a lot more concise, which reduces code complexity and makes it easier to maintain.],
+  [Other key aspects of functional programming include:],
+  [Immutability — immutable data structures are easier to reason about than mutable data structures.],
+  [Higher-order functions — functions that take other functions as arguments or return functions as their result.],
+  [Avoiding shared mutable state — shared mutable state makes programs difficult to understand, debug, and test. It also makes it difficult to reason about the correctness of a program.],
+  [Since pure functions are easy to test, functional programming also tends to lead to better test coverage and fewer bugs.],
+  [5. What is a Promise?],
+  [A Promise in JavaScript is an object representing the eventual completion or failure of an asynchronous operation. It acts as a placeholder for a value that is initially unknown, typically because the computation of its value is not yet complete.],
+  [Key Characteristics of Promises:],
+  [Stateful: A Promise is in one of three states:],
+  [Pending: Initial state, neither fulfilled nor rejected.],
+  [Fulfilled: The operation completed successfully.],
+  [Rejected: The operation failed.],
+  [Immutable: Once a Promise is fulfilled or rejected, its state cannot change. It becomes immutable, permanently holding its result. This makes Promises reliable in asynchronous flow control.],
+  [Chaining: Promises can be chained, meaning the output of one Promise can be used as input for another. This is done using .then() for success or .catch() for handling failures, allowing for elegant and readable sequential asynchronous operations. Chaining is the async equivalent of function composition.],
+  [const promise = new Promise((resolve, reject) =\> {
+ setTimeout(() =\> {
+ resolve("Success!");
+ \/\\/ You could also reject with a new error on failure.
+ }, 1000);
+});],
+  [promise
+ .then((value) =\> {
+ console.log(value); \/\\/ Success!
+ })
+ .catch((error) =\> {
+ console.log(error);
+ });],
+  [In JavaScript, you can treat promises and promise returning functions as if they are synchronous, using the async/await syntax. This makes asynchronous code much easier to read and reason about.],
+  [const processData = async () =\> {
+ try {
+ const data = await fetchData(); \/\\/ Waits until the Promise is resolved
+ console.log("Processed:", data); \/\\/ Process and display the data
+ } catch (error) {
+ console.error("Error:", error); \/\\/ Handle any errors
+ }
+};],
+  [6. What is TypeScript?],
+  [TypeScript is a superset of JavaScript, developed and maintained by Microsoft. It has grown significantly in popularity in recent years, and chances are good that if you are a JavaScript engineer, you will eventually need to use TypeScript. It adds static typing to JavaScript, which is a dynamically typed language. Static typing helps developers catch errors early in the development process, improving code quality and maintainability.],
+  [Key Features of TypeScript:],
+  [Static Typing: Define types for your variables and function parameters to ensure consistency throughout your code.],
+  [Enhanced IDE Support: Integrated Development Environments (IDEs) can provide better autocompletion, navigation, and refactoring, making the development process more efficient.],
+  [Compilation: TypeScript code is transpiled into JavaScript, making it compatible with any browser or JavaScript environment. During this process, type errors are caught, making the code more robust.],
+  [Interfaces: Interfaces allow you to specify abstract contracts that objects and functions must satisfy.],
+  [Compatibility with JavaScript: TypeScript is highly compatible with existing JavaScript code. JavaScript code can be gradually migrated to TypeScript, making the transition smooth for existing projects.],
+  [interface User {
+ id: number;
+ name: string;
+}],
+  [type GetUser = (userId: number) =\> User;],
+  [const getUser: GetUser = (userId) =\> {
+ \/\\/ Fetch user data from a database or API
+ return {
+ id: userId,
+ name: "John Doe",
+ };
+};],
+  [The best defenses against bugs are code review, TDD, and lint tools such as ESLint. TypeScript is not a substitute for these practices, because type correctness does not guarantee program correctness. TypeScript does occasionally catch bugs even after all your other quality measures have been applied. But its main benefit is the improved developer experience it provides via IDE support.],
+  [7. What is a Web Component?],
+  [Web Components are a set of web platform APIs that allow you to create new custom, reusable, encapsulated HTML tags to use in web pages and web apps. They are built using open web technologies such as HTML, CSS, and JavaScript. They are part of the browser, and do not require external libraries or frameworks.],
+  [Web Components are particularly useful on large teams with many engineers who may be using different frameworks. They allow you to create reusable components that can be used in any framework, or no framework at all. For example, Adobe’s Spectrum design system is built using Web Components, and integrates smoothly with popular frameworks like React.],
+  [Web Components have existed for a long time, but have grown in popularity recently, especially in large organizations. They are supported by all major browsers, and are a W3C standard.],
+  [\/\\/ Define a class that extends HTMLElement
+ class SimpleGreeting extends HTMLElement {
+ \/\\/ Define a constructor that attaches a shadow root
+ constructor() {
+ super();
+ const shadowRoot = this.attachShadow({ mode: "open" });
+ \/\\/ Use a template literal for the shadow root's innerHTML
+ shadowRoot.innerHTML = \`
+ 
+ /\* Style the web component using a style tag \*/
+ p {
+ font-family: Arial, sans-serif;
+ color: var(--color, black); /\* Use a CSS variable for the color \*/
+ }
+ 
+ element is a placeholder for user-provided content. --\>
+ 
+ Hello, Web Components! 
+ \`;
+ }],
+  [\/\\/ Define a static getter for the observed attributes
+ static get observedAttributes() {
+ return \["color"\]; \/\\/ Observe the color attribute
+ }],
+  [\/\\/ Define a callback for when an attribute changes
+ attributeChangedCallback(name, oldValue, newValue) {
+ \/\\/ Update the CSS variable when the color attribute changes
+ if (name === "color") {
+ this.style.setProperty("--color", newValue);
+ }
+ }
+ }],
+  [\/\\/ Register the custom element with a tag name
+ customElements.define("simple-greeting", SimpleGreeting);],
+  [Hello, reader! 
+ 
+ Hello, World!],
+  [8. What is a React Hook?],
+  [Hooks are functions that let you use state and other React features without writing a class. Hooks allow you to use state, context, refs, and component lifecycle events by calling functions instead of writing class methods. The additional flexibility of functions allows you to organize your code better, grouping related functionality together in a single hook call, and separating unrelated functionality by implementing it in separate function calls. Hooks offer a powerful and expressive way to compose logic inside a component.],
+  [useState - allows you to add state to functional components. State variables are preserved between re-renders.],
+  [useEffect - lets you perform side effects in functional components. It combines the capabilities of componentDidMount, componentDidUpdate, and componentWillUnmount into a single function call, reducing the required code and creating better code organization than class components.],
+  [useContext - allows you to consume context in function components.],
+  [useRef - allows you to create a mutable reference that persists for the lifetime of the component.],
+  [Custom Hooks — to encapsulate reusable logic. This makes it easy to share logic across different components.],
+  [Rules of Hooks: Hooks must be used at the top level of React functions (not inside loops, conditions, or nested functions) and only in React function components or custom Hooks.],
+  [Hooks solved some common pain points with class components, such as the need to bind methods in the constructor, and the need to split functionality into multiple lifecycle methods. They also make it easier to share logic between components, and to reuse stateful logic without changing your component hierarchy.],
+  [9. How Do you Create a Click Counter in React?],
+  [You can create a click counter in React by using the useState hook as follows:],
+  [import React, { useState } from "react";],
+  [const ClickCounter = () =\> {
+ const \[count, setCount\] = useState(0); \/\\/ Initialize count to 0],
+  [return (
+ 
+ You clicked {count} times 
+ setCount((count) =\> count + 1)}\>Click me 
+ 
+ );
+};],
+  [export default ClickCounter;],
+  [Note that passing a function to setCount is best practice when you are deriving the new value from existing state, to ensure that you're always working with the latest state.],
+  [10. What is Test Driven Development (TDD)?],
+  [Test Driven Development (TDD) is a software development approach where tests are written before the actual code. It revolves around a short, repetitive development cycle designed to ensure that the code meets specified requirements and is free of bugs. TDD can play a vital role in improving code quality, reducing bugs, and increasing developer productivity.],
+  [One of the most important measures of development team productivity is deployment frequency. One of the primary obstacles to continuous delivery is the fear of change. TDD helps to reduce this fear by ensuring that the code is always in a deployable state. This makes it easier to deploy new features and bug fixes, which in turn increases deployment frequency.],
+  [Testing first has many benefits over testing after:],
+  [Better Code Coverage: Tests are more likely to cover all edge cases when they are written first.],
+  [Improved API Design: Tests force you to think about the API design before you write the code, which helps avoid leaking implementation details into the API.],
+  [Fewer Bugs: Testing first helps you catch bugs earlier in the development process, when they are easier to fix.],
+  [Better Code Quality: Testing first forces you to write modular, loosely coupled code, which is easier to maintain and reuse.],
+  [The final point is my favorite feature of TDD, and it taught me most of what I know about writing modular, cleanly architected code.],
+  [Key Steps in TDD:],
+  [Write a Test: This test will fail initially, as the corresponding functionality does not yet exist.],
+  [Write the Implementation: Just enough to make the test pass.],
+  [Refactor with Confidence: Once the test passes, the code can be refactored with confidence. Refactoring is the process of restructuring existing code without changing its external behavior. Its purpose is to clean up the code, improve readability, and reduce complexity. With the test in place, if you make a mistake, you will be alerted to it immediately by the test failure.],
+  [Repeat: The cycle repeats for each functional requirement, gradually building up the software while ensuring that all tests continue to pass.],
+  [Learning Curve: TDD is a skill and discipline that can take considerable time to develop. After 6 months of TDD, you may still feel like TDD is difficult and gets in the way of productivity. However, after 2 years with TDD, you will likely find that it has become second nature, and that you are more productive than ever before.],
+  [Time-Consuming: Writing tests for every small functionality can feel time-consuming initially, though it usually pays off in the long term with reduced bugs and easier maintenance. I often tell people, “if you think you don’t have time for TDD, you really don’t have time to skip TDD.”],
+  [Preparing yourself to answer these questions in an interview setting will certainly help you stand out from the crowd. It will help you become a better JavaScript developer, and that will help you thrive in your new role.],
+  [The fastest way to level up your career is 1:1 mentorship. With that in mind, I cofounded a platform that pairs engineers and engineering leaders with senior mentors who will meet with you via video every week. Topics include JavaScript, TypeScript, React, TDD, AI Driven Development , and Engineering Leadership. Join today at DevAnywhere.io .],
+  [Prefer to learn about topics like functional programming and JavaScript on your own? Check out EricElliottJS.com or purchase my book, Composing Software in ebook or print .],
+  [Eric Elliott is an Engineering Manager for Adobe Firefly , a tech product and platform advisor, author of “Composing Software” , creator of SudoLang (the AI programming language), creator of EricElliottJS.com and cofounder of DevAnywhere.io . He has contributed to software experiences for Adobe Systems, Zumba Fitness, The Wall Street Journal, ESPN, BBC, and top recording artists including Usher, Frank Ocean, Metallica, and many more.],
+  [10 Interview Questions Every JavaScript Developer Should Know in 2024 was originally published in JavaScript Scene on Medium, where people are continuing the conversation by highlighting and responding to this story.],
 ),
   insert-map: (:),
-  word-count: 965,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-  #pull-quote([At first, it was small things like misplacing her keys, forgetting dates or struggling with her computer.], [TED Staff])
-
-}
-
-{
-  #standard-article(
-  title: [2019 Year in Review],
-  author: [Nate Berkopec],
-  source-name: [Nate Berkopec],
-  images: (),
-  paragraphs: (
-  [Another year has come and gone. 2019 was a pretty wild year for me, with a number of big life events and transformations like I haven’t had in a long time. It was also a year in which I confronted my inner life more earnestly, which is something I had only started to do in 2018.],
-  [Here’s a review of my 2019.],
-  [id="my-business-almost-doubled"\>My Business (Almost) Doubled],
-  [Presenting at RubyKaigi],
-  [So, I’ll start with the big bang, the thing I’m most proud of. My freelancing - a combination of book sales, client work, and workshops - doubled in top-line revenue this year. Expenses were a lot higher too, but I’m still taking home a lot more than I was last year.],
-  [Despite being in the self-employed business for almost 5 years now, this is probably the first year in which I made as much or more money than I would have at a corporate job. Still, I wouldn’t trade the autonomy I’ve gained for anything. Making money on your own terms is really the ultimate luxury good.],
-  [Most of the growth this year came from my workshop business - both public and corporate. I booked a lot more on-site corporate workshops, and did a tour of more than a dozen cities this summer in the USA.],
-  [id="made-microconf-friends"\>Made MicroConf Friends],
-  [Presentations at MicroConf were pretty good too!],
-  [I went to Microconf for the first time. I met a lot of cool people there, and ended up (eventually) getting into a biweekly “mastermind” group with a few of them. I enjoyed the atmosphere of MicroConf a lot. Everyone was looking to help everyone else, no one was “judgy” about other people’s businesses, and no matter how weird your niche was, there was someone else there doing a very similar thing in a slightly different way, and you could talk shop all day about it.],
-  [id="tried-lifting-ended-up-cycling"\>Tried Lifting, Ended Up Cycling],
-  [At the beginning of the year, I tried “bulking up” by following the Starting Strength system. I stuck with it pretty religiously for about 3 months, until I injured myself and couldn’t get back on the horse again afterward.],
-  [In November, I ended up trying a Peloton bike at a hotel, and actually really enjoyed it. I love cycling (I did it a lot when I was a kid) and the Peloton workouts, in tandem with a new Apple Watch I bought, have been extremely motivating. I’m on about an 8 week streak now of 5+ workouts in a week, which is the most I’ve exercised possibly ever.],
-  [id="fell-in-love-with-japan-even-more"\>Fell in Love with Japan Even More],
-  [View of the supporter’s section at an FC Tokyo game. Hope to go back to another game in 2020!],
-  [In the spring, I attended RubyKaigi for the second time. This year, it was in Fukuoka, Japan.],
-  [This was my second time in Japan and both me and my wife love it even more now. The food, the culture, the scenery - we just can’t get enough. I’ve started to take up Japanese on a more serious basis, and we’re going to be returning there for a 3-month stay in April.],
-  [id="summer-workshop-tour"\>Summer Workshop Tour],
-  [Workshop ending victory pose, I guess?],
-  [This was a pretty big step for me. I ran my Rails-performance-pony-show in more than a dozen cities in the United States. It was fun. I got a taste of a real summer of “business travel” and spent more than 90 nights in hotels this year. I learned that I don’t really hate it all that much. I wouldn’t want to much more, of course, but it wasn’t too bad.],
-  [The tour itself was more of a learning experience than a financial success. I made a small amount of money on it but not nearly as much as I had hoped. However, I did learn a LOT by having to run through my “material” dozens of times. I learned a lot about what sticks and what doesn’t, what’s important and what’s not. That was certainly worth the cost of admission. I basically see it as getting paid to do customer development.],
-  [id="nomad-life"\>Nomad Life],
-  [On the beach in Cape Coast, Ghana. Somewhere I’d wanted to return to for almost 10 years!],
-  [In the fulfillment of a dream I’ve had for almost a decade (when I read the Four-Hour Workweek), I finally became a full-time “digital nomad”. My wife and I left the US in August and don’t plan on returning for at least a year.],
-  [It took a number of life factors that had to converge to make this happen. My wife’s career became remote, our dog passed away, and a few other things that prevent one from travelling around the world full-time finally lined up to let us go.],
-  [We’ve travelled to, so far: Ghana, Spain, Taiwan, Laos, Macau, Thailand, and Vietnam.],
-  [I’ve met a lot of new Rubyfriends on the road, which I’ve really enjoyed. I hope to continue to do so in Mexico and Japan, which are our destinations for the first half of 2020.],
-  [id="published-a-lot-of-newsletters"\>Published a lot of Newsletters],
-  [I’ve been achieving a bit more regularity in my writing, and the breakthrough came from an unexpected source: my newsletter (subscribe below!). I’ve always felt a bit overwhelmed by posting on my blog, ever since the whirlwind period of 2015 when I was posing every 2 weeks or so with 3000 words or more. I’ve often set out to post more frequently only to fall over after the first post.],
-  [Instead, I allowed myself the creative space of my email newsletter to most more quick-hits, and it’s really freed me up a lot. I hope to continue this habit in 2020.],
-  [id="re-evaluated-shark-tank"\>Re-evaluated Shark Tank],
-  [I went public with the anxiety I’ve experienced as a result of my appearance on the Shark Tank reality show in 2009. It took a lot of time for me to process that experience and its been helpful to be able to publicly say “this thing messed me up, and I’m still dealing with it.”],
-  [Anyway, that was my 2019. See you in 2020 for more adventures. It felt like 2019 was a year of building foundations and stacking bricks, which I hope to continue to do in 2020.],
-),
-  insert-map: (:),
-  word-count: 1035,
+  word-count: 2856,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -1314,9 +996,9 @@ is missing from this page, tell me about it!],
  
  Polymer ({ 
  is : ' element-name ' , 
- \/\/ All of these are optional. Only keep the ones you need. 
- behaviors : [], 
- observers : [], 
+ \/\\/ All of these are optional. Only keep the ones you need. 
+ behaviors : \[\], 
+ observers : \[\], 
  listeners : {}, 
  hostAttributes : {}, 
  properties : {} 
@@ -1324,10 +1006,10 @@ is missing from this page, tell me about it!],
   [id="defining-a-behaviour"\>Defining a behaviour],
   [Docs: behaviours .],
   [Defining a behavior to share implementation between different elements:],
-  [MyNamespace . MyFancyBehavior = [ 
+  [MyNamespace . MyFancyBehavior = \[ 
  MyFancyBehaviorImpl , 
- /\* You can add other behaviours here \*/ 
- ];],
+ /\* You can add other behaviours here \*\/ 
+ \];],
   [Using the behavior in an element:],
   [id="lifecycle-methods"\>Lifecycle methods],
   [Docs: lifecycle callbacks .],
@@ -1355,19 +1037,19 @@ and vice versa:],
  observing array mutations .],
   [Adding an observer in the properties block lets you observe changes in the
 value of a property:],
-  [\/\/ The second argument is optional, and gives you the 
- \/\/ previous value of the property, before the update: 
- \_myPropertyChanged : function ( value , /\*oldValue \*/ ) { 
+  [\/\\/ The second argument is optional, and gives you the 
+ \/\\/ previous value of the property, before the update: 
+ \_myPropertyChanged : function ( value , /\*oldValue \*\/ ) { 
  \/\/... 
  }],
   [In the observers block:],
-  [class="highlight"\> observers : [ 
+  [class="highlight"\> observers : \[ 
  ' \_doSomething(myProperty) ' , 
  ' \_multiPropertyObserver(myProperty, anotherProperty) ' , 
  ' \_observerForASubProperty(user.name) ' , 
- \/\/ Below, items can be an array or an object:' 
+ \/\\/ Below, items can be an array or an object:' 
  ' \_observerForABunchOfSubPaths(items.\*) ' 
- ]],
+ \]],
   [id="listeners"\>Listeners],
   [Docs: event listeners ,
  imperative listeners .],
@@ -1379,18 +1061,18 @@ value of a property:],
   [There are all the possible things you can use in the properties 
 block. Don’t just use all of them because you can; some (like reflectToAttribute 
  and notify ) can have performance implications.],
-  [\/\/ Value can be one of the types above, eg: 
+  [\/\\/ Value can be one of the types above, eg: 
  value : true ,],
-  [\/\/ For an Array or Object, you must return it from a function 
- \/\/ (otherwise the array will be defined on the prototype 
- \/\/ and not the instance): 
- value : function () { return [ ' cheese ' , ' pepperoni ' , ' more-cheese ' ] },],
+  [\/\\/ For an Array or Object, you must return it from a function 
+ \/\\/ (otherwise the array will be defined on the prototype 
+ \/\\/ and not the instance): 
+ value : function () { return \[ ' cheese ' , ' pepperoni ' , ' more-cheese ' \] },],
   [reflectToAttribute : true | false , 
  readOnly : true | false , 
  notify : true | false 
  },],
-  [\/\/ Computed properties are essentially read-only, and can only be 
- \/\/ updated when their dependencies change. 
+  [\/\\/ Computed properties are essentially read-only, and can only be 
+ \/\\/ updated when their dependencies change. 
  basicComputedProperty : { 
  computed : ' \_someFunction(myProperty, anotherProperty) ' 
  } 
@@ -1403,7 +1085,7 @@ block. Don’t just use all of them because you can; some (like reflectToAttribu
   [class="highlight"\> attached : function () { 
  this . \_observer = 
  Polymer . dom ( this . \$ . distributed ). observeNodes ( function ( info ) { 
- \/\/ info is {addedNodes: [...], removedNodes: [...]} 
+ \/\\/ info is {addedNodes: \[...\], removedNodes: \[...\]} 
  }); 
  }, 
  detached : function () { 
@@ -1482,64 +1164,6 @@ evenings you ask? Watch every single Trixie Mattel video on YouTube because that
   ],
   [
     standard-article(
-  title: [Book Review - Accelerate: The Science of Lean Software and Devops],
-  author: [Dean Hume],
-  source-name: [Dean Hume],
-  images: (),
-  paragraphs: (
-  [During my morning coffee session, I like to check through my RSS feed and see what is happening out there in the world of technology. I came across this article by the Spotify R&D team entitled “ Leveraging Mobile Infrastructure with Data-Driven Decisions ”. They referenced the book Accelerate: The Science of Lean Software and Devops , and the title of the book instantly drew me in.],
-  [I’ve just finished reading the book and I can say that I definitely enjoyed it.],
-  [Through four years of research, the authors set out to find a way to measure software delivery performance―and what drives it―using rigorous statistical methods. This book presents both the findings and the science behind that research, making the information accessible for readers to apply in their own organizations. Personally, I think it's quite cool to see scientific data applied to some of the everyday things that we do in technology organizations. I also found it interesting to see how some of the top performing companies repeatedly seemed to pull away from the “pack” by simply applying many of the techniques applied in this book. The book takes a look at well-known best practices such as Continuous Delivery, Lean Management, and Transformational Leadership.],
-  [If you are looking for a book that tells you how to build and scale a high performing technology organisation, then this book doesn’t quite cover it. This book goes more into why you should be doing things a certain way and backs this up with facts.],
-  [Part 1 of this book explores what the research team found after trawling through the data. Part 2 dives into the science behind the book and an introduction to Psychometrics. Finally Part 3, looks into transformation, which focuses on how leadership and management can help drive these improvements.],
-  [If I had one takeaway from this book (which surprised me), it was that the leadership of an organisation plays a pivotal role in the team's results. I really liked this quote:],
-  [“Leadership really does have a powerful impact on results. A good leader affects a team’s ability to deliver code, architect good systems, and apply Lean principles to how the team manages its work and develops products. All of these have a measurable impact on satisfaction, efficiency, and the ability to achieve organisational goals”.],
-  [Overall, this is a great book and definitely gives a good insight into why some of the best practices that we take for granted are worth doing and lead to high performing technology organisations. This book concentrates more on the why as opposed to the how. If you are looking for a how to, I’d recommend reading The DevOps Handbook to learn more.],
-  [I hope you enjoy the book!],
-),
-  insert-map: (:),
-  word-count: 453,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-  ],
-), ruled-indices: (1,))
-#pull-quote([I got emotional that it was ugly and unloved and nobody else was going to care for it because people only buy pretty plants, so I HAD to adopt it.], [Monica Dinculescu])
-
-
-#article-row((
-  [
-    standard-article(
-  title: [Week 24: vroom vroom],
-  author: [Monica Dinculescu],
-  source-name: [Monica Dinculescu],
-  images: (),
-  paragraphs: (
-  [Weird flex: been making cheese fondue for lunch because I make the rules here.],
-  [One of the (many) amazing things about being a Canadian living in California is that this state (unlike, say, no-rules-nevada) doesn’t recognize non-US driving licenses. This means that after almost 20 years of 
-getting my first driver’s license I had to do the whole circus show (written test, road test, 
-being treated like a teenager, etc) to be able to drive here. This week I finally bit the bullet
-and a) drove daily which is wild and b) did my road test (passed with flying colours, I know you’re
-wondering). Side effect: I don’t have to use my Quebec license when I get IDed in bars and go through through the whole apology that my birthday is in fact in french. Bouncers love that.],
-  [Speaking of, I’ve misplaced my Quebec licence and that’s very irritating.],
-  [Euro 2020 is on! As per, my heart team is the Netherlands and they’re
-doing surprisingly well! They’ve been \#blessed with a pretty easy group (rip group F) and I am not 
-looking that gift horse in the mouth.],
-  [It’s a month that ends in y so I’m trying to redo my site. Inspos: I really like how clean Karolina’s is; I’m low key of obsessed with this absurd cursor from CDL.],
-  [There’s a bear in Tahoe that I’m 100% convinced is just trolling our dog. He spent a whole day casually
-pacing up and down next to our house, which sends Hopper into a fit of barking hysteria.],
-  [Books: I finished Midnight Library and really didn’t like it, and Convenience Store Woman and it reminded me a lot of absurd theatre plays. I’m starting Klara and the Sun now.],
-),
-  insert-map: (:),
-  word-count: 289,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-  ],
-  [
-    standard-article(
   title: [Week 17],
   author: [Monica Dinculescu],
   source-name: [Monica Dinculescu],
@@ -1569,99 +1193,12 @@ having mainstream brands start looking into more reusable, less-plastic products
 
   ],
 ), ruled-indices: (1,))
+#pull-quote([Related: pet nutrition is absolutely bonkers.], [Monica Dinculescu])
+
+#pull-quote([The first normal thing I did with my 1 vaccine shot was go to Japantown and restock  all the things.], [Monica Dinculescu])
+
 
 #article-row((
-  [
-    standard-article(
-  title: [Week 14],
-  author: [Monica Dinculescu],
-  source-name: [Monica Dinculescu],
-  images: (),
-  paragraphs: (
-  [Let’s not bury the lede: I quit my job. After 8 years of working there, Google feels like a very different 
-company than the one I joined, one that aligns less and less with my values, and it was time to move on.
-It sucks, because my immediate team was a group of wonderful people who do great work; I will miss them,
-and the work I did, greatly. I haven’t had a vacation longer than 2 weeks since I was 18-ish, because I worked every summer and was too much of a naive workaholic to think I should take more than 1 week between jobs, so I am giving myself 6 months before I start something new this time around. It’s stressful to not have a plan, and I am bad at relaxing, but I have full confidence I can learn to overachieve at this as well.],
-  [Didn’t I tell y’all I was worried SOMETHING was going to happen and I wasn’t going to get my vaccine? Here I am, 3 hours before my J+J stabbie stabby, reading about how my appointment is cancelled because it has an incredibly rare clotting side effect. One that is 10000 more rare than the usual clots women get threatened with for taking birth control and that absolutely nobody blinks an eye at anymore. This feels a lot like fabricated concern; we already don’t care about women getting blood clots. 1 in over 6 million? Fam, that’s better odds than getting in a car or not getting e-coli from Chipotle. Stop this.],
-  [I’ve become very bad at telling stories, which is 100% a result of the panini and not being forced to socialize with people. I’ve noticed several times in recent weeks where I’m telling a story and can see the life leaving from people’s eyes. I am bored of what I am saying as I am saying it. I am not ready to move to the midwest yet; I must fix this.],
-  [This is a very good tweet. Abolish the police already. Stop giving guns to insecure people who think a uniform gives them the right to kill others because of the colour of their skin. Stop giving guns to incompetent people who apparently aren’t trained enough to tell the difference between a gun and a taser, but are confident they have a right to use either. Stop giving guns to people.],
-  [I am working on 2 linocuts. I should probably start working on more generative stuff, since JavaScript is my bread and butter and should somehow prove to my future employers I still got it. Or something. I am a deflated balloon after finding out my vaccine was cancelled and writing about yet another dead black man above so I don’t really know how to end this update on a good note.],
-),
-  insert-map: (:),
-  word-count: 471,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-  ],
-  [
-    standard-article(
-  title: [TED Idea Search: Meet the thinkers competing for a spot on the biggest stage for ideas],
-  author: [TED Staff],
-  source-name: [TED Blog],
-  images: (),
-  paragraphs: (
-  [Over the past year, TED has been traveling the world (literally!) in search of powerful ideas — and the people bold enough to share them.],
-  [The result? A 9-part series that pulls back the curtain on what it’s actually like to deliver a TED Talk.],
-  [In each episode, you’ll step into a new city and meet the speakers bringing their ideas to the red circle and competing for a spot on the main stage at TED2026 in Vancouver. You’ll go backstage with them into rehearsal rooms and witness the nerves, the breakthroughs and the moments when an idea finally comes into focus.],
-  [From a rock balancer and a disability specialist to a whale scientist and a bad-breath researcher, see the people shaping the future in their own communities — and learn what it takes to bring those ideas to the TED stage.],
-  [Sydney : Inside a theatre tucked in a library, a whale scientist and an Olympian took center stage — a reminder that compelling ideas can come from anywhere (and anyone).],
-  [Mumbai : In this episode, speakers explore everything from rock balancing to healthcare innovation, reflecting the range of ideas that make it to the TED stage.],
-  [Athens : Athens has celebrated big ideas for millennia — and it’s still not done. From the science of bad breath to the factories of the future, this episode moves from the deeply personal to the forward-looking.],
-  [Lagos : With one of the most electric audiences of the series, Lagos delivered talks ranging from renewable energy to the art of tailoring that celebrates a small town’s craft.],
-  [Watch the latest episodes of TED Idea Search on YouTube or TED.com , and stay tuned for new releases from London, Singapore, Chicago, Buenos Aires and Amman in the coming weeks.],
-  [(P. S. You can see talks from the winners of our Idea Search in person at TED2026 !)],
-),
-  insert-map: (:),
-  word-count: 313,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-  ],
-), ruled-indices: (1,))
-
-#article-row((
-  [
-    standard-article(
-  title: [monica.css],
-  author: [Monica Dinculescu],
-  source-name: [Monica Dinculescu],
-  images: (),
-  paragraphs: (
-  [Back in the day when I worked on Polymer I got used to relying on a bunch of useful CSS classes
-that at the time we called iron-flex-layout .
-They were there partly because flexbox was a sadness on IE and you needed to say everything 3 times to maybe
-get it right twice, and add some
-very special flex-basis: 0.000000001px 
-“bug fixes” that tbh nobody should ever have to write by hand. But they were also there because it’s kind of nice to say 
-and for it to just work.],
-  [Some years later, it’s now 2020, and flexbox is really good everywhere! We don’t need iron-flex-layout anymore, but tbh I still
-want to say and for it to just work.],
-  [I know there are tons of CSS frameworks out there like tachyons that can do this for me, but most of these frameworks
-do too much for me. I don’t work on large projects that need design systems, and I don’t want every possible padding and margin and colour and flexbox configuration in the world. I just
-want the ones that I know I end up using in every project. So here is monica.css : my very own CSS framework, which I copy paste at the beginning of every CSS file and take it from there. It’s already minified and bundled (because you copy pasted it) so dare I say: fast loading and efficient? 🙃],
-  [class="highlight"\> \* { box-sizing : border-box } 
- [ hidden ] { display : none !important } 
- [ disabled ] { pointer-events : none ; opacity : 0.3 } 
- .horizontal { display : flex ; flex-direction : row ; justify-content : space-between } 
- .vertical { display : flex ; flex-direction : column } 
- .center { justify-content : center ; align-items : center } 
- .flex { flex : 1 } 
- html { 
- --spacing-xs : 8px ; 
- --spacing : 24px ; 
- --spacing-s : 12px ; 
- --spacing-m : 36px ; 
- }],
-),
-  insert-map: (:),
-  word-count: 325,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-  ],
   [
     standard-article(
   title: [Chrome extensions for quick site redesigns],
@@ -1704,9 +1241,6 @@ realized other people may want to give their calendar a bubble bath. Anyway, hap
 )
 
   ],
-), ruled-indices: (1,))
-
-#article-row((
   [
     standard-article(
   title: [The Best Way to Keep Track of New Children’s Books],
@@ -1723,6 +1257,410 @@ realized other people may want to give their calendar a bubble bath. Anyway, hap
 ),
   insert-map: (:),
   word-count: 218,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+  ],
+), ruled-indices: (1,))
+#pull-quote([Here’s how it works: scroll through the covers until you find one that catches your eye.], [Community])
+
+
+{
+  #section-label([Analysis])
+  #standard-article(
+  title: [TED’s new chapter begins!],
+  author: [Chris Anderson],
+  source-name: [TED Blog],
+  images: (),
+  paragraphs: (
+  [Today I’m sharing a momentous announcement. After a nine-month global search, we have found a beautiful answer to the question of who will carry TED forward into the future.],
+  [Why this moment matters],
+  [When we announced this process back in February, our guiding question was simple: Who can best take on TED’s unique blend of offerings and values — not just for the next few years, but for the coming decades? Our advisers, LionTree, heard from nearly 100 thoughtful and passionate groups — spanning individuals, foundations, media organizations, technology platforms, investor groups, and universities. (We even received generous offers to purchase TED outright.) The breadth, ambition, and imagination of what was offered were truly inspiring.],
+  [But for me — and for everyone on TED’s leadership team — the answers weren’t just about capital or scale. They were about stewardship, values, and a shared belief in giving ideas away, trusting community, preserving independence, and amplifying human possibility.],
+  [From that landscape of offers, we made a decision grounded in the guardrails we set in the original blog post announcing the search:],
+  [style="font-weight: 400;"\> Ambition for transformation, not just incrementalism — the next steward must have a truly compelling vision for how TED can scale up its impact.],
+  [style="font-weight: 400;"\> Protection of all that people hold dear about TED : the powerful experience of our main conference, our free TED Talk videos, our cherished communities of volunteers, and our determined optimism that a better future can be built.],
+  [style="font-weight: 400;"\> An open tent, diverse voices, global reach, nonpartisanship — those are nonnegotiable.],
+  [style="font-weight: 400;"\> Editorial and intellectual integrity must be protected against any conflicts of interest or agenda.],
+  [style="font-weight: 400;"\> TED must never be sold out to commercial interests , either now or down the line.],
+  [We seriously considered for-profit joint ventures that could allow TED’s rapid growth and infuse TED with significant capital. But the more we thought through the possibilities and reminded ourselves of the extraordinary culture of generosity that infuses this community, the harder it was to picture a scenario where TED’s ultimate controllers might one day prioritize profits over mission.],
+  [So we made a key decision…],
+  [style="font-weight: 400;"\> TED’s Nonprofit status must endure — TED will stay a nonprofit, independent of external commercial control. We will proudly continue our transparent mission of providing knowledge, insights and inspiration freely to anyone in the world.],
+  [And now you will understand why I am so excited at where we ended up….],
+  [Meet TED’s new Vision Steward… Sal Khan!],
+  [It is my delight to introduce Sal Khan , founder and CEO of the incredible nonprofit Khan Academy. Sal will join TED’s board as TED’s new Vision Steward , while continuing his full-time role leading Khan Academy. Sal understands, in his bones, what it means to build a global educational platform rooted in the power of what technology and AI can enable in our connected world. Sal’s story is well known: starting with math videos and software to help his cousins, he grew Khan Academy into a trusted, free learning resource for students — and a valued partner for schools and districts — with over 170 million registered users in over 50 languages. He has blended pedagogical rigor, technology (including the powerful use of AI), and ingenuity in service of learners everywhere. He has attracted and retained an extraordinary team. He has partnered with the world’s most thoughtful philanthropists and recruited one of the most powerful boards in the nonprofit space. Perhaps most importantly, he’s won the respect and gratitude of countless numbers of educators, parents, and students worldwide.],
+  [What makes Sal especially compelling for TED is that he’s shown he can craft a vision that’s both breathtakingly ambitious and achievable in today’s technological landscape. And he’s done so inside a nonprofit culture. Add to this his lifelong dance with the power of curiosity, his hunger for crosscutting ideas, and his belief that bridging divides is not a side project, but a mission. Well, you can see why I’m excited.],
+  [Khan Academy and TED will continue to operate independently of each other, but Sal has already shared with me electrifying sketches of how TED could find new ways of empowering humanity by tackling lifelong learning. He also sees how TED could play a meaningful role in helping address the world’s growing division and social isolation. We’re not announcing any details today. But watch this space… It’s about to get seriously exciting.],
+  [While Sal will serve as a guiding steward for vision, the day-to-day execution will fall to a new CEO. For the past 12 years Jay Herratti has given sterling service to TED, initially as head of TEDx, and for the past five years as CEO, where he heroically turned my often wild ideas into effective operational reality. During that time he brilliantly dealt with the challenges of a pandemic and a brutally unstable media landscape. Jay has already given many more years to TED than he initially intended, and is now ready for his next chapter in which he intends to focus on board-level work.],
+  [Introducing TED’s new CEO],
+  [We’re therefore proud to announce a new CEO for TED: Logan McClure Davda .],
+  [Logan is not an outsider or newcomer — she is a leader forged within our org. From co-founding our Fellows program to her current role as Head of Impact, she has earned deep respect across the organization and among our community. She knows our culture, our strengths and constraints; she has fought to extend TED’s reach, and she is a believer in Sal’s vision for the future.],
+  [Our conviction is that this combination — a visionary steward plus an exceptional, trusted internal leader — gives us the best of both worlds: fresh imagination and operational firepower. This conviction has been strengthened by meaningful indications of financial support from exciting new philanthropic partners. (More to come on this.)],
+  [Meanwhile, Jay and I remain deeply committed to TED. Jay is joining TED’s board and will be available as a resource to Logan. I’ll be on the board too and I’ll proudly continue to cheer-lead, fundraise, and carry the torch for TED’s values. I’ll also play a leading role at the upcoming TED2026 in Vancouver. That is going to be one epic celebration of all that this community stands for, and a thrilling chance for me to officially pass the torch to Sal and Logan.],
+  [What happens next — and how you can be part of it],
+  [style="font-weight: 400;"\> Logan, Jay, and I will join Sal in co-hosting a community conversation by the end of this year to invite feedback, questions, and ideas.],
+  [style="font-weight: 400;"\> We’ll be transparent about the governance structure, board composition, and how decisions will be made.],
+  [style="font-weight: 400;"\> We’ll begin recruiting (with input from the community) an Ideas Council , an exciting braintrust that will work with our head of media and curation Helen Walters and her exceptional team of curators to guide TED’s pursuit of the ideas that matter.],
+  [style="font-weight: 400;"\> And yes — when the new leadership team is ready to unveil its plans, I’ll join them in an ambitious fund-raise to match the scope of our ambition for this next chapter.],
+  [To TED’s community — our speakers, TEDx organizers, educators, translators, Fellows, volunteers, donors, staff, and viewers around the world: this moment is for you. You have given TED its wings. Now let’s give it a future worthy of that trust.],
+  [I’m deeply grateful to everyone who engaged in the search, submitted proposals, raised questions, and stayed with us in the tension of the unknown. I remain, as always, an ardent believer in TED — and I’m excited for this moment of passing the torch, and leaning into what’s next.],
+  [Sal and Logan… Congratulations! And thank you! This is going to be beautiful.],
+  [— Chris Anderson],
+  [Watch the special event that took place on Wednesday, October 15, to announce these exciting changes:],
+  [Want to hear even more about how the new steward was selected? Listen to Chris’ exclusive conversation with Manoush Zomorodi on a special edition of NPR’s TED Radio Hour.],
+  [For press inquiries, contact press\@ted.com .],
+),
+  insert-map: (:),
+  word-count: 1395,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+}
+
+{
+  #standard-article(
+  title: [The secret skills of productive programmers],
+  author: [Itamar Turner-Trauring],
+  source-name: [Itamar Turner-Trauring],
+  images: (),
+  paragraphs: (
+  [This article was written during abnormal circumstances, with much of the planet under lockdown due to the COVID-19 pandemic.
+Parents with children at home have far less time, and pretty much everyone is feeling stressed and distracted.],
+  [Under more normal circumstances there are only so many hours in the day to do your job; now it’s even worse.
+And yet work needs to get done: code needs to get written, features need to be shipped, bugs need to be fixed.],
+  [Faced with an ever growing list of tasks, how do you get everything done?],
+  [The short answer is, you can’t.
+You will never get everything done.],
+  [What you can do, though, is choose the right work, the most valuable work, the most useful work, the work with most leverage.
+ Choose the right work and you can gets orders of magnitude improvement in your output.],
+  [Let’s see how.],
+  [id="the-goal-increased-output"\>The goal: increased output],
+  [Your output as a programmer is based both on your productivity and on how much time you work:],
+  [The first thing to notice is that there is a hard limit on how much increasing your working hours can help.
+After all, there are only 168 hours in a week.],
+  [If you never slept, ate, or did anything but work—and this will literally kill you—you can work 4.2× as much as a 40-hour workweek, and that’s it.
+And even with smaller increases in work hours, the gains quickly decline.
+As you work more hours you’ll become fatigued and make more mistakes; beyond a certain point those extra work hours will decrease your productivity, canceling out any gains.],
+  [id="what-is-output-for-a-programmer"\>What is output for a programmer?],
+  [Since increasing working hours isn’t really an option, the key to increasing your output is increasing your productivity.
+Productivity is the output you produce in each fixed unit of time, for example:],
+  [If you’re going to improve your productivity, you need to understand how to measure output.],
+  [The obvious measure is how much code you write: the more code, the better.
+This measure is obvious, popular, and completely wrong.],
+  [All other things being equal, is it better to implement the same feature with 10 lines of code, or 10,000 lines of code?
+If we measure output by code produced, the latter solution is better, but in most cases a 10 line solution is preferable to 10,000 lines.
+More code means higher maintenance costs, not to mention more opportunities for defects.],
+  [Your job as a programmer is not writing code, your job is solving problems : software is a tool, a means to an end. 
+Software becomes valuable because of the problems it solves.],
+  [As a rough measure, your output as a programmer can be measured by the problems you solve: the more significant the problems you can solve, the better.],
+  [If you work for a business, significance eventually translates directly or indirectly into monetary terms: money made or money saved.
+In other areas you can come up with domain-specific concrete measures of usefulness: number of people served, carbon emissions reduced, number of scientists using your software, and so on.],
+  [Note: If the problems you solve produce negative value you will become anti-productive: the better you are at your job, the more damage you will cause.],
+  [If making money hurts people or the environment, your work may be productive for your employer but anti-productive for society as a whole.
+So make sure you’re carefully considering the ethical consequences of your actions as a worker.],
+  [id="how-to-increase-productivity"\>How to increase productivity],
+  [Given the above, here’s how you can increase your productivity:],
+  [Find the most significant problem you can work on.],
+  [Come up with the most efficient solution to that problem.],
+  [Implement the solution with minimum wasted time.],
+  [Let’s go through these steps one by one, and see why they’re key to productivity.],
+  [id="1-find-the-most-significant-problem"\>1. Find the most significant problem],
+  [Let’s consider our formula for productivity again:],
+  [There are many problems you could be working on, so first you have to choose one.
+If you could solve either of these problems, should you be working on:],
+  [Implementing a particular missing feature; this will increase revenue by \$50,000.],
+  [Fixing a bug that was decreasing customer retention; this will increase revenue by \$1,000,000.],
+  [All other things being equal, the second problem is obviously the one you should be focusing on.
+Even if it takes 10× as long to solve and implement that bug fix, it should still be the highest priority:],
+  [Here’s the issue: in order to fix that expensive bug and improve customer retention, you need to know the problem exists. 
+If no one ever notices that customers are leaving, if no one ever finds that bug, if no one realizes the connection between the two—then that problem will never be solved.],
+  [And that’s why finding problems is the first and most valuable step in increasing productivity.],
+  [id="2-come-up-with-an-efficient-solution"\>2. Come up with an efficient solution],
+  [Once you’ve identified the most significant problem—or once your manager assigns you a problem they identified—you need to come up with a solution.],
+  [Which solution do you think is better?],
+  [Takes 1000 lines of code and 4 weeks to implement.],
+  [Takes 100 lines of code and 3 days to implement.],
+  [All other things being equal, the second solution is obviously better.
+But again, you need to find that solution.],
+  [If you only ever find that first solution, then no matter how efficiently you implement it, no matter how focused you are, no matter how much you manage to speed things up—you’re still implementing a much less efficient solution.],
+  [And that’s why identifying better solution is the second most valuable step in increasing productivity.],
+  [id="3-implement-the-solution-without-wasting-a-time"\>3. Implement the solution without wasting a time],
+  [Once you’ve identified a problem and chosen the solution, there is only so much leverage you have to improve productivity.
+You obviously want to avoid getting stuck and spinning your wheels, because wasted time reduces your productivity.],
+  [But given a particular solution, there’s only so much waste you can reduce, only so fast you can go:],
+  [Efficient implementation is the last and least valuable way of increasing productivity.],
+  [id="technological-skills-arent-enough"\>Technological skills aren’t enough],
+  [While you get the most increased productivity from identifying problems and the least from efficient implementation, your career as a programmer progresses in the opposite direction:],
+  [Junior engineers implement solutions.],
+  [Senior engineers find solutions and implement them.],
+  [Principal or staff engineers identify problems, find solutions, and implement them.],
+  [So becoming more productive isn’t just about helping your employer’s bottom line, it’s also about learning the skills that will give you more pay and more influence.],
+  [Critically, technological skills are necessary but not sufficient to increase your productivity:],
+  [Your JavaScript skills don’t matter if you can never meet deadlines.],
+  [Your testing skills don’t matter if you can’t convince your manager of the value of testing.],
+  [Your software architecture skills don’t matter if no one has ever heard of your product.],
+  [id="why-these-skills-are-secret"\>Why these skills are “secret”],
+  [Most discussions of programming productivity tend to end up focusing purely on technology, coding, and design skills, and skip over these problem-solving skills.
+Of course, this isn’t a conspiracy of silence, no one is deliberately hiding the existence of the skills.],
+  [My guess is that experienced programmers still have to learn new technologies, so they’re more likely to realize the need to explain those particular skills.
+But having learned them once, they apply skills like timeboxing, or considering multiple different solutions to a problem, without even noticing they’re doing it.
+And so they end up talking about problem-solving skills rather less, and about technological skills rather more.],
+  [id="how-do-you-learn-these-skills"\>How do you learn these skills?],
+  [This article is an excerpt from my book, The Secret Skills of Productive Programmers , covering the non-technical skills you need to get better at identifying problems, solving problems, and implementing them on schedule.],
+  [Elsewhere on this site you’ll find many free articles on building up your skills.],
+  [Tired of scrambling to get your job done?],
+  [If you were productive enough, you could take the afternoon off, confident you’d produced high value work. Not to mention having an easier time finding a new job when you need one.],
+  [Learn the secret skills of productive programmers .],
+),
+  insert-map: (:),
+  word-count: 1435,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+}
+
+{
+  #standard-article(
+  title: [Kafka’s Misdiagnosis],
+  author: [Aaron Schuster],
+  source-name: [The Paris Review Blog],
+  images: (),
+  paragraphs: (
+  [In a diary entry from February 1922, Franz Kafka writes of a deal he made with madness:],
+  [There is a certain failing, a lack in me, that is clear and distinct enough but difficult to describe: it is a compound of timidity, reserve, talkativeness, and half-heartedness; by this I intend to characterize something specific, a group of failings that under a certain aspect constitute one single clearly defined failing (which has nothing to do with such grave vices as mendacity, vanity, etc.). This failing keeps me from going mad, but also from making any headway. Because it keeps me from going mad, I cultivate it; out of fear of madness I sacrifice whatever headway I might make and shall certainly be the loser in the bargain, for no bargains are possible at this level.],
+  [The Kafkian protagonist (including the “I” of Kafka’s letters and diaries) is a loser who cannot make “any headway,” a schlemiel who secretly cultivates failure as the means of his persistence. The subject must lose, must fail; that’s the deal made with madness. Conversely, does this not imply that a successful Kafka would be not a socially well-adjusted, non-neurotic, even happily married Kafka, but rather a mad Kafka, one forced to pay a high price for not sacrificing headway in his pursuit, for going all the way to the end of his investigations? In “Investigations of a Dog,” the philosopher dog speaks of wanting to feed on the bone marrow of all the dogs, the marrow of truth—but then turns around and avows that this marrow is “no food; on the contrary, it is a poison.” Similarly, what if Kafka nourished himself on failure to avoid being poisoned by the truth he was seeking?],
+  [There is something profoundly unhinged about the Kafkian universe. In the first book-length study of Kafka in English (a rather eccentric work, largely forgotten today), Paul Goodman put it sharply: Relax your vigilance and “the entire order of the world will fly in pieces.” Kafka himself once called waking up “the riskiest moment”: “If you can manage to get through it without being dragged out of place, you can relax for the rest of the day.” It’s as if the interval between sleep and waking were not only a matter of fuzzy consciousness but also an ontological blurriness, threatening to open a rupture in the fabric of space-time where all sorts of demons might appear, like agents coming to arrest you for an unknown—and unknowable—crime, or a giant insect substituting for your formerly human self. Schizo- in Greek means cleft or split, and apart from the moment of awakening, there are many such figures of schizoid rupture in Kafka’s universe. “A Little Woman” opens with a delirious detail: “I have never seen a hand with the separate fingers so sharply differentiated from each other as hers; and yet her hand has no anatomical peculiarities, it is an entirely normal hand.” The too-finely-spaced fingers signal a subtle breach in the order of things, a breach into which the narrator can’t help but plunge.],
+  [It is true that one of the recurrent motifs or atmospheres in Kafka is a kind of nonchalant absurdity or normal insanity, which gives to his writing much of its dry humor. Like when Gregor Samsa turns into a bug and no one’s really shocked, or when Blumfeld comes home to his apartment to discover a pair of magical bouncing balls, which he finds bothersome but not particularly extraordinary. “Blumfeld, an Elderly Bachelor” would appear to illustrate the schizophrenia diagnosis, with its quasihallucinatory pair of celluloid balls that keep jumping up and down, doggedly following an increasingly exasperated Blumfeld. But within this delirium lies a fundamentally neurotic problem: on the one hand, the lonely bachelor is frustrated and cannot fulfill his desire (to find a life companion); on the other, a strange enjoyment keeps popping up where it’s least expected (the unwanted “companions” hopping around him). Such is the paradox of a bachelor’s existence: Loneliness can never be dispelled, and solitude is always interrupted by an intruder. Loneliness is incurable, yet one is never left alone. Likewise, the dog in “Investigations of a Dog” recounts how he was first launched on his philosophical quest by a psychedelic musical concert he stumbled upon in his youth. However, it’s not the intensities of light, movement, and sound or the violently reality-bursting spectacle (its “deterritorializing” force, in Deleuze and Guattari’s language) that grip the dog; rather, it’s the silence of the musicians, their refusal to answer his questions. This silence triggers something in him, destining the rest of his life to repeat this primal scene. His adult quest is a philosophical neurosis, organized around the posing of questions and the nonreception of answers.],
+  [Another example: the digging animal in “The Burrow,” with his constant fear of predators and obsession with defense, might easily be taken for a paranoid psychotic. But rather than being possessed by the certainty of persecution, he is riven by doubts, admitting that he doesn’t know what the enemy knows or if he’s plotting against him; near the end of the story he even claims, “I have reached the stage where I no longer wish to have certainty.” As the psychoanalyst Darian Leader has argued, if there’s one thing that separates neurosis from psychosis, it’s certainty. What “The Burrow” brilliantly illustrates is the warped neurotic logic by which one clings more to one’s defenses than to the life they are supposed to be defending. Indeed, many of Kafka’s abiding themes point to neurosis rather than schizophrenia: the ambivalent relation to authority and the ever-frustrated desire for official permission and status; delay, deferral, postponement, and procrastination; compulsive overthinking (Kafka makes virtuosic use of the word but —the Belgian Germanist Herman Uyttersprot once dubbed him the Aber Mann ); misunderstanding and the equivocations of interpretation; a floating sense of guilt, whose cause is unknown; the tortuous intricacies of grievance and complaint; and above all, failure—the failure to reach one’s goal or simply to make it from point A to B.],
+  [Samuel Beckett held a similar view. In a 1956 interview, Beckett underlined a certain serenity in Kafka’s writing: “The Kafka hero has a coherence of purpose. He’s lost but he’s not spiritually precarious, he’s not falling to bits.” He continues: “You notice how Kafka’s form is classic, it goes on like a steamroller—almost serene. It seems to be threatened the whole time—but the consternation is in the form. In my work there is consternation behind the form, not in the form.” Beckett reprises this point in a letter to the critic Ruby Cohn: “What struck me as strange in Kafka was that the form is not shaken by the experience it conveys.” Unlike Beckett’s writing, which tends toward disintegration, language collapsing into oblivion, in Kafka the form holds steady, despite the “consternation” it conveys. Now, Beckett may well have more in common with Kafka than he’s willing to admit, but his point stands: Kafka does not engage in the same kind of formal innovations and experiments as do other modern writers, making him the odd man out of the literary avant-garde. He adheres to the classical forms of the fable, chronicle, epic, and parable. Yet it’s not exactly that “the form is not shaken.” Kafka does something to the old forms: he twists them from the inside, riddling them with hesitations, gaps, and silences, but without abandoning them or splintering them apart.],
+  [The ways in which Kafka twists traditional forms according to his own disturbance are what introduce a new universal dimension for the Freudian age, the dimension of neurosis. Kafka invented a mythology for the twentieth century by neuroticizing the ancient myths: my own private Greece, my own private Judaism, even (given Kafka’s returns to Don Quixote ) my own private literary modernism. The Abraham who can’t recognize himself in God’s call, or is just too busy to answer; the tardy messiah who arrives only the day after he’s needed; the not-so-great Alexander who cannot cross the Hellespont, arrested by the mere weight of his body (his warhorse, Bucephalus, makes more progress—studying hard, he becomes a lawyer in an age when there are no more Alexanders, when the reign of the master has been eclipsed by anonymous administration); the Sirens who don’t sing but rather silently gawk at an ear-plugged Odysseus; the office-comedy Poseidon turned into the harried supervisor of the seas, having exchanged cruising on the waves and his trident for paperwork and a pen— this is how Kafka revivifies the old myths, makes them speak to us again.],
+  [The case of Moses is particularly revealing: in a passage from his diary dated October 19, 1921, Kafka compares the Jewish prophet’s fate to the conclusion of Sentimental Education . Kafka’s Moses is like Flaubert’s hyperneurotic Frédéric Moreau, with his desperately unconsummated, self-sabotaging love for Madame Arnoux: at the end of the novel, just at the moment he senses she’s about to give herself to him, and despite his “frenzied, rabid lust,” Frédéric turns away and rolls a cigarette, repulsed by a feeling of (incestuous) disgust, and a general sense of fatigue—“Besides, what a nuisance it would be!” This is how Kafka pictures Moses, not prohibited by God but stopping himself at the edge of Canaan, perhaps also muttering (prophetically) under his breath, “The promised land, what a nuisance!” Is there a truer theology? Kafka recasts mythical heroes and exalted religious figures as neurotically divided subjects, not wanting what they want and thriving on the obstacles to their thriving. Even more, they are characters who cannot be located in their traditions, who are adrift in their myths. By continuing to write in the traditional forms while subverting them in this way, Kafka depicts our own broken relation to the modern world—as something we must yet cannot inhabit . The inhibitions, hesitations, and gaps that Kafka insinuates into ancient stories reflect the angst of a subject who both belongs to a certain history and context and does not, who cannot find its place where it is “placed.”],
+  [“Hesitation before birth. If there is a transmigration of souls, then I am not yet on the bottom rung. My life is a hesitation before birth,” Kafka writes in his diary, shortly before the entry on madness. One of Kafka’s most remarkable modernizations of mythology is his take on the ancient doctrine of metempsychosis. Plato’s myth of Er, which concludes The Republic , describes the cycle of reincarnation whereby dead souls return to the underworld to decide on their next lives. In Kafka’s version of the myth, the soul does not choose a new incarnation, but rather wavers before this choice, vacillates before being. Another fateful interval: not, this time, between sleep and wakefulness, but being and nothingness. To be or not to be? Hold on, wait a second … In Plato, the focus is on the content of the choice (tyrant or recluse, lion or swan); in Kafka, it’s the act of choosing that has become problematic, “impossible.” For moderns, reincarnation concerns not so much what we’re going to be (our identity) as it does how or in what way we won’t entirely manage to be (our mis-identity or internal otherness). Freud called it the “choice of neurosis.” Extending the image of Kafka’s wavering soul, our subjectivities might be defined, in a formal manner, as so many ways of failing to be born or of bungling the choice of being: neurotic hesitation that dithers in the face of choice; perverse disavowal that avoids or sidesteps the necessity of decision; psychotic self-negation that chooses the impossible option not to be. The idea of an underworld may not be viable for us, but a disenchanted adherence to the immanence of this world is not the sole alternative. Instead, this world is fractured from within, so that it no longer falls together with itself yet without being redoubled in some kind of beyond (heaven or hell). The Freudian unconscious is a reinvention of the Platonic underworld.],
+  [At one point, Blumfeld considers crushing the troublesome magical balls into tiny bits, then wonders whether the fragments will keep jumping, a possibility he wryly dismisses: “Even the unusual must have its limits.” This might be read as an ironic metacommentary on Kafka’s fiction, but it is also a kind of neurotic joke about madness, the wit of a neurotic on the edge of psychosis whose abyss he knowingly pulls back from. The world still holds together—not due to its having a strong enough center but, funnily enough, because of a failing or weakness that prevents it from falling apart.],
+  [This is a clinical insight we can take from Kafka: What grounds neurotic existence is not a better grip on socially consensual reality than that of psychotics, or a well-installed symbolic law, as in the classic Lacanian account. It rather consists of a certain flair for cultivating weakness—a capacity for turning lack into bounty and failure into success, and, conversely, for snatching failure from the jaws of victory and finding the absence in every plenty. The trick is spinning fast enough around the void to avoid falling into it. To use another image, neurotics can almost magically conjure a ground from its absence, like the flight of stairs generated by the very feet climbing upon them: “As long as you don’t stop climbing, the stairs won’t end, under your climbing feet they will go on growing upwards,” concludes the story “Advocates.” Schizophrenics might see this as “cheating”; having a clearer insight into the precarious nature of things, they would expect the climber to glimpse the abyss beneath him and plummet. Kafka’s losing bargain is a trick on madness. From a classical diagnostic perspective, there is something confounding about Kafka’s neurosis on the edge of madness, or neurosis that saves itself from breakdown via failure. The schizophrenic interpretation of Kafka is not completely mistaken: reality is fractured, and strange animals, crossbreeds, and uncanny nonhumans rush in through the gaps. What Kafka instructs us about, however, is a mode of psychic coherence that is made up of gaps, the paradoxical perseverance of a system that subsists in and through the ways it undermines itself. Kafka’s heroes are maestros of self-sabotage; they do it to themselves. But this self-sabotage is also sabotaged—it doesn’t manage to do itself in—and so they can only keep on “climbing.” His characters live by failing to not-live. (This wayward negation is the mainspring of Kafka’s comedy, or what might be called his screwball tragedy.) One of the lessons of Kafkian neurosis is that human beings are the astoundingly resourceful architects of their own cages—yet the very ingenuity by which we entrap ourselves points to a freedom that remains untamed. In Kafka there may be no exit, no way out, but there is no absolute closure either, only an evermore exacting working through of their strange loop.],
+  [Jacques Lacan once called Hegel the “most sublime hysteric.” Kafka, the most sublime obsessional neurotic? The point is not to pathologize the author, to reduce him to his sickness, but to appreciate how literature can lift psychopathology to the level of a style—transforming it, to use the parlance of Kafka’s dog, into a field of “investigation.” This is not a matter of romanticizing mental illness but of exploring its dynamics and complexities, showing it to be not merely ailment and dysfunction but also a means for grappling with essential human problems, and for constituting different ways or even styles of being. Kafka raised neurosis to the level of a style. “There is a goal, but no way,” he writes in his notebooks. “What we call a way is hesitation.”],
+  [Aaron Schuster is a philosopher and writer who lives in Amsterdam. He is the author of The Trouble with Pleasure: Deleuze and Psychoanalysis and How to Research Like a Dog: Kafka’s New Science.],
+),
+  insert-map: (:),
+  word-count: 2664,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+}
+
+{
+  #standard-article(
+  title: [Sunday at La Bombonera],
+  author: [Juan Villoro],
+  source-name: [The Paris Review Blog],
+  images: (),
+  paragraphs: (
+  [class="p1"\> Clásicos are like Christmas for football. In these high-tension matches between fierce rivals, expectation almost always outstrips results. For months, fans visualize goals with the unrealistic yearning of a child who hopes for a new PlayStation from Santa Claus in exchange for a few cookies left out for his tired reindeer.],
+  [class="p1"\>For me, the Superclásico between Buenos Aires’s Boca Juniors and River Plate on May 4, 2008, was preceded by thirty-four years of anticipation. In 1974 I went to the Estadio Monumental to see River–Boca, but I had never been to the reverse fixture in La Bombonera, that exceptional stadium that should have been examined by Elias Canetti in Crowds and Power.],
+  [class="p1"\>The wait had charged the occasion with so much emotion that it was almost a shame it actually had to take place. Friends from Mexico, Colombia, and Spain had all similarly circled the date of May 4—the Argentine derby appeals not only to those who sleep in shirts emblazoned with the Quilmes beer logo but to an entire global tribe.],
+  [class="p1"\>Like Everest or the Mona Lisa , the fame of Boca’s stadium is impossible to deny—look no further than the crowds of tourists who come to snap pictures. But does it really represent the pinnacle of footballing passion?],
+  [class="p1"\>I spoke about the Superclásico with the taxi driver who picked me up at the Ezeiza airport and he replied with indignation: “But we hate each other more!” He came from Rosario and was referring to the bad blood between his hometown clubs Newell’s Old Boys (“the Lepers”) and Rosario Central (“the Swine”). On the drive he told me about his family’s marvelous wrath and the betrayal of his aunt Teresita, the heretic who refused to support the Swine. At the core of his story was the issue of rancor: on its biggest days, football comes down to contempt, and nobody hates each other more than Swine hate Lepers. In his opinion, the lesser rivalry between Boca–River was inflated by the press. The driver summed up his argument with theological flair: “God is everywhere, but performs his tricks in Buenos Aires.”],
+  [Don’t Worry: It’s Just the Earth Shaking],
+  [class="p2"\>On April 16, my friend Daniel Samper Pizano, a renowned Colombian journalist, organized a dinner in Madrid to prepare for the Superclásico. The final of the Copa del Rey had just concluded between Valencia and Getafe, but we weren’t interested. We preferred to talk about the football of the future, which was to say the upcoming game on May 4. The other guest justified our interest; after the meal, Jorge Valdano told us about the first time he faced Boca as a visiting player. Lacing up his boots in the locker room, he said, everything around him seemed to be moving. One of the veterans came over to reassure him: “It’s not you, pibe, it’s the stadium.” Playing at La Bombonera means overcoming an arena about to collapse under the weight of its own passion. No other ground imposes itself so forcefully upon its visitors.],
+  [class="p1"\>In his stupendous book Boquita , Martín Caparrós reminds us that it was Argentina where fans were first baptized as “the twelfth man.” Accustomed to adversity, we Mexicans consider the scoreline a suggestion we can ignore. Argentine fans, on the other hand, seek to alter the result using three basic tactics: holding their breath, insulting their rivals, and singing love songs. It’s no accident that one of the most prominent barras bravas is called La Doce, or “the twelfth.” These ultras aren’t there to merely watch a game, but to participate in it through their shouts.],
+  [class="p1"\>For years, magical realism has gone missing from Latin American literature, finding refuge in aviation instead. To fly across the continent is to endure a saga of detours, delays, and strange schedules that lead to a parallel reality. Maybe air traffic control is cheaper in the early morning and this determines the itineraries of the hemisphere. At any rate, I found myself on a four-hour predawn flight from Bogotá to Buenos Aires. Anyone without the meditative powers of a yogi arrived at the destination a zombie. Among the many surprises to come that day, I was made to experience May 4 in an altered state of time.],
+  [class="p1"\>The relationship between football and aviation is no trifle—the Copa Libertadores will never be truly competitive until the continent modifies its fixture calendar and flight paths. When I was a kid, I used to take medications with labels that read “Shake well before using.” Thanks to a miserable night on the plane, I arrived at the Superclásico in a state of total agitation.],
+  [class="p1"\>Entering the stadium was likewise an extreme sport. I was lucky to be accompanied by my friend Leo Tarifeño, a diehard River fan who had sworn to never set foot in La Bombonera.],
+  [class="p1"\>Leo is convinced that Argentines live for confrontation, eagerly disregard established rules, object impulsively, and justify themselves only through negativity, taking issue with anything they don’t agree with. After asserting this theory, he put it into practice. When I praised the chanting of the Boca fans, he replied, “Deep down, their joy is bitter.”],
+  [class="p1"\>Being with Leo was the opposite of having a human shield. The route to the stadium was blocked, so we made our way through a wasteland thick with the invigorating smoke from street stalls selling choripán. Our barren surroundings gradually became a funnel. Police barricades flanked us on either side. We continued on until someone—an invisible leader far ahead—committed a grave mistake. The crowd was pushed back by the sound of riot guns and retreated to a checkpoint, where Leo and I asked for directions to the press box. An officer waved his hand as if trying to hypnotize us. We “understood” to make our way to the other side of a roundabout, but instead we ducked into the first alley we came across. Another crowd pulled us in before being repelled again by the riot guns. Everyone ran en masse to a station manned by mounted police ushering fans into a makeshift fenced corridor. It looked less like an accessway than a site of detention. Perhaps for regular stadium-goers the challenge of entry might offer a delicious adrenaline rush, but we were in no shape for it. Above all, it was no place for Leo to expound upon his theory of antagonism.],
+  [class="p1"\>The propaganda was signed “Estudio Posca,” which was located on Calle Uruguay 385, Office 902. Its 2008 slogan was “ ¡¡¡Standing with fans for 32 years!!!” The firm presented itself as specializing in “accidents occurring in traffic or in football stadiums.”],
+  [class="p1"\>I was struck by the fact that the sporting ground had generated its own area of legal specialization. I was also surprised that the area of jurisdiction extended to the stadium’s outskirts. Leo and I had entered the zone where it might behoove us to keep Estudio Posca’s phone number close at hand. Among other alarming facts, the flyer warned:],
+  [class="p1"\>I kept the flyer to safeguard my survival. The most alarming thing about it was the casual implication that broken bones and rubber bullets simply came with the territory. Some people refuse to see doctors out of fear a previously invisible ailment might suddenly appear in their presence. With Estudio Posca, it was the other way around: we were already injured, we just hadn’t yet discovered the blood.],
+  [class="p1"\>Given humanity’s great diversity of mindsets, perhaps someone out there would be excited to receive proof of having entered a zone of aggression. Perhaps others were busy calculating how good the afternoon’s business might be—how much “\$\$\$” might be made from a broken fibula? Could it be worth sacrificing a rib as well? If some people survive by selling their blood plasma and sperm, might there also be professional victims with a long history of fractures?],
+  [class="p1"\>We made our way down streets that seemed to lead to the stadium but only ended in more detours. Due to my friend’s distrust of all Boca fans, we asked the police for directions instead. In every country stadium guards seem to come from afar and have no idea how to reach the seats.],
+  [class="p1"\>I was distracted by the flags hanging from balconies and the women in blue-and-gold aprons selling empanadas. Few clubs retain the urban grit of Boca, whose football still represents the surrounding neighborhood. The club of Maradona hasn’t lost touch with the streets—the only problem is knowing which one leads to its entrance.],
+  [class="p1"\>We reached an area where everyone was leaning out their windows. The festive atmosphere was interrupted by homophobic chants: “ Puuuuuuuuuutos! ” A motorcycle roared in the distance. Then we saw the white beast: the team bus of River. We had arrived in the corridor of rage, where those who can’t get into the stadium play their own kind of game. The following day I heard Beto Alonso, one of River’s most emblematic players, describing on the radio the objects that fell onto the roof of the bus. Some people freeze blocks of ice for the occasion and others sacrifice their heaviest padlocks. The bus slowly advanced through the crowd, dented, spat upon, and reviled.],
+  [class="p1"\>I’m always suspicious of singers who visit a new country and become instant fans of a team, playing their encore draped in a local jersey. However, in that shameful alleyway, I was on the verge of becoming a River fan myself—and it wasn’t just to make Leo happy.],
+  [class="p1"\>When Mexican police don’t want to investigate a murder, they label it “assisted suicide.” My sudden sympathy for the abused, paired with my friend’s theories, could have easily transformed us into two potential suicides in search of assistance.],
+  [class="p1"\>Naturally, my perception was entirely foreign. In 1974 when I went to River’s stadium, a man heard my accent and asked if it was true that in Mexico, a fan of a team like River could be seated next to the equivalent of a Boca fan. I said yes. “And they won’t kill each other?” he asked with interest. I explained that at least in this respect, we were peaceful. His response was withering: “What a bunch of degenerates!”],
+  [class="p1"\>I’ll never forget seeing my father in Mexico’s City’s University Olympic Stadium, urging everyone around us to applaud for the visiting team. “They’re our guests!” he said with enough amiable quirkiness to make everyone unthinkingly follow along.],
+  [class="p1"\>Raised with the belief that losing is synonymous with hospitality, it’s hard for Mexican fans to understand the spirit of the barra brava, which was seemingly forged, if not in the actual Battle of Thermopylae, at least in the movie 300.],
+  [class="p1"\>During a discussion about football and literature at the Buenos Aires Book Fair, Martín Caparrós remarked that Mexicans say “I cheer for Guadalajara” while Argentines proclaim “I’m from Boca.” These degrees of belonging are distinct. In Mexico our teams tend to fall into the abyss, so we prefer to follow at a distance. Our passion is an unreachable horizon rather than something woven into our DNA.],
+  [Side Effects: The Game],
+  [class="p2"\>Occasionally, there are moments in life when we Mexicans reveal our strength in the face of adversity. I had resigned myself to never entering the stadium and to eating choripán alongside the peaceful vendors. Then we saw a white-haired policeman issuing orders with the decisiveness of an orchestra conductor. He, and only he, knew how to find our entrance. “It’s simple,” he said prophetically. “Just follow the train tracks.”],
+  [class="p2"\>We walked between the rusty rails of a long-abandoned tramway. This had been the route to the stadium in the days when goalkeepers wore caps and footballs were still made from leather.],
+  [class="p2"\>We continued along the history-drenched path until we arrived at another dangerous crossroads. To our right was a blue wall of perforated metal. This was the entryway for River fans. We couldn’t see them, but we sensed them advancing like a herd of shadows. The only proof of their presence were the insults hurled in their direction. I was tempted to make a silent gesture of solidarity by slipping the flyer from Estudio Posca beneath the wall.],
+  [class="p1"\>Finally, we arrived at the gate and climbed to our assigned tower. From these heights I was able to confirm the optical effect described by the Colombian sportswriter David Leonardo Quitián—Boca’s stadium is the only one where distance from the field does not increase with the level of ascent. Instead, the verticality of its construction creates a dizzying proximity. “You must take a lesson in abysses,” say the protagonists of Journey to the Center of the Earth. It’s a good piece of advice for visiting La Bombonera.],
+  [class="p1"\>When Hugo Orlando Gatti, Boca’s most beloved and extravagant goalkeeper, said, “I go to the edge of the abyss,” he was referring to his tendency to complicate plays, but perhaps also to the onlookers who seemed about to collapse onto the field.],
+  [class="p1"\>For the crowd, there is no greater exercise than anticipation itself. Energized by the wait, the standing area known as La Popular defines the Superclásico. What happens on the pitch can’t compete with what happens here. On May 4, 2008, someone wanting to see a derby with great Argentine players could have watched Inter vs. Milan to admire the country’s exported geniuses. The match in Italy was a back-and-forth affair, nothing at all like the morass at La Bombonera.],
+  [class="p1"\>The home team won by playing defense and prolonging every pause in play with the exaggerated slowness of Soviet cinema. River lacked the forcefulness that their coach, El Cholo Simeone, had once shown in spades during his playing days, and they were only able to triangulate passes when it no longer mattered. River fans are called gallinas or “chickens” by their enemies. True to form, the sun-drenched masses shouted like crazed farmers ready to slaughter an entire hen house. They would never have traded this match for the aesthetic flourish of Inter vs. Milan. The Superclásico was as it should be: an effective pretext for the outpouring of passion. You don’t go to La Bombonera to discover football, but to confirm its emotional heft.],
+  [class="p1"\>It’s always disappointing to compare historical exploits: an ideal game would collapse time, offering us a clash of great idols across eras, with Labruna, Pedernera, and Sívori taking on Rattín, Pernía, and Batistuta. This impossibility—the ghostly sum of everything that has ever been played for—infuses each new contest between these intimate enemies with new allure. It’s a knife fight in which wounds never feel as deep as the animosity that fuels them.],
+  [class="p1"\>There are, of course, exceptional days when a derby resembles its inspirational propaganda—in the ninetieth minute a match is tied 3–3 and sees a winner scored in stoppage time. But on this Sunday in May, the only astonishing occurrences were in the stands.],
+  [class="p1"\>If comic-book superheroes are bipolar characters who punctuate their depressing existence as Clark Kent with maniacal outbursts as Superman, football fans oscillate from affection to invective with nothing in between. The dedication of a fanbase is measured according to its bipolarity, and Boca ranks highly: “I don’t care what they say \/ what the others say \/ I follow you everywhere \/ I love you more each day,” sing the romantic men who just minutes before called for the River fans to be murdered.],
+  [class="p1"\>That afternoon, when Sebastián Battaglia scored the stunning header that made the game 1–0, the building shook as promised by legend. Coming from a country of earthquakes, I talked about this enthusiasm, measurable on the Richter scale, for days. I was corrected by a writer, a waiter, and a police officer with the same phrase, extracted straight from the most sensitive ventricle of the Bostero heart: “Boca’s stadium doesn’t tremble, it beats.”],
+  [class="p1"\>Passion can also be defined by its power to summon those who are absent. That day, the ultras of Barra Auriazul memorialized the passing of a man named Raulito, an extraordinary fan made present even in death, and they paid tribute to the great players who had migrated away from a place where careers never last.],
+  [class="p1"\>Long gone are the chivalrous days of Ernesto Lazzatti, who played his entire career without ever being sent off, and who wore Boca’s colors without ever thinking of them as a stepping stone to Europe. Today Argentines are football’s great nomads. “If they were any good they wouldn’t be playing for us,” a taxi driver told me. “Verón came back because he’s old, Riquelme because he’s weird.”],
+  [class="p1"\>I remembered a scene from Germany ’06, when I was a commentator alongside Carlos Bianchi for Mexican TV. During a commercial break, the former coach who won everything with Boca received a phone call. He said something like “I can’t help anymore—you have another father now.” Later he told us “that was Riquelme,” with the same satisfaction Homer would have felt announcing a phone call from Achilles. Argentina’s number ten needed to feel loved in order to play well. From his training camp in Germany, he was seeking the emotional support Bianchi had given him at Boca. Coming from the riotous atmosphere of La Bombonera, it’s no wonder Riquelme had little success at Barcelona’s Camp Nou, where spectators behave like opera-goers.],
+  [class="p1"\>With few exceptions, Argentina’s cracks consider their feats a boarding pass to faraway places. The only ones who remain sedentary are the supporters. Perhaps their devotion stems from this irreconcilable disagreement. In football, passion feeds on pain—every fan base finds a way to overcome its own distinct evils. In Argentina, miracles are possible but short-lived; in Mexico, they are forever postponed and glory can only be imagined. The Estadio Azteca sportswriter describes plays that require adjectives to become interesting. The Bombonera sportswriter is faced with something that needs no words of validation; in the press box, I met Juan José Becerra, the indispensable author of Grasa , who was chronicling the team’s season for the daily newspaper Crítica. “The only thing I want,” he admitted, “is for Boca to win.”],
+  [class="p1"\>So, what does an expert in postponement discover in the realm of the impatient? In La Bombonera, the Mexican fan no longer waits for the fiction of spectacular Mexican goals. Instead, he enters a hardboiled reality. The stadium vibrates like nature at its most radical, demanding survival instead of interpretation.],
+  [An excerpt from The Game at the End of the World , translated from the Spanish by Francisco Cantú, to be published by Restless Books in May.],
+  [class="p1"\> Juan Villoro is a writer and journalist based in Mexico City. His columns have appeared in Reforma , The New York Times, El País, and El Mercurio , among others, and his books have been translated into numerous languages. A recipient of several awards, including the 2018 Manuel Rojas Prize for his body of work, Villoro has taught at Autonomous Metropolitan University, Yale, Princeton, Stanford, and Pompeu Fabra university in Barcelona, as well as at the New Journalism Foundation, created by Gabriel Garcia Márquez.],
+  [class="p1"\> Francisco Cantú is a writer, translator, and the author of The Line Becomes a River. He is the winner of the 2018 Los Angeles Times Book Prize and is the recipient of a 2017 Whiting Award in Nonfiction . His writing and translations have been featured in The New Yorker , Granta , Guernica, and VQR.],
+),
+  insert-map: (:),
+  word-count: 3545,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+}
+
+#article-row((
+  [
+    standard-article(
+  title: [Week 24: vroom vroom],
+  author: [Monica Dinculescu],
+  source-name: [Monica Dinculescu],
+  images: (),
+  paragraphs: (
+  [Weird flex: been making cheese fondue for lunch because I make the rules here.],
+  [One of the (many) amazing things about being a Canadian living in California is that this state (unlike, say, no-rules-nevada) doesn’t recognize non-US driving licenses. This means that after almost 20 years of 
+getting my first driver’s license I had to do the whole circus show (written test, road test, 
+being treated like a teenager, etc) to be able to drive here. This week I finally bit the bullet
+and a) drove daily which is wild and b) did my road test (passed with flying colours, I know you’re
+wondering). Side effect: I don’t have to use my Quebec license when I get IDed in bars and go through through the whole apology that my birthday is in fact in french. Bouncers love that.],
+  [Speaking of, I’ve misplaced my Quebec licence and that’s very irritating.],
+  [Euro 2020 is on! As per, my heart team is the Netherlands and they’re
+doing surprisingly well! They’ve been \#blessed with a pretty easy group (rip group F) and I am not 
+looking that gift horse in the mouth.],
+  [It’s a month that ends in y so I’m trying to redo my site. Inspos: I really like how clean Karolina’s is; I’m low key of obsessed with this absurd cursor from CDL.],
+  [There’s a bear in Tahoe that I’m 100% convinced is just trolling our dog. He spent a whole day casually
+pacing up and down next to our house, which sends Hopper into a fit of barking hysteria.],
+  [Books: I finished Midnight Library and really didn’t like it, and Convenience Store Woman and it reminded me a lot of absurd theatre plays. I’m starting Klara and the Sun now.],
+),
+  insert-map: (:),
+  word-count: 289,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+  ],
+  [
+    standard-article(
+  title: [Book Riot’s Deals of the Day for March 29, 2026],
+  author: [Deals],
+  source-name: [Book Riot],
+  images: (),
+  paragraphs: (
+  [align="center" class="deal"\>],
+  [align="center" class="deal"\>],
+  [align="center" class="deal"\>],
+  [align="center" class="deal"\>],
+  [align="center" class="deal"\>],
+  [align="center" class="deal"\>],
+  [align="center" class="deal"\>],
+  [align="center" class="deal"\>],
+  [align="center" class="deal"\>],
+  [align="center" class="deal"\>],
+  [align="center" class="deal"\>],
+  [align="center" class="deal"\>],
+  [The Seventh Bride by T. Kingfisher Get This Deal],
+),
+  insert-map: (:),
+  word-count: 170,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+  ],
+), ruled-indices: (1,))
+#pull-quote([Side effect: I don’t have to use my Quebec license when I get IDed in bars and go through through the whole apology that my birthday is in fact in french.], [Monica Dinculescu])
+
+
+#article-row((
+  [
+    standard-article(
+  title: [Week 14],
+  author: [Monica Dinculescu],
+  source-name: [Monica Dinculescu],
+  images: (),
+  paragraphs: (
+  [Let’s not bury the lede: I quit my job. After 8 years of working there, Google feels like a very different 
+company than the one I joined, one that aligns less and less with my values, and it was time to move on.
+It sucks, because my immediate team was a group of wonderful people who do great work; I will miss them,
+and the work I did, greatly. I haven’t had a vacation longer than 2 weeks since I was 18-ish, because I worked every summer and was too much of a naive workaholic to think I should take more than 1 week between jobs, so I am giving myself 6 months before I start something new this time around. It’s stressful to not have a plan, and I am bad at relaxing, but I have full confidence I can learn to overachieve at this as well.],
+  [Didn’t I tell y’all I was worried SOMETHING was going to happen and I wasn’t going to get my vaccine? Here I am, 3 hours before my J+J stabbie stabby, reading about how my appointment is cancelled because it has an incredibly rare clotting side effect. One that is 10000 more rare than the usual clots women get threatened with for taking birth control and that absolutely nobody blinks an eye at anymore. This feels a lot like fabricated concern; we already don’t care about women getting blood clots. 1 in over 6 million? Fam, that’s better odds than getting in a car or not getting e-coli from Chipotle. Stop this.],
+  [I’ve become very bad at telling stories, which is 100% a result of the panini and not being forced to socialize with people. I’ve noticed several times in recent weeks where I’m telling a story and can see the life leaving from people’s eyes. I am bored of what I am saying as I am saying it. I am not ready to move to the midwest yet; I must fix this.],
+  [This is a very good tweet. Abolish the police already. Stop giving guns to insecure people who think a uniform gives them the right to kill others because of the colour of their skin. Stop giving guns to incompetent people who apparently aren’t trained enough to tell the difference between a gun and a taser, but are confident they have a right to use either. Stop giving guns to people.],
+  [I am working on 2 linocuts. I should probably start working on more generative stuff, since JavaScript is my bread and butter and should somehow prove to my future employers I still got it. Or something. I am a deflated balloon after finding out my vaccine was cancelled and writing about yet another dead black man above so I don’t really know how to end this update on a good note.],
+),
+  insert-map: (:),
+  word-count: 471,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+  ],
+  [
+    standard-article(
+  title: [ICYMI: The Week’s Biggest Book News],
+  author: [Rebecca Joines Schinsky],
+  source-name: [Book Riot],
+  images: (),
+  paragraphs: (
+  [Welcome to Today in Books, our daily round-up of literary headlines at the intersection of politics, culture, media, and more.],
+  [Here are the stories we covered ourselves on Book Riot this week.],
+  [“I Will Not Comply.” : The Librarian Fighting for the Freedom to Read],
+  [The Most Read Books on Goodreads This Week],
+  [Manipulating the Law: Dismantling the Miller Test and Exploiting the “Government Speech” Doctrine],
+  [The Bestselling Books of the Week, According to All the Lists],
+  [And for All Access members, here are all the interesting links we bookmarked that didn’t make the cut for full Today in Books coverage.],
+  [This content is for members only. Visit the site and log in/register to read.],
+),
+  insert-map: (:),
+  word-count: 115,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+  ],
+), ruled-indices: (1,))
+
+#article-row((
+  [
+    standard-article(
+  title: [monica.css],
+  author: [Monica Dinculescu],
+  source-name: [Monica Dinculescu],
+  images: (),
+  paragraphs: (
+  [Back in the day when I worked on Polymer I got used to relying on a bunch of useful CSS classes
+that at the time we called iron-flex-layout .
+They were there partly because flexbox was a sadness on IE and you needed to say everything 3 times to maybe
+get it right twice, and add some
+very special flex-basis: 0.000000001px 
+“bug fixes” that tbh nobody should ever have to write by hand. But they were also there because it’s kind of nice to say 
+and for it to just work.],
+  [Some years later, it’s now 2020, and flexbox is really good everywhere! We don’t need iron-flex-layout anymore, but tbh I still
+want to say and for it to just work.],
+  [I know there are tons of CSS frameworks out there like tachyons that can do this for me, but most of these frameworks
+do too much for me. I don’t work on large projects that need design systems, and I don’t want every possible padding and margin and colour and flexbox configuration in the world. I just
+want the ones that I know I end up using in every project. So here is monica.css : my very own CSS framework, which I copy paste at the beginning of every CSS file and take it from there. It’s already minified and bundled (because you copy pasted it) so dare I say: fast loading and efficient? 🙃],
+  [class="highlight"\> \* { box-sizing : border-box } 
+ \[ hidden \] { display : none !important } 
+ \[ disabled \] { pointer-events : none ; opacity : 0.3 } 
+ .horizontal { display : flex ; flex-direction : row ; justify-content : space-between } 
+ .vertical { display : flex ; flex-direction : column } 
+ .center { justify-content : center ; align-items : center } 
+ .flex { flex : 1 } 
+ html { 
+ --spacing-xs : 8px ; 
+ --spacing : 24px ; 
+ --spacing-s : 12px ; 
+ --spacing-m : 36px ; 
+ }],
+),
+  insert-map: (:),
+  word-count: 325,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -1757,27 +1695,16 @@ shouldn’t.],
 ), ruled-indices: (1,))
 
 {
-  #section-label([Analysis])
+  #section-label([Briefs])
   #brief-group((
-    #brief-item([New Scientist], source-name: [New Scientist], [There are a few simple things you can do to make your digital life much more secure, says cybersecurity expert Jake Moore - follow these tips to tighten up your passwords])
-
-    #brief-item([New Scientist], source-name: [New Scientist], [Do we all see the same red? Or feel joy and sadness alike? Mapping how our inner experiences relate to one another could finally reveal how physical processes in the brain give rise to consciousness])
-
-    #brief-item([New Scientist], source-name: [New Scientist], [The neurodegenerative condition chronic traumatic encephalopathy appears to be driven by damage to the blood-brain barrier due to repetitive head injuries, like those that occur in boxing. This suggests that drugs that strengthen this barrier could prevent or slow the condition])
-
-    #brief-item([Archivist], source-name: [Medieval Archives], [A team of archaeologists from ArcheoScan has unearthed a unique medieval tombstone depicting a knight during an excavation in the historic center of Gdańsk, Poland. The tombstone was unearthed in Śródmieście I, the city’s most important archaeological site, located between Czopowa, Sukiennicza, and Grodzka streets. The site has been of interest for years because it once housed a wooden…
-
- Source])
-
-    #brief-item([New Scientist], source-name: [New Scientist], [In a randomised trial, men who experience premature ejaculation benefitted from using an app to learn techniques for extending intercourse])
-
-    #brief-item([New Scientist], source-name: [New Scientist], [Strong magnets tend to be large and power-hungry, but a new design has produced a powerful magnet that fits in the palm of your hand, making it more practical and affordable])
-
-    #brief-item([New Scientist], source-name: [New Scientist], [A growing body of research shows that we tend to discount a person’s good deeds if they stand to benefit from them. Columnist David Robson explores where this instinct comes from – and whether we should resist it])
-
-    #brief-item([New Scientist], source-name: [New Scientist], [We shouldn't dismiss flowers as merely ornamental – these blooms are world-changers, argues a vivid new book by David George Haskell. Michael Marshall is mostly convinced])
-
-    #brief-item([Travis Turner], source-name: [Evil Martians Chronicles], [Authors: Victoria Melnikova, Head of New Business, Host of Dev Propulsion Labs, and Travis Turner, Tech Editor
+    [#brief-item([New Scientist], source-name: [New Scientist], [There are a few simple things you can do to make your digital life much more secure, says cybersecurity expert Jake Moore - follow these tips to tighten up your passwords])],
+    [#brief-item([New Scientist], source-name: [New Scientist], [Do we all see the same red? Or feel joy and sadness alike? Mapping how our inner experiences relate to one another could finally reveal how physical processes in the brain give rise to consciousness])],
+    [#brief-item([New Scientist], source-name: [New Scientist], [The neurodegenerative condition chronic traumatic encephalopathy appears to be driven by damage to the blood-brain barrier due to repetitive head injuries, like those that occur in boxing. This suggests that drugs that strengthen this barrier could prevent or slow the condition])],
+    [#brief-item([New Scientist], source-name: [New Scientist], [In a randomised trial, men who experience premature ejaculation benefitted from using an app to learn techniques for extending intercourse])],
+    [#brief-item([New Scientist], source-name: [New Scientist], [Strong magnets tend to be large and power-hungry, but a new design has produced a powerful magnet that fits in the palm of your hand, making it more practical and affordable])],
+    [#brief-item([New Scientist], source-name: [New Scientist], [A growing body of research shows that we tend to discount a person’s good deeds if they stand to benefit from them. Columnist David Robson explores where this instinct comes from – and whether we should resist it])],
+    [#brief-item([New Scientist], source-name: [New Scientist], [We shouldn't dismiss flowers as merely ornamental – these blooms are world-changers, argues a vivid new book by David George Haskell. Michael Marshall is mostly convinced])],
+    [#brief-item([Travis Turner], source-name: [Evil Martians Chronicles], [Authors: Victoria Melnikova, Head of New Business, Host of Dev Propulsion Labs, and Travis Turner, Tech Editor
 
  Topics: Case Study, Developer Community
 
@@ -1785,18 +1712,13 @@ shouldn’t.],
 
 Established nearly 20 years ago, Evil Martians is a trusted software development consultancy for developer tools startups.
 
- Read more])
+ Read more])],
+    [#brief-item([New Scientist], source-name: [New Scientist], [After the passing of physicist Anthony Leggett, columnist Karmela Padavic-Callaghan remembers their personal connection with this giant of quantum physics, and explores the legacy of his enduring recipe for testing the edges of the quantum world])],
+    [#brief-item([New Scientist], source-name: [New Scientist], [A pig's brain has been frozen with its cellular activity locked in place and minimal damage. Some believe the same could be done with the brains of people with a terminal illness, so their mind can be reconstructed and they can "continue with their life"])],
+    [#brief-item([Archivist], source-name: [Medieval Archives], [By the mid-1020s, Cnut the Great was arguably the most powerful man in Northern Europe. As the king of England and Denmark, he was no longer just a Viking warlord but the ruler of the North Sea Empire. Cnut was rebuilding the empire first forged by his father, Sweyn Forkbeard, reclaiming it piece by piece. His influence stretched from the Irish Sea to the Baltic. The King of Sweden…
 
-    #brief-item([New Scientist], source-name: [New Scientist], [After the passing of physicist Anthony Leggett, columnist Karmela Padavic-Callaghan remembers their personal connection with this giant of quantum physics, and explores the legacy of his enduring recipe for testing the edges of the quantum world])
-
-    #brief-item([New Scientist], source-name: [New Scientist], [A pig's brain has been frozen with its cellular activity locked in place and minimal damage. Some believe the same could be done with the brains of people with a terminal illness, so their mind can be reconstructed and they can "continue with their life"])
-
-    #brief-item([Archivist], source-name: [Medieval Archives], [A man searching for earthworms before a fishing trip in the Stockholm archipelago struck something far more extraordinary than bait. Beneath a thin layer of soil lay the edge of a discovery now reshaping Sweden’s medieval history: a vast hoard of silver buried for more than 800 years. Archaeologists estimate the cache contains 20,000–24,000 silver coins, along with jewelry and pearls—an…
-
- Source])
-
-    #brief-item([New Scientist], source-name: [New Scientist], [We've always thought that Tyrannosaurus rex was an unchallenged apex predator during the dying days of the dinosaurs. But a fresh look at controversial fossils has prompted palaeontology’s biggest-ever U-turn])
-
+ Source])],
+    [#brief-item([New Scientist], source-name: [New Scientist], [We've always thought that Tyrannosaurus rex was an unchallenged apex predator during the dying days of the dinosaurs. But a fresh look at controversial fossils has prompted palaeontology’s biggest-ever U-turn])],
   ))
 }
 

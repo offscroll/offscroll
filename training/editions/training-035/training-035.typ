@@ -29,12 +29,13 @@
   source-name: [Drew DeVault],
   deck: [We live in a golden age of open source, and it can sometimes be easy to forget
 the privileges that this affords us.],
-  lead-text: "I’m writing this article with vim, in a
+  lead-pre: [],
+  lead-cap: [I],
+  lead-rest: [’m writing this article with vim, in a
 terminal emulator called urxvt, listening to music with mpv, in a Sway desktop
 session, on the Linux kernel. Supporting this are libraries like glibc or musl,
 harfbuzz, and mesa. I also have the support of the AMDGPU video driver, libinput
-and udev, alsa and pulseaudio.",
-  lead-first-alpha: 0,
+and udev, alsa and pulseaudio.],
   body-paragraphs: (
   [All of this is open source. I can be reading the code for any of these tools
 within 30 seconds, and for many of these tools I already have their code checked
@@ -84,27 +85,165 @@ your tracks because your problem leads you away from the beaten path!],
 {
   #section-label([Features])
   #standard-article(
-  title: [A Blog, If You Can Keep It],
-  author: [Fly.io Blog],
-  source-name: [Fly.io Blog],
+  title: [Java is still available at zero-cost],
+  author: [Stephen Colebourne],
+  source-name: [Stephen Colebourne (Joda)],
   images: (),
   paragraphs: (
-  [A boldfaced lede like this was a sure sign you were reading a carefully choreographed EffortPost from our team at Fly.io. We’re going to do less of those. Or the same amount but more of a different kind of post. Either way: launch an app on Fly.io today!],
-  [Over the last 5 years, we’ve done pretty well for ourselves writing content for Hacker News. And that’s mostly been good for us. We don’t do conventional marketing, we don’t have a sales team, the rest of social media is atomized over 5 different sites. Writing pieces that HN takes seriously has been our primary outreach tool.],
-  [There’s a recipe (probably several, but I know this one works) for charting a post on HN:],
-  [Write an EffortPost, which is to say a dense technical piece over 2000 words long; within that rubric there’s a bunch of things that are catnip to HN, including runnable code, research surveys, and explainers. (There are also cat-repellants you learn to steer clear of.)],
-  [Assiduously avoid promotion. You have to write for the audience. We get away with sporadically including a call-to-action block in our posts, but otherwise: the post should make sense even if an unrelated company posted it after you went out of business.],
-  [Pick topics HN is interested in (it helps if all your topics are au courant for HN, and we’ve been very lucky in that regard).],
-  [Like 5-6 more style-guide things that help incrementally. Probably 3 different teams writing for HN will have 3 different style guides with only like ½ overlap. Ours, for instances, instructs writers to swear.],
-  [I like this kind of writing. It’s not even a chore. But it’s become an impediment for us, for a couple reasons: the team serializes behind an “editorial” function here, which keeps us from publishing everything we want; worse, caring so much about our track record leaves us noodling on posts interminably (the poor Tigrises have been waiting for months for me to publish the piece I wrote about them and FoundationDB; take heart, this post today means that one is coming soon).],
-  [But worst of all, I worried incessantly about us wearing out our welcome . To my mind, we’d have 1, maybe 2 bites at the HN apple in a given month, and we needed to make them count.],
-  [That was dumb. I am dumb about a lot of things! I came around to understanding this after Kurt demanded I publish my blog post about BFAAS (Bash Functions As A Service), 500 lines of Go code that had generated 4500 words in my draft. It was only after I made the decision to stop gatekeeping this blog that I realized Simon Willison has been disproving my “wearing out the welcome” theory, day in and day out, for years. He just writes stuff about LLMs when it interests him. I mean, it helps that he’s a better writer than we are. But he’s not wasting time choreographing things.],
-  [Back in like 2009, we had a blog at another company I was at. That blog drove a lot of business for us (and, on three occasions, almost killed me). It was not in the least bit optimized for HN. I like pretending to be a magazine feature writer, but I miss writing dashed-off pieces every day and clearing space for other people on the team to write as well.],
-  [So this is all just a heads up: we’re trying something new. This is a very long and self-indulgent way to say “we’re going to write a normal blog like it’s 2008”, but that’s how broken my brain is after years of having my primary dopaminergic rewards come from how long Fly.io blog posts stay on the front page: I have to disclaim blogging before we start doing it, lest I fail to meet expectations.],
-  [Like I said. I’m real dumb. But: looking forward to getting a lot more stuff out on the web for people to read this year!],
+  [The Java ecosystem has always been built on a high quality \$free (zero-cost) JDK available from Oracle, and previously Sun.
+This is as true today as it always has been - but the new six-monthly release cycle does mean some big changes are happening.],
+  [Six-monthly releases],
+  [Java now has a release every six months , something which greatly impacts how each version is supported.
+By support, I mean the provision of update releases with security patches and important bug fixes.],
+  [Up to and including Java 8, \$free security updates were provided for many years. Certainly up to and beyond the launch of the next version.
+With Java 9 and the six-monthly release cycle, this \$free support is now much more tightly controlled.],
+  [In fact, Oracle will not be providing \$free long-term support (LTS) for any single Java version at all from Java 11 onwards.],
+  [Version Release date End of \$free updates from Oracle 
+ Java 8 March 2014 January 2019 (for commercial use) 
+ Java 9 Sept 2017 March 2018 
+ Java 10 March 2018 Sept 2018 
+ Java 11 Sept 2018 March 2019 (might be extended, see below) 
+ Java 12 March 2019 Sept 2019],
+  [The idea here is simple. Oracle wants to focus its energy on moving Java forward with the cost of long-term support directly paid for by customers (instead of giving it away for \$free). To do this, they need developers to continually upgrade their version of Java, moving version every six months (and picking up the patch releases in-between). Of course, for most development shops, such rapid upgrade is not feasible.
+ But Java is now developed as OpenJDK , which means that Oracle's support dates are not the only ones to consider.],
+  [OpenJDK],
+  [A key point to grasp is that most JDK builds in the world are based on the open source OpenJDK project . The Oracle JDK is merely one of many builds that are based on the OpenJDK codebase. While it used to be the case that Oracle had additional extras in their JDK, as of Java 11 this is no longer the case.],
+  [Many other vendors also provide builds based on the OpenJDK codebase.
+These builds may have additional branding and/or additional non-core functionality.
+Most of these vendors also contribute back to the upstream OpenJDK project, including the security patches.],
+  [The impact is that the JDK you use should now be a choice you actively make , not passively accept.
+How fast can you get security patches? How long will it be supported? Do you need to be able to apply contractual pressure to a vendor to help with any issues?],
+  [In addition, there are two main ways that the JDK is obtained.
+The first is an update mechanism buit into the operating system (eg. \*nix).
+The second is to visit a URL and download a binary (eg. Windows).],
+  [To examine this further, lets look at Java 8 and Java 11 separately.],
+  [Staying on Java 8],
+  [If you want to stay on Java 8 after January 2019, here are the choices as I see them:],
+  [1) Don't care about security.],
+  [It is entirely possible to remain on the last \$free release forever.
+Just don't complain when hackers destroy your company.],
+  [2) Rely on Operating System updates.],
+  [On \*nix platforms, you may well obtain your JDK via the operating system (eg. 
+ Red Hat ,
+ Debian ,
+ Fedora ,
+ Arch ,
+etc.).
+And as such, updates to the JDK are delivered via the operating system vendor.
+This is where Red Hat's participation is key - they promise Java 8 updates until June 2023 in Red Hat Enterprise Linux - but they also have an "upstream first" policy, meaning they prefer to push fixes back to the "upstream" OpenJDK project.
+Whether you get security patches to the JDK or not will depend on your operating system vendor, and whether they need you to pay for those updates.],
+  [3) Pay for support.],
+  [A number of companies, including Azul , IBM , Oracle and Red Hat , offer ongoing support for Java.
+By paying them, you get access to the stream of security patches and update releases with certain guarantees (as opposed to volunteer-led approaches).
+If you have cash, maybe it is fair and reasonable to pay for Java?],
+  [4) Use the non-commercial build in a commercial setting.],
+  [Oracle will provide builds of Java 8 for non-commercial use until December 2020, so you could use those.
+But you don't want Oracle's software licensing teams chasing you, do you?],
+  [5) Build OpenJDK yourself.],
+  [The stream of security patches \* is published to a public Mercurial repository under the GPL license.
+As such, it is perfectly possible to build OpenJDK yourself by keeping track of commits to that repository.
+I suspect this not a very realistic choice for most companies.],
+  [6) Use the builds from Adoptium AdoptOpenJDK .],
+  [Update 2021-11-04: AdoptOpenJDK is now Adoptium . The links below have not been updated as there is not a matching page in all cases.],
+  [The community team at AdoptOpenJDK has been busy over the past few years creating a build farm and testing rig.
+As such, they are now able to take the stream of security patches \* and turn them into releases, just like you would get from the commercial offerings.
+They also intend to run the Java TCK (testing compatibility kit) to allow these builds to be fully certified as being compatible with the Java SE specification.
+Their plan is to produce Java 8 builds until September 2023 or later (two years after Java 17 comes out).
+Obviously, you don't get a warranty or genuine support - its a community build farm project.
+But for most users that want to use Java 8 without paying, this is likely the best choice.],
+  [Note that Azul also offers \$free OpenJDK release builds under the name Zulu .
+A key advantage of Azul's offering is that you can pay for support later if you need it without changing your JDK.],
+  [\* The last two options assume that a group actually will step forward and take over the "JDK 8 updates" OpenJDK project once Oracle stop.
+While the exact project details are not yet confirmed, this IBM statement indicates real backing for the approach:],
+  [class="quote"\>
+Recognizing the impact that the release cycle changes will have with Java developers, IBM will partner with other members of the OpenJDK community to continue to update an OpenJDK Java 8 stream with security patches and critical bug fixes. We intend to keep the current LTS version secure and high quality for 4 years. This timescale bridges the gap between LTS versions with 1 year to allow for a migration period. IBM has also invested in an open build and test project (AdoptOpenJDK.net) along with many partners and Java leaders to provide community binaries across commonly used platforms of OpenJDK with Hotspot and OpenJDK with Eclipse OpenJ9. These community binaries are TCK (Java SE specification) compliance tested and ready for developers to download and use in production.],
+  [IBM statement],
+  [And here is further indication of Red Hat's support for the June 2023 date, based on their "upstream first" policy.],
+  [class="quote"\>
+\> Red Hat has said it may step forward to be the maintainer for JDK 11 - might it also
+\> step forward to be the maintainer for JDK 8?],
+  [Yes.],
+  [\> How long will JDK 8 be maintained?],
+  [June 2023 is right for JDK 8, but I wouldn't be surprised if it goes on beyond that.],
+  [Andrew Haley, Red Hat],
+  [And finally, here is the official Oracle view on that transition .],
+  [Note that the process around security issues will be managed by the newly formed vulnerability group (which formally codifies what was happening anyway).],
+  [Staying on Java 9 or Java 10],
+  [Don't.],
+  [No-one wants to provide builds or support for Java 9 or Java 10.
+And anyway, there is no good reason not to upgrade to Java 11 in my opinion.],
+  [(Actually, Azul are providing medium-term support for Java 9, if you really need it.)],
+  [Staying on Java 11],
+  [It is a brave new world and not 100% clear, but this is how it looks like things will happen.],
+  [Firstly, it is not clear that there will be an Oracle JDK that is \$free to download.
+Despite my best attempts , I could not get 100% clarity on this point.
+However, this tweet and other sources indicate that it will be accessible for development purposes, just not for use in production (which is a bit of a trap for the unwary).
+But in reality, it is now irrelevant as to whether Oracle JDK is \$free to download or not.],
+  [Now that Java 11 is released, we can see that Oracle JDK can be downloaded for \$free.
+However, the license has changed, explicitly ruling out use in a production environment (without paying).
+Given that Oracle JDK has been the main JDK in use for 23 years, this is a huge trap for the unwary .],
+  [But this is not actually a problem, because Oracle JDK is no longer that important.
+That is because from Java 11, developers can treat Oracle JDK and OpenJDK as being equivalent.
+(See here for the detailed differences.)
+It is no longer appropriate or correct to consider the OpenJDK build to be secondary or less important.
+In fact, the most important build is now the OpenJDK one .],
+  [To be more specific, as of the release date, Java 11 developers should consider using AdoptOpenJDK or jdk.java.net to obtain a binary download, not any page on oracle.com .],
+  [So, for how long will Oracle provide security patches to Java 11?],
+  [Again, the answer to this is not 100% clear:],
+  [At least six months of free, GPL-licensed updates with binaries at https:\/\/jdk.java.net.],
+  [(I say “at least” because that’s the current plan. The plan could change, to a longer time period, if the situation warrants.)],
+  [Mark Reinhold, Oracle],
+  [Clearly, six months of security updates is not long enough to treat Java 11 as a "long term support" (LTS) release.
+The promise of the period being potentially longer doesn't really help, as companies need longer timelines and more certainty.
+So the working assumption should be that Java 11 has just 6 months of releases containing security patches from Oracle .],
+  [At this point, things move into the realms of probabilities.
+In all likelihood, when Oracle steps down from managing the "JDK 11 updates" project at OpenJDK (the one containing the security patches), someone else will take over.
+Exactly as with Java 8, discussed above.
+This has happened before with Java 6 and 7.
+And the evidence is that it will happen for Java 11 too:],
+  [class="quote"\>
+OpenJDK is a community project. It's up to the community to support it.
+In practice this means that a group of organizations and individuals will maintain each OpenJDK LTS release for some period
+(TBA for 11, but it's sure to be a \*lot\* longer than six months.)
+I am certain that there will be a jdk11u project, and it will be properly and professionally run.
+I think it's likely that I'll be leading the project, but someone else may be chosen.],
+  [Andrew Haley, Red Hat],
+  [See also this Red Hat blog on the topic.],
+  [That covers the repository containing the security patches.
+(Red Hat have an excellent record in maintaining old releases of OpenJDK for the wider community.)
+But there is still the question of producing actual releases to download that have been certified as passing the Java SE testing TCK.],
+  [This is where the AdoptOpenJDK build farm is critical:],
+  [class="quote"\>
+As part of the discussions Andrew mentioned, AdoptOpenJDK offered to build, test and make available OpenJDK
+LTS binaries for the major (and several minor) platforms. This isn't yet set in concrete but folks broadly thought that
+was a good idea. So the challenge of having a build and test farm for this joint effort is solved.],
+  [Martijn Verburg, AdoptOpenJDK],
+  [And AdoptOpenJDK are currently planning to do create releases until September 2022 ,
+one year after Java 17 comes out.],
+  [If people do what they say they will, then we can therefore conclude that it will be possible to use Java 11 for 4 years from release, with security patches, for \$free (zero-cost) . (I would imagine that if volunteers came forward, the September 2022 date could be moved even further into the future.)],
+  [Of course, only you and your company can decide if it is right and proper to use Java without giving back to the ecosystem.
+It could be argued that it is more ethical to either pay for support, or assist either the AdoptOpenJDK or "JDK 11 updates" OpenJDK project.],
+  [This is therefore the updated table of \$free updates:],
+  [Version Release date End of Oracle \$free updates End of OpenJDK-based \$free updates 
+ Java 8 March 2014 January 2019 June 2023 (or later) 
+ Java 9 Sept 2017 March 2018 N/A 
+ Java 10 March 2018 Sept 2018 N/A 
+ Java 11 Sept 2018 March 2019 (or later) September 2022 (or later) 
+ Java 12 March 2019 Sept 2019 N/A],
+  [(June 2023 is the date Red Hat has provided for the end of JDK 8 security patches, September 2022 is the date AdoptOpenJDK have provided - one year after the expected release of the next LTS (long-term support) version, Java 17).],
+  [The OpenJDK builds by Oracle at jdk.java.net only cover three platforms.
+But this doesn't mean that they are the only platforms OpenJDK runs on.
+For example, AdoptOpenJDK provides Java 8 builds on 9 platforms with Hotspot (including ARM, Windows 32-bit and Solaris) and more platforms with OpenJ9.],
+  [All the pieces are in place for Java 11 to be maintained as a long-term support release.
+However, unlike Java 6, 7 and 8, Oracle will not be leading the long-term support effort .
+In all likelihood, Red Hat will take over this task - they have said publicly that they would like to.],
+  [For the first 6 months of Java 11's life, Oracle will be providing GPL+CE licensed \$free zero-cost downloads at jdk.java.net with security patches.],
+  [To get GPL+CE licensed \$free zero-cost update releases of Java 11 after the first six months, you are likely to need to obtain them from a different URL and a different build team.
+Currently, my view is that your package manager or Adoptium is the best place to look for those builds.],
+  [Feel free to comment if I've missed something obvious.],
 ),
   insert-map: (:),
-  word-count: 667,
+  word-count: 2414,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -324,8 +463,6 @@ awesome FOSS work.],
   debug-mode: false,
 )
 
-  #pull-quote([aerc progresses nicely this month as well, thanks to the support of its many dedicated contributors.], [Drew DeVault])
-
 }
 
 {
@@ -350,7 +487,7 @@ Apache 2.0 license. The name, “Commons Clause”, is also disingenuous, hijack
 language used by respected entities like Creative Commons. In truth, the Commons
 Clause serves to remove software from the commons 1 . Combining these
 problems gives you language like “Apache+Commons Clause”, which is easily
-confused with [Apache Commons][apache-commons].],
+confused with \[Apache Commons\]\[apache-commons\].],
   [Projects using the Commons Clause have also been known to describe their license
 as “permissive” or “open”, some even calling their software “open source”. This
 is dishonest. FOSS refers to “free and open source software”. The former, free
@@ -382,12 +519,49 @@ so on. However, they’ve rolled it back, and Dgraph is now using the Apache 2.0
 license with no modifications. Thank you!],
   [id="fn:1"\>],
   [This is why I often refer to it as the “Anti-Commons Clause”, though I felt that was a bit too Stallman-esque for this article.
-[apache-commons]: http:\/\/commons.apache.org/   ↩︎],
+\[apache-commons\]: http:\/\/commons.apache.org\/   ↩︎],
   [id="fn:2"\>],
   [Free as in freedom, not as in free beer.  ↩︎],
 ),
   insert-map: (:),
   word-count: 583,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+}
+
+{
+  #standard-article(
+  title: [Are Doctors Heroes?],
+  author: [Samuel Matlack],
+  source-name: [The New Atlantis],
+  images: (),
+  paragraphs: (
+  [The effervescent rays of sunshine spread their warmth across my back as I walk along Omaha Beach in Normandy. French children kick around a soccer ball, shouting and giggling across a fifty-yard stretch of sand. A tranquil ocean extends into the horizon, effortlessly mingling with the sky making it impossible to tell where one starts and the other ends. Looking out across the serene water, I imagine June 6, 1944 and the chaos that once enveloped these beaches. The young American soldiers landing here faced an onslaught of bullets from Nazi pillboxes — concrete bunkers with holes to fire through — hidden safely in the hills.],
+  [That day alone, Americans suffered two thousand and four hundred casualties . As the bodies of young men washed ashore, the fortunate survivors endured gunshot wounds while crawling up the beach amidst the blood-soaked waves. One member of the 116th Infantry Regiment said : “They’re leaving us here to die like rats.” D-Day provides a chilling and indelible reminder of the terror of that war and its tragic necessity; of the noble and valorous sacrifice our young heroes made to rid the world of Nazi Germany.],
+  [I think of my trip to Omaha Beach as the 76 th anniversary of D-Day approaches and I enter the hospital each morning during the Covid-19 pandemic. “Welcome healthcare heroes!” one sign reads outside an academic hospital. “Heroes enter here!” reads another. I walk in with a mask and use a squirt of Purell on my hands, as a nurse in a gown, face shield, and mask takes my temperature. If I’m afebrile I enter the hospital. A nurse standing at the entrance shouts “Thank you, heroes!” at approaching physicians and nurses. This is not restricted to hospital entrances. Toymaker Mattel created a \#ThankYouHeroes toy line of nurses, physicians, EMTs, and delivery workers. Signs hanging outside of house windows read: “Thank you essential workers for your heroism!” The quarantined populace clangs pots and pans at 7 pm throughout the city streets in honor of essential workers. From cooks to janitors to doctors: all are now heroes in the public eye . This wellspring of gratitude is well-intended and appreciated. But are those of us who work in these jobs truly heroes?],
+  [In the mid-19 th century, Thomas Carlyle, a British historian and writer, published a series of lectures in a book entitled On Heroes, Hero-worship and the Heroic in History . Though Carlyle offered some unusual theories about the role of heroes, we ought to consider the elements of his definition of a hero:],
+  [They were the leaders of men, these great ones; the modellers, patterns, and in a wide sense creators, of whatsoever the general mass of men contrived to do or to attain; all things that we see standing accomplished in the world are properly the outer material result, the practical realization and embodiment, of Thoughts that dwelt in the Great Men sent into the   world: the soul of the whole world’s history, it may justly be considered, were the history of these.],
+  [A hero doesn’t just make a difference. A hero alters the trajectory of mankind, changes the soul of humanity, and, I think, takes a significant risk or makes a weighty sacrifice in the process. A hero is not a god but may seem god-like.],
+  [What about those who make a difference even if they’re not shaping the arc of history? True, there are many who, through their professions and their actions, perform moral and selfless deeds. But, as Carlyle explains, “We see men of all kinds of professed creeds attain to almost all degrees of worth or worthlessness under each or any of them.” A hero reaches even beyond such worth despite his or her imperfections.],
+  [Fortunately, there are plenty of examples throughout history of this, like the soldiers who stormed Normandy. Through their ultimate sacrifice they brought an end to Nazi genocide and sowed the seeds of freedom for millions of others. They suffered the cruel conditions at Omaha Beach and on other battlefronts to shape the world order for the better.],
+  [While physicians risk their lives during this pandemic, it is not quite the same. We come to work each day knowing that the day will end as we climb into bed, however far away from our families we are. For those of us with access to supplies, we don masks, gowns, and gloves to take care of patients with the virus and wash our hands before and after every encounter. As Dr. Greg Katz, a cardiologist in New York (and, full disclosure, my chief resident when I was an intern), writes ,],
+  [After the first few weeks of the pandemic when I had a legitimate fear for my safety due to the PPE shortage, we’ve largely been able to protect ourselves working in the hospital….],
+  [When we suspect a patient may have COVID, they get a designation as a PUI, or person under investigation, and are kept in an isolated room. We only enter wearing full protective equipment – N95, gowns, gloves, head covering.],
+  [When we are in a COVID unit, the equipment is even more protective, where each physician has a PAPR along with supervised donning and doffing procedures.],
+  [Don’t get me wrong, it’s not a risk free endeavor, but health care workers who take adequate protections have a pretty low risk of getting sick .],
+  [While we make a dramatic difference in the lives of our Covid-19 patients, we are doing what we do every day, whether there is a contagion or not: helping patients as we swore to do when we entered the profession. This is not to say that there are not heroes among us. For instance, the late Dr. Lin Wenliang , a Chinese ophthalmologist who faced censorship from the Chinese government while risking his life and reputation to warn the world of the pandemic, is a hero. And yet, even while some physicians and nurses selflessly volunteer on Covid-19 units or in overwhelmed hospitals, a good number of us sometimes shirk our duties. In a piece for Quillette , Amy Eileen Hamm, a nurse, writes about how some doctors and nurses would rather not have to work.],
+  [To be sure, this is an exceptionally difficult time, even as tragic hospital work goes. Read the terrifying diaries of those working during this frightening contagion:],
+  [The evening before I’m due to return to the hospital, a colleague messages our group to say that a 49-year-old Covid patient of hers, who was waiting in the E. R. for an inpatient bed, was found blue and dead in a chair. Nobody even knows if he gasped before he died.],
+  [These stories echo throughout the daily news reports. Moreover, this virus takes a horrible, irreversible, and deadly toll on some of the doctors and nurses themselves, many of whom die or suffer from Covid-19. At least several thousand health care workers have been infected by the virus, and some dozens have died . Indeed, one mustn’t forget or dismiss the awful consequences and sacrifices of working in a hospital during this contagion, whether we call these workers heroes or not.],
+  [But it is confusing to call them heroes while hospitals and government bungle a response to the pandemic. For example, some physicians and nurses do lack the appropriate PPE to shield themselves from infections. This is not true at every institution, but it was prevalent enough at one time to endanger doctors and nursing staff. And if they protested against such shortages, as Dr. Ming Lin of PeaceHealth St. Joseph Medical Center found out in March , hospitals threatened or dismissed them. Other physicians, in the face of plummeting hospital revenue, face pay cuts of up to 40% as well as staffing shortages . In a survey one-fifth of physicians experienced pay cuts or were furloughed due to the economic tragedies of the pandemic . True, many institutions experience financial hardships. However, hailing physicians and nurses as heroes while making these cuts and threats does not change that reality as much as it reinforces it.],
+  [Ultimately, using the “hero” misnomer reveals an appreciation for those treating Covid-19 patients. But let us not confuse gratitude with near-deification. Doctors and nurses are humans, filled with cowardice and courage, both of which manifest in different ways. Physicians do not storm Omaha Beach in the face of gunfire. Nor is the soul of the whole world’s history the history of them. By obfuscating this, we needlessly amplify doctor’s and nurse’s deeds and diminish our own failures to aid society’s healers.],
+  [We should not call our physicians and nurses heroes, even if many of them act courageously. Nor should we call them by the anodyne and mundane name, “health care providers.” They are, perhaps, something in between.],
+  [The post Are Doctors Heroes? appeared first on The New Atlantis .],
+),
+  insert-map: (:),
+  word-count: 1495,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -471,6 +645,8 @@ wicked, cruel, and unempathetic lot. We will be remembered in disgrace.],
   edited-for-length: false,
   debug-mode: false,
 )
+
+  #pull-quote([We are developing technology which facilitates the authoritarian and genocidal policies of China.], [Drew DeVault])
 
 }
 
@@ -564,7 +740,38 @@ for your efforts in this regard!],
   debug-mode: false,
 )
 
-  #pull-quote([Speaking of environment variables, another good one to support is  SOURCE\_DATE\_EPOCH , for anything where the current date or time is incorporated into your build output.], [Drew DeVault])
+}
+
+{
+  #standard-article(
+  title: [The Art of Prognostication],
+  author: [Brendan Foht],
+  source-name: [The New Atlantis],
+  images: (),
+  paragraphs: (
+  [Her oncologist sent her in to the emergency room. The diagnosis was metastatic gallbladder cancer aggressively invading her liver, resulting in liver failure. I went down to the emergency room to see her. She only spoke Bengali, so every conversation required a phone interpreter. As I walked up to the patient’s bed I immediately noticed her jaundiced skin. Bilirubin, or breakdown products of red blood cells, above a certain level causes a yellowing of the eyes, the gums, and the skin where it deposits. It is frightening to see, the scarlet letter of illness.],
+  [It is unclear what the patient understood about her malady, as is so often the case when all communication occurs through an interpreter. Based on the notes in the chart, the oncologist offered chemotherapy merely as a palliative measure. No hope for cure remained, but the chemo might add weeks to the patient’s life by keeping the tumor at bay. Now, however, given the patient’s failing liver, any further treatment would kill the patient faster; it would hurt rather than heal.],
+  [But the patient expected chemotherapy. I told her this was unlikely but that we were going to admit her and see what we could do. Perhaps she had a treatable infection around the gallbladder, causing worsening inflammation and obstruction. Alternatively, was the cancer itself obstructing the liver’s ducts? If so, the gastroenterologists or interventional radiologists could place a stent to keep the duct open.],
+  [Ultimately, though, there was nothing to fix beyond the patient’s spreading cancer. No stent or antibiotics would help. Death approached, and chemotherapy would only hasten it.],
+  [Our medical team sat down with the patient and her family, using a phone interpreter, and explained the situation. But the patient, deaf to our explanations, repeatedly asked why she couldn’t get chemotherapy. Each of us in the room explained the same answer in a different way — the chemotherapy would make things worse, it would kill her. In short, the oncologist was not offering chemotherapy.],
+  [The patient broke down sobbing: “give me chemotherapy!” she cried in Bengali, “I want chemotherapy. ” “Please give it to me.” In between the tears we were silent. She was begging for something that didn’t exist — a cure. She was begging for a medication that would surely end her life.],
+  [In medical school I never learned the art of prognostication, the art of prophesying how much time was left in a patient’s life. Instead we learned how to “break bad news.” We role-played patient and physician and told each other about a cancer diagnosis. But we never addressed the reason any of these diagnoses were bad news. We care about the diagnosis because of the prognosis.],
+  [To be sure, it is difficult to teach the art of prognostication to medical students, who have limited knowledge and experience. How do you ask someone to prognosticate about a disease they’ve never seen? Moreover, different diseases follow different paths. I, for instance, am wholly unfamiliar with the typical course and treatment of lung cancer. I could not prognosticate about such a diagnosis. On the other hand, I am quite comfortable discussing the prognosis of various types of strokes. In other words, medical students have neither the knowledge nor the experience to engage in accurate prognostication. And yet, it is necessary to learn about it as early as possible, as so much of what our patients ask of us revolves around it.],
+  [In his book Death Foretold , Dr. Nicholas Christakis describes the importance of prognostication in medicine. He writes,],
+  [Predicting death is a way to counterbalance the sense of failure that arises when, despite the deployment of powerful technology in the care of the seriously ill, death cannot be prevented…. Patients and physicians alike believe that patients should have some general — albeit carefully circumscribed — awareness of death and its impending occurrence.],
+  [If a patient knows death approaches, he or she makes financial, spiritual, and filial arrangements. Such knowledge is indeed power, power to make one’s last days as meaningful as possible. Moreover, a prognosis allows patients to come to terms with a diagnosis. We need time to accept our own mortality. It is not akin to getting on and off a train.],
+  [Unfortunately, as Christakis points out, “physicians regard prognosis with anxiety and disdain, and they avoid it if possible.” We worry about prognosticating correctly. Many veteran physicians I admire make mistakes about a patient’s course. Such uncertainty checks my own confidence; I worry about hubris, about overextending the power of my profession. Christakis writes, “The great majority of physicians, 92 percent, are ‘reluctant to make predictions about a patient’s illness when the clinical situation is uncertain.’” And this reluctance grounds itself in reality. In a study conducted by Dr. Christakis and Dr. Elizabeth Lamont, only 20 percent of 468 doctor’s predictions were accurate. Most of these (63 percent) were overoptimistic. Fearing such inaccuracies, we avoid prognosticating altogether or hedge in our conversations with families.],
+  [According to Christakis, given its moral import, we oughtn’t avoid prognosticating. But using what we know we can recalibrate how we assess a patient’s timeline. We can be less optimistic and more realistic. We can ask our impartial colleagues to weigh in. And we can continue to study and publish on the prognosis of various diseases, allowing physicians to draw not just on their personal experience and training but on accumulated scientific knowledge. No study will perfectly characterize each individual patient’s situation, and no prognosis will be 100 percent accurate, but at least physicians can use scientific literature as a guide when prognosticating. And we must emphasize this to medical students.],
+  [I don’t know if my Bangladeshi patient truly understood the viciousness of her disease or the low likelihood of her survival. But those who understand what the outcome will be in advance have an easier time when the outcome arrives. They are no less sad about the ending. But they are, perhaps, more accepting. By prognosticating we help them come to terms with their mortality, allowing them to seek meaning at the end of their days. At the very least, they place hope in something not of this world rather than in a poison that will only hasten their end.],
+  [The post The Art of Prognostication appeared first on The New Atlantis .],
+),
+  insert-map: (:),
+  inline-pq: pull-quote([Patients and physicians alike believe that patients should have some general — albeit carefully circumscribed — awareness of death and its impending occurrence.], [Brendan Foht]),
+  inline-pq-idx: 6,
+  word-count: 1051,
+  edited-for-length: false,
+  debug-mode: false,
+)
 
 }
 
@@ -804,7 +1011,7 @@ We can obtain one from the backend:],
  + wlr\_output\_make\_current(wlr\_output, NULL);
  + wlr\_renderer\_begin(renderer, wlr\_output);
  +
- + float color[4] = {1.0, 0, 0, 1.0};
+ + float color\[4\] = {1.0, 0, 0, 1.0};
  + wlr\_renderer\_clear(renderer, color);
  +
  + wlr\_output\_swap\_buffers(wlr\_output, NULL, NULL);
@@ -839,8 +1046,6 @@ a Wayland client on screen. Please look forward to it!],
   [Namely: the viewport and blend mode.  ↩︎],
 ),
   insert-map: (:),
-  inline-pq: pull-quote([wlroots provides a helper function for automatically choosing the most appropriate backend based on the user’s environment:  class="highlight"\> server.], [Drew DeVault]),
-  inline-pq-idx: 20,
   word-count: 2007,
   edited-for-length: false,
   debug-mode: false,
@@ -850,367 +1055,77 @@ a Wayland client on screen. Please look forward to it!],
 
 {
   #standard-article(
-  title: [30 Minutes With MCP and flyctl],
-  author: [Fly.io Blog],
-  source-name: [Fly.io Blog],
+  title: [User-defined literals in Java?],
+  author: [Stephen Colebourne],
+  source-name: [Stephen Colebourne (Joda)],
   images: (),
   paragraphs: (
-  [I wrote this post on our internal message board, and then someone asked, “why is this an internal post and not on our blog”, so now it is.],
-  [well, Cursor built],
-  [I built the most basic MCP server for flyctl I could think of. It took 30 minutes.],
-  [MCP , for those unaware, is the emerging standard protocol for connecting an LLM (or an app that drives an LLM in the cloud, like Claude Desktop) to, well, anything. The “client” in MCP is the LLM; the “server” is the MCP server and the “tools” it exports. It mostly just defines an exchange of JSON blobs; one of those JSON blobs enables the LLM to discover all the tools exported by the server.],
-  [A classic example of an MCP server is (yes, really) a Python shell. MCP publishes to (say) Claude that it can run arbitrary Python code with a tool call; not only that, says the tool description, but you can use those Python tool calls to, say, scrape the web. When the LLM wants to scrape the web with Python, it uses MCP send a JSON blob describing the Python tool call; the MCP server (yes, really) runs the Python and returns the result.],
-  [Because I have not yet completely lost my mind, I chose to expose just two flyctl commands: fly logs and fly status . Because I’m lazy, I used MCP’s stdio mode; the MCP server just captures the output of flyctl . Because someone already wrote a really good Go MCP library , this whole thing is like 90 lines of code.],
-  [We may have gotten a little lucky, because we made a decision back in 2020 to give most of our flyctl commands a json mode to make them easier to drive from automation. I use that in my MCP server. I don’t know how much of a difference it made.],
-  [It’s, uh, annoyingly useful.],
-  [I loaded it up and pointed it at unpkg . I got this, from Claude:],
-  [This appears to be a globally distributed CDN service running the unpkg JavaScript package registry, with machines strategically placed around the world to provide low-latency access. There are some stability issues with a couple of the machines, and several have experienced memory-related crashes that triggered automatic restarts.],
-  [It then recited the complete configuration of the application:],
-  [The app is running on 10 machines distributed across global regions: 
-North America: lax (Los Angeles), atl (Atlanta), ewr (Newark)
-Europe: lhr (London), cdg (Paris), ams (Amsterdam)
-Asia: sin (Singapore), nrt (Tokyo), hkg (Hong Kong)
-South America: bog (Bogotá)
-Oceania: syd (Sydney)],
-  [OK. But then:],
-  [Most machines are in “passing” health check status
-2 machines are in “critical” status:
-One in ewr (Newark) with “context deadline exceeded” error
-One in atl (Atlanta) with “gone” status],
-  [Multiple machines have experienced restarts
-Several machines show “oom\_killed: true” in their event history, indicating they ran out of memory],
-  [So I asked, “try getting logs for one of the critical machines” .],
-  [The root cause appears to be memory usage - the Bun process was consuming about 3.7GB of memory (out of the 4GB allocated to the machine), and there was likely a surge in requests or memory usage that pushed it over the limit. This matches what we saw in the status report, which showed multiple instances of “oom\_killed: true” in the event history for several machines.],
-  [And then it dug in:],
-  [The machine was actively serving content requests with 200 OK responses until 20:47:03 PM],
-  [At that point, it ran out of memory:
- Out of memory: Killed process 641 (bun) total-vm:85950964kB, anon-rss:3744352kB, file-rss:12032kB, shmem-rss:0kB, UID:0 pgtables:16908kB oom\_score\_adj:0],
-  [The process was killed with SIGKILL],
-  [The system attempted to recover by restarting:
- reboot: Restarting system],
-  [A health check failed shortly after:
- Health check on port 3000 has failed. Your app is not responding properly. Services exposed on ports [80, 443] will have intermittent failures until the health check passes.],
-  [The machine then restarted successfully and the service came back up:
- Server listening on http:\/\/localhost:3000 ...],
-  [The health check started passing again at 20:47:46 PM:
- Health check on port 3000 is now passing.],
-  [The machine resumed normal operations, serving requests.],
-  [I’m honestly kind of surprised how fast this was useful. It’s faster than I find problems in apps. Just by giving some LLM some tools that do basically what I’d do.],
-  [Local MCP servers are scary. I don’t like that I’m giving a Claude instance in the cloud the ability to run a native program on my machine. I think fly logs and fly status are safe, but I’d rather know it’s safe. It would be, if I was running flyctl in an isolated environment and not on my local machine.],
+  [Java has a number of literals for creating values, but wouldn't it be nice if we had more?],
+  [Current literals],
+  [These are some of the literals we can write in Java today:],
+  [integer - 123 , 12s , 1234L , 0xB8E817 , 077 , 0b1011\_1010],
+  [floating point - 45.6f , 56.7d , 7.656e6],
+  [string - "Hello world"],
+  [char - 'a'],
+  [boolean - true , false],
+  [null - null],
+  [Project Amber is also considering adding multi-line and/or raw string literals.],
+  [But there are many other data types that would benefit from literals, such as dates, regex and URIs.],
+  [User-defined literals],
+  [In my ideal future, I'd like to see Java extended to support some form of user-defined literals.
+This would allow the author of a class to provide a mechanism to convert a sequence of characters into an instance of that class.
+It may be clearer to see some examples using one possible syntax (using backticks):],
+  [Currency currency = \`GBP\`;
+ LocalDate date = \`2019-03-29\`;
+ Pattern pattern = \`strata\\.\\w+\`;
+ URI uri = \`https:\/\/blog.joda.org/\`;],
+  [A number of semantic features would be required:],
+  [Type inference],
+  [Raw processing],
+  [Validated at compile-time],
+  [Type inference],
+  [Type inference is of course a key aspect of literals.
+It would have to work in a similar way to the existing literals, but with a tweak to handle the new var keyword.
+ie. these two would be equivalent:],
+  [LocalDate date = \`2019-03-29\`;
+ var date = LocalDate\`2019-03-29\`;],
+  [The type inference would also work with methods (compile error if ambiguous):],
+  [boolean inferior = isShortMonth(\`2019-04-12\`);],
+  [public boolean isShortMonth(LocalDate date) { return date.lengthOfMonth()],
+  [Raw processing],
+  [Processing of the literal should not be limited by Java's escape mechanisms.
+User-defined literals need access to the raw string.
+Note that this is especially useful for regex, but would also be useful for files on Windows:],
+  [\/\\/ user-defined literals
+ var pattern = Pattern\`strata\\.\\w+\`;
+ \/\\/ today
+ var pattern = Pattern.compile("strata\\\\.\\\\w+");],
+  [Today, the \`\\\` needs to be escaped, making the regex difficult to read.],
+  [Clearly, the problem with parsing raw literals is that there is no mechanism to escape.
+But the use cases for user-defined literals tend to have constrained formats, eg. a date doesn't contain random characters.
+So, although there might be edge cases where this would be a problem, they would vert much be edge cases.],
+  [Validated at Compile-time],
+  [A key feature of literals is that they are validated at compile-time.
+You can't use an integer literal to create an int if the value is larger than the maximum allowed integer (2^31).],
+  [User-defined literals also need to be parsed and validated at compile-time too.
+Thus this code would not compile:],
+  [LocalDate date = \`2019-02-31\`;],
+  [Most types which would benefit from literals only accept specific input formats, so being able to check this at compile time would be beneficial.],
+  [How would it be implemented?],
+  [I'm pretty confident that there are various ways it could be done.
+I'm not going to pick an approach, as ultimately those that control the JVM and language are better placed to decide.
+Clearly though, there is going to need to be some form of factory method on the user class that performs the parse, with that method invoked by the compiler. And ideally, the results of the parse would be stored in the constant pool rather than re-parsed at runtime.],
+  [What I would say is that user-defined literals would almost be a requirement for making value types usable, so something like this may be on the way anyway.],
+  [I like literals. And I would really like to be able to define my own!],
+  [Any thoughts?],
 ),
   insert-map: (:),
-  word-count: 822,
+  word-count: 590,
   edited-for-length: false,
   debug-mode: false,
 )
 
 }
-
-{
-  #standard-article(
-  title: [Does Rust belong in the Linux kernel?],
-  author: [Drew DeVault],
-  source-name: [Drew DeVault],
-  images: (),
-  paragraphs: (
-  [I am known to be a bit of a polemic when it comes to Rust. I will be forthright
-with the fact that I don’t particularly care for Rust, and that my public
-criticisms of it might set up many readers with a reluctance to endure yet
-another Rust Hot Take from my blog. My answer to the question posed in the title
-is, of course, “no”. However, let me assuage some of your fears by answering
-a different question first: does Hare belong in the Linux kernel?],
-  [If I should owe my allegiance to any programming language, it would be
- Hare . Not only is it a systems programming language that
-I designed myself, but I am using it to write a kernel . Like
-Rust , Hare is demonstrably useful for writing kernels with. One might
-even go so far as to suggest that I consider it superior to C for this purpose,
-given that I chose to to write Helios in Hare rather than C, despite my
-extensive background in C. But the question remains: does Hare belong in the
-Linux kernel?],
-  [In my opinion, Hare does not belong in the Linux kernel, and neither does Rust.
-Some of the reasoning behind this answer is common to both, and some is unique
-to each, but I will be focusing on Rust today because Rust is the language which
-is actually making its way towards mainline Linux. I have no illusions about
-this blog post changing that, either: I simply find it an interesting case-study
-in software engineering decision-making in a major project, and that’s worth
-talking about.],
-  [Each change in software requires sufficient supporting rationale. What are the
-reasons to bring Rust into Linux? A kernel hacker thinks about these questions
-differently than a typical developer in userspace. One could espouse the
-advantages of Cargo, generics, whatever, but these concerns matter relatively
-little to kernel hackers. Kernels operate in a heavily constrained design space
-and a language has to fit into that design space. This is the first and foremost
-concern, and if it’s awkward to mold a language to fit into these constraints
-then it will be a poor fit.],
-  [Some common problems that a programming language designed for userspace will run
-into when being considered for kernelspace are:],
-  [Strict constraints on memory allocation],
-  [Strict constraints on stack usage],
-  [Strict constraints on recursion],
-  [No use of floating point arithmetic],
-  [Necessary evils, such as unsafe memory use patterns or integer overflow],
-  [The absence of a standard library, runtime, third-party libraries, or other
-conveniences typically afforded to userspace],
-  [Most languages can overcome these constraints with some work, but their
-suitability for kernel use is mainly defined by how well they adapt to them
-— there’s a reason that kernels written in Go, C\#, Java, Python, etc, are
-limited to being research curiosities and are left out of production systems.],
-  [As Linus recently put it, “kernel needs trump any Rust needs”. The kernel is
-simply not an environment which will bend to accommodate a language; it must go
-the other way around. These constraints have posed, and will continue to pose, a
-major challenge for Rust in Linux, but on the whole, I think that it will be
-able to rise to meet them, though perhaps not with as much grace as I would
-like.],
-  [If Rust is able to work within these constraints, then it satisfies the ground
-rules for playing in ring 0. The question then becomes: what advantages can Rust
-bring to the kernel? Based on what I’ve seen, these essentially break down to
-two points: 1],
-  [Memory safety],
-  [I would prefer not to re-open the memory safety flamewar, so we will simply move
-forward with the (dubious) assumptions that memory safety is (1) unconditionally
-desirable, (2) compatible with the kernel’s requirements, and (3) sufficiently
-provided for by Rust. I will offer this quote from an unnamed kernel hacker,
-though:],
-  [There are possibly some well-designed and written parts which have not
-suffered a memory safety issue in many years. It’s insulting to present this
-as an improvement over what was achieved by those doing all this hard work.],
-  [Regarding “trendiness”, I admit that this is a somewhat unforgiving turn of
-phrase. In this respect I refer to the goal of expanding the kernel’s developer
-base from a bunch of aging curmudgeons writing C 2 towards a more
-inclusive developer pool from a younger up-and-coming language community like
-Rust. C is boring 3 — it hasn’t really excited anyone in decades.
-Rust is exciting, and its community enjoys a huge pool of developers building
-their brave new world with it. Introducing Rust to the kernel will certainly
-appeal to a broader audience of potential contributors.],
-  [But there is an underlying assumption to this argument which is worth
-questioning: is the supply of Linux developers dwindling, and, if so, is it to
-such and extent that it demands radical change?],
-  [Well, no. Linux has consistently enjoyed a tremendous amount of attention from
-the software development community. This week’s release of Linux 6.0, one of the
-largest Linux releases ever, boasted more than 78,000 commits by almost 5,000
-different authors since 5.15. Linux has a broad developer base reaching from
-many different industry stakeholders and independent contributors working on the
-careful development and maintenance of its hundreds of subsystems. The scale of
-Linux development is on a level unmatched by any other software project —
-free software or otherwise.],
-  [Getting Rust working in Linux is certainly an exciting project, and I’m all for
-developers having fun. However, it’s not likely to infuse Linux with a
-much-needed boost in its contributor base, because Linux has no such need.
-What’s more, Linux’s portability requirements prevent Rust from being used in
-most of the kernel in the first place. Most work on Rust in Linux is simply
-working on getting the systems to cooperate with each other or writing drivers
-which are redundant with existing C drivers, but cannot replace them due to
-Rust’s limited selection of targets. 4 Few to none of the efforts from the
-Rust-in-Linux team are likely to support the kernel’s broader goals for some
-time.],
-  [We are thus left with memory safety as the main benefit offered by Rust to
-Linux, and for the purpose of this article we’re going to take it at face value.
-So, with the ground rules set and the advantages enumerated, what are some of
-the problems that Rust might face in Linux?],
-  [There are a few problems which could be argued over, such as substantial
-complexity of Rust compared to C, the inevitable doubling of Linux’s build time,
-the significant shift in design sensibilities required to support an idiomatic
-Rust design, the fragile interface which will develop on the boundaries between
-Rust and C code, or the challenges the kernel’s established base of C developers
-will endure when learning and adapting to a new language. To avoid letting this
-post become too subjective or lengthy, I’ll refrain from expanding on these.
-Instead, allow me to simply illuminate these issues as risk factors.],
-  [Linux is, on the whole, a conservative project. It is deployed worldwide in
-billions of devices and its reliability is depended on by a majority of Earth’s
-population. Risks are carefully evaluated in Linux as such. Every change
-presents risks and offers advantages, which must be weighed against each other
-to justify the change. Rust is one of the riskiest bets Linux has ever
-considered, and, in my opinion, the advantages may not weigh up. I think that
-the main reason we’re going to see Rust in the kernel is not due to a careful
-balancing of risk and reward, but because the Rust community wants Rust in
-Linux, and they’re large and loud enough to not be worth the cost of arguing
-with.],
-  [I don’t think that changes on this scale are appropriate for most projects. I],
-  [prefer to encourage people to write new software to replace established],
-  [software, rather than rewriting the established software. Some projects, such as],
-  [Redox , are doing just that with Rust. However, operating systems are in],
-  [a difficult spot in this respect. Writing an operating system is difficult work],
-  [with a huge scope — few projects can hope to challenge Linux on driver],
-  [support, for example. The major players have been entrenched for decades, and],
-  [any project seeking to displace them will have decades of hard work ahead of],
-  [them and will require a considerable amount of luck to succeed. Though I think],
-  [that new innovations in kernels are badly overdue, I must acknowledge that],
-  [there is some truth to the argument that we’re stuck with Linux. In this],
-  [framing, if you want Rust to succeed in a kernel, getting it into Linux is the],
-  [best strategy.],
-  [But, on the whole, my opinion is that the benefits of Rust in Linux are
-negligible and the costs are not. That said, it’s going to happen, and the
-impact to me is likely to be, at worst, a nuisance. Though I would have chosen
-differently, I wish them the best of luck and hope to see them succeed.],
-  [id="fn:1"\>],
-  [There are some other arguable benefits which mainly boil down to
-finding Rust to have a superior language design to C or to be more enjoyable
-to use. These are subjective and generally are not the most important traits
-a kernel hacker has to consider when choosing a language, so I’m leaving them
-aside for now.  ↩︎],
-  [id="fn:2"\>],
-  [A portrayal which, though it may have a grain of truth, is largely false
-and offensive to my sensibilities as a 29-year-old kernel hacker. For the
-record.  ↩︎],
-  [id="fn:3"\>],
-  [A trait which, I will briefly note, is actually desirable for a
-production kernel implementation.  ↩︎],
-  [id="fn:4"\>],
-  [Rust in GCC will help with this problem, but it will likely take several
-years to materialize and several more years to become stable. Even when this
-is addressed, rewriting drivers wholesale will be labor intensive and is
-likely to introduce more problems than solutions — rewrites always
-introduce bugs.  ↩︎],
-),
-  insert-map: (:),
-  word-count: 1682,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-}
-
-{
-  #standard-article(
-  title: [My personal journey from MIT to GPL],
-  author: [Drew DeVault],
-  source-name: [Drew DeVault],
-  images: (),
-  paragraphs: (
-  [As I got started writing open source software, I generally preferred the MIT
-license. I actually made fun of the “copyleft” GPL licenses, on the grounds that
-they are less free. I still hold this opinion today: the GPL license is less
-free than the MIT license - but today, I believe this in a good way.],
-  [If you haven’t yet, I suggest reading the MIT
-license - it’s very short. It satisfies
-the four essential freedoms guaranteed of free
-software :],
-  [The right to use the software for any purpose.],
-  [The right to study the source code and change it as you please.],
-  [The right to redistribute the software to others.],
-  [The right to distribute your modifications to the software.],
-  [The MIT license basically allows you to do whatever you want with the software.
-It’s one of the most hands-off options: “here’s some code, you can do anything
-you want with it.” I favored this because I wanted to give users as much freedom
-to use my software as possible. The GPL, in addition to being a much more
-complex tome to understand , is more
-restrictive. The GPL forces you to use the GPL for derivative works as well.
-Clearly this affords you less freedom to use the software. Obligations are the
-opposite of freedoms.],
-  [When I first got into open source, I was still a Windows user. As I gradually
-waded deeper and deeper into the free software pond, I began to use Linux more
-often 1 . Even once I started using Linux as my daily driver, however, it took
-a while still for the importance of free software to set in. But this
-realization is inevitable, for a programmer immersed in Linux. It radically
-changes your perspective when all of the software you use guarantees these four
-freedoms. If I’m curious about how something works, I can usually be reading the
-code within a few seconds. I can find the author’s name and email in the git
-blame and shoot them some questions. And when I find a bug, I can fix it and
-send them a patch.],
-  [The weight of these possibilities did not occur to me immediately, instead
-slowly becoming evident over time. Today, this cycle is almost muscle memory.
-Pulling down source, grepping for files related to an itch I need to scratch,
-compiling and installing the modified version, and sending my work upstream -
-it’s become second nature to me. These days, on the rare occasion that I run
-into some proprietary software, this all grinds to a halt. It’s like miscounting
-the number of steps on your staircase in the dark. These moments drive the truth
-home: Free software is good. It’s starkly better than the alternative. And
-copyleft defends it. Now that I’ve had a taste, you bet your ass I’m not going
-to give it up.],
-  [As the number of hours I’ve spent on FOSS projects grew from tens of hours, to
-hundreds, to thousands and tens of thousands, I’ve learned that the effort I
-sink into my work far outstrips the effort required to reuse my work. The
-collective effort of the free software community amounts to tens of millions of
-hours of work, which you can download at touch of a button, for free. If the
-people with their fingers on that button held these same ideals, we wouldn’t
-need the GPL. The reality, however, is that we live in a capitalist world. Our
-socialist free software utopia is ripe for exploitation by capitalists, and
-they’ll be rewarded for doing so. Capitalism is about enriching yourself - not
-enriching your users and certainly not enriching society.],
-  [Your parents probably taught you about the Golden Rule when you were young: do
-unto others as you would have them do unto you. The GPL is the legal embodiment
-of this Golden Rule: in exchange for benefiting from my hard work, you just have
-to extend me the same courtesy. Its the unfortunate acknowledgement that we’ve
-created a society that incentivises people to forget the Golden Rule. I give
-people free software because I want them to reciprocate with the same. That’s
-really all the GPL does. Its restrictions just protect the four freedoms in
-derivative works. Anyone who can’t agree to this is looking to exploit your work
-for their gain - and definitely not yours.],
-  [I don’t plan on relicensing my historical projects, but my new projects have
-used the GPL family of licenses for a while now. I think you should seriously
-consider it as well.],
-  [id="fn:1"\>],
-  [Fun fact: the first time I used Linux was as a teenager, in order to get around the internet filtering software my parents had installed on our Windows PC at home.  ↩︎],
-),
-  insert-map: (:),
-  word-count: 794,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-}
-
-#article-row((
-  [
-    standard-article(
-  title: [Pick Your KotlinConf Workshop by What You Want to Learn],
-  author: [Ekaterina Volodko],
-  source-name: [Kotlin Blog],
-  images: (),
-  paragraphs: (
-  [Hi!],
-  [Already coming to KotlinConf in Munich? Kick off the conference with a full day of hands-on workshops on May 20.],
-  [Not going yet? Then this is a good moment to get your KotlinConf ticket and start with a workshop that matches what you want to learn.],
-  [Learn how to write safe, efficient asynchronous code with Kotlin coroutines and Flow – from suspending functions and structured concurrency to hot vs. cold flows and real-world streaming use cases.],
-  [Learn how to build shared UI across Android, iOS, desktop, and web using Compose Multiplatform.],
-  [Improve code sharing, interoperability, performance, and app quality with advanced KMP techniques.],
-  [Build fast, scalable Spring Boot APIs using Kotlin coroutines and virtual threads without reactive complexity.],
-  [Learn how to build AI agents in Kotlin with Koog – from quick prototypes to production-ready systems.],
-  [Refactor existing OO code toward functional Kotlin step by step, without breaking your app.],
-  [See you in Munich!],
-),
-  insert-map: (:),
-  word-count: 237,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-  ],
-  [
-    standard-article(
-  title: [Your vibe coded slop PR is not welcome],
-  author: [\@sam Sam Saffron],
-  source-name: [Sam Saffron],
-  images: (),
-  paragraphs: (
-  [I agree, it is a bit of both.],
-  [The stark alien aspect for me is the incredible competence mixed in with incredible incompetence .],
-  [The systems know every coding language and almost every trick in the book, but they often apply the tricks in very weird and alien ways.],
-  [Part of it is the “eagerness to please” … eg: you asked me to do it, so I did it.],
-  [But part is just over reliance on hacks that should not be deployed and lack of “whole system” thinking.],
-  [Completely agree though, you need to know how to steer this tooling to get great results.],
-  [Also, something a lot of people do not realize, you need to know when to “give up” and start from scratch. Back to your lost ship analogy, the ship often gets so lost that that trying to steer it in the right direction is both pointless and impossible, sometimes you need a reboot. In fact I would say reboots are needed a lot more frequently than I tend to use them, cause I like playing steer the ship, but it can be counter productive.],
-),
-  insert-map: (:),
-  word-count: 188,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-  ],
-  [
-    brief-group((
-      brief-item([Maciej Skierkowski], source-name: [Serverless Blog], [The Serverless Framework makes it super easy to identify problems with your deployed serverless applications before they impact the quality of your service])
-
-      brief-item([Diego Zanon], source-name: [Serverless Blog], [Guest author Diego Zanon writes about building a serverless notification system for browsers using the Serverless Framework and AWS IoT.])
-
-      brief-item([Philipp Müns], source-name: [Serverless Blog], [S3 server-side encryption, support for API Gateway usage plans, default exclusion of Node.js dev dependencies and more in the Serverless Framework v1.16 release.])
-
-      brief-item([Stefanie Monge], source-name: [Serverless Blog], [The official OpenWhisk plugin for Serverless now includes support for Cloudant DB and IBM Message Hub events, exporting Web Actions and more.])
-
-    ))
-  ],
-), ruled-indices: (1, 2,))
 
 #article-row((
   [
@@ -1255,7 +1170,7 @@ is going to offer a substantial performance boost down the line.],
   source-name: [Antirez],
   images: (),
   paragraphs: (
-  [Today a page about the new Common Clause license in the Redis Labs web site was interpreted as if Redis itself switched license. This is not the case, Redis is, and will remain, BSD licensed. However in the era of [edit] uncontrollable spreading of information, my attempts to provide the correct information failed, and I’m still seeing everywhere “Redis is no longer open source”. The reality is that Redis remains BSD, and actually Redis Labs did the right thing supporting my effort to keep the Redis core open as usually.],
+  [Today a page about the new Common Clause license in the Redis Labs web site was interpreted as if Redis itself switched license. This is not the case, Redis is, and will remain, BSD licensed. However in the era of \[edit\] uncontrollable spreading of information, my attempts to provide the correct information failed, and I’m still seeing everywhere “Redis is no longer open source”. The reality is that Redis remains BSD, and actually Redis Labs did the right thing supporting my effort to keep the Redis core open as usually.],
   [What is happening instead is that certain Redis modules, developed inside Redis Labs, are now released under the Common Clause (using Apache license as a base license). This means that basically certain enterprise add-ons, instead of being completely closed source as they could be, will be available with a more permissive license.],
   [I think that Redis Labs Common Clause page did not provide a clear and complete information, but software companies often make communication errors, it happens. To me however, it looks more important that while running a system software business in the “cloud era” (LOL) is very challenging using an open source license, yet Redis Labs totally understood and supported the idea that the Redis core is an open source project, in the \*most permissive license ever\*, that is, BSD, and during the years provided a lot of funding to the project.],
   [The reason why certain modules developed internally at Redis Labs are switching license, is because they are added value that Redis Labs wants to be able to provide only to end users that are willing to compile and install the system themselves, or to the Redis Labs customers using their services. But it’s not ok to give away that value to everybody willing to resell it. An example of such module is RediSearch: it was AGPL and is now going to be Apache + Common Clause.],
@@ -1270,50 +1185,23 @@ is going to offer a substantial performance boost down the line.],
 )
 
   ],
-), ruled-indices: (1,))
-#pull-quote([I think that Redis Labs Common Clause page did not provide a clear and complete information, but software companies often make communication errors, it happens.], [Antirez])
-
-
-#article-row((
   [
-    standard-article(
-  title: [Try a Browser Sandbox! (For Free!)],
-  author: [Peteris Krumins (catonmat)],
-  source-name: [Peteris Krumins (catonmat)],
-  images: (),
-  paragraphs: (
-  [TLDR: Want to browse the web safely without messing up your computer? Try a free browser sandbox at browserling.com/browse . It runs straight in your browser. No installs, no downloads.],
-  [What's a Browser Sandbox?],
-  [A browser sandbox is like a "browser inside a browser". It runs on another computer in the cloud, and you control it from your own screen. You get to surf the web, but the websites never touch your actual device.],
-  [Is It Safe to Use?],
-  [Yep! You can click on sketchy links or check out weird websites without any risk. All the dangerous stuff stays far away – on the remote computer, not yours. Even if a site tries to install a virus or download something, it won't reach your actual system.],
-  [Can I Open Suspicious Emails Safely?],
-  [Yes, with a browser sandbox you can open sketchy emails or attachments without danger. If the attachment contains malware, it gets trapped inside the sandbox and can't harm your real device.],
-  [What About Testing Suspicious URLs?],
-  [Absolutely. A browser sandbox is the safest way to test unknown URLs. It keeps malicious scripts, drive-by downloads, and tracking attempts locked away from your real system.],
-  [Can I Use It for Digital Forensics?],
-  [Yes, browser sandboxes are super useful for digital forensics work. Investigators can safely open phishing emails, suspicious websites, or malware links without risking their machines or leaking any data.],
-  [Do I Need to Download Anything?],
-  [Nope. Just open the sandbox , pick a browser, and start browsing. It's that easy. Everything runs in your web browser via HTML5, JavaScript, and WebSockets, so there's no software setup or weird permissions needed.],
-  [Can I Try Different Browsers?],
-  [Totally. You can switch between Chrome, Firefox, Edge, Safari, and even older versions if you're testing an exploit that detonates in a particular browser version. This makes it useful for developers, bug bounty hunters, and cybersecurity researchers.],
-  [Is It Free?],
-  [There's a free browser sandbox version with limited time. If you need more time or features, then there are paid plans too. The paid plans offer longer sessions, more browsers, and even persistent browser sessions.],
-  [What Is Browserling?],
-  [Browserling is an online tool that gives you access to free sandboxed browsers running on remote machines. Its use cases include safe browsing, testing websites in different browsers, and opening suspicious files and PDFs.],
-  [Who Uses Browserling?],
-  [Millions of people! Tech experts, digital forensics teams, IT departments, schools, and even government workers use Browserling. Big companies and researchers trust it too. Especially when checking out risky sites or testing code in different browsers.],
-  [Happy browsing!],
-),
-  insert-map: (:),
-  word-count: 430,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
+    brief-group((
+      [#brief-item([Shifter], source-name: [Serverless Blog], [Learn how Shifter transforms WordPress blogs and websites into static sites to make them faster, more secure and scalable in this guest post.])],
+      [#brief-item([Verne Lindner], source-name: [Serverless Blog], [Tag your Lambdas to track errors and debug serverless applications. If you’re using NodeJS or Python, we’ll help you find even the trickiest serverless application errors faster.])],
+      [#brief-item([Stefanie Monge], source-name: [Serverless Blog], [How Serverless Partner AbstractAI leveraged the Serverless Framework and Lambda to reduce the cost of running back-end services by 95%.])],
+      [#brief-item([Rustem Feyzkhanov], source-name: [Serverless Blog], [We’ll cover how to use TensorFlow, the Serverless Framework, AWS Lambda and API Gateway to deploy a simple deep learning model.])],
+      [#brief-item([Alex DeBrie], source-name: [Serverless Blog], [Learn how to set up a custom domain name for AWS Lambda & API Gateway using the Serverless Framework to configure a clean domain name for your services.])],
+      [#brief-item([Asanka Nissanka], source-name: [Serverless Blog], [Why we decided to migrate our services running on docker containers to serverless stack using aws lambda functions and aws api gateway])],
+      [#brief-item([Austen Collins], source-name: [Serverless Blog], [Forget infrastructure. We’re giving you a new option to deploy serverless use-cases easily — without managing complex infrastructure configuration files.])],
+    ))
   ],
-  [
-    standard-article(
+), ruled-indices: (1, 2,))
+#pull-quote([Unrelatedly, TLS support seems to be progressing upstream in qbe.], [Drew DeVault])
+
+
+{
+  #standard-article(
   title: [My plans at FOSDEM: SourceHut, Hare, and Helios],
   author: [Drew DeVault],
   source-name: [Drew DeVault],
@@ -1368,7 +1256,8 @@ the system.],
   debug-mode: false,
 )
 
-  ],
-), ruled-indices: (1,))
+  #pull-quote([Hare uses a static type system, manual memory management, and a minimal runtime.], [Drew DeVault])
+
+}
 
 #colophon([New Globe], [Vol. 1, No. 035], [2026-03-30])

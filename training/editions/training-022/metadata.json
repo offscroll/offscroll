@@ -1,0 +1,189 @@
+{
+  "config_id": "training-022",
+  "archetype": "lifestyle",
+  "date_generated": "2026-03-30T01:45:08.980647+00:00",
+  "page_target": 16,
+  "num_pages": 10,
+  "num_items": 48,
+  "feeds_contributed": [
+    "Smitten Kitchen",
+    "IKEA Hackers",
+    "Cond\u00e9 Nast Traveler",
+    "Skinnytaste",
+    "The Guardian Travel",
+    "The Kitchn",
+    "A Cozy Kitchen",
+    "Bon App\u00e9tit (magazine)",
+    "Refinery29 Fashion",
+    "Be My Travel Muse",
+    "ELLE Beauty",
+    "The Reformed Broker (Josh Brown)"
+  ],
+  "render_time_s": 0.3,
+  "pages": [
+    {
+      "page_number": 1,
+      "png_path": "training-022/pages/page-001.png",
+      "width_pt": 612.0,
+      "height_pt": 792.0
+    },
+    {
+      "page_number": 2,
+      "png_path": "training-022/pages/page-002.png",
+      "width_pt": 612.0,
+      "height_pt": 792.0
+    },
+    {
+      "page_number": 3,
+      "png_path": "training-022/pages/page-003.png",
+      "width_pt": 612.0,
+      "height_pt": 792.0
+    },
+    {
+      "page_number": 4,
+      "png_path": "training-022/pages/page-004.png",
+      "width_pt": 612.0,
+      "height_pt": 792.0
+    },
+    {
+      "page_number": 5,
+      "png_path": "training-022/pages/page-005.png",
+      "width_pt": 612.0,
+      "height_pt": 792.0
+    },
+    {
+      "page_number": 6,
+      "png_path": "training-022/pages/page-006.png",
+      "width_pt": 612.0,
+      "height_pt": 792.0
+    },
+    {
+      "page_number": 7,
+      "png_path": "training-022/pages/page-007.png",
+      "width_pt": 612.0,
+      "height_pt": 792.0
+    },
+    {
+      "page_number": 8,
+      "png_path": "training-022/pages/page-008.png",
+      "width_pt": 612.0,
+      "height_pt": 792.0
+    },
+    {
+      "page_number": 9,
+      "png_path": "training-022/pages/page-009.png",
+      "width_pt": 612.0,
+      "height_pt": 792.0
+    },
+    {
+      "page_number": 10,
+      "png_path": "training-022/pages/page-010.png",
+      "width_pt": 612.0,
+      "height_pt": 792.0
+    }
+  ],
+  "spreads": [
+    {
+      "spread_id": "s-022-001",
+      "edition_id": "training-022",
+      "type": "solo",
+      "pages": [
+        {
+          "page_number": 1,
+          "png_path": "training-022/pages/page-001.png",
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        }
+      ]
+    },
+    {
+      "spread_id": "s-022-002",
+      "edition_id": "training-022",
+      "type": "spread",
+      "pages": [
+        {
+          "page_number": 2,
+          "png_path": "training-022/pages/page-002.png",
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_number": 3,
+          "png_path": "training-022/pages/page-003.png",
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        }
+      ]
+    },
+    {
+      "spread_id": "s-022-003",
+      "edition_id": "training-022",
+      "type": "spread",
+      "pages": [
+        {
+          "page_number": 4,
+          "png_path": "training-022/pages/page-004.png",
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_number": 5,
+          "png_path": "training-022/pages/page-005.png",
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        }
+      ]
+    },
+    {
+      "spread_id": "s-022-004",
+      "edition_id": "training-022",
+      "type": "spread",
+      "pages": [
+        {
+          "page_number": 6,
+          "png_path": "training-022/pages/page-006.png",
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_number": 7,
+          "png_path": "training-022/pages/page-007.png",
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        }
+      ]
+    },
+    {
+      "spread_id": "s-022-005",
+      "edition_id": "training-022",
+      "type": "spread",
+      "pages": [
+        {
+          "page_number": 8,
+          "png_path": "training-022/pages/page-008.png",
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_number": 9,
+          "png_path": "training-022/pages/page-009.png",
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        }
+      ]
+    },
+    {
+      "spread_id": "s-022-006",
+      "edition_id": "training-022",
+      "type": "solo",
+      "pages": [
+        {
+          "page_number": 10,
+          "png_path": "training-022/pages/page-010.png",
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        }
+      ]
+    }
+  ]
+}

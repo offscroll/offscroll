@@ -23,14 +23,60 @@
 
 // --- Front Page Feature ---
 #feature-article(
-  title: [Analysing Optimisations in the Wire Serialiser],
+  title: [Fragments: March 10],
   kicker: [Cover Story],
+  author: [Martin Fowler],
+  source-name: [Martin Fowler],
+  deck: [If I was giving the keynote at SRECon 2026, I would ditch the begrudging stance.],
+  lead-pre: [],
+  lead-cap: [T],
+  lead-rest: [ech firm fined \$1.1m by California for selling high-school students’ data],
+  body-paragraphs: (
+  [I agree with Brian Marick’s response],
+  [No such story should be published without a comparison of the fine to the company’s previous year revenue and profits, or valuation of last funding round. (I could only find a valuation of \$11.0M in 2017.)],
+  [We desperately need corporations’ attitudes to shift from “lawbreaking is a low-risk cost of doing business; we get a net profit anyway” to “this could be a death sentence.”],
+  [❄ ❄ ❄ ❄ ❄],
+  [Charity Majors gave the closing keynote at SRECon last year, encouraging people to engage with generative AI.],
+  [If I was giving the keynote at SRECon 2026, I would ditch the begrudging stance. I would start by acknowledging that AI is radically changing the way we build software. It’s here, it’s happening, and it is coming for us all.],
+  [Her agenda this year would be to tell everyone that they mustn’t wait for the wave to crash on them, but to swim out to meet it. In particular, I appreciated her call to resist our confirmation bias:],
+  [The best advice I can give anyone is: know your nature, and lean against it.],
+  [If you are a reflexive naysayer or a pessimist, know that, and force yourself to find a way in to wonder, surprise and delight.],
+  [If you are an optimist who gets very excited and tends to assume that everything will improve: know that, and force yourself to mind real cautionary tales.],
+  [❄ ❄ ❄ ❄ ❄],
+  [In a comment to Kief Morris’s recent article on Humans and Agents in Software Loops , in LinkedIn comments Renaud Wilsius may have coined another bit of terminology for the agent+programmer age],
+  [This completes the story of productivity, but it opens a new chapter on talent: The Apprentice Gap. If we move humans ‘on the loop’ too early in their careers, we risk a future where no one understands the ‘How’ deeply enough to build a robust harness. To manage the flywheel effectively, you still need the intuition that comes from having once been ‘in the loop.’ The next great challenge for CTOs isn’t just Harness Engineering, it’s ‘Experience Engineering’ for our junior developers in an agentic world.],
+  [❄ ❄ ❄ ❄ ❄],
+  [In hearing conversations about “the ralph loop”, I often hear it in the sense of just letting the agents loose to run on their own. So it’s interesting to read the originator of the ralph loop point out:],
+  [It’s important to watch the loop as that is where your personal development and learning will come from. When you see a failure domain – put on your engineering hat and resolve the problem so it never happens again.],
+  [In practice this means doing the loop manually via prompting or via automation with a pause that involves having to prcss CTRL+C to progress onto the next task. This is still ralphing as ralph is about getting the most out how the underlying models work through context engineering and that pattern is GENERIC and can be used for ALL TASKS.],
+  [At the Thoughtworks Future of Software Development Retreat we were very concerned about cognitive debt. Watching the loop during ralphing is a way to learn about what the agent is building, so that it can be directed effectively in the future.],
+  [❄ ❄ ❄ ❄ ❄],
+  [Anthropic recently published a page on how AI helps break the cost barrier to COBOL modernization . Using AI to help migrate COBOL systems isn’t an new idea to my colleagues, who shared their experiences using AI for this task over a year ago. While Anthropic’s article is correct about the value of AI, there’s more to the process than throwing some COBOL at an LLM.],
+  [The assumption that AI can simply translate COBOL into Java treats modernization as a syntactic exercise, as though a system is nothing more than its source code. That premise is flawed.],
+  [A direct translation would, in the best case scenario, faithfully reproduce existing architectural constraints, accumulated technical debt and outdated design decisions. It wouldn’t address weaknesses; it would restate them in a different language.],
+  […],
+  [In practice, modernization is rarely about preserving the past in a new syntax. It’s about aligning systems with current market demands, infrastructure paradigms, software supply chains and operating models. Even if AI were eventually capable of highly reliable code translation, blind conversion would risk recreating the same system with the same limitations, in another language, without a deliberate strategy for replacing or retiring its legacy ecosystem.],
+  [❄ ❄ ❄ ❄ ❄],
+  [Anders Hoff (inconvergent)],
+  [an LLM is a compiler in the same way that a slot machine is an ATM],
+  [❄ ❄ ❄ ❄ ❄],
+  [One of the more interesting aspects of the network of people around Jeffrey Epstein is how many people from academia were connected. It’s understandable why, he had a lot of money to offer, and most academics are always looking for funding for their work. Most of the attention on Epstein’s network focused on those that got involved with him, but I’m interested in those who kept their distance and why - so I enjoyed Jeffrey Mervis’s article in Science],
+  [Many of the scientists Epstein courted were already well-established and well-funded. So why didn’t they all just say no? Science talked with three who did just that. Here’s how Epstein approached them, and why they refused to have anything to do with him.],
+  [I believe that keeping away from bad people makes life much more pleasant, if nothing else it reduces a lot of stress. So it’s good to understand how people make decisions on who to avoid.],
+),
+  edited-for-length: false,
+)
+
+
+{
+  #section-label([Features])
+  #standard-article(
+  title: [Analysing Optimisations in the Wire Serialiser],
   author: [Matt Warren (.NET)],
   source-name: [Matt Warren (.NET)],
-  deck: [Recently Roger Johansson wrote a post titled Wire – Writing one of the fastest .],
-  lead-text: "NET serializers , describing the optimisation that were implemented to make Wire as fast as possible. He also followed up that post with a set of benchmarks , showing how Wire compared to other . NET serialisers:",
-  lead-first-alpha: 0,
-  body-paragraphs: (
+  images: (),
+  paragraphs: (
+  [Recently Roger Johansson wrote a post titled Wire – Writing one of the fastest . NET serializers , describing the optimisation that were implemented to make Wire as fast as possible. He also followed up that post with a set of benchmarks , showing how Wire compared to other . NET serialisers:],
   [Using BenchmarkDotNet , this post will analyse the individual optimisations and show how much faster each change is. For reference, the full list of optimisations in the original blog post are:],
   [Looking up value serializers by type],
   [Looking up types when deserializing],
@@ -64,18 +110,18 @@
  return Int64Serializer . Instance ; 
  ... 
  }],
-  [So it has replaced a dictionary lookup with an if statement. In addition it is caching the Type instance of known types, rather than calculating them every time. As you can see the optimisation pays off in some circumstance but not in others, so it’s not a clear win. It depends on where the type is in the list of if statements. If it’s near the beginning (e.g. System. String ) it’ll be quicker than if it’s near the end (e.g. System. Byte[] ), which makes sense as all the other comparisons have to be done first.],
+  [So it has replaced a dictionary lookup with an if statement. In addition it is caching the Type instance of known types, rather than calculating them every time. As you can see the optimisation pays off in some circumstance but not in others, so it’s not a clear win. It depends on where the type is in the list of if statements. If it’s near the beginning (e.g. System. String ) it’ll be quicker than if it’s near the end (e.g. System. Byte\[\] ), which makes sense as all the other comparisons have to be done first.],
   [Full benchmark code and results],
   [id="looking-up-types-when-deserializing"\>Looking up types when deserializing],
   [The 2nd optimisation works by removing all unnecessary memory allocations, it did this by:],
   [Using a custom struct (value type) rather than a class],
   [Pre-calculating a hash code once, rather than each time a comparison is needed.],
-  [Doing string comparisons with raw byte [] , rather than deserialising to a string],
+  [Doing string comparisons with raw byte \[\] , rather than deserialising to a string],
   [Full benchmark code and results],
   [Note: these results nicely demonstrate how BenchmarkDotNet can show you memory allocations as well as the time taken.],
   [Interestingly they hadn’t actually removed all memory allocations as the comparisons between OptimisedLookup and OptimisedLookupCustomComparer show. To fix this I sent a P. R which removes unnecessary boxing, by using a Custom Comparer rather than the default struct comparer.],
   [id="byte-buffers-allocations-and-gc"\>Byte buffers, allocations and GC],
-  [Again removing unnecessary memory allocations were key in this optimisation, most of which can be seen in the NoAllocBitConverter . Clearly serialisation spends a lot of time converting from the in-memory representation of an object to the serialised version, i.e. a byte [] . So several tricks were employed to ensure that temporary memory allocations were either removed completely or if that wasn’t possible, they were done by re-using a buffer from a pool rather than allocating a new one each time (see “Buffer recycling” )],
+  [Again removing unnecessary memory allocations were key in this optimisation, most of which can be seen in the NoAllocBitConverter . Clearly serialisation spends a lot of time converting from the in-memory representation of an object to the serialised version, i.e. a byte \[\] . So several tricks were employed to ensure that temporary memory allocations were either removed completely or if that wasn’t possible, they were done by re-using a buffer from a pool rather than allocating a new one each time (see “Buffer recycling” )],
   [Full benchmark code and results],
   [id="clever-allocations"\>Clever allocations],
   [This optimisation is perhaps the most interesting, because it’s implemented by creating a custom data structure, tailored to the specific needs of Wire. So, rather than using the default . NET dictionary , they implemented FastTypeUShortDictionary . In essence this data structure optimises for having only 1 item, but falls back to a regular dictionary when it grows larger. To see this in action, here is the code from the TryGetValue(..) method :],
@@ -114,116 +160,8 @@
   [So it’s obvious that Roger Johansson and Szymon Kulec (who also contributed performance improvements ) know their optimisations and as a result they have steadily made the Wire serialiser faster, which makes is an interesting project to learn from.],
   [CodeProject],
 ),
-  edited-for-length: false,
-)
-
-
-{
-  #section-label([Features])
-  #standard-article(
-  title: [5TRACKS Mixed-Use Hub Enlivens a Neighborhood in the Netherlands],
-  author: [Anna Zappia],
-  source-name: [Design Milk Architecture],
-  images: (),
-  paragraphs: (
-  [In cities around the world, transit centers co-exist alongside commercial towers built to serve thousands of workers and commuters each day, most of whom pay little attention to the elements that make these environments unique.],
-  [For a new mixed-use hub completed by Shift architecture urbanism and Powerhouse Company , a nearby railway station served as the inspiration for a project that has transformed the neighborhood by strengthening the ties between its people and places.],
-  [“Buildings often become places where individuals remain isolated in their own bubbles. The design of 5TRACKS counters this by fostering social interaction through thoughtfully integrated shared spaces, allowing communities to thrive,” says Thijs van Bijsterveldt, co-founder, Shift architecture urbanism.],
-  [Located in Breda, Netherlands, a once-neglected site near Central Station now features housing, offices, and a hotel. Three triangular volumes, dubbed Platforms A, B, and C in a nod to commuters, are united by layered brick facades which echo the urban landscape.],
-  [A total of 168 apartments sit above a key area in the complex. Office spaces are centered around atriums, each with a full-sized tree, skylights, and glass fronts that open toward the shared courtyard. These sections double as what the teams call “urban living rooms” because they encourage interaction outdoors.],
-  [Interiors by Dutch Invertuals include pops of bright purple and green contrast with glazed surfaces and plush fabrics. Carpet motifs reference country meadows, while blue cloud-print curtains at the seating tiers lend an ethereal touch. Streetlight-style lamps provide illumination, and tables capture the look of steel tracks.],
-  [The architects emphasized sustainability and well-being inside and out, aligned with Paris Proof standards, and WELL Platinum certified. A garden supports biodiversity throughout each of the platforms, and a retention roof captures more than 100,000 gallons of rainwater. Solar panels generate renewable electricity for shared facilities.],
-  [It’s a forward-thinking approach that offers the ultimate in adaptability for all current users and those who will visit years from now. “The open structure and strategically positioned cores make it possible to accommodate office layouts of very different sizes. This spatial freedom allows 5TRACKS to respond to changing space requirements in the future,” adds Stefan Prins, partner and architect at Powerhouse Company.],
-  [To lear more about the creative collaborators involved, visit shift-au.com , powerhouse-company.com , and dutchinvertuals.nl , respectively.],
-  [Photography courtesy those noted in caption.],
-),
   insert-map: (:),
-  word-count: 585,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-  #pull-quote([A garden supports biodiversity throughout each of the platforms, and a retention roof captures more than 100,000 gallons of rainwater.], [Anna Zappia])
-
-}
-
-{
-  #standard-article(
-  title: [Testing Font Scaling For Accessibility With Figma Variables],
-  author: [Ruben Ferreira Duarte],
-  source-name: [Smashing Magazine],
-  images: (),
-  paragraphs: (
-  [Building a true culture of digital accessibility in a company is a mission of resilience and perseverance. It’s not difficult for the discourse on accessibility to fall into the usual clichés. Accessibility is very important for people. The accessibility of digital products and services promotes inclusion. Or even, all professionals on the teams should be involved in accessibility work. Of course. No one in their right mind will dispute any of these statements (I hope).],
-  [However, the second part of this conversation, which very few companies reach, is “how?” How do we make this happen in the midst of the day-to-day work of digital transformation teams, which, as we all know, are immersed in demanding scripts, often with a very limited number of people available? Most of the time, the choice ends up being between “we do this” and “that.” And it shouldn’t, because, in these cases, I never saw accessibility winning in this equation.],
-  [It shouldn’t be this way. You don’t need to be this way. First of all, because choosing between accessibility and anything else isn’t the right choice. Accessibility is no longer just another feature to be added to the others. It’s an added value for the business and, currently, a legal obligation that can have serious consequences for companies. On the other hand, there are intelligent, optimized, and impactful ways to incorporate accessibility principles into the natural dynamics of teams. It’s possible to work on accessibility without turning team operations upside down. In essence, that’s what AccessibilityOps does. Empowering people and providing teams with simple processes so they can integrate accessibility work into their daily routines without disproportionate effort.],
-  [Working on digital accessibility in design can involve several actions. It’s clear that we need to pay particular attention to color and how it’s used to convey meaning. Of course, the interaction sizes of elements must be comfortable. But, most importantly, we must think about design from a versatile perspective . An interface isn’t a poster. We can control many aspects of that design, but how users interact with the interface is subject to an endless number of variables. The type of device, context, purpose, network quality, etc. All of this greatly affects each person’s experience and interaction. Along with all this, when digital accessibility concerns are brought into the design process, it adds even more variables.],
-  [People often use what are called assistive technologies and strategies . Basically, these are technological tools or, at the very least, “tricks” that people resort to in order to find more comfortable usage models. The famous screen readers, commonly associated with the use of blind people (but which are not only useful to them), for example, are an assistive technology. Changing colors or color contrasts between different elements is also an assistive technology. Increasing the font size (which we discussed in this text) is another example. There are countless assistive technologies and strategies. Almost as many as the different contexts of use for each person.],
-  [We Don’t Control Everything],
-  [In other words (and this is the “bad news” for us designers), “our design” is subject, from the users’ perspective, to transformations that we don’t control. It will be “transformed” by the user, ensuring that they can interact with the application and everything it offers in the most comfortable way possible. And that’s a good thing. If this happens and everything goes well, we will have surely done our accessibility work very well, and we all deserve congratulations. If the user applies any of these support technologies and strategies and still cannot use the digital application, it’s a sign that something is not working as it should.],
-  [Oh, and speaking of which. Don’t even think about blocking the use of these technologies or support strategies. They may be “destroying” your beautiful design, but they are allowing more and more people to actually use the app. In the end, wasn’t that exactly what we promised we wanted to do? Design for (all) people. Without exception?],
-  [How many times have we heard someone — friends, family, or even colleagues — complaining that this or that text is too small? Text plays a very important role in the digital experience. Much information is conveyed through text: instructions for use, button captions, or interactive elements. All of this uses text as a communication tool. If reading all these elements is difficult, naturally, the experience is severely impaired.],
-  [Comfortable text reading, regardless of its function, is a non-negotiable principle. This reading can be facilitated by using comfortable sizes in the design. However, supporting technologies and strategies, through the functionality of increasing font size, can also help improve readability. According to APPT data, 26% of Android and iOS mobile device users increase the default font size (data from February 2026). One in four users increases the font size on their smartphone. This is a very significant sample of people, making this functionality unavoidable in design processes.],
-  [Increasing font size in interfaces can represent a huge design challenge. It’s important to understand that, suddenly, some text elements, due to user actions, can double in size from their initial size.],
-  [“With the exception of captions and text images, text can be resized without assistive technology up to 200% without loss of content or functionality.”],
-  [— Success criterion 1.4.4, “Resizing Text” of the Web Content Accessibility Guidelines (WCAG), version 2.2],
-  [This success criterion is at the AA compliance level, meaning this is an absolutely mandatory feature according to any legal framework.],
-  [It’s easy to understand the 200% in this success criterion. If we assume we design the interfaces at a 100% scale, meaning the element size is the initial size, then increasing the text by up to 200% will correspond to doubling the initial size. Other enlargement scales can also be used, such as 120%, 140%, and so on. In other words, we have to ensure that users can increase the text to double its initial size through supporting technologies or strategies (and this is not a minor detail).],
-  [To comply with this standard, we don’t need to provide text size increase tools in the interfaces. In practice, these features are nothing more than redundancy. Devices already allow this to be done in a standardized way. Users who really need this setting know it (because, without it, their lives would be much more difficult). Well, they already have this setting applied across their device. And that means we can eliminate these additional interface elements, simplifying the experience.],
-  [An important concept to remember about assistive technologies, particularly in this case regarding increasing font size, is that most devices already have many of these tools installed by default. In other words, in many cases, users don’t need to purchase their own software or buy a specific type of device just to have this functionality.],
-  [Whether on mobile devices or even in web browsers, in the vast majority of cases, it’s easy to find installed features that allow you to increase the default font size we’re using throughout the interface. This principle of increasing font size can be applied to digital products, such as apps, or even to any type of website running on the standard web browsers used today.],
-  [iPhones],
-  [On iPhone devices, the font size increase feature is integrated by default. To use this feature, simply access the “Settings” panel, select “Accessibility,” and within the “Vision” options group, access the “Text Size and Display” feature and configure the desired font size increase on that screen.],
-  [Web browsers also offer, by default, the functionality to increase font size. For example, in Google Chrome, this feature is available in the “Options” panel, specifically in the “Appearance” area. In the list of options that appear in this group, simply select the “Font size” option. Normally, the “Medium — Recommended” option will be selected. You can change this setting to any other available font size. Try, for example, the “Very large” option.],
-  [To ensure that digital accessibility work becomes effective in the daily lives of teams, it is essential to find simple work processes . Actions or initiatives that can be integrated into the team’s routine, that address accessibility in an integrated way, and do not require a dramatic transformation of the current reality. If that were necessary, he believes, it wouldn’t happen most of the time. Therefore, designing simple work processes is half the battle for accessibility to truly happen, in this case, also within a design team.],
-  [Regarding testing font size increases in design, we have extraordinary tools at our disposal today. Those who remember the days of designing complex interfaces in Adobe Photoshop will recognize the differences in the tools we have today (and thankfully so). It’s now possible, through tools like Figma , to create such dynamism in design that testing font size increases for accessibility becomes almost unavoidable for the team.],
-  [Note : To take this test, you need to have a strong grasp of Figma’s text styles , auto layouts , and variables . These three are fundamental tools for success without much extra effort. If you haven’t yet mastered these features, it’s highly recommended that you start there. Don’t skip steps. Learning is a gradual process that must be followed in a structured, step-by-step manner.],
-  [Where Do We Want To Go?],
-  [The font size increase test in Figma that we want to perform is simple. We want to have a set of variables available for all the text styles we use in the interface, allowing us to choose whether we want to see the interface with the text at a scale of 100%, 120%, 140%, 160%, 180%, or 200%. As we apply this set of variables (much like applying variables for light and dark mode), we observe the transformations of the text in the interface and understand to what extent adaptations are needed in each version of the interface with different typographic scales.],
-  [How Do We Make This Happen?],
-  [For this test to go so smoothly, you need to do some groundwork. Design systems can greatly help optimize much of this initial work. But I won’t lie to you. For the test to work well, your design needs to have a very serious level of organization and systematization.],
-  [This isn’t really a guide, because each team will have its own work model, and these recommendations can be applied in different ways (and that’s okay). However, for this test to work, it’s important to ensure certain assumptions in the design. To help you phase the implementation of this test model, here are some steps to follow. Step-by-step instructions to guide you in organizing your files and ensuring you can fully execute this test in the simplest and most practical way possible.],
-  [1. Designing The Interfaces],
-  [It all starts with the design. Before any testing, the focus should, as it should, be on the design of each interface that we will want to test later. At this stage, there is still no specific concern with the font size increase test that we will perform later. Naturally, all interface design should, from the outset, follow the most basic accessibility recommendations applied to design.],
-  [2. Apply Auto Layouts To All Elements],
-  [In every screen design you create, you’ll need to ensure you apply auto layouts perfectly. This is a very important step. It’s this consistent application of auto layouts to the entire structure and design elements that will later guarantee the scalability of the interface when we start testing font size increases. You really can’t underestimate this step. If you don’t pay it the attention it deserves, you’ll see when we test typographic scaling in the interfaces, everything breaking down like an elephant in a china shop.],
-  [3. Structuring And Applying Text Styles],
-  [To perform our font size increase test, we’ll also need you to have applied text styles to each interface design. You probably even started creating them as you were drawing. Great. If you haven’t done so, it’s important that you do it now. For the test to work perfectly, we really need this. Don’t leave any text element in the design without a text style applied.],
-  [4. Define The Set Of Variables 100%],
-  [This test forces a fairly high degree of optimization. In practice, this means we will have to use Figma variables for all the characteristics of the text styles we have in the interface. At this stage, you must define Figma “number” variables for at least the font-size and line-height of the text styles you applied to the drawing. With this step, you are defining the font size increase scale values for a 100% visualization model, that is, the initial and reference version of the drawing. It is important that you structure these variables for each text style in the drawing because, subsequently, we will have to consider the enlargement scale of each of these text elements.],
-  [5. Apply The Variables To The Text Styles],
-  [Having defined the variables for the 100% scale text styles, you must now apply them to the elements of the text styles already created. Don’t forget to apply variables at least to the font-size and line-height characteristics. If you have more typographical variables, that’s fine. But you should at least have variables applied to font-size and line-height. This is really very important.],
-  [6. Define The Variables For Increasing The Text Size],
-  [Now that you have the variables applied to the 100% scale text styles, the next step is to create the variables for the other font size increase scales. In practice, you have to create the variables that will tell the system what font size each text style will grow to when the increase scale is 120%, 140%, 160%, etc.],
-  [To define the font-size and line-height values, simply multiply the initial value by the scale percentage. For example, if a text style has a font-size of 16px, the size for the 120% scale will be 16 multiplied by 1.2, which gives a result of 19.2. Repeat this calculation for all font-size and line-height values of the font size increase scale percentages you choose.],
-  [You can also choose whether or not to apply rounding to the final values. This is an approximate test, and therefore any differences that may arise from rounding will not affect the final perception of the test result.],
-  [7. Apply Variables To Different Scale Versions],
-  [The moment of truth has arrived. The next step is to understand if we have everything working so that the test runs perfectly. Therefore, you should copy the original interface and apply the set of variables for each of the font size increase rates that make sense to you. Repeat this process for all the font size increase percentages you have defined.],
-  [As a suggestion, you can use the 120%, 140%, 160%, 180%, and 200% increase percentages as a reference. If you want to simplify, you can reduce the number of scaling percentages you are working with. Regardless of the number of percentages you are working with, you should always work with the minimum of 100% and 200% scales.],
-  [8. Identify Areas For Improvement],
-  [By applying different font size increase scales to the same screen, it’s easy to understand where improvements might be needed. This is where the real test of increasing font size in interface design and the most interesting accessibility work begins.],
-  [In your analysis of the various screens, keep some important aspects in mind:],
-  [The fact that the text appears gigantic isn’t a problem and doesn’t “ruin” the design. Remember that this can mean the difference between someone being able to use a particular product or service or not.],
-  [An accessibility problem exists when increasing the font size makes it impossible for the user to read certain texts or to activate certain controls.],
-  [For text elements that are already very large, increasing the font size might not make sense. Doing so could make those elements disproportionate, which wouldn’t improve readability (since they are already a good size) and would occupy completely unnecessary space.],
-  [If there are elements that appear to be popping out of the screen, the first step is to confirm how you are applying auto layout . Many design aspects can be easily resolved with the proper use of auto layout.],
-  [Regardless of the scale of font size increase, it is essential to maintain the visual hierarchy of the typography , as this readability is important for perceiving the different levels of information present on the screen.],
-  [This test can help identify elements that may need adjustments directly in the code to function well at a given scale of increase. Not everything can be solved through design alone, and that’s perfectly fine. Accessibility is essentially a team effort.],
-  [9. Make Corrections And Adjustments To The Design],
-  [Finally, based on the various screens with different text enlargement scales applied, you can make the design changes that make sense. Some of these adjustments may only be necessary in code. In these cases, you document all these suggestions and pass them on to the development team. It is also crucial to reinforce (again) that some of the problems you may encounter in the design can be quickly resolved in the design process, with the simple and correct application of auto-layout properties.],
-  [10. Go Back To The Beginning And Repeat The Process],
-  [This is a cyclical approach. This means you should repeat these steps, or variations thereof, as many times as necessary throughout the project. It’s natural that, over time and with process optimization, some of these steps will cease to make sense. That’s absolutely not a problem. But the most important thing to realize here is that accessibility and this process of testing font size increases shouldn’t be done just once, and that’s it. It’s a test to be done many, many times throughout the day-to-day work of each project and team.],
-  [The Role Of Design Systems],
-  [At first glance, this list of steps might seem like a complex exercise. But it’s not. This is because the vast majority, if not all, of these steps are easy to execute in any context where a design system exists. In fact, design systems have become an unavoidable standard in the Product Design industry. We can discuss what each team calls a design system, but the truth is that it’s very difficult today to find a Product Design team that doesn’t have, at the very least, a minimally structured library of components and styles.],
-  [With this foundation, whether more or less documented, it’s very easy to apply this type of font size increase test using Figma variables. Furthermore, if your design system already has, for example, structured variables for light and dark mode, it means you’re already applying the exact same principles we used to perform this test. So, nothing new.],
-  [Working with design systems involves a level of structuring and organization that is also very useful for creating this type of test. There’s a myth that design systems limit creativity. This is not true. Design systems help solve the “bureaucratic” part of design, so we can actually have more time for what matters: in this case, testing accessibility and building more and more products and services that are truly accessible to the greatest number of people.],
-  [It’s always easier to see an example than just read a description of a process. If this is true in many disciplines of knowledge, in design, this premise makes even more sense. Therefore, in this Figma file , freely published and openly available to the community, you’ll find a practical example of the entire testing process described here. Remember that this is just an example. There may be countless ways to perform this type of test within the context of a Figma file.],
-  [Be sure to look at this approach with a critical eye. It’s a suggestion for testing font size increases that follows a specific process. Despite this, the approach should be adapted to your team’s specific reality, processes, and level of maturity. Simply copying formulas from other teams without understanding if they make sense in our own context is a sure way to make accessibility efforts disproportionate. Every situation is unique. This approach attempts to simplify accessibility work as much as possible in this specific context. And remember: if something happens, however small, it’s a step forward, not a step backward. And that should be celebrated by everyone on the team.],
-),
-  insert-map: (:),
-  inline-pq: pull-quote([If you haven’t yet mastered these features, it’s highly recommended that you start there.], [Ruben Ferreira Duarte]),
-  inline-pq-idx: 26,
-  word-count: 3413,
+  word-count: 1082,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -231,523 +169,6 @@
 }
 
 {
-  #standard-article(
-  title: [Research based on the .NET Runtime],
-  author: [Matt Warren (.NET)],
-  source-name: [Matt Warren (.NET)],
-  images: (),
-  paragraphs: (
-  [Over the last few years, I’ve come across more and more research papers based, in some way, on the ‘Common Language Runtime’ (CLR).],
-  [Note: I put the papers into the following categories to make them easier to navigate (papers in each category are sorted by date, newest -\> oldest):],
-  [Using the . NET Runtime as a case-study],
-  [to prove its correctness , study how it works or analyse its behaviour],
-  [“ It was formed in 1991, with the intent to advance state-of-the-art computing and solve difficult world problems through technological innovation in collaboration with academic, government, and industry researchers ” ( according to Wikipedia )],
-  [Papers based on the Mono Runtime],
-  [a ‘ Cross-Platform, open-source . NET framework ’],
-  [Using ‘Rotor’ , real name ‘Shared Source CLI (SSCLI)’],
-  [from Wikipedia “ Microsoft provides the Shared Source CLI as a reference CLI implementation suitable for educational use ”],
-  [Any papers I’ve missed? If so, please let me know in the comments or on Twitter],
-  [. NET Runtime as a Case-Study],
-  [Pitfalls of C\# Generics and Their Solution Using Concepts (Belyakova & Mikhalkovich, 2015)],
-  [Efficient Compilation of . NET Programs for Embedded Systems (Sallenaveab & Ducournaub, 2011)],
-  [Type safety of C\# and . Net CLR (Fruja, 2007)],
-  [Modeling the . NET CLR Exception Handling Mechanism for a Mathematical Analysis (Fruja & Börger, 2006)],
-  [Analysis of the . NET CLR Exception Handling Mechanism (Fruja & Börger, 2005)],
-  [A Modular Design for the Common Language Runtime (CLR) Architecture (Fruja, 2005)],
-  [Cross-language Program Slicing in the . NET Framework (Pócza, Biczó & Porkoláb, 2005)],
-  [Design and Implementation of a high-level multi-language . NET Debugger (Strein, 2005)],
-  [A High-Level Modular Definition of the Semantics of C\# (Börger, Fruja, Gervasi & Stärk, 2004)],
-  [An ASM Specification of C\# Threads and the . NET Memory Model (Stärk and Börger, 2004)],
-  [Common Language Runtime : a new virtual machine (Ferreira, 2004)],
-  [JVM versus CLR: a comparative study (Singer, 2003)],
-  [Runtime Code Generation with JVM And CLR (Sestoft, 2002)],
-  [Project Snowflake: Non-blocking safe manual memory management in . NET (Parkinson, Vaswani, Costa, Deligiannis, Blankstein, McDermott, Balkind & Vytiniotis, 2017)],
-  [Simple, Fast and Safe Manual Memory Management (Kedia, Costa, Vytiniotis, Parkinson, Vaswani & Blankstein, 2017)],
-  [Uniqueness and Reference Immutability for Safe Parallelism (Gordon, Parkinson, Parsons, Bromfield & Duffy, 2012)],
-  [A study of concurrent real-time garbage collectors (Pizlo, Petrank & Steensgaard, 2008)],
-  [Optimizing concurrency levels in the. net threadpool: A case study of controller design and implementation (Hellerstein, Morrison & Eilebrecht, 2008)],
-  [Stopless: a real-time garbage collector for multiprocessors. (Pizlo, Frampton, Petrank & Steensgaard, 2007)],
-  [Securing the . NET Programming Model (Kennedy, 2006)],
-  [Combining Generics, Pre-compilation and Sharing Between Software-Based Processes (Syme & Kennedy, 2004)],
-  [Formalization of Generics for the . NET Common Language Runtime (Yu, Kennedy & Syme, 2004)],
-  [Runtime Verification of . NET Contracts (Barnett & Schulte, 2003)],
-  [Design and Implementation of Generics for the . NET Common Language Runtime (Kennedy & Syme, 2001)],
-  [Typing a Multi-Language Intermediate Code (Gordon & Syme, 2001)],
-  [Static and Dynamic Analysis of Android Malware and Goodware Written with Unity Framework (Shim, Lim, Cho, Han & Park, 2018)],
-  [Reducing startup time of a deterministic virtualizing runtime environment (Däumler & Werner, 2013)],
-  [Detecting Clones Across Microsoft . NET Programming Languages (Al-Omari, Keivanloo, Roy & Rilling, 2012)],
-  [Language-independent sandboxing of just-in-time compilation and self-modifying code (Ansel & Marchenko, 2012)],
-  [VMKit: a Substrate for Managed Runtime Environments (Geoffray, Thomas, Lawall, Muller & Folliot, 2010)],
-  [MMC: the Mono Model Checker (Ruys & Aan de Brugh, 2007)],
-  [Numeric performance in C, C\# and Java (Sestoft, 2007)],
-  [[ Mono versus . Net: A Comparative Study of Performance for Distributed Processing. (Blajian, Eggen, Eggen & Pitts, 2006)]()],
-  [Mono versus . Net: A Comparative Study of Performance for Distributed Processing. (Blajian, Eggen, Eggen & Pitts, 2006)],
-  [Automated detection of performance regressions: the mono experience (Kalibera, Bulej & Tuma, 2005)],
-  [Shared Source Common Language Infrastructure (SSCLI) - a.k.a ‘ Rotor ’],
-  [Efficient virtual machine support of runtime structural reflection (Ortina, Redondoa & Perez-Schofield, 2009)],
-  [Extending the SSCLI to Support Dynamic Inheritance (Redondo, Ortin & Perez-Schofield, 2008)],
-  [Sampling profiler for Rotor as part of optimizing compilation system (Chilingarova & Safonov, 2006)],
-  [To JIT or not to JIT: The effect of code-pitching on the performance of . NET framework (Anthony, Leung & Srisa-an, 2005)],
-  [Adding structural reflection to the SSCLI (Ortin, Redondo, Vinuesa & Lovelle, 2005)],
-  [Static Analysis for Identifying and Allocating Clusters of Immortal Objects (Ravindar & Srikant, 2005)],
-  [An Optimizing Just-InTime Compiler for Rotor (Trindade & Silva, 2005)],
-  [Software Interactions into the SSCLI platform (Charfi & Emsellem, 2004)],
-  [Experience Integrating a New Compiler and a New Garbage Collector Into Rotor (Anderson, Eng, Glew, Lewis, Menon & Stichnoth, 2004)],
-  [id="net-runtime-as-a-case-study"\> . NET Runtime as a Case-Study],
-  [id="pitfalls-of-c-generics-and-their-solution-using-concepts-belyakova--mikhalkovich-2015"\> Pitfalls of C\# Generics and Their Solution Using Concepts (Belyakova & Mikhalkovich, 2015)],
-  [In comparison with Haskell type classes and C ++ concepts, such object-oriented languages as C\# and Java provide much limited mechanisms of generic programming based on F-bounded polymorphism. Main pitfalls of C\# generics are considered in this paper. Extending C\# language with concepts which can be simultaneously used with interfaces is proposed to solve the problems of generics; a design and translation of concepts are outlined.],
-  [id="efficient-compilation-of-net-programs-for-embedded-systems-sallenaveab--ducournaub-2011"\> Efficient Compilation of . NET Programs for Embedded Systems (Sallenaveab & Ducournaub, 2011)],
-  [Compiling under the closed-world assumption (CWA) has been shown to be an appropriate way for implementing object-oriented languages such as Java on low-end embedded systems. In this paper, we explore the implications of using whole program optimizations such as Rapid Type Analysis (RTA) and coloring on programs targeting the . NET infrastructure. We extended RTA so that it takes into account . NET specific features such as (i) array covariance, a language feature also supported in Java, (ii) generics, whose specifications in . Net impacts type analysis and (iii) delegates, which encapsulate methods within objects. We also use an intraprocedural control flow analysis in addition to RTA . We eval-uated the optimizations that we implemented on programs written in C\#. Preliminary results show a noticeable reduction of the code size, class hierarchy and polymorphism of the programs we optimize. Array covariance is safe in almost all cases, and some delegate calls can be implemented as direct calls.],
-  [id="type-safety-of-c-and-net-clr-fruja-2007"\> Type safety of C\# and . Net CLR (Fruja, 2007)],
-  [Type safety plays a crucial role in the security enforcement of any typed programming language. This thesis presents a formal proof of C\#’s type safety. For this purpose, we develop an abstract
-framework for C\#, comprising formal specifications of the language’s grammar, of the statically correct programs, and of the static and operational semantics. Using this framework, we prove that C\# is type-safe, by showing that the execution of statically correct C\# programs does not lead to type errors.],
-  [id="modeling-the-net-clr-exception-handling-mechanism-for-a-mathematical-analysis-fruja--börger-2006"\> Modeling the . NET CLR Exception Handling Mechanism for a Mathematical Analysis (Fruja & Börger, 2006)],
-  [This work is part of a larger project which aims at establishing some important properties of C\# and CLR by mathematical proofs. Examples are the correctness of the bytecode verifier of CLR, the type safety (along the lines of the first author’s correctness proof for the definite assignment rules) of C\#, the correctness of a general compilation scheme.],
-  [id="analysis-of-the-net-clr-exception-handling-mechanism-fruja--börger-2005"\> Analysis of the . NET CLR Exception Handling Mechanism (Fruja & Börger, 2005)],
-  [We provide a complete mathematical model for the exception handling mechanism of the Common Language Runtime (CLR), the virtual machine underlying the interpretation of . NET programs. The goal is to use this rigorous model in the corresponding part of the still-to-be-developed soundness proof for the CLR bytecode verifier.],
-  [id="a-modular-design-for-the-common-language-runtime-clr-architecture-fruja-2005"\> A Modular Design for the Common Language Runtime (CLR) Architecture (Fruja, 2005)],
-  [This paper provides a modular high-level design of the Common Language Runtime (CLR) architecture. Our design is given in terms of Abstract State Machines (ASMs) and takes the form of an interpreter. We describe the CLR as a hierarchy of eight submachines, which correspond to eight submodules into which the Common Intermediate Language (CIL) instruction set can be decomposed.],
-  [id="cross-language-program-slicing-in-the-net-framework-pócza-biczó--porkoláb-2005"\> Cross-language Program Slicing in the . NET Framework (Pócza, Biczó & Porkoláb, 2005)],
-  [Dynamic program slicing methods are very attractive for debugging because many statements can be ignored in the process of localizing a bug. Although language interoperability is a key concept in modern development platforms, current slicing techniques are still restricted to a single language. In this paper a cross-language dynamic program slicing technique is introduced for the . NET environment. The method is utilizing the CLR Debugging Services API, hence it can be applied to large multi-language applications.],
-  [id="design-and-implementation-of-a-high-level-multi-language--net-debugger-strein-2005"\> Design and Implementation of a high-level multi-language . NET Debugger (Strein, 2005)],
-  [The Microsoft . NET Common Language Runtime (CLR) provides a low-level debugging application programmers interface (API), which can be used to implement traditional source code debuggers but can also be useful to implement other dynamic program introspection tools. This paper describes our experience in using this API for the implementation of a high-level debugger. The API is difficult to use from a technical point of view because it is implemented as a set of Component Object Model (COM) interfaces instead of a managed . NET API. Nevertheless, it is possible to implement a debugger in managed C\# code using COM-interop. We describe our experience in taking this approach. We define a high-level debugging API and implement it in the C\# language using COM-interop to access the low-level debugging API. Furthermore, we describe the integration of this high-level API in the multi-language development environment X-develop to enable source code debugging of . NET languages. This paper can be useful for anybody who wants to take the same approach to implement debuggers or other tools for dynamic program introspection.],
-  [id="a-high-level-modular-definition-of-the-semantics-of-c-börger-fruja-gervasi--stärk-2004"\> A High-Level Modular Definition of the Semantics of C\# (Börger, Fruja, Gervasi & Stärk, 2004)],
-  [We propose a structured mathematical definition of the semantics of programs to provide a platform-independent interpreter view of the language for the programmer, which can also be used for a precise analysis of the ECMA standard of the language and as a reference model for teaching. The definition takes care to reflect directly and faithfully—as much as possible without becoming inconsistent or incomplete—the descriptions in the standard to become comparable with the corresponding models for Java in Stärk et al. (Java and Java Virtual Machine—Definition, Verification, Validation, Springer, Berlin, 2001) and to provide for implementors the possibility to check their basic design decisions against an accurate high-level model. The model sheds light on some of the dark corners of and on some critical differences between the ECMA standard and the implementations of the language.],
-  [id="an-asm-specification-of-c-threads-and-the-net-memory-model-stärk-and-börger-2004"\> An ASM Specification of C\# Threads and the . NET Memory Model (Stärk and Börger, 2004)],
-  [We present a high-level ASM model of C\# threads and the . NET memory model. We focus on purely managed, fully portable threading features of C\#. The sequential model interleaves the computation steps of the currently running threads and is suitable for uniprocessors. The parallel model addresses problems of true concurrency on multiprocessor systems. The models provide a sound basis for the development of multi-threaded applications in C\#. The thread and memory models complete the abstract operational semantics of C\# in.],
-  [id="common-language-runtime--a-new-virtual-machine-ferreira-2004"\> Common Language Runtime : a new virtual machine (Ferreira, 2004)],
-  [Virtual Machines provide a runtime execution platform combining bytecode portability with a performance close to native code. An overview of current approaches precedes an insight into Microsoft CLR (Common Language Runtime), comparing it to Sun JVM (Java Virtual Machine) and to a native execution environment (IA 32). A reference is also made to CLR in a Unix platform and to techniques on how CLR improves code execution.],
-  [id="jvm-versus-clr-a-comparative-study-singer-2003"\> JVM versus CLR: a comparative study (Singer, 2003)],
-  [We present empirical evidence to demonstrate that there is little or no difference between the Java Virtual Machine and the . NET Common Language Runtime, as regards the compilation and execution of object-oriented programs. Then we give details of a case study that proves the superiority of the Common Language Runtime as a target for imperative programming language compilers (in particular GCC).],
-  [id="runtime-code-generation-with-jvm-and-clr-sestoft-2002"\> Runtime Code Generation with JVM And CLR (Sestoft, 2002)],
-  [Modern bytecode execution environments with optimizing just-in-time compilers, such as Sun’s Hotspot Java Virtual Machine, IBM’s Java Virtual Machine, and Microsoft’s Common Language Runtime, provide an infrastructure for generating fast code at runtime. Such runtime code generation can be used for efficient implementation of parametrized algorithms. More generally, with runtime code generation one can introduce an additional binding-time without performance loss. This permits improved performance and improved static correctness guarantees.],
-  [id="microsoft-research"\> Microsoft Research],
-  [id="project-snowflake-non-blocking-safe-manual-memory-management-in-net-parkinson--vaswani-costa-deligiannis-blankstein-mcdermott-balkind--vytiniotis-2017"\> Project Snowflake: Non-blocking safe manual memory management in . NET (Parkinson, Vaswani, Costa, Deligiannis, Blankstein, McDermott, Balkind & Vytiniotis, 2017)],
-  [Garbage collection greatly improves programmer productivity and ensures memory safety. Manual memory management on the other hand often delivers better performance but is typically unsafe and can lead to system crashes or security vulnerabilities. We propose integrating safe manual memory management with garbage collection in the . NET runtime to get the best of both worlds. In our design, programmers can choose between allocating objects in the garbage collected heap or the manual heap. All existing applications run unmodified, and without any performance degradation, using the garbage collected heap. Our programming model for manual memory management is flexible: although objects in the manual heap can have a single owning pointer, we allow deallocation at any program point and concurrent sharing of these objects amongst all the threads in the program. Experimental results from our . NET CoreCLR implementation on real-world applications show substantial performance gains especially in multithreaded scenarios: up to 3x savings in peak working sets and 2x improvements in runtime.],
-  [id="simple-fast-and-safe-manual-memory-management-kedia-costa-vytiniotis-parkinson-vaswani--blankstein-2017"\> Simple, Fast and Safe Manual Memory Management (Kedia, Costa, Vytiniotis, Parkinson, Vaswani & Blankstein, 2017)],
-  [Safe programming languages are readily available, but many applications continue to be written in unsafe languages, because the latter are more efficient. As a consequence, many applications continue to have exploitable memory safety bugs. Since garbage collection is a major source of inefficiency in the implementation of safe languages, replacing it with safe manual memory management would be an important step towards solving this problem.],
-  [Previous approaches to safe manual memory management use programming models based on regions, unique pointers, borrowing of references, and ownership types. We propose a much simpler programming model that does not require any of these concepts. Starting from the design of an imperative type safe language (like Java or C\#), we just add a delete operator to free memory explicitly and an exception which is thrown if the program dereferences a pointer to freed memory. We propose an efficient implementation of this programming model that guarantees type safety. Experimental results from our implementation based on the C\# native compiler show that this design achieves up to 3x reduction in peak working set and run time.],
-  [id="uniqueness-and-reference-immutability-for-safe-parallelism-gordon--parkinson-parsons-bromfield--duffy-2012"\> Uniqueness and Reference Immutability for Safe Parallelism (Gordon, Parkinson, Parsons, Bromfield & Duffy, 2012)],
-  [A key challenge for concurrent programming is that side-effects (memory operations) in one thread can affect the behavior of another thread. In this paper, we present a type system to restrict the updates to memory to prevent these unintended side-effects. We provide a novel combination of immutable and unique (isolated) types that ensures safe parallelism (race freedom and deterministic execution). The type system includes support for polymorphism over type qualifiers, and can easily create cycles of immutable objects. Key to the system’s flexibility is the ability to recover immutable or externally unique references after violating uniqueness without any explicit alias tracking. Our type system models a prototype extension to C\# that is in active use by a Microsoft team. We describe their experiences building large systems with this extension. We prove the soundness of the type system by an embedding into a program logic.],
-  [id="a-study-of-concurrent-real-time-garbage-collectors-pizlo-petrank--steensgaard-2008"\> A study of concurrent real-time garbage collectors (Pizlo, Petrank & Steensgaard, 2008)],
-  [Concurrent garbage collection is highly attractive for real-time systems, because offloading the collection effort from the executing threads allows faster response, allowing for extremely short deadlines at the microseconds level. Concurrent collectors also offer much better scalability over incremental collectors. The main problem with concurrent real-time collectors is their complexity. The first concurrent real-time garbage collector that can support fine synchronization, STOPLESS, has recently been presented by Pizlo et al. In this paper, we propose two additional (and different) algorithms for concurrent real-time garbage collection: CLOVER and CHICKEN. Both collectors obtain reduced complexity over the first collector STOPLESS, but need to trade a benefit for it. We study the algorithmic strengths and weaknesses of CLOVER and CHICKEN and compare them to STOPLESS. Finally, we have implemented all three collectors on the Bartok compiler and runtime for C\# and we present measurements to compare their efficiency and responsiveness.],
-  [id="optimizing-concurrency-levels-in-the-net-threadpool-a-case-study-of-controller-design-and-implementation-hellerstein-morrison--eilebrecht-2008"\> Optimizing concurrency levels in the. net threadpool: A case study of controller design and implementation (Hellerstein, Morrison & Eilebrecht, 2008)],
-  [This paper presents a case study of developing a hill climb-ing concurrency controller (HC 3) for the . NET ThreadPool. The intent of the case study is to provide insight into soft-ware considerations for controller design, testing, and imple-mentation. The case study is structured as a series of issues encountered and approaches taken to their resolution. Ex-amples of issues and approaches include: (a) addressing the need to combine a hill climbing control law with rule-based techniques by the use of hybrid control; (b) increasing the ef-ficiency and reducing the variability of the test environment by using resource emulation; and (c) effectively assessing design choices by using test scenarios for which the optimal concurrency level can be computed analytically and hence desired test results are known a priori. We believe that these issues and approaches have broad application to controllers for resource management of software systems.],
-  [id="stopless-a-real-time-garbage-collector-for-multiprocessors-pizlo-frampton-petrank--steensgaard-2007"\> Stopless: a real-time garbage collector for multiprocessors. (Pizlo, Frampton, Petrank & Steensgaard, 2007)],
-  [We present STOPLESS: a concurrent real-time garbage collector suitable for modern multiprocessors running parallel multithreaded applications. Creating a garbage-collected environment that sup- ports real-time on modern platforms is notoriously hard, especially if real-time implies lock-freedom. Known real-time collectors ei- ther restrict the real-time guarantees to uniprocessors only, rely on special hardware, or just give up supporting atomic operations (which are crucial for lock-free software). STOPLESS is the first collector that provides real-time responsiveness while preserving lock-freedom, supporting atomic operations, controlling fragmen- tation by compaction, and supporting modern parallel platforms. STOPLESS is adequate for modern languages such as C\# or Java. It was implemented on top of the Bartok compiler and runtime for C\# and measurements demonstrate high responsiveness (a factor of a 100 better than previously published systems), virtually no pause times, good mutator utilization, and acceptable overheads.],
-  [id="securing-the-net-programming-model-kennedy-2006"\> Securing the . NET Programming Model (Kennedy, 2006)],
-  [The security of the . NET programming model is studied from the standpoint of fully abstract compilation of C\#. A number of failures of full abstraction are identified, and fixes described. The most serious problems have recently been fixed for version 2.0 of the . NET Common Language Runtime.],
-  [id="combining-generics-pre-compilation-and-sharing-between-software-based-processes-syme--kennedy-2004"\> Combining Generics, Pre-compilation and Sharing Between Software-Based Processes (Syme & Kennedy, 2004)],
-  [We describe problems that have arisen when combining the proposed design for generics for the Microsoft . NET Common Language Runtime (CLR) with two resource-related features supported by the Microsoft CLR implementation: application domains and pre-compilation. Application domains are “software based processes” and the interaction between application domains and generics stems from the fact that code and descriptors are generated on a pergeneric-instantiation basis, and thus instantiations consume resources which are preferably both shareable and recoverable. Pre-compilation runs at install-time to reduce startup overheads. This interacts with application domain unloading: compilation units may contain shareable generated instantiations. The paper describes these interactions and the diﬀerent approaches that can be used to avoid or ameliorate the problems.],
-  [id="formalization-of-generics-for-the-net-common-language-runtime-yu-kennedy--syme-2004"\> Formalization of Generics for the . NET Common Language Runtime (Yu, Kennedy & Syme, 2004)],
-  [We present a formalization of the implementation of generics in the . NET Common Language Runtime (CLR), focusing on two novel aspects of the implementation: mixed specialization and sharing, and efficient support for run-time types. Some crucial constructs used in the implementation are dictionaries and run-time type representations. We formalize these aspects type-theoretically in a way that corresponds in spirit to the implementation techniques used in practice. Both the techniques and the formalization also help us understand the range of possible implementation techniques for other languages, e.g., ML, especially when additional source language constructs such as run-time types are supported. A useful by-product of this study is a type system for a subset of the polymorphic IL proposed for the . NET CLR.],
-  [id="runtime-verification-of-net-contracts-barnett--schulte-2003"\> Runtime Verification of . NET Contracts (Barnett & Schulte, 2003)],
-  [We propose a method for implementing behavioral interface specifications on the . NET platform. Our interface specifications are expressed as executable model programs. Model programs can be run either as stand-alone simulations or used as contracts to check the conformance of an implementation class to its specification. We focus on the latter, which we call runtime verification. In our framework, model programs are expressed in the new specification language AsmL. We describe how AsmL can be used to describe contracts independently from any implementation language, how AsmL allows properties of component interaction to be specified using mandatory calls, and how AsmL is used to check the behavior of a component written in any of the . NET languages, such as VB, C\#, or C++.],
-  [id="design-and-implementation-of-generics-for-the-net-common-language-runtime-kennedy--syme-2001"\> Design and Implementation of Generics for the . NET Common Language Runtime (Kennedy & Syme, 2001)],
-  [The Microsoft . NET Common Language Runtime provides a shared type system, intermediate language and dynamic execution environment for the implementation and inter-operation of multiple source languages. In this paper we extend it with direct support for parametric polymorphism (also known as generics), describing the design through examples written in an extended version of the C\# programming language, and explaining aspects of implementation by reference to a prototype extension to the runtime. Our design is very expressive, supporting parameterized types, polymorphic static, instance and virtual methods, “F-bounded” type parameters, instantiation at pointer and value types, polymorphic recursion, and exact run-time types. The implementation takes advantage of the dynamic nature of the runtime, performing justin-time type specialization, representation-based code sharing and novel techniques for efﬁcient creation and use of run-time types. Early performance results are encouraging and suggest that programmers will not need to pay an overhead for using generics, achieving performance almost matching hand-specialized code.],
-  [id="typing-a-multi-language-intermediate-code-gordon--syme-2001"\> Typing a Multi-Language Intermediate Code (Gordon & Syme, 2001)],
-  [The Microsoft . NET Framework is a new computing architecture designed to support a variety of distributed applications and web-based services. . NET software components are typically distributed in an object-oriented intermediate language, Microsoft IL, executed by the Microsoft Common Language Runtime. To allow convenient multi-language working, IL supports a wide variety of high-level language constructs, including class-based objects, inheritance, garbage collection, and a security mechanism based on type safe execution. This paper precisely describes the type system for a substantial fragment of IL that includes several novel features: certain objects may be allocated either on the heap or on the stack; those on the stack may be boxed onto the heap, and those on the heap may be unboxed onto the stack; methods may receive arguments and return results via typed pointers, which can reference both the stack and the heap, including the interiors of objects on the heap. We present a formal semantics for the fragment. Our typing rules determine well-typed IL instruction sequences that can be assembled and executed. Of particular interest are rules to ensure no pointer into the stack outlives its target. Our main theorem asserts type safety, that well-typed programs in our IL fragment do not lead to untrapped execution errors. Our main theorem does not directly apply to the product. Still, the formal system of this paper is an abstraction of informal and executable specifications we wrote for the full product during its development. Our informal specification became the basis of the product team’s working specification of type-checking. The process of writing this specification, deploying the executable specification as a test oracle, and applying theorem proving techniques, helped us identify several security critical bugs during development.],
-  [id="mono-runtime"\> Mono Runtime],
-  [id="static-and-dynamic-analysis-of-android-malware-and-goodware-written-with-unity-framework-shim-lim-cho-han--park-2018"\> Static and Dynamic Analysis of Android Malware and Goodware Written with Unity Framework (Shim, Lim, Cho, Han & Park, 2018)],
-  [Unity is the most popular cross-platform development framework to develop games for multiple platforms such as Android, iOS, and Windows Mobile. While Unity developers can easily develop mobile apps for multiple platforms, adversaries can also easily build malicious apps based on the “write once, run anywhere” (WORA) feature. Even thoughmalicious apps were discovered among Android apps written with Unity framework (Unity apps), little research has been done on analysing the malicious apps. We propose static and dynamic reverse engineering techniques for malicious Unity apps. We first inspect the executable file format of a Unity app and present an effective static analysis technique of the Unity app. Then, we also propose a systematic technique to analyse dynamically the Unity app. Using the proposed techniques, the malware analyst can statically and dynamically analyse Java code, native code in C or C ++, and the Mono runtime layer where the C\# code is running.],
-  [id="reducing-startup-time-of-a-deterministic-virtualizing-runtime-environment-däumler--werner-2013"\> Reducing startup time of a deterministic virtualizing runtime environment (Däumler & Werner, 2013)],
-  [Virtualized runtime environments like Java Virtual Machine (JVM) or Microsoft . NET’s Common Language Runtime (CLR) introduce additional challenges to real-time software development. Since applications for such environments are usually deployed in platform independent intermediate code, one issue is the timing of code transformation from intermediate code into native code. We have developed a solution for this problem, so that code transformation is suitable for real-time systems. It combines pre-compilation of intermediate code with the elimination of indirect references in native code. The gain of determinism comes with an increased application startup time. In this paper we present an optimization that utilizes an Ahead-of-Time compiler to reduce the startup time while keeping the real-time suitable timing behaviour. In an experiment we compare our approach with existing ones and demonstrate its benefits for certain application cases.],
-  [id="detecting-clones-across-microsoft-net-programming-languages-al-omari--keivanloo-roy--rilling-2012"\> Detecting Clones Across Microsoft . NET Programming Languages (Al-Omari, Keivanloo, Roy & Rilling, 2012)],
-  [The Microsoft . NET framework and its language family focus on multi-language development to support interoperability across several programming languages. The framework allows for the development of similar applications in different languages through the reuse of core libraries. As a result of such a multi-language development, the identification and trace ability of similar code fragments (clones) becomes a key challenge. In this paper, we present a clone detection approach for the . NET language family. The approach is based on the Common Intermediate Language, which is generated by the . NET compiler for the different languages within the . NET framework. In order to achieve an acceptable recall while maintaining the precision of our detection approach, we define a set of filtering processes to reduce noise in the raw data. We show that these filters are essential for Intermediate Language-based clone detection, without significantly affecting the precision of the detection approach. Finally, we study the quantitative and qualitative performance aspects of our clone detection approach. We evaluate the number of reported candidate clone-pairs, as well as the precision and recall (using manual validation) for several open source cross-language systems, to show the effectiveness of our proposed approach.],
-  [id="language-independent-sandboxing-of-just-in-time-compilation-and-self-modifying-code-ansel--marchenko-2012"\> Language-independent sandboxing of just-in-time compilation and self-modifying code (Ansel & Marchenko, 2012)],
-  [When dealing with dynamic, untrusted content, such as on the Web, software behavior must be sandboxed, typically through use of a language like JavaScript. However, even for such specially-designed languages, it is difficult to ensure the safety of highly-optimized, dynamic language runtimes which, for efficiency, rely on advanced techniques such as Just-In-Time (JIT) compilation, large libraries of native-code support routines, and intricate mechanisms for multi-threading and garbage collection. Each new runtime provides a new potential attack surface and this security risk raises a barrier to the adoption of new languages for creating untrusted content. Removing this limitation, this paper introduces general mechanisms for safely and efficiently sandboxing software, such as dynamic language runtimes, that make use of advanced, low-level techniques like runtime code modification. Our language-independent sandboxing builds on Software-based Fault Isolation (SFI), a traditionally static technique. We provide a more flexible form of SFI by adding new constraints and mechanisms that allow safety to be guaranteed despite runtime code modifications. We have added our extensions to both the x86-32 and x86-64 variants of a production-quality, SFI-based sandboxing platform; on those two architectures SFI mechanisms face different challenges. We have also ported two representative language platforms to our extended sandbox: the Mono common language runtime and the V8 JavaScript engine. In detailed evaluations, we find that sandboxing slowdown varies between different benchmarks, languages, and hardware platforms. Overheads are generally moderate and they are close to zero for some important benchmark/platform combinations.],
-  [id="vmkit-a-substrate-for-managed-runtime-environments-geoffray-thomas-lawall-muller--folliot-2010"\> VMKit: a Substrate for Managed Runtime Environments (Geoffray, Thomas, Lawall, Muller & Folliot, 2010)],
-  [Managed Runtime Environments (MREs), such as the JVM and the CLI, form an attractive environment for program execution, by providing portability and safety, via the use of a bytecode language and automatic memory management, as well as good performance, via just-in-time (JIT) compilation. Nevertheless, developing a fully featured MRE, including e.g. a garbage collector and JIT compiler, is a herculean task. As a result, new languages cannot easily take advantage of the benefits of MREs, and it is difficult to experiment with extensions of existing MRE based languages. This paper describes and evaluates VMKit, a first attempt to build a common substrate that eases the development of high-level MREs. We have successfully used VMKit to build two MREs: a Java Virtual Machine and a Common Language Runtime. We provide an extensive study of the lessons learned in developing this infrastructure, and assess the ease of implementing new MREs or MRE extensions and the resulting performance. In particular, it took one of the authors only one month to develop a Common Language Runtime using VMKit. VMKit furthermore has performance comparableto the well established open source MREs Cacao, Apache Harmony and Mono, and is 1.2 to 3 times slower than JikesRVM on most of the Dacapo benchmarks.],
-  [id="mmc-the-mono-model-checker-ruys--aan-de-brugh-2007"\> MMC: the Mono Model Checker (Ruys & Aan de Brugh, 2007)],
-  [The Mono Model Checker (mmc) is a software model checker for cil bytecode programs. mmc has been developed on the Mono platform. mmc is able to detect deadlocks and assertion violations in cil programs. The design of mmc is inspired by the Java PathFinder (jpf), a model checker for Java programs. The performance of mmc is comparable to jpf. This paper introduces mmc and presents its main architectural characteristics.],
-  [id="numeric-performance-in-c-c-and-java-sestoft-2007"\> Numeric performance in C, C\# and Java (Sestoft, 2007)],
-  [We compare the numeric performance of C, C\# and Java on three small cases.],
-  [id="mono-versus-net-a-comparative-study-of-performance-for-distributed-processing-blajian-eggen-eggen--pitts-2006"\> Mono versus . Net: A Comparative Study of Performance for Distributed Processing. (Blajian, Eggen, Eggen & Pitts, 2006)],
-  [Microsoft has released . NET, a platform dependent standard for the C\#,programming language. Sponsored by Ximian/Novell, Mono, the open source development platform based on the . NET framework, has been developed to be a platform independent version of the C\#,programming environment. While . NET is platform dependent, Mono allows developers to build Linux and crossplatform applications. Mono’s . NET implementation is based on the ECMA standards for C\#. This paper examines both of these programming environments with the goal of evaluating the performance characteristics of each. Testing is done with various algorithms. We also assess the trade-offs associated with using a cross-platform versus a platform.],
-  [id="automated-detection-of-performance-regressions-the-mono-experience-kalibera-bulej--tuma-2005"\> Automated detection of performance regressions: the mono experience (Kalibera, Bulej & Tuma, 2005)],
-  [Engineering a large software project involves tracking the impact of development and maintenance changes on the software performance. An approach for tracking the impact is regression benchmarking, which involves automated benchmarking and evaluation of performance at regular intervals. Regression benchmarking must tackle the nondeterminism inherent to contemporary computer systems and execution environments and the impact of the nondeterminism on the results. On the example of a fully automated regression benchmarking environment for the mono open-source project, we show how the problems associated with nondeterminism can be tackled using statistical methods.],
-  [id="shared-source-common-language-infrastructure-sscli---aka-rotor"\> Shared Source Common Language Infrastructure (SSCLI) - a.k.a ‘ Rotor ’],
-  [id="efficient-virtual-machine-support-of-runtime-structural-reflection-ortina-redondoa--perez-schofield-2009"\> Efficient virtual machine support of runtime structural reflection (Ortina, Redondoa & Perez-Schofield, 2009)],
-  [Increasing trends towards adaptive, distributed, generative and pervasive software have made object-oriented dynamically typed languages become increasingly popular. These languages offer dynamic software evolution by means of reflection, facilitating the development of dynamic systems. Unfortunately, this dynamism commonly imposes a runtime performance penalty. In this paper, we describe how to extend a production JIT-compiler virtual machine to support runtime object-oriented structural reflection offered by many dynamic languages. Our approach improves runtime performance of dynamic languages running on statically typed virtual machines. At the same time, existing statically typed languages are still supported by the virtual machine.],
-  [We have extended the . Net platform with runtime structural reflection adding prototype-based object-oriented semantics to the statically typed class-based model of . Net, supporting both kinds of programming languages. The assessment of runtime performance and memory consumption has revealed that a direct support of structural reflection in a production JIT-based virtual machine designed for statically typed languages provides a significant performance improvement for dynamically typed languages.],
-  [id="extending-the-sscli-to-support-dynamic-inheritance-redondo-ortin--perez-schofield-2008"\> Extending the SSCLI to Support Dynamic Inheritance (Redondo, Ortin & Perez-Schofield, 2008)],
-  [This paper presents a step forward on a research trend focused on increasing runtime adaptability of commercial JIT-based virtual machines, describing how to include dynamic inheritance into this kind of platforms. A considerable amount of research aimed at improving runtime performance of virtual machines has converted them into the ideal support for developing different types of software products. Current virtual machines do not only provide benefits such as application interoperability, distribution and code portability, but they also offer a competitive runtime performance.],
-  [Since JIT compilation has played a very important role in improving runtime performance of virtual machines, we first extended a production JIT-based virtual machine to support efficient language-neutral structural reflective primitives of dynamically typed programming languages. This article presents the next step in our research work: supporting language-neutral dynamic inheritance for both statically and dynamically typed programming languages. Executing both kinds of programming languages over the same platform provides a direct interoperation between them.],
-  [id="sampling-profiler-for-rotor-as-part-of-optimizing-compilation-system-chilingarova--safonov-2006"\> Sampling profiler for Rotor as part of optimizing compilation system (Chilingarova & Safonov, 2006)],
-  [This paper describes a low-overhead self-tuning sampling-based runtime profiler integrated into SSCLI virtual machine. Our profiler estimates how “hot” a method is and builds a call context graph based on managed stack samples analysis. The frequency of sampling is tuned dynamically at runtime, based on the information of how often the same activation record appears on top of the stack. The call graph is presented as a novel Call Context Map (CC-Map) structure that combines compact representation and accurate information about the context. It enables fast extraction of data helpful in making compilation decisions, as well as fast placing data into the map. Sampling mechanism is integrated with intrinsic Rotor mechanisms of thread preemption and stack walk. A separate system thread is responsible for organizing data in the CC-Map. This thread gathers and stores samples quickly queued by managed threads, thus decreasing the time they must hold up their user-scheduled job],
-  [id="to-jit-or-not-to-jit-the-effect-of-code-pitching-on-the-performance-of-net-framework-anthony-leung--srisa-an-2005"\> To JIT or not to JIT: The effect of code-pitching on the performance of . NET framework (Anthony, Leung & Srisa-an, 2005)],
-  [The. NET Compact Framework is designed to be a highperformance virtual machine for mobile and embedded devices that operate on Windows CE (version 4.1 and later). It achieves fast execution time by compiling methods dynamically instead of using interpretation. Once compiled, these methods are stored in a portion of the heap called code-cache and can be reused quickly to satisfy future method calls. While code-cache provides a high-level of reusability, it can also use a large amount of memory. As a result, the Compact Framework provides a “code pitching ” mechanism that can be used to discard the previously compiled methods as needed. In this paper, we study the effect of code pitching on the overall performance and memory utilization of. NET applications. We conduct our experiments using Microsoft’s Shared-Source Common Language Infrastructure (SSCLI). We profile the access behavior of the compiled methods. We also experiment with various code-cache configurations to perform pitching. We find that programs can operate efficiently with a small code-cache without incurring substantial recompilation and execution overheads.],
-  [id="adding-structural-reflection-to-the-sscli-ortin-redondo-vinuesa--lovelle-2005"\> Adding structural reflection to the SSCLI (Ortin, Redondo, Vinuesa & Lovelle, 2005)],
-  [Although dynamic languages are becoming widely used due to the flexibility needs of specific software prod- ucts, their major drawback is their runtime performance. Compiling the source program to an abstract machine’s intermediate language is the current technique used to obtain the best performance results. This intermediate code is then executed by a virtual machine developed as an interpreter. Although JIT adaptive optimizing com- pilation is currently used to speed up Java and .net intermediate code execution, this practice has not been em- ployed successfully in the implementation of dynamically adaptive platforms yet. We present an approach to improve the runtime performance of a specific set of structural reflective primitives, extensively used in adaptive software development. Looking for a better performance, as well as interaction with other languages, we have employed the Microsoft Shared Source CLI platform, making use of its JIT compiler. The SSCLI computational model has been enhanced with semantics of the prototype-based object-oriented com- putational model. This model is much more suitable for reflective environments. The initial assessment of per- formance results reveals that augmenting the semantics of the SSCLI model, together with JIT generation of native code, produces better runtime performance than the existing implementations.],
-  [id="static-analysis-for-identifying-and-allocating-clusters-of-immortal-objects-ravindar--srikant-2005"\> Static Analysis for Identifying and Allocating Clusters of Immortal Objects (Ravindar & Srikant, 2005)],
-  [Long living objects lengthen the trace time which is a critical phase of the garbage collection process. However, it is possible to recognize object clusters i.e. groups of long living objects having approximately the same lifetime and treat them separately to reduce the load on the garbage collector and hence improve overall performance. Segregating objects this way leaves the heap for objects with shorter lifetimes and now a typical collection can nd more garbage than before. In this paper, we describe a compile time analysis strategy to identify object clusters in programs. The result of the compile time analysis is the set of allocation sites that contribute towards allocating objects belonging to such clusters. All such allocation sites are replaced by a new allocation method that allocates objects into the cluster area rather than the heap. This study was carried out for a concurrent collector which we developed for Rotor, Microsoft’s Shared Source Implementation of . NET. We analyze the performance of the program with combina- tions of the cluster and stack allocation optimizations. Our results show that the clustering optimization reduces the number of collections by 66.5% on average, even eliminating the need for collection in some programs. As a result, the total pause time reduces by 62.8% on average. Using both stack allocation and the cluster optimizations brings down the number of collections by 91.5% thereby improving the total pause time by 79.33%.],
-  [id="an-optimizing-just-intime-compiler-for-rotor-trindade--silva-2005"\> An Optimizing Just-InTime Compiler for Rotor (Trindade & Silva, 2005)],
-  [The Shared Source CLI (SSCLI), also known as Rotor, is an implementation of the CLI released by Microsoft in source code. Rotor includes a single pass just-in-time compiler that generates non-optimized code for Intel IA-32 and IBM PowerPC processors. We extend Rotor with an optimizing justin-time compiler for IA-32. This compiler has three passes: control flow graph generation, data dependence graph generation and final code generation. Dominance relations in the control flow graph are used to detect natural loops. A number of optimizations are performed during the generation of the data dependence graph. During native code generation, the rich address modes of IA32 are used for instruction folding, reducing code size and usage of register names. Despite the overhead of three passes and optimizations, this compiler is only 1.4 to 1.9 times slower than the original SSCLI compiler and generates code that runs 6.4 to 10 times faster.],
-  [id="software-interactions-into-the-sscli-platform-charfi--emsellem-2004"\> Software Interactions into the SSCLI platform (Charfi & Emsellem, 2004)],
-  [By using an Interaction Specification Language (ISL), interactions between components can be expressed in a language independent way. At class level, interaction pattern specified in ISLrepresent model s of future interactions when applied on some component instances. The Interaction Server is in charge of managing the life cycle of interactions (interaction pattern registration and instantiation, destruction of interactions, merging). It acts as a central repository that keeps the global coherency of the adaptations realized on the component instances. The Interaction service allows creati ng interactions between heterogeneous components. Noah is an implementation of this Interaction Service. It can be thought as a dynamic aspect repository with a weaver that uses an aspect composition mechanism that insures commutable and associative adaptations. In this paper, we propose the implementation of the Interaction Service in the SSCLI. In contrast to other implementations such as Java where interaction management represents an additional layer, SSCLI enables us to integrate Interaction Management as in intrinsic part of the CLI runtime.],
-  [id="experience-integrating-a-new-compiler-and-a-new-garbage-collector-into-rotor-anderson-eng-glew-lewis-menon--stichnoth-2004"\> Experience Integrating a New Compiler and a New Garbage Collector Into Rotor (Anderson, Eng, Glew, Lewis, Menon & Stichnoth, 2004)],
-  [Microsoft’s Rotor is a shared-source CLI implementation intended for use as a research platform. It is particularly attractive for research because of its complete implementation and extensive libraries, and because its modular design allows dierent implementations of certain components such as just-in-time compilers (JITs). Our group has independently developed our own high-performance JIT and garbage collector (GC) and wanted to take advantage of Rotor to experiment with these components in a CLI environment. In this paper, we describe our experience integrating these components into Rotor and evaluate the flexibility of Rotor’s design toward this goal. We found it easier to integrate our JIT than our GC because Rotor has a well-defined interface for the former but not the latter. However, our JIT integration still required significant changes to both Rotor and our JIT. For example, we modified Rotor to support multiple JITs. We also added support for a second JIT manager in Rotor, and implemented a new code manager compatible with our JIT. We had to change our JIT compiler to support Rotor’s calling conventions, helper functions, and exception model. Our GC integration was complicated by the many places in Rotor where components make assumptions about how its garbage collector is implemented, as well as Rotor’s lack of a well-defined GC interface. We also had to reconcile the dierent assumptions made by Rotor and our garbage collector about the layout of objects, virtual-method tables, and thread structures.],
-),
-  insert-map: (:),
-  word-count: 7155,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-}
-
-{
-  #standard-article(
-  title: [How UX Professionals Can Lead AI Strategy],
-  author: [Paul Boag],
-  source-name: [Smashing Magazine],
-  images: (),
-  paragraphs: (
-  [Your senior management is excited about AI. They’ve read the articles, attended the webinars, and seen the demos. They’re convinced that AI will transform your organization, boost productivity, and give you a competitive edge.],
-  [Meanwhile, you’re sitting in your UX role wondering what this means for your team, your workflow, and your users. You might even be worried about your job security.],
-  [The problem is that the conversation about how AI gets implemented is happening right now, and if you’re not part of it, someone else will decide how it affects your work . That someone probably doesn’t understand user experience, research practices, or the subtle ways poor implementation can damage the very outcomes management hopes to achieve.],
-  [You have a choice. You can wait for directives to come down from above, or you can take control of the conversation and lead the AI strategy for your practice.],
-  [Why UX Professionals Must Own the AI Conversation],
-  [Management sees AI as efficiency gains, cost savings, competitive advantage, and innovation all wrapped up in one buzzword-friendly package. They’re not wrong to be excited. The technology is genuinely impressive and can deliver real value.],
-  [But without UX input, AI implementations often fail users in predictable ways:],
-  [They automate tasks without understanding the judgment calls those tasks require.],
-  [They optimize for speed while destroying the quality that made your work valuable.],
-  [Your expertise positions you perfectly to guide implementation. You understand users, workflows, quality standards, and the gap between what looks impressive in a demo and what actually works in practice.],
-  [Use AI Momentum to Advance Your Priorities],
-  [Management’s enthusiasm for AI creates an opportunity to advance priorities you’ve been fighting for unsuccessfully. When management is willing to invest in AI, you can connect those long-standing needs to the AI initiative. Position user research as essential for training AI systems on real user needs. Frame usability testing as the validation method that ensures AI-generated solutions actually work.],
-  [How AI gets implemented will shape your team’s roles, your users’ experiences, and your organization’s capability to deliver quality digital products.],
-  [Your Role Isn’t Disappearing (It’s Evolving)],
-  [Yes, AI will automate some of the tasks you currently do. But someone needs to decide which tasks get automated, how they get automated, what guardrails to put in place, and how automated processes fit around real humans doing complex work.],
-  [That someone should be you .],
-  [Think about what you already do. When you conduct user research, AI might help you transcribe interviews or identify themes. But you’re the one who knows which participant hesitated before answering, which feedback contradicts what you observed in their behavior, and which insights matter most for your specific product and users.],
-  [When you design interfaces, AI might generate layout variations or suggest components from your design system. But you’re the one who understands the constraints of your technical platform, the political realities of getting designs approved, and the edge cases that will break a clever solution.],
-  [Your future value comes from the work you’re already doing:],
-  [Seeing the full picture. 
-You understand how this feature connects to that workflow, how this user segment differs from that one, and why the technically correct solution won’t work in your organization’s reality.],
-  [Making judgment calls. 
-You decide when to follow the design system and when to break it, when user feedback reflects a real problem versus a feature request from one vocal user, and when to push back on stakeholders versus find a compromise.],
-  [Connecting the dots. 
-You translate between technical constraints and user needs, between business goals and design principles, between what stakeholders ask for and what will actually solve their problem.],
-  [AI will keep getting better at individual tasks. But you’re the person who decides which solution actually works for your specific context. The people who will struggle are those doing simple, repeatable work without understanding why. Your value is in understanding context, making judgment calls, and connecting solutions to real problems.],
-  [Step 1: Understand Management’s AI Motivations],
-  [Before you can lead the conversation, you need to understand what’s driving it. Management is responding to real pressures: cost reduction, competitive pressure, productivity gains, and board expectations.],
-  [Speak their language. 
-When you talk to management about AI, frame everything in terms of ROI, risk mitigation, and competitive advantage. “This approach will protect our quality standards” is less compelling than “This approach reduces the risk of damaging our conversion rate while we test AI capabilities.”],
-  [Separate hype from reality. 
-Take time to research what AI capabilities actually exist versus what’s hype. Read case studies, try tools yourself, and talk to peers about what’s actually working.],
-  [Identify real pain points. 
-AI might legitimately address in your organization. Maybe your team spends hours formatting research findings, or accessibility testing creates bottlenecks. These are the problems worth solving.],
-  [Step 2: Audit Your Current State and Opportunities],
-  [Map your team’s work. Where does time actually go? Look at the past quarter and categorize how your team spent their hours.],
-  [Identify high-volume, repeatable tasks versus high-judgment work. 
-Repeatable tasks are candidates for automation. High-judgment work is where you add irreplaceable value.],
-  [Also, identify what you’ve wanted to do but couldn’t get approved. 
-This is your opportunity list. Maybe you’ve wanted quarterly usability tests, but only get budget annually. Write these down separately. You’ll connect them to your AI strategy in the next step.],
-  [Spot opportunities where AI could genuinely help:],
-  [Research synthesis: 
-AI can help organize and categorize findings.],
-  [Analyzing user behavior data: 
-AI can process analytics and session recordings to surface patterns you might miss.],
-  [Rapid prototyping: 
-AI can quickly generate testable prototypes, speeding up your test cycles.],
-  [Step 3: Define AI Principles for Your UX Practice],
-  [Before you start forming your strategy, establish principles that will guide every decision.],
-  [Set non-negotiables. 
-User privacy, accessibility, and human oversight of significant decisions. Write these down and get agreement from leadership before you pilot anything.],
-  [Define criteria for AI use. 
-AI is good at pattern recognition, summarization, and generating variations. AI is poor at understanding context, making ethical judgments, and knowing when rules should be broken.],
-  [Define success metrics beyond efficiency. 
-Yes, you want to save time. But you also need to measure quality, user satisfaction, and team capability. Build a balanced scorecard that captures what actually matters.],
-  [Create guardrails. 
-Maybe every AI-generated interface needs human review before it ships. These guardrails prevent the obvious disasters and give you space to learn safely.],
-  [Step 4: Build Your AI-in-UX Strategy],
-  [Now you’re ready to build the actual strategy you’ll pitch to leadership. Start small with pilot projects that have a clear scope and evaluation criteria.],
-  [Connect to business outcomes management cares about. 
-Don’t pitch “using AI for research synthesis.” Pitch “reducing time from research to insights by 40%, enabling faster product decisions.”],
-  [Piggyback your existing priorities on AI momentum. 
-Remember that opportunity list from Step 2? Now you connect those long-standing needs to your AI strategy. If you’ve wanted more frequent usability testing, explain that AI implementations need continuous validation to catch problems before they scale. AI implementations genuinely benefit from good research practices. You’re simply using management’s enthusiasm for AI as the vehicle to finally get resources for practices that should have been funded all along.],
-  [Define roles clearly. 
-Where do humans lead? Where does AI assist? Where won’t you automate? Management needs to understand that some work requires human judgment and should never be fully automated.],
-  [Plan for capability building. 
-Your team will need training and new skills. Budget time and resources for this.],
-  [Address risks honestly. 
-AI could generate biased recommendations, miss important context, or produce work that looks good but doesn’t actually function. For each risk, explain how you’ll detect it and what you’ll do to mitigate it.],
-  [Step 5: Pitch the Strategy to Leadership],
-  [Frame your strategy as de-risking management’s AI ambitions, not blocking them. You’re showing them how to implement AI successfully while avoiding the obvious pitfalls.],
-  [Lead with outcomes and ROI they care about. 
-Put the business case up front.],
-  [Bundle your wish list into the AI strategy. 
-When you present your strategy, include those capabilities you’ve wanted but couldn’t get approved before. Don’t present them as separate requests. Integrate them as essential components. “To validate AI-generated designs, we’ll need to increase our testing frequency from annual to quarterly” sounds much more reasonable than “Can we please do more testing?” You’re explaining what’s required for their AI investment to succeed.],
-  [Show quick wins alongside a longer-term vision. 
-Identify one or two pilots that can show value within 30-60 days. Then show them how those pilots build toward bigger changes over the next year.],
-  [Ask for what you need. 
-Be specific. You need a budget for tools, time for pilots, access to data, and support for team training.],
-  [Step 6: Implement and Demonstrate Value],
-  [Run your pilots with clear before-and-after metrics. Measure everything: time saved, quality maintained, user satisfaction, team confidence.],
-  [Document wins and learning. 
-Failures are useful too. If a pilot doesn’t work out, document why and what you learned.],
-  [Share progress in management’s language. 
- Monthly updates should focus on business outcomes, not technical details. “We’ve reduced research synthesis time by 35% while maintaining quality scores” is the right level of detail.],
-  [Build internal advocates by solving real problems. 
-When your AI pilots make someone’s job easier, you create advocates who will support broader adoption.],
-  [Iterate based on what works in your specific context. 
- Not every AI application will fit your organization. Pay attention to what’s actually working and double down on that.],
-  [AI adoption is happening. The question isn’t whether your organization will use AI, but whether you’ll shape how it gets implemented.],
-  [Your UX expertise is exactly what’s needed to implement AI successfully. You understand users, quality, and the gap between impressive demos and useful reality.],
-  [Take one practical first step this week. 
-Schedule 30 minutes to map one AI opportunity in your practice. Pick one area where AI might help, think through how you’d pilot it safely, and sketch out what success would look like.],
-  [Then start the conversation with your manager. You might be surprised how receptive they are to someone stepping up to lead this.],
-  [You know how to understand user needs, test solutions, measure outcomes, and iterate based on evidence. Those skills don’t change just because AI is involved. You’re applying your existing expertise to a new tool.],
-  [Your role isn’t disappearing. It’s evolving into something more strategic, more valuable, and more secure. But only if you take the initiative to shape that evolution yourself.],
-  [Further Reading On SmashingMag],
-  [“ Designing With AI, Not Around It: Practical Advanced Techniques For Product Design Use Cases ”, Ilia Kanazin & Marina Chernyshova],
-  [“ Beyond The Hype: What AI Can Really Do For Product Design ”, Nikita Samutin],
-  [“ A Week In The Life Of An AI-Augmented Designer ”, Lyndon Cerejo],
-  [“ Functional Personas With AI: A Lean, Practical Workflow ”, Paul Boag],
-),
-  insert-map: (:),
-  word-count: 1824,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-}
-
-{
-  #standard-article(
-  title: [The Death of Traditional Testing: Agentic Development Broke a 50-Year-Old Field, JiTTesting Can Revive It],
-  author: [Facebook Engineering],
-  source-name: [Facebook Engineering],
-  images: (),
-  paragraphs: (
-  [WHAT IT IS],
-  [The rise of agentic software development means code is being written, reviewed, and shipped faster than ever before across the entire industry. It also means that testing frameworks need to evolve for this rapidly changing landscape. Faster development demands faster testing that can catch bugs as they land in a codebase, without requiring regular updates and maintenance.],
-  [Just-in‑Time Tests (JiTTests) are a fundamentally novel approach to testing where tests are automatically generated by large language models (LLMs) on the fly to catch bugs – even ones that traditional testing might not catch – just-in-time before the code lands into production.],
-  [A Catching JiTTest focuses specifically on finding regressions introduced by a code change. This type of testing reimagines decades of software testing theory and practice . While traditional testing relies on static test suites, manual authoring, and ongoing maintenance, Catching JiTTests require no test maintenance and no test code review, meaning engineers can focus their expertise on real bugs, not false positives. Catching JiTTests use sophisticated techniques to maximize test signal value and minimize false positive drag, targeting test signals where they matter most: on serious failures.],
-  [HOW TESTING TRADITIONALLY WORKS],
-  [Under the traditional paradigm, tests are manually built as new code lands in a codebase and continually executed, requiring regular updates and maintenance. The engineers building these tests face the challenge of needing to check the behavior, not only of the current code, but all possible future changes. Inherent uncertainty about future changes results in tests that don’t catch anything, or when they do, it’s a false positive. Agentic development dramatically increases the pace of code change, straining test development burden and scaling the cost of false positives and test maintenance to breaking point.],
-  [HOW CATCHING JITTESTS WORK],
-  [Broadly, JiTTests are bespoke tests, tailored to a specific code change, that give engineers simple, actionable feedback about unexpected behavior changes without the need to read or write test code. LLMs can generate JiTTests automatically the moment a pull request is submitted. And since the JiTTest itself is LLM-generated, it can often infer the plausible intention of a code change and simulate possible faults that may result from it.],
-  [With an understanding of intent, Catching JiTTests can significantly drive down instances of false positives.],
-  [Here are the key steps of the Catching JiTTest process:],
-  [style="font-weight: 400;"\> New code lands in the codebase.],
-  [style="font-weight: 400;"\> The system infers the intention of the code change.],
-  [style="font-weight: 400;"\> It creates mutants (code versions with faults deliberately inserted) to simulate what could go wrong.],
-  [style="font-weight: 400;"\> It generates and runs tests to catch those faults.],
-  [style="font-weight: 400;"\> Ensembles of rule-based and LLM-based assessors focus the signal on true positive failures.],
-  [style="font-weight: 400;"\> Engineers receive clear, relevant reports about unexpected changes right when it matters most.],
-  [WHY IT MATTERS],
-  [Catching JiTTests are designed for the world of AI-powered agentic software development and accelerate testing by focusing on serious unexpected bugs. With them engineers no longer have to spend time writing, reviewing, and testing complex test code. Catching JiTTests, by design, kill many of the issues with traditional testing in one stroke:],
-  [style="font-weight: 400;"\> They are generated on-the-fly for each code change and do not reside in the codebase, eliminating ongoing maintenance costs and shifting effort from humans to machines.],
-  [style="font-weight: 400;"\> They are tailored to each change, making them more robust and less prone to breaking due to intended updates.],
-  [style="font-weight: 400;"\> They automatically adapt as the code changes.],
-  [style="font-weight: 400;"\> They only require human review when a bug is actually caught.],
-  [This all amounts to an important shift in testing infrastructure where the focus moves from generic code quality to whether a test actually finds faults in a specific change without raising a false positive. It helps improve testing overall while also allowing it to keep up with the pace of agentic coding.],
-  [READ THE PAPER],
-  [Just-in-Time Catching Test Generation at Meta],
-  [The post The Death of Traditional Testing: Agentic Development Broke a 50-Year-Old Field, JiTTesting Can Revive It appeared first on Engineering at Meta .],
-),
-  insert-map: (:),
-  word-count: 674,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-}
-
-#article-row((
-  [
-    standard-article(
-  title: [I got tired],
-  author: [Scott Hanselman],
-  source-name: [Scott Hanselman],
-  images: (),
-  paragraphs: (
-  [I have been blogging here for the last 20 years. Every Tuesday and Thursday, quite consistently, for two decades. But last year, without planning it, I got tired and stopped. Not sure why. It didn't correspond with any life events. Nothing interesting or notable happened. I just stopped.],
-  [I did find joy on TikTok and amassed a small group of like-minded followers there. I enjoy my YouTube as well, and my weekly podcast is going strong with nearly 900 (!) episodes of interviews with cool people. I've also recently started posting on Mastodon (a fediverse (federated universe)) Twitter alternative that uses the ActivityPub web standard . I see that Mark Downie has been looking at ActivityPub as well for DasBlog (the blog engine that powers this blog) so I need to spend sometime with Mark soon.],
-  [Being consistent is a hard thing, and I think I did a good job. I gave many talks over many years about Personal Productivity but I always mentioned doing what "feeds your spirit." For a minute here the blog took a backseat, and that's OK. I filled that (spare) time with family time, personal projects, writing more code, 3d printing, games, taekwondo, and a ton of other things.],
-  [Going forward I will continue to write and share across a number of platforms, but it will continue to start here as it's super important to Own Your Words . Keep taking snapshots and backups of your keystrokes as you never know when your chosen platform might change or go away entirely.],
-  [I'm still here. I hope you are too! I will see you soon.],
-  [Related Links:],
-  [Do they deserve the gift of your keystrokes?],
-  [Do you have a digital or social media will?],
-  [© 2025 Scott Hanselman. All rights reserved.],
-  [style="clear: both; padding-top: 0.2em;"\>],
-),
-  insert-map: (:),
-  word-count: 299,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-  ],
-  [
-    standard-article(
-  title: [Episode 919: The Who is the What; the When is the Why],
-  author: [Matthew Wrather],
-  source-name: [Overthinking It],
-  images: (),
-  paragraphs: (
-  [style="text-align: center;"\> Support Overthinking It by becoming a member for \$5/month!],
-  [Peter Fenzel, Mark Lee, and Matthew Wrather overthink the orthogonal cultural spectacles of the 2026 Super Bowl, considering the halftime show headlined by Bad Bunny and the perennial cultural battlefield of the commercials, this year weaving narratives of authenticity amidst a sea of grifting. The halftime show is approached first through its stagecraft and camera work which create an transporting, immersive environment for TV audiences (though probably not for stadium-goes). The presence of Gaga is debated.],
-  [And what does it all tell us about America in 2026? Maybe it’s that “in a world where nostalgia is commodified, even a minion can become a cultural icon.”],
-  [Download (MP3)],
-  [List of Super Bowl Halftime Shows (Wikipedia)],
-  [Episode 22: DIY Naked News],
-  [style="margin: 5px 0; padding: 10px; background: \#eee;"\>],
-  [style="margin: 0; padding: 0;"\> Episode 919: The Who is the What; the When is the Why originally appeared on Overthinking It , the site subjecting the popular culture to a level of scrutiny it probably doesn't deserve. [ Latest Posts | Podcast ( iTunes Link )]],
-),
-  insert-map: (:),
-  word-count: 185,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-  ],
-), ruled-indices: (1,))
-#pull-quote([I see that Mark Downie has been looking at ActivityPub as well for DasBlog (the blog engine that powers this blog) so I need to spend sometime with Mark soon.], [Scott Hanselman])
-
-
-#article-row((
-  [
-    standard-article(
-  title: [Tycoon god game Sintopia is Black & White above, Dungeon Keeper below, and it's releasing in April],
-  author: [Edwin Evans-Thirlwell],
-  source-name: [Rock Paper Shotgun],
-  images: (),
-  paragraphs: (
-  [Sintopia , the very Bullfroggy strategy management game from developers Piraknights and publishers Team 17, will release on April 16th. I compared this one to The Screwtape Letters back at announcement, but the more obvious, gamer-brain pitch is that it's Black & White sitting on top of Dungeon Keeper . That is, a god sim parked on top of a management game, albeit with a greater emphasis on automation than you might recall from Bullfrog's heyday.],
-  [In Sintopia, you are the middle manager of Hell. Above you, there is a bucolic, self-sufficient realm of weirdly plant-based humans, all going about their lives farming, building and searching for treasure. And sinning. The Humus (Humusians? Humusings?) do love to sin. Which is where you come in. When the Humus die, they are swept away to the underworld by a toothy hellbus, and must be purged of moral stains before they can be safely granted a new body.],
-  [Read more],
-),
-  insert-map: (:),
-  word-count: 157,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-  ],
-  [
-    standard-article(
-  title: [A Teach-In for History],
-  author: [Nate DiMeo],
-  source-name: [The Memory Palace],
-  images: (),
-  paragraphs: (
-  [On Sunday, October 26th, 2025, Nate DiMeo of this here show, The Memory Palace, and his friends and colleagues at his fellow Radiotopia show, This Day, will be holding a good, old-fashioned teach-in in defense of history and museums currently targeted by the Trump Administration. Readings and lectures from sun-up to sundown on the National Mall in Washington D. C.],
-  [Learn more here.],
-  [Order The Memory Palace book now, dear listener. On Bookshop.org , on Amazon.com , on Barnes & Noble , or directly from Random House . Or order the audiobook at places like Libro.fm .],
-  [The Memory Palace is a proud member of Radiotopia from PRX. Radiotopia is a collective of independently owned and operated podcasts that’s a part of PRX, a not-for-profit public media company. If you’d like to directly support this show, you can make a donation at Radiotopia.fm/donate.],
-),
-  insert-map: (:),
-  word-count: 142,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-  ],
-), ruled-indices: (1,))
-
-#article-row((
-  [
-    standard-article(
-  title: [Using WSL and Let's Encrypt to create Azure App Service SSL Wildcard Certificates],
-  author: [Scott Hanselman],
-  source-name: [Scott Hanselman],
-  images: (),
-  paragraphs: (
-  [There are many let's encrypt automatic tools for azure but I also wanted to see if I could use certbot in wsl to generate a wildcard certificate for the azure Friday website and then upload the resulting certificates to azure app service.],
-  [Azure app service ultimately needs a specific format called dot PFX that includes the full certificate path and all intermediates.],
-  [Per the docs, App Service private certificates must meet the following requirements :],
-  [Exported as a password-protected PFX file, encrypted using triple DES.],
-  [Contains private key at least 2048 bits long],
-  [Contains all intermediate certificates and the root certificate in the certificate chain.],
-  [If you have a PFX that doesn't meet all these requirements you can have Windows reencrypt the file.],
-  [I use WSL and certbot to create the cert, then I import/export in Windows and upload the resulting PFX.],
-  [Within WSL, install certbot:],
-  [sudo apt update],
-  [sudo apt install python3 python3-venv libaugeas0],
-  [sudo python3 -m venv /opt/certbot/],
-  [sudo /opt/certbot/bin/pip install --upgrade pip],
-  [sudo /opt/certbot/bin/pip install certbot],
-  [Then I generate the cert. You'll get a nice text UI from certbot and update your DNS as a verification challenge. Change this to make sure it's two lines, and your domains and subdomains are correct and your paths are correct.],
-  [sudo certbot certonly --manual --preferred-challenges=dns --email YOUR\@EMAIL. COM],
-  [--server https:\/\/acme-v02.api.letsencrypt.org/directory],
-  [--agree-tos --manual-public-ip-logging-ok -d "azurefriday.com" -d "\*.azurefriday.com"],
-  [sudo openssl pkcs12 -export -out AzureFriday2023.pfx],
-  [-inkey /etc/letsencrypt/live/azurefriday.com/privkey.pem],
-  [-in /etc/letsencrypt/live/azurefriday.com/fullchain.pem],
-  [I then copy the resulting file to my desktop (check your desktop path) so it's now in the Windows world.],
-  [sudo cp AzureFriday2023.pfx /mnt/c/Users/Scott/OneDrive/Desktop],
-  [Now from Windows, import the PFX, note the thumbprint and export that cert.],
-  [Import-PfxCertificate -FilePath "AzureFriday2023.pfx" -CertStoreLocation Cert:\\LocalMachine\\My],
-  [-Password (ConvertTo-SecureString -String 'PASSWORDHERE' -AsPlainText -Force) -Exportable],
-  [Export-PfxCertificate -Cert Microsoft. PowerShell. Security\\Certificate:: LocalMachine\\My\\597THISISTHETHUMBNAILCF1157B8CEBB7CA1],
-  [-FilePath 'AzureFriday2023-fixed.pfx' -Password (ConvertTo-SecureString -String 'PASSWORDHERE' -AsPlainText -Force)],
-  [Then upload the cert to the Certificates section of your App Service, under Bring Your Own Cert.],
-  [Then under Custom Domains, click Update Binding and select the new cert (with the latest expiration date).],
-  [Next step is to make this even more automatic or select a more automated solution but for now, I'll worry about this in September and it solved my expensive Wildcard Domain issue.],
-  [© 2025 Scott Hanselman. All rights reserved.],
-  [style="clear: both; padding-top: 0.2em;"\>],
-),
-  insert-map: (:),
-  word-count: 372,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-  ],
-  [
-    standard-article(
-  title: [Episode 76 (Mary Walker Would Wear What She Wanted)],
-  author: [The Memory Palace],
-  source-name: [The Memory Palace],
-  images: (),
-  paragraphs: (
-  [It's fundraiser time! Do you enjoy the Memory Palace? Do you want to support independent media? Then support the home of the Memory Palace, Radiotopia. Click here and become a sustaining supporter and help keep us going for a long time to come!],
-  [Music\*Under the credits is Harlaamstrat 74 off of John Dankworth's Modesty Blaise score.\*The piece opens with Rainfall , by David Darling and Michael Jones. \*Her brief love story is scored by Nathan Johnson's Penelope's Theme from his score to The Brothers Bloom .\*When she lands her first gig, we start Garde a Vue, and roll into Le Roi de coeur , from Chantal Martineau.\* The vibraphone piece is "Opening" by Nathaniel Bartlett. \* The recurring violin piece is called Geometria del Universo by the one-named Colleen. \* It ends on Romain's First Love , again by Georges Delarue, from his fantastic score to Promise at Dawn.],
-  [Notes\* I read a lot about Mary, but by far the most useful and most thorough works I came upon were: Sharon M. Harris' Dr. Mary Walker: An American Radical and A Woman of Honor: Dr. Mary E. Walker and the Civil War, in which author Mercedes Graf does a great job walking the reader through Walker's unpublished memoir.],
-  [Learn about your ad choices: dovetail.prx.org/ad-choices],
-),
-  insert-map: (:),
-  word-count: 214,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-  ],
-), ruled-indices: (1,))
-
-{
-  #standard-article(
-  title: [Episode 155: Lost Bulls],
-  author: [The Memory Palace],
-  source-name: [The Memory Palace],
-  images: (),
-  paragraphs: (
-  [The Memory Palace is a proud member of Radiotopia , a collective of independently owned and operated podcasts.],
-  [A note on shownotes. In a perfect world, you go into each episode of the Memory Palace knowing nothing about what's coming. It's pretentious, sure, but that's the intention. So, if you don't want any spoilers or anything, you can click play without reading ahead.],
-  [Anyway...],
-  [This episode was originally produced for an episode of Radiolab from WNYC, released in August of 2019.],
-  [Cul-de-Sac from Krzysztof Komeda’s Knife in the Water.],
-  [[The Mistral Noir](http:\/\/ https:\/\/geo.music.apple.com/us/album/the-mistral-noir/973468266?i=973468267&mt=1&app=music ) by Daniel Herskedal.],
-  [[Trakors](http:\/\/ https:\/\/geo.music.apple.com/us/album/tr%C3%A4kors-f%C3%A4ltinspelad/1446106006?i=1446106011&mt=1&app=music ) by 1900.],
-  [Eloy by Deaf Center.],
-  [[Leaping Dance](http:\/\/ https:\/\/geo.music.apple.com/us/album/leaping-dance/265055509?i=265055945&mt=1&app=music ) from the Netherlands Wind Ensemble],
-  [And Facing the Obstacles from Rob Simonson’s score to the Final Member.],
-  [This episode relied heavily on the work and research of Professor Gabriel Rosenberg of Duke, using his article, “No Scrubs: Livestock Breeding, State Power, and Eugenic Knowledge in the Early 20th Century United States” as a guide and jumping off point for other research.],
-  [Learn about your ad choices: dovetail.prx.org/ad-choices],
-),
-  insert-map: (:),
-  word-count: 179,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-}
-
-{
-  #section-label([Analysis])
   #standard-article(
   title: [Why is reflection slow?],
   author: [Matt Warren (.NET)],
@@ -791,10 +212,10 @@ Schedule 30 minutes to map one AI opportunity in your practice. Pick one area wh
  Reflection Type: System. RuntimeType (BaseType: System. Reflection. TypeInfo)
  RuntimeTypeCache: System. RuntimeType+RuntimeTypeCache, 
  m\_cacheComplete = True, 4 items in cache
- [0] - Int32 TestField1 - Private
- [1] - System. String TestField2 - Private
- [2] - Int32 k\_\_BackingField - Private
- [3] - System. String TestField3 - Private, Static],
+ \[0\] - Int32 TestField1 - Private
+ \[1\] - System. String TestField2 - Private
+ \[2\] - Int32 k\_\_BackingField - Private
+ \[3\] - System. String TestField3 - Private, Static],
   [where ReflectionOverhead. Program looks like this:],
   [private int TestProperty1 { get ; set ; } 
  }],
@@ -804,10 +225,10 @@ Schedule 30 minutes to map one AI opportunity in your practice. Pick one area wh
   [class="highlight"\> PropertyInfo stringLengthField = 
  typeof ( string ). GetProperty ( "Length" , 
  BindingFlags . Instance | BindingFlags . Public ); 
- var length = stringLengthField . GetGetMethod (). Invoke ( new Uri (), new object [ 0 ]);],
+ var length = stringLengthField . GetGetMethod (). Invoke ( new Uri (), new object \[ 0 \]);],
   [If you run it you would get the following exception:],
   [This is because we have obtained the PropertyInfo for the Length property on the String class, but invoked it with an Uri object, which is clearly the wrong type!],
-  [In addition to this, there also has to be validation of any arguments you pass through to the method you are invoking. To make argument passing work, reflection APIs take a parameter that is an array of object ’s, one per argument. So if you using reflection to call the method Add(int x, int y) , you would invoke it by calling methodInfo. Invoke(.., new [] { 5, 6 }) . At run-time checks need to be carried out on the amount and types of the values passed in, in this case to ensure that there are 2 and that they are both int ’s. One down-side of all this work is that it often involves boxing which has an additional cost, but hopefully this will be minimised in the future .],
+  [In addition to this, there also has to be validation of any arguments you pass through to the method you are invoking. To make argument passing work, reflection APIs take a parameter that is an array of object ’s, one per argument. So if you using reflection to call the method Add(int x, int y) , you would invoke it by calling methodInfo. Invoke(.., new \[\] { 5, 6 }) . At run-time checks need to be carried out on the amount and types of the values passed in, in this case to ensure that there are 2 and that they are both int ’s. One down-side of all this work is that it often involves boxing which has an additional cost, but hopefully this will be minimised in the future .],
   [id="security-checks"\>Security Checks],
   [The other main task that is happening along the way is multiple security checks. For instance, it turns out that you aren’t allowed to use reflection to call just any method you feel like. There are some restricted or ‘Dangerous Methods’ , that can only be called by trusted . NET framework code. In addition to a black-list, there are also dynamic security checks depending on the current Code Access Security permissions that have to be checked during invocation .],
   [id="how-much-does-reflection-cost"\>How much does Reflection cost?],
@@ -951,7 +372,7 @@ Schedule 30 minutes to map one AI opportunity in your practice. Pick one area wh
  } 
  }],
   [and the following common code, that all the options can make use of:],
-  [class="highlight"\> \/\/ Setup code, done only once 
+  [class="highlight"\> \/\\/ Setup code, done only once 
  TestClass testClass = new TestClass ( "A String" ); 
  Type \@class = testClass . GetType (); 
  BindingFlag bindingFlags = BindingFlags . Instance | 
@@ -959,7 +380,7 @@ Schedule 30 minutes to map one AI opportunity in your practice. Pick one area wh
  BindingFlags . Public ;],
   [id="regular-reflection"\>Regular Reflection],
   [First we use regular benchmark code, that acts as out starting point and the ‘worst case’:],
-  [class="highlight"\> [ Benchmark ] 
+  [class="highlight"\> \[ Benchmark \] 
  public string GetViaReflection () 
  { 
  PropertyInfo property = \@class . GetProperty ( "Data" , bindingFlags ); 
@@ -967,17 +388,17 @@ Schedule 30 minutes to map one AI opportunity in your practice. Pick one area wh
  }],
   [id="option-1---cache-propertyinfo"\>Option 1 - Cache PropertyInfo],
   [Next up, we can gain a small speed boost by keeping a reference to the PropertyInfo , rather than fetching it each time. But we’re still much slower than accessing the property directly, which demonstrates that there is a considerable cost in the ‘invocation’ part of reflection.],
-  [[ Benchmark ] 
+  [\[ Benchmark \] 
  public string GetViaReflection () 
  { 
  return ( string ) cachedPropertyInfo . GetValue ( testClass , null ); 
  }],
   [id="option-2---use-fastmember"\>Option 2 - Use FastMember],
   [Here we make use of Marc Gravell’s excellent Fast Member library , which as you can see is very simple to use!],
-  [[ Benchmark ] 
+  [\[ Benchmark \] 
  public string GetViaFastMember () 
  { 
- return ( string ) accessor [ testClass , "Data" ]; 
+ return ( string ) accessor \[ testClass , "Data" \]; 
  }],
   [Note that it’s doing something slightly different to the other options. It creates a TypeAccessor that allows access to all the Properties on a type, not just one. But the downside is that, as a result, it takes longer to run. This is because internally it first has to get the delegate for the Property you requested (in this case ‘Data’), before fetching it’s value. However this overhead is pretty small, FastMember is still way faster than Reflection and it’s very easy to use, so I recommend you take a look at it first.],
   [This option and all subsequent ones convert the reflection code into a delegate that can be directly invoked without the overhead of reflection every time, hence the speed boost!],
@@ -985,13 +406,13 @@ Schedule 30 minutes to map one AI opportunity in your practice. Pick one area wh
   [The reason that reading a property via a delegate isn’t as fast as reading it directly is because the . NET JIT won’t inline a delegate method call like it will do with a Property access. So with a delegate we have to pay the cost of a method call, which direct access doesn’t.],
   [id="option-3---create-a-delegate"\>Option 3 - Create a Delegate],
   [In this option we use the CreateDelegate function to turn our PropertyInfo into a regular delegate :],
-  [class="highlight"\> \/\/ Setup code, done only once 
+  [class="highlight"\> \/\\/ Setup code, done only once 
  PropertyInfo property = \@class . GetProperty ( "Data" , bindingFlags ); 
  Func getDelegate = 
  ( Func ) Delegate . CreateDelegate ( 
  typeof ( Func ), 
  property . GetGetMethod ( nonPublic : true ));],
-  [[ Benchmark ] 
+  [\[ Benchmark \] 
  public string GetViaDelegate () 
  { 
  return getDelegate ( testClass ); 
@@ -1000,7 +421,7 @@ Schedule 30 minutes to map one AI opportunity in your practice. Pick one area wh
   [For a very interesting/mind-bending way to get round this, see the MagicMethodHelper code in the fantastic blog post from Jon Skeet ‘Making Reflection fly and exploring delegates’ or read on for Options 4 or 5 below.],
   [id="option-4---compiled-expression-trees"\>Option 4 - Compiled Expression Trees],
   [Here we generate a delegate , but the difference is that we can pass in an object , so we get round the limitation of ‘Option 3’. We make use of the . NET Expression tree API that allows dynamic code generation:],
-  [class="highlight"\> \/\/ Setup code, done only once 
+  [class="highlight"\> \/\\/ Setup code, done only once 
  PropertyInfo property = \@class . GetProperty ( "Data" , bindingFlags ); 
  ParameterExpression = Expression . Parameter ( typeof ( object ), "instance" ); 
  UnaryExpression instanceCast = 
@@ -1014,7 +435,7 @@ Schedule 30 minutes to map one AI opportunity in your practice. Pick one area wh
  typeof ( object )), 
  instance ) 
  . Compile ();],
-  [[ Benchmark ] 
+  [\[ Benchmark \] 
  public string GetViaCompiledExpressionTrees () 
  { 
  return ( string ) GetDelegate ( testClass ); 
@@ -1022,7 +443,7 @@ Schedule 30 minutes to map one AI opportunity in your practice. Pick one area wh
   [Full code for the Expression based approach is available in the blog post Faster Reflection using Expression Trees],
   [id="option-5---dynamic-code-gen-with-il-emit"\>Option 5 - Dynamic code-gen with IL Emit],
   [Finally we come to the lowest-level approach, emiting raw IL, although ‘ with great power, comes great responsibility ’:],
-  [class="highlight"\> \/\/ Setup code, done only once 
+  [class="highlight"\> \/\\/ Setup code, done only once 
  PropertyInfo property = \@class . GetProperty ( "Data" , bindingFlags ); 
  Sigil . Emit getterEmiter = Emit \> 
  . NewDynamicMethod ( "GetTestClassDataProperty" ) 
@@ -1031,7 +452,7 @@ Schedule 30 minutes to map one AI opportunity in your practice. Pick one area wh
  . Call ( property . GetGetMethod ( nonPublic : true )) 
  . Return (); 
  Func getter = getterEmiter . CreateDelegate ();],
-  [[ Benchmark ] 
+  [\[ Benchmark \] 
  public string GetViaILEmit () 
  { 
  return getter ( testClass ); 
@@ -1106,7 +527,7 @@ Schedule 30 minutes to map one AI opportunity in your practice. Pick one area wh
   [To do this you need to drop down into the debugger and use the excellent SOS or Son-of-Strike extension . This is because the . NET JITter is free to reorder fields as it sees fit, so the order you put the fields in your class does not determine the order they end up. The JITter changes the layout to minimise the space needed for the object and to make sure that fields are aligned on byte boundaries, it does this by packing them in the most efficient way.],
   [To test out the difference between the Histogram with a class-hierarchy and without, the following code was written (you can find HistogramAllInOneClass in this gist ):],
   [Debugger . Launch ();],
-  [GC . KeepAlive ( combinedHistogram ); \/\/ put a breakpoint on this line 
+  [GC . KeepAlive ( combinedHistogram ); \/\\/ put a breakpoint on this line 
  GC . KeepAlive ( testHistogram );],
   [Then to actually test it, you need to perform the following steps:],
   [Set the build to Release and x86],
@@ -1130,17 +551,17 @@ Schedule 30 minutes to map one AI opportunity in your practice. Pick one area wh
   [However when we put all the fields in a single class, we lose the grouping:],
   [align="center"\> Equivalent fields all in one class],
   [To achieve the same effect you can use the StructLayout attribute , but this requires that you calculate all the offsets yourself, which can be cumbersome:],
-  [class="highlight"\> [ StructLayout ( LayoutKind . Explicit , Size = 28 , CharSet = CharSet . Ansi )] 
+  [class="highlight"\> \[ StructLayout ( LayoutKind . Explicit , Size = 28 , CharSet = CharSet . Ansi )\] 
  public class HistogramAllInOneClass 
  { 
- \/\/ "Cold" accessed fields. Not used in the recording code path: 
- [ FieldOffset ( 0 )] 
+ \/\\/ "Cold" accessed fields. Not used in the recording code path: 
+ \[ FieldOffset ( 0 )\] 
  internal long identity ;],
-  [[ FieldOffset ( 8 )] 
+  [\[ FieldOffset ( 8 )\] 
  internal long highestTrackableValue ; 
- [ FieldOffset ( 16 )] 
+ \[ FieldOffset ( 16 )\] 
  internal long lowestTrackableValue ; 
- [ FieldOffset ( 24 )] 
+ \[ FieldOffset ( 24 )\] 
  internal int numberOfSignificantValueDigits ;],
   [... 
  }],
@@ -1148,6 +569,8 @@ Schedule 30 minutes to map one AI opportunity in your practice. Pick one area wh
   [CodeProject],
 ),
   insert-map: (:),
+  inline-pq: pull-quote([The opposite is also true, you can gain performance by ensuring that fields you know are accessed in succession are located together in memory.], [Matt Warren (.NET)]),
+  inline-pq-idx: 22,
   word-count: 1594,
   edited-for-length: false,
   debug-mode: false,
@@ -1157,59 +580,164 @@ Schedule 30 minutes to map one AI opportunity in your practice. Pick one area wh
 
 {
   #standard-article(
-  title: [Friend Bubbles: Enhancing Social Discovery on Facebook Reels],
-  author: [Facebook Engineering],
-  source-name: [Facebook Engineering],
+  title: [Research based on the .NET Runtime],
+  author: [Matt Warren (.NET)],
+  source-name: [Matt Warren (.NET)],
   images: (),
   paragraphs: (
-  [Friend bubbles in Facebook Reels highlight Reels your friends have liked or reacted to, helping you discover new content and making it easier to connect over shared interests.],
-  [This article explains the technical architecture behind friend bubbles, including how machine learning estimates relationship strength and ranks content your friends have interacted with to create more opportunities for meaningful engagement and connection.],
-  [Friend bubbles enhance the social experience on Facebook Reels by helping you discover content your friends enjoy, creating a shared viewing experience and sparking new conversations. With a quick tap on a bubble, you can start a one-on-one conversation with any friend who has engaged with that Reel.],
-  [This feature combines social and interest signals to recommend more relevant, personalized content while making it easier to start conversations with the people who matter most to you. When videos connect to both personal interests and friend-related interests, they create a feedback loop that improves recommendations and strengthens social connections.],
-  [An Overview of the Friend Bubbles System Architecture],
-  [The friend bubbles recommendation system includes several components that work together to surface relevant, friend-interacted content by blending video-quality signals with social-graph signals:],
-  [Viewer-Friend Closeness (Whose Interactions Matter Most): Identifies which friends’ interactions are most likely to interest the viewer.],
-  [Video Relevance (What Videos to Show): Ranks videos that are contextually relevant to the viewer.],
-  [Multiple friend interactions on the same video often signal stronger shared interest and higher relevance. Content surfaced through friend connections also tends to be high quality, creating a reinforcing loop: Social discovery increases engagement, and that engagement further strengthens the social graph.],
-  [Viewer-Friend Closeness: Identifying Friends With User-User Closeness Models],
-  [Friend bubbles rely on two complementary machine learning models to identify which connections a person feels closest to. One model is based on user survey feedback; the other is based on on-platform interactions.],
-  [The survey-based closeness model draws on a broad set of signals, including social-graph features (mutual friends, connection strength, interaction patterns) and user attributes (behavioral and demographic signals such as user-provided location, number of friends, and number of posts shared) to build a more complete picture of real-world relationships.],
-  [It is trained on a regular cadence using a lightweight binary survey in which a randomly selected group of Facebook users is asked whether they feel close to a specific connection in real life. The survey is structured as a close vs. not-close prediction problem, refreshed regularly to keep labels current, and includes questions that act as proxies for offline relationship strength (such as how often two people communicate). In production, the model runs weekly inference over trillions of person-to-person connections across Facebook friends.],
-  [While survey-based closeness provides a strong foundation, friend bubbles also use a context-specific closeness prediction model trained on on-platform activity signals, using real interactions that occur when bubbles are shown (for example, likes, comments and reshares). This enables the model to capture closeness in context — how likely a viewer is to value content recommended by someone in their friend graph based on how they interact with each other on the platform.],
-  [Our approach emphasizes connection quality over quantity. While bubble prevalence naturally rises with larger friend graphs, showing more bubble videos does not necessarily increase user engagement. The goal is to surface the right friend connections — those most likely to make the social context meaningful — using a combination of existing closeness signals and surface-specific features that better reflect the relationship dynamics behind friend-driven recommendations.],
-  [Video Relevance: Making the Ranking System Friend-Content Aware],
-  [We use two key strategies to ensure high-quality, friend-interacted content can move through the recommendation funnel and reach users: expanding the top of the funnel, and enabling models to rank friend-bubble content effectively through a continuous feedback loop.],
-  [Sourcing Inventory: Expanding the Top of Funnel],
-  [The retrieval stage sources candidate videos based on close friends, as identified by the closeness model described above. By explicitly retrieving friend-interacted content, we expand the top of the funnel to ensure sufficient candidate volume for downstream ranking stages. This is important because, without it, high-quality friend content may never enter the ranking pipeline in the first place.],
-  [Enabling Models to Rank Friend Content Effectively Through a Continuous Feedback Loop],
-  [A key insight from our development process was understanding why friend-interacted videos sometimes struggled to rank highly: It wasn’t because they were low quality, but because the model lacked user-user closeness context. Without that context, the model can’t learn what makes friend content uniquely valuable — namely, that its relevance is often driven by relationship strength and social meaning rather than the same signals that explain interest in more general content.],
-  [To address this gap, we integrated friend-bubble interaction signals as features and added new tasks into both early-stage and late-stage ranking multi-task, multi-label (MTML) models to incorporate viewer-friend relationship strength and to learn downstream engagement on videos with social bubbles. With these signals added across the ranking funnel, the models can better recognize the value of friend-interacted content, learn the relationship between closeness and viewer interest, and rank high-quality friend content higher when it is most relevant.],
-  [The system includes a continuous feedback loop in which friend-bubble interaction data flows back into model training. This loop helps the ranking system improve its understanding of which friend-content combinations resonate with users.],
-  [We augmented our existing video-ranking formula, which includes several optimization goals, with a friend-bubble ranking objective designed to maximize overall video engagement. We consider interaction metrics such as watch time, comments and likes, and use a conditional probability term, P(video engagement | bubble impression) , to predict the likelihood that a user will engage with a video after seeing a friend bubble.],
-  [This is balanced with tunable weights that manage trade-offs between social interaction and video engagement, allowing us to optimize for social connection (helping people discover videos their friends like) and content quality. This dual optimization captures the core value proposition of the friend-content ranking system: enabling effortless connection through passive friend discovery, delivering entertainment through relevant content, and strengthening relationships by turning shared videos into natural touchpoints for conversation.],
-  [Client Infra Behind the Scenes: Performance at Reels Scale],
-  [Reels is a performance-sensitive surface, so adding new per-video metadata isn’t as simple as adding another field. If it increases work during scrolling or delays playback, it can hurt the core user experience. When we integrated friend bubbles, we treated three constraints as nonnegotiable:],
-  [Smooth scrolling],
-  [No regressions in load latency],
-  [Low CPU overhead for metadata fetch and processing],
-  [Facebook’s video delivery system already performs significant prefetch work ahead of playback. It preloads metadata, thumbnails and buffered content before a video reaches the viewport. We pinned friend-bubble metadata retrieval to that same prefetch window, which gave us several benefits: We could reuse cached results for stable data, avoid redundant CPU work, and limit wasted network requests by using an already optimized fetch path.],
-  [Because the bubble data arrived alongside the video content, we could render bubbles at the same time as the video itself, eliminating mid-playback UI updates and redraws.],
-  [We also made animation strictly conditional. During active scrolling and interaction, animation is disabled to preserve scroll responsiveness. On low-end devices where even idle animation could compromise performance, we turn it off entirely. Along with additional optimizations in the underlying method, this approach enabled us to ship friend bubbles while preserving core Reels performance.],
-  [Why the Metadata Has to Earn Its Place],
-  [A cleaner user interface is usually better, and new metadata can backfire if it adds noise or slows the experience. Friend bubbles work because the signal is high value: It adds meaningful social context that helps people decide what’s worth watching.],
-  [By setting a conservative threshold for which friends are eligible to appear, we ensure bubbles show up only when the relationship signal, as determined by the user-user closeness model, is strong. That approach reduces clutter while improving the viewing experience overall, reflected in increased video watch time.],
-  [The Impact and Future of Friend Bubbles],
-  [Friend bubbles improve content relevance and engagement quality. In user feedback surveys, bubble-annotated videos consistently receive higher interest scores and more positive sentiment ratings than videos without bubbles.],
-  [Beyond relevance, bubbles improve app-session quality, not just quantity. Users who see bubbles spend more time actively watching and interacting with content, with growth concentrated in longer sessions rather than brief check-ins. The improvements come primarily from deeper video consumption. Bubble-related signals show a delayed effect on longer-term engagement patterns, suggesting repeated exposure to content friends have interacted with builds sustained interest over time.],
-  [By surfacing content friends have engaged with, bubbles also expose users to a broader range of topics and creators than they would otherwise encounter organically. Users don’t just passively scroll past this content — they actively engage through likes, comments, shares and follows, indicating friend-recommended content can resonate even when it falls outside their typical interests.],
-  [Not all friend signals are equal. Bubbles triggered by expressive reactions such as love or laughter drive stronger downstream engagement than simple likes, particularly for comments and private shares, suggesting expressive reactions signal stronger resonance. Engagement also scales consistently with the number of friend bubbles shown, meaning videos with multiple friend interactions tend to perform better.],
-  [Next, we’re scaling the system to increase impact and robustness by expanding friend-driven recommendations — while preserving quality — to additional surfaces and inventory, improving cold start for people with limited friend graphs, and refining ranking and feedback signals for better personalization.],
-  [Ultimately, this architecture illustrates how machine learning can strengthen human connection at scale, helping people discover shared interests and making it easier to start conversations with the people who matter most. When your friends enjoy something great, you can discover it, too — and you’re only a tap away from talking about it together.],
-  [For more information about Facebook Bubbles, visit the Meta Newsroom .],
-  [The post Friend Bubbles: Enhancing Social Discovery on Facebook Reels appeared first on Engineering at Meta .],
+  [Over the last few years, I’ve come across more and more research papers based, in some way, on the ‘Common Language Runtime’ (CLR).],
+  [Note: I put the papers into the following categories to make them easier to navigate (papers in each category are sorted by date, newest -\> oldest):],
+  [Using the . NET Runtime as a case-study],
+  [to prove its correctness , study how it works or analyse its behaviour],
+  [“ It was formed in 1991, with the intent to advance state-of-the-art computing and solve difficult world problems through technological innovation in collaboration with academic, government, and industry researchers ” ( according to Wikipedia )],
+  [Papers based on the Mono Runtime],
+  [a ‘ Cross-Platform, open-source . NET framework ’],
+  [Using ‘Rotor’ , real name ‘Shared Source CLI (SSCLI)’],
+  [from Wikipedia “ Microsoft provides the Shared Source CLI as a reference CLI implementation suitable for educational use ”],
+  [Any papers I’ve missed? If so, please let me know in the comments or on Twitter],
+  [. NET Runtime as a Case-Study],
+  [Pitfalls of C\# Generics and Their Solution Using Concepts (Belyakova & Mikhalkovich, 2015)],
+  [Efficient Compilation of . NET Programs for Embedded Systems (Sallenaveab & Ducournaub, 2011)],
+  [Type safety of C\# and . Net CLR (Fruja, 2007)],
+  [Modeling the . NET CLR Exception Handling Mechanism for a Mathematical Analysis (Fruja & Börger, 2006)],
+  [Analysis of the . NET CLR Exception Handling Mechanism (Fruja & Börger, 2005)],
+  [A Modular Design for the Common Language Runtime (CLR) Architecture (Fruja, 2005)],
+  [Cross-language Program Slicing in the . NET Framework (Pócza, Biczó & Porkoláb, 2005)],
+  [Design and Implementation of a high-level multi-language . NET Debugger (Strein, 2005)],
+  [A High-Level Modular Definition of the Semantics of C\# (Börger, Fruja, Gervasi & Stärk, 2004)],
+  [An ASM Specification of C\# Threads and the . NET Memory Model (Stärk and Börger, 2004)],
+  [Common Language Runtime : a new virtual machine (Ferreira, 2004)],
+  [JVM versus CLR: a comparative study (Singer, 2003)],
+  [Runtime Code Generation with JVM And CLR (Sestoft, 2002)],
+  [Project Snowflake: Non-blocking safe manual memory management in . NET (Parkinson, Vaswani, Costa, Deligiannis, Blankstein, McDermott, Balkind & Vytiniotis, 2017)],
+  [Simple, Fast and Safe Manual Memory Management (Kedia, Costa, Vytiniotis, Parkinson, Vaswani & Blankstein, 2017)],
+  [Uniqueness and Reference Immutability for Safe Parallelism (Gordon, Parkinson, Parsons, Bromfield & Duffy, 2012)],
+  [A study of concurrent real-time garbage collectors (Pizlo, Petrank & Steensgaard, 2008)],
+  [Optimizing concurrency levels in the. net threadpool: A case study of controller design and implementation (Hellerstein, Morrison & Eilebrecht, 2008)],
+  [Stopless: a real-time garbage collector for multiprocessors. (Pizlo, Frampton, Petrank & Steensgaard, 2007)],
+  [Securing the . NET Programming Model (Kennedy, 2006)],
+  [Combining Generics, Pre-compilation and Sharing Between Software-Based Processes (Syme & Kennedy, 2004)],
+  [Formalization of Generics for the . NET Common Language Runtime (Yu, Kennedy & Syme, 2004)],
+  [Runtime Verification of . NET Contracts (Barnett & Schulte, 2003)],
+  [Design and Implementation of Generics for the . NET Common Language Runtime (Kennedy & Syme, 2001)],
+  [Typing a Multi-Language Intermediate Code (Gordon & Syme, 2001)],
+  [Static and Dynamic Analysis of Android Malware and Goodware Written with Unity Framework (Shim, Lim, Cho, Han & Park, 2018)],
+  [Reducing startup time of a deterministic virtualizing runtime environment (Däumler & Werner, 2013)],
+  [Detecting Clones Across Microsoft . NET Programming Languages (Al-Omari, Keivanloo, Roy & Rilling, 2012)],
+  [Language-independent sandboxing of just-in-time compilation and self-modifying code (Ansel & Marchenko, 2012)],
+  [VMKit: a Substrate for Managed Runtime Environments (Geoffray, Thomas, Lawall, Muller & Folliot, 2010)],
+  [MMC: the Mono Model Checker (Ruys & Aan de Brugh, 2007)],
+  [Numeric performance in C, C\# and Java (Sestoft, 2007)],
+  [\[ Mono versus . Net: A Comparative Study of Performance for Distributed Processing. (Blajian, Eggen, Eggen & Pitts, 2006)\]()],
+  [Mono versus . Net: A Comparative Study of Performance for Distributed Processing. (Blajian, Eggen, Eggen & Pitts, 2006)],
+  [Automated detection of performance regressions: the mono experience (Kalibera, Bulej & Tuma, 2005)],
+  [Shared Source Common Language Infrastructure (SSCLI) - a.k.a ‘ Rotor ’],
+  [Efficient virtual machine support of runtime structural reflection (Ortina, Redondoa & Perez-Schofield, 2009)],
+  [Extending the SSCLI to Support Dynamic Inheritance (Redondo, Ortin & Perez-Schofield, 2008)],
+  [Sampling profiler for Rotor as part of optimizing compilation system (Chilingarova & Safonov, 2006)],
+  [To JIT or not to JIT: The effect of code-pitching on the performance of . NET framework (Anthony, Leung & Srisa-an, 2005)],
+  [Adding structural reflection to the SSCLI (Ortin, Redondo, Vinuesa & Lovelle, 2005)],
+  [Static Analysis for Identifying and Allocating Clusters of Immortal Objects (Ravindar & Srikant, 2005)],
+  [An Optimizing Just-InTime Compiler for Rotor (Trindade & Silva, 2005)],
+  [Software Interactions into the SSCLI platform (Charfi & Emsellem, 2004)],
+  [Experience Integrating a New Compiler and a New Garbage Collector Into Rotor (Anderson, Eng, Glew, Lewis, Menon & Stichnoth, 2004)],
+  [id="net-runtime-as-a-case-study"\> . NET Runtime as a Case-Study],
+  [id="pitfalls-of-c-generics-and-their-solution-using-concepts-belyakova--mikhalkovich-2015"\> Pitfalls of C\# Generics and Their Solution Using Concepts (Belyakova & Mikhalkovich, 2015)],
+  [In comparison with Haskell type classes and C ++ concepts, such object-oriented languages as C\# and Java provide much limited mechanisms of generic programming based on F-bounded polymorphism. Main pitfalls of C\# generics are considered in this paper. Extending C\# language with concepts which can be simultaneously used with interfaces is proposed to solve the problems of generics; a design and translation of concepts are outlined.],
+  [id="efficient-compilation-of-net-programs-for-embedded-systems-sallenaveab--ducournaub-2011"\> Efficient Compilation of . NET Programs for Embedded Systems (Sallenaveab & Ducournaub, 2011)],
+  [Compiling under the closed-world assumption (CWA) has been shown to be an appropriate way for implementing object-oriented languages such as Java on low-end embedded systems. In this paper, we explore the implications of using whole program optimizations such as Rapid Type Analysis (RTA) and coloring on programs targeting the . NET infrastructure. We extended RTA so that it takes into account . NET specific features such as (i) array covariance, a language feature also supported in Java, (ii) generics, whose specifications in . Net impacts type analysis and (iii) delegates, which encapsulate methods within objects. We also use an intraprocedural control flow analysis in addition to RTA . We eval-uated the optimizations that we implemented on programs written in C\#. Preliminary results show a noticeable reduction of the code size, class hierarchy and polymorphism of the programs we optimize. Array covariance is safe in almost all cases, and some delegate calls can be implemented as direct calls.],
+  [id="type-safety-of-c-and-net-clr-fruja-2007"\> Type safety of C\# and . Net CLR (Fruja, 2007)],
+  [Type safety plays a crucial role in the security enforcement of any typed programming language. This thesis presents a formal proof of C\#’s type safety. For this purpose, we develop an abstract
+framework for C\#, comprising formal specifications of the language’s grammar, of the statically correct programs, and of the static and operational semantics. Using this framework, we prove that C\# is type-safe, by showing that the execution of statically correct C\# programs does not lead to type errors.],
+  [id="modeling-the-net-clr-exception-handling-mechanism-for-a-mathematical-analysis-fruja--börger-2006"\> Modeling the . NET CLR Exception Handling Mechanism for a Mathematical Analysis (Fruja & Börger, 2006)],
+  [This work is part of a larger project which aims at establishing some important properties of C\# and CLR by mathematical proofs. Examples are the correctness of the bytecode verifier of CLR, the type safety (along the lines of the first author’s correctness proof for the definite assignment rules) of C\#, the correctness of a general compilation scheme.],
+  [id="analysis-of-the-net-clr-exception-handling-mechanism-fruja--börger-2005"\> Analysis of the . NET CLR Exception Handling Mechanism (Fruja & Börger, 2005)],
+  [We provide a complete mathematical model for the exception handling mechanism of the Common Language Runtime (CLR), the virtual machine underlying the interpretation of . NET programs. The goal is to use this rigorous model in the corresponding part of the still-to-be-developed soundness proof for the CLR bytecode verifier.],
+  [id="a-modular-design-for-the-common-language-runtime-clr-architecture-fruja-2005"\> A Modular Design for the Common Language Runtime (CLR) Architecture (Fruja, 2005)],
+  [This paper provides a modular high-level design of the Common Language Runtime (CLR) architecture. Our design is given in terms of Abstract State Machines (ASMs) and takes the form of an interpreter. We describe the CLR as a hierarchy of eight submachines, which correspond to eight submodules into which the Common Intermediate Language (CIL) instruction set can be decomposed.],
+  [id="cross-language-program-slicing-in-the-net-framework-pócza-biczó--porkoláb-2005"\> Cross-language Program Slicing in the . NET Framework (Pócza, Biczó & Porkoláb, 2005)],
+  [Dynamic program slicing methods are very attractive for debugging because many statements can be ignored in the process of localizing a bug. Although language interoperability is a key concept in modern development platforms, current slicing techniques are still restricted to a single language. In this paper a cross-language dynamic program slicing technique is introduced for the . NET environment. The method is utilizing the CLR Debugging Services API, hence it can be applied to large multi-language applications.],
+  [id="design-and-implementation-of-a-high-level-multi-language--net-debugger-strein-2005"\> Design and Implementation of a high-level multi-language . NET Debugger (Strein, 2005)],
+  [The Microsoft . NET Common Language Runtime (CLR) provides a low-level debugging application programmers interface (API), which can be used to implement traditional source code debuggers but can also be useful to implement other dynamic program introspection tools. This paper describes our experience in using this API for the implementation of a high-level debugger. The API is difficult to use from a technical point of view because it is implemented as a set of Component Object Model (COM) interfaces instead of a managed . NET API. Nevertheless, it is possible to implement a debugger in managed C\# code using COM-interop. We describe our experience in taking this approach. We define a high-level debugging API and implement it in the C\# language using COM-interop to access the low-level debugging API. Furthermore, we describe the integration of this high-level API in the multi-language development environment X-develop to enable source code debugging of . NET languages. This paper can be useful for anybody who wants to take the same approach to implement debuggers or other tools for dynamic program introspection.],
+  [id="a-high-level-modular-definition-of-the-semantics-of-c-börger-fruja-gervasi--stärk-2004"\> A High-Level Modular Definition of the Semantics of C\# (Börger, Fruja, Gervasi & Stärk, 2004)],
+  [We propose a structured mathematical definition of the semantics of programs to provide a platform-independent interpreter view of the language for the programmer, which can also be used for a precise analysis of the ECMA standard of the language and as a reference model for teaching. The definition takes care to reflect directly and faithfully—as much as possible without becoming inconsistent or incomplete—the descriptions in the standard to become comparable with the corresponding models for Java in Stärk et al. (Java and Java Virtual Machine—Definition, Verification, Validation, Springer, Berlin, 2001) and to provide for implementors the possibility to check their basic design decisions against an accurate high-level model. The model sheds light on some of the dark corners of and on some critical differences between the ECMA standard and the implementations of the language.],
+  [id="an-asm-specification-of-c-threads-and-the-net-memory-model-stärk-and-börger-2004"\> An ASM Specification of C\# Threads and the . NET Memory Model (Stärk and Börger, 2004)],
+  [We present a high-level ASM model of C\# threads and the . NET memory model. We focus on purely managed, fully portable threading features of C\#. The sequential model interleaves the computation steps of the currently running threads and is suitable for uniprocessors. The parallel model addresses problems of true concurrency on multiprocessor systems. The models provide a sound basis for the development of multi-threaded applications in C\#. The thread and memory models complete the abstract operational semantics of C\# in.],
+  [id="common-language-runtime--a-new-virtual-machine-ferreira-2004"\> Common Language Runtime : a new virtual machine (Ferreira, 2004)],
+  [Virtual Machines provide a runtime execution platform combining bytecode portability with a performance close to native code. An overview of current approaches precedes an insight into Microsoft CLR (Common Language Runtime), comparing it to Sun JVM (Java Virtual Machine) and to a native execution environment (IA 32). A reference is also made to CLR in a Unix platform and to techniques on how CLR improves code execution.],
+  [id="jvm-versus-clr-a-comparative-study-singer-2003"\> JVM versus CLR: a comparative study (Singer, 2003)],
+  [We present empirical evidence to demonstrate that there is little or no difference between the Java Virtual Machine and the . NET Common Language Runtime, as regards the compilation and execution of object-oriented programs. Then we give details of a case study that proves the superiority of the Common Language Runtime as a target for imperative programming language compilers (in particular GCC).],
+  [id="runtime-code-generation-with-jvm-and-clr-sestoft-2002"\> Runtime Code Generation with JVM And CLR (Sestoft, 2002)],
+  [Modern bytecode execution environments with optimizing just-in-time compilers, such as Sun’s Hotspot Java Virtual Machine, IBM’s Java Virtual Machine, and Microsoft’s Common Language Runtime, provide an infrastructure for generating fast code at runtime. Such runtime code generation can be used for efficient implementation of parametrized algorithms. More generally, with runtime code generation one can introduce an additional binding-time without performance loss. This permits improved performance and improved static correctness guarantees.],
+  [id="microsoft-research"\> Microsoft Research],
+  [id="project-snowflake-non-blocking-safe-manual-memory-management-in-net-parkinson--vaswani-costa-deligiannis-blankstein-mcdermott-balkind--vytiniotis-2017"\> Project Snowflake: Non-blocking safe manual memory management in . NET (Parkinson, Vaswani, Costa, Deligiannis, Blankstein, McDermott, Balkind & Vytiniotis, 2017)],
+  [Garbage collection greatly improves programmer productivity and ensures memory safety. Manual memory management on the other hand often delivers better performance but is typically unsafe and can lead to system crashes or security vulnerabilities. We propose integrating safe manual memory management with garbage collection in the . NET runtime to get the best of both worlds. In our design, programmers can choose between allocating objects in the garbage collected heap or the manual heap. All existing applications run unmodified, and without any performance degradation, using the garbage collected heap. Our programming model for manual memory management is flexible: although objects in the manual heap can have a single owning pointer, we allow deallocation at any program point and concurrent sharing of these objects amongst all the threads in the program. Experimental results from our . NET CoreCLR implementation on real-world applications show substantial performance gains especially in multithreaded scenarios: up to 3x savings in peak working sets and 2x improvements in runtime.],
+  [id="simple-fast-and-safe-manual-memory-management-kedia-costa-vytiniotis-parkinson-vaswani--blankstein-2017"\> Simple, Fast and Safe Manual Memory Management (Kedia, Costa, Vytiniotis, Parkinson, Vaswani & Blankstein, 2017)],
+  [Safe programming languages are readily available, but many applications continue to be written in unsafe languages, because the latter are more efficient. As a consequence, many applications continue to have exploitable memory safety bugs. Since garbage collection is a major source of inefficiency in the implementation of safe languages, replacing it with safe manual memory management would be an important step towards solving this problem.],
+  [Previous approaches to safe manual memory management use programming models based on regions, unique pointers, borrowing of references, and ownership types. We propose a much simpler programming model that does not require any of these concepts. Starting from the design of an imperative type safe language (like Java or C\#), we just add a delete operator to free memory explicitly and an exception which is thrown if the program dereferences a pointer to freed memory. We propose an efficient implementation of this programming model that guarantees type safety. Experimental results from our implementation based on the C\# native compiler show that this design achieves up to 3x reduction in peak working set and run time.],
+  [id="uniqueness-and-reference-immutability-for-safe-parallelism-gordon--parkinson-parsons-bromfield--duffy-2012"\> Uniqueness and Reference Immutability for Safe Parallelism (Gordon, Parkinson, Parsons, Bromfield & Duffy, 2012)],
+  [A key challenge for concurrent programming is that side-effects (memory operations) in one thread can affect the behavior of another thread. In this paper, we present a type system to restrict the updates to memory to prevent these unintended side-effects. We provide a novel combination of immutable and unique (isolated) types that ensures safe parallelism (race freedom and deterministic execution). The type system includes support for polymorphism over type qualifiers, and can easily create cycles of immutable objects. Key to the system’s flexibility is the ability to recover immutable or externally unique references after violating uniqueness without any explicit alias tracking. Our type system models a prototype extension to C\# that is in active use by a Microsoft team. We describe their experiences building large systems with this extension. We prove the soundness of the type system by an embedding into a program logic.],
+  [id="a-study-of-concurrent-real-time-garbage-collectors-pizlo-petrank--steensgaard-2008"\> A study of concurrent real-time garbage collectors (Pizlo, Petrank & Steensgaard, 2008)],
+  [Concurrent garbage collection is highly attractive for real-time systems, because offloading the collection effort from the executing threads allows faster response, allowing for extremely short deadlines at the microseconds level. Concurrent collectors also offer much better scalability over incremental collectors. The main problem with concurrent real-time collectors is their complexity. The first concurrent real-time garbage collector that can support fine synchronization, STOPLESS, has recently been presented by Pizlo et al. In this paper, we propose two additional (and different) algorithms for concurrent real-time garbage collection: CLOVER and CHICKEN. Both collectors obtain reduced complexity over the first collector STOPLESS, but need to trade a benefit for it. We study the algorithmic strengths and weaknesses of CLOVER and CHICKEN and compare them to STOPLESS. Finally, we have implemented all three collectors on the Bartok compiler and runtime for C\# and we present measurements to compare their efficiency and responsiveness.],
+  [id="optimizing-concurrency-levels-in-the-net-threadpool-a-case-study-of-controller-design-and-implementation-hellerstein-morrison--eilebrecht-2008"\> Optimizing concurrency levels in the. net threadpool: A case study of controller design and implementation (Hellerstein, Morrison & Eilebrecht, 2008)],
+  [This paper presents a case study of developing a hill climb-ing concurrency controller (HC 3) for the . NET ThreadPool. The intent of the case study is to provide insight into soft-ware considerations for controller design, testing, and imple-mentation. The case study is structured as a series of issues encountered and approaches taken to their resolution. Ex-amples of issues and approaches include: (a) addressing the need to combine a hill climbing control law with rule-based techniques by the use of hybrid control; (b) increasing the ef-ficiency and reducing the variability of the test environment by using resource emulation; and (c) effectively assessing design choices by using test scenarios for which the optimal concurrency level can be computed analytically and hence desired test results are known a priori. We believe that these issues and approaches have broad application to controllers for resource management of software systems.],
+  [id="stopless-a-real-time-garbage-collector-for-multiprocessors-pizlo-frampton-petrank--steensgaard-2007"\> Stopless: a real-time garbage collector for multiprocessors. (Pizlo, Frampton, Petrank & Steensgaard, 2007)],
+  [We present STOPLESS: a concurrent real-time garbage collector suitable for modern multiprocessors running parallel multithreaded applications. Creating a garbage-collected environment that sup- ports real-time on modern platforms is notoriously hard, especially if real-time implies lock-freedom. Known real-time collectors ei- ther restrict the real-time guarantees to uniprocessors only, rely on special hardware, or just give up supporting atomic operations (which are crucial for lock-free software). STOPLESS is the first collector that provides real-time responsiveness while preserving lock-freedom, supporting atomic operations, controlling fragmen- tation by compaction, and supporting modern parallel platforms. STOPLESS is adequate for modern languages such as C\# or Java. It was implemented on top of the Bartok compiler and runtime for C\# and measurements demonstrate high responsiveness (a factor of a 100 better than previously published systems), virtually no pause times, good mutator utilization, and acceptable overheads.],
+  [id="securing-the-net-programming-model-kennedy-2006"\> Securing the . NET Programming Model (Kennedy, 2006)],
+  [The security of the . NET programming model is studied from the standpoint of fully abstract compilation of C\#. A number of failures of full abstraction are identified, and fixes described. The most serious problems have recently been fixed for version 2.0 of the . NET Common Language Runtime.],
+  [id="combining-generics-pre-compilation-and-sharing-between-software-based-processes-syme--kennedy-2004"\> Combining Generics, Pre-compilation and Sharing Between Software-Based Processes (Syme & Kennedy, 2004)],
+  [We describe problems that have arisen when combining the proposed design for generics for the Microsoft . NET Common Language Runtime (CLR) with two resource-related features supported by the Microsoft CLR implementation: application domains and pre-compilation. Application domains are “software based processes” and the interaction between application domains and generics stems from the fact that code and descriptors are generated on a pergeneric-instantiation basis, and thus instantiations consume resources which are preferably both shareable and recoverable. Pre-compilation runs at install-time to reduce startup overheads. This interacts with application domain unloading: compilation units may contain shareable generated instantiations. The paper describes these interactions and the diﬀerent approaches that can be used to avoid or ameliorate the problems.],
+  [id="formalization-of-generics-for-the-net-common-language-runtime-yu-kennedy--syme-2004"\> Formalization of Generics for the . NET Common Language Runtime (Yu, Kennedy & Syme, 2004)],
+  [We present a formalization of the implementation of generics in the . NET Common Language Runtime (CLR), focusing on two novel aspects of the implementation: mixed specialization and sharing, and efficient support for run-time types. Some crucial constructs used in the implementation are dictionaries and run-time type representations. We formalize these aspects type-theoretically in a way that corresponds in spirit to the implementation techniques used in practice. Both the techniques and the formalization also help us understand the range of possible implementation techniques for other languages, e.g., ML, especially when additional source language constructs such as run-time types are supported. A useful by-product of this study is a type system for a subset of the polymorphic IL proposed for the . NET CLR.],
+  [id="runtime-verification-of-net-contracts-barnett--schulte-2003"\> Runtime Verification of . NET Contracts (Barnett & Schulte, 2003)],
+  [We propose a method for implementing behavioral interface specifications on the . NET platform. Our interface specifications are expressed as executable model programs. Model programs can be run either as stand-alone simulations or used as contracts to check the conformance of an implementation class to its specification. We focus on the latter, which we call runtime verification. In our framework, model programs are expressed in the new specification language AsmL. We describe how AsmL can be used to describe contracts independently from any implementation language, how AsmL allows properties of component interaction to be specified using mandatory calls, and how AsmL is used to check the behavior of a component written in any of the . NET languages, such as VB, C\#, or C++.],
+  [id="design-and-implementation-of-generics-for-the-net-common-language-runtime-kennedy--syme-2001"\> Design and Implementation of Generics for the . NET Common Language Runtime (Kennedy & Syme, 2001)],
+  [The Microsoft . NET Common Language Runtime provides a shared type system, intermediate language and dynamic execution environment for the implementation and inter-operation of multiple source languages. In this paper we extend it with direct support for parametric polymorphism (also known as generics), describing the design through examples written in an extended version of the C\# programming language, and explaining aspects of implementation by reference to a prototype extension to the runtime. Our design is very expressive, supporting parameterized types, polymorphic static, instance and virtual methods, “F-bounded” type parameters, instantiation at pointer and value types, polymorphic recursion, and exact run-time types. The implementation takes advantage of the dynamic nature of the runtime, performing justin-time type specialization, representation-based code sharing and novel techniques for efﬁcient creation and use of run-time types. Early performance results are encouraging and suggest that programmers will not need to pay an overhead for using generics, achieving performance almost matching hand-specialized code.],
+  [id="typing-a-multi-language-intermediate-code-gordon--syme-2001"\> Typing a Multi-Language Intermediate Code (Gordon & Syme, 2001)],
+  [The Microsoft . NET Framework is a new computing architecture designed to support a variety of distributed applications and web-based services. . NET software components are typically distributed in an object-oriented intermediate language, Microsoft IL, executed by the Microsoft Common Language Runtime. To allow convenient multi-language working, IL supports a wide variety of high-level language constructs, including class-based objects, inheritance, garbage collection, and a security mechanism based on type safe execution. This paper precisely describes the type system for a substantial fragment of IL that includes several novel features: certain objects may be allocated either on the heap or on the stack; those on the stack may be boxed onto the heap, and those on the heap may be unboxed onto the stack; methods may receive arguments and return results via typed pointers, which can reference both the stack and the heap, including the interiors of objects on the heap. We present a formal semantics for the fragment. Our typing rules determine well-typed IL instruction sequences that can be assembled and executed. Of particular interest are rules to ensure no pointer into the stack outlives its target. Our main theorem asserts type safety, that well-typed programs in our IL fragment do not lead to untrapped execution errors. Our main theorem does not directly apply to the product. Still, the formal system of this paper is an abstraction of informal and executable specifications we wrote for the full product during its development. Our informal specification became the basis of the product team’s working specification of type-checking. The process of writing this specification, deploying the executable specification as a test oracle, and applying theorem proving techniques, helped us identify several security critical bugs during development.],
+  [id="mono-runtime"\> Mono Runtime],
+  [id="static-and-dynamic-analysis-of-android-malware-and-goodware-written-with-unity-framework-shim-lim-cho-han--park-2018"\> Static and Dynamic Analysis of Android Malware and Goodware Written with Unity Framework (Shim, Lim, Cho, Han & Park, 2018)],
+  [Unity is the most popular cross-platform development framework to develop games for multiple platforms such as Android, iOS, and Windows Mobile. While Unity developers can easily develop mobile apps for multiple platforms, adversaries can also easily build malicious apps based on the “write once, run anywhere” (WORA) feature. Even thoughmalicious apps were discovered among Android apps written with Unity framework (Unity apps), little research has been done on analysing the malicious apps. We propose static and dynamic reverse engineering techniques for malicious Unity apps. We first inspect the executable file format of a Unity app and present an effective static analysis technique of the Unity app. Then, we also propose a systematic technique to analyse dynamically the Unity app. Using the proposed techniques, the malware analyst can statically and dynamically analyse Java code, native code in C or C ++, and the Mono runtime layer where the C\# code is running.],
+  [id="reducing-startup-time-of-a-deterministic-virtualizing-runtime-environment-däumler--werner-2013"\> Reducing startup time of a deterministic virtualizing runtime environment (Däumler & Werner, 2013)],
+  [Virtualized runtime environments like Java Virtual Machine (JVM) or Microsoft . NET’s Common Language Runtime (CLR) introduce additional challenges to real-time software development. Since applications for such environments are usually deployed in platform independent intermediate code, one issue is the timing of code transformation from intermediate code into native code. We have developed a solution for this problem, so that code transformation is suitable for real-time systems. It combines pre-compilation of intermediate code with the elimination of indirect references in native code. The gain of determinism comes with an increased application startup time. In this paper we present an optimization that utilizes an Ahead-of-Time compiler to reduce the startup time while keeping the real-time suitable timing behaviour. In an experiment we compare our approach with existing ones and demonstrate its benefits for certain application cases.],
+  [id="detecting-clones-across-microsoft-net-programming-languages-al-omari--keivanloo-roy--rilling-2012"\> Detecting Clones Across Microsoft . NET Programming Languages (Al-Omari, Keivanloo, Roy & Rilling, 2012)],
+  [The Microsoft . NET framework and its language family focus on multi-language development to support interoperability across several programming languages. The framework allows for the development of similar applications in different languages through the reuse of core libraries. As a result of such a multi-language development, the identification and trace ability of similar code fragments (clones) becomes a key challenge. In this paper, we present a clone detection approach for the . NET language family. The approach is based on the Common Intermediate Language, which is generated by the . NET compiler for the different languages within the . NET framework. In order to achieve an acceptable recall while maintaining the precision of our detection approach, we define a set of filtering processes to reduce noise in the raw data. We show that these filters are essential for Intermediate Language-based clone detection, without significantly affecting the precision of the detection approach. Finally, we study the quantitative and qualitative performance aspects of our clone detection approach. We evaluate the number of reported candidate clone-pairs, as well as the precision and recall (using manual validation) for several open source cross-language systems, to show the effectiveness of our proposed approach.],
+  [id="language-independent-sandboxing-of-just-in-time-compilation-and-self-modifying-code-ansel--marchenko-2012"\> Language-independent sandboxing of just-in-time compilation and self-modifying code (Ansel & Marchenko, 2012)],
+  [When dealing with dynamic, untrusted content, such as on the Web, software behavior must be sandboxed, typically through use of a language like JavaScript. However, even for such specially-designed languages, it is difficult to ensure the safety of highly-optimized, dynamic language runtimes which, for efficiency, rely on advanced techniques such as Just-In-Time (JIT) compilation, large libraries of native-code support routines, and intricate mechanisms for multi-threading and garbage collection. Each new runtime provides a new potential attack surface and this security risk raises a barrier to the adoption of new languages for creating untrusted content. Removing this limitation, this paper introduces general mechanisms for safely and efficiently sandboxing software, such as dynamic language runtimes, that make use of advanced, low-level techniques like runtime code modification. Our language-independent sandboxing builds on Software-based Fault Isolation (SFI), a traditionally static technique. We provide a more flexible form of SFI by adding new constraints and mechanisms that allow safety to be guaranteed despite runtime code modifications. We have added our extensions to both the x86-32 and x86-64 variants of a production-quality, SFI-based sandboxing platform; on those two architectures SFI mechanisms face different challenges. We have also ported two representative language platforms to our extended sandbox: the Mono common language runtime and the V8 JavaScript engine. In detailed evaluations, we find that sandboxing slowdown varies between different benchmarks, languages, and hardware platforms. Overheads are generally moderate and they are close to zero for some important benchmark/platform combinations.],
+  [id="vmkit-a-substrate-for-managed-runtime-environments-geoffray-thomas-lawall-muller--folliot-2010"\> VMKit: a Substrate for Managed Runtime Environments (Geoffray, Thomas, Lawall, Muller & Folliot, 2010)],
+  [Managed Runtime Environments (MREs), such as the JVM and the CLI, form an attractive environment for program execution, by providing portability and safety, via the use of a bytecode language and automatic memory management, as well as good performance, via just-in-time (JIT) compilation. Nevertheless, developing a fully featured MRE, including e.g. a garbage collector and JIT compiler, is a herculean task. As a result, new languages cannot easily take advantage of the benefits of MREs, and it is difficult to experiment with extensions of existing MRE based languages. This paper describes and evaluates VMKit, a first attempt to build a common substrate that eases the development of high-level MREs. We have successfully used VMKit to build two MREs: a Java Virtual Machine and a Common Language Runtime. We provide an extensive study of the lessons learned in developing this infrastructure, and assess the ease of implementing new MREs or MRE extensions and the resulting performance. In particular, it took one of the authors only one month to develop a Common Language Runtime using VMKit. VMKit furthermore has performance comparableto the well established open source MREs Cacao, Apache Harmony and Mono, and is 1.2 to 3 times slower than JikesRVM on most of the Dacapo benchmarks.],
+  [id="mmc-the-mono-model-checker-ruys--aan-de-brugh-2007"\> MMC: the Mono Model Checker (Ruys & Aan de Brugh, 2007)],
+  [The Mono Model Checker (mmc) is a software model checker for cil bytecode programs. mmc has been developed on the Mono platform. mmc is able to detect deadlocks and assertion violations in cil programs. The design of mmc is inspired by the Java PathFinder (jpf), a model checker for Java programs. The performance of mmc is comparable to jpf. This paper introduces mmc and presents its main architectural characteristics.],
+  [id="numeric-performance-in-c-c-and-java-sestoft-2007"\> Numeric performance in C, C\# and Java (Sestoft, 2007)],
+  [We compare the numeric performance of C, C\# and Java on three small cases.],
+  [id="mono-versus-net-a-comparative-study-of-performance-for-distributed-processing-blajian-eggen-eggen--pitts-2006"\> Mono versus . Net: A Comparative Study of Performance for Distributed Processing. (Blajian, Eggen, Eggen & Pitts, 2006)],
+  [Microsoft has released . NET, a platform dependent standard for the C\#,programming language. Sponsored by Ximian/Novell, Mono, the open source development platform based on the . NET framework, has been developed to be a platform independent version of the C\#,programming environment. While . NET is platform dependent, Mono allows developers to build Linux and crossplatform applications. Mono’s . NET implementation is based on the ECMA standards for C\#. This paper examines both of these programming environments with the goal of evaluating the performance characteristics of each. Testing is done with various algorithms. We also assess the trade-offs associated with using a cross-platform versus a platform.],
+  [id="automated-detection-of-performance-regressions-the-mono-experience-kalibera-bulej--tuma-2005"\> Automated detection of performance regressions: the mono experience (Kalibera, Bulej & Tuma, 2005)],
+  [Engineering a large software project involves tracking the impact of development and maintenance changes on the software performance. An approach for tracking the impact is regression benchmarking, which involves automated benchmarking and evaluation of performance at regular intervals. Regression benchmarking must tackle the nondeterminism inherent to contemporary computer systems and execution environments and the impact of the nondeterminism on the results. On the example of a fully automated regression benchmarking environment for the mono open-source project, we show how the problems associated with nondeterminism can be tackled using statistical methods.],
+  [id="shared-source-common-language-infrastructure-sscli---aka-rotor"\> Shared Source Common Language Infrastructure (SSCLI) - a.k.a ‘ Rotor ’],
+  [id="efficient-virtual-machine-support-of-runtime-structural-reflection-ortina-redondoa--perez-schofield-2009"\> Efficient virtual machine support of runtime structural reflection (Ortina, Redondoa & Perez-Schofield, 2009)],
+  [Increasing trends towards adaptive, distributed, generative and pervasive software have made object-oriented dynamically typed languages become increasingly popular. These languages offer dynamic software evolution by means of reflection, facilitating the development of dynamic systems. Unfortunately, this dynamism commonly imposes a runtime performance penalty. In this paper, we describe how to extend a production JIT-compiler virtual machine to support runtime object-oriented structural reflection offered by many dynamic languages. Our approach improves runtime performance of dynamic languages running on statically typed virtual machines. At the same time, existing statically typed languages are still supported by the virtual machine.],
+  [We have extended the . Net platform with runtime structural reflection adding prototype-based object-oriented semantics to the statically typed class-based model of . Net, supporting both kinds of programming languages. The assessment of runtime performance and memory consumption has revealed that a direct support of structural reflection in a production JIT-based virtual machine designed for statically typed languages provides a significant performance improvement for dynamically typed languages.],
+  [id="extending-the-sscli-to-support-dynamic-inheritance-redondo-ortin--perez-schofield-2008"\> Extending the SSCLI to Support Dynamic Inheritance (Redondo, Ortin & Perez-Schofield, 2008)],
+  [This paper presents a step forward on a research trend focused on increasing runtime adaptability of commercial JIT-based virtual machines, describing how to include dynamic inheritance into this kind of platforms. A considerable amount of research aimed at improving runtime performance of virtual machines has converted them into the ideal support for developing different types of software products. Current virtual machines do not only provide benefits such as application interoperability, distribution and code portability, but they also offer a competitive runtime performance.],
+  [Since JIT compilation has played a very important role in improving runtime performance of virtual machines, we first extended a production JIT-based virtual machine to support efficient language-neutral structural reflective primitives of dynamically typed programming languages. This article presents the next step in our research work: supporting language-neutral dynamic inheritance for both statically and dynamically typed programming languages. Executing both kinds of programming languages over the same platform provides a direct interoperation between them.],
+  [id="sampling-profiler-for-rotor-as-part-of-optimizing-compilation-system-chilingarova--safonov-2006"\> Sampling profiler for Rotor as part of optimizing compilation system (Chilingarova & Safonov, 2006)],
+  [This paper describes a low-overhead self-tuning sampling-based runtime profiler integrated into SSCLI virtual machine. Our profiler estimates how “hot” a method is and builds a call context graph based on managed stack samples analysis. The frequency of sampling is tuned dynamically at runtime, based on the information of how often the same activation record appears on top of the stack. The call graph is presented as a novel Call Context Map (CC-Map) structure that combines compact representation and accurate information about the context. It enables fast extraction of data helpful in making compilation decisions, as well as fast placing data into the map. Sampling mechanism is integrated with intrinsic Rotor mechanisms of thread preemption and stack walk. A separate system thread is responsible for organizing data in the CC-Map. This thread gathers and stores samples quickly queued by managed threads, thus decreasing the time they must hold up their user-scheduled job],
+  [id="to-jit-or-not-to-jit-the-effect-of-code-pitching-on-the-performance-of-net-framework-anthony-leung--srisa-an-2005"\> To JIT or not to JIT: The effect of code-pitching on the performance of . NET framework (Anthony, Leung & Srisa-an, 2005)],
+  [The. NET Compact Framework is designed to be a highperformance virtual machine for mobile and embedded devices that operate on Windows CE (version 4.1 and later). It achieves fast execution time by compiling methods dynamically instead of using interpretation. Once compiled, these methods are stored in a portion of the heap called code-cache and can be reused quickly to satisfy future method calls. While code-cache provides a high-level of reusability, it can also use a large amount of memory. As a result, the Compact Framework provides a “code pitching ” mechanism that can be used to discard the previously compiled methods as needed. In this paper, we study the effect of code pitching on the overall performance and memory utilization of. NET applications. We conduct our experiments using Microsoft’s Shared-Source Common Language Infrastructure (SSCLI). We profile the access behavior of the compiled methods. We also experiment with various code-cache configurations to perform pitching. We find that programs can operate efficiently with a small code-cache without incurring substantial recompilation and execution overheads.],
+  [id="adding-structural-reflection-to-the-sscli-ortin-redondo-vinuesa--lovelle-2005"\> Adding structural reflection to the SSCLI (Ortin, Redondo, Vinuesa & Lovelle, 2005)],
+  [Although dynamic languages are becoming widely used due to the flexibility needs of specific software prod- ucts, their major drawback is their runtime performance. Compiling the source program to an abstract machine’s intermediate language is the current technique used to obtain the best performance results. This intermediate code is then executed by a virtual machine developed as an interpreter. Although JIT adaptive optimizing com- pilation is currently used to speed up Java and .net intermediate code execution, this practice has not been em- ployed successfully in the implementation of dynamically adaptive platforms yet. We present an approach to improve the runtime performance of a specific set of structural reflective primitives, extensively used in adaptive software development. Looking for a better performance, as well as interaction with other languages, we have employed the Microsoft Shared Source CLI platform, making use of its JIT compiler. The SSCLI computational model has been enhanced with semantics of the prototype-based object-oriented com- putational model. This model is much more suitable for reflective environments. The initial assessment of per- formance results reveals that augmenting the semantics of the SSCLI model, together with JIT generation of native code, produces better runtime performance than the existing implementations.],
+  [id="static-analysis-for-identifying-and-allocating-clusters-of-immortal-objects-ravindar--srikant-2005"\> Static Analysis for Identifying and Allocating Clusters of Immortal Objects (Ravindar & Srikant, 2005)],
+  [Long living objects lengthen the trace time which is a critical phase of the garbage collection process. However, it is possible to recognize object clusters i.e. groups of long living objects having approximately the same lifetime and treat them separately to reduce the load on the garbage collector and hence improve overall performance. Segregating objects this way leaves the heap for objects with shorter lifetimes and now a typical collection can nd more garbage than before. In this paper, we describe a compile time analysis strategy to identify object clusters in programs. The result of the compile time analysis is the set of allocation sites that contribute towards allocating objects belonging to such clusters. All such allocation sites are replaced by a new allocation method that allocates objects into the cluster area rather than the heap. This study was carried out for a concurrent collector which we developed for Rotor, Microsoft’s Shared Source Implementation of . NET. We analyze the performance of the program with combina- tions of the cluster and stack allocation optimizations. Our results show that the clustering optimization reduces the number of collections by 66.5% on average, even eliminating the need for collection in some programs. As a result, the total pause time reduces by 62.8% on average. Using both stack allocation and the cluster optimizations brings down the number of collections by 91.5% thereby improving the total pause time by 79.33%.],
+  [id="an-optimizing-just-intime-compiler-for-rotor-trindade--silva-2005"\> An Optimizing Just-InTime Compiler for Rotor (Trindade & Silva, 2005)],
+  [The Shared Source CLI (SSCLI), also known as Rotor, is an implementation of the CLI released by Microsoft in source code. Rotor includes a single pass just-in-time compiler that generates non-optimized code for Intel IA-32 and IBM PowerPC processors. We extend Rotor with an optimizing justin-time compiler for IA-32. This compiler has three passes: control flow graph generation, data dependence graph generation and final code generation. Dominance relations in the control flow graph are used to detect natural loops. A number of optimizations are performed during the generation of the data dependence graph. During native code generation, the rich address modes of IA32 are used for instruction folding, reducing code size and usage of register names. Despite the overhead of three passes and optimizations, this compiler is only 1.4 to 1.9 times slower than the original SSCLI compiler and generates code that runs 6.4 to 10 times faster.],
+  [id="software-interactions-into-the-sscli-platform-charfi--emsellem-2004"\> Software Interactions into the SSCLI platform (Charfi & Emsellem, 2004)],
+  [By using an Interaction Specification Language (ISL), interactions between components can be expressed in a language independent way. At class level, interaction pattern specified in ISLrepresent model s of future interactions when applied on some component instances. The Interaction Server is in charge of managing the life cycle of interactions (interaction pattern registration and instantiation, destruction of interactions, merging). It acts as a central repository that keeps the global coherency of the adaptations realized on the component instances. The Interaction service allows creati ng interactions between heterogeneous components. Noah is an implementation of this Interaction Service. It can be thought as a dynamic aspect repository with a weaver that uses an aspect composition mechanism that insures commutable and associative adaptations. In this paper, we propose the implementation of the Interaction Service in the SSCLI. In contrast to other implementations such as Java where interaction management represents an additional layer, SSCLI enables us to integrate Interaction Management as in intrinsic part of the CLI runtime.],
+  [id="experience-integrating-a-new-compiler-and-a-new-garbage-collector-into-rotor-anderson-eng-glew-lewis-menon--stichnoth-2004"\> Experience Integrating a New Compiler and a New Garbage Collector Into Rotor (Anderson, Eng, Glew, Lewis, Menon & Stichnoth, 2004)],
+  [Microsoft’s Rotor is a shared-source CLI implementation intended for use as a research platform. It is particularly attractive for research because of its complete implementation and extensive libraries, and because its modular design allows dierent implementations of certain components such as just-in-time compilers (JITs). Our group has independently developed our own high-performance JIT and garbage collector (GC) and wanted to take advantage of Rotor to experiment with these components in a CLI environment. In this paper, we describe our experience integrating these components into Rotor and evaluate the flexibility of Rotor’s design toward this goal. We found it easier to integrate our JIT than our GC because Rotor has a well-defined interface for the former but not the latter. However, our JIT integration still required significant changes to both Rotor and our JIT. For example, we modified Rotor to support multiple JITs. We also added support for a second JIT manager in Rotor, and implemented a new code manager compatible with our JIT. We had to change our JIT compiler to support Rotor’s calling conventions, helper functions, and exception model. Our GC integration was complicated by the many places in Rotor where components make assumptions about how its garbage collector is implemented, as well as Rotor’s lack of a well-defined GC interface. We also had to reconcile the dierent assumptions made by Rotor and our garbage collector about the layout of objects, virtual-method tables, and thread structures.],
 ),
   insert-map: (:),
-  word-count: 1653,
+  word-count: 7155,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -1218,40 +746,468 @@ Schedule 30 minutes to map one AI opportunity in your practice. Pick one area wh
 
 {
   #standard-article(
-  title: [FFmpeg at Meta: Media Processing at Scale],
-  author: [Facebook Engineering],
-  source-name: [Facebook Engineering],
+  title: [Felix, the “DevOps” between designers and developers],
+  author: [Junmin Liu],
+  source-name: [Groupon Engineering],
   images: (),
   paragraphs: (
-  [FFmpeg is truly a multi-tool for media processing. As an industry-standard tool it supports a wide variety of audio and video codecs and container formats. It can also orchestrate complex chains of filters for media editing and manipulation. For the people who use our apps, FFmpeg plays an important role in enabling new video experiences and improving the reliability of existing ones.],
-  [Meta executes ffmpeg (the main CLI application) and ffprobe (a utility for obtaining media file properties) binaries tens of billions of times a day, introducing unique challenges when dealing with media files. FFmpeg can easily perform transcoding and editing on individual files, but our workflows have additional requirements to meet our needs. For many years we had to rely on our own internally developed fork of FFmpeg to provide features that have only recently been added to FFmpeg, such as threaded multi-lane encoding and real-time quality metric computation.],
-  [Over time, our internal fork came to diverge significantly from the upstream version of FFmpeg. At the same time, new versions of FFmpeg brought support for new codecs and file formats, and reliability improvements, all of which allowed us to ingest more diverse video content from users without disruptions. This necessitated that we support both recent open-source versions of FFmpeg alongside our internal fork. Not only did this create a gradually divergent feature set, it also created challenges around safely rebasing our internal changes to avoid regressions.],
-  [As our internal fork became increasingly outdated, we collaborated with FFmpeg developers, FFlabs, and VideoLAN to develop features in FFmpeg that allowed us to fully deprecate our internal fork and rely exclusively on the upstream version for our use cases. Using upstreamed patches and refactorings we’ve been able to fill two important gaps that we had previously relied on our internal fork to fill: threaded, multi-lane transcoding and real-time quality metrics.],
-  [Building More Efficient Multi-Lane Transcoding for VOD and Livestreaming],
-  [A video transcoding pipeline producing multiple outputs at different resolutions.],
-  [When a user uploads a video through one of our apps, we generate a set of encodings to support Dynamic Adaptive Streaming over HTTP (DASH) playback. DASH playback allows the app’s video player to dynamically choose an encoding based on signals such as network conditions. These encodings can differ in resolution, codec, framerate, and visual quality level but they are created from the same source encoding, and the player can seamlessly switch between them in real time.],
-  [In a very simple system separate FFmpeg command lines can generate the encodings for each lane one-by-one in serial. This could be optimized by running each command in parallel, but this quickly becomes inefficient due to the duplicate work done by each process.],
-  [To work around this, multiple outputs could be generated within a single FFmpeg command line, decoding the frames of a video once and sending them to each output’s encoder instance. This eliminates a lot of overhead by deduplicating the video decoding and process startup time overhead incurred by each command line. Given that we process over 1 billion video uploads daily, each requiring multiple FFmpeg executions, reductions in per-process compute usage yield significant efficiency gains.],
-  [Our internal FFmpeg fork provided an additional optimization to this: parallelized video encoding. While individual video encoders are often internally multi-threaded, previous FFmpeg versions executed each encoder in serial for a given frame when multiple encoders were in use. By running all encoder instances in parallel, better parallelism can be obtained overall.],
-  [Thanks to contributions from FFmpeg developers, including those at FFlabs and VideoLAN, more efficient threading was implemented starting with FFmpeg 6.0, with the finishing touches landing in 8.0. This was directly influenced by the design of our internal fork and was one of the main features we had relied on it to provide. This development led to the most complex refactoring of FFmpeg in decades and has enabled more efficient encodings for all FFmpeg users.],
-  [To fully migrate off of our internal fork we needed one more feature implemented upstream: real-time quality metrics.],
-  [Enabling Real-Time Quality Metrics While Transcoding for Livestreams],
-  [Visual quality metrics, which give a numeric representation of the perceived visual quality of media, can be used to quantify the quality loss incurred from compression. These metrics are categorized as reference or no-reference metrics, where the former compares a reference encoding to some other distorted encoding.],
-  [FFmpeg can compute various visual quality metrics such as PSNR, SSIM, and VMAF using two existing encodings in a separate command line after encoding has finished. This is okay for offline or VOD use cases, but not for livestreaming where we might want to compute quality metrics in real time.],
-  [To do this, we need to insert a video decoder after each video encoder used by each output lane. These provide bitmaps for each frame in the video after compression has been applied so that we can compare against the frames before compression. In the end, we can produce a quality metric for each encoded lane in real time using a single FFmpeg command line.],
-  [Thanks to “in-loop” decoding, which was enabled by FFmpeg developers including those from FFlabs and VideoLAN, beginning with FFmpeg 7.0, we no longer have to rely on our internal FFmpeg fork for this capability.],
-  [We Upstream When It Will Have the Most Community Impact],
-  [Things like real-time quality metrics while transcoding and more efficient threading can bring efficiency gains to a variety of FFmpeg-based pipelines both in and outside of Meta, and we strive to enable these developments upstream to benefit the FFmpeg community and wider industry. However, there are some patches we’ve developed internally that don’t make sense to contribute upstream. These are highly specific to our infrastructure and don’t generalize well.],
-  [FFmpeg supports hardware-accelerated decoding, encoding, and filtering with devices such as NVIDIA’s NVDEC and NVENC, AMD’s Unified Video Decoder (UVD), and Intel’s Quick Sync Video (QSV). Each device is supported through an implementation of standard APIs in FFmpeg, allowing for easier integration and minimizing the need for device-specific command line flags. We’ve added support for the Meta Scalable Video Processor (MSVP) , our custom ASIC for video transcoding, through these same APIs, enabling the use of common tooling across different hardware platforms with minimal platform-specific quirks.],
-  [As MSVP is only used within Meta’s own infrastructure, it would create a challenge for FFmpeg developers to support it without access to the hardware for testing and validation. In this case, it makes sense to keep patches like this internal since they wouldn’t provide benefit externally. We’ve taken on the responsibility of rebasing our internal patches onto more recent FFmpeg versions over time, utilizing extensive validation to ensure robustness and correctness during upgrades.],
-  [Our Continued Commitment to FFmpeg],
-  [With more efficient multi-lane encoding and real-time quality metrics, we were able to fully deprecate our internal FFmpeg fork for all VOD and livestreaming pipelines. And thanks to standardized hardware APIs in FFmpeg, we’ve been able to support our MSVP ASIC alongside software-based pipelines with minimal friction.],
-  [FFmpeg has withstood the test of time with over 25 years of active development. Developments that improve resource utilization, add support for new codecs and features, and increase reliability enable robust support for a wider range of media. For people on our platforms, this means enabling new experiences and improving the reliability of existing ones. We plan to continue investing in FFmpeg in partnership with open source developers, bringing benefits to Meta, the wider industry, and people who use our products.],
-  [We would like to acknowledge contributions from the open source community, our partners in FFlabs and VideoLAN, and many Meta engineers, including Max Bykov, Jordi Cenzano Ferret, Tim Harris, Colleen Henry, Mark Shwartzman, Haixia Shi, Cosmin Stejerean, Hassene Tmar, and Victor Loh.],
-  [The post FFmpeg at Meta: Media Processing at Scale appeared first on Engineering at Meta .],
+  [— Building Felix, the Design System for Groupon],
+  [Several new features have been released on Groupon.com recently, such as the QR code in the navigation bar to download the app, and a banner carousel to display multiple banner messages within a single view.],
+  [In the past, similar product features might take 2–3 sprints to complete, but now all of these features are developed and tested in a single sprint. The reason why we can finish the development and testing efficiently is mainly credited to Felix, the design system we’re building for Groupon.],
+  [What is a design system?],
+  [Design Systems are not new to the world of product development. There are many successful cases in the industry, such as Google’s Material Design, Microsoft’s Fluent Design System, IBM’s Carbon, Adobe’s Spectrum, and so on. With their design systems, these companies have successfully changed the way they design and develop their software products by establishing a set of reusable components and usage guidelines to inform design and development. The result? Delivering faster and better product experiences to our customers, at scale.],
+  [Felix, the early days],
+  [In 2020, Groupon’s consumer experience design and engineering teams began partnering to bring to life a comprehensive design system–now named Felix–to be used throughout Groupon’s many brands, platforms, and products.],
+  [Initially, I believed a design system to be simply a set of design specifications and component libraries — an unoriginal concept. After diving into the architectural design and project management of Felix’s development with Lead Product Designer, Michelle Witkowski, I realized Felix’s true potential: a fundamental change in collaboration between designers and developers.],
+  [This year, we have built out the initial implementation of Felix, and several of our development teams have begun leveraging it. Through the use of design tokens within Felix, we have developed themes to support Groupon’s multiple brands (Groupon and LivingSocial) and platforms (web and mobile apps). These theme styles can be changed at scale, lending support to even major brand update initiatives. Having a design system in place greatly improves our design and development efficiency, enables product strategy acceleration, and ensures that what we build is consistent with our brand vision.],
+  [“The space to solve the tough problems really opens up when the rest is simply pointing to the right component.” — Michael Forsythe],
+  [Felix is helping to build a culture of collaboration between Designers, Developers, and Product],
+  [When we talk about DevOps, one of the most exciting concepts is the way developers and operations work together closely to ensure applications can be efficiently built, tested, and released.],
+  [Similarly, when we talk about Felix, we must talk about the collaboration between designers, developers, and product managers. Like DevOps, a design system uncovers a culture of collaboration between product delivery’s most prominent teams and introduces the kind of seamless product development cycle once only enjoyed by DevOps.],
+  [Designers and Developers can share a common language: Design Tokens],
+  [Before there was Felix, designers and developers were working in their own languages, in their own ecosystems, and it was difficult to communicate with each other.],
+  [The end result, most of the time, was that we ended up spending time doing pixel perfection activities after a particular UI design was implemented by a developer. This usually happened because the developers did not understand the design well, and it required both teams to communicate several times to achieve the same result as the initial design.],
+  [So, one of the most important things when building a design system is to define the design tokens. At Groupon, we share a set of design tokens for both development and design, regardless of the platform.],
+  [A Design Token is essentially a set of key value combinations. For example, the following figure is a list of color design tokens, simple and clear. Another way to think of them is they represent codified design decisions.],
+  [Design Tokens, Credit: Michelle Witkowski],
+  [With Design Tokens, it is simpler for designers to describe their designs and easier for developers to understand them.],
+  [“I think working together has allowed me to better understand the focus points of designers in a new feature, so the overall process of creating something new has less iterations — a more streamlined process.” — Nida Pervez],
+  [“Working together on the Design System has helped give designers and engineers an extra common language. This boost in communication helps to increase productivity across teams.” — Daniel Hey],
+  [Compare these two pictures below, the first one is before Design Tokens and the other one is after Design Tokens, the difference is very obvious — with the guesswork taken out of the process, developers can simply reference the tokens defined by the design team.],
+  [Building a Design System Team],
+  [Since its inception, Felix hasn’t had a formal team responsible for its development and iteration. Instead, a small team of scrappy designers and developers have been operating as an informal team, defining the components and building them in our spare time.],
+  [So how does this work? It’s like an internal open source project where people contribute 20% of their work time to building Felix. In exchange, we are able to reap the rewards of a design system and prove its benefits as we go..],
+  [This gave us a huge challenge at the beginning. We couldn’t do this full time and had to use resources outside of our day to day projects to commit. We benefited from extensive prior preparation work, and I had led an internal front-end component library project before. So we started to officially design and develop Felix from scratch during Q4 of 2020. The Design team defined an initial set of Design Tokens and some basic components, and I found a few front-end developers from my own team and other teams who were interested in contributing.],
+  [Despite being an unstructured, decentralized team, we operate using the same agile methodologies as other Groupon teams. We conduct bi-weekly sprints and deliver as much work as possible in each. We track all tasks and bugs through Jira, and have bi-weekly team meetings to share progress and plans for the next sprint. We also maintain a running Google Doc to track the minutes of meetings for future reference.],
+  [Thanks to the decentralized team model, there were no walls between different teams from the beginning. There was no need to distinguish between Design and Development, and we all worked together with the same goal of building Felix. Cross-team collaboration is possible, and every member of the development team can participate in it.],
+  [Another unexpected benefit of the decentralized team model is that some of the contributing teams have found opportunities to adopt Felix into their product work because of their involvement in the project.],
+  [Moving forward, we are looking for ways to further optimize our workflow regarding collaboration between Design, Development, and Product.],
+  [Automating the build of Design System Packages],
+  [Groupon is a practitioner of DevOps, and the concept of automation is deeply rooted. We automate everything we can, from daily testing to deployment in production environments.],
+  [So when building Felix, we also integrated automation into many aspects of it.],
+  [Automatically update and publish Design Tokens],
+  [All of our Design Tokens are managed and maintained by the Design team using a Google Spreadsheet. As shown in the image below.],
+  [The Design team will notify the Development team when they have any update to Design Tokens, and the Development team will export the content of the Spreadsheet through automation scripts and parse it into standard JSON format, then generate different formats for different application platforms, and finally submit it to GitHub in the form of a Pull Request (PR). When the PR passes the review and automation test, automatically releases the new version to the package management system.],
+  [Designers are involved in updating the system with automation],
+  [Now, with the help of Felix, we have greatly simplified these operations. Designers can directly submit new SVG files in the form of PRs through GitHub.],
+  [CI/CD will automatically publish the SVG file as an icon component when the PR is merged. The design system even generates png files of corresponding size for mobile platforms.],
+  [Additionally, we have automation for the Design System documentation website. Designers can submit updated pull requests in markdown directly through GitHub web, and when the PR is merged, the documentation website is automatically updated.],
+  [The automation of design test],
+  [Automation testing of UI is one of the most difficult forms of automation testing. Now, due to the abstraction of Design Tokens by Felix, all interface components are built on top of Design Tokens, and all interface properties such as color and size must be obtained from Design Tokens.],
+  [We have a plugin to check all of Felix’s UI properties when compiling the front-end components. The system will show error alerts at runtime when a component’s properties use a value outside the design token range, so we can avoid design errors the first time around.],
+  [In the code review phase, we also plan to use robots to help us find the wrong use of design tokens in the code.],
+  [Of course, we still have a long way to go for design automation testing, but Felix makes it possible to automate design testing, and we will continue to explore in this direction in the future.],
+  [Felix makes information more transparent],
+  [After completing the first phase of Felix, we published a documentation website containing Design Token definitions, components, and component-related documentation.],
+  [With this internal Design System website–or Docsite–Developers, Designers, and Product Partners can find updated information from a single source of truth. This transparency allows developers to have a deeper understanding of the design specifications and designers to know how developers are using the components. Product can find out the latest information on what exists in Felix and if there are inconsistencies with production.],
+  [In the past, when designers provided design sketches to developers, they only provided information such as the color and size of the design, but now the design sketches are clearly marked with the design tokens corresponding to the attributes, and the relevant components come with a link to the Felix Docsite, so that developers can clearly know which components can be used directly in the implementation and how to set the attributes.],
+  [Felix makes information more transparent, reduces a lot of waste caused by information misunderstanding, and greatly improves efficiency.],
+  [After a year of hard work, we have built a powerful Design System that works for us and successfully landed in the web department. The main web system has integrated Felix, which has greatly improved the efficiency of design and development in new projects.],
+  [The success of Felix is not just that we have rebuilt a set of component libraries or that it has a set of Design Tokens, but that it is a more automated way to build the UI of the system, makes the information between designers and developers more transparent, and most importantly, the design system builds a better culture of collaboration between designers, developers and product. These are the same three important principles of DevOps: Automation, Information transparency, and building a culture of collaboration.],
+  [The reason why projects can be delivered efficiently based on Felix is that developers and designers already work closely on a daily basis, and developers are already familiar with the Design Token specifications through the Felix Docsite, so they don’t need to repeatedly confirm details with designers when implementing the UI. Felix’s rich library of components can help build the UI semi-automatically, and the included automated detection helps find possible interface errors before submitting the code, avoiding subsequent rework due to UI errors.],
+  [Gradually, Felix is changing Groupon’s R&D culture, making the collaboration between Designers, Developers and Product even better.],
+  [Felix, the “DevOps” between designers and developers was originally published in Groupon Product and Engineering on Medium, where people are continuing the conversation by highlighting and responding to this story.],
 ),
   insert-map: (:),
-  word-count: 1302,
+  word-count: 1980,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+}
+
+{
+  #standard-article(
+  title: [Fragments: February  9],
+  author: [Martin Fowler],
+  source-name: [Martin Fowler],
+  images: (),
+  paragraphs: (
+  [Some more thoughts from last week’s open space gathering on the future of software development in the age of AI. I haven’t attributed any comments since we were operating under the Chatham House Rule , but should the sources recognize themselves and would like to be attributed, then get in touch and I’ll edit this post.],
+  [❄ ❄],
+  [During the opening of the gathering, I commented that I was naturally skeptical of the value of LLMs. After all, the decades have thrown up many tools that have claimed to totally change the nature of software development. Most of these have been little better than snake oil.],
+  [But I am a total, absolute skeptic - which means I also have to be skeptical of my own skepticism.],
+  [❄ ❄],
+  [One of our sessions focused on the problem of “cognitive debt”. Usually, as we build a software system, the developers of that system gain an understanding both the underlying domain and the software they are building to support it. But once so much work is sent off to LLMs, does this mean the team no longer learns as much? And if so, what are the consequences of this? Can we rely on The Genie to keep track of everything, or should we take active measures to ensure the team understands more of what’s being built and why?],
+  [The TDD cycle involves a key (and often under-used) step to refactor the code. This is where the developers consolidate their understanding and embed it into the codebase. Do we need some similar step to ensure we understand what the LLMs are up to?],
+  [When the LLM writes some complex code, ask it to explain how it works. Maybe get it do so in a funky way, such as asking it to explain the code’s behavior in the form of a fairy tale.],
+  [❄ ❄],
+  [OH:],
+  [LLMs are drug dealers, they give us stuff, but don’t care about the resulting system or the humans that develop and use it.],
+  [Who cares about the long-term health of the system when the LLM renews its context with every cycle?],
+  [❄ ❄],
+  [Programmers are wary of LLMs not just because folks are worried for their jobs, but also because we’re scared that LLMs will remove much of the fun from programming. As I think about this, I consider what I enjoy about programming. One aspect is delivering useful features - which I only see improving as LLMs become more capable.],
+  [But, for me, programming is more than that. Another aspect I enjoy about programming is model building. I enjoy the process of coming up with abstractions that help me reason about the domain the code is supporting - and I am concerned that LLMs will cause me to spend less attention on this model building. It may be, however, that model-building becomes an important part of working effectively with LLMs, a topic Unmesh Joshi and I explored a couple of months ago.],
+  [❄ ❄],
+  [In the age of LLMs, will there still be such a things as “source code”, and if so, what will it look like? Prompts, and other forms of natural language context can elicit a lot of behavior, and cause a rise in the level of abstraction, but also a sideways move into non-determinism . In all this is there still a role for a persistent statement of non-deterministic behavior?],
+  [Almost a couple of decades ago, I became interested in a class of tools called Language Workbenches . They didn’t have a significant impact on software development, but maybe the rise of LLMs will reintroduce some ideas from them. These tools rely on a semantic model that the tool persists in some kind of storage medium, that isn’t necessarily textual or comprehensible to humans directly. Instead, for humans to understand it, the tools include projectional editors that create human-readable projections of the model.],
+  [Could this notion of a non-human deterministic representation become the future source code? One that’s designed to maximize expression with minimal tokens?],
+  [❄ ❄],
+  [OH:],
+  [Scala was the first example of a lab-leak in software. A language designed for dangerous experiments in type theory escaped into the general developer population.],
+  [❄ ❄ ❄ ❄ ❄],
+  [elsewhere on the web],
+  [Angie Jones on tips for open source maintainers to handle AI contributions],
+  [I’ve been seeing more and more open source maintainers throwing up their hands over AI generated pull requests. Going so far as to stop accepting PRs from external contributors.],
+  [\[snip\]],
+  [But yo, what are we doing?! Closing the door on contributors isn’t the answer. Open source maintainers don’t want to hear this, but this is the way people code now, and you need to do your part to prepare your repo for AI coding assistants.],
+  [❄ ❄ ❄ ❄ ❄],
+  [Matthias Kainer has written a cool explanation of how transformers work with interactive examples],
+  [Last Tuesday my kid came back from school, sat down and asked: “How does ChatGPT actually know what word comes next?” And I thought - great question. Terrible timing, because dinner was almost ready, but great question.],
+  [So I tried to explain it. And failed. Not because it is impossibly hard, but because the usual explanations are either “it is just matrix multiplication” (true but useless) or “it uses attention mechanisms” (cool name, zero information). Neither of those helps a 12-year-old. Or, honestly, most adults. Also, even getting to start my explanation was taking longer than a tiktok, so my kid lost attention span before I could even say “matrix multiplication”. I needed something more visual. More interactive. More fun.],
+  [So here is the version I wish I had at dinner. With drawings. And things you can click on. Because when everything seems abstract, playing with the actual numbers can bring some light.],
+  [A helpful guide for any 12-year-old, or a 62-year-old that fears they’re regressing.],
+  [❄ ❄ ❄ ❄ ❄],
+  [In my last fragments , I included some concerns about how advertising could interplay with chatbots. Anthropic have now made some adverts about concerns about adverts - both funny and creepy. Sam Altman is amused and annoyed.],
+),
+  insert-map: (:),
+  word-count: 1021,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+}
+
+{
+  #standard-article(
+  title: [Is C\# a low-level language?],
+  author: [Matt Warren (.NET)],
+  source-name: [Matt Warren (.NET)],
+  images: (),
+  paragraphs: (
+  [I’m a massive fan of everything Fabien Sanglard does, I love his blog and I’ve read both his books cover-to-cover (for more info on his books, check out the recent Hansleminutes podcast ).],
+  [Recently he wrote an excellent post where he deciphered a postcard sized raytracer , un-packing the obfuscated code and providing a fantastic explanation of the maths involved. I really recommend you take the time to read it!],
+  [But it got me thinking, would it be possible to port that C++ code to C\#?],
+  [Partly because in my day job I’ve been having to write a fair amount of C++ recently and I’ve realised I’m a bit rusty, so I thought this might help!],
+  [But more significantly, I wanted to get a better insight into the question is C\# a low-level language?],
+  [A slightly different, but related question is how suitable is C\# for ‘systems programming’? For more on that I really recommend Joe Duffy’s excellent post from 2013 .],
+  [id="line-by-line-port"\>Line-by-line port],
+  [I started by simply porting the un-obfuscated C++ code line-by-line to C\# . Turns out that this was pretty straight forward, I guess the story about C\# being C++++ is true after all!!],
+  [Let’s look at an example, the main data structure in the code is a ‘vector’, here’s the code side-by-side, C++ on the left and C\# on the right:],
+  [So there’s a few syntax differences, but because . NET lets you define your own ‘Value Types’ I was able to get the same functionality. This is significant because treating the ‘vector’ as a struct means we can get better ‘data locality’ and the . NET Garbage Collector (GC) doesn’t need to be involved as the data will go onto the stack (probably, yes I know it’s an implementation detail).],
+  [For more info on structs or ‘value types’ in . NET see:],
+  [Heap vs stack, value type vs reference type],
+  [Value Types vs Reference Types],
+  [Memory in . NET - what goes where],
+  [The Truth About Value Types],
+  [The Stack Is An Implementation Detail, Part One],
+  [In particular that last post form Eric Lippert contains this helpful quote that makes it clear what ‘value types’ really are:],
+  [Surely the most relevant fact about value types is not the implementation detail of how they are allocated , but rather the by-design semantic meaning of “value type”, namely that they are always copied “by value” . If the relevant thing was their allocation details then we’d have called them “heap types” and “stack types”. But that’s not relevant most of the time. Most of the time the relevant thing is their copying and identity semantics.],
+  [Now lets look at how some other methods look side-by-side (again C++ on the left, C\# on the right), first up RayTracing(..) :],
+  [Next QueryDatabase(..) :],
+  [(see Fabien’s post for an explanation of what these 2 functions are doing)],
+  [But the point is that again, C\# lets us very easily write C++ code! In this case what helps us out the most is the ref keyword which lets us pass a value by reference . We’ve been able to use ref in method calls for quite a while, but recently there’s been a effort to allow ref in more places:],
+  [Ref returns and ref locals],
+  [C\# 7 Series, Part 9: ref structs],
+  [Now sometimes using ref can provide a performance boost because it means that the struct doesn’t need to be copied, see the benchmarks in Adam Sitniks post and Performance traps of ref locals and ref returns in C\# for more information.],
+  [However what’s most important for this scenario is that it allows us to have the same behaviour in our C\# port as the original C++ code. Although I want to point out that ‘Managed References’ as they’re known aren’t exactly the same as ‘pointers’, most notably you can’t do arithmetic on them, for more on this see:],
+  [ref returns are not pointers],
+  [Managed pointers],
+  [References are not addresses],
+  [id="performance"\>Performance],
+  [So, it’s all well and good being able to port the code, but ultimately the performance also matters. Especially in something like a ‘ray tracer’ that can take minutes to run! The C++ code contains a variable called sampleCount that controls the final quality of the image, with sampleCount = 2 it looks like this:],
+  [Which clearly isn’t that realistic!],
+  [However once you get to sampleCount = 2048 things look a lot better:],
+  [But, running with sampleCount = 2048 means the rendering takes a long time , so all the following results were run with it set to 2 , which means the test runs completed in ~1 minute. Changing sampleCount only affects the number of iterations of the outermost loop of the code, see this gist for an explanation.],
+  [id="results-after-a-naive-line-by-line-port"\>Results after a ‘naive’ line-by-line port],
+  [To be able to give a meaningful side-by-side comparison of the C++ and C\# versions I used the time-windows tool that’s a port of the Unix time command. My initial results looked this this:],
+  [C++ (VS 2017) 
+ . NET Framework (4.7.2) 
+ . NET Core (2.2) 
+ 
+ 
+ 
+ 
+ Elapsed time (secs) 
+ 47.40 
+ 80.14 
+ 78.02 
+ 
+ 
+ Kernel time 
+ 0.14 (0.3%) 
+ 0.72 (0.9%) 
+ 0.63 (0.8%) 
+ 
+ 
+ User time 
+ 43.86 (92.5%) 
+ 73.06 (91.2%) 
+ 70.66 (90.6%) 
+ 
+ 
+ page fault \# 
+ 1,143 
+ 4,818 
+ 5,945 
+ 
+ 
+ Working set (KB) 
+ 4,232 
+ 13,624 
+ 17,052 
+ 
+ 
+ Paged pool (KB) 
+ 95 
+ 172 
+ 154 
+ 
+ 
+ Non-paged pool 
+ 7 
+ 14 
+ 16 
+ 
+ 
+ Page file size (KB) 
+ 1,460 
+ 10,936 
+ 11,024],
+  [So initially we see that the C\# code is quite a bit slower than the C++ version, but it does get better (see below).],
+  [However lets first look at what the . NET JIT is doing for us even with this ‘naive’ line-by-line port. Firstly, it’s doing a nice job of in-lining the smaller ‘helper methods’, we can see this by looking at the output of the brilliant Inlining Analyzer tool (green overlay = inlined):],
+  [However, it doesn’t inline all methods, for example QueryDatabase(..) is skipped because of it’s complexity:],
+  [Another feature that the . NET Just-In-Time (JIT) compiler provides is converting specific methods calls into corresponding CPU instructions. We can see this in action with the sqrt wrapper function, here’s the original C\# code (note the call to Math. Sqrt ):],
+  [class="highlight"\> \/\\/ intnv square root 
+ public static Vec operator !( Vec q ) { 
+ return q \* ( 1.0f \/ ( float ) Math . Sqrt ( q % q )); 
+ }],
+  [And here’s the assembly code that the . NET JIT generates, there’s no call to Math. Sqrt and it makes use of the vsqrtsd CPU instruction :],
+  [; Assembly listing for method Program:sqrtf(float):float
+; Emitting BLENDED\_CODE for X64 CPU with AVX - Windows
+; Tier-1 compilation
+; optimized code
+; rsp based frame
+; partially interruptible
+; Final local variable assignments
+;
+; V00 arg0 \[V00,T00\] ( 3, 3 ) float -\> mm0 
+;\# V01 OutArgs \[V01 \] ( 1, 1 ) lclBlk ( 0) \[rsp+0x00\] "OutgoingArgSpace"
+;
+; Lcl frame size = 0],
+  [G\_M8216\_IG01:
+ vzeroupper],
+  [G\_M8216\_IG02:
+ vcvtss2sd xmm0, xmm0
+ vsqrtsd xmm0, xmm0
+ vcvtsd2ss xmm0, xmm0],
+  [G\_M8216\_IG03:
+ ret],
+  [; Total bytes of code 16, prolog size 3 for method Program:sqrtf(float):float
+; ============================================================],
+  [(to get this output you need to following these instructions , use the ‘Disasmo’ VS2019 Add-in or take a look at SharpLab.io )],
+  [These replacements are also known as ‘intrinsics’ and we can see the JIT generating them in the code below. This snippet just shows the mapping for AMD64 , the JIT also targets X86 , ARM and ARM64 , the full method is here],
+  [{],
+  [\#if defined(\_TARGET\_AMD64\_) || (defined(\_TARGET\_X86\_) && !defined(LEGACY\_BACKEND))],
+  [switch ( intrinsicId )],
+  [{],
+  [\/\\/ AMD64/x86 has SSE2 instructions to directly compute sqrt/abs and SSE4.1],
+  [\/\\/ instructions to directly compute round/ceiling/floor.],
+  [\/\/],
+  [\/\\/ TODO: Because the x86 backend only targets SSE for floating-point code,],
+  [\/\\/ it does not treat Sine, Cosine, or Round as intrinsics (JIT32],
+  [\/\\/ implemented those intrinsics as x87 instructions). If this poses],
+  [\/\\/ a CQ problem, it may be necessary to change the implementation of],
+  [\/\\/ the helper calls to decrease call overhead or switch back to the],
+  [\/\\/ x87 instructions. This is tracked by \#7097.],
+  [case CORINFO\_INTRINSIC\_Sqrt :],
+  [case CORINFO\_INTRINSIC\_Abs :],
+  [return true ;],
+  [case CORINFO\_INTRINSIC\_Round : 
+ case CORINFO\_INTRINSIC\_Ceiling : 
+ case CORINFO\_INTRINSIC\_Floor : 
+ return compSupports ( InstructionSet\_SSE41 );],
+  [default: 
+ return false ; 
+ } 
+ ... 
+ }],
+  [As you can see, some methods are implemented like this, e.g. Sqrt and Abs , but for others the CLR instead uses the C++ runtime functions for instance powf .],
+  [This entire process is explained very nicely in How is Math. Pow() implemented in . NET Framework? , but we can also see it in action in the CoreCLR source:],
+  [COMSingle:: Pow implementation , i.e. the method that’s executed if you call MathF. Pow(..) from C\# code],
+  [Mapping to C runtime method implementations],
+  [Cross-platform version of powf implementation that ensures the same behaviour across OSes],
+  [id="results-after-simple-performance-improvements"\>Results after simple performance improvements],
+  [However, I wanted to see if my ‘naive’ line-by-line port could be improved, after some profiling I made two main changes:],
+  [Remove in-line array initialisation],
+  [Switch from Math. XXX(..) functions to the MathF. XXX() counterparts.],
+  [These changes are explained in more depth below],
+  [id="remove-in-line-array-initialisation"\>Remove in-line array initialisation],
+  [For more information about why this is necessary see this excellent Stack Overflow answer from Andrey Akinshin complete with benchmarks and assembly code! It comes to the following conclusion:],
+  [Does . NET caches hardcoded local arrays? Kind of: the Roslyn compiler put it in the metadata.],
+  [Do we have any overhead in this case? Unfortunately, yes: JIT will copy the array content from the metadata for each invocation; it will work longer than the case with a static array. Runtime also allocates objects and produce memory traffic.],
+  [Should we care about it? It depends. If it’s a hot method and you want to achieve a good level of performance, you should use a static array. If it’s a cold method which doesn’t affect the application performance, you probably should write “good” source code and put the array in the method scope.],
+  [You can see the change I made in this diff .],
+  [id="using-mathf-functions-instead-of-math"\>Using MathF functions instead of Math],
+  [Secondly and most significantly I got a big perf improvement by making the following changes:],
+  [class="highlight"\> \#if NETSTANDARD2\_1 || NETCOREAPP2\_0 || NETCOREAPP2\_1 || NETCOREAPP2\_2 || NETCOREAPP3\_0
+ \/\\/ intnv square root 
+ public static Vec operator !( Vec q ) { 
+ return q \* ( 1.0f \/ MathF . Sqrt ( q % q )); 
+ } 
+ \#else
+ public static Vec operator !( Vec q ) { 
+ return q \* ( 1.0f \/ ( float ) Math . Sqrt ( q % q )); 
+ } 
+ \#endif],
+  [As of ‘. NET Standard 2.1’ there are now specific float implementations of the common maths functions, located in the System. MathF class . For more information on this API and it’s implementation see:],
+  [New API for single-precision math],
+  [Adding single-precision math functions],
+  [Provide a set of unit tests over the new single-precision math APIs],
+  [System. Math and System. MathF should be implemented in managed code, rather than as FCALLs to the C runtime],
+  [Moving Math. Abs(double) and Math. Abs(float) to be implemented in managed code.],
+  [Design and process for adding platform dependent intrinsics to . NET],
+  [After these changes, the C\# code is ~10% slower than the C++ version:],
+  [C++ (VS C++ 2017) 
+ . NET Framework (4.7.2) 
+ . NET Core (2.2) TC OFF 
+ . NET Core (2.2) TC ON 
+ 
+ 
+ 
+ 
+ Elapsed time (secs) 
+ 41.38 
+ 58.89 
+ 46.04 
+ 44.33 
+ 
+ 
+ Kernel time 
+ 0.05 (0.1%) 
+ 0.06 (0.1%) 
+ 0.14 (0.3%) 
+ 0.13 (0.3%) 
+ 
+ 
+ User time 
+ 41.19 (99.5%) 
+ 58.34 (99.1%) 
+ 44.72 (97.1%) 
+ 44.03 (99.3%) 
+ 
+ 
+ page fault \# 
+ 1,119 
+ 4,749 
+ 5,776 
+ 5,661 
+ 
+ 
+ Working set (KB) 
+ 4,136 
+ 13,440 
+ 16,788 
+ 16,652 
+ 
+ 
+ Paged pool (KB) 
+ 89 
+ 172 
+ 150 
+ 150 
+ 
+ 
+ Non-paged pool 
+ 7 
+ 13 
+ 16 
+ 16 
+ 
+ 
+ Page file size (KB) 
+ 1,428 
+ 10,904 
+ 10,960 
+ 11,044],
+  [TC = Tiered Compilation (I believe that it’ll be on by default in . NET Core 3.0)],
+  [For completeness, here’s the results across several runs:],
+  [Run 
+ C++ (VS C++ 2017) 
+ . NET Framework (4.7.2) 
+ . NET Core (2.2) TC OFF 
+ . NET Core (2.2) TC ON 
+ 
+ 
+ 
+ 
+ TestRun-01 
+ 41.38 
+ 58.89 
+ 46.04 
+ 44.33 
+ 
+ 
+ TestRun-02 
+ 41.19 
+ 57.65 
+ 46.23 
+ 45.96 
+ 
+ 
+ TestRun-03 
+ 42.17 
+ 62.64 
+ 46.22 
+ 48.73],
+  [Note: the difference between . NET Core and . NET Framework is due to the lack of the MathF API in . NET Framework v4.7.2, for more info see Support . Net Framework (4.8?) for netstandard 2.1 .],
+  [id="further-performance-improvements"\>Further performance improvements],
+  [However I’m sure that others can do better!],
+  [If you’re interested in trying to close the gap the C\# code is available . For comparison, you can see the assembly produced by the C++ compiler courtesy of the brilliant Compiler Explorer .],
+  [Finally, if it helps, here’s the output from the Visual Studio Profiler showing the ‘hot path’ (after the perf improvement described above):],
+  [id="is-c-a-low-level-language"\>Is C\# a low-level language?],
+  [Or more specifically:],
+  [What language features of C\#/F\#/VB. NET or BCL/Runtime functionality enable ‘low-level’\* programming?],
+  [\* yes, I know ‘low-level’ is a subjective term 😊],
+  [Note : Any C\# developer is going to have a different idea of what ‘low-level’ means, these features would be taken for granted by C++ or Rust programmers.],
+  [Here’s the list that I came up with:],
+  [ref returns and ref locals],
+  [“tl;dr Pass and return by reference to avoid large struct copying. It’s type and memory safe. It can be even faster than unsafe! ”],
+  [Unsafe code in . NET],
+  [“The core C\# language, as defined in the preceding chapters, differs notably from C and C++ in its omission of pointers as a data type. Instead, C\# provides references and the ability to create objects that are managed by a garbage collector. This design, coupled with other features, makes C\# a much safer language than C or C++.”],
+  [Managed pointers in . NET],
+  [“There is, however, another pointer type in CLR – a managed pointer. It could be defined as a more general type of reference, which may point to other locations than just the beginning of an object.”],
+  [C\# 7 Series, Part 10: Span and universal memory management],
+  [“ System. Span is a stack-only type ( ref struct ) that wraps all memory access patterns, it is the type for universal contiguous memory access. You can think the implementation of the Span contains a dummy reference and a length, accepting all 3 memory access types."],
+  [Interoperability (C\# Programming Guide)],
+  [“The . NET Framework enables interoperability with unmanaged code through platform invoke services, the System. Runtime. InteropServices namespace, C++ interoperability, and COM interoperability (COM interop).”],
+  [However, I know my limitations and so I asked on twitter and got a lot more replies to add to the list:],
+  [Ben Adams “Platform intrinsics (CPU instruction access)”],
+  [Marc Gravell “SIMD via Vector (which mixes well with Span) is \*fairly\* low; . NET Core should (soon?) offer direct CPU intrinsics for more explicit usage targeting particular CPU ops"],
+  [Marc Gravell “powerful JIT: things like range elision on arrays/spans, and the JIT using per-struct-T rules to remove huge chunks of code that it knows can’t be reached for that T, or on your particular CPU (BitConverter. IsLittleEndian, Vector. IsHardwareAccelerated, etc)”],
+  [Kevin Jones “I would give a special shout-out to the MemoryMarshal and Unsafe classes, and probably a few other things in the System. Runtime. CompilerServices namespace.”],
+  [Theodoros Chatzigiannakis “You could also include \_\_makeref and the rest.”],
+  [damageboy “Being able to dynamically generate code that fits the expected input exactly, given that the latter will only be known at runtime, and might change periodically?”],
+  [Robert Haken “dynamic IL emission”],
+  [Victor Baybekov “Stackalloc was not mentioned. Also ability to write raw IL (not dynamic, so save on a delegate call), e.g. to use cached ldftn and call them via calli . VS2017 has a proj template that makes this trivial via extern methods + MethodImplOptions. ForwardRef + ilasm.exe rewrite.”],
+  [Victor Baybekov “Also MethodImplOptions. AggressiveInlining “does enable ‘low-level’ programming” in a sense that it allows to write high-level code with many small methods and still control JIT behavior to get optimized result. Otherwise uncomposable 100s LOCs methods with copy-paste…”],
+  [Ben Adams “Using the same calling conventions (ABI) as the underlying platform and p/invokes for interop might be more of a thing though?”],
+  [Victor Baybekov “Also since you mentioned \#fsharp - it does have inline keyword that does the job at IL level before JIT, so it was deemed important at the language level. C\# lacks this (so far) for lambdas which are always virtual calls and workarounds are often weird (constrained generics).”],
+  [Alexandre Mutel “new SIMD intrinsics, Unsafe Utility class/IL post processing (e.g custom, Fody…etc.). For C\#8.0, upcoming function pointers…”],
+  [Alexandre Mutel “related to IL, F\# has support for direct IL within the language for example”],
+  [OmariO “BinaryPrimitives. Low-level but safe.” (https:\/\/docs.microsoft.com/en-us/dotnet/api/system.buffers.binary.binaryprimitives?view=netcore-3.0)],
+  [Kouji (Kozy) Matsui “How about native inline assembler? It’s difficult for how relation both toolchains and runtime, but can replace current P/Invoke solution and do inlining if we have it.”],
+  [Frank A. Krueger “Ldobj, stobj, initobj, initblk, cpyblk.”],
+  [Konrad Kokosa “Maybe Thread Local Storage? Fixed Size Buffers? unmanaged constraint and blittable types should be probably mentioned:)”],
+  [Sebastiano Mandalà “Just my two cents as everything has been said: what about something as simple as struct layout and how padding and memory alignment and order of the fields may affect the cache line performance? It’s something I have to investigate myself too”],
+  [Nino Floris “Constants embedding via readonlyspan, stackalloc, finalizers, WeakReference, open delegates, MethodImplOptions, MemoryBarriers, TypedReference, varargs, SIMD, Unsafe. AsRef can coerce struct types if layout matches exactly (used for a.o. TaskAwaiter and its version)"],
+  [So in summary, I would say that C\# certainly lets you write code that looks a lot like C++ and in conjunction with the Runtime and Base-Class Libraries it gives you a lot of low-level functionality],
+  [Discuss this post on Hacker News , /r/programming , /r/dotnet or /r/csharp],
+  [id="further-reading"\>Further Reading],
+  [Patterns for high-performance C\#. by Federico Andres Lois],
+  [Performance Quiz \#6 — Chinese/English Dictionary reader (From 2005, 2 Microsoft bloggers have a ‘performance’ battle, C++ v. C\#)],
+  [Performance Quiz \#6 — Conclusion, Studying the Space],
+  [How much faster is C++ than C\#?],
+  [Optimizing managed C\# vs. native C++ code (2005)],
+  [The Unity ‘Burst’ Compiler:],
+  [How Unity is making (a subset of) C\# as fast as C++],
+  [Unity Burst Compiler: Performance Optimization Made Easy],
+  [Daily Pathtracer Part 3: C\# & Unity & Burst],
+  [C++, C\# and Unity],
+  [Deep Dive into the Burst Compiler - Unite LA],
+),
+  insert-map: (:),
+  word-count: 3016,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -1261,21 +1217,22 @@ Schedule 30 minutes to map one AI opportunity in your practice. Pick one area wh
 #article-row((
   [
     standard-article(
-  title: [Episode 133: Antidisestablishmentarianism],
-  author: [Nate DiMeo],
-  source-name: [The Memory Palace],
+  title: [Episode 919: The Who is the What; the When is the Why],
+  author: [Matthew Wrather],
+  source-name: [Overthinking It],
   images: (),
   paragraphs: (
-  [Order The Memory Palace book now, dear listener. On Bookshop.org , on Amazon.com , on Barnes & Noble , or directly from Random House . Or order the audiobook at places like Libro.fm .],
-  [The Memory Palace is a proud member of Radiotopia from PRX. Radiotopia is a collective of independently owned and operated podcasts that’s a part of PRX, a not-for-profit public media company. If you’d like to directly support this show, you can make a donation at Radiotopia.fm/donate.],
-  [This episode was originally released in October of 2018.],
-  [We start with the very English, Voluntary No. 4 in b-flat Minor, by Margaret Phillips.
-Hear Nero’s Nocturne from Chilly Gonzales.
-Some of The Stars vs. Creatures by Colleen.],
-  [Abide with Me from the Thelonious Monk Septet off his Monk’s Music album.],
+  [style="text-align: center;"\> Support Overthinking It by becoming a member for \$5/month!],
+  [Peter Fenzel, Mark Lee, and Matthew Wrather overthink the orthogonal cultural spectacles of the 2026 Super Bowl, considering the halftime show headlined by Bad Bunny and the perennial cultural battlefield of the commercials, this year weaving narratives of authenticity amidst a sea of grifting. The halftime show is approached first through its stagecraft and camera work which create an transporting, immersive environment for TV audiences (though probably not for stadium-goes). The presence of Gaga is debated.],
+  [And what does it all tell us about America in 2026? Maybe it’s that “in a world where nostalgia is commodified, even a minion can become a cultural icon.”],
+  [Download (MP3)],
+  [List of Super Bowl Halftime Shows (Wikipedia)],
+  [Episode 22: DIY Naked News],
+  [style="margin: 5px 0; padding: 10px; background: \#eee;"\>],
+  [style="margin: 0; padding: 0;"\> Episode 919: The Who is the What; the When is the Why originally appeared on Overthinking It , the site subjecting the popular culture to a level of scrutiny it probably doesn't deserve. \[ Latest Posts | Podcast ( iTunes Link )\]],
 ),
   insert-map: (:),
-  word-count: 155,
+  word-count: 185,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -1283,26 +1240,162 @@ Some of The Stars vs. Creatures by Colleen.],
   ],
   [
     standard-article(
-  title: [Patch Me If You Can: AI Codemods for Secure-by-Default Android Apps],
-  author: [Facebook Engineering],
-  source-name: [Facebook Engineering],
+  title: [Episode 122: Hercules],
+  author: [Nate DiMeo],
+  source-name: [The Memory Palace],
   images: (),
   paragraphs: (
-  [Even seemingly simple engineering tasks — like updating an API — can become monumental undertakings when you’re dealing with millions of lines of code and thousands of engineers, especially if the changes are security-related. Nowhere is this more apparent than in mobile security, where a single class of vulnerability can be replicated across hundreds of call sites scattered throughout a sprawling, multi-app codebase serving billions of users.],
-  [Meta’s Product Security team has developed a two-pronged strategy to address this:],
-  [Designing secure-by-default frameworks that wrap potentially unsafe Android OS APIs and make the secure path the easiest path for developers, and],
-  [Leveraging generative AI to automate the migration of existing code to those frameworks at scale.],
-  [The result is a system that can propose, validate, and submit security patches across millions of lines of code with minimal friction for the engineers who own them.],
-  [On this episode of the Meta Tech Podcast, Pascal Hartig talks to Alex and Tanu, from Meta’s Product Security team about the challenges and learnings from the journey of making Meta’s mobile frameworks more secure at a scale few companies ever experience. Tune in to this episode and join us as we explore the compelling crossroads of security, automation, and AI within mobile development.],
-  [Download or listen to the episode below:],
-  [You can also find the episode wherever you get your podcasts, including:],
-  [The Meta Tech Podcast is a podcast, brought to you by Meta, where we highlight the work Meta’s engineers are doing at every level – from low-level frameworks to end-user features.],
-  [Send us feedback on Instagram , Threads , or X .],
-  [And if you’re interested in learning more about career opportunities at Meta visit the Meta Careers page.],
-  [The post Patch Me If You Can: AI Codemods for Secure-by-Default Android Apps appeared first on Engineering at Meta .],
+  [Order The Memory Palace book now, dear listener. On Bookshop.org , on Amazon.com , on Barnes & Noble , or directly from Random House . Or order the audiobook at places like Libro.fm .],
+  [The Memory Palace is a proud member of Radiotopia from PRX. Radiotopia is a collective of independently owned and operated podcasts that’s a part of PRX, a not-for-profit public media company. If you’d like to directly support this show, you can make a donation at Radiotopia.fm/donate.],
+  [This episode originally dropped in 2018.],
+  [We start with Facing the Obstacles , from Robert Simonson's score to The Final Member.],
+  [1979 by Deru.
+The Julianna Barwick remix of This Will Destroy You's The Puritan.],
 ),
   insert-map: (:),
-  word-count: 310,
+  word-count: 136,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+  ],
+), ruled-indices: (1,))
+
+#article-row((
+  [
+    standard-article(
+  title: [Island city-builder Nova Roma is out now, and I'd have drowned all my Romans already if it weren't for those pesky gods],
+  author: [Edwin Evans-Thirlwell],
+  source-name: [Rock Paper Shotgun],
+  images: (),
+  paragraphs: (
+  [I have two dreams as mayor of an island town in Nova Roma , the new early access city-building game from Lion Shield and Hooded Horse. One is to erect a fantastic water network for my people - a sturdy yet poetic lattice of aqueducts, following their deft gradations down from the mountain rivers to cisterns gracefully spaced amid the insulae, forums, circuses and temples. In my reborn Rome, no populous bathhouse, tinkling fountain, or humble latrine shall ever run dry. With my other hand, I shall raise mighty dams, diverting the rivers away from my walls to avoid flooding in times of heavy rainfall, while exposing velvety expanses of buildable, tillable soil.],
+  [My citizens will learn to treat water frivolously, swilling and pissing it away in their decadence, much as they did in the Rome of old. The fools! For when my empire of hydration is complete, I will ascend the slopes and whimsically commission one final dam. Trusting in my stewardship – for what reason have I given them to disobey? - the citizens shall toil day and night to finish the structure. Then, when the last stone is laid and the sluices slam shut, they shall gaze in horror as a tidal wave engulfs their fair metropolis and sweeps all their precious bloody bathhouses away.],
+  [Read more],
+),
+  insert-map: (:),
+  word-count: 220,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+  ],
+  [
+    standard-article(
+  title: [20 fabulous family spring days out in the UK],
+  author: [Fiona Kerr],
+  source-name: [The Guardian Travel],
+  images: (),
+  paragraphs: (
+  [Join the Famous Five in Dorset, relive Springwatch in the Peak District … our selection of Easter treats will keep all the family entertained],
+  [Spring has arrived at Wicken Fen , one of Europe’s most important wetlands, and with it the first summer migrants. Chiffchaffs are usually the earliest, with their rhythmic song ringing out across the fens. Then, if the weather is mild, blackcaps and willow warblers might join them. Listen closely, especially early morning or at dusk, for the foghorn-like calls of the booming bittern across the reedbeds. There’s a pushchair- and wheelchair-friendly boardwalk around Sedge Fen, and wheelchair-accessible wildlife hides. Look out for the electric blue flash of a kingfisher, and male marsh harriers performing their dramatic sky-dancing flights as the breeding season gets under way, before the cuckoos arrive in late April. 
+ From £1 0 adults , £5 children (under-5s free ), nationaltrust.org.uk],
+  [Continue reading...],
+),
+  insert-map: (:),
+  word-count: 149,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+  ],
+), ruled-indices: (1,))
+#pull-quote([My citizens will learn to treat water frivolously, swilling and pissing it away in their decadence, much as they did in the Rome of old.], [Edwin Evans-Thirlwell])
+
+
+#article-row((
+  [
+    standard-article(
+  title: [I got tired],
+  author: [Scott Hanselman],
+  source-name: [Scott Hanselman],
+  images: (),
+  paragraphs: (
+  [I have been blogging here for the last 20 years. Every Tuesday and Thursday, quite consistently, for two decades. But last year, without planning it, I got tired and stopped. Not sure why. It didn't correspond with any life events. Nothing interesting or notable happened. I just stopped.],
+  [I did find joy on TikTok and amassed a small group of like-minded followers there. I enjoy my YouTube as well, and my weekly podcast is going strong with nearly 900 (!) episodes of interviews with cool people. I've also recently started posting on Mastodon (a fediverse (federated universe)) Twitter alternative that uses the ActivityPub web standard . I see that Mark Downie has been looking at ActivityPub as well for DasBlog (the blog engine that powers this blog) so I need to spend sometime with Mark soon.],
+  [Being consistent is a hard thing, and I think I did a good job. I gave many talks over many years about Personal Productivity but I always mentioned doing what "feeds your spirit." For a minute here the blog took a backseat, and that's OK. I filled that (spare) time with family time, personal projects, writing more code, 3d printing, games, taekwondo, and a ton of other things.],
+  [Going forward I will continue to write and share across a number of platforms, but it will continue to start here as it's super important to Own Your Words . Keep taking snapshots and backups of your keystrokes as you never know when your chosen platform might change or go away entirely.],
+  [I'm still here. I hope you are too! I will see you soon.],
+  [Related Links:],
+  [Do they deserve the gift of your keystrokes?],
+  [Do you have a digital or social media will?],
+  [© 2025 Scott Hanselman. All rights reserved.],
+  [style="clear: both; padding-top: 0.2em;"\>],
+),
+  insert-map: (:),
+  word-count: 299,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+  ],
+  [
+    standard-article(
+  title: [Episode 125: Snakes!],
+  author: [The Memory Palace],
+  source-name: [The Memory Palace],
+  images: (),
+  paragraphs: (
+  [The Memory Palace is a proud member of Radiotopia.],
+  [Herman's Malt from Jeff Russo's score to Fargo Season 2.],
+  [David Goes Hunting from Larry Groupe's score to Straw Dogs.],
+  [A snippet of Idea of Order at Kyson Point from an album Brian Eno did with Tom Rogerson.],
+  [A bit of Il Tamoure dei Bambini from Piero Umiliani's score to Le Isole Dell'amore],
+  [A Naga Swaram-Snake Charmers Melody from Folk Music of India],
+  [Finishes out on Completely Gone from Ludwig Goransson's score to Everything Everything.],
+  [Learn about your ad choices: dovetail.prx.org/ad-choices],
+),
+  insert-map: (:),
+  word-count: 122,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+  ],
+), ruled-indices: (1,))
+
+#article-row((
+  [
+    standard-article(
+  title: [Episode 220: The Zipper],
+  author: [Nate DiMeo],
+  source-name: [The Memory Palace],
+  images: (),
+  paragraphs: (
+  [The Memory Palace is a proud member of Radiotopia from PRX. Radiotopia is a collective of independently owned and operated podcasts that’s a part of PRX, a not-for-profit public media company. If you’d like to directly support this show and independent media, you can make a donation at Radiotopia.fm/donate. I have recently launched a newsletter. You can subscribe to it at thememorypalacepodcast.substack.com .],
+  [Swiming by Explosions in the Sky
+Walking Song by Kevin Volans and the Netherlands Wind Ensemble
+I Walk on Guilded Splinters by Johnny Jenkins
+Seduction by the Balanescu Quartet
+Lunette by Les Baxter and Dr. Samuel J. Hoffman
+Running Around by Buddy Ross
+September by Giles Lamb],
+  [Notes
+This episode was pieced together from a ton of little fragments but I wanted to steer folks to a couple of resources in particular: this excellent article from a few years back in the Toronto Star by Katie Daubs, and this documentary from filmmaker, Amy Nicholson, that primarily uses the Zipper as a way to talk about changes at Coney Island but has some great details from Harold Chance and his sons.],
+),
+  insert-map: (:),
+  word-count: 184,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+  ],
+  [
+    standard-article(
+  title: [Two Small Sculptures (The Met Residency Episode 8)],
+  author: [The Memory Palace],
+  source-name: [The Memory Palace],
+  images: (),
+  paragraphs: (
+  [Nate DiMeo was the Metropolitan Museum of Art's Artist in Residence for 2016/2017. He produced 8 episodes inspired by the collection and by the museum itself. This is the eigth episode of that residency.],
+  [This residency is made possible by the Metropolitan Museum of Art’s Chester Dale Fund.],
+  [This episode is written and produced and stuff by Nate DiMeo with engineering assistance from Elizabeth Aubert. Its Executive Producer is Limor Tomer, General Manager Live Arts, The Metropolitan Museum of Art.],
+  [Hiawatha , Edmonia Lewis, 1868.],
+  [Minnehaha , Edmonia Lewis, 1868.],
+  [Learn about your ad choices: dovetail.prx.org/ad-choices],
+),
+  insert-map: (:),
+  word-count: 108,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -1311,77 +1404,100 @@ Some of The Stars vs. Creatures by Colleen.],
 ), ruled-indices: (1,))
 
 {
-  #section-label([Briefs])
+  #standard-article(
+  title: [Episode 126 (The 8th Story)],
+  author: [The Memory Palace],
+  source-name: [The Memory Palace],
+  images: (),
+  paragraphs: (
+  [The Memory Palace is a proud member of Radiotopia.],
+  [Then a smidge of N. Y. C. from the original Broadway cast recording of Annie.],
+  [The Stars vs. Creatures by Colleen.],
+  [Wiese by Roedelius & Arnold Kasar.],
+  [Then there's some chaos built out of Missing Piece from the score to Broken City, Fog Tropes by Ingram Marshall, Spindrift by Colin Stetson, and Longing for a Frozen Sky by Ernst Reijseger.],
+  [Learn about your ad choices: dovetail.prx.org/ad-choices],
+),
+  insert-map: (:),
+  word-count: 111,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+}
+
+{
+  #section-label([Analysis])
   #brief-group((
-    #brief-item([Edwin Evans-Thirlwell], source-name: [Rock Paper Shotgun], [Alien Deathstorm is the new sci-fi FPS from Rebellion, developers of skull-popping shooter series Sniper Elite and the recent, Very English survival game Atomfall . What is Alien Deathstorm about? Why, it's a slice-of-life story about a neurodivergent person growing up in the big city HOHO OF COURSE NOT, it's a game about aliens in which there is a storm that will make you dead, set in another collapsing extra-terrestrial colony full of dependably phat, lived-in 1980s technology. Here's the announcement trailer.
+    [#brief-item([Joy Gendusa], source-name: [Entrepreneur], [Email volume is up 33.9% — here's how we increased CTR 10% and turned cold leads into 631 replies and 95 calls per week.])],
+    [#brief-item([Nate DiMeo], source-name: [The Memory Palace], [The Memory Palace is a proud member of Radiotopia from PRX.
 
- Read more])
+Music
 
-    #brief-item([The Memory Palace], source-name: [The Memory Palace], [This piece was originally commissioned by Slate.com .
+Dave Pajo/Aerial M does Plastic Energy Man
 
-If you enjoy this story, please tell a friend about The Memory Palace. 
+Patricia Rossborough played To a Wild Rose
+
+Mal Waldron plays Warm Canto
+
+We hear Muff Gets a Share from Joel P. West’s score to Band of Robbers
+
+We hear another song I absolutely love, Turned Out I Was Everyone, by Sasami
+
+We finish on Popcorn and Life from Ben Sollee’s lovely score to Maidentrip.])],
+    [#brief-item([Reece Bithrey], source-name: [Rock Paper Shotgun], [The Asus ROG Strix Scope II 96 Wireless has been a long-time favourite mechanical keyboard of mine. That's because of its highly functional, near-full-size layout, its smooth, lubricated switches, and just the sense that the entire package feels thoughtful and well-put-together. I tried looking for a deal for in in the UK, sadly to no avail, though our US pals will be happy to learn it's currently \$130 from Amazon US in their Spring Sale (that, for some strange reason, is happening over a week after the UK one ended).
+
+ Read more])],
+    [#brief-item([Oisin Kuhnke], source-name: [Rock Paper Shotgun], [It sounds like Kingdom Come: Deliverance 2 developer Warhorse Studios' future projects won't be translated entirely by human hands. Earlier today, a Reddit post was shared to the game's subreddit from Max Hejtmánek, a Czech to English translator and editor on the developer's most recent game, where he claimed that yesterday, March 27th, he was laid off "in favour of using AI for all translations going forward."
+
+ Read more])],
+    [#brief-item([Nate DiMeo], source-name: [The Memory Palace], [The Memory Palace is a proud member of Radiotopia from PRX.
+
+Music
+
+Inception by radio.string.quintet.vienna
+
+Julie With by Group Listening
+
+Nice Breeze Isn’t It? by friend of the show, Simon Rackham
+
+Wet by Taylor Deupree
+
+Times Like This II by Jean Kopperud and Stephen Gosling
+
+Broad Channel by Bing and Ruth
+
+Cradle (with Akira) by ghost and tape
+
+Lithosphere by Caoimhin O Raghellagh
+
+and by Caoimhin O Raghelagh and Thomas Bartlett
+
+Notes
+
+You can find the website I mentioned here ; it’s a one-stop shop, really, for information on the 6888t. .])],
+    [#brief-item([The Memory Palace], source-name: [The Memory Palace], [If you enjoy this story, please tell a friend about The Memory Palace. 
 
 Thank you kindly.
 
-Learn about your ad choices: dovetail.prx.org/ad-choices])
+Learn about your ad choices: dovetail.prx.org/ad-choices])],
+    [#brief-item([Glenn Garner], source-name: [Deadline Hollywood], [Mary Beth Hurt, the actress known for roles in The Age of Innocence and Six Degrees of Separation, has died. She was 79. The 3x Tony-nominated actress’ daughter Molly Schrader, whom she shared with husband Paul Schrader, announced that Hurt died on Saturday after she was diagnosed with Alzheimer’s in 2015. “Yesterday morning we lost \[…\]])],
+    [#brief-item([The Memory Palace], source-name: [The Memory Palace], [If you enjoy this story, do tell someone about The Memory Palace. 
 
-    #brief-item([Jackie Mead], source-name: [Damn Interesting], [From Where the Sun Now Stands :
+Thanks.
 
-An American Indian man on horseback stood outlined against a steely sky past midday on 05 October 1877. Winter was already settling into the prairies of what would soon become the state of Montana. Five white men stood in the swaying grass on the other side of the field, watching the horse move closer. Four […]])
+Nate
 
-    #brief-item([Nathan Yau], source-name: [FlowingData], [It seems like people don’t stick with the same job for as long as they used to, but maybe that’s not the case.
+Learn about your ad choices: dovetail.prx.org/ad-choices])],
+    [#brief-item([Martin Fowler], source-name: [Martin Fowler], [class="img-link"\> 
 
- Read More])
+ Erik Doernenburg is the maintainer of CCMenu: a Mac
+ application that shows the status of CI/CD builds in the Mac menu bar. He
+ assesses how using a coding agent affects internal code quality by adding
+ a feature using the agent, and seeing what happens to the code.
+ 
 
-    #brief-item([The Memory Palace], source-name: [The Memory Palace], [The Memory Palace is a proud member of Radiotopia. 
-
- Music 
-
-First up is Requiem from Nico Muhly’s score to How to Talk to Girls at Parties.
-
- November by Colleen.
-
-Edward Hong’s arrangement of Sleep from the Smoke and Mirrors Percussion Ensemble.
-
-The solo version of Broad Channel by Bing & Ruth
-
- Won’t Be a Thing to Become by Colin Stetson and Sarah Neufeld
-
- Notes 
-
-Here’s Shane DuBay and Carl Fuldner’s study in the Proceedings of the National Academy of Sciences, including Fuldner’s remarkable photographs.
-
-Learn about your ad choices: dovetail.prx.org/ad-choices])
-
-    #brief-item([Mark Warren], source-name: [Rock Paper Shotgun], [Nvidia CEO Jensen Huang has decided to try something a bit different in his latest defense of the company's recently revealed DLSS 5 neural rendering tech . No longer does he throw cold coffee in the faces of critics and bellow ' you're dead wrong , and you better give me something on this guy or you're toast'. Instead, he sits on the desk like a teacher playing it casual - saying that he understands where critics are coming from, but still insisting that the tech's benign.
-
- Read more])
-
-    #brief-item([Mark Warren], source-name: [Rock Paper Shotgun], [Right, roll call time. "A barbarian (for all the bonk boys in the audience)". Present. A mage who's the smartypants choice. Yeah. A thief, who's both "classic" and "obligatory". Here. "Rat with saxophone". Yup. Right, that's all of the fantasy trope character types accounted for in Dark Scrolls, a roguelike dungeon-running platformer from the devs behind Gunbrella and Gato Roboto .
-
- Read more])
-
-    #brief-item([Harry Baker], source-name: [Live Science], [Russia's Progress spacecraft have been used to ferry cargo to the ISS throughout the entirety of the space station's history. This photo shows Progress 45 docking with the ISS in 2011.])
-
-    #brief-item([The Memory Palace], source-name: [The Memory Palace], [The Memory Palace is a proud member of Radiotopia , a collective of independently owned and operated podcasts.
-
- Music 
-
-We hear both Baracolle and Ice World from Saloli's album, The Deep End .
-
-We hear Ensemble Recherche do Morton Feldman's Something Wild in the City: Mary Ann's Theme. 
-
-As well as De Wolfe Music do Moonbird .
-
-Harry Kalahiki does that Ukelele version of Claire de Lune 
-
-We get a snipped of Eartheater's Peripheral
-
-And E Ruscha V's The Hostess 
-
-Learn about your ad choices: dovetail.prx.org/ad-choices])
-
-    #brief-item([Martin Fowler], source-name: [Martin Fowler], [A conversation between Unmesh Joshi , Rebecca
+ more…])],
+    [#brief-item([Martin Fowler], source-name: [Martin Fowler], [A conversation between Unmesh Joshi , Rebecca
  Parsons , and Martin Fowler on how LLMs help us
  shape the abstractions in our software. We view our challenge as building
  systems that survive change, requiring us to manage our cognitive load. We
@@ -1390,10 +1506,36 @@ Learn about your ad choices: dovetail.prx.org/ad-choices])
  feedback loop. TDD helps us operationalize that loop, and LLMs allow us to
  explore that loop in an informal and more fluid manner.
 
- more…])
+ more…])],
+    [#brief-item([The Memory Palace], source-name: [The Memory Palace], [Music, Footnotes & Ephemera
 
-    #brief-item([Glenn Garner], source-name: [Deadline Hollywood], [Mary Beth Hurt, the actress known for roles in The Age of Innocence and Six Degrees of Separation, has died. She was 79. The 3x Tony-nominated actress’ daughter Molly Schrader, whom she shared with husband Paul Schrader, announced that Hurt died on Saturday after she was diagnosed with Alzheimer’s in 2015. “Yesterday morning we lost […]])
+The Memory Palace is a proud member of Radiotopia , from PRX, a curated network of extraordinary, story-driven shows.
 
+Music
+
+We start out with some of Pound for Pound from The Bad Plus
+
+ Go to Waltz by Mother Falcon
+
+ Into the Light by Marisa Anderson
+
+ With Everything that Breathes by Greg Haines
+
+ Day One Four by F. S. Blum and Nils Frahm
+
+Andrew Cyrille, Jimmy Lyons, and Jeanne Lee do Nuba 
+
+And then Davis S. Ware does Mikuro’s Blues , which I’ve loved for a long time.
+
+Learn about your ad choices: dovetail.prx.org/ad-choices])],
+    [#brief-item([Mark Warren], source-name: [Rock Paper Shotgun], [I dunno if you heard earlier this month, but PlayStation are reportedly breaking up with us PC folks , at least when it comes to the PS5's biggest singleplayer hitters. Asked where Returnal devs Housemarque's new game Saros - due out next month - fits into that, its director has opted to remain tight-lipped. 
+
+ Read more])],
+    [#brief-item([The Memory Palace], source-name: [The Memory Palace], [If you enjoy this story, please tell a friend about The Memory Palace. 
+
+Thank you kindly.
+
+Learn about your ad choices: dovetail.prx.org/ad-choices])],
   ))
 }
 

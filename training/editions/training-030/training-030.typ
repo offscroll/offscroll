@@ -23,14 +23,59 @@
 
 // --- Front Page Feature ---
 #feature-article(
-  title: [‘Biggest Swell in Years’ Slams Bondi Beach with 12ft Bomb Sets (Video)],
+  title: [Khruangbin and Lord Huron to Headline the 2025 Outside Festival Presented by Capital One and REI],
   kicker: [Cover Story],
+  author: [TJ Pitre],
+  source-name: [Trail Runner Magazine],
+  deck: [The just-announced lineup of musical headliners includes Khruangbin , Lord Huron , Sylvan Esso , Trampled by Turtles , Neal Francis , Waxahatchee , Husbands , and Hazlett .],
+  lead-pre: [],
+  lead-cap: [T],
+  lead-rest: [he Outside Festival is back.],
+  body-paragraphs: (
+  [A year after the inaugural gathering brought some 18,000 people together for a rousing weekend of music and joy in the outdoors, the Outside Festival with presenting sponsors Capital One and REI Co-op will return to downtown Denver’s Civic Center Park, May 31-June 1, 2025. The just-announced lineup of musical headliners includes Khruangbin , Lord Huron , Sylvan Esso , Trampled by Turtles , Neal Francis , Waxahatchee , Husbands , and Hazlett .],
+  [The two-day event will also feature conversations with iconic athletes, renowned storytellers, and inspiring changemakers, plus an adventure films series and a diverse mix of outdoor experiences.],
+  [Record-breaking swimmer Diana Nyad speaking at the 2024 Outside Festival],
+  [The Outside Summit, a precursor to the Festival and the outdoor industry’s premier networking event, which was attended by over 500 influential leaders in its first year, will return on Thursday, May 29. The Summit includes a full day of programming on Friday, May 30, plus exclusive gatherings during the Festival weekend.],
+  [The 2024 Outside Festival and Summit was hailed as a massive success that created a new model for a national outdoor community gathering. Building off that momentum, organizers have expanded the Festival grounds to include Lincoln Veterans Memorial Park in order to accommodate an anticipated 25,000-plus attendees. Activities include climbing experiences, yoga classes, skills workshops, gear demos, a kids’ zone, exciting food options, and a variety of immersive brand engagements. Films and talks will take place at spaces inside the Denver Art Museum and the newly renovated Denver Public Library.],
+  [Outside Festival presenting sponsor Capital One is running an exclusive Capital One cardholder presale, giving eligible cardholders—including REI Co-op ® MasterCard ® customers—48-hour early access to tickets beginning Wednesday, Dec. 11 at 10 a.m. MT, and ending at 10 a.m. MT on Friday, Dec. 13, or until the last ticket is sold. Supplies are limited. Those trying to access the Capital One Cardholder Presale must use an eligible Capital One Visa or Mastercard credit or debit card to purchase presale tickets. Excludes Capital One issued private label cards. Tickets start at \$99 for the full weekend.],
+  [Attendees enjoying a musical set at the at the 2024 Outside Festival (Photo: JP Quindara)],
+  [Immediately following the Capital One cardholder presale, all tickets will be released to the general public at 10 a.m. MT on Friday, December 13. VIP packages will start at \$150 for a single day and \$275 for the full weekend, with access to a premium VIP viewing area, exclusive food vendors, private bar access, expedited entry, and more.],
+  [Outside+ members have access to early-bird pricing throughout the entire sales window on single-day general admission tickets and all VIP ticket types, plus members have the opportunity to purchase GA+ tier tickets at general admission pricing. Two-day GA+ tickets start at \$175 and include perks like express entry, private bathrooms, additional food and beverage options, and access to the Outside+ Lounge. Children ages 12 and under enter free.],
+  [For more information or to purchase tickets, visit the Outside Festival 2025 website .],
+),
+  edited-for-length: false,
+)
+
+
+{
+  #section-label([Front Page])
+  #standard-article(
+  title: [Life and Death in Singapore],
+  author: [SiriusXM Podcasts and Roman Mars],
+  source-name: [99% Invisible],
+  images: (),
+  paragraphs: (
+  [When Singapore gained its independence they went on a mission to re-house the population from densely-packed thatched roof huts into giant concrete skyscrapers. In 1960, they formed the Housing and Development Board, or HDB, and just five years later they had already housed 400,000 people! In Singapore, where land is scarce, it’s not unlikely for apartment buildings to be built on top of land that was graveyards not too long ago. But building on top of a graveyard has its complications.],
+  [Life and Death in Singapore],
+  [Start a free trial now on Apple Podcasts or by visiting siriusxm.com/podcastsplus .],
+),
+  insert-map: (:),
+  word-count: 119,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+}
+
+{
+  #section-label([Features])
+  #standard-article(
+  title: [‘Biggest Swell in Years’ Slams Bondi Beach with 12ft Bomb Sets (Video)],
   author: [Dashel Pierson],
   source-name: [Surfer Magazine],
-  deck: [However, a strong pulse of south swell, one dubbed perhaps “the biggest south swell in years,” slammed the coastal Sydney suburb over the weekend.],
-  lead-text: "While Bondi Beach may be one of Australia’s most popular shorelines, it’s not known typically for surf – there are plenty of other waves that regularly produce world-class surf in the region, leaving Bondi for the sunbathing and splish-splashing crowd.",
-  lead-first-alpha: 0,
-  body-paragraphs: (
+  images: (),
+  paragraphs: (
+  [While Bondi Beach may be one of Australia’s most popular shorelines, it’s not known typically for surf – there are plenty of other waves that regularly produce world-class surf in the region, leaving Bondi for the sunbathing and splish-splashing crowd.],
   [However, a strong pulse of south swell, one dubbed perhaps “the biggest south swell in years,” slammed the coastal Sydney suburb over the weekend.],
   [And a handful of surfers paddled out, with crowds on the headlands watching on, to witness the potentially historic waves, pushing into the 12-foot range. See below.],
   [style="padding: 16px;"\>],
@@ -100,109 +145,8 @@
   [Stay tuned; more to come from this run of swell.],
   [align="center"\> Related: 25ft ‘Pure Evil’ Waves at Australia’s Heaviest Slab (Video)],
 ),
-  edited-for-length: false,
-)
-
-
-{
-  #section-label([Front Page])
-  #standard-article(
-  title: [Life and Death in Singapore],
-  author: [SiriusXM Podcasts and Roman Mars],
-  source-name: [99% Invisible],
-  images: (),
-  paragraphs: (
-  [When Singapore gained its independence they went on a mission to re-house the population from densely-packed thatched roof huts into giant concrete skyscrapers. In 1960, they formed the Housing and Development Board, or HDB, and just five years later they had already housed 400,000 people! In Singapore, where land is scarce, it’s not unlikely for apartment buildings to be built on top of land that was graveyards not too long ago. But building on top of a graveyard has its complications.],
-  [Life and Death in Singapore],
-  [Start a free trial now on Apple Podcasts or by visiting siriusxm.com/podcastsplus .],
-),
   insert-map: (:),
-  word-count: 119,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-}
-
-{
-  #section-label([Features])
-  #standard-article(
-  title: [Liquids, “Brady Math,” and Road Super Shoes: How Riley Brady Got So Fast],
-  author: [RUN | Powered by Outside],
-  source-name: [Trail Runner Magazine],
-  images: (),
-  paragraphs: (
-  [Editor’s Note: In anticipation of Riley Brady toeing the line as a top contender at the 2025 Western States 100 on June 28, we’re looking back on their meteoric rise.],
-  [Theoretically, Riley Brady didn’t need to kick into the finish line at the 2024 Javelina Jundred on October 26. The non-binary runner from Boulder, Colorado, had forged nearly a 20-minute gap over second-place woman Hannah Allgood during the last 99 and a half miles.],
-  [But they needed to kick it in nonetheless.],
-  [“I never feel like I have the win in the bag,” Brady said. “A race is not over ‘til it’s over. When people show up at a finish line and stop and walk across the line, I’m like, ‘You don’t know who’s back there! You don’t know who’s gonna sprint pass you!’ You have to Zack-Miller-finish this race. You should be sprinting as fast as you can across that line, and then you can collapse, or walk, or do whatever you want.”],
-  [And that’s exactly what Brady did. The glow of their headlamp bobbed through the darkness, rounded the turn into the iridescent tent city that makes up the Javelina headquarters, and zoomed down the seemingly never-ending straight away. Brady zipped across the finish line and in one fluid motion doubled over, hands precariously holding the upper half of their body up on their knees.],
-  [They stopped the clock in 14:19:01—the second fastest time ever in the women’s race on a historically hot day that saw the thermometer creep up to 100 degrees Fahrenheit.],
-  [It’s their third consecutive Javelina Jundred podium, second golden ticket into Western States, and first win at the Burning-Man-meets-Halloween-meets-ultrarunning rave in Fountain Hills, Arizona. But simply examining those three data points from the end of October in 2022, 2023, and now 2024 leaves out much of the story—including why you may not even know who this very legitimate contender at the 2025 Western States 100 even is.],
-  [Here’s how the 29-year-old bike mechanic torched the Javelina Jundred this fall.],
-  [1. A Liquid Diet],
-  [Heading into Javelina in October, there was no question to those that know them that Brady was fit. Scary fit. (This author understood this deeply first hand, having had the privilege of getting dropped by Brady many times on long runs and workouts over the past year.) The big question was: could their stomach hold it together enough to let their fitness shine?],
-  [Violent nausea and vomiting that reduced Brady to the fetal position on the side of the trail had been their downfall in longer races ever since earning a golden ticket with a second-place finish at Javelina in 2022, including at Western States itself in 2023, Black Canyon 100K and Javelina in 2023, and the Black Canyon, Canyons 100K (where they were also sick with a virus), and CCC 100K earlier this year.],
-  [“I’ve always thrown up in races, and it’s been an easy puke and rally,” Brady said. “But this vomiting was so violent I couldn’t hold my body up. It’s very different when it’s like you just take a gel and it doesn’t sit right so you just kind of throw up. You’re not collapsed on the ground.”],
-  [Enough was enough.],
-  [Brady enlisted the expertise of Vic Johnson, a registered dietitian who specializes in working with mountain athletes. Sweat testing revealed that Brady’s sweat and salt rates were both on the low end, and yet they had not been hydrating sufficiently during races. Johnson set Brady a minimum of drinking 500mL an hour.],
-  [“That’s one bottle an hour, which is quite low,” Brady said. “There have been times when I’ve definitely been drinking less than that, so he was like, ‘Once you start losing two to three percent of your body weight, that’s when we start to see those kinds of stomach issues come into play.”],
-  [Under Johnson’s guidance, Brady also started experimenting with more liquid calories and fewer gels, the texture of which immediately sent Brady’s gag reflexes on high alert. As the forecast called for temperatures reaching dangerously close to triple digits, that strategy proved especially prescient.],
-  [Brady amused themself by listening and singing along to an eclectic playlist that included a lot of country (Sturgill Simpson, Dolly Parton, Alan Jackson, etc.), some pop (Chappell Roan, Taylor Swift, Beyoncé, etc.), and musical theater (Phantom of the Opera, Footloose). (Photo: Howie Stern)],
-  [Brady did their best to drink 500 mL per hour on lap one of the five-lap course. The sun had yet to shine its wrath on the desert, and they probably fell a little short. But they were running well inside of themselves, just ahead of the lead women’s pack, and diligently downed a bottle of Skratch and Gatorade from aid stations on course, as well as a gel. (Aid stations also supplied Gu Roctane, but they didn’t have the Tea flavor and that’s the only flavor Brady doesn’t find repulsive.)],
-  [“The Gatorade tasted a little bit like a cleaning chemical, but it was good enough that I could get it down,” Brady said. “So I was like, ‘All right, I’m getting some calories, some salt from this.’”],
-  [Starting the third lap, Brady attempted to down a Precision Nutrition caffeine gel, which they had mixed into water in their soft flask just as they had done in training “because the texture is disgusting.” Their tried-and-true plan failed.],
-  [“I immediately threw up,” Brady said. “And I was like, ‘OK, I’m just going to cut this out.’”],
-  [Feeling like they could use some more calories on lap four, Brady tried taking one more gel, an SIS Beta Fuel—another tried-and-true staple. But the body rejected that, too.],
-  [“I cut those out, too,” Brady said. “I was like, ‘The liquid calories are working. I’m not going to mess with that.”],
-  [Brady estimates they took in 45 grams of carbs, or just under 200 calories, an hour for the duration of the race. While that’s more carbs than they’ve stomached in recent longer ultras, it’s about half as much as many high-carb proponents recommend. The bonk started catching up with them by lap five. But moving forward with some energy was better than curled up on the side of the trail with no energy at all.],
-  [2. Brady Math],
-  [A crown jewel of the Aravaipa Running race portfolio, the Javelina Jundred takes runners around the same 20-mile loop through the sandy washes of the desert five times. Each loop features a slight uphill over the first half to the highpoint near the foothills of the McDowell Mountains northeast of Phoenix before looping back down to the start for a total of about 1,580 feet of climbing and descent on each lap.],
-  [Five 20-mile loops may sound daunting. Not to Brady.],
-  [“I don’t think about the miles,” Brady said. “I’m like, ‘We’re running five laps.’ You just say ‘a lap,’ and it doesn’t sound that bad, you know?”],
-  [Compartmentalizing the 100-mile course into something as benign as a lap let Brady forget about the miles. In fact, they didn’t look at their watch once all day.],
-  [“I put the mileage out of my mind,” Brady said. “It’s really just one hard lap. The first one doesn’t count because it’s the first one. Second one, you’re probably still feeling pretty good, so it’s whatever. Third one is kind of hard, because it’s the heat of the day and it’s the third one. But then fourth one you get to pick up a pacer, so then you have a buddy. And fifth one, it’s the last lap, so you just gotta get one lap done.”],
-  [In fact, they just had to make it through half of one lap:],
-  [“It helps that it’s slightly uphill on the way out and then slightly downhill all the way back. So I just didn’t count the downhill. That’s easy running. So I just have to make it through half a lap.”],
-  [Sounds like Brady math, a mindset quite similar to that of another Brady legend .],
-  [“It’s not really how it plays out in reality,” Brady admitted. “But that’s how I like to think about it going into it.”],
-  [3. Ice, Ice Baby],
-  [Brady, who “hates” the cold, is a natural in scorching temperatures. But they didn’t take that aptitude for granted, making the extra effort to spend time in the sauna and hot tub at the rec center a couple of times a week, as well as running in the heat of the day on weekends during an usually hot fall in Boulder. They also applied a full heat protocol during the race, using pacer Leah Yingling’s special bandanas Lululemon made for the Further Project and dumping ice water on their head and down their shirt. It helped that Javelina supplied ice at every aid station.],
-  [It all paid off.],
-  [“To be honest, it felt hot but not crazy,” Brady said. “The only time I really felt like, ‘OK, I’m getting pretty warm here,’ was on the third lap during the heat of the day coming into Jackass.”],
-  [There, Brady took a few extra seconds to make sure their bottles were refilled, as well as to fully submerge in a kitty pool filled with ice water.],
-  [4. Road Running Super Shoes (Seriously)],
-  [Two weeks before the race, Brady had not as much as even ever tried on road super shoes. (They had worn trail super shoes, such as they are, to varying degrees of success.) That’s when they got their hands on a pair of Nike Vaporflys—a carbon-plated road running super shoe with next-to-no traction.],
-  [Brady took them out for a test drive on the Dirty Biz, a 15-mile, mostly buffed out trail and double-track loop just south of Boulder that Brady characterizes as more technical than the Javelina course. It was love at first run.],
-  [“I was like, ‘Wow. This fits my foot so perfectly. This feels so comfortable,” Brady said. “I felt super nimble. I just wasn’t thinking about my feet at all.”],
-  [For someone with a neuroma who’s relatively picky when it comes to shoes, this was a ringing endorsement.],
-  [“I didn’t feel like they were tippy,” Brady said. “I didn’t feel like I was going to roll an ankle.”],
-  [They admit the tread could be better, but that wasn’t going to make or break their shoe choice on a course as untechnical as Javelina. They had no regrets.],
-  [“I couldn’t have been more thrilled with them,” Brady said. “I got a few rocks in my shoes. The upper is pretty porous. But I don’t have any blisters. I didn’t think about my feet once throughout the day.”],
-  [Make no mistake, Brady says: this is not an advertisement for Nike. But they’ve never loved a shoe more.],
-  [5. Attitude of Gratitude],
-  [Brady’s shoe choice was a reflection of the freedom they’ve afforded themselves with a clear-headed attitude. Over the past several years, they’ve turned down modest sponsorship offers from shoe companies whose shoes were not the perfect fit.],
-  [“There have been some shoes that I just don’t see working for me in trail hundred milers. And that’s what I want to be running,” Brady said. “And so if the shoe is gonna irritate my foot, all the money in the world wouldn’t be worth it to me to have a shoe that doesn’t work.”],
-  [Running sponsorless has come with a price—Brady works as a bike mechanic, putting in three long, hard days a week on their feet and lugging heavy e-bikes and mountain bikes onto and off of bike stands. (They love that work so much, though, that they continued working overtime hours during the pandemic despite making less than they would have on unemployment.) And they don’t have any sponsor support to travel to races (although they have supportive parents, who attend all of Brady’s big races and pay for the rental house). While not having a sponsor might knock the confidence of some runners at Brady’s level, it doesn’t seem to phase them.],
-  [“I’m not somebody who feels like they need a sponsorship to feel secure in my sense of self,” Brady said. “I know that’s some people’s goal, but that’s not my goal at all. For a sponsorship to be worth it to me, it needs to support my ability to run.”],
-  [If Brady were to sign a sponsorship contract—and they are in talks with some companies—the deal would have to be big enough so they could quit their job as a bike mechanic. They don’t need time to train more: Brady puts in about 90 miles a week, going up to 100 on key weeks, with a few bike rides, strength training, heat protocol, and physical therapy slotted in there as well. But it’s a militant schedule that leaves little time for cooking, spending time with their two roommates and two cats, and no time for Brady pursuing their biggest hobby outside of running: welding. And that’s a passion they hope to turn into a career.],
-  [Brady carried this maturity to the race itself. After running alone off the front of the women’s race on lap one, Brady was caught by Allgood on the long climb out of headquarters on lap two. They just kept doing their own thing, and sure enough their agility on the 10-mile downhill back to the start line reestablished that gap. They didn’t see another competitor in the woman’s race for the rest of the day—minus everyone they lapped.],
-  [Brady received a finish-line hug from race director Jubilee Paige after running the second-fastest women’s time ever on a historically hot day. (Photo: Howie Stern)],
-  [6. An A Team],
-  [Speaking of getting lapped, that’s the curse of doing well at this race. The faster you run, the more people you lap, and the more people you have to warn to get out of the way—as politely as you can, of course.],
-  [That’s where the power of the pacer came into play. Brady’s friend Chelsea Burns pulled them through lap four, and Yingling ran them home on lap five.],
-  [“It was really helpful to have Chelsea and Leah because they could tell people to move,” Brady said. “You’re passing so many people at that point, because the 100K is out on course, and then you’re catching all of the other people in the 100 miler because everybody’s just doing these same loops, and it gets really difficult when you’re tired to keep saying, ‘On your left! Excuse me! Coming through!’ And still sound kind about it. I definitely don’t want to be pissing people off out there, but also, I’m racing.”],
-  [Burns and Yingling also played the pivotal role of serving as Brady’s representative at aid stations, which while exceptionally well staffed were as chaotic as you would expect with hundreds of runners passing through every hour. (They were so chaotic, in fact, that at one point Brady and Burns got separated and Burns ran up the trail, thinking Brad had already left. They doubled back and found Brady just emerging from the aid station less than a handful of minutes later.) Brady’s pacers saved precious seconds by helping to acquire ice and fill bottles. Yingling, ever the consummate professional, provided just the stroke to the ego Brady needed on lap five to get them to the finish line and secure a golden ticket.],
-  [Secure a golden ticket they did. After failing to earn their way back into States last year, it’s a huge relief, Brady says. But you’ll see them on the golden ticket circuit again quite soon. They have some unfinished business at Black Canyons to attend to. And you’ll probably see them back at Javelina next year, too. But not with a bib pinned to their shirt.],
-  [“I really want to be top 10 at Western States,” Brady said. “I don’t want to have to go back [to Javelina]. I’ve done this race the last three years in a row. I want to get to experience some of the fun party aspects of Javelina. I have other friends who I think want to race it. I just really want to be on the crew and volunteer side of things. Aravaipa has been so great in terms of helping me get to this race, so I want to try and give back to Aravaipa in a small way.”],
-  [Because more than sponsorships or golden tickets, community is what attracted Brady to this sport as an undergraduate student at the University of Vermont, it’s largely what brought them out to Boulder (along with quality running and access to trans healthcare), and it’s what keeps them in the sport.],
-  [“This is probably gonna sound very cliché, and I really hate clichés, but I do feel so lucky to just have the best community around me,” Brady said. “Going into this race, I was reflecting and just felt so well supported. I’m very appreciative of David [Roche] for being a good coach, I have this great PT, and then just the best friends in Boulder.”],
-  [Roche, of course, won the men’s race.],
-  [Brady’s friend Rosie writes them a card before every race, and Javelina was no exception. And upon returning to Boulder after the race, Brady was greeted to a congratulatory sign on their bedroom door: “I’m fast as f\*\*\*, boi!” And their two roommates took them out to a celebratory dinner.],
-  [“One of the reasons to do this sport is the community,” Brady said. “I’m just really, really grateful and feeling really well loved right now.”],
-),
-  insert-map: (:),
-  word-count: 2910,
+  word-count: 686,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -237,7 +181,7 @@
   [style="display: flex; margin-bottom: 24px;"\>],
   [style="background-color: \#F4F4F4; border-radius: 4px; height: 14px; margin-bottom: 6px; width: 224px;"\>],
   [style="background-color: \#F4F4F4; border-radius: 4px; height: 14px; width: 144px;"\>],
-  [“I’M THE KING OF THIS SHIT,” Zeke boastfully captioned. “Quit Playyin w/ Me! Nobody has Landed as many New Tricks as Me!! & I’ve been Dreaming of Landing a 360 Shuv it for like 8 years now. SuperMan 360 Shuv. Huge Thx to \@wacosurf\_tx for having us & shout out to my homies for Hyping me up the last two days to stomp it.”],
+  [“I’M THE KING OF THIS SHIT,” Zeke boastfully captioned. “Quit Playyin w\/ Me! Nobody has Landed as many New Tricks as Me!! & I’ve been Dreaming of Landing a 360 Shuv it for like 8 years now. SuperMan 360 Shuv. Huge Thx to \@wacosurf\_tx for having us & shout out to my homies for Hyping me up the last two days to stomp it.”],
   [Impressive.],
   [align="center"\> Related: 25-Foot Uluwatu: ‘Biggest Waves I’ve Ever Seen Here’ (Video)],
   [And the congrats on the new trick rolled in, along with a note or two on his audacity.],
@@ -320,63 +264,55 @@
   ],
   [
     brief-group((
-      brief-item([Lasha Madan, Vivian Le, Kurt Kohlstedt], source-name: [99% Invisible], [At a glance, the border between the United States and Canada would seem to be at the friendlier end of the international boundary spectrum. But even though the US-Canada border is now pretty tame, when two countries touch each other over a stretch of 5500 miles, it can result in some surprisingly weird disputes, misunderstandings, geographical quirks and... really good stories. 
+      [#brief-item([Lasha Madan, Vivian Le, Kurt Kohlstedt], source-name: [99% Invisible], [At a glance, the border between the United States and Canada would seem to be at the friendlier end of the international boundary spectrum. But even though the US-Canada border is now pretty tame, when two countries touch each other over a stretch of 5500 miles, it can result in some surprisingly weird disputes, misunderstandings, geographical quirks and... really good stories. 
 
  Fifty-Four Forty or Fight 
 
 Start a free trial now on Apple Podcasts or by visiting siriusxm.com/podcastsplus . 
 
-Hosted by Simplecast, an AdsWizz company. See pcm.adswizz.com for information about our collection and use of personal data for advertising.])
-
-      brief-item([Isabel Angell, Roman Mars], source-name: [99% Invisible], [What makes The Power Broker endure 50 years on? Roman Mars and Elliott Kalan sit down with legendary author Robert Caro to explore the humanity, drama, and untold stories behind his iconic book. Recorded live from the New York Historical Society.
+Hosted by Simplecast, an AdsWizz company. See pcm.adswizz.com for information about our collection and use of personal data for advertising.])],
+      [#brief-item([Isabel Angell, Roman Mars], source-name: [99% Invisible], [What makes The Power Broker endure 50 years on? Roman Mars and Elliott Kalan sit down with legendary author Robert Caro to explore the humanity, drama, and untold stories behind his iconic book. Recorded live from the New York Historical Society.
 
  Roman, Elliott, and Robert Caro: Live in Conversation 
 
 Start a free trial now on Apple Podcasts or by visiting siriusxm.com/podcastsplus . 
 
-Hosted by Simplecast, an AdsWizz company. See pcm.adswizz.com for information about our collection and use of personal data for advertising.])
-
-      brief-item([Katie Thornton, Kelly Prime, Vivian Le], source-name: [99% Invisible], [The story of New Year's Eve in Times Square, and how a quiet group of unelected Manhattan property owners used the holiday — and their own undemocratic municipal power — to transform the neighborhood from its porn-theater-and-vice-rich past to its flashy, family-friendly present.
+Hosted by Simplecast, an AdsWizz company. See pcm.adswizz.com for information about our collection and use of personal data for advertising.])],
+      [#brief-item([Katie Thornton, Kelly Prime, Vivian Le], source-name: [99% Invisible], [The story of New Year's Eve in Times Square, and how a quiet group of unelected Manhattan property owners used the holiday — and their own undemocratic municipal power — to transform the neighborhood from its porn-theater-and-vice-rich past to its flashy, family-friendly present.
 
  New Year, New Neighborhood 
 
 Start a free trial now on Apple Podcasts or by visiting siriusxm.com/podcastsplus . 
 
-Hosted by Simplecast, an AdsWizz company. See pcm.adswizz.com for information about our collection and use of personal data for advertising.])
-
-      brief-item([Roman Mars], source-name: [99% Invisible], [According to Need is a documentary podcast in 5 chapters from 99% Invisible’s Katie Mingle that asks: What are we doing to get people into housing?
+Hosted by Simplecast, an AdsWizz company. See pcm.adswizz.com for information about our collection and use of personal data for advertising.])],
+      [#brief-item([Roman Mars], source-name: [99% Invisible], [According to Need is a documentary podcast in 5 chapters from 99% Invisible’s Katie Mingle that asks: What are we doing to get people into housing?
 
 Coming December 1
 
 Start a free trial now on Apple Podcasts or by visiting siriusxm.com/podcastsplus . 
 
-Hosted by Simplecast, an AdsWizz company. See pcm.adswizz.com for information about our collection and use of personal data for advertising.])
-
-      brief-item([SiriusXM Podcasts and Roman Mars], source-name: [99% Invisible], [IKEA hacking is the practice of buying things from IKEA and reengineering—or “hacking”—them to become customized, more functional, and often just better designed stuff. The locus of the IKEA hacking movement is a website called IKEAhackers.net. It’s a showcase for … Continue reading → 
-
-Start a free trial now on Apple Podcasts or by visiting siriusxm.com/podcastsplus . 
-
-Hosted by Simplecast, an AdsWizz company. See pcm.adswizz.com for information about our collection and use of personal data for advertising.])
-
-      brief-item([Kelly Prime], source-name: [99% Invisible], [For centuries, the world's greatest minds were stumped by the deadly mystery of longitude, until an obsessive underdog entered the fray and changed navigation forever.
+Hosted by Simplecast, an AdsWizz company. See pcm.adswizz.com for information about our collection and use of personal data for advertising.])],
+      [#brief-item([SiriusXM Podcasts and Roman Mars], source-name: [99% Invisible], [IKEA hacking is the practice of buying things from IKEA and reengineering—or “hacking”—them to become customized, more functional, and often just better designed stuff. The locus of the IKEA hacking movement is a website called IKEAhackers.net. It’s a showcase for … Continue reading → 
 
 Start a free trial now on Apple Podcasts or by visiting siriusxm.com/podcastsplus . 
 
-Hosted by Simplecast, an AdsWizz company. See pcm.adswizz.com for information about our collection and use of personal data for advertising.])
-
-      brief-item([SiriusXM Podcasts and Roman Mars], source-name: [99% Invisible], [Chicago’s biggest design achievement probably isn’t one of its amazing skyscrapers, but the Chicago River, a waterway disguised as a remnant of the natural landscape. But it isn’t natural, not really. It’s hard to tell when you see the river, … Continue reading → 
-
-Start a free trial now on Apple Podcasts or by visiting siriusxm.com/podcastsplus . 
-
-Hosted by Simplecast, an AdsWizz company. See pcm.adswizz.com for information about our collection and use of personal data for advertising.])
-
-      brief-item([SiriusXM Podcasts and Roman Mars], source-name: [99% Invisible], [There’s something about rebar that fascinates me. If nothing else because there are very few things that invoke a fear of being skewered. My preoccupation with metal reinforcement bars dovetails nicely with a structure in San Francisco I’ve kind of … Continue reading → 
+Hosted by Simplecast, an AdsWizz company. See pcm.adswizz.com for information about our collection and use of personal data for advertising.])],
+      [#brief-item([Kelly Prime], source-name: [99% Invisible], [For centuries, the world's greatest minds were stumped by the deadly mystery of longitude, until an obsessive underdog entered the fray and changed navigation forever.
 
 Start a free trial now on Apple Podcasts or by visiting siriusxm.com/podcastsplus . 
 
-Hosted by Simplecast, an AdsWizz company. See pcm.adswizz.com for information about our collection and use of personal data for advertising.])
+Hosted by Simplecast, an AdsWizz company. See pcm.adswizz.com for information about our collection and use of personal data for advertising.])],
+      [#brief-item([SiriusXM Podcasts and Roman Mars], source-name: [99% Invisible], [Chicago’s biggest design achievement probably isn’t one of its amazing skyscrapers, but the Chicago River, a waterway disguised as a remnant of the natural landscape. But it isn’t natural, not really. It’s hard to tell when you see the river, … Continue reading → 
 
-      brief-item([kurt kohlstedt, martin gonzalez], source-name: [99% Invisible], [Happy National Train Day, everyone – for those of you who missed it: that was May 13th this year. A year ago, we started down this path with Train Set: Track One, which gave way to Track Two …and now, here we are for the final part of our train-fecta.
+Start a free trial now on Apple Podcasts or by visiting siriusxm.com/podcastsplus . 
+
+Hosted by Simplecast, an AdsWizz company. See pcm.adswizz.com for information about our collection and use of personal data for advertising.])],
+      [#brief-item([SiriusXM Podcasts and Roman Mars], source-name: [99% Invisible], [There’s something about rebar that fascinates me. If nothing else because there are very few things that invoke a fear of being skewered. My preoccupation with metal reinforcement bars dovetails nicely with a structure in San Francisco I’ve kind of … Continue reading → 
+
+Start a free trial now on Apple Podcasts or by visiting siriusxm.com/podcastsplus . 
+
+Hosted by Simplecast, an AdsWizz company. See pcm.adswizz.com for information about our collection and use of personal data for advertising.])],
+      [#brief-item([kurt kohlstedt, martin gonzalez], source-name: [99% Invisible], [Happy National Train Day, everyone – for those of you who missed it: that was May 13th this year. A year ago, we started down this path with Train Set: Track One, which gave way to Track Two …and now, here we are for the final part of our train-fecta.
 
 Slip coaches, the worlds shortest trains, private cars, torpedoes, and of course, Thomas.
 
@@ -384,23 +320,19 @@ Slip coaches, the worlds shortest trains, private cars, torpedoes, and of course
 
 Start a free trial now on Apple Podcasts or by visiting siriusxm.com/podcastsplus . 
 
-Hosted by Simplecast, an AdsWizz company. See pcm.adswizz.com for information about our collection and use of personal data for advertising.])
-
-      brief-item([SiriusXM Podcasts and Roman Mars], source-name: [99% Invisible], [As a fashion object and symbol, the high heel shoe is weighted with meaning. It’s also weighted with the wearer’s entire body weight. The stiletto might be one of the only designs that is physically painful but has somehow has … Continue reading → 
-
-Start a free trial now on Apple Podcasts or by visiting siriusxm.com/podcastsplus . 
-
-Hosted by Simplecast, an AdsWizz company. See pcm.adswizz.com for information about our collection and use of personal data for advertising.])
-
-      brief-item([Jessica Roy], source-name: [NYT Style], [The show, which depicted the lives of a group of wealthy high schoolers and helped to pioneer a genre of soap-style reality TV, will return in April with a reunion special.])
-
-      brief-item([SiriusXM Podcasts and Roman Mars], source-name: [99% Invisible], [There are rules that dicate what you can build and how. Rules of physics and rules of men who sit on various bureaucratic boards and bodies. These rules dictated that if silk magnate John Noble Stearns wanted to build one … Continue reading → 
+Hosted by Simplecast, an AdsWizz company. See pcm.adswizz.com for information about our collection and use of personal data for advertising.])],
+      [#brief-item([SiriusXM Podcasts and Roman Mars], source-name: [99% Invisible], [As a fashion object and symbol, the high heel shoe is weighted with meaning. It’s also weighted with the wearer’s entire body weight. The stiletto might be one of the only designs that is physically painful but has somehow has … Continue reading → 
 
 Start a free trial now on Apple Podcasts or by visiting siriusxm.com/podcastsplus . 
 
-Hosted by Simplecast, an AdsWizz company. See pcm.adswizz.com for information about our collection and use of personal data for advertising.])
+Hosted by Simplecast, an AdsWizz company. See pcm.adswizz.com for information about our collection and use of personal data for advertising.])],
+      [#brief-item([Jessica Roy], source-name: [NYT Style], [The show, which depicted the lives of a group of wealthy high schoolers and helped to pioneer a genre of soap-style reality TV, will return in April with a reunion special.])],
+      [#brief-item([SiriusXM Podcasts and Roman Mars], source-name: [99% Invisible], [There are rules that dicate what you can build and how. Rules of physics and rules of men who sit on various bureaucratic boards and bodies. These rules dictated that if silk magnate John Noble Stearns wanted to build one … Continue reading → 
 
-      brief-item([SiriusXM Podcasts and Roman Mars], source-name: [99% Invisible], [This part two of the 2017/2018 mini-stories episodes, where Roman interviews the staff and our collaborators about their favorite little design stories that don’t quite fill out an entire episode for whatever reason, but are cool 99pi stories, nonetheless.
+Start a free trial now on Apple Podcasts or by visiting siriusxm.com/podcastsplus . 
+
+Hosted by Simplecast, an AdsWizz company. See pcm.adswizz.com for information about our collection and use of personal data for advertising.])],
+      [#brief-item([SiriusXM Podcasts and Roman Mars], source-name: [99% Invisible], [This part two of the 2017/2018 mini-stories episodes, where Roman interviews the staff and our collaborators about their favorite little design stories that don’t quite fill out an entire episode for whatever reason, but are cool 99pi stories, nonetheless.
 
 We have underground tunnels, alarms, mysterious filing cabinets, and gold, tiny, tiny amounts of gold. Prepare to be very interesting at your next party.
 
@@ -408,62 +340,39 @@ We have underground tunnels, alarms, mysterious filing cabinets, and gold, tiny,
 
 Start a free trial now on Apple Podcasts or by visiting siriusxm.com/podcastsplus . 
 
-Hosted by Simplecast, an AdsWizz company. See pcm.adswizz.com for information about our collection and use of personal data for advertising.])
+Hosted by Simplecast, an AdsWizz company. See pcm.adswizz.com for information about our collection and use of personal data for advertising.])],
+      [#brief-item([Nathaniel Bahadursingh], source-name: [Archinect News], [Bustler's curated picks of new architecture and design competitions this week feature four calls seeking built projects, works in progress, and unbuilt ideas reimagining Brooklyn, proposals that envision transportation infrastructure as both functional public works and civic landmarks, excellent and original housing design, and innovative projects by design students from around the world.
 
-      brief-item([SiriusXM Podcasts and Roman Mars], source-name: [99% Invisible], [When LA punks were looking for a place to play in the late 1970s, Chinatown welcomed the unruly scene. But it was an uneasy alliance that led to fierce rivalries, hurt feelings, blatant racism, and broken toilets. At the center of it all was a 62 year old Chinese immigrant named Esther Wong, aka Madame Wong, aka The Godmother of Punk.
+For the complete directory of newly listed competitions, click here .])],
+      [#brief-item([SiriusXM Podcasts and Roman Mars], source-name: [99% Invisible], [When LA punks were looking for a place to play in the late 1970s, Chinatown welcomed the unruly scene. But it was an uneasy alliance that led to fierce rivalries, hurt feelings, blatant racism, and broken toilets. At the center of it all was a 62 year old Chinese immigrant named Esther Wong, aka Madame Wong, aka The Godmother of Punk.
 
  The Chinatown Punk Wars 
 
 Start a free trial now on Apple Podcasts or by visiting siriusxm.com/podcastsplus . 
 
-Hosted by Simplecast, an AdsWizz company. See pcm.adswizz.com for information about our collection and use of personal data for advertising.])
-
-      brief-item([SiriusXM Podcasts and Roman Mars], source-name: [99% Invisible], [It’s a stick with bristles poking out of it. It doesn’t even qualify as a simple machine, but the careful thought and design that went into the creation of the modern, angled bristle, fat handled toothbrush shows just how much … Continue reading → 
-
-Start a free trial now on Apple Podcasts or by visiting siriusxm.com/podcastsplus . 
-
-Hosted by Simplecast, an AdsWizz company. See pcm.adswizz.com for information about our collection and use of personal data for advertising.])
-
-      brief-item([SiriusXM Podcasts and Roman Mars], source-name: [99% Invisible], [Portlanders have a tradition when visiting their airport: taking a picture of their feet. It’s not to show off their shoes, but rather, what’s under them. They are documenting the famous PDX airport carpet. Julie Sabatier from Rendered has the … Continue reading → 
+Hosted by Simplecast, an AdsWizz company. See pcm.adswizz.com for information about our collection and use of personal data for advertising.])],
+      [#brief-item([SiriusXM Podcasts and Roman Mars], source-name: [99% Invisible], [It’s a stick with bristles poking out of it. It doesn’t even qualify as a simple machine, but the careful thought and design that went into the creation of the modern, angled bristle, fat handled toothbrush shows just how much … Continue reading → 
 
 Start a free trial now on Apple Podcasts or by visiting siriusxm.com/podcastsplus . 
 
-Hosted by Simplecast, an AdsWizz company. See pcm.adswizz.com for information about our collection and use of personal data for advertising.])
+Hosted by Simplecast, an AdsWizz company. See pcm.adswizz.com for information about our collection and use of personal data for advertising.])],
+      [#brief-item([SiriusXM Podcasts and Roman Mars], source-name: [99% Invisible], [Portlanders have a tradition when visiting their airport: taking a picture of their feet. It’s not to show off their shoes, but rather, what’s under them. They are documenting the famous PDX airport carpet. Julie Sabatier from Rendered has the … Continue reading → 
 
-      brief-item([Chris Berube, Isabel Angell], source-name: [99% Invisible], [Take a whirlwind tour of Memphis with the city’s most enthusiastic historian, uncovering duck parades, telecom turf wars, and a street named after a single day in 1934.
+Start a free trial now on Apple Podcasts or by visiting siriusxm.com/podcastsplus . 
+
+Hosted by Simplecast, an AdsWizz company. See pcm.adswizz.com for information about our collection and use of personal data for advertising.])],
+      [#brief-item([Chris Berube, Isabel Angell], source-name: [99% Invisible], [Take a whirlwind tour of Memphis with the city’s most enthusiastic historian, uncovering duck parades, telecom turf wars, and a street named after a single day in 1934.
 
  A Walking Tour with Mr. Memphis 
 
 Start a free trial now on Apple Podcasts or by visiting siriusxm.com/podcastsplus . 
 
-Hosted by Simplecast, an AdsWizz company. See pcm.adswizz.com for information about our collection and use of personal data for advertising.])
-
+Hosted by Simplecast, an AdsWizz company. See pcm.adswizz.com for information about our collection and use of personal data for advertising.])],
     ))
   ],
 ), ruled-indices: (1, 2,))
 
 #article-row((
-  [
-    standard-article(
-  title: [Step inside Di Frenna Arquitectos' self-designed studio and workshop in Mexico],
-  author: [Niall Patrick Walsh],
-  source-name: [Archinect News],
-  images: (),
-  paragraphs: (
-  [Mexico firm Taller Di Frenna Arquitectos has completed its own new studio and workshop building in Colima. The scheme was designed to function as both a workplace and a space for creative exploration.],
-  [Image credit: Onnis Luque],
-  [Image credit: Onnis Luque],
-  [The project brings together open workspaces, meeting rooms, audiovisual areas, and a model-making workshop within a composition of clearly defined volumes. The scheme is intended to reach beyond the conventional office and operate as a working laboratory where architectural ideas can be developed, tested, and presented.],
-  [Image credit: Onnis Luque Image credit: Onnis Luque],
-  [The spatial organization is intended to encourage interaction across the design team and support multiple stages of the design process. Interior courtyards play a central role, introducing natural light and vegetation while establishing visual connections between different areas of the building. The spaces also provide informal zones for reflection and collaboration, cont...],
-),
-  insert-map: (:),
-  word-count: 147,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-  ],
   [
     standard-article(
   title: [The Megaplex!],
@@ -477,6 +386,40 @@ Hosted by Simplecast, an AdsWizz company. See pcm.adswizz.com for information ab
 ),
   insert-map: (:),
   word-count: 130,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+  ],
+  [
+    standard-article(
+  title: [Photographing Spring Flowers with Artistic Intent],
+  author: [500px Blog],
+  source-name: [500px ISO],
+  images: (),
+  paragraphs: (
+  [Spring brings a burst of color and renewal, making it the perfect time to explore artistic interpretations of nature through photography. Photographing spring flowers with artistic intent goes beyond documentation, it’s about evoking mood, emotion, and story. Here’s how to bring a creative lens to your floral captures this season.],
+  [Before clicking the shutter, take a moment to consider what story or mood you want to convey through your image. Are you drawn to soft, romantic aesthetics? Or do you prefer bold colors and graphic shapes? Let this intention guide your composition and post-processing choices.],
+  [Use shallow depth of field (f/2.8–f/4) for dreamy, blurred backgrounds.],
+  [Frame your subject with natural elements to create depth and visual interest.],
+  [Light as Your Creative Partner],
+  [Photographing spring flowers with artistic intent means being intentional with lighting. Natural light, especially during golden hour, can add warmth and texture to your floral scenes.],
+  [Shoot during early morning or late afternoon for soft, diffused light.],
+  [Experiment with backlighting to highlight petal translucency.],
+  [Use a reflector or white surface to gently bounce light and reduce harsh shadows.],
+  [Explore Composition and Perspective],
+  [Change your vantage point to avoid typical top-down shots. Try photographing at flower level, from behind, or even through other foliage for a more immersive and unique perspective.],
+  [Incorporate negative space to evoke serenity or simplicity.],
+  [Try minimalist framing or off-center placement using the rule of thirds.],
+  [Play with Color and Texture],
+  [Spring offers a vibrant color palette. When photographing spring flowers with artistic intent, pay attention to complementary colors and repeating patterns. Let texture and color contrast carry the image’s emotion.],
+  [Pro Tip: Create a Floral Series with Purpose],
+  [Instead of one-off shots, consider creating a cohesive photo series that explores a specific flower type, color palette, or compositional theme. This approach encourages consistency, deepens your understanding of visual storytelling, and can be shared as a collection that reflects your unique creative perspective.],
+  [Extended reading: Transforming ordinary scenes with vibrant colors],
+  [The post Photographing Spring Flowers with Artistic Intent appeared first on 500px .],
+),
+  insert-map: (:),
+  word-count: 343,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -505,18 +448,21 @@ Hosted by Simplecast, an AdsWizz company. See pcm.adswizz.com for information ab
   ],
   [
     standard-article(
-  title: [Sagrada Família rumored to be released as first 12,000-piece LEGO set],
-  author: [Alexander Walter],
-  source-name: [Archinect News],
+  title: [Cactus Jack Channels the "Gangster SpongeBob" Memes With Surprise Apparel Collaboration],
+  author: [Hypebeast],
+  source-name: [Hypebeast],
   images: (),
   paragraphs: (
-  [A hot new rumor has LEGO fans and architecture aficionados equally excited: Brick Fanatics reports that the long-anticipated 12,000-piece LEGO Architecture set would feature Barcelona's famously unfinished Sagrada Família cathedral design.],
-  [The outlet bases its prediction on an Instagram post by Brick Tap , which states a release date of July 1st, 2026, for the rumored 21065 Sagrada Familia set. At 12,060 pieces, it would make it the largest LEGO set by piece count. Brick Tap's leak reports the price to be \$600 USD.],
-  [View this post on Instagram A post shared by a.clay.brick (\@a.clay.brick)],
-  [The original Antoni Gaudí landmark is indeed making big strides toward eventual completion, more than 140 years after construction began in 1882. Last month, the final piece of its massive central Tower of Jesus Christ was put in place, making it the world's tallest church and the tallest building in Barcelona at 566 feet. An inauguration ceremony of the tower is scheduled for Jun...],
+  [Cactus Jack has officially linked up with SpongeBob SquarePants for a collaborative apparel collection],
+  [The capsule features heavyweight cotton garments with unique hand-sprayed treatments and distressed details],
+  [Fans can secure pieces ranging from graphic tees to hoodies through the official Travis Scott webstore],
+  [Travis Scott ’s Cactus Jack has officially crossed over into Bikini Bottom, dropping a surprise SpongeBob SquarePants x Cactus Jack collection. The collaborative capsule merges the Houston native’s signature aesthetic with the ever-popular "Gangster SpongeBob" meme, resulting in a lineup of streetwear staples that channel spray paint art and graphics that reimagine the Bikini Bottom crew.],
+  [Anchoring the release is a series of heavyweight pieces, including the Fancy Life and Patrick Star hoodies alongside the Chum Bucket, SpongeBob x Mr. Krabs, Krabby Patty, and even Doodlebob T-shirts. The garments are elevated by co-branded artwork, utilizing screen print details on the front and back. Selected pieces receive a specialized freehand spray treatment, ensuring each individual item maintains a unique, one-of-one nature.],
+  [Also joining the delivery is the Rock Bottom Thermal Longsleeve, which focuses on Squidward, and a zip hoodie with SpongeBob and Mr. Krabs showing off their wads of cash. Rounding out the collaboration are an adjustable low-profile Rock Bottom Hat, which features a distressed embroidered patch, and a duo of beanies for SpongeBob and Patrick. By blending familiar underwater motifs with Scott’s distinctively muted, earthy design language, the collection offers a fresh take on classic cartoon merchandising.],
+  [Check out the release above. The Cactus Jack x SpongeBob SquarePants collection is available now via Travis Scott's official webstore .],
 ),
   insert-map: (:),
-  word-count: 159,
+  word-count: 262,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -604,28 +550,6 @@ Hosted by Simplecast, an AdsWizz company. See pcm.adswizz.com for information ab
 #article-row((
   [
     standard-article(
-  title: [Cactus Jack Channels the "Gangster SpongeBob" Memes With Surprise Apparel Collaboration],
-  author: [Hypebeast],
-  source-name: [Hypebeast],
-  images: (),
-  paragraphs: (
-  [Cactus Jack has officially linked up with SpongeBob SquarePants for a collaborative apparel collection],
-  [The capsule features heavyweight cotton garments with unique hand-sprayed treatments and distressed details],
-  [Fans can secure pieces ranging from graphic tees to hoodies through the official Travis Scott webstore],
-  [Travis Scott ’s Cactus Jack has officially crossed over into Bikini Bottom, dropping a surprise SpongeBob SquarePants x Cactus Jack collection. The collaborative capsule merges the Houston native’s signature aesthetic with the ever-popular "Gangster SpongeBob" meme, resulting in a lineup of streetwear staples that channel spray paint art and graphics that reimagine the Bikini Bottom crew.],
-  [Anchoring the release is a series of heavyweight pieces, including the Fancy Life and Patrick Star hoodies alongside the Chum Bucket, SpongeBob x Mr. Krabs, Krabby Patty, and even Doodlebob T-shirts. The garments are elevated by co-branded artwork, utilizing screen print details on the front and back. Selected pieces receive a specialized freehand spray treatment, ensuring each individual item maintains a unique, one-of-one nature.],
-  [Also joining the delivery is the Rock Bottom Thermal Longsleeve, which focuses on Squidward, and a zip hoodie with SpongeBob and Mr. Krabs showing off their wads of cash. Rounding out the collaboration are an adjustable low-profile Rock Bottom Hat, which features a distressed embroidered patch, and a duo of beanies for SpongeBob and Patrick. By blending familiar underwater motifs with Scott’s distinctively muted, earthy design language, the collection offers a fresh take on classic cartoon merchandising.],
-  [Check out the release above. The Cactus Jack x SpongeBob SquarePants collection is available now via Travis Scott's official webstore .],
-),
-  insert-map: (:),
-  word-count: 262,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-  ],
-  [
-    standard-article(
   title: [Blue Jeans: Articles of Interest \#5],
   author: [SiriusXM Podcasts and Roman Mars],
   source-name: [99% Invisible],
@@ -643,11 +567,6 @@ Hosted by Simplecast, an AdsWizz company. See pcm.adswizz.com for information ab
 )
 
   ],
-), ruled-indices: (1,))
-#pull-quote([Selected pieces receive a specialized freehand spray treatment, ensuring each individual item maintains a unique, one-of-one nature.], [Hypebeast])
-
-
-#article-row((
   [
     standard-article(
   title: [Changing Stripes Revisited],
@@ -662,6 +581,28 @@ Hosted by Simplecast, an AdsWizz company. See pcm.adswizz.com for information ab
 ),
   insert-map: (:),
   word-count: 153,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+  ],
+), ruled-indices: (1,))
+
+#article-row((
+  [
+    standard-article(
+  title: [Archinect's latest featured hiring firms include Moore Ruble Yudell, Chu-Gooding, West of West, Kramer + deConciliis, and Brownstone Boys],
+  author: [Nathaniel Bahadursingh],
+  source-name: [Archinect News],
+  images: (),
+  paragraphs: (
+  [From Archinect's active community of  job seekers ,  firms , and  schools , we have selected five featured architectural employers with current openings in  New York/Brooklyn , Los Angeles/Santa Monica , Portland , and Southold, New York .],
+  [For even more opportunities, visit the  Archinect job board  and explore our active community of  job seekers ,  firms , and  schools .],
+  [Architecture and design studio  West of West  has three exciting positions available: an Architect  and a Designer in Los Angeles, and a Designer in Portland. The ideal Architect possesses eight to ten years of experience and has a proven track record of project leadership in Los Angeles, including permitting and CA. The Designer in Portland must have five-plus years of experience, and the Designer in Los Angeles needs to have three to five-plus years of experience. Each role requires high-level skills with Rhino, Revit, and Adobe Creative Suite.],
+  [In Santa Monica,  Moore Ruble Yudell Architects & Planners  has a...],
+),
+  insert-map: (:),
+  word-count: 166,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -717,7 +658,7 @@ Hosted by Simplecast, an AdsWizz company. See pcm.adswizz.com for information ab
   source-name: [99% Invisible],
   images: (),
   paragraphs: (
-  [Presidential libraries are tributes to greatness, "[a] self-congratulatory, almost fictional account of someone's achievements, where all the blemishes are hidden," explains one New York architect. But they're also a "weird mix of a historical repository of records and things that have a lot of meaning." Studying their origins and evolution, one can begin to see how presidential libraries have always involved tensions and contradictions.],
+  [Presidential libraries are tributes to greatness, "\[a\] self-congratulatory, almost fictional account of someone's achievements, where all the blemishes are hidden," explains one New York architect. But they're also a "weird mix of a historical repository of records and things that have a lot of meaning." Studying their origins and evolution, one can begin to see how presidential libraries have always involved tensions and contradictions.],
   [The premise of using the extreme example of Trump to heighten the contradictions of executive branch norms is what we do on Roman's other podcast What Trump Can Teach Us About Con Law . It's good! And it's not really about Trump, so don't worry. It's essentially a current events based Constitutional Law class taught by an incredible professor, Elizabeth Joh. We included the latest episode here for you to check out.],
   [Start a free trial now on Apple Podcasts or by visiting siriusxm.com/podcastsplus .],
 ),
@@ -768,6 +709,8 @@ Hosted by Simplecast, an AdsWizz company. See pcm.adswizz.com for information ab
 
   ],
 ), ruled-indices: (1,))
+#pull-quote([The case of Manoomin v Minnesota Department of Natural Resources alleges that the Minnesota DNR infringed on the wild rice’s right to live and thrive.], [Delaney Hall, Ozzy Llinas Goodman, Rose Eveleth])
+
 
 #article-row((
   [
@@ -815,51 +758,5 @@ Hosted by Simplecast, an AdsWizz company. See pcm.adswizz.com for information ab
 
   ],
 ), ruled-indices: (1,))
-
-{
-  #standard-article(
-  title: [‘Michael Jordan’ Dolphin Soars 15 Ft Above Maui Sea, Stuns Researchers],
-  author: [Dashel Pierson],
-  source-name: [Surfer Magazine],
-  images: (),
-  paragraphs: (
-  [Off the coast of Maui, a high-flying dolphin was captured on camera by a group of wildlife experts, with them dubbing it, “the Michael Jordan of dolphins.”],
-  [The Pacific Whale Foundation, a nonprofit dedicated to protecting the ocean through science and advocacy, captured the momentous jump while doing field research. And while dolphins are known to leap from the water, this one was particularly huge.],
-  [Check out the image below.],
-  [style="padding: 16px;"\>],
-  [style="display: flex;"\>],
-  [style="background-color: \#F4F4F4; border-radius: 50%; height: 40px; margin-right: 14px; width: 40px;"\>],
-  [style="display: flex;"\>],
-  [style="background-color: \#F4F4F4; border-radius: 4px; height: 14px; margin-bottom: 6px; width: 100px;"\>],
-  [style="background-color: \#F4F4F4; border-radius: 4px; height: 14px; width: 60px;"\>],
-  [style="padding: 19% 0;"\>],
-  [style="display: block; height: 50px; margin: 0 auto 12px; width: 50px;"\>],
-  [style="padding-top: 8px;"\>],
-  [style="color: \#3897f0; font-family: Arial,sans-serif; font-size: 14px; font-style: normal; font-weight: 550; line-height: 18px;"\>View this post on Instagram],
-  [style="padding: 12.5% 0;"\>],
-  [style="display: flex; margin-bottom: 14px;"\>],
-  [style="margin-left: 8px;"\>],
-  [style="background-color: \#F4F4F4; border-radius: 50%; height: 20px; width: 20px;"\>],
-  [style="margin-left: auto;"\>],
-  [style="display: flex; margin-bottom: 24px;"\>],
-  [style="background-color: \#F4F4F4; border-radius: 4px; height: 14px; margin-bottom: 6px; width: 224px;"\>],
-  [style="background-color: \#F4F4F4; border-radius: 4px; height: 14px; width: 144px;"\>],
-  [Captioning the capture, The Pacific Whale Foundation wrote:],
-  [“THIS IS NOT AI \*\* Introducing the Michael Jordan of Dolphins, Air Dolphin estimated jump 15 ft in the air. This incredible shot was captured by our research team in the field.],
-  [“To put that into perspective: Pantropical spotted dolphins grow to about 6–7 feet long and weigh around 250 pounds. If a human could match this feat relative to their body size, it would be like jumping clear over a basketball hoop.],
-  [“Pantropical spotted dolphins are found in tropical and subtropical waters around the world. These energetic dolphins are highly social and are often seen traveling with other species like rough-toothed dolphins, short-finned pilot whales, and spinner dolphins.”],
-  [align="center"\> Related: Giant Great White Shark Gets Stranded in Shallows (Video)],
-  [As the photo made its rounds on social media, morning news outlets also picked up on the dolphin flying through the air for their feel-good segments, supplemented with remarks like “what a shot!” and “I’ve never seen anything like that” and “weeee!”],
-  [The Pacific Whale Foundation, for their part, does eco-tours for groups on Maui with the proceeds going towards research, education, conservation, and outreach to provide to provide ocean and marine life protection.],
-  [In addition to the science and activism, they occasionally witness once-in-a-lifetime moments. Learn more about the Pacific Whale Foundation here .],
-  [align="center"\> Related: Chinese Tourists Booted for Harassing Sea Lions in San Diego (Video)],
-),
-  insert-map: (:),
-  word-count: 413,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-}
 
 #colophon([The Connected Dispatch], [Vol. 1, No. 030], [2026-03-30])

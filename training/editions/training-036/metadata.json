@@ -1,0 +1,195 @@
+{
+  "config_id": "training-036",
+  "archetype": "finance-focus",
+  "date_generated": "2026-03-30T01:46:19.691816+00:00",
+  "page_target": 10,
+  "num_pages": 10,
+  "num_items": 30,
+  "feeds_contributed": [
+    "Ars Technica",
+    "iMore",
+    "Evil Martians Chronicles",
+    "Entrepreneur",
+    "The Guardian Environment",
+    "Small Business Trends",
+    "The Daily WTF",
+    "Slashdot",
+    "Financial Samurai",
+    "Wired",
+    "Live Life Travel",
+    "n+1 Magazine",
+    "Inside Intercom",
+    "NYT Top Stories",
+    "Ebay Tech Blog",
+    "Jonathan Snook",
+    "The Reformed Broker (Josh Brown)",
+    "Troy Hunt"
+  ],
+  "render_time_s": 0.21,
+  "pages": [
+    {
+      "page_number": 1,
+      "png_path": "training-036/pages/page-001.png",
+      "width_pt": 612.0,
+      "height_pt": 792.0
+    },
+    {
+      "page_number": 2,
+      "png_path": "training-036/pages/page-002.png",
+      "width_pt": 612.0,
+      "height_pt": 792.0
+    },
+    {
+      "page_number": 3,
+      "png_path": "training-036/pages/page-003.png",
+      "width_pt": 612.0,
+      "height_pt": 792.0
+    },
+    {
+      "page_number": 4,
+      "png_path": "training-036/pages/page-004.png",
+      "width_pt": 612.0,
+      "height_pt": 792.0
+    },
+    {
+      "page_number": 5,
+      "png_path": "training-036/pages/page-005.png",
+      "width_pt": 612.0,
+      "height_pt": 792.0
+    },
+    {
+      "page_number": 6,
+      "png_path": "training-036/pages/page-006.png",
+      "width_pt": 612.0,
+      "height_pt": 792.0
+    },
+    {
+      "page_number": 7,
+      "png_path": "training-036/pages/page-007.png",
+      "width_pt": 612.0,
+      "height_pt": 792.0
+    },
+    {
+      "page_number": 8,
+      "png_path": "training-036/pages/page-008.png",
+      "width_pt": 612.0,
+      "height_pt": 792.0
+    },
+    {
+      "page_number": 9,
+      "png_path": "training-036/pages/page-009.png",
+      "width_pt": 612.0,
+      "height_pt": 792.0
+    },
+    {
+      "page_number": 10,
+      "png_path": "training-036/pages/page-010.png",
+      "width_pt": 612.0,
+      "height_pt": 792.0
+    }
+  ],
+  "spreads": [
+    {
+      "spread_id": "s-036-001",
+      "edition_id": "training-036",
+      "type": "solo",
+      "pages": [
+        {
+          "page_number": 1,
+          "png_path": "training-036/pages/page-001.png",
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        }
+      ]
+    },
+    {
+      "spread_id": "s-036-002",
+      "edition_id": "training-036",
+      "type": "spread",
+      "pages": [
+        {
+          "page_number": 2,
+          "png_path": "training-036/pages/page-002.png",
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_number": 3,
+          "png_path": "training-036/pages/page-003.png",
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        }
+      ]
+    },
+    {
+      "spread_id": "s-036-003",
+      "edition_id": "training-036",
+      "type": "spread",
+      "pages": [
+        {
+          "page_number": 4,
+          "png_path": "training-036/pages/page-004.png",
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_number": 5,
+          "png_path": "training-036/pages/page-005.png",
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        }
+      ]
+    },
+    {
+      "spread_id": "s-036-004",
+      "edition_id": "training-036",
+      "type": "spread",
+      "pages": [
+        {
+          "page_number": 6,
+          "png_path": "training-036/pages/page-006.png",
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_number": 7,
+          "png_path": "training-036/pages/page-007.png",
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        }
+      ]
+    },
+    {
+      "spread_id": "s-036-005",
+      "edition_id": "training-036",
+      "type": "spread",
+      "pages": [
+        {
+          "page_number": 8,
+          "png_path": "training-036/pages/page-008.png",
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_number": 9,
+          "png_path": "training-036/pages/page-009.png",
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        }
+      ]
+    },
+    {
+      "spread_id": "s-036-006",
+      "edition_id": "training-036",
+      "type": "solo",
+      "pages": [
+        {
+          "page_number": 10,
+          "png_path": "training-036/pages/page-010.png",
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        }
+      ]
+    }
+  ]
+}

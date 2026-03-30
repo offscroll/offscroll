@@ -1,0 +1,129 @@
+{
+  "config_id": "training-026",
+  "archetype": "eclectic",
+  "date_generated": "2026-03-30T01:45:22.715547+00:00",
+  "page_target": 6,
+  "num_pages": 6,
+  "num_items": 18,
+  "feeds_contributed": [
+    "Bring a Trailer",
+    "PLOS ONE Feed",
+    "Hashrocket Blog",
+    "OS X Daily",
+    "Slate",
+    "Practical Engineering (blog)",
+    "Amit Merchant",
+    "Pitchfork News",
+    "Neon Tech Blog",
+    "Eli Bendersky",
+    "Fashionista",
+    "Serverless Blog",
+    "Jonathan Snook",
+    "Small Business Trends"
+  ],
+  "render_time_s": 0.1,
+  "pages": [
+    {
+      "page_number": 1,
+      "png_path": "training-026/pages/page-001.png",
+      "width_pt": 612.0,
+      "height_pt": 792.0
+    },
+    {
+      "page_number": 2,
+      "png_path": "training-026/pages/page-002.png",
+      "width_pt": 612.0,
+      "height_pt": 792.0
+    },
+    {
+      "page_number": 3,
+      "png_path": "training-026/pages/page-003.png",
+      "width_pt": 612.0,
+      "height_pt": 792.0
+    },
+    {
+      "page_number": 4,
+      "png_path": "training-026/pages/page-004.png",
+      "width_pt": 612.0,
+      "height_pt": 792.0
+    },
+    {
+      "page_number": 5,
+      "png_path": "training-026/pages/page-005.png",
+      "width_pt": 612.0,
+      "height_pt": 792.0
+    },
+    {
+      "page_number": 6,
+      "png_path": "training-026/pages/page-006.png",
+      "width_pt": 612.0,
+      "height_pt": 792.0
+    }
+  ],
+  "spreads": [
+    {
+      "spread_id": "s-026-001",
+      "edition_id": "training-026",
+      "type": "solo",
+      "pages": [
+        {
+          "page_number": 1,
+          "png_path": "training-026/pages/page-001.png",
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        }
+      ]
+    },
+    {
+      "spread_id": "s-026-002",
+      "edition_id": "training-026",
+      "type": "spread",
+      "pages": [
+        {
+          "page_number": 2,
+          "png_path": "training-026/pages/page-002.png",
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_number": 3,
+          "png_path": "training-026/pages/page-003.png",
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        }
+      ]
+    },
+    {
+      "spread_id": "s-026-003",
+      "edition_id": "training-026",
+      "type": "spread",
+      "pages": [
+        {
+          "page_number": 4,
+          "png_path": "training-026/pages/page-004.png",
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_number": 5,
+          "png_path": "training-026/pages/page-005.png",
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        }
+      ]
+    },
+    {
+      "spread_id": "s-026-004",
+      "edition_id": "training-026",
+      "type": "solo",
+      "pages": [
+        {
+          "page_number": 6,
+          "png_path": "training-026/pages/page-006.png",
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        }
+      ]
+    }
+  ]
+}

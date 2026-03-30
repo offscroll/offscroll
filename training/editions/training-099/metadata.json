@@ -1,0 +1,175 @@
+{
+  "config_id": "training-099",
+  "archetype": "science-journal",
+  "date_generated": "2026-03-30T01:52:52.638320+00:00",
+  "page_target": 12,
+  "num_pages": 9,
+  "num_items": 36,
+  "feeds_contributed": [
+    "PLOS ONE Feed",
+    "Feld Thoughts",
+    "Strobist",
+    "CircleCI Blog",
+    "PNAS News",
+    "Not Exactly Rocket Science (Ed Yong archive)",
+    "Architectural Digest",
+    "Live Science",
+    "New Scientist Space",
+    "New Scientist",
+    "BMW Blog",
+    "The Guardian Science/Space",
+    "Nature News",
+    "FlowingData",
+    "JavaScript Weekly",
+    "MacRumors",
+    "Grofers / Blinkit Lambda"
+  ],
+  "render_time_s": 0.29,
+  "pages": [
+    {
+      "page_number": 1,
+      "png_path": "training-099/pages/page-001.png",
+      "width_pt": 612.0,
+      "height_pt": 792.0
+    },
+    {
+      "page_number": 2,
+      "png_path": "training-099/pages/page-002.png",
+      "width_pt": 612.0,
+      "height_pt": 792.0
+    },
+    {
+      "page_number": 3,
+      "png_path": "training-099/pages/page-003.png",
+      "width_pt": 612.0,
+      "height_pt": 792.0
+    },
+    {
+      "page_number": 4,
+      "png_path": "training-099/pages/page-004.png",
+      "width_pt": 612.0,
+      "height_pt": 792.0
+    },
+    {
+      "page_number": 5,
+      "png_path": "training-099/pages/page-005.png",
+      "width_pt": 612.0,
+      "height_pt": 792.0
+    },
+    {
+      "page_number": 6,
+      "png_path": "training-099/pages/page-006.png",
+      "width_pt": 612.0,
+      "height_pt": 792.0
+    },
+    {
+      "page_number": 7,
+      "png_path": "training-099/pages/page-007.png",
+      "width_pt": 612.0,
+      "height_pt": 792.0
+    },
+    {
+      "page_number": 8,
+      "png_path": "training-099/pages/page-008.png",
+      "width_pt": 612.0,
+      "height_pt": 792.0
+    },
+    {
+      "page_number": 9,
+      "png_path": "training-099/pages/page-009.png",
+      "width_pt": 612.0,
+      "height_pt": 792.0
+    }
+  ],
+  "spreads": [
+    {
+      "spread_id": "s-099-001",
+      "edition_id": "training-099",
+      "type": "solo",
+      "pages": [
+        {
+          "page_number": 1,
+          "png_path": "training-099/pages/page-001.png",
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        }
+      ]
+    },
+    {
+      "spread_id": "s-099-002",
+      "edition_id": "training-099",
+      "type": "spread",
+      "pages": [
+        {
+          "page_number": 2,
+          "png_path": "training-099/pages/page-002.png",
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_number": 3,
+          "png_path": "training-099/pages/page-003.png",
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        }
+      ]
+    },
+    {
+      "spread_id": "s-099-003",
+      "edition_id": "training-099",
+      "type": "spread",
+      "pages": [
+        {
+          "page_number": 4,
+          "png_path": "training-099/pages/page-004.png",
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_number": 5,
+          "png_path": "training-099/pages/page-005.png",
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        }
+      ]
+    },
+    {
+      "spread_id": "s-099-004",
+      "edition_id": "training-099",
+      "type": "spread",
+      "pages": [
+        {
+          "page_number": 6,
+          "png_path": "training-099/pages/page-006.png",
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_number": 7,
+          "png_path": "training-099/pages/page-007.png",
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        }
+      ]
+    },
+    {
+      "spread_id": "s-099-005",
+      "edition_id": "training-099",
+      "type": "spread",
+      "pages": [
+        {
+          "page_number": 8,
+          "png_path": "training-099/pages/page-008.png",
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_number": 9,
+          "png_path": "training-099/pages/page-009.png",
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        }
+      ]
+    }
+  ]
+}

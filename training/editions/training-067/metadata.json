@@ -1,0 +1,105 @@
+{
+  "config_id": "training-067",
+  "archetype": "green-planet",
+  "date_generated": "2026-03-30T01:49:56.848877+00:00",
+  "page_target": 6,
+  "num_pages": 5,
+  "num_items": 18,
+  "feeds_contributed": [
+    "Smitten Kitchen",
+    "Metal Injection",
+    "Skinnytaste",
+    "Sam Saffron",
+    "Punch (drinks)",
+    "Inside Climate News",
+    "BBC Science & Environment",
+    "How Sweet Eats",
+    "Eater"
+  ],
+  "render_time_s": 0.08,
+  "pages": [
+    {
+      "page_number": 1,
+      "png_path": "training-067/pages/page-001.png",
+      "width_pt": 612.0,
+      "height_pt": 792.0
+    },
+    {
+      "page_number": 2,
+      "png_path": "training-067/pages/page-002.png",
+      "width_pt": 612.0,
+      "height_pt": 792.0
+    },
+    {
+      "page_number": 3,
+      "png_path": "training-067/pages/page-003.png",
+      "width_pt": 612.0,
+      "height_pt": 792.0
+    },
+    {
+      "page_number": 4,
+      "png_path": "training-067/pages/page-004.png",
+      "width_pt": 612.0,
+      "height_pt": 792.0
+    },
+    {
+      "page_number": 5,
+      "png_path": "training-067/pages/page-005.png",
+      "width_pt": 612.0,
+      "height_pt": 792.0
+    }
+  ],
+  "spreads": [
+    {
+      "spread_id": "s-067-001",
+      "edition_id": "training-067",
+      "type": "solo",
+      "pages": [
+        {
+          "page_number": 1,
+          "png_path": "training-067/pages/page-001.png",
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        }
+      ]
+    },
+    {
+      "spread_id": "s-067-002",
+      "edition_id": "training-067",
+      "type": "spread",
+      "pages": [
+        {
+          "page_number": 2,
+          "png_path": "training-067/pages/page-002.png",
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_number": 3,
+          "png_path": "training-067/pages/page-003.png",
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        }
+      ]
+    },
+    {
+      "spread_id": "s-067-003",
+      "edition_id": "training-067",
+      "type": "spread",
+      "pages": [
+        {
+          "page_number": 4,
+          "png_path": "training-067/pages/page-004.png",
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_number": 5,
+          "png_path": "training-067/pages/page-005.png",
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        }
+      ]
+    }
+  ]
+}

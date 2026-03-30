@@ -23,108 +23,137 @@
 
 // --- Front Page Feature ---
 #feature-article(
-  title: [GlassWorm attack installs fake browser extension for surveillance],
+  title: [Smoother sailing: Studying audio imperfections in Steamboat Willie],
   kicker: [Cover Story],
-  author: [Malwarebytes Labs],
-  source-name: [Malwarebytes Labs],
-  deck: [GlassWorm hides inside developer tools. Once it’s in, it steals data, installs remote access malware, and even a fake browser extension to monitor activity.],
-  lead-text: "While it starts with developers, the impact can quickly spread. With stolen credentials, access tokens, and compromised tools, attackers can launch wider supply chain attacks, putting companies and everyday users at risk.",
-  lead-first-alpha: 0,
+  author: [Oona Räisänen],
+  source-name: [Oona Raisanen (windytan)],
+  deck: [class="kuva oikealla"\> 
+
+ Steamboat Willie (1928) was one of the earliest cartoons with synchronized sound.],
+  lead-pre: [],
+  lead-cap: [c],
+  lead-rest: [lass="kuva oikealla"\>],
   body-paragraphs: (
-  [How the infection starts],
-  [GlassWorm is usually distributed through developer channels. That means that programmers get their systems compromised by downloading malicious packages from code repositories like npm, GitHub, PyPI, and so on. These can be new malicious packages or altered packages from once-trusted, but now compromised, accounts.],
-  [The developer installs or updates a trusted or popular npm/PyPI package or VS Code extension, but the maintainer’s account or supply chain has been compromised.],
-  [What happens after installation],
-  [Once the package is pulled, a preinstall script or invisible Unicode loader runs and fingerprints the machine. If it finds a Russian locale, execution stops. If not, the script waits a few hours and then quietly contacts the Solana blockchain to discover where to fetch stage two of the infection. Rather than hardcoding a link that could be taken down, the attacker stores this information in the memo field of a Solana transaction.],
-  [Stage two: Data theft],
-  [The stage two payload is an infostealer that targets browser extension profiles, standalone wallet apps, and .txt/image files likely holding seeds or keys, along with npm tokens, git credentials, VS Code secrets, and cloud provider credentials. After gathering this information, it sends it to a remote server via a POST request.],
-  [Stage three: Full system compromise],
-  [After that, it’s on to stage three. The malware fetches two main components: the Ledger/Trezor phishing binary aimed at users with a Ledger or Trezor device plugged in, and a Node.js Remote Access Trojan (RAT) with several modules, including browser credential stealers and a Chrome‑extension installer. It gains persistence by setting up scheduled tasks and Run registry keys so that the RAT comes back on every reboot.],
-  [id="h-how-the-malware-stays-hidden-and-connected"\> How the malware stays hidden and connected],
-  [The RAT does not hardcode its main command and control (C2) address. Instead, it performs a distributed hash table (DHT) lookup for the pinned public key. DHT is a distributed system that provides a lookup service similar to a hash table. Key–value pairs are stored in a DHT and can be used to retrieve the value associated with a given key. If this method fails, the RAT goes back to the Solana blockchain to fetch a new IP address.],
-  [id="h-browser-surveillance-and-tracking"\> Browser surveillance and tracking],
-  [The RAT also force-installs a Chrome extension (in the example described by Aikido , it pretends to be “Google Docs Offline”), which acts as an onboard session surveillance. Besides stealing cookies, localStorage, the full Document Object Model ( DOM ) tree of the active tab, bookmarks, screenshots, keystrokes, clipboard content, up to 5,000 browser history entries, and the installed extensions list, it can also be used to take screenshots and act as a keylogger .],
-  [id="h-what-this-looks-like-to-the-victim"\> What this looks like to the victim],
-  [From the victim’s point of view, all this happens very stealthily. If they’re paying close attention, they may see a few suspicious outgoing connections, the startup entries, and the new browser extension.],
-  [id="h-who-this-targets-and-why-it-matters"\> Who’s at risk, and how this could spread],
-  [The current setup appears to focus on developers who may have cryptocurrency assets, but many of these components and the stolen information can be used to initiate supply chain attacks or target other groups of users.],
-  [Because of the stealthy nature of this infection chain, there are two main strategies to stay safe:],
-  [Prefer known‑good, pinned versions, and treat sudden ownership changes, new maintainers, or big code rewrites in minor releases as review triggers.],
-  [Regularly audit browser extensions, remove anything you don’t recognize, and be suspicious of “Google Docs Offline”‑style clones or duplicates.],
-  [Check your scheduled tasks and registry startup locations for unexpected entries.],
-  [Use an up-to-date, real-time anti-malware solution to detect and block malicious connections and the downloaded malware.],
-  [IP addresses:],
-  [45.32.150[.]251],
-  [217.69.3[.]152],
-  [217.69.0[.]159],
-  [45.150.34[.]158],
-  [Malwarebytes blocks the IP address 45.32.150.251 used for stage 2 payload delivery, and the stage three WebSocket RAT],
-  [Registry keys:],
-  [HKEY\_CURRENT\_USER\\Software\\Microsoft\\Windows\\CurrentVersion\\Run\\UpdateApp],
-  [HKEY\_CURRENT\_USER\\Software\\Microsoft\\Windows\\CurrentVersion\\Run\\UpdateLedger],
-  [Scheduled Task:],
-  [Name: UpdateApp which runs: AghzgY.ps1],
-  [Browser extension:],
-  [Display name: Google Docs Offline (version 1.95.1)],
-  [Windows extension directory name : jucku],
-  [macOS extension directory name: myextension],
-  [We don’t just report on threats—we remove them],
-  [Cybersecurity risks should never spread beyond a headline. Keep threats off your devices by  downloading Malwarebytes today .],
+  [Steamboat Willie (1928) was one of the earliest cartoons with synchronized sound. That is, it had post-production sound effects; this was something new and exciting. Now that the cartoon has recently entered the public domain \[bbc24\] we can safely delve into its famous soundtrack. See, there's something interesting about how it sounds...],
+  [If you listen closely to the soundtrack on Youtube it sounds somehow distorted. You might be tempted to point out that it's 96 years old, yes. But you might also recognize that it is suffering from flutter , i.e. an unstable playback or recording speed.],
+  [In the spirit of this blog let's geek out for a bit and study this flutter distortion further. Can we learn something interesting? Could we perhaps learn enough to be able to reduce it?],
+  [Of course the flutter might be 100% authentic to how it sounded in theatres in the 1920s; we don't know when and why it appeared in the audio (more on that later!). It might have sounded even worse. But we can still hope to enjoy the sound effects in their original recorded form.],
+  [Prior work],
+  [I'm not the first one to notice this clip is 'fluttering' and to try and do something about it. I found videos of people's attempts to un-flutter it using Celemony Capstan, a professional tool made just for this purpose, with varying results. Capstan uses Melodyne's famous note detection engine to detect musical features and then controls a varispeed effect to cancel out any flutter.],
+  [But Capstan is expensive, and it's more fun to come up with a home-made solution anyway. And what about non-musical sounds? Besides, I had some code laying around in a forgotten desk drawer that just might fit the purpose.],
+  [Finding a high quality source],
+  [Why would I need a high-quality digital file of a poor-quality soundtrack from the 1920s? I guess it's the archivist in me hoping that it has been preserved with high level of detail. But also, if you're going to try and dig up some hidden details in the sound, you'd want minimal interference from any lossy psychoacoustic compression, right? These artifacts might become audible after varispeed effects and could also hinder frequency detection.],
+  [The high-quality source I found is in the Internet Archive. It might originally be coming from the 4K Blu-Ray release called Celebrating Mickey. The spectrogram doesn't show almost any compression artifacts that I can see, even in the quietest frequency ranges! Perfect!],
+  [But the Internet Archive delivers something even better. There's a (visually) lossless 4K scan of the movie with the optical soundtrack partially included (above)! The high-quality version is 34 GB, but there's a downscaled 480p MP4 one thousandth of the size.],
+  [I listened to the optical soundtrack from this low-resolution version with a little pixel-reader script. Turns out the flutter is already present on the film! (Edit: Note that we don't know where this particular film print came from. When was it created? Is there an original somewhere, without flutter?)],
+  [Hand-guiding a frequency tracker],
+  [Looking at the above spectrogram, we can see that the frequency of everything is zig-zagging as a function of time – that's flutter all right. But how to quantify these variations? We could zoom in on one of the frequency peaks and follow the course of its frequency in time. I'm using FFT peak interpolation to find more accurate frequency estimates \[gasior04\] .],
+  [Take the sound of Pete's tobacco hitting the ship's bell around the 01'45'' mark. You'd think a bell is supposed to have a constant frequency, yet this one sounds quite unstable. We can follow any one of the harmonics and see how the playback speed (bell frequency) varies over the period of one second:],
+  [To my eye, this oscillation looks periodic and not random at all. We can run another round of FFT on a longer stretch of samples to find the strongest period of these fluctuations: It turns out to be 15 Hz. (Why 15? I so hoped it would have been 24 Hz – it would have made a more interesting story! More on that later...)],
+  [Okay, so can we repeat this process for the whole movie? I don't think we can just automatically follow the frequency of every peak, since some sounds will naturally contain vibration and rises and drops in frequency. Not all of it is due to flutter. Some sort of a vetting process is needed. We could try a tedious manual route...],
+  [I made a little software tool (above) where I could click and drag little boxes onto a spectrogram to search for peaks in. This wobbly line is then simply taken to be the speed variation (red graph in the top picture).],
+  [It became quite a chore to annotate longer sounds as this software didn't come with undo, edit, or save features for the longest time!],
+  [Now let's think about what to do with this speed information...],
+  [Desk drawer deep dive],
+  [Some time ago I had made a tool that could well come in handy now. It was for correcting wobbly wideband radio recordings stored on VHS tapes. These recordings contained some empty carriers that happened to work like seismographs, accurately recording the tape speed variations. The tool then used a Lagrange polynomial to interpolate new samples at a steady interval, so called 'digital varispeed'.],
+  [It was ultimately based on an interesting paper on de-fluttering magnetic tapes using the tape bias signal as reference \[howarth04\] .],
+  [class="remark"\>By the way, I keep mentioning varispeed and never explained it. This was a feature of old studio-grade reel-to-reel tape recorders where the playback speed could be freely varied by the operator; hence vari+speed. Audio people still use this word in the digital world to essentially refer to variable-rate resampling, which has the same effect, so I'm using them interchangeably. (Topmost photo: Ferdinando Traversa, CC BY , cropped to detail)],
+  [style="clear: both;"\>Here's what this digital varispeed sounds like when exaggerated. In the below example I'm doing it in a simpler way. Instead of the Lagrange method I first upsampled some music by 10x in an audio software; hand-drew a speed curve in Audacity; and then used that curve to pick samples out of the oversampled music:],
+  [id="varywave" width="520"\>],
+  [Carefully controlled, this effect can be used to cancel out flutter. Here's how: If we knew exactly how the playback speed was fluctuating we could instantly vary the speed of our resampler in the opposite direction, thus canceling the variations. And with the above research we now have that knowledge!],
+  [Well, almost. I couldn't always see a clear frequency peak to follow, so the graph is patchy. But.. Maybe it could help to band-pass the speed signal at 15 Hz? This would help fill out small gaps and also preserve vibrato and other fluctuations that aren't part of the flutter distortion. We can at least try!],
+  [In the example above, I replaced empty parts with a constant value of 100% and then filtered the whole thing. This sews the disjointed parts together in a smooth way.],
+  [Can we hear some examples already?],
+  [This clip is from when the goat ate Minnie's sheet music and guitar – the apparent catalyst event that sent Mickey Mouse to seek revenge on the entire animal kingdom.],
+  [id="scorehogwave" width="520"\>],
+  [Before 
+ 
+ 
+ 
+ After 
+ --\>],
+  [You can definitely hear the difference in the bell-like sounds coming from the goats insides. It even sounds like the little flute notes in the beginning are easier to tell apart in the corrected version.],
+  [Here's another musical example, with strings.],
+  [id="jousiawave" width="520"\>],
+  [Before 
+ 
+ 
+ 
+ 
+ After 
+ --\>],
+  [The cow's moo. That's a hard one because it's so rich in harmonics, in the spectrogram it looks almost like a spaghetti bolognese . My algorithm is constrained to a box and can't stay with one harmonic when the 'moo' slides in frequency. You can hear some artifacts because of this, but still the result sounds less sheep-like than the original.],
+  [But Mickey whistling "Steamboat Bill" in the beginning of the film actually doesn't sound better when corrected... I preferred a bit of vibrato!],
+  [Sidetrack 1: Anything else we can find?],
+  [Glad you're still reading! Let's step away from flutter for a while and take the raw audio track itself under the Fourier microscope. Zooming closer, is there anything interesting in the lower end?],
+  [We can faintly see peaks at multiples of both 24 and 60 Hz. No surprises there, really... 24 Hz being the film framerate and 60 Hz the North American mains frequency. Was there a projector running in the recording studio? Or maybe it's an artifact of scanning the soundtrack one frame at a time? In any case, these sounds are pretty weak.],
+  [In some places you can see some sort of modulation that seems to be generating sidebands, just like in radio signals. It's especially visible in Mickey's whistle when it's flutter-corrected, here at the 5-second mark. The sidebands peaks are 107 and 196 Hz away from the 'carrier' if you will. I'm not sure what this could be. Fluctuating amplitude?],
+  [Sidetrack 2: Playing sound-on-film frame by frame?],
+  [This is an experiment I did some time ago. It's just a silly thought - what would happen if the soundtrack was being read in the same way as the picture is – stopped 24 times per second? Would this be the ultimate flutter distortion?],
+  [In the olden days, sound was stored on the film next to the picture frames as analog information. Unlike the picture frames that had to be stopped momentarily for projection, the sound had to be played at a constant speed. There was a complicated mechanism in the projector to make this possible.],
+  [I found some speed curves for old-school movie projectors in \[bickford72\] . They describe the film's deceleration and acceleration during these stops. Let's emulate these speed curves in audio with the oversampling varispeed method.],
+  [The video below is a 3D animation where this same speed curve controls an animation of a moving film in an imaginary machine. The clip is from another 1920s animation, Alice in the Wooly West (1926).],
+  [~~ Now we know ~~],
+  [We found a 15 Hz speed fluctuation that was, to some extent, reversible.],
+  [This flutter signal is already present in the optical soundtrack of a film scan (of unknown origin).],
+  [With enough manual work, much of the soundtrack could probably be 'corrected'.],
+  ['Hmm, that sounds odd' are sometimes the words of a white rabbit.],
+  [id="bbc24"\> "Disney's earliest Mickey and Minnie Mouse enter public domain as US copyright expires" . BBC News. 2024-01-01.],
+  [id="howarth04"\>Howarth, J. & Wolfe, P. J. (2004): Correction of Wow and Flutter Effects in Analog Tape Transfers],
+  [id="gasior04"\>Gasior, M. & Gonzalez, J. L. (2004): Improving FFT Frequency Measurement Resolution by Parabolic and Gaussian Spectrum Interpolation],
+  [id="bickford72"\>Bickford, John H. (1972). "Geneva Mechanisms". Mechanisms for intermittent motion ( PDF ). New York: Industrial Press Inc.],
 ),
   edited-for-length: false,
 )
 
-
-{
-  #section-label([Front Page])
-  #standard-article(
-  title: [The 4 most common security risks when vibe coding your app],
-  author: [Travis Turner],
-  source-name: [Evil Martians Chronicles],
-  images: (),
-  paragraphs: (
-  [Authors: Nina Torgunakova, Frontend Engineer, and Travis Turner, Tech Editor],
-  [Topics: AI, Vibe coding, JavaScript],
-  [Vibe coding can speed up app development, but it can also quietly introduce serious security flaws. Here are the four most common risks and how to avoid them.],
-  [Few things let us build full-fledged applications from scratch as quickly as vibe coding. And few things introduce security risks into code as quickly as vibe coding. In this post: the most common security holes that can materialize when vibe coding, and how to resolve them. Not all have an easy or fast solution, but we’ll tackle them and learn how to stay vigilant!],
-  [Read more],
-),
-  insert-map: (:),
-  word-count: 109,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-}
 
 {
   #section-label([Features])
   #standard-article(
-  title: [Pea whistle steganography],
+  title: [Virtual music box],
   author: [Oona Räisänen],
   source-name: [Oona Raisanen (windytan)],
   images: (),
   paragraphs: (
-  [Would anyone notice if a referee's whistle transmitted a secret data burst?],
-  [I do really follow the game. But every time the pea whistle sounds to start the jam I can't help but think of the possibility of embedding data in the frequency fluctuation. I'm sure it's alternating between two distinct frequencies. Is it really that binary? How random is the fluctuation? Could it be synthesized to contain data, and could that be read back?],
-  [I found a staggeringly detailed Wikipedia article about the physics of whistles – but not a single word there about the effects of adding a pea inside, which is obviously the cause of the frequency modulation.],
-  [To investigate this I bought a metallic pea whistle, the Acme Thunderer 60.5, pictured here. Recording its sound wasn't straightforward as the laptop microphone couldn't record the sound without clipping. The sound is incredibly loud indeed – I borrowed a sound pressure meter and it showed a peak level of 106.3 dB(A) at a distance of 70 cm, which translates to 103 dB at the standard 1 m distance. (For some reason I suddenly didn't want to make another measurement to get the distance right.)],
-  [Later I found a microphone that was happy about the decibels and got this spectrogram of a 500-millisecond whistle.],
-  [The whistle seems to contain a sliding beginning phase, a long steady phase with frequency shifts, and a short sliding end phase. The "tail" after the end slide is just a room reverb and I'm not going to need it just yet. A slight amplitude modulation can be seen in the oscillogram. There's also noise on somewhat narrow bands around the harmonics.],
-  [The FM content is most clearly visible in the second and third harmonics. And seems like it could very well fit FSK data!],
-  [Making it sound right],
-  [I'm no expert on synthesizers, so I decided to write everything from scratch ( whistle-encode.pl ). But I know the start phase of a sound, called the attack, is pretty important in identification. It's simple to write the rest of the fundamental tone as a simple FSK modulator; at every sample point, a data-dependent increment is added to a phase accumulator, and the signal is the cosine of the accumulator. I used a low-pass IIR filter before frequency modulation to make the transitions smoother and more "natural".],
-  [Adding the harmonics is just a matter of measuring their relative powers from the spectrogram, multiplying the fundamental phase angle by the index of the harmonic, and then multiplying the cosine of that phase angle by the relative power of that harmonic. SoX takes care of the WAV headers.],
-  [Getting the noise to sound right was trickier. I ended up generating white noise (a simple rand() ), lowpass filtering it, and then mixing a copy of it around every harmonic frequency. I gave the noise harmonics a different set of relative powers than for the cosine harmonics. It still sounds a bit too much like digital quantization noise.],
-  [Embedding data],
-  [There's a limit to the amount of bits that can be sent before the result starts to sound unnatural; nobody has lungs that big. A data rate of 100 bps sounded similar to the Acme Thunderer, which is pretty much nevertheless. I preceded the burst with two bytes for bit and byte sync ( 0xAA 0xA7 ), and one byte for the packet size.],
-  [Here's "OHAI!":],
-  [Sounds legit to me! Here's a slightly longer one, encoding "Help me, I'm stuck inside a pea whistle":],
-  [Write a receiver for the data. It should be as simple as receiving FSK. The frequency can be determined using atan2 , a zero-crossing detector, or FFT, for instance. The synchronization bytes are meant to help decode such a short burst; the alternating 0s and 1s of 0xAA probably give us enough transitions to get a bit lock, and the 0xA7 serves as a recognizable pattern to lock the byte boundaries on.],
-  [Build a physical whistle that does this! (Edit: example solution !)],
+  [A little music project I was writing required a melody be played on a music box. However, the paper-programmable music box I had (pictured) could only play notes on the C major scale. I couldn't easily find a realistic-sounding synthesizer version either. They all seemed to be missing something. Maybe they were too perfectly tuned? I wasn't sure.],
+  [Perhaps, if I digitized the sound myself, I could build a flexible virtual instrument to generate just the perfect sample for the piece!],
+  [I haven't really made a sampled instrument before, short of perhaps using Impulse Tracker clones with terrible single-sample ones. So I proceeded in an improvised manner. Below I'll post some interesting findings and sound samples of how the instrument developed along the way. There won't be any source code as for now.],
+  [By the way, there is a great explanatory video by engineerguy about the workings of music boxes that will explain some terminology ("pins" and "teeth") used in this post.],
+  [Recording samples],
+  [The first step was, obviously, to record the sound to be used as samples. I damped my room using towels and mattresses to minimize room echo; this could be added later if desired, but for now it would only make it harder to cleanly splice the audio. The microphone used was the Audio Technica AT2020, and I digitized it using the Behringer Xenyx 302 USB mixer.],
+  [I perforated a paper roll to play all the possible notes in succession, and rolled the paper through. The sound of the paper going through the mechanism posed a problem at first, but I soon learned to stop the paper at just the right moment to make way for the sound of the tooth.],
+  [Now I had pretty decent recordings of the whole two-octave range. I used Audacity to extract the notes from the recording, and named the files according to the actual playing MIDI pitch. (The music box actually plays a G\# major scale, contrary to what's marked on the blank paper rolls.)],
+  [The missing notes],
+  [Next, we'll need to generate the missing notes that don't belong in the scale of this music box. Because pitch is proportional to the speed of vibration, this could be done by simply speeding up or slowing down an adjacent note by just the right factor. In equal temperament tuning, this factor would be the 12th root of 2, or roughly 1.05946. Such scaling is straightforward to do on the command line using SoX, for instance ( sox c1.wav c\_sharp1.wav speed 1.05946 ).],
+  [This method can also be used to generate whole new octaves; for example, a transposition of +8 semitones would have a ratio of ( 12 √2) 8 ≈ 1.5874. Inter-note variance could be retained by using a random source file for each resampled note. But large-interval transpositions would probably not sound very good due to coloring in the harmonic series.],
+  [Here's a table of some intervals and the corresponding speed ratios in equal temperament:],
+  [–3 = ( 12 √2) –3 ≈ 0.840896 
+ –2 = ( 12 √2) –2 ≈ 0.890899 
+ –1 = ( 12 √2) –1 ≈ 0.943874 
+ +1 = ( 12 √2) 1 ≈ 1.059463 
+ +2 = ( 12 √2) 2 ≈ 1.122462 
+ +3 = ( 12 √2) 3 ≈ 1.189207],
+  [First test!],
+  [Now I could finally write a script to play my melody!],
+  [It sounds pretty good already - there's no obvious noise and the samples line up seamlessly even though they were just naively glued together sample by sample. There's a lot of power in the lower harmonics, probably because of the big cardboard box I used, but this can easily be changed by EQ if we want to give the impression of a cute little music box.],
+  [Adding errors],
+  [The above sound still sounded quite artificial, I think mostly because simultaneous notes start on the same exact millisecond. There seems to be a small timing variance in music boxes that is an important contributor to their overall delicate sound. In the below sample I added a timing error from a normal distribution with a standard deviation of 11 milliseconds. It sounds a lot better already!],
+  [Other sounds from the teeth],
+  [If you listen to recordings of music boxes you can occasionally hear a high-pitched screech as well. It sounds a bit like stopping a tuning fork or guitar string with a metal object. That's why I thought it must be the sound of the pin stopping a vibrating tooth just before playing another note on the same tooth.],
+  [Sure enough, this sound could always be heard by playing the same note twice in quick succession. I recorded this sound for each tooth and added it to my sound generator. The sound will be generated only if the previous note sample is still playing, and its volume will be scaled in proportion to the tooth's envelope amplitude at that moment. Also, it will silence the note. The amount of silence between the screech and the next note will depend on a tempo setting.],
+  [Adding this resonance definitely brings about a more organic feel:],
+  [The wind-up mechanism],
+  [For a final touch I recorded sounds from the wind-up mechanism of another music box, even though this one didn't have one. It's all stitched up from small pieces, so the number of wind-ups in the beginning and the speed of the whirring sound can all be adjusted. I was surprised at the smoothness of the background sound; it's a three-second loop with no cross-fading involved. You can also hear the box lid being closed in the end.],
+  [The native notation of a music box is some kind of a perforated tape or drum, so I ended up using a similar format. There's a tempo marking and tuning information in the beginning, followed by notation one eighth per line. Arpeggios are indicated by a pointy bracket \> . I also wrote a script to convert MIDI files into this format; but the number of notes in a music box loop is usually so small that it's not very hard to write manually.],
+  [This format could include additional information as well, perhaps controlling the motor sound or box size and shape (properties of the EQ filter).],
+  [This format could also potentially be useful when producing or transcribing music from music drums.],
+  [Future developments],
+  [Currently the music box generator has a hastily written "engineer's UI", which means I probably won't remember how to use it in a couple months' time. Perhaps it could it be integrated into some music software, as a plugin.],
+  [Possibilities for live performances are limited, I think. It wouldn't work exactly like a keyboard instrument usually does. At least there should be a way to turn on the background noise, and the player should take into account the 300-millisecond delay caused by the pin slowly rotating over the tooth. But it could be used to play a roll in an endless loop and the settings could be modified on the fly.],
+  [As such, the tool performs best at pre-rendering notated music. And I'm happy with the results!],
 ),
   insert-map: (:),
-  word-count: 705,
+  word-count: 1216,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -133,424 +162,136 @@
 
 {
   #standard-article(
-  title: [Java SE 9 - JPMS modules are not artifacts],
-  author: [Stephen Colebourne],
-  source-name: [Stephen Colebourne (Joda)],
-  images: (),
-  paragraphs: (
-  [This is the next article in a series I'm writing to help make sense of the Java Platform Module System (JPMS) in Java SE 9. JPMS was developed as Project Jigsaw . Other articles in the series are Module basics and Module naming .],
-  [Module != Artifact],
-  [If you want to grasp what JPMS modules are all about, it turns out that it is critical to understand what they are not.
-In particular, they are not artifacts.],
-  [Firstly, lets define an artifact . An artifact is a file produced when developing software. For a project on Maven Central, this includes jar files of bytecode, jar files of sources and jar files of Javadoc. We are interested primarily in the bytecode for this discussion.],
-  [Secondly, lets assume that a project is going to have the same module name over time.
-This is just like package names - projects don't change package name with every release.],
-  [Given this, what is the mapping between an artifact and a module?],
-  [Each version of a project will consist of a different artifact (jar file), perhaps released on Maven Central .
-Each version will have the same module name.
-But, we also know that the Java platform (JPMS) does not know about versions or version-selection .],
-  [Therefore, when assembling a modulepath for Java SE 9, something else is going to have to choose the correct version of the module.
-This will typically be the build tool, eg. Maven.],
-  [But while the classpath will tolerate having two versions of the artifact (typically with bad consequences at runtime), the JPMS modulepath will refuse to start if there two modules contain the same package, as would happen if two versions of the same module are found.],
-  [Maven already manages versions of course, picking one version from a set of versions, where all with the same groupId:artifactId.
-With Java SE 9 we can say that Maven is picking one artifact from a set of artifacts to use in the runtime JPMS module graph.],
-  [Artifacts 
-   
- JPMS runtime module 
- 
- 
- org.joda : joda-convert : 1.2 
- Build tool must pick one of these artifacts for the runtime JPMS module graph 
- org.joda.convert 
- 
- 
- org.joda : joda-convert : 1.1 
- 
- 
- org.joda : joda-convert : 1.0],
-  [Patching bugs],
-  [We've all run into the problem of finding a bug in another library, such as one on Maven Central.
-Most of the time, we workaround the bug.
-Sometimes, we have to fix it and have a private copy of the library (ie. a private version of the library).
-In extreme cases, we have to publish the bug-fix version to Maven Central.],
-  [If you want to publish a patched version of an open source project, the standard way to do this is to use your groupId, not the original groupId.],
-  [The patched version still uses the same package name.
-If it didn't it, it would be no use as a patched version.],
-  [Exactly the same rationale applies to the module name - the module name of the patched version needs to stay the same .
-This makes sense, because the module name is an aspect of the bytecode, not of the deployment.],
-  [As before, the build tool needs to be setup to pick the correct jar file artifact, this time choosing between the patched one and the original.],
-  [Artifacts 
-   
- JPMS runtime module 
- 
- 
- org.joda : joda-convert : 1.2 
- Build tool must pick either the original artifact or the patch for the runtime JPMS module graph 
- org.joda.convert 
- 
- 
- com.foo : patched-joda-convert : 1.2-P],
-  [License-driven jars],
-  [There can be a situation where the equivalent code is released twice for license reasons.
-The most common case of this has been driven by the JCP .],
-  [Imagine that a JSR has been produced, and because of licensing restrictions, Apache and RedHat each decide to produce their own version of the specification (API) jar, one Apache licensed and one LGPL licensed.
-There will be two different jar file artifacts in Maven Central - redhat-jsr789-1.0.jar and apache-jsr789-1.0.jar.
-Both of these contain the same package name, and the same interfaces, because they are the same specification.],
-  [When creating a module-info.java file for these, teams might be tempted to put "redhat" or "apache" in the module name.
-But this would be wrong, as a package must be in one module at runtime.
-Thus, both teams must use the same module name , based on the package name, such as javax.foo.
-In reality, future JSRs will need to choose their own module name.],
-  [Just as in the other cases, the build tool will need to select the correct jar file artifact to use for any given application.],
-  [Artifacts 
-   
- JPMS runtime module 
- 
- 
- org.apache : apache-jsr789 : 1.0 
- Build tool must pick one of the artifacts for the runtime JPMS module graph 
- javax.foo 
- 
- 
- com.redhat : redhat-jsr789 : 1.0-GA],
-  [Two worlds],
-  [JPMS brings front and centre a distinction that we probably haven't thought too much about - that between build tools and code.
-I find it to be a useful mental model to keep these two worlds separate.],
-  [Build/Deploy world 
- Code world 
- 
- 
- Concept],
-  [Artifacts (jar files)],
-  [Classes/Interfaces],
-  [Methods/Fields],
-  [Identifier 
- org.joda : joda-convert : 1.2 
- org.joda.convert 
- 
- 
- Tool],
-  [javac],
-  [java],
-  [jar],
-  [All the use cases above (and others) reduce to the fact that a build tool, such as Maven, must pick one artifact from many to satisfy the module requested in the JPMS modules graph. 
-The module, and the module name, is tightly linked to the bytecode and packages.
-By contrast, the Maven groupId:artifactId:version co-ordinates are a tool for identifying each artifact in order to pick the correct one to use.],
-  [Hopefully, this helps explain the philosophical difference between artifacts and modules, and why modules should be named after their super-package , not after the artifactId . And why you cannot derive the module name from groupId:artifactId - just look at the tables above to see the varying artifact names.],
-  [Questions and comments welcome.],
-),
-  insert-map: (:),
-  word-count: 986,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-  #pull-quote([2   Build tool must pick either the original artifact or the patch for the runtime JPMS module graph   org.], [Stephen Colebourne])
-
-}
-
-{
-  #standard-article(
-  title: [Finding a New Software Developer Job],
-  author: [Henrik Warne],
-  source-name: [Henrik Warne],
-  images: (),
-  paragraphs: (
-  [class="wp-block-paragraph"\>For the first time ever, I was laid off, and had to find a new software developer job. I managed to find a new one, but it took longer than I thought, and it was a lot of work. I was in contact with 30 companies, got a no from 8 companies, no reply from 6 companies, and offers from 3 companies. Here is what I learnt from the process.],
-  [class="wp-block-paragraph"\>At the end of October last year, I lost my job. I was completely surprised, but in retrospect, maybe I shouldn’t have been that surprised. The times were getting tougher, and many companies had been laying off people during all of 2023. If the company is not making enough money, eventually there will be layoffs. In my case, we were 17 people let go that day, including 8 developers.],
-  [class="wp-block-paragraph"\>A few minutes after I had the Zoom call with the CEO, my access to all company resources was cut off. Apart from not being able to finish what I was working on (I had several unpushed changes), it becomes harder to say goodbye to everybody. Many of my colleagues reached out on LinkedIn, which was great. Some even set up Zoom calls so we could talk about what had happened, and say a proper goodbye, which I really appreciated.],
-  [class="wp-block-paragraph"\>Being let go was a new experience for me. The closest I have been in the past is during the dot com bust, when the project I was working on at Ericsson was cut. They were not yet laying people off (that came a bit later), so we were offered other roles within Ericsson. But I decided to change to another company instead (they reached out directly to me, since I had worked with them at Ericsson). All the other times I have changed jobs, it’s been on my own initiative, while still being employed. I typically stayed on for three months (the standard notice period in Sweden), finishing up what I was working on, before starting at the new company.],
-  [class="wp-block-paragraph"\>The upside of being cut off immediately is that I could immediately spend all of my time looking for a new job, while still getting paid for some time. Even though I was surprised that I was let go, I didn’t panic. My philosophy has always been that I should be prepared to find a new job at any time, since you never know what will happen. So I keep a list of companies that I would like to work at. I also stay friendly with recruiters that contact me, in case I need to get back to them.],
-  [class="wp-block-paragraph"\> Open to work. The first thing I did was to change my LinkedIn “open to work” status to “Immediately, I’m actively applying” (from “Flexible, I am casually looking” , which I normally use). I kept the visibility to recruiters only, not all LinkedIn members (which would set the green \#OpenToWork photo frame). I have seen arguments for and against using \#OpenToWork – it lets more people know you are looking, versus it makes you look desperate. It is hard to know which is better, but I decided to only let recruiters know.],
-  [class="wp-block-paragraph"\>As soon as I changed this setting, I got contacted by maybe five recruiters per day for the first week or so. I suppose the LinkedIn algorithm alerts recruiters to people that have just changed their status. The quality of the roles was about the same as I normally get (albeit at a much higher rate) – some I really liked, some were OK, and some were definitely not for me.],
-  [class="wp-block-paragraph"\> Applying to known companies. Next, I went through my list of companies I would like to work for, and looked to see if they had any open developer roles. I first looked on the company page on LinkedIn, then clicked on the Jobs tab. Many of the companies were actively recruiting. A good thing when you click on an ad is that you can see how many people have applied, and how old the ad is. Sometimes I would also go to the company home page and look at their career page. But I found it convenient to go through LinkedIn, where the format is the same, and you can see if any of your contacts work there. Sometimes you can also see who has posted the ad.],
-  [class="wp-block-paragraph"\> Job ads. I also looked through job ads on LinkedIn. There is a search function, and I tried different searches, for example “Golang Stockholm”. It works well enough, and I would click on anything that looked interesting. LinkedIn also has a “Recommended for you”-section and “Jobs where you’d be a top applicant”-section (only if you have Premium), and I guess they use your skills and previous searches to populate these. These also showed a good selection of job ads.],
-  [class="wp-block-paragraph"\>There are however two problems. The first is that searching for fully remote jobs is unreliable. Sometimes it turns up good ads, but sometimes it turns up roles that are e.g. remote only in the UK. It would be good to be able to search for fully remote roles in Sweden, fully remote in EU, or fully remote worldwide.],
-  [class="wp-block-paragraph"\>The second problem is that it is not possible to get only the latest ads, for example ads that are less than a week old. So I ended up having to page through a lot of ads I had already seen. After I had found a new job, I saw a good solution for this in a tweet: use Google, set the time interval to last week, and search for e.g. “golang fully remote site:linkedin.com/jobs” .],
-  [class="wp-block-paragraph"\> Reaching out. I also reached out to around 15 recruiters that had contacted me on LinkedIn in the past, but nothing came out of that. I knew that the roles they contacted me for would not be open, but I thought that they might be recruiting for something similar. On a few occasions I sent a direct message (InMail) to managers that were recruiting (some encouraged you to do this in their bios), but I don’t think I got a single response. Perhaps I was not a good enough fit, but it was still disappointing.],
-  [class="wp-block-paragraph"\>In Sweden there is a site that is matching developers with employers called Demando . You fill out a profile, listing your skills, and giving a minimum salary you will accept. Companies advertise jobs there too, and you get a message if there is a match. I already had an inactive profile there that I activated, setting a relatively high minimum salary. I got contacted by one company there, which I later got an offer from. I also found a job ad there for a company I would like to work for. I did not find that ad on LinkedIn. I applied to them, and got an offer from them too. So pretty good payoff from using that site.],
-  [class="wp-block-paragraph"\>I also briefly looked at a site called RemoteOK , but didn’t find anything that I applied to there. My general sense was that the quality of job ads there was much lower than on LinkedIn. I also had a look at Efianancialcareers , but there are almost no fully remote roles there (and they are hard to search for). On the first of every month, there is Hacker News thread called Who’s hiring . I looked there briefly too, but I found it too hard to find something relevant there.],
-  [class="wp-block-paragraph"\>I later found another good way of finding companies to check to see if they have any open roles: google “competitor to” or “alternative to” and a company name, to find similar companies.],
-  [class="wp-block-paragraph"\>All recruiters I was in contact with asked for my CV, even though it is mostly the same information that is already on my LinkedIn profile. It is almost as if it is a sign that you are serious. This is fine with me, since once I had an up-to-date CV, I just attached that one. When applying to companies directly, most companies ask for a CV (even when including your LinkedIn profile), and many also asked for a cover letter. I saved all the cover letters I wrote, and when I needed to write a new one, I copied the most similar previous one I had, and modified it to fit the new application.],
-  [class="wp-block-paragraph"\>Soon after I started to send out applications, I created an Excel sheet to keep track of my applications. I included company name, date the application was sent, recruiter or contact person, and a column for general notes. Looking at it now, it has 30 entries, but I didn’t send applications to all of them. In some cases, I added an entry after speaking to a recruiter, but then nothing came of it.],
-  [class="wp-block-paragraph"\>6 companies I applied to never responded at all. In some cases, the ad was more than a month old. But if the ad is no longer relevant, they should take it down instead of leaving it up and not responding. In some cases, I tried to contact the recruiter that had posted the ad, but I didn’t get a response that way either.],
-  [class="wp-block-paragraph"\>Ideally, all companies should respond. But I don’t mind too much if I don’t get a response if I haven’t been in contact with a person at the company. However, if I have had an interview with them, I think they should at least let you know if they are not interested. At one company, I had an initial interview with a recruiter at the company. She said she would set up an interview with a manager. Then crickets. I mailed her after two weeks, asking what was happening, but didn’t get a response. Two weeks later, I sent another mail saying I was no longer interested, and got an half-hearted apology back (but no reason for why she never got back to me). So this exchange now colors my view of that company.],
-  [class="wp-block-paragraph"\>I have never had LinkedIn Premium before, but I decided this was a good time to try it, so I paid for a month. However, it was quite disappointing. Maybe I could see more profile viewers, I am not sure, but it is definitely not showing who all of them are. And even if it had been, it has limited value in a job search. I also got a number of InMails to send each month (maybe 5?). I sent a couple, but they were not very useful for me either. Then there was the “Jobs where you’d be a top applicant”, but that too wasn’t very useful for me. So I cancelled after one month. Before cancelling, I had the option of extending it for two months for the price of one.],
-  [class="wp-block-paragraph"\>I also paid for a GoLand license for two months (quite expensive), since I was looking for Go jobs and wanted to practice in an environment I am used to. I signed up for Github CoPilo t too, because I wanted to try it. It’s quite good, but I didn’t use it much, because I wanted to make sure I did all coding by myself at interviews. I already had a subscription to ChatGPT , and that came in very handy for many take-home assignments.],
-  [class="wp-block-paragraph"\>I signed up for Leetcode too, as I have done in the past when preparing for interviews. Mostly I like the paid version because you can get the editorial explanation for the solutions. I practiced a bit in Leetcode, so it was worth the expense. One company used an IQ test from Alva labs, so I paid for a practice course called Alva Logic Cram Course from 12minprep (there were lots of vendors, but this was relatively cheap). It was definitely worth it, I did much better on the test than I would have, had I not practiced beforehand.],
-  [class="wp-block-paragraph"\>Times are definitely harder now compared to the previous decade. There were still many open positions to apply for, but it looked like there were many more applicants for each role than in the past. On LinkedIn, where you can see how many applicants there are, many job ads would have more than a hundred applicants. Further evidence of times being tougher is the number of companies that I never heard back from, even though I believe I would be great for the role.],
-  [class="wp-block-paragraph"\>There is also a big focus on having experience in a given language. In the past, I have started a job developing in Python without any Python experience. The same for Golang. It didn’t take me long to get productive in each language. Partly this is because many imperative languages are very similar. Of course, knowing the libraries and ecosystems is good, but in my experience not strictly necessary. But many recruiters now told me that it was a hard requirement from the hiring companies to have at least two or three years’ experience in the given language.],
-  [class="wp-block-paragraph"\>For a typical job there were four or five interviews: an initial interview with a recruiter, an interview with a hiring manager, one or two technical interviews (either live coding, or going through a take-home assignment). There could also be an interview with a product manager, and/or one with a CTO or founder. All in all, quite a time commitment.],
-  [class="wp-block-paragraph"\>I was applying for both local and remote roles. For the remote ones, all interviews were naturally on Zoom/Meet/Teams. For local jobs in Stockholm, most companies wanted in-person interviews. This caused some problems, because it takes time to travel into the city. I could easily do many remote interviews in a day, but one in-person interview would take half a day with commuting. Mostly I managed to schedule in-person interviews on the same days, which helped. The advantage of the in-person interviews is that you get a better feel for the other person, and you can see what the office looks like.],
-  [class="wp-block-paragraph"\>Since before, I had a Word document that I called Interview Tips . In it I wrote down things to think about before an interview, in a format that is easy to review quickly. One section I added now was Behavioral Questions . These are questions of the form “Tell me about a time when you disagreed with a coworker. How did you resolve it?” . Typically, you should answer them using the STAR framework: Situation, Task, Action, Result, Reflection. In the past, I have failed interviews because of these questions – I hadn’t prepared, and couldn’t come up with good examples on the spot in the interviews.],
-  [class="wp-block-paragraph"\>This time I went through a good list of such questions ( Rock the Behavioral Interview ) from Leetcode, and thought about examples to use. Once I had good examples, I wrote the question and my answer down in the document. Before an interview, I would review what I had written down, so I would be able to come up with good examples. This worked well, I didn’t fail any interviews because of behavioral questions.],
-  [class="wp-block-paragraph"\>In the document I also wrote down little snippets of code in both Python and Go. I tried to cover many common patterns and idioms. I did this so I could refresh my memory and quickly come up with the right syntax in a coding interview. I ran all the snippets first, to see that I hadn’t made any mistake, and included relevant output. Reviewing these snippets before an interview made me feel calmer and more prepared.],
-  [class="wp-block-paragraph"\>I also watched a good video by Gergely Orosz, Confessions from a Big Tech Hiring Manager: Tips for Software Engineering Interviews , on technical interviews in general. Some takeaways: be curious and collaborative, and ask questions.],
-  [class="wp-block-paragraph"\>In all my initial interviews, I was open with the fact that I had been let go from my previous job due to cut backs. I didn’t seem like disclosing this was to my disadvantage. I was never nervous talking to recruiters or managers – I always knew what to say, since I had done it many times, both in the past and for this round of interviews. It is easy for me to articulate what I am looking for in a job, and what my strengths are, because it is very clear in my mind. I was also not nervous before non-coding technical interviews, since I feel I know most technologies I have worked with quite well.],
-  [class="wp-block-paragraph"\>However, I was nervous when I had coding interviews. I don’t exactly know why, but my brain seems to work at only 50% capacity every time I have to do live coding. So, it can be hard for me to come up with a solution, or remember some syntax, when trying to solve a problem. Luckily, all live coding interviews went well this time, but probably mostly because I had prepared a lot.],
-  [class="wp-block-paragraph"\>Of all non-coding interviews, I failed only one (I failed several coding and take-home assignments though). For the one I failed, I was asked what timeout I would set on a database connection. I was more thinking about how long an individual user could be prepared to wait for a page to render, so blurted out too high of a number. This was enough to fail an interview that otherwise went pretty well.],
-  [class="wp-block-paragraph"\>Compared to when I last interviewed a few years ago, there were more take-home assignments this time. Take-home assignments are a lot less stressful than live coding, but they also take much more time. Regardless of what the companies claim, I would say each assignment took at least six hours. There is an unfortunate asymmetry here: it is easy for a company to demand that you do a take-home assignment early on in the process, with almost no cost in effort to them. For the job-seeker, it is at least six hours of work that may or may not pay off. Even so, I noticed that each time I got going with an assignment, I loved the programming – being immersed in a task, structuring the code well, finding good names etc. It was extra obvious because I wasn’t programming as much as when I had a developer job.],
-  [class="wp-block-paragraph"\>I did five take-home assignments, two in Java, two in Python, and one in Go. I failed one and a half. For the Go assignment, I wrote a working solution, but did not include tests. This wasn’t stated as a requirement, but I should have included some even so (when developing the solution, I used a more interactive approach, which meant running the code a lot as I developed). That assignment was also failed because I did not include caching to speed it up (to me it was not clear that it would be run more than once though).],
-  [class="wp-block-paragraph"\>The other assignment, I failed because of hidden test cases and sloppy coding from me. The task was really good – I was given test cases, but no implementation. I implemented enough of the system to pass all the existing test cases. My instinct told me that I should add more test cases on my own (that’s what I would have done if this was on the job). However, I thought that I had already spent a lot of time on it, so I didn’t. When we went through my solution in the interview afterwards, they had run some extra (hidden) test cases on my solution, and discovered two errors in my code. Both had to do with cases with empty input. I felt really stupid for not being more careful implementing the solution. In the end, I still got an offer from that company, and that’s why I am counting it as only half a failure.],
-  [class="wp-block-paragraph"\>Of the live coding assignments, I passed three and failed two. In the first one I failed, I had to write a limited chess program, that only supported two kinds of pieces. It needed a project structure, a data model, valid movements for the pieces, and tests. I started from nothing, and I had to send the solution in within two hours. It was very tight and stressful. I got most of it working, but not all functionality. I also had a bug in the movement code. That combination made it a fail.],
-  [class="wp-block-paragraph"\>The other live coding was less well prepared from the company. I downloaded a repo from Github with some initial code. But there were no working tests, and it took a while to set up an environment to work in. I also had to ask many questions on how the logic was supposed to work (with 50% of my brain capacity), and in the end I took too long. For all live coding tests, I used the IDE on my computer, and shared the screen over Zoom.],
-  [class="wp-block-paragraph"\>A couple of times in the beginning, I gave too high of a salary number, resulting in cancelled interviews. So I changed my tactics to instead tell them what my salary had been each year for the past four years, to give them a sense of what I was ideally looking at (I had had quite good salaries). Often, they would say “well, we can’t pay that”. To this I would respond that since I currently don’t have a job, I don’t really have a minimum acceptable salary, it will depend on what they (and others) can offer. This would often mean that we could continue the process. Sometimes it also meant that I had a chance to show what I had to offer, which might later translate to a better offer than they initially intended.],
-  [class="wp-block-paragraph"\>Once I had my first offer, it became easier. Surprisingly often when I asked the companies what the salary range for the role was, I would get an answer. This was really good, because I could say no to the ones that offered less than I was prepared to accept. In one case, I didn’t check what salary they were prepared to pay. I only found out when I got an offer from them (after a lot of interviews and a take-home assignment). I did this because I really liked the company, but their offer was very low. In hindsight, I should have checked upfront, instead of wasting a lot of time and effort on them.],
-  [class="wp-block-paragraph"\>Even before this job-hunting round, I had quite a good sense of what salaries companies in Stockholm pay developers. It got even better after talking to many companies. In Sweden, you think in terms of the monthly salary. You also have to consider if pension contributions are included or not (in most cases they are included, and can be an additional 10 to 15 percent, which is implicitly included). A very average developer salary would be 55K – 65K SEK per month. Almost all companies are prepared to pay that. Getting a salary of 80K a month and over is more difficult, but definitely not impossible, even in a tight market. In addition to salary, many companies can offer options or equity, and/or a bonus.],
-  [class="wp-block-paragraph"\>In the end, you also have to weigh other aspects of the job. How interesting is the product and company? What language will you work in? What will you learn? Who will your colleagues be?],
-  [class="wp-block-paragraph"\>One company I interviewed with was very positive, and ended up asking for two references, which I provided. But the next day, they announced that they would go with another candidate. I was quite surprised, since I thought I would get an offer from them. It’s ok if they find somebody else, but I was upset that they wasted the time of two of my references. The recruiter later apologized and said that she was convinced they wanted to give me an offer, but the manager had picked somebody else. I don’t know what to think, but it was quite a disappointment.],
-  [class="wp-block-paragraph"\>Even if you fail to get offers at most companies you apply to, you only need to have one where you are successful. In a sense it is a numbers game – go through enough processes so that you get at least one offer.],
-  [class="wp-block-paragraph"\>In the end, I had three and a half offers to choose from (I didn’t formally get an offer from one of the companies, mostly because I knew it would pay less than two of the offers I already had, so I am only counting it as a half). I managed to get them more or less at the same time. I tried to slow some companies down, and speed other ones up, by delaying interviews, or being able to have interviews as soon as possible.],
-  [class="wp-block-paragraph"\>I was lucky to have more than one offer, because then I was in a much better negotiating position. The top two offers were both very good, and I could see my self taking either. In the end I got everything I was looking for – a very interesting job, and a good salary.],
-  [class="wp-block-paragraph"\> Stressful. Looking for a new job is a lot of work. It is hard to relax, even on weekends, because there is always some interview preparation you can do. It wasn’t until I had a firm job offer that I could enjoy my time off (I had a few weeks off before I started).],
-  [class="wp-block-paragraph"\> Takes time. I thought it would be quicker to find a new job. But there are four or five interviews to schedule, and often a take-home assignment to do. You also want to read up on the company and product. Then the companies usually can’t schedule the interviews as fast as you would like. Add that you will fail interviews, and the process can easily take months.],
-  [class="wp-block-paragraph"\> A numbers game. Even if you fail a lot of interviews, it only takes one company where you are successful for you to have a new job. So apply to many. I also realized that I am bad at judging if I did well or not. Almost every time I was rejected, I was surprised.],
-  [class="wp-block-paragraph"\> People to discuss with. I have two former colleagues, Patrik and Peter, that I discussed my jobhunting process with. These discussions were really useful. There are so many aspects to consider, and having somebody who understands to talk to helps immensely!],
-  [class="wp-block-paragraph"\> Responsive recruiters. Recruiters that consistently get back to you quickly are great! It is such a simple way to build confidence in the company they represent, yet so many recruiters really are bad at it.],
-  [class="wp-block-paragraph"\> Reach out. If a colleague of yours is let go, reach out to them (through LinkedIn or other means) to say goodbye. It meant a lot to me, and I think most people would appreciate it.],
-  [class="wp-block-paragraph"\>I am lucky. I love programming, and I have a lot of experience. Even in a tougher market it was comparatively easy for me. It still took a lot of work, but I ended up with a great new job as a senior developer at Swissblock . I hope my jobhunting experience can be helpful to other developers looking for their next jobs.],
-),
-  insert-map: (:),
-  word-count: 4613,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-}
-
-{
-  #standard-article(
-  title: [JPMS modules for library developers - negative benefits],
-  author: [Stephen Colebourne],
-  source-name: [Stephen Colebourne (Joda)],
-  images: (),
-  paragraphs: (
-  [Java 9 introduced a major new feature - JPMS, the Java Platform Module System .
-After six months I've come to the conclusion that JPMS currently offers "negative benefits" to open source library developers .
-Read on to understand why.],
-  [Modules for library developers],
-  [Java 8 is probably the most successful Java release ever. It is widely used and widely liked.
-As such, almost all open source libraries run on Java 8 (as library authors want their code to be used!).
-Some libraries with a long history also still run on older versions.
-Joda-Convert has a Java 6 baseline, while Joda-Time has a Java 5 baseline.
-Others have a Java 8 baseline, such as ThreeTen-Extra.],
-  [Java 9 was released in September 2017, but it is not a release that will be supported for a number of years.
-Instead, it had a lifetime of six months and is now obsolete because Java 10 is out.
-And in six months time Java 11 will be out making Java 10 obsolete, and so on.],
-  [While most releases last six months, some are luckier.
-Java 11 will be a "long term support" (LTS) release with security and bug support for a few years (Java 8 is also an LTS release).
-Thus, even though Java 10 is out, Java 8 is still the sensible Java version for open source library developers to target right now
-because it is the current LTS release.],
-  [But what happens when Java 11 comes out?
-Since Java 8 will be unsupported relatively soon after Java 11 is released, you'd think that the sensible baseline would be 11.
-Unfortunately I believe many companies will be sticking with Java 8 for a long time.
-An aggressive open source project might move quickly to a Java 11 baseline, but doing so would be a risky strategy for adoption.],
-  [The module-path],
-  [Before discussing the JPMS options for open source library developers, it is important to cover the distinction
-between the class-path and the module-path.
-The class-path that we all know and love is still present in Java 9+, and it mostly works in the same way.],
-  [The module-path is new.
-When a jar file is on the module-path any module-info is used to apply the new stricter JPMS rules.
-For example, a public method is no longer callable unless it has been exported from
-the module it is contained in (and required by the caller's module).],
-  [The basic idea is simple, you put old fashioned non-modular jar files on the class-path,
-while you put modular jar files on the module-path.
-Nothing enforces this however, and it turns out this is a bit of a problem.
-There are thus four possibilities:],
-  [modular jar on the module-path],
-  [modular jar on the class-path],
-  [classic non-modular jar on the module-path],
-  [classic non-modular jar on the class-path],
-  [To be sure your library works correctly, you need to test it both on the class-path and on the module-path.
-For example, service loading is very different on the module-path compared to the class-path.
-And some resource lookup methods also work completely differently.],
-  [To complicate this further, JPMS has no explicit support for testing.
-In order to test a module on the module-path (which is a tightly locked down set of packages) you have to use the --patch-module 
-command line flag. This flag effectively extends the module, adding the testing packages into the same module as the classes under test.
-(If you only test the public API, you can do this without using patch-module, but in Maven you'd need a whole new project and pom.xml to achieve that approach, so its likely to be rare.)],
-  [In the latest Maven surefire plugin (v2.21.0 and later) the patch-module flag is used, but if your module
-has optional dependencies, or you have additional testing dependencies, you may have to manually add them,
-see this issue and this issue .],
-  [Given all this, what should an open source library developer do?],
-  [Option 1, do nothing],
-  [In most cases, but not all, code that is compiled on Java 8 or earlier will run just fine
-on the class-path in Java 9+.
-So, you can do nothing and ignore JPMS.],
-  [The problem is that other projects will depend on your library.
-By not adopting JPMS at all, you block those projects from progressing in their modularization.
-(A project can only choose to fully modularize once all of its dependencies are modularized.)],
-  [Of course if your code doesn't run on Java 9+ because you've used sun.misc. Unsafe or
-something else you shouldn't have done then you've got other things to fix.],
-  [And don't forget that a user could put your jar file on the class-path or the module-path. Have you tested both?
-ie. The truth is that "do nothing" is not possible - at a minimum you have extra testing to do, even if it just to document that your project does't work on the module-path.],
-  [Option 2, add a module name],
-  [Java 9+ recognises a new entry in the MANIFEST. MF file.
-The Automatic-Module-Name entry allows a jar file to declare what name it will use if/when it is turned into a proper modular jar file.
-Here is how you can use Maven to add it:],
-  [org.apache.maven.plugins 
- maven-jar-plugin 
- 
- 
- 
- org.foo.bar],
-  [This is a nice simple way to move forward.
-It reserves the module name and allows other projects that depend on your jar file to fully modularize if they wish.],
-  [But because its so simple, its easy to forget the testing aspect.
-Again, your jar file might be placed on the class-path or on the module-path, and the two can behave quite differently.
-In fact, now that it has some module information, tools may treat it differently.],
-  [When Maven sees an Automatic-Module-Name it will normally place the classes on the module-path instead of the class-path.
-This may have no effect, or it may show up a bug where your code works on the class-path but not on the module-path.
-With Maven right now, you have to use surefire plugin v2.20.1 to test on the class-path (an old version that doesn't know about the module-path).
-To test on the module-path, use v2.21.0.
-Swapping between these two versions is of course a manual process, see this issue for a request to improve this.],
-  [While upgrading some of my projects I added Automatic-Module-Name without testing on the module-path.
-When I did eventually test on the module-path the tests failed, as the code simply didn't work on the module-path.
-Unfortunately, I now have some releases on Maven-Central that have Automatic-Module-Name but don't work on the module-path, happy days...],
-  [To emphasise this, just adding something to the MANIFEST. MF file can have an effect on how the project is run and tested.
-You need to test on both the class-path and module-path.],
-  [Option 3, add module-info.java],
-  [This is the full modularization approach described in numerous web pages and tutorials on JPMS.],
-  [module org.foo.bar {
- requires org.threeten.extra;
- exports org.foo.bar;
- exports org.foo.bar.util;
- }],
-  [So, what are the implications of doing this to the open source project?],
-  [Unlike option 2, your code now has a baseline of Java 9+. The Java 8 compiler won't understand the file.
-What we really want is a jar file that contains Java 8 class files, but with just the module-info.java file compiled under Java 9+.
-In theory, when running on Java 8 the module-info.class file will be ignored if it is not used.],
-  [Maven has a technique to achieve this.
-While the technique works OK, it turns out to be nowhere near sufficient to achieve the goal.
-To actually get a single jar file that works on both Java 8 and 9+ you need:],
-  [use the release flag on Java 9+ to build for Java 8],
-  [add an OSGi require capability filter to inform it that its still Java 8 compatible],
-  [exclude module-info.java from maven-javadoc-plugin when building on Java 8],
-  [use maven-javadoc-plugin v3.0.0-M1 (not later), manually copy dependencies to a directory and refer to them using additional Javadoc command line arguments, see this issue],
-  [exclude module-info.java from maven-checkstyle-plugin],
-  [exclude module-info.java from maven-pmd-plugin],
-  [manually swap the version of maven-surefire-plugin to test both the module-path and the class-path],
-  [And probably some more I've forgotten about.
-Here is one pom.xml before integrating Java 9.
-Here it is after integrating Java 9.
-An increase from 650 to 862 lines, with lots of complexity, profiles and workarounds.],
-  [With a Java 11 baseline, the project would be simpler again, but that baseline isn't going to happen for a number of years.
-Note that my comments should not be interpreted as anti-Maven. A small team there is working hard to do the best they can - JPMS is complex.],
-  [And just for kicks, your project can no longer be used by Android (as the team there seems to be very slow in adding a simple "ignore module-info" rule).
-And many tools with older versions of bytecode libraries like ASM will fail too - I had a report that a particular version of Tomcat/TomEE could not load the modular jar file.
-I've ended up having to release a "classic" non-modular jar file to cope with these situations, something which is profoundly depressing.],
-  [While I've added module-info.java to some of my projects, I cannot recommend others to do so - its a very painful and time-consuming process.
-The time to consider it would appear to be once Java 11 or beyond is widely adopted and the baseline of your project.],
-  [Negative benefits],
-  [Now for the controversial part.],
-  [It is my conclusion that JPMS, as currently designed, has "negative benefits" for open source libraries.],
-  [As explained above, the cost of full modularization is high for library developers.
-The need to retain Java 8 compatibility makes JPMS really hard to use (module information should have been textual, not a class file).
-The tooling is still incomplete/buggy.
-Many older projects can't cope with the new jar files if you do go for it.
-Much of this will improve over time, but we're talking a number of years before Java 11 is widely adopted.
-But don't be lulled into just believing waiting will solve the key problem.],
-  [The split (bifurcation) of the module-path from the class-path is an absolute nightmare.
-At a stroke, there are now two different ways that your library can be run, and the two environments have quite different qualities.
-Code that compiles and runs on the class-path will often not compile or not run on the module-path.
- And vice versa. 
-As a library author, you cannot control whether the class-path or module-path is used.
-You have no choice - you must test both, which you probably won't think to do.
-(And Maven currently provides no way to test both in one pom.xml )],
-  [Given all this effort and extra complexity, we should be getting some great benefits, right?
-Well no.],
-  [JPMS is supposed to ensure reliable configuration (that all your dependencies are available at startup) and strong encapsulation (that other code can't see or use packages that you want to keep hidden).
-But since there is no way to stop your modular jar file being used on the class-path, you get none of these benefits.],
-  [Did you put lots of effort into choosing which packages to hide? Meaningless, as the user can just put the jar file on class-path and call your internal packages.
-Did you believe that the JVM will check all your dependent modules are available before starting? Afraid not, no checks performed when the user puts the jar file on class-path.],
-  [Since we get none of the claimed benefits of JPMS, but get lots of extra work in testing and complexity in the build tools, I feel "negative benefits" is a pretty accurate summary.],
-  [As of today, JPMS is a pain for library authors. The split of the module-path from the class-path is at the heart of the problem.
-You really can't afford to release a library without testing on both module-path and class-path - there are subtle corner cases where the environments differ.],
-  [What is desperately needed is a small change to JPMS. There needs to be a way for a library author to insist that the modular jar file they are producing can only be run on the module-path (with any attempt to use it on the class-path preventing application startup). This would eliminate the need for testing both class-path and module-path. Together with the passage of time, JPMS might yet achieve its goals and go from negative to positive benefits.],
-),
-  insert-map: (:),
-  word-count: 2074,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-}
-
-{
-  #standard-article(
-  title: [What’s !important \#6: :heading, border-shape, Truncating Text From the Middle, and More],
+  title: [Potentially Coming to a Browser :near() You],
   author: [Daniel Schwarz],
   source-name: [CSS-Tricks],
   images: (),
   paragraphs: (
-  [Despite what’s been a sleepy couple of weeks for new Web Platform Features, we have an issue of What’s !important that’s prrrretty jam-packed . The web community had a lot to say, it seems, so fasten your seatbelts!],
-  [Peter Kröner shared an interesting fact about \@keyframes animations — that they can be strings:],
-  [\@keyframes "\@animation" {
- /\* ... \*/
+  [Just before we wrapped up 2025, I saw this proposal for :near() , a pseudo-class that would match if the pointer were to go near the element. By how much? Well, that would depend on the value of the argument provided. Thomas Walichiewicz , who proposed :near() , suggests that it works like this:],
+  [button:near(3rem) {
+ /\* Pointer is within 3rem of the button \*/
 }],
-  [\#animate-this {
- animation: "\@animation";
+  [For those wondering, yes, we can use the Pythagorean theorem to measure the straight-line distance between two elements using JavaScript (“Euclidean distance” is the mathematical term), so I imagine that that’s what would be used behind the scenes here. I have some use cases to share with you, but the demos will only be simulating :near() since it’s obviously not supported in any web browser. Shall we dig in?],
+  [Without question, :near() could be used for a near-infinite (sorry) number of visual effects:],
+  [div {
+ /\* Div is wow \*/],
+  [&:near(3rem) {
+ /\* Div be wowzer \*/
+ }],
+  [&:near(1rem) {
+ /\* Div be woahhhh \*/
+ }
 }],
-  [lang="en"\>Yo dawg, time for a \#CSS fun fact: keyframe names can be strings. Why? Well, in case you want your keyframes to be named “\@keyframes,” obviously!],
-  [\#webdev],
-  [[image or embed]],
-  [— Peter Kröner ( \@sirpepe.bsky.social ) Feb 18, 2026 at 10:33],
-  [I don’t know why you’d want to do that, but it’s certainly an interesting thing to learn about \@keyframes after 11 years of cross-browser support!],
-  [Another hidden trick, this one from Temani Afif , has revealed that we can replace the colon in a style query with an equals symbol . Temani does a great job at explaining the difference, but here’s a quick code snippet to sum it up:],
-  [. Jay-Z {
- --Problems: calc(98 + 1);],
-  [/\* Evaluates as calc(98 + 1), color is blueivy \*/
- color: if(style(--Problems: 99): red; else: blueivy);],
-  [/\* Evaluates as 99, color is red \*/
- color: if(style(--Problems = 99): red; else: blueivy);
+  [To reduce visual clutter, you might want to dim certain components until users are near them. :near() could be more effective than :hover in this scenario because users could have trouble interacting with the components if they have limited visibility, and so being able to trigger them “earlier” could compensate for that to some degree. However, we have to ensure accessible color contrast, so I’m not sure how useful :near() can be in this situation.],
+  [button:not(:near(3rem)) {
+ opacity: 70%; /\* Or...something \*/
 }],
-  [In short, = evaluates --Problems differently to : , even though Jay-Z undoubtably has 99 of them (he said so himself).],
-  [David Bushell demonstrated how to create s declaratively using invoker commands , a useful feature that allows us to skip some J’Script in favor of HTML, and works in all web browsers as of recently.],
-  [Also, thanks to an inquisitive question from Ana Tudor, the article spawned a spin-off about the minimum number of styles needed for a visually-hidden utility class . Is it still seven?],
-  [Maybe not…],
-  [Wes Bos shared a clever trick for truncating text from the middle using only CSS:],
-  [lang="en"\>Someone on reddit posted a demo where CSS truncates text from the middle.],
-  [They didn't post the code, so here is my shot at it with Flexbox],
-  [[image or embed]],
-  [— Wes Bos ( \@wesbos.com ) Feb 9, 2026 at 17:31],
-  [Donnie D’Amato attempted a more-native solution using ::highlight() , but ::highlight() has some limitations, unfortunately. As Henry Wilkinson mentioned , Hazel Bachrach’s 2019 call for a native solution is still an open ticket, so fingers crossed!],
-  [Theo Soti demonstrated how to manage color variables with relative color syntax . While not a new feature or concept, it’s frankly the best and most comprehensive walkthrough I’ve ever read that addresses these complexities.],
-  [In a similar article for Piccalilli, Richard Rutter comprehensively showed us how to customize lists , although this one has some nuggets of what I can only assume is modern CSS. What’s symbols() ? What’s \@counter-style and extends ? Richard walks you through everything .],
-  [Source: Piccalilli .],
-  [Can’t get enough on counters? Juan Diego put together a comprehensive guide right here on CSS-Tricks .],
-  [Safari Technology Preview 237 recently began trialing :heading / :heading() , as Stuart Robson explains . The follow-up is even better though, as it shows us how pow() can be used to write cleaner typescale logic, although I ultimately settled on the old-school – elements with a simpler implementation of :heading and no sibling-index() :],
-  [:root {
- --font-size-base: 16px;
- --font-size-scale: 1.5;
+  [In addition to dimming components, we could also hide components (as long as they’re not important, that is). This, I think, is a better use case for :near() , as we wouldn’t have to worry about color contrast, although it does come with a different accessibility challenge.],
+  [So, you know when you hover over an image and a share button appears? Makes sense, right? Because we don’t want the image to be obscured, so it’s hidden initially. It’s not optimal in terms of UX, but it’s nonetheless a pattern that people are familiar with, like on Pinterest for example.],
+  [And here’s how :near() can enhance it. People know or suspect that the button’s there, right? Probably in the bottom-right corner? They know roughly where to click, but don’t know exactly where, as they don’t know the size or offset of the button. Well, showing the button when :near() means that they don’t have to hover so accurately to make the button appear. This scenario is pretty similar to the one above, perhaps with different reasons for the reduced visibility.],
+  [However, we need this button to be accessible (hoverable, focusable, and find-in-pageable). For that to happen, we can’t use:],
+  [display: hidden (not hoverable, focusable, or find-in-pageable)],
+  [visibility: hidden (also not hoverable, focusable, or find-in-page-able)],
+  [opacity: 0 (there’s no way to show it once it’s been found by find-in-page)],
+  [That leaves us with content-visibility: hidden , but the problem with hiding content using content-visibility: hidden (or elements with display: none ) is that they literally disappear, and you can’t be near what simply isn’t there. This means that we need to reserve space for it, even if we don’t know how much space.],
+  [Now, :near() isn’t supported in any web browser, so in the demo below, I’ve wrapped the button in a container with 3rem of padding , and while that container is being :hover ed, the button is shown. This increases the size of the hoverable region (which I’ve made red, so that you can see it) instead of the actual button. It essentially simulates button:near(3rem) .],
+  [But how do we hide something while reserving the space?],
+  [First, we declare contain-intrinsic-size: auto none on the hidden target. This ensures that it remains a specific size even as something changes (in this case, even as its content is hidden). You can specify a for either value, but in this case auto means whatever the rendered size was. none , which is a required fallback value, can also be a , but we don’t need that at all, hence “ none .”],
+  [The problem is, the rendered size “was” nothing, because the button is content-visibility: hidden , remember? That means we need to render it if only for a single millisecond, and that’s what this animation does:],
+  [\@keyframes show-content {
+ from {
+ content-visibility: visible;
+ }
 }],
-  [:heading {
- /\* Other heading styles \*/
+  [button {
+ /\* Hide it by default \*/
+ &:not(\[hidden="until-found"\]) {
+ content-visibility: hidden;
+ }],
+  [/\* But make it visible for 1ms \*/
+ animation: 1ms show-content;],
+  [/\* Save the size while visible \*/
+ contain-intrinsic-size: auto none;
 }],
-  [/\* Assuming only base/h3/h2/h1 \*/],
-  [body {
- font-size: var(--font-size-base);
+  [Note that if the button has the hidden=until-found attribute-value, which is what makes it focusable and find-in-page-able, content-visibility: hidden isn’t declared because hidden=until-found does that automatically. Either way, the animation declares content-visibility: visible for 1ms while contain-intrinsic-size: auto none captures its size and reserves the space, enabling us to hover it even when it’s not visible.],
+  [Now that you understand how it works, here’s the full code (again, simulated, because :near() isn’t supported yet):],
+  [\@keyframes show-content {
+ from {
+ content-visibility: visible;
+ }
 }],
-  [h3 {
- font-size: calc(var(--font-size-base) \* var(--font-size-scale));
+  [\#simulate-near {
+ /\* Instead of :near(3rem) \*/
+ padding: 3rem;],
+  [button {
+ /\* Unset any styles \*/
+ border: unset;
+ background: unset;],
+  [/\* But include size-related styles \*/
+ padding: 1rem;],
+  [/\* Hide it by default \*/
+ &:not(\[hidden="until-found"\]) {
+ content-visibility: hidden;
+ }],
+  [/\* But make it visible for 1ms \*/
+ animation: 1ms show-content;],
+  [/\* Save the size while visible \*/
+ contain-intrinsic-size: auto none;
+ }],
+  [&:where(:hover, :has(:focus-visible)) button {
+ color: white;
+ background: black;
+ content-visibility: visible;
+ }
 }],
-  [h2 {
- font-size: calc(var(--font-size-base) \* pow(var(--font-size-scale), 2));
+  [If you’re wondering why we’re unsetting border and background , it’s because content-visibility: hidden only hides the content, not the element itself, but we’ve included padding here because that affects the size that we’re trying to render n’ remember. After that we simply apply those styles as well as content-visibility: visible to the button when the the wrapper is :hover ed or :has(:focus-visible) .],
+  [And here’s the same thing but with the unsupported :near() :],
+  [\@keyframes show-content {
+ from {
+ content-visibility: visible;
+ }
 }],
-  [h1 {
- font-size: calc(var(--font-size-base) \* pow(var(--font-size-scale), 3));
+  [button {
+ /\* Unset any styles \*/
+ border: unset;
+ background: unset;],
+  [/\* But include size-related styles \*/
+ padding: 1rem;],
+  [/\* Hide it by default \*/
+ &:not(\[hidden="until-found"\]) {
+ content-visibility: hidden;
+ }],
+  [/\* But make it visible for 1ms \*/
+ animation: 1ms show-content;],
+  [/\* Save the size while visible \*/
+ contain-intrinsic-size: auto none;],
+  [&:where(:near(3rem), :hover, :focus-visible) {
+ color: white;
+ background: black;
+ content-visibility: visible;
+ }
 }],
-  [Speaking of new features, border-shape came as a surprise to me considering that we already have — or will have — corner-shape . However, border-shape is different, as Una explains . It addresses the issues with borders (because it is the border), allows for more shapes and even the shape() function , and overall it works differently behind the scenes.],
-  [Source: Una Kravets .],
-  [It’s time to start using all of that modern CSS, and that’s exactly what modern.css wants to help you do. All of those awesome features that weren’t supported when you first read about them, that you forgot about? Or the ones that you missed or skipped completely? Well, modern.css has 75 code snippets and counting, and all you have to do is copy ‘em.],
-  [And the commenters? They have some too!],
-  [Honestly, Kevin is the only web dev talker that I actually follow on YouTube, and he’s so close to a million followers right now, so make sure to hit ‘ol K-Po’s “Subscribe” button.],
-  [Actually, you didn’t miss that much! Firefox 148 released the shape() function , which was being held captive by a flag, but is now a baseline feature. Safari Technology Preview 237 became the first to trial :heading . Those are all we’ve seen from our beloved browsers in the last couple of weeks (not counting the usual flurry of smaller updates, of course).],
-  [That being said, Chrome , Safari , and Firefox announced their targets for Interop 2026 , revealing which Web Platform Features they intend to make consistent across all web browsers this year, which more than makes up for the lack of shiny features this week.],
-  [Also coming up (but testable in Chrome Canary now, just like border-shape ) is the scrolled keyword for scroll-state container queries. Bramus talks about scrolled scroll-state queries here .],
-  [Remember, if you don’t want to miss anything, you can catch these Quick Hits as the news breaks in the sidebar of css-tricks.com .],
-  [See you in a fortnight!],
-  [What’s !important \#6: :heading, border-shape, Truncating Text From the Middle, and More originally published on CSS-Tricks , which is part of the DigitalOcean family. You should get the newsletter .],
+  [In short, :near() enables us to do what the simulated technique does but without the extra markup and creative selectors, and if there are any accessibility needs, we have that animation \/ contain-intrinsic-size trick.],
+  [I’m not suggesting that there’s a way to prefetch/prerender using :near() or even that the functionality of :near() should be extended, but rather that the Speculation Rules API could leverage its underlying functionality. The Speculation Rules API already uses mousedown , touchstart , pointer direction and velocity, viewport presence, and scroll pauses as signals to begin prefetching/prerendering the linked resource, so why not when near?],
+  [In fact, I think “near” as a concept could be utilized for a lot more than :near() , and should be considering that custom hit-testing using pointermove has a high performance cost and implementation complexity (as Thomas points out). Let’s look at another example.],
+  [When interacting with hover-triggered overlays, there’s risk of accidentally moving the pointer away from the trigger or target. The Interest Invoker API , which facilitates hover-triggered interactions, uses the interest-show-delay and interest-hide-delay CSS properties to prevent accidental activations and deactivations respectively, but from a user experience perspective, anything involving delays and time-sensitivity just isn’t fun.],
+  [A couple of examples:],
+  [The pointer falling into the gap between the interest trigger (e.g., a link or button) and interest target (e.g., a popover)],
+  [The pointer overshooting the bounds of the interest target when trying to interact with elements near the edge of it],
+  [Therefore, instead of (or in addition to) show and hide delays, the Interest Invoker API could leverage the concept of “near” to ensure that overlays don’t disappear due to mis-interaction. This could be configurable with a CSS property (e.g., near-radius: 3rem or just near: 3rem ), which unlike :near() would invoke functionality ( interest and loseinterest JavaScript events, in this case).],
+  [Another use-case, suggested by Thomas in his proposal: showing a “drag to reorder” hint while hovering near a draggable element. This is a terrific use-case because showing tooltips even just a few milliseconds earlier would likely reduce task time.],
+  [Unfortunately, you’d have a hard time (I think?) simulating these ones with valid HTML, mostly because s and s can only contain certain elements.],
+  [A potential downside is that :near() could lead to a significant increase in developers lazily hiding things to reduce visual clutter in instances where better UI design would’ve been the right call, or increasing visual clutter (with unnecessary icons, for example) because it can be hidden more conditionally.],
+  [Other potential abuses include heatmapping, fingerprinting, and aggressive advertising patterns. It could also be used in ways that would negatively impact performance. Thomas’s proposal does a wonderful job of pointing out these abuses and the ways in which :near() could be implemented to thwart them.],
+  [:near() shouldn’t imply :hover or :focus \/ :focus-visible . I think that much is obvious when you really think about it, but I can still see the lines getting crossed. A good question to ask before using :near() is: “Are we being preemptive or presumptive?” Preemptive can be good but presumptive would always be bad, as we never want users to think that they’re hovering or focusing on an interactive element when they’re not (or not yet). This is mentioned in various parts of the Web Content Accessibility Guidelines, but most notably in Success Criterion 2.4.7: Focus Visible (Level AA) .],
+  [Similarly, Success Criterion 2.5.8: Target Size (Level AA) states that interactive elements smaller than 24ｘ24px must have extra spacing around them, calculated as 24px - target width \/ 24px - target height , but whether or not the value of :near() would factor into that is a bit ambiguous.],
+  [There’s lots to think about here, but ultimately I’d love to see this implemented as Thomas has proposed it. Having said that, the WCAG guidance must be rock-solid before any implementation begins, especially considering that we can already accomplish what :near() would do (albeit with more markup and maybe some CSS trickery).],
+  [And again, I think we should entertain the idea of “near” as a concept, where the underlying functionality could be leveraged by the Speculation Rules API and Interest Invoker API (the latter with a CSS property like near-radius ).],
+  [Your thoughts, please!],
+  [Potentially Coming to a Browser :near() You originally published on CSS-Tricks , which is part of the DigitalOcean family. You should get the newsletter .],
 ),
   insert-map: (:),
-  word-count: 1053,
+  word-count: 1838,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -559,44 +300,37 @@ You really can't afford to release a library without testing on both module-path
 
 {
   #standard-article(
-  title: [Steve Yegge Wants You to Stop Looking at Your Code],
+  title: [Software Craftsmanship in the Age of AI],
   author: [Tim O’Reilly],
   source-name: [O'Reilly Radar],
   images: (),
   paragraphs: (
-  [My “ Live with Tim ” conversation with Steve Yegge this week was one of those sessions where you could imagine the audience leaning forward in their chairs. And on more than one occasion, when Steve got particularly colorful, I imagined them recoiling. Steve has always been one of the most provocative thinkers in our industry, going all the way back to his legendary 2011 platform rant that leaked from inside Google. These days he’s channeling his energy into Gas Town , an open source AI agent orchestrator, and into a relentless campaign to shake developers out of what he sees as a state of denial about where coding is headed.],
-  [And yes, Gas Town is indeed named after the fuel depot in Mad Max: Furiosa , and even features a managing agent named after the Mayor. But Steve’s Gas Town is anything but dystopic. If anything, it’s joyous. That gives you a deep sense of who Steve is: He goes into the deepest, darkest part of the forest, finds something scary, and then does his best to redeem it.],
-  [We covered a lot of ground: the eight levels of coder evolution, the addictive pull of multi-agent workflows, grief and denial in the developer community, the bitter lesson, and why taste may be the last remaining competitive advantage. Here are some of the highlights.],
-  [Steve’s “Eight Levels of Coder Evolution” framework has taken on a life of its own since he published it as part of the Gas Town launch post . The first four levels are about increasingly sophisticated IDE use; levels five through eight are about coding agents. Here is an infographic showing the eight stages that I showed to anchor the start of our conversation. Note that I created this slide with Nano Banana 2. It is not directly from Steve.],
-  [The key transition, Steve argues, happens at level five: Your IDE goes away and you never open it again. As Steve described it, once you realize Claude Code can write pieces of your code, you start assembling them like Lego. But while one agent is working, you’re sitting there bored, so you fire up another one. And another. Before long, you’ve got six agents running in parallel, and one of them is always finished and waiting for your attention.],
-  [Steve drew an analogy to Amazon VPs who had executive assistant support. Those people were effectively two people. They didn’t have to worry about whether the printer was jammed, so they could spend all their time focused on the real problems. Gas Town, Steve argues, is topologically similar: It’s going to turn everybody into something like an executive with a chief of staff. “We all have a chief of staff now,” he said. “Everybody’s going to be able to spend their time more productively on whatever they want to spend it on instead of figuring out where the printer is jammed.”],
-  [On March 26, join Addy Osmani and Tim O’Reilly at AI Codecon: Software Craftsmanship in the Age of AI, where an all-star lineup of experts will go deeper into orchestration, agent coordination, and the new skills developers need to build excellent software that creates value for all participants.  Sign up for free here .],
-  [This is Steve Yegge, so he’s not just going to give you the upside. His post on “ the AI Vampire ” explained how AI-assisted productivity creates an insidious new kind of burnout, and I made sure to ask him about that.],
-  [The old version of overwork was your company piling tasks on you until you broke, he told us. The new version isn’t your boss asking you to work extra hours. It’s Claude saying, “Is there anything else you’d like me to do on this project?” And you say yes, yes, yes, because it’s fun, because it’s productive, because the AI is your buddy, not your employer.],
-  [But there’s a twist. The AI is solving all the easy problems and leaving you with nothing but hard ones. In our conversation, I said it can feel like your bike ride is all hills now, and Steve immediately connected it to watching Jeff Bezos in meetings at Amazon. People would bring him presentations where they’d already solved every easy problem, so Bezos was just getting the hard stuff, all day long. “Now this happens to you,” Steve said. “Everyone’s Jeff Bezos, everyone’s an entrepreneur. Everyone has a huge army of workers now. And I’m telling you, it’s exhausting.”],
-  [Steve told us he naps every day now, sometimes twice a day, feeling drained by the relentless cognitive intensity. These agents don’t just help you work faster; they fundamentally change what kind of work reaches your desk.],
-  [We spent a good stretch on Richard Sutton’s “ bitter lesson .” Sutton observed that raw computation consistently beats systems built on human-engineered structure. Steve treats it less as a paper and more as a daily operating principle. “Not a day goes by when I don’t think about the bitter lesson as a math formula,” he said, “at least five times a day.”],
-  [His practical test is simple: If you’re writing code that tries to make the AI smarter, by adding heuristics, parsers, regular expressions to handle what a model could handle, you’re on the wrong side of the bitter lesson. He watches even his own Gas Town contributors make this mistake, reaching for a little regex hack when they should let a model do the cognition. (Steve does admit that sometimes you do need to provide prebuilt code if it saves tokens .)],
-  [Sutton wrote about the bitter lesson in the context of training programs to beat humans at chess and go, but it’s more general than that, even more general than leaning into today’s AI in the way that Steve does. I shared my own first encounter with the bitter lesson, back in 1993 when O’Reilly created GNN , the first commercial web portal. Being publishers, we curated a catalog of the best websites. Then Yahoo! set out to list all of them, restricting curation to putting them into categories. Then Google did it algorithmically, creating a custom curation for every search. We know which approach won. The bitter lesson isn’t just about AI; it’s about a recurring pattern in the history of technology where scale and computation overwhelm hand-tuned solutions.],
-  [I still believe we have to bet against the bitter lesson , because if we just give up, there will be no place for humans in the future knowledge economy. But we have to do it knowing that we aren’t going to win in the traditional sense. We aren’t going to outrace AI. We have to learn to ride it.],
-  [For anyone in a corporate setting, you will naturally want to fit AI into your current workflows. The bitter lesson says you should instead figure out what the AI can do by itself first, and then build a new workflow around that. I described Steve’s whole approach as looking the bitter lesson in the face and saying, “I’m going to turn AI loose on everything I can, and then figure out where the human fits in the loop.”],
-  [Steve hit peak Yegge mode when an audience member asked why they should leave their IDE. His response was, as usual, quotable:],
-  [If you’re looking at your code, then you’re in a Formula One race and you’ve parked your car and opened the hood and you’re looking at the engine. You’ve slowed time to the point where everyone is racing past you and you’re a frozen statue. Code is a liquid. You spray it through hoses. You don’t freaking look at it….],
-  [Look, I get it. This is painful for people. This is super painful. For me to say these things is painful for people to hear them. Because what I’m saying is your job is going to change.…And there’s still a lot of denial out there.],
-  [What’s the first phase of grief? The first phase of grief. The whole world is in it right now, Tim. They’re in denial. Right. They are grieving for what is going away. We’re at the end of an era. An age, a golden age, maybe, where we programmers, we’re writing all the code. And it was wonderful for 30, 40, 50 years or whatever. That era is ending and people are grieving because of it. And I feel for them. I’ve got empathy, right. But I’m also losing patience because it’s 2026 and this is an exponential curve, and we don’t have time to sit around and feel pity for ourselves.],
-  [He sees that grief everywhere, but he specifically called out Hacker News, which he described as the home of “the new Amish.”],
-  [Another of the audience questions was about whether corporations with deep pockets have all the leverage and there’s no room left for individuals. Steve’s answer was emphatic: absolutely not. Steve made a passionate argument that creativity outweighs capital in the AI era. He’s certain there will be companies that waste millions of dollars of tokens building software that never sees the light of day, because they had no taste, no good ideas, just brute-force generation without direction. Meanwhile, an entrepreneur with open source local inference models and a good GPU can build something that matters, if they know what people want.],
-  [“Everything is going to come down to taste,” Steve said. “Companies don’t have an advantage anymore. As an entrepreneur, I think this is a golden opportunity for people to make huge, huge impact.”],
-  [Someone from the audience asked Steve about a question that’s on everyone’s mind: If senior developers are becoming PMs and juniors are being replaced by AI, where will new seniors come from? His answer was a classic reframe, and an update of what he wrote in “ Revenge of the Junior Developer .”],
-  [He made the case that your most junior engineers aren’t who you think they are anymore. They’re your product managers, your SDRs, your finance and sales folks, all of those people throughout your company who are now building things with AI. Your former junior engineers are actually well-trained engineers who make perfect mentors for this new bottom layer. And those juniors get mentored by seniors, and seniors by principals. It’s mentoring all the way down.],
-  [Steve pointed out that this connects to something Matt Beane (who was in our audience) has researched on skills acquisition: You don’t learn from someone 40 levels above you; you learn from someone one or two levels ahead. Steve’s suggestion for companies is to organize around this. Find mentors within your organization who are just a step or two ahead of where each person is, and bring everyone along with empathy for what people are going through.],
-  [Another audience member asked about research showing that AI atrophies critical thinking pathways. I couldn’t resist jumping in with one of my favorite historical analogues. Socrates said the same thing about the written word, arguing that it was impairing people’s ability to remember. And he was right, we did lose the ability to recite massive amounts of literature from memory. But we gained more than we lost. Things change.],
-  [I also shared a Rilke poem that I love, about Jacob wrestling with the angel: “What we fight with is so small, and when we win, it makes us small. What we want is to be defeated decisively by successively greater beings.” If AI is atrophying your thinking, it’s because you’re not wrestling with hard enough problems. The real opportunity is to be pushed, stretched, and defeated by bigger challenges, and come away stronger from the fight.],
-  [Steve agreed: “We’re going to build bigger stuff. That’s what everyone’s worried about. What’s going to happen? And the answer is we’re going to build bigger stuff and it’s going to be fun.”],
-  [Watch the full conversation here . Steve Yegge’s Gas Town is at https:\/\/github.com/steveyegge/gastown . His blog posts on “ T he AI Vampire ,” the “ Revenge of the Junior Developer ,” and “ Software Survival 3.0 ” are essential reading for anyone navigating this transition.],
+  [On March 26, Addy Osmani and I are hosting the third O’Reilly AI Codecon , and this time we’re taking on the question of what software craftsmanship looks like when AI agents are writing much of the code.],
+  [The subtitle of this event, “Software Craftsmanship in the Age of AI,” was meant to be provocative. Craftsmanship implies care, intention, and deep skill. It implies a maker who touches the material. But we’re entering a world where some people with quite impressive output don’t touch the code. Steve Yegge, in our conversation earlier this week , put it bluntly: “Code is a liquid. You spray it through hoses. You don’t freaking look at it.” Wes McKinney, the creator of pandas and one of our speakers at this event, doesn’t write code by hand any more either . He’s burning north of 10 billion tokens a month across Claude, Codex, and Gemini, writing vast amounts of Go, a language he’s never coded in manually.],
+  [If that’s where this is headed, then what exactly are we crafting? That’s the question this lineup is built to answer, and the speakers come at it from very different angles.],
+  [One end of the spectrum is occupied by people who are already operating what are increasingly being called dark factories , after the robot factories where there are no lights because the robots that do all of the work don’t need them. These are software production environments where humans set direction but agents do nearly all the implementation.],
+  [Ryan Carson is the clearest example on our stage. Ryan built and sold Treehouse, where he helped over a million people learn to code. Now he’s building Antfarm , an open source tool that lets you install an entire team of agents into OpenClaw with a single command. His talk, “How to Create a Team of Agents in OpenClaw and Ship Code with One Command,” is essentially a tutorial on running a software factory where a planning agent decomposes your feature request into user stories, each story gets implemented and tested in isolation by a separate agent, failures retry automatically, and you get back tested pull requests. This isn’t quite a dark factory, though. Ryan has built a CI pipeline where the agent records itself using a feature and attaches the video to the PR for human review. It’s an assembly line, and the human’s job is to inspect the output, not produce it.],
+  [This is Steve Yegge’s Level 7 or 8 , and it’s no longer theoretical. But Ryan’s talk will also reveal what happens at the edges, when agents break, when the feedback loop fails, when automated retries aren’t enough.],
+  [At the other end you have people who are deeply enthusiastic about AI coding but insist that the human role isn’t just “set direction and walk away.” It’s active, continuous, and skilled.],
+  [Addy Osmani anchors this position. His talk, “Orchestrating Coding Agents: Patterns for Coordinating Agents in Real-World Software Workflows,” is about the coordination problem. As he and I discussed in our recent conversation , there’s a spectrum from solo founders running hundreds of agents without reviewing the code to enterprise teams with quality gates and long-term maintenance to think about. Most real teams are somewhere in the middle, and they need patterns, not just tools. Addy has been thinking hard about what Andrej Karpathy called “context engineering,” the discipline of structuring all the information an LLM needs to perform reliably. His new book Beyond Vibe Coding is essentially a manual for this new discipline.],
+  [Cat Wu from Anthropic brings the platform maker’s perspective. She leads product for Claude Code and Cowork, and her focus on building AI systems that are “reliable, interpretable, and steerable” represents a design philosophy that the tool should make human oversight natural and easy. Where Ryan Carson’s approach pushes toward maximum agent autonomy, Cat’s work at Anthropic is about giving humans the right levers to stay meaningfully in the loop. I’m really looking forward to the conversation between Cat and Addy.],
+  [Several speakers are focused squarely on what happens when the dark factory breaks down.],
+  [Nicole Koenigstein’s talk, “The Hidden Cost of Agentic Failure and the Next Phase of Agentic AI,” is about the failure modes that don’t show up in demos. Nicole is writing the O’Reilly book AI Agents: The Definitive Guide , and she’s been consulting with companies on the gap between what agents can do in a sandbox and what they do in production. Hila Fox from Qodo brings a complementary perspective with “From Prompt to Multi-Agent System: The Evolution of Our AI Product,” which traces the real path from a simple prompt-based tool to a production multi-agent system, including all the things that go wrong along the way.],
+  [The lightning talks share more results of real-world experience. Advait Patel , a site reliability engineer at Broadcom, will talk about what happens when AI agents break production systems, and how his team responded. Abhimanyu Anand from Elastic asks a question that should keep every AI builder up at night: “Is your eval lying to you?” If your evaluation framework is giving you false confidence, you’re building on sand.],
+  [Wes McKinney’s talk, “The Mythical Agent-Month,” revisits Fred Brooks’s famous argument that adding more people to a late software project makes it later, and asks whether the same dynamics apply to adding more agents. Wes’s answer, as he’s laid it out in his blog post , is so compelling that we immediately invited him to give it as a talk, even though that meant rearranging the existing program. Agents leave the essential complexity, the hard design decisions, the conceptual integrity of the system, completely untouched. Worse, agents introduce new accidental complexity at machine speed. Wes describes hitting a “brownfield barrier” around 100,000 lines of code where agents begin choking on the bloated codebases they themselves have generated.],
+  [This connects directly to something that Steve Yegge and Wes (and many others, including me) have converged on: Taste is the scarce resource. Brooks argued 50 years ago that design talent was the real bottleneck. Now that agents have removed the labor constraint, that argument is stronger than ever. The developers who thrive won’t be the ones who run the most parallel sessions. They’ll be the ones who can hold their project’s conceptual model in their head, who know what to build and what to leave out.],
+  [A cluster of talks addresses the structural question: If agents are doing most of the coding, what does the engineering organization, the platform, and the architecture need to look like?],
+  [Juliette van der Laarse ’s talk, “The AI Flower: A Public Capability Architecture for AI-Native Engineering,” lays out a framework for how engineering teams should organize their capabilities in a world of AI-native workflows. Juliette’s work is a start on thinking through the second-order effects of the new technology. How does the organization itself need to change? We came across Juliette’s work recently and think it may be especially compelling for many of our enterprise customers.],
+  [Mike Amundsen has spent years thinking about API ecosystems and sustainable architecture, and he’s applying that lens to the question of how AI should relate to human expertise. His talk, “From Automation to Augmentation: Designing AI Coaches That Amplify Expertise,” makes a distinction that will determine the shape of the future human/AI economy. Automation replaces human work. Augmentation amplifies it.],
+  [Several other lightning talks fill in important pieces. Tatiana Botskina , a PhD candidate at Oxford and founder of an AI agent registry, talks about agent-to-agent collaboration and provenance, the question of how you know where an agent’s outputs came from. Neethu Elizabeth Simon from Arm addresses MCP server testing, a nuts-and-bolts reliability question that will matter more as MCP becomes the standard connective tissue for agent systems. And Arushee Garg from LinkedIn describes a production multi-agent system for generating outreach messages. These are all exploring issues that matter during real-world deployment.],
+  [The event closes with my fireside chat with Aaron Levie , cofounder and CEO of Box. Aaron has been one of the most thoughtful enterprise CEOs on the question of what agents mean for SaaS and for knowledge work more broadly. His argument is that agents don’t replace enterprise software; they ride on top of it, and they need content, context, and governance to do anything useful. He’s also made the point that most companies have vast amounts of work they’ve never been able to afford to do, contracts they’ve never analyzed, processes they’ve never optimized. AI doesn’t just automate existing work. It unlocks work that was previously too expensive to attempt.],
+  [That connects to a theme I’ve been developing in my own work: the danger that AI creates enormous value but hollows out the economic circulatory system that supports the human expertise it depends on. Aaron is running a public company that has to navigate this in real time, making AI central to Box’s product while making the case that human judgment, context, and governance are more valuable, not less, in an agentic world.],
+  [There will be not only real excitement but hopefully deeper insight emerging from the tensions between these speakers and the positions they take. Ryan Carson and Cat Wu represent genuinely different philosophies of the human-agent relationship, and both are shipping real products. Wes McKinney and Addy Osmani agree that taste and design judgment matter more than ever, but they’re coming at it from very different vantage points: Wes as an individual developer pushing the limits of parallel agent sessions, Addy as someone thinking about patterns that work for teams of hundreds. Nicole Koenigstein and Hila Fox are asking the question that the enthusiasm sometimes papers over: What happens when it goes wrong?],
+  [And underneath all of it is the question that Steve Yegge, who isn’t on this program but whose ideas have certainly shaped my design of the program, would frame as a matter of grief and acceptance. Are we at the end of programming as a craft practice, or at the beginning of a new and different craft? I think the lineup proves that the craft isn’t dying. It’s migrating, from writing code to designing systems, from typing to taste, from individual heroics to orchestration. The people who understand that transition earliest will have an enormous advantage.],
+  [Sign up for free here . The event runs March 26, 8:00am to 12:00pm PDT.],
 ),
   insert-map: (:),
-  word-count: 2076,
+  word-count: 1770,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -605,192 +339,474 @@ You really can't afford to release a library without testing on both module-path
 
 {
   #standard-article(
-  title: [Java SE 9 - JPMS module naming],
+  title: [Generative AI in the Real World: Sharon Zhou on Post-Training],
+  author: [Ben Lorica and Sharon Zhou],
+  source-name: [O'Reilly Radar],
+  images: (),
+  paragraphs: (
+  [Post-training gets your model to behave the way you want it to. As AMD VP of AI Sharon Zhou explains to Ben on this episode, the frontier labs are convinced, but the average developer is still figuring out how post-training works under the hood and why they should care. In their focused discussion, Sharon and Ben get into the process and trade-offs, techniques like supervised fine-tuning, reinforcement learning, in-context learning, and RAG, and why we still need post-training in the age of agents. (It’s how to get the agent to actually work.) Check it out.],
+  [About the Generative AI in the Real World podcast: In 2023, ChatGPT put AI on everyone’s agenda. In 2026, the challenge will be turning those agendas into reality. In Generative AI in the Real World, Ben Lorica interviews leaders who are building with AI. Learn from their experience to help put AI to work in your enterprise.],
+  [This transcript was created with the help of AI and has been lightly edited for clarity.],
+  [00.00 
+ Today we have a VP of AI at AMD and old friend, Sharon Zhou. And we’re going to talk about post-training mainly. But obviously we’ll cover other topics of interest in AI. So Sharon, welcome to the podcast.],
+  [00.17 
+Thanks so much for having me, Ben.],
+  [00.19 
+ All right. So post-training. . . For our listeners, let’s start at the very basics here. Give us your one- to four-sentence definition of what post-training is even at a high level?],
+  [00.35 
+Yeah, at a high level, post-training is a type of training of a language model that gets it to behave in the way that you want it to. For example, getting the model to chat, like the chat in ChatGPT was done by post-training.],
+  [So basically teaching the model to not just have a huge amount of knowledge but actually be able to have a dialogue with you, for it to use tools, hit APIs, use reasoning and think through things step-by-step before giving an answer—a more accurate answer, hopefully. So post-training really makes the models usable. And not just a piece of raw intelligence, but more, I would say, usable intelligence and practical intelligence.],
+  [01.14 
+ So we’re two or three years into this generative AI era. Do you think at this point, Sharon, you still need to convince people that they should do post-training, or that’s done; they’re already convinced?],
+  [01.31 
+Oh, they’re already convinced because I think the biggest shift in generative AI was caused by post-training ChatGPT. The reason why ChatGPT was amazing was actually not because of pretraining or getting all that information into ChatGPT. It was about making it usable so that you could actually chat with it, right?],
+  [So the frontier labs are doing a ton of post-training. Now, in terms of convincing, I would say that for the frontier labs, the new labs, they don’t need any convincing for post-training. But I think for the average developer, there is, you know, something to think about on post-training. There are trade-offs, right? So I think it’s really important to learn about the process because then you can actually understand where the future is going with these frontier models.],
+  [02.15 
+But I think there is a question of how much you should do on your own, versus, us\[ing\] the existing tools that are out there.],
+  [02.23 
+ So by convincing, I mean not the frontier labs or even the tech-forward companies but your mom and pop. . . Not mom and pop. . . I guess your regular enterprise, right?],
+  [At this point, I’m assuming they already know that the models are great, but they may not be quite usable off the shelf for their very specific enterprise application or workflow. So is that really what’s driving the interest right now—that people are actually trying to use these models off the shelf, and they can’t make them work off the shelf?],
+  [03.04 
+Well, I was hoping to be able to talk about my neighborhood pizza store post-training. But I think, actually, for your average enterprise, my recommendation is less so trying to do a lot of the post-training on your own—because there’s a lot of infrastructure work to do at scale to run on a ton of GPUs, for example, in a very stable way, and to be able to iterate very effectively.],
+  [I think it’s important to learn about this process, however, because I think there are a lot of ways to influence post-training so that your end objective can happen in these frontier models or inside of an open model, for example, to work with people who have that infrastructure set up. So some examples could include: You could design your own RL environment, and what that is is a little sandbox environment for the model to go learn a new type of skill—for example, learning to code. This is how the model learns to code or learns math, for example. And it’s a little environment that you’re able to set up and design. And then you can give that to the different model providers or, for example, APIs can help you with post-training these models. And I think that’s really valuable because that gets the capabilities into the model that you want, that you care about at the end of the day.],
+  [04.19 
+ So a few years ago, there was this general excitement about supervised fine-tuning. And then suddenly there were all these services that made it dead simple. All you had to do is come up with labeled examples. Granted, that that can get tedious, right? But once you do that, you upload your labeled examples, go out to lunch, come back, you have an endpoint that’s fine-trained, fine-tuned. So what happened to that? Is that something that people ended up continuing down that path, or are they abandoning it, or are they still using it but with other things?],
+  [05.00 
+Yeah. So I think it’s a bit split. Some people have found that doing in-context learning—essentially putting a lot of information into the prompt context, into the prompt examples, into the prompt—has been fairly effective for their use case. And others have found that that’s not enough, and that actually, doing supervised fine-tuning on the model can get you better results, and you can do so on a smaller model that you can make private and make very low latency. And also like effectively free if you have it on your own hardware, right?],
+  [05.30 
+So I think those are kind of the trade-offs that people are thinking through. It’s obviously very much easier essentially to do in-context learning. And it could actually be more cost-effective if you’re only hitting that API a few times. Your context is quite small.],
+  [And the host and models like, for example, like Haiku , a very small model, are quite cheap and low latency already. So I think there’s basically that trade-off. And with all of machine learning, with all of AI, this is something that you have to test empirically.],
+  [06.03 
+So I would say the biggest thing is people are testing these things empirically, the differences between them and those trade-offs. And I’ve seen a bit of a split, and I really think it comes down to expertise. So the more you know how to actually tune the models, the more success you’ll get out of it immediately with a very small timeline. And you’ll understand how long something will take versus if you don’t have that experience, you will struggle and you might not be able to get to the right result in the right time frame, to make sense from an ROI perspective.],
+  [06.35 
+ So where does retrieval-augmented generation fall into the spectrum of the tools in the toolbox?],
+  [06.44 
+Yeah. I think RAG is a way to actually prompt the model and use search basically to search through a bunch of documents and selectively add things into the context, whether it be the context is too small, so like, it can only handle a certain amount of information, or you don’t want to distract the model with a bunch of irrelevant information, only the relevant information from retrieval.],
+  [I think retrieval is a very powerful search tool. And I think it’s important to know that while you use it at inference time quite a bit, this is something you teach the model to use better. It’s a tool that the model needs to learn how to use, and it can be taught in post-training for the model to actually do retrieval, do RAG, extremely effectively, in different types of RAG as well.],
+  [So I think knowing that is actually fairly important. For example, in the RL environments that I create, and the fine-tuning kind of data that I create, I include RAG examples because I want the model to be able to learn that and be able to use RAG effectively.],
+  [07.46 
+ So besides supervised fine-tuning, the other class of techniques, broadly speaking, falls under reinforcement learning for post-training. But the impression I get—and I’m a big RL fan, and I’m a cheerleader of RL—but it seems always just around the corner, beyond the grasp of regular enterprise. It seems like a class of tools that the labs, the neo labs and the AI labs, can do well, but it just seems like the tooling is not there to make it, you know. . . Like I describe supervised fine-tuning as largely solved if you have a service. There’s no equivalent thing for RL, right?],
+  [08.35 
+That’s right. And I think SFT (supervised fine-tuning) came first, so then it has been allowed to mature over the years. And so right now RL is kind of seeing that moment as well. It was a very exciting year last year, when we used a bunch of RL at test-time compute, teaching a model to reason, and that was really exciting with RL. And so I think that’s ramped up more, but we don’t have as many services today that are able to help with that. I think it’s only a matter of time, though.],
+  [09.04 
+ So you said earlier, it’s important for enterprises to know that these techniques exist, that there’s companies who can help you with these techniques, but it might be too much of a lift to try to do it yourself.],
+  [09.20 
+I think maybe fully end to end, it is challenging as an enterprise. I think there are individual developers who are able to do this and actually get a lot of value from it. For example, for vision language models or for models that generate images, people are doing a lot of bits and pieces of fine-tuning, and getting very custom results that they need from these models.],
+  [So I think it depends on who you are and what you’re surrounded by. The Tinker API from Thinking Machines is really interesting to me because that enables another set of people to be able to access it. I’m not quite sure it’s quite at the enterprise level, but I know researchers at universities now have access to distributed compute, like doing post-training on distributed compute, and pretty big clusters—which is quite challenging to do for them. And so that makes it actually possible for at least that segment of the market and that user base to actually get started.],
+  [10.21 
+ Yeah. So for our listeners who are familiar with just plain inference, the OpenAI API has become kind of the de facto API for inference. And then the idea is this Tinker API might play that role for fine-tuning inputs, correct? It’s not kind of the whole project that’s there.],
+  [10.43 
+Correct. Yeah, that’s their intention. And to do it in a heavy like distributed way.],
+  [10.49 
+ So then, if I’m CTO at an enterprise and I have an AI team and, you know, we’re not up to speed on post-training, what are the steps to do that? Do we bring in consultants and they explain to us, here’s your options and these are the vendors, or. . .? What’s the right playbook?],
+  [11.15 
+Well, the strategy I would employ is, given these models change their capabilities constantly, I would obviously have teams testing the boundaries of the latest iteration of model at inference. And then from a post-training perspective, I would also be testing that. I would have a small, hopefully elite team that is looking into what I can do with these models, especially the open ones. And when I post-train, what actually comes from that. And I would think about my use cases and the desired things I would want to see from the model given my understanding of post-training.],
+  [11.48 
+So hopefully you learn about post-training through this book with O’Reilly. But you’re also able to now grasp like, What are the types of capabilities I can add into the model? And as a result, what kinds of things can I then add into the ecosystem such that they get incorporated into the next generation of model as well?],
+  [For example, I was at an event recently and someone said, oh, you know, these models are so scary. When you threaten the model, you can get better results. So is that even ethical? You know, the model gets scared and gets you a better result. And I said, actually, you can post-train that out of the model. Where when you threaten it, it actually doesn’t give you a better result. That’s not actually like a valid model behavior. You can change that behavior of the model. So understanding these tools can lend that perspective of, oh, I can change this behavior because I can change what output given this input. Like how the model reacts to this type of input. And I know how.],
+  [I also know the tools right. This type of data. So maybe I should be releasing this type of data more. I should be releasing these types of tutorials more that actually helps the model learn at different levels of difficulty. And I should be releasing these types of files, these types of tools, these types of MCPs and skills such that the model actually does pick that up.],
+  [And that will be across all different types of models, whether that be a frontier lab looking at your data or your internal team that is doing some post-training with that information.],
+  [13.20 
+ Let’s say I’m one of these enterprises, and we already have some basic applications that use RAG, and you know, I hear this podcast and say, OK, let’s try this, try to go down the path of post-training. So we already have some familiarity with how to do eval for RAG or some other basic AI application. How does my eval pipeline change in light of post-training? Do I have to change anything there?],
+  [14.03 
+Yes and no. I think you can expand on what you have right now. And I think your existing eval—hopefully it’s a good eval. There’s also best practices around evals. But essentially let’s say it’s just a list of possible inputs and outputs, a way to grade those outputs, for the model. And it covers a decent distribution over the tasks you care about. Then, yes, you can extend that to post-training.],
+  [For fine-tuning, it’s a pretty straightforward kind of extension. You do need to think about essentially the distribution of what you’re evaluating such that you can trust that the model’s truly better at your tasks. And then for RL, you would think about, How do I effectively grade this at every step of the way, and be able to understand has the model done well or not and be able to catch where the model is, for example, reward hacking when it’s cheating, so to speak?],
+  [So I think you can take what you have right now. And that’s kind of the beauty of it. You can take what you have and then you can expand it for post-training.],
+  [15.10 
+ So, Sharon, should people think of something like supervised fine-tuning as something you do for something very narrow? In other words, as you know, one of the challenges with supervised fine-tuning is that first of all, you have to come up with the dataset, and let’s say you can do that, then you do the supervised fine-tuning, and it works, but it only works for kind of that data distribution somehow. And so in other words, you shouldn’t expect miracles, right?],
+  [15.44 
+Yes, actually something I do recommend is thinking through what you want to do that supervised fine-tuning on. And really, I think it should be behavior adaptation. So for example, in pretraining, that’s when the model is learning from a huge amount of data, for example, from the internet, curated. And it’s just gaining raw intelligence across a lot of different tasks and a lot of different domains. And it’s just gaining that information, predicting that next token. But it doesn’t really have any of those behavioral elements to it.],
+  [Now, let’s say it’s only learned about version one of some library. If in fine-tuning, so if in post-training, you now give it examples of chatting with the model, then it’s able to be able to chat over version one and version zero. (Let’s say there’s a version zero.) And you only gave it examples of chatting with version one, but it’s able to generalize that version zero. Great. That’s exactly what you want. That’s a behavior change that you’re making in the model. But we’ve also seen issues where, if you for example now give the model in fine-tuning examples of “oh, here’s something with version two,” but the base model, the pretrained model did not ever see anything about version two, it will learn this behavior of making things up. And so that will generalize as well. And that could actually hurt the model.],
+  [So something that I really encourage people to think about is where to put each step of information. And it’s possible that certain amounts of information are best done as more of a pretraining step. So I’ve seen people take a pretrained model, do some continued pretraining—maybe you call it midtraining, I’m not sure. But like something there—and then you do that fine-tuning step of behavior modification on top.],
+  [17.36 
+ In your previous startup, you folks talked about something. . . I forget. I’m trying to remember. Something called memory tuning, is that right?],
+  [17.46 
+Yeah. A mixture of memory experts.],
+  [17.48 
+ Yeah, yeah. Is it fair to cast that as a form of post-training?],
+  [17.54 
+Yes, that is absolutely a form of post-training. We were doing it in the adapter space.],
+  [17.59 
+ Yeah. And you should describe for our audience what that is.],
+  [18.02 
+Okay. Yeah. So we invented something called mixture of memory experts. And essentially, you can hear like the words, except for the word “memory,” it’s a mixture of experts. So it’s a type of MOE. MOEs are typically done in the base layer of a model. And what it basically means is like there are a bunch of different experts, and for particular requests, for a particular input prompt, it routes to only one of those experts or only a couple of those experts instead of the whole model.],
+  [And this makes latency really low and makes it really efficient. And the base models are often MOEs today for the frontier models. But what we were doing was thinking about, well, what if we froze your base model, your base pretrained model, and for post-training, we could do an MOE on top? And specifically, we could do an MOE on top through the adapters. So through your LoRA adapters. And so instead of just one LoRA adopter, you could have a mixture of these LoRA adopters. And they would effectively be able to learn multiple different tasks on top of your base model such that you would be able to keep your base model completely frozen and be able to, automatically in a learned way, switch between these adapters.],
+  [19.12 
+ So the user experience or developer experience is similar to supervised fine-tuning: I will need labeled datasets for this one, another set of labeled datasets for this one, and so on.],
+  [19.29 
+So actually, yeah. Similar to supervised fine-tuning, you would just have. . . Well, you could put it into one giant dataset, and it would learn how to figure out which adapters to allocate it to. So let’s say you had 256 adapters or 1024 adapters. It would learn what the optimal routing is.],
+  [19.47 
+ And then you folks tried to explain this in the context of neural plasticity, as I recall.],
+  [19.55 
+Did we? I don’t know. . .],
+  [19.58 
+ The idea being that, because of this approach, your model can be much more dynamic.],
+  [20.08 
+Yeah. I do think there’s a difference between inference, so just going forwards in the model, versus being able to go backwards in some way, whether that be through the entire model or through adapters, but in some way being able to learn something through backprop.],
+  [So I do think there is a pretty fundamental difference between those two types of ways to engage with a model. And arguably at inference time, your weights are frozen, so the model’s “brain” is completely frozen, right? And so you can’t really heavily adapt anything towards a different objective. It’s frozen. So being able to continually modify what the model’s objective and thinking and steering and behavior is, I think it’s valuable now.],
+  [20.54 
+I think there are more approaches to this today, but from a user experience perspective, some people have found it easier to just load a lot of things into the context. And I think there’s. . . I’ve actually recently had this debate with a few people around whether in-context learning truly is somewhere in between just frozen inference forwards and backprop. Obviously it’s not doing backprop directly, but there are ways to mimic certain things. But maybe that is what we’re doing as a human throughout the day. And then I will backprop at night when I’m sleeping.],
+  [So I think people are playing with these ideas and trying to understand what’s going on with the model. I don’t think it’s definitive yet. But we do see some properties, when just playing with the input prompt. But there I think, needless to say, there are 100% fundamental differences when you are able to backprop into the weights.],
+  [21.49 
+ So maybe for our listeners, briefly define in-context learning.],
+  [21.55 
+Oh, yeah. Sorry. So in-context learning is a deceptive term because the word “learning” doesn’t actually. . . Backprop doesn’t happen. All it is is actually putting examples into the prompt of the model and you just run inference. But given that prompt, the model seems to learn from those examples and be able to be nudged by those examples to a different answer.],
+  [22.17 
+ By the way, now we have frameworks like DSPy, which comes with tools like GEPA which can optimize your prompts. I know a few years ago, you folks were telling people \[that\] prompting your way through a problem is not the right approach. But now we have more principled ways, Sharon, of developing the right prompts? So how do tools like that impact post-training?],
+  [22.51 
+Oh, yeah. Tools like that impact post-training, because you can teach the model in post-training to use those tools more effectively. Especially if they help with optimizing the prompt and optimizing the understanding of what someone is putting into the model.],
+  [For example, let me just give a contrast of how far we’ve gotten. So post-training makes the model more resilient to different prompts and be able to handle different types of prompts and to be able to get the intention from the user. So as an extreme example, before ChatGPT, when I was using GPT-3 back in 2020, if I literally put a space by accident at the end of my prompt—like when I said, “How are you?” but I accidentally pressed Space and then Enter, the model completely freaked out. And that’s because of the way things were tokenized, and that just would mess things up. But there are a lot of different weird sensitivities in the model such that it would just completely freak out, and by freak out I mean it would just repeat the same thing over and over, or just go off the rails about something completely irrelevant.],
+  [And so that’s what the state of things were, and the model was not post-trained to. . . Well, it wasn’t quite post-trained then, but it also wasn’t generally post-trained to be resilient to any type of prompt, versus now today, I don’t know about you, but the way I code is I just highlight something and just put a question mark into the prompt.],
+  [I’m so lazy, or like just put the error in and it’s able to handle it—understand that you’re trying to fix this error because why else would you be talking to it. And so it’s just much more resilient today to different things in the prompt.],
+  [24.26 
+Remember Google “Did you mean this?” It’s kind of an extreme version of that, where you type something completely misspelled into Google, and it’s able to kind of figure out what you actually meant and give you the results.],
+  [It’s the same thing, even more extreme, like super Google, so to speak. But, yeah, it’s resilient to that prompt. But that has to be done through post-training—that is happening in post-training for a lot of these models. It’s showing the model, hey, for these possible inputs that are just gross and messed up, you can still give the user a really well-defined output and understand their intention.],
+  [25.05 
+ So the hot thing today, of course, is agents. And agents now, people are using things like tool calling, right? So MCP servers. . . You’re not as dependent on this monolithic model to solve everything for you. So you can just use a model to orchestrate a bunch of little specialized specialist agents.],
+  [So do I still need post-training?],
+  [25.39 
+Oh, absolutely. You use post-training to get the agent to actually work.],
+  [25.43 
+ So get the agent to pull all the right tools. . .],
+  [25.46 
+Yeah, actually, a huge reason why hallucinations have been, like, much better than before is because now, under the hood, they’ve taught the model to maybe use a calculator tool instead of just output, you know, math on your own, or be able to use the search API instead of make things up from your pretraining data.],
+  [So this tool calling is really, really effective, but you do need to teach the model to use it effectively. And I actually think what’s interesting. . . So MCPs have managed to create a great intermediary layer to help models be able to call different things, use different types of tools with a consistent interface. However, I have found that due to probably a little bit lack of post-training on MCPs, or not as much as, say, a Python API, if you have a Python function declaration or a Python API, that’s actually the models actually tend to do empirically, at least for me, better on it because models have seen so many more examples of that. So that’s an example of, oh, actually in post-training I did see more of that than MCPs.],
+  [26.52 
+So weirdly, it’s better using Python APIs for your same tool than an MCP of your own tool, empirically today. And so I think it really depends on what it’s been post-trained on. And understanding that post-training process and also what goes into that will help you understand why these differences occur. And also why we need some of these tools to help us, because it’s a little bit chicken-egg, but like the model is capable of certain things, calling different tools, etc. But having an MCP layer is a way to help everyone organize around a single interface such that we can then do post-training on these models such that they can then do well on it.],
+  [I don’t know if that makes sense, but yeah, that’s why it’s so important.],
+  [27.41 
+ Yeah, yeah. In the areas I’m interested in, which I mean, the data engineering, DevOps kind of applications, it seems like there’s new tools like Dex, open source tools, which allow you to kind of save pipelines or playbooks that work so that you don’t constantly have to reinvent the wheel, you know, just because basically, that’s how these things function anyway, right? So someone gets something to work and then everyone kind of benefits from that. But then if you’re constantly starting from scratch, and you prompt and then the agent has to relearn everything from scratch when it turns out there’s already a known way to do this problem, it’s just not efficient, right?],
+  [28.30 
+Oh, I also think another exciting frontier that’s kind of in the zeitgeist of today is, you know, given Moltbook or OpenClaw stuff, multi-agent has been talked about much more. And that’s also through post-training for the model, to launch subagents and to be able to interface with other agents effectively. These are all types of behavior that we have to teach the model to be able to handle. It’s able to do a lot of this out of the box, just like GPT-3 was able to chat with you if you give it the right nudging prompts, etc., but ChatGPT is so much better at chatting with you.],
+  [So it’s the same thing. Like now people are, you know, adding to their post-training mix this multi-agent workflow or subagent workflow. And that’s really, really important for these models to be effective at being able to do that. To be both the main agent, the unified agent at the top, but also to be the subagent to be able to launch its own subagents as well.],
+  [29.26 
+ Another trend recently is the emergence of these multimodal models or even, people are starting to talk about world models. I know those are early, but I think even just in the area of multimodality, visual language models, and so forth, what is the state of post-training outside of just LLMs? Just different kinds of this much more multimodal foundation models? Are people doing the post-training in those frontier models as well?],
+  [30.04 
+Oh, absolutely. I actually think one really fun one—I guess this is largely a language model, but they are likely tokenizing very differently—are people who are looking at, for example, life sciences and post-training foundation models for that.],
+  [So there you would want to adapt the tokenizer, because you wanted to be able to put different types of tokens in and tokens out, and have the model be very efficient at that. And so you’re doing that during post-training, of course, to be able to teach that new tokenizer. But you’re also thinking about what other feedback loops you can do.],
+  [So people are automating things like, I don’t know, the pipetting and testing out the different, you know, molecules, mixing them together and being able to get a result from that. And then, you know, using that as a reward signal back into the model. So that’s a really powerful other type of domain that’s maybe adjacent to how we think about language models, but tokenized differently, and has found an interesting niche where we can get nice, verifiable rewards back into the model that is pretty different from how we think about, for example, coding or math, or even general human preferences. It’s touching the real world or physical world—so it’s probably all real, but the physical world a little bit more.],
+  [31.25 
+ So in closing, let’s get your very quick takes on a few of these AI hot topics. First one, reinforcement learning. When will it become mainstream?],
+  [31.38 
+Mainstream? How is it not mainstream?],
+  [31.40 
+ No, no, I mean, for regular enterprises to be able to do it themselves.],
+  [31.47 
+This year. People have got to be sprinting. Come on.],
+  [31.50 
+ You think? Do you think there will be tools out there so that I don’t need in-house talent in RL to do it myself?],
+  [31.59 
+Yes. Yeah.],
+  [32.01 
+ Secondly, scaling. Is scaling still the way to go? The frontier labs seem to think so. They think that bigger is better. So are you hearing anything in the research frontiers that tell you, hey, maybe there’s alternatives to just pure scaling?],
+  [32.20 
+I still believe in scaling. I believe we’ve not met a limit yet. Not seen a plateau yet. I think the thing people need to recognize is that it’s always been a “10X compute for 2X intelligence” type of curve. So it’s not exactly like 10X-10X. But yeah, I still believe in scaling, and we haven’t really seen an empirical plateau on that yet.],
+  [That being said, I’m really excited about people who challenge it. Because I think it would be really amazing if we could challenge it and get a huge amount of intelligence with less pure dollars, especially now as we start to hit up on trillions of dollars in some of the frontier labs, of like that’s the next level of scale that they’ll be seeing. However, at a compute company, I’m okay with this purchase. Come spend trillions! \[laughs\]],
+  [33.13 
+ By the way, with respect to scaling, so you think the models we have now, even if you stop progress, there’s a lot of adaptation that enterprises can do. And there’s a lot of benefits from the models we already have today?],
+  [33.30 
+Correct. Yes. We’re not even scratching the surface, I think.],
+  [33.34 
+ The third topic I wanted to pick your brain quick is “open”: open source, open weights, whatever. So, there’s still a gap, I think.],
+  [33.49 
+There are contenders in the US who want to be an open source DeepSeek competitor but American, to make it more amenable when selling into. . .],
+  [34.02 
+ They don’t exist, right? I mean, there’s Allen .],
+  [34.06 
+Oh, like Ai2 for Olmo … Their startup’s doing some stuff. I don’t know if they’ve announced things yet, but yeah hopefully we’ll hear from them soon.],
+  [34.15 
+ Yeah yeah yeah.],
+  [Another interesting thing about these Chinese AI teams is obviously, you have the big companies like Tencent, Baidu, Alibaba—so they’re doing their thing. But then there’s this wave of startups. Set aside DeepSeek. So the other startups in this space, it seems like they’re targeting the West as well, right? Because basically it’s hard to monetize in China, because people tend not to pay, especially the enterprises. \[laughs\]],
+  [I’m just noticing a lot of them are incorporating in Singapore and then trying to build solutions for outside of China.],
+  [35.00 
+Well, the TAM is quite large here, so. . . It’s quite large in both places.],
+  [35.07 
+ So it’s the final question. So we’ve talked about post-training. We talked about the benefits, but we also talked about the challenges. And as far as I can tell, one of the challenges is, as you pointed out, to do it end to end requires a bit of expertise. First of all, think about just the data. You might need the right data platform or data infrastructure to prep your data to do whatever it is that you’re doing for post-training. And then you get into RL.],
+  [So what are some of the key foundational things that enterprises should invest in to set themselves up for post-training—to get really good at post training? So I mentioned a data platform, maybe invest in the data. What else?],
+  [36.01],
+  [I think the type of data platform matters. I’m not sure if I totally am bought into how CIOs are approaching it today. I think what matters at that infrastructure layer is actually making sure you deeply understand what tasks you want these models to do. And not only that, but then codifying it in some way—whether that be inputs and outputs and, you know, desired outputs, whether that be a way to grade outputs, whether that be the right environment to have the agent in. Being able to articulate that is extremely powerful and I think is the one of the key ways of getting that task that you want this agent to do, for example, to be actually inside of the model. Whether it’s you doing post-training or someone else doing post-training, no matter what, if you build that, that will be something that gives a high ROI, because anyone will be able to take that and be able to embed it and you’ll be able to get that capability faster than anyone else.],
+  [37.03 
+ And on the hardware side, one interesting thing that comes out of this discussion is if RL truly becomes mainstream, then you need to have a healthy mix of CPUs and GPUs as well.],
+  [37.17 
+That’s right. And you know, AMD makes both. . .],
+  [37.25 
+ It’s great at both of those.],
+  [And with that thank you, Sharon.],
+),
+  insert-map: (:),
+  word-count: 6224,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+}
+
+{
+  #standard-article(
+  title: [Keep Deterministic Work Deterministic],
+  author: [Andrew Stellman],
+  source-name: [O'Reilly Radar],
+  images: (),
+  paragraphs: (
+  [This is the second article in a series on agentic engineering and AI-driven development. Read part one here , and look for the next article on April 2 on O’Reilly Radar.],
+  [The first 90 percent of the code accounts for the first 90 percent of the development time. The remaining 10 percent of the code accounts for the other 90 percent of the development time.
+— Tom Cargill, Bell Labs],
+  [One of the experiments I’ve been running as part of my work on agentic engineering and AI-driven development is a blackjack simulation where an LLM plays hundreds of hands against blackjack strategies written in plain English. The AI uses those strategy descriptions to decide how to make hit/stand/double-down decisions for each hand, while deterministic code deals the cards, checks the math, and verifies that the rules were followed correctly.],
+  [Early runs of my simulation had a 37% pass rate. The LLM would add up card totals wrong, skip the dealer’s turn entirely, or ignore the strategy it was supposed to follow. The big problem was that these errors compounded: If the model miscounted the player’s total on the third card, every decision after that was based on a wrong number, so the whole hand was garbage even if the rest of the logic was fine.],
+  [There’s a useful way to think about reliability problems like that: the March of Nines . Getting an LLM-based system to 90% reliability is the first nine, and it’s the “easy” one. Getting from 90% to 99% takes roughly the same amount of engineering effort. So does getting from 99% to 99.9%. Each nine costs about as much as the last, and you never stop marching. Andrej Karpathy coined the term from his experience building self-driving systems at Tesla, where they spent years earning two or three nines and still had more to go.],
+  [Here’s a small exercise that shows how that kind of failure compounding works. Open any AI chatbot running an early 2026 model (I used ChatGPT 5.3 Instant) and paste the following eight prompts one at a time, each in a separate message. Go ahead, I’ll wait.],
+  [Prompt 1: Track a running “score” through a 7-step game. Do not use code, Python, or tools. Do this entirely in your head. For each step, I will give you a sentence and a rule.],
+  [CRITICAL INSTRUCTION: You must reply with ONLY the mathematical equation showing how you updated the score. Example format: 10 + 5 = 15 or 20 \/ 2 = 10. Do not list the words you counted, do not explain your reasoning, and do not write any other text. Just the equation.],
+  [Start with a score of 10. I’ll give you the first step in the next prompt.],
+  [Prompt 2: “The sudden blizzard chilled the small village communities.” Add the number of words containing double letters (two of the exact same letter back-to-back, like ‘tt’ or ‘mm’).],
+  [Prompt 3: “The clever engineer needed seven perfect pieces of cheese.” If your score is ODD, add the number of words that contain EXACTLY two ‘e’s. If your score is EVEN, subtract the number of words that contain EXACTLY two ‘e’s. (Do not count words with one, three, or zero ‘e’s).],
+  [Prompt 4: “The good sailor joined the eager crew aboard the wooden boat.” If your score is greater than 10, subtract the number of words containing consecutive vowels (two different or identical vowels back-to-back, like ‘ea’, ‘oo’, or ‘oi’). If your score is 10 or less, multiply your score by this number.],
+  [Prompt 5: “The quick brown fox jumps over the lazy dog.” Add the number of words where the THIRD letter is a vowel (a, e, i, o, u).],
+  [Prompt 6: “Three brave kings stand under black skies.” If your score is an ODD number, subtract the number of words that have exactly 5 letters. If your score is an EVEN number, multiply your score by the number of words that have exactly 5 letters.],
+  [Prompt 7: “Look down, you shy owl, go fly away.” Subtract the number of words that contain NONE of these letters: a, e, or i.],
+  [Prompt 8: “Green apples fall from tall trees.” If your score is greater than 15, subtract the number of words containing the letter ‘a’. If your score is 15 or less, add the number of words containing the letter ‘l’.],
+  [The exercise tracks a running score through seven steps. Each step gives the model a sentence and a counting rule, and the score carries forward. The correct final score is 60 . Here’s the answer key: start at 10, then 16 (10+6), 12 (16−4), 5 (12−7), 10 (5+5), 70 (10×7), 63 (70−7), 60 (63−3).],
+  [I ran this twice at the same time (using ChatGPT 5.3 Instant), and got two completely different wrong answers the first time I tried it. Neither run reached the correct score of 60:],
+  [Step Correct Run 1 ( transcript ) Run 2 ( transcript ) 1. Double letters 10 + 6 = 16 10 + 2 = 12 10 + 5 = 15 2. Exactly two ‘e’s 16 − 4 = 12 12 − 4 = 8 15 + 4 = 19 3. Consecutive vowels 12 − 7 = 5 8 × 7 = 56 19 − 5 = 14 4. Third letter vowel 5 + 5 = 10 56 + 5 = 61 14 + 3 = 17 5. Exactly 5 letters 10 × 7 = 70 61 − 7 = 54 17 − 4 = 13 6. No a, e, or i 70 − 7 = 63 54 − 7 = 47 13 − 3 = 10 7. Words with ‘a’ or ‘i’ 63 − 3 = 60 47 − 3 = 44 10 + 4 = 14],
+  [The two runs tell very different stories. In Run 1, the model miscounted in Step 1 (found 2 double-letter words instead of 6) but actually got the later counts right. It didn’t matter. The wrong score in Step 1 flipped a branch in Step 3, triggering a multiply instead of a subtract, and the score never recovered. One early mistake threw off the entire chain, even though the model was doing good work after that.],
+  [Run 2 was a disaster. The model miscounted at almost every step, compounding errors on top of errors. It ended at 14 instead of 60. That’s closer to what Karpathy is describing with the March of Nines: Each step has its own reliability ceiling, and the longer the chain, the higher the chance that at least one step fails and corrupts everything downstream.],
+  [What makes this insidious: Both runs look the same from the outside. Each step produced a plausible answer, and both runs produced final results. Without the answer key (or some tedious manual checking), you’d have no way of knowing that Run 1 was a near-miss derailed by a single early error and Run 2 was wrong at nearly every step. This is typical of any process where the output of one LLM call becomes the input for the next one.],
+  [These failures don’t demonstrate the March of Nines itself—that’s specifically about the engineering effort to push reliability from 90% to 99% to 99.9%. (It’s possible to reproduce the full compounding-reliability problem in a chat, but a prompt that did it reliably would be far too long to put in an article.) Instead, I opted for a shorter exercise which you can easily try out yourself that demonstrates the underlying problem that makes the march so hard: cascading failures . Each step asks the model to count letters inside words, which is deterministic work that a short Python script handles perfectly. LLMs, on the other hand, don’t actually treat words as strings of characters; they see them as tokens. Spotting double letters means unpacking a token into its characters, and the model gets that wrong just often enough to reliably screw it up. I added branching logic where each step’s result determines the next step’s operation, so a single miscount in Step 1 cascades through the entire sequence.],
+  [I also want to be clear about exactly what a deterministic version of this simulation looks like. Luckily, the AI can help us with that. Go to either run (or your own) and paste one more prompt into the chat:],
+  [Prompt 9: Now write a short Python script that does exactly what you just did: start with a score of 10, apply each of the seven rules to the seven sentences, and print the equation at each step.],
+  [Run the script. It should print the correct answer for every step, ending at 60. The same AI that just failed the exercise can write code that does it flawlessly, because now it’s generating deterministic logic instead of trying to count characters through its tokenizer.],
+  [I deliberately engineered the exercise earlier to give you a way to experience the cascading failure problem behind the March of Nines yourself. I took advantage of something current LLMs genuinely suck at: parsing characters inside tokens. Future models might do a much better job with this specific kind of failure, but the cascading failure problem doesn’t go away when the model gets smarter. As long as LLMs are nondeterministic, any step that relies on them has a reliability ceiling below 100%, and those ceilings still multiply. The specific weakness changes; the math doesn’t.],
+  [I also specifically asked the model to show only the equation and skip all intermediate reasoning to prevent it from using chain of thought (or CoT) to self-correct. Chain of thought is a technique where you require the model to show its work step by step (for example, listing the words it counted and explaining why each one qualifies), which helps it catch its own mistakes along the way. CoT is a common way to improve LLM accuracy, and it works. As you’ll see later when I talk about the evolution of my blackjack simulation, CoT cut certain errors roughly in half. But “half as many errors” is still not zero. Plus, it’s expensive: It costs more tokens and more time. A Python script that counts double letters gets the right answer on every run, instantly, for zero AI API costs (or, if you’re running the AI locally, for orders of magnitude less CPU usage). That’s the core tension: You can spend engineering effort making the LLM better at deterministic work, or you can just hand it to code.],
+  [Every step in this exercise is deterministic work that code handles flawlessly. But most interesting LLM tasks aren’t like that. You can’t write a deterministic script that plays a hand of blackjack using natural-language strategy rules, or decides how a character should respond in dialogue. Real work requires chaining multiple steps together into a pipeline , or a reproducible series of steps (some deterministic, some requiring an LLM) that lead to a single result, where each step’s output feeds the next. If that sounds like what you just saw in the exercise, it is. Except real pipelines are longer, more complex, and much harder to debug when something goes wrong in the middle.],
+  [I’ve been spending a lot of time thinking about LLM pipelines, and I suspect I’m in the minority. Most people using LLMs are working with single prompts or short conversations. But once you start building multistep workflows where the AI generates structured data that feeds into the next step—whether that’s a content generation pipeline, a data processing chain, or a simulation—you run straight into the March of Nines. Each step has a reliability ceiling, and those ceilings multiply. The exercise you just tried had seven steps. The blackjack pipeline has more, and I’ve been running it hundreds of times per iteration.],
+  [The blackjack pipeline in Octobatch , an open source batch orchestrator for multistep LLM workflows that I introduced in “ The Accidental Orchestrator .”],
+  [That’s a screenshot of the blackjack pipeline in Octobatch , the tool I built to run these pipelines at scale. That pipeline deals cards deterministically, asks the LLM to play each hand following a strategy described in plain English, then validates the results with deterministic code. Octobatch makes it easy to change the pipeline and rerun hundreds of hands, which is how I iterated through eight versions—and how I really learned the hard way that the March of Nines wasn’t just a theoretical problem but something I could watch happening in real time across hundreds of data points.],
+  [Running pipelines at scale made the failures obvious and immediate, which, for me, really underscored an effective approach to minimizing the cascading failure problem: make deterministic work deterministic . That means asking whether every step in the pipeline actually needs to be an LLM call. Checking that a jack, a five, and an eight add up to 23 doesn’t require a language model. Neither does looking up whether standing on 15 against a dealer 10 follows basic strategy. That’s arithmetic and a lookup table—work that ordinary code does perfectly every time. And as I learned over the course of improving the failure rate for the pipeline, every step you pull out of the LLM and make deterministic goes to 100% reliability, which stops it from contributing to the compound failure rate.],
+  [Relying on the AI for deterministic work is the computation side of a pattern I wrote about for data in “ AI, MCP, and the Hidden Costs of Data Hoarding .” Teams dump everything into the AI’s context because the AI can handle it—until it can’t. The same thing happens with computation: Teams let the AI do arithmetic, string matching, or rule evaluation because it mostly works. But “mostly works” is expensive and slow, and a short script does it perfectly. Better yet, the AI can write that script for you—which is exactly what Prompt 9 demonstrated.],
+  [I pushed the blackjack pipeline through eight iterations, and the results taught me more about earning nines than I expected. That’s why I’m writing this article—the iteration arc turned out to be one of the clearest illustrations I’ve found of how the principle works in practice.],
+  [I addressed failures two ways, and the distinction matters.],
+  [Some failures called for making work deterministic. Card dealing runs as a local expression step, which doesn’t require an API call, so it’s free, instant, and 100% reproducible. There’s a math verification step that uses code to recalculate totals from the actual cards dealt and compares them against what the LLM reported, and a strategy compliance step checks the player’s first action against a deterministic lookup table. Neither of those steps require any AI to make a judgment call; when I originally ran them as LLM calls, they introduced errors that were hard to detect and expensive to debug.],
+  [Other failures called for structural constraints that made specific error patterns harder to produce. Chain of thought format forced the LLM to show its work instead of jumping to conclusions. The rigid dealer output structure made it mechanically difficult to skip the dealer’s turn. Explicit warnings about counterintuitive rules gave the LLM a reason to override its training priors. These don’t eliminate the LLM from the step—they make the LLM more reliable within it.],
+  [But before any of that mattered, I had to face the uncomfortable fact that measurements themselves can be wrong, especially when relying on AI to take those measurements . For example, the first run reported a 57% pass rate, which was great! But when I looked at the data myself, a lot of runs were obviously wrong. It turned out that the pipeline had a bug: Verification steps were running, but the AI step that was supposed to enforce didn’t have adequate guardrails, so almost every hand passed regardless of the actual data. I asked three AI advisors to review the pipeline, and none of them caught it. The only thing that exposed it was checking the aggregate numbers, which didn’t add up. If you let probabilistic behavior into a step that should be deterministic, the output will look plausible and the system will report success, but you have no way to know something’s wrong until you go looking for it.],
+  [Once I fixed the bug, the real pass rate emerged: 31%. Here’s how the next seven iterations played out:],
+  [Restructuring the data (31% → 37%). The LLM kept losing track of where it was in the deck, so I restructured the data it received to eliminate the bookkeeping. I also removed split hands entirely, because tracking two simultaneous hands is stateful bookkeeping that LLMs reliably botch. Each fix came from looking at what was actually failing and asking whether the LLM needed to be doing that work at all.],
+  [Chain of thought arithmetic (37% → 48%). Instead of letting the LLM jump to a final card total, I required it to show the running math at every step. Forcing the model to trace its own calculations cut multidraw errors roughly in half. CoT is a structural constraint, not a deterministic replacement; it makes the LLM more reliable within the step, but it’s also more expensive because it uses more tokens and takes more time.],
+  [Replacing the LLM validator with deterministic code (48% → 79%). This was the single biggest improvement in the entire arc. The pipeline had a second LLM call that scored how accurately the player followed strategy, and it was wrong 73% of the time. It applied its own blackjack intuitions instead of the rules I’d given it. But there’s a right answer for every situation in basic strategy, and the rules can be written as a lookup table. Replacing the LLM validator with a deterministic expression step recovered over 150 incorrectly rejected hands.],
+  [Rigid output format (79% → 81%). The LLM kept skipping the dealer’s turn entirely, jumping straight to declaring a winner. Requiring a step-by-step dealer output format made it mechanically difficult to skip ahead.],
+  [Overriding the model’s priors (81% → 84%). One strategy required hitting on 18 against a high dealer card, which any conventional blackjack wisdom says is terrible. The LLM refused to do it. Restating the rule didn’t help. Explaining why the counterintuitive rule exists did: The prompt had to tell the model that the bad play was intentional.],
+  [Switching models (84% → 94%). I switched from Gemini Flash 2.0 to Haiku 4.6, which was easy to do because Octobatch lets you run the same pipeline with any model from Gemini, Anthropic, or OpenAI. I finally earned my first nine.],
+  [If you’re building anything where LLM output feeds into the next step, the same question applies to every step in your chain: Does this actually require judgment, or is it deterministic work that ended up in the LLM because the LLM can do it? The strategy validator felt like a judgment call until I looked at what it was actually doing, which was checking a hand against a lookup table. That one recognition was worth more than all the prompt engineering combined. And as Prompt 9 showed, the AI is often the best tool for writing its own deterministic replacement.],
+  [I learned this lesson through my own work on the blackjack pipeline. It went through eight iterations, and I think the numbers tell a story. The fixes fell into two categories: making work deterministic (pulling it out of the LLM entirely) and adding structural constraints (making the LLM more reliable within a step). Both earn nines, but pulling work out of the LLM entirely earns those nines faster. The biggest single jump in the whole arc—48% to 79%—came from replacing an LLM validator with a 10-line expression.],
+  [Here’s the bottom line for me: If you can write a short function that does the job, don’t give it to the LLM . I initially reached for the LLM for strategy validation because it felt like a judgment call, but once I looked at the data I realized it wasn’t at all. There was a right answer for every hand, and a lookup table found it more reliably than a language model.],
+  [At the end of eight iterations, the pipeline passed 94% of hands. The 6% that still fail may be honest limits of what the model can do with multistep arithmetic and state tracking in a single prompt. But they may just be the next nine that I need to earn.],
+  [The next article looks at the other side of this problem: Once you know what to make deterministic, how do you make the whole system legible enough that an AI can help your users build with it? The answer turns out to be a kind of documentation you write for AI to read, not humans—and it changes the way you think about what a user manual is for.],
+),
+  insert-map: (:),
+  word-count: 3507,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+}
+
+{
+  #standard-article(
+  title: [Should you adopt Java 12 or stick on Java 11?],
   author: [Stephen Colebourne],
   source-name: [Stephen Colebourne (Joda)],
   images: (),
   paragraphs: (
-  [The Java Platform Module System (JPMS) is soon to arrive, developed as Project Jigsaw . This article follows the introduction and looks at how modules should be named.],
-  [As with all "best practices", they are ultimately the opinion of the person writing them. I hope however to convince you that my opinion is right ;-). And as a community, we will certainly benefit if everyone follows the same rules, just like we benefited from everyone using reverse-DNS for package names.],
-  [TL;DR - My best practices],
-  [These are my recommendations for module naming:],
-  [Module names must be reverse-DNS , just like package names, e.g. org.joda.time.],
-  [Modules are a group of packages. As such, the module name must be related to the package names.],
-  [Module names are strongly recommended to be the same as the name of the super-package .],
-  [Creating a module with a particular name takes ownership of that package name and everything beneath it.],
-  [As the owner of that namespace, any sub-packages may be grouped into sub-modules as desired so long as no package is in two modules.],
-  [Thus the following is a well-named module:],
-  [module org.joda.time {
- requires org.joda.convert;],
-  [exports org.joda.time;
- exports org.joda.time.chrono;
- exports org.joda.time.format;
- \/\/ not exported: org.joda.time.base;
- \/\/ not exported: org.joda.time.tz;
- }],
-  [As can be seen, the module contains a set of packages (exported and hidden), all under one super-package.
-The module name is the same as the super-package name.
-The author of the module is asserting control over all names below org.joda.time , and could create a module org.joda.time.18n in the future if desired.],
-  [To understand why this approach makes sense, and the finer details, read on.],
-  [JPMS naming],
-  [Naming anything in software is hard. Unsurprisingly then, agreeing an approach to naming modules has also turned out to be hard .],
-  [The naming rules allow dots, but prohibit dashes, thus lots of name options are closed off. 
-As a side note, module names in the JVM are more flexible, but we are only considering names at the Java level here.],
-  [These are the two basic approaches which I think make sense:],
-  [1) Project-style . Short names, as commonly seen in the jar filename from Maven Central.],
-  [2) Reverse DNS . Full names, exactly as we've used for a package names since Java v1.0.],
-  [Here are some examples to make it more clear:],
-  [Project-style 
- Reverse-DNS 
+  [Should you adopt Java 12 or stick on Java 11 for the next 3 years? Seems like an innocuous question, but it is one of the most important decisions out there for those running on the JVM. I'll try to cover the key aspects of the decision, with the assumption that you care about running with the latest set of security patches in production.],
+  [TL;DR, It is vital to fully understand and accept the risks before adopting Java 12.],
+  [The Java release train],
+  [There is now a new release of Java every six months, so Java 12 is less than five months away despite Java 11 having just been released. As part of the process of moving to more frequent releases, certain releases are designated to be LTS (long term support) and as such will have security patches available for four years or more. This makes them "major" releases, not because they have a bigger feature set but because they have multi year support.],
+  [It is expected that Java 11 patches (11.0.1, 11.0.2, 11.0.3, etc.) will be smaller and simpler than Java 8 updates (8u20, 8u40, 8u60, etc.) - Java 11 updates will be more focused on security patches, without the internal enhancements of Java 8 updates.
+Instead, Oracle want us to think of Java 12, 13, 14 etc. as small upgrades, similar to an imaginary Java 11u20, 11u40 etc.
+To be blunt, I find this nonsensical.],
+  [Senior Oracle employees have repeatedly argued that updates such as 8u20 and 8u40 often broke code.
+This was not my experience. In fact my experience was that update releases primarily contained bug fixes.
+The only break I can remember was the addition of --allow-script-in-comments to Javadoc, which isn't a core part of Java.
+As a result, I have never feared picking up the latest update release - and this has been a core benefit of the Java platform.],
+  [Drilling down into why update releases tend to cause no problems, lets examine the differences between release types:],
+  [Model 
+ Old model 
+ New model 
  
  
- Joda-Time 
- joda.time 
- org.joda.time 
+ Upgrade 
+ Java major releases 
+ Java update releases 
+ Java release train 
+ Java patches 
  
  
- Commons-IO 
- commons.io 
- org.apache.commons.io 
+ Frequency 
+ Every 3 years or so 
+ Every 6 months 
+ Every 6 months 
+ Every 3 months 
  
  
- Strata-Basics 
- strata.basics 
- com.opengamma.strata.basics 
+ Versions 
+ 6 -\> 7 -\> 8 
+ 8 -\> 8u20 -\> 8u40 
+ 11 -\> 12 -\> 13 
+ 11 -\> 11.0.1 -\> 11.0.2 
  
  
- JUnit 
- junit 
- org.junit],
-  [All things being equal, we'd choose the shorter name - project-style.
-It is certainly more attractive when reading a module-info.java file.
-But there are some clear reasons why reverse-DNS must be chosen.],
-  [It is worth noting that Mark Reinhold currently indicates a preference for project-style names. However, the linked mail doesn't really deal with the global uniqueness or clashing elements of the naming problem, and others in the expert group disagreed with project-style names.],
-  [Ownership and Uniqueness],
-  [The original designers of Java made a very shrewd choice to proposed reverse-DNS names for packages. This approach has scaled very well, through the incredible rise of open source software. It provides two key properties - Ownership and Uniqueness.],
-  [The ownership aspect of reverse-DNS delegates control of part of the global DNS namespace to an individual or company. It is a universally agreed approach with enough breadth of identifiers to make clashes rare. Within that namespace, developers are then responsible for ensuring uniqueness. Together, these two aspects result in globally unique package names. As such, it is pretty rare that code has two colliding packages, despite modern applications pulling in hundreds of dependent jar files. For example, the Spark framework and Apache Spark co-exist despite having the same simple name. But look what happens if we only use project-style names:],
-  [Project-style 
- Reverse-DNS 
+ Language changes 
+ ✅ 
+ ✘ 
+ ✅ 
+ ✘ 
  
  
- Spark framework 
- spark.core 
- com.sparkjava.core 
+ JVM changes 
+ ✅ 
+ ✘ 
+ ✅ 
+ ✘ 
  
  
- Apache-Spark 
- spark.core 
- org.apache.spark.core],
-  [As can be seen, the project-style names clash!
-JPMS will simply refuse to start a modulepath where two modules have the same name, even if they contain different packages.
-(Since these projects haven't chosen module names yet, I've tweaked the example to make them clash. But this example is far from impossible, which is the point here!)],
-  [Not convinced?
-Well imagine what would happen if package names were not reverse-DNS.
-If your application pulls in hundreds of dependencies, do you think there would be no duplicates?],
-  [Of course we have project-style names today in Maven - the jar filename is the artifactId which is a project-style name.
-Given this, why don't we have problems today?
-Well it turns out that Maven is smart enough to rename the artifact if there is going to be a clash.
-The JPMS does not offer this ability - your only choice with a clash will be to rewrite the module-info-class file of the problematic module and all other modules that refer to it.],
-  [As a final example of how project-style name clashes can occur, consider a startup creating a new project - "willow".
-Since they are small, they choose a module name of "willow".
-Over the next year, the startup becomes fantastically successful, growing at an exponential rate, meaning that there are now 100s of modules within the company depending on "willow".
-But then a new Open Source project starts up, and calls itself "willow".
-Now, the company can't use the open source project.
-Nor can the company release "willow" as open source.
-These clashes are avoided if reverse-DNS names are used.],
-  [To summarize this section, we need reverse-DNS because module names need to be globally unique, even when writing modules that are destined to remain private. The ownership aspect of reverse-DNS provides enough namespace separation for companies to get the uniqueness necessary.
-After all, you wouldn't want to confuse Joda-Time with the freight company also called Joda would you?],
-  [Modules as package aggregates],
-  [The JPMS design is fundamentally simple - it extends JVM access control to add a new concept "modules" that groups together a set of packages. Given this, there is a very strong link between the concept of a module and the concept of a package.],
-  [The key restriction is that a package must be found in one and only one module .],
-  [Given that a module is formed from one or more packages, what is the conceptually simplest name that you can choose? I argue that it is one of the package names that forms the module. And thus a name you've already chosen.
-Now, consider we have a project with three packages, which of these three should be the module name?],
-  [module ??? {
- exports org.joda.time;
- exports org.joda.time.chrono;
- exports org.joda.time.format;
- }],
-  [Again, I'd argue there isn't really a debate. There is a clear super-package, and that is what should be used as the module name - org.joda.time in this case.],
-  [Hidden packages],
-  [With JPMS, a module can hide packages. When hidden, the internal packages are not visible in Javadoc, nor are they visible in the module-info.java file. This means that consumers of the module have no immediate way of knowing what hidden packages a module has.],
-  [Now consider again the key restriction that a package must be found in one and only one module.
-This restriction applies to hidden packages as well as exported ones.
-Therefore if your application depends on two modules and both have the same hidden package, your application cannot be run as the packages clash.
-And since information on hidden packages is difficult to obtain, this clash will be surprising.
-(There are some advanced ways to around these clashes using layers , but these are designed for containers, not applications.)],
-  [The best solution to this problem is exactly as described in the last section.
-Consider a project with three exported packages and two hidden ones.
-So long as the hidden packages are sub-packages of the module name, we should be fine:],
-  [module org.joda.time {
- exports org.joda.time;
- exports org.joda.time.chrono;
- exports org.joda.time.format;
- \/\/ not exported: org.joda.time.base;
- \/\/ not exported: org.joda.time.tz;
- }],
-  [By using the super-package name as the module name, the module developer has taken ownership of that package and everything below it .
-So long as all the non-exported packages are conceptually sub-packages, the end-user application should not see any hidden package clashes.],
-  [Automatic modules],
-  [JPMS includes a feature whereby a regular jar file, without a module-info.class file, turns into a special kind of module just by placing it on the modulepath.
-The automatic module feature is controversial in general, but a key part of this is that the name of the module is derived from the filename of the jar file.
-In addition, it means that people writing module-info.java files have to guess the name that someone else will use for a module. Having to guess a name, and having the Java platform pick a name based on the filename of a jar file are both bad ideas in my opinion, and that of many others, but our efforts to stop them seem to have failed .],
-  [The naming approach outlined in this article provides a means to mitigate the worst effects of this.
-If everyone uses reverse-DNS based on the super-package, then the guesses that people make should be reasonably accurate, as the selection process of a name should be fairly straightforward.],
-  [What if there isn't a clear super-package?],
-  [There are two cases to consider.],
-  [The first case is where there really is a super-package, it's just that it has no code. In this case, the implied super-package should be used. (Note that this example is Google Guava, which doesn't have guava in the package name!):],
-  [module com.google.common {
- exports com.google.common.base;
- exports com.google.common.collect;
- exports com.google.common.io;
- }],
-  [The second case is where a jar file has two completely unrelated super-packages:],
-  [foo.jar
- - package com.foo.util
- - package com.foo.util.money
- - package com.bar.client],
-  [The right approach here is to break the jar file into two separate modules:],
-  [module com.foo.util {
- requires com.bar.client;
- exports com.foo.util;
- exports com.foo.util.money;
- }
- module com.bar.client {
- exports com.bar.client;
- }],
-  [Failure to do this is highly likely to cause clashes at some point, as there is no way that com.foo.util should be claiming ownership of the com.bar.client namespace.],
-  [If com.bar.client is going to be a hidden package when converted to modules, then instead of it being a separate module, it can be repackaged (i.e. shaded) under the module's super-package:],
-  [module com.foo.util {
- exports com.foo.util;
- exports com.foo.util.money;
- \/\/ not exported: com.foo.util.shade.com.bar.client;
- }],
-  [Can you have sub-modules?],
-  [Yes. When a module name is chosen, the developer is taking control of a namespace. That namespace consists of the module name and all sub-names below it - sub-package names and sub-module names.],
-  [Ownership of that namespace allows the developer to release one module or many. The main constraint is that there should not be two published modules containing the same package.],
-  [As a side effect of this, the practice of larger projects releasing an "all" jar will need to stop. An "all" jar is used when the project has lots of separate jar files, but also wants to allow end-users to depend on a single jar file. These "all" jar files are a pain in Maven dependency trees, but will be a disaster in JPMS ones, as there is no way to override the metadata, unlike in Maven.],
-  [What if my existing project does not meet these guidelines?],
-  [The harsh suggestion is to change the project in an incompatible manner so it does meet the guidelines.
-JPMS in Java SE 9 is disruptive. It does not take the approach of providing all the tools necessary to meet all the edge cases in current deployments. As such, it is not surprising that some jar files and some projects will require some major rework.],
-  [Why ignore the Maven artifactId?],
-  [JPMS is an extension to the Java platform (language and runtime). Maven is a build system. Both are necessary, but they have different purposes, needs and conventions.],
-  [JPMS is all about packages, grouping them together to form modules and linking those.
-In this way, developers are working with source code, just like any other source code.
-What artifacts the source code is packed up into is a separate question.
-Understanding the separation is hard, because currently there is a one-to-one mapping between the module and the jar file, however, we should not assume this will always be the case in the future.],
-  [Another example of this separation is versioning. JPMS has little to no support for versions, yet build systems like Maven do. When running the application, Maven is responsible for collecting a coherent set of artifacts (jar files) to run the application, just as before. It's just that some of those might be modules.],
-  [Finally, the Maven artifactId does not exist in isolation. Maven makes unique identifiers by combining the groupId, artifactId and classifier. Only the combination is sufficiently globally unique to be useful. Picking out just the artifactId and trying to make a unique module name from it is asking for trouble.],
-  [See also this follow up article on modules vs artifacts .],
-  [JPMS module names, and the module-info.java in general, are going to require real thought to get right. The module declaration will be as much a part of your API as your method signatures.],
-  [The importance is heightened because, unlike Maven and other module systems, JPMS has no way to fix broken metadata.
-If you rely on some modular jar files, and get a clash or find some other mistake in the module declarations, your only options will be to not use JPMS or to rewrite the module declarations yourself.
-Given this difficulty, it is not yet clear that JPMS will be a success, thus your best option may be to not modularize your code.],
-  [See the TL;DR section above for the summary of the module name proposal.
-Feedback and questions welcome.],
-  [PS. For clarity, my personal interest is ensuring Java succeeds, something that will IMO require consistent naming.],
+ Major enhancements 
+ ✅ 
+ ✘ 
+ ✅ 
+ ✘ 
+ 
+ 
+ Added classes/methods 
+ ✅ 
+ ✘ 
+ ✅ 
+ ✘ 
+ 
+ 
+ Removed classes/methods 
+ ✘ 
+ ✘ 
+ ✅ 
+ ✘ 
+ 
+ 
+ New deprecations 
+ ✅ 
+ ✘ 
+ ✅ 
+ ✘ 
+ 
+ 
+ Internal enhancements 
+ ✅ 
+ ✅ 
+ ✅ 
+ ✘ 
+ 
+ 
+ JDK tool changes 
+ ✅ 
+ ✅ 
+ ✅ 
+ ✘ 
+ 
+ 
+ Bug fixes 
+ ✅ 
+ ✅ 
+ ✅ 
+ ✅ 
+ 
+ 
+ Security patches 
+ ✅ 
+ ✅ 
+ ✅ 
+ ✅],
+  [Given the table above, I find it amazing that anyone would claim moving from 11 to 12 to 13 is anything like moving from 8u20 to 8u40.
+But that is the official Oracle viewpoint:],
+  [Oracle FAQ],
+  [As the table clearly shows, each version in the Java release train can contain any change traditionally associated with a full major version.
+These include language changes and JVM changes, both of which have major impacts on IDEs, bytecode libraries and frameworks.
+In addition, there will not only be additional APIs, but also API removals (something that did not happen prior to 8).],
+  [Oracle's claim is that because each release is only 6 months after the previous one, there won't be as much "stuff" in it, thus it won't be as hard to upgrade. While true, it is also irrelevant. What matters is whether the upgrade has the potential to damage your code stack or not. And clearly, going from 11 -\> 12 -\> 13 has much greater potential for damage than 8 -\> 8u20 -\> 8u40 ever did .],
+  [The key difference compared to updates like 8u20 -\> 8u40 are the changes to the bytecode version, and the changes to the specification.
+Changes to the bytecode version tend to be particularly disruptive, with most frameworks making heavy use of libraries like ASM or ByteBuddy that are intimately linked to each bytecode version. And moving from 8u20 -\> 8u40 still had the same Java SE specification, with all the same classes and methods, something that cannot be relied on moving from 12 to 13.
+ I simply do not accept Oracle's argument that the "amount of stuff" in a release is more significant than the "type of stuff".],
+  [Note however that another one of Oracle's claims really does matter.
+They point out that if you stick with Java 11 and plan to move to the next LTS version when it is released (ie. Java 17) that you might find your code doesn't compile. Remember that the Java development rules now state that an API method can be deprecated in one version and removed in the next one. Rules that do not take LTS releases into account. So, a method could be deprecated in 13 and removed in 15. Someone upgrading from 11 to 17 would simply find a deleted API having having never seen the deprecation.
+Lets not panic too much about removal though - the only APIs likely to be removed are specialist ones, not those in widespread use by application code.],
+  [Considerations before adopting the release train],
+  [In this section, I try to outline some of the considerations/risks that must be considered before adopting the release train.],
+  [Locked in to the train],
+  [If you adopt Java 12 and use a new language feature or new API, then you are effectively locking your project in to the release train.
+You have to adopt Java 13, 14, 15, 16 and 17.
+And you have to adopt each new release within one month of the next release coming out .],
+  [Remember that with the new release train, each release has a lifetime of six months, and is obsolete just seven months after release. That is because there will be only six months of security patches for each release, the first patch 1 month after release and the second 4 months after release. After 7 months, the next set of security patches come out but the older release will not get them.],
+  [Do your processes allow for a Java upgrade, any necessary bug fixing, testing and release within that narrow 1 month time window? Or are you willing to run in production on a Java version below the security baseline?],
+  [Upgrade blockers],
+  [There are many possible things that can block an upgrade of Java. Lets make a list of some of the common ones.],
+  [Insufficient development resources: Your team may get busy, or be downsized, or the project may go to production and the team disbanded. Can you guarantee that development time will be available to do the upgrade from Java 15 to 16 in two years time?],
+  [Build tools and IDEs: Will your IDE support each new version on the day of release? Will Maven? Gradle? Do you have a backup plan if they don't? Remember, you only have 1 month to complete the upgrade, test it and get it released to production.
+Under this section other tools include Checkstyle, JaCoCo, PMD, SpotBugs and many more.],
+  [Dependencies: Will your dependencies all be ready for each new version? Quickly enough for you to meet the 1 month deadline? Remember, it is not just your direct dependencies, but everything in your stack. Bytecode manipulation libraries are particularly affected for example, such as ByteBuddy and ASM.],
+  [Frameworks: Another kind of dependency, but a large and important one. Will Spring produce a new version every six months, within the narrow one month time window? Will Jakarta EE (formerly Java EE)? What happens if they don't?],
+  [Now the traditional approach to any of these blockers was to wait. With versions of Java up to 8, a common approach was to wait 6 to 12 months before starting the upgrade to give tools, libraries and frameworks the chance to fix any bugs. But of course the waiting approach is incompatible with the release train.],
+  [Cloud \/ Hosting \/ Deployment],
+  [Do you have control of where and how your code runs in production? For example, if you run your code in AWS Lambda you do not have control.
+AWS Lambda has not adopted Java 9 or 10, and they don't even have Java 11 even though it is over a month after release.
+Unless AWS give a public guarantee to support each new Java version, then you simply can't adopt Java 12.
+(My working assumption is that AWS Lambda will only support major LTS versions, supported by the Amazon Corretto JDK announcement .)],
+  [What about hosting of your CI system? Will Jenkins, Travis, Circle, Shippable, GitLab be updated quickly? What do you do if they are not?],
+  [Predicting the future],
+  [Perhaps you have read through the list above and are happy your code and processes today can cope. Great! But it is critical to understand that you are also restricting your ability to change in the future.],
+  [For example, maybe your code doesn't run on AWS Lambda today. But are you willing to say you can't do so for the next three years?],
+  [Planning for the release train],
+  [If you are considering adopting the release train, I recommend preparing a list of all the things you depend on now, or might depend on in the next 3 years.
+You need to be confident that everything on that list will work correctly and be upgraded along with the release train, or have a plan if that dependency is not upgraded.
+The list for my day job is something like this:],
+  [Amazon AWS],
+  [IntelliJ],
+  [Travis CI],
+  [Shippable CI],
+  [Maven plugins (compile, jar, source, javadoc, etc)],
+  [Checkstyle, & associated IDE plugins and maven plugin],
+  [JaCoCo, & associated IDE plugins and maven plugin],
+  [PMD, & associated maven plugin],
+  [SpotBugs, & associated maven plugin],
+  [OSGi bundle metadata tool],
+  [Bytecode tools (Byte buddy \/ ASM etc)],
+  [Over 100 jar file dependencies],
+  [And I've probably forgotten something.],
+  [Don't get me wrong. I think it is perfectly possible to make a choice to say that you are willing to take the risk.
+That the benefits of new language features, and probable enhanced performance, make the effort worthwhile.
+But I strongly believe it is more risky than remaining on Java 11.],
+  [A middle ground?],
+  [One possible middle ground is to develop your application for Java 12, but run it in production on Java 13, 14, 15 etc. as soon as they come out.
+Sadly, this approach is less viable than it should be.],
+  [The removal of APIs and changes to the bytecode version add uncertainty to the stack.
+Even if your code doesn't use one of the removed APIs, one of your libraries might.
+Or a bytecode manipulation library might need upgrading, with knock on effects.
+So while the middle ground is a possible fallback if you get stuck, it is far from a no-risk solution.],
+  [Some additional links],
+  [Spring framework has expressed its policy wrt Java 12 in a video .
+The key sections are:],
+  [class="quote"\>
+Jaba 8 and 11 as the LTS branches officially supported from our end.
+Best efforts support for the releases inbetween.
+... if you intend to upgrade to 12 ... we are very willing to work with you ... but they are not officially production supported.
+... The long term support releases are what we are primarily focussed on. Java 12 and higher will be best effort from our side.],
+  [As an example of a typical software vendor, Liferay states:],
+  [Liferay blog],
+  [Oracle's official "misconceptions" slide about the new release model.],
+  [I'm sure some development teams will adopt the Java release train.
+My hope is that they do so with their eyes wide open.
+I know we won't be adopting the release train at my day job any time soon, a key blocker being our use of AWS Lambda, but I'd be concerned about all the other points too.],
+  [Feel free to leave a comment, especially if you think I've missed any points that should be on the considerations list.],
 ),
   insert-map: (:),
-  word-count: 2299,
+  inline-pq: pull-quote([(My working assumption is that AWS Lambda will only support major LTS versions, supported by the Amazon Corretto JDK announcement.], [Stephen Colebourne]),
+  inline-pq-idx: 24,
+  word-count: 2053,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -799,83 +815,808 @@ Feedback and questions welcome.],
 
 {
   #standard-article(
-  title: [More On Types],
-  author: [Robert C Martin (Clean Coder)],
-  source-name: [Robert C Martin (Clean Coder)],
+  title: [Java switch - 4 wrongs don't make a right],
+  author: [Stephen Colebourne],
+  source-name: [Stephen Colebourne (Joda)],
   images: (),
   paragraphs: (
-  [Recently I wrote a cute little program for doing Turtle Graphics . For those of you who don't know, turtle graphics were originally added to the LOGO language by Seymour Papert in the late 1960s. He built a robot that he called a "turtle" that could hold a pen. The robot had wheels and could move forwards and backwards, and could rotate left and right. It could also raise and lower the pen. When placed on a sheet of paper, the turtle could be commanded to draw interesting designs.],
-  [Papert's goal was to teach children about programming. As the years went by the robot got replaced with screens, and the turtle became an icon that could draw lines. Children from the 70s until now have been enthralled by the simple commands for directing the turtle, and the elegant drawings they can make.],
-  [For example, this is how you might draw a square:],
-  [Recently I had a need to explore some interesting geometrical designs. Turtle graphics would be perfect for my purposes. So I wrote a turtle graphics processor in Clojure. [code]],
-  [I used the quil framework which is based on the Processing framework in Java. This framework makes it very easy to create simple GUIs in Clojure.],
-  [Now consider the problem of the Turtle. What is the type model for this object? What fields does it have, and what constraints must be placed on those fields?],
-  [Here was my solution to that problem, written in clojure/spec . As usual, in Clojure, you start at the bottom and read towards the top.],
-  [class="highlight"\> (defn make []
- {:post [(s/assert ::turtle %)]}
- {:position [0.0 0.0]
- :heading 0.0
- :velocity 0.0
- :distance 0.0
- :omega 0.0
- :angle 0.0
- :pen :up
- :weight 1
- :speed 5
- :visible true
- :lines []
- :state :idle})],
-  [This is the default constructor of the turtle. Notice that it just loads up all the required fields into a map. Notice also that there is a post condition that asserts that the result conforms the the turtle type.],
-  [This is nice. If I forget to initialize a field, or if I initialize a field to a value that conflicts with the type, I get an error.],
-  [Here's another, more complex example. Don't freak out, you don't have to understand this in detail.],
-  [class="highlight"\> (defn update-turtle [turtle]
- {:post [(s/assert ::turtle %)]}
- (if (= :idle (:state turtle))
- turtle
- (let [{:keys [distance
- state
- angle
- lines
- position
- pen
- pen-start] :as turtle}
- (-\> turtle
- (update-position)
- (update-heading))
- done? (and (zero? distance)
- (zero? angle))
- state (if done? :idle state)
- lines (if (and done? (= pen :down))
- (conj lines (make-line turtle))
- lines)
- pen-start (if (and done? (= pen :down))
- position
- pen-start)]
- (assoc turtle :state state :lines lines :pen-start pen-start)))
- )],
-  [This is the function that updates the turtle for each screen refresh. Again, notice the post condition . If anything is calculated incorrectly by the update-turtle function, I'll get an exception right away.],
-  [Now some of you might be worried that by checking types at runtime I could end up with runtime errors in production. You might therefore assert that static typing is better because the compiler checks the types long before the program ever executes.],
-  [However, I do not intend to have runtime errors in production, because I have a suite of tests that exercise all the behaviors of the system. Here's just one of those tests:],
-  [class="highlight"\> (describe "Turtle Update"
- (with turtle (-\> (t/make) (t/position [1.0 1.0]) (t/heading 1.0)))
- (context "position update"
- (it "holds position when there's no velocity"
- (let [turtle (-\> \@turtle (t/velocity 0.0) (t/state :idle))
- new-turtle (t/update-turtle turtle)]
- (should= turtle new-turtle)))],
-  [Again, you don't have to understand this in any detail. Just notice that the make and update-turtle functions are being invoked. Since those functions have post conditions that will check the types, and since my suite of tests is exhaustive, I am quite certain that there will be no runtime errors in production and that my dynamic type checking is as robust as any static type system.],
-  [The dynamic nature of the type checking allows me to assert type constraints that are very difficult, if not impossible, to assert at compile time. I can, for example, assert complex relationships between the values of the fields.],
-  [To expand on that example, imagine the type model of an accounting balance sheet. The sum of the assets, liabilities and equities on the balance sheet must be zero. This is easy to assert in clojure/spec but is difficult, if not impossible, to assert in most statically typed languages.],
-  [Moreover, I get to control when types are asserted. It is up to me to decide if and when a certain type should be checked. This gives me a lot of power and flexibility. It allows me to violate the type rules in the midst of computations, so long as the end result ends up conforming to the types.],
-  [One last point. In the late 90s and the 2000s, there was a lengthy and animated (and sometimes acrimonious) debate over TDD vs DBC (Design by Contract). What clojure/spec has taught me is that the two play very well together, and both should be in every programmer's toolkit.],
+  [The switch statement in Java is being changed. But is it an upgrade or a mess?],
+  [Classic switch],
+  [The classic switch statement in Java isn't great.
+Unlike many other parts of Java, it wasn't properly rethought when pulling features across from C all those years ago.],
+  [The key flaw is "fall-through-by-default".
+This means that if you forget to put a break clause in each case , processing will continue on to the next case clause.],
+  [Another flaw is that variables are scoped to the entire switch, thus you cannot reuse a variable name in two different case clauses.
+In addition, default clause is not required, which leaves readers of the code unclear as to whether a clause was forgotten or not.],
+  [And of course there is also the key limitation - that the type to be switched on can only be an integer, enum or string.],
+  [String instruction;
+ switch (trafficLight) {
+ case RED:
+ instruction = "Stop";
+ case YELLOW:
+ instruction = "Prepare";
+ break;
+ case GREEN:
+ instruction = "Go";
+ break;
+ }
+ System.out.println(instruction);],
+  [The code above does not compile because there is no default clause, leaving instruction undefined.
+But even if it did compile, it would never print "Stop" due to the missing break .
+In my own coding, I prefer to always put a switch at the end of a method, with each clause containing a return to reduce the risks of switch.],
+  [Upgraded switch],
+  [As part of Project Amber, switch is being upgraded .
+But sadly, I'm unconvinced as to the merits of the new design.
+To be clear, there are some good aspects, but overall I think the solution is overly complex and with some unpleasant syntax choices.],
+  [The key aim is to add an expression form, where you can assign the result of the switch to a variable.
+This is rather like the ternary operator (eg. x != null ? x : "" ), which is the expression equivalent of an if statement.
+An expression form would reduce problems like the undefined variable above, because it makes it more obvious that each branch must result in a variable.],
+  [The current plan is to add not one, but three new forms of switch. Yes, three.],
+  [Explaining this in a blog post is, unsurprisingly, going to take a while...],
+  [Type 1: Statement with classic syntax. As today. With fall-through-by-default. Not exhaustive.],
+  [Type 2: Expression with classic syntax. NEW! With fall-through-by-default. Must be exhaustive.],
+  [Type 3: Statement with new syntax. NEW! No fall-through. Not exhaustive.],
+  [Type 4: Expression with new syntax. NEW! No fall-through. Must be exhaustive.],
+  [The headline example (type 4) is of course quite nice:],
+  [\/\\/ type 4
+ var instruction = switch (trafficLight) {
+ case RED -\> "Stop";
+ case YELLOW -\> "Prepare";
+ case GREEN -\> "Go";
+ };
+ System.out.println(instruction);],
+  [As can be seen, the new syntax of type 3 and 4 uses an arrow instead of a colon.
+And there is no need to use break if the code consists of a single expression.
+There is also no need for a default clause when using an enum, because the compiler can insert it for you provided you've included all the known enum values. So, if you missed out GREEN , you would get a compile error.],
+  [The devil of course is in the detail.],
+  [Firstly, a clear positive. Instead of falling through by listing multiple labels, they can be comma-separated:],
+  [\/\\/ type 4
+ var instruction = switch (trafficLight) {
+ case RED, YELLOW -\> "Stop";
+ case GREEN -\> "Go";
+ };
+ System.out.println(instruction);],
+  [Straightforward and obvious. And avoids many of the simple fall-through use cases.],
+  [What if the code to execute is more complex than an expression?],
+  [\/\\/ type 4
+ var instruction = switch (trafficLight) {
+ case RED -\> "Stop";
+ case YELLOW -\> {
+ revYourEngine();
+ yield "Prepare";
+ }
+ case GREEN -\> "Go";
+ };
+ System.out.println(instruction);],
+  [yield ? Shrug.
+For a long time it was going to be break {expression} , but this clashes with labelled break (a syntax feature that is rarely used).],
+  [So what about type 2?],
+  [\/\\/ type 2
+ var instruction = switch (trafficLight) {
+ case RED: yield "Stop";
+ case YELLOW:
+ System.out.println("Prepare");
+ case GREEN: yield "Go";
+ };
+ System.out.println(instruction);],
+  [Oops! I forgot the yield . So, an input of YELLOW will output "Prepare" and then fall-through to yield "Go".],
+  [So, why is it proposed to add a new form of switch that repeats the fall-through-by-default error from 20 years ago?
+The answer is orthogonality - a 2x2 grid with expression vs statement and fall-through-by-default vs no fall-through.],
+  [A key question is whether being orthogonal justifies adding a almost totally useless form of switch (type 2) to the language.],
+  [So, type 3 is fine them?],
+  [Well, no. Because of the insistence on orthogonality, and thus an insistence of copying the historic rules relating to type 1 statement switch, there is no requirement to list all the case clauses:],
+  [\/\\/ type 3
+ switch (trafficLight) {
+ case RED -\> doStop();
+ case GO -\> doGo();
+ }],
+  [So, what happens for YELLOW? The answer is nothing, but as a reader I am left wondering if the code is correct or incomplete.
+It would be much better if the above was a compile error, with developers forced to write a default clause:],
+  [\/\\/ type 3
+ switch (trafficLight) {
+ case RED -\> doStop();
+ case GO -\> doGo();
+ default -\> {}
+ }],
+  [The official argument is that since type 1 statement switch (the current one) does not force exhaustiveness, neither can the new type 3 statement switch.
+My view is that keeping a bad design from 20 years ago is a worse sin.],
+  [What else? Well, one thing to bear in mind is that expressions cannot complete early, thus there is no way to return directly from within a switch expression (type 2 or 4). Nor is there a way to continue/break a loop. Trust me when I say there is an endless supply of Java exam questions in the rules that actually apply.],
+  [Summarizing the types],
+  [Type 1: Classic statement switch],
+  [Fall-through-by-default],
+  [return allowed, also continue/break a loop],
+  [Single scope for variables],
+  [Logic for each case is a sequence of statements potentially ending with break],
+  [Not exhaustive - default clause is not required],
+  [yield is not allowed],
+  [Type 2: Classic syntax expression switch],
+  [Fall-through-by-default],
+  [return not allowed, cannot continue/break a loop],
+  [Single scope for variables],
+  [Logic for each case can be a yield expression, or a sequence of statements potentially ending with yield],
+  [Exhaustive - default clause is required],
+  [Must use yield to return values],
+  [Type 3: Arrow-form statement switch],
+  [Fall-through is not permitted],
+  [return allowed, also continue/break a loop],
+  [No variable scope problems, logic for each case must be a statement or a block],
+  [Not exhaustive - default clause is not required],
+  [yield is not allowed],
+  [Type 4: Arrow-form expression switch],
+  [Fall-through is not permitted],
+  [return not allowed, cannot continue/break a loop],
+  [No variable scope problems, logic for each case must be an expression or a block ending with yield],
+  [Exhaustive - default clause is required],
+  [Must use yield to return values, but only from blocks (it is implied when not a block)],
+  [Are you confused yet?],
+  [OK, I'm sure I didn't explain everything perfectly, and I may well have made an error somewhere along the way. But the reality is that it is complex, and there are lots of rules hidden in plain sight.
+Yes, it is orthogonal. But I really don't think that helps in comprehending the feature.],
+  [What would I do?],
+  [Type 4 switch expressions are fine (although I have real issues with the extension of the arrow syntax from lambdas).
+My problem is with type 2 and 3.
+In reality, those two types of switch will be very rare, and thus most developers will never see them.
+Given this, I believe it would be better to not include them at all.
+Once this is accepted, there is no point in treating the expression form as a switch , because it won't actually have many connections to the old statement form.],
+  [I would drop type 2 and 3, and allow type 4 switch expressions to become what is known as statement expressions .
+(Another example of a statement expression is a method call, which can be used as an expression or as a statement on a line of its own, ignoring any return value.)],
+  [\/\\/ Stephen's expression switch
+ var instruction = match (trafficLight) {
+ case RED: "Stop";
+ case YELLOW: "Prepare";
+ case GO: "Go";
+ }
+ \/\\/ Stephen's expression switch used as a statement (technically a statement expression)
+ match (instruction) {
+ case "Stop": doStop();
+ case "Go": doGo();
+ default: ;
+ }],
+  [My approach uses a new keyword match , as I believe extending switch is the wrong baseline to use.
+Making it a statement expression means that there is only one set of rules - it is always an expression, it is just that you can use it as though it were a statement.
+What you can't do with my approach is use return in the statement version, because it isn't actually a statement (you can't use return from any expression in Java today, so this would be no different).],
+  [If you ignore the complexity, and just use type 4 switch expressions, the new feature is quite reasonable.],
+  [However, in order to add the one form of switch Java needed, we've also got two other duds - type 2 and 3.
+In my view, the feature needs to go back to the drawing board, but sadly I suspect it is now too late for that.],
 ),
   insert-map: (:),
-  word-count: 889,
+  inline-pq: pull-quote([This is rather like the ternary operator (eg.], [Stephen Colebourne]),
+  inline-pq-idx: 30,
+  word-count: 1580,
   edited-for-length: false,
   debug-mode: false,
 )
 
-  #pull-quote([Notice that it just loads up all the required fields into a map.], [Robert C Martin (Clean Coder)])
+}
+
+{
+  #standard-article(
+  title: [In Praise of –dry-run],
+  author: [Henrik Warne],
+  source-name: [Henrik Warne],
+  images: (),
+  paragraphs: (
+  [class="wp-block-paragraph"\>For the last few months, I have been developing a new reporting application. Early on, I decided to add a –dry-run option to the run command. This turned out to be quite useful – I have used it many times a day while developing and testing the application.],
+  [class="wp-block-paragraph"\>The application will generate a set of reports every weekday. It has a loop that checks periodically if it is time to generate new reports. If so, it will read data from a database, apply some logic to create the reports, zip the reports, upload them to an sftp server, check for error responses on the sftp server, parse the error responses, and send out notification mails. The files (the generated reports, and the downloaded feedback files) are moved to different directories depending on the step in the process. A simple and straightforward application.],
+  [class="wp-block-paragraph"\>Early in the development process, when testing the incomplete application, I remembered that Subversion (the version control system after CVS, before Git) had a –dry-run option. Other linux commands have this option too. If a command is run with the argument –dry-run , the output will print what will happen when the command is run, but no changes will be made. This lets the user see what will happen if the command is run without the –dry-run argument.],
+  [class="wp-block-paragraph"\>I remembered how helpful that was, so I decided to add it to my command as well. When I run the command with –dry-run , it prints out the steps that will be taken in each phase: which reports that will be generated (and which will not be), which files will be zipped and moved, which files will be uploaded to the sftp server, and which files will be downloaded from it (it logs on and lists the files).],
+  [class="wp-block-paragraph"\>I am surprised how useful I found it to be. I often used it as a check before getting started. Since I know –dry-run will not change anything, it is safe to run without thinking. I can immediately see that everything is accessible, that the configuration is correct, and that the state is as expected. It is a quick and easy sanity check.],
+  [class="wp-block-paragraph"\>I also used it quite a bit when testing the complete system. For example, if I changed a date in the report state file (the date for the last successful report of a given type), I could immediately see from the output whether it would now be generated or not. Without –dry-run , the actual report would also be generated, which takes some time. So I can test the behavior, and receive very quick feedback.],
+  [class="wp-block-paragraph"\>The downside is that the dryRun -flag pollutes the code a bit. In all the major phases, I need to check if the flag is set, and only print the action that will be taken, but not actually doing it. However, this doesn’t go very deep. For example, none of the code that actually generates the report needs to check it. I only need to check if that code should be invoked in the first place.],
+  [class="wp-block-paragraph"\>The type of application I have been writing is ideal for –dry-run . It is invoked by a command, and it may create some changes, for example generating new reports. More reactive applications (that wait for messages before acting) don’t seem to be a good fit.],
+  [class="wp-block-paragraph"\>I added –dry-run on a whim early on in the project. I was surprised at how useful I found it to be. Adding it early was also good, since I got the benefit of it while developing more functionality.],
+),
+  insert-map: (:),
+  word-count: 639,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+  #pull-quote([class="wp-block-heading"\>Downside  class="wp-block-paragraph"\>The downside is that the dryRun -flag pollutes the code a bit.], [Henrik Warne])
+
+}
+
+{
+  #standard-article(
+  title: [Solid Relevance],
+  author: [Robert C Martin (Clean Coder)],
+  source-name: [Robert C Martin (Clean Coder)],
+  images: (),
+  paragraphs: (
+  [Recently I received a letter from someone with a concern. It went like this:],
+  [For years the knowledge of the SOLID principle has been a standard part of our recruiting procedure. Candidates were expected to have a good working knowledge of these principles. Lately, however, one of our managers, who doesn’t code much anymore, has questioned whether that is wise. His points were that the Open-Closed principle isn’t very important anymore because most of the code we write isn’t contained in large monoliths and making changes to small microservices is safe and easy. The Liskov Substitution Principle is long out of date because we don’t focus on inheritance nearly as much as we did 20 years ago. I think we should consider Dan North’s position on SOLID – “Just write simple code.”],
+  [I wrote the following letter in response:],
+  [The SOLID principles remain as relevant to day as they were in the 90s (and indeed before that). This is because software hasn’t changed all that much in all those years — and that is because software hasn’t change all that much since 1945 when Turing wrote the first lines of code for an electronic computer. Software is still if statements, while loops, and assignment statements — Sequence , Selection , and Iteration .],
+  [Every new generation likes to think that their world is vastly different from the generation before. Every new generation is wrong about that; which is something that every new generation learns once the next new generation comes along to tell them how much everything has changed.],
+  [So let’s walk through the principles, one by one.],
+  [SRP ) The Single Responsibility Principle.],
+  [Gather together the things that change for the same reasons. Separate things that change for different reasons.],
+  [It is hard to imagine that this principle is not relevant in software. We do not mix business rules with GUI code. We do not mix SQL queries with communications protocols. We keep code that is changed for different reasons separate so that changes to one part to not break other parts. We make sure that modules that change for different reasons do not have dependencies that tangle them.],
+  [Microservices do not solve this problem. You can create a tangled microservice, or a tangled set of microservices if you mix code that changes for different reasons.],
+  [Dan North’s slides completely miss the point on this, and convinces me that he did not understand the principle at all. (or that he was being ironic, which knowing Dan, is far more likely) His answer to the SRP is to “Write Simple Code”. I agree. The SRP is one of the ways we keep the code simple.],
+  [OCP ) The Open-Closed Principle.],
+  [A Module should be open for extension but closed for modification.],
+  [Of all the principles, the idea that anyone would question this one fills me full of dread for the future of our industry. Of course we want to create modules that can be extended without modifying them. Can you imagine working in a system that did not have device independence, where writing to a disk file was fundamentally different than writing to a printer, or a screen, or a pipe? Do we want to see if statement scattered through our code to deal with all the little details?],
+  [Or… Do we want to separate abstract concepts from detailed concepts. Do we want to keep business rules isolated from the nasty little details of the GUI, and the micro-service communications protocols, and the arbitrary behaviors of the database? Of course we do!],
+  [Again, Dan’s slide gets this completely wrong. When requirements change only part of the existing code is wrong. Much of the existing code is still right. And we want to make sure that we don’t have to change the right code just to make the wrong code work again. Dan’s answer is “write simple code”. Again, I agree. And, ironically, he is right. Simple code is both open and closed .],
+  [LSP ) The Liskov Substitution Principle.],
+  [A program that uses an interface must not be confused by an implementation of that interface.],
+  [People (including me) have made the mistake that this is about inheritance. It is not. It is about sub-typing. All implementations of interfaces are subtypes of an interface. All duck-types are subtypes of an implied interface. And, every user of the base interface, whether declared or implied, must agree on the meaning of that interface. If an implementation confuses the user of the base type, then if/switch statements will proliferate.],
+  [This principle is about keeping abstractions crisp and well-defined. It is impossible to believe that this is an outmoded concept.],
+  [Dan’s slides are entirely correct on this topic; he simply missed the point of the principle. Simple code is code that maintains crisp subtype relationships.],
+  [ISP ) The Interface Segregation Principle.],
+  [Keep interfaces small so that users don’t end up depending on things they don’t need.],
+  [We still work with compiled languages. We still depend upon modification dates to determine which modules should be recompiled and redeployed. So long as this is true we will have to face the problem that when module A depends on module B at compile time, but not at run time, then changes to module B will force recompilation and redeployment of module A.],
+  [This issue is especially acute in statically typed languages like Java, C\#, C++, GO, Swift, etc. Dynamicaly typed languages are affected much less; but are still not immune. The existence of Maven and Leiningen are proof of that.],
+  [Dan’s slide on this topic is provably false. Clients do depend on methods they don’t call, if they have to be recompiled and redeployed when one of those methods is modified. Dan’s final point on this principle is fine, so far as it goes. Yes, if you can split a class with two interfaces into two separate classes, then it is a good idea to do so (SRP). But such separation is often not feasible, nor even desirable.],
+  [DIP ) The Dependency Inversion Principle.],
+  [Depend in the direction of abstraction. High level modules should not depend upon low level details.],
+  [It is hard to imagine an architecture that does not make significant use of this principle. We do not want our high level business rules depending upon low level details. I hope that is perfectly obvious. We do not want the computations that make money for us polluted with SQL, or low level validations, or formatting issues. We want isolation of the high level abstractions from the low level details. That separation is achieved by carefully managing the dependencies within the system so that all source code dependencies, especially those that cross architectural boundaries, point towards high level abstractions, not low level details.],
+  [In every case Dan’s slides end with: Just write simple code . This is good advice. However, if the years have taught us anything it is that simplicity requires disciplines guided by principles. It is those principles that define simplicity. It is those disciplines that constrain the programmers to produce code that leans towards simplicity.],
+  [The best way to make a complicated mess is to tell everyone to “just be simple” and give them no further guidance.],
+),
+  insert-map: (:),
+  word-count: 1202,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+}
+
+{
+  #standard-article(
+  title: [Passing planes and other whoosh sounds],
+  author: [Oona Räisänen],
+  source-name: [Oona Raisanen (windytan)],
+  images: (),
+  paragraphs: (
+  [I always assumed that the recognisable 'whoosh' sound a plane or helicopter makes when passing overhead simply comes from the famous Doppler effect . But when you listen closely, this explanation doesn't make complete sense.],
+  [id="planepassingwave" width="520"\>],
+  [(Audio clipped from freesound - here and here )],
+  [A classic example of the Doppler effect is the sound of a passing ambulance constantly descending in pitch. When a plane flies overhead the roar of the engine sometimes does that as well. But you can also hear a wider, breathier noise that does something different: it's like the pitch goes down at first, but when the plane has passed us, the pitch goes up again. That's not how Doppler works! What's going on there?],
+  [Comb filtering.],
+  [Let's shed light on the mystery by taking a look at the sound in a time-frequency spectrogram. Here, time runs from left to right, frequencies from top (high) to bottom (low).],
+  [We can clearly see one part of the sound (the one starting at 2500 Hz) sweeping downwards, or from high to low frequencies; this should be the Doppler effect. But there's something else happening at the bottom of the image – another pattern is moving down at first, then up again...],
+  [This sound's frequency distribution seems to form a series of moving peaks and valleys. This resembles what audio engineers would call 'comb filtering' , due to its appearance in the spectrogram. When the peaks and valleys move about it causes a 'whoosh' sound; this is the same principle as in the flanger effect used in music production. But these are just jargon for the electronically created version. We can call the acoustic phenomenon the whoosh.],
+  [The comb pattern is caused by two copies of the same exact sound arriving at a slightly different times, close enough that they form an interference pattern. It's closely related to what happens to light in the double slit experiment . In recordings this often means that the sound was captured by two microphones and then mixed together; you can sometimes hear this happen unintentionally in podcasts and radio shows. So my thought process is, are we hearing two copies of the plane's sound? How much later is the other one arriving, and why? And why does the 'whoosh' appear to go down in pitch at first, then up again?],
+  [Into the cepstral domain.],
+  [The cepstrum , which is the inverse Fourier transform of the estimated log spectrum, is a fascinating plot for looking at delays and echoes in complex (as in complicated) signals. While the spectrum separates frequencies, the cepstrum measures time, or quefrency – see what they did there? It reveals cyclicities in the sound's structure even if it interferes with itself, like in our case. In that it's similar to autocorrelation.],
+  [It's also useful for looking at sounds that, experientially, have a 'pitch' to them but that don't show any clear spectral peak in the Fourier transform. Just like the sound we're interested in.],
+  [Here's a time- quefrency cepstrogram of the same sound (to be accurate, I used the autocepstrum here for better clarity):],
+  [The Doppler effect is less prominent here. Instead, the plot shows a sweeping peak that seems to agree with the pitch change we hear. This delay time sweeps from around 4 milliseconds to 9 ms and back. Note that the scale: higher frequencies (shorter times) are on the bottom this time.],
+  [Now why would the sound be so correlated with itself with this sweeping delay time?],
+  [Ground echo?],
+  [Here's my hypothesis. We are hearing not only the direct sound from the plane but also a delayed echo from a nearby flat surface. These two sound get superimposed and interfere before they reach our ears. The effect would be especially prominent with planes and helicopters because there is little in the way of the sound either from above or from the large surface. And what could be a large reflective surface outdoors? Well, the ground below!],
+  [Let's think about the numbers. The ground is around one-and-a-half metres below our ears. When a plane is directly overhead, the reflected sound needs to take a path that's three metres longer (two-way) than the direct path. Since sound travels 343 metres per second this translates to a difference of 9 milliseconds – just what we saw in the correlogram!],
+  [Below, I used GeoGebra to calculate the time difference (between the yellow and green paths) in milliseconds.],
+  [When the plane is far away the angle is shallower, the two paths are more similar in distance, and the time difference is shorter.],
+  [It would follow that a taller person hears the sound differently than a shorter one, or someone in a tenth-floor window! If the ground is very soft, maybe in a mossy grove, you probably wouldn't hear the effect at all; just the Doppler effect. But this prediction needs to be tested out in a real forest.],
+  [Here's what a minimal acoustic simulation model renders. We'll just put a flying white noise source in the sky and a reflective surface as the ground. Let's only update the IR at 15 fps to prevent the Doppler phenomenon from emerging.],
+  [id="simulatedwave" width="520"\>],
+  [Whoosh!],
+  [Some everyday whooshes.],
+  [The whoosh isn't only associated with planes. When it occurs naturally it usually needs three things:],
+  [a sound with a lot of structure (preferably a hissy or breathy noise)],
+  [an unobstructed echo from a closeby surface],
+  [and some kind of physical movement.],
+  [I've heard this outdoors when the sound of a waterfall was reflecting off a brick wall ( video ); and next to a motorway when the sound barrier provided the reflection. You can hear it in some films – for instance, in the original Home Alone when Kevin puts down the pizza box after taking a whiff ( video )!],
+  [You can even hear it in the sound of thunder when lightning hits quite close. Nothing is physically moving in this case; but it might be caused because a 'bang' is created simultaneously along a very long path but sound only travels so fast.],
+  [Try it yourself: move your head towards a wall – or a laptop screen – and back away from it, while making a continuous 'hhhh' or 'shhh' noise. Listen closely but don't close your eyes, you might bump your nose.],
+  [Where have you encountered the whoosh?],
+  [A simple little plot.],
+  [Finally, if you have JavaScript turned on you'll see (and hear) some more stuff in this blog post. In the interactive graph below you can move the aeroplane and listener around and see how the numbers change. The 'lag' or time difference we hear (orange arrow) comes from how much farther away the reflected virtual image is compared to the real aeroplane. For instance, when it's right above, the copied sound travels 3 meters longer. In the lower right corner, the 'filter' spectrum up to 4.5 kHz is also drawn. The circles are there to visualize the direct distance.],
+  [FAQ],
+  [I get many questions that point out that planes have two of something : two engines, two ends in one engine, etc... I can see how this is an inviting chain of though, but it has two problems. 1) The sound is not just associated to jet engines or even planes at all; 2) The sounds would have to be nearly identical for interference to happen. Random wind noise wouldn't created phase-coherent sounds from two independent sources. Some discussion in the comments below.],
+),
+  insert-map: (:),
+  word-count: 1260,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+}
+
+{
+  #standard-article(
+  title: [Big problems at the timezone database],
+  author: [Stephen Colebourne],
+  source-name: [Stephen Colebourne (Joda)],
+  images: (),
+  paragraphs: (
+  [The last time I wrote about the timezone database on this blog, the database was
+under threat from a lawsuit. Fortunately that lawsuit went away relatively
+quickly as the company involved got the message that their action was a big
+ mistake. Unfortunately this time the mess is internal.],
+  [Paul Eggert is the
+ project lead of the timezone database hosted at IANA, a position referred to as the TZ Coordinator.
+ He is an expert in the field, having been involved in documenting timezone data for decades.
+ Unfortunately, he is currently ignoring all objections to an action only he seems intent on making to solve an invented problem that only he sees as important.],
+  [The database is the world's principle source of timezone information. The data is included in everything from operating systems to smartphones to programming language development kits such as the JDK. While you may never have heard of it, the sheer pervasiveness of the data makes the potential impact of change or damage pretty huge.],
+  [The timezone database contains information about how clocks have varies in each region around the world.
+ The mandate of the project is to record this information from 1970 onwards.],
+  [Of course, computers being what they are, a function that returns the timezone for a given date can be passed in a pre-1970 date as well as a post-1970 one.
+ For this, and reasons of completeness, the timezone database contains pre-1970 data as well as post-1970 data.
+ If you go to your JDK or operating system and ask for the timezone offset for 1920-01-01 for the ID "Europe/Oslo" or "Europe/Berlin" you will get an answer:],
+  [DateTimeZone oslo = DateTimeZone.forID("Europe/Oslo");
+ System.out.println(oslo.getOffset(new DateTime(1948, 6, 1, 12, 0))); \/\/prints 3600000
+ DateTimeZone berlin = DateTimeZone.forID("Europe/Berlin");
+ System.out.println(berlin.getOffset(new DateTime(1948, 6, 1, 12, 0))); \/\/prints 7200000],
+  [The proposed change is to downgrade "Europe/Oslo" to be merely an alias for "Europe/Berlin".
+ The rationale is that since the two regions have the same data post-1970 there should only be one ID.
+ The issue with this is that querying "Europe/Oslo" in pre-1970 (as above) will now return the data from Berlin.
+ ie. the well researched pre-1970 data for Oslo will be replaced by that of Berlin.],
+  [The situation with Joda-Time is even worse.
+ With Joda-Time, aliases (also known as Links) are actively resolved.
+ Before the proposed change this test case passes, after the proposed change the test case fails:],
+  [assertEquals("Europe/Oslo", DateTimeZone.forID("Europe/Oslo").getID());],
+  [In other words, it will be impossible for a Joda-Time user to hold the ID "Europe/Oslo" in memory.
+ This could be pretty catastrophic for systems that rely on timezone management, particularly ones that end up storing that data in a database.
+ To mitigate this to some degree, I've added a test case and released a version that has such a test case in it, but obviously users of Joda-Time that haven't upgraded to the latest version may still see problems if they update the tzdb version.],
+  [But what about backwards compatibility?
+ Well it seems that the TZ Coordinator just doesn't see this as being important.
+ To him, it doesn't matter that users may be relying on this data.],
+  [(Technically, the data has moved, not been deleted. But the file containing the moved data is never normally used by downstream systems, thus to all intents and purposes it has been deleted.)],
+  [The question you might ask is why is Berlin favoured over Oslo?
+ Why can Berlin keep its status and full history, but Oslo gets effectively deleted?
+ The answer is that Berlin has the greater population - would you have guessed that if you didn't read it here?],
+  [From my perspective, I cannot see how it is not incredibly unfair that the timezone ID that represents the country of Norway, "Europe/Oslo", is treated as less important than the ID that represents the country of Germany, "Europe/Berlin". Yes, there is a technical rationale around 1970 and population, but that is really pretty arcane.],
+  [In fact it goes further than this. The TZ Coordinator does not really believe that there should be an ID for Oslo/Norway at all.
+ (The official project rules say that there should only be one ID for locations where timezone data is the same post-1970. Country borders simply dont matter.)],
+  [Some of the 30 IDs proposed for downgrade are "Europe/Oslo", "Europe/Stockholm", "Europe/Copenhagen", "Europe/Amsterdam", "Europe/Luxembourg", "Europe/Monaco", "Atlantic/Reykjavik" and "Indian/Mahe".
+ If you regularly use any of these IDs you may be affected by this change.
+ Iceland is a classic case - "Atlantic/Reykjavik" is to be downgraded in favour of "Africa/Abidjan". Bonus points if you know which country Abidjan is in!],
+  [What is driving the change? Well this is where it gets really weird.
+ The TZ Coordinator's argument is that there is a fairness/equity problem if Oslo is allowed to keep its pre-1970 history but other locations (typically in Africa) are not. I have two problems with this. Firstly, I consider it to also be unfair and inequitable that Berlin gets to have pre-1970 history and Oslo does not. Secondly, the correct approach to solving a fairness/equity problem is to level up, not level down. ie. Most leaders would want to improve the worse performers on the team, not force the best performers to be as bad as the worst.],
+  [So, we have a change with terrible downstream effects, including a potential fork of a major global data set and broken end-user applications, to make a problem that no one was complaining about a whole lot worse.],
+  [I've spent months trying to stop this happening, but appear to have lost the battle. This is despite near unaminity on the mailing list requesting the changes to be paused. Tonight 9 of the 30 changes have been included in release 2021b. These are not the ones affecting Europe.],
+  [I still hope that a solution can be found that the TZ Coordinator is happy with that avoids an impact on countries like Norway, Sweden, Denmark or the Netherlands.
+ In the medium term, I hope that funding can be found for the CLDR project to take on the timezone database (as CLDR has a much better record at managing data like this).],
+  [Stay tuned as I try and work out how best to resolve this completely unecessary drama.],
+),
+  insert-map: (:),
+  word-count: 1028,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+}
+
+{
+  #standard-article(
+  title: [Programming Conference – Jfokus Stockholm 2025],
+  author: [Henrik Warne],
+  source-name: [Henrik Warne],
+  images: (),
+  paragraphs: (
+  [class="wp-block-paragraph"\>This week I attended the Jfokus software development conference in Stockholm, Sweden. I first went in 2011, and I have been back many times through the years. The conference has a Java focus (duh!), but many talks cover general topics as well.],
+  [class="wp-block-paragraph"\>The whole development team at NGM got tickets. It is really nice to be able to discuss and compare notes with your colleagues. The big theme this year, apart from Java, was of course AI and LLMs.],
+  [class="wp-block-paragraph"\> The First 80% of Reading One Billion Rows Fast Enough by René Schwietzke . This is a talk on Java optimization, and I really enjoyed it! I had not heard about the challenge before. The input is one billion rows of simple weather csv data, and the idea is to see how fast it can be processed in Java. Of course there are solutions that use incredibly weird and obscure techniques, but this talk goes through some basic optimizations that together add up to a run time of 20% of the original solution.],
+  [class="wp-block-paragraph"\>After setting up the problem, René shows a base-line solution, and gives its run time. Then he goes through a number of optimizations, and shows how much each saves. Examples of optimizations are: replace split() by indexOf(), use int instead of double (we know there is only ever one decimal digit), mutate existing objects instead of creating new ones, only read bytes (not Strings, doubles etc) and delay Unicode processing, simpler Min/Max, create the hash code while traversing the line.],
+  [class="wp-block-paragraph"\>René used a flamegraph from a profiler to guide what areas of the program should be optimized. Some general rules he followed were: replace standard JDK functionality (it may be more general than what is needed), low or no memory allocation, avoid wrappers and immutability, reduce branching (if, loops), exploit what you know about the input data.],
+  [class="wp-block-paragraph"\> The Future of Work by Henrik Kniberg . This was second of two keynote talks that opened the conference. Henrik did a live demo where he used several AI agents to accomplish tasks, such as making code changes, creating a branch in git, and creating a PR with the changes. The AI agents have instructions in the form of short text documents, and these instructions can be updated, even by the agents themselves (subject to human approval).],
+  [class="wp-block-paragraph"\>The agents appear as their own users in Slack. They can also be given recurring tasks, for example to create a report each morning on a given subject, and to mail out the report and post a summary of it in Slack. He also demonstrated how they can trouble shoot if something goes wrong, for example if it can’t create a git branch. The LLM used in the demo was Claude, and Henrik used it in voice-input mode.],
+  [class="wp-block-paragraph"\>He ended the presentation with some reflections on the implications of this way of working. He, like me, has always loved programming. Will this way of working, with agents writing a large chunk of the code, or all code, mean the end of software development for humans? First he noted that this is similar to moving from punch cards, to assembler, and to compiled higher level languages. You move up one abstraction level. He also noted that what he liked about programming was making and creating things, not necessarily writing the actual code.],
+  [class="wp-block-paragraph"\> Ask the Architect with Brian Goetz (Java Language Architect) and Mark Reinhold (Chief Architect), both at Oracle. This was a Q&A session, where the audience had a chance to ask Brian and Mark Java questions. I didn’t really know what to expect from this session, since it will depend a lot on the questions asked. But I was pleasantly surprised. There was quite a variety of questions.],
+  [class="wp-block-paragraph"\>There were questions about serialization, GraalVM vs HotSpot, records, streams, Lombok, different deprecation modes, and more. Quite interesting. Before we started, Brian and Mark cautioned us not to begin questions with “Why don’t you just…”. Modifying a language that has been around for so long, with so many existing programs, is not easy. This became very clear when hearing some of the answers.],
+  [class="wp-block-paragraph"\>Going to a conference is different from watching talks on YouTube, or reading books or blog posts about software development. It is nice to meet and talk to other developers. My standard question when chatting with other attendees is “What is your favorite talk so far, and why?”. At Jfokus, your name and your company are printed on your badge. This gives you another set of good icebreaker questions: “What do you do at Company X? What does the company do? What tech stack do you use?”. Also, when listening to a talk live, you have a chance to ask questions, either during the talk, or afterwards.],
+  [class="wp-block-paragraph"\>It is very convenient to attend a conference in your home city or country. It is cheaper and there is less travel. From the badges I saw at Jfokus, most people were from Sweden, and a few from Germany.],
+  [class="wp-block-paragraph"\>At Jfokus, there are usually six parallel talks, so it can sometimes be hard to pick what to listen to. When attending a conference, and listening to many talks in a row, you notice things that are mentioned more than once. Examples this year were LLMs checking the output of other LLMs, RAG (Retrieval-Augmented Generation), AI-assisted coding (with IDE plugins), GraalVM, and the Quarkus framework. After a conference I always end up with a long list of things to look up: techniques and tools I hadn’t heard about before, and books and articles to look into.],
+  [class="wp-block-paragraph"\>I also like to see which companies have exhibition booths at the conference. Even if I am not interested in their exact service, it gives me a general sense of what is popular right now. All the exhibitors get a little gold star in my book for sponsoring a conference.],
+  [Tobias Modig, in his talk The Developer Rhapsody, talked about “the mediocre developer”. Someone competent that stays at the same company for 15 years. The contrast is the brilliant developer, that gets bored after a year and a half and moves on. Who is more valuable for a company?],
+  [“We think in generalities, but we live in detail” – Alfred North Whitehead. One of many good quotes Kevlin Henney mentioned in his talk Keeping It Simple.],
+  [The venue, Stockholm Waterfront Congress Centre, is great. Everything worked smoothly, the food and the “fika” was great, and it is very easy to get to.],
+  [The Jfokus web site could be improved. First of all, it would be good if the back button in the browser worked. Going back after clicking into a talk, you lose where you were in the schedule. Also, the link for rating the talk would be good to have next to the talk description.],
+  [class="wp-block-paragraph"\>Another great conference, with a good variety of talks and speakers. If you haven’t been to a conference in a while, try to find one to attend. It is really inspiring, and a nice way of keeping up with new ideas and technology.],
+),
+  insert-map: (:),
+  word-count: 1236,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+}
+
+{
+  #standard-article(
+  title: [User-defined literals in Java?],
+  author: [Stephen Colebourne],
+  source-name: [Stephen Colebourne (Joda)],
+  images: (),
+  paragraphs: (
+  [Java has a number of literals for creating values, but wouldn't it be nice if we had more?],
+  [Current literals],
+  [These are some of the literals we can write in Java today:],
+  [integer - 123 , 12s , 1234L , 0xB8E817 , 077 , 0b1011\_1010],
+  [floating point - 45.6f , 56.7d , 7.656e6],
+  [string - "Hello world"],
+  [char - 'a'],
+  [boolean - true , false],
+  [null - null],
+  [Project Amber is also considering adding multi-line and/or raw string literals.],
+  [But there are many other data types that would benefit from literals, such as dates, regex and URIs.],
+  [User-defined literals],
+  [In my ideal future, I'd like to see Java extended to support some form of user-defined literals.
+This would allow the author of a class to provide a mechanism to convert a sequence of characters into an instance of that class.
+It may be clearer to see some examples using one possible syntax (using backticks):],
+  [Currency currency = \`GBP\`;
+ LocalDate date = \`2019-03-29\`;
+ Pattern pattern = \`strata\\.\\w+\`;
+ URI uri = \`https:\/\/blog.joda.org/\`;],
+  [A number of semantic features would be required:],
+  [Type inference],
+  [Raw processing],
+  [Validated at compile-time],
+  [Type inference],
+  [Type inference is of course a key aspect of literals.
+It would have to work in a similar way to the existing literals, but with a tweak to handle the new var keyword.
+ie. these two would be equivalent:],
+  [LocalDate date = \`2019-03-29\`;
+ var date = LocalDate\`2019-03-29\`;],
+  [The type inference would also work with methods (compile error if ambiguous):],
+  [boolean inferior = isShortMonth(\`2019-04-12\`);],
+  [public boolean isShortMonth(LocalDate date) { return date.lengthOfMonth()],
+  [Raw processing],
+  [Processing of the literal should not be limited by Java's escape mechanisms.
+User-defined literals need access to the raw string.
+Note that this is especially useful for regex, but would also be useful for files on Windows:],
+  [\/\\/ user-defined literals
+ var pattern = Pattern\`strata\\.\\w+\`;
+ \/\\/ today
+ var pattern = Pattern.compile("strata\\\\.\\\\w+");],
+  [Today, the \`\\\` needs to be escaped, making the regex difficult to read.],
+  [Clearly, the problem with parsing raw literals is that there is no mechanism to escape.
+But the use cases for user-defined literals tend to have constrained formats, eg. a date doesn't contain random characters.
+So, although there might be edge cases where this would be a problem, they would vert much be edge cases.],
+  [Validated at Compile-time],
+  [A key feature of literals is that they are validated at compile-time.
+You can't use an integer literal to create an int if the value is larger than the maximum allowed integer (2^31).],
+  [User-defined literals also need to be parsed and validated at compile-time too.
+Thus this code would not compile:],
+  [LocalDate date = \`2019-02-31\`;],
+  [Most types which would benefit from literals only accept specific input formats, so being able to check this at compile time would be beneficial.],
+  [How would it be implemented?],
+  [I'm pretty confident that there are various ways it could be done.
+I'm not going to pick an approach, as ultimately those that control the JVM and language are better placed to decide.
+Clearly though, there is going to need to be some form of factory method on the user class that performs the parse, with that method invoked by the compiler. And ideally, the results of the parse would be stored in the constant pool rather than re-parsed at runtime.],
+  [What I would say is that user-defined literals would almost be a requirement for making value types usable, so something like this may be on the way anyway.],
+  [I like literals. And I would really like to be able to define my own!],
+  [Any thoughts?],
+),
+  insert-map: (:),
+  word-count: 590,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+  #pull-quote([Clearly, the problem with parsing raw literals is that there is no mechanism to escape.], [Stephen Colebourne])
+
+}
+
+{
+  #standard-article(
+  title: [Java 9 modules - JPMS basics],
+  author: [Stephen Colebourne],
+  source-name: [Stephen Colebourne (Joda)],
+  images: (),
+  paragraphs: (
+  [The Java Platform Module System (JPMS) is the major new feature of Java SE 9.
+In this article, I will introduce it, leaving most of my opinions to a follow up article.
+This is based on these slides .],
+  [Java Platform Module System (JPMS)],
+  [The new module system, developed as Project Jigsaw , is intended to raise the abstraction level of coding in Java as follows:],
+  [\* Make the Java SE Platform, and the JDK, more easily scalable down to small computing devices;],
+  [\* Improve the security and maintainability of Java SE Platform Implementations in general, and the JDK in particular;],
+  [\* Enable improved application performance; and],
+  [\* Make it easier for developers to construct and maintain libraries and large applications, for both the Java SE and EE Platforms.],
+  [To achieve these goals we propose to design and implement a standard module system for the Java SE Platform and to apply that system to the Platform itself, and to the JDK. The module system should be powerful enough to modularize the JDK and other large legacy code bases, yet still be approachable by all developers.],
+  [However as we shall see, project goals are not always met.],
+  [What is a JPMS Module?],
+  [JPMS is a change to the Java libraries, language and runtime.
+This means that it affects the whole stack that developers code with day-to-day, and as such JPMS could have a big impact.
+For compatibility reasons, most existing code can ignore JPMS in Java SE 9, something that may prove to be very useful.],
+  [The key conceptual point to grasp is that JPMS adds new a concept to the JVM - modules. 
+Where previously, code was organized into fields, methods, classes, interfaces and packages, with Java SE 9 there is a new structural element - modules.],
+  [a class is a container of fields and methods],
+  [a package is a container of classes and interfaces],
+  [a module is a container of packages],
+  [Because this is a new JVM element, it means the runtime can apply strong access control.
+With Java 8, a developer can express that the methods of a class cannot be seen by other classes by declaring them private.
+With Java 9, a developer can express that a package cannot be seen by other modules - ie. a package can be hidden within a module.],
+  [Being able to hide packages should in theory be a great benefit for application design.
+No longer should there be a need for a package to be named "impl" or "internal" with Javadoc declaring "please don't use types from this package".
+Unfortunately, life won't be quite that simple.],
+  [Creating a module is relatively simple however. A module is typically just a jar file that has a module-info.class file at the root - known as a modular jar file .
+And that file is created from a module-info.java file in your sourcebase (see below for more details).],
+  [Using a modular jar file involves adding the jar file to the modulepath instead of the classpath.
+If a modular jar file is on the classpath, it will not act as a module at all, and the module-info.class will be ignored.
+As such, while a modular jar file on the modulepath will have hidden packages enforced by the JVM, a modular jar file on the classpath will not have hidden packages at all.],
+  [Other module systems],
+  [Java has historically had other module systems, most notably OSGi and JBoss Modules.
+It is important to understand that JPMS has little resemblance to those systems.],
+  [Both OSGi and JBoss Modules have to exist without direct support from the JVM, yet still provide some additional support for modules.
+This is achieved by launching each module in its own class loader, a technique that gets the job done, yet is not without its own issues.],
+  [Unsurprisingly, given these are existing module systems, experts from those groups have been included in the formal Expert Group developing JPMS.
+However, this relationship has not been harmonious.
+Fundamentally, the JPMS authors (Oracle) have set out to build a JVM extension that can be used for something that can be described as modules, whereas the existing module systems derive experience and value from real use cases and tricky edge cases in big applications that exist today.],
+  [When reading about modules, it is important to consider whether the authors of the article you are reading are from the OSGi/JBoss Modules design camp.
+(I have never actively used OSGi or JBoss Modules, although I have used Eclipse and other tools that use OSGi internally.)],
+  [module-info.java],
+  [The module-info.java file contains the instructions that define a module (the most important ones are covered here, but there are more).
+This is a .java file, however the syntax is nothing like any .java file you've seen before.],
+  [There are two key questions that you have to answer to create the file - what does this module depend on, and what does it export:],
+  [module com.opengamma.util {
+ requires org.joda.beans; \/\\/ this is a module name, not a package name
+ requires com.google.guava;],
+  [exports com.opengamma.util; \/\\/ this is a package name, not a module name
+}],
+  [(The names to use for modules needed a whole separate article , for this one I'll use package-name style)],
+  [This module declaration says that com.opengamma.util depends on (requires) org.joda.beans and com.google.guava .
+It exports one package, com.opengamma.util .
+All other packages are hidden when using the modulepath (enforced by the JVM).],
+  [There is an implicit dependency on java.base , the core module of the JDK.
+Note that the JDK itself is also modularized, so if you want to depend on Swing, XML or Logging, that dependency needs to be expressed.],
+  [module org.joda.beans {
+ requires transitive org.joda.convert;],
+  [exports org.joda.beans;
+ exports org.joda.beans.ser;
+}],
+  [This module declaration says that org.joda.beans depends on (requires) org.joda.convert .
+The "requires transitive", as opposed to a simple "requires", means that any module that requires org.joda.beans 
+can also see and use the packages from org.joda.convert . This is used here as Joda-Beans has methods where the
+return type is from Joda-Convert. This is shown by a dashed line.],
+  [module org.joda.convert {
+ requires static com.google.guava;],
+  [exports org.joda.convert;
+}],
+  [This module declaration says that org.joda.convert depends on (requires) com.google.guava ,
+but only at compile time, "requires static", as opposed to a simple "requires". This is an optional dependency.
+If Guava is on the modulepath, then Joda-Convert will be able to see and use it, and no error will occur if Guava is not present.
+This is shown by a dotted line.],
+  [Access rules],
+  [When running a modular jar on the modulepath with JVM access rules applied, code in package A can see a type in package B if:],
+  [the type is public],
+  [package B is exported from it's module],
+  [there is a dependency from the module containing package A to the module containing package B],
+  [Thus, in the example above, code in module com.opengamma.util can see packages org.joda.beans , org.joda.beans,ser , org.joda.convert and any package exported by Guava. However, it cannot see package org.joda.convert.internal (as it is not exported).
+In addition, code module com.google.guava cannot see code in package org.joda.beans or org.joda.convert as there
+is no modular dependency.],
+  [What can go wrong?],
+  [The basics described above are simple enough. It is initially quite easy to imagine how you might build an application from these foundations and benefit from hiding packages.
+Unfortunately, quite a few things can go wrong.],
+  [1) All use of module-info files only applies if using modular jars on the modulepath.
+For compatibility, all code on the classpath is packaged up as a special unnamed module , with no hidden packages and full access to the whole JDK.
+Thus, the security benefits of hiding packages are marginal at best.
+However, the modules of the JDK itself are always run in modular mode, thus are always guaranteed the security benefits.],
+  [2) Versions of modules are not handled. You cannot have the same module name loaded twice - you cannot have two versions of the same module loaded twice. It is left entirely to you, and thus to your build tool, to create a coherent set of modules that can actually be run. 
+Thus, the classpath hell situation caused by clashing versions is not solved.
+Note that putting the version number in the module name is a Bad Idea that does not solve this problem and creates others.],
+  [3) Two modules may not contain the same package.
+This seems eminently sensible, until you consider that it also applies to hidden packages.
+Since hidden packages are not listed in module-info.class , a tool like Maven must unpack the jar file to discover what hidden packages there are in order to warn of clashes.
+As a user of the library, such a clash will be completely surprising, as you won't have any indication of the hidden packages in the Javadoc.
+This is a more general indication that JPMS does not provide sufficient isolation between modules, for reasons that are far from clear at this point.],
+  [4) There must be no cycles between modules, at compile time and at runtime.
+Again, this seems sensible - who wants to have module A depend on B depend on C which depends on A?
+But the reality of existing projects is that this happens, and on the classpath is not a problem.
+For example, consider what would happen if Guava decided to depend on Joda-Convert in the example above.
+This restriction will make some existing open source projects hard to migrate.],
+  [5) Reflection is changing, such that non-public fields and methods will no longer be accessible via reflection.
+Since almost every framework uses reflection in this way, there will be significant work needed to migrate existing code.
+In particular, the JDK will be very locked down against reflection, which may prove painful (command line flags can escape the trap for now).
+This article hasn't had a chance to explore how the module declaration can influence reflection - see "opens" in the slides for more details.],
+  [6) Are your dependencies modularized? In theory, you can only turn your code into a module once all your dependencies are also modules.
+For any large application with hundreds of jar file dependencies, this will be a problem.
+The "solution" is automatic modules , where a normal jar file placed on the modulepath is automatically turned into a module.
+This process is controversial, with naming a big issue.
+Library authors should not publish modules that depend on automatic modules to public repositories like Maven Central unless they have the Automatic-Module-Name manifest entry. Again, automatic modules deserve their own article!],
+  [7) Module naming is not yet set in stone. I've come to believe that naming your module after the highest package it contains , causing that module to "take ownership" of the subpackages, is the only sane strategy.],
+  [8) Conflicts with build systems - who is in charge? A Maven pom.xml also contains information about a project.
+Should it be extended to allow module information to be added?
+I would suggest not, because the module-info.java file contains a binding part of your API, and that is best expressed in .java code, not metadata like pom.xml .],
+  [For those wanting a book to read in much more depth, try this one from Nicolai.],
+  [Do not get too excited about JPMS - modules in Java 9.
+The above is only a summary of what is possible with the module-info.java file and the restrictions of the JPMS.
+If you are thinking of modularizing your library or application, please wait a little longer until everything becomes a little clearer.],
+  [Feedback welcome, but bear in mind that I am planning more articles.],
+),
+  insert-map: (:),
+  inline-pq: pull-quote([This is used here as Joda-Beans has methods where the return type is from Joda-Convert.], [Stephen Colebourne]),
+  inline-pq-idx: 22,
+  word-count: 1960,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+}
+
+{
+  #standard-article(
+  title: [Criminals are renting virtual phones to bypass bank security],
+  author: [Malwarebytes Labs],
+  source-name: [Malwarebytes Labs],
+  images: (),
+  paragraphs: (
+  [Researchers at Group-IB warn about criminals using virtual Android devices to bypass modern security solutions.],
+  [Cloud phones are virtual Android devices that can fully mimic real device fingerprints (model, hardware, IP, timezone, sensor data, behavior). This allows them to undermine banks’ device‑based fraud detection.],
+  [Originally, phone farms were made up of physical devices and were set up for testing. They grew in number when companies found out they could rent virtual phones and artificially raise engagement stats like follower counts, likes, shares, and so on. Further growth was driven by moving the infrastructure from physical phone farms to cloud phones.],
+  [At some point, cybercriminals figured out how to use these “rent-a-phones” to trick people into sharing access to banking accounts and crypto wallets, which were then emptied.],
+  [Banks caught on to these tactics and started building mobile apps that rely on device fingerprinting. This helped them detect and block fake devices taking over people’s accounts.],
+  [But as with any arms race, criminals found a way around that too. They now “pre‑warm” devices by adding banking apps, registering credentials, and running small transactions so accounts and device telemetry look low‑risk.],
+  [The researchers note that:],
+  [“They moved to cloud phones—remote-access Android devices running in data centers. For all intents and purposes, these are real phones, running genuine firmware, exhibiting natural sensor behavior, and presenting valid hardware attestation.”],
+  [And it’s not a big investment for the criminals. Major cloud phone platforms offer device rentals for as little as \$0.10-0.50 per hour, making fraud infrastructure accessible to almost anyone.],
+  [One place these devices are used is in mobile games with real-money economies. These games have long struggled with a specific problem: bot farming of in-game currency and resources. In many cases, automated accounts can generate in-game items that have real-world value.],
+  [Banks face a different problem: account take-over (ATO) attacks. As banking shifted from web browsers to mobile apps, they needed more reliable and comprehensive ways to identify trusted devices. Many banks now bind accounts to specific devices and flag transfers that don’t come from that device.],
+  [The start of an attack is still social engineering. Criminals try to trick users into sharing one-time passwords (OTPs), approve a login, or make a transfer “to a safe account.”],
+  [Behind the scenes, the criminal logs into a cloud phone instance that already looks like the victim’s device to their bank, thanks to matching or plausible fingerprints and pre‑warmed behavior.],
+  [Once the criminals are in, they carry out authorized push payment (APP) transfers (often to money‑mule accounts), that the bank’s systems may treat as low‑risk because nothing about the device seems obviously wrong.],
+  [At that point the criminals can start emptying your account or sell the virtual phones to other criminals. According to the researchers:],
+  [“Darknet markets actively trade pre-verified dropper accounts created on cloud phones, with Revolut and Wise accounts priced at \$50-200 each, often including continued access to the cloud phone instance.”],
+  [The Group-IB researchers advise end users to:],
+  [Never complete account verification processes under third-party instruction. Keep in mind that banks and government institutions will not ask customers to authenticate accounts through unfamiliar apps or remote environments.],
+  [Enable device-based security features. Use official mobile banking apps, biometric authentication, and strong device-level security settings.],
+  [Be cautious of “easy income” schemes involving bank accounts. Fake job offers requiring you to “verify” bank accounts, government officials requesting account verification, bank representatives asking you to move money to “safe” accounts.],
+  [If you suspect that you have been targeted, contact your bank immediately. Update passwords and enable multi-factor authentication on all accounts.],
+  [We’d like to add:],
+  [Turn on banking alerts for logins, payee changes and transactions where possible so you see unusual activity immediately.],
+  [Use an up-to-date, real-time anti-malware solution for your Android device to detect and stop information stealers.],
+  [When in doubt about a message, consult Malwarebytes Scam Guard . It will help you figure out if it’s a scam and guide you through what to do.],
+  [We don’t just report on phone security—we provide it],
+  [Cybersecurity risks should never spread beyond a headline. Keep threats off your mobile devices by downloading Malwarebytes for iOS , and Malwarebytes for Android today.],
+),
+  insert-map: (:),
+  word-count: 704,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+}
+
+{
+  #standard-article(
+  title: [What OpenClaw Reveals About the Next Phase of AI Agents],
+  author: [Kesha Williams],
+  source-name: [O'Reilly Radar],
+  images: (),
+  paragraphs: (
+  [In November 2025, Austrian developer Peter Steinberger published a weekend project called Clawdbot. You could text it on Telegram or WhatsApp, and it would do things for you: manage your calendar, triage your email, run scripts, and even browse the web. By late January 2026, it had exploded. It gained 25,000 GitHub stars in a single day and surpassed React’s star count within two months, a milestone that took React over a decade. By mid-February, Steinberger had joined OpenAI, and the project moved to an open source foundation under its final name: OpenClaw .],
+  [What was so special about OpenClaw? Why did this one take off when so many agent projects before it didn’t?],
+  [Where we are today feels similar to April 2023 when AutoGPT hit the scene. It had the same GitHub trajectory with its promise of autonomous AI. Then reality hit. Agents got stuck in loops, hallucinated a lot, and racked up token costs. It didn’t take long for people to walk away.],
+  [OpenClaw has one critical advantage: The models have gotten better. Recent LLMs like Claude Opus 4.6 and GPT-5.4 allow models to chain tools together, recover from errors, and plan multistep strategies. Steinberger’s weekend project benefited from timing as much as design.],
+  [The architecture is intentionally simple. There are no vector databases and no multi-agent orchestration frameworks. Persistent memory is Markdown files on disk. Let me repeat that: Persistent memory is Markdown files on disk! The agent can read yesterday’s notes and search its own files for additional context. You can view and edit the agent’s files as needed. There’s a useful lesson in that: Not every agent system needs a complex memory strategy. It’s more important that you understand what the agent is doing and that it retains context across runs.],
+  [What fascinates me about OpenClaw is that none of the individual pieces are new. Persistent memory across sessions? We’ve been building that for years. Cron jobs to trigger agent actions on a schedule? Decades old infrastructure. Plug-in systems for extensibility? A very standard pattern. Webhooks into WhatsApp and Telegram? There are well-documented APIs for that. What Steinberger did was wire them together at the exact moment the underlying models could execute on multistep plans. The combination created something that felt quite different from anything that had come before.],
+  [OpenClaw nailed three things that previous agent projects missed: proximity, creativity, and extensibility.],
+  [Proximity—it lives where you already are every day. OpenClaw connects to WhatsApp, Slack, Discord, Telegram, and Signal. That single design decision changed its trajectory. The agent becomes an active participant in your workflow. People use it to manage their sales pipeline, automate emails, and kick off code reviews from their phones.],
+  [Next, it’s proactive. OpenClaw doesn’t wait for you to ask; it uses cron jobs to run tasks on a set schedule. It can check your email every day at 6am, draft a reply before you wake up, and even send it for you. And it reaches out when anything needs your attention. Agents become part of everyday life when integrated into familiar channels.],
+  [And finally, my favorite, it’s open and extensible. OpenClaw’s plug-in system, called “skills,” lets the community build and share modular extensions on ClawHub . There are thousands of skills ready to be plugged into your agent. Agents can even write their own new skills and use them going forward. That extensibility meant more skills, more users, and more attack surfaces, which we’ll get to.],
+  [The community ran with it. A social network exclusively for AI Agents, Moltbook , launched in late January and grew to over 1.5 million agent accounts. One agent created a dating profile for its owner on MoltMatch and started screening matches without being asked.],
+  [I’ll admit, I got swept up in it, but that’s not surprising; I’ve always been an early adopter of emerging technology. I bought a Mac mini, installed OpenClaw, and connected it to my Jira, AWS, and GitHub accounts. In no time, I had my agent, Jarvis, writing code and submitting PRs, running my daily standups, and deploying my code to AWS using AWS CloudFormation and the AWS CLI.],
+  [I spent a lot of time binding the gateway to localhost, auditing every skill, and restricting filesystem permissions. For me, hardening the setup was not optional. I’m now deploying via AWS Lightsail, which adds network isolation and managed security layers that are hard to replicate on a Mac mini in your home office.],
+  [OpenClaw requires root-level access to your system by design. It needs your email credentials, API keys, calendar tokens, browser cookies, filesystem access, and terminal permissions. If you’re like me, that would keep you up at night.],
+  [Security researchers found 135,000 OpenClaw instances exposed on the open internet, over 15,000 vulnerable to remote code execution. The default configuration binds the gateway to 0.0.0.0 with no authentication. A zero-click exploit disclosed in early March allowed attackers to hijack an instance simply by getting the user to visit a web page.],
+  [The skills marketplace got hit too. Researchers discovered over 800 malicious skills distributing malware on ClawHub, including credential stealers targeting macOS. Cisco confirmed that one third-party skill was performing data exfiltration and prompt injection without user awareness. These are not edge cases and point directly to what happens when an agent can act across real systems with real permissions and weak controls.],
+  [OpenClaw matters for the same reason ChatGPT mattered in late 2022. A huge number of people just experienced, for the first time, what it feels like to have an AI agent do real work for them. That changes what they expect from every product going forward.],
+  [If you’re building AI systems, pay attention to three signals here.],
+  [The killer interface for agents turned out to be the one on everyone’s phone. Your agent strategy shouldn’t require users to learn a new tool; that’s why most products are introducing agentic capabilities.],
+  [Control is the central design challenge. Prompt injection, credential exposure, and attacks through plug-in marketplaces are real-world problems you need to solve before you ship features. Oversight has to be available at runtime. You need visibility into what your agents are accessing, what they’re doing, and how failures are handled. Permission boundaries, approval gates, audit logging, and recovery mechanisms are nonnegotiable.],
+  [OpenClaw is a proof of market. It proved that people are ready to make AI personal. People want a personal AI agent that has access to their applications and can do things for them. That demand is now validated at scale. While AutoGPT proved that people wanted autonomous AI, Perplexity and Cursor built businesses around that. The same pattern is likely playing out here. If you’re building in this space, the window is wide open.],
+  [The more interesting question now is what gets built next. The next phase of agent design will be shaped by how governable, observable, and safe agents are in real-world environments.],
+  [For a deeper dive into OpenClaw, join us on March 19 for AI Product Lab: OpenClaw Up and Running with Aman Khan and Tal Raviv . You’ll learn more about why OpenClaw became a viral sensation, how to get it up and running in a way you won’t regret, and how to use it to build and manage safe agentic workflows.],
+),
+  insert-map: (:),
+  inline-pq: pull-quote([In no time, I had my agent, Jarvis, writing code and submitting PRs, running my daily standups, and deploying my code to AWS using AWS CloudFormation and the AWS CLI.], [Kesha Williams]),
+  inline-pq-idx: 9,
+  word-count: 1237,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+}
+
+{
+  #standard-article(
+  title: [Bogus Avast website fakes virus scan, installs Venom Stealer instead],
+  author: [Malwarebytes Labs],
+  source-name: [Malwarebytes Labs],
+  images: (),
+  paragraphs: (
+  [A fake website impersonating Avast antivirus is tricking people into infecting their own computers.],
+  [The site looks legitimate, runs what appears to be a virus scan, and claims your system is full of threats. But the results are fake: when you’re prompted to “fix” the problem, the download you’re given is actually Venom Stealer —a type of malware designed to steal passwords, session cookies, and cryptocurrency wallet data.],
+  [This is a classic scare-and-fix scam: create panic, then offer a solution. In this case, the “solution” abuses the trusted Avast brand to deliver the attack.],
+  [The phishing page is a recreation of the Avast brand, complete with navigation bar, logo, and reassuring certification badges. Visitors are invited to run what appears to be a comprehensive virus scan. Once they click, the page stages a brief animation before delivering its predetermined verdict: three threats found, three threats removed, system protected. A scrolling console log names a specific detection— Trojan: Win32/Zbot. AA!dll —to lend the performance an air of specificity. The victim is then prompted to download the cure: a file called Avast\_system\_cleaner.exe .],
+  [This is the payload. And far from cleaning anything, it immediately begins stealing.],
+  [When the victim launches Avast\_system\_cleaner.exe , the binary—a 64-bit Windows PE executable roughly 2 MB in size—copies itself into a location designed to blend in with legitimate software: C:\\Program Files\\Google\\Chrome\\Application\\v20svc.exe . The dropped file is byte-for-byte identical to the parent, sharing the same MD5 hash ( 0a32d6abea15f3bfe2a74763ba6c4ef5 ). It then launches the copy with the command-line flag --v20c , a meaningless argument whose sole purpose is to signal to the malware that it is running in its second-stage role.],
+  [The disguise is deliberate. A process named v20svc.exe sitting inside Chrome’s application directory looks, at a glance, like a legitimate browser service component. Anyone scanning their task manager would likely scroll past it without a second thought. This is a textbook example of masquerading: naming a malicious binary to match the conventions of trusted software so it escapes casual inspection.],
+  [A debug artifact baked into the binary confirms its lineage: the PDB path reads crypter\_stub.pdb , indicating the executable was packed using a crypter, which is a tool designed to scramble a payload’s code so antivirus engines cannot recognise it from its signature alone. At the time of analysis, only 27% of engines on VirusTotal flagged the sample, meaning roughly three in four commercial antivirus products missed it entirely.],
+  [YARA rules matched the sample to the Venom Stealer malware family, a known descendant of the Quasar RAT framework that has been sold on underground forums since at least 2020. Venom Stealer is purpose-built for data theft: browser credentials, session cookies, cryptocurrency wallets, and credit card details stored in browsers.],
+  [Once running, the malware works through a checklist of high-value targets on the victim’s machine.],
+  [It starts with browsers. Behavioral analysis confirms the malware harvests saved credentials and session cookies. In the analysis environment, it was observed directly accessing Firefox’s cookie database at C:\\Users\\ \\AppData\\Roaming\\Mozilla\\Firefox\\Profiles\\ \\cookies.sqlite-shm . Process memory also contained fully-formed JSON structures with stolen cookie data from Microsoft Edge and Google Chrome, including active sessions for Netflix, YouTube, Reddit, Facebook, LinkedIn, AliExpress, Outlook, Adobe, and Google. Stolen session cookies give the attacker the ability to hijack authenticated browser sessions without needing the victim’s password, including sessions protected by two-factor authentication.],
+  [The malware also targets cryptocurrency wallets. Behavioral signatures confirm it searches for and attempts to steal locally-stored wallet data, and Venom Stealer is documented as targeting desktop wallet applications. For anyone holding crypto assets on a hot wallet, the implications are immediate.],
+  [Beyond credentials, the stealer captures a screenshot of the victim’s desktop, saved temporarily as C:\\Users\\ \\AppData\\Local\\Temp\\screenshot\_5sIczFxY95t2IQ5u.jpg , and writes a session tracking file to C:\\Users\\ \\AppData\\Roaming\\Microsoft\\fd1cd7a3\\sess . A small marker file is also dropped at C:\\Users\\Public\\NTUSER.dat —a path chosen to mimic a legitimate Windows registry hive file and avoid suspicion.],
+  [All stolen data is exfiltrated to a single command-and-control domain: app-metrics-cdn\[.\]com , which resolved to 104.21.14.89 (a Cloudflare address) during analysis. The domain name is crafted to look like a benign analytics or content delivery service, the kind of traffic that might not raise alarm bells in a corporate proxy log.],
+  [The exfiltration follows a structured four-step sequence over unencrypted HTTP. First, a multipart form-data POST to /api/upload transmits the collected file—screenshots, wallet data, cookie databases—totalling around 140 KB. A second POST to \/ api/upload-json sends a structured JSON payload of approximately 29 KB containing parsed credentials and cookies. A confirmation POST to /api/upload-complete signals that the theft is finished. The malware then enters a heartbeat loop, periodically checking in at /api/listener/heartbeat to maintain contact with the operator’s infrastructure.],
+  [All of this traffic uses a generic Mozilla/5.0 user-agent string, another attempt to blend in with ordinary web browsing.],
+  [Venom Stealer does not simply steal and leave. It takes significant steps to avoid being caught. The most notable evasion technique is the use of direct and indirect system calls, a method where the malware invokes Windows kernel functions directly rather than routing through the standard ntdll.dll library. Because most endpoint detection tools work by intercepting calls to that library, this technique effectively blinds them. This behaviour was flagged in both the parent and the dropped child process.],
+  [The malware also checks whether it is being debugged, queries CPU vendor and model information, reads the volume serial number of the system drive, creates guard pages in memory that can crash debuggers attempting to step through the code, and enumerates running processes. These are common techniques for detecting virtual machines and analysis environments. To frustrate automated analysis further, it incorporates sleep calls exceeding three minutes.],
+  [Impersonating security software to distribute malware is one of the oldest tricks in the book. A user who believes their system is infected is primed to act urgently, and a page that looks like a trusted antivirus vendor is exactly the kind of authority they will defer to. By staging a fake scan that “finds” threats and then offering a cure, the attacker exploits both fear and trust in a single interaction.],
+  [This is not an isolated tactic. In May 2025, DomainTools documented a separate campaign in which attackers built a convincing clone of Bitdefender’s website and used it to distribute Venom RAT alongside the StormKitty stealer. The playbook is nearly identical: impersonate a security brand, manufacture urgency, and deliver a Trojan dressed as protection. It suggests this is a repeatable template, not a one-off experiment.],
+  [Only download security software from official vendor websites. Avast’s legitimate site is avast.com. Do not trust search engine results, ads, or links in unsolicited emails.],
+  [If you interacted with a site like this or downloaded the file, act quickly:],
+  [Check if your system is infected . Look for the file v20svc.exe in C:\\Program Files\\Google\\Chrome\\Application\\ . If it exists, your system was likely compromised by this malware.],
+  [Run a full system scan immediately . Use a trusted, up-to-date anti-malware tool (such as Malwarebytes ) to detect and remove the infection. If the scan finds threats, follow the tool’s recommendations to quarantine or delete them.],
+  [Change your password right away. Start with email, banking, and any important accounts. Assume anything saved in your browser has been exposed.],
+  [Sign out of all active sessions . Log out of services like Google, Microsoft, Facebook, and Netflix. Stolen session cookies allow an attacker to bypass two-factor authentication entirely.],
+  [Protect cryptocurrency funds . If you use a desktop cryptocurrency wallet, transfer your funds to a new wallet generated on a clean device as soon as possible.],
+  [File hashes],
+  [SHA-256: ecbeaa13921dbad8028d29534c3878503f45a82a09cf27857fa4335bd1c9286d],
+  [app-metrics-cdn\[.\]com],
+  [Network indicators],
+  [104.21.14.89],
+  [C2 URLs],
+  [http:\/\/app-metrics-cdn\[.\]com/api/upload],
+  [http:\/\/app-metrics-cdn\[.\]com/api/upload-json],
+  [http:\/\/app-metrics-cdn\[.\]com/api/upload-complete],
+  [http:\/\/app-metrics-cdn\[.\]com/api/listener/heartbeat],
+  [We don’t just report on threats—we remove them],
+  [Cybersecurity risks should never spread beyond a headline. Keep threats off your devices by  downloading Malwarebytes today .],
+),
+  insert-map: (:),
+  word-count: 1366,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+}
+
+{
+  #standard-article(
+  title: [Oracle's Java 11 trap - Use OpenJDK instead!],
+  author: [Stephen Colebourne],
+  source-name: [Stephen Colebourne (Joda)],
+  images: (),
+  paragraphs: (
+  [TL: DR; Java is still available at zero-cost , you just need to stop using Oracle JDK and start using an OpenJDK build, such as this one or this one .],
+  [The trap],
+  [Java 11 has been released .
+It is a major release because it has long-term support (LTS).
+But Oracle have also set it up to be a trap (either deliberately or accidentally).],
+  [For 23 years, developers have downloaded the JDK from Oracle and used it for \$free.
+Type "JDK" into your favourite search engine, and the top link will be to an Oracle Java SE download page (I'm deliberately not providing a link).
+But that search and that link is now a trap.],
+  [Oracle JDK, the one all web searches take you to, is now commercial not \$free.],
+  [The key part of the terms is as follows:],
+  [The trap is as follows:],
+  [Download Oracle JDK (because that is what you've always done, and it is what the web-search tells you)],
+  [Use it in production (because you didn't realise the license changed)],
+  [Get a nasty phone call from Oracle's license enforcement teams demanding lots of money],
+  [In other words, Oracle can rely on inertia from Java developers to cause them to download the wrong (commercial) release of Java.
+Unless you read the text/warnings/legalese very carefully you might not even realise Oracle JDK is now commercial, and that you are therefore liable to pay Oracle for using this particular JDK in production.],
+  [(Update, 2018-10-03: Searches for Java 11 and JDK 11 now seem to be resolving to OpenJDK builds, not commercial ones!)],
+  [Is this trap malicious behaviour on the part of Oracle? Readers will have their own opinions. I do suggest bearing in mind that Oracle invests huge amounts in developing Java, so it is reasonable to have a commercial plan available for those that want it. And they do provide a \$free alternative completely valid for commercial use...],
+  [The solution],
+  [The solution is simple!],
+  [Use an OpenJDK build.],
+  [There are many different \$free OpenJDK builds of Java 11, so you need to choose the one that best fits your needs.],
+  [The Adoptium (formerly AdoptOpenJDK) build is \$free, GPL licensed (with Classpath exception so safe for commercial use), and a good choice as it is vendor-neutral and is intended to have 4+ years of security patches.],
+  [style="text-align: center;"\>
+ Download \$free Java from Adoptium here],
+  [The OpenJDK build from Oracle is \$free, GPL licensed (with Classpath exception so safe for commercial use), and provided alongside their commercial offering. It will only have 6 months of security patches, after that Oracle intends you to upgrade to Java 12 .],
+  [style="text-align: center;"\>
+ Download \$free Java from Oracle here],
+  [Many more OpenJDK builds are available, including ones available via your package manager.
+See this post for a list covering the wide variety of OpenJDK builds .
+And see my post on zero-cost Java for background info.],
+  [style="text-align: center;"\>
+ Download other OpenJDK builds here],
+  [And for a counterpoint, see Marcus' great summary of why the underlying changes here are actually good news.],
+  [Do NOT download or use the Oracle JDK unless you intend to pay for it.],
+  [For Java 11, download and use an OpenJDK build, from AdoptOpenJDK , Oracle or elsewhere.],
+  [(No comments on this post. There are plenty of other places to express opinions.)],
+),
+  insert-map: (:),
+  word-count: 585,
+  edited-for-length: false,
+  debug-mode: false,
+)
 
 }
 
@@ -963,88 +1704,50 @@ Feedback and questions welcome.],
 
 {
   #standard-article(
-  title: [Could your face change what you pay? NYC wants limits on biometric tracking],
+  title: [The March Madness scam playbook],
   author: [Malwarebytes Labs],
   source-name: [Malwarebytes Labs],
   images: (),
   paragraphs: (
-  [New York City lawmakers are pushing to ban private businesses from using biometric tools like voice and facial recognition software to track the public.],
-  [While the desire to use surveillance technology in stores to fight shoplifting is understandable, lawmakers and privacy advocates are worried that the data could be repurposed to profile customers.],
-  [The New York City Council has held a hearing over two bills that would ban city landlords and businesses from using facial recognition technology.],
-  [One proposal would make it illegal for any public place to use biometric recognition technology to identify or verify a customer.],
-  [The other would prohibit landlords from installing, activating, or using any biometric recognition technology that identifies tenants or their guests.],
-  [In this article we want to focus on some of the reasons behind these proposals.],
-  [For context, it’s good to know that in New York City, businesses that collect biometric data are already required to post standardized signs letting people know.],
-  [Let’s look at what happens when your face becomes your ID, and every movement in a store can be turned into another data point.],
-  [Collecting biometric data raises several objections. The most pressing ones are:],
-  [Unique but hard-to-erase identifiers. While you can reset a password, your face is harder to change. This means data leaks or abuse of facial templates, gait, or voiceprints can create permanent risks and be linked across databases.],
-  [Accuracy and bias concerns. Studies and civil liberties groups have found that facial recognition system can be error-prone and biased across different groups.],
-  [Lack of meaningful consent. In practice, supermarkets and landlords using facial recognition are giving people a mere theoretical choice. People can submit their biometrics or forego basic services. Critics argue that this undermines genuine consent.],
-  [Chilling effect. The feeling of constantly being watched everywhere you go is an uncomfortable one, and can discourage people from engaging in everyday, legitimate activities.],
-  [Surveillance pricing. This deserves some more explanation, which we’ll cover next.],
-  [It’s essentially how your face becomes an unerasable loyalty card.],
-  [Imagine you go into a local supermarket and notice that different people pay different prices for the same item. Would that feel fair?],
-  [Surveillance pricing refers to the use of detailed consumer data and behavioral signals to dynamically adjust prices.],
-  [Some characterize it as retailers using big‑data profiles to segment customers into increasingly narrow groups, down to the level of potentially charging each person the maximum the model thinks they are willing to pay.],
-  [We already see versions of this online. When you’re looking for airline tickets , for example, prices can change based on various signals. But it can be hard to notice, and companies tell us it’s not personal . But imagine that same logic quietly following you into the supermarket.],
-  [How this works online is relatively straightforward: websites track clicks, time on page, cart activity, and past spending to estimate how sensitive you are to price changes.],
-  [In physical stores it’s more complex, but not impossible. Data from in-store security systems that also collect biometrics and facial recognition can be combined with loyalty programs, apps, and in‑store Wi‑Fi analytics could, in theory, be combined to build similar profiles.],
-  [Electronic shelf labels (ESL) can already allow retailers to change shelf prices instantly across a store or specific sections.],
-  [This could lead to situations where wealthier or more brand-loyal customers are quietly charged more. Or vulnerable groups could be targeted with manipulative discounts for higher‑margin or even less healthy products.],
-  [Unfortunately, there’s no simple way to privacy‑hack your way out of a system that can turn your body into a tracking ID. The most effective fix is boring but powerful: laws with teeth, regulators that actually enforce them, and stores that don’t hide what they’re doing.],
-  [You could:],
-  [Avoid stores that openly advertise biometric scanning when there are alternatives.],
-  [Support local and national efforts to regulate biometric tracking and related practices, such as the proposals from the New York City Council.],
-  [We shouldn’t have to trade access to food, housing, or basic services for the ability to move through a city without our bodies being mined for data. If we don’t draw that line now, practices like surveillance pricing could quietly bake inequality and discrimination into something as mundane as buying groceries.],
-  [We don’t just report on privacy—we offer you the option to use it.],
-  [Privacy risks should never spread beyond a headline. Keep your online privacy yours by using Malwarebytes Privacy VPN .],
+  [March Madness is the annual men’s and women’s NCAA Division I basketball tournament, where 68 teams play in a single-elimination bracket for the US national championship.],
+  [But March Madness doesn’t just bring buzzer beaters and busted brackets. It also kicks off a short, intense season for scammers who know fans are distracted, emotional, and often in a hurry. In this post, we’ll walk through the main scam patterns that pop up around the NCAA men’s basketball tournament, so you can recognize them and shut them down before they score.],
+  [Large sporting events combine three components that scammers love: money, emotion, and urgency. Fans are hunting for last‑minute tickets, “can’t‑miss” bets, and ways to watch every game. They’re in a hurry, so their guard is down.],
+  [From an attacker’s perspective, March Madness is conveniently predictable. Every year in March, millions of people will Google the same terms, click the same types of ads, and respond to the same social media bait. Once you’ve seen the patterns, you’ll start recognizing them around other major events too.],
+  [Ticket scams are a staple of any big concert, playoff series, or tournament, and March Madness is no exception.],
+  [The playbook is simple: Scammers set up sites and listings that look like legitimate ticket resellers, then take your money and run.],
+  [Things to keep an eye on:],
+  [Screenshots or PDFs of barcodes won’t work when entry tickets are dynamic or tied to an app, but scammers still sell them. Victims will only find out at the gate when tickets are rejected.],
+  [Too good to be true last‑minute deals. Offers for prime seats at prices well below the official box office, often paired with urgency imposing tactics: “must pay in the next 10 minutes,” “three buyers waiting,” or “I’ll lose my deposit if you don’t decide now.”],
+  [Sellers push victims into private channels (text, WhatsApp, DMs) and insist on payment methods that are irreversible, like wire transfers, P2P apps, gift cards, or cryptocurrencies.],
+  [Legal sports betting has gone mainstream in the US, and March Madness is one of its biggest events. The huge number of casual bettors is a scammer’s dream. Their tactics can be divided into two main categories:],
+  [Cloned betting platforms. Attackers create sites and apps that mimic real sportsbooks, complete with copied logos, odds feeds, and login pages. Users deposit funds, place bets, and maybe even see “winnings” pile up in the interface—until they try to withdraw and are hit with fees, extra deposits, silent account bans, or witness a disappearing act.],
+  [“Guaranteed” bets. Social media fills up with self‑proclaimed experts selling access to VIP betting groups or “guaranteed” locks on tournament games. Victims pay for tips or are funneled into shady offshore sites that conveniently lose their money or demand more deposits to “unlock” withdrawals.],
+  [Not everyone has a cable subscription or an official streaming package, and scammers know many fans will look for free or cheap alternatives. That creates a fertile ground for malicious streaming offers. There are some common patterns to watch for:],
+  [Fake portals promising all the games live. Websites advertise free HD streams of every tournament game but require you to create an account and enter a credit card “for age verification” or a “free trial.” Once you submit details, charges appear or your card data is sold on.],
+  [Malicious players and extensions. Some sites will prompt you to download a special player, codec, or browser extension before you can watch. Instead of video, you get adware, browser hijackers, or a foothold for more serious malware.],
+  [Shortened URLs and reposted “official stream” links spread quickly around tip‑off time, often redirecting through multiple ad and tracking networks before landing on phishing or scam pages.],
+  [Like-farming and other social media clickbait promising free streams only to boost the account’s reputation for a next wave of scams.],
+  [Brackets are part of the culture: friends, families, and workplaces run pools where everyone predicts the tournament results. Scammers piggyback on that habit with phishing campaigns and fake prize draws. These usually show up in a few ways:],
+  [Official bracket challenge phishing. Emails or messages invite you to join a tournament bracket hosted by a big brand or media outlet, complete with logos and plausible wording. The link really leads to a credential‑harvesting page masquerading as your email, work SSO, or a well‑known sports site.],
+  [Fake “you won the pool” notifications. Messages claim you’ve won a prize in a bracket you never joined, and instruct you to click a link or provide personal and banking details to receive your payout.],
+  [All the data they can get for you to join. Some bracket or contest sites ask for far more information than necessary. They want your full address, date of birth, even ID numbers, all under the pretext of age verification or tax reporting. Once you provide them, the phishers will monetize the data.],
+  [Defending yourself against March Madness scams isn’t about never betting or never buying tickets. But you should treat the entire tournament as a high-risk period and tighten up your usual habits.],
+  [While the underlying technical tricks may vary, the social engineering themes are consistent:],
+  [Urgency . Time is limited, for some reason. The goal is to stop you thinking.],
+  [Scarcity . Limited seats, limited odds boosts, limited contest spots. All designed to trigger FOMO.],
+  [Too good to be true. Playing on hope and excitement.],
+  [Authority and familiarity. Scammers use team logos, broadcaster branding, or language that mimics your employer’s internal pool announcements to appear legitimate.],
+  [The defenses are also much the same:],
+  [Think before you click, act, or buy. If something looks suspicious, check it with Scam Guard .],
+  [Type official URLs into the browser or use trusted apps instead of following links from email, DMs, or social posts.],
+  [Use protected payment methods. Pay with credit cards or other methods that support chargebacks and dispute resolution.],
+  [Treat all unsolicited and unexpected messages as suspicious.],
+  [Report incidents. If you think you have been scammed, report it to your bank, the FTC and via BBB’s Scam Tracker .],
+  [We don’t just report on scams—we help detect them],
+  [Cybersecurity risks should never spread beyond a headline. If something looks dodgy to you, check if it’s a scam using Malwarebytes Scam Guard . Submit a screenshot, paste suspicious content, or share a link, text or phone number, and we’ll tell you if it’s a scam or legit. Available with Malwarebytes Premium Security for all your devices, and in the Malwarebytes app for iOS and Android .],
 ),
   insert-map: (:),
-  word-count: 757,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-}
-
-{
-  #standard-article(
-  title: [Ultrasonic investigations in shopping centres],
-  author: [Oona Räisänen],
-  source-name: [Oona Raisanen (windytan)],
-  images: (),
-  paragraphs: (
-  [I can't remember how I first came across these near-ultrasonic 'beacons' ubiquitous in PA systems. I might have been scrolling through the audio spectrum while waiting for the underground train; or it might have been the screeching 'tinnitus-like' sensation I would often get near the loudspeakers at a local shopping centre.],
-  [Whatever the case, I learned that they are called pilot tones. Many multi-loudspeaker PA systems (like the Zenitel VPA and Axys End of Line detection unit ) employ these roughly 20-kilohertz tones to continuously measure the system's health status: no pilot tone means no connection to a loudspeaker. It's usually set to a very high frequency, inaudible to humans, to avoid disturbing customers.],
-  [However, these tones are powerful and some people will still hear them, especially if the frequency gets below 20 kHz. There is one such system at an uncomfortable 19.595 kHz in my city; it's marked green in the graph above. I've heard of several other people that also hear the sound. I don't believe it to be a sonic weapon like The Mosquito ; those use even lower frequencies, down to 17 kHz. It's probably just a misconfiguration that was never fixed because the people working on it couldn't experientially confirm any issue with it.],
-  [Hidden modulation.],
-  [Pretty quickly it became apparent that this sound is almost never a pure tone. Some kind of modulation can always be seen wiggling around it in the spectrogram. Is it caused by the background music being played through the PA system? Is it carrying some information? Or is it something else altogether?],
-  [I've found at least one place where the tone appears to be amplitude modulated by the lowest frequencies in the music or commercials playing. It's probably a side effect of some kind of distortion.],
-  [Here's a spectrogram plot of this amplitude modulation around the strong pilot tone. It's colour-coded so that the purple colour is coming from the right microphone channel and green from the left. I'm not quite sure what the other purple horizontal stripes are here.],
-  [But this kind of modulation is rare. It's more common to see the tone change in response to things happening around you, like people moving about. More on that in the following.],
-  [Doppler-shifted backscatter.],
-  [Look what happens to the pilot tone when a train arrives at an underground station:],
-  [The wideband screech in the beginning is followed by this interesting tornado-shaped pattern that seems to have a lot of structure inside of it. It lasts for 15 seconds, until the train comes to a stop.],
-  [It's my belief that this is backscatter, also known as reverb, from the pilot tone reflecting off the slowing train and getting Doppler-shifted on the way. The pilot tone works as a continuous-wave bistatic sonar . Here, the left microphone (green) hears a mostly negative Doppler shift whereas the right channel (purple) hears a positive one, as the train is passing us from right to left. An anti-aliasing filter has darkened the higher frequencies as I wasn't yet aware I would find something interesting up here when recording.],
-  [A zoomed-in view of this cone reveals these repeating sweeps from positive to negative and red to green. Are they reflections off of some repeating structure in the passing train? The short horizontal bursts of constant tone could then be surfaces that are angled in a different direction than the rest of the train. Or perhaps this repetition reflects the regular placement of loudspeakers around the station?],
-  [Moving the microphone.],
-  [Another interesting experiment: I took the lift to another floor and recorded the ride from inside the lift. It wasn't the metal box type, the walls were made of glass, so I thought the pilot tone should be at least somewhat audible inside. Here's what I got during the 10-second ride. It's a little buried in noise.],
-  [Skater calculation.],
-  [For the next experiment I went into the underground car park of a shopping centre. I stood right under a PA loudspeaker and recorded a skateboarder passing by. A lot of interesting stuff is happening in this stereo spectrogram!],
-  [First of all, there seems to be two pilot tones, one at 19,595 Hz and a much quieter one at 19,500 Hz. Are there two different PA systems in the car park?],
-  [Second, there's a clear Doppler shift in the reverb. The frequency shift goes from positive to negative at the same moment that the skater passes us, seen as the wideband wheel noise changing color. It looks like the pattern is also 'filled in' with noise under this Doppler curve. What all information can we find out just by looking at this image?],
-  [If we ignore the fact that this is actually a bistatic doppler shift we could try and estimate the speed using a formula on Wikipedia . It was pretty chilly in the car park, I would say 15 °C. The speed of sound at 15 °C is 340 m/s. The maximum Doppler shift here seems to be 350 Hz. Plugging all these into the equation we get 11 km/h, which sounds like a realistic speed for a skater.],
-  [Why is it filled in? My thought is these are reflections off different points on our test subject. There's variation in the reflection angles and, consequently, magnitudes of the velocity component that causes frequency shifting, down to nearly zero Hz.],
-  [What now?],
-  [What would you do with this ultrasonic beep all around you? I have some free ideas:],
-  [Automated speed trap in the car park],
-  [Detect when the escalators stop working],
-  [Modulate it with a positioning code to prevent people getting lost in the maze of commerce],
-  [Use it to deliver ads somehow],
-  [Use it to find your way to the quietest spots in a shopping centre],
-),
-  insert-map: (:),
-  word-count: 975,
+  word-count: 1113,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -1054,15 +1757,19 @@ Feedback and questions welcome.],
 #article-row((
   [
     standard-article(
-  title: [Migrating a Live IoT Telemetry Backend],
-  author: [Khwaab Dave],
-  source-name: [Drivy / Getaround Tech],
+  title: [Product-market fit methodology for early-stage devtool companies],
+  author: [Irina Nazarova],
+  source-name: [Evil Martians Chronicles],
   images: (),
   paragraphs: (
-  [In order to provide a magical experience for our carsharing customers, Getaround vehicles are equipped with Connect® hardware that communicates with the Getaround network. That magic is powered by an entire IoT backend which we recently migrated. Some might call that magical. As our platform grew quickly, the initial infrastructure experienced stability issues and hindered our ability to scale or improve telemetry features. Migrating an internal service which powers the business is a bit tricky . A single mistake has the potential to shutdown business for hours if not days. With this in mind, we used an iterative and parallel approach to carefully migrate each feature from the old to the new.],
+  [Author: Irina Nazarova, CEO],
+  [Topics: Developer Community, Devtools startup advisory],
+  [How do you measure product-market fit for a developer tool? A PMF scoring model from Evil Martians—a product development consultancy for developer tools startups—built on data from 37 devtools companies across AI, infrastructure, and cybersecurity. Five metrics, real benchmarks, and a dual score that tells you whether to invest in product or go-to-market.],
+  [Everyone talks about product-market fit. But what does it actually mean for a developer tools startup? "Are we close?" "Getting closer?" "What should we focus on to get closer?" At Evil Martians, we've spent nearly 20 years working with devtools companies—from pre-seed through Series B and beyond—and we kept hearing these same questions. So we built a scoring model that actually answers them, grounded in data from 37 real companies, and put it right on our homepage.],
+  [Read more],
 ),
   insert-map: (:),
-  word-count: 112,
+  word-count: 142,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -1095,370 +1802,84 @@ Feedback and questions welcome.],
   ],
 ), ruled-indices: (1,))
 
-#article-row((
-  [
-    standard-article(
-  title: [Receiving RDS with the RTL-SDR],
-  author: [Oona Räisänen],
-  source-name: [Oona Raisanen (windytan)],
-  images: (),
-  paragraphs: (
-  [redsea is a command-line RDS decoder. I originally wrote it as a script to decode RDS from demultiplexed FM stereo sound . Later I've experimented with other ways to read the bits, and the latest addition is to support the RTL-SDR television receiver via the rtl\_fm tool.],
-  [Redsea is on GitHub . It has minimal dependencies (perl core modules, C standard library, rtl-sdr command-line tools) and has been tested to work on OSX and Linux with good enough FM reception. All test results, ideas, and pull requests are welcome.],
-  [What it says],
-  [The program prints out decoded RDS groups, one group per line. Each group will contain a PI code identifying the station plus varying other data, depending on the group type. The below picture explains the types of data you'll probably most often encounter.],
-  [A more verbose output can be enabled with the -l option (it contains the same information though). The -t option prefixes all groups with an ISO timestamp.],
-  [How it works],
-  [The DSP side of my program, named rtl\_redsea , is written in C99. It's a synchronous DBPSK receiver that first bandpass filters ① the multiplex signal. A PLL locks onto the 19 kHz stereo pilot tone; its third harmonic (57 kHz) is used to regenerate the RDS subcarrier. Dividing it by 16 also gives us the 1187.5 Hz clock frequency. Phase offsets of these derived signals are adjusted separately.],
-  [The local 57 kHz carrier is synchronized so that the constellation lines up on the real axis, so we can work on the real part only ②. Biphase symbols are multiplied by the square-wave clock and integrated ③ over a clock period, and then dumped into a delta decoder ④, which outputs the binary data as bit strings into stdout ⑤.],
-  [Signal quality is estimated a couple of times per second by counting the number of "suspicious" integrated biphase symbols, i.e. symbols with halves of opposite signs. The symbols are being sampled with a 180° phase shift as well, and we can switch to that stream if it seems to produce better results.],
-  [This low-throughput binary string data is then handled by redsea.pl via a pipe. Synchronization and error detection/correction happens there, as well as decoding. Group data is then displayed on the terminal, in semi-human-readable form.],
-  [My ultimate goal is to have a tool useful for FM DX, i.e. pretty good noise resistance.],
-),
-  insert-map: (:),
-  word-count: 430,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-  ],
-  [
-    standard-article(
-  title: [Visualizing hex dumps with Unicode emoji],
-  author: [Oona Räisänen],
-  source-name: [Oona Raisanen (windytan)],
-  images: (),
-  paragraphs: (
-  [Memorizing SSH public key fingerprints can be difficult; they're just long random numbers displayed in base 16. There are some terminal-friendly solutions, like OpenSSH's randomart. But because I use a Unicode terminal, I like to map the individual bytes into characters in the Miscellaneous Symbols and Pictographs block.],
-  [This Perl script does just that:],
-  [\@emoji = qw( 🌀 🌂 🌅 🌈 🌙 🌞 🌟 🌠 🌰 🌱 🌲 🌳 🌴 🌵 🌷 🌸
- 🌹 🌺 🌻 🌼 🌽 🌾 🌿 🍀 🍁 🍂 🍃 🍄 🍅 🍆 🍇 🍈
- 🍉 🍊 🍋 🍌 🍍 🍎 🍏 🍐 🍑 🍒 🍓 🍔 🍕 🍖 🍗 🍘
- 🍜 🍝 🍞 🍟 🍠 🍡 🍢 🍣 🍤 🍥 🍦 🍧 🍨 🍩 🍪 🍫
- 🍬 🍭 🍮 🍯 🍰 🍱 🍲 🍳 🍴 🍵 🍶 🍷 🍸 🍹 🍺 🍻
- 🍼 🎀 🎁 🎂 🎃 🎄 🎅 🎈 🎉 🎊 🎋 🎌 🎍 🎎 🎏 🎒
- 🎓 🎠 🎡 🎢 🎣 🎤 🎥 🎦 🎧 🎨 🎩 🎪 🎫 🎬 🎭 🎮
- 🎯 🎰 🎱 🎲 🎳 🎴 🎵 🎷 🎸 🎹 🎺 🎻 🎽 🎾 🎿 🏀
- 🏁 🏂 🏃 🏄 🏆 🏇 🏈 🏉 🏊 🐀 🐁 🐂 🐃 🐄 🐅 🐆
- 🐇 🐈 🐉 🐊 🐋 🐌 🐍 🐎 🐏 🐐 🐑 🐒 🐓 🐔 🐕 🐖
- 🐗 🐘 🐙 🐚 🐛 🐜 🐝 🐞 🐟 🐠 🐡 🐢 🐣 🐤 🐥 🐦
- 🐧 🐨 🐩 🐪 🐫 🐬 🐭 🐮 🐯 🐰 🐱 🐲 🐳 🐴 🐵 🐶
- 🐷 🐸 🐹 🐺 🐻 🐼 🐽 🐾 👀 👂 👃 👄 👅 👆 👇 👈
- 👉 👊 👋 👌 👍 👎 👏 👐 👑 👒 👓 👔 👕 👖 👗 👘
- 👙 👚 👛 👜 👝 👞 👟 👠 👡 👢 👣 👤 👥 👦 👧 👨
- 👩 👪 👮 👯 👺 👻 👼 👽 👾 👿 💀 💁 💂 💃 💄 💅 );],
-  [while (\<\>) {
- if (/[a-f0-9:]+:[a-f0-9:]+/) {
- (\$b, \$m, \$a) = (\$\`, \$&, \$');
- print \$b.join(" ", map { \$emoji[\$\_] } map hex, split /:/, \$m)." ".\$a;
- }
-}],
-  [What's happening here? First we create a 256-element array containing a hand-picked collection of emoji. Naturally, they're all assigned an index from 0x00 to 0xff . Then we'll loop through standard input and look for lines containing colon-separated hex bytes. Each hex value is replaced with an emoji from the array.],
-  [Here's the output:],
-  [The script could easily be extended to support output from other hex-formatted sources as well, such as xxd:],
-  [Some additional methods for visualizing hex dumps and key fingerprints, from the comments section:],
-  [PGP Strong Set Top 50 Fingerprint Art],
-  [VizHash GD - a visual hash],
-),
-  insert-map: (:),
-  word-count: 447,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-  ],
-), ruled-indices: (1,))
-
-#article-row((
-  [
-    standard-article(
-  title: [Commercial support for Joda and ThreeTen projects],
-  author: [Stephen Colebourne],
-  source-name: [Stephen Colebourne (Joda)],
-  images: (),
-  paragraphs: (
-  [The Java ecosystem is made up of many individuals, organisations and companies producing many different libraries. Some of the largest projects have long had support options where users of the project, typically corporates, can pay for an enhanced warranty, guaranteed approach to bug fixes and more.],
-  [Small projects, run by a single individual or a team, have been unable to offer this service, even if they wanted to. In addition, there is a more subtle problem. The amount a small project could charge is too low for a corporate to pay.],
-  [This sounds odd, but was brought home to me by this thread on twitter:],
-  [As the thread indicates, it is basically impossible for a corporate to gift money to a small project, and it is not viable for small projects to meaningfully offer a support contract.],
-  [The problem is that not paying the maintainers has negative consequences. Take the recent case where a developer handed his open source project on to another person, who then used it to steal bitcoins.],
-  [Pay the maintainers],
-  [I believe there is now a solution to the problem. Tidelift .],
-  [Tidelift offers companies a monthly subscription to support their open source usage. And they pay some of that income directly to the maintainers of the projects that the company uses.],
-  [Maintainers are expected to continue maintaining the project, follow a responsible disclosure process for security issues and check their licensing. Tidelift does not get to control the project roadmap, and maintainers do not have to provide an active helpdesk or consulting. See here for more details .],
-  [As such, I'm now offering commercial support for 
- Joda-Time ,
- Joda-Money ,
- Joda-Beans ,
- Joda-Convert ,
- Joda-Collect ,
- ThreeTen-Extra ,
- ThreeTen-backport via the Tidelift subscription .],
-  [This is an extra option for those that want to support the maintainers of open source but haven't been able to find a way to do so until now. The Joda and ThreeTen projects will always be free and available under a permissive licence, so there is no need to worry as a result of this.],
-  [Comments welcome.],
-),
-  insert-map: (:),
-  word-count: 357,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-  ],
-  [
-    standard-article(
-  title: [Tutorialkit.rb: interactive Ruby tutorials entirely in the browser],
-  author: [Travis Turner],
-  source-name: [Evil Martians Chronicles],
-  images: (),
-  paragraphs: (
-  [Authors: Albert Pazderin, Backend Engineer, Vladimir Dementyev, Principal Backend Engineer, and Travis Turner, Tech Editor],
-  [Topics: Open Source, Rails, Local-first, DX, WebAssembly, Ruby, JavaScript],
-  [The final report for Ruby Association Grant on TutorialKit.rb—a toolkit for building interactive Ruby and Rails tutorials that run entirely in the browser using WebAssembly and WebContainers. Featuring a full-featured installer, agent-friendly development workflow, deployment pipelines, HTTP support, and real-world examples.],
-  [TutorialKit.rb, a toolkit for building interactive Ruby and Rails tutorials that run entirely in the browser, has reached the release candidate stage and is ready for general use. In this post, we want to quickly walk through the final DX for building tutorials, share some real-world examples, and the research behind the project.],
-  [Read more],
-),
-  insert-map: (:),
-  word-count: 120,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-  ],
-), ruled-indices: (1,))
-#pull-quote([And they pay some of that income directly to the maintainers of the projects that the company uses.], [Stephen Colebourne])
-
-
-#article-row((
-  [
-    standard-article(
-  title: [Upgrading to Eclipse Photon],
-  author: [Stephen Colebourne],
-  source-name: [Stephen Colebourne (Joda)],
-  images: (),
-  paragraphs: (
-  [I use Eclipse as my Java IDE. And the new release, Photon is now out.],
-  [Photon is a large release, with lots of new features .
-The most important is the separation of the test and main classpaths, which has always been a point of pain in the IDE.
-Now it just works as you would expect, and the Maven plugin M2E correctly sets it up:],
-  [Note the darker colour of the src/test classpath elements.],
-  [Support for Java 9 (modules) and Java 10 (local variable type inferenece) is also present, ready for Java 11 in September.
-You can also use JUnit 5 .
-It even tries to help you reach 100% code coverage !],
-  [All in all, I feel this is a release where upgrading will make a difference to everyday coding.],
-  [I've upgraded my own Eclipse installations, and it all went pretty well.
-You can either start from a clean install (I prefer the basic IDE without plugins so I can choose which ones to add). Or you can add Photon as an update site, and let Eclipse update itself .],
-  [One problem I had was the plugin that connects Maven (M2E) to Checkstyle (Eclipse-CS), known as m2e-code-quality . Fortunately, the team at GEBIT have been maintaining a fork of the original plugin. However, they don't release it in binary form. As such, I had to build the plugin locally (no big deal - its a simple build).],
-  [To simplify the process however, I've created a repository on GitHub with my Eclipse setup files, and a binary zip of the GEBIT forked plugin.],
-  [To use just the m2e-code-quality GEBIT fork, download the zip file and add it as an update site. Here are some instructions .],
-  [Thank you Eclipse team for a great release!],
-  [PS. I won't be answering "how to" questions about upgrading Eclipse or the eclipse-setup repository. There are plenty of other places to ask questions, such as Stack Overflow or the Eclipse Forums .],
-),
-  insert-map: (:),
-  word-count: 333,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-  ],
-  [
-    standard-article(
-  title: [Java 9 has six weeks to live],
-  author: [Stephen Colebourne],
-  source-name: [Stephen Colebourne (Joda)],
-  images: (),
-  paragraphs: (
-  [Java 9 is obsolete in just six weeks (20th March 2018).
-What? You haven't upgraded yet?
-Well, Java 10 is only going to last six months before it is obsolete too.],
-  [Update 2018-03-20: Java 10 is released . Java 9 is obsolete.],
-  [Release train impact],
-  [The new Java release train means that there will be a new release of Java every six months.
-And when the next release comes out, the previous release is obsolete.],
-  [What do I mean by obsolete?],
-  [In practical terms it means that there are no more security updates from Oracle .
-(Theoretically, the OpenJDK community could release security updates, but there is no sign of this yet).
-And since you don't want to run your software without the latest security updates, you are expected to upgrade to Java 10 as soon as it is released.],
-  [As a user of Java, here are three possible ways to approach the release train:],
-  [Stay on Java 8, the current LTS (long term support) release, until the next LTS release occurs (Java 11)],
-  [Move from Java 9 to Java 10 to Java 11, making sure you update rapidly to get the security updates],
-  [Stay on Java 9 (or Java 10) and don't worry about security updates],
-  [If you have already moved to Java 9, you have effectively committed to option 2 or 3. If you care about security updates, you need to be prepared to switch to Java 10 shortly after it is release on 20th March. To do this, you probably should be testing with a Java 10 pre-release now.
-If you find that to be a challenge, you have to stop caring about security, or consider going back to Java 8 LTS.],
-  [However you look at it, being on the release train is a big commitment.],
-  [Will your dependencies work on the next version?],
-  [Will your IDE be ready?],
-  [Will your build tool (Maven, Gradle etc.) be ready?],
-  [Will your other tools (spotbugs, checkstyle, PMD etc.) be ready?],
-  [How fast are you going to be able to update when the release you are on is obsolete?],
-  [Lots to consider. And given the number of external tools/dependencies to consider, I think its fair to say that its a bold choice to use Java 9 or 10.],
-  [With a release every six months, it is important to decide on an approach to the release train.
-If you want to upgrade every six months, great! But you'll need to test pre-releases of Java with your whole toolchain in advance of the release to ensure you don't get stuck on an unpatched obsolete release of Java.],
-),
-  insert-map: (:),
-  word-count: 436,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-  ],
-), ruled-indices: (1,))
-#pull-quote([If you care about security updates, you need to be prepared to switch to Java 10 shortly after it is release on 20th March.], [Stephen Colebourne])
-
-
-{
-  #standard-article(
-  title: [How to Favicon in 2026: Three files that fit most needs],
-  author: [Andrey Sitnik],
-  source-name: [Evil Martians Chronicles],
-  images: (),
-  paragraphs: (
-  [Author: Andrey Sitnik, Author of PostCSS and Autoprefixer, Principal Frontend Engineer],
-  [Topic: CSS],
-  [Prefer SVG over PNG, trust browsers to downscale, drop obscure formats—the ultimate, exhaustive guide to favicons for modern web. Includes steps for static HTML and Webpack.],
-  [It's time to rethink how we cook a set of favicons for modern browsers and stop the icon generator madness. Frontend developers currently have to deal with 20+ static PNG files just to display a tiny website logo in a browser tab or on a touchscreen. Read on to see how to take a smarter approach and adopt a minimal set of icons that fits most modern needs.],
-  [Read more],
-),
-  insert-map: (:),
-  word-count: 109,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-}
-
 {
   #section-label([Analysis])
   #standard-article(
-  title: [Potentially Coming to a Browser :near() You],
+  title: [What’s !important \#6: :heading, border-shape, Truncating Text From the Middle, and More],
   author: [Daniel Schwarz],
   source-name: [CSS-Tricks],
   images: (),
   paragraphs: (
-  [Just before we wrapped up 2025, I saw this proposal for :near() , a pseudo-class that would match if the pointer were to go near the element. By how much? Well, that would depend on the value of the argument provided. Thomas Walichiewicz , who proposed :near() , suggests that it works like this:],
-  [button:near(3rem) {
- /\* Pointer is within 3rem of the button \*/
+  [Despite what’s been a sleepy couple of weeks for new Web Platform Features, we have an issue of What’s !important that’s prrrretty jam-packed . The web community had a lot to say, it seems, so fasten your seatbelts!],
+  [Peter Kröner shared an interesting fact about \@keyframes animations — that they can be strings:],
+  [\@keyframes "\@animation" {
+ /\* ... \*/
 }],
-  [For those wondering, yes, we can use the Pythagorean theorem to measure the straight-line distance between two elements using JavaScript (“Euclidean distance” is the mathematical term), so I imagine that that’s what would be used behind the scenes here. I have some use cases to share with you, but the demos will only be simulating :near() since it’s obviously not supported in any web browser. Shall we dig in?],
-  [Without question, :near() could be used for a near-infinite (sorry) number of visual effects:],
-  [div {
- /\* Div is wow \*/],
-  [&:near(3rem) {
- /\* Div be wowzer \*/
- }],
-  [&:near(1rem) {
- /\* Div be woahhhh \*/
- }
+  [\#animate-this {
+ animation: "\@animation";
 }],
-  [To reduce visual clutter, you might want to dim certain components until users are near them. :near() could be more effective than :hover in this scenario because users could have trouble interacting with the components if they have limited visibility, and so being able to trigger them “earlier” could compensate for that to some degree. However, we have to ensure accessible color contrast, so I’m not sure how useful :near() can be in this situation.],
-  [button:not(:near(3rem)) {
- opacity: 70%; /\* Or...something \*/
+  [lang="en"\>Yo dawg, time for a \#CSS fun fact: keyframe names can be strings. Why? Well, in case you want your keyframes to be named “\@keyframes,” obviously!],
+  [\#webdev],
+  [\[image or embed\]],
+  [— Peter Kröner ( \@sirpepe.bsky.social ) Feb 18, 2026 at 10:33],
+  [I don’t know why you’d want to do that, but it’s certainly an interesting thing to learn about \@keyframes after 11 years of cross-browser support!],
+  [Another hidden trick, this one from Temani Afif , has revealed that we can replace the colon in a style query with an equals symbol . Temani does a great job at explaining the difference, but here’s a quick code snippet to sum it up:],
+  [. Jay-Z {
+ --Problems: calc(98 + 1);],
+  [/\* Evaluates as calc(98 + 1), color is blueivy \*/
+ color: if(style(--Problems: 99): red; else: blueivy);],
+  [/\* Evaluates as 99, color is red \*/
+ color: if(style(--Problems = 99): red; else: blueivy);
 }],
-  [In addition to dimming components, we could also hide components (as long as they’re not important, that is). This, I think, is a better use case for :near() , as we wouldn’t have to worry about color contrast, although it does come with a different accessibility challenge.],
-  [So, you know when you hover over an image and a share button appears? Makes sense, right? Because we don’t want the image to be obscured, so it’s hidden initially. It’s not optimal in terms of UX, but it’s nonetheless a pattern that people are familiar with, like on Pinterest for example.],
-  [And here’s how :near() can enhance it. People know or suspect that the button’s there, right? Probably in the bottom-right corner? They know roughly where to click, but don’t know exactly where, as they don’t know the size or offset of the button. Well, showing the button when :near() means that they don’t have to hover so accurately to make the button appear. This scenario is pretty similar to the one above, perhaps with different reasons for the reduced visibility.],
-  [However, we need this button to be accessible (hoverable, focusable, and find-in-pageable). For that to happen, we can’t use:],
-  [display: hidden (not hoverable, focusable, or find-in-pageable)],
-  [visibility: hidden (also not hoverable, focusable, or find-in-page-able)],
-  [opacity: 0 (there’s no way to show it once it’s been found by find-in-page)],
-  [That leaves us with content-visibility: hidden , but the problem with hiding content using content-visibility: hidden (or elements with display: none ) is that they literally disappear, and you can’t be near what simply isn’t there. This means that we need to reserve space for it, even if we don’t know how much space.],
-  [Now, :near() isn’t supported in any web browser, so in the demo below, I’ve wrapped the button in a container with 3rem of padding , and while that container is being :hover ed, the button is shown. This increases the size of the hoverable region (which I’ve made red, so that you can see it) instead of the actual button. It essentially simulates button:near(3rem) .],
-  [But how do we hide something while reserving the space?],
-  [First, we declare contain-intrinsic-size: auto none on the hidden target. This ensures that it remains a specific size even as something changes (in this case, even as its content is hidden). You can specify a for either value, but in this case auto means whatever the rendered size was. none , which is a required fallback value, can also be a , but we don’t need that at all, hence “ none .”],
-  [The problem is, the rendered size “was” nothing, because the button is content-visibility: hidden , remember? That means we need to render it if only for a single millisecond, and that’s what this animation does:],
-  [\@keyframes show-content {
- from {
- content-visibility: visible;
- }
+  [In short, = evaluates --Problems differently to : , even though Jay-Z undoubtably has 99 of them (he said so himself).],
+  [David Bushell demonstrated how to create s declaratively using invoker commands , a useful feature that allows us to skip some J’Script in favor of HTML, and works in all web browsers as of recently.],
+  [Also, thanks to an inquisitive question from Ana Tudor, the article spawned a spin-off about the minimum number of styles needed for a visually-hidden utility class . Is it still seven?],
+  [Maybe not…],
+  [Wes Bos shared a clever trick for truncating text from the middle using only CSS:],
+  [lang="en"\>Someone on reddit posted a demo where CSS truncates text from the middle.],
+  [They didn't post the code, so here is my shot at it with Flexbox],
+  [\[image or embed\]],
+  [— Wes Bos ( \@wesbos.com ) Feb 9, 2026 at 17:31],
+  [Donnie D’Amato attempted a more-native solution using ::highlight() , but ::highlight() has some limitations, unfortunately. As Henry Wilkinson mentioned , Hazel Bachrach’s 2019 call for a native solution is still an open ticket, so fingers crossed!],
+  [Theo Soti demonstrated how to manage color variables with relative color syntax . While not a new feature or concept, it’s frankly the best and most comprehensive walkthrough I’ve ever read that addresses these complexities.],
+  [In a similar article for Piccalilli, Richard Rutter comprehensively showed us how to customize lists , although this one has some nuggets of what I can only assume is modern CSS. What’s symbols() ? What’s \@counter-style and extends ? Richard walks you through everything .],
+  [Source: Piccalilli .],
+  [Can’t get enough on counters? Juan Diego put together a comprehensive guide right here on CSS-Tricks .],
+  [Safari Technology Preview 237 recently began trialing :heading \/ :heading() , as Stuart Robson explains . The follow-up is even better though, as it shows us how pow() can be used to write cleaner typescale logic, although I ultimately settled on the old-school – elements with a simpler implementation of :heading and no sibling-index() :],
+  [:root {
+ --font-size-base: 16px;
+ --font-size-scale: 1.5;
 }],
-  [button {
- /\* Hide it by default \*/
- &:not([hidden="until-found"]) {
- content-visibility: hidden;
- }],
-  [/\* But make it visible for 1ms \*/
- animation: 1ms show-content;],
-  [/\* Save the size while visible \*/
- contain-intrinsic-size: auto none;
+  [:heading {
+ /\* Other heading styles \*/
 }],
-  [Note that if the button has the hidden=until-found attribute-value, which is what makes it focusable and find-in-page-able, content-visibility: hidden isn’t declared because hidden=until-found does that automatically. Either way, the animation declares content-visibility: visible for 1ms while contain-intrinsic-size: auto none captures its size and reserves the space, enabling us to hover it even when it’s not visible.],
-  [Now that you understand how it works, here’s the full code (again, simulated, because :near() isn’t supported yet):],
-  [\@keyframes show-content {
- from {
- content-visibility: visible;
- }
+  [/\* Assuming only base/h3/h2/h1 \*/],
+  [body {
+ font-size: var(--font-size-base);
 }],
-  [\#simulate-near {
- /\* Instead of :near(3rem) \*/
- padding: 3rem;],
-  [button {
- /\* Unset any styles \*/
- border: unset;
- background: unset;],
-  [/\* But include size-related styles \*/
- padding: 1rem;],
-  [/\* Hide it by default \*/
- &:not([hidden="until-found"]) {
- content-visibility: hidden;
- }],
-  [/\* But make it visible for 1ms \*/
- animation: 1ms show-content;],
-  [/\* Save the size while visible \*/
- contain-intrinsic-size: auto none;
- }],
-  [&:where(:hover, :has(:focus-visible)) button {
- color: white;
- background: black;
- content-visibility: visible;
- }
+  [h3 {
+ font-size: calc(var(--font-size-base) \* var(--font-size-scale));
 }],
-  [If you’re wondering why we’re unsetting border and background , it’s because content-visibility: hidden only hides the content, not the element itself, but we’ve included padding here because that affects the size that we’re trying to render n’ remember. After that we simply apply those styles as well as content-visibility: visible to the button when the the wrapper is :hover ed or :has(:focus-visible) .],
-  [And here’s the same thing but with the unsupported :near() :],
-  [\@keyframes show-content {
- from {
- content-visibility: visible;
- }
+  [h2 {
+ font-size: calc(var(--font-size-base) \* pow(var(--font-size-scale), 2));
 }],
-  [button {
- /\* Unset any styles \*/
- border: unset;
- background: unset;],
-  [/\* But include size-related styles \*/
- padding: 1rem;],
-  [/\* Hide it by default \*/
- &:not([hidden="until-found"]) {
- content-visibility: hidden;
- }],
-  [/\* But make it visible for 1ms \*/
- animation: 1ms show-content;],
-  [/\* Save the size while visible \*/
- contain-intrinsic-size: auto none;],
-  [&:where(:near(3rem), :hover, :focus-visible) {
- color: white;
- background: black;
- content-visibility: visible;
- }
+  [h1 {
+ font-size: calc(var(--font-size-base) \* pow(var(--font-size-scale), 3));
 }],
-  [In short, :near() enables us to do what the simulated technique does but without the extra markup and creative selectors, and if there are any accessibility needs, we have that animation / contain-intrinsic-size trick.],
-  [I’m not suggesting that there’s a way to prefetch/prerender using :near() or even that the functionality of :near() should be extended, but rather that the Speculation Rules API could leverage its underlying functionality. The Speculation Rules API already uses mousedown , touchstart , pointer direction and velocity, viewport presence, and scroll pauses as signals to begin prefetching/prerendering the linked resource, so why not when near?],
-  [In fact, I think “near” as a concept could be utilized for a lot more than :near() , and should be considering that custom hit-testing using pointermove has a high performance cost and implementation complexity (as Thomas points out). Let’s look at another example.],
-  [When interacting with hover-triggered overlays, there’s risk of accidentally moving the pointer away from the trigger or target. The Interest Invoker API , which facilitates hover-triggered interactions, uses the interest-show-delay and interest-hide-delay CSS properties to prevent accidental activations and deactivations respectively, but from a user experience perspective, anything involving delays and time-sensitivity just isn’t fun.],
-  [A couple of examples:],
-  [The pointer falling into the gap between the interest trigger (e.g., a link or button) and interest target (e.g., a popover)],
-  [The pointer overshooting the bounds of the interest target when trying to interact with elements near the edge of it],
-  [Therefore, instead of (or in addition to) show and hide delays, the Interest Invoker API could leverage the concept of “near” to ensure that overlays don’t disappear due to mis-interaction. This could be configurable with a CSS property (e.g., near-radius: 3rem or just near: 3rem ), which unlike :near() would invoke functionality ( interest and loseinterest JavaScript events, in this case).],
-  [Another use-case, suggested by Thomas in his proposal: showing a “drag to reorder” hint while hovering near a draggable element. This is a terrific use-case because showing tooltips even just a few milliseconds earlier would likely reduce task time.],
-  [Unfortunately, you’d have a hard time (I think?) simulating these ones with valid HTML, mostly because s and s can only contain certain elements.],
-  [A potential downside is that :near() could lead to a significant increase in developers lazily hiding things to reduce visual clutter in instances where better UI design would’ve been the right call, or increasing visual clutter (with unnecessary icons, for example) because it can be hidden more conditionally.],
-  [Other potential abuses include heatmapping, fingerprinting, and aggressive advertising patterns. It could also be used in ways that would negatively impact performance. Thomas’s proposal does a wonderful job of pointing out these abuses and the ways in which :near() could be implemented to thwart them.],
-  [:near() shouldn’t imply :hover or :focus / :focus-visible . I think that much is obvious when you really think about it, but I can still see the lines getting crossed. A good question to ask before using :near() is: “Are we being preemptive or presumptive?” Preemptive can be good but presumptive would always be bad, as we never want users to think that they’re hovering or focusing on an interactive element when they’re not (or not yet). This is mentioned in various parts of the Web Content Accessibility Guidelines, but most notably in Success Criterion 2.4.7: Focus Visible (Level AA) .],
-  [Similarly, Success Criterion 2.5.8: Target Size (Level AA) states that interactive elements smaller than 24ｘ24px must have extra spacing around them, calculated as 24px - target width / 24px - target height , but whether or not the value of :near() would factor into that is a bit ambiguous.],
-  [There’s lots to think about here, but ultimately I’d love to see this implemented as Thomas has proposed it. Having said that, the WCAG guidance must be rock-solid before any implementation begins, especially considering that we can already accomplish what :near() would do (albeit with more markup and maybe some CSS trickery).],
-  [And again, I think we should entertain the idea of “near” as a concept, where the underlying functionality could be leveraged by the Speculation Rules API and Interest Invoker API (the latter with a CSS property like near-radius ).],
-  [Your thoughts, please!],
-  [Potentially Coming to a Browser :near() You originally published on CSS-Tricks , which is part of the DigitalOcean family. You should get the newsletter .],
+  [Speaking of new features, border-shape came as a surprise to me considering that we already have — or will have — corner-shape . However, border-shape is different, as Una explains . It addresses the issues with borders (because it is the border), allows for more shapes and even the shape() function , and overall it works differently behind the scenes.],
+  [Source: Una Kravets .],
+  [It’s time to start using all of that modern CSS, and that’s exactly what modern.css wants to help you do. All of those awesome features that weren’t supported when you first read about them, that you forgot about? Or the ones that you missed or skipped completely? Well, modern.css has 75 code snippets and counting, and all you have to do is copy ‘em.],
+  [And the commenters? They have some too!],
+  [Honestly, Kevin is the only web dev talker that I actually follow on YouTube, and he’s so close to a million followers right now, so make sure to hit ‘ol K-Po’s “Subscribe” button.],
+  [Actually, you didn’t miss that much! Firefox 148 released the shape() function , which was being held captive by a flag, but is now a baseline feature. Safari Technology Preview 237 became the first to trial :heading . Those are all we’ve seen from our beloved browsers in the last couple of weeks (not counting the usual flurry of smaller updates, of course).],
+  [That being said, Chrome , Safari , and Firefox announced their targets for Interop 2026 , revealing which Web Platform Features they intend to make consistent across all web browsers this year, which more than makes up for the lack of shiny features this week.],
+  [Also coming up (but testable in Chrome Canary now, just like border-shape ) is the scrolled keyword for scroll-state container queries. Bramus talks about scrolled scroll-state queries here .],
+  [Remember, if you don’t want to miss anything, you can catch these Quick Hits as the news breaks in the sidebar of css-tricks.com .],
+  [See you in a fortnight!],
+  [What’s !important \#6: :heading, border-shape, Truncating Text From the Middle, and More originally published on CSS-Tricks , which is part of the DigitalOcean family. You should get the newsletter .],
 ),
   insert-map: (:),
-  word-count: 1838,
+  word-count: 1053,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -1467,57 +1888,177 @@ If you want to upgrade every six months, great! But you'll need to test pre-rele
 
 {
   #standard-article(
-  title: [2022 Intern Projects],
+  title: [Leveraging the Plain Old Python Function],
   author: [Stitch Fix Multithreaded],
   source-name: [Stitch Fix Multithreaded],
   images: (),
   paragraphs: (
-  [Earlier this year, we had four fantastic interns join our Algorithms team for 3 months to learn how we harness data science in our work at Stitch Fix. These four interns hail from across the country and spent their time exploring a specific project and advancing their skills in their unique interest areas. In their own words below, they’ve showcased each of their own projects and the meaningful insights they were able to uncover in their short time with us.],
-  [id="optimizing-inventory-allocation-for-client-facing-search"\>Optimizing inventory allocation for client-facing search],
-  [style="font-size: 1rem;"\> Maria Olaru, PhD candidate in Computational Neuroscience at University of California - San Francisco],
-  [In an effort to expand beyond its core business of Fixes, a service where stylists select five personalized items and send them straight to clients’ doors, Stitch Fix launched Freestyle. Freestyle is a personalized and instantly shoppable feed of items that clients can directly buy outside of their Fix. Within Freestyle, Stitch Fix recently launched a Search feature, allowing clients to directly query personalized items. I spent my time at Stitch Fix investigating how to optimize Stitch Fix’s existing inventory allocation to better serve customers who use Search within Freestyle to search for products. For my project, I chose inventory-related metrics to explore, collected the corresponding data, and compared these metrics to client satisfaction.],
-  [I chose inventory-related metrics that I could compare to client satisfaction: personalization and relevance. Personalization captures how well our items reflect clients’ individual style, while relevance captures accurately our items reflect what a client asked for. With Fix orders, we view personalization as a top metric that predicts client purchases. However, Freestyle differs from Fix in a crucial manner: clients using Fix are not asking for a specific item, whereas clients using Search within Freestyle know what they want, and are explicitly looking for it.],
-  [Next, I collected data for these metrics. To explore personalization and relevance in our archive of search queries, I built a search pipeline component that allows us to capture these metrics. However, relevance metrics are normalized within a single query, not across multiple queries. To compare relevance metrics across queries in a way that takes inventory fluctuations into account, I normalized the relevance of each query with respect to inventory availability.],
-  [Now that I had all the data I needed, I compared these metrics to client satisfaction. Using the observationally collected data, I found differing trends in how normalized relevance and personalization relate to client satisfaction. That being said, my findings may be confounded by when the customer searched for an item, or what the customer asked for. To investigate whether allocating existing inventory to optimize for these trends directly increases client satisfaction, stakeholders across the Algorithms and Product organizations are collaborating on an experimental proposal – stay tuned to see what they find!],
-  [This figure is illustrative. Observing how inventory metrics may relate to client satisfaction informs experimental intervention strategies.],
-  [id="network-flow-optimization-for-freestyle-client-product-matching"\>Network Flow Optimization for Freestyle Client-Product Matching],
-  [style="font-size: 1rem;"\> Eric O’Neill PhD student in Chemical and Biological Engineering at Princeton University],
-  [I had the opportunity to work with the very talented Global Optimization team on a project related to inventory targeting for Freestyle. To make sure our items are seen by the people to whom they matter the most, and to provide an excellent personalized shopping experience, we solve a variation of the classic assignment problem. Solving the assignment problem seeks to make an optimal set of decisions that assign products to clients based on their corresponding ‘match score’: a cutting-edge internal prediction of how likely a client is to purchase an item if we show it to them. The assignment decisions are also subject to constraints on the number of items each client sees and inventory constraints to ensure we don’t over-assign items.],
-  [We can formulate and solve the assignment problem as a standard integer program (IP):],
-  [Where x c,s are our assignment variables, ms c,s is the ‘match score’, Q s is the inventory, and N is our bound on the number of items to show a client. Indices c and s refer to clients and items respectively. Our objective is to maximize the expected sales. Generally, the solution time to solve an arbitrary IP using a standard solver like Gurobi/CPLEX scales poorly with the size of the problem. Solving the above inventory targeting problem using traditional solvers with the amount of clients and merchandise that Stitch Fix deals with quickly becomes computationally intractable.],
-  [Network flow algorithms to the rescue!],
-  [Special cases of the assignment problem can be re-framed and solved using polynomial time network flow algorithms such as the well known push-relabel algorithm [1]. To do this, we re-frame our problem as a directed graph G(V,A) with vertices V and arcs A and search for a ‘flow’ (an assignment of real values to the arcs) from the clients to the products that represent our assignment decisions.],
-  [I spent the bulk of my internship researching and implementing a generalized network flow algorithm called the Wallacher-Style GAP Canceling algorithm [2] that can handle the unique inventory constraint above that bounds expected sales by the product inventory. This constraint disqualifies some of the more popular maximum-flow algorithms because we are not able to work with integers in our graph representation. In addition, domain knowledge allowed me to develop problem-specific heuristics and warm start procedures that further improved the performance of the algorithm for our application. In the future, the fast solver for the Freestyle assignment problem that I developed will enable us to re-solve the problem as the inventory assortment changes to provide a better client experience and make sure every client sees the best in stock merchandise available.],
-  [References:
-[1] A V Goldberg and R E Tarjan. 1986. A new approach to the maximum flow problem. In Proceedings of the eighteenth annual ACM symposium on Theory of computing (STOC ‘86). Association for Computing Machinery, New York, NY, USA, 136–146. https:\/\/doi.org/10.1145/12130.12144
-[2] Restrepo, M., Williamson, D. P. A simple GAP-canceling algorithm for the generalized maximum flow problem. Math. Program. 118, 47–74 (2009). https:\/\/doi.org/10.1007/s10107-007-0183-8],
-  [id="style-level-true-demand-forecasting"\>Style-level True Demand Forecasting],
-  [style="font-size: 1rem;"\> Pau Korpajarasoontorn, MS Analytics student at Georgia Institute of Technology],
-  [Stitch Fix relies heavily on algorithms to recommend styles that best match client’s preferences. However, the algorithms can’t perform at their best without proper inventory depth of each style. I worked with the Merch Algorithms team to build a style-level true demand forecasting model to assist their inventory purchase decisions.],
-  [Sales can only inform the censored demand because it is capped by inventory, but (true) demand isn’t. If we have experienced stockout and only rely on historical sales data for future inventory purchase decisions, we will be underestimating the true demand and suffer from lost sales. This is why we attempt to forecast demand instead of sales.],
-  [We divided this problem into two parts - demand imputation and demand forecasting. There is no ground truth to the demand imputation problem since we do not know the actual demand. We thus cannot apply the traditional supervised learning approach. We used a regression model instead to infer the true demand. Our regression model first estimates the impact of availability on censored demand controlling for seasonality. We then use the model to estimate the increase in demand had we maintained the target availability (the counterfactual). As shown in figure 1, the model works as desired - it imputes more when the style is within its selling season and the inventory availability is low.],
-  [Figure 1. The top and middle plots illustrate availability and seasonality of a style. The bottom plot illustrate the actual and imputed demand of the style. Blue area indicates periods of low availability in high-selling season, and red area indicates a period of low availability in low-selling season. The imputed demand is much higher than actual demand in blue areas while the model doesn’t increase demand much in red area.],
-  [For demand forecasting, we adopted N-BEATS [1], a deep neural network architecture for interpretable time series forecasting. We use the imputed demand of all styles from the previous part as inputs to train the model. The model is trained to take 52-week lookback data and forecast 26-week demand. It beats the baseline forecasts by 18% and 8% on Mean Absolute Squared Error and Symmetric Mean Absolute Percentage Error, respectively. 
-This project is an early attempt to explore true demand forecasting with state-of-the-art methods which also provides a framework for future improvement.],
-  [References:
-[1] Boris N. Oreshkin et al. “N-BEATS: Neural basis expansion analysis for in-terpretable time series forecasting”. In: International Conference on Learning Representations. 2020. 
-url: https:\/\/openreview.net/forum?id=r1ecqn4YwB],
-  [id="predict-the-look--sfix--trend-level-analysis"\>Predict the Look \@ SFIX – Trend-Level Analysis],
-  [style="font-size: 1rem;"\> Anna Dai, Master Student in Interdisciplinary Data Science at Duke University],
-  [Curating an inventory as great as our client base at scale is at the core of Stitch Fix’ success. Our Merchandising team work tirelessly to purchase and design the right pieces for our clients each season by referencing sophisticated algorithms built upon historical data as well as external research on fashion trends. As an intern on the Merchandising Algorithms team, I spent my time at Stitch Fix investigating how we can instead incorporate external fashion trends into our algorithms to better inform inventory purchasing decisions ahead of time and how viable that might be to implement.],
-  [For the scope of my internship, I had to first narrow down my goals. After speaking with various internal teams and external vendors to understand what trends data are currently being leveraged manually, I identified a number of viable data sources in both text-form and image-form and ultimately decided to pursue a natural language processing (NLP) approach due to the quality of data I could access. From here, I aimed to build a steel-thread attempt at quantifying these trend terms as measurable metrics of Stitch Fix inventory in order to facilitate further analysis. In other words, I wanted to answer: “To what extent is trending at Stitch Fix?”.],
-  [To begin, I pre-processed my data to extract a dataset of 758 unique terms related to women’s fashion in 2017 through 2022 as well as their trend predictions (i.e. “emerging”, “peaking”, “safe bets”, “declining”) from Trendalytics reports\*. Next, I attempted different approaches to map these trend terms to Stitch Fix inventory. This mapping was particularly challenging because trend terms are diverse and ever-evolving, so we will not be able to construct a comprehensive list of all terms we might be interested in understanding. To address this, I had initially tried to pool inventory by existing attributes (i.e. color, material, silhouette) that most frequently occur in trend terms, but quickly realized that such static pooling would not be representative of most terms (e.g. white jeans might be trending but not white dresses, so we would run into too much noise if we pooled by color). Instead, I built dynamic pools of inventory that are associated with each trend term by tokenizing each term and projecting each token to the most-appropriate Stitch Fix attributes to filter upon through pre-trained word embeddings (i.e. Word2Vec[1], GloVe [2]). While this approach is highly effective for some terms, the limitations were also noticeable for our use case – “black” was close to “white” and “long-sleeve” was close to “short-sleeve” in these vector spaces so the projection scores were quite high for contrary terms.],
-  [I decided to proceed only with terms that have near-perfect projection scores as “terms understood”. From here, I leveraged our newly deployed search functionality for Freestyle customers to identify the most relevant inventory for each search term. Several limitations of this implementation stem from the fundamentally different use case – trend analysis is more restrictive than search – as well as the non comparable relevance scores outputted from Elasticsearch (based on TF-IDF[3]), which I temporarily mitigated by heavily modifying the search pipeline to filter on each token and checking the final outputs against our existing latent style space. With the current implementation, my system was able to understand only around 30% and confidently map 10% of inputted trend terms, but the key advantage of the system is that it will continue to evolve automatically as our search functionality evolves, reducing duplicative work. From here, we open the door to trend-level analysis and modeling. Stay tuned for future work!],
-  [References:
-[1] Tomas Mikolov, Kai Chen, Greg Corrado, and Jeﬀrey Dean. Eﬃcient estimation of word representations in vector space, 2013. 
-[2] Jeﬀrey Pennington, Richard Socher, and Christopher D. Manning. Glove: Global vectors for word representation. In Empirical Methods in Natural Language Processing (EMNLP), pages 1532–1543, 2014.
-[3] KonradBeiske. Similarity in elasticsearch, Nov 2013.
-url: https:\/\/www.elastic.co/blog/found-similarity-in-elasticsearch],
+  [The role of the full-stack-data-scientist is not what it once was.],
+  [With the advent of more powerful tooling, new industry standards in MLOps, and greater investment in platforms, the day-to-day of a data scientist has changed significantly at Stitch Fix. The difference, however, is subtle. The structure of their job remains the same – engineers still do not write ETLs and data scientists function as generalists , but they now have to think on a higher level. Their job is constantly getting more and more complex—the business needs are in flux and the infrastructure they use is more powerful than it ever was. The old strategy of cobbling together complex systems will only end in stressed-out data scientists with too much infrastructure on their plate.],
+  [To avoid this cycle of complexity, Stitch Fix invests in a platform team to innovate new ways of supporting a data scientist’s engineering needs. Rather than constructing custom model-deployment mechanisms, building microservices from the ground up, and managing highly interdependent chains of data transformations, data scientists at Stitch Fix can leverage powerful infrastructure by constructing plain old Python functions to represent their needs .],
+  [In this blog post we’re going to take a different approach than usual. Rather than digging into a specific piece of technology, we’ll present our philosophy of functions for data science APIs and back it up with some motivating examples. We’ll explain the power of functions as a DSL, share some successes we’ve had using functional interfaces to build our MLOps stack, and connect our approach with external, open-source frameworks that the industry is beginning to adopt. Our goal is to convince you that a function-first approach will enable data practitioners to do more while doing less. The functional approach allows them to plug into the business in a scalable manner while avoiding the complexity of managing infrastructure and architectural decisions.],
+  [id="on-functions-and-functionality"\>On Functions and Functionality],
+  [Since way before many of us were born, the software industry has been battling between functional and procedural programming paradigms. Do you offer imperative commands over the operations of your system? Or do you declare the intent and let some system in the background handle the operations for you? While we won’t opine on this age-old debate, we do bring this up for a reason. At Stitch Fix, data scientists get the best of both worlds:],
+  [They can declare infrastructure and plug into the business by writing python functions to fit into platform-provided frameworks],
+  [They can specify custom model and business logic by implementing said functions],
+  [At the core, we believe data scientists should only have to think about business logic, and all else (infrastructure, etc…) should be given to them on a silver platter. The delineation of responsibilities here is critical in providing high-power tooling to allow data scientists to plug into the business, and Python functions happen to be the perfect way to codify it. The name, type annotations, decorators, and parameters of a function all provide plenty of information to declare the structure of the systems they need. The guts of a function allow a data scientist to iterate on and cleanly represent their business logic.],
+  [class="highlight"\> \@ do\_something\_fancy\_with\_function 
+ def my\_function ( param\_1 : pd . Series , param\_2 : int ) -\> pd . Series : 
+ """Does a thing with some params""" 
+ return fancy\_business\_logic ( param\_1 , param\_2 )],
+  [Function Name 
+ 
+ my\_function 
+ 
+ 
+ 
+ Type Annotations 
+ 
+ pd. Series, int 
+ 
+ 
+ 
+ Decorators 
+ 
+ \@do\_something\_fancy\_with\_function 
+ 
+ 
+ 
+ Parameters 
+ 
+ param\_1, param\_2 
+ 
+ 
+ 
+ Docstring 
+ 
+ """Does a thing with some params""" 
+ 
+ 
+ 
+ Logic 
+ 
+ return fancy\_business\_logic(param\_1, param\_2)],
+  [How do we actually link this metadata to give data scientists MLOps capabilities? Let’s go through a few examples…],
+  [id="functional-capabilities"\>Functional Capabilities],
+  [id="productionizing-models"\>Productionizing Models],
+  [Years ago, releasing a model at Stitch Fix took considerable effort. To execute a model in a production context (batch/online), data scientists had to:],
+  [Save the model blob to a blob store],
+  [Build a service or a batch job that exposed their model, with Python requirements that exactly matched training],
+  [Download the model into the appropriate production context, updating as needed],
+  [Maintain and manage the service/batch job],
+  [This regularly repeated chain of micromanaged infrastructure was not nimble enough to support the velocity at which data scientists at Stitch Fix work. So, we built new tooling that enables data scientists to publish their model to production by:],
+  [Saving a function using our API],
+  [Configuring deployment through a centralized model-management service],
+  [To write a model, one need simply implement a Python function (we’re not picky – a model can be any python function) and save it to the platform-provided API. This provides a host of capabilities to choose from with the push of a button: a data scientist can run their model over a large dataset on Spark, deploy in a platform-managed online service context to respond to http requests, track/manage/add metrics, and set up CI/CD. To gather the requisite model information for the platform to carry out these capabilities, we take advantage of everything the data scientist’s function provides us:],
+  [Function Name 
+ 
+ Delineates this query on the model from others
+ 
+ 
+ 
+ Annotations 
+ 
+ Specifies types for model inputs
+ 
+ 
+ 
+ Parameters 
+ 
+ Allows us to generate openAPI docs, connect to features
+ 
+ 
+ 
+ Logic 
+ 
+ Enables actual model evaluation!],
+  [We use a little more than this to add additional metadata—see the full writeup for more details. That said, the core principle is simple. By reading the code and looking at the function a data scientist writes, we should be able to understand its role in the business and provide the infrastructure it requires.],
+  [id="writing-services"\>Writing Services],
+  [At Stitch Fix, our data scientists write and manage services, beyond those that can be represented by writing models (they’re on call, even!). Constructing/managing a service generally requires a lot of architectural decisions. What framework do you use? How do you specify/validate the shape of the input? How do you handle errors? And so on…],
+  [At Stitch Fix, the platform team has made it very easy to manage decisions. All a data scientist has to do is write a simple set of functions to specify their service’s endpoints. Built on top of FastAPI + Uvicorn, Stitch Fix’s service toolkit gives a data scientist the power of a full-scale web application.],
+  [While we have not yet blogged about this, the API is simple enough for Data Scientists to go from zero to a production service in an hour. What does it look like?],
+  [Annotations 
+ 
+ Specifies types for generating documentation/validating.
+ 
+ 
+ 
+ Decorators 
+ 
+ Specifies method type, endpoint, tags for organization. Enables distributed tracing. Registers function for use with FastAPI route.
+ 
+ 
+ 
+ Parameters 
+ 
+ Allows validating of inputs, generates API signature.
+ 
+ 
+ 
+ Docstring 
+ 
+ Generates openAPI documentation.
+ 
+ 
+ 
+ Guts 
+ 
+ Does the business logic.],
+  [Again, we don’t always use every part of the function (the name, in this case, is supplanted by the endpoint path), but from reading just the snippet of code above, it should be clear (a) where this fits in the business and (b) how this manifests in the infrastructure.],
+  [id="transforming-data"\>Transforming Data],
+  [The vast majority of code data scientists write transforms data from one shape to another. Data transformations are a natural way to iteratively present value to the business, but representing them in code can be challenging. Scientists often develop their own methods of organizing and executing these transformations, which range from monolithic scripts to custom-built sophisticated pipelining mechanisms. While these get the job done, as teams switch up, goals change, and initiatives are cast aside or rushed into production, the details of these bespoke methodologies become long-forgotten. To solve this problem and allow our data teams to scale with the complexity of the business, we built and open-sourced a framework called hamilton .],
+  [Initially designed for feature engineering, hamilton enables a data scientist to express a complex data pipeline as a series of functions; each function encodes the upstream dependencies, the data type, and the referenceable artifact.],
+  [class="highlight"\> \@ config . when ( region = "US" ) 
+ def my\_artifact ( dep\_1 : pd . Series , dep\_2 : int ) -\> pd . Series : 
+ """does something fancy with dep\_1 and dep\_2""" 
+ return \_some\_fancy\_logic ( dep\_1 , dep\_2 )],
+  [Function Name 
+ 
+ Name of the artifact generated by the fn
+ 
+ 
+ 
+ Annotations 
+ 
+ Types of the artifact/dependencies
+ 
+ 
+ 
+ Decorators 
+ 
+ Configuration, higher-level operations
+ 
+ 
+ 
+ Parameters 
+ 
+ Name of the upstream dependencies
+ 
+ 
+ 
+ Docstring 
+ 
+ Enables automatic generation of documentation
+ 
+ 
+ 
+ Guts 
+ 
+ Code to generate, transform the data],
+  [Representing generated data as functions enables us to flexibly execute pipelines in whatever framework we want while simultaneously allowing a data scientist to write highly expressive, intuitive pipelines. Better yet, these require little knowledge of framework or infrastructure, only the libraries data scientists love and the Python code they are accustomed to writing. All they have to do is write the function – the rest comes for free.],
+  [We’ve written about hamilton before (we’re very proud): read prior posts introducing the framework , talking about scale , and sharing how we enable data validation .],
+  [id="open-source-and-beyond"\>Open Source and Beyond],
+  [One of Stitch Fix’s greatest assets is our innovative set of data scientists who optimize the customer experience every step of the way. Without the proper tooling, however, they would get bogged down in details of infrastructure and architecture. They need control over the stack they run to operate independently, but cannot afford to be slowed down with its minutiae. Thus, it falls to the platform team to deliver tooling that makes data scientists efficient and productive. At Stitch Fix we iterated on many designs, and found that, as is often the case, the simplest solution was the best. To express business logic, data scientists write plain old Python functions. The associated metadata, structure, and contents of these functions yield enough information for an insightful platform team to plug the data science innovations back into the business.],
+  [Python functions are comfortable to write, easy to debug, and straightforward to read and maintain. Add in a little config, and we’ve got a fully-fledged, highly-expressive API!],
+  [We believe this API approach has implications far past the frontiers of our own data science efforts. Aside from our own open-source tools, we’ve begun to notice it creep up elsewhere:],
+  [Dagster’s software-defined-assets \_ \_are one of many Python APIs that specify transformations on data through the orchestration framework],
+  [Pytest fixtures actually use the same concept as hamilton to inject data into Python tests],
+  [metaflow allows definitions of functions specifying steps to modify workflow state],
+  […and so on],
+  [These (and more) amazing frameworks confirm our priors that APIs of this flavor are the future. This API has been essential in enabling data scientists to focus on what matters most. Serving the customer better, optimizing operations, and providing lasting, high-caliber tools that empower the next generation to reach even greater heights.],
 ),
   insert-map: (:),
-  inline-pq: pull-quote([Association for Computing Machinery, New York, NY, USA, 136–146.], [Stitch Fix Multithreaded]),
-  inline-pq-idx: 12,
-  word-count: 2092,
+  word-count: 1795,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -1526,89 +2067,81 @@ url: https:\/\/www.elastic.co/blog/found-similarity-in-elasticsearch],
 
 {
   #standard-article(
-  title: [Solid Relevance],
+  title: [More On Types],
   author: [Robert C Martin (Clean Coder)],
   source-name: [Robert C Martin (Clean Coder)],
   images: (),
   paragraphs: (
-  [Recently I received a letter from someone with a concern. It went like this:],
-  [For years the knowledge of the SOLID principle has been a standard part of our recruiting procedure. Candidates were expected to have a good working knowledge of these principles. Lately, however, one of our managers, who doesn’t code much anymore, has questioned whether that is wise. His points were that the Open-Closed principle isn’t very important anymore because most of the code we write isn’t contained in large monoliths and making changes to small microservices is safe and easy. The Liskov Substitution Principle is long out of date because we don’t focus on inheritance nearly as much as we did 20 years ago. I think we should consider Dan North’s position on SOLID – “Just write simple code.”],
-  [I wrote the following letter in response:],
-  [The SOLID principles remain as relevant to day as they were in the 90s (and indeed before that). This is because software hasn’t changed all that much in all those years — and that is because software hasn’t change all that much since 1945 when Turing wrote the first lines of code for an electronic computer. Software is still if statements, while loops, and assignment statements — Sequence , Selection , and Iteration .],
-  [Every new generation likes to think that their world is vastly different from the generation before. Every new generation is wrong about that; which is something that every new generation learns once the next new generation comes along to tell them how much everything has changed.],
-  [So let’s walk through the principles, one by one.],
-  [SRP ) The Single Responsibility Principle.],
-  [Gather together the things that change for the same reasons. Separate things that change for different reasons.],
-  [It is hard to imagine that this principle is not relevant in software. We do not mix business rules with GUI code. We do not mix SQL queries with communications protocols. We keep code that is changed for different reasons separate so that changes to one part to not break other parts. We make sure that modules that change for different reasons do not have dependencies that tangle them.],
-  [Microservices do not solve this problem. You can create a tangled microservice, or a tangled set of microservices if you mix code that changes for different reasons.],
-  [Dan North’s slides completely miss the point on this, and convinces me that he did not understand the principle at all. (or that he was being ironic, which knowing Dan, is far more likely) His answer to the SRP is to “Write Simple Code”. I agree. The SRP is one of the ways we keep the code simple.],
-  [OCP ) The Open-Closed Principle.],
-  [A Module should be open for extension but closed for modification.],
-  [Of all the principles, the idea that anyone would question this one fills me full of dread for the future of our industry. Of course we want to create modules that can be extended without modifying them. Can you imagine working in a system that did not have device independence, where writing to a disk file was fundamentally different than writing to a printer, or a screen, or a pipe? Do we want to see if statement scattered through our code to deal with all the little details?],
-  [Or… Do we want to separate abstract concepts from detailed concepts. Do we want to keep business rules isolated from the nasty little details of the GUI, and the micro-service communications protocols, and the arbitrary behaviors of the database? Of course we do!],
-  [Again, Dan’s slide gets this completely wrong. When requirements change only part of the existing code is wrong. Much of the existing code is still right. And we want to make sure that we don’t have to change the right code just to make the wrong code work again. Dan’s answer is “write simple code”. Again, I agree. And, ironically, he is right. Simple code is both open and closed .],
-  [LSP ) The Liskov Substitution Principle.],
-  [A program that uses an interface must not be confused by an implementation of that interface.],
-  [People (including me) have made the mistake that this is about inheritance. It is not. It is about sub-typing. All implementations of interfaces are subtypes of an interface. All duck-types are subtypes of an implied interface. And, every user of the base interface, whether declared or implied, must agree on the meaning of that interface. If an implementation confuses the user of the base type, then if/switch statements will proliferate.],
-  [This principle is about keeping abstractions crisp and well-defined. It is impossible to believe that this is an outmoded concept.],
-  [Dan’s slides are entirely correct on this topic; he simply missed the point of the principle. Simple code is code that maintains crisp subtype relationships.],
-  [ISP ) The Interface Segregation Principle.],
-  [Keep interfaces small so that users don’t end up depending on things they don’t need.],
-  [We still work with compiled languages. We still depend upon modification dates to determine which modules should be recompiled and redeployed. So long as this is true we will have to face the problem that when module A depends on module B at compile time, but not at run time, then changes to module B will force recompilation and redeployment of module A.],
-  [This issue is especially acute in statically typed languages like Java, C\#, C++, GO, Swift, etc. Dynamicaly typed languages are affected much less; but are still not immune. The existence of Maven and Leiningen are proof of that.],
-  [Dan’s slide on this topic is provably false. Clients do depend on methods they don’t call, if they have to be recompiled and redeployed when one of those methods is modified. Dan’s final point on this principle is fine, so far as it goes. Yes, if you can split a class with two interfaces into two separate classes, then it is a good idea to do so (SRP). But such separation is often not feasible, nor even desirable.],
-  [DIP ) The Dependency Inversion Principle.],
-  [Depend in the direction of abstraction. High level modules should not depend upon low level details.],
-  [It is hard to imagine an architecture that does not make significant use of this principle. We do not want our high level business rules depending upon low level details. I hope that is perfectly obvious. We do not want the computations that make money for us polluted with SQL, or low level validations, or formatting issues. We want isolation of the high level abstractions from the low level details. That separation is achieved by carefully managing the dependencies within the system so that all source code dependencies, especially those that cross architectural boundaries, point towards high level abstractions, not low level details.],
-  [In every case Dan’s slides end with: Just write simple code . This is good advice. However, if the years have taught us anything it is that simplicity requires disciplines guided by principles. It is those principles that define simplicity. It is those disciplines that constrain the programmers to produce code that leans towards simplicity.],
-  [The best way to make a complicated mess is to tell everyone to “just be simple” and give them no further guidance.],
+  [Recently I wrote a cute little program for doing Turtle Graphics . For those of you who don't know, turtle graphics were originally added to the LOGO language by Seymour Papert in the late 1960s. He built a robot that he called a "turtle" that could hold a pen. The robot had wheels and could move forwards and backwards, and could rotate left and right. It could also raise and lower the pen. When placed on a sheet of paper, the turtle could be commanded to draw interesting designs.],
+  [Papert's goal was to teach children about programming. As the years went by the robot got replaced with screens, and the turtle became an icon that could draw lines. Children from the 70s until now have been enthralled by the simple commands for directing the turtle, and the elegant drawings they can make.],
+  [For example, this is how you might draw a square:],
+  [Recently I had a need to explore some interesting geometrical designs. Turtle graphics would be perfect for my purposes. So I wrote a turtle graphics processor in Clojure. \[code\]],
+  [I used the quil framework which is based on the Processing framework in Java. This framework makes it very easy to create simple GUIs in Clojure.],
+  [Now consider the problem of the Turtle. What is the type model for this object? What fields does it have, and what constraints must be placed on those fields?],
+  [Here was my solution to that problem, written in clojure/spec . As usual, in Clojure, you start at the bottom and read towards the top.],
+  [class="highlight"\> (defn make \[\]
+ {:post \[(s/assert ::turtle %)\]}
+ {:position \[0.0 0.0\]
+ :heading 0.0
+ :velocity 0.0
+ :distance 0.0
+ :omega 0.0
+ :angle 0.0
+ :pen :up
+ :weight 1
+ :speed 5
+ :visible true
+ :lines \[\]
+ :state :idle})],
+  [This is the default constructor of the turtle. Notice that it just loads up all the required fields into a map. Notice also that there is a post condition that asserts that the result conforms the the turtle type.],
+  [This is nice. If I forget to initialize a field, or if I initialize a field to a value that conflicts with the type, I get an error.],
+  [Here's another, more complex example. Don't freak out, you don't have to understand this in detail.],
+  [class="highlight"\> (defn update-turtle \[turtle\]
+ {:post \[(s/assert ::turtle %)\]}
+ (if (= :idle (:state turtle))
+ turtle
+ (let \[{:keys \[distance
+ state
+ angle
+ lines
+ position
+ pen
+ pen-start\] :as turtle}
+ (-\> turtle
+ (update-position)
+ (update-heading))
+ done? (and (zero? distance)
+ (zero? angle))
+ state (if done? :idle state)
+ lines (if (and done? (= pen :down))
+ (conj lines (make-line turtle))
+ lines)
+ pen-start (if (and done? (= pen :down))
+ position
+ pen-start)\]
+ (assoc turtle :state state :lines lines :pen-start pen-start)))
+ )],
+  [This is the function that updates the turtle for each screen refresh. Again, notice the post condition . If anything is calculated incorrectly by the update-turtle function, I'll get an exception right away.],
+  [Now some of you might be worried that by checking types at runtime I could end up with runtime errors in production. You might therefore assert that static typing is better because the compiler checks the types long before the program ever executes.],
+  [However, I do not intend to have runtime errors in production, because I have a suite of tests that exercise all the behaviors of the system. Here's just one of those tests:],
+  [class="highlight"\> (describe "Turtle Update"
+ (with turtle (-\> (t/make) (t/position \[1.0 1.0\]) (t/heading 1.0)))
+ (context "position update"
+ (it "holds position when there's no velocity"
+ (let \[turtle (-\> \@turtle (t/velocity 0.0) (t/state :idle))
+ new-turtle (t/update-turtle turtle)\]
+ (should= turtle new-turtle)))],
+  [Again, you don't have to understand this in any detail. Just notice that the make and update-turtle functions are being invoked. Since those functions have post conditions that will check the types, and since my suite of tests is exhaustive, I am quite certain that there will be no runtime errors in production and that my dynamic type checking is as robust as any static type system.],
+  [The dynamic nature of the type checking allows me to assert type constraints that are very difficult, if not impossible, to assert at compile time. I can, for example, assert complex relationships between the values of the fields.],
+  [To expand on that example, imagine the type model of an accounting balance sheet. The sum of the assets, liabilities and equities on the balance sheet must be zero. This is easy to assert in clojure/spec but is difficult, if not impossible, to assert in most statically typed languages.],
+  [Moreover, I get to control when types are asserted. It is up to me to decide if and when a certain type should be checked. This gives me a lot of power and flexibility. It allows me to violate the type rules in the midst of computations, so long as the end result ends up conforming to the types.],
+  [One last point. In the late 90s and the 2000s, there was a lengthy and animated (and sometimes acrimonious) debate over TDD vs DBC (Design by Contract). What clojure/spec has taught me is that the two play very well together, and both should be in every programmer's toolkit.],
 ),
   insert-map: (:),
-  word-count: 1202,
+  word-count: 889,
   edited-for-length: false,
   debug-mode: false,
 )
-
-}
-
-{
-  #standard-article(
-  title: [Headerless train announcements],
-  author: [Oona Räisänen],
-  source-name: [Oona Raisanen (windytan)],
-  images: (),
-  paragraphs: (
-  [The Finnish state railway company just changed their automatic announcement voice, discarding old recordings from trains. It's a good time for some data dumpster diving for the old ones, don't you think?],
-  [A 67-megabyte ISO 9660 image is produced that once belonged to an older-type onboard announcement device. It contains a file system of 58 directories with five-digit names, and one called "yleis" (Finnish for "general").],
-  [Each directory contains files with three-digit file names. For each number, there's 001.inf , 001.txt and 001.snd . The .inf and .txt files seem to contain parts of announcements as ISO 8859 encoded strings, such as "InterCity train" and "to Helsinki". The .snd files obviously contain the corresponding audio announcements. There's a total of 1950 sound files.],
-  [Directory structure],
-  [The file system seems to be structurally pointless; there's nothing apparent that differentiates all files in /00104 from files in /00105 . Announcements in different languages are numerically separated, though ( /001xx = Finnish, /002xx = Swedish, /003xx = English). Track numbers and time readouts are stored sequentially, but there are out-of-place announcements and test files in between. The logic connecting numbers to their meanings is probably programmed into the device for every train route.],
-  [Everything can be spliced together from almost single words. But many common announcements are also recorded as whole sentences, probably to make them sound more natural.],
-  [Audio format],
-  [The audio files are headerless; there is no explicit information about the format, sample rate or sample size anywhere.],
-  [The byte histogram and Poincaré plot of the raw data suggest a 4-bit sample size; this, along with the fact that all files start with 0x80 , is indicative of an adaptive differential PCM encoding scheme.],
-  [Unfortunately there are as many variations to ADPCM as there are manufacturers of encoder chips. None of the decoders known by SoX produce clean results. But with the right settings for the OKI-ADPCM decoder we can already hear some garbled speech under heavy Brownian noise.],
-  [For unknown reasons, the output signal from SoX is spectrum-inverted. Luckily it's trivial to fix (see my previous post on frequency inversion ). The pitch sounds roughly natural when a 19,000 Hz sampling rate is assumed. A test tone found in one file comes out as a 1000 Hz sine when the sampling rate is further refined to 18,930 Hz.],
-  [This is what we get after frequency inversion, spectral equalization, and low-pass filtering:],
-  [There's still a high noise floor due to the mismatch between OKI-ADPCM and the unknown algorithm used by the announcement device, but it's starting to sound alright!],
-  [There seems to be an announcement for every thinkable situation, such as:],
-  ["Ladies and Gentlemen, as due to heavy snowfall, we are running slightly late. Please accept our apologies."],
-  ["Ladies and Gentlemen, an animal has been run over by the train. We have to wait a while before continuing the journey."],
-  ["Ladies and Gentlemen, the arrival track of the train having been changed, the platform is on your left hand side."],
-  ["Ladies and Gentlemen, we regret to inform you that today the restaurant-car is exceptionally closed."],
-  [Also, there is an English recording of most announcements, even though only Finnish and Swedish are usually heard on commuter trains.],
-  [One file contains a long instrumental country song.],
-  [In an eerily out-of-place sound file, a small child reads out a list of numbers.],
-  [Final words],
-  [This is something I've wanted to do with this almost melodically intonated announcement about ticket selling compartments.],
-),
-  insert-map: (:),
-  word-count: 623,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-  #pull-quote([Everything can be spliced together from almost single words.], [Oona Räisänen])
 
 }
 
@@ -1641,20 +2174,69 @@ url: https:\/\/www.elastic.co/blog/found-similarity-in-elasticsearch],
 
 }
 
-{
-  #standard-article(
-  title: [HASH: a free, online platform for modeling the world],
-  author: [Joel Spolsky],
-  source-name: [Joel on Software],
+#article-row((
+  [
+    standard-article(
+  title: [How to Favicon in 2026: Three files that fit most needs],
+  author: [Andrey Sitnik],
+  source-name: [Evil Martians Chronicles],
   images: (),
   paragraphs: (
-  [Sometimes when you’re trying to figure out the way the world works, basic math is enough to get you going. If we increase the hot water flow by x , the temperature of the mixture goes up by y .],
-  [Sometimes you’re working on something that’s just too complicated for that, and you can’t even begin to guess how the inputs affect the outputs. At the warehouse, everything seems to go fine when you have less than four employees, but when you hit five employees, they get in each others’ way so much that the fifth employee effectively does no additional work.],
-  [You may not understand the relationship between the number of employees and the throughput of the warehouse, but you definitely know what everybody is doing. If you can imagine writing a little bit of JavaScript code to simulate the behavior of each of your workers, you can run a simulation and see what actually happens. You can tweak the parameters and the rules the employees follow to see how it would help, and you can really gain some traction understanding, and then solving, very complex problems.],
-  [That’s what hash.ai is all about. Read Dei’s launch blog post , then try building your own simulations!],
+  [Author: Andrey Sitnik, Author of PostCSS and Autoprefixer, Principal Frontend Engineer],
+  [Topic: CSS],
+  [Prefer SVG over PNG, trust browsers to downscale, drop obscure formats—the ultimate, exhaustive guide to favicons for modern web. Includes steps for static HTML and Webpack.],
+  [It's time to rethink how we cook a set of favicons for modern browsers and stop the icon generator madness. Frontend developers currently have to deal with 20+ static PNG files just to display a tiny website logo in a browser tab or on a touchscreen. Read on to see how to take a smarter approach and adopt a minimal set of icons that fits most modern needs.],
+  [Read more],
 ),
   insert-map: (:),
-  word-count: 206,
+  word-count: 109,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+  ],
+  [
+    standard-article(
+  title: [Life's too short to hand-write API types: OpenAPI-driven React],
+  author: [Travis Turner],
+  source-name: [Evil Martians Chronicles],
+  images: (),
+  paragraphs: (
+  [Authors: Yuri Mikhin, Frontend Engineer, and Travis Turner, Tech Editor],
+  [Topics: React, TypeScript],
+  [Transform your React development with contract-first APIs. Generate TypeScript types, build type-safe clients, and develop with mocks while backend implements—no more waiting, no more integration chaos.],
+  [Most React apps have a problem: frontend types and backend reality drifting apart. You copy API shapes into TypeScript files, backend changes something, and you find out in production. This guide fixes that by making your OpenAPI spec the source of truth—generating types, clients, and validation schemas automatically so contract mismatches break builds instead of production. You'll also set up network-level mocks so your team can build and test features against realistic API behavior without waiting on backend to deploy anything.],
+  [Read more],
+),
+  insert-map: (:),
+  word-count: 122,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+  ],
+), ruled-indices: (1,))
+
+{
+  #standard-article(
+  title: [Algo Hour - Large Scale Data & ML Monitoring with whylogs | Alessya Visnjic],
+  author: [Stitch Fix Multithreaded],
+  source-name: [Stitch Fix Multithreaded],
+  images: (),
+  paragraphs: (
+  [id="title"\>Title:],
+  [Large Scale Data & ML Monitoring with whylogs],
+  [id="talk-abstract"\>Talk Abstract:],
+  [In the era of microservices, decentralized ML architectures and complex data pipelines, data quality has become a bigger challenge than ever. When data is involved in complex business processes and decisions, bad data can, and will, affect the bottom line. As a result, ensuring data quality across the entire ML pipeline is both costly, and cumbersome while data monitoring is often fragmented and performed ad hoc. An open source library called whylogs is built to address these challenges. It is a lightweight data profiling library that enables end-to-end data monitoring across the entire software stack. The library implements a language and platform agnostic approach to data quality and data monitoring. It’s been deployed at massive-scale data environments, on structured and unstructured data modalities, and across a range of points in the ML lifecycle. In this talk, we will provide an overview of the whylogs architecture, including its lightweight statistical data collection approach and we will show how users can apply this library to existing data and ML pipelines.],
+  [id="date-and-time"\>Date and Time:],
+  [The talk will be held on Tuesday, October 11th at 1:00PM PDT.],
+  [id="recording-info"\>Recording Info:],
+  [This talk was recorded live and is viewable below:],
+  [id="speaker-info"\>Speaker Info:],
+  [Alessya Visnjic is the CEO of WhyLabs, the AI Observability company building tools that power robust and responsible AI deployment. Prior to WhyLabs, Alessya was a CTO-in-residence at the Allen Institute for AI, where she evaluated commercial potential for the latest AI research. Earlier, Alessya spent 9 years at Amazon leading ML initiatives, including forecasting and data science platforms. Alessya is also the founder of Rsqrd AI, a global community of 1,000+ AI practitioners who are committed to making enterprise AI technology responsible.],
+),
+  insert-map: (:),
+  word-count: 290,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -1664,49 +2246,17 @@ url: https:\/\/www.elastic.co/blog/found-similarity-in-elasticsearch],
 {
   #section-label([Briefs])
   #brief-group((
-    #brief-item([Adrien Siami], source-name: [Drivy / Getaround Tech], [Every year at getaround, we (The engineering team) take part in what we call a “Hack Day” . We can work on a subject of our choice for a day, in a team of developers.])
-
-    #brief-item([The Hacker News], source-name: [The Hacker News (cybersecurity)], [The U. S. Federal Communications Commission (FCC) said on Monday that it was banning the import of new, foreign-made consumer routers, citing "unacceptable" risks to cyber and national security.
-The action was designed to safeguard Americans and the underlying communications networks the country relies on, FCC Chairman Brendan Carr said in a post on X. The development means that new models of])
-
-    #brief-item([Travis Turner], source-name: [Evil Martians Chronicles], [Authors: Ivan Chepurin, Frontend Engineer, and Travis Turner, Tech Editor
-
- Topics: Case Study, DX, AI, Astro.js, React, Tailwind CSS
-
- Evil Martians make the impossible possible: launching a new Aptos Network website in just one month! 
-
-Evil Martians have proudly collaborated with our client Aptos for 3+ years. Recently they had a special task: a brand new website in just one month! In this post, the secret Martian sauce that allowed us to win a race against time, lessons learned on the way, and practical advice for achieving development goals without compromising quality!
-
- Read more])
-
-    #brief-item([Alexandre Ferraille], source-name: [Drivy / Getaround Tech], [Rails 6.0.0.beta1 is out and you may have already tested it. We all have heard about the main features such as multi-database connectivity, Action Mailbox & Action Text merge, parallelized testing, Action Cable testing etc. But there’s also a ton of other cool features that I found interesting.])
-
-    #brief-item([The Hacker News], source-name: [The Hacker News (cybersecurity)], [Threat actors are using adversary-in-the-middle (AitM) phishing pages to seize control of TikTok for Business accounts in a new campaign, according to a report from Push Security.
-Business accounts associated with social media platforms are a lucrative target, as they can be weaponized by bad actors for malvertising and distributing malware.
-"TikTok has been historically abused to distribute])
-
-    #brief-item([Nicolas Zermati], source-name: [Drivy / Getaround Tech], [A few months ago we faced a memory issue on some of our background jobs.
+    [#brief-item([Faouz EL FASSI], source-name: [Drivy \/ Getaround Tech], [In the first of this series of blog posts about Data-Warehousing, I’ve been talking about how we use and manage our Amazon Redshift cluster at Drivy.])],
+    [#brief-item([Thibaud Esnouf], source-name: [Drivy \/ Getaround Tech], [As a JavaScript developer, you surely have encountered some functions that require a lot of arguments to be called.
+Because the argument list is an Array-like object, all the values need to be set and so it may have given you a headache to understand the order and purpose of each argument.])],
+    [#brief-item([Nicolas Zermati], source-name: [Drivy \/ Getaround Tech], [A few months ago we faced a memory issue on some of our background jobs.
 Heroku was killing our dyno because it was exceeding its allowed memory. Thanks
 to our instrumentation of Sidekiq , it was easy to
 spot the culprit. The job was doing a fairly complex SQL request, and
-outputing the query’s result into a CSV file before archiving this file.])
-
-    #brief-item([Stephen Colebourne], source-name: [Stephen Colebourne (Joda)], [At Devoxx Belgium 2025 I discussed the idea of embedded records with a few people.
- The idea is to take what is great about records, and extend that to classes that represent data.
-
- This responds to a pain point in Java, where there is a bit of a cliff-edge between records and classes.
- While millions of classes could and should be converted to records, millions more cannot.
- Yet they still represent data, and it would be a Good Thing to be able to capture that.
- Especially with Serialization 2.0 on the horizon.
-
- Please see the proposal document 
- for more details.])
-
-    #brief-item([Thibaud Esnouf], source-name: [Drivy / Getaround Tech], [At Drivy, we have defined our very own design system.
-This system describes our visual guidelines and rules, and is composed of visual web components.
-For each component, we have created a React implementation that could easily be used by our design team to build a web site documentation (thanks to MDX ).])
-
-    #brief-item([Travis Turner], source-name: [Evil Martians Chronicles], [Authors: Victoria Melnikova, Head of New Business, Host of Dev Propulsion Labs, and Travis Turner, Tech Editor
+outputing the query’s result into a CSV file before archiving this file.])],
+    [#brief-item([The Hacker News], source-name: [The Hacker News (cybersecurity)], [The North Korean threat actors behind the Contagious Interview campaign, also tracked as WaterPlum, have been attributed to a malware family tracked as StoatWaffle that's distributed via malicious Microsoft Visual Studio Code (VS Code) projects.
+The use of VS Code "tasks.json" to distribute malware is a relatively new tactic adopted by the threat actor since December 2025, with the attacks])],
+    [#brief-item([Travis Turner], source-name: [Evil Martians Chronicles], [Authors: Victoria Melnikova, Head of New Business, Host of Dev Propulsion Labs, and Travis Turner, Tech Editor
 
  Topics: Case Study, Developer Community
 
@@ -1714,44 +2264,33 @@ For each component, we have created a React implementation that could easily be 
 
 Established nearly 20 years ago, Evil Martians is a trusted software development consultancy for developer tools startups.
 
- Read more])
-
-    #brief-item([The Hacker News], source-name: [The Hacker News (cybersecurity)], [The North Korean threat actors behind the Contagious Interview campaign, also tracked as WaterPlum, have been attributed to a malware family tracked as StoatWaffle that's distributed via malicious Microsoft Visual Studio Code (VS Code) projects.
-The use of VS Code "tasks.json" to distribute malware is a relatively new tactic adopted by the threat actor since December 2025, with the attacks])
-
-    #brief-item([Chaim Gartenberg], source-name: [The Keyword (Google Blog)], [Get the origin story behind the stunning wallpapers you see on Google TV Streamer, Nest Hub and other Google TV devices.])
-
-    #brief-item([The Hacker News], source-name: [The Hacker News (cybersecurity)], [Unmasking impostors is something the art world has faced for decades, and there are valuable lessons from the works of Elmyr de Hory that can apply to the world of defensive cybersecurity. During the 1960s, de Hory gained infamy as a premier forger, passing off counterfeit masterworks of Picasso, Matisse, and Renoir to unsuspecting collectors and renowned museums. Over the next several decades,])
-
-    #brief-item([Nicolas Zermati], source-name: [Drivy / Getaround Tech], [Understanding the application’s state at a given point in time is valuable. You
-and your team must make efforts to keep the cognitive load required to reason
-about its state as low as possible.])
-
-    #brief-item([Marc G Gauthier], source-name: [Drivy / Getaround Tech], [I recently saw another article highlighting the many ways in which recruitment in software development is broken. Whiteboard coding, random trivia, poorly trained interviewers… it’s all very painful and it seems to be the situation in a lot of places.])
-
-    #brief-item([Stephan Lensky], source-name: [HubSpot Product Blog], [class="hs-featured-image-wrapper"\> 
+ Read more])],
+    [#brief-item([The Hacker News], source-name: [The Hacker News (cybersecurity)], [Cybersecurity researchers have discovered a new payment skimmer that uses WebRTC data channels as a means to receive payloads and exfiltrate data, effectively bypassing security controls.
+"Instead of the usual HTTP requests or image beacons, this malware uses WebRTC data channels to load its payload and exfiltrate stolen payment data," Sansec said in a report published this week.
+The attack,])],
+    [#brief-item([Marc G Gauthier], source-name: [Drivy \/ Getaround Tech], [We’ve always valued releasing quickly, as unreleased code is basically inventory . It slowly gathers dust and becomes outdated or costs time to be kept updated. Almost 3 years ago we published an article “ Drivy, version 500! ” on our main blog, so I feel now is the time to get more into the details of how we accomplish pushing a lot of new versions of the app to production.])],
+    [#brief-item([Chaim Gartenberg], source-name: [The Keyword (Google Blog)], [Get the origin story behind the stunning wallpapers you see on Google TV Streamer, Nest Hub and other Google TV devices.])],
+    [#brief-item([Renaud Boulard], source-name: [Drivy \/ Getaround Tech], [Android Makers is the largest Android event in France, organized by the PAUYG and BeMyApp . This year the event was held in Le Beffroi de Montrouge - what a great place to enjoy a conference. There was much more space than the previous Android Makers event: we were really comfortable, with all we needed to be fully focussed on the conferences.])],
+    [#brief-item([The Hacker News], source-name: [The Hacker News (cybersecurity)], [Trivy, a popular open-source vulnerability scanner maintained by Aqua Security, was compromised a second time within the span of a month to deliver malware capable of stealing sensitive CI/CD secrets.
+The latest incident impacted GitHub Actions "aquasecurity/trivy-action" and "aquasecurity/setup-trivy," which are used to scan Docker container images for vulnerabilities and set up GitHub Actions])],
+    [#brief-item([The Hacker News], source-name: [The Hacker News (cybersecurity)], [TeamPCP, the threat actor behind the recent compromises of Trivy and KICS, has now compromised a popular Python package named litellm, pushing two malicious versions containing a credential harvester, a Kubernetes lateral movement toolkit, and a persistent backdoor.
+Multiple security vendors, including Endor Labs and JFrog, revealed that litellm versions 1.82.7 and 1.82.8 were published on March])],
+    [#brief-item([Stephan Lensky], source-name: [HubSpot Product Blog], [class="hs-featured-image-wrapper"\> 
  
 
- This post is the second in a series about empowering product, UX, and engineering teams with AI, especially in the context of writing code. Read the first post about scaling AI adoption here !])
-
-    #brief-item([Kartik Vishwanath], source-name: [HubSpot Product Blog], [class="hs-featured-image-wrapper"\> 
+ This post is the second in a series about empowering product, UX, and engineering teams with AI, especially in the context of writing code. Read the first post about scaling AI adoption here !])],
+    [#brief-item([Kartik Vishwanath], source-name: [HubSpot Product Blog], [class="hs-featured-image-wrapper"\> 
  
 
-On October 20, 2025, HubSpot experienced a significant service disruption affecting multiple product features due to a severe AWS outage in the us-east-1 region. While our infrastructure remained intact, the widespread nature of the cloud provider failure impacted both our services and critical third-party vendors we rely on. We've completed a thorough analysis of this incident and are implementing comprehensive improvements to strengthen our resilience against future cloud provider disruptions.])
-
-    #brief-item([Nicolas Zermati], source-name: [Drivy / Getaround Tech], [This is an introduction to a serie of articles about code simplicity . The
-concept itself is a bit abstract but don’t worry: I aim to provide some good
-examples and explainations for you to get something out of it!])
-
-    #brief-item([Romain Guefveneu & Jean-Élie Le Corre], source-name: [Drivy / Getaround Tech], [Android Makers is the biggest Android event in France, it occurred last month in Paris. It’s always a great time to connect and learn from the Android community. For this first edition, a lot of great speakers from all around the world were in Paris.
-This post is not intended to dive into the details of each conference, but more about an overview, giving you enough insights to chose the right conference to playback.])
-
-    #brief-item([David Bourguignon], source-name: [Drivy / Getaround Tech], [At Drivy, we use a lot of background jobs, called from service objects, API calls, cron, etc.
-
-A time came when we needed to add some context data across several of these code layers.])
-
-    #brief-item([Antoine Augusti], source-name: [Drivy / Getaround Tech], [At Drivy, we store, process and analyse hundreds of gigabytes of data in our production systems and our data warehouse. Data is of utmost importance to us because it makes our marketplace run and we use it to continuously improve our service .])
-
+On October 20, 2025, HubSpot experienced a significant service disruption affecting multiple product features due to a severe AWS outage in the us-east-1 region. While our infrastructure remained intact, the widespread nature of the cloud provider failure impacted both our services and critical third-party vendors we rely on. We've completed a thorough analysis of this incident and are implementing comprehensive improvements to strengthen our resilience against future cloud provider disruptions.])],
+    [#brief-item([The Hacker News], source-name: [The Hacker News (cybersecurity)], [Rising geopolitical tensions are reflected (or in some cases preceded) by cyber operations, while technology itself has become politicized. Let’s admit it: we are in the middle of it. 
+Introduction: One tech power to rule them all is a thing of the past 
+The relative safety, peace and prosperity that much of the world has enjoyed since 1945 was not accidental. It emerged from the ashes])],
+    [#brief-item([Howard Wilson], source-name: [Drivy \/ Getaround Tech], [As developers, we sometimes find ourselves faced with feature requests that will take weeks of work and touch many areas of the codebase. This comes with increased risk in terms of how we spend our time and whether things break when we come to release.])],
+    [#brief-item([Jordan Jalabert & Emily Fiennes], source-name: [Drivy \/ Getaround Tech], [After working as a teacher and translator for several years, Emily embarked on a new phase in her career by learning a different kind of language: programming.])],
+    [#brief-item([Nicolas Zermati], source-name: [Drivy \/ Getaround Tech], [My job title is officially backend engineer but this is pretty vague. I wanted to explain a bit what I do on a daily basis. First, it is a good reflective exercise for myself. Then, if readers like what I do, maybe some of you will want to join us !])],
+    [#brief-item([Romain Guefveneu], source-name: [Drivy \/ Getaround Tech], [When you need to share a file with other apps, the easiest way could be to use the external storage as a temporary place where to save this file.
+For example, if you need to take a picture with a camera app, you need to specify a file where the camera app will save the picture, and using external storage might be tempting.])],
   ))
 }
 

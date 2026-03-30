@@ -23,111 +23,92 @@
 
 // --- Front Page Feature ---
 #feature-article(
-  title: [How Luka Dončić of the L.A. Lakers made himself the MVP of personal branding],
+  title: [Verge Select connects three weathering-steel volumes for Ontario painting studio],
   kicker: [Cover Story],
-  author: [Hauwa Otori],
-  source-name: [Fast Company Design],
-  deck: [As I walked into a Sunset Boulevard venue this past February, Luka Dončić’s face greeted me, flashing across a wall of old-school televisions.],
-  lead-text: "The TV screens flickered between a surreal reel of images: Dončić’s mug, a NTSC rainbow effect, a Valentine sweetheart candy image with the words “too small,” and a graphic with the words “Lil Luka’s Heartbreak Factory: Level 1.”",
-  lead-first-alpha: 0,
+  author: [Ellen Eberhardt],
+  source-name: [Dezeen Architecture],
+  deck: [Verge Select has completed a painter's studio in Ontario 
+
+Located in a forested glade, the structure is composed of three square volumes of varying size.],
+  lead-pre: [],
+  lead-cap: [s],
+  lead-rest: [tyle="margin-bottom: 15px;"\>],
   body-paragraphs: (
-  [For the uninitiated, this scene probably makes no sense. But for superfans of Dončić, star player of the Los Angeles Lakers, the messages are like a secret code to a new kind of fandom.],
-  [Luka Dončić at Lil’ Luka’s Heartbreak Factory [Photo: 77X]],
-  [In February, Dončić celebrated the launch of his new direct-to-fans media company, 77X, by transforming a venue into his own personal brand playground. Dončić’s team built out a space around his personal aesthetic—think: old school video games—that featured a basketball court, candy shop, flower stand, photo booth, and a gift shop adorned with “Lil’ Luka,” Dončić’s alter ego.],
-  [This three-day activation was Dončić’s first proof of concept for 77X, which he is using to push his NBA brand beyond merchandise drops and brand sponsors. For Dončić, 77X is an opportunity to create a completely self-owned platform that can serve as a universe for his fandom by merging content, commerce, and community under his own banner.],
-  [Fan posing with Lil’ Luka statue outside Lil’ Luka’s Heartbreak Factory, 77X’s first immersive fan experience, during NBA All-Star weekend in Los Angeles. [Photo: 77X]],
-  [“I want to feel like I connect with the fans, bring them out here so they can help me build this and show them what I like so they get to know me better,” Dončić tells Fast Company .],
-  [In this current moment across basketball, elite athletes are renegotiating their standing with leagues and brand sponsors. Boston Celtics star Jaylen Brown launched 741, his independent sneaker brand, and Golden State Warriors star Steph Curry ended his 13-year relationship with Under Armour to operate his Curry brand independently. These athletes know that the future of fandom is direct connection that can’t be mediated through third-party brand deals.],
-  [“The traditional athlete model is super fragmented,” says Lara Beth Seager, chief brand officer and business manager for Dončić and 77X CEO.],
-  [Traditionally, content, merchandise, collectibles, and community are split across different stakeholders. Since most of these pillars are controlled by leagues, brand partners, social platforms or retail partners, athletes typically don’t own the relationship with their fan base.],
-  [In partnership with Shopify, 77X offers a central place for Dončić’s fandom.],
-  [“[In this] new world of . . . people loving athletes more than they love the teams and the franchises, which was the traditional model, Luka has really found a way for him to get closer to the fans and for them to participate more fully in his life,” says Jessica Williams, head of global brand marketing and partnerships at Shopify.],
-  [[Photo: 77X]],
-  [This phenomenon is reflective of how Dončić’s youngest fans, who are between 13 and 25 years old, want to engage.],
-  [“Fans today don’t just want to be passive,” says Seager. “They want to be active, they want to consume, and they want to live inside worlds.”],
-  [In order for fandoms to live inside a world, a world must first exist. Creating 77X’s visual identity was a collaboration among Dončić, Seager, 77X President and Chief Creative Officer Chris Eyerman, and their team.],
-  [“With Luka’s brand, we wanted to create a universe that reflected his actual personality and interests,” says Eyerman. “We wanted him to own everything we built, and we wanted fans to have a real aesthetic identity they could be part of.”],
-  [[Image: 77X]],
-  [Designing Dončić’s aesthetic identity required understanding who he is beyond his basketball career. Outside of his sport, Dončić is an avid gamer and is particularly fond of Overwatch , a team-based action game set in the future, among other video games. This passion for gaming served as the basis for designing 77X’s brand identity .],
-  [The result is an aesthetic that mixes retro gaming with a playful, specific tone. Eyerman describes the identity as a “Slovenian late night animated broadcast, all built around Luka, gaming, and basketball.”],
-  [A visit to 77x.world invites fans to sign up for a digital membership called Fan Pass. That’s their entry point into exclusive Dončić content, giveaways, signed memorabilia, and the 77X shop with branded merchandise ranging from t-shirts and hoodies to keychains available for purchase.],
-  [[Image: 77X]],
-  [“Gamified for us is a brand philosophy, just as much as it is any visual thing,” says Eyerman. “The way we think about toys, trading cards, blind box collectibles, live experiences, it’s all designed with the same logic. We want 77X to feel like the next great collectibles company as much as it feels like an athlete brand.”],
-  [In traditional athlete models, the product drops from the athlete and brand were the heart of the relationship. But Dončić wants to build a reciprocal and collaborative relationship with fans. Research shows that more than 70% of professional athletes engage with their fans in online communities. Socially savvy brands understand that co-created content with fans performs better. For 77X, merch and product drops are just the starting point.],
-  [[Image: 77X]],
-  [Through Fan Pass, fans will have the opportunity to earn rewards through participating in Dončić ’s world, whether that’s through attending a game, leaving a comment, voting in a poll, or buying merchandise. Each time a fan checks in with Fan Pass, they earn reward points. These points unlock different opportunities like collaborating on product drops and contributing to designs with the 77X team. Every action fans take on the platform from what they click, purchase, or vote on informs what the 77X produces next.],
-  [“Because the world has such a specific tone, creators and fans can easily make things inside it,” says Eyerman. “We’ve had animators, indie game designers, illustrators, content creators, and fans all contributing to the world, which is exactly what we designed for.”],
-  [[Photo: 77X]],
-  [The Heartbreak Factory activation laid the foundation for how the team is going to conceptualize 77X events going forward. It established a creative playbook, or lore bible, and will be a point of proof for how 77X will handle inter-brand relationships, which appear to be a still valuable part of Dončić’s plan.],
-  [For the February event, Dončić and the team invited his existing brand partners like the Nike Jordan Brand and Gatorade into the 77X universe. This invitation changes the nature of Dončić’s relationship with these brands.],
-  [“An athlete basically rents their image to a brand when you sign an endorsement deal,” Seager explains. “The brand owns the relationship with the fans and the consumers. This way we can invite brands like . . . the Jordan brand . . . into this universe. You’ll see ‘Lil Luka,’ has the Jordan Luka Fives on him. They’re now activated inside Luka’s world. [It’s] the same with Gatorade, an important partner. So rather than Luka renting his image on the outside with brand partnerships and stepping into the traditional brand partnerships, we’re doing the reverse.”],
-  [All these elements, Fan Pass, brands, commerce, live events, are designed to scale together. So far, the 77X team is encouraged by the results of their first pop-up, which marked the first test of Fan Pass in a live environment.],
-  [For now, the 77X team says more live events are planned, each is theme-driven and designed to extend the world they’ve built across digital and physical spaces. For Dončić, that’s the point.”],
-  [“This is something that hasn’t been seen before,” Dončić says. “This [event] is the first [one] we’re going to do. . . . The things in here are the things I like, the things I want to create. . . . This is a big start for us.”],
+  [Canadian design studio Verge Select has designed a studio for painter Janna Watson in Ontario , composed of three square volumes fused together to form a secluded forest retreat.],
+  [The Grey County studio is located in the county of the same name in Ontario , and, unlike a second, more urban studio operated by Watson, provides a space that "slows time".],
+  [Verge Select has completed a painter's studio in Ontario],
+  [Located in a forested glade, the structure is composed of three square volumes of varying size. They are slightly askew of one another and fuse where they meet.],
+  [The entire studio is clad in weathering steel , which will patina over time and " allow the building to recede chromatically into the forest floor" according to Verge Select .],
+  [The structure is clad in weathering steel],
+  [Watson's programmatic needs largely informed the distinct shape.],
+  ["The studio takes shape as three distinct yet connected outcrops each responding to Watson's brief for service functions, a light-filled workspace, and a flexible zone for photography and rest," said the studio.],
+  [An elevated steel catwalk leads to an entrance],
+  ["The volumes nest around a central service core, opening outward through generous glazing that frames views of moss-covered stone and woodland canopy."],
+  [On the interior, two of the cubes are largely open-plan, while the other is separated by a wall.],
+  [Another door leads into the forest],
+  [Watson's painting area sits in the middle volume, surrounded by wide-open glazing. On one side, the central space steps up into the lounge area, while the service wing is off to the other side.],
+  [This service space includes a washing area tucked into a sharp corner, and also a bathroom shaped like a right triangle.],
+  [The central volume is wide open and wrapped in floor-to-ceiling windows],
+  [Across a central corridor is the main entrance to the studio via a steel catwalk, while a door on the other side of the structure also leads outside.],
+  ["Two arrival sequences – one compressed and inward-facing, the other emerging from the forest via a steel catwalk – establish a rhythm of transition that echoes the artist's working process," said the studio.],
+  [A wash area is tucked into one corner],
+  [The studio's ceilings reach ten feet high at their tallest, and are lined with "a gallery-style lighting system" for Watson's work.],
+  [The space also contains a wood-burning fireplace and reflective, contemporary lounge chairs by designer Paolo Ferrari .],
+  [Read:],
+  [Cordero Pardee juxtaposes "old and new material cultures" for Vermont barn conversion],
+  ["Here, observation, walking, and seasonal change become active components of the creative cycle," said the studio.],
+  [Verge Select is based in Thornbury, Ontario and was founded in 2009 by Michael Curtis. The studio specialises in architectural, furniture, lighting and interior design.],
+  [Other recent studio projects include a Vermont barn conversion for a photographer and painter and a garden studio in London by Delve Architects .],
+  [The post Verge Select connects three weathering-steel volumes for Ontario painting studio appeared first on Dezeen .],
 ),
-  inline-pq: pull-quote([We want 77X to feel like the next great collectibles company as much as it feels like an athlete brand.], [Hauwa Otori]),
-  inline-pq-idx: 13,
   edited-for-length: false,
 )
 
+#pull-quote([Another door leads into the forest   Watson's painting area sits in the middle volume, surrounded by wide-open glazing.], [Ellen Eberhardt])
 
-{
-  #section-label([Front Page])
-  #standard-article(
-  title: [How to Hang a Christmas Wreath Without Damaging Your Door],
-  author: [Heather Fishel],
-  source-name: [WonderHowTo],
-  images: (),
-  paragraphs: (
-  [Whether you choose to hang an authentic or artificial pine Christmas wreath on your door — or an entirely different type, like ones made of paper waste or even food — chances are you've spent a year or two struggling with how to keep your decor hanging. With one easy to apply, quick to remove trick, you can skip the shiny wreath holder and any further damage to your front door. The Problem with Traditional Hanging MethodsTypically, we rely on everything from metal wreath holders to staples, nails, and even thumbtacks to hang holiday wreaths on the door, yet each of these familiar methods causes damage over time. Wreath holders tend to get stuck, prevent your door from closing, and can brutally hack up the doorframe.],
-  [Stapling your wreath's ribbon to the top of the door doesn't work on all door types, particularly metal ones, and leaves an unsightly collection of leftover staples once the holidays are over. And when it comes to nails and thumbtacks, do you want to see a bunch of tiny ...more],
-),
-  insert-map: (:),
-  word-count: 176,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-}
 
 {
   #section-label([Features])
   #standard-article(
-  title: [Construction material costs set to rise if Strait of Hormuz blockade continues],
-  author: [Lizzie Crook],
+  title: [Photos reveal Ole Scheeren's Róng Museum of Art under construction in Shenzhen],
+  author: [Tom Ravenscroft],
   source-name: [Dezeen Architecture],
   images: (),
   paragraphs: (
   [style="margin-bottom: 15px;"\>],
-  [The continued blockade of the Strait of Hormuz could push up prices of building materials , including steel and cement , a study by global construction consultant Linesight has warned.],
-  [If disruption continues in the Strait of Hormuz – a narrow waterway between Iran and the UAE – the construction industry should prepare for higher prices for aluminium , steel, copper and cement, the report states .],
-  [Iran is currently restricting access to the waterway used to ship a fifth of the world's oil supply following US and Israeli strikes on the country creating a bottleneck for the oil and gas trade.],
-  [The blockade is pushing energy and shipping costs higher, which is expected to have a knock-on effect on the production and transport costs of construction materials.],
-  [According to Linesight , this crisis exacerbates the ongoing impact of conflict in the region, including disruption to the Red Sea-Suez trade route.],
-  ["Recent disruption is not about a single event, it is the accumulation of energy volatility, constrained logistics and geopolitical risk across multiple routes," said Linesight's vice president Derek McNamara in the report.],
-  [Blockade could have greatest impact on aluminium],
-  [In its analysis, Linesight said the chokepoint could have an especially large impact on the cost of aluminium, the second most widely used metal in construction after steel.],
-  [This is largely due to Gulf countries producing approximately nine per cent of the global supply, predominantly for export, while relying on imports of bauxite and alumina to produce it.],
-  [Suspended gas supplies also caused a smelter used to make aluminium in Qatar to stop operations on 3 March , while the Aluminium Bahrain smelter has also halted shipping, according to the report.],
-  [Steel is also likely to be impacted by escalating energy prices and tighter supply, as steelmaking is energy‑intensive and furnaces rely heavily on fuels such as gas.],
+  [Architecture studio Büro Ole Scheeren has revealed photos and renders of the Róng Museum of Arts, which is currently under construction in Shenzhen , China.],
+  [Designed for Tenova Future – a private venture of Ma Huateng, the founder of technology company Tencent – the museum will focus on the visual culture of the 20th and 21st centuries.],
+  [It will be located alongside the Shenzhen Bay Culture Park by MAD , which will be topped by two pavilions designed to resemble stones and near a bullet-shaped skyscraper designed by KPF .],
+  ["From the very beginning, we worked closely to define a museum and overall complex that is not only a showcase, but a symbiotic urban and ecological statement with big tech as a central cultural patron," said Büro Ole Scheeren founder Ole Scheeren.],
+  ["Around the world, most tech environments are relentlessly self‑focused," he continued.],
+  ["Here, the ambition is to chart a different path by investing in public space, cultural venues and education, and to use economic success to underwrite a deeper, more generous engagement with the city and wider society."],
+  [Much of the structure is complete],
+  [Set to be 53 metres high, the 4,500-square-metre cultural landmark comprises five blocks that surround a central, skylight plaza.],
+  [Each of the sculptural blocks has similar forms that expand in size as they rise and are interconnected to create a sinuous mass.],
+  [The facades will be covered in hanging glass tubes],
+  [The curved facades of the museum will be wrapped in hundreds of hanging, "parametrically-engineered" glass tubes.],
+  [According to the studio, these will give the museum a distinctive identity and improve its energy performance by creating shading and helping with ventilation.],
   [Read:],
-  [Over 40,000 civilian buildings in Iran reportedly damaged in ongoing war],
-  [Similarly, rising energy costs are feeding through into higher cement production costs due to the material's energy‑hungry manufacturing process. Cement is also heavy to transport, meaning an increase in shipping costs from disrupted and diverted routes is expected to drive the material's price up further.],
-  ["A short‑lived disruption may be absorbed, but a prolonged period of elevated energy and freight costs would reset cement price baselines across regions," the report states.],
-  [While the Gulf region doesn't produce much copper, it is a leading supplier of sulphur, a byproduct of oil and gas production that is essential for sulphuric acid used in copper ore processing.],
-  [Linesight said the war has put "nearly half of global sulphur exports at risk", meaning copper smelters face potential shortages of acid, hastening the rise of copper prices.],
-  [US-Israeli strikes have damaged over 40,000 civilian buildings],
-  [In a report by the BBC, the effective closure of the Strait of Hormuz by Iran has hiked the price of a barrel of oil to above \$100 (£74.87) this morning .],
-  [The concerns in Linesight's report are echoed by UK building material supplier Travis Perkins, which has said it is considering raising prices.],
-  ["In the last week or so, we've had communications from various manufacturing suppliers of ours saying they're looking at energy surcharges or they're looking at price increases to counteract energy rises," said Travis Perkins CEO Gavin Slark .],
-  [Read:],
-  [The current wave of US-Israeli strikes on Iran began on February 28, killing Iranian supreme leader Ali Khamenei. Iran has retaliated with missile and drone strikes on Israeli and US-allied countries and bases across the Middle East.],
-  [Analysis by the humanitarian group Iranian Red Crescent Society has found that 42,914 civilian buildings in Iran have been damaged by US-Israeli airstrikes. Iranian strikes have also caused damage to notable buildings across the Middle East.],
-  [The main image is courtesy of Shutterstock.],
-  [The post Construction material costs set to rise if Strait of Hormuz blockade continues appeared first on Dezeen .],
+  [Ole Scheeren reveals plans for Shenzhen skyscrapers with "waterfall" facades],
+  ["I wanted to give the museum a distinctive and magical appearance that creates a sense of curiosity, especially amongst the younger generation," said Scheeren.],
+  ["The whole project was conceived as a cross‑cultural interactive experience, with a very focused exhibition space and programme at its core, but with many more ways to engage with culture and architecture."],
+  [The glass tubes will be illuminated with LEDs],
+  [Along with 2,300 square metres of gallery space, the museum will contain a major public library, workshops and spaces for lectures, along with shops, cafes and restaurants.],
+  [The building will be topped with an extensive roof garden.],
+  [A skylit plaza will be located at the centre of the building],
+  [The museum, which is set to open in 2027, forms one city block in the wider Houhai Hybrid Campus, also designed by Büro Ole Scheeren.],
+  [Each of the four blocks in the development will be connected by bridges, with office space and a hotel occupying the other buildings.],
+  [Elsewhere, Büro Ole Scheeren is also designing a skyscraper for Chinese e-commerce company JD.com with facades intended to resemble waterfalls and developing twisting office towers for the global headquarters of Tencent .],
+  [Project credits:],
+  [Architecture: Büro Ole Scheeren],
+  [Structural engineer: ECADI, Shenzhen],
+  [Facade consultant: RFR, Shanghai],
+  [Sustainability consultants: Arup, Hong Kong and MMoser, Hong Kong],
+  [Landscape consultant: PLA, Bangkok],
+  [The post Photos reveal Ole Scheeren's Róng Museum of Art under construction in Shenzhen appeared first on Dezeen .],
 ),
   insert-map: (:),
-  word-count: 698,
+  word-count: 573,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -136,524 +117,206 @@
 
 {
   #standard-article(
-  title: [Oven Roasted Potatoes],
-  author: [Jess Rice],
+  title: [Snøhetta transforms Théâtre Nanterre-Amandiers in France into "urban lantern"],
+  author: [Jon Astbury],
+  source-name: [Dezeen Architecture],
+  images: (),
+  paragraphs: (
+  [style="margin-bottom: 15px;"\>],
+  [Architecture studio Snøhetta has completed the renovation of Théâtre Nanterre-Amandiers in France , unifying its performance spaces around a tilted glass hall that overlooks a landscaped plaza.],
+  [The theatre in the Paris suburb of Nanterre dates back to the 1965 Festival de Nanterre, when it began life as a circus tent and subsequently a temporary warehouse. The permanent building was designed in 1976 by the architect Jacques Kalisz.],
+  [Snøhetta has renovated Théâtre Nanterre-Amandiers in France],
+  [Snøhetta won a competition to update Théâtre Nanterre-Amandiers in 2018, thanks to its proposal to upgrade its existing venues, add a new 200-seat auditorium and reconfigure its public spaces with a focus on flexibility and natural light.],
+  [At the centre of the renovation is The Grand Hall, a fully-glazed, multipurpose space that overlooks a newly-created sunken courtyard and planting designed in collaboration with landscape studio Atelier Silva Landscaping .],
+  [Its tilted glass exterior overlooks a newly landscaped plaza],
+  ["The rehabilitation project is neither a rupture nor a spectacular gesture, but a careful transformation aimed at preserving the essence of the place while firmly situating it in the present day," said Snøhetta.],
+  ["The intervention responds to the evolution of artistic practices, uses, and audience expectations, while renewing the dialogue between the theatre, the city, and the park," it added.],
+  ["The themes of materiality and transparency run throughout the project, serving a building that is clear, legible, and strongly connected to its context."],
+  [The renovation centres around the fully-glazed hall],
+  [The Grand Hall maintains the footprint of the theatre's previous foyer, expanded with a new roof and sunken floor that allows access from both the upper forecourt and lower stepped plaza.],
+  [A mezzanine area above the hall's flexible double-height spaces provides additional access into the auditoria, while a ceiling with integrated stage equipment enables the entire space to be transformed into an additional performance or meeting venue.],
+  [Snøhetta used a "deliberately restrained" palette of concrete, wood and glass for these public areas, with the intention of creating warm, robust spaces and surfaces that would reflect the changing light through the fully-glazed walls.],
+  [Read:],
+  [Glasshouse Theatre in Queensland operates "like a finely tuned musical instrument"],
+  ["Transparency, omnipresent throughout the space, changes the perception of the building throughout the day and seasons, making the theatre’s energy visible and supporting its mission of artistic transmission and dissemination," said the studio.],
+  ["By day, natural light animates the volumes and reveals the raw materials; by night, the hall is illuminated, transforming the theatre into an urban lantern," it added.],
+  [Concrete, wood and glass define the public areas],
+  [Théâtre Nanterre-Amandiers's main 800-seat auditorium has been entirely overhauled, with the creation of accessible entrances, technical upgrades and improved sightlines. Curtains allow the size of the theatre to be reduced if needed.],
+  [Two additional performance spaces include an updated flexible auditorium with mobile seating and motorised platforms, and a new 200-seat auditorium for more intimate and experimental performances with a motorised telescopic seating system.],
+  [A new 200-seat auditorium was added to the venue],
+  ["These three auditoriums, rationally organised with dressing rooms, team workspaces, and circulation areas, form a compact and legible ensemble where each space is directly accessible and fully functional," said the studio.],
+  [Snøhetta recently won a competition to design the new Ontario Science Centre alongside Hariri Pontarini Architects, and is among a number of studios announced to be working on a new masterplan for Istanbul's northern Beykoz district .],
+  [The post Snøhetta transforms Théâtre Nanterre-Amandiers in France into "urban lantern" appeared first on Dezeen .],
+),
+  insert-map: (:),
+  word-count: 593,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+}
+
+{
+  #standard-article(
+  title: [Information is a battlefield: 4 questions you can ask to judge the reliability of news reports and social posts about the US-Iran war],
+  author: [Andrea Hickerson, Dean and Professor, School of Journalism and New Media, University of Mississippi],
+  source-name: [The Conversation (Politics)],
+  images: (),
+  paragraphs: (
+  [Staff members watch as Defense Secretary Pete Hegseth speaks during a press briefing at the Pentagon on March 2, 2026. AP Photo/Mark Schiefelbein],
+  [Historically, when the U. S. has undertaken military action against foreign governments, journalists have relied heavily on government sources and rallied “ ’round the flag ,” often uncritically sharing official narratives about U. S involvement. This has been evident during periods of U. S. military engagements in Vietnam , Iraq and Afghanistan .],
+  [Recently, however, the Pentagon has restricted access for legacy news organizations. And on March 14, 2026, Brendan Carr, chairman of the Federal Communications Commission, replied to a social media post from President Donald Trump complaining about reporting on U. S. involvement in Iran. Carr threatened to deny license renewals to broadcasters not operating in the “public interest.”],
+  [“The People of our Country understand what is happening far better than the Fake News Media!” Trump asserted in his original Truth Social post.],
+  [This hostile relationship between journalists and a presidential administration is only part of the story about what is or isn’t happening on the ground in Iran and the Middle East.],
+  [In times of conflict, information about military activity can be seen as another domain of conflict, much like air, land and sea. Countries, including Iran, have long tried to manipulate information to persuade or influence what people think outside the region.],
+  [A preprint, not yet peer-reviewed study authored by academics affiliated with the U. S. Air Force and the U. S. Air Force Academy describes increased government funding and attention to “cognitive warfare,” or efforts to influence what people think through strategic messaging.],
+  [A common call to action from advocacy and educational groups in politicized situations where misinformation weighs heavy is to teach media literacy. Conventional wisdom holds that if people only knew how to read the news and look for bias, they would understand a situation more clearly.],
+  [As a journalism scholar and educator , I agree that media literacy is valuable. But it’s also time-consuming. It’s impractical to complete a full training or curriculum when faced with immediate current events. As an abbreviated measure to assess the current Middle East conflict, readers can start with the premise that information is contested and an extension of the battlefield.],
+  [Key questions to ask],
+  [This assumption reframes news not as something that finds a reader by chance, but as something someone wants a reader to see. It primes readers’ critical thinking.],
+  [Then readers can consider some key questions:],
+  [Why does the author of this information want me to see this?],
+  [The obvious answer is that they think it’s important, but what are they focused on? Military progress? One actor in the conflict? Civilian responses? Public opinion? Diplomacy? Asking these questions helps assess what is left out and helps readers resist the temptation to extrapolate details they can’t know from a single news story.],
+  [What information does this person or organization have access to?],
+  [Because Iran is inaccessible to many journalists , readers must be especially careful about reporting purporting to know or show what is going on inside Iran. For sure, information is coming out via citizen reports and social media , but it is hard to verify and interpret .],
+  [Graves dug for coffins of students killed in a bombing on a girls elementary school in Minab, Iran, are seen during a mass funeral on March 3, 2026. 
+ Stringer/Anadolu via Getty Images],
+  [Relatedly, and especially when consuming content from social media, readers can ask:],
+  [What about an author’s personal experience may inform their interpretation of events?],
+  [Media produced for and by diasporas – people displaced from their country of origin by choice or force – is a good source for contextualized and expert information about conflicts in their country of origin. But diasporas can also be deeply political and strategic in what they share. As a general consumer, readers don’t need to get to the bottom of the veracity of the information they share. Readers can simply be aware of disaporas’ positions so they can factor this into their interpretation and understanding of the conflict.],
+  [What do different people or organizations have to gain or lose by people widely seeing specific information?],
+  [If information is a battlefield, actors will make strategic choices in what they will share with the public. Sometimes they will shield information from the public or deny information . However, undesirable and unflattering information occasionally gets out and circulated, as was the case when a missile struck an Iranian elementary school .],
+  [Politicians will want to show they are winning . Journalists may want to show they are being a watchdog on the government. Readers can consider the goals of both the authors and the sources they cite when trying to orient themselves around the information they share.],
+  [Transparent fact-checking],
+  [Beyond media literacy, there are several potential short cuts to finding accurate information about immediate events in Iran.],
+  [First, readers can look for opinions and commentary from established experts on the Middle East, Iran, oil, the military and other related fields. Too many readers claim expertise after reading a few popular articles or listening to a podcast.],
+  [Instead, they can look for people who have been observing and researching the region for years – people whose work has been already validated by peer review. As a starting place, readers can look for subject matter experts on the social network LinkedIn or search for research on Google Scholar. Readers can also see whether authors of older popular books are writing about contemporary events on websites or blogs.],
+  [Vehicles pass a billboard in Tehran, Iran, on Feb. 22, 2026, depicting a U. S. aircraft carrier with damaged fighter jets on its deck. 
+ AP Photo/Vahid Salemi],
+  [Think tanks that produce research reports may also be helpful, but sometimes think tanks with neutral-sounding names are politically affiliated. A close read of the “About Us” page and perusing the list of funders can offer some helpful clues.],
+  [Finally, perhaps the most efficient way to evaluate what is happening in Iran is to follow fact-checking and open-source reporting organizations. These groups often do a better job showing their assessment work and linking to evidence than do traditional news outlets, which focus on narrative structure and a cohesive final product.],
+  [Poynter, a nonprofit journalism institute, recently detailed the work of Factnameh , run by an Iranian fact-checker in exile. Bellingcat and Indicator are two excellent open-source reporting organizations that use public data to investigate whether actual events match circulating narratives.],
+  [And sometimes traditional news organizations do similar types of investigations, such as this example of The Associated Press debunking video misinformation in Iran .],
+  [The transparent methods of fact-checking and open-source sites can also serve as interactive exercises in media literacy. Both Bellingcat and Indicator regularly showcase information validation tools that readers can use.],
+  [Regardless of how much effort readers choose to spend on evaluating the accuracy of reporting on Iran, none of us are watching the battle from the sidelines.],
+  [class="fine-print"\> Andrea Hickerson does not work for, consult, own shares in or receive funding from any company or organization that would benefit from this article, and has disclosed no relevant affiliations beyond their academic appointment.],
+),
+  insert-map: (:),
+  word-count: 1192,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+}
+
+{
+  #standard-article(
+  title: [How hatred of Jews became a common ground for Islamic terrorists and left-wing extremists, fueling domestic terrorism],
+  author: [Arie Perliger, Director of Security Studies and Professor of Criminology and Justice Studies, UMass Lowell],
+  source-name: [The Conversation (Politics)],
+  images: (),
+  paragraphs: (
+  [A woman gathers children as law enforcement responds at a Michigan synagogue after an assailant drove a vehicle into the building on March 12, 2026. AP Photo/Corey Williams],
+  [Every major escalation in the Middle East sends shock waves far beyond the region. In the United States, those shock waves arrive not as distant tremors but as catalysts for domestic radicalization and violence, particularly against Jewish communities.],
+  [The data is unambiguous.],
+  [Following the Hamas attack on Israel on Oct. 7, 2023 , which led to the deaths of more than 1,200 Israelis and taking of more than 200 hostages, Israel’s military responded in a campaign that intensified the following year , killing more than 70,000 Gazans.],
+  [At the same time, in 2024 the Anti-Defamation League recorded 9,354 antisemitic incidents in the U. S. – averaging more than 25 acts per day – the highest figure in the audit’s 46-year history.],
+  [FBI hate-crime statistics documented 1,938 anti-Jewish offenses in 2024 , constituting 69% of all religion-based hate crimes. Jews comprise roughly 2% of the population.],
+  [The Secure Community Network, which provides Jewish communities in North America security services, tracked over 10,000 threat incidents and suspicious-activity reports since Oct. 7, 2023, including more than 500 credible threats to life in 2024 .],
+  [Research shows similar trends following past military escalations in the Middle East .],
+  [Geopolitical violence abroad translates, with alarming efficiency, into homegrown threats in the U. S. and Canada. For the first time in the ADL audit’s history, a majority of incidents in 2024, 58%, contained elements explicitly related to Israel or Zionism. As someone who has studied domestic terrorism and hate for over 20 years , such dynamics are not surprising. They illustrate what my own research and that of others calls “imported conflict.”],
+  [The recent attacks against Jewish targets in Toronto , Michigan and possibly the one in San Jose underscore that the threat is neither abstract nor hypothetical.],
+  [On March 6, 2026, a road strewn with rubble and debris is seen after heavy Israeli strikes on Beirut’s southern suburbs. 
+ AFPTV \/ AFP via Getty Images],
+  [Radicalization of strange bedfellows],
+  [Foreign conflict can become domestic violence via multiple pathways.],
+  [Left-wing extremists, Jihadi-inspired militants and far-right white supremacists occupy distinct spaces along the ideological spectrum, yet they converge on a shared target: Jews.],
+  [Each escalatory cycle in the Middle East energizes their exposure to and gradual adoption of extremist views. Online ecosystems accelerate the process dramatically.],
+  [Encrypted Telegram channels circulate operational guidance from jihadist media wings within hours of a Middle East strike , encouraging attacks against Jews wherever they can be found. On platforms like 4chan and Gab, white-supremacist accelerationists seize on the same events to amplify “great replacement” narratives casting Jews as orchestrators of unwanted demographic change .],
+  [Meanwhile, TikTok and Instagram accounts repackage eliminationist slogans, advocating the end of the state of Israel – “from the river to the sea,” “glory to the resistance” – as mainstream progressive content, reaching millions of young users whose algorithmic feeds reward outrage over nuance .],
+  [What once required years of indoctrination within a closed network can now unfold in weeks of passive scrolling.],
+  [On university campuses, the atmosphere has grown particularly volatile. Campus Jewish organization Hillel International documented 2,334 antisemitic incidents during the 2024–25 academic year, the highest since tracking began .],
+  [These confrontations involve physical intimidation, exclusion from student organizations and what the organization describes as the normalization of eliminationist language cloaked in social justice vocabulary.],
+  [Antisemitism as anti-racism],
+  [To understand the increasing ease with which geopolitical violence abroad turns into antisemitic violence in the U. S. requires understanding the ideological developments in recent progressive thinking.],
+  [One observation that our research demonstrates is that today’s antisemitism may not come from the political fringes but from within progressive movements themselves . Much of progressive ideological frameworks tend to divide the world into oppressors and oppressed . Because Jews are often seen as white, wealthy and well connected, they can get placed on the oppressor side of that line.],
+  [Intersectionality – a concept originally designed to show how different forms of disadvantage overlap – is now regularly used to justify shutting Jews out of progressive coalitions and solidarity campaigns .],
+  [According to ADL survey data, Americans who agreed with the belief that problems in the world “come down to the oppressor vs. the oppressed” were 2.6 times more likely to hold negative or stereotypical views about Jewish people compared to those who disagreed with the statement.],
+  [I believe this is not a fringe problem. Among some parts of the intellectual and cultural elite, such as parts of academia, nonprofits and political parties, hostility toward Jews has become more apparent , with some suggesting that Jews simply do not deserve the same moral sympathy extended to other minorities . In some of these circles, if you do not accept that Jewish collective life is inherently oppressive, you are labeled a bad progressive and exiled .],
+  [A coalition of progressive California Democratic delegates pushed a resolution that opponents described as a Zionism “litmus test,” effectively requiring that delegates reject Zionism to be considered legitimate progressives . The D. C. chapter of the Sunrise Movement, an influential progressive climate group, boycotted a voting rights rally because of “ the participation of a number of Zionist organizations .”],
+  [Such dynamics reflect that there is little room in this framework for the complexity of Jewish history, people who have been both persecuted and resilient.],
+  [Furthermore, they can facilitate the rebranding of antisemitism as anti-racism. Some writers have noted that attacking Jewish influence can become a moral duty rather than a bigoted act . Antisemitism is renovated with concepts such as equity, decolonization and liberation, despite promoting the same traditional antisemitic tropes.],
+  [A woman holds signs that depict Israeli leader Benjamin Netanyahu with a Hitler mustache at a protest outside the U. N. on Sept. 25, 2025, in New York. 
+ Alexi J. Rosenfeld/Getty Images],
+  [Strange alliance],
+  [I assert that multiple ideological movements targeting Jews reflect a deeper structural alignment between political Islam and segments of the progressive left.],
+  [Superficially, the two camps could hardly appear more different. Contemporary left-wing activism champions LGBTQ rights, environmentalism, social and economic equality, human rights and government transparency. Radical Islamist movements reject most of these commitments outright .],
+  [Beneath these contradictions appears to exist a shared ideological architecture powerful enough to sustain cooperation: anti-globalization, anti-imperialism, rejection of the Western nation-state, the primacy of collective identity over individual rights, a revolutionary vision and, most critically, a common set of enemies .],
+  [This alliance is visible in the protest movements that have erupted on American streets and campuses since the attacks of Oct. 7, 2023. Marches under the banner of Palestinian liberation routinely feature Islamist slogans such as “From the water to the water, Palestine is Arab” alongside progressive placards, or Hezbollah iconography beside “Queers for Palestine” signs. What binds this coalition is opposition to Israel, to American power, and, increasingly, to Jews as symbols of both.],
+  [For domestic security, this Red-Green alliance matters because it creates a shared radicalization experience in which grievances originating in very different worldviews are fused into a single call to action.],
+  [And as a scholar of political violence and extremism , I believe that when a progressive activist and an Islamist militant attend the same rally, share the same social media space and chant the same slogans, the boundary between political protest and operational violence becomes dangerously thin. Consider two recent cases.],
+  [In May 2025, Elias Rodriguez − steeped in anti-Zionist rhetoric and whom the ADL has called a far-left activist − shot and killed Yaron Lischinsky and Sarah Milgrim, two young Israeli Embassy staffers, outside the Capital Jewish Museum in Washington, D. C., pulling out a keffiyeh and chanting “Free Palestine” as he was subdued. Weeks later in Boulder, Colorado, Mohamed Sabry Soliman, allegedly yelling “Free Palestine,” hurled Molotov cocktails at a weekly vigil for hostages held by Hamas, killing 82-year-old Karen Diamond .],
+  [These attackers occupied different positions on the spectrum between ideological radicalism and organized militancy, but they drew from the same well of dehumanizing language that circulates freely in spaces where political protest and incitement to violence have become indistinguishable.],
+  [Foreign crises, domestic failures],
+  [The structures governing how security agencies carry out their work in the U. S. are inadequate to this challenge.],
+  [Counterterrorism agencies seem to continue to treat Islamist militancy, far-right extremism and far-left radicalism as separate, unrelated threats. But the examples above point in a different direction: Ideologically distinct movements are converging on the same target − Jewish communities.],
+  [Meanwhile, civil rights agencies and nonprofit advocacy groups struggle to name progressive antisemitism for what it is , caught between legitimate commitments to anti-racism and the uncomfortable recognition that some anti-racist discourse has itself become bigotry.],
+  [Addressing the feedback loop between Middle East escalation and domestic antisemitic violence requires an honest reckoning with all of its sources – not only the familiar threats from jihadist networks and white supremacist cells, but also the ideological currents within progressive spaces that make hatred of Jews newly respectable.],
+  [Until policymakers, educators and leaders of civil society confront this threat’s full topology, Jewish Americans will continue to face a reality in which more than half report experiencing antisemitism in the past year and nearly half doubt that their neighbors would stand with them if the worst were to come.],
+),
+  insert-map: (:),
+  word-count: 1569,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+}
+
+{
+  #standard-article(
+  title: [Dublin Coddle],
+  author: [Melissa Nolan],
   source-name: [Budget Bytes],
   images: (),
   paragraphs: (
-  [There’s so much debate over which potatoes are best for mashing, roasting, or frying, and some potatoes are way more expensive than others! Let me simplify at least one recipe for you: Russet potatoes are always the cheapest where I shop, AND they yield the BEST crispy Oven Roasted Potatoes! What’s my secret? Par-boiling the potatoes first gives the outer layer so much texture, which makes them extra crispy when it comes time to roast them! I guarantee you will have no leftovers if you make this recipe (they’re that good!)],
-  [I think everyone should have a solid roast potatoes recipe in their back pocket, and this one is mine. I start with a quick parboil, and like to salt the water well to season the potatoes from the inside out. Then I add baking soda to the water to help soften and break down the outside of the potatoes. Because it makes the water more alkaline (science!), the baking soda helps create a fluffier surface that adds even more texture to the parboiled potatoes. Those roughed up edges catch the oil, salt, garlic powder, and black pepper beautifully, so I get plenty of flavor and CRUNCH in every bite. It’s an easy, low-cost trick that plays its part in creating deeply golden, crisp roasted potatoes with soft and tender fully cooked centers!],
-  [Dice the potatoes into 1 to 2-inch pieces. Cut the russets into similarly sized chunks so they roast and parboil evenly.],
-  [Parboil until tender, not falling apart. You want the potatoes to be fork-tender, but still sturdy enough to hold their shape when tossed and roasted! The parboiling is just to partially cook them and soften the edges. They’ll finish cooking in the oven.],
-  [Toss gently to add texture. After draining, toss the potatoes with the olive oil and seasonings just enough to create a more textured surface for browning. This is also one of my favorite ways to make a little oil go a long way. You only use what you need here, so there’s no waste!],
-  [Spread them out in a single layer. I recommend giving the potatoes space on the baking sheet so they roast instead of steaming. Overcrowding is one of the quickest ways to lose the crisp finish.],
-  [Roast at 425°F for the best color and texture. High heat helps make the crispest oven roasted potatoes. It also encourages the Maillard reaction (the browning process that gives roasted foods a golden color and deeper flavor!)],
-  [Give them enough time to fully roast. At 425°F, roasted potatoes usually take about 40 minutes in the oven, with a flip halfway through, to get nicely browned and crisp. They’re ready when the edges look deeply golden and the outside feels crisp. Keep an eye on them just in case your oven runs a little hotter than mine!],
+  [If you’ve never heard of Dublin Coddle, let me introduce you to this thrifty gem of a recipe! It’s a cozy one-pot dinner made with budget-friendly staples like bacon, sausage, potatoes, and broth, and is cooked low and slow in the oven. The sausage becomes tender and moist, the potatoes soak up the flavor-packed broth, and the bacon is the cherry on top. Dublin coddle is a seriously hearty meal that feels especially right for St. Patrick’s Day, but I’ll happily make it any time I want a filling dinner without spending a ton.],
+  [Dublin Coddle is a cozy Irish sausage and potato stew-like dish believed to date back to a famine in the 1700s. It’s typically made with potatoes, onions, rashers (bacon), and sausage, and is prime example of making something warm and sustaining out of whatever you have on hand! And you guessed it, the meaning is in the name. This dish is “coddled” slowly and gently for hours, which means to gently cook just below boiling point.],
+  [I kept this recipe for Dublin coddle mostly traditional and just swapped out Irish sausage with beer brats because they’re much easier to find here in the US. I rendered bacon, browned the sausage, then layered everything in a Dutch oven. Then I coddled everything for 2 hours, then enjoyed the results! It’s humble food in the best way and that’s why I love it so much!],
+  [Deglaze with broth. Instead of deglazing the pan with a dark ale or stout as some recipes call for (which can get pricey if you’re not already buying it), I deglaze with chicken broth. It does the same job of lifting up all those browned bits, and you can use whatever broth you’ve already got! Beef or veggie broth will both work for a slightly different flavor.],
+  [Brown the sausages for more flavor. Like many recipes with lots of history behind them, there are many ways to make a Dublin coddle. Some recipes skip browning the sausage and add them directly to the pot. I personally like to brown mine first because it adds an extra layer of flavor.],
+  [There’s no need to pierce the brats. It’ll cause the fat and juices to leak out, which is where all the flavor is. Just brown them gently and let them finish cooking in the pot so they stay juicy.],
+  [Try different seasonings. I seasoned it with salt, pepper, dried parsley, and dried thyme to keep it classic and simple. You can also use bay leaves, rosemary, oregano, onion powder, garlic powder, or the like.],
+  [Adjust the liquid. I added only two cups of broth to my Dublin coddle recipe. If you want a more soup-like coddle, add another cup of broth to the pot.],
   [Print 
  Add to Collection Go to Collections],
-  [class="wprm-recipe-instruction-text" style="margin-bottom: 5px;"\>Once the water returns to a boil, parboil the potatoes for 8 minutes and strain. They will be fork tender (but not falling apart completely) and very textured at this point which is perfect! This flakey outside part of the potato results in the very best crust when roasting.],
+  [class="wprm-recipe-instruction-text" style="margin-bottom: 5px;"\>On the stovetop, heat the Dutch oven over medium heat. Once hot, add the bacon and render for about 10-15 minutes, stirring occasionally, until crispy. Using a slotted spoon, remove the bacon and set it aside, leaving the grease in the pan.],
+  [class="wprm-recipe-instruction-text" style="margin-bottom: 5px;"\>After 1 hour and 30 minutes, remove the lid from the Dutch oven and continue cooking for an additional 30 minutes to crisp up the top of the coddle.],
   [See how we calculate recipe costs here .],
-  [class="wprm-recipe-notes"\> \*I like russet potatoes best for roasting because of the cost and how their low moisture, high starch content helps them crisp up in the oven. You can, of course, roast any potato you like with this method! Just note waxier varieties like Yukon Gold or red potatoes won’t usually get quite as crisp.],
-  [\*\*Feel free to season these potatoes however you like. Add in smoked paprika , poultry seasoning , onion powder , dried herbs , or just use salt and pepper !],
-  [class="wprm-nutrition-label-container wprm-nutrition-label-container-simple wprm-block-text-normal" style="text-align: left;"\> Serving: 1 serving | Calories: 274 kcal | Carbohydrates: 41 g | Protein: 5 g | Fat: 11 g | Sodium: 2498 mg | Fiber: 3 g],
-  [Gather all of your ingredients and preheat the oven to 425°F.],
-  [Prep the potatoes: Peel the 2 pounds russet potatoes, then cut them into large 1 to 2-inch chunks.],
-  [Heat the water: In a large pot, bring 2 quarts water (8 cups) and 1 Tbsp salt to a rolling boil.],
-  [Prep the parsley: While the water heats, mince ½ Tbsp fresh parsley and set it aside.],
-  [Parboil the potatoes : Once boiling, add the diced potatoes along with ½ tsp baking soda. Let the water come back up to a boil.],
-  [When the water returns to a boil, parboil the potatoes for 8 minutes. Drain well. The potatoes should be fork-tender but not falling apart, and the outsides should look textured and flaky, which helps create a crispier roasted finish.],
-  [Season the potatoes: Transfer the drained potatoes to a large bowl and gently toss them with 3 Tbsp olive oil, ½ tsp salt, ¼ tsp ground black pepper, and ½ tsp garlic powder.],
-  [Roast potatoes in the oven: Spread the seasoned potatoes out on a parchment-lined baking sheet in an even layer. Roast the potatoes for 20 minutes.],
-  [After 20 minutes, flip all of the potatoes and bake for an additional 20 minutes. This is an important step to ensure even browning and a crispy crust all the way around!],
-  [Remove the potatoes from the oven.],
-  [Season and serve: Finish with the remaining ½ tsp salt and the minced parsley before serving. Enjoy!],
-  [These easy oven roasted potatoes go with just about everything! Serve them with baked ham during the holidays, roasted chicken for an easy family dinner, or my lentil loaf for a hearty meat-free option. Add a few of your favorite sides, and you’ve got an easy and well rounded meal. The leftovers are also delicious chopped up and added to the filling for a veggie pot pie !],
-  [I prefer these roasted potatoes when served fresh, but leftovers will keep in an airtight container in the fridge for 3-4 days. Reheat them in a 375°F oven or air fryer until heated through and crisp again.],
-  [They can also be frozen for up to 3 months, but the texture of the potatoes may change after freezing and reheating. If you want to freeze this recipe, it’s best to parboil the potatoes, coat them in the oil and seasonings, then flash freeze them on a baking sheet. Once solid, transfer them to a freezer-safe container and then roast from frozen.],
-  [Smoky Roasted Breakfast Potatoes are a hands-off, budget-friendly side with crispy edges, tender middles, and just enough smoky paprika flavor to make breakfast feel a little more special.],
-  [These Parmesan Roasted Potatoes are golden, crisp, and seriously hard to stop snacking on!],
-  [I’d make these Salt & Vinegar Potatoes anytime I want a potato side that feels a little different.],
-  [Rosemary Roasted Potatoes are an easy, flexible side that go with just about anything, and the garlic and rosemary make them taste classic in the best possible way.],
-  [\$3.45 recipe / \$0.86 serving],
-  [\$3.34 recipe / \$0.84 serving],
-  [\$5.67 recipe / \$0.47 serving],
-  [\$3.17 recipe / \$0.79 serving],
-  [The post Oven Roasted Potatoes appeared first on Budget Bytes .],
+  [class="wprm-recipe-notes"\> \* Traditional Dublin coddle uses Irish sausage , which can be difficult to find. I decided on beer brats instead. They add a subtle beer flavor without needing to deglaze the pan with beer/ale. Feel free to use whatever brats or pork sausage you like.],
+  [\*\*I chose to use gold potatoes because they’re some of the best for stewing. They offer a creamy, buttery texture and hold their shape. Red bliss and fingerling potatoes also work well. Make sure to cut the potatoes into 1-2 inch chunks , so they don’t break down as easily.],
+  [\*\*\*Some recipes use just water,  but I prefer the added flavor of the chicken broth . I like to use Better Than Bouillon to make broths to keep costs low. Beef or vegetable broth will also work.],
+  [class="wprm-nutrition-label-container wprm-nutrition-label-container-simple wprm-block-text-normal" style="text-align: left;"\> Serving: 1 serving | Calories: 577 kcal | Carbohydrates: 40 g | Protein: 20 g | Fat: 38 g | Sodium: 1918 mg | Fiber: 5 g],
+  [Gather all of your ingredients. Move a rack to the bottom of the oven to ensure there’s enough room to fit the Dutch oven, then preheat your oven to 300°F.],
+  [Cook the bacon: Heat a Dutch oven over medium heat on the stovetop. Once hot, add the chopped 8 oz. bacon and cook for 10 to 15 minutes, stirring occasionally, until the bacon is crisp and the fat has rendered. Use a slotted spoon to remove the bacon and set it aside, leaving the grease in the pot.],
+  [Brown the sausages: Add 5 beer brats to the bacon grease and sear for 3-4 minutes per side, until browned all over. Remove the brats from the Dutch oven and set aside.],
+  [Sauté the aromatics: Add 2 diced onions, 4 minced garlic cloves, 1½ tsp salt, and 1 tsp freshly cracked black pepper to the pot. Cook for about 3 minutes, stirring often, until the onions begin to soften.],
+  [Add the remaining ingredients: Now add the 2 lb. cubed gold potatoes, 2 cups chicken broth, 1 tsp dried parsley, and ½ tsp dried thyme. Stir everything together to combine.],
+  [Cook: Nestle the browned beer brats over the potato mixture, then scatter the cooked bacon and any collected drippings over the top. Cover the Dutch oven with the lid and transfer it to the preheated oven. Bake for 1 hour and 30 minutes.],
+  [Finish and serve: After 1 hour and 30 minutes, remove the lid and continue baking for 30 more minutes to brown and crisp the top.],
+  [Then, carefully remove the Dutch oven from the oven. Skim off any excess oil from the surface, if desired, and divide the potatoes, onions, brats, and broth evenly among 5 bowls or plates and serve warm. Enjoy!],
+  [I like to serve my Dublin coddle with a cold Guinness and soda bread for a meal that feels straight out of an Irish pub! The soda bread is perfect for soaking up any leftover broth, and if I want to round things out, I’ll sometimes add a side of fried cabbage or roasted Brussels sprouts . A fresh salad like our apple Dijon kale salad works really well with the rich flavor of the stew, too.],
+  [Leftover Dublin coddle will keep well in an airtight container in the refrigerator for 3-4 days. I don’t recommend freezing this one, since the potatoes can become grainy and change texture once thawed. To reheat, warm it gently on the stovetop over medium-low heat or microwave individual portions until heated through, adding a splash of broth or water as needed.],
+  [If I’ve got any sausages left, I’ll happily make Bangers and Mash the next day because those meaty sausages and rich onion gravy are hard to resist!],
+  [Colcannon is a simple Irish side dish that combines mashed potatoes and cabbage into something hearty, filling, and budget-friendly.],
+  [Our Corned Beef and Cabbage is a slow-baked dinner with tender slices of corned beef and skillet-cooked cabbage that keeps the whole meal hearty without turning mushy.],
+  [\$16.53 recipe \/ \$2.75 serving],
+  [\$7.11 recipe \/ \$0.88 serving],
+  [\$11.97 recipe \/ \$1.99 serving],
+  [\$13.05 recipe \/ \$2.18 serving],
+  [The post Dublin Coddle appeared first on Budget Bytes .],
 ),
   insert-map: (:),
-  word-count: 1683,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-}
-
-{
-  #standard-article(
-  title: [A long business overdue update],
-  author: [Jodi Ettenberg],
-  source-name: [Legal Nomads],
-  images: (),
-  paragraphs: (
-  [It’s been awhile, and though I do share tidbits more frequently on social media and via my newsletter, I wanted to do a full write up of what has been going on. I haven’t published a blog post since April, so this is a long overdue update. It shares some exciting professional news, but also the personal as it relates to my health.],
-  [This community has been a huge part of what has kept me afloat during the last few, difficult years. With my limited bandwidth due to the ongoing spinal cerebrospinal (CSF) leak, I have had to cut out some of the work I want to do. The blog was put on hiatus first, because updating on social media (primarily Instagram ) is quicker and less labour intensive.],
-  [But while I have not been putting out new posts here, I have spent many hours updating the backend of the website, and working on a number of other things that I wanted to share. I’ve also seen specialists and learned more about my body, enough that that information sheds a very different light on the many years of chronic pain I endured prior to my CSF leak.],
-  [It has taken time to process the thread that now connects dots I never thought to connect, and I wanted to keep my community updated.],
-  [A few updates about how I’m feeling, those connected dots, and where I’m living.],
-  [Since May, I’ve been living in Gatineau, across the river from Ottawa. My brother lives in Ottawa, and my plan is to eventually move there as well. For now, though, Gatineau has been a lovely middle ground. I got to spend a summer wandering down to the water, seeing my family, and learning how to live mostly alone, with a leak.],
-  [My brother and his partner come over once a week to help with things I cannot do, like getting groceries for me, and doing my laundry and my vacuuming. I’m lucky that I have them to pick up the slack that my leak steals away, and I will never complain about getting more time with people I love so much.],
-  [At first, adjusting to the apartment felt really deflating. There were many things that I couldn’t reach, or use. The bed was too low and very painful to get in and out of. The freezer was a drawer under the fridge, so I couldn’t open it without making my CSF leak worse. The dishes and pots were too heavy for me to wash myself, or use comfortably. The list went on.],
-  [These are fixable problems, of course. I got a mattress pad, a tiny freezer, and new lightweight dishes and a small pot to use, thanks in no small part to the Amazon gift cards you got me for my birthday.],
-  [But the initial weeks here felt really deflating. As humans we are so good at adjusting. Sometimes too good, and we forget where we really are. The perspective I lost was that I am actually more disabled than I remembered, something that hit me hard when I moved into this apartment.],
-  [Like anything else, adjusting to this new life has its ups and downs, and eventually I got past the frustration and started strategizing ways to fix the problems I was facing. I also got a kitchen rolling cart, lots of canvas storage bins since everything has to sit on counters to be reachable for me, and a few other things that make the place more comfortable.],
-  [I was never sure if I’d even be able to live independently again. So while there is a lot I wish I could do, I am very grateful that I am able to have more autonomy after years of being so dependent on others for every little thing.],
-  [It’s 3.5 km to the Ottawa River and back, and I am beyond grateful that I am able to walk there when my body allows.],
-  [As I mentioned, my spinal CSF leak is still active. But my body either seems to have produced more CSF, giving me some additional “uptime”, or it has gotten slightly better. Since my leak, I have had immune and other issues that have cropped up or worsened. I was able, with the help of labs and specialists, to finally connect the dots. You can read more about that process on my personal site as follows:],
-  [I have a post about connecting those dots and what I learned.],
-  [recently finished a very long mast cell activation disorder page . I will update it as new research comes out. From the page I wrote:],
-  [Mast cells are “sentinels” of the immune system, a type of white blood cell that helps control the immune processes in the body. They are called resident immune cells because they reside in tissues and not in our bloodstream. And they reside in tissues all over the body, from the connective tissue, to the endothelial cells, to the epithelial cells, and even in the brain.],
-  [I have a piece about learning to cope with chronic pain that I’ve moved over to the personal site as well, and updated it.],
-  [Some of the projects I’ve been working on in the months since I last published.],
-  [I created the Patreon as a way to accept support from this community, but it is slowly morphing into a place where I also share resources for people who are suffering for chronic pain, or those who know someone who is in pain.],
-  [The sad reality is that most of us are in one of those two categories.],
-  [Over the years, I’ve received many questions about how I’ve coped with my own pain levels. Now, I’m getting questions about how someone can support a person in pain. So the Patreon’s AMAs are a place where I answer those questions, and add additional resources.],
-  [The posts I’ve shared there also go into how I made the apartment I’m in accessible, and what changes to the setup allowed me to handle living alone with the disabilities I now have. Most recently, as sometimes people feel bad about asking for help or accepting help, someone asked me to talk about how to talk to someone in pain to help them get support if they are stubborn. (I’ll be answering this in the next AMA).],
-  [From feedback so far, these have been really useful. I look forward to sharing more.],
-  [Also, I’m now a Patreon ambassador ! I got an email from them in the summer, asking if I’d be interested in applying for an ambassadorship programme they were building. I’m one of a small group of creators (out of their 200,000 users) who were accepted.],
-  [It’s still quite new, and thus far it’s been lovely to meet some really interesting, super artistic people. The ambassadorship is unpaid, but features workshop—I’ve attended a few so far—and rewarding breakout rooms with others in the programme to share strategies and problems/successes. Other perks include 1:1 product support, social media features, fun swag for my Patreon community, as well as paid opportunities to participate in things like product focus groups or creative collaborations with their team.],
-  [I don’t know how they found me, and it’s intimidating because many of the other creators have upwards of 2000 Patrons, but I’m looking forward to participating! Given that it was all of you who asked me to start a Patreon, I have this community to thank!],
-  [If you’re interested in joining the Patreon community, you can do so here .],
-  [When I launched my Patreon, I received messages from readers who wanted to contribute and/or support me in my work via a one-time payment. I did not have that in place, but do now.],
-  [Many of you asked for a one-time support option],
-  [Despite all this excitement of moving to a new place, I’ve managed to keep my newsletter running. I’ve been playing around with format (and emojis, I can’t help myself), and primarily spotlighting a few important reads each month, along with more fun photo-essays and quirky pieces I find. I sometimes include personal updates, but the focus of the newsletter is on talented and/or important writing worth reading.],
-  [While it is on Substack, and many writers have moved to a paid newsletter model, I do not plan to do so. The Patreon is the primary support system for my income, alongside celiac cards and the food maps shop. The newsletter I plan to keep free.],
-  [Even if this site has been more dormant than I would like, I feel happy that CAE has gone out every month for the last 11 months.],
-  [You can sign up below if you are interested in receiving it.],
-  [I had a post called How to Get Through Terrible Times that I had on this site, but I have temporarily taken it down as I planned to publish it separately. I’ve been working on this piece during the last while and it’s still in editing, but I am excited to share it on the new JE site .],
-  [You may have noticed that the site is a little different!],
-  [Arthur the raven, my mascot, is very prominent. Ravens are such incredibly curious birds, and I chose one as my site’s throughline in order to highlight that I still am too, albeit in a different way to before.],
-  [Yay, Arthur the raven!],
-  [And, a new slogan: curious about everything. I am no longer telling stories through food, so that slogan had to go. The new logo reflects a divergence from my prior life of travel and food, but also the truth of who I always was: someone who wanted to learn as much as possible.],
-  [I started to feel really dissonant when I looked at the ‘old’ Legal Nomads, so this reflects more of where I am in life while still maintaining a similar structure.],
-  [I’ve added health and chronic pain to the main categories on the home page, too, since they are now a bigger part of what I write about.],
-  [I had really specific ideas of what I wanted, so as with the last redesign to the site I provided the assets (new logos, Arthur the Raven, etc.) to a web developer instead of hiring someone who did branding as well as development. The assets were inked by my artist-in-Legal-Nomadsness Ella F. Sanders . The redesign was done by a web developer who works for fellow travel blogger Mike’s web development company . While her work was paid, he donated his own time pro bono to help supervise the project.],
-  [My morning routine is to get up, make coffee, and then do some work on the website until I need to take a break.],
-  [This has allowed me to slowly update pages and posts over time, and keep Legal Nomads more current.],
-  [Among them:],
-  [The gluten free guides are updated for 2021. They’re here .],
-  [The gluten free New York City guide has also been updated to reflect restaurant closures and some newcomers to the scene that are 100% gluten free.],
-  [I added a history of Belize section, and a “where is Belize located” section, because believe it or not that’s the most common search term for this post. It’s also got COVID-19 rules for visiting, if you were choosing to risk going now.],
-  [I updated the Vietnamese Egg Coffee Recipe with places to get it in North America, and new pieces and videos about the sweet treat.],
-  [I updated my piece on sleep issues and jet lag with information about how to sleep better, and new studies about chronomedicine and Covid-19.],
-  [I updated my Vipassana Meditation retreat experience with some new data about the dangers of those kinds of retreats, and how in some cases they can lead to a mental break.],
-  [The Alternative Careers for Lawyers page has been updated to include pandemic information, the rise of consultants in the legal field, and a more clear breakdown of how to go about shifting careers when you feel overwhelmed thinking about how to do so.],
-  [In November 2021, I updated my history of chili peppers post to include the 2021 Nobel Prize winning research on capsaicin, somatosensory receptors, and pain.],
-  [Google has been threatening to cut RSS-to-email options for Feedburner for many years. The service was deprecated years ago, and this July they finally said that they were done supporting that option. So I had to figure out what service to use in order to get those people their emails. (Since I barely write here, I had lots of time to do this!)],
-  [For those of you who opted to receive Legal Nomads updates via email, new posts will be sent by a company called ConvertKit. I was planning on switching to them right before my CSF leak happened, so it only took me an extra few years. My friend Nathan started the company and is a really lovely human being; I’d much rather give my money to talented friends than strangers!],
-  [If you’re not getting Legal Nomads via email, you can sign up via the form below. This is just for LN posts (about every six months, in terms of publishing schedule these days!). My monthly newsletter above is separate.],
-  [If you were already subscribed to get Legal Nomads posts by email, you do not need to do anything. I wanted to explain why the emails look different, and let everyone know they can also sign up that way if they prefer.],
-  [That’s it for now!],
-  [While the pain I’m in never goes away, these projects and my newfound autonomy have helped make these last few months some of the best in years. I may not be mobile or traveling the world anymore, but I believe that I’m able to help more people than ever before.],
-  [Whether it’s helping navigate tough times, understanding pain and loss, or just giving more context to the illnesses of loved ones, this work feels useful.],
-  [And feeling useful goes a long way toward life satisfaction for me.],
-  [Thank you for allowing me to share this journey with you.],
-  [Until next time,
-Jodi],
-  [The post A long business overdue update appeared first on Legal Nomads .],
-),
-  insert-map: (:),
-  word-count: 2438,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-}
-
-{
-  #standard-article(
-  title: [War on Iran during nuclear negotiations undermines the US’s ability to talk peace around the world − and the effects won’t end when Trump leaves office],
-  author: [Debak Das, Assistant Professor, University of Denver],
-  source-name: [The Conversation (Politics)],
-  images: (),
-  paragraphs: (
-  [On Feb. 7, 2026, Iranian newspapers featured headlines on the resumption of nuclear talks between Iran and the United States, following their suspension after Israeli and U. S. attacks on Iran in June 2025. Fatemeh Bahrami/Anadolu via Getty Images],
-  [Operation Epic Fury – the latest round of military strikes against Iran – began when Iran was engaged in negotiations with the United States to renew restrictions on its nuclear program.],
-  [This is not the first time the United States has bombed Iran during nuclear negotiations.],
-  [In June 2025, while its representatives were in talks with Iran over that country’s ability to produce nuclear weapons, Washington launched Operation Midnight Hammer , targeting three Iranian nuclear facilities in Fordow, Natanz and Isfahan.],
-  [Washington has been broader in its selection of targets in Iran this time around, even though one stated U. S. goal has been to ensure that Iran does not gain nuclear weapons capability .],
-  [Conducting military strikes against a country that is engaged in negotiations to reduce its nuclear capacity sets a dangerous precedent. As a scholar of the global nuclear order , I believe that the conflict has jeopardized all future diplomacy to limit the spread of nuclear weapons.],
-  [The U. S. military action during negotiations has also undermined Washington’s ability to conduct diplomacy to end the war. Iranian officials negotiating with mediators have expressed their concern that they “don’t want to be ‘fooled again,’” according to a report in Axios, and that any new set of negotiations might just be a ruse to conduct more attacks.],
-  [The conflict between the U. S. and Iran has jeopardized future negotiations to limit the spread of nuclear weapons. 
- wildpixel, iStock/Getty Images Plus],
-  [Breaking trust],
-  [The key components of any negotiations are trust and good faith .],
-  [Parties coming to a negotiating table to discuss their nuclear programs must trust that those across the table are acting in good faith. Past negotiations on nuclear arms control and risk-reduction measures between entrenched enemies, such as the U. S. and the Soviet Union or even India and Pakistan, have seen trust as a key component of coming to the table .],
-  [Trust has its own diplomatic cachet. It allows negotiating states to be a little more vulnerable, thus facilitating the possibility of softened positions leading to landmark agreements.],
-  [In the 1960s, negotiations were held to establish a global agreement – the Treaty on the Non-proliferation of Nuclear Weapons – to prevent the spread of nuclear weapons. Nations without nuclear weapons had to trust that countries with them would not use their atomic arsenals to gain military advantage over them as they committed to forswear the possession and development of these weapons. Today all but one of the nonnuclear countries of the world – South Sudan – are signatories to the treaty .],
-  [The consequences of Washington’s military strikes would be even more grave if a new nuclear deal between Iran and the United States was truly within reach in the negotiations in Geneva days before the conflict started. This is because the reported concessions from Iran were substantial enough to have warranted a pause in Washington’s military strategy.],
-  [A day before Operation Epic Fury began, Oman foreign minister Badr bin Hamad al Busaidi, the principal mediator in the talks, announced that Iran had agreed to zero stockpiling . That is, Tehran would give up its enriched uranium, would down-blend – nuclear-speak for diluting – all material that was previously highly enriched to a neutral level, and be subject to “full and comprehensive verification” by the International Atomic Energy Agency.],
-  [If true, these terms could have made any new agreement between the U. S. and Iran as consequential as the Joint Comprehensive Plan of Action negotiated between the United States and Iran under President Obama’s administration.],
-  [The violation of trust by the U. S. will be keenly observed by North Korea. In early March 2026, that country conducted tests of what it called “strategic cruise missiles ” – missiles it suggests could have nuclear capability – stating that its ability to attack from under and above water was growing and that it was arming its navy with nuclear weapons.],
-  [Any possibility of bilateral negotiations between the United States and North Korea on its nuclear and missile programs will now be marked by the unreliability of the U. S. as a good faith negotiator.],
-  [President Lyndon B. Johnson looks on as the Nuclear Non-Proliferation Treaty is signed on July 1, 1968.],
-  [Imperiled future],
-  [With its actions in Iran, the U. S. has lost credibility as a leading international interlocutor in service of global nonproliferation diplomacy.],
-  [Key to a nation’s credibility during negotiations is the reputation that it builds from its past actions. Both instances of the U. S. bombing Iran while negotiating with it will make it very unlikely that other countries will engage with Washington in future nuclear diplomacy.],
-  [Those countries that want to take part in nuclear diplomacy involving the U. S. will likely ask that other, trusted countries participate as well. They will also likely seek security guarantees before engaging in negotiations. This will mean that China and the European Union – countries, alliances or institutions that might help keep the United States accountable – will likely have to be a part of any such diplomacy.],
-  [Loss of trust in the United States’ good faith will likely continue across future U. S. administrations after the Trump presidency. This will be because of uncertainty over the credibility of international commitments made by the United States. An agreement made by one administration could be reneged on by the next.],
-  [Another area of concern is that in the future a country on the threshold of gaining nuclear weapons might not arrive at the negotiating table fully ready to give up all parts of its nuclear program. Even if a country does make concessions, it might choose to hold on to some part of its nuclear or missile program as a guarantee against a future American military strike.],
-  [The future of negotiations over nuclear proliferation may yet expand beyond that focus to ballistic missiles as well. Recall that Trump began the latest conflict saying that Iran’s ballistic missiles were an “ imminent threat ” to the U. S. and its bases abroad. Nuclear weapons programs and ballistic missile programs often go together . Countries with such missile programs that are not allied with the U. S. might also be future targets of bilateral diplomatic and military action.],
-  [The loss of trust and good faith has substantially reduced the ability of the U. S. to diplomatically address not only broader nuclear and missile nonproliferation concerns but also its own national security needs. Under these circumstances, military action might be the most tempting option for Washington to secure these goals – and that is dangerous.],
-  [class="fine-print"\> Debak Das does not work for, consult, own shares in or receive funding from any company or organization that would benefit from this article, and has disclosed no relevant affiliations beyond their academic appointment.],
-),
-  insert-map: (:),
-  inline-pq: pull-quote([They will also likely seek security guarantees before engaging in negotiations.], [Debak Das, Assistant Professor, University of Denver]),
-  inline-pq-idx: 11,
-  word-count: 1156,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-}
-
-{
-  #standard-article(
-  title: [15 Easy Carrot Recipes],
-  author: [Jess Rice],
-  source-name: [Budget Bytes],
-  images: (),
-  paragraphs: (
-  [Carrots are one of those low-cost ingredients I always feel good tossing into my cart, especially in the spring when Easter cooking and baking start creeping into my mind. They’re affordable, dependable, and delicious, but I’m here to tell you they’re more than just a side dish! This roundup of 15 easy carrot recipes will help you stretch that humble bag into soups, sides, salads, and desserts without stretching your grocery bill.],
-  [Soup and stews are my go-to when I want carrots to do a little more than just sit on the side of the plate. These recipes make them feel far more substantial, whether they’re blended until smooth or simmered into a hearty pot.],
-  [\$5.81 recipe / \$1.45 serving 
- Get the Recipe],
-  [I love that this carrot soup gets extra depth from roasted carrots, brown butter, ginger, and thyme, which gives it a richer, more homemade taste that other blended vegetable soups can lack. The cup of heavy cream makes it extra creamy too. 😋],
-  [Thai Coconut Curry Carrot Soup],
-  [class="wprm-recipe-summary wprm-block-text-normal"\> You only need a few ingredients to make this light and satisfying Thai Coconut Curry Carrot Soup. It’s a creamy, a little sweet, a little spicy, and a lot of delicious.],
-  [\$6.69 recipe / \$1.12 serving 
- Get the Recipe],
-  [This Thai coconut curry carrot soup gets its BIG flavor from creamy coconut milk, Thai curry paste, and the natural sweetness of carrots. To make it vegan, just swap the butter for coconut oil and double-check that your curry paste is vegetarian-friendly!],
-  [Spiced Lentils with Carrots],
-  [\$4.19 recipe / \$1.04 serving 
- Get the Recipe],
-  [I think these spiced lentils with carrots are such a delicious meatless dinner because the cumin, garlic, ginger, cinnamon, and carrots make them taste warm and layered. This one also holds up really well for leftovers!],
-  [I like carrots just as much in cold and room-temperature dishes as I do in hot ones, especially once spring rolls around. These easy carrot salads are fresh and so very easy to pair with dinner any night of the week.],
-  [Roasted Carrot and Feta Salad],
-  [\$2.49 recipe / \$0.41 serving 
- Get the Recipe],
-  [Our carrot feta salad shows how far roasted carrots can go, and I like that it’s flexible enough to serve warm, cold, or slightly reheated, depending on what I fancy.],
-  [Carrot & Orzo Salad],
-  [\$4.07 recipe / \$1.02 serving 
- Get the Recipe],
-  [This carrot orzo salad keeps things light with roasted carrots, orzo, cumin, parsley, lemon juice, and just a little feta. I sometimes like to add a little garlic powder with the cumin, but it’s absolutely delicious either way!],
-  [These are the carrot sides I make on a regular weeknight, but several of them are also nice for Easter or the holidays when I need something affordable and easy to prep!],
-  [\$1.65 recipe / \$0.41 serving 
- Get the Recipe],
-  [I’d absolutely keep these glazed carrots in mind for Easter because they’re made with just five ingredients, come together in 20 minutes, and have a buttery brown sugar finish that makes them totally holiday-worthy!],
-  [\$2.51 recipe / \$0.62 serving 
- Get the Recipe],
-  [These air fryer carrots are a quick side when I need something on the table FAST, and the recipe uses butter, olive oil, garlic powder, and dill for a really easy flavor boost.],
-  [\$2.50 recipe / \$0.62 serving 
- Get the Recipe],
-  [I love this roasted carrots recipe for its simplicity. The dry oven heat caramelizes the carrots nicely and turns a few basic seasonings into an easy side dish I can make any night of the week.],
-  [\$2.38 recipe / \$0.30 serving 
- Get the Recipe],
-  [These pickled carrots are a fun change of pace! They’re a quick pickle made with budget-friendly vinegar, jalapeño, red onion, cumin, and oregano, and they work as a snack, side, or bright topping for other meals. I often throw in other veggies that need using up (think cauliflower or green beans) to make the most of the pickling liquid!],
-  [If there’s one place carrots never go to waste in my kitchen, it’s in baking. This mix of cakes, muffins, and breakfast bakes takes that familiar carrot cake flavor and works it into all kinds of easy homemade treats.],
-  [\$13.92 recipe / \$0.93 serving 
- Get the Recipe],
-  [I’m all in on this carrot cake because it’s soft, moist, packed with freshly grated carrots, warmly spiced with cinnamon, nutmeg, and ginger, and finished with a thick cream cheese frosting and chopped pecans.],
-  [Carrot Cake (for two)],
-  [\$1.30 recipe / \$0.65 serving 
- Get the Recipe],
-  [This small-batch carrot cake is great because it’s just enough for two people and a smart way to use up the last carrot or two hanging around in the fridge!],
-  [\$4.42 recipe / \$0.44 serving 
- Get the Recipe],
-  [These carrot cake muffins bring together shredded carrots, warm spices, and a soft crumb in a breakfast-friendly bake that’s ready in under an hour! I highly recommend using freshly shredded carrots in this one for the best texture and moisture.],
-  [\$5.16 recipe / \$0.86 serving 
- Get the Recipe],
-  [This carrot cake baked oatmeal is one I’d happily make ahead, since it turns carrot cake flavors into a practical breakfast with oats, carrots, raisins, and a creamy cream cheese topping.],
-  [\$3.90 recipe / \$0.43 serving 
- Get the Recipe],
-  [These easy carrot cake bars skip the thick frosting and bake creamy cheesecake swirls right into the batter for a dessert that’s simple and perfect for spring!],
-  [I wanted to end with a recipe where carrots play a helpful part without taking over the whole thing. This last recipe folds them into a hearty breakfast bake with plenty of other texture and flavor going on too.],
-  [\$4.47 recipe / \$0.25 each 
- Get the Recipe],
-  [Our morning glory muffins pack in carrots, applesauce, raisins, walnuts, and coconut for a deliciously hearty breakfast baked good that’s simple but so satisfying! They freeze great too.],
-  [The post 15 Easy Carrot Recipes appeared first on Budget Bytes .],
-),
-  insert-map: (:),
-  word-count: 1841,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-}
-
-{
-  #standard-article(
-  title: [Futuristic Soldier Field concept urges Bears to stay in Chicago],
-  author: [Ben Dreith],
-  source-name: [Dezeen Architecture],
-  images: (),
-  paragraphs: (
-  [style="margin-bottom: 15px;"\>],
-  [Local architecture studio Edward Peck Design has proposed adding a translucent canopy to the Chicago Bears' stadium to convince the NFL team to stay in the city.],
-  [Edward Peck Design designed the concept stadium to meet the desires of the team for a next-generation stadium, with a roof, expanded seating and an entertainment complex.],
-  [The studio created the concept to demonstrate how the team could redevelop its current site and stay in the city.],
-  [Following pushback from conservationists contributed to the Chicago Bears abandoning plans to build a Manica Architecture-designed stadium slightly south of the current one, the team has seriously considered sites in the neighbouring state of Indiana.],
-  ["The Bears should stay"],
-  ["We're not looking to be the architect of the next Bears stadium, but everyone that you talk to in Chicago says the Bears should stay," studio founder Edward Peck told Dezeen. "They need to stay. This is the heart of Chicago."],
-  ["The ownership has expressed a number of reasons for leaving Soldier Field," said Peck. "I have an anonymous client who is a lifetime Bears fan who said, 'I don't believe them.'"],
-  [Edward Peck Design has designed a concept to urge the Chicago Bears to stay in the city],
-  [Peck, who is an expert in ETFE installation and has worked for architecture and engineering studios such as Helmut Jahn and Thornton Tomasetti, set out to show the feasibility of expanding the current Soldier Field complex.],
-  [This includes suspending a massive ETFE canopy over the field to enclose it, building on top of the modern 2002 addition to the 1920s stadium.],
-  [Around the complex, Peck and his team proposed a deck that would elevate an entertainment complex over the adjacent railyards and Lake Shore Drive.],
-  [Decking over Lake Shore Drive],
-  [The deck aligns with a plan put forward by developer Bob Dunn , and echoes the Chicago Park District's suggestion of capping the lake-side highway elsewhere along the park complex that lines Chicago's riverfront .],
-  ["The idea of decking over Lake Shore Drive and the rail lines is not new," said Peck. "Millennium Park is a direct result of that."],
-  ["It has become part of Chicago's architectural heritage, and we should continue to push bold ideas that create a dynamic and greener city," he continued.],
-  [On top of the decking would be a series of 50 to 65-storey skyscrapers with entertainment programmes on the lower floors. According to Peck, the skyscrapers would generate revenue for the city, while the ground floors could generate the team's desired revenue.],
-  [Read:],
-  [Sports district to be built around world's largest stadium in India],
-  [The district would also serve the adjacent museum district and convention centre, as well as the mass of residential buildings and office structures in the southern part of Downtown Chicago.],
-  ["You have this entertainment district that needs to generate revenue the other 357 days of the year when it's not game day. To do that you need a critical mass of people," said Peck.],
-  ["Now they are considering the stadium in Arlington Heights, which is 30 miles north of the city, and in Indiana, over 30 miles southeast of the city. They do not have the year-round populations to support that kind of development."],
-  ["I'm fearful of what this would do to this city"],
-  [Peck's team has pointed to both the Shed complex in Hudson Yards in New York and Miami's stadium renovation as precedents for this type of project.],
-  [Surrounding the stadium itself would be a plaza as well as additional restaurants and amenities, all covered by a "green carpet" that would reduce the amount of exposed concrete and blend the expanded complex into the park.],
-  [Peck also imagines a high-speed water taxi mooring to service the stadium.],
-  [He conceded that the deck and skyscraper portion could exceed a billion dollars in investment, but that the reuse of the stadium could allow for that portion to be built with as much as a 60 per cent reduction from a ground-up build.],
-  ["The goal is to open this dialogue and challenge the Bears … to exhaust all the options," said Peck on his ambition for the proposal. He added that the dialogue should include the City, State, Parks District, and team ownership.],
-  ["This was a proof of concept addressing the reasons for leaving. We've solved for the architectural and urban challenges."],
-  [The concept includes decking to support skyscrapers over Lake Shore Dr],
-  [On top of that, Peck said that moving the Chicago Bears from Soldier Field would throw into question the financial future of the historic stadium.],
-  ["The fact is, if you have an enclosed stadium a quarter mile away, or even if it's in northwest Indiana, it's going to be taking the winter concerts, take away that revenue," he said.],
-  ["I'm fearful of what this would do to this city."],
-  [Multiple Indiana municipalities have already put in bids for the stadium , and Bear's ownership and NFL officials are expected to make decisions about the team's future soon.],
-  [Other recent moves in the NFL include the Oakland Raiders moving to a purpose-built stadium in Las Vegas .],
-  [A previous version of this article included a quote that incorrectly referenced Aurora as a site for a new stadium, which has been corrected to Arlington Heights.],
-  [The post Futuristic Soldier Field concept urges Bears to stay in Chicago appeared first on Dezeen .],
-),
-  insert-map: (:),
-  word-count: 906,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-}
-
-{
-  #standard-article(
-  title: [Trump’s war against Iran is uniquely unpopular among US military actions of the past century],
-  author: [Charles Walldorf, Professor of Politics and International Affairs, Wake Forest University],
-  source-name: [The Conversation (Politics)],
-  images: (),
-  paragraphs: (
-  [Fire breaks out at the Shahran oil depot after U. S. and Israeli attacks in Tehran on March 8, 2026. Hassan Ghaedi/Anadolu via Getty Images],
-  [It’s clear that regime change is among the biggest objectives of the U. S. war in Iran.],
-  [“I have to be involved in the appointment” of Iran’s next leader, President Donald Trump said on March 5, 2026.],
-  [Trump has also said he might put U. S. boots on the ground to get the job done .],
-  [Trump now joins a long list of modern U. S. presidents – from Franklin Roosevelt to Harry Truman , Lyndon Johnson , George W. Bush and Barack Obama – who started wars to either overthrow hostile regimes or support embattled friendly governments abroad.],
-  [For all the parallels to history, though, Trump’s Iran war is historically unique in one critically important way: In its early stages, the war is not popular with the American public.],
-  [A recent CNN poll found that 59% of Americans oppose the war – a trend found in poll after poll since the war began.],
-  [As an expert on U. S. foreign policy and regime change wars, my research shows that what’s likely generating public opposition to the Iran war today is the absence of a big story with a grand purpose that has bolstered public support for just about every major U. S.-promoted regime change war since 1900. These broad, purpose-filled narratives generate public buy-in to support the costs of war, which are often high in terms of money spent and lives lost when regime change is at stake.],
-  [Two historical examples],
-  [In the 1930s and ’40s, a widely accepted – and largely true – story about the dangers of fascism spreading and democracies falling galvanized national support in the United States to enter and then take on the high costs of fighting in World War II .],
-  [Likewise, in the 2000s a dominant narrative about preventing a repeat of the Sept. 11, 2001, attacks and stopping terrorism brought strong initial public support for the war in Afghanistan , with 88% support in 2001, and the war in Iraq , with 70% support in 2003.],
-  [With no comparable narrative around Iran today, Trump and Republicans could face big problems, especially as costs continue to rise.],
-  [No anti-Iran narrative],
-  [Iran has been a thorn in the side of many American presidents for a long time. So, what’s missing? Why no grand-purpose narrative at the start of this war?],
-  [Two things.],
-  [First, grand-purpose narratives are rooted in major geopolitical gains by a rival regime – the danger to the U. S. For the anti-fascism narrative, those events were German troops plowing across Europe and the Japanese attack on Pearl Harbor . For the anti-terrorism narrative , it was planes crashing into the World Trade Center and the Pentagon.],
-  [A U. S. Army carry team in Dover, Del., moves a coffin on March 7, 2026, containing the remains of a U. S. soldier killed in the retaliatory Iranian strike on Kuwait’s Port of Shuaiba. 
- Kyle Mazza/Anadolu via Getty Images],
-  [Gains like these by rivals prove traumatic to the nation. They also dislodge the status quo and provide the opportunity for new grand-purpose narratives with new policy directions to emerge.],
-  [Today, most Americans see no existential danger around Iran. A Marist poll from March 3, 2026, found that 55% of Americans view Iran as a minor threat or no threat at all. And the number who see Iran as a major threat, 44%, is down from 48% in July 2025 .],
-  [By contrast, 64% of Americans saw Iraq as a “considerable threat” prior to the 2003 U. S. war in Iraq.],
-  [The poll numbers on Iran aren’t surprising. Iran is far from a geopolitical menace to the United States today. To the contrary, it’s been in geopolitical retreat in the Middle East in recent years .],
-  [In the summer of 2025, Iran’s nuclear nuclear enrichment facilities were significantly damaged – “ completely and totally obliterated ,” according to Trump, though there is no confirmation of that claim – during the 12-Day war between Iran and Israel.],
-  [And in recent years, Tehran has lost a major ally in Syria and witnessed its proxy network all but collapse. Iran has also faced crippling economic conditions and historic protests at home .],
-  [As the polls show, none of that has sparked a grand-purpose narrative.],
-  [Missing a good story],
-  [The second missing factor for narrative formation today is any strong messaging from the White House.],
-  [In the months prior to World War II, Roosevelt used his position of authority as president to give speech after speech , setting the context of the traumatic events of the 1930s, explaining the dangers at hand and outlining a course going forward. Though less truthful in its content, Bush did the same for nearly two years before the Iraq War.],
-  [Trump did almost none of this storytelling leading up to the Iran war. Five days before the war started, the president devoted three minutes to Iran in a nearly two-hour State of the Union Address.],
-  [President Trump appears at a press conference in Miami on March 9, 2026. 
- Saul Loeb/AFP via Getty Images],
-  [Prior to that, he made a comment here and there to the press about Iran, but no storytelling preparing the nation for war. Likewise, since the war began, the administration’s stated reasons for military action keep shifting .],
-  [No wonder 54% of Americans polled disapprove of Trump’s handling of Iran and 60% of Americans say Trump has no clear plan for Iran. Also, 60% disapprove of Trump’s handling of foreign policy in general.],
-  [By comparison, Americans approved of Bush’s handling of foreign policy by 63% in early 2003 .],
-  [Absent a cohesive, unifying story, it’s also no surprise there is lots of political fracturing today.],
-  [Partisan divides run deep – Democrats and independent voters strongly oppose the war. But Trump’s MAGA coalition is cracking too, with people like Tucker Carlson and Marjorie Taylor Greene sharply criticizing the war .],
-  [The way out],
-  [If he opts for it, there is an off-ramp for Trump from the Iran war. It’s one he knows well.],
-  [When U. S. leaders get caught up in costly regime change wars that outrun national support, they tend to back down, often with far fewer political costs than if they’d continued their unpopular war.],
-  [When the disaster referred to as Black Hawk Down hit in Somalia in 1993, killing 18 U. S. Marines, President Bill Clinton opted to end the mission to topple the warlords that ruled the country. Troops came home six months later.],
-  [Likewise, after the Benghazi attack killed four Americans in Libya in 2012, Obama pulled out all U. S. personnel working in Libya on nation-building operations.],
-  [And just last year, when Trump realized that U. S. ground troops would be necessary to topple the Houthi militant group in Yemen, he negotiated a ceasefire and ended his air war in that country with no significant political fallout.],
-  [With Trump’s Iran war, gas prices keep rising , more soldiers are likely to die, and stocks are highly volatile .],
-  [Backing down makes a lot of sense. History confirms that.],
-),
-  insert-map: (:),
-  inline-pq: pull-quote([By contrast, 64% of Americans saw Iraq as a “considerable threat” prior to the 2003 U.], [Charles Walldorf, Professor of Politics and International Affairs, Wake Forest University]),
-  inline-pq-idx: 16,
-  word-count: 1195,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-}
-
-{
-  #standard-article(
-  title: [This Sunshine Week, Florida reflects an alarming national trend of blocking the public’s access to information],
-  author: [David Cuillier, Director of the  Brechner Freedom of Information Project, College of Journalism and Communications, University of Florida],
-  source-name: [The Conversation (Politics)],
-  images: (),
-  paragraphs: (
-  [By all measures, the ability to see what the government is up to in the United States has plummeted to new depths since the beginning of the second Trump administration.],
-  [For National Sunshine Week in 2025, I wrote about secrecy creep , the adoption of federal secrecy protections implemented by state and local authorities. In Florida and throughout the United States, this threatens the public’s right to be informed about its government.],
-  [A year later, this creep toward secrecy has become an all-out slide.],
-  [As director of the Joseph L. Brechner Freedom of Information Project at the University of Florida, I track the state of government transparency in the U. S. What has changed since January 2025 is unprecedented.],
-  [Clouds in the Sunshine State],
-  [Florida is a good example of this slide. Once viewed as a leader in transparency , the Sunshine State now charges exorbitant copy fees that discourage average people from requesting public records .],
-  [According to the nonprofit MuckRock, 24% of public records requests in Florida come with a copy fee , averaging US\$1,623. Only Oregon charges fees more often, at 28% of the time. Fees are intended to help agencies cover the cost of large requests, but they tend to be arbitrary and are often used as a way to get pesky people to go away.],
-  [And that’s assuming you even get the information you want. One of my own studies from 2019 indicated that, on average, if you requested a public record in Florida, you would receive it about 39% of the time , placing the state 31st in the nation.],
-  [In 2025, MuckRock put the percentage dipping lower, at 35% . In March 2026, it was at 34% .],
-  [In Florida, more and more government agencies are thwarting the public’s right to know, including attempts to hide the details behind Alligator Alcatraz , the temporary immigrant detention center built in the Florida Everglades in June 2025. The state’s Department of Government Efficiency, or DOGE, office has pushed cities to be more transparent while withholding its own records .],
-  [Members of the state Legislature are attempting to strengthen the public records law . This would improve transparency in Florida’s state government, but I’d argue it doesn’t go far enough. Other states, such as Ohio, Pennsylvania and Connecticut, have implemented stronger laws, including independent enforcement of their sunshine laws , to ensure their governments comply.],
-  [It starts at the top],
-  [State and local governments appear to be taking their cues from the federal government.],
-  [President Donald Trump’s administration heralds itself as the most transparent in history , pointing to the president’s willingness to talk informally to the press or directly to the public through social media.],
-  [While that may be one definition of transparency, the federal government’s willingness to provide documents that show what the government is doing – not just what it says it is doing – has been eviscerated under the second Trump administration. Examples include:],
-  [Refusing to provide tax returns , again, unlike every other president in modern history, and then suing the IRS for \$10 billion when some returns were leaked.],
-  [Removing government websites and databases .],
-  [Firing the national archivist and the director of the Office of Information Policy , the agency within the U. S. Department of Justice that oversees government agencies’ compliance with requests under the Freedom of Information Act , or FOIA.],
-  [Firing and pushing out experienced staffers assigned to handle FOIA requests as part of the 2025 U. S. DOGE purges . This led some agencies, such as the Department of Energy, to apply unorthodox practices, including closing out pending requests .],
-  [Axing the new Open Government Federal Advisory Committee , which was launched to find ways of improving FOIA.],
-  [Pulling out of the Open Government Partnership , which the U. S. helped found in 2011 to foster transparency around the globe.],
-  [As the federal government has taken steps to become less transparent, many state and local governments have followed. 
- Anadolu/Anadolu via Getty Images],
-  [Typically, the Department of Justice releases annual statistics on FOIA requests every March. When I examined initial reports posted in January, when just 11 agencies had provided their reports, backlogs – that is, requests that remain unresolved after a year – had increased 67% from the previous fiscal year. The time to process simple requests nearly doubled.],
-  [Plummeting to historical depths],
-  [In order to understand how secrecy in the United States now compares to historical precedent, I reached out to people who have researched freedom of information for decades, some going back to the 1970s.],
-  [I asked them a simple question: How does the current state of affairs in freedom of information compare historically?],
-  [Here is what they told me:],
-  [Jane Kirtley is a longtime FOIA scholar from the University of Minnesota who wrote in 2006 , “The Bush administration’s contempt for the public’s right to know amounts to an organized assault on freedom of information that is unprecedented since the enactment of the Freedom of Information Act 40 years ago.”],
-  [Today, in comparison? “Abysmal,” she wrote to me via email. “It was abundantly clear from the moment Elon Musk and his ‘musketeers’ invaded and pillaged government electronic records that we have entered a new era of deletion, obfuscation, fabrication and utter contempt for the concept of data integrity and the public’s right to know.”],
-  [Thomas Susman , who helped craft the 1974 FOIA amendments and currently assists the American Bar Association, wrote in 2005 that increasing delays and backlogs threatened FOIA’s intended purpose.],
-  [In February 2026, he wrote to me that the “arc of the FOIA universe has for six decades bent toward greater public access to government information − until now. If ‘democracy dies in darkness’ (according to The Washington Post’s official slogan), America’s democracy is threatened with becoming dead meat. We’ve survived the Civil War, the Great Depression, Vietnam, Watergate and more. If we fight back hard enough, this too shall pass, though not quickly, and likely with lasting scars.”],
-  [Patrice McDermott directed Open the Government from 2006 to 2017 and pointed in 2007 to an underlying tension throughout government: “the ability – and willingness – to harness the promise of digital information for public access and accountability while not abusing its potential for control of that information.”],
-  [Today, she writes that, as Benjamin Franklin put it, we “have a Republic … if (we) can keep it” and are committed to the fight for our constitutional form of government.],
-  [Perhaps advances can be made to reverse the secrecy trend and carry out the intentions of the Freedom of Information Act, as expressed by Lyndon B. Johnson upon its adoption nearly 60 years ago: “I signed this measure with a deep sense of pride that the United States is an open society in which the people’s right to know is cherished and guarded.”],
-  [class="fine-print"\> David Cuillier has received funding from the Democracy Fund and John S. and James L. Knight Foundation to study the state of freedom of information. He is a board member of the National Freedom of Information Coalition and he coordinates national Sunshine Week.],
-),
-  insert-map: (:),
-  word-count: 1182,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-}
-
-{
-  #standard-article(
-  title: [Why Meta is building its high-tech South Carolina data center with an old-school material],
-  author: [Nate Berg],
-  source-name: [Fast Company Design],
-  images: (),
-  paragraphs: (
-  [In a greenfield industrial park in rural Aiken County, South Carolina, Meta is building a new \$800 million data center that’s much like any of the other hyperscale data centers giant tech companies are scrambling to construct. Set on 300 acres with two massive data halls making up most of its 715,000 square feet of buildings, it’s the kind of gargantuan facility that has become the de facto built form of the race to harness the lucrative power of artificial intelligence .],
-  [But past the sprawling data hall buildings, a comparably modest administration building has a unique design feature. Instead of the concrete and steel used in the data halls and countless other data centers around the world, the facility’s administration building is being made primarily of wood.],
-  [[Photo: Meta]],
-  [A grid of honey-toned glulam mass timber beams and columns rise out of the dirt on site, and more wood tops the structure that’s currently under construction. When the data center becomes operational in Spring 2027, this wood-framed building houses the offices of the humans who will keep the data center operational. And though the majority of the facility will be built using the conventional concrete and steel approach most designers and contractors are used to, this wood-framed building offers a glimpse of a slightly more sustainable future for data centers.],
-  [[Photo: Meta]],
-  [Mass timber is a material choice that has some clear upsides, especially when it comes to the negative optics of electricity-hungry, water-thirsty data centers. “Sustainably-sourced mass timber is a great fit for us because it has much lower embodied carbon than traditional materials like steel or concrete,” says Blair Swedeen, Meta’s global head of net zero and sustainability. (Meta has a goal of net zero emissions by 2030 .) “Using mass timber helps us build in a way that’s better for the environment.”],
-  [It also helps build in a way that can be much faster than building with conventional concrete and steel. Swedeen says using mass timber, which is typically prefabricated to the specifications of a project, can speed up construction timelines, saving several weeks. And with less overall weight than a conventional structure, the foundation for a mass timber building needs only about half as much concrete for its foundation. “The use of mass timber brought several positive changes to the project,” Swedeen says.],
-  [[Photo: Meta]],
-  [The mass timber elements for Meta’s data center project were provided by Smartlam North America , a leading mass timber manufacturer in the still nascent U. S. market. Nick Waryasz, a senior mass timber specialist at the company, says mass timber has been mostly used in residential construction, but there’s been growing demand for more industrial uses. “The biggest draw for using timber in those instances has been the sustainability metrics of building with wood when it’s replacing steel and concrete, and having a team that has an interest in doing that, like some of these bigger tech companies,” he says.],
-  [Amazon, for example, recently opened a mass timber delivery station in Elkhart, Indiana, which the company hopes to use as a proving ground for using wood in future industrial projects. A data center being built by Microsoft is also using mass timber for part of its structure. Other data centers, currently in a building boom , are likely to follow. And not just for environmental reasons.],
-  [“I’ve had some early discussions on big industrial projects like data centers recently, primarily driven by the fact of how long lead times are for steel construction,” Waryasz says. “It’ll be over a year out to get any kind of steel structures on projects, when our lead times for similar projects might be six months.”],
-  [For the highly competitive AI industry, speed to market for data centers is increasingly important. That’s why Meta founder Mark Zuckerberg announced back in July that one way it was accelerating data center rollouts was by using easily-built large-scale fabric tents . Mass timber could be a slightly slower but more permanent alternative.],
-  [[Photo: Meta]],
-  [Mass timber could also help soften the harsh image of some of these hyperscale facilities. “It brings warmth to things that sometimes are inherently cold,” says Caroline Dauzat, fourth-generation owner of Rex Lumber , which provided the raw timber that Smartlam used to manufacture into structural elements for Meta’s project. She says mass timber represents only a tiny percentage of what her company’s wood is used for, but industrial projects could lead to growth. “It’s a marketplace to create more demand for lumber.”],
-  [Smartlam’s Waryasz says the mass timber industry is maturing to the point where industrial projects like data centers may opt for mass timber products automatically. “If they continue at their trajectory or anything close to it, it might even just become a supply question, with timber for construction being relatively abundantly available,” he says.],
-  [Meta’s use of mass timber on the data center project in South Carolina is just a small portion of the facility’s massive footprint, but future projects may embrace the material in a bigger way.],
-  [“We’re continuing to actively explore mass timber not only in our administrative buildings but also in warehouses and critical data halls, the spaces that house servers,” says Meta’s Swedeen. “Mass timber’s strength, durability, and fire resistance makes it a promising candidate for broader applications within data center infrastructure and we continue to evaluate these opportunities.”],
-),
-  insert-map: (:),
-  word-count: 892,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-}
-
-{
-  #standard-article(
-  title: [12 Leftover Rice Recipes],
-  author: [Jess Rice],
-  source-name: [Budget Bytes],
-  images: (),
-  paragraphs: (
-  [I’m all about using up leftovers and not letting anything go to waste. After all, tossing leftover food is one of the quickest ways to watch your grocery budget disappear! Rice is especially sneaky. Even though it’s one of the cheapest ingredients in my kitchen, it’s also one of the easiest to overestimate, which means a container of cooked rice ends up shoved to the back of the fridge and forgotten until it’s too late. So instead of letting that happen, I started treating leftover rice like a planned ingredient. These 12+ leftover rice recipes are some of our favorite ways to turn extra rice into a real meal, not just something to use up!],
-  [Before we get into it, a quick rice-storage note (so you can feel good about using it later). When you’re storing cooked rice for later, the main goal is to cool it quickly and get it into the fridge, ideally portioned out in a clean container so it chills faster. Cooling cooked rice as soon as possible and then heating it thoroughly before enjoying it again is the best way to keep it food-safe. Don’t leave cooked rice sitting out at room temp, and try to get it cooled and refrigerated within about two hours.],
-  [You can also freeze rice for up to 2-3 months and then pull it from the freezer to use in any of the recipes below!],
-  [Leftover rice is basically a blank canvas, and it can go way beyond basic reheating. These recipes with leftover rice show off all the best directions it can take, from savory to sweet!],
-  [I always use leftover rice for fried rice if I can. My family loves it, and I much prefer the texture compared to freshly cooked rice in dishes like these. Day-old rice is a little firmer, so the grains stay separate instead of turning sticky or gummy once I stir in the sauce and add-ins. It’s the easiest way to get that perfect fried rice texture at home.],
-  [\$4.5 recipe / \$1.13 serving 
- Get the Recipe],
-  [When I need dinner fast and I’ve got leftover cooked rice in my fridge, I make this vegetable fried rice . It’s garlicky, gingery, and finished with soy sauce and toasted sesame oil, plus eggs and a mix of veggies. The whole thing comes together in less than 30 minutes, and it’s great for using up odds and ends!],
-  [\$4.74 recipe / \$1.19 serving 
- Get the Recipe],
-  [A batch of this chicken fried rice can stretch leftover rice and a single chicken breast into a budget-friendly dinner that tastes even better than takeout (I promise!). This easy recipe feels especially satisfying for how simple the ingredient list really is.],
-  [\$5.63 recipe / \$1.40 serving 
- Get the Recipe],
-  [If you like bold flavors, kimchi fried rice is such a fun way to wake up a container of day-old rice. I love how it uses tangy kimchi, quick-cooking vegetables, and even shredded broccoli stem for extra texture, so it feels resourceful while still being incredibly flavorful. There’s no waste in our budget-conscious kitchen!],
-  [Casseroles are another spot where I love using day-old rice. Since it’s a little firmer, it holds its texture while it bakes instead of turning mushy, and it soaks up flavor easily while making whatever you’re cooking extra hearty. If I know a casserole is on the menu, I’ll even cook extra rice the night before just to make prep faster.],
-  [Chicken and Rice Casserole],
-  [\$7.60 recipe / \$1.27 serving 
- Get the Recipe],
-  [For a cozy baked dinner, chicken and rice casserole turns rice, vegetables, chicken, and cheese into a creamy, hearty meal that feels like classic comfort food. It’s the kind of casserole that works especially well for using up cooked chicken, including rotisserie chicken, and leftover rice.],
-  [\$5.78 recipe / \$0.96 serving 
- Get the Recipe],
-  [I love how our broccoli cheese casserole transforms cooked rice into something creamy, cheesy, and seriously comforting. Broccoli, cheddar, and a simple homemade sauce bake together in about 50 minutes, giving you a side dish that can easily double as the main event.],
-  [\$8.10 recipe / \$1.35 serving 
- Get the Recipe],
-  [This beef burrito casserole is layered with seasoned beef, cooked rice, beans, salsa, and cheese, and the little dollops of cream cheese tucked through the middle make it extra creamy and rich. Want to go meatless? I’d skip the ground beef and add in an extra can of black beans or some corn. It’ll still be delicious either way!],
-  [Bowl meals are my favorite way to make leftover rice feel fresh again. Just add a protein, a few colorful toppings, and a punchy sauce, and suddenly dinner is handled!],
-  [Bibimbap – The Ultimate Bowl Meal],
-  [\$10.66 recipe / \$2.67 serving 
- Get the Recipe],
-  [Bibimbap is a Korean mixed rice bowl, and our budget-friendly adaptation turns leftover rice into a seriously satisfying dinner. This version keeps things simple with jasmine rice, spinach, chili garlic beef, fresh vegetables, kimchi, and a fried egg, so you still get plenty of color, texture, and flavor without complicated steps. It’s also great for meal prep! I’d just cook the egg fresh each day, or swap in a hard-boiled egg instead.],
-  [Poor Man’s Burrito Bowls],
-  [\$7.07 recipe / \$1.18 serving 
- Get the Recipe],
-  [I’m always impressed by how much flavor our poor man’s burrito bowls deliver with such a short and affordable ingredient list. Rice, black beans, salsa, and cheese come together into a filling bowl meal that’s simple, budget-friendly, and perfect for putting leftover rice to work without much effort at all.],
-  [\$7.80 recipe / \$1.95 serving 
- Get the Recipe],
-  [These spicy tuna guacamole bowls have a mix of creamy guac, spicy sriracha, and crisp veggies that keeps every bite fresh, and the edamame adds extra protein and fiber. Bonus: it’s designed to be a no-reheat meal prep bowl, so it’s ideal for anyone who doesn’t have access to a microwave at school or work!],
-  [Sweet n’ Spicy Chicken Bowls],
-  [\$6.05 recipe / \$1.51 serving 
- Get the Recipe],
-  [Meal prep gets a lot more exciting with sweet n spicy chicken bowls in the lineup. These bowls combine chicken, rice, and colorful toppings with a sweet-and-spicy flavor profile that keeps each bite interesting!],
-  [Leftover rice doesn’t have to live its whole life as a side dish. Once it’s cooked, it can be mixed, crisped, and transformed into something totally different, and this next recipe is proof of that.],
-  [\$0.71 recipe / \$0.36 serving 
- Get the Recipe],
-  [I’m OBSESSED with these rice pancakes because they turn yesterday’s rice into something totally unexpected. They’re a quick, easy breakfast with a lightly crisp exterior and soft middle, and they’re a fun change from the usual toast or oatmeal routine. My family loveees them with a drizzle of maple syrup, jam, or a little peanut butter.],
-  [Even dessert is on the table when you’ve got extra rice in the fridge. This easy pudding is one of my family’s favorite recipes for leftover rice! It turns a basic pantry staple into something sweet, cozy, and budget-friendly, without a lot of fuss.],
-  [\$2.40 recipe / \$0.60 serving 
- Get the Recipe],
-  [Our homemade rice pudding recipe is written with uncooked rice, but I PROMISE it’s just as easy to swap in leftover rice. Just stir in the cooked rice, reduce the amount of milk (check the recipe tips for the exact amounts!), then let it gently simmer until it turns thick, cozy, and scoopable. This easy pudding is what dreams are made of. 🤤],
-  [Soups and Stews – A scoop of cooked rice can seriously upgrade a pot of soup or stew. It adds extra heft, stretches the servings, and makes the whole bowl feel more filling. I especially love it in recipes like our Mexican red lentil stew . Leftover rice is also perfect for adding to posole or black bean chili ! And if I don’t have a nice loaf of crusty bread to dip into my soup, I love adding a scoop of rice instead. It’s perfect for when I only have a small amount of rice that needs to be used, and I HIGHLY recommend you give it a go.],
-  [Meatloaf and Meatballs  – Leftover rice is surprisingly great in meatloaf and meatballs because it soaks up extra moisture a lot like breadcrumbs do. It’s also a handy option if you’re gluten-free, since it can help bind everything together and keep the texture tender without relying on bread (just note the amounts may need adjusting as breadcrumbs and rice aren’t a 1:1 swap). For a tried-and-true example, check out our Thai turkey meatloaf recipe!],
-  [The post 12 Leftover Rice Recipes appeared first on Budget Bytes .],
-),
-  insert-map: (:),
-  inline-pq: pull-quote([class="wp-block-heading" id="h-6-beef-burrito-casserole"\>6.], [Jess Rice]),
-  inline-pq-idx: 16,
-  word-count: 2166,
+  word-count: 1773,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -663,16 +326,16 @@ Jodi],
 #article-row((
   [
     standard-article(
-  title: [Meet SALTO, UC Berkeley's Bushbaby-Inspired Robot with Insane Leaping Skills],
-  author: [Katie Puccio],
+  title: [The 13 Best Office Pranks for Torturing Your Coworkers on April Fool's Day],
+  author: [Gabrielle Taylor],
   source-name: [WonderHowTo],
   images: (),
   paragraphs: (
-  [It's odd to see grown humans attempting to bounce off walls doing parkour. It's another thing altogether to see a robot doing it. University of California Berkeley's Biomimetic Millisystems Lab has created the world's most vertically agile robot—capable of jumping to unimaginable heights. Meet SALTO, the Saltatorial Locomotion Terrain Obstacle that can jump up to 1 meter high from stand still, and do it faster than any other robot out there. The engineers behind SALTO drew inspiration from the galago, a small, nocturnal mammal native to Africa. These animals, also called thick-tailed bush babies, have longer hind legs that give them great leaping ability. They have the highest vertical jump of any animal, and served as inspiration for SALTO.],
-  [The SALTO robot jumps higher than a bullfrog, but not as high as its animal inspiration, the galago. This chart doesn't include explosion-powered robots, because, c'mon. Jump Frequency, in this chart, is how often the robot or animal make make ...more],
+  [The best part about April Fool's Day is that everyone is fair game. Even big tech companies like Google and Twitter get in on the action every year. It encourages even the most uptight, unfunny party-poopers among us to have a little fun driving each other crazy with pranks — even at work. You might be stuck at work or in class, but that doesn't mean you have to wait until nighttime to start fooling. Here are some pranks you can pull around the office on your coworkers (or maybe even your boss ... if you're brave enough) on any day of the year. These aren't computer pranks, but good old-fashioned hands-on pranks that will either frighten, shock, or gross out your friends. Don't Miss: The Best Water Bottle Prank Ever for April Fools' Day!],
+  [\#1: The Ruined Laptop PrankThere's really nothing worse than the sinking feeling you get when you see your expensive laptop covered in water and you know it's going to have to sit in rice for a few anxious days before it (hopefully) comes back from the ...more],
 ),
   insert-map: (:),
-  word-count: 160,
+  word-count: 181,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -680,21 +343,16 @@ Jodi],
   ],
   [
     standard-article(
-  title: [Is AI really coming for architects' jobs?],
-  author: [Dezeen staff],
-  source-name: [Dezeen Architecture],
+  title: [The Best 2015 April Fool's Day Pranks from Around the Web],
+  author: [Faisal Hussain],
+  source-name: [WonderHowTo],
   images: (),
   paragraphs: (
-  [style="margin-bottom: 15px;"\>],
-  [In the latest episode of Dezeen Weekly , we discuss a study indicating that architecture is highly exposed to automation and talk about the winner of this year's Pritzker Architecture Prize .],
-  [How worried should architects be about large language models taking their jobs? How did the Pritzker Architecture Prize make us look silly this week? And what is "bio-upcycling"?],
-  [In this episode, Dezeen features editor Nat Barker and design editor Jennifer Hahn consider a controversial labour impact study by AI company Anthropic .],
-  [Also, they reflect on the surprise announcement about this year's Pritzker laureate, Smiljan Radić . Finally, they discuss the news that scientists have managed to produce a Parkinson's drug from waste plastic with the help of bacteria.],
-  [Dezeen Weekly is an original Dezeen podcast in which two of our journalists talk about the key design and architecture stories of the week. Listen to the latest episode using the player above or on your favourite podcast app, including Spotify and Apple Podcasts .],
-  [The post Is AI really coming for architects' jobs? appeared first on Dezeen .],
+  [Don't believe what you read on the internet, especially today, when web giants like Amazon, Google, and the like showcase their otherworldly products and services. If they seem too good to be true, they probably are—but that doesn't make them any less fun. Keep checking back here as we continually update this article with today's best April Fool's Day pranks. And if you missed the best of last year's jokes, check them out here. Dual-Boot iOS on Android & Vice VersaWe had our own April Fool's Day fun here at WonderHowTo with our Gadget Hacks guides on dual-booting iOS 8 on Android 4.0+ and dual-booting Android Lollipop on iOS 7.0+. In them, dual-booting was as easy as going to AndroidHacks.com or AppleHacks.com and tapping on the link.],
+  [Reverse GoogleGoogle is great at making suggestions for where you actually meant to surf to when you mistype a search, but your dyslexia may be tested today. When you type in com.google in your browser, you'll be in for a backwards experience. ...more],
 ),
   insert-map: (:),
-  word-count: 189,
+  word-count: 170,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -705,265 +363,67 @@ Jodi],
 #article-row((
   [
     standard-article(
-  title: [A New Range of Tripods from Peak Design],
-  author: [Stu Davidson],
-  source-name: [Stuck in Customs],
-  images: (),
-  paragraphs: (
-  [style="font-size: 18px; font-family: 'Helvetica Neue', Helvetica, arial, sans-serif; text-align: left; line-height: 1.7; width: 100%;"\>Everyone reading this post should know that I love Peak Design products. Obviously a while back we had a great time working together on the Everyday Messenger bags but that didn’t require me to stick with their products \*checks calendar\*… \*faints\*… \*gets up off the floor\* 10 years later! How did a decade happen????],
-  [Anyway, one of the more recent bits of kit that I use from them is the Travel Tripod. It’s been allll over the place with me since launch, from the most southern tip of New Zealand to the north coast of Scotland and loads of places in between and has never let me down. In this relationship, unlike others in my life, I’m far more likely to be the one to cause issues, that’s for sure. Back to my original point. Today Peak Design are launching the Pro Tripod line with enhanced features such as increased strength and stability to carry heavier cameras and lenses, improved ball head functionality and accessories for full fluid pan/tilt video capture. It looks like they’ve also refined the design and further enhanced build quality too. Nice stuff all round!],
-  [So, if the original wasn’t “pro” enough for you maybe the new one will be. You can find our more here where they’ve spent countless hours crafting a useful info and sales page. If you grab one, have fun! And if you don’t well, um, enjoy knowing that you made a terrible life decision.],
-  [The post A New Range of Tripods from Peak Design appeared first on Stuck in Customs .],
-),
-  insert-map: (:),
-  word-count: 273,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-  ],
-  [
-    standard-article(
-  title: [Ukrainian monastery in UNESCO-listed site damaged by Russian drone strikes],
-  author: [Amy Peacock],
-  source-name: [Dezeen Architecture],
-  images: (),
-  paragraphs: (
-  [style="margin-bottom: 15px;"\>],
-  [Russian drone strikes have hit the UNESCO -listed historic centre of Lviv in Ukraine , reportedly damaging the 17th-century Bernardine Monastery.],
-  [A video shared on X by Ukrainian prime minister Yulia Svyrydenko shows a drone flying over the city and hitting a building in the vicinity of the monastery, which has reportedly sustained damage .],
-  [dir="ltr" lang="en"\>Russia is attacking a crowded city center in broad daylight. Just minutes ago, Russian-Iranian drones struck the city of Lviv, seriously injuring two people.],
-  [One of the targets was the 17th-century St. Andrew’s Church, part of the UNESCO World Heritage site.],
-  [Only strength,… pic.twitter.com/YflT60ZEua],
-  [— Yulia Svyrydenko (\@Svyrydenko\_Y) March 24, 2026],
-  [The Bernardine Monastery in Lviv has been damaged in a drone strike],
-  [The Bernardine Monastery and adjacent Saint Andrew's Church were commissioned by the Bernardine Order in 1600. Built in a mannerist style in 1620, the church underwent Baroque-style changes in the 1730s.],
-  [UNESCO added Lviv's historic city centre, including the area of the monastery, to its World Heritage List in 1998. In 2023, in response to Russia's invasion of Ukraine, the area was also added to UNESCO's List of World Heritage in Danger .],
-  [Read:],
-  [How war has made Ukrainian interiors "bolder and more interesting"],
-  ["UNESCO is deeply alarmed by the 24 March strikes that hit a building in the area of Bernardine Monastery within the World Heritage property of 'Lviv – the Ensemble of the Historic Centre'," said UNESCO .],
-  ["UNESCO recalls that cultural property is protected under the 1954 Hague Convention and the 1972 World Heritage Convention," it continued. "All parties must safeguard heritage and refrain from any acts harming cultural property."],
-  [The attack was one of nearly 1,000 drone strikes to hit locations across Ukraine on Tuesday, in what was reported as Russia's largest aerial attack on Ukraine over a 24-hour period since the beginning of the war. The attacks have killed at least seven people, according to The Guardian .],
-  [In a post on X , Ukrainian minister of foreign affairs Andrii Sybiha shared a photo of a residential building next to the Bernardine Monastery on fire. In the accompanying text, he called out the Venice Biennale for its decision to allow the Russian Pavilion to participate in this year's art biennale .],
-  ["This is the ugly face of barbaric Russia – destroyed UNESCO World Heritage in the protected centre of Lviv," said Sybiha. "This is the barbarism you wish to normalise at the Biennale."],
-  [In 2024, two years into Russia's full-scale invasion, Dezeen spoke with architecture and design studios about how they were adapting to support the war effort while also trying to stay in business. Last month, we looked at the unexpected trend of striking interiors that have emerged in Ukraine in the past two years.],
-),
-  insert-map: (:),
-  word-count: 482,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-  ],
-), ruled-indices: (1,))
-
-#article-row((
-  [
-    standard-article(
-  title: [How to (Almost) Always Win a Bet with Your Friends Using These 10 Tricks],
-  author: [Nelson Aguilar],
-  source-name: [WonderHowTo],
-  images: (),
-  paragraphs: (
-  [So, the in-person conversations between you and your friends has slowed down to a near halt, thanks to everyone's obsession with texting, Facebook, and over-uploading pics to Instagram—socializing at its best. It could also be that you're just not interesting enough anymore in person. Want to get your real-life-friends-turned-virtual-friends back to real-life talking friends? Then spruce up the conversation a bit with a few tricks — literally. twllNot only will you liven up the non-existent conversation, but you could also make some money off your friends. 10 Bets You Will Always Win... YouTube user Quirkology posted various videos over the years showing 10 bets that you'll never lose. Basically, ten easy tricks that anyone can do, but are hard to figure out when unaware of how to do it.],
-  [Here are ten of these tricks you can bet your friends on and never lose on (almost), with a quick breakdown of what's going on, so you can at least reveal your secret afterward (part of that ...more],
-),
-  insert-map: (:),
-  word-count: 166,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-  ],
-  [
-    standard-article(
-  title: [How to Open Your Car Door Without a Key: 6 Easy Ways to Get in When Locked Out],
-  author: [Nelson Aguilar],
-  source-name: [WonderHowTo],
-  images: (),
-  paragraphs: (
-  [Locking your keys inside of your car is frustrating, to say the least, especially if you're in a hurry to get somewhere. You can always call AAA roadside assistance or a locksmith, but you'll probably have to fork over some money, as well as wait for them to get to you. You might even get towed. Luckily, there are a few DIY methods to unlock your car door when desperate, and I'm not talking about hoaxes such as using a cell phone or tennis ball. To pop your locks open when you don't have your keys, try your shoelace, your car's antenna, or even your windshield wiper. These lockout tricks may sound unbelievable, but they most definitely work, though it all depends on your make and model vehicle. Newer cars and trucks will be harder to get into with automatic locks and security systems—but not impossible.],
-  [You can at least try one of these lock-picking tips out before calling an expensive professional to do it for you. Method \#1: Use Your ShoelaceIt may sound like an impossible task, but ...more],
-),
-  insert-map: (:),
-  word-count: 180,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-  ],
-), ruled-indices: (1,))
-
-{
-  #section-label([Analysis])
-  #standard-article(
-  title: [3 Years Later, A Surprising Reunion with Something Important],
-  author: [Jodi Ettenberg],
-  source-name: [Legal Nomads],
-  images: (),
-  paragraphs: (
-  [A few weeks into December, I received a message in my “requests” folder on Facebook. I didn’t know it at the time, since it was buried in Facebook purgatory. It was only a month later that I thought to check my requests inbox. I found the following message.],
-  [Hi, you don’t know me, but we found a backpack with your credit cards in it on my roof in Park Slope Brooklyn. Did you by any chance lose or have a backpack stolen in the last few years? If so, let me know; there are a couple of things still in it.],
-  [My heart just about stopped in my chest.],
-  [For those newer to the site: when I was in the ER in August 2017, getting a spinal tap that would leave me disabled , the apartment I was cat-sitting for was burgled. In fact, the time that the burglar entered the apartment (per the time stamp on the apartment’s baby cam) was the same time that the doctor was starting the lumbar puncture.],
-  [Setting aside the creepiness of that confluence, part of what was stolen was my trusty Tom Bihn synapse daybag. The thief used it to gather my belongings and those of the apartment tenants, stuffing the backpack with things but leaving me my Canadian passport and a \$5 Canadian bill on the couch when he left.],
-  [Once my heart started beating normally again, I replied to this woman thanking her and trying not to overwhelm her with all the crazy details of the night this all happened. I asked where she was located, and briefly explained that the robbery happened while I was in the hospital, and I never expected to see my bag or its contents again.],
-  [It turns out that she lived only a few houses down from the house-sit, and had recently paid someone to clean her chimney after a few years. It was the chimney cleaner who found my backpack tucked into the side of the chimney vent on the roof of her house.],
-  [In the backpack was a few random and not useful things: a blue dice that was not mine, my old hand lotion, some Tylenol, and business cards from a travel meet and greet. Happily, it also contained both pairs of prescription glasses that I had to replace following the burglary. The glasses frames are warped from years of temperature fluctuations, but should be able to be adjusted at an optometrist. Among the items was also a few of my credit cards.],
-  [The woman at the apartment a few doors down looked me up on Facebook after the chimney cleaner gave her the bag, and sent me a message. I assume she realized it must have been a few years ago since those cards had all expired.],
-  [Reunited and… I am not sure it feels so good?],
-  [What wasn’t included: the laptop that was stolen, the money, the jewelry stolen from the apartment, and more.],
-  [As you can imagine, this lady’s message brought back all of the feelings. I wrote her back, but it took some time for her to view my reply, and in that time I was flooded with resurfaced memories. That evening was the worst in my life. To have an unexpected reminder felt like kicking up a lot of sediment from the bottom of a lake that appeared to be clear. It did serve as an opportunity to work through some of those emotions in ways I hadn’t yet gotten to, though and I am grateful for that. Ultimately, it was a good exercise.],
-  [And of course I am very grateful for her efforts to reach me.],
-  [In the end, one of my best friends went to pick up the backpack. This friend is Cheryl, someone I went to law school with. We became good friends when she offered to sew a mermaid tail out of sequinned stretch fabric so I could sing a parody rendition of Part of Your World from the Little Mermaid. (The song was “Part of that Firm” and yes, the tail had little elastics so I could flop it around stage when I walked. And no, I am too old for there to be a digital version of this rendition. Thank god.)],
-  [Cheryl and I ended up working at the same New York firm many years later, and were pretty much inseparable by then. We’d grab lunch together, we’d alternate coffee runs, and when quit my law job to travel we stayed in touch and I often house-sat for her and her husband when I went back to New York in the summers.],
-  [I mention all of this because Cheryl knows me knows me – she knows all the things that make me happy and make me sad. And she knew, of course, just how much of a mindfuck getting this backpack would be.],
-  [So, she set upon the backpack with a loving frenzy, to make me feel better. She not only washed it and dried it, but mailed it back to me full of llamas.],
-  [A llama sweatshirt, llama Christmas tree ornaments, llama card, llama notebooks, and more.],
-  [Llamatastic, with love],
-  [I wondered what to do with the backpack, now that I had it back. Tom Bihn had kindly mailed me a replacement when they read the story of the burglary, and I was using it day to day.],
-  [I contemplated burning it, or shredding it, or just donating it. But ultimately, it felt like a bit of a miracle that it had returned, so unusually, over three years later. I decided to offer it to another good friend who would appreciate the tenacity of the backpack and also use it for her own needs. And who would appreciate the llamafication of it once it was found.],
-  [Her reaction to my offer was exactly my train of thought: that it was a miracle bag and deserved a good home, transmuting the bad into something useful and kind.],
-  [It may seem like just a backpack, but for those few weeks it felt like it held all of the liminal weight of a life about to change. Until it had a new home, the backpack was a holding of my breath, the transient space between an old, mobile Jodi and a Jodi that I am still getting to know.],
-  [There was some power in it for me, feeling like it came around again on the spiral of life. Power in managing the emotions that receiving the bag dredged up. And a hope that by closing that chapter, it would bring me more healing in the future.],
-  [Since you’ve all come along with me during this extraordinary ride, I wanted to share this story.],
-  [Someone once told me I was an outlier of possibilities, and I suppose being reunited with this bag falls into that category. All I can do is ride the waves as they hit, and try to feel the strength that comes from making my way through them.],
-  [Brief other updates:],
-  [The Patreon ! We are up to 209 patrons, and it’s a lovely new community. I’ve enjoyed sharing shorter posts there and the feedback has been great.],
-  [Newsletter ! Despite my leaky state, I’ve managed to get out a newsletter monthly, filled with the best long reads from the prior month, and a grab bag of fun things to explore from around the web.],
-  [Redesign! It’s not yet done but we’re close. I’m excited.],
-  [I hope everyone is staying safe and doing well.],
-  [-Jodi],
-  [The post 3 Years Later, A Surprising Reunion with Something Important appeared first on Legal Nomads .],
-),
-  insert-map: (:),
-  word-count: 1271,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-}
-
-{
-  #standard-article(
-  title: [What Americans can learn from other civil activism movements against authoritarian regimes],
-  author: [Oliver Kaplan, Associate Professor of International Studies, University of Denver],
-  source-name: [The Conversation (Politics)],
-  images: (),
-  paragraphs: (
-  [The United States, alongside other countries, has a growing pro-democracy and nonviolent civil movement. Oliver Helbig/Getty Images],
-  [On Feb. 24, The Conversation hosted a webinar titled, “What Americans can learn from other nonviolent civil activism movements.”],
-  [Executive editor and general manager Beth Daley interviewed John Shattuck , professor of practice at The Fletcher School of Law and Diplomacy at Tufts University, and Oliver Kaplan , associate professor at Josef Korbel School of Global and Public Affairs at the University of Denver and a visiting scholar at Stanford University.],
-  [Shattuck is the former president of Central European University in Hungary, where he defended academic freedom against a rising authoritarian government. Kaplan is the author of “ Resisting War: How Communities Protect Themselves .” This interview has been condensed and edited for print.],
-  [Beth Daley: What is an authoritarian regime, and what are their characteristics?],
-  [John Shattuck: The authoritarian, often referred to as a “king,” is the ideal role from the point of view of the king, but certainly not from the point of view of the people. Authoritarian characteristics include centralized unlimited power, the opposite of democracy; no accountability and no rule of law; no independent courts; no checks and balances on how the king operates; rule by fear and coercion, and when necessary, in order to carry out the king’s orders, rule by by force. There are no individual rights or civil liberties except those the king decides to allow those who are loyal to him to have, at least until he decides to take them away.],
-  [John Shattuck defines authoritarian regimes in a sound bite from The Conversation’s webinar on nonviolent civil movements.],
-  [That’s a nutshell informal description of an authoritarian regime. A special threat today is that an authoritarian can emerge from a democratic election, and, indeed, a democratic election can be used to turn a weak democracy into an authoritarian regime. But when this happens, it opens the door to challenge the authoritarian in a subsequent election if civic activism can defend the electoral process by which the authoritarian was elected.],
-  [BD: What are we seeing and not seeing in the U. S. that other countries have gone through in terms of authoritarian government?],
-  [Oliver Kaplan: I think we are heading toward an autocracy, if not there already. In their 2026 report , the Varieties of Democracy Project writes that the U. S. is no longer a liberal democracy and is moving into “competitive authoritarianism,” marked by executive overreach and erosion of judicial and legislative checks. The report notes that U. S. democracy is being dismantled at a speed that is “unprecedented in modern history.”],
-  [We are seeing shifts in terms of concentration of power to the executive branch and a disregard of the rule of law, things like ignoring court orders and difficulty with holding the executive branch accountable. We are also seeing the militarization of law enforcement , monitoring of U. S. citizens , and what some refer to as the dual state – that the state is working for some people while causing more challenges for or oppressing other people.],
-  [One of the things we’re not seeing at full force yet is a complete shutdown of civic space. We’re able to hold this kind of conversation, and people are still able to dialogue and go out on the street. There are some efforts at curtailing free speech, and I think there’s some self-censorship possibly happening. But there’s still this open space and a powerful mass movement growing in this country.],
-  [BD: John, you were on the front lines, particularly in Hungary as the head of Central European University. What did you see there that has parallels today to the U. S.?],
-  [JS: There’s certainly a parallel between Hungary and the U. S., even though the countries are very different in size, history and background. What I saw in Hungary when I became president of Central European University in 2009 was a weak, new democracy that was only established in 1990 after 70 years of fascism and communism.],
-  [I was in Hungary from 2009 to 2016 and, despite the differences, I could begin to see some parallels. Many people had grievances in Hungary about how their economy was operating, particularly after the global financial crisis that affected Hungary more than any other Eastern European country . Then there was an urban-rural divide, the urban elite versus the rural majority in the country.],
-  [Hungary’s Prime Minister Viktor Orban speaks at a press conference. 
- Janos Kummer/Stringer via Getty Images News],
-  [Along came a cynical populist-nationalist politician, Viktor Orbán. Orban started manipulating these grievances , and did so to significantly divide Hungarian society. He attacked many of the institutions of democracy, which were increasingly unpopular because of people’s grievances. He went after elites, and foreigners, and migrants, and the media. And he blamed all of them for the country’s problems. He then was able to ride these grievances into office.],
-  [Once in office, Orban amended the constitution and laws relating to the parliament. He undermined the independence of the media and the judiciary so as to centralize power . All of this happened while I was running an international university in Budapest, which remained independent because it received no funding from the Hungarian government. We were able to resist the increasingly authoritarian regime over issues of academic freedom. The government tried to shut down our programs of migration studies and gender studies, and tried to censor aspects of our history department.],
-  [These authoritarian attacks are similar to what we’ve seen happening in the U. S., and in fact, Viktor Orban was greatly admired by Donald Trump , and a lot of the playbook that Orban has followed was mirrored in Project 2025 in the U. S. under Trump .],
-  [BD: How do communities respond in different ways to authoritarian regimes?],
-  [OK: Pro-democracy movements and protection types of movements at the local level often co-occur. For example, in Colombia there have been various leftist movements and political parties that have pushed for greater democratic opening while communities mobilize to keep people safe and help them cope with repressive conditions. In places like Chile , El Salvador and Guatemala , communities built trust and support networks to provide aid, such as for people who needed food assistance. This provides space to independently operate and preserve the community.],
-  [The U. S. has parallels, such as innovating early warning networks to get advance notice of risks and threats, by communicating using the Signal app. In the Democratic Republic of Congo, villages set up radio networks , and in Ukraine they have sophisticated early warning networks to get word of airstrikes and drone attacks.],
-  [Fact-finding and countering stigma are important, and in the U. S. we’re seeing that in the form of the video recording and publicizing of harmful actions. This has played out similarly in Syria with fact-finding to protect nongovernment organizations.],
-  [There’s also accompaniment where outside actors come in to provide support to communities. Around the world, church organizations play important accompaniment roles. We’re seeing clergy in the U. S. step up and visit places that are at risk.],
-  [Anti-ICE protestors in Minneapolis built a barricade to monitor federal law enforcement vehicles traveling through the neighborhood. 
- Star Tribune via Getty Images],
-  [And then, there are protests, the most visible kind of action. In Minnesota , we’ve seen communities actually setting up community barricades , which has also happened in Mexico, Colombia and Northern Ireland. Communicating the nonviolent nature of these movements is important to avoid any pretext for additional crackdowns.],
-  [I think Americans have been taking similar actions to places around the world in part because there are some similar background conditions: repression and strong social capital networks. Those two things come together to produce these strategies.],
-  [BD: Could you speak more about the need to build a clear narrative and a positive one?],
-  [JS: There are two basic rules for how to resist authoritarianism that I’ve learned from experience: Build a diverse coalition and develop a unifying theme. You need a diverse coalition in order to appeal to a broad range of the public, and in order to do that, you need agreement on the goal and values of what you’re trying to accomplish. You need a clear and unifying narrative. The narrative often involves economic issues and issues of corruption, since there’s often a great deal of corruption in authoritarian regimes.],
-  [Hungary will have its next parliamentary election in April in which Orban will seek his fifth term as prime minister. The opposition has developed a broad coalition and a unifying theme, while Orban is using the centralized instruments of government and media that he controls to try to manipulate public opinion. The opposition coalition is headed by Peter Magyar , who was once a major supporter of Orban’s government. Magyar’s name can be magical in Hungary – sort of like a “Joe America” in the U. S.],
-  [With Magyar as its head, the opposition is aiming to peel off supporters of the regime. It’s campaigning on economic grounds, with a positive message and on moderate terms. And most importantly, it includes parties from the left, right and center.],
-  [Feb. 26, 2026, webinar led by The Conversation U. S. executive editor Beth Daley, examining what we can learn from other nonviolent civil resistance movements.],
-  [Poland has succeeded in doing what the Hungarian opposition is attempting. It managed to vote out an authoritarian government by putting together a broad coalition to defend the independence of the Polish judiciary. That became a coalition to elect parliamentarians in 2023, and that succeeded in changing the government.],
-  [BD: How important is the preexisting social fabric of a community to the success of a protest movement?],
-  [JS: It’s important, but complicated. Hungary had a very weak civil society after 70 years of totalitarian fascism and communism. When I was there, the very word to “volunteer,” which we think of as the essence of community action and service, was seen to be a bad word in Hungarian because it was closely associated with collaborating with the regime.],
-  [In the U. S., we’re the opposite in a sense, although the U. S. is now slipping on this . We have a long history of volunteerism, we have all these civil society organizations, we have a tradition of barn raising, people getting together with their neighbors and doing things in their communities. This is very much a part of the American spirit and a core value.],
-  [But today, I would say a combination of consumerism and economic individualism coming out of decades of economic deregulation has caused our civil society to fray. But the authoritarian challenge that we face now, and the way in which we are beginning to respond to it, is in fact bringing communities back together again. I think what happened in Minneapolis is an example of that. And this may reflect a growing capacity to resist an authoritarian regime.],
-  [class="fine-print"\> Oliver Kaplan does not work for, consult, own shares in or receive funding from any company or organization that would benefit from this article, and has disclosed no relevant affiliations beyond their academic appointment.],
-),
-  insert-map: (:),
-  word-count: 1853,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-}
-
-#article-row((
-  [
-    standard-article(
-  title: [Try These Awesome Copycat Recipes to Make Easter Candy at Home],
-  author: [Raquel  Lynn],
-  source-name: [WonderHowTo],
-  images: (),
-  paragraphs: (
-  [Make delicious candy for Easter from the comfort of your kitchen with copycat versions of your favorite classics: Marshmallow Peeps, Cadbury Creme Eggs, Reese's Peanut Butter eggs, Almond Joy bars, and chocolate bunnies. The best part is that you get your sugar fix without the preservatives. 1. Marshmallow PeepsThe thought of making marshmallows can seem intimidating, but once you do it from scratch, you won't ever go back to store-bought. Molly over at Food52 shares her recipe for this holiday favorite. Try making custom flavors such as lemon, raspberry, or vanilla for an elevated spin on a kid classic. Molly Yeh/Food52Don't Miss: How to Use Up Your Leftover Easter Candy 2. Cadbury Creme EggsDon't worry about searching for precious Cadbury eggs at the store—they are easy to make, and taste just like the real thing.],
-  [The creamy center is created using an enzyme called invertase. The protein breaks up table sugar, which is actually made of glucose and fructose bound together, into its ...more],
-),
-  insert-map: (:),
-  word-count: 164,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-  ],
-  [
-    standard-article(
-  title: [Money Origami, Flower Edition: 10 Different Ways to Fold a Dollar Bill into a Blossoming Bloom],
-  author: [Osas Obaiza],
-  source-name: [WonderHowTo],
-  images: (),
-  paragraphs: (
-  [The very first banknotes were used by the Chinese in the 7th century, during the Tang Dynasty. Before it was used as an actual currency, paper money was part of a deposit system in which merchants would leave large amounts of coins with a trusted associate and receive a paper receipt for the transaction. The reason was simple — the copper coins used as currency then were heavy. Fast forward about 300 years, and Jiaozi became the first official paper currency in the Sichuan capital of Chengdu. These notes were stamped with official seals to ensure no one made false copies. Even in the tenth century, counterfeiting was a concern. Wikimedia CommonsToday, the word jiaozi is more likely to be associated with delicious Chinese dumplings, but paper money is still used in many countries.],
-  [Even so, with the widespread use of debit cards and the rising popularity of digital wallets, it may not be long before the dollar bill has had its day. So, what will we do with all that worthless paper when ...more],
-),
-  insert-map: (:),
-  word-count: 175,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-  ],
-), ruled-indices: (1,))
-
-#article-row((
-  [
-    standard-article(
-  title: [How to Use Up Your Leftover Easter Candy],
-  author: [Brady Klopfer],
-  source-name: [WonderHowTo],
-  images: (),
-  paragraphs: (
-  [Perhaps the best part about Easter is the fact that, even after the day is over, there's usually still a lot of candy left. Jelly beans, gummy bears, Cadbury eggs, peanut butter cups, marshmallow peeps — there's no end to the sugary goodness in your awesome Easter basket. Yet as much as I love stuffing my face with brightly colored candies, it's easy to get sick of them halfway through the basket. When that time comes, I try and find new ways to repurpose the candies in other desserts. The best part? You can't lose! There are seemingly no bad combinations. But for me, these three uses are the best way to have fun with your leftover Easter candy. protoflux/FlickrIce Cream ToppingsIf there's an Easter candy that doesn't taste good crumbled on top of ice cream, then I've never met it.],
-  [All you have to do is throw some candy in your food processor for a few seconds, and sprinkle it on your favorite ice cream. Or if you want to make it like your favorite fro-yo, just pile on a myriad of ...more],
-),
-  insert-map: (:),
-  word-count: 184,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-  ],
-  [
-    standard-article(
-  title: [When You Can't Sleep, Eat This],
+  title: [Water, Lemon Juice, Vinegar, or Nothing: Should You Even Bother Rinsing Chicken?],
   author: [Karen Ahn],
   source-name: [WonderHowTo],
   images: (),
   paragraphs: (
-  [Being able to sleep deeply and fully is one of the foundations for real health. When you go without it, you feel subhuman and incapable of dealing with the world—just ask a student who's had to pull an all-nighter or the parents of a newborn. In fact, many studies have shown that lack of sleep or irregular sleep is linked to acne, weight gain, and depression. Video above: In the movie Fight Club, Edward Norton's character explains the pains and stresses of dealing with insomnia. I dealt with insomnia for several years and it was, pun intended, a total nightmare. I was constantly irritable, exhausted, anxiety-ridden, and felt like I was performing only at a fraction of what I was really capable of.],
-  [My ability to sleep drastically improved once I started practicing good sleeping habits (also known as sleep hygiene), cleaned up my diet, and committed to exercising every single day. However, I still experienced sleeplessness more often than I liked. I don't like relying on pills or OTC ...more],
+  [There's an ongoing debate about whether or not it's safe or even desirable to rinse meat before cooking it. Many fall into the anti-rinsing camp, saying that it's not effective at dislodging bacteria, especially on poultry, as we've discussed before. Meanwhile, some argue that rinsing certain meats, like bacon, can rinse away excess surface salt and may reduce shrinkage — though evidence is strictly anecdotal. Washing meat with a gentle acid: a cultural practice, not a safety guaranteeIn many West Indian and Caribbean kitchens, it's a common practice to rinse chicken and fish with a mild acid like lemon, lime, or vinegar prior to cooking. For example, Haitian stewed chicken (poule en sauce) is prepared by washing the chicken with sour orange juice or vinegar before cooking.],
+  [Cooks say it freshens the smell, removes surface slime, and adds subtle tang. Before modern refrigerators, a quick acidic rinse was thought to keep spoilage at bay when birds hung at room temperature. Today ...more],
+),
+  insert-map: (:),
+  word-count: 162,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+  ],
+  [
+    standard-article(
+  title: [8 Last Minute Fixes for Common Thanksgiving Cooking Disasters],
+  author: [Yumi Sakugawa],
+  source-name: [WonderHowTo],
+  images: (),
+  paragraphs: (
+  [Lumpy gravy? Gluey mashed potatoes? Dry turkey meat? So many things can go wrong when you are bestowed the honor (and burden) of cooking Thanksgiving dinner. Thankfully, some culinary mishaps that you encounter in the kitchen can be reversed or craftily disguised right before your guests sit down to eat. Below, you'll learn must-know Turkey Day tips for a smooth cooking adventure. Examples include fast-thawing your turkey the morning of, fixing burned, undercooked, or dry turkey, making gravy smoother, fixing undercooked stuffing, and patching pumpkin pie cracks. These are just a few of the clever hacks you might have to use to rescue Thanksgiving dinner, and hopefully, they'll be all you need.],
+  [Don't Miss: How to Cook the Perfect Turkey for Thanksgiving Dinner Got your own heroic stories of how you fixed your own Thanksgiving cooking mistakes? Share with us in the comments below. Don't Miss: 10 Easy-to-Make Centerpieces for Thanksgiving Dinner Follow WonderHowTo on Facebook, Twitter, ...more],
+),
+  insert-map: (:),
+  word-count: 158,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+  ],
+), ruled-indices: (1,))
+
+#article-row((
+  [
+    standard-article(
+  title: [banana chocolate chip cake],
+  author: [deb],
+  source-name: [Smitten Kitchen],
+  images: (),
+  paragraphs: (
+  [Somehow, despite how impossible it seems (to me, a person who has neither aged nor matured a day), it’s been almost twenty years since I first told you about my family’s favorite coffee cake . It’s tall, plush, crisp with a flaky layer of cinnamon sugar on top, studded with a quilt of chocolate chips and is downright, well, adorable when cut into cubes because they’re a little wobbly. When one tumbles, it shakes off a little pfft of cinnamon sugar, like a pup coming in from today’s blizzard. It’s perfect. It needs no changes or updates.],
+  [Read more »],
+),
+  insert-map: (:),
+  word-count: 101,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+  ],
+  [
+    standard-article(
+  title: [10 Truly Last-Minute Halloween Costume Ideas for the Cheap & Lazy],
+  author: [Yumi Sakugawa],
+  source-name: [WonderHowTo],
+  images: (),
+  paragraphs: (
+  [Unlike your more artistically-minded friends who've been working on their homemade, hand-stitched, conceptually-brilliant Halloween costumes since May, you need to put together a last-minute costume in a matter of hours. What can you possibly do if you're cheap, kind of lazy, and don't know how to sew to save your life? Invade your first-aid kit and roll yourself into a gauze mummy. Or, if you happen to have a big cardboard box and a roll of duct tape lying around, turn yourself into a vintage robot. Next to a thrift store? Buy yourself some vintage duds to dress as an old-timey ghost, or nab that XXL plain white T-shirt for a few bucks to make your ridiculously easy sunny-side-up egg costume. Have a lot of black in your wardrobe?],
+  [Visit your nearest Halloween or dollar store and buy a burglar mask to complete your all-black bank robber ensemble. Don't Miss: 10 More Truly Last-Minute Halloween Costume Ideas for the Cheap & Lazy If you're absolutely short on time, nothing says ...more],
 ),
   insert-map: (:),
   word-count: 171,
@@ -977,36 +437,80 @@ Jodi],
 #article-row((
   [
     standard-article(
-  title: [Dezeen Agenda US edition features a subterranean visitor screening centre for the White House],
-  author: [Saudatu Bah],
-  source-name: [Dezeen Architecture],
+  title: [DIY Olaf Costumes: Low-Cost Halloween Looks for Frozen's Silly Snowman],
+  author: [Osas Obaiza],
+  source-name: [WonderHowTo],
   images: (),
   paragraphs: (
-  [style="margin-bottom: 15px;"\>],
-  [The latest US edition of Dezeen Agenda reveals Donald Trump's proposal for a subterranean White House visitor screening centre .],
-  [Rounding up the latest news from the US every other Friday, the most recent newsletter features the expansion to the New Museum in New York by OMA and a proposal to add Corinthian columns to the Executive Residence at the White House to match the planned ballroom extension.],
-  [Prada plays on typical New York scaffolding with mesh-wrapped installation],
-  [In high-rise news, Prada unveiled a temporary installation covering their 5th Avenue shop by 2x4, and we revealed a 31-storey residential building in downtown Seattle by Grzywinski + Pons.],
-  [In the design world, New York branding agency Mischief worked with US news outlet National Public Radio on an ongoing campaign .],
-  [Donald Trump proposes subterranean White House visitor screening centre],
-  [In other Washington DC news, US editor Ben Dreith spoke with MIT associate dean of urban design and planning Lawrence Vale to explore how the president is utilising design in DC to cement his legacy and the NCPC delayed its vote on the contentious White House East Wing Modernization proposal .],
-  [Read the latest US edition of Dezeen Agenda and subscribe here .],
-  [The US edition of Dezeen Agenda],
-  [The US edition of Dezeen Agenda is a curated newsletter sent every second Friday containing agenda-setting news, opinions, interviews and projects from across America. Read the latest US edition of Dezeen Agenda or subscribe here .],
-  [You can also subscribe to our other newsletters:],
-  [– The global edition of Dezeen Agenda is sent every Thursday, containing a selection of the most important news highlights from the week.],
-  [– Dezeen Debate is sent every Tuesday and features the hottest reader comments and most-debated stories.],
-  [– Dezeen Daily is our daily bulletin that contains every story published in the preceding 24 hours.],
-  [– Dezeen In Depth is sent on the last Friday of every month and delves deeper into the major stories shaping architecture and design.],
-  [The post Dezeen Agenda US edition features a subterranean visitor screening centre for the White House appeared first on Dezeen .],
+  [With a November 2013 release, Disney's Frozen just missed Halloween. That means that everyone had to wait an entire year to dress up as their favorite princess or snowman — and that time has finally come. One costume that's sure to be a hit is Olaf, childhood snowman of Princess Anna and Elsa brought to life. Best of all, since he can survive in the summer, you don't need to worry about a snowy Halloween to make this costume feel legit — he works all year round. If you don't want to spend \$200+ on a super-detailed Olaf adult costume or even \$40+ on a children's costume, then it's time to DIY one. Below are a few easy video tutorials on making your own, with different variations of the popular Disney snowman. Olaf Costume \#1: Super Simple (Unisex)Eva, from MyLifeAsEva, designed her own Olaf costume that's really simple to recreate.],
+  [It makes for a great group outing alongside other Frozen characters like Anna and Elsa. Best of all, it'll cost you less than \$15. The total cost for all of ...more],
 ),
   insert-map: (:),
-  word-count: 354,
+  word-count: 181,
   edited-for-length: false,
   debug-mode: false,
 )
 
   ],
+  [
+    standard-article(
+  title: [How to Make Bread Crumbs],
+  author: [Kathryne Taylor],
+  source-name: [Cookie and Kate],
+  images: (),
+  paragraphs: (
+  [These tiny homemade bread crumbs can make a big impact on your meal! They’re the perfect crisp finishing touch on casseroles, salads and more. Follow this recipe to make regular golden bread crumbs, or add the optional seasonings and your kitchen will smell like the best Italian restaurant.],
+  [This simple recipe is far more flavorful than store-bought options, and keeps well for months. Use your bread of choice, whether it’s your favorite crusty sourdough or whole wheat sandwich bread. If you have leftover bread that’s turning stale, turn it into bread crumbs to save it for later (or croutons or French toast )!],
+  [Continue to the recipe...],
+  [The post How to Make Bread Crumbs appeared first on Cookie and Kate .],
+),
+  insert-map: (:),
+  word-count: 121,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+  ],
+), ruled-indices: (1,))
+
+#article-row((
+  [
+    standard-article(
+  title: [How to Make Perfect Mashed Potatoes on Thanksgiving],
+  author: [Yumi Sakugawa],
+  source-name: [WonderHowTo],
+  images: (),
+  paragraphs: (
+  [From choosing the right potato to the movement at which you mash your cut and boiled spuds, making the perfect mashed potatoes requires more attention to detail than you might think. First things first — choose the right potato based on your personal preference for whether you like your mashed potatoes creamy or fluffy. You can't go wrong with making mashed potatoes out of a combination of Russet and Yukon gold. When you're boiling your potatoes, make sure they are cut and peeled, and placed in a pot of cold water. Once the potatoes are soft to the point of no resistance when poked with a knife, it's important to drain the potatoes and heat them over low heat until they're hot and dry. Mash the potatoes with an up-and-down movement with a masher, and mix in heated butter and heated milk or cream.],
+  [For extra fluffiness, add a pinch of baking soda. It's important that the extra ingredients you're mixing in with the hot and dry potatoes are also heated or melted. Don't Miss: 17 Delicious ...more],
+),
+  insert-map: (:),
+  word-count: 178,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+  ],
+  [
+    standard-article(
+  title: [miso chicken and rice],
+  author: [deb],
+  source-name: [Smitten Kitchen],
+  images: (),
+  paragraphs: (
+  [How do you cook when your kitchen isn’t available for kitchen-ing? On a Sunday last April, I awoke at the crack of dawn jet-lagged from an (excellent) trip to Amsterdam\* to an email from my apartment building that ConEd had found a gas leak in the main line to the building and had shut down service for safety. With this, I was indoctrinated into a society of New Yorkers I previously hadn’t known existed, as NYC is apparently riddled with tales of people who lived without gas for (what seemed like the minimum of) 6 months and up to 18 months while their building trudged at a snail’s pace through rounds of repairs and inspections.],
+  [Read more »],
+),
+  insert-map: (:),
+  word-count: 119,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+  ],
+), ruled-indices: (1,))
+
+#article-row((
   [
     standard-article(
   title: [This Thanksgiving, You Can Have Your Booze & Eat It, Too],
@@ -1024,20 +528,357 @@ Jodi],
 )
 
   ],
+  [
+    standard-article(
+  title: [How to Carve, Char, & Contort a Creepy Miniature Jack-O'-Lantern for Halloween],
+  author: [WonderHowTo],
+  source-name: [WonderHowTo],
+  images: (),
+  paragraphs: (
+  [This year for Halloween, don't just settle for the normal cutesy pumpkin carvings — make these creepily charred and contorted miniature jack-o'-lanterns instead. Not only do these mini pumpkins look more menacing than your standard Halloween pumpkin, but they're dried out so they will last all season long, unlike fresh pumpkins, which need to be treated with preservatives or bleach to keep from rotting and molding. You basically gut and carve the pumpkin as you normally would, then you bake it inside a toaster oven, drying it out for longevity and charring and warping it for a disturbingly scary jack-o'-lantern. The creepiest thing of this entire video, though, is Kiddsock — the freaky sock puppet host. Don't Miss: 7 Ways to Prevent Your Carved & Uncarved Pumpkins from ...more],
+),
+  insert-map: (:),
+  word-count: 129,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+  ],
+), ruled-indices: (1,))
+
+#article-row((
+  [
+    standard-article(
+  title: [If You've Run Out of Shaving Cream, Give These 10 Household Items a Try],
+  author: [Heather Fishel],
+  source-name: [WonderHowTo],
+  images: (),
+  paragraphs: (
+  [Running out of any shower necessity is just a temporary annoyance, but it always seems worse when it's an empty can of shaving cream or gel. Sure, you could dry shave or use whatever liquid toiletry item is in hands reach, but if you want a truly smooth shave without irritation, you'll want to try one of the following alternatives. Some of them might even work better than your can of Barbasol or Skintimate. Don't Miss: Save Money on Replacement Razor Blades Cartridges! Next time around, try signing up for a subscription like Dollar Shave Club to make sure you always have fresh razors and shaving cream around. 1. Baby OilBaby oil (which is just pure mineral oil) allows you to see your skin better while you shave, reducing the chances of nicks, cuts, razor bumps, and other skin irritations.],
+  [Additionally, its slick nature helps razors work smoothly. Just make sure to use only a few drops. If you overdo it, your razor might get all gunked up. Wendy/xoVainYou can also rely on other types of ...more],
+),
+  insert-map: (:),
+  word-count: 176,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+  ],
+  [
+    standard-article(
+  title: [Throw on Regular Clothes for Halloween & Still Terrify Everyone as the Characters from 'Get Out' (Group Costume Guide)],
+  author: [Jaira Koh],
+  source-name: [WonderHowTo],
+  images: (),
+  paragraphs: (
+  [Get Out absolutely tore up the record books this year. And the wildest thing about it? It did so with the most ordinary looking characters and props ever (hence the shoestring \$4.5 million budget). Which makes it a godsend for the time- and cash-strapped come Halloween. Get Out/Universal Pictures With Get Out, Jordan Peele is the first (and only) African-American writer-director with a \$100-million film debut under his belt. The film is also the \_all-time highest domestic grossing debut based on an original screenplay (it beat out The Blair Witch Project by a good \$30 million). So you can bet that everyone at your Halloween party is going to recognize you in a Get Out getup.],
+  [Especially if you get a bunch of friends together and you all dress up as characters from the film — which is pretty easy because everyone in it is just wearing regular clothes. Lucky for you, we've sifted through the film, picked out the clothes all the major characters wear, and even pointed out where you can ...more],
+),
+  insert-map: (:),
+  word-count: 174,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+  ],
+), ruled-indices: (1,))
+
+{
+  #section-label([Analysis])
+  #standard-article(
+  title: [AIA sues Donald Trump over Kennedy Center renovation in unprecedented coalition],
+  author: [Ben Dreith],
+  source-name: [Dezeen Architecture],
+  images: (),
+  paragraphs: (
+  [style="margin-bottom: 15px;"\>],
+  [US organisations the American Institute of Architects and Docomomo US are among the plaintiffs in a lawsuit suing US president Donald Trump over his proposed renovations for the Edward Durell Stone-designed Kennedy Center.],
+  [Eight plaintiffs submitted a lawsuit this morning in an attempt to pause proposed renovations to the John F Kennedy Center for the Performing Arts in Washington DC.],
+  [The plaintiffs include the American Institute of Architects (AIA), Docomomo US , t he Cultural Landscape Foundation , the American Society of Landscape Architects , the Committee of 100 on the Federal City , DC Preservation League , the National Trust for Historic Preservation and the Society of Architectural Historians .],
+  [Unprecedented coalition of preservationists],
+  [According to the group of plaintiffs, the lawsuit represents one of the largest legal coalitions of preservation bodies in history.],
+  ["No plaintiff can remember an instance in which so many national and regional organisations have coalesced to defend a single historic building and its grounds, reflecting both the Kennedy Center's significance and the breadth of concern that the administration's approach could weaken longstanding federal protections for historic sites nationwide," said the plaintiffs.],
+  [Named as defendants in the lawsuit are president Donald Trump in his capacity as chair of the Board of Trustees of the Kennedy Centre, the Smithsonian Institute, the National Capital Planning Commission, as well as other government organisations and officials.],
+  ["It's not about the president's tastes. It's about the rule of law"],
+  [The lawsuit contends that the administration must adhere to the processes in the National Historic Preservation Act and the National Environmental Protection Act before proceeding with planned renovations to the centre.],
+  [Given this, the plaintiffs demand that proper review and authorisations by congressional officials should precede any renovations. The lawsuit, if successful, would halt work on the structure until such authorisations and associated public reviews are completed.],
+  [Read:],
+  [Corinthian columns proposed for White House to match ballroom extension],
+  ["The Trump administration appears to believe that they can skip those federal requirements and go right to alterations," attorney and co-founder of Cultural Heritage Partners Greg Werkheiser told Dezeen.],
+  [Cultural Heritage Partners is one of the law firms representing the plaintiffs, along with Foley Hoag and Lowell & Associates, all of which have open cases against the administration relating to other preservation issues, such as the Eisenhower Executive Office Building , the East Wing expansion , and the East Potomac Golf Links.],
+  ["Each of these cases is not about the politics," said Werkheiser. "It's not about the president's tastes, whether good or bad. It's about the rule of law and doing what Congress intended."],
+  ["I'm not ripping it down," says Trump],
+  [Last week, the board voted to close the centre for years for renovations after voting to add Trump's name to the centre, which was built in 1971.],
+  [On 13 March, president Trump released renderings on his Truth Social account , showing a building structurally akin to the current modernist building. In the post, the president said that the steel and some of the existing marble of the building would be maintained, saying, "I'm not ripping it down."],
+  [Werkheiser said that the case is informed by the contradiction between the assurances given by the president about the East Wing and the reality of its demolition last fall .],
+  ["The hardest lesson for America to learn is that we cannot take for granted assurances from the White House," he said. "For the East Wing matter, the President himself told the American public that to build the ballroom, the East Wing would not be touched, and then days later, it was gone."],
+  ["So the lesson we've learned is timeliness and not to take those assurances for granted," he continued.],
+  [Read:],
+  [How Donald Trump is using architecture to reshape Washington DC],
+  [Almost all the plaintiffs cited the historical significance of the building and the need for care and procedure in issues of its renovation.],
+  ["Architects have the core responsibility of protecting the health, safety, and welfare of the public and that includes the integrity of our nation's civic and cultural landmarks," said AIA president Illya Azaroff.],
+  ["The Kennedy Center is a public asset that must be shaped through transparency, expertise, and the communities it serves."],
+  [In a statement to Dezeen, a White House spokesperson said that the administration is looking forward to "ultimate victory" in the dispute.],
+  ["President Trump is committed to making the Trump-Kennedy Center the finest performing arts facility in the world. We look forward to ultimate victory on the issue," said the White House spokesperson.],
+  [The post AIA sues Donald Trump over Kennedy Center renovation in unprecedented coalition appeared first on Dezeen .],
+),
+  insert-map: (:),
+  word-count: 782,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+}
+
+{
+  #standard-article(
+  title: [Trump plans to redesign D.C.’s public golf course on top of East Wing rubble],
+  author: [Hunter Schwarz],
+  source-name: [Fast Company Design],
+  images: (),
+  paragraphs: (
+  [The remains of the East Wing of the White House could one day be buried under a golf course designed by the president who ordered its demolition in the first place.],
+  [As President Donald Trump seeks to physically remake the U. S. capital city to an extent never before seen in the modern presidency, the rubble from the construction site of one of his most visible projects has been trucked to the site of one of the least: a public golf course that sits on a stretch of land in the middle of the Potomac River between Washington, D. C., and Virginia.],
+  [The East Potomac Park Golf Links at Hains Point, currently open to the public, is one of three Washington, D. C., golf courses overseen by the National Park Service that Trump hopes to remodel. But in the meantime, it’s become a dumping ground: Construction workers have been disposing of dirt and rubble from the demolished East Wing there since Trump ordered its teardown last fall. The debris can then be used to fill in the golf course above the flood plain, as recommended by Interior Secretary Doug Burgum, per The Wall Street Journal . It also serves as a fitting metaphor for Trump’s D. C. redesign ambitions.],
+  [Golfers play the fifth hole as trucks unload debris and soil from the demolition of the White House’s East Wing at East Potomac Golf Course on October 24, 2025, in Washington, D. C. \[Photo: Tasos Katopodis/Getty Images\]],
+  [Trump’s effort to replace the site of the East Wing with an oversize ballroom and to install an arch two and a half times taller than the Lincoln Monument outside Arlington National Cemetery are his largest proposed D. C. redesign projects, while the placement of his name on building facades and his likeness on currency and banners in D. C. are perhaps his most vain. The golf course, however, might be the closest to his heart.],
+  [In his first year back in office, Trump made 106 visits to one of his golf properties . And in The Art of the Comeback , his 1997 ghostwritten memoir published following a string of bankruptcies in the ’90s, he listed “Play Golf” as his top comeback tip because it helped him relax, concentrate, take his mind off his problems, and make money.],
+  [“I only thought about putting the ball in the hole,” he wrote. “And, the irony is, I made lots of money on the golf course—making contacts and deals and coming up with ideas.”],
+  [Golf course designer Tom Fazio, who has designed Trump-owned courses in the past, is now reportedly overseeing the East Potomac redesign after having toured the course last November under an alias, according to Golf Digest . The magazine also reported that some in Trump’s orbit see the Langston Golf Course, a municipal course near the future site of the new Washington Commanders football stadium, as a prime site for commercial and retail development.],
+  [The reported plan is to rename East Potomac Park “Washington National,” giving the course the naming convention of Trump properties like the Trump National Golf Clubs located in Potomac Falls, Virginia, and in Rancho Palos Verdes, California, respectively. (It also sounds like the name of D. C.’s Major League Baseball team.) Work is expected to break ground in July on an 18-hole championship-level course that could host tournaments.],
+  [For now, East Potomac remains open seven days a week, and players can hit the course (up to 18 holes) for less than \$50 or practice on the driving range from 8 a.m. to 8 p.m. every day but Wednesday (when it opens at 11 a.m.). No word on how much a redesigned course would cost under Trump, but a source told Golf Digest that locals could get a discount.],
+  [If Trump’s White House redesign aim is to turn the People’s House into Florida Man’s McMansion , his plans for a proposed golf course suggest a wider ambition to make D. C into a Trump-branded compound—and to give public lands the look and feel of a Trump property, too.],
+),
+  insert-map: (:),
+  word-count: 669,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+}
+
+{
+  #standard-article(
+  title: [Losing Connie],
+  author: [Jodi Ettenberg],
+  source-name: [Legal Nomads],
+  images: (),
+  paragraphs: (
+  [Earlier in May 2024, the spinal CSF leak community lost a bright light when Connie Rim passed away. Her Facebook page, called My CSF Leak Story , was where she detailed her long fight trying to get sealed and healed. A few days after she passed, her husband posted words from Connie about her death, sharing it with the world.],
+  [Connie sustained her leak 5 years ago during spinal surgery, and tirelessly rallied her body and mind in her attempts to get care and find her way back to a place of less pain. Like me, she found solace in sharing this journey publicly. In her case, via videos that she posted to Facebook and TikTok, detailing her many debilitating symptoms, explaining the procedures and tests she got, and patiently answering questions.],
+  [When someone is chronically ill and takes a break from treatments, there is inevitably a swell of people asking why. “Why aren’t you doing more?”, as if it’s up to you  to not be better. As if there’s full control of the long tightrope you need to walk on when you’re dealing with multiple complex conditions. Despite her openness and raw, unflinching videos, people still asked Connie this question.],
+  [Perhaps in response to this, or for other reasons (I don’t know), in May 2023 Connie posted a long list of procedures and tests and doctors  she’s seen right before she headed out to Mayo for more leak diagnostics and procedures: “ This cannot be my life. This is not a life. I’ve been fighting to get better and advocating for myself as much as possible but in truth, I’m tired now. Nothing is as easy as it once was ,” she wrote then.],
+  [By this point, she had been to leak specialists and still her leak(s) were not sealed. She was in constant pain. She reposted that list, updated , a few days before her death.],
+  [She did get treatment after that May 2023 post, one that brought her pain down a little bit. We could all feel her joy and hope when it did. But that treatment failed, and when it failed it brought a new, terrible set of symptoms. Since late January 2024, she experienced severe stabbing pain from three to over twenty times daily, at what she classified as a level 10 pain. To be in pain all day, and then layer upon that a new and persistent, paralyzing pain… I can’t imagine.],
+  [By mid-May, she was gone.],
+  [Reading between the lines of the message her husband posted, she hit a wall where the excruciating pain she experienced moment to moment couldn’t be managed.],
+  [“ Some days, I’ve been given 10-15 minutes of my precious baseline pain, and for that. I’m grateful. But during the remaining 23 hours and 45 minutes, I was always crying, fighting, and, at times, in so much pain that I could do anything but curl in a fetal position in darkness ,” she wrote.],
+  [Her family and husband were loving and kind, she had a lot of support, and she had a community who rallied around her. I understand that those amazing things may not be enough when you are trapped in a body that tortures you.],
+  [Studies show that in a chronic state, pain can disrupt the communications between brain cells, leading to a reduction in the ability to process emotions — especially negative emotions. Pain changes your brain. I experienced a version of this myself not long after my leak began: already  in chronic pain for years   but not yet aware of mast cell diseases, I ate a particularly high histamine meal of spaghetti and shared a glass of wine with my family. It was this meal during those initial leak days, before I went to Duke for treatment , that tipped my body its new, unruly state. After that meal, I had full-body burning and nerve pain 24/7. And it didn’t go away. It felt like I was being dipped in acid, with no respite from the torture.],
+  [It was a fellow patient who urged me to think about MCAS , given my symptoms. I hadn’t heard of mast cell activation syndrome before. With no doctors to support me, I scrambled to get my mast cells under control and try to make it stop. During those weeks of absolute hell, until I found over-the-counter medications that worked for me, I begged a close friend to help me find a way out forever. (They declined, were compassionate throughout, and instead tried to find me a grief therapist locally. What helped in this case wasn’t therapy, it was finding respite from the fire-burn all over my body thanks to antihistamines and a low-histamine diet.)],
+  [And that was how I felt with only a few weeks of torture.],
+  [Connie lived with that pain that for many years. As she said in her writing, “The pain determines my emotions, NOT the other way around (as some people believe).”],
+  [Her passing hit the leak world very hard. Even those who did not know Connie personally often watched her videos on TikTok or Facebook, or interacted with her on the groups. In my case, I was virtual friends with her for years and we exchanged audio messages about strategies, told jokes, tried to keep ourselves sane in this Groundhog Day world we lived in when staying sealed felt like a pipe dream.],
+  [And yet, despite the pain and the exhaustion and the procedures, Connie remained joyful where she could, she appreciated what love she had in her life, especially her deep and beautiful love for her husband, and saw humour where she was able. She had tons of support. The pain determined her emotions, as she said. She was a prisoner of her constant agony.],
+  [I feel angry for her and her family, and for all of us. In looking at that long procedures list, it feels like she was failed so many times along the way. Even as recently as this year , she presented to the ER and later shared a video explaining that the on call doctor said her symptoms were psychosomatic. How can you look at that blisteringly long list of treatments and think it’s psychosomatic?! The ongoing nerve damage and tissue damage, and scar tissue that can entrap her nerves, it all makes sense looking at the long list of what her body had been through.],
+  [But no, she was told it was all in her head.],
+  [That’s part of what leaves me rattled, for anyone with this condition or other invisible conditions where metrics for diagnosis and treatment are not cut and dry. I’m working on the slides with the US and other spinal CSF leak foundations for the annual awareness week for this condition, called leakweek (which starts June 3rd). In it, we share the different types of diagnostics and note that normal imaging does not rule out a spinal CSF leak . Normal opening pressure does not rule out a spinal CSF leak. Normal anything  does not rule it out; we are trapped in this endless loop of being unable to ‘prove’ quantitatively what we have other than symptoms, yet often we are told we aren’t reliable narrators when sharing our symptoms.],
+  [And so we try, we try so hard.],
+  [We present ourselves firmly but without panic, but not TOO jokingly else we seem ‘not sick enough.’ We keep spreadsheets, we share data, we come armed with supporting studies but not TOO many, else it seems like we think we know too much. Outside the few leak experts out there, who are thankfully training doctors often, this dance continues. It’s exhausting to live in pain and to lose your mobility and so much more, but add the suspicion and disbelief to the mix and it drags your soul down to the ground.],
+  [Because despite the advocacy, despite the education, the myths persist.],
+  [Outside the leak experts, patients report that doctors still think a lumbar puncture leak is “self-limiting” (i.e., that it goes away on its own — I wish!). Many still doubt the existence of spontaneous intracranial hypotension (SIH), where a leak can occur suddenly; this can be due to a bone spur or calcified disc gnawing into the dura til it tears, or a coughing fit, or lifting heavy weights, or something else being the last straw for a weakness in the dura mater the patient wasn’t aware of. And a more recently-discovered type of leak, a CSF-venous fistula, can be elusive on existing imaging types, though a newer photon counting CT machine is spotting them more frequently. Canada doesn’t have one, and the US only has a few.],
+  [The brutality of this condition is hard to accurately put into words. Not only the pain itself but the uncertainty and uphill battle in getting care. It’s commonly misdiagnosed and under-diagnosed. The mental health burden is also significant: a quality of life study in spinal CSF leak patients from 2023 found that over half of the respondents (64.2%) endorsed suicidality, and 22.4% had demonstrated suicidal behaviour. A 2024 study about quality of life in chronic post puncture patients (like me) found substantial mental health challenges with depression, anxiety and stress experienced by 83%, 98%, and 88% of the respondents, respectively.],
+  [It’s like a big cosmic joke, “hey, there’s a condition that often does not show on imaging, where specialized imaging also involves making a new hole in the dura mater to look for the original leak, where the vast majority of medical students don’t learn specifics of SIH or long-term puncture leaks in in current med school curricula, and where we can’t yet figure out why chronic patients have a really hard time getting sealed and sometimes end up with new leaks after treatment.”],
+  [August 2025 will mark 8 years of leaking for me.],
+  [In these very difficult intervening years, I’ve learned a lot of things about myself, and about my body. About the illusions of safety I used to have. About how life just isn’t fair.],
+  [The part that hits hardest has always been that stability feels like an illusion. It’s so tenuous. Moments where I get respite from the pain are so few and far between, but with frequent anaphylaxis and severe MCAS in the mix, it feels like the edge of that knife is so thin. I often joke that I’m in bed now, but we will all be in bed eventually as we age. I just got there first. Underneath the humour is the knowledge that Connie’s story is sadly not the exception. That there are other patients barely hanging on as they wait for science to evolve and be able to bring them lasting relief.],
+  [Every day, my inbox is full of patients who can’t get treatment for their spinal CSF leaks. Doctors who laugh at them for asking for atraumatic needles for a lumbar puncture, despite studies showing it makes a significant difference in lowering the risk of a post-puncture spinal CSF leak. Families who say that their kids or siblings or spouses are faking it, that they’re “just lazy”, that they just “don’t want to be better”.],
+  [Show me a chronically ill person, in constant pain, who doesn’t want to get better?! If they’re out there, they are a rarity. Every patient I know, and I know many due to my public platforms, is like Connie: advocating fiercely, organizing efficiently, keeping hope as best they can, and desperately wanting to get well.],
+  [I haven’t gone back for treatment because repairs don’t hold for me. I have complicating factors like MCAS and adhesive arachnoiditis that make outcomes more risky and less curative than the average patient. But that that doesn’t mean I’ve given up. I’ve said it before : acceptance does not mean you’ve given up. Like Connie, I have much to be grateful for. But even acceptance, even finding joy again, isn’t enough to eclipse unrelenting pain. Thankfully, I am not in the kind of pain Connie was in, and by sharing all of this I am not trying to make her death about me. It’s more that her passing feels like it could have been any  of us in this tight knit community. I respect her choice, and I am also heartbroken that she was backed into a corner by her pain and felt like she had to make it. I’ve written more about my own choices, and shared a talk I gave on the topic, in a post called: “ Just fight harder” and other myths about living with a complex spinal CSF leak “, published in March 2025.],
+  [This post isn’t my usual, I know. I’m angry. I’m devastated. And it’s lit a fire under me to continue my advocacy work as much as my body allows. People sometimes ask why I’m so involved with the Spinal CSF Leak Foundation in the US, since it’s unpaid and I have my own business to run. (I am now the Vice-President of the Board). Advocacy is why. Connie is why. Connie, and other patients like her. Other patients like me. For those of us who are chronic, where repairs don’t hold, who are also waiting and hoping. For the patients who can’t get to care because they don’t have doctors who know leaks in their areas. For those who need resources to help their families to understand.],
+  [In supporting the Foundation, and working with sister nonprofit organizations in Canada and the UK , I can hopefully bring about more change than I can do as one writer with a leak.],
+  [I’ve been meaning to share all of these thoughts since I learned of Connie’s passing earlier this month, but it honestly messed me up too much to put words to paper. In August 2017, I knew nothing about spinal CSF, nothing about leaks other than the ones in water pipes, and nothing about needle types or gauge. I had never heard of the dura mater. Years later, there’s a lot I wish I knew then, but all I can do is keep writing and sharing, raising funds for the cause, and hopefully help someone else get care sooner than I could.],
+  [I will always be thankful to Connie for her fierce determination and desire to educate others no matter what she was going through.],
+  [Since I sustained my leak 7 years ago, there has been a lot of progress and research and advances in the field.],
+  [Losing Connie shows us how we have so much farther to go.],
+  [If you’d like to support me in raising funds for spinal CSF leak research, please see my duradash® campaign page here . I set a goal of \$1000 but have already eclipsed it thanks to my Instagram community; I will be upping the goal to \$2000 later this week. The 2-week fundraiser will end June 8th, 2024.],
+  [The post Losing Connie appeared first on Legal Nomads .],
+),
+  insert-map: (:),
+  inline-pq: pull-quote([That’s part of what leaves me rattled, for anyone with this condition or other invisible conditions where metrics for diagnosis and treatment are not cut and dry.], [Jodi Ettenberg]),
+  inline-pq-idx: 15,
+  word-count: 2489,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+}
+
+#article-row((
+  [
+    standard-article(
+  title: [PichiAvo builds wooden temple to burn down for Valencia's Fallas festival],
+  author: [Amy Peacock],
+  source-name: [Dezeen Architecture],
+  images: (),
+  paragraphs: (
+  [style="margin-bottom: 15px;"\>],
+  [Local art studio PichiAvo used wood and paper to create a pavilion based on an Ancient Greek temple, which was set ablaze for the Fallas celebrations in Valencia .],
+  [Named Per Ofrenar, which means "to offer" in Catalan, the installation had a classical design that drew upon the Temple of Athena Nike in Athens .],
+  [PichiAvo designed a temple-like pavilion to be burnt as part of Fallas festival],
+  [PichiAvo designed Per Ofrenar for Fallas, an annual five-day festival where wood and paper monuments are exhibited in the streets of Valencia before being set on fire on the final day, La Cremà, which was on 19 March.],
+  [Installed on a street in the centre of the city, its walls, roof and plinth were constructed from wood, while surplus paper from a book by PichiAvo was used for the capitals and bases of the pavilion's Ionic columns.],
+  [Inside, two candles were placed atop stacks of PichiAvo's surplus paper, which was arranged to form an altar-like space.],
+  [Fallas monuments often have sculptural designs that take the shape of satirical figures, but PichiAvo wanted to design a place for people to gather and leave religious offerings.],
+  [Read:],
+  ["Per Ofrenar means 'to offer', in the sense of making a symbolic, spiritual, or religious offering," PichiAvo founders Juan Antonio Sánchez and Álvaro Hernández told Dezeen.],
+  ["We wanted to create a space specifically designed for that act, a place people could physically enter and leave an offering to the deities."],
+  [Graffiti was written on the walls of the temple during the festival],
+  ["The temple naturally became the most suitable structure to represent this space within our visual language," the duo continued. "It carries a strong symbolic meaning as a place of gathering, ritual, and connection between humans and the divine."],
+  ["As we see it, the temple is not just a form, it's a space for action, for ritual, and in this project, it becomes a place where our visual language and the tradition of offering come together."],
+  [It was set on fire on La Cremà, the final day of the Fallas celebrations],
+  [Towards the end of the five-day festival, before being set on fire, visitors wrote their wishes and reflections in graffiti on the walls of the temple.],
+  [Other wooden pavilions that have recently featured on Dezeen include a pod-like forest structure with openable facades and a collection of timber installations built on the grounds of the 1969 Woodstock festival .],
+  [The photography is courtesy of PichiAvo.],
+  [The post PichiAvo builds wooden temple to burn down for Valencia's Fallas festival appeared first on Dezeen .],
+),
+  insert-map: (:),
+  word-count: 455,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+  ],
+  [
+    standard-article(
+  title: [The Big Dune],
+  author: [Stu Davidson],
+  source-name: [Stuck in Customs],
+  images: (),
+  paragraphs: (
+  [Daily Photo – The Big Dune],
+  [I got one of those Google reminders today of an image from the past and it sent me down a little rabbit hole on my Smugmug portfolio. One of the little branches ended up at this image which quite connected with me today for some reason, so I thought I’d share. Maybe it’s because it is the middle of winter where I am… who knows. Whatever the case, I hope it gives you a little bit of joy in your day too.],
+  [Date Taken 2014-09-25 20:55:45],
+  [Camera ILCE-7R],
+  [Exposure Time 1/2500],
+  [Aperture 4],
+  [ISO 100],
+  [Focal Length 70.0 mm],
+  [Flash Off, Did not fire],
+  [Exposure Program Aperture-priority AE],
+  [Exposure Bias +0.3],
+  [The post The Big Dune appeared first on Stuck in Customs .],
+),
+  insert-map: (:),
+  word-count: 148,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+  ],
+), ruled-indices: (1,))
+
+#article-row((
+  [
+    standard-article(
+  title: [Over 40,000 civilian buildings in Iran reportedly damaged in ongoing war],
+  author: [Amy Peacock],
+  source-name: [Dezeen Architecture],
+  images: (),
+  paragraphs: (
+  [style="margin-bottom: 15px;"\>],
+  [Humanitarian group Iranian Red Crescent Society has reported that 42,914 civilian buildings in Iran have been damaged by US-Israeli airstrikes, including more than 36,000 homes.],
+  [Announced on X last week, the Iranian Red Crescent Society – a non-governmental group affiliated with the International Federation of Red Cross and Red Crescent Societies (IFRC) – calculated that US-Israeli airstrikes have caused damage to 42,914 civilian buildings in Iran.],
+  [This includes 36,489 residential units and 6,179 commercial units.],
+  [A number of cultural heritage sites have been damaged in Iran by US-Israeli airstrikes since the recent war broke out. Last week, the Iranian government announced on X that "at least 56 museums, historical monuments, and cultural sites have sustained serious damage".],
+  [Among them is the UNESCO World Heritage-listed Golestan Palace in Tehran , which is thought to have been damaged by shock waves and debris from a nearby missile strike.],
+  [Historic buildings in Isfahan have sustained damage, including the Chehel Sotoon Palace, the Ali Qapu Palace and the Jameh Mosque. In Khorramabad, buildings situated near the buffer zone of the prehistoric Khorramabad Valley have been damaged, as well as the Falak-ol-Aflak Castle.],
+  [Read:],
+  [US-Israeli airstrike damages UNESCO-listed palace in Tehran],
+  [Iranian strikes have also caused damage to notable buildings across the Middle East. In Dubai, debris from an intercepted Iranian drone caused a fire at the Burj Al Arab skyscraper , and an intercepted missile caused a fire on the man-made Palm Jumeirah island.],
+  [Strikes in the Middle East have also reportedly caused damage to the White City of Tel-Aviv in Israel and Tyre in Lebanon , which are UNESCO-listed sites.],
+  ["UNESCO has communicated and will continue to communicate to all parties concerned the geographical coordinates of sites on the World Heritage List, the national Tentative Lists, as well as those under Enhanced Protection, to take all feasible precautions to avoid damage," said UNESCO.],
+  [The current wave of strikes and counterstrikes began on February 28, when the USA and Israel launched airstrikes on Iran, killing Iranian supreme leader Ali Khamenei. Iran retaliated with missile and drone strikes on Israeli and US-allied countries and bases across the Middle East, and the war in the region is ongoing.],
+  [The photo is by the Iranian Red Crescent Society.],
+  [The post Over 40,000 civilian buildings in Iran reportedly damaged in ongoing war appeared first on Dezeen .],
+),
+  insert-map: (:),
+  word-count: 393,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+  ],
+  [
+    standard-article(
+  title: [How to Fold an Origami Camera Using Nothing but a Dollar Bill],
+  author: [Reform Ed],
+  source-name: [WonderHowTo],
+  images: (),
+  paragraphs: (
+  [Cameras can be pretty pricey, but this one only costs a buck, though it's pretty limited in its functionality. That's because it's no ordinary camera, but an origami one made using nothing but a dollar bill. Of course, you don't need to spend a Washington to fold this origami camera, but you'll need a similar-sized rectangular piece of paper to get the job done. We think you should stick to the moneygami aspect though, because everything's better when it's made out of money. Below, in three different parts, you can see the folding of the camera, which was designed by origami master Won Park. You can print out the step-by-step instructions using PDF template, which you'll need anyway to help guide you through the videos ...more],
+),
+  insert-map: (:),
+  word-count: 126,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+  ],
+), ruled-indices: (1,))
+
+#article-row((
+  [
+    standard-article(
+  title: [12 Hilarious Emblem Designs for Call of Duty: Black Ops 2 (And How to Make Them)],
+  author: [Osas Obaiza],
+  source-name: [WonderHowTo],
+  images: (),
+  paragraphs: (
+  [Does executing a perfectly timed, no-scoped headshot, followed by a well-choreographed teabagging ever get old? No, no it doesn't, and neither do custom emblems for Call of Duty: Black Ops 2. How else are we going to kill time until Black Ops 3 arrives? I've already covered many, many, many different emblem designs, but there are always more. Some are superheroes, comic book characters, or even Christmas-themed, and then some are just plain hilarious. Here's a compilation of some of some of my favorite, most funniest COD: Black Ops 2 emblems out there, for either Xbox 360, PlayStation 3, or PC. Just follow along in the Emblem Editor to make your own. 1. Rage Quit EmblemAs a moderately skilled COD player, this particular emblem hits close to home—and I have the shoebox full of destroyed PS3 controllers to prove it.],
+  [The rage quit is a classic sign of weakness and poor play, which makes this emblem all the better. 2. No Balls EmblemNeed I say more? 3. Towelie EmblemTowelie is one of ...more],
+),
+  insert-map: (:),
+  word-count: 173,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+  ],
+  [
+    standard-article(
+  title: [45 Vegetable Side Dishes],
+  author: [Kathryne Taylor],
+  source-name: [Cookie and Kate],
+  images: (),
+  paragraphs: (
+  [Brighten up your table with these delicious veggie side dishes! Whether you’re searching for the perfect holiday side dish or a fun recipe to inspire your family to eat more vegetables, you’ll find a great option here. We all know it’s true—the more vegetables, the better!],
+  [To create this collection, I looked through my side dish recipes and pulled 45 of the most flavorful and popular vegetable-based options. These colorful recipes feature vegetables prepared to bring out their best qualities. You’ll find crisp roasted broccoli, tender sautéed green beans, vibrant raw tomato, and much more.],
+  [These healthy recipes will make you fall in love with vegetables. You’ll find springtime options for Easter all the way through summer, fall, and the colder months, including Thanksgiving and Christmas. Enjoy!],
+  [Continue to the recipe...],
+  [The post 45 Vegetable Side Dishes appeared first on Cookie and Kate .],
+),
+  insert-map: (:),
+  word-count: 144,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+  ],
 ), ruled-indices: (1,))
 
 {
   #standard-article(
-  title: [Saving Thanksgiving Dinner: How to Fix a Soggy or Burnt Pie Crust],
-  author: [Gabrielle Taylor],
+  title: [How to Roll Sushi — The Ultimate Guide],
+  author: [Kris Wu],
   source-name: [WonderHowTo],
   images: (),
   paragraphs: (
-  [How often do you make a pie from scratch? If your answer is "only during the holidays," you're not alone. Unless you're an experienced baker, homemade pies can be pretty tough to tackle. And the most common problems are the crusts coming out of the oven soggy or scorched. I've never once had a pie crust turn out quite right. Even if I manage to roll it out evenly, I can never get it pressed into the pan without it tearing or falling apart. And then there's the issue of baking it. If the crust is burnt or underdone, a pie just doesn't taste right. Whether your Thanksgiving dessert's crust is gooey or charred, there's still hope. Here are a few ways to save your pie for the holidays and beyond.],
-  [Don't Miss: What Makes or Breaks a Perfect Pie Crust (& Why)How to Fix a Soggy Pie CrustA lot of times, the top crust on a pie will cook faster than the bottom. If your bottom crust is underdone, cover the top with foil so it doesn't burn, and throw your pie back in the oven at 425ºF to 450ºF ...more],
+  [Sushi rolls, known as makizushi in Japanese, are only limited by your imagination — and your ability to roll them neatly, of course. While it may seem like a lot of effort, rolling sushi is a snap if you have the right tools. If you plan on making sushi rolls a lot at home, a bamboo mat is the way to go, but a tea towel — or even just your bare hands — will work if you only want to make them occasionally. No matter which tool you end up using, the method for rolling sushi is the same. Using a traditional bamboo matFor this demonstration, I'm making kimbap, a Korean roll that contains tamago, spinach, burdock root, and pickled daikon radish. Lay out your bamboo mat with an optional piece of plastic wrap on top (to keep the mat clean). Make sure that the dried seaweed (nori) has its rough side facing upward.],
+  [(If you're feeling adventurous, you could also use a sheet of sriracha sauce instead of nori.) Evenly spread rice over the nori while leaving space at the top and bottom of the ...more],
 ),
   insert-map: (:),
-  word-count: 192,
+  word-count: 188,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -1047,105 +888,79 @@ Jodi],
 {
   #section-label([Briefs])
   #brief-group((
-    #brief-item([Godstime Aburu], source-name: [SitePoint], [Learn how to test your Express API using Jest and Supertest — covering routes, database mocking, authentication, and CI/CD integration in under 10 minutes.
+    [#brief-item([Jules Yap], source-name: [IKEA Hackers], [In a culinary competition that brought together IKEA co-workers from six countries, Malaysia has emerged victorious. I’ve always been a little biased that Malaysian food is the best in the world—turns out I was right. On February 4th in Älmhult, Sweden—IKEA’s birthplace—Fatin Badrul Hisham and Nurul Fatihah Binti Rosli from IKEA Malaysia won the 2026 IKEA Talents global food contest with their stuffed fried tofu dish. The win marks a proud moment for Malaysian cuisine on the international stage, beating \[…\]])],
+    [#brief-item([Zain Zaidi], source-name: [SitePoint], [Check out how easier it has become to go from doc to design and prototype with Claude's latest model: Sonnet 3.5
 
  Continue reading
- Testing Node.js APIs with Jest: A Frontend Developer's Guide to Backend Testing 
- on SitePoint .])
-
-    #brief-item([SitePoint Team], source-name: [SitePoint], [Learn production-ready 429 error handling for Claude API in Python. Covers exponential backoff with jitter, Anthropic response header parsing, proactive rate limiting, circuit breaker patterns, and complete code examples for building resilient API integrations.
-
- Continue reading
- Claude API 429 Error Handling: Production-Ready Patterns in Python 
- on SitePoint .])
-
-    #brief-item([Craig Blair], source-name: [Canon Rumors], [French publication phototrend had their annual interview with Canon executives at CP+ 2026 and came away with some good information about the current EOS R lineup and their future plans, but in true Canon fashion, they didn't let too much out of the bag. The Canon EOS R6 Mark III The Canon EOS R6 Mark […]])
-
-    #brief-item([Stacy Randall], source-name: [IKEA Hackers], [Successful companies understand that to stay relevant, they must continually evolve, adapt, and introduce fresh pieces. It’s always exciting to see what’s entering the scene, and IKEA’s new products are certainly making a big impression. The megastore has new arrivals in numerous categories, including storage, furniture, kitchenware, and decor. We’re talking hundreds of pieces. My family’s planning an impromptu trip to Austin soon, so I started scrolling through IKEA’s latest line-up to see what things I’m bringing home. All I […]])
-
-    #brief-item([SitePoint Team], source-name: [SitePoint], [A comparative guide for developers seeking a private, free alternative to GitHub Copilot. Contrasts the polished experience of Cursor with the DIY flexibility of VS Code + Continue.
+ From Idea to Prototype in Minutes: Claude Sonnet 3.5 
+ on SitePoint .])],
+    [#brief-item([Matt Mickiewicz], source-name: [SitePoint], [Learn DeepSeek API integration in React and Next.js. Build a streaming AI chat app with the OpenAI SDK, route handlers, validation, and Vercel deployment. 
 
  Continue reading
- Local AI Coding Assistant: Cursor vs VS Code + Ollama + Continue 
- on SitePoint .])
-
-    #brief-item([Stacy Randall], source-name: [IKEA Hackers], [Just when you think IKEA’s PAX series has everything you need to create a stellar wardrobe, they come out with a new addition to prove you wrong. Last year, they introduced the brilliant end-unit addition, and now there’s a slim mid-unit add-on designed to fit between two PAX frames, giving you extra storage and display space. Bringing a Brand-New Look to the Reliable PAX System More storage is always a plus, but I have to say, this add-on elevates the […]])
-
-    #brief-item([SitePoint Team], source-name: [SitePoint], [Discover ClawFlows — an open-source workflow system for OpenClaw with 111 prebuilt agent workflows you can enable with one click. From morning briefings to smart home automation, email processing to meeting prep.
+ DeepSeek API Integration with React and Next.js 
+ on SitePoint .])],
+    [#brief-item([SitePoint Sponsors], source-name: [SitePoint], [Best Payment Gateway for Subscriptions & Recurring Payment: 2026. Find the best payment gateway for your subscription business in 2026! Process recurring payments and transactions easily.
 
  Continue reading
- ClawFlows: 111 Prebuilt AI Workflows for Your OpenClaw Agent 
- on SitePoint .])
+ Best Payment Gateway for Subscriptions & Recurring Payment: 2026 
+ on SitePoint .])],
+    [#brief-item([SitePoint Team], source-name: [SitePoint], [A guide for DevOps engineers on orchestrating LLMs availability and scaling using Kubernetes.
 
-    #brief-item([Joel Bruner], source-name: [Migrationology (Mark Wiens)], [Nasi Lemak is one of Malaysia’s most well-loved and easily recognizable foods – well worth the title of Malaysia’s National Food. Serving quite possibly tens of millions of breakfast plates a day actually, from the South of Thailand, through Malaysia,... 
+Key Sections:
+1. \*\*Prerequisites:\*\* GPU Operator setup, Nvidia Container Toolkit.
+2. \*\*Serving Options:\*\* KServe vs Ray Serve vs simple Deployment.
+3. \*\*Resource Management:\*\* Requests/Limits for GPU, dealing with bin-packing.
+4. \*\*Scaling:\*\* HPA based on custom metrics (queue depth).
+5. \*\*Example:\*\* Full Helm chart walkthrough for a vLLM service.
 
-The post Malaysia’s National Food ‘Rice in Cream’ – Astounding Flavors at Nasi Lemak Tanglin appeared first on Migrationology - Food Travel Blog .])
-
-    #brief-item([Mark Harbottle], source-name: [SitePoint], [In this tutorial you will take a general-purpose language model, adapt it to a specific task with a few thousand labeled examples, and deploy the result behind an API your frontend can call. DeepSeek's open-weight models, particularly DeepSeek-R1 and DeepSeek-V3, ship under permissive licenses that allow commercial use.
-
- Continue reading
- Fine-Tune DeepSeek Models for Custom Use Cases 
- on SitePoint .])
-
-    #brief-item([SitePoint Team], source-name: [SitePoint], [Ollama is perfect for local development, but when your team grows past 3 concurrent users, performance drops dramatically. This guide shows you exactly when to migrate to vLLM and how to do it without downtime.
+\*\*Internal Linking Strategy:\*\* Link to Pillar. Link to 'Ollama vs vLLM'.
 
  Continue reading
- From Ollama to vLLM: A Migration Guide for Growing Teams 
- on SitePoint .])
-
-    #brief-item([Into the Gloss], source-name: [Into the Gloss], ["It’s fun trying new products, but I had to accept that my skin can’t take a lot. And honestly? It’s fine. I don’t know what I’m doing anyway."])
-
-    #brief-item([deb], source-name: [Smitten Kitchen], [class="smittenkitchen-print-hide"\>
- 
-
- Unless you’re living your life better than me (probably!), I bet it’s been way too long since you last had a baked potato for dinner — or, as they’re more charmingly called across the pond, “jacket potato.” And it’s a crime because they’re so cozy and uncomplicated to make, we could fix this right now.
-
- Read more »])
-
-    #brief-item([Yumi Sakugawa], source-name: [WonderHowTo], [Get crafty this Easter weekend with egg blowing, a technique where you poke holes on the ends of raw eggs and blow out all the yolk so that you can use the empty, still-intact eggshells for painting and decorating. Fun for the whole family and all that huffing and puffing just may distract you long enough from over-binging on the giant chocolate bunny and that package of sugary Peeps. Happy Easter! Don't Miss: 10 Unique Decorating Techniques for Easter Eggs Follow WonderHowTo on Facebook, Twitter, Pinterest, and FlipboardCover image and illustrations by Yumi ...more])
-
-    #brief-item([SitePoint Team], source-name: [SitePoint], [Understanding model quantization is crucial for running LLMs locally. We break down the math, trade-offs, and help you choose the right format for your hardware.
+ Deploy Local LLMs on Kubernetes: Complete vLLM + Helm Guid 
+ on SitePoint .])],
+    [#brief-item([SitePoint Team], source-name: [SitePoint], [Deploy a local AI server for \$1,500 using consumer GPUs. Step-by-step guide on building with DeepSeek-R1, RTX 4090, tensor parallelism & cost ROI.
 
  Continue reading
- Quantization Explained: Q4\_K\_M vs AWQ vs FP16 for Local LLMs 
- on SitePoint .])
-
-    #brief-item([Joel Bruner], source-name: [Migrationology (Mark Wiens)], [Hainanese Chicken Rice is one of the most iconic street foods you’ll find in any big city of South East Asia. In Malaysia, one of the areas with incredible and unique food is Melaka. While you’re there, check out one... 
-
-The post Chicken Rice Balls at Kedai Kopi Chung Wah (Jonker Street, Melaka) appeared first on Migrationology - Food Travel Blog .])
-
-    #brief-item([Matt Mickiewicz], source-name: [SitePoint], [Comprehensive guide covering this topic with practical implementation details.
+ Build \$1,500 AI Server: DeepSeek on RTX 4090 
+ on SitePoint .])],
+    [#brief-item([SitePoint Team], source-name: [SitePoint], [Calculate the true cost of self-hosted LLMs in 2026. Hardware, electricity, maintenance, and comparison with API alternatives.
 
  Continue reading
- Chain-of-Thought Debugging with DeepSeek-R1: When to Let AI Think Through Bugs 
- on SitePoint .])
+ Self-Hosted LLM Costs: Complete 2026 Pricing Guide 
+ on SitePoint .])],
+    [#brief-item([Joel Bruner], source-name: [Migrationology (Mark Wiens)], [Brazilian Beef Ribs just may be the newest top item (our opinion) at Brazil’s board of tourism’s ‘Top 10 Reasons to travel to Brazil.’ What is not a secret to eaters at Costelão Do Gaúcho though, is that this BBQ destination... 
 
-    #brief-item([SitePoint Team], source-name: [SitePoint], [Compare the top local LLM models for developers in 2026. Includes benchmark performance, use cases, and recommendations for different hardware setups.
-
- Continue reading
- Best Local LLM Models for Developers in 2026 
- on SitePoint .])
-
-    #brief-item([SitePoint Team], source-name: [SitePoint], [Master Claude Code's Agent Skills feature for creating reusable, expert-level AI assistants. Includes skill file structure, best practices, and 5 ready-to-use examples.
+The post Brazilian Beef and GIGANTIC Ribs – Costelão Do Gaúcho (Curitiba) appeared first on Migrationology - Food Travel Blog .])],
+    [#brief-item([SitePoint Team], source-name: [SitePoint], [Running a reasoning model locally doesn't require a \$10,000 workstation. Here's how to build a capable DeepSeek-R1 setup on a budget.
 
  Continue reading
- Building Claude Agent Skills: A Complete Tutorial 
- on SitePoint .])
-
-    #brief-item([Jules Yap], source-name: [IKEA Hackers], [Sometimes the best projects come about by accident. That was the case for Aeschinoer, who stumbled upon this clever backlit mirror idea while working on a completely different IKEA hack — a project called “back-lit lunar landscape.” One idea led to another, and the result is a wall-mounted mirror with soft, flattering backlighting that the whole family has come to love. The best part? The build takes roughly two hours from start to finish. A quick, easy DIY project you […]])
-
-    #brief-item([NOWPayments], source-name: [SitePoint], [Discover the best payment gateways in France for 2026. Explore top payment methods and solutions to choose the best online payment service for your business!
-
- Continue reading
- Best Payment Gateways in France for 2026 
- on SitePoint .])
-
-    #brief-item([Matt Mickiewicz], source-name: [SitePoint], [Master Claude Code context management for long-running sessions. Learn the /compact and /clear commands, session diagnostics, memory optimization, and proven workflows to prevent context degradation.
+ The \$1,500 Local AI Setup: DeepSeek-R1 on Consumer Hardware 
+ on SitePoint .])],
+    [#brief-item([Craig Blair], source-name: [Canon Rumors], [B&H Photo has the extra long Gitzo GT3543XLS Systematic Series 3 Carbon Fiber Tripod in their DealZone for only \$719 (Reg \$1419) today. If you're a taller person and are looking for the last tripid you'll ever buy, this is a great option Gitzo GT3543XLS Systematic Series 3 10 features Load Capacity: 61.7 lb Max \[…\]])],
+    [#brief-item([Craig Blair], source-name: [Canon Rumors], [I have been writing a fair bit about the EOS R7 Mark II in recent weeks, and with good reason. It's good clickbait, and many people who may be interested haven't been following along yet.. That said, I am trying to be as truthful as I possibly can while stoking the rumors. A little hype \[…\]])],
+    [#brief-item([Into the Gloss], source-name: [Into the Gloss], ["It’s fun trying new products, but I had to accept that my skin can’t take a lot. And honestly? It’s fine. I don’t know what I’m doing anyway."])],
+    [#brief-item([Matt Mickiewicz], source-name: [SitePoint], [In-depth developer comparison of Seedance 2.0, OpenAI Sora, and Runway Gen-4 AI video APIs. Covers API architecture, latency benchmarks, pricing, rate limits, SDK support, code examples, and a decision framework for production integration.
 
  Continue reading
- Context Management for Long-Running Claude Code Sessions 
- on SitePoint .])
+ Seedance 2.0 vs. Sora 2 vs. Runway Gen-4: AI Video API Comparison for Developers (2026) 
+ on SitePoint .])],
+    [#brief-item([SitePoint Team], source-name: [SitePoint], [Stop buying GPUs for everyone. Here's how to set up a shared local AI infrastructure that serves your entire engineering team from a single workstation.
 
+ Continue reading
+ Team Local AI: Sharing One GPU Across Multiple Developers 
+ on SitePoint .])],
+    [#brief-item([Stacy Randall], source-name: [IKEA Hackers], [Successful companies understand that to stay relevant, they must continually evolve, adapt, and introduce fresh pieces. It’s always exciting to see what’s entering the scene, and IKEA’s new products are certainly making a big impression. The megastore has new arrivals in numerous categories, including storage, furniture, kitchenware, and decor. We’re talking hundreds of pieces. My family’s planning an impromptu trip to Austin soon, so I started scrolling through IKEA’s latest line-up to see what things I’m bringing home. All I \[…\]])],
+    [#brief-item([Stu Davidson], source-name: [Stuck in Customs], [Made with the new Midjourney…
+
+class="jetpack-video-wrapper"\>
+
+The post A collection of the surreal… appeared first on Stuck in Customs .])],
+    [#brief-item([SitePoint Team], source-name: [SitePoint], [Master token optimization with context compression techniques. Reduce LLM API costs by 50% using extraction vs selection methods and practical RAG optimization strategies.
+
+ Continue reading
+ Optimizing Token Usage: Context Compression Techniques 
+ on SitePoint .])],
+    [#brief-item([Stacy Randall], source-name: [IKEA Hackers], [Whoa, whoa, whoa, back up a second, those are BILLY bookcases?! (That’s what you’re thinking right now, isn’t it?) I get it; I did a double-take, too. This built-in bookcase hack from Reddit user Floyd (u/DisastrousPipe8192) is next-level. I mean, it doesn’t even look like the same room when you see the finished product. Granted, he also changed the flooring, furniture, and wall color, but the built-ins undoubtedly steal the show. Floyd shared that he’s learned most of his home \[…\]])],
   ))
 }
 

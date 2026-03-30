@@ -23,85 +23,69 @@
 
 // --- Front Page Feature ---
 #feature-article(
-  title: [\#692: Q&A: My Brother-in-Law Wants to Buy a Rental in Mexico. Good Idea?],
+  title: [The contradiction at the heart of OpenAI],
   kicker: [Cover Story],
-  author: [Paula Pant],
-  source-name: [Afford Anything],
-  deck: [class="smart-track-player-container stp-color-ff5252-EEEEEE spp-stp-desktop"\>
-
-class="spp-shsp-form spp-shsp-form-03b54a11"\>
-
- Three listeners, three very different financial dilemmas, but all connected by the same underlying question: What do I do when life doesn’t follow the plan?],
-  lead-text: "class=\"smart-track-player-container stp-color-ff5252-EEEEEE spp-stp-desktop\">",
-  lead-first-alpha: 0,
+  author: [Sean Rameswaram],
+  source-name: [Vox],
+  deck: [OpenAI announced plans to invest substantial amounts of money in AI-related causes this year through its nonprofit, increasing its philanthropic efforts months after restructuring with a new for-profit arm.],
+  lead-pre: [| ],
+  lead-cap: [N],
+  lead-rest: [ikolas Kokovlis/NurPhoto/Getty Images],
   body-paragraphs: (
-  [Three listeners, three very different financial dilemmas, but all connected by the same underlying question: What do I do when life doesn’t follow the plan?],
-  [In this Q&A, we tackle three high-stakes money decisions. A post-divorce real estate leap overseas. A retiree with a suddenly swollen portfolio. And an investor questioning whether smarter returns cost them legal protection.],
-  [These aren’t textbook scenarios with clear-cut answers. They’re real situations where the right financial move depends as much on psychology, relationships, and life circumstances as it does on the numbers. Let’s dive in.],
-  [Listener Questions in This Episode],
-  [Anonymous asks: My brother-in-law just went through a divorce and came back from a Mexico vacation convinced he should sell everything, move there, and buy a 3-unit Airbnb property for 11.5 million pesos (roughly \$575,000 USD). He’s never owned or managed a rental before, and he’s partnering with a friend who’s also a rental newbie. What unique considerations apply to buying rental property in Mexico versus the U. S., and how can I be supportive while helping him avoid jumping in over his head?],
-  [Marianne asks: I’m 66, retired, and living off Social Security plus dividends and interest from my investments. My IRA has doubled in the last year and a half, and I don’t know how to handle this massive growth. Should I sell my ETFs and move to cash to live off interest, or should I reinvest into different ETFs? I haven’t touched the principal yet—just living off the income.],
-  [Brandon asks: In a recent episode, you mentioned that 401(k)s have stronger legal protection than IRAs in the event of a lawsuit. Does this mean I should never roll over old 401(k)s into IRAs? I’ve already rolled over two 401(k)s in the past—was that a mistake? I just left another job and I’m hesitant to roll that 401(k) into my IRA after hearing this.],
-  [When someone you love is making an impulsive financial decision during an emotional time (divorce, job loss, major life transition), the best support often means asking questions that help them slow down and think through the decision, not blocking them or telling them what to do.],
-  [Buying rental property in a foreign country adds layers of complexity including property rights restrictions, financing challenges, currency risk, tax implications in both countries, language barriers, and remote management difficulties—all of which compound when you have no rental experience.],
-  [When your portfolio experiences unexpected growth in retirement, resist the urge to immediately lock in gains by moving everything to cash—you still need growth to outpace inflation over a potentially 30+ year retirement, and selling winners triggers unnecessary taxes.],
-  [The decision to stay invested or move to cash should be based on your overall asset allocation and whether your portfolio still matches your risk tolerance and timeline, not on whether the market has recently gone up or down.],
-  [401(k)s receive unlimited federal protection from creditors under ERISA, while traditional and Roth IRAs have only \$1,512,350 in federal bankruptcy protection (as of 2024, adjusted for inflation every 3 years)—however, state laws vary widely on IRA creditor protection outside of bankruptcy.],
-  [Note: Timestamps are approximate and may vary across listening platforms due to dynamically inserted ads.],
-  [(0:00) Introduction],
-  [(2:26) Anonymous’s Question: Should my brother-in-law buy a rental in Mexico?],
-  [(6:00) How to support a loved one making a risky financial decision],
-  [(14:15) What you need to know about buying a property (anywhere)],
-  [(24:36) Tax implications of owning foreign rental property],
-  [(26:40) Legal risks and landlord-tenant laws in Mexico],
-  [(31:58) Marianne’s Question: My IRA doubled — now what?],
-  [(32:52) Should you sell, hold, or rebalance after major portfolio growth?],
-  [(42:20) Brandon’s Question: 401(k) vs. IRA lawsuit protection],
-  [(46:48) When rolling over a 401(k) into an IRA could be a mistake],
-  [Thanks to our sponsors!],
-  [Secure your family’s future with Policygenius. Head to policygenius.com to compare life insurance quotes from top companies and see how much you could save.],
-  [Quit overspending on wireless with 50% off Unlimited premium wireless. Plans start at \$15/month at mintmobile.com/paula],
-  [Try Gusto today at gusto.com/paula , and get three months free when you run your first payroll.],
-  [Take control of your credit today. Download the Ava app and use my promo code PAULA to get 20% off your first year.],
+  [class="has-text-align-none"\>Big changes are happening at OpenAI. On Wednesday, the company announced that it would be shutting down their AI video creation app Sora only a couple months after its launch. In October, OpenAI completed a massive restructure of its organization that shakes the very foundations it was built on.],
+  [class="has-text-align-none"\>OpenAI, which powers ChatGPT, among other AI products, was originally founded purely as a nonprofit. Now it has a for-profit arm. According to OpenAI CEO Sam Altman , the nonprofit will still guide the work of the for-profit side to ensure that artificial intelligence works for the “benefit of all humanity.” On top of that, the OpenAI Foundation, would be in charge of (theoretically) \$180 billion, making it one of the largest charitable organizations in the world.],
+  [class="has-text-align-none"\>Catherine Bracy, founder of the nonprofit Tech Equity, thinks this restructuring is a blatant attempt to free up the for-profit wing to act like any other AI company. She argues that OpenAI’s for-profit wing will only ever act for the benefit of its investors. Bracy believes the OpenAI Foundation is merely a glorified and toothless corporate social responsibility arm. We reached out to OpenAI for comment and did not receive a response.],
+  [class="has-text-align-none"\>Bracy spoke with Today, Explained host Sean Rameswaram about the legality of OpenAI’s new structure and her concerns about how this all might shake out. An excerpt of their conversation, edited for length and clarity, is below.],
+  [class="has-text-align-none"\>We worked together back in the day and then kind of went out of touch with each other for a few years. Then, when I was writing a book about venture capital, I was really interested in open AI’s nonprofit model. Sam had been very explicit that the reason they founded OpenAI as a nonprofit was to put the technology at arm’s length from investors because they knew investors would exploit it in a way that would make this technology — which they thought was very dangerous — actually live up to that potential danger.],
+  [class="has-text-align-none"\>So I wanted to talk to him about the decision-making process behind that. And he was very forthcoming about that being the explicit reason why OpenAI was founded as a nonprofit. They put a lot of thought and capacity and energy into creating this \[nonprofit\] governance structure that would protect the technology from the whims of investors, the \[profit-generating\] imperatives that investors put on technology companies.],
+  [class="has-text-align-none"\> And when you found out that Open AI was restructuring and going to try to have it both ways — mission-driven nonprofit, but also money-driven for-profit — what was your reaction?],
+  [class="has-text-align-none"\>Disappointment. I would say that was my initial reaction. And then the secondary response was, Well, what can we do about this? And many of us came together into this coalition that really started asking questions about the responsibility of the nonprofit and the responsibility of the attorney general of California to enforce nonprofit law. And things kind of went from there.],
+  [class="has-text-align-none"\>I run a nonprofit. In the tax code, that means that my organization does not need to pay taxes, but in return for that tax exemption, we are required to operate in service of a public service mission. Our mission is to ensure that the tech industry is creating opportunity for everybody. OpenAI’s nonprofit mission is to ensure that AI develops for the benefit of all of humanity. And legally, Sam Altman is required to prioritize OpenAI’s mission above all else.],
+  [class="has-text-align-none"\>So when they decided they were going to split the nonprofit from the for-profit, they found that actually legally they could not do that without divesting the intellectual property that the nonprofit owned, including all of the intellectual property that was created that underlies the ChatGPT model, and the equity stake that the nonprofit owned in the for-profit company.],
+  [class="has-text-align-none"\>I think they looked at that price tag and they said, That’s not a price we’re willing to pay . And so instead of splitting the nonprofit from the for-profit, they decided to continue down this path of nonprofit ownership, which in my mind is completely untenable, unsustainable, and irreconcilable.],
+  [class="has-text-align-none"\>And actually what they’re doing is just daring the attorney general to hold them accountable for it. I think they think they’re too big to be held accountable and they need the AG \[of California\] to assume that he will not win a case. And that’s what they’ve done. They’ve loaded up on lawyers and they are making a bet that the AG will not pursue this in any way that’s actually meaningful.],
+  [class="has-text-align-none"\> Okay. So if I’m following you, despite the fact that OpenAI has split itself into a for-profit arm and a not-for-profit arm, their not-for-profit mission still overrides everything they do. And because of that, they are violating California law — because there’s no way that the nonprofit interests are ever going to be primary in their business .],
+  [class="has-text-align-none"\>Right. I think, as the kids would say, they’re playing in our faces. They expect us to take their word that as they operate, as they make deals with the Defense Department to develop autonomous weapons and surveillance systems on American citizens, as they battle parents in court whose children have committed suicide due to conversations that these kids were having with their chatbots, they expect us to believe that the nonprofit mission is being prioritized over the profit motivation of the company.],
+  [class="has-text-align-none"\>We all know that OpenAI’s overriding priority is to “win” the AI race. It’s to beat out the competition in the marketplace, and it’s to establish the biggest AI company they can create. To the extent that the nonprofit mission ever comes into tension with that, the company will always prioritize profits over the mission.],
+  [class="has-text-align-none"\>A law is only as good as its enforcement. And I think if there’s one rule of Silicon Valley, it is to ask forgiveness and not permission. I think they said, You know, this is worth it. There’s enough money on the line for us to just break the law and do the PR work and the lobbying work and the other work that we need to do to ensure that these laws will never be enforced against us .],
+  [class="has-text-align-none"\>Well, here’s the thing. They announced this week a list of priorities that the foundation would be investing in. They listed as one of their priorities, Alzheimer’s research. My mother is currently dying of Alzheimer’s. I have one copy of the gene that puts me at extreme risk of developing Alzheimer’s when I’m older. So I pray every day that AI helps us find a solution to Alzheimer’s fast enough that I can benefit from it, that my family can benefit from it.],
+  [class="has-text-align-none"\>But let me ask you a question. What happens, do you think, if the research that’s funded by OpenAI’s Foundation finds that actually Anthropic’s models are better at drug discovery or scientific breakthroughs than ChatGPT or any of OpenAI’s other models? What does it mean for the independence of scientific research, if all of this research is funded by an entity that has an irreconcilable conflict of interest?],
+  [“We do not have to take these companies at their word that they know best how to govern this technology. We should have bigger imaginations about what’s possible.”],
+  [class="has-text-align-none"\>We would not accept the science around nicotine that tobacco companies were funding. We do not accept the science around alcohol addiction that the alcohol companies fund. We do not accept the science around sugared beverages from the soda industry. And we should not accept that this scientific research is funded by an entity that has a vested financial interest in the outcome.],
+  [class="has-text-align-none"\>And that is why it is so critically important that the OpenAI Foundation actually be independent, that it have an independent board, that it can deploy its resources independently, that the research that it is funding is independent.],
+  [class="has-text-align-none"\> Do you still think that we’re maybe better off that OpenAI says that they want to give billions away to better society — than say Anthropic, Google, maybe having some pledges to give money away, but not nearly as much?],
+  [class="has-text-align-none"\>Well, Google has a corporate foundation. It’s called Google.org. And I expect in this structure with the tension and the conflict of interest that the OpenAI Foundation has, that it will operate much more like Google.org, which is essentially an arm of the marketing department, a corporate social responsibility program that gives money to innocuous groups — but will never do anything that undercuts Google’s priorities.],
+  [class="has-text-align-none"\>I think if you read between the lines of open AI’s press release, the work they say they want to continue doing with community funding is all about convincing people about the importance and value and benefit in using AI. I mean, that’s a market building opportunity for them. That’s not actually anything that’s going to ensure that AI is developed for the benefit of humanity. And so, no, I don’t think that they’re going to operate any differently than any of the other companies’ corporate social responsibility arms. That’s essentially what they have built here.],
+  [class="has-text-align-none"\>This is the fight of our time. AI is not inevitable. The way it develops is not inevitable. And we do not have to take these companies at their word that they know best how to govern this technology. We should have bigger imaginations about what’s possible. And if anything, this should give us more energy and motivation to fix what’s broken about our democracy than to just sit back and let billionaires control our future.],
 ),
   edited-for-length: false,
 )
 
-#pull-quote([My IRA has doubled in the last year and a half, and I don’t know how to handle this massive growth.], [Paula Pant])
-
 
 {
-  #section-label([Features])
+  #section-label([Front Page])
   #standard-article(
-  title: [Fragments Dec 4],
-  author: [Martin Fowler],
-  source-name: [Martin Fowler],
+  title: [4 Business Ideas That Changed the World: Shareholder Value],
+  author: [Harvard Business Review],
+  source-name: [Harvard Business Review],
   images: (),
   paragraphs: (
-  [Rob Bowley summarizes a study from Carnegie Mellon looking on the impact of AI on a bunch of open-source software projects. Like any such study, we shouldn’t take its results as definitive, but there seems enough there to make it a handy data point. The key point is that the AI code probably reduced the quality of the code base - at least if static code analysis can be trusted to determine quality. And perhaps some worrying second-order effects],
-  [This study shows more than 800 popular GitHub projects with code quality degrading after adopting AI tools. It’s hard not to see a form of context collapse playing out in real time. If the public code that future models learn from is becoming more complex and less maintainable, there’s a real risk that newer models will reinforce and amplify those trends, producing even worse code over time.],
-  [❄ ❄ ❄ ❄ ❄],
-  [Rob’s post is typical of much of the thoughtful writing on AI. We can see its short-term benefits, but worry about its long-term impact. But on a much deeper note is this lovely story from Jim Highsmith . Jim has turned 0x50, and has spent the last decade fighting Parkinson’s disease. To help him battle it he has two AI assisted allies.],
-  [Between my neural implants and Byron’s digital guidance, I now collaborate with two adaptive systems: one for motion, one for thought. Neither replaces me. Both extend me.],
-  [If you read anything on AI this week, make it be this . It offers a positive harbinger for our future and opens my mind to a whole different perspective of the role of AI in it],
-  [❄ ❄ ❄ ❄ ❄],
-  [Anthropic recently announced that it disrupted a Chinese state-sponsored operation abusing Claude Code. Jim Gumbley looks at the core lesson to learn from this, that we have to understand the serious risk of AI Jailbreaking],
-  [New AI tools are able to analyze your attack surface at the next level of granularity. As a business leader, that means you now have two options: wait for someone else to run AI-assisted vulnerability detection against your attack surface, or run it yourself first.],
-  [❄ ❄ ❄ ❄ ❄],
-  [There’s plenty of claims that AI Vibe Coding can replace software developers, something that folks like me (perhaps with a bias) think unlikely. Gergely Orosz shared this tidbit],
-  [Talked with an exec at a tech company who is obsessed with AI and has been for 3 years. Not a developer but company makes software. Uses AI for everything, vibe codes ideas.],
-  [Here’s the kicker:],
-  [Has a team of several devs to implement his vibe coded prototypes to sg workable],
-  [I’d love to hear more about this (and similar stories)],
-  [❄ ❄ ❄ ❄ ❄],
-  [Nick Radcliffe writes about a month of using AI],
-  [I spent a solid month “pair programming” with Claude Code, trying to suspend disbelief and adopt a this-will-be-productive mindset. More specifically, I got Claude to write well over 99% of the code produced during the month. I found the experience infuriating, unpleasant, and stressful before even worrying about its energy impact. Ideally, I would prefer not to do it again for at least a year or two. The only problem with that is that it “worked”.],
-  [He stresses that his approach is the “polar opposite” of Vibe Coding. The post is long, and rambles a bit, but is worthwhile because he talks in detail about his workflow and how he uses the tool. Such posts are important so we can learn the nitty-gritty of how our programming habits are changing.],
-  [❄ ❄ ❄ ❄ ❄],
-  [Along similar lines is a post of Brian Chambers on his workflow, that he calls Issue-Driven Development (and yes, I’m also sick of the “something-driven” phraseology). As with much of the better stuff I’ve heard about AI assisted work, it’s all about carefully managing the context window, ensuring the AI is focused on the right things and not distracted by textual squirrels.],
+  [The idea that maximizing shareholder value takes legal and practical precedence above all else first came to prominence in the 1970s. The person who arguably did the most to advance the idea was the business school professor Michael Jensen, who wrote in Harvard Business Review and elsewhere that CEOs pursue their own interests at the expense of shareholders' interests. Among other things, he argued for stock-based incentives that would neatly align CEO and shareholder interests.],
+  [Shareholder primacy rapidly became business orthodoxy. It dramatically changed how and how much executives are compensated. And it arguably distorted capitalism for a generation or more. Critics have long charged that maximizing shareholder value ultimately just encourages CEOs and shareholders to feather their own nests at the expense of everything else: jobs, wages and benefits, communities, and the environment.],
+  [The past few years have seen a backlash against shareholder capitalism and the rise of so-called stakeholder capitalism. After reigning supreme for half a century, is shareholder value maximization on its way out?],
+  [4 Business Ideas That Changed the World is a special series from HBR IdeaCast. Each week, an HBR editor talks to world-class scholars and experts on the most influential ideas of HBR’s first 100 years, such as disruptive innovation, scientific management, and emotional intelligence.],
+  [Discussing shareholder value with HBR editor in chief Adi Ignatius are:],
+  [Lynn Paine, professor at Harvard Business School
+ Mihir Desai, professor at Harvard Business School
+ Carola Frydman, professor at Kellogg School of Management],
+  [Further reading:],
+  [HBR: CEO Incentives—It’s Not How Much You Pay, But How, by Michael C. Jensen and Kevin J. Murphy
+ New York Times: A Friedman doctrine‐- The Social Responsibility Of Business Is to Increase Its Profits, by Milton Friedman
+ HBR: The Error at the Heart of Corporate Leadership, by Joseph L. Bower and Lynn S. Paine
+ U. S. Business Roundtable: Statement on the Purpose of a Corporation, 2019],
 ),
   insert-map: (:),
-  word-count: 667,
+  word-count: 311,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -109,46 +93,73 @@ class="spp-shsp-form spp-shsp-form-03b54a11"\>
 }
 
 {
+  #section-label([Features])
   #standard-article(
-  title: [Sofia Coppola: Not just for girls],
-  author: [Sam Adams],
-  source-name: [Salon],
+  title: [Chinese Traffic to time.gif],
+  author: [Dennis Felsing],
+  source-name: [Dennis Felsing],
   images: (),
   paragraphs: (
-  [It’s fitting that Sofia Coppola’s new movie is called “Somewhere,” an apt title for a filmmaker whose works are grounded in a sense of place and yet feel as if they’re taking place in their own hermetically sealed world. The same qualities that got “Lost in Translation” lauded for its dreamy atmosphere prompted attacks on “Marie Antoinette” for being cosseted and self-indulgent, which had more to do with critics’ sympathies toward the former’s melancholy May-December romance and their hostility to the feminine frippery of the latter than any profound shift between the two. (Anthony Lane’s New Yorker review of “Marie Antoinette” remains one of the most sexist pieces of criticism I’ve ever read.) A few of the same brickbats have been lobbed at “Somewhere,” but in the main the story of divorced action-movie star Johnny Marco (Stephen Dorff) bottoming out at the Chateau Marmont has met with a warmer reception, winning the top prize at the Venice Film Festival.],
-  [As he sleepily watches twin strippers gyrate in his hotel room and cops a fake smile for photos with his costar, Johnny comes to terms with the vapidity of showbiz, which pointedly contrasts with the time he passes in the company of his young daughter (Elle Fanning). But while we get the sense that Johnny is headed toward something, for the most part the movie is content to hang with him as he spins his wheels, soaking up the dimly lit decadence of the place celebrities check into when they want to seem “real.” In a high-ceilinged conference room with a panoramic view of SoHo, not far from where she lives with her husband, Thomas Mars of the French band Phoenix, and their two children, Coppola reflected on the shift from “Marie’s” militant girliness to “Somewhere’s” idle masculinity, why the personal roots of her movies aren’t where many would think, and the importance of hearing a stripper’s hands squeak on the pole.],
-  [What was the first piece of “Somewhere” that fell into place for you?],
-  [I was living in Paris after “Marie Antoinette.” I took a year off and I had a baby. I was thinking about what I wanted to work on next, and a character came to mind, a simple portrait. I wanted to do something from a guy’s point of view, after “Marie Antoinette” was so girly, just to shift gears. Just looking at lots of stories, the portrait of an actor, the Chateau Marmont, this character came to mind.],
-  [“Marie Antoinette” was almost defiantly girly. What interested you about taking on a male point of view?],
-  [It’s less familiar, so it was just kind of challenging, intriguing to picture what his experience might be like — the whole thing with his experience being more stripped down and minimal, not in this decorative, girly world. With “Marie Antoinette” I got to really indulge my feminine side. This was a different side of my personality.],
-  [Some of the more condescending reviews of “Marie Antoinette” made a facile equation between you and your protagonist, as if you were the flippant queen dousing herself in luxury. Partly that’s because you don’t stand back from your characters and judge them.],
-  [I try to take the point of view of the character, so you’re in their world. I try to be empathetic to them, because why would you care about connecting with a character unless you can see things from their point of view. I can see how it’s easier to be sympathetic for a less spoiled, privileged person.],
-  [People persistently criticize you for making movies about these kinds of privileged characters. Are you ever tempted to change gears and make a movie about a kid boxing his way out of the slums?],
-  [I know those worlds. I don’t think I’d be able to add something to a kid boxing his way out of the slums, because I don’t know that experience. I’ve been around these worlds. The world [of the Chateau Marmont] is familiar to me. It’s not my reality, but I think it relates so much to our fascination today with celebrity culture that it’s fascinating to see another side of it.],
-  [You open “Somewhere” with a static shot of Stephen Dorff’s Ferrari driving in circles around a desert racetrack, which not only sets up his character’s personal stasis but keys the audience into the fact that it’s not going to be a movie in which a ton of things happen. It’s been described as a two-hander between him and his daughter, but a lot of it’s about him being alone — a one-hander.],
-  [It’s a portrait of him, and then she comes into it for a while and it turns into a kind of buddy thing. What I set out to do is a portrait of this guy at this moment in his life, and right at the beginning I wanted to set up so you know where he’s at and what kind of guy he is.],
-  [When did the daughter come into the story? Was she there from the outset?],
-  [I started with him, and maybe because I had just had a daughter and I was thinking about how that changes your life and perspective, I was thinking about how would a guy like that deal with having a kid.],
-  [You had your second child in May, and the movie premiered in September. Was it mostly done by then?],
-  [It was editing, so I finished the movie and then took time off. But I had taken time off when I had my daughter, and I was in that world with her, spending a lot of time at the park with the baby, so I was thinking about that, and trying when I was writing to put in what was in my mind, what was personal to me.],
-  [You’re talking about taking time off for your kids, but Dorff’s character doesn’t do that at all. He takes his daughter with him on a business trip to Italy, but it seems as if his career has largely kept them apart.],
-  [I feel like he became famous a couple years ago and kind of got caught up in all that and is out of balance, and spending time with her reminds him of parts of his life, or himself.],
-  [People have called the movie semi-autobiographical, which seems to be pushing it.],
-  [Just because he’s a father and I have a father it’s autobiographical. I don’t really get that. Someone else said, “In your father’s films, they eat food. In your films they eat food.” I was like, “Are you serious?” It’s definitely personal. I put personal memories and experiences of trips with him in the movie. But my childhood was so different.],
-  [The Chateau Marmont in “Somewhere,” the hotel in “Lost in Translation,” Versailles in “Marie Antoinette,” even the cloistered suburban world of “The Virgin Suicides” — it seems as if a sense of place is key to the way you conceive your movies.],
-  [It’s one of the starting points. I usually start with a character and then the place follows soon after, but with “Lost in Translation” I started with wanting to do something in Tokyo. I think that’s always a big aspect of it. I wanted to feel like when you go to a movie that you’re in this other place for two hours. It’s part of creating the atmosphere.],
-  [What was the calculation as far as how much plot to add? The atmosphere is so lovely and so precisely drawn you almost don’t want anything to happen.],
-  [I don’t know. It was just feeling my way through it intuitively, trying to balance this mundane aspect of being with this guy, but also have enough happen that you’re still engaged.],
-  [Was that balance there at the script stage, or was it something you found in editing?],
-  [When I went back and looked at the script afterward, it’s pretty much like the movie, where usually I move things around in editing more. This one was pretty close. Except for the Chris Pontius Guitar Hero stuff — that was improvised.],
-  [The movie is so attentive to detail. I love the scenes where Dorff has the twin strippers come into his room and you hear the squeak of their hands as they pole dance. So often when movies go into strip clubs, it feels like an excuse for some gratuitous T & A, but you don’t present it as that kind of fantasy world. How did you decide to present the scene that way?],
-  [I thought about the whole thing of wanting to show it not like in a movie, but more naturalistic. In reality, they’d have to install these poles, and there’d be the squeaks, all the things that make it more like real life. I like that they’re not perfect and slick, they’re awkward and cute. I always like those real-life details, those little moments that you find funny or touching. I try always to avoid movie-like things.],
-  [You grew up in and around moviemaking. Is wanting to push away from things being “movie-like” a reaction to that?],
-  [I feel like it’s more from watching movies. You see things a lot, the things that are more generally in movies. A lot of movies recently just bombard you with the soundtrack, song after song, so in reaction to that I wanted to see how sparse we could be with the music and use it intentionally. I like trying to show the side of life where you can’t express yourself. In movies, they say all their feelings, but I think in life you’re not always able to communicate what you’re feeling, or you think of it after it’s too late. I try to put in the things I notice from life, and avoid movie clichés.],
-  [The post Sofia Coppola: Not just for girls appeared first on Salon.com .],
+  [Nearly two years ago I posted this endless GIF that always shows the current time in UTC:],
+  [Now looking at my GoAccess dashboard I can see that it is picking up in popularity rather suddenly:],
+  [But strangely I can’t find anything about time.gif being linked on the web. So this might just be an attempted Denial of Service (DoS) attack? At least that would be something I am familiar with from the DDNet direction, but it’s certainly strange on HookRace. But instead of simply shutting down time.gif I decided to try to find out who is accessing it and whether I can keep the server up.],
+  [Let’s look into the nginx logs, since I use nginx to proxy the requests to the Haskell program. There I see about 40 new requests per second looking like this:],
+  [class="highlight"\> hookrace.net 123.185. XXX. XXX - - \[21/May/2019:21:21:27 +0200\] "GET /time.gif HTTP/2.0" 200 3335 "XXX" "Mozilla/5.0 (Linux; Android 8.1.0; V1818A Build/OPM1.171019.026; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/66.0.3359.126 MQQBrowser/6.2 TBS/044681 Mobile Safari/537.36 MMWEBID/XXX MicroMessenger/7.0.4.1420(0x2700043A) Process/tools NetType/WIFI Language/zh\_CN" 8.055],
+  [hookrace.net 111.62. XXX. XXX - - \[21/May/2019:21:21:27 +0200\] "GET /time.gif HTTP/2.0" 200 32061 "XXX" "Mozilla/5.0 (Linux; Android 5.1; OPPO A59s Build/LMY47I; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/66.0.3359.126 MQQBrowser/6.2 TBS/044704 Mobile Safari/537.36 MMWEBID/XXX MicroMessenger/7.0.4.1420(0x2700043B) Process/tools NetType/WIFI Language/zh\_CN" 89.256],
+  [hookrace.net 111.29. XXX. XXX - - \[21/May/2019:21:21:27 +0200\] "GET /time.gif HTTP/2.0" 200 543830 "XXX" "Mozilla/5.0 (Linux; Android 7.1.1; OPPO R11 Build/NMF26X; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/66.0.3359.126 MQQBrowser/6.2 TBS/044704 Mobile Safari/537.36 MMWEBID/XXX MicroMessenger/7.0.4.1420(0x2700043A) Process/tools NetType/WIFI Language/zh\_CN" 1540.238],
+  [hookrace.net 112.2. XXX. XXX - - \[21/May/2019:21:21:27 +0200\] "GET /time.gif HTTP/2.0" 200 172102 "XXX" "Mozilla/5.0 (Linux; Android 8.1.0; V1816A Build/OPM1.171019.011; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/66.0.3359.126 MQQBrowser/6.2 TBS/044611 Mobile Safari/537.36 MMWEBID/XXX MicroMessenger/7.0.4.1420(0x2700043A) Process/tools NetType/WIFI Language/zh\_CN" 492.600],
+  [hookrace.net 123.13. XXX. XXX - - \[21/May/2019:21:21:27 +0200\] "GET /time.gif HTTP/2.0" 200 1275 "XXX" "Mozilla/5.0 (Linux; Android 9; LYA-AL00 Build/HUAWEILYA-AL00L; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/66.0.3359.126 MQQBrowser/6.2 TBS/044704 Mobile Safari/537.36 MMWEBID/XXX MicroMessenger/7.0.4.1420(0x2700043A) Process/tools NetType/WIFI Language/zh\_CN" 1.888],
+  [hookrace.net 117.91. XXX. XXX - - \[21/May/2019:21:21:27 +0200\] "GET /time.gif HTTP/2.0" 200 4684 "XXX" "Mozilla/5.0 (iPhone; CPU iPhone OS 12\_1\_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/16D57 MicroMessenger/7.0.3(0x17000321) NetType/WIFI Language/zh\_CN" 12.123],
+  [I checked a few IP addresses and they were all in mobile networks, not data centers. The user agent containing MicroMessenger and MQQBrowser indicates that the source of the traffic are WeChat and/or QQ, popular chinese chat apps.],
+  [id="quantifying-the-traffic"\>Quantifying the Traffic],
+  [For reference, the system I’m running on is a simple Debian based VPS with 2 threads and 2 GB of RAM that also functions as the main server for DDNet’s website , database and my HookRace blog.],
+  [I already had to do some scaling when posting the initial blog post on Hacker News , optimizing the Haskell application itself to use LZW encoding in the GIF frames, to properly clean up connections to prevent any memory leaks and disable buffering in nginx’s config.],
+  [But the current level of traffic is on a different scale with 2.4 million hits on time.gif in the last 23 hours (30 hits per second) resulting in 113 GB of data being transferred. And many of those connections don’t finish quickly, instead they linger for seconds, minutes or even hours.],
+  [Using lsof -i | grep Time | wc -l I can see that there are about 6000 people downloading the GIF at peak times, causing up to 30 Mbit/s of outgoing traffic with 7000 packets/second incoming and the same number outgoing. The DDNet server statistics lets me monitor this nicely ( related blog article ):],
+  [Network
+ 
+Packets
+ 
+CPU],
+  [id="keeping-up-with-the-traffic"\>Keeping Up with the Traffic],
+  [Regenerating the ranks pages of DDNet usually causes the main CPU load on the server, which can be seen in the above CPU graph as spikes. This task is already set to only run when the server is below a specified load, so that more essential tasks have priority.],
+  [The first new problem was nginx running into a limit of 768 worker\_connections:],
+  [class="highlight"\> 2019/05/20 20:41:30 \[alert\] 761\#761: \*3828093 768 worker\_connections are not enough while connecting to upstream, client: 49.114. XXX. XXX, server: hookrace.net, request: "GET /time.gif HTTP/2.0", upstream: "http:\/\/127.0.0.1:5002/", host: "hookrace.net", referrer: "XXX"],
+  [Luckily that is easily fixed in /etc/nginx/nginx.conf by increasing the number of worker\_connections to keep alive, each of which is handling one of the long-lasting time.gif requests:],
+  [events { 
+ worker\_connections 20000 ; 
+ }],
+  [and systemctl reload nginx . No downtime required since nginx will start new worker processes to handle new requests while keeping the old ones alive for a time to keep handling existing connections.],
+  [Unfortunately that fix only lasted a few hours until the next problem appeared:],
+  [class="highlight"\> 2019/05/20 23:09:21 \[alert\] 15188\#15188: \*4041619 socket() failed (24: Too many open files) while connecting to upstream, client: 27.207. XXX. XXX, server: hookrace.net, request: "GET /time.gif HTTP/2.0", upstream: "http:\/\/127.0.0.1:5002/", host: "hookrace.net", referrer: "XXX"],
+  [Increasing the limits in /etc/security/limits.conf for the nginx user fixes this:],
+  [The value of 1048576 is chosen since it’s the value set in sysctl fs.file-max and it should be good enough for now.],
+  [Next I noticed that the server was running out of memory with both the Haskell application and nginx having to keep track of so many connections at once. For now I increased the swap size on the fly to keep some less commonly used stuff there using dd if=/dev/zero of=/var/swap bs=1M count=5000 && mkswap /var/swap && swapon /var/swap .],
+  [When running out of memory I noticed that Python’s msgpack implementation fails quite confusingly when it runs OOM. So I had to add some fixes to the code creating the DDNet ranks pages to handle this possibility.],
+  [The Linux Kernel’s TCP buffers ran out of memory next, complaining in dmesg:],
+  [So I increased them with a net.ipv4.tcp\_mem = 116730 155640 233460 in /etc/sysctl.conf and reloaded it with sysctl -p .],
+  [A limitation of my current approach is the number of ports nginx can open to proxy to the Haskell application. If that gets blown I’ll have to communicate to the application differently or simply redirect to the application directly instead of proxying it. That would also reduce the CPU load significantly, cutting out nginx which happens to be much more expensive than the Haskell application, probably because it’s also handling TLS.],
+  [id="final-words"\>Final Words],
+  [While it was fun to keep time.gif running in the face of this amount of traffic, I still haven’t answered the final question of where this traffic is coming from. It might be that lots of Chinese happen to be spreading time.gif on WeChat and QQ, but for that the traffic looks a bit too sterile. Has anyone seen similar traffic patterns and might know if they are real or some kind of botnet? Maybe someone has embedded traffic.gif on some WeChat-specific page. If anyone has a clue please drop me an email at dennis\@felsing.org .],
+  [Hi,],
+  [I read your post and this is just my guess:],
+  [Chinese “WhatsApp” type of communication culture is very strange. They
+are like spam emails in the old days. Often time some one might create
+posts in picture, eg include warm message such as reminding each other to
+put on more clothes as the weather is getting cold, etc.],
+  [My guess is then someone read your trick and thought that it is a good
+idea to create some picture that always show the current time. Eg to
+remind others that it is time to sleep or something.],
+  [And like email spams in the old days, people can share things like this
+crazily, often by older people who don’t know much about technology.
+(Just like how some tweet can go viral, messages like this could also go
+viral within there networks. And unfortunately the viral thing we often
+received are really rubbish like.)],
+  [yours,],
+  [Discuss on Hacker News .],
 ),
   insert-map: (:),
-  word-count: 1645,
+  word-count: 1312,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -171,7 +182,7 @@ class="spp-shsp-form spp-shsp-form-03b54a11"\>
   [Let me remind the reader that I am only an experimenter. Do not set the least value on what I do, or the least discredit on what I do not, as if I pretended to settle any thing as true or false. I unsettle all things. No facts are to me sacred; none are profane; I simply experiment, an endless seeker… Yet this incessant movement and progression which all things partake could never become sensible to us but by contrast to some principle of fixture or stability in the soul.],
   [In a sentiment that Bertrand Russell would come to echo nearly a century later in his ten timeless commandments of learning — “Do not fear to be eccentric in opinion, for every opinion now accepted was once eccentric.” — Emerson considers our resistance to change, both as individuals and as a culture:],
   [Every ultimate fact is only the first of a new series… The new statement is always hated by the old, and, to those dwelling in the old, comes like an abyss of skepticism.],
-  [[…]],
+  [\[…\]],
   [In nature every moment is new; the past is always swallowed and forgotten… Nothing is secure but life, transition, the energizing spirit. No love can be bound by oath or covenant to secure it against a higher love. No truth so sublime but it may be trivial to-morrow in the light of new thoughts. People wish to be settled; only as far as they are unsettled is there any hope for them.],
   [Life is a series of surprises.],
   [But Emerson’s most pressing point has to do with how this courage for embracing uncertainty and change — especially unwelcome change — is the foundation of what we call character:],
@@ -191,50 +202,80 @@ class="spp-shsp-form spp-shsp-form-03b54a11"\>
 #article-row((
   [
     standard-article(
-  title: [Micron vs Taiwan Semiconductor Manufacturing: Which AI Chipmaker Is the Better Buy Right Now?],
-  author: [Adam Levy],
+  title: [“Hitting Iran hard”: Trump soft-sells “troops on the ground” via Fox News],
+  author: [Alex Galbraith],
+  source-name: [Salon],
+  images: (),
+  paragraphs: (
+  [Donald Trump seems to know that deploying ground troops to Iran to continue a historically unpopular war will hurt his standing. The president turned to television hosts to float the idea on Saturday, promoting Fox News host Mark Levin before the anchor promoted a small-scale invasion.],
+  [“Watch Mark Levin interview of Brilliant Marc Thiessen tonight,” Trump wrote on Truth Social . “Will discuss the importance of hitting Iran, HARD!!!”],
+  [Viewers who took the president’s advice were pitched on sending small teams of “specialized” soldiers to Iran, with the hopes of removing enriched uranium from the country.],
+  [“Why would we need troops on the ground? Well, there’s a lot of reasons—and we wouldn’t need 300,000 of them,” Levin said. “\[Trump’s\] not talking about sending regular Army infantry in by the hundreds of thousands. The men he’s talking about, the units he’s talking about, they are specialized.”],
+  [As the war in Iran stretches past the one-month mark, it’s unclear whether Trump’s hinting indicates a real desire for escalation or a negotiation tactic. Pentagon insiders who spoke to Salon said that the president “might actually think that he can threaten to send in troops without ever having to do it,” betting on the U. S. superior firepower to cause Iran to fold.],
+  [“We wouldn’t be the first to mistakenly think a smarter bomb will keep us from putting boots on the ground,” the source said.],
+  [style="text-align: center;"\> Start your day with essential news from Salon.],
+  [The speaker of the Iranian parliament warned U. S. officials against the idea of an invasion on Sunday, saying that their military was “waiting” for a “ground attack.”],
+  [“Our men are waiting for the arrival of the American soldiers on the ground to set them on fire and punish their regional allies once and for all,” said Mohammad Bagher Qalibaf.],
+  [Watch Levin’s pitch via YouTube below:],
+  [Trump’s Iran war has no clear endgame],
+  [Saudi Arabia tells Trump to seize “historic moment” and continue war on Iran: report],
+  [How Iran emasculated JD Vance],
+  [The post “Hitting Iran hard”: Trump soft-sells “troops on the ground” via Fox News appeared first on Salon.com .],
+),
+  insert-map: (:),
+  word-count: 373,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+  ],
+  [
+    standard-article(
+  title: [Will the U.S. Enter a Recession in 2026? Here's What the Data Suggests.],
+  author: [Katie Brockman],
   source-name: [The Motley Fool],
   images: (),
   paragraphs: (
-  [The explosion in artificial intelligence spending over the past few years has led many companies to see their profits soar, and semiconductor stocks have been some of the biggest beneficiaries by far.],
-  [Two of the best performers in the sector over the past year are Micron Technology (NASDAQ: MU) and Taiwan Semiconductor Manufacturing (NYSE: TSM) -- also known as TSMC. TSMC's 92% gain over the past year would be impressive if it weren't absolutely dwarfed by the nearly 300% increase in Micron's share price over the same period.],
-  [But investors always need to be looking toward the future. And while both of these companies have produced phenomenal results and have very positive outlooks for 2026 as well, I think one stands out as a much better buy right now for long-term investors.],
+  [Recession fears are back, and stock prices continue to slide. The S&P 500 (SNPINDEX: ^GSPC) is down more than 6% over the past month alone, and the tech-heavy Nasdaq Composite (NASDAQINDEX: ^IXIC) just entered correction territory by falling 10% from its peak earlier this year.],
+  [Perhaps the worst part of all of this volatility, however, is the uncertainty it's causing. Will the economy worsen? Will the market crash? How long will it take for it to recover? While it's impossible to answer these questions with any certainty right now, here's what the data suggests about the future.],
   [Continue reading],
 ),
   insert-map: (:),
-  word-count: 134,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-  ],
-  [
-    standard-article(
-  title: [Leadership Lessons from a Republican Governor in a Blue State],
-  author: [Harvard Business Review],
-  source-name: [Harvard Business Review],
-  images: (),
-  paragraphs: (
-  [Underperforming state agencies, a natural disaster, and a pandemic are among the many challenges that faced Massachusetts Governor Charlie Baker and his former Chief of Staff Steve Kadish. Looking back during the final year of the Baker Administration, they say running a government is very different and often much harder than leading a private-sector company. And they share their four-part framework for breaking down complicated problems with many stakeholders to get results. It’s valuable for anyone in public service, as well as for leaders and managers in large organizations hamstrung by bureaucracy and politics. Baker and Kadish wrote the new book "Results: Getting Beyond Politics to Get Important Work Done."],
-),
-  insert-map: (:),
-  word-count: 110,
+  word-count: 103,
   edited-for-length: false,
   debug-mode: false,
 )
 
   ],
 ), ruled-indices: (1,))
+#pull-quote([The men he’s talking about, the units he’s talking about, they are specialized.], [Alex Galbraith])
+
 
 #article-row((
   [
     standard-article(
-  title: [When Entrepreneurs Distort the Truth],
+  title: [How To Talk Yourself Up (Without Turning People Off)],
   author: [Harvard Business Review],
   source-name: [Harvard Business Review],
   images: (),
   paragraphs: (
-  [Kyle Jensen, associate dean at the Yale School of Management, has seen firsthand just how tempting it is for entrepreneurs to lie. As a startup founder himself, he says they have to be always "on" and ready to promote their venture. Another reason they’re incentivized to exaggerate is that while many startups fail, successes can become billion-dollar enterprises. Finally, Jensen argues, misrepresenting is relatively easy to get away with in a field of unproven potential. He talks through infamous examples of entrepreneurs distorting the truth and how to change startup culture for the better. Jensen is a coauthor of the HBR article "Entrepreneurs and the Truth."],
+  [Leslie John, associate professor at Harvard Business School, has done some deep research into the ways that people self-promote in their professional lives and identified what works and what doesn't. She says it is possible tout your own accomplishments without annoying your colleagues, if you do it at the right time or enlist others to boast on your behalf. She notes that many common workarounds -- such as humblebragging -- are highly ineffective and advises people to not only look for more natural opportunities to self-promote but also try to present balanced views of themselves. She's full of tips you can put to work, even in virtual settings. John is the author of the HBR article "Savvy Self-Promotion."],
+),
+  insert-map: (:),
+  word-count: 118,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+  ],
+  [
+    standard-article(
+  title: [Open Digital Platforms to Spur Innovation],
+  author: [Harvard Business Review],
+  source-name: [Harvard Business Review],
+  images: (),
+  paragraphs: (
+  [As the novel coronavirus surfaced in Wuhan in 2019, Chinese officials called for mobile isolation wards. Haier Group partnered with suppliers to design and construct units quickly, thanks to the openness of the leading manufacturer’s digital platforms. Unlike Haier, many companies have tightly regulated, siloed platforms. Georgetown Professor Kasra Ferdows says more companies can unlock innovations by extending their platforms to facilitate a broader range of collaborations. He breaks down how Haier capitalizes on the expertise and resources of its ecosystem and rapidly exploits new business opportunities. Ferdows is a coauthor of the HBR article "How to Turn a Supply Chain Platform into an Innovation Engine."],
 ),
   insert-map: (:),
   word-count: 106,
@@ -243,17 +284,36 @@ class="spp-shsp-form spp-shsp-form-03b54a11"\>
 )
 
   ],
+), ruled-indices: (1,))
+
+#article-row((
   [
     standard-article(
-  title: [You’ve Made Some DEI Progress. Don’t Stop Now],
+  title: [Brain Tech Is Getting Really Good. Here’s What Managers Need to Know],
   author: [Harvard Business Review],
   source-name: [Harvard Business Review],
   images: (),
   paragraphs: (
-  [Over the past few years, organizations around the world have invested in diversity, equity, and inclusion initiatives with varying results. But to achieve lasting change, they'll need to commit to that work for much longer, says Ella Washington, organizational psychologist and professor at Georgetown University’s McDonough School of Business. Her research shows that companies move toward DEI maturity in five stages (aware, compliant, tactical, integrated, and sustainable) and each takes time to work through. She explains why some organizations get stuck, and how to overcome those challenges. Washington is author of "The Necessary Journey: Making Real Progress on Equity and Inclusion" and the HBR article "The Five Stages of DEI Maturity."],
+  [What seemed like science fiction for decades is now a reality: companies are selling wearable tech and monitoring devices that can sense people’s brain activity. Neurotechnology opens incredible opportunities for new products and safer workplaces. It also raises huge red flags for privacy and ethics. And managers and organizational leaders are on the front lines of these dilemmas, says Duke University School of Law professor Nita Farahany. She explains the commercial products based on neurotechnology, the impact on workers and organizations, and the need for regulations and corporate policies. Farahany wrote the book The Battle for Your Brain: Defending the Right to Think Freely in the Age of Neurotechnology.],
 ),
   insert-map: (:),
-  word-count: 111,
+  word-count: 109,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+  ],
+  [
+    standard-article(
+  title: [In Defense of Middle Management],
+  author: [Harvard Business Review],
+  source-name: [Harvard Business Review],
+  images: (),
+  paragraphs: (
+  [Middle managers are meant to serve as a go-between for leadership teams and individual contributors. But in large organizations, with many layers of hierarchy, some of these roles feel like bureaucratic bloat, which, in tighter economic times, makes them a target for elimination. Emily Field, a partner at McKinsey & Company, thinks in many cases that's a mistake. She argues that most middle managers are critical to corporate performance and productivity, executive team insight, and employee well-being. The key is making sure their roles adapt to the times. Field is the coauthor, along with Bryan Hancock and Bill Schaninger, of the HBR article "Don’t Eliminate Your Middle Managers," as well as the book Power to the Middle: Why Managers Hold the Keys to the Future of Work.],
+),
+  insert-map: (:),
+  word-count: 127,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -262,63 +322,6 @@ class="spp-shsp-form spp-shsp-form-03b54a11"\>
 ), ruled-indices: (1,))
 
 #article-row((
-  [
-    standard-article(
-  title: [What Business Leaders Need to Know About China Now],
-  author: [Harvard Business Review],
-  source-name: [Harvard Business Review],
-  images: (),
-  paragraphs: (
-  [Elsbeth Johnson, senior lecturer at MIT’s Sloan School of Management, and Rana Mitter, professor of history at Oxford, argue that there's a lot about the Chinese political system and economy that business leaders from elsewhere in the world still misunderstand. They argue that democracy and a free market system aren't always as tightly linked as we think, and that many people in China also live, work, and invest differently than Westerners do. Better understanding these dynamics will be the key to business success in the world's most populous country. Johnson and Mitter are the authors of the HBR article "What the West Gets Wrong About China."],
-),
-  insert-map: (:),
-  word-count: 106,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-  ],
-  [
-    standard-article(
-  title: [Conclusion on Nim],
-  author: [Dennis Felsing],
-  source-name: [Dennis Felsing],
-  images: (),
-  paragraphs: (
-  [In my last two posts, “ What is special about Nim? ” and “ What makes Nim practical ”, I forgot the important conclusion - why I personally have decided for Nim in favor of Rust, C++, Python and Haskell:],
-  [Nim is not the fastest language, it’s not the easiest language to write in and it surely has some flaws that should be fixed. Nim has no single “killer feature” like go’s goroutines or Rust’s memory management. But Nim doesn’t need a killer feature. Instead it strikes a reasonable balance that makes it the most efficient language for me:],
-  [I can produce reasonably efficient code (faster than Python and Haskell)],
-  [that is reasonably readable (more so than Rust, C++ and Haskell)],
-  [in a reasonable amount of time (less than Rust, C++ and Haskell)],
-),
-  insert-map: (:),
-  word-count: 133,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-  ],
-), ruled-indices: (1,))
-
-#article-row((
-  [
-    standard-article(
-  title: [How Generative AI Changes Productivity],
-  author: [Harvard Business Review],
-  source-name: [Harvard Business Review],
-  images: (),
-  paragraphs: (
-  [How Generative AI Changes Everything is a special series from HBR IdeaCast. Each week, HBR editor in chief Adi Ignatius and HBR editor Amy Bernstein host conversations with experts and business leaders about the impact of generative AI on productivity, creativity and innovation, organizational culture, and strategy. The episodes publish in the IdeaCast feed each Thursday in May, after the regular Tuesday episode.],
-  [Generative artificial intelligence is grabbing headlines with the widespread public excitement over tools like ChatGPT. And early academic research shows significant productivity gains in written communications, customer service, market research, computer coding, and professional analysis such as legal work. Meanwhile, the technology is rapidly evolving and getting better the more people use it. As a leader, it’s hard to stay ahead of the developments.],
-  [In this episode, How Generative AI Changes Productivity, Amy Bernstein speaks with Karim Lakhani, a professor at Harvard Business School and a coauthor of the book Competing in the Age of AI: Strategy and Leadership When Algorithms and Networks Run the World. They discuss initial productivity gains for individuals from the technology, how that will scale across a workforce, and the pressing challenges facing organizational leaders.],
-),
-  insert-map: (:),
-  word-count: 193,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-  ],
   [
     standard-article(
   title: [Digital Collegium 2025],
@@ -350,146 +353,17 @@ class="spp-shsp-form spp-shsp-form-03b54a11"\>
 )
 
   ],
-), ruled-indices: (1,))
-
-#article-row((
   [
     standard-article(
-  title: [How To Talk Yourself Up (Without Turning People Off)],
+  title: [Another Workplace Crisis: Loneliness],
   author: [Harvard Business Review],
   source-name: [Harvard Business Review],
   images: (),
   paragraphs: (
-  [Leslie John, associate professor at Harvard Business School, has done some deep research into the ways that people self-promote in their professional lives and identified what works and what doesn't. She says it is possible tout your own accomplishments without annoying your colleagues, if you do it at the right time or enlist others to boast on your behalf. She notes that many common workarounds -- such as humblebragging -- are highly ineffective and advises people to not only look for more natural opportunities to self-promote but also try to present balanced views of themselves. She's full of tips you can put to work, even in virtual settings. John is the author of the HBR article "Savvy Self-Promotion."],
-),
-  insert-map: (:),
-  word-count: 118,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-  ],
-  [
-    standard-article(
-  title: [What You Must Deliver to Win Customers Today],
-  author: [Harvard Business Review],
-  source-name: [Harvard Business Review],
-  images: (),
-  paragraphs: (
-  [What if your customers aren't looking for better products and services, but for a way for themselves to become better? While the experience economy remains important, Strategic Horizons cofounder B. Joseph Pine II argues that it's not enough to acquire and retain customers in today's competitive environment. He sees the next wave in business as one focused on offering outcomes to customers - and that might even mean only getting paid when customers succeed. He shares how this model might actually reduce risk, what it means in a world of AI and mass personalization, and ways that companies can truly deliver on their promises. Pine is author of the book The Transformation Economy: Guiding Customers to Achieve Their Aspirations.],
-),
-  insert-map: (:),
-  word-count: 119,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-  ],
-), ruled-indices: (1,))
-
-#article-row((
-  [
-    standard-article(
-  title: [The CEO of Dick’s Sporting Goods on Becoming a Gun Control Advocate],
-  author: [Harvard Business Review],
-  source-name: [Harvard Business Review],
-  images: (),
-  paragraphs: (
-  [Ed Stack, the chief executive of Dick's Sporting Goods, decided after the Parkland school shooting to pull assault rifles and high-capacity magazines from all of his company’s stores. The controversial choice hurt revenues. But the retailer weathered the storm, thanks to inclusive and thoughtful decision-making, careful communication with all stakeholders, and a strategic shift to new product lines. Stack explains why he chose to take such a public stance on a hot-button social issue and how it has affected him personally and professionally. He is the author of "It's How We Play the Game: Build a Business. Take a Stand. Make a Difference."],
-),
-  insert-map: (:),
-  word-count: 103,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-  ],
-  [
-    standard-article(
-  title: [What You Need to Know About Executive Recruiting],
-  author: [Harvard Business Review],
-  source-name: [Harvard Business Review],
-  images: (),
-  paragraphs: (
-  [Professional search firms play a big role in discovering and choosing leaders for senior roles. That’s why anyone with C-suite ambitions needs to understand the recruiting process and what these evaluators are looking for. Mark Thompson, chairman of the Chief Executive Alliance, and Byron Loflin, global head of board advisory at Nasdaq, explain the ins and outs of recruitment, how to develop your narrative and navigate formal assessments and reference checks, and the best ways to build ongoing relationships. Thompson and Loflin are authors of the HBR article "How to Stand Out to C Suite Recruiters" and the book CEO Ready: What You Need to Know to Earn the Job and Keep the Job.],
-),
-  insert-map: (:),
-  word-count: 114,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-  ],
-), ruled-indices: (1,))
-
-#article-row((
-  [
-    standard-article(
-  title: [How Generative AI Changes Strategy],
-  author: [Harvard Business Review],
-  source-name: [Harvard Business Review],
-  images: (),
-  paragraphs: (
-  [Strategy is about making the future happen, not just reacting to it, according to author Gary Hamel. And with generative artificial intelligence, senior leaders suddenly wield an awesome new tool to change the fortunes of their organizations. The promise of generative AI is more than just a sweet hack to boost productivity and streamline operations. Its deeper potential lies in companies that rethink what they do and conjure brand-new, AI-first products and services. Simply put, generative AI is blasting open new strategic paths to create novel business opportunities, even as it brings serious risks and heightened competition.],
-  [In this episode, How Generative AI Changes Strategy, HBR editor in chief Adi Ignatius speaks to Microsoft’s head of strategy Chris Young and Harvard Business School professor Andy Wu. They lay out the technology, its emerging value chains, and its main providers. They also break down the key choices and tradeoffs that large and small companies alike will be making in this fast-changing market.],
-  [This is the fourth and final episode in the special series How Generative AI Changes Everything. Each week, HBR editor in chief Adi Ignatius and HBR editor Amy Bernstein have been hosting conversations with experts and business leaders about the impact of generative AI. Find those episodes on the impact on productivity, creativity, and organizational culture in the HBR IdeaCast feed.],
-  [And for more on ethics in the age of AI, check out HBR’s Big Idea on implementing the new technology responsibly.],
-),
-  insert-map: (:),
-  word-count: 243,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-  ],
-  [
-    standard-article(
-  title: [New Recruiting Strategies for a Post-Covid World (Back to Work, Better)],
-  author: [Harvard Business Review],
-  source-name: [Harvard Business Review],
-  images: (),
-  paragraphs: (
-  [Lauren Smith, vice president at Gartner Research, says the pandemic is accelerating several key recruitment trends. She led a survey of thousands of job candidates and hiring managers that details the shift to virtual interviews, but also identifies other ongoing transitions that may be more important. The research points to three main trends to manage: a rapid turnover of necessary skills, the need to expand beyond existing talent pools, and the competitiveness that comes from offering an "employee value proposition." Even as more people return to in-person work, Smith argues, these trends will continue. Learn more about Gartner’s research in the HBR article "Reengineering the Recruitment Process."],
-),
-  insert-map: (:),
-  word-count: 107,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-  ],
-), ruled-indices: (1,))
-
-#article-row((
-  [
-    standard-article(
-  title: [Disruption Isn’t the Only Path to Innovation],
-  author: [Harvard Business Review],
-  source-name: [Harvard Business Review],
-  images: (),
-  paragraphs: (
-  [Disruptive innovation has proven such a powerful idea that many people now equate innovation with market disruption. But INSEAD strategy professor Renée Mauborgne says there's a powerful way to create new markets without destroying jobs, companies, and communities: "nondisruptive creation." She explains how some entrepreneurs and companies have been able to grow billion-dollar businesses that are new markets rather than displacements of existing ones. Two examples are the microfinance industry and the firm Square. And she explains how leaders can seek out these opportunities to foster profitable growth with less social harm. With fellow INSEAD professor W.],
-  [Chan Kim, Mauborgne wrote the new book Beyond Disruption: Innovate and Achieve Growth without Displacing Industries, Companies, or Jobs.],
+  [Vivek Murthy, former U. S. Surgeon General, says that, even before the Covid-19 pandemic, we were facing another health crisis: loneliness. Studies show that, around the world, more people have been feeling a greater sense of social isolation, which has many negative affects, including increased blood pressure, reduced immune response, and decreased engagement and productivity at work. But organizations can be a place where people find a greater sense of belonging. Murthy wants us to take loneliness more seriously and focus on fostering the types of authentic connections -- face-to-face and virtual -- that we need to combat it. He's the author of the book "Together: The Healing Power of Human Connection in a Sometimes Lonely World."],
 ),
   insert-map: (:),
   word-count: 116,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-  ],
-  [
-    standard-article(
-  title: [The Talent Pool Your Company Probably Overlooks],
-  author: [Harvard Business Review],
-  source-name: [Harvard Business Review],
-  images: (),
-  paragraphs: (
-  [Robert Austin, a professor at Ivey Business School, and Gary Pisano, a professor at Harvard Business School, talk about the growing number of pioneering firms that are actively identifying and hiring more employees with autism spectrum disorder and other forms of neurodiversity. Global companies such as SAP and Hewlett Packard Enterprise are customizing their hiring and onboarding processes to enable highly-talented individuals, who might have eccentricities that keep them from passing a job interview — to succeed and deliver uncommon value. Austin and Pisano talk about the challenges, the lessons for managers and organizations, and the difference made in the lives of an underemployed population.],
-  [Austin and Pisano are the co-authors of the article, “Neurodiversity as a Competitive Advantage” in the May-June 2017 issue of Harvard Business Review.],
-),
-  insert-map: (:),
-  word-count: 128,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -499,15 +373,18 @@ class="spp-shsp-form spp-shsp-form-03b54a11"\>
 
 {
   #standard-article(
-  title: [How Tribalism Can Actually Strengthen Workplace Culture],
+  title: [Special Series: How Generative AI Changes Everything],
   author: [Harvard Business Review],
   source-name: [Harvard Business Review],
   images: (),
   paragraphs: (
-  [We live in a world that seems more divisive and polarized than ever, and it’s common to describe this phenomenon as tribalism. But Michael Morris, professor at Columbia Business School, says that term is often misunderstood and that tribal instincts can in fact be very positive influences in society and at work. He uses the lens of cultural psychology to explain the deep-seated instincts behind the human need to join and identify as a group. And he breaks down how team managers and organizational leaders can leverage tribal instincts in positive ways strengthen workplace culture. Morris is the author of the new book Tribal: How the Cultural Instincts That Divide Us Can Help Bring Us Together.],
+  [Generative AI seems to be everywhere right now, but what do you actually need to know?],
+  [HBR IdeaCast is cutting through the noise in the special series How Generative AI Changes Everything. How will this new technology upend workforce productivity? What impact will it have on creativity and innovation? How can you build an internal culture that uses generative artificial intelligence and adopt it effectively in your organization? What could it mean for your company's strategy?],
+  [Hosted by HBR editor in chief Adi Ignatius and HBR editor Amy Bernstein, you'll hear directly from the business leaders at the leading edge, as well as experts, who in some cases are questioning the ethics and speed of this rollout.],
+  [If you want to understand what this technology means for your organization and how you can lead effectively, listen every Thursday in May in the HBR IdeaCast feed, after the regular Tuesday episode.],
 ),
   insert-map: (:),
-  word-count: 116,
+  word-count: 150,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -517,131 +394,46 @@ class="spp-shsp-form spp-shsp-form-03b54a11"\>
 {
   #section-label([Analysis])
   #standard-article(
-  title: [Nim binary size from 160 KB to 150 Bytes],
-  author: [Dennis Felsing],
-  source-name: [Dennis Felsing],
+  title: [Fragments: March 10],
+  author: [Martin Fowler],
+  source-name: [Martin Fowler],
   images: (),
   paragraphs: (
-  [The size of binaries in the Nim programming language seems to be a popular topic recently . Nim’s slogan is expressive, efficient, elegant , so let’s examine the efficient part in this post by exploring a few ways to reduce the size of a simple Nim Hello World binary on Linux. Along the way we will:],
-  [Build a regular program into a 6 KB binary],
-  [Disregard the C standard library and build a 952 byte binary],
-  [Use a custom linker script and ELF header to build a 150 byte binary 
-( 1 byte smaller than in Rust )],
-  [The full source code of this post can be found in its repository . All measurements are done on Linux x86-64 with GCC 5.1 and Clang 3.6.0.],
-  [id="using-the-c-standard-library"\>Using the C Standard Library],
-  [echo "Hello!"],
-  [By default Nim uses GCC as the backend C compiler on most platforms, and we dynamically link against glibc. We can try optimizing for speed and size, as well as strip unnecessary symbols after the compilation:],
-  [Command (GCC backend) 
- Binary Size 
- 
- 
- 
- 
- nim c hello 
- 160 KB 
- 
- 
- nim -d:release c hello 
- 61 KB 
- 
- 
- nim -d:release --opt:size c hello 
- 25 KB 
- 
- 
- nim -d:release --opt:size c hello && strip -s hello 
- 19 KB],
-  [That’s pretty nice and can be done with any Nim program to reduce binary size.],
-  [Now let’s try to get rid of glibc, at least temporarily (we will come back to a more permanent solution later). Instead of glibc we’re now statically linking against musl libc:],
-  [Update: The order of arguments to nim matters, --passL:-static has to be passed after setting the gcc exe so that it isn’t overwritten.],
-  [So that’s a statically linked binary in 30 KB, which can be deployed without depending on any glibc version (or any other libraries)!],
-  [What about using Clang instead of GCC by setting --cc:clang :],
-  [Command (Clang backend) 
- Binary Size 
- 
- 
- 
- 
- nim --cc:clang c hello 
- 168 KB 
- 
- 
- nim --cc:clang -d:release c hello 
- 33 KB 
- 
- 
- nim --cc:clang -d:release --opt:size c hello 
- 29 KB 
- 
- 
- nim --cc:clang -d:release --opt:size c hello && strip -s hello 
- 23 KB],
-  [The speed optimized binary is much smaller, but the one optimized for size isn’t. The exact behaviour of Clang and GCC of course depends on their version, so expect to see (at least) slightly different numbers on your system.],
-  [Looks like the GCC backend is a better choice currently, so let’s try stripping down the binary further with it:],
-  [As a first step we disable the garbage collector, not like we need it for this program anyway:],
-  [Next we remove all the nice dynamic memory, error handling and other OS dependent goodies with --os:standalone (this implies --gc:none ). We have to provide a panicoverride.nim that contains these two procs, about which we don’t care anyway. Who needs error handling when you can have a 6 KB binary instead:],
-  [proc rawoutput ( s : string ) = discard 
- proc panic ( s : string ) = discard],
-  [id="disregarding-the-c-standard-library"\>Disregarding the C standard library],
-  [Now we have to start thinking more out of the box: If we want a program that really does nothing, not even print Hello! , we can just use an empty file. Now we don’t rely on the C standard library anymore and can try to exclude it totally by using -passL:-nostdlib (passL simply passes that argument to GCC at the linking step):],
-  [Wow, that’s small! Let’s run our program, that does nothing, and enjoy:],
-  [Ouch. That didn’t go so well. Take another look at the linker output and notice what the problem is: We can’t just expect our code to be run, the binary starts its execution at some random, wrong, position. Instead we have to take over the work of the C standard library now and supply our own \_start function:],
-  [import syscall],
-  [proc main {. exportc : "\_start" .} = 
- discard syscall ( EXIT , 0 )],
-  [We also have to explicitly exit the program, for which we use my syscall library , that provides raw system calls into the Linux kernel in Nim. Let’s wrap the syscalls we need and use them to write proper Nim code with them:],
-  [import syscall],
-  [const STDOUT = 1],
-  [proc write ( fd : cint , buf : cstring , len : csize ): clong 
- {. inline , discardable .} = 
- syscall ( WRITE , fd , buf , len )],
-  [proc exit ( n : clong ): clong {. inline , discardable .} = 
- syscall ( EXIT , n )],
-  [proc main {. exportc : "\_start" .} = 
- write STDOUT , "Hello! \\n " , 7 
- exit 0],
-  [Now we can successfully compile like this:],
-  [The final trick of this section is to tell GCC to optimize away unused functions. These functions are the initializations of Nim modules, like our hello module or the system module from the standard library, but they just end up empty here anyway. Maybe the Nim compiler could leave them out on its own, but usually you don’t care about saving a few bytes and have something more important to do. Today we care, so first we tell GCC to put function and data items into separate sections ( -ffunction-sections & -fdata-sections ) at the compile step. At the linking step we tell Nim to tell GCC to pass --gc-sections to ld , our linker, which then removes sections that are not referenced anywhere:],
-  [Great! We’re down from an initial binary size of 160 KB to just 952 bytes. Can we get even smaller? Yes, indeed, but not with the default tooling.],
-  [id="custom-linking-to-achieve-150-bytes"\>Custom Linking to achieve 150 Bytes],
-  [This uses the exact method from the 151-byte static Linux binary in Rust blog post, except that Nim with GCC manage to get down 1 byte more. Meanwhile Clang needs 1 byte more than the Rust version.],
-  [We continue with the exact same program that we just got down to 952 bytes. But instead of letting Nim do all the work (with quite a lot of options by now) we simply create an object file from Nim ( --app:staticlib ), and go manually from there. A custom linker script and a custom ELF header do the main work. But the actual code that’s executed is still fully provided by our Nim code:],
-  [class="highlight"\> \$ nim --app:staticlib --os:standalone -d:release --noMain \\
- --passC:-ffunction-sections --passC:-fdata-sections \\
- --passL:-Wl,--gc-sections c hello
-\$ ld --gc-sections -e \_start -T script.ld -o payload hello.o
-\$ objcopy -j combined -O binary payload payload.bin
-\$ ENTRY=\$(nm -f posix payload | grep '^\_start ' | awk '{print \$3}')
-\$ nasm -f bin -o hello -D entry=0x\$ENTRY elf.s
-\$ chmod +x hello
-\$ wc -c],
-  [Nim is fine for writing small binaries. Now you also know how to write Nim without the C standard library. It might be fun to write your own runtime in Nim from scratch. You can check out the repository to get your own results:],
-  [== Disregarding the C Standard Library ==
-hello2 1776
-hello3 952],
-  [== Custom Linking ==
-hello3\_custom 158
-hello4\_custom 150],
-  [\$ objdump -rd nimcache/hello4.o
-...
-0000000000000000 :
- 0: b8 01 00 00 00 mov \$0x1,%eax
- 5: ba 07 00 00 00 mov \$0x7,%edx
- a: be 08 00 40 00 mov \$0x400008,%esi
- f: 48 89 c7 mov %rax,%rdi
-12: 0f 05 syscall 
-14: 31 ff xor %edi,%edi
-16: b8 3c 00 00 00 mov \$0x3c,%eax
-1b: 0f 05 syscall 
-1d: c3 retq 
-...],
-  [Discussions on Hacker News and Reddit .],
-  [id="addendum"\>Addendum],
-  [I did this for 32bit x86 now as well, which results in a 119 byte binary with GCC and 118 byte with Clang, more information in the repository .],
-  [With a simple patch to the Nim compiler the {.noReturn.} pragma now actually removes the final retq call that is useless after the EXIT syscall. So the final binary size now is 149 bytes with x86-64, 116 bytes with x86.],
+  [Tech firm fined \$1.1m by California for selling high-school students’ data],
+  [I agree with Brian Marick’s response],
+  [No such story should be published without a comparison of the fine to the company’s previous year revenue and profits, or valuation of last funding round. (I could only find a valuation of \$11.0M in 2017.)],
+  [We desperately need corporations’ attitudes to shift from “lawbreaking is a low-risk cost of doing business; we get a net profit anyway” to “this could be a death sentence.”],
+  [❄ ❄ ❄ ❄ ❄],
+  [Charity Majors gave the closing keynote at SRECon last year, encouraging people to engage with generative AI.],
+  [If I was giving the keynote at SRECon 2026, I would ditch the begrudging stance. I would start by acknowledging that AI is radically changing the way we build software. It’s here, it’s happening, and it is coming for us all.],
+  [Her agenda this year would be to tell everyone that they mustn’t wait for the wave to crash on them, but to swim out to meet it. In particular, I appreciated her call to resist our confirmation bias:],
+  [The best advice I can give anyone is: know your nature, and lean against it.],
+  [If you are a reflexive naysayer or a pessimist, know that, and force yourself to find a way in to wonder, surprise and delight.],
+  [If you are an optimist who gets very excited and tends to assume that everything will improve: know that, and force yourself to mind real cautionary tales.],
+  [❄ ❄ ❄ ❄ ❄],
+  [In a comment to Kief Morris’s recent article on Humans and Agents in Software Loops , in LinkedIn comments Renaud Wilsius may have coined another bit of terminology for the agent+programmer age],
+  [This completes the story of productivity, but it opens a new chapter on talent: The Apprentice Gap. If we move humans ‘on the loop’ too early in their careers, we risk a future where no one understands the ‘How’ deeply enough to build a robust harness. To manage the flywheel effectively, you still need the intuition that comes from having once been ‘in the loop.’ The next great challenge for CTOs isn’t just Harness Engineering, it’s ‘Experience Engineering’ for our junior developers in an agentic world.],
+  [❄ ❄ ❄ ❄ ❄],
+  [In hearing conversations about “the ralph loop”, I often hear it in the sense of just letting the agents loose to run on their own. So it’s interesting to read the originator of the ralph loop point out:],
+  [It’s important to watch the loop as that is where your personal development and learning will come from. When you see a failure domain – put on your engineering hat and resolve the problem so it never happens again.],
+  [In practice this means doing the loop manually via prompting or via automation with a pause that involves having to prcss CTRL+C to progress onto the next task. This is still ralphing as ralph is about getting the most out how the underlying models work through context engineering and that pattern is GENERIC and can be used for ALL TASKS.],
+  [At the Thoughtworks Future of Software Development Retreat we were very concerned about cognitive debt. Watching the loop during ralphing is a way to learn about what the agent is building, so that it can be directed effectively in the future.],
+  [❄ ❄ ❄ ❄ ❄],
+  [Anthropic recently published a page on how AI helps break the cost barrier to COBOL modernization . Using AI to help migrate COBOL systems isn’t an new idea to my colleagues, who shared their experiences using AI for this task over a year ago. While Anthropic’s article is correct about the value of AI, there’s more to the process than throwing some COBOL at an LLM.],
+  [The assumption that AI can simply translate COBOL into Java treats modernization as a syntactic exercise, as though a system is nothing more than its source code. That premise is flawed.],
+  [A direct translation would, in the best case scenario, faithfully reproduce existing architectural constraints, accumulated technical debt and outdated design decisions. It wouldn’t address weaknesses; it would restate them in a different language.],
+  […],
+  [In practice, modernization is rarely about preserving the past in a new syntax. It’s about aligning systems with current market demands, infrastructure paradigms, software supply chains and operating models. Even if AI were eventually capable of highly reliable code translation, blind conversion would risk recreating the same system with the same limitations, in another language, without a deliberate strategy for replacing or retiring its legacy ecosystem.],
+  [❄ ❄ ❄ ❄ ❄],
+  [Anders Hoff (inconvergent)],
+  [an LLM is a compiler in the same way that a slot machine is an ATM],
+  [❄ ❄ ❄ ❄ ❄],
+  [One of the more interesting aspects of the network of people around Jeffrey Epstein is how many people from academia were connected. It’s understandable why, he had a lot of money to offer, and most academics are always looking for funding for their work. Most of the attention on Epstein’s network focused on those that got involved with him, but I’m interested in those who kept their distance and why - so I enjoyed Jeffrey Mervis’s article in Science],
+  [Many of the scientists Epstein courted were already well-established and well-funded. So why didn’t they all just say no? Science talked with three who did just that. Here’s how Epstein approached them, and why they refused to have anything to do with him.],
+  [I believe that keeping away from bad people makes life much more pleasant, if nothing else it reduces a lot of stress. So it’s good to understand how people make decisions on who to avoid.],
 ),
   insert-map: (:),
-  word-count: 1467,
+  word-count: 943,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -651,17 +443,15 @@ hello4\_custom 150],
 #article-row((
   [
     standard-article(
-  title: [Will the U.S. Enter a Recession in 2026? Here's What the Data Suggests.],
-  author: [Katie Brockman],
-  source-name: [The Motley Fool],
+  title: [How Companies Can Tap Into Talent Clusters],
+  author: [Harvard Business Review],
+  source-name: [Harvard Business Review],
   images: (),
   paragraphs: (
-  [Recession fears are back, and stock prices continue to slide. The S&P 500 (SNPINDEX: ^GSPC) is down more than 6% over the past month alone, and the tech-heavy Nasdaq Composite (NASDAQINDEX: ^IXIC) just entered correction territory by falling 10% from its peak earlier this year.],
-  [Perhaps the worst part of all of this volatility, however, is the uncertainty it's causing. Will the economy worsen? Will the market crash? How long will it take for it to recover? While it's impossible to answer these questions with any certainty right now, here's what the data suggests about the future.],
-  [Continue reading],
+  [Bill Kerr, a professor at Harvard Business School, studies the increasing importance of talent clusters in our age of rapid technological advances. He argues that while talent and industries have always had a tendency to cluster, today's trend towards San Francisco, Boston, London and a handful of other cities is different. Companies need to react and tap into those talent pools, but moving the company to one isn't always an option. Kerr talks about the three main ways companies can access talent. He's the author of the HBR article "Navigating Talent Hot Spots," as well as the book "The Gift of Global Talent: How Migration Shapes Business, Economy & Society."],
 ),
   insert-map: (:),
-  word-count: 103,
+  word-count: 110,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -669,15 +459,86 @@ hello4\_custom 150],
   ],
   [
     standard-article(
-  title: [People with Disabilities Are an Untapped Talent Pool],
+  title: [What Leaders Need to Know About a Looming Recession – and Other Global Threats],
   author: [Harvard Business Review],
   source-name: [Harvard Business Review],
   images: (),
   paragraphs: (
-  [It is now accepted wisdom that increasing the diversity of your workforce in any dimension can improve both organizational culture and performance. But one group — people living with intellectual, developmental, and physical disabilities — continues to be overlooked by many companies. Luisa Alemany, associate professor at London Business School, has studied workplaces that do recruit and hire employees with disabilities and found that it can be a true source of competitive advantage. She explains four main ways this talent strategy benefits the firm. She’s the coauthor, along with Freek Vermeulen, of the HBR article “Disability as a Source of Competitive Advantage.”],
+  [Nouriel Roubini, professor emeritus at NYU’s Stern School of Business, says that a confluence of trends – from skyrocketing public and private debt and bad monetary policies to demographic shifts and the rise of AI – are pushing the world toward catastrophe. He warns of those interconnected threats, but also has suggestions for how political and business leaders can prepare for and navigate through these challenges. He draws on decades of economic research as well as his experience accurately predicting, advising on, and observing responses to the 2008 global financial crisis, and he's the author of "Megathreats: Ten Dangerous Trends that Imperil our Future, and How to Survive Them.”],
 ),
   insert-map: (:),
-  word-count: 102,
+  word-count: 109,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+  ],
+), ruled-indices: (1,))
+
+#article-row((
+  [
+    standard-article(
+  title: [Tried-and-True Networking Tips from Decades of Experience],
+  author: [Harvard Business Review],
+  source-name: [Harvard Business Review],
+  images: (),
+  paragraphs: (
+  [Twenty-five years ago, a Harvard Business School case study featured the exceptional networking practices of Silicon Valley entrepreneur and venture capitalist Heidi Roizen. This was before the rise of online social networks and the ubiquity of social media. But today, Roizen says that those developments have not fundamentally changed how she builds and maintains strong personal and professional relationships. Now a partner at Threshold Ventures and a lecturer at Stanford Graduate School of Business, she shares the biggest missteps that she sees people take. She also explains the impact of AI and remote work on networking, her most effective strategies for building relationships, and her frank advice for those just starting their careers.],
+  [Roizen is subject of the HBS case study “Heidi Roizen.”],
+),
+  insert-map: (:),
+  word-count: 123,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+  ],
+  [
+    standard-article(
+  title: [A New Way to Combat Bias at Work],
+  author: [Harvard Business Review],
+  source-name: [Harvard Business Review],
+  images: (),
+  paragraphs: (
+  [Joan Williams, professor and the founding director of the Center for WorkLife Law at the University of California’s Hastings College of the Law, says that it's extremely difficult for organizations to rid their workforces of the unconscious biases that can prevent women and minorities from advancing. But it's not so hard for individual managers to interrupt bias within their own teams. She offers specific suggestions for how bosses can shift their approach in four areas: hiring, meetings, assignments, and reviews/promotions. Leaders who employ these practices, she argues, are able to embrace and reap the advantages of diversity, even in the absence of larger organizational directives. Williams is the author of the HBR article "How the Best Bosses Interrupt Bias on Their Teams."],
+),
+  insert-map: (:),
+  word-count: 122,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+  ],
+), ruled-indices: (1,))
+
+#article-row((
+  [
+    standard-article(
+  title: [Could Your Company Benefit from Fastvertising?],
+  author: [Harvard Business Review],
+  source-name: [Harvard Business Review],
+  images: (),
+  paragraphs: (
+  [It's harder than ever for companies to get their marketing messages in front of the right customers. One increasingly popular -- but also risky -- tactic is fastvertising, the rapid development of ads that tap into a cultural moment, aiming to increase brand relevance and awareness. Harvard Business School associate professor Ayelet Israeli shares pitch-perfect examples, including those from her coauthor, the actor Ryan Reynolds, and his marketing firm Maximum Effort. She explains the importance of timing, describes the talent, culture, and processes you need to succeed, and outlines how to extend the impact of these ads. Ayelet, along with Leonard Schlesinger, Matt Higgins, and Ryan Reynolds, wrote the HBR article "Marketing at the Speed of Culture."],
+),
+  insert-map: (:),
+  word-count: 117,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+  ],
+  [
+    standard-article(
+  title: [Why You (and Your Company) Need to Experiment with ChatGPT Now],
+  author: [Harvard Business Review],
+  source-name: [Harvard Business Review],
+  images: (),
+  paragraphs: (
+  [The online application ChatGPT and its integration into Microsoft search engines have put generative artificial intelligence technology in the hands of millions of people. Early adopters are using them in their daily jobs, and preliminary academic studies show big boosts in productivity. Managers can’t sit on the sidelines, says Ethan Mollick, an associate professor of management at The Wharton School of the University of Pennsylvania. He argues that companies urgently need to experiment with ChatGPT and eventually develop policies for it. He explains the breakthrough, some promising uses, open questions, and what the technology could mean for workers, companies, and the broader economy. Mollick wrote the HBR article "ChatGPT Is a Tipping Point for AI."],
+),
+  insert-map: (:),
+  word-count: 115,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -686,103 +547,79 @@ hello4\_custom 150],
 ), ruled-indices: (1,))
 
 {
-  #standard-article(
-  title: [First He Saved Unilever. Now He Wants to Save Capitalism.],
-  author: [Harvard Business Review],
-  source-name: [Harvard Business Review],
-  images: (),
-  paragraphs: (
-  [Paul Polman, former CEO of Unilever, led a dazzling career in consumer goods, from Procter & Gamble to Nestlé to the British multinational. His experience fending off a hostile takeover bid taught him that the doctrine of shareholder capitalism is wrong. He believes there’s a better way of doing business, one that embraces all stakeholders — not just stockholders — and improves the environment. He cofounded the consultancy IMAGINE to further sustainable goals, and he shares his advice for the next generation of leaders. With Andrew Winston, Polman wrote the new book “Net Positive: How Courageous Companies Thrive by Giving More than They Take”.],
-),
-  insert-map: (:),
-  word-count: 104,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-}
-
-{
   #section-label([Briefs])
   #brief-group((
-    #brief-item([Adrianna Adarme], source-name: [A Cozy Kitchen], [This In-N-Out Burger Copycat delivers that thin, crispy-edged patty, melty American cheese, caramelized onions, and tangy burger sauce all made…
-
- ( Read more... ) 
-
-Tags: burger Comfort Food game day Kid-Friendly smash burger 
-
-The post In-N-Out Burger Copycat appeared first on A Cozy Kitchen .])
-
-    #brief-item([Harvard Business Review], source-name: [Harvard Business Review], [James Detert, a professor at the University of Virginia Darden School of Business, studies acts of courage in the workplace. His most surprising finding? Most people describe everyday actions — not big whistleblower scandals — when they cite courageous (or gutless) acts they’ve seen coworkers and leaders take. Detert shares the proven behaviors of employees who succeed at speaking out and suffer fewer negative consequences for it. He’s the author of the HBR article “Cultivating Everyday Courage.”])
-
-    #brief-item([Harvard Business Review], source-name: [Harvard Business Review], [Safi Bahcall, a former biotech CEO, began his career as a theoretical physicist before joining the business world. He compares the moment that innovative companies become complacent ones to a glass of water freezing, becoming ice. The elements are the same, but the structure of the company has changed. Bahcall offers ways for growing companies to avoid these inevitable forces and continue to innovate. He's the author of the book "Loonshots: How to Nurture the Crazy Ideas That Win Wars, Cure Diseases, and Transform Industries" and the HBR article “The Innovation Equation."])
-
-    #brief-item([Harvard Business Review], source-name: [Harvard Business Review], [Managing rapid growth is a huge challenge for young businesses. Even start-ups with glowing reviews and skyrocketing sales can fail. That’s because new ventures and corporate initiatives alike have to sustain profitability at scale, according to Harvard Business School senior lecturer Jeffrey Rayport. He has researched some of the biggest stumbling blocks to long-lasting success and explains how to make the tricky transition out of the start-up phase successfully. With professors Davide Sola and Martin Kupp of ESCP Business School, Rayport cowrote the HBR article “The Overlooked Key to a Successful Scale-Up.”])
-
-    #brief-item([Harvard Business Review], source-name: [Harvard Business Review], [If you've ever tried to change things at work, you know the headwinds you face. Teams and processes are often trapped in longstanding, ineffective patterns that are hard to budge. Dan Heath, senior fellow at Duke University’s Fuqua School of Business, explains proven techniques to reset. Those include making the problem visible, jolting incremental progress to start gaining traction, and motivating teams into a new direction. He shares real-life examples of how leaders and teams broke through seemingly intractable work situations. Heath is the author of the new book Reset: How to Change What’s Not Working.])
-
-    #brief-item([Danielle Paquette], source-name: [The Washington Post (national)], [Frankie Olivieri’s decision to tinker with the classic cheesesteak was driven by a decades-long need to break free of his father’s rigid ways.])
-
-    #brief-item([Harvard Business Review], source-name: [Harvard Business Review], [It's a dilemma facing more and more brands: should you sell your goods on Amazon? It's the most visited e-commerce platform in the U. S. and the dominant retailer in 28 other countries. But that reach comes at a price. There are downsides like costs, competition, and lack of data. Ayelet Israeli is an associate professor at Harvard Business School and a coauthor of the HBR article "Should Your Company Sell on Amazon?" She talks through step-by-step how businesses can decide whether Amazon is right for them.])
-
-    #brief-item([Karrin Sehmbi], source-name: [NerdWallet], [class="nw-author-box-wp"\>
+    [#brief-item([Sara Rathner], source-name: [NerdWallet], [class="nw-author-box-wp"\>
  
 
 class="nw-author-box-wp--inner"\>
  
 
- Karrin Sehmbi writes for NerdWallet. Email: ksehmbi\@nerdwallet.com.
+ Sara Rathner writes for NerdWallet. Email: srathner\@nerdwallet.com.
  
 
-class="nw-originally-posted-link"\>The article 9 Best LLC Services for Small Businesses originally appeared on NerdWallet.])
-
-    #brief-item([Harvard Business Review], source-name: [Harvard Business Review], [Martin Reeves, managing director and senior partner at Boston Consulting Group’s Henderson Institute, has looked at how companies reinvent themselves to achieve success. And he has found that an essential ingredient in that process is imagination. It’s something we cultivate in children but rarely practice deliberately in the business world. He explains how to encourage and systematize imagination in your organization. Reeves is the coauthor of the new book The Imagination Machine: How to Spark New Ideas and Create Your Company's Future.])
-
-    #brief-item([Harvard Business Review], source-name: [Harvard Business Review], [Michelle King, director of inclusion at Netflix, says it’s time to stop telling women to adapt to the male-dominated workplace and time for the workplace itself to change. Her prior academic research shows that diversity training and anti-harassment efforts address important issues but fall short of creating gender equality in organizations. She identifies the real obstacles and shares how leaders can create a culture of equality at work, for women and men alike. King is the author of the book "The Fix: Overcome the Invisible Barriers That Are Holding Women Back at Work.”])
-
-    #brief-item([Sergio De Simone], source-name: [InfoQ], [In a move to transform Android into an "agent-first" OS, Google has introduced new early beta features to support a task-centric model in which apps provide functional building blocks users leverage through AI agents or assistants to fulfill their goals.
-
- By Sergio De Simone])
-
-    #brief-item([Harvard Business Review], source-name: [Harvard Business Review], [How does an organization with 100 years of history stay relevant, adaptable, and forward-looking? Bob Sternfels, who runs McKinsey & Company as the Global Managing Partner, has led the company through a wave of recent challenges while trying to plan the road ahead for the consulting industry leader. He explains the balance he's aiming to strike between AI agents and human employees, how he's handled moments of scrutiny, and the ways in which he's been working to build trust both internally and externally.])
-
-    #brief-item([Harvard Business Review], source-name: [Harvard Business Review], [Megan Rapinoe, U. S. women's soccer star and World Cup champion, knows how to perform under pressure, motivate her teammates, and advocate for the causes she believes in. In addition to her stellar play as a professional athlete, she's been outspoken about racial justice, LGBTQ rights, and gender pay equity. She offers lessons on overcoming losses, growing into a leadership role, becoming an ally, and operating as your authentic self.])
-
-    #brief-item([Harvard Business Review], source-name: [Harvard Business Review], [Kieran Setiya, a philosophy professor at MIT, says many people experience a mid-career crisis. Some have regrets about paths not taken or serious professional missteps; others feel a sense of boredom or futility in their ongoing streams of work. The answer isn't always to find a new job or lobby for a promotion. Motivated by his own crisis, Setiya started looking for ways to cope and discovered several strategies that can help all of us shift our perspective on our careers and get out of the slump without jumping ship.])
-
-    #brief-item([Harvard Business Review], source-name: [Harvard Business Review], [Thales Teixeira, associate professor at Harvard Business School, believes many startups fail precisely because they try to emulate successful disruptive businesses. He says by focusing too early on technology and scale, entrepreneurs lose out on the learning that comes from serving initial customers with an imperfect product. He shares how Airbnb, Uber, Etsy, and Netflix approached their first 1,000 customers very differently, helping to explain why they have millions of customers today. Teixeira is the author of the book "Unlocking the Customer Value Chain: How Decoupling Drives Consumer Disruption."])
-
-    #brief-item([Stefon Walters], source-name: [The Motley Fool], [It's hard to find a truly recession-proof stock, but some companies are better equipped to weather recessions than others. When it comes to digital payments, Visa (NYSE: V) and Mastercard (NYSE: MA) run a virtual duopoly, but one is much better positioned to endure a recession than the other.
+class="nw-originally-posted-link"\>The article 5 Things to Know About the Valero Credit Card originally appeared on NerdWallet.])],
+    [#brief-item([Harvard Business Review], source-name: [Harvard Business Review], [Amy Edmondson, professor at Harvard Business School, first identified the concept of psychological safety in work teams in 1999. Since then, she has observed how companies with a trusting workplace perform better. Psychological safety isn't about being nice, she says. It’s about giving candid feedback, openly admitting mistakes, and learning from each other. And she argues that kind of organizational culture is increasingly important in the modern economy. Edmondson is the author of the new book "The Fearless Organization: Creating Psychological Safety in the Workplace for Learning, Innovation, and Growth.”])],
+    [#brief-item([Paresh Dave], source-name: [Wired], [A judge temporarily blocked the Trump administration’s designation, clearing the way for Anthropic to keep doing business without the label starting next week.])],
+    [#brief-item([Harvard Business Review], source-name: [Harvard Business Review], [At a time when 41% of us are considering quitting our jobs, it’s time for us to understand why and what we can do about it.
+In this special series from HBR, we’re looking at how to craft your current job around the work you really love. In this episode, we’ll explain how to identify which tasks fit that bill and can lead you to a more fulfilling and successful career.
+IdeaCast co-host Alison Beard speaks with Marcus Buckingham, head of research on people and performance at the ADP Research Institute and author of the new book Love + Work.])],
+    [#brief-item([Harvard Business Review], source-name: [Harvard Business Review], [Greg Urban, anthropologist at the University of Pennsylvania, used to study indigenous tribes in Brazil. Now he hangs out in break rooms and boardrooms analyzing how people interact — and create and change culture — in organizations. He shares lessons and tips for managers to better understand and motivate their teams. Urban is the coauthor of the book "The Culture Puzzle: Harnessing the Forces that Drive Your Organization's Success."])],
+    [#brief-item([Stefon Walters], source-name: [The Motley Fool], [It's hard to find a truly recession-proof stock, but some companies are better equipped to weather recessions than others. When it comes to digital payments, Visa (NYSE: V) and Mastercard (NYSE: MA) run a virtual duopoly, but one is much better positioned to endure a recession than the other.
 
 If you had to choose between the two, my go-to would be Visa because its balance sheet is more rock-solid than Mastercard's.
 
 class="caption"\>Image source: The Motley Fool.
 
- Continue reading])
+ Continue reading])],
+    [#brief-item([Molly Higgins], source-name: [Wired], [Explore today’s top DoorDash promo codes for \$25 off your first order, free delivery, and up to 50% off for existing customers.])],
+    [#brief-item([Danielle Paquette], source-name: [The Washington Post (national)], [Frankie Olivieri’s decision to tinker with the classic cheesesteak was driven by a decades-long need to break free of his father’s rigid ways.])],
+    [#brief-item([Adrianna Adarme], source-name: [A Cozy Kitchen], [This Short Rib Ragu is deeply flavorful and impressive, but surprisingly low-maintenance. It’s mostly hands-off thanks to a long oven…
 
-    #brief-item([Harvard Business Review], source-name: [Harvard Business Review], [Scott D. Anthony, Innosight managing partner, discusses why established corporations should be better at handling disruptive threats. He lays out a practical approach to transform a company’s existing business while creating future business. It hinges on a “capabilities link,” which means using corporate assets—that startups don’t have—to fight unfairly. He also discusses the leadership qualities of executives who effectively navigate their companies’ imminent disruption. Anthony is the coauthor of the new book, “Dual Transformation: How to Reposition Today’s Business While Creating the Future.”])
+ ( Read more... ) 
 
-    #brief-item([Harvard Business Review], source-name: [Harvard Business Review], [Herminia Ibarra, author of "Act Like a Leader, Think Like a Leader" and professor at INSEAD, on moving forward, even when it's not comfortable.])
+Tags: Dinner Dinner Party Pasta ragu short ribs 
 
-    #brief-item([Harvard Business Review], source-name: [Harvard Business Review], [Jennifer Riel, an adjunct professor at the Rotman School of Management, presents a model way to solve problems: integrative thinking. It’s taking the best from two inadequate options to come up with a successful solution. She gives examples from the film industry to show how CEOs have put the process to work. Riel is the co-author, along with Roger Martin, of the book “Creating Great Choices: A Leader’s Guide to Integrative Thinking.”])
+The post Slow-Braised Short Rib Ragu appeared first on A Cozy Kitchen .])],
+    [#brief-item([Harvard Business Review], source-name: [Harvard Business Review], [Zak Dychtwald, founder of the advisory firm Young China Group, believes that the perception of China as a copycat and not an innovator is outdated. Instead, he argues the willingness of Chinese consumers to try new things is powering the country’s new innovation economy. Technology adoption rates in areas such as mobile payment are extremely high. He says non-Chinese companies can learn important lessons from this rapidly changing market and potentially use it to jump-start their own innovation engines. Dychtwald is the author of the HBR article "China’s New Innovation Advantage."])],
+    [#brief-item([Sergio De Simone], source-name: [InfoQ], [In a move to transform Android into an "agent-first" OS, Google has introduced new early beta features to support a task-centric model in which apps provide functional building blocks users leverage through AI agents or assistants to fulfill their goals.
 
-    #brief-item([Martin Fowler], source-name: [Martin Fowler], [A conversation between Unmesh Joshi , Rebecca
- Parsons , and Martin Fowler on how LLMs help us
- shape the abstractions in our software. We view our challenge as building
- systems that survive change, requiring us to manage our cognitive load. We
- can do this by mapping the “what” of we want our software to do into the
- “how” of programming languages. This “what” and “how” are built up in a
- feedback loop. TDD helps us operationalize that loop, and LLMs allow us to
- explore that loop in an informal and more fluid manner.
+ By Sergio De Simone])],
+    [#brief-item([Harvard Business Review], source-name: [Harvard Business Review], [Even in difficult times, leadership must be about empathy, authenticity, fairness and service. That's according to Darren Walker, the outgoing CEO of the Ford Foundation, a nonprofit with an endowment of billions of dollars and a charge to reduce poverty and injustice. Drawing on his own upbringing in rural Texas to his time at the helm of one of the world’s largest philanthropies, Walker explains how inequality erodes hope, why discomfort is essential for meaningful change, and how leaders can build the courage to speak honestly.])],
+    [#brief-item([Harvard Business Review], source-name: [Harvard Business Review], [Alison Dachner, management professor at John Carroll University, and Erin Makarius, management professor at the University of Akron, say that an organization can become more competitive by implementing a stronger offboarding process. Their research shows that similar to the way universities maintain alumni networks, an offboarding strategy keeps former employees networked, which leads to more employee referrals, new business, expert consulting, or even re-employment. Dachner and Makarius wrote the HBR article "Turn Departing Employees into Loyal Alumni."])],
+    [#brief-item([Harvard Business Review], source-name: [Harvard Business Review], [Senior executives are often told to focus on big-picture strategy while delegating the specifics of execution. But, according to Scott Cook, cofounder and former CEO of Intuit, smart leaders also spend time on the details of how the organization gets work done at every level, including the front lines. Working with Harvard Business School professor Nitin Nohria, he studied companies from Toyota to Amazon to better understand why hands-on leadership, from the CEO down, works and how to do it without micromanaging. They are coauthors of the HBR article "The Surprising Success of Hands-On Leaders."])],
+    [#brief-item([Harvard Business Review], source-name: [Harvard Business Review], [Richard Sheridan, CEO of Menlo Innovations, says it took him years to learn what really mattered at work and how to create that kind of workplace culture. As a company leader today, he works hard to make sure both his job — and the jobs of his employees — are joyful. That doesn't mean they are happy 100% of the time, he argues, but that they feel fulfilled by always putting the customer first. Sheridan is the author of "Chief Joy Officer: How Great Leaders Elevate Human Energy and Eliminate Fear."])],
+    [#brief-item([Harvard Business Review], source-name: [Harvard Business Review], [Julie Zhuo, Facebook’s VP of product design, started at the company as its first intern and became a manager at the age of 25. Like many first-time bosses, she made many missteps and acted how she thought managers were supposed to act. Eventually, she grew to find joy in the role and today she leads hundreds of people. She says that becoming a great manager also helps you know yourself better. Zhuo is the author of the book "The Making of a Manager: What to Do When Everyone Looks to You."])],
+    [#brief-item([Harvard Business Review], source-name: [Harvard Business Review], [Emily Esfahani Smith, author of “The Power of Meaning,” has long studied how people find fulfillment. As the ongoing pandemic causes many of us to rethink how and why we do our jobs, she offers advice on how to find more enjoyment and engagement, avoid burnout, reset ambitions, and, if necessary, change paths. One key is to define - or redefine - your purpose as it relates to work, and Smith explains how to do that wherever you are in your career.])],
+    [#brief-item([Harvard Business Review], source-name: [Harvard Business Review], [Mimi Nicklin, a business coach and executive, has seen many leaders blame poor performance and communication on generational differences. But she argues managers should spend less time forcing Millennial and Gen Z employees to conform to company culture and more time on perspective taking and listening. In her experience, practicing empathy can vastly improve team collaboration and lead to better business and individual outcomes. Nicklin is the author of the book "Softening the Edge: Empathy: How Humanity’s Oldest Leadership Trait is Changing the World."])],
+    [#brief-item([Harvard Business Review], source-name: [Harvard Business Review], [Anne Curzan, English professor at the University of Michigan, studies the evolution of language. While many of us roll our eyes at bizspeak — from synergy to value-add to operationalize — Curzan defends business jargon. She says the words we say around the office speak volumes about our organizations and our working relationships. She shares how to use jargon more deliberately, explains the origin of some annoying or amusing buzzwords, and discusses how English became the global business language and how that could change.])],
+    [#brief-item([Harvard Business Review], source-name: [Harvard Business Review], [Ethan Bernstein, Harvard Business School professor, and John Bunch, holacracy implementation lead at Zappos, discuss the online retailer's transition to a flat, self-managed organization. They are the coauthors of the HBR article "Beyond the Holacracy Hype."])],
+    [#brief-item([Matthew Korfhage], source-name: [Wired], [The best espresso makers can turn your kitchen into a café and help you hone the art of the perfect shot.])],
+    [#brief-item([Harvard Business Review], source-name: [Harvard Business Review], [Richard S. Ruback and Royce Yudkoff, professors at Harvard Business School, spell out an overlooked career path: buying a business and running it as CEO. Purchasing a small company lets you become your own boss and reap financial rewards without the risks of founding a start-up. Still, there are things you need to know. Ruback and Yudkoff are the authors of the “HBR Guide to Buying a Small Business.”])],
+    [#brief-item([Kailey Hagen, CFP], source-name: [The Motley Fool], [Financial emergencies aren't just stressful. They can be genuinely destabilizing if you don't have emergency savings to cover the expense. When you need money quickly, tapping your retirement savings can feel like your only option.
 
- more…])
+The problem with that is that you'll set your retirement plan back, and you'll probably pay an early withdrawal penalty to the IRS, too. So before you go that route, it's worth exploring the following three ways to get the cash you need.
 
-    #brief-item([Kieran Alger], source-name: [Wired], [Garmin’s newest satellite messenger offers helpful safety features, but the fees are only worth it if you’re regularly off the grid.])
+class="caption"\>Image source: Getty Images.
 
-    #brief-item([Harvard Business Review], source-name: [Harvard Business Review], [Joshua Gans, a professor at the University of Toronto’s Rotman School of Management, advises against trying to commercialize a new technology or product before considering all the strategic options. He talks through some questions entrepreneurs should ask themselves — like, collaborate or compete? — and outlines a framework he and his fellow researchers have found to work best for startups. Gans is the coauthor of the article “Do Entrepreneurs Need a Strategy?”])
+ Continue reading])],
+    [#brief-item([Harvard Business Review], source-name: [Harvard Business Review], [Kabir Sehgal, a corporate strategist, Grammy-winning producer, investment banker, bestselling author, and military reserve officer, talks about building and thriving in a portfolio career. He discusses the benefits of pursuing diverse interests, the tradeoffs and productivity discipline demanded by that career choice, and he offers tips for managing a schedule with multiple work activities. And he argues we should stop calling these second careers "side hustles." Sehgal is the author of the HBR article, “Why You Should Have (at Least) Two Careers.”])],
+    [#brief-item([Selena Maranjian], source-name: [The Motley Fool], [When it comes to building wealth, the stock market can be your best friend -- and you yourself can be your own worst enemy. Our own irrational behaviors are what can destroy a lot of the gains we had or had hoped for in a variety of ways.
 
-    #brief-item([Harvard Business Review], source-name: [Harvard Business Review], [Nancy Rothbard, a professor of management at the University of Pennsylvania’s Wharton School, draws a distinction between workaholism and working long hours. She explains the health consequences of being addicted to your work. She also gives practical advice for managing work addiction, whether it’s you who’s suffering, your direct report, boss, peer, or partner. Rothbard is the coauthor of the HBR article "How Being a Workaholic Differs from Working Long Hours — and Why That Matters for Your Health."])
+Here's a look at some common mistakes related to timing -- and how to avoid them.
 
+class="caption"\>Image source: Getty Images.
+
+ Continue reading])],
+    [#brief-item([Harvard Business Review], source-name: [Harvard Business Review], [Dominic Barton, the global managing partner of McKinsey&Company, discusses the firm’s sustainability efforts. He talks about the wake-up call he got about sustainability and how he tries to convince CEOs hesitant to make it part of their business model that doing so will improve company performance. He says he sees companies thinking about the environment. “But the speed and scale of what we need to do — I don’t think it’s sufficient.”])],
+    [#brief-item([Adrianna Adarme], source-name: [A Cozy Kitchen], [These Animal Style Fries are crispy, cheesy, and topped with sweet caramelized onions and tangy burger sauce. This recipe is…
+
+ ( Read more... ) 
+
+Tags: Comfort Food game day Side Vegetarian 
+
+The post Animal Style Fries (In-N-Out Copycat) appeared first on A Cozy Kitchen .])],
+    [#brief-item([Harvard Business Review], source-name: [Harvard Business Review], [Jack Zenger and Joseph Folkman have administered thousands of 360-degree assessments through their consulting firm, Zenger/Folkman. This has given them a wealth of information about who benefits from criticism, and how to deliver it.])],
   ))
 }
 

@@ -23,74 +23,31 @@
 
 // --- Front Page Feature ---
 #feature-article(
-  title: [These Refurbished AirPods 4 (With ANC) Are Just \$118 During the Amazon Big Spring Sale],
+  title: [Kafka’s Misdiagnosis],
   kicker: [Cover Story],
-  author: [Jake Peterson],
-  source-name: [Lifehacker],
-  deck: [We may earn a commission from links on this page.],
-  lead-text: "Deal pricing and availability subject to change after time of publication.",
-  lead-first-alpha: 0,
+  author: [Aaron Schuster],
+  source-name: [The Paris Review Blog],
+  deck: [class="wp-caption aligncenter" id="attachment\_173141" style="width: 1034px;"\> 
+
+class="wp-caption-text" id="caption-attachment-173141"\>Drawings by Franz Kafka.],
+  lead-pre: [],
+  lead-cap: [c],
+  lead-rest: [lass="wp-caption aligncenter" id="attachment\_173141" style="width: 1034px;"\>],
   body-paragraphs: (
-  [Apple's AirPods Pro might be its most premium, expensive earbuds, but that doesn't mean they're hogging all the features. While they have the interchangeable ear tips, heart rate sensor, and the ability to be used as hearing aids, there are plenty of features you might assume to be "pro" that you can get on Apple's standard earbuds. Case in point: noise cancellation. If all you need is a pair of earbuds that can block out the sound around you (without spending \$249), consider the AirPods 4 with Active Noise Cancellation , which are currently on sale for Amazon's Big Spring Sale .],
-  [AirPods 4 are "one size fits all," and, as such, don't ship with ear tips of different sizes. However, if you've found that Apple's earbuds have fit your ears in the past, these should fit all the same. There's a surprising amount of overlap in terms of features between the AirPods 4 and the AirPods Pro, too: They both support noise cancellation (though the Pros are up to four times better at it, according to Apple); Transparency Mode, which pumps in external sounds so you don't have to take out your earbuds hear what's going on; Conversation Awareness, which automatically lowers the volume when you're speaking and raises it when you're done; Live Translation , which translates conversations in real-time through your AirPods; and Personalized Spatial Audio, which can track your head movements to adjust the sound reproduction on the fly.],
-  [Apple says the AirPods 4 with Active Noise Cancellation have up to five hours of listening time on a single care, and up to 30 hours when you take the charging case into consideration. These are IP54 resistant to dust, sweat, and water, slightly lower than the Pro's IP57 rating. Overall, if you want a pair of AirPods that can work well on an airplane without breaking the bank, the AirPods 4 with Active Noise Cancellation are a good bet. (Be careful if you need noise cancellation though, as Apple does sell a pair without the feature at a slightly lower price.)],
-  [The only caveat here is that these are not brand-new AirPods 4; rather, Amazon is selling "Renewed Premium" models. According to the company, "Renewed" products are "inspected, tested, and refurbished" by "Amazon-qualified suppliers." In order to qualify as "Premium Renewed," these products need to have no visible cosmetic damage when held 12 inches away. The battery needs to be at least 90% of its original capacity, and Amazon sells these products with generic or original accessories or packaging. When it comes to AirPods, my guess is that Amazon is taking open-box items (items that were opened but not used) and reselling them under this label—but there is a chance someone else used these AirPods before you bought them. While the company says all Premium Renewed products are professionally cleaned, I wouldn't blame anyone for being a bit wary here. In that case, you can pick up a brand new pair for \$148.99 , which is 17% off the list price of \$179.],
-  [Apple AirPods Pro 3 Noise Cancelling Heart Rate Wireless Earbuds
- 
- 
- —
- \$199.00 
- 
- (List Price \$249.00)],
-  [Apple iPad 11" 128GB A16 WiFi Tablet (Blue, 2025)
- 
- 
- —
- \$299.00 
- 
- (List Price \$349.00)],
-  [Samsung Galaxy Tab A11+ 128GB Wi-Fi 11" Tablet (Gray)
- 
- 
- —
- \$209.99 
- 
- (List Price \$249.99)],
-  [Sony WH1000XM6- Best Wireless Noise Canceling Headphones
- 
- 
- —
- \$398.00 
- 
- (List Price \$459.99)],
-  [Apple Watch Series 11 (GPS, 42mm, S/M Black Sport Band)
- 
- 
- —
- \$299.00 
- 
- (List Price \$399.00)],
-  [Blink Video Doorbell Wireless (Newest Model) + Sync Module Core
- 
- 
- —
- \$35.99 
- 
- (List Price \$69.99)],
-  [Fire TV Stick 4K Max Streaming Player With Remote
- 
- 
- —
- \$34.99 
- 
- (List Price \$59.99)],
-  [Amazon Kindle Colorsoft 16GB 7" eReader (Black)
- 
- 
- —
- \$169.99 
- 
- (List Price \$249.99)],
+  [In a diary entry from February 1922, Franz Kafka writes of a deal he made with madness:],
+  [There is a certain failing, a lack in me, that is clear and distinct enough but difficult to describe: it is a compound of timidity, reserve, talkativeness, and half-heartedness; by this I intend to characterize something specific, a group of failings that under a certain aspect constitute one single clearly defined failing (which has nothing to do with such grave vices as mendacity, vanity, etc.). This failing keeps me from going mad, but also from making any headway. Because it keeps me from going mad, I cultivate it; out of fear of madness I sacrifice whatever headway I might make and shall certainly be the loser in the bargain, for no bargains are possible at this level.],
+  [The Kafkian protagonist (including the “I” of Kafka’s letters and diaries) is a loser who cannot make “any headway,” a schlemiel who secretly cultivates failure as the means of his persistence. The subject must lose, must fail; that’s the deal made with madness. Conversely, does this not imply that a successful Kafka would be not a socially well-adjusted, non-neurotic, even happily married Kafka, but rather a mad Kafka, one forced to pay a high price for not sacrificing headway in his pursuit, for going all the way to the end of his investigations? In “Investigations of a Dog,” the philosopher dog speaks of wanting to feed on the bone marrow of all the dogs, the marrow of truth—but then turns around and avows that this marrow is “no food; on the contrary, it is a poison.” Similarly, what if Kafka nourished himself on failure to avoid being poisoned by the truth he was seeking?],
+  [There is something profoundly unhinged about the Kafkian universe. In the first book-length study of Kafka in English (a rather eccentric work, largely forgotten today), Paul Goodman put it sharply: Relax your vigilance and “the entire order of the world will fly in pieces.” Kafka himself once called waking up “the riskiest moment”: “If you can manage to get through it without being dragged out of place, you can relax for the rest of the day.” It’s as if the interval between sleep and waking were not only a matter of fuzzy consciousness but also an ontological blurriness, threatening to open a rupture in the fabric of space-time where all sorts of demons might appear, like agents coming to arrest you for an unknown—and unknowable—crime, or a giant insect substituting for your formerly human self. Schizo- in Greek means cleft or split, and apart from the moment of awakening, there are many such figures of schizoid rupture in Kafka’s universe. “A Little Woman” opens with a delirious detail: “I have never seen a hand with the separate fingers so sharply differentiated from each other as hers; and yet her hand has no anatomical peculiarities, it is an entirely normal hand.” The too-finely-spaced fingers signal a subtle breach in the order of things, a breach into which the narrator can’t help but plunge.],
+  [It is true that one of the recurrent motifs or atmospheres in Kafka is a kind of nonchalant absurdity or normal insanity, which gives to his writing much of its dry humor. Like when Gregor Samsa turns into a bug and no one’s really shocked, or when Blumfeld comes home to his apartment to discover a pair of magical bouncing balls, which he finds bothersome but not particularly extraordinary. “Blumfeld, an Elderly Bachelor” would appear to illustrate the schizophrenia diagnosis, with its quasihallucinatory pair of celluloid balls that keep jumping up and down, doggedly following an increasingly exasperated Blumfeld. But within this delirium lies a fundamentally neurotic problem: on the one hand, the lonely bachelor is frustrated and cannot fulfill his desire (to find a life companion); on the other, a strange enjoyment keeps popping up where it’s least expected (the unwanted “companions” hopping around him). Such is the paradox of a bachelor’s existence: Loneliness can never be dispelled, and solitude is always interrupted by an intruder. Loneliness is incurable, yet one is never left alone. Likewise, the dog in “Investigations of a Dog” recounts how he was first launched on his philosophical quest by a psychedelic musical concert he stumbled upon in his youth. However, it’s not the intensities of light, movement, and sound or the violently reality-bursting spectacle (its “deterritorializing” force, in Deleuze and Guattari’s language) that grip the dog; rather, it’s the silence of the musicians, their refusal to answer his questions. This silence triggers something in him, destining the rest of his life to repeat this primal scene. His adult quest is a philosophical neurosis, organized around the posing of questions and the nonreception of answers.],
+  [Another example: the digging animal in “The Burrow,” with his constant fear of predators and obsession with defense, might easily be taken for a paranoid psychotic. But rather than being possessed by the certainty of persecution, he is riven by doubts, admitting that he doesn’t know what the enemy knows or if he’s plotting against him; near the end of the story he even claims, “I have reached the stage where I no longer wish to have certainty.” As the psychoanalyst Darian Leader has argued, if there’s one thing that separates neurosis from psychosis, it’s certainty. What “The Burrow” brilliantly illustrates is the warped neurotic logic by which one clings more to one’s defenses than to the life they are supposed to be defending. Indeed, many of Kafka’s abiding themes point to neurosis rather than schizophrenia: the ambivalent relation to authority and the ever-frustrated desire for official permission and status; delay, deferral, postponement, and procrastination; compulsive overthinking (Kafka makes virtuosic use of the word but —the Belgian Germanist Herman Uyttersprot once dubbed him the Aber Mann ); misunderstanding and the equivocations of interpretation; a floating sense of guilt, whose cause is unknown; the tortuous intricacies of grievance and complaint; and above all, failure—the failure to reach one’s goal or simply to make it from point A to B.],
+  [Samuel Beckett held a similar view. In a 1956 interview, Beckett underlined a certain serenity in Kafka’s writing: “The Kafka hero has a coherence of purpose. He’s lost but he’s not spiritually precarious, he’s not falling to bits.” He continues: “You notice how Kafka’s form is classic, it goes on like a steamroller—almost serene. It seems to be threatened the whole time—but the consternation is in the form. In my work there is consternation behind the form, not in the form.” Beckett reprises this point in a letter to the critic Ruby Cohn: “What struck me as strange in Kafka was that the form is not shaken by the experience it conveys.” Unlike Beckett’s writing, which tends toward disintegration, language collapsing into oblivion, in Kafka the form holds steady, despite the “consternation” it conveys. Now, Beckett may well have more in common with Kafka than he’s willing to admit, but his point stands: Kafka does not engage in the same kind of formal innovations and experiments as do other modern writers, making him the odd man out of the literary avant-garde. He adheres to the classical forms of the fable, chronicle, epic, and parable. Yet it’s not exactly that “the form is not shaken.” Kafka does something to the old forms: he twists them from the inside, riddling them with hesitations, gaps, and silences, but without abandoning them or splintering them apart.],
+  [The ways in which Kafka twists traditional forms according to his own disturbance are what introduce a new universal dimension for the Freudian age, the dimension of neurosis. Kafka invented a mythology for the twentieth century by neuroticizing the ancient myths: my own private Greece, my own private Judaism, even (given Kafka’s returns to Don Quixote ) my own private literary modernism. The Abraham who can’t recognize himself in God’s call, or is just too busy to answer; the tardy messiah who arrives only the day after he’s needed; the not-so-great Alexander who cannot cross the Hellespont, arrested by the mere weight of his body (his warhorse, Bucephalus, makes more progress—studying hard, he becomes a lawyer in an age when there are no more Alexanders, when the reign of the master has been eclipsed by anonymous administration); the Sirens who don’t sing but rather silently gawk at an ear-plugged Odysseus; the office-comedy Poseidon turned into the harried supervisor of the seas, having exchanged cruising on the waves and his trident for paperwork and a pen— this is how Kafka revivifies the old myths, makes them speak to us again.],
+  [The case of Moses is particularly revealing: in a passage from his diary dated October 19, 1921, Kafka compares the Jewish prophet’s fate to the conclusion of Sentimental Education . Kafka’s Moses is like Flaubert’s hyperneurotic Frédéric Moreau, with his desperately unconsummated, self-sabotaging love for Madame Arnoux: at the end of the novel, just at the moment he senses she’s about to give herself to him, and despite his “frenzied, rabid lust,” Frédéric turns away and rolls a cigarette, repulsed by a feeling of (incestuous) disgust, and a general sense of fatigue—“Besides, what a nuisance it would be!” This is how Kafka pictures Moses, not prohibited by God but stopping himself at the edge of Canaan, perhaps also muttering (prophetically) under his breath, “The promised land, what a nuisance!” Is there a truer theology? Kafka recasts mythical heroes and exalted religious figures as neurotically divided subjects, not wanting what they want and thriving on the obstacles to their thriving. Even more, they are characters who cannot be located in their traditions, who are adrift in their myths. By continuing to write in the traditional forms while subverting them in this way, Kafka depicts our own broken relation to the modern world—as something we must yet cannot inhabit . The inhibitions, hesitations, and gaps that Kafka insinuates into ancient stories reflect the angst of a subject who both belongs to a certain history and context and does not, who cannot find its place where it is “placed.”],
+  [“Hesitation before birth. If there is a transmigration of souls, then I am not yet on the bottom rung. My life is a hesitation before birth,” Kafka writes in his diary, shortly before the entry on madness. One of Kafka’s most remarkable modernizations of mythology is his take on the ancient doctrine of metempsychosis. Plato’s myth of Er, which concludes The Republic , describes the cycle of reincarnation whereby dead souls return to the underworld to decide on their next lives. In Kafka’s version of the myth, the soul does not choose a new incarnation, but rather wavers before this choice, vacillates before being. Another fateful interval: not, this time, between sleep and wakefulness, but being and nothingness. To be or not to be? Hold on, wait a second … In Plato, the focus is on the content of the choice (tyrant or recluse, lion or swan); in Kafka, it’s the act of choosing that has become problematic, “impossible.” For moderns, reincarnation concerns not so much what we’re going to be (our identity) as it does how or in what way we won’t entirely manage to be (our mis-identity or internal otherness). Freud called it the “choice of neurosis.” Extending the image of Kafka’s wavering soul, our subjectivities might be defined, in a formal manner, as so many ways of failing to be born or of bungling the choice of being: neurotic hesitation that dithers in the face of choice; perverse disavowal that avoids or sidesteps the necessity of decision; psychotic self-negation that chooses the impossible option not to be. The idea of an underworld may not be viable for us, but a disenchanted adherence to the immanence of this world is not the sole alternative. Instead, this world is fractured from within, so that it no longer falls together with itself yet without being redoubled in some kind of beyond (heaven or hell). The Freudian unconscious is a reinvention of the Platonic underworld.],
+  [At one point, Blumfeld considers crushing the troublesome magical balls into tiny bits, then wonders whether the fragments will keep jumping, a possibility he wryly dismisses: “Even the unusual must have its limits.” This might be read as an ironic metacommentary on Kafka’s fiction, but it is also a kind of neurotic joke about madness, the wit of a neurotic on the edge of psychosis whose abyss he knowingly pulls back from. The world still holds together—not due to its having a strong enough center but, funnily enough, because of a failing or weakness that prevents it from falling apart.],
+  [This is a clinical insight we can take from Kafka: What grounds neurotic existence is not a better grip on socially consensual reality than that of psychotics, or a well-installed symbolic law, as in the classic Lacanian account. It rather consists of a certain flair for cultivating weakness—a capacity for turning lack into bounty and failure into success, and, conversely, for snatching failure from the jaws of victory and finding the absence in every plenty. The trick is spinning fast enough around the void to avoid falling into it. To use another image, neurotics can almost magically conjure a ground from its absence, like the flight of stairs generated by the very feet climbing upon them: “As long as you don’t stop climbing, the stairs won’t end, under your climbing feet they will go on growing upwards,” concludes the story “Advocates.” Schizophrenics might see this as “cheating”; having a clearer insight into the precarious nature of things, they would expect the climber to glimpse the abyss beneath him and plummet. Kafka’s losing bargain is a trick on madness. From a classical diagnostic perspective, there is something confounding about Kafka’s neurosis on the edge of madness, or neurosis that saves itself from breakdown via failure. The schizophrenic interpretation of Kafka is not completely mistaken: reality is fractured, and strange animals, crossbreeds, and uncanny nonhumans rush in through the gaps. What Kafka instructs us about, however, is a mode of psychic coherence that is made up of gaps, the paradoxical perseverance of a system that subsists in and through the ways it undermines itself. Kafka’s heroes are maestros of self-sabotage; they do it to themselves. But this self-sabotage is also sabotaged—it doesn’t manage to do itself in—and so they can only keep on “climbing.” His characters live by failing to not-live. (This wayward negation is the mainspring of Kafka’s comedy, or what might be called his screwball tragedy.) One of the lessons of Kafkian neurosis is that human beings are the astoundingly resourceful architects of their own cages—yet the very ingenuity by which we entrap ourselves points to a freedom that remains untamed. In Kafka there may be no exit, no way out, but there is no absolute closure either, only an evermore exacting working through of their strange loop.],
+  [Jacques Lacan once called Hegel the “most sublime hysteric.” Kafka, the most sublime obsessional neurotic? The point is not to pathologize the author, to reduce him to his sickness, but to appreciate how literature can lift psychopathology to the level of a style—transforming it, to use the parlance of Kafka’s dog, into a field of “investigation.” This is not a matter of romanticizing mental illness but of exploring its dynamics and complexities, showing it to be not merely ailment and dysfunction but also a means for grappling with essential human problems, and for constituting different ways or even styles of being. Kafka raised neurosis to the level of a style. “There is a goal, but no way,” he writes in his notebooks. “What we call a way is hesitation.”],
+  [Aaron Schuster is a philosopher and writer who lives in Amsterdam. He is the author of The Trouble with Pleasure: Deleuze and Psychoanalysis and How to Research Like a Dog: Kafka’s New Science.],
 ),
   edited-for-length: false,
 )
@@ -99,277 +56,41 @@
 {
   #section-label([Features])
   #standard-article(
-  title: [attachment\_fu flash and to\_xml tips],
-  author: [Matt Aimonetti],
-  source-name: [Matt Aimonetti],
+  title: [How American Kids Have Been Collateral Damage in Trump’s Immigration Crackdown],
+  author: [Nicole Foy],
+  source-name: [ProPublica],
   images: (),
   paragraphs: (
-  [I recently had to deal with an interesting challenge. I had to write a simple interface between a rails app and a Flash application. Nothing hard and if you browse the archives, you’ll find examples and tutorials on how to create a REST interface to communicate between Rails and Flash.],
-  [The thing was that this time I had to interface with a model using attachment\_fu . I’m a great fan of a\_fu and it’s definitely the best way of dealing with uploads.],
-  [My model looked more or less like that:],
-  [class Photo :image,
- :storage =\> :file\_system,
- :max\_size =\> 10.megabytes,
- :resize\_to =\> '640x480\>',
- :thumbnails =\> { :thumb =\> '100x100\>',
- :preview =\> '300x200\>',
- }
- )
- validates\_as\_attachment
- \# read more about validates\_existence\_of https:\/\/blog.hasmanythrough.com/2007/7/14/validate-your-existence
- validates\_existence\_of :user
-end],
-  [My show action in my photo controller could have looked a bit like that:],
-  [respond\_to do |format|
- format.html \# show.html.erb
- format.xml { render :xml =\> \@photo }
-end],
-  [That’s great, the problem is that we are displaying a lot of information that our Flash client doesn’t need to see, actually we are exposing a lot of information nobody should ever see and we are not displaying what we should. On top of being a waste of bandwidth and giving too much work to the client, we are not actually providing the user with the details of the thumbnail.],
-  [The first thing to do would be not to display some of the object attributes, the to\_xml method lets you do that.],
-  [Note that in Edge, Rails will automatically try to convert your object using to\_xml, you don’t even need to mention it. However in our case, we want to use some advanced features offered by to\_xml, and here is how our code should look like:],
-  [format.xml do
- render :xml =\> \@photo.to\_xml( :except =\> [ :id, :filename, :updated\_at, :user\_id, :height, :width], :skip\_types =\> true )
-end],
-  [What I just did is very simple, we rendered our object as an xml object but we didn’t convert few attributes, :id, :filename, :updated\_at, :user\_id, :height, :width. By default Rails also adds the object type, we don’t really need that right now, so let’s skip them.],
-  [(The reason why I don’t want to convert the filename is that I want to provide our Flash client with the photo thumbnail instead of the original picture.)],
-  [As far as I know, to\_xml doesn’t let you create new attributes. (if I have some time, I’ll submit a patch to get that added).],
-  [What we are trying to do is to display the avatar of a user. We found the photo record using \@user.photo but that’s the original photo and we want to provide Flash with the avatar info, not the original.],
-  [What we need to do is to simply add a new attribute called avatar:],
-  [format.xml do
- \@photo[:avatar] = \@photo.public\_filename(:thumb)
- render :xml =\> \@photo.to\_xml( :except =\> [ :id, :filename, :updated\_at, :user\_id, :height, :width], :skip\_types =\> true )
-end],
-  [Simple enough, but it took me a little while to figure it out ;)],
-  [Voila, we now have a clean, trimmed and safe XML returned object that you can be consumed by our Flash client. Ohh, and we added a new attribute that the original object didn’t have :)],
+  [For much of last year, Trump administration officials insisted that no Americans were caught up in the government’s immigration dragnet.],
+  [ProPublica and many others repeatedly documented that is not true: Americans have even been kicked, dragged and detained for days by immigration agents.],
+  [On Tuesday, House and Senate Democrats are spotlighting a particularly troubling part of the crackdown: the American children who have been collateral damage in the deportation campaign.],
+  [The forum the lawmakers are holding is part of an ongoing congressional investigation prompted by ProPublica’s report last fall that more than 170 U. S. citizens have been detained by immigration agents for some amount of time. That included Americans who have been handcuffed, held at gunpoint or simply prevented from leaving their location.],
+  [As of last October, more than 20 of those citizens were children, ranging from toddlers to teens. A toddler, a preschooler and a 7-year-old — all citizens — were deported despite their documented parents claiming they wanted to keep the children in the U. S.],
+  [In response to questions, Department of Homeland Security spokesperson Lauren Bis said in a statement that Immigration and Customs Enforcement “does NOT deport United States citizens or separate families,”],
+  [American children held along with their families will be sharing their stories at Tuesday’s forum. That includes two families whose accounts were featured in ProPublica investigations.],
+  [Eighteen-year-old Fernando Hernández García, who is using a pseudonym to protect the safety of his family in Mexico, is speaking on behalf of his 11-year-old sister. Both siblings are citizens .],
+  [Last year, the family was driving to Houston to get emergency treatment for the girl, who was recovering from brain cancer. Border Patrol agents ignored a hospital letter that the family had used previously to go through checkpoints. This time, agents held the family until they were deported the next day to Mexico. With few other options, the American children went with their parents — except for Hernández García, who had not been detained and stayed to earn money and send medicine home.],
+  [The family’s lawyers say they have not been able to access the care they need for their daughter in Mexico, and they have applied for humanitarian parole to return. Customs and Border Protection previously told ProPublica the family’s account was inaccurate but declined to provide specifics.],
+  [Also speaking is 16-year-old Arnoldo Bazan. As ProPublica detailed earlier this year, Bazan was tackled and choked by immigration agents who were chasing his undocumented father in Houston.],
+  [Bystanders filmed the teen screaming that he was a minor and a U. S. citizen. After agents knelt on his neck and put him in a choke hold, then they handcuffed him.],
+  [Bazan told ProPublica that when he was in a choke hold, “I felt like I was seeing the light.” He said he’s now speaking up — including on Capitol Hill — to help keep others from going through the same. “I don’t think nobody’s safe anymore.”],
+  [DHS said in its statement that Bazan elbowed an officer in the face as he was detained, which the teen denies. The agency’s spokesperson added that any allegations that agents assaulted Bazan “are FALSE.”],
+  [It’s unclear exactly how many American kids have been held. The government doesn’t disclose how many Americans are detained , even briefly, during immigration enforcement.],
+  [Former immigration officials told ProPublica that it used to be rare to encounter, let alone hold, American children for any amount of time. While the officials couldn’t recall a specific policy prohibiting it, they said past administrations just didn’t prioritize arresting families during immigration enforcement in the interior of the country. (A ProPublica investigation published Monday found that in his second term, President Donald Trump has deported mothers of U. S. children at four times the rate Biden did.)],
+  [In a report shared with ProPublica , the minority staff from the Senate Permanent Subcommittee on Investigations and House Committee on Oversight and Government Reform compiled 128 cases of children — a mix of citizens and noncitizens — who were injured, left unattended or otherwise put at risk by enforcement operations conducted by Department of Homeland Security agents.],
+  [The review found that citizen children caught up in immigration operations were also exposed to chemical agents , were placed in restraints or required medical attention, and some were held at gunpoint, were left unattended when agents detained their parents, or were present when agents smashed car windows or rammed their vehicles .],
+  [“The impact of all of these practices on children — the physical injuries but also the trauma — is really horrific,” Sen. Richard Blumenthal, D-Conn., told ProPublica.],
+  [SueHey Tello, 14, left, and her mother, Anabel Romero, 35, along with two other children in the family, were detained by federal agents in a raid at La Catedral Arena during a community horse racing event in Idaho. Sarahbeth Maney for ProPublica],
+  [Several other citizen teens and mothers of U. S. citizens who were detained by immigration agents will be delivering testimony at the forum.],
+  [Anabel Romero, an Idaho mother, recalled how she was detained with three of her children during a multiagency raid at an Idaho racetrack. The stated target of the raid was illegal gambling, but it ended with more than 100 people in ICE custody.],
+  [Officers pointed guns at Romero’s 14-year-old, SueHey Tello, and at her 8-year-old and 6-year-old. Tello said they dragged her from the truck and eventually zip-tied her, leaving bruises and marks .],
+  [Asked about the raid and agents’ conduct, DHS said, “ICE does not zip tie or handcuff children.” (Romero and Tello do not know which agency’s officers zip-tied them.)],
+  [Tello told ProPublica she was petrified and particularly worried for her younger siblings. “My little sister’s crying, my little brother’s scared,” Tello recalled. “I don’t know what to do. \[I was\] looking for any familiar face.”],
+  [Romero noted that the Trump administration has often said its immigration dragnet is keeping kids safe by going after predators and criminals. “They say they’re doing this to protect children,” recalled Romero. “But they hurt my children.”],
+  [The post How American Kids Have Been Collateral Damage in Trump’s Immigration Crackdown appeared first on ProPublica .],
 ),
   insert-map: (:),
-  word-count: 531,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-  #pull-quote([com/2007/7/14/validate-your-existence  validates\_existence\_of :user end      My show action in my photo controller could have looked a bit like that:   respond\_to do |format|  format.], [Matt Aimonetti])
-
-}
-
-{
-  #standard-article(
-  title: [The names of birds, part 1],
-  author: [ericlippert],
-  source-name: [Fabulous Adventures in Coding (Eric Lippert)],
-  images: (),
-  paragraphs: (
-  [class="wp-block-paragraph"\>For the next part in my Bean Machine retrospective to make sense I’ll need to make a short digression. In looking back on the almost 20 years I’ve been blogging, it is surprising to me that I’ve only briefly alluded to my appreciation of combinatory logic. In the next couple of episodes, I’ll do a quick introduction based on the delightful book that introduced it to me: To Mock A Mockingbird , by the late Raymond Smullyan.],
-  [class="wp-block-paragraph"\>Imagine a forest containing some birds, possibly finitely or infinitely many. These are unusual birds. When you call the species name of a bird in the forest to a bird in the forest, it calls one back to you. Maybe the same, maybe different, but when you tell a bird the name of a bird, it names a bird back to you. There might be a Red Capped Cardinal in the forest and when you call out Great Blue Heron to it, it calls back Belted Kingfisher.],
-  [class="wp-block-paragraph"\>We will notate “I called Q to P and got response R ” as PQ = R . If I then called out S to R and R responded with T , we’ll notate that as PQS = RS = T . We’ll use parentheses in the obvious way: PQS = (PQ)S and this might be different from P(QS) . The latter is “I called S to Q , and then called Q ‘s response to P “. I’ll use capital letters to represent specific bird names, and small letters to represent variables.],
-  [class="wp-block-paragraph"\>The question we’re considering here is: under what circumstances will a bird call back the same name you called to it? That is, for a given bird y , under what circumstances does yx = x ?],
-  [class="wp-block-paragraph"\>Smullyan calls birds with this relationship “fondness” — that is, “ y is fond of x ” means that yx = x . If y is fond of x then x is said to be a “fixpoint” of y .],
-  [class="wp-block-paragraph"\>A forest is said to be “compositional” if for every pair of birds ( a , b ) — a and b can be the same or different — there is a bird c in the forest such that cx = b(ax) for all x . That is, if we call any name x to a , and then call its response to b , we get the same result as simply calling x to c . c is the composition of “call x to a , and then call that response to b “.],
-  [class="wp-block-paragraph"\>A mockingbird is the bird M with the property that Mx = xx . That is, for any bird name x , M tells you what x ‘s response is to its own name. (The attentive reader will note that we have not said what MM is, but at least we know from the definition that MM = MM , so give me some credit for consistency at least.)],
-  [class="wp-block-paragraph"\>In particular, that’s true for c , so cc = p(Mc) . But Mc = cc , thus cc = p(cc) , and we’ve found a bird that p is fond of. Since p was any bird, every bird in the forest is fond of at least one bird. Or, put another way, every bird in a compositional forest with a mockingbird has at least one fixpoint .],
-  [class="wp-block-paragraph"\> Next time on FAIC: we’ll take a look at a few more interesting birds, and then discuss why this whimsy is relevant to compilation before getting back to Bean Machine.],
-),
-  insert-map: (:),
-  word-count: 674,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-  #pull-quote([If I then called out S to R and R responded with T , we’ll notate that as PQS = RS = T.], [ericlippert])
-
-}
-
-{
-  #standard-article(
-  title: [speed up your rails xml responses],
-  author: [Matt Aimonetti],
-  source-name: [Matt Aimonetti],
-  images: (),
-  paragraphs: (
-  [At work , we have an XML API that gets quite a lot of traffic. Last week I looked into improving its performance since we are expecting more traffic soon and want to make sure our response time is optimized.],
-  [My first thought was to make sure we had an optimized ActiveSupport’s xmlmini backend . Rails 2.3.5 fixed some issues when using Nokogiri as a xmlmini so I switched to my favorite Ruby XML lib:],
-  [ActiveSupport:: XmlMini.backend = 'Nokogiri'],
-  [I run some benchmarks using ab, httperf and jmeter but the results were not that great. I was so sure that switching from rexml to nokogiri would give me awesome results that I was very disappointed.],
-  [I was about to call Aaron Patterson (Nokogiri’s author) to insult him, blame him for \_why’s disappearance and tell him that all his pro bono efforts were useless since my own app was not running much faster when switched to his library. As I was about to dial his number on my iPhone I had a crazy thought… maybe it was not Aaron’s fault, maybe it was mine.],
-  [So I took a break went to play some fuzzball and as I was being ridiculed by Italian coworker, Emanuele, I realized that most of our API calls were just simple HTTP requests with no XML payload, just some query params. However, we were generating a lot of XML to send back to the client and AS:: XmlMini only takes care of the XML parsing, not the rendering.],
-  [The XML rendering is done by Jim Weirich ’s pure Ruby builder library which is vendored in Rails. Builder does a good job, but I thought that maybe a C based library might improve the speed. A coworker of mine (James Bunch) recommended to look into faster-builder , a drop-in Builder replacement based on libxml. Unfortunately, the project doesn’t seem to be maintained and I decided to look into using Nokogiri XML builder instead. (Also, faster-builder’s author doesn’t like me very much while Aaron knows he’s one of my Ruby heroes so asking for help could be easier)],
-  [Some people reported having tried using Nokogiri as a XML builder but didn’t see much speed improvement. Because of the amount of magic required to render a rxml template, I was not really surprised but I decided to contact Aaron and ask him if he tried using his lib instead of builder in a Rails app. Aaron told me he gave it a try a while back and he helped me get my Rails app setup to render xml templates using Nokogiri .],
-  [The next step was simple, create a benchmark app and benchmark Builder vs Nokogiri using various templates. Here are the results I got using Ruby 1.9.1 (the Ruby version we use in production) and two sets of templates:],
-  [Builder small template, time per request: 15.507 [ms] (mean)],
-  [\$ ab -c 1 -n 200 https:\/\/127.0.0.1:3000/benchmarks/builder\_small
-This is ApacheBench, Version 2.3 
-Copyright 1996 Adam Twiss, Zeus Technology Ltd, https:\/\/www.zeustech.net/
-Licensed to The Apache Software Foundation, https:\/\/www.apache.org/],
-  [Benchmarking 127.0.0.1 (be patient)
-Completed 100 requests
-Completed 200 requests
-Finished 200 requests],
-  [Server Software: nginx/0.7.65
-Server Hostname: 127.0.0.1
-Server Port: 3000],
-  [Document Path: /benchmarks/builder\_small
-Document Length: 216 bytes],
-  [Concurrency Level: 1
-Time taken for tests: 3.101 seconds
-Complete requests: 200
-Failed requests: 0
-Write errors: 0
-Total transferred: 114326 bytes
-HTML transferred: 43200 bytes
-Requests per second: 64.49 [\#/sec] (mean)
-Time per request: 15.507 [ms] (mean)
-Time per request: 15.507 [ms] (mean, across all concurrent requests)
-Transfer rate: 36.00 [Kbytes/sec] received],
-  [Connection Times (ms)
- min mean[+/-sd] median max
-Connect: 0 0 0.0 0 0
-Processing: 11 15 8.8 12 47
-Waiting: 3 15 8.9 12 47
-Total: 11 15 8.8 12 47],
-  [Percentage of the requests served within a certain time (ms)
- 50% 12
- 66% 12
- 75% 13
- 80% 13
- 90% 35
- 95% 36
- 98% 38
- 99% 41
- 100% 47 (longest request)],
-  [Nokogiri small template, time per request: 15.354 [ms] (mean)],
-  [\$ ab -c 1 -n 200 https:\/\/127.0.0.1:3000/benchmarks/noko\_small
-This is ApacheBench, Version 2.3 
-Copyright 1996 Adam Twiss, Zeus Technology Ltd, https:\/\/www.zeustech.net/
-Licensed to The Apache Software Foundation, https:\/\/www.apache.org/],
-  [Benchmarking 127.0.0.1 (be patient)
-Completed 100 requests
-Completed 200 requests
-Finished 200 requests],
-  [Server Software: nginx/0.7.65
-Server Hostname: 127.0.0.1
-Server Port: 3000],
-  [Document Path: /benchmarks/noko\_small
-Document Length: 238 bytes],
-  [Concurrency Level: 1
-Time taken for tests: 3.071 seconds
-Complete requests: 200
-Failed requests: 0
-Write errors: 0
-Total transferred: 118717 bytes
-HTML transferred: 47600 bytes
-Requests per second: 65.13 [\#/sec] (mean)
-Time per request: 15.354 [ms] (mean)
-Time per request: 15.354 [ms] (mean, across all concurrent requests)
-Transfer rate: 37.75 [Kbytes/sec] received],
-  [Connection Times (ms)
- min mean[+/-sd] median max
-Connect: 0 0 0.0 0 0
-Processing: 11 15 8.6 12 39
-Waiting: 11 15 8.6 12 39
-Total: 11 15 8.6 12 39],
-  [Percentage of the requests served within a certain time (ms)
- 50% 12
- 66% 12
- 75% 12
- 80% 13
- 90% 35
- 95% 36
- 98% 37
- 99% 38
- 100% 39 (longest request)],
-  [Running the benchmarks many times showed that Nokogiri and Builder were taking more or less the same amount of time to builder a small template.],
-  [I then decided to try a bigger template, closer to what we have in production, here are the results:],
-  [Nokogiri longer template, time per request: 31.252 [ms] (mean)],
-  [\$ ab -c 1 -n 200 https:\/\/127.0.0.1:3000/benchmarks/noko
-This is ApacheBench, Version 2.3 
-Copyright 1996 Adam Twiss, Zeus Technology Ltd, https:\/\/www.zeustech.net/
-Licensed to The Apache Software Foundation, https:\/\/www.apache.org/],
-  [Benchmarking 127.0.0.1 (be patient)
-Completed 100 requests
-Completed 200 requests
-Finished 200 requests],
-  [Server Software: nginx/0.7.65
-Server Hostname: 127.0.0.1
-Server Port: 3000],
-  [Document Path: /benchmarks/noko
-Document Length: 54398 bytes],
-  [Concurrency Level: 1
-Time taken for tests: 6.250 seconds
-Complete requests: 200
-Failed requests: 0
-Write errors: 0
-Total transferred: 10951200 bytes
-HTML transferred: 10879600 bytes
-Requests per second: 32.00 [\#/sec] (mean)
-Time per request: 31.252 [ms] (mean)
-Time per request: 31.252 [ms] (mean, across all concurrent requests)
-Transfer rate: 1711.00 [Kbytes/sec] received],
-  [Connection Times (ms)
- min mean[+/-sd] median max
-Connect: 0 0 0.0 0 0
-Processing: 24 31 11.3 26 62
-Waiting: 23 30 11.3 24 61
-Total: 24 31 11.3 26 62],
-  [Percentage of the requests served within a certain time (ms)
- 50% 26
- 66% 27
- 75% 27
- 80% 29
- 90% 54
- 95% 55
- 98% 58
- 99% 59
- 100% 62 (longest request)],
-  [Builder , longer template, Time per request: 140.725 [ms] (mean)],
-  [\$ ab -c 1 -n 200 https:\/\/127.0.0.1:3000/benchmarks/builder
-This is ApacheBench, Version 2.3 
-Copyright 1996 Adam Twiss, Zeus Technology Ltd, https:\/\/www.zeustech.net/
-Licensed to The Apache Software Foundation, https:\/\/www.apache.org/],
-  [Benchmarking 127.0.0.1 (be patient)
-Completed 100 requests
-Completed 200 requests
-Finished 200 requests],
-  [Server Software: nginx/0.7.65
-Server Hostname: 127.0.0.1
-Server Port: 3000],
-  [Document Path: /benchmarks/builder
-Document Length: 54376 bytes],
-  [Concurrency Level: 1
-Time taken for tests: 28.145 seconds
-Complete requests: 200
-Failed requests: 0
-Write errors: 0
-Total transferred: 10947000 bytes
-HTML transferred: 10875200 bytes
-Requests per second: 7.11 [\#/sec] (mean)
-Time per request: 140.725 [ms] (mean)
-Time per request: 140.725 [ms] (mean, across all concurrent requests)
-Transfer rate: 379.83 [Kbytes/sec] received],
-  [Connection Times (ms)
- min mean[+/-sd] median max
-Connect: 0 0 0.1 0 1
-Processing: 127 141 24.6 132 331
-Waiting: 126 139 23.6 130 328
-Total: 127 141 24.6 132 331],
-  [Percentage of the requests served within a certain time (ms)
- 50% 132
- 66% 138
- 75% 147
- 80% 149
- 90% 156
- 95% 169
- 98% 193
- 99% 311
- 100% 331 (longest request)],
-  [Wow, \@tenderlove ’s Nokogori just brought us a\*\* 4.5X speed improvement for this specific template\*\*. 100ms per request is probably not a big deal for most people and I have to say that Jim did a great job with Builder. However in my specific case, 100ms on a request being called thousands of times per hour is quite important.],
-  [(The benchmark app is available on github , feel free to fork it and benchmark your own templates)],
-  [Who would have thought that a man like this could save the day?!],
-  [[caption id=“attachment\_1737” align=“alignleft” width=“150” caption=“Aaron ‘Tenderlove’ Patterson”] [/caption]],
-  [The moral of the story is that adding a bit of tenderlove to your Ruby code can make it perform much much better!],
-  [Thank you Aaron ‘Tenderlove’ Patterson!],
-),
-  insert-map: (:),
-  word-count: 1355,
+  word-count: 1088,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -378,29 +99,69 @@ Total: 127 141 24.6 132 331],
 
 {
   #standard-article(
-  title: [The Best TV Deals I Found in Amazon's Big Spring Sale],
-  author: [Stephen Johnson],
+  title: [How Do You Know That You Love Somebody? Philosopher Martha Nussbaum’s Incompleteness Theorem of the Heart’s Truth, from Plato to Proust],
+  author: [Maria Popova],
+  source-name: [The Marginalian (Brain Pickings)],
+  images: (),
+  paragraphs: (
+  [“The alternations between love and its denial, suffering and denial of suffering … constitute the most essential and ubiquitous structural feature of the human heart.”],
+  [“The state of enchantment is one of certainty,” W. H. Auden wrote in his commonplace book . “When enchanted, we neither believe nor doubt nor deny: we know , even if, as in the case of a false enchantment, our knowledge is self-deception.” Nowhere is our capacity for enchantment, nor our capacity for self-deception, greater than in love — the region of human experience where the path to truth is most obstructed by the bramble of rationalization and where we are most likely to be kidnapped by our own delicious delusions . There, it is perennially difficult to know what we really want ; difficult to distinguish between love and lust ; difficult not to succumb to our perilous tendency to idealize ; difficult to reconcile the closeness needed for intimacy with the psychological distance needed for desire .],
+  [How, then, do we really know that we love another person?],
+  [That’s what Martha Nussbaum , whom I continue to consider the most compelling philosopher of our time, examines in her 1990 book Love’s Knowledge: Essays on Philosophy and Literature ( public library ) — the sandbox in which Nussbaum worked out the ideas that would become, a decade later, her incisive treatise on the intelligence of emotions .],
+  [Devising a sort of incompleteness theorem of the heart’s truth, Nussbaum writes:],
+  [We deceive ourselves about love — about who; and how; and when; and whether. We also discover and correct our self-deceptions. The forces making for both deception and unmasking here are various and powerful: the unsurpassed danger, the urgent need for protection and self-sufficiency, the opposite and equal need for joy and communication and connection. Any of these can serve either truth or falsity, as the occasion demands. The difficulty then becomes: how in the midst of this confusion (and delight and pain) do we know what view of ourselves, what parts of ourselves, to trust? Which stories about the condition of the heart are the reliable ones and which the self-deceiving fictions? We find ourselves asking where, in this plurality of discordant voices with which we address ourselves on this topic of perennial self-interest, is the criterion of truth? (And what does it mean to look for a criterion here? Could that demand itself be a tool of self-deception?)],
+  [With an eye to Proust’s In Search of Lost Time and its central theme of how our intellect blinds us to the wisdom of the heart , Nussbaum contemplates the nature of those experiences “in which the self-protective tissue of rationalization is in a moment cut through, as if by a surgeon’s knife”: Proust’s protagonist, Marcel, has rationally convinced himself that he no longer loves his beloved, Albertine, but is jolted into confronting the falsity of that rationalization upon receiving news of her death; in the shock of his intense sorrow, he instantly gains the knowledge, far deeper and more sinewy than the intellect’s, that he did, in fact, love Albertine.],
+  [In a testament to Proust’s assertion that “the end of a book’s wisdom appears to us as merely the start of our own,” Nussbaum writes:],
+  [Proust tells us that the sort of knowledge of the heart we need in this case cannot be given us by the sciences of psychology, or, indeed, by any sort of scientific use of intellect. Knowledge of the heart must come from the heart — from and in its pains and longings, its emotional responses.],
+  [Such a conception of love’s knowledge, to be sure, stands radically against the long intellectual tradition of rationalism stretching from Plato to Locke like an enormous string of reason that plays only one note, deaf to the symphonic complexity of the emotional universe. The Proustian view calls for a restoration of lost nuance. Pointing to “the pseudotruths of the intellect,” Nussbaum revisits Marcel’s predicament, wherein the intellect has imposed an illusory sense of order and structure upon the entropy of the emotions:],
+  [The shock of loss and the attendant welling up of pain show him that his theories were forms of self-deceptive rationalization — not only false about his condition but also manifestations and accomplices of a reflex to deny and close off one’s vulnerabilities that Proust finds to be very deep in all of human life. The primary and most ubiquitous form of this reflex is seen in the operations of habit, which makes the pain of our vulnerability tolerable to us by concealing need, concealing particularity (hence vulnerability to loss), concealing all the pain-inflicting features of the world — simply making us used to them, dead to their assaults. When we are used to them we do not feel them or long for them in the same way; we are no longer so painfully afflicted by our failure to control and possess them. Marcel has been able to conclude that he is not in love with Albertine, in part because he is used to her. His calm, methodical intellectual scrutiny is powerless to dislodge this “dream deity, so riveted to one’s being, its insignificant face so incrusted in one’s heart.” Indeed, it fails altogether to discern the all-important distinction between the face of habit and the true face of the heart.],
+  [Nussbaum considers how our over-reliance on the intellect for clarity about love produces instead a kind of myopia:],
+  [Intellect’s account of psychology lacks all sense of proportion and depth and importance… \[Such a\] cost-benefit analysis of the heart — the only comparative assessment of which intellect, by itself, is capable — is bound, Proust suggests, to miss differences of depth. Not only to miss them, but to impede their recognition. Cost-benefit analysis is a way of comforting oneself, of putting oneself in control by pretending that all losses can be made up by sufficient quantities of something else. This stratagem opposes the recognition of love — and, indeed, love itself.],
+  [\[…\]],
+  [To remove such powerful obstacles to truth, we require the instrument that is “the subtlest, most powerful, most appropriate for grasping the truth.” This instrument is given to us in suffering.],
+  [Half a century after Simone Weil made her compelling case for why suffering is a greater clarifying force than intellectual discipline , Nussbaum examines this antidote to the intellect’s self-delusion by quoting directly from Proust:],
+  [Our intelligence, however lucid, cannot perceive the elements that compose it and remain unsuspected so long as, from the volatile state in which they generally exist, a phenomenon capable of isolating them has not subjected them to the first stages of solidification. I had been mistaken in thinking that I could see clearly into my own heart. But this knowledge, which the shrewdest perceptions of the mind would not have given me, had now been brought to me, hard, glittering, strange, like a crystallised salt, by the abrupt reaction of pain.],
+  [Central to this method of truth-seeking is what Nussbaum calls catalepsis — “a condition of certainty and confidence from which nothing can dislodge us.” To be cataleptic — from the Greek katalēptikē , derived from the verb katalambanein , meaning “to apprehend,” “to firmly grasp” — is to have a firm grasp of reality. But, of course, the implied antinomy is that because reality is inherently slippery, either the firmness of such catalepsis or its conception of reality is false.],
+  [Noting the pre-Socratic Greek philosopher Zeno’s view that we gain knowledge of the heart’s truth through powerful impressions that come directly from reality, Nussbaum returns to Proust’s Marcel:],
+  [The impression \[that he loves Albertine\] comes upon Marcel unbidden, unannounced, uncontrolled… Surprise, vivid particularity, and extreme qualitative intensity are all characteristics that are systematically concealed by the workings of habit, the primary form of self-deception and self-concealment. What has these features must have escaped the workings of self-deception, must have come from reality itself.],
+  [We notice, finally, that the very painfulness of these impressions is essential to their cataleptic character. Our primary aim is to comfort ourselves, to assuage pain, to cover our wounds. Then what has the character of pain must have escaped these mechanisms of comfort and concealment; must, then, have come from the true unconcealed nature of our condition.],
+  [And yet there exists another, more dimensional possibility. Nussbaum writes:],
+  [For the Stoic the cataleptic impression is not simply a route to knowing; it is knowing. It doesn’t point beyond itself to knowledge; it goes to constitute knowledge. (Science is a system made up of katalēpseis .) If we follow the analogy strictly, then, we find that knowledge of our love is not the fruit of the impression of suffering, a fruit that might in principle have been had apart form the suffering. The suffering itself is a piece of self-knowing. In responding to a loss with anguish, we are grasping our love. The love is not some separate fact about us that is signaled by the impression; the impression reveals the love by constituting it. Love is not a structure in the heart waiting to be discovered; it is embodied in, made up out of, experiences of suffering.],
+  [\[…\]],
+  [Marcel is brought, then, by and in the cataleptic impression, to an acknowledgment of his love. There are elements of both discovery and creation here, at both the particular and general levels… Before the suffering he was indeed self-deceived — both because he was denying a general structural feature of his humanity and because he was denying the particular readiness of his soul to feel hopeless love for Albertine. He was on a verge of a precipice and thought he was safely immured in his own rationality. But his case shows us as well how the successful denial of love is the (temporary) extinction and death of love, how self-deception can aim at and nearly achieve self-change.],
+  [We now see exactly how and why Marcel’s account of self-knowledge is no simple rival to the intellectual account. It tells us that the intellectual account was wrong: wrong about the content of the truth about Marcel, wrong about the methods appropriate for gaining this knowledge, wrong as well about what sort of experience in and of the person knowing is. And it tells us that to try to grasp love intellectually is a way of not suffering, not loving — a practical rival, a stratagem of flight.],
+  [Noting the contrast between the mutuality of love and the asymmetry of infatuation — after all, Marcel’s confrontation of his feelings for Albertine doesn’t require her participation at all and can be conducted as a wholly solitary activity — Nussbaum adds:],
+  [What Marcel feels is a gap or lack in himself, an open wound, a blow to the heart, a hell inside himself. Is all of this really love of Albertine?],
+  [\[…\]],
+  [The heart and mind of another are unknowable, even unapproachable, except in fantasies and projections that are really elements of the knower’s own life, not the other’s.],
+  [Proust’s protagonist arrives at this conclusion himself:],
+  [I understood that my love was less a love for her than a love in me… It is the misfortune of beings to be for us nothing else but useful showcases for the contents of our own minds.],
+  [And yet this conclusion, Nussbaum argues, is but a form of self-protection — in denying one’s porousness to the other and instead painting love as a curious relationship with oneself, it bolsters the illusion of self-sufficiency as a hedge against the suffering which love entails. Such a conception is ultimately a form of self-delusion masking the true nature of love and what Nussbaum calls its “dangerous openness.” Reflecting on Proust’s ultimate revelation, she writes:],
+  [Love … is a permanent structural feature of our soul.],
+  [\[…\]],
+  [The alternations between love and its denial, suffering and denial of suffering … constitute the most essential and ubiquitous structural feature of the human heart. In suffering we know only suffering. We call our rationalizations false and delusive, and we do not see to what extent they express a mechanism that is regular and deep in our lives. But this means that in love itself we do not yet have full knowledge of love — for we do not grasp its limits and boundaries. Sea creatures cannot be said to know the sea in the way that a creature does who can survey and dwell in both sea and land, noticing how they bound and limit one another.],
+  [Love’s Knowledge is a revelatory read in its totality. Complement it with Adam Phillips on the interplay between frustration and satisfaction in love , Erich Fromm on mastering the art of loving , Alain de Botton on why our partners drive us mad , and Esther Perel on the central paradox of love , then revisit Nussbaum on anger and forgiveness , agency and victimhood , the intelligence of the emotions , and how to live with our human fragility .],
+),
+  insert-map: (:),
+  word-count: 2189,
+  edited-for-length: true,
+  debug-mode: false,
+)
+
+}
+
+{
+  #standard-article(
+  title: [This JBL Boombox Is 40% Off During Amazon's Big Spring Sale],
+  author: [Naima Karp],
   source-name: [Lifehacker],
   images: (),
   paragraphs: (
   [We may earn a commission from links on this page. Deal pricing and availability subject to change after time of publication.],
-  [I'm practically an evangelist about this point: If you need a TV, you should get one right now. Not just because it's Amazon's Spring Sale —March and April are traditionally the time when retailers clear space on their shelves and in their warehouses to make room for the new models coming for the holidays. And this year, the RAM tax is coming too: Big tech companies are buying up the world's supply of memory to power AI data centers , so the price of televisions is expected to go up in the near future, and stay elevated for a while.],
-  [That's all to say: Grab these bargains from Amazon's Big Spring Sale while you can.],
-  [class="block w-fit cursor-pointer font-akshar text-lg font-medium leading-5 text-brand-green duration-200 ease-in-out hover:text-brand-green-700 md:text-xl md:leading-6"\>
- Roku Smart TV 2026 – 40-Inch Select Series, 1080p Full HD TV – RokuTV with Voice Remote – Flat Screen LED Television with Wi-Fi for Streaming Live Local News Sports & Movies – Bluetooth Headphone Mode],
-  [SEE 3 MORE],
-  [id="the-best-budget-tv-in-amazons-big-spring-sale-the-amazon-fire-4-series"\>The best budget TV in Amazon's Big Spring Sale: The Amazon Fire 4-Series],
-  [In terms of what you pay versus what you get, you can't do much better than Amazon's house brand. The company is selling its 4-series Fire TVs for almost comically low prices during its ongoing Big Spring Sale . The 50" model is \$239.97, and the 43" is \$199; that's 40% off the list price and the lowest price Amazon has ever offered on these 4K smart TVs. I bought a 55" Fire TV a few months ago, and even though I paid \$400 for it, I have no complaints. It's a solid TV that gets good reviews from pros and customers alike—Amazon's reviewers give it a 4.3 our of 5.],
-  [id="the-best-all-in-one-streaming-tv-in-amazons-big-spring-sale-the-roku-smart-tv-2026"\>The best all-in-one streaming TV in Amazon's Big Spring Sale: The Roku Smart TV 2026],
-  [The Roku Smart TV 2026 is a standout pick if you want everything in one package. The 40" version is marked down 44%, to just \$129. It's an all-in-one, hassle-free streaming solution that's perfect as a second TV in a bedroom or office. It comes with the Roku interface that can be navigated with voice remote, and it offers access to over 500 free live TV channels as well as Netflix, Disney+, and any other paid streamer you can think of.],
-  [id="the-best-go-big-tv-bargain-in-amazons-big-spring-sale-the-75-inch-hisense-class-u6-series-mini-led-4k"\>The best "go big" TV bargain in Amazon's Big Spring Sale: The 75-inch Hisense Class U6 Series Mini-LED 4K],
-  [If you just want a gigantic television, the 75-inch Hisense U 6 is a steal for \$598. . Hisense's 2026 models were unveiled earlier this month, so retailers are slashing prices on older models to clear warehouse space. Despite not being new, it uses Mini-LED tech that provides brightness levels and local dimming that rival TVs twice its price. (Besides, you probably don't really need a "better" TV. )],
-  [id="the-best-deal-on-an-oled-tv-in-amazons-big-spring-sale-the-55-inch-samsung-s85f-oled-tv"\>The best deal on an OLED TV in Amazon's Big Spring Sale: The 55-inch Samsung S85F OLED TV],
-  [This 55-inch Samsung S85F OLED TV is 36% off, down to \$897.99 (originally \$1,397.99). Despite being labeled an entry-level OLED TV, the picture quality is impressive, with strong HDR performance, color accuracy, and near-infinite contrast. The blacks are perfect. That means you’ll get better bang for your buck during dark scenes than you will with LED/QLED displays. It also rivals the best gaming TVs, with a highly responsive 9.4ms input lag, four HDMI 2.1 ports that support 4K 120Hz, AMD FreeSync Premium, Nvidia G-Sync, ALLM, and HDR10+ gaming, as well as Motion Xcelerator tech to reduce blur in fast scenes and an AI Auto Game Mode to optimize settings.],
-  [id="the-best-art-tv-in-amazons-big-spring-sale-the-55-inch-samsung-the-frame-tv"\>The best art TV in Amazon's Big Spring Sale: The 55-Inch Samsung "The Frame" TV],
-  [If your living room is more "art gallery" than "sports bar," The Frame is your dream TV. It comes with a special mount so it can hang on the wall like a picture, and when you aren't watching a show, it enters "Art Mode" and displays museum-quality masterpieces (or your own photos) with a matte finish that makes the screen look like a canvas. When your snobby friends come over, you can pretend you don't even have a television, then secretly binge Love Island when they go home. During the Big Spring Sale, the 55-inch model is down to \$897.99, a \$300 drop from its \$1,197.99 list price.],
-  [id="the-overall-cheapest-tv-in-amazons-big-spring-sale-this-32-inch-hisense-led-tv"\>The overall cheapest TV in Amazon's Big Spring Sale: This 32-inch Hisense LED TV],
-  [All TVs are cheaper-than-usual right now, but this deal is ridiculous : A Hisense 32" LED television for just \$74.99 . It's not the greatest TV of all time, but by all available accounts, it's at least a solid buy It's an older model—released in 2020—but that means there are over 3,000 reviews on Amazon, and the score is a respectable 4.1 stars out of 5. Critics generally were positive when it came out, too. The screen is 32", so it's big enough to be watchable, and the picture is 720p, so it's technically "high-def," if not "full high-def." It even comes with built-in Alexa and FireTV, and you can get it for less than I paid for Thai food last night.],
+  [Old school boomboxes might be a relic of the past, but they’ve been reinterpreted in recent years with sleek, modern, and more portable silhouettes. While not as compact as some Bluetooth speakers, they pack a bigger punch in sound, especially when it comes to playing music outdoors. One of the best-rated ones on the market is the JBL Boombox 3 , which earned a PCMag Editor’s Choice Award —and it's currently 40% off for Amazon’s Spring Sale , bringing it down to its lowest price ever of \$299.95 (originally \$499.95).],
+  [At 14.7 pounds, it might not be the most lightweight speaker, but it’s still technically portable given the built-in handle that lets you carry it from place to place. The control bar lets you link to other JBL speakers, control volume, power, play/pause and Bluetooth pairing, but doesn’t allow you to go back to the previous track. It has a covered rear panel with a compartment housing a 3.5mm aux input, a USB-A port that allows you to charge other devices, and a connector for the included power cable. Aesthetically, it’s similar to the Boombox 2, but adds an extra subwoofer.],
+  [It’s compatible with Bluetooth 5.3 and supports the SBC codec , but not AAC or AptX. Still, the bass and volume have impressive output in both AC and battery power modes. Battery life lasts up to 24 hours on a charge and takes around 6.5 hours to fully charge from empty. An IP67 rating makes it dust-proof and waterproof (up to one meter of depth for 30 minutes), so poolside hangs or unexpected rain shouldn’t pose an issue. Just note that the snap-shut cover on the back needs to be closed for the rating to apply. The companion app includes a customizable three-band EQ, firmware updates, and battery life monitoring.],
+  [If you’re looking for a loud, durable outdoor speaker with deep bass and adjustable EQ, and you don’t mind slightly limited Bluetooth codec support or a heavier build, the size-to-power ratio makes this award-winning speaker a reliable choice. With summer right around the corner, and the JBL Boombox 3 at nearly half off, now is a great time to invest.],
   [Apple AirPods Pro 3 Noise Cancelling Heart Rate Wireless Earbuds
  
  
@@ -459,9 +220,7 @@ Total: 127 141 24.6 132 331],
  (List Price \$249.99)],
 ),
   insert-map: (:),
-  inline-pq: pull-quote([(Besides, you probably don't really need a "better" TV.], [Stephen Johnson]),
-  inline-pq-idx: 10,
-  word-count: 1705,
+  word-count: 686,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -470,611 +229,47 @@ Total: 127 141 24.6 132 331],
 
 {
   #standard-article(
-  title: [Moving on with Gratitude],
-  author: [Matt Aimonetti],
-  source-name: [Matt Aimonetti],
-  images: (),
-  paragraphs: (
-  [In a lot of ways, I owe my professional career to music. If it wasn’t for music, I wouldn’t have learned about samplers, sequencers, MIDI and the crazy world of synthesizers. Those machines led me to computers and computer music which led me to both sound engineering and reverse engineering (RE). RE led me to a social community of hackers with strong values caring about education and musicians. They gave me a chance to learn a lot about audio software and eventually software engineering. When I saw that both the music and the web industries were changing so rapidly, I switched industry and sadly left music behind me for more than 10 years.],
-  [But in 2013, I was very lucky to be able to create and grow a company putting musicians first and trying to create a positive long lasting impact on our industry. Splice has been a fascinating journey. I’ve been able to bring my 20+ years of experience and empathy for producers and musicians, as well as my years of digging deep into the code base of the software our users use daily. It’s been an educational, emotional, passionate and certainly challenging ride at times. It’s been amazing to meet and hang with the people who developed the software that made me want to learn how to program a computer. It’s been humbling to be in studio with people shaping the world’s culture by translating their emotions into music. I can’t be prouder of what we accomplished and can’t wait to see what’s still to come.],
-  [Nonetheless, I decided to transition out and stepped down from my operating role at Splice . I will remain an advisor to the company but It’s time for me to ride off into the sunset, take some time to relax and focus on some other things such as making music, hacking, spending time with my family here in beautiful Southern California and of course finding other ways to be impactful.],
-  [id="why"\>Why?],
-  [Being a founder, I have to admit that deciding to move on from your own project is a really hard decision. But a startup isn’t a baby you give birth to. As a parent myself, I realized that way before starting Splice, but seeing so many of my friends deeply hurt because of this misunderstanding made it clearer than ever. A startup is a project you care a lot about and want to see become reality but that doesn’t mean it can’t keep going without you. I believe founders should maximize for impact and I think that Splice will keep on reaching its potential and serve the mission Steve and I set on day one, even after my departure.],
-  [The team has been laser focused, learning from our past mistakes and moving towards great autonomy and increased quality. I can’t go to a studio session without everyone knowing and using Splice, from hollywood music composers to k-pop producers to Nashville greatests. Two things I care a lot about are impact and decisions and I measure my own impact by analyzing the ROI of my efforts in relation to the impact I have. Clearly our impact is visible every time I talk to users. But as I take a deep look at today and tomorrow, I believe my impact outside of Splice will be even greater than what it could be inside . I even believe that this impact has the potential to have positive consequences on Splice continuous success. As so many people before me said, your goal should be to make yourself redundant and I feel that’s exactly where we are now.],
-  [I also have to admit that I am personally motivated to explore things that aren’t and won’t be on Splice’s roadmap. I’m a doer, a maker, a dreamer, a hacker and I realized that lately I’ve been really enjoying being surrounded by creative people. I loved reverse engineering all the DAW formats, architecting our technical solutions, grow the engineering team and learning a ton along the way. But now the team has things under control and I have a strong desire to expand my horizons, to pour my energy into different projects: from crazy artistic concepts, MR , low level hardware hacking, building synthesizers with my daughter, video games and more. The list of crazy ideas I want to hack on is endless and I am so excited that it will be hard for me to prioritize. It’s therefore logical that to be able to explore those things, I need mental space and free time. I also I hope that through this journey I will be able to better discover who I am and who I want to become.],
-  [id="thank-you"\>Thank you],
-  [I’m thankful for the splice team - from my co-founder Steve, to the the board, to the team: Juan-Pablo, thanks for everything, I learned a ton from you. Thank you to our early employees who gave everything they had, our colleagues that jumped in during the crazy growth phase and the entire team that allowed Splice to become what it is. But beyond all the people involved into building Splice and our partners who helped us get where we are, I want to thank our users, our deeply passionate users who supported us and gave me so much energy on a daily basis. Music is a really really hard space to operate in and musicians is the group of people the most lied to. I’m so glad you saw that we are truly here to advocate for you and help create more seats at the table, your support means the world, thank you 🙏🙏🙏],
-  [id="whats-next"\>What’s next?],
-  [I don’t have a job lined up, nor am I looking for one :) As a matter of fact, I started a “sabbatical” during which I am exploring a lot of things I never had time for previously. As mentioned earlier, I have a few artistic projects lined up, I want to go deep into some technical skills I haven’t had the chance to develop yet and I am planning on reading, watching amazing shows, spending time with my family and taking naps, lots of naps. Last time I took a real break in between projects was more than 30 years ago. It’s exciting and scary at the same time. People who know me, know that it’s hard for me to not get passionate and jump straight into a project as soon as I have a little free time. But I am lucky to have close friends and a family who are keeping me accountable!],
-  [I will still remain involved with Splice as an advisor and champion. I obviously really want Splice to continue with its success and I’ll do what I can to support the company I co-created. I’ll also eventually start new projects and hope to continue having a positive impact and assist others in their journey here in LA and around the world.],
-  [You will certainly find me surrounded by creative people, trying to understand what makes the creative process so amazing and universal. I will forever remain an advocate to the people who make our hearts beat faster, our feet stomp and our heads spin with emotions. “Here’s to the crazy ones. The misfits. The rebels. The troublemakers. The round pegs in the square holes. The ones who see things differently.”],
-),
-  insert-map: (:),
-  word-count: 1224,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-}
-
-{
-  #standard-article(
-  title: [Standards for ANSI escape codes],
-  author: [Julia Evans],
-  source-name: [Julia Evans],
-  images: (),
-  paragraphs: (
-  [Hello! Today I want to talk about ANSI escape codes.],
-  [For a long time I was vaguely aware of ANSI escape codes (“that’s how you make
-text red in the terminal and stuff”) but I had no real understanding of where they were
-supposed to be defined or whether or not there were standards for them. I just
-had a kind of vague “there be dragons” feeling around them. While learning
-about the terminal this year, I’ve learned that:],
-  [ANSI escape codes are responsible for a lot of usability improvements
-in the terminal (did you know there’s a way to copy to your system clipboard
-when SSHed into a remote machine?? It’s an escape code called OSC 52 !)],
-  [They aren’t completely standardized, and because of that they don’t always
-work reliably. And because they’re also invisible, it’s extremely
-frustrating to troubleshoot escape code issues.],
-  [So I wanted to put together a list for myself of some standards that exist
-around escape codes, because I want to know if they have to feel unreliable
-and frustrating, or if there’s a future where we could all rely on them with
-more confidence.],
-  [what’s an escape code?],
-  [ECMA-48],
-  [xterm control sequences],
-  [terminfo],
-  [should programs use terminfo?],
-  [is there a “single common set” of escape codes?],
-  [some reasons to use terminfo],
-  [some more documents/standards],
-  [why I think this is interesting],
-  [id="what-s-an-escape-code"\>what’s an escape code?],
-  [Have you ever pressed the left arrow key in your terminal and seen ^[[D ?
-That’s an escape code! It’s called an “escape code” because the first character
-is the “escape” character, which is usually written as ESC , \\x1b , \\E ,
- \\033 , or ^[ .],
-  [Escape codes are how your terminal emulator communicates various kinds of
-information (colours, mouse movement, etc) with programs running in the
-terminal. There are two kind of escape codes:],
-  [input codes which your terminal emulator sends for keypresses or mouse
-movements that don’t fit into Unicode. For example “left arrow key” is
- ESC[D , “Ctrl+left arrow” might be ESC[1;5D , and clicking the mouse might
-be something like ESC[M :3 .],
-  [output codes which programs can print out to colour text, move the
-cursor around, clear the screen, hide the cursor, copy text to the
-clipboard, enable mouse reporting, set the window title, etc.],
-  [Now let’s talk about standards!],
-  [id="ecma-48"\>ECMA-48],
-  [ECMA-48 does two things:],
-  [Define some general formats for escape codes (like “CSI” codes, which are
- ESC[ + something and “OSC” codes, which are ESC] + something)],
-  [Define some specific escape codes, like how “move the cursor to the left” is
- ESC[D , or “turn text red” is ESC[31m . In the spec, the “cursor left”
-one is called CURSOR LEFT and the one for changing colours is called
- SELECT GRAPHIC RENDITION .],
-  [The formats are extensible, so there’s room for others to define more escape
-codes in the future. Lots of escape codes that are popular today aren’t defined
-in ECMA-48: for example it’s pretty common for terminal applications (like vim,
-htop, or tmux) to support using the mouse, but ECMA-48 doesn’t define escape
-codes for the mouse.],
-  [id="xterm-control-sequences"\>xterm control sequences],
-  [There are a bunch of escape codes that aren’t defined in ECMA-48, for example:],
-  [enabling mouse reporting (where did you click in your terminal?)],
-  [bracketed paste (did you paste that text or type it in?)],
-  [OSC 52 (which terminal applications can use to copy text to your system clipboard)],
-  [I believe (correct me if I’m wrong!) that these and some others came from
-xterm, are documented in XTerm Control Sequences , and have
-been widely implemented by other terminal emulators.],
-  [This list of “what xterm supports” is not a standard exactly, but xterm is
-extremely influential and so it seems like an important document.],
-  [id="terminfo"\>terminfo],
-  [In the 80s (and to some extent today, but my understanding is that it was MUCH
-more dramatic in the 80s) there was a huge amount of variation in what escape
-codes terminals actually supported.],
-  [To deal with this, there’s a database of escape codes for various terminals
-called “terminfo”.],
-  [It looks like the standard for terminfo is called X/Open Curses , though you need to create
-an account to view that standard for some reason. It defines the database format as well
-as a C library interface (“curses”) for accessing the database.],
-  [For example you can run this bash snippet to see every possible escape code for
-“clear screen” for all of the different terminals your system knows about:],
-  [for term in \$(toe -a | awk '{print \$1}')
-do
- echo \$term
- infocmp -1 -T "\$term" 2\>/dev/null | grep 'clear=' | sed 's/clear=\/\/g;s/,\/\/g'
-done],
-  [On my system (and probably every system I’ve ever used?), the terminfo database is managed by ncurses.],
-  [id="should-programs-use-terminfo"\>should programs use terminfo?],
-  [I think it’s interesting that there are two main approaches that applications
-take to handling ANSI escape codes:],
-  [Use the terminfo database to figure out which escape codes to use, depending
-on what’s in the TERM environment variable. Fish does this, for example.],
-  [Identify a “single common set” of escape codes which works in “enough”
-terminal emulators and just hardcode those.],
-  [Some examples of programs/libraries that take approach \#2 (“don’t use terminfo”) include:],
-  [kakoune],
-  [python-prompt-toolkit],
-  [linenoise],
-  [libvaxis],
-  [chalk],
-  [I got curious about why folks might be moving away from terminfo and I found
-this very interesting and extremely detailed
- rant about terminfo from one of the fish maintainers , which argues that:],
-  [[the terminfo authors] have done a lot of work that, at the time, was
-extremely important and helpful. My point is that it no longer is.],
-  [I’m not going to do it justice so I’m not going to summarize it, I think it’s
-worth reading.],
-  [id="is-there-a-single-common-set-of-escape-codes"\>is there a “single common set” of escape codes?],
-  [I was just talking about the idea that you can use a “common set” of escape
-codes that will work for most people. But what is that set? Is there any agreement?],
-  [I really do not know the answer to this at all, but from doing some reading it
-seems like it’s some combination of:],
-  [The codes that the VT100 supported (though some aren’t relevant on modern terminals)],
-  [what’s in ECMA-48 (which I think also has some things that are no longer relevant)],
-  [What xterm supports (though I’d guess that not everything in there is actually widely supported enough)],
-  [and maybe ultimately “identify the terminal emulators you think your users are
-going to use most frequently and test in those”, the same way web developers do
-when deciding which CSS features are okay to use],
-  [I don’t think there are any resources like Can I use…? or
- Baseline for the terminal
-though. (in theory terminfo is supposed to be the “caniuse” for the terminal
-but it seems like it often takes 10+ years to add new terminal features when
-people invent them which makes it very limited)],
-  [id="some-reasons-to-use-terminfo"\>some reasons to use terminfo],
-  [I also asked on Mastodon why people found terminfo valuable in 2025 and got a
-few reasons that made sense to me:],
-  [some people expect to be able to use the TERM environment variable to
-control how programs behave (for example with TERM=dumb ), and there’s
-no standard for how that should work in a post-terminfo world],
-  [even though there’s less variation between terminal emulators than
-there was in the 80s, there’s far from zero variation: there are graphical
-terminals, the Linux framebuffer console, the situation you’re in when
-connecting to a server via its serial console, Emacs shell mode, and probably
-more that I’m missing],
-  [there is no one standard for what the “single common set” of escape codes
-is, and sometimes programs use escape codes which aren’t actually widely
-supported enough],
-  [id="terminfo-user-agent-detection"\>terminfo & user agent detection],
-  [The way that ncurses uses the TERM environment variable to decide which
-escape codes to use reminds me of how webservers used to sometimes use the
-browser user agent to decide which version of a website to serve.],
-  [It also seems like it’s had some of the same results – the way iTerm2 reports
-itself as being “xterm-256color” feels similar to how Safari’s user agent is
-“Mozilla/5.0 (Macintosh; Intel Mac OS X 14\_7\_4) AppleWebKit/605.1.15 (KHTML,
-like Gecko) Version/18.3 Safari/605.1.15”. In both cases the terminal emulator
-/ browser ends up changing its user agent to get around user agent detection
-that isn’t working well.],
-  [On the web we ended up deciding that user agent detection was not a good
-practice and to instead focus on standardization so we can serve the same
-HTML/CSS to all browsers. I don’t know if the same approach is the future in
-the terminal though – I think the terminal landscape today is much more
-fragmented than the web ever was as well as being much less well funded.],
-  [id="some-more-documents-standards"\>some more documents/standards],
-  [A few more documents and standards related to escape codes, in no particular order:],
-  [the Linux console\_codes man page documents
-escape codes that Linux supports],
-  [how the VT 100 handles escape codes & control sequences],
-  [the kitty keyboard protocol],
-  [OSC 8 for links in the terminal (and notes on adoption )],
-  [A summary of ANSI standards from tmux],
-  [this terminal features reporting specification from iTerm],
-  [sixel graphics],
-  [id="why-i-think-this-is-interesting"\>why I think this is interesting],
-  [I sometimes see people saying that the unix terminal is “outdated”, and since I
-love the terminal so much I’m always curious about what incremental changes
-might make it feel less “outdated”.],
-  [Maybe if we had a clearer standards landscape (like we do on the web!) it would
-be easier for terminal emulator developers to build new features and for
-authors of terminal applications to more confidently adopt those features so
-that we can all benefit from them and have a richer experience in the terminal.],
-),
-  insert-map: (:),
-  word-count: 1622,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-}
-
-{
-  #standard-article(
-  title: [Using less memory to look up IP addresses in Mess With DNS],
-  author: [Julia Evans],
-  source-name: [Julia Evans],
-  images: (),
-  paragraphs: (
-  [I’ve been having problems for the last 3 years or so where Mess With DNS 
-periodically runs out of memory and gets OOM killed.],
-  [This hasn’t been a big priority for me: usually it just goes down for a few
-minutes while it restarts, and it only happens once a day at most, so I’ve just
-been ignoring. But last week it started actually causing a problem so I decided
-to look into it.],
-  [This was kind of winding road where I learned a lot so here’s a table of contents:],
-  [there’s about 100MB of memory available],
-  [the problem: OOM killing the backup script],
-  [attempt 1: use SQLite],
-  [problem: how to store IPv6 addresses],
-  [problem: it’s 500x slower],
-  [time for EXPLAIN QUERY PLAN],
-  [attempt 2: use a trie],
-  [some notes on memory profiling],
-  [attempt 3: make my array use less memory],
-  [idea 3.1: deduplicate the Name and Country],
-  [how big are ASNs?],
-  [idea 3.2: use netip. Addr instead of net. IP],
-  [the result: saved 70MB of memory!],
-  [id="there-s-about-100mb-of-memory-available"\>there’s about 100MB of memory available],
-  [I run Mess With DNS on a VM without about 465MB of RAM, which according to
- ps aux (the RSS column) is split up something like:],
-  [100MB for PowerDNS],
-  [200MB for Mess With DNS],
-  [40MB for hallpass],
-  [That leaves about 110MB of memory free.],
-  [A while back I set GOMEMLIMIT to 250MB
-to try to make sure the garbage collector ran if Mess With DNS used more than
-250MB of memory, and I think this helped but it didn’t solve everything.],
-  [id="the-problem-oom-killing-the-backup-script"\>the problem: OOM killing the backup script],
-  [A few weeks ago I started backing up Mess With DNS’s database for the first time using restic .],
-  [This has been working okay, but since Mess With DNS operates without much extra
-memory I think restic sometimes needed more memory than was available on the
-system, and so the backup script sometimes got OOM killed.],
-  [This was a problem because],
-  [backups might be corrupted sometimes],
-  [more importantly, restic takes out a lock when it runs, and so I’d have to manually do an
-unlock if I wanted the backups to continue working. Doing manual work like
-this is the \#1 thing I try to avoid with all my web services (who has time
-for that!) so I really wanted to do something about it.],
-  [There’s probably more than one solution to this, but I decided to try to make
-Mess With DNS use less memory so that there was more available memory on the
-system, mostly because it seemed like a fun problem to try to solve.],
-  [id="what-s-using-memory-ip-addresses"\>what’s using memory: IP addresses],
-  [I’d run a memory profile of Mess With DNS a bunch of times in the past, so I
-knew exactly what was using most of Mess With DNS’s memory: IP addresses.],
-  [When it starts, Mess With DNS loads this database where you can look up the
-ASN of every IP address into memory, so that when it
-receives a DNS query it can take the source IP address like 74.125.16.248 and
-tell you that IP address belongs to GOOGLE .],
-  [This database by itself used about 117MB of memory, and a simple du told me
-that was too much – the original text files were only 37MB!],
-  [\$ du -sh \*.tsv
-26M ip2asn-v4.tsv
-11M ip2asn-v6.tsv],
-  [The way it worked originally is that I had an array of these:],
-  [type IPRange struct {
- StartIP net. IP
- EndIP net. IP
- Num int
- Name string
- Country string
-}],
-  [and I searched through it with a binary search to figure out if any of the
-ranges contained the IP I was looking for. Basically the simplest possible
-thing and it’s super fast, my machine can do about 9 million lookups per
-second.],
-  [id="attempt-1-use-sqlite"\>attempt 1: use SQLite],
-  [I’ve been using SQLite recently, so my first thought was – maybe I can store
-all of this data on disk in an SQLite database, give the tables an index, and
-that’ll use less memory.],
-  [So I:],
-  [wrote a quick Python script using sqlite-utils to import the TSV files into an SQLite database],
-  [adjusted my code to select from the database instead],
-  [This did solve the initial memory goal (after a GC it now hardly used any
-memory at all because the table was on disk!), though I’m not sure how much GC
-churn this solution would cause if we needed to do a lot of queries at once. I
-did a quick memory profile and it seemed to allocate about 1KB of memory per
-lookup.],
-  [Let’s talk about the issues I ran into with using SQLite though.],
-  [id="problem-how-to-store-ipv6-addresses"\>problem: how to store IPv6 addresses],
-  [SQLite doesn’t have support for big integers and IPv6 addresses are 128 bits,
-so I decided to store them as text. I think BLOB might have been better, I
-originally thought BLOB s couldn’t be compared but the sqlite docs say they can.],
-  [I ended up with this schema:],
-  [CREATE TABLE ipv4\_ranges (
- start\_ip INTEGER NOT NULL,
- end\_ip INTEGER NOT NULL,
- asn INTEGER NOT NULL,
- country TEXT NOT NULL,
- name TEXT NOT NULL
-);
-CREATE TABLE ipv6\_ranges (
- start\_ip TEXT NOT NULL,
- end\_ip TEXT NOT NULL,
- asn INTEGER,
- country TEXT,
- name TEXT
-);
-CREATE INDEX idx\_ipv4\_ranges\_start\_ip ON ipv4\_ranges (start\_ip);
-CREATE INDEX idx\_ipv6\_ranges\_start\_ip ON ipv6\_ranges (start\_ip);
-CREATE INDEX idx\_ipv4\_ranges\_end\_ip ON ipv4\_ranges (end\_ip);
-CREATE INDEX idx\_ipv6\_ranges\_end\_ip ON ipv6\_ranges (end\_ip);],
-  [Also I learned that Python has an ipaddress module, so I could use
- ipaddress.ip\_address(s).exploded to make sure that the IPv6 addresses were
-expanded so that a string comparison would compare them properly.],
-  [id="problem-it-s-500x-slower"\>problem: it’s 500x slower],
-  [I ran a quick microbenchmark, something like this. It printed out that it could
-look up 17,000 IPv6 addresses per second, and similarly for IPv4 addresses.],
-  [This was pretty discouraging – being able to look up 17k addresses per section
-is kind of fine (Mess With DNS does not get a lot of traffic), but I compared it to
-the original binary search code and the original code could do 9 million per second.],
-  [ips := []net. IP{}
- count := 20000
- for i := 0; i time for EXPLAIN QUERY PLAN],
-  [I’d never really done an EXPLAIN in sqlite, so I thought it would be a fun
-opportunity to see what the query plan was doing.],
-  [sqlite\> explain query plan select \* from ipv6\_ranges where '2607:f8b0:4006:0824:0000:0000:0000:200e' BETWEEN start\_ip and end\_ip;
-QUERY PLAN
-\`--SEARCH ipv6\_ranges USING INDEX idx\_ipv6\_ranges\_end\_ip (end\_ip\>?)],
-  [It looks like it’s just using the end\_ip index and not the start\_ip index,
-so maybe it makes sense that it’s slower than the binary search.],
-  [I tried to figure out if there was a way to make SQLite use both indexes, but I
-couldn’t find one and maybe it knows best anyway.],
-  [At this point I gave up on the SQLite solution, I didn’t love that it was
-slower and also it’s a lot more complex than just doing a binary search. I felt
-like I’d rather keep something much more similar to the binary search.],
-  [A few things I tried with SQLite that did not cause it to use both indexes:],
-  [using a compound index instead of two separate indexes],
-  [running ANALYZE],
-  [using INTERSECT to intersect the results of start\_ip attempt 2: use a trie],
-  [My next idea was to use a
- trie ,
-because I had some vague idea that maybe a trie would use less memory, and
-I found this library called
- ipaddress-go that lets you look up IP addresses using a trie.],
-  [I tried using it here’s the code , but I
-think I was doing something wildly wrong because, compared to my naive array + binary search:],
-  [it used WAY more memory (800MB to store just the IPv4 addresses)],
-  [it was a lot slower to do the lookups (it could do only 100K/second instead of 9 million/second)],
-  [I’m not really sure what went wrong here but I gave up on this approach and
-decided to just try to make my array use less memory and stick to a simple
-binary search.],
-  [id="some-notes-on-memory-profiling"\>some notes on memory profiling],
-  [One thing I learned about memory profiling is that you can use runtime 
-package to see how much memory is currently allocated in the program. That’s
-how I got all the memory numbers in this post. Here’s the code:],
-  [func memusage() {
- runtime. GC()
- var m runtime. MemStats
- runtime. ReadMemStats(&m)
- fmt. Printf("Alloc = %v MiB\\n", m. Alloc/1024/1024)
- \/\/ write mem.prof
- f, err := os. Create("mem.prof")
- if err != nil {
- log. Fatal(err)
- }
- pprof. WriteHeapProfile(f)
- f. Close()
-}],
-  [Also I learned that if you use pprof to analyze a heap profile there are two
-ways to analyze it: you can pass either --alloc-space or --inuse-space to
- go tool pprof . I don’t know how I didn’t realize this before but
- alloc-space will tell you about everything that was allocated, and
- inuse-space will just include memory that’s currently in use.],
-  [Anyway I ran go tool pprof -pdf --inuse\_space mem.prof \> mem.pdf a lot. Also
-every time I use pprof I find myself referring to my own intro to pprof , it’s probably
-the blog post I wrote that I use the most often. I should add --alloc-space 
-and --inuse-space to it.],
-  [id="attempt-3-make-my-array-use-less-memory"\>attempt 3: make my array use less memory],
-  [I was storing my ip2asn entries like this:],
-  [type IPRange struct {
- StartIP net. IP
- EndIP net. IP
- Num int
- Name string
- Country string
-}],
-  [I had 3 ideas for ways to improve this:],
-  [There was a lot of repetition of Name and the Country , because a lot of IP ranges belong to the same ASN],
-  [net. IP is an []byte under the hood, which felt like it involved an unnecessary pointer, was there a way to inline it into the struct?],
-  [Maybe I didn’t need both the start IP and the end IP, often the ranges were consecutive so maybe I could rearrange things so that I only had the start IP],
-  [id="idea-3-1-deduplicate-the-name-and-country"\>idea 3.1: deduplicate the Name and Country],
-  [I figured I could store the ASN info in an array, and then just store the index
-into the array in my IPRange struct. Here are the structs so you can see what
-I mean:],
-  [type IPRange struct {
- StartIP netip. Addr
- EndIP netip. Addr
- ASN uint32
- Idx uint32
-}],
-  [type ASNInfo struct {
- Country string
- Name string
-}],
-  [type ASNPool struct {
- asns []ASNInfo
- lookup map[ASNInfo]uint32
-}],
-  [This worked! It brought memory usage from 117MB to 65MB – a 50MB savings. I felt good about this.],
-  [Here’s all of the code for that part .],
-  [id="how-big-are-asns"\>how big are ASNs?],
-  [As an aside – I’m storing the ASN in a uint32 , is that right? I looked in the ip2asn
-file and the biggest one seems to be 401307, though there are a few lines that
-say 4294901931 which is much bigger, but also are just inside the range of a
-uint32. So I can definitely use a uint32 .],
-  [59.101.179.0 59.101.179.255 4294901931 Unknown AS4294901931],
-  [id="idea-3-2-use-netip-addr-instead-of-net-ip"\>idea 3.2: use netip. Addr instead of net. IP],
-  [It turns out that I’m not the only one who felt that net. IP was using an
-unnecessary amount of memory – in 2021 the folks at Tailscale released a new
-IP address library for Go which solves this and many other issues. They wrote a great blog post about it .],
-  [I discovered (to my delight) that not only does this new IP address library exist and do exactly what I want, it’s also now in the Go
-standard library as netip. Addr . Switching to netip. Addr was
-very easy and saved another 20MB of memory, bringing us to 46MB.],
-  [I didn’t try my third idea (remove the end IP from the struct) because I’d
-already been programming for long enough on a Saturday morning and I was happy
-with my progress.],
-  [It’s always such a great feeling when I think “hey, I don’t like this, there
-must be a better way” and then immediately discover that someone has already
-made the exact thing I want, thought about it a lot more than me, and
-implemented it much better than I would have.],
-  [id="all-of-this-was-messier-in-real-life"\>all of this was messier in real life],
-  [Even though I tried to explain this in a simple linear way “I tried X, then I
-tried Y, then I tried Z”, that’s kind of a lie – I always try to take my
-actual debugging process (total chaos) and make it seem more linear and
-understandable because the reality is just too annoying to write down. It’s
-more like:],
-  [try sqlite],
-  [try a trie],
-  [second guess everything that I concluded about sqlite, go back and look at
-the results again],
-  [wait what about indexes],
-  [very very belatedly realize that I can use runtime to check how much
-memory everything is using, start doing that],
-  [look at the trie again, maybe I misunderstood everything],
-  [give up and go back to binary search],
-  [look at all of the numbers for tries/sqlite again to make sure I didn’t misunderstand],
-  [id="a-note-on-using-512mb-of-memory"\>A note on using 512MB of memory],
-  [Someone asked why I don’t just give the VM more memory. I could very easily
-afford to pay for a VM with 1GB of memory, but I feel like 512MB really
- should be enough (and really that 256MB should be enough!) so I’d rather stay
-inside that constraint. It’s kind of a fun puzzle.],
-  [id="a-few-ideas-from-the-replies"\>a few ideas from the replies],
-  [Folks had a lot of good ideas I hadn’t thought of. Recording them as
-inspiration if I feel like having another Fun Performance Day at some point.],
-  [Try Go’s unique package for the ASNPool . Someone tried this and it uses more memory, probably because Go’s pointers are 64 bits],
-  [Try compiling with GOARCH=386 to use 32-bit pointers to sace space (maybe in combination with using unique !)],
-  [It should be possible to store all of the IPv6 addresses in just 64 bits, because only the first 64 bits of the address are public],
-  [Interpolation search might be faster than binary search since IP addresses are numeric],
-  [Try the MaxMind db format with mmdbwriter or mmdbctl],
-  [Tailscale’s art routing table package],
-  [id="the-result-saved-70mb-of-memory"\>the result: saved 70MB of memory!],
-  [I deployed the new version and now Mess With DNS is using less memory! Hooray!],
-  [A few other notes:],
-  [lookups are a little slower – in my microbenchmark they went from 9 million
-lookups/second to 6 million, maybe because I added a little indirection.
-Using less memory and a little more CPU seemed like a good tradeoff though.],
-  [it’s still using more memory than the raw text files do (46MB vs 37MB), I
-guess pointers take up space and that’s okay.],
-  [I’m honestly not sure if this will solve all my memory problems, probably not!
-But I had fun, I learned a few things about SQLite, I still don’t know what to
-think about tries, and it made me love binary search even more than I already
-did.],
-),
-  insert-map: (:),
-  inline-pq: pull-quote([It printed out that it could look up 17,000 IPv6 addresses per second, and similarly for IPv4 addresses.], [Julia Evans]),
-  inline-pq-idx: 48,
-  word-count: 2455,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-}
-
-{
-  #standard-article(
-  title: [first step in scaling a web site http caching],
-  author: [Matt Aimonetti],
-  source-name: [Matt Aimonetti],
-  images: (),
-  paragraphs: (
-  [Today my friend Patrick Crowley and I were talking about scaling his website: https:\/\/cinematreasures.org since an article covering his work will soon be published in a very popular newspaper. Patrick’s site is hosted on Heroku which comes by default with Varnish caching enabled.],
-  [The challenge is that a lot of people using the Rails framework are used to doing page caching instead of relying on HTTP caching, even though this feature was added a long time ago. The major problem with page caching is that it doesn’t scale that well as soon as you run more than one server. Indeed you would need to store the page content to a shared drive between your servers or use memcached and do some work to avoid hitting your app every single time. On the other hand, HTTP caching is extremely easy to handle at the application level and it will dramatically reduce the amount of requests hitting your app. Let me explain a little more about HTTP caching.],
-  [Ryan Tomako wrote an excellent post about the details of caching, I strongly recommend you read it . In a nutshell, the HTTP caching layer (usually) seats before your application layer and allows you, the developer to store some responses that can be send back to the users based on optional conditions. That might still seem vague, let’s take a concrete example. If you look at https:\/\/cinematreasures.org ’s home page you can see that it’s an agglomerate of various information:],
-  [And the bottom of the page contains even more dynamic data such as the popular movie theater photos, latest movie theater videos and latest tweets. One might look at that and say that this page can’t really be cached and that the caching should be done at the model layer (i.e. cache the data coming from the database). I would certainly agree that caching the data layer is probably a good idea, but you shouldn’t start by that. In fact without caching, this page renders fast enough. The problem is when someone like Roger Ebert tweets about CinemaTreasures the load on the app peaks significantly. At the point, the amount of concurrent connections your app can handle gets put to the challenge. Even though your page load is “fast enough”, requests will queue up and some will eventually time out. That’s actually a perfect case of HTTP caching.],
-  [What we want to do in that case is to cache a version of the home page in Varnish for 60 seconds. During that time, all requests coming to the site, will be served by Varnish and will all get the same cached content. That allows our servers to handle the non cached requests and therefore increase our throughput. What’s even better, is that if a user refreshes the home page in his/her browser during the first 60 seconds the requests won’t even make it all the way to our servers. All of that thanks to conditions set on the response. The first user hitting the HTTP cache layer (Varnish in this case) won’t find a fresh cached response, so varnish will forward the request to our application layer which will send back the homepage to varnish and tell Varnish that this content is good for a full minute so please don’t ask for it again until a minute from now. Varnish serves this response to the users' browser and let the browser know that the server said that the response was good enough for a minute so don’t bother asking for it again. But now, if during these 60 seconds another user comes in, he will hit Varnish and Varnish will have the cached response from the first user and because the cache is still fresh (it’s not been 60 seconds since the first request) and the cache is public, then the same response will be sent to the second user.],
-  [As you can see, the real strength of HTTP caching is the fact that it’s a conditional caching. It’s based on the request’s URL and some “flags” set in the request/response headers.],
-  [Setting these conditions in your app is actually very simple since you just need to set the response’s headers. If you are using a Ruby framework you will more than likely have access to the request object via the “request” method and you can set the headers directly like that: “response.headers[‘Cache-Control’] = ‘public, max-age=60’”.
-In Rails, you can actually use a helper method instead: expires\_in 1.minute, :public =\> true.],
-  [You might have a case where you HAVE TO serve fresh content if available and can’t serve stale cached content even for a few seconds. In this case, you can rely on the Etag header value. The Etag is meant to validate the freshness of a cached response. Think of it as a signature (unique ID) that is set on the response and used by the client (or cache layer) to see if the server response has changed or not. The way it works is that the client keeps track of the Etag received for each request (attached to the cached response) and then sends it with the next requests. The HTTP layer or application sees the Etag in the request and can check if it is still valid and the content didn’t change. If that’s the case, an empty response can be sent with a special HTTP status code (304) to let know the client that the old cached value is still good to be used. Rails has a helper called “stale?” that helps you do the Etag/last modified check and allows you to not fetch all the objects from the database by doing a cheap check on an attribute (For instance you can check the updated\_at value and use that as a condition to pull an object and its relationships).],
-  [So I explain HTTP caching, I often hear people telling me: “that’s great Matt, but you know what, that won’t work for us because we have custom content that we display specifically to our users”. So in that case, you can always set the Cache-Control header to private which will only cache the response in the client’s browser and not the cache layer. That’s good to some extent, but it can definitely be improved by rethinking a bit your view layer. In most web apps, the page content is rendered by server side code (Rails, Django, node.js, PHP..) and sent to the user all prepared for him. There are a few challenges with this approach, the biggest one is that the server has to wait until everything is ready (all data fetched, view rendered etc…) before sending back a response and before the client’s browser can start rendering (there are ways to chunk the response but that’s besides the scope of this post). The other is that the same expensive content has to be calculated/rendered for two different users because you might be inserting the username of the current user at the top of the page for instance. A classic way to deal with that is often to use fragment caching, where the expensive rendering is cached and reused by different requests. That’s good but if the only reason to do that is because we are displaying some user specific data, there is a simpler way: async page rendering. The concept is extremely simple: remove all user specific content from the rendered page and then inject the user content in a second step once the page is displayed. The advantage is that now the full page can be cached in Varnish (or Squid or whatever you use for HTTP caching). To inject the user content, the easiest way is to use JavaScript.],
-  [Let’s stay on CinemaTreasures, when you’re logged in, the username is shown on the top of each page:],
-  [[caption id="" align=“aligncenter” width=“574” caption=“Once logged in, the username is displayed on all pages”] [/caption]],
-  [The only things that differs from the page rendered when the user is not logged in and when he is, are these 2 links and an avatar. So let’s write some code to inject that after rendering the page.],
-  [In Rails, in the sessions controller or whatever code logs you in, you need to create a new cookie containing the username:],
-  [As you can see, we don’t store the data in the session cookie and the data won’t be encrypted. You need to be careful that someone changing his cookie value can’t access data he/should shouldn’t. But that’s a different discussion. Now that the cookie is set, we can read it from JavaScript when the page is loaded.],
-  [function readCookie ( name ) {
- var nameEQ = name + "=" ;
- var ca = document. cookie . split ( ';' );
- for ( var i = 0 ; i username " ); }
- logout . show ();
- showAvatar ( username );
- };
- return true ;
-}],
-  [The code above doesn’t do much, once the DOM is loaded, the displayLoggedinUserLinks() function gets trigger. This function reads the cookie via the readCookie() function and if a username is found, the login link is hidden, the user name is displayed, as well as the logout link and the avatar. (You can also use a jQuery cookie plugin to handle the cookie, but this is an old example using Prototype, replace the code accordingly)],
-  [When the user logs out, we just need to delete the username cookie and the cached page will be rendered properly. In Rails, you would do delete the cookie like that: cookies.delete(‘username’).],
-  [Quite often you might even want to make an Ajax call to get some information such as the number of user messages or notifications. Using jQuery or whatever JS framework you fancy you can do that once the page is rendered. Here is an example, on this page, you can see the learderboards for MLB The Show. The leaderboards don’t change that often, especially the overall leaderboards so they can be cached for a little while, however the player’s presence can change anytime. The smart way to deal with that, would be to cache the leaderboards for a few seconds/minutes and make an ajax call to a presence service passing it a list of user ids collected from the DOM. The service called via Ajax could also be cached depending on the requirements.],
-  [Now there is one more problem that people using might encouter: flash notices. For those of you not familiar with Rails, flash notices are messages set in the controller and passed to the view via the session (at least last time I checked). The problem happens if I’m the home page isn’t cached anymore and I logged in which redirects me to the home page with a flash message like so:],
-  [The problem is that the message is part of the rendered page and now for 60 seconds, all people hitting the home page will get the same message. This is why you would want to write a helper that would put this message in a custom cookie that you’d pull JS and then delete once displayed. You could use a helper like that to set the cookie:],
-  [class="highlight"\> def flash\_notice\_cookie (msg, expiration = nil )
- cookies [ :flash\_notice ] = {
- :value =\> msg,
- :expires =\> expiration || 1 . minutes . from\_now,
- :domain =\> ".cinematreasures.com" 
- }
- end],
-  [And then add a function called when the DOM is ready which loads the message and injects it in the DOM. Once the cookie read, delete it so the message isn’t displayed again.],
-  [So there you have it, if you follow these few steps, you should be able to handle easily 10x more traffic without increasing hardware or making any type of crazy code change. Before you start looking into memcached, redis, cdns or whatever, consider HTTP caching and async DOM manipulation. Finally, note that if you can’t use Varnish or Squid, you can very easily setup Rack-Cache locally and share the cache via memcached. It’s also a great way to test locally.],
-  [Update: CinemaTreasures was updated to use HTTP caching as described above. The hosting cost is now half of what it used to be and the throughput is actually higher which offers a better protection against peak traffic.],
-  [External resources:],
-  [https:\/\/tomayko.com/writings/things-caches-do],
-  [HTTP Caching at Heroku],
-  [W3 caching protocol],
-  [Rack-Cache middleware],
-  [Blog post covering HTTP Caching/Varnish/Rails],
-  [jQuery cookie plugin],
-),
-  insert-map: (:),
-  word-count: 2095,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-}
-
-{
-  #standard-article(
-  title: [Why Pistol Squats Are so Hard (and How to Do Them Anyway)],
-  author: [Beth Skwarecki],
+  title: [10 Shows Like 'The Comeback' You Should Watch Next],
+  author: [Ross Johnson],
   source-name: [Lifehacker],
   images: (),
   paragraphs: (
-  [Pistol squats are among the bodyweight strength world’s most impressive feats, right next to things like backflips or a perfect handstand. Well, I can’t do those other two, but I can knock out a bunch of pistol squats. Let’s talk about what goes into one, and what it will take to get you there.],
-  [id="what-is-a-pistol-squat"\>What is a pistol squat?],
-  [A pistol squat is a one-legged squat, where the free leg (the one you are not squatting with) is held straight out in front of you. (I imagine the name comes from the idea that your leg, sticking out in front, resembles the barrel of a pistol.) To do a pistol squat:],
-  [Raise one leg (say, your left) straight out in front of you.],
-  [Keeping that leg out in front of you, and your torso upright, bend your standing (right) leg until your hip joint is at or below the level of your knee.],
-  [With the leg still out in front of you, not touching the ground, stand back up.],
-  [Pistol squats are often done free-handed, but it’s OK (by me, the self-appointed queen of pistol squats) to hold the toe of the free leg with your hand. Pistol squats are ideally done with the free leg completely straight, but it’s also OK to bend that knee a bit if you need to.],
-  [Pistol squats are most commonly done without weight, but you can also do them with a weight, such as a kettlebell, in your hands. (This makes the balance easier, but requires a bit more strength to stand up.)],
-  [You don’t need to do your pistol squats “ass to grass” (with your butt nearly touching the ground), but you can if you want. It’s more impressive that way.],
-  [Some people, seeing this description, will go “oh, like this?” and just bust one out. For a select few of us, this is an easy move. But for most of the population, it’s really hard! It takes strength, balance, and mobility to do a pistol squat well. So let’s break down the component, and talk about how to work your way up to a full pistol squat.],
-  [id="strengthen-your-quads"\>Strengthen your quads],
-  [Let’s cover the most obvious thing first. To squat down and up on one leg, that one leg needs to be able to support the weight of your whole body. In other words, that leg is working twice as hard as if you were doing a normal squat with both feet on the ground.],
-  [Many leg muscles are involved in squats, but the star of pistol squats is a muscle group called the quadriceps. That's a group of four muscles on the front of your thigh. I have a list here of my favorite quad exercises , from goblet squats to barbell squats, and even one or two that don't have "squat" in the name. (The leg press machine is great.)],
-  [Mathematically, I figure that if you can squat with a barbell on your back that is equal to your own body weight, then your legs are probably strong enough to each do a pistol squat unweighted. That's a minimum, though—the stronger your legs are, the easier pistols will be.],
-  [How to work up to it : Build your leg strength with the quad exercises of your choice. Barbell squats are great, but I’d especially recommend single-leg quad work. Speaking of which...],
-  [id="work-on-single-leg-strength"\>Work on single-leg strength],
-  [Just being good at two-legged squats does not guarantee you have all the strength you need to squat on one leg. Moving your body up and down requires strength mainly from your quads, as we discussed. But when you’re on one leg, you also need:],
-  [Abductor strength (using the muscles of your butt and the outside of your hips) to keep your leg from collapsing inward.],
-  [Adductor strength (in your inner thigh muscles) to assist the quads and to counterbalance the abductors.],
-  [Hip flexor strength (in the muscles that attach to the front of your thigh), to hold your free leg up in the “pistol” position.],
-  [How to work up to it: You can target each muscle directly, but you’ll get a really good bang for your buck by doing unilateral (one-sided) leg exercises like:],
-  [Step-ups, increasing the height of the box over time, and adding weight as needed],
-  [Lunges (forward and/or reverse)],
-  [Bulgarian split squats (with your back foot on a bench) or any other type of split squat],
-  [Step-downs, in which you control the lowering-down portion of the movement and then use your free leg to help push you back up to the top],
-  [Shrimp squat progressions , using your free leg behind you],
-  [Pistol squats to a box, where you sit down on a box or bench behind you and then stand back up using only one leg (I sometimes call these “one-leg stand-ups”). If the box is fairly tall, these are a lot easier than regular pistol squats.],
-  [All of these exercises can be weighted, if you like. Hold dumbbells in your hands for step-ups, or rack a kettlebell on your shoulder for the box pistols.],
-  [While you work on your hip flexor strength (seated and hanging leg raises are great, by the way), you can take them out of the equation for the moment by holding your toes with your hand as you descend into your squat.],
-  [id="improve-your-balance"\>Improve your balance],
-  [As you’re doing all of these one-legged exercises, you may find it difficult just to stay balanced on one foot. That’s normal! Single leg balance is, fortunately, a skill you can improve very quickly. Practice standing on one foot, imagining your foot as a tripod (big toe, little toe, heel) or do as I do and imagine you’re wearing quad roller skates and try to balance your weight between the four wheels at the four corners of your feet.],
-  [One-legged exercises will help you build this balance, but so will standing balance exercises, like standing on one foot while you brush your teeth. Once you’re stable standing up, try moving around and bending your knee. Notice how you have to move your butt back and chest forward to stay balanced as your knee bends. This will become very important.],
-  [How to work up to it : All of those single-leg exercises mentioned above will give you lots of balance practice. You can also practice balancing on one leg as you bend that leg (even if you can’t get all the way down into a squat). Want one more tip? Practice holding the bottom position of the pistol squat, even if you have to get down on the ground with your hands for now.],
-  [id="do-some-mobility-work"\>Do some mobility work],
-  [Pistol squats are most impressive when they’re done “ass-to-grass,” going as far down as your body will allow. This means your butt is nearly touching your shoes, and typically your knees will need to go pretty far forward of your toes. (And no, you won’t ruin your knees by putting your knees over your toes .)],
-  [The most common thing preventing people from getting into a deep squat is ankle mobility. For your butt to get low, your shins have to tilt forward. To keep your foot flat on the ground while your shins tilt forward, the Achilles tendon at the back of your ankle needs to be able to stretch a good bit.],
-  [How to work up to it : Here are some tips for ankle mobility , which include stretches but also a few quick fixes like wearing shoes with an elevated heel.],
-  [As you descend into a pistol squat position, take note of whether you feel resistance anywhere else. Depending on your body proportions, you may need to stretch or build strength in other areas.],
-  [id="practice-is-crucial"\>Practice is crucial],
-  [Finally, we come to the truth that skilled movements take practice. The stronger and more mobile you are, the less practice it may take, but ultimately you need to learn how to do a pistol squat. Being able to balance on one foot while standing up isn’t the same thing as being able to balance when you’re fully in the squat position, and you’ll have to be able to balance as you descend through all the positions in between.],
-  [As you practice your pistols, you may find that pausing at the bottom helps you to regain stability before standing back up; or you may find that you prefer to get a quick bounce out of the bottom to send you back up.],
-  [How to work up to it : One way to practice before you’ve gotten the full move down is to lower yourself down on one leg, roll onto your back, and then try to roll forward again, balance on your foot and stand up . This gives you some momentum, which helps when you don’t quite have the strength to accelerate yourself upward yet.],
-  [Ultimately, there’s no one-size-fits-all answer to how to get your first pistol squat. Some people have the strength but are missing the mobility, or vice versa. Some people are at a disadvantage in one way but have an advantage somewhere else; for example, I have mile-long thighbones, which means I have to get into a pretty extreme knees-over-toes position, but I also have good enough ankle mobility to get there and to be strong in that position. Figure out what you’re missing, and eliminate your weak points. And if you aren’t sure what your weak point is, just work on everything. You’ll get there soon enough.],
+  [We may earn a commission from links on this page.],
+  [Valerie Cherish is back, and not a moment too soon. Twenty years after a modestly rated but absolutely brilliant first season, mega-cringe Hollywood satire The Comeback has returned to HBO for one more painfully embarrassing season (complimentary) Co-created by and starring Lisa Kudrow, it's the hilarious, dark, and occasionally moving story of a C-list celebrity determined to stay in the limelight at whatever cost.],
+  [Valerie Cherish—clueless, egotistical, and all-too-human—is one of TV's indelible characters, simultaneously a victim of ageism, misogyny, and celebrity culture, and also a woman who doesn't care about any of that provided she can find a way to scrabble to the top. Likewise, these 10 shows spotlight women (mostly) of a certain age navigating career challenges with...mixed results.],
+  [id="hacks-2021"\> Hacks (2021 – )],
+  [id="video-container-01KMY4RNT43RJH0K7NJJ40R2CW"\>],
+  [On the surface, Valerie Cherish and Deborah Vance don't have all that much in common, but they often feel like two sides of a coin in the ways in which they battle, and concede to, the pressures of being a woman in modern show business. Hacks finds 25-year-old writer Ava (Hannah Einbinder) struggling to get her career back one track after getting cancelled over a tweet. She reluctantly takes a job with Deborah Vance (Jean Smart), a comedy trailblazer who remains popular with an older Vegas crown, but whose career is largely on autopilot. They're an entirely mismatched pair, but their chemistry is ultimately explosive, with Jean Smart doing some of the best work of her incredible career as the often deeply unlikeable Vance, and Einbinder more than holding her own in return. It's funny, bitchy, and surprisingly moving when it wants to be. Stream Hacks on HBO Max .],
+  [id="girls5eva-2021-2024"\> Girls5eva (2021 – 2024)],
+  [id="video-container-01KMY4RNT67T6W92K7W12JCXA0"\>],
+  [The premise is very much about a comeback: A very ‘90s group (Sara Bareilles, Busy Philipps, Paula Pell, and Renée Elise Goldsberry) who made it big very briefly with exactly one hit song gets its own shot at a career resurgence (they’re Girls5eva because they expected to be in the game “longer than 4 ever”—turned out, not so much; also there used to be a fifth member, but she died in a tragic infinity pool accident). After an up-and-coming rapper samples one of their old hits, the band reunites to try to find new relevancy in the 2020s. It doesn't go great! Tina Fey is one of the executive producers, and the (very fun) '90s-inspired original music was composed and written for the show by the creators. Stream Girls5Eva on Peacock and Netflix .],
+  [id="veep-2012-2019"\> Veep (2012 – 2019)],
+  [id="video-container-01KMY4RNT7K9Q7Q50V1019TVQ9"\>],
+  [There's a sweet vulnerability to Valerie Cherish absent from pretty much anyone in Veep , but the air of cringeworthy desperation hangs heavy over both shows. Veep asks: What if the very worst people imaginable had control of all the levers of power in America? What would that be like? In the highly satirical and in no way politically relevant series, Julia Louis-Dreyfus brilliantly plays Vice President Selina Meyer: part icon, part worst-case-scenario for the feminist dream. The supporting cast consists almost entirely of entitled rich people climbing over each other for infinitesimal extra bits of power while trying to appear as folk heroes to the rubes (us voters). It’s one of the funniest shows ever on TV, with the nastiest put-downs...if you can handle the fact that history has overtaken it in favor of a reality that's even more absurd. Stream Veep on HBO Max.],
+  [id="the-studio-2025"\> The Studio (2025 – )],
+  [id="video-container-01KMY4RNT819TY5SC4JA0R35H7"\>],
+  [Industry exec Matt Remick ( Comeback vet Seth Rogen) loves movies, and when he signs on for a high-profile role at the fictional Continental Studios, he feels like his time has come. He aims to make a real difference in returning an increasingly IP-driven movie industry to its creative roots.—until about a minute into his new job, when the CEO (Bryan Cranston) reveals his first order of business will be marketing the Kool-Aid Man Movie . Hollywood satires of yore have focused on the industry as one that eats people up and spits them out, but the spin here is that Remick yearns for those good old days, much as Valerie can never quite seem to move forward. The late Catherine O'Hara, Ike Barinholtz, Chase Sui Wonders ( Bodies Bodies Bodies ), and Kathryn Hahn also star, and like The Comeback , the show boasts a long list of celebrity cameos. Stream The Studio on Apple TV+ .],
+  [id="enlightened-2011-2013"\> Enlightened (2011 – 2013)],
+  [id="video-container-01KMY4RNTAVYTE13NT24A6539C"\>],
+  [Before The White Lotus , Mike White co-created (with star Laura Dern) this beloved, if short-lived, comedy-drama about a middle-aged woman who has a complete mental breakdown following a demotion at the job to which she's devoted her life. Following a two-month stay in an holistic treatment facility, Dern's Amy Jellicoe becomes determined to approach life with a new perspective, focusing on meditation and positive change at work and at home. The results are mixed, but there's also a rather beautiful sense that change is absurd and difficult, but also entirely possible. Stream Enlightened on HBO Max.],
+  [id="no-good-deed-2024"\> No Good Deed (2024)],
+  [id="video-container-01KMY4RNTBNDMZCNDK0YWS3EGR"\>],
+  [I'm adding this one largely for the Lisa Kudrow of it all, but there's a similar vein of dark comedy here—plus, No Good Deed is a pretty great show that a lot of people missed. The setup sounds like a juicy crime thrillers: Kudrow is retired pianist Lydia; Ray Romano is her husband, Paul. The two are in rather tricky financial straits and need to sell their home without wanting to seem too desperate to prospective buyers—and also hide a secret involving a death a few years prior. For all that, it's very much a comedy, with a great supporting cast that includes Linda Cardellini, Luke Wilson, O-T Fagbenle, and Teyonah Parris. Stream No Good Deed on Netflix .],
+  [id="younger-2015-2021"\> Younger (2015 – 2021)],
+  [id="video-container-01KMY4RNTC7KT35D6JECWSYX16"\>],
+  [Rather than a young woman seeking to make a name for herself, Younger follows Liza Miller (Sutton Foster), a recently divorced woman in her 40s who finds that age is a barrier to reentering the publishing industry she left years earlier. After a compliment convinces her that she could pass for a younger woman, she lies that she's just 26 (must be nice) in order to land an entry-level job. Misadventures ensue. Think of it as a story of coming-of-age, again. Stream Younger on Netflix .],
+  [id="hot-in-cleveland-2010-2015"\> Hot in Cleveland (2010 – 2015)],
+  [id="video-container-01KMY4RNTEKPRJEQKB82RQFB0K"\>],
+  [In contrast to The Comeback' s reality TV style and structure, this is very much a traditional three-camera sitcom, albeit one with a stacked cast of legends, though it approaches the challenges of being a middle-aged woman in entertainment in many of the same ways. Writer Melanie (Valerie Bertinelli), beautician Joy (Jane Leeves), and soap diva Victoria (Wendie Malick) wind up spending a wild night in Cleveland after a plane to Paris is diverted, discovering in the process that, while they're seen as over-the-hill back in Los Angeles, they're all Ohio 10s—though the sassy caretaker of their house, Elka (Betty White), might not agree. Stream Hot in Cleveland on Paramount+ .],
+  [id="grace-and-frankie-2015-2022"\> Grace and Frankie (2015 – 2022)],
+  [id="video-container-01KMY4RNTFMNTQ2V0MERFNDEGZ"\>],
+  [Close female friendships are hard to come by for the driven, slightly clueless Valerie, a woman focused on staying on top. Jane Fonda's Grace, a cosmetics mogul, isn't much different at the start, but she finds a different path when she makes a truce with her arch-nemesis Frankie (Lily Tomlin), a quirky artist with whom she has nothing in common—other than the fact that their husbands left them for one another. (Valerie might take some notes.) Stream Grace and Frankie on Netflix.],
+  [id="call-my-agent-2015-2020"\> Call My Agent! (2015 – 2020)],
+  [id="video-container-01KMY4RNTG61KVYX8QBQST17BG"\>],
+  [International sensation Call My Agent! shifts its focus between four talent agents at a prestigious firm who are forced to take the reins following the sudden death of the agency founder, all of them getting a second chance in mid-career—or beyond. The cast is lead by Camille Cottin as Andréa Martel, while Liliane Rovère's Arlette Azéma is in her '80s. They navigate their messy personal lives while catering to the needs of their real celebrity clients (Juliette Binoche, Monica Bellucci, Isabelle Huppert, and Sigourney Weaver are just some of the name guest stars playing faintly exaggerated versions of themselves). It's soapy, addictive showbiz fun, a dishy delight even if you know not a lick of French. Stream Call My Agent! on Netflix .],
 ),
   insert-map: (:),
-  word-count: 1580,
+  word-count: 2627,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -1083,50 +278,58 @@ In Rails, you can actually use a helper method instead: expires\_in 1.minute, :p
 
 {
   #standard-article(
-  title: [Nominee for Ambassador to Hungary Co-Owns a Nursing Home That’s Suing the Trump Administration Over Medicare Payments],
-  author: [Eli Cahan],
-  source-name: [ProPublica],
+  title: [Overconfidence is how wars are lost − lessons from Vietnam, Afghanistan and Ukraine for the war in Iran were ignored],
+  author: [Monica Duffy Toft, Professor of International Politics and Director of the Center for Strategic Studies, The Fletcher School, Tufts University],
+  source-name: [The Conversation (Politics)],
   images: (),
   paragraphs: (
-  [Last October, President Donald Trump nominated nursing home owner Benjamin Landa as his next ambassador to Hungary , a key position that would place him in a country with a vigorous conservative movement. Trump has endorsed the country’s prime minister, Viktor Orbán, a long-standing ally, for reelection, saying he “does an unbelievable job.”],
-  [One month after Landa’s appointment, the inspector general of Trump’s Department of Health and Human Services issued a blunt audit estimating that a nursing home Landa co-owns received Medicare overpayments of at least \$31.2 million and recommending that the government recoup the money.],
-  [Now that facility, Pinnacle Multicare Nursing and Rehabilitation Center, is suing the very administration that is nominating Landa to the diplomatic post. The suit, filed Feb. 26 in federal district court in New York, asks the court to stop the government’s collection efforts and names HHS Secretary Robert F. Kennedy Jr., Centers for Medicare and Medicaid Services Administrator Mehmet Oz, HHS Inspector General Thomas March Bell and a Medicare contractor as defendants. A federal district judge denied Pinnacle’s request for a temporary restraining order .],
-  [As of March, Landa has an ownership interest in more than 100 nursing homes in eight states , CMS data shows. Landa also is a donor to Republican causes, but his biggest donation by far was \$5 million to MAGA Inc. , a pro-Trump Super PAC, in August 2025, two months before his nomination.],
-  [Critics of Landa’s track record point to the audit’s findings, along with other legal actions against homes connected to him, as reasons that his nomination should face additional scrutiny.],
-  [Sen. Ron Wyden, an Oregon Democrat and ranking member of the Senate Finance Committee, which oversees Medicare and Medicaid, described Landa as an example of “giant corporate health care interests that prey on the vulnerable and use clever tricks to exploit loopholes at taxpayers’ expense.”],
-  [“It’s no surprise that these companies and their owners are cozy with Trump: instead of accountability, they’ve been rewarded,” Wyden said in a statement, with “plum political appointments and ambassadorships in Europe.”],
-  [The White House and the Department of State did not respond to requests for comment about the status of Landa’s nomination. An attorney for Landa denied wrongdoing in a statement, saying the issues identified in the audit occurred during the COVID-19 pandemic when nursing homes were in the midst of a crisis.],
-  [“At Pinnacle MultiCare, patient care comes first — period, full stop,” attorney Alyssa Friedman wrote in an email to ProPublica. “That commitment drove every decision during the pandemic and continues to define operations today.],
-  [“Let’s be clear: this is about decisive actions taken during the height of COVID-19 that prioritized patients and saved lives in one of the pandemic’s epicenters — decisions now being second-guessed years later through an absurdly flawed audit of billing paperwork and a retroactive reinterpretation of the rules by government bureaucrats,” she added.],
-  [The inspector general’s audit and the resulting lawsuit are the latest controversy involving Landa.],
-  [In November 2022, New York Attorney General Letitia James sued The Villages at Orleans Health and Rehabilitation Center , as well as Landa and others she said were owners of the facility. A press release announcing the suit alleged “years of financial fraud that resulted in significant resident neglect and harm.” Between 2015 and 2022, Landa made at least \$1.49 million from the facility, James’ suit alleged, through means that James characterized as “looting.” Meanwhile, Landa “contributed nothing and failed to prevent the abuse and neglect,” the suit alleged. James described a pattern of harm to residents at the home, due in part to what the suit said was “systemic understaffing and cost cutting,” which included potentially preventable deaths of residents due to delayed wound care and suicide.],
-  [The home and the defendants named as owners have disputed the suit. In 2024, a state Supreme Court judge allowed multiple claims in the case to proceed; in 2025, Landa appealed that decision . The case is ongoing.],
-  [Landa’s attorney said her client “merely owned a minority interest in the company that owned the real estate and served as the landlord of the building out of which the facility operated. He had no interest in the licensed operator of the facility and no involvement in the operations of the facility. The attorney general’s claims against Mr. Landa are baseless and a waste of the court’s time and taxpayer dollars.”],
-  [One month after filing the suit against The Villages, James sued Cold Spring Hills Center for Nursing and Rehabilitation , based in Long Island, making nearly identical claims to her prior suit. Landa owned 25% of the facility’s property holding company, according to the lawsuit . Over a number of years, the facility paid over \$15 million in rent to the property holding company co-owned by Landa; over \$1.4 million to a management company co-owned by Landa; and almost \$500,000 in consulting fees to a company owned by Landa, the lawsuit alleged. At the same time, residents were losing significant weight and developing malnutrition, enduring life-threatening pressure ulcers and repeatedly suffering unwitnessed falls, in part due to understaffing, James alleged.],
-  [The home and its owners disputed the allegations. In March 2024, a judge in Long Island ordered four defendants, including Landa , to pay a total of \$2 million back to the nursing home, and ordered that an independent health care monitor be appointed to run the facility. Landa and his co-defendants have appealed various orders in the case. In January 2025, Cold Spring Hills filed for bankruptcy ; in March 2025, the facility sold itself for \$10 to a third-party receiver and changed its name. (“Our facility is now under new ownership with a renewed vision for excellence,” the nursing home’s rebranded website reads. “A new chapter in compassionate care has begun.”) The appeals and bankruptcy proceedings are ongoing.],
-  [Landa’s attorney said he was merely a landlord of Cold Spring Hills and was not involved in operating the facility. She noted that the judge found no fraud committed by Landa, that all business arrangements between Landa and the home were approved by the state health department, and that none of the defendants enriched themselves at the expense of patient care.],
-  [Landa has been involved with other legal actions related to his nursing homes. In 2017, for example, an employment agency co-owned by Landa was sued on behalf of a class of Filipino nurses alleging that it had trafficked them , withheld wages, and threatened civil and criminal litigation should the nurses leave. In September 2019, a New York district court found the agency and its owners had violated the Trafficking Victims Protection Act ; in April 2022, the case was settled for \$3 million on the condition that the findings involving trafficking were vacated. Landa’s attorney did not respond to follow-up questions about the other suits in which he has been involved.],
-  [In one of her 2022 lawsuits, James estimated Landa’s net worth at more than \$300 million in 2016.],
-  [The audit at the center of the current lawsuit was the government’s first related to a new nursing home payment system rolled out during Trump’s first term. Under the previous system, nursing homes were reimbursed based on the number of minutes of therapy provided to patients, which “created financial incentives” for them to focus on patients who needed therapy, according to the November audit report . In contrast, the new payment system was designed to “improve payment accuracy and appropriateness by focusing on the enrollee, rather than volume of services provided,” according to the report.],
-  [The inspector general’s office found that Pinnacle, located in the Bronx, received significantly higher reimbursements from Medicare under the new payment system than the old one, raising red flags at the agency.],
-  [The inspector general found that Pinnacle had violated CMS billing requirements in 99 of the 100 claims it audited. The agency noted that, in 95 of those 99 claims, Pinnacle requested reimbursement for levels of services that were higher than what was justifiable when the agency reviewed patients’ charts — for example, billing for speech therapy for aphasia in a patient who clinicians had explicitly stated did not need speech therapy. Additionally, in 54 of the 99 claims, the agency found, Pinnacle provided services that could not be justified by the patients’ charts — for example, billing for “bed mobility and wheelchair training” for patients who were able to walk on their own.],
-  [The HHS inspector general’s office declined to comment on the audit, citing pending litigation.],
-  [Separately, the New York State Department of Health has imposed three financial penalties against Pinnacle since 2021.],
-  [In its lawsuit , Pinnacle alleges that the auditors “blatantly ignore” state and federal waivers for documentation and billing requirements issued as part of the effort to reduce administrative barriers to patient care during the COVID-19 public health emergency. “Pinnacle’s efforts to provide exceptional care to its patients were an undeniable success,” the facility wrote in the lawsuit.],
-  [Additionally, the facility only had two COVID-19 deaths at the height of the pandemic — “one of the lowest COVID related death totals among New York nursing homes despite being a 480-bed facility located in one of the most heavily affected areas,” Landa’s attorney said. “The outcomes during that period are the most important measure of care,” she added.],
-  [In its suit, Pinnacle characterized the government’s demand for repayment as an “administrative process riddled with constitutional violations.” That request “would immediately paralyze Pinnacle by rendering it unable to pay its employees,” the facility added, “and would result in the shut down of the entire nursing facility — leaving highly vulnerable patients without life-saving care, depriving hundreds of individuals of jobs and income, and divesting New York City of this critical medical facility.”],
-  [Industry watchdogs say threatening closure in response to state or federal enforcement actions is a familiar ploy for nursing home owners.],
-  [“That’s their constant refrain whenever they don’t get what they want,” said Kevin Walsh, former New Jersey comptroller who investigated tens of millions of dollars in nursing home fraud during his tenure.],
-  [“The risk of closure based on the finances and cost reports that I’ve seen seems low,” Walsh added. “They’re not going to kill the golden goose they’re using to siphon profits.”],
-  [Landa has repeatedly filed lawsuits in response to allegations against nursing homes with which he is affiliated. In 2022, he brought a suit for libel against The American Prospect, as well as one of its reporters and an editor, following an investigation titled “The Nursing Home Slumlord Manifesto.” Years earlier, he sued freelancers writing for ProPublica , also alleging defamation. Judges dismissed both cases .],
-  [Landa’s nomination remains under consideration by the Senate Foreign Relations committee. (No hearing has been scheduled.) But if confirmed as ambassador to Hungary, Landa would hold a powerful position.],
-  [Hungary, despite its small population and historically minor role in U. S. foreign policy, holds increasing symbolic importance in the global conservative movement.],
-  [In a mid-February visit to Budapest, Trump administration officials reinforced their support for Orban. Secretary of State Marco Rubio signed an agreement to nurture Hungary’s civilian nuclear program. (The country does not presently have nuclear weapons, according to the World Nuclear Association, an international organization that publishes reports on global nuclear activity.)],
-  [“We are entering this golden era of relations between our countries,” Rubio said in a press conference in Budapest, “not simply because of the alignment of our people, but because of the relationship that you have with the president of the United States.”],
-  [The post Nominee for Ambassador to Hungary Co-Owns a Nursing Home That’s Suing the Trump Administration Over Medicare Payments appeared first on ProPublica .],
+  [Plumes of smoke and fire rise after debris from an intercepted Iranian drone struck an oil facility, according to authorities, in Fujairah, United Arab Emirates, on March 14, 2026. AP Photo/Altaf Qadri],
+  [Wars are rarely lost first on the battlefield. They are lost in leaders’ minds − when leaders misread what they and their adversaries can do, when their confidence substitutes for comprehension, and when the last war is mistaken for the next one.],
+  [The Trump administration’s miscalculation of Iran is not an anomaly. It is the latest entry in one of the oldest and most lethal traditions in international politics: the catastrophic gap between what leaders believe going in and what war actually delivers.],
+  [I’m a scholar of international security , civil wars and U. S. foreign policy, and author of the book “ Dying by the Sword ,” which examines why the United States repeatedly reaches for military solutions and why such interventions rarely produce durable peace. The deeper problem with the U. S. war in Iran, as I see it, was overconfidence bred by recent success.],
+  [Dismissed concerns],
+  [Before the conflict involving Iran, Israel and the U. S. escalated, Energy Secretary Chris Wright dismissed concerns about oil market disruption , noting that prices had barely moved during the 12-day war in June 2025 between Israel and Iran. Other senior officials agreed .],
+  [What followed was significant: Iranian-aimed missile and drone barrages against U. S. bases, Arab capitals and Israeli population centers. Then Iran effectively closed the Strait of Hormuz , through which roughly 20% of the world’s oil supply passes daily − not with a naval blockade, not with mines or massed anti-ship missiles, but with cheap drones.],
+  [A few strikes in the vicinity of the strait were enough. Insurers and shipping companies decided the transit was unsafe. Tanker traffic dropped to zero , although the occasional ship has made it through recently . Analysts are calling it the biggest energy crisis since the 1970s oil embargo .],
+  [President Donald Trump expressed anger on March 17, 2026, at allies who did not agree to help the U. S. force the reopening of the Strait of Hormuz to tanker traffic.],
+  [Iran’s new supreme leader, Mojtaba Khamenei, has since vowed to keep the strait closed . U. S. Sen. Chris Murphy, a Connecticut Democrat, reported after a closed-door briefing that the administration had no plan for the strait and did not know how to get it safely back open.],
+  [With no embassy in Tehran since 1979 , the U. S. relies heavily for intelligence on CIA networks of questionable quality and Israeli assets who have their own country’s interests in mind . So the U. S. did not anticipate that Iran had rebuilt and dispersed significant military capacity since June 2025, nor that it would strike neighbors across the region, including Azerbaijan, widening the conflict well beyond the Persian Gulf.],
+  [The war has since reached the Indian Ocean, where a U. S. submarine sank an Iranian frigate 2,000 miles from the theater of war, off the coast of Sri Lanka – just days after the ship had participated in Indian navy exercises alongside 74 nations, including the U. S.],
+  [The diplomatic damage to Washington’s relationships with India and Sri Lanka , two countries whose cooperation is increasingly important as the United States seeks partners to manage and mitigate Iran’s blockade, was entirely foreseeable. Washington has put them in a difficult position, with India choosing diplomacy with Iran to secure passage for its vessels and Sri Lanka opting to retain its neutrality, underscoring its vulnerable position .],
+  [But U. S. planners didn’t foresee any of this.],
+  [The wrong lesson from Venezuela],
+  [The swift military intervention by the U. S. in Venezuela in January 2026 produced rapid results with minimal blowback − appearing to validate the administration’s faith in coercive action.],
+  [But clean victories are dangerous teachers.],
+  [They inflate what I call in my teaching the “hubris/humility index” − the more a leadership overestimates its own abilities, underestimates the adversary’s and dismisses uncertainty, the higher the score and the more likely disaster will ensue. Clean victories inflate the index precisely when skepticism is most needed, because they suggest the next adversary will be as manageable as the last.],
+  [Political scientist Robert Jervis demonstrated decades ago that misperceptions in international relations are not random but follow patterns . Leaders tend to project their own cost-benefit logic onto opponents who do not share it. They also fall into “ availability bias ,” allowing the most recent operation to stand in for the next.],
+  [The higher the hubris/humility index, the less likely there is to be the kind of strategic empathy that might ask: How does Tehran see this? What does a regime that believes its survival is at stake actually do? History shows that such a regime escalates, improvises and takes risks that appear irrational from an outside perspective but are entirely rational from within .],
+  [Recent cases reveal this unmistakable pattern.],
+  [The United States in Vietnam, 1965–1968],
+  [American war planners believed material superiority would force the communists in Hanoi to surrender.],
+  [It didn’t.],
+  [American firepower alone didn’t lead to military defeat, much less political control. The Tet Offensive in 1968 – when North Vietnamese and Viet Cong forces launched coordinated attacks across South Vietnam – shattered the official U. S. narrative that the war was nearly won and that there was “ light at the end of the tunnel .”],
+  [Athough the U. S. and South Vietnamese forces ultimately repelled the attacks, their scale and surprise caused the public not to trust official statements, accelerating the erosion of public trust and decisively turning American opinion against the war .],
+  [The U. S. loss in Vietnam didn’t occur on a single battlefield, but through strategic and political unraveling. Despite overwhelming superiority, Washington was incapable of building a stable, legitimate South Vietnamese government or recognizing the grit and resilience of the North Vietnamese forces. Eventually, with mounting casualties and large-scale protests at home, U. S. forces withdrew, ceding control of Saigon to North Vietnamese forces in 1975.],
+  [In this April 29, 1975, file photo, a helicopter lifts off from the U. S. Embassy in Saigon, South Vietnam, during a last-minute evacuation of authorized personnel and civilians. 
+ AP Photo.],
+  [The U. S. failure was conceptual and cultural, not informational. American analysts simply couldn’t picture the war from their opponent’s perspective.],
+  [Afghanistan: Deadly assumptions],
+  [The Soviet Union in Afghanistan in 1979 and the United States in Afghanistan after 2001 conducted two different wars but held the same deadly assumption: that external military force can quickly impose political order in a fractured society strongly resistant to foreign control.],
+  [In both cases, great powers believed their abilities would outweigh local complexities . In both cases, the war evolved faster − and lasted far longer − than their strategies could adapt.],
+  [Russia, Ukraine and the Strait of Hormuz],
+  [This is the case that should most haunt Washington.],
+  [Ukraine demonstrated that a materially weaker defender can impose huge costs on a stronger attacker through battlefield innovation : cheap drones, decentralized adaptation, real-time intelligence, and the creative use of terrain and chokepoints to find asymmetrical advantages. The U. S. watched it all unfold in real time for four years and helped pay for it .],
+  [Iran was also watching − and the Strait of Hormuz is the proof.],
+  [Iran didn’t need a navy to close the world’s most important energy chokepoint . It needed drones, the same cheap, asymmetric technology Ukraine has used to blunt Russia’s onslaught , deployed not on a land front but against the insurance calculus of the global shipping industry.],
+  [Washington, which had underwritten much of that playbook in Ukraine, apparently never asked the obvious question: What happens when the other side has been taking notes? That is not a failure of U. S. intelligence. It is a failure of strategic imagination − exactly what the hubris/humility index is designed to highlight.],
+  [Iran does not need to defeat the U. S. conventionally. It needs only to raise costs, exploit chokepoints and wait for a fracture among U. S. allies and domestic political opposition to force a fake U. S. declaration of victory or a genuine U. S. withdrawal.],
+  [Notably, Iran has kept the strait selectively open to Turkish, Indian and Saudi vessels , rewarding neutral countries and punishing U. S. allies, driving wedges through the coalition.],
+  [Historian Geoffrey Blainey famously argued that wars start when both sides hold incompatible beliefs about power and only end when reality forces those beliefs to align .],
+  [That alignment is now happening, at great cost, in the Persian Gulf and beyond. The Trump administration scored high on the hubris index at exactly the moment when it most needed humility.],
+  [class="fine-print"\> Monica Duffy Toft does not work for, consult, own shares in or receive funding from any company or organization that would benefit from this article, and has disclosed no relevant affiliations beyond their academic appointment.],
 ),
   insert-map: (:),
-  word-count: 1959,
+  word-count: 1469,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -1135,50 +338,699 @@ In Rails, you can actually use a helper method instead: expires\_in 1.minute, :p
 
 {
   #standard-article(
-  title: [presenting the rails activists],
+  title: [How we use Abstract Syntax Trees (ASTs) to turn Workflows code into visual diagrams],
+  author: [André Venceslau],
+  source-name: [Cloudflare Blog],
+  images: (),
+  paragraphs: (
+  [Cloudflare Workflows is a durable execution engine that lets you chain steps, retry on failure, and persist state across long-running processes. Developers use Workflows to power background agents, manage data pipelines, build human-in-the-loop approval systems, and more.],
+  [Last month, we announced that every workflow deployed to Cloudflare now has a complete visual diagram in the dashboard.],
+  [We built this because being able to visualize your applications is more important now than ever before. Coding agents are writing code that you may or may not be reading. However, the shape of what gets built still matters: how the steps connect, where they branch, and what's actually happening.],
+  [If you've seen diagrams from visual workflow builders before, those are usually working from something declarative: JSON configs, YAML, drag-and-drop. However, Cloudflare Workflows are just code. They can include Promises, Promise.all, loops, conditionals, and/or be nested in functions or classes. This dynamic execution model makes rendering a diagram a bit more complicated.],
+  [We use Abstract Syntax Trees (ASTs) to statically derive the graph, tracking Promise and await relationships to understand what runs in parallel, what blocks, and how the pieces connect.],
+  [Keep reading to learn how we built these diagrams, or deploy your first workflow and see the diagram for yourself.],
+  [Here’s an example of a diagram generated from Cloudflare Workflows code:],
+  [Dynamic workflow execution],
+  [Generally, workflow engines can execute according to either dynamic or sequential (static) execution order. Sequential execution might seem like the more intuitive solution: trigger workflow → step A → step B → step C, where step B starts executing immediately after the engine completes Step A, and so forth.],
+  [Cloudflare Workflows follow the dynamic execution model. Since workflows are just code, the steps execute as the runtime encounters them. When the runtime discovers a step, that step gets passed over to the workflow engine, which manages its execution. The steps are not inherently sequential unless awaited — the engine executes all unawaited steps in parallel. This way, you can write your workflow code as flow control without additional wrappers or directives. Here’s how the handoff works:],
+  [An engine , which is a “supervisor” Durable Object for that instance, spins up. The engine is responsible for the logic of the actual workflow execution.],
+  [The engine triggers a user worker via dynamic dispatch , passing control over to Workers runtime.],
+  [When Runtime encounters a step.do , it passes the execution back to the engine.],
+  [The engine executes the step, persists the result (or throws an error, if applicable) and triggers the user Worker again.],
+  [With this architecture, the engine does not inherently “know” the order of the steps that it is executing — but for a diagram, the order of steps becomes crucial information. The challenge here lies in getting the vast majority of workflows translated accurately into a diagnostically helpful graph; with the diagrams in beta, we will continue to iterate and improve on these representations.],
+  [Parsing the code],
+  [Fetching the script at deploy time , instead of run time, allows us to parse the workflow in its entirety to statically generate the diagram.],
+  [Taking a step back, here is the life of a workflow deployment:],
+  [To create the diagram, we fetch the script after it has been bundled by the internal configuration service which deploys Workers (step 2 under Workflow deployment). Then, we use a parser to create an abstract syntax tree (AST) representing the workflow, and our internal service generates and traverses an intermediate graph with all WorkflowEntrypoints and calls to workflows steps. We render the diagram based on the final result on our API.],
+  [When a Worker is deployed, the configuration service bundles (using esbuild by default) and minifies the code unless specified otherwise . This presents another challenge — while Workflows in TypeScript follow an intuitive pattern, their minified Javascript (JS) can be dense and indigestible. There are also different ways that code can be minified, depending on the bundler.],
+  [Here’s an example of Workflow code that shows agents executing in parallel:],
+  [const summaryPromise = step.do(
+ \`summary agent (loop \${loop})\`,
+ async () =\> {
+ return runAgentPrompt(
+ this.env,
+ SUMMARY\_SYSTEM,
+ buildReviewPrompt(
+ 'Summarize this text in 5 bullet points.',
+ draft,
+ input.context
+ )
+ );
+ }
+ );
+ const correctnessPromise = step.do(
+ \`correctness agent (loop \${loop})\`,
+ async () =\> {
+ return runAgentPrompt(
+ this.env,
+ CORRECTNESS\_SYSTEM,
+ buildReviewPrompt(
+ 'List correctness issues and suggested fixes.',
+ draft,
+ input.context
+ )
+ );
+ }
+ );
+ const clarityPromise = step.do(
+ \`clarity agent (loop \${loop})\`,
+ async () =\> {
+ return runAgentPrompt(
+ this.env,
+ CLARITY\_SYSTEM,
+ buildReviewPrompt(
+ 'List clarity issues and suggested fixes.',
+ draft,
+ input.context
+ )
+ );
+ }
+ );],
+  [Bundling with rspack , a snippet of the minified code looks like this:],
+  [class pe extends e{async run(e,t){de("workflow.run.start",{instanceId:e.instanceId});const r=await t.do("validate payload",async()=\>{if(!e.payload.r2Key)throw new Error("r2Key is required");if(!e.payload.telegramChatId)throw new Error("telegramChatId is required");return{r2Key:e.payload.r2Key,telegramChatId:e.payload.telegramChatId,context:e.payload.context?.trim()}}),s=await t.do("load source document from r2",async()=\>{const e=await this.env. REVIEW\_DOCUMENTS.get(r.r2Key);if(!e)throw new Error(\`R2 object not found: \${r.r2Key}\`);const t=(await e.text()).trim();if(!t)throw new Error("R2 object is empty");return t}),n=Number(this.env. MAX\_REVIEW\_LOOPS??"5"),o=this.env. RESPONSE\_TIMEOUT??"7 days",a=async(s,i,c)=\>{if(s\>n)return le("workflow.loop.max\_reached",{instanceId:e.instanceId,maxLoops:n}),await t.do("notify max loop reached",async()=\>{await se(this.env,r.telegramChatId,\`Review stopped after \${n} loops for \${e.instanceId}. Start again if you still need revisions.\`)}),{approved:!1,loops:n,finalText:i};const h=t.do(\`summary agent (loop \${s})\`,async()=\>te(this.env,"You summarize documents. Keep the output short, concrete, and factual.",ue("Summarize this text in 5 bullet points.",i,r.context)))...],
+  [Or, bundling with vite , here is a minified snippet:],
+  [class ht extends pe {],
+  [async run(e, r) {],
+  [b("workflow.run.start", { instanceId: e.instanceId });],
+  [const s = await r.do("validate payload", async () =\> {],
+  [if (!e.payload.r2Key)],
+  [throw new Error("r2Key is required");],
+  [if (!e.payload.telegramChatId)],
+  [throw new Error("telegramChatId is required");],
+  [return {],
+  [r2Key: e.payload.r2Key,],
+  [telegramChatId: e.payload.telegramChatId,],
+  [context: e.payload.context?.trim()],
+  [};],
+  [}), n = await r.do(],
+  ["load source document from r2",],
+  [async () =\> {],
+  [const i = await this.env. REVIEW\_DOCUMENTS.get(s.r2Key);],
+  [if (!i)],
+  [throw new Error(\`R2 object not found: \${s.r2Key}\`);],
+  [const c = (await i.text()).trim();],
+  [if (!c)],
+  [throw new Error("R2 object is empty");],
+  [return c;],
+  [}],
+  [), o = Number(this.env. MAX\_REVIEW\_LOOPS ?? "5"), l = this.env. RESPONSE\_TIMEOUT ?? "7 days", a = async (i, c, u) =\> {],
+  [if (i \> o)],
+  [return H("workflow.loop.max\_reached", {],
+  [instanceId: e.instanceId,],
+  [maxLoops: o],
+  [}), await r.do("notify max loop reached", async () =\> {],
+  [await J(],
+  [this.env,],
+  [s.telegramChatId,],
+  [\`Review stopped after \${o} loops for \${e.instanceId}. Start again if you still need revisions.\`],
+  [);],
+  [}), {],
+  [approved: !1,],
+  [loops: o,],
+  [finalText: c],
+  [};],
+  [const h = r.do(],
+  [\`summary agent (loop \${i})\`,],
+  [async () =\> \_(],
+  [this.env,],
+  [et,],
+  [K(],
+  ["Summarize this text in 5 bullet points.",],
+  [c,],
+  [s.context],
+  [)],
+  [)],
+  [)...],
+  [Minified code can get pretty gnarly — and depending on the bundler, it can get gnarly in a bunch of different directions.],
+  [We needed a way to parse the various forms of minified code quickly and precisely. We decided oxc-parser from the JavaScript Oxidation Compiler (OXC) was perfect for the job. We first tested this idea by having a container running Rust. Every script ID was sent to a Cloudflare Queue , after which messages were popped and sent to the container to process. Once we confirmed this approach worked, we moved to a Worker written in Rust. Workers supports running Rust via WebAssembly , and the package was small enough to make this straightforward.],
+  [The Rust Worker is responsible for first converting the minified JS into AST node types, then converting the AST node types into the graphical version of the workflow that is rendered on the dashboard. To do this, we generate a graph of pre-defined node types for each workflow and translate into our graph representation through a series of node mappings.],
+  [Rendering the diagram],
+  [There were two challenges to rendering a diagram version of the workflow: how to track step and function relationships correctly, and how to define the workflow node types as simply as possible while covering all the surface area.],
+  [To guarantee that step and function relationships are tracked correctly, we needed to collect both the function and step names. As we discussed earlier, the engine only has information about the steps, but a step may be dependent on a function, or vice versa. For example, developers might wrap steps in functions or define functions as steps. They could also call steps within a function that come from different modules or rename steps.],
+  [Although the library passes the initial hurdle by giving us the AST, we still have to decide how to parse it. Some code patterns require additional creativity. For example, functions — within a WorkflowEntrypoint , there can be functions that call steps directly, indirectly, or not at all. Consider functionA , which contains console.log(await functionB(), await functionC() ) where functionB calls a step.do() . In that case, both functionA and functionB should be included on the workflow diagram; however, functionC should not. To catch all functions which include direct and indirect step calls, we create a subgraph for each function and check whether it contains a step call itself or whether it calls another function which might. Those subgraphs are represented by a function node, which contains all of its relevant nodes. If a function node is a leaf of the graph, meaning it has no direct or indirect workflow steps within it, it is trimmed from the final output.],
+  [We check for other patterns as well, including a list of static steps from which we can infer the workflow diagram or variables, defined in up to ten different ways. If your script contains multiple workflows, we follow a similar pattern to the subgraphs created for functions, abstracted one level higher.],
+  [For every AST node type, we had to consider every way they could be used inside of a workflow: loops, branches, promises, parallels, awaits, arrow functions… the list goes on. Even within these paths, there are dozens of possibilities. Consider just a few of the possible ways to loop:],
+  [\/\\/ for...of
+for (const item of items) {
+ await step.do(\`process \${item}\`, async () =\> item);
+}
+\/\\/ while
+while (shouldContinue) {
+ await step.do('poll', async () =\> getStatus());
+}
+\/\\/ map
+await Promise.all(
+ items.map((item) =\> step.do(\`map \${item}\`, async () =\> item)),
+);
+\/\\/ forEach
+await items.forEach(async (item) =\> {
+ await step.do(\`each \${item}\`, async () =\> item);
+});],
+  [And beyond looping, how to handle branching:],
+  [\/\\/ switch \/ case
+switch (action.type) {
+ case 'create':
+ await step.do('handle create', async () =\> {});
+ break;
+ default:
+ await step.do('handle unknown', async () =\> {});
+ break;
+}],
+  [\/\\/ if \/ else if \/ else
+if (status === 'pending') {
+ await step.do('pending path', async () =\> {});
+} else if (status === 'active') {
+ await step.do('active path', async () =\> {});
+} else {
+ await step.do('fallback path', async () =\> {});
+}],
+  [\/\\/ ternary operator
+await (cond
+ ? step.do('ternary true branch', async () =\> {})
+ : step.do('ternary false branch', async () =\> {}));],
+  [\/\\/ nullish coalescing with step on RHS
+const myStepResult =
+ variableThatCanBeNullUndefined ??
+ (await step.do('nullish fallback step', async () =\> 'default'));],
+  [\/\\/ try/catch with finally
+try {
+ await step.do('try step', async () =\> {});
+} catch (\_e) {
+ await step.do('catch step', async () =\> {});
+} finally {
+ await step.do('finally step', async () =\> {});
+}],
+  [Our goal was to create a concise API that communicated what developers need to know without overcomplicating it. But converting a workflow into a diagram meant accounting for every pattern (whether it follows best practices, or not) and edge case possible. As we discussed earlier, each step is not explicitly sequential, by default, to any other step. If a workflow does not utilize await and Promise.all() , we assume that the steps will execute in the order in which they are encountered. But if a workflow included await , Promise or Promise.all() , we needed a way to track those relationships.],
+  [We decided on tracking execution order, where each node has a starts: and resolves: field. The starts and resolves indices tell us when a promise started executing and when it ends relative to the first promise that started without an immediate, subsequent conclusion. This correlates to vertical positioning in the diagram UI (i.e., all steps with starts:1 will be inline). If steps are awaited when they are declared, then starts and resolves will be undefined, and the workflow will execute in the order of the steps’ appearance to the runtime.],
+  [While parsing, when we encounter an unawaited Promise or Promise.all() , that node (or nodes) are marked with an entry number, surfaced in the starts field. If we encounter an await on that promise, the entry number is incremented by one and saved as the exit number (which is the value in resolves ). This allows us to know which promises run at the same time and when they’ll complete in relation to each other.],
+  [export class ImplicitParallelWorkflow extends WorkflowEntrypoint {
+ async run(event: WorkflowEvent , step: WorkflowStep) {
+ const branchA = async () =\> {
+ const a = step.do("task a", async () =\> "a"); \/\/starts 1
+ const b = step.do("task b", async () =\> "b"); \/\/starts 1
+ const c = await step.waitForEvent("task c", { type: "my-event", timeout: "1 hour" }); \/\/starts 1 resolves 2
+ await step.do("task d", async () =\> JSON.stringify(c)); \/\/starts 2 resolves 3
+ return Promise.all(\[a, b\]); \/\/resolves 3
+ };],
+  [const branchB = async () =\> {
+ const e = step.do("task e", async () =\> "e"); \/\/starts 1
+ const f = step.do("task f", async () =\> "f"); \/\/starts 1
+ return Promise.all(\[e, f\]); \/\/resolves 2
+ };],
+  [await Promise.all(\[branchA(), branchB()\]);],
+  [await step.sleep("final sleep", 1000);
+ }
+}],
+  [You can see the steps’ alignment in the diagram:],
+  [After accounting for all of those patterns, we settled on the following list of node types:],
+  [| StepSleep
+| StepDo
+| StepWaitForEvent
+| StepSleepUntil
+| LoopNode
+| ParallelNode
+| TryNode
+| BlockNode
+| IfNode
+| SwitchNode
+| StartNode
+| FunctionCall
+| FunctionDef
+| BreakNode;],
+  [Here are a few samples of API output for different behaviors:],
+  [function call:],
+  [{
+ "functions": {
+ "runLoop": {
+ "name": "runLoop",
+ "nodes": \[\]
+ }
+ }
+}],
+  [if condition branching to step.do :],
+  [{
+ "type": "if",
+ "branches": \[
+ {
+ "condition": "loop \> maxLoops",
+ "nodes": \[
+ {
+ "type": "step\_do",
+ "name": "notify max loop reached",
+ "config": {
+ "retries": {
+ "limit": 5,
+ "delay": 1000,
+ "backoff": "exponential"
+ },
+ "timeout": 10000
+ },
+ "nodes": \[\]
+ }
+ \]
+ }
+ \]
+}],
+  [parallel with step.do and waitForEvent :],
+  [{
+ "type": "parallel",
+ "kind": "all",
+ "nodes": \[
+ {
+ "type": "step\_do",
+ "name": "correctness agent (loop \${...})",
+ "config": {
+ "retries": {
+ "limit": 5,
+ "delay": 1000,
+ "backoff": "exponential"
+ },
+ "timeout": 10000
+ },
+ "nodes": \[\],
+ "starts": 1
+ },
+...
+ {
+ "type": "step\_wait\_for\_event",
+ "name": "wait for user response (loop \${...})",
+ "options": {
+ "event\_type": "user-response",
+ "timeout": "unknown"
+ },
+ "starts": 3,
+ "resolves": 4
+ }
+ \]
+}],
+  [What’s next],
+  [Ultimately, the goal of these Workflow diagrams is to serve as a full-service debugging tool. That means you’ll be able to:],
+  [Trace an execution through the graph in real time],
+  [Discover errors, wait for human-in-the-loop approvals, and skip steps for testing],
+  [Access visualizations in local development],
+  [Check out the diagrams on your Workflow overview pages . If you have any feature requests or notice any bugs, share your feedback directly with the Cloudflare team by joining the Cloudflare Developers community on Discord .],
+),
+  insert-map: (:),
+  inline-pq: pull-quote([",ue("Summarize this text in 5 bullet points.], [André Venceslau]),
+  inline-pq-idx: 46,
+  word-count: 2460,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+}
+
+{
+  #standard-article(
+  title: [Some notes on upgrading Hugo],
+  author: [Julia Evans],
+  source-name: [Julia Evans],
+  images: (),
+  paragraphs: (
+  [Warning: this is a post about very boring yakshaving, probably only of interest
+to people who are trying to upgrade Hugo from a very old version to a new
+version. But what are blogs for if not documenting one’s very boring yakshaves
+from time to time?],
+  [So yesterday I decided to try to upgrade Hugo. There’s no real reason to do
+this – I’ve been using Hugo version 0.40 to generate this blog since 2018, it
+works fine, and I don’t have any problems with it. But I thought – maybe it
+won’t be as hard as I think, and I kind of like a tedious computer task sometimes!],
+  [I thought I’d document what I learned along the way in case it’s useful to
+anyone else doing this very specific migration. I upgraded from Hugo v0.40
+(from 2018) to v0.135 (from 2024).],
+  [Here are most of the changes I had to make:],
+  [id="change-1-template-theme-partials-thing-html-is-now-partial-thing-html"\>change 1: template "theme/partials/thing.html is now partial thing.html],
+  [I had to replace a bunch of instances of {{ template "theme/partials/header.html" . }} with {{ partial "header.html" . }} .],
+  [This happened in v0.42 :],
+  [We have now virtualized the filesystems for project and theme files. This
+makes everything simpler, faster and more powerful. But it also means that
+template lookups on the form {{ template “theme/partials/pagination.html” .
+}} will not work anymore. That syntax has never been documented, so it’s not
+expected to be in wide use.],
+  [id="change-2-data-pages-is-now-site-regularpages"\>change 2: . Data. Pages is now site. RegularPages],
+  [This seems to be discussed in the release notes for 0.57.2],
+  [I just needed to replace . Data. Pages with site. RegularPages in the template on the homepage as well as in my RSS feed template.],
+  [id="change-3-next-and-prev-got-flipped"\>change 3: . Next and . Prev got flipped],
+  [I had this comment in the part of my theme where I link to the next/previous blog post:],
+  [“next” and “previous” in hugo apparently mean the opposite of what I’d think
+they’d mean intuitively. I’d expect “next” to mean “in the future” and
+“previous” to mean “in the past” but it’s the opposite],
+  [It looks they changed this in
+ ad705aac064 
+so that “next” actually is in the future and “prev” actually is in the past. I
+definitely find the new behaviour more intuitive.],
+  [id="downloading-the-hugo-changelogs-with-a-script"\>downloading the Hugo changelogs with a script],
+  [Figuring out why/when all of these changes happened was a little difficult. I
+ended up hacking together a bash script to download all of the changelogs from github as text files , which I
+could then grep to try to figure out what happened. It turns out it’s pretty
+easy to get all of the changelogs from the GitHub API.],
+  [So far everything was not so bad – there was also a change around taxonomies
+that’s I can’t quite explain, but it was all pretty manageable, but then we got
+to the really tough one: the markdown renderer.],
+  [id="change-4-the-markdown-renderer-blackfriday-goldmark"\>change 4: the markdown renderer (blackfriday -\> goldmark)],
+  [The blackfriday markdown renderer (which was previously the default) was removed in v0.100.0 . This seems pretty reasonable:],
+  [It has been deprecated for a long time, its v1 version is not maintained
+anymore, and there are many known issues. Goldmark should be a mature
+replacement by now.],
+  [Fixing all my Markdown changes was a huge pain – I ended up having to update
+80 different Markdown files (out of 700) so that they would render properly, and I’m not totally sure],
+  [id="why-bother-switching-renderers"\>why bother switching renderers?],
+  [The obvious question here is – why bother even trying to upgrade Hugo at all
+if I have to switch Markdown renderers?
+My old site was running totally fine and I think it wasn’t necessarily a good 
+use of time, but the one reason I think it might be useful in the future is
+that the new renderer (goldmark) uses the CommonMark markdown standard , which I’m hoping will be somewhat
+more futureproof. So maybe I won’t have to go through this again? We’ll see.],
+  [Also it turned out that the new Goldmark renderer does fix some problems I had
+(but didn’t know that I had) with smart quotes and how lists/blockquotes
+interact.],
+  [id="finding-all-the-markdown-problems-the-process"\>finding all the Markdown problems: the process],
+  [The hard part of this Markdown change was even figuring out what changed.
+Almost all of the problems (including \#2 and \#3 above) just silently broke the
+site, they didn’t cause any errors or anything. So I had to diff the HTML to
+hunt them down.],
+  [Here’s what I ended up doing:],
+  [Generate the site with the old version, put it in public\_old],
+  [Generate the new version, put it in public],
+  [Diff every single HTML file in public\/ and public\_old with this diff.sh script and put the results in a diffs\/ folder],
+  [Run variations on find diffs -type f | xargs cat | grep -C 5 '(31m|32m)' | less -r over and over again to look at every single change until I found something that seemed wrong],
+  [Update the Markdown to fix the problem],
+  [Repeat until everything seemed okay],
+  [(the grep 31m|32m thing is searching for red/green text in the diff)],
+  [This was very time consuming but it was a little bit fun for some reason so I
+kept doing it until it seemed like nothing too horrible was left.],
+  [id="the-new-markdown-rules"\>the new markdown rules],
+  [Here’s a list of every type of Markdown change I had to make. It’s very
+possible these are all extremely specific to me but it took me a long time to
+figure them all out so maybe this will be helpful to one other person who finds
+this in the future.],
+  [id="4-1-mixing-html-and-markdown"\>4.1: mixing HTML and markdown],
+  [This doesn’t work anymore (it doesn’t expand the link):],
+  [\[a link\](https:\/\/example.com)],
+  [I need to do this instead:],
+  [\[a link\](https:\/\/example.com)],
+  [This works too:],
+  [\[a link\](https:\/\/example.com)],
+  [id="4-2-is-changed-into"\>4.2: 4.3: nested lists sometimes need 4 space indents],
+  [This doesn’t render as a nested list anymore if I only indent by 2 spaces, I need to put 4 spaces.],
+  [1. a
+ \* b
+ \* c
+2. b],
+  [The problem is that the amount of indent needed depends on the size of the list
+markers. Here’s a reference in CommonMark for this .],
+  [id="4-4-blockquotes-inside-lists-work-better"\>4.4: blockquotes inside lists work better],
+  [Previously the \> quote here didn’t render as a blockquote, and with the new renderer it does.],
+  [\* something
+\> quote
+\* something else],
+  [I found a bunch of Markdown that had been kind of broken (which I hadn’t
+noticed) that works better with the new renderer, and this is an example of
+that.],
+  [Lists inside blockquotes also seem to work better.],
+  [id="4-5-headings-inside-lists"\>4.5: headings inside lists],
+  [Previously this didn’t render as a heading, but now it does. So I needed to
+replace the \# with \# .],
+  [\* \# passengers: 20],
+  [id="4-6-or-1-at-the-beginning-of-the-line-makes-it-a-list"\>4.6: + or 1) at the beginning of the line makes it a list],
+  [I had something which looked like this:],
+  [\`1 \/ (1
++ exp(-1)) = 0.73\`],
+  [With Blackfriday it rendered like this:],
+  [1 \/ (1
++ exp(-1)) = 0.73],
+  [and with Goldmark it rendered like this:],
+  [\`1 \/ (1 
+ 
+ exp(-1)) = 0.73\`],
+  [Same thing if there was an accidental 1) at the beginning of a line, like in this Markdown snippet],
+  [I set up a small Hadoop cluster (1 master, 2 workers, replication set to 
+1) on],
+  [To fix this I just had to rewrap the line so that the + wasn’t the first character.],
+  [The Markdown is formatted this way because I wrap my Markdown to 80 characters
+a lot and the wrapping isn’t very context sensitive.],
+  [id="4-7-no-more-smart-quotes-in-code-blocks"\>4.7: no more smart quotes in code blocks],
+  [There were a bunch of places where the old renderer (Blackfriday) was doing
+unwanted things in code blocks like replacing ... with … or replacing
+quotes with smart quotes. I hadn’t realized this was happening and I was very
+happy to have it fixed.],
+  [id="4-8-better-quote-management"\>4.8: better quote management],
+  [The way this gets rendered got better:],
+  ["Oh, \*interesting\*!"],
+  [old: “Oh, interesting !“],
+  [new: “Oh, interesting !”],
+  [Before there were two left smart quotes, now the quotes match.],
+  [id="4-9-images-are-no-longer-wrapped-in-a-p-tag"\>4.9: images are no longer wrapped in a p tag],
+  [Previously if I had an image like this:],
+  [it would get wrapped in a tag, now it doesn’t anymore. I dealt with this
+just by adding a margin-bottom: 0.75em to images in the CSS, hopefully
+that’ll make them display well enough.],
+  [id="4-10-br-is-now-wrapped-in-a-p-tag"\>4.10: is now wrapped in a p tag],
+  [Previously this wouldn’t get wrapped in a p tag, but now it seems to:],
+  [I just gave up on fixing this though and resigned myself to maybe having some
+extra space in some cases. Maybe I’ll try to fix it later if I feel like
+another yakshave.],
+  [id="4-11-some-more-goldmark-settings"\>4.11: some more goldmark settings],
+  [I also needed to],
+  [turn off code highlighting (because it wasn’t working properly and I didn’t have it before anyway)],
+  [use the old “blackfriday” method to generate heading IDs so they didn’t change],
+  [allow raw HTML in my markdown],
+  [Here’s what I needed to add to my config.yaml to do all that:],
+  [markup:
+ highlight:
+ codeFences: false
+ goldmark:
+ renderer:
+ unsafe: true
+ parser:
+ autoHeadingIDType: blackfriday],
+  [Maybe I’ll try to get syntax highlighting working one day, who knows. I might
+prefer having it off though.],
+  [id="a-little-script-to-compare-blackfriday-and-goldmark"\>a little script to compare blackfriday and goldmark],
+  [I also wrote a little program to compare the Blackfriday and Goldmark output
+for various markdown snippets, here it is in a gist .],
+  [It’s not really configured the exact same way Blackfriday and Goldmark were in
+my Hugo versions, but it was still helpful to have to help me understand what
+was going on.],
+  [id="a-quick-note-on-maintaining-themes"\>a quick note on maintaining themes],
+  [My approach to themes in Hugo has been:],
+  [pay someone to make a nice design for the site (for example wizardzines.com was designed by Melody Starling )],
+  [use a totally custom theme],
+  [commit that theme to the same Github repo as the site],
+  [So I just need to edit the theme files to fix any problems. Also I wrote a lot
+of the theme myself so I’m pretty familiar with how it works.],
+  [Relying on someone else to keep a theme updated feels kind of scary to me, I
+think if I were using a third-party theme I’d just copy the code into my site’s
+github repo and then maintain it myself.],
+  [id="which-static-site-generators-have-better-backwards-compatibility"\>which static site generators have better backwards compatibility?],
+  [I asked on Mastodon if
+anyone had used a static site generator with good backwards compatibility.],
+  [The main answers seemed to be Jekyll and 11ty. Several people said they’d been
+using Jekyll for 10 years without any issues, and 11ty says it has
+ stability as a core goal .],
+  [I think a big factor in how appealing Jekyll/11ty are is how easy it is for you
+to maintain a working Ruby \/ Node environment on your computer: part of the
+reason I stopped using Jekyll was that I got tired of having to maintain a
+working Ruby installation. But I imagine this wouldn’t be a problem for a Ruby
+or Node developer.],
+  [Several people said that they don’t build their Jekyll site locally at all –
+they just use GitHub Pages to build it.],
+  [id="that-s-it"\>that’s it!],
+  [Overall I’ve been happy with Hugo – I started using it because it had fast
+build times and it was a static binary, and both of those things are still
+extremely useful to me. I might have spent 10 hours on this upgrade, but I’ve
+probably spent 1000+ hours writing blog posts without thinking about Hugo at
+all so that seems like an extremely reasonable ratio.],
+  [I find it hard to be too mad about the backwards incompatible changes, most of
+them were quite a long time ago, Hugo does a great job of making their old
+releases available so you can use the old release if you want, and the most
+difficult one is removing support for the blackfriday Markdown renderer in
+favour of using something CommonMark-compliant which seems pretty reasonable to
+me even if it is a huge pain.],
+  [But it did take a long time and I don’t think I’d particularly recommend moving
+700 blog posts to a new Markdown renderer unless you’re really in the mood for
+a lot of computer suffering for some reason.],
+  [The new renderer did fix a bunch of problems so I think overall it might be a
+good thing, even if I’ll have to remember to make 2 changes to how I write
+Markdown (4.1 and 4.3).],
+  [Also I’m still using Hugo 0.54 for https:\/\/wizardzines.com so maybe these notes
+will be useful to Future Me if I ever feel like upgrading Hugo for that site.],
+  [Hopefully I didn’t break too many things on the blog by doing this, let me know
+if you see anything broken!],
+),
+  insert-map: (:),
+  word-count: 2107,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+}
+
+{
+  #standard-article(
+  title: [Investigating multi-vector attacks in Log Explorer],
+  author: [Jen Sells],
+  source-name: [Cloudflare Blog],
+  images: (),
+  paragraphs: (
+  [In the world of cybersecurity, a single data point is rarely the whole story. Modern attackers don’t just knock on the front door; they probe your APIs, flood your network with "noise" to distract your team, and attempt to slide through applications and servers using stolen credentials.],
+  [To stop these multi-vector attacks, you need the full picture. By using Cloudflare Log Explorer to conduct security forensics, you get 360-degree visibility through the integration of 14 new datasets, covering the full surface of Cloudflare’s Application Services and Cloudflare One product portfolios. By correlating telemetry from application-layer HTTP requests, network-layer DDoS and Firewall logs, and Zero Trust Access events, security analysts can significantly reduce Mean Time to Detect (MTTD) and effectively unmask sophisticated, multi-layered attacks.],
+  [Read on to learn more about how Log Explorer gives security teams the ultimate landscape for rapid, deep-dive forensics.],
+  [The flight recorder for your entire stack],
+  [The contemporary digital landscape requires deep, correlated telemetry to defend against adversaries using multiple attack vectors. Raw logs serve as the "flight recorder" for an application, capturing every single interaction, attack attempt, and performance bottleneck. And because Cloudflare sits at the edge, between your users and your servers, all of these events are logged before the requests even reach your infrastructure.],
+  [Cloudflare Log Explorer centralizes these logs into a unified interface for rapid investigation.],
+  [Zone-Scoped Logs],
+  [Focus: Website traffic, security events, and edge performance.],
+  [HTTP Requests],
+  [As the most comprehensive dataset, it serves as the "primary record" of all application-layer traffic, enabling the reconstruction of session activity, exploit attempts, and bot patterns.],
+  [Provides critical evidence of blocked or challenged threats, allowing analysts to identify the specific WAF rules, IP reputations, or custom filters that intercepted an attack.],
+  [DNS Logs],
+  [Identify cache poisoning attempts, domain hijacking, and infrastructure-level reconnaissance by tracking every query resolved at the authoritative edge.],
+  [NEL (Network Error Logging) Reports],
+  [Distinguish between a coordinated Layer 7 DDoS attack and legitimate network connectivity issues by tracking client-side browser errors.],
+  [For non-web applications, these logs provide visibility into L4 traffic (TCP/UDP), helping to identify anomalies or brute-force attacks against protocols like SSH, RDP, or custom gaming traffic.],
+  [Track and audit unauthorized changes to your site's client-side environment such as JavaScript, outbound connections.],
+  [Examine how third-party tools and trackers are interacting with user data, which is vital for auditing privacy compliance and detecting unauthorized script behaviors.],
+  [Account-Scoped Logs],
+  [Focus: Internal security, Zero Trust, administrative changes, and network activity.],
+  [Tracks identity-based authentication events to determine which users accessed specific internal applications and whether those attempts were authorized.],
+  [Provides a trail of configuration changes within the Cloudflare dashboard to identify unauthorized administrative actions or modifications.],
+  [CASB Findings],
+  [Identifies security misconfigurations and data risks within SaaS applications (like Google Drive or Microsoft 365) to prevent unauthorized data exposure.],
+  [Magic Transit \/ IPSec Logs],
+  [Helps network engineers perform network-level (L3) monitoring such as reviewing tunnel health and view BGP routing changes.],
+  [Tracks user actions inside an isolated browser session (e.g., copy-paste, print, or file uploads) to prevent data leaks on untrusted sites],
+  [Details the security health and compliance status of devices connecting to your network, helping to identify compromised or non-compliant endpoints.],
+  [DEX Application Tests],
+  [Monitors application performance from the user's perspective, which can help distinguish between a security-related outage and a standard performance degradation.],
+  [DEX Device State Events],
+  [Provides telemetry on the physical state of user devices, useful for correlating hardware or OS-level anomalies with potential security incidents.],
+  [DNS Firewall Logs],
+  [Tracks DNS queries filtered through the DNS Firewall to identify communication with known malicious domains or command-and-control (C2) servers.],
+  [Logs malicious email activity and phishing attempts detected at the gateway to trace the origin of email-based entry vectors.],
+  [Gateway DNS],
+  [Monitors every DNS query made by users on your network to identify shadow IT, malware callbacks, or domain-generation algorithms (DGAs).],
+  [Gateway HTTP],
+  [Provides full visibility into encrypted and unencrypted web traffic to detect hidden payloads, malicious file downloads, or unauthorized SaaS usage.],
+  [Tracks L3/L4 network traffic (non-HTTP) to identify unauthorized port usage, protocol anomalies, or lateral movement within the network.],
+  [IPSec Logs],
+  [Monitors the status and traffic of encrypted site-to-site tunnels to ensure the integrity and availability of secure network connections.],
+  [Magic IDS Detections],
+  [Surfaces matches against intrusion detection signatures to alert investigators to known exploit patterns or malware behavior traversing the network.],
+  [Provides high-level visibility into packet-level data to identify volumetric DDoS attacks or unusual traffic spikes targeting specific infrastructure.],
+  [Sinkhole HTTP Logs],
+  [Captures traffic directed to "sinkholed" IP addresses to confirm which internal devices are attempting to communicate with known botnet infrastructure.],
+  [WARP Config Changes],
+  [Tracks modifications to the WARP client settings on end-user devices to ensure that security agents haven't been tampered with or disabled.],
+  [WARP Toggle Changes],
+  [Specifically logs when users enable or disable their secure connectivity, helping to identify periods where a device may have been unprotected.],
+  [Zero Trust Network Session Logs],
+  [Logs the duration and status of authenticated user sessions to map out the complete lifecycle of a user's access within the protected perimeter.],
+  [Log Explorer can identify malicious activity at every stage],
+  [Get granular application layer visibility with HTTP Requests , Firewall Events , and DNS logs to see exactly how traffic is hitting your public-facing properties. Track internal movement with Access Requests , Gateway logs , and Audit logs . If a credential is compromised, you’ll see where they went. Use Magic IDS and Network Analytics logs to spot volumetric attacks and "East-West" lateral movement within your private network.],
+  [Identify the reconnaissance],
+  [Attackers use scanners and other tools to look for entry points, hidden directories, or software vulnerabilities. To identify this, using Log Explorer, you can query http\_requests for any EdgeResponseStatus codes of 401, 403, or 404 coming from a single IP, or requests to sensitive paths (e.g. /.env , /.git , /wp-admin ).],
+  [Additionally, magic\_ids\_detections logs can also be used to identify scanning at the network layer. These logs provide packet-level visibility into threats targeting your network. Unlike standard HTTP logs, these logs focus on signature-based detections at the network and transport layers (IP, TCP, UDP). Query to discover cases where a single SourceIP is triggering multiple unique detections across a wide range of DestinationPort values in a short timeframe. Magic IDS signatures can specifically flag activities like Nmap scans or SYN stealth scans.],
+  [Check for diversions],
+  [While the attacker is conducting reconnaissance, they may attempt to disguise this with a simultaneous network flood. Pivot to network\_analytics\_logs to see if a volumetric attack is being used as a smokescreen.],
+  [Identify the approach],
+  [Once attackers identify a potential vulnerability, they begin to craft their weapon. The attacker sends malicious payloads (e.g. SQL injection or large/corrupt file uploads) to confirm the vulnerability. Review http\_requests and/or fw\_events to identify any Cloudflare detection tools that have triggered. Cloudflare logs security signals in these datasets to easily identify requests with malicious payloads using fields such as WAFAttackScore , WAFSQLiAttackScore , FraudAttack , ContentScanJobResults , and several more. Review our documentation to get a full understanding of these fields. The fw\_events logs can be used to determine whether these requests made it past Cloudflare’s defenses by examining the action , source , and ruleID fields. Cloudflare’s managed rules by default blocks many of these payloads by default. Review Application Security Overview to know if your application is protected.],
+  [Showing the Managed rules Insight that displays on Security Overview if the current zone does not have Managed Rules enabled],
+  [Audit the identity],
+  [Did that suspicious IP manage to log in? Use the ClientIP to search access\_requests . If you see a " Decision: Allow " for a sensitive internal app, you know you have a compromised account.],
+  [Stop the leak (data exfiltration)],
+  [Attackers sometimes use DNS tunneling to bypass firewalls by encoding sensitive data (like passwords or SSH keys) into DNS queries. Instead of a normal request like google.com , the logs will show long, encoded strings. Look for an unusually high volume of queries for unique, long, and high-entropy subdomains by examining the fields: QueryName : Look for strings like h3ldo293js92.example.com , QueryType : Often uses TXT , CNAME , or NULL records to carry the payload, and ClientIP : Identify if a single internal host is generating thousands of these unique requests.],
+  [Additionally, attackers may attempt to leak sensitive data by hiding it within non-standard protocols or by using common protocols (like DNS or ICMP) in unusual ways to bypass standard firewalls. Discover this by querying the magic\_ids\_detections logs to look for signatures that flag protocol anomalies, such as "ICMP tunneling" or "DNS tunneling" detections in the SignatureMessage .],
+  [Whether you are investigating a zero-day vulnerability or tracking a sophisticated botnet, the data you need is now at your fingertips.],
+  [Correlate across datasets],
+  [Investigate malicious activity across multiple datasets by pivoting between multiple concurrent searches. With Log Explorer, you can now work with multiple queries simultaneously with the new Tabs feature. Switch between tabs to query different datasets or Pivot and adjust queries using filtering via your query results.],
+  [When you correlate data across multiple Cloudflare log sources, you can detect sophisticated multi-stage attacks that appear benign when viewed in isolation. This cross-dataset analysis allows you to see the full attack chain from reconnaissance to exfiltration.],
+  [Session hijacking (token theft)],
+  [Scenario: A user authenticates via Cloudflare Access, but their subsequent HTTP\_request traffic looks like a bot.],
+  [Step 1: Identify high-risk sessions in http\_requests .],
+  [SELECT RayID, ClientIP, ClientRequestUserAgent, BotScore
+FROM http\_requests
+WHERE date = '2026-02-22' 
+ AND BotScore \< 20 
+LIMIT 100],
+  [Step 2: Copy the RayID and search access\_requests to see which user account is associated with that suspicious bot activity.],
+  [SELECT Email, IPAddress, Allowed
+FROM access\_requests
+WHERE date = '2026-02-22' 
+ AND RayID = 'INSERT\_RAY\_ID\_HERE'],
+  [Post-phishing C2 beaconing],
+  [Scenario: An employee clicked a link in a phishing email which resulted in compromising their workstation. This workstation sends a DNS query for a known malicious domain, then immediately triggers an IDS alert.],
+  [Step 1: Find phishing attacks by examining email\_security\_alerts for violations.],
+  [SELECT Timestamp, Threatcategories, To, Alertreason
+FROM email\_security\_alerts
+WHERE date = '2026-02-22' 
+ AND Threatcategories LIKE 'phishing'],
+  [Step 2: Use Access logs to correlate the user’s email (To) to their IP Address.],
+  [SELECT Email, IPAddress
+FROM access\_requests
+WHERE date = '2026-02-22'],
+  [Step 3: Find internal IPs querying a specific malicious domain in gateway\_dns logs.],
+  [SELECT SrcIP, QueryName, DstIP, 
+FROM gateway\_dns
+WHERE date = '2026-02-22' 
+ AND SrcIP = 'INSERT\_IP\_FROM\_PREVIOUS\_QUERY'
+ AND QueryName LIKE '%malicious\_domain\_name%'],
+  [Lateral movement (Access → network probing)],
+  [Scenario: A user logs in via Zero Trust and then tries to scan the internal network.],
+  [Step 1: Find successful logins from unexpected locations in access\_requests .],
+  [SELECT IPAddress, Email, Country
+FROM access\_requests
+WHERE date = '2026-02-22' 
+ AND Allowed = true 
+ AND Country != 'US' -- Replace with your HQ country],
+  [Step 2: Check if that IPAddress is triggering network-level signatures in magic\_ids\_detections .],
+  [SELECT SignatureMessage, DestinationIP, Protocol
+FROM magic\_ids\_detections
+WHERE date = '2026-02-22' 
+ AND SourceIP = 'INSERT\_IP\_ADDRESS\_HERE'],
+  [Opening doors for more data],
+  [From the beginning, Log Explorer was designed with extensibility in mind. Every dataset schema is defined using JSON Schema, a widely-adopted standard for describing the structure and types of JSON data. This design decision has enabled us to easily expand beyond HTTP Requests and Firewall Events to the full breadth of Cloudflare's telemetry. The same schema-driven approach that powered our initial datasets scaled naturally to accommodate Zero Trust logs, network analytics, email security alerts, and everything in between.],
+  [More importantly, this standardization opens the door to ingesting data beyond Cloudflare's native telemetry. Because our ingestion pipeline is schema-driven rather than hard-coded, we're positioned to accept any structured data that can be expressed in JSON format. For security teams managing hybrid environments, this means Log Explorer could eventually serve as a single pane of glass, correlating Cloudflare's edge telemetry with logs from third-party sources, all queryable through the same SQL interface. While today's release focuses on completing coverage of Cloudflare's product portfolio, the architectural groundwork is laid for a future where customers can bring their own data sources with custom schemas.],
+  [Faster data, faster response: architectural upgrades],
+  [To investigate a multi-vector attack effectively, timing is everything. A delay of even a few minutes in the log availability can be the difference between proactive defense and reactive damage control.],
+  [That is why we have optimized our ingestion for better speed and resilience. By increasing concurrency in one part of our ingestion path, we have eliminated bottlenecks that could cause “noisy neighbor” issues, ensuring that one client’s data surge doesn’t slow down another’s visibility. This architectural work has reduced our P99 ingestion latency by approximately 55%, and our P50 by 25%, cutting the time it takes for an event at the edge to become available for your SQL queries.],
+  [Grafana chart displaying the drop in ingest latency after architectural upgrades],
+  [Follow along for more updates],
+  [We're just getting started. We're actively working on even more powerful features to further enhance your experience with Log Explorer, including the ability to run these detection queries on a custom defined schedule.],
+  [Design mockup of upcoming Log Explorer Scheduled Queries feature],
+  [Get access to Log Explorer],
+  [To get access to Log Explorer, you can purchase self-serve directly from the dash or for contract customers, reach out for a consultation or contact your account manager. Additionally, you can read more in our Developer Documentation .],
+),
+  insert-map: (:),
+  word-count: 2246,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+}
+
+{
+  #standard-article(
+  title: [Being the co-founder of a VC backed startup],
   author: [Matt Aimonetti],
   source-name: [Matt Aimonetti],
   images: (),
   paragraphs: (
-  [Today is Monday. I usually don’t like Mondays.
-Being Monday goes with waking up early, going back to work, and lots of deadlines.],
-  [However, today is a special Monday. It’s the first Monday of the year and I have a special announcement !],
-  [During the Rails/Merb merge announcement, it was mentioned that I will be joining the soon to be created “Evangelism team” .],
-  [A few people asked me what being a “Rails Evangelist” means. To reassure my parents and close friends, no, I didn’t join a new cult worshiping locomotives . However, I still think that public transportation should be improved, especially in this time of crisis (but that’s a different topic).],
-  [A technical evangelist, is usually someone who knows and uses a specific technology and thinks others should look into it. This is something I’ve been doing for Merb while being part of the core team. I initiated and helped organizing MerbCamp, re-did the wiki, started working on the merb-book, spent time looking for and listening to users, spent time with third party developers and people pushing Merb to a new level (YellowPages, Wikimedia and many others).],
-  [This interaction with the end users and the third party developers is something the entire Merb team valued a great deal and I always felt it was something the community really appreciated.],
-  [As part of the merge, it was agreed that we would push things further and have a team within the Rails team to take care of “communication”. Rails is a bigger project than Merb and communication between the dev team and the users isn’t always something easy to do.],
-  [That’s why we have formed a separate team that will help communicate and support the community better. We now even have an official page on the Rails website itself :)],
-  [id="the-rails-activists"\>The Rails Activists],
-  [The A-Team just got announced on the Rails blog .],
-  [Instead of being called “evangelists”, we are going to be called “activists”. I think part of the argument was that the E-Team doesn’t sound as good as the A-Team.],
-  [We started with team of 4. You might not know them yet but they all are brilliant people and I’m really glad to be working with them.],
-  [Gregg Pollack , from Rails Envy. You might remember Gregg from the Rails vs \* commercials or from the Rails Envy podcasts. I’ve known Gregg for a little while and he’s someone you can rely on and always full of energy/new ideas.],
-  [\*\*
-Ryan Bates\*\*, mainly known for his Railscasts. I only met Ryan once in person, but I’ve always been impressed by his work (don’t tell anyone, but I secretly dreamt of having something like Railscasts but for Merb :) )],
-  [Mike Gunderloy . I actually did not know Mike but I have read and enjoyed his blog and have seen his work on the Rails guides. Mike is an experienced writer and developer. He joked the other day saying that he started programming before any member of the Rails team was even born. Mike is a great addition to the team and I’m looking forward to learning from his experience.],
-  [Gregg and Ryan also covered the event, you might want to check their blog posts ( Gregg’s and Mike’s )],
-  [id="so-what-are-we-going-to-do"\>So what are we going to do?],
-  [Pretty simple. We’ve boiled it down to 2 sentences:],
-  [The mission of the Rails Activists is to empower and support the worldwide network of Ruby on Rails users. We do this by publicizing Rails, making adoption easier, and enhancing developer support.],
-  [if you prefer a few more details, here are some of the tasks we are going to work on:],
-  [Public Relations with media of all sizes],
-  [Ombudsman work to ensure good user-to-user support],
-  [Community Leadership at events and conferences],
-  [Media Organization to help create good promotional opportunities],
-  [Website maintenance],
-  [Documentation efforts],
-  [Developer support],
-  [id="do-we-need-help"\>Do we need help?],
-  [Absolutely! The idea is not that we are going to do all the work. The concept of this new team is to help organize the community. We are going to build a Rails Network, a network of people involved in local Rails “evangelism”/activism, people contributing and/or translating documentation, third part developers etc…],
-  [First thing would be to join the mailing list and share your suggestions, comments, concerns, etc., with us.],
-  [Secondly, we have already set up some forums to hear your feedback.],
-  [To start off, we are asking people to let us know what they would like to see happening in the Rails3 timeframe .
-We have other forums for more general feedback , but we need to work with deadlines so we can prioritize accordingly. Using the Rails3 milestone should help us focus on a short/medium term deadline. Long term and not specific suggestions are welcome in the other forums.],
-  [Finally, contact us. You can find multiple ways to do so on the activism team web page .],
+  [I’ve now been the co-founder and CTO of Splice for almost 6 years. It’s officially the longest place I ever worked at. It’s funny because it does feel like we just started yesterday. I decided to write down some unedited thoughts and share them here. I remembered thinking that I’d love to know what it was really like to be a founder, but that’s not something I could find on the internet. Hopefully a future entrepreneur will find this post and will get a glimpse at what it is like for me. (sorry for the raw/unedited version, but I felt the post would otherwise stay in my draft folder forever)],
+  [I remember so clearly building the first prototype and hearing the excitement in the voice of my co-founder. The first pitches, the first hires, the first people we had let go 😥 The first arguments, the first fights, the first wins, the first 1:1s, the first dollars we made, the firsts disappointments. The first bugs, the first crashes, the first breakthroughs, the first townhome meetings. The first term sheets, the first board meetings, the first no, the first yes! The first employee departures, the first M&A, the first team off-site. The first exec meeting, the first OKR meetings, the first advisors, the first \$10M paid to creators! Wow, so many memories, I certainly spent too much time thinking about tomorrow and not enough celebrating.],
+  [Kruskal-Szekeres spacetime diagram],
+  [It’s been and still is a wild ride. It feels like we started yesterday, yet it feels like it’s been forever. Often people want to know what it is like to be the founder of a startup. They have this glamorous silicon valley image clashing with the image reflected by Silicon valley, the HBO TV show. The reality is hard to describe, it’s full of pain, excitement, highs and lows. It’s a processes that forces you to reevaluate and reinvent yourself constantly. It’s lonely yet you are surrounded by others going through the same thing.],
+  [The experience seems to be different for each founder depending on their personality, cultural, social and economical background (and unfortunately also their gender and skin color). Running a VC backed company is like playing a board game where only a few select group of people know the rules. It’s not like the rules are secret or anything, it’s just that they aren’t the rules most of us grow up learning. Those rules seem very foreign at first. Worse, those rules are implicit, they are enforced guidelines that are believed to guide you to a predefined notion of success. Mind you, those rules change with the market. The way you were raising money in 2013, would probably not work in 2019. So you have to stay up to date with those implicit and changing rules. Let’s be honest, this part of the system is very unfair, it favors a small group of privileged people who have the social capital to be taught those rules. Talent is everywhere, opportunities are not. I have to admit that this is something that really bothers me. I had the chance to discuss this topic with some VC partners I trust. It’s clear they are very aware of the situation and in some cases try to induce local change. It’s clearly not enough but I honestly appreciate their effort when they try.],
+  [A thing I also learned the hard way is that you rarely have an opportunity to correct your mistakes. Running a VC backed startup is like strapping a rocket to your chair, it might get you to the finish line faster, but a few small mistakes and you are out (and a crappy rocket might blow up). It’s an exciting process, especially if you have little patience, but the g-force you have to endure will take its toll on most of us. Another funny thing about this analogy is that if you don’t pass you, you get used to the initial speed and when the rocket is slowing down because you are getting close to orbit, you miss the initial speed and thrill.],
+  [Robert Courter in the Bell Rocket Chair.],
+  [I’m not a nostalgic person and I don’t live in the past regretting things, but I often think of the many mistakes I made so I don’t make them again. I wish I could fix those mistakes now that I know the consequences, but the time window is often closed. The best I can do is assume the consequences and not making those mistakes again as well as helping others who are going through the same challenges. As much as we love saying that we embrace failure, ask a founder how they are doing, the most common answer is probably a version of: crushing it! Unfortunately, the reality is probably very different. Self-doubt is probably the best feeling describing being a founder. But we don’t want people to doubt us, otherwise investors won’t support us, we won’t be able to hire top talent and we will fail to make the “X under X” list. So many founders at all stages struggle with depression, substance abuse, deep feeling of loneliness. It’s quite sad to see peers going through that while the media love glorifying or at least “glamourising” our self destructive behaviors.],
+  [VCs are not your friends, but they aren’t your enemy either. Like you, they are doing their job and their job is to make sure you exponentially increase the financial value of their investment. You can have a close relationship with some investors, they can provide you with great insights and be supportive. But their primary duty is to their firm and they LPs. They are being kept accountable and have to show results. This is not a secret, it’s their duty. It’s too easy to blame VCs when things go bad. Don’t get me wrong, there is a fair share of bad VCs out there, but remember that you are the one who agreed to tape a rocket to your chair. They provided you with the rocket, they didn’t force you, being VC backed is certainly not for everyone or every project. You told them you’d manage the pressure, the growth etc.. But did you make sure you were aligned on the conditions attached to using the rocket? If they don’t think you will make it, don’t be mad if they don’t want to add more gas in the rocket or suggest you stop the race. If they feel that you can make it but you are slowing down too quickly on purpose, don’t be mad if they pressure you to add more gas and take bigger risks. That’s part of the game.],
+  [Another thing to remember, it’s all about the story . That’s probably the number 1 rule of the VC club. The same way we say that the journey is more important than the destination, the story of a startup is almost more important than its actual output. The story is constantly developing but is always promising that there is always better things coming soon. If bad things were to happen, we turn them into good things. The story must always sell a better future so the valuation keeps going up and the excitement doesn’t die. At least that has to be true on the outside. I don’t think this approach is good or bad, this is just the way it is. It’s just part of the culture and everyone in it knows it.],
+  [Finally, something I didn’t hear a lot of founders talk about. Non-CEO founders aren’t seen as equals to the CEO. That usually becomes more and more real over time when the company grows to a big enough stage where the CEO founder has to start being a 100% CEO, making harder and bigger decisions and focusing on “CEO’ing” the company. VCs will provide more support and resources to a CEO than any other C suite roles and it makes total sense. It’s pretty logical when you think about it, the CEO sets the direction for the company, they energize, drive and motivate the exec team to accomplish the vision. VCs are most impactful when they can support the person setting the direction. Now here is what’s not often talked about. This is both a curse and blessing. As we all know, the people who are at the start of a company aren’t often the right people for later stages. And that keeps staying true as long as the company evolves. The thing is, as non-CEOs, it’s easier to redefine our roles or even move on in some cases. It’s much much harder for a CEO-founder. That can be very tough to realize that the company you dreamed of, built, launched might have overgrown you. Actually, scratch that, I don’t like this term overgrowing. It implies that you might not have grown fast enough. In my experience, it’s the opposite, I saw amazing founders who grew so much that they realized that their current role was not what they wanted or should be doing and they went out there and hired amazing execs (presidents, CEOs, CTOs, COOs..) who were a better fit for the current company stage. Because you have a rocket pushing your back, you don’t have much time to think about it, you just need to have a way to evaluate things quickly and make those decisions as fast as possible. I hope I was able to give you a glimpse of what it might be to the founder of a startup. It’s exciting, thrilling and very often tough in ways you didn’t quite expect. Being VC backed is a choice, it’s a path and it comes with its set of rules. If it’s your first time, you might not know those rules and it’s ok to ask (also start reading blogs like Fred Wilson’s , Mark Suster’s and many more, you will find patterns). If your partners have more experience than you ask them to share, good VCs also know to explain those things clearly and the ones I know won’t judge you for asking but they will keep you accountable. If you learn how to ask questions, you will be able to catch-up very quickly.],
+  [Finally, for those who might think I sound a bit pessimistic, you probably don’t know me well 😎 Lately, there has been some increased backlash against being VC and VC backed startups. Some arguments were absolutely valid and some maybe less. My hope is that this post will bring some color to the discussion in a form that I hope is as objective as I could be.],
 ),
   insert-map: (:),
-  word-count: 815,
+  word-count: 1770,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -1187,6 +1039,82 @@ We have other forums for more general feedback , but we need to work with deadli
 
 {
   #standard-article(
+  title: [AI Security for Apps is now generally available],
+  author: [Liam Reese],
+  source-name: [Cloudflare Blog],
+  images: (),
+  paragraphs: (
+  [Cloudflare’s AI Security for Apps detects and mitigates threats to AI-powered applications. Today, we're announcing that it is generally available.],
+  [We’re shipping with new capabilities like detection for custom topics, and we're making AI endpoint discovery free for every Cloudflare customer—including those on Free, Pro, and Business plans—to give everyone visibility into where AI is deployed across their Internet-facing apps.],
+  [We're also announcing an expanded collaboration with IBM, which has chosen Cloudflare to deliver AI security to its cloud customers. And we’re partnering with Wiz to give mutual customers a unified view of their AI security posture.],
+  [A new kind of attack surface],
+  [Traditional web applications have defined operations: check a bank balance, make a transfer. You can write deterministic rules to secure those interactions.],
+  [AI-powered applications and agents are different. They accept natural language and generate unpredictable responses. There's no fixed set of operations to allow or deny, because the inputs and outputs are probabilistic. Attackers can manipulate large language models to take unauthorized actions or leak sensitive data. Prompt injection, sensitive information disclosure, and unbounded consumption are just a few of the risks cataloged in the OWASP Top 10 for LLM Applications .],
+  [These risks escalate as AI applications become agents. When an AI gains access to tool calls—processing refunds, modifying accounts, providing discounts, or accessing customer data—a single malicious prompt becomes an immediate security incident.],
+  [Customers tell us what they’re up against. "Most of Newfold Digital's teams are putting in their own Generative AI safeguards, but everybody is innovating so quickly that there are inevitably going to be some gaps eventually,” says Rick Radinger, Principal Systems Architect at Newfold Digital, which operates Bluehost, HostGator, and Domain.com.],
+  [What AI Security for Apps does],
+  [We built AI Security for Apps to address this. It sits in front of your AI-powered applications, whether you're using a third-party model or hosting your own, as part of Cloudflare's reverse proxy . It helps you (1) discover AI-powered apps across your web property, (2) detect malicious or off-policy behavior to those endpoints, and (3) mitigate threats via the familiar WAF rule builder.],
+  [Discovery — now free for everyone],
+  [Before you can protect your LLM-powered applications, you need to know where they're being used. We often hear from security teams who don’t have a complete picture of AI deployments across their apps, especially as the LLM market evolves and developers swap out models and providers.],
+  [AI Security for Apps automatically identifies LLM-powered endpoints across your web properties, regardless of where they’re hosted or what the model is. Starting today, this capability is free for every Cloudflare customer, including Free, Pro, and Business plans.],
+  [Cloudflare’s dashboard page of web assets, showing 2 example endpoints labelled as cf-llm],
+  [Discovering these endpoints automatically requires more than matching common path patterns like /chat/completions . Many AI-powered applications don't have a chat interface: think product search, property valuation tools, or recommendation engines. We built a detection system that looks at how endpoints behave , not what they're called. To confidently identify AI-powered endpoints, sufficient valid traffic is required.],
+  [AI-powered endpoints that have been discovered will be visible under Security → Web Assets , labeled as cf-llm . For customers on a Free plan, endpoint discovery is initiated when you first navigate to the Discovery page . For customers on a paid plan, discovery occurs automatically in the background on a recurring basis. If your AI-powered endpoints have been discovered, you can review them immediately.],
+  [AI Security for Apps detections follow the always-on approach for traffic to your AI-powered endpoints. Each prompt is run through multiple detection modules for prompt injection, PII exposure, and sensitive or toxic topics. The results—whether the prompt was malicious or not—are attached as metadata you can use in custom WAF rules to enforce your policies. We are continuously exploring ways to leverage our global network, which sees traffic from roughly 20% of the web , to identify new attack patterns across millions of sites before they reach yours.],
+  [New in GA: Custom topics detection],
+  [The product ships with built-in detection for common threats: prompt injections, PII extraction , and toxic topics . But every business has its own definition of what's off-limits. A financial services company might need to detect discussions of specific securities. A healthcare company might need to flag conversations that touch on patient data. A retailer might want to know when customers are asking about competitor products.],
+  [The new custom topics feature lets you define these categories. You specify the topic, we inspect the prompt and output a relevance score that you can use to log, block, or handle however you decide. Our goal is to build an extensible tool that flexes to your use cases.],
+  [Prompt relevance score inside of AI Security for Apps],
+  [New in GA: Custom prompt extraction],
+  [AI Security for Apps enforces guardrails before unsafe prompts can reach your infrastructure. To run detections accurately and provide real-time protection, we first need to identify the prompt within the request payload. Prompts can live anywhere in a request body, and different LLM providers structure their APIs differently. OpenAI and most providers use \$.messages\[\*\].content for chat completions. Anthropic's batch API nests prompts inside \$.requests\[\*\].params.messages\[\*\].content . Your custom property valuation tool might use \$.property\_description .],
+  [Out of the box, we support the standard formats used by OpenAI, Anthropic, Google Gemini, Mistral, Cohere, xAI, DeepSeek, and others. When we can't match a known pattern, we apply a default-secure posture and run detection on the entire request body. This can introduce false positives when the payload contains fields that are sensitive but don't feed directly to an AI model, for example, a \$.customer\_name field alongside the actual prompt might trigger PII detection unnecessarily.],
+  [Soon, you'll be able to define your own JSONPath expressions to tell us exactly where to find the prompt. This will reduce false positives and lead to more accurate detections. We're also building a prompt-learning capability that will automatically adapt to your application's structure over time.],
+  [Once a threat is identified and scored, you can block it, log it, or deliver custom responses, using the same WAF rules engine you already use for the rest of your application security. The power of Cloudflare’s shared platform is that you can combine AI-specific signals with everything else we know about a request, represented by hundreds of fields available in the WAF. A prompt injection attempt is suspicious. A prompt injection attempt from an IP that’s been probing your login page, using a browser fingerprint associated with previous attacks, and rotating through a botnet is a different story. Point solutions that only see the AI layer can’t make these connections.],
+  [This unified security layer is exactly what they need at Newfold Digital to discover, label, and protect AI endpoints, says Radinger: “We look forward to using it across all these projects to serve as a fail-safe."],
+  [Growing ecosystem],
+  [AI Security for Applications will also be available through Cloudflare's growing ecosystem, including through integration with IBM Cloud. Through IBM Cloud Internet Services (CIS) , end users can already procure advanced application security solutions and manage them directly through their IBM Cloud account.],
+  [We're also partnering with Wiz to connect AI Security for Applications with Wiz AI Security , giving mutual customers a unified view of their AI security posture, from model and agent discovery in the cloud to application-layer guardrails at the edge.],
+  [How to get started],
+  [AI Security for Apps is available now for Cloudflare’s Enterprise customers. Contact your account team to get started, or see the product in action with a self-guided tour .],
+  [If you're on a Free, Pro, or Business plan, you can use AI endpoint discovery today. Log in to your dashboard and navigate to Security → Web Assets to see which endpoints we've identified. Keep an eye out — we plan to make all AI Security for Apps capabilities available for customers on all plans soon.],
+  [For configuration details, see our documentation .],
+),
+  insert-map: (:),
+  inline-pq: pull-quote([Each prompt is run through multiple detection modules for prompt injection, PII exposure, and sensitive or toxic topics.], [Liam Reese]),
+  inline-pq-idx: 13,
+  word-count: 1326,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+}
+
+#article-row((
+  [
+    standard-article(
+  title: [new rails plugin mimetype\_fu],
+  author: [Matt Aimonetti],
+  source-name: [Matt Aimonetti],
+  images: (),
+  paragraphs: (
+  [mimetype\_fu\/ is a new plugin I just wrote. It’s simple and it can be really useful if you need to get the mime type of a file already on your server.],
+  [During one of my project, I add to migrate old assets from a legacy system to a new Rails app. The new app uses attachment fu and even though techno weenie did an amazing job, attachment\_fu validation is based on the content type. A\_fu gets the content type coming from the CGI query.],
+  [Unit test has a helper faking this process but in real life, if you use a Flash uploader (Flash doesn’t give you the proper mime type/content type) or if you want to migrate files, the attachment\_fu validation won’t work for you.],
+  [The solution is simple: mimetype\_fu/],
+  [mimetype\_fu\/ extends the File class and is really easy to use:],
+  [File.mime\_type?(\@file)],
+  [Check it out https:\/\/code.google.com/p/mimetype-fu/],
+  [Expect a post showing how a ninja would use the mimetype\_fu \/ attachment\_fu combo :)],
+),
+  insert-map: (:),
+  word-count: 161,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+  ],
+  [
+    standard-article(
   title: [fun with macruby],
   author: [Matt Aimonetti],
   source-name: [Matt Aimonetti],
@@ -1224,287 +1152,114 @@ puts "明けましておめでとうございます。".language
   debug-mode: false,
 )
 
+  ],
+), ruled-indices: (1,))
+
+#article-row((
+  [
+    standard-article(
+  title: [become better at merb],
+  author: [Matt Aimonetti],
+  source-name: [Matt Aimonetti],
+  images: (),
+  paragraphs: (
+  [I hear a lot of people asking for better Merb documentation as they are learning Merb. I remember struggling with the very same problem when I started using Rails a few years ago.],
+  [The good news is that the core team is working hard on improving the state of documentation.],
+  [You have the Merb Book on which I am actively work on with a team of 20 people (writers, editors and translators).],
+  [You also have the documentation browsing application we are developing to let you browse documentation based on where you are in your app.],
+  [And of course, you have the 2 beta books ( Merb in Action and the Merb way ) plus two other ones in the process of being written ( Beginning Merb and Merb: What You Need to Know ).],
+  [Finally, you also have other resources like the Merb peepcode .],
+  [The point being that we are actively working on improving the overall state of documentation. However, if you wish to learn more about the internals, how to some more advanced stuff like writing plugins, building your own stack, knowing when to use what component, I would suggest you attend the training class that Yehuda Katz (Merb lead developer) and myself are giving in Phoenix, AZ, January 19-21 .],
+  [This would give you a rare opportunity to spend time with some of people directly involved with the day to day development of the framework as well as other like minded developers.],
+  [Website: https:\/\/merbclass.com 
+Curriculum: https:\/\/merbclass.com/curriculum.html 
+Date: Jan 19-21, 2009
+Location: Phoenix, AZ],
+),
+  insert-map: (:),
+  word-count: 259,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+  ],
+  [
+    standard-article(
+  title: [attachment\_fu updated],
+  author: [Matt Aimonetti],
+  source-name: [Matt Aimonetti],
+  images: (),
+  paragraphs: (
+  [I recently bugged Rick Olson so much about attachment\_fu that he gave me SVN access to fix few bugs.],
+  [Rick being really busy with ActiveReload he didn’t spend too much time maintaining attachment\_fu .],
+  [On my side of things, I’ve been using attachment\_fu on a lot of projects and I’ve been fixing bugs and adding new features.],
+  [My first contribution to attachment\_fu is a fix for the ImageScience processor.],
+  [Attachment\_fu is very flexible and let you use your favorite image processor:],
+  [RMagick based on ImageMagick and GraphicsMagick (known to leak memory and being a pain to setup)],
+  [minimagick based on ImageMagick],
+  [ImageScience based on FreeImage .],
+  [Like many rubyists, I like ImageScience for its simplicity and efficiency. However, attachment\_fu had few problems when being used with ImageScience .],
+  [File sizes for thumbnails were not saved correctly in the database. Fixed],
+  [Thumbnails based on a gif files were not processed properly. So, this was the big problem. FreeImage has issues dealing with resizing gif files because of the gif palette limitation (256 colors). to avoid this problem thumbnails of gif files are converted to png. However the thumbnail content type info in the database was not saved properly. That’s now fixed.],
+  [Because of the gif bug reported above, any thumbnail link was broken since it was trying to link to the thumbnail version with a gif extension instead of a png one. Fixed],
+  [I also fixed a small bug related to S3 storage and the fact that a\_fu had issues loading the config file. (Fixed)],
+  [I’ll also try be able to add some of the S3 features I’ve been working on. As well as maybe enhancing the validation process.],
+  [In the mean time, you might want to read this blog post about better validation with attachment\_fu.],
+  [If you are heavily using attachment\_fu or starting using it and think that a google group would be great idea, please let me know in the comment and I’ll try to convince Technoweenie that we need to set that up :)],
+  [Ooohh I almost forgot, if you fixed some bugs you found while using a\_fu, please contact me so we can get a\_fu bug free.],
+),
+  insert-map: (:),
+  word-count: 360,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+  ],
+), ruled-indices: (1,))
+
+{
+  #standard-article(
+  title: [Ultrahuman’s New Ring Pro Is Finally Available in the US],
+  author: [Beth Skwarecki],
+  source-name: [Lifehacker],
+  images: (),
+  paragraphs: (
+  [Ultrahuman finally has a smart ring back on the U. S. market, and it’s the Ring Pro, the new model with the feature-packed charging case . Pre-orders are now open , with early bird prices starting at \$349. The regular price will be \$479 for the ring plus case.],
+  [The ring will begin shipping May 15. The company is using a tiered model for early bird pricing, where the price bumps up after a certain number of rings are sold. Here’s the schedule:],
+  [\$349 — first 1,000 orders (\$130 off)],
+  [\$389 — next 2,000 orders (\$90 off)],
+  [\$429 — next 3,000 orders (\$50 off)],
+  [\$449 — until pre-orders close.],
+  [Ultrahuman’s smart rings have been off the U. S. market since October 2025, due to legal action by Oura. As I detailed here , Oura sued several other smart ring makers over patent infringement and won a judgment by the U. S. International Trade Commission. As a result, most other smart ring companies had to leave the U. S. market or reach a deal with Oura. Ultrahuman found a third option—continuing to develop a ring they already had in the works, betting that the ITC would rule its design is different enough that it does not infringe Oura’s patent.],
+  [That bet seems to have paid off. U. S. Customs and Border Protection has officially signed off on the new design, allowing it to be sold here. Ultrahuman’s older designs, like the Ring Air I reviewed last year , are still banned.],
+  [id="whats-new-with-the-ultrahuman-ring-pro"\>What’s new with the Ultrahuman Ring Pro],
+  [I wrote more about the Ring Pro here . It’s got a faster processor with “on-chip machine learning,” a 15-day battery life, and the ability to hold 250 days of data if you’re unable to sync your ring for extended periods. The physical shape is similar to the Ring Air (no sensor bumps, but there is a flattened area at the bottom of the interior), and it has break points for easier removal of the ring in an emergency.],
+  [The cleverest feature of the Ring Pro is its charging case, which can store data, flash the firmware, and deliver haptic alerts. It also has a speaker for alarms and for sounding when you use the “find my case” feature. The charger can charge wirelessly.],
+  [Ultrahuman has since announced that you’ll have the option to buy the ring packaged with the charging case for \$479, or with just a “mini charger” (presumably similar to the Ring Air’s charger) for \$399. The case will be available separately for \$100.],
+),
+  insert-map: (:),
+  word-count: 419,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
 }
 
 {
   #section-label([Analysis])
   #standard-article(
-  title: [AI Security for Apps is now generally available],
-  author: [Liam Reese],
-  source-name: [Cloudflare Blog],
-  images: (),
-  paragraphs: (
-  [Cloudflare’s AI Security for Apps detects and mitigates threats to AI-powered applications. Today, we're announcing that it is generally available.],
-  [We’re shipping with new capabilities like detection for custom topics, and we're making AI endpoint discovery free for every Cloudflare customer—including those on Free, Pro, and Business plans—to give everyone visibility into where AI is deployed across their Internet-facing apps.],
-  [We're also announcing an expanded collaboration with IBM, which has chosen Cloudflare to deliver AI security to its cloud customers. And we’re partnering with Wiz to give mutual customers a unified view of their AI security posture.],
-  [A new kind of attack surface],
-  [Traditional web applications have defined operations: check a bank balance, make a transfer. You can write deterministic rules to secure those interactions.],
-  [AI-powered applications and agents are different. They accept natural language and generate unpredictable responses. There's no fixed set of operations to allow or deny, because the inputs and outputs are probabilistic. Attackers can manipulate large language models to take unauthorized actions or leak sensitive data. Prompt injection, sensitive information disclosure, and unbounded consumption are just a few of the risks cataloged in the OWASP Top 10 for LLM Applications .],
-  [These risks escalate as AI applications become agents. When an AI gains access to tool calls—processing refunds, modifying accounts, providing discounts, or accessing customer data—a single malicious prompt becomes an immediate security incident.],
-  [Customers tell us what they’re up against. "Most of Newfold Digital's teams are putting in their own Generative AI safeguards, but everybody is innovating so quickly that there are inevitably going to be some gaps eventually,” says Rick Radinger, Principal Systems Architect at Newfold Digital, which operates Bluehost, HostGator, and Domain.com.],
-  [What AI Security for Apps does],
-  [We built AI Security for Apps to address this. It sits in front of your AI-powered applications, whether you're using a third-party model or hosting your own, as part of Cloudflare's reverse proxy . It helps you (1) discover AI-powered apps across your web property, (2) detect malicious or off-policy behavior to those endpoints, and (3) mitigate threats via the familiar WAF rule builder.],
-  [Discovery — now free for everyone],
-  [Before you can protect your LLM-powered applications, you need to know where they're being used. We often hear from security teams who don’t have a complete picture of AI deployments across their apps, especially as the LLM market evolves and developers swap out models and providers.],
-  [AI Security for Apps automatically identifies LLM-powered endpoints across your web properties, regardless of where they’re hosted or what the model is. Starting today, this capability is free for every Cloudflare customer, including Free, Pro, and Business plans.],
-  [Cloudflare’s dashboard page of web assets, showing 2 example endpoints labelled as cf-llm],
-  [Discovering these endpoints automatically requires more than matching common path patterns like /chat/completions . Many AI-powered applications don't have a chat interface: think product search, property valuation tools, or recommendation engines. We built a detection system that looks at how endpoints behave , not what they're called. To confidently identify AI-powered endpoints, sufficient valid traffic is required.],
-  [AI-powered endpoints that have been discovered will be visible under Security → Web Assets , labeled as cf-llm . For customers on a Free plan, endpoint discovery is initiated when you first navigate to the Discovery page . For customers on a paid plan, discovery occurs automatically in the background on a recurring basis. If your AI-powered endpoints have been discovered, you can review them immediately.],
-  [AI Security for Apps detections follow the always-on approach for traffic to your AI-powered endpoints. Each prompt is run through multiple detection modules for prompt injection, PII exposure, and sensitive or toxic topics. The results—whether the prompt was malicious or not—are attached as metadata you can use in custom WAF rules to enforce your policies. We are continuously exploring ways to leverage our global network, which sees traffic from roughly 20% of the web , to identify new attack patterns across millions of sites before they reach yours.],
-  [New in GA: Custom topics detection],
-  [The product ships with built-in detection for common threats: prompt injections, PII extraction , and toxic topics . But every business has its own definition of what's off-limits. A financial services company might need to detect discussions of specific securities. A healthcare company might need to flag conversations that touch on patient data. A retailer might want to know when customers are asking about competitor products.],
-  [The new custom topics feature lets you define these categories. You specify the topic, we inspect the prompt and output a relevance score that you can use to log, block, or handle however you decide. Our goal is to build an extensible tool that flexes to your use cases.],
-  [Prompt relevance score inside of AI Security for Apps],
-  [New in GA: Custom prompt extraction],
-  [AI Security for Apps enforces guardrails before unsafe prompts can reach your infrastructure. To run detections accurately and provide real-time protection, we first need to identify the prompt within the request payload. Prompts can live anywhere in a request body, and different LLM providers structure their APIs differently. OpenAI and most providers use \$.messages[\*].content for chat completions. Anthropic's batch API nests prompts inside \$.requests[\*].params.messages[\*].content . Your custom property valuation tool might use \$.property\_description .],
-  [Out of the box, we support the standard formats used by OpenAI, Anthropic, Google Gemini, Mistral, Cohere, xAI, DeepSeek, and others. When we can't match a known pattern, we apply a default-secure posture and run detection on the entire request body. This can introduce false positives when the payload contains fields that are sensitive but don't feed directly to an AI model, for example, a \$.customer\_name field alongside the actual prompt might trigger PII detection unnecessarily.],
-  [Soon, you'll be able to define your own JSONPath expressions to tell us exactly where to find the prompt. This will reduce false positives and lead to more accurate detections. We're also building a prompt-learning capability that will automatically adapt to your application's structure over time.],
-  [Once a threat is identified and scored, you can block it, log it, or deliver custom responses, using the same WAF rules engine you already use for the rest of your application security. The power of Cloudflare’s shared platform is that you can combine AI-specific signals with everything else we know about a request, represented by hundreds of fields available in the WAF. A prompt injection attempt is suspicious. A prompt injection attempt from an IP that’s been probing your login page, using a browser fingerprint associated with previous attacks, and rotating through a botnet is a different story. Point solutions that only see the AI layer can’t make these connections.],
-  [This unified security layer is exactly what they need at Newfold Digital to discover, label, and protect AI endpoints, says Radinger: “We look forward to using it across all these projects to serve as a fail-safe."],
-  [Growing ecosystem],
-  [AI Security for Applications will also be available through Cloudflare's growing ecosystem, including through integration with IBM Cloud. Through IBM Cloud Internet Services (CIS) , end users can already procure advanced application security solutions and manage them directly through their IBM Cloud account.],
-  [We're also partnering with Wiz to connect AI Security for Applications with Wiz AI Security , giving mutual customers a unified view of their AI security posture, from model and agent discovery in the cloud to application-layer guardrails at the edge.],
-  [How to get started],
-  [AI Security for Apps is available now for Cloudflare’s Enterprise customers. Contact your account team to get started, or see the product in action with a self-guided tour .],
-  [If you're on a Free, Pro, or Business plan, you can use AI endpoint discovery today. Log in to your dashboard and navigate to Security → Web Assets to see which endpoints we've identified. Keep an eye out — we plan to make all AI Security for Apps capabilities available for customers on all plans soon.],
-  [For configuration details, see our documentation .],
-),
-  insert-map: (:),
-  word-count: 1326,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-}
-
-{
-  #standard-article(
-  title: [lowpro 0 5 what s new],
-  author: [Matt Aimonetti],
-  source-name: [Matt Aimonetti],
-  images: (),
-  paragraphs: (
-  [If you’ve read my post on Ajax pagination you know that I’m a big fan of Dan Webb ’s LowPro unobtrusive javascript library.],
-  [Doing Unobtrusive Javascript (UJS) is basically registering event handlers programmatically using CSS selectors to select the elements to register. In other words : keeping things separate and avoiding inline javascript.],
-  [If you’ve been using LowPro 0.4 and recently tried to upgrade to Prototype 1.6 you probably noticed that things don’t work as they used to.],
-  [The first thing you want to do, is to update to the latest version of Lowpro .],
-  [id="so-whats-new-in-05-trunk"\>So what’s new in 0.5 trunk?],
-  [First off, you need to know that a lot of lowpro features were moved in Prototype 1.6 core :)],
-  [You now get a warning via firebug if you try to use Low Pro with a version of Prototype that its not designed to work with.],
-  [Alternative event system ripped out: uses core events],
-  [DOM method mixins ripped out: alternatives all in prototype],
-  [Event.onReady delegates to the new dom:loaded event. However this doesn’t fire immediately if the dom is already loaded like Event.onReady did. (might be patched to work as before)],
-  [DOMBuilder is staying but now is a thin shell around the new proto 1.6 Element stuff.],
-  [You can still return false from event handlers in addEvent and Behaviors to stop the event but now if you use Event.observe raw you don’t get this.],
-  [Behavior.create now works like Class.create in 1.6 so behaviors can have full inheritance:],
-  [1 
- 2 
- 3 
- 4 
- 5 
- 6 
- 7 
- 8 
- 9 
- 10 
- 11 
- 12],
-  [Basic = Behavior .create({ 
- onclick: function() { 
- alert( ' woo ' ); 
- } 
- }); 
- 
- SuppedUp = Behavior .create({ 
- onclick: function( \$super ) { 
- alert( ' wee ' ); 
- \$super (); 
- } 
- });],
-  [Works really nicely.],
-  [core behaviors : Remote and Observed are now moved into the lowpro core (you don’t need to include the external files).],
-  [Event.addBehavior.reassignAfterAjax defaults to false. If you want re assign behaviors after an ajax call, you need to turn this option to true.],
-  [Event.addBehavior.reload(); added to reload/re assign behaviors. Very useful if you dynamically insert elements you want to observe!],
-  [new website has been set up and will contain documentation and tips - Full API docs coming soon. There’s also a dedicated google group .],
-  [Here is a quick example with real life code. (which could be refactored, I know)],
-  [1 
- 2 
- 3 
- 4 
- 5 
- 6 
- 7 
- 8 
- 9 
- 10 
- 11 
- 12 
- 13 
- 14 
- 15 
- 16 
- 17 
- 18 
- 19 
- 20 
- 21 
- 22 
- 23 
- 24 
- 25 
- 26 
- 27 
- 28 
- 29 
- 30 
- 31 
- 32 
- 33 
- 34 
- 35 
- 36 
- 37 
- 38 
- 39 
- 40 
- 41 
- 42],
-  [\/\/ Make sure the behaviors still work even after navigating to another page using the ajax navigation.],
-  [Event.addBehavior.reassignAfterAjax = true ;],
-  [\/\/ Behaviors],
-  [Event.addBehavior({],
-  [\/\/ Pagination links],
-  [' div.pagination a ' : Remote. Link ,],
-  [\/\/ Reset the list when a user clicks on cancel.],
-  [' a.cancel\_button:click ' : function () {],
-  [\$( ' list\_of\_things ' ).update( " " );],
-  [},],
-  [\/\/ carousel navigation prev],
-  [' a\#carousel\_prev:click ' : function () {],
-  [moveCarousel( ' prev ' ); return false ;],
-  [},],
-  [\/\/ carousel navigation next],
-  [' a\#carousel\_next:click ' : function () {],
-  [moveCarousel( ' next ' ); return false ;],
-  [},],
-  [' div.panel\_pic:click ' : function () {],
-  [removePanelPic( this );],
-  [},],
-  [' div.photo\_from\_row img:click ' : function () {],
-  [\/\/ Get the div holding the pic and use it as a target],
-  [var target = this .up();],
-  [addPicToPanel(target);],
-  [new Effect. Highlight(target);],
-  [}],
-  [});],
-  [function addPicToPanel(target){],
-  [new Insertion. Bottom( ' control\_panel\_photos ' , " " + target.id + " ' class='panel\_pic'\> " + target.immediateDescendants()[0].src + " '/\> " );],
-  [\/\/ Reload the behaviors so the new inserted pic can be monitored],
-  [\/\/ and the 'div.panel\_pic:click' behavior can be triggered],
-  [Event.addBehavior. reload ();],
-  [}],
-  [LowPro is a great way of keeping your code really clean and your views very accessible.],
-  [If you are interested in knowing more about UJS, come to our SDruby group meeting on Dec 6 \@ 7:30pm ( directions ). And if you don’t care about UJS, come later to hear about Facebook API. Don’t forger to bring your questions for our first Rails roundtable .],
-),
-  insert-map: (:),
-  word-count: 692,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-}
-
-{
-  #standard-article(
-  title: [CTO bet: future of Splice desktop apps],
-  author: [Matt Aimonetti],
-  source-name: [Matt Aimonetti],
-  images: (),
-  paragraphs: (
-  [The primary job of a CTO is to leverage technology to empower the business and the team. Sometimes that means making boring but safe choices, sometimes that means more risky or controversial choices. I am starting a new series to discuss some of the bets we are making at Splice and the thinking behind those choices.],
-  [Realizing that some of our company’s early assumptions around our user base might have been a bit off, we adopted a slightly unconventional technical approach to our desktop applications.],
-  [Splice is the advocate, companion of the modern musician. We developed a creation hub that connects the musician workstation with the cloud meaning that we sit close by the musician as she goes through her creation process. We opted early on for a transparent, discreet, independent integration meaning that we have an app running in the background handling various events and presenting a UI only when needed (similar to Dropbox). More complex experiences were designed to happen on the web requiring the user to have a browser open. Long story short, Splice is amazingly successful but modern musicians feel that the browser is often too far away from their creation space, and it’s a source of distraction. We have native apps written in Objective-C and C\# (Mac and Windows). Keeping them in sync, implementing rich UIs and QA testing have been challenging. The quality of the user interactions and limited feature set have prevented our users from fully benefiting from what we have to offer. After some research, an investigation period and lots of discussions we opted to go with a unified stack:],
-  [GUI : Chromium wrapper ( GitHub’s Electron )],
-  [Local UI/UX : TypeScript + Angular (currently v4)],
-  [Business logic / network / audio : Go],
-  [This stack is the same on Windows and Mac. We currently still have some legacy native code but we are quickly phasing it out. More on that below.],
-  [id="tldr-summary"\>TL;DR summary],
-  [We are moving away from native code and switching to Go + local web based views. Here is why:],
-  [Simplify: Maintaining & keeping in sync 2 desktop code bases is seriously complicated, painful & expensive.],
-  [Empower: Unifying the technical stack allows the entire team to contribute & innovate.],
-  [Enable: the new stack allows us to more easily/faster build new features in a cross platform fashion, using cutting edge technology while still having access to native APIs.],
-  [Acceptable overhead: while there is certainly a RAM overhead, it can and should be minimized.],
-  [This decision is slightly controversial because of two things, the choice of using Electron and the fact that we don’t stay in the JavaScript world and instead bring in Go.],
-  [id="electron-is-controversial"\>Electron is controversial],
-  [Electron often attracts bad comments on Hacker News and it is associated with very large RAM usage. The Slack app being the usual cited example. The issue here is more complex than it looks. Electron is a wrapper around Chromium which is the heart of the Chrome browser. In other words, the application renders a web view as its main view. Web views aren’t by default as optimized as native GUI code and that often means a great RAM cost than purely native UIs. Besides that, Chromium itself loads its fair share of code in memory. The raw cost of an Electron window is around 40MBs vs ~4MBs for a native UI. Not great… but how much RAM do you have on your computer? Do you realize that Chrome allocates around the same amount of RAM when you open a new empty Chrome tab? That’s not an excuse for the memory overhead but it helped me put some context around the cost of the raw overhead.],
-  [id="the-slack-app-problem"\>The Slack app problem],
-  [People complaining about Electron RAM usage usually refer to apps like Slack using 1GB or more. This is often due to a couple issues: the architecture of the app and the way the frontend is coded.],
-  [During the investigation phase, I realized that it was best to avoid using node.js modules, especially native modules. Those were hard to work with (odd behaviors at times, hard to debug, hard to test) and often memory heavy. The second part is the UI cost, load a web app in your browser and look at the memory usage go through the roof as you load pics, gifs, sounds and lots of data. Some apps are better than others and VSCode is a good example of an Electron based app with a very reasonable memory footprint. That said it is very true that most frontend developers don’t benchmark or track the memory usage of their apps.],
-  [So yes, an app that has a browser based UI will require a bit more ram but it should be reasonable if we expect people to have decently modern machines. Also, this quote from my colleague after I complained about how much RAM Chromium uses, made me smile:],
-  [RAM is meant to be used, stop being cheap trying to keep all of it free - Loren to Matt],
-  [He has a good point, but of course you don’t want to swap either and you don’t want apps you aren’t actively using to squat most of your RAM.],
-  [id="web-frontend-empower-the-team-share-knowledge"\>Web frontend: empower the team, share knowledge],
-  [So on the cons side we saw that there is a bit of a RAM usage increase but what about the advantages of using a web based GUI?],
-  [The main advantage was obviously only developing the user interface once and reuse it everywhere. But it goes further than that. This decision also empowers a bigger part of the team: all our frontend developers can become desktop application developers. They certainly need to understand the difference between web and local (technical and behaviors) but they don’t need to learn Cocoa or WPF . Also modern web APIs such as a Web MIDI and Web Bluetooth are available via a cross-platform API in Chromium if we decide to go that way. Adding new UI features is now much faster than it used to be (even for our talented engineers).],
-  [id="web-framework"\>Web framework],
-  [Because we already use Angular on the web, we decided to also use Angular for the GUI. Our team is familiar with the idioms, patterns, challenges and in theory elements can be shared. But what’s even more interesting to me is that a frontend developer who’s used to working on the web should be able to jump in on the desktop and feel at home. This consistency is very nice allowing us more flexibility and knowledge sharing. As a side note, we aren’t serving the application from the web, resources are available locally but we will probably start using service workers in the future.],
-  [id="separation-of-concerns"\>Separation of concerns],
-  [Another interesting aspect of our approach is that our logic doesn’t live in Electron, it is common for applications to implement the logic so it runs in the N ode.js process. We opted to not do that and instead are running a Go + native code process. The frontend and the “core” service communicate via gRPC . This design decision ensures that the separation of concerns is really enforced. In other words, we are implementing the same architecture we know very well and use everywhere else: client/server. The difference is that the GUI doesn’t talk to the web APIs but instead to a local server (which proxies some calls when needed and handles online/offline states). While that might sound like an over-engineered decision, we are planning on having other applications consume our services and having a local API is a huge win. We consider the app GUI one of the potential clients in an non-exclusive relationship. We can imagine that tomorrow, other applications, plugins or Digital Audio Workstations would want to communicate with our service in a standard, documented and cross platform interface. This separation of concern and design consideration would allow for that.],
-  [id="unified-code-base-using-go"\>Unified code base using Go],
-  [We invested many years in the native applications and some of the details were implemented as we found out edge issues around advanced features. Porting that code to Go isn’t trivial and we didn’t want to block on the port to ship the code. That’s why we still have an hybrid “core” architecture with native + Go code:],
-  [Connecting Go to original native code allows us to rewrite components in pieces and gRPC allows us to not break the contract between the UI/frontend and the core/backend. We are going to rewrite piece by piece until there is no more native code left. It’s also decently trivial to have Go communicate with native code so we can also still reach out to OS level features if really needed.],
-  [To us, gRPC is the most effective way to send data across boundaries, it is comparable to Websockets but with better tooling. gRPC has other advantages that I might cover them in a future post. The short version is that while it is a bit cumbersome at times, it’s be reliable and ensures a thought through API.],
-  [The heavy lifting remains in Go and was ported from native code. Go’s simplicity, native concurrency and testability gave us more confidence, reduce the amount of bugs and is empowering the entire backend team to join the fun. Go’s rich ecosystem also gives us access to a lot of interesting libraries for future features. Obj-C, Swift and C\# are great languages but they aren’t part of our main languages. I did consider using C\#/ Xamarin to create a single cross platform app. But we would have needed a specialized and isolated team and we wouldn’t be able to leverage as much of our knowledge and team expertise.],
-  [id="conclusion"\>Conclusion],
-  [My bet is that bringing the well known cloud architecture to the desktop is the right move for our company. There is a slight memory overhead but I think that by paying extra attention to it and with the help of other community members we are going to keep that to a very minimum. After evaluating the cost, I prefer to pay that short term penalty but have a solid architecture to build upon. I also really think that empowering the team and unifying the tech stack is going to make a big difference. We already saw that when we were able to “surge” UI development. Finally, the design bet is on more than a simple port but a redefinition of what a desktop will become. Having a powerful cross-platform service written in a modern language opens the door to a lot of opportunities.],
-  [Shameless plug: If that’s a challenge you’re interested in working on, our team would love to chat with you.],
-),
-  insert-map: (:),
-  word-count: 1772,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-}
-
-{
-  #standard-article(
-  title: [OpenAI Just Killed Sora],
-  author: [Jake Peterson],
-  source-name: [Lifehacker],
-  images: (),
-  paragraphs: (
-  [It's the end of an (albeit short) era: OpenAI is reportedly shutting down Sora, the company's once-viral AI video generation app. The Wall Street Journal was the first to break the story , and reports that the company is shuttering the app as part of a grander plan to streamline OpenAI ahead of a potential IPO (initial public offering) later this year.],
-  [OpenAI CEO Sam Altman addressed the news first with company staff on Tuesday, the Wall Street Journal says. It seems the move goes beyond just shutting down the Sora app itself: In addition to axing a developer-version of Sora, Altman reportedly told staff that OpenAI would not incorporate its AI video models in other company products going forward, including ChatGPT.],
-  [Sora's official X account posted to confirm the news :],
-  [id="the-brief-history-of-sora"\>The brief history of Sora],
-  [OpenAI only launched Sora in October of last year , and in that short period of time, the app helped propel AI-generated slop across social media feeds, including Instagram, TikTok, and YouTube. Sora is far from the only tool people use to make to AI video content, but it offered an easy solution for generating hyper-realistic short-form video content. If you encountered AI versions of the types of videos you tend to scroll past on social media, chances are it came from Sora.],
-  [Sora also made it possible to generate " Cameos ," or make videos with the likeness of real people. The company was adamant its privacy and security policies were significant enough to ensure it wouldn't be used for ill, but the potential for deepfakes was so great, it seemed like a pandora's box waiting to be opened.],
-  [Still, Sora gained some legitimacy in the eyes of traditional media, too: In a perplexing move, Disney partnered with OpenAI to let users generate videos featuring over 200 Disney characters. You might assume OpenAI paid for that integration, but on the contrary, Disney made an equity investment of \$1 billion into the company. (That is not a typo.) But with Sora's sunsetting, Disney officially exited the deal on Tuesday.],
-  [id="is-this-the-end-of-ai-videos-for-openai"\>Is this the end of AI videos for OpenAI?],
-  [This announcement has implications beyond Sora the app. If OpenAI largely abandons AI video generation in general, it will be exiting a tight race amongst competition from companies like Google (Veo) and ByteDance (Seedance). The Sora app uses OpenAI's Sora video model, which the company announced two years ago . Back then, OpenAI's concept video scared the bejeezus out of me; since then, the AI video market has only exploded. While Sora might've been the go-to for short-form nonsense, there's plenty of other AI slop across the internet being made with other tools—some of which is getting extremely difficult to discern from reality.],
-  [OpenAI seems to have a different focus going forward. The company previously announced a new " super app " that combines its web browser ( Atlas ), ChatGPT, and Codex coding app into one program. I guess Sora didn't fit into that equation.],
-  [( Disclosure: Lifehacker’s parent company, Ziff Davis, filed a lawsuit against OpenAI in April 2025, alleging it infringed Ziff Davis copyrights in training and operating its AI systems.)],
-),
-  insert-map: (:),
-  word-count: 544,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-}
-
-{
-  #standard-article(
-  title: [My Favorite Mini Massage Gun Is 21% Off for Amazon's Big Spring Sale],
-  author: [Meredith Dietz],
+  title: [The New Echo Dot Max Is Its Lowest Price Ever for the Amazon Spring Sale],
+  author: [Khamosh Pathak],
   source-name: [Lifehacker],
   images: (),
   paragraphs: (
   [We may earn a commission from links on this page. Deal pricing and availability subject to change after time of publication.],
-  [When you’re shopping around for a massage gun, you want to focus on features that justify the price. Specifically, I focus on features like speed settings (both intensity and versatility), noise and ease of use, battery life, and size . I've learned the hard way that when you're looking for a travel-sized massage gun, you have to be extra shrewd.],
-  [I was once gifted a mini massage gun that, according to the holiday gift exchange rules, must have cost less than \$30. It ran out of battery within one or two minutes of weak “massaging.” All of that is to say, a cheap massage gun isn’t worth it. Even if you're looking for "mini," you still need to invest in one up to the task of hammering away the pain. And do I have the guy for you: Normally \$99.99, this mini massage gun is currently on sale for \$78.82 as part of Amazon's Big Spring Sale .],
-  [At barely one pound, the Bob and Brad Q2 Mini certainly lives up to its name. Luckily, this massage gun still packs a lot of punch, in terms of both literal vibrations and my overall user experience. For me, the real selling point of this massage gun—which I review in-depth here —is the effectiveness of its heat therapy. Plus, its compact size makes it perfect for travel or bringing to the gym—something I never considered with my full-sized TheraGun Therabody . Even if you already own a larger massage gun, the Q2 Mini's heat therapy and sweet size could make it a worthwhile addition to your recovery toolkit.],
+  [The Echo Dot Max is Amazon's “Pro” tier smart speaker, designed for people who want better sound quality in a relatively small package and at an affordable price. This upgraded smart speaker is powerful, with a spherical body and a concave cutout for volume and mute controls, surrounded by an LED ring (yes, it looks like the Death Star).],
+  [Released last October, the Echo Dot Max is currently at its lowest price ever during Amazon's Big Spring Sale . You can get one for \$74.99 instead of the usual \$99.99.],
+  [The new Echo Dot Max is a step up from the Echo Dot, and compared to the 2022 model, it features three times louder bass (thanks to a new 0.8-inch tweeter and a 2.5-inch woofer). It's powered by Amazon's custom Za3 chip with a built-in AI Accelerator, meaning it's built for the Alexa+ AI service .],
+  [The Max also features a built-in smart home hub with support for Matter, Zigbee, and Thread Border Router; it can also work as an eero extender for your mesh Wi-Fi router. There's also a temperature sensor and ultrasonic presence detector, so you can use it to trigger Alexa routines as soon as someone walks into the room.],
+  [Tech wise, the Echo Dot Max supports Wi-Fi 6E for faster speeds, Bluetooth 5.3, lossless high-definition audio, and automatic room adaption. It's also easy to pair two Echo Dot Max speakers for a stereo home theater setup with any compatible Fire TV devices. Echo Dot Max comes in three colors: Graphite, Glacier White, and Amethyst. All three are available on discount right now.],
+  [PCMag gave the Echo Dot Max an "Outstanding" 4.5 star rating , along with an Editor's Choice award, noting, "the Amazon Echo Dot Max stands out as a strong successor to the fourth-generation Echo, comfortably occupying the \$100 sweet spot for smart speakers." And what's better than a \$100 sweet spot? A \$75 sweet spot.],
   [Apple AirPods Pro 3 Noise Cancelling Heart Rate Wireless Earbuds
  
  
@@ -1563,7 +1318,34 @@ puts "明けましておめでとうございます。".language
  (List Price \$249.99)],
 ),
   insert-map: (:),
-  word-count: 594,
+  word-count: 647,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+  #pull-quote([All three are available on discount right now.], [Khamosh Pathak])
+
+}
+
+{
+  #standard-article(
+  title: [The names of birds, part 1],
+  author: [ericlippert],
+  source-name: [Fabulous Adventures in Coding (Eric Lippert)],
+  images: (),
+  paragraphs: (
+  [class="wp-block-paragraph"\>For the next part in my Bean Machine retrospective to make sense I’ll need to make a short digression. In looking back on the almost 20 years I’ve been blogging, it is surprising to me that I’ve only briefly alluded to my appreciation of combinatory logic. In the next couple of episodes, I’ll do a quick introduction based on the delightful book that introduced it to me: To Mock A Mockingbird , by the late Raymond Smullyan.],
+  [class="wp-block-paragraph"\>Imagine a forest containing some birds, possibly finitely or infinitely many. These are unusual birds. When you call the species name of a bird in the forest to a bird in the forest, it calls one back to you. Maybe the same, maybe different, but when you tell a bird the name of a bird, it names a bird back to you. There might be a Red Capped Cardinal in the forest and when you call out Great Blue Heron to it, it calls back Belted Kingfisher.],
+  [class="wp-block-paragraph"\>We will notate “I called Q to P and got response R ” as PQ = R . If I then called out S to R and R responded with T , we’ll notate that as PQS = RS = T . We’ll use parentheses in the obvious way: PQS = (PQ)S and this might be different from P(QS) . The latter is “I called S to Q , and then called Q ‘s response to P “. I’ll use capital letters to represent specific bird names, and small letters to represent variables.],
+  [class="wp-block-paragraph"\>The question we’re considering here is: under what circumstances will a bird call back the same name you called to it? That is, for a given bird y , under what circumstances does yx = x ?],
+  [class="wp-block-paragraph"\>Smullyan calls birds with this relationship “fondness” — that is, “ y is fond of x ” means that yx = x . If y is fond of x then x is said to be a “fixpoint” of y .],
+  [class="wp-block-paragraph"\>A forest is said to be “compositional” if for every pair of birds ( a , b ) — a and b can be the same or different — there is a bird c in the forest such that cx = b(ax) for all x . That is, if we call any name x to a , and then call its response to b , we get the same result as simply calling x to c . c is the composition of “call x to a , and then call that response to b “.],
+  [class="wp-block-paragraph"\>A mockingbird is the bird M with the property that Mx = xx . That is, for any bird name x , M tells you what x ‘s response is to its own name. (The attentive reader will note that we have not said what MM is, but at least we know from the definition that MM = MM , so give me some credit for consistency at least.)],
+  [class="wp-block-paragraph"\>In particular, that’s true for c , so cc = p(Mc) . But Mc = cc , thus cc = p(cc) , and we’ve found a bird that p is fond of. Since p was any bird, every bird in the forest is fond of at least one bird. Or, put another way, every bird in a compositional forest with a mockingbird has at least one fixpoint .],
+  [class="wp-block-paragraph"\> Next time on FAIC: we’ll take a look at a few more interesting birds, and then discuss why this whimsy is relevant to compilation before getting back to Bean Machine.],
+),
+  insert-map: (:),
+  word-count: 674,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -1572,112 +1354,174 @@ puts "明けましておめでとうございます。".language
 
 {
   #standard-article(
-  title: [UK Bank Holidays with Pandas on Jupyter],
-  author: [Simone Spaccarotella],
-  source-name: [BBC Product & Technology],
+  title: [How Robert F. Kennedy Jr.’s Vaccine Agenda Risks a Resurgence of Deadly Childhood Plagues],
+  author: [Patricia Callahan],
+  source-name: [ProPublica],
   images: (),
   paragraphs: (
-  [How I learned to manipulate JSON data with Pandas on a Jupyter Notebook and deconstruct it to a DataFrame ready for queries.],
-  [A bit of context first],
-  [I started a self-study path to learn the theoretical fundamentals of Data Science and Machine Learning. I have also been playing with Python ever since, with coding exercises during the “ Friday 10% time ” here at the BBC and on my own time when I have some to spare.],
-  [I created this playground repository to refresh my Pythonic knowledge that was buried deep inside the funny head of mine. This repo is a mix of material and exercises to keep my Python coding skills sharp.],
-  [GitHub - simonespa/python-playground: A playground repo for Python],
-  [I also created a specific playground focused on Data Science and Machine learning. In this playground I practice with libraries such as NumPy , Pandas , Scikit-Learn , TensorFlow (et. all) with a Jupyter Notebook . It also contains notes and summaries of what I learn in forms of README or notebooks.],
-  [GitHub - simonespa/machine-learning-playground: A playground to practice machine learning, data modelling and visualisation],
-  [Nothing fancy or ground-breaking, just a couple of playground repos for me to practice and learn at my own pace.],
-  [The 10% time at the BBC],
-  [This happens every other Friday and it is about learning. Engineers use this time to learn new technologies and/or languages, discover new approaches and techniques.],
-  [We can organise the day as we want. It could be a self-paced learning session (reading, watching tutorials, etc.), a day of study for an apprenticeship or a university degree etc., an actual hands-on prototyping session to work on a long-running personal project, or a group collaboration with other like-minded people.],
-  [There is no limitation to how we plan our day, as long as we keep in mind the end goal. In simple terms, satisfy our own curiosity and creativity by strengthening our technical knowledge and acquire new skills to widen our horizon towards new engineering areas.],
-  [Unlike the hack day, we don’t have to present a demo to a panel. Nonetheless, we like to share with the other members of the wider team what we’ve learned during the day if we want to, discussing about different topics, Q&A and why not, showcasing a prototype if someone has built one. No prizes but praises.],
-  [The UK Bank Holidays data],
-  [I needed to find a dataset that I could use to practice with Pandas on a Jupyter Notebook.],
-  [You may be familiar with the Gov.uk page that shows the list of past and upcoming UK bank holidays (i.e. https:\/\/www.gov.uk/bank-holidays ) and maybe less familiar with https:\/\/www.gov.uk/bank-holidays.json which is the same URL plus the “.json” part appended at the end.],
-  [The JSON URL returns the same information of the HTML page but in a machine-readable format (i.e. JSON response) and it’s that URL that I used to retrieve the information i needed to manipulate.],
-  [UK bank holidays],
-  [The data is released under MIT License and if you are curious about its implementation, you can find more details at the following link],
-  [calendars/README.md at master · alphagov/calendars],
-  [This is my first Notebook by the way, which I wrote using plain Jupyter on my localhost. Once I mastered the craft, I then decided to publish it on Kaggle which is way better if you then want to practice on more interesting datasets and tasks: from simple data manipulation and visualisation to fully fledged machine learning competitions. You can find my published UK Bank Holidays Kaggle at the following link.],
-  [UK Bank Holidays],
-  [In this project I use Pandas to fetch, manipulate and query the JSON data. The main trick to work with JSON datasets and manipulate them as Pandas DataFrame is to flatten the portion of properties you need with the “json\_normalize” Pandas function, no matter how deep the props are.],
-  [N. B. In this post I’m assuming that you are familiar with the tools and libraries I’m referring to. If not, it would be presumptuous of me to tell you where and how to find material on the Internet. But if I were asked, I’d recommend https:\/\/towardsdatascience.com , a publication of independent authors and volunteer editors of dedicated and curated Medium blog posts specialised in Data Science and Machine learning. I read it myself to support the material I am currently studying and it’s being really useful so far.],
-  [The JSON structure of the response returned by https:\/\/www.gov.uk/bank-holidays.json is the following],
-  [{
- "england-and-wales" : {
- "division" : "england-and-wales",
- "events" : [
- {
- "title" : "New Year’s Day",
- "date" : "2017-01-02",
- "notes" : "Substitute day",
- "bunting" : true
- },
- { ... },
- ...
- ]
- },
- "scotland" : {
- "division" : "scotland",
- "events" : []
- },
- "northern-ireland" : {
- "division" : "northern-ireland",
- "events" : []
- }
-}],
-  [Pandas plays well with tabular data and it is able to read JSON too. The challenge with JSON though is hat it is hierarchical by nature, and Pandas can only go as far as 2 levels deep to cover the two dimensions (columns and rows). In order to get nested properties, we need to specify their path in order to flatten the data in tabular format.],
-  [Data collection],
-  [First of all, we need to import the Pandas library],
-  [import pandas as pd],
-  [and fetch the data from https:\/\/www.gov.uk/bank-holidays.json],
-  [bank\_holidays = pd.read\_json(path\_or\_buf = 'https:\/\/www.gov.uk/bank-holidays.json')],
-  [Data exploration and transformation],
-  [Pandas DataFrame],
-  [The data frame has a row called events which contains data in JSON format. We need to deconstruct this data in tabular format, so that we are able to query it with Pandas.],
-  [With this approach we transform the bank\_holidays DataFrame to a Python dictionary. The dictionary can then be manipulated with the json\_normalize Pandas function, by selecting the nested property to flatten into a table.],
-  [The data frame is then returned with the appropriate data types set for each column.],
-  [The following examples refer to the bank holidays in England and Wales .],
-  [def get\_england\_and\_wales(data\_frame):
- return (
- pd
- .json\_normalize(
- data\_frame.to\_dict(),
- record\_path=[['england-and-wales', 'events']]
- )
- .astype({
- 'title': 'string',
- 'date': 'datetime64[ns]',
- 'notes': 'string',
- 'bunting': 'bool'
- })
- ) bh = get\_england\_and\_wales(bank\_holidays)],
-  [NOTE: This approach can be used with any JSON data no matter the complexity of its structure and how nested a property is.],
-  [Get all bank holidays within a specified time interval],
-  [The following examples return the 2022 holidays in England and Wales. Let’s declare the “start” and “end” dates.],
-  [start\_date = '2022-1-1'
-end\_date = '2022-12-31'],
-  [Create a boolean mask],
-  [mask = (bh['date'] \> start\_date) & (bh['date'] \@start\_date and date \<= \@end\_date ')],
-  [If you are going to do a lot of selections by date, you may want to set the date column as the index for the data frame.],
-  [bh = bh.set\_index(['date'])],
-  [Now you can select the rows by date using pd.loc[start\_date:end\_date].],
-  [bh.loc[start\_date:end\_date] Bank holidays 2022 with the “date” column set as DataFrame index],
-  [Upcoming bank holidays in England and Wales],
-  [The following example returns the remaining holidays between “now” until the end of the year.],
-  [To do so, we need to import the date object from the datetime module.],
-  [from datetime import date],
-  [Calculate the date range from today to the end of the year],
-  [today = date.today().strftime('%Y-%m- %d ')
-end\_of\_the\_year = f' { date.today().year } -12-31'],
-  [Now you can query the data frame],
-  [bh.loc[today:end\_of\_the\_year]],
-  [This for me was a pretty good learning on how to use Pandas and Jupyter with a real example and how to manipulate and query data. Don’t get me wrong, I just scratched the surface of the iceberg by using just a few of the many functions that this library provides. It’s a powerful tool and it takes a bit more practice on many more projects to really get the hang of it. But the good news is that the documentation is comprehensive and well written plus there is plenty of examples and informations out there for you to find and support your work.],
-  [If you are already familiar with the tool and are looking for interesting datasets, I’d suggest to signup on Kaggle as I did, search for the right exercise that fit your level of expertise, and practice with it. If that is not enough, just remember that many big organisations, government agencies, public bodies etc. provide open data for the public to use: e.g https:\/\/data.nasa.gov and https:\/\/data.police.uk/data just to name two.],
-  [In conclusion, if you are in the UK and you want to check how long until the next holiday to have some time off, please just consult the Gov.uk website, it’s faster 😃. But if like me you want to learn something new while you do it, well you’ve found the right post to read.],
-  [UK Bank Holidays with Pandas on Jupyter was originally published in BBC Product & Technology on Medium, where people are continuing the conversation by highlighting and responding to this story.],
+  [Dr. Adam Ratner hovered over a gravely ill infant in a New York City intensive care unit on a grim day in 2022. The 3-month-old girl spiked a fever two days earlier and had become lethargic. Soon she was having seizures and struggling to breathe.],
+  [She didn’t register Ratner’s towering frame or the bright hospital lights. Her eyes stared up and to the right, eerily frozen.],
+  [He ran his hand over the soft spot on her head, which should have been flat. Instead, it bulged, a sign that too much fluid was building up inside her skull.],
+  [The baby’s life was in danger, and Ratner needed to figure out why. He worried the culprit was bacterial meningitis, an infection of the membranes that protect the brain.],
+  [What came back on her lab tests was something out of the history books.],
+  [The infant’s meningitis was caused by invasive Haemophilus influenzae type b, or Hib, a type of bacteria that used to kill nearly 1,000 children a year in the U. S. A shot introduced in the late 1980s was so effective that Ratner, a veteran pediatric infectious disease doctor, was among the generations of physicians who had never seen a case. But the baby’s parents, Ratner learned, had chosen not to vaccinate her.],
+  [Disheartened, he told his colleagues, “This should be a never event.”],
+  [It wasn’t. The following year, Ratner treated another infant with Hib, then another, each of them unvaccinated. Two went home, but one had to be discharged to a rehabilitation facility. That 5-month-old boy had huge black pupils that didn’t respond to light, and he needed a ventilator to breathe. Ratner and his colleagues noted an “ absence of brain stem reflexes ,” indicating severe damage.],
+  [The U. S. government took a half century to build a vaccination system that shielded children from such a fate. Its success depended on two fundamental pillars: parents trusting in vaccines and children having access to them. Both are now in peril, thanks in no small part to the man steering America’s health policy.],
+  [Health and Human Services Secretary Robert F. Kennedy Jr., who founded an antivaccine group and once likened the immunization of children to a holocaust , is transforming a government that long championed the lifesaving benefits of shots into one that spreads doubts about their safety here and abroad.],
+  [Kennedy is also considering changes that could prompt the few companies that make vaccines for American kids to abandon the U. S. market, leaving parents who want the shots unable to get them.],
+  [The threat to vaccine access reaches across the globe after Kennedy yanked the government’s \$1.6 billion pledge to the aid group that provides shots for the world’s poorest children. For decades, the U. S. had funded such work not just as a humanitarian mission but as a way to keep Americans safe from unchecked contagions.],
+  [Kennedy’s efforts to reshape vaccine policies have been well chronicled, but ProPublica wanted to take a broader look at how the changes might affect Americans’ health in the years to come.],
+  [We found that long-forgotten plagues have roared back, killing and maiming children in parts of the world where access to vaccines or trust in them faltered. What seemed like subtle changes to a country’s vaccine policies had disastrous consequences years later.],
+  [Even in places that offer highly advanced health care, doctors have felt impotent trying to undo the damage when these horrors return. Modern medicine can’t reverse paralysis from polio. Surgeons can intervene when a baby is born blind, deaf and with heart defects after being exposed to rubella in the womb, but the child is still likely to face a life shaped by disability.],
+  [ProPublica reviewed hundreds of studies on vaccines and outbreaks of the diseases they prevent and interviewed more than three dozen people who have worked on U. S. immunization programs here and abroad, dating back to the days of smallpox. Some had never spoken publicly about their experiences.],
+  [They shared a pit-of-the-stomach dread that American children will end up fighting for their lives against infections that have long been preventable.],
+  [“I think there always was a worst-case scenario,” said Dr. Melinda Wharton, who retired last September after more than three decades leading immunization programs at the Centers for Disease Control and Prevention. “I don’t think I imagined it could or would be this bad.”],
+  [This week, Kennedy’s agency indicated it planned to appeal a federal court ruling that halted, at least temporarily, some of his changes. Among those was the decision to drop six diseases from the routine childhood immunization schedule.],
+  [HHS declined to make Kennedy available for an interview. In an emailed response to detailed questions, HHS spokesperson Andrew Nixon said that the agency has not limited access to or insurance coverage for vaccines. During the prior administration, federal health agencies “told the public that questioning vaccine policy was off limits,” Nixon said. “That posture contributed to a collapse in trust in U. S. health care.”],
+  [“Secretary Kennedy believes that trust is rebuilt through an open review of safety data, the willingness to ask the hard questions, and ensuring the American people have all emerging information as soon as we know it,” he said.],
+  [Vaccination rates have fallen in large swaths of the country. Resentful of how government institutions responded to the COVID-19 pandemic, many Americans lost trust in public health leaders . Antivaccine activists spread misinformation and recast the once-fringe practice of refusing shots as an exercise in “medical freedom.”],
+  [A medical team assesses an infant for measles in Spartanburg, South Carolina, this year. The Washington Post via Getty Images],
+  [Now the U. S. is experiencing a surge in measles not seen in three decades. There have been more than 3,600 cases across 46 states and three deaths since January last year. The virus spread so fast in South Carolina this year that some medical teams had to examine infected patients in their cars to protect vulnerable people in their waiting rooms, like they did during the worst days of COVID-19.],
+  [Measles, among the most contagious diseases, is typically the first to infect undervaccinated communities and serves as a warning that other scourges will follow.],
+  [That’s what happened in New York City where antivaccine forces distributed illustrated handouts that seeded fear in Orthodox Jewish communities. Ratner saw a direct line between a loss of trust and the sick children in his ICU — first with measles in 2018 and 2019 , then with Hib a few years later.],
+  [Now the villainization of vaccines isn’t coming from pamphlets passed out on a Brooklyn street corner. It’s coming from the highest health offices in the U. S. government.],
+  [“I’m worried,” Ratner said, “that we’re going back to a time where people die in childhood.”],
+  [The U. S. has been a leader on vaccination since the nation’s founding.],
+  [During the Revolutionary War, George Washington ordered troops to be inoculated against smallpox, which had ravaged the Continental Army and was scaring away recruits . Washington knew the perils of the disease: His face was pocked with scars from his own teenage infection.],
+  [The inoculation, the country’s first immunization mandate, took a primitive form. A sore from a smallpox patient was lanced, then the pus was inserted under a healthy person’s skin. Though some people died, the resulting infection was, for the vast majority, milder than the type caught in a bunkhouse or on a battlefield.],
+  [Washington gave the order in February 1777, “ keeping the matter as secret as possible ” so that the British wouldn’t attack his bedridden troops during their monthlong recovery. Had he not carried out the inoculation, many historians have concluded, the British may have won .],
+  [Nearly two centuries later, in the throes of the Cold War, CDC scientists teamed up with their counterparts from America’s archenemy, the Soviet Union, to wipe smallpox from the planet. They worked through the World Health Organization to track the virus in cities, rainforests and war zones, vaccinating those at risk. Four U. S. presidents, Democrats and Republicans, backed the work until the disease that had haunted humans since the days of the pharaohs was gone.],
+  [Vaccines, for decades, weren’t politically divisive. They were so uncontroversial that McDonald’s restaurants in the 1990s put the childhood immunization schedule on their tray liners.],
+  [When the nation’s immunization program was in trouble in the 1980s, Republicans and Democrats stepped in to save it.],
+  [Vaccine makers were abandoning the U. S. market after a flood of lawsuits alleged that the shot used at the time to protect children from diphtheria, tetanus and whooping cough caused profoundly disabling seizures. Scientists later discovered genetic causes of some of the most devastating forms of epilepsy, but parents who sued back then won big verdicts and settlements.],
+  [At one point pediatricians could only buy that shot from a single company , and there were shortages. The U. S. also was down to just one manufacturer for the measles-mumps-rubella shot and one for the polio vaccine.],
+  [“If there is a fire tomorrow in the plant where the polio vaccine is manufactured, what would happen?” Rep. Henry Waxman asked the CDC director during a 1984 House subcommittee hearing.],
+  [“We would have a shortage,” the director answered.],
+  [An exasperated Waxman shot back: “Are we going to then start putting money into iron lungs for polio victims?”],
+  [A liberal Democrat from California, Waxman for years worked with Sen. Paula Hawkins, a conservative Florida Republican, on legislation that stopped the exodus of vaccine makers by limiting their liability. Launched in 1988, the federal Vaccine Injury Compensation Program pays people who suffer rare but serious side effects, using money from a special tax on certain shots. The program maintains a table of injuries that are eligible for quicker payouts, and a dedicated vaccine court rules on cases involving health problems not listed on the table.],
+  [Those who don’t like what they are offered can still sue vaccine makers in traditional civil courts, but a Supreme Court ruling significantly limited the types of cases that can win there.],
+  [Just as the compensation program was getting off the ground, measles laid bare a different weakness in the immunization system. The disease tore through American cities, hitting Black and Hispanic preschoolers especially hard. Between 1989 and 1991, there were more than 55,000 cases and 123 deaths .],
+  [In June 1991, President George H. W. Bush, a Republican, stepped into the White House Rose Garden with a message for “ every parent everywhere in America ”: “Please, make sure your child is immunized.”],
+  [He announced that a special team of health officials was investigating why so many kids were missing their shots.],
+  [“While some say each generation repeats the mistakes of the last, no generation in America should suffer the plagues of the past,” Bush said.],
+  [The problem was access. Parents couldn’t afford the vaccines given at pediatricians’ offices. Bush’s successor, President Bill Clinton, a Democrat, ushered in a program that to this day offers free shots through local doctors to more than half of American kids.],
+  [Vaccination rates climbed, and measles cases dropped precipitously. By 2000, the U. S. had stopped local spread of the virus so well that global health authorities declared it eliminated here.],
+  [Having made progress at home, the U. S. government championed the use of vaccines abroad. Dr. Susan Reef, who had trained in the CDC disease-detective program made famous by Kate Winslet’s character in the movie “Contagion,” crisscrossed the globe showing health officials how they could save babies from birth defects and early death by introducing the rubella vaccine.],
+  [The cloudy eye of this 3-year-old is from glaucoma caused by congenital rubella syndrome, a constellation of problems resulting from exposure to rubella while in utero. Centers for Disease Control and Prevention/Dr. Andre J. Lebrun],
+  [Also known as German measles, rubella is usually mild in kids and adults. When people get infected very early in pregnancy, though, they face up to a 90% chance of giving birth to a baby with congenital rubella syndrome. About a third of those infants die before their first birthday. Most survivors have deafness, blindness, heart defects or intellectual disabilities. Before the vaccine, a U. S. epidemic in the mid-1960s led to 20,000 babies born with the syndrome.],
+  [Reef and her CDC colleagues helped foreign health authorities set up surveillance systems that identified newborns with congenital rubella syndrome.],
+  [During a 2011 rubella epidemic in Vietnam, Reef spotted a cluster of tiny bassinets in a Ho Chi Minh City intensive care unit. The babies’ eyes had cataracts, a sign of vision loss. She knew that most would have trouble hearing, if they could hear at all. A collaborator from the WHO told Reef that at least one of the infants had been abandoned by his family.],
+  [Doctors had isolated the contagious newborns to prevent the spread of rubella, a sign the country’s surveillance system was working. But the scene of this preventable suffering, Reef said, “broke my heart.”],
+  [Vietnam launched a national rubella immunization program a few years later.],
+  [When Reef’s work began, less than half the world’s countries had introduced a rubella shot. When she retired in 2022 after a 30-year career at the CDC, all but 19 had.],
+  [For half a century, one idea lay at the core of all U. S. immunization programs: Let down your guard and the diseases will return.],
+  [Dr. Chuck Vitek saw this happen as he walked the worn linoleum floors of Russian infectious disease hospitals in the mid-1990s.],
+  [Throughout that decade, a massive epidemic of diphtheria raged across the countries of the former Soviet Union. The CDC repeatedly deployed Vitek to help health authorities contain this ancient contagion, once widely known as the “strangling angel of children.”],
+  [Diphtheria’s name is drawn from the Greek word for leather because tissue destroyed by the diphtheria toxin builds up in the back of the throat like a piece of hide, sealing off a swollen airway. Many parents had to watch their children suffocate. For those who escape asphyxiation, the toxin can damage the heart and nerves. Patients who seem better can drop dead weeks later.],
+  [At one hospital, Vitek peered into the mouth of a sick Russian teenager and saw the thick greyish-white membrane covering a third of his throat. Doctors had administered antitoxin promptly, so his windpipe wasn’t blocked. But, pale and weak, the boy faced a terrible wait. Had diphtheria ruined his heart?],
+  [Vitek had to leave before it was clear whether the child would survive. But one detail from his medical history stood out above all others: The teen had not been vaccinated.],
+  [“It was sad because it was something that would have easily been prevented with vaccination,” Vitek recalled.],
+  [Vitek was another graduate of the CDC’s disease-detective program. A big part of his assignment was to investigate why diphtheria had come back. One obvious problem was access; the collapse of the Soviet Union in 1991 disrupted vaccine supplies. But that wasn’t the whole answer.],
+  [The unvaccinated Russian boy offered a clue to the rest.],
+  [The Soviets had been big believers in immunization. Diphtheria shots for kids had been free — and mandatory — since the 1950s.],
+  [When diphtheria seemed like a problem of the past, though, the Soviet Union eased up. Concerns about fevers and other possible side effects from the shot used back then overshadowed fears of the disease. In the 1980s, Soviet health authorities created alternative immunization schedules with lower-dose diphtheria shots and fewer total injections, and they directed pediatricians to put off vaccination if a child had one of a long list of health issues. “If a kid had a runny nose, a stomachache, almost anything,” Vitek said, doctors would skip the shot that day. “They wouldn’t make an effort to catch them up.”],
+  [Antivaccine activists tapped into the deep mistrust of government institutions in the years leading up to the collapse of the Soviet Union. One 1988 column in a Moscow newspaper suggested that Soviet officials knew the shot could be harmful — even deadly — but kept this secret. (In focus groups held years later, parents vividly recalled how news stories made them afraid of immunizations , Vitek and a colleague found.)],
+  [By 1990, only 60% of infants in Soviet Russia had received all three full-strength diphtheria shots before their first birthday.],
+  [The disease found a foothold. Before the epidemic was over, more than 157,000 people were infected and 5,000 died , mostly in Russia.],
+  [Health officials in Russia ended the policies that left their people vulnerable and held mandatory mass vaccination campaigns.],
+  [“It was an extra dose across the entire population,” Vitek recalled.],
+  [It took years to end the epidemic.],
+  [Japan had a similar struggle with rubella.],
+  [A rash from rubella, also known as German measles Centers for Disease Control and Prevention],
+  [When health authorities introduced a rubella shot in the 1970s, they took an approach that weighed who was most at risk, targeting future mothers by giving the shot only to junior high girls. The boys of this era were passed over and remained susceptible as they grew up. Rubella researchers refer to them as “the lost generation.”],
+  [In 1989, Japan changed course and began vaccinating young boys and girls with a shot that combined protection for rubella, measles and mumps. But doctors quickly discovered that the mumps component — different from the U. S. version — sometimes caused a type of meningitis. Mistrust spread as health officials downplayed the risk at first, then yanked the combined vaccines in favor of standalone shots.],
+  [Japan in 1994 dropped its strict immunization mandates. Health authorities continued to recommend shots, but vaccination became a matter of personal choice , and a lack of trust shadowed the immunization program for years. One study showed Japan’s confidence in vaccines was among the lowest in the world .],
+  [Time and again, rubella circulated in the men who were never offered the shots as boys, then spread to pregnant women who hadn’t been fully vaccinated. Babies were born with the type of  devastating birth defects that Reef saw in the ICU in Vietnam. Japan’s epidemic from 2012 to 2014 was so bad that researchers discovered a temporary drop in the country’s fertility rates that coincided with a spike in Google searches for the Japanese word for rubella.],
+  [Serious misgivings about vaccination in one part of the world can have far-reaching consequences. Twenty countries that thought their days of paralytic polio were behind them saw the dreaded disease return in the 2000s. The virus was traced to Nigeria, where religious and political leaders in some areas had boycotted polio immunization campaigns amid false rumors that the shots had been tainted to make Muslim girls infertile.],
+  [Organizers of the boycott feared the vaccine more than the disease.],
+  [The governor of one northern Nigerian state told the Associated Press in 2004: “It is a lesser of two evils to sacrifice two, three, four, five, even 10 children \[to polio\] than allow hundreds or thousands or possibly millions of girl-children likely to be rendered infertile.”],
+  [Polio roared back in Nigeria, leaving more than 2,500 children disabled. It spread around the world for years, paralyzing kids as far away as Indonesia.],
+  [When Kennedy became America’s top health official last year, no other leader at the CDC had more experience preventing death and disability with vaccines than Dr. Melinda Wharton.],
+  [It was Wharton who had sent Vitek to Russia to figure out why diphtheria returned . And it was Wharton who started Reef on her quest to vanquish congenital rubella syndrome . Like them, she had trained as a disease detective.],
+  [In her 39 years at the CDC, Wharton had seen activists try to persuade Americans that the shots they were giving their babies were scarier than the diseases those shots prevented. In 2021, Kennedy had written in a book that measles — a virus the CDC says kills nearly 1 to 3 of every 1,000 children who contract it — wasn’t the menace that the government proclaimed.],
+  [“Measles outbreaks have been fabricated to create fear that in turn forces government officials to ‘do something,’” he wrote. “They then inflict unnecessary and risky vaccines on millions of children for the sole purpose of fattening industry profits.”],
+  [During his confirmation hearings, Kennedy told senators he isn’t antivaccine. “I am pro-safety,” he said. “I worked for years to raise awareness about the mercury and toxic chemicals in fish, and nobody called me anti-fish .”],
+  [In his early days as the nation’s top health leader, HHS dismissed thousands of Wharton’s colleagues , ended vaccine promotions during an especially deadly flu season and buried a CDC measles forecast that stressed the need for immunization.],
+  [A measles rash covers a child’s torso. Centers for Disease Control and Prevention/Dr. Philip Nader],
+  [Wharton set five empty cardboard boxes on her filing cabinet in case she needed to pack up quickly.],
+  [In recent years she managed the committee of outside experts that recommends which shots Americans should get and when. Few people had ever heard of her obscure corner of the federal health bureaucracy.],
+  [But Kennedy knew it well. He understood that Congress had given these advisers the power to determine which shots were free for more than half of American kids and which ones insurers must pay for. Many states used the committee’s recommendations to set vaccine mandates for kids attending school.],
+  [Kennedy for years complained the panel had been captured by Big Pharma. On June 9, his chief of staff at the CDC removed Wharton from her role managing the committee. Just as that news was sinking in, Wharton’s phone lit up with messages from the committee’s members. Kennedy had announced in a Wall Street Journal column that he was replacing all of them . “A clean sweep is needed to re-establish public confidence in vaccine science,” he wrote.],
+  [Health and Human Services Secretary Robert F. Kennedy Jr. Kayla Bartkowski/Bloomberg via Getty Images],
+  [Kennedy stacked the new committee with many vaccine skeptics who quickly delved into his longstanding grievances about America’s immunization system. Webcasts of the meetings became a megaphone for mistrust. Some devolved into shouting matches as doctors from medical societies pushed back against misinformation.],
+  [One of Kennedy’s new appointees, Retsef Levi, a professor of operations management at the MIT Sloan School of Management, suggested that vaccinating a baby was like flying on an airplane that hadn’t been rigorously tested. “I suggest to parents to be very, very suspicious when people tell them that something is safe, especially a vaccine,” he said.],
+  [In an emailed response to questions from ProPublica, Levi said that vaccines have benefits and risks “often personalized to the individual’s health status, risk factors, and preferences.” Being transparent about those benefits and risks, including being honest about what is known and not known, increases public confidence in vaccination programs, he said.],
+  [The chair of the committee, Dr. Kirk Milhoan, told the “Why Should I Trust You?” podcast he wasn’t afraid to reconsider whether the polio shot is needed any longer. In an email to ProPublica, Milhoan, a pediatric cardiologist, said that the committee is required to review vaccines every seven years “to optimize effectiveness and to reevaluate possible long term risks.”],
+  [Like Kennedy, Milhoan doesn’t think vaccines have been appropriately tested for safety. In the podcast, he said American parents deserve to know the risks so they can decide whether they’re more concerned about the disease or the potential for side effects from the shot.],
+  [“What we are doing is returning individual autonomy to the first order, not public health,” he added.],
+  [Since she retired last year, Wharton has tuned in to the meetings she used to run, but at times they were too painful to watch. The new committee at one point sought advice from a former president of the antivaccination group Kennedy founded, while a CDC compilation of evidence that ran counter to her presentation was quietly removed from the panel’s website. For insight on the childhood schedule, the panel listened to a 90-minute talk by a Kennedy ally, a vaccine-injury attorney who once petitioned the government to withdraw approval of the polio shot for infants and toddlers.],
+  [In January, the acting CDC director trimmed the childhood immunization schedule so that it recommended routine protection for 11 diseases rather than 17. Six shots that had been universal would now fall into a category that essentially means “talk to your doctor and decide for yourself,” with guidance for certain shots based on risk.],
+  [“The idea that it’s increasingly acceptable to put children at risk for these kinds of things is really just terrible,” Wharton said. “To have it be the official position of the federal government, it’s very frightening.”],
+  [Nixon, the HHS spokesperson, defended the slimmed-down schedule, saying it would “maintain robust protection against diseases that cause serious morbidity or mortality to children while aligning the U. S. with peer nations.”],
+  [As for the committee, Nixon said Kennedy’s appointees are “committed to rigorous review and independent thinking.”],
+  [“Restoring confidence requires advisory bodies that are willing to ask hard questions, not simply reaffirm prior consensus and rubber stamp recommendations,” he said. “Disagreement at public meetings is a healthy scientific debate and the way to overcome groupthink.”],
+  [The American Academy of Pediatrics, which for decades had collaborated with the committee on the childhood vaccine schedule, boycotted the panel’s meetings and sued to block many of Kennedy’s moves.],
+  [On Monday, a federal judge sided with the academy , finding that for an advisory committee dedicated to using vaccines to control preventable diseases, more than half of the new members “appear distinctly unqualified.” While he considers the case, the judge, for now, put on hold Kennedy’s appointments to the panel as well as the CDC’s changes to the childhood vaccine schedule.],
+  [The ruling is a setback for Kennedy, but the Trump administration has foreshadowed other changes that could affect Americans’ access to shots.],
+  [President Donald Trump, with Robert F. Kennedy Jr., addresses reporters during a press conference in the White House. Francis Chung/Politico/Bloomberg via Getty Images],
+  [In September, President Donald Trump stepped up to the microphone in the White House’s Roosevelt Room with a major announcement about his administration’s efforts to counter the rise of autism. Flanked by Kennedy and other top health officials, the president urged pregnant women not to take acetaminophen, the pain reliever often sold as Tylenol. This news ricocheted around the globe.],
+  [But less attention was given to other bombshells dropped about vaccines that day. The president complained that pediatricians were giving so many shots, they were treating America’s children like horses.],
+  [“They pump so much stuff into those beautiful little babies, it’s a disgrace,” he said.],
+  [Without explaining how, Trump said his administration was going to get aluminum removed from vaccines. “Who the hell wants that pumped into a body?” he said.],
+  [Aluminum has been used in shots since the 1930s to boost immune response. It is an essential ingredient in vaccines for nine diseases, including diphtheria, tetanus, whooping cough, human papillomavirus (a cause of cervical cancer), one version of the Hib vaccine, and many of the combination shots babies receive. Kennedy has long questioned its safety.],
+  [A CDC-sponsored study found an association between aluminum in shots and asthma in young kids. But the researchers, citing limitations in their analysis, wrote that “these findings do not constitute strong evidence for questioning the safety of aluminum in vaccines.” A larger study by Danish government researchers subsequently found aluminum in shots did not increase the risk of autism, asthma, autoimmune diseases or dozens of other conditions. Kennedy criticized the methodology and tried unsuccessfully to get the Danish study retracted.],
+  [If the federal government were to ban aluminum in vaccines, companies would have to reformulate them and, possibly, launch costly clinical trials. Nearly all the shots American kids get are made by a handful of pharmaceutical giants. The market is fragile enough that if any were to balk and stop making these vaccines, families could face shortages or lose access altogether.],
+  [The fate of the measles-mumps-rubella shot, which does not contain aluminum, is also up in the air. At the White House autism press conference, Trump, without offering evidence, said he had heard bad things about that shot, which has been used here since 1971. Researchers around the world repeatedly have found it does not cause autism.],
+  [Nevertheless, the president implored parents to insist on separate shots for measles, mumps and rubella — “separate, separate, separate,” he repeated.],
+  [But there are no FDA-approved standalone shots for measles, mumps or rubella. Facing a year with the most American measles cases in a generation, the president had suggested that there’s a problem with the only surefire prevention available and told parents to demand shots that don’t exist here.],
+  [In an X post, the acting CDC director at that time called on manufacturers to develop them.],
+  [A measles rash covers the face and shoulders of a young boy. Centers for Disease Control and Prevention],
+  [A White House spokesperson did not answer questions about the president’s plans.],
+  [“The Trump administration is committed to a nuanced, nimble, and multi-faceted approach to restore Gold Standard Science as the guiding principle of our health policymaking without compromising access to or coverage of any lifesaving treatment, including vaccines,” Kush Desai wrote in an email. “Until unveiled by the Administration, discussion about potential new policies or their second order effects is pointless speculation.”],
+  [The federal court ruling that paused January’s revisions to the childhood vaccination schedule doesn’t stop Kennedy from making similar changes in the future, as long as he follows the proper procedures. While moving shots to the talk-to-your-doctor category may seem harmless, it could affect access down the line.],
+  [The injury compensation program that Congress created to prevent manufacturers from fleeing the U. S. market in the 1980s only covers immunizations the CDC recommends for “routine administration” to children or pregnant women. That leaves shots in other categories open to legal challenges by vaccine injury lawyers, renewing the specter of big legal verdicts that previously prompted vaccine makers to bolt.],
+  [Kennedy has long railed against the Vaccine Injury Compensation Program, arguing it’s a gift to the pharmaceutical industry that removes any incentive to make safe products. Before he became HHS secretary, Kennedy referred plaintiffs to a law firm suing a vaccine maker in exchange for a cut of its fees if they won, federal financial disclosures show.],
+  [Last year, he hired a vaccine injury lawyer to help him overhaul the compensation program and expand who can receive payments. In September, that attorney said he and Kennedy were considering ways to add symptoms of autism to the program’s injury table for quick payouts.],
+  [So many studies — performed in different parts of the world and involving more than a million people — have found no link between vaccines and autism that this has become scientific consensus . (Scientists have found serious methodological flaws in papers that have claimed such a link.) The compensation program’s vaccine court spent years in the 2000s trying cases that alleged shots caused autism and found they didn’t . ProPublica asked HHS whether Kennedy planned to add symptoms of autism to the program’s injury table, but the agency did not answer.],
+  [Given how prevalent autism is, a change like this could exhaust the compensation fund. If the program collapses and the legal protections go away, manufacturers may stop selling shots here like they did in the 1980s.],
+  [Then, even Americans who still trust vaccines couldn’t get them.],
+  [A child suffering from Haemophilus influenzae type B, or Hib American Association of Pediatrics],
+  [Diseases that have been wiped out in the U. S. are still found in other parts of the world.],
+  [Polio is endemic in Pakistan and Afghanistan, and this month the CDC warned American travelers that the virus has been circulating in 28 additional countries , including Israel and the United Kingdom. In 2022, a young unvaccinated man in New York was paralyzed by the virus .],
+  [That same year, an outbreak of diphtheria began in Western Europe, its largest rise in cases in 70 years. Health authorities investigating the infection of an unvaccinated German boy in 2024 discovered that the toxic strain of the diphtheria bacteria had spread over two years from newly arrived migrants to homeless Germans, then to the child and his mother, who had no known contact with either group.],
+  [The 10-year-old was admitted to a hospital in the historic city of Potsdam. Like Ratner encountering his first patient with Hib, the German doctors had never seen diphtheria before.],
+  [“It was taught as history,” said Dr. Bernhard Kosak, head of pediatric emergency medicine and critical care there.],
+  [Treated with antitoxin and antibiotics, the child was transferred to the big teaching hospital in Berlin where a ventilator helped him breathe . But the marvels of modern intensive-care medicine couldn’t undo the damage from this ancient toxin. The boy died in January last year.],
+  [Diseases can follow the contours of global travel. In just the first few months of last year, the CDC found , people infected with measles arrived in the U. S. from Canada, Vietnam, Mexico, Pakistan, the Philippines, Saudi Arabia, Afghanistan, Australia, Guinea, the Netherlands, Somalia, Spain and Uganda.],
+  [The Trump administration has walked away from long-standing international alliances that helped the U. S. beat back scourges in other countries. The president withdrew the U. S. from the WHO. And Kennedy backed out of the government’s promise to give \$1.6 billion to Gavi, the global vaccine aid group the U. S. has funded for decades. He accused the organization of neglecting vaccine safety.],
+  [“Secretary Kennedy has made clear that American public health dollars going abroad must be spent wisely,” Nixon, the HHS spokesperson, said. “That means reviewing funding commitments and ensuring programs meet safety and effectiveness standards. Protecting Americans at home remains our first obligation.”],
+  [Reef, the former CDC doctor who had witnessed newborns suffering from congenital rubella syndrome in Vietnam, is devastated by the pullback.],
+  [“It makes me very very sad,” she said, then paused for a long time. “Very very sad. I can’t explain to you what it feels like to see all your hard work going by the wayside.”],
+  [In retirement, she remains part of the group of experts that helps governments decide when to introduce the rubella vaccine and also serves on four WHO committees that determine whether nations have eliminated rubella or measles.],
+  [When countries launch rubella vaccination campaigns for the first time, they can’t just target babies or the virus shifts to older groups and can infect those who are pregnant. To avoid this, Gavi for many years supported immunizing all children from 9 months old up to age 15 when countries first introduce the shot, which offers protection not just for rubella but also for measles.],
+  [But facing a massive hole in its budget, Gavi’s board in December decided in the future to save money by only guaranteeing that vaccine up to age 10 when a country first debuts it. Modeling predicts the change could result in 72,000 additional deaths from measles and congenital rubella syndrome, according to the Gavi board’s records.],
+  [A Gavi spokesperson acknowledged that the shift creates a greater risk of congenital rubella but said that the organization had to figure out how to protect as many people as it could with far less money. Countries that want to offer the vaccine to older kids, she noted, can draw from a different pot of Gavi money, but that will leave those places with less funding for other shots.],
+  [Fallout from the budget cuts goes well beyond rubella. “The bottom line is that, over the next five years, we expect to be able to prevent 600,000 future deaths less than if we were fully funded,” the spokesperson said.],
+  [Addressing Kennedy’s criticism, the spokesperson added, “Gavi’s utmost concern is the health and safety of children. Our approach to vaccine safety is guided entirely by global scientific consensus.”],
+  [Cataracts caused by congenital rubella syndrome Centers for Disease Control and Prevention],
+  [The spread of measles in the U. S. warns of future rubella outbreaks. Since the rubella shot here is given in combination with the vaccine for measles and mumps, parents who turn down measles vaccines leave their kids vulnerable to rubella, too. It could take 20 years before birth defects from rubella become common again. Unvaccinated children have to grow old enough to become pregnant. The long lag time can give a false sense of security.],
+  [But, Reef warned, “when it comes back, it will come back with a vengeance. We will see babies being born who are blind, deaf and have heart disease.”],
+  [The world is ill prepared for a major resurgence in diphtheria. Antitoxin, made from the blood of horses , has to be given immediately. Yet supplies are scarce, and not many companies sell it. Dozens of kids in Pakistan died in 2024 because doctors there couldn’t get it in time.],
+  [Vitek, the CDC doctor who fought diphtheria in Russia, helped obtain permission for the CDC to keep an emergency stash of antitoxin for Americans after the only manufacturer with FDA approval stopped making it. The U. S. medical system still relies on an emergency supply controlled by the CDC.],
+  [ProPublica asked the CDC and HHS how many diphtheria patients the government’s current supply could treat, but neither agency would say. (“The CDC vigilantly monitors disease trends, maintains emergency stockpiles, and supports outbreak response at home and abroad,” Nixon said.)],
+  [Vitek retired in July after 33 years with the CDC, but he still worries how diseases that seem vanquished can reappear if people can’t or won’t get shots.],
+  [The unvaccinated parts of America could find themselves, like Germany, one unwitting traveler away from an outbreak of a horror from the history books.],
+  [“Once it gets reintroduced, your kid could get sick or die, even with modern medicine,” Vitek warned. And diphtheria, he noted, “it’s a terrible way to die.”],
+  [The post How Robert F. Kennedy Jr.’s Vaccine Agenda Risks a Resurgence of Deadly Childhood Plagues appeared first on ProPublica .],
 ),
   insert-map: (:),
-  word-count: 1491,
+  word-count: 6408,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -1686,232 +1530,328 @@ end\_of\_the\_year = f' { date.today().year } -12-31'],
 
 {
   #standard-article(
-  title: [Why pipes sometimes get "stuck": buffering],
-  author: [Julia Evans],
-  source-name: [Julia Evans],
+  title: [Sunday at La Bombonera],
+  author: [Juan Villoro],
+  source-name: [The Paris Review Blog],
   images: (),
   paragraphs: (
-  [Here’s a niche terminal problem that has bothered me for years but that I never
-really understood until a few weeks ago. Let’s say you’re running this command
-to watch for some specific output in a log file:],
-  [tail -f /some/log/file | grep thing1 | grep thing2],
-  [If log lines are being added to the file relatively slowly, the result I’d see
-is… nothing! It doesn’t matter if there were matches in the log file or not,
-there just wouldn’t be any output.],
-  [I internalized this as “uh, I guess pipes just get stuck sometimes and don’t
-show me the output, that’s weird”, and I’d handle it by just
-running grep thing1 /some/log/file | grep thing2 instead, which would work.],
-  [So as I’ve been doing a terminal deep dive over the last few months I was
-really excited to finally learn exactly why this happens.],
-  [id="why-this-happens-buffering"\>why this happens: buffering],
-  [The reason why “pipes get stuck” sometimes is that it’s VERY common for
-programs to buffer their output before writing it to a pipe or file. So the
-pipe is working fine, the problem is that the program never even wrote the data
-to the pipe!],
-  [This is for performance reasons: writing all output immediately as soon as you
-can uses more system calls, so it’s more efficient to save up data until you
-have 8KB or so of data to write (or until the program exits) and THEN write it
-to the pipe.],
-  [In this example:],
-  [tail -f /some/log/file | grep thing1 | grep thing2],
-  [the problem is that grep thing1 is saving up all of its matches until it has
-8KB of data to write, which might literally never happen.],
-  [id="programs-don-t-buffer-when-writing-to-a-terminal"\>programs don’t buffer when writing to a terminal],
-  [Part of why I found this so disorienting is that tail -f file | grep thing 
-will work totally fine, but then when you add the second grep , it stops
-working!! The reason for this is that the way grep handles buffering depends
-on whether it’s writing to a terminal or not.],
-  [Here’s how grep (and many other programs) decides to buffer its output:],
-  [Check if stdout is a terminal or not using the isatty function],
-  [If it’s a terminal, use line buffering (print every line immediately as soon as you have it)],
-  [Otherwise, use “block buffering” – only print data if you have at least 8KB or so of data to print],
-  [So if grep is writing directly to your terminal then you’ll see the line as
-soon as it’s printed, but if it’s writing to a pipe, you won’t.],
-  [Of course the buffer size isn’t always 8KB for every program, it depends on the implementation. For grep the buffering is handled by libc, and libc’s buffer size is
-defined in the BUFSIZ variable. Here’s where that’s defined in glibc .],
-  [(as an aside: “programs do not use 8KB output buffers when writing to a
-terminal” isn’t, like, a law of terminal physics, a program COULD use an 8KB
-buffer when writing output to a terminal if it wanted, it would just be
-extremely weird if it did that, I can’t think of any program that behaves that
-way)],
-  [id="commands-that-buffer-commands-that-don-t"\>commands that buffer & commands that don’t],
-  [One annoying thing about this buffering behaviour is that you kind of need to
-remember which commands buffer their output when writing to a pipe.],
-  [Some commands that don’t buffer their output:],
-  [tail],
-  [cat],
-  [tee],
-  [I think almost everything else will buffer output, especially if it’s a command
-where you’re likely to be using it for batch processing. Here’s a list of some
-common commands that buffer their output when writing to a pipe, along with the
-flag that disables block buffering.],
-  [grep ( --line-buffered )],
-  [sed ( -u )],
-  [awk (there’s a fflush() function)],
-  [tcpdump ( -l )],
-  [jq ( -u )],
-  [tr ( -u )],
-  [cut (can’t disable buffering)],
-  [Those are all the ones I can think of, lots of unix commands (like sort ) may
-or may not buffer their output but it doesn’t matter because sort can’t do
-anything until it finishes receiving input anyway.],
-  [Also I did my best to test both the Mac OS and GNU versions of these but there
-are a lot of variations and I might have made some mistakes.],
-  [id="programming-languages-where-the-default-print-statement-buffers"\>programming languages where the default “print” statement buffers],
-  [Also, here are a few programming language where the default print statement
-will buffer output when writing to a pipe, and some ways to disable buffering
-if you want:],
-  [C (disable with setvbuf )],
-  [Python (disable with python -u , or PYTHONUNBUFFERED=1 , or sys.stdout.reconfigure(line\_buffering=False) , or print(x, flush=True) )],
-  [Ruby (disable with STDOUT.sync = true )],
-  [Perl (disable with \$| = 1 )],
-  [I assume that these languages are designed this way so that the default print
-function will be fast when you’re doing batch processing.],
-  [Also whether output is buffered or not might depend on how you print, for
-example in C++ cout when you press Ctrl-C on a pipe, the contents of the buffer are lost],
-  [Let’s say you’re running this command as a hacky way to watch for DNS requests
-to example.com , and you forgot to pass -l to tcpdump:],
-  [sudo tcpdump -ni any port 53 | grep example.com],
-  [When you press Ctrl-C , what happens? In a magical perfect world, what I would
- want to happen is for tcpdump to flush its buffer, grep would search for
- example.com , and I would see all the output I missed.],
-  [But in the real world, what happens is that all the programs get killed and the
-output in tcpdump ’s buffer is lost.],
-  [I think this problem is probably unavoidable – I spent a little time with
- strace to see how this works and grep receives the SIGINT before
- tcpdump anyway so even if tcpdump tried to flush its buffer grep would
-already be dead.],
-  [After a little more investigation, there is a workaround: if you find
- tcpdump ’s PID and kill -TERM \$PID , then tcpdump will flush the buffer so
-you can see the output. That’s kind of a pain but I tested it and it seems to
-work.],
-  [id="redirecting-to-a-file-also-buffers"\>redirecting to a file also buffers],
-  [It’s not just pipes, this will also buffer:],
-  [sudo tcpdump -ni any port 53 \> output.txt],
-  [Redirecting to a file doesn’t have the same “ Ctrl-C will totally destroy the
-contents of the buffer” problem though – in my experience it usually behaves
-more like you’d want, where the contents of the buffer get written to the file
-before the program exits. I’m not 100% sure whether this is something you can
-always rely on or not.],
-  [id="a-bunch-of-potential-ways-to-avoid-buffering"\>a bunch of potential ways to avoid buffering],
-  [Okay, let’s talk solutions. Let’s say you’ve run this command:],
-  [tail -f /some/log/file | grep thing1 | grep thing2],
-  [I asked people on Mastodon how they would solve this in practice and there were
-5 basic approaches. Here they are:],
-  [id="solution-1-run-a-program-that-finishes-quickly"\>solution 1: run a program that finishes quickly],
-  [Historically my solution to this has been to just avoid the “command writing to
-pipe slowly” situation completely and instead run a program that will finish quickly
-like this:],
-  [cat /some/log/file | grep thing1 | grep thing2 | tail],
-  [This doesn’t do the same thing as the original command but it does mean that
-you get to avoid thinking about these weird buffering issues.],
-  [(you could also do grep thing1 /some/log/file but I often prefer to use an
-“unnecessary” cat )],
-  [id="solution-2-remember-the-line-buffer-flag-to-grep"\>solution 2: remember the “line buffer” flag to grep],
-  [You could remember that grep has a flag to avoid buffering and pass it like this:],
-  [tail -f /some/log/file | grep --line-buffered thing1 | grep thing2],
-  [id="solution-3-use-awk"\>solution 3: use awk],
-  [Some people said that if they’re specifically dealing with a multiple greps
-situation, they’ll rewrite it to use a single awk instead, like this:],
-  [tail -f /some/log/file | awk '/thing1/ && /thing2/'],
-  [Or you would write a more complicated grep , like this:],
-  [tail -f /some/log/file | grep -E 'thing1.\*thing2'],
-  [( awk also buffers, so for this to work you’ll want awk to be the last command in the pipeline)],
-  [id="solution-4-use-stdbuf"\>solution 4: use stdbuf],
-  [stdbuf uses LD\_PRELOAD to turn off libc’s buffering, and you can use it to turn off output buffering like this:],
-  [tail -f /some/log/file | stdbuf -o0 grep thing1 | grep thing2],
-  [Like any LD\_PRELOAD solution it’s a bit unreliable – it doesn’t work on
-static binaries, I think won’t work if the program isn’t using libc’s
-buffering, and doesn’t always work on Mac OS. Harry Marr has a really nice How stdbuf works post.],
-  [id="solution-5-use-unbuffer"\>solution 5: use unbuffer],
-  [unbuffer program will force the program’s output to be a TTY, which means
-that it’ll behave the way it normally would on a TTY (less buffering, colour
-output, etc). You could use it in this example like this:],
-  [tail -f /some/log/file | unbuffer grep thing1 | grep thing2],
-  [Unlike stdbuf it will always work, though it might have unwanted side
-effects, for example grep thing1 ’s will also colour matches.],
-  [If you want to install unbuffer, it’s in the expect package.],
-  [id="that-s-all-the-solutions-i-know-about"\>that’s all the solutions I know about!],
-  [It’s a bit hard for me to say which one is “best”, I think personally I’m
-mostly likely to use unbuffer because I know it’s always going to work.],
-  [If I learn about more solutions I’ll try to add them to this post.],
-  [id="i-m-not-really-sure-how-often-this-comes-up"\>I’m not really sure how often this comes up],
-  [I think it’s not very common for me to have a program that slowly trickles data
-into a pipe like this, normally if I’m using a pipe a bunch of data gets
-written very quickly, processed by everything in the pipeline, and then
-everything exits. The only examples I can come up with right now are:],
-  [tcpdump],
-  [tail -f],
-  [watching log files in a different way like with kubectl logs],
-  [the output of a slow computation],
-  [id="what-if-there-were-an-environment-variable-to-disable-buffering"\>what if there were an environment variable to disable buffering?],
-  [I think it would be cool if there were a standard environment variable to turn
-off buffering, like PYTHONUNBUFFERED in Python. I got this idea from a
- couple of blog posts by Mark Dominus
-in 2018. Maybe NO\_BUFFER like NO\_COLOR ?],
-  [The design seems tricky to get right; Mark points out that NETBSD has environment variables called STDBUF , STDBUF1 , etc which gives you a
-ton of control over buffering but I imagine most developers don’t want to
-implement many different environment variables to handle a relatively minor
-edge case.],
-  [I’m also curious about whether there are any programs that just automatically
-flush their output buffers after some period of time (like 1 second). It feels
-like it would be nice in theory but I can’t think of any program that does that
-so I imagine there are some downsides.],
-  [id="stuff-i-left-out"\>stuff I left out],
-  [Some things I didn’t talk about in this post since these posts have been
-getting pretty long recently and seriously does anyone REALLY want to read 3000
-words about buffering?],
-  [the difference between line buffering and having totally unbuffered output],
-  [how buffering to stderr is different from buffering to stdout],
-  [this post is only about buffering that happens inside the program , your
-operating system’s TTY driver also does a little bit of buffering sometimes],
-  [other reasons you might need to flush your output other than “you’re writing
-to a pipe”],
+  [class="p1"\> Clásicos are like Christmas for football. In these high-tension matches between fierce rivals, expectation almost always outstrips results. For months, fans visualize goals with the unrealistic yearning of a child who hopes for a new PlayStation from Santa Claus in exchange for a few cookies left out for his tired reindeer.],
+  [class="p1"\>For me, the Superclásico between Buenos Aires’s Boca Juniors and River Plate on May 4, 2008, was preceded by thirty-four years of anticipation. In 1974 I went to the Estadio Monumental to see River–Boca, but I had never been to the reverse fixture in La Bombonera, that exceptional stadium that should have been examined by Elias Canetti in Crowds and Power.],
+  [class="p1"\>The wait had charged the occasion with so much emotion that it was almost a shame it actually had to take place. Friends from Mexico, Colombia, and Spain had all similarly circled the date of May 4—the Argentine derby appeals not only to those who sleep in shirts emblazoned with the Quilmes beer logo but to an entire global tribe.],
+  [class="p1"\>Like Everest or the Mona Lisa , the fame of Boca’s stadium is impossible to deny—look no further than the crowds of tourists who come to snap pictures. But does it really represent the pinnacle of footballing passion?],
+  [class="p1"\>I spoke about the Superclásico with the taxi driver who picked me up at the Ezeiza airport and he replied with indignation: “But we hate each other more!” He came from Rosario and was referring to the bad blood between his hometown clubs Newell’s Old Boys (“the Lepers”) and Rosario Central (“the Swine”). On the drive he told me about his family’s marvelous wrath and the betrayal of his aunt Teresita, the heretic who refused to support the Swine. At the core of his story was the issue of rancor: on its biggest days, football comes down to contempt, and nobody hates each other more than Swine hate Lepers. In his opinion, the lesser rivalry between Boca–River was inflated by the press. The driver summed up his argument with theological flair: “God is everywhere, but performs his tricks in Buenos Aires.”],
+  [Don’t Worry: It’s Just the Earth Shaking],
+  [class="p2"\>On April 16, my friend Daniel Samper Pizano, a renowned Colombian journalist, organized a dinner in Madrid to prepare for the Superclásico. The final of the Copa del Rey had just concluded between Valencia and Getafe, but we weren’t interested. We preferred to talk about the football of the future, which was to say the upcoming game on May 4. The other guest justified our interest; after the meal, Jorge Valdano told us about the first time he faced Boca as a visiting player. Lacing up his boots in the locker room, he said, everything around him seemed to be moving. One of the veterans came over to reassure him: “It’s not you, pibe, it’s the stadium.” Playing at La Bombonera means overcoming an arena about to collapse under the weight of its own passion. No other ground imposes itself so forcefully upon its visitors.],
+  [class="p1"\>In his stupendous book Boquita , Martín Caparrós reminds us that it was Argentina where fans were first baptized as “the twelfth man.” Accustomed to adversity, we Mexicans consider the scoreline a suggestion we can ignore. Argentine fans, on the other hand, seek to alter the result using three basic tactics: holding their breath, insulting their rivals, and singing love songs. It’s no accident that one of the most prominent barras bravas is called La Doce, or “the twelfth.” These ultras aren’t there to merely watch a game, but to participate in it through their shouts.],
+  [class="p1"\>For years, magical realism has gone missing from Latin American literature, finding refuge in aviation instead. To fly across the continent is to endure a saga of detours, delays, and strange schedules that lead to a parallel reality. Maybe air traffic control is cheaper in the early morning and this determines the itineraries of the hemisphere. At any rate, I found myself on a four-hour predawn flight from Bogotá to Buenos Aires. Anyone without the meditative powers of a yogi arrived at the destination a zombie. Among the many surprises to come that day, I was made to experience May 4 in an altered state of time.],
+  [class="p1"\>The relationship between football and aviation is no trifle—the Copa Libertadores will never be truly competitive until the continent modifies its fixture calendar and flight paths. When I was a kid, I used to take medications with labels that read “Shake well before using.” Thanks to a miserable night on the plane, I arrived at the Superclásico in a state of total agitation.],
+  [class="p1"\>Entering the stadium was likewise an extreme sport. I was lucky to be accompanied by my friend Leo Tarifeño, a diehard River fan who had sworn to never set foot in La Bombonera.],
+  [class="p1"\>Leo is convinced that Argentines live for confrontation, eagerly disregard established rules, object impulsively, and justify themselves only through negativity, taking issue with anything they don’t agree with. After asserting this theory, he put it into practice. When I praised the chanting of the Boca fans, he replied, “Deep down, their joy is bitter.”],
+  [class="p1"\>Being with Leo was the opposite of having a human shield. The route to the stadium was blocked, so we made our way through a wasteland thick with the invigorating smoke from street stalls selling choripán. Our barren surroundings gradually became a funnel. Police barricades flanked us on either side. We continued on until someone—an invisible leader far ahead—committed a grave mistake. The crowd was pushed back by the sound of riot guns and retreated to a checkpoint, where Leo and I asked for directions to the press box. An officer waved his hand as if trying to hypnotize us. We “understood” to make our way to the other side of a roundabout, but instead we ducked into the first alley we came across. Another crowd pulled us in before being repelled again by the riot guns. Everyone ran en masse to a station manned by mounted police ushering fans into a makeshift fenced corridor. It looked less like an accessway than a site of detention. Perhaps for regular stadium-goers the challenge of entry might offer a delicious adrenaline rush, but we were in no shape for it. Above all, it was no place for Leo to expound upon his theory of antagonism.],
+  [class="p1"\>The propaganda was signed “Estudio Posca,” which was located on Calle Uruguay 385, Office 902. Its 2008 slogan was “ ¡¡¡Standing with fans for 32 years!!!” The firm presented itself as specializing in “accidents occurring in traffic or in football stadiums.”],
+  [class="p1"\>I was struck by the fact that the sporting ground had generated its own area of legal specialization. I was also surprised that the area of jurisdiction extended to the stadium’s outskirts. Leo and I had entered the zone where it might behoove us to keep Estudio Posca’s phone number close at hand. Among other alarming facts, the flyer warned:],
+  [class="p1"\>I kept the flyer to safeguard my survival. The most alarming thing about it was the casual implication that broken bones and rubber bullets simply came with the territory. Some people refuse to see doctors out of fear a previously invisible ailment might suddenly appear in their presence. With Estudio Posca, it was the other way around: we were already injured, we just hadn’t yet discovered the blood.],
+  [class="p1"\>Given humanity’s great diversity of mindsets, perhaps someone out there would be excited to receive proof of having entered a zone of aggression. Perhaps others were busy calculating how good the afternoon’s business might be—how much “\$\$\$” might be made from a broken fibula? Could it be worth sacrificing a rib as well? If some people survive by selling their blood plasma and sperm, might there also be professional victims with a long history of fractures?],
+  [class="p1"\>We made our way down streets that seemed to lead to the stadium but only ended in more detours. Due to my friend’s distrust of all Boca fans, we asked the police for directions instead. In every country stadium guards seem to come from afar and have no idea how to reach the seats.],
+  [class="p1"\>I was distracted by the flags hanging from balconies and the women in blue-and-gold aprons selling empanadas. Few clubs retain the urban grit of Boca, whose football still represents the surrounding neighborhood. The club of Maradona hasn’t lost touch with the streets—the only problem is knowing which one leads to its entrance.],
+  [class="p1"\>We reached an area where everyone was leaning out their windows. The festive atmosphere was interrupted by homophobic chants: “ Puuuuuuuuuutos! ” A motorcycle roared in the distance. Then we saw the white beast: the team bus of River. We had arrived in the corridor of rage, where those who can’t get into the stadium play their own kind of game. The following day I heard Beto Alonso, one of River’s most emblematic players, describing on the radio the objects that fell onto the roof of the bus. Some people freeze blocks of ice for the occasion and others sacrifice their heaviest padlocks. The bus slowly advanced through the crowd, dented, spat upon, and reviled.],
+  [class="p1"\>I’m always suspicious of singers who visit a new country and become instant fans of a team, playing their encore draped in a local jersey. However, in that shameful alleyway, I was on the verge of becoming a River fan myself—and it wasn’t just to make Leo happy.],
+  [class="p1"\>When Mexican police don’t want to investigate a murder, they label it “assisted suicide.” My sudden sympathy for the abused, paired with my friend’s theories, could have easily transformed us into two potential suicides in search of assistance.],
+  [class="p1"\>Naturally, my perception was entirely foreign. In 1974 when I went to River’s stadium, a man heard my accent and asked if it was true that in Mexico, a fan of a team like River could be seated next to the equivalent of a Boca fan. I said yes. “And they won’t kill each other?” he asked with interest. I explained that at least in this respect, we were peaceful. His response was withering: “What a bunch of degenerates!”],
+  [class="p1"\>I’ll never forget seeing my father in Mexico’s City’s University Olympic Stadium, urging everyone around us to applaud for the visiting team. “They’re our guests!” he said with enough amiable quirkiness to make everyone unthinkingly follow along.],
+  [class="p1"\>Raised with the belief that losing is synonymous with hospitality, it’s hard for Mexican fans to understand the spirit of the barra brava, which was seemingly forged, if not in the actual Battle of Thermopylae, at least in the movie 300.],
+  [class="p1"\>During a discussion about football and literature at the Buenos Aires Book Fair, Martín Caparrós remarked that Mexicans say “I cheer for Guadalajara” while Argentines proclaim “I’m from Boca.” These degrees of belonging are distinct. In Mexico our teams tend to fall into the abyss, so we prefer to follow at a distance. Our passion is an unreachable horizon rather than something woven into our DNA.],
+  [Side Effects: The Game],
+  [class="p2"\>Occasionally, there are moments in life when we Mexicans reveal our strength in the face of adversity. I had resigned myself to never entering the stadium and to eating choripán alongside the peaceful vendors. Then we saw a white-haired policeman issuing orders with the decisiveness of an orchestra conductor. He, and only he, knew how to find our entrance. “It’s simple,” he said prophetically. “Just follow the train tracks.”],
+  [class="p2"\>We walked between the rusty rails of a long-abandoned tramway. This had been the route to the stadium in the days when goalkeepers wore caps and footballs were still made from leather.],
+  [class="p2"\>We continued along the history-drenched path until we arrived at another dangerous crossroads. To our right was a blue wall of perforated metal. This was the entryway for River fans. We couldn’t see them, but we sensed them advancing like a herd of shadows. The only proof of their presence were the insults hurled in their direction. I was tempted to make a silent gesture of solidarity by slipping the flyer from Estudio Posca beneath the wall.],
+  [class="p1"\>Finally, we arrived at the gate and climbed to our assigned tower. From these heights I was able to confirm the optical effect described by the Colombian sportswriter David Leonardo Quitián—Boca’s stadium is the only one where distance from the field does not increase with the level of ascent. Instead, the verticality of its construction creates a dizzying proximity. “You must take a lesson in abysses,” say the protagonists of Journey to the Center of the Earth. It’s a good piece of advice for visiting La Bombonera.],
+  [class="p1"\>When Hugo Orlando Gatti, Boca’s most beloved and extravagant goalkeeper, said, “I go to the edge of the abyss,” he was referring to his tendency to complicate plays, but perhaps also to the onlookers who seemed about to collapse onto the field.],
+  [class="p1"\>For the crowd, there is no greater exercise than anticipation itself. Energized by the wait, the standing area known as La Popular defines the Superclásico. What happens on the pitch can’t compete with what happens here. On May 4, 2008, someone wanting to see a derby with great Argentine players could have watched Inter vs. Milan to admire the country’s exported geniuses. The match in Italy was a back-and-forth affair, nothing at all like the morass at La Bombonera.],
+  [class="p1"\>The home team won by playing defense and prolonging every pause in play with the exaggerated slowness of Soviet cinema. River lacked the forcefulness that their coach, El Cholo Simeone, had once shown in spades during his playing days, and they were only able to triangulate passes when it no longer mattered. River fans are called gallinas or “chickens” by their enemies. True to form, the sun-drenched masses shouted like crazed farmers ready to slaughter an entire hen house. They would never have traded this match for the aesthetic flourish of Inter vs. Milan. The Superclásico was as it should be: an effective pretext for the outpouring of passion. You don’t go to La Bombonera to discover football, but to confirm its emotional heft.],
+  [class="p1"\>It’s always disappointing to compare historical exploits: an ideal game would collapse time, offering us a clash of great idols across eras, with Labruna, Pedernera, and Sívori taking on Rattín, Pernía, and Batistuta. This impossibility—the ghostly sum of everything that has ever been played for—infuses each new contest between these intimate enemies with new allure. It’s a knife fight in which wounds never feel as deep as the animosity that fuels them.],
+  [class="p1"\>There are, of course, exceptional days when a derby resembles its inspirational propaganda—in the ninetieth minute a match is tied 3–3 and sees a winner scored in stoppage time. But on this Sunday in May, the only astonishing occurrences were in the stands.],
+  [class="p1"\>If comic-book superheroes are bipolar characters who punctuate their depressing existence as Clark Kent with maniacal outbursts as Superman, football fans oscillate from affection to invective with nothing in between. The dedication of a fanbase is measured according to its bipolarity, and Boca ranks highly: “I don’t care what they say \/ what the others say \/ I follow you everywhere \/ I love you more each day,” sing the romantic men who just minutes before called for the River fans to be murdered.],
+  [class="p1"\>That afternoon, when Sebastián Battaglia scored the stunning header that made the game 1–0, the building shook as promised by legend. Coming from a country of earthquakes, I talked about this enthusiasm, measurable on the Richter scale, for days. I was corrected by a writer, a waiter, and a police officer with the same phrase, extracted straight from the most sensitive ventricle of the Bostero heart: “Boca’s stadium doesn’t tremble, it beats.”],
+  [class="p1"\>Passion can also be defined by its power to summon those who are absent. That day, the ultras of Barra Auriazul memorialized the passing of a man named Raulito, an extraordinary fan made present even in death, and they paid tribute to the great players who had migrated away from a place where careers never last.],
+  [class="p1"\>Long gone are the chivalrous days of Ernesto Lazzatti, who played his entire career without ever being sent off, and who wore Boca’s colors without ever thinking of them as a stepping stone to Europe. Today Argentines are football’s great nomads. “If they were any good they wouldn’t be playing for us,” a taxi driver told me. “Verón came back because he’s old, Riquelme because he’s weird.”],
+  [class="p1"\>I remembered a scene from Germany ’06, when I was a commentator alongside Carlos Bianchi for Mexican TV. During a commercial break, the former coach who won everything with Boca received a phone call. He said something like “I can’t help anymore—you have another father now.” Later he told us “that was Riquelme,” with the same satisfaction Homer would have felt announcing a phone call from Achilles. Argentina’s number ten needed to feel loved in order to play well. From his training camp in Germany, he was seeking the emotional support Bianchi had given him at Boca. Coming from the riotous atmosphere of La Bombonera, it’s no wonder Riquelme had little success at Barcelona’s Camp Nou, where spectators behave like opera-goers.],
+  [class="p1"\>With few exceptions, Argentina’s cracks consider their feats a boarding pass to faraway places. The only ones who remain sedentary are the supporters. Perhaps their devotion stems from this irreconcilable disagreement. In football, passion feeds on pain—every fan base finds a way to overcome its own distinct evils. In Argentina, miracles are possible but short-lived; in Mexico, they are forever postponed and glory can only be imagined. The Estadio Azteca sportswriter describes plays that require adjectives to become interesting. The Bombonera sportswriter is faced with something that needs no words of validation; in the press box, I met Juan José Becerra, the indispensable author of Grasa , who was chronicling the team’s season for the daily newspaper Crítica. “The only thing I want,” he admitted, “is for Boca to win.”],
+  [class="p1"\>So, what does an expert in postponement discover in the realm of the impatient? In La Bombonera, the Mexican fan no longer waits for the fiction of spectacular Mexican goals. Instead, he enters a hardboiled reality. The stadium vibrates like nature at its most radical, demanding survival instead of interpretation.],
+  [An excerpt from The Game at the End of the World , translated from the Spanish by Francisco Cantú, to be published by Restless Books in May.],
+  [class="p1"\> Juan Villoro is a writer and journalist based in Mexico City. His columns have appeared in Reforma , The New York Times, El País, and El Mercurio , among others, and his books have been translated into numerous languages. A recipient of several awards, including the 2018 Manuel Rojas Prize for his body of work, Villoro has taught at Autonomous Metropolitan University, Yale, Princeton, Stanford, and Pompeu Fabra university in Barcelona, as well as at the New Journalism Foundation, created by Gabriel Garcia Márquez.],
+  [class="p1"\> Francisco Cantú is a writer, translator, and the author of The Line Becomes a River. He is the winner of the 2018 Los Angeles Times Book Prize and is the recipient of a 2017 Whiting Award in Nonfiction . His writing and translations have been featured in The New Yorker , Granta , Guernica, and VQR.],
 ),
   insert-map: (:),
-  inline-pq: pull-quote([com , and you forgot to pass -l to tcpdump:   sudo tcpdump -ni any port 53 | grep example.], [Julia Evans]),
-  inline-pq-idx: 40,
-  word-count: 1902,
+  inline-pq: pull-quote([Its 2008 slogan was “ ¡¡¡Standing with fans for 32 years!!!” The firm presented itself as specializing in “accidents occurring in traffic or in football stadiums.], [Juan Villoro]),
+  inline-pq-idx: 18,
+  word-count: 3545,
   edited-for-length: false,
   debug-mode: false,
 )
 
 }
+
+{
+  #standard-article(
+  title: [These Are the Best Deals on Home Gym Equipment I've Seen During Amazon’s Big Spring Sale],
+  author: [Meredith Dietz],
+  source-name: [Lifehacker],
+  images: (),
+  paragraphs: (
+  [We may earn a commission from links on this page. Deal pricing and availability subject to change after time of publication.],
+  [I dream of building out a garage gym one day, but for now, I'm content with my "workout corner" in my apartment bedroom. Hey, a home gym can look like anything. Whether you're eyeing a smart rowing machine, a compact massage gun for post-workout recovery, or just a clean set of hex dumbbells with a rack to keep your space organized, there's something worth buying during Amazon's Big Spring Sale right now.],
+  [id="the-best-deals-on-at-home-cardio-equipment"\>The best deals on at-home cardio equipment],
+  [I know how quickly cardio equipment can turn into major investment of your time, money, and space. That's why I recommend equipment that can fold up to store vertically against the wall, so your treadmill doesn't just become a fancy coat rack.],
+  [Original Peloton Bike , \$1,295, down from \$1,695],
+  [Hydrow Origin Rowing Machine , \$1,895, down from \$2,195],
+  [NordicTrack T 5 Treadmill , \$479, down from \$599],
+  [id="the-best-deals-on-at-home-strength-training-essentials"\>The best deals on at-home strength training essentials],
+  [In my experience, adjustable dumbbells are the single highest-impact upgrade you can make to a home gym. But sometimes you just want the real thing, without dealing with pins or spin locks or any sort of fuss. In that case, you definitely want a quality storage rack keeps your gym organized, your equipment accessible, and your floor clear.],
+  [PowerBlock Elite EXP Adjustable Dumbbells , \$339.15, down from \$449],
+  [CAP Adjustable Dumbbells , \$249.99, down from \$299.99],
+  [CAP Rubber Coated Dumbbell Weight Set , \$159.99, down from \$189.99],
+  [TRX Resistance Band Set , \$148.71, down from \$174.95],
+  [PLKOW storage and weight rack , \$79.98, down from \$129.99],
+  [id="the-best-deals-on-muscle-recovery-and-stretching-tools"\>The best deals on muscle recovery and stretching tools],
+  [I know I've personally got my eye on massage guns and foam rollers to help me survive my upcoming marathon training.],
+  [Bob and Brad Q2 Ultra Mini Massage Gun , \$78.82, down from \$99.99],
+  [1-Inch Thick Yoga Mat , \$29.99, down from \$36.99],
+  [TriggerPoint Grid 1.0 Foam Roller , \$27.99, was \$39.99],
+  [While we're at it, plenty of other gadgets could technically fall into the realm of home gym expenses. Check out more of the best deals we've found on fitness wearables , on headphones and earbuds , and all other tech during Amazon's Big Spring Sale here .],
+  [Apple AirPods Pro 3 Noise Cancelling Heart Rate Wireless Earbuds
+ 
+ 
+ —
+ \$199.00 
+ 
+ (List Price \$249.00)],
+  [Apple iPad 11" 128GB A16 WiFi Tablet (Blue, 2025)
+ 
+ 
+ —
+ \$299.00 
+ 
+ (List Price \$349.00)],
+  [Samsung Galaxy Tab A11+ 128GB Wi-Fi 11" Tablet (Gray)
+ 
+ 
+ —
+ \$209.99 
+ 
+ (List Price \$249.99)],
+  [Sony WH1000XM6- Best Wireless Noise Canceling Headphones
+ 
+ 
+ —
+ \$398.00 
+ 
+ (List Price \$459.99)],
+  [Apple Watch Series 11 (GPS, 42mm, S/M Black Sport Band)
+ 
+ 
+ —
+ \$299.00 
+ 
+ (List Price \$399.00)],
+  [Blink Video Doorbell Wireless (Newest Model) + Sync Module Core
+ 
+ 
+ —
+ \$35.99 
+ 
+ (List Price \$69.99)],
+  [Fire TV Stick 4K Max Streaming Player With Remote
+ 
+ 
+ —
+ \$34.99 
+ 
+ (List Price \$59.99)],
+  [Amazon Kindle Colorsoft 16GB 7" eReader (Black)
+ 
+ 
+ —
+ \$169.99 
+ 
+ (List Price \$249.99)],
+),
+  insert-map: (:),
+  word-count: 988,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+}
+
+{
+  #standard-article(
+  title: [Akari Brings Authenticity to New York’s Washed Sauna Scene],
+  author: [Adrian Madlener],
+  source-name: [Design Milk Architecture],
+  images: (),
+  paragraphs: (
+  [There are strong links between Japan and the Nordic region (a grouping of countries that includes much more than just Scandinavia). That’s especially true when it comes to sauna culture. Though the word is Finnish, translating as bathouse, the concept of pumping steam through enclosures firmly roots in Neolithic Greenland and Newfoundland. It’s been an integral part of daily life across these, especially frigid, Northern reaches for eons.],
+  [In Japan, sentō and onsen facilities have been around since the 1200s. While the former is generally defined as a communal bathhouse, the latter is specified as geothermal hot springs that are encircled by traditional inns.],
+  [Gaining popularity as an alternative, far less harmful, type of third place, saunas and other types of bathhouses have cropped up across bustling metropolises like London and New York. While many tout unique amenities—some more gimmicky than others—few of these highly publicized venues hold true to the Japanese traditions mentioned before.],
+  [Cue Akari , two immersive saunas in Williamsburg and Greenpoint, Brooklyn that are as comprehensive as they are unassuming. There’s no need for flashy light shows or poolside DJ-sets at these quaint, smartly outfitted wellness spaces. Comprising dry saunas, cold plunges, and quiet relaxation areas, both membership—non reservation—based venues champion the idea that New Yorkers should slow down more often and go to the bathhouse in order to reset rather than party. While the entirely renovated Williamsburg location features an incredibly rare outdoor cold plunge pool, the Greenpoint one was imagined in partnership with celebrated thermal consultant Kiel Moe .],
+  [International architecture firm Stroop Design staged the latter with intentional detailing. The aim was not to overpower the restorative act of saunaing with bold finishes or sculptural elements but to succinctly facilitate the experience with a consistent design vocabulary. Many of these accents—2 by 2 inch light green tiles—harken back to traditional sentōs. Tabletops laminated in washi paper by master craftsperson Hanato Watar were repurposed as wall art throughout.],
+  [Sparingly placed furnishings and fixtures are modestly modern, solidly made but light, reflecting the brand’s name Akari, which translates as light in Japanese. The idea here is to make saunaing a daily ritual—one that has both physical and mental benefits—and remove any of the social expectation or architectural fanfare that might make it feel like a chore.],
+  [To learn more about the creative synergy between Akari Sauna and Stroop Design, visit akarisauna.com and stroop.design .],
+),
+  insert-map: (:),
+  word-count: 526,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+}
+
+{
+  #standard-article(
+  title: [The Titanium Apple Watch Series 10 Is Just \$449 During the Amazon Big Spring Sale],
+  author: [Jake Peterson],
+  source-name: [Lifehacker],
+  images: (),
+  paragraphs: (
+  [We may earn a commission from links on this page. Deal pricing and availability subject to change after time of publication.],
+  [Flagship Apple Watches tend to start at \$399, but the price only goes up from there. If you want a larger size, that's a slight bump in cost; if you want cellular connectivity, that's an even larger hit. But the titanium Apple Watch—the "premium" material, if you will—is the most expensive upgrade outside of the Ultra line. These models typically start at \$699, but cost \$749 for the larger size, and a whopping \$799 if you want the stainless steel band. Right now, you can get a titanium Apple Watch for as low as \$449 during Amazon's Big Spring Sale—so long as you're okay with using last generation's watch.],
+  [Here's the deal: Amazon currently has the titanium versions of the Apple Watch Series 10 on discount for the Big Spring Sale. You can get the Natural or Slate models with rubber sport bands for \$449, or if you want the stainless steel band, you can get the watch in gold for \$499 . That's a pretty great price, considering the watch once retailed for \$799.],
+  [Now, this is the Series 10. The Series 11 is Apple's newest flagship watch. If you ask me, however, that isn't a big deal. The Series 10 is still the best Apple Watch for most people , since it has most of the Series 11's features, while often being available at a discount. They both have large displays that can reach 2,000 nits of brightness; they both have heart rate and sleep tracking with alerts for each; they both support Emergency SOS, and are water resistant up to 50m; they both have the same S10 chip, and support the same gestures; and both have Precision Finding, so you can use your iPhone if you misplace it.],
+  [Really, the key advantages of the Series 11 are few, but noteworthy: The battery life is better, up to 24 hours instead of 18 hours; you get 38 hours in Low Power Mode versus 36 hours; and while both watches support fast charging (0-80% in 30 minutes), the Series 11 can get eight hours of battery life in 15 minutes of charge time. The Series 11 also supports 5G, if you opt for the cellular plan. That's largely it, however. Other than that, the Series 10 is virtually the same watch. Amazon does have the Series 11 discounted at this time, starting at \$649 . You just need to ask yourself whether those extra features are worth \$200.],
+  [Apple AirPods Pro 3 Noise Cancelling Heart Rate Wireless Earbuds
+ 
+ 
+ —
+ \$199.00 
+ 
+ (List Price \$249.00)],
+  [Apple iPad 11" 128GB A16 WiFi Tablet (Blue, 2025)
+ 
+ 
+ —
+ \$299.00 
+ 
+ (List Price \$349.00)],
+  [Samsung Galaxy Tab A11+ 128GB Wi-Fi 11" Tablet (Gray)
+ 
+ 
+ —
+ \$209.99 
+ 
+ (List Price \$249.99)],
+  [Sony WH1000XM6- Best Wireless Noise Canceling Headphones
+ 
+ 
+ —
+ \$398.00 
+ 
+ (List Price \$459.99)],
+  [Apple Watch Series 11 (GPS, 42mm, S/M Black Sport Band)
+ 
+ 
+ —
+ \$299.00 
+ 
+ (List Price \$399.00)],
+  [Blink Video Doorbell Wireless (Newest Model) + Sync Module Core
+ 
+ 
+ —
+ \$35.99 
+ 
+ (List Price \$69.99)],
+  [Fire TV Stick 4K Max Streaming Player With Remote
+ 
+ 
+ —
+ \$34.99 
+ 
+ (List Price \$59.99)],
+  [Amazon Kindle Colorsoft 16GB 7" eReader (Black)
+ 
+ 
+ —
+ \$169.99 
+ 
+ (List Price \$249.99)],
+),
+  insert-map: (:),
+  word-count: 736,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+}
+
+#article-row((
+  [
+    standard-article(
+  title: [few changes in merb edge],
+  author: [Matt Aimonetti],
+  source-name: [Matt Aimonetti],
+  images: (),
+  paragraphs: (
+  [I thought I should share few changes that my affect your apps if you want to upgrade to Edge.],
+  [merb\_helpers which was previously in merb-plugins now moved to merb-more and got renamed merb-helpers . What that means for you is that you probably want to install merb-helpers and change the reference in your init.rb from dependencies “merb\_helpers” to dependencies “merb-helpers”],
+  [People started reporting problems with templates not being reloaded in dev mode etc.. The reason is that we made some changes to the config/environments/development.rb file few weeks ago and people did not notice. Here is the new generated development.rb file. Note the following interesting change:],
+  [c\[:reload\_templates\] = true],
+  [You will need to update this setting if you want Merb to auto reload your templates.],
+  [Also, if you didn’t read it yet, go check on Yehuda’s explanation of Merb new master process .],
+  [Finally, I have a bit of a bad news. We were hoping to release Merb 1.0 final during MerbCamp next week end. Unfortunately it looks like we will only release 1.0RC.],
+  [The reason behind this choice is simple, we have been adding a lot of features, fixed a lot of bugs and stabilized the API. However we need more feedback from users to be confident enough to release a final 1.0 release.],
+),
+  insert-map: (:),
+  word-count: 214,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+  ],
+  [
+    standard-article(
+  title: [rspec bundle for textmate],
+  author: [Matt Aimonetti],
+  source-name: [Matt Aimonetti],
+  images: (),
+  paragraphs: (
+  [I recently realized that a lot of people using RSpec didn’t use the great TextMate bundle designed for them.],
+  [You might not think you need an extra bundle, or maybe you never used a bundle ever and don’t know why you would try one. I’ll try to change your mind, let’s look at some screenshots first:],
+  [This is what you will want to see before checking in your code:],
+  [This is what you will see before you write your code:],
+  [This is how you will run your specs:],
+  [This is all you get for free to save you some precious minutes every day:],
+  [How to install?],
+  [Easy, checkout the file from RSpec repository:],
+  [svn co svn:\/\/rubyforge.org/var/svn/rspec/trunk/RSpec.tmbundle],
+  [Double click on the file and that’s it! You are ready to go. (you would obviously need RSpec plugin or gem).],
+  [Thank you to all the RSpec team for creating such a great tool.],
+),
+  insert-map: (:),
+  word-count: 150,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+  ],
+), ruled-indices: (1,))
+#pull-quote([Note the following interesting change:  c\[:reload\_templates\] = true  You will need to update this setting if you want Merb to auto reload your templates.], [Matt Aimonetti])
+
 
 {
   #section-label([Briefs])
   #brief-group((
-    #brief-item([Apple Newsroom], source-name: [Apple Newsroom], [Apple announced AirPods Max 2, bringing even better ANC, elevated sound quality, and intelligent features to the iconic over-ear design.])
+    [#brief-item([The Hacker News], source-name: [The Hacker News (cybersecurity)], [A critical security flaw impacting Langflow has come under active exploitation within 20 hours of public disclosure, highlighting the speed at which threat actors weaponize newly published vulnerabilities.
+The security defect, tracked as CVE-2026-33017 (CVSS score: 9.3), is a case of missing authentication combined with code injection that could result in remote code execution.
+"The POST /api/v1])],
+    [#brief-item([Bonface Landi], source-name: [Inhabitat], [Soil erosion is an age-long predicament that always shows up whenever humans embark on any land use activity. Whether it is agriculture, construction or gardening, the need to tame erosion is apparent, especially in regions that experience significant precipitation. The U. N. Food and Agriculture Organization (FAO) warns that 90% of the world’s topsoil risks erosion by 2050. It is, therefore, the responsibility of those who participate in land use activities to prevent such a mess.])],
+    [#brief-item([Jupiter Hadley], source-name: [Indie Games Plus], [Dark Tides is an adventure game where you play as a boardwalk psychic unravelling the demonic mysteries of a seaside Victorian town. Playing as Theodora Green, you are tasked with figuring out...
 
-    #brief-item([Matt Aimonetti], source-name: [Matt Aimonetti], [I was invited to take part in this year’s Docker keynote to discuss how we use Docker at Splice
-and how our two companies share the same philosophy. I wrote a summary blog post of my talk.
-And you can read the official Docker blog post about the keynote 
+The post ‘Dark Tides’ Reads Minds to Discover an Old Town’s True Fate appeared first on Indie Games Plus .])],
+    [#brief-item([Jupiter Hadley], source-name: [Indie Games Plus], [Ghost Haunting is an adventure game about a young girl whose grandmother has been trapped in the realm of the dead. You are a young 8-year old child currently visiting your grandfather....
 
-id="video"\>Video])
-
-    #brief-item([Jupiter Hadley], source-name: [Indie Games Plus], [We Stay Behind follows a journalist meeting the people who refuse to leave a town that’s going to be destroyed by a comet. Ever wonder what it would be like to live...
-
-The post ‘We Stay Behind’ Explores a Town that Will Die appeared first on Indie Games Plus .])
-
-    #brief-item([The Hacker News], source-name: [The Hacker News (cybersecurity)], [Another week, another reminder that the internet is still a mess. Systems people thought were secure are being broken in simple ways, showing many still ignore basic advisories.
-This edition covers a mix of issues: supply chain attacks hitting CI/CD setups, long-abused IoT devices being shut down, and exploits moving quickly from disclosure to real attacks. There are also new malware tricks])
-
-    #brief-item([Laura Cowan], source-name: [Inhabitat], [The Casitas at The Halles by Hive 3D and Eco Material Technologies are a new project to create sustainable, 3D-printed homes for vacation rentals near Austin, Texas. These unique low-profile homes use a technology that creates 92% less emissions than traditional concrete. Round Top, Texas, 80 miles east of Austin, will now be home to the world's first near zero-carbon, 3D-printed neighborhood.])
-
-    #brief-item([The Hacker News], source-name: [The Hacker News (cybersecurity)], [Oracle has released security updates to address a critical security flaw impacting Identity Manager and Web Services Manager that could be exploited to achieve remote code execution.
-The vulnerability, tracked as CVE-2026-21992, carries a CVSS score of 9.8 out of a maximum of 10.0.
-"This vulnerability is remotely exploitable without authentication," Oracle said in an advisory. "If successfully])
-
-    #brief-item([Dawn Hammon], source-name: [Inhabitat], [With a current zeitgeist around environmental protections and sustainability, more homeowners than ever are focused on green design and eco-friendly features. Add in the benefit of energy and water savings and it’s easy to see why green homes are in high demand. But all is not equal with sustainable architecture from one area of the country to another. As a report sponsored by Payless Power shows, there’s a wide variation in the value of a green home, meaning if the goal is to benefit the environment...])
-
-    #brief-item([Stripe Blog], source-name: [Stripe Blog], [From November 2025 to February 2026, our models detected 6.2x more abusive free trials across the Stripe network. This is part of a broader shift toward first-party fraud, where legitimate users abuse policies by setting up multiple accounts, cycling through free trials, or exploiting refunds.])
-
-    #brief-item([Stripe Blog], source-name: [Stripe Blog], [Not only are the majority of retailers actively implementing, or have plans to implement, agentic commerce, but many are also moving to a more tactical phase of optimizing their setup—refining their product catalog strategy to launch faster and investing in their own agentic shopping experiences in addition to integrating with third-party agents.])
-
-    #brief-item([Jupiter Hadley], source-name: [Indie Games Plus], [Chance’s Lucky Escape is an adventure game about the luckiest dog in the world having some decidedly unlucky things happen to them. Ever play a narrative game that is so unpredictable, it’s...
-
-The post ‘Chance’s Lucky Escape’ Solves Progressively Stranger Problems appeared first on Indie Games Plus .])
-
+The post ‘Ghost Haunting’ Follows Unruly Children Attempting Resurrections appeared first on Indie Games Plus .])],
+    [#brief-item([Stripe Blog], source-name: [Stripe Blog], [Adaptive Pricing is now available for subscriptions, allowing businesses to automatically localize prices in 150+ countries while Stripe handles currency conversion. In an A/B test across 1.5 million subscription checkouts, businesses saw 4.7% higher conversion and 5.4% higher LTV per session, on average.])],
   ))
 }
 

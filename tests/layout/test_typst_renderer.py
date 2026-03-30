@@ -7,6 +7,7 @@ PDF compilation tests are marked slow (require Typst CLI).
 from __future__ import annotations
 
 import copy
+import json
 import shutil
 from pathlib import Path
 
@@ -28,6 +29,8 @@ from offscroll.models import (
     PullQuote,
     Section,
 )
+
+SAMPLE_DATA_DIR = Path(__file__).parent.parent / "sample_data" / "editions"
 
 
 # --- Unit tests for helper functions ---
@@ -213,6 +216,81 @@ class TestBuildTypstMarkup:
         markup = build_typst_markup(edition, config)
         assert "section-label(" in markup
 
+    def test_no_unprefixed_calls_in_content_blocks(self, config):
+        """Function calls inside [...] content blocks must have # prefix (#218)."""
+        sample_path = SAMPLE_DATA_DIR / "sample_edition_full.json"
+        if not sample_path.exists():
+            pytest.skip("Sample data not found")
+
+        edition = CuratedEdition.from_json(str(sample_path))
+        markup = build_typst_markup(edition, config)
+
+        # Find all [...] content blocks inside article-row calls
+        import re
+
+        # Inside [ ... ] blocks, function calls like section-label(, standard-article(,
+        # thread-article(, brief-group( must be prefixed with #
+        template_funcs = [
+            "section-label(",
+            "standard-article(",
+            "thread-article(",
+            "feature-article(",
+            "brief-group(",
+            "brief-item(",
+        ]
+
+        in_bracket = False
+        bracket_depth = 0
+        lines = markup.split("\n")
+        for line_num, line in enumerate(lines, 1):
+            stripped = line.strip()
+            # Track bracket nesting (simplified — good enough for generated markup)
+            for ch in line:
+                if ch == "[":
+                    if not in_bracket:
+                        in_bracket = True
+                    bracket_depth += 1
+                elif ch == "]":
+                    bracket_depth -= 1
+                    if bracket_depth <= 0:
+                        in_bracket = False
+                        bracket_depth = 0
+
+            if in_bracket:
+                for func in template_funcs:
+                    # Check for unprefixed function calls (not preceded by #)
+                    if func in stripped:
+                        idx = stripped.index(func)
+                        if idx == 0 or stripped[idx - 1] != "#":
+                            pytest.fail(
+                                f"Line {line_num}: unprefixed '{func}' inside "
+                                f"content block: {stripped!r}"
+                            )
+
+    def test_no_stray_braces(self, config):
+        """Single-column rows must not use {{ }} wrappers (#218)."""
+        sample_path = SAMPLE_DATA_DIR / "sample_edition_full.json"
+        if not sample_path.exists():
+            pytest.skip("Sample data not found")
+
+        edition = CuratedEdition.from_json(str(sample_path))
+        markup = build_typst_markup(edition, config)
+
+        lines = markup.split("\n")
+        for line_num, line in enumerate(lines, 1):
+            stripped = line.strip()
+            # Bare { or } on a line (outside of known code contexts like footer)
+            # should not appear in the section-rendering portion
+            if stripped == "{" or stripped == "}":
+                # Allow in page footer context block
+                context_start = max(0, line_num - 10)
+                context = "\n".join(lines[context_start:line_num])
+                if "footer:" not in context and "context {" not in context:
+                    pytest.fail(
+                        f"Line {line_num}: stray brace '{stripped}' — "
+                        f"single-column rows should not use {{}} wrappers"
+                    )
+
     def test_escapes_special_chars(self, config):
         """Special Typst characters in content are escaped."""
         edition = CuratedEdition(
@@ -363,3 +441,20 @@ class TestTypstPdfCompilation:
         data_dir = Path(config["output"]["data_dir"])
         typ_files = list(data_dir.glob("*.typ"))
         assert len(typ_files) >= 1
+
+    @pytest.mark.parametrize(
+        "sample_name",
+        ["sample_edition_full", "sample_edition", "sample_edition_briefs_only"],
+    )
+    def test_sample_editions_compile(self, sample_name, config):
+        """Sample editions compile to PDF with zero exit code (#218 smoke test)."""
+        from offscroll.layout.typst_renderer import render_typst_pdf
+
+        sample_path = SAMPLE_DATA_DIR / f"{sample_name}.json"
+        if not sample_path.exists():
+            pytest.skip(f"Sample data not found: {sample_path}")
+
+        edition = CuratedEdition.from_json(str(sample_path))
+        pdf_path = render_typst_pdf(config, edition)
+        assert pdf_path.exists()
+        assert pdf_path.stat().st_size > 1000

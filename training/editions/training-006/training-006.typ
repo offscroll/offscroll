@@ -23,311 +23,71 @@
 
 // --- Front Page Feature ---
 #feature-article(
-  title: [Stuff The Internet Says On Scalability For December 2nd, 2022],
+  title: [Bean Machine Retrospective, part 7],
   kicker: [Cover Story],
-  author: [High Scalability],
-  source-name: [High Scalability],
-  deck: [Never fear, HighScalability is here! 1958: An engineer wiring an early IBM computer 2021: An engineer wiring an early IBM quantum computer.],
-  lead-text: "Never fear, HighScalability is here!",
-  lead-first-alpha: 0,
+  author: [ericlippert],
+  source-name: [Fabulous Adventures in Coding (Eric Lippert)],
+  deck: [class="wp-block-paragraph"\>How do we write a compiler in a typical general-purpose line-of-business OO programming language such as Python, C\#, Java, and so on?],
+  lead-pre: [],
+  lead-cap: [C],
+  lead-rest: [ompilers are programs, so we could make the question more general: how do we write programs ?],
   body-paragraphs: (
-  [1958: An engineer wiring an early IBM computer 2021: An engineer wiring an early IBM quantum computer. \@enclanglement],
-  [id="my-stuff-"\>My Stuff:],
-  [I'm proud to announce a completely updated and expanded version of Explain the Cloud Like I'm 10 ! This version adds 2x more coverage, with special coverage of AWS, Azure, GCP, and K8s. It has 482 mostly 5 star reviews on Amazon. Here's a 100% organic, globally sourced review:],
-  [Love this Stuff? I need your support on Patreon to keep this stuff going.],
-  [id="number-stuff-"\>Number Stuff:],
-  [1.5 billion : fields per second across 3000 different data types served by Twitter's GraphQL API.],
-  [1 million : AWS Lambda customers. 10 trillion monthly requests.],
-  [11 : days Vanuatu's government has been knocked offline  by cyber-attacks.],
-  [6 ronnagrams : weight of the earth—a six followed by 27 zeros.],
-  [\$40,000 : spent recursively calling lambda functions.],
-  [1 billion : daily GraphQL requests at Netflix.],
-  [48 Million : Apple's pitiful bug bounty payout.],
-  [1 billion : requests per second handled by Roblox's caching system.],
-  [1 TB : new Starlink monthly data cap.],
-  [8 billion : oh the humanity.],
-  [25% : of cloud migrations are lift and shift. Good to see that number declining.],
-  [433 : qubits in IBM's new quantum computer.],
-  [10% : of John Deere's revenues from subscription fees by 2030.],
-  [2 trillion : galaxies in the 'verse.],
-  [80% : Couchbase reduction in latency by deploying at the edge.],
-  [46 million : requests per second DDoS attack blocked by Google. Largest ever.],
-  [57 GB : data produced daily by the James Webb Space Telescope.],
-  [\$72,577,000,000 : annual flash chip revenue.],
-  [20,000+ : RPS handle by Stripe on Cyber Monday with a \>99.9999% API success rate.],
-  [0 : memory safety vulnerabilities discovered in Android’s Rust code.],
-  [1.84 petabits per second : transmitted using a single light source and optical chip, nearly twice the amount of global internet traffic in the same interval.],
-  [id="quotable-stuff-"\>Quotable Stuff:],
-  [chriswalker171 : people are very confused about what’s actually going on here. People trust their NETWORK more than the results that they get in Google. So they’re going to LinkedIn, Tik Tok, Instagram, Podcasts, YouTube, Slack & Discord communities and more to get information. It’s simply a better way. This is the preview.],
-  [Demis Hassabis ~ AI might be the perfect description language for biology. In machine learning what we've always found is that the more end to end you can make it the better the system and it's probably because in the end, the system is better at learning what the constraints are than we are as the human designers of specifying it. So anytime you can let it flow end to end and actually just generate what it is you're really looking for.],
-  [\@jasondebolt : Ok this is scary. \@OpenAI’s ChatGPT can generate hundreds of lines of Python code to do multipart uploads of 100 GB files to an AWS S3 bucket from the phrase “Write Python code to upload a file to an AWS S3 bucket”. It’s not just copying example code. It knows how to edit the code.],
-  [Ben Kehoe : I feel like we're headed in a direction where serverless means "removing things developers have to deal with" when it should be "removing things the business as a whole has to deal with", and we're losing the recognition those are often not well-aligned.],
-  [Ben Kehoe : Strongly agree, I actually used to say that iRobot is not a cloud software company, it's a cloud-enabled-features company.],
-  [\@QuinnyPig : On CloudFront 60TB of egress (including free tier) will be anywhere from \$4,761.60 to 6,348.80 \*depending entirely on where in the world the users requesting the file are\*. Yes, that's impossible to predict. WELCOME TO YOUR AWS BILL!],
-  [\@mthenw : Graviton, Nitro, Trainium everywhere. in other words, end-to-end optimised hardware designs (another way to optimise overall cloud efficiency). \#aws \#reinvent],
-  [\@esignoretti : Cloudflare is clearly challenging AWS. It's very visible in the marketing layer ("worrying about cold starts seems ridiculous", "zero egress fee object storage").],
-  [\@asymco : by year four of the Alexa experiment, "Alexa was getting a billion interactions a week, but most of those conversations were trivial commands to play music or ask about the weather." Those questions aren't monetizable. Apple’s Siri was at 4 billion interactions a week in Aug 2019],
-  [klodolph : Basically, you want to be able to do a “snapshot read” of the database rather than acquiring a lock (for reasons which should be apparent). The snapshot read is based on a monotonic clock. You can get much better performance out of your monotonic clock if all of your machines have very accurate clocks. When you write to the database, you can add a timestamp to the operation, but you may have to introduce a delay to account for the worst-case error in the clock you used to generate the timestamp. More accurate timestamps -\> less delay. From my understanding, less delay -\> servers have more capacity -\> buy fewer servers -\> save millions of dollars -\> use savings to pay for salaries of people who figured out how to make super precise timestamps and still come out ahead.],
-  [Meta : One could argue that we don’t really need PTP for that. NTP will do just fine. Well, we thought that too. But experiments we ran comparing our state-of-the-art NTP implementation and an early version of PTP showed a roughly 100x performance difference],
-  [\@GaryMarcus : 2. LLMs are unruly beasts; nobody knows how to make them refrain 100% of time from insulting users, giving bad advice, or goading them into bad things. Nobody knows how to solve this.],
-  [\@copyconstruct : Looking back at the 2010s, one of the reasons why many startups that were successful during that period ended up building overly complex tech stacks was in no small part because of their early hiring practices (a ka, only hiring from Google + FB). This had both pros and cons.],
-  [\@rudziiik : It's actually a real thing, called sonder - which is the realization that each random passerby is living a life as vivid and complex as your own. It's a neologism, this term was created by John Koenig, and it has a deep connection with our empathy. THE MORE YOU KNOW],
-  [\@B\_Nied : Many years ago one of the DB servers at my workplace would occasionally fail to truncate it's transaction log so it would just grow & grow until it filled up that server's HD & stop working & I'd have to manually truncate it. I've thought about that a lot lately.],
-  [\@jeremy\_daly : Have we strayed so far from the purest definition of \#serverless that there's no going back? Or is this just what “serverless” is now?],
-  [\@oliverbcampbell : Second is the "Culling." When you've got 90% of the people not performing, they're actually negatively impacting the 10% who ARE performing above and beyond. And that's why the layoffs happened. Paraphrased, 'shit is gonna change around here, get on board or get out'],
-  [\@copyconstruct : The most ill-conceived idea that seems to have ossified among certain group of people is that Twitter was failing because the engineering culture wasn’t high-performing enough. The problem with Twitter was product and leadership, and not engineering not executing well enough.],
-  [\@ID\_AA\_Carmack : A common view is that human level AGI will require a parameter count in the order of magnitude of the brain’s 100 trillion synapses. The large language models and image generators are only about 1/1000 of that, but they already contain more information than a single human could ever possibly know. It is at least plausible that human level AGI might initially run in a box instead of an entire data center. Some still hope for quantum magic in the neurons; I think it more likely that they are actually kind of crappy computational elements.],
-  [\@saligrama\_a : We are moving from GCP for \@stanfordio Hack Lab (170+ student course, each student gets a cloud VM) to on-prem for next year The quarterly cost for GCP VMs and bandwidth will be enough for several years worth of on-prem infra - why pay rent when you could own at same price?],
-  [\@nixCraft : 7 things all kids need to hear  1 I love you  2 I'm proud of you  3 I'm sorry 4 I forgive you 5 I'm listening  6 RAID is not backup. Make offsite backups. Verify backup. Find out restore time. Otherwise, you got what we call Schrödinger backup  7 You've got what it takes],
-  [MIŠKO HEVERY : This is why I believe that a new generation of frameworks is coming, which will focus not just on developer productivity but also on startup performance through minimizing the amount of JavaScript that the browser needs to download and execute on startup. Nevertheless, the future of JS frameworks is exciting. As we’ve seen from the data, Astro is doing some things right alongside Qwik.],
-  [Vok250 : Lambda is insanely cheap. This is a super common pattern, often called "fat Lambda", that has always been a fraction of the cost of the cheapest AWS hardware in my experience. The one exception is if you have enough 24/7 load to require a decently large instance. If you're running those t3.small kind of ec2's then you are probably better off with a fat Lambda.],
-  [MIT Team : Imagine if you have an end-to-end neural network that receives driving input from a camera mounted on a car. The network is trained to generate outputs, like the car's steering angle. In 2020, the team solved this by using liquid neural networks with 19 nodes, so 19 neurons plus a small perception module could drive a car. A differential equation describes each node of that system. With the closed-form solution, if you replace it inside this network, it would give you the exact behavior, as it’s a good approximation of the actual dynamics of the system. They can thus solve the problem with an even lower number of neurons, which means it would be faster and less computationally expensive.],
-  [\@jackclarkSF : Stability AI (people behind Stable Diffusion and an upcoming Chinchilla -optimal code model) now have 5408 GPUs, up from 4000 earlier this year - per \@EMostaque in a Reddit ama],
-  [\@ahidalgosre : Autoscaling is an anti-pattern. Complex services do not scale in any lateral direction, and the vectors via which they do scale are too unknowable/unmeasurable to predict reliably. It’s better to slightly under-provision a few instances to find out when they fail & over-provision others to absorb extra traffic.],
-  [joshstrange : I left Aurora serverless (v1, v2 pricing was insane) for PS and I've been extremely happy. It was way cheaper and less of a headache than RDS and my actual usage was way less than I anticipated (since it's hard to think in terms of row reads/writes when working at a high level). With PS I get a dev/qa/staging/prod DB for \$30/mo vs spinning up multiple RDS instances. Even with Aurora Serverless (v1) where you can spin down to 0 it was cheaper to go with PS. 1 DB unit on Aurora Serverless (v1) cost like \$45/mo (for my 1 prod instance) so for \$15 less I got all my other environments without having to wait for them to spin up after they went to sleep.],
-  [\@swshukla : Technical debt does not necessarily mean that the product is poor. Any system that has been running for years will accrue tech debt, it does not imply that engineers are not doing their job, it also does not imply that the management is bad. It's just a culmination of tradeoffs],
-  [\@GergelyOrosz : I'm observing more and more startups choose a 'TypeScript stack' for their tech: - Node. JS w TypeScript on the backend - React with TypeScript on the frontend - Some standard enough API approach (eg GraphQL) This is both easy to hire for + easy to pick up for any developer.],
-  [\@Nick\_Craver : I've seen this confusion: because a service \*is\* running with a dependency down does not mean it can \*start\* with that same dependency down. Say for example an auth token not yet expired, but unable to renew, that can spin for a while before failure. But on restart? Dead.],
-  [Gareth321 : This is easily one of the most expansive Acts (EU Digital Markets Act) regarding computing devices passed in my lifetime. The summary is in the link. As an iPhone user, this will enable me to: \* Install any software \* Install any App Store and choose to make it default \* Use third party payment providers and choose to make them default \* Use any voice assistant and choose to make it default \* User any browser and browser engine and choose to make it default \* Use any messaging app and choose to make it default],
-  [Seth Dobson : In our experience, depending on your organizational structure and operating model, leveraging Kubernetes at scale comes with more overhead than leveraging other CSP-native solutions such as AWS Elastic Container Service (ECS), AWS Batch, Lambda, Azure App Service, Azure Functions, or Google Cloud Run. Most of this extra overhead comes into play simply because of what Kubernetes is when compared with the other products.],
-  [Chris Crawford : Thus, the heart of any computer is a processing machine. That is the very essence of computing: processing],
-  [flashgordon : That was hilarious. Basically (unless this needs a reframing/realignment/repositioning/reorienting): Q: "are less sensors less safe/effective?" A: "well more sensors are costly to the organization and add more tech debt so safety is orthogonal and not worth answering".],
-  [\@bitboss : "Let's introduce Microservices, they will make our delivery faster." A sentence which I hear over and over again and which I consider to be an oversimplification of a complex challenge. A thread 🧵with ten points: 1. How do you define "fast"? Daily releases, hourly releases, weekly releases? What are your quality goals? Do you want to be "fast" in every area of your domain or only certain parts?],
-  [Meta : After we launched this optimization, we saw major gains in compute savings and higher advanced encoding watch time. Our new encoding scheme reduced the cost of generating our basic ABR encodings by 94 percent. With more resources available, we were able to increase the overall watch time coverage of advanced encodings by 33 percent. This means that today more people on Instagram get to experience clearer video that plays more smoothly.],
-  [Leo Kim : Seen in this light, TikTok’s ability to build its transmission model around our relationship to our phones represents a tremendous shift. If TV brought media into people’s homes, TikTok dares to bring it directly into our minds. The immediate, passive reception we experience on the platform relies heavily on the context of the phone, just as the familiar reception of television relies on the context of the home.],
-  [\@yahave : Two recent papers suggest a beautiful combination of neural and symbolic reasoning. The main idea is to use LLMs to express the reasoning process as a program and then use a symbolic solver (in this case, program execution) to solve each sub-problem.],
-  [Claudio Masolo : Uber observed a statistically significant boost across all key metrics since it started to provide the information on performances to Freight drivers: -0.4% of late cancellations, +0.6% of on-time pick-up, +1% of on-time drop-off and +1% of auto tracking performances. These performance improvements resulted in an estimated cost saving of \$1.5 million in 2021.],
-  [Geoff Huston : In my opinion It’s likely that over time QUIC will replace TCP in the public Internet. So, for me QUIC is a lot more than just a few tweaks to TCP…QUIC takes this one step further, and pushes the innovation role from platforms to applications, just at the time when platforms are declining in relative importance within the ecosystem. From such a perspective the emergence of an application-centric transport model that provides faster services, a larger repertoire of transport models and encompassing comprehensive encryption was an inevitable development.],
-  [Geoff Huston : In the shift to shut out all forms of observation and monitoring have we ourselves become collateral damage here? Not only are we handing our digital assets to the surveillance behemoths, we also don't really understand what assets we are handing over, and nor do we have any practical visibility as to what happens to this data, and whether or not the data will be used in contexts that are hostile to our individual interests. I have to share Paul’s evident pessimism. Like many aspects of our world these days, this is not looking like it will end all that well for humanity at large!],
-  [Meltwater : These two figures [ Elasticsearch] show the improvements that were made in heap usage patterns. The left figure shows that the heap usage is basically flat for the new cluster. The right figure shows that the sum of the heap usage is also lower now (14 TiB vs 22 TiB) even though that was not a goal by itself. We can also see in the above figures that we have been able to further optimize and scale down the new cluster after the migration was completed. That would not have been possible in the old version where we always had to scale up due to the constant growth of our dataset.],
-  [Jeremy Milk : Time and time again we see hackers creating new tactics, and simple non-negotiation doesn’t protect your business or solve for operational downtime. We’ve seen that paying ransoms doesn’t stop attacks, and engaging in counterattacks rarely has the desired outcome. Strong defensive strategies, like object lock capability, can’t block cybercriminals from accessing and publishing information, but it does ensure that you have everything you need to bring your business back online as quickly as possible.],
-  [Backblaze : What would the annualized failure rate for the least expensive choice, Model 1, need to be such that the total cost after five years would be the same as Model 2 and then Model 3? In other words, how much failure can we tolerate before our original purchase decision is wrong?],
-  [Charlie Demerjian : Genoa stomps the top Ice Lake in SPECInt\_Rate 2017 (SIR17), 1500+ compared to 602 for Ice Lake],
-  [Matthew Green : Our work is about realizing a cryptographic primitive called the One-Time Program (OTP). This is a specific kind of cryptographically obfuscated computer program — that is, a program that is “encrypted” but that you can mail (literally) to someone who can run it on any untrusted computer, using input that the executing party provides. This ability to send “secure, unhackable” software to people is all by itself of a holy grail of cryptography, since it would solve so many problems both theoretical and practical. One-time programs extend these ideas with a specific property that is foreshadowed by the name: the executing computer can only run a OTP once.],
-  [Robert Graham : The term "RISC" has been obsolete for 30 years, and yet this nonsense continues. One reason is the Penisy textbook that indoctrinates the latest college students. Another reason is the political angle, people hating whoever is dominant (in this case, Intel on the desktop). People believe in RISC, people evangelize RISC. But it's just a cult, it's all junk. Any conversation that mentions RISC can be improved by removing the word "RISC".],
-  [nichochar : My prediction: before the end of the decade, cruise and waymo have commoditized fleets doing things that most people today would find unbelievable. Tesla is still talking a big game but ultimately won't have permits for you to be in a Tesla with your hands off of the wheel.],
-  [Linus : I absolutely \*detest\* the crazy industry politics and bad vendors that have made ECC memory so "special".],
-  [Roblox : Specifically, by building and managing our own data centers for backend and network edge services, we have been able to significantly control costs compared to public cloud. These savings directly influence the amount we are able to pay to creators on the platform. Furthermore, owning our own hardware and building our own edge infrastructure allows us to minimize performance variations and carefully manage the latency of our players around the world. Consistent performance and low latency are critical to the experience of our players, who are not necessarily located near the data centers of public cloud providers.],
-  [benbjohnson : BoltDB author here. Yes, it is a bad design. The project was never intended to go to production but rather it was a port of LMDB so I could understand the internals. I simplified the freelist handling since it was a toy project. At Shopify, we had some serious issues at the time (~2014) with either LMDB or the Go driver that we couldn't resolve after several months so we swapped out for Bolt. And alas, my poor design stuck around.],
-  [Ann Steffora Mutschler : Dennard scaling is gone, Amdahl’s Law is reaching its limit, and Moore’s Law is becoming difficult and expensive to follow, particularly as power and performance benefits diminish. And while none of that has reduced opportunities for much faster, lower-power chips, it has significantly shifted the dynamics for their design and manufacturing.],
-  [arriu : Minimum order of 25 [for Swarm Iot], so roughly \$3725 for one year unless you get the "eval kit" \@ \$449. USD \$5/MO PER DEVICE. Provides 750 data packets per device per month (up to 192 Bytes per packet), including up to 60 downlink (2-way) data packets],
-  [antirez : For all those reasons, I love linked lists, and I hope that you will, at least, start smiling at them.],
-  [brunooliv : If you don't use the SDK, how can you judge anything as being "overly complicated"? I mean, I don't know about you, but, last time I checked, signatures, certificates, security and all that stuff IS SUPPOSED to be super complicated because it's a subject with a very high inherent complexity in and of itself. The SDK exists and is well designed to precisely shield you from said complexity. If you deliberately choose not to use it or can't for some reasons then yes... The complexity will be laid bare],
-  [krallja : FogBugz was still on twelve ElasticSearch 1.6 nodes when I left in 2018. We also had a custom plugin (essentially requesting facets that weren't stored in ElasticSearch back from FogBugz), which was the main reason we hadn't spent much time thinking about upgrading it. To keep performance adequate, we scheduled cache flush operations that, even at the time, we knew were pants-on-head crazy to be doing in production. I can't remember if we were running 32-bit or 64-bit with Compressed OOPs.],
-  [consumer451 : Simulation theory is deism for techies.],
-  [Roman Yampolskiy : The purpose of life or even computational resources of the base reality can’t be determined from within the simulation, making escape a necessary requirement of scientific and philosophical progress for any simulated civilization.],
-  [Mark Twain : A lie can travel around the world and back again while the truth is lacing up its boots.],
-  [\@dfrasca80 : I have a \#lambda written in \#rustlang with millions of requests per day that does worse-case scenarios 2 GetItem and 1 BatchGetItem to \#dynamodb. It usually runs between 10ms & 15ms. I decided to cache the result in  the lambda execution context and now Useful Stuff:],
-  [I wonder if Snap knows they shouldn't be using the cloud? Snap: Journey of a Snap on Snapchat Using AWS :],
-  [300 million daily active users.],
-  [5 billion+ snaps per day.],
-  [10 million QPS.],
-  [400 TB stored in DynamoDB, Nightly scans run a 2 billion rows per minute. They look for friend suggestions and deleting ephemeral data.],
-  [900+ EKS clusters, 1000+ instances per cluster.],
-  [Sending a snap: client (iOS, Android) sends a request to their gateway service (GW) that runs in EKS. GW talks to a media delivery service (MEDIA). MEDIA sends the snap to cloudfront and S3 so it's closer to the recipient when they need it.],
-  [Once the client has persisted the media it sends a request to the core orchestration services (MCS). MSC checks the friend graph service, which does a permission check on if the message can be sent. The metadata is persisted into SnapDB.],
-  [SnapDB is a database that uses DynamDB as its backend. It handles transactions, TTL, and efficiently handles ephemeral data and state synchronization. The controls helps control costs.],
-  [Receiving a snap is very latency sensitive. MCS looks up a persistent connection for each user. in Elasticache. The server hosting the connection is found and the message is sent through that server. The media ID is used to get media from Cloudfront.],
-  [Moving to this architecture reduced P50 latency by 24%.],
-  [Use auto-scaling and instant type optimization (Graviton) to keep compute costs low.],
-  [Also, How do we build a simple 𝐜𝐡𝐚𝐭 𝐚𝐩𝐩𝐥𝐢𝐜𝐚𝐭𝐢𝐨𝐧 using 𝐑𝐞𝐝𝐢𝐬? .],
-  [Twitter is performing one of the most interesting natural experiments we've ever seen: can you fire most of your software development team and survive? The hard truth is after something is built there's almost always a layoff simply because you don't need the same number of people to maintain a thing as it takes to build a thing. But Twitter made a deep cut. It seems likely stuff will stay up in the short term because that's the way it's built. But what about when those little things go wrong? Or when you want to change something? Or figure out those trace through those elusive heisenbergs? It will be fascinating to see.],
-  [\@petrillic : for people blathering about “just put twitter in the cloud” we tried that. i was there. so just to put some numbers out there, let’s assume aws gave you a 60% discount. now you’re talking approximately 500,000 m6gd.12xlarge systems (new hw was bigger). that’s \$300MM monthly. and before you add in little things like bandwidth. probably \$10MM a month in S3. it’s just absurd. there is a reason after investing many thousands of staff+ hours twitter was careful about what it moved. even doing experiments in the cloud required careful deep coordination with the providers. for example, i accidentally saturated the network for an entire region for a few minutes before some sre freaked out and asked what was going on. 1,000 node presto cluster was going on. or the gargantuan bandwidth twitter uses (you think we ran a global network for nothing?). with a 90% discount on aws it would be probably be another \$10MM monthly. maybe more. oh and for those going on and on about elastic scale... good luck asking for 50,000 EC2 instances instantly. just because you can provision 20 doesn't mean you can provision 50,000. even running 1,000 node presto cluster required warming it up at 100,250,500,750 first. not sure i'm the person for that, but realistically, it was mostly latency reduction. there were lots of efforts in 2019-2021 on reducing (tail) latency on requests. also, optomizing a 400Gbps backbone in the datacenter.],
-  [\@atax1a : so now that the dust has settled — it sounds like the last person with membership in the group that allows them to turn on writes to config-management left while writes were still locked, and the identity management that would allow them to get into the group is down (:..then there's all the services that \_aren't\_ in Mesos — a bunch of the core UNIX stuff like Kerberos, LDAP, and Puppet itself is on bare metal, managed by Puppet. Database and storage clusters have some of their base configs deployed there, too. None of that was on Musk's diagram.],
-  [The best outcome is we're getting some details and anti-details about how Twitter works now. It's definitely a grab the elephant situation.],
-  [\@jbeda : I’m still on the RPC thing. How many RPCs do you think happen when you do a cold search on Google? I wouldn’t be surprised if it were \>1000. Between search, ads, user profile, nav bar on top, location databases, etc. This is just how mature distributed distributed systems work...\*sigh\* it doesn’t work like that. Typically you have a few API calls from the client to a datacenter and then, within the datacenter, you have a flurry of traffic to pull everything together.],
-  [\@suryaj : Back in 2014 when I worked on Bing, 1 query translated to 20s of requests from browser to FrontDoor (entry point to Bing) to 2000+ RPCs within the DCs (multiple).],
-  [\@theyanis : i worked at Vine in 2015 and it was in the AWS cloud while a Twitter property. I think our cloud and CDN bill was \$12M yearly and that’s for 30 million MAU. Twitter has 450 and the migration would cost like 1000 man years],
-  [\@MosquitoCapital : I've seen a lot of people asking "why does everyone think Twitter is doomed?" As an SRE and sysadmin with 10+ years of industry experience, I wanted to write up a few scenarios that are real threats to the integrity of the bird site over the coming weeks. 1) Random hard drive fills up. You have no idea how common it is for a single hosed box to cause cascading failures across systems, even well-engineered fault-tolerant ones with active maintenance. Where's the box? What's filling it up? Who will figure that out?],
-  [\@jbell : Flash forward to 2022. Over 5 years, we’ve migrated almost every api used by the Twitter app into a unified graphql interface. Getting api changes into production used to be measured in weeks, now it's measured in hours. For the last 2 years, EVERY SINGLE new Twitter feature was delivered on this api platform. Twitter blue, spaces, tweet edit, birdwatch, and many many many others. This api platform serves your home timeline, every tweet embedded in your favorite nytimes article, and the entirety of the 3rd-party developer api which uses our graphql system to fulfill every part of every api request. Just in this calendar year, there have been over 1000 changes to this graphql api by over 300 developers at Twitter. The api serves 1.5 BILLION graphql fields per second across 3000 different data types. The system is vast, developerable, and efficient.],
-  [\@schrep : Basic internet math for \@elonmusk's claim load time in India is 20s because of 1200 RPC calls (v.s. 2s in US): Bangalore-\>SF is ~250ms 1200 \*.25s = 5 minutes! Way off!! 20s load time = MAX of 80 sequential calls Reality is likely 5-10? 1200 is happing inside datacenter?],
-  [AWS re: Invent 2022 videos are now available .],
-  [The Serverless Spectrum . I really don't think serverless is a spectrum. Something is serverless if you can use the service through an API without having to worry about the underlying architecture. When you charge a minimum of \$700, like AWS does for Open Search, it's not serverless. That minimum charge means you are paying for fixed resources. That's not serverless. That's not on the spectrum. FaaS is different from serverless because we've seen new container based HTTP serverless options like Cloud Run and App Runner that aren't oriented around functions, so we need to keep FaaS to label services like AWS Lambda.],
-  [Roblox outage because of new features under load lead to a 73 hour outage at Roblox . Great incident report.],
-  [Roblox’s core infrastructure runs in Roblox data centers. We deploy and manage our own hardware, as well as our own compute, storage, and networking systems on top of that hardware. The scale of our deployment is significant, with over 18,000 servers and 170,000 containers.],
-  [we leverage a technology suite commonly known as the “HashiStack.” Nomad, Consul and Vault],
-  [At this point, the team developed a new theory about what was going wrong: increased traffic…the team started looking at Consul internals for clues.. Over the next 10 hours, the engineering team dug deeper into debug logs and operating system-level metrics. This data showed Consul KV writes getting blocked for long periods of time. In other words, “contention.”],
-  [On October 27th at 14:00, one day before the outage, we enabled this feature on a backend service that is responsible for traffic routing. As part of this rollout, in order to prepare for the increased traffic we typically see at the end of the year, we also increased the number of nodes supporting traffic routing by 50%. We disabled the streaming feature for all Consul systems, including the traffic routing nodes. The config change finished propagating at 15:51, at which time the 50th percentile for Consul KV writes lowered to 300ms. We finally had a breakthrough.],
-  [Why was streaming an issue? HashiCorp explained that, while streaming was overall more efficient, it used fewer concurrency control elements (Go channels) in its implementation than long polling. Under very high load – specifically, both a very high read load and a very high write load – the design of streaming exacerbates the amount of contention on a single Go channel, which causes blocking during writes, making it significantly less efficient],
-  [The caching system was unhealthy so they restarted it: To avoid a flood, we used DNS steering to manage the number of players who could access Roblox. This allowed us to let in a certain percentage of randomly selected players while others continued to be redirected to our static maintenance page. Every time we increased the percentage, we checked database load, cache performance, and overall system stability. Work continued throughout the day, ratcheting up access in roughly 10% increments.],
-  [Running all Roblox backend services on one Consul cluster left us exposed to an outage of this nature. We have already built out the servers and networking for an additional, geographically distinct data center that will host our backend services. We have efforts underway to move to multiple availability zones within these data centers],
-  [Basecamp and HEY are moving on out—of the cloud. Why we're leaving the cloud and podcast and Why You Should Leave the Cloud – David Heinemeier Hannsson DHH .],
-  [we have a pretty large cloud budget and gonna have some of the more specific numbers, but I think we’re at about \$3 million a year],
-  [Renting computers is (mostly) a bad deal for medium-sized companies like ours with stable growth. The savings promised in reduced complexity never materialized. So we're making our plans to leave.],
-  [Let's take HEY as an example. We're paying over half a million dollars per year for database (RDS) and search (ES) services from Amazon. Do you know how many insanely beefy servers you could purchase on a budget of half a million dollars per year?],
-  [Anyone who thinks running a major service like HEY or Basecamp in the cloud is "simple" has clearly never tried.],
-  [We have gone from a hundred percent of our servers being, or more or less a hundred percent of our servers being on Preem and knowing what that takes to operate. We currently run base cam three, our, well four now actually base cam four. We run base cam four on our own servers predominantly.],
-  [First of all, we don’t even rack the hardware. No one goes when we buy a new server. No one drives from wherever they live in the country to the data center, unpack the box, slot it into machine. No, no, no, they’re data centers who rent out what’s called this white glove service. They unwrap it, they put it in your rack, they connect the the cables and then we remotely set it up. And what we’ve just found is like, that’s just not where the bulk of the complexity is hidden.],
-  [And I think there’s just something for me, aesthetically offensive about that. Not just a perversion of the Internet’s architecture and, and setup, but also this idea that these big tech companies, and I certainly include both Amazon and Google in that camp they’re already too big, too powerful.],
-  [Thus I consider it a duty that we at 37signals do our part to swim against the stream. We have a business model that's incredibly compatible with owning hardware and writing it off over many years. Growth trajectories that are mostly predictable. Expert staff who might as well employ their talents operating our own machines as those belonging to Amazon or Google.],
-  [The cloud is not should you build your own power plant, but should you buy or rent your own dishwasher.],
-  [They were not saving on complexity. They were not running using fewer operations people, so why bother with the cloud?],
-  [Will be using S3 for quite a while.],
-  [OK, they aren't actually swimming against the stream. They are exactly in the stream making decisions based on their skill set, requirements and workload. Since it doesn't sound like they have a very cloud native architecture, the transition should be relatively seamless. Many people do not have the ops people and the DBAs to run these kinds of systems, so others will make different decisions based on their needs.],
-  [Also, Building Basecamp 4 . Though we don't really know what their architecture is like. I assume they are just renting machines, which if you have a good ops team is not an efficient use of funds.],
-  [Cloudflare is making a strong case for being your serverless cloud platform of choice--based on price and features. ICYMI: Developer Week 2022 announcements . Remember, the difference between Cloudflare and other cloud platforms is that they are an edge platform provider. Your code works everywhere they have a point of presence, not in just a datacenter. So it's a harder problem to solve. They are piecing together all the base parts of a platform. They call it the Supercloud. As everyone seems to hate every neologism, I'm assuming Supercloud will be derided as well. What's on their platform?],
-  [Durable Objects. An interesting take on the Actor model. I haven't used these yet, but I plan to.],
-  [Queues. Work needs to pile up somewhere.],
-  [R2. Cheaper than S3. No egress fees. Interested now?],
-  [Workers. Still good.],
-  [Cache Reserve. Is it a bank of some kind? No, it's a CDN with lower egress fees: During the closed beta we saw usage above 8,000 PUT operations per second sustained, and objects served at a rate of over 3,000 GETs per second. We were also caching around 600Tb for some of our large customers.],
-  [Cloudflare Logs. Yep, logging.],
-  [D1. A relational database you can't use yet.],
-  [Cloudflare Pages + Cloudflare Functions. Static website hosting + server-side JavaScript code.],
-  [Various stuff I wasn't interested in.],
-  [\@dpeek\_ : My recommendation to anyone building a new SaaS product: build on \@Cloudflare. \@EstiiHQ is completely hosted on Pages / Workers / KV / DurableObjects and we still haven’t exceeded the “pro” tier (\$5 a month). I have no idea how they make money!],
-  [Wired up predefined access patterns in NoSQL are more performant than SQL queries on a relational database. But why can't relational databases compete using materialized views? Maybe they can. How PlanetScale Boost serves your SQL queries instantly :],
-  [PlanetScale Boost, which improves the performance and throughput of your application’s SQL queries by up to 1,000×. PlanetScale Boost is a state-of-the-art partial materialization engine that runs alongside your PlanetScale database.],
-  [With PlanetScale Boost, we’re trying to do the opposite. Instead of planning how to fetch the data every time you read from your database, we want to plan how to process the data every time you write to your database. We want to process your data, so that reading from it afterward becomes essentially free. We want a very complex plan to apply to your writes, so there’s no planning to be done for your reads; a plan where we push data on writes instead of pulling data on reads.],
-  [A query in PlanetScale Boost can also miss, but we try to be much smarter about the way we resolve these misses.],
-  [Jonhoo : I'm so excited to see dynamic, partially-stateful data-flow for incremental materialized view maintenance becoming more wide-spread! I continue to think it's a \_great\_ idea, and the speed-ups (and complexity reduction) it can yield are pretty immense, so seeing more folks building on the idea makes me very happy.],
-  [\@houlihan\_rick : With the correct data model, the time complexity of every \#NoSQL query is O(log(n)). This is blazing fast compared to the simplest RDBMS join. One accurate measurement is worth a thousand expert opinions. Run the workload on both platforms with a proper data model, then laugh.],
-  [\@houlihan\_rick : Sometimes people who have limited experience in \#NoSQL try to tell me I am wrong. Most of Amazon's retail infrastructure runs on some variation of the \#NoSQL design patterns invented by my team.],
-  [Ok, Los Altos Hills is one of the richest neighborhoods in the world, but it's good to see people realizing networking isn't that hard.],
-  [Comcast told him it would cost \$17,000 to speed up his internet. He rallied 41 South Bay neighbors to build their own lightning-fast fiber-optic network instead : Gentry’s company handled the infrastructure procurement, contracts, logistics and retail — essentially providing the residents a turnkey fiber optic internet service — while Vanderlip and two of his neighbors, who joined with an investment of \$5,000 each, bought the fiber optic infrastructure, crowdsourced new members and mapped out an initial fiber route to their houses.],
-  [Also, The Fibre Optic Path : An alternative approach is to use a collection of cores within a multi-core fibre and drive each core at a far lower power level. System capacity and power efficiency can both be improved with such an approach.],
-  [AI continues to be almost most useful.],
-  [Kite is saying farewell : We built the most-advanced AI for helping developers at the time, but it fell short of the 10× improvement required to break through because the state of the art for ML on code is not good enough. You can see this in Github Copilot, which is built by Github in collaboration with Open AI. As of late 2022, Copilot shows a lot of promise but still has a long way to go. The largest issue is that state-of-the-art models don’t understand the structure of code, such as non-local context.],
-  [AI Found a Bug in My Code : I had the model look at some existing code and rank the probability of each token appearing given the previous tokens. I also had it suggest its own token and compared the probability of my token to the probability of the model's token…I did not plan this, but it turns out there is a bug in my code. When an event listener is removed during dispatch, I return from the function. Hovering over the suspicious code, the model correctly suggests continue.],
-  [nradov : Yes and I raised the same concern when GitHub Copilot was released. If our code contains so little entropy that an AI can reliably predict the next sequence of tokens then that is evidence we are operating at too low a level of abstraction. Such tools can certainly be helpful in working with today's popular languages, but what would a future language that allows for abstracting away all that boilerplate look like?],
-  [Good question. What will Serverless 2.0 look like? :],
-  [Make all services serverless so we don't have to manage anything, they scale to zero, and we shouldn't have to worry about instance sizes.],
-  [Better caching, orchestration, HPC, etc.],
-  [DynamoDB is easy to adopt and hard to change and adapt to new access patterns.],
-  [Deploying functions never works the first time. Permissions wrong. Wiring wrong. Need something to check that a function will run when deployed.],
-  [Need faster deployment.],
-  [Infrastructure as code for works for functions, but not for everything else. Need better support for wiring, networking, and security.],
-  [Microsoft invested a lot in owning where developers live: Cloud-based editor, VsCode GitHub, and NPM. You can build and deploy with GitHub actions. Copilot can write half the code for you.],
-  [Just use NoSQL from the start. From Postgres to Amazon DynamoDB :],
-  [Instacart is the leading online grocery company in North America. Users can shop from more than 75,000 stores with more than 500 million products on shelves. We have millions of active users who regularly place multiple orders with tens of items in their cart every month.],
-  [Our primary datastore of choice is Postgres, and we have gotten by for a long time by pushing it to its limits, but once specific use cases began to outpace the largest Amazon EC2 instance size Amazon Web Services (AWS) offers, we realized we needed a different solution. After evaluating several other alternatives, we landed on Amazon DynamoDB being the best fit for these use cases.],
-  [With a few features planned for release, we were projecting to send 8x more notifications every day than our baseline! We knew that as we continued to scale, a single Postgres instance would not be able to support the required throughput.],
-  [The ability to scale on-demand would be a plus to general cost efficiency as well as our ability to test and launch future features that change the volume of messages sent dramatically],
-  [we elected to thinly wrap an open source library (Dynamoid) that exposed a similar interface to the ActiveRecord],
-  [In real terms, the specific design for the push notifications service, not only solved our scaling issues, but also helped us in cutting our costs by almost half.],
-  [In just the past 6 months we have grown from 1 to more than 20 tables, supporting 5–10 different features across different organizations!],
-  [\@stefanwild : Yes, that’s roughly our approach. If it’s a new, somewhat standalone table that is either a straightforward fit for Dynamo and/or a workload that Postgres won’t handle well, we do use Dynamo from the start. The bar to migrate existing Postgres tables is a bit higher…Rather difficult for our heaviest workloads. But that and challenges with denormalization are probably topics for another blog post or two],
-  [How is saying something is the way it is because all the other options are improbable any different than saying because god wants it that way? : . Our universe is the way it is, according to Neil Turok of the University of Edinburgh and Latham Boyle of the Perimeter Institute for Theoretical Physics in Waterloo, Canada, for the same reason that air spreads evenly throughout a room: Weirder options are conceivable, but exceedingly improbable.],
-  [How we built the Tinder API Gateway :],
-  [We have more than 500 microservices at Tinder, which talk to each other for different data needs using a service mesh under the hood.],
-  [Tinder is used in 190 countries and gets all kinds of traffic from all over the world.],
-  [Before TAG existed, we leveraged multiple API Gateway solutions and each application team used a different 3rd party API Gateway solution. Since each of the gateways was built on a different tech stack, managing them became a cumbersome effort.],
-  [TAG is a JVM-based framework built on top of Spring Cloud Gateway. Application teams can use TAG to create their own instance of API Gateway by just writing configurations. It centralizes all external facing APIs and enforces strict authorization and security rules at Tinder. TAG extends components like gateway and global filter of Spring Cloud Gateway to provide generic and pre-built filters: Weighted routing, Request/Response transformations, HTTP to GRPC conversion, and more],
-  [TAG is also used by other Match Group brands like Hinge, OkCupid, PlentyOfFish, Ship, etc. Thus TAG is serving B2C and B2B traffic for Tinder.],
-  [My first take was converting 10 million lines of code from Java to Kotlin was just crazy. But it's Meta, so I'm sure they can pull it off. Not something mortals should do however. And the results don't seem worth the squeeze. From zero to 10 million lines of Kotlin : On average, we’ve seen a reduction of 11 percent in the number of lines of code from this migration; We found that Kotlin matched the performance of Java; We expected build times would be longer with Kotlin.],
-  [A good example of pretty much every modern cloud architecture. WEGoT aqua: Scaling IoT Platform for Water Management & Sustainability . Also How Shiji Group created a global guest profile store on AWS .],
-  [How Honeycomb Used Serverless to Speed up Their Servers: Jessica Kerr at QCon San Francisco 2022 :],
-  [Honeycomb observed a 50ms median startup time in their lambda functions, with very little difference between hot and cold startups. They tend to (90%) return a response within 2.5 seconds. They are 3 - 4 times more expensive but much more infrequent than EC2s for the same amount of compute.],
-  [Use Lambda for real-time bulk workloads that are urgent],
-  [Make data accessible in the cloud and divide them into parallel workloads],
-  [Before scaling out, tune and optimize properly, use observability layers, and measure (especially cost) carefully],
-  [Last but not least, architecture doesn’t matter unless users are happy.],
-  [Storage Engine: lock Free B+ tree for indexing with log-structured storage; Local disk with SSDs (not Remote Attached); Batching to reduce network/disk IO; Custom allocators to optimize for request patterns; Custom async scheduler with coroutines],
-  [Azure Cosmos DB: Low Latency and High Availability at Planet Scale :],
-  [an example of a customer having a single instance scalability in production with 100 million requests per second over petabytes of storage and globally distributed over 41 regions.],
-  [Understanding your hardware that it depends on, we never span our process across Non-uniform memory access (Numa) nodes. When a process is across the Numa node, memory access latency can increase if the cache misses. Not crossing the Numa node gives our process a more predictable performance.],
-  [Shopify Reducing BigQuery Costs: How We Fixed A \$1 Million Query .],
-  [That roughly translated to 75 GB billed from the query. This immediately raised an alarm because BigQuery is charged by data processed per query. If each query scans 75 GB of data, then we’re looking at approximately 194,400,000 GB of data scanned per month. According to BigQuery’s on-demand pricing scheme, it would cost us \$949,218.75 USD per month!],
-  [We created a clustered dataset on two feature columns from the query’s WHERE clause. We then ran the exact same query and the log now showed 508.1 MB billed. That’s 150 times less data scanned than the previous unclustered table. That would bring our cost down to approximately \$1,370.67 USD per month, which is way more reasonable.],
-  [I can't wait for the pie stack. Have some CAKE: The New (Stateful) Serverless Stack :],
-  [C - CockroachDB Serverless],
-  [A - Authorization, Authentication, Session, and User Management],
-  [K - Kubernetes],
-  [E - Event-driven serverless platforms],
-  [So it's not a stack, it's more of a recipe, which is fine, but a stack should be immediately usable without first deciding on all the ingredients and then having to figure out how to prepare them.],
-  [Also, How to build modern gaming services – with reference architecture .],
-  [What do you do when vertical scaling reaches as high as it can go? Netflix went horizontal. Consistent caching mechanism in Titus Gateway :],
-  [After reaching the limit of vertical scaling of our previous system, we were pleased to implement a real solution that provides (in a practical sense) unlimited scalability of Titus read-only API. We were able to achieve better tail latencies with a minor sacrifice in median latencies when traffic is low, and gained the ability to horizontally scale out our API gateway processing layer to handle growth in traffic without changes to API clients.],
-  [The mechanism described here can be applied to any system relying on a singleton leader elected component as the source of truth for managed data, where the data fits in memory and latency is low.],
-  [The JVM giveth and taketh away. Netflix got some back. Seeing through hardware counters: a journey to threefold performance increase :],
-  [we expected to roughly triple throughput per instance from this migration, as 12xl instances have three times the number of vCPUs compared to 4xl instances. We can see that as we reached roughly the same CPU target of 55%, the throughput increased only by ~25% on average, falling far short of our desired goal. What’s worse, average latency degraded by more than 50%, with both CPU and latency patterns becoming more “choppy.”],
-  [In this blogpost we described how we were able to leverage PMCs in order to find a bottleneck in the JVM’s native code, patch it, and subsequently realize better than a threefold increase in throughput for the workload in question. When it comes to this class of performance issues, the ability to introspect the execution at the level of CPU microarchitecture proved to be the only solution. Intel vTune provides valuable insight even with the core set of PMCs, such as those exposed by m5.12xl instance type.],
-  [How do you go from data to crowd pleasing images? It's a long pipeline. James Webb telescope pictures didn’t begin as stunning images. Here’s how they started out — and how researchers brought them to life :],
-  [For all the meticulous precision that went into the JWST’s design and construction, the data coming from it, in its rawest form, is uneven.],
-  [Thankfully, the JWST engineers have a solution for that — a complete calibration map of how to compensate for the variations in each pixel in every instrument on the Webb telescope.],
-  [supernova87a : I have friends/former colleagues who work on these pipelines, and I can tell you that it's not a stretch to say that there are dozens if not hundreds of people whose entire working lives are about characterizing the sensors, noise, electronics, so that after images are taken, they can be processed well / automatically / with high precision…Every filter, sensor, system has been studied for thousands of person-hours and there are libraries on libraries of files to calibrate/correct the image that gets taken. How do you add up exposures that are shifted by sub-pixel movements to effectively increase the resolution of the image? How to identify when certain periodic things happen to the telescope and add patterns of noise that you want to remove? What is the pattern that a single point of light should expect to be spread out into after traveling through the mirror/telescope/instrument/sensor system, and how do you use that to improve the image quality?],
-  [NimConf 2022 videos are available.],
-  [Events: Fat or Thin . Agree, you generally want fat events because you want to do as much work up front as you can. Events should not drive backend load to rehydrate data that was already available at the time the event was created. It's not a coupling issue because all the code needs to be in sync in any case. If your events are going across system boundaries then your decision criteria may be different. Great discussion on HackerNews .],
-  [It's Time to Replace TCP in the Datacenter],
-  [It is time to recognize that TCP's problems are too fundamental and interrelated to be fixed; the only way to harness the full performance potential of modern networks is to introduce a new transport protocol into the datacenter. Homa demonstrates that it is possible to create a transport protocol that avoids all of TCP's problems.],
-  [Excellent discussion on HackerNews . We could do better than TCP/IP in controlled network scenarios. Same within appliances and racks.],
-  [Also, Aquila: A unified, low-latency fabric for datacenter networks , CliqueMap: Productionizing an RMA-Based Distributed Caching System , Snap: a Microkernel Approach to Host Networking .],
-  [Amazon agrees. They've created SRD (scalable reliable datagram) . It focuses more on performance and less on reliability, because you know, a datacenter isn't the internet. SRD offers multi-pathing, microsecond level retries, runs on dedicated hardware (nitro). SRD is an Ethernet-based transport. SRD reduces EBS tail latency, which is key because average latency doesn't matter for data. So better overall performance and massive improvement in edge cases.],
-  [It's all in the set up. Scaling PostgresML to 1 Million ML Predictions per Second on commodity hardware. .],
-  [Scaling Mastodon is Impossible . Is that really a bad thing? Though it does seem likely, since centralization has always won, we'll see centralized virtual layers on top of the fediverse.],
-  [How to reduce 40% cost in AWS Lambda without writing a line of code! :],
-  [Higher memory configurations bring very little benefit and high risk.],
-  [The batch size was unchanged. We observed that it will not affect the performance or costs],
-  [The parallelizationFactor was changed from 3 to 2. This setting caused a little delay in queue ingestion but it’s at a three-digit ms level],
-  [The maximumBatching Window in Seconds was changed from 0 to 3. We observed that it only adds 2- digit ms delay to ingestion time and brings significant cost reduction.],
-  [Runtime Architecture is changed from X86\_64 to ARM64. This results in no visible performance increase for our case but AWS charges 25% less for ARM64],
-  [we didn’t change the code at all. Welcome to the age of the cloud.],
-  [When Is Serverless More Expensive Than Containers? . At 66 requests per second. That's over 170.2 million requests per month. So you have a lot of head room. App Runner is about 25% the cost of EC2. A good thing to keep in mind is serverless costs are linear with usage. You won't get to that inflection in the curve where you need another level of complexity to cope. They didn't include API gateway costs, which would likely change the numbers.],
-  [Cumulus on How We Decreased Cloud Costs and Increased System Resilience :],
-  [After seeing over 400% increase in our monthly bill, it was clear that we had to completely rethink how we were using the cloud.],
-  [Overall, we lowered our monthly bill by 71%, Perhaps most importantly, the improvements we made yielded a highly resilient system.],
-  [The legacy technologies used in the original system were priced at a premium by service providers.],
-  [Our customers have “bursty” usage patterns.],
-  [We had to anticipate and provision for peak usage levels since scaling our services took too much time.],
-  [Leveraging serverless technologies, we decided to evolve our system from a monolithic structure to serverless microservices],
-  [We shifted our primary storage from a relational database to DynamoDB tables],
-  [Replaced shared-secret authentication with granular IAM policies],
-  [Leveraged AWS Backup to create Point-In-Time-Recovery],
-  [Eliminated AppSync cache by improving backend resources],
-  [Reduced verbose data logging],
-  [Want your Intel processor to be able to do addition this week? You'll soon be able to buy a weekly, monthly or yearly subscription for that. Intel Finalizes 'Intel on Demand' Pay-As-You-Go Mechanism for CPUs .],
-  [Questions to ask on a date with a software engineer. LOL .],
-  [How we reduced our annual server costs by 80% — from \$1M to \$200k — by moving away from AWS :],
-  [a few years of growth later, we’re handling over 70,000 pages per minute, storing around 560 million pages, and paying well over \$1,000,000 per year.],
-  [we were able to cut costs by 80% in a little over three months],
-  [Migrate the cached pages and traffic onto Prerender’s own internal servers and cut our reliance on AWS as quickly as possible. When we did a cost projection we estimated that we could reduce our hosting fees by 40%, and decided a server migration],
-  [When we did a cost projection we estimated that we could reduce our hosting fees by 40%, and decided a server migration],
-  [When the writes to S3 had been stopped completely, Prerender saved \$200 a day on S3 API costs],
-  [In the last four weeks, we moved most of the cache workload from AWS S3 to our own Cassandra cluster. The daily cost of AWS was reduced to \$1.1K per day, projecting to 35K per month, and the new servers’ monthly recurring cost was estimated to be around 14K.],
-  [The true hidden price for AWS is coming from the traffic cost, they sell a reasonably priced storage, and it’s even free to upload it. But when you get it out, you pay an enormous cost. In our case, it was easy around the \$30k — \$50k per month. By the end of phase two, we had reduced our total monthly server costs down by 41.2%.],
-  [This step involved moving all the Amazon RDS instances shard by shard. Our monthly server fees dropped below our initial estimate of 40% to a full 80% by the time all the cached pages were redirected.],
-  [P99 Conf videos are available. Looks like lots of good content.],
-  [How we built Pingora, the proxy that connects Cloudflare to the Internet :],
-  [Today we are excited to talk about Pingora, a new HTTP proxy we’ve built in-house using Rust that serves over 1 trillion requests a day, boosts our performance, and enables many new features for Cloudflare customers, all while requiring only a third of the CPU and memory resources of our previous proxy infrastructure.],
-  [We chose Rust as the language of the project because it can do what C can do in a memory safe way without compromising performance.],
-  [The next design decision was around our workload scheduling system. We chose multithreading over multiprocessing in order to share resources, especially connection pools, easily. We also decided that work stealing was required to avoid some classes of performance problems mentioned above.],
-  [We decided to implement a “life of a request” event based programmable interface similar to NGINX/OpenResty],
-  [Overall traffic on Pingora shows 5ms reduction on median TTFB and 80ms reduction on the 95th percentile. The savings come from our new architecture which can share connections across all threads. This means a better connection reuse ratio, which spends less time on TCP and TLS handshakes. Pingora makes only a third as many new connections per second compared to the old service. For one major customer, it increased the connection reuse ratio from 87.1% to 99.92%, which reduced new connections to their origins by 160x.],
-  [Pingora consumes about 70% less CPU and 67% less memory compared to our old service with the same traffic load.],
-  [Pingora crashes are so rare we usually find unrelated issues when we do encounter one.],
-  [Walmart shows all the optimizations that can be applied to any write-heavy API. Scaling the Walmart Inventory Reservations API for Peak Traffic .],
-  [Scatter-Gather the API requests with a sticky session so a database partition is always processed by the same instance.],
-  [In-Memory concurrency using actor pattern with mailbox to restrict the processing of a single partition to a single thread. This also helps with batch processing of the same partition requests.],
-  [In-Memory snapshot state caching to reduce the number of reads.],
-  [Videos from ServerlessDays New York 2022 are available.],
-  [A useful discussion about what zero trust means and why you want it. The US government certainly does. OMB Zero Trust Memo, with Eric Mill . It means removing implicit trust inside the network. You don't log in at layer 3 or layer 4 and then have trust inside the network. You still have single-sign-on, but you log in at the application layer. Zero trust is about least privilege and getting more information about the users using the system. Pushing unencrypted on the internal network is putting a lot of implicit trust in the system. HTTPS everywhere.],
-  [id="soft-stuff-"\>Soft Stuff:],
-  [Kiteco : Kite open sourced a lot of their code for AI code generation.],
-  [Dark : a new way of building serverless backends. Just code your backend, with no infra, framework or deployment nightmares.],
-  [gluesql : a SQL database library written in Rust.],
-  [This looks very nice. FlashDB : An ultra-lightweight embedded database. Key-value database. Time Series Database.],
-  [Supabase : an open source Firebase alternative. Start your project with a Postgres database, Authentication, instant APIs, Edge Functions, Realtime subscriptions, and Storage.],
-  [hasura/graphql-engine : a streaming GraphQL API (subscriptions) on your Postgres database, so that you can securely stream data to apps and services with minimal setup. Benchmarked to handle 1M concurrent GraphQL clients streaming from 10000 channels with 1M events ingested every minute - on a single instance of Postgres RDS.],
-  [TinyBase : a smart new way to structure your local app data.],
-  [surrealdb : an end-to-end cloud native database for web, mobile, serverless, jamstack, backend, and traditional applications.],
-  [EdgeDB : a new database that extends the relational model to eliminate the object-relational impedance mismatch.],
-  [id="pub-stuff-"\>Pub Stuff:],
-  [Human-level play in the game of Diplomacy by combining language models with strategic reasoning : Across 40 games of an anonymous online Diplomacy league, Cicero achieved more than double the average score of the human players and ranked in the top 10% of participants who played more than one game.],
-  [Scalable algorithm simplification using quantum AND logic : Here we implement a resource-efficient construction for a quantum version of AND logic that can reduce the compilation overhead, enabling the execution of key quantum circuits.],
-  [The Security Design of the AWS Nitro System : This paper provides a high-level introduction to virtualization and the fundamental architectural change introduced by the Nitro System. It discusses each of the three key components of the Nitro System, and provides a demonstration of how these components work together by walking through what happens when a new Amazon Elastic Block Store (Amazon EBS) volume is added to a running EC2 instance. The whitepaper discusses how the Nitro System, by design, eliminates the possibility of administrator access to an EC2 server, the overall passive communications design of the Nitro System, and the Nitro System change management process. Finally, the paper surveys important aspects of the EC2 system design that provide mitigations against potential side-channels issues that can arise in compute environments],
-  [Legged Locomotion in Challenging Terrains using Egocentric Vision : In this paper, we present the first end-to-end locomotion system capable of traversing stairs, curbs, stepping stones, and gaps. We show this result on a medium-sized quadruped robot using a single front-facing depth camera. The small size of the robot necessitates discovering specialized gait patterns not seen elsewhere.],
-  [Monolith: Real Time Recommendation System With Collision : In this paper, we present Monolith , a system tailored for online training. Our design has been driven by observations of our application workloads and production environment that reflects a marked departure from other recommendations systems. Our contributions are manifold: first, we crafted a collisionless embedding table with optimizations such as expirable embeddings and frequency filtering to reduce its memory footprint; second, we provide an production-ready online training architecture with high fault-tolerance; finally, we proved that system reliability could be traded-off for real-time learning. Monolith has successfully landed in the BytePlus Recommend product.],
-  [MultiRay: Optimizing efficiency for large-scale AI models : State of the art AI model running at 20 million queries per second, 800 billion queries per day.],
-  [Abuse and Fraud Detection in Streaming Services Using Heuristic-Aware Machine Learning : This work presents a fraud and abuse detection framework for streaming services by modeling user streaming behavior. The goal is to discover anomalous and suspicious incidents and scale the investigation efforts by creating models that characterize the user behavior.],
-  [Fail-Slow at Scale: Evidence of Hardware Performance Faults in Large Production Systems : We show that all hardware types such as disk, SSD, CPU, memory, and network components can exhibit performance faults. We made several important observations such as faults convert from one form to another, the cascading root causes and impacts can be long, and fail-slow faults can have varying symptoms. From this study, we make suggestions to vendors, operators, and systems designers.],
-  [A World Wide View of Browsing the World Wide Web : we also observe signi!cant differences in the speci!c sites visited based on where users are located. Beyond the small set of globally popular sites, most websites are country-speci!c. For example, of sites appearing in the top 1K for at least one country, over half do not rank in the top 10K for any other country, and even among the top 20 sites for a given country, at least half are only nationally popular],
-  [Owl: Scale and Flexibility in Distribution of Hot Content : In contrast to prior assumptions about peer-to-peer distribution, Owl shows that centralizing the control plan is not a barrier to scalability: Owl distributes over 800 petabytes of data per day to millions of client processes. Owl improves download speeds by a factor of 2–3 over both BitTorrent and a prior decentralized static distribution tree used at Meta, while supporting 106 use cases that collectively employ 55 different distribution policies.],
+  [Divide the problem into many sub-problems],
+  [Write functions that each solve one or more sub-problems],
+  [Compose a solution by writing functions that call other functions],
+  [class="wp-block-paragraph"\>The details of how those functions are organized varies from language to language of course; functions are stored in other functions, or in classes, or in modules, or whatever. But ultimately, most programs could be viewed as a composition of functions.],
+  [Call foo() if and only if some predicate is true.],
+  [Call foo() repeatedly until some predicate is false.],
+  [Call foo() but branch to this catch block if it fails],
+  [… and so on],
+  [class="wp-block-paragraph"\>We don’t normally think of control flow as a kind of function composition . What if we did? We can use ideas inspired by combinatory logic and functional programming to extract control flow into “combinators” and then use those to concisely build workflows to solve compiler problems.],
+  [class="wp-block-paragraph"\>A “parse tree” or abstract syntax tree (henceforth AST ) is a data structure representing a syntactic analysis of a program. Over the next few episodes of this series we’ll explore the question of how a compiler writer might solve a common sub-problem in compiler design: how do we write an AST→ AST function using an approach inspired by combinatory logic?],
+  [class="wp-block-paragraph"\>Since Bean Machine and its compiler are both written in Python, we’ll use the very convenient parse tree types already provided by the Python ast module. It’s very straightforward. Every node in the tree has a type and zero or more labeled children . A child can be a value such as a string or number, or a node, depending on the label.],
+  [class="wp-block-paragraph"\>For example, if we had a statement “x = 2 + 3” then the AST for the right side of the assignment could be constructed like this (assuming that all members of the ast module are brought into scope.)],
+  [class="wp-block-paragraph"\>The expression’s AST is a binary operator; it has three children, left , right and op . The left and right are literal numbers; their child n is the value of that number. You get the idea I’m sure.],
+  [class="wp-block-paragraph"\>Every Python expression, statement, and so on has an AST node, and there are standard implementations of both parsers and unparsers; you can turn text into ASTs, turn ASTs back into text, and compile and run that program.],
+  [class="wp-block-paragraph"\> Next time on FAIC : I’ll describe the patterns/rules/combinators system briefly, and then give some thoughts on what motivated this approach over a more conventional compiler technique such as visitor patterns for rewrites. Then we’ll start looking at examples of patterns and predicates.],
 ),
-  inline-pq: pull-quote([How PlanetScale Boost serves your SQL queries instantly :     PlanetScale Boost, which improves the performance and throughput of your application’s SQL queries by up to 1,000×.], [High Scalability]),
-  inline-pq-idx: 116,
   edited-for-length: false,
 )
 
+#pull-quote([class="wp-block-paragraph"\>A “parse tree” or abstract syntax tree (henceforth AST ) is a data structure representing a syntactic analysis of a program.], [ericlippert])
+
+
+{
+  #section-label([Front Page])
+  #standard-article(
+  title: [Travel without social praise],
+  author: [Derek Sivers],
+  source-name: [Derek Sivers],
+  images: (),
+  paragraphs: (
+  [I met a couple who were thinking of quitting their jobs and travelling the world for a year.
+They asked my thoughts.],
+  [I suggested they should only do it if they don’t bring a camera, and don’t tell anyone but their family and few dear friends.
+No sharing on social media.],
+  [Why?
+Because we often live for others, without even realizing it.
+We are trying to impress an invisible crowd.
+We like the social reward of saying, “We’re travelling the world!”
+We imagine how friends and strangers would react to this big news.],
+  [We go places we think would be impressive to other people.
+We take photos that will make our life look wonderful when we share them.
+We want that praise — that social reward.],
+  [Do we really want to do this thing, for its own sake?
+ 
+Or do we just want the praise?],
+  [One way to find out is to see how appealing it would be to do it with no photos, and no sharing.
+Like the first person to run a marathon without talking about it .],
+  [If doing something makes us that kind of person, is it still true if we don’t announce it?],
+),
+  insert-map: (:),
+  word-count: 198,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+}
 
 {
   #section-label([Features])
@@ -406,8 +166,6 @@ Also available as a UX Bundle with 3 video courses.],
   [“ From Prompt To Partner: Designing Your Custom AI Assistant ”, Lyndon Cerejo],
 ),
   insert-map: (:),
-  inline-pq: pull-quote([The truth is that almost everybody on the team is working towards better conversion.], [Vitaly Friedman]),
-  inline-pq-idx: 25,
   word-count: 1248,
   edited-for-length: false,
   debug-mode: false,
@@ -417,259 +175,60 @@ Also available as a UX Bundle with 3 video courses.],
 
 {
   #standard-article(
-  title: [Difftastic, the Fantastic Diff],
-  author: [Wilfred Hughes],
-  source-name: [Wilfred Hughes],
+  title: [A year of open source vulnerability trends: CVEs, advisories, and malware],
+  author: [Jonathan Evans],
+  source-name: [The GitHub Blog],
   images: (),
   paragraphs: (
-  [I’ve always wanted a structural diff tool, so I built
- difftastic .],
-  [This has been the most fascinating, most frustrating, and most
-challenging program I’ve ever written.],
-  [id="how-hard-could-it-be"\>How Hard Could It Be?],
-  [If you write Lisp code for a while, you start to see code like
-JSON. Everything is basically a list.],
-  [json-diff example],
-  [json-diff already exists,
-and it’s pretty good. I wanted something similar for programming
-languages.],
-  [After a huge amount of experimentation, I have something that
-works. In this post, I’ll show you how it works.],
-  [I won’t show the many, many dead ends and failed designs along the
-way. We can pretend that I got it right first time.],
-  [id="parsing-the-code"\>Parsing The Code],
-  [If I want to compare two programs, I first need a parse tree for each
-program. I need an accurate lexer, a basic parser, and I need to
-preserve comments.],
-  [tree-sitter was a great
-fit here. You define a grammar in JSON or JS, and it generates a C
-library that anyone can use. It’s not 100% accurate (e.g. the C++
-parser doesn’t have preprocessor data) but it’s more than good enough.],
-  [Here’s an excerpt from my Emacs Lisp
-grammar . There’s a ton
-of tree-sitter parsers available too. Difftastic now supports 44
-different syntaxes, and adding new ones is so straightforward that my
- manual includes a worked
-example .],
-  [Using difftastic with Emacs Lisp],
-  [After parsing, difftastic converts the tree-sitter parse tree to an
-s-expression. Everything is a list or an atom. This uniform
-representation enables the diffing logic to work on any language that
-I can parse.],
-  [For example, given a JavaScript program like this:],
-  [tree-sitter parses it to this parse tree:],
-  [difftastic then converts the tree to this s-expression representation:],
-  [id="calculating-the-diff"\>Calculating The Diff],
-  [Fun fact: I thought of diffing programs as working out what has
-changed. The goal of diffing is actually to work out what hasn’t
-changed! The more stuff you can match up, the smaller and more
-readable your diff.],
-  [How do I work out what’s changed between two parse trees? There are a
-bunch of different design ideas out there, but
- autochrome is the most
-effective approach I found, and it includes an incredibly helpful
-worked example.],
-  [Autochrome output example],
-  [Autochrome and difftastic represent diffing as a shortest path
-problem on a directed acyclic graph. A vertex represents a pair of
-positions: the position in the left-hand side s-expression (before), and the position in
-the right-hand side s-expression (after).],
-  [The goal is to find the shortest route from the start vertex (where
-both positions are before the first item in the programs) to the end
-vertex (where both positions are after the last item in the program).],
-  [For example, suppose you’re comparing the program A with X A . The
-vertices look like this.],
-  [END
-+---------------------+
-| Left: A Right: X A |
-| ^ ^|
-+---------------------+],
-  [The edges in the graph represent the changes required to transform the
-left-hand side program into the right-hand side.],
-  [In this example, there are two possible changes from the start vertex,
-so it has two edges. Difftastic could (1) consider the left-hand side to
-be novel and increment that position, or (2) it could consider the
-right-hand side to be novel and increment that position.],
-  [A novel item on the left-hand side is a removal , and a novel item on
-the right-hand side is an addition .],
-  [class="highlight"\> START
- +---------------------+
- | Left: A Right: X A |
- | ^ ^ |
- +---------------------+
- / \\
- Novel atom L / \\ Novel atom R
-1 v 2 v
-+---------------------+ +---------------------+
-| Left: A Right: X A | | Left: A Right: X A |
-| ^ ^ | | ^ ^ |
-+---------------------+ +---------------------+],
-  [When both positions are pointing to an identical s-expression, a third
-edge is added in the graph. This edge represents matching an
-s-expression on both sides.],
-  [class="highlight"\> 2
- +---------------------+
- | Left: A Right: X A |
- | ^ ^ |
- +---------------------+
- / | \\
- Novel atom L / | \\ Novel atom R
- v | v
-+---------------------+ | +---------------------+
-| Left: A Right: X A | | | Left: A Right: X A |
-| ^ ^ | | | ^ ^|
-+---------------------+ | +---------------------+
- | | |
- | Novel atom R | Nodes match | Novel atom L
- | | |
- | END v |
- | +---------------------+ |
- +--------\>| Left: A Right: X A | Finding The Shortest Route],
-  [Difftastic and Autochrome both use Dijkstra’s algorithm. Unfortunately
-the size of the graph is quadratic: it’s O(L \* R), where L is the
-number of items in the left-hand s-expression and R is the number of
-items in the right-hand s-expression.],
-  [To make performance bearable, difftastic aggressively discards
-obviously unchanged s-expressions at the beginning, middle and end of
-the file. If you’ve only changed the last function in a file,
-difftastic won’t consider the other functions at all.],
-  [Everything above the line is identical],
-  [(GNU Diff has a similar feature with its horizon-lines
-option ,
-although its performance is much better in general.)],
-  [Due to the sheer size of the graph (several million vertices), the
-biggest performance bottleneck is vertex construction. I explored
-better route finding algorithms (e.g. A\*) but I didn’t see much
-improvement. My current solution is to construct the graph lazily, so
-few vertices are constructed.],
-  [Even with this, difftastic sometimes struggles with performance. I’ve
-profiled and optimised everything I can think of (using Rust really
-helped here). If the graph is just too big, difftastic falls back to a
-conventional line-oriented diff.],
-  [id="what-about-nesting"\>What About Nesting?],
-  [When incrementing positions during graph traversal, I needed to be
-careful with entering and leaving delimiters.],
-  [;; After
-(x) y],
-  [The desired result here is 
- (x y ) 
-and 
- (x) y .],
-  [When the s-expression position is on a delimiter, difftastic can
-either consider the delimiter novel, or unchanged. This is similar to
-the s-expression atom case.],
-  [class="highlight"\> START
- +---------------------------+
- | Left: (x y) Right: (x) y |
- | ^ ^ |
- +---------------------------+
- / | \\
- Novel delimiter L / | \\ Novel delimiter R
- v | v
-+---------------------------+ | +---------------------------+
-| Left: (x y) Right: (x) y | | | Left: (x y) Right: (x) y |
-| ^ ^ | | | ^ ^ |
-+---------------------------+ | +---------------------------+
- |
- | Unchanged delimiters
- v
- +---------------------------+
- | Left: (x y) Right: (x) y |
- | ^ ^ |
- +---------------------------+],
-  [What happens when the position is at the end of the list? If
-difftastic entered the delimiters together (‘unchanged delimiter’), it
-must exit them together. This requires both s-expressions positions to
-point to the exit delimiter.],
-  [If the delimiters were entered separately (‘novel delimiter’), then
-the delimiters can be exited separately too.],
-  [class="highlight"\> +---------------------------+
- | Left: (x y) Right: (x) y |
- | ^ ^ |
- +---------------------------+
- / \\
- Novel node L / \\ Exit delimiter R
- v v
-+---------------------------+ +---------------------------+
-| Left: (x y) Right: (x) y | | Left: (x y) Right: (x) y |
-| ^ ^ | | ^ ^ |
-+---------------------------+ +---------------------------+],
-  [The ‘exit delimiter right’ edge is only allowed if the delimiter was
-also entered with ‘novel delimiter right’.],
-  [This means that graph vertices are really a tuple of three items:
-(left-hand side position, right-hand side position,
-list\_of\_parents\_to\_exit\_together).],
-  [This exponentially increases the size of the graph, O(2 N ) where N
-is the highest list nesting level in either input.],
-  [I solved this by only considering at most two graph vertices for each
-position pair. I always find a route this way (there exists a route to
-the end vertex from every other vertex) but it is not necessarily the
-shortest. In practice this seems to explore enough of the graph that
-the results are consistently great.],
-  [id="building-the-interface"\>Building The Interface],
-  [Phew! After wrestling with diffing algorithms for some time, I thought
-building the UI would be straightforward. I was wrong.],
-  [There are almost no lines with the same text content here!],
-  [Difftastic knows which s-expression nodes are unchanged. It completely
-ignores whitespace.],
-  [However, there is no guarantee that there are any lines in common
-between the two files. It’s also possible that a line in the first
-file might have matches in zero, one or many lines in the second file.],
-  [The display logic iterates through all the matched lines, and tries to
-align as many as possible. It uses a two-column display by default, so
-you can reformat the entire file and it will still produce a sensible
-output.],
-  [Difftastic has aligned both format!() expressions here.],
-  [Working on diff UIs has made me realise how bad the traditional diff
-display is.],
-  [Conventional git diff],
-  [The header \@\@ -392,7 +392,12 \@\@ means that the diff starts at
-line 392. The user is forced to count lines to work out that the change
-itself is on line 395!],
-  [id="dogfooding"\>Dogfooding],
-  [Eventually I added the ability to use difftastic with git or
-mercurial. This was an exceptional way to find bugs and see how well
-the design works in practice.],
-  [This exposed a bunch of subtle issues with structural diffing.],
-  [;; After
-(foo (novel) (bar))],
-  [Diff algorithms are described in the literature as “finding a minimal
-edit script”, where the edit script is the additions/removals required to
-turn the input file into the output file.],
-  [In this example, (foo ( novel )
- ( bar ) ) would be a totally
-valid, minimal diff. It’s adding the symbol novel and adding one
-pair of parentheses.],
-  [This isn’t what the user wants though. They’d rather see (foo (novel) (bar)) 
-even though it’s equally minimal.],
-  [I solved this by adjusting the graph edge cost model to produce nicer
-results. I also added a secondary pass on the diff result to check for more
-aesthetically pleasing results with the same edge cost.],
-  [(I encountered several more cases that structural diffs struggle with,
-see the Tricky Cases page in the
-manual for more
-details.)],
-  [id="future-work"\>Future Work],
-  [Difftastic is fantastic when it works, and I use it daily. It’s still
-not perfect though.],
-  [Difftastic has some complicated failure modes. Changing large string
-literals is a challenge (syntactically they’re single atoms, but users
- sometimes want a word-level diff).],
-  [The string literals have changed, but it's hard to spot where.],
-  [The minimal diff isn’t always helpful either. Sometimes difftastic goes too far.],
-  [Sure, there's a = on both sides, but it's distracting.],
-  [id="closing-thoughts"\>Closing Thoughts],
-  [I had no idea what I was getting into when I started working on this.],
-  [I’d been wondering why this type of tool is so rare. Now I know: it’s
-extremely challenging to build. Despite its limitations, I’m surprised
-at how often it works fantastically .],
-  [Difftastic is OSS under a MIT license, so I hope it enables more diff
-tools that can understand structure. If you’re feeling brave, you can
-even try it
-yourself !],
+  [GitHub published 4,101 reviewed advisories in 2025. This is the fewest number of reviewed advisories since 2021 .  Does this mean open source is shipping more secure code? Let’s dig into the data to find out.],
+  [Fewer advisories reviewed doesn’t mean fewer vulnerabilities were reported. The drop is because GitHub reviewed far fewer older vulnerabilities . When you look only at newly reported vulnerabilities from our sources , GitHub actually reviewed 19% more advisories year over year.],
+  [So why the change? Quite frankly, we are running out of unreviewed vulnerabilities that are older than the Advisory Database . At the same time, the number of newly reported vulnerabilities hasn’t dropped.],
+  [The  GitHub Advisory Database provides a comprehensive list of known security vulnerabilities and malware affecting open source packages. It was created in 2019, and has since become a vital resource for open source developers.],
+  [Read more in last year’s blog post \>],
+  [It’s also worth clarifying that “ unreviewed ” in the database can be misleading: most advisories marked unreviewed have already been looked at by a curator and found not to affect any package in a supported ecosystem , so they may never be fully reviewed.],
+  [This means that you should be receiving fewer brand-new Dependabot alerts about old vulnerabilities.],
+  [Note : If you find an unreviewed advisory that affects a supported package, please let us know so we can get it reviewed!],
+  [The distribution of ecosystems in advisories reviewed in 2025 is similar to the overall distribution in the database, with the exception of Go. Go is overrepresented in 2025 advisories by 6%. This is largely due to dedicated campaigns to re-examine potentially missing advisories found through an internal review for packages where we had inconsistent coverage.],
+  [Rank Common Weakness Enumeration (CWE) Number of 2025 Advisories\* Change in Rank from 2024 Change in Rank from the Overall Database 1 CWE-79 672 +0 +0 2 CWE-22 214 +2 +1 3 CWE-863 169 +9 +8 4 CWE-20 154 +1 +1 5 CWE-200 145 -2 -1 6 CWE-400 144 +4 +0 7 CWE-770 136 +7 +10 8 CWE-502 134 +5 +1 9 CWE-94 119 -3 -1 10 CWE-918 103 +5 +8],
+  [\* An advisory may have more than CWE. For example, an advisory might have both CWE-400 and CWE-770. It would then count for both.],
+  [As usual, cross-site scripting (CWE-79) is by far the most common vulnerability type. However, there are significant changes in the following areas. Resource exhaustion (CWE-400 and CWE-770), unsafe deserialization (CWE-502), and server-side request forgery (CWE-918) were unusually common in 2025. CWE-863 (“Incorrect Authorization”) saw a significant jump, but that is largely due to reclassification away from CWE-284 (“Improper Access Control”) and CWE-285 (“Improper Authorization”), which are higher level CWEs that the CWE program discourages using.],
+  [One of the biggest quality improvements in 2025 was more specific, more consistent CWE tagging. Advisories without any CWE dropped 85% (from 452 in 2024 to 65 in 2025). CWE-20 (“Improper Input Validation”) is still common, but in prior years it was often the only CWE listed on an advisory.],
+  [In 2025, advisories far more often list CWE-20 plus one or more additional CWEs that describe the concrete failure mode. This added specificity makes the data more actionable for triage, prioritization, and remediation.],
+  [To find out how to filter Dependabot alerts by CWE, see our documentation on auto-triage rules .],
+  [We provide two scoring systems for prioritization:],
+  [Common Vulnerability Severity Score (CVSS) : Scores how severe the impact of the vulnerability will be],
+  [Exploit Prediction Scoring System (EPSS) : Provides a measure of how likely the vulnerability will be attacked in the next 30 days and],
+  [Together, they can give you a head start on your risk assessment process.],
+  [As you can see, when considering impact, most vulnerabilities skew moderate to high of the impact range. Low-impact vulnerabilities are likely more common than the CVSS data suggests but are often not considered worth the time and effort for researchers and maintainers to report. The EPSS scores for moderate to high impact vulnerabilities support this decision.],
+  [So should you trust the EPSS or CVSS scores? To judge that, let’s look at how they match up to vulnerabilities in CISA’s Known Exploited Vulnerabilities Catalog . The exploited vulnerabilities are at least scored moderate, and most are critical or high. While CVSS has more of the exploited vulnerabilities as critical, it also has far more vulnerabilities in the range in general. Combining the two can help you prioritize which vulnerabilities to address to prevent exploitation.],
+  [2025 was a huge year for npm malware advisories. Due to large malware campaigns, such as SHA1-Hulud , GitHub saw a 69% increase in published malware advisories compared to 2024. This is the most malware advisories GitHub has published since our initial release of historical malware when we added support in 2022 .],
+  [You can receive Dependabot alerts when your repositories depend on npm packages with known malicious versions. When you enable malware alerting, Dependabot matches your npm dependencies against malware advisories in the GitHub Advisory Database.],
+  [2025 was a big year for the GitHub, Inc. CNA . We saw a 35% increase in published CVE records , outpacing the overall CVE Project’s increase of 21%.],
+  [In fact, we saw 10 to 16% growth every quarter. If this trend continues, GitHub will publish over 50% more CVEs in 2026.],
+  [You can help make that a reality by requesting a CVE from us the next time you publish a repository security advisory about a vulnerability!],
+  [Every year, GitHub sees more organizations use its CNA services. 2025 is no exception with a 20% increase in new organizations requesting CVE IDs .],
+  [Unlike reviewed global advisories, which are always mapped to packages in ecosystems we support, any maintainer on GitHub can request a CVE , even if they don’t publish that package to a supported ecosystem. In fact, 2025 is the first year that GitHub has published more CVEs from organizations that do not use a supported ecosystem than those that do.],
+  [We would like to thank all 987 organizations that published CVEs with us in 2025 and highlight the top 10 most prolific organizations.],
+  [Top 10 organizations using the GitHub CNA Organization Number of 2025 CVEs LabReDeS (WeGIA)\* 130 XWiki 40 Frappe 28 Discourse 27 Enalean 27 FreeScout\* 27 DataEase 26 Nextcloud 25 GLPI 24 DNN Software\* 23],
+  [\* Organizations that published CVEs through GitHub for the first time in 2025],
+  [The data from 2025 shows incredible growth:],
+  [4,101 reviewed advisories],
+  [7,197 malware advisories],
+  [2,903 CVEs published],
+  [679 new organizations using our CNA services .],
+  [These numbers represent real security improvements for millions of developers.],
+  [You can be part of this in 2026. Here’s how:],
+  [Publishing CVEs shouldn’t be complicated. Request a CVE directly from your repository security advisory, and we’ll take care of curating and publishing it for you. It’s free, it’s fast, and it helps the entire ecosystem understand and respond to vulnerabilities.],
+  [Found an unreviewed advisory affecting a supported package? See incorrect severity scores or missing affected versions? Suggest edits . Your edits will be reviewed by the Advisory Database team and ultimately, will help make the database more accurate for everyone. In 2025, 675 contributions from the community improved the quality of this data for the entire software industry!],
+  [The most direct impact you can have is protecting your own code. Enable Dependabot to automatically receive security updates and explore GitHub Advanced Security for comprehensive protection.],
+  [Let researchers know how to report to you and what you will and will not accept by creating a security policy for your repository. Enable private vulnerability reporting to make the coordination process smooth and secure.],
+  [Let’s make 2026 even better. See you in next year’s review! 🚀],
+  [The post A year of open source vulnerability trends: CVEs, advisories, and malware appeared first on The GitHub Blog .],
 ),
   insert-map: (:),
-  word-count: 1909,
+  inline-pq: pull-quote([Combining the two can help you prioritize which vulnerabilities to address to prevent exploitation.], [Jonathan Evans]),
+  inline-pq-idx: 17,
+  word-count: 1392,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -678,272 +237,297 @@ yourself !],
 
 {
   #standard-article(
-  title: [Brief History of Scaling Uber],
-  author: [HS Editor],
-  source-name: [High Scalability],
-  images: (),
-  paragraphs: (
-  [On a cold evening in Paris in 2008, Travis Kalanick and Garrett Camp couldn't get a cab. That's when the idea for Uber was born . How great would it be if you could "push a button and get a ride?"],
-  [Fast forward to today where Uber is the largest mobility platform in the world. It operates in over 70 countries and 10,500 cities. Uber Eats is the largest food delivery platform ex-China in the world. It operates across 45 countries. We connect millions of driver-partners and merchants with over 130 million customers. We offer dozens of services to go anywhere or get anything . We handle billions of database transactions and millions of concurrent users across dozens of apps and thousands of backend services.],
-  [id="so-how-did-we-get-there"\>So, how did we get there?],
-  [Back in 2009, Uber hired contractors to build the first version of Uber and launched it to friends in San Francisco soon after. The team used the classic LAMP stack to build the first version of Uber and the code was written in Spanish.],
-  [Original LAMP stack proved out the use case, but couldn’t scale.],
-  [The scaling challenges started as more people wanted to use Uber. There were often major concurrency issues, where we’d dispatch two cars to one person or one driver would be matched to two different riders. (Learn more about Uber’s earliest architecture from founding engineer Curtis Chambers ).],
-  [But the product caught on. It was time to build the tech foundations from scratch.],
-  [id="setting-up-for-global-scale"\>Setting up for Global Scale],
-  [Circa 2011],
-  [To architect a better and more scalable solution, we needed to address those concurrency problems. Additionally, we needed a system that can process tons of real-time data. Not only are there requests from riders, but Uber needs to track driver real-time locations in order to match riders as efficiently as possible. Finally, the product was still early and would require a lot of testing and iteration. We needed a solution to solve all these scenarios.],
-  [Uber adopted Node.js for their real-time needs. And ended up being one of the first major adopters of Node.js in production. Node.js was ideal for a few reasons. First, Node.js handles requests asynchronously (using a non-blocking, single-threaded event loop) and so can process significant amounts of data quickly. Second, Node.js runs on the V8 JavaScript engine , so not only is it performant, but it’s excellent for quick iteration.],
-  [Uber then created a second service built in Python to handle business logic functions like authentication, promotions, and fare calculation.],
-  [The resulting architecture was two services. One built in Node.js ("dispatch") connected to MongoDB (later Redis) and the other built in Python ("API") connected to PostgreSQL.],
-  [Uber’s two monolith architecture allowed the engineering org to begin to scale],
-  [And to improve the resiliency of Uber’s core dispatching flow, a layer between dispatch and API known as "ON" or Object Node was built to withstand any disruptions within the API service. ( Learn more about Uber’s earliest efforts to maintain service reliability in this video Designing for Failure: Scaling Uber by Breaking Everything ).],
-  [This architecture started to resemble a service oriented architecture. Service oriented architectures can be very powerful. As you carve out services to handle more dedicated functionality, it has a side benefit of allowing easier separation of engineers into dedicated teams. Which then allows for more rapid team scaling.],
-  [But as the team and number of features grew, the API service was getting bigger and bigger. More and more features were conflicting with one another. Engineering productivity was slowing down. There were huge risks continuously deploying the codebase.],
-  [It was time to split out API into proper services.],
-  [id="from-monolith-to-microservices"\>From Monolith to Microservices],
-  [Circa 2013],
-  [To prepare for our next phase of growth, Uber decided to adopt a microservice architecture . This design pattern enforces the development of small services dedicated to specific, well-encapsulated domain areas (e.g. rider billing, driver payouts, fraud detection, analytics, city management). Each service can be written in its own language or framework, and can have its own database or lack thereof. However, many backend services utilized Python and many started to adopt Tornado to provide asynchronous response functionality. By 2014, we had roughly 100 services.],
-  [Uber’s API monolith to microservice migration],
-  [While microservices can solve many problems, it also introduces significant operational complexity . You must only adopt microservices after understanding the tradeoffs and potentially build or leverage tools to counteract those tradeoffs. And if you don’t consider the operational issues, you will simply create a distributed monolith .],
-  [Here’s some examples of the issues microservices create and what Uber did to address.],
-  [To ensure all services use standardized service frameworks , we developed Clay . This was a Python wrapper on Flask to build restful backend services. It gave us consistent monitoring, logging, HTTP requests, consistent deployments, etc.],
-  [To discover and talk to other services and provide service resilience (fault tolerance, rate limiting, circuit breaking), Uber built TChannel over Hyperbahn . TChannel as our bi-directional RPC protocol was built in-house mainly to gain better performance and forwarding for our Node and Python services, among other benefits.],
-  [To ensure well-defined RPC interfaces and stronger contracts across services, Uber used Apache Thrift .],
-  [To prevent cross-service capability issues, we use Flipr to feature flag code changes, control rollouts, and many other config-based use cases.],
-  [To improve the observability of all service metrics, we built M3 . M3 allows any engineer easy ways to observe the state of their service both offline or through Grafana dashboards. We also leverage Nagios for alerting at scale.],
-  [For distributed tracing across services, Uber developed Merckx . This pulled data from a stream of instrumentation via Kafka. But as each service started to introduce asynchronous patterns, we needed to evolve our solution. We were inspired by Zipkin and ultimately developed Jaeger , which we still use today.],
-  [Over time, we’ve migrated to newer solutions like gRPC and Protobuf for interfaces . And many of our services utilize Golang and Java.],
-  [id="scaling-the-trip-database"\>Scaling the Trip Database],
-  [Circa 2014],
-  [While Uber was creating many new backend services, we continued to use one single PostgreSQL database.],
-  [The single PostgreSQL DB became a bottleneck],
-  [We were hitting some significant issues. First, the performance, scalability, and availability of this DB was struggling. There was only so much memory and CPUs you could throw at it. Second, it was getting very hard for engineers to be productive. Adding new rows, tables, or indices for new features became problematic.],
-  [And the problem was getting existential. By early 2014, Uber was 6 months away from Halloween night - one of the biggest nights of the year. We needed a more scalable solution and needed it fast.],
-  [When we looked into the data mix of this DB, the majority of storage was related to our trips, which was also growing the fastest.],
-  [The mix of data stored in our single PostgreSQL DB in early 2014],
-  [We use trip data in order to improve services like Uber Pool, provide rider and driver support, prevent fraud, and develop and test features like suggested pick-ups. So we embarked on developing Schemaless , our new trip data store. Schemaless is an append-only sparse three dimensional persistent hash map, similar to Google’s Bigtable, and built on top of MySQL . This model lended itself naturally to horizontal scaling by partitioning the rows across multiple shards and supported our rapid development culture.],
-  [And we successfully migrated all our services that access trip information in time to avert the Halloween peak traffic disaster. (Learn more with this video from lead engineer Rene Schmidt about our creation of and migration to Schemaless ).],
-  [The Schemaless migration operational room - a common look into migrations at scale],
-  [While we used Schemaless for our trip data store, we started to use Cassandra as a replacement for our other data needs, including the database that we use for marketplace matching and dispatching.],
-  [id="splitting-up-dispatch"\>Splitting up Dispatch],
-  [Circa 2014],
-  [Among Uber’s original two monoliths, we discussed the evolution of API into hundreds of microservices. But dispatch similarly was doing too much. Not only did it handle matching logic, it was the proxy that routed all other traffic to other microservices within Uber. So we embarked on an exercise to split up dispatch into two areas of cleaner separation.],
-  [Splitting the monolithic dispatch service into a real-time API gateway and an actual dispatch service],
-  [Extracting Uber’s Mobile Gateway from Dispatch],
-  [To better handle all the real-time requests from our mobile apps, we created a new API gateway layer named RTAPI ("Real-Time API"). And we continued to use Node.js for it. The service was a single repository that was broken up into multiple specialized deployment groups to support our growing businesses.],
-  [RTAPI provided a powerful new real-time layer that maintain high development velocity],
-  [The gateway provided a very flexible development space for writing new code and had access to the hundreds of services within the company. For instance, the first generation of Uber Eats was completely developed within the gateway. As the team's product matured, pieces were moved out of the gateway and into proper services.],
-  [Rewriting Dispatch for Uber’s Growing Size],
-  [The original dispatch service was designed for more simplistic transportation (one driver-partner and one rider). There were deep assumptions that Uber only needed to move people and not food or packages. Its state of available driver-partners was sharded by city. And some cities were seeing massive growth of the product.],
-  [So, dispatch was rewritten into a series of services. The new dispatch system needed to understand much more about the types of vehicles and rider needs.],
-  [It took on advanced matching optimizations, essentially to solve a version of the traveling salesman problem . Not only did it look at the ETAs of currently available driver-partners, but needed to understand which drivers could be available in the near future. So we had to build a geospatial index to capture this information. We used Google’s S2 library to segment cities into areas of consideration and used the S2 cell ID as the sharding key. (We’ve since updated to and open-sourced H3 )],
-  [Overview of dispatch stack],
-  [Since these services were still running on Node.js and were stateful, we needed a way to scale as the business grew. So we developed Ringpop , a gossip-protocol based approach to share geospatial and supply positioning for efficient matching.],
-  [Learn more about the history of our dispatch stack here or watch this video on Scaling Uber’s Real-time Market Platform .],
-  [id="mobile-app-development-at-scale"\>Mobile App Development at Scale],
-  [Circa 2016 to present],
-  [The flagship Uber product could only have existed due to the new mobile paradigm created by the iPhone and Android OS launches in 2007. These modern smartphones contained key capabilities like location-tracking, seamless mapping, payment experiences, on-device sensors, feature-rich user experiences, and so much more.],
-  [So Uber’s mobile apps were always a critical part of our scaling story.],
-  [The Uber rider app was critical in defining a scalable mobile architecture],
-  [As Uber scaled across the globe, there was a need for an ever-growing list of features. Many of these were specific to certain countries like localized payment types, different car product types, detailed airport information, and even some newer bets in the app like Uber Eats and Uber for Business.],
-  [The mobile app’s repositories slowly hit similar bottlenecks to a backend monolith. Many features and many engineers, all trying to work across a single releasable code base.],
-  [This led Uber to develop the RIB architecture for mobile, starting with the rewrite of the main Uber app .],
-  [RIB stands for Router, Interactor, Builder],
-  [Like the benefits of microservices, RIBs have clear separation of responsibilities. And since each RIB serves a single responsibility, it was easy to separate them and their dependencies into core and optional code. By demanding more stringent review for core code, we were more confident in the availability of our core flows. And this allows simple feature flagging to ensure the app continues to run reliably.],
-  [And like microservices, RIBs can be owned by different teams and engineers. This allowed our mobile codebases to easily scale to hundreds of engineers.],
-  [Today, all our apps have adopted RIBs or are migrating towards it. This includes our main Driver app, the Uber Eats apps, and Uber Freight.],
-  [id="the-rise-of-uber-eats"\>The Rise of Uber Eats],
-  [Circa 2017],
-  [Uber had been experimenting with a number of “Uber for X on-demand” concepts since 2014. And all early signs pointed towards food. So in late 2015 Uber Eats launched in Toronto . And followed a similarly fast growth trajectory just like UberX.],
-  [Uber Eats business growth compared with Uber rides (Uber Q3 2020 Earnings)],
-  [To enable this rapid growth, Uber Eats leveraged as much of the existing Uber tech stack as possible, while creating new services and APIs that were unique to food delivery (e.g. e-commerce capabilities like carts, menus, search, browsing).],
-  [A simplified view into early Uber Eats architecture and how it leveraged systems built for original Uber],
-  [The operations team that needed to tune their cities’ marketplace often got creative and did things that didn’t scale (until the appropriate tech was built).],
-  [Uber Eats Canada running scripts to help manage which stores were active and tuning the delivery radius of each based on available driver partners],
-  [Early Uber Eats was "simple" in that it supported a three-way marketplace of one consumer, one restaurant, and one driver-partner. Uber Eats today (130+ million users, dozens of countries) supports a variety of ordering modes and capabilities and can support 0-N consumers (eg. guest checkout, group ordering), N merchants (eg. multi-restaurant ordering), and 0-N driver partners (eg. large orders, restaurants which supply their own delivery fleet).],
-  [The history of how Uber Eats evolved probably deserves its own scaling story and I may one day get to it.],
-  [But for now, to learn more from the earliest days, I highly recommend listening to Uber Eats founder Jason Droege’s recount of "Building Uber Eats" .],
-  [id="bring-on-the-standardsproject-ark"\>Bring on the Standards - Project Ark],
-  [Circa 2018],
-  [No scaling story is complete without understanding the context and culture of the company. As Uber continued to expand city by city, local operations folks were hired to ensure their city launch would go successfully. They had tools to ensure their local marketplace would remain healthy and the flywheel would grow. As a result, Uber had a very distributed and decentralized culture. And that helped contribute to Uber’s success in getting to 600 cities by 2018.],
-  [That culture of decentralization continued within engineering, where one of our earliest cultural values was "Let Builders Build". This resulted in rapid engineering development that complemented Uber’s success growing across the globe.],
-  [But after many years, it resulted in the proliferation of microservices (thousands by 2018), thousands of code repositories, multiple product solutions solving very similar problems, and multiple solutions to common engineering problems. For example, there were different messaging queue solutions, varying database options, communication protocols, and even many choices for programming languages..],
-  ["You've got five or six systems that do incentives that are 75 percent similar to one another" - Former Uber CTO Thuan Pham],
-  [Developer productivity was hurting.],
-  [Engineering leadership recognized it was time for more standardization and consistency and formed Project Ark . Project Ark sought to address many aspects of engineering culture that contributes to scaling:],
-  [Engineer productivity,],
-  [Engineer alignment across teams,],
-  [Duplication,],
-  [Unmaintained critical systems, and],
-  [Knowledge access and documentation.],
-  [As a result, we elevated Java and Go as official backend languages to gain type-safety and better performance . And deprecated the use of Python and Javascript for backend services. We embarked on reducing code repos from 12,000 down to just our main languages (Java, Go, iOS , Android , and web). We defined more standardized architectural layers where client, presentation, product, and business logic would have clear homes. We introduced abstractions where we could group a number of services together (service " domains "). And continued to standardize on a series of service libraries to handle tracing , logging, networking protocols, resiliency patterns, and more.],
-  [id="a-modern-gateway-for-the-modern-uber"\>A Modern Gateway for the Modern Uber],
-  [Circa 2020],
-  [By 2019, Uber had many business lines with numerous new applications (Uber Eats, Freight, ATG, Elevate, and more). Within each line of business, the teams managed their backend systems and their app. We needed the systems to be vertically independent for fast product development.],
-  [And our current mobile gateway was showing its age . RTAPI had been built years ago and continued to use Node.js and Javascript, a deprecated language. We were also eager to make use of Uber’s newly defined architectural layers as the ad hoc code added to RTAPI over the years was getting messy with view generation and business logic.],
-  [So we built a new Edge Gateway to start standardizing on the following layers:],
-  [Edge Layer: API lifecycle management layer . No extraneous logic can be added keeping it clean.],
-  [Presentation Layer: microservices that build view generation and aggregation of data from many downstream services.],
-  [Product Layer: microservices that provide functional and reusable APIs that describe their product. Can be reused by other teams to compose and build new product experiences.],
-  [Domain Layer: microservices that are the leaf node that provides a single refined functionality for a product team.],
-  [This evolution set us up well to continue building new products with velocity, yet with the necessary structure to align our 1000s of engineers.],
-  [id="next-generation-fulfillment"\>Next Generation Fulfillment],
-  [Circa 2021],
-  [Throughout the years, Uber has created a world-class platform for matching riders and driver-partners. So our dispatch and fulfillment tech stack is a critical part of Uber’s scaling story.],
-  [By 2021, Uber sought to power more and more delivery and mobility use cases. The fulfillment stack was showing its age and couldn’t easily support all these new scenarios. For example, we needed to support reservation flows where a driver is confirmed upfront, batching flows with multiple trips offered simultaneously, virtual queue mechanisms at Airports, the three-sided marketplace for Uber Eats, and delivering packages through Uber Direct.],
-  [Some example services the Fulfillment Platform needed to support],
-  [So we made a bold bet and embarked on a journey to rewrite the Fulfillment Platform from the ground up .],
-  [To satisfy the requirements of transactional consistency, horizontal scalability, and low operational overhead, we decided to leverage a NewSQL architecture. And opted to use Google Cloud Spanner as the primary storage engine.],
-  [As lead Uber engineer Ankit Srivastava puts it "as we scale and expand our global footprint, Spanner's scalability & low operational cost is invaluable. Prior to integrating Spanner, our data management framework demanded a lot of oversight and operational effort, escalating both complexity and expenditure."],
-  [The Uber-GCP network infrastructure],
-  [id="what-else-have-we-done"\>What else have we done?],
-  [Of course, our scaling story is never this simple. There's a countless number of things we've done over the years across all engineering and operations teams, including some of these larger initiatives.],
-  [Many of our most critical systems have their own rich history and evolution to address scale over the years. This includes our API gateway , fulfillment stack , money stack , real-time data intelligence platform , geospatial data platform (where we open-sourced H3 ), and building machine learning at scale through Michelangelo .],
-  [We’ve introduced various layers of Redis caches. We’ve enabled powerful new frameworks to aid in scalable and reliable systems like Cadence (for writing fault-tolerant, long-running workflows).],
-  [We’ve built and leveraged data infrastructure that enables long term growth , like how we leveraged Presto or scaled Spark . Notably, we built Apache Hudi to power business critical data pipelines at low latency and high efficiency.],
-  [And finally, we continue to improve the performance of our servers with optimized hardware, advanced memory and system tuning , and utilizing newer runtimes.],
-  [id="what%E2%80%99s-next-heading-to-the-cloud"\>What’s Next? Heading to the Cloud],
-  [Being a global company, Uber operated out of multiple on-prem data centers from the earliest days. But that introduced a number of challenges.],
-  [First, our server fleet had grown rapidly (over 250,000 servers) and the tooling and teams were always trying to keep up. Next, we have a large geographical footprint and need to regularly expand into more data centers and availability zones. Finally, with only on-prem machines, we were constantly needing to tune the size of our fleet.],
-  [We spent the last few years working towards making over 4000 of our stateless microservices portable . And to ensure our stack would work equally well across cloud and on-prem environments, we embarked on Project Crane to solve. This effort set Uber up well for the future. To learn more, watch lead Uber engineer Kurtis Nusbaum’s talk on how Crane solves our scaling problems.],
-  [We now have plans to migrate a larger portion of our online and offline server fleet to the Cloud over the next few years!],
-  [Thanks to my many Uber friends and colleagues for reviewing this!],
-),
-  insert-map: (:),
-  word-count: 3499,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-}
-
-{
-  #standard-article(
-  title: [Using HDMI EMI for fast wireless data transfer],
-  author: [Oona Räisänen],
-  source-name: [Oona Raisanen (windytan)],
-  images: (),
-  paragraphs: (
-  [This story, too, begins with noise. I was browsing the radio waves with a software radio, looking for mysteries to accompany my ginger tea. I had started to notice a wide-band spiky signal on a number of frequencies that only seemed to appear indoors. Some sort of interference from electronic devices, probably. Spoiler alert, it eventually led me to broadcast a webcam picture over the radio waves... but how?],
-  [It sounds like video],
-  [The mystery deepened when I listened to how this interference sounded like as an AM signal. It reminded me of a time I mistakenly plugged our home stereo system to the Nintendo console's video output and heard a very similar buzz.],
-  [Am I possibly listening to video? Why would there be analog video transmitting on any frequency, let alone inside my home?],
-  [If we plot the signal's amplitude against time we can see that there is a strong pulse exactly 60 times per second. This could be the vertical synchronisation signal of 60 Hz video. A shorter pulse (pictured above) can be seen repeating more frequently; it could be the horizontal one. Between these pulses there is what appears to be noise. Maybe, if we use the strong pulses for synchronisation and plot the amplitude of that noise as a two-dimensional picture, we could see something?],
-  [And sure enough, when main screen turn on, we get signal:],
-  [(I've hidden the bright synchronisation signal from this picture.)],
-  [It seems to be my Raspberry Pi's desktop with weirdly distorted greyscale colours! Somehow, some part of the monitor setup is radiating it quite loudly into the aether. The frequency I'm listening to is a multiple of the monitor's pixel clock frequency.],
-  [As it turns out, this vulnerability of some monitors has been known for a long time. In 1985, van Eck demonstrated how CRT monitors can be spied on from a distance [1] ; and in 2004, Markus Kuhn showed that the same still works on flat-screen monitors [2] . The image is heavily distorted, but some shapes and even bigger text can be recognisable. Sometimes this kind of eavesdropping is called "van Eck phreaking", in reference to phone phreaking.],
-  [The next thought was, could we get any more information out of these images? Is there any information about colour?],
-  [Mapping all the colours],
-  [HDMI is fully digital; there is no linear dependency between pixel values and greyscale brightness in this amplitude image. I believe the brightness in the above image is related to the number of bit transitions over my radio's sampling time (which is around 8 bit-lengths); and in HDMI, this is dependent on many things, not just the actual RGB value of the pixel. HDMI also uses multiple differential wires that all are transmitting their own picture channels side by side.],
-  [This is why I don't think it's possible easy to reconstruct a clear picture of what's being shown on the screen, let alone decode any colours.],
-  [But could the reverse be possible? Could we control this phenomenon to draw the greyscale pictures of our choice on the receiver's screen? How about sending binary data by displaying alternating pixel values on the monitor?],
-  [My monitor uses 16-bit colours. There are "only" 65,536 different colours, so it's possible to go through all of them and see how each appears in the receiver. But it's not that simple; the bit-pattern of a HDMI pixel can actually get modified based on what came before it. And my radio isn't fast enough to even tell the bits apart anyway. What we could do is fill entire lines with one colour and average the received signal strength. We would then get a mapping for single-colour horizontal streaks (above). Assuming a long run of the same colour always produces the same bitstream, this could be good enough.],
-  [Here's the map of all the colours and their intensity in the radio receiver. (Whatever happens between 16,128 and 16,384? I don't know.)],
-  [Now, we can resample a greyscale image so that its pixels become short horizontal lines. Then, for every greyscale value find the closest matching RGB565 color in the above map. When we display this psychedelic hodge-podge of colour on the screen (on the right), enough of the above mapping seems to be preserved to produce a recognizable picture of a movie [3] on the receiver side (on the left):],
-  [These colours are not constant in any way. If I move the antenna around, even if I turn it from vertical to horizontal, the greyscales will shift or even get inverted. If I tune the radio to another harmonic of the pixel clock frequency, the image seems to break down completely. (Are there more secrets to be unfolded in these variations?)],
-  [The binary exfiltration protocol],
-  [Now we should have enough information to be able to transmit bits. Maybe even big files and streaming data, depending on the bitrate we can achieve.],
-  [First of all, how should one bit be encoded? The absolute brightness will fluctuate depending on radio conditions. So I decided to encode bits as the brightness difference between two short horizontal lines. Positive difference means 1 and negative 0. This should stay fairly constant, unless the colours completely flip around that is.],
-  [The monitor has 768 pixels vertically. This is a nice number so I designed a packet that runs vertically across the display. (This proved to be a bad decision, as we will later see.) We can stack as many packets side-by-side as the monitor width allows. A new batch of packets can be displayed in each frame, or we can repeat them over multiple frames to improve reliability.],
-  [These packets should have some metadata, at least a sequence number. Our medium is also quite noisy, so we need some kind of forward error correction. I'm using a Hamming(12,8) code which adds 4 error correction bits for every 8 bits of data. Finally, we need to add a CRC to each packet so we can make sure it arrived intact; I chose CRC16 with the polynomial 0x8005 (just because liquid-dsp provided it by default).],
-  [First results!],
-  [It was quite unbelievable, I was able to transmit a looping 64 kbps audio stream almost without any glitches, with the monitor and the receiver in the same room approximately 2 meters from each other.],
-  [class="remark"\> Quick tip. Raw 8-bit PCM audio is a nice test format for these kinds of streaming experiments. It's straightforward to set an arbitrary bitrate by resampling the sound (with SoX for instance); there's no structure, headers, or byte order to deal with; and any packet loss, misorder, or buffer underrun is instantly audible. You can use a headerless companding algorithm like A-law to fit more dynamic range in 8 bits. Even stereo works; if you start from the wrong byte the channels will just get swapped. SoX can also play back the stream.],
-  [But can we get more? Slowly I added more samples per second, and a second audio channel. Suddenly we were at 256 kbps and still running smoothly. 200 kbps was even possible from the adjacent room, with a directional antenna 5 meters away, and with the door closed! In the same room, it worked up to around 512 kilobits per second but then hit a wall.],
-  [A tearful performance],
-  [The heavy error correction and framing adds around 60% of overhead, and we're left wit 480 bits of 'payload' per packet. If we have 39 packets per frame at 60 frames per second we should get more than a megabit per second, right? But for some reason it always caps at half a megabit.],
-  [The reason revealed itself when I noticed every other frame was often completely discarded at the CRC check. Of course; I should have thought of properly synchronising the screen update to the graphics adapter's frame update cycle (or VSYNC). This would prevent the picture information changing mid-frame, also known as tearing. But whatever options I tried with the SDL library I couldn't get the Raspberry Pi 4 to not introduce tearing.],
-  [Screen tearing appears to be an unsolved problem plaguing the Raspberry Pi 4 specifically (see this Google search ). I tried another mini computer, the Asus Tinker Board R2.0, but I couldn't get the graphics drivers to work properly. I then realised it was a mistake to have the packets run from top to bottom; any horizontal tearing will cut every single packet in half! With a horizontal design only one packet per frame would suffer this fate.],
-  [A new design enables video-over-video],
-  [Packets that run horizontally across the screen indeed fix most of the packet loss. It may also help with CPU load as it improves memory access locality. I'm now able to get 1000 kbps from the monitor! What could this be used for? A live video stream, perhaps?],
-  [But the clock was ticking. I had a presentation coming up and I really wanted to amaze everyone with a video transfer demo. I quite literally got it working on the morning of the event. For simplicity, I decided to go with MJPEG, even though fancier schemes could compress way more efficiently. The packet loss issues are mostly kept at bay by repeating frames.],
-  [The data stream is "hidden" in a Windows desktop screenshot; I'm changing the colours in a way that both creates a readable bit and also looks inconspicuous when you look from far away.],
-  [This was a fun project but this kind of a vulnerability could, in the tinfoiliest of situations, be used for exfiltrating information out of a supposedly airgapped computer.],
-  [The issue has been alleviated in some modern display protocols. DisplayPort [4] makes use of scrambling: a pseudorandom sequence of bits is mixed with the bitstream to remove the strong clock oscillations that are so easily radiated out. This also randomizes the bitstream-to-amplitude correlation. I haven't personally tested whether it still has some kind of video in their radio interference, though. (Edit: Scrambling seems to be optionally supported by later versions of HDMI, too – but it might depend on which features exactly the two devices negotiate. How could you know if it's turned on?)],
-  [I've also tried wrapping the monitor in tinfoil (very impractical) and inside a cage made out of chicken wire (it had no effect - perhaps I should have grounded it?). I can't recommend either of these.],
-  [Software considerations],
-  [This project was made possible by at least C++, Perl, SoX, ImageMagick, liquid-dsp, Dear Imgui, GLFW, turbojpeg, and v4l2! If you're a library that feels left out, please leave a comment.],
-  [If you wish to play around with video emanations, I heard there is a project called TempestSDR. For generic analog video decoding via a software radio, there is TVSharp.],
-  [id="vanEck1985"\>Van Eck, Wim (1985): Electromagnetic radiation from video display units: An eavesdropping risk?],
-  [id="Kuhn2004"\>Kuhn, Markus (2004): Electromagnetic Eavesdropping Risks of Flat-Panel Displays],
-  [id="KungFury"\> KUNG FURY Official Movie [HD] (2015)],
-  [id="VESA2006"\>Video Electronics Standards Association (2006): DisplayPort Standard, version 1.],
-),
-  insert-map: (:),
-  word-count: 1855,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-}
-
-{
-  #standard-article(
-  title: [Headerless train announcements],
-  author: [Oona Räisänen],
-  source-name: [Oona Raisanen (windytan)],
-  images: (),
-  paragraphs: (
-  [The Finnish state railway company just changed their automatic announcement voice, discarding old recordings from trains. It's a good time for some data dumpster diving for the old ones, don't you think?],
-  [A 67-megabyte ISO 9660 image is produced that once belonged to an older-type onboard announcement device. It contains a file system of 58 directories with five-digit names, and one called "yleis" (Finnish for "general").],
-  [Each directory contains files with three-digit file names. For each number, there's 001.inf , 001.txt and 001.snd . The .inf and .txt files seem to contain parts of announcements as ISO 8859 encoded strings, such as "InterCity train" and "to Helsinki". The .snd files obviously contain the corresponding audio announcements. There's a total of 1950 sound files.],
-  [Directory structure],
-  [The file system seems to be structurally pointless; there's nothing apparent that differentiates all files in /00104 from files in /00105 . Announcements in different languages are numerically separated, though ( /001xx = Finnish, /002xx = Swedish, /003xx = English). Track numbers and time readouts are stored sequentially, but there are out-of-place announcements and test files in between. The logic connecting numbers to their meanings is probably programmed into the device for every train route.],
-  [Everything can be spliced together from almost single words. But many common announcements are also recorded as whole sentences, probably to make them sound more natural.],
-  [Audio format],
-  [The audio files are headerless; there is no explicit information about the format, sample rate or sample size anywhere.],
-  [The byte histogram and Poincaré plot of the raw data suggest a 4-bit sample size; this, along with the fact that all files start with 0x80 , is indicative of an adaptive differential PCM encoding scheme.],
-  [Unfortunately there are as many variations to ADPCM as there are manufacturers of encoder chips. None of the decoders known by SoX produce clean results. But with the right settings for the OKI-ADPCM decoder we can already hear some garbled speech under heavy Brownian noise.],
-  [For unknown reasons, the output signal from SoX is spectrum-inverted. Luckily it's trivial to fix (see my previous post on frequency inversion ). The pitch sounds roughly natural when a 19,000 Hz sampling rate is assumed. A test tone found in one file comes out as a 1000 Hz sine when the sampling rate is further refined to 18,930 Hz.],
-  [This is what we get after frequency inversion, spectral equalization, and low-pass filtering:],
-  [There's still a high noise floor due to the mismatch between OKI-ADPCM and the unknown algorithm used by the announcement device, but it's starting to sound alright!],
-  [There seems to be an announcement for every thinkable situation, such as:],
-  ["Ladies and Gentlemen, as due to heavy snowfall, we are running slightly late. Please accept our apologies."],
-  ["Ladies and Gentlemen, an animal has been run over by the train. We have to wait a while before continuing the journey."],
-  ["Ladies and Gentlemen, the arrival track of the train having been changed, the platform is on your left hand side."],
-  ["Ladies and Gentlemen, we regret to inform you that today the restaurant-car is exceptionally closed."],
-  [Also, there is an English recording of most announcements, even though only Finnish and Swedish are usually heard on commuter trains.],
-  [One file contains a long instrumental country song.],
-  [In an eerily out-of-place sound file, a small child reads out a list of numbers.],
-  [Final words],
-  [This is something I've wanted to do with this almost melodically intonated announcement about ticket selling compartments.],
-),
-  insert-map: (:),
-  word-count: 623,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-}
-
-{
-  #standard-article(
-  title: [Bean Machine Retrospective, part 7],
+  title: [Bean Machine Retrospective, part 9],
   author: [ericlippert],
   source-name: [Fabulous Adventures in Coding (Eric Lippert)],
   images: (),
   paragraphs: (
-  [class="wp-block-paragraph"\>How do we write a compiler in a typical general-purpose line-of-business OO programming language such as Python, C\#, Java, and so on? Compilers are programs, so we could make the question more general: how do we write programs ?],
-  [Divide the problem into many sub-problems],
-  [Write functions that each solve one or more sub-problems],
-  [Compose a solution by writing functions that call other functions],
-  [class="wp-block-paragraph"\>The details of how those functions are organized varies from language to language of course; functions are stored in other functions, or in classes, or in modules, or whatever. But ultimately, most programs could be viewed as a composition of functions.],
-  [Call foo() if and only if some predicate is true.],
-  [Call foo() repeatedly until some predicate is false.],
-  [Call foo() but branch to this catch block if it fails],
-  [… and so on],
-  [class="wp-block-paragraph"\>We don’t normally think of control flow as a kind of function composition . What if we did? We can use ideas inspired by combinatory logic and functional programming to extract control flow into “combinators” and then use those to concisely build workflows to solve compiler problems.],
-  [class="wp-block-paragraph"\>A “parse tree” or abstract syntax tree (henceforth AST ) is a data structure representing a syntactic analysis of a program. Over the next few episodes of this series we’ll explore the question of how a compiler writer might solve a common sub-problem in compiler design: how do we write an AST→ AST function using an approach inspired by combinatory logic?],
-  [class="wp-block-paragraph"\>Since Bean Machine and its compiler are both written in Python, we’ll use the very convenient parse tree types already provided by the Python ast module. It’s very straightforward. Every node in the tree has a type and zero or more labeled children . A child can be a value such as a string or number, or a node, depending on the label.],
-  [class="wp-block-paragraph"\>For example, if we had a statement “x = 2 + 3” then the AST for the right side of the assignment could be constructed like this (assuming that all members of the ast module are brought into scope.)],
-  [class="wp-block-paragraph"\>The expression’s AST is a binary operator; it has three children, left , right and op . The left and right are literal numbers; their child n is the value of that number. You get the idea I’m sure.],
-  [class="wp-block-paragraph"\>Every Python expression, statement, and so on has an AST node, and there are standard implementations of both parsers and unparsers; you can turn text into ASTs, turn ASTs back into text, and compile and run that program.],
-  [class="wp-block-paragraph"\> Next time on FAIC : I’ll describe the patterns/rules/combinators system briefly, and then give some thoughts on what motivated this approach over a more conventional compiler technique such as visitor patterns for rewrites. Then we’ll start looking at examples of patterns and predicates.],
+  [class="wp-block-paragraph"\>I wanted to implement concise “pattern matching” in Python, a language which unlike C\#, F\#, Scala, and so on, does not have any pattern matching built in. Logically a pattern is just a predicate: a function which takes a value and returns true if the value “matches” the pattern, false otherwise. The code for this episode is here .],
+  [class="wp-block-paragraph"\>When I embarked on this I realized two things. First, that it might be nice for debugging purposes to have more information in the return value than just “true” or “false”; in particular, when a complex pattern fails to match, but it should match, then I’ve made a mistake. In order to debug that mistake, I actually made patterns return a new type:],
+  [class="wp-block-paragraph"\>A complex pattern might fail because of its component patterns failing to match, and so that information is included in the failure result. I also made subclasses Success and Fail .],
+  [Pattern = Union\[PatternBase, int, str, float, type, list, None\]],
+  [an instance of pattern base],
+  [an None, integer, float or string value; the semantics are “the pattern matches if test is equal to the given value”.],
+  [a type; the semantics are “the pattern matches if test is of the given type”],
+  [a list of patterns; the semantics are “the pattern matches if test is a list of the same length, and each list element matches the corresponding pattern”],
+  [class="wp-block-syntaxhighlighter-code "\> 
+p = \[ BinOp, 3, None \] 
+\# p matches a list of three items where the first is a binary op AST,
+\# the second is the number 3, and the third is the value None],
+  [class="wp-block-paragraph"\>But how would we express “match instances of Foo whose bar attribute is 3″? We can start by solving the more general problem of how do we match against multiple patterns? Here’s our first combinator:],
+  [class="wp-block-syntaxhighlighter-code "\> 
+def match\_every(\*patterns: Pattern) -\> Pattern:
+ \# ... the implementation is tedious to make it efficient,
+ \# but you get the idea; we produce a pattern which succeeds if
+ \# every given subpattern succeeds, and fails otherwise.],
+  [class="wp-block-syntaxhighlighter-code "\> 
+class AttributeSubpattern(PatternBase):
+ name: str
+ subpattern: Pattern
+ def match(self, test: Any) -\> MatchResult:
+ submatch = match(self.subpattern, getattr(test, self.name, None))
+ submatches = {self.name: submatch}
+ if submatch.is\_success():
+ return Success(test, submatches)
+ return Fail(test, submatches)
+ \# ...],
+  [class="wp-block-paragraph"\>It’s a little clunky to call AttributeSubpattern so I made a synonym function attribute as well. Notice that this class is a combinator; it takes a pattern and produces a new pattern.],
+  [class="wp-block-paragraph"\>And now we can make a third combinator out of the first two: I want a pattern that checks to see if an object is of a particular type, and whether it has an attribute which matches a pattern:],
+  [\_any = AnyPattern()],
+  [def binop(
+ op: Pattern = \_any, 
+ left: Pattern = \_any, 
+ right: Pattern = \_any) -\> Pattern:
+ return type\_and\_attributes(
+ BinOp, {"op": op, "left": left, "right": right})],
+  [is\_addition = binop(Add)],
+  [Match at least one of these patterns],
+  [Match the first item in a list to one pattern and the tail of the list to another],
+  [Match at least one item in a list to a given pattern],
+  [Match all items in a list to the same pattern],
+  [Match the opposite of this pattern],
+  [Helper combinators for commonly used AST nodes such as identifiers, operators, and so on.],
+  [And so on; you get the idea.],
+  [class="wp-block-paragraph"\>Patterns identify what code needs to be transformed; rules transform them. Next time on FAIC we’ll look at building a set of rules and rule combinators for concisely representing AST transformations.],
 ),
   insert-map: (:),
-  word-count: 515,
+  word-count: 884,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+}
+
+{
+  #standard-article(
+  title: [Fresh Energy In March (2026 Wallpapers Edition)],
+  author: [Cosima Mielke],
+  source-name: [Smashing Magazine],
+  images: (),
+  paragraphs: (
+  [Blooming flowers, longer days, milder temperatures — with March just around the corner, the world is slowly but surely awakening from its winter slumber , fueling us with fresh energy. And even if spring is far away in your part of the world, you might sense that 2026 has gained full speed by now, making it the perfect moment to turn those plans and ideas you’ve been carrying around into action.],
+  [To accompany you on all those adventures that March may bring, we have a new collection of desktop wallpapers for you, just as it has been a monthly tradition here at Smashing Magazine for more than 14 years already. Designed by artists and designers from across the globe, each wallpaper comes in a variety of screen resolutions and can be downloaded for free. A huge thank-you to everyone who shared their designs with us — this post wouldn’t be possible without your kind support!],
+  [If you , too, would like to get featured in one of our upcoming wallpapers editions, please don’t hesitate to submit your design . We can’t wait to see what you’ll come up with! Happy March!],
+  [You can click on every image to see a larger preview .],
+  [We respect and carefully consider the ideas and motivation behind each and every artist’s work. This is why we give all artists the full freedom to explore their creativity and express emotions and experience through their works. This is also why the themes of the wallpapers weren’t anyhow influenced by us but rather designed from scratch by the artists themselves.],
+  [“With Spring knocking and other seasons fighting to get attention, March greets us with blossoms.” — Designed by Ginger It Solutions from Serbia.],
+  [preview],
+  [with calendar: 320x480 , 640x480 , 800x480 , 800x600 , 1024x768 , 1024x1024 , 1152x864 , 1280x720 , 1280x800 , 1280x960 , 1280x1020 , 1400x1050 , 1440x900 , 1600x1200 , 1680x1050 , 1680x1200 , 1920x1080 , 1920x1200 , 1920x1440 , 2560x1440],
+  [without calendar: 320x480 , 640x480 , 800x480 , 800x600 , 1024x768 , 1024x1024 , 1152x864 , 1280x720 , 1280x800 , 1280x960 , 1280x1020 , 1400x1050 , 1440x900 , 1600x1200 , 1680x1050 , 1680x1200 , 1920x1080 , 1920x1200 , 1920x1440 , 2560x1440],
+  [preview],
+  [with calendar: 640x480 , 800x480 , 800x600 , 1024x768 , 1024x1024 , 1152x864 , 1280x720 , 1280x800 , 1280x960 , 1280x1024 , 1366x768 , 1400x1050 , 1440x900 , 1600x1200 , 1680x1050 , 1680x1200 , 1920x1080 , 1920x1200 , 1920x1440 , 2560x1440 , 3840x2160],
+  [without calendar: 640x480 , 800x480 , 800x600 , 1024x768 , 1024x1024 , 1152x864 , 1280x720 , 1280x800 , 1280x960 , 1280x1024 , 1366x768 , 1400x1050 , 1440x900 , 1600x1200 , 1680x1050 , 1680x1200 , 1920x1080 , 1920x1200 , 1920x1440 , 2560x1440 , 3840x2160],
+  [I’m Not Okay, But It’s Okay],
+  [preview],
+  [with calendar: 640x480 , 800x480 , 800x600 , 1024x768 , 1024x1024 , 1152x864 , 1280x720 , 1280x800 , 1280x960 , 1280x1024 , 1366x768 , 1400x1050 , 1440x900 , 1600x1200 , 1680x1050 , 1680x1200 , 1920x1080 , 1920x1200 , 1920x1440 , 2560x1440 , 3840x2160],
+  [without calendar: 640x480 , 800x480 , 800x600 , 1024x768 , 1024x1024 , 1152x864 , 1280x720 , 1280x800 , 1280x960 , 1280x1024 , 1366x768 , 1400x1050 , 1440x900 , 1600x1200 , 1680x1050 , 1680x1200 , 1920x1080 , 1920x1200 , 1920x1440 , 2560x1440 , 3840x2160],
+  [Let’s Spring],
+  [“After some freezing months, it’s time to enjoy the sun and flowers. It’s party time, colors are coming, so let’s spring!” — Designed by Colorsfera from Spain.],
+  [preview],
+  [without calendar: 320x480 , 1024x768 , 1024x1024 , 1280x800 , 1280x960 , 1280x1024 , 1400x1050 , 1440x900 , 1600x1200 , 1680x1050 , 1680x1200 , 1920x1080 , 1920x1200 , 1920x1440 , 2560x1440],
+  [“This March, our calendar design epitomizes the heralds of spring. Soon enough, you’ll be waking up to the singing of swallows, in a room full of sunshine, filled with the empowering smell of daffodil, the first springtime flowers. Spring is the time of rebirth and new beginnings, creativity and inspiration, self-awareness, and inner reflection. Have a budding, thriving spring!” — Designed by PopArt Studio from Serbia.],
+  [preview],
+  [without calendar: 320x480 , 640x480 , 800x480 , 800x600 , 1024x768 , 1024x1024 , 1152x864 , 1280x720 , 1280x800 , 1280x960 , 1280x1024 , 1366x768 , 1440x900 , 1440x1050 , 1600x1200 , 1680x1050 , 1680x1200 , 1920x1080 , 1920x1200 , 1920x1440 , 2560x1440],
+  [“This month, I want to go to the woods and explore my new world in sunny weather.” — Designed by Zi-Cing Hong from Taiwan.],
+  [preview],
+  [without calendar: 1024x768 , 1152x864 , 1280x720 , 1280x800 , 1280x960 , 1366x768 , 1400x1050 , 1440x900 , 1600x1200 , 1680x1050 , 1920x1080 , 1920x1200 , 1920x1440 , 2560x1440],
+  [preview],
+  [without calendar: 640x480 , 800x480 , 800x600 , 1024x768 , 1024x1024 , 1152x864 , 1280x720 , 1280x800 , 1280x960 , 1280x1024 , 1366x768 , 1400x1050 , 1440x900 , 1600x1200 , 1680x1050 , 1680x1200 , 1920x1080 , 1920x1200 , 1920x1440 , 2560x1440 , 3840x2160],
+  [“Rays of sunlight had cracked into the bear’s cave. He slowly opened one eye and caught a glimpse of nature in blossom. Is it spring already? Oh, but he is so sleepy. He doesn’t want to wake up, not just yet. So he continues dreaming about those sweet sluggish days while everything around him is blooming.” — Designed by PopArt Studio from Serbia.],
+  [preview],
+  [without calendar: 320x480 , 640x480 , 800x480 , 800x600 , 1024x768 , 1024x1024 , 1152x864 , 1280x720 , 1280x800 , 1280x960 , 1280x1024 , 1366x768 , 1400x1050 , 1440x900 , 1600x1200 , 1680x1050 , 1680x1200 , 1920x1080 , 1920x1200 , 1920x1440 , 2560x1440],
+  [preview],
+  [without calendar: 640x480 , 800x480 , 800x600 , 1024x768 , 1024x1024 , 1152x864 , 1280x720 , 1280x800 , 1280x960 , 1280x1024 , 1366x768 , 1400x1050 , 1440x900 , 1600x1200 , 1680x1050 , 1680x1200 , 1920x1080 , 1920x1200 , 1920x1440 , 2560x1440 , 3840x2160],
+  [preview],
+  [without calendar: 320x480 , 640x480 , 800x480 , 800x600 , 1024x768 , 1024x1024 , 1152x864 , 1280x720 , 1280x800 , 1280x960 , 1280x1024 , 1400x1050 , 1440x900 , 1600x1200 , 1680x1050 , 1680x1200 , 1920x1080 , 1920x1200 , 1920x1440 , 2560x1440],
+  [preview],
+  [without calendar: 640x480 , 800x480 , 800x600 , 1024x768 , 1024x1024 , 1152x864 , 1280x720 , 1280x800 , 1280x960 , 1280x1024 , 1366x768 , 1400x1050 , 1440x900 , 1600x1200 , 1680x1050 , 1920x1080 , 1920x1200 , 1920x1440 , 2560x1440 , 3840x2160],
+  [“Spring is coming! Birds are singing, flowers are blooming, bees are flying… Enjoy this month!” — Designed by Melissa Bogemans from Belgium.],
+  [preview],
+  [without calendar: 320x480 , 640x480 , 800x480 , 800x600 , 1024x768 , 1024x1024 , 1152x864 , 1280x720 , 1280x800 , 1280x960 , 1280x1024 , 1400x1050 , 1440x900 , 1600x1200 , 1680x1050 , 1680x1200 , 1920x1080 , 1920x1200 , 1920x1440 , 2560x1440],
+  [MARCHing Forward],
+  [“If all you want is a little orange dinosaur MARCHing (okay, I think you get the pun) across your monitor, this wallpaper was made just for you! This little guy is my design buddy at the office and sits by (and sometimes on top of) my monitor. This is what happens when you have designer’s block and a DSLR.” — Designed by Paul Bupe Jr from Statesboro, GA.],
+  [preview],
+  [without calendar: 1024x768 , 1280x1024 , 1440x900 , 1920x1080 , 1920x1200 , 2560x1440],
+  [preview],
+  [without calendar: 1024x768 , 1280x1024 , 1440x900 , 1680x1200 , 1920x1200 , 2560x1440],
+  [“I am the kind of person who prefers the cold but I do love spring since it’s the magical time when flowers and trees come back to life and fill the landscape with beautiful colors.” — Designed by Maria Keller from Mexico.],
+  [preview],
+  [without calendar: 320x480 , 640x480 , 640x1136 , 750x1334 , 800x480 , 800x600 , 1024x768 , 1024x1024 , 1152x864 , 1242x2208 , 1280x720 , 1280x800 , 1280x960 , 1280x1024 , 1366x768 , 1400x1050 , 1440x900 , 1600x1200 , 1680x1050 , 1680x1200 , 1920x1080 , 1920x1200 , 1920x1440 , 2560x1440],
+  [preview],
+  [without calendar: 320x480 , 1024x768 , 1280x1024 , 1440x900 , 1600x1200 , 1680x1200 , 1920x1200 , 2560x1440],
+  [“Jīngzhé is the third of the 24 solar terms in the traditional East Asian calendars. The word 驚蟄 means ‘the awakening of hibernating insects’. 驚 is ‘to start’ and 蟄 means ‘hibernating insects’. Traditional Chinese folklore says that during Jingzhe, thunderstorms will wake up the hibernating insects, which implies that the weather is getting warmer.” — Designed by Sunny Hong from Taiwan.],
+  [preview],
+  [without calendar: 800x600 , 1280x720 , 1280x1024 , 1366x768 , 1400x1050 , 1680x1200 , 1920x1080 , 2560x1440],
+  [“As days are getting longer again and the first few flowers start to bloom, we are all waiting for spring to finally arrive.” — Designed by Naioo from Germany.],
+  [preview],
+  [without calendar: 1280x800 , 1366x768 , 1440x900 , 1680x1050 , 1920x1080 , 1920x1200],
+  [Happy Birthday Dr. Seuss!],
+  [“March 2nd marks the birthday of the most creative and extraordinary author ever, Dr. Seuss! I have included an inspirational quote about learning to encourage everyone to continue learning new things every day.” — Designed by Safia Begum from the United Kingdom.],
+  [preview],
+  [without calendar: 800x450 , 1280x720 , 1366x768 , 1440x810 , 1600x900 , 1680x945 , 1920x1080 , 2560x1440],
+  [“Spring is round the corner. And very soon plants will grow on some other planets too. Let’s be happy about a new cycle of life.” — Designed by Igor Izhik from Canada.],
+  [preview],
+  [without calendar: 1024x768 , 1024x1024 , 1152x864 , 1280x720 , 1280x800 , 1280x960 , 1280x1024 , 1400x1050 , 1440x900 , 1600x1200 , 1680x1050 , 1680x1200 , 1920x1080 , 1920x1200 , 1920x1440 , 2560x1440 , 2560x1600],
+  [“A day, even a whole month, isn’t enough to show how much a woman should be appreciated. Dear ladies, any day or month are yours if you decide so.” — Designed by Ana Masnikosa from Belgrade, Serbia.],
+  [preview],
+  [without calendar: 320x480 , 640x480 , 800x480 , 800x600 , 1024x768 , 1024x1024 , 1152x864 , 1280x720 , 1280x800 , 1280x960 , 1280x1040 , 1400x1050 , 1440x900 , 1600x1200 , 1680x1050 , 1680x1200 , 1920x1080 , 1920x1200 , 1920x1440 , 2560x1440],
+  [“Who needs an excuse to look at pizza all month?” — Designed by James Mitchell from the United Kingdom.],
+  [preview],
+  [without calendar: 1280x720 , 1280x800 , 1366x768 , 1440x900 , 1680x1050 , 1920x1080 , 1920x1200 , 2560x1440 , 2880x1800],
+  [preview],
+  [without calendar: 640x480 , 1024x768 , 1024x1024 , 1152x864 , 1280x720 , 1280x800 , 1280x960 , 1280x1024 , 1366x768 , 1400x1050 , 1440x900 , 1600x1200 , 1680x1050 , 1680x1200 , 1920x1080 , 1920x1200 , 1920x1440 , 2560x1440],
+  [“Doodles are slowly becoming my trademark, so I just had to use them to express this phrase I’m fond of recently. A bit enigmatic, philosophical. Inspiring, isn’t it?” — Designed by Marta Paderewska from Poland.],
+  [preview],
+  [without calendar: 640x480 , 800x480 , 800x600 , 1024x768 , 1024x1024 , 1152x864 , 1280x720 , 1280x800 , 1280x960 , 1280x1024 , 1366x768 , 1400x1050 , 1440x900 , 1600x1200 , 1680x1050 , 1680x1200 , 1920x1080 , 1920x1200 , 1920x1440 , 2560x1440],
+  [“I made a connection, between the dark side and the unknown lighted and catchy area.” — Designed by Valentin Keleti from Romania.],
+  [preview],
+  [without calendar: 320x480 , 640x480 , 800x480 , 800x600 , 1024x768 , 1024x1024 , 1152x864 , 1280x720 , 1280x800 , 1280x960 , 1280x1024 , 1366x768 , 1400x1050 , 1440x900 , 1600x1200 , 1680x1050 , 1680x1200 , 1920x1080 , 1920x1200 , 1920x1440 , 2560x1440],
+  [Let’s Get Outside],
+  [Designed by Lívia Lénárt from Hungary.],
+  [preview],
+  [without calendar: 1024x768 , 1280x1024 , 1366x768 , 1600x1200 , 1680x1200 , 1920x1080 , 1920x1200 , 2560x1440],
+  [“It’s time for the water to go down the mountains, it’s time for the rivers to get rid of ice blocks, it’s time for the ground to feed the plants, it’s time to go out and take a deep breath. I imagined these ideas with interlacing colored lines.” — Designed by Philippe Brouard from France.],
+  [preview],
+  [without calendar: 1024x768 , 1366x768 , 1600x1200 , 1920x1080 , 1920x1200 , 1920x1440 , 2560x1440 , 2560x1600 , 2880x1800 , 3840x2160],
+  [St. Patrick’s Day],
+  [“On the 17th March, raise a glass and toast St. Patrick on St. Patrick’s Day, the Patron Saint of Ireland.” — Designed by Ever Increasing Circles from the United Kingdom.],
+  [preview],
+  [without calendar: 320x480 , 640x480 , 800x480 , 800x600 , 1024x768 , 1024x1024 , 1080x1080 , 1152x864 , 1280x720 , 1280x800 , 1280x960 , 1280x1024 , 1366x768 , 1400x1050 , 1440x900 , 1600x1200 , 1680x1050 , 1680x1200 , 1920x1080 , 1920x1200 , 1920x1440 , 2560x1440],
+  [Sending FriendShips To March],
+  [preview],
+  [without calendar: 800x600 , 1024x768 , 1152x864 , 1280x720 , 1280x800 , 1280x960 , 1280x1024 , 1366x768 , 1400x1050 , 1440x900 , 1600x1200 , 1680x1050 , 1680x1200 , 1920x1080 , 1920x1200 , 1920x1440 , 2560x1440],
+  [Bee-utiful Smile],
+  [preview],
+  [without calendar: 640x480 , 800x600 , 1024x768 , 1152x864 , 1280x720 , 1280x800 , 1280x960 , 1400x1050 , 1440x900 , 1600x1200 , 1680x1050 , 1920x1080 , 1920x1200 , 1920x1440 , 2560x1440 , 3200x2000],
+  [preview],
+  [without calendar: 320x480 , 768x1024 , 1024x768 , 1280x800 , 1280x1024 , 1440x900 , 1920x1080 , 2560x1440],
+  [Feeling inspired? We’ll publish the April wallpapers on March 31, so if you’d like to be a part of the collection, please don’t hesitate to submit your design . We are already looking forward to it!],
+),
+  insert-map: (:),
+  word-count: 2316,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+}
+
+{
+  #standard-article(
+  title: [These Weeks in Remacs III],
+  author: [Wilfred Hughes],
+  source-name: [Wilfred Hughes],
+  images: (),
+  paragraphs: (
+  [Time for another Remacs update: lots of contributions, a wide range of
+features, and even a logo!],
+  [id="contributing"\>Contributing],
+  [Since the last update ,
+we’ve seen contributions from lots of new people. We’ve added
+\@brotzeit and \@shanavas786, bringing us to seven wonderful people who
+can approve your PRs.],
+  [Speaking of PRs, we’ve merged an amazing 64 pull requests since the
+last update!],
+  [If you’re looking for a good feature for your first contribution,
+\@brotzeit has been regularly adding
+ new suggestions under the ‘good first issue’ label .],
+  [id="features"\>Features],
+  [Many Emacs features have now been ported to Rust, with new Rust APIs
+for accessing elisp datastructures.],
+  [Here’s an overview of the features that have landed.],
+  [Arithmetic :
+ arithmetic ,
+ floating point , 
+ random number generation (using
+a Rust RNG!), and
+ comparisons .],
+  [Symbols : symbol properties , 
+ interning ,
+ obarrays 
+ unbinding ,
+ keywords and
+ indirect symbols .],
+  [Checksums : MD5sum 
+(using a Rust MD5 crate!).],
+  [Windows : liveness check ,
+ type check ,
+ overlays and minibuffer ,
+ minibuffer check 
+ positions and
+ margins .],
+  [Processes : accessing ,
+ type check ,
+ data structures and
+ names .],
+  [Buffers : for the current thread ,
+ accessing ,
+ file names ,
+ size and
+ modification .],
+  [Point : bobp ,
+ bolp, eolp ,
+ markers ,
+ point-min, point-max 
+ forward-point and
+ goto-char .],
+  [Hash tables : copying and accessing .],
+  [Characters :
+ multibyte conversions ,
+ character tables ,
+ category tables],
+  [Fonts : type checks .],
+  [Miscellaneous :
+ prefix arguments and
+ identity .],
+  [We’re also periodically pulling GNU Emacs features into Remacs, so all
+the features available GNU Emacs trunk are included in Remacs.],
+  [id="idiomatic-rust-in-remacs"\>Idiomatic Rust in Remacs],
+  [Remacs has gradually developed a set of conventions for elisp data
+types. For each type Foo, we define a LispObject::as\_foo ,
+ LispObject::as\_foo\_or\_error and a FooRef when you know your elisp
+datatype is actually a Foo.],
+  [For example, here’s how overlay-start was implemented in C:],
+  [DEFUN ( "overlay-start" , Foverlay\_start , Soverlay\_start , 1 , 1 , 0 , 
+ doc : /\* Return the position at which OVERLAY starts. \*\/ ) 
+ ( Lisp\_Object overlay ) 
+ { 
+ CHECK\_OVERLAY ( overlay );],
+  [return ( Fmarker\_position ( OVERLAY\_START ( overlay ))); 
+ }],
+  [The C codebase makes heavy use of macros for checking types
+( CHECK\_OVERLAY ) and for accessing struct attributes
+( OVERLAY\_START ).],
+  [Here’s the Rust equivalent:],
+  [\/\/\/ Return the position at which OVERLAY starts. 
+ \#\[lisp\_fn\] 
+ fn overlay\_start ( overlay : LispObject ) -\> LispObject { 
+ let marker = overlay .as\_overlay\_or\_error () .start (); 
+ marker\_position ( marker ) 
+ }],
+  [We use procedural macros to simplify defining an elisp primitive
+function, and type checking is much more explicit.],
+  [(This example is
+from PR \#298 .)],
+  [Other exciting Rusty features
+include
+ variadic macros to replace call1 , call2 in C with just call! in Rust ,
+and
+ the ability to mock extern C functions so we can write unit tests .],
+  [id="hash-maps"\>Hash Maps],
+  [We’re not always able to leverage the Rust libraries
+available. \@DavidDeSimone showed some amazing Rust-fu exploring
+using Rust’s FnvHashMap inside Remacs .],
+  [Sadly, we weren’t able to use the Rust hash map implementation. The C
+layer assumes that it can mutate hash table keys in place, and
+ unexec does not play nicely with mmap . See the PR for the full details.],
+  [id="logo"\>Logo],
+  [Finally, we’re discussing a logo for Remacs. We’ve had some great submissions:],
+  [You can join the logo discussion at PR \#360 .],
+  [As always, if you fancy writing some Rust in support of the world’s
+lispiest text editor, you can join us on GitHub !],
+),
+  insert-map: (:),
+  word-count: 584,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -953,101 +537,19 @@ yourself !],
 #article-row((
   [
     standard-article(
-  title: [How to listen to Ulysses],
-  author: [Derek Sivers],
-  source-name: [Derek Sivers],
-  images: (),
-  paragraphs: (
-  [Book a flight to Kolkata India, and from Kolkata to Istanbul , for at least four days each, between February and April.
-Rent a home-stay room on College Street in Kolkata, and in the Balat neighborhood of Istanbul.],
-  [Get wired over-the-ear headphones, a phone with a headphone jack and long battery life, and walking shoes.],
-  [Download a course about Ulysses . Length: 12 hours.],
-  [On the way to Kolkata, listen to the Odyssey , start to finish.],
-  [Learn about Kolkata’s Bengali identity, languages, its colonial past as the capital of British India, the Writers’ Building, the Victoria Memorial, Boi Para , and reputation as the literary capital of India.],
-  [In Kolkata , walk around the city, listening to the Ulysses audiobook for ten hours per day, three days in a row , start to finish.],
-  [Record (write or voice memo) all of your questions and observations.
-When done, ask everything to an expert or top-tier AI.
-Save the answers to re-read later.],
-  [While travelling from Kolkata to Istanbul, listen to the course about Ulysses, for more understanding and layers of meaning, preparing you to listen again.],
-  [Learn about Istanbul’s past rulers, mixed identities and languages, juxtaposition of the sacred and commercial, and note its proximity to Aegean Sea of the Odyssey.],
-  [In Istanbul, listen to the other recording of Ulysses , ten hours a day, three days in a row, start to finish, while walking around the vastly different neighborhoods, taking a ferry across the Bosphorus, noticing the similarities between Istanbul’s call to prayer and Dublin’s church bells.
-This time you’ll have a deeper appreciation of the book.],
-  [Record all of your questions and observations.
-Again, when done, ask everything to an expert or top-tier AI.
-Re-read the previous answers now, too.],
-  [Back home, post pictures, videos, the GPS map of where you walked while listening, and especially your thoughts.],
-  [(I haven’t done this yet, but plan to.
-I listened to that Odyssey audiobook in two days of walking around Port Meadow, Oxford , and have been yearning to listen again.)],
-),
-  insert-map: (:),
-  word-count: 371,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-  ],
-  [
-    standard-article(
-  title: [Curve into the target],
-  author: [Derek Sivers],
-  source-name: [Derek Sivers],
-  images: (),
-  paragraphs: (
-  [I’m pretty bad at bowling and frisbee.],
-  [I roll the ball or throw the disc straight at the target, but away it curves.],
-  [After this happens a couple times, I adjust.
-I stop aiming straight, since that’s not working.
- 
-If it always curves to the left, I aim to the right.],
-  [It feels wrong to aim away from the target.
-But it curves back to the center.
-It works.],
-  [Same with thoughts.
-I try to think straight.
-But sometimes my thoughts miss.],
-  [I would under-estimate how long a project would take.
-So now I double my estimate - (aim to the right) - which brings it closer to the truth.
-It feels wrong, because I really do think it will take a month, but out loud I say “two months”.
-Now my estimates hit the target.],
-  [I tend to believe my memories are correct.
-But I learned from experience that they’re fabricated.
-So now I try to assume that all my memories are false.],
-  [Aiming your thinking away from the target feels wrong but makes it right .],
-  [Another definition of the word “true” means straight and accurate.
-And the word “bias” means angled or curved.
-So we can choose beliefs that are not true , because they are useful to compensate for our bias.],
-),
-  insert-map: (:),
-  word-count: 215,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-  ],
-), ruled-indices: (1,))
-#pull-quote([So now I double my estimate - (aim to the right) - which brings it closer to the truth.], [Derek Sivers])
-
-
-#article-row((
-  [
-    standard-article(
-  title: [Enemy of the State],
+  title: [Infinite Scrolling that Works],
   author: [Robin Ward (eviltrout)],
   source-name: [Robin Ward (eviltrout)],
   images: (),
   paragraphs: (
-  [I learned very quickly while working on a
- large open source project is that it
-is important to make my code hard to break. The primary line of defense for this is a
-comprehensive test suite, but I think it’s also very important to create functions
-that are easy to use and difficult to damage.],
-  [I find I even code this way on personal projects that will never be released. Even if
-you never work on a team with other developers, there is a good chance you will forget
-a lot of implementation details of the code that you aren’t actively working on. You need to
-protect your code from yourself!],
+  [Shortly after we began working together on Discourse , Jeff wrote a post about infinite scrolling . At first, I was surprised at how many people claimed to hate sites that used it. However, after reading through many comments
+about it, I realized that most didn’t hate the scrolling itself, they hated how it broke their browser!],
+  [id="infinite-scrolling-done-wrong-twitter"\>Infinite Scrolling done wrong: Twitter],
+  [When I visit Twitter, I am presented with a list of tweets in reverse chronological order. If I scroll down far enough, Twitter will automatically
+load more tweets so I don’t have to stop reading. Initially, their implementation seems great. I can keep scrolling until I’m done reading.],
 ),
   insert-map: (:),
-  word-count: 111,
+  word-count: 110,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -1055,64 +557,111 @@ protect your code from yourself!],
   ],
   [
     standard-article(
-  title: [My old clothes don’t fit],
+  title: [How and why to make a /now page on your site],
   author: [Derek Sivers],
   source-name: [Derek Sivers],
   images: (),
   paragraphs: (
-  [I was uncomfortable, unhappy, and restless.
-I didn’t want to meet new people, because I felt I was giving the wrong impression.
-Something wasn’t right.
-It took me months to figure out the real problem:
-My clothes don’t fit anymore!],
-  [Once I realized this, I had to decide what new clothes would fit the new me.
-Like many of us, I looked to the style of glamorous and successful people.
-I should wear what they wear since it works so well for them.
-I tried on many of their outfits, but nothing fit.
-That was really disappointing, because I thought that’s why they share their choices with the world — so we can do what they do.
-I thought it would be that easy.],
-  [Eventually, after a lot of searching, I found clothes that are just my size.
-But I couldn’t get them on!
-There was no room at all.
-I’m embarrassed to say I overlooked something obvious.
- 
-I was trying to wear new clothes on top of the old ones.
- 
-I didn’t realize I had to completely remove my old clothes before putting on something new.],
-  [It was easy to take off my old clothes for a few days, but just having them around made it too easy to put them on again.
-They were so comfortable!
-I’d been wearing these things for so many years that they really became my identity.
-If you put my old clothes on a mannequin, it would look like me.
-What does that say about me, then?
-We are what we wear?
-Clothes make the man?],
-  [So, I had to completely discard them.
-It was sad — I thought those clothes would last forever.
-I documented them for archive’s sake, then gave them away.
-I’m glad someone else can use them.],
-  [In this transition, before I put on my new clothes, I’m naked.],
-  [It feels weird.
-I’m surprised I’m allowed to go out like this.],
-  [Old friends hardly notice, but new people I meet are confused and can’t tell why I’m not wearing something.
- 
-An outfit would show them how I can help.
- 
-(And that’s all most people want to know.)],
-  [A power suit would show I can help their business.],
-  [A monk’s robe would imply I could help their soul.],
-  [Explorer’s gear would prove I could lead an adventure.],
-  [A clown costume might at least make them laugh.],
-  [But nothing at all?
-They probably can’t use me for anything.],
-  [I get invited to speak at events, but it’s clear that they really just want the outfit I used to wear.
-I explain that it doesn’t fit, but they’re upset that I won’t put it on just one more time.],
-  [Don’t worry — I’m not going to be a nudist now.
-That’s inconsiderate to almost everyone.
-I’ll put on my new clothes soon.],
-  [But I’m just sharing this story in case your discomfort might just be that your old clothes don’t fit anymore.],
+  [I used to wonder what my friend Benny Lewis was doing.
+He has a website and social media accounts, but neither gave an overview of what he’s doing now .],
+  [Then I realized some people might wonder the same about me.
+So in 2015, I made a /now page on my website, saying what I’d tell a friend I hadn’t seen in a year .],
+  [It has a nice side-effect of being a public declaration of priorities.
+It’s a good link to give people when saying no to invitations and distractions.],
+  [Word spread, and soon hundreds of people had a /now page on their personal website .
+So I made a site to showcase them all: nownownow.com — (a static site generated by PostgreSQL functions .)
+It currently has over 2300 people worldwide.
+This week I added browse by location and search.],
+  [Got a personal website? Add a /now page],
+  [The three main ingredients are:],
+  [a page, usually at URL /now, linked from your main menu, usually alongside /about],
+  [an overview of what’s going on with you — what you’d tell a friend you hadn’t seen in a year],
+  [the date it was last updated],
+  [WordPress instructions:],
+  [In the left menu, under “ Pages ”, click “ Add New Page ”.
+Then, where it says “Add title”, replace that with just three letters: now .
+That will ensure the URL is /now, and after it’s posted, you can change the title to “What I’m doing now” or whatever.],
+  [Wix instructions:],
+  [On the left, under “ Site Menu ”, click “ + Add Page ”.
+Call it Now , next to your “About” page.
+Click the (…) to its right, then to “ SEO basics ”, to edit “ URL slug ” and make sure it’s just the three letters: now],
+  [No website yet? Use Bear],
+  [If you don’t have a personal website yet, I highly recommend Bear at BearBlog.dev .
+It’s so simple, clean, and free.
+The owner and creator, Herman in South Africa , runs it himself with great love.
+And no investors so no enshittification .
+He plans to keep it alive forever .],
+  [I believe in it so much that I told Herman I would be its godfather.
+If he ever can’t (or doesn’t want to) run it anymore, I will help run it, or fund a foundation to keep it alive.],
+  [To create a /now page on Bear, click “ Pages ”, then “ New page ”.
+Then, after it says “ title: ”, type just three letters: now .
+That will ensure the URL is /now, and after it’s posted, you can change the title to “What I’m doing now” or whatever.],
+  [Got a /now page? I’ll add you to nownownow.com],
+  [Once it’s live, just email me your URL , and I add it (by hand) to nownownow.com .
+(This is also a good time to say hello, if you haven’t yet. I read and reply to every email.)],
 ),
   insert-map: (:),
-  word-count: 496,
+  word-count: 495,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+  ],
+), ruled-indices: (1,))
+#pull-quote([This week I added browse by location and search.], [Derek Sivers])
+
+
+#article-row((
+  [
+    standard-article(
+  title: [Speech to birdsong conversion],
+  author: [Oona Räisänen],
+  source-name: [Oona Raisanen (windytan)],
+  images: (),
+  paragraphs: (
+  [I had a dream one night where a blackbird was talking in human language. When I woke up there was actually a blackbird singing outside the window. Its inflections were curiously speech-like. The dreaming mind only needed to imagine a bunch of additional harmonics to form phonemes and words. One was left wondering if speech could be transformed into a blackbird song by isolating one of the harmonics...],
+  [One way to do this would be to:],
+  [Find the instantaneous fundamental frequency and amplitude of the speech. For example, filter the harmonics out and use an FM demodulator to find the frequency. Then find the signal envelope amplitude by AM demodulation.],
+  [Generate a new wave with similar amplitude variations but greatly multiplied in frequency.],
+  [A proof-of-concept script using the Perl-SoX-csdr command-line toolchain is available ( source code here ). The result sounds surprisingly blackbird-like. Even the little trills are there, probably as a result of FM noise or maybe vocal fry at the end of sentences. I got the best results by speaking slowly and using exaggerated inflection.],
+  [Someone hinted that the type of intonation used in certain automatic announcements is perfect for this kind of conversion. And it seems to be true! Here, a noise gate and reverb has been added to the result to improve it a little:],
+  [And finally, a piece of sound art where this synthetic blackbird song is mixed with a subtle chord and a forest ambience:],
+  [Think of the possibilities: A simultaneous interpreter for talking to birds. A tool for dubbing talking birds in animation or live theatre. Entertainment for cats.],
+  [What other birds could be done with a voice changer like this? What about croaky birds like a duck or a crow?],
+  [(I talked about this blog post a little on NPR: Here's What 'All Things Considered' Sounds Like — In Blackbird Song )],
+),
+  insert-map: (:),
+  word-count: 320,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+  ],
+  [
+    standard-article(
+  title: [No new instructions for the computer],
+  author: [Derek Sivers],
+  source-name: [Derek Sivers],
+  images: (),
+  paragraphs: (
+  [You load the program into the computer, and it begins its calculations.
+It’s computing.
+It’s working hard, and it’s going to take some time.],
+  [If you interrupt it with new instructions, it has to begin all over again, because the parameters have changed.
+ 
+If you keep giving it new information, it will never finish its job.],
+  [People who tell me they are lost and running in circles have one thing in common:
+They say they keep listening to podcasts, reading books, watching videos, doing courses — taking in more and more information — and still don’t know what to do.],
+  [Consider the computer metaphor for yourself.
+You’ve taken in so much information, and heard so many instructions.
+That’s enough input.
+It’s time for output.
+Run the program.
+Stop interrupting yourself with new information.
+Let yourself execute one plan of action, and see it through to fruition.],
+),
+  insert-map: (:),
+  word-count: 146,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -1121,6 +670,34 @@ I’ll put on my new clothes soon.],
 ), ruled-indices: (1,))
 
 #article-row((
+  [
+    standard-article(
+  title: [Tour -isms],
+  author: [Derek Sivers],
+  source-name: [Derek Sivers],
+  images: (),
+  paragraphs: (
+  [Since I’m living in Europe now, I thought it would be good to tour everywhere in Europe, and get to know it better.],
+  [I’m not into seeing the sights.
+I don’t take photos .
+What I want is to get to know the mindset , the world-view of each place.
+The philosophy .],
+  [So I wondered if there’s a way to tour philosophies directly.
+What if, instead of touring places, we toured ideas ?
+Can I tour the “ -ism ”s?],
+  [My collection of Very Short Introduction books includes:],
+  [Post-colonialism],
+  [Post-modernism],
+  [Post-structuralism],
+  [Now that’s my kind of tourism!],
+),
+  insert-map: (:),
+  word-count: 143,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+  ],
   [
     standard-article(
   title: [Fret, Hedge, React],
@@ -1137,27 +714,64 @@ I’ll put on my new clothes soon.],
 )
 
   ],
+), ruled-indices: (1,))
+
+#article-row((
   [
     standard-article(
-  title: [Err on the side of action, to test theories],
+  title: [PostgreSQL example of self-contained stored procedures],
   author: [Derek Sivers],
   source-name: [Derek Sivers],
   images: (),
   paragraphs: (
-  [I spend a lot time thinking of alternate ways to approach life .],
-  [I re-consider my hierarchy of values.],
-  [When values change, the plan of action needs to change, too.],
-  [For example, if I decide that personal growth is top priority, then I plan a life pushing outside my comfort zone.
-But if I decide that creative output is top priority, then I plan a tranquil life without obstacles, so I can just create.],
-  [But the only way to decide — to not be Buridan’s donkey — is to go give it a try .],
-  [There’s a huge difference between in-theory versus in-practice.
- 
-If you’ve been deliberating on something for a while, get it out of your head, and into the world.],
-  [If it turns out to be a mistake, that’s fine.
-At least you’ll know it’s a mistake in fact , instead of just in theory.],
+  [First, see my previous article about PostgreSQL functions at sive.rs/pg .
+That article gave tiny examples, but no finished working code.],
+  [This week, I wrote a shopping cart to sell my books directly from my own site.],
+  [So I took a couple extra hours today to put my code into public view, so anyone can play around with it.
+See github.com/sivers/store , to browse, download, and try it.],
+  [It’s a working self-contained shopping cart \/ store.
+It’s a very concrete example of using stored procedures to keep all the data logic together in one place.
+You can use it from JavaScript, Python, Ruby, or any language you want, since all the functionality is in the database itself.
+It works.],
+  [If you have any questions, or want to tell me how stupid I am for doing this, email me .],
 ),
   insert-map: (:),
-  word-count: 147,
+  word-count: 139,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+  ],
+  [
+    standard-article(
+  title: [Your heroes show which way you’re facing],
+  author: [Derek Sivers],
+  source-name: [Derek Sivers],
+  images: (),
+  paragraphs: (
+  [People with many interests often ask my advice on which industry or career path they should follow.],
+  [Years ago, I felt I was just a programmer and entrepreneur.
+Yes sometimes I write a tiny blog post sharing what I’ve learned, but that’s just something on the side.],
+  [But something never felt quite right about this.
+I spend most of my time writing, very little time programming, and hadn’t started a business in years .
+Still, I kept saying I was a programmer and entrepreneur, and felt I should really spend more time doing it.],
+  [But everything changed when I asked myself a question:],
+  [“Who are my heroes?”],
+  [I thought, wrote them down, then realized they were all authors !
+Basically, look at my list of favorite books , and there are my heroes.],
+  [The people I look up to the most…
+The people I’d most like to meet…
+The people I’d most like to emulate are not entrepreneurs, and not programmers — just writers.],
+  [So, that day, I realized I actually want to be a writer.],
+  [I re-arranged my hierarchy of interests.
+Yes I enjoy programming, and yes I’ll probably start another business.
+But really my main love and top priority is writing.],
+  [How about you?
+Who are your heroes?
+Does that help you see which way you’re actually facing?],
+),
+  insert-map: (:),
+  word-count: 220,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -1168,41 +782,26 @@ At least you’ll know it’s a mistake in fact , instead of just in theory.],
 #article-row((
   [
     standard-article(
-  title: [Anti-chameleon],
+  title: [Podcast published today],
   author: [Derek Sivers],
   source-name: [Derek Sivers],
   images: (),
   paragraphs: (
-  [I don’t know why I have this rebellious nature.
-I tend to want to be the opposite of my surroundings.],
-  [At serious formal events, I can’t stop laughing inside.
-At crazy festivals, I want to hide and read a book.],
-  [My ambitious friends bring out the slacker in me.
-My lethargic friends make me feel like superman.],
-  [When I moved to Boston, as a teen, and everyone was wearing black, I dressed in only white.
-I remind new-agey people of the scientific method.],
-  [Is it a desire for balance?
-To represent what seems under-represented in this situation?
-Is it my love of seeing the other side?],
-  [I hear I’m not supposed to react like this.
-I’m supposed to be the same, no matter what’s around.],
-  [But I’m not the same from day to day, even when alone.
-I rebel against myself, too.
-If I’ve been thinking or acting one way for too long, I try another way.],
-  [It’s worked pretty well for me so far.
- 
-I’m super-motivated by the horror of seeing the opposite of what I want.],
-  [Seeing someone waste their talent motivates me to get back to practicing and creating.],
-  [Seeing a person in horrible health motivates me to be healthy.],
-  [Seeing someone freaking out motivates me to be calm.],
-  [Seeing someone being selfish motivates me to be generous.],
-  [The list goes on.
-It’s been net positive.
-So, I’m not fighting it for now.],
-  [(P. S. I’ll never argue against preserving nature.)],
+  [Starting today you can follow my podcast at sive.rs/podcast.rss or listen on the web at sive.rs/podcast .],
+  [Each episode is around two minutes long.
+They are my posts since September 22nd .
+33 episodes so far.],
+  [I generated the RSS XML feed myself using this Ruby script .
+The MP3s are just hosted on my own server.
+I skipped all the podcast hosting services, because I’ll never have ads so I don’t care about analytics, tracking, and all of that.],
+  [It doesn’t cost me anything, so I won’t be trying to make money from it.
+I’m doing it just because people keep asking me to.
+☺],
+  [This is all an experiment.
+Please let me know if you have any suggestions.],
 ),
   insert-map: (:),
-  word-count: 255,
+  word-count: 120,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -1210,29 +809,42 @@ So, I’m not fighting it for now.],
   ],
   [
     standard-article(
-  title: [We don’t need to use what we make],
+  title: [Why did I move to New Zealand?],
   author: [Derek Sivers],
   source-name: [Derek Sivers],
   images: (),
   paragraphs: (
-  [For many years, I was a touring musician, performing live on stage every week.
-But I didn’t like attending concerts.
-I liked making music more than listening to music.
-I felt I must be in the wrong line of work, creating something that I don’t consume .
-I never reconciled this feeling.],
-  [Since then, I’ve met a:],
-  [vegetarian cattle farmer],
-  [masseuse that doesn’t enjoy receiving massage],
-  [elevator builder that lives in a single-story house],
-  [heart surgeon that has never needed heart surgery],
-  [We sweat salt water.
-We cry salt water.
-But we don’t drink salt water.],
-  [The comparisons are a nice reminder that we don’t have to take in what we put out.],
-  [I now feel reconciled that this is not a problem or a sign that we’re in the wrong line of work.],
+  [I get this question a lot, so here’s my honest answer.],
+  [I was living in Singapore, feeling culturally adventurous, wanting to live everywhere, meet everyone, and get to know the whole world.
+But then I had a baby.],
+  [At first I thought we’d raise him in Singapore, fluent in all the cultures of Asia.
+But after a few months, I realized how important it was to me that he have a real connection with nature.
+Feet in the river, hands in the mud, climbing trees, running in fields, at home in the forest.
+Great foundation for the soul.
+Maybe even a competitive advantage in a world where everyone else is dependent on devices.],
+  [Also, Singapore was a super-social place for me, where I knew too many people, and I wanted to give my boy my full attention without distraction — to live where I didn’t know anyone.
+So the plan was to raise him in nature for the first six years, then move somewhere more culturally expansive for the next six.],
+  [New Zealand is a nature paradise, but I also loved the safety of its location in times of global trouble.
+They make you a citizen if you live here for six years.
+So, perfect match for our situation.
+Raise a baby in nature, then leave with an amazing passport, and the right to return forever.],
+  [It took nine months of paperwork to become a legal resident, but the government is friendly and helpful.
+It’s really sweet to live in a country where the government agencies are really small, sensible, and personable.
+I like the culture here better than I expected.],
+  [His upbringing went as planned.
+Full nature boy.
+Not into screens or phones at all.
+He’s always outside, spends his days in forests and the rocky coast, and loves building physical things like tools and shelters for his adventures.],
+  [After getting New Zealand citizenship, we moved to Europe, but then Covid hit.
+So in a way it was just as predicted: New Zealand was a great location in times of global trouble - one of the only Covid-free places on earth - and only citizens were allowed in, so our passports felt like the golden ticket, and we moved back.
+While his cousins across the world were locked down in isolation, staring at screens, he was playing with friends.],
+  [His mom loves her job in the government here, so no more moving.
+He’s in high school now, and he’s still not into screens.
+He’s mentally healthy and wise, I think partially due to being raised outside in nature.],
+  [I’ve made a lot of mistakes in my life, but moving to New Zealand was a good choice.],
 ),
   insert-map: (:),
-  word-count: 134,
+  word-count: 447,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -1243,45 +855,22 @@ But we don’t drink salt water.],
 #article-row((
   [
     standard-article(
-  title: [The brain invents explanations],
-  author: [Derek Sivers],
-  source-name: [Derek Sivers],
+  title: [Mapping microwave relay links from video],
+  author: [Oona Räisänen],
+  source-name: [Oona Raisanen (windytan)],
   images: (),
   paragraphs: (
-  [Some people have damaged fibers connecting the left and right hemispheres of their brain, and need to have that connection surgically severed.
-They live pretty normal lives even though the two sides of their brain are disconnected.
-Psychologists work with these people to better understand the brain.],
-  [They showed a patient a message to her right eye, saying, “Please close the window.”
-She got up and closed the window.],
-  [Then they showed a question to her left eye, “Why did you close the window?”
-She said she chose to do it because she was cold.],
-  [To another patient, a researcher said, to only one ear, “Please walk.”
-The patient started walking.],
-  [Then they asked his other ear, “Why did you walk?”
-He said he just felt like getting a drink.],
-  [One woman being tested for seizures had electrodes implanted in her brain.
-When they stimulated one area, she started laughing hysterically.
-The doctors asked why.
-She said the picture on the wall is really funny.
-Later, when probing that same area again, while she was eating, she laughed again.
-This time, she said it’s because her fork is really funny.],
-  [These people weren’t lying.
-They fully believed those were the real reasons.],
-  [This isn’t just brain patients.
-It’s an insight into the human condition: something that everyone does all the time, but these tests were able to show.
- 
-When asked for an explanation, the brain invents a reason and completely believes it.
- 
-To that person, the explanation feels like absolute fact — the kind they swear is true, believe deeply in their core, and will fight to defend!],
-  [Think of the implications: major life choices, attraction, excitement, love, jealousy, revenge, anxiety, fear, and interpersonal conflict.
-All of these are supported and defended by explanations that aren’t true.],
-  [People’s motives are unknowable, even to themselves.
-Let go of the need for a reason.
-Ignore their explanations.
-The only true facts are their actions.],
+  [Radio networks are often at least partially based on microwave relay links . They're those little mushroom-like appendices growing out of cell towers and building-mounted base stations. Technically, they're carefully directed dish antennas linking such towers together over a line-of-sight connection. I'm collecting a little map of nearby link stations, trying to find out how they're interconnected and which network they belong to.],
+  [Circling around],
+  [We can find a rough direction for any link antenna by approximating a tangent for the dish shroud surface from position-stamped video footage taken while circling the tower. Optimally we would have a drone make a full circle around the tower at a constant distance and elevation to map all antennas at once; but if our DJI Phantom has run out of battery, a GPS positioned still camera at ground level will also do.],
+  [The rest can be done manually, or using Hough transform and centroid calculation from OpenCV. In these pictures, the ratio of the diameters of the concentric circles is a sinusoid function of the angle between the antenna direction and the camera direction. At its maximum, we're looking straight at the beam. (The ratio won't max out at unity in this case, because we're looking at the antenna slightly from below.) We can select the frame with the maximum ratio from high-speed footage, or we can interpolate a smooth sinusoid to get an even better value.],
+  [This particular antenna is pointing west-northwest with an azimuth of 290°.],
+  [What about distance?],
+  [Because of the line-of-sight requirement, we also know the maximum possible distance to the linked tower, using the formula 7140 × √(4 \/ 3 × h) where h is the height of the antenna from ground. If the beam happens to hit a previously mapped tower closer than this distance, we can assume they're connected!],
+  [This antenna is communicating to a tower not further away than 48 km. Judging from the building it's standing on, it belongs to a government trunked radio network.],
 ),
   insert-map: (:),
-  word-count: 322,
+  word-count: 338,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -1289,16 +878,65 @@ The only true facts are their actions.],
   ],
   [
     standard-article(
-  title: [Book early-access discount code],
-  author: [ericlippert],
-  source-name: [Fabulous Adventures in Coding (Eric Lippert)],
+  title: [The Siren Song of Little Languages],
+  author: [Wilfred Hughes],
+  source-name: [Wilfred Hughes],
   images: (),
   paragraphs: (
-  [class="wp-block-paragraph"\>Hey everyone, I first want to say a heartfelt thank you so much for the warm comments and supportive feedback I’ve gotten since I announced that I’m in process of writing Fabulous Adventures In Data Structures And Algorithms . It means a lot to me.],
-  [class="wp-block-paragraph"\>The book is in the Manning Early Access Program (MEAP) now; the first six chapters are up and we’ll be adding more over the coming months. The initial 50% off site-wide sale is over, but for the next ten days, until November 27th, using the code MLLippert at checkout will give you 50% off.],
+  [Some programming languages languish due to obscurity. They lack
+breathless blog posts exclaiming how much nicer they are to use.],
+  [Other languages are too ambitious. They aspire to support so many
+features that the original implementers struggle to get a first
+version working. For example, the type system in Fortress
+ required constraint solving which took exponential time .],
+  [Sometimes a usable language struggles simply because it’s too much
+fun to write your own . Developers end up building their own implementation
+rather than actually using the language.],
+  [The most obvious implementation-focused language
+is BF . Despite
+having
+ many implementations ,
+BF programmers have to encourage the implementers to actually try using the language !],
+  [Scheme is also susceptible to this. Wikipedia
+lists
+ 31 different Scheme implementations ,
+not to mention the many toy implementations. Writing a Scheme is a
+great introduction to interpreters,
+especially
+ once you get beyond the minimal lisp featureset .
+I’ve certainly written more implementation code than Scheme code.],
+  [The problem seems to be languages with a small, well written
+specification. Shen is a
+multiparadigm lisp defined in terms of an
+ elegant base language with
+only 46 system functions. This has resulted in a remarkable
+ 15 third-party implementations ,
+but
+ only a small number of libraries implemented in the
+language .],
+  [This phenomenon is not limited to lisps. Forth is also a language
+that developers often prefer to implement rather than
+use. Jones Forth is
+both a Forth tutorial and a discussion of how to build a Forth
+compiler. There are even
+ stories of people spending years working on implementations without learning much of the language .],
+  [Designing a language with a straightforward implementation is not a
+bad thing. It’s just a pitfall that language designers need to be
+aware of. Some crypto systems have this problem
+too .],
+  [It seems that we need languages to be big enough that new users write
+hello world in the language, not write a tool for others to write
+hello world. In the Lisp family, Clojure and Racket seem to have
+reached a size threshold where newcomers are happy downloading the
+canonical implementation.],
+  [This doesn’t mean multiple implementations are bad. It’s a great sign
+of language health. We just don’t need these until there’s a community of
+ users and there is a need for implementations with different
+qualities.],
+  [A language can be too small and elegant.],
 ),
   insert-map: (:),
-  word-count: 104,
+  word-count: 396,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -1309,43 +947,23 @@ The only true facts are their actions.],
 {
   #section-label([Analysis])
   #brief-group((
-    #brief-item([Liv Veazey], source-name: [n+1 Magazine], [M texted me from the adjacent bedroom at 7:30 AM: “Are you awake?” In the kitchen, he combed out his beard and ate a banana, which his people’s warriors ate to feel full, he said. I pointed to a stray hair that stuck out the side of his neck. “I keep meaning to pluck it,” he said. We arrived […]])
-
-    #brief-item([Robin Ward (eviltrout)], source-name: [Robin Ward (eviltrout)], [I have two 4K TVs at home, one in the bedroom and one in my living room. Both have consoles attached. One has a
- PS4 Pro and one has a Nintendo Switch and both are great.
-
-However, I also have a gaming PC in my office, which is quite powerful compared to any home console
-Mine is equipped with a RTX 2080 TI GPU, and a 9900K processor, so it can play pretty much any new game at 4K with a solid 60 fps on high settings.])
-
-    #brief-item([Jonas MoeckingSvetlana DoroshevMiguel Ricardo LeungTzviya Zeev-Ben-MordehaiaBijvoet Centre for Biomolecular Research, Department of Chemistry, Utrecht University, Utrecht 3584 CG, The Netherlands], source-name: [PNAS News], [Proceedings of the National Academy of Sciences, Volume 123, Issue 12, March 2026. 
-SignificanceLINC (linker of nucleo- and cytoskeleton) complexes establish a physical bridge across the nuclear envelope, allowing them to transmit mechanical signals between the nucleus and the cytoplasm. We used superresolution fluorescence microscopy ...])
-
-    #brief-item([Tommi VäyrynenJohanna TuunanenHeta HelakariAhmed ElabasyVesa KorhonenNiko HuotariJohanna PiispalaMika KallioMaiken NedergaardVesa KiviniemiaOulu Functional NeuroImaging, Research unit of Health Sciences and Technology, Faculty of Medicine, Medical Research Center, University of Oulu, Oulu 90014, FinlandbRadiology, Diagnostics, Oulu University Hospital, Oulu 90220, FinlandcClinical Neurophysiology, Diagnostics, Oulu University Hospital, Oulu 90220, FinlanddCenter for Translational Neuromedicine, University of Rochester Medical Center, Rochester, NY 14642eCenter for Translational Neuromedicine, Faculty of Health and Medical Sciences, University of Copenhagen, Copenhagen 2200, DenmarkfBiocenter Oulu, Faculty of Biochemistry and Molecular Medicine, University of Oulu, Oulu 90220, Finland], source-name: [PNAS News], [Proceedings of the National Academy of Sciences, Volume 123, Issue 12, March 2026. 
-SignificanceBeyond its well-known effects on neuronal activity, human sleep appears also to reorganize the infraslow (\<0.1 Hz) oscillation hierarchy in brain. While wakefulness is dominated by unidirectional neurovascular coupling, in which neural ...])
-
-    #brief-item([Liv Veazey], source-name: [n+1 Magazine], [All the Immigration and Customs Enforcement agents I saw in the atrium were white, of medium height and build, and many wore plain baseball caps. They were all men and they stuck out because they displayed an exceeding level of stillness and homogeneity in a room with a flow of people from all over the world, people who were always in motion and who mostly looked different from one another.])
-
-    #brief-item([Sumita DuttaKala K. MahenWilliam J. MasseyVenkateshwari VaradharajanAmy C. BurrowsAnthony J. HorakMarko MrdjenNour MouannesDanny OrabiLucas J. OsbornTreg GrubbRachel C. HoheRakhee BanerjeeVinayak UppinDev LaunganiGrace E. HamiltonXiayan YeNaseer SangwanMohammed DwidarAdeline M. HajjarBelinda WillardMichael MartinErik GuetschowPatrick WestcottMegan R. McMullenLaura E. NagyZeneng WangStanley L. HazenJ. Mark BrownaDepartment of Microbial Sciences in Health, Cleveland Clinic Research, Cleveland, OH 44195bCenter for Microbiome and Human Health, Cleveland Clinic Research, Cleveland, OH 44195cDepartment of Molecular Medicine, Cleveland Clinic Lerner College of Medicine, Case Western Reserve University, Cleveland, OH 44106dDepartment of Inflammation and Immunity, Cleveland Clinic Research, Cleveland, OH 44195eDepartment of Heart, Blood, and Kidney Research, Cleveland Clinic Research, Cleveland, OH 44195fDepartment of Pathology, Keck School of Medicine, University of Southern California, Los Angeles, CA 90033gDepartment of Cancer Sciences, Cleveland Clinic Research, Cleveland, OH 44195hMicrobial Sequencing and Analytics Core Facility, Cleveland Clinic Research, Cleveland, OH 44195iProteomics Core Facility, Cleveland Clinic Research, Cleveland, OH 44195jCayman Chemical, Ann Arbor, MI 48108kDepartment of Cardiovascular Medicine, Heart Vascular and Thoracic Institute, Cleveland Clinic, Cleveland, OH 44195], source-name: [PNAS News], [Proceedings of the National Academy of Sciences, Volume 123, Issue 12, March 2026. 
-SignificanceDiet–microbe–host interactions clearly impact human disease, but how gut microbiota integrate dietary cues into meal-related signals to shape host phenotypes remains poorly understood. Dutta, Mahen, Massey et al. now show that gut microbe–...])
-
-    #brief-item([Yitzchak JaffeAndrew WomackKarine TachéMitya KletzermanNimrod MaromRon PalzurBo SunYichao ZhaoaSchool of Archaeology and Maritime Cultures, Department of Archaeology and the Zinman Institute of Archaeology, University of Haifa, Haifa 3103301, IsraelbDepartment of Anthropology, Furman University, Greenville, SC 29613cDepartment of Historical Sciences, Université Laval, Québec G1V 0A6, QC, CanadadAssociated Researcher, The Interdisciplinary Center for Archaeology and the Evolution of Human Behaviour (ICArEHB), University of Algarve, Faro, 8005-139, PortugaleShandong Institute of Cultural Relics and Archaeology, Shandong 250100, China], source-name: [PNAS News], [Proceedings of the National Academy of Sciences, Volume 123, Issue 12, March 2026. 
-SignificanceArchaeologists have long explored how states and political actors expand their territories, through conquest, colonization, trade. While peaceful integration may have been an ideal, expansion involved conflict, resistance, and uneven cultural ...])
-
-    #brief-item([Ari M. Brostoff, Alex Colston, Ismail Ibrahim, Lakshmi Padmanabhan, Nolan Perla-Ward, Dylan Saba], source-name: [n+1 Magazine], [The way I’ve begun to think about this is that it’s just not possible to have a US imperial fortress state with Rainbow Coalition characteristics—the most multiracial genocidal coalition in the history of the world. It’s a strange fact, and it can’t be resolved.])
-
-    #brief-item([Daniel McGrathLouis SassWilliam H. ArmstrongCaitlyn FlorentineScott W. McCoyaDepartment of Geosciences, Colorado State University, Fort Collins, CO 80523bU.S. Geological Survey Alaska Science Center, Anchorage, AK 99508cDepartment of Geological and Environmental Sciences, Appalachian State University, Boone, NC 28608dU.S. Geological Survey Northern Rocky Mountain Science Center, Bozeman, MT 59717eDepartment of Geological Sciences and Engineering, University of Nevada, Reno, NV 89557], source-name: [PNAS News], [Proceedings of the National Academy of Sciences, Volume 123, Issue 12, March 2026. 
-SignificanceGlacial lakes in the Alaska region expanded by \>150 km2between 2018 and 2024, representing a 50 to 120% faster rate of expansion than previous periods (1986–2018). This growth primarily occurred in mapped glacier-bed overdeepenings. There is ...])
-
-    #brief-item([Lukas HauerKatharina SporbeckJoseph F. McKennaDmytro PuchkovAlexander I. MayLorenzo FrigerioRoland L. KnorrAmir H. BahramiaCenter for Biochemistry, Faculty of Medicine, University of Cologne, University Hospital Cologne, Cologne, GermanybInstitute of Biology, Humboldt-Universität zu Berlin, Berlin 10115, GermanycSchool of Life Sciences, University of Warwick, Coventry CV4 7AL, United KingdomdLeibniz-Forschungsinstitut für Molekulare Pharmakologie, Berlin, GermanyeInstitute for Integrated Research, Institute of Science Tokyo, Tokyo, JapanfGraduate School and Faculty of Medicine, The University of Tokyo, Tokyo 113-0033, JapangInstitute of Materials Science and Nanotechnology, Living Matter and Biophysics, National Nanotechnology Research Center (UNAM), Bilkent University, Ankara 06800, Türkiye], source-name: [PNAS News], [Proceedings of the National Academy of Sciences, Volume 123, Issue 12, March 2026. 
-SignificanceCells use membraneless compartments, called condensates, to organize biochemical processes. We show that condensates can physically reshape cellular membranes, producing tubes, sheets, or cup-like structures by tuning the shape metastability ...])
-
-    #brief-item([Yi FanYanchi SuGaoyang HaoFuzhou WangXingjian ChenKa-Chun WongXiangtao LiaSchool of Artificial Intelligence, Jilin University, Changchun 130012, ChinabDepartment of Computer Science, City University of Hong Kong, Kowloon, Hong Kong Special Administrative Regions of ChinacDivision of Genome Analysis Platform Development, National Cancer Center Research Institute, Tokyo 104-0045, JapandCutaneous Biology Research Center, Massachusetts General Hospital, Harvard Medical School, Boston, MA 02114], source-name: [PNAS News], [Proceedings of the National Academy of Sciences, Volume 123, Issue 12, March 2026. 
-SignificanceTissues develop and diseases progress through coordinated changes in gene expression and gene regulation, which can now be measured by single-cell multi-omics. However, these datasets contain both modality-specific signals unique to each omics ...])
-
-    #brief-item([Mark Greif], source-name: [n+1 Magazine], [There may well be normalcy again. But it lies on the other side—not in accommodation to this malevolent insanity, run by lackeys and toads. The risk of overreaction is trivial compared to the risks of accommodation.])
-
-    #brief-item([Grace Nissan], source-name: [n+1 Magazine], [THE WORLD The first world was suffering, suffering. The second world was liberation. Liberation! But why, said the first world, does it look so much like suffering? Like suffering only once, the second world said—like suffering plus change. Is that not the first world? No, said the second world, the first world is suffering plus […]])
-
+    [#brief-item([Elias Rodriques], source-name: [n+1 Magazine], [Trump was — and is — intent on creating a new future, and to gain a better sense of that vision, I needed to understand what future he was working to prevent. I asked Andil to meet that weekend, and he agreed. I would play amateur journalist and interview Andil again, this time about how he fell into the government’s crosshairs.])],
+    [#brief-item([Maria Marchinkoski], source-name: [n+1 Magazine], [We have no tradition, she said. What could we say to the dead except that we’re sorry for living? No, we confuse people too much already. How much more could they take? They hear “transsexual” and want us to prove it. They want weeping in front of mirrors. They want heartfelt confessions with parents on the couch. They will never take you seriously or consider you normal. They want hand-me-down emotions.])],
+    [#brief-item([Rubin DasguptaChristian SteinmetzgerAncy T. WilsonSatyaki ChatterjeeGunnar W. ReginssonSnorri Th. SigurdssonKatja PetzoldaDepartment of Medical Biochemistry and Microbiology, Science for Life Laboratory, Center of Excellence for the Chemical Mechanisms of Life, Uppsala University, Uppsala 751 23, SwedenbDepartment of Chemistry, Science Institute, University of Iceland, Reykjavik 107, Iceland], source-name: [PNAS News], [Proceedings of the National Academy of Sciences, Volume 123, Issue 12, March 2026. 
+SignificanceUnderstanding RNA structure and dynamics inside cells remains a key challenge in molecular biology. Here, we establish a site-directed spin labeling approach that enables targeted NMR signal enhancement of RNA in complex environments, using ...])],
+    [#brief-item([Sumitabha BrahmachariAntonio B. OliveiraMatheus F. MelloVinícius G. ContessotoJosé N. OnuchicaCenter for Theoretical Biological Physics, Rice University, Houston, TX 77005bPhD Program in Systems, Synthetic, and Physical Biology, Rice University, Houston, TX 77005cDepartment of Physics and Astronomy, Rice University, Houston, TX 77005dDepartment of Chemistry, Rice University, Houston, TX 77005eDepartment of Biosciences, Rice University, Houston, TX 77005], source-name: [PNAS News], [Proceedings of the National Academy of Sciences, Volume 123, Issue 12, March 2026. 
+SignificanceSegregation of duplicated DNA is essential for cell proliferation. By combining experimental Hi-C contact maps with a energy landscape approach, we uncover how Structural Maintenance of Chromosomes (SMC) complexes reorganize the chromosome ...])],
+    [#brief-item([Liv Veazey], source-name: [n+1 Magazine], [All the Immigration and Customs Enforcement agents I saw in the atrium were white, of medium height and build, and many wore plain baseball caps. They were all men and they stuck out because they displayed an exceeding level of stillness and homogeneity in a room with a flow of people from all over the world, people who were always in motion and who mostly looked different from one another.])],
+    [#brief-item([Pallavi SinghMydhily VasudevanSwagata DeyKavinila SelvarasuSupraja BalakrishnanDikshalee BassiAnindya Ghosh-RoyaDepartment of Cellular and Molecular Neuroscience, National Brain Research Centre, Manesar, Haryana 122052, India], source-name: [PNAS News], [Proceedings of the National Academy of Sciences, Volume 123, Issue 12, March 2026. 
+SignificancePrevious studies have established that physical injury to dendrites leads to the initiation of dendrite regeneration by a mechanism independent of pathways involved in sensing axonal injury. Therefore, the mechanism of dendrite regeneration is ...])],
+    [#brief-item([Andreas MühlbauerYuanbei F. FanDaniel J. SamborMark Z. JacobsonaDepartment of Civil and Environmental Engineering, Stanford University, Stanford, CA 94305-4020], source-name: [PNAS News], [Proceedings of the National Academy of Sciences, Volume 123, Issue 12, March 2026. 
+SignificanceThis study reveals the immense, previously unquantified potential of repowering the United States (US) onshore wind turbine fleet. By replacing aging turbines with modern technology at existing sites, the United States could more than double ...])],
+    [#brief-item([Melinda Cooper, Malcolm Harris], source-name: [n+1 Magazine], [These conflicts tend to recur every ten years or so, with a different cast of characters, but always involving the idea that taxpayer money is being spent on a public institution that undermines the private authority of parents—abortion clinics, child care centers, public libraries, public schools.])],
+    [#brief-item([Donald P. McDonnellaDepartment of Pharmacology and Cancer Biology, Duke University School of Medicine, Durham, NC 27710], source-name: [PNAS News], [Proceedings of the National Academy of Sciences, Volume 123, Issue 12, March 2026. 
+Bert W. O’Malley, the “father/grandfather” of the field of molecular endocrinology passed away on November 11, 2025, at the age of 88. In a distinguished career that spanned over 60 years, he probed fundamental aspects of steroid hormone action, work that ...])],
+    [#brief-item([Eugene MalthouseCharlie PilgrimDaniel SgroiMichela AccerenziAntonio AlfonsoRana Umair AshrafMax BaardSanchayan BanerjeeAlexis BelianinSwagata BhattacharjeeMihir BhattacharyaPablo Brañas-GarzaJuan-Camilo CárdenasMiguel CarriquirySyngjoo ChoiGwen-Jiro ClochardEduardo Ezekiel DenzonBartlomiej Dessoulavy-SliwinskiGiorgio DiniLu DongAntal ErtlFilippos ExadaktylosEmel Filiz-OzbaySarah Lynn FleckeFabio GaleottiTeresa Garcia-MuñozNobuyuki HanakiGuillaume HollardDaniel HornLingbo HuangDoruk İrişHubert Janos KissJuliane KochJaromír KováříkOsbert Kwabena Boadi KwartengAndreas LangeMartin LeitesThomas Ho-Fung LeungWooyoung LimMeike MorrenLaila NockurCharles Yaw OkyereMayada OudahAli I. OzkesLionel PageJunghyun ParkStefan PfattheicherAntonios ProestakisCarlos RamosMapi Ramos-SosaMuhammad Saeed AshrafMuhammad Ryan SanjayaRene SchwaigerOmar SeneFei SongSarah SpycherRostislav StaněkNorman TanchingcoAlessandro TavoniVera te VeldeMaría José Vázquez-De FranciscoMartine VisserJoseph Tao-Yi WangWilly WangWei-Chien WengKatharina WernerAmanda WijayantiRalph WinklerJohn WoodersLi YingWei ZhenThomas HillsaCentre for Decision Research and Experimental Economics, School of Economics, University of Nottingham, Nottingham NR7 2QX, United KingdombSchool of Mathematics, University of Leeds, Leeds LS2 9JT, United KingdomcDepartment of Economics, University of Warwick, Coventry CV4 7AL, United KingdomdFundación ETEA—Development Institute of Universidad Loyola Andalucía, Córdoba 14004, SpaineDepartment of Applied Economics I, University of Seville, Sevilla 41018, SpainfFaculty of Economic Sciences, University of Warsaw, Warsaw 00-241, PolandgEnvironmental Policy Research Unit, University of Cape Town, Cape Town 7700, South AfricahSchool for Government, The Policy Institute, King’s College London, London WC2B 4LL, United KingdomiNational Research University Higher School of Economics, Moscow 101000, RussiajAlmaty Management University, Almaty 050060, KazakhstankJindal School of Government and Public Policy, O.P. Jindal Global University, Haryana 131001, IndialDepartment of Economics, Ashoka University, Haryana 131029, IndiamLoyolaBehLAB, Department of Finance, Universidad Loyola Andalucía, Córdoba 14004, SpainnFacultad de Economía, Universidad de los Andes, Cundinamarca, Bogotá 111711, ColombiaoDepartment of Economics, University of Massachusetts Amherst, Amherst, MA 01003pInstituto de Economía, Universidad de la República de Uruguay, Montevideo 11200, UruguayqDepartment of Economics, Seoul National University, Seoul 08826, Republic of KorearInstitute of Social and Economics Research, University of Osaka, Osaka 567-0047, JapansJoint Initiative for Latin American Experimental Economics, Buenos Aires C1054 AAF, ArgentinatJohn Gokongwei School of Management, Ateneo de Manila University, Metro Manila 1108, PhilippinesuDepartment of Economics, University of Bologna, Bologna 40126, ItalyvSouthern University of Science and Technology, Guangdong Province 518055, ChinawELTE Centre for Economic and Regional Studies, Budapest 1097, HungaryxSchool of Social Sciences, University of Iceland, Reykjavík 102, IcelandyUniversidad de Barcelona, Barcelona 08007, SpainzDepartment of Economics, University of Maryland, College Park, MD 20742aaDepartment of Experimental Psychology, University College London, London WC1H 0AP, United KingdombbCNRS, Université Lumière Lyon 2, Université Jean Monnet Saint-Etienne, Emlyon Business School, GATE, Lyon 69007, FranceccUniversity of Granada, Granada 18012, SpainddUniversity of Limassol, Limassol 3020, CypruseeCenter for Research in Economics and Statistics, École Polytechnique, Institut Polytechnique de Paris, Palaiseau 91120, FranceffCNRS, Paris Cedex 16 75794, FranceggCorvinus University of Budapest, Budapest 1093, HungaryhhShandong University, Jinan, Licheng District 250100, ChinaiiDepartment of Economics, Sogang University, Seoul 08826, Republic of KoreajjEconomics Department at Lund University School of Economics and Management, Lund 223 63, SwedenkkDepartamento de Análisis Económico, University of the Basque Country (UPV/EHU), Bilbao 48015, SpainllFaculty of Economics, University of West Bohemia, Plzeň 306 14, Czech RepublicmmDepartment of Agricultural Economics and Agribusiness, College of Basic and Applied Sciences, University of Ghana, Legon-Accra GA-489-1402, GhanannDepartment of Economics, Faculty of Business, Economics and Social Sciences of the University of Hamburg, Hamburg 20146, GermanyooUniversidad de la República de Uruguay, Montevideo 11200, UruguayppUniversity of Arizona, Tucson, AZ 85721qqThe Hong Kong University of Science and Technology, Kowloon, Hong KongrrDepartment of Marketing, Vrije Universiteit Amsterdam, Amsterdam 1081 HV, NetherlandsssDepartment of Psychology and Behavioural Sciences, Aarhus University, Aarhus 8000, DenmarkttDivision of Social Science, New York University Abu Dhabi, Abu Dhabi PO Box 129188, United Arab EmiratesuuCenter for Behavioral Institutional Design, New York University Abu Dhabi Research Institute, New York University Abu Dhabi, Abu Dhabi PO Box 129188, United Arab EmiratesvvSKEMA Business School, Groupe de Recherche en Droit, Économie et Gestion, Université Côte d’Azur, Lille 59777, FrancewwVienna University of Economics and Business, Vienna 1020, AustriaxxSchool of Economics, University of Queensland, Brisbane QLD 4072, AustraliayySeoul National University, Seoul 04107, Republic of KoreazzDepartment of Nutrition and Dietetics Sciences, Hellenic Mediterranean University, Sitia 72300, GreeceaaaInstituto Tecnológico de Santo Domingo, Santo Domingo 10602, Dominican RepublicbbbDepartment of Applied Economic Analysis, Universidad de Las Palmas de Gran Canaria, Las Palmas 35017, SpaincccSchool of Tourism Management, Hengxing University of Science and Technology, Qingdao, Shandong 266100, ChinadddUniversitas Gadjah Mada, Kabupaten Sleman, Daerah Istimewa Yogyakarta 55281, IndonesiaeeeDepartment of Banking and Finance, University of Innsbruck, Innsbruck 6020, AustriafffAlioune Diop University of Bambey, Bambey BP 16617, SenegalgggTed Rogers School of Management, Toronto Metropolitan University, Toronto, ON M5B 2K3, CanadahhhDepartment of Management, Technology, and Economics, ETH Zurich, Zürich 8092, SwitzerlandiiiFaculty of Economics and Administration, Masaryk University, Brno 601 77, CzechiajjjGrantham Research Institute on Climate Change and the Environment, London School of Economics, London WC2A 2AE, United KingdomkkkUniversity of Cape Town, Cape Town 7700, South AfricalllDepartment of Economics, National Taiwan University, Taipei 106, TaiwanmmmTaiwan Social Resilience Research Center, National Taiwan University, Taipei 106, TaiwannnnSchool of Information, University of Michigan, Ann Arbor, MI 48109oooDepartment of Economics, University of Cologne, Cologne D-50937, GermanypppSchool of Business, Economics, and Information Systems, University of Passau, Passau D-94032, GermanyqqqDepartment of Economics and Oeschger Centre for Climate Change Research, University of Bern, Bern CH-3012, SwitzerlandrrrInstitute of Psychology, Chinese Academy of Sciences, Beijing 100101, ChinasssDepartment of Psychology, University of Warwick, Coventry CV4 7AL, United Kingdom], source-name: [PNAS News], [Proceedings of the National Academy of Sciences, Volume 123, Issue 12, March 2026. 
+SignificanceOne of the main goals of international climate change negotiations is to distribute the economic burden of limiting global warming. A central challenge is that some countries are wealthier than others and may therefore be better able to invest ...])],
+    [#brief-item([Mark Greif], source-name: [n+1 Magazine], [There may well be normalcy again. But it lies on the other side—not in accommodation to this malevolent insanity, run by lackeys and toads. The risk of overreaction is trivial compared to the risks of accommodation.])],
   ))
 }
 

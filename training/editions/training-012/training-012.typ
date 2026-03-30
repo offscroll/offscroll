@@ -23,392 +23,91 @@
 
 // --- Front Page Feature ---
 #feature-article(
-  title: [Earliest bat shows flight developed before echolocation],
+  title: [A woman’s uterus has been kept alive outside the body for the first time],
   kicker: [Cover Story],
-  author: [Ed Yong],
-  source-name: [Not Exactly Rocket Science (Ed Yong archive)],
-  deck: [Their heads and bodies of bats have amassed an extraordinary array of adaptations that have make them lords of the night sky.],
-  lead-text: "Today, the thousand-plus types of bats make up a fifth of living mammal species. Richard Dawkins once described the evolution of bats as “one of the most enthralling stories in all natural history” and as of this week, the story has a clearer beginning.",
-  lead-first-alpha: 0,
+  author: [Jessica Hamzelou],
+  source-name: [MIT Technology Review],
+  deck: [In front of me is essentially a metal box on wheels.],
+  lead-pre: [“],
+  lead-cap: [T],
+  lead-rest: [hink of this as a human body,” says Javier González.],
   body-paragraphs: (
-  [The success of bats hinges on two key abilities: their mastery of flight, a feat matched only by birds and insects; and echolocation , the ability to navigate their way through pitch-blackness by timing the reflections of high-pitched squeaks. For evolutionary scientists, the big question has always been: which came first?],
-  [The ‘clawed bat’],
-  [Until now, fossil bats haven’t provided any clues for all of them show signs of both echolocation and flight. But a stunning new fossil, discovered by Nancy Simmons from the American Museum of Natural History is an exception and it provides a categorical answer to the long-running debate – the earliest bats could fly but could not echolocate.],
-  [The new creature hails from the Green River in Wyoming and is known as Onychonycteris , meaning “clawed bat”. Its fossils date back to about 52.5 million years ago and by comparing it to other prehistoric bats, Simmons found that it is the most ancient member of this lineage so far discovered. It acts as a ‘missing link’ in bat evolution, much like the famous Archaeopteryx hinted that birds may have evolved from dinosaurs.],
-  [Onychonycteris was clearly a capable flyer. Its wings are remarkably similar to those of today’s bats, with the exception of small claws at the end of its digits that modern bats lack. But the really exciting part of the new fossil is the size of its cochlea – the coiled tube that allows mammals to hear. Relative to the size of their head, all bats that use echolocation have massively enlarged cochleae and the two traits are so tightly linked that large cochleae have been used to show that other prehistoric bats were also echolocators.],
-  [Not so for Onychonycteris. The dimensions of its skull revealed that its cochlea was too small to have supported echolocation and was closer in size to those of flying foxes , large bats that favour vision over echolocation. It provides direct evidence that bats mastered the art of flying before they developed a way of navigating through the dark.],
-  [Flight or echolocation],
-  [When the flight-echolocation debate first started, the “echolocation-first” camp had the upper hand. According to this school of thought, the earliest bats used echolocation from tree perches to detect and snatch passing insects, and indeed, the most primitive of modern bats sometimes use this technique. The ancestral bats then evolved long, webbed arms and fingers to better catch their prey and eventually took to jumping after them.],
-  [However, this theory has since run into troubled times. It turns out that echolocation – which involves producing very loud bursts of sound – takes a lot of energy and it’s something that a perching bat cannot afford to keep up for long. A flying bat on the other hand, has no such difficulties. On each stroke of their wings, bats are contracting the powerful lung muscles that power their ultrasonic shouts so that if they time their flaps and squeaks correctly, echolocation is effectively free .],
-  [Other parts of the fossil provide clues about Onychonycteris ‘s lifestyle. Its strong hind legs and wing claws suggest that it was an agile climber and could have scampered through branches on all fours.],
-  [The proportions of its limbs are closest to the modern mouse-tailed bats, which fly with an undulating style that alternates true flight with gliding. Onychonycteris may have also used this efficient tactic and it may have been a stepping stone from gliding to proper continuous flight.],
-  [Daytime hunter],
-  [But how could Onychonycteris have found its way through the air without echolocation to guide it? Perhaps it was a daytime flier and relied on vision to find its way around. Its descendants may have been forced to become nocturnal when the birds came to power towards the end of the dinosaurs’ reign, some 65 million years ago.],
-  [We would normally turn to Onychonycteris ‘s eyes for clues for nocturnal animals that fly by sight, like the flying foxes, have large eye sockets. Unfortuantely, that will have to wait until the discovery of new fossils. The top half of the skulls that Simmons used were found crushed. While their ear cavities have already told us much about the evolution of bats but their eyes sockets will tell no tales.],
-  [Reference: Simmons, N. B., Seymour, K. L., Habersetzer, J., Gunnell, G. F. (2008). Primitive Early Eocene bat from Wyoming and the evolution of flight and echolocation. Nature, 451 (7180), 818-821. DOI: 10.1038/nature06549],
+  [In front of me is essentially a metal box on wheels. Standing at around a meter in height, it reminds me of a stainless-steel counter in a restaurant kitchen. It is covered in flexible plastic tubing—which act as veins and arteries—connecting a series of transparent containers, the organs of this machine.],
+  [What makes it extra special is the role of the cream-colored tub that sits on its surface. Ten months ago, González, a biomedical scientist who developed the device with his colleagues at the Carlos Simon Foundation, carefully placed a freshly donated human uterus in the tub. The team connected it to the device’s tubes and pumped in modified human blood.],
+  [The device kept the uterus alive for a day—a new feat that could represent the first step to the long-term maintenance of uteruses outside the human body. The work has not yet been published.],
+  [The team members want to keep donated human uteruses alive long enough to see a full menstrual cycle. They hope this will help them study diseases of the uterus and learn more about how embryos burrow their way into the organ’s lining at the start of a pregnancy. They also hope that future iterations of their device might one day sustain the full gestation of a human fetus.],
+  [The machine is technically called PUPER, which stands for “preservation of the uterus in perfusion.” But González’s colleague Xavier Santamaria says the team has adopted a nickname for it: “We call it ‘Mother.’”],
+  [González and Santamaria, medical vice president of the Carlos Simon Foundation, demonstrated how the device might work when I visited the foundation in Valencia, Spain, earlier this month (although it held no organs on that day).],
+  [Both are interested in learning more about implantation, the moment at which an embryo attaches itself to the lining of a uterus—essentially, the very first moment of pregnancy.],
+  [The foundation’s founder and director, Carlos Simon, believes it’s a sticking point in IVF: Scientists have made many improvements to the technology over the years, but the failure of embryos to implant underlies plenty of unsuccessful IVF cycles, he says. Being able to carefully study how the process works in a real, living organ might give the team a better idea of how to prevent those failures.],
+  [The team took inspiration from advances in technologies designed to maintain donated organs for transplantation. In recent years, researchers around the world have created devices that deliver nutrients and filter waste so that organs can survive longer after being removed from donors’ bodies.],
+  [The main goal here is to buy time. A human organ might last only a matter of hours outside the body, so a transplant may require frantic preparation for the recipient, sometimes in the middle of the night. With a little more time, doctors could find better donor-patient matches and potentially test the quality of donated organs.],
+  [This approach is called normothermic or machine perfusion, and it is already being used clinically for some liver , kidney , and heart transplants .],
+  [The team at the Carlos Simon Foundation built a similar machine for uteruses. A blood bag hangs on one side. From there, blood is ferried via plastic tubing to a pump, which functions as the heart. The pump shunts the blood through an oxygenator, which adds oxygen and removes carbon dioxide as the lungs would in a human body.],
+  [The blood is warmed and passed through sensors that monitor the levels of glucose and oxygen, along with other factors. It passes through a “kidney” to remove waste. And finally the blood reaches the uterus, hooked up to its own plastic “arteries” and “veins.” The organ itself sits at a tilt, just as in the body, and is kept in a humid environment to stay moist.],
+  [The team first began testing an early prototype of the device with sheep uteruses around four years ago. That meant carting the machine to an animal research center in Zaragoza, around 200 miles away. Over the course of the preliminary study, veterinary surgeons removed the uteruses of six sheep and hooked them up to the machine. They kept each uterus alive for a day, using blood from the same animals.],
+  [After the sheep experiments, the researchers carted their machine back to Valencia and modified it to achieve its current incarnation, “Mother.” They started working with a local hospital that performed hysterectomies. And in May last year, they were offered their first human uterus.],
+  [The team needed to be quick. “You need to put \[the uterus in the machine\] within a couple of hours, maximum, of the extraction,” says Santamaria. He and his colleagues also needed to connect the uterus’s blood vessels to the tubing delicately, taking care to avoid any blockages (clotting is a major challenge in organ perfusion). The organ was hooked up to human blood obtained from a blood bank.],
+  [It seemed to work—at least temporarily. “We kept it alive for one day,” says Santamaria.],
+  [“As a proof of concept, it is impressive,” says Keren Ladin, a bioethicist who has focused on organ transplantation and perfusion at Tufts University. “These are early days.”],
+  [It might not sound like much, but 24 hours is a long time for an organ to be out of the body. Maintaining a donated uterus for that long could expand the options for uterus transplant , a fairly new procedure offered to some people who want to be pregnant but don’t have a functional uterus, says Gerald Brandacher, professor of experimental and translational transplant surgery at the Medical University of Innsbruck in Austria.],
+  [“It is better than what we currently have, because we have only a couple of hours,” he says. So far, most uterus transplants have been planned operations involving organs from living donors. A technology like this could allow for the use of more organs from deceased donors, he says.],
+  [That work is “not in the immediate pipeline” for the team in Spain, says Santamaria. “We are working on other problems.”],
+  [Santamaria, González, and their colleagues are more interested in using sustained human uteruses for research.],
+  [They’ve mounted a camera to a wall in the corner of the room, pointed at their machine. It allows the team to monitor “Mother” remotely, and to check if any valves disconnect. (That happened once before—a spike in pressure caused the blood bag to come loose, spilling a liter of blood on the floor, Santamaria says.)],
+  [They’d like to be able to keep their uteruses alive for around 28 days to study the menstrual cycle and disorders that affect the uterus, like endometriosis and fibroids.],
+  [It won’t be easy to maintain a uterus for that long, cautions Brandacher. As far as he knows, no one has been able to maintain a liver for more than seven days. “No studies out there … have shown 30-day survival in a machine perfusion circuit,” he says.],
+  [But it’s worth the effort. The team’s main interest is learning more about how embryos implant in the uterine lining at the start of a pregnancy. They hope to be able to test the process in their outside-the-body uteruses.],
+  [They won’t be allowed to use human embryos for this, says González—that would cross an ethical boundary. Instead, they plan to use embryo-like structures made from stem cells. The structures closely resemble human embryos but are created in a lab without sperm or eggs.],
+  [Simon himself has grander ambitions.],
+  [He sees a future in which a machine like “Mother” will be able to fully gestate a human, all the way from embryo to newborn. It could offer a new path to parenthood for people who don’t have a uterus, for example, or who are not able to get pregnant for other reasons.],
+  [He appreciates that it sounds futuristic, to say the least. “I don’t know if we will end up having pregnancies inside of the uterus outside of the body, but at least we are ready to understand all the steps to do that,” he says. “You have to start somewhere.”],
 ),
   edited-for-length: false,
 )
 
-
-{
-  #section-label([Front Page])
-  #standard-article(
-  title: [THE HEART OF OUR HOME],
-  author: [Kirkus Reviews],
-  source-name: [Kirkus Reviews],
-  images: (),
-  paragraphs: (
-  [The table is where this loving Black family enjoys the first meal of the day; it’s where the children do homework and make cookies and where everyone prepares for fish fry Fridays. Extended family shares space here during somber moments, such as deaths, and on happier occasions, including birthdays, Kwanzaa, and other holidays. Grandpa regales the young protagonist (who narrates) with stories of Mom and Dad’s past as the child listens intently. And when it’s time for Mom to braid the youngster’s hair, this, too, happens at the table. “The process is exhausting for both of us, and I sometimes struggle to sit still,” but “when she is finished, I feel so pretty—and thankful that it’s done.” In her authorial debut, Washington relies on the cut-paper collage technique that won her a Caldecott Honor for Choosing Brave (2022), written by Angela],
-  [Joy. Her images boast bright colors, rich textures (the grain of the wooden table is particularly eye-catching), and a level of detail so intricate, it’s hard to believe the artist relied on cut paper alone. Her straightforward prose often ripples across the page, conveying warmth and visual verve. Photos of Washington’s own family table close out the work.],
-),
-  insert-map: (:),
-  word-count: 199,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-}
 
 {
   #section-label([Features])
   #standard-article(
-  title: [A conversation with Google support],
-  author: [Michael Tobis],
-  source-name: [Only in it for the Gold (blog, climate)],
-  images: (),
-  paragraphs: (
-  [You’re connected with agent Grace.],
-  [class="chatsupport\_cbf\_Eb chatsupport\_cbf\_Ib"\>I’ll do my best to help you. If we can’t find a solution, I will collect feedback for our developers and give you an external resource you might be able to use.],
-  [Screen Shot 2022-02-23 at 4.05.00 PM.png],
-  [class="chatsupport\_cbf\_Eb chatsupport\_cbf\_Db"\>I'm sorry but I am confused. I manage a small business listing through Google My Business. I am looking to see if the emails are listed there, but I don't recall connecting any email to this listing.],
-  [class="chatsupport\_cbf\_Eb chatsupport\_cbf\_Ib"\>Please check your emails (both body and signature) for spammy content  e.g.  lots of exclamation marks; "must read"; attention getting, large and/or gaudy coloured text; text the same colour as the background; tiny text; [almost] zero height images; links hidden under text, images or links with a different URL; etc. All or any of these may mark you as a spammer at Google.],
-  [class="chatsupport\_cbf\_Eb chatsupport\_cbf\_Ib"\>Alright, here is what we are going to do since your emails seem to be business email accounts which I have limited access to, we have a separate team that can help you further with this.],
-  [class="chatsupport\_cbf\_Eb chatsupport\_cbf\_Ib"\>Okay, I’d like to be respectful of your time and point you to the best resource to have your issue resolved. The Help Center is the same resource we’d use on our end.],
-  [class="chatsupport\_cbf\_Eb chatsupport\_cbf\_Db"\>Authentication-Results:  mx.google.com; spf=softfail ( google.com:  domain of transitioning gallerista\@electricstreet.art does not designate  209.85.161.48  as permitted sender)  smtp.mailfrom=gallerista\@electricstreet.art Received-SPF: softfail ( google.com:  domain of transitioning gallerista\@electricstreet.art does not designate  209.85.161.48  as permitted sender) client-ip=209.85.161.48;],
-  [Screen Shot 2022-02-23 at 4.05.00 PM.png],
-  [class="chatsupport\_cbf\_Eb chatsupport\_cbf\_Ib"\>And upon further checking, if this is about more on email forwarding issues , just note that some email software or services change the envelope sender to your domain when forwarding messages. If the envelope sender is changed to your domain for forwarded spam, Gmail might learn that your domain sends spam. Gmail might treat future messages from your domain as spam.],
-  [class="chatsupport\_cbf\_Eb chatsupport\_cbf\_Ib"\>It seems that this might have something to do with your email domain. Gmail doesn't accept allowlist requests from third-party email senders. We can't guarantee messages will pass Gmail’s spam filters.],
-  [class="chatsupport\_cbf\_Eb chatsupport\_cbf\_Db"\>no, if I use mtobis\@gmail.com as far as I know there is no problem. The problem is pretty clearly authentication at  a2hosting.com  accourding to the link I found (through your excellent search engine!)],
-  [class="chatsupport\_cbf\_Eb chatsupport\_cbf\_Db"\>But I do not have access to the account of my customers and vendors, so cannot add a contact. Further, this will not resolve the issue with the SPF record.],
-),
-  insert-map: (:),
-  word-count: 7014,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-}
-
-{
-  #standard-article(
-  title: [Mark Jacobson Abandons Science, Takes Up Barratry],
-  author: [Michael Tobis],
-  source-name: [Only in it for the Gold (blog, climate)],
-  images: (),
-  paragraphs: (
-  [style="background: rgb(237, 237, 237); border: 0px; font-family: NeueHaas, sans-serif; margin-bottom: 25px; padding: 0px; vertical-align: baseline;"\>
-Stanford professor Mark Jacobson has  sued  a prominent energy researcher and the National Academy of Sciences for defamation over a sharply-worded rebuttal of his work, shifting a heated scientific debate over renewable energy out of the journals and into the courts.],
-  [style="background: rgb(237, 237, 237); border: 0px; font-family: NeueHaas, sans-serif; margin-bottom: 25px; padding: 0px; vertical-align: baseline;"\>
-The suit, filed September 29 in a Washington, D. C., superior court, demands a retraction of a  June paper  in the  Proceedings of the National Academy of Sciences . Jacobson seeks more than \$10 million in damages from both the paper's publisher and its lead author, Christopher Clack, who is chief executive of Vibrant Clean Energy and a former NOAA researcher.],
-  [style="background: rgb(237, 237, 237); border: 0px; font-family: NeueHaas, sans-serif; margin-bottom: 25px; padding: 0px; vertical-align: baseline;"\>
-Jacobson was the lead author of a  2015 paper  in the same journal that concluded wind, solar, and hydroelectric sources alone could supply 100 percent of the U. S. grid's needs, all at low cost.],
-  [style="background: rgb(237, 237, 237); border: 0px; font-family: NeueHaas, sans-serif; margin-bottom: 25px; padding: 0px; vertical-align: baseline;"\>
-Many other energy researchers have long argued that additional technologies, such as nuclear energy, carbon capture, and advanced storage options, will be required to decarbonize the electricity sector, particularly in a cost-competitive manner.],
-  [style="background: rgb(237, 237, 237); border: 0px; font-family: NeueHaas, sans-serif; margin-bottom: 25px; padding: 0px; vertical-align: baseline;"\>
-Earlier this year, Clack and 20 other researchers published a response arguing that, as  MIT Technology Review  previously reported, Jacobson's paper "contained modeling errors and implausible assumptions that could distort public policy and spending decisions." (For more details on the researchers' critiques, check out our earlier article on the Clack paper: " Sustainable Energy Scientists Sharply Rebut Influential Renewable-Energy Plan .")],
-  [Jacobson wrote (what seemed to me at the time) a very bad paper. At least the climate modeling makes no sense, which caused me to doubt the rest of it.],
-  [It got into PNAS without peer review. (That journal has a publication mechanism that allows some non-peer-reviewed articles.)],
-  [If I and many others are right that his work is poor, that doesn't mean his conclusion is wrong, just that the paper shouldn't be relied upon as evidence that his conclusion is right.],
-  [Normally, bad work is quietly ignored, but this was getting enough publicity that a multidisciplinary team of highly regarded authors hastened to put together a rebuttal, and ran it through peer review.
-Rather than correcting, amending, or defending his work, Jacobson chose to treat the challenge as libelous. This is inexcusable, even if the paper somewhat misrepresented Jacobson as he claims.],
-  [(It is difficult to correctly represent incoherent argument, of course. If one criticizes one part of the argument it may be inconsistent with another part of the argument. )],
-  [The context is that Jacobson is telling people what they want to hear, specifically that 100% renewable energy is possible with little cost or effort. That doesn't make him one of the good guys.],
-  [This is not a schism within science. It's an attack on science from someone who doesn't accept the norms of science.],
-  [Attacks on science can't be tolerated, whether they come from people who tell you what you want to hear or people who tell your opponents what they want to hear.],
-  [By taking this dispute outside the norms of science and into the courts, Jacobson essentially is rejecting and subverting science. His actions should not be seen as reflecting on the scientific community.
-Without science, we are flying blind. Jacobson's behaviour is ridiculous, and the scientific community is having none of it. I hope the activist community, which claims to be such a strong supporter of science, backs us up.],
-),
-  insert-map: (:),
-  word-count: 634,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-}
-
-{
-  #standard-article(
-  title: [Quote Gallery II],
-  author: [Michael Tobis],
-  source-name: [Only in it for the Gold (blog, climate)],
-  images: (),
-  paragraphs: (
-  [See also Quote Gallery I],
-  [Contributions always welcome; use the comment section.],
-  [===],
-  [So far, we're not doing any better than the cyanobacteria.],
-  [- Ray Pierrehumbert],
-  [===],
-  [Trivializing democracy; being anti-government; claiming all politicians 
-are evil; saying there are no differences between political parties; 
-stoking conspiracy theories; insisting that the civic sphere is all a 
-joke: These all serve the powerful.],
-  [Cynicism is obedience to power.],
-  [-Alex Steffen],
-  [===],
-  [We don’t have a right to ask whether we’re going
-to succeed or not – the only question we have a right to ask is: What’s the
-right thing to do? What does this Earth require of us if we want to continue to
-live on it?],
-  [- Wendell Berry],
-  [===],
-  [For a very long time, the intellectual consensus has been that we can no longer ask Great Questions. Increasingly, it's looking like we have no other choice.],
-  [-David Graeber in Debt, The First 5000 Years],
-  [===],
-  [In this unfolding conundrum of life and history there is such a thing as being too 
-late ... We may cry out desperately for time to pause in her passage, but time is 
-adamant to every plea and rushes on. Over the bleached bones and jumbled residue of 
-numerous civilizations are written the pathetic words: "Too late".],
-  [- Martin Luther King Jr, 1967],
-  [===],
-  [The moon has no atmosphere so it is scorching hot (+100C) during the day and bitterly cold (-150C) at night. The Earth has an atmosphere made up of oxygen, nitrogen, carbon dioxide (CO2) and other gases. Over 150 years ago scientists proved that CO2 traps heat from the sun.],
-  [We also know without any doubt that burning fossil fuels like oil, gas and coal emits CO2.],
-  [Measurements, not computer models or theories, measurements show that there is now 46% more CO2 in the atmosphere than 150 years ago before massive use of fossil fuels. That extra CO2 is like putting another blanket on at night even though you are already nice and warm.],
-  [The Earth is now 1.0 C hotter on average according to the latest measurements. Heat is a form of energy and with so much more energy in our atmosphere our weather system is becoming supercharged resulting in stronger storms, worse heat waves, major changes in when and where rain falls and more.],
-  [- Stephen Leahy],
-  [===],
-  [It is not widely understood that carbon dioxide persists in the atmosphere for centuries, so our future will depend on the total amount we humans put into it over the next several decades. This is the paramount fact that separates climate change from all other environmental problems.],
-  [– Clive Hamilton Utopias in the Anthropocene],
-  [===],
-  [In the end it’s not about finding policies that work, it’s about forging consensus and fighting cynicism. Can we do this?],
-  [- Barack Obama],
-  [===],
-  [A tolerably good human future is possible if we work together toward it. It’s not a question of predicting. It’s a question of deciding.],
-  [- mt],
-  [===],
-  [A journey of a thousand miles begins with deciding where you are going.],
-  [-mt],
-  [===],
-  [People always ask me one question all the time: ‘How do I know that I won’t be found out as a supporter of what you’re doing?’ We run all of this stuff through nonprofit organizations that are insulated from having to disclose donors. There is total anonymity. People don’t know who supports us.],
-  [- Richard Berman describing how oil money gets transferred to what he calls ‘Win Ugly’ political action],
-  [===],
-  [When the going gets tough, the people losing the argument start whining about civility.],
-  [- Paul Krugman (h/t Eli)],
-  [===],
-  [If it once became general, wealth would confer no distinction. It was possible, no doubt, to imagine a society in which wealth, in the sense of personal possessions and luxuries, should be evenly distributed, while power remained in the hands of a small privileged caste. But in practice such a society could not long remain stable. For if leisure and security were enjoyed by all alike, the great mass of human beings who are normally stupefied by poverty would become literate and would learn to think for themselves; and when once they had done this, they would sooner or later realize that the privileged minority had no function, and they would sweep it away. In the long run, a hierarchical society was only possible on a basis of poverty and ignorance.],
-  [- George Orwell (1984) via David Brin],
-  [===],
-  [Qu’on me donne six lignes écrites de la main du plus honnête homme, j’y trouverai de quoi le faire pendre.],
-  [- Richelieu],
-  [===],
-  [well-funded companies would love to disprove climate change to the satisfaction of the scientific community at large. So if scientists could be bought, these motherf\*\*\*ers would have already made it rain in nerd town, trust me.],
-  [- Jon Stewart],
-  [===],
-  [We must do away with the absolutely specious notion that everybody has to earn a living. It is a fact today that one in ten thousand of us can make a technological breakthrough capable of supporting all the rest. … We keep inventing jobs because of this false idea that everybody has to be employed at some kind of drudgery because, according to Malthusian-Darwinian theory, he must justify his right to exist. … The true business of people should be to go back to school and think about whatever it was they were thinking about before somebody came along and told them they had to earn a living.],
-  [- R. Buckminster Fuller 1970],
-  [===],
-  [Projections of climate change by the IPCC are deeply skeptical, and there is no attempt to hide the large uncertainty of climate forecasts. … Ironically, those labeled “skeptics” by the media are not in fact skeptical; they are, on the contrary, quite sure that there is no risk going forward. Meanwhile, those interested in treating the issue as an objective problem in risk assessment and management are labeled “alarmists”, a particularly infantile smear considering what is at stake.],
-  [- Kerry Emanuel],
-  [===],
-  [“Isn’t it sad that you can tell people that the ozone layer is being depleted, the forests are being cut down, the deserts are advancing steadily, that the greenhouse effect will raise the sea level 200 feet, that overpopulation is choking us, that pollution is killing us, that nuclear war may destroy us – and they yawn and settle back for a comfortable nap. But tell them that the Martians are landing, and they scream and run.”],
-  [- Isaac Asimov in The Secret of the Universe],
-  [===],
-  [Less semantic aggression might conduce to clarity all around.],
-  [-],
-  [- Russel Seitz],
-  [===],
-  [We don’t have time for a meeting of the flat-earth society.],
-  [– Barack Obama, on climate change],
-  [===],
-  [It is good to know there are unknowns. It is better to know when you know enough.],
-  [- Florifulgurator],
-  [===],
-  [Men argue; nature acts.],
-  [- Voltaire],
-  [===],
-  [If you think a journalist is asking the wrong question, don’t answer it – tell them what the right question is.],
-  [- a Planet3.0 reader, paraphrasing Ed Yong, citing Tom Stafford],
-  [===],
-  [The community of scientists has responsibilities to improve overall understanding of climate change and its impacts. Improvements will come from pursuing the research needed to understand climate change, working with stakeholders to identify relevant information, and conveying understanding clearly and accurately, both to decision makers and to the general public.],
-  [- American Geophysical Union statement “Human-induced climate change requires urgent action.” revised August 2013],
-  [===],
-  [I was… labelled as an advocate because… I measured something.],
-  [- ecologist Jeremy Jackson],
-  [===],
-  [Resolved, that none of us know, or care to know, anything about grasses, native or otherwise, outside the fact that for the present there are lots of them, the best on record, and we are after getting the most out of them while they last.],
-  [- Resolution of a Texas stockmen meeting ca. 1898 . (With a hat tip to Martin Gisser).],
-  [===],
-  [There is absolutely no inevitability as long as there is a willingness to contemplate what is happening.],
-  [- Marshall McLuhan],
-  [===],
-  [Aliens might be surprised to learn that in a cosmos with unlimited starlight, humans kill for energy buried in sand.],
-  [- Neil deGrasse Tyson],
-  [===],
-  [If you’re talking to someone who isn’t following the climate change discussion very closely, they may not understand the difference between technical and political difficulty. It does them no favors to talk about inevitability and the fall of civilization. They’re either going to think you’re nuts or they’re going to join you in despondency. We need to always reinforce the point that we can make life a lot easier for ourselves (and especially our children and grandchildren) if we just choose to start doing something about it.],
-  [- anonymous commenter at Planet3.0],
-  [===],
-  [Here is the IPCC message: We are as certain that humans are radically changing the planet’s climate as we are that tobacco causes cancer.],
-  [- Peter Gleick],
-  [===],
-  [We don’t need more dead clutter to entomb in landfills. We need more options.],
-  [- Bruce Sterling],
-  [===],
-  [The problems of the world cannot possibly be solved by skeptics or cynics, whose horizons are limited by the obvious realities. We need men who can dream of things that never were and ask, why not?],
-  [- John F. Kennedy],
-  [===],
-  [Hope is not a lottery ticket you can sit on the sofa and clutch, feeling lucky. It is an axe you break down doors with in an emergency. Hope should shove you out the door, because it will take everything you have to steer the future away from endless war, from the annihilation of the earth’s treasures and the grinding down of the poor and marginal… To hope is to give yourself to the future – and that commitment to the future is what makes the present inhabitable.],
-  [- Rebecca Solnit],
-  [===],
-  [We hold the future still timidly, but perceive it for the first time, as a function of our own action. Having seen it, are we to turn away from something that offends the very nature of our earliest desires, or is the recognition of our new powers sufficient to change those desires into the service of the future which they will have to bring about?.],
-  [- J. D. Bernal (1929) via David Grinspoon],
-  [===],
-  [“Global warming, huh? By pure coincidence every scientist was right”],
-  [- Homer Simpson (the cartoon character)],
-  [===],
-  [We do not share the view of many of our economics colleagues that growth will solve the economic problem, that narrow self-interest is the only dependable human motive, that technology will always find a substitute for any depleted resource, that the market can efficiently allocate all types of goods, that free markets always lead to an equilibrium balancing supply and demand, or that the laws of thermodynamics are irrelevant to economics.],
-  [- Herman Daly and Joshua Farley via Tom Murphy],
-  [===],
-  [Maybe we’ll be smacked by an asteroid we’re not looking at and it will offset the CO2 we’re not looking at.],
-  [- Bruce Sterling],
-  [===],
-  [Many people improving the environment think only in terms of the air they breathe in their hometown and the water in the aquifer under their hometown. My guess is very few are thinking centuries ahead or thousand of years ahead, but that’s what we have to do.],
-  [- Pete Seeger],
-  [===],
-  [I’m just hanging on like grim death to the simple truth that giving up is just lazy. We have a commitment to life, because that’s all there is, and that’s all about it.],
-  [- Susan Anderson],
-  [===],
-  [We need at least ten times more editors than we need auditors.],
-  [-  Willard],
-  [===],
-  [These arguments are not those of serious people.],
-  [-  Judge John G Hayburn II],
-  [===],
-  [Cynicism is a choice. Hope is a better choice.],
-  [- B H Obama],
-  [===],
-  [Peo­ple often ask me if I’m an advo­cate for some kind of pol­icy. Do I want every­body to have a car­bon tax, do I want every­one to drive a Prius, do I want every­body to have a renew­able energy standard? I have opin­ions about all of those things, but that’s not what I am advo­cat­ing for. What I’d like to have peo­ple do is have an intel­li­gent con­ver­sa­tion about the prob­lem of cli­mate change. … But what actu­ally hap­pens is, that all of those things get sub­sumed. We have these fake argu­ments – we have these argu­ments about tree rings in the 15th cen­tury, as if any­body … was going to make a pol­icy about what a tree said in the 15th cen­tury. It’s absurd.],
-  [-],
-  [===],
-  [Climate change is a collective problem demanding collective action the likes of which humanity has never actually accomplished. Yet it entered mainstream consciousness in the midst of an ideological war being waged on the very idea of the collective sphere.],
-  [- Naomi Klein],
-  [===],
-  [It’s not that the scientists are alarmists – it’s that the science is alarming.],
-  [- Bill McKibben],
-  [===],
-  [Wind is God’s way of balancing heat. Wind is the way you shift heat from areas where it’s hotter to areas where it’s cooler. That’s what wind is. Wouldn’t it be ironic if in the interest of global warming we mandated massive switches to energy, which is a finite resource, which slows the winds down, which causes the temperature to go up? Now, I’m not saying that’s going to happen, Mr. Chairman, but that is definitely something on the massive scale. I mean, it does make some sense. You stop something, you can’t transfer that heat, and the heat goes up. It’s just something to think about.],
-  [- Federal Representative Joe Barton, Republican of Texas, with a tip of the hat to Mr. Coke Dilworth, yellow dog Democrat of Austin TX],
-  [===],
-  [Good people are not those who lack flaws, the brave are not those who feel no fear, and the generous are not those who never feel selfish. Extraordinary people are not extraordinary because they are invulnerable to unconscious biases. They are extraordinary because they choose to do something about it.],
-  [- Shankar Vedantam via Maria Popova],
-  [===],
-  [Of all the dangers we face, from climate chaos to permanent war, none is so great as [the] deadening of our response.],
-  [- Joanna Macy (h/t Martin Gisser and Dan Olner – follow that link!)],
-  [===],
-  [What do we most need to do to save our world? What we most need to do is to hear within us the sounds of the Earth crying.],
-  [- Thich Nhat Hanh],
-  [===],
-  [Since the start of the industrial revolution, mankind has been burning fossil fuel (coal, oil, etc.) and adding its carbon to the atmosphere as carbon dioxide. In 50 years or so this process, says Director Roger Revelle of the Scripps Institution of Oceanography, may have a violent effect on the earth’s climate Dr. Revelle has not reached the stage of warning against this catastrophe, but he and other geophysicists intend to keep watching and recording. During the International Geophysical Year (1957-58), teams of scientists will take inventory of the earth’s CO2 and observe how it shifts between air and sea. They will try to find out whether the CO2 blanket has been growing thicker, and what the effect has been. When all their data have been studied, they may be able to predict whether man’s factory chimneys and auto exhausts will eventually cause salt water to flow in the streets of New York and London.],
-  [- Time Magazine, 1956 (via Simon Donner)],
-),
-  insert-map: (:),
-  inline-pq: pull-quote([” revised August 2013   ===  I was… labelled as an advocate because… I measured something.], [Michael Tobis]),
-  inline-pq-idx: 62,
-  word-count: 2579,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-}
-
-{
-  #standard-article(
-  title: [Testing, not studying, makes for strong long-term memories],
-  author: [Ed Yong],
-  source-name: [Not Exactly Rocket Science (Ed Yong archive)],
-  images: (),
-  paragraphs: (
-  [It’s a familiar scene – the wee hours of the morning are ticking away and your head is bent over a stack of notes, desperately trying to cram as much knowledge into your head before the test in the morning.],
-  [Because of the way our education system works, this process of hard studying has become almost synonymous with the act of learning, and the inevitable tests and exams that bookend this ordeal merely assess how much information has stuck.],
-  [But a new study reveals that the tests themselves do more good for our ability to learn that the many hours before them spent relentlessly poring over notes and textbook. The act of repeatedly retrieving and using learned information drives memories into long-term storage, while repetitive revision produced almost no benefits.],
-  [Studying vs. testing],
-  [To separate the effects of studying and testing on memory, Jeffrey Karpicke from Purdue University and Henry Roediger III from Washington University in St Louis set a group of local university students to a simple learning exercise.],
-  [At first, all of them were asked to study 40 pairs of English words and their Swahili equivalents, such as boat and mashua and were then tested on each pair to see how many they could remember. The students were then split into four groups who were put through three more rounds of studying and testing but with important differences.],
-  [For Group 1, the three further rounds were exactly like the first. For Group 2, any recalled pair of words were dropped from the study lists but were still tested. Group 3 faced the opposite condition – their correct answers were dropped from the subsequent tests but they were still asked to study them. And finally, Group 4’s correct answers were omitted both from later study sessions and later tests.],
-  [This fourth situation most closely mirrors what conventional wisdom tells us to do. Once something is learned, that’s the end of the story and our attentions should focus on trickier facts that haven’t been so amenable to memory.],
-  [After four rounds, the students had done an almost perfect job. Almost all of them remembered almost all of the 40 word pairs and all four groups picked up the words at the same rate.],
-  [Testing times],
-  [The successful students were sent away, but Karpicke and Roediger reconvened them one week later for a final test of their rudimentary Swahili vocabularies. All the students from the four groups had predicted that in a week’s time, they would remember about half of the words they had learned. But the reality was very different – two of the groups achieved much higher scores than the others.],
-  [Repeated testing was the critical factor. The first two groups were repeatedly tested on all the word pairs regardless of whether they successfully remembered them or not. A week later, they still remembered 80% of the words they had learned and Group 2, who didn’t have to study words they correctly remembered did just as well as Group 1, who had to pore over the full lists.],
-  [Students in the last two groups were not tested on words once they had remembered them correctly once, and they suffered for it. After a week, they remembered only about a third of the 40 pairs. Even Group 3, who repeatedly studied every pair in every study period fared much worse in the long run than Group 2, who studied selectively but were tested comprehensively.],
-  [The study’s results are as amazing as they are counter-intuitive. They showed that where long-term memory is concerned, the act of repeated studying brings essentially no benefits, especially once a piece of information can already be dredged up from memory. Repeated testing, on the other hand, is of paramount importance, even for facts that can already be successfully recalled.],
-  [If this seems like an obvious conclusion in retrospect, consider the fact that the students themselves were unaware of it. All of them predicted that they would score about 50% in the final test where in fact, the average scores were either substantially higher or lower.],
-  [Indeed, surveys have shown that very few students use self-testing as a strategy for revision. When they do, it’s more to work out what they have or have not learned rather than as an active part of the process. And once they have successfully memorised something, they tend to drop it from further practice.],
-  [Karpicke’s and Roediger’s study makes a case for tests and exams to move away from their crude use as assessment tools. Currently, they are stressful and high-stakes affairs, deployed at the end of academic terms to mark an endpoint of the learning process. Perhaps, if they were used in a more continuous and informal capacity, they could actually contribute too.],
-  [Reference: Karpicke, J. D., Roediger, H. L. (2008). The Critical Importance of Retrieval for Learning. Science, 319 (5865), 966-968. DOI: 10.1126/science.1152408],
-),
-  insert-map: (:),
-  word-count: 821,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-  #pull-quote([The first two groups were repeatedly tested on all the word pairs regardless of whether they successfully remembered them or not.], [Ed Yong])
-
-}
-
-{
-  #standard-article(
-  title: ['Forever Chemicals' Causing Faster Aging For Men in Their 50s, Study Finds],
+  title: [Nicole 'Snooki' Polizzi Urges Cervical Cancer Screening After Diagnosis],
   author: [Healthline],
   source-name: [Healthline],
   images: (),
   paragraphs: (
-  [Research has found that “forever chemicals” may lead to faster aging in middle-aged men. Image Credit: Gabriel Mello/Getty Images],
-  [A new study suggests that certain “forever chemicals” may quietly accelerate biological aging at the cellular level.],
-  [Researchers found that higher levels of specific PFAS were linked to several years of accelerated aging, especially among middle-aged men.],
-  [The findings raise new concerns about long-term health risks, given the widespread PFAS exposure in the United States.],
-  [“Forever chemicals” are linked to accelerated aging at the cellular level, particularly among middle-aged men, a new study suggests.],
-  [The findings add to growing concerns about widespread exposure to PFAS chemicals.],
-  [Per- and polyfluoroalkyl substances (PFAS) are a class of synthetic compounds commonly known as “forever chemicals” that are found in a wide range of consumer and industrial products, as well as nearly half of United States’ drinking water .],
-  [PFAS are used in products such as nonstick cookware , waterproof clothing, stain-resistant fabrics, and some firefighting foams. This is because they repel water, oil, and heat, making materials more durable and resistant to damage. The nickname reflects the fact that these chemicals break down very slowly and can linger for years in the environment and in human bodies.],
-  [Prior research has linked “forever chemicals” to numerous adverse health outcomes , including elevated cholesterol levels, childhood obesity , and an increased risk of certain cancers.],
-  [Now, new evidence suggests they are also linked to signs of accelerated epigenetic aging , according to a new study published in the journal Frontiers in Aging .],
-  [Epigenetic aging estimates biological age at a cellular level based on chemical markers found on DNA. Researchers also found that specific PFAS compounds affected individuals differently. While the association was present across the broader study population, it was most pronounced among middle-aged men.],
-  [“While the study does not prove causation, it suggests that PFAS exposure may be linked to molecular changes related to aging and long-term health risk,” Xiangwei Li , PhD, professor of epidemiology at the Shanghai Jiao Tong University School of Medicine and senior author of the research, told Healthline.],
-  [While most research on forever chemicals has focused on two compounds, PFOS and PFOA, those chemicals are now considered “legacy” PFAS because they were largely phased out in the United States in the early 2000s.],
-  [Researchers are now shifting their focus to other PFAS compounds that, like legacy chemicals, are also persistent in the environment and potentially toxic, but less well studied. This study examined two additional PFAS compounds: perfluorononanoic acid (PFNA) and perfluorosulfonic acids (PFSA).],
-  [The findings track with prior research in this area, said  Andres Cardenas , PhD, assistant professor of epidemiology and population health at Stanford University. Cardenas wasn’t involved in the research.],
-  [“Our group looked at exactly this data and question before in 2025. Similarly, we found strong evidence that PFNA accelerated multiple epigenetic clocks in males,” he said.],
-  [Forever chemicals add years to epigenetic ‘clocks’],
-  [Li and his team analyzed data from 326 US adults ages 50 and older who participated in the 1999-2000 National Health and Nutrition Examination Survey (NHANES) . The average age of the cohort was about 67, and the group was nearly evenly split between men (51.5%) and women (48.5%).],
-  [Blood samples were tested for several PFAS chemicals, including PFNA and PFSA, which were detected in more than 95% of participants.],
-  [The team then examined epigenetic “clocks,” tools that estimate biological age based on chemical markers attached to DNA. Specifically, they measure DNA methylation patterns, which signal how fast the body is aging at a molecular level.],
-  [“Unlike chronological age , epigenetic age keeps track of the molecular ’wear and tear’ of genomic control,” Cardenas said.],
-  [Different epigenetic clocks have been developed over time to capture distinct biological processes linked to aging, such as inflammation and mortality risk.],
-  [The GrimAge clock , for example, is designed to predict risk of death and age-related disease, incorporating signals tied to inflammation and cardiovascular risk. LinAge, on the other hand, is linked more closely to life span prediction and fat metabolism.],
-  [Using these clocks, the researchers calculated whether a person’s biological age appeared older or younger than their actual years and tested whether higher PFAS levels were associated with faster biological aging.],
-  [The researchers found that higher levels of PFNA were associated with 2 to 4 years of accelerated aging, as measured by GrimAge. This association was strongest in adults ages 50 to 64 and in men.],
-  [PFSA showed a distinct association with LinAge-accelerated aging, suggesting that different PFAS chemicals may influence aging via distinct biological pathways.],
-  [The study does not explain why this association is strongest in middle-aged men, but Li has some hypotheses.],
-  [“Midlife is often a period when cardiometabolic function, inflammation, and stress-response systems begin to change more rapidly,” he said. “Together, these factors may make aging-related molecular pathways more responsive — or more vulnerable — to environmental stressors in midlife.”],
-  [Men may be more susceptible to the deleterious effects of PFAS than women due to biological differences such as hormones, body composition, and metabolism.],
-  [While the study cannot prove these chemicals cause faster aging, it suggests that certain PFAS may be linked to measurable changes in the body’s biological aging process, particularly during midlife.],
-  [Can you prevent or limit your exposure to PFAS?],
-  [Nearly all Americans have some level of PFAS in their blood. However, the levels of some specific chemicals, such as the legacy chemicals PFOS and PFOA, have declined significantly over time .],
-  [Since 2000, blood PFOS levels have declined by more than 85% and PFOA levels by more than 70%.],
-  [“Complete avoidance of PFAS is unrealistic, but exposure can be reduced,” said Li.],
-  [Since drinking water can be a source of forever chemicals, using certain water filters can help reduce exposure. Reverse osmosis and granular activated carbon filters can help, but effectiveness will vary.],
-  [“Drinking water and diet are likely major exposure routes for the majority of the population. Checking your water quality report from the municipal source or city is helpful in making decisions about potential filters to use if you live in an area affected by PFAS contamination,” said Cardenas.],
-  [Both the United States Geological Survey and the Environmental Working Group , a nonprofit organization, provide interactive maps showing PFAS contamination in groundwater.],
-  [Additional ways to limit “forever chemical” exposure include:],
-  [Swap out nonstick cookware (especially old scratched pans) for steel or glass.],
-  [Eat less takeout and fast food (PFAS are commonly found in wrappers and containers)],
-  [Avoid waterproof and stain-resistant clothing, furniture, and upholstery.],
-  [“In general, choosing greener consumer products and PFAS-free products, such as cookware or consumer products, is a good step,” Cardenas said.],
+  [Nicole “Snooki” Polizzi has shared her recent cervical cancer diagnosis on her social media accounts. Image credit: Dimitrios Kambouris/Getty Images],
+  [Nicole “Snooki” Polizzi has shared her recent cervical cancer diagnosis on her social media.],
+  [She emphasized the importance of routine Pap smears and early detection.],
+  [Cervical cancer is largely preventable through the HPV vaccine.],
+  [Nicole “Snooki” Polizzi of “Jersey Shore” fame recently revealed that she has been diagnosed with stage 1 cervical cancer.],
+  [On February 20, Polizzi, 38, posted on TikTok about the cone biopsy she had after a routine pap smear.],
+  [“It came back stage 1 cervical cancer called adenocarcinoma,” the reality TV star said.],
+  [“Obviously not the news I’ve been hoping for, but also not the worst news just because they caught it so early. Thank freaking God!”],
+  [The American Cancer Society (ACS) estimates that around 13,290 new cases of cervical cancer will be diagnosed in 2026.],
+  [Cervical cancer is most frequently diagnosed between the ages of 35 and 64. Here’s what you need to know about getting screened.],
+  [Snooki encourages women to get Pap smears],
+  [In her TikTok videos, Polizzi also stressed the importance of all females going in to get their routine pap smears (cervical screenings).],
+  [“I’m 38 years old, and I’ve been struggling with abnormal pap smears for three or four years now, and now look at me,” she said.],
+  [“Instead of putting it off because I didn’t want to go, because I was hurt and scared, I just went and did it. And it was there, cancer is in there. But it’s stage 1, and it’s curable.”],
+  [She continued to tell people to get their appointments done. “Once you go to stage 2, then you have to do chemo… nobody wants to do that! It’s scary. So get your appointments done,” she encouraged.],
+  [Diana Pearre , MD, board certified gynecologic oncologist at The Roy and Patricia Disney Family Cancer Center at Providence Saint Joseph Medical Center in Burbank, CA, agreed.],
+  [“It is so important to get pap smears (cervical cancer screenings),” she told Healthline. “They allow us to screen women for HPV (the virus that causes cervical cancer) and identify cells that can become precancerous. In doing so, we can prevent many cases of cervical cancer before they transform to cancers.”],
+  [Polizzi said that she was being transferred to an oncologist and would undergo a PET scan to be sure the cancer has not spread to other parts of her body.],
+  [“After that, I’m gonna probably get the hysterectomy ,” Polizzi added. She also noted that her doctor gave her the alternative of chemotherapy and radiation as treatment.],
+  [“Obviously, I think the smart choice here is the hysterectomy. I’ll still keep my ovaries, which is a good sign. But yeah, gotta get the cervix and uterus out. It all depends on the PET scan,” she said.],
+  [“I appreciate all of the love. Everything’s going to be fine. I’m going to tackle this and get it done,” Polizzi told her followers. “I gotta keep attacking this, and everything’s gonna be great.”],
+  [Cervical cancer largely preventable with HPV vaccine],
+  [While cervical cancer is common, it is also largely preventable.],
+  [According to the National Cancer Institute (NCI) , 70% of cervical cancers are the result of two high-risk types of HPV.],
+  [Nearly all cases of cervical cancer are due to long-lasting and persistent HPV infections.],
+  [However, the HPV vaccine is a safe way to prevent the HPV infection and cervical cancer. The current recommendation is that anyone ages 11 to 26 should have the HPV vaccine.],
+  [“It is so important to get this vaccine. Giving children this vaccine (boys and girls alike) can prevent HPV related cancers (cervical, head and neck , vulvar , vaginal ) before the onset of sexual debut.  It can also help women who already have cervical dysplasia , lowering the risk of severe dysplasia recurrence,” Pearre said.],
+  [The vaccine dose schedule depends on your age when you receive it.],
+  [The vaccine is not recommended for everyone over 26, but you can speak with your healthcare professional to see if it is right for you.],
+  [“I recommend anyone ages 9 to 46 to consider getting the HPV vaccine if they have not done so,” Pearre said. “There are little to no side effects. It does not affect fertility, age at sexual debut, \[or\] menstrual patterns. It is one of the few vaccines (the other being the hepatitis vaccine ) that can prevent cancer development.”],
 ),
   insert-map: (:),
-  word-count: 1110,
+  word-count: 741,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -417,126 +116,169 @@ numerous civilizations are written the pathetic words: "Too late".],
 
 {
   #standard-article(
-  title: [On the Essentialness of the Inessential (or, The Resto Rant)],
-  author: [Michael Tobis],
-  source-name: [Only in it for the Gold (blog, climate)],
+  title: [Ozempic, Wegovy May Help Reverse Damage Caused by Osteoarthritis],
+  author: [Healthline],
+  source-name: [Healthline],
   images: (),
   paragraphs: (
-  [style="text-align: left;"\> 
- The shutdown taught us that if rich people don't indulge themselves, poor people starve. 
- 
- This is obviously a design flaw in the economy.],
-  [(I wrote this at the peak of the shutdown. I should have posted it then, but the lesson still holds.)],
-  [style="margin: 0px; white-space: pre-wrap;"\>The economic lesson of the pandemic is this: the inessential has become essential . I’d like to consider this as a design flaw. How can we repair our society so that luxuries for those of us with more access to capital are not necessities for those with less?],
-  [Here’s the paradox: for rich people expensive restaurants are a luxury, but for society as a whole, they and their like have become necessities! The same can be said for other luxuries; travel and furnishings come to mind. But let’s consider restaurants.],
-  [THE REQUIEM],
-  [Since I get most of my news (and these days, my daily fix of the Spelling Bee game) from the New York Times, I have been offered up a lot of requiems for restaurants from underemployed restaurant critics.],
-  [Here’s a typical example; well-written and fluent, I suppose, but wholly unsurprising and verging on predictable:],
-  [https:\/\/www.nytimes.com/2020/12/19/opinion/sunday/restaurants-closing-covid.htm l],
-  [style="margin: 0px; white-space: pre-wrap;"\>],
-  [style="margin: 0px; white-space: pre-wrap;"\>The Greatest Restaurant City in America Is Hurting More Than You Know],
-  [style="margin: 0px; white-space: pre-wrap;"\>
-Subtitled “The coronavirus has come for the trattoria you love.” it’s an op-ed about the loss of restaurants in New York City.],
-  [style="margin: 0px; white-space: pre-wrap;"\>],
-  [style="border: none; margin: 0px 0px 0px 40px; padding: 0px;"\>],
-  [style="margin: 0px; text-align: left; white-space: pre-wrap;"\>Away from the city or cloistered in our apartments or hesitant to visit communal spaces until the pandemic ebbs, we won’t know or register that a beloved trattoria is gone until some safer day when we try to make a reservation and learn that there’s nothing at 8 p.m. or even at 5:30 p.m. because there’s nothing, period. Until we walk down the street where sated brunch-goers once spilled out of our favorite bistro and see an empty, still patch of sidewalk instead.],
-  [style="margin: 0px; white-space: pre-wrap;"\>],
-  [style="margin: 0px; white-space: pre-wrap;"\> NECESSITIES VERSUS LUXURIES],
-  [style="margin: 0px; white-space: pre-wrap;"\>],
-  [style="margin: 0px; white-space: pre-wrap;"\>Restaurants provide a mix of services of luxury and necessity.],
-  [On the one hand, everyone must eat; few of us want to cook every meal we eat, and many of us lack the time or the skills. Outsourcing cooking and the ancillary support activities (shopping, dishwashing) outsources a necessary service.],
-  [style="margin: 0px; white-space: pre-wrap;"\>
-On the other hand, a restaurant cannot survive without providing palatability. The customers can always take their custom to a comparably priced restaurant with tastier food. Between acceptable palatability and extraordinary culinary delight there lies a vast range, and it is the most extraordinary experiences that are no longer available that we rue the most.],
-  [This complicates my case a bit; each individual has their own standards for minimal palatablity. But surely for most people it doesn’t cost more than say \$US 30 to prepare and present an adequately palatable meal, so for purposes of clarity, lets say that anything costing more than \$30 to the diner constitutes a luxury service.],
-  [style="margin: 0px; white-space: pre-wrap;"\>],
-  [style="margin: 0px; white-space: pre-wrap;"\> MOURNING THE LUXURIES],
-  [Let’s start with two obvious observations],
-  [1) Nobody \*needs\* a \$200 meal.
-2) Few people would refuse a gift of, say, a gift of a pair of \$200 meals at their preferred restaurant with their preferred companion.],
-  [style="margin: 0px; white-space: pre-wrap;"\>],
-  [style="margin: 0px; white-space: pre-wrap;"\>As \$200 restaurants go away, there is definitely a real loss. But what does that loss mean in a time of emergency?],
-  [style="margin: 0px; white-space: pre-wrap;"\>
- DEFENDING THE LUXURIES
- 
-The restaurant requiem genre is not about whether it will remain possible to pick up a soup and a sandwich. That doesn’t seem to be at risk. What is at risk, rather, is the unique personal vision of chefs and restaurateurs. And of course, any of us who can afford this luxury will mourn the loss of such opportunities.],
-  [style="margin: 0px; white-space: pre-wrap;"\>But the author is presumably aware of how much struggle and fear there is in the world today, and how decadent bemoaning the loss of such luxuries appears in this context. “First world problems” and all. So a common refrain in the Restaurant Requiem is to bemoan the fate of the (mostly underpaid and frequently exploited) people who manage to glean a meager living from the industry.],
-  [style="margin: 0px; white-space: pre-wrap;"\>],
-  [style="border: none; margin: 0px 0px 0px 40px; padding: 0px; text-align: left;"\>],
-  [style="margin: 0px; white-space: pre-wrap;"\>And it’s not just the owners and managers and cooks and bartenders and servers and dishwashers who are losing — though their pain, make no mistake, is most acute. It’s all of us, and we have absolutely no idea how much we’ve lost.],
-  [style="margin: 0px; white-space: pre-wrap;"\>],
-  [style="margin: 0px; white-space: pre-wrap;"\>...],
-  [style="margin: 0px; white-space: pre-wrap;"\>],
-  [style="margin: 0px; white-space: pre-wrap;"\>The tragedy is national of course, and it has had profound effects on the American economy because, as Matt Goulding  noted in The Atlantic , the restaurant industry “generates \$900 billion a year and employs 15 million people.” He meant in normal times. That’s what it  did  generate; that’s what it  did  employ. Not now.],
-  [style="margin: 0px; white-space: pre-wrap;"\>],
-  [style="margin: 0px; white-space: pre-wrap;"\>...],
-  [style="margin: 0px; white-space: pre-wrap;"\>],
-  [style="border: none; margin: 0px 0px 0px 40px; padding: 0px; text-align: left;"\>],
-  [style="margin: 0px; white-space: pre-wrap;"\>“People don’t understand how large a ripple effect on the economy one 30-seat restaurant can have,” said Gabriel Stulman, who  has had to close two  of his nine Manhattan restaurants. What dies along with a restaurant is money that went to a landlord, to food producers, to food deliverers, to linen suppliers, to appliance repair workers. “For most people in our industry, 90 cents of every dollar that we make goes back into the economy in one form or another,” Stulman told me.],
-  [style="margin: 0px; white-space: pre-wrap;"\>],
-  [style="margin: 0px; white-space: pre-wrap;"\>This sort of talk is deemed as necessary but it’s also deemed as sufficient. My luxury is not decadent. My luxury “provides employment for less fortunate people” and “stimulates the economy”.],
-  [style="margin: 0px; white-space: pre-wrap;"\>],
-  [style="margin: 0px; white-space: pre-wrap;"\>And there’s the end of it. Everybody knows that full employment is the goal of society, and that to attain it the economy must be stimulated. Not the ‘droids you’re looking for. Nothing more to see here.],
-  [style="margin: 0px; white-space: pre-wrap;"\> THE NECESSITY OF LUXURY],
-  [style="margin: 0px; white-space: pre-wrap;"\>],
-  [style="margin: 0px; white-space: pre-wrap;"\>There is a Jedi mind trick happening here, and to see through it we have to consider what is going on at the whole systems level.],
-  [style="margin: 0px; white-space: pre-wrap;"\>],
-  [style="margin: 0px; white-space: pre-wrap;"\>In past emergencies, society was urged to “tighten its belt”, to bravely accept a certain level of privation for the benefit of society as a whole. This changed notably in recent decades.],
-  [After the terrorist attacks of September 11, 2001, when the economy was reeling, President G W Bush encouraged everyone to keep spending.],
-  [style="margin: 0px; white-space: pre-wrap;"\>],
-  [style="border: none; margin: 0px 0px 0px 40px; padding: 0px;"\>],
-  [style="margin: 0px; text-align: left; white-space: pre-wrap;"\>“When they struck, they wanted to create an atmosphere of fear. ... Do your business around the country.  Fly and enjoy America's great destination spots.  Get down to Disney World in Florida.  Take your families and enjoy life, the way we want it to be enjoyed.”],
-  [style="margin: 0px; white-space: pre-wrap;"\>],
-  [style="margin: 0px; white-space: pre-wrap;"\> https:\/\/georgewbush-whitehouse.archives.gov/news/releases/2001/09/20010927-1.html],
-  [( see also https:\/\/press.princeton.edu/books/paperback/9780691159584/beyond-our-means],
-  [style="margin: 0px; white-space: pre-wrap;"\> https:\/\/www.nytimes.com/2012/01/15/business/consumer-spending-as-an-american-virtue.html )],
-  [style="margin: 0px; white-space: pre-wrap;"\>],
-  [style="margin: 0px; white-space: pre-wrap;"\>TIME magazine commented:],
-  [style="margin: 0px; white-space: pre-wrap;"\>],
-  [style="border: none; margin: 0px 0px 0px 40px; padding: 0px;"\>],
-  [style="margin: 0px; text-align: left; white-space: pre-wrap;"\>Taken on its own, this wasn't such a horrible sentiment. But Andrew Bacevich has made a convincing case that it was part of a broader pattern of encouraging financial irresponsibility. "Bush seems to have calculated — cynically but correctly — that prolonging the credit-fueled consumer binge could help keep complaints about his performance as Commander in Chief from becoming more than a nuisance," Bacevich wrote in the Washington  Post  in October.],
-  [style="margin: 0px; white-space: pre-wrap;"\>
- http:\/\/content.time.com/time/specials/packages/article/0,28804,1872229\_1872230\_1872236,00.html],
-  [style="margin: 0px; white-space: pre-wrap;"\>],
-  [style="margin: 0px; white-space: pre-wrap;"\> A SOCIETY ADDICTED TO INDULGENCE],
-  [style="margin: 0px; white-space: pre-wrap;"\>],
-  [style="margin: 0px; white-space: pre-wrap;"\>What’s happened in living history is that we have developed a system that itself is addicted to luxury . 
- 
-If wealthy people stop indulging their whims, poor people starve. 
- 
-It seems to me likely that this wasn’t the case in the past; luxury consisted of a small enough fraction of the economy that the rise of fall of particular luxury sectors had modest effect on society as whole. Regardless of whether my surmise is true, we do now have a situation in which many people of modest means coping with necessity are dependent on fewer wealthy people indulging expensive whims.],
-  [One might naively anticipate that the less wealthy person, with less demand upon them to serve the whims of the wealthy, would be blessed with additional leisure.],
-  [style="margin: 0px; white-space: pre-wrap;"\>],
-  [style="margin: 0px; white-space: pre-wrap;"\>What’s missing, of course, is the capacity for that person, now underemployed, to allocate resources.],
-  [In the present emergency, the resources are still there, though. The essential sectors, farming and shipping, are functioning at only slightly reduced capacity. That poor people are going hungry because rich people are demanding fewer plates of pappardelle with sea urchin is not a law of nature.],
-  [style="margin: 0px; white-space: pre-wrap;"\>],
-  [style="margin: 0px; white-space: pre-wrap;"\>It strikes me as a design failure, a deep flaw in social organization. The production of essentials is solid. But the poor person is denied a way to allocate that production because of the absence of demand for supposedly "inessential" services. So we are left encouraging a revival of demand for luxuries, for travel, for restaurants, for renovations. This is excused not because we miss those inessential indulgences but because poor people miss the essential employment that they "provide".],
-  [style="margin: 0px; white-space: pre-wrap;"\>],
-  [style="margin: 0px; white-space: pre-wrap;"\>One might prefer a world in which, when expensive whims were less indulged, there would be more to share among everyone else. That the “inessential” has become “essential” is a conundrum that needs some serious thought. It ties into questions about the nature of money, of labour, of wealth, and most of all of "growth".],
-  [style="margin: 0px; white-space: pre-wrap;"\>],
-  [style="margin: 0px; white-space: pre-wrap;"\>Some will argue that all of this is an inevitable necessity, that it's built into the human condition, but I don't think they have provided compelling arguments. I doubt that this bizarre paradox that we are living is even stable, never mind inevitable.],
-  [style="margin: 0px; white-space: pre-wrap;"\>],
+  [A new study found that semaglutide benefits extend beyond weight loss by easing osteoarthritis symptoms. Tatsiana Volkava/Getty Images],
+  [A new study reports that GLP-1 semaglutide medications may help reverse the effects of osteoarthritis in the joints.],
+  [The researchers say the drugs accomplish this by repairing tissue damage by reprogramming cells that maintain healthy cartilage.],
+  [Experts say weight loss is the most effective strategy to combat osteoarthritis, but regular exercise and a healthy diet can also help.],
+  [Researchers report that a specific type of GLP-1 weight loss medication may help reverse tissue damage in people with osteoarthritis.],
+  [A new study published on March 3 in Cell Metabolism found that GLP-1 drugs like Ozempic and Wegovy, which contain the active ingredient semaglutide, can help ease the effects of osteoarthritis on joints.],
+  [The findings suggest that the benefits go beyond weight loss , which, in itself, can ease osteoarthritis by reducing pressure on joints.],
+  [The researchers say that semaglutide drugs help repair tissue damage by reprogramming the metabolism of cells that synthesize and maintain healthy cartilage. This allows cartilage to generate more energy.],
+  [“This work not only highlights the potential off-target effect of semaglutide as an effective drug to treat metabolic osteoarthritis but also reveals a weight loss-independent repair mechanism that targets metabolic pathways and mediators essential to cartilage repair under osteoarthritis conditions,” the study authors wrote.],
+  [“This may lead to new strategies to develop disease-modifying therapies for osteoarthritis,” they continued.],
+  [Matthew Baker , MD, an assistant professor of medicine in immunology and rheumatology at Stanford University in California, said the study, although limited in size and scope, does provide a hypothesis for future breakthroughs. Baker wasn’t involved in the study.],
+  [“Most current therapies target symptoms such as pain rather than the underlying structural drivers of disease,” Baker told Healthline. “As a result, truly disease-modifying osteoarthritis drugs have remained elusive despite decades of research.”],
+  [How weight loss drugs can ease osteoarthritis],
+  [There are two basic types of the new generation of weight loss medications , known as GLP-1 drugs, that are prescribed for weight loss and type 2 diabetes treatment.],
+  [One group contains the active ingredient tirzepatide . The medications sold under the brand names Mounjaro and Zepbound are among them.],
+  [The other group contains the active ingredient semaglutide . The medications sold under the brand names Ozempic and Wegovy are among them.],
+  [Both types of GLP-1 drugs have proven to be  effective  in helping people lose weight by using mechanisms that help suppress appetite.],
+  [Losing weight is considered one of the best ways to help reduce the symptoms of osteoarthritis, especially in the knee joints. It works by reducing pressure on joint cartilage and lowering inflammation.],
+  [In their new study, researchers said they wanted to determine whether the reduction in osteoarthritis symptoms with GLP-1 drugs extended beyond weight loss.],
+  [They first experimented with an animal model, examining obese mice with osteoarthritis. Some of the mice were treated with semaglutide drugs while others weren’t. The researchers reported that both groups lost similar amounts of weight, but the semaglutide mice received better cartilage protection.],
+  [The results were due to a complicated metabolic pathway that affects how various cells produce energy.],
+  [The researchers then studied 20 people ages 50 to 75 with obesity and osteoarthritis. Some of this group, which comprised seven males and 13 females, received semaglutide medications while others did not.],
+  [The researchers reported that at the end of a 24-week treatment period, subjects who received semaglutide had significant improvements in knee joint function.],
+  [They noted that MRI analyses revealed thicker cartilage and recent cartilage growth in the inner joint areas among the semaglutide group.],
+  [Bert Mandelbaum , MD, a sports medicine specialist, orthopedic surgeon, and co-director of the Regenerative Orthobiologic Center at Cedars-Sinai Orthopedics in Los Angeles, said it’s possible that healthier cells provide better oxidation and can help preserve healthy cartilage. Mandelbaum wasn’t involved in the study.],
+  [“We’re learning more as we go,” Mandelbaum told Healthline. “It’s like trying to put together a big puzzle.”],
+  [“Rather than regenerating cartilage de novo, semaglutide likely stabilizes cartilage and enables limited repair by improving the metabolic environment within the joint,” said Baker.],
+  [What to know about osteoarthritis],
+  [Osteoarthritis  is the most common type of arthritis, affecting nearly 33 million adults in the United States.],
+  [It is a degenerative condition that causes inflammation in the joints. Some of the common symptoms include:],
+  [pain or stiffness in the joints],
+  [loss of flexibility],
+  [reduced range of motion],
+  [tenderness when pressing on an affected area],
+  [grating or clicking sounds when joints are moved],
+  [bone spurs],
+  [Osteoarthritis is caused by gradual joint and cartilage damage. Risk factors include:],
+  [genetics],
+  [previous injuries],
+  [being over the age of 50],
+  [menopause],
+  [having an occupation that requires kneeling, climbing, or heavy lifting],
+  [obesity],
+  [Mandelbaum and Baker agreed that weight is the number one factor in the development and progression of osteoarthritis.],
+  [“There is no question that there is an association between osteoarthritis and body weight,” said Mandelbaum.],
+  [“Excess body weight is one of the strongest modifiable risk factors for osteoarthritis , particularly for knee osteoarthritis ,” said Baker. “Higher body mass increases mechanical load across joints, accelerating cartilage wear with every step.”],
+  [“Obesity contributes to systemic inflammation and metabolic dysfunction that can directly affect joint tissues, even in non-weight-bearing joints,” he added.],
+  [Baker noted that osteoarthritis can be difficult to treat.],
+  [“Osteoarthritis is difficult to treat because cartilage has very limited intrinsic healing capacity due to its avascular, low-cellularity structure,” he said. “Osteoarthritis is also biologically heterogeneous, involving cartilage, bone, synovium, nerves, and systemic metabolic factors rather than a single disease pathway.”],
+  [Mandelbaum said there are lifestyle factors people can adopt to help lower the risk of osteoarthritis as well as its painful effects. They include:],
+  [maintaining a healthy body weight],
+  [exercising regularly],
+  [adopting a plant-based diet such as the  Mediterranean diet],
+  [limiting alcohol consumption],
+  [Baker agreed there are strategies to help reduce risks.],
+  [“Maintaining a healthy weight or preventing further weight gain is one of the most effective ways to reduce osteoarthritis risk, particularly for the knees,” he said.],
+  [“Regular physical activity, including low impact aerobic exercise and strength training , helps preserve joint function, improve biomechanics, and reduce pain,” he added. “Preventing joint injuries through balance training, fall prevention , and appropriate footwear is especially important in older adults.”],
+  [“Managing metabolic health conditions such as diabetes and insulin resistance may also reduce osteoarthritis risk by limiting systemic inflammatory and metabolic stress on joint tissues,” Baker said.],
+  [Beyond weight loss: Other benefits of GLP-1s],
+  [The latest research is not the first to report that GLP-1 drugs have benefits beyond weight loss.],
+  [In a  2023 study , researchers said that GLP-1 drugs’ anti-inflammatory properties may help reduce cancer risks.],
+  [In 2024, researchers  reported  that GLP-1 medications may help ease rheumatoid arthritis symptoms .],
+  [In 2025, researchers  reported  that GLP-1 medications can reduce the risk of sudden death and hospitalization in people with a common type of heart failure.],
+  [In another 2025 study , GLP-1 drugs were found to be beneficial in lowering the risk of heart disease and stroke in people with type 2 diabetes.],
+  [In February 2026, researchers  concluded  that weight loss drugs containing tirzepatide may help lower the risk of eye disease in people with type 2 diabetes.],
 ),
   insert-map: (:),
-  word-count: 1772,
+  word-count: 1207,
   edited-for-length: false,
   debug-mode: false,
 )
+
+}
+
+{
+  #standard-article(
+  title: [GLP-1s Combined With Healthy Habits May Improve Heart Health in Diabetes],
+  author: [Healthline],
+  source-name: [Healthline],
+  images: (),
+  paragraphs: (
+  [Combining GLP-1 drugs with a healthy lifestyle may reduce cardiovascular risks in people with diabetes. Image Credit: Witthaya Prasongsin/Getty Images],
+  [A recent study found that people with type 2 diabetes who used GLP-1 receptor agonists (GLP-1 RAs) in combination with healthy lifestyle habits had a reduced risk of major adverse cardiovascular events.],
+  [The findings show that GLP-1 RAs, when combined with healthy habits, independently improved heart health, though to varying degrees.],
+  [The researchers noted that lifestyle interventions remain pivotal in diabetes management and can amplify the benefits of GLP-1 RAs.],
+  [Type 2 diabetes is a growing health concern in the United States, overlapping with the obesity epidemic.],
+  [According to the Centers for Disease Control and Prevention (CDC) , 40.1 million people in the United States have diabetes, either diagnosed or undiagnosed. That is an estimated 12% of the population.],
+  [According to research from 2017 , the prevalence of diabetes will increase by 54% by 2030. This is an estimated 54.9 million people.],
+  [Type 2 diabetes can lead to various complications, including cardiovascular disease . This is the leading cause of death among people with diabetes.],
+  [A recent study published in The Lancet Diabetes & Endocrinology found that a combination of GLP-1 receptor agonists (GLP-1 RAs) and healthy lifestyle habits can reduce the risk of major adverse cardiovascular events (MACE) in people with type 2 diabetes.],
+  [“Our findings underscore that, even in the era of highly effective GLP-1 pharmacotherapy, lifestyle habits remain central to diabetes management and cardiovascular risk reduction and can substantially amplify the benefits of modern medications,” Frank Hu , MD, Fredrick J. Stare Professor of Nutrition and Epidemiology and chair of the Department of Nutrition at the Harvard T. H. Chan School of Public Health, and corresponding author of the study, said in a press release .],
+  [GLP-1s and 6 healthy habits lower cardiovasculr risk by 43%],
+  [The study used data from the Veterans Affairs’ Million Veteran Program from 2011 to 2023.],
+  [The researchers looked at the lifestyle habits, GLP-1 RA usage, and cardiovascular outcomes of over 98,000 adults who had type 2 diabetes and no previous history of cardiovascular disease.],
+  [The researchers considered 8 healthy habits:],
+  [healthy diet],
+  [regular exercise],
+  [not smoking],
+  [restful sleep],
+  [minimal alcohol consumption],
+  [good stress management],
+  [social connection and support],
+  [not having opioid use disorder],
+  [The MACEs they considered were:],
+  [non-fatal stroke],
+  [myocardial infarction (heart attack)],
+  [cardiovascular death],
+  [The study found that using a GLP-1 RA and maintaining a healthy lifestyle significantly reduced the risk for MACE.],
+  [“We know that GLP-1 receptor agonists can improve cardiovascular health in patients with diabetes. We also know that good lifestyle habits such as eating \[a\] heart-healthy diet, getting regular physical activity, and getting enough quality sleep, are all beneficial in controlling the risk factors that lead to heart disease,” Cheng-Han Chen , MD, board certified interventional cardiologist and medical director of the Structural Heart Program at MemorialCare Saddleback Medical Center in Laguna Hills, CA, who was not involved in the study, told Healthline.],
+  [“It is thus not surprising that combining both GLP-1 receptor agonists and healthy lifestyle modifications can have additive beneficial effects.”],
+  [Individuals who used a GLP-1 RA and adhered to between six and eight healthy habits showed a 43% lower risk of MACE than those who did not use a GLP-1 RA and adhered to three or fewer habits.],
+  [Those who adhered to all eight healthy habits had a 60% reduced risk compared to those who adhered to only one or fewer. Finally, people who used a GLP-1 RA had a 16% lower MACE risk than those who didn’t.],
+  [“From a public health perspective, the results underscore the continued importance of population-level investments and policy in promoting healthy diet, physical activity, sleep, stress management, and social connection, even in a modern drug era,” Hu said in the press release.],
+  [“As novel therapies expand, scalable lifestyle interventions remain essential for reducing the overall burden of cardiovascular disease and other chronic diseases.”],
+  [More studies needed to understand heart health benefits],
+  [The researchers noted that the study had limitations.],
+  [First, the results were based on observational data. This means that it was possible there was some residual confounding by socioeconomic status and other factors. However, these variables were accounted for during analysis.],
+  [Additionally, the study population consisted predominantly of white male veterans.],
+  [This may have limited the generalizability of the results. However, the findings were consistent across racial and ethnic groups and between males and females.],
+  [“Keeping diabetes under control is a long-term process,” Chen said.],
+  [“It is important to understand the composition of your food so that you can make the correct choices. We recommended getting regular physical activity. It is also important to avoid alcohol and tobacco, and to get enough quality sleep.”],
+  [Frequently asked questions],
+  [How do GLP-1s help manage diabetes?],
+  [Glucagon-like peptide-1 (GLP-1s, or GLP-1 RAs), such as Ozempic , Wegovy, and Mounjaro , help manage type 2 diabetes by mimicking the natural hormone GLP-1. This helps increase insulin secretion, reduce liver glucose production, and slow gastric emptying.],
+  [They also help curb appetite, promote weight loss, and lower blood sugar.],
+  [How can lifestyle changes affect diabetes?],
+  [Healthy lifestyle changes can help delay or prevent the onset of type 2 diabetes. They can also help lower your blood glucose (sugar) levels. This can help manage diabetes, potentially help you avoid medication, and even put your diabetes into remission.],
+  [The CDC recommends the following lifestyle habits to help manage type 2 diabetes: manage your stress as much as possible, eat a healthy diet , maintain an active lifestyle , and get plenty of sleep .],
+  [What are the risk factors for diabetes?],
+  [Risk factors for type 2 diabetes include having overweight or obesity , being 35 years old or older, having a family history of diabetes, having prediabetes , having a history of gestational diabetes , and giving birth to a baby weighing 9 lbs or more.],
+),
+  insert-map: (:),
+  word-count: 983,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+  #pull-quote([However, these variables were accounted for during analysis.], [Healthline])
 
 }
 
 #article-row((
   [
     standard-article(
-  title: [GELATO QUEEN],
-  author: [Kirkus Reviews],
-  source-name: [Kirkus Reviews],
+  title: [Week 20],
+  author: [Monica Dinculescu],
+  source-name: [Monica Dinculescu],
   images: (),
   paragraphs: (
-  [Eleven-year-old Lizabeth “Liza” Gordon is used to moving house; as her grandmother says, her dad “was bitten by the gobug when he was young.” This time, Liza’s dad aims to start a family gelato business in Greenblossom, South Carolina, that he’ll call Gordon’s Gelato. Liza and her older brothers, Pete and Brad, are going to help run the shop. Liza doesn’t want to leave her friends, but when they prove to not care about her, she says good riddance to the Richmond, Virginia, area and heads to her new home. It’s worse than she imagined: The new residence is a “rundown, bi-level style house,” her room is “puss yellow with prune-purple trim,” and she’s starting school with only six weeks left before summer vacation.],
-  [Stepping into her new life, she has to figure out how to work in a gelato shop, determine whether her new friends actually like her, and plan for her 12th birthday. Liza’s dad becomes a contestant on a reality show, competing for a grand prize of \$1 million, which makes things a lot more complicated for Liza, but if her dad wins, her whole life could change. The novel’s fun and engaging lead character makes the book a captivating read. The supporting characters, from Liza’s eccentric dad to the boy who helps out in the gelato shop, feel well rounded and unique. Liza is easy to root for, especially when everything keeps going wrong for her. Her creative and disgusting gelato flavors, nicknamed “Gordon’s Gaggers,” are a funny element that adds to the overall charm of the story.],
+  [normalcy resumes chez nous. I know this isn’t true everywhere, so if you’re in a place of lockdown: I am sorry for how annoying these updates will be. I was a good girl and bunkered down for over a year, and now I’ve got antibodies in spades and taking advantage of it.],
+  [first trip of the after times: Monterey! I’d never been, because prior to last year we didn’t have a car, and renting a car for a 2 hour trip always felt daunting. However, now we have a car, and San Francisco is full of lovely things just a drive away.],
+  [aquarium is still on pandemic rules so I didn’t get to see any 🦦🦦🦦. Next time!],
+  [left Hopper at a dog boarding place for half a day so that we could have brunch in Carmel “without the kids”. First, paying for eggs I didn’t cook was an incredible experience and I almost cried (this is a theme this month, every time I do something that was pedestrian and normal in the before times I get overwhelmed with emotion). Second, Hopper a) fooled the humans into somehow trusting she’s not a vacuum cleaner and promptly ate another dog’s lunch and b) was a squirelly weirdo and mostly wanted to hang out around humans and not the other dogs, which is 60% her personality and 40% something she picked up in the apocalypse.],
+  [had an indoor fancy dinner with fellow vaccinated friends, to celebrate our new superpowers, and the place had white Russian ice cream floats for desert and can I just say: yes.],
+  [EUROVISION. Incredible showings from Iceland and Ukraine, and an absolute shit bouquet when it came to voting. Collusion has been a Eurovision classic since the dawn of time, but this year it was enraging. France, really? Discount Edith Piaf? What a travesty. Special mention however to the international conspiracy of letting the UK go to the final only to award them 0 points across the board. A masterpiece; well done everyone.],
 ),
   insert-map: (:),
-  word-count: 262,
+  word-count: 335,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -544,29 +286,23 @@ It seems to me likely that this wasn’t the case in the past; luxury consisted 
   ],
   [
     standard-article(
-  title: [Presentation slides and writer's block],
+  title: [How browsers position floats],
   author: [Monica Dinculescu],
   source-name: [Monica Dinculescu],
   images: (),
   paragraphs: (
-  [I am the poster child for writer’s block. I can’t write the \#ifdef header guard correctly for a brand new C++ class, I don’t remember the order of the public static void main args incantation in Java, and for the life of me, I can’t start working on an empty presentation. Not even if you promise me pizza. (Please promise me pizza though.)],
-  [id="start-with-an-outline"\>Start with an outline],
-  [There’s already an amazing speaking.io post about writing outlines which you should read. The tl;dr is that you start with the top-level things that you want to talk about (feel free to s/2Pac/Biggie/g in that example if a) you have good taste or b) you’re from the East Coast because c) yolo), and then slowly, but with gumption, start developing dem ideas.],
-  [I personally take that post literally and write my outline as a markdown gist. The top-level ideas are \#\# headers, the supporting points are sub-bullets, and there’s a lot of “???. Profit!” and notes to future-Monica, because present-Monica is usually a jerk.],
-  [id="time-to-procrastinate"\>Time to procrastinate],
-  [This is great! You have an outline! You deserve a break. No, really; take a break.],
-  [I let this baby stew for a couple of days, so that it gets nice and tender. Nobody likes an undercooked outline. It’s also not a terrible idea at this point to ask some of your friends to read your outline and tell you if this would be a talk they wouldn’t hate listening to.],
-  [id="time-for-skeletor"\>Time for Skeletor™],
-  [Once you think you’ve procrastinated enough and it’s time to actually work on your presentation, you’ll be tempted to start thinking about slide design, typefaces, and the kind of cat gifs you’ll include for bonus points.],
-  [Don’t.],
-  [I mean, definitely include cat gifs, but that time isn’t now. I’m pretty sure “being OCD about typography” is correlated with “being really good at writer’s block”, so I can promise that you’ll waste many evenings choosing drop shadows before you realize how screwed you are for content.],
-  [I’ve sorted this out by having a really basic presentation template , affectionately named Skeletor, that I only use when I work on the content. It’s got a font that doesn’t make me angry, a really basic colour scheme, and I can distinguish between title and filler slides.],
-  [Then, I dump the stewed outline into this presentation – the titles, the bullets, the question marks – and do a dry-run. So that the rehearsal is actually useful, you should probably make sure your (entirely empty) presenter’s notes are visible and editable. If you don’t use presenter’s notes, I don’t even know how you exist. Get some paper.],
-  [id="the-forced-rehearsal"\>The forced rehearsal],
-  [“But Monica”, you’ll say, “you barely have any content, what are you even rehearsing?”. And my answer to that is: don’t start sentences with “but”. Also, it turns out that even if you haven’t thought about it before, when you have to start speaking about a slide that says “2Pac ♬♪♫ ヾ(\*・。・)ﾉ ♬♪♫],
+  [When you have a float CSS property on a box (with a value different than none ), this box
+must be laid out according to the float positioning algorithm . Loosely, it says:],
+  [if the box has float:left , the box is positioned at the beginning of the line box],
+  [if the box has float:right , the box is positioned at the end of the line box],
+  [text (and more generally anything within the normal, non-floaty flow) is laid out along the edges of the floating boxes],
+  [the clear property changes the floating behaviour.],
+  [Anyway, in general you’ll have a better time if you use a flexbox or CSS grid instead of floats, because floats are quirky and have strange edge cases, but if you were ever curious
+about how the algorithm would choose where to position different floats, here’s a demo
+(which you can also play with directly on glitch ):],
 ),
   insert-map: (:),
-  word-count: 496,
+  word-count: 152,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -577,58 +313,39 @@ It seems to me likely that this wasn’t the case in the past; luxury consisted 
 {
   #section-label([Analysis])
   #standard-article(
-  title: [New Cholesterol Guidelines Emphasize Earlier Screening, Treatment],
-  author: [Healthline],
-  source-name: [Healthline],
+  title: [Why Chromium has code owners],
+  author: [Monica Dinculescu],
+  source-name: [Monica Dinculescu],
   images: (),
   paragraphs: (
-  [New AHA guidelines focus on earlier cholesterol screening and treatment. Image Credit: Olga Pankova/Getty Images],
-  [The American College of Cardiology (ACC), the American Heart Association (AHA), and nine other leading medical organizations have issued new guidelines for the management of dyslipidemia.],
-  [Dyslipidemia is abnormal levels of various lipids and lipoproteins in the blood, including cholesterol and triglycerides.],
-  [The new guidelines replace the 2018 AHA/ACC Guidelines on the Management of Blood Cholesterol.],
-  [A key update is the focus on the AHA PREVENT-ASCVD equations.],
-  [The American College of Cardiology (ACC), the American Heart Association (AHA), and nine other leading medical organizations recently released the new guidelines for treating and managing dyslipidemia.],
-  [The updated guidelines reflect the evolving understanding of the risk of atherosclerotic cardiovascular disease (ASCVD) associated with atherogenic lipoproteins beyond low-density lipoprotein cholesterol (LDL-C). This includes triglyceride-rich remnant particles and lipoprotein(a) [Lp(a)] .],
-  [The 2026 Guideline on the Management of Dyslipidemia replaces the 2018 AHA/ACC Guidelines on the Management of Blood Cholesterol. Dyslipidemia is defined as abnormal levels of various lipids or lipoproteins in the blood. This includes triglycerides and cholesterol .],
-  [“We know 80% or more of cardiovascular disease is preventable and elevated LDL cholesterol, sometimes referred to as ‘bad’ cholesterol, is a major part of that risk,” Roger Blumenthal , MD, chair of the guideline writing committee, director of the Johns Hopkins Ciccarone Center for the Prevention of Heart Disease, and the Kenneth J. Pollin professor of cardiology at Johns Hopkins Hospital in Baltimore, MD, said in a press release .],
-  [“While we want to try to optimize healthy lifestyle habits as the first step to lower cholesterol, we realize that if lipid numbers aren’t within the desirable range after a period of lifestyle optimization, we should consider adding lipid-lowering medication earlier than we would have considered 10 years ago. And lower LDL cholesterol for longer, just like lower blood pressure for longer, results in much greater protection against future heart attack and stroke risk,” Pollin continued.],
-  [A ‘one-stop shop’ for assessing, treating lipids],
-  [About 1 in 4 U. S. adults has high levels of low-density lipoprotein cholesterol (LDL-C), which can increase the risk of a heart attack or stroke .],
-  [“It’s important to pay attention to lipids because they can provide clues about what’s happening metabolically in the body,” Jack Wolfson , DO, a cardiologist and founder of Natural Heart Doctor, told Healthline. Wolfson wasn’t involved in the new guidelines.],
-  [“When someone has an abnormal lipid pattern, it often reflects deeper issues like insulin resistance , inflammation , oxidative stress , nutrient deficiencies , or toxin exposure,” Wolfson said. “Addressing those factors improves overall health.”],
-  [The updated cholesterol guidelines consolidate evidence-based recommendations into a single document, offering comprehensive guidance on assessing and treating various blood lipids. This can effectively lower a person’s risk of developing ASCVD.],
-  [ASCVD results from the buildup of fatty deposits in the arteries and is a leading cause of death globally.],
-  [“[These] reinforce what we already know — the longer your LDL is higher, the greater your risk of atherosclerotic heart disease,” said Karishma Patwa , MD, a board certified cardiologist at Manhattan Cardiology in NYC. Patwa wasn’t involved in the new guidelines.],
-  [“While the targets for LDL are essentially the same, an emphasis is being placed on early detection of hyperlipidemia ,” she told Healthline.],
-  [Lifestyle changes help lower cholesterol],
-  [The updated guidelines emphasize early intervention through lifestyle changes, such as:],
-  [maintaining a moderate weight],
-  [getting regular physical activity],
-  [avoiding or quitting smoking],
-  [prioritizing healthy sleep],
-  [taking any LDL-lowering medications that may be recommended],
-  [The guidelines also reinforce lower LDL-C goals and reduction based on individual risk to reduce lifetime exposure to unhealthy lipids and the risk of heart attack and stroke.],
-  [“Bringing back LDL targets is a meaningful shift,” said Rigved Tadwalkar , MD, consultative cardiologist and director of Digital Transformation Pacific Heart Institute in Santa Monica, CA. Tadwalkar wasn’t involved in the guidelines.],
-  [“It gives both clinicians and patients something concrete to aim for, which makes treatment decisions much more actionable,” he told Healthline.],
-  [Cardiovascular disease risk calculators aid prevention],
-  [One of the newest additions to the dyslipidemia guidelines is the use of the Predicting Risk of Cardiovascular Disease EVENTs (PREVENT) calculator.],
-  [These are newer and more contemporary cardiovascular disease risk calculators. They are now recommended for the primary prevention of ASCVD.],
-  [The PREVENT-ASCVD equations are designed for people ages 30 to 79 with no known ASCVD or subclinical atherosclerosis , and with specific LDL levels .],
-  [They are for estimating a person’s 10– and 30–year risk of heart attack and stroke. They can also help guide lipid-lowering therapy.],
-  [“With this new assessment tool, we can better estimate cardiovascular risk using health information already obtained during an annual physical — cholesterol, blood pressure readings and other personal information such as age and health habits — and then further personalize the risk score for each individual by looking at ‘risk enhancers,’ which can help guide the need for lipid-lowering therapy,” Blumenthal said in a press release .],
-  [New cholesterol test recommendations],
-  [The new guideline recommends that healthcare professionals consider additional tests when needed to improve cardiovascular risk assessment.],
-  [Further testing can also help to assess whether more intensive LDL-C lowering and management of other risk factors may be needed.],
-  [These tests include:],
-  [Selective use of a non-contrast coronary artery calcium (CAC) scan: This can be used to check for early signs of calcium and plaque buildup in the heart arteries. Knowing a person’s CAC score may help with the decision of whether to prescribe statins .],
-  [Lipoprotein (a): This should be measured at least once in adulthood. These levels are mostly genetically determined and remain relatively stable over a lifetime.],
-  [Apolipoprotein B (apoB): This can be used to assess any residual ASCVD risk. Measuring apoB can also help guide treatment among people with cardiovascular-kidney-metabolic syndrome , type 2 diabetes , high triglycerides or known cardiovascular disease who have reached their LDL-C and non-HDL-C goals.],
-  [If LDL-C levels are not adequately lowered by lifestyle habits and statin therapy, the guidelines recommend the addition of non-statin therapies.],
-  [“We are moving beyond a one-size-fits-all model and starting to integrate multiple layers of risk, including clinical factors, imaging, and biomarkers, to better understand who is truly at risk,” said Tadwalkar.],
-  [“Overall, it reflects where the field is heading — earlier intervention, better risk stratification, and a more personalized but still structured approach to preventing cardiovascular disease.”],
+  [My favourite thing about the Chromium code is this enum of cats and all the comments in that file. My second favourite thing is OWNER files. Guess what this post is about (hint: it’s not about cats NOT EVERYTHING IS ABOUT CATS, OK?)],
+  [Edit: In a clear and deliberate conspiracy, the cats have been removed from Chromium. The old new cool thing is pickles , and the new new cool thing is Count Von Counts . Bonus points to \@thakis for finding that last one. 💁],
+  [id="why-should-you-care"\>Why should you care?],
+  [Owners in Chromium are people who own an area of code. This can be a small feature (the chrome:\/\/settings page) or a giant area (all of the Cocoa UI). You don’t have to be an owner to be successful – you get to be an owner because you want to. This usually means that you have contributed a lot to that particular nugget of code, have acquired a slightly unhealthy obsession for it (symptoms: if you’ve whispered “my precious” to a line of code in the last hour, you will make a great code owner one day), and generally care about its well being. I have been trying (unsuccessfully) for years to be an owner of pizza; hit me up if you have any leads.],
+  [Owners are gatekeepers of code, and their main responsibility is making sure the code doesn’t go to shit. Comments that make sense. No copy pasting, no hacks, no soup for you. None of that “I don’t really know how to make this code better so I’m going to merge it and run” nonsense. They are the very model of a modern Major-General, they know the kings of England, and they quote the fights historical.],
+  [TL; DR: owners won’t let you merge crappy code. Imagine if each of the 2000 Chromium commiters merged a random hack in one of the 7 million lines of code we have. IMAGINE. 🔥🔥🔥],
+  [id="what-it-means-for-owners"\>What it means for owners],
+  [Realtalk: being an owner means that people will send you a lot of code to review, because your blessing (or “LGTM”) is required for that code to be committed. \@sky is an owner of the Windows UI code, and he does something like 500+ reviews a quarter. And also writes code. And helps me out when I (invariably) break the UI. He’s pretty much the best.],
+  [Basically:],
+  [People will ask you general questions when they’re stuck. It’s totally fine not to know the answer – you’ll probably at least know who to point them at.],
+  [Whenever shit hits the fan and it’s on your turf of code, if no obvious culprit is to be found, you win the lottery and get to fix it. Spoilers: this sometimes means fixing things that you didn’t actually break. Currently, I’m on day 6 of this giant yak shave that I won by fixing a random crash. Regrets, I am them.],
+  [You get to live the dream and be picky about code. Don’t like a method’s name? A particular comment? Think that there’s a bit of a refactor needed to make this better? You get to ask for it, and guess what: people usually have to listen.],
+  [👉 Developers trust owners to not be insane. Owners trust developers not to try to commit stuff behind their back. This is why it works. 👈],
+  [id="what-it-means-for-developers"\>What it means for developers],
+  [First, when you’re stuck, you know who to ask questions (an owner!). Second, in order for you to commit any code, you need to get the owners’ approval for your changes.],
+  [Here’s an example of a code review. I like to explicitly mention which owner should review which file, because one person might own multiple files/areas in a given CL (if you’re a chrome/browser owner, you own ALL of the things), but might not be required to review all of them.],
+  [So, who owns profile\_info\_cache.cc ? Everyone named in the chrome/browser/profiles/OWNERS file. On top of that, everyone up the directory tree (so in chrome/browser/OWNERS ) is also an owner. If you stumble on a directory that doesn’t have an owners file (for example chrome/browser/ui/cocoa/profiles ), just crawl on up until you find the closest one (in this case, you would add an owner from chrome/browser/ui/cocoa/OWNERS . This is also useful if you do a fairly innocent refactor that touches a lot of files, like renaming a method. In that case, rather than adding 17 different owners, you can just get one, root owner and run with that.],
+  [id="how-you-can-get-owner-files-in-your-project"\>How YOU can get owner files in your project],
+  [If you want to implement owner files for your projects (YAY!), you need to do a couple of things:],
+  [Add some sort of presubmit check so that people can’t commit code without getting all their ducks in a row. If you give people a chance to merge code under the radar, they will. So, don’t.],
+  [Here’s the Chromium script . It will probably most likely not work out of the box, but it could be a useful starting point.],
+  [Create OWNER files in all the directories that makes sense. Format them in a way that scripts can read them. Here are all the Chromium ones.],
+  [Owner files can have rules per subdirectory but also per file . For really tedious file changes (like build files), any committer can be an owner using wildcards ).],
+  [Make sure the owner files are up to date: when people leave teams, remove them. When people start becoming friendly with an area of code, let them know that ownership is an option.],
+  [Watch how your code gets better over time.],
 ),
   insert-map: (:),
-  word-count: 1069,
+  word-count: 933,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -637,317 +354,309 @@ It seems to me likely that this wasn’t the case in the past; luxury consisted 
 
 {
   #standard-article(
-  title: [Polymer 1.x Cheat Sheet],
-  author: [Monica Dinculescu],
-  source-name: [Monica Dinculescu],
+  title: [Why Some GLP-1 Users Say They’re Developing Scurvy],
+  author: [Healthline],
+  source-name: [Healthline],
   images: (),
   paragraphs: (
-  [This is a cheat sheet for the Polymer 1.x library.
-It helps you write Web Components, which are pretty 🔥🔥🔥. If you’re interested in the
-Polymer 2.0 cheat sheet, it’s here . If you think something
-is missing from this page, tell me about it!],
-  [Defining an element],
-  [Defining a behaviour],
-  [Lifecycle methods],
-  [Data binding],
-  [Properties block],
-  [Observing added and removed children],
-  [Style modules],
-  [Styling with custom properties and mixins],
-  [Binding helper elements],
-  [id="defining-an-element"\>Defining an element],
-  [Docs: registering an element , behaviours , shared style modules],
-  [class="highlight"\> 
- 
- 
- 
- 
- 
- 
- 
- 
- Polymer ({ 
- is : ' element-name ' , 
- \/\/ All of these are optional. Only keep the ones you need. 
- behaviors : [], 
- observers : [], 
- listeners : {}, 
- hostAttributes : {}, 
- properties : {} 
- });],
-  [id="defining-a-behaviour"\>Defining a behaviour],
-  [Docs: behaviours .],
-  [Defining a behavior to share implementation between different elements:],
-  [MyNamespace . MyFancyBehavior = [ 
- MyFancyBehaviorImpl , 
- /\* You can add other behaviours here \*/ 
- ];],
-  [Using the behavior in an element:],
-  [id="lifecycle-methods"\>Lifecycle methods],
-  [Docs: lifecycle callbacks .],
-  [There’s an attributeChanged callback as well, but that’s very rarely used.],
-  [id="data-binding"\>Data binding],
-  [Docs: data binding ,
- attribute binding ,
- binding to array items ,
- computed bindings .],
-  [Don’t forget: Polymer camel-cases properties, so if in JavaScript you use myProperty ,
-in HTML you would use my-property .],
-  [One way binding: when myProperty changes, theirProperty gets updated:],
-  [Two way binding: when myProperty changes, theirProperty gets updated,
-and vice versa:],
-  [Attribute binding : when myProperty is true , the element is hidden; when it’s
- false , the element is visible:],
-  [Computed binding : binding to the class attribute will recompile styles when
- myProperty changes:],
-  [\_computeSomething: function(prop) {
- return prop ? 'a-class-name' : 'another-class-name';
-}],
-  [id="observers"\>Observers],
-  [Docs: observers ,
- multi-property observers ,
- observing array mutations .],
-  [Adding an observer in the properties block lets you observe changes in the
-value of a property:],
-  [\/\/ The second argument is optional, and gives you the 
- \/\/ previous value of the property, before the update: 
- \_myPropertyChanged : function ( value , /\*oldValue \*/ ) { 
- \/\/... 
- }],
-  [In the observers block:],
-  [class="highlight"\> observers : [ 
- ' \_doSomething(myProperty) ' , 
- ' \_multiPropertyObserver(myProperty, anotherProperty) ' , 
- ' \_observerForASubProperty(user.name) ' , 
- \/\/ Below, items can be an array or an object:' 
- ' \_observerForABunchOfSubPaths(items.\*) ' 
- ]],
-  [id="listeners"\>Listeners],
-  [Docs: event listeners ,
- imperative listeners .],
-  [id="properties-block"\>Properties block],
-  [Docs: declared properties ,
- object/array properties ,
- read-only properties ,
- computed properties .],
-  [There are all the possible things you can use in the properties 
-block. Don’t just use all of them because you can; some (like reflectToAttribute 
- and notify ) can have performance implications.],
-  [\/\/ Value can be one of the types above, eg: 
- value : true ,],
-  [\/\/ For an Array or Object, you must return it from a function 
- \/\/ (otherwise the array will be defined on the prototype 
- \/\/ and not the instance): 
- value : function () { return [ ' cheese ' , ' pepperoni ' , ' more-cheese ' ] },],
-  [reflectToAttribute : true | false , 
- readOnly : true | false , 
- notify : true | false 
- },],
-  [\/\/ Computed properties are essentially read-only, and can only be 
- \/\/ updated when their dependencies change. 
- basicComputedProperty : { 
- computed : ' \_someFunction(myProperty, anotherProperty) ' 
- } 
- }],
-  [id="observing-added-and-removed-children"\>Observing added and removed children],
-  [Docs: DOM distribution ,
- observe nodes .],
-  [If you have a content node for distribution:],
-  [And you want to be notified when nodes have been added/removed:],
-  [class="highlight"\> attached : function () { 
- this . \_observer = 
- Polymer . dom ( this . \$ . distributed ). observeNodes ( function ( info ) { 
- \/\/ info is {addedNodes: [...], removedNodes: [...]} 
- }); 
- }, 
- detached : function () { 
- Polymer . dom ( this . \$ . distributed ). unobserveNodes ( this . \_observer ); 
- }],
-  [id="style-modules"\>Style modules],
-  [Docs: shared style modules .],
-  [Defining styles that will be shared across different elements, in a file called
- my-shared-styles.html (for example):],
-  [Include the shared style in a custom element:],
-  [Include the shared style in the main document:],
-  [id="styling-with-custom-properties-and-mixins"\>Styling with custom properties and mixins],
-  [Docs: styling ,
- CSS properties ,
- CSS mixins ,
- shim limitations],
-  [Note that the examples below depend on browser support for custom properties.
-For how to use the shim (spoilers: it’s ) and its limitations,
-check the docs linked above.],
-  [Defining a custom property:],
-  [Using a custom property:],
-  [Using a custom property with a fallback:],
-  [Using a custom property with a custom property fallback:],
-  [Defining a mixin:],
-  [Using a mixin:],
-  [id="binding-helper-elements"\>Binding helper elements],
-  [Docs: dom-repeat ,
- dom-bind ,
- dom-if],
-  [dom-repeat stamps and binds a template for each item in an array:],
-  [dom-bind stamps itself into the main document and adds a binding scope:],
-  [dom-if stamps itself conditionally based on a property’s value:],
+  [Reports of people developing scurvy while taking GLP-1 medications are on the rise. Milles Team/Shutterstock],
+  [Reports of GLP-1 users developing scurvy have increased in recent months.],
+  [GLP-1 drugs can lead to malnutrition since they reduce appetite and food consumption.],
+  [People may also consume fewer vitamin C-rich foods, such as fruits and vegetables.],
+  [Proper meal planning and supplementation can help prevent scurvy.],
+  [Maybe you’ve been using a GLP-1 medication for a while now, and you’ve started to notice that your gums are bleeding a bit, or you seem to be bruising more easily than usual? Could the drug be related to these unusual symptoms?],
+  [It turns out that more and more people using these drugs are being diagnosed with scurvy, a severe deficiency of vitamin C .],
+  [You might know scurvy as an 18th-century illness associated with long sea voyages, when fresh fruits and vegetables were in short supply. So, why is a disease associated with pirates and sailors now making a comeback in a time when these foods are readily available?],
+  [The answer, experts say, has less to do with the medications themselves and more to do with what happens when appetite and consumption of certain foods fall dramatically.],
+  [Here’s what’s known about the connection and how to protect yourself while staying on track with treatment.],
+  [GLP-1 use is often an overlooked cause of malnutrition],
+  [In an opinion published in the BMJ on July 21, 2025, Ellen Fallows noted the risks of prescribing GLP-1 medications to patients who already consume nutrient-poor diets, highlighting that malnutrition cases are already being reported in the U. S.],
+  [Fallows additionally pointed out that, although obesity is often thought of as a case of being “over-nourished,” the opposite is frequently true, with muscle wasting and nutrient deficiencies being just as common in these individuals as in those who are underweight.],
+  [When an already unhealthy diet is combined with caloric restriction, it can exacerbate the problem.],
+  [Inflammation of the gastrointestinal tract and nutrient deficiencies caused by common diabetes medications, such as metformin , can also contribute to malnutrition, she said.],
+  [According to Fallows, GLP-1 use is not just linked to vitamin C deficiency. It has been associated with severe thiamine and magnesium deficiencies , among several others.],
+  [However, a lack of awareness of this issue is likely leading to both underdetection and under-reporting of malnutrition, she wrote, which may lead to less favorable patient outcomes.],
+  [“Good quality wraparound care for patients taking GLP-1 agonists must go further than simple ‘dietary advice’ as recommended by the National Institute for Health and Care Excellence,” she advised. “It must include assessment of nutritional status before treatment to identify patients with malnutrition whose risks may only be mitigated with additional support.”],
+  [Why scurvy may occur when using a GLP-1 medications],
+  [Fiorella DiCarlo , RDN, CDN, of FiorellaEatsTV , told Healthline that GLP-1s slow gastric emptying and motility, which causes people to feel full and lose their appetite. However, they may end up not eating enough to properly nourish their bodies.],
+  [“Some people end up eating 600-1000 calories per day without realizing it and thereby undereating vital nutrients and vitamins,” she said, explaining that this is what leads to deficiencies.],
+  [When a person doesn’t consume enough vitamin C for an extended period, they can develop scurvy.],
+  [“GLP-1 users report low appetite and early satiety , so fruits and veggies that contain Vitamin C are not consumed as often but rather replaced with toast, crackers, and processed food to accommodate GI issues like nausea instead,” said DiCarlo.],
+  [She added that food aversions to acidic foods or raw vegetables can also complicate matters.],
+  [“Vitamin C deficiencies cause weakened blood vessels, wounds that don’t heal, including acne and bleeding gums ,” said DiCarlo.],
+  [However, scurvy is reversible with a multivitamin or a 100- to 200-milligram vitamin C supplement, she said.],
+  [What you can do to ensure adequate nutrition while taking GLP-1 drugs],
+  [According to DiCarlo, the best way to navigate the nutritional challenges of being on a GLP-1 medication is to work with a Registered Dietitian. These healthcare professionals are experts in nutrition and help you plan meals that best support your needs.],
+  [“I advise building meals and snacks around protein and eating on a schedule to ensure proper intake throughout the day,” she said.],
+  [DiCarlo further suggests getting plenty of fiber from fruit, vegetables, and legumes, as it can help counteract constipation associated with slow motility.],
+  [These same foods are also rich in antioxidants and vitamins, which can help reduce your risk of deficiencies, she said.],
+  [“The order the macros are eaten at a meal can be important too,” DiCarlo explained. “Begin with some protein, then vegetables to ensure that these nutrients are ingested first, particularly for those feeling fuller faster.”],
+  [To be certain that you’re getting enough protein, calcium, and vitamin D, eat high protein snacks like low fat yogurt, cottage cheese , or kefir, she said.],
+  [DiCarlo also emphasized the importance of drinking water to reduce your risk of dehydration.],
+  [Concluding her comments, she said, “Eating while on a GLP-1 can be very challenging, and while weight loss will occur, the collateral damage from malnutrition can cause physical and psychological feelings that can affect quality of life.”],
+  [However, as DiCarlo explains, proper planning and supplementation can help mitigate the risks.],
 ),
   insert-map: (:),
-  word-count: 1108,
-  edited-for-length: true,
+  word-count: 878,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+  #pull-quote([According to Fallows, GLP-1 use is not just linked to vitamin C deficiency.], [Healthline])
+
+}
+
+{
+  #standard-article(
+  title: [I know something about art, but I know what I like anyway],
+  author: [Michael Tobis],
+  source-name: [Only in it for the Gold (blog, climate)],
+  images: (),
+  paragraphs: (
+  [dir="auto" style="font-family: inherit; text-align: start;"\>],
+  [Usually, looking at a painting, I think, hmm, okay, I wish I could do that, but once in a while I go whooaaa.... wow.... that's... wow...],
+  [dir="auto" style="font-family: inherit;"\>Not unlike with a great musical performance.],
+  [dir="auto" style="font-family: inherit;"\>So now, I'm suddenly, inadvertently, a person who writes about art.],
+  [dir="auto" style="font-family: inherit;"\>I've noticed that people who write about music, especially popular music, tend to love music a lot; but people who write about art, sometimes give off the impression that they don't care, or they don't even get it.],
+  [dir="auto" style="font-family: inherit;"\>My problem is that I know what I love but I don't know why. But is that really a problem?],
+  [dir="auto" style="font-family: inherit;"\>I certainly don't have an overarching theory. Why should I? What makes great reggae and what makes great blues and what makes great jazz are different. I know what I want to listen to and what I don't when I hear it.],
+  [dir="auto" style="font-family: inherit;"\>I also know what I want to look at when I see it. But I don't have or want some grand theory as to why.],
+  [dir="auto" style="font-family: inherit;"\>I think basically everyone loves music but only some people love visual art for some reason.],
+  [dir="auto" style="font-family: inherit;"\>Since everyone loves music, everyone who writes about music loves it. On the other hand, NOT all of the people who write about art are people who love it.],
+  [dir="auto" style="font-family: inherit;"\>I know what I love in art, just as I know what I love in music. And I know a fair amount at least about art (and perhaps a bit less but still something about music). But I can't explain WHY I like what I like in some broad general terms.],
+  [dir="auto" style="font-family: inherit;"\>You enjoy each bit of human creativity in its own terms.],
+  [dir="auto" style="font-family: inherit;"\>I think anyone writing about art has to BEGIN by acknowledging the mystery. We love this stuff. We LOVE this stuff. Why? It's sort of mysterious.],
+  [dir="auto" style="font-family: inherit;"\>We especially love SOME of this stuff. Which ones? Why?],
+  [dir="auto" style="font-family: inherit;"\>It's totally experiential. In experiencing any art form, either your socks are knocked off, or they ain't.],
+  [dir="auto" style="font-family: inherit;"\>If you have a talky personality you really WANT to talk about the stuff you love and what it means to you. And you don't so much want to talk about the stuff you don't love, except maybe to wonder why it didn't work.],
+  [dir="auto" style="font-family: inherit;"\>But you wouldn't know it from a lot of people who are professional curators and art educators. They seem to have forgotten what they love about art, if there ever was anything.],
+  [dir="auto" style="font-family: inherit;"\>Anyway, sometimes, the only thing you can say is wow... look at that...],
+  [dir="auto" style="font-family: inherit;"\>],
+  [dir="auto" style="font-family: inherit;"\>--],
+  [dir="auto" style="font-family: inherit;"\>],
+  [dir="auto" style="font-family: inherit;"\>painting is a field sketch by Tom Thomson ca 1916],
+  [dir="auto" style="font-family: inherit;"\>],
+),
+  insert-map: (:),
+  word-count: 592,
+  edited-for-length: false,
   debug-mode: false,
 )
 
 }
 
-#article-row((
-  [
-    standard-article(
-  title: [Radical Patience?],
-  author: [Michael Tobis],
-  source-name: [Only in it for the Gold (blog, climate)],
+{
+  #standard-article(
+  title: [Why Everclear Frontman Art Alexakis Says His Multiple Sclerosis Diagnosis Was a ‘Blessing’],
+  author: [Healthline],
+  source-name: [Healthline],
   images: (),
   paragraphs: (
-  [When you characterize another culture by its most extreme proponents, you are doing the extremists a huge favour.],
-  [Angry people who take ancient books too seriously are dangerous. That's surely true. But it really doesn't matter much which book they are worked up about.],
-  [There are sane and crazy people in every corner of the world, saddled with social pressures to profess some religion or ideology.],
-  [The way to fight extremists is not by hating or abusing all their demographic peers.
- 
- For every person who really wants a holy war there are a hundred who just want to get along with their own community.],
-  [Forgive them. Cut them slack. Give them a way to save face. Don't indulge the them-or-us view. Don't hate them.],
-  [As I see it, there are people who benefit from us hating each other; these people are power hungry cynics who want to weaken everyone but themselves.],
-  [In today's social media world, they easily masquerade as extremists egging us on to mutual hatred.],
-  [There are plenty of reasons in today's world to be angry at sincere people who are confused and do damage as a result. But they're not what's driving us off the cliff.],
-  [It's hard to distinguish the cynics from the sincere, but it's suicidal to hate people who don't know they're lying.],
-  [And even the cynics (not hard to think of one these days is it?) are less than whole people and in some ways deserve our sympathy.],
-  [I think maybe what I'm advocating is radical, extreme patience.
- 
- I have as much trouble living up to it as anyone. Cynical liars make my blood boil, and of course it's hard to tell who believes their own fabulations. It's easy to get into fights with people whose only goal is to defeat you by any means available.],
-  [It's also easy to disengage.
- 
- But it's not enough to disengage, and it's counterproductive to exchange contempt for contempt.
- 
- It may be too late for these insights. Everyplace that isn't an autocracy is coming undone.],
-  [The totalitarian friendly information environment that Arendt warned us about is upon us, and social media platforms are mostly profiting from it.
- 
- I can only hope for an international movement of reasonable, sane people, more motivated by love and awe than by anger, hatred, and contempt.],
-  [I don't know why there isn't one, really.],
+  [Everclear frontman Art Alexakis opens up about living with living with multiple sclerosis for more than a decade and the early signs he missed. Courtesy of Art Alexakis],
+  [Everclear frontman Art Alexakis is sharing his decade-long journey with Multiple Sclerosis.],
+  [He was diagnosed with relapsing MS in 2016.],
+  [He discusses his most recent treatment and other ways he cares for himself.],
+  [Art Alexakis, singer and frontman of the Grammy-nominated rock band Everclear, wrapped up a 43-show tour celebrating the 30th anniversary of the band’s album, Sparkle and Fade .],
+  [The anniversary was extra special for the 63-year-old rock star as he has been living with relapsing Multiple Sclerosis (MS) for 10 years.],
+  [“I’m grateful for aging. I’m grateful for the MS. It makes me try harder. I get to play so many shows a year, and having to go through airports is hard, but doing that, keeping moving and keeping working at it is one of the things that has really helped me with my gratitude and with my mental outlook,” he told Healthline.],
+  [“If you try to do something and you accomplish it, it feels good. And even though it gets harder, I can still do it right now. I’m feeling pretty good.”],
+  [Alexakis was diagnosed with MS following a car accident in 2016. A few weeks after the accident, he began experiencing a tweak in his neck. His doctor suggested he get an MRI.],
+  [“So, I go get the MRI, I show up in his examination room, and there were six guys in there. They went on to tell me that two of them were neurologists, and that the pathologist who read the MRI had seen lesions on my spine and my brain, and they were pretty certain that they were MS,” he said.],
+  [Once Alexakis received the diagnosis at 54 years old, he realized he had been experiencing symptoms since his 20s, including balance and walking issues, fatigue, and skin sensations.],
+  [“They thought that I had it for over 25 years just by the look of the lesions. In my 20s, I would have pretty severe vertigo. Rage is a thing. As I got older, these things became more pronounced, especially the balance and just skin feeling weird, and sometimes my arm not working well out of nowhere,” he said. “It was a blessing to me to get that diagnosis because a lot of people go through life and never get diagnosed correctly.”],
+  [Alexakis’ neurologist Regina Berkovich, MD, PhD, said a misconception about MS is that it can only occur between the ages of 18 and 40.],
+  [“However, we can see it in childhood and as late as senior age,” she told Healthline. “The lesson is that MS doesn’t follow any rules and that’s why it’s so fascinating to deal with the condition on a professional level, and at times, it can get challenging on the level of individual patients.”],
+  [Berkovich has helped Alexakis find a treatment that works for him :  Tysabri , a monoclonal antibody  administered as an intravenous infusion.],
+  [“An important learning experience I take for myself from Art’s story is that not every medication works the same for different people or even for the same person during different periods of life,” said Berkovich. “Tysabri was not his first medication, but it was definitely the one that really made the difference.”],
+  [Within the last few decades, she said, treatment has evolved from focusing on symptoms or relapse treatment to a disease-modifying therapy era.],
+  [“Since the 1990s, we started having disease-modifying therapies, and those therapies, if applied properly and for the right person, may show true modification of the long-term outlook, meaning improvement as compared to someone not being treated,” Berkovich said.],
+  [She hopes Alexakis’ story inspires others to seek out treatment that works for them.],
+  [“A lot of patients don’t feel empowered to ask questions and advocate for themselves to try different therapies, so it’s important that Art is showing the example of having these open discussions and setting up his personal goals around treatments,” said Berkovich.],
+  [“As an MS specialist, you constantly learn so much from every person you get to treat, and I’ve learned tremendously from Art. His resilience, positive thinking, and trust are truly inspiring, and I feel empowered by him.”],
+  [Healthline spoke with Alexakis to learn more about his MS journey, the early symptoms he missed, and what’s next for Everclear.],
+  [This interview has been edited and condensed for clarity   and length.],
+  [When did you first learn about Tysabri infusion therapy?],
+  [Alexakis: I got on medication that worked for a while, and then I got COVID in 2021, and that medication stopped working, and that’s when I met my neurologist now, and she put me on Tysabri, and since then, it’s been really great.],
+  [I get checkups twice a year, and my neurologist keeps up on it. You can’t stop \[MS\]. It’s a chronic disease. It’s gonna get worse, and you’ll never get rid of it. But I just feel so safe being on this treatment because I’ve seen it work over the last four years.],
+  [Aside from medication, how have you managed your MS symptoms over the last decade?],
+  [Alexakis: I can’t run like I used to, so I swim. I do physical therapy three times a week. I try to stay away from inflammatory foods, for the most part. And I do my treatment, my medication, and it works for me. I have to work harder, and I’m okay with that.],
+  [I follow the world champion Seahawks and the world champion L. A. Dodgers, and both my teams in different cities won it all this year, so that helps me.],
+  [Other than cooking and doing things with my family around the house, I don’t really have a lot of hobbies. I don’t go to clubs anymore because that’s where I work.],
+  [I \[listen to\] a lot of podcasts, specifically Seahawks podcasts or Dodger podcasts, and I enjoy it. You get older, you find things you like, you find things you don’t like. Stick to the things you like, especially when they’re not bad for you.],
+  [What do you want others to know about MS?],
+  [Alexakis: One thing that’s really important to me is to just tell people if you’ve heard me and other people talk about our symptoms, what we were feeling and things that were happening to us, and if that connects with you, go see your doctor.],
+  [And if your doctor tells you it’s in your head, go to a different doctor. Keep pushing till you find a diagnosis that makes sense for you.],
+  [What do you hope others take away from your MS journey?],
+  [Alexakis: I just want to be of service to people. I really do. It’s part of my program. A third of everything I do is to find ways to be of service to people.],
+  [When people ask me questions about MS, and I talk about it in my shows, I talk about the fact that I have MS, and I have shoutouts for MS warriors and cancer warriors and wheelchair warriors and just anybody who is coming to shows and doing stuff in their life.],
+  [Even though it’s harder, they’re doing it anyways. They deserve that kind of acknowledgement and celebration.],
+  [Is it rewarding to use your platform to help raise awareness?],
+  [Alexakis: I don’t want to say I like to use my attention to do this and this. I just want to be of service to people. It’s part of the program. I have learned through my relationship with my higher power to be a force of good in this world.],
+  [I’m 36, almost 37, years sober. I feel pretty confident about it because of where my head’s at and \[I have\] gratitude, and being of service to people is huge for me and a huge part of my program that I work every day.],
+  [I am not religious at all, but I’m very spiritual, and thanks to my program and my fellowship of guys that I work with that are sober guys like me. I’m blessed.],
+  [My family is like, you’re the best person when you’re working your program. I went through some periods of being sober but not working my program, and in the program, we call Dry Drunk, I went through fame. There were times when I wasn’t doing \[the program\].],
+  [What is next for you and Everclear?],
+  [Alexakis: Next year, we’re going to celebrate the 30th anniversary of So Much for the Afterglow . This year we’re gonna go out on tour, but we’re also in the studio.],
+  [We’re making a new album. I’ve been telling people I wasn’t going to make a new album, but with what’s going on in this world, I just started writing. I use it for catharsis. Not everyone is going to like this record. I don’t care. It’s timely. Let’s just leave it at that.],
 ),
   insert-map: (:),
-  word-count: 392,
+  word-count: 1484,
   edited-for-length: false,
   debug-mode: false,
 )
 
-  ],
-  [
-    standard-article(
-  title: [Week 17],
-  author: [Monica Dinculescu],
-  source-name: [Monica Dinculescu],
+}
+
+{
+  #standard-article(
+  title: [Dream Honeymoons to Italy],
+  author: [Anne Gordon],
+  source-name: [Live Life Travel],
   images: (),
   paragraphs: (
-  [I’ve been skipping weeks because a) literally nothing happens and b) I don’t have a good
-system to update these notes. They’re a markdown file on a GitHub repo, and I kind of 
-need a computer to edit it, but I also kind of don’t open my computer that much these days?
-I also keep forgetting which day is Monday. Room for improvement.],
-  [I wrote a blog post about how I generated some
-tree rings in JavaScript and then carved them as a linocut. It doesn’t actually contain any
-JavaScript, but it does have a lot of pretty images.],
-  [The last normal thing I did before the panini started was go to Japantown and stock
-up on apocalypse supplies (snackos, mucho ramen, milk tea powder, korean face things). 
-The first normal thing I did with my 1 vaccine shot was go to Japantown and restock 
-all the things. This wasn’t on purpose, but I am pleased with the serendipity. It is cherry blossom season, so it was very pretty, HOWEVER, some racist asshole vandalized two of the oldest cherry trees there in January. Literally chopped down all of the branches, one at a time. What the actual fuck.],
-  [If you’re against plastic (why aren’t you?) and use deodorants, Dove has started selling refillable ones. I got mine from Target. The refill itself 
-still comes in plastic, but overall it’s far less plastic than the obnoxious amount the normal ones have. I’m excited about this not because this deodorant is particularly amazing, but because Dove is a HUGE brand, and 
-having mainstream brands start looking into more reusable, less-plastic products is a small but exciting progress.],
-  [Speaking of waste, Zach bought us me the most amazing thing: a foodcycler !!! We’ve been composting for years, but I’ve recently started getting lazier about putting the compost back in the freezer when I’m done with it, so our idiot dog has been stealing a lot of compost (which is full of bad things for her like coffee grounds, onion peels, literally half a spaghetti squash rind she ate and threw up for 8 hours). This foodcycler thing takes the compost and dehydrates it and grinds it and in 4 hours is done and gives you back fertilizer at like a tenth of the original volume. We’ve had it for a week and it’s honestly THE MOST innovation I’ve seen in my kitchen.],
+  [Belmond Hotel Timeo - Taormima, Italy],
+  [While we do not subscribe to the ‘one size fits all’ theory for any vacation, that especially goes for honeymoons! However, we do have our very favorite Amalfi Coast and Sicily towns as well as the “Best of The Best” hotel and excursion recommendations that should be on the top of everyone’s list when planning their Italian getaway.],
+  [Amalfi Coast –],
+  [SORRENTO is the northern most town on the Amalfi Coast and a great choice if you can only pick one town to visit during your stay on The Amalfi Coast as it serves as a great “home base” if you are unable to take an extended honeymoon. Day trips and excursions are easy from Sorrento including visiting the other coastal cliffside towns, spending a day on the water, taking the ferry over to Capri or even touring the ruins of Pompeii. Sorrento sits upon a cliff and faces the Bay of Naples with stunning views of Mount Vesuvius. There is a town square, Piazza Tasso that is lined with cafes, restaurants and shops along with narrow alleys with lots of hidden gems to be discovered.],
+  [Grand Hotel Excelsior Vittoria – Sorrento, Italy],
+  [Best of The Best Sorrento Hotel – Grand Hotel Excelsior Vittoria\*],
+  [One of the most iconic hotels of Italy and it is still owned and managed by the same family (and they live there!). Established in 1834, the hotel was built on the same property where Emperor Augustus had his private villa, so it is possible to see ancient Roman ruins across the five-acre private gardens which is also a paradise of orange, lemon and olive trees, all local staples of the coast. Original antiques, unique rooms, amazing views, a central location, stunning pool, a few restaurants and bars (one Michelin starred) all make this hotel an extremely special place on the Amalfi Coast.],
+  [Best of The Best Sorrento Excursion],
+  [The Lemon Farm Tour is our favorite, hands down. This half day tour is nothing short of spectacular as you have the opportunity to meet 3 unique Sorrento families and not only learn/watch them do their trade, but also taste/eat/drink/enjoy the results. It is not only delicious, but a very authentic experience and a lot of fun. From the lemon farm with limoncello, lemonade and olive oil to the cheese factory (amazing) and then off to pizza making with the “pizza man.”],
+  [POSITANO is a village located south of Sorrento and is magically set within a steep cliff lined with narrow streets with a pebble beach along its coastline. Positano is the place to be and be seen and is usually very crowded during high season. There are a lot of great hotels, shopping, boutiques, cafes and bars, the most popular being ‘Music on the Rocks.’],
+  [John Steinbeck is quoted as saying “Positano bites deep. It is a dream place that isn’t quite real when you are there and becomes beckoningly real after you have gone.” Harper’s Bazaar 1953],
+  [Best of the Best Positano Hotel – Le Sirenuse\*],
+  [Le Sirenuse opened in 1951, when four Neapolitan brothers turned their summer house in to a charming hotel overlooking the bay of Positano. Today, the 58-room boutique hotel is considered one of Italy’s best, yet it still retains the intimate and personal feel of a private home.],
+  [We recommend enjoying the luxury spa, heated pool along with evening cocktails and great views at the romantic Champagne & Oyster Bar and then top the day off with dinner at Michelin starred restaurant, La Sponda. This infamous restaurant, which also boasts gorgeous sea views, is illuminated in the evening by four hundred candles that create an unforgettable atmosphere, especially for honeymooners.],
+  [Palazzo Avivo – Ravello, Italy],
+  [For those traveling in May and October, you can look forward to somewhat cooler temperatures and fewer crowds. During high season (June through September), we recommend Positano for those couples who want to be in the mix of fun and sun as it becomes a very lively town (sometimes crowded) and very hot during the days. A great pool is essential.],
+  [And for those who book Le Sirenuse\* with Live Life Travel (3 nights or more) in a Junior Suite or Suite, will receive a complimentary evening sunset cruise with bubbly during your stay. One of our favorite things to do, so an incredible deal.],
+  [Best of the Best Positano Excursion],
+  [Full Day Private Yacht Charter (and regardless of the wait time, the Blue Grotto is a MUST SEE)],
+  [Best of the Best Ravello Hotels],
+  [Belmond Hotel Caruso \* was formerly an 11th-century palace. Our absolute favorite part of this hotel is the (almost unbelievable) infinity pool that boasts some of the best views in the world. You will also enjoy complimentary boat rides as part of your stay here. This pool is UNREAL!],
+  [The truly something unique and special here for honeymooners is the “Infinity Dream Dinner,” which is a private candlelight dinner under the stars while floating on the hotel’s infinity pool, all with a private butler.],
+  [Palazzo Avino\* was built in what was once a 12 th century private villa for an Italian noble family, then opened as a hotel in 1997. What makes this resort unique and a favorite of ours is their ‘Clubhouse by the Sea,’ which is located in Marmorata, a short 15-minute drive from Ravello (via complimentary shuttle starting at 930am daily). All hotel guests can enjoy the beach platforms directly on the sea along with a pool, restaurant and lounge chair service. Open May through October. Best of both worlds.],
+  [As for excursions in Ravello, there is really no reason to leave the sanctuaries that are those two hotels. They are destinations in and of themselves. Of course, go into Ravello town and possibly do a walking tour, enjoy the shops and restaurants, but other than that, enjoy the view!],
+  [TAORMINA, SICILY is a hilltop town on the east coast of Sicily. Sicily deserves a dedicated trip to see the entire island (we consider it one of the world’s best kept secrets), but if you want just a small taste (and you do), we recommend Taormina. Enjoy some best cannoli’s (we love Roberto’s) and cuisine of your life while strolling along the Corso Umberto.],
+  [Best of the Best Taormina Hotel – Belmond Grand Hotel Timeo\*],
+  [The first hotel to be built in the city; you will enjoy views of the coast along with the beautiful Mount Etna. It is a Sicilian hideaway in the heart of town that fuels the imagination. Our favorite and most unique part of this hotel is its central location to town and the Greek Theatre (a must see). This resort also offers complimentary shuttle service to its sister hotel’s private beach at the Belmond Villa Sant’Andrea, the other “best” hotel in Taormina. You truly cannot go wrong with this choice since you get them both.],
+  [Best of the Best Taormina Excursion – Mount Etna],
+  [Plan for a full day guided tour of this incredible volcano. Venture to the summit, enjoy wine tasting (fun fact: some of the best wine is produced in volcanic soil). Pack a warm jacket, it’s cold up there, but you will literally feel like you are on another planet, it is one of the best experiences we can recommend. Definitely do the helicopter transfers if you can to get the absolute best views as well as maximizing your time on Etna.],
+  [\*Virtuoso property – All Virtuoso properties booked through Live Life Travel will receive VIP amenities that are not available online; contact for specifics],
+  [To start planning your honeymoon today, email anne\@livelifetravel.world],
+  [Belmond Timeo Hotel - Taormina, Italy.],
+  [The post Dream Honeymoons to Italy appeared first on Live Life Travel .],
 ),
   insert-map: (:),
-  word-count: 399,
+  word-count: 1398,
   edited-for-length: false,
   debug-mode: false,
 )
 
-  ],
-), ruled-indices: (1,))
-#pull-quote([There are plenty of reasons in today's world to be angry at sincere people who are confused and do damage as a result.], [Michael Tobis])
+}
 
+{
+  #standard-article(
+  title: [Doctors Thought Her Symptoms Were Pregnancy-Related. It Was Colon Cancer],
+  author: [Healthline],
+  source-name: [Healthline],
+  images: (),
+  paragraphs: (
+  [When 36-year-old Gabby Zappia (pictured above) reported blood in her stool, her doctor attributed it to pregnancy-related hemorrhoids. Months later, a colonoscopy revealed she had stage IV colon cancer. Gabby Zappia],
+  [Colorectal cancer in people under 50 is on the rise and is now the leading cause of cancer-related death for younger adults.],
+  [Experts say it’s still unclear why cases are rising among people under 50.],
+  [Gabby Zappia is sharing her journey navigating diagnosis and treatment after her initial symptoms were misdiagnosed as pregnancy-related.],
+  [In 2024, Gabby Zappia was 36 years old and pregnant with her third child when she noticed blood in her stool.],
+  [“I brought it up to my OB, and she said it was likely pregnancy-related hemorrhoids . That explanation made sense, and I wanted it to make sense, so I trusted it,” she told Healthline.],
+  [After her son was born, her symptoms persisted, and she pushed for answers.],
+  [“A colonoscopy changed my life overnight. Instead of finding hemorrhoids, they found a large mass in my colon,” Zappia said.],
+  [In December 2024, Zappia was diagnosed with stage IV colon cancer that had spread to her liver.],
+  [“I was a full-time mom, managing all aspects of my kids’ schedules, and I also had a small part-time job,” she said. “After my diagnosis, I had to stop working to focus on appointments and recovery. My husband took over most of the day-to-day tasks that I had handled, and I had to step back significantly in my role as a mom.”],
+  [Zappia immediately had a colon resection and, after recovering, started chemotherapy and immunotherapy in January 2025 at City of Hope.],
+  [In April 2025, she took a break from chemotherapy and underwent liver resection surgery and implantation of an HAI pump. Then she resumed chemotherapy after recovery.],
+  [“After 15 rounds of chemotherapy, I was declared no evidence of disease and rang the survivor bell in September 2025. A few months later, ctDNA tests showed cancer detection, and a PET scan confirmed activity in my liver,” said Zappia.],
+  [She underwent another liver surgery in January 2026. Because her ctDNA remains detectable, she is now exploring clinical trials.],
+  [“Colon cancer is no longer just a disease of older adults, and it is on the rise. You know your body better than anyone. If something feels off, ask questions and request additional testing. Push for answers. Ask for the colonoscopy,” Zappia said.],
+  [If you’re not being heard, she stressed seeking a second opinion.],
+  [“We need more awareness. We need to listen to young patients. I am just one of many young faces of colon cancer, and if sharing my story helps even one person catch their cancer earlier, then sharing this journey has purpose,” said Zappia.],
+  [Why is colorectal cancer in young adults on the rise?],
+  [Once considered an older person’s disease, colorectal cancer is now the leading cause of cancer-related death in adults under 50.],
+  [According to a January 2026  JAMA study , colorectal cancer has surpassed breast and lung cancer to become the leading cause of cancer-related deaths in U. S. adults under 50.],
+  [Physicians at City of Hope, where Zappia received treatment, say they are now treating dozens of patients in their 20s, 30s, and 40s each week, reflecting what’s happening nationwide.],
+  [Pashtoon Kasi,  MD, MS, Medical Director of GI Medical Oncology at City of Hope Orange County, who treated Gabby, said three out of four people under the age of 50 are diagnosed with advanced disease.],
+  [“There are no screening guidelines for somebody below the age of 45. It’s important to reiterate that the age of screening has moved from 50 to 45, \[but\] we’re frequently seeing individuals in their 20s, 30s, 40s, and because there is no screening test when they’re diagnosed, they’re often advanced or metastatic,” Kasi said.],
+  [While genetics can be a factor in a small percentage of early onset colorectal cancer, Kasi said the rise of colorectal cancer in younger people often occurs in people without any risk factors.],
+  [Researchers are looking into possible contributing factors, such as antibiotic use, the microbiome, diet, and microplastics , but no single factor explains the rise.],
+  [Paying attention to your body and symptoms is the strongest defense right now, said Kasi.],
+  [“A lot of our individuals, of course, they are young , so we’ve seen this cancer being diagnosed during or after pregnancy, and often it gets labeled as hemorrhoids or something that is not concerning, but in hindsight, probably should have warranted attention earlier,” he said.],
+  [Symptoms like rectal bleeding — which researchers say is a strong indication of early onset colorectal cancer in adults under 50 — changes in bowel habits , unexplained pain, and unintentional weight loss should be taken seriously.],
+  [“\[The\] fact that, at least right now, we don’t have guideline-approved screening tests for these younger individuals, these are symptoms that do warrant more attention,” Kasi said.],
+  [Improvements in screening and treatment for colon cancer bring hope],
+  [According to City of Hope doctors, researchers are working on ways to improve treatments, including an emphasis on improving immunotherapy response, targeted therapies, and conducting clinical trials for rectal cancer that combine chemotherapy, immunotherapy, and radiosensitizers.],
+  [Exploration of cellular and CAR-T therapies in highly refractory cases is also underway.],
+  [Ajay Goel, PhD, professor and Chair of the Department of Molecular Diagnostics and Experimental Therapeutics at City of Hope, is working on blood-based tests to detect colorectal cancer in younger patients.],
+  [“Over the past decade or so, \[we\] have developed now a blood-based test, which can find evidence of early onset colon cancers, with fairly high accuracy. So, somewhere in 90% accurate test for finding patients with young-onset colon cancer. So that was quite exciting,” he said.],
+  [While the test is not available publicly yet, Goel said it is promising. He envisions the test being given as part of annual labs drawn by primary care doctors starting with patients as young as 18.],
+  [“We are continuing to work on this, and we are hoping that we can, at some point, bring this test to the clinic once we can validate it in larger patient populations,” he said.],
+  [Tips to help reduce colorectal cancer risk in young adults],
+  [While there is no magic formula for completely eliminating your risk of colorectal cancer, the American Cancer Society recommends the following to help reduce it:],
+  [Get screened with a colonoscopy if you are 45 years or older. If you are younger, talk with your doctor about stool and blood tests as an option.],
+  [Maintain a healthy weight, diet, and exercise regimen by managing your weight , engaging in regular moderate to vigorous activity, and eating a diet high in vegetables, fruits, and whole grains, and low in red and processed meats.],
+  [Limit alcohol and don’t smoke, as both are linked to an increased risk of colorectal cancer.],
+  [Ask your doctor about vitamins, calcium, and magnesium that may help reduce your risk.],
+),
+  insert-map: (:),
+  word-count: 1150,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+}
 
 {
   #section-label([Briefs])
   #brief-group((
-    #brief-item([Richard Luscombe], source-name: [The Guardian Science/Space], [The 600kg Van Allen probe A will re-enter Tuesday evening, with most of it burning before reaching Earth’s surface
+    [#brief-item([Manuviraj Godara], source-name: [MakeUseOf], [I had tunnel-visioned myself into using Acrobat for everything PDF-related, from reading to highlighting. It was as if I was justifying the cost by using the program. But, as it turns out, Firefox already had all the PDF manipulation features I needed. Also, seeing Adobe's business practices, I'm better off without their tools , especially considering that the free version of Acrobat Reader is practically a running advertisement for Adobe's paid features.])],
+    [#brief-item([Richard A. I. Bethlehem], source-name: [Nature News], [Nature, Published online: 25 March 2026; doi:10.1038/d41586-026-00637-2 
 
-Parts of a giant Nasa satellite will crash to Earth on Tuesday evening, the US space agency is warning – but the chance of being struck is extremely low.
+Neuroscientists have created a continuous atlas showing how patterns of functional connectivity between brain regions change from birth to old age.])],
+    [#brief-item([Nature News], source-name: [Nature News], [Nature, Published online: 25 March 2026; doi:10.1038/d41586-026-00934-w 
 
-According to the US military’s space force, the roughly 1,323lb (600kg) spacecraft, one of a pair of twin probes launched in 2012 to investigate the Van Allen radiation belt, is estimated to re-enter Earth’s atmosphere at about 7.45pm EDT.
+The ability to automate the discovery process in some areas of scientific inquiry raises unanswered questions about how research should be conducted.])],
+    [#brief-item([Deadspin], source-name: [Deadspin], [Tobias Harris scored 18 points on 7-for-10 shooting, and the Detroit Pistons pulled away for a 109-87 win over the Minnesota Timberwolves on Saturday])],
+    [#brief-item([Brad Plumer], source-name: [NYT Science], [A tour of the Geothermal House of the CERAWeek energy conference in Houston this week. Geothermal energy is emerging as one of the big green winners of the current era.])],
+    [#brief-item([Deadspin], source-name: [Deadspin], [South Korea's Hyo Joo Kim took an emphatic step toward defending her title at the Ford Championship on Saturday, setting an LPGA 54-hole record to bui])],
+    [#brief-item([Deadspin], source-name: [Deadspin], [Early struggles from Skenes and Webb raise questions about whether World Baseball Classic innings impact MLB pitchers over a full season.])],
+    [#brief-item([Scientific American], source-name: [Scientific American], [Engineers explain how a collision between an Air Canada plane and a fire truck at one of New York’s busiest airports turned deadly])],
+    [#brief-item([Deadspin], source-name: [Deadspin], [Xtreme Gaming rallied for a pair of lower-bracket victories on Friday to extend their stay at the ESL One Birmingham event in England.,After overtakin])],
+    [#brief-item([Witney Seibold], source-name: [/Film], [Most of the Star Trek: The Next Generation cast didn't get to keep their uniform costumes. Jonathan Frakes, however, simply stole his.])],
+    [#brief-item([Deadspin], source-name: [Deadspin], [Kevin Durant had 25 points and 10 assists, while Jabari Smith Jr. added 21 points and a season-high 16 rebounds to lead the visiting Houston Rockets t])],
+    [#brief-item([Oluwademilade Afolabi], source-name: [MakeUseOf], [I used to think I had my phone habits pretty much locked down. Then I started noticing the pattern. The same little actions, over and over, every single day. Toggling Wi-Fi, muting notifications at night, opening the same set of apps in the same order each morning. None of it felt like work, but together it added up in a way I couldn't ignore anymore.])],
+    [#brief-item([Deadspin], source-name: [Deadspin], [WASHINGTON -- After proving their mental fortitude in the Sweet 16, Cameron Boozer's No. 1 seeded Duke Blue Devils will try to defeat this decade's mo])],
+    [#brief-item([Deadspin], source-name: [Deadspin], [Nikolaj Ehlers had a goal and an assist to lead the host Carolina Hurricanes to a 5-2 win over the New Jersey Devils on Saturday.,Jackson Blake, capta])],
+    [#brief-item([Agence France-Presse], source-name: [The Guardian Science/Space], [US space agency says it is working towards new date after February launch delayed by technical difficulties
 
- Continue reading...])
+Nasa has said the long-delayed launch of Artemis II, the first crewed flyby mission to the moon in more than 50 years, could happen as soon as 1 April.
 
-    #brief-item([Shaun Cichacki], source-name: [MakeUseOf], [Before I log in for the day and start typing away, I like to check the news to see what's going on in the world. Regardless of the news organization I'm using, the number of videos, audio, and pop-up ads that inundate my screen can be maddening. If severe weather is on the way, or there's something major happening in my area, I don't need to see ads for Bob's Discount Furniture before I know if my house is about to get blown away.])
+“We are on track for a launch as early as April 1, and we are working toward that date,” Lori Glaze, a senior Nasa official, told a press conference on Thursday. Technical difficulties delayed a launch originally expected in February.
 
-    #brief-item([Scientific American], source-name: [Scientific American], [The past 11 years were the 11 hottest on record amid an increasing onslaught of climate-driven disasters, the World Meteorological Organization said in a new report])
-
-    #brief-item([New Scientist], source-name: [New Scientist], [Mushrooms have been used by ancient humans for millennia, but archaeologists have only just uncovered their pivotal role in shaping civilisation])
-
-    #brief-item([Devin Meenan], source-name: [/Film], [Two of the darkest episodes of Battlestar Galactica were clearly influenced by another sci-fi story's all timer of an ending.])
-
-    #brief-item([Samantha Mathewson], source-name: [Space.com], [The "Diana of Versailles" or "Artemis, Goddess of the Hunt", a marble statue of the Roman goddess Diana, known as Artemis in Greek mythology, in the Musée du Louvre in Paris.])
-
-    #brief-item([Oluwademilade Afolabi], source-name: [MakeUseOf], [I used to think I had my phone habits pretty much locked down. Then I started noticing the pattern. The same little actions, over and over, every single day. Toggling Wi-Fi, muting notifications at night, opening the same set of apps in the same order each morning. None of it felt like work, but together it added up in a way I couldn't ignore anymore.])
-
-    #brief-item([New Scientist], source-name: [New Scientist], [In a randomised trial, men who experience premature ejaculation benefitted from using an app to learn techniques for extending intercourse])
-
-    #brief-item([Deadspin], source-name: [Deadspin], [In terms of the playoff race, the remaining games mean little for the Florida Panthers and New York Rangers.,Still there are things both teams would l])
-
-    #brief-item([Nature News], source-name: [Nature News], [Nature, Published online: 25 March 2026; doi:10.1038/d41586-026-00427-w 
-
-A description of the terminology and methodology used in this supplement, and a guide to the functionality that is available free online at natureindex.com.])
-
-    #brief-item([Deadspin], source-name: [Deadspin], [Marta Suarez scored a career-high 33 points, Olivia Miles added 28 in a near triple-double and third-seeded TCU ended Virginia's magical NCAA Tourname])
-
-    #brief-item([Elizabeth Howell], source-name: [Space.com], [The Artemis 2 crew poses in front of an Orion simulator Jan. 23, 2026 at NASA's Johnson Space Center in Houston. From left: Reid Wiseman, Christina Koch, Jeremy Hansen and Victor Glover.])
-
-    #brief-item([Deadspin], source-name: [Deadspin], [Joel Embiid had 29 points and made a big block in the final seconds as the Philadelphia Sixers rallied from 15 points down to edge the host Charlotte])
-
-    #brief-item([Deadspin], source-name: [Deadspin], [Lauren Betts scored 15 of her game-high 23 points and grabbed eight of her game-high 10 rebounds in the second half to lead top seed UCLA to a furious])
-
-    #brief-item([Deadspin], source-name: [Deadspin], [Gary Woodland shot 3-under-par 67 in the final round of the Texas Children's Houston Open to win on the PGA Tour for the first time in nearly seven ye])
-
-    #brief-item([Deadspin], source-name: [Deadspin], [North Carolina freshman star Caleb Wilson officially declared for the 2026 NBA Draft.,The 6-foot-10 forward averaged 19.8 points and 9.4 rebounds in 2])
-
-    #brief-item([Deadspin], source-name: [Deadspin], [The visiting Athletics will need to give Shea Langeliers some help Sunday afternoon if they are to avoid a three-game sweep in their series against th])
-
-    #brief-item([Deadspin], source-name: [Deadspin], [Nate Ament scored 18 points and Ja'Kobi Gillespie added 16 as sixth-seeded Tennessee defeated second-seeded Iowa State 76-62 on Friday night in an NCA])
-
-    #brief-item([Deadspin], source-name: [Deadspin], [Cam Schlittler allowed one hit over 5 1/3 innings and Aaron Judge and Giancarlo Stanton each homered, fueling the visiting New York Yankees to a 3-0 v])
-
-    #brief-item([Deadspin], source-name: [Deadspin], [Nickeil Alexander-Walker scored 27 points, Jalen Johnson added 26 points and 10 assists and the Atlanta Hawks held off the visiting Sacramento Kings f])
-
-    #brief-item([Ima Caldwell], source-name: [The Guardian Science/Space], [Eclipse will feature a deep, coppery-red full moon on 3 March. From Sydney to New York, use our guide to find out when the eclipse will be visible and the best time to see it tonight.
-
-North America, Australia and New Zealand will be treated to a rare total lunar eclipse on Tuesday known as a “blood moon”.
-
-As the full moon dips into the planet’s shadow tonight it will change colour to a “deep and coppery red”, says astrophysicist Dr Rebecca Allen of Swinburne University.
-
- Continue reading...])
-
-    #brief-item([New Scientist], source-name: [New Scientist], [On Tuesday, CERN will transport antiprotons on a truck for the first time, testing the plan to deliver antimatter by road to research labs across Europe])
-
-    #brief-item([Afam Onyimadu], source-name: [MakeUseOf], [Privacy is a main reason people de-Google, but for me, switching from Google Search was about more than privacy. I didn't enjoy getting SEO-heavy results and listicles when I needed a simple debugging fix.])
-
-    #brief-item([Deadspin], source-name: [Deadspin], [Kawhi Leonard hit a go-ahead jumper with 0.4 seconds left to lift the visiting Los Angeles Clippers to a 114-113 victory over the Indiana Pacers on Fr])
-
-    #brief-item([New Scientist], source-name: [New Scientist], [A 20-year study has shown that, like photocopying photocopies, cloning doesn't produce perfect copies – with big implications for farming, conservation and de-extinction])
-
-    #brief-item([Najla Kfoury-Beaumont], source-name: [Nature News], [Nature, Published online: 25 March 2026; doi:10.1038/d41586-026-00638-1 
-
-A type of childhood brain tumour called ependymoma is more common in boys than in girls. The reason for this difference turns out to be sex hormones such as testosterone.])
-
-    #brief-item([Scientific American], source-name: [Scientific American], [Decades of data have suggested the universe is flat, much like an infinite plane. But a new analysis reveals deep flaws in that simple conclusion])
-
-    #brief-item([Mike Bedard], source-name: [/Film], [The Predator franchise spans decades, and it includes some satisfying highs and exhausting lows. Let's rank every Predator movie to see where they stand.])
-
+ Continue reading...])],
+    [#brief-item([Deadspin], source-name: [Deadspin], [Michigan, UConn and Purdue emerge as the most dangerous teams in the Elite Eight. Full March Madness breakdown and analysis.])],
+    [#brief-item([New Scientist], source-name: [New Scientist], [Are we evolving to be more stupid? Humans have a relatively high genetic mutation rate, which has been thought to be driving down our physical and mental fitness – but columnist Michael Le Page finds these mutations aren’t the health risk some make them out to be])],
+    [#brief-item([Hannah Shaw-Williams], source-name: [/Film], [Project Hail Mary author Andy Weir says Paramount rejected his pitch for a Star Trek show, and has some harsh words for modern Trek.])],
+    [#brief-item([New Scientist], source-name: [New Scientist], [We know that a person’s outlook can have a huge effect on their health, and it’s no different when it comes to ageing. Columnist Graham Lawton looks at new evidence of just how powerful our attitude is – and how to use it to age better])],
+    [#brief-item([Katherine Kornei], source-name: [NYT Science], [A handful of Pele’s hair, extremely thin strands of volcanic glass are named for Pele, a female figure in Hawaiian mythology associated with volcanism, after an eruption of Kilauea volcano in Hawaii last March.])],
+    [#brief-item([Deadspin], source-name: [Deadspin], [The Colorado Rockies and Marlins both have reasons for optimism ahead of their rematch on Saturday afternoon in Miami.,The Marlins obviously are feeli])],
+    [#brief-item([Scientific American], source-name: [Scientific American], [Decades of data have suggested the universe is flat, much like an infinite plane. But a new analysis reveals deep flaws in that simple conclusion])],
+    [#brief-item([Deadspin], source-name: [Deadspin], [Don't be surprised if the "Ballad of Chase DeLauter" hits the airwaves by next weekend.,It's happened in Cleveland before, after all.,DeLauter etched])],
+    [#brief-item([Catrin Einhorn], source-name: [NYT Science], [The episode, involving a group of sperm whales, adds to evidence that humans aren’t the only species that gets some form of assistance during and after delivery.])],
+    [#brief-item([New Scientist], source-name: [New Scientist], [As the science fiction author publishes the latest novel in his Children of Time series, Children of Strife, he talks to Alison Flood about mantis shrimp, the pleasures of sci-fi and why empathy is so important in his writing])],
+    [#brief-item([Deadspin], source-name: [Deadspin], [Sarah Strong scored 21 points and Blanca Quinonez added 20 off the bench as top-seeded UConn handled its business with a 70-52 in over No. 6-seed Notr])],
+    [#brief-item([Scientific American], source-name: [Scientific American], [Climate scientist Kate Marvel talked to Scientific American about her decision to leave NASA amid federal government turmoil and funding challenges])],
+    [#brief-item([New Scientist], source-name: [New Scientist], [Photographer Jonas Kako travelled to Greenland to explore how mining for the rare earth elements and minerals that are vital for new green technologies is impacting locals])],
+    [#brief-item([Deadspin], source-name: [Deadspin], [The two bottom feeders in the NHL's weakest division meet on Saturday when the Calgary Flames play host to the Vancouver Canucks.,Despite their status])],
+    [#brief-item([Deadspin], source-name: [Deadspin], [Ashlon Jackson's rim-circling 3-pointer as time expired gave third-seeded Duke an 87-85 win over second-seeded LSU in a roller-coaster Sweet 16 matchu])],
   ))
 }
 

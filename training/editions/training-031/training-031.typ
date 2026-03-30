@@ -23,231 +23,40 @@
 
 // --- Front Page Feature ---
 #feature-article(
-  title: [From Postgres to ClickHouse: Achieving Real-Time Aggregations with Materialized Views and Cutting Costs by 80%],
+  title: [Docker Hub pull rate limits hit Rahti],
   kicker: [Cover Story],
-  author: [Vasu Gupta],
-  source-name: [Wingify Engineering],
-  deck: [This post explores a real-world migration from a Postgres-based aggregation pipeline to a ClickHouse architecture leveraging Materialized Views (MVs).],
-  lead-text: "id=\"overview\"> Overview",
-  lead-first-alpha: 0,
+  author: [Unknown],
+  source-name: [CSC Cloud Team Blog],
+  deck: [November 2020 was an eventful month for Rahti. Our backend storage had incident that affected our production clusters image repository for many weeks.],
+  lead-pre: [],
+  lead-cap: [T],
+  lead-rest: [hat event is well described in Allas downtime November 2020 - technical deep-dive .],
   body-paragraphs: (
-  [In the pursuit of real-time analytics at scale, teams often face a key architectural decision: continue scaling traditional relational databases like PostgreSQL or migrate to analytical columnar databases like ClickHouse.],
-  [This post explores a real-world migration from a Postgres-based aggregation pipeline to a ClickHouse architecture leveraging Materialized Views (MVs).],
-  [We’ll dive deep into:],
-  [The motivation behind the migration],
-  [How ClickHouse MVs simplify real-time aggregation],
-  [Performance and cost outcomes],
-  [A detailed comparison between Postgres and ClickHouse],
-  [Lessons learned and best practices],
-  [id="the-legacy-postgres-recording-pipeline"\> The Legacy: Postgres Recording Pipeline],
-  [id="data-flow"\> Data Flow],
-  [DACDN ingested real-time event data.],
-  [Data was processed and aggregated through a Recording Pipeline (write layer).],
-  [The processed aggregated events were persisted in a Postgres table.],
-  [Read Queries consumed aggregated results from Postgres.],
-  [id="pain-points"\> Pain Points],
-  [Despite Postgres’s robustness and ACID compliance, several scalability issues arose:],
-  [High operational overhead : Maintaining both the Recording Pipeline and Postgres at scale required significant infrastructure and engineering investment.],
-  [Performance bottlenecks : Query performance degraded as datasets grew, particularly for real-time analytics workloads.],
-  [Data duplication : Redundant data persisted across multiple systems for ingestion and query optimization.],
-  [Limited scalability : Vertical scaling (more CPU, RAM) reached diminishing returns, while sharding introduced complexity.],
-  [id="the-modernized-architecture-clickhouse-with-materialized-views"\> The Modernized Architecture: ClickHouse with Materialized Views],
-  [id="clickhouses-materialized-views-internal-working"\> ClickHouse's Materialized Views Internal Working],
-  [style="text-align: center; margin: 20px;"\>],
-  [Image source: ClickHouse Materialized Views Documentation],
-  [id="our-high-level-architecture"\> Our High-Level Architecture],
-  [style="text-align: center; margin: 20px;"\>],
-  [DACDN remains the data ingestion entry point.],
-  [Data flows into the ClickHouse Pipeline (write layer).],
-  [Events are written to the base raw events table ( raw\_events\_table ).],
-  [A Materialized View (MV) performs real-time aggregations into agg\_recordings\_table .],
-  [Read queries now directly query the MV for high-performance reads.],
-  [Improvement 
- Description 
- 
- 
- 
- 
- Performance Boost 
- ClickHouse’s columnar engine and compression deliver faster analytical queries. 
- 
- 
- Simplified Architecture 
- Eliminates the Recording Pipeline and Postgres, unifying real-time ingestion and analytics. 
- 
- 
- Cost Efficiency 
- Reduces infrastructure footprint — fewer moving parts, less operational overhead. 
- 
- 
- Real-Time Aggregation 
- Materialized Views compute aggregates automatically as data arrives. 
- 
- 
- Scalability 
- ClickHouse efficiently handles billions of events with horizontal scaling and sharding. 
- 
- 
- Flexibility 
- Compute power is isolated from storage, providing flexibility to scale resources based on needs.],
-  [id="under-the-hood-clickhouse-implementation"\> Under the Hood: ClickHouse Implementation],
-  [id="base-table"\> Base Table],
-  [Raw events are ingested into sharded\_database.raw\_events\_table . This table stores raw events in a highly compressed, columnar format.],
-  [id="aggregation-table"\> Aggregation Table],
-  [The agg\_recordings\_table uses the AggregatingMergeTree engine — perfect for pre-aggregated data.],
-  [class="gatsby-highlight"\> CREATE TABLE sharded\_database . agg\_recordings\_table
- ( 
- \` account\_id \` UInt32 , 
- \` uuid \` String , 
- \` session\_id \` DateTime , 
- -- additional dimensions/measures 
- ) 
- ENGINE = AggregatingMergeTree
- PARTITION BY toStartOfMonth ( session\_id ) 
- ORDER BY ( account\_id , session\_id , uuid ) 
-TTL . . . 
-SETTINGS storage\_policy = '...' ;],
-  [id="materialized-view-logic"\> Materialized View Logic],
-  [class="gatsby-highlight"\> CREATE MATERIALIZED VIEW sharded\_database . recordings\_daily\_mv\_v1
- TO sharded\_database . agg\_recordings\_table
- AS SELECT 
- account\_id , 
- uuid , 
- coalesce ( session\_id , toDateTime ( 0 ) ) AS session\_id , 
- -- aggregate functions here (e.g., countState(), sumState(), uniqState()) 
- FROM sharded\_database . raw\_events\_table
- WHERE /\* filtering conditions \*/ ;],
-  [This MV runs continuously — new data triggers aggregation automatically, making the latest analytics instantly queryable.],
-  [id="migration-workflow"\> Migration Workflow],
-  [id="schema-setup"\> Schema Setup],
-  [Create an aggregated ( agg\_recordings\_table ) table ( raw\_events\_table was already present for raw events).],
-  [Deploy Materialized View logic.],
-  [id="historical-data-copy"\> Historical Data Copy],
-  [Migrate historical data from PostgreSQL's aggregated table or ClickHouse's raw events table into ClickHouse's recordings aggregated table.],
-  [id="validation"\> Validation],
-  [Compare aggregation outputs between PostgreSQL and ClickHouse to ensure parity.],
-  [Validate query results consumed by read queries.],
-  [id="cutover"\> Cutover],
-  [Redirect read queries to the ClickHouse MV.],
-  [Deprecate the PostgreSQL pipeline.],
-  [id="cleanup"\> Cleanup],
-  [Decommission the old PostgreSQL infrastructure to save costs.],
-  [id="benchmark-insights"\> Benchmark Insights],
-  [While exact metrics vary by dataset, general trends show:],
-  [Metric 
- Postgres 
- ClickHouse 
- 
- 
- 
- 
- Query latency (99th percentile) 
- 30–50 seconds 
- 100–300 ms 
- 
- 
- Storage footprint 
- High (row-store) 
- 75% reduction in storage (columnar) 
- 
- 
- Operational overhead 
- High 
- Low 
- 
- 
- Cost efficiency 
- Moderate 
- Excellent],
-  [style="text-align: center; margin: 20px;"\>],
-  [id="postgresql-vs-clickhouse-a-deep-dive"\> PostgreSQL vs ClickHouse: A Deep Dive],
-  [Aspect 
- Postgres 
- ClickHouse 
- 
- 
- 
- 
- Storage Model 
- Row-oriented 
- Columnar 
- 
- 
- Ideal Workload 
- OLTP (transactions) 
- OLAP (analytics) 
- 
- 
- Indexing 
- B-tree, GIN, BRIN 
- Sparse indices, partitions 
- 
- 
- Aggregation Performance 
- Slower on large datasets 
- Optimized for massive aggregates 
- 
- 
- Materialized Views 
- Manual refresh required 
- Real-time, automatically updated 
- 
- 
- Schema Flexibility 
- High 
- Moderate (needs defined schema) 
- 
- 
- Joins 
- Strong relational joins 
- Limited but improving 
- 
- 
- Updates/Deletes 
- ACID, strong consistency 
- Eventual consistency, append-optimized 
- 
- 
- Scalability 
- Vertical scaling 
- Horizontal (cluster-friendly) 
- 
- 
- Ecosystem 
- Mature, rich tooling 
- Rapidly evolving, modern],
-  [id="lessons-learned"\> Lessons Learned],
-  [Design for immutability : ClickHouse thrives with append-only workloads.],
-  [Leverage partitioning : Time-based partitions ( toStartOfMonth ) optimize queries and TTL-based cleanup.],
-  [Balance MVs : Over-aggregating can limit flexibility; under-aggregating can hurt performance.],
-  [Monitor ingestion lag : High write rates can cause merge delays.],
-  [Schema evolution requires care : Adding new columns or changing types requires explicit handling.],
-  [id="why-not-clickhouses-projections"\> Why not ClickHouse’s Projections],
-  [id="why-materialized-views-are-better-than-projections-for-this-task"\> Why Materialized Views Are Better Than Projections for This Task],
-  [Explicit Schema and Separate Storage : Materialized views store results in their own table with a defined schema, giving more flexibility for complex denormalization. Projections, on the other hand, are tied to the main table and are mostly invisible.],
-  [Real-Time Updates : Materialized views automatically update as new data is inserted, making them ideal for continuous, real-time aggregation. Projections focus on optimizing queries over existing data rather than live updates.],
-  [Complex Transformations and Chaining : Materialized views can perform multi-step transformations and be chained together, enabling powerful data pipelines. Projections cannot be chained.],
-  [id="when-to-choose-clickhouse"\> When to Choose ClickHouse],
-  [Choose ClickHouse if your workloads are:],
-  [Analytical and read-heavy],
-  [Require sub-second aggregation queries on billions of rows],
-  [Can tolerate eventual consistency],
-  [Involve streaming or real-time data processing],
-  [Choose PostgreSQL if your workloads are:],
-  [Transactional or highly relational],
-  [Require strong consistency guarantees],
-  [Involve frequent row-level updates or joins across normalized data],
-  [id="final-thoughts"\> Final Thoughts],
-  [The migration from PostgreSQL to ClickHouse marked a significant leap in scalability, performance, and simplicity. By leveraging Materialized Views, the engineering team unlocked near real-time insights, reduced infrastructure complexity, and cut operational costs by 80%.],
-  [This evolution reflects a broader industry trend:],
-  [“Move compute closer to the data, automate aggregation, and design for scale from day one.”],
-  [As data volumes continue to grow, ClickHouse represents a powerful paradigm for modern analytics engineering — fast, efficient, and purpose-built for the age of streaming data.],
-  [id="further-reading"\> Further Reading],
-  [ClickHouse Materialized Views Documentation],
-  [ClickHouse AggregatingMergeTree Engine],
-  [Materialized Views versus Projections],
-  [Enhancing ClickHouse Architecture with Distributed Query Engines],
-  [DACDN],
+  [Just before our storage incident, 2nd of November, Docker applied "rate limiting for Docker container pulls for some users" . When we tried to prepare for this in advance, it was very hard to figure out what the exact effect would be for Rahti. It took longer to resolve than we anticipated.],
+  [style="text-align: left;"\>Limits began],
+  [We were relieved that the first day after pull rates were enforced was peaceful. Rahti was still up and running as it should. Users didn't complain about failing deployment in large amounts. Admins survived another upstream change.],
+  [Eventually we received few tickets on failing builds. Our first approach was to instruct people to change their images away from Docker Hub to alternative repositories which do not have rate limiting enabled. Some users were able to migrate their images but this was not feasible solution for everyone. Still, it was a good opportunity to remind users to check what images they use.],
+  [The error looks like this:],
+  [Pulling image "docker.io/centos/python-38-centos7\@sha256:da83741689a8d7fe1548fefe7e001c45bcc56a08bc03fd3b29a5636163ca0353" ...
+pulling image error : toomanyrequests: You have reached your pull rate limit. You may increase the limit by authenticating and upgrading: https:\/\/www.docker.com/increase-rate-limit],
+  [style="text-align: left;"\>Cumulative issues cause exponential grief],
+  [We gave our users instructions how to move their dependencies from public Docker Hub to Rahti image registry, How to manually cache images in Rahti's registry . This was harder in practice, as we did have issues with our own registry due to our storage incident. There were days when users suffered from both Docker Hub and Rahti internal registry availability. Those days were hard for our Rahti admins, who struggled to meet customer expectations of highly available services.],
+  [After our storage incident was resolved, using images from internal registry was again feasible and reliable alternative to public Docker registry.],
+  [style="text-align: left;"\>Project-specific credentials],
+  [Another approach we tried was to use project-specific credentials. We wrote a guide on it; How to add docker hub credentials to a project .],
+  [This method got mixed results. Some users were able to pull images and others complained they still got \`toomanyrequests\` errors. We never got the instructions fully working for all users (is this even possible in complex systems?). There are still some unknown image magic in OpenShift builds we haven't found yet. In any case, we now have instructions how to apply custom image credentials if users want to pull images from private repositories.],
+  [style="text-align: left;"\>Should we buy Docker subscription?],
+  [The root of this pull rate limiting issue is Docker used to provide free services for many many years and their usage has probably increased a lot over the years. We understand they must had pressure to change their free model and guide their users towards paid subscriptions.],
+  [We did contact Docker sales to pursue better understanding of our choices. Thanks to their helpful salesperson, we got alternatives. We could either buy \`Team\` or \`Large\` subscription.],
+  [Large subscription price was so high we would have to ask budget for it, so we decided to do some testing with Team subscription.],
+  [style="text-align: left;"\>OpenShift cluster configuration],
+  [Cluster-wide credentials/tokens can be applied during installation by setting variable \`openshift\_additional\_registry\_credentials\`. We used this same approach to apply changes to our existing development clusters and verified they worked.],
+  [style="text-align: left;"\>Rolling out changes],
+  [Shared default credentials were tested in our development environment for a while until we were confident enough that they were stable and reliable. In February 2021 they were rolled out to production environments and you Rahti users can finally pull container images from Docker Hub without limits.],
+  [style="text-align: left;"\>Afterthoughts],
+  [These Docker Hub issues were hard to solve. Now that the core components of container cluster is stable again, we can look forward to develop our platform further.],
+  [I believe the changes Docker made to their service policies mark some kind of change in container maturity. They sent a signal that it's no longer okay to use public images without limits. This may not change the behavior of small actors but having a limit forces larger operators to think their image usage. All users who use container images in "production" should review what containers they use.],
+  [We hope Rahti users will be able to leverage our platform to enable their vision and solve their selected problems. For that we need the ability to pull images without daily limits. Rahti could also be the first container platform for students who use our services. We feel it's our duty to make that introduction to containers as smooth as possible. We hope you appreciate our efforts. Now go and use Rahti and create something amazing.],
 ),
   edited-for-length: false,
 )
@@ -256,265 +65,48 @@ SETTINGS storage\_policy = '...' ;],
 {
   #section-label([Features])
   #standard-article(
-  title: [Streamlining Security Investigations with Agents],
-  author: [Dominic Marks],
-  source-name: [Slack Engineering],
-  images: (),
-  paragraphs: (
-  [Slack’s Security Engineering team is responsible for protecting Slack’s core infrastructure and services. Our security event ingestion pipeline handles billions of events per day from a diverse array of data sources. Reviewing alerts produced by our security detection system is our primary responsibility during on-call shifts.],
-  [We’re going to show you how we’re using AI agents to optimize our working efficiency and strengthen Slack’s security defenses. This post is the first in a series that will unpack some of the design choices we’ve made and the many things we’ve learnt along the way.],
-  [At the end of May 2025 we had a rudimentary prototype of what would grow into our service. Initially, the service was not much more than a 300 word prompt.],
-  [The prompt consisted of five sections:],
-  [style="font-weight: 400;"\> Orientation : “You are a security analyst that investigates security alerts […]”],
-  [style="font-weight: 400;"\> Manifest : “You have access to the following data sources: […]”],
-  [style="font-weight: 400;"\> Methodology : “Your investigation should follow these steps: […] ”],
-  [style="font-weight: 400;"\> Formatting : “Produce a markdown report of the investigation: […]”],
-  [style="font-weight: 400;"\> Classification : “Choose a response classification from: […]”],
-  [We implemented a simple “stdio” mode MCP server to safely expose a subset of our data sources through the tool call interface. We repurposed a coding agent CLI as an execution environment for our prototype.],
-  [The performance of our prototype implementation was highly variable: sometimes it would produce excellent, insightful results with an impressive ability to cross-reference evidence across different data sources. However, sometimes it would quickly jump to a convenient or spurious conclusion without adequately questioning its own methods. For the tool to be useful, we needed consistent performance. We needed greater control over the investigation process.],
-  [We spent some time trying to refine our prompt, stressing the need to question assumptions, to verify data from multiple sources, and to make use of the complete set of data sources. While we did have some success with this approach, ultimately prompts are just guidelines; they’re not an effective method for achieving fine-grained control.],
-  [Our solution was to break down the complex investigation process we’d described in the prompt of our prototype into a sequence of model invocations, each with a single, well-defined purpose and output structure. These simple tasks are chained together by our application.],
-  [Each task was given a structured output format. Structured output is a feature that can be used to restrict a model to using a specific output format defined by a JSON schema. The schema is applied to the last output from the model invocation. Using structured outputs isn’t “free”; if the output format is too complicated for the model, the execution can fail. Structured outputs are also subject to the usual problems of cheating and hallucination.],
-  [In our initial prototype, we included guidance to “question your evidence”, but had mixed success. With our structured output approach, that guidance had become a separate task in our investigation flow with much more predictable behavior.],
-  [This approach gave us more precise control at each step of the investigation process.],
-  [From Prototype to Production],
-  [While reviewing the literature, two papers particularly influenced our thinking:],
-  [style="font-weight: 400;"\> Meta-Prompting: Enhancing Language Models with Task-Agnostic Scaffolding (Stanford, OpenAI)],
-  [style="font-weight: 400;"\> Unleashing the Emergent Cognitive Synergy in Large Language Models: A Task-Solving Agent through Multi-Persona Self-Collaboration (Microsoft Research)],
-  [These papers describe prompting techniques that introduce multiple personas in the context of a single model invocation . The idea of modelling the investigation using defined personas was intriguing, but in order to maintain control we needed to represent our personas as independent model invocations. Security tabletop exercises, and how we might adapt their conventions to our application, were also a major source of inspiration during the design process.],
-  [Our chosen design is built around a team of personas (agents) and the tasks they can perform in the investigation process. Each agent/task pair is modelled with a carefully defined structured output, and our application orchestrates the model invocations, propagating just the right context at each stage.],
-  [The Director agent poses a question and domain expert agents respond, generating findings. The Critic agent reviews findings for quality and assembles a timeline using the most credible. The Director uses the high-quality findings and timeline to determine how to progress the investigation.],
-  [Our design has three defined persona categories:],
-  [The Investigation Director. The Director’s responsibility is to progress the investigation from start to finish. The Director interrogates the experts by forming a question, or set of questions, which become the expert’s prompt. The Director uses a journaling tool for planning and organizing the investigation as it progresses.],
-  [A domain expert. Each domain expert has a unique set of domain knowledge and data sources. The experts’ responsibility is to produce findings from their data sources in response to the Director’s questions.],
-  [We currently have four experts in our team:],
-  [style="font-weight: 400;"\> Access : Authentication, authorization and perimeter services.],
-  [style="font-weight: 400;"\> Cloud : Infrastructure, compute, orchestration, and networking.],
-  [style="font-weight: 400;"\> Code : Analysis of source code and configuration management.],
-  [style="font-weight: 400;"\> Threat : Threat analysis and intelligence data sources.],
-  [The Critic is a “meta-expert”. The Critic’s responsibility is to assess and quantify the quality of findings made by domain experts using a rubric we’ve defined. The Critic annotates the experts’ findings with its own analysis and a credibility score for each finding. The Critic’s conclusions are passed back to the Director, closing the loop. The weakly adversarial relationship between the Critic and the expert group helps to mitigate against hallucinations and variability in the interpretation of evidence.],
-  [Because each agent/task pair is a separate model invocation we can vary all of the inputs, including the model version, output format, prompts, instructions, and tools. One of many ways we’re using this capability is to create a “knowledge pyramid”.],
-  [At the bottom of the knowledge pyramid, domain experts generate investigation findings by interrogating complex data sources, requiring many tool calls. Analyzing the returned data can be very token-intensive. Next, the Critic’s review identifies the most interesting findings from that set. During the review process the Critic inspects the experts’ claims and the tool calls and tool results used to support them, which also incurs a significant token overhead. Once the Critic has completed its review, it assembles an up to date investigation timeline, integrating the running investigation timeline and newly gathered findings into a coherent narrative. The condensed timeline, consisting only of the most credible findings, is then passed back to the Director. This design allows us to strategically use low, medium, and high-cost models for the expert, critic, and director functions, respectively.],
-  [The investigation process is broken into several phases. Phases allow us to vary the structure of the investigation loop as the investigation proceeds. At the moment, we have three phases, but it is simple to add more. The Director persona is responsible for advancing the phase.],
-  [Investigations begin in the discovery phase. After each round of investigation the Director decides whether to remain in the current phase or to progress to a new phase.],
-  [The first phase of each investigation. The goal in the discovery phase is to ensure that every available data source is examined. The Director reviews the state of the investigation and generates a question that is broadcast to the entire expert team.],
-  [A “meta-phase” in which the Director decides whether to advance to the next investigation phase or continue in the current one. The task’s prompt includes advice on when to advance to each phase.],
-  [Once the discovery phase has made clear which experts are able to produce relevant findings, the Director transitions the investigation to the trace phase. In the trace phase, the Director chooses a specific expert to question. We also have the flexibility to vary the model invocation parameters by phase, allowing us to use a different model or enhanced token budget.],
-  [The Director transitions the investigation to the concluding phase when sufficient information has been gathered to produce the final report.],
-  [Our prototype used a coding agent CLI as an execution harness, but that wasn’t suitable for a practical implementation. We needed an interface that would let us observe investigations occurring in realtime, view and share past investigations, and launch ad-hoc investigations. Critically, we needed a way of integrating the system into our existing stack, allowing investigations to be triggered by our existing detection tools. The service architecture we created does all of these things and is quite simple.],
-  [The hub provides the service API and an interface to persistent storage. Besides the usual CRUD-like API, the hub also provides a metrics endpoint so we can visualise system activity, token usage, and manage cost.],
-  [Investigation workers pick up queued investigation tasks from the API. Investigations produce an event stream which is streamed back to the hub through the API. Workers can be scaled to increase throughput as needed.],
-  [The Dashboard is used by staff to interact with the service. Running investigations can be observed in real-time, consuming the event stream from the hub. Additionally the dashboard provides management tools, letting us view the details of each model invocation. This capability is invaluable when debugging the system.],
-  [We’ve included an edited investigation report which demonstrates the potential of the agents to exhibit novel emergent behavior. In this case, the original alert was raised for a specific command sequence, which we analyze because it can be an indicator of compromise. In the course of investigating the alert, the agents independently discovered a separate credential exposure elsewhere in the process ancestry.],
-  [The highlighted leaf process triggered the investigation, but the agents traced the process hierarchy and discovered a different issue in an ancestor process.],
-  [The text below is a lightly edited version of the report summary from this investigation.],
-  [Investigation Report : Credential Exposure in Monitoring Workflow [ESCALATE]],
-  [Summary : While investigating [command sequence], the investigation uncovered a credential exposure elsewhere in the process ancestry chain.],
-  [The investigation confirmed that the command execution on [TIMESTAMP] was part of a legitimate monitoring workflow using [diagnostic tool]. The process ancestry shows the expected execution chain. However, critical security concerns were identified:],
-  [style="font-weight: 400;"\> Credential Exposure : A credential was exposed in process command line parameters within the ancestry chain, creating significant security risk.],
-  [style="font-weight: 400;"\> Expert-Critic Contradiction : The expert incorrectly assessed credential handling as secure while the critic correctly identified exposed credentials, indicating analysis blind spots that require attention.],
-  [What is notable about this result is that the expert did not raise the credential exposure in its findings; the Critic noticed it as part of its meta-analysis of the expert’s work. The Director then chose to pivot the investigation to focus on this issue instead. In the report, the Director highlights both the need to mitigate the security issue, and to follow-up on the expert’s failure to properly identify the risk. We referred the credential exposure to the service owning team to resolve.],
-  [We’re still at an early phase of our journey to streamline security investigations using AI agents, but we’re starting to see meaningful benefits. Our web-based dashboard allows us to launch and watch investigations in real time, and investigations yield interactive, verifiable reports that show how evidence was collected, interpreted, and judged. During our on-call shifts, we’re switching to supervising investigation teams, rather than doing the laborious work of gathering evidence. Unlike static detection rules, our agents often make spontaneous and unprompted discoveries, as we demonstrated in our example report. We’ve seen this occur many times, from highlighting weakness in IAM policies, to identifying problematic code and more.],
-  [There’s a great deal more to say. We look forward to sharing more details of how our system works in future blog posts. As a preview of some future content from the series:],
-  [style="font-weight: 400;"\> Maintaining alignment and orientation during multi-persona investigations],
-  [style="font-weight: 400;"\> Using artifacts as a communication channel between investigation participants],
-  [style="font-weight: 400;"\> Human in the loop: human / agent collaboration in security investigations],
-  [We wanted to give a shout out to all the people that have contributed to this journey:],
-  [style="font-weight: 400;"\> Chris Smith],
-  [style="font-weight: 400;"\> Abhi Rathod],
-  [style="font-weight: 400;"\> Dave Russell],
-  [style="font-weight: 400;"\> Nate Reeves],
-  [Interested in taking on interesting projects, making people’s work lives easier, or just building some pretty cool forms? We’re hiring!],
-  [Apply now],
-),
-  insert-map: (:),
-  word-count: 2081,
-  edited-for-length: true,
-  debug-mode: false,
-)
-
-}
-
-{
-  #standard-article(
-  title: [Bare Metal Big Data Builds],
-  author: [Target Brands, Inc],
-  source-name: [Target Tech],
-  images: (),
-  paragraphs: (
-  [When you first think about scaling an on-premise Hadoop cluster your mind jumps to the process and the teams involved in building the servers, the time needed for configuring them and then the stability required while getting them into the cluster. Here at Target that process used to be measured in months. The story below outlines our journey around scaling our Hadoop cluster, taking the months to hours and adding hundreds of servers in a couple weeks.],
-  [id="the-need"\>The Need],
-  [Early 2013 taught us the lesson that manually managing Hadoop clusters, no matter how small is a time consuming and very repetitive task. Our next cluster build in 2014 drove the adoption of Chef, Artifactory and Jenkins to help with cluster operations. We stood up those components and created new role cookbooks to manage everything on the OS (configurations, storage, Kerberos, MySQL, etc.). While this was a step in the right direction, it left us with a manual process to still create the initial base server build and then add it to the cluster after configuring it with Chef.],
-  [id="build-foundation"\>Build Foundation],
-  [Closing the gap in our automation meant finding a way to deliver on true end to end builds, from an initial bootstrap to running jobs in your cluster. OpenStack’s Ironic project was the first piece of the puzzle. Ironic gives us the ability to provision bare metal servers, similar to how OpenStack automated the VM build process. With Ironic as the foundation, we leveraged the Nova client to manage our instance builds. The nova python client interacts with the Compute service’s API, giving us an easy way to specify our build parameters and spinning up an instance on one of our physical servers. The other key piece with the nova client is the ability to send boot information to the server using user data. The bash script sent executes several commands to install the Chef client, setup public keys and run the initial knife bootstrap to set the run list for the build.],
-  [Example nova boot command:],
-  [id="server-configuration"\>Server Configuration],
-  [The knife bootstrap portion of our user data script sends the instructions for Chef to build a certain node (Hadoop Data Node, Control Node, Edge Node, etc.). The types of nodes are managed with role wrapper cookbooks, giving us an easy way to manage attributes and run lists without changing our core code. This makes it easy to deploy new features and bug fixes to a specific cluster or role within a specific environment for example.],
-  [Example role attributes:],
-  [\# MySQL
-default['hdp']['mysql\_server'] = 'mysql\_host'],
-  [\# Kerberos
-default['hdp']['kerberos\_realm'] = 'KDC\_REALM'
-default['hdp']['kdc\_server'] = ['kdc\_hosts']],
-  [\# Software 
-default['hdp']['ambari']['repo\_version'] = '2.0.2'
-default['hdp']['repo\_version'] = '2.2.4.12'
-default['hdp']['util\_repo\_version'] = '1.1.0.20'],
-  [In the case of a Data Node role, the build runs through the following:],
-  [Setting up internal software repo’s],
-  [RHS registration],
-  [Raid controller installation/JBOD configuration],
-  [Base Target OS build],
-  [Hostname management],
-  [Centrify rezoning],
-  [Autofs (Unix home directories)],
-  [OS tuning (Hadoop)],
-  [Kerberos (client installation and configurations)],
-  [Disk formatting, partitioning and mounting],
-  [Ambari host registration],
-  [Ambari client installation],
-  [Ambari service installation],
-  [Ecosystem Setup (R, Python, Java, etc.)],
-  [Ambari host service startup],
-  [id="home-stretch"\>Home Stretch],
-  [Now that we have a fully configured Hadoop Data Node, we needed a way to add it to our cluster without impacting existing production jobs. This is where Ambari comes in the picture. Ambari is our primary Hadoop administration tool which provides both a UI and RESTful APIs to manage your cluster. Using the UI was a no-go for us since that would mean manual intervention. This final push was going through the API to complete the end-to-end automation. Starting with Ambari 2.0, you can integrate Ambari with your Kerberos KDC to have it manage principal and keytab creation. In order for this to work through the API, you needed to ensure your KDC admin credentials were being passed. One way to do this is using the curl session cookie. This json file was created using a Chef template with an encrypted data bag to securely provide credentials.],
-  [kdc\_cred.erb Chef template example:],
-  [You can create the cookie with the curl -c option, using the json file which contains your KDC admin credentials. With the session cookie created, you are all set to run through the calls needed to fully install and start a service.],
-  [1. Service Addition],
-  [This step registers the new service on the host specified and leaves it in an “Install Pending” state. Example command for adding a node manager to host worker-1.vagrant.tgt:],
-  [2. Service Installation],
-  [This step continues from the registration and actually installs the service on the host. After the installation is completed the service is in a ‘Stopped’ state but is ready for use. Example command for installing a node manager to host worker-1.vagrant.tgt:],
-  [3. Maintenance Mode],
-  [This step suppresses all alerts for the new service since it is installed but in a stopped state. You could start the service at this point, but the rest of the build process for our internal builds needs to complete so this will stay down until the very end. Example command for putting the node manager on host worker-1.vagrant.tgt in maintenance mode:],
-  [4. Service Startup],
-  [With the rest of our build completed we can remove the service from maintenance mode and start it up, so jobs can start running on this host. Example command for starting the node manager on host worker-1.vagrant.tgt:],
-  [The above examples walked you through the process to fully add a Node Manager service using Ambari’s API. The Chef recipe’s created internally leverages that logic as the foundation, but optimize the process to handle multiple client and service installations. Additional information on Ambari’s API can be found on Ambari’s github or the Ambari wiki.],
-  [id="the-results"\>The Results],
-  [With the above process we can complete a single data node build in 2 hours. The great thing about the nova client was the ability to script out your builds, allowing us to run parallel builds and reaching our expansion goals by adding hundreds of servers within a couple week timeframe!],
-  [id="issues-encountered"\>Issues Encountered],
-  [Our automation efforts ran into issues like any other project. The two larger challenges we faced were finding a way to register new hosts in our DNS and then getting Ambari to scale with our builds.],
-  [On the DNS side, not having access to create new records and not wanting to get Change approvals in the process forced us to look at a bulk DNS load option. DNS records were created for the new IP space and during the build the server would lookup the hostname based on the IP address it was assigned. After setting the hostname to the new value and reloading Ohai, we were back in business.],
-  [Due to a known bug, Ambari’s host\_role\_command and execution\_command tables were growing at an alarming rate. The more servers we added, the larger the tables became and the longer the installs took. With our systems freeze weeks away, we couldn’t afford to wait and go through an Ambari 2.1.x upgrade where that bug was being addressed. We ended up adjusting the indexes and purging those tables to continue with our builds.],
-  [id="whats-next"\>What’s Next?],
-  [Community give back (wiki, jira’s for features and issues encountered) with the goal of helping to solve some of those problems ourselves. Outside that we want to continue to enhance our initial build MVP by refactoring some of the code and adding validations and build notifications. All of this will continue to mature our build process, getting us ready for more growth in 2016.],
-),
-  insert-map: (:),
-  word-count: 1376,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-}
-
-{
-  #standard-article(
-  title: [NPR Project],
-  author: [Clément Foucault],
-  source-name: [Blender Dev Blog],
-  images: (),
-  paragraphs: (
-  [In July 2024 the NPR (Non-Photorealistic Rendering) project officially started, with a workshop with Dillon Goo Studio and Blender developers.],
-  [While the use-cases were clear, the architecture and overall design were not. To help with this, the team started working in a prototype containing many shading features essential to the NPR workflow (such as filter support, custom shading, and AOV access).],
-  [This prototype received a lot of attention, with users contributing a lot of nice examples of what is possible with such system. The feedback showed that there is a big interest from the community for a wide range of effects.],
-  [However the amount of flexibity made possible with the prototype came with a cost: it locked NPR features within EEVEE, alienating Cycles from part of the NPR pipeline. It also deviated from the EEVEE architecture, which could limit future feature development.],
-  [After much consideration, the design was modified to address these core issues. The outcome can be summarized as:],
-  [Move filters and color modification to a multi-stage compositing workflow.],
-  [Keep shading features inside the renderer’s material system.],
-  [One of the core feature needed for NPR is the ability to access and modify the shaded pixels.],
-  [Doing it inside a render engine has been notoriously difficult. The current way of doing it inside EEVEE is to use the ShaderToRGB node, which comes with a lot of limitations. In Cycles, limited effects can be achieved using custom OSL nodes.],
-  [As a result, in production pipeline, this is often done through very cumbersome and time consuming scene-wide compositing. The major downside is that all asset specific compositing needs to be manually merged and managed inside the scene compositor.],
-  [Instead, the parts of the compositing pipeline that are specific to a certain asset should be defined at the asset level. The reasoning is that these compositing nodes define the appearance of this asset and should be shared between scene.],
-  [Multi-stage compositing is just that! A part of the compositing pipeline is linked to a specific object or material. This part receives the rendered color as well as its AOVs and render passes as input, and output the modified rendered color.],
-  [The object level compositor at the bottom right define the final appearance of the object],
-  [In this example the appearance of the Suzanne object is defined at the object level inside its asset file. When linked into a scene with other elements, it is automatically combined with other assets.],
-  [From left to right: Smooth Toon shading with alpha over specular, Pixelate, Half-Tone with Outline],
-  [This new multi-stage compositing will be reusing the compositor nodes, with a different subset of nodes available at the object and material levels. This is an opportunity to streamline the workflow between material nodes editing and compositor nodes.],
-  [Grease Pencil Effects can eventually be replaced by this solution.],
-  [Final render showing 3 objects with different stylizations seamlessly integrated.],
-  [There are a lot more to be said about this feature. For more details see the associated development task .],
-  [A major issue with working with the a compositing workflow is Anti-Aliasing (AA). When compositing anti-aliased input, results often include hard to resolve fringes.],
-  [Left: Render Pass, Middle: Object Matte, Right: Extracted Object Render Pass],
-  [The common workaround to this issue is to render at higher resolution without AA and downscale after compositing. This method is very memory intensive and only allows for 4x or 9x AA with usually less than ideal filtering. Another option is to use post-process AA filters but that often results in flickering animations.],
-  [Left: Anti-Aliased done before compositor based shading
-Right: Anti-Aliasing is done after compositor.],
-  [The solution to this problem is to run the compositor for each AA step and filter the composited pixels like a renderer would do. This will produce the best image quality with only the added memory usage of the final frame.],
-  [One of the main issues with modern renderers is that their output is noisy. This doesn’t play well with NPR workflows as many effects require applying sharp transformations of the rendered image or light buffers.],
-  [For instance, this is what happens when applying a constant interpolated color ramp over the ambient occlusion node. The averaging operation is run on a noisy output instead of running on a noisy input before the transformation.],
-  [Left: Original AO, Middle: Constant Ramp in material, Right: Ramp applied in compositor (desired)],
-  [Doing these effects at compositing time gives us the final converged image as input. However, as explained above, the compositor needs to run before the AA filtering.],
-  [So the multi-stage compositors needs to be able to run on converged or denoised inputs while being AA free. In other words, it means that the render samples will be distributed between render passes convergence and final compositor AA.],
-  [While improving the compositing workflow is important for stylization flexibility, some features are more suited for the inside of the render engine. This allows builtin interaction with light transport and other renderer features. These features are not exclusive to NPR workflows and fit well inside the engine architecture.],
-  [As such, the following features are planned to be directly implemented inside the render engines:],
-  [Portal BSDF],
-  [The development will start after the Blender 5.0 release, planned for November 2025.],
-  [Meanwhile, to follow the project, subscribe to the development task . For more details about the project, join the announcement thread .],
-  [id="js-donation-box"\>],
-),
-  insert-map: (:),
-  word-count: 972,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-}
-
-{
-  #standard-article(
-  title: [How to setup Windows to develop news apps],
+  title: [A better way to track listening],
   author: [NPR Apps Blog],
   source-name: [NPR Apps Blog],
   images: (),
   paragraphs: (
-  [Traditionally, the NPR news apps team has worked on Macs, and we’ve always been open about how to set those up and use our tools. Now that we’ve begun moving some of our apps to a Node-based foundation, it’s possible to also run them on Windows. Here’s how to set up a Windows machine for development the NPR way.],
-  [id="chapter-0-prerequisites"\>Chapter 0. Prerequisites],
-  [Just as with our OS X setup, you will need to have admin privileges. If it’s not a personal computer, talk to your IT department about getting access, or having them help you through the installation process. However, it’s a good idea to be a permanent administrator in case you need to install additional tools or upgrade any of the installed components.],
-  [id="chapter-1-editors"\>Chapter 1. Editors],
-  [As on a Mac, you can edit code from the command line using Vim or Nano. However, you may be better off using a graphical editor that provides syntax highlighting, formatting plugins and Git integration. A few choices that are available:],
-  [Atom - Free and open-source, from GitHub.],
-  [Visual Studio Code - Free and open-source, from Microsoft.],
-  [Sublime Text - A classic, this editor isn’t free, but it is fast, well-supported and regularly updated.],
-  [Whichever editor you choose, we recommend installing a few plugins if the functionality isn’t already built in:],
-  [Syntax highlighting for LESS styles and EJS templates],
-  [Code formatting using Prettier to match our best practices],
-  [A terminal view for the Bash shell (which brings us to our next step!)],
-  [id="chapter-2-git-yourself-a-shell"\>Chapter 2. Git yourself a shell],
-  [Windows works a lot differently from a UNIX-like system (such as OS X or Linux). While that’s not necessarily a bad thing, our first task is going to be normalizing the basic user experience. In this case, that means installing a Bash shell, instead of using Powershell or the Windows command line. The easiest way to get that done is by installing Git, since we’ll find that useful anyway.],
-  [From Git’s download page , you can get an installer (use the top set of links, not one of the GUI clients). Accept the default options when you run it, except for a couple of changes:],
-  [If you’re not familiar with Vim, pick Nano or your editor of choice when it asks for the default text editor.],
-  [Choose the option to install additional UNIX tools. It will warn you that the default find/sort utilities will be overridden, which is fine.],
-  [Once the process completes, you should have a start menu option for Git Bash, which will open a shell window just like the OS X terminal. This is a normal Bash shell, which means that it can be configured in the same way (say, by editing your .bashrc and .bash\_profile files), and it even comes with a number of useful utilities (such as AWK, sed, grep, and ssh). You can also open this by right-clicking in a folder and choosing “Git Bash here.”],
-  [Inside the Bash shell, Windows will work similarly to a standard UNIX environment, but there are still some exceptions to be aware of:],
-  [Dotfiles (such as .bashrc ) will not be hidden, because Windows uses a file attribute to indicate file visibility instead.],
-  [Your home directory (aliased as ~ in the shell) will be the same as your Windows user directory, located by default at C:/Users/USERNAME .],
-  [Git Bash doesn’t understand Windows drive letters, so it mounts them as folders off the root instead. For example, C:\\Users will be at /c/Users .],
-  [Environment variables set from Windows will be inherited when you enter the shell. This means you can set AWS tokens or Google OAuth creds for both Windows and UNIX environments using a tool like RapidEE .],
-  [Although this shell will technically cover your Git needs, I also like to install the GitHub Desktop application, which makes it a lot easier to sign into your account and perform basic tasks (cloning, push/pull and merges). You can still drop down to the command line if you need to (and often you will).],
-  [id="chapter-3-node"\>Chapter 3. Node],
-  [We install Node on Windows using the official package . The “current” version will be more advanced (vs. the “stable” version) and may include new syntax or features that can be useful. When it’s time to upgrade, just install a new version over the old one. Unfortunately, there isn’t a Windows equivalent of nvm for switching between Node versions.],
-  [Node should add itself to the system PATH automatically, but existing shells and terminals won’t pick up on that until you close them all and re-open them (it may be easiest to reboot after installing Node, just to be sure). Once you do, you should be able to run node --version and npm --version to verify that everything is working correctly.],
-  [Installing modules globally has gone out of fashion in the Node community, but if you’re going to be working with our tools you may want to have a few utilities available. To install the Grunt build command, its template system, the Prettier source linter, and the LESS stylesheet compiler, you can run:],
-  [With Node and those packages installed, you’re mostly good to go! However, you may want to take one more step for the complete NPR news apps experience.],
-  [id="chapter-4-python"\>Chapter 4. Python],
-  [Historically, Python on Windows has been kind of a mess, and it still doesn’t always fit cleanly into the ecosystem. Our newer tools aren’t based on Python, so you can consider this an optional step. That said, there are a lot of news nerd utilities, like Elex that make it worth installing–plus many data cleaning tasks are naturally suited to it.],
-  [There are several ways to install Python on Windows, but the easiest is probably to use Miniconda, a minimal version of the data-oriented Anaconda project. Miniconda lets you switch easily between Python 2/3 environments. It also includes an installer for precompiled packages.],
-  [Run the installer on the project page , either the Python 2 or 3 version. Make sure to check the box that adds it to your path . This is marked as “not recommended,” but without it you’ll have to run Python from its own dedicated shell, which is cumbersome when using it with other languages or tools. Also add the following line to your .bashrc file, which will initialize the conda command:],
-  [Once Miniconda is set up, you can create an environment for whichever Python version didn’t come with the installer. For example, I usually install Python 3 as the default, so I want to set up a secondary environment that runs Python 2. To do this, we’ll use Miniconda’s conda tool to create and activate it:],
-  [\# switch to that environment when we need to run Python2 code 
-conda activate python2],
-  [\# deactivate to go back to the base install 
-conda deactivate],
-  [If you installed Python 2 as the default package, you can use the same basic commands, but set python=3.4 when creating the environment to get access to Python 3.],
-  [Within these Conda environments, you should still use virtualenv to manage and isolate your dependencies, just as in the OS X instructions . Make sure you run pip install virtualenv virtualenvwrapper from the base Conda environment, and then add the following line to your .bashrc :],
-  [Finally, for either environment, you may need the correct Visual C++ compiler installed for some libraries to install correctly from pip:
- Visual C++ compiler for Python 2.7 
- Visual C++ compiler for Python 3.4 (download the “Build Tools for Visual Studio 2017” under the “Tools for Visual Studio 2017” section)],
-  [id="happy-hacking"\>Happy hacking!],
-  [There are some additional tools on a Windows machine that you may want to look into, such as the Windows Subsystem for Linux , which will let you run Linux programs (such as Ruby, web servers, or analysis tools). You can also use our Vagrant configuration, Cypher , to run a Linux VM pre-configured for our older, Python-based tools. However, the above instructions are enough to get you started and ready to use our Dailygraphics Next rig or the interactive template . Good luck!],
+  [A screenshot of our elections app titlecard during Mega Tuesday on March 15, 2016.],
+  [For the entirety of the primary season, we have been running our elections app at elections.npr.org , focusing both on live event coverage during primary nights and updated content between events to keep users up-to-date on the events taking place each day.],
+  [A major component of our election coverage is audio-driven, whether through our live event coverage during primary nights or the NPR Politics Podcast in between events. Part of our decision to focus our app around audio stemmed from our newsroom putting a significant effort behind the audio coverage, but we also wanted to learn more about how our audience engages with audio on the internet. We treated our election app as a huge opportunity to do so.],
+  [We wanted to be fair to ourselves and treat our audio online like we treat audio on the radio. That means placing much more difficult restrictions on what we call a “listener.” In the calculations to follow, we treat listeners as those who listened to at least five minutes of audio, which is how we count listeners in our radio ratings.],
+  [Given this calculation, just 10% of our total user base are what we would consider “listeners”. That being said, we haven’t had audio in the experience 24/7, and sometimes we haven’t had audio during high-traffic primary events.],
+  [For the purposes of this analysis, I am going to focus on times when we were broadcasting a live election night special, as those are the moments throughout the primary season that we have gotten a significant amount of traffic and we have consistently had audio to work with.],
+  [id="overall-performance"\>Overall performance],
+  [Screenshots of the first two cards of our app during our live broadcast on Mega Tuesday, March 15, 2016.],
+  [As of writing, NPR has broadcast 11 election night specials, and we have carried all of them inside of the app. If a user arrived at the app, the special would autoplay upon swiping or clicking past the titlecard.],
+  [During times the broadcast was live, we served over 475,000 sessions, and over 100,000 of those sessions were listeners. In other words, 22.4% of live event sessions became listening sessions by listening to at least five minutes of audio. If we look at listen rates across npr.org or consider five minutes as a “view” on a Facebook or YouTube videos, that’s a pretty good number. We’re happy with that number.],
+  [But it is a sobering reality: even when we advertise our app as a listening experience (as we often did on social media ) and autoplay the content, only 22% of our users stick around for more than five minutes. Of course, our election app is not exclusively an audio app, and the other 78% of sessions still may have gotten what they needed out of the app, like a quick checkup on the results.],
+  [On a given night, our live specials would run anywhere from one hour to four hours. I have data at the hourly level, which means I can analyze the performance of the special hour by hour. Aggregating all of our sessions into hourly blocks, it is clear that performance of our live specials degrades the longer we go on. 26% of our sessions that began in the first hour became listening sessions, while just 18% of the sessions that began in the fourth hour became listening sessions.],
+  [id="responsive-embed-20160516-elections16-audio-hourly"\>],
+  [id="what-do-we-know-about-our-listeners"\>What do we know about our listeners?],
+  [We know a whole bunch of other things about our app, most of which are out of scope for this blog post. But since we know which sessions were listening sessions, we can examine the behavior of our listeners as compared to our non-listeners.],
+  [The first, most obvious thing we can determine is that our listeners spend more time total on the app than non-listeners. This is not surprising – after all, they spent at least five minutes listening to audio. However, the proportion is surprising.],
+  [The average user overall spent an average of about eight minutes on the app, while listeners spent an average of 44 minutes on the app, whether they were listening for all 44 minutes or not.],
+  [At the end of February, we added a new type of card to our app: a card that asked users to donate to their local member station. We tested a few different prompts throughout the duration of the primary, but no matter what test we were running, we consistently found that listeners were more likely to click the button than non-listeners.],
+  [A simple statistical test evaluation shows that we can say that listeners are 93.9% more likely to click the donate button than non-listeners, and we can say this with 99% confidence.],
+  [id="responsive-embed-20160516-elections16-audio-donate"\>],
+  [That being said, because we had far more non-listeners than listeners, we actually got more total clicks from non-listeners. This is worth taking into account.],
+  [Finally, we know that our listeners are far more likely to be desktop users than non-listeners. 65% of our listeners were desktop users, compared to just 40% of non-listeners.],
+  [id="what-have-we-learned"\>What have we learned?],
+  [By limiting our definition of who a listener is, we can know much more about our most engaged users, and we can adjust for the future knowing these new things. While this analysis does not necessarily provide answers, it provokes questions to ask about next steps.],
+  [We know that the majority of our users, despite autoplaying the content for them, will not listen long enough to be considered listeners. We also know that the beginnings of our broadcasts perform much better than the end of our broadcasts. How can we make our content more accessible for people jumping in in the middle?],
+  [We know that engaging users with our audio makes them more likely to click a donate button. How can we optimize the donation experience for people who are listening to our audio?],
+  [At the same time, we have a majority of users who are not listening to our audio. How can we make donation seem more compelling to them?],
+  [We know that users engaged with our audio spend a lot more time in general on our app than users who do not. How can we take better advantage of the 44 minutes listeners spend on our app? Again, are there better ways to use that time to prompt them for donations? Can we surface more information in a compelling way to keep them better informed?],
+  [We know that listeners are more likely to be desktop users, while nonlisteners are more likely to be mobile users. Knowing from the other data that listeners take more desirable actions, like clicking donate buttons, how can we convert more of our mobile users into listeners?],
+  [id="why-definitions-matter"\>Why definitions matter],
+  [Of course, you can do this type of deep analysis with numbers from Facebook or YouTube or SoundCloud or wherever you use your timed media. But definitions matter. Facebook infamously counts three watched seconds as a view, even though they autoplay videos in a user’s timeline. If we went by their lead and defined the baseline metric as three seconds listened, then we would learn to read those numbers first. And then we would optimize content to make that number perform better. Facebook, YouTube, and all the others make it too easy to see their shallow definitions of engagement to ignore it.],
+  [The cynical way to interpret this is that timed media platforms are goosing their metrics so that they compete with TV and charge higher advertising rates . It might even be the correct way of interpreting it. What I know is that it doesn’t serve our audience to assume that such a low rate of engagement says anything about what our audience actually values.],
+  [With a tougher, better definition of a listener, we can learn more about our audience’s needs and desires. Instead of learning how to hook someone to a page with a headline, or how to catch more people’s eyes in a timeline of autoplaying videos, we will learn what keeps an audience engaged, what makes them share, what makes them learn.],
+  [So get out in front of it and define what listenership or viewership means for you. Learn what resonates with your audience at a deeper level and optimize for that. I guarantee you will ask better questions of your content strategy and will come up with better answers.],
 ),
   insert-map: (:),
-  inline-pq: pull-quote([Your home directory (aliased as ~ in the shell) will be the same as your Windows user directory, located by default at C:/Users/USERNAME.], [NPR Apps Blog]),
-  inline-pq-idx: 16,
-  word-count: 1385,
+  word-count: 1402,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -523,2437 +115,62 @@ conda deactivate],
 
 {
   #standard-article(
-  title: [How Finitude Makes Us Happy — My Final Post],
-  author: [Brendan Foht],
-  source-name: [The New Atlantis],
-  images: (),
-  paragraphs: (
-  [She looked her age — 27, startlingly close to my own age. Did we share acquaintances or friends of friends? She fixed her hair in a ponytail and wore jeans and a collared shirt with a sweater, a preppy and youthful fashion statement consistent with her budding career as an architect. Polite but slightly withdrawn she looked uncomfortable, out of place. And indeed she was. No one had ever been sick in her immediate family. The hospital felt strange. She exercised daily and strictly adhered to a diet of fruits, vegetables, and fish. Why did she need to be here? Her boyfriend, with her at the time, was similarly accomplished and self-disciplined. The trajectory of their lives together stretched on ad infinitum.],
-  [One week prior to her hospitalization, she experienced diplopia, or double vision. When she looked straight ahead, objects appeared normal, but if she looked to the right they underwent binary fission. At first she thought nothing of it, but it persisted. Her vision was her livelihood. Her work depended on absorbing sketches, drawings, and visual plans. So she came to the hospital.],
-  [On my exam I noticed only one abnormality: Her right eye would not abduct. When our eyes look in one direction or another they ought to move together. Because of this intricate biological design, when we look in any direction, images align as if we are seeing everything with one eye. In this patient’s case, a lesion damaged the nerve ( abducens nerve ) for the muscle moving the right eye laterally. We ordered an MRI of her brain to look for a cause.],
-  [In her brainstem sat a brain tumor called a glioma . The prognosis was poor, maybe a couple of years. But it wasn’t just the limit on her life that was the issue. As these tumors grow they wreak absolute havoc on their victims. Patients develop weakness, vision loss, and headaches. They require wheelchairs to get around. And all this occurs in a step-wise fashion, often with preserved cognition such that the patient is ensured the maximal amount of suffering with the maximum amount of awareness.],
-  [She knew none of this when we finally sat her down to tell her. But she needed to know. And so we broke the news. The whole scene is a bit of a haze. I can’t remember the exact details of what was said but I do remember her tears and the question she asked us through them: “Will I ever see thirty?”],
-  [In 2014, Dr. Atul Gawande, a Harvard physician and writer, penned Being Mortal , a book about the last stages of life and the financial, sociological, and ethical implications of how we, as physicians and as patients, deal with these final moments. In one particularly striking part of the book, Gawande discusses what makes life worth living when we are old, frail, and disabled. From the perspective of the young and healthy, we fear that life and its pleasures will end when we can’t run or multitask or drive or engage as visibly with the world around us. We fear being unhappy when time inevitably snatches our youth away.],
-  [Laura Carstensen, a professor of psychology at Stanford, studied this question: Do people grow unhappier as they age? Between 1993 and 2005, Castensen and others involved with the study tracked 180 Americans between the ages of 18 and 94 .  Every five years, the subjects were given pagers and were randomly paged for a one-week period. They immediately responded to questions regarding their happiness, satisfaction and comfort. Carstensen found that, in fact, people grow happier as they age. As she stated,],
-  [As people get older, they’re more aware of mortality. So when they see or experience moments of wonderful things, that often comes with the realization that life is fragile and will come to an end. But that’s a good thing. It’s a signal of strong emotional health and balance.],
-  [Other studies since then have reinforced these findings . But does this really have to do solely with age or is there something more at play here? “Suppose,” Gawande writes, “it merely has to do with perspective — your personal sense of how finite your time in this world is.”],
-  [He continues,],
-  [When horizons are measured in decades, which might as well be infinity to human beings, you most desire all that stuff at the top of Maslow’s pyramid — achievement, creativity, and other attributes of ‘self-actualization.’ But as your horizons contract — when you see the future ahead of you as finite and uncertain — your focus shifts to the here and now, to everyday pleasures and the people closest to you.],
-  [Carstensen developed multiple experiments in different populations to test this theory. She studied patients with terminal AIDS who were young, and conducted the same studies with people from Hong Kong. When the end is near, regardless of age or cultural background, people value time with their loved ones more. However, when the end is far off, people tend to value time with their loved ones less. Our situation, not our age, gives us a sense of perspective, a sense of either finality or infinitude and consequently changes our priorities and the way we live.],
-  [Working in medicine provides this kind of perspective. The hospital collects people facing stygian tragedies and places them directly in our laps. Our minds don’t stray too far before we are once again reminded of the fragility of human life. Becoming a physician and being a physician forces this realization upon us. As such I feel unfortunate and fortunate. I am lucky because I am always reminded of how lucky I actually am, of how sheltered and shielded I have been (thus far) from true tragedy in my own physical life. And I am unlucky because not a day goes by when I do not realize that, despite my age, true tragedy for myself or a loved one may not be far off — that is a sobering thought with a perennial lesson.],
-  [In this blog I attempted to share a bit of that perspective, and more. But perspective is due to one’s ability to see the beginning and the end, to look from above and to understand that nothing goes on indefinitely. And so this will be my last post. As my career advances, I recognize that the blog has served its purpose and reached its closing act, though my writing will continue elsewhere.],
-  [For what exists here at The New Atlantis there are many people to thank. But there are a few in particular who deserve mention. It was under Adam Keiper, former editor of The New Atlantis and former Books & Arts editor of The Weekly Standard , that this project began. He was receptive to it and encouraging from the very beginning. My writing and thinking benefited greatly from his steady hand. And this blog’s conclusion comes under the similarly steady hand of Ari Schulman, who has been encouraging and receptive to its continuation. He is a true friend and intellectual guide. I have benefited greatly from his edits as well as those of Samuel Matlack and Brendan Foht. A writer and his or her work leans more heavily on great editors than any reader will ever know; this blog has had great editors.],
-  [And to you dear reader, I hope the writings herein contributed something to your understanding of medicine, of the life of a physician, of the education of a physician, of medicine’s theoretical, practical, and ethical complexities — and thus also of life itself. I bid you adieu.],
-  [The post How Finitude Makes Us Happy — My Final Post appeared first on The New Atlantis .],
-),
-  insert-map: (:),
-  word-count: 1288,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-}
-
-{
-  #standard-article(
-  title: [How We Made The Animated A/B Testing Guide],
-  author: [Kushagra Agarwal],
-  source-name: [Wingify Engineering],
-  images: (),
-  paragraphs: (
-  [style="text-align: center; margin: 5px;"\>],
-  [Recently, we launched our first ever animated guide to A/B testing which made it to the top of HN homepage (Yay!).],
-  [style="text-align: center; margin: 5px;"\>],
-  [In this post, I'll go through the process of how I created the page using HTML5 and JS. Let's get started!],
-  [id="setting-up-things"\> Setting up things],
-  [I searched about some existing parallax scrolling JS scripts and came across Skrollr.js which made my work a piece of cake! If you are going to create your own parallax scrolling page, then I would recommend you to use this library. Apart from that, I also used scrollTo.js and mousewheel.js for scroll handling.],
-  [Also, I wanted to make the images used in that page look sharp on retina screens so I used a little LESS mixin from RetinaJS to make sure that retina screens show the images \@2x.],
-  [id="getting-started"\> Getting started],
-  [After looking at some examples of Skrollr, I was ready to start building up the page. The best thing about Skrollr is that it automatically set things up for you and also handles the parallax scrolling on mobile devices.],
-  [Now, I saved two versions (1x and 2x, for retina) of all the images and searched for a good comic font. Each slide on that page is a mixture of some text and image elements. I gave each slide an absolute positioning and 100% width and height. Also, each element in the slides are fixed positioned are made to appear and disappear using the opacity property. Here's the code for the first slide:],
-  [The only thing that Skrollr needs is the data-px attribute with some CSS properties passed in that attribute. Here, Bob will be at 0% left having 0 opacity at the start. Now if the user scrolls to 1000px, s/he would see Bob's image appearing from left to the center with increasing opacity. Thats how it works, you just need to time your animations in terms of pixels and Skrollr will handle it for you. Here, both bob and text are fixed positioned. To make things responsive, I first positioned everything to center using this:],
-  [After this, I altered the margins to position it perfectly so that on any resolution it will start from the center. I did the same thing for all the elements in each slide. Most of the elements are animated using CSS3 transforms while others are just faded in and out using opacity property.],
-  [id="scroll-handling"\> Scroll handling],
-  [All this completed 80% of the page. Now, the only thing left was the scroll handling. I had to make sure that on each scroll, a slide should finish the animation properly and should not be left in between. To do this, I created checkpoints of the scroll position where each slide starts/ends. Now on each scroll, I incremented/decremented a counter based on the scroll direction. Based on that counter's current value the page is scrolled to the position from the checkpoints array and any other scroll event is ignored in that duration. Here's the code for this:],
-  [class="gatsby-highlight"\> var i = 0 ; 
- var checkpoints = [ 0 , 3600 , 6000 , 11200 , 14800 , 17200 ] ; 
- var timer = [ 0 , 1000 , 1000 , 1500 , 1500 , 1500 ] ;],
-  [function scrollDown ( ) { 
- if ( i 0 ) 
- i -- ; 
- 
- \$htmlAndBody . scrollTo ( 0 , checkpoints [ i ] , { 
- animation : { 
- easing : linear , 
- duration : timer [ i ] 
- } 
- } ) ; 
- }],
-  [I also added keyboard navigation, and put some arrows on the page for easier navigation. Also, after getting reviews from some non-technical people, I added the auto-play option so that all the lazy people would still be able to watch the whole presentation without moving a finger : P],
-  [This almost completed the whole page. Last additions were creating a preloader for the page which loaded the images of first 5 slides with a progress bar and then rest of the images are loaded in the background. If you want, you can take a look at the preloader.js to see how I did the preloading. Another thing was the share buttons and showing the count which was retrieved using PHP.],
-  [I hope this covered everything but if you get stuck anywhere, then feel free to add your comments! :)],
-),
-  insert-map: (:),
-  word-count: 757,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-}
-
-{
-  #standard-article(
-  title: [Useful scraping techniques],
-  author: [NPR Apps Blog],
-  source-name: [NPR Apps Blog],
-  images: (),
-  paragraphs: (
-  [A recent NPR project that collects structured data about gun sale listings from Armslist.com demonstrates several of my favorite tricks for writing simple, fast scrapers with Python.],
-  [The code for the Armslist scraper is available on Github .],
-  [id="can-you-scrape"\>Can you scrape?],
-  [Scraping is a complicated legal issue. Before you start, make sure your scraping is acceptable. At minimum, check the terms of service and robots.txt of the site you’d like to scrape. And if you can talk with a lawyer, you should.],
-  [id="data-model-classes"\>Data model classes],
-  [The Armslist scraper encapsulates scraped data in model classes.],
-  [Here’s the basic idea. You provide the model class with all the HTML it should scrape. The class performs the scrape and stores each piece of data in an instance property. Then, you access the scraped attributes in your code via those instance properties. Look at this lightly modified example of the model class code from the project.],
-  [def \_\_init\_\_ ( self , html ): 
- self . \_html = html 
- self . \_soup = BeautifulSoup ( self . \_html , 'html.parser' )],
-  [\@ property 
- def title ( self ): 
- """Return listing title.""" 
- return self . \_soup . find ( 'h1' ). string . strip ()],
-  [To use this class, instantiate it with an HTML string as the first argument, then start accessing properties:],
-  [Every listing instance takes an HTML string which can be downloaded during a scrape or provided from another source (e.g. from a file in an automated test). The Listing class uses the \@property decorator to create methods that “look like” instance properties but perform some computation before returning a value.],
-  [This makes it easy to test and understand each computed value. Want to double check that we’re grabbing the price correctly? This method is sane enough that you don’t have to know a lot about the other parts of the system to understand how it works:],
-  [class="highlight"\> class Listing : 
- \#...
- \@ property 
- def price ( self ): 
- span\_contents = self . \_soup . find ( 'span' , { 'class' : 'price' }) 
- price\_string = span\_contents . string . strip () 
- if price\_string . startswith ( '\$' ): 
- junk , price = span\_contents . string . strip (). split ( '\$ ' ) 
- return price 
- else : 
- return price\_string],
-  [id="controller-scripts"\>Controller scripts],
-  [The model class is then used in a simple script which makes the actual HTTP request based on a URL provided as an argument and prints a single CSV line.],
-  [Here’s a lightly modified version of our controller script:],
-  [from models.listing import Listing],
-  [def scrape\_listing ( url ): 
- writer = csv . writer ( sys . stdout ) 
- response = requests . get ( url ) 
- listing = Listing ( response . content ) 
- writer . writerow ([ 
- url , 
- listing . post\_id , 
- listing . title , 
- listing . listed\_date , 
- \# ...
- ])],
-  [if \_\_name\_\_ == '\_\_main\_\_' : 
- if len ( sys . argv ) != 2 : 
- print ( 'url required' ) 
- sys . exit ()],
-  [url = str ( sys . argv [ 1 ]) 
- scrape\_listing ( url = url )],
-  [This script is very easy to interact with to see if the scraper is working properly. Just invoke the script on the command line with the URL to be scraped.],
-  [id="parallelization-with-gnu-parallel"\>Parallelization with GNU parallel],
-  [The framework above almost seems too simple. And indeed, scraping the 80,000+ pages with listings on Armslist one-by-one would be far too slow.],
-  [Enter GNU parallel , a wonderful tool for parallelization.],
-  [Parallelization means running multiple processes concurrently instead of one-by-one. This is particularly useful for scraping because so much time is spent simply initiating the network request and downloading data. A few seconds of network overhead per request really starts to add up when you have thousands of URLs to scrape.],
-  [Modern processors have multiple cores, which hypothetically makes this easy. But it’s still a tricky problem in common scripting languages like Python. The programming interfaces are clunky, managing input and output is mysterious, and weird problems like leaving thousands of file handles open can crop up.],
-  [Most importantly, it’s easy to lose hardware abstraction, one of the most powerful parts of modern scripting languages when using parallelization libraries. Including a bunch of multiprocessing library magic in a Python scraper makes it much harder for anyone with basic programming skills to be able to read and understand the code. In an ideal world, a Python script shouldn’t need to worry about how many CPU cores are available.],
-  [This is why GNU parallel is such a useful tool. Parallel elegantly handles parallelizing just about any command that can be run on the command line. Here’s a simple example from the Armslist scraper:],
-  [The csvcut command grabs the first column from a CSV with URLs and some metadata about each one. The scrape\_listing.py command takes a URL as an argument and outputs one processed, comma separated line of extracted data. By passing the output of csvcut to a parallel command which calls scrape\_listing.py , the scraper is automatically run simultaneously on all the system’s processors.],
-  [Parallel is smart about output – normal Unix output redirection works the way you would expect when using parallel. Because the commands are running simultaneously and timing will vary, the order of the records in the listings.csv file will not exactly match that of the index.csv file. But all the output of the parallelized scrape operation will be dumped into listings.csv correctly.],
-  [The upshot is that scrape\_listing.py is still as understandable as it was before we added parallelization. Plus it’s easy to run one-off scrapes by passing scrape\_listing.py a URL and seeing what happens.],
-  [id="getting-close-to-the-source"\>Getting close to the source],
-  [It never hurts to figure out where the server you’d like to scrape is, physically, to see if you can cut down on network latency. The Maxmind GeoIP2 demo lets you geolocate a small number of IP addresses.],
-  [When I plugged the Armslist.com IP address into the demo, I found something very interesting: The location is in Virgina and the ISP is Amazon. That’s the big east coast Amazon data center (aka us-east-1).],
-  [Because NPR Visuals also uses Amazon Web Services, we were able to set up the machine to scrape the server in the same data center. Putting your scraper in the same data center as the host you’re scraping is going to eliminate about as much network overhead as humanly possible.],
-  [While that’s probably a bit too lucky to cover most common cases, if you are hosting your scraper on Amazon and find the server you’d like to scrape is on the West Coast of the US, you can set up your EC2 instance in the west coast data center to lose a little extra latency.],
-  [id="choosing-the-right-ec2-server"\>Choosing the right EC2 server],
-  [We used an Amazon c3.8xlarge server, which is a compute optimized instance with 32 virtual processors available. We chose a compute-optimized instance because the scraper doesn’t use a lot of memory or disk. It doesn’t use that much CPU either, but it’s more CPU intensive than anything else, and the c3.8xlarge is cheaper than any other option with more than 16 CPUs.],
-  [On a c3.8xlarge, scraping roughly 80,000 urls took less than 16 minutes, which comes out to less than \$0.50 to run a full scrape.],
-  [id="putting-it-all-together"\>Putting it all together],
-  [The full scraper actually carries out two operations:],
-  [Scrape the Armslist.com index pages to harvest listing URLs and write the list to csv. To speed up the process, this step is parallelized over states. It could be refactored to be even more efficient but works well enough for our purposes.],
-  [Scrape each listing URL from the index csv file using parallel to scrape as many URLs simultaneously as possible.],
-  [id="analyzing-the-data"\>Analyzing the data],
-  [We do further post-processing for our analysis using shell scripts and PostgreSQL using a process similar to the one described here . If you’d like to check our work, take a look at the armslist-analysis code repository.],
-  [id="a-quick-shoutout"\>A quick shoutout],
-  [I learned many of these techniques – particularly model classes and using GNU parallel – from developer Norbert Winklareth while we were working on a Cook County Jail inmate scraper in Chicago.],
-),
-  insert-map: (:),
-  word-count: 1415,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-}
-
-{
-  #standard-article(
-  title: [How (and Why) We Moved to Spinnaker],
-  author: [Target Brands, Inc],
-  source-name: [Target Tech],
-  images: (),
-  paragraphs: (
-  [id="background"\>Background],
-  [Just after the middle of last year, Target expanded beyond its on-prem infrastructure and began deploying portions of target.com to the cloud. The deployment platform was homegrown (codename Houston ), and was backed wholly by our public cloud provider. While in some aspects that platform was on par with other prominent continuous deployment offerings, the actual method of deploying code was cumbersome and not adherent to cloud best practices. These shortcomings led to a brief internal evaluation of various CI/CD platforms, which in turn led us to Spinnaker.],
-  [We chose Spinnaker because it integrates with CI tools we already use at scale (Jenkins), supports deploying to all major public cloud providers, and compels software deployment best practices – all deployments are performed via immutable images, a snapshot of config + code.],
-  [id="supporting-a-platform"\>Supporting a Platform],
-  [The primary goal of Target’s cloud platform is to enable product teams to deploy and manage their applications across multiple cloud providers. We provide CI/CD, monitoring, and service discovery as services, and any application deployed via our platform gets those capabilities via a base image that is pre-configured for connectivity to each service’s respective endpoint.],
-  [Since these components are essentially products we provide to internal customers, we had to ensure the new CD platform was operationally supportable and highly-available. So, as soon as we decided on Spinnaker, a handful of engineers from the Cloud Platform group set about making this happen.],
-  [Default Spinnaker scripts make it easy to standup a single self-contained server with the microservices and persistence layer all together, but that wasn’t conducive to doing blue-green deployments – allowing updates of Spinnaker without downtime to our internal customers.],
-  [We built jobs for building packages based off the master branch of each Spinnaker component’s upstream git repository, and wrote Terraform plans to manage the deployment of each stack. We set about making each component as resilient as possible. Front50, the Spinnaker component responsible for data persistence, uses Cassandra by default. Managing a Cassandra ring added too much overhead just to maintain configuration of Spinnaker, so we borrowed a play from Netflix and configured it to persist configuration in cloud storage instead. We’re also using the cloud provider’s cache option instead of having to manage our own highly-available Redis cluster.],
-  [id="overcoming-challenges"\>Overcoming challenges],
-  [We had our fair share of challenges along the way. We were running into various rate-limiting and throttling issues when hitting the cloud provider APIs. Spinnaker makes a lot of API calls in order to have a responsive user experience, but the cloud provider will only allow a small number of API calls per minute. Fortunately, Netflix also wrote a tool, Edda, to cache cloud resources. We configured Spinnaker to use that instead of a direct connection to the cloud provider’s API, which seems to be scaling much better.],
-  [The other major challenge we faced was how to handle baking images for multiple regions. Originally we had configured Spinnaker to bake in our western region and then copy to east. That was SLOW. It would bake the image in about 5 minutes, but it would take 20-40 minutes to copy it. Fortunately, Spinnaker supports parallel multi-region baking – taking the same base OS image in each region and installing the same packages on them, which in theory should result in the same config+code. Unfortunately, the way Netflix implemented it would work if we had multiple regions in the same account, but not if we had separate accounts per region, which is how Target operates. One of our engineers found a work around, and ultimately worked with an engineer at Netflix to get a more elegant solution incorporated upstream. Now, because we can bake the images in parallel, baking images takes 5 minutes instead of 25-45 minutes. A big improvement.],
-  [id="openstack-driver"\>OpenStack Driver],
-  [One of the reasons we chose Spinnaker was its pluggable architecture, and we knew early on that we would put that to good use. Target has a considerably sized internal OpenStack environment and we wanted to be able to leverage Spinnaker to deploy there, so we started the development of a native OpenStack clouddriver.],
-  [The process worked exactly how contributing to an open source project should work. We asked the community if anyone else was interested in collaborating, and Veritas Corporation, who also needed OpenStack support in Spinnaker, had we set to work with several of their engineers. We met with core Spinnaker engineers from Netflix and Google, and they asked us to submit pull requests directly against the master branch in the public github repository in order to get rapid feedback on the changes we were making.],
-  [A small group of engineers began to spec out the work and begin development in late May, and at the end of September the driver reached what we would call a stable state.],
-  [id="autoscaling-in-openstack"\>Autoscaling in OpenStack],
-  [During development of the OpenStack driver, we ran into an issue with the way autoscaling is implemented in Heat (an OpenStack orchestration engine to launch multiple composite cloud applications based on templates in the form of text files that can be treated like code).],
-  [First, the APIs for load balancers didn’t support automatically adding instances to a member pool until the Mitaka release of OpenStack. We were running an earlier version, so our private cloud engineers swarmed and quickly upgraded our environment to Mitaka.],
-  [Second, and more troublesome, Heat doesn’t track disparity between the desired instance count in a scaling group, and the actual count. As a result, autoscaling in OpenStack isn’t really auto ; it requires some kind of intervention. To work around this, we updated the driver to mark the server group unhealthy in Heat when it detects a discrepancy between desired and actual.],
-  [id="whats-next"\>What’s next?],
-  [We’re extremely proud to share the OpenStack driver in Spinnaker with the community, and we hope that any organization that is using OpenStack will leverage the new driver to enable immutable deployments and autoscaling in that environment.],
-  [We’re currently growing our use of container-based deployments via Kubernetes, both internally, as well as on public cloud providers. The presence of a driver for Kubernetes in Spinnaker will enable us to facilitate deployments to any or all of the k8s clusters we’re running. Look forward to learning more about our Kubernetes deployment and consumption in a future techblog post.],
-),
-  insert-map: (:),
-  word-count: 1068,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-}
-
-{
-  #standard-article(
-  title: [Please Don’t Feed the Scattered Lapsus ShinyHunters],
-  author: [BrianKrebs],
-  source-name: [Krebs on Security],
-  images: (),
-  paragraphs: (
-  [A prolific data ransom gang that calls itself Scattered Lapsus ShinyHunters (SLSH) has a distinctive playbook when it seeks to extort payment from victim firms: Harassing, threatening and even swatting executives and their families, all while notifying journalists and regulators about the extent of the intrusion. Some victims reportedly are paying — perhaps as much to contain the stolen data as to stop the escalating personal attacks. But a top SLSH expert warns that engaging at all beyond a “We’re not paying” response only encourages further harassment, noting that the group’s fractious and unreliable history means the only winning move is not to pay.],
-  [Unlike traditional, highly regimented Russia-based ransomware affiliate groups, SLSH is an unruly and somewhat fluid English-language extortion gang that appears uninterested in building a reputation of consistent behavior whereby victims might have some measure of confidence that the criminals will keep their word if paid.],
-  [That’s according to Allison Nixon , director of research at the New York City based security consultancy Unit 221B . Nixon has been closely tracking the criminal group and individual members as they bounce between various Telegram channels used to extort and harass victims, and she said SLSH differs from traditional data ransom groups in other important ways that argue against trusting them to do anything they say they’ll do — such as destroying stolen data.],
-  [Like SLSH, many traditional Russian ransomware groups have employed high-pressure tactics to force payment in exchange for a decryption key and/or a promise to delete stolen data, such as publishing a dark web shaming blog with samples of stolen data next to a countdown clock, or notifying journalists and board members of the victim company. But Nixon said the extortion from SLSH quickly escalates way beyond that — to threats of physical violence against executives and their families, DDoS attacks on the victim’s website, and repeated email-flooding campaigns.],
-  [SLSH is known for breaking into companies by phishing employees over the phone, and using the purloined access to steal sensitive internal data. In a January 30 blog post , Google’s security forensics firm Mandiant said SLSH’s most recent extortion attacks stem from incidents spanning early to mid-January 2026, when SLSH members pretended to be IT staff and called employees at targeted victim organizations claiming that the company was updating MFA settings.],
-  [“The threat actor directed the employees to victim-branded credential harvesting sites to capture their SSO credentials and MFA codes, and then registered their own device for MFA,” the blog post explained.],
-  [Victims often first learn of the breach when their brand name is uttered on whatever ephemeral new public Telegram group chat SLSH is using to threaten, extort and harass their prey. According to Nixon, the coordinated harassment on the SLSH Telegram channels is part of a well-orchestrated strategy to overwhelm the victim organization by manufacturing humiliation that pushes them over the threshold to pay.],
-  [Nixon said multiple executives at targeted organizations have been subject to “swatting” attacks, wherein SLSH communicated a phony bomb threat or hostage situation at the target’s address in the hopes of eliciting a heavily armed police response at their home or place of work.],
-  [“A big part of what they’re doing to victims is the psychological aspect of it, like harassing executives’ kids and threatening the board of the company,” Nixon told KrebsOnSecurity. “And while these victims are getting extortion demands, they’re simultaneously getting outreach from media outlets saying, ‘Hey, do you have any comments on the bad things we’re going to write about you.”],
-  [In a blog post today , Unit 221B argues that no one should negotiate with SLSH because the group has demonstrated a willingness to extort victims based on promises that it has no intention to keep. Nixon points out that all of SLSH’s known members hail from The Com , shorthand for a constellation of cybercrime-focused Discord and Telegram communities which serve as a kind of distributed social network that facilitates instant collaboration .],
-  [Nixon said Com-based extortion groups tend to instigate feuds and drama between group members, leading to lying, betrayals, credibility destroying behavior, backstabbing, and sabotaging each other.],
-  [“With this type of ongoing dysfunction, often compounding by substance abuse, these threat actors often aren’t able to act with the core goal in mind of completing a successful, strategic ransom operation,” Nixon wrote. “They continually lose control with outbursts that put their strategy and operational security at risk, which severely limits their ability to build a professional, scalable, and sophisticated criminal organization network for continued successful ransoms – unlike other, more tenured and professional criminal organizations focused on ransomware alone.”],
-  [Intrusions from established ransomware groups typically center around encryption/decryption malware that mostly stays on the affected machine. In contrast, Nixon said, ransom from a Com group is often structured the same as violent sextortion schemes against minors, wherein members of The Com will steal damaging information, threaten to release it, and “promise” to delete it if the victim complies without any guarantee or technical proof point that they will keep their word. She writes:],
-  [A key component of SLSH’s efforts to convince victims to pay, Nixon said, involves manipulating the media into hyping the threat posed by this group. This approach also borrows a page from the playbook of sextortion attacks, she said, which encourages predators to keep targets continuously engaged and worrying about the consequences of non-compliance.],
-  [“On days where SLSH had no substantial criminal ‘win’ to announce, they focused on announcing death threats and harassment to keep law enforcement, journalists, and cybercrime industry professionals focused on this group,” she said.],
-  [Nixon knows a thing or two about being threatened by SLSH: For the past several months, the group’s Telegram channels have been replete with threats of physical violence against her, against Yours Truly, and against other security researchers. These threats, she said, are just another way the group seeks to generate media attention and achieve a veneer of credibility, but they are useful as indicators of compromise because SLSH members tend to name drop and malign security researchers even in their communications with victims.],
-  [“Watch for the following behaviors in their communications to you or their public statements,” Unit 221B’s advisory reads. “Repeated abusive mentions of Allison Nixon (or “A. N”), Unit 221B, or cybersecurity journalists—especially Brian Krebs—or any other cybersecurity employee, or cybersecurity company. Any threats to kill, or commit terrorism, or violence against internal employees, cybersecurity employees, investigators, and journalists.”],
-  [Unit 221B says that while the pressure campaign during an extortion attempt may be traumatizing to employees, executives, and their family members, entering into drawn-out negotiations with SLSH incentivizes the group to increase the level of harm and risk, which could include the physical safety of employees and their families.],
-  [“The breached data will never go back to the way it was, but we can assure you that the harassment will end,” Nixon said. “So, your decision to pay should be a separate issue from the harassment. We believe that when you separate these issues, you will objectively see that the best course of action to protect your interests, in both the short and long term, is to refuse payment.”],
-),
-  insert-map: (:),
-  word-count: 1218,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-}
-
-{
-  #standard-article(
-  title: [Pym.js v1.3.0 release: scroll tracking],
-  author: [NPR Apps Blog],
-  source-name: [NPR Apps Blog],
-  images: (),
-  paragraphs: (
-  [The NPR Visuals Team is happy to announce the release of Pym.js v1.3.0 . We want to share with all of you the goals that we hope to achieve with it and the design process that led us to the new release.],
-  [id="but-wait-what-is-pymjs-for"\>But wait, what is Pym.js for?],
-  [Pym.js embeds and resizes an iframe responsively (width and height) within its parent container while bypassing the usual cross-domain related issues.],
-  [But responsiveness is not the only issue when we are dealing with iframed content. Additionally, you do not have access to the iframe position from the child page due to the same-origin policy imposed by browsers for security reasons.],
-  [Our Pym.js v1.3.0 version allows you the option to tackle that if it makes sense in your use case.],
-  [id="pymjs-v130-goals"\>Pym.js v1.3.0 Goals],
-  [Add an optional throttled scroll tracking natively on Pym.js so that the child can get all the information it needs to check the visibility of its elements.],
-  [id="why-track-scroll-on-pymjs"\>Why track scroll on Pym.js?],
-  [Pym.js v1.3.0 development has been driven by the need to extend the ability to use Pym in some of our more complex projects where the visibility of child elements on the viewport was needed to trigger some special behavior:],
-  [Lazyloading images on appearance.],
-  [Animating some content when it appeared on the users screen.],
-  [Fire custom analytics events when an element is visible.],
-  [Fire costly services like geoIP only when needed, i.e., when the user reaches that content instead that on page load.],
-  [id="scroll-track-breakdown"\>Scroll track breakdown],
-  [The components added to Pym.js in order to make the scroll tracking possible are:],
-  [Two new configuration options:],
-  [trackscroll — if present it will instruct pym to start tracking scroll events.],
-  [scrollwait — determines the throttle wait in order to send messages to the child once a scroll has happened. Default 100ms.],
-  [Scroll listener if enabled by the above mentioned configuration.],
-  [Throttle utility function: To avoid performance degradation when listening to scroll events borrowed from underscore.js .],
-  [New viewport-iframe-position message sent to the child.],
-  [Changes in resize: If there’s a resize and you’ve opted in the scroll tracking Pym.js will fire the new message as well since the information needs to be updated.],
-  [id="code-on-the-parent-page"\>Code on the parent page],
-  [id="code-on-the-child-page"\>Code on the child page],
-  [pymChild.onMessage('viewport-iframe-position', onScroll);],
-  [function onScroll(parentInfo) {
- console.log(parentInfo) \/\/ would display for example: 874 776 1091 8 1673 866
- \/\/ Add desired triggered functionality here.
-}],
-  [id="pymchild-scroll-visibility-utility-library"\> pymchild-scroll-visibility utility library],
-  [id="visibility-calculations-on-the-child"\>Visibility calculations on the child],
-  [pymchild-scroll-visibility is a small opensourced utility library to make visibility calculations on elements of the child page.],
-  [Each tracker instance receives:],
-  [id — unique id of the element on the child to track visibility on.],
-  [visible\_callback — callback function to call once the above element is visible on the users viewport.],
-  [read\_callback — callback function to call once an element has been visible for a certain configurable amount of time. ( Optional )],
-  [configuration — overrides default configuration options. ( Optional )],
-  [partial — track partial or complete visibility. Defaults to partial.],
-  [read\_time — amount of time needed to invoke the read\_callback. Defaults to 500ms.],
-  [id="code-on-the-child-page-to-use-the-library"\>Code on the child page to use the library],
-  [Also on the child, we need to check the visibility each time we receive a viewport-iframe-position message from the parent.],
-  [id="examples"\>Examples],
-  [For a basic example, take a look at the trackscroll example in the pym.js documentation.],
-  [For a more complx example of lazyloading images on a child pym embed, look at this example of the refugee comic on NPR.],
-  [id="summary"\>Summary],
-  [We hope that this release of Pym.js will extend its ability to be used by NPR member stations and other customers thanks to the new optional scroll tracking functionality.],
-  [Interested in using Pym.js ? Please refer to the user documentation and API documentation .],
-),
-  insert-map: (:),
-  word-count: 679,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-}
-
-{
-  #standard-article(
-  title: [How Fractional Hiring Can Save Your Business Money],
-  author: [Rachael O'Flaherty],
-  source-name: [GoSquared Blog],
-  images: (),
-  paragraphs: (
-  [Every company strives for continual growth. But with labour costs accounting for as much as 70% of total business costs, sometimes getting the talent needed to properly run, let alone scale a company isn’t feasible.],
-  [But what if you could not only have your cake and eat it, but have an artisan baker come in and make that cake for you?],
-  [Fractional hiring is the name of the game here. As an alternative to the traditional hiring process, fractional hiring allows companies to access the talent they need without having to commit to a full time or long-term role. In doing so, businesses can reduce costs not to mention risk.],
-  [From startups to trying to get off the ground to established businesses wanting to boost profitability—here is why fractional hiring could just be the secret to your success, especially when it comes to keeping those overheads in check.],
-  [As the name suggests, a fractional hire is an individual who only works for a company part of the time.],
-  [There’s a little more to fractional hires than this though, as they are also specialists who deliver expertise exactly where it’s needed within a business. Offering essential support to key areas of operation, fractional hires make it possible for companies to scale or navigate complex challenges. All without having to pay for a full time salary or even commit to a long-term role.],
-  [Fractional hires work as many hours as the business needs for as long as they need. Typically, fractional staff are self-employed though can also work on behalf of an agency. They will usually perform the same role for several companies, dividing their time based on how many hours each business hires them for.],
-  [For example, a 40 hour work week could like so for a fractional worker:],
-  [Company A – 10 hours],
-  [Company B – 10 hours],
-  [Company C – 20 hours],
-  [In some cases, people also become fractional workers as a side hustle in addition to full time employment. Though, it’s more common for someone to work purely on a fractional basis for several companies at once.],
-  [Fractional Chief Financial Officer (CFO)],
-  [Fractional Chief Marketing Officer (CMO)],
-  [Fractional Chief Operations Officer (COO)],
-  [Fractional Chief Technology Officer (CTO)],
-  [Fractional Human Resources (HR) Director],
-  [While fractional roles have traditionally been associated with C-suite level positions, in today’s world, fractional jobs are getting increasingly broader.],
-  [Now, it’s possible to hire practically any specialist on a fractional basis, whether you need help with your company accounting or want to perform technical SEO improvements to your website.],
-  [It’s also good to note that while there are some overlaps with freelancers or part time employees, fractional hiring is a different type of working arrangement.],
-  [The bottom line is always top of the agenda in business, and the decision to opt for fractional rather than full time hiring is no exception.],
-  [If you want to scale a team but don’t have the resources to bring everyone in full time, fractional is the way to go. Giving you another option than creating a full time role or having to sacrifice company performance, a fractional setup means you only pay for the hours you determine your business needs.],
-  [This means employers don’t pay for:],
-  [A full time salary],
-  [Payroll taxes],
-  [Paid time off],
-  [Pension contributions],
-  [Health insurance],
-  [Other workplace benefits],
-  [There can also be lower costs associated with things such as HR and recruitment, since the way that fractional hires are brought in and interact with your business is also different.],
-  [In terms of what these savings look like in tangible terms, Forbes published an article in which it estimates that the fractional business model saves 30%-40% compared with the cost of hiring a full time employee.],
-  [The cost savings and overall benefits for businesses have proved to be so beneficial, it has led to one company announcing that ‘the future is fractional’ in a recent LinkedIn post .],
-  [Fractional hiring means your business calls the shots about the exact expertise needed and to what degree.],
-  [Many of these additional perks can also subsequently lead to reduced costs and ultimately higher ROIs for businesses.],
-  [When you are trying to scale or solve a problem in your business, sometimes a full time hire isn’t necessary or even affordable. Fractional hires bypass these issues by only giving you the time you need to get the job done. As specialists in their field, they cut right to the skills or knowledge your business needs to reach its goals.],
-  [As a business, you might need a certain specialism for two days a week or only while a project is taking place. Since you can determine the ‘fraction’ of a fractional hire in terms of days or hours per week, this makes fractional staff not only affordable but also fully flexible to the requirements of your business. Over time, you can increase the number of hours they work so long as the individual has availability.],
-  [It used to be the case that if your business is based in a city such as London then all of your staff would be too. But with many fractional jobs able to be done remotely, geographic restrictions no longer apply. Instead, the focus is on finding the very best talent based on the needs of your business. In some cases, expanding your talent search to other areas can also save your business money too.],
-  [Whatever expert you bring in as a fractional hire, they offer the same expertise to your company as they do several others simultaneously. With that, they bring all of the experience they are constantly learning elsewhere into your company too. As a result, a fractional hire can supercharge your business with an unrivalled level of insights and specialisms that are industry wide rather than just company wide.],
-  [Fractional hires are parachuted into your business with a specific purpose in mind. They know exactly what you need from them, and they are ready to get straight to work. Forgoing lengthy onboarding, training and anything else non-essential to their specific role speeds everything up and also cuts costs.],
-  [According to GrassGreener Group , the cost of a bad hire is upwards of 3x of the original salary. These costs relate to aspects such as lost salary, wasted training, recruitment agency fees, lost productivity, loss of business and reputation damage.],
-  [If that sounds bad enough, they add that poor hires typically happen 30% of the time.],
-  [Since fractional hires are vetted experts who also have limited attachment to your business, this reduces the risk of a bad hire from multiple angles.],
-  [We couldn’t write about the many benefits of fractional hiring without giving a special shout out to those who have helped us grow at GoSquared, as well as our new climate-conscious email tool EcoSend .],
-  [As a casual reader of this post, you might also find it insightful to see fractional hiring from a real case study point of view.],
-  [Based in the UK, GoSquared has relied upon JamPot for various areas of expertise over the years.],
-  [The fractional talent hire agency gives business owners access to top-level specialists in areas including administration, EA and operations, finance, human resources, legal, marketing, sales, strategic development and web design.],
-  [After all, most businesses can relate to the fact that it’s impossible to do it all alone. With so many specialists to choose from, JamPot enables business owners to leave the stress of trying to be a one man band behind in favour of a more harmonious tune, thanks to the specialism of each respective expert.],
-  [Our CEO James adds that JamPot “continues to be one of the highest ROI spends we make at GoSquared” which is very high praise indeed.],
-  [In our quest to become a B Corp, we have valued the insights of industry professionals who have held a guiding light along the path to becoming a better business.],
-  [One such individual who was able to share their insights was Bruno Scott from B Consultant Collective .],
-  [When striving for B Corp certification, it’s not always a given that as a business owner you happen to know how to make the biggest impact. Experts such as Bruno ensure that businesses can access this important yet highly niche area of specialism with ease.],
-  [Another person who has been helping us on our mission to be a business that looks beyond just making a profit is Tim Maiden who founded Green Small Business .],
-  [Green Small Business offer a wealth of services for businesses wanting to track and lower their carbon footprint. This includes carbon scoping assessments, environmental management systems, environmental certification, training and building energy assessments.],
-  [Given many companies want to be greener but often don’t know where to start, these types of services can be used to make a genuine impact to drive real change on the climate issues we’re all trying to navigate as businesses.],
-  [Still have questions about fractional hiring, and why it’s so cost-effective? We’ve got you covered with some of the top queries, which we’ve answered below.],
-  [A fractional role describes when a position in a company is either project-based or is limited to a number of hours per week. Someone working in a fractional role can either work for several companies at once or only work a reduced number of hours to fit around other commitments. However, the main difference between a fractional hire and a full time hire is that the fractional hire is usually self-employed or works on behalf of a fractional agency. They are their own entity rather than being an official employee. The reason for hiring someone on a fractional basis is so that the company can access the talent they need without facing huge cost barriers of a full time employee.],
-  [There is no set fraction staff cost, since it really depends on what you’re willing to spend, along with what the professional charges for their services.],
-  [However, a major benefit is that the costs of a fractional hire tend to be far more transparent than a regular employee. That’s because there are no employer contributions, taxes, benefits or other hidden overheads to consider.],
-  [When someone comes into your business on a fractional basis, it’s not the same as hiring a regular employee. Namely, the individual is self-managed rather than having the same contractual obligations as your employees. For example, they aren’t bound to anything set out in your company handbook. This isn’t inherently a bad thing since a fractional role is by its very nature designed to be different, though it can require some adjustment from employers in terms of being open minded and also respecting different processes.],
-  [Fractional hires can require onboarding as well as additional team building initiatives since they don’t spend the same amount of time in your company or working alongside the rest of your employees as full time hires.],
-  [On the flip side, embracing the differences in the ways of working can bring new perspectives and insights into your company. This can actually strengthen your team as a whole.],
-  [At GoSquared, we highly recommend using a purpose-built fractional hire agency such as JamPot. Making it effortless to cherry pick the exact expertise you need on their website, using a dedicated provider can help avoid the pitfalls of hiring external talent.],
-  [Whichever avenue works for your business, we’d always recommend vetting the potential hire just as you would a regular employee. That said, the benefit of using an agency is that much of this legwork is done for you, allowing your business to literally hit the ground running with your chosen specialist.],
-  [As a business, you should factor in your budget, along with how many hours you are comfortable committing to. However, if you’re new to fractional hiring, it can also be helpful to explain to the professional what your needs are, so they can advise on how many hours might be needed to achieve your goals. Since fractional hiring can be flexible, there is always the potential to scale up the amount of hours someone works for you if required.],
-  [Using a reputable agency such as JamPot can remove much of the risk for businesses in terms of being sure you are accessing high quality levels of talent. Whenever we’ve required more hands on deck, we have an established relationship that we not only trust but know we can count on. For us, this really removes the stress of bringing in new team members, since every new hire can just slot right in.],
-  [If you don’t plan on using a similar agency, there are a few things we can suggest to look out for. This includes conducting video interviews and having hires sign NDAs along with any other applicable documentation. Having any kind of certification as well as professional indemnity insurance are also signs you are dealing with the right people.],
-  [Technically, this is possible if it’s something that works for both parties. However, it’s worth noting that fractional hires do not come into the business with an expectation of a role expansion. Instead, their agreement is that they work a set number of hours for several companies.],
-  [As fractional hiring also has a degree of flexibility, companies can also scale up or down their requirements as needed. For instance, if there is a big project to complete, extra time could be added to the fractional hire contract to fulfil any requirements, so long as the individual has the availability.],
-  [Those who choose to become fractional hires also do so with intent, given the job flexibility it provides. Working fractionally also gives the unique ability to work for several companies at once, which can be hugely beneficial for professional development. Fractional workers set their own rates and also choose the projects they work on based on the requests made to them. Another advantage is that by selecting the area of specialism and also the services they want to provide, fractional workers can enjoy greater job satisfaction.],
-  [Fractional hiring was born out of a need to offer a cost-effective way of accessing talent, as it allows companies to avoid paying for more hours than they realistically need or can afford. Swapping full time for fractional hires creates limitless potential for companies wanting to scale or solve specific challenges with the business.],
-  [With the ability to hire talent remotely for most job roles, it has never been easier or more affordable for companies to grow thanks to the power of a fractional team.],
-  [The post How Fractional Hiring Can Save Your Business Money appeared first on GoSquared Blog .],
-),
-  insert-map: (:),
-  word-count: 2602,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-}
-
-{
-  #standard-article(
-  title: [Test Tag Suggestions Using AI],
-  author: [Gleb Bahmutov],
-  source-name: [Gleb Bahmutov],
-  images: (),
-  paragraphs: (
-  [In my previous blog post Pick E2E Tests To Run Using AI Summaries I picked specs to run using an intermediate text summaries. In this blog post I will show a simpler and cheap way of suggesting the end-to-end test tag for each pull request.],
-  [🎁 You can find the example application source code in the repo bahmutov/pick-test-tag-ai .],
-  [The application and tests],
-  [We have a simple TodoMVC app with multiple end-to-end Cypress tests. I can see all tests and how they are tagged using the find-cypress-specs utility.],
-  [1],
-  [2],
-  [3],
-  [4],
-  [5],
-  [6],
-  [7],
-  [8],
-  [9],
-  [10],
-  [11],
-  [12],
-  [13],
-  [14],
-  [15],
-  [16],
-  [17],
-  [18],
-  [19],
-  [20],
-  [21],
-  [22],
-  [23],
-  [24],
-  [25],
-  [26],
-  [27],
-  [28],
-  [29],
-  [30],
-  [31],
-  [32],
-  [33],
-  [34],
-  [35],
-  [36],
-  [37],
-  [38],
-  [39],
-  [40],
-  [41],
-  [42],
-  [43],
-  [44],
-  [45],
-  [46],
-  [47],
-  [48],
-  [49],
-  [50],
-  [51],
-  [52],
-  [53],
-  [54],
-  [55],
-  [56],
-  [57],
-  [58],
-  [59],
-  [60],
-  [61],
-  [\$ npx find-cypress-specs --names],
-  [cypress/e2e/app-spec.js (15 tests)],
-  [└─ TodoMVC - React],
-  [├─ adds 4 todos [\@smoke, \@add]],
-  [├─ When page is initially opened],
-  [│ └─ should focus on the todo input field],
-  [├─ No Todos],
-  [│ └─ should hide \#main and \#footer [\@smoke]],
-  [├─ New Todo [\@add]],
-  [│ ├─ should allow me to add todo items],
-  [│ ├─ adds items],
-  [│ ├─ should clear text input field when an item is added],
-  [│ ├─ should append new items to the bottom of the list],
-  [│ ├─ should trim text input],
-  [│ └─ should show \#main and \#footer when items added],
-  [├─ Item],
-  [│ ├─ should allow me to mark items as complete],
-  [│ ├─ should allow me to un-mark items as complete],
-  [│ └─ should allow me to edit an item],
-  [└─ Clear completed button],
-  [├─ should display the correct text],
-  [├─ should remove completed items when clicked [\@smoke]],
-  [└─ should be hidden when there are no items that are completed],
-  [cypress/e2e/completed-spec.js (3 tests)],
-  [└─ TodoMVC - React [\@complete]],
-  [└─ Mark all as completed],
-  [├─ should allow me to mark all items as completed],
-  [├─ should allow me to clear the complete state of all items],
-  [└─ complete all checkbox should update state when items are completed / cleared [\@smoke]],
-  [cypress/e2e/counter-spec.js (2 tests)],
-  [└─ TodoMVC - React [\@add, \@smoke]],
-  [└─ Counter],
-  [├─ should not exist without items],
-  [└─ should display the current number of todo items],
-  [cypress/e2e/editing-spec.js (5 tests)],
-  [└─ TodoMVC - React [\@edit]],
-  [└─ Editing],
-  [├─ should hide other controls when editing],
-  [├─ should save edits on blur [\@smoke]],
-  [├─ should trim entered text],
-  [├─ should remove the item if an empty text string was entered],
-  [└─ should cancel edits on escape],
-  [cypress/e2e/persistence-spec.js (1 test)],
-  [└─ TodoMVC - React [\@persistence]],
-  [└─ Persistence],
-  [└─ should persist its data [\@smoke]],
-  [cypress/e2e/routing-spec.js (5 tests)],
-  [└─ TodoMVC - React [\@routing]],
-  [└─ Routing],
-  [├─ should allow me to display active items],
-  [├─ should respect the back button [\@smoke]],
-  [├─ should allow me to display completed items],
-  [├─ should allow me to display all items \@smoke],
-  [└─ should highlight the currently applied filter],
-  [found 6 specs (31 tests)],
-  [We have 6 specs with 31 tests grouped into tags],
-  [There are 6 different tags implemented using \@bahmutov/cy-grep plugin.],
-  [1 
- 2 
- 3 
- 4 
- 5 
- 6 
- 7 
- 8 
- 9 
- \$ npx find-cypress-specs --tags 
- Tag Tests 
- ------------ ----- 
- \@add 9 
- \@complete 3 
- \@edit 5 
- \@persistence 1 
- \@routing 5 
- \@smoke 10],
-  [The test tags are type-checked, see the blog post Type Check Your Test Tags for details. The test tags can be found in the file cypress/support/index.d.ts],
-  [cypress/support/index.d.ts 1 
- 2 
- 3 
- 4 
- 5 
- 6 
- 7 
- 8 
- 9 
- 10 
- /\*\* 
- \* The only allowed test tags in this project 
- \*/ 
- type AllowedTag = 
- | '\@smoke' 
- | '\@add' 
- | '\@complete' 
- | '\@edit' 
- | '\@routing' 
- | '\@persistence'],
-  [Picking tests to run],
-  [Imagine someone unfamiliar with the project's tests opens a pull request. Which tests should we run? Ideally, we would run all tests, but that might be slow. We could run a few tests across all features: the tests tagged \@smoke . Or the author of the pull request could ask someone familiar with the tests to advise. If someone asked me "which test tag is appropriate for this pull request?", I would look at the pull request title and text description to see if I can determine what user-facing changes the code change has.],
-  [Here is an empty commit and pull request:],
-  [1],
-  [2],
-  [3],
-  [4],
-  [5],
-  [6],
-  [7],
-  [8],
-  [9],
-  [10],
-  [11],
-  [12],
-  [13],
-  [14],
-  [15],
-  [16],
-  [17],
-  [18],
-  [19],
-  [20],
-  [21],
-  [bahmutov at QPW7RRQDVW ~/git/pick-test-tag-ai on main],
-  [\$ gb demo-pr],
-  [Switched to a new branch 'demo-pr'],
-  [bahmutov at QPW7RRQDVW ~/git/pick-test-tag-ai on demo-pr],
-  [\$ gempty "add localStorage wrapper"],
-  [[demo-pr cca7b87] add localStorage wrapper],
-  [bahmutov at QPW7RRQDVW ~/git/pick-test-tag-ai on demo-pr],
-  [\$ gh pr create],
-  [? Where should we push the 'demo-pr' branch? bahmutov/pick-test-tag-ai],
-  [Creating pull request for demo-pr into main in bahmutov/pick-test-tag-ai],
-  [? Title (required) add localStorage wrapper],
-  [? Body],
-  [? What's next? Submit],
-  [remote:],
-  [remote:],
-  [To github.com:bahmutov/pick-test-tag-ai.git],
-  [\* [new branch] HEAD -\> demo-pr],
-  [branch 'demo-pr' set up to track 'origin/demo-pr'.],
-  [https:\/\/github.com/bahmutov/pick-test-tag-ai/pull/7],
-  [I wrote the following pull request body],
-  [1 
- Refactor loading todos on page load.],
-  [Let's look at the pull request \#7 . Notice the automatic comment I recommend running tests tagged \@persistence . That is the AI model automatically suggesting the tag \@persistence based on the PR title + pull request body text.],
-  [The recommendation makes sense: we do want to run these tests, just look at the title:],
-  [1 
- 2 
- 3 
- 4 
- cypress/e2e/persistence-spec.js (1 test) 
- └─ TodoMVC - React [\@persistence] 
- └─ Persistence 
- └─ should persist its data [\@smoke]],
-  [Here is how it works.],
-  [The GitHub Actions workflow],
-  [Each time a new pull request is opened, the following workflow .github/workflows/pr-opened.yml grabs its title and the first 1000 characters of its body text.],
-  [.github/workflows/pr-opened.yml 1],
-  [2],
-  [3],
-  [4],
-  [5],
-  [6],
-  [7],
-  [8],
-  [9],
-  [10],
-  [11],
-  [12],
-  [13],
-  [14],
-  [15],
-  [16],
-  [17],
-  [18],
-  [19],
-  [20],
-  [21],
-  [22],
-  [23],
-  [24],
-  [25],
-  [26],
-  [27],
-  [28],
-  [29],
-  [30],
-  [31],
-  [32],
-  [33],
-  [34],
-  [35],
-  [36],
-  [37],
-  [38],
-  [39],
-  [40],
-  [41],
-  [42],
-  [43],
-  [44],
-  [name: PR opened],
-  [on:],
-  [pull\_request:],
-  [types: [ opened ]],
-  [permissions:],
-  [contents: write],
-  [pull-requests: write],
-  [jobs:],
-  [find-test-tag:],
-  [name: Find the applicable test tag],
-  [runs-on: ubuntu-24.04],
-  [steps:],
-  [- name: Checkout 🛎],
-  [uses: actions/checkout\@v4],
-  [- name: Install dependencies 📦],
-  [\# https:\/\/github.com/cypress-io/github-action],
-  [uses: cypress-io/github-action\@v6],
-  [with:],
-  [runTests: false],
-  [- name: Determine the test tag 🏷️],
-  [id: find\_test\_tag],
-  [run: |],
-  [TAG=\$(node ask.mjs)],
-  [echo "TAG=\$TAG" \>\> \$GITHUB\_OUTPUT],
-  [env:],
-  [OPEN\_AI\_API\_KEY: \${{ secrets. OPEN\_AI\_API\_KEY }}],
-  [OPEN\_AI\_BASE\_URL: \${{ secrets. OPEN\_AI\_BASE\_URL }}],
-  [CODE\_CHANGES: "\$ {{ github.event.pull\_request.title }} \\n\\n\$ {{ github.event.pull\_request.body }} "],
-  [- name: Print the determined tag 🏷️],
-  [run: |],
-  [echo "The determined test tag is: \${{ steps.find\_test\_tag.outputs. TAG }}" \>\> \$GITHUB\_STEP\_SUMMARY],
-  [- name: Comment on PR with the found tag 💬],
-  [\# https:\/\/github.com/peter-evans/create-or-update-comment],
-  [uses: peter-evans/create-or-update-comment\@v4],
-  [with:],
-  [token: \${{ secrets. GH\_PERSONAL\_TOKEN }}],
-  [repository: \${{ github.event.repository.full\_name }}],
-  [issue-number: \${{ github.event.pull\_request.number }}],
-  [body: |],
-  [I recommend running tests tagged \*\*\${{ steps.find\_test\_tag.outputs. TAG }}\*\*],
-  [The most important part is executing the ask.mjs script:],
-  [1 
- 2 
- 3 
- 4 
- 5 
- 6 
- 7 
- 8 
- 9 
- - name: Determine the test tag 🏷️ 
- id: find\_test\_tag 
- run: | 
- TAG=\$(node ask.mjs) 
- echo "TAG=\$TAG" \>\> \$GITHUB\_OUTPUT 
- env: 
- OPEN\_AI\_API\_KEY: \${{ secrets. OPEN\_AI\_API\_KEY }} 
- OPEN\_AI\_BASE\_URL: \${{ secrets. OPEN\_AI\_BASE\_URL }} 
- CODE\_CHANGES: "\$ {{ github.event.pull\_request.title }} \\n\\n\$ {{ github.event.pull\_request.body }} "],
-  [Here is the script that uses OpenAI sdk to get one word answer.],
-  [ask.mjs 1],
-  [2],
-  [3],
-  [4],
-  [5],
-  [6],
-  [7],
-  [8],
-  [9],
-  [10],
-  [11],
-  [12],
-  [13],
-  [14],
-  [15],
-  [16],
-  [17],
-  [18],
-  [19],
-  [20],
-  [21],
-  [22],
-  [23],
-  [24],
-  [25],
-  [26],
-  [27],
-  [28],
-  [29],
-  [30],
-  [31],
-  [32],
-  [33],
-  [34],
-  [35],
-  [36],
-  [37],
-  [38],
-  [39],
-  [40],
-  [41],
-  [42],
-  [43],
-  [44],
-  [import OpenAI from 'openai'],
-  [const client = new OpenAI ({],
-  [apiKey : process. env [ 'OPEN\_AI\_API\_KEY' ],],
-  [baseURL : process. env [ 'OPEN\_AI\_BASE\_URL' ],],
-  [})],
-  [async function ask ( instructions, input ) {],
-  [const response = await client. responses . create ({],
-  [\/\/ https:\/\/platform.openai.com/docs/models],
-  [model : 'gpt-4.1' ,],
-  [instructions,],
-  [input,],
-  [})],
-  [return response. output\_text],
-  [}],
-  [const instructions = \`],
-  [Give the following end-to-end test tags:],
-  [- \@smoke a few tests that go through various features of the application],
-  [- \@add tests go through creating new todos],
-  [- \@complete tests are creating todos and then marking then complete and incomplete],
-  [- \@edit tests edit text for existing todos],
-  [- \@routing tests check if the app can show screens of completed and active todos],
-  [- \@persistence tests check how todos are saved in the browser and loaded],
-  [Determine which test tag is applicable to the following code changes.],
-  [Response with the test tag by itself and nothing else.],
-  [If no test tag is applicable, return "\@smoke".],
-  [\`],
-  [const input = process. env [ 'CODE\_CHANGES' ]],
-  [if (!input) {],
-  [throw new Error ( 'CODE\_CHANGES environment variable is required' )],
-  [}],
-  [\/\/ output logging into error stream],
-  [console . error ( 'Asking OpenAI for test tags...' )],
-  [console . error (input)],
-  [const answer = await ask (instructions, input)],
-  [console . log (answer)],
-  [The test tag descriptions are manual and can be expanded if needed to better describe the tests under the tag.],
-  [1 
- 2 
- 3 
- 4 
- 5 
- 6 
- 7 
- 8 
- 9 
- 10 
- 11 
- 12 
- 13 
- 14 
- const instructions = \` 
- Give the following end-to-end test tags: 
- - \@smoke a few tests that go through various features of the application 
- - \@add tests go through creating new todos 
- - \@complete tests are creating todos and then marking then complete and incomplete 
- - \@edit tests edit text for existing todos 
- - \@routing tests check if the app can show screens of completed and active todos 
- - \@persistence tests check how todos are saved in the browser and loaded 
- 
- Determine which test tag is applicable to the following code changes. 
- 
- Response with the test tag by itself and nothing else. 
- If no test tag is applicable, return "\@smoke". 
- \`],
-  [I tried other OpenAI models, they all worked pretty much the same. In a sense, our problem is very simple: pick the best matching text from a very limited list of available tags. LLMs seem to match the synonyms and word forms pretty well. Let's see if a pull request with the title "Changed the input element" matches the "\@add tests go through creating new todos" text. Here is the pull request \#8],
-  [Nice, that is the tag for the tests that probably cover the changes to the "Todo" item input implementation:],
-  [Test tag on demand],
-  [We can determine the test tag when the user asks for it, instead of computing it automatically when the pull request is opened. I can use the peter-evans/slash-command-dispatch action to trigger the "find the test tag" workflow when the user enters the /ai comment.],
-  [.github/workflows/dispatch.yml 1 
- 2 
- 3 
- 4 
- 5 
- 6 
- 7 
- 8 
- 9 
- 10 
- 11 
- 12 
- 13 
- 14 
- 15 
- 16 
- 17 
- 18 
- 19 
- 20 
- 21 
- name: dispatch 
- on: 
- issue\_comment: 
- types: [ created ] 
- permissions: 
- contents: write 
- pull-requests: write 
- jobs: 
- dispatch: 
- runs-on: ubuntu-24.04 
- steps: 
- - name: Slash Command Dispatch 
- \# https:\/\/github.com/peter-evans/slash-command-dispatch 
- uses: peter-evans/slash-command-dispatch\@v4 
- with: 
- token: \${{ secrets. GITHUB\_TOKEN }} 
- reaction-token: \${{ secrets. GITHUB\_TOKEN }} 
- permission: none 
- issue-type: pull-request 
- commands: | 
- ai],
-  [The only command "ai" in the dispatch above triggers the following workflow .github/workflows/ai-command.yml],
-  [.github/workflows/ai-command.yml 1],
-  [2],
-  [3],
-  [4],
-  [5],
-  [6],
-  [7],
-  [8],
-  [9],
-  [10],
-  [11],
-  [12],
-  [13],
-  [14],
-  [15],
-  [16],
-  [17],
-  [18],
-  [19],
-  [20],
-  [21],
-  [22],
-  [23],
-  [24],
-  [25],
-  [26],
-  [27],
-  [28],
-  [29],
-  [30],
-  [31],
-  [32],
-  [33],
-  [34],
-  [35],
-  [36],
-  [37],
-  [38],
-  [39],
-  [40],
-  [41],
-  [42],
-  [43],
-  [44],
-  [45],
-  [46],
-  [47],
-  [48],
-  [49],
-  [50],
-  [51],
-  [52],
-  [53],
-  [name: ai-command],
-  [on:],
-  [repository\_dispatch:],
-  [types: [ ai-command ]],
-  [jobs:],
-  [find-test-tag:],
-  [runs-on: ubuntu-24.04],
-  [steps:],
-  [- name: Dump the client payload body],
-  [env:],
-  [PAYLOAD\_CONTEXT: \${{ toJson(github.event.client\_payload.pull\_request.body) }}],
-  [run: echo "\$PAYLOAD\_CONTEXT"],
-  [- name: Print repo and comment],
-  [run: |],
-  [echo "Title of the pull request: \${{ github.event.client\_payload.pull\_request.title }}"],
-  [echo "Repository: \${{ github.event.client\_payload.github.payload.repository.full\_name }}"],
-  [echo "Issue number: \${{ github.event.client\_payload.github.payload.issue.number }}"],
-  [- name: Checkout 🛎],
-  [uses: actions/checkout\@v4],
-  [- name: Install dependencies 📦],
-  [\# https:\/\/github.com/cypress-io/github-action],
-  [uses: cypress-io/github-action\@v6],
-  [with:],
-  [runTests: false],
-  [- name: Determine the test tag 🏷️],
-  [id: find\_test\_tag],
-  [run: |],
-  [TAG=\$(node ask.mjs)],
-  [echo "TAG=\$TAG" \>\> \$GITHUB\_OUTPUT],
-  [env:],
-  [OPEN\_AI\_API\_KEY: \${{ secrets. OPEN\_AI\_API\_KEY }}],
-  [OPEN\_AI\_BASE\_URL: \${{ secrets. OPEN\_AI\_BASE\_URL }}],
-  [CODE\_CHANGES: "\$ {{ github.event.client\_payload.pull\_request.title }} \\n\\n\$ {{ github.event.client\_payload.pull\_request.body }} "],
-  [- name: Print the determined tag 🏷️],
-  [run: |],
-  [echo "The recommended test tag is: \${{ steps.find\_test\_tag.outputs. TAG }}" \>\> \$GITHUB\_STEP\_SUMMARY],
-  [- name: Write tag back into the comment 💬],
-  [\# https:\/\/github.com/peter-evans/create-or-update-comment],
-  [uses: peter-evans/create-or-update-comment\@v4],
-  [with:],
-  [token: \${{ secrets. GH\_PERSONAL\_TOKEN }}],
-  [repository: \${{ github.event.client\_payload.github.payload.repository.full\_name }}],
-  [issue-number: \${{ github.event.client\_payload.github.payload.issue.number }}],
-  [body: |],
-  [The recommended test tag is: \*\*\${{ steps.find\_test\_tag.outputs. TAG }}\*\*],
-  [Nice.],
-  [Test tags list with a summary is small and does not change often. Pull request title plus text body are limited to 1000 characters, so are very small. Matching the PR text to the test tags should be quick and cheap AI operation. Just to see how many tokens we used],
-  [1 
- 2 
- 3 
- 4 
- 5 
- 6 
- 7 
- 8 
- 9 
- 10 
- 11 
- 12 
- 13 
- async function ask ( instructions, input ) { 
- const response = await client. responses . create ({ 
- \/\/ https:\/\/platform.openai.com/docs/models 
- model : 'gpt-4.1' , 
- instructions, 
- input, 
- }) 
- 
- console . error ( 'response usage:' ) 
- console . error (response. usage ) 
- 
- return response. output\_text 
- }],
-  [Calling this code with "changed the input element" code change produces:],
-  [1 
- 2 
- 3 
- 4 
- 5 
- 6 
- 7 
- 8 
- 9 
- 10 
- Asking OpenAI for test tags... 
- changed the input element 
- { 
- input\_tokens: 154, 
- input\_tokens\_details: { audio\_tokens: null, cached\_tokens: 0, text\_tokens: null }, 
- output\_tokens: 3, 
- output\_tokens\_details: { reasoning\_tokens: 0, text\_tokens: null }, 
- total\_tokens: 157 
- } 
- \@add],
-  [So we used 154 input and 3 output tokens. For the full picture, https:\/\/openai.com/api/pricing/ has Input: \$2.00 / 1M tokens and Output: \$8.00 / 1M tokens bringing out query cost to \$0.0003],
-  [Of course, a low cost for our queries is only a part of the environment costs incurred by the AI data centers .],
-),
-  insert-map: (:),
-  word-count: 2264,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-}
-
-{
-  #standard-article(
-  title: [Node 25.8 adds permission model audit mode],
-  author: [Node Weekly],
-  source-name: [Node Weekly],
-  images: (),
-  paragraphs: (
-  [\#​614 — March 5, 2026],
-  [Read on the Web],
-  [Evolving the Node.js Release Schedule: A Work in Progress — The Node.js team has long been discussing shifting Node to a new schedule of one major release per year (instead of two), removing the odd/even distinction, and making every release LTS (with a prior 11 months of alpha/current status). This is a preview post not intended for final publication till April, so things are subject to change ( backup version ).],
-  [The Node.js Team],
-  [💡 A cute side effect of the change will be the latest LTS Node version will match the year. Node 28 will go LTS in 2028, and so on.],
-  [Memetria K/V: Efficient Redis & Valkey Hosting — Memetria K/V hosts Redis OSS and Valkey for Node.js apps, featuring large key tracking and detailed analytics.],
-  [Memetria sponsor],
-  [Node.js 25.8.0 (Current) Released — A typical incremental maintenance release, with the interesting addition of --permission-audit if you want to adopt the permission model , or are debugging failures with it. It enables the permission model in warning-only mode, so it could be a good way to audit your app in advance of enabling the full feature.],
-  [IN BRIEF:],
-  [The OpenJS Foundation has launched a Node.js upgrade and modernization program aimed at helping 'enterprises move safely off legacy and end-of-life Node.js versions.'],
-  [🌐 The popular Inquirer.js family of CLI UI components has added an i18n package for creating prompts in non-English languages.],
-  [The Drizzle ORM team has joined cloud database provider PlanetScale .],
-  [We Deserve a Better Streams API for JavaScript — “I’m publishing this to start a conversation,” says James who shows off an alternative approach to streams working around the current standard’s “fundamental usability and performance issues.” Following the success of this post, James has since created a PR for Node.js to foster discussion and to demonstrate how his new approach can sit safely alongside the existing implementation.],
-  [James M Snell],
-  [Upgrading OpenClaw on NVIDIA's Jetson Nano with Node 22 — Mostly interesting to see Node running on NVIDIA’s tiny AI-focused computer. It took Node 27 hours to compile and required a patch to do so.],
-  [Reliability Infrastructure Hits \$5B Valuation — Temporal’s Series D signals durable execution is becoming core to modern Node and backend systems.],
-  [Temporal Technologies sponsor],
-  [📄 Proxying Fetch Requests in Server-Side JavaScript Nicholas C. Zakas],
-  [▶️ Why I Chose Electron Over Native (And I’d Do It Again) Syntax Podcast],
-  [🛠 Code & Tools],
-  [📄 VMPrint: Pure JS Typesetting Engine for Perfect PDF Output — It’s common to defer to headless Chrome instances for print-to-PDF type work, but VMPrint “guarantees identical layout given identical input, down to the sub-point position of every glyph.” Here’s a sample PDF. I gave it a test for myself and it seemed to work pretty well.],
-  [💰 Dinero.js 2.0: Create, Calculate, and Format Money Safely — An immutable library for expressing monetary values and performing calculations with them. v2.0 is a complete rewrite with a new, fully tree-shakeable functional architecture.],
-  [Bun v1.3.10 Released — A hefty release. Bun’s REPL has been rewritten with many practical and cosmetic improvements, there's a --compile --target=browser option for building self-contained HTML files with all assets included, full support for TC39 ES decorators , and more.],
-  [Unbarrelify: Barrel File Removal Tool for JavaScript — From the creators of Knip , a barrel file removal tool for JS/TS projects (ESM-only).],
-  [WebPro],
-  [Fastify 5.8 – The fast, low-overhead web framework adds handler-level timeouts and Pino v9/v10 compatibility.],
-  [🤖 GramIO 0.7 – Telegram Bot API framework. Now supporting the just-updated Telegram Bot API 9.5 .],
-  [🎵 mp3tag.js 3.16 – Read, write, and remove ID3 metadata on MP3, MP4/M4A, AIFF, and AAC files.],
-  [sax-js 1.5 – Isaac Z Schlueter's SAX-style XML and HTML parser.],
-  [jose 6.2 – JSON Object Signing and Encryption library.],
-  [NodeBB 4.9 – Node.js based forum software.],
-  [AVA 7.0 – A popular Node.js test runner.],
-  [📰 Classifieds],
-  [Next.js on Node.js? Here's How to Get Readable Stack Traces with Sentry .],
-  [📖 Master Visual Studio Code , and learn over 150 essential tips in this screenshot-packed guide from Louis Lazaris.],
-  [📢 Elsewhere in the ecosystem],
-  [Patreon has shared the tale of its seven year migration from JavaScript to TypeScript. There's a focus on tooling choices that might be useful if you're making a similar shift.],
-  [npmx.dev is a new, fast way to browse and search the official npm registry that's gone into alpha this week with a post running through all the details.],
-  [Packaging a Gleam App Into a Single Executable shows how non-JavaScript languages can still benefit from the executable building capabilities of Deno, Bun, and Node.],
-  [Marianne Feng hacked her old Kindle to display bus arrival times with Node playing a role.],
-  [📉 Uptime Kuma is an impressive Node.js-powered self-hosted uptime monitoring tool we've begun using ourselves. It's easily deployed via Docker, if you prefer.],
-),
-  insert-map: (:),
-  word-count: 820,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-}
-
-{
-  #standard-article(
-  title: [How to Run Your Python Scripts and Code],
+  title: [Spyder: Your IDE for Data Science Development in Python],
   author: [Real Python],
   source-name: [Real Python],
   images: (),
   paragraphs: (
-  [Running Python scripts is essential for executing your code. You can run Python scripts from the command line using python script.py , directly by making files executable with shebangs on Unix systems, or through IDEs and code editors. Python also supports interactive execution through the standard REPL for testing code snippets.],
-  [This tutorial covers the most common practical approaches for running Python scripts across Windows, Linux, and macOS.],
-  [By the end of this tutorial, you’ll understand that:],
-  [The python command followed by a script filename executes the code from the command line on all operating systems.],
-  [Script mode runs code from files sequentially , while interactive mode uses the REPL for execution and testing with immediate feedback.],
-  [Unix systems require executable permissions and a shebang line like \#!/usr/bin/env python3 to run scripts directly as programs.],
-  [The python command’s -m option runs Python modules by searching sys.path rather than requiring file paths.],
-  [IDEs like PyCharm and code editors like Visual Studio Code provide built-in options to run scripts from the environment interface.],
-  [To get the most out of this tutorial, you should know the basics of working with your operating system’s terminal and file manager. It’d also be beneficial to be familiar with a Python-friendly IDE or code editor and with the standard Python REPL (Read-Eval-Print Loop).],
-  [Free Download: Get a sample chapter from Python Tricks: The Book that shows you Python’s best practices with simple examples you can apply instantly to write more beautiful + Pythonic code.],
-  [How to Run Your Python Scripts],
-  [class="text-muted mb-0 small"\>One of the most important skills you need to build as a Python developer is to be able to run Python scripts and code. Test your understanding on how good you are with running your code.],
-  [id="what-scripts-and-modules-are"\>What Scripts and Modules Are],
-  [In computing, the term script refers to a text file containing a logical sequence of orders that you can run to accomplish a specific task. These orders are typically expressed in a scripting language , which is a programming language that allows you to manipulate, customize, and automate tasks.],
-  [Scripting languages are usually interpreted at runtime rather than compiled . So, scripts are typically run by an interpreter , which is responsible for executing each order in a sequence.],
-  [Python is an interpreted language. Because of that, Python programs are commonly called scripts. However, this terminology isn’t completely accurate because Python programs can be way more complex than a simple, sequential script.],
-  [In general, a file containing executable Python code is called a script—or an entry-point script in more complex applications—which is a common term for a top-level program . On the other hand, a file containing Python code that’s designed to be imported and used from another Python file is called a module .],
-  [So, the main difference between a module and a script is that modules store importable code while scripts hold executable code .],
-  [Note: Importable code is code that defines something but doesn’t perform a specific action. Some examples include function and class definitions. In contrast, executable code is code that performs specific actions. Some examples include function calls , loops , and conditionals .],
-  [In the following sections, you’ll learn how to run Python scripts, programs, and code in general. To kick things off, you’ll start by learning how to run them from your operating system’s command line or terminal.],
-  [id="how-to-run-python-scripts-from-the-command-line"\>How to Run Python Scripts From the Command Line],
-  [In Python programming, you’ll write programs in plain text files. By convention, files containing Python code use the .py extension, and there’s no distinction between scripts or executable programs and modules. All of them will use the same extension.],
-  [Note: On Windows systems, the extension can also be .pyw for those applications that should use the pythonw.exe launcher.],
-  [To create a Python script, you can use any Python-friendly code editor or IDE (integrated development environment). To keep moving forward in this tutorial, you’ll need to create a basic script, so fire up your favorite text editor and create a new hello.py file containing the following code:],
-  [This is the classic "Hello, World!" program in Python. The executable code consists of a call to the built-in print() function that displays the "Hello, World!" message on your screen.],
-  [With this small program in place, you’re ready to learn different ways to run it. You’ll start by running the program from your command line, which is arguably the most commonly used approach to running scripts.],
-  [id="using-the-python-command"\>Using the python Command],
-  [To run Python scripts with the python command, you need to open a command-line window and type in the word python followed by the path to your target script:],
-  [Read the full article at https:\/\/realpython.com/run-python-scripts/ »],
+  [There are many different integrated development environments (IDEs) to choose from for Python development. One popular option for data-focused work is Spyder, an open-source Python IDE geared toward scientists, engineers, and data analysts. Its name comes from Scientific PYthon Development EnviRonment .],
+  [Out of the box, it has powerful plotting, what-if, and profiling capabilities. It also integrates well with the data science ecosystem, is extensible with first- or third-party plugins, and has a relatively quick learning curve.],
+  [How does Spyder stack up against other Python IDEs ? It depends on your use case. It’s not as powerful or customizable as VS Code , nor does it pretend to be. It does, however, excel for data science workflows:],
+  [class="table-responsive"\>
+ 
+ 
+ 
+ Use Case 
+ Pick Spyder 
+ Pick an Alternative 
+ 
+ 
+ 
+ 
+ Optimized for data science workflows 
+ ✅ 
+ — 
+ 
+ 
+ Dedicated to Python 
+ ✅ 
+ — 
+ 
+ 
+ Full-featured 
+ — 
+ VS Code 
+ 
+ 
+ Supports interactive notebooks 
+ ✅ With a plugin 
+ Jupyter, VS Code],
+  [If you’re focused on data science in Python, Spyder is a strong fit. For a more full-featured IDE or heavy notebook use, consider Jupyter or VS Code instead.],
+  [You can get a handy Spyder IDE cheat sheet at the link below:],
+  [class="my-3"\> Take the Quiz: Test your knowledge with our interactive “Spyder: Your IDE for Data Science Development in Python” quiz. You’ll receive a score upon completion to help you track your learning progress:],
+  [Spyder: Your IDE for Data Science Development in Python],
+  [id="start-using-the-spyder-ide"\>Start Using the Spyder IDE],
+  [You can install Spyder in a few ways: as a standalone program, through a prepackaged distribution, or from the command line. You can also try out Spyder online .],
+  [To install Spyder as a standalone application, go to the Spyder download page . When you visit the site, it detects your operating system and offers the appropriate download. Once you download your install file, open it and follow the directions.],
+  [You can also install a Python distribution tailored to data science, such as Anaconda or WinPython . Both of these choices include Spyder in their base installations.],
+  [You’ll likely want to install dependencies and useful data libraries in addition to Spyder. In this case, first create a Python virtual environment , then use this command:],
+  [The install process for pip is similar. To install spyder together with common packages, run:],
+  [For more information on installing Spyder, refer to their install guide .],
+  [Out of the box, the Spyder interface consists of three panes:],
+  [The Spyder IDE Interface],
+  [On the left, you see code in the Editor pane. In the bottom right, you’ll find the IPython Console . Here, you can run code and check past commands using the History tab. The top-right area includes tabs such as Help , Debugger , Files , Find , and Code Analysis . You’ll learn about the Variable Explorer , Plots , and Profiler in the upcoming sections.],
+  [id="explore-data-with-the-variable-explorer"\>Explore Data With the Variable Explorer],
+  [Read the full article at https:\/\/realpython.com/spyder-ide\/ »],
 ),
   insert-map: (:),
-  word-count: 866,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-  #pull-quote([However, this terminology isn’t completely accurate because Python programs can be way more complex than a simple, sequential script.], [Real Python])
-
-}
-
-{
-  #standard-article(
-  title: [Graphics, Photo and Video: Apply for Fall/Winter 2022 Internships at NPR],
-  author: [NPR Apps Blog],
-  source-name: [NPR Apps Blog],
-  images: (),
-  paragraphs: (
-  [NPR’s internship program includes several visually-oriented newsroom jobs, working with the News Apps, Visuals and Science teams.],
-  [Our paid fall/winter internship program runs from Oct. 3, 2022, to April 15, 2023. In this super-sized internship term, interns may have the opportunity to work with multiple teams in the NPR newsroom and develop a wider range of experience. DEADLINE EXTENDED: Applications are due Sunday, July 17, 2022 at 11:59pm ET.],
-  [To be eligible, you must be a college student (undergraduate or graduate) or a person who has graduated no more than 12 months prior to the start of the internship period. You must be planning to work from the United States and authorized to work in the United States throughout the internship term.],
-  [id="newshubgraphics-intern-remote-optional"\> NewsHub/Graphics Intern (Remote-optional)],
-  [For half of the internship, you will be part of the NewsHub team, where you will pitch, report and write stories for NPR’s website and learn what it takes to make those stories go big across digital platforms. For the other half of the internship, you will be embedded with the News Apps/Graphics team, focusing on graphics, data visualization and visual storytelling.],
-  [This position could be a good fit for someone experienced with graphics and data analysis who wants to improve their reporting skills, or for a reporter with some graphics experience who wants to build stronger graphics/coding chops.],
-  [This internship has the flexibility to be on site at our Washington, D. C., office, fully remote, and/or a hybrid version of the two based on the intern’s preference.],
-  [Read about our expectations and selection process],
-  [APPLY NOW],
-  [id="multimedia-intern-visuals-and-science-desks-remote"\> Multimedia Intern, Visuals and Science Desks (Remote)],
-  [This internship is an opportunity to learn more about the world of photo editing. Our goal isn’t to make you into a photo editor; we view this internship as a chance for you to understand what it is like to be an editor and improve your visual literacy , which can help you become a better photographer.],
-  [On the Visuals Desk, the intern will focus on editing and commissioning visuals for stories for news, national, culture, politics and podcasts. They will also work on content for our other visuals platforms including Instagram. The Visuals Desk intern will work across the newsroom and podcasts. On the Science Desk, interns will edit and commission visuals for stories on global and domestic health, climate change and general science. As one of the largest desks at NPR, interns will have the opportunity to work with over 30 reporters, producers and editors.],
-  [This internship will be fully remote.],
-  [APPLY NOW],
-  [id="npr-music-visuals-intern-remote"\> NPR Music Visuals Intern (Remote)],
-  [The NPR Music Video Intern will assist in the production of a range of editorial projects, spanning podcasts, short-form video, Tiny Desk, Alt. Latino and more. We look for video producers who can balance multiple tasks at once, translate big ideas into smart and compelling visuals and who are excited to help NPR Music reach new audiences, especially on platforms like TikTok and Instagram. This is a paid, full-time, 40-hour a week internship working remotely. It will require occasional late nights/odd hours.],
-  [APPLY NOW],
-),
-  insert-map: (:),
-  word-count: 514,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-}
-
-{
-  #standard-article(
-  title: [Geometry Nodes Workshop: September 2025],
-  author: [Jacques Lucke],
-  source-name: [Blender Dev Blog],
-  images: (),
-  paragraphs: (
-  [Once again, we met for a Geometry Nodes workshop after the Blender Conference to discuss many design topics. This post gives a general overview of the topics that were discussed. You can also read all the notes we took during the meetings.],
-  [This time we invited two guests from the community: Brady Johnston, developer of the Molecular Nodes add-on, and Manuel Casasola Merkle from Entagma.],
-  [Our last workshop was just 2.5 months ago. Still, a lot has happened since then. Many of the improvements made it into the upcoming Blender 5.0 release.],
-  [Closures and Bundles : They are non-experimental now. There is a separate blog post about them. In a surprising turn of events, they are even supported in Shader Nodes now, together with repeat zones.],
-  [Socket Shapes : The updates to socket shapes are also out of experimental. Another separate blog post describes the changes in more detail.],
-  [Volumes : The new volume grid nodes are out of experimental too! Yet another blog post describes what they are and how to use them.],
-  [Lists : An initial version of lists has been merged as experimental feature. Design and implementation work is ongoing.],
-  [Hair Project : This is still ongoing. There have been lots of experiments regarding integrating physics solvers. There was a talk about this at the Blender Conference.],
-  [Essentials Assets : There are various new built-in node groups to ease working Geometry Nodes.],
-  [Viewer : The new viewer nodes design discussed in the last workshop has been implemented.],
-  [Tangents : A new UV Tangent node gives access to tangent vectors on a mesh.],
-  [Checkout the release notes for a more complete overview of all the changes coming to Blender 5.0.],
-  [With Blender 5.0 we overcome one of the major technical hurdles of shipping more assets with Blender. Appending and linking were both very problematic ways to add essential assets to user files. Now there is packing : a new way to have linked data-blocks which are also stored in the current .blend file, keeping it self-contained.],
-  [The most impactful new assets are the six new modifiers which are all based on Geometry Nodes. They offer support for flexible arrays, scattering and instancing out-of-the-box. There are also new lower-level node group assets which simplify some common tasks in Geometry Nodes. Lastly, there are new built-in effects for the compositor, although those were designed and implemented by another team.],
-  [The list of new modifiers and nodes was agreed on before the workshop, but during the workshop we did a pass over the new node groups and found various things to improve before the release. All of those improvements are already included in the latest builds.],
-  [The new Geometry Nodes based modifier to scatter objects.],
-  [We want to integrate physics solvers as declarative systems . On the user level the intended behavior will be described using force fields, collider objects and various other constraints, while the solver nodes figure out how simulate everything correctly.],
-  [One of the main aspects to figure out here is how to to pass the information about the simulation world into the solver. We intend to do that using bundles with a certain expected structure. There have been various experiments implementing a custom XPBD solver and exposing Bullet, Jolt and, Box2D .],
-  [At a high level, a solver node takes a bundle describing the entire simulation world as input, modifies it, and outputs the modified bundle, within a simulation zone so that the node gets the previous output as the next input. Using a separate node, the bundle can be updated from the outside of the simulation zone to take changes to the simulation world into account. A new node to simplify this process by updating a bundle from another bundle using custom rules is planned.],
-  [The first actual solver we are building is an XPBD solver , with an initial focus on hair simulation (for which there don’t seem to be great existing libraries which we can just use). While the basics work already, there are still many aspects that need to be implemented.],
-  [Example showing grass simulated using the cosserat rod model.],
-  [During the workshop, we went over various implementation details for the solver and also tried to prioritize them.],
-  [Collision handling : Accurate and stable collision detection and contact handling is of great importance. We looked into the difference between using SDFs and BVH trees for collision detection. While SDFs are great for efficiently checking that a point is not intersecting a collider, they have some accuracy issues and construction may be costly depending on the use-case. BVH tree lookups are slower, but much more precise. The current BVH tree implementation in Blender could probably be optimized quite a bit. We’re hoping that using an optimized library like Embree can help with that. In the end it seems like some hybrid solution would be best, but for now using BVH trees seems like the better way to go.],
-  [Solver Outputs : Solvers generally produces a lot of additional data can be useful for further effects or troubleshooting. The overall design using the physics world bundles makes outputting additional data fairly straight forward. For troubleshooting, a very useful number to output whould be a measure of the quality of the constraint solve. That’s because if the simulation looks bad, there can be two main reasons: either the constraints are setup badly or the solver needs more substeps. It’s easy to overcompensate the wrong aspect leading to less stable simulations.],
-  [Rest shape initialization : Properly computing the rest shape for groomed hair is necessary because generally the hair is groomed assuming there is gravity, and if the simulation applies gravity again, the hair will sag. The solution here is to do something like a “reverse solve” that computes hair segment lengths and rotations (among other things) such that when gravity is applied again, the hair sags into the provided groom. The situation becomes more complex when colliders also have to be taken into account instead of just gravity. It’s not exactly obvious at which stage this inverse solve should happen. It can happen automatically in the solver, or in a separate node, or even more explicitly as part of grooming. The argument for that latter is that at that stage, Blender knows best what colliders etc. were taken into account for the groom which might be different from what is available during the simulation solve, e.g. when the character is animated. As a first step, it still seems best to get it working as part of the solver though to test the algorithm. We might still want to separate it out before the release though after some more testing.],
-  [A few more topics have been discussed, see the devtalk thread for some more details.],
-  [Many use-cases require outputting more complex data from a Geometry Nodes modifier than just geometry. For example, one could output multiple meshes, single values for driving animations, or even imagine outputting fields or closures to be used as effectors on other objects.],
-  [Now that we have bundles , it seems obvious that we can achieve all of that by just outputting a bundle from a Geometry Nodes modifier that can then be read from other objects using e.g. the Object Info node.],
-  [The main question is how exactly to output that bundle. One could have a separate bundle output socket, but that would require complicating many other aspects. Other modifiers would also have to pass through this extra bundle or we would need to make special rules for how it is propagated.],
-  [Another alternative could be to output just a bundle, and the main geometry can just be part of that bundle. This has similar downsides to the previous approach: it’s inconvenient and requires changes in many existing systems.],
-  [Yet another approach would be to allow storing a bundle inside of a geometry set. There is already a prototype for this. This can be thought of as having geometry-wide attributes, just that they can contain any kind of data supported by Geometry Nodes. There would be new nodes to get and set the geometry’s bundle similar to those that already control the name. The bundle is already propagated properly in existing setups and the implementation is generally simple. After some back-and-forth, we agreed that this approach seems best.],
-  [Regardless of the approach, the question of how the bundle interacts with custom properties remains. However, it seems like this is an independent system. It is stored very differently and supports very different kinds of data which can’t be stored as custom properties (e.g. fields). That means that we’ll need a new type of driver variable to access these bundle items.],
-  [With the recent improvements to frame nodes , we want to encourage the use of frames even more to simplify reading node groups.],
-  [One approach that seems good is to draw the node tree more abstractly when zoomed out so far that labels become unreadable. In this case, frames and their labels could become more prominent, making it easier to orient yourself in the tree.],
-  [This is also related to having a minimap of the node tree, but would span the entire node editor. The design problems are similar though: one needs to choose what to draw and what to skip to keep the view useful without being overloaded.],
-  [Obviously, whether this really works out depends a lot on how it actually looks. We did not have time to create proper designs for this view. We’d like to invite the community to share mockups.],
-  [More customizable group defaults are a recurring topic that’s surprisingly tricky. An initial proposal did have significant limitations and many other proposed solutions where either small design changes of that proposal or had problems with composability (creating a group from a single node should have the same behavior as the original node).],
-  [We discussed a new approach to solve this, which seems promising: Support assigning another node group to a group input which computes the default value of that input. For example, there could be a small node group that just outputs a noise field and that node group can be used as default input for a float field socket. The main benefits of this approach is that it solves the problem of composability, makes defaults easy to reuse and keeps each node tree cleaner.],
-  [This would involve extending the existing “Default Input” dropdown to contain an option called “Node Group”. This way, one could still use the default inputs for simple cases, but can also use custom defaults.],
-  [Additionally, we agreed that it seems reasonable to support custom attribute names are defaults too, even though that could also be achieved with the even more flexible node group inputs.],
-  [During the conference there was a brief discussion about whether instances could be a simple way to process objects with node tools. This would allow moving, creating, or deleting objects with Geometry Nodes. By adding an “execution mode” to the tool node group, we can keep existing groups working, and keep the doors open for even broader ways to process scene data with nodes in the future.],
-  [We made an implementation right after the conference, and the design turned out to work well and not require many code changes. However, considering all the ways object data can be shared between objects, it became clear that we needed proper support for string attributes to store object names before this can be considered complete.],
-  [Over the last year we have spent some time prototyping modal node tools, which made some issues clear. In this workshop we cleared up enough design topics that the next step is likely to be something less temporary than a prototype.],
-  [We reiterated that simulation zones should handle the intra-evaluation storage the same way as the modifier.],
-  [We agreed that we should change from registering a single operator for all node tools to registering a separate operator for each node tool. The current situation is stretching Blender’s operator design far too thin, and would make the implementation of modal keymaps too difficult.],
-  [Example of an existing keymap for a modal operator.],
-  [We also settled on a different design for getting user inputs into the node graph. Modal keymaps can be defined by a “Modal Event” node within the node tool tree. These contain the name of a keymap item and a boolean output when that item is active. The default keymap is configured in the side panel of the node editor, and user keymaps are configured in the keymap editor, just like any existing operator. Compared with the last design we discussed, using a separate node for every modal input should make it much simpler to build modal tools.],
-  [Volumes kept coming up in our discussion about simulations. We hadn’t planned on it, but we agreed that it would be good to finally get the Geometry Nodes volume grid features shipped in Blender 5.0. A separate blog post goes into more detail about that.],
-  [We didn’t make decisions about volumes beyond 5.0, besides agreeing on a number of useful features, including a pressure solver, point rasterization, and raycasting.],
-  [Lists are an ongoing development topic, with the first iterations already in the main branch as an experimental feature. To make more progress, some design decisions had to be made. We agreed that nodes to create lists from fields and closures should have multiple inputs and produce multiple outputs. We also considered the what should happen nodes process a combination of single values, lists, and fields.],
-  [Mockup of a simplified Edges of Vertex node when list fields are supported.],
-  [Most of the interest in lists is related to list fields (i.e. a list of values for every vertex), for example as an important simplification to the currently complicated mesh topology nodes. We agreed that the non-fields lists should be working properly, discussed some implementation details about field evaluation with lists, and agreed that storing lists as attributes doesn’t have to be part of the initial implementation.],
-  [Besides all these topics, we also went over many other topics which are just mentioned briefly below.],
-  [We reviewed a few patches that were in flight already, including the viewer node redesign , the community-contributed swap operator , the UV Tangent node , dynamic output visibility , add buttons in switch nodes , bundle/closure type definition , optional labels and optional manage panel .],
-  [We were also briefly part of a compositor meeting discussing how to do layered compositing and how to make the compositor more reusable in general.],
-  [A little fun fact: Brady noticed that an icon resembling DNA was actually mirrored. This was fixed .],
-  [For part of the workshop we did a group programming session where we streamed up to three laptops to the same screen, working on different patches at the same time. That was a fun little experience and also helped a whole lot getting Brady up to speed with node development, which was incredibly helpful to get volume grid nodes in a releasable state for Blender 5.0.],
-  [id="js-donation-box"\>],
-),
-  insert-map: (:),
-  inline-pq: pull-quote([Solver Outputs : Solvers generally produces a lot of additional data can be useful for further effects or troubleshooting.], [Jacques Lucke]),
-  inline-pq-idx: 23,
-  word-count: 2587,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-}
-
-{
-  #standard-article(
-  title: [How I make news comics],
-  author: [NPR Apps Blog],
-  source-name: [NPR Apps Blog],
-  images: (),
-  paragraphs: (
-  [This April, I published a comic with NPR’s Investigations team as part of a larger investigation into the often fractured and confusing landscape of historical markers in the United States .],
-  [The comic tells the story of William L. Moore, who was murdered on a civil rights protest walk. The silence around the murder bothered one man for years, until he campaigned to put up a marker about it.],
-  [It’s the longest comic I’ve ever made, and involved the most research and reporting. Now that it’s out, I wanted to document my process, in case it’s helpful for future me or anyone else interested in comics journalism.],
-  [id="step-one-ideas-research-and-reporting"\>Step one: Ideas, research and reporting],
-  [In August 2023, Laura Sullivan and Nick McMillan from the Investigations team reached out about potential graphics for their historical markers project. We brainstormed ideas for showing a selection of various interesting markers to readers, which eventually became this .],
-  [Reading through the stories behind different markers featured the project, I proposed a comic that would dive deeper into one of them. As a medium, a comic would be uniquely suited to depict the interplay between present and past going on in many of the stories. We had photos of the markers and some of the present-day folks involved, but with a comic I could fully illustrate previous events and how they intersected with the present. I chose Moore’s marker because it centered a specific person’s journey, was an emotionally compelling narrative, and had enough existing historical material to craft a standalone narrative.],
-  [I also was inspired by “ Searching for Maura ,” a Washington Post comic investigation that had recently been published about a Filipino woman whose remains were kept by the Smithsonian.],
-  [Before I started writing, I pored through the reporting that Laura had already done, combed through previous coverage of Moore, and read two books: his autobiography A Mind in Chains , and Mary Stanton’s Freedom Walk , a book about his life and death. I also interviewed Stanton.],
-  [id="step-two-writing"\>Step two: Writing],
-  [I like to have the words finalized for a comic before I really dig into illustrating it. It helps me focus on the narrative, and make sure it’s strong and cohesive. For me, it’s also easier to edit and potentially restructure text than it is to redraw panels, which is important in a news editing context. (And this went through many layers of edits before I even started drawing.)],
-  [I usually draw my comics as a series of images, with each image (or “page”) containing several panels. Many of my previous comics for NPR are exactly 10 pages long, because that’s the limit on how many images you can upload to an Instagram post. Comics do pretty well on social media, so I and other comics journalists at NPR usually try to tailor things to that format.],
-  [When I work on a 10-page comic, I usually],
-  [Write a bulleted list of important points],
-  [Spread them out across ten pages],
-  [And then flesh out each point into a couple of sentences.],
-  [There’s only so much text that can fit on an image without it becoming unreadable, especially considering how it might size down on a phone. And comics are an interplay between text and images, so there needs to be space for visual information as well. You’d be surprised how much information you can fit into ten pages though — it’s a lot like a radio story in some ways.],
-  [But there was no way this story would fit into 10 pages. After some experimenting, I adapted my writing process:],
-  [I first wrote all the text in paragraph form, as if I was writing a digital story, while trying my best to stay as concise as possible.],
-  [I made notes in the doc about information that I knew I could convey via illustration instead of text.],
-  [id="step-three-thumbnails"\>Step three: Thumbnails],
-  [Thumbnails are rough drafts of what I’m thinking of drawing for the final illustrations. They help me conceptualize paneling, composition, pacing, and other important details. They’re also helpful for my editors (who often aren’t used to editing comics) to get a sense of what the comic will look like.],
-  [They don’t need to be good illustrations, just rough drawings that convey a visual concept. To minimize any confusion in editing, I’ll also write image descriptions next to each thumb after collecting them in Google docs.],
-  [An example of my initial thumbnail vs. the final page],
-  [I usually draw my comics using the program Procreate on my iPad. However, since this comic was longer and would be mainly read on a story page instead of Instagram, I wanted to play with the flow between images more, like a scrolling webcomic. This proved hard to do in Procreate, so I switched to pen and paper, lining up each page on top of each other on my floor.],
-  [style="margin-left: auto; margin-right: auto; margin-bottom: 22px;"\>
- 
- Thumbnails spread across my floor],
-  [This is my favorite part of the process, because this is where it starts to feel like a comic! I’m making decisions about what to draw and how to split up the written draft into pages and panels, and everything feels shiny and full of possibility.],
-  [Once I had a finished draft, I shared it with my editors and other colleagues for rounds of feedback and edits. I’m super grateful to the reporters, editors and fact-checkers who caught errors and/or made helpful suggestions.],
-  [A section of my draft],
-  [id="step-four-drawing"\>Step four: Drawing],
-  [After finishing these edits, I moved on to drawing the comic.],
-  [First, I pulled photos of my thumbnails into Procreate and added text to each page. This way, I know early if I need to cut or change text based on what fits on a page. If I was unsure, I exported the page and looked at it on my phone.],
-  [Then I spent some time collecting additional reference pictures of people and locations. I ended up tracing several historical photos, so I also worked with our photo team to license those images.],
-  [Finally, then it was time to draw! For shorter comics, sometimes I ink all the pages first before going back and doing colors. For this one I finished each page (inks, color and text) before moving onto the next. Working this way, especially with the first couple pages, enabled me to make decisions early, like:],
-  [Figuring out the color palette and illustration style: I decided to use a limited palette with a realistic inking style to keep things simple.],
-  [Panel outlines: I decided I wanted to play with panel outlines as a visual nod to how we construct history. In the final comic, the only panels that are outlined in black ink are either historical markers or preserved historical documents – definitive physical evidence of the past, compared to my illustrated recreations of scenes.],
-  [style="margin-left: auto; margin-right: auto;"\>
- 
- 
- 
- Timelapse speedpaint of a page (total time: 4 hours)],
-  [id="step-five-finishing-touches"\>Step five: Finishing touches],
-  [I did the bulk of the final drawings in a week, and then sent off the draft for another edit, including more fact-checking. (I want to give a special shoutout to copy editor Preeti Aroon.)],
-  [As part of the final draft, I also wrote alternative text for each page. Alt text is a text description of visual details in an image, written for visually impaired people. It’s usually a part of image metadata or added to a specific box prior to posting on social media. On a published image or social post, it isn’t visible to the naked eye, but a screen reader program can read it out loud or display it in an alternate format. (This blog post from Veroniiiica is a great resource for those interested in learning more.)],
-  [Since each one of my comic pages gets published online as a flat image, it’s crucial to write alt text so that low vision or blind readers can also understand the comic. Here’s an example:],
-  [Alt text: Days earlier, King had been arrested and had penned his famous “Letter from Birmingham Jail.” Soon, police would unleash fire hoses and dogs on young Black protesters, shocking the world. Moore stepped off a bus in Chattanooga and started to walk. He wore a sign with anti-segregation slogans and carried a sign calling Jesus a “revolutionary, consorter with criminals and prostitutes.”],
-  [As you can see, replicating all the information in the page above is difficult, since our CMS has a 400 character limit for alt text. I welcome any ideas for how to make our comics more accessible.],
-  [As a final finishing step before publishing, I typically flatten and compress all my comic pages to help minimize the file size for a shorter load time.],
-  [And that’s it! You can read the final comic here.],
-  [Here are some other comics I’ve made:],
-  [For my job, I check death tolls from COVID. Why am I numb to the numbers?],
-  [Our sun was born with thousands of other stars. Where did they all go?],
-  [How paying attention can help you appreciate what’s right in front of you],
-),
-  insert-map: (:),
-  inline-pq: pull-quote([To minimize any confusion in editing, I’ll also write image descriptions next to each thumb after collecting them in Google docs.], [NPR Apps Blog]),
-  inline-pq-idx: 19,
-  word-count: 1510,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-}
-
-{
-  #standard-article(
-  title: [State, Logic, And Native Power: CSS Wrapped 2025],
-  author: [Brecht De Ruyte],
-  source-name: [Smashing Magazine],
-  images: (),
-  paragraphs: (
-  [If I were to divide CSS evolutions into categories, we have moved far beyond the days when we simply asked for border-radius to feel like we were living in the future. We are currently living in a moment where the platform is handing us tools that don’t just tweak the visual layer, but fundamentally redefine how we architect interfaces. I thought the number of features announced in 2024 couldn’t be topped. I’ve never been so happily wrong.],
-  [The Chrome team’s “ CSS Wrapped 2025 ” is not just a list of features; it is a manifesto for a dynamic, native web. As someone who has spent a couple of years documenting these evolutions — from defining “CSS5” eras to the intricacies of modern layout utilities — I find myself looking at this year’s wrap-up with a huge sense of excitement. We are seeing a shift towards “Optimized Ergonomics” and “Next-gen interactions” that allow us to stop fighting the code and start sculpting interfaces in their natural state.],
-  [In this article, you can find a comprehensive look at the standout features from Chrome’s report , viewed through the lens of my recent experiments and hopes for the future of the platform.],
-  [The Component Revolution: Finally, A Native Customizable Select],
-  [For years, we have relied on heavy JavaScript libraries to style dropdowns, a “decades-old problem” that the platform has finally solved. As I detailed in my deep dive into the history of the customizable select (and related articles), this has been a long road involving Open UI , bikeshedding names like and , and finally landing on a solution that re-uses the existing element.],
-  [The introduction of appearance: base-select is a strong foundation. It allows us to fully customize the element — including the button and the dropdown list (via ::picker(select) ) — using standard CSS. Crucially, this is built with progressive enhancement in mind. By wrapping our styles in a feature query, we ensure a seamless experience across all browsers.],
-  [We can opt in to this new behavior without breaking older browsers:],
-  [select {
- /\* Opt-in for the new customizable select \*/
- \@supports (appearance: base-select) {
- &, &::picker(select) {
- appearance: base-select;
- }
- }
-}],
-  [The fantastic addition to allow rich content inside options, such as images or flags, is a lot of fun. We can create all sorts of selects nowadays:],
-  [Demo: I created a Poké-adventure demo showing how the new element can clone rich content (like a Pokéball icon) from an option directly into the button.],
-  [See the Pen A customizable select with images inside of the options and the selectedcontent [forked] by utilitybend .],
-  [Demo: A comprehensive look at styling the select with only pseudo-elements .],
-  [See the Pen A customizable select with only pseudo-elements [forked] by utilitybend .],
-  [Demo: Or you can kick it up a notch with this Menu selection demo using optgroups .],
-  [See the Pen An actual Select Menu with optgroups [forked] by utilitybend .],
-  [This feature alone signals a massive shift in how we will build forms, reducing dependencies and technical debt.],
-  [Scroll Markers And The Death Of The JavaScript Carousel],
-  [Creating carousels has historically been a friction point between developers and clients. Clients love them, developers dread the JavaScript required to make them accessible and performant. The arrival of ::scroll-marker and ::scroll-button() pseudo-elements changes this dynamic entirely.],
-  [These features allow us to create navigation dots and scroll buttons purely with CSS, linked natively to the scroll container. As I wrote on my blog, this was Love at first slide . The ability to create a fully functional, accessible slider without a single line of JavaScript is not just convenient; it is a triumph for performance. There are some accessibility concerns around this feature, and even though these are valid, there might be a way for us developers to make it work. The good thing is, all these UI changes are making it a lot easier than custom DOM manipulation and dragging around aria tags, but I digress…],
-  [We can now group markers automatically using scroll-marker-group and style the buttons using anchor positioning to place them exactly where we want.],
-  [.carousel {
- overflow-x: auto;
- scroll-marker-group: after; /\* Creates the container for dots \*/],
-  [/\* Create the buttons \*/
- &::scroll-button(inline-end),
- &::scroll-button(inline-start) {
- content: " ";
- position: absolute;
- /\* Use anchor positioning to center them \*/
- position-anchor: --carousel;
- top: anchor(center);
- }],
-  [/\* Create the markers on the children \*/
- div {
- &::scroll-marker {
- content: " ";
- width: 24px;
- border-radius: 50%;
- cursor: pointer;
- }
- /\* Highlight the active marker \*/
- &::scroll-marker:target-current {
- background: white;
- }
- }
-}],
-  [Demo: My experiment creating a carousel purely out of HTML and CSS , using anchor positioning to place the buttons.],
-  [See the Pen Carousel Pure HTML and CSS [forked] by utilitybend .],
-  [Demo: A Webshop slick slider remake using attr() to pull background images dynamically into the markers.],
-  [See the Pen Webshop slick slider remake in CSS [forked] by utilitybend .],
-  [State Queries: Sticky Thing Stuck? Snappy Thing Snapped?],
-  [For a long time, we have lacked the ability to know if a “sticky thing is stuck” or if a “snappy item is snapped” without relying on IntersectionObserver hacks. Chrome 133 introduced scroll-state queries, allowing us to query these states declaratively.],
-  [By setting container-type: scroll-state , we can now style children based on whether they are stuck, snapped, or overflowing. This is a massive “quality of life” improvement that I have been eagerly waiting for since CSS Day 2023. It has even evolved a lot since we can also see the direction of the scroll, lovely!],
-  [For a simple example: we can finally apply a shadow to a header only when it is actually sticking to the top of the viewport:],
-  [.header-container {
- container-type: scroll-state;
- position: sticky;
- top: 0;],
-  [header {
- transition: box-shadow 0.5s ease-out;
- /\* The query checks the state of the container \*/
- \@container scroll-state(stuck: top) {
- box-shadow: rgba(0, 0, 0, 0.6) 0px 12px 28px 0px;
- }
- }
-}],
-  [Demo: A sticky header that only applies a shadow when it is actually stuck.],
-  [See the Pen Sticky headers with scroll-state query, checking if the sticky element is stuck [forked] by utilitybend .],
-  [Demo: A Pokémon-themed list that uses scroll-state queries combined with anchor positioning to move a frame over the currently snapped character.],
-  [See the Pen Scroll-state query to check which item is snapped with CSS, Pokemon version [forked] by utilitybend .],
-  [Optimized Ergonomics: Logic In CSS],
-  [The “Optimized Ergonomics” section of CSS Wrapped highlights features that make our workflows more intuitive. Three features stand out as transformative for how we write logic:],
-  [if() Statements 
-We are finally getting conditionals in CSS. The if() function acts like a ternary operator for stylesheets, allowing us to apply values based on media, support, or style queries inline. This reduces the need for verbose \@media blocks for single property changes.],
-  [\@function functions 
-We can finally move some logic to a different place, resulting in some cleaner files, a real quality of life feature.],
-  [sibling-index() and sibling-count() 
-These tree-counting functions solve the issue of staggering animations or styling items based on list size. As I explored in Styling siblings with CSS has never been easier , this eliminates the need to hard-code custom properties (like --index: 1 ) in our HTML.],
-  [Example: Calculating Layouts],
-  [We can now write concise mathematical formulas. For example, staggering an animation for cards entering the screen becomes trivial:],
-  [.card-container \> \* {
- animation: reveal 0.6s ease-out forwards;
- /\* No more manual --index variables! \*/
- animation-delay: calc(sibling-index() \* 0.1s);
-}],
-  [I even experimented with using these functions along with trigonometry to place items in a perfect circle without any JavaScript.],
-  [Demo: Staggering card animations dynamically .],
-  [See the Pen Stagger cards using sibling-index() [forked] by utilitybend .],
-  [Demo: Placing items in a perfect circle using sibling-index , sibling-count , and the new CSS \@function feature.],
-  [See the Pen The circle using sibling-index, sibling-count and functions [forked] by utilitybend .],
-  [My CSS To-Do List: Features I Can’t Wait To Try],
-  [While I have been busy sculpting selects and transitions, the “CSS Wrapped 2025” report is packed with other goodies that I haven’t had the chance to fire up in CodePen yet. These are high on my list for my next experiments:],
-  [I used CSS Anchor Positioning for the buttons in my carousel demo, but “CSS Wrapped” highlights an evolution of this: Anchored Container Queries . This solves a problem we’ve all had with tooltips: if the browser flips the tooltip from top to bottom because of space constraints, the “arrow” often stays pointing the wrong way. With anchored container queries ( \@container anchored(fallback: flip-block) ), we can style the element based on which fallback position the browser actually chose.],
-  [View Transitions have been a revolution, but they came with a specific trade-off: they flattened the element tree, which often broke 3D transforms or overflow: clip. I always had a feeling that it was missing something, and this might just be the answer. By using view-transition-group: nearest , we can finally nest transition groups within each other.],
-  [This allows us to maintain clipping effects or 3D rotations during a transition — something that was previously impossible because the elements were hoisted up to the top level.],
-  [.card img {
- view-transition-name: photo;
- view-transition-group: nearest; /\* Keep it nested! \*/
-}],
-  [Typography and Shapes],
-  [Finally, the ergonomist in me is itching to try Text Box Trim , which promises to remove that annoying extra whitespace above and below text content (the leading) to finally achieve perfect vertical alignment. And for the creative side, corner-shape and the shape() function are opening up non-rectangular layouts, allowing for “squaricles” and complex paths that respond to CSS variables. That being said, I can’t wait to have a design full of squircles!],
-  [A Hopeful Future],
-  [We are witnessing a world where CSS is becoming capable of handling logic, state, and complex interactions that previously belonged to JavaScript . Features like moveBefore (preserving DOM state for iframes/videos) and attr() (using types beyond strings for colors and grids) further cement this reality.],
-  [While some of these features are currently experimental or specific to Chrome, the momentum is undeniable. We must hope for continued support across all browsers through initiatives like Interop to ensure these capabilities become the baseline. That being said, having browser engines is just as important as having all these awesome features in “Chrome first”. These new features need to be discussed, tinkered with, and tested before ever landing in browsers.],
-  [It is a fantastic moment to get into CSS. We are no longer just styling documents; we are crafting dynamic, ergonomic, and robust applications with a native toolkit that is more powerful than ever.],
-  [Let’s get going with this new era and spread the word.],
-  [This is CSS Wrapped !],
-),
-  insert-map: (:),
-  inline-pq: pull-quote([See the Pen Scroll-state query to check which item is snapped with CSS, Pokemon version [forked] by utilitybend.], [Brecht De Ruyte]),
-  inline-pq-idx: 25,
-  word-count: 1800,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-}
-
-{
-  #standard-article(
-  title: [Migrating towards Yarn and Webpack],
-  author: [Varun Malhotra],
-  source-name: [Wingify Engineering],
-  images: (),
-  paragraphs: (
-  [For the past couple of years, we have been using require.js for module loading and Grunt for automating tasks on front-end, for one out of many projects we have in Wingify. The project has a huge code-base and has many independent components inside it with some shared utilities. Also, there was no concrete build system which could be scaled upon adding new components.],
-  [Require.js was being used for good code-structuring, managing modules and their loading. All the different modules were having their own require-config.js file to define rules for a particular module.],
-  [Grunt was being used for automating different tasks required to speed up mundane work. We had a number of tasks like the require-amdclean task, concatenating different script / CSS files, minification of files, cache-busting mechanism and so on.],
-  [Following are some benefits we were getting from the require-amdclean task:],
-  [We didn't have to include require.js in production, thus, saving some bytes.],
-  [Generation of single js file entirely in Vanilla JavaScript.],
-  [Get rid of file size/source code readability concerns.],
-  [It was a great fit to be used as a standalone Javascript library, which is exactly our case.],
-  [Everything was working as expected but maintenance, performance, and scale were the issues. We had so many healthy discussions regarding improving things and thus we thought of upgrading our tech stack too. Also, as I mentioned we didn't have a concrete build system; it was the right time to investigate further. We were ready to spend some quality time in researching technologies which could fit in our build system. Gaurav Nanda and I took a break from our daily chores and read many articles/blogs and the not-so-useful official docs to get a good command over various technologies. Migrating from Grunt to Gulp wasn't helping us since build time was nearly the same. The task which took a lot of time was the require-amdclean task, taking around 10 seconds even for adding just a single character like ; while working in the development environment.],
-  [id="migrating-from-npm-to-yarn---first-step-towards-a-new-journey"\> Migrating from NPM to Yarn - First step towards a new journey],
-  [After reading about Yarn , the team was really curious to play with this yet new package manager aka dependency manager. When we benchmarked the results, we were literally stunned by the time difference between NPM and Yarn in fetching up resources. Yarn achieves this speed by introducing parallelism and its performance and security via maintaining a yarn.lock file.],
-  [For a total of 34 packages in total, the following stats would please your eyes too :)],
-  [yarn\@1.0.2
-npm\@3.10.10],
-  [id="stats-when-we-did-a-fresh-install"\> Stats when we did a Fresh Install],
-  [Package manager 
- Time taken 
- 
- 
- 
- 
- npm 
- 3 minutes 12 seconds 
- 
- 
- yarn (without yarn.lock file) 
- 1 minute 33 seconds 
- 
- 
- yarn (with yarn.lock file) 
- 16 seconds],
-  [id="running-the-commands-with-already-installed-packages"\> Running the commands with already installed packages],
-  [Package manager 
- Time taken 
- 
- 
- 
- 
- npm 
- 7 seconds 
- 
- 
- yarn (with yarn.lock file) 
- 6 seconds],
-  [Yarn offers a lot more besides its fast speed, security, and reliability. Check these commands Yarn offers.],
-  [Since we were using bower too, our first step was to port all the dependencies and dev-dependencies listed in our bower.json file to package.json . This was a time-consuming task since we had a huge list of packages. After successful porting of packages and validating the version numbers with the previous packages, we were all set to switch to Yarn. This also helped in keeping just one file for managing packages. We are no longer using bower. Even bower's official site recommends using Yarn and Webpack :)],
-  [id="why-switch-to-webpack-2"\> Why switch to Webpack 2],
-  [It wasn't an easy task to accomplish since Webpack is a module bundler rather than a task runner. We were so accustomed to using task runners along with the old-fashioned require.js based module management that it took a good amount of time figuring out how to proceed with our mini-app's new build system.],
-  [Apart from the numerous benefits of using Webpack, the most notable features, especially for our codebase and the build system, were:],
-  [Easy integration with npm / yarn and seamless handling of multiple module formats. We now use two of its kind, one is UMD and the other one is this target option (we have such a requirement).],
-  [Single main entry and one single bundled output - exactly what we needed.],
-  [Cache busting(hashing) - Very very easy to implement and get benefitted.],
-  [Building different, independent, and standalone modules simultaneously. Thanks to parallel-webpack !],
-  [Using webpack-loaders -],
-  [babel-loader - so that we could start writing ES6 compatible code even with our require.js module management system.],
-  [eslint-loader - which allows identifying and reporting on patterns found in ECMAScript/JavaScript code],
-  [css-loader - for bundling CSS],
-  [id="converting-to-webpack-2---a-transcendent-journey-ahead"\> Converting to Webpack 2 - A transcendent journey ahead],
-  [In the beginning, it looked like just porting the require.js configuration to Webpack and we're done. A big NO! This thought was absolutely wrong. There were so many scenarios we had to deal with. We will discuss this in detail as we move along.],
-  [First thing first, a clear understanding of what exactly Webpack is and how does it bundle the modules are must. Simply copy-pasting the configuration file from the official website and tweaking it won't help in a long run. One must be very clear regarding the fundamentals on which Webpack is built upon.],
-  [Problems which we needed to tackle were:],
-  [Different modules in the same app, having different configuration files.],
-  [Webpack config should be modular in itself and be able to run multiple configs at once so that we should be able to add/remove a new module easily without affecting any existing one.],
-  [id="installing-webpack"\> Installing Webpack],
-  [Via Yarn (recommended)],
-  [Via NPM],
-  [Configuration -],
-  [A basic configuration file looks like:],
-  [const path = require ( 'path' ) ; 
- const webpack = require ( 'webpack' ) ; 
-module . exports = { 
- context : path . resolve ( \_\_dirname , 'src' ) , 
- entry : { 
- app : './app.js' , 
- } , 
- output : { 
- path : path . resolve ( \_\_dirname , 'dist' ) , 
- filename : '[name].bundle.js' , 
- } , 
- } ;],
-  [Check this for knowing the role of each key.],
-  [Since we needed to support different modules we had to have different config files for each of our module.],
-  [/\*\*
- \* Method to return a desired config with the necessary options
- \* \@param {Object} options
- \* \@return {Object} - Desired config Object as per webpack 2 docs
- \*/ 
- function executeWebpackConfig ( options ) { 
- return { 
- devtool : options . devtool === '' ? options . devtool : 'source-map' , 
- entry : options . entry , 
- output : options . output , 
- module : options . module , 
- resolve : options . resolve , 
- plugins : options . plugins || [ ] 
- } ; 
- }],
-  [\/\/ Add/remove different modules' corresponding config files 
- let multipleConfigs = [ 
- \/\/ For building single bundled JS file 
- require ( './build/module-A/webpack.main' ) , 
- \/\/ Corresponding bundled CSS file 
- require ( './build/module-A/webpack.main.assets' ) ,],
-  [require ( './build/module-B/webpack.main' ) , 
- require ( './build/module-B/webpack.main.assets' ) ,],
-  [require ( './build/module-C/webpack.main' ) ,],
-  [require ( './build/module-D/webpack.main' ) , 
- require ( './build/module-D/webpack-main.assets' ) 
- ] ;],
-  [multipleConfigs . map ( ( config ) =\> { 
- return executeWebpackConfig ( config ) ; 
- } ) ;],
-  [module . exports = multipleConfigs ;],
-  [The above configuration is capable of handling n number of modules. Different modules will have at least one bundled JS file as the output. But we also needed to have a bundled CSS file corresponding to each module. So, we decided to have two different config files for every module which has both JS and CSS bundling, one for bundling JS and other for managing assets and bundling CSS files. Tasks like copying files from src to dist, updating the JS file name with a cache-busting hash(prod build) in the index.html file and so on were taken care of inside the assets config file.],
-  [The above-mentioned break-down of a module into JS and CSS bundling helped us in having a clean, modular, and scalable approach for our new build system.
-We also used parallel-webpack to speed up our build by running independent modules in parallel. But be very careful using it, since it spawns a new thread for each different task, which basically uses the different cores of a machine to process. Also, there should be a cap on the number of parallel-tasks to prevent overshooting of CPU usage.],
-  [id="extraction-of-common-stuff-for-reusability-and-maintainability"\> Extraction of common stuff for reusability and maintainability],
-  [Let's discuss Webpack module-rules and resolve-aliases which play a significant role, before advancing further with the creation of common webpack-configuration helper methods.],
-  [module rules - Create aliases to import or require certain modules more easily. This basically tells how to read a module and to use it.],
-  [We used expose-loader and imports-loader depending on the use-case.],
-  [expose-loader - adds modules to the global object. This is useful for debugging or supporting libraries that depend on libraries in globals.],
-  [imports-loader - is useful for third-party modules that rely on global variables like \$ or this being the window object. The imports loader can add the necessary require('whatever') calls, so those modules work with Webpack.],
-  [This is an obvious thing that we had same third-party libraries, wrappers over external libraries, and self-baked useful utilities shared across different modules. This means that our module-specific webpack config file would have the same set of repeated rules and aliases. Code duplication might seem a good fit here for readability but is really painful to maintain in a long run.],
-  [Let's discuss how we managed to share the common module rules and resolve aliases across the different modules.],
-  [Below is a generic utility file’s code which has two methods. One outputs whether a passed argument is an Object and the other one outputs whether it’s an array.],
-  [module . exports = { 
- isObject : function ( obj ) { 
- return Object . prototype . toString . call ( obj ) === '[object Object]' ; 
- } , 
- isArray : function ( arr ) { 
- return Object . prototype . toString . call ( arr ) === '[object Array]' ; 
- } 
- } ;],
-  [Here's a list of common rules and aliases defined explicitly in a separate file.],
-  [const path = require ( 'path' ) ; 
- let basePath = path . join ( \_\_dirname , '/../' ) ;],
-  [module . exports = { 
- alias : { 
- \/\/ Common thrid-party libraries being used in different modules 
- 'pubSub' : basePath + 'node\_modules/pubsub/dist/ba-tiny-pubsub.min' , 
- 'select2' : basePath + 'node\_modules/select2/dist/js/select2.full.min' , 
- 'acrossTabs' : basePath + 'node\_modules/across-tabs/dist/across-tabs.this' , 
- \/\/ ....more],
-  [\/\/ Common self-baked utilities 
- 'utils' : 'lib/player/utils' , 
- 'storage' : 'lib/player/storage' , 
- \/\/ ....more],
-  [\/\/ Common services 
- 'auth' : 'lib/Auth' , 
- 'gaUtils' : 'lib/GAUtils' , 
- 'DOMUtils' : 'lib/DOMUtils' , 
- 'arrayUtils' : 'lib/ArrayUtils' , 
- \/\/ ....more],
-  [\/\/ Common constants 
- 'AnalyticsEventEnum' : 'lib/constants/AnalyticsEventEnum' , 
- 'MapTypeEnum' : 'lib/constants/MapTypeEnum' , 
- 'segmentAnalyticsUtils' : 'lib/analytics/SegmentAnalyticsUtils' , 
- \/\/ ....more 
- } ,],
-  [rules : [ 
- { test : /jQuery/ , loader : 'expose-loader?\$' } , 
- { test : /pubSub/ , loader : 'expose-loader?pubSub!imports-loader?jQuery' } , 
- { test : /select2/ , loader : 'expose-loader?select2!imports-loader?jQuery' } , 
- { test : /acrossTabs/ , loader : 'expose-loader? AcrossTabs' } , 
- \/\/ ....more],
-  [{ test : /utils/ , loader : 'expose-loader?utils' } , 
- { test : /storage/ , loader : 'expose-loader?storage' } , 
- \/\/ ....more],
-  [{ test : /auth/ , loader : 'expose-loader?auth' } , 
- { test : /gaUtils/ , loader : 'expose-loader?gaUtils' } , 
- { test : /DOMUtils/ , loader : 'expose-loader? DOMUtils' } , 
- { test : /arrayUtils/ , loader : 'expose-loader?arrayUtils' } , 
- \/\/ ....more],
-  [{ test : /AnalyticsEventEnum/ , loader : 'expose-loader? AnalyticsEventEnum' } , 
- { test : /MapTypeEnum/ , loader : 'expose-loader? MapTypeEnum' } , 
- { test : /segmentAnalyticsUtils/ , loader : 'expose-loader?segmentAnalyticsUtils' } , 
- \/\/ ....more 
- ] 
- } ;],
-  [We now had a common file where we could easily add/update/remove any rule and its corresponding alias. Now we needed to have a utility which combines the common rules and aliases with the already defined rules and aliases in a particular modules' config file.],
-  [const moduleRulesAndAlias = require ( './webpack.common-module-rules-and-alias' ) ; 
- const genericUtil = require ( './genericUtil' ) ;],
-  [module . exports = { 
- mergeRulesAndUpdate : function ( testRules , config ) { 
- if ( testRules && config && config . module && config . module . rules && 
- genericUtil . isObject ( config ) && 
- genericUtil . isArray ( testRules ) 
- ) { 
- testRules . concat ( moduleRulesAndAlias . rules ) ; 
- for ( let i = 0 ; i \/\/ Filename: webpack.moduleA.js],
-  [const path = require ( 'path' ) ; 
- const webpack = require ( 'webpack' ) ; 
- const env = require ( './../webpack.env' ) . env ; \/\/ Just to get the env(dev/prod), discussed in detail later],
-  [const rulesAndAliasUtil = require ( './utils/rulesAndAliasUtil' ) ;],
-  [let basePath = path . join ( \_\_dirname , '/../' ) ; 
- let config = { 
- \/\/ Entry, file to be bundled 
- entry : { 
- 'moduleA' : basePath + 'src/path/to/moduleA-entry.js' , 
- } , 
- devtool : env === 'build' ? 'source-map' : false , 
- output : { 
- \/\/ Output directory 
- path : basePath + 'dist/moduleA' , 
- library : '[name]' , 
- \/\/ [hash:6] with add a SHA based on file changes if the env is build 
- filename : env === EnvEnum . BUILD ? '[name]-[hash:6].min.js' : '[name].min.js' , 
- libraryTarget : 'umd' , 
- umdNamedDefine : true 
- } , 
- module : { 
- rules : [ ] 
- } , 
- resolve : { 
- alias : { } , 
- modules : [ 
- \/\/ Files path which will be referenced while bundling 
- basePath + 'src' , 
- basePath + 'node\_modules' , 
- ] , 
- extensions : [ '.js' ] \/\/ File types 
- } , 
- plugins : [ ] 
- } ;],
-  [\/\/ Following requirejs format - define how will they be exposed(via expose-loader or exports-loader) and their dependenices(via imports-loader) 
- let testRules = [ 
- { test : /jQuery/ , loader : 'expose-loader?\$' } , 
- { test : /base64/ , loader : 'exports-loader? Base64' } , 
- { test : /ModuleSpecificEnum/ , loader : 'expose-loader? ModuleSpecificEnum' } 
- ] ;],
-  [\/\/ Following requirejs format - define the paths of the libs/constants/vendor specific to this moduleA only 
- let moduleAlias = { 
- 'jQuery' : 'moduleA/vendor/jquery-3.1.0' , 
- 'base64' : 'moduleA/vendor/base64' , 
- 'ModuleSpecificEnum' : 'moduleA/constants/ModuleSpecificEnum' 
- }],
-  [config = rulesAndAliasUtil . mergeRulesAndUpdate ( testRules , config ) ; 
-config = rulesAndAliasUtil . mergeAliasAndUpdate ( moduleAlias , config ) ;],
-  [module . exports = config ;],
-  [This is a complete webpack config file for bundling JS file for moduleA . While configuring it, we defined different options, each one has its own purpose. To know more about each option, please refer this .],
-  [id="webpack-loaders"\> Webpack loaders],
-  [Webpack enables the use of loaders to preprocess files. This allows us to bundle any static resource way beyond JavaScript.],
-  [We introduced two loaders for bundling JS resources inside our app.],
-  [babel-loader - This package allows transpiling JavaScript files using Babel and Webpack. Thanks to babel-loader as we are fearlessly writing ES6 code and updating our mundane code.],
-  [eslint-loader - This package allows identifying and reporting on patterns found in ECMAScript/JavaScript code.],
-  [Since we needed these two loaders for all our modules, we defined them in the same file we discussed earlier - rulesAndAliasUtil.js],
-  [let defaultLoaders = [ { 
- enforce : 'pre' , \/\/ to check source files, not modified by other loaders (like babel-loader) 
- test : /(.js)\$/ , 
- exclude : /(node\_modules|moduleA\\/vendor|moduleB\\/lib\\/lodash-template.min.js)/ , 
- use : { 
- loader : 'eslint-loader' , 
- options : { 
- emitError : true , 
- emitWarning : true , 
- failOnWarning : true , \/\/ will not allow webpack to build if eslint warns 
- failOnError : true \/\/ will not allow webpack to build if eslint fails 
- } 
- } 
- } , { 
- test : /(\\.js)\$/ , 
- exclude : /(node\_modules)/ , 
- use : { 
- \/\/ babel-loader to convert ES6 code to ES5 
- loader : 'babel-loader' , 
- options : { 
- presets : [ 'env' ] , 
- plugins : [ ] 
- } 
- } 
- } ] ;],
-  [And updating the method: mergeRulesAndUpdate as follows],
-  [class="gatsby-highlight"\> mergeRulesAndUpdate : function ( testRules , config ) { 
- if ( testRules && config && config . module && config . module . rules && 
- genericUtil . isObject ( config ) && 
- genericUtil . isArray ( testRules ) 
- ) { 
- testRules . concat ( moduleRulesAndAlias . rules ) ; 
- for ( let i = 0 ; i Webpack Bundling of CSS files],
-  [const fs = require ( 'fs' ) ; 
- const path = require ( 'path' ) ; 
- const glob = require ( 'glob-all' ) ; 
- const env = require ( './../webpack.env' ) . env ; 
- const EnvEnum = require ( './../constants/Enums' ) . EnvEnum ;],
-  [\/\/ To remove unused css 
- const PurifyCSSPlugin = require ( 'purifycss-webpack' ) ; 
- \/\/ Copy Assests to dist 
- const CopyWebpackPlugin = require ( 'copy-webpack-plugin' ) ; 
- \/\/ To generate a file in JSON format so that the hash appended can be later read by another file like one css file is used in multiple files so its hash needs to be stored somewhere to be read so that it can be replaced in corresponding \`index.html\` files 
- const ManifestPlugin = require ( 'webpack-manifest-plugin' ) ; 
- const CleanWebpackPlugin = require ( 'clean-webpack-plugin' ) ; 
- \/\/ For combining multiple css files 
- const ExtractTextPlugin = require ( 'extract-text-webpack-plugin' ) 
- \/\/ Minify css files for env=build 
- const OptimizeCssAssetsPlugin = require ( 'optimize-css-assets-webpack-plugin' ) ;],
-  [\/\/ Replace filename if env=build since hash is appended for cache bursting 
- const replacePlugin = require ( './../utils/webpack.custom-string-replace.plugin' ) ;],
-  [let buildPlugins = [ ] ; 
- let basePath = path . join ( \_\_dirname , '/../' ) ;],
-  [if ( env === 'build' ) { 
- \/\/ minify css files if env is build i.e. production 
- buildPlugins . push ( new OptimizeCssAssetsPlugin ( { 
- cssProcessorOptions : { 
- safe : true 
- } 
- } ) ) ; 
- }],
-  [module . exports = {],
-  [\/\/ Entry, files to be bundled separately],
-  [entry : {],
-  ['css-file-1' : [],
-  [basePath + 'src/styles/canvas/common.css' ,],
-  [basePath + 'src/styles/canvas/mobile.css' ,],
-  [basePath + 'src/styles/canvas/main.css'],
-  [] ,],
-  ['css-file-2' : [],
-  [basePath + 'src/styles/app.css' ,],
-  [basePath + 'src/styles/player/player.css' ,],
-  [basePath + 'src/styles/mobile.css' ,],
-  [basePath + 'node\_modules/select2/dist/css/select2.min.css'],
-  []],
-  [} ,],
-  [devtool : '' ,],
-  [output : {],
-  [\/\/ Output directory],
-  [path : basePath + 'dist/styles/' ,],
-  [\/\/ [hash:6] with add a SHA based on file changes if the env is build],
-  [filename : env === 'build' ? '[name]-[hash:6].min.css' : '[name].min.css'],
-  [} ,],
-  [\/\/ Rules for bundling],
-  [module : {],
-  [rules : [ {],
-  [test : /\\.css\$/i ,],
-  [use : ExtractTextPlugin . extract ( {],
-  [use : [ {],
-  [loader : 'css-loader' ,],
-  [options : {],
-  [\/\/ ExtractTextPlugin tries to process url like in backgroun-image, url(), etc. We need to stop that behavior so we need this option],
-  [url : false],
-  [}],
-  [} ]],
-  [} )],
-  [} ]],
-  [} ,],
-  [resolve : {],
-  [alias : { } ,],
-  [modules : [ ] ,],
-  [extensions : [ '.css' ] \/\/ only for css file],
-  [} ,],
-  [plugins : [],
-  [\/\/ Cleaning specific folder, maintaining other modules dist intact],
-  [new CleanWebpackPlugin ( [ basePath + 'dist/styles' ] , {],
-  [root : basePath],
-  [} ) ,],
-  [\/\/ File to generated to read hash later on],
-  [new ManifestPlugin ( {],
-  [fileName : 'manifest.json'],
-  [} ) ,],
-  [\/\/ Copy css/images file(s) to dist],
-  [new CopyWebpackPlugin ( [ {],
-  [from : basePath + 'src/images' ,],
-  [to : basePath + 'dist/images/'],
-  [} ] ) ,],
-  [\/\/ Bundling of entry files],
-  [new ExtractTextPlugin ( env === 'build' ? '[name]-[hash:6].min.css' : '[name].min.css' ) ,],
-  [\/\/ To remove unused CSS by looking in corresponding html files],
-  [new PurifyCSSPlugin ( {],
-  [\/\/ Give paths to parse for rules. These should be absolute!],
-  [paths : glob . sync ( [],
-  [path . join ( basePath , 'src/moduleA/\*.html' ) ,],
-  [path . join ( basePath , 'src/moduleA/canBeAnyFile.js' ) ,],
-  [path . join ( basePath , 'src/moduleB/\*.html' ) ,],
-  [path . join ( basePath , 'src/moduleC/\*.js' )],
-  [] ) ,],
-  [purifyOptions : {],
-  [whitelist : [ '\*select2-\*' ] \/\/ If classes are added on run-time, then based on the pattern, we can whitelist them, to be always included in our final bundled CSS file],
-  [}],
-  [} )],
-  [] . concat ( buildPlugins )],
-  [} ;],
-  [The above configuration outputs two bundled CSS files i.e. css-file-1.min.css & css-file.min.css , and css-file-1-8fb1ed.min.css & css-file-2-6ed3c1.min.css if it's a prod build.],
-  [We are using ExtractTextPlugin , which extracts text from a bundle, or bundles, into a separate file, along with css-loader],
-  [We faced a very weird issue and thus worth mentioning here explicitly. ExtractTextPlugin tries to process URL like in background-image, url(), etc. We need to stop that behavior so we need to set url:false inside the options like:],
-  [Few more plugins that we are using are:],
-  [CleanWebpackPlugin - to remove/clean the styles folder inside the build folder before building],
-  [ManifestPlugin - for generating an asset manifest file with a mapping of all source file names to their corresponding output file
-This plugin generates a JSON file so that the hash appended(prod build) after a JS file can be later read by another file. Eg. one CSS file is shared among different modules so its hash needs to be stored somewhere to be read later by other modules to update the hash in their corresponding index.html files.],
-  [CopyWebpackPlugin - to copy individual files or entire directories to the build directory],
-  [PurifyCSSPlugin - to remove unused selectors from the CSS. This plugin was a must for us. So, what we were doing in this entire project earlier was to copy-paste the Parent projects CSS file to this independent project. We followed the same approach because of time-constraints but found this amazing plugin which automatically removes the unused CSS from the bundled CSS files based on the paths of files which uses it. We can even whitelist selectors if classes are appended on run-time or for any other reason. But it is highly recommended to use the PurifyCSS plugin with the Extract Text plugin which we discussed above.],
-  [OptimizeCssAssetsPlugin - to optimize/minimize CSS assets],
-  [This was all about bundling of CSS file.],
-  [id="last-step---automated-scripts-and-provision-to-execute-module-specific-build"\> Last step - Automated scripts and provision to execute module-specific build],
-  [First, we created a file to read arguments that could be read in our webpack.config.js file via a package.json script.],
-  [\/\/ Webpack doesn't pass Webpack env in env variable when using multiple configs, so writing custom code 
- let argv = process . argv || [ ] , 
- \/\/ Loop over process arguments and check for --env.mode 
- envArgv = argv . filter ( function ( arg ) { 
- return arg . indexOf ( '--env.mode' ) \> - 1 ; 
- } ) , 
- targetModuleArgv = argv . filter ( function ( arg ) { 
- return arg . indexOf ( '--env.module' ) \> - 1 ; 
- } ) , 
- env , targetModules = '' ;],
-  [\/\/ If match fould, spilt so that exact value can be extracted like 'build'/'local' 
- if ( envArgv && envArgv . length ) { 
- env = envArgv [ 0 ] . split ( '=' ) [ 1 ] ; 
- }],
-  [if ( targetModuleArgv && targetModuleArgv . length ) { 
- targetModules = targetModuleArgv [ 0 ] . split ( '=' ) [ 1 ] ; 
- }],
-  [module . exports = { 
- env , 
- targetModules
- } ;],
-  [We tweaked our main webpack.config.js to make it module-aware.],
-  [const targetModules = require ( './build/webpack.env' ) . targetModules ;],
-  [function executeWebpackConfig ( options ) { 
- return { 
- devtool : options . devtool === '' ? options . devtool : 'source-map' , 
- entry : options . entry , 
- output : options . output , 
- module : options . module , 
- resolve : options . resolve , 
- plugins : options . plugins || [ ] 
- } ; 
- }],
-  [\/\/ Module specific configuration files 
- let multipleConfigs = [ ] ;],
-  [if ( targetModules ) { 
- let modules = targetModules . split ( ',' ) ;],
-  [for ( var i = 0 ; i { 
- return executeWebpackConfig ( config ) ; 
- } ) ;],
-  [module . exports = multipleConfigs ;],
-  [In our package.json file, we created different scripts for running either a development build or production-ready build(minification, cache-busting, and purification) and either to run build for all modules or for just selective modules.],
-  ["scripts" : { 
- "install" : "yarn install --ignore-scripts" , 
- "build" : "webpack --optimize-minimize --bail --env.mode=build" ,],
-  ["dev" : "webpack --progress --colors --watch --env.mode=dev --display-error-details" , 
- "dev-nowatch" : "webpack --progress --colors --env.mode=dev --display-error-details" ,],
-  ["dev-moduleA" : "webpack --progress --colors --watch --env.mode=dev --env.modules=moduleA" , 
- "dev-moduleB" : "webpack --progress --colors --watch --env.mode=dev --env.modules=moduleB" , 
- "dev-moduleC" : "webpack --progress --colors --watch --env.mode=dev --env.modules=moduleB" ,],
-  ["dev-moduleAB" : "webpack --progress --colors --watch --env.mode=dev --env.modules=moduleA,moduleB" , 
- "dev-moduleBC" : "webpack --progress --colors --watch --env.mode=dev --env.modules=moduleB,moduleC" , 
- "dev-moduleAC" : "webpack --progress --colors --watch --env.mode=dev --env.modules=moduleA,moduleC" ,],
-  ["lint" : "eslint 'src/\*\*/\*.js' --cache --config .eslintrc --ignore-path .eslintignore" , 
- "lint-fix" : "eslint 'src/\*\*/\*.js' --fix --cache --config .eslintrc --ignore-path .eslintignore" 
- }],
-  [id="upgrading-to-code-classlanguage-textwebpack3code"\> Upgrading to Webpack\@3],
-  [According to Sean T. Larkin in the release blog post : "webpack 3: Official Release!!", migrating from webpack 2 to 3 should involve no effort beyond running the upgrade commands in your terminal. We are using Webpack\@3.6.0 and yarn\@1.0.2 now :)],
-  [id="last-but-not-the-least---stepping-towards-a-long-journey"\> Last but not the least - Stepping towards a long journey],
-  [This was just the beginning of stepping towards researching different technologies and upgrading our tech stack. We have now gradually started writing ES6 code for that particular project. The experience was tremendous and the team is now working on evaluating other sections where the change could gradually take a form.],
-  [id="helpful-resources"\> Helpful resources],
-  [Getting Started with Webpack 2],
-  [Configuring webpack for production: High Performance webpack config],
-  [id="feedback"\> Feedback],
-  [Should you have any feedback regarding this article, please share your thoughts via comments.],
-  [If you like this article, do share it :)],
-),
-  insert-map: (:),
-  word-count: 4314,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-}
-
-{
-  #standard-article(
-  title: [Why changes in Phoenix 1.3 are so important?],
-  author: [Nikita Sobolev],
-  source-name: [Wemake Services],
-  images: (),
-  paragraphs: (
-  [Phoenix Framework always has been awesome. But it was never as awesome as the new 1.3 release (which is rc1 right now actually).],
-  [There are a lot of significant changes. Chris McCord made a great job writing a complete migrating guide . Inspired by it and by the talk Chris gave at the LonestarElixir this article will try to guide through the most important changes in the phoenix project.],
-  [Let’s get started!],
-  [Problems to solve],
-  [phoenix is new. And naturally it has some issues. The core team has worked really hard to solve some of the most curial ones in the newest release. So what are these issues?],
-  [Web folder is pure magic],
-  [When working on a project using phoenix, you have two places for the source code: lib/ and web/. The concept is:],
-  [Put all your business logic and utilities inside lib/],
-  [Put everything that relates with your web-interface (controllers, views, templates) inside the web/ folder],
-  [But is that message clear enough for the developers? I don’t think so.],
-  [Where did this web/ folder come from? Is it a phoenix special? Or other frameworks use it too? Should I even use lib/ with phoenix projects or is it reserved for some deep magic? All these questions ran through my head after my first encounter with phoenix.],
-  [Before version 1.2 web/ was the only one to auto-reload. So, why should I create any files inside lib/ and restart a server when I can put it somewhere inside web/ to reload quickly?],
-  [Which brings us to even more important questions: do my model files (let’s call them models in this particular context) belong to the web part of my application or to my core logic? Is it possible to separate my logic into different domains or apps (like in django)?],
-  [These questions are left unanswered.],
-  [Business logic in controllers],
-  [Moreover, the boilerplate code, which comes with the phoenix itself, was promoting the other way of doing things. One would get these lines of code with the newly generated project:],
-  [https:\/\/medium.com/media/7d06b523bdba8dbb11d2dedbe5c040d3/href],
-  [What should a developer do when an email should be sent to a user after a successful update? The controller itself asks to be extended. Just put a new line of code before render/4. But that’s a wrong way of doing things. And it was kind of promoted by the phoenix itself.],
-  [One extra line in the controller is fine, that’s not a big deal. All the problems come when the application grows. It becomes untestable, unmaintainable, and self-repeating.],
-  [Schemas are not models],
-  [At some point for no particular reason ecto ‘s schemas started to be called “models”. What is the difference between a “model” and a “schema”? Schema is just a way to define a structure - a database structure at this particular case. Models as a concept are much more complex than schemas. Models should provide a way to manipulate data and perform different actions, like models in django. elixir as a functional language is not suited for the “model” concept, so it was deprecated a long time ago in the ecto project.],
-  [Files inside models/ were not organized. When your application grew, it became a complete mess . How these files are bounded? What is the context we use them in? It was hard to figure that out.],
-  [Furthermore, models/ folder was considered as a place to put your business logic , which is a normal thing to do in other languages and frameworks. We have a concept of “fat models”, with which we are already familiar. But in phoenix it is just one more wrong way of doing it.],
-  [A lot has changed since the last major release. The easiest way to show all the changes is by example.],
-  [This tutorial assumes that you have elixir-1.4 up and running. No? Then install it !],
-  [Firstly, you would need to install new phoenix release:],
-  [» mix archive.install https:\/\/github.com/phoenixframework/archives/raw/master/phx\_new.ez],
-  [Creating new project],
-  [When installation is completed, it is time to check that everything is in place. mix help will return you something like this:],
-  [mix phoenix.new \# Creates a new Phoenix v1.1.4 application mix phx.new \# Creates a new Phoenix v1.3.0-rc.1 application using the experimental generators],
-  [That’s where the first change comes in: new generators. Old generators were named phoenix while the new ones are named simply phx. Less typing. And a new message to the developers: these generators are new, they will do new things to your codebase.],
-  [Then, it is time to create new project’s structure by running:],
-  [mix phx.new medium\_phx\_example --no-html --no-brunch],
-  [Before we see any results of this command, let’s discuss the options. --no-html removes some specific components so phx.gen.html will no longer work. But we are building json API and we won’t need any html. Similarly --no-brunch means: do not generate brunch files for static asset building. When choosing this option, you will need to manually handle JavaScript dependencies if building html apps.],
-  [Web folder],
-  [Looking at your newly generated files you may be wondering: where is the web/ folder? Well, here is the second change . And it’s big. Now your web/ folder lives inside lib/. This web/ folder was special; a lot of people misunderstood its main purpose, which was containing web interface for your application. It’s not a place for your business logic. Now things are clear. Put everything inside lib/. And put only your controllers, templates and views inside the new web/.],
-  [That’s how it looks:],
-  [lib
-└── medium\_phx\_example
- ├── application.ex
- ├── repo.ex
- └── web
- ├── channels
- │ └── user\_socket.ex
- ├── controllers
- ├── endpoint.ex
- ├── gettext.ex
- ├── router.ex
- ├── views
- │ ├── error\_helpers.ex
- │ └── error\_view.ex
- └── web.ex],
-  [Where medium\_phx\_example is the name of the current app. There can be many apps. So now all the code lives inside the same folder.],
-  [The third change will reveal itself shortly after looking at the web.ex file:],
-  [https:\/\/medium.com/media/b411f40b795dc563b3bcec60179e1469/href],
-  [phoenix now creates . Web namespace for us, which pairs really well with the new folder structure.],
-  [Creating schema],
-  [That’s the forth change and my favorite one so far. Previously we had a web/models/ folder, which was used to store schemas. Now “model” concept is completely dead. A new philosophy of doing things is introduced:],
-  [Context is used to store multiple schemas],
-  [Context is used to provide a public external API. In other words, it defines what can be done to your data],
-  [Schema is just a description of your data],
-  [Our application would contain just one context: audios. Let’s start by creating Audio context with Album and Song schemas:],
-  [» mix phx.gen.json Audio Album albums name:string release:utc\_datetime » mix phx.gen.json Audio Song songs album\_id:references:audio\_albums name:string duration:integer],
-  [The syntax of this generator has also changed. Now it requires the context name to be the first argument. Also take note of the audio\_albums notation, albums schema is prefixed with the context name. And here’s what happens to the project structure after we run two generators:],
-  [lib
-└── medium\_phx\_example
- ├── application.ex
- ├── audio
- │ ├── album.ex
- │ ├── audio.ex
- │ └── song.ex
- ├── repo.ex
- └── web
- ├── channels
- │ └── user\_socket.ex
- ├── controllers
- │ ├── album\_controller.ex
- │ ├── fallback\_controller.ex
- │ └── song\_controller.ex
- ├── endpoint.ex
- ├── gettext.ex
- ├── router.ex
- ├── views
- │ ├── album\_view.ex
- │ ├── changeset\_view.ex
- │ ├── error\_helpers.ex
- │ ├── error\_view.ex
- │ └── song\_view.ex
- └── web.ex],
-  [What are the main changes in the structures compared to the previous version?],
-  [Now schemas do not belong to web/ at all],
-  [models/ folder is gone],
-  [Schemas are now separated by context, which defines how they are bounded together],
-  [And schemas right now are nothing more than a table description. That’s what a schema is in the first place. Here’s what our schemas look like:],
-  [https:\/\/medium.com/media/3c3343db21610a981e91856d14786f95/href https:\/\/medium.com/media/24f4d7b75f2fd6a6999d210e8dbadf26/href],
-  [Everything except schema declaration is gone. No required\_fields , no changeset/2 function or any other functions and logics. It does not even generate belongs\_to for you.],
-  [So, it is pretty clear now: this is not a place for your business logic. It is all handled by the context, which looks the following way:],
-  [https:\/\/medium.com/media/dc4c65e9f815909347466dde5fbd3469/href],
-  [It also sends a clear message: this is the place where one should put their code! But be careful, context files can grow long. Split them in several modules in that case.],
-  [Using controller],
-  [Previously we had a lot of code in the controller by default. It was easy for a developer to extend the boilerplate code. Here comes the fifth change . Since the new release the boilerplate code in the controller has been reduced and refactored:],
-  [https:\/\/medium.com/media/cf9cd543bc8bcd2dd073e45f74a372b2/href],
-  [There are only three meaning lines of code in the update/2 action right now. Controllers currently use contexts directly, which makes them a very thin layer in the application. It is hard to find a place for some extra logic in the controller. Controllers do not even handle errors.],
-  [Errors are designed to be handled by a special fallback\_controller. This new concept is the sixth change . It allows to have all error handlers and error codes in the one place:],
-  [https:\/\/medium.com/media/9555382dc9ab412b89f95b308e1cdac7/href],
-  [What happens when the result from Audio.update\_album(album, album\_params) does not match with {:ok, %Album{} = album}? In this situation a controller defined in action\_fallback is called. And a proper call/2 is pattern matched, which returns a valid response. Nice and easy. No more exception handling in the controller.],
-  [All things said the changes introduced are quite exciting. Hope this article was helpful and encouraged you to get out there and use Phoenix Framework to its maximum.],
-  [Keep in touch with me on GitHub:],
-  [sobolevn (Sobolev Nikita)],
-  [Why changes in Phoenix 1.3 are so important? was originally published in wemake.services on Medium, where people are continuing the conversation by highlighting and responding to this story.],
-),
-  insert-map: (:),
-  word-count: 1611,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-}
-
-#article-row((
-  [
-    standard-article(
-  title: [HighEdWeb 2024],
-  author: [Erik Runyon],
-  source-name: [Erik Runyon],
-  images: (),
-  paragraphs: (
-  [My presentation for HighEdWeb 2024 was an overview of many recent and forthcoming additions to the web platform, specifically HTML and CSS.],
-  [id="description"\>Description],
-  [id="css-is-awesome"\>CSS is Awesome],
-  [Over the past few years, CSS has been gaining features at a rate that is almost impossible to follow. Features that once required pre-processors are now native to the platform. Variables? Check. Nesting? Check. And now there’s even whispers of mixins.],
-  [During this presentation we will examine many of the latest features added to CSS including layers, container queries, subgrid, nesting, and probably the dozens of others added since this presentation was submitted. We will discuss the syntax and look at real-world use-cases. We will also briefly cover what’s on the horizon for CSS.],
-  [id="presentation-links"\>Presentation Links],
-  [Conference presentation details],
-  [id="web-platform-info"\>Web Platform Info],
-  [Interop 2024 Dashboard],
-  [id="keeping-up-with-new-features"\>Keeping up with new features],
-  [New to the web platform],
-  [Kevin Powell (YouTube)],
-),
-  insert-map: (:),
-  word-count: 156,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-  ],
-  [
-    standard-article(
-  title: [We are sponsoring The Fifth Elephant 2014],
-  author: [Vaidik Kapoor],
-  source-name: [Wingify Engineering],
-  images: (),
-  paragraphs: (
-  [We are excited to announce our sponsorship of
- The Fifth Elephant - a popular conference around
-the Big Data ecosystem. The conference will be held in Bangalore, India
-from 23rd to 26th July.],
-  [Our engineers will be present at the conference. If you are interested in our
-work , want to know more about what we are doing,
-want to work with us ( we're hiring ), get some
-cool goodies or just want to say Hi!, please visit our booth (B7) or catch any
-of our team members. We’d love to talk to you!],
-  [We look forward to meeting you in Bangalore!],
-),
-  insert-map: (:),
-  word-count: 103,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-  ],
-), ruled-indices: (1,))
-
-#article-row((
-  [
-    standard-article(
-  title: [Hiding Offscreen Content in Ember.js],
-  author: [Robin Ward (eviltrout)],
-  source-name: [Robin Ward (eviltrout)],
-  images: (),
-  paragraphs: (
-  [Everything you render in a browser, whether it’s a blog post or a tweet or a video, has a
-performance cost.],
-  [At the very least, you will be asking the browser to render a handful of tags and text
-elements that make up your user interface. That structure, a subtree in the browser’s
-DOM, can be quite complicated and memory intensive.],
-  [The more tags and elements you render, the slower the browser is going to perform, and
-the more memory it is going to use to do it. It follows that if you give the browser
-less work to do, it will do it faster.],
-),
-  insert-map: (:),
-  word-count: 105,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-  ],
-  [
-    standard-article(
-  title: [Working Effectively with Unit Tests],
-  author: [Jay],
-  source-name: [Jay Fields],
-  images: (),
-  paragraphs: (
-  [Unit Testing has moved from fringe to mainstream, which is a great thing. Unfortunately, as a side effect developers are creating mountains of unmaintainable tests. I've been fighting the maintenance battle pretty aggressively for years, and I've decided to write a book that captures what I believe is the most effective way to test.],
-  [From the Preface],
-  [Over a dozen years ago I read Refactoring for the first time; it immediately became my bible. While Refactoring isn’t about testing, it explicitly states: If you want to refactor, the essential precondition is having solid tests. At that time, if Refactoring deemed it necessary, I unquestionably complied. That was the beginning of my quest to create productive unit tests.],
-  [Throughout the 12+ years that followed reading Refactoring I made many mistakes, learned countless lessons, and developed a set of guidelines that I believe make unit testing a productive use of programmer time. This book provides a single place to examine those mistakes, pass on the lessons learned, and provide direction for those that want to test in a way that I’ve found to be the most productive.],
-  [The book does touch on some theory and definition, but the main purpose is to show you how to take tests that are causing you pain and turn them into tests that you're happy to work with.],
-  [For example, the book demonstrates how to go from...],
-  [looping test with many (built elsewhere) collaborators],
-  [.. to individual tests that expect literals, limit scope, explicitly define collaborators, and focus on readability],
-  [.. to fine-grained tests that focus on testing a single responsibility, are resistant to cascading failures, and provide no
-friction for those practicing ruthless Refactoring.],
-  [As of right now, you can read the first 2 chapters for free at https:\/\/leanpub.com/wewut/read],
-  [I'm currently ~25% done with the book, and it's available now for \$14.99. My plan is to raise the price to \$19.99 when I'm 50% done, and \$24.99 when I'm 75% done. Leanpub offers my book with 100% Happiness Guarantee : Within 45 days of purchase you can get a 100% refund on any Leanpub purchase, in two clicks . Therefore, if you find the above or the free sample interesting, you might want to buy it now and save a few bucks.],
-  [Buy Now here: https:\/\/leanpub.com/wewut],
-),
-  insert-map: (:),
-  word-count: 387,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-  ],
-), ruled-indices: (1,))
-
-{
-  #standard-article(
-  title: [Drop Books],
-  author: [Jay],
-  source-name: [Jay Fields],
-  images: (),
-  paragraphs: (
-  [The vast majority of books I purchase are for my own enjoyment, but not all of them. There are a few books that I buy over and over, and drop on the desks of friends and colleagues. These books, all technical, are books that I think most programmers will benefit from reading. I call these books "Drop Books"; I drop them and never expect them to be returned.],
-  [My main motivation for dropping books is to spread what I think are great ideas. Specifically, I'm always happy to spread the ideas found in the following books:],
-  [Working Effectively with Legacy Code],
-  [Patterns of Enterprise Architecture 
- 
-I know a few of my friends buy Drop Books as well. Spreading solid ideas and supporting authors seems like a win/win to me; hopefully more and more people will begin to do the same.],
-),
-  insert-map: (:),
-  word-count: 149,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-}
-
-{
-  #section-label([Analysis])
-  #standard-article(
-  title: [How To Publish To NPM From GitHub Actions],
-  author: [Gleb Bahmutov],
-  source-name: [Gleb Bahmutov],
-  images: (),
-  paragraphs: (
-  [At the end of 2025, NPM registry revoked all personal NPM tokens that I used to publish new NPM package releases . This change improves the security of the entire NPM publishing workflow, but has disrupted my CI process. For example, the new feature of cypress-timestamps has not been released, failing with the error "SemanticReleaseError: Invalid npm token.". Hmm, what do we do now?],
-  [We could use publish to NPM using local npm CLI commands, entering the 2FA token, etc. But I really hate this idea. I have more than 400 NPM packages , so the release process MUST be automated and be performed by CI. So let's look at the trusted publishing where NPM "knows" that a particular workflow from GitHub Actions is allowed to publish (and no one else). I already use trusted publishing to publish NPM packages cypress-split and cypress-map , so it should be simple to apply the same steps to cypress-timestamps .],
-  [📺 You can watch the steps from this blog post explained in this video I recorded after writing the blog post.],
-  [First, go to the package settings under your NPM registry account.],
-  [The top settings section is for configuring the trusted publishing. Seems both GitHub Actions and GitLab CI providers can be configured as of this writing (February 2026). I am using GHA, so I will click "GitHub Actions" button.],
-  [⚠️ Setting up trusted publishing requires an existing NPM package, thus the very first version should be published from your terminal command line using the npm publish command. If this is the very first package version, it might not be even scraped yet, so NPM search returns nothing. In that case, simply go to the last packages page on your profile to find the newly created package.],
-  [Enter the GitHub username (organization name) and the repository name, and the name of the workflow file (inside the .github/workflows folder). In my case, I am pointing at the ci.yml file.],
-  [Enter the 2FA token if needed],
-  [You should see the "success" banner.],
-  [Great, let's now update the ci.yml file. We can remove the old NPM token and bump the semantic release. For clarity, I added comments to the workflow code to explain each step],
-  [ci.yml 1],
-  [2],
-  [3],
-  [4],
-  [5],
-  [6],
-  [7],
-  [8],
-  [9],
-  [10],
-  [11],
-  [12],
-  [13],
-  [14],
-  [15],
-  [16],
-  [17],
-  [18],
-  [19],
-  [20],
-  [21],
-  [22],
-  [23],
-  [24],
-  [25],
-  [26],
-  [27],
-  [28],
-  [29],
-  [30],
-  [31],
-  [32],
-  [33],
-  [34],
-  [35],
-  [36],
-  [37],
-  [38],
-  [39],
-  [40],
-  [41],
-  [42],
-  [name: ci],
-  [on: push],
-  [jobs:],
-  [test:],
-  [runs-on: ubuntu-24.04],
-  [permissions:],
-  [\# allow the release step to comment on],
-  [\# issues, pull requests, and write to the repo],
-  [contents: write],
-  [issues: write],
-  [pull-requests: write],
-  [\# Required for OIDC to let NPM registry know],
-  [\# that this workflow is trusted],
-  [id-token: write],
-  [steps:],
-  [\# important: the default Node version is v18],
-  [\# which gives us an auth error trying to release],
-  [\# so install v24 explicitly],
-  [- uses: actions/setup-node\@v6],
-  [with:],
-  [node-version: 24],
-  [- name: Checkout 🛎],
-  [\# https:\/\/github.com/actions/checkout],
-  [uses: actions/checkout\@v6],
-  [- name: Run tests 🧪],
-  [\# https:\/\/github.com/cypress-io/github-action],
-  [uses: cypress-io/github-action\@v6],
-  [- name: Check type declarations 🔎],
-  [run: npm run typecheck],
-  [- name: Semantic Release 🚀],
-  [\# https:\/\/github.com/cycjimmy/semantic-release-action],
-  [uses: cycjimmy/semantic-release-action\@v6],
-  [with:],
-  [branch: main],
-  [env:],
-  [GITHUB\_TOKEN: \${{ secrets. GITHUB\_TOKEN }}],
-  [I try to limit the GITHUB\_TOKEN permissions to each job, if possible. The important GHA to NPM registry bit is the id-token: write that lets NPM "know" that this CI workflow is legit and is allowed to publish new NPM versions. We can see the successful GHA workflow],
-  [We can see the new package version on NPM],
-  [Nice.],
-),
-  insert-map: (:),
-  word-count: 595,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-}
-
-{
-  #standard-article(
-  title: [A reusable data processing workflow],
-  author: [NPR Apps Blog],
-  source-name: [NPR Apps Blog],
-  images: (),
-  paragraphs: (
-  [Correction (September 2, 2014 8:55pm EDT): We originally stated that the script should combine data from multiple American Community Survey population estimates. This methodology is not valid . This post and the accompanying source code have been updated accordingly. Thanks to census expert Ryan Pitts for catching the mistake. This is why we open source our code!],
-  [The NPR Visuals team was recently tasked with analysing data from the Pentagon’s program to disperse surplus military gear to law enforcement agencies around the country through the Law Enforcement Support Office (LESO), also known as the “1033” program. The project offers a useful case study in creating data processing pipelines for data analysis and reporting.],
-  [The source code for the processing scripts discussed in this post is available on Github . The processed data is available in a folder on Google Drive .],
-  [id="automate-everything"\>Automate everything],
-  [There is one rule for data processing: Automate everything .],
-  [Data processing is fraught with peril. Your initial transformations and data analysis will always have errors and never be as sophisticated as your final analysis. Do you want to hand-categorize a dataset, only to get updated data from your source? Do you want to laboriously add calculations to a spreadsheet, only to find out you misunderstood some crucial aspect of the data? Do you want to arrive at a conclusion and forget how you got there?],
-  [No you don’t! Don’t do things by hand, don’t do one-off transformations, don’t make it hard to get back to where you started.],
-  [Create processing scripts managed under version control that can be refined and repeated. Whatever extra effort it takes to set up and develop processing scripts, you will be rewarded the second or third or fiftieth time you need to run them.],
-  [It might be tempting to change the source data in some way, perhaps to add categories or calculations. If you need to add additional data or make calculations, your scripts should do that for you.],
-  [The top-level build script from our recent project shows this clearly, even if you don’t write code:],
-  [echo 'IMPORT DATA' 
- echo '-----------' 
-./import.sh],
-  [echo 'CREATE SUMMARY FILES' 
- echo '--------------------' 
-./summarize.sh],
-  [echo 'EXPORT PROCESSED DATA' 
- echo '---------------------' 
-./export.sh],
-  [We separate the process into three scripts: one for importing the data, one for creating summarized versions of the data (useful for charting and analysis) and one that exports full versions of the cleaned data.],
-  [id="how-we-processed-the-leso-data"\>How we processed the LESO data],
-  [The data, provided by the Defense Logistics Agency’s Law Enforcement Support Office, describes every distribution of military equipment to local law enforcement agencies through the “1033” program since 2006. The data does not specify the agency receiving the equipment, only the county the agency operates in. Every row represents a single instance of a single type of equipment going to a law enforcement agency. The fields in the source data are:],
-  [National Supply Number : a standardized categorization system for equipment],
-  [Units : A description of the unit to use for the item (e.g. “each” or “square feet”)],
-  [Acquisition cost : The per-unit cost of the item when purchased by the military],
-  [Ship date : When the item was shipped to a law enforcement agency],
-  [id="import"\>Import],
-  [Import script source],
-  [The process starts with a single Excel file and builds a relational database around it. The Excel file is cleaned and converted into a CSV file and imported into a PostgreSQL database. Then additional data is loaded that help categorize and contextualize the primary dataset.],
-  [Here’s the whole workflow:],
-  [Convert Excel data to CSV with Python .],
-  [Parse the date field, which represents dates in two different formats],
-  [Strip out extra spaces from any strings (of which there are many)],
-  [Split the National Supply Number into two additional fields: The first two digits represent the top level category of the equipment (e.g. “WEAPONS”). The first four digits represent the “federal supply class” (e.g. “Guns, through 30 mm”).],
-  [Import the CSVs generated from the source data into PostgreSQL .],
-  [Import a “FIPS crosswalk” CSV into PostgreSQL . This file, provided to us by an NPR reporter, lets us map county name and state to the Federal Information Processing Standard identifier used by the Census Bureau to identify counties.],
-  [Import a CSV file with Federal Supply Codes into PostgreSQL . Because there are repeated values, this data is de-depulicated after import.],
-  [Import 5 year county population estimates from the US Census Bureau’s American Community Survey using the American FactFinder download tool. The file was added to the repository because there is no direct link or API to get the data.],
-  [Create a PostgreSQL view that joins the LESO data with census data through the FIPS crosswalk table for convenience.],
-  [We also import a list of all agencies using csvkit :],
-  [Use csvkit’s in2csv command to extract each sheet],
-  [Use csvkit’s csvstack command to combine the sheets and add a grouping column],
-  [Use csvkit’s csvcut command to remove a pointless “row number” column],
-  [Import final output into Postgres database],
-  [id="summarizing"\>Summarizing],
-  [Summarize script source],
-  [Once the data is loaded, we can start playing around with it by running queries. As the queries become well-defined, we add them to a script that exports CSV files summarizing the data. These files are easy to drop into Google spreadsheets or send directly to reporters using Excel.],
-  [We won’t go into the gory details of every summary query. Here’s a simple query that demonstrates the basic idea:],
-  [class="highlight"\> echo "Generate category distribution" 
-psql leso -c "COPY (
-select c.full\_name, c.code as federal\_supply\_class,
- sum((d.quantity \* d.acquisition\_cost)) as total\_cost
- from data as d
- join codes as c on d.federal\_supply\_class = c.code
- group by c.full\_name, c.code
- order by c.full\_name
-) to ' \` pwd \` /build/category\_distribution.csv' WITH CSV HEADER;"],
-  [This builds a table that calculates the total acquisition cost for each federal supply class:],
-  [full\_name 
- federal\_supply\_code 
- total\_cost 
- 
- 
- 
- 
- Trucks and Truck Tractors, Wheeled 
- 2320 
- \$405,592,549.59 
- 
- 
- Aircraft, Rotary Wing 
- 1520 
- \$281,736,199.00 
- 
- 
- Combat, Assault, and Tactical Vehicles, Wheeled 
- 2355 
- \$244,017,665.00 
- 
- 
- Night Vision Equipment, Emitted and Reflected Radiation 
- 5855 
- \$124,204,563.34 
- 
- 
- Aircraft, Fixed Wing 
- 1510 
- \$58,689,263.00 
- 
- 
- Guns, through 30 mm 
- 1005 
- \$34,445,427.45 
- 
- 
- ...],
-  [Notice how we use SQL joins to pull in additional data (specifically, the full name field) and aggregate functions to handle calculations. By using a little SQL, we can avoid manipulating the underlying data.],
-  [The usefulness of our approach was evident early on in our analysis. At first, we calculated the total cost as sum(acquisition\_cost) , not accounting for the quantity of items. Because we have a processing script managed with version control, it was easy to catch the problem, fix it and regenerate the tables.],
-  [id="exporting"\>Exporting],
-  [Export script source],
-  [Not everybody uses PostgreSQL (or wants to). So our final step is to export cleaned and processed data for public consumption. This big old query merges useful categorical information, county FIPS codes, and pre-calculates the total cost for each equipment order:],
-  [class="highlight"\> psql leso -c "COPY (
- select d.state,
- d.county,
- f.fips,
- d.nsn,
- d.item\_name,
- d.quantity,
- d.ui,
- d.acquisition\_cost,
- d.quantity \* d.acquisition\_cost as total\_cost,
- d.ship\_date,
- d.federal\_supply\_category,
- sc.name as federal\_supply\_category\_name,
- d.federal\_supply\_class,
- c.full\_name as federal\_supply\_class\_name
- from data as d
- join fips as f on d.state = f.state and d.county = f.county
- join codes as c on d.federal\_supply\_class = c.code
- join codes as sc on d.federal\_supply\_category = sc.code
-) to ' \` pwd \` /export/states/all\_states.csv' WITH CSV HEADER;"],
-  [Because we’ve cleanly imported the data, we can re-run this export whenever we need. If we want to revisit the story with a year’s worth of additional data next summer, it won’t be a problem.],
-  [id="a-few-additional-tips-and-tricks"\>A few additional tips and tricks],
-  [Make your scripts chatty: Always print to the console at each step of import and processing scripts (e.g. echo "Merging with census data" ). This makes it easy to track down problems as they crop up and get a sense of which parts of the script are running slowly.],
-  [Use mappings to combine datasets: As demonstrated above, we make extensive use of files that map fields in one table to fields in another. We use SQL joins to combine the datasets. These features can be hard to understand at first. But once you get the hang of it, they are easy to implement and keep your data clean and simple.],
-  [Work on a subset of the data: When dealing with huge datasets that could take many hours to process, use a representative sample of the data to test your data processing workflow. For example, use 6 months of data from a multi-year dataset, or pick random samples from the data in a way that ensures the sample data adequately represents the whole.],
-),
-  insert-map: (:),
-  word-count: 1438,
+  word-count: 574,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -3020,7 +237,7 @@ select c.full\_name, c.code as federal\_supply\_class,
   [Proving success with many automatic rollbacks keeping customer impact below 10 minutes],
   [Further investment to monitor additional metrics and invest in manual rollback optimisations],
   [Investing in a manual Frontend rollback capability],
-  [Aligned further investment toward Slack’s centralised deployment orchestration system inspired by ReleaseBot and the AWS Pipelines deployment system to unify the use of metrics-based deployments with automatic remediation beyond Slack Bedrock / Kubernetes to many other deployment systems],
+  [Aligned further investment toward Slack’s centralised deployment orchestration system inspired by ReleaseBot and the AWS Pipelines deployment system to unify the use of metrics-based deployments with automatic remediation beyond Slack Bedrock \/ Kubernetes to many other deployment systems],
   [Achieved success criteria: Webapp backend, frontend, and a portion of infra deployments are now significantly safer and showing continual improvement quarter-over-quarter],
   [This pattern of trying something, finding success, then iterating + copying the pattern to other systems continues to serve us well.],
   [There have been too many projects to list, some more successful (e.g., faster Mobile App issue detection) and others where the impact hasn’t been as noticeable. In some cases we had reduced impact due to the greater success of automation over manual remediation improvements. It’s very important to note that projects that didn’t have the desired impact are not failures, they’re a critical input to our success through guiding investment and understanding which areas are of greater value. Not all projects will be as impactful, and this is by design.],
@@ -3070,7 +287,7 @@ select c.full\_name, c.code as federal\_supply\_class,
   [And a huge huge thanks to the too many to name teams that have picked up Deploy Safety projects large and small to improve the product experience for our customers.],
 ),
   insert-map: (:),
-  inline-pq: pull-quote([What does “selected” mean? That seems pretty ambiguous.], [Sam Bailey]),
+  inline-pq: pull-quote([Severity levels at Slack convey current or impending customer impact rather than the final impact which often requires careful post-hoc analysis.], [Sam Bailey]),
   inline-pq-idx: 40,
   word-count: 2009,
   edited-for-length: false,
@@ -3081,114 +298,194 @@ select c.full\_name, c.code as federal\_supply\_class,
 
 {
   #standard-article(
-  title: [Rethinking “Pixel Perfect” Web Design],
-  author: [Amit Sheen],
+  title: [Masonry: Things You Won’t Need A Library For Anymore],
+  author: [Patrick Brosset],
   source-name: [Smashing Magazine],
   images: (),
   paragraphs: (
-  [It’s 2026. We are operating in an era of incredible technological leaps, where advanced tooling and AI-enhanced workflows have fundamentally transformed how we design, build, and bridge the gap between the two. The web is moving faster than ever, with groundbreaking features and standards emerging almost daily.],
-  [Yet, in the middle of this high-speed evolution, there’s one thing we’ve been carrying with us since the early days of print, a phrase that feels increasingly out of sync with our modern reality: “Pixel Perfect.”],
-  [I’ll be honest, I’m not a fan. In fact, I believe the idea that we can have pixel-perfection in our designs has become misleading , vague , and ultimately counterproductive to the way we build for the modern web. As a community of developers and designers, it’s time we take a hard look at this legacy concept, understand why it’s failing us, and redefine what “perfection” actually looks like in a multi-device, fluid world.],
-  [A Brief History Of A Rigid Mindset],
-  [To understand why many of us still aim for pixel perfection today, we have to look back at where it all began. It didn’t start on the web, but as a stowaway from the era when layout software first allowed us to design for print on a personal computer, and GUI design from the late 1980s and ’90s.],
-  [In the print industry, perfection was absolute. Once a design was sent to the press, every dot of ink had a fixed, unchangeable position on a physical page. When designers transitioned to the early web, they brought this “printed page” mentality with them. The goal was simple: The website must be an exact, pixel-for-pixel replica of the static mockup created in design applications like Photoshop and QuarkXPress.],
-  [I’m old enough to remember working with talented designers who had spent their entire careers in the print world. They would hand over web designs and, with total sincerity, insist on discussing the layout in centimeters and inches. To them, the screen was just another piece of paper, albeit one that glowed.],
-  [In those days, we “tamed” the web to achieve this. We used table-based layouts , nested three levels deep, and stretched 1×1 pixel “spacer GIFs” to create precise gaps. We designed for a single, “standard” resolution (usually 800×600) because, back then, we could actually pretend we knew exactly what the user was seeing.],
-  [The first major challenge to the fixed-table mindset came as early as 2000. In his seminal article, “ A Dao of Web Design ”, John Allsopp argued that by trying to force the web into the constraints of print, we were missing the point of the medium entirely. He called the quest for pixel-perfection a “ritual” that ignored the web’s inherent fluidity.],
-  [When a new medium borrows from an existing one, some of what it borrows makes sense, but much of the borrowing is thoughtless, “ritual,” and often constrains the new medium. Over time, the new medium develops its own conventions, throwing off existing conventions that don’t make sense.],
-  [Nonetheless, the “pixel-perfection” refused to die. While its meaning has shifted and morphed over the decades, it has rarely been well-defined. Many have tried, such as in 2010 when the design agency ustwo released the Pixel Perfect Precision (PPP) (PDF) handbook. But that same year, Responsive Web Design also gained massive momentum, effectively killing the idea that a website could look identical on every screen.],
-  [Yet, here we are, still using a term born from the limitations of monitors dated to the ’90s to describe the complex interfaces of 2026.],
-  [Note: Before we continue, it’s important to acknowledge the exceptions. There are, of course, scenarios where pixel precision is non-negotiable. Icon grids, sprite sheets, canvas rendering, game engines, or bitmap exports often require exact, pixel-level control to function correctly. These, however, are specialized technical requirements, not a general rule for modern UI development.],
-  [Why “Pixel Perfect” Is Failing the Modern Web],
-  [In our current landscape, clinging to the idea of “pixel perfection” isn’t just anachronistic, it’s actively harmful to the products we build. Here is why.],
-  [Let’s start with a simple question: When a designer asks for a “pixel-perfect” implementation, what are they actually asking for? Is it the colors, the spacing, the typography, the borders, the alignment, the shadows, the interactions? Take a moment to think about it.],
-  [If your answer is “everything”, then you’ve just identified the core issue.],
-  [The term “pixel-perfect” is so all-encompassing that it lacks any real technical specificity. It’s a blanket statement that masks a lack of clear requirements. When we say “make it pixel perfect,” we aren’t giving a directive; we’re expressing a feeling.],
-  [The Multi-Surface Reality],
-  [The concept of a “standard screen size” is now a relic of the past. We are building for an almost infinite variety of viewports , resolutions, and aspect-ratios, and this reality is not likely to change any time soon. Plus, the web is no longer confined to a flat, rectangular piece of glass; it can be on a foldable phone that changes aspect ratios mid-session, or on a spatial interface projected into a room.],
-  [Every Internet-connected device has its own pixel density, scaling factors, and rendering quirks .],
-  [A design that is “perfect” on one set of pixels is, by definition, imperfect on another. Striving for a single, static “perfection” ignores the fluid, adaptive nature of the modern web. When the canvas is constantly shifting, the very idea of a fixed pixel implementation becomes a technical impossibility.],
-  [The Dynamic Nature Of Content],
-  [A static mockup is a snapshot of a single state with a specific set of data. But content is rarely static like that in the real world. Localization is a prime example : a label that fits perfectly inside a button component in English might overflow the container in German or require a different font entirely for CJK languages.],
-  [Beyond text length, localization means changes with currency symbols, date formatting, and numeric systems. Any of these variables can significantly impact a page layout. If a design is built to be “pixel-perfect” based on a specific string of text, it is inherently fragile. A pixel-perfect layout completely collapses the moment content changes.],
-  [Accessibility Is The Real Perfection],
-  [True perfection means a site that works for everyone. If a layout is so rigid that it breaks when a user increases their font size or forces a high-contrast mode, it isn’t perfect — it’s broken. “Pixel perfect” often prioritizes visual aesthetics over functional accessibility, creating barriers for users who don’t fit the “standard” profile.],
-  [Think Systems, Not Pages],
-  [We no longer build pages; we build design systems. We create components that must work in isolation and a variety of contexts, whether in headers, in sidebars, or in dynamic grids. Trying to match a component to a specific pixel coordinate in a static mockup is a fool’s errand.],
-  [A pure “pixel-perfect” approach treats every instance as a unique snowflake, which is the antithesis of a scalable, component-based architecture . It forces developers to choose between following a static image and maintaining the integrity of the system.],
-  [When we prioritize exact visual matching over sound engineering, we aren’t just making a design choice; we are incurring technical debt. Chasing that last pixel often forces developers to bypass the browser’s natural layout engine.],
-  [Working in exact units leads to “magic numbers” , those arbitrary margin-top: 3px or left: -1px hacks, sprinkled throughout the codebase to force an element into a specific position on a specific screen. This creates a fragile, brittle architecture, leading to a never-ending cycle of “visual bug” tickets.],
-  [/\* The "Pixel Perfect" Hack \*/
-.card-title {
- margin-top: 13px; /\* Matches the mockup exactly on 1440px \*/
- margin-left: -2px; /\* Optical adjustment for a specific font \*/
-}
-/\* The "Design Intent" Solution \*/
-.card-title {
- margin-top: var(--space-m); /\* Part of a consistent scale \*/
- align-self: start; /\* Logical alignment \*/
-}],
-  [By insisting on pixel-perfection, we are building a foundation that is difficult to automate, difficult to refactor, and ultimately, more expensive to maintain. We have much more flexible ways to calculate sizing in CSS, thanks to relative units .],
-  [Moving From Pixels To Intent],
-  [So far, I’ve spent a lot of time talking about what we shouldn’t do. But let’s be clear: Moving away from “pixel perfection” isn’t an excuse for sloppy implementation or a “close enough” attitude. We still need consistency, we still want our products to look and feel high-quality, and we still need a shared methodology for achieving that.],
-  [So, if “pixel perfection” is no longer a viable goal, what should we be striving for?],
-  [The answer, I believe, lies in shifting our focus from individual pixels to design intent . In a fluid world, perfection isn’t about matching a static image, but ensuring that the core logic and visual integrity of the design are preserved across every possible context.],
-  [Design Intent Over Static Values],
-  [Instead of asking for a margin: 24px in a design, we should be asking: Why is this margin here? Is it to create a visual separation between sections? Is it part of a consistent spacing scale? When we understand the intent, we can implement it using fluid units and functions (like rem and clamp() , respectively) and use advanced tools, like CSS Container Queries , that allow the design to breathe and adapt while still feeling “right”.],
-  [/\* Intent: A heading that scales smoothly with the viewport \*/
-h1 {
- font-size: clamp(2rem, 5vw + 1rem, 4rem);
-}
-/\* Intent: Change layout based on the component's own width, not the screen \*/
-.card-container {
- container-type: inline-size;
-}
-\@container (min-width: 400px) {
- .card {
- display: grid;
- grid-template-columns: 1fr 2fr;
+  [About 15 years ago, I was working at a company where we built apps for travel agents, airport workers, and airline companies. We also built our own in-house framework for UI components and single-page app capabilities.],
+  [We had components for everything: fields, buttons, tabs, ranges, datatables, menus, datepickers, selects, and multiselects. We even had a div component. Our div component was great by the way, it allowed us to do rounded corners on all browsers, which, believe it or not, wasn't an easy thing to do at the time.],
+  [Our work took place at a point in our history when JS, Ajax, and dynamic HTML were seen as a revolution that brought us into the future. Suddenly, we could update a page dynamically, get data from a server, and avoid having to navigate to other pages, which was seen as slow and flashed a big white rectangle on the screen between the two pages.],
+  [“Any application that can be written in JavaScript will eventually be written in JavaScript.”],
+  [— Jeff Atwood],
+  [To us at the time, this felt like a dare to actually go and create those apps. It felt like a blanket approval to do everything with JS.],
+  [So we did everything with JS, and we didn’t really take the time to research other ways of doing things. We didn’t really feel the incentive to properly learn what HTML and CSS could do. We didn’t really perceive the web as an evolving app platform in its entirety. We mostly saw it as something we needed to work around, especially when it came to browser support. We could just throw more JS at it to get things done.],
+  [Would taking the time to learn more about how the web worked and what was available on the platform have helped me? Sure, I could probably have shaved a bunch of code that wasn’t truly needed. But, at the time, maybe not that much.],
+  [You see, browser differences were pretty significant back then. This was a time when Internet Explorer was still the dominant browser, with Firefox being the close second, but starting to lose market share due to Chrome rapidly gaining popularity. Although Chrome and Firefox were quite good at agreeing on web standards, the environments in which our apps were running meant that we had to support IE6 for a long time. Even when we were allowed to support IE8, we still had to deal with a lot of differences between browsers. Not only that, but the web of the time just didn't have that many capabilities built right into the platform.],
+  [Fast forward to today. Things have changed tremendously. Not only do we have more of these capabilities than ever before, but the rate at which they become available has increased as well.],
+  [Let me ask the question again, then: Would taking the time to learn more about how the web works and what is available on the platform help you today? Absolutely yes. Learning to understand and use the web platform today puts you at a huge advantage over other developers.],
+  [Whether you work on performance, accessibility, responsiveness, all of them together, or just shipping UI features, if you want to do it as a responsible engineer, knowing the tools that are available to you helps you reach your goals faster and better.],
+  [Some Things You Might Not Need A Library For Anymore],
+  [Knowing what browsers support today, the question, then, is: What can we ditch? Do we need a div component to do rounded corners in 2025? Of course, we don’t. The border-radius property has been supported by all currently used browsers for more than 15 years at this point. And corner-shape is also coming soon, for even fancier corners.],
+  [Let’s take a look at relatively recent features that are now available in all major browsers, and which you can use to replace existing dependencies in your codebase.],
+  [The point isn't to immediately ditch all your beloved libraries and rewrite your codebase. As for everything else, you’ll need to take browser support into account first and decide based on other factors specific to your project. The following features are implemented in the three main browser engines (Chromium, WebKit, and Gecko), but you might have different browser support requirements that prevent you from using them right away. Now is still a good time to learn about these features, though, and perhaps plan to use them at some point.],
+  [The Popover API , the HTML element , and the ::backdrop pseudo-element can help you get rid of dependencies on popup, tooltip, and dialog libraries, such as Floating UI , Tippy.js , Tether , or React Tooltip .],
+  [They handle accessibility and focus management for you, out of the box, are highly customizable by using CSS, and can easily be animated.],
+  [The element , its name attribute for mutually exclusive elements, and the ::details-content pseudo-element remove the need for accordion components like the Bootstrap Accordion or the React Accordion component .],
+  [Just using the platform here means it’s easier for folks who know HTML/CSS to understand your code without having to first learn to use a specific library. It also means you’re immune to breaking changes in the library or the discontinuation of that library. And, of course, it means less code to download and run. Mutually exclusive details elements don’t need JS to open, close, or animate.],
+  [CSS Syntax],
+  [Cascade layers , for a more organized CSS codebase, CSS nesting , for more compact CSS, new color functions, relative colors , and color-mix , new Maths functions like abs() , sign() , pow() and others help reduce dependencies on CSS pre-processors , utility libraries like Bootstrap and Tailwind, or even runtime CSS-in-JS libraries.],
+  [The game changer :has() , one of the most requested features for a long time, removes the need for more complicated JS-based solutions.],
+  [JS Utilities],
+  [Modern Array methods like findLast() , or at() , as well as Set methods like difference() , intersection() , union() and others can reduce dependencies on libraries like Lodash .],
+  [Container queries make UI components respond to things other than the viewport size, and therefore make them more reusable across different contexts.],
+  [No need to use a JS-heavy UI library for this anymore, and no need to use a polyfill either.],
+  [Grid , subgrid , flexbox , or multi-column have been around for a long time now, but looking at the results of the State of CSS surveys , it’s clear that developers tend to be very cautious with adopting new things, and wait for a very long time before they do.],
+  [These features have been Baseline for a long time and you could use them to get rid of dependencies on things like the Bootstrap’s grid system , Foundation Framework’s flexbox utilities , Bulma fixed grid , Materialize grid , or Tailwind columns .],
+  [I’m not saying you should drop your framework. Your team adopted it for a reason, and removing it might be a big project. But looking at what the web platform can offer without a third-party wrapper on top comes with a lot of benefits.],
+  [Things You Might Not Need Anymore In The Near Future],
+  [Now, let’s take a quick look at some of the things you will not need a library for in the near future. That is to say, the things below are not quite ready for mass adoption, but being aware of them and planning for potential later use can be helpful.],
+  [CSS anchor positioning handles the positioning of popovers and tooltips relative to other elements, and takes care of keeping them in view, even when moving, scrolling, or resizing the page.],
+  [This is a great complement to the Popover API mentioned before, which will make it even easier to migrate away from more performance-intensive JS solutions.],
+  [Navigation API],
+  [The Navigation API can be used to handle navigation in single-page apps and might be a great complement, or even a replacement, to React Router , Next.js routing , or Angular routing tasks .],
+  [View Transitions API],
+  [The View Transitions API can animate between the different states of a page. On a single-page application, this makes smooth transitions between states very easy, and can help you get rid of animation libraries such as Anime.js , GSAP , or Motion.dev .],
+  [Even better, the API can also be used with multiple-page applications.],
+  [Remember earlier, when I said that the reason we built single-page apps at the company where I worked 15 years ago was to avoid the white flash of page reloads when navigating? Had that API been available at the time, we would have been able to achieve beautiful page transition effects without a single-page framework and without a huge initial download of the entire app.],
+  [Scroll-driven Animations],
+  [Scroll-driven animations run on the user’s scroll position, rather than over time, making them a great solution for storytelling and product tours.],
+  [Some people have gone a bit over the top with it, but when used well, this can be a very effective design tool, and can help get rid of libraries like: ScrollReveal , GSAP Scroll , or WOW.js .],
+  [A customizable select is a normal element that lets you fully customize its appearance and content, while ensuring accessibility and performance benefits.],
+  [This has been a long time coming, and a highly requested feature, and it’s amazing to see it come to the web platform soon. With a built-in customizable select, you can finally ditch all this hard-to-maintain JS code for your custom select components.],
+  [CSS Masonry],
+  [CSS Masonry is another upcoming web platform feature that I want to spend more time on.],
+  [With CSS Masonry, you can achieve layouts that are very hard, or even impossible, with flex, grid, or other built-in CSS layout primitives. Developers often resort to using third-party libraries to achieve Masonry layouts, such as the Masonry JS library .],
+  [But, more on that later. Let’s wrap this point up before moving on to Masonry.],
+  [The job market is full of web developers with experience in JavaScript and the latest frameworks of the day. So, really, what’s the point in learning to use the web platform primitives more, if you can do the same things with the libraries, utilities, and frameworks you already know today?],
+  [When an entire industry relies on these frameworks, and you can just pull in the right library, shouldn’t browser vendors just work with these libraries to make them load and run faster, rather than trying to convince developers to use the platform instead?],
+  [First of all, we do work with library authors, and we do make frameworks better by learning about what they use and improving those areas.],
+  [But secondly, “just using the platform” can bring pretty significant benefits.],
+  [Sending Less Code To Devices],
+  [The main benefit is that you end up sending far less code to your clients’ devices.],
+  [According to the 2024 Web Almanac , the average number of HTTP requests is around 70 per site, most of which is due to JavaScript with 23 requests . In 2024, JS overtook images as the dominant file type too. The median number of page requests for JS files is 23, up 8% since 2022.],
+  [And page size continues to grow year over year. The median page weight is around 2MB now, which is 1.8MB more than it was 10 years ago.],
+  [Sure, your internet connection speed has probably increased, too, but that’s not the case for everyone. And not everyone has the same device capabilities either.],
+  [Pulling in third-party code for things you can do with the platform, instead, most probably means you ship more code, and therefore reach fewer customers than you normally would. On the web, bad loading performance leads to large abandonment rates and hurts brand reputation.],
+  [Running Less Code On Devices],
+  [Furthermore, the code you do ship on your customers’ devices likely runs faster if it uses fewer JavaScript abstractions on top of the platform. It’s also probably more responsive and more accessible by default. All of this leads to more and happier customers.],
+  [Check my colleague Alex Russell’s yearly performance inequality gap blog , which shows that premium devices are largely absent from markets with billions of users due to wealth inequality. And this gap is only growing over time.],
+  [Built-in Masonry Layout],
+  [One web platform feature that’s coming soon and which I’m very excited about is CSS Masonry.],
+  [Let me start by explaining what Masonry is.],
+  [Masonry is a type of layout that was made popular by Pinterest years ago. It creates independent tracks of content within which items pack themselves up as close to the start of the track as they can.],
+  [Many people see Masonry as a great option for portfolios and photo galleries, which it certainly can do. But Masonry is more flexible than what you see on Pinterest, and it’s not limited to just waterfall-like layouts .],
+  [In a Masonry layout:],
+  [Tracks can be columns or rows:],
+  [Tracks of content don’t all have to be the same size:],
+  [Items can span multiple tracks:],
+  [Items can be placed on specific tracks; they don’t have to always follow the automatic placement algorithm:],
+  [Here are a few simple demos I made by using the upcoming implementation of CSS Masonry in Chromium.],
+  [A photo gallery demo , showing how items (the title in this case) can span multiple tracks:],
+  [Another photo gallery showing tracks of different sizes :],
+  [A news site layout with some tracks wider than others, and some items spanning the entire width of the layout:],
+  [A kanban board showing that items can be placed onto specific tracks:],
+  [Note : The previous demos were made with a version of Chromium that’s not yet available to most web users, because CSS Masonry is only just starting to be implemented in browsers.],
+  [However, web developers have been happily using libraries to create Masonry layouts for years already.],
+  [Indeed, Masonry is pretty common on the web today. Here are a few examples I found besides Pinterest:],
+  [And a few more, less obvious, examples:],
+  [So, how were these layouts created?],
+  [One trick that I’ve seen used is using a Flexbox layout instead, changing its direction to column, and setting it to wrap.],
+  [This way, you can place items of different heights in multiple, independent columns, giving the impression of a Masonry layout:],
+  [There are, however, two limitations with this workaround:],
+  [The order of items is different from what it would be with a real Masonry layout. With Flexbox, items fill the first column first and, when it’s full, then go to the next column. With Masonry, items would stack in whichever track (or column in this case) has more space available.],
+  [But also, and perhaps more importantly, this workaround requires that you set a fixed height to the Flexbox container; otherwise, no wrapping would occur.],
+  [Third-party Masonry Libraries],
+  [For more advanced cases, developers have been using libraries.],
+  [The most well-known and popular library for this is simply called Masonry , and it gets downloaded about 200,000 times per week according to NPM .],
+  [Squarespace also provides a layout component that renders a Masonry layout , for a no-code alternative, and many sites use it.],
+  [Both of these options use JavaScript code to place items in the layout.],
+  [Built-in Masonry],
+  [I’m really excited that Masonry is now starting to appear in browsers as a built-in CSS feature. Over time, you will be able to use Masonry just like you do Grid or Flexbox, that is, without needing any workarounds or third-party code.],
+  [My team at Microsoft has been implementing built-in Masonry support in the Chromium open source project, which Edge, Chrome, and many other browsers are based on. Mozilla was actually the first browser vendor to propose an experimental implementation of Masonry back in 2020. And Apple has also been very interested in making this new web layout primitive happen.],
+  [The work to standardize the feature is also moving ahead, with agreement within the CSS working group about the general direction and even a new display type display: grid-lanes .],
+  [If you want to learn more about Masonry and track progress, check out my CSS Masonry resources page.],
+  [In time, when Masonry becomes a Baseline feature, just like Grid or Flexbox, we’ll be able to simply use it and benefit from:],
+  [Better performance,],
+  [Better responsiveness,],
+  [Ease of use and simpler code.],
+  [Let’s take a closer look at these.],
+  [Making your own Masonry-like layout system, or using a third-party library instead, means you’ll have to run JavaScript code to place items on the screen. This also means that this code will be render blocking . Indeed, either nothing will appear, or things won’t be in the right places or of the right sizes, until that JavaScript code has run.],
+  [Masonry layout is often used for the main part of a web page, which means the code would be making your main content appear later than it could otherwise have, degrading your LCP, or Largest Contentful Paint metric , which plays a big role in perceived performance and search engine optimization.],
+  [I tested the Masonry JS library with a simple layout and by simulating a slow 4G connection in DevTools. The library is not very big (24KB, 7.8KB gzipped), but it took 600ms to load under my test conditions.],
+  [Here is a performance recording showing that long 600ms load time for the Masonry library, and that no other rendering activity happened while that was happening:],
+  [In addition, after the initial load time, the downloaded script then needed to be parsed, compiled, and then run. All of which, as mentioned before, was blocking the rendering of the page.],
+  [With a built-in Masonry implementation in the browser, we won’t have a script to load and run. The browser engine will just do its thing during the initial page rendering step.],
+  [Similar to when a page first loads, resizing the browser window leads to rendering the layout in that page again. At this point, though, if the page is using the Masonry JS library, there’s no need to load the script again, because it’s already here. However, the code that moves items in the right places needs to run.],
+  [Now this particular library seems to be pretty fast at doing this when the page loads. However, it animates the items when they need to move to a different place on window resize, and this makes a big difference.],
+  [Of course, users don’t spend time resizing their browser windows as much as we developers do. But this animated resizing experience can be pretty jarring and adds to the perceived time it takes for the page to adapt to its new size.],
+  [Ease Of Use And Simpler Code],
+  [How easy it is to use a web feature and how simple the code looks are important factors that can make a big difference for your team. They can’t ever be as important as the final user experience, of course, but developer experience impacts maintainability. Using a built-in web feature comes with important benefits on that front:],
+  [Developers who already know HTML, CSS, and JS will most likely be able to use that feature easily because it’s been designed to integrate well and be consistent with the rest of the web platform.],
+  [There’s no risk of breaking changes being introduced in how the feature is used.],
+  [There’s almost zero risk of that feature becoming deprecated or unmaintained.],
+  [In the case of built-in Masonry, because it’s a layout primitive, you use it from CSS, just like Grid or Flexbox, no JS involved. Also, other layout-related CSS properties, such as gap, work as you’d expect them to. There are no tricks or workarounds to know about, and the things you do learn are documented on MDN.],
+  [For the Masonry JS lib, initialization is a bit complex: it requires a data attribute with a specific syntax, along with hidden HTML elements to set the column and gap sizes.],
+  [Plus, if you want to span columns, you need to include the gap size yourself to avoid problems:],
+  [.track-sizer,
+ .item {
+ width: 20%;
  }
-}],
-  [Design tokens are the bridge between design and code. When a designer and developer agree on a token like --spacing-large instead of 32px , they aren’t just syncing values, but instead syncing logic. This ensures that even if the underlying value changes to accommodate a specific condition, the relationship between elements remains perfect.],
-  [:root {
- /\* The logic is defined once \*/
- --color-primary: \#007bff;
- --spacing-unit: 8px;
- --spacing-large: calc(var(--spacing-unit) \* 4);
-}],
-  [/\* And reused everwhere \*/
-.button {
- background-color: var(--color-primary);
- padding: var(--spacing-large);
-}],
-  [Fluidity As A Feature, Not A Bug],
-  [We need to stop viewing the web’s flexibility as something to be tamed and start seeing that flexibility as its greatest strength. A “perfect” implementation is one that looks intentional at 320px, 1280px, and even in a 3D spatial environment. This means embracing intrinsic web design based on an element’s natural size in any context — and using modern CSS tools to create layouts that “know” how to arrange themselves based on the available space.],
-  [Death To The “Handover”],
-  [In this intent-driven world, the “handover” of traditional design assets has become another relic of the past. We no longer pass static Photoshop files across a digital wall and hope for the best. Instead, we work within living design systems .],
-  [Modern tooling allows designers to specify behaviors, not just positions. When a designer defines a component, they aren’t just drawing a box; they’re defining its constraints, its fluid scales, and its relationship to the content. As developers, our job is to implement that logic.],
-  [The conversation has shifted from “Why is this three pixels off?” to “How should this component behave when the container shrinks?” and “What happens to the hierarchy when the text is translated to a longer language?”],
-  [Better Language, Better Outcomes],
-  [Speaking of conversations, when we aim for “pixel perfection”, we set ourselves up for friction. Mature teams have long moved past this binary “match-or-fail” mindset towards a more descriptive vocabulary that reflects the complexity of our work.],
-  [By replacing “pixel perfect” with more precise terms, we create shared expectations and eliminate pointless arguments. Here are a few phrases that have served me well for productive discussions around intent and fluidity:],
-  [“Visually consistent with the design system.” 
-Instead of matching a specific mockup, we ensure the implementation follows the established rules of our system.],
-  [“Matches spacing and hierarchy.” 
-We focus on the relationships and rhythm between elements rather than their absolute coordinates.],
-  [“Preserves proportions and alignment logic.” 
-We ensure that the intent of the layout remains intact, even as it scales and shifts.],
-  [“Acceptable variance across platforms.” 
-We acknowledge that a site will look different, within a defined and agreed-upon range of variation, and that’s okay as long as the experience remains high-quality.],
-  [Language creates reality. Clear language doesn’t just improve the code, but the relationship between designers and developers. It moves us toward a shared ownership of the final, living product. When we speak the same language, “perfection” stops being a demand and starts being a collaborative achievement.],
-  [A Note To My Design Colleagues],
-  [When you hand over a design, don’t give us a fixed width, but a set of rules. Tell us what should stretch, what should stay fixed, and what should happen when the content inevitably overflows. Your “perfection” lies in the logic you define, not the pixels you draw.],
-  [The New Standard Of Excellence],
-  [The web was never meant to be a static gallery of frozen pixels. It was born to be a messy, fluid, and gloriously unpredictable medium. When we cling to an outdated model of “pixel perfection”, we are effectively trying to put a leash on a hurricane. It’s unnatural in today’s front-end landscape.],
-  [In 2026, we have the tools to build interfaces that think, adapt, and breathe. We have AI that can generate layouts in seconds and spatial interfaces that defy the very concept of a “screen”. In this world, perfection isn’t a fixed coordinate but a promise; it’s the promise that no matter who is looking, or what they are looking through, the soul of the design remains intact .],
-  [So, let’s bury the term once and for all. Let’s leave the centimeters to the architects and the spacer GIFs to the digital museums. If you want something to look exactly the same for the next hundred years, carve it in stone or print it on a high-quality cardstock. But if you want to build for the web, embrace the chaos.],
-  [Stop counting pixels. Start building intent .],
+ .gutter-sizer {
+ width: 1rem;
+ }
+ .item {
+ height: 100px;
+ margin-block-end: 1rem;
+ }
+ .item:nth-child(odd) {
+ height: 200px;
+ }
+ .item--width2 {
+ width: calc(40% + 1rem);
+ }],
+  [...],
+  [Let’s compare this to what a built-in Masonry implementation would look like:],
+  [.container {
+ display: grid-lanes;
+ grid-lanes: repeat(4, 20%);
+ gap: 1rem;
+ }
+ .item {
+ height: 100px;
+ }
+ .item:nth-child(odd) {
+ height: 200px;
+ }
+ .item--width2 {
+ grid-column: span 2;
+ }],
+  [...],
+  [Simpler, more compact code that can just use things like gap and where spanning tracks is done with span 2 , just like in grid, and doesn’t require you to calculate the right width that includes the gap size.],
+  [How To Know What’s Available And When It’s Available?],
+  [Overall, the question isn’t really if you should use built-in Masonry over a JS library, but rather when . The Masonry JS library is amazing and has been filling a gap in the web platform for many years, and for many happy developers and users. It has a few drawbacks if you compare it to a built-in Masonry implementation, of course, but those are not important if that implementation isn’t ready.],
+  [It’s easy for me to list these cool new web platform features because I work at a browser vendor, and I therefore tend to know what’s coming. But developers often share, survey after survey, that keeping track of new things is hard. Staying informed is difficult , and companies don’t always prioritize learning anyway.],
+  [To help with this, here are a few resources that provide updates in simple and compact ways so you can get the information you need quickly:],
+  [The Web platform features explorer site :],
+  [You might be interested in its release notes page.],
+  [And, if you like RSS, check out the release notes feed , as well as the Baseline Newly Available and Widely Available feeds.],
+  [The Web Platform Status dashboard :],
+  [You might like its various Baseline year pages.],
+  [Chrome Platform Status’ roadmap page .],
+  [If you have a bit more time, you might also be interested in browser vendors’ release notes:],
+  [For even more resources, check out my Navigating the Web Platform Cheatsheet .],
+  [My Thing Is Still Not Implemented],
+  [That’s the other side of the problem. Even if you do find the time, energy, and ways to keep track, there’s still frustration with getting your voice heard and your favorite features implemented.],
+  [Maybe you’ve been waiting for years for a specific bug to be resolved, or a specific feature to ship in a browser where it’s still missing.],
+  [What I’ll say is browser vendors do listen . I’m part of several cross-organization teams where we discuss developer signals and feedback all the time. We look at many different sources of feedback, both internal at each browser vendor and external/public on forums, open source projects, blogs, and surveys. And, we’re always trying to create better ways for developers to share their specific needs and use cases.],
+  [So, if you can, please demand more from browser vendors and pressure us to implement the features you need. I get that it takes time, and can also be intimidating (not to mention a high barrier to entry), but it also works.],
+  [Here are a few ways you can get your (or your company’s) voice heard: Take the annual State of JS , State of CSS , and State of HTML surveys. They play a big role in how browser vendors prioritize their work.],
+  [If you need a specific standard-based API to be implemented consistently across browsers, consider submitting a proposal at the next Interop project iteration. It requires more time, but consider how Shopify and RUMvision shared their wish lists for Interop 2026. Detailed information like this can be very useful for browser vendors to prioritize.],
+  [For more useful links to influence browser vendors, check out my Navigating the Web Platform Cheatsheet .],
+  [To close, I hope this article has left you with a few things to think about:],
+  [Excitement for Masonry and other upcoming web features.],
+  [A few web features you might want to start using.],
+  [A few pieces of custom or 3rd-party code you might be able to remove in favor of built-in features.],
+  [A few ways to keep track of what’s coming and influence browser vendors.],
+  [More importantly, I hope I’ve convinced you of the benefits of using the web platform to its full potential.],
 ),
   insert-map: (:),
-  word-count: 2378,
+  word-count: 4118,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -3197,294 +494,57 @@ We acknowledge that a site will look different, within a defined and agreed-upon
 
 {
   #standard-article(
-  title: [Wingify towards Docker and Kubernetes],
-  author: [Punit Gupta, Kamal Sehrawat],
-  source-name: [Wingify Engineering],
+  title: [Bundles and Closures],
+  author: [Jacques Lucke],
+  source-name: [Blender Dev Blog],
   images: (),
   paragraphs: (
-  [id="introduction"\> Introduction:],
-  [At Wingify, we follow microservices based architecture to leverage it's great scalability benefits. We have a lot of microservices along with a complex networking setup among them. Currently, all the services are deployed on virtual machines on the cloud. We wanted to improve this architecture set up and use the latest technologies available. To avoid all this we are moving towards Docker and Kubernetes world!],
-  [id="why-docker-and-kubernetes"\> Why Docker and Kubernetes?],
-  [The problems we are facing with the existing infrastructure:],
-  [Standardization and consistency],
-  [There is always an issue of a consistent/standard environment between production and development.],
-  [Most of our time goes in creating a production like environment during development to rollout bugfixes or create any new features.],
-  [With the new architecture, now we are more equipped to efficiently analyze and fix bugs within the application. It has drastically reduced the time wasted on "local environment issues" and in turn increased time available to fix actual issues and new feature development.],
-  [Docker provides a repeatable production like development environment and eliminates the "it works on my machine" problem once and for all.],
-  [Local development],
-  [It's not easy to develop and debug a service locally and connect it to the rest of the services running on local environment.],
-  [Constantly redeploying on local environment to test the changes is time consuming.],
-  [Auto scaling],
-  [The load on the services can never be the same all the time.],
-  [Keeping the services up for the whole year just to handle the peak load which comes on a few days of the festive season is a waste of resources.],
-  [Regularly benchmarking the load to scale the services with time is not an optimal way.],
-  [Auto service restarts],
-  [If the service goes in a hanged state or terminates due to memory leak, resource polling deadlocks, file descriptors issues or anything else, how it is going to restart automatically?],
-  [Although there are different tools available for multiple languages but setting them up for each service on every server is not ideal.],
-  [Load balancing],
-  [Adding and maintaining an extra entry point like nginx just to provide load balancing is an overhead.],
-  [We are trying to tackle all these problems in an automated and easy way using Docker, Kubernetes and few open-source tools.],
-  [id="our-journey"\> Our Journey],
-  [We started out from scratch. Read a lot of articles, documentation, tutorials and went through some existing testing and production level open source projects. Some of them solved a few of our problems, for some we found our own way and the rest of them are yet to be solved!],
-  [Below is a brief idea of all the ideas and approaches we found to solve many of our problems, the final approach we took and comparison between them:],
-  [id="common-repository-approach"\> Common repository approach],
-  [Every dockerized service starts with a Dockerfile. But the initial issue is where to put them? There will be a lot of Dockerfiles combining all the services.],
-  [There are two ways to put them:],
-  [Each service contains it's own dockerfile],
-  [All the repositories have separate dockerfiles specific to that service.],
-  [A common repository of all dockerfiles],
-  [All the dockerfiles of every service are added to a common repository.],
-  [Below is the comparison among them:],
-  [Common Repository 
- Separate Repositories 
- 
- 
- 
- 
- 1. 
- Need a proper structure to distinguish dockerfiles 
- Separation of concerns 
- 
- 
- 2. 
- Common Linters and Formatters 
- Each repo has to add the same linter and formatter repetitively 
- 
- 
- 3. 
- Common githooks to regulate commit messages, pre-commit, pre-push, etc. tasks 
- Same githooks in every service 
- 
- 
- 4. 
- Can contain reusable Docker base-files 
- No central place to put reusable dockerfiles 
- 
- 
- 5. 
- A central place for DevOps to manage the permissions of all dockerfiles 
- Very difficult to manage dockerfiles individually by Devops],
-  [You may be thinking about the ease of local development using volumes in the separate repository approach. We will get back to that later and show how easy it will be in a common repository approach.],
-  [So, the common repository approach is a clear winner among them. But what about its folder structure? We gave it plenty of thoughts and finally, this is our Docker repository folder structure:],
-  [style="text-align: center; margin: 50px;"\>],
-  [The folder structure is broadly categorized into 2 parts:],
-  [\* \*\*Services directory:\*\*],
-  [- It contains the directories of all the services each having their own 'dockerfile' and '.dockerignore' files.],
-  [- Internally they inherit from the base images.],
-  [\* \*\*Reusable base images directory:\*\*],
-  [- It contains all the reusable dockerfiles that are categorized broadly according to their respective languages like node, PHP, etc.],
-  [- Dockerfiles containing only the languages are placed in the 'base' folder.],
-  [- All the extensions, plugins, tools, etc. of above base images are placed in the same directory, like 'thrift' for node.js.],
-  [- Versions are important as multiple services may use different versions of the same plugins. Like, one service may require MySQL 5.6 and the other one may require 5.7. So, each directory is further nested on the basis of versions.],
-  [Using this folder structure has multiple advantages:],
-  [All the services and reusable base dockerfiles are segregated.],
-  [It becomes very clear that which dockerfile is for what service, language or plugin.],
-  [Multiple versions can be easily served.],
-  [Next, we will discuss the reusable base images concept.],
-  [id="dockerfile-linter"\> Dockerfile Linter],
-  [There are many opensource linters available for Docker files. We found hadolint meets most of the standards that Docker recommends. So, to lint all the files we just have to issue a simple command which can be easily integrated into the githooks.],
-  [id="dockerfile-formatter"\> Dockerfile Formatter],
-  [We searched and tried multiple formatters, but none of them worked as per our requirements. We found dockfmt was close to our requirements but it also has some issues like it removes all the comments from dockerfile. So, we are yet to find a better formatter.],
-  [id="reusable-docker-base-images"\> Reusable Docker base images],
-  [It's very common that a lot of services need the same OS, tools, libraries, etc like all the node services may need Debian stretch OS with node.js and yarn installed of a particular version. So, instead of adding them in all such Docker files, we can create some reusable, pluggable Docker base images.],
-  [Below is the example of a Node.js service which requires:],
-  [Debian stretch OS],
-  [Node.js version 9.11.2 + Yarn],
-  [Apache thrift version 0.10.0],
-  [Node.js base image:],
-  [\# Install Node 9.11.x 
- \# Defining builDeps as an argument in alphabetical order for better readability and avoiding duplicacy. 
- ARG buildDeps=" \\ 
- curl \\
- g++ \\
- make"],
-  [\# It causes a pipeline to produce a failure return code if any command results in an error. 
- SHELL [ "/bin/bash" , "-o" , "pipefail" , "-c" ] 
- \# hadolint ignore=DL3008,DL3015 
- RUN apt - get update && apt - get install - y — - no - install - recommends \$buildDeps \\
- \# Use --no-install-recommends to avoid installing packages that aren't technically dependencies but are recommended to be installed alongside packages. 
- && curl - sL https : \/\/deb.nodesource.com/setup\_9.x | bash - && apt - get install - y nodejs=9.11.\* \\
- && npm i - g yarn\@1.19.1 \\
- && apt - get clean \\ 
- \# Remove apt-cache to make the image smaller. 
- && rm - rf /var/lib/apt/lists/\*],
-  [Let's consider we build this with name 'wingify-node-9.11.2:1.0.5'. Where 'wingify-node-9.11.2' represents the docker image type and '1.0.5' is the image tag.],
-  [Apache thrift base image:],
-  [\# hadolint ignore=DL3006 
- FROM \$ { BASE }],
-  [\# Declaring argument to be used in dockerfile to make it reusable. 
- ARG THRIFT\_VERSION=0.10.0],
-  [\# Referred from https:\/\/github.com/ahawkins/docker-thrift/blob/master/0.10/Dockerfile 
- \# hadolint ignore=DL3008,DL3015 
- RUN apt - get update \\
- && curl - sSL "http:\/\/apache.mirrors.spacedump.net/thrift/\$THRIFT\_VERSION/thrift-\$THRIFT\_VERSION.tar.gz" - o thrift.tar.gz \\
- && mkdir - p /usr/src/thrift \\
- && tar zxf thrift.tar.gz - C /usr/src/thrift - - strip - components=1 \\
- && rm thrift.tar.gz \\
- \# Clean the apt cache on. 
- && apt - get clean \\
- \# Remove apt cache to make the image smaller. 
- && rm - rf /var/lib/apt/lists/\*],
-  [WORKDIR /usr/src/thrift
- RUN ./configure - - without - python - - without - cpp \\
- && make \\
- && make install \\
- \# Removing the souce code after installation. 
- && rm - rf /usr/src/thrift],
-  [Here, by default, we are using the above-created node's Docker image. But we can pass any other environment's base image as an argument to install thrift there. So, it's pluggable everywhere.],
-  [Finally, the actual service can use above as a base image for it's dockerfile.],
-  [id="access-private-repository-dependencies"\> Access private repository dependencies],
-  [We have multiple services that have some dependencies which are fetched from private repositories. Like in our node service, we have one of our dependencies listed in package.json as:],
-  [Normally we need ssh keys to fetch these dependencies, but a Docker container won't be having it. Below are the few ways of solving this:],
-  [Option 1: Install dependencies externally (local or Jenkins) and Docker will copy them directly.],
-  [Advantages:],
-  [No SSH key required by docker.],
-  [Disadvantages:],
-  [Dependencies installation won't be cached automatically as it's happening outside the docker.],
-  [Some modules like bcrypt have binding issues if not installed directly on the same machine.],
-  [Option 2: Pass SSH key as an argument in dockerfile or copy it from system to the working directory and let dockerfile copy it. Docker container can then install dependencies.],
-  [Advantages:],
-  [Caching is achieved.],
-  [No module binding issues.],
-  [Disadvantages:],
-  [SSH key would be exposed in a Docker container if not handled correctly.],
-  [Single SSH keys will have security issues and different ones will be difficult to manage.],
-  [Option 3: Host the private repos globally like our own private npm (in case of node.js) and add it's host entry on the system. Docker container can then install dependencies by fetching from our private npm.],
-  [Advantages:],
-  [Caching is achieved.],
-  [No SSH key required.],
-  [Disadvantages:],
-  [One time setup of hosting.],
-  [We need to publish the private repos each time we create a new tag.],
-  [Way 3 proved to be much better in our case and we moved ahead with it.],
-  [id="service-dockerfile"\> Service Dockerfile],
-  [The final dockerfile of the service implementing all above will be like:],
-  [\# hadolint ignore=DL3006 
- FROM \$ { BASE }],
-  [RUN mkdir - p /opt/my - service/
- WORKDIR /opt/my - service],
-  [\# Dependency installation separately for caching 
- COPY ./package.json ./yarn.lock ./.npmrc ./
- RUN yarn install],
-  [COPY . .],
-  [CMD [ "yarn" , "start:docker" ]],
-  [Here '.npmrc' contains the registry which points to our own private npm. We are copying it so that Docker container can fetch our private repos from it.],
-  [id="caching"\> Caching],
-  [Every time we change our code, we don't want Docker container to install dependencies again (unless changed). For this we divided the 'COPY' step in above dockerfile into 2 parts:],
-  [class="gatsby-highlight"\> \# Here we are copying the package.json and yarn.lock files and doing dependencies installation. 
- \# This step will always be cached in Docker unless there is change in any of these files 
- COPY ./package.json ./yarn.lock ./.npmrc ./
- RUN yarn install],
-  [COPY . .],
-  [Doing all this will reduce the Docker image build time to just a few seconds!],
-  [id="auto-tagging-and-rollback"\> Auto-tagging and rollback],
-  [Tagging is important for any rollback on productions. Fortunately, it's easy to do in docker. While building and pushing an image on Kubernetes we can specify the tag version with a colon. We can then use this tag in Kubernetes YAML file to deploy on the pods.],
-  [docker push org/my-service . 
-docker push org/my-service:1.2.3 .],
-  [This works fine, but it still requires a new tag every time we are building a new version of the image. This can be passed manually to a job. But what if there is auto-tagging?],
-  [First, let's find out the latest tag. Here is the command to find the latest image tag from GCP:],
-  [We can use this in a custom node script which will return the new incremented version. We just have to pass the image name and the release type i.e. major/minor/patch to it.],
-  [const TAG\_TYPES = { 
- PATCH : 'patch' , 
- MINOR : 'minor' , 
- MAJOR : 'major' 
- } ;],
-  [\/\/ Referenced from https:\/\/semver.org/ 
- const VERSONING\_REGEX = /^(v)?(0|[1-9]\\d\*)\\.(0|[1-9]\\d\*)\\.(0|[1-9]\\d\*)(?:-((?:0|[1-9]\\d\*|\\d\*[a-zA-Z-][0-9a-zA-Z-]\*)(?:\\.(?:0|[1-9]\\d\*|\\d\*[a-zA-Z-][0-9a-zA-Z-]\*))\*))?(?:\\+([0-9a-zA-Z-]+(?:\\.[0-9a-zA-Z-]+)\*))?\$/m ;],
-  [class Autotag { 
- constructor ( imageName = '' , tagType = TAG\_TYPES . PATCH ) { 
- this . \_validateParams ( imageName , tagType ) ; 
- this . imageName = imageName ; 
- this . tagType = tagType . toLowerCase ( ) ; 
- }],
-  [\/\/ Private functions 
- \_validateParams ( imageName , tagType ) { 
- if ( ! imageName ) { 
- throw new Error ( 'Image name is mandatory.' ) ; 
- }],
-  [if ( ! Object . values ( TAG\_TYPES ) . includes ( tagType ) ) { 
- throw new Error ( 
- \` Invalid tag type specified. Possible values are \${ Object . values ( 
- TAG\_TYPES 
- ) . join ( ', ' ) } . \` 
- ) ; 
- } 
- }],
-  [\_fetchTagsFromGCP ( ) { 
- return exec ( 
- \` gcloud container images list-tags \${ 
- this . imageName
- } --sort-by=~TAGS --limit=1 --format=json \` 
- ) . toString ( ) ; 
- }],
-  [\/\/ Public functions 
- increment ( ) { 
- const stringifiedTags = this . \_fetchTagsFromGCP ( ) ;],
-  [if ( stringifiedTags ) { 
- try { 
- const { tags } = JSON . parse ( stringifiedTags ) [ 0 ] ;],
-  [for ( let i = tags . length - 1 ; i \>= 0 ; i -- ) { 
- const tag = tags [ i ] ; 
- if ( VERSONING\_REGEX . test ( tag ) ) { 
- let [ 
- prefix = '' , 
- major = 0 , 
- minor = 0 , 
- patch = 0 
- ] = VERSONING\_REGEX . exec ( tag ) . slice ( 1 ) ;],
-  [switch ( this . tagType ) { 
- case TAG\_TYPES . PATCH : 
- patch ++ ; 
- break ; 
- case TAG\_TYPES . MINOR : 
- patch = 0 ; 
- minor ++ ; 
- break ; 
- case TAG\_TYPES . MAJOR : 
- patch = 0 ; 
- minor = 0 ; 
- major ++ ; 
- break ; 
- }],
-  [return \` \${ prefix } \${ major } . \${ minor } . \${ patch } \` ; 
- } 
- } 
- } catch ( e ) { } 
- }],
-  [\/\/ Return default tag if none already exists. 
- return '0.0.1' ; 
- } 
- }],
-  [try { 
- console . log ( new Autotag ( ... process . argv . slice ( 2 ) ) . increment ( ) ) ; 
- } catch ( e ) { 
- console . log ( e . toString ( ) ) ; 
- }],
-  [Thanks Gaurav Nanda for the above script.],
-  [id="production-staged-rollout"\> Production staged rollout],
-  [Our ultimate goal is to migrate everything from the existing setup to GCP with Docker and Kubernetes. Migrating the whole system in one go on production is time-consuming as well as risky.],
-  [To avoid this we are targeting individual services one by one. Initially, a service will run on GCP as well as on the existing server with their databases pointing to the old setup. We will open them for a few accounts at the beginning. The rest of the accounts will work as before. This will ensure that if any issue comes in a new setup, we can easily switch back to the old setup while fixing it.],
-  [style="text-align: center; margin: 50px;"\>],
-  [id="next-steps"\> Next steps],
-  [Integrate health check APIs with Kubernetes.],
-  [Development environment using telepresence .],
-  [Add service discovery tool like consul .],
-  [Add a vault system for secrets.],
-  [Better logging.],
-  [Integrate helm to manage the Kubernetes cluster.],
-  [Docker image size management.],
-  [Add support for blue green deployments.],
-  [We may be using some things differently that can be improved upon. There can be better tools that we are yet to explore. We are open to any suggestions that can help us in improving what we are already doing and what we will require in the future. This is just a start, we will try to improve in every iteration and solve new challenges.],
-  [Thanks to Gaurav Nanda for mentoring and guiding us for everything.],
-  [id="references"\> References],
-  [https:\/\/docs.docker.com/get-started/],
-  [https:\/\/kubernetes.io/docs/concepts/],
-  [https:\/\/www.udemy.com/course/docker-and-kubernetes-the-complete-guide/],
-  [https:\/\/runnable.com/blog/9-common-dockerfile-mistakes],
-  [https:\/\/github.com/wsargent/docker-cheat-sheet],
+  [Blender 5.0 will come with new socket types for bundles and closures. This post will explain what they are, why they are important, and what we want to do with them going forward.],
+  [These two new concepts help us get closer to one of our primary objectives: allow building flexible and high level functionality using Geometry Nodes, that is, tools that can be used without the need to understand how everything works inside.],
+  [Bundles and closures are powerful tools for node group authors, enabling them to build simpler, more flexible tools. They also make it possible to build declarative systems using Geometry Nodes, opening up a whole new node group design paradigm.],
+  [Bundles are the simpler concept of the two. A bundle combines multiple items into one, allowing passing many items with a single link. They are also akin to “structs” in programming.],
+  [Combine Bundle and Separate Bundle nodes.],
+  [The two new nodes for dealing with bundles are the Combine Bundle and Separate Bundle nodes. They create a new bundle from an arbitrary number of items and split it up into separate items again respectively.],
+  [All Geometry Nodes types are allowed in bundles. That includes geometries, single values, fields, objects, and more. They can also be baked in the Bake node or simulation zone.],
+  [Imagine you have a node group generating a terrain by first generating a base mesh, then scattering some tree positions and then instancing the trees on those positions.],
+  [Terrain generation mockup.],
+  [While this node group allows customizing the tree density, it gives the user very limited control over how trees are distributed. Giving the user more control is difficult because the point distribution happens somewhere in the middle of the node group. So it can’t just be done before or after the terrain generation.],
+  [Closures solve this by allowing custom functionality to be passed into node groups. This is done by adding the new Evaluate Closure node in place of the distribute node. Then the closure has to be exposed as group input.],
+  [Terrain generation mockup with Evaluate Closure node.],
+  [When using the node group, one can now specify a custom distribution function using the new Closure Zone . What’s inside the zone is basically injected into the node group when it is evaluated. Note that the names of inputs and outputs of the closure zone have to match the names used in the Evaluate Closure node. More on that in the next section.],
+  [Closure zone.],
+  [Additional accompanying node groups can be built for the terrain generator for different tree scattering patterns. Those can be provided by the same author or by third parties which just implement the same interface.],
+  [Accompanying scattering node groups.],
+  [In practice, high level terrain generators should most likely come with some basic scattering features built-in, while allowing for more advanced customization using closures.],
+  [When an Evaluate Closure node is muted or no closure is connected to it, it automatically passes through values for inputs and outputs with the same name. This is very useful when the closure just is optional for the user.],
+  [Muted Evaluate Closure node.],
+  [One key feature of closure zones is that they can capture values that are passed into the zone from the outside. For example, the random tree scattering node group from before could look like in the image below. Note how the passed in density is captured and thus becomes part of the closure.],
+  [Closure zone capturing an input.],
+  [While closures offer many possibilities for building high level tools, that comes at the cost of more difficult debugging. That’s because you can’t simply evaluate the node tree from left to right; you may need to jump back and forth if closures are evaluated.],
+  [The main tooling we have so far is that viewer nodes and socket inspection are supported in closure zones. That works best when the closure is evaluated in a single place because then Blender knows exactly which context to inspect in the closure. If the closure is evaluated in multiple places, Blender currently picks one basically at random. More control over this may be added later.],
+  [As hinted at before, both closures and bundles use names to identify their inputs and outputs. If the names don’t match, there is an error. Generally, it is not possible to automatically rename the sockets because the corresponding nodes may be in entirely separate node groups.],
+  [Missing item warning.],
+  [However, in practice Blender can usually infer what the correct sockets should be by following links. If it is detected that two bundle or closure nodes are connected but have different signatures, a new icon to sync a node shows up. When clicking on it, the node will automatically be updated to match what is connected.],
+  [Sync button to update sockets.],
+  [The syncing happens automatically when linking such a node for the first time. If the node already has some sockets, those are never updated automatically as it is assumed that they are intentional and updating them might lose information.],
+  [Demonstrating the sync functionality.],
+  [Having bundles and closures in Geometry Nodes already helps a lot, but it also benefits a lot of future development. Here are some of the things that are in the pipeline already:],
+  [Currently, a major limitation of exposing control to node groups is that they can’t have curve mappings or color ramps as inputs. So, before closures, one always had to make a copy of the node group just to customize e.g. a color ramp.],
+  [Closures already lift this limitation because one can put the color ramp node into a closure to pass it into the node group. However, that is not very convenient, and it would be better if a widget could be available on the group node directly.],
+  [Luckily, these widgets can be treated as a closure directly. For example, a color ramp is a closure mapping a float to a color, and a curve mapping is a closure mapping a float to a new float. Therefore, these widgets can be used as “subtypes” of closure sockets. There is a work-in-progress patch already.],
+  [Experimental widget input.],
+  [Physics and other declarative systems benefit greatly from bundles, and for extra flexibility, also closures.],
+  [For physics simulations, one generally has to pass all the simulated entities and their constraints to a physics solver which then does the actual simulation. Until now, we didn’t have a proper way to package all that information in a way that we can pass around in Geometry Nodes. Now, bundles solve this because one can just put all information about the physics world into a (nested) bundle which is then acted on by the solver.],
+  [There is are ongoing experiments exploring how that can work in more detail.],
+  [Experimental physics integration.],
+  [Many features like repeat zones, bundles, closures or input widgets make sense outside of Geometry Nodes. There is ongoing work to make these features available in shading nodes by preprocessing the node tree internally and inlining all these more advanced features. This makes them work with all render engines with minor modifications.],
+  [This can also solve cases like having to copy a node group just to change the texture it uses. Additionally, it can also allow creating a bundle with related textures, like a PBR texture set.],
+  [The compositor should also support these features eventually, but we’ll likely add support there differently. Similar to Geometry Nodes, its evaluator should support these features out of the box without having to inline everything. The reason being that inlining does come with some limitations like the number of iterations in a repeat zone having to be constant under some circumstances.],
+  [Bundles and closures get a good step further on our journey to support building high level tools with Geometry Nodes that all users, regardless of proficiency level, can benefit from. It also opens up many opportunities for features that were very hard to implement before. I’m looking forward to seeing all the ways people will use this.],
+  [id="js-donation-box"\>],
 ),
   insert-map: (:),
-  word-count: 2707,
+  word-count: 1392,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -3493,60 +553,57 @@ docker push org/my-service:1.2.3 .],
 
 {
   #standard-article(
-  title: [Building a beautiful and clear map from massive, complex data],
+  title: [Retrospective: WBEZ's summer recommendations],
   author: [NPR Apps Blog],
   source-name: [NPR Apps Blog],
   images: (),
   paragraphs: (
-  [In early August, we were tying up loose ends on our visual narrative about wildfire risk around the country . I had just put the finishing touches on my fire return interval maps (more on this shortly) when I noticed a slight color discrepancy in the map. And then this happened.],
-  [Normal no longer exists — nor do several weeks of work.],
-  [I tried to reboot, but my computer never turned back on. And I lost a considerable amount of raw data that I hadn’t yet synced to the cloud. [facepalm] Luckily, my colleague Connie Hanzhang Jin was able to clean up the maps without the raw files and the project turned out great.],
-  [But now that it’s over, I want to retrace my steps and recreate this map. It might help someone else build beautiful raster base maps — and it will help me when I ask myself, in 6 months, “How did I do that again?”],
-  [In this blog, I will walk through my solutions to several vexing problems:],
-  [How can I do any sort of data transformation on a massive raster without overloading my machine?],
-  [How can I join my raster data with a separate CSV?],
-  [And as always…],
-  [How do I choose a color palette and legend that is …],
-  [clear without being sensationalized AND],
-  [divergent in color while also being accessible?],
-  [In cartography, there are always multiple ways to approach a problem, so if there are skills, tricks, or methods that I overlooked, please let me know by replying to this tweet .],
-  [id="step-0-get-the-data"\>Step 0: Get the data],
-  [A cornerstone of our reporting on this story is the idea that, prior to European colonization of the Americas, wildfires were commonplace in many surprising areas of the country. Most midwest grasslands burned at least once every ten years, something we see rarely now. Southeast pine forests burned at least every 50 years, often in the context of controlled burns performed by native tribes. By contrast, some areas that seem more fire-prone to a modern mind — like the area around Yellowstone National Park which famously burned for 5 months in 1988 — only burned every 40-300 years before the settlement of Europeans.],
-  [We know this in part thanks to by forensic research done by experts like Randy Swaty and his colleagues that build the LANDFIRE database . Swaty is an expert in understanding the historic, pre-European fire return intervals — the average number of years between wildfires — across the country. This data is not so easy to understand and can be tough to find. Swaty helped demystify it and point us in the right direction.],
-  [For those of you playing along at home, our map uses the 2016 Remap (found by clicking the “select a version” option). The fire return interval data — a shapefile showing regions, a csv with the data corresponding to keys, and a massive GeoTIFF raster with keys — is housed in the “Biophysical Settings” layer, so find that and select “CONUS”.],
-  [id="step-01-learn-what-the-data-mean"\>Step 0.1: Learn what the data mean],
-  [After some back and forth with Randy, I figured out that the pixel values in the GeoTIFF raster do not refer to the average number of years between fires (i.e., the fire return interval). Instead, they are unique codes for the biophysical setting (BPS) of the area, referring to the very specific vegetation and climate of a particular area before European expansion. All the different possible BPS (1,770 in all) have unique fire return intervals ranging from 1 to 10,000+ years — but those fire return values live in a separate csv that needs to be joined to the raster. For instance, here’s a few different entries in the CSV, and how they correspond on the map:],
-  [Map of South Florida’s biophysical settings, with a key, and the Keys, out of view.],
-  [id="step-1-downsample-massive-raster"\>Step 1: Downsample massive raster],
-  [Another wrinkle: This dataset is huge (more than 2GB compressed). The data I downloaded could produce a map with a level of detail that is extraordinarily high and unnecessarily sharp for a national view. If I tried to export the whole thing, the full-resolution map would be about 154,000 pixels wide — but I only needed it to be about 1,200 pixels wide for this project. It wasn’t worth all the time and processing required to work with this at its original resolution.],
-  [So instead, I needed to downsample the raster to get a more manageable dataset. There are a few ways to do this in QGIS, but the most simple way is to simply right-click on the layer and export your raster with a larger pixel-size, changing it from 30x30 per pixel to 1,000x1,000.],
-  [This reduced the width to about 4,600 pixels wide — large enough for any screen size needed. Here’s what the reduction of resolution looks like zoomed in, and out.],
-  [id="step-2-join-the-downsampled-raster-to-the-csv"\>Step 2: Join the downsampled raster to the CSV],
-  [Next, I had to join the resulting raster to the CSV to get a map of fire regimes, rather than regional biophysical settings. I found the “ reclassify raster by table ” function in the QGIS Processing Toolbox. Here’s how it works: A table is created, mapping bands of raster values to new values. For instance, here’s what a logarithmic scale would map out to:],
-  [In the above, for instance, line 3 is saying any value greater than 10 and less than or equal to 100 will be reclassified as 3.],
-  [This is exactly what I needed! However, that QGIS GUI forces you to enter each row of this table one by one. I had 1,700+ possible values. 🥵 🥵 🥵],
-  [Luckily, it’s possible to do this programmatically with python, and the docs show you the syntax for that . If you haven’t used python inside QGIS before, don’t sweat it! There’s a python console you can add to your QGIS window by going to Plugins -\> Python Console. The neat thing about QGIS is that each of the commands you choose in the GUI is essentially a python script you could run directly in the Python Console instead.],
-  [When you run a command in the GUI, checking the log tab will allow you to see how the parameters are formatted for a custom python script. Here’s how the parameters are organized for this algorithm, using the table example above:],
-  [The table variable looks scary and messy, but is simply all the values in the above table concatenated with commas. I took my 1700 values and their corresponding fire return interval, and created this string using excel. The table was huge, but in python, that didn’t really matter. You can find the full table here and the full script here .],
-  [id="step-3-pick-an-accessible-and-compelling-color-ramp"\>Step 3: Pick an accessible and compelling color ramp],
-  [While the range of years between fires in the LANDFIRE model is vast — from 1 (grasslands) to 10,000+ (Pacific Northwest conifer rainforests) — most places had fires at least every 50 years. So while I finally have a raster layer where each pixel is the average number of years between fires, the default visualized output isn’t meaningful yet.],
-  [Everything is purple, I guess?],
-  [So I got to work trying to create a color ramp. My goal was to make a map that conveys where fires were and were not, drawing your attention especially to how that differs from where you expect and do not expect to see fires.],
-  [The data has a tightly grouped distribution, with some extreme outliers, creating a challenge for picking breaks. So I applied a sort of human-centric modified logarithmic scale. 1 year is extremely frequent, a fact of life. 10 years is pretty frequent. 50-100 years means a human would see one fire in their lifetime. 100+ years, for our purposes, corresponds with a “long time.” (For us humans, 100 years isn’t particularly different from 1,000 or 10,000 years.) Anthropocentric? Yes. Clear for our (human) users? I hope so.],
-  [After getting a framework for the breaks, I had to pick a color ramp. Intuitively the color ramp of red to green communicates the range of “frequent danger from fire” to “relative safety from fire”. But, I wanted the ramp to be color blind-friendly , which can be a challenge with red-to-green “diverging” ramps. So I tweaked and tweaked and tweaked until I found one I was happy with.],
-  [A progression of color ramp iterations],
-  [From a colorblind-friendly perspective, the result isn’t perfect, but I hope that it gets it pretty close. Since most of the map’s area falls in the range of 0 to 100 years, I decided to allow the color ramp to return past that point towards a saturated green. Thus, in almost all cases, for someone with color blindness, darker means more fire and lighter means less fire.],
-  [Here’s a simulation of what the map looks like for someone experiencing Deuteranopia, the most common form of color blindness.],
-  [id="step-4-add-a-hillshade"\>Step 4: Add a hillshade],
-  [I also applied a light hillshade. This helps add some context to the map, like how fire patterns follow mountains and rivers. And frankly, it just looks really pretty. There are many ways to do this, from bringing a raw DEM to QGIS (don’t forget about the scale attribute though ) to using the more complex but always rich hillshade via Blender .],
-  [But since I only needed a fairly coarse continental U. S. map, I could use a premade shaded relief layer — Natural Earth’s 1:10m Shaded Relief — rather than make my own. . (Natural Earth has a server migration in process as I write this, so if that link doesn’t work, the full list of geo files can be found here .)],
-  [To get the hillshade to be visible from under the color ramp map, I have to blend the two together in QGIS. In the color ramp map, I set the “blending mode” setting to “multiply” and didn’t change any other settings.],
-  [See what a difference this makes:],
-  [With this in place, our map is done!],
-  [To see how this map fits into the larger narrative of our fire-prone continent, read our story .],
+  [The News Apps team builds tools for our own use, but we exist in a larger ecosystem of people who use, adapt, and improve those tools–both inside public media and outside. This year, we’re working on initiatives to collaborate more closely with our Member stations, and so we’re pleased to present this guest post from WBEZ, which has been using NPR’s toolset for their big digital projects. If you have a similar story, we’d love to hear from you. Drop us a note at nprapps\@npr.org .],
+  [I’m Paula Friedrich, a digital producer at WBEZ in Chicago. I recently built WBEZ’s crowdsourced summer activity guide , which is a filterable list of 400 recommendations we gathered from our audience through a Google Form.],
+  [The project was inspired by conversations reporter Natalie Moore and Morning Shift producer Dan Tucker had on Twitter about how many “Best of Chicago” lists gloss over the South and West Sides. In those threads, people eagerly recommended their favorite places in those parts of town, which sparked the idea to make a summer activity guide built in collaboration with our audience.],
+  [id="step-one-framing-the-ask"\>Step One: Framing the ask],
+  [When I pitched this project, my editor Shawn Allee had the smart insight that we were essentially offering the audience two products: the experience of making something with us and a tool for summertime inspiration.],
+  [A small group of reporters, producers and editors from across the organization helped me come up with a prompt that would make the act of contributing interesting and delightful: Mad Libs style fill in the blanks.],
+  [I used Google Forms to collect submissions because it’s free and because it automatically dumps your responses into a Google Sheet. The latter is important because it’s ultimately how I would end up pulling the submissions into the app, thanks to functionality built into NPR Visuals’ Interactive Template . (The Interactive Template is a tool that neatly sets up the foundation of an interactive project, a common workflow in newsrooms .)],
+  [However, Google Forms also offered an architectural challenge, because it doesn’t offer the kind of Mad Libs, multiple fill-in-the-blank answer option I needed. In order to make sure I’d get the kind of answers we wanted, I recruited some members of WBEZ’s Sounding Board — a group of audience members who volunteer to give us feedback on our work — to test a few different iterations of the form. This helped me figure out how best to set it up, taking the form from something like this:],
+  [To this:],
+  [I used a Google’s header module for the question and left the actual question space blank. This allowed me to offer examples in a way that wasn’t visually confusing and didn’t leave users thinking they could click into the blanks.],
+  [Here’s a template you can use if you’d like to do a similar fill-in-the-blank project],
+  [(That said, if I were to do this project again, I’d probably make a few changes, for reasons I’ll get into below.)],
+  [id="step-two-decide-how-to-present-the-data"\>Step Two: Decide how to present the data],
+  [We got responses from some 300 people, each of whom responded to 3 prompts, totalling about 900 submissions.],
+  [Given the large number, we knew we wanted to design a way for our audience a way to explore the submissions on their own. I looked at a few different ways others had approached this concept, including NPR’s Book Concierge and Eater’s maps . I also paid close attention to the filtering on shopping sites and read a few blog posts about design patterns for filtering.],
+  [These are some of the design ideas we decided against:],
+  [Using a map as the main UI. It was important to showcase the goofy, sometimes poetic human nature of what we had to offer rather than hide it behind a map marker.],
+  [Using the “It’s a \_\_\_\_\_ day in Chicago” piece of the prompt as a search mechanism. There was no guarantee that someone who found this page would be familiar with our original crowdsourcing campaign, which would make this concept difficult to understand and use. Additionally, we wanted users to be able to see all their filtering options, rather than having to take a stab in the dark. These parts of the submissions ended up informing the filters we added in the final iteration.],
+  [id="step-three-prepare-the-user-generated-data-publication"\>Step Three: Prepare the user-generated data publication],
+  [Editing and cleaning up these responses was the most labor-intensive part of the process.],
+  [There were three prompts, meaning we got up to three responses from each person. Each response filled in three blanks: the adjective blank, the activity blank and the place blank. Each submission needed to be its own row and each blank needed to be in its own column.],
+  [To start, all three responses were in one row per person. Despite my best efforts, some responses came in as full sentences, while others came in as lists separated by semicolons or commas.],
+  [Since most responses were in sentence format, I used regex formulas to split up each responses.],
+  [I made three new sheets, each containing the responses to one of the prompts. From there, regex formulas split each response into three columns: adjective, activity and place. Here’s an example:],
+  [The formula in column H ( =regexextract(B1, "It's(.\*)in Chicago") ) isolates the adjectives. The “activity” and “place” columns contain similar formulas which isolate the activity and the place from the sentence.],
+  [This got most of the responses into the correct columns. For submissions that were separated by commas or semicolons, I manually added the correct language so that the formula would split them up correctly. Some other hiccups: curly quotes and words with “at” in the middle, like “Garfield Park Conserv at ory.”],
+  [Since we had three different prompts, this process was repeated in a separate sheet for each prompt. Once each sheet was cleaned, I combined those into once more sheet called “all\_recs”.],
+  [It was important to keep all these steps in separate sheets so I could always refer back to the original sheet with original responses, in case I made a mistake somewhere down the line.],
+  [id="step-four-lots-and-lots-of-manual-editing"\>Step Four: Lots and lots of manual editing],
+  [Once everything was split up into different columns and rows, I made one last sheet to start editing out:],
+  [Suggestions that were amazing but that we probably shouldn’t actually encourage anyone to do, like: ‘You should hop the fence at the Grant Park Band Shell, focus and give your best “I’m off the deep eeeend..watch as I dive in… I’ll never reach the grooooound…”’],
+  [Anything that seemed too self-promotional or like obvious advertising],
+  [One-time events],
+  [Once we decided which ones to use, I added columns for addresses and latitude and longitude to power a map component in the design.],
+  [And then finally: copy edit and fact check every entry.],
+  [id="step-five-putting-it-all-together-with-vue"\>Step Five: Putting it all together with Vue],
+  [At this point, I had worked through a few edits on wireframes, done some very basic user testing with members of our Sounding Board, and had a pretty good idea how the final product would look. On projects like this, I’m far more confident when I’m designing the thing than when I’m writing the code that’ll make it function. Tools like the Interactive Template are a big help when it comes to understanding how to set up and deploy a project. Another tool that helped ease the development of this project was Vue , a component framework.],
+  [The basic concept of a framework like Vue: You describe how you want your page to look once, including variables for elements that may change, and then your page will update when you update variables in your JavaScript code.],
+  [With Vue, developing a filterable list felt magically fast, because I didn’t have to worry about getting user input or hiding cards — Vue took care of that for me. I just had to write my template and a little bit of logic to filter my list.],
+  [id="step-six-next-steps-and-more-platforms"\>Step Six: Next steps and more platforms],
+  [The response from our audience has been pretty good: Engaged time on Chartbeat is more than double that of our average story and we’re getting double the typical conversion rate for newsletter subscribers on this story.],
+  [There’s a lot of ways to improve and iterate on this project. While we got submissions from all over the city, certain areas were still underrepresented. With a few tweaks, the code for the presentation becomes a pretty solid template, so if we were to do this again, I’d be able to spend less time on the mechanics and design and spend more effort and attention on gathering and categorizing submissions. For example, I’d consider spending some time asking for recommendations in person in the areas that were underrepresented in this iteration. I’d also include fewer prompts on the initial form, instead asking folks to give us an insider tip to go along with their recommendation.],
+  [There are also ways to offer this information to our audience with a less heavy design and development lift, so we’ll be experimenting with different platforms and formats throughout the summer. Some ideas we’re playing with: listicles featuring interesting groupings (all the ice cream spots that were recommended, for example), listicles of submissions we had to edit out of the first piece (like one-time events , Instagram stories and live reads of suggestions on air between newscasts.],
 ),
   insert-map: (:),
-  word-count: 1716,
+  word-count: 1556,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -3555,240 +612,177 @@ docker push org/my-service:1.2.3 .],
 
 {
   #standard-article(
-  title: [VWO Editor: Seamless DOM Manipulations for React-based Websites],
-  author: [Nitish Mittal],
+  title: [Introducing xaa.dev: A Playground for Cross App Access],
+  author: [Okta Developer Blog],
+  source-name: [Okta Developer Blog],
+  images: (),
+  paragraphs: (
+  [AI agents are quickly becoming part of everyday enterprise development. They summarize emails, coordinate calendars, query internal systems, and automate workflows across tools.],
+  [But once an AI agent needs to access an enterprise application on behalf of a user , things get complicated.],
+  [How do you securely let an AI-powered app act for a user without exposing credentials, spamming consent prompts, or losing administrative control?],
+  [This is the problem Cross App Access (XAA) is designed to solve.],
+  [Today, we’re introducing xaa.dev , a free, open playground that lets you explore Cross App Access end-to-end. No local setup. No infrastructure to provision. Just a working environment where you can see the protocol in action.],
+  [Note: xaa.dev is currently in beta. We’re actively developing new features for the next release, and your feedback helps shape what comes next.],
+  [Table of Contents],
+  [What is Cross App Access?],
+  [The problem: testing XAA is hard],
+  [What you can do on xaa.dev],
+  [Resource MCP Server],
+  [Bring your own Requesting App],
+  [How to get started],
+  [Why we built a testing site for cross app access],
+  [Inspect the XAA flow],
+  [Learn more],
+  [id="what-is-cross-app-access"\>What is Cross App Access?],
+  [Cross App Access refers to a typical enterprise pattern: one application accesses another application’s resources on behalf of a user.],
+  [For example:],
+  [An internal AI assistant fetching updates from a project management system],
+  [A workflow engine booking meetings through a calendar API],
+  [An agent querying internal data sources to complete a task],
+  [Traditionally, OAuth consent flows handle this. That approach works well for consumer-based apps, but it creates friction in enterprise environments where organizations require workforce oversight:],
+  [Applications and their access levels are centrally managed],
+  [IT teams need visibility into trust relationships],
+  [Access must be revocable without user involvement],
+  [Cross App Access shifts responsibility from end users to the enterprise identity layer.],
+  [Instead of prompting users for consent, the Identity Provider (IdP) issues a signed identity assertion called an ID-JAG (Identity JWT Authorization Grant) . This assertion cryptographically represents the user and the requesting application. Resource applications trust the IdP’s assertion and issue access accordingly.],
+  [The result:],
+  [No interactive consent screens making application access seamless for employees],
+  [Clear, auditable trust boundaries],
+  [Complete administrative control over app-to-app access],
+  [For a deeper dive into why this matters for enterprise AI, read more about Cross App Access in this post:],
+  [Manage user and non-human identities, including AI in the enterprise with Cross App Access],
+  [id="the-problem-testing-xaa-is-hard"\>The problem: testing XAA is hard],
+  [XAA is built on an emerging OAuth extension called the Identity Assertion JWT Authorization Grant – an IETF draft that Okta, along with public and industry contributors, has been actively contributing to. It’s powerful, but it’s also new, and new protocols need experimentation.],
+  [Here’s the challenge: to test XAA locally, you’d need to spin up:],
+  [An Identity Provider (IdP)],
+  [An Authorization Server for the resource application],
+  [The resource API itself],
+  [A requesting application (the agent or client app)],
+  [That’s hours (or days) of configuration before you can even see a single token exchange. Most developers give up before getting to the interesting part.],
+  [xaa.dev changes that.],
+  [We pre-configured all the components so you can focus on understanding the flow, not debugging dev environments. Go from zero to a working XAA token exchange in under 60 seconds.],
+  [Launch the playground . It’s free and requires no signup.],
+  [id="what-you-can-do-on-xaadev"\>What you can do on xaa.dev],
+  [The playground gives you hands-on access to every role in the Cross App Access flow:],
+  [id="requesting-app"\>Requesting App],
+  [Step into the shoes of an AI agent or client application. Authenticate a user, request an ID-JAG from the IdP, and exchange it for an access token at the resource server.],
+  [id="resource-app"\>Resource App],
+  [See the other side of the transaction. Watch how a resource server validates the identity assertion, verifies the trust relationship, and issues scoped access tokens.],
+  [id="identity-provider"\>Identity Provider],
+  [We’ve built a simulated IdP with pre-configured test users. Log in, see how ID-JAGs are minted, and inspect the cryptographic claims that make XAA secure.],
+  [id="resource-mcp-server"\>Resource MCP Server],
+  [Connect your AI agents using the Model Context Protocol (MCP). The playground provides a ready-to-use MCP server that acts as a resource application, letting you test how AI agents can securely access protected resources through the Cross App Access flow.],
+  [id="bring-your-own-requesting-app"\>Bring your own Requesting App],
+  [The built-in Requesting App is great for learning, but the real power comes when you test with your own application, whether it’s a traditional app or an MCP client. Register a client on the playground, grab the configuration, and integrate it into your local app. This lets you validate your XAA implementation against a working IdP and Resource App without spinning up your own infrastructure. The playground documentation walks you through the setup step-by-step.],
+  [id="how-to-get-started"\>How to get started],
+  [Getting started with xaa.dev takes less than a minute:],
+  [Step 1: Open the playground],
+  [Visit xaa.dev . No account required.],
+  [Step 2: Explore the components],
+  [The playground has three components (Requesting App, Resource App, and Identity Provider), each with its own URL. Visit any component to see its configuration and understand how it participates in the XAA flow.],
+  [Step 3: Follow the guided flow],
+  [Walk through the four steps of the XAA flow: User Authentication (SSO), Token Exchange, Access Token Request, and Access Resource. Inspect the requests and responses at each step to see exactly how XAA works under the hood.],
+  [That’s it. No local tools installations, Docker containers, environment variables, or CORS headaches.],
+  [Watch this walkthrough video of the playground if you’d like a guided tour:],
+  [id="why-we-built-a-testing-site-for-cross-app-access"\>Why we built a testing site for cross app access],
+  [XAA is built on an emerging IETF specification, the Identity Assertion JWT Authorization Grant. As enterprise AI adoption accelerates, there’s a clear need: developers want to understand XAA, but the barrier to entry is too high.],
+  [xaa.dev lowers the barrier. It helps you:],
+  [Learn faster – See the protocol in action before writing any code],
+  [Build confidently – Understand exactly what tokens to expect and validate],
+  [Experiment safely – Test edge cases without affecting production systems],
+  [id="inspect-the-xaa-flow"\>Inspect the XAA flow],
+  [XAA is how enterprise applications will securely connect in an AI-first world. Whether you’re building agents, integrating SaaS tools, or just curious about modern OAuth patterns, xaa.dev gives you a risk-free environment to learn. Check it out and let us know how it works for you!],
+  [id="learn-more"\>Learn more],
+  [Ready to go deeper? Check out these resources:],
+  [Checkout Cross App Access Integration in Okta – Securing AI-driven access together],
+  [Build Secure Agent-to-App Connections with Cross App Access – Hands-on implementation guide],
+  [Identity Assertion JWT Authorization Grant (IETF Draft) – The specification behind XAA],
+  [Have questions or feedback? Reach out to us on Twitter , join the conversation on the Okta Developer Forums , or drop a comment below. We’re actively improving xaa.dev based on developer input – your feedback shapes what we build next.],
+),
+  insert-map: (:),
+  word-count: 1166,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+}
+
+{
+  #standard-article(
+  title: [Animations in VueJS],
+  author: [Ashish Bardhan],
   source-name: [Wingify Engineering],
   images: (),
   paragraphs: (
-  [id="vwo-editor-seamless-dom-manipulations-for-react-based-websites"\> VWO Editor: Seamless DOM Manipulations for React-based Websites],
-  [VWO Editor empowers users to make "what-you-see-is-what-you-get" (WYSIWYG) edits directly on website DOM structures. Historically, this powerful capability posed significant challenges for React-based websites. The core problem stemmed from the editor directly altering the visible web page (the actual DOM), causing a fundamental mismatch with React's internal representation of the page (its Virtual DOM, managed by its Fiber tree). This discrepancy often led to errors when React, during routine state updates or user interactions, encountered outdated or deleted elements in the actual DOM, resulting in broken user experiences and site breakage.],
-  [style="text-align: center; margin: 20px;"\>],
-  [id="the-engineering-challenge-bridging-the-gap-between-the-real-and-virtual-dom"\> The engineering challenge: Bridging the gap between the real and virtual DOM],
-  [Consider a scenario where the VWO editor rearranges an element. If a subsequent user action triggered a React state update, the site would break because React's Virtual DOM still held the original, now incorrect, element positions. The fundamental challenge was to ensure that any direct DOM modification made by the VWO editor was also accurately reflected in React's internal Fiber tree.],
-  [id="vwos-innovative-solution-direct-fiber-control"\> VWO's Innovative solution: Direct fiber control],
-  [Our engineering team devised a sophisticated solution for this problem: directly controlling React's internal Fiber architecture. Instead of just altering the visible DOM, VWO's editor now meticulously updates the corresponding React Fiber nodes.
-For any DOM node, React maintains a connection to its internal Fiber node, often through a dynamically named property (e.g., \_\_reactFiber\$tpe8z9r5ev). VWO leveraged this connection. When the editor performs an operation like Edit HTML (replacing an old DOM node with a new one), it doesn't just swap the elements in the DOM. It also:],
-  [Identifies the Fiber node associated with the old DOM element.],
-  [Updates the stateNode property within that Fiber to point to the newly inserted DOM node.],
-  [Crucially, this update is also applied to the alternate Fiber, which is React's "work-in-progress" tree, ensuring consistency during reconciliation.],
-  [Here's a code snippet illustrating how VWO updates the stateNode:],
-  [class="gatsby-highlight"\> \/\/ Assuming 'fiberKey' is dynamically determined (e.g., '\_\_reactFiber\$tpe8z9r5ev') 
- \/\/ oldNode[fiberKey] holds the reference to the Fiber associated with the old DOM node. 
- const fiberToUpdate = oldNode [ fiberKey ] ;],
-  [\/\/ Ensure the fiber exists and update its stateNode to point to the new DOM node. 
- if ( fiberToUpdate ) { 
- fiberToUpdate . stateNode = newDomNode ;],
-  [\/\/ Additionally, if React has an 'alternate' fiber (for work-in-progress), 
- \/\/ its stateNode must also be updated to maintain consistency during reconciliation. 
- if ( fiberToUpdate . alternate ) { 
- fiberToUpdate . alternate . stateNode = newDomNode ; 
+  [id="problem-statement---why-animation"\> Problem Statement - Why Animation?],
+  [Website UI Development is not about making things beautiful. It’s all about website performance and customer experience. According to studies from Amazon and Walmart , they discovered a drop of conversion rate/revenue on increasing the user interaction time as the user feels interrupted during the interaction. Another study discovered that a customised animated loader made a higher wait time and lower abandon rate compared to generic one as the user felt more interactive with the former loader.],
+  [In a nutshell, the animation of your application should be more interactive and engaging for the user, kind of like a cinema booking application and a form inside a location tag for example.],
+  [id="what-is-vuejs"\> What is VueJS?],
+  [For those who are familiar with Angular and ReactJS , VueJS is a progressive JavaScript framework that supports some features:],
+  [A virtual DOM],
+  [Computed properties],
+  [Reactive components],
+  [Conditional rendering … to name a few],
+  [Some of these features are quite similar to what Angular and ReactJS already provide. However, you can check its comparison with other frameworks .],
+  [id="todo-list-example"\> Todo List Example],
+  [Let’s take a simple example of Todo list , containing a list of tasks with the functionality of adding/removing a task to/from the list.],
+  [This will be our view in HTML file, assuming that you’ve included VueJS in a script tag already.],
+  [Meanwhile, our JS file looks like this.],
+  [class="gatsby-highlight"\> var app = new Vue ( { 
+ el : '\#app' , 
+ data : { 
+ task : 'my first task' , 
+ todoList : \[ \] 
+ } , 
+ methods : { 
+ addTaskToList : function ( ) { 
+ this . todoList . push ( this . task ) ; 
+ } , 
+ removeTaskFromList : function ( index ) { 
+ this . todoList . splice ( index , 1 ) ; 
  } 
  } 
- \/\/ Note: newDomNode[fiberKey] = oldNode[fiberKey]; is a crucial step if the new DOM node 
- \/\/ is not a React-managed element initially. This ensures the new DOM node 
- \/\/ correctly points back to its Fiber. 
- \/\/ For a ReplaceWith, the new DOM node might be entirely new to React's world. 
- \/\/ This line ensures it gains the correct Fiber reference. 
-newDomNode [ fiberKey ] = oldNode [ fiberKey ] ;],
-  [Similarly, for Rearrange operation, which simply changes an element's position, VWO's solution extends to carefully updating the sibling, child, and return (parent) properties within the relevant Fiber nodes to reflect the element's new position. These changes are also mirrored in the alternate fibers.],
-  [Here's a code snippet showing how VWO handles changes in the old position during a Rearrange operation:],
-  [class="gatsby-highlight"\> \/\/ When an element (nodeFiber) is moved, its previous sibling's 'sibling' pointer 
- \/\/ needs to bypass it and point to its next sibling. 
- if ( nodePrevElementSiblingFiber ) { 
- nodePrevElementSiblingFiber . sibling = nodeNextElementSiblingFiber ; 
- } else { 
- \/\/ If there was no previous sibling, the node was the first child. 
- \/\/ So, the parent's 'child' pointer needs to point to the next sibling. 
- nodeParentFiber . child = nodeNextElementSiblingFiber ; 
+ } ) ;],
+  [The code itself is self-explanatory. It simply adds a task inside the todoList using addTaskToList method and removes from the list using removeTaskFromList .],
+  [The event binding and loops syntax in the HTML looks similar to what you see in AngularJS . However, the syntax of variables and methods is different in VueJS, which reminds you of private variables and public methods you used to code in C++ . You can view the demo .],
+  [Let’s add more interaction in this. A confirmation pop-up should appear with OK and Cancel options. Regardless of the option chosen, the pop-up should be closed later on.],
+  [In HTML , let’s modify the list element],
+  [And add a new pop-up element],
+  [Meanwhile in JS , initialize new data variables inside],
+  [And also, add some methods],
+  [class="gatsby-highlight"\> methods : { 
+ onRemoveTask : function ( index ) { 
+ this . isPopupOpen = true ; 
+ this . currentIndex = index ; 
+ } , 
+ confirmRemove : function ( ) { 
+ this . removeTaskFromList ( this . currentIndex ) ; 
+ this . isPopupOpen = false ; 
+ } , 
+ cancelRemove : function ( ) { 
+ this . isPopupOpen = false ; 
+ } 
  }],
-  [\/\/ Ensure changes are mirrored in the alternate fibers 
- if ( nodePrevElementSiblingFiber && nodePrevElementSiblingFiber . alternate ) { 
- nodePrevElementSiblingFiber . alternate . sibling = nodeNextElementSiblingFiber ; 
- } 
- if ( nodeParentFiber . alternate ) { 
- nodeParentFiber . alternate . child = nodeNextElementSiblingFiber ; 
+  [Let’s add some animation into it.],
+  [For the fading-in/out the pop-up, you need to wrap our pop-up inside transition tag.],
+  [This element takes care of the transition logic. You don’t need to bother when to start or stop transition. All you’ve to mention is what kind of transition you want to see and for how long. This can be done using some CSS classes provided by VueJS.],
+  [.fade-enter, .fade-leave-to { 
+ opacity : 0 ; 
  }],
-  [And here's how VWO handles changes in the new position:],
-  [class="gatsby-highlight"\> \/\/ When moving nodeFiber to a new position after targetPreviousElementSiblingFiber: 
- if ( targetPreviousElementSiblingFiber ) { 
- targetPreviousElementSiblingFiber . sibling = nodeFiber ; 
- } else { 
- \/\/ If no previous sibling at the target, nodeFiber becomes the first child. 
- targetParentFiber . child = nodeFiber ; 
- } 
-nodeFiber . sibling = targetFiber ; \/\/ nodeFiber's sibling becomes the target (the element it was moved before) 
-nodeFiber . return = targetParentFiber ; \/\/ nodeFiber's parent becomes the target's parent],
-  [\/\/ Ensure changes are mirrored in the alternate fibers 
- if ( targetPreviousElementSiblingFiber && targetPreviousElementSiblingFiber . alternate ) { 
- targetPreviousElementSiblingFiber . alternate . sibling = nodeFiber ; 
- } 
- if ( targetParentFiber . alternate ) { 
- targetParentFiber . alternate . child = nodeFiber ; 
- } 
- if ( nodeFiber . alternate ) { 
- nodeFiber . alternate . sibling = targetFiber ; 
- nodeFiber . alternate . return = targetParentFiber ; 
+  [Note: The fade prefix used in this class should match the name attribute of the transition component.],
+  [For blurring the form and the list elements once the pop-up appears, they should be wrapped inside a contained conditionally bounded using v-bind attribute.],
+  [And add the required CSS],
+  [.disabled { 
+ filter : blur ( 2px ) ; 
+ opacity : 0.4 ; 
+ pointer-events : none ; \/\\/ This makes sure that nothing else is clicked other than pop-up options
  }],
-  [id="seamless-optimization-the-power-of-vwos-react-integration"\> Seamless Optimization: The Power of VWO's React Integration],
-  [VWO Editor now seamlessly integrates with React-based websites by intelligently interfacing with React’s internal mechanisms. This advanced engineering ensures safe and reliable DOM modifications, preventing site breakage and preserving application integrity. Users can confidently experiment and optimize experiences without disrupting the underlying React framework. While direct DOM manipulation is generally an anti-pattern in typical React development, it is essential for external WYSIWYG editors. This innovation empowers VWO users to optimize their React websites with confidence and efficiency.],
+  [You can check the complete code and view demo .],
+  [id="advantages"\> Advantages],
+  [This is how you can create applications and make animations in more simpler and semantic way. However, you must have intermediate knowledge of HTML , CSS and JavaScript . If you think VueJS is promising, go ahead and try it out. There is much more that you will love to learn about. Check out the official documentation .],
 ),
   insert-map: (:),
-  word-count: 905,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-  #pull-quote([stateNode = newDomNode ;    \/\/ Additionally, if React has an 'alternate' fiber (for work-in-progress),   \/\/ its stateNode must also be updated to maintain consistency during reconciliation.], [Nitish Mittal])
-
-}
-
-{
-  #standard-article(
-  title: [Dynamic CDN],
-  author: [Ankit Jain],
-  source-name: [Wingify Engineering],
-  images: (),
-  paragraphs: (
-  [We, at Wingify, handle not just our own traffic, but also the traffic of],
-  [major websites such as Microsoft , AMD , Groupon , and WWF that implement],
-  [Visual Website Optimizer (VWO) for their website optimization. VWO allows],
-  [users to A/B test their websites and optimize conversions. With an intuitive],
-  [WYSIWYG editor, you can easily make changes to your website and create multiple],
-  [variations you can A/B test. When a visitor lands on your website, VWO selects],
-  [one of the variations created in the running campaign(s) and the JavaScript],
-  [library does the required modifications to generate the selected variation],
-  [based on the URL visited seen by the visitor. Furthermore, VWO collects],
-  [analytics data for every visitor interaction with the website and generates],
-  [detailed reports to help you understand your audience behavior and provide],
-  [deeper insight of your business results.],
-  [Here is a very high-level overview of what goes on behind the scenes:],
-  [style="text-align: center; margin: 5px;"\>],
-  [id="how-it-started"\> How it started],
-  [Back in the days, we deployed one server in the United States that had the
-standard LAMP stack running on it. The server stored all changes made to a
-website using VWO app, served our static JS library, collected analytics data,
-captured visitor data, and saved it in a MySQL database.],
-  [style="text-align: center; margin: 5px;"\>],
-  [This implementation worked perfectly for us initially, when we were serving a
-limited number of users. However, as our user base kept growing, we had to
-deploy additional Load Balancers and Varnish cache servers (each having 32GB
-of RAM and we had 8 such servers to meet our requirements) to make sure that
-we cache the content for every requested URL and serve back the content in the
-least possible time.],
-  [style="text-align: center; margin: 5px;"\>],
-  [Gradually, we started using these servers only for serving JS settings and
-collecting analytics data, and started using Amazon's CloudFront CDN for
-serving static JS library.],
-  [id="issues-we-faced"\> Issues we faced],
-  [This worked great for a while till we hit our traffic to more than 1k requests
-per sec. With so much of traffic coming in and the increasing number of unique
-URLs being tested, the system started failing. We experienced frequent cache
-misses and Varnish required more RAM to cope up with the new requirements. We
-knew we had hit the bottom-end there and quickly realized that it was time for
-us to stop everything and get our thinking caps back on to redesign the
-architecture. We now needed a scalable system that was easier to maintain, and
-would cater to the needs of our users from various geo locations.],
-  [id="the-new-requirements"\> The new requirements],
-  [Today, VWO uses a Dynamic CDN built in-house that can cater to users based in
-any part of the world. The current implementation offers us with the following
-advantages in comparison with other available CDNs:],
-  [Capability of handling almost any amount of requests at average response
-times of 50ms],
-  [Handles 10k+ request/sec per node (8GB RAM). We have benchmarked this system
-to handle 50k requests/sec per node in our current production scenario],
-  [100% uptime],
-  [Improved response time and data acquisition as the servers are closer to the
-user, thus minimizing the latency and increasing the chances of successful
-delivery of data],
-  [Considerable cost savings as compared to the previous system],
-  [Freedom to add new nodes without any dependencies on other nodes],
-  [id="implementation-challenges-and-technicalities"\> Implementation challenges and technicalities],
-  [The core issue we had to resolve was to avoid sending the same response for all
-the requests coming from a domain or a particular account. In the old
-implementation, we were serving JSON for all the campaigns running in an
-account, irrespective of a campaign running on that URL. This loaded
-unnecessary JS code, which might not be useful for a particular URL, thereby
-increasing load time of the website. We knew how page-load time is crucial for
-online businesses and how it directly impacts their revenue. In the marketing
-world, the users are less likely to make purchases from a slow loading website
-as compared to a fast loading website.],
-  [style="text-align: center; margin: 5px;"\>],
-  [It is important to make sure that we only serve relevant content based on the
-URL of the page. There are two ways to do this:],
-  [Cache JSON for all the URLs and use cache like Varnish (the old system).],
-  [Cache each campaign running in an account and then build/combine the settings
-dynamically for each URL. This approach is the fastest possible way of
-implementation with least amount of resources.],
-  [With the approach identified, we started looking for nodes that could do
-everything for us - generate dynamic JSON on the basis of request, serve static
-JS library, and handle data acquisition. Another challenge was to make these
-nodes a part of distributed system that spreads across different geographies,
-with no dependency on each other while making sure that the request is served
-from the closest location instead of nodes only in the US. We had written a
-blog post earlier to explain this to our customers. Read it here .],
-  [style="text-align: center; margin: 5px;"\>],
-  [OpenResty (aka. ngx\_openresty) our current workhorse, is a full-fledged web
-application server created by bundling the standard Nginx core with different
- 3rd-party Nginx modules and their external dependencies. It also bundles Lua
-modules to allow writing URL handlers in Lua, and the Lua code runs within the
-web server.],
-  [From 1 server running Apache + PHP to multiple nodes involving Nginx (load
-balancer) -\> Varnish (cache) -\> Apache + PHP (for cache miss + data
-collection), to the current system where each node in itself is capable of
-handling all types of requests. We serve our static JS library, JSON settings
-for every campaign and also use these servers for analytics data acquisition.],
-  [The following section describes briefly the new architecture of our CDN and how
-VWO servers handle requests:],
-  [style="text-align: center; margin: 5px;"\>],
-  [We use Nginx-Lua Shared Dictionary , an in-memory
-store shared among all the Nginx worker processes to store campaign specific
-data. Memcached is used as the first fallback if we have to restart the
-OpenResty server (it resets the shared dictionary). Our second fallback is
-our central MySQL database. If any request fails at any level, [the system]
-fetches it from the lower layer and responses are saved in all the above
-levels to make them available for the next request.],
-  [Once the request hits our server to fetch JSON for the campaigns running on
-a webpage, VWO runs a regex match for the requested URL with the list of URL
-regex patterns stored in the Nginx-Lua shared dictionary (key being Account
-ID, O(1) lookup, FAST!). This returns the list of campaign IDs valid for the
-requested URL. All the regex patterns are compiled and cached in
-worker-process level and shared among all requests.],
-  [Next, VWO looks up for the campaign IDs (returned after matching the
-requested URL) in the Nginx-Lua shared dictionary, with Account ID and
-Campaign ID as key (again an O(1) lookup). This returns the settings for all
-campaigns, which are then combined and sent with some additional data in
-response based on requests such as geo-location data, 3rd party integrations
-specific code, etc. We ensure that the caching layer does not have stale
-data and is updated within a few milliseconds. This offers us advantage in
-terms of validation time taken by most CDNs available.],
-  [To ensure that the request is served from the closest server to the visitor,
-we use managed DNS services from DynECT that keeps a check on the response
-times from various POPs and replies with the best possible server IPs (both
-in terms of health and distance). This helps us ensure a failsafe delivery
-network.],
-  [To ensure that the system captures analytics data, all data related to
-visitors, conversions and heatmaps is sent to these servers. We use
-Openresty with Lua for collecting all incoming data. All the data received
-at Openresty end is pushed to a Redis server running on all these machines.
-The Redis server writes the data as fast as possible, thereby reducing the
-chance of data loss. Next, we move data from the Redis servers to central
-RabbitMQ. This incoming data is then used by multiple consumers in various
-ways and stored at multiple places for different purposes. You can check our
-previous post Scaling with Queues to understand more about our data
-acquisition setup.],
-  [As our customers keep growing and our traffic keeps growing, we will be able to
-judge better about our system, how well it scales and what problems it has. And
-as VWO grows and becomes a better and better, we will keep working on our
-current infrastructure to improve it and adjust it for our needs. We would like
-to thank agentzh (YichunZhang) for building OpenResty and for helping us
-out whenever we were stuck with our implementation.],
-  [We work in a dynamic environment where we collaborate and work towards
-architecting scalable and fault-tolerant systems like these. If these kind of
-problems and challenges interest you, we will be happy to work with you. We
-are hiring!],
-),
-  insert-map: (:),
-  word-count: 1510,
+  word-count: 814,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -3797,16 +791,16 @@ are hiring!],
 
 {
   #standard-article(
-  title: [What makes a great photo editing intern (Apply now for fall 2018!)],
+  title: [What makes a great photo editing intern (Apply now for Winter/spring 2017!)],
   author: [NPR Apps Blog],
   source-name: [NPR Apps Blog],
   images: (),
   paragraphs: (
   [This is not your standard photo internship!],
   [This internship is an opportunity to learn more about the world of photo editing. Our goal isn’t to make you into a photo editor; we view this internship as a chance for you to understand what it is like to be an editor and improve your visual literacy , which can help you become a better photographer.],
-  [The paid internship runs from Sept. 10, 2018 to Dec. 14, 2018. Applications are due Sunday, July 15 at 11:59pm ET.],
+  [The internship runs from January 9, 2017 to April 21, 2017. Applications are due Sunday, November 6, 2016 at 11:59pm eastern .],
   [id="what-you-will-be-doing"\>What you will be doing],
-  [Editing: You’ll be working closely with the Visuals Team’s photo editors (Nicole and Emily) on fast-paced deadlines – we’re talking anywhere from 15 minutes to publication, to short-term projects that are a week out. You’ll dig into news coverage and photo research, learning how to communicate about what makes a good image across a range of news topics, including international, national, technology, arts and more.],
+  [Editing: You’ll be working closely with the Visuals Team’s photo editors (Ariel and Emily) on fast-paced deadlines – we’re talking anywhere from 15 minutes to publication, to short-term projects that are a week out. You’ll dig into news coverage and photo research, learning how to communicate about what makes a good image across a range of news topics, including international, national, technology, arts and more.],
   [Photography: Depending on the news cycle, there may be opportunities to photograph DC-area assignments. This can mean you’d have one or two shoots in a week, or maybe just a couple shoots in a month. You’ll work closely with a radio or web reporter while out in the field, and a photo editor will go through your work and provide feedback for each assignment. There will also be a chance to work on portraiture and still lifes in our studio.],
   [We also encourage each intern to create a self-directed project to work on throughout the semester. It can be an Instagram series , video , photo essay , text story or anything in-between. You can work independently or with another intern or reporter .],
   [You will be part of NPR’s intern program, which includes 40-50 interns each semester, across different departments. There will be coordinated training and intern-focused programming throughout the semester, which includes meeting NPR radio hosts, career development and other opportunities. As an intern, you will be treated as a member of the team. Many NPR employees are former interns and they’re always willing to help current interns.],
@@ -3820,7 +814,70 @@ are hiring!],
   [Into code, design, and data? Check out our design/development internship .],
 ),
   insert-map: (:),
-  word-count: 535,
+  word-count: 536,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+  #pull-quote([We also encourage each intern to create a self-directed project to work on throughout the semester.], [NPR Apps Blog])
+
+}
+
+{
+  #standard-article(
+  title: [Clojure: Testing The Creation Of A Partial Function],
+  author: [Jay],
+  source-name: [Jay Fields],
+  images: (),
+  paragraphs: (
+  [I recently refactored some code that takes longs from two different sources to compute one value. The code originally stored the longs and called a function when all of the data arrived. The refactored version partials the data while it's incomplete and executes the partial'd function when all of the data is available. Below is a contrived example of what I'm taking about.],
+  [Let's pretend we need a function that will allow us to check whether or not another drink would make us legally drunk in New York City.],
+  [The code below stores the current bac and uses the value when legally-drunk? is called.],
+  [The following (passing) tests demonstrate that everything works as expected.],
+  [This code works without issue, but can also be refactored to store a partial'd function instead of the bac value. Why you would want to do such a thing is outside of the scope of this post, so we'll just assume this is a good refactoring. The code below no longer stores the bac value, and instead stores the pure-legally-drunk? function partial'd with the bac value.],
+  [Two of the three of the tests don't change; however, the test that was verifying the state is now broken.],
+  [note: The test output has been trimmed and reformatted to avoid horizontal scrolling.],
+  [In the output you can see that the test is failing as you'd expect, due to the change in what we're storing. What's broken is obvious, but there's not an obvious solution. Assuming you still want this state based test, how do you verify that you've partial'd the right function with the right value?],
+  [The solution is simple, but a bit tricky. As long as you don't find the redef too magical, the following solution allows you to easily verify the function that's being partial'd as well as the arguments.],
+  [Those tests all pass, and should provide security that the legally-drunk? and update-bac functions are sufficiently tested. The pure-legally-drunk? function still needs to be tested, but that should be easy since it's a pure function.],
+  [Would you want this kind of test? I think that becomes a matter of context and personal preference. Given the various paths through the code the following tests should provide complete coverage.],
+  [The above tests make no assumptions about the implementation - they actually pass whether you :use the 'original namespace or the 'refactored namespace. Conversely, the following tests verify each function in isolation and a few of them are very much tied to the implementation.],
+  [Both sets of tests would give me confidence that the code works as expected, so choosing which tests to use would become a matter of maintenance cost. I don't think there's anything special about these examples; I think they offer the traditional trade-offs between higher and lower level tests. A specific trade-off that stands out to me is identifying defect localization versus having to update the test when you update the code.],
+  [As I mentioned previously, the high-level-expectations work for both the 'original and the 'refactored namespaces. Being able to change the implementation without having to change the test is obviously an advantage of the high level tests. However, when things go wrong, the lower level tests provide better feedback for targeting the issue.],
+  [The following code is exactly the same as the code in refactored.clj, except it has a 1 character typo. (it's not necessary to spot the typo, the test output below will show you want it is)],
+  [The high level tests give us the following feedback.
+ failure in (high\_level\_expectations.clj:14) : expectations.high-level-expectations
+(expect
+ true
+ (with-redefs
+ \[state (atom {})\]
+ (update-bac 0.01)
+ (legally-drunk? 0.07)))],
+  [expected: true 
+ was: false 
+There's not much in that failure report to point us in the right direction. The unit-level-expectations provide significantly more information, and the details that should make it immediately obvious where the typo is.
+ failure in (unit\_level\_expectations.clj:8) : expectations.unit-level-expectations
+(expect
+ {:legally-drunk?\* \[pure-legally-drunk? 0.04\]}
+ (with-redefs \[state (atom {}) partial vector\] (update-bac 0.04)))],
+  [expected: {:legally-drunk?\* \[\# 0.04\]} 
+ was: {:legally-drunk?\*\* \[\# 0.04\]}
+ 
+ :legally-drunk?\*\* with val \[\# 0.04\] 
+ is in actual, but not in expected
+ :legally-drunk?\* with val \[\# 0.04\] 
+ is in expected, but not in actual 
+The above output points us directly to the extra asterisk in update-bac that caused the failure.],
+  [Still, I couldn't honestly tell you which of the above tests that I prefer. This specific example provides a situation where I think you could convincingly argue for either set of tests. However, as the code evolved I would likely choose one path or the other based on:],
+  [how much 'setup' is required for always using high-level tests?],
+  [how hard is it to guarantee integration using primarily unit-level tests?
+ 
+In our examples the high level tests require redef'ing one bit of state. If that grew to a few pieces of state and/or a large increase in the complexity of the state, then I may be forced to move towards more unit-level tests. A rule of thumb I use: If a significant amount of the code within a test is setting up the test context, there's probably a smaller function and a set of associated tests waiting to be extracted.],
+  [By definition, the unit-level tests don't test the integration of the various functions. When I'm using unit-level tests, I'll often test the various code paths at the unit level and then have a happy-path high-level test that verifies integration of the various functions. My desire to have more high-level tests increases as the integration complexity increases, and at some point it makes sense to simply convert all of the tests to high-level tests.],
+  [If you constantly re-evaluate which tests will be more appropriate and switch when necessary, you'll definitely come out ahead in the long run.],
+),
+  insert-map: (:),
+  word-count: 951,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -3829,61 +886,65 @@ are hiring!],
 
 {
   #standard-article(
-  title: [JSFoo 2014 Delhi Run-up Event + JS Contest],
-  author: [Himanshu Kapoor],
+  title: [Let’s tesselate: Hexagons for tile grid maps],
+  author: [NPR Apps Blog],
+  source-name: [NPR Apps Blog],
+  images: (),
+  paragraphs: (
+  [As the saying goes, nothing is certain in this life but death, taxes and requests for geographic data to be represented on a map.],
+  [For area data, the choropleth map is a tried and true visualization technique, but not without significant dangers depending on the nature of the data and map areas represented. Clarity of mapped state-level data, for instance, is frequently complicated by the reality that most states in the western U. S. carry far more visual weight than the northeastern states.],
+  [While this presentation is faithful to my Californian perception of the U. S. where the northeast is a distant jumble of states I pay little attention to, I’ve learned in four years of living in D. C. that there are actually a lot of people walking around that jumble, and they’d prefer not to be ignored in mapped data visualizations. There are approximately 74 million people living in the thirteen states the U. S. Census Bureau defines as the Western United States, while around 42 million people live just in the combined metropolitan statistical areas of New York, Washington, Boston and Philadelphia.],
+  [One popular solution to this problem is the cartogram — maps where geography is distorted to correspond with some data variable (frequently population). By shading and sizing map areas, a cartogram can display two variables simultaneously. In this New York Times example from the 2012 election, the size of the squares corresponds to the number of electoral votes assigned to each state, while the shade represents possible vote outcomes. NPR’s Adam Cole used this technique to size states according to electoral votes and ad spending , as seen in the map below. Cartograms can be a great solution with some data sets, but they introduce complexity that might not serve our ultimate goal of clarity.],
+  [Recently, a third variation of choropleth has gained popularity — the tile grid map. In this version, the map areas are reduced to a uniform size and shape (typically a square) and the tiles are arranged to roughly approximate their real-world geographic locations. It’s still a cartogram of sorts, but where the area sizing is based on the shared value of one “map unit.” Tile grid maps avoid the visual imbalances inherent to traditional choropleths, while keeping the map a quick read by forgoing the complexity of cartograms with map areas sized by a variable data point.],
+  [Tile grid maps are a great option for mapped state data where population figures are not part of the story we’re trying to tell with the map. Several news organizations have used this approach to great effect, including FiveThirtyEight , Bloomberg Business , The Guardian , The Washington Post and The New York Times .],
+  [Here at NPR, we recently set out to create a template for quickly producing this type of map, but early in the process my editor Brian asked, “Do the tiles have to be squares?”],
+  [More specifically, Brian was interested in exploring the possibility of using hexagons instead of squares, with the assumption that two additional sides would offer greater flexibility in arranging the tiles and a better chance at maintaining as many border adjacencies as possible.],
+  [The idea was intriguing, but I had questions about sacrifices we might make in scanability by trading the squares for hexagons. The columns and rows of a square grid lend to easy vertical and horizontal scanning, and I wondered if the tessellation of hexagons would provide a comfortable reading experience for the audience.],
+  [Here is Brian’s first quick pencil sketch of a possible state layout using hexagons:],
+  [That proof of concept was enough to convince me that the idea was worth exploring further. I opened up Sketch and redrew Brian’s map with the polygon tool so we could drag the states around to experiment with the tile layout more easily. We tried several approaches in building the layout, starting from each coast and building from the midwest out, to varying degrees of success.],
+  [Ultimately, I decided to prioritize accuracy in representing the unique geographic features of the U. S. border (Texas and Florida as the southernmost tips, notches for the Great Lakes) and making sure the four “corners” of the country were recognizable for orientation.],
+  [The final layout that will power our tile grid map template looks like this:],
+  [This map still has many of the same problems that other attempts at a tile layout of the U. S. have fallen into — the relationship of North and South Carolina, for one example — but we like the increased fidelity of the country’s shape the hex grid makes possible.],
+  [In case you were wondering, news dev Twitter loves talking about maps:],
+  [We recently published our first use of the hexagon tile grid map to show the states that currently have laws restricting discrimination in employment, housing and public accommodations based on sexual orientation, gender identity and gender expression. The hex grid tile map also made appearances in several presentations of last week’s U. K. election results, including those by The Guardian , Bloomberg Business and The Economist .],
+  [What do you think? Vote in the poll below!],
+),
+  insert-map: (:),
+  word-count: 934,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+}
+
+{
+  #standard-article(
+  title: [A layout trick],
+  author: [Kushagra Gour],
   source-name: [Wingify Engineering],
   images: (),
   paragraphs: (
-  [The front-end has become the heart of today's web application development, and JavaScript drives a core part of it. New technologies, libraries, frameworks and the likes come up each day, and the existing ones continue to grow and evolve as time goes by. There is so much to learn, and so many learnings of your own to share, that community involvement becomes indispensable.],
-  [Our single-page application, VWO , is powered by a nifty combination of web technologies on the front-end, ranging from Grunt to AngularJS. The development process of the new version of the application was very rapid and full of challenges. We had dabbled into the previously unexplored territory of single-page application development at such a large scale, and having pulled it off in a relatively short span of time has been quite a feat.],
-  [id="sponsoring-jsfoo"\> Sponsoring JSFoo],
-  [For the very reason of community involvement being indispensable for better development, we are sponsoring JSFoo 2014 in Bangalore this year. Our engineers will be present at the conference. Should you be interested in our work, and would like to know more about what we do, want to work with us, or just want to say Hi!, drop by our booth (B1), or catch any of our team members at the event.],
-  [id="jsfoo-run-up-event-delhi"\> JSFoo Run-up Event (Delhi)],
-  [We're also hosting a run-up event at our office in Pitampura, Delhi on 6 th September 2014. There will be talks and a workshop too.],
-  [Join us at the run-up event. RSVP here.],
-  [As a part of the run-up event, we're organising an online JavaScript competition.],
-  [id="online-javascript-competition---visualize"\> Online JavaScript Competition - Visualize],
-  [The premise of this competition is simple - to use JavaScript and HTML5 canvas to create something visually appealing. The theme of the competition is Squares . You are free to create anything with JavaScript, canvas and squares.],
-  [If visualizations, particle effects, fractals, interactivity, JavaScript and canvas are some of the words that excite you, this is the competition for you. Below are some examples of JS creativity:],
-  [Or So They Say...],
-  [Below are some valid sample entries:],
-  [Tunnel of Squares],
-  [Shattering text],
-  [id="making-submissions"\> Making Submissions],
-  [Submissions for the competition need to be done as a deck on CSSDeck . Read here to know about submitting on CSSDeck. Optionally, you can also submit your entry via another code submission site like Codepen , or by uploading it on your server.
-Once you are ready with your submission, please tweet it using the following template:],
-  [I submitted an entry for Wingify-JSFoo online competition: \@wingify \@jsfooindia \#wingifyjsfoocompo \#js],
-  [Let the submissions begin!],
-  [id="rules"\> Rules],
-  [The deadline for the competition is 20th September 2014, 23:59 IST.],
-  [Your entry should use Javascript, HTML5 Canvas and Squares to create something visually appealing.],
-  [CoffeeScript is allowed.],
-  [Judgement will primarily be based on visual appeal. Secondary parameters include code quality and smoothness.],
-  [Multiple entries by a single participant are allowed.],
-  [Bonus points for using vanilla JS .],
-  [The results will be announced after 20th September 2014 here on the blog as well as on our twitter account: \@wingify .],
-  [You must be living in India to be eligible for this competition.],
-  [If you have any questions or suggestions, comment on this post or send us an email .],
-  [id="rewards"\> Rewards],
-  [The best two entries in the competition will be rewarded with prizes. There are three consolation prizes as well.],
-  [id="winner-prize"\> Winner Prize],
-  [Firefox OS Flame Device],
-  [id="runner-up-prize"\> Runner-up Prize],
-  [Firefox OS ZTE Open Device],
-  [id="consolation-prizes"\> Consolation Prizes],
-  [Software licenses of Sublime Text or JetBrains WebStorm.],
-  [id="wingify--jsfoo"\> Wingify \@ JSFoo],
-  [Our engineers will be present at the conference. If you are interested in our work , want to know more about what we are doing, want to work with us ( we're hiring ), get some cool goodies or just want to say Hi!, please visit our booth (B1) or catch any of our team members. We’d love to talk to you!],
-  [We look forward to meeting in Delhi for the run-up event and in Bangalore for the conference!],
-  [id="edit---23rd-september-2014"\> Edit - 23rd September 2014],
-  [Results for our JS competition are out!],
-  [1st prize - Amanpreet Singh - View entry],
-  [2nd prize - Shubham Jain - View entry],
-  [3rd prize - Mahima Sivasankar - View entry],
-  [You will be contacted individually for further process. Congratulations!],
+  [Few weeks ago, we did a redesign of our product - VWO. It wasn't a complete overhaul from scratch, but some major design decisions were taken in the existing design based on the feedback we have received from users since we launched v3.0. This post is about a cool trick we used to achieve a task in that redesign project.],
+  [id="the-task-or-issue"\> The task (or issue)],
+  [One of the most principle decisions we made was regarding the main layout of the app. It wasn't about changes in placement of content, but actually about the UI semantics. It mostly translated to color changes to bring a sense of how any screen in the app is structured and how all components on the page relate to each other. Here is a comparison of the before & after designs:],
+  [id="old-design"\> Old Design],
+  [id="new-design"\> New Design],
+  [Note in the new design how different sections on the screen are more distinguished with definite boundaries and background in contrast to old design where all the page content was on a single grey surface. The old design reflected in the architecture as well - every main module got the complete page structure (except the main top header and left navigation) along with it. Eg. A Campaign module (page) in the above screenshot comprises markup of the page title section, tab menu, main content and sidebar. What I am trying to put forth is that a transition between modules causes the complete module content (mentioned sections) to disappear and appear again. This was fine with old design as we need to keep the base layout (the single grey surface) intact and custom content can transition over it. But the new design bought an issue with this approach. The base layout was no more just a single grey surface, rather it got split into 4 separate distinguishable sections :],
+  [white page title section],
+  [grey tab menu],
+  [white main content section],
+  [grey sidebar],
+  [And all these section's markup being part of every main module's markup, would fade in/out during page transitions which was unacceptable as the common page layout (white grey sections) would itself keep getting fade in/out along with the custom content inside them - bad experience!],
+  [id="the-trick"\> The "Trick"],
+  [The most trivial approach to retaining the page layout sections during transitions would have been to create those sections in the main markup instead of every module bringing its own 4 sections. And every module change would have simply substituted appropriate custom content inside those constant 4 sections on the page. But this would have meant a major change in the module architecture increasing the scope of the redesign project. Heres how we tackled this issue...],
+  [We used the above mentioned solution but instead of dividing the content into 4 sections at root level, we created an illusion of having 4 sections always present on the page - using pseudo element & background gradients! Heres how:],
+  [So basically the pseudo structure always stays on the screen with all the custom content going and coming over it and giving an illusion that custom content renders inside those sections - just what we wanted for the end user!],
+  [id="final-result-and-code"\> Final result and code],
+  [id="in-the-end"\> In the End],
+  [This trick (or hack as one may call) helped us achieve the desired UX without actually modifying the base module architecture and it has been working really great so far without any compromises made. Hacks are not always bad after all...its just about evaluating what is best when.],
 ),
   insert-map: (:),
-  word-count: 722,
+  word-count: 598,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -3892,96 +953,117 @@ Once you are ready with your submission, please tweet it using the following tem
 
 {
   #standard-article(
-  title: [Find that bug! Using a search engine as a programmer],
-  author: [Itamar Turner-Trauring],
-  source-name: [Itamar Turner-Trauring],
+  title: [Why we've removed Inheritance/Extend from SASS & you should do the same!],
+  author: [Chhavi Khandelwal],
+  source-name: [Wingify Engineering],
   images: (),
   paragraphs: (
-  [Most bugs you encounter have been encountered by others before you; most programming problems you face have been faced by others as well.
-And many of those people have written down details about what they’ve learned—in issue trackers, documentation, and blog posts.],
-  [All you have to do is find this information.],
-  [Typing a phrase in to your search engine of choice will sometimes take you straight to the right answer.
-But quite often, the results aren’t helpful.],
-  [No need to give up, though: there are still plenty of ways you can productively keep searching.],
-  [id="use-site-specific-search-too"\>Use site-specific search too],
-  [It’s easy to believe that search engines have all the answers right at the top, but they actually hide quite a lot of content deep in their results.
-And some obscure content never gets indexed at all, which is unfortunate when it’s the obscure content that you need to find.],
-  [So instead of just using a search engine, use the local search engine of the project issue tracker, the documentation, StackOverflow, and so on.],
-  [For example, let’s saying you’re using Eliot , a somewhat obscure Python logging library I maintain, and you want to use it with the Pandas library.
-Unfortunately, you get an error, so you search Google for the text of the error: eliot dataframe is not json serializable .
-Now, there is an actual issue in Eliot’s GitHub issue tracker with this exact error message—but as of August 2020 Google doesn’t return it, probably because it didn’t bother to index that page.],
-  [But if you were to use the search form on the Eliot GitHub project’s issues page, you would find the issue that mentions this particular error.
-In this case, as in many others, the search engine isn’t actually indexing everything: you have no choice but to use the local search engine.],
-  [Local search engines often have the additional benefit of allowing more structured search, for example:],
-  [An issue tracker might let you search by open/closed status, labels, or the affected version.],
-  [StackOverflow questions are tagged with particular technologies by the person submitting the question.],
-  [id="you-still-want-to-use-a-search-engine"\>You still want to use a search engine],
-  [A software project’s documentation and issue tracker are a great place to start searching, but sometimes you’ll find solutions elsewhere.],
-  [For example, if you have a problem with library A, it might be that project B had the same issue, and you can find a workaround in their issue tracker.
-Or perhaps someone wrote a handy blog post on the issue—or they might have other related content.
-And that related content can also be useful.],
-  [id="read-results-that-dont-answer-your-question"\>Read results that don’t answer your question],
-  [Often you’ll encounter results that solve a similar but not identical problem.
-Read those pages anyway.],
-  [First, because you’ll learn more about the shape of the problem, broad approaches, and how the underlying software works.],
-  [Second, because you might find suggestions of new places to search.],
-  [Third, because this will give you an opportunity to apply your close reading skills and learn more domain-specific jargon.
-You can then use this jargon to widen, narrow, and vary your search.],
-  [Note: This article is an excerpt from my book, The Secret Skills of Productive Programmers , which also has a chapter on close reading.],
-  [id="narrow-and-widen-your-search"\>Narrow and widen your search],
-  [Let’s say you’ve tried an initial search engine search, and you got a huge swath of unrelated results.
-For example, if I use Google in private mode to search for eliot , I get many entries about the poet T. S. Eliot.],
-  [Given too many results, you need to focus in: add a keyword or two that will help narrow the results to those you care about.
-In this example, searching for eliot logging find the actual Python library; searching for eliot python also helps.],
-  [Again, the jargon you’ve found along the way will help you know what to add.],
-  [If your search is too specific, you can do the opposite, removing some unnecessary keywords.],
-  [id="try-lots-of-variations-by-using-jargon"\>Try lots of variations by using jargon],
-  [Even if your initial searches don’t work, you shouldn’t give up: now is the time to start using synonyms and alternative phrasings.
-You are using a certain phrase to describe the problem, but other people might conceptualize it a different way, and use different phrases.],
-  [If you can rephrase the search you are likely to find many results you haven’t seen before.
-For example, let’s say you’re using the Pandas dataframe library for Python and you’re running out of memory .
-If you search for pandas too much memory , pandas out of memory , pandas large files , and pandas out of core will give you some overlapping results, but each returns some results you won’t get from other phrases.],
-  [The last term comes from “out-of-core computation”, a computer science term for algorithms that process data that doesn’t fit in memory.
-How might you learn about that phrase?
-By collecting jargon as you go along.],
-  [id="search-for-errors-the-right-way"\>Search for errors the right way],
-  [When searching for errors, you need to copy/paste enough that you’re identifying the specific error, but not too much such that the search engine can’t find any matching results.
-For example:],
-  [File "/home/itamarst/flask/app.py", line 2446, in wsgi\_app],
-  [response = self.full\_dispatch\_request()],
-  [File "/home/itamarst/flask/app.py", line 1951, in full\_dispatch\_request],
-  [rv = self.handle\_user\_exception(e)],
-  [File "/home/itamarst/flask/app.py", line 1820, in handle\_user\_exception],
-  [reraise(exc\_type, exc\_value, tb)],
-  [File "/home/itamarst/flask/\_compat.py", line 39, in reraise],
-  [raise value],
-  [File "/home/itamarst/flask/app.py", line 1949, in full\_dispatch\_request],
-  [rv = self.dispatch\_request()],
-  [File "/home/itamarst/flask/app.py", line 1935, in dispatch\_request],
-  [return self.view\_functions[rule.endpoint](\*\*req.view\_args)],
-  [File "flask1.py", line 18, in index],
-  [return \_counter + "\\n"],
-  [TypeError: unsupported operand type(s) for +: 'Counter' and 'str'],
-  [Different languages will have different formatting, but the basic idea is that the lines that includes directories are specific to your computer.
-Searching for /home/itamarst is not going to get good results!],
-  [Searching for the last line might work:],
-  [Or maybe the last two lines, if that line is from code I downloaded and didn’t write myself:],
-  [Or perhaps I want to understand the generic error, rather than this particular instance:],
-  [Or perhaps I think this is a problem in the Flask library rather than my code, in which case I might search for:],
-  [Typically the important information will be either at the beginning or the end of the error traceback or stacktrace.],
-  [(Thanks to Jason Swett for suggesting this technique.)],
-  [id="finally-be-careful"\>Finally, be careful],
-  [One issue with searching for random solutions on the web is that the proposed solution is sometimes wrong or broken.
-I’ve seen people propose insecure solutions on StackOverflow, and then get upvoted by other people who don’t know any better.],
-  [Just because the solution seems to work doesn’t mean it’s correct: you still have to think, do some additional research to validate the proposal, and probably write some tests too.],
-  [Want more ways to become a more productive programmer? 
-This article is an excerpt from my book, The Secret Skills of Productive Programmers .],
-  [Tired of scrambling to get your job done?],
-  [If you were productive enough, you could take the afternoon off, confident you’d produced high value work. Not to mention having an easier time finding a new job when you need one.],
-  [Learn the secret skills of productive programmers .],
+  [SASS is a preprocessor that provides features like variables, nesting, mixins, inheritance and other nifty goodies and makes CSS clean and easy to maintain.],
+  [The \@extend directive in SASS allows us to easily share styles between selectors.
+But its usage can have adverse effects when used with bigger projects. Lets see how.],
+  [In VWO’s SASS code, we have more than 50 files. The need of inheritance removal came when the code started to become unpredictable and difficult to debug. Difficulty in debugging made us override the CSS as and when new requirement came; otherwise it requires a lot of time to understand existing code of inheritance before starting, so that any new rule addition does not break the existing CSS. That’s how the need of \@extend removal came.],
+  [Here are the reasons why we discarded \@extend.],
+  [id="high-maintainability"\> High maintainability],
+  [label { 
+ \@extend .title ; 
+ font-size : 13px ; 
+ }],
+  […and in the end of the file somewhere adding,],
+  [If this file is opened and looked up for the label rules, one would expect it to be of 13px but in reality, it will be of 12px.
+ I will always be 12px],
+  [This is because on compilation the result looks like this:],
+  [label { 
+ font-size : 13px ; 
+ }],
+  [.title , label { 
+ font-size : 12px ; 
+ }],
+  [label shares the rules at the last definition of .title .],
+  [If someone tries to override title and is not aware of the fact that it has been extended in some other class, the person might end up adding some wrong rules unintentionally.],
+  [id="difficult-debugging"\> Difficult debugging],
+  [It becomes difficult to debug if the project’s CSS is large because you need to keep track of every extended class. If we consider the above example of label and .title , looking at the CSS in browser, it will be difficult for us to figure out the reason of font-size being 12px for label . It requires a lot of time of debug such code, especially if you have multiple SASS files.],
+  [id="increased-file-size"\> Increased file size],
+  [After we removed \@extend from all our sass files, size got reduced from 164KB =\> 154KB],
+  [id="distributed-code"\> Distributed Code],
+  [The code for one class should be contained at one place rather than distributed at many places. Classes or Placeholders extended in virtue of maintaining the code actually make it untidy and difficult to understand in case of multiple CSS files or long CSS code.
+Here’s an example:],
+  [.tile { 
+ display : inline-block ; 
+ border : 1px solid ; 
+ \@extend .font--13 ; 
+ }],
+  [%size--200 { 
+ width : 200px ; 
+ height : 200px ; 
+ }],
+  [.tile--200 { 
+ \@extend .tile ; 
+ \@extend %size--200 ; 
+ font-size : 14px ; 
+ }],
+  [.circle--200 { 
+ \@extend %size--200 ; 
+ }],
+  [Generated Code:],
+  [.tile, .tile--200 { 
+ display : inline-block ; 
+ border : 1px solid ; 
+ }],
+  [.tile--200, .circle--200 { 
+ width : 200px ; 
+ height : 200px ; 
+ }],
+  [.tile--200 { 
+ font-size : 14px ; 
+ }],
+  [The generated code is highly unreadable and not at all lucid. This particular code has rules staggered at 4 places just for class .tile--200.],
+  [id="solution-to-extend"\> Solution to \@extend],
+  [We solved these problems with the help of mixins or directly writing the rule if it’s a one liner.],
+  [For e.g. in above example: SASS would be],
+  [\@mixin tile { 
+ display : inline-block ; 
+ border : 1px solid ; 
+ font-size : 13px ; 
+ }],
+  [.tile { 
+ \@include tile ; 
+ }],
+  [\@mixin size--200 { 
+ width : 200px ; 
+ height : 200px ; 
+ }],
+  [.tile--200 { 
+ \@include tile ; 
+ \@include size--200 ; 
+ font-size : 14px ; 
+ }],
+  [.circle--200 { 
+ \@include size--200 ; 
+ }],
+  [Generated CSS code will be:],
+  [.tile { 
+ display : inline-block ; 
+ border : 1px solid ; 
+ font-size : 13px ; 
+ }],
+  [.tile--200 { 
+ display : inline-block ; 
+ border : 1px solid ; 
+ font-size : 13px ; 
+ width : 200px ; 
+ height : 200px ; 
+ font-size : 14px ; 
+ }],
+  [.circle--200 { 
+ width : 200px ; 
+ height : 200px ; 
+ }],
+  [This code has rules for every class maintained at just one place making it easier to understand and lucid which results in easy debugging and requires low maintenance.],
+  [All these reasons forced us to remove \@extend from our SASS and hence our code and coders lived happily ever after!],
+  [Cheers!],
 ),
   insert-map: (:),
-  word-count: 1253,
+  word-count: 769,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -3990,86 +1072,3149 @@ This article is an excerpt from my book, The Secret Skills of Productive Program
 
 {
   #standard-article(
-  title: [Struggling With Google Analytics 4? No, It’s Not Just You],
+  title: [Check Every Box In Cypress Tests Without Flake],
+  author: [Gleb Bahmutov],
+  source-name: [Gleb Bahmutov],
+  images: (),
+  paragraphs: (
+  [Imagine you are testing a TodoMVC application, and you need to complete all items. You simply click every checkbox and confirm the application preserves the "0 todos left" state. Normally everything goes well:],
+  [But sometimes a weird thing happens: one or more checkboxes remain unchecked!],
+  [📺 Watch the examples in this blog post explained in my video .],
+  [You start looking at the test code. Looks ok, right?],
+  [cypress/e2e/todos.cy.js 1 
+ 2 
+ 3 
+ 4 
+ 5 
+ 6 
+ 7 
+ 8 
+ 9 
+ 10 
+ 11 
+ 12 
+ it ( 'are completed by checking the boxes' , function ( ) { 
+ const todos = '.todo-list li' 
+ cy. visit ( '/' ) 
+ cy. get (todos). should ( 'have.length' , this . n ) 
+ \/\\/ complete all todos by clicking the checkboxes 
+ cy. get ( '.todo-list li .toggle' ). click ({ multiple : true }) 
+ \/\\/ confirm all todos are marked as completed 
+ \/\\/ after reloading the page 
+ cy. reload () 
+ cy. get ( '.loaded' ) 
+ cy. get ( '\[data-cy="remaining-count"\]' ). should ( 'have.text' , '0' ) 
+ })],
+  [This test starts by creating a random number of Todo items, something I covered in the "Cypress Vs Playwright" online course available at cypress.tips/courses .],
+  [Ok, there seems to be some flake, and we know how to solve end-to-end testing flake pretty well . We start adding assertions, trying to confirm that our commands have finished successfully before reloading the page.],
+  [1 
+ 2 
+ 3 
+ 4 
+ 5 
+ 6 
+ 7 
+ 8 
+ 9 
+ 10 
+ 11 
+ 12 
+ 13 
+ 14 
+ 15 
+ 16 
+ it ( 'are completed by checking the boxes' , function ( ) { 
+ const todos = '.todo-list li' 
+ cy. visit ( '/' ) 
+ cy. get (todos). should ( 'have.length' , this . n ) 
+ \/\\/ complete all todos by clicking the checkboxes 
+ cy. get ( '.todo-list li .toggle' ). click ({ multiple : true }) 
+ 
+ \/\\/ confirm all todos are done 
+ cy. get ( '\[data-cy="remaining-count"\]' ). should ( 'have.text' , '0' ) 
+ 
+ \/\\/ confirm all todos are marked as completed 
+ \/\\/ after reloading the page 
+ cy. reload () 
+ cy. get ( '.loaded' ) 
+ cy. get ( '\[data-cy="remaining-count"\]' ). should ( 'have.text' , '0' ) 
+ })],
+  [We inserted the "0 todos" check before the cy.reload command, and ... it did not solve the problem!],
+  [What is happening, how can the same assertion pass once, but then immediately fail? The clue is in the number of network calls shown int the Command Log. In this instance, we have 4 todos to complete. Yet, there are only 3 "PATCH" network calls!],
+  [This is typical web app behavior: update the local state immediately, and send the update to the backend. But what happens if the app does not have time to send the network call before the page reloads? The network call does not happen, and the backend does not "see" one or more "PATCH" network calls. Checking just the page UI using cy.get('\[data-cy="remaining-count"\]').should('have.text', '0') does not solve the problem: the problem is that the backend still has not been updated.],
+  [There is no way for a testing framework to "know" that the application has scheduled setTimeout to make a network call and "wait" for it. Well, you could have some flag or global queue of timers in your app, and Cypress could look it up. But 99.99% of web apps would not do this overhead just for testing, so we have to work with what we got. Luckily, the problem is pretty manageable.],
+  [We can solve this issue in several ways.],
+  [Check the network call count],
+  [Using the incredibly powerful cy.intercept command, we can "continue" the test after N network calls happen.],
+  [1 
+ 2 
+ 3 
+ 4 
+ 5 
+ 6 
+ 7 
+ 8 
+ 9 
+ 10 
+ 11 
+ 12 
+ 13 
+ 14 
+ 15 
+ 16 
+ 17 
+ 18 
+ 19 
+ it ( 'are completed by checking the boxes (N network calls)' , function ( ) { 
+ const todos = '.todo-list li' 
+ cy. visit ( '/' ) 
+ cy. get (todos). should ( 'have.length' , this . n ) 
+ 
+ cy. intercept ( 'PATCH' , '/todos/\*' ). as ( 'updateTodo' ) 
+ 
+ \/\\/ complete all todos by clicking the checkboxes 
+ cy. get ( '.todo-list li .toggle' ). click ({ multiple : true }) 
+ 
+ \/\\/ confirm all network calls have finished 
+ cy. get ( '\@updateTodo.all' ). should ( 'have.length' , this . n ) 
+ 
+ \/\\/ confirm all todos are marked as completed 
+ \/\\/ after reloading the page 
+ cy. reload () 
+ cy. get ( '.loaded' ) 
+ cy. get ( '\[data-cy="remaining-count"\]' ). should ( 'have.text' , '0' ) 
+ })],
+  [We spy on the PATCH /todos/\* calls using the cy.intercept command before we start clicking. Then we check the count of intercepts calls using the cy.get('\@updateTodo.all').should('have.length', this.n) command and assertion combo, which retries. Even if the app takes a few seconds to fire the network call, the test will be flake-free.],
+  [Observe each network call],
+  [Instead of using .click({ multiple: true }) , we could click each box individually and confirm its network calls finished. I like this approach even more than the "click multiple elements" option, since it works for any action, not just cy.click , For example, let's use cy.check command, which does not have multiple: true option.],
+  [1 
+ 2 
+ 3 
+ 4 
+ 5 
+ 6 
+ 7 
+ 8 
+ 9 
+ 10 
+ 11 
+ 12 
+ 13 
+ 14 
+ 15 
+ 16 
+ 17 
+ 18 
+ 19 
+ it ( 'are completed by checking the boxes (one at a time)' , function ( ) { 
+ const todos = '.todo-list li' 
+ cy. visit ( '/' ) 
+ cy. get (todos). should ( 'have.length' , this . n ) 
+ 
+ cy. intercept ( 'PATCH' , '/todos/\*' ). as ( 'updateTodo' ) 
+ 
+ cy. get ( '.todo-list li .toggle' ). each ( ( \$el ) =\> { 
+ cy. wrap (\$el, { log : false }). check () 
+ \/\\/ confirm a single network call has finished 
+ cy. wait ( '\@updateTodo' ) 
+ }) 
+ 
+ \/\\/ confirm all todos are marked as completed 
+ \/\\/ after reloading the page 
+ cy. reload () 
+ cy. get ( '.loaded' ) 
+ cy. get ( '\[data-cy="remaining-count"\]' ). should ( 'have.text' , '0' ) 
+ })],
+  [We are using cy.each command. It gives us each element as a jQuery object. To properly click it using Cypress, simply cy.wrap silently to avoid Command Log noise and run the cy.check , followed by cy.wait command with a network alias - it waits for 1 network call. If you want to confirm the call was successful, add an assertion.],
+  [1 
+ 2 
+ 3 
+ 4 
+ 5 
+ 6 
+ 7 
+ cy. get ( '.todo-list li .toggle' ). each ( ( \$el ) =\> { 
+ cy. wrap (\$el, { log : false }). check () 
+ \/\\/ confirm a single network call has finished successfully 
+ cy. wait ( '\@updateTodo' ) 
+ . its ( 'response' ) 
+ . should ( 'have.property' , 'statusCode' , 200 ) 
+ })],
+  [Ask the server],
+  [If we are not sure when the application has finished updating the backend, why not ask the backend directly? We can ping the backend ourselves, just like the app does using the cy.request command. To ping the server multiple times until all todos are completed, we can use my plugin cypress-recurse :],
+  [1],
+  [2],
+  [3],
+  [4],
+  [5],
+  [6],
+  [7],
+  [8],
+  [9],
+  [10],
+  [11],
+  [12],
+  [13],
+  [14],
+  [15],
+  [16],
+  [17],
+  [18],
+  [19],
+  [20],
+  [21],
+  [22],
+  [23],
+  [24],
+  [25],
+  [26],
+  [27],
+  [28],
+  [import { recurse } from 'cypress-recurse'],
+  [it ( 'are completed by checking the boxes (check the backend)' , function ( ) {],
+  [const todos = '.todo-list li'],
+  [cy. visit ( '/' )],
+  [cy. get (todos). should ( 'have.length' , this . n )],
+  [cy. get ( '.todo-list li .toggle' ). each ( ( \$el ) =\> {],
+  [cy. wrap (\$el, { log : false }). check ()],
+  [})],
+  [\/\\/ confirm the backend has only completed todos],
+  [recurse (],
+  [() =\> cy. request ( '/todos' ). its ( 'body' ),],
+  [( todos ) =\> todos. every ( ( todo ) =\> todo. completed ),],
+  [{],
+  [log : 'All todos are completed on the server' ,],
+  [timeout : 30\_000 ,],
+  [delay : 1000 ,],
+  [},],
+  [)],
+  [\/\\/ confirm all todos are marked as completed],
+  [\/\\/ after reloading the page],
+  [cy. reload ()],
+  [cy. get ( '.loaded' )],
+  [cy. get ( '\[data-cy="remaining-count"\]' ). should ( 'have.text' , '0' )],
+  [})],
+  [The important part is the recurse call with two functions: fetching the list of todos and the predicate to know when to stop pinging:],
+  [1 
+ 2 
+ 3 
+ 4 
+ 5 
+ 6 
+ 7 
+ 8 
+ 9 
+ 10 
+ recurse ( 
+ () =\> cy. request ( '/todos' ). its ( 'body' ), \/\\/ produce the values 
+ ( todos ) =\> todos. every ( ( todo ) =\> todo. completed ), \/\\/ check the value 
+ \/\\/ options: how many times to check, how long to wait between the checks, etc 
+ { 
+ log : 'All todos are completed on the server' , 
+ timeout : 30\_000 , 
+ delay : 1000 , 
+ }, 
+ )],
+  [The recurse calls the first function repeatedly, passes the yielded value into the predicate, and stops the iteration when the predicate returns a truthy value. We use 1 second delays for clarity, and I slowed down the web app to space out network calls. You can see several REQUEST /todos commands - this is our check working],
+  [Map chain],
+  [Finally, what if you want to check the list of updated todos? We need their ids, so our iteration must produce a list of numbers. But cy.each yields the original list of elements, not a custom value.],
+  [Plugin cypress-map to the rescue! It has cy.mapChain command where you can do something with each element, but then produce new values for the next command in the chain. Once we get all completed ids, we can compare it with the list from the beforeEach where we saved the created todo ids],
+  [1],
+  [2],
+  [3],
+  [4],
+  [5],
+  [6],
+  [7],
+  [8],
+  [9],
+  [10],
+  [11],
+  [12],
+  [13],
+  [14],
+  [15],
+  [16],
+  [17],
+  [18],
+  [19],
+  [20],
+  [21],
+  [22],
+  [23],
+  [24],
+  [25],
+  [26],
+  [27],
+  [28],
+  [29],
+  [import 'cypress-map'],
+  [beforeEach ( function createRandomTodos ( ) {],
+  [const n = Cypress . \_ . random ( 1 , 3 )],
+  [...],
+  [\/\\/ save created ids for later],
+  [cy. wrap (todos. map ( ( t ) =\> t. id )). as ( 'ids' )],
+  [})],
+  [it ( 'are completed by checking the boxes (collect their ids)' , function ( ) {],
+  [const todos = '.todo-list li'],
+  [cy. visit ( '/' )],
+  [cy. get (todos). should ( 'have.length' , this . n )],
+  [cy. intercept ( 'PATCH' , '/todos/\*' ). as ( 'updateTodo' )],
+  [cy. get ( '.todo-list li .toggle' )],
+  [. mapChain ( ( \$el ) =\> {],
+  [cy. wrap (\$el, { log : false }). check ()],
+  [\/\\/ from each network call, grab the id of the updated todo],
+  [cy. wait ( '\@updateTodo' ). its ( 'response.body.id' )],
+  [})],
+  [. should ( 'deep.equal' , this . ids )],
+  [\/\\/ confirm all todos are marked as completed],
+  [\/\\/ after reloading the page],
+  [cy. reload ()],
+  [cy. get ( '.loaded' )],
+  [cy. get ( '\[data-cy="remaining-count"\]' ). should ( 'have.text' , '0' )],
+  [})],
+  [The command .mapChain(fn) runs the commands inside the function and collects all yielded values into an array that it will yield to the next assertion. Thus our code works, here is the relevant part:],
+  [1 
+ 2 
+ 3 
+ 4 
+ 5 
+ 6 
+ . mapChain ( ( \$el ) =\> { 
+ cy. wrap (\$el, { log : false }). check () 
+ \/\\/ from each network call, grab the id of the updated todo 
+ cy. wait ( '\@updateTodo' ). its ( 'response.body.id' ) 
+ }) 
+ . should ( 'deep.equal' , this . ids )],
+  [You can see the original ids in the "BEFORE EACH" hook, and you can see the array assertion inside the test; these are the same ids, and the order is correct.],
+  [Nice. I must say these tests and how they interact with this example application are better shown than explained in a blog post. I will record a video showing these tests in action and will post on my youtube.com/\@gleb channel, stay tuned.],
+),
+  insert-map: (:),
+  word-count: 1973,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+}
+
+{
+  #standard-article(
+  title: [Starting a New Engagement as a Lead Consultant],
+  author: [Jay],
+  source-name: [Jay Fields],
+  images: (),
+  paragraphs: (
+  [Someone recently asked me for information on starting new consulting engagements.  A few years back I published Sean Doran and Scott Conley's thoughts on Being a Lead Consultant . Sean and Scott's list is great for any lead consultant, and the advice applies well for the lifetime of a project. I considered sending that list to the person looking for new engagement advice, but I'm not sure that list would be the best place to focus my attention at the beginning of a project.],
+  [The beginning of a project is a special and dangerous time. You get a mix of (at least) optimism, concern, and freedom. There are a large number of ways the project can go, and as a lead consultant you'll play a major role determining it's outcome. The specific question I recently received was: did you have a process you followed when new engagements began. The remainder of this blog post contains my (slightly edited) response.],
+  [I found being a lead at ThoughtWorks to be a nearly impossible balancing act. It's possible we didn't have a process because we weren't organized enough, but it's more likely that there's no general formula that works.],
+  [What we ran into constantly was what we called the "enablement versus delivery" issue: If you're teaching client devs (enablement), you really don't have time to meet delivery deadlines; conversely if you're delivering software you rarely have time to teach. How to balance enablement versus delivery is something that varies based on the client's skillset and the ROI of the software being developed. What makes it worse is that the client often thinks they need one thing, but if the the company didn't have issues you (likely) wouldn't be there. Sometimes the issues are with the stakeholder and they'll tell you to focus on the wrong thing, and sometimes the stakeholder knows the deal but the other people you are forced to work with are the problem.],
+  [Often it's a race to figure out what the client needs and get them to agree to fix it, before you've lost too much good will.],
+  [Another issue is, most software is worthless within a few years, and the only way to break a perpetual cycle of mediocrity is to level up the people and processes. This can lead some people to think that delivery of a specific piece of software is secondary to improving process and people. There's a major flaw to that approach though; a non-TW consultant once said that he feels guilty about his job, because when he helps people become better the most talented always end up leaving the (suboptimal environment of the) client. You can help people improve and install good processes, but when the good people leave and the remaining don't understand the foundations of the process, you end up with not enough talent and a process that's loosely followed and for none of the right reasons.],
+  [That said, you can't focus exclusively on delivery. I once led a team that beat all deadlines, created a great piece of software, and provided a great deal of content for Martin Fowler's DSL book . It was a "huge success" until the client devs took over, couldn't maintain it, and wrote their own version that had 20% of the functionality we provided. The software we wrote was classified as a "proof of concept" and thrown out.],
+  [I was somewhat oblivious to all of this in my first few years at ThoughtWorks; I would work with the talented clients while isolating the less talented. Eventually you find out that a stakeholder will usually fire you before their worst employee, regardless of how obvious it is.],
+  [If I were going into a new engagement these days, I would split my time between training and delivery initially. After figuring out which is the bigger problem, you can spend more or less time on training or delivery.],
+  [I would also keep a spreadsheet with every client employee and their talents; every one of those employees will impact your success. If you find what they're good at and get them doing that, you may have found an ally and advocate. Every employee that has no talents listed in your spreadsheet is not only slowing you down, but is also likely (consciously or unconsciously) sabotaging you in every discussion you aren't a part of. Assume you cannot get rid of them, and don't bother trying; spending political capital managing client staff is a bad investment. Keep them on your sheet and make finding their talent a top priority.],
+  [Good luck, it's not an easy gig. Then again, if things don't go well you can always move on to another client. That was what always kept me sane. I always did the best job I could, but I also knew if I failed at an impossible task it wasn't the end of the world. There's an endless stream of impossible tasks available.],
+),
+  insert-map: (:),
+  word-count: 828,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+}
+
+{
+  #standard-article(
+  title: [CSS \<code\>\@scope\</code\>: An Alternative To Naming Conventions And Heavy Abstractions],
+  author: [Blake Lundquist],
+  source-name: [Smashing Magazine],
+  images: (),
+  paragraphs: (
+  [When learning the principles of basic CSS, one is taught to write modular, reusable, and descriptive styles to ensure maintainability. But when developers become involved with real-world applications, it often feels impossible to add UI features without styles leaking into unintended areas.],
+  [This issue often snowballs into a self-fulfilling loop; styles that are theoretically scoped to one element or class start showing up where they don’t belong. This forces the developer to create even more specific selectors to override the leaked styles, which then accidentally override global styles, and so on.],
+  [Rigid class name conventions, such as BEM , are one theoretical solution to this issue. The BEM (Block, Element, Modifier) methodology is a systematic way of naming CSS classes to ensure reusability and structure within CSS files. Naming conventions like this can reduce cognitive load by leveraging domain language to describe elements and their state , and if implemented correctly, can make styles for large applications easier to maintain .],
+  [In the real world, however, it doesn’t always work out like that. Priorities can change, and with change, implementation becomes inconsistent. Small changes to the HTML structure can require many CSS class name revisions. With highly interactive front-end applications, class names following the BEM pattern can become long and unwieldy (e.g., app-user-overview\_\_status--is-authenticating ), and not fully adhering to the naming rules breaks the system’s structure, thereby negating its benefits.],
+  [Given these challenges, it’s no wonder that developers have turned to frameworks, Tailwind being the most popular CSS framework . Rather than trying to fight what seems like an unwinnable specificity war between styles, it is easier to give up on the CSS Cascade and use tools that guarantee complete isolation.],
+  [Developers Lean More On Utilities],
+  [How do we know that some developers are keen on avoiding cascaded styles? It’s the rise of “modern” front-end tooling — like CSS-in-JS frameworks — designed specifically for that purpose. Working with isolated styles that are tightly scoped to specific components can seem like a breath of fresh air. It removes the need to name things — still one of the most hated and time-consuming front-end tasks — and allows developers to be productive without fully understanding or leveraging the benefits of CSS inheritance.],
+  [But ditching the CSS Cascade comes with its own problems. For instance, composing styles in JavaScript requires heavy build configurations and often leads to styles awkwardly intermingling with component markup or HTML. Instead of carefully considered naming conventions, we allow build tools to autogenerate selectors and identifiers for us (e.g., .jsx-3130221066 ), requiring developers to keep up with yet another pseudo-language in and of itself. (As if the cognitive load of understanding what all your component’s useEffect s do weren’t already enough!)],
+  [Further abstracting the job of naming classes to tooling means that basic debugging is often constrained to specific application versions compiled for development, rather than leveraging native browser features that support live debugging, such as Developer Tools.],
+  [It’s almost like we need to develop tools to debug the tools we’re using to abstract what the web already provides — all for the sake of running away from the “pain” of writing standard CSS.],
+  [Luckily, modern CSS features not only make writing standard CSS more flexible but also give developers like us a great deal more power to manage the cascade and make it work for us. CSS Cascade Layers are a great example, but there’s another feature that gets a surprising lack of attention — although that is changing now that it has recently become Baseline compatible .],
+  [The CSS \@scope At-Rule],
+  [I consider the CSS \@scope at-rule to be a potential cure for the sort of style-leak-induced anxiety we’ve covered, one that does not force us to compromise native web advantages for abstractions and extra build tooling.],
+  [“The \@scope CSS at-rule enables you to select elements in specific DOM subtrees, targeting elements precisely without writing overly-specific selectors that are hard to override, and without coupling your selectors too tightly to the DOM structure.”],
+  [— MDN],
+  [In other words, we can work with isolated styles in specific instances without sacrificing inheritance, cascading, or even the basic separation of concerns that has been a long-running guiding principle of front-end development.],
+  [Plus, it has excellent browser coverage . In fact, Firefox 146 added support for \@scope in December, making it Baseline compatible for the first time. Here is a simple comparison between a button using the BEM pattern versus the \@scope rule:],
+  [Click me 
+ →],
+  [.button .button\_\_text { /\* button text styles \*\/ }
+ .button .button\_\_icon { /\* button icon styles \*\/ }
+ .button--primary { primary button styles \*\/ }],
+  [Click me 
+ →],
+  [\@scope (.primary-button) {
+ span:first-child { /\* button text styles \*\/ }
+ span:last-child { /\* button icon styles \*\/ }
+ }],
+  [The \@scope rule allows for precision with less complexity . The developer no longer needs to create boundaries using class names, which, in turn, allows them to write selectors based on native HTML elements, thereby eliminating the need for prescriptive CSS class name patterns. By simply removing the need for class name management, \@scope can alleviate the fear associated with CSS in large projects.],
+  [To get started, add the \@scope rule to your CSS and insert a root selector to which styles will be scoped:],
+  [\@scope ( ) {
+ /\* Styles scoped to the \*/
+}],
+  [So, for example, if we were to scope styles to a element, it may look something like this:],
+  [\@scope (nav) {
+ a { /\* Link styles within nav scope \*\/ }],
+  [a:active { /\* Active link styles \*\/ }],
+  [a:active::before { /\* Active link with pseudo-element for extra styling \*\/ }],
+  [\@media (max-width: 768px) {
+ a { /\* Responsive adjustments \*\/ }
+ }
+}],
+  [This, on its own, is not a groundbreaking feature. However, a second argument can be added to the scope to create a lower boundary , effectively defining the scope’s start and end points.],
+  [/\* Any a element inside ul will not have the styles applied \*/
+\@scope (nav) to (ul) {
+ a {
+ font-size: 14px;
+ }
+}],
+  [This practice is called donut scoping , and there are several approaches one could use, including a series of similar, highly specific selectors coupled tightly to the DOM structure, a :not pseudo-selector, or assigning specific class names to elements within the to handle the differing CSS.],
+  [Regardless of those other approaches, the \@scope method is much more concise. More importantly, it prevents the risk of broken styles if classnames change or are misused or if the HTML structure were to be modified. Now that \@scope is Baseline compatible, we no longer need workarounds!],
+  [We can take this idea further with multiple end boundaries to create a “style figure eight”:],
+  [/\* Any or element inside or will not have the styles applied \*/
+\@scope (main) to (aside, nav) {
+ a {
+ font-size: 14px;
+ }
+ p {
+ line-height: 16px;
+ color: darkgrey;
+ }
+}],
+  [Compare that to a version handled without the \@scope rule, where the developer has to “reset” styles to their defaults:],
+  [main a {
+ font-size: 14px;
+}],
+  [main p {
+ line-height: 16px;
+ color: darkgrey;
+}],
+  [main aside a,
+main nav a {
+ font-size: inherit; /\* or whatever the default should be \*/
+}],
+  [main aside p,
+main nav p {
+ line-height: inherit; /\* or whatever the default should be \*/
+ color: inherit; /\* or a specific color \*/
+}],
+  [Check out the following example. Do you notice how simple it is to target some nested selectors while exempting others?],
+  [Consider a scenario where unique styles need to be applied to slotted content within web components . When slotting content into a web component, that content becomes part of the Shadow DOM, but still inherits styles from the parent document. The developer might want to implement different styles depending on which web component the content is slotted into:],
+  [content, different contexts --\>
+ 
+ 
+ 
+ Jane Doe],
+  [In this example, the developer might want the to have distinct styles only if it is rendered inside :],
+  [\@scope (team-roster) {
+ user-card {
+ display: inline-flex;
+ align-items: center;
+ gap: 0.5rem;
+ }],
+  [user-card img {
+ border-radius: 50%;
+ width: 40px;
+ height: 40px;
+ }
+}],
+  [There are additional ways that \@scope can remove the need for class management without resorting to utilities or JavaScript-generated class names. For example, \@scope opens up the possibility to easily target descendants of any selector , not just class names:],
+  [/\* Only div elements with a direct child button are included in the root scope \*/
+\@scope (div:has(\> button)) {
+ p {
+ font-size: 14px;
+ }
+}],
+  [And they can be nested , creating scopes within scopes:],
+  [\@scope (main) {
+ p {
+ font-size: 16px;
+ color: black;
+ }
+ \@scope (section) {
+ p {
+ font-size: 14px;
+ color: blue;
+ }
+ \@scope (.highlight) {
+ p {
+ background-color: yellow;
+ font-weight: bold;
+ }
+ }
+ }
+}],
+  [Plus, the root scope can be easily referenced within the \@scope rule:],
+  [/\* Applies to elements inside direct child section elements of main , but stops at any direct aside that is a direct chiled of those sections \*/
+\@scope (main \> section) to (:scope \> aside) {
+ p {
+ background-color: lightblue;
+ color: blue;
+ }
+ /\* Applies to ul elements that are immediate siblings of root scope \*/
+ :scope + ul {
+ list-style: none;
+ }
+}],
+  [The \@scope at-rule also introduces a new proximity dimension to CSS specificity resolution. In traditional CSS, when two selectors match the same element, the selector with the higher specificity wins. With \@scope , when two elements have equal specificity, the one whose scope root is closer to the matched element wins. This eliminates the need to override parent styles by manually increasing an element’s specificity, since inner components naturally supersede outer element styles.],
+  [\@scope (.container) {
+ .title { color: green; } 
+ }
+ is closer to .container than to .sidebar so "color: green" wins. --\>
+ \@scope (.sidebar) {
+ .title { color: red; }
+ }],
+  [Utility-first CSS frameworks, such as Tailwind, work well for prototyping and smaller projects. Their benefits quickly diminish, however, when used in larger projects involving more than a couple of developers.],
+  [Front-end development has become increasingly overcomplicated in the last few years, and CSS is no exception. While the \@scope rule isn’t a cure-all, it can reduce the need for complex tooling. When used in place of, or alongside strategic class naming, \@scope can make it easier and more fun to write maintainable CSS.],
+  [CSS \@scope (MDN)],
+  [“ CSS \@scope ”, Juan Diego Rodríguez (CSS-Tricks)],
+  [Firefox 146 Release Notes (Firefox)],
+  [Browser Support (CanIUse)],
+  [Popular CSS Frameworks (State of CSS 2024)],
+  [“ The “C” in CSS: Cascade ”, Thomas Yip (CSS-Tricks)],
+  [BEM Introduction (Get BEM)],
+),
+  insert-map: (:),
+  inline-pq: pull-quote([Instead of carefully considered naming conventions, we allow build tools to autogenerate selectors and identifiers for us (e.], [Blake Lundquist]),
+  inline-pq-idx: 25,
+  word-count: 1786,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+}
+
+{
+  #standard-article(
+  title: [String Types For E2E Tests],
+  author: [Gleb Bahmutov],
+  source-name: [Gleb Bahmutov],
+  images: (),
+  paragraphs: (
+  [Every individual item sold on Mercari.com has an id that looks like m . The item's id is visible in the URL, for example www.mercari.com/us/item/m73702188949\/ . If you buy several items from the same seller, you get a discount because you buy it as a bundle. Every bundle has its own unique id that looks like b . Both ids are strings, yet they have a certain format that differs. In our tests we don't want to be confused which type we are passing: is it an item id; a bundle id; a random string we pass as id by mistake?],
+  [Here is where TypeScript string template literal types come in very handy. Let's define an ItemId type.],
+  [1 
+ 2 
+ 3 
+ 4 
+ 5 
+ type ItemId = \`m \${ number } \` 
+ 
+ const id1 : ItemId = 'm123' \/\\/ valid 
+ const id2 : ItemId = 'x123' \/\\/ invalid, does not start with 'm' 
+ const id3 : ItemId = 'mabc' \/\\/ invalid, does not end with a number],
+  [TypeScript immediately complains about "x123" and "mabc" strings - these are NOT item ids. My VSCode editor highlights the errors],
+  [We don't have to run a test to know it does not work; static types check tells us about our mistake.],
+  [If we have a runtime ID value (which we could load from a network call for example), we can confirm and typecast it using is a syntax. For example, here is utility function to check if a string is an item id:],
+  [1 
+ 2 
+ 3 
+ 4 
+ 5 
+ 6 
+ 7 
+ 8 
+ 9 
+ 10 
+ 11 
+ 12 
+ 13 
+ 14 
+ type ItemId = \`m \${ number } \` 
+ 
+ const id1 : ItemId = 'm123' \/\\/ valid 
+ 
+ function isItemId ( value: string ): value is ItemId { 
+ return /^m\\d+\$\/ . test (value) 
+ } 
+ 
+ if ( isItemId (id1)) { 
+ console . log ( \` \${id1} is a valid ItemId\` ) 
+ } else { 
+ \/\\/ never happens 
+ console . log ( 'invalid id1' , id1) 
+ }],
+  [If we look at the "else" branch, we can see the type inference; TS can safely say that "id1" in the "else" branch has "never" type, meaning this code should be unreachable.],
+  [We can go beyond a predicate, we can write a utility function that throws an exception if it is given an invalid string value; and this function tells TypeScript compiler that the input has certain type afterwards.],
+  [1 
+ 2 
+ 3 
+ 4 
+ 5 
+ 6 
+ 7 
+ 8 
+ 9 
+ 10 
+ 11 
+ 12 
+ 13 
+ type ItemId = \`m \${ number } \` 
+ 
+ const id1 : ItemId = 'm123' \/\\/ valid 
+ 
+ function assertItemId ( id: string ): asserts id is ItemId { 
+ if (! /^m\\d+\$\/ . test (id)) { 
+ throw new Error ( \`Invalid ItemId: \${id} \` ) 
+ } 
+ } 
+ 
+ const id2 : string = 'm123' 
+ assertItemId (id2) \/\\/ Type assertion 
+ \/\\/ Now id2 is treated as ItemId],
+  [What about other strings, like phone numbers? Let's say that every US phone number we have to store must be fully formatted. We can define a type:],
+  [1 
+ 2 
+ 3 
+ 4 
+ 5 
+ type PhoneNumber = \`+1- \${ number } - \${ number } - \${ number } \` 
+ 
+ const phone1 : PhoneNumber = '+1-123-456-7890' \/\\/ valid 
+ const phone2 : PhoneNumber = '123-456-7890' \/\\/ invalid, missing country code 
+ const phone3 : PhoneNumber = '+1-123-4567-890' \/\\/ invalid, incorrect format, NOT DETECTED],
+  [Looks good, but notice my comment on the phone3 - TypeScript does not flag its incorrect format.],
+  [Hmm, we do detect the "abridged" phone number strings, yet TS "missed" the obvious problem. Even worse, TS will miss completely wrong numbers!],
+  [1 
+ 2 
+ 3 
+ 4 
+ type PhoneNumber = \`+1- \${ number } - \${ number } - \${ number } \` 
+ 
+ const phone1 : PhoneNumber = '+1-123-456-7890' \/\\/ valid 
+ const phone2 : PhoneNumber = '+1-1-2-3' \/\\/ no TS errors!],
+  [Look at the PhoneNumber type definition: +1-\${number}-\${number}-\${number} says nothing about how many digits each number part should have. Thus the string "+1-1-2-3" satisfies the type, yet it is a bad phone number string.],
+  [Let's step back for a second and look at the bank card codes or credit card CVV codes. We can define a type for a string that is just 4 digits in a row:],
+  [1 
+ 2 
+ 3 
+ 4 
+ 5 
+ 6 
+ 7 
+ type digit = '0' | '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9' 
+ 
+ type PinCode = \` \${digit} \${digit} \${digit} \${digit} \` 
+ 
+ const pin1 : PinCode = '1234' \/\\/ valid 
+ const pin2 : PinCode = '123' \/\\/ invalid, too short 
+ const pin3 : PinCode = '12345' \/\\/ invalid, too long],
+  [Look at the TS error given for pin2 and pin3],
+  [TypeScript does NOT tell us "123 is too short" or "123 does not match digit+digit+digit+digit", instead it shows us how such string literal type works. It simply "expands" every possible combination. String type PinCode is a union of ALL strings like 0000 | 0001 | 0002 | ... | 9999 . Wow, brute force works!],
+  [Ok, let's use the digit type to form a better phone number type.],
+  [1 
+ 2 
+ 3 
+ 4 
+ 5 
+ 6 
+ 7 
+ 8 
+ 9 
+ type digit = '0' | '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9' 
+ 
+ \/\\/ more accurate phone number type DOES NOT WORK 
+ type PhoneNumber = 
+ \`+1- \${digit} \${digit} \${digit} - \${digit} \${digit} \${digit} - \${digit} \${digit} \${digit} \${digit} \` 
+ 
+ const phone1 : PhoneNumber = '+1-123-456-7890' \/\\/ valid? 
+ const phone2 : PhoneNumber = '123-456-7890' \/\\/ invalid? 
+ const phone3 : PhoneNumber = '+1-123-4567-890' \/\\/ invalid?],
+  [Does the above code work? I don't see any TS errors, hmm. What is the PhoneNumber type, let's hover over it],
+  [There are too many combinations for the PhoneNumber string literal type, so TS does NOT expand it into +1-000-000-0000 | +1-000-000-0001 | ... - there would be way too many strings in that union to keep track. From my checks, anything longer than 4 digits is not handled, so US 5-digit zip codes are out.],
+  [Ok, so we saw string template literal types, how they work under the hood, and even their limitations. One more note, if you need to check how your web application handles invalid inputs, you do NOT need to special types. You can simply use strings. Let's confirm that entering an invalid phone number leads to an error:],
+  [1 
+ 2 
+ 3 
+ 4 
+ 5 
+ 6 
+ 7 
+ 8 
+ 9 
+ 10 
+ 11 
+ 12 
+ 13 
+ const invalidNumbers : string \[\] = \[ 
+ '123-456-7890' , 
+ '+1-123-4567-890' , 
+ '+1-1-2-3' 
+ \] 
+ \/\\/ confirm that entering invalid phone number 
+ \/\\/ leads the app to show an error message 
+ invalidNumbers. forEach ( number =\> { 
+ cy. get ( '\#error' ). should ( 'not.exist' ) 
+ cy. get ( '\#phone' ). clear (). type ( number ) 
+ cy. get ( '\#error' ). should ( 'be.visible' ) 
+ cy. get ( '\#phone' ). clear () 
+ })],
+  [The above Cypress test simply verifies that entering a bad phone number string is handled by the app. Aside from this test, your testing code probably should only accept PhoneNumber . If you must make an exception (for checking the error handling for example), you can be explicit and use \@ts-expect-error when calling it:],
+  [1 
+ 2 
+ 3 
+ 4 
+ 5 
+ 6 
+ 7 
+ 8 
+ const ItemPage = { 
+ visit ( id: ItemId, errorPage: boolean = false ) { 
+ ... 
+ } 
+ } 
+ 
+ \/\\/ \@ts-expect-error - confirm the error is shown for non-existent item ids 
+ ItemPage . visit ( 'invalid-item-id' , true )],
+  [Without \@ts-expect-error our TS compiler would not let us pass non-item id string into the page object method ItemPage.visit , but we do want to pass it.],
+  [Learn more],
+  [We can go beyond string literal types into branded types to represent things like currencies and time durations. I also suggest reading 6 TypeScript Tips to Write Safer, Cleaner Code article. Finally, if you are new to TypeScript, check my blog post Trying TypeScript .],
+),
+  insert-map: (:),
+  word-count: 1311,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+}
+
+{
+  #standard-article(
+  title: [Email Marketing Costs: 5 Ways To Save Money In 2024],
   author: [Rachael O'Flaherty],
   source-name: [GoSquared Blog],
   images: (),
   paragraphs: (
-  [If you’re reading this post because you needed a breather from trying to figure out Google Analytics 4, we hear you. Also, get the kettle on. It helps.],
-  [As of July 1st 2023, the previous Google Analytics will cease to exist. So if you don’t go through the migration process to the new GA4, your website data will stop tracking.],
-  [But wait! Did you know that you can track your website analytics on s o many other tools other than Google?],
-  [Also, that trying to figure out GA4 might not even be necessary, depending on the data you actually need about your website?],
-  [In this post, you have the makers of GoSquared Analytics to tell you more and hopefully ease that tension headache of yours.],
-  [Google Analytics has over 28 million users.],
-  [So it’s fair to say that each user wanting to switch to the new GA4 will have a unique experience. Some may find it a breeze. Though for most it’s been a huge hassle.],
-  [Going on our own experiences, and that of other web users, here are some of the reasons why Google Analytics 4 might not be the right fit for what you actually need out of an analytics tool.],
-  [Starting with the obvious – Google Analytics 4 is far from a walk in the park.],
-  [Even to set up the demo account watching a couple of YouTube tutorials is required. Having to consult external sources to understand a tool is never a good sign, especially when the previous tool was fairly user-friendly. 
- 
-For high-level data analysts, we imagine GA4 will be no trouble at all. The only problem here is that realistically, most people using Google Analytics are everyday website and business owners.],
-  [So while most users may know their customers and products inside out, that doesn’t automatically mean they will understand a complex analytics tool just like that – especially when GA4 is clearly aimed at experts.],
-  [Has Google even thought about this?],
-  [We found one provider offering a one day course to learn GA4 at £475 per person. Add in the time taken out of your business and erm. That soon adds up, especially when you multiply this for every business that uses Google Analytics around the world.],
-  [As we mentioned above, for those who really need the extremely complex range of features GA4 can provide, we’re sure that cost will be more than worth it . But on the flip side, does that apply to all 28 million users of Google Analytics? No, it does not.],
-  [So why struggle with GA4 or pay a hefty price tag to learn how to use it, \*if\* you can find what you’re looking for within another tool?],
-  [Ultimately, it’s about thinking about what you need as a business or website owner, and matching these requirements with your analytics tools.],
-  [As Google Analytics is a free tool, Google doesn’t have to consider its paying customers when making seismic changes to its products. Therefore, Google can change or remove products as it pleases.],
-  [For you, a website owner, you can’t decide you don’t want to migrate over to GA4. Either you do, or you lose your existing data.],
-  [Sure, all products evolve over time. There are some genuine reasons as to why Universal Analytics (the current product) is changing. For instance, the increasing shift towards mobile vs desktop use, and similar advances in technology meaning any analytics tool needs to be able to keep up.],
-  [But still, even if GA4 has better capabilities, the fact that manual migration is needed, and the existing tool will no longer exist is a bit of a hassle, especially when GA4 is very complicated to use.],
-  [As SEO professionals, we can jump to practically any tool from Semrush to Ahrefs or even Surfer SEO and instantly get to work.],
-  [That’s because most of the terminology and features are kept the same, no matter what tool you happen to use.],
-  [But with Google, a major reason why their products are complicated is that they contain many terms and features not found on other platforms. This means you can’t bring knowledge of another tool in an attempt to flatten the GA4 learning curve.],
-  [So yes, while you will find some common terms such as ‘engagement’, ‘users’ and ‘ad revenue’ –  you’ll also see a lot of terms and features that require individual training to grasp because you’ll only find them on GA4.],
-  [If you’re new to GoSquared , hi, hello and we’ve actually been here since 2007.],
-  [GoSquared Analytics is one of the many Google Analytics 4 alternatives on the market. We’ve been lucky to have some recent endorsements from the likes of Capterra, Hotjar and Semrush to name just a few.],
-  [We’re currently remodelling our Analytics page so we can focus more on your needs as business and website owners. However, the product itself remains absolutely ready to go.],
-  [So we hope that you’ll join us, especially when you see how simplistic website analytics can be when you just have the right tools by your side.],
-  [In a nutshell, GoSquared Analytics is one single dashboard. It connects to your website (very easily we should add!), and will tell you the following about your website visitors:],
-  [Actions taken by user],
-  [Average pageviews per visit],
-  [Bounce rate],
-  [Browser information],
-  [Campaign source],
-  [Device type],
-  [Engagement rate],
-  [Engagement time],
-  [Language spoken],
-  [New visitors],
-  [New visitors],
-  [Operating system],
-  [Screen size],
-  [Total pageviews],
-  [Total visitors],
-  [Traffic sources],
-  [User journey],
-  [Weekly reporting],
-  [It’s worth noting GoSquared Analytics isn’t designed to be a like-for-like dupe of GA4 (for one, we were here first ). Rather, our tool will give you the information we know matters most to website owners.],
-  [Namely, simple, accurate data about who is on your website, how they found your website, and what users do once they are on there.],
-  [You can then use this information to understand the impact of your marketing campaigns. Plus, make more informed decisions about your products and services.],
-  [As we offer real-time analytics, you can also see traffic spikes and dips so that you can react accordingly.],
-  [That’s what we like to hear, right?],
-  [There’s several ways you can install GoSquared Analytics, depending on how your site is built.],
-  [But for most of you, it’s simply a case of pasting some code into the Head Tag of your website. Ironically, if you’ve ever had to do that for Google Adsense, the process works much the same.],
-  [If you haven’t made that cup of tea we advised you to at the start, we promise connecting GoSquared Analytics with your website can be done in the time it takes for the kettle to boil.],
-  [Watch a video of the GoSquared Analytics installation process .],
-  [We have a demo account so you can see how GoSquared Analytics works.],
-  [Compared with GA4, you’ll notice how refreshing it is to have just one dashboard to navigate. So there’s no trying to remember where a particular feature is.],
-  [At the top, you can toggle between different ranges to see your traffic data by the hour, day, week, month or year. It’s a simple single click to return to your real-time analytics, and that’s about it!],
-  [P. S: Our traffic calculators are extremely accurate, with no ‘guesstimates’ as you’ll find on other tools.],
-  [GoSquared Analytics has a free trial, with our paid plans starting at £9 per month.],
-  [Consider all of the costs involved in GA4 certification, and even lost productivity, and GoSquared Analytics could actually save your business money.],
-  [If you’re located in another country such as the United States, our pricing will automatically be shown in your currency.],
-  [If Google Analytics 4 just isn’t for you, GoSquared Analytics could be the answer you’re looking for.],
-  [GoSquared Analytics has been used by thousands of businesses to improve their websites. So whether you’re a start-up, or have millions of website visitors every week – GoSquared Analytics could just be your secret weapon.],
-  [All that’s left for you to do is to sign up for your free trial of GoSquared Analytics . This will give you a week to familiarise yourself with all the features.],
-  [In the meantime, if you’d like to discuss switching your analytics over to us, we’re all ears. You can drop us a message or fo llow us on Twitter .],
-  [The post Struggling With Google Analytics 4? No, It’s Not Just You appeared first on GoSquared Blog .],
+  [Are you looking to reduce your email marketing costs?],
+  [With email marketing offering a phenomenal ROI, generating \$8.5 billion every year, email remains one of the best ways to get customers.],
+  [That said, email marketing platforms can be expensive. Add in poor marketing techniques, and your campaigns will cost even more to send.],
+  [But things don’t have to be that way!],
+  [Cut your email marketing costs today with these 5 top tips.],
+  [You can’t look to save money unless you know where things stand.],
+  [Therefore, your first step is to compare other providers within the email marketing space.],
+  [If you’ve been with your current email marketing provider for some time, you may not have the best deal going. Likewise, if you’ve only researched the Mailchimps and HubSpots of the marketing world, you may not know what else exists.],
+  [We know it takes time to research different email marketing providers. But even a little time spent comparing each tool can help you make a more informed decision.],
+  [After all, why put up with constant price hikes, to the point where your current package just isn’t affordable anymore?],
+  [This is a common problem with other email providers at the minute. For you the customer, this just won’t do.],
+  [Psst: Don’t have time to research? We’ve done all the work for you for free!: Every Email Platform Ranked From Cheapest To Most Expensive In 2023],
+  [Like with any kind of software you need to purchase for your business, it’s easy to over-egg things.],
+  [The simple fact is that if you’re not actively using or benefiting from certain features within your email marketing platform, you’re paying too much.],
+  [To save money, you can either downgrade your subscription or stop paying for any non-essential features.],
+  [Some examples of email marketing features you may need the most include:],
+  [A/B testing],
+  [Abandoned cart prompts],
+  [Automated messages],
+  [Contact lists],
+  [Before you make any final decisions, ensure a lack of product knowledge is not the real reason you aren’t getting the most out of the tool.],
+  [Remember, email marketing offers a typical \$36 for every \$1 spent.],
+  [In addition, the email marketing industry will reach \$17.9 billion by 2027, up from an expected \$10.8 billion in 2023.],
+  [So if a boost in email ROI could solve the cost of your email marketing from being so expensive, some simple product education to get you there would be the cheapest solution of all!],
+  [There might not be such a thing as a free lunch, but there are definitely free email template builders out there including the one we made here at GoSquared .],
+  [Other free email template builders & general tools to try:],
+  [Email automation for SaaS businesses (e-book)],
+  [Canva newsletter templates],
+  [Typeform email sign-up form template],
+  [Email subject line tester],
+  [Use free email tools to get started with your email marketing campaigns, or quit paying for costly tools that just don’t make good business sense.],
+  [Are there any free email marketing platforms too you ask? Why yes there are!],
+  [How email marketing software works is that you pay for the number of contacts you have, plus the number of email sends you need.],
+  [Needless to say, sending a message to EVERY subscriber for each campaign can soon eat away at your send limits. Plus, it’s going to be way more expensive to market your products and services this way.],
+  [What we know about send-to-all email blasts is that they actually don’t work. Instead, A-grade marketers segment their lists by sending the right message to the right person at the right time.],
+  [Segmentation is one of the easiest ways to save money on your email marketing without having to switch providers or upgrade. It will likely earn you better conversions too!],
+  [Emailing anyone who never opens your emails is pouring money down the drain.],
+  [Cleaning up your email list with a bit of email scrubbing will instantly save you cash in the email marketing department. The trouble is, nobody thinks to do it, or even realises they need to!],
+  [That’s not going to be you now you’ve read this post.],
+  [What you need to do is go into your email marketing platform and filter out disengaged subscribers. These are going to be any contacts who haven’t opened at least one email of yours in the last 6 months.],
+  [You’ll send a re-engagement email just to see if they are interested in hearing from you after all. If you get nada back, those contacts need to be removed from your list.],
+  [Having a clean email list ensures only those most likely to read your emails, and also convert from email are left on your list.],
+  [All of which avoids you paying to send emails which will never provide a return on that investment.],
+  [Having an email marketing platform which is catered to your exact needs is how to stop wasting money on email marketing.],
+  [Let us help you with that one! We have two email marketing tools GoSquared Engage and EcoSend by GoSquared .],
+  [Engage is our original email marketing tool, and EcoSend is our new sustainable email marketing tool. Both are available with a free trial on all plans, and a free plan geared towards smaller usage needs over on EcoSend.],
+  [Both of our tools are packed with a range of features to help you send beautiful, intelligent email marketing campaigns.],
+  [Need any help with all things email marketing and your business? Drop us a message and one of our team will be in touch.],
+  [The post Email Marketing Costs: 5 Ways To Save Money In 2024 appeared first on GoSquared Blog .],
 ),
   insert-map: (:),
-  inline-pq: pull-quote([You can then use this information to understand the impact of your marketing campaigns.], [Rachael O'Flaherty]),
-  inline-pq-idx: 27,
-  word-count: 1501,
+  word-count: 1017,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+}
+
+#article-row((
+  [
+    standard-article(
+  title: [Working With APIs in Python: Reading Public Data],
+  author: [Real Python],
+  source-name: [Real Python],
+  images: (),
+  paragraphs: (
+  [Python is an excellent choice for working with Application Programming Interfaces (APIs), allowing you to efficiently consume and interact with them. By using the Requests library, you can easily fetch data from APIs that communicate using HTTP, such as REST, SOAP, or GraphQL APIs. This video course covers the essentials of consuming REST APIs with Python, including authentication and handling responses.],
+  [By the end of this video course, you’ll understand that:],
+  [An API is an interface that allows different systems to communicate, typically through requests and responses.],
+  [Python is a versatile language for consuming APIs , offering libraries like Requests to simplify the process.],
+  [REST and GraphQL are two common types of APIs , with REST being more widely used for public APIs.],
+  [To handle API authentication in Python , you can use API keys or more complex methods like OAuth to access protected resources.],
+  [Knowing how to consume an API is one of those magical skills that, once mastered, will crack open a whole new world of possibilities, and consuming APIs using Python is a great way to learn such a skill.],
+  [By the end of this video course, you’ll be able to use Python to consume most of the APIs that you come across. If you’re a developer, then knowing how to consume APIs with Python will empower you to integrate data from various online sources into your applications.],
+),
+  insert-map: (:),
+  word-count: 231,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+  ],
+  [
+    standard-article(
+  title: [My Challenge to the Web Performance Community],
+  author: [Erik Runyon],
+  source-name: [Erik Runyon],
+  images: (),
+  paragraphs: (
+  [Philip Walton on the difficulties the webperf community faces when discussing web performance. Simple numbers don’t cut it. We need to provide context when discussing performance results.],
+  [What concerns me about this practice is that it glosses over a lot of important nuance, and it perpetuates the idea that synthetic or lab-based tools (like Lighthouse, WebPageTest, and many others) are genuine and precise assessments of a site’s actual, real-world performance—rather than what they are: tools to test, debug, diagnose, optimize, and predict performance or detect regressions under a set of controlled conditions.],
+  [I’m definitely guilty of the simplicity he discusses. Thanks for the challenge Philip.],
+),
+  insert-map: (:),
+  word-count: 105,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+  ],
+), ruled-indices: (1,))
+
+#article-row((
+  [
+    standard-article(
+  title: [We're hiring a web developer],
+  author: [NPR Apps Blog],
+  source-name: [NPR Apps Blog],
+  images: (),
+  paragraphs: (
+  [Love to code?],
+  [Want to use your skills to make the world a better place?],
+  [The visuals team (formerly known as news applications) is a crew of developers, designers, photojournalists and videographers in the newsroom at NPR headquarters in sunny Washington, DC — and we’re hiring.],
+  [We work closely with editors and reporters to create data-driven news applications ( Playgrounds For Everyone ), fun and informative websites ( NPR’s Book Concierge ), web-native documentaries ( Planet Money Makes A T-shirt ), and charts and maps and videos and pictures and lots of things in-between .],
+  [It’s great fun.],
+  [id="we-believe-strongly-in"\>We believe strongly in…],
+  [User-centered design],
+  [Agile software development],
+  [Open-source software, and being transparent in our methods],
+  [id="you-must-have"\>You must have…],
+  [Experience making things for the web (We’ve got a way we like to do things , but we love to meet folks with new talents!)],
+  [Attention to detail and love for making things],
+  [A genuine and friendly disposition],
+  [id="bonus-points-for"\>Bonus points for…],
+  [An uncontrollable urge to write code to test your code],
+  [Love for making audio and video experiences that are of the web, not just on the web],
+  [Deep knowledge of Javascript and functional programming for the web],
+  [id="allow-me-to-persuade-you"\>Allow me to persuade you],
+  [The newsroom is a crucible. We work on tight schedules with hard deadlines. That may sound stressful, but check this out: With every project we learn from our mistakes and refine our methods. It’s a fast-moving, volatile environment that drives you to be better at what you do, every day. It’s awesome. Job perks include…],
+  [Live music at the Tiny Desk],
+  [All the tote bags you can eat],
+  [A sense of purpose],
+  [Like what you’ve heard? Check out what we’ve built and our code on GitHub .],
+  [Interested? Email your info to \[bboyer\@npr.org\](mailto:bboyer\@npr.org)! Thanks!],
+  [This position has been filled. Thanks!],
+),
+  insert-map: (:),
+  word-count: 301,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+  ],
+  [
+    standard-article(
+  title: [Pym.js security alert],
+  author: [NPR Apps Blog],
+  source-name: [NPR Apps Blog],
+  images: (),
+  paragraphs: (
+  [A security vulnerability has been discovered in Pym.js http:\/\/blog.apps.npr.org/pym.js\/ , a popular public media project that allows iframes to be responsively embedded on web pages. The security vulnerability in Pym.js is present from versions 0.4.2 (Released on April 24th 2015) to version 1.3.1 (Feb 12th 2018) .],
+  [Note that if you’re using our Pym.js CDN , you’re good. We’ve already pushed out a fix.],
+  [The severity of the security vulnerability is high. You should upgrade all projects that use Pym.js as soon as possible .],
+  [We will file a public distributed CVE (Common Vulnerabilities and Exposures) early on the week of Feb 19th 2018 with more details about the vulnerability.],
+  [id="how-do-i-fix-it"\>How do I fix it?],
+  [All users of pym.js must upgrade to 1.3.2. The easiest way to ensure you’re up-to-date is to use our CDN version that’s already patched and will continue to be updated.],
+  [Pym.js most recent version is backwards compatible to all previous versions until version 0.1.1 (Released in June 18th 2014)],
+  [id="scenario-1---your-projects-use-a-pym-version-newer-than-release-011"\>Scenario 1 - Your projects use a pym version newer than release 0.1.1:],
+  [Replace your pym.js library reference ( both in the parent and the child ) with the minified or unminified version in the CDN (recommended to stay up-to-date with patches and new functionality). If you still prefer to use a local version of Pym then replace your Pym.js library with the new version 1.3.2 .],
+  [Redeploy your projects],
+  [id="scenario-2---your-projects-use-a-pym-version-older-than-release-011"\>Scenario 2 - Your projects use a pym version older than release 0.1.1:],
+  [Replace your pym.js library reference ( both in the parent and the child ) with the minified or unminified version in the CDN (recommended to stay up-to-date with patches and new functionality).],
+  [If you still prefer to use a local version of Pym then replace your Pym.js library with the new version 1.3.2 .],
+  [Since the functionality of this version of pym was more limited but incompatible you’ll need to go through your child (the embedded page) javascript code and search for sendHeightToParent() calls and replace them with sendHeight() that should be all in terms of code changes.],
+  [Redeploy your projects],
+  [Note: If you can not do any of the things above please remove your code from production until you can address it.],
+  [id="i-do-not-have-access-to-my-cms-what-should-i-do"\>I do not have access to my CMS what should I do?],
+  [Contact your sysadmins/technical support and send them a link to this post giving it the maximum priority.],
+),
+  insert-map: (:),
+  word-count: 399,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+  ],
+), ruled-indices: (1,))
+
+{
+  #standard-article(
+  title: [HighEdWeb 2024],
+  author: [Erik Runyon],
+  source-name: [Erik Runyon],
+  images: (),
+  paragraphs: (
+  [My presentation for HighEdWeb 2024 was an overview of many recent and forthcoming additions to the web platform, specifically HTML and CSS.],
+  [id="description"\>Description],
+  [id="css-is-awesome"\>CSS is Awesome],
+  [Over the past few years, CSS has been gaining features at a rate that is almost impossible to follow. Features that once required pre-processors are now native to the platform. Variables? Check. Nesting? Check. And now there’s even whispers of mixins.],
+  [During this presentation we will examine many of the latest features added to CSS including layers, container queries, subgrid, nesting, and probably the dozens of others added since this presentation was submitted. We will discuss the syntax and look at real-world use-cases. We will also briefly cover what’s on the horizon for CSS.],
+  [id="presentation-links"\>Presentation Links],
+  [Conference presentation details],
+  [id="web-platform-info"\>Web Platform Info],
+  [Interop 2024 Dashboard],
+  [id="keeping-up-with-new-features"\>Keeping up with new features],
+  [New to the web platform],
+  [Kevin Powell (YouTube)],
+),
+  insert-map: (:),
+  word-count: 156,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+}
+
+{
+  #section-label([Analysis])
+  #standard-article(
+  title: [Streamlining Security Investigations with Agents],
+  author: [Dominic Marks],
+  source-name: [Slack Engineering],
+  images: (),
+  paragraphs: (
+  [Slack’s Security Engineering team is responsible for protecting Slack’s core infrastructure and services. Our security event ingestion pipeline handles billions of events per day from a diverse array of data sources. Reviewing alerts produced by our security detection system is our primary responsibility during on-call shifts.],
+  [We’re going to show you how we’re using AI agents to optimize our working efficiency and strengthen Slack’s security defenses. This post is the first in a series that will unpack some of the design choices we’ve made and the many things we’ve learnt along the way.],
+  [At the end of May 2025 we had a rudimentary prototype of what would grow into our service. Initially, the service was not much more than a 300 word prompt.],
+  [The prompt consisted of five sections:],
+  [style="font-weight: 400;"\> Orientation : “You are a security analyst that investigates security alerts \[…\]”],
+  [style="font-weight: 400;"\> Manifest : “You have access to the following data sources: \[…\]”],
+  [style="font-weight: 400;"\> Methodology : “Your investigation should follow these steps: \[…\] ”],
+  [style="font-weight: 400;"\> Formatting : “Produce a markdown report of the investigation: \[…\]”],
+  [style="font-weight: 400;"\> Classification : “Choose a response classification from: \[…\]”],
+  [We implemented a simple “stdio” mode MCP server to safely expose a subset of our data sources through the tool call interface. We repurposed a coding agent CLI as an execution environment for our prototype.],
+  [The performance of our prototype implementation was highly variable: sometimes it would produce excellent, insightful results with an impressive ability to cross-reference evidence across different data sources. However, sometimes it would quickly jump to a convenient or spurious conclusion without adequately questioning its own methods. For the tool to be useful, we needed consistent performance. We needed greater control over the investigation process.],
+  [We spent some time trying to refine our prompt, stressing the need to question assumptions, to verify data from multiple sources, and to make use of the complete set of data sources. While we did have some success with this approach, ultimately prompts are just guidelines; they’re not an effective method for achieving fine-grained control.],
+  [Our solution was to break down the complex investigation process we’d described in the prompt of our prototype into a sequence of model invocations, each with a single, well-defined purpose and output structure. These simple tasks are chained together by our application.],
+  [Each task was given a structured output format. Structured output is a feature that can be used to restrict a model to using a specific output format defined by a JSON schema. The schema is applied to the last output from the model invocation. Using structured outputs isn’t “free”; if the output format is too complicated for the model, the execution can fail. Structured outputs are also subject to the usual problems of cheating and hallucination.],
+  [In our initial prototype, we included guidance to “question your evidence”, but had mixed success. With our structured output approach, that guidance had become a separate task in our investigation flow with much more predictable behavior.],
+  [This approach gave us more precise control at each step of the investigation process.],
+  [From Prototype to Production],
+  [While reviewing the literature, two papers particularly influenced our thinking:],
+  [style="font-weight: 400;"\> Meta-Prompting: Enhancing Language Models with Task-Agnostic Scaffolding (Stanford, OpenAI)],
+  [style="font-weight: 400;"\> Unleashing the Emergent Cognitive Synergy in Large Language Models: A Task-Solving Agent through Multi-Persona Self-Collaboration (Microsoft Research)],
+  [These papers describe prompting techniques that introduce multiple personas in the context of a single model invocation . The idea of modelling the investigation using defined personas was intriguing, but in order to maintain control we needed to represent our personas as independent model invocations. Security tabletop exercises, and how we might adapt their conventions to our application, were also a major source of inspiration during the design process.],
+  [Our chosen design is built around a team of personas (agents) and the tasks they can perform in the investigation process. Each agent/task pair is modelled with a carefully defined structured output, and our application orchestrates the model invocations, propagating just the right context at each stage.],
+  [The Director agent poses a question and domain expert agents respond, generating findings. The Critic agent reviews findings for quality and assembles a timeline using the most credible. The Director uses the high-quality findings and timeline to determine how to progress the investigation.],
+  [Our design has three defined persona categories:],
+  [The Investigation Director. The Director’s responsibility is to progress the investigation from start to finish. The Director interrogates the experts by forming a question, or set of questions, which become the expert’s prompt. The Director uses a journaling tool for planning and organizing the investigation as it progresses.],
+  [A domain expert. Each domain expert has a unique set of domain knowledge and data sources. The experts’ responsibility is to produce findings from their data sources in response to the Director’s questions.],
+  [We currently have four experts in our team:],
+  [style="font-weight: 400;"\> Access : Authentication, authorization and perimeter services.],
+  [style="font-weight: 400;"\> Cloud : Infrastructure, compute, orchestration, and networking.],
+  [style="font-weight: 400;"\> Code : Analysis of source code and configuration management.],
+  [style="font-weight: 400;"\> Threat : Threat analysis and intelligence data sources.],
+  [The Critic is a “meta-expert”. The Critic’s responsibility is to assess and quantify the quality of findings made by domain experts using a rubric we’ve defined. The Critic annotates the experts’ findings with its own analysis and a credibility score for each finding. The Critic’s conclusions are passed back to the Director, closing the loop. The weakly adversarial relationship between the Critic and the expert group helps to mitigate against hallucinations and variability in the interpretation of evidence.],
+  [Because each agent/task pair is a separate model invocation we can vary all of the inputs, including the model version, output format, prompts, instructions, and tools. One of many ways we’re using this capability is to create a “knowledge pyramid”.],
+  [At the bottom of the knowledge pyramid, domain experts generate investigation findings by interrogating complex data sources, requiring many tool calls. Analyzing the returned data can be very token-intensive. Next, the Critic’s review identifies the most interesting findings from that set. During the review process the Critic inspects the experts’ claims and the tool calls and tool results used to support them, which also incurs a significant token overhead. Once the Critic has completed its review, it assembles an up to date investigation timeline, integrating the running investigation timeline and newly gathered findings into a coherent narrative. The condensed timeline, consisting only of the most credible findings, is then passed back to the Director. This design allows us to strategically use low, medium, and high-cost models for the expert, critic, and director functions, respectively.],
+  [The investigation process is broken into several phases. Phases allow us to vary the structure of the investigation loop as the investigation proceeds. At the moment, we have three phases, but it is simple to add more. The Director persona is responsible for advancing the phase.],
+  [Investigations begin in the discovery phase. After each round of investigation the Director decides whether to remain in the current phase or to progress to a new phase.],
+  [The first phase of each investigation. The goal in the discovery phase is to ensure that every available data source is examined. The Director reviews the state of the investigation and generates a question that is broadcast to the entire expert team.],
+  [A “meta-phase” in which the Director decides whether to advance to the next investigation phase or continue in the current one. The task’s prompt includes advice on when to advance to each phase.],
+  [Once the discovery phase has made clear which experts are able to produce relevant findings, the Director transitions the investigation to the trace phase. In the trace phase, the Director chooses a specific expert to question. We also have the flexibility to vary the model invocation parameters by phase, allowing us to use a different model or enhanced token budget.],
+  [The Director transitions the investigation to the concluding phase when sufficient information has been gathered to produce the final report.],
+  [Our prototype used a coding agent CLI as an execution harness, but that wasn’t suitable for a practical implementation. We needed an interface that would let us observe investigations occurring in realtime, view and share past investigations, and launch ad-hoc investigations. Critically, we needed a way of integrating the system into our existing stack, allowing investigations to be triggered by our existing detection tools. The service architecture we created does all of these things and is quite simple.],
+  [The hub provides the service API and an interface to persistent storage. Besides the usual CRUD-like API, the hub also provides a metrics endpoint so we can visualise system activity, token usage, and manage cost.],
+  [Investigation workers pick up queued investigation tasks from the API. Investigations produce an event stream which is streamed back to the hub through the API. Workers can be scaled to increase throughput as needed.],
+  [The Dashboard is used by staff to interact with the service. Running investigations can be observed in real-time, consuming the event stream from the hub. Additionally the dashboard provides management tools, letting us view the details of each model invocation. This capability is invaluable when debugging the system.],
+  [We’ve included an edited investigation report which demonstrates the potential of the agents to exhibit novel emergent behavior. In this case, the original alert was raised for a specific command sequence, which we analyze because it can be an indicator of compromise. In the course of investigating the alert, the agents independently discovered a separate credential exposure elsewhere in the process ancestry.],
+  [The highlighted leaf process triggered the investigation, but the agents traced the process hierarchy and discovered a different issue in an ancestor process.],
+  [The text below is a lightly edited version of the report summary from this investigation.],
+  [Investigation Report : Credential Exposure in Monitoring Workflow \[ESCALATE\]],
+  [Summary : While investigating \[command sequence\], the investigation uncovered a credential exposure elsewhere in the process ancestry chain.],
+  [The investigation confirmed that the command execution on \[TIMESTAMP\] was part of a legitimate monitoring workflow using \[diagnostic tool\]. The process ancestry shows the expected execution chain. However, critical security concerns were identified:],
+  [style="font-weight: 400;"\> Credential Exposure : A credential was exposed in process command line parameters within the ancestry chain, creating significant security risk.],
+  [style="font-weight: 400;"\> Expert-Critic Contradiction : The expert incorrectly assessed credential handling as secure while the critic correctly identified exposed credentials, indicating analysis blind spots that require attention.],
+  [What is notable about this result is that the expert did not raise the credential exposure in its findings; the Critic noticed it as part of its meta-analysis of the expert’s work. The Director then chose to pivot the investigation to focus on this issue instead. In the report, the Director highlights both the need to mitigate the security issue, and to follow-up on the expert’s failure to properly identify the risk. We referred the credential exposure to the service owning team to resolve.],
+  [We’re still at an early phase of our journey to streamline security investigations using AI agents, but we’re starting to see meaningful benefits. Our web-based dashboard allows us to launch and watch investigations in real time, and investigations yield interactive, verifiable reports that show how evidence was collected, interpreted, and judged. During our on-call shifts, we’re switching to supervising investigation teams, rather than doing the laborious work of gathering evidence. Unlike static detection rules, our agents often make spontaneous and unprompted discoveries, as we demonstrated in our example report. We’ve seen this occur many times, from highlighting weakness in IAM policies, to identifying problematic code and more.],
+  [There’s a great deal more to say. We look forward to sharing more details of how our system works in future blog posts. As a preview of some future content from the series:],
+  [style="font-weight: 400;"\> Maintaining alignment and orientation during multi-persona investigations],
+  [style="font-weight: 400;"\> Using artifacts as a communication channel between investigation participants],
+  [style="font-weight: 400;"\> Human in the loop: human \/ agent collaboration in security investigations],
+  [We wanted to give a shout out to all the people that have contributed to this journey:],
+  [style="font-weight: 400;"\> Chris Smith],
+  [style="font-weight: 400;"\> Abhi Rathod],
+  [style="font-weight: 400;"\> Dave Russell],
+  [style="font-weight: 400;"\> Nate Reeves],
+  [Interested in taking on interesting projects, making people’s work lives easier, or just building some pretty cool forms? We’re hiring!],
+  [Apply now],
+),
+  insert-map: (:),
+  word-count: 2081,
+  edited-for-length: true,
+  debug-mode: false,
+)
+
+}
+
+{
+  #standard-article(
+  title: [Testing Bash applications],
+  author: [Nikita Sobolev],
+  source-name: [Wemake Services],
+  images: (),
+  paragraphs: (
+  [Some time ago I was faced with a task of testing a bash script. At first I decided to use Python unit-tests, however, I was reluctant to bring external technologies to the project. Therefore I had to go with the testing framework written in the notorious bash.],
+  [Overview of the existing solutions],
+  [After googling available solutions, I was presented with very scarce options. We are going have a closer look at some of them.
+ 
+Which criteria are going to be important?],
+  [Dependencies: when taking a bash testing framework you wouldn’t want it to drag python, lua, and a few more systems packages along with it],
+  [Installation difficulties: since one of the tasks was implementing continuous-development and continuous-integration in Travis, it was important to me that the installation took a reasonable amount of time and number of steps. Ideal options — package managers, acceptable options — git clone, wget],
+  [Documentation and support: the application should run on different Unix-distributions, thus, the tests should work everywhere including various platforms, shells, and their combinations along with the speed of updates; plus staying outside communities and experience of other users was undesirable],
+  [Availability of fixtures in some form and/or (at least!) setup() and teardown() functions],
+  [The reasonable syntax for writing new tests, which is a crucial requirement in the world of bash],
+  [Habitual results: how many tests were carried out, what succeeded and what did not, and what happened (preferably)],
+  [assert.sh],
+  [One of the first options that I noticed was a small framework assert.sh. It is a pretty good solution — easy to install and use. In order to write the first test, you need to create a file tests.sh (example taken from the documentation):],
+  [. assert .sh],
+  [\# \`echo test\` is expected to write "test" on stdout
+ assert "echo test" "test"
+\# \`seq 3\` is expected to print "1", "2" and "3" on different lines
+ assert "seq 3" "1\\n2\\n3"
+\# exit code of \`true\` is expected to be 0
+assert\_raises "true"
+\# exit code of \`false\` is expected to be 1
+assert\_raises "false" 1
+\# end of test suite
+assert\_end examples],
+  [Then you can run this file:],
+  [\$ ./tests.sh
+all 4 examples tests passed in 0.014s.],
+  [Other advantages include:],
+  [Simple syntax and use],
+  [Good documentation and examples of use],
+  [Ability to make conditional or unconditional test skip],
+  [Ability to fail-fast or run-all],
+  [You can display the errors in detail (if you use flag –v), initially, it does not tell you which tests are failing],
+  [However, there is a number of serious drawbacks:],
+  [At the time of writing the article, there was a red icon on, saying “build failing” on Github, this looks scary],
+  [Even thought the framework positions itself as an easy one, for me it lacks setup() and teardown() methods to prepare the data for each test and delete it upon its completion],
+  [You can’t run all the tests from a certain folder],
+  [Conclusion : it is a good tool, which I would recommend using if you need to write a simple tests for a basic shell script. It isn’t suitable for more complex tasks.],
+  [shunit2],
+  [Installing shunit2 is not as easy as the previous tool. I was unable to find an adequate repository — there is some project on Google Code, there are a few on Github, left at various stages 3 and 5 years ago, and there are even some svn repositories. Consequently, it is impossible to make sense which release is the latest and how to download it. But those are small inconveniences.],
+  [How do the tests themselves look? Here is a simplified example from the documentation:],
+  [testAdding()
+{
+ result=\`expr 1 + 2\`
+ assertEquals \\
+ "the result of '\${result}' was wrong" \\
+ 3 "\${result}"
+}],
+  [And then running it:],
+  [/bin/bash math\_test.sh testAdding Ran 1 test. OK],
+  [This framework boasts of some unique features for its class:],
+  [Ability to create test suites inside the code. This feature can be handy when you have tests for certain platforms or shells. In this case, you can use your own namespaces, such as zsh\_, debian\_, etc],
+  [There setUp and teardown functions, which are run for each test; as well as oneTimeSetUp and oneTimeTearDown, which are run in the beginning and at the end of the testing session],
+  [Wide selection of various asserts, with the possibility of inputting numbers of the lines where the test fails, using \${\_ASSERT\_EQUALS\_}, however, this works only for the shells which support line numbering: bash (\>=3.0), ksh, pdksh, and zsh],
+  [You can skip tests],
+  [Still, there are a few considerable disadvantages, which have pushed me away in the end:],
+  [The project is almost inactive],
+  [Following the previous comment, it is hard to understand what to install, it seems that the last release was in 2011],
+  [The number of features is a bit excessive. For example, there are two ways of checking the equation: assertEquals and assertSame. It is quite surprising],
+  [You cannot run all the files from the folder],
+  [Conclusion : it is a serious tool, which should be setup in a flexible enough way and make an indispensable part of your project. However, lack of structure in the shunit2 project itself is scary, so I decided to continue my search.],
+  [roundup],
+  [Initially, I was intrigued by this framework because it was written by the author of Sinatra for ruby. I also liked test syntax, which resembles the well-known mocha. All functions starting with it\_ inside the file are considered as tests and run by default. Interestingly, all tests run in their own sandbox, which allows avoiding extra errors. Here is how an example from the documentation looks:],
+  [describe "roundup(5)" before() {
+ foo="bar"
+} after() {
+ rm -f foo.txt
+} it\_runs\_before() {
+ test "\$foo" "=" "bar"
+}],
+  [There are no examples of the output. You need to install it and check by yourself, which is not that good, actually. On the plus side, though:],
+  [Each test runs in its own sandbox, which is very convenient],
+  [It is easy to use],
+  [You can install it through git clone and ./configure && make, plus installation can be done into the local directory, you just need to modify \$PATH],
+  [Still, there are quite a few drawbacks:],
+  [You cannot create a source of common functions for all the tests (To be completely honest you can if you use a hack)],
+  [You cannot run all the test files from the folder.],
+  [Documentation is full of TODO marks, while the works haven’t been in progress for a couple of years now],
+  [You can not skip a test],
+  [Conclusion : it is a perfectly mediocre tool, you can not say it’s a good one, and yet it isn’t that bad. In its functions, while being wider, are similar to assert.sh. When should you use it? If you were going for assert.sh, and the only things lacking are functions before() or after().],
+  [bats],
+  [I say it straight away — I chose this framework in the end. There is a lot to like. First of all, great documentation: examples of use, semantic versioning; and I would like to specifically point out the list of projects using bats. 
+ 
+bats uses the following approach: the test is considered complete if all the commands inside return code 0 (like set –e does). Here is how test written on bats look like:],
+  [\#!/usr/bin/env bats \@test "addition using bc" {
+ result="\$(echo 2+2 | bc)"
+ \[ "\$result" -eq 4 \]
+} \@test "addition using dc" {
+ result="\$(echo 2 2+p | dc)"
+ \[ "\$result" -eq 4 \]
+}],
+  [And the output:],
+  [\$ bats addition.bats
+ ✓ addition using bc
+ ✓ addition using dc 2 tests, 0 failures],
+  [You can get test information in text compatible with Test Anything Protocol with the help of a flag --tap. You can find the plugins for a wide number of programs there: Jenkins, Redmine, SublimeText and others.
+ 
+Apart from peculiar test syntax, there are other interesting things about bats:],
+  [Command run allows you to run the command first and then test its outgoing code and text output; which you can do with the help of special variables: \$status and \$output],
+  [Command load allows you to load a common code base],
+  [Command skip allows you to skip a test if needed],
+  [setup() and teardown() functions allow you to adjust the environment and clean up after yourself],
+  [There is a whole set of specific variables],
+  [You can run all the tests inside the folder],
+  [Active community],
+  [I have already listed quite a large number of positive bats’ features. As for the negative sides, I was able to find only one:],
+  [bats steps away from valid bash. Tests should be written in files with .bats extension, using a different shebang],
+  [Conclusion : it is a quality tool with close to no weaknesses. I highly recommend it.],
+  [This research was made in attempt to write some quality tests for my personal project called git-secret. Which primary goal is to store encrypted files in the git repository. Check it out:],
+  [sobolevn/git-secret],
+  [Testing Bash applications was originally published in wemake.services on Medium, where people are continuing the conversation by highlighting and responding to this story.],
+),
+  insert-map: (:),
+  word-count: 1510,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+}
+
+{
+  #standard-article(
+  title: [Mock The Location Href Property],
+  author: [Gleb Bahmutov],
+  source-name: [Gleb Bahmutov],
+  images: (),
+  paragraphs: (
+  [Let's say the application changes the URL using the assignment:],
+  [1 
+ location. href = 'https:\/\/acme.com'],
+  [Can we prevent the URL change? For example, we might want to limit our test to the current origin. Let's do it using the following example page:],
+  [index.html 1 
+ 2 
+ 3 
+ 4 
+ 
+ Hello World 
+ 
+ 
+ app.js 1 
+ 2 
+ 3 
+ 4 
+ setTimeout ( () =\> { 
+ console . log ( 'changing window location to acme.com' ) 
+ location. href = 'https:\/\/acme.com' 
+ }, 1000 )],
+  [The initial Cypress test does not prevent the navigation to "acme.com"],
+  [cypress/e2e/spec.cy.js 1 
+ 2 
+ 3 
+ 4 
+ 5 
+ 6 
+ 7 
+ it ( 'sets the location HREF' , () =\> { 
+ cy. visit ( 'index.html' ) 
+ cy. contains ( 'h1' , 'Hello World' ) 
+ \/\\/ confirm but do not allow the application 
+ \/\\/ to navigate away to the new URL 
+ \/\\/ Tip: app sets it using "location.href = ..." command 
+ })],
+  [🎁 The source code for this blog post is located in the repo bahmutov/with-window .],
+  [I have recorded a short video going through this example and my solution],
+  [Cannot stub Location object],
+  [We need to prevent location.href = ... assignment by making the property read-only or better: using a custom object property definition with a setter stub function. Unfortunately, we cannot overwrite the location.href property:],
+  [Ok, maybe we can mock the entire location object? It is a property of the global window object:],
+  [Unfortunately, the location property itself cannot be overwritten either.],
+  [We need another way. In the blog post Stub The Unstubbable I have shown one possible solution that modifies the application's source code to create an intermediate proxy "Location" instance. The E2E test can control that object. It is imperfect solution, as it requires source code modifications, which might be unavailable.],
+  [Let's find another way.],
+  [JavaScript with keyword],
+  [JavaScript has a pretty obscure operator with that you should definitely NOT use in production, but can help us with our testing needs.],
+  [1 
+ 2 
+ 3 
+ with (expression) { 
+ ... 
+ }],
+  [The above syntax adds the expression result into the variable lookup chain. For example:],
+  [1 
+ 2 
+ 3 
+ 4 
+ 5 
+ 6 
+ 7 
+ 8 
+ 9 
+ let a, x, y; 
+ const r = 10 ; 
+ 
+ with ( Math ) { 
+ \/\\/ where is PI, cos, and sin defined? 
+ a = PI \* r \* r; 
+ x = r \* cos ( PI ); 
+ y = r \* sin ( PI \/ 2 ); 
+ }],
+  [In the example above, the PI , cos , and sin are properties of the Math object. By using with (Math) we are forcing the browser to look up these identifiers in the Math object (before going up to the window object).],
+  [Tip: the with (expression) syntax is hard to read and understand. A simple spread operator would be much more preferable way of coding the above example:],
+  [1 
+ 2 
+ 3 
+ 4 
+ 5 
+ 6 
+ let a, x, y; 
+ const r = 10 ; 
+ const { PI , cos, sin } = Math 
+ a = PI \* r \* r; 
+ x = r \* cos ( PI ); 
+ y = r \* sin ( PI \/ 2 );],
+  [The E2E test],
+  [The application's code accessing the location object is loaded by the resource. Let's wrap this code using a fake window object just so we can "sneak" in a fake "location" object of our creation.],
+  [cypress/e2e/solution.cy.js 1 
+ 2 
+ 3 
+ 4 
+ 5 
+ 6 
+ 7 
+ 8 
+ 9 
+ 10 
+ 11 
+ 12 
+ 13 
+ 14 
+ 15 
+ 16 
+ 17 
+ 18 
+ 19 
+ 20 
+ 21 
+ it ( 'sets the location HREF' , () =\> { 
+ cy. intercept ( 'GET' , 'app.js' , ( req ) =\> { 
+ req. continue ( ( res ) =\> { 
+ \/\\/ wrap app's code with a fake window object 
+ \/\\/ that has overwritten location object 
+ res. body = \` 
+ const fakeWindowObject = { 
+ location: { 
+ href: '', 
+ }, 
+ } 
+ with (fakeWindowObject) { 
+ \${res.body} 
+ } 
+ \` 
+ }) 
+ }). as ( 'appJs' ) 
+ cy. visit ( 'index.html' ) 
+ cy. wait ( '\@appJs' ) 
+ cy. contains ( 'h1' , 'Hello World' ) 
+ })],
+  [When the test runs, the application loads app.js and receives the following (modified) script],
+  [app.js 1 
+ 2 
+ 3 
+ 4 
+ 5 
+ 6 
+ 7 
+ 8 
+ 9 
+ 10 
+ 11 
+ const fakeWindowObject = { 
+ location : { 
+ href : '' , 
+ }, 
+ } 
+ with (fakeWindowObject) { 
+ setTimeout ( () =\> { 
+ console . log ( 'changing window location to acme.com' ) 
+ location. href = 'https:\/\/acme.com' 
+ }, 1000 ) 
+ }],
+  [The test stays on the same page, but we do see the application printing "changing window location to acme.com".],
+  [We need to verify the location.href property really changes to acme.com string. We can put the fake window object on the real window object. Then we can get its value using the cy.window command.],
+  [One last tip: the browser caches the app.js resource, thus we need to remove the caching headers in order to receive the full JavaScript source code:],
+  [1 
+ 2 
+ 3 
+ 4 
+ 5 
+ 6 
+ 7 
+ 8 
+ 9 
+ 10 
+ 11 
+ 12 
+ 13 
+ 14 
+ 15 
+ 16 
+ 17 
+ 18 
+ 19 
+ 20 
+ cy. intercept ( 'GET' , 'app.js' , ( req ) =\> { 
+ \/\\/ delete common cache headers 
+ \/\\/ so the browser gets the real app.js source code 
+ delete req. headers \[ 'if-none-match' \] 
+ delete req. headers \[ 'if-modified-since' \] 
+ req. continue ( ( res ) =\> { 
+ \/\\/ wrap app's code with a fake window object 
+ \/\\/ that has overwritten location object 
+ res. body = \` 
+ window.fakeWindowObject = { 
+ location: { 
+ href: '', 
+ }, 
+ } 
+ with (window.fakeWindowObject) { 
+ \${res.body} 
+ } 
+ \` 
+ }) 
+ }). as ( 'appJs' )],
+  [Proxy to the real location],
+  [We don't want to create a completely fake location object, since we want to be able to use the real properties and methods in Location.prototype . Instead of plain object, our fake location can proxy to the real thing:],
+  [1],
+  [2],
+  [3],
+  [4],
+  [5],
+  [6],
+  [7],
+  [8],
+  [9],
+  [10],
+  [11],
+  [12],
+  [13],
+  [14],
+  [15],
+  [16],
+  [17],
+  [18],
+  [19],
+  [20],
+  [21],
+  [22],
+  [23],
+  [24],
+  [25],
+  [26],
+  [27],
+  [28],
+  [29],
+  [30],
+  [31],
+  [32],
+  [33],
+  [34],
+  [35],
+  [36],
+  [37],
+  [38],
+  [39],
+  [40],
+  [41],
+  [42],
+  [43],
+  [44],
+  [45],
+  [46],
+  [47],
+  [48],
+  [49],
+  [50],
+  [it ( 'sets the location HREF' , () =\> {],
+  [cy. intercept ( 'GET' , 'app.js' , ( req ) =\> {],
+  [\/\\/ delete common cache headers],
+  [\/\\/ so the browser gets the real app.js source code],
+  [delete req. headers \[ 'if-none-match' \]],
+  [delete req. headers \[ 'if-modified-since' \]],
+  [req. continue ( ( res ) =\> {],
+  [\/\\/ wrap app's code with a fake window object],
+  [\/\\/ that has overwritten location object],
+  [res. body = \`],
+  [let href = ''],
+  [const fakeLocation = new Proxy(location, {],
+  [set(target, prop, value) {],
+  [if (prop === 'href') {],
+  [href = value],
+  [\/\\/ do not allow the app to navigate away],
+  [return false],
+  [}],
+  [target\[prop\] = value],
+  [return true],
+  [},],
+  [get(target, prop) {],
+  [if (prop === 'href') {],
+  [return href],
+  [}],
+  [return target\[prop\]],
+  [},],
+  [})],
+  [window.fakeWindowObject = {],
+  [location: fakeLocation,],
+  [}],
+  [with (window.fakeWindowObject) {],
+  [\${res.body}],
+  [}],
+  [\`],
+  [})],
+  [}). as ( 'appJs' )],
+  [cy. visit ( 'index.html' )],
+  [cy. wait ( '\@appJs' )],
+  [cy. contains ( 'h1' , 'Hello World' )],
+  [\/\\/ confirm but do not allow the application],
+  [\/\\/ to navigate away to the new URL],
+  [\/\\/ Tip: app sets it using "location.href = ..." command],
+  [cy. window ()],
+  [. should ( 'have.property' , 'fakeWindowObject' )],
+  [\/\\/ the query retries until the app sets the location href],
+  [\/\\/ and the test passes],
+  [. its ( 'location' )],
+  [. should ( 'have.property' , 'href' , 'https:\/\/acme.com' )],
+  [})],
+  [To see the proxy in action, I will modify the console.log message the application prints:],
+  [app.js 1 
+ 2 
+ 3 
+ 4 
+ 5 
+ 6 
+ 7 
+ setTimeout ( () =\> { 
+ console . log ( 
+ 'changing window location from %s to acme.com' , 
+ location. hostname , 
+ ) 
+ location. href = 'https:\/\/acme.com' 
+ }, 1000 )],
+  [The test runs and we see the real host name, yet href = ... assignment is trapped.],
+  [Tip: if you do not know the URL value, simply request it to make sure it is valid using cy.request command],
+  [1 
+ 2 
+ 3 
+ 4 
+ 5 
+ 6 
+ 7 
+ cy. window () 
+ . should ( 'have.property' , 'fakeWindowObject' ) 
+ . its ( 'location' ) 
+ . should ( 'have.property' , 'href' ) 
+ . and ( 'not.be.empty' ) 
+ \/\\/ yields the URL 
+ . then (cy. request )],
+  [If the URL is invalid, or the server responds with an error, cy.request automatically fails.],
+  [Nice.],
+),
+  insert-map: (:),
+  inline-pq: pull-quote([By using with (Math) we are forcing the browser to look up these identifiers in the Math object (before going up to the window object).], [Gleb Bahmutov]),
+  inline-pq-idx: 56,
+  word-count: 1393,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+}
+
+{
+  #standard-article(
+  title: [Thousands of elderly twins assure me that my kids will be alright],
+  author: [Robert Heaton],
+  source-name: [Robert Heaton],
+  images: (),
+  paragraphs: (
+  [I know that time spent with my kids is supposed to be its own reward, and it is. But I also want to believe that what I do in this time matters, as much as possible. Elegantly handling a tantrum feels more worthwhile if I’m helping my son learn to express his feelings, not just making it through another day. I find more contentment at the end of a long afternoon if I think that I did a good job and that this good job will echo through the ages, or at least after bedtime.],
+  [I want my kids to be happy and fulfilled, skilled and accomplished, and I want to be able to help. Shouldn’t I try to pass my good habits onto them while shielding them from my dark thoughts? This shouldn’t be too hard; I’m their dad, they see me every day. My eldest child, Oscar, is only 4, but I already think he might be a little remarkable, and thick black lines seem to lead back to what Gaby (my wife) and I do with him. The spark and smarts are his, but I feel like I must surely be making a difference.],
+  [However, I recently read “Selfish Reasons To Have More Kids” by Bryan Caplan , an economist and blogger, and it’s turned me a little upside-down. Caplan observes that many parents wreck themselves trying to boost and polish their children. He argues that this isn’t just a bad tradeoff, but an almost total waste of time. He presents reams of remarkable research suggesting that, in Western middle-class families, parents’ choices have almost no influence on their children’s long-term health, intelligence, happiness, success, or character. Parents achieve nothing by sending their kids to extra maths lessons, hiding the TV remote, or even teaching them the value of hard work. Caplan shows that upbringing counts for almost nil (at least within the Western middle-class), and that genetics and randomness are everything. It appears that nothing within parental control matters.],
+  [Caplan presents his arguments as a gift, one that frees parents from eighteen years of guilt and wasted effort. In his telling there’s little that parents can do to influence their children in the long-run, so there’s no point and no duty for them to try. Kids have genes and free will; now let go and enjoy your time together.],
+  [Caplan knows that some parents will rebel against his arguments. I certainly did. I heard him telling me that I don’t matter, at least not in the ways that I’d hoped. I want parenting to be a deep, complex vocation, and I want to spend the coming decades playing a domestic game of skill and consequence. The idea of having children who I have no influence over is scary, like living with werewolves. Randomness and outside forces are everywhere and the kids are mutating while I sleep.],
+  [But even though I want to be relevant, I don’t want to waste my time. Begrudgingly, I kept reading.],
+  [id="whats-the-evidence"\>What’s the evidence?],
+  [Caplan’s claim that parents have little long-term influence on their children seems absurd at first. Contra Caplan, I see my influence in my children every day. Oscar likes the same music as me. He used to be terrified of playgrounds but Gaby screwed a wooden ladder to his bedroom wall and now he’s mostly normal. I stubbed my toe and shouted “fuck!” and he whispered “fuck indeed daddy, you sound frustrated,” failing to calm me in the same way that I fail to calm him. This is surely common sense.],
+  [But common sense grows in unscientific environments. Nature and nurture are conflated, we don’t see the aggregates, and we don’t see the long-term. Kaplan agrees that parents have huge influence over their children in the short-term, but he also argues that this influence fades, sometimes fast, sometimes slow, but it does fade, and it vanishes completely when they grow up and finish becoming whoever they are. Kids are resilient to setbacks, but they’re resilient to assistance too.],
+  [In order to rigorously test theories like this, researchers study large groups of children. However, most kids are useless to them. Suppose that two happy parents have and raise a child. The child grows up with their parents, and in time they become a happy adult too. It’s impossible to know whether the child’s happiness comes from happy genes that they inherited from their happy parents, or from the happy environment that their happy parents raised them in. Their parents’ genes and choices are irreversibly mixed together. Even with a huge database of children, parents, and measurements of happiness, causalities are impossible to itemise.],
+  [Fortunately, researchers can still extract good data from special children, like identical twins who were separated at birth. These kids give researchers two copies of the same genes, raised in different environments. Since separated identical twins share genes but not environments, any systematic differences between them must be due to their different upbringings. If identical twins raised separately bear no resemblance to each other but are similar to their adopted siblings, this would suggest that the twins were shaped by their divergent upbringings. If the twins remain similar, despite growing up entirely separately, this would suggest that they were made by their identical genes.],
+  [Researchers slice and measure these children, pulling apart the effects of nature and nurture. Twins separated at birth are the gold standard, but non-twin adoptees and non-adopted twins can work too. The researchers find or build databases of useful children (who may now be adults), and compare their grades (perhaps from school records), income (perhaps from tax records) or personalities (perhaps from administering personality tests directly). The evidence from this data is strong and consistent: a near-zero effect of upbringing on character, happiness, and almost everything else.],
+  [id="should-i-pay-attention-to-the-evidence"\>Should I pay attention to the evidence?],
+  [The studies are clever, but are they valid? They control naturally for almost everything, but they still aren’t perfect. For example, maybe parents who choose to adopt are meaningfully different to the average parent, meaning that conclusions based solely on them don’t generalise to the rest of the population. Maybe parents who choose to adopt and then also agree to be part of a long-term study are even more different. Maybe women who have twins are different. Maybe twins themselves are different too.],
+  [But even if these sampling biases are material, I doubt that they’re large enough to tear down the studies’ broad conclusions. I’d guess that adoptees and twins separated at birth are a good enough sample to represent humanity, and that even if they aren’t fully representative, they probably aren’t masking a giant effect that skips twins and applies only to the rest of us. If researchers were able to fully control for sampling biases then this might shift their estimate of the effect of parental influence from “incredibly low” to merely “very, very low”.],
+  [Caplan admits that the studies are primarily focussed on the Western middle class, because that’s where the data is. This hurts the studies’ generalisability but binds me - an orthodox member of their class - even tighter. All said, I think I have to assume that the studies pointing towards the primacy of genes are valid for people like me.],
+  [But do the studies definitely apply to me, or you, specifically? They find no effect of parenting style on children’s adult outcomes, within the range of normal parenting styles in middle-class Western families . That word “normal” might provide an opening for a determined parent to squeeze through in order to regain their lost gravity. The studies suggest that there’s no difference between the free-range and regimented ends of the normal spectrum, but they can’t say anything definite about what happens beyond the edges of normality.],
+  [Caplan recommends that parents dissolve their fears and ambitions in the acid balm of the evidence. But there is another response that’s consistent with the data, although it might not necessarily be a good idea: redouble your efforts and head for the ambiguity beyond the well-studied centre, where the evidence might not stretch. More enrichment, more practice, more effort, fewer half-measures.],
+  [This makes some common sense; think about outlandish famous families. The Williams sisters must be naturally gifted tennis players, but they surely wouldn’t be the same dominant champions without their obsessive dad. The Polgar sisters would have been unremarkable chess players without theirs. These types of childhoods are so rare that they can’t possibly be adequately represented in any of the twin datasets, so the research doesn’t have anything direct to say about them. Twin studies don’t disprove the Jackson Five.],
+  [Caplan claims that kids are elastic, and that whether helped or harmed they tend to snap back to their natural state. However, I learned in physics classes that not even elastic is perfectly elastic. It pings back to its original shape after mild deformation, but it can still be altered permanently if stretched beyond a point called its elastic limit . Whilst the sum of small interventions on a child might be zero, it might still be possible to permanently deform them (in a good way) through the application of massive force. This metaphor is so perfect that it must surely be true.],
+  [In fact, even Caplan is stretching his own kids like this. In a 2015 blog post (the book was written in 2011), he describes the rigorous homeschool that he runs for his two eldest (twins, coincidentally). The main reason he homeschools them, he says, is because they are particularly academic kids, and they all think that they will enjoy an uncompromising homeschool more than a conventional one. However, he also suspects that his homeschool might be so off-the-scale remarkable that it vaults over the evidence and produces better adult outcomes, despite his claims that this is usually impossible. He writes :],
+  [I suspect – though I’m far from sure – that the Caplan Family School is such an exceptional experience that ordinary twin and adoption evidence isn’t relevant. For example, my sons are plausibly the only 12-year-olds in the nation taking a college class in labor economics.],
+  [Should you or I try to do this too? It’s almost always delusional to put yourself and your children in a category called “exceptional”, and this might not even be a category that you want to be in. I do wonder, though, where does “normal” end and “exceptional” begin? Where’s the elastic limit, and how weird is it really? Is anything less than the Williams sisters a waste of time? Or does the curve bend much sooner than that? Even if you don’t want to do anything too odd by modern standards, a lot of the data in these studies comes from dead twins brought up decades ago. Today’s parenting zeitgeist might not necessarily be better than the old days, but it’s certainly different. How well does data from a different era in parenting generalise to today? Is it possible that even normal parenting today is different enough from several decades ago to have a material impact?],
+  [Is reading a respected parenting manual and teaching your toddler to add and multiply too normal and futile, or just crazy enough that it might work? I don’t want to be Richard Williams and I couldn’t even be Bryan Caplan, but I could be a bit weirder than average if that was worthwhile and harmless. I might be inventing straws to clutch at, but as far as I know there’s no cast iron science out here so we’re allowed to make things up again and I can assert a world in which I have agency.],
+  [id="what-should-i-do-now"\>What should I do now?],
+  [I’ve drilled a tenuous airhole in Caplan’s claims, but his evidence is still strong, spiky, and hard to digest without a rupture in my plans. Normally when confronted with new evidence you can wisely say “it’s probably a combination of everything” and then maybe do a bit more or less of something, or not. However, Caplan argues specifically that parenting is not a combination of everything. Everything is nature, at least in the long-term. His arguments are backed by simple and compelling studies that are hard to wishy-wash away and that block the easy path back to the status quo.],
+  [But it’s drastic to change how you raise your kids based on a short book and some studies that you aren’t going to read. The book’s claims are extreme, at least compared to what I used to think, and it’s hard to build enough confidence to change your mind about things that matter to you. I rarely need to develop solid beliefs about messy, unsettled topics that I’m not an expert in. I’ve skimmed a few paper abstracts and some reviews of the book, but that doesn’t feel like enough. Caplan seems smart and honest but this isn’t settled science and how do I know he’s not missing or ignoring grave methodological gaffes?],
+  [I can’t unread the book, and as someone who likes to consider themselves a somewhat scientific, data-driven parent, I can’t ignore it. So what should I do now?],
+  [I think I value my children for who they are already, but it’s good to be reminded to start there. I don’t care whether I have any long-term influence on my friends, I just like spending time with them and being there if they need me. So why do I care about being able to shape my kids? The desire to help your children is surely natural and normal, to a degree, but that doesn’t mean it’s always helpful.],
+  [Caplan says that I can stop worrying about whether I’m wrecking Oscar’s future habits and character. I try not to fret like this, but often it’s unavoidable. Does he play by himself enough? Does he watch too much TV? Are we letting him be too picky with his food? Should we use more discipline when he won’t share? Less discipline? I extrapolate today’s small behavioural decisions ten years forward into a bleak future. I fear that parenting is a system of positive feedback loops, where deviations become liberties that congeal into nightmares. But Caplan says that everything is fluid and reverts to the mean and I shouldn’t sweat the deviations. Bribe kids to behave, give them unlimited social media time, none of it matters, they’re much less of a blank slate than you think. Nothing will come back to bite you, and if you do get bitten then there was nothing you could have done to stop it.],
+  [Still, I’m not ready to stop trying to help my kids flourish. I’m not confident enough that Caplan’s evidence applies to my family and my era, and in any case at the moment I don’t have to make any tradeoffs. Oscar and I do a lot that I’d previously assumed would benefit him in the longterm: maths, reading, piano. For now he enjoys nearly all of it and so do I, so nothing is being sacrificed. I’m sure that this will change as he gets older, but at the moment it’s more fun for me to talk to Oscar about multiplication and prime numbers than pretend to order another pasta with cheese from his play-dough restaurant. On some days he doesn’t want to do any sums and tells me to get lost. But even if I was certain that the long-term impact on his future earnings would be zero, I’d still take him to the science museum and try to remember how aeroplanes work.],
+  [This sounds relaxed and balanced, but it’s easy to be sanguine when there aren’t any dilemmas. If he stops being interested in things that I think are valuable then I’m sure I’ll feel anxious, and I’ll struggle when he starts making decisions that I think are mistakes. I’ll reevaluate when I’m forced to, but for now I hope that it’s possible to both try to help your kids excel and to live with them in the moment.],
+  [I wonder if these studies should change how I see the rest of the world too. I’m friends with my old physics teacher from high school. I went to his house for lunch and told him about Caplan’s book. He was horrified. “If that’s true, is there any point in me trying to be a good teacher?” he said. This had occurred to me too. If parents truly have no lasting influence on their children, how can schools, or local theatres, or any kind of small public policy intervention hope to have any? Maybe it’s even harder than I thought to make any long-term difference to anything.],
+  [And how should I think about traits that have value but don’t show up in survey data? For example, I can take Oscar to piano lessons and encourage him to practice. Most adults who know how to play the piano probably had lessons when they were younger, and their parents probably pushed them at least a little. Does being able to play the piano matter, morally and cosmically, even if it has no impact on income, happiness, or anything else that can easily be measured? The harder you think and the more precise the questions, the more you need a detailed moral philosophy.],
+  [It’s helpful to have thousands of elderly twins reminding me that my kids will probably be fine, whatever I do. Everything reverts to the mean, the twins murmur kindly. Don’t be too smug when things are going the way you hoped, and don’t despair when they aren’t.],
+  [I’m not ready to fully accept my obsolescence yet. We’ll watch more TV but we’ll keep doing maths together. One day we’ll start to disagree, and then we’ll reassess. Caplan does throw me one bone: “parents \[have\] moderate influence over how much their children like them.” Even if nothing I do adds up to anything, the days will hopefully make a happy childhood.],
+  [Read more of my essays about parenthood here . Plus, I’m writing a book about having kids! Subscribe to my newsletter for updates.],
+),
+  insert-map: (:),
+  word-count: 3005,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+}
+
+{
+  #standard-article(
+  title: [Win the cloud with Winnaker!],
+  author: [Target Brands, Inc],
+  source-name: [Target Tech],
+  images: (),
+  paragraphs: (
+  [id="win-the-cloud-with-winnaker"\>Win the cloud with Winnaker!],
+  [I am happy to announce that we, at Target, decided to open source a tool called Winnaker. This tool will allow the user to audit Spinnaker from an end user point of view.],
+  [id="but-first-what-is-spinnaker"\>But first what is Spinnaker?],
+  [The first time I heard the word Spinnaker, my reaction was, “wait, what does that even mean in English?”],
+  [Shortly after, I found myself implementing a demo of Spinnaker as a potential replacement for our internal cloud deployment tool.],
+  [Spinnaker is a cloud agnostic continuous delivery tool, which means we can push our code to any cloud provider we like. In fact, Spinnaker takes agnosticism to the next level by introducing three abstractions.],
+  [Load balancers],
+  [Server groups],
+  [Security groups],
+  [By enforcing this level of simplicity, it allows the implementation of deployment strategies such as Highlander, Red/Black on a vast different type of infrastructure (VM, Container, Kubernetes, public cloud, private cloud) with a high level of confidence and an incredible level of ease of use for the app developers.],
+  [Spinnaker also roots for the immutable infrastructure design pattern. Baking your image once and deploying the image everywhere is another bold move that differentiates Spinnaker from the other tools.],
+  [id="why-winnaker-"\>Why Winnaker ?],
+  [Short answer is because of automation!],
+  [id="test-the-functionality-of-the-cd-system-as-a-whole"\>Test the functionality of the CD system as a whole.],
+  [Spinnaker has different components (CloudDriver, Rosco, Deck,…).
+Each of these components have their own unit tests and health checks that can be monitored.],
+  [We learned the hard way that relying only on component health checks is not effective enough to ensure developers won’t face any error when they deploy their apps.],
+  [A few things can go wrong when off monitoring radar:],
+  [Connectivity between the separate components],
+  [Maxing out cloud provider API rate limit],
+  [Base infrastructure configurations (subnet address space, identity management roles)],
+  [So we decided to audit Spinnaker and cloud’s whole functionality with a sample app. If baking and deploying our sample app in different accounts and regions passes, then we are positive that it works!],
+  [However, that kind of testing is time consuming and boring for humans. Winnaker brings back the fun to the testing.],
+  [Winnaker is the product of automating the auditing of your deployment process.],
+  [id="automate-troubleshooting"\>Automate Troubleshooting],
+  [Every error in Spinnaker means something new that we document, but who reads the documentation? Additionally, documentation goes out of date all the time.],
+  [Winnaker has a list of known error messages and it comes up with suggestions that you may want to use based on the error message.],
+  [For instance, this is an example of a Winnaker output :],
+  [And you can add your own suggestion for errors.],
+  [id="what-are-the-features-of-winnaker-"\>What are the features of Winnaker ?],
+  [Start a pipeline on Spinnaker with different options (force baking, deploy,…)],
+  [Get stage details and return the non-zero error code.],
+  [Screenshot the stages],
+  [Pressure test your cloud deployment],
+  [Integrates with HipChat],
+  [Troubleshoot suggestions],
+  [Works with different cloud providers.],
+  [id="how-do-you-install-winnaker-"\>How do you install Winnaker ?],
+  [There is nothing to install. Everything ships in a docker container. Winnaker uses chromedriver, python, virtualdisplay and selenium. Installing any of those things separately can be a recipe for headache sometimes.],
+  [id="what-do-you-need-"\>What do you need ?],
+  [A Spinnaker URL],
+  [A sample app and sample pipeline to run],
+  [More extensive documentation is located in Winnaker’s GitHub repository. Please feel free to open issues or submit PRs.],
+  [id="about-the-author"\>About the Author],
+  [Medya Ghazizadeh is a Senior Engineer and part of Target’s Cloud Platform Engineering team.],
+),
+  insert-map: (:),
+  word-count: 609,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+}
+
+{
+  #standard-article(
+  title: [Cypress Dependencies Through A Docker Image],
+  author: [Gleb Bahmutov],
+  source-name: [Gleb Bahmutov],
+  images: (),
+  paragraphs: (
+  [If you are testing a website, the DEV dependencies do not change very often. You might bump Cypress version once in a while, add or upgrade a Cypress plugin , but in general the Node dependencies are changed less frequently than the spec files. Thus running npm ci on every test job is bound to be repetitive work that slows down your testing pipelines.],
+  [Of course, each CI allows you to cache dependencies between the jobs - but why do you need to even think about it? You want to cache all dependencies the very first time npm ci runs for the given package.json or package-lock.json file, not the first time each the workflow runs! Most CIs let you control the container image used for running tests; I assume you use one of Cypress Docker images or one of Cypress Docker images with browsers installed . So what if we could create our own Docker image based on Cypress (or any appropriate Docker base image you might want) and run npm ci in that image, and then use that Docker image to simply run our current tests?],
+  [I had the idea of caching separately PROD and DEV images inside Docker containers a loooong time ago, see the bahmutov/double-docker repo. In this blog post, I will show a simple approach that works for repositories with tests only, the situation described in the blog post Separate Application And Tests Repos GitHub Actions Setup . We will use GitHub Actions and the public Docker registry.],
+  [In the nutshell:],
+  [whenever the user changes package.json or Dockerfile , we build a new Docker image with the node\_modules and Cypress binary folders (but no other source code)],
+  [we push the built Docker image to the registry],
+  [every CI run simply pulls that Docker image and checks out the tests into the container],
+  [the tests run immediately after the checkout step, since there is nothing to install],
+  [Let's see the code],
+  [Build and push],
+  [Run on GitHub Actions],
+  [GitHub Container Registry],
+  [🎁 I have the working example in the public repo bahmutov/cypress-tests-image .],
+  [First, let's look a the Dockerfile],
+  [Dockerfile 1],
+  [2],
+  [3],
+  [4],
+  [5],
+  [6],
+  [7],
+  [8],
+  [9],
+  [10],
+  [11],
+  [12],
+  [13],
+  [14],
+  [15],
+  [16],
+  [17],
+  [18],
+  [19],
+  [20],
+  [21],
+  [22],
+  [23],
+  [24],
+  [25],
+  [26],
+  [27],
+  [28],
+  [29],
+  [30],
+  [31],
+  [\# pick the image to build from],
+  [\# either the base or the browsers image],
+  [\# https:\/\/hub.docker.com/r/cypress/base/tags],
+  [FROM cypress/base:24.12.0],
+  [\# https:\/\/hub.docker.com/r/cypress/browsers/tags],
+  [\# FROM cypress/browsers:node-24.12.0-chrome-143.0.7499.169-1-ff-146.0.1-edge-143.0.3650.96-1],
+  [\# diagnostics],
+  [RUN echo "node -v"],
+  [RUN echo "npm -v"],
+  [\# copy ONLY the package.json and package-lock.json files],
+  [WORKDIR /e2e],
+  [COPY package.json package-lock.json ./],
+  [\# install npm dependencies],
+  [\# and put the Cypress binary in the local subfolder],
+  [\# https:\/\/on.cypress.io/installation],
+  [ENV CYPRESS\_CACHE\_FOLDER=/e2e/cypress\_cache],
+  [RUN npm ci],
+  [\# verify Cypress installation],
+  [RUN npx cypress verify],
+  [\# the Docker image should have all Cypress OS dependencies installed],
+  [\# plus inside the "/e2e" folder],
+  [\# we will have],
+  [\# - node\_modules with Cypress installed],
+  [\# - cypress\_cache with the Cypress binary],
+  [Tip: you can use yarn.lock or any other lock file with this approach.],
+  [I am naming my image bahmutov/cy: , you can find them at the Docker hub . Note that it is important to build the image on the same OS architecture as the CI machines, in my case it will be ubuntu-latest .],
+  [The first step in the workflow computes the combined checksum of package.json and Dockerfile files. It also checks if the Docker image tagged with this checksum exists already using action tyriis/docker-image-tag-exists .],
+  [.github/workflows/ci.yml 1],
+  [2],
+  [3],
+  [4],
+  [5],
+  [6],
+  [7],
+  [8],
+  [9],
+  [10],
+  [11],
+  [12],
+  [13],
+  [14],
+  [15],
+  [16],
+  [17],
+  [18],
+  [19],
+  [20],
+  [21],
+  [22],
+  [23],
+  [24],
+  [25],
+  [26],
+  [27],
+  [28],
+  [29],
+  [30],
+  [31],
+  [32],
+  [33],
+  [34],
+  [35],
+  [36],
+  [37],
+  [38],
+  [39],
+  [40],
+  [41],
+  [42],
+  [43],
+  [44],
+  [name: CI],
+  [on: push],
+  [jobs:],
+  [\# computes the hash of package.json and and stores it in the output],
+  [\# also checks if the Docker image with this tag already exists],
+  [\# outputs:],
+  [\# hash: the package.json hash],
+  [\# tag: whether the Docker image with this tag already exists, "found" or "not found"],
+  [package-hash:],
+  [runs-on: ubuntu-latest],
+  [outputs:],
+  [hash: \${{ steps.hash.outputs.checksum }}],
+  [tag: \${{ steps.tag-exists.outputs.tag }}],
+  [steps:],
+  [- name: Checkout 🛎️],
+  [\# https:\/\/github.com/actions/checkout],
+  [\# only needed to get package.json and Dockerfile to compute the hash],
+  [uses: actions/checkout\@v6],
+  [with:],
+  [sparse-checkout: |],
+  [package.json],
+  [- name: Package.json + Dockerfile checksum],
+  [id: hash],
+  [run: echo "checksum=\$ {{ hashFiles('package.json', 'Dockerfile') }} " \>\> \$GITHUB\_OUTPUT],
+  [\# https:\/\/github.com/tyriis/docker-image-tag-exists],
+  [- name: Check if Docker image tag exists],
+  [id: tag-exists],
+  [uses: tyriis/docker-image-tag-exists\@v2.1.0],
+  [with:],
+  [registry: docker.io],
+  [repository: bahmutov/cy],
+  [\# The container image tag],
+  [tag: \${{ steps.hash.outputs.checksum }}],
+  [- name: Report the check results],
+  [\# print the tag result into Github Actions summary],
+  [run: |],
+  [echo "\#\# Docker image check" \>\> \$GITHUB\_STEP\_SUMMARY],
+  [echo "Package.json + Dockerfile hash: \${{ steps.hash.outputs.checksum }}" \>\> \$GITHUB\_STEP\_SUMMARY],
+  [echo "Docker image bahmutov/cy:\${{ steps.hash.outputs.checksum }} \*\*\${{ steps.tag-exists.outputs.tag }}\*\*" \>\> \$GITHUB\_STEP\_SUMMARY],
+  [Build and push],
+  [Great, let's build the Docker image if one is missing. We could have a job with every internal step using a condition:],
+  [1 
+ 2 
+ 3 
+ 4 
+ 5 
+ 6 
+ 7 
+ 8 
+ 9 
+ 10 
+ 11 
+ 12 
+ 13 
+ 14 
+ 15 
+ 16 
+ build-docker-image: 
+ \# builds the Docker image and pushes it to the Docker hub 
+ \# but only if it does not exist yet 
+ runs-on: ubuntu-latest 
+ needs: package-hash 
+ steps: 
+ - name: Checkout 🛎️ 
+ if: \${{ needs.package-hash.outputs.tag == 'not found' }} 
+ \# https:\/\/github.com/actions/checkout 
+ uses: actions/checkout\@v6 
+ 
+ - name: Log in to Docker Hub 
+ if: \${{ needs.package-hash.outputs.tag == 'not found' }} 
+ \# https:\/\/github.com/docker/login-action 
+ uses: docker/login-action\@f4ef78c080cd8ba55a85445d5b36e214a81df20a 
+ ...],
+  [But I think there is a slightly nicer way. We can control the entire job by the needs.package-hash.outputs.tag value and skip it, if the image exists:],
+  [.github/workflows/ci.yml 1],
+  [2],
+  [3],
+  [4],
+  [5],
+  [6],
+  [7],
+  [8],
+  [9],
+  [10],
+  [11],
+  [12],
+  [13],
+  [14],
+  [15],
+  [16],
+  [17],
+  [18],
+  [19],
+  [20],
+  [21],
+  [22],
+  [23],
+  [24],
+  [25],
+  [26],
+  [27],
+  [28],
+  [29],
+  [30],
+  [31],
+  [32],
+  [33],
+  [34],
+  [35],
+  [36],
+  [37],
+  [38],
+  [39],
+  [40],
+  [41],
+  [42],
+  [43],
+  [name: CI],
+  [on: push],
+  [jobs:],
+  [\# computes the hash of package.json and and stores it in the output],
+  [\# also checks if the Docker image with this tag already exists],
+  [\# outputs:],
+  [\# hash: the package.json hash],
+  [\# tag: whether the Docker image with this tag already exists, "found" or "not found"],
+  [package-hash:],
+  [runs-on: ubuntu-latest],
+  [outputs:],
+  [hash: \${{ steps.hash.outputs.checksum }}],
+  [tag: \${{ steps.tag-exists.outputs.tag }}],
+  [steps:],
+  [...],
+  [build-docker-image:],
+  [\# builds the Docker image and pushes it to the Docker hub],
+  [\# but only if it does not exist yet],
+  [runs-on: ubuntu-latest],
+  [needs: package-hash],
+  [if: \${{ needs.package-hash.outputs.tag == 'not found' }}],
+  [steps:],
+  [- name: Checkout 🛎️],
+  [\# https:\/\/github.com/actions/checkout],
+  [uses: actions/checkout\@v6],
+  [- name: Log in to Docker Hub],
+  [\# https:\/\/github.com/docker/login-action],
+  [uses: docker/login-action\@f4ef78c080cd8ba55a85445d5b36e214a81df20a],
+  [with:],
+  [username: \${{ secrets. DOCKER\_USERNAME }}],
+  [password: \${{ secrets. DOCKER\_PASSWORD }}],
+  [\# we could also use the action],
+  [\# https:\/\/github.com/docker/build-push-action],
+  [- name: Build docker image],
+  [run: docker build -t bahmutov/cy:\${{ needs.package-hash.outputs.hash }} .],
+  [- name: Push Docker images],
+  [run: docker push bahmutov/cy:\${{ needs.package-hash.outputs.hash }}],
+  [Now that we have Docker image build (if needed), let's use it. We can define another job that simply uses the bahmutov/cy: container, but it cannot depend on the build-docker-image job - if the job is skipped on GitHub Actions, any job that depends on it will be skipped too. Luckily, there is an easy fix: simply have yet another job that will simply "ping" build-docker-image job status. Once the build-docker-image job finishes or is skipped, our "ping" job resolves. The "ping" is done using lewagon/wait-on-check-action 3rd-party action. Here is how the last part of the workflow looks:],
+  [.github/workflows/ci.yml 1],
+  [2],
+  [3],
+  [4],
+  [5],
+  [6],
+  [7],
+  [8],
+  [9],
+  [10],
+  [11],
+  [12],
+  [13],
+  [14],
+  [15],
+  [16],
+  [17],
+  [18],
+  [19],
+  [20],
+  [21],
+  [22],
+  [23],
+  [24],
+  [25],
+  [26],
+  [27],
+  [28],
+  [29],
+  [30],
+  [31],
+  [32],
+  [33],
+  [34],
+  [35],
+  [36],
+  [37],
+  [38],
+  [39],
+  [40],
+  [41],
+  [42],
+  [43],
+  [44],
+  [45],
+  [46],
+  [47],
+  [48],
+  [49],
+  [50],
+  [51],
+  [52],
+  [53],
+  [54],
+  [55],
+  [56],
+  [57],
+  [name: CI],
+  [on: push],
+  [jobs:],
+  [\# computes the hash of package.json and and stores it in the output],
+  [\# also checks if the Docker image with this tag already exists],
+  [\# outputs:],
+  [\# hash: the package.json hash],
+  [\# tag: whether the Docker image with this tag already exists, "found" or "not found"],
+  [package-hash:],
+  [...],
+  [build-docker-image:],
+  [\# builds the Docker image and pushes it to the Docker hub],
+  [\# but only if it does not exist yet],
+  [runs-on: ubuntu-latest],
+  [needs: package-hash],
+  [if: \${{ needs.package-hash.outputs.tag == 'not found' }}],
+  [...],
+  [wait-for-build:],
+  [\# a trick to allow other jobs to run, even if the "build" job is skipped],
+  [\# runs in parallel with the "build" job and keeps checking if it is finished],
+  [\# or is skipped],
+  [runs-on: ubuntu-latest],
+  [needs: package-hash],
+  [steps:],
+  [- name: Wait for the Docker image build \/ skip],
+  [\# https:\/\/github.com/lewagon/wait-on-check-action],
+  [uses: lewagon/wait-on-check-action\@v1.4.1],
+  [with:],
+  [ref: \${{ github.ref }}],
+  [check-name: build-docker-image],
+  [repo-token: \${{ secrets. GITHUB\_TOKEN }}],
+  [\# seconds between checks],
+  [wait-interval: 10],
+  [test:],
+  [\# this job finishes after the Docker image is built (or exists already)],
+  [runs-on: ubuntu-latest],
+  [needs: \[ package-hash , wait-for-build \]],
+  [container: bahmutov/cy:\${{ needs.package-hash.outputs.hash }}],
+  [steps:],
+  [- name: Checkout 🛎️],
+  [\# https:\/\/github.com/actions/checkout],
+  [uses: actions/checkout\@v6],
+  [\# THE IMPORTANT STEP: symlink the node modules],
+  [\# from the Docker image into the working folder],
+  [\# so we can skip the installation step],
+  [- name: Symlink node modules],
+  [run: ln -s /e2e/node\_modules ./node\_modules],
+  [- name: Print Cypress version],
+  [run: npx cypress --version],
+  [- name: Run Cypress tests],
+  [run: npx cypress run],
+  [The sym linking step is very important. After checkout finishes, the container has the following code],
+  [1 
+ 2 
+ 3 
+ 4 
+ 5 
+ 6 
+ 7 
+ 8 
+ /e2e\/ 
+ cypress\_cache\/ 
+ node\_modules\/ 
+ \/ \/ 
+ cypress\/ 
+ cypress.conf.js 
+ package.json 
+ package-lock.json],
+  [The current directory is set to \/ , so we need to make sure Node and Cypress can find the DEV dependencies. We do it by creating the symlink:],
+  [1 
+ 2 
+ 3 
+ 4 
+ 5 
+ 6 
+ 7 
+ 8 
+ 9 
+ /e2e\/ 
+ cypress\_cache\/ 
+ node\_modules\/ 
+ \/ \/ 
+ node\_modules -\> /e2e/node\_modules\/ 
+ cypress\/ 
+ cypress.conf.js 
+ package.json 
+ package-lock.json],
+  [We tell Cypress NPM module to find its binary in the /e2e/cypress\_cache\/ folder by using the environment variable baked into the Dockerfile: ENV CYPRESS\_CACHE\_FOLDER=/e2e/cypress\_cache .],
+  [Run on GitHub Actions],
+  [Let's confirm that it works. We can push the code for the very first time, or change package.json or Dockerfile],
+  [The build and push step took 1m14s, and the "ping" job that checked the job status every ten seconds finished in 1m22s. The test job simply pulled the Docker container and ran the specs, without any additional installation or resting a cache.],
+  [Pulling the container from the Docker image is by far the longest step in the job.],
+  [Now let's push another commit - maybe we changed the specs, but haven't touched the package.json or Dockerfile . The Docker image should have been found.],
+  [We start testing pretty quickly, since we don't have to install or build anything.],
+  [Many years ago I wrote cypress-io/github-action , and I am happy to report that it works well with the Docker image with baked DEV dependencies. Here is another workflow job that simply uses the action after sym linking:],
+  [1],
+  [2],
+  [3],
+  [4],
+  [5],
+  [6],
+  [7],
+  [8],
+  [9],
+  [10],
+  [11],
+  [12],
+  [13],
+  [14],
+  [15],
+  [16],
+  [17],
+  [18],
+  [19],
+  [20],
+  [21],
+  [22],
+  [23],
+  [test-action:],
+  [\# this job finishes after the Docker image is built (or exists already)],
+  [\# and verifies the Cypress GitHub action works],
+  [runs-on: ubuntu-latest],
+  [needs: \[ package-hash , wait-for-build \]],
+  [container: bahmutov/cy:\${{ needs.package-hash.outputs.hash }}],
+  [steps:],
+  [- name: Checkout 🛎️],
+  [\# https:\/\/github.com/actions/checkout],
+  [uses: actions/checkout\@v6],
+  [\# the important step: symlink the node modules],
+  [\# from the Docker image into the working folder],
+  [\# so we can skip the installation step],
+  [- name: Symlink node modules],
+  [run: ln -s /e2e/node\_modules ./node\_modules],
+  [\# confirm the Cypress action works],
+  [- name: Cypress action],
+  [\# https:\/\/github.com/cypress-io/github-action],
+  [uses: cypress-io/github-action\@v6],
+  [with:],
+  [install: false],
+  [Finally, the GitHub Actions summary tells us if the Docker image exists or not based on the checksum.],
+  [GitHub Container Registry],
+  [If you are using GH Container registry , you can use the same Docker image approach, here is the example workflow from bahmutov/cypress-tests-image repo.],
+  [.github/workflows/ci-ghcr.yml 1],
+  [2],
+  [3],
+  [4],
+  [5],
+  [6],
+  [7],
+  [8],
+  [9],
+  [10],
+  [11],
+  [12],
+  [13],
+  [14],
+  [15],
+  [16],
+  [17],
+  [18],
+  [19],
+  [20],
+  [21],
+  [22],
+  [23],
+  [24],
+  [25],
+  [26],
+  [27],
+  [28],
+  [29],
+  [30],
+  [31],
+  [32],
+  [33],
+  [34],
+  [35],
+  [36],
+  [37],
+  [38],
+  [39],
+  [40],
+  [41],
+  [42],
+  [43],
+  [44],
+  [45],
+  [46],
+  [47],
+  [48],
+  [49],
+  [50],
+  [51],
+  [52],
+  [53],
+  [54],
+  [55],
+  [56],
+  [57],
+  [58],
+  [59],
+  [60],
+  [61],
+  [62],
+  [63],
+  [64],
+  [65],
+  [66],
+  [67],
+  [68],
+  [69],
+  [70],
+  [71],
+  [72],
+  [73],
+  [74],
+  [75],
+  [76],
+  [77],
+  [78],
+  [79],
+  [80],
+  [81],
+  [82],
+  [83],
+  [84],
+  [85],
+  [86],
+  [87],
+  [88],
+  [89],
+  [90],
+  [91],
+  [92],
+  [93],
+  [94],
+  [95],
+  [96],
+  [97],
+  [98],
+  [99],
+  [100],
+  [101],
+  [102],
+  [103],
+  [104],
+  [105],
+  [106],
+  [107],
+  [108],
+  [109],
+  [110],
+  [111],
+  [112],
+  [113],
+  [114],
+  [115],
+  [116],
+  [117],
+  [118],
+  [119],
+  [120],
+  [121],
+  [122],
+  [123],
+  [\# this workflow uses Docker images via GitHub Container Registry (GHCR)],
+  [name: CI Using GHCR],
+  [on: push],
+  [env:],
+  [REGISTRY: ghcr.io],
+  [IMAGE\_NAME: \${{ github.repository }}],
+  [jobs:],
+  [\# computes the hash of package.json and and stores it in the output],
+  [\# also checks if the Docker image with this tag already exists],
+  [\# outputs:],
+  [\# hash: the package.json hash],
+  [\# tag: whether the Docker image with this tag already exists, "found" or "not found"],
+  [package-hash:],
+  [runs-on: ubuntu-latest],
+  [outputs:],
+  [hash: \${{ steps.hash.outputs.checksum }}],
+  [tag: \${{ steps.tag-exists.outputs.tag }}],
+  [steps:],
+  [- name: Checkout 🛎️],
+  [\# https:\/\/github.com/actions/checkout],
+  [\# only needed to get package.json and Dockerfile to compute the hash],
+  [uses: actions/checkout\@v6],
+  [with:],
+  [sparse-checkout: |],
+  [package.json],
+  [- name: Package.json + Dockerfile checksum],
+  [id: hash],
+  [run: echo "checksum=\$ {{ hashFiles('package.json', 'Dockerfile') }} " \>\> \$GITHUB\_OUTPUT],
+  [\# https:\/\/github.com/tyriis/docker-image-tag-exists],
+  [- name: Check if Docker image tag exists],
+  [id: tag-exists],
+  [uses: tyriis/docker-image-tag-exists\@v2.1.0],
+  [with:],
+  [registry: \${{ env. REGISTRY }}],
+  [repository: \${{ env. IMAGE\_NAME }}],
+  [\# The container image tag],
+  [tag: \${{ steps.hash.outputs.checksum }}],
+  [- name: Report the check results],
+  [\# print the tag result into Github Actions summary],
+  [run: |],
+  [echo "\#\# Docker image check" \>\> \$GITHUB\_STEP\_SUMMARY],
+  [echo "Registry: \${{ env. REGISTRY }}" \>\> \$GITHUB\_STEP\_SUMMARY],
+  [echo "Image: \${{ env. REGISTRY }}/\${{ env. IMAGE\_NAME }}" \>\> \$GITHUB\_STEP\_SUMMARY],
+  [echo "Package.json + Dockerfile hash: \${{ steps.hash.outputs.checksum }}" \>\> \$GITHUB\_STEP\_SUMMARY],
+  [echo "Docker image \${{ env. REGISTRY }}/\${{ env. IMAGE\_NAME }}:\${{ steps.hash.outputs.checksum }} \*\*\${{ steps.tag-exists.outputs.tag }}\*\*" \>\> \$GITHUB\_STEP\_SUMMARY],
+  [build-docker-image:],
+  [\# builds the Docker image and pushes it to the registry],
+  [\# but only if it does not exist yet],
+  [runs-on: ubuntu-latest],
+  [needs: package-hash],
+  [permissions:],
+  [\# don't forget to allow workflows to write to GHCR],
+  [\# https:\/\/github.com\/ \/ /settings/actions],
+  [packages: write],
+  [if: \${{ needs.package-hash.outputs.tag == 'not found' }}],
+  [steps:],
+  [- name: Checkout 🛎️],
+  [\# https:\/\/github.com/actions/checkout],
+  [uses: actions/checkout\@v6],
+  [- name: Log in to GitHub Container Registry],
+  [\# https:\/\/github.com/docker/login-action],
+  [uses: docker/login-action\@f4ef78c080cd8ba55a85445d5b36e214a81df20a],
+  [with:],
+  [registry: \${{ env. REGISTRY }}],
+  [username: \${{ github.actor }}],
+  [password: \${{ secrets. GITHUB\_TOKEN }}],
+  [\# we could also use the action],
+  [\# https:\/\/github.com/docker/build-push-action],
+  [- name: Build docker image],
+  [run: docker build -t \${{ env. REGISTRY }}/\${{ env. IMAGE\_NAME }}:\${{ needs.package-hash.outputs.hash }} .],
+  [- name: Push Docker image to the correct registry],
+  [run: docker push \${{ env. REGISTRY }}/\${{ env. IMAGE\_NAME }}:\${{ needs.package-hash.outputs.hash }}],
+  [wait-for-build:],
+  [\# a trick to allow other jobs to run, even if the "build" job is skipped],
+  [\# runs in parallel with the "build" job and keeps checking if it is finished],
+  [\# or is skipped],
+  [runs-on: ubuntu-latest],
+  [needs: package-hash],
+  [steps:],
+  [- name: Wait for the Docker image build \/ skip],
+  [\# https:\/\/github.com/lewagon/wait-on-check-action],
+  [uses: lewagon/wait-on-check-action\@v1.4.1],
+  [with:],
+  [ref: \${{ github.ref }}],
+  [check-name: build-docker-image],
+  [repo-token: \${{ secrets. GITHUB\_TOKEN }}],
+  [\# seconds between checks],
+  [wait-interval: 10],
+  [test:],
+  [\# this job finishes after the Docker image is built (or exists already)],
+  [runs-on: ubuntu-latest],
+  [needs: \[ package-hash , wait-for-build \]],
+  [\# seems we cannot use the env variables here],
+  [container: ghcr.io/\${{ github.repository }}:\${{ needs.package-hash.outputs.hash }}],
+  [steps:],
+  [- name: Checkout 🛎️],
+  [\# https:\/\/github.com/actions/checkout],
+  [uses: actions/checkout\@v6],
+  [\# THE IMPORTANT STEP: symlink the node modules],
+  [\# from the Docker image into the working folder],
+  [\# so we can skip the installation step],
+  [- name: Symlink node modules],
+  [run: ln -s /e2e/node\_modules ./node\_modules],
+  [- name: Print Cypress version],
+  [run: npx cypress --version],
+  [- name: Run Cypress tests],
+  [run: npx cypress run],
+  [I tried to make the workflow slightly more generic by moving the registry and the image into the env variables:],
+  [1 
+ 2 
+ 3 
+ env: 
+ REGISTRY: ghcr.io 
+ IMAGE\_NAME: \${{ github.repository }}],
+  [Nice.],
+  [Let's say you want to use private Docker images stored on Google Artifact Registry . You need to create it on GCP, then create a Service Account to access it from CI (this is simpler for me than using Workload identity), see the docs .],
+  [So here is my Artifact Registry called gleb-google-artifact-registry-test running inside us-east4-docker.pkg.dev configured to run under the project helloworld-330918],
+  [We will write and read Docker images using name cypress-tests-image . I will use a single Service Account for this with these permissions],
+  [For this account, grab the JSON key file and set it as GitHub Actions environment secret GCR\_KEY . Now let's build and use images with dependencies. Here is the workflow file from bahmutov/cypress-tests-image .],
+  [.github/workflows/ci-gcp.yml 1],
+  [2],
+  [3],
+  [4],
+  [5],
+  [6],
+  [7],
+  [8],
+  [9],
+  [10],
+  [11],
+  [12],
+  [13],
+  [14],
+  [15],
+  [16],
+  [17],
+  [18],
+  [19],
+  [20],
+  [21],
+  [22],
+  [23],
+  [24],
+  [25],
+  [26],
+  [27],
+  [28],
+  [29],
+  [30],
+  [31],
+  [32],
+  [33],
+  [34],
+  [35],
+  [36],
+  [37],
+  [38],
+  [39],
+  [40],
+  [41],
+  [42],
+  [43],
+  [44],
+  [45],
+  [46],
+  [47],
+  [48],
+  [49],
+  [50],
+  [51],
+  [52],
+  [53],
+  [54],
+  [55],
+  [56],
+  [57],
+  [58],
+  [59],
+  [60],
+  [61],
+  [62],
+  [63],
+  [64],
+  [65],
+  [66],
+  [67],
+  [68],
+  [69],
+  [70],
+  [71],
+  [72],
+  [73],
+  [74],
+  [75],
+  [76],
+  [77],
+  [78],
+  [79],
+  [80],
+  [81],
+  [82],
+  [83],
+  [84],
+  [85],
+  [86],
+  [87],
+  [88],
+  [89],
+  [90],
+  [91],
+  [92],
+  [93],
+  [94],
+  [95],
+  [96],
+  [97],
+  [98],
+  [99],
+  [100],
+  [101],
+  [102],
+  [103],
+  [104],
+  [105],
+  [106],
+  [107],
+  [108],
+  [109],
+  [110],
+  [111],
+  [112],
+  [113],
+  [114],
+  [115],
+  [116],
+  [117],
+  [118],
+  [119],
+  [120],
+  [121],
+  [122],
+  [123],
+  [124],
+  [125],
+  [126],
+  [127],
+  [128],
+  [129],
+  [130],
+  [131],
+  [132],
+  [133],
+  [134],
+  [135],
+  [136],
+  [137],
+  [138],
+  [139],
+  [140],
+  [\# this workflow uses Docker images via Google Artifacts Registry (GCR)],
+  [\# the registry is private, so we will use a Service Account to log in],
+  [name: CI Using Google Artifacts Registry],
+  [on: push],
+  [env:],
+  [\# gcr.io \/ Artifacts Registry],
+  [REGISTRY: us-east4-docker.pkg.dev],
+  [GCP\_PROJECT: helloworld-330918],
+  [\# Artifacts Registry repository name],
+  [REPOSITORY: gleb-google-artifact-registry-test],
+  [IMAGE\_NAME: cypress-tests-image],
+  [jobs:],
+  [\# computes the hash of package.json and and stores it in the output],
+  [\# also checks if the Docker image with this tag already exists],
+  [\# outputs:],
+  [\# hash: the package.json hash],
+  [\# tag: whether the Docker image with this tag already exists, "found" or "not found"],
+  [package-hash:],
+  [runs-on: ubuntu-latest],
+  [outputs:],
+  [hash: \${{ steps.hash.outputs.checksum }}],
+  [tag: \${{ steps.tag-exists.outputs.tag }}],
+  [steps:],
+  [- name: Checkout 🛎️],
+  [\# https:\/\/github.com/actions/checkout],
+  [\# only needed to get package.json and Dockerfile to compute the hash],
+  [uses: actions/checkout\@v6],
+  [with:],
+  [sparse-checkout: |],
+  [package.json],
+  [- name: Package.json + Dockerfile checksum],
+  [id: hash],
+  [run: echo "checksum=\$ {{ hashFiles('package.json', 'Dockerfile') }} " \>\> \$GITHUB\_OUTPUT],
+  [- name: Log in to Google Artifacts Registry],
+  [\# https:\/\/github.com/docker/login-action],
+  [uses: docker/login-action\@f4ef78c080cd8ba55a85445d5b36e214a81df20a],
+  [with:],
+  [registry: \${{ env. REGISTRY }}],
+  [username: \_json\_key],
+  [password: \${{ secrets. GCR\_KEY }}],
+  [\# https:\/\/github.com/tyriis/docker-image-tag-exists],
+  [- name: Check if Docker image tag exists],
+  [id: tag-exists],
+  [uses: tyriis/docker-image-tag-exists\@v2.1.0],
+  [with:],
+  [registry: \${{ env. REGISTRY }}],
+  [repository: \${{ env. GCP\_PROJECT }}/\${{ env. REPOSITORY }}/\${{ env. IMAGE\_NAME }}],
+  [\# The container image tag],
+  [tag: \${{ steps.hash.outputs.checksum }}],
+  [- name: Report the check results],
+  [\# print the tag result into Github Actions summary],
+  [run: |],
+  [echo "\#\# Docker image check" \>\> \$GITHUB\_STEP\_SUMMARY],
+  [echo "Registry: \${{ env. REGISTRY }}" \>\> \$GITHUB\_STEP\_SUMMARY],
+  [echo "Image: \${{ env. REGISTRY }}/\${{ env. GCP\_PROJECT }}/\${{ env. REPOSITORY }}/\${{ env. IMAGE\_NAME }}" \>\> \$GITHUB\_STEP\_SUMMARY],
+  [echo "Package.json + Dockerfile hash: \${{ steps.hash.outputs.checksum }}" \>\> \$GITHUB\_STEP\_SUMMARY],
+  [echo "Docker image \${{ env. REGISTRY }}/\${{ env. IMAGE\_NAME }}:\${{ steps.hash.outputs.checksum }} \*\*\${{ steps.tag-exists.outputs.tag }}\*\*" \>\> \$GITHUB\_STEP\_SUMMARY],
+  [build-docker-image:],
+  [\# builds the Docker image and pushes it to the registry],
+  [\# but only if it does not exist yet],
+  [runs-on: ubuntu-latest],
+  [needs: package-hash],
+  [permissions:],
+  [\# don't forget to allow workflows to write to GHCR],
+  [\# https:\/\/github.com\/ \/ /settings/actions],
+  [packages: write],
+  [if: \${{ needs.package-hash.outputs.tag == 'not found' }}],
+  [steps:],
+  [- name: Checkout 🛎️],
+  [\# https:\/\/github.com/actions/checkout],
+  [uses: actions/checkout\@v6],
+  [- name: Log in to Google Artifacts Registry],
+  [\# https:\/\/github.com/docker/login-action],
+  [uses: docker/login-action\@f4ef78c080cd8ba55a85445d5b36e214a81df20a],
+  [with:],
+  [registry: \${{ env. REGISTRY }}],
+  [username: \_json\_key],
+  [password: \${{ secrets. GCR\_KEY }}],
+  [\# we could also use the action],
+  [\# https:\/\/github.com/docker/build-push-action],
+  [- name: Build docker image],
+  [run: docker build -t \${{ env. REGISTRY }}/\${{ env. GCP\_PROJECT }}/\${{ env. REPOSITORY }}/\${{ env. IMAGE\_NAME }}:\${{ needs.package-hash.outputs.hash }} .],
+  [- name: Push Docker image to the correct registry],
+  [run: docker push \${{ env. REGISTRY }}/\${{ env. GCP\_PROJECT }}/\${{ env. REPOSITORY }}/\${{ env. IMAGE\_NAME }}:\${{ needs.package-hash.outputs.hash }}],
+  [wait-for-build:],
+  [\# a trick to allow other jobs to run, even if the "build" job is skipped],
+  [\# runs in parallel with the "build" job and keeps checking if it is finished],
+  [\# or is skipped],
+  [runs-on: ubuntu-latest],
+  [needs: package-hash],
+  [steps:],
+  [- name: Wait for the Docker image build \/ skip],
+  [\# https:\/\/github.com/lewagon/wait-on-check-action],
+  [uses: lewagon/wait-on-check-action\@v1.4.1],
+  [with:],
+  [ref: \${{ github.ref }}],
+  [check-name: build-docker-image],
+  [repo-token: \${{ secrets. GITHUB\_TOKEN }}],
+  [\# seconds between checks],
+  [wait-interval: 10],
+  [test:],
+  [\# this job finishes after the Docker image is built (or exists already)],
+  [runs-on: ubuntu-latest],
+  [needs: \[ package-hash , wait-for-build \]],
+  [\# seems we cannot use the env variables here],
+  [container:],
+  [image: us-east4-docker.pkg.dev/helloworld-330918/gleb-google-artifact-registry-test/cypress-tests-image:\${{ needs.package-hash.outputs.hash }}],
+  [credentials:],
+  [username: \_json\_key],
+  [password: \${{ secrets. GCR\_KEY }}],
+  [steps:],
+  [- name: Checkout 🛎️],
+  [\# https:\/\/github.com/actions/checkout],
+  [uses: actions/checkout\@v6],
+  [\# THE IMPORTANT STEP: symlink the node modules],
+  [\# from the Docker image into the working folder],
+  [\# so we can skip the installation step],
+  [- name: Symlink node modules],
+  [run: ln -s /e2e/node\_modules ./node\_modules],
+  [- name: Print Cypress version],
+  [run: npx cypress --version],
+  [- name: Run Cypress tests],
+  [run: npx cypress run],
+  [Weird GitHub Actions limitation: one cannot use env keys inside the image: ... string, thus we have to duplicate the full Docker string],
+  [1 
+ 2 
+ 3 
+ 4 
+ 5 
+ 6 
+ 7 
+ 8 
+ 9 
+ 10 
+ 11 
+ 12 
+ 13 
+ 14 
+ env: 
+ \# gcr.io \/ Artifacts Registry 
+ REGISTRY: us-east4-docker.pkg.dev 
+ GCP\_PROJECT: helloworld-330918 
+ \# Artifacts Registry repository name 
+ REPOSITORY: gleb-google-artifact-registry-test 
+ IMAGE\_NAME: cypress-tests-image 
+ 
+ \# later 
+ container: 
+ image: us-east4-docker.pkg.dev/helloworld-330918/gleb-google-artifact-registry-test/cypress-tests-image:\${{ needs.package-hash.outputs.hash }} 
+ credentials: 
+ username: \_json\_key 
+ password: \${{ secrets. GCR\_KEY }}],
+  [The finished workflow works great],
+  [Just keep the GCR\_KEY secret!],
+),
+  insert-map: (:),
+  word-count: 3613,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+}
+
+{
+  #standard-article(
+  title: [How we did it: Heat and income in U.S. cities],
+  author: [NPR Apps Blog],
+  source-name: [NPR Apps Blog],
+  images: (),
+  paragraphs: (
+  [You never really know when a seemingly small event can end up a big deal. What could have been a simple request from a producer became a four-month-long, 125-gigabyte saga that combined data analysis, visualization and a trip to Kentucky for my first taste of boots-on-the-ground radio reporting.],
+  [\[READ THE SERIES: Heat and Health in American Cities \]],
+  [\[VIEW THE ANALYSIS: On Github \]],
+  [Though the scope of the story isn’t something we can do all the time with the small-ish staff at NPR Viz, I think it ended up as an example of the power of unique data analysis paired with strong investigative reporting, and it’s something I’ll try to learn from and repeat.],
+  [id="data-incoming"\>Data Incoming],
+  [The initial email came in like lots of others do: A reporter has lots of data, doesn’t quite know what to do with it and wants help.],
+  [Cool, easy enough. Sometimes it takes a couple days to peg the reporter down on exactly what they want and get the data in a usable format. After that, we make a few charts, calculate some averages, wash our hands and move onto the next story.],
+  [But after meeting with the producer on this one, I could tell something was different. The investigation team’s Meg Anderson had been working with a friend of mine, a University of Maryland journalism professor named Sean Mussenden, who had compiled a ton of data about heat, income and health in Baltimore. Based on researchers’ data, Sean was able to establish a thread through different parts of the city that showed something concerning: The poorer the neighborhoods, the hotter they got. And low-income people in Baltimore’s hottest areas were visiting the hospital more often than low-income people in the city’s coolest areas for several cardiovascular and respiratory conditions.],
+  [That was news to me — I didn’t even realize there were major differences in temperature within cities. I thought if it was 80 degrees, it was 80 degrees, period. But even with this, what we had seemed like a very Baltimore-centric story. We are, of course, National Public Radio. Not to say every story we do is a national one, but if we’re going to put significant resources toward a trend in one city, we should at least be able to say whether it holds true for other parts of the country.],
+  [So I asked Meg the question: Could we do this analysis for every city in the country? At first it sounded crazy — the researchers in Baltimore literally drove around in station wagons with thermometers to get extremely granular heat data in different parts of the city. As fun as that would be to do in every city in the U. S., I didn’t think the bosses would go for it.],
+  [Instead, we started looking for other options. I thought I’d seen detailed temperature maps of the United States before — where did they come from?],
+  [id="fun-with-satellites"\>Fun With Satellites],
+  [As it turns out, that data can come from a number of places, like local surveys, extrapolation from weather stations and satellites. The last one was what really interested me. Satellites don’t cover only limited areas like weather stations do, and they sometimes have enough detail to map relatively granular geographies, like neighborhoods. But could government-run satellites really detect heat on the ground?],
+  [Unfortunately for my plans of making this a quick-turn data story, satellite data was something I’d never touched before. In fact, it was something I’d actively avoided — I used to work with a mapping specialist who handled all our geographic data needs, and the idea of touching anything more complicated than a simple shapefile overwhelmed me before I even sat down at the computer.],
+  [So I sent out a Bat-Nerd Signal on the News Nerdery Slack channel to people in other newsrooms who do these kinds of things. Someone there pointed me to a former colleague of his who now works with satellite data for a living, and a brief background conversation with that person opened up a box of terms I’d never heard before: Landsat, EarthExplorer , bands, collections and AOIs.],
+  [But having someone like that on your side when you’re digging through complex data for the first time is invaluable. As it turned out, these NASA/USGS satellites do measure heat through thermal sensors, roughly twice a month at every point in the U. S.],
+  [This meant that, in theory, we would be able to automate what those researchers did in Baltimore for anywhere in the country we wanted to. Instead of using stations wagons, we’d use satellites.],
+  [For a given city, the process would look something like this:],
+  [Download the thermal image],
+  [Overlay the image with the city’s census tracts],
+  [Calculate a median heat reading for each census tract],
+  [Associate the census tracts with their median income levels],
+  [Calculate a correlation coefficient between heat and income for the city],
+  [Before spending who-knows-how-long writing code to do all that, I wanted to test it by hand on a few cities to make sure this was really going to work.],
+  [For a handful of cities that Meg had heard about in her reporting, I downloaded the data and used an open-source tool called QGIS to map it. In each of these cities, we saw the same trend: The hottest areas of a city were generally the poorest, and the coolest were often wealthy.],
+  [It looked like we had ourselves a story.],
+  [To show our editors, these were some of the first maps we made for this project, of the counties that contain San Antonio, Sacramento and Miami:],
+  [That idea of putting heat maps next to income maps stayed with us all the way through publication.],
+  [id="real-data-real-people"\>Real Data, Real People],
+  [Meg, along with our reporting intern Nora Eckert, made sure to confirm what we were finding in the data was reflected by real people on the ground. They spent hours on the streets of Baltimore, and in hospital emergency rooms there, interviewing people who lived in this heat and sometimes felt they couldn’t escape it. They also talked to climate experts and historians who traced back the causes of this heat problem to decades of government policies and inequities when it came to investment in low-income neighborhoods.],
+  [But we knew from the beginning that we didn’t want this to be just a doom-and-gloom story. We were hoping to find places that were aware of this issue and were taking meaningful steps to address it.],
+  [Meg, Nora and I made plenty of phone calls to try to find these places. It was harder than I thought it would be (something that seemed to be becoming a theme) to find places that were aware of this issue and actively addressing it.],
+  [Then we came across Louisville . Though it seemed to be more of the same there — with people acknowledging that the poor areas west of 9th Street probably were probably hotter — the sheer number of people worried about tree loss there surprised us for a town of its size. Trees, which are generally regarded as one of the most effective ways to cool down hot pockets of a city, were disappearing from Louisville — about 50,000 each year. That contributed to the city being named the fastest growing urban heat island in the country, according to an oft-cited study in the urban-heat world.],
+  [Soon we had plane tickets booked and interviews lined up with different environmental groups there: TreesLouisville, Louisville Grows, the city’s sustainability director (who, by the time we arrived, would be the former director because of city budget cuts) and others. We even got a driving tour of the city from a self-styled local historian who had recorded a four-hour documentary series recounting the city’s history.],
+  [I’ll spare you all the details of how that trip went, but just briefly acknowledge how cool it is to be able to take off your data-reporting hat and put on your real-person reporting hat every once in a while. I forget who said this, but all data are about people. We do ourselves a disservice by taking the comfortable path of writing about those people from behind a computer, thinking we know everything we need to because we have a spreadsheet, or a map. Meeting the people who live in the heat of Louisville, and their grandchildren, and their friends and neighbors brought the whole story to life for me. A number of storylines that showed up in the published story, as well as some that didn’t, simply couldn’t be found in a spreadsheet.],
+  [As this was my first radio reporting trip, I also learned a number of things that you don’t have to worry about working at a newspaper. I put those in a Twitter thread when I got back to D. C.],
+  [dir="ltr" lang="en"\>Back in the office after my first reporting trip with NPR. Here are some lessons I learned working with ~radio people~.],
+  [— Sean McMinn (\@shmcminn) July 18, 2019],
+  [dir="ltr" lang="en"\>2: Leave the headphones/recording equipment off when first meeting a nervous source. The giant fishpole microphone can be intimidating.],
+  [— Sean McMinn (\@shmcminn) July 18, 2019],
+  [dir="ltr" lang="en"\>4: There’s a thing called “ambi” (ambient sound) where the producer has to record a minute of silence wherever you’re doing an interview, and that is also guaranteed to be awkward af.],
+  [— Sean McMinn (\@shmcminn) July 18, 2019],
+  [dir="ltr" lang="en"\>6: Radio people still call it tape. Don’t ask me why.],
+  [— Sean McMinn (\@shmcminn) July 18, 2019],
+  [dir="ltr" lang="en"\>7: Producers want to record the darnedest things: Door knocks, seatbelt buckles clicking, highway noise, fountains in a park …. if it makes noise, you betcha they’re recording it.],
+  [— Sean McMinn (\@shmcminn) July 18, 2019],
+  [id="real-data-real-problems"\>Real Data, Real Problems],
+  [Once I got back from Kentucky, it was time to really get at the heavy programming for the story. It was also, as luck would have it, less than a week before my wedding and honeymoon, which meant that our mapping intern Nick Underwood was bound by destiny to put in some major hours on this project.],
+  [The pipeline I originally came up with — download the satellite images, put the census data on top of it and calculate a correlation score for each city – seemed like it would be relatively straightforward. But problems came when we tried to scale it to the 100 largest U. S. cities, a number that we thought seemed manageable …],
+  [id="clouds"\>Clouds],
+  [The problem : Satellites can’t see through clouds. Pretty straightforward.],
+  [The solution : The API we were using had an indicator for each satellite image that marks the percentage of the image obscured by cloud cover. I thought we could just use that to find good images. But I realized even if there weren’t many clouds, they could make the whole image unusable if they were sitting over the city you wanted to get data for. Instead, a team of us manually reviewed several hundred images and made a spreadsheet of the ones that were cloudless, or at least didn’t have clouds over the city we were looking at. There were three cities — Hialeah and Miami, Fla., and Honolulu — where we couldn’t find a single summertime image without clouds.],
+  [id="api-reliability"\>API Reliability],
+  [The problem : Sometimes, in one of the universe’s grand mysteries, an image couldn’t be found by the API that accessed satellite images. As helpful as the API was for getting the images we wanted, it seemed to sometimes cause more headaches than it solved.],
+  [The solution : For a handful of cities, we had to download the images by hand, and then note that in the documentation. I really didn’t want to do this, since it made it virtually impossible to run the full analysis from a single command-line script, which was a goal of mine. But when the deadline came around, I still hadn’t debugged this particular problem.],
+  [id="city-boundaries"\>City Boundaries],
+  [The problem : The most accurate city geographies are held by local governments. To access them, we would need to go to 100 different city websites and find their shapefiles.],
+  [The solution : At first I tried OpenStreetMap , which gave us a good start. But when Nick realized he was looking at Henderson County, Ill., when he should have been looking at Henderson, Nev., he made the smart decision to pull out census boundaries instead. Those files had some of their own issues, but between the two sources we were able to get accurate shapefiles for each city.],
+  [id="speed"\>Speed],
+  [The problem : Using the code Nick wrote to calculate median heat readings for each census tract, and my code to download several gigabytes of heat images, you could say it took … a while … to run.],
+  [The solution : In general, I ran the code in small chunks as to not wait hours before finding out if everything broke. But I also left my computer running overnight a couple times to make sure I could run the whole analysis at once. Our team’s journo-developer Thomas Wilburn gently suggested that in the future we could do this on an AWS cloud server so everything wasn’t tied to my temperamental Macbook (fair point). He also came to the rescue before publication and showed me how to run parallel processes on my computer. This allowed us to do the heat analysis, though not the file downloads, about four times faster.],
+  [id="dumb-statistics-"\>Dumb Statistics …],
+  [The problem : P-values. It’s always p-values.],
+  [The solution : For once, it wasn’t p-value interpretation — a notoriously sticky topic — that made this difficult. It was whether we should be calculating p-values at all. For the statistically uninitiated, p-values, in layperson’s terms, tell you the likelihood that your study’s observations are just random chance. This is incredibly useful if you’re looking at a small sample of, say, patients given a drug, and you want to find out if your findings would hold true to the broader population of patients in the world. The thing is, we weren’t trying to make any broader judgements about cities or census tracts outside the scope of our analysis. That’s why I decided, after talking to a handful of other stats-minded people, to not calculate p-values for our findings. This is something that we heard about from multiple confused readers after publication, but I believe we made the right call since we already had data for the entire population we wanted to study — not just a sample of it.],
+  [id="-and-dumb-humans-ok-just-me"\>… And Dumb Humans (OK, Just Me)],
+  [The problem : I knew that higher pixel values in the satellite images meant hotter spots on the map, but I didn’t stop to ask how much hotter.],
+  [The solution : The week before we published — and just hours before we showed our work to a few dozen NPR member stations — I called NASA to make sure my analysis made sense to them. Researchers there pointed out that the pixel values in their images actually have a logarithmic relationship to heat, not a linear one. So, technically speaking, all our numbers were wrong. I think I nearly gave our producer Meg a heart attack when I used those exact words — ”all our numbers are wrong” — to tell her what was going on. But it ended up being relatively straightforward to change everything to a linear scale, and it actually made the correlations stronger than we thought they were before.],
+  [After dealing with those big issues, as well as so many smaller ones I wouldn’t be able to remember them all today, we were ready to publish the story and code .],
+  [I took a nap.],
+  [id="followup"\>Followup],
+  [Already I’ve heard since these stories published that Louisville is voting on an ordinance for stronger tree preservation, and Chesapeake, Va., is considering hiring a city arborist. Local blog Denverite also wrote its own take on the heat-income story, pointing out some gaps in our analysis of Denver that a local publication is well positioned to dive deeper into.],
+  [If you know of other work happening in this field, I’d love to hear about it — get in touch at smcminn\@npr.org.],
+),
+  insert-map: (:),
+  inline-pq: pull-quote([— Sean McMinn (\@shmcminn) July 18, 2019   class="twitter-tweet"\>  dir="ltr" lang="en"\>6: Radio people still call it tape.], [NPR Apps Blog]),
+  inline-pq-idx: 28,
+  word-count: 2694,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+}
+
+{
+  #standard-article(
+  title: [Making Remote Work: Tools],
+  author: [Jay],
+  source-name: [Jay Fields],
+  images: (),
+  paragraphs: (
+  [I recently wrote about my experiences working on a remote team . Within that blog entry you can find a more verbose version of the following text:],
+  [class="tr\_bq"\>
+Communication is what I consider to be the hardest part of remote work. I haven't found an easy, general solution. A few teammates prefer video chat, others despise it. A few teammates like the wiki as a backlog, a few haven't ever edited the wiki. Some prefer strict usage of email/chat/phone for async-unimportant/async-important/sync-urgent, others tend to use one of those 3 for all communication.],
+  [As you can tell, we have several different communication tools. When writing, I generally prefer to include concrete examples. This blog entry will list each tool referenced above. However, I cannot emphasize enough that: this list is a snapshot of what we're using, not a recommended set of tools .],
+  [app: Github],
+  [usage: We use many of the features of Github; however, the two features that help facilitate remote work are (a) pull requests with inline comments and (b) compare . A pull request with inline comments has (thus far) been the most productive way to asynchronously discuss specific pieces of code. Almost all non-trivial commits will eventually end up in a pull request that's reviewed by at least one other team member. We've found compare view to be the best solution for distilling changes for a teammate with limited context.],
+  [app: Hipchat],
+  [usage: We have 3 hipchat rooms: work, social, support. It should be pretty obvious what we use each room for. The primary driver for splitting the 3 is for keeping noise down. Most team members look at chat history for work and support, reading anything that happened between now and the last time they were logged in. Social tends to be more verbose, often off-topic, and never required reading for keeping up with what the team is up to.],
+  [app: Cisco Jabber],
+  [usage: Within the team, we primarily use Cisco Jabber for video calls; however Cisco Jabber is also a great way for people within DRW offices to reach anyone on my team without having to know their location. Cisco Jabber is significantly better than asking people to remember to call your cell, or forwarding your desk phone to your cell - it provides you 1 number that anyone can reach you at, regardless of your physical location. There's not much to say about the video capabilities, they're there, they work well. Cisco Jabber also provides desktop sharing, which we use occasionally for "remote pair-programming".],
+  [app: Confluence],
+  [usage: Our backlog resides on a Confluence wiki; it's a single page with about 150 lines. The backlog is split into 3 sections: Milestones, Now, and Soon. There are generally 3-5 Milestones, which list (as sub-bullets) their dependencies. A dependency is a reference to a line item that will live in Now or Soon. Now is the list of highest priority tasks - the things we need to get down right away. Soon is the list of things that are urgent but not important, or important but not urgent. Both Now and Soon lists contain placeholders for conversations, each placeholder is around 1-2 lines. Below you'll find a contrived, sample backlog.],
+  [Deploy to Billy Ray Valentine],
+  [(market data 1)],
+  [(execution 1)],
+  [Automated Order Matching (stakeholder: Mortimer and Randolph Duke)],
+  [(execution 2)],
+  [(reporting 1)],
+  [Market data],
+  [(1) support pork bellies],
+  [support orange juice],
+  [(1) support pork bellies],
+  [(2) internally match incoming orders from customers],
+  [Market data],
+  [support coffee],
+  [support wheat],
+  [(1) Commission summary],
+  [Obviously we use email and other tools as well, but I can't think of any remote specific usage patterns that are worth sharing.],
+  [As I previously mentioned, each member of the team uses each of these tools in their own way. None of these tools are ideal for every member of the team, and I believe a good team lead helps ensure each team member is only required to use the tools they find most helpful.],
+),
+  insert-map: (:),
+  word-count: 699,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+  #pull-quote([Most team members look at chat history for work and support, reading anything that happened between now and the last time they were logged in.], [Jay])
+
+}
+
+{
+  #standard-article(
+  title: [Generating mock data with Mimesis: Part II],
+  author: [L],
+  source-name: [Wemake Services],
+  images: (),
+  paragraphs: (
+  [We have already published how to generate mock data with the help of a Python library — Mimesis . The article you are reading now is the continuation of the previous one, therefore, we will not be going over the basics again. In case you missed out on the first article or you felt lazy at the time, you might want to go back to it now since this article assumes you are familiar with the library. Here we are going to speak about best practices and a number of most useful features of the library.],
+  [First of all we would like to point out that Mimesis wasn’t developed to be used with a certain database or ORM. The main problem the library solves is generating valid data. Consequently, while there are no rigid rules of working with the library, here are a few recommendations that will help you keep your testing environment in order and will avert growth of entropy within your project. Recommendations are quite simple and are fully in tune with the Python spirit (if you disagree, feel free to let us know).],
+  [Despite the previous note that the library isn’t to be used with a certain database or ORM, the need for test data usually occurs in web-apps that perform certain operations (mostly CRUD) with a database. We have some advice on organizing test data generation for web-apps.],
+  [Functions responsible for data generation and importing it to the database should be kept close to the models, or even better as statistical methods of the model they are related to, as in the example of \_bootstrap() method from the previous article. This is necessary to avoid running around files when the model structure changes and you need to add a new filed. Model Patient() from the previous article illustrates the idea:],
+  [https:\/\/medium.com/media/166d7100b0cdef490e6ae6514550e43a/href],
+  [Keep in mind that the example above is a model of a Flask-app used by SQLAlchemy. Organizing mock data generators for such apps with the use of different frameworks is done in the same way.],
+  [Creating objects],
+  [If your app requires data in one particular language, it’s preferable to use class Generic(), giving access to all class providers through a single object, rather than through multiple separate class providers. Using Generic() will allow you to get rid of several extra lines of code.],
+  [Correct:],
+  [\>\>\> from mimesis import Generic
+ \>\>\> generic = Generic('ru') \>\>\> generic.personal.username()
+'sherley3354' \>\>\> generic.datetime.date()
+'14-05-2007'],
+  [Incorrect:],
+  [\>\>\> from mimesis import Personal, Datetime, Text, Code \>\>\> personal = Personal('ru')
+ \>\>\> datetime = Datetime('ru')
+ \>\>\> text = Text('ru')
+ \>\>\> code = Code('ru')],
+  [Still correct:],
+  [\>\>\> from mimesis import Personal \>\>\> p\_en = Personal('en')
+ \>\>\> p\_sv = Personal('sv')
+ \>\>\> \# …],
+  [It means that importing class providers separately makes sense only if you limit yourself to the data available through the class you imported, otherwise it’s better to use Generic().],
+  [Inserting data into database],
+  [If you need to generate data and import it into a database we strongly recommend generating data in chunks rather than 600k at once. Keep in mind the possible limitations of databases, ORM, etc. The smaller the generated data chunks are, the faster the process will go.],
+  [Good:],
+  [\>\>\> Patient().\_bootstrap(count=2000, locale='de')],
+  [Very bad:],
+  [\>\>\> Patient().\_bootstrap(count=600000, locale='de')],
+  [Importing images],
+  [Class Internet() boasts of several methods which generate image links (more details here ). Links to images locate on remote servers would be enough, however, if you still want to have a number of random images locally, you can download images generated by the respective class Internet() methods with the help of function download\_image() from model utils:],
+  [\>\>\> from mimesis import Internet
+ \>\>\> from mimesis.utils import download\_image \>\>\> net = Internet() \>\>\> img\_url = net.stock\_image(category='food', width=1920, height=1080)
+ \>\>\> download\_image(url=img\_url, save\_path='/some/path/')],
+  [User providers],
+  [The library supports a vast amount of data and in most cases this would be enough. For those who want to create their own providers with more specific data. This can be done like this:],
+  [\>\>\> class SomeProvider ():
+ ... class Meta :
+ ... name = "some\_provider"
+...
+ ... \@staticmethod
+ ... def one ():
+ ... return 1 \>\>\> class Another ():
+ ... \@staticmethod
+ ... def bye ():
+ ... return "Bye!" \>\>\> generic.add\_provider(SomeProvider)
+ \>\>\> generic.add\_provider(Another) \>\>\> generic.some\_provider.one()
+1 \>\>\> generic.another.bye()
+'Bye!'],
+  [You can also add multiple providers:],
+  [\>\>\> generic.add\_providers(SomeProvider, Another)
+ \>\>\> generic.some\_provider.one()
+1
+ \>\>\> generic.another.bye()
+'Bye!'],
+  [Everything is pretty easy and self-explanatory here, therefore, we will only clarify one moment — attribute name, class Meta is the name of a class through which access to methods of user-class providers is carried out. By default class name is the name of the class in the lower register.],
+  [Built-in providers],
+  [Most countries, where only one language is official, have data typical only for these particular countries. For example, CPF for Brazil (pt-br), SSN for USA (en). This kind of data can cause discomfort and meddle with the order (or at least annoy) by being present in all the objects regardless of the chosen language standard. You can see that for yourselves by looking at the example (the code won’t run):],
+  [\>\>\> from mimesis import Personal \>\>\> person = Personal('ru')
+ \>\>\> person.ssn()
+ \>\>\> person.cpf()],
+  [We bet everyone would agree that this does not look too good. Perfectionists, as we are, have taken care of this in a way that some specific regional provider would not bother other providers for other regions. For this reason, class providers with locally-specific data are separated into a special sub-package (mimesis.builtins) for keeping a common class structure for all languages and their objects.],
+  [Here’s how it works:],
+  [\>\>\> from mimesis import Generic
+ \>\>\> from mimesis.builtins import BrazilSpecProvider \>\>\> generic = Generic('pt-br') \>\>\> generic.add\_provider(BrazilProvider)
+ \>\>\> generic.brazil\_provider.cpf()
+'696.441.186-00'],
+  [If you want to change default name of built-in provider, just change value of attribute name, class Meta of the builtin provider:],
+  [\>\>\> BrazilSpecProvider. Meta.name = 'brasil'
+ \>\>\> generic.add\_provider(BrazilSpecProvider) \>\>\> generic.brasil.cpf()
+'019.775.929-70'],
+  [Or just inherit the class and override the value of attribute name of class Meta of the provider (in our case this is BrazilSpecProvider()) :],
+  [\>\>\> class Brasil (BrazilSpecProvider):
+...
+ ... class Meta :
+ ... name = "brasil"
+... \>\>\> generic.add\_provider(Brasil) \>\>\> generic.brasil.cnpj()
+'55.806.487/7994-45'],
+  [Generally, you don’t need to add built-it classes to the object Generic(). It was done in the example with the single purpose of demonstrating in which cases you should add a built-in class provider to the object Generic(). You can use it directly, as shown below:],
+  [\>\>\> from mimesis.builtins import RussiaSpecProvider
+ \>\>\> ru = RussiaSpecProvider() \>\>\> ru.patronymic(gender='female')
+'Петровна' \>\>\> ru.patronymic(gender='male')
+'Бенедиктович'],
+  [Which type of data do you usually need in your work? What is the library missing? We will be very happy to hear your suggestions and comments.],
+  [Useful links],
+  [Link to the first part of this article.],
+  [Link to the project:],
+  [GitHub - lk-geimfari/mimesis: Mimesis is a robust data generator for Python that can produce a wide range of fake data in multiple languages.],
+  [Also don’t forget to subscribe to our blog.],
+  [That’s all for now. Good luck with testing and may the force be with you.],
+  [Generating mock data with Mimesis: Part II was originally published in wemake.services on Medium, where people are continuing the conversation by highlighting and responding to this story.],
+),
+  insert-map: (:),
+  word-count: 1189,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+}
+
+{
+  #standard-article(
+  title: [Beyond \`border-radius\`: What The CSS \`corner-shape\` Property Unlocks For Everyday UI],
+  author: [Brecht De Ruyte],
+  source-name: [Smashing Magazine],
+  images: (),
+  paragraphs: (
+  [When I first started building websites, rounded corners required five background images, one for each corner, one for the body, and a prayer that the client wouldn’t ask for a different radius. Then the border-radius property landed, and the entire web collectively sighed with relief. That was over fifteen years ago, and honestly, we’ve been riding that same wave ever since. Just as then, I hope that we can look at this feature as a progressive enhancement slowly making its way to other browsers.],
+  [I like a good border-radius like any other guy, but the fact is that it only gives us one shape. Round. That’s it. Want beveled corners? Clip-path. Scooped ticket edges? SVG mask. Squircle app icons? A carefully tuned SVG that you hope nobody asks you to animate. We’ve been hacking around the limitations of border-radius for years, and those hacks come with real trade-offs: borders don’t follow clip-paths, shadows get cut off, and you end up with brittle code that breaks the moment someone changes a padding value.],
+  [Well, the new corner-shape changes all of that.],
+  [What Is corner-shape ?],
+  [The corner-shape property is a companion to border-radius . It doesn’t replace it; it modifies the shape of the curve that border-radius creates. Without border-radius , corner-shape does nothing. But together, they’re a powerful pair.],
+  [The property accepts these values:],
+  [round : the default, same as regular border-radius ,],
+  [squircle : a superellipse, the smooth Apple-style rounded square,],
+  [bevel : a straight line between the two radius endpoints (snipped corners),],
+  [scoop : an inverted curve, creating concave corners,],
+  [notch : sharp inward cuts,],
+  [square : effectively removes the rounding, overriding border-radius .],
+  [And you can set different values per corner, just like border-radius :],
+  [\*corner-shape: bevel round scoop squircle;
+/\* top-left, top-right, bottom-right, bottom-left \*/],
+  [You can also use the superellipse() function with a numeric parameter for fine-grained control.],
+  [.element { 
+ border-radius: 25px;
+ corner-shape: superellipse(0); /\* equal to 'bevel' \*/
+}],
+  [So the question here might be: why not call this property “ border-shape ” instead? Well, first of all, that is something completely different that we’ll get to play around with soon . Second, it does apply to a bit more than borders, such as outlines, box shadows, and backgrounds. That’s the thing that the clip-path property could never do.],
+  [Why Progressive Enhancement Matters Here],
+  [At the time of writing (March 2026), corner-shape is only supported in Chrome 139+ and other Chromium-based browsers. That’s a significant chunk of users, but certainly not everyone. The temptation is to either ignore the property until it’s everywhere or to build demos that fall apart without it.],
+  [I don’t think either approach is right. The way I see it, corner-shape is the perfect candidate for progressive enhancement, just as border-radius was in the age of Internet Explorer 6. The baseline should use the techniques we already know, such as border-radius , clip-path , radial-gradient masks and look intentionally good. Then, for browsers that support corner-shape , we upgrade the experience. Sometimes this can be as simple as just providing a more basic default; sometimes it might need to be a bit more.],
+  [Every demo in this article is created with that progressive enhancement idea. The structure for the demos looks like:],
+  [\@layer base, presentation, demo;],
+  [The presentation layer contains the full polished UI using proven techniques. The demo layer wraps everything in \@supports :],
+  [\@layer demo {
+ \@supports (corner-shape: bevel) {
+ /\* upgrade styles here \*/
+ }
+}],
+  [No fallback banners, no “your browser doesn’t support this” messages. Just two tiers of design: good and better. I thought it could be nice just to show some examples. There are a few out there already, but I hope I can add a bit of extra inspiration on top of those.],
+  [Demo 1: Product Cards With Ribbon Badges],
+  [Every e-commerce site has them: those little “New” or “Sale” badges pinned to the corner of a product card. Traditionally, getting that ribbon shape means reaching for clip-path: polygon() or a rotated pseudo-element, let's call it “fiddly code” that has the chance to fall apart the moment someone changes a padding value.],
+  [But here’s the thing: we don’t need the ribbon shape in the baseline. A simple badge with slightly rounded corners tells the same story and looks perfectly fine:],
+  [.product\_\_badge {
+ border-radius: 0 4px 4px 0;
+ background-color: var(--badge-bg);
+}],
+  [That’s it. A small, clean label sitting flush against the left edge of the card. Nothing fancy, nothing broken. It works in every browser.],
+  [For browsers that support corner-shape , we enhance:],
+  [\@layer demo {
+ /\* If the browser supports \`corner-shape\` \*/
+ \@supports (corner-shape: bevel) {
+ .product {
+ border-radius: 40px;
+ corner-shape: squircle;
+ }],
+  [.product\_\_badge {
+ padding: 0.35rem 1.4rem 0.35rem 1rem;
+ border-radius: 0 16px 16px 0;
+ corner-shape: round bevel bevel round;
+ }
+ }
+}],
+  [The round bevel bevel round combination creates a directional ribbon. Round where it meets the card edge, beveled to a point on the other side. No clip-path , no pseudo-element tricks. Borders, shadows, and backgrounds all follow the declared shape because it is the shape.],
+  [The cards themselves upgrade from border-radius: 12px to a larger size and the squircle corner-shape, that smooth superellipse curve that makes standard rounding look slightly off by comparison. Designers will notice immediately. Everyone else will just say it “feels more premium.”],
+  [Hot tip: Using the squircle value on card components is one of those upgrades where the before-and-after difference can be subtle in isolation, but transformative across an entire page. It’s the iOS effect: once everything uses superellipse curves, plain circular arcs start looking out of place. In this demo, I did exaggerate a bit.],
+  [The primary button starts beveled, faceted, and gem-like, and softens to squircle on hover. Because corner-shape values animate via their superellipse() equivalents, the transition is smooth. It’s a fun interaction that used to be hard to achieve but is now a single property (used alongside border-radius , of course).],
+  [The secondary button uses superellipse(0.5) , a value that is between a standard circle and a squircle, combined with a larger border-radius for a distinctive pill-like shape. The danger button gets a more prominent squircle with a generous radius. And notch and scoop each bring their own sharp or concave personality.],
+  [Beyond buttons, the status tags get corner-shape: notch , those sharp inward cuts that give them a machine-stamped look. The directional arrow tags use round bevel bevel round (and its reverse for the back arrow), replacing what used to require clip-path: polygon() . Now borders and shadows work correctly across all states.],
+  [Hot tip: corner-shape: scoop pairs beautifully with serif fonts and warm color palettes. The concave curves echo the organic shapes found in editorial design, calligraphy, and print layouts. For geometric sans-serif designs, stick with squircle or bevel .],
+  [What I like about this demo is how the shape hierarchy mirrors the content hierarchy. The most important element (featured plan) gets the most distinctive shape ( scoop ). The badge gets the sharpest shape ( bevel ). Everything else gets a simpler upgrade ( squircle ). Shape becomes a tool for visual emphasis, not just decoration.],
+  [As of writing, corner-shape is available in Chrome 139+ and Chromium-based browsers. Firefox and Safari don’t support it yet. The spec lives in CSS Borders and Box Decorations Module Level 4 , which is a W3C Working Draft as of this writing.],
+  [For practical use, that’s fine. That’s the whole point of how these demos are built. The presentation layer delivers a polished, complete UI to every browser. The demo layer is a bonus for supporting browsers, wrapped in \@supports (corner-shape: ...) . I lived through the time when border-radius was only available in Firefox. Somewhere along the line, it seems like we have forgotten that not every website needs to look exactly the same in every browser. What we really want is: no “broken” layouts and no “your browser doesn’t support this” messages, but rather a beautiful experience that just works, and can progressively enhance a bit of extra joy. In other words, we’re working with two tiers of design: good and better.],
+  [The approach I keep coming back to is: don’t design for corner-shape , and don’t design around the lack of it. Design a solid baseline with border-radius and then enhance it. The presentation layer in every demo looks intentionally good. It’s not a degraded version waiting for a better browser. It’s a complete design . The demo layer adds a dimension that border-radius alone can’t express.],
+  [What surprises me most about corner-shape is the range it offers — the amazing powerhouse we have with this single property: squircle for that premium, superellipse feel on cards and avatars; bevel for directional elements and gem-like badges; scoop for editorial warmth and visual hierarchy; notch for mechanical precision on tags; and superellipse() for fine control between round and squircle . And the ability to mix values per corner ( round bevel bevel round , scoop round ) opens up shapes that would have required SVG masks or clip-path hacks.],
+  [We went from five background images to border-radius , to corner-shape . Each step removed a category of workarounds. I’m excited to see what designers do with this one.],
+  [corner-shape (MDN)],
+  [“ What Can We Actually Do With corner-shape ? ”, Daniel Schwarz],
+  [CSS Borders and Box Decorations Module Level 4 (W3C specification)],
+  [A fun demo for “eco-labels” , Sebastian on CodePen],
+),
+  insert-map: (:),
+  inline-pq: pull-quote([A small, clean label sitting flush against the left edge of the card.], [Brecht De Ruyte]),
+  inline-pq-idx: 20,
+  word-count: 1575,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+}
+
+{
+  #standard-article(
+  title: [Flow control: Building accessible video for ‘After the Water’],
+  author: [NPR Apps Blog],
+  source-name: [NPR Apps Blog],
+  images: (),
+  paragraphs: (
+  [Our recent project — the video-heavy “ After the Water ” — posed an interesting challenge: Was it possible to make the story accessible without sacrificing the stunning visual media that reporter Ryan Kellman had gathered?],
+  [It’s fashionable for web storytelling, both inside and outside of journalism, to open with large, captivating video sequences. But the Web Content Accessibility Guidelines serve as a good reminder that for users with vestibular disorders, attention issues, or even just normal motion sensitivity, these videos are less “captivating” and more “disorienting.” From WCAG success criterion 2.2.2 :],
+  [For any moving, blinking or scrolling information that (1) starts automatically, (2) lasts more than five seconds, and (3) is presented in parallel with other content, there is a mechanism for the user to pause, stop, or hide it unless the movement, blinking, or scrolling is part of an activity where it is essential.],
+  [To return to our question: Yes, it’s very possible to make large-format video accessible. Here’s how we designed our scrolling video experience, optimizing for control, user preference and bandwidth.],
+  [id="control"\>Control],
+  [To start, it’s relatively easy to offer users a checkbox at the top of the story so that they can turn off autoplay.],
+  [var toggleAutoplay = function(enable) {
+ autoplayCheck.checked = enable;
+ if (enable) {
+ autoplayers.forEach(function(video) {
+ video.setAttribute("autoplay", "");
+ var promised = video.play()
+ \/\\/ ignore DOMExceptions for playback, they can get tripped up by the lazy load
+ if (promised) promised.catch(err =\> err);
+ });
+ } else {
+ autoplayers.forEach(function(video) {
+ video.removeAttribute("autoplay");
+ video.pause();
+ });
+ }
+}],
+  [autoplayCheck.addEventListener("change", e =\> toggleAutoplay(e.target.checked));],
+  [All ambient video in the presentation starts with an autoplay attribute, so we can find it in the document, and then remove (or add) that attribute based on the checkbox state. If the box is unchecked, we also halt all running videos. And in a separate function, we set up buttons on all video sections that let users individually start or stop the media for that block, regardless of autoplay.],
+  [id="preference"\>Preference],
+  [You’ll note that the toggleAutoplay function doesn’t just update the video state; it also sets the checkbox on or off. When called in response to clicking on that checkbox, this doesn’t do anything, since we’re just re-applying the current value. Why the redundancy?],
+  [To answer that question, we need to go back to 2013, when Apple released iOS 7. As a broad visual revamp of Apple’s design language on mobile, iOS 7 incorporated a lot of translucent layers over moving backdrops, to the degree where it made many people (particularly those with motion sensitivity) feel a little queasy. In response, Apple added a “reduce motion” checkbox to turn these effects down across the entire operating system, and a CSS media query was introduced to let that option apply to web content as well.],
+  [With the release of Chrome 74 this year, support for reduced motion finally is available in every major operating system and browser. We can use a media query to address it in our CSS, and we can use JavaScript to react to that same media query on pageload–which is where our checkbox comes in. Based on prefers-reduced-motion , we set or unset the checkbox, so that users who may have forgotten they set the OS preference aren’t confused.],
+  [For this approach, I’m working closely from Scott O’Hara’s post on reduced motion and video. We create a media query DOM object ( reducedMotion ) and then check it immediately when the page starts up. We also attach a listener for when it changes, in case someone changes the preference at the OS level while the web page is open.],
+  [Between the checkbox and the media query, the user is always in control of how video playback occurs in the page — within the confines what browsers currently allow for autoplay (namely, that the video must be muted and include a playsinline attribute). Other factors may apply that we can’t control. For example, in low-power mode, Safari may decide to disable autoplay even if all the other conditions are met, which is a “fun” source of confusion when testing.],
+  [id="bandwidth"\>Bandwidth],
+  [The movement for inclusive design has widened the definition and application of accessibility in software. But when building video presentations, it’s worth remembering that access is not just about the user, but also their device. Immersive presentations like “After The Water” incorporate a lot of imagery, and require a corresponding amount of bandwidth. For users on pay-as-you-go data plans, these pages can be literally expensive to read.],
+  [It’s also worth remembering that just as accessibility (in the disability sense) is contextual , not intrinsic or permanent, technological capability may vary even for users with expensive devices or connections. For example, at NPR’s DC headquarters there are a number of places where the wifi signal isn’t great (and I think we somehow found every single one of them during user testing). It doesn’t matter how nice someone’s phone or cell plan is if they’re in a subway tunnel or a wifi dead zone.],
+  [To some extent, we can only mitigate these concerns so far: Visual stories are necessarily heavier (in kilobytes, at least) than text journalism. But we certainly try to make sure that we keep people from paying for content they never see: Audio and video are lazy-loaded based on scroll position (one block back and two blocks forward).],
+  [We also automated the optimization of images, videos, and video posters whenever possible, using shell scripts running FFMPEG and ImageMagick . For example, this Bash loop will generate a thumbnail for every video in a folder, so that we can automatically show a static image to users with autoplay disabled or on low-bandwidth connections:],
+  [One struggle of lazy-loading is that the browser only allows roughly six connections to a given domain, so people on slow connections who scrolled quickly were able to saturate and block the requests for further down the page. We’re still working on solving that problem in a more elegant way. If you have any suggestions, feel free to reach out!],
+  [id="results"\>Results],
+  [This was the first time we took this approach with our big story pages, so we added some tracking to see how common their usage actually was. We found that about 1 in 30 users has the reduced motion option set in their browser. A similar share of users turned off autoplay from the checkbox, or used the play/pause buttons on individual videos.],
+  [Regardless of the numbers, creating accessible experiences is the right thing to do for our audience. But it is interesting — and gratifying — to see that these engagement numbers are as high as they are, especially in comparison to the low difficulty of their implementation.],
+),
+  insert-map: (:),
+  word-count: 1159,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+}
+
+{
+  #standard-article(
+  title: [Countdown To New Adventures (January 2026 Wallpapers Edition)],
+  author: [Cosima Mielke],
+  source-name: [Smashing Magazine],
+  images: (),
+  paragraphs: (
+  [A new year is the perfect opportunity to break free from routines, reset habits, and refine how you do things. And while you may have made plenty of New Year’s resolutions, sometimes it’s the small changes that work wonders — a tidy desktop and a new wallpaper, for example, that give you a little motivation boost when you need it.],
+  [In this post, you’ll find desktop wallpapers to accompany you through your first adventures of 2026 , to make you smile, and to bring some happy pops of color to a cold and dark winter day. As every month since we started our monthly wallpapers series more than 14 years ago, all of them were created with love by artists and designers from across the globe and can be downloaded for free.],
+  [A huge thank-you to everyone who shared their designs with us this month — you are truly smashing ! Have a happy and healthy new year, everyone!],
+  [You can click on every image to see a larger preview .],
+  [We respect and carefully consider the ideas and motivation behind each and every artist’s work. This is why we give all artists the full freedom to explore their creativity and express emotions and experience through their works. This is also why the themes of the wallpapers weren’t anyhow influenced by us but rather designed from scratch by the artists themselves.],
+  [Submit your wallpaper design! 🎨
+We are always looking for creative talent and would love to feature your desktop wallpaper in one of our upcoming posts. Join in ↬],
+  [preview],
+  [with calendar: 640x480 , 800x480 , 800x600 , 1024x768 , 1024x1024 , 1152x864 , 1280x720 , 1280x800 , 1280x960 , 1280x1024 , 1366x768 , 1400x1050 , 1440x900 , 1600x1200 , 1680x1050 , 1680x1200 , 1920x1080 , 1920x1200 , 1920x1440 , 2560x1440 , 3840x2160],
+  [without calendar: 640x480 , 800x480 , 800x600 , 1024x768 , 1024x1024 , 1152x864 , 1280x720 , 1280x800 , 1280x960 , 1280x1024 , 1366x768 , 1400x1050 , 1440x900 , 1600x1200 , 1680x1050 , 1680x1200 , 1920x1080 , 1920x1200 , 1920x1440 , 2560x1440 , 3840x2160],
+  [preview],
+  [with calendar: 640x480 , 800x480 , 800x600 , 1024x768 , 1024x1024 , 1152x864 , 1280x720 , 1280x800 , 1280x960 , 1280x1024 , 1366x768 , 1400x1050 , 1440x900 , 1600x1200 , 1680x1050 , 1680x1200 , 1920x1080 , 1920x1200 , 1920x1440 , 2560x1440 , 3840x2160],
+  [without calendar: 640x480 , 800x480 , 800x600 , 1024x768 , 1024x1024 , 1152x864 , 1280x720 , 1280x800 , 1280x960 , 1280x1024 , 1366x768 , 1400x1050 , 1440x900 , 1600x1200 , 1680x1050 , 1680x1200 , 1920x1080 , 1920x1200 , 1920x1440 , 2560x1440 , 3840x2160],
+  [“Snow drifted quietly as a child and their loyal dog paused beside the glowing Christmas tree, each ornament holding a small piece of winter wonder. In that still moment, the cold faded away, replaced by warmth, curiosity, and the simple joy of being together.” — Designed by PopArt Studio from Serbia.],
+  [preview],
+  [with calendar: 320x480 , 640x480 , 800x480 , 800x600 , 1024x768 , 1024x1024 , 1152x864 , 1280x720 , 1280x800 , 1280x960 , 1280x1024 , 1400x1050 , 1440x900 , 1600x1200 , 1680x1050 , 1680x1200 , 1920x1080 , 1920x1200 , 1920x1440 , 2560x1440],
+  [without calendar: 320x480 , 640x480 , 800x480 , 800x600 , 1024x768 , 1024x1024 , 1152x864 , 1280x720 , 1280x800 , 1280x960 , 1280x1024 , 1400x1050 , 1440x900 , 1600x1200 , 1680x1050 , 1680x1200 , 1920x1080 , 1920x1200 , 1920x1440 , 2560x1440],
+  [“Inspired by the little things in life! Stop for a moment and look around — find the little things that can bring true joy to you. This illustration is hand-drawn on a piece of paper, then scanned and adjusted with Photoshop (for the calendar UI). No AI tools have been used! Enjoy!” — Designed by Martin Nikolchev from Bulgaria.],
+  [preview],
+  [with calendar: 320x480 , 640x480 , 800x480 , 800x600 , 1024x768 , 1024x1024 , 1152x864 , 1280x720 , 1280x800 , 1280x960 , 1280x1024 , 1400x1050 , 1440x900 , 1600x1200 , 1680x1050 , 1680x1200 , 1920x1080 , 1920x1200 , 1920x1440 , 2560x1440],
+  [without calendar: 320x480 , 640x480 , 800x480 , 800x600 , 1024x768 , 1024x1024 , 1152x864 , 1280x720 , 1280x800 , 1280x960 , 1280x1024 , 1400x1050 , 1440x900 , 1600x1200 , 1680x1050 , 1680x1200 , 1920x1080 , 1920x1200 , 1920x1440 , 2560x1440],
+  [A Message Of Peace And Hope],
+  [“In the city where I live, the weather in January could be unpredictable. Sometimes it is freezing cold, and sometimes there is rain and no snow at all. I like it when there is an open sky and the sun is shining. The sky is cold and has a wonderful blue color, especially in the evenings. You look at it and think about what heart desires the most.” — Designed by Wolfie from Russia.],
+  [preview],
+  [with calendar: 1366x768 , 1440x900 , 1600x900 , 1920x1080 , 2560x1440],
+  [without calendar: 1366x768 , 1440x900 , 1600x900 , 1920x1080 , 2560x1440],
+  [preview],
+  [with calendar: 320x480 , 640x480 , 800x480 , 800x600 , 1024x768 , 1024x1024 , 1152x864 , 1280x720 , 1280x800 , 1280x960 , 1280x1024 , 1366x768 , 1440x900 , 1440x1050 , 1600x1200 , 1680x1050 , 1680x1200 , 1920x1080 , 1920x1200 , 1920x1440],
+  [without calendar: 320x480 , 640x480 , 800x480 , 800x600 , 1024x768 , 1024x1024 , 1152x864 , 1280x720 , 1280x800 , 1280x960 , 1280x1024 , 1366x768 , 1440x900 , 1440x1050 , 1600x1200 , 1680x1050 , 1680x1200 , 1920x1080 , 1920x1200 , 1920x1440],
+  [“Blue Monday may be a PR stunt, but your mental health isn’t. Do your best to protect it all year round.” — Designed by Ginger It Solutions from Serbia.],
+  [preview],
+  [with calendar: 320x480 , 640x480 , 800x480 , 800x600 , 1024x768 , 1024x1024 , 1152x864 , 1280x720 , 1280x800 , 1280x960 , 1280x1024 , 1400x1050 , 1440x900 , 1600x1200 , 1680x1050 , 1680x1200 , 1920x1080 , 1920x1200 , 1920x1440 , 2560x1440],
+  [without calendar: 320x480 , 640x480 , 800x480 , 800x600 , 1024x768 , 1024x1024 , 1152x864 , 1280x720 , 1280x800 , 1280x960 , 1280x1024 , 1400x1050 , 1440x900 , 1600x1200 , 1680x1050 , 1680x1200 , 1920x1080 , 1920x1200 , 1920x1440 , 2560x1440],
+  [Open The Doors Of The New Year],
+  [“January is the first month of the year and usually the coldest winter month in the Northern hemisphere. The name of the month of January comes from ‘ianua’, the Latin word for door, so this month denotes the door to the new year and a new beginning. Let’s open the doors of the new year together and hope it will be the best so far!” — Designed by PopArt Studio from Serbia.],
+  [preview],
+  [without calendar: 320x480 , 640x480 , 800x480 , 800x600 , 1024x768 , 1024x1024 , 1152x864 , 1280x720 , 1280x800 , 1280x960 , 1280x1024 , 1366x768 , 1400x1050 , 1440x900 , 1600x1200 , 1680x1050 , 1680x1200 , 1920x1080 , 1920x1200 , 1920x1440 , 2560x1440],
+  [preview],
+  [without calendar: 320x480 , 1024x768 , 1280x1024 , 1440x900 , 1600x1200 , 1680x1200 , 1920x1200 , 2560x1440],
+  [“Just four birds, ready for winter.” — Designed by Vlad Gerasimov from Georgia.],
+  [preview],
+  [without calendar: 800x480 , 800x600 , 1024x600 , 1024x768 , 1152x864 , 1280x720 , 1280x800 , 1280x960 , 1280x1024 , 1366x768 , 1400x1050 , 1440x900 , 1440x960 , 1600x900 , 1600x1200 , 1680x1050 , 1680x1200 , 1920x1080 , 1920x1200 , 1920x1440 , 2560x1440 , 2560x1600 , 2880x1800 , 3072x1920 , 3840x2160 , 5120x2880],
+  [“If we wait until we’re ready, we’ll be waiting for the rest of our lives. Start today — somewhere, anywhere.” — Designed by Shawna Armstrong from the United States.],
+  [preview],
+  [without calendar: 1280x720 , 1280x800 , 1280x960 , 1280x1024 , 1400x1050 , 1440x900 , 1600x1200 , 1680x1050 , 1920x1080 , 1920x1200 , 1920x1440 , 2560x1440],
+  [“Join us in honoring our furry little forest friends this Squirrel Appreciation Day! Whether they’re gathering nuts, building cozy homes, or brightening up winter days with their playful antics, squirrels remind us to treasure nature’s small wonders. Let’s show them some love today!” — Designed by PopArt Studio from Serbia.],
+  [preview],
+  [without calendar: 320x480 , 640x480 , 800x480 , 800x600 , 1024x768 , 1024x1024 , 1152x864 , 1280x720 , 1280x800 , 1280x960 , 1280x1024 , 1400x1050 , 1440x900 , 1600x1200 , 1680x1050 , 1680x1200 , 1920x1080 , 1920x1200 , 1920x1440 , 2560x1440],
+  [Cold… Penguins!],
+  [“The new year is here! We waited for it like penguins. We look at the snow and enjoy it! — Designed by Veronica Valenzuela from Spain.],
+  [preview],
+  [without calendar: 640x480 , 800x480 , 1024x768 , 1280x720 , 1280x800 , 1440x900 , 1600x1200 , 1920x1080 , 1920x1440 , 2560x1440],
+  [preview],
+  [without calendar: 1440x900 , 1600x1200 , 1680x1050 , 1680x1200 , 1920x1080 , 1920x1200 , 1920x1440 , 2560x1440],
+  [Boom!],
+  [preview],
+  [without calendar: 1024x768 , 1152x864 , 1280x720 , 1280x800 , 1280x960 , 1280x1024 , 1366x768 , 1400x1050 , 1440x900 , 1600x1200 , 1680x1050 , 1680x1200 , 1920x1080 , 1920x1200 , 1920x1440 , 2560x1440],
+  [“When all the festivities are over, all we want is some peace and rest. That’s why I made this simple flat art wallpaper with peaceful colors.” — Designed by Jens Gilis from Belgium.],
+  [preview],
+  [without calendar: 640x480 , 800x600 , 1024x768 , 1152x864 , 1280x720 , 1280x800 , 1280x960 , 1366x768 , 1400x1050 , 1440x900 , 1600x1200 , 1680x1050 , 1920x1080 , 1920x1200 , 1920x1440 , 2560x1440],
+  [preview],
+  [without calendar: 640x480 , 800x480 , 800x600 , 1024x768 , 1024x1024 , 1152x864 , 1280x720 , 1280x800 , 1280x960 , 1280x1024 , 1366x768 , 1400x1050 , 1440x900 , 1600x1200 , 1680x1050 , 1680x1200 , 1920x1080 , 1920x1200 , 1920x1440 , 2560x1440 , 3840x2160],
+  [“A little daily motivation to keep your cool during the month of January.” — Designed by Amalia Van Bloom from the United States.],
+  [preview],
+  [without calendar: 640x960 , 1024x768 , 1280x800 , 1280x1024 , 1440x900 , 1920x1200 , 2560x1440],
+  [A Fresh Start],
+  [preview],
+  [without calendar: 640x480 , 800x480 , 800x600 , 1024x768 , 1024x1024 , 1152x864 , 1280x720 , 1280x800 , 1280x960 , 1280x1024 , 1366x768 , 1400x1050 , 1440x900 , 1600x1200 , 1680x1050 , 1680x1200 , 1920x1080 , 1920x1200 , 1920x1440 , 2560x1440 , 3840x2160],
+  [“What could be better than a change of scene for a week? Even if you are too busy, just think about it.” — Designed by Igor Izhik from Canada.],
+  [preview],
+  [without calendar: 1024x768 , 1280x720 , 1280x800 , 1280x960 , 1280x1024 , 1400x1050 , 1440x900 , 1600x1200 , 1680x1050 , 1680x1200 , 1920x1080 , 1920x1200 , 1920x1440 , 2560x1440 , 2560x1600],
+  [Happy New Year ’86],
+  [preview],
+  [without calendar: 640x480 , 800x480 , 800x600 , 1024x768 , 1024x1024 , 1152x864 , 1280x720 , 1280x800 , 1280x960 , 1280x1024 , 1366x768 , 1400x1050 , 1440x900 , 1600x1200 , 1680x1050 , 1680x1200 , 1920x1080 , 1920x1200 , 1920x1440 , 2560x1440 , 3840x2160],
+  [preview],
+  [without calendar: 800x600 , 1024x768 , 1152x864 , 1280x800 , 1280x960 , 1400x1050 , 1440x900 , 1600x1200 , 1680x1050 , 1680x1260 , 1920x1200 , 1920x1440],
+  [“My fish tank at home inspired me to make a wallpaper with a fish.” — Designed by Arno De Decker from Belgium.],
+  [preview],
+  [without calendar: 320x480 , 640x480 , 800x480 , 800x600 , 1024x768 , 1024x1024 , 1152x864 , 1280x720 , 1280x800 , 1280x960 , 1280x1024 , 1400x1050 , 1440x900 , 1600x1200 , 1680x1050 , 1680x1200 , 1920x1080 , 1920x1200 , 1920x1440 , 2560x1440],
+  [“The new year brings new opportunities for each of us to become our true selves. I think that no matter what you are — like this little monster — you should dare to be the true you without caring what others may think. Happy New Year!” — Designed by Maria Keller from Mexico.],
+  [preview],
+  [without calendar: 320x480 , 640x480 , 640x1136 , 750x1334 , 800x480 , 800x600 , 1024x768 , 1024x1024 , 1152x864 , 1242x2208 , 1280x720 , 1280x800 , 1280x960 , 1280x1024 , 1366x768 , 1400x1050 , 1440x900 , 1600x1200 , 1680x1050 , 1680x1200 , 1920x1080 , 1920x1440 , 2560x1440 , 2880x1800],
+  [“In our country, Christmas is celebrated in January when oak branches and leaves are burnt to symbolize the beginning of the new year and new life. It’s the time when we gather with our families and celebrate the arrival of the new year in a warm and cuddly atmosphere.” — Designed by PopArt Studio from Serbia.],
+  [preview],
+  [without calendar: 320x480 , 640x480 , 800x480 , 800x600 , 1024x768 , 1024x1024 , 1152x864 , 1280x720 , 1280x800 , 1280x960 , 1280x1024 , 1366x768 , 1400x1050 , 1440x900 , 1600x1200 , 1680x1050 , 1680x1200 , 1920x1080 , 1920x1200 , 1920x1440 , 2560x1440],
+  [preview],
+  [without calendar: 640x480 , 800x480 , 800x600 , 1024x768 , 1024x1024 , 1152x864 , 1280x720 , 1280x800 , 1280x960 , 1280x1024 , 1366x768 , 1400x1050 , 1440x900 , 1600x1200 , 1680x1050 , 1680x1200 , 1920x1080 , 1920x1200 , 1920x1440 , 2560x1440 , 3840x2160],
+  [New Year’s Resolution],
+  [preview],
+  [without calendar: 800x480 , 1024x768 , 1152x864 , 1280x800 , 1280x960 , 1440x1050 , 1400x900 , 1680x1050 , 1920x1080 , 1920x1200 , 1920x1440 , 2560x1440],
+  [Don Quijote, Here We Go!],
+  [“This year we are going to travel through books, and you couldn’t start with a better one than Don Quijote de la Mancha !” — Designed by Veronica Valenzuela Jimenez from Spain.],
+  [preview],
+  [without calendar: 640x480 , 800x480 , 1024x768 , 1280x720 , 1280x800 , 1440x900 , 1600x1200 , 1920x1080 , 1920x1440 , 2560x1440],
+  [“Winter can be such a gloomy time of the year. The sun sets earlier, the wind feels colder, and our heating bills skyrocket. I hope to brighten up your month with my wallpaper for Rubber Ducky Day!” — Designed by Ilya Plyusnin from Belgium.],
+  [preview],
+  [without calendar: 320x480 , 640x480 , 800x480 , 800x600 , 1024x768 , 1024x1024 , 1152x864 , 1280x720 , 1280x800 , 1280x960 , 1280x1024 , 1366x768 , 1400x1050 , 1440x900 , 1600x1200 , 1680x1050 , 1680x1200 , 1920x1080 , 1920x1200 , 1920x1440 , 2560x1440],
+  [A New Beginning],
+  [“I wanted to do a lettering-based wallpaper because I love lettering. I chose January because for a lot of people the new year is perceived as a new beginning and I wish to make them feel as positive about it as possible! The idea is to make them feel like the new year is (just) the start of something really great.” — Designed by Carolina Sequeira from Portugal.],
+  [preview],
+  [without calendar: 320x480 , 1280x1024 , 1680x1050 , 2560x1440],
+  [preview],
+  [without calendar: 320x480 , 768x1024 , 1024x768 , 1280x800 , 1280x1024 , 1440x900 , 1920x1080 , 2560x1440],
+  [“You wake me up to a beautiful day; lift my spirit when I’m feeling blue. When I’m home you relieve me of the long day’s stress. You help me have a good time with my loved ones; give me company when I’m all alone. You’re none other than my favourite cup of hot tea.” — Designed by Acodez IT Solutions from India.],
+  [preview],
+  [without calendar: 320x480 , 640x480 , 800x480 , 800x600 , 1024x768 , 1024x1024 , 1152x864 , 1280x720 , 1280x960 , 1280x1024 , 1366x768 , 1400x1050 , 1440x900 , 1600x1200 , 1680x1050 , 1680x1200 , 1920x1080 , 1920x1200 , 1920x1440 , 2560x1440],
+  [Don’t Forget Your Vitamins],
+  [“Discover the seasonal fruits and vegetables. In January: apple and banana enjoying the snow!” — Designed by Vitaminas Design from Spain.],
+  [preview],
+  [without calendar: 320x480 , 1280x800 , 1280x1024 , 1440x900 , 1920x1080 , 2560x1440],
+  [“Wolf-month (in Dutch ‘wolfsmaand’) is another name for January.” — Designed by Chiara Faes from Belgium.],
+  [preview],
+  [without calendar: 640x480 , 800x600 , 1024x768 , 1152x864 , 1280x720 , 1280x800 , 1280x960 , 1366x768 , 1400x1050 , 1440x900 , 1600x1200 , 1680x1050 , 1920x1080 , 1920x1200 , 1920x1440 , 2560x1440],
+  [A New Start],
+  [“The new year brings hope, festivity, lots and lots of resolutions, and many more goals that need to be achieved.” — Designed by Damn Perfect from India.],
+  [preview],
+  [without calendar: 320x480 , 640x480 , 800x480 , 800x600 , 1024x768 , 1024x1024 , 1152x864 , 1280x720 , 1280x800 , 1280x960 , 1280x1024 , 1366x768 , 1400x1050 , 1440x900 , 1600x1200 , 1680x1050 , 1680x1200 , 1920x1080 , 1920x1200 , 1920x1440 , 2560x1440],
+  [Feeling inspired? We’ll publish the February wallpapers on January 31, so if you’d like to be a part of the collection, please don’t hesitate to submit your design . We are already looking forward to it!],
+),
+  insert-map: (:),
+  inline-pq: pull-quote([” — Designed by Vlad Gerasimov from Georgia.], [Cosima Mielke]),
+  inline-pq-idx: 46,
+  word-count: 2830,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -4137,36 +4282,48 @@ For high-level data analysts, we imagine GA4 will be no trouble at all. The only
 {
   #section-label([Briefs])
   #brief-group((
-    #brief-item([Mike Ash], source-name: [Mike Ash (Friday Q&A)], [Soon after Swift was initially open sourced, I wrote an article about how weak references are implemented . Time moves on and things change, and the implementation is different from what it once was. Today I'm going to talk about the current implementation and how it works compared to the old one, a topic suggested by Guillaume Lessard.
- (Read More)])
+    [#brief-item([Real Python], source-name: [Real Python], [In this quiz, you’ll test your understanding of Python Strings and Character Data .
 
-    #brief-item([Mike Ash], source-name: [Mike Ash (Friday Q&A)], [The good news is that I'm officially restarting work on The Complete Friday Q&A: Volume II. I got partway into it a while ago and ran out of steam. The restarted edition includes all posts made since then, making it pretty massive. I can't commit to a specific timeframe, but I hope that it will be a few months at most before I have it out. There may be opportunities for reader involvement in checking and polishing it, so watch this space.
- (Read More)])
+This quiz helps you deepen your understanding of Python’s string and byte data types. You’ll explore core concepts like string immutability, interpolation with f-strings, Unicode handling, key string methods, and working with bytes objects.])],
+    [#brief-item([Evan Miller], source-name: [Evan Miller], [An essay that bids farewell to x87, a computing architecture too long for this world: The Floppy Disk of Floating Point])],
+    [#brief-item([Robin Ward (eviltrout)], source-name: [Robin Ward (eviltrout)], [Recently I fell in love with Pretender , the mock server library in
+Javascript, so I decided to record a screencast showing how to use it in an Ember.js integration test:
 
-    #brief-item([Addy Osmani], source-name: [Addy Osmani], [Bias toward action is defaulting to the smallest responsible step that produces real feedback, while pre-committing to guardrails so that being wrong is survivable and quickly correctable.])
+The source code for the login application is on github . The finished
+version is in the pretender branch .])],
+    [#brief-item([Robin Ward (eviltrout)], source-name: [Robin Ward (eviltrout)], [Previously I posted notes and links for my talk about “Ember at 10 feet” from the
+ Embergarten Saturday Symposium .
 
-    #brief-item([Robin Ward (eviltrout)], source-name: [Robin Ward (eviltrout)], [Over the last couple of months, I’ve been posting a series of videos about early PC gaming and programming on my YouTube Channel . It’s been quite a fun journey and I thought I might write a few words about it.
+Today my awesome friends at Unspace posted a video of the talk, which you can watch below:
 
-I have a lot of nostalgia for early games, which makes sense since it was how I spent most of my free time in the 80’s and 90’s. Times were boring before the Internet :)])
+ Source Code | Online Demo])],
+    [#brief-item([Evan Miller], source-name: [Evan Miller], [Quantiles can represent key operational and business metrics, but the computational challenges associated with inference has hampered their adoption in online experimentation. In a new paper, I present a two-sample difference-in-quantile hypothesis test and confidence interval based on a likelihood-ratio test statistic. It can be computed using only four order statistics from each sample. arXiv link: Likelihood-ratio inference on differences in quantiles])],
+    [#brief-item([Robin Ward (eviltrout)], source-name: [Robin Ward (eviltrout)], [Back in February , I gave
+a presentation on Discourse and client side MVC at TechTalksTO.
 
-    #brief-item([Robin Ward (eviltrout)], source-name: [Robin Ward (eviltrout)], [Once upon a time it used to be difficult to create integration tests in Ember.js.
-Fortunately, the framework has come a long way and it’s now really easy to get
-integration testing working in your application. This screencast shows how
-to set it up with ember-cli:
+It wasn’t recorded, but I’ve taken the liberty of creating a video version of the presentation with an audio track.
 
-There is some boilerplate code required that you’ll need at the top of your
-integration test files if you want to do it yourself. Here it is:])
+While the presentation is about Browser Applications, I take a large detour in the beginning to talk about
+ Discourse and Forum software in general. Enjoy!])],
+    [#brief-item([Robin Ward (eviltrout)], source-name: [Robin Ward (eviltrout)], [Recently, I wrote a short essay on privilege and programming . It was quite popular on /r/programming and generated hundreds of comments, both there and on this blog.
 
-    #brief-item([Real Python], source-name: [Real Python], [Do you have complex logic and unpredictable dependencies that make it hard to write reliable tests? How can you use Python's mock object library to improve your tests? Christopher Trudeau is back on the show this week with another batch of PyCoder's Weekly articles and projects.])
+I was surprised and flattered to see the majority of the comments agreed with my post, however a few people brought up a concern which I’d like to address:
 
-    #brief-item([Mike Ash], source-name: [Mike Ash (Friday Q&A)], [Apple's new OSes are out. If you've looked through the documentation, you may have noticed that the prototype for objc\_msgSend has changed . Previously, it was declared as a function that took id , SEL , and variadic arguments after that, and returned id . Now it's declared as a function that takes and returns void . Similar functions like objc\_msgSendSuper also became void / void . Why the change?
- (Read More)])
+Why this is person trying to convince me that I should regretful for being able to use a computer at a young age just because others couldn’t?])],
+    [#brief-item([Addy Osmani], source-name: [Addy Osmani], [Two papers published in early 2026 suggest you might have just made your agent slower, more expensive, and no more accurate. The right mental model is to treat AGENTS.md as a living list of codebase smells you haven't fixed yet, not a permanent configuration.])],
+    [#brief-item([Unknown], source-name: [CSC Cloud Team Blog], [There are now CentOS-8 images available in Pouta!
 
-    #brief-item([Mike Ash], source-name: [Mike Ash (Friday Q&A)], [Apple's newest mobile CPU, the A11, brings a new level of heterogeneous computing to iOS, with both high and low performance cores that are always on. With the release of the iPhone X, I set out to see if I could observe these heterogeneous cores in action.
- (Read More)])
+There are some minor issues with the upstream CentOS8 images, so, for now, they are considered to be in "tech preview".
 
-    #brief-item([Emmanuel Lin Toulemonde], source-name: [OCTO Technology Blog], [Les tests d'architecture sont un outil puissant pour automatiser la vérification des patterns d’architecture, des standards, de valider les choses qu’un linter ne peut pas aisément valider.])
+We have solved the one we have found so far by temporarily modifying the image to use "cloud-user" and remove the resolv.conf leftovers.
 
+Basic information about our images can be found on docs.csc.fi 
+
+One issue is that /etc/resolv.conf sometimes has a nameserver defined from the build of the image. There is an open CentOS bug report about this:  https:\/\/bugs.centos.org/view.php?id=16948])],
+    [#brief-item([Julien Tellier], source-name: [OCTO Technology Blog], [Lors cette série d’interviews, OCTO vous propose un aperçu des sujets à considérer dans votre trajectoire des mois à venir. Aujourd’hui, Guillaume Estassy, nous parle d’Observabilité.])],
+    [#brief-item([Robin Ward (eviltrout)], source-name: [Robin Ward (eviltrout)], [Over the last couple of months, I’ve been posting a series of videos about early PC gaming and programming on my YouTube Channel . It’s been quite a fun journey and I thought I might write a few words about it.
+
+I have a lot of nostalgia for early games, which makes sense since it was how I spent most of my free time in the 80’s and 90’s. Times were boring before the Internet :)])],
   ))
 }
 

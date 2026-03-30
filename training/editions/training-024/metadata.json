@@ -1,25 +1,25 @@
 {
   "config_id": "training-024",
   "archetype": "web-dev",
-  "date_generated": "2026-03-30T01:20:17.194266+00:00",
+  "date_generated": "2026-03-30T01:45:16.378496+00:00",
   "page_target": 12,
-  "num_pages": 45,
+  "num_pages": 42,
   "num_items": 36,
   "feeds_contributed": [
-    "Codrops",
     "Steve Bellovin",
-    "Marek Majkowski (Cloudflare idea)",
-    "Daniel Doubrovkine (dBlock)",
     "Sensible Blog",
-    "Evan Hahn",
-    "Sam Saffron",
     "Luciano Mammino (loige)",
-    "Stack Abuse",
     "REA Group Tech",
+    "Cloudflare Research",
+    "Evan Hahn",
     "Canva Engineering",
-    "Cloudflare Research"
+    "Sam Saffron",
+    "Daniel Doubrovkine (dBlock)",
+    "Stack Abuse",
+    "Codrops",
+    "Marek Majkowski (Cloudflare idea)"
   ],
-  "render_time_s": 1.04,
+  "render_time_s": 1.07,
   "pages": [
     {
       "page_number": 1,
@@ -270,24 +270,6 @@
     {
       "page_number": 42,
       "png_path": "training-024/pages/page-042.png",
-      "width_pt": 612.0,
-      "height_pt": 792.0
-    },
-    {
-      "page_number": 43,
-      "png_path": "training-024/pages/page-043.png",
-      "width_pt": 612.0,
-      "height_pt": 792.0
-    },
-    {
-      "page_number": 44,
-      "png_path": "training-024/pages/page-044.png",
-      "width_pt": 612.0,
-      "height_pt": 792.0
-    },
-    {
-      "page_number": 45,
-      "png_path": "training-024/pages/page-045.png",
       "width_pt": 612.0,
       "height_pt": 792.0
     }
@@ -689,36 +671,11 @@
     {
       "spread_id": "s-024-022",
       "edition_id": "training-024",
-      "type": "spread",
+      "type": "solo",
       "pages": [
         {
           "page_number": 42,
           "png_path": "training-024/pages/page-042.png",
-          "width_pt": 612.0,
-          "height_pt": 792.0
-        },
-        {
-          "page_number": 43,
-          "png_path": "training-024/pages/page-043.png",
-          "width_pt": 612.0,
-          "height_pt": 792.0
-        }
-      ]
-    },
-    {
-      "spread_id": "s-024-023",
-      "edition_id": "training-024",
-      "type": "spread",
-      "pages": [
-        {
-          "page_number": 44,
-          "png_path": "training-024/pages/page-044.png",
-          "width_pt": 612.0,
-          "height_pt": 792.0
-        },
-        {
-          "page_number": 45,
-          "png_path": "training-024/pages/page-045.png",
           "width_pt": 612.0,
           "height_pt": 792.0
         }

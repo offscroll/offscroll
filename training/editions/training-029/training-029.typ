@@ -23,601 +23,54 @@
 
 // --- Front Page Feature ---
 #feature-article(
-  title: [CT Stars Ditch Surf Giants for Ice Cream, Nike and Lexus Deals],
+  title: [Final Four: Tip-off time, broadcast info for Michigan vs Arizona],
   kicker: [Cover Story],
-  author: [Jason Lock],
-  source-name: [Surfer Magazine],
-  deck: [In a few days' time, the WSL's Championship Tour will begin its 2026 season, launching its first event out of Bells Beach.],
-  lead-text: "The competition window opens from April 1st, running through to the 11th, before swinging over to the other side of Australia for the West Aus leg of the tour.",
-  lead-first-alpha: 0,
+  author: [Yahoo Sports],
+  source-name: [Yahoo Sports],
+  deck: [(Photo by Michael Reaves/Getty Images) | Getty Images 
+
+class="has-text-align-none"\>The No.],
+  lead-pre: [],
+  lead-cap: [C],
+  lead-rest: [HICAGO, ILLINOIS - MARCH 29: Head coach Dusty May of the Michigan Wolverines reacts against the Tennessee Volunteers during the second half in the Elite Eight of the 2026 NCAA Men's Basketball Tournament at the United Center on March 29, 2026 in Chicago, Illinois. (Photo by Michael Reaves/Getty Images) | Getty Images],
   body-paragraphs: (
-  [Molly Picklum and Yago Dora are your defending champions. And as the surfing world, or maybe the world in general, is in a constant state of flux, we wanted to pause and take stock of who has any new stickers adorning the business-end of their surfboard. Even this year, there's been a few surprises, Tyler Wright no longer with Rip Curl – leaving her a free-agent. Anyway, here's what we found out about what's new for the CT roster:],
-  [align="center"\> Related: How To Prevent Surfer's Ear – And What To Do If You Have Early Signs],
-  [Liam O'Brien – Last month, Boform Australia – a concrete construction company – confirmed they will be supporting LOB for another year, continuing their long-standing relationship.],
-  [Yoga Dora – It's well-known that last year's world champ jumped ship after 12-years with Volcom over to Vissla. A savvy signing for the Paul Naude helmed biz. It's understood that Stokehouse (Vissla's parent company) are making a bid to buy Rip Curl too. We'll see how this one plays out.],
-  [Italo Ferreira – Back in 2023, Italo lost his long-time sponsor Billabong. By 2025, surfing's first ever Olympic champion announced he'd penned a fresh deal with Nike – the first time the brand's sponsored a surfer in more than a decade.],
-  [Leonardo Fioravanti – In June last year, Leo Fio announced he'd signed with tire company Pirelli, to make traction pads, be sold exclusively through Bell surf stores. Bell is of course, Stephen Bell's company – Belly being a surfing force for more than 30 years – and step-dad, mentor, coach and bff to Leo.],
-  [Mateus Herdy – In August 2025, Brazil's Mateus Herdy signed with Rivvia Projects, a clothing brand founded by CT alumni, Julian Wilson.],
-  [Kanoa Igarashi – Continues his partnership with JS Industries, after making the jump from Sharp Eye last year. Also last year, Kanoa came on board as a brand ambassador for TaylorMade Golf Japan, which makes sense given he's into it. The Olympic silver medalist is also on the Lexus team, joining Griff and newly adorned Lexus-ite, Caroline Marks .],
-  [Connor O'Leary – Last month, apparel brand Afends announced Connor had joined the team – their sticker now right up top of the Aussie-born, Japanese athlete's DHD boards.],
-  [Caroline Marks – Just a few days ago, Lexus announced they were bringing the world number two surfer onto their expanding team, gifting the Floridian a 2026 Lexus GX for the pleasure.],
-  [Gabriel Medina – Earlier this year, Gabby announced a departure from Rip Curl, a deal that lasted for almost two decades. Medina's next moves are under wraps -- though last month, Sorvetes Los Los, an ice cream outfit out of São Paulo, Brazil, announced he was their new ambassador. And then, just a few weeks ago, Gabriel was pictured at his inaugural Medina Surf Fest with UVV On atop the nose of his board. This is Universidade Vila Velha, a private education joint in Brazil. Talk about non-endemic support. It was revealed they're supporting Medina for three years, and remains to be seen what level of investment that looks like.],
-  [Marco Mignot – Last year's Rookie of the Year has just penned a fresh three-year deal with long-time sponsor, Quiksilver.],
-  [Jack Robinson – Back with JS Surfboards. A full circle moment given JS made boards for Robbo in 2013 too. Earlier this month, it was announced Jack's returning to the brand, after leaving Sharp Eye. Jack made the final five last year, after winning the Lexus Tahiti Pro in Teahupo'o. Let's see what pep JS can do to boost him further up the rankings.],
-  [City Simmers – The 2024 world champion signed up with VEIA Supplies as an ambassador last year. VEIA is a rider-owned business founded by John John Florence and Jon Pyzel, supplying traction, board bags and leashes.],
-  [Filipe Toledo – Not new per se, but in December 2025, Filipe officially became a partner at Sharp Eye Surfboards, his long-term board sponsor. The deal is lifelong, so we're never going to see Filipe with any other foam under foot.],
-  [Kauli Vaast – Has launched a partnership with Novotel, called the Novotel 37 Collective, which is a global team of athletes, innovators, wellness experts and more who are leading the way with small sustainable changes to their every day life. According to the press release, it's focussed on making 1% changes every day to build a long-lasting positive impact. How this looks for the bottom line of Kauli is unknown, but an interesting arrangement nonetheless.],
-  [Tyler Wright – Unknown who will pick up the two-time world champion, after her sponsorship with Rip Curl was not renewed this year. Watch this space.],
-  [Tya Zebrowski – The youngest ever surfer to qualify for the Championship Tour has joined Red Bull's team this year, ahead of her rookie season. Tya's a phenom, Tahitian born, Hossegor raised and has been putting in the pre-season training in Hawaii.],
-  [align="center"\> Related: How To Choose A Three-Board Quiver],
+  [class="has-text-align-none"\>The No. 1-seed Michigan Wolverines and No. 1-seed Arizona Wildcats will duke it out on Saturday in the Final Four in Indianapolis with a spot in the National Championship Game on the line. No pressure or anything.],
+  [class="has-text-align-none"\>We are now learning more details about when the game will begin and how we can watch it. The Wolverines and Wildcats will tip-off around 9 p.m. or so and can be viewed on TBS, TNT and truTV. No. 2-seed UConn and No. 3-seed Illinois will be the first game of the day and begin at 6:09 p.m.],
+  [dir="ltr" lang="en"\>2026 NCAA Division I Men’s Basketball Championship Final Four Tips Off Saturday, April 4, on TBS, TNT and truTV pic.twitter.com/OjuL56D0Jn],
+  [— March Madness Men’s Basketball TV (\@MM\_MBB\_TV) March 29, 2026],
+  [No. 16-seed Long Island: 92-58],
+  [No. 9-seed Utah State: 78-66],
+  [No. 4-seed Arkansas: 109-88],
+  [No. 2-seed Purdue: 79-64],
+  [class="has-text-align-none"\>The Wildcats are led by Big 12 Player of the Year, senior guard Jaden Bradley. He averages 13.3 points, 4.4 assists and 3.5 rebounds per game while shooting 46 percent from the field and 39.4 from beyond the arc. Arizona also has a pair of highly talented freshmen in guard Brayden Burries and forward Koa Peat. Burries leads the team in scoring (16.1 points per game, 50 percent from the field, 40.2 percent from three) while Peat isn’t far behind (14.1 points per game, 54.4 percent from the field).],
+  [class="has-text-align-none"\>But Big Ten Player of the Year and Most Outstanding Player of the Midwest Region, Yaxel Lendeborg, is going to give the Wildcats all they can handle. After only scoring nine points in the Round of 64 victory over Howard, he lit up the scoreboard with 25 against Saint Louis, 23 against Alabama and 27 against Tennessee.],
+  [dir="ltr" lang="en"\>YAXEL ARE YOU SERIOUS WITH THAT!? 🤯 pic.twitter.com/0vNPqb9U5x],
+  [— NCAA March Madness (\@MarchMadnessMBB) March 29, 2026],
 ),
   edited-for-length: false,
 )
 
-#pull-quote([Mateus Herdy – In August 2025, Brazil's Mateus Herdy signed with Rivvia Projects, a clothing brand founded by CT alumni, Julian Wilson.], [Jason Lock])
+#pull-quote([class="wp-block-embed\_\_wrapper"\>  class="twitter-tweet"\>  dir="ltr" lang="en"\>2026 NCAA Division I Men’s Basketball Championship Final Four Tips Off Saturday, April 4, on TBS, TNT and truTV pic.], [Yahoo Sports])
 
 
 {
   #section-label([Front Page])
   #standard-article(
-  title: [New | 6 studies released in batch on 2022-12-21],
+  title: [SRA Status Update],
   author: [PubMed Health],
   source-name: [PubMed Health],
   images: (),
   paragraphs: (
-  [class="ExternalClassDA042B6CBFB746148B63A95B66A046DF"\>
- phs003123.v1.p1 | 
-Rapid Acceleration of Diagnostics - Underserved Populations (RADx-UP): C2SPARC: Implementing Mobile, POC COVID-19 Testing in Partnership with a Community-Based Organization to Reach Women Who Use Drugs 
-( 
- study page | 
- 
- release notes )],
-  [phs003124.v1.p1 | 
-Rapid Acceleration of Diagnostics - Radical (RADx-rad): Exosome-Based Non-Traditional Technologies Towards Multi-Parametric and Integrated Approaches for SARS-CoV-2 
-( 
- study page | 
- 
- release notes )],
-  [phs003125.v1.p1 | 
-Rapid Acceleration of Diagnostics - Underserved Populations (RADx-UP): Engaging Church Health Ministries to Decrease SARS-CoV-2 Vaccine Hesitancy in Underserved Populations in Baton Rouge 
-( 
- study page | 
- 
- release notes )],
-  [phs003126.v1.p1 | 
-Rapid Acceleration of Diagnostics - Underserved Populations (RADx-UP): Conducting Correctional COVID Research and Implementing Novel, Ethically Sound, Sustainable Surveillance Systems (CRAINES) 
-( 
- study page | 
- 
- release notes )],
-  [phs003127.v1.p1 | 
-Rapid Acceleration of Diagnostics - Underserved Populations (RADx-UP): ReOpening Schools Safely and Educating Youth (ROSSEY) 
-( 
- study page | 
- 
- release notes )],
-  [phs003128.v1.p1 | 
-Rapid Acceleration of Diagnostics - Underserved Populations (RADx-UP): Mobile Health-Targeted SARS-CoV-2 Testing and Community Interventions to Maximize Migrant Children's School Attendance During the COVID-19 Pandemic 
-( 
- study page | 
- 
- release notes )],
+  [SRA Archive is still in service.],
+  [Recently, NCBI announced that due to budget constraints, it would be discontinuing its Sequence Read Archive (SRA) and Trace Archive repositories for high-throughput sequence data. However, NIH has since committed interim funding for SRA in its current form until October 1, 2011. In addition, NCBI has been working with staff from other NIH Institutes and NIH grantees to develop an approach to continue archiving a widely used subset of next generation sequencing data after October 1, 2011.],
+  [We now plan to continue handling sequencing data associated with:],
+  [RNA-Seq, ChIP-Seq, and epigenomic data that are submitted to GEO],
+  [Genomic and Transcriptomic assemblies that are submitted to GenBank],
+  [16S ribosomal RNA data associated with metagenomics that are submitted to GenBank],
+  [In addition, NCBI will continue to provide access to existing SRA and Trace Archive data for the foreseeable future. NCBI is also continuing to discuss with NIH Institutes approaches for handling other next-generation sequencing data associated with specific large-scale studies.],
 ),
   insert-map: (:),
-  word-count: 182,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-}
-
-{
-  #section-label([Features])
-  #standard-article(
-  title: [The Best Black Friday Deals for Runners],
-  author: [TJ Pitre],
-  source-name: [Trail Runner Magazine],
-  images: (),
-  paragraphs: (
-  [There are Black Friday deals galore on running shoes, apparel, and accessories! We’ll keep updating our deals content through the holiday week to Cyber Monday, so check back often to find the gear you want at amazing discounts.],
-  [Not sure what’s hot this holiday season? Review the 2024 RUN Holiday Gift Guide for ideas, check out the 2024 Triathlete Holiday Gift Guide , or browse the running deals at the REI Big Winter Sale or the direct-to-consumer Black Friday sales listed below.],
-  [Black Friday Deals and Discounts],
-  [Wahoo KICKR RUN Smart Treadmill + Accessories Package, \$5,000],
-  [Special Deal: Use code TURKEYTROT at checkout and receive a free KICKR Headwind smart fan and TRACKR heart rate monitor — a \$330 value!],
-  [Wahoo’s new KICKR RUN treadmill is the most advanced treadmill ever made. It brings cutting-edge technology to your run experience, helps minimize distraction and maximize the realism of running indoors.],
-  [Nike Zegama 2 ( \$180 ) \$127 — 29% off!],
-  [Shop Women’s Now – \$127 Shop Men’s Now – \$127],
-  [Weights: 9.4 oz. (women’s 8), 10.8 oz. (men’s 9)],
-  [Heel-Toe Offsets: 4mm drop; 39mm (heel), 35mm (forefoot)],
-  [Equipped with an ultra-responsive ZoomX foam midsole, the Zegama 2 is designed to conquer steep ridges, jagged rocks and races from trailhead to tip. Optimal cushioning complements a rugged outsole made for your trail running journey. (Use code ACCESS for an additional 25% off.)],
-  [Asics NovaBlast 4 ( \$140 ) \$110 — 21%off!],
-  [Weights: 9.4 oz. (women’s size 8), 7.6 oz. (men’s size 9)],
-  [Heel-Toe Offset: 8 mm (41.5mm in the heel, 33.5mm in the forefoot)],
-  [Shop Women’s Now Shop Men’s Now],
-  [The Novablast 4 is a good primary training workhorse or secondary model that offers a great blend of cozy comfort, lively cushioning, and do-almost-everything versatility. If you like a soft, comfortable, energetic vibe in every kind of run you do during any given week, the Novablast 4 can be your versatile only-tool-in-the-tool-box kind of shoe.],
-  [Suunto Vertical ( \$839 ) \$639 — 24% off!],
-  [Shop now – \$639],
-  [The Suunto Vertical is a lightweight watch with multisport functionality, a large 49mm display with a bright, easy-to-read screen, Wi-Fi connectivity, colorful off-grid mapping, extremely long battery life and solar charging capabilities. (Solar charging is available only in the high-end titanium model of the Vertical.) Its intuitive maps tell you all you need to know about the landscape with contour lines, water, paths and other important landmarks available in three different map styles. In addition to basic daily activity tracking—steps, heart rate, sleep, calories, stress—it smoothly and accurately tracks running data, elevation and run-tracking data that syncs directly with Strava and other apps. Plus, it offers more than 90 training modes that cover a wide range of sport disciplines.],
-  [Hoka Clifton 9 ( \$145 ) \$116 — 20% off!],
-  [Shop Women’s Now – \$116 Shop Men’s Now – \$116],
-  [Heel-Toe Offset: 5mm (32mm in the heel, 27mm in the forefoot)],
-  [Hoka has revitalized the midsole to make it slightly lighter and also much more responsive. There’s an additional 3mm of midsole foam in this year’s Clifton, but more importantly, the midsole is now made from a lightweight and very responsive compression-molded EVA that gives the shoe a smoother and bouncier feel than in recent years. The Clifton 9 also features a partially-gusseted tongue for the first time and a new Creel Jacquard mesh to help cinch down the fit and protect against debris. A new outsole design provides more durability and control.],
-  [Adidas Terrex Agravic 3 ( \$130 ) \$98— 25% off!],
-  [Shop Women’s Now – \$98 Shop Men’s Now – \$98],
-  [Heel-Toe Offset: 8mm; 32.5mm (heel), 24.5mm (forefoot)],
-  [The Agravic 3 has just the right amount of cushioning that allows it to provide a cushy, semi-responsive ride, but it’s also close enough to the ground to offer really good proprioceptive “feel” for the trail surface. There is just enough moderate trail-specific protection – including lightly reinforced toe bumpers, abrasion-resistant sidewalls, the rugged and durable Continental rubber outsole, and the interior rock plate – to defend against the elements.],
-  [Garmin Forerunner 55 ( \$199 ) \$149 — 26% off!],
-  [Shop Now – \$149],
-  [This easy-to-use GPS smartwatch is designed for people of all skill levels to track their stats and chase their fitness goals.],
-  [Brooks Adrenaline GTS 23 ( \$140 ) \$100 — 29% off],
-  [Shop Women’s Now – \$100 Shop Men’s Now \$100],
-  [Weights: 9.1 oz. (women’s 8), 10.8 oz. (men’s 9)],
-  [Heel-Toe Offset: 12mm; 36mm (heel), 24mm (forefoot)],
-  [Newly updated with lighter cushioning, the Adrenaline GTS 23 offers a perfect balance of support and softness that results in a smooth, soft ride ready for all your miles. It’s a great everyday trainer for all of the running you do from long runs to recovery runs.],
-  [RELATED: All I Wanted for Christmas Was Good Sleep: This Tool Granted My Wish],
-  [Janji Women’s 7/8 Trail Tight ( \$98 ) \$83 —15% off!],
-  [Janji Men’s Trail Tight ( \$98 ) \$83— 15% off!],
-  [Shop Women’s Now – \$83 Shop Men’s Now – \$83],
-  [Breathable, moisture-wicking fabric provides light compression with an unnoticeable feel in stride. Double-tiered side pockets stash snacks and essentials so they’re easily accessible. An integrated Janji blue s-biner key clip in the top right pocket secures your keys.],
-  [Janji AFO Middle Shorts ( \$64 ) \$45 — 30% off!],
-  [Shop Women’s Now – \$45 Shop Men’s Now – \$45],
-  [An ultra comfortable everyday running essential—lightweight and fast drying short with a moisture-wicking brief liner. Women’s shorts feature a 3” cut, men’s have a 5” cut.],
-  [All Birds TreeDasher 2 ( \$135 ) \$94 — 29% off!],
-  [Shop Women’s Now – \$94 Shop Men’s Now – \$94],
-  [The TreeDasher 2 is a versatile lightweight shoe that’s breathable and pleasantly cool for easy runs, gym sessions, workout classes, long walks.],
-  [Nike Calm Slides ( \$55 ) \$38-\$50 — 16%-24% off!],
-  [Shop Women’s Now – \$50 Shop Men’s Now – \$38],
-  [Enjoy a calm, comfortable experience—no matter where your day off takes you. Made with soft yet supportive foam, the minimal design makes these slides easy to style with or without socks. And they’ve got a textured footbed to help keep your feet in place. (Use code ACCESS for an additional 25% off.)],
-  [Shop Now – \$20],
-  [A key part of any runner’s race day kit, our Airolite Arm Sleeves provide plenty of sun protection with UPF 40 pinhole mesh. Designed to stay in place from your first mile to last, these aerodynamic arm sleeves are equipped with silicone tape at the top and elastic thumbholes at the wrist.],
-  [Brooks Hyperion Elite 3 ( \$250 ) \$120 — 52% off!],
-  [Shop Women’s Now – \$120 Shop Men’s Now – \$120],
-  [Weights: 7.0 oz. (women’s 8), 8.1 oz. (men’s 9)],
-  [Heel-Toe Offsets: 8mm drop; 35mm (heel), 27mm (forefoot)],
-  [The Hyperion Elite 3 offers a great combination of the light and lively nitrogen-infused DNA Flash midsole cushioning enhanced with a carbon-fiber plate. While it can definitely be your race-day shoe of choice for 10K to marathon distances, you might love it even more as an everyday trainer or as a speed trainer for tempo runs, fartlek workouts, and track workouts.],
-  [RELATED: The Best Running Gear From REI’s Big Winter Sale],
-  [Nike Pegasus 41 ( \$140 ) \$110 — 21% off!],
-  [Buy Women’s Now – \$110 Buy Men’s Now – \$110],
-  [Weights: 8.8 oz. (women’s 8), 10.4 oz. (men’s 9)],
-  [Heel-Toe Offset: 10mm, 37mm (heel), 27mm (forefoot)],
-  [The Pegasus 41 great choice for new, novice and casual runners who are seeking a model that can do most things well at an affordable price. It can also be a secondary shoe in the quiver of more advanced runners who might be seeking a different underfoot sensation a few times a week to get away from running in maximally cushioned shoes all of the time.],
-  [Brooksee Race Credit (\$100) \$69 — 31% off!],
-  [The organizers of the Las Vegas Marathon, Portland Marathon, Mesa Marathon and the REVEL Race Series is offering the chance to buy \$100 worth of race entry credit for \$69 through December 2. That’s 31% off!],
-  [Big Black Friday Brand Sales],
-  [Select running shoes, apparel, and accessories have been slashed up to 70%.],
-  [Shop Adidas Women’s Shop Adidas Men’s],
-  [Save up to 35% on select footwear and apparel for a limited time.],
-  [Shop Brooks Women’s Shop Brooks Men’s],
-  [Discounts up to 60% off on select running shoes, apparel, socks, and more!],
-  [RNNR],
-  [RNNR is having a big Black Friday sale that includes 20%-30% off heavyweight hoodies, boxy tees, headwear, bags, socks, and singlets!],
-  [Shop RNNR Now],
-  [Save on select running shoes, apparel, packs, and accessories at 25% off!],
-  [REI Big Winter Sale],
-  [REI encourages everyone to get outside, but it’s also having a Big Winter Sale with prices slashed by 30%!],
-  [Shop REI Now],
-  [Save up to 40% on Roka eyewear!],
-  [The Running Warehouse Black Friday sale includes deals on select running shoes, apparel, tech, and accessories from 30% to 60% off!],
-  [Shop Running Warehouse Women’s Shop Running Warehouse Men’s],
-  [Save 25% on all Swiftwick socks!],
-  [Discounts and deals on footwear, apparel, jackets, hats, and accessories up to 30% off!],
-  [Shop The North Face Women’s Shop The North Face Men’s],
-  [RELATED: The Best Running Shoes for Training and Racing],
-),
-  insert-map: (:),
-  word-count: 1615,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-}
-
-{
-  #standard-article(
-  title: [New | 132 studies released in batch],
-  author: [PubMed Health],
-  source-name: [PubMed Health],
-  images: (),
-  paragraphs: (
-  [phs002520.v1.p1 | Rapid Acceleration of Diagnostics - Underserved Populations (RADx-UP): Community Based COVID-19 Testing Evaluation (],
-  [study page |],
-  [release notes )],
-  [phs002521.v1.p1 | Rapid Acceleration of Diagnostics - Underserved Populations (RADx-UP): Creating a Sustainable Infrastructure for SARS-CoV-2 Testing at Syringe Exchange Programs (],
-  [study page |],
-  [release notes )],
-  [phs002522.v1.p1 | Rapid Acceleration of Diagnostics - Radical (RADx-rad): MOF-SCENT: Metal-Organic Frameworks for Screening COVID-19 by Electronic-Nose Technology to Improve Selectivity and Time Response (],
-  [study page |],
-  [release notes )],
-  [phs002523.v1.p1 | Rapid Acceleration of Diagnostics - Radical (RADx-rad): Multi-Modal Wireless COVID Monitoring and Infection Alerts for Concentrated Populations (],
-  [study page |],
-  [release notes )],
-  [phs002524.v1.p1 | Rapid Acceleration of Diagnostics - Radical (RADx-rad): Validation of Smart Masks for Surveillance of COVID-19 (],
-  [study page |],
-  [release notes )],
-  [phs002525.v1.p1 | Rapid Acceleration of Diagnostics - Radical (RADx-rad): SF-RAD: Development and Proof-of-Concept Implementation of the South Florida Miami RADx-rad SARS-CoV-2 Wastewater-Based Surveillance Infrastructure (],
-  [study page |],
-  [release notes )],
-  [phs002526.v1.p1 | Rapid Acceleration of Diagnostics - Underserved Populations (RADx-UP): Community Driven Approach to Mitigate COVID-19 Disparities in Hawaii's Vulnerable Populations (],
-  [study page |],
-  [release notes )],
-  [phs002527.v1.p1 | Rapid Acceleration of Diagnostics - Radical (RADx-rad): Bioinformatics Framework for Wastewater-based Surveillance of Infectious Diseases (],
-  [study page |],
-  [release notes )],
-  [phs002542.v1.p1 | Rapid Acceleration of Diagnostics - Radical (RADx-rad): Wastewater Assessment for Coronavirus in Kentucky: Implementing Enhanced Surveillance Technology (],
-  [study page |],
-  [release notes )],
-  [phs002543.v1.p1 | Rapid Acceleration of Diagnostics - Radical (RADx-rad): Minimal False-Alarm Touch-Based Detection of SARS-CoV-2 Virus Particles Using Poly-Aptamers (],
-  [study page |],
-  [release notes )],
-  [phs002544.v1.p1 | Rapid Acceleration of Diagnostics - Radical (RADx-rad): AFS/SERS Saliva-Based SARS-CoV-2 Earliest Infection and Antibodies Detection (],
-  [study page |],
-  [release notes )],
-  [phs002546.v1.p1 | Rapid Acceleration of Diagnostics - Radical (RADx-rad): Development of an Automated Diagnostic Platform for SARS-CoV-2 Monitoring in Vulnerable Areas (],
-  [study page |],
-  [release notes )],
-  [phs002549.v1.p1 | Rapid Acceleration of Diagnostics - Radical (RADx-rad): Severity Predictors Using Immunology and Transcriptomics in Saliva Using Multi Neural Network Intelligence in SARS-CoV2 Infection in Children (SPITS MISC) (],
-  [study page |],
-  [release notes )],
-  [phs002550.v1.p1 | Rapid Acceleration of Diagnostics - Radical (RADx-rad): Direct Bioelectronic Detection of SARS-CoV-2 From Saliva Using Singlemolecule Field-effect Transistor Array (],
-  [study page |],
-  [release notes )],
-  [phs002551.v1.p1 | Rapid Acceleration of Diagnostics - Radical (RADx-rad): Marshallese: Alternate Surveillance for COVID-19 in a Unique Population (],
-  [study page |],
-  [release notes )],
-  [phs002553.v1.p1 | Rapid Acceleration of Diagnostics - Radical (RADx-rad): Characterization of Multisystem Inflammatory Syndrome in Children and its Relationship to Kawasaki Disease (],
-  [study page |],
-  [release notes )],
-  [phs002561.v1.p1 | Rapid Acceleration of Diagnostics - Radical (RADx-rad): A Rapid, Sensitive, Point-of-Care, Antigen-Based Diagnostics for SARS-CoV-2 (],
-  [study page |],
-  [release notes )],
-  [phs002563.v1.p1 | Rapid Acceleration of Diagnostics - Radical (RADx-rad): A Handheld Microchip for GC Analysis of Breath to Screen for COVID-19 (],
-  [study page |],
-  [release notes )],
-  [phs002565.v1.p1 | Rapid Acceleration of Diagnostics - Radical (RADx-rad): Touchscreen-Compatible, Real-Time Electrochemical Sensing of SARS-CoV-2 (],
-  [study page |],
-  [release notes )],
-  [phs002567.v1.p1 | Rapid Acceleration of Diagnostics - Underserved Populations (RADx-UP): NJ HEROES TOO: New Jersey Healthcare Essential Worker Outreach and Education Study Testing Overlooked Occupations (],
-  [study page |],
-  [release notes )],
-  [phs002568.v1.p1 | Rapid Acceleration of Diagnostics - Underserved Populations (RADx-UP): Reaching Communities through the Design of Information Visualizations (ReDIVis) Toolbox for Return of COVID-19 Results (RCR) (],
-  [study page |],
-  [release notes )],
-  [phs002569.v1.p1 | Rapid Acceleration of Diagnostics - Radical (RADx-rad): COVID-19 Network of Networks Expanding Clinical and Translational Approaches to Predict Severe Illness in Children (CONNECT to Predict SIck Children) (],
-  [study page |],
-  [release notes )],
-  [phs002570.v1.p1 | Rapid Acceleration of Diagnostics - Radical (RADx-rad): A Multimodal Platform for Oral Screening of COVID-19 (],
-  [study page |],
-  [release notes )],
-  [phs002572.v1.p1 | Rapid Acceleration of Diagnostics - Radical (RADx-rad): A SARS-CoV-2 Breathalyzer for Direct Virus Detection (],
-  [study page |],
-  [release notes )],
-  [phs002573.v1.p1 | Rapid Acceleration of Diagnostics - Radical (RADx-rad): Detection and Automatic Privacy-Protected Contact Tracing System Designed for COVID-19 (],
-  [study page |],
-  [release notes )],
-  [phs002575.v1.p1 | Rapid Acceleration of Diagnostics - Underserved Populations (RADx-UP): SCALE UP Utah: A Community-Academic Partnership to Address COVID-19 Among Utah Community Health Centers (],
-  [study page |],
-  [release notes )],
-  [phs002578.v1.p1 | Rapid Acceleration of Diagnostics - Underserved Populations (RADx - UP): COVID-19 Testing and Linkage to Care with African American Church and Health Agency Partners (],
-  [study page |],
-  [release notes )],
-  [phs002581.v1.p1 | Rapid Acceleration of Diagnostics - Underserved Populations (RADx-UP): Adapting Community-Based Task-Shifting for the COVID-19 Response Among Underserved Populations in Piedmont, North Carolina (ACT UP) (],
-  [study page |],
-  [release notes )],
-  [phs002582.v1.p1 | Rapid Acceleration of Diagnostics - Underserved Populations (RADx-UP): Understanding the COVID-19, Racism, and Violence Syndemic and its Effects on COVID-19 Testing Disparities (],
-  [study page |],
-  [release notes )],
-  [phs002583.v1.p1 | Rapid Acceleration of Diagnostics - Radical (RADx-rad): A Rapid Breathalyzer Diagnostics Platform for COVID-19 (],
-  [study page |],
-  [release notes )],
-  [phs002584.v1.p1 | Rapid Acceleration of Diagnostics - Underserved Populations (RADx-UP): Scaling Up SARS-COV-2 Testing to Serve Latinx Communities (],
-  [study page |],
-  [release notes )],
-  [phs002585.v1.p1 | Rapid Acceleration of Diagnostics - Radical (RADx-rad): AICORE-kids (],
-  [study page |],
-  [release notes )],
-  [phs002588.v1.p1 | Rapid Acceleration of Diagnostics - Radical (RADx-rad): Effective, Reagent-Free Detection of the Odor Signature of COVID-19 Infection Using a Nano-Enabled Sensor Array (],
-  [study page |],
-  [release notes )],
-  [phs002600.v1.p1 | Rapid Acceleration of Diagnostics - Radical (RADx-rad): Portable GC Detector for COVID Diagnostics (],
-  [study page |],
-  [release notes )],
-  [phs002601.v1.p1 | Rapid Acceleration of Diagnostics - Underserved Populations (RADx-UP): Community Network-Driven COVID-19 Testing of Vulnerable Populations in the Central US (C3) (],
-  [study page |],
-  [release notes )],
-  [phs002602.v1.p1 | Rapid Acceleration of Diagnostics - Radical (RADx-rad): Virus Counter: Rapid and Sensitive Diagnostics Based on Digital Detection of Individual Pathogens (],
-  [study page |],
-  [release notes )],
-  [phs002603.v1.p1 | Rapid Acceleration of Diagnostics - Radical (RADx-rad): Diagnosis of MIS-C in Febrile Children (],
-  [study page |],
-  [release notes )],
-  [phs002604.v1.p1 | Rapid Acceleration of Diagnostics - Radical (RADx-rad): Tracking the COVID-19 Epidemic in Sewage (TRACES) (],
-  [study page |],
-  [release notes )],
-  [phs002608.v1.p1 | Rapid Acceleration of Diagnostics - Underserved Populations (RADx-UP): Increasing Representation of Black Communities in SARS-CoV-2 Serosurveys by Understanding Barriers and Motivations for Participation (Represent ATL) (],
-  [study page |],
-  [release notes )],
-  [phs002609.v1.p1 | Rapid Acceleration of Diagnostics - Radical (RADx-rad): Identifying Biomarker Signatures of Prognostic Value for Multisystem Inflammatory Syndrome in Children (MIS-C) (],
-  [study page |],
-  [release notes )],
-  [phs002616.v1.p1 | Rapid Acceleration of Diagnostics - Underserved Populations (RADx-UP): Bridging the Evidence-to-Practice Gap: Evaluating Practice Facilitation as a Strategy to Accelerate Translation of a Systems-Level Adherence Intervention into Safety Net Practices/Project Evidence (],
-  [study page |],
-  [release notes )],
-  [phs002618.v1.p1 | Rapid Acceleration of Diagnostics - Underserved Populations (RADx-UP): Rapid Acceleration of Acceptable COVID Testing and Care Options for NYC Public Housing Residents (RADx NYCHA) (],
-  [study page |],
-  [release notes )],
-  [phs002619.v1.p1 | Rapid Acceleration of Diagnostics - Underserved Populations (RADx-UP): Improving the Response of Local Urban and Rural Communities to Disparities in Covid-19 Testing (],
-  [study page |],
-  [release notes )],
-  [phs002631.v1.p1 | Rapid Acceleration of Diagnostics - Radical (RADx-rad): Rapid Olfactory Tools for Telemedicine-Friendly COVID-19 Screening and Survey (],
-  [study page |],
-  [release notes )],
-  [phs002633.v1.p1 | Rapid Acceleration of Diagnostics - Underserved Populations (RADx-UP): Transforming Community Engagement to Increase SARS-CoV-2 Testing in Underserved Populations in Baton Rouge (TEST UP-BR) (],
-  [study page |],
-  [release notes )],
-  [phs002634.v1.p1 | Rapid Acceleration of Diagnostics - Underserved Populations (RADx-UP): COVID-19 Treatment Cascade Optimization Study (],
-  [study page |],
-  [release notes )],
-  [phs002642.v1.p1 | Rapid Acceleration of Diagnostics - Radical (RADx-rad): A Confectionary-Based Screening Tool for Assessing Chemosensory Loss in COVID-19 Patients (],
-  [study page |],
-  [release notes )],
-  [phs002643.v1.p1 | Rapid Acceleration of Diagnostics - Underserved Populations (RADx-UP): COVID-19 Large Network Center (],
-  [study page |],
-  [release notes )],
-  [phs002644.v1.p1 | Rapid Acceleration of Diagnostics - Underserved Populations (RADx-UP): Randomized COVID-19 Testing in Vulnerable Communities and Risk Tool Creation (FightCOVIDMKE) (],
-  [study page |],
-  [release notes )],
-  [phs002645.v1.p1 | Rapid Acceleration of Diagnostics - Underserved Populations (RADx-UP): Alive Church Network: Increasing COVID-19 Testing in Chicago's African American Testing Deserts (],
-  [study page |],
-  [release notes )],
-  [phs002647.v1.p1 | Rapid Acceleration of Diagnostics - Underserved Populations (RADx-UP): Supporting COVID-19 Prevention and Testing for Marginalized and Minoritized Youth and Young Adults (],
-  [study page |],
-  [release notes )],
-  [phs002648.v1.p1 | Rapid Acceleration of Diagnostics - Underserved Populations (RADx-UP): Keeping Rural Minority 'Essential' Workplaces Open Safely During the COVID-19 Pandemic: The Role of Frequent Point-of-Care Molecular Workplace Surveillance for Miners (The Miners' Pandemic Project) (],
-  [study page |],
-  [release notes )],
-  [phs002649.v1.p1 | Rapid Acceleration of Diagnostics - Underserved Populations (RADx-UP): Communities Fighting COVID-19 (],
-  [study page |],
-  [release notes )],
-  [phs002650.v1.p1 | Rapid Acceleration of Diagnostics - Underserved Populations (RADx-UP): Building Resiliency and Vital Equity (BRAVE) (],
-  [study page |],
-  [release notes )],
-  [phs002651.v1.p1 | Rapid Acceleration of Diagnostics - Underserved Populations (RADx-UP): Community-Engaged Research on COVID-19 Testing Among Underserved and/or Vulnerable Populations (],
-  [study page |],
-  [release notes )],
-  [phs002657.v1.p1 | Rapid Acceleration of Diagnostics - Radical (RADx-rad): Early Detection, Containment, and Management of COVID-19 in Dialysis Facilities Using Multi-Modal Data Sources (],
-  [study page |],
-  [release notes )],
-  [phs002658.v1.p1 | Rapid Acceleration of Diagnostics - Underserved Populations (RADx-UP): LITE CONNECT: Addressing Testing Gaps and Epidemiologic Disparities of COVID-19 Among Transgender People in the United States (],
-  [study page |],
-  [release notes )],
-  [phs002660.v1.p1 | Rapid Acceleration of Diagnostics - Underserved Populations (RADx-UP): Juntos (Together): A Community-Led Approach to Enhance COVID-19 Testing Among Vulnerable Latinos (],
-  [study page |],
-  [release notes )],
-  [phs002661.v1.p1 | Rapid Acceleration of Diagnostics - Underserved Populations (RADx-UP): Back to ECE Safely with SAGE: Reducing COVID-19 Transmission in Hispanic and Low-Income Preschoolers (],
-  [study page |],
-  [release notes )],
-  [phs002662.v1.p1 | Rapid Acceleration of Diagnostics - Underserved Populations (RADx-UP): Developing Novel Strategies to Increase COVID-19 Testing Among Underserved and Vulnerable Populations in West Virginia through Community and State Partnerships (],
-  [study page |],
-  [release notes )],
-  [phs002679.v1.p1 | Rapid Acceleration of Diagnostics - Radical (RADx-rad): Wastewater Detection of COVID-19 (],
-  [study page |],
-  [release notes )],
-  [phs002685.v1.p1 | Rapid Acceleration of Diagnostics - Radical (RADx-rad): DNA Star SAS-CoV-2 Rapid Test (],
-  [study page |],
-  [release notes )],
-  [phs002689.v1.p1 | Rapid Acceleration of Diagnostics - Radical (RADx-rad): A Rapid Saliva Antigen Test for SARs-CoV-2 Detection (],
-  [study page |],
-  [release notes )],
-  [phs002699.v1.p1 | Rapid Acceleration of Diagnostics - Radical (RADx-rad): SCENTinel: A Rapid Smell Test for COVID-19 Surveillance (],
-  [study page |],
-  [release notes )],
-  [phs002700.v1.p1 | Rapid Acceleration of Diagnostics - Radical (RADx-rad): Nanobody-based Electrochemical Biosensor for Real-Time Detection of Aerosolized SARS-CoV2 (],
-  [study page |],
-  [release notes )],
-  [phs002702.v1.p1 | Rapid Acceleration of Diagnostics - Radical (RADx-rad): A Scalable Aptamer-Based Electrochemical Biosensor for Rapid Detection of SARS-CoV-2 from Saliva (],
-  [study page |],
-  [release notes )],
-  [phs002704.v1.p1 | Rapid Acceleration of Diagnostics - Underserved Populations (RADx-UP): Use of Behavioral Economics in Repeat SARS-CoV-2 Antibody Testing in Disadvantaged Communities (],
-  [study page |],
-  [release notes )],
-  [phs002707.v1.p1 | Rapid Acceleration of Diagnostics - Underserved Populations (RADx-UP): Understanding Factors Influencing COVID-19 Testing and Vaccination in Immigrant Low-Income and Homeless Populations and Testing Targeted Interventions (],
-  [study page |],
-  [release notes )],
-  [phs002708.v1.p1 | Rapid Acceleration of Diagnostics - Underserved Populations (RADx-UP): Community-Driven Optimization of COVID-19 Testing to Reach and Engage Underserved Areas for Testing Equity (CO-CREATE) (],
-  [study page |],
-  [release notes )],
-  [phs002709.v1.p1 | Rapid Acceleration of Diagnostics - Radical (RADx-rad): Multiparametric Integrated Molecular Detection of SARS-CoV-2 from Biofluids by Adapting Single Extracellular Vesicle Characterization Technologies (],
-  [study page |],
-  [release notes )],
-  [phs002713.v1.p1 | Rapid Acceleration of Diagnostics - Underserved Populations (RADx-UP): Using Health Communication to Increase COVID-19 Testing and Vaccination in Underserved Populations (],
-  [study page |],
-  [release notes )],
-  [phs002720.v1.p1 | Rapid Acceleration of Diagnostics - Underserved Populations (RADx-UP): Exploring Barriers and Facilitators to Women Who Use Drugs (WWUD) Awareness, Acceptance and Uptake of COVID-19 Testing (The CARE Study) (],
-  [study page |],
-  [release notes )],
-  [phs002729.v1.p1 | Rapid Acceleration of Diagnostics - Radical (RADx-rad): Improved Scalability, Sensitivity, and Interpretability of Pathogen Detection, Including SARS-CoV-2, in Wastewater using High-Throughput, Highly Multiplexed Digital Array PCR Technology (],
-  [study page |],
-  [release notes )],
-  [phs002740.v1.p1 | Rapid Acceleration of Diagnostics - Underserved Populations (RADx-UP): Support for Safe Return to In-Person School: COVID-19 Testing, Learning, and Consultation (],
-  [study page |],
-  [release notes )],
-  [phs002741.v1.p1 | Rapid Acceleration of Diagnostics - Underserved Populations (RADx-UP): Community-Engaged Research to Improve the COVID-19 Testing Cascade Among Underserved Populations in the US Caribbean Territories (],
-  [study page |],
-  [release notes )],
-  [phs002742.v1.p1 | Rapid Acceleration of Diagnostics - Underserved Populations (RADx-UP): Puipuia le Ola: Increasing Reach and Uptake of COVID-19 Testing Among Pacific Islanders in Hawaii and Guam (],
-  [study page |],
-  [release notes )],
-  [phs002743.v1.p1 | Rapid Acceleration of Diagnostics - Underserved Populations (RADx-UP): Addressing Low-Income Housing Resident Mistrust in COVID-19 Guidance (],
-  [study page |],
-  [release notes )],
-  [phs002744.v1.p1 | Rapid Acceleration of Diagnostics - Radical (RADx-rad): Rolosense: An Innovative Platform for Automatic Mobile Phone Readout of Active SARS-CoV-2 (],
-  [study page |],
-  [release notes )],
-  [phs002745.v1.p1 | Rapid Acceleration of Diagnostics - Underserved Populations (RADx-UP): Epidemiologic Intelligence Network (EpI-Net) to Promote COVID-19 Testing and Prevention Practices Among Socially Vulnerable Communities in Puerto Rico (],
-  [study page |],
-  [release notes )],
-  [phs002747.v1.p1 | Rapid Acceleration of Diagnostics - Radical (RADx-rad): COVID-19 Detection through Scent Analysis with a Compact Gas Chromatography Device (],
-  [study page |],
-  [release notes )],
-  [phs002759.v1.p1 | Rapid Acceleration of Diagnostics - Underserved Populations (RADx-UP): Assessing Testing Strategies for Safe Return to K-12 Schools in an Underserved Population (],
-  [study page |],
-  [release notes )],
-  [phs002760.v1.p1 | Rapid Acceleration of Diagnostics - Underserved Populations (RADx-UP): COVID Self-Testing Through Rapid Network Distribution (C-STRAND) (],
-  [study page |],
-  [release notes )],
-  [phs002761.v1.p1 | Rapid Acceleration of Diagnostics - Underserved Populations (RADx-UP): Addressing COVID-19 Testing Disparities in Vulnerable Populations Using a Community JITAI (Just in Time Adaptive Intervention) Approach-A UTHealth CTSA Program (],
-  [study page |],
-  [release notes )],
-  [phs002763.v1.p1 | Rapid Acceleration of Diagnostics - Underserved Populations (RADx-UP): Investigating the Effectiveness of COVID-19 Testing Choices, Community Engagement, and Culturally-Embedded mHealth Literacy Delivery in a Medically-Underserved, Community-Based Sample (],
-  [study page |],
-  [release notes )],
-  [phs002775.v1.p1 | Rapid Acceleration of Diagnostics - Underserved Populations (RADx-UP): Developing a Realtime Monitoring System and Program to Improve COVID-19 Testing for Latinx Populations (],
-  [study page |],
-  [release notes )],
-  [phs002776.v1.p1 | Rapid Acceleration of Diagnostics - Underserved Populations (RADx-UP): Getting Asian Americans INFORMED To Facilitate COVID-19 Testing and Vaccination (],
-  [study page |],
-  [release notes )],
-  [phs002777.v1.p1 | Rapid Acceleration of Diagnostics - Underserved Populations (RADx-UP): Social, Ethical, and Behavioral Implications Research on COVID-19: Testing and Vaccine Uptake Among Rural Latino Migrants in Southwest Florida (],
-  [study page |],
-  [release notes )],
-  [phs002778.v1.p1 | Rapid Acceleration of Diagnostics - Radical (RADx-rad): Microfluidic Isolation and Characterization of SARS-CoV-2 and Virus Related Exosomes (],
-  [study page |],
-  [release notes )],
-  [phs002781.v1.p1 | Rapid Acceleration of Diagnostics - Radical (RADx-rad): Discovery and Clinical Validation of Host Biomarkers of Disease Severity and Multi-system Inflammatory Syndrome in Children (MIS-C) and COVID-19 (],
-  [study page |],
-  [release notes )],
-  [phs002782.v1.p1 | Rapid Acceleration of Diagnostics - Radical (RADx-rad): NIEHS Diagnostic-Prognostic RNAseq (],
-  [study page |],
-  [release notes )],
-  [phs002786.v1.p1 | Rapid Acceleration of Diagnostics - Underserved Populations (RADx-UP): Lupus Education Alliance Program (LEAP) (],
-  [study page |],
-  [release notes )],
-  [phs002791.v1.p1 | Rapid Acceleration of Diagnostics - Underserved Populations (RADx-UP): Organizations to Reduce, Advance, and Lead for Equity (ORALE) Against COVID-19 (],
-  [study page |],
-  [release notes )],
-  [phs002799.v1.p1 | Rapid Acceleration of Diagnostics - Underserved Populations (RADx-UP): Leveraging Social Networks to Increase COVID-19 Testing Uptake: A Comparison of Credible Messenger and Chain Referral Recruitment Approaches (],
-  [study page |],
-  [release notes )],
-  [phs002800.v1.p1 | Rapid Acceleration of Diagnostics - Underserved Populations (RADx-UP): Testing for COVID-19 in High Risk Children with Intellectual and Developmental Disabilities (COV-IDD) (],
-  [study page |],
-  [release notes )],
-  [phs002807.v1.p1 | Rapid Acceleration of Diagnostics - Underserved Populations (RADx-UP): Monitoring COVID-19 and Building Capacity with Northern Plains Tribes and the Future of Pandemics (],
-  [study page |],
-  [release notes )],
-  [phs002821.v1.p1 | Rapid Acceleration of Diagnostics - Underserved Populations (RADx-UP): Harm Reduction Coalition San Diego - OnPoint (],
-  [study page |],
-  [release notes )],
-  [phs002825.v1.p1 | Rapid Acceleration of Diagnostics - Underserved Populations (RADx-UP): SCALE UP COUNTS: A Health Information Technology Approach to Increasing COVID-19 Testing in Elementary and Middle Schools and Serving Disadvantaged Communities (],
-  [study page |],
-  [release notes )],
-  [phs002868.v1.p1 | Rapid Acceleration of Diagnostics - Underserved Populations (RADx-UP): Obesity Health Disparities Research Center (OHDRC) COVID-19 Testing Model Among Vulnerable Populations From Community Engagement to Follow-Up (],
-  [study page |],
-  [release notes )],
-  [phs002869.v1.p1 | Rapid Acceleration of Diagnostics - Underserved Populations (RADx-UP): COVID-19 Testing in Underserved and Vulnerable Populations Receiving Care in San Diego Community Health (],
-  [study page |],
-  [release notes )],
-  [phs002870.v1.p1 | Rapid Acceleration of Diagnostics - Underserved Populations (RADx-UP): SARS-CoV-2 Screening and Diagnostic Testing for Return to K-12 Schools (],
-  [study page |],
-  [release notes )],
-  [phs002871.v1.p1 | Rapid Acceleration of Diagnostics - Underserved Populations (RADx-UP): A Dynamic COVID-19 Community-Engaged Testing Strategy in Alabama (COVID COMET AL) (],
-  [study page |],
-  [release notes )],
-  [phs002872.v1.p1 | Rapid Acceleration of Diagnostics - Underserved Populations (RADx-UP): Implementation Science Center in Cancer Control Equity: A Competitive Revision to Accelerate COVID Testing in Vulnerable Communities - Project 08 (],
-  [study page |],
-  [release notes )],
-  [phs002873.v1.p1 | Rapid Acceleration of Diagnostics - Underserved Populations (RADx-UP): The Cherokee Nation Community-Driven Program for Testing and Contact Tracing (Cherokee PROTECT) (],
-  [study page |],
-  [release notes )],
-  [phs002874.v1.p1 | Rapid Acceleration of Diagnostics - Underserved Populations (RADx-UP): COVID-19: Implementing Community-Based Approaches to Increase SARS-CoV-2 Testing Among an Underserved and Vulnerable Hispanic Population (],
-  [study page |],
-  [release notes )],
-  [phs002875.v1.p1 | Rapid Acceleration of Diagnostics - Underserved Populations (RADx-UP): Assessing Vaccine Hesitancy and a Pharmacist Led Intervention Model to Increase COVID-19 Vaccine Uptake Among African Americans (],
-  [study page |],
-  [release notes )],
-  [phs002878.v1.p1 | Rapid Acceleration of Diagnostics - Underserved Populations (RADx-UP): Communities Fighting COVID!: Returning Our Kids Back to School Safely (],
-  [study page |],
-  [release notes )],
-  [phs002904.v1.p1 | Rapid Acceleration of Diagnostics - Underserved Populations (RADx-UP): ReSET: Restarting Safe Education and Testing for Children with Medical Complexity (],
-  [study page |],
-  [release notes )],
-  [phs002905.v1.p1 | Rapid Acceleration of Diagnostics - Underserved Populations (RADx-UP): Safety, Testing/Transmission, and Outcomes in Pregnancies with COVID-19 (STOP COVID-19) (],
-  [study page |],
-  [release notes )],
-  [phs002906.v1.p1 | Rapid Acceleration of Diagnostics - Underserved Populations (RADx-UP): A Nurse-Community Health Worker-Family Partnership Model: Addressing Uptake of COVID-19 Testing and Control Measures (],
-  [study page |],
-  [release notes )],
-  [phs002917.v1.p1 | Rapid Acceleration of Diagnostics - Underserved Populations (RADx-UP): Reducing Ethical and Social Prejudicial Effects of COVID-19 Testing in Underserved Populations (RESPECT-UP) (],
-  [study page |],
-  [release notes )],
-  [phs002920.v1.p1 | Rapid Acceleration of Diagnostics - Underserved Populations (RADx-UP): A Community Health Worker Intervention to Identify and Decrease Barriers to Pre-Procedural COVID-19 Testing Among Los Angeles County Department of Health Safety-Net Patients (],
-  [study page |],
-  [release notes )],
-  [phs002924.v1.p1 | Rapid Acceleration of Diagnostics - Radical (RADx-rad): Broad-Spectrum Detection of VOC and Non-VOC Biomarkers from Patient Exhalant Using a Biomimetic Multiplexed eNose Biosensor for COVID 19 Diagnosis (],
-  [study page |],
-  [release notes )],
-  [phs002945.v1.p1 | Rapid Acceleration of Diagnostics - Radical (RADx-rad): A Data Science Approach to Identify and Manage Multisystem Inflammatory Syndrome in Children (MIS-C) Associated with SARS-CoV-2 Infection and Kawasaki Disease in Pediatric Patients (],
-  [study page |],
-  [release notes )],
-  [phs002946.v1.p1 | Rapid Acceleration of Diagnostics - Underserved Populations (RADx-UP): Identifying and Addressing Critical Social, Ethical, and Behavioral Factors Associated with COVID-19 Testing and Vaccination Among Spanish Speakers (],
-  [study page |],
-  [release notes )],
-  [phs002947.v1.p1 | Rapid Acceleration of Diagnostics - Underserved Populations (RADx-UP): Supporting the Health and Well-Being of Children with Intellectual and Developmental Disability During the COVID-19 Pandemic (],
-  [study page |],
-  [release notes )],
-  [phs002948.v1.p1 | Rapid Acceleration of Diagnostics - Underserved Populations (RADx-UP): Motivational Enhancement to Augment Contingency Management for SARS-CoV-2 Testing and Vaccination Utilization Among Syringe Exchange Clients (],
-  [study page |],
-  [release notes )],
-  [phs002964.v1.p1 | Rapid Acceleration of Diagnostics - Radical (RADx-rad): Longitudinal at Home Smell Testing to Detect Infection by SARS-CoV-2 (],
-  [study page |],
-  [release notes )],
-  [phs003021.v1.p1 | Rapid Acceleration of Diagnostics - Underserved Populations (RADx-UP): Community Organizations for Natives: COVID-19 Epidemiology, Research, Testing, and Services (CONCERTS) (],
-  [study page |],
-  [release notes )],
-  [phs003029.v1.p1 | Rapid Acceleration of Diagnostics - Underserved Populations (RADx-UP): Southeast Asians in the US: Health Equity and Research to Understand COVID-19 Stories (SEA US, HEAR US) (],
-  [study page |],
-  [release notes )],
-  [phs003030.v1.p1 | Rapid Acceleration of Diagnostics - Underserved Populations (RADx-UP): REACH-OUT: Research, Engagement and Action on COVID-19 Health Outcomes via Testing (],
-  [study page |],
-  [release notes )],
-  [phs003031.v1.p1 | Rapid Acceleration of Diagnostics - Underserved Populations (RADx-UP): Safer at School Early Alert Project HUB (],
-  [study page |],
-  [release notes )],
-  [phs003032.v1.p1 | Rapid Acceleration of Diagnostics - Underserved Populations (RADx-UP): RADx-UP Supplement-Vaccine Hesitancy and Uptake (],
-  [study page |],
-  [release notes )],
-  [phs003033.v1.p1 | Rapid Acceleration of Diagnostics - Underserved Populations (RADx-UP): Social and Behavioral Implications for COVID-19 Testing in Delaware's Underserved Communities (],
-  [study page |],
-  [release notes )],
-  [phs003037.v1.p1 | Rapid Acceleration of Diagnostics - Underserved Populations (RADx-UP): Maximizing Child Health and Learning Potential: Promoting A School Culture of Safety in the Era of COVID-19: Feasibility of Strategic COVID-19 Testing Protocols in At-Risk Urban Schools (],
-  [study page |],
-  [release notes )],
-  [phs003049.v1.p1 | Rapid Acceleration of Diagnostics - Underserved Populations (RADx-UP): Identifying COVID-19 Vaccine Deserts Using Machine Learning and Geospatial Analyses to Target Community-Engaged Testing for Vulnerable Rural Populations to Prevent Localized Outbreaks (],
-  [study page |],
-  [release notes )],
-  [phs003050.v1.p1 | Rapid Acceleration of Diagnostics - Underserved Populations (RADx-UP): Improving Testing for COVID-19 in Skilled Nursing Facilities: IMPACT (],
-  [study page |],
-  [release notes )],
-  [phs003051.v1.p1 | Rapid Acceleration of Diagnostics - Underserved Populations (RADx-UP): Using the Multiphase Optimization Strategy (MOST) to Optimize an Intervention to Increase COVID-19 Testing for Black and Latino/Hispanic Frontline Essential Workers (],
-  [study page |],
-  [release notes )],
-  [phs003056.v1.p1 | Rapid Acceleration of Diagnostics - Underserved Populations (RADx-UP): Social, Ethical, and Behavioral Factors in the Return to School Among Underserved Communities in Maryland (],
-  [study page |],
-  [release notes )],
-  [phs003057.v1.p1 | Rapid Acceleration of Diagnostics - Underserved Populations (RADx-UP): Evidence-based Interventions - Individual, Community, and Structural Factors That Predict Lower Rates of Covid-19 Screening Testing in Underserved and Vulnerable Populations (],
-  [study page |],
-  [release notes )],
-  [phs003081.v1.p1 | Rapid Acceleration of Diagnostics - Underserved Populations (RADx-UP): COMMIT (],
-  [study page |],
-  [release notes )],
-  [phs003082.v1.p1 | Rapid Acceleration of Diagnostics - Underserved Populations (RADx-UP): Localized Mobile Health Approach to Boosting COVID-19 Testing and Vaccine Literacy, Access, and Uptake Among Women with Criminal Legal System Involvement (],
-  [study page |],
-  [release notes )],
-  [phs003083.v1.p1 | Rapid Acceleration of Diagnostics - Underserved Populations (RADx-UP): SARS-COV-2 Screening in Dialysis Facilities: Building an Optimal Strategy to Protect a High Risk Population (],
-  [study page |],
-  [release notes )],
-),
-  insert-map: (:),
-  word-count: 3885,
+  word-count: 164,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -626,17 +79,21 @@ Rapid Acceleration of Diagnostics - Underserved Populations (RADx-UP): Mobile He
 
 #article-row((
   [
+    section-label([Features])
     standard-article(
-  title: [PMC REACHES THE MILLION ARTICLE MARK],
+  title: [dbSNP BUILD 149 Release],
   author: [PubMed Health],
   source-name: [PubMed Health],
   images: (),
   paragraphs: (
-  [PubMed Central (PMC) reached the one million-article mark the week of June 18, 2007.  Now in its seventh year, PMC is enhanced each week with articles from over 350 important life sciences journals whose publishers have agreed to deposit current issues. 
-Many of the participating publishers have also benefited from the PMC Back Issue Digitization Project, where NLM scans older issues from cover to cover, starting with volume 1, and creates PubMed citations for articles that are not in PubMed. Jointly sponsored by the Wellcome Trust and Joint Information Systems Committee (JISC) in the UK, the NLM scanning project has collected and collated over 5 million pages of material. As of June 2007, these scanned articles accounted for 675,000 of the million articles in PMC.],
+  [​],
+  [dbSNP BUILD 149:  ===============dbSNP Build 149 data for  human, apple, bony\_fish, carrot, collared flycatcher, cotton, eudicots, fruit fly, gray short-tailed opossum, honey bee, platypus, pmajor, quail, rabbit, rat, red\_flour\_beetle, and turquoise\_killifish are available now on the web and FTP .===============organism:     Homo sapienstax\_id:       9606common\_name:  humanassembly:     GRCh38.p7 (GCF\_000001405.33)total\_ss\_cnt: 557939960total\_rs\_cnt: 154206854new\_ss\_cnt:   12578613new\_rs\_cnt:   252892FTP:          ftp:\/\/ftp.ncbi.nih.gov/snp/organisms/human\_9606Entrez:       http:\/\/www.ncbi.nlm.nih.gov/snp/?term=txid9606 ------------------------------------------------------------],
+  [organism:     Malus x domesticatax\_id:       3750common\_name:  appleassembly:     MalDomGD1.0 (GCF\_000148765.1)total\_ss\_cnt: 488100total\_rs\_cnt: 383602new\_ss\_cnt:   465558new\_rs\_cnt:   364719FTP:          ftp:\/\/ftp.ncbi.nih.gov/snp/organisms/apple\_3750Entrez:       http:\/\/www.ncbi.nlm.nih.gov/snp/?term=txid3750 ------------------------------------------------------------organism:     Apis melliferatax\_id:       7460common\_name:  honey beeassembly:     Amel\_4.5 (GCF\_000002195.4)total\_ss\_cnt: 4728309total\_rs\_cnt: 4249090new\_ss\_cnt:   3606720new\_rs\_cnt:   3130012FTP:          ftp:\/\/ftp.ncbi.nih.gov/snp/organisms/bee\_7460Entrez:       http:\/\/www.ncbi.nlm.nih.gov/snp/?term=txid7460 ------------------------------------------------------------organism:     Astyanax mexicanustax\_id:       7994common\_name:  bony\_fishassembly:     Astyanax\_mexicanus-1.0.2 (GCF\_000372685.1)total\_ss\_cnt: 737total\_rs\_cnt: 507new\_ss\_cnt:   0new\_rs\_cnt:   0FTP:          ftp:\/\/ftp.ncbi.nih.gov/snp/organisms/bony\_fish\_7994Entrez:       http:\/\/www.ncbi.nlm.nih.gov/snp/?term=txid7994 ------------------------------------------------------------organism:     Daucus carota subsp. sativustax\_id:       79200common\_name:  carrotassembly:     ASM162521v1 (GCF\_001625215.1)total\_ss\_cnt: 1393425total\_rs\_cnt: 1393307new\_ss\_cnt:   1393425new\_rs\_cnt:   1393307FTP:          ftp:\/\/ftp.ncbi.nih.gov/snp/organisms/carrot\_79200Entrez:       http:\/\/www.ncbi.nlm.nih.gov/snp/?term=txid79200 ------------------------------------------------------------organism:     Gossypium hirsutumtax\_id:       3635common\_name:  cottonassembly:     ASM98774v1 (GCF\_000987745.1)total\_ss\_cnt: 287419total\_rs\_cnt: 121164new\_ss\_cnt:   248635new\_rs\_cnt:   82382FTP:          ftp:\/\/ftp.ncbi.nih.gov/snp/organisms/cotton\_3635Entrez:       http:\/\/www.ncbi.nlm.nih.gov/snp/?term=txid3635 ------------------------------------------------------------organism:     Brassica oleraceatax\_id:       3712common\_name:  eudicotsassembly:     BOL (GCF\_000695525.1)total\_ss\_cnt: 625798total\_rs\_cnt: 625798new\_ss\_cnt:   625798new\_rs\_cnt:   625798FTP:          ftp:\/\/ftp.ncbi.nih.gov/snp/organisms/eudicots\_3712Entrez:       http:\/\/www.ncbi.nlm.nih.gov/snp/?term=txid3712 ------------------------------------------------------------organism:     Capsicum annuumtax\_id:       4072common\_name:  eudicotsassembly:     Pepper\_Zunla\_1\_Ref\_v1.0 (GCF\_000710875.1)total\_ss\_cnt: 23220total\_rs\_cnt: 22848new\_ss\_cnt:   673new\_rs\_cnt:   371FTP:          ftp:\/\/ftp.ncbi.nih.gov/snp/organisms/eudicots\_4072Entrez:       http:\/\/www.ncbi.nlm.nih.gov/snp/?term=txid4072 ------------------------------------------------------------organism:     Ficedula albicollistax\_id:       59894common\_name:  Collared flycatcherassembly:     FicAlb1.5 (GCF\_000247815.1)total\_ss\_cnt: 41170total\_rs\_cnt: 38529new\_ss\_cnt:   40893new\_rs\_cnt:   38252FTP:          ftp:\/\/ftp.ncbi.nih.gov/snp/organisms/flycatcher\_59894Entrez:       http:\/\/www.ncbi.nlm.nih.gov/snp/?term=txid59894 ------------------------------------------------------------organism:     Drosophila melanogastertax\_id:       7227common\_name:  fruit flyassembly:     Release\_6\_plus\_ISO1\_MT (GCF\_000001215.4)total\_ss\_cnt: 6966484total\_rs\_cnt: 5620299new\_ss\_cnt:   1726925new\_rs\_cnt:   397516FTP:          ftp:\/\/ftp.ncbi.nih.gov/snp/organisms/fruitfly\_7227Entrez:       http:\/\/www.ncbi.nlm.nih.gov/snp/?term=txid7227 ------------------------------------------------------------organism:     Monodelphis domesticatax\_id:       13616common\_name:  gray short-tailed opossumassembly:     MonDom5 (GCF\_000002295.2)total\_ss\_cnt: 1196103total\_rs\_cnt: 1189350new\_ss\_cnt:   0new\_rs\_cnt:   0FTP:          ftp:\/\/ftp.ncbi.nih.gov/snp/organisms/opossum\_13616Entrez:       http:\/\/www.ncbi.nlm.nih.gov/snp/?term=txid13616 ------------------------------------------------------------organism:     Ornithorhynchus anatinustax\_id:       9258common\_name:  platypusassembly:     Ornithorhynchus\_anatinus\_5.0.1 (GCF\_000002275.2)total\_ss\_cnt: 1883034total\_rs\_cnt: 1315309new\_ss\_cnt:   0new\_rs\_cnt:   0FTP:          ftp:\/\/ftp.ncbi.nih.gov/snp/organisms/platypus\_9258Entrez:       http:\/\/www.ncbi.nlm.nih.gov/snp/?term=txid9258 ------------------------------------------------------------organism:     Parus majortax\_id:       9157common\_name:  pmajorassembly:     Parus\_major1.0.3 (GCF\_001522545.1)total\_ss\_cnt: 7870total\_rs\_cnt: 7842new\_ss\_cnt:   0new\_rs\_cnt:   0FTP:          ftp:\/\/ftp.ncbi.nih.gov/snp/organisms/pmajor\_9157Entrez:       http:\/\/www.ncbi.nlm.nih.gov/snp/?term=txid9157 ------------------------------------------------------------organism:     Coturnix japonicatax\_id:       93934common\_name:  quailassembly:     Coturnix\_japonica\_2.0 (GCF\_001577835.1)total\_ss\_cnt: 16945total\_rs\_cnt: 16298new\_ss\_cnt:   1947new\_rs\_cnt:   1319FTP:          ftp:\/\/ftp.ncbi.nih.gov/snp/organisms/quail\_93934Entrez:       http:\/\/www.ncbi.nlm.nih.gov/snp/?term=txid93934 ------------------------------------------------------------organism:     Oryctolagus cuniculustax\_id:       9986common\_name:  rabbitassembly:     OryCun2.0 (GCF\_000003625.3)total\_ss\_cnt: 41total\_rs\_cnt: 38new\_ss\_cnt:   17new\_rs\_cnt:   14FTP:          ftp:\/\/ftp.ncbi.nih.gov/snp/organisms/rabbit\_9986Entrez:       http:\/\/www.ncbi.nlm.nih.gov/snp/?term=txid9986 ------------------------------------------------------------organism:     Rattus norvegicustax\_id:       10116common\_name:  ratassembly:     Rnor\_6.0 (GCF\_000001895.5)total\_ss\_cnt: 6473268total\_rs\_cnt: 5075461new\_ss\_cnt:   5new\_rs\_cnt:   1FTP:          ftp:\/\/ftp.ncbi.nih.gov/snp/organisms/rat\_10116Entrez:       http:\/\/www.ncbi.nlm.nih.gov/snp/?term=txid10116 ------------------------------------------------------------organism:     Tribolium castaneumtax\_id:       7070common\_name:  red\_flour\_beetleassembly:     Tcas5.2 (GCF\_000002335.3)total\_ss\_cnt: 172total\_rs\_cnt: 172new\_ss\_cnt:   0new\_rs\_cnt:   0FTP:          ftp:\/\/ftp.ncbi.nih.gov/snp/organisms/red\_flour\_beetle\_7070Entrez:       http:\/\/www.ncbi.nlm.nih.gov/snp/?term=txid7070 ------------------------------------------------------------organism:     Nothobranchius furzeritax\_id:       105023common\_name:  turquoise\_killifishassembly:     Nfu\_20140520 (GCF\_001465895.1)total\_ss\_cnt: 324total\_rs\_cnt: 321new\_ss\_cnt:   0new\_rs\_cnt:   0FTP:          ftp:\/\/ftp.ncbi.nih.gov/snp/organisms/turquoise\_killifish\_105023Entrez:       http:\/\/www.ncbi.nlm.nih.gov/snp/?term=txid105023 ------------------------------------------------------------],
+  [NOTES: Complete list of current and previously updated organisms (http:\/\/www.ncbi.nlm.nih.gov/dbvar/content/org\_summary/)KNOWN ISSUE: The sequence viewer on human RefSNP page (https:\/\/www.ncbi.nlm.nih.gov/projects/SNP/snp\_ref.cgi?rs=662) is currently missing the ClinVar Short Variation and Cited Variants tracks and will be fixed by early next week.],
+  [Contact snp-admin\@ncbi.nlm.ncbi.nih.gov if you have any questions or concerns.dbSNP Production Team],
 ),
   insert-map: (:),
-  word-count: 125,
+  word-count: 332,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -644,19 +101,15 @@ Many of the participating publishers have also benefited from the PMC Back Issue
   ],
   [
     standard-article(
-  title: [A universal week],
-  author: [Petr Mitrichev],
-  source-name: [Petr Mitrichev (competitive programming)],
+  title: [Build 135: Human SNPSubSNPLinkHistory.bcp.gz FTP  file update],
+  author: [PubMed Health],
+  source-name: [PubMed Health],
   images: (),
   paragraphs: (
-  [Last week, the main round was the 3rd Universal Cup Semifinals ( problems , results , top 5 on the left, analysis , contest stream , closing ceremony stream ). For those not familiar with the Universal Cup, this announcement has some links for more information, but in short, it is a competition with many online stages throughout the year (40 in the 3rd season, but the organizers plan to reduce the number significantly for the 4th season to reduce the pressure on the teams trying to qualify for the Finals), each stage being a 5-hour contest with ICPC rules, usually with the problems from a regional or another previous non-public contest. The results over all stages are then aggregated into a rating (the formula will also be changed for the 4th season), and the top teams from this rating are invited into the Finals , which took place onsite in China for the 2nd season, and it's not yet clear if it will be onsite or online for the 3rd season that just finished. Recognizing the fact that some strong teams do not have the time to participate regularly, the organizers also host a Semifinals competition online, where every team can enter, and a few more spots for the Finals are won.],
-  [Team USA1 has continued their domination of the Universal Cup — congratulations! Since they and a few other teams at the top have already qualified for the Finals by the virtue of their regular season result (also 1st), the first team who advanced to the Finals from this round was team arvin and errogame, and maybe even more importantly, the last team who advanced to the Finals from this round (future cancellations notwithstanding) was team Dvoe protiv vetra. Well done to all finalists!],
-  [I and my team were also looking forward to participating in this round, but unfortunately a last-minute conflict interfered with my plans. Now I think we need to do at least one and hopefully more stages of the 4th season instead!],
-  [This week Codeforces Round 1046 led the way ( problems , results , top 5 on the left, analysis ). Each problem was solved by at least 4 contestants, but only jiangly managed to put all of them together, with just 3 minutes remaining in the round. Congratulations on the convincing victory!],
-  [And next week, it's all about  \#ICPCBaku . I will be there as well and try to share some tidbits in this blog, so check back soon!],
+  [class="MsoNormal" style="margin: 0in 0in 0pt;"\> The database file SNPSubSNPLinkHistory.bcp.gz has been updated on the FTP site to record the history of submitted SNP (ss) numbers that were withdrawn by submitter when build 135 was released.],
 ),
   insert-map: (:),
-  word-count: 431,
+  word-count: 120,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -664,272 +117,300 @@ Many of the participating publishers have also benefited from the PMC Back Issue
   ],
   [
     brief-group((
-      brief-item([PubMed Health], source-name: [PubMed Health], [class="MsoNormal" style="margin: 0in 0in 0pt;"\> One new NIH-funded publication from the National Academies is available on Bookshelf. It is currently only available in prepublication draft PDF format. 
-
-class="MsoNormal" style="margin: 0in 0in 0pt;"\> 
-
-class="MsoNormal" style="margin: 0in 0in 0pt;"\> 2013 
-
-class="MsoNormal" style="margin: 0in 0in 0pt;"\> 
-
-class="MsoNormal" style="margin: 0in 0in 0pt;"\> Improving the Utility and Translation of Animal Models for Nervous System Disorders: Workshop Summary 
- Institute of Medicine (US)
- pre-publication PDF only 
-
-class="MsoNormal" style="margin: 0in 0in 0pt;"\> 
-
- See the entire National Academies Collection on Bookshelf \>\>])
-
-      brief-item([PubMed Health], source-name: [PubMed Health], [Establishment and Genomic Validation of Novel Patient-Derived Xenograft Models for Drug Discovery in Gastrointestinal Stromal Tumor ( study page | release notes )])
-
-      brief-item([PubMed Health], source-name: [PubMed Health], [Bookshelf's collection of books from the CRC Press "Frontiers in Neuroscience" series has expanded to include the following four titles: 
-
- Neurobiology of Huntington's Disease: Applications to Drug Discovery, 2nd Edition 
-Donald C. Lo and Robert E. Hughes, Editors.
-Boca Raton (FL): CRC Press; 2011.
-
- 
- The Neurobiology of Olfaction 
-Anna Menini, Editor.
-Boca Raton (FL): CRC Press; 2010.
-
- 
- Neuroproteomics, 2nd Edition 
-Oscar Alzate, Editor.
-Boca Raton (FL): CRC Press; 2010.
- 
- 
- Translational Pain Research: From Mouse to Man 
-Lawrence Kruger and Alan R. Light, Editors.
-Boca Raton (FL): CRC Press; 2010.])
-
-      brief-item([Chloe Clougher], source-name: [Jalopnik], [The Toyota 2000GT was rare, even when it was new, but the convertibles were so scarce just two were ever made. We decided to find out exactly why.])
-
-      brief-item([PubMed Health], source-name: [PubMed Health], [class="ExternalClass6D673664053F4DDAB8ABE0CFE3C8925F"\> Center for Common Disease Genomics [CCDG] - Cardiovascular: Pharmacokinetic Polymorphisms in Japanese General Population
+      [#brief-item([PubMed Health], source-name: [PubMed Health], [class="ExternalClass6FABB08708544F2E9BA9594A7FD8A030"\>
+ Oral Immunotherapy for Induction of Tolerance and Desensitization in Peanut-Allergic Children (IMPACT)
+  
+ ( study page 
+ |
+ release notes )])],
+      [#brief-item([PubMed Health], source-name: [PubMed Health], [class="ExternalClassFEE0D2DAB3054952901477E23BC1E2A2"\> NHLBI TOPMed: MWCCS: Sex Differences in the Role of Multi-Omics in HIV-Associated Carotid Artery Atherosclerosis
   
  ( 
  study page 
  
  |
  
- release notes )])
+ release notes )
+​])],
+      [#brief-item([PubMed Health], source-name: [PubMed Health], [class="ExternalClass5265D3C7AB24406B82293CD12A4FC3F8"\>
 
-      brief-item([PubMed Health], source-name: [PubMed Health], [class="ExternalClass4C10AE34A7E54A1FADCF49C9BD929879"\> A New Pipeline to Predict and Confirm Tumor Neoantigens Predicts Better Response to Checkpoint Blockade
+New citations are now added to PubMed seven days a week. Previously, PubMed was updated five times a week.])],
+      [#brief-item([PubMed Health], source-name: [PubMed Health], [The following new journal from International Scientific Literature, Inc. has been added to PubMed Central:
+
+ Polish Journal of Radiology
+ ISSN: 1733-134X (print) 1899-0967 (electronic)
+ URL: http:\/\/www.ncbi.nlm.nih.gov/pmc/journals/1834\/ 
+ Archive includes volume 75 (2010) to the current issue
+ Note: There is no embargo delay for this journal.
+
+Thanks,
+
+PubMed Central])],
+      [#brief-item([PubMed Health], source-name: [PubMed Health], [class="ExternalClassAA588A461F8E489F9F56EBCAA8D96E60"\>​ Molecular Signatures of DCIS to Invasive Progression for Basal-Like Breast Cancers: An Integrated Mouse Model and Human Tumor Study
   
  ( 
  study page 
  
  |
  
- release notes )])
+ release notes )])],
+      [#brief-item([PubMed Health], source-name: [PubMed Health], [Childhood Cancer Data Initiative (CCDI): Molecular Characterization across Pediatric Brain Tumors and Other Solid and Hematologic Malignancies for Research, Diagnostic, and Precision Medicine ( study page | release notes )])],
+      [#brief-item([PubMed Health], source-name: [PubMed Health], [The following new journal from Hindawi has been added to PubMed Central:
 
-      brief-item([PubMed Health], source-name: [PubMed Health], [class="ExternalClass06FB9B6396824BE09F5CE1BD5033C99C"\>
+Current Gerontology and Geriatrics Research
+ISSN: 1687-7063 (print) 1687-7071 (electronic)
+ http:\/\/www.pubmedcentral.nih.gov/tocrender.fcgi?journal=882&action=archive 
+Archive includes: v. 2008(2008). 
+Note: There is no embargo delay for this title.])],
+      [#brief-item([PubMed Health], source-name: [PubMed Health], [class="ExternalClassED58E6F70AE84B388C405038110EB72C"\>International Cancer Proteogenome Consortium (ICPC): Proteogenomics of Oral Squamous Cell Carcinoma in Taiwan
+  
+ ( study page 
+ |
+ release notes )
+
+​])],
+      [#brief-item([PubMed Health], source-name: [PubMed Health], [The following new journal from BioMed Central has been added to PubMed Central:
+ 
+Head & Neck Oncology
+ISSN: 1758-3284 (electronic)
+ http:\/\/www.pubmedcentral.gov/tocrender.fcgi?journal=856   
+Archive includes volume 1 (2009)
+Note: There is no embargo delay for this journal])],
+      [#brief-item([PubMed Health], source-name: [PubMed Health], [The following new journal from BMJ Publishing Group has been added to PubMed Central.
+Clinical Evidence
+ISSN: 1752-8526 (electronic)
+URL: http:\/\/www.ncbi.nlm.nih.gov/pmc/journals/520\/ 
+Archive includes 2003 (2003) to 2008 (2008
+Note: There is a 24 month embargo delay for this journal
+Thanks,
+PubMed Central])],
+      [#brief-item([PubMed Health], source-name: [PubMed Health], [The following new journal from the University of California, Irvine has been added to PubMed Central.
+ 
+Western Journal of Emergency Medicine
+ISSN: 1936-900X (print) 1936-9018 (electronic)
+URL: http:\/\/www.pubmedcentral.gov/tocrender.fcgi?journal=874 
+
+Archive includes 8(2007) to the present
+Note: There is no embargo delay for this journal])],
+      [#brief-item([PubMed Health], source-name: [PubMed Health], [class="MsoNormal" style="margin: 0in 0in 10pt; vertical-align: top;"\> The Bookshelf's collection of NIH-funded reports from the National Academies has been updated with one new report. 
+
+class="MsoNormal" style="margin: 0in 0in 10pt; vertical-align: top;"\> 2012 
+
+class="MsoNormal" style="margin: 0in 0in 0pt;"\> Clustering for 21st Century Prosperity: Summary of a Symposium 
+National Research Council (US)
+ PDF only 
+
+class="collection-member" style="margin: auto 0in;"\> See the entire National Academies Collection on Bookshelf \>\>])],
+      [#brief-item([Laurence Edmondson], source-name: [ESPN Top Stories], [Yes, the timing of a safety car helped Kimi Antonelli to Sunday's win at the Japanese GP, but he was still the fastest car on track when it happened.])],
+      [#brief-item([PubMed Health], source-name: [PubMed Health], [The following journal has been added to the PubMed Central archive:
+Journal Title: Gastroenterology and Hepatology
+ISSN: 1554-7914 (print), 
+URL: http:\/\/www.ncbi.nlm.nih.gov/pmc/journals/1204\/ 
+Archive includes: v. 5 (2009) to v. 6  (2010). Prior content is forthcoming and will have no delay.])],
+      [#brief-item([PubMed Health], source-name: [PubMed Health], [class="MsoNormal" style="margin: 0in 0in 10pt; vertical-align: top;"\> The Bookshelf's collection of NIH-funded reports from the National Academies has been updated with one report from 1998. 
+
+class="MsoNormal" style="margin: 0in 0in 0pt;"\> 
+
+class="MsoNormal" style="margin: 0in 0in 10pt; vertical-align: top;"\> 1998 
+
+class="MsoNormal" style="margin: 0in 0in 0pt;"\> Dietary Reference Intakes for Thiamin, Riboflavin, Niacin, Vitamin B6, Folate, Vitamin B12, Pantothenic Acid, Biotin, and Choline. 
+
+class="MsoNormal" style="margin: 0in 0in 0pt;"\> Institute of Medicine (US) Standing Committee on the Scientific Evaluation of Dietary Reference Intakes and its Panel on Folate, Other B Vitamins, and Choline.])],
+      [#brief-item([PubMed Health], source-name: [PubMed Health], [class="ExternalClass331A91A8A48643EF8B3751154373D8D2"\> Acute Respiratory Distress Syndrome Clinical Network: Fluid and Catheter Treatment Trial (ARDSNet FACTT-BioLINCC)
+  
+ ( study page 
+ |
+ release notes )])],
+      [#brief-item([PubMed Health], source-name: [PubMed Health], [class="ExternalClass06FB9B6396824BE09F5CE1BD5033C99C"\>
 
 dbVar December 2014 Release
 
 Summary:
 
- December dbVar data release. Initial release of Forsberg2015, which was renamed to Dumanski2014. Added BioProject and Biosample accessions and links to multiple studies. ​])
-
-      brief-item([PubMed Health], source-name: [PubMed Health], [class="ExternalClass0C696E0FC09D4587A109DC89C9B4CFC0"\> NHLBI TOPMed: Characterizing the Response to a Leukotriene Receptor Antagonist and an Inhaled Corticosteroid (CLIC)
+ December dbVar data release. Initial release of Forsberg2015, which was renamed to Dumanski2014. Added BioProject and Biosample accessions and links to multiple studies. ​])],
+      [#brief-item([PubMed Health], source-name: [PubMed Health], [class="ExternalClass7FF9AA7C981A44CA9D1853EEC08849DD"\> Collaborative Cohort of Cohorts for COVID-19 Research (C4R): Jackson Heart Study (JHS)
   
  ( 
  study page 
  
  |
  
- release notes )])
-
-      brief-item([PubMed Health], source-name: [PubMed Health], [class="ExternalClass2609F62CB42D41ADA41D6413F6DFF62F"\>
-
-​PubMed has been updated to include journal and first author sort. Additionally, My NCBI alert email messages now link to new PubMed.])
-
-      brief-item([PubMed Health], source-name: [PubMed Health], [class="MsoNormal" style="margin: 0in 0in 10pt; vertical-align: top;"\> The Bookshelf's collection of NIH-funded reports from the National Academies has been updated with 1 report from 2003: 
-
-class="MsoNormal" style="margin: 0in 0in 10pt; vertical-align: top;"\> 2003 
-
-class="MsoNormal" style="margin: 0in 0in 0pt;"\> Elder Mistreatment: Abuse, Neglect, and Exploitation in an Aging America 
-National Research Council (US) Panel to Review Risk and Prevalence of Elder Abuse and Neglect; Richard J Bonnie and Robert B Wallace, Editors.
- full text 
-
-class="collection-member" style="margin: auto 0in;"\> See the entire National Academies Collection on Bookshelf \>\>])
-
-      brief-item([PubMed Health], source-name: [PubMed Health], [The following new journal from Landes Bioscience has been added to PubMed Central:
- 
-Organogenesis
-ISSN: 1547-6278 (print); 1555-8592 (electronic)
-URL: http:\/\/www.pubmedcentral.nih.gov/tocrender.fcgi?journal=805&action=archive 
-Archive includes: v.3 (2007) to v.4 (2008).  Additional content [v.1 (2004) – v.2 (2005)] will be added at a later date.
-Note: There is a 6-month embargo delay for this journal.])
-
-      brief-item([PubMed Health], source-name: [PubMed Health], [class="ExternalClass7A9940C470864780ABBE27F947018616"\> NHLBI's Collection of Datasets for General Research Use (Public Posting of Genomic Summary Results: Not Allowed)
-  
- ( 
- study page 
- 
- |
- 
- release notes )])
-
-      brief-item([PubMed Health], source-name: [PubMed Health], [The following new journal from Euro-Mediterranean Council for Burns and Fire Disasters (MBC) has been added to PubMed Central:
- 
-Annals of Burns and Fire Disasters
-ISSN: 1592-9558 (print) 1592-9566 (electronic)
-URL: http:\/\/www.ncbi.nlm.nih.gov/pmc/journals/1231/ 
-Archive includes 18 (2005) to 24 (2011)
- 
-Note: There is no embargo delay for this journal])
-
-      brief-item([PubMed Health], source-name: [PubMed Health], [Collaborative Cohort of Cohorts for COVID-19 Research (C4R): Severe Asthma Research Program (SARP) ( study page | release notes )])
-
-      brief-item([PubMed Health], source-name: [PubMed Health], [class="ExternalClassA9BCF26AC44E4AE0966BDDB8297F8379"\> NHLBI TOPMed: GOLDN Epigenetic Determinants of Lipid Response to Dietary Fat and Fenofibrate
-  
- ( 
- study page 
- 
- |
- 
- release notes )])
-
-      brief-item([BBC Sport], source-name: [BBC Sport], [Chelsea secure a vital three points as they beat Aston Villa 4-3 to go second in the league table and get back on track for Champions League qualification.])
-
-      brief-item([PubMed Health], source-name: [PubMed Health], [class="ExternalClass3616E6D7F9F74F8296C7690557A5D1CB"\>​ Gabriella Miller Kids First Pediatric Research Program in Pediatric T-cell Acute Lymphoblastic Leukemia
-  
- ( 
- study page 
- 
- |
- 
- release notes )])
-
-      brief-item([PubMed Health], source-name: [PubMed Health], [class="ExternalClassEC5AD106F2BE45E69384D896438467D3"\>​ Gabriella Miller Kids First Pediatric Research Project in Cornelia de Lange Syndrome, Related Diagnosis and Structural Birth Defects
-  
- ( 
- study page 
- 
- |
- 
- release notes )])
-
-      brief-item([PubMed Health], source-name: [PubMed Health], [The following journals from Springer have been added to PubMed Central:
- 
-Journal of Biological Physics
-ISSN: 0092-0606 (print) 1573-0689 (electronic)
-URL: http:\/\/www.pubmedcentral.nih.gov/tocrender.fcgi?journal=596&action=archive 
-Archive: v. 32(2) (2006) to v. 34 (2008).  Current content is forthcoming with a 12-month delay.
- 
-Journal of Hematopathology
-ISSN: 1865-5785 (electronic)
-URL: http:\/\/www.pubmedcentral.nih.gov/tocrender.fcgi?journal=843&action=archive 
-Archive: v. 1 (2008) and v. 2 (2009).  Current content is forthcoming with no delay.  Beginning in 2010, new content will be available after a 12-month delay.])
-
-      brief-item([PubMed Health], source-name: [PubMed Health], [class="ExternalClass4C0E2E0532E84C1BB75F08300DA3A097"\>
-
-​ See our collection of webinars and tutorials designed to help you 
-
- Examples are: 
- 
-
- • Improved standalone BLAST database and programs: now with taxonomic information 
- 
-
- • Getting the most out of Web BLAST tabular format 
- 
-
- • Using BLAST well, How to maximize your search efforts 
- 
-
- • 5 teaching examples on how to use NCBI BLAST 
- 
-
- The complete collection is on YouTube])
-
-      brief-item([PubMed Health], source-name: [PubMed Health], [The status tag [PubMed - author manuscript in PMC] was added for PubMed Central author manuscripts that would not normally be cited in PubMed.])
-
-      brief-item([PubMed Health], source-name: [PubMed Health], [The following new journals from BioMed Central have been added to PubMed Central:
- 
-BioData Mining
-ISSN: 1756-0381 (electronic)
- http:\/\/www.pubmedcentral.nih.gov/tocrender.fcgi?journal=699&action=archive 
-Archive includes volume 1 (2008)
----------
-Journal of Foot and Ankle Research
-ISSN: 1757-1146 (electronic)
- http:\/\/www.pubmedcentral.nih.gov/tocrender.fcgi?journal=700&action=archive 
-Archive includes volume 1 (2008)
----------
-Tobacco Induced Diseases
-ISSN: 1617-9625 (print)
- http:\/\/www.pubmedcentral.nih.gov/tocrender.fcgi?journal=701&action=archive 
-Archive includes volume 4(1) (2008)])
-
-      brief-item([PubMed Health], source-name: [PubMed Health], [The following journal from The Rockefeller University Press has been added to the PubMed Central archive:
- 
-Journal Title: The Journal of General Physiology
-ISSN: 0022-1295 (print), 1540-7748 (electronic)
-URL: http:\/\/www.pubmedcentral.nih.gov/tocrender.fcgi?journal=484&action=archive 
-Archive includes: v. 127 (2006) to v. 130/1 (2007). Back content is forthcoming; current content will have a 6-month delay.])
-
-      brief-item([PubMed Health], source-name: [PubMed Health], [class="ExternalClassCCBDFF94DE3741488FE127629E03138A"\> A Personalized Neoantigen Vaccine Generates Anti-Tumor Immunity in High-Risk Renal Cell Carcinoma
-  
- ( study page 
- |
  release notes )
-​])
 
-      brief-item([PubMed Health], source-name: [PubMed Health], [The following new journal from Hindawi has been added to PMC:
-
-Case Reports in Hematology
-ISSN: 2090-6560 (print) 2090-6579 (electronic)
-http:\/\/www.ncbi.nlm.nih.gov/pmc/journals/1876
-Archive includes: v. 2011(2011) - v. 2012(2012)
-Note: There is no embargo delay for this title.])
-
-      brief-item([PubMed Health], source-name: [PubMed Health], [A new collection of evidence syntheses published by the VA Evidence-based Synthesis Program since 2007 was just added to Bookshelf. New VA Evidence-based Synthesis Reports on targeted healthcare topics of particular importance to VA managers and policymakers will be regularly added to the collection on Bookshelf. They help develop clinical policies informed by evidence, the implementation of effective patient outcomes and to support VA clinical practice guidelines and performance measures, and set the direction for future research to address gaps in clinical knowledge.])
-
-      brief-item([PubMed Health], source-name: [PubMed Health], [class="ExternalClassDCFA60D1154846479936B11998E4A8BB"\> NHLBI TOPMed: Genetic Causes of Complex Pediatric Disorders - Asthma (GCPD-A)
+​])],
+      [#brief-item([PubMed Health], source-name: [PubMed Health], [class="ExternalClass2CF2D4586FC3484FA4ED0354F880BE74"\> Contribution of Systemic and Somatic Factors to Clinical Response and Resistance in Urothelial Cancer
   
- ( study page 
+ ( 
+ study page 
+ 
  |
+ 
+ release notes )])],
+      [#brief-item([PubMed Health], source-name: [PubMed Health], [class="ExternalClassD90F1C3EB85F4E7B911A9A5342FA73DA"\> Autism Genome Project (AGP) Consortium - GWAS - Stage I and II
+  
+ ( 
+ study page 
+ 
+ |
+ 
+ release notes )])],
+      [#brief-item([BBC Sport], source-name: [BBC Sport], [Four-time F1 world champion Max Verstappen tells BBC Sport he is "not enjoying" the sport after changes to the rules this season.])],
+      [#brief-item([PubMed Health], source-name: [PubMed Health], [class="ExternalClass2E7FE14216694F7983FA4F6DAA938284"\> Center for Common Disease Genomics \[CCDG\] - Cardiovascular: Cardiology Biobanking for Biomarker Discovery
+  
+ ( 
+ study page 
+ 
+ |
+ 
+ release notes )])],
+      [#brief-item([PubMed Health], source-name: [PubMed Health], [NIH RECOVER: A Multi-Site Observational Study of Post-Acute Sequelae of SARS-CoV-2 Infection in Adults ( study page | release notes )])],
+      [#brief-item([PubMed Health], source-name: [PubMed Health], [class="ExternalClass5CD4102A4D31440881DE637B2C822FC6"\> Slim Initiative in Genomic Medicine for the Americas (SIGMA): Diabetes in Mexico Study (DMS)
+  
+ ( 
+ study page 
+ 
+ |
+ 
+ release notes )])],
+      [#brief-item([PubMed Health], source-name: [PubMed Health], [class="ExternalClass253441D57B104C13B44AD667767F5A75"\>​ Ipilimumab and Decitabine in Treating Patients With Relapsed or Refractory Myelodysplastic Syndrome or Acute Myeloid Leukemia
+  
+ ( 
+ study page 
+ 
+ |
+ 
+ release notes )])],
+      [#brief-item([PubMed Health], source-name: [PubMed Health], [The following new journal from Karger Publishers has been added to PubMed Central:
+
+   Nephron EXTRA
+    ISSN: 1664-5529 (electronic)
+    URL: http:\/\/www.ncbi.nlm.nih.gov/pmc/journals/1693 
+    Archive includes v.1 (2011) to current
+    Note: There is no embargo delay for this journal.])],
+      [#brief-item([PubMed Health], source-name: [PubMed Health], [The following new journal from Pulsus Group has been added to PubMed Central:
+International Journal of Angiology
+ISSN: 1061-1711 (print) 1615-5939 (electronic)
+URL: http:\/\/www.pubmedcentral.gov/tocrender.fcgi?journal=944 
+Archive includes 16(2007) to the present
+Current content is forthcoming and will have a 12-month embargo delay.])],
+      [#brief-item([PubMed Health], source-name: [PubMed Health], [class="ExternalClass58941C8B5E09478696687FB5AA105A5E"\>
+
+ Announcing New dbVar FTP Directory Structure 
+
+T he dbVar directory structure  FTP directory  was updated April 1, 2018. The old directories will be in  data.old  until May 1, and then can be found in  archive .
+
+Highlights include:
+
+added aggregated vcf files by assembly
+
+named files based on major assembly and region or call
+
+replaced study-specific directories with file-type directories
+
+renamed ".tab" files to ".tsv"
+
+moved old human and all non-human files to  archive 
+
+Refer to  README.ftp  for full details of the new GVF, VCF, TSV, and XML files.])],
+      [#brief-item([PubMed Health], source-name: [PubMed Health], [class="ExternalClass25BB58B778724E0E9C78A0FAF89CDB34"\> Genomic and Genetic Characterization of Prostate Tumors Treated with Neoadjuvant Intense Androgen Deprivation Therapy
+  
+ ( 
+ study page 
+ 
+ |
+ 
+ release notes )])],
+      [#brief-item([PubMed Health], source-name: [PubMed Health], [class="ExternalClass8679A2C10336447999EB5658CC2E80AE"\> Acute Respiratory Distress Network (ARDSNet) Study 04 Assessment of Low Tidal Volume and Elevated End-Expiratory Volume to Obviate Lung Injury (ALVEOLI-BioLINCC)
+  
+ ( 
+ study page 
+ 
+ |
+ 
  release notes )
-​])
-
-      brief-item([PubMed Health], source-name: [PubMed Health], [class="ExternalClass01294FDEFC7C4B59BA5362C158B279CF"\> CEBP-Beta/IL-1-Beta/ TNF-alpha Feedback Loop Drives Drug Resistance to BCL2 and MDM2 Inhibitors in Monocytic Leukemia Cells
-  
- ( study page 
- |
- release notes )])
-
-      brief-item([PubMed Health], source-name: [PubMed Health], [The following new journal from Oxford University Press has been added to PubMed Central,as a full participation title.
-Genome Biology and Evolution
-ISSN: (electronic) 1759-6653
-URL: http:\/\/www.ncbi.nlm.nih.gov/pmc/journals/933 
- 
-The archive includes articles for years 2009-2010 and current content is forthcoming. 
-Note: This is a fully open access journal with no embargo delay.])
-
+​])],
     ))
   ],
 ), ruled-indices: (1, 2,))
 
-{
-  #standard-article(
-  title: [dbSNP BUILD 148:  Cat, corn, cow, fruit fly, grape, horse, rice, sorghum, tomato, turkey, and zebra finch],
-  author: [PubMed Health],
-  source-name: [PubMed Health],
+#article-row((
+  [
+    standard-article(
+  title: [A double prix week],
+  author: [Petr Mitrichev],
+  source-name: [Petr Mitrichev (competitive programming)],
   images: (),
   paragraphs: (
-  [​],
-  [dbSNP Build 148 data for cat, corn, cow, fruit fly, grape, horse, rice, sorghum, tomato, turkey, and zebra finch are available now on the web and FTP .------------------------------------------------------------organism:     Felis catustax\_id:       9685common\_name:  catassembly:     Felis\_catus\_8.0 (GCF\_000181335.2)total\_ss\_cnt: 4527926total\_rs\_cnt: 3609965new\_ss\_cnt:   1new\_rs\_cnt:   0FTP:          ftp:\/\/ftp.ncbi.nih.gov/snp/organisms/cat\_9685Entrez:       http:\/\/www.ncbi.nlm.nih.gov/snp/?term=txid9685 ------------------------------------------------------------organism:     Zea maystax\_id:       4577common\_name:  cornassembly:     B73\_RefGen\_v3 (GCF\_000005005.1)total\_ss\_cnt: 72130175total\_rs\_cnt: 54627567new\_ss\_cnt:   720203new\_rs\_cnt:   375743FTP:          ftp:\/\/ftp.ncbi.nih.gov/snp/organisms/corn\_4577Entrez:       http:\/\/www.ncbi.nlm.nih.gov/snp/?term=txid4577 ------------------------------------------------------------organism:     Bos taurustax\_id:       9913common\_name:  cowassembly:     Bos\_taurus\_UMD\_3.1.1 (GCF\_000003055.6)total\_ss\_cnt: 293824745total\_rs\_cnt: 100170652new\_ss\_cnt:   40new\_rs\_cnt:   623609FTP:          ftp:\/\/ftp.ncbi.nih.gov/snp/organisms/cow\_9913Entrez:       http:\/\/www.ncbi.nlm.nih.gov/snp/?term=txid9913 ------------------------------------------------------------organism:     Drosophila melanogastertax\_id:       7227common\_name:  fruit flyassembly:     Release\_6\_plus\_ISO1\_MT (GCF\_000001215.4)total\_ss\_cnt: 5239559total\_rs\_cnt: 5222783new\_ss\_cnt:   0new\_rs\_cnt:   0FTP:          ftp:\/\/ftp.ncbi.nih.gov/snp/organisms/fruitfly\_7227Entrez:       http:\/\/www.ncbi.nlm.nih.gov/snp/?term=txid7227 ------------------------------------------------------------organism:     Vitis viniferatax\_id:       29760common\_name:  grapeassembly:     12X (GCF\_000003745.3)total\_ss\_cnt: 470937total\_rs\_cnt: 470689new\_ss\_cnt:   59new\_rs\_cnt:   44FTP:          ftp:\/\/ftp.ncbi.nih.gov/snp/organisms/grape\_29760Entrez:       http:\/\/www.ncbi.nlm.nih.gov/snp/?term=txid29760 ------------------------------------------------------------],
-  [organism:     Equus caballustax\_id:       9796common\_name:  horseassembly:     EquCab2.0 (GCF\_000002305.2)total\_ss\_cnt: 5572571total\_rs\_cnt: 5069598new\_ss\_cnt:   34new\_rs\_cnt:   104FTP:          ftp:\/\/ftp.ncbi.nih.gov/snp/organisms/horse\_9796Entrez:       http:\/\/www.ncbi.nlm.nih.gov/snp/?term=txid9796 ------------------------------------------------------------organism:     Oryza sativatax\_id:       4530common\_name:  riceassembly:     IRGSP-1.0 (GCF\_001433935.1)              (GCF\_001563185.1)total\_ss\_cnt: 18745251total\_rs\_cnt: 13158285new\_ss\_cnt:   6174100new\_rs\_cnt:   2191501FTP:          ftp:\/\/ftp.ncbi.nih.gov/snp/organisms/rice\_4530Entrez:       http:\/\/www.ncbi.nlm.nih.gov/snp/?term=txid4530 ------------------------------------------------------------organism:     Sorghum bicolortax\_id:       4558common\_name:  sorghumassembly:     Sorbi1 (GCF\_000003195.2)total\_ss\_cnt: 8425370total\_rs\_cnt: 7130991new\_ss\_cnt:   6668695new\_rs\_cnt:   5785568FTP:          ftp:\/\/ftp.ncbi.nih.gov/snp/organisms/sorghum\_4558Entrez:       http:\/\/www.ncbi.nlm.nih.gov/snp/?term=txid4558 ------------------------------------------------------------organism:     Solanum lycopersicumtax\_id:       4081common\_name:  tomatoassembly:     SL2.50 (GCF\_000188115.3)total\_ss\_cnt: 8077total\_rs\_cnt: 7855new\_ss\_cnt:   7644new\_rs\_cnt:   7566FTP:          ftp:\/\/ftp.ncbi.nih.gov/snp/organisms/tomato\_4081Entrez:       http:\/\/www.ncbi.nlm.nih.gov/snp/?term=txid4081 ------------------------------------------------------------organism:     Meleagris gallopavotax\_id:       9103common\_name:  turkeyassembly:     Turkey\_5.0 (GCF\_000146605.2)total\_ss\_cnt: 9307total\_rs\_cnt: 9275new\_ss\_cnt:   0new\_rs\_cnt:   0FTP:          ftp:\/\/ftp.ncbi.nih.gov/snp/organisms/turkey\_9103Entrez:       http:\/\/www.ncbi.nlm.nih.gov/snp/?term=txid9103 ------------------------------------------------------------organism:     Taeniopygia guttatatax\_id:       59729common\_name:  zebra\_finchassembly:     Taeniopygia\_guttata-3.2.4 (GCF\_000151805.1)total\_ss\_cnt: 1751580total\_rs\_cnt: 1750278new\_ss\_cnt:   0new\_rs\_cnt:   0FTP:          ftp:\/\/ftp.ncbi.nih.gov/snp/organisms/zebra\_finch\_59729Entrez:       http:\/\/www.ncbi.nlm.nih.gov/snp/?term=txid59729 ------------------------------------------------------------Contact snp-admin\@ncbi.nlm.ncbi.nih.gov if you have any questions or concerns.dbSNP Production Team],
-  [​],
+  [Before I cover the last week, I need to mention the 4th Universal Cup Stage 5: Nanjing, which happened the week before and which I forgot to cover ( problems , results , top 5 on the left, analysis in Chinese ). Even having only 2 out of 3 teammates did not stop team USA1 from winning by a whole problem. Congratulations!],
+  [The Universal Cup can't stick to the plan of having rounds only every other week, so Stage 6: Shenyang took place last week ( problems , results , top 5 on the left, analysis in Chinese ). The first two places look suspiciously similar to the previous round, but for the veteran teams Polish Mafia and Almost Retired Dandelion who also solved everything this was the best result of the season. Well done!],
+  [Codeforces Round 1066 wrapped up the week ( problems , results , top 5 on the left, analysis ). Some of the Universal Cup stars were also strong this time, but they were complemented in the top 5 by jiangbowen and PEIMUDA who were not at the very top in the team rounds. Congratulations on the nice individual performance!],
+  [Thanks for reading, and check back next week for a more meaningful summary!],
 ),
   insert-map: (:),
-  word-count: 187,
+  word-count: 222,
   edited-for-length: false,
   debug-mode: false,
 )
 
-}
+  ],
+  [
+    standard-article(
+  title: [New | 7 studies released in batch on 2024-03-08],
+  author: [PubMed Health],
+  source-name: [PubMed Health],
+  images: (),
+  paragraphs: (
+  [class="ExternalClass685FC6ED71B047788F9B91143BA46D7C"\>
+ phs003362.v1.p1 | 
+Rapid Acceleration of Diagnostics - Underserved Populations (RADx-UP): Supported Employment to Create a Community Culture of Rapid Testing Among People Who Inject Drugs: PeerConnect2Test 
+( 
+ study page | 
+ 
+ release notes )],
+  [phs003368.v1.p1 | 
+Rapid Acceleration of Diagnostics - Underserved Populations (RADx-UP): SCALE UP Utah II: Community-Academic Partnership to Address COVID-19 Testing and Vaccination Among Utah Community Health Centers 
+( 
+ study page | 
+ 
+ release notes )],
+  [phs003484.v1.p1 | 
+Rapid Acceleration of Diagnostics - Underserved Populations (RADx-UP): Increasing Representation of Black Communities in COVID-19 Home Testing and Surveillance Data 
+( 
+ study page | 
+ 
+ release notes )],
+  [phs003504.v1.p1 | 
+Rapid Acceleration of Diagnostics - Underserved Populations (RADx-UP): The Puerto Rico Community Action Research and Engagement (PR-CARE) to Eliminate Disparities of COVID-19 Among Rural Underserved and Vulnerable Populations 
+( 
+ study page | 
+ 
+ release notes )],
+  [phs003507.v1.p1 | 
+Rapid Acceleration of Diagnostics - Underserved Populations (RADx-UP): Project IMPROVE: Implementing Community-Engaged Intervention Research to Increase Rapid SARS-CoV-2 Self-Testing Among Diverse Underserved and Vulnerable Asian Americans 
+( 
+ study page | 
+ 
+ release notes )],
+  [phs003514.v1.p1 | 
+Rapid Acceleration of Diagnostics - Underserved Populations (RADx-UP): Enhancing SARS-CoV-2 Rapid Testing Acceptance in Latinx Communities 
+( 
+ study page | 
+ 
+ release notes )],
+  [phs003515.v1.p1 | 
+Rapid Acceleration of Diagnostics - Underserved Populations (RADx-UP): Impact of COVID-19 Testing and Mitigation on Equitable Return-to-School in the Second Largest U. S. School District 
+( 
+ study page | 
+ 
+ release notes )],
+),
+  insert-map: (:),
+  word-count: 227,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+  ],
+), ruled-indices: (1,))
 
 #colophon([The Sun], [Vol. 1, No. 029], [2026-03-30])

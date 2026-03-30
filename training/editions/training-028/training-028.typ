@@ -23,157 +23,149 @@
 
 // --- Front Page Feature ---
 #feature-article(
-  title: [AI Used to Promote Non-Existent Evacuation Flights From the Middle East],
+  title: [Darryl McDaniels of Run-DMC on Sobriety: 'I'm Not Afraid to Face Myself'],
   kicker: [Cover Story],
-  author: [Foeke Postma],
-  source-name: [Bellingcat],
-  deck: [The Netherlands’ largest newspaper, De Telegraaf, recently published an interview with a woman claiming to organise her own evacuation flights from Dubai, selling seats at €1,600 (US\$ 1850) each.],
-  lead-text: "Four days later, her photo was removed from the article, though the interview remained.",
-  lead-first-alpha: 0,
+  author: [Healthline],
+  source-name: [Healthline],
+  deck: [Twenty years sober, Run-DMC’s Darryl McDaniels opens up about his recovery journey.],
+  lead-pre: [],
+  lead-cap: [C],
+  lead-rest: [ourtesy of Stand Together],
   body-paragraphs: (
-  [Bellingcat has found that the original image not only includes artefacts commonly associated with generative AI, but that the flights referenced in the article do not appear to exist.],
-  [The story came at a time when thousands of Dutch people were reportedly seeking urgent ways to leave the region following Iranian missile and drone strikes across the Gulf in retaliation for US-Israeli strikes.],
-  [Published on De Telegraaf’s website on March 5, the headline reads: “Dutch people in the Middle East feel abandoned by the government: We just rented a plane ourselves.”],
-  [The Dutch minister of foreign affairs was confronted with this headline during a television interview, in which he described ongoing efforts by the Dutch government to repatriate citizens to the Netherlands.],
-  [The article features interviews with several Dutch people struggling to leave Dubai and Abu Dhabi, including Tamara Harema. Under the subheading “Dutch people hire their own plane”, Harema says she was “rebooked five times by Emirates” and that the official repatriation flights organised by the Dutch government were not ‘taking off’.],
-  [As part of a group, she says, they are organising buses and have hired an Airbus A321 to fly home. Harema is quoted as saying: “The first plane is already full, so we’re organising a second flight. Stranded travellers can contact us.”],
-  [However, several discrepancies in Harema’s photo, published in the original article, suggest it was AI-generated. No trace of a person matching Harema’s face or profile could be found, and flight-tracking data suggests no such plane took off.],
-  [In the image below, the world’s tallest structure, Burj Khalifa, can be seen through the window overlooking the Dubai skyline. Each side of the tower is unique, with platforms that protrude at different heights and in different directions. It also contains several mechanical floors, which appear as dark bands in the photo.],
-  [Photo description as published by De Telegraaf reads: “Tamara Harema and a group organise their own flights to the Netherlands, for which they have rented an Airbus A321. “Otherwise, nothing would get off the ground.” © Own photo” Source: Published in De Telegraaf, March 5.],
-  [By cross-checking the height of the visible platforms together with the location of the mechanical floors, it’s possible to determine that Harema’s hotel room faces north-west, towards the Burj Khalifa’s south-east-facing facade.],
-  [Comparing Harema’s photo (bottom left) to all three sides of Burj Khalifa’s base suggests she is looking at the Southeast facade. Source: Harema’s image / Google Street View.],
-  [Several discrepancies are visible when comparing Harema’s photo with other images of the building, including an upper mechanical floor appearing higher than in other images and the absence of the water feature at the base of the building.],
-  [Harema’s image (left), compared to a screenshot of a video of the building from 2020 (right), suggests a discrepancy between the upper mechanical floors. The water feature is also absent. Source: Harema’s image / Youtube .],
-  [To establish whether Harema’s photo could have been taken several years earlier, Google Street View imagery was analysed from 2013 onwards. No match could be found when comparing the arrangement of buildings at the base of the Burj Khalifa.],
-  [In Harema’s photo, the arrangement of buildings at the base of the tower does not match historic Google Street View images. Source Harema’s image/ Google Street View.],
-  [Several other irregularities, as shown below, including the hotel room furniture and details of Harema’s clothing and jewellery, also suggest it may have been AI-generated.],
-  [(Left) a distorted lamp stand; (top right) blurring on the “V” of her T-shirt; (bottom right) an earring that appears to merge into her face – all discrepancies commonly associated with generative AI.],
-  [Fully Booked Airbus A321],
-  [Regarding whether the plane existed, Harema says in her interview that buses have already been arranged to collect passengers from two locations in Dubai on Saturday, March 7, after which a 232-seater Airbus A321 will depart from Muscat, Oman, for the Netherlands.],
-  [The article notes the cost is €1,600 (US\$ 1850) per person, without detours. “Although we read that a Dutch repatriation flight costs €600, just try getting on such a flight,” says Harema.],
-  [According to Flightradar24 , multiple A321s departed Muscat on March 7 and 8, but none bound for the Netherlands. The only aircraft that did arrive in Amsterdam from Muscat were either government-organised repatriation flights or scheduled Oman Air services, none of which were Airbus A321s.],
-  [Two Airbus A321s were recorded on the ground at Muscat Airport on March 7. One, belonging to Gulf Air, later departed for Rome via Riyadh March 8. The other, operated by SalamAir, had been flying routes between Oman and Bangladesh until March 3, but has since remained in Muscat.],
-  [Your donations directly contribute to our ability to publish groundbreaking investigations and uncover wrongdoing around the world.],
-  [After contacting De Telegraaf, an explanation for the photo’s removal was added at the bottom of the article, stating that the photo did “likely not meet our journalistic guidelines.”],
-  [The newspaper’s deputy editor-in-chief, Joost de Haas, added:],
-  [“Regarding the quoted Tamara Harema, the editors contacted her after Mr. Chizki Loonstein—a long-standing source for one of our reporters—informed us about attempts to charter a plane. Mr Loonstein informed us that Ms Harema stayed in Dubai and could tell us more about it. This led to messages from which several quotes from Harema were extracted, as reproduced in the relevant passage of the article.”],
-  [A search for Loonstein led to a six-month-old report from another Dutch newspaper, NRC, which claimed that Loonstein, a lawyer, emigrated to Dubai after his legal company went bankrupt , leaving his clients, victims of fraud, worse off.],
-  [Contacted for comment, Loonstein confirmed that he knew Harema and had shared her contact details in “an app group” in relation to a flight from Muscat to Amsterdam. After this contact, Bellingcat sent him the photo of Harema to confirm her identity and asked him to share Harema’s contact details. In response, Loonstein refused to provide further comment.],
-  [Merel Zoet and Claire Press contributed to this report.],
-  [The post AI Used to Promote Non-Existent Evacuation Flights From the Middle East appeared first on bellingcat .],
+  [Rock & Roll Hall of Famer Darryl “DMC” McDaniels, of the legendary hip-hop group Run-DMC, is speaking out about sobriety.],
+  [McDaniels shares his journey with addiction, his mental health, and finding sobriety over 20 years ago.],
+  [The iconic rapper teamed up with 1 Million Strong to unite the music, sports, and entertainment industry and its fans to foster meaningful connections at cultural events.],
+  [At the height of global fame, Darryl “DMC” McDaniels from the legendary hip-hop band Run-DMC quietly battled addiction , depression , and identity loss.],
+  [“I never wanted to be in show business… I was just writing rhymes. I was a comic book kid. I had a great imagination. So it was an easy transition from rapping in my basement to rapping onstage in front of a lot of people,” he told Healthline.],
+  [When Run-DMC’s career skyrocketed, and the pressure of churning out hits intensified, McDaniels said the rise to stardom took a toll.],
+  [“\[People\] started saying, ‘You gotta have hit records. You gotta tour. You gotta be on the radio. You gotta make money.’ And I started worrying about their expectations. I started worrying about letting people down instead of worrying about how I was feeling,” he said.],
+  [That’s when anxiety , nervousness, and confusion set in.],
+  [“And I thought, ‘Oh, I need something to help me.’ Olde English 800. Johnny Walker. Jack Daniel’s. Jim Beam. I thought they could be my friends,” said McDaniels. “It wasn’t Run-DMC itself. It was the expectations. I started reaching for things outside of me to help me navigate what I was feeling.”],
+  [After battling addiction, anxiety, and depression for decades, he checked himself into rehab in 2004. Since then, McDaniels has lived a life of sobriety and made it his mission to spread awareness around mental health.],
+  [His latest endeavor is a partnership with 1 Million Strong , an impact initiative working to transform the way society thinks about mental health, addiction, and recovery by building sober-supportive communities within the music world and beyond.],
+  [Substance misuse affects 56% of music industry],
+  [Substance misuse is widespread in the United States. In 2023, nearly 50 million Americans ages 12 and older met criteria for a substance use disorder.],
+  [In the music industry, more than half of professionals report problematic alcohol or drug use. What’s more, around 34% of touring music professionals experience clinical depression.],
+  [“A major misunderstanding is the belief that strength, success, or intelligence protects people from mental illness or addiction,” J. Craig Allen , MD, Vice President of Addiction Services at Hartford HealthCare, told Healthline. “Mental health problems and addiction are health conditions, not a moral flaw.”],
+  [While improvements and setbacks with addiction and mental health occur, he added that for mental health and substance use disorder, there is a misperception that when that happens, a treatment has “failed.”],
+  [“In reality, recovery is best understood as an active maintenance phase, not a cure. Ongoing vulnerability should be normalized without minimizing consequences, and early warning signs should prompt rapid response, not shame or thoughts of defeat,” said Allen.],
+  [Connection is the opposite of addiction],
+  [In addition to medications and psychotherapy , sober-supportive communities are important for recovery and reduce multiple risks for return to use by:],
+  [reducing isolation],
+  [creating early detection systems for increased risk flags],
+  [acting as a safety net network by including peers, family, clinicians, and sponsors],
+  [“It’s often said that the opposite of addiction is connection. Reliable connection is key,” Allen said.],
+  [McDaniels agreed. Providing opportunities for connection is why he teamed up with 1 Million Strong.],
+  [“1 Million Strong lets people know you don’t have to go through this alone. You don’t have to hang with Johnnie Walker and Jack Daniel’s,” McDaniels said.],
+  [“There’s a whole community that’s always been here, but nobody talked about it. They give me a place to be.”],
+  [Darryl McDaniels talks sobriety],
+  [Healthline spoke with the Rock & Roll Hall of Famer to learn more about his journey with addiction and mental health, and what he wants others to know about sobriety and his life’s greatest achievement.],
+  [This interview has been edited and condensed for clarity and length.],
+  [Did you feel pressured to drink and do drugs?],
+  [McDaniels : In my community, and especially in the show business community, harmful, destructive behavior is celebrated. If somebody could take 50 shots at the bar, people would say, “Give him more.”],
+  [When I was growing up, you were celebrated if you smoked a lot of weed or drank a lot. I was drinking a case of Olde English a day, 40-ounce bottles. Nobody said anything was wrong. They thought it was heroic.],
+  [When you get into show business, you can get all the weed, alcohol, and drugs you want, and nobody notices it’s a problem until it’s too late. There was a community that didn’t do all that stuff, but it wasn’t talked about. It was considered uncool.],
+  [Have you always lived with anxiety and depression?],
+  [McDaniels: Yeah. It was always there. But when you’re a kid, you have outlets. For me it was comic books, drawing, imagination. When you get into show business, it’s always one, two, three, this is what you need to do.],
+  [The relief that’s readily available is drugs. You don’t notice all the other things that are there for you, so you don’t have to do that. I’ve always had anxiety. Even today, I still get scared before I go onstage.],
+  [How did therapy and rehab enter your life?],
+  [McDaniels: When I was 35, during my alcoholic, suicidal depression, I found out I was adopted. Everybody knew except me — my mother, my parents, my whole family, my teachers, even the nuns at my Catholic school. That made me drink more because I couldn’t deal with those emotions.],
+  [I felt betrayed and confused. I also had pancreatitis. I was depressed, suicidal, and drinking. What gave me the confidence to go get sober was meeting another adopted person. It made me realize I wasn’t alone.],
+  [I knew if I was going to search for my birth mother, I had to be sober. That pushed me to rehab. Once I got there, I discovered therapy, which is the most powerful thing a person can do. I was diagnosed with suppressed emotions in rehab. Therapy did what Jack Daniel’s and Johnnie Walker couldn’t do for me.],
+  [Did you have any positive influences in the music industry?],
+  [McDaniels: Yeah. The story I always tell is from 1988. We were on tour — Run-DMC, EPMD, Public Enemy — and we were standing on the side of the stage watching Eric B. & Rakim. The conversation came up: what is making hip hop so cool right now and good for us?],
+  [We talked about the money, playing arenas, sneaker deals, making movies. Then it went to, man, we could get all the weed we want, all the beer and liquor and cigarettes and cocaine that we want. We were touring, living a drugs-and-rock-and-roll lifestyle. Everybody’s hotel bathtub was filled with ice and beer. We were all happy.],
+  [Then it was Chuck D’s turn to speak. Chuck was probably like 24 years old. And with that Godly voice, he said, “I never got high a day in my life.” That hit me because he’s my favorite rapper of all time. I went back to my dressing room and sat down thinking, if he never got high a goddamn day in his life, why does he rap so good? That totally blew my mind.],
+  [Fast forward 30 years, and we’re on a panel in New York City talking about sobriety and recovery. The moderator is Henry Rollins. After the panel, I asked Henry how long he’d been sober, and he said, “Oh, DMC, I’ve never gotten high a damn day in my life.”],
+  [That took me right back to Chuck. It made me realize there is a community of people who are powerful, aggressive, creative, and successful, who go through all the ups and downs and never had to get high a damn day in their lives. That community does exist. I needed to know that then. And the funny thing is, Henry said Chuck’s a very good friend of his.],
+  [What do you hope others learn from your experience?],
+  [McDaniels: When you’re going through something, you feel like you’re the only one in the world going through it.],
+  [Once I realized there were other people struggling like me, and doing something about it, I could do something about it too. It took me 30 years to find healing and recovery. I want people to know they don’t have to wait that long.],
+  [Do you hope to address stigma around mental health?],
+  [McDaniels: Yes. Stigma exists because people talk about problems but don’t give solutions. 1 Million Strong says you can still go to concerts, still live your life, and still have support.],
+  [If you remove guilt and shame , you remove stigma.],
+  [Is it rewarding to perform sober?],
+  [McDaniels: Yes. I wasn’t always high when I performed. I was using substances to alter my feelings.],
+  [Now I see things I was too drunk to see before. I’m still scared to go onstage. I’d rather be in my basement rhyming in a mirror, but now I face it instead of numbing it.],
+  [What strategies or self-care techniques do you use now?],
+  [McDaniels: I go to the gym. I exercise . I got back into comic books. All the stuff people thought wasn’t cool when I was young is actually the strongest stuff you can do.],
+  [When I went to rehab, I was diagnosed with suppressed emotions. Now I’m not afraid to face myself.],
+  [Looking back, what’s the biggest lesson you’ve learned?],
+  [McDaniels: There’s something powerful about admitting you’re scared, afraid, or confused. When you admit you need help, everything that exists to help you will come to you.],
+  [My greatest achievement isn’t records or awards; it’s that I’m living proof you can beat whatever you’re struggling against.],
 ),
   edited-for-length: false,
 )
 
+
+{
+  #section-label([Front Page])
+  #standard-article(
+  title: [Report from Jerusalem: As Israel Keeps Bombing Iran, Palestinians Face Growing Violence in West Bank],
+  author: [Democracy Now!],
+  source-name: [Democracy Now!],
+  images: (),
+  paragraphs: (
+  [Democracy Now! speaks with Iranian Israeli political activist Orly Noy about her recent piece, “Longing for My Tehran.” “It’s been a very emotional time since the beginning of the war, not just because we are constantly running in and out of shelters,” says Noy, “but because this time, the footage of the bombing that I grew accustomed to seeing for over two years from the genocide in Gaza was now coming from my homeland.”],
+  [Noy also comments on Israeli political support for the war on Iran, saying “the very few attempts to protest against the war were brutally crushed by the Israeli police.” Israeli violence against Palestinians in the West Bank is also increasing. “Up until now, our worry was about the ethnic cleansing of the West Bank. Now it is just about executing Palestinians, both by the army and by the settlers,” says Noy.],
+),
+  insert-map: (:),
+  word-count: 145,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+}
 
 {
   #section-label([Features])
   #standard-article(
-  title: [All AI Benchmarks are Wrong, but some are Useful],
-  author: [Pete Warden],
-  source-name: [Pete Warden's Blog],
-  images: (),
-  paragraphs: (
-  [class="wp-block-paragraph"\>When I was new to Google Brain, I got involved in a long and heated discussion about evaluation numbers for some models we were using. As we walked out of the room, the most senior researcher told me “ Look, the only metrics that matter are app store ratings. Everything else is just an approximation. “.],
-  [class="wp-block-paragraph"\>The Word Lens team, who were acquired around the same time Jetpac was, soon gave me a vivid example of this. Google Translate already had a visual translation feature for signs and menus, and the evaluation scores on test datasets were higher than Word Lens’s model achieved. What surprised the Google product managers was that consumers still preferred the Word Lens app over Google Translate for this use case, despite the lower metrics. It turned out the key difference was latency. With Google Translate you snapped a picture, it was uploaded to the server, and a result was returned in a second or two. Word Lens ran at multiple frames per second. This meant that users got instant on-screen feedback about the results, and would jiggle the camera angle until it locked on to a good translation. Google Translate had a higher chance of providing the right translation for a single still image, but because Word Lens was interactive, users ended up with better results overall. Smart product design allowed them to beat Google’s best models, despite apparently falling short on metrics.],
-  [class="wp-block-paragraph"\>I was thinking of this again today as I prepared a data sheet for a potential customer. They wanted to know the BLEU score for our on-device translation solutions. Calculating this caused me almost physical pain because while it remains the most common metric for evaluating machine translation, it doesn’t correlate well with human evaluations of the quality of the results. BLEU is a purely textual measure, and it compares the actual result of the translation word by word against one or more expected translations prepared as ground truth by fluent speakers of the language. There are a lot of problems with this approach. For example, think of a simple French phrase like “ Le lac est très beau en automne “. One translation could be “ The lake is very beautiful in the autumn “. Another could be “ The lake is very pretty in the fall “. “ In the fall, the lake’s very pretty ” would also be a fair translation that captures the meaning, and might read better in some contexts. You can probably imagine many more variations, and as the sentences get more complex, the possibilities increase rapidly. Unless the ground truth in the dataset includes all of them, any results that are textually different from the listed sentences will be given a low accuracy score, even if they convey the meaning effectively. This means that the overall BLEU score doesn’t give you much information about how good a model is, and using it to compare different models against each other isn’t a reliable way to tell which one users will be happy with.],
-  [class="wp-block-paragraph"\>So why does BLEU still dominate the machine translation field? Model creators need a number that’s straightforward to calculate to optimize towards. If you’re running experiments comparing changes to datasets, optimization techniques, and architectures, you need to be able to quickly tell which seem to be improving the results, and its impractical to evaluate all of these by A/B testing them with actual users. The only way to iterate quickly and at scale is with metrics you can run in an automated way. While BLEU isn’t great for comparing different models, relative changes do at least tend to correlate with improvements or declines for a single model. If an experiment shows that the BLEU score has dropped significantly, there’s a good chance that the users will be happier with this version of the model compared to the original. That makes it a helpful directional signal.],
-  [class="wp-block-paragraph"\>This is why people who are actively working on training models are obsessed with benchmarks and metrics. They sound boring to outsiders, and they’re inherently poor approximations to the actual properties you need for your actual product, but without them it’s impossible to make progress. As George Box said – “ All models are wrong, but some are useful “. You can see this clearly with modern LLMs. In general I’m pretty skeptical about the advantages OpenAI and Anthropic gain from their scale, but they have millions of people using their products every day and have the data to understand which metrics correlate to customer satisfaction. There are lots of external efforts to benchmark LLMs, but it’s not clear what they tell us about how well they actually work, and which are best.],
-  [class="wp-block-paragraph"\>This is important because a lot of big decisions get made based on benchmarks. Research papers need to show they beat the state of the art on commonly accepted metrics to be published. Companies get investment funding from their benchmark results. The output and content of the LLMs we use in our daily lives are driven by which metrics are used during their training process. What the numbers capture and what they miss has a direct and growing impact on our world, as LLMs are adopted in more and more applications.],
-  [class="wp-block-paragraph"\>That’s a big reason why Natalie and I started the AI Benchmark Club meetup in SF . There are a lot of AI events in the Bay Area, but if you’re actually training models from scratch, it can be hard to find other people facing similar challenges amongst all the business, marketing, and sales discussions that often dominate. The nice thing about benchmarks is that they sound unimportant to everyone except those of us who rely on them to build new models. This works as a great filter to ensure we have a lot of actual researchers and engineers, with talks and discussions on the practical challenges of our job. As Picasso said – “ When art critics get together they talk about content, style, trend and meaning, but when painters get together they talk about where can you get the best turpentine “. I think benchmarks are turpentine for ML researchers, and if you agree then come join us at our next meetup !],
-),
-  insert-map: (:),
-  word-count: 1044,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-}
-
-{
-  #standard-article(
-  title: [Why does a Local AI Voice Agent Running on a Super-Cheap Soc Matter?],
-  author: [Pete Warden],
-  source-name: [Pete Warden's Blog],
-  images: (),
-  paragraphs: (
-  [class="wp-block-paragraph"\>Most recent news about AI seems to involve staggering amounts of money. OpenAI and Nvidia sign a \$100b data center contract . Meta offers researchers \$100m salaries . VCs invested almost \$200b in AI startups in the first half of 2025 .],
-  [class="wp-block-paragraph"\>Frankly, I think we’re in a massive bubble that dwarfs the dot-com boom, and we’ll look back on these as crazy decisions. One of the reasons I believe this is because I’ve seen how much is possible running AI locally, with no internet connection, on low-cost hardware. The video above is one of my favourite recent examples. It comes from a commercial contract we received to help add a voice assistant to appliances. The idea is that when a consumer runs into a problem with their dishwasher, they can press a help button and talk to get answers to common questions.],
-  [class="wp-block-paragraph"\>What I’m most proud of here is that this is cutting-edge AI actually helping out with a common issue that many of us run into in our daily lives. This isn’t speculative, it’s real and running, and it doesn’t pose a lot of the ethical dilemmas other AI applications face. Here’s why I think this matters:],
-  [The consumer doesn’t have to do anything beyond pressing a button to use it. There’s no phone app to download, no new account to create, and no Wifi to set up. The solution works as soon as they plug the appliance in. This is important because less than half of all smart appliances ever get connected to the internet .],
-  [It’s using Moonshine and an LLM to do a much better job of understanding natural speech than traditional voice assistants. The questions I asked in the demo were off-the-cuff, I deliberately used vague and informal language, and it still understood me.],
-  [It addresses a genuine problem that manufacturers are already paying money to solve. They are currently spending a lot on call centers and truck rolls to help consumers. This solution has the potential to reduce those costs, and increase consumer satisfaction, by offering quick answers in an easy way.],
-  [Running locally means that audio recordings never have to go to the cloud, increasing privacy.],
-  [Local also means fast. The response times in the video are real, this is running on actual hardware.],
-  [This doesn’t require a GPU or expensive hardware. It runs on a Synaptics chip that has just launched , and will be available in bulk for low-single-digit dollars. This means it can be added to mass-market equipment like appliances, and even toys. Since it’s also able to run all the regular appliance control functions, it can replace similarly-priced existing SoCs in those products without raising the price.],
-  [More functionality, like voice-driven controls, can easily be added incrementally through software changes. This can be a gateway to much richer voice interactions, all running locally and privately.],
-  [class="wp-block-paragraph"\>All these properties give local AI a much better chance to change our daily lives in the long term, compared to a chat bot that you access through a text box on a web page. AI belongs out in the world, not in a data center! If you agree, I’d love to hear from you .],
-),
-  insert-map: (:),
-  word-count: 534,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-}
-
-{
-  #standard-article(
-  title: [How hatred of Jews became a common ground for Islamic terrorists and left-wing extremists, fueling domestic terrorism],
-  author: [Arie Perliger, Director of Security Studies and Professor of Criminology and Justice Studies, UMass Lowell],
+  title: [This Sunshine Week, Florida reflects an alarming national trend of blocking the public’s access to information],
+  author: [David Cuillier, Director of the  Brechner Freedom of Information Project, College of Journalism and Communications, University of Florida],
   source-name: [The Conversation (Politics)],
   images: (),
   paragraphs: (
-  [A woman gathers children as law enforcement responds at a Michigan synagogue after an assailant drove a vehicle into the building on March 12, 2026. AP Photo/Corey Williams],
-  [Every major escalation in the Middle East sends shock waves far beyond the region. In the United States, those shock waves arrive not as distant tremors but as catalysts for domestic radicalization and violence, particularly against Jewish communities.],
-  [The data is unambiguous.],
-  [Following the Hamas attack on Israel on Oct. 7, 2023 , which led to the deaths of more than 1,200 Israelis and taking of more than 200 hostages, Israel’s military responded in a campaign that intensified the following year , killing more than 70,000 Gazans.],
-  [At the same time, in 2024 the Anti-Defamation League recorded 9,354 antisemitic incidents in the U. S. – averaging more than 25 acts per day – the highest figure in the audit’s 46-year history.],
-  [FBI hate-crime statistics documented 1,938 anti-Jewish offenses in 2024 , constituting 69% of all religion-based hate crimes. Jews comprise roughly 2% of the population.],
-  [The Secure Community Network, which provides Jewish communities in North America security services, tracked over 10,000 threat incidents and suspicious-activity reports since Oct. 7, 2023, including more than 500 credible threats to life in 2024 .],
-  [Research shows similar trends following past military escalations in the Middle East .],
-  [Geopolitical violence abroad translates, with alarming efficiency, into homegrown threats in the U. S. and Canada. For the first time in the ADL audit’s history, a majority of incidents in 2024, 58%, contained elements explicitly related to Israel or Zionism. As someone who has studied domestic terrorism and hate for over 20 years , such dynamics are not surprising. They illustrate what my own research and that of others calls “imported conflict.”],
-  [The recent attacks against Jewish targets in Toronto , Michigan and possibly the one in San Jose underscore that the threat is neither abstract nor hypothetical.],
-  [On March 6, 2026, a road strewn with rubble and debris is seen after heavy Israeli strikes on Beirut’s southern suburbs. 
- AFPTV / AFP via Getty Images],
-  [Radicalization of strange bedfellows],
-  [Foreign conflict can become domestic violence via multiple pathways.],
-  [Left-wing extremists, Jihadi-inspired militants and far-right white supremacists occupy distinct spaces along the ideological spectrum, yet they converge on a shared target: Jews.],
-  [Each escalatory cycle in the Middle East energizes their exposure to and gradual adoption of extremist views. Online ecosystems accelerate the process dramatically.],
-  [Encrypted Telegram channels circulate operational guidance from jihadist media wings within hours of a Middle East strike , encouraging attacks against Jews wherever they can be found. On platforms like 4chan and Gab, white-supremacist accelerationists seize on the same events to amplify “great replacement” narratives casting Jews as orchestrators of unwanted demographic change .],
-  [Meanwhile, TikTok and Instagram accounts repackage eliminationist slogans, advocating the end of the state of Israel – “from the river to the sea,” “glory to the resistance” – as mainstream progressive content, reaching millions of young users whose algorithmic feeds reward outrage over nuance .],
-  [What once required years of indoctrination within a closed network can now unfold in weeks of passive scrolling.],
-  [On university campuses, the atmosphere has grown particularly volatile. Campus Jewish organization Hillel International documented 2,334 antisemitic incidents during the 2024–25 academic year, the highest since tracking began .],
-  [These confrontations involve physical intimidation, exclusion from student organizations and what the organization describes as the normalization of eliminationist language cloaked in social justice vocabulary.],
-  [Antisemitism as anti-racism],
-  [To understand the increasing ease with which geopolitical violence abroad turns into antisemitic violence in the U. S. requires understanding the ideological developments in recent progressive thinking.],
-  [One observation that our research demonstrates is that today’s antisemitism may not come from the political fringes but from within progressive movements themselves . Much of progressive ideological frameworks tend to divide the world into oppressors and oppressed . Because Jews are often seen as white, wealthy and well connected, they can get placed on the oppressor side of that line.],
-  [Intersectionality – a concept originally designed to show how different forms of disadvantage overlap – is now regularly used to justify shutting Jews out of progressive coalitions and solidarity campaigns .],
-  [According to ADL survey data, Americans who agreed with the belief that problems in the world “come down to the oppressor vs. the oppressed” were 2.6 times more likely to hold negative or stereotypical views about Jewish people compared to those who disagreed with the statement.],
-  [I believe this is not a fringe problem. Among some parts of the intellectual and cultural elite, such as parts of academia, nonprofits and political parties, hostility toward Jews has become more apparent , with some suggesting that Jews simply do not deserve the same moral sympathy extended to other minorities . In some of these circles, if you do not accept that Jewish collective life is inherently oppressive, you are labeled a bad progressive and exiled .],
-  [A coalition of progressive California Democratic delegates pushed a resolution that opponents described as a Zionism “litmus test,” effectively requiring that delegates reject Zionism to be considered legitimate progressives . The D. C. chapter of the Sunrise Movement, an influential progressive climate group, boycotted a voting rights rally because of “ the participation of a number of Zionist organizations .”],
-  [Such dynamics reflect that there is little room in this framework for the complexity of Jewish history, people who have been both persecuted and resilient.],
-  [Furthermore, they can facilitate the rebranding of antisemitism as anti-racism. Some writers have noted that attacking Jewish influence can become a moral duty rather than a bigoted act . Antisemitism is renovated with concepts such as equity, decolonization and liberation, despite promoting the same traditional antisemitic tropes.],
-  [A woman holds signs that depict Israeli leader Benjamin Netanyahu with a Hitler mustache at a protest outside the U. N. on Sept. 25, 2025, in New York. 
- Alexi J. Rosenfeld/Getty Images],
-  [Strange alliance],
-  [I assert that multiple ideological movements targeting Jews reflect a deeper structural alignment between political Islam and segments of the progressive left.],
-  [Superficially, the two camps could hardly appear more different. Contemporary left-wing activism champions LGBTQ rights, environmentalism, social and economic equality, human rights and government transparency. Radical Islamist movements reject most of these commitments outright .],
-  [Beneath these contradictions appears to exist a shared ideological architecture powerful enough to sustain cooperation: anti-globalization, anti-imperialism, rejection of the Western nation-state, the primacy of collective identity over individual rights, a revolutionary vision and, most critically, a common set of enemies .],
-  [This alliance is visible in the protest movements that have erupted on American streets and campuses since the attacks of Oct. 7, 2023. Marches under the banner of Palestinian liberation routinely feature Islamist slogans such as “From the water to the water, Palestine is Arab” alongside progressive placards, or Hezbollah iconography beside “Queers for Palestine” signs. What binds this coalition is opposition to Israel, to American power, and, increasingly, to Jews as symbols of both.],
-  [For domestic security, this Red-Green alliance matters because it creates a shared radicalization experience in which grievances originating in very different worldviews are fused into a single call to action.],
-  [And as a scholar of political violence and extremism , I believe that when a progressive activist and an Islamist militant attend the same rally, share the same social media space and chant the same slogans, the boundary between political protest and operational violence becomes dangerously thin. Consider two recent cases.],
-  [In May 2025, Elias Rodriguez − steeped in anti-Zionist rhetoric and whom the ADL has called a far-left activist − shot and killed Yaron Lischinsky and Sarah Milgrim, two young Israeli Embassy staffers, outside the Capital Jewish Museum in Washington, D. C., pulling out a keffiyeh and chanting “Free Palestine” as he was subdued. Weeks later in Boulder, Colorado, Mohamed Sabry Soliman, allegedly yelling “Free Palestine,” hurled Molotov cocktails at a weekly vigil for hostages held by Hamas, killing 82-year-old Karen Diamond .],
-  [These attackers occupied different positions on the spectrum between ideological radicalism and organized militancy, but they drew from the same well of dehumanizing language that circulates freely in spaces where political protest and incitement to violence have become indistinguishable.],
-  [Foreign crises, domestic failures],
-  [The structures governing how security agencies carry out their work in the U. S. are inadequate to this challenge.],
-  [Counterterrorism agencies seem to continue to treat Islamist militancy, far-right extremism and far-left radicalism as separate, unrelated threats. But the examples above point in a different direction: Ideologically distinct movements are converging on the same target − Jewish communities.],
-  [Meanwhile, civil rights agencies and nonprofit advocacy groups struggle to name progressive antisemitism for what it is , caught between legitimate commitments to anti-racism and the uncomfortable recognition that some anti-racist discourse has itself become bigotry.],
-  [Addressing the feedback loop between Middle East escalation and domestic antisemitic violence requires an honest reckoning with all of its sources – not only the familiar threats from jihadist networks and white supremacist cells, but also the ideological currents within progressive spaces that make hatred of Jews newly respectable.],
-  [Until policymakers, educators and leaders of civil society confront this threat’s full topology, Jewish Americans will continue to face a reality in which more than half report experiencing antisemitism in the past year and nearly half doubt that their neighbors would stand with them if the worst were to come.],
+  [By all measures, the ability to see what the government is up to in the United States has plummeted to new depths since the beginning of the second Trump administration.],
+  [For National Sunshine Week in 2025, I wrote about secrecy creep , the adoption of federal secrecy protections implemented by state and local authorities. In Florida and throughout the United States, this threatens the public’s right to be informed about its government.],
+  [A year later, this creep toward secrecy has become an all-out slide.],
+  [As director of the Joseph L. Brechner Freedom of Information Project at the University of Florida, I track the state of government transparency in the U. S. What has changed since January 2025 is unprecedented.],
+  [Clouds in the Sunshine State],
+  [Florida is a good example of this slide. Once viewed as a leader in transparency , the Sunshine State now charges exorbitant copy fees that discourage average people from requesting public records .],
+  [According to the nonprofit MuckRock, 24% of public records requests in Florida come with a copy fee , averaging US\$1,623. Only Oregon charges fees more often, at 28% of the time. Fees are intended to help agencies cover the cost of large requests, but they tend to be arbitrary and are often used as a way to get pesky people to go away.],
+  [And that’s assuming you even get the information you want. One of my own studies from 2019 indicated that, on average, if you requested a public record in Florida, you would receive it about 39% of the time , placing the state 31st in the nation.],
+  [In 2025, MuckRock put the percentage dipping lower, at 35% . In March 2026, it was at 34% .],
+  [In Florida, more and more government agencies are thwarting the public’s right to know, including attempts to hide the details behind Alligator Alcatraz , the temporary immigrant detention center built in the Florida Everglades in June 2025. The state’s Department of Government Efficiency, or DOGE, office has pushed cities to be more transparent while withholding its own records .],
+  [Members of the state Legislature are attempting to strengthen the public records law . This would improve transparency in Florida’s state government, but I’d argue it doesn’t go far enough. Other states, such as Ohio, Pennsylvania and Connecticut, have implemented stronger laws, including independent enforcement of their sunshine laws , to ensure their governments comply.],
+  [It starts at the top],
+  [State and local governments appear to be taking their cues from the federal government.],
+  [President Donald Trump’s administration heralds itself as the most transparent in history , pointing to the president’s willingness to talk informally to the press or directly to the public through social media.],
+  [While that may be one definition of transparency, the federal government’s willingness to provide documents that show what the government is doing – not just what it says it is doing – has been eviscerated under the second Trump administration. Examples include:],
+  [Refusing to provide tax returns , again, unlike every other president in modern history, and then suing the IRS for \$10 billion when some returns were leaked.],
+  [Removing government websites and databases .],
+  [Firing the national archivist and the director of the Office of Information Policy , the agency within the U. S. Department of Justice that oversees government agencies’ compliance with requests under the Freedom of Information Act , or FOIA.],
+  [Firing and pushing out experienced staffers assigned to handle FOIA requests as part of the 2025 U. S. DOGE purges . This led some agencies, such as the Department of Energy, to apply unorthodox practices, including closing out pending requests .],
+  [Axing the new Open Government Federal Advisory Committee , which was launched to find ways of improving FOIA.],
+  [Pulling out of the Open Government Partnership , which the U. S. helped found in 2011 to foster transparency around the globe.],
+  [As the federal government has taken steps to become less transparent, many state and local governments have followed. 
+ Anadolu/Anadolu via Getty Images],
+  [Typically, the Department of Justice releases annual statistics on FOIA requests every March. When I examined initial reports posted in January, when just 11 agencies had provided their reports, backlogs – that is, requests that remain unresolved after a year – had increased 67% from the previous fiscal year. The time to process simple requests nearly doubled.],
+  [Plummeting to historical depths],
+  [In order to understand how secrecy in the United States now compares to historical precedent, I reached out to people who have researched freedom of information for decades, some going back to the 1970s.],
+  [I asked them a simple question: How does the current state of affairs in freedom of information compare historically?],
+  [Here is what they told me:],
+  [Jane Kirtley is a longtime FOIA scholar from the University of Minnesota who wrote in 2006 , “The Bush administration’s contempt for the public’s right to know amounts to an organized assault on freedom of information that is unprecedented since the enactment of the Freedom of Information Act 40 years ago.”],
+  [Today, in comparison? “Abysmal,” she wrote to me via email. “It was abundantly clear from the moment Elon Musk and his ‘musketeers’ invaded and pillaged government electronic records that we have entered a new era of deletion, obfuscation, fabrication and utter contempt for the concept of data integrity and the public’s right to know.”],
+  [Thomas Susman , who helped craft the 1974 FOIA amendments and currently assists the American Bar Association, wrote in 2005 that increasing delays and backlogs threatened FOIA’s intended purpose.],
+  [In February 2026, he wrote to me that the “arc of the FOIA universe has for six decades bent toward greater public access to government information − until now. If ‘democracy dies in darkness’ (according to The Washington Post’s official slogan), America’s democracy is threatened with becoming dead meat. We’ve survived the Civil War, the Great Depression, Vietnam, Watergate and more. If we fight back hard enough, this too shall pass, though not quickly, and likely with lasting scars.”],
+  [Patrice McDermott directed Open the Government from 2006 to 2017 and pointed in 2007 to an underlying tension throughout government: “the ability – and willingness – to harness the promise of digital information for public access and accountability while not abusing its potential for control of that information.”],
+  [Today, she writes that, as Benjamin Franklin put it, we “have a Republic … if (we) can keep it” and are committed to the fight for our constitutional form of government.],
+  [Perhaps advances can be made to reverse the secrecy trend and carry out the intentions of the Freedom of Information Act, as expressed by Lyndon B. Johnson upon its adoption nearly 60 years ago: “I signed this measure with a deep sense of pride that the United States is an open society in which the people’s right to know is cherished and guarded.”],
+  [class="fine-print"\> David Cuillier has received funding from the Democracy Fund and John S. and James L. Knight Foundation to study the state of freedom of information. He is a board member of the National Freedom of Information Coalition and he coordinates national Sunshine Week.],
 ),
   insert-map: (:),
-  word-count: 1569,
+  inline-pq: pull-quote([This led some agencies, such as the Department of Energy, to apply unorthodox practices, including closing out pending requests.], [David Cuillier, Director of the  Brechner Freedom of Information Project, College of Journalism and Communications, University of Florida]),
+  inline-pq-idx: 14,
+  word-count: 1182,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -182,51 +174,57 @@
 
 {
   #standard-article(
-  title: [How the National Security Council typically functions to plan and fully assess risks when presidents consider going to war],
-  author: [Gregory F. Treverton, Professor of Practice in International Relations, USC Dornsife College of Letters, Arts and Sciences],
+  title: [Pete Hegseth is working hard to make sure the public hears only good news about Iran war],
+  author: [Kathy Kiely, Professor and Lee Hills Chair of Free Press Studies, University of Missouri-Columbia],
   source-name: [The Conversation (Politics)],
   images: (),
   paragraphs: (
-  [Director of National Intelligence Tulsi Gabbard, center, acting Commander of U. S. Cyber Command William Hartman and CIA Director John Ratcliffe, right, stand before the Senate Committee on Intelligence on Capitol Hill on March 18, 2026. AP Photo/Jose Luis Magana],
-  [Three weeks into the U. S. war with Iran, it seems increasingly evident that President Donald Trump and his administration miscalculated how Iran would respond to attacks .],
-  [Besides appearing unprepared by the escalation of war , the president has offered contradictory statements on the U. S. rationale for bombing Iran , including that Iranian missiles could “soon” rain down on American cities .],
-  [The administration’s inconsistent rationale for waging war was laid bare on March 18, 2026, when Tulsi Gabbard, the director of national intelligence, testified before the Senate Intelligence Committee and declined to say whether her agency had made an estimate of if and when Iran would threaten the U. S. mainland.],
-  [“It is not the intelligence community’s responsibility to determine what is and is not an imminent threat,” Gabbard said .],
-  [The statement was especially odd given that the briefing’s subject was the U. S. intelligence community’s latest global threat assessment. It’s clear to me that neither Gabbard nor other members of the intelligence community were part of Trump’s decision-making about going to war.],
-  [Besides serving as chair of the National Intelligence Council in the Barack Obama administration, I was a staff member of the National Security Council in the Jimmy Carter administration. I know that this apparent lack of a coordinated policy on Iran is a far cry from the war preparation and planning done during previous presidential administrations.],
-  [Typically, the National Security Council, which consists of the Cabinet secretaries of the national security agencies, does its work through its committees, including the Deputies Committee, which is made up of the top deputies in those departments. The Deputies Committee reviews plans and assesses options, usually presenting a recommendation to the principals, including the president.],
-  [In that sense, the National Security Council is seen within an administration as the honest broker, especially in balancing the roles of the two main foreign affairs departments: the State Department and the Defense Department.],
-  [To be sure, different administrations have used the National Security Council in different ways.],
-  [President Dwight Eisenhower created the modern National Security Council . His was an elaborate structure, with groups for both assessing options and overseeing implementation. It reflected his wartime experience, with careful staffing from a general staff whose responsibilities ranged from operations and logistics to intelligence and plans.],
-  [Other administrations have favored less formal arrangements. John F. Kennedy, for instance, kept discussions with the National Security Council secret during the 1962 Cuban missile crisis . But all the National Security Council stakeholders were represented, and Kennedy reached out to consult outside expertise on the Soviet Union .],
-  [President Barack Obama and Vice President Joe Biden walk away from the lectern after Obama announced a nuclear deal with Iran on July 14, 2015. 
- AP Photo/Andrew Harnik, Pool],
-  [Lyndon Johnson made Tuesday lunches his forum for debating decisions about U. S. involvement in Vietnam. Beginning with just his secretaries of state and defense, the lunches became a National Security Council meeting but in less formal circumstances. The CIA director, the chair of the Joint Chiefs of Staff and the press secretary were later added to the group.],
-  [In other administrations at war, including the George H. W. Bush and George W. Bush administrations in Iraq , the Deputies Committees would meet daily to assess progress and review options for what came next.],
-  [In the Obama administration, the National Intelligence Council I chaired supplied the intelligence support to the Deputies Committee. We provided a steady stream of intelligence assessments across various subjects. Those included pro-democracy protests during the Arab Spring in the 2010s to Russia’s annexation of Crimea in 2014 and the 2015 Iran nuclear deal .],
-  [The intelligence assessments provided the information – about where wars stood and what may come next – used for discussion among the deputies. They were discussions informed by experts on the Deputies Committee and from staff on the National Security Council who specialized in the region or military affairs.],
-  [This was nowhere better illustrated than in negotiating the Obama administration’s nuclear agreement with Iran . The deal required bringing together experts on Iran and regional dynamics in the Middle East with experts on nuclear fuel cycles and the making of nuclear weapons.],
-  [Hardly seen],
-  [The Trump administration cut the National Security Council staff in half in May 2025, to around 150. The plan was to streamline and restructure national intelligence under Secretary of State Marco Rubio.],
-  [Since White Houses always want to pretend they are cheaper than they are, most staff with the National Security Council are seconded – or loaned for free – from one of the agencies. The process saves the White House money. But it also provides it with invaluable in-house expertise and exposes those seconded officials to presidential policymaking.],
-  [A friend and colleague who served as under secretary of defense quipped that every time he saw a State Department counterpart coming to a Deputies Committee meeting, he knew what was coming in substance: a request for a military solution to a geopolitical problem.],
-  [His stock answer: “Yes, we can do that, but it’ll require 100,000 soldiers and cost US\$10 billion.” That answer was his quip, but the Deputies Committee provided a forum for arguing about the merits of the case.],
-  [The Trump administration in January 2025 outlined the National Security Council structure in familiar terms . But the Joint Chiefs of Staff chairman and director of national intelligence , both a regular presence in debates in previous administrations, were made situational rather than regular members. They would attend as needed, not automatically.],
-  [This photo provided by the White House shows President Donald Trump talking with White House chief of staff Susie Wiles as Secretary of State Marco Rubio listens at Mar-a-Lago during Operation Epic Fury on Feb. 28, 2026. 
- Daniel Torok/The White House via AP],
-  [But the National Security Council has hardly been seen since, unlike Trump’s Cabinet, which gathers occasionally at meetings that often begin with Cabinet members lavishing praise on the president .],
-  [Brian Kilmeade of Fox News Radio asked Trump on March 13, 2026, about that inner circle.],
-  [“In your Cabinet with the vice president, secretary of state, what is it like, what are the dynamics when you have a big decision like Iran or Venezuela?” Kilmeade asked. “Are people speaking up and speaking their minds?”],
-  [Trump’s answer spoke volumes.],
-  [“They do,” the president said. “I let them speak their mind, and they do. And we have some differences, but they, they never end up being much. I convince them all to, let’s do it my way.”],
-  [Perhaps this casual approach to national security from the Trump administration should not surprise Americans after “ Signalgate ” – when administration officials in 2025 used the messaging app Signal rather than secure government modes to discuss U. S. military strikes on Yemen and inadvertently included a journalist in the communications.],
-  [But when lives are at stake, not to mention Americans’ pocketbooks and the global economy , I think the nation deserves better. Conducting a war requires a hard-headed process for assessing progress and evaluating next steps. In other administrations, the National Security Council would have provided that.],
-  [class="fine-print"\> Gregory F. Treverton does not work for, consult, own shares in or receive funding from any company or organization that would benefit from this article, and has disclosed no relevant affiliations beyond their academic appointment.],
+  [The Trump administration doesn't like the free press's coverage of the Iran war. MirageC/Getty],
+  [Martha Gellhorn stowed away on a hospital ship to become the only woman journalist to land on Normandy Beach on D-Day. She carried stretchers before writing her harrowing account of the invasion.],
+  [The New Yorker’s famously epicurean writer A. J. Liebling subsisted on military rations and came under fire during World War II to describe what it was like for the soldiers and sailors at war.],
+  [Syndicated columnist Ernie Pyle died, in a helmet and Army fatigues , among some of the troops whose names and hometowns he carefully included in his dispatches. “At this spot, the 77th Infantry lost a buddy,” read the makeshift sign posted at the place where a Japanese machine gun bullet felled him.],
+  [Those reporters told stories of war in all its gore and its glory, its exhilaration and its ennui. Others have laid bare the anxiety and doubts.],
+  [Veteran Vietnam correspondent Neil Sheehan broke the story of the Pentagon Papers , which showed how government officials deceived the public about the Vietnam war. Sheehan won a Pulitzer Prize for his book, “ A Bright Shining Lie ,” which chronicled the war’s impact on idealists who once believed in it, through the story of his relationship with an inside source.],
+  [Well before bombs started dropping on Iran and President Donald Trump began to tease the notion of a ground invasion , his defense secretary, Pete Hegseth, began putting obstacles in the way of the reporters with the most experience covering the nation’s military. While Hegseth’s moves haven’t stopped the reporters from doing their jobs, it has made it harder for them to keep the public informed.],
+  [As someone who worked as a Washington correspondent for decades , I worry that these obstacles could limit the number of reporters who have the experience with – and trust of – key sources to do the kind of in-depth, nuanced journalism that a war, with its price in lives and resources, deserves.],
+  [A group of press correspondents on board a U. S. landing craft en route to amphibious maneuvers off the coast of England on May 8, 1944, including, with his back to the camera on right, A. J. Liebling of The New Yorker magazine. 
+ AP photo],
+  [Corralling the watchdogs],
+  [Generally, war correspondents need the cooperation of the military they are covering to get to the front. For the U. S. press, that requires relationships and credibility at the Pentagon.],
+  [Early in 2025, Hegseth ordered major news organizations to give up their desks in the Pentagon press room to MAGA favorites. NPR’s desk went to Breitbart News . Roaming the hallways, where reporters sometimes found sources who would deviate from the company line, became verboten.],
+  [Eventually, the area in the Pentagon where reporters were allowed was circumscribed to a single corridor outside the press room – even though the public affairs officers who worked most closely with reporters were in an office on the other side of the 6½-million-square-foot building.],
+  [Then Hegseth conditioned the issuance of press credentials on reporters, effectively giving military brass the right to censor or sanitize their reports.],
+  [As a result, almost the entire Pentagon press corps, which included outlets ranging from The Associated Press to The New York Times to Fox News and USNI News, which covers the Navy, moved out of the building in October 2025. Some have been invited back for the press briefings Hegseth and Gen. Dan Caine, chairman of the Joint Chiefs of Staff, have begun to give on progress of the battle in Iran.],
+  [But after the first of these briefings, the Pentagon abruptly banned photographers from attending, reportedly because Hegseth’s staff found some of their images of him to be unflattering .],
+  [Secretary on defense],
+  [Gone are the off-camera “background” briefings where Department of Defense brass could give trusted reporters greater context and nuance for battlefield decisions. Gone are the impromptu hallway meetings where reporters have, with luck or persistence, picked up information that deviates from an administration’s agreed-upon script.],
+  [Also not in evidence, at least not so far: the deployment of the kind of journalistic embed program that the Pentagon used during the Iraq war to give the American people an up-close look at troops in the conflict zone.],
+  [How might that affect what you, the public, gets to know? It was a combination of an anonymous tip and insider access that led the legendary investigative reporter Seymour Hersh to break the devastating story of My Lai, the American soldiers’ massacre of civilians during the Vietnam War.],
+  [At the made-for-TV briefings he does hold, Hegseth devotes most of the session to questions from outlets such as the Epoch Times, The Daily Caller and LindellTV – owned by Mike Lindell , the head of the well-known pillow company.],
+  [At one recent briefing , one of the favored new cadre tossed Hegseth a shameless softball. Referring to American troops in the Middle East, the questioner asked: “What is your prayer for them?”],
+  [Yet as hostilities drag on, even some among Hegseth’s chosen press corps have begun to ask irksome questions about the war. The normally Trump-friendly Daily Caller ran a less-than-flattering piece about the president berating a reporter for asking about troop deployments.],
+  [On March 4 , 2026, Hegseth accused journalists of focusing on war casualties to make “the president look bad.” On March 13 , Hegseth castigated as “more fake news” CNN’s report that the Trump administration had underestimated the impact of the war on shipping traffic in the Strait of Hormuz.],
+  [“The sooner David Ellison takes over that network, the better,” Hegseth concluded, adding fuel to the speculation that a Trump supporter who won a bidding war for CNN’s corporate parent is going to turn the network into a more administration-friendly outlet.],
+  [Soon after, Federal Communications Commission chairman Brendan Carr threatened network broadcast licenses over coverage critical of the administration’s conduct of the war. Echoing Carr’s threats the next day: the president himself .],
+  [‘Be a Marine’],
+  [The Trump administration is not alone in its disdain for a free press: Israel has long been notorious for restricting press access from areas where it is conducting military operations.],
+  [Leaders of the theocratic Iranian regime are even worse ; the country is cited by press freedom advocate Reporters Without Borders as “one of the world’s most repressive countries in terms of press freedom.”],
+  [But the United States has historically distinguished itself by making freedom its calling card, even – or perhaps especially – in wartime.],
+  [“The news may be good, or bad. We shall tell you the truth,” Voice of America, a U. S. government-launched radio network, promised – in German – in its very first broadcast to Nazi Germany in 1942.],
+  [Secretary of Defense Pete Hegseth, left, and Adm. Charles Bradford Cooper II, commander of U. S. Central Command, during a press conference at U. S. Central Command headquarters in Tampa, Fla., on March 5, 2026. 
+ Octavio Jones/AFP via Getty Images],
+  [Now, however, the Trump administration, is busy trying to undermine the editorial independence of Voice of America , which broadcasts news to countries that don’t have a free press.],
+  [Pentagon reporters are continuing to find ways to get around the propaganda. NPR’s Tom Bowman told me that he takes inspiration from a pep talk he overheard a military source deliver to another reporter crestfallen over the lack of access.],
+  [“Quit whining and be a Marine,” the official said. “Go over, under or around the obstacle. Find a way to do it.”],
+  [Most reporters and their organizations are doing just that, finding sources outside the administration, like the ones in Congress who told The Hill how much money the war is costing taxpayers per day. And they’re continuing to get information from sources on the inside, like the ones who told The Wall Street Journal that Trump’s military advisers warned him that Iran might block the Gulf of Hormuz, but that he opted for war anyway.],
+  [So far, neither Hegseth’s obstacle course nor threats from the White House and the FCC have stopped the press from reporting stories or asking questions that the administration would rather not see or hear.],
+  [But restrictions on press freedom have a corrosive effect. We already have seen how Trump, using lawsuits and licensing threats, has used his power to make corporate media owners think twice about pursuing news he doesn’t like.],
+  [Seasoned Pentagon reporters will still find ways to get to sources they already have. But Hegseth’s tactic of blocking press access to the military keeps reporters from developing new sources and keeps new reporters from building the relationships they need to become seasoned Pentagon reporters.],
+  [Americans have long been able to understand the triumphs and tribulations of American troops at war, and to make intelligent decisions about whether they approve of a war’s cost, because a free press has been able to tell the story – good or bad. That tradition is now at risk.],
+  [class="fine-print"\> Kathy Kiely does not work for, consult, own shares in or receive funding from any company or organization that would benefit from this article, and has disclosed no relevant affiliations beyond their academic appointment.],
 ),
   insert-map: (:),
-  inline-pq: pull-quote([We provided a steady stream of intelligence assessments across various subjects.], [Gregory F. Treverton, Professor of Practice in International Relations, USC Dornsife College of Letters, Arts and Sciences]),
-  inline-pq-idx: 13,
-  word-count: 1263,
+  word-count: 1527,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -235,221 +233,74 @@
 
 {
   #standard-article(
-  title: [In its hunt for critical minerals, the US is misconstruing what is and is not America’s],
-  author: [Coalter G Lathrop, Senior Lecturing Fellow in International Law, Duke University],
-  source-name: [The Conversation (Politics)],
-  images: (),
-  paragraphs: (
-  [A metal claw reaches for an iron and manganese nodule on the seabed for testing. USGS Pacific Coastal and Marine Science Center],
-  [Americans have a reputation for being bad at world geography , and the current U. S. administration is no exception, particularly when it comes to correctly identifying what is – and is not – part of the United States of America.],
-  [President Donald Trump’s April 2025 executive order “ unleashing America’s offshore critical minerals ” provides an example. It purports to “unleash” seabed minerals both within and far outside U. S. jurisdiction.],
-  [The minerals on the U. S. seabed are America’s. The minerals on the international seabed are not “America’s.” The administration plans to authorize companies to mine in international areas, nonetheless.],
-  [The Deep Discoverer rover explores a field of iron and manganese nodules in the North Atlantic. 
- NOAA],
-  [I have studied the international agreements and customary rules governing the oceans since the Law of the Sea Convention entered into force in 1994. The Trump administration’s attempt to unilaterally exploit the seabed resources of the global commons will severely undermine part of the rules-based international order that the U. S. built and of which it has been the main beneficiary.],
-  [The scramble for critical minerals],
-  [The U. S. has been trying to secure access to critical minerals that are essential for modern technology. These materials include nickel, manganese and cobalt for large batteries and copper for the power grid . All can be found on land, but some can also be found at the bottom of the sea.],
-  [Of particular interest are polymetallic nodules – agglomerations, typically smaller than a potato, containing manganese and other metals and found in the silt of the deep ocean floor. An Australian mining executive described these nodules as “ an EV battery in a rock .”],
-  [The Clarion Clipperton Zone is rich in ancient polymetallic nodules, found loose on the seafloor. The zone, southeast of Hawaii, covers approximately 1.7 million square miles (4.5 million square kilometers). 
- U. S. Geological Survey],
-  [The Clarion Clipperton Zone , in the middle of the Pacific Ocean, contains one of the highest concentrations of polymetallic nodules. But whose nodules are they?],
-  [My ocean],
-  [In September 1945, President Harry Truman claimed for America a large part of the seabed extending from its shores, areas that, before Truman’s claim, were shared by the international community.],
-  [In reaction, countries around the world spent the next five decades hammering out a system to limit how much of the seabed that coastal countries could claim, and establishing rules that would govern the remaining shared areas of the oceans.],
-  [The resulting arrangement, finalized in 1994, gives countries that border the ocean authority over the resources in the water and seabed within 200 nautical miles (370 kilometers) of their coasts, known as “ exclusive economic zones ,” and, for some countries, additional areas of seabed beyond that limit.],
-  [America’s exclusive economic zones, outlined in yellow, extend out 200 nautical miles and include rings around several islands in the Pacific Ocean. 
- NOAA National Center for Environmental Information, 2020],
-  [The United States enjoys one of the world’s largest exclusive economic zones today. It includes an area totaling over 4 million square miles (10 million square kilometers) – larger than all 50 U. S. states combined – and an additional nearly 400,000 square miles (1 million square kilometers) of seabed extending even farther offshore.],
-  [In those areas, the United States controls the exploitation and management of living and nonliving natural resources, including seabed minerals.],
-  [Our ocean],
-  [But exclusive economic zones were only one part of what the Law of the Sea Convention negotiators called a “package deal.”],
-  [The other part of the deal retains the remaining areas – approximately half of the planet’s seabed – for the international community. It’s known as “the Area,” and its resources are considered the common heritage of mankind. To prevent a free-for-all, no single country can authorize mining in the Area. Instead it is managed by the International Seabed Authority for the benefit of humankind as a whole. To date, the ISA has executed 31 contracts with countries and companies to explore the mineral resources in the Area.],
-  [Examples of proposed seabed mining methods. 
- Congressional Research Service, modification of Kathryn Miller et al., 2018],
-  [One hundred and seventy-one countries have joined the Convention so far. However, the United States, despite being one of its primary architects, is the only industrialized nation remaining outside the treaty.],
-  [Nonetheless, the U. S. has long considered the treaty to reflect rules of customary international law. Where the Area is concerned, the U. S. respected the terms of the package deal – until now.],
-  [‘America’s’ offshore critical minerals],
-  [Trump’s offshore mining order relies on a U. S. statute enacted in 1980 as an interim measure pending completion of negotiations related to the Area. It authorized the National Oceanic and Atmospheric Administration to license exploration and permit commercial recovery of polymetallic nodules on the seabed in areas outside U. S. jurisdiction.],
-  [When that 1980 statute was enacted, there was a spurt of commercial interest. The U. S. issued four exploration licenses . Two were relinquished in the 1990s . In the 30-plus years since the international community finalized the package deal, even the company holding the two remaining NOAA licenses – Lockheed Martin – has considered them largely worthless unless the U. S. ratifies the Law of the Sea Convention.],
-  [That changed in April 2025 when Trump, citing the 1980 U. S. law, ordered the NOAA to “expedite the process for reviewing and issuing seabed mineral exploration licenses and commercial recovery permits in areas beyond national jurisdiction .”],
-  [The Metals Company tests its equipment, pulling up small nodules from the seafloor in the Clarion Clipperton Zone.],
-  [A few days later, Canadian mining firm The Metals Company submitted an application via its wholly-owned subsidiary TMC USA to mine polymetallic nodules in the Area under U. S. unilateral authority. TMC USA touted its application for mining areas in the nodule-rich Clarion Clipperton Zone – in the middle of the Area – as a “ world first .”],
-  [The International Seabed Authority condemned the move and reminded countries that “ unilateral exploitation of resources that belong to no single State but to all of humanity is prohibited .”],
-  [Is that legal?],
-  [So, does the Trump administration’s plan violate U. S. international obligations?],
-  [The answer is maybe.],
-  [The U. S. is not a party to the Law of the Sea Convention, so it is not bound by the treaty. But scholars disagree on whether U. S. unilateral mining would violate obligations arising from rules of customary international law .],
-  [The cross-section of a small manganese nodule, about 3 inches (8 centimeters) across, shows how metals very slowly accumulate around a core. 
- Hannes Grobe/AWI via Wikimedia , CC BY-SA],
-  [The United States is not the only player in this game. If any of the 171 countries that have subscribed to the treaty were to participate in or allow their citizens to participate in U. S.-authorized mining activity in the Area, they would violate their treaty obligations . Any other Convention partner could bring them before the International Tribunal for the Law of the Sea in Hamburg, Germany.],
-  [Canada, home of TMC, could find itself in that position . So could many nations whose citizens or companies have worked with TMC. If those partners continued their work with TMC USA under U. S. authorization, their home countries could be exposed to legal action .],
-  [The Area is not a domestic source],
-  [In announcing an expedited seabed mining application process in January 2026, NOAA Administrator Neil Jacobs mischaracterized polymetallic nodules in the Area as “ a domestic source of critical minerals for the United States .”],
-  [To be clear, the United States has critical minerals on its land territory and within its area of exclusive seabed jurisdiction. It is beginning to explore those resources with an eye to possible future mining. These are domestic American sources of critical minerals – they are “America’s.” The minerals in the Area are not.],
-  [Yes, America needs critical minerals, but it should not undermine the system of international ocean governance – a system it engineered and from which it benefits perhaps more than any other nation – to get them.],
-  [class="fine-print"\> Coalter G Lathrop does not work for, consult, own shares in or receive funding from any company or organization that would benefit from this article, and has disclosed no relevant affiliations beyond their academic appointment.],
-),
-  insert-map: (:),
-  word-count: 1398,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-}
-
-{
-  #standard-article(
-  title: [Beyond Code Review],
-  author: [Mike Loukides],
-  source-name: [O'Reilly Radar],
-  images: (),
-  paragraphs: (
-  [Not that long ago, we were resigned to the idea that humans would need to inspect every line of AI-generated code. We’d do it personally, code reviews would always be part of a serious software practice, and the ability to read and review code would become an even more important part of a developer’s skillset. At the same time, I suspect we all knew that was untenable, that AI would quickly generate much more code than humans could reasonably review. Understanding someone else’s code is harder than understanding your own, and understanding machine-generated code is harder still. At some point—and that point comes fairly early on—all the time you saved by letting AI write your code is spent reviewing it. It’s a lesson we’ve learned before; it’s been decades since anyone except for a few specialists needed to inspect the assembly code generated by a compiler. And, as Kellan Elliott-McRae has written , it’s not clear that code review has ever justified the cost. While sitting around a table inspecting lines of code might catch problems of style or poorly implemented algorithms, code review remains an expensive solution to relatively minor problems.],
-  [With that in mind, specification-driven development (SDD) shifts the emphasis from review to verification, from prompting to specification, and from testing to still more testing. The goal of software development isn’t code that passes human review; it’s systems whose behavior lives up to a well-defined specification that describes what the customer wants. Finding out what the customer needs and designing an architecture to meet those needs requires human intelligence. As Ankit Jain points out in Latent Space , we need to make the transition from asking whether the code is written correctly to asking whether we’re solving the right problem. Understanding the problem we need to solve is part of the specification process—and it’s something that, historically, our industry hasn’t done well .],
-  [Verifying that the system actually performs as intended is another critical part of the software development process. Does it solve the problem as described in the specification? Does it meet the requirements for what Neal Ford calls “ architectural characteristics ” or “-ilities”: scalability, auditability, performance, and many other characteristics that are embodied in software systems but that can rarely be inferred from looking at the code, and that AI systems can’t yet reason about? These characteristics should be captured in the specification. The focus of the software development process moves from writing code to determining what the code should do and verifying that it indeed does what it’s supposed to do. It moves from the middle of the process to the beginning and the end. AI can play a role along the way, but specification and verification are where human judgment is most important.],
-  [Want Radar delivered straight to your inbox? Join us on Substack. Sign up here .],
-  [Drew Breunig and others point out that this is inherently a circular process, not a linear one . A specification isn’t something you write at the start of the process and never touch again. It needs to be updated whenever the system’s desired behavior changes: whenever a bug fix results in a new test, whenever users clarify what they want, whenever the developers understand the system’s goals more deeply. I’m impressed with how agile this process is. It is not the agile of sprints and standups but the agile of incremental development. Specification leads to planning, which leads to implementation, which leads to verification. If verification fails, we update the spec and iterate. Drew has built Plumb, a command line tool that can be plugged into Git, to support an automated loop through specification and testing. What distinguishes Plumb is its ability to help software developers look at the decisions that resulted in the current version of the software: diffs, of course, but also conversations with AI, the specifications, the plans, and the tests. As Drew says, Plumb is intended as an inspiration or a starting point, and it’s clearly missing important features—but it’s already useful.],
-  [Can SDD replace code review? Probably; again, code review is an expensive way to do something that may not be all that useful in the long run. But maybe that’s the wrong question. If you don’t listen carefully, SDD sounds like a reinvention of the waterfall process: a linear drive from writing a detailed spec to burning thousands of CDs that are stored into a warehouse. We need to listen to SDD itself to ask the right questions: How do we know that a software system solves the right problem? What kinds of tests can verify that the system solves the right problem? When is automated testing inappropriate, and when do we need human engineers to judge a system’s fitness? And how can we express all of that knowledge in a specification that leads a language model to produce working software?],
-  [We don’t place as much value in specifications as we did in the last century; we tend to see spec writing as an obsolete ceremony at the start of a project. That’s unfortunate, because we’ve lost a lot of institutional knowledge about how to write good, detailed specifications. The key to making specifications relevant again is realizing that they’re the start of a circular process that continues through verification. The specification is the repository for the project’s real goals: what it’s supposed to do and why—and those goals necessarily change during the course of a project. A software-driven development loop that runs through testing—not just unit testing but fitness testing, acceptance testing, and human judgment about the results—lays the groundwork for a new kind of process in which humans won’t be swamped by reviewing AI-generated code.],
-),
-  insert-map: (:),
-  word-count: 951,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-}
-
-{
-  #standard-article(
-  title: [‘Grey’s Anatomy’ and ‘Euphoria’ Star Eric Dane Dies at 53 After ALS Diagnosis],
+  title: [People Who Eat More Red Meat May Have Higher Risk of Type 2 Diabetes],
   author: [Healthline],
   source-name: [Healthline],
   images: (),
   paragraphs: (
-  [US actor Eric Dane attends Prime Video’s “Countdown” premiere at the Harmony Gold theatre in Los Angeles on June 18, 2025. Image credit: VALERIE MACON/Getty Images],
-  [Actor Eric Dane has died from amyotrophic lateral sclerosis (ALS) at the age of 53.],
-  [He had first announced his ALS diagnosis only 10 months prior.],
-  [The actor became a strong advocate for research following his diagnosis.],
-  [The disease is not curable, but there are treatments that can slow its progression.],
-  [There are also treatments that can improve function and comfort for patients.],
-  [Actor Eric Dane died on Thursday, February 19, 2026, after a “courageous battle” with amyotrophic lateral sclerosis (ALS) , according to an announcement on his official Instagram account.],
-  [“He spent his final days surrounded by dear friends, his devoted wife, Rebecca, and his two beautiful daughters, Billie and Georgia, who were the center of his world,” the post read.],
-  [It additionally spoke of his advocacy for awareness and research.],
-  [Although not mentioned in the post, Dane had partnered with I AM ALS and its  Push for Progress  initiative, which aims to raise money to accelerate research and expand access to promising new treatments.],
-  [Dane also lobbied for the extension of the Accelerating Access to Critical Therapies for ALS Act. This law, which was passed in 2021, provided five years of funding for research and allowed early access to ALS treatments. It is set to expire in 2026, according to reporting from CNN .],
-  [The 53-year-old star, best-known for his roles as Dr. Mark “McSteamy” Sloan on “Grey’s Anatomy” and Cal Jacobs in “Euphoria,” first revealed his diagnosis 10 months prior to his death.],
-  [In an interview with People at the time, Dane said, “I feel fortunate that I am able to continue working and am looking forward to returning to the set of  Euphoria  next week.”],
-  [However, it appears that he did not have as much time left as he had hoped. “[H]is illness progressed far more quickly than anyone could have imagined,” the announcement said.],
-  [What is amyotrophic lateral sclerosis (ALS)?],
-  [Rab Nawaz Khan , MD, a board certified neurologist who is a consultant at MyMSTeam , told Healthline that ALS is a progressive disease that damages motor neurons, the nerve cells that control voluntary movement.],
-  [You might also hear it referred to as “Lou Gehrig’s disease,” due to it becoming widely known after it was diagnosed in baseball player Lou Gehrig.],
-  [“The earliest symptoms are often focal weakness, like hand clumsiness, foot drop, tripping, trouble with buttons, or a change in speech clarity,” said Khan. “Many people also notice muscle cramps, twitching, and muscle thinning in the affected area.”],
-  [As the disease progresses, weakness can spread to other regions, he noted, affecting walking, arm function, speech, and swallowing.],
-  [Eventually, the person’s breathing muscles weaken, leading to symptoms such as poor sleep, morning headaches , and shortness of breath with activity.],
-  [“Sensation is usually preserved,” Khan added, “so numbness and tingling are not typical ALS features, and a subset of patients can have changes in thinking or behavior.”],
-  [The National Institute of Neurological Disorders and Stroke (NINDS) adds that ALS can happen at any age, although it’s more common between the ages of 55 and 75. Younger men are more likely than younger women to develop ALS, although women catch up as they grow older.],
-  [Non-Hispanic white people are most likely to develop the disease. The agency additionally notes a poorly understood link between military service and ALS.],
-  [Around 10% of all ALS cases are due to a genetic mutation, according to NINDS.],
-  [How is ALS treated?],
-  [Khan said that ALS is not yet curable, although there are treatments that can moderately slow its progression. There are also interventions that improve comfort and function.],
-  [“Disease-targeted medications include riluzole and edaravone , which can slow decline in certain patients, and a gene-targeted therapy is available for a specific inherited form related to SOD1,” he explained.],
-  [However, Khan said the biggest impact often comes from multidisciplinary ALS care, where breathing, nutrition, mobility, and communication are addressed early and proactively.],
-  [“Noninvasive ventilation can improve sleep , energy, and quality of life when breathing muscles weaken, and cough assist devices help clear secretions,” he said.],
-  [“Nutrition support, speech therapy , communication devices, physical and occupational therapy, and symptom-directed medications for spasticity, drooling, cramps, mood or pseudobulbar affect can meaningfully reduce day-to-day burden,” added Khan.],
-  [Research is ongoing, however, and thanks to Dane’s efforts, it is gaining more attention than ever.],
-  [Though ALS ultimately claimed his life, his work may help accelerate progress for those still living with the disease.],
+  [A recent study suggests that a higher intake of red meat may be associated with an increased risk of diabetes. Image Credit: VICUSCHKA/Getty Images],
+  [A recent study found that a person’s red meat consumption may increase their risk of type 2 diabetes.],
+  [The findings also suggest that consuming alternative proteins may help reduce the risk of diabetes.],
+  [Nutrition experts offer alternative protein options to red meat to help maintain overall health.],
+  [Diabetes is a growing health concern in the United States. According to the Centers for Disease Control and Prevention (CDC), 40.1 million people had diabetes in 2023, and 115.2 million had prediabetes.],
+  [The CDC also notes that among those with diabetes, 90% to 95% have type 2 diabetes.],
+  [Type 2 diabetes can generally be prevented or delayed with lifestyle changes, such as diet, exercise, and weight management.],
+  [A recent study published in the British Journal of Nutrition found that higher red meat intake was associated with a higher risk of diabetes.],
+  [It also found that substituting red meat for other protein sources may help lower a person’s risk of developing diabetes.],
+  [“This study adds to a consistent body of research showing that higher red meat intake is linked with higher rates of type 2 diabetes,” said Michelle Routhenstein , a preventive cardiology dietitian at Entirely Nourished, who was not involved in the study.],
+  [“In this large NHANES analysis, those eating the most red meat had about 49% higher odds of having diabetes compared to those eating the least. When we see similar findings across different types of research, it strengthens the overall message,” Routhestein told Healthline.],
+  [Higher red meat intake and diabetes risk],
+  [In this population-based cross-sectional study, the researchers analyzed data from the National Health and Nutrition Examination Survey (NHANES) from 2003 to 2016.],
+  [They defined having diabetes as “being diagnosed by a physician or other health professional, having a fasting plasma glucose of 126 mg/dL or higher, an HbA1c level of 6.5% or higher, or the use of antidiabetic drugs .”],
+  [The study included 34,737 participants with an average age of 45.8. Among these, 10.5% had diabetes. Those who had the highest intake of total red meat consumed an average of 5.72 ounces per day.],
+  [After the researchers adjusted for demographics, lifestyle, socioeconomic status, and other dietary habits, they found that higher red meat consumption was associated with increased diabetes risk.],
+  [However, it is important to note that association does not establish a causal relationship. “While this type of study cannot prove cause and effect, the results closely align with long-term prospective studies that show a clear dose-response relationship, especially for processed red meat,” Routhenstein said.],
+  [After repeated analyses, the researchers found that each additional serving of total red meat per day was associated with a 16% increased risk of diabetes. They also found that each serving of processed or unprocessed red meat gave a 10% higher risk of diabetes.],
+  [“Red meat is generally defined to include beef, veal, pork, lamb, and game meat,” said David Cutler , MD, board certified family medicine physician at Providence Saint John’s Health Center in Santa Monica, CA, who was not involved in the study.],
+  [“There are longstanding recommendations from nutrition and diabetes experts to limit red meat by consuming it only in low frequency and small amounts, choosing leaner cuts and avoiding processed meats, like bacon, ham, and sausages, altogether. I suggest no more than two servings of red meat per week, with a serving \[being\] about the size of your fist, 4 to 6 ounces,” Cutler told Healthline.],
+  [Routhenstein elaborated by recommending no more than 1 serving per week of red meat.],
+  [“If eliminating it right away feels overwhelming, a helpful first step is transitioning to leaner cuts such as sirloin, tenderloin, or 90–95% lean ground beef,” she said. “The goal is not total avoidance, but shifting red meat from a daily habit to an occasional choice.”],
+  [Red meat substitutions may lower diabetes risk by up to 14%],
+  [The study analyzed how substituting red meat for other proteins may affect a person’s risk of diabetes.],
+  [They found that participants who replaced one serving of red meat per day with plant-based protein sources, such as legumes , nuts or seeds, or soy products, showed a 14% reduced risk of diabetes.],
+  [Participants who substituted dairy , poultry, or whole grains for red meat saw an 11% to 12% reduction in diabetes risk.],
+  [This suggests that replacing red meat with plant-based proteins may be associated with a lower risk of diabetes. However, causality has yet to be established.],
+  [“The strongest evidence supports plant proteins such as beans, lentils, chickpeas, tofu, and tempeh. These foods provide fiber, healthy fats, and plant compounds that improve insulin sensitivity and support blood sugar control,” said Routhenstein.],
+  [“Importantly, this does not mean someone has to go vegan. The goal is not eliminating animal foods entirely, but shifting the balance of the plate,” she continued.],
+  [What are other risk factors for diabetes?],
+  [Dietary habits are just one aspect that affects diabetes risk.],
+  [“Reducing added sugar and ultra-processed foods, encouraging plant-based proteins and whole grains, and not forgetting to control weight and promote exercise will all contribute to decreasing the risk of developing diabetes,” Cutler said.],
+  [Other risk factors for type 2 diabetes include :],
+  [having overweight or obesity],
+  [being 45 years or older],
+  [having prediabetes],
+  [having fatty liver disease],
+  [having a parent or sibling with type 2 diabetes],
+  [having a history of gestational diabetes or giving birth to a baby who weighed 9 lbs or more],
+  [If you have concerns about your risk factors for diabetes , speak with your healthcare professional.],
+  [“Small, sustainable shifts such as swapping one red meat meal per week for lentils or fish, or choosing leaner cuts while reducing frequency, may help lower long-term diabetes risk. Progress comes from consistency, not perfection,” said Routhenstein.],
 ),
   insert-map: (:),
-  word-count: 766,
+  word-count: 971,
   edited-for-length: false,
   debug-mode: false,
 )
-
-}
-
-{
-  #standard-article(
-  title: [Doja Cat Reveals She May Have Lipedema: What Are the Signs, Symptoms?],
-  author: [Healthline],
-  source-name: [Healthline],
-  images: (),
-  paragraphs: (
-  [Doja Cat recently shared that she may have lipedema, which led to her decision to have liposuction in 2023. Stefanie Keenan/Getty Images for LACMA],
-  [In a TikTok video, pop music artist Doja Cat shared that she may have lipedema, a condition that causes abnormal fat buildup in the lower body.],
-  [The singer said the condition influenced her decision to undergo liposuction in 2023.],
-  [Lipedema most commonly affects the hips, thighs, and legs and typically does not respond to diet or exercise.],
-  [Experts say increased awareness from public figures can help more people recognize symptoms and seek medical care earlier.],
-  [Grammy-winning pop artist Doja Cat recently shared a video explaining that she believes she may have lipedema , a condition that causes body fat to abnormally accumulate in the lower part of the body.],
-  [The singer opened up about the condition in a TikTok video , explaining how it contributed to her decision to have liposuction in 2023.],
-  [In the video, Doja Cat reflected on the way fat accumulated in her lower body throughout her life, particularly around her thighs, knees, calves, and hips.],
-  [“If you look at my knees… Like I had big ass knees, like big fat f\*ing knees.” Doja said.],
-  [“Basically, I wasn’t horrendously, deeply overweight or anything. I was just building up all this ass, and ankle, and calves, and knee, and thigh. I had a whole ton of it,” she continued.],
-  [cite="https:\/\/www.tiktok.com/\@dojacat/video/7615161585723657485" class="tiktok-embed"\>],
-  [\@dojacat],
-  [\#lipedema \#lipedemalegs I HAD NO IDEA],
-  [♬ original sound – Doja Cat],
-  [What is lipedema?],
-  [Lipedema is a chronic condition that may lead to an abnormal buildup of fat tissue, mostly in the hips, thighs, and legs, explained Raj Dasgupta , MD, chief medical advisor at Garage Gym Reviews.],
-  [“The fat tends to accumulate symmetrically and typically does not respond well to typical weight loss strategies such as diet or exercise,” Dasgupta told Healthline.],
-  [People with lipedema may also experience tenderness, easy bruising, and swelling in the affected areas.],
-  [“Over time, the condition can lead to discomfort, mobility issues, and in some cases, problems with the lymphatic system,” Dasgupta said.],
-  [“Although lipedema is not primarily caused by lymphatic issues, the accumulation of abnormal fat can place pressure on the lymphatic vessels, compromising the body’s ability to properly circulate and drain lymph fluid, which can result in swelling, tightness, heaviness, and pain, particularly in the legs,” he explained.],
-  [Lipedema often dismissed as weight gain],
-  [Research suggests that lipedema affects 10–11% of adult women. The condition is often underdiagnosed.],
-  [It can be helpful when public figures like Doja Cat speak openly about their health, especially when they have conditions like lipedema that can be difficult to detect.],
-  [“Visibility usually helps people recognize symptoms in themselves and seek medical care earlier.],
-  [With lipedema, awareness is especially important because the condition is often dismissed as just weight gain,” Dasgupta said.],
-  [“Discussing it publicly can help shift the conversation from blame toward recognition that this is a condition that deserves proper attention,” he noted.],
-  [Frequently asked questions about lipedema],
-  [Recognizing the signs of lipedema can help avoid misdiagnosis and get you the treatment you need.],
-  [Here’s what you need to know about lipedema, according to a physician. This interview has been lightly edited for clarity and length.],
-  [Why is lipedema commonly misdiagnosed?],
-  [Dasgupta: One reason lipedema goes undiagnosed is that many clinicians and patients are still unfamiliar with it.],
-  [The condition can resemble common body fat patterns, so symptoms may be attributed to obesity or lifestyle factors rather than a true medical disorder.],
-  [There is also no one laboratory test that confirms the diagnosis. Physicians usually rely on clinical evaluation and physical examination, which requires them to be aware of the condition in the first place.],
-  [How do you know if it's lipedema or cellulite?],
-  [Dasgupta: Lipedema can resemble cellulite or typical fat accumulation because the skin may appear dimpled or uneven. However, the underlying process behind it is different.],
-  [The fat distribution in lipedema tends to be symmetrical and disproportionate to the upper body, and it usually does not resolve despite weight-loss efforts.],
-  [Because the visual appearance can overlap with common cosmetic concerns, the condition is often misunderstood or minimized.],
-  [What are the main symptoms of lipedema?],
-  [Dasgupta: A common sign is a noticeable difference between the upper and lower body, where the legs or hips appear unusually larger than the waist or torso.],
-  [The affected areas might also feel tender to the touch and bruise easily . Some notice swelling that worsens throughout the day or after standing for a long time.],
-  [Another clue is that the fat deposits often remain even when someone loses weight elsewhere in the body. For example, an individual may lose fat in the face, neck, and torso, but the fat deposits in the legs, hips, buttocks, and sometimes arms remain unchanged.],
-  [What causes lipedema?],
-  [Dasgupta: Lipedema appears to occur almost exclusively in women and often develops during times of hormonal change, such as puberty, pregnancy, or menopause.],
-  [There also appears to be a genetic component, as many people with lipedema report family members with similar patterns of fat distribution.],
-  [While the condition can occur at different body weights, hormonal factors and family history appear to play a role in the risk.],
-  [How is lipedemia treated?],
-  [Dasgupta: Management typically focuses on reducing symptoms and maintaining mobility.],
-  [Conservative approaches are compression garments, physical therapy, and specialized lymphatic massage to lower swelling and discomfort. Frequent exercise can improve circulation and overall health, but it does not directly reduce fat.],
-  [In some cases, surgical options like specialized liposuction may be considered. Treatment plans are usually individualized and may include recommendations from primary care physicians, vascular specialists, and physical therapists.],
-),
-  insert-map: (:),
-  word-count: 949,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-  #pull-quote([It can be helpful when public figures like Doja Cat speak openly about their health, especially when they have conditions like lipedema that can be difficult to detect.], [Healthline])
 
 }
 
 #article-row((
   [
     standard-article(
-  title: [Meta loses trial after arguing child exploitation was “inevitable” on its apps],
-  author: [Ashley Belanger],
-  source-name: [Ars Technica Policy],
+  title: [Meta & Google Found Liable in Landmark Cases for Knowingly Causing Harm to Young People],
+  author: [Democracy Now!],
+  source-name: [Democracy Now!],
   images: (),
   paragraphs: (
-  [Meta has lost the first of three child safety trials it's facing this year after a jury in a New Mexico state court found that the social media giant's platforms do not effectively protect kids from child exploitation.],
-  [On Tuesday, the jury deliberated for only one day before agreeing that Meta should pay \$375 million in civil damages for violating state consumer protections and misleading parents about the safety of its apps.],
-  [The trial followed a 2023 lawsuit filed by New Mexico Attorney General Raúl Torrez after The Guardian published a two-year investigation exposing child sex trafficking markets on Facebook and Instagram. Torrez's office then conducted an undercover investigation codenamed "Operation MetaPhile," in which officers posed as children on Facebook, Instagram, and WhatsApp. The jury heard that these fake profiles were "simply inundated with images and targeted solicitations” from child abusers, Torrez told CNBC in 2024. Ultimately, three men were arrested amid the sting for attempting to use Meta's social networks to prey on children.],
-  [Read full article],
+  [Juries in California and New Mexico have found the tech giants Alphabet and Meta liable for knowingly causing harm to children and teens who used their social media platforms. Over the course of the trials, documents revealed that tech companies were well aware of the addictive properties of their social media products and exploited these properties to increase their profits. “They take advantage of the undeveloped frontal cortex of young people and their emotional need for validation by showing them things, not that they want to see, but what they can’t look away from,” says attorney Matthew P. Bergman, who represented the plaintiffs in the California case.],
+  [Youth advocate Zamaan Qureshi, who testified in the New Mexico case against Meta, says the verdicts indicate that “Meta’s house of cards is falling, and it is absolutely clear that they will be held accountable.”],
 ),
   insert-map: (:),
-  word-count: 169,
+  word-count: 142,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -457,104 +308,99 @@
   ],
   [
     standard-article(
-  title: [Senators want US energy information agency to monitor data center electricity usage],
-  author: [Molly Taft, wired.com],
-  source-name: [Ars Technica Policy],
+  title: [Headlines for March 27, 2026],
+  author: [Democracy Now!],
+  source-name: [Democracy Now!],
   images: (),
   paragraphs: (
-  [Democratic Senator Elizabeth Warren and Republican Senator Josh Hawley are urging the US’s central energy information agency to provide better information on how much electricity data centers actually use.],
-  [In a joint letter sent to the Energy Information Administration Thursday morning, seen by WIRED, Hawley and Warren press the agency to publicly collect “comprehensive, annual energy-use disclosures” on data centers. This information, they write, is “essential for accurate grid planning and will support policymaking to prevent large companies from increasing electricity costs for American families.”],
-  [As the data center boom spreads across the country, there have been widespread worries from voters about how their massive energy needs may increase consumers’ electric bills; this concern helped shape some midterm elections in data-center-heavy states, including Virginia and Georgia. Last month, Hawley cosponsored a bill with Democratic Senator Richard Blumenthal that would require data centers to supply their own power sources in order to protect consumers. Earlier this month, Donald Trump convened a group of executives from Big Tech companies at the White House to sign a nonbinding (and toothless) agreement pledging to pay for their own power for data centers.],
-  [Read full article],
+  [Trump Again Delays Ultimatum for Iran to Open Strait of Hormuz],
+  [Pentagon Considering Ground Invasion as Part of "Final Blow" Against Iran],
+  [Oil Prices Soar as Iran's Military Declares Strait of Hormuz "Closed" to U. S.-Aligned Ships],
+  [Missile and Drone Attacks from Iran and Hezbollah Leave One Israeli Dead, 25 Wounded],
+  [Israel Expands Invasion of Southern Lebanon as UNICEF Warns Attacks Have Killed 121 Children],
+  [House Democratic Leaders Delay Vote on Iran War Powers Resolution Until at Least Mid-April],
+  [Mexican Navy Searches for Two Ships Missing from Cuba-Bound Aid Flotilla],
+  [Nicolás Maduro and Cilia Flores Appear in Federal Court, Months After Abduction by U. S. Forces],
+  [Senate Votes to Fund Most of DHS After Partial Government Shutdown Leads to Airport Chaos],
+  [Federal Court Blocks Pentagon's Blacklisting of Anthropic over AI Safety Guardrails],
+  [Oil Trading Surged Minutes Before Trump Claimed "Productive" Talks with Iran],
+  [Russian Oil Exports Fall Dramatically After Ukraine Attacks Baltic Sea Oil Terminals],
+  [IOC Bans Transgender Women from Women's Events at 2028 Summer Olympics],
+  [NYU Professors Win Big Raises as Part of Tentative Deal to End Strike],
 ),
   insert-map: (:),
-  word-count: 192,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-  ],
-), ruled-indices: (1,))
-
-#article-row((
-  [
-    standard-article(
-  title: [‘The violence of racist tyranny’: African Guernica goes on display alongside Picasso masterpiece],
-  author: [Sam Jones in Madrid],
-  source-name: [The Guardian],
-  images: (),
-  paragraphs: (
-  [Piece by late South African artist Dumile Feni is part of new series History Doesn’t Repeat Itself, But It Does Rhyme],
-  [On the second floor of the Reina Sofía, in the very spot where Picasso’s Guernica was first exhibited when it arrived in the Madrid museum 34 years ago, there now hangs a smaller, near-namesake of the Spanish artist’s most famous work.],
-  [While African Guernica, which was drawn by the late South African artist Dumile Feni in 1967, may lack the scale of Picasso’s masterpiece, its depth, anger and unnerving juxtaposition of man and beast, light and dark, and innocence and cruelty, are every bit as disturbing.],
-  [Continue reading...],
-),
-  insert-map: (:),
-  word-count: 109,
+  word-count: 177,
   edited-for-length: false,
   debug-mode: false,
 )
 
   ],
   [
-    standard-article(
-  title: [Elon Musk loses big in court; X boycott perfectly legal],
-  author: [Ashley Belanger],
-  source-name: [Ars Technica Policy],
-  images: (),
-  paragraphs: (
-  [On Thursday, Elon Musk lost his lawsuit alleging that advertisers violated antitrust law by colluding on an ad boycott after he took over Twitter, gutted content moderation teams, and disbanded the Trust and Safety Council.],
-  [In her opinion , US District Judge Jane Boyle wrote that the lawsuit was dismissed because Musk failed to state a claim. His arguments that advertisers acted against their own best interests by avoiding advertising on his platform, now called X, did not plead facts showing that consumers were harmed. Without consumer harm, there can be no antitrust violation, the judge wrote, deeming the ad boycott perfectly legal.],
-  ["The very nature of the alleged conspiracy does not state an antitrust claim, and the Court therefore has no qualm dismissing with prejudice," Boyle said. At one point, she emphasized, "the question underlying antitrust injury is whether consumers—not competitors—have been harmed."],
-  [Read full article],
-),
-  insert-map: (:),
-  word-count: 148,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-  ],
-), ruled-indices: (1,))
-
-{
-  #section-label([Analysis])
-  #brief-group((
-    #brief-item([James Bricknell], source-name: [CNET News], [You can download and 3D print the little spaceman from Project Hail Mary, and it's inspiring, like the movie itself.])
-
-    #brief-item([Alexander Bolton], source-name: [The Hill (general)], [Senate Democratic Leader Chuck Schumer (N. Y.) on Friday said that a two-month Homeland Security funding stopgap being proposed by House Republicans would be “dead on arrival” in the Senate. Schumer slammed the door on the idea of funding the entire Department of Homeland Security for 60 days to give White House and negotiators more time…])
-
-    #brief-item([Julia Manchester], source-name: [The Hill (general)], [President Trump, appearing before a Saudi business forum in Miami on Friday, touted what he said were U. S. wins in its war against Iran and warned Cuba would be “next.”  Trump’s remarks touched on a range of issues, largely centered on the Middle East but he also brought up the island nation as his next…])
-
-    #brief-item([Sarah Davis], source-name: [The Hill (general)], [Iranian Foreign Minister Abbas Araghchi pledged his country will “exact HEAVY price” after he said the Israeli military violated the Trump administration’s pause on strikes against Iranian energy infrastructure. “Israel has hit 2 of Iran’s largest steel factories, a power plant and civilian nuclear sites among other infrastructure. Israel claims it acted in coordination with…])
-
-    #brief-item([Angela Giuffrida in Rome], source-name: [The Guardian], [Prime minister is scrambling to clean up her government after youth vote powered a damaging referendum defeat
+    brief-group((
+      [#brief-item([Mirit Eyal-Cohen and Jay A. Soled, opinion contributor], source-name: [The Hill (general)], [The tax code should make clear that activities fused with fun, excitement and personal enjoyment are never an occasion for a tax deduction.])],
+      [#brief-item([Sarah Davis], source-name: [The Hill (general)], [Reza Pahlavi, the exiled crown prince of Iran, said freedom in Iran is “within reach” in a speech at the Conservative Political Action Conference (CPAC) on Saturday.  “A free Iran is not a fantasy,” Pahlavi said. “A free Iran is within reach right now, but as we all know, freedom never comes free.” The son…])],
+      [#brief-item([Jules Yap], source-name: [IKEA Hackers], [A new IKEA study has confirmed what many of us have suspected while staring into cluttered cabinets: our kitchens just aren’t working for us. The good news? You don’t need a full renovation to turn things around. According to the IKEA Cooking & Eating Report 2026, one of the largest studies of its kind, surveying over 31,000 people across 31 countries, fewer than one in three of us are actually happy with our kitchens. And the number one culprit? Space. \[…\]])],
+      [#brief-item([Douglas MacKinnon, opinion contributor], source-name: [The Hill (general)], [President Trump's instinct now is to fight for his country. But to do so, he needs to hear the good, the bad, and the ugly surrounding every policy or potential military operation.])],
+      [#brief-item([Sarah Davis], source-name: [The Hill (general)], [Iranian Foreign Minister Abbas Araghchi pledged his country will “exact HEAVY price” after he said the Israeli military violated the Trump administration’s pause on strikes against Iranian energy infrastructure. “Israel has hit 2 of Iran’s largest steel factories, a power plant and civilian nuclear sites among other infrastructure. Israel claims it acted in coordination with…])],
+      [#brief-item([Jeffrey Blehar], source-name: [National Review], [Demonstrators gather in front of law enforcement officers during a protest at Immigration and Customs Enforcement headquarters in Portland, Ore., October 4, 2025.])],
+      [#brief-item([Angela Giuffrida in Rome], source-name: [The Guardian], [Prime minister is scrambling to clean up her government after youth vote powered a damaging referendum defeat
 
 Filippo Michelini was having a drink at San Calisto, a popular bar in Rome’s Trastevere neighbourhood on Wednesday night. As he chatted to his friends, Giorgia Meloni’s far-right government was reeling from a failed referendum , and her beleaguered tourism minister, Daniela Santanchè, had just resigned .
 
 Michelini, a 29-year-old computer scientist who lives in Brussels, was spending a few days in the Italian capital after returning home last weekend to cast his ballot in the plebiscite on judicial changes.
 
- Continue reading...])
+ Continue reading...])],
+      [#brief-item([Reuters], source-name: [The Guardian], [US president says he will host Chinese leader in a reciprocal visit later this year
 
-    #brief-item([Agence France-Presse in Paris], source-name: [The Guardian], [Incident in the city’s 8th arrondissement reportedly involved a homemade explosive device
+ Middle East crisis – live updates 
 
-French police prevented an apparent bomb attack outside a US bank in Paris on Saturday when they arrested a man about to set off a homemade explosive device, officials and sources close to the case said.
+Donald Trump will meet Xi Jinping in May during the US president’s first visit to China in eight years, a closely watched trip that had been postponed due to the Iran war.
 
-The incident occurred at about 3.30am (0230 GMT) in front of a Bank of America building in the city’s 8th arrondissement, a couple of streets away from the Champs-Élysées.
+Trump was initially slated to travel next week, but will now visit Beijing on 14 and 15 May, he wrote in a post on Truth Social on Wednesday. Trump said he would host the Chinese leader in a reciprocal visit in Washington later this year.
 
- Continue reading...])
+ Continue reading...])],
+      [#brief-item([Mike Lillis], source-name: [The Hill (general)], [House lawmakers on Friday passed a Republican bill to fund the Department of Homeland Security (DHS) in its entirety for eight weeks, after GOP leaders rejected a Senate-passed bill that would exclude money for immigration enforcement.  The partisan package was a nod to conservative immigration hawks, who hailed Speaker Mike Johnson (R-La.) for pushing it…])],
+      [#brief-item([Australian Associated Press], source-name: [The Guardian], [Critical Western Australia agriculture region counting cost of brutal cyclone as flooding risk persists for low-lying communities
 
-    #brief-item([Tara Suter], source-name: [The Hill (general)], [House Majority Leader Steve Scalise (R-La.) said Sunday that some senators “expressed buyer’s remorse” over a Senate bill to fund only part of the Department of Homeland Security (DHS) amid a shutdown of the department. “Well, we actually read their bill, and, frankly, a number of senators have expressed buyer’s remorse with what they did…])
+Get our breaking news email , free app or daily news podcast 
 
-    #brief-item([Ellen Mitchell], source-name: [The Hill (general)], [Defense Secretary Pete Hegseth has reportedly blocked the promotion of two Black and two female Army officers to be one-star generals. The New York Times reported Friday that Hegseth for months pressed senior Army leaders, including Secretary Dan Driscoll, to remove the officers’ names but was repeatedly refused. Then earlier this month, Hegseth struck the names from…])
+An agricultural region that supplies about 60% of Western Australia’s fresh winter produce is assessing damage as authorities continue work on Sunday to restore power to a popular tourist town hit hard by Cyclone Narelle.
 
-    #brief-item([Max Rego], source-name: [The Hill (general)], [U. S. Ambassador to Israel Mike Huckabee and Sen. Ted Cruz (R-Texas), both staunch supporters of Israel, joined world leaders on Sunday in criticizing the Israeli police for prohibiting the Latin patriarch of Jerusalem from entering the Church of the Holy Sepulchre for Palm Sunday mass.  The Latin Patriarchate wrote in a statement that Israeli police…])
+The food-bowl region near Carnarvon, about 900km north of Perth, provides 80% of of the state’s bananas. Meanwhile, flooding risk remains in the state’s low-lying communities.
 
-    #brief-item([Douglas De Jesus], source-name: [ACLU News], [Maria is a third-generation Latina American who loves her country as much as she loves her husband, Miguel, who is undocumented. In a moment when Donald Trump has threatened to unlawfully deport millions, for Miguel and Maria, the American dream is finding a way to stay together.])
+ Continue reading...])],
+      [#brief-item([Tolu Talabi], source-name: [The Hill (general)], [Idaho lawmakers approved legislation Friday that would criminalize transgender people for using bathrooms and changing rooms associated with the gender they identify with, whether inside a government or privately owned building. The bill, which senators approved in a 28-7 vote, states that any person who knowingly and willfully uses the space designated for use by…])],
+      [#brief-item([Donna Ferguson], source-name: [The Guardian], [Model posted pictures of herself naked and ‘in her full power’ to celebrate Mother’s Day, before Meta took them down for breaching nudity guidelines
 
-    #brief-item([Stacy Randall], source-name: [IKEA Hackers], [When you have a bunch of quirky, colorful items that have something in common, it’s pretty much a given that they need to be on display. Reddit user Alien–Wolf decided this was just the ticket for their wife’s extensive earring collection, which includes everything from rubber duckies to spools of yarn. The hacker wanted to give their wife a way to see all of her earrings at once, in one place. Plus, the display keeps the earrings in good shape […]])
+The model Erin O’Connor has spoken out about the need for social media platforms to apply “clearer, more context-sensitive guidelines” after Instagram repeatedly removed two nude photographs she had posted on Mother’s Day, celebrating her heavily pregnant body.
 
-  ))
+The photos – which were removed, reinstated and then removed again by the platform – were taken in 2014 when O’Connor, who is 48, was eight and half months’ pregnant with her son Albert.
+
+ Continue reading...])],
+      [#brief-item([Carolehorst], source-name: [Variety], [The 29th Sonoma Intl. Film Festival wrapped March 29 with Spanish film “Maspalomas” winning the Grand Jury Award for best narrative feature. In a statement, the jury noted that directors Aitor Arregi and Jose Mari Goenaga’s film was “an authentic and rare depiction of an elder man confronting personal and physical crisis at the onset \[…\]])],
+      [#brief-item([Democracy Now!], source-name: [Democracy Now!], [Democracy Now! celebrated its 30th anniversary at the historic Riverside Church in New York City with live performances by guests including the Pulitzer Prize-winning Palestinian poet Mosab Abu Toha. Mosab Abu Toha read his poem “Under the Rubble” and spoke about his experience surviving Israel’s genocide of Gaza, which killed 30 members of his extended family. Watch the full event here .])],
+      [#brief-item([Stacy Randall], source-name: [IKEA Hackers], [Most people flinch when they see a praying mantis. But what if you gave one a home so stunning, it stopped you in your tracks instead? I admit, a mantis terrarium isn’t something I’ve ever thought about making. I mean, it is pretty specific, but it’s also really cool, especially if you’re into insects. The more I looked at this hack, the more I thought about just how special it is. My son loves bugs, and the ones that pop \[…\]])],
+      [#brief-item([Ryan Mancini], source-name: [The Hill (general)], [The Houthis on Friday warned that if three lines are crossed by the U. S., Israel or other Middle East countries, they will join the Iran war and fight back. The Yemen-based group backed by Iran’s Islamic Revolutionary Guard Corps released five points, issued by the Yemeni Armed Forces, regarding the conflict. They include demands for…])],
+    ))
+  ],
+), ruled-indices: (1, 2,))
+
+{
+  #standard-article(
+  title: [Ground Invasion of Iran Could Be "Suicide Mission" for U.S.: Ex-Army Intelligence Analyst],
+  author: [Democracy Now!],
+  source-name: [Democracy Now!],
+  images: (),
+  paragraphs: (
+  [We get an analysis of the Trump administration’s Iran war strategy from former U. S. Army intelligence analyst Harrison Mann. “From day two of this war, the Trump administration has not known what to do and how to get out of this,” says Mann, who resigned from the U. S. Army’s Defense Intelligence Agency in 2024 over the Biden administration’s policy in Gaza. As Trump is rumored to be eyeing the oil export hub of Kharg Island for seizure, Mann gives his assessment of a potential ground invasion of Iran. “Any attempt to seize this island would be close to a suicide mission,” he says. While U. S. leaders struggle to respond to Iran’s blockade of the Strait of Hormuz and attacks on military bases in U. S.-allied Gulf states, Mann notes that “the people who drove \[Trump\] into this war pretty much expected this.],
+  [I don’t think this is a surprise to Lindsey Graham and Marco Rubio or Benjamin Netanyahu — who is very much getting what he wanted, which is dragging the U. S. into what he hopes will be a decisive war of annihilation against Iran.”],
+),
+  insert-map: (:),
+  word-count: 184,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
 }
 
 #colophon([The Journal], [Vol. 1, No. 028], [2026-03-30])
