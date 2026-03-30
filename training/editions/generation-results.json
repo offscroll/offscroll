@@ -1,0 +1,34 @@
+{
+  "generated_at": "2026-03-30T01:17:30.293870+00:00",
+  "total_time_s": 3.9,
+  "configs_processed": 1,
+  "results": [
+    {
+      "config_id": "training-001",
+      "config_path": "/home/modus/repos/belle/offscroll/training/configs/training-001.yaml",
+      "status": "success",
+      "error": null,
+      "num_feeds": 12,
+      "num_items_fetched": 1507,
+      "num_items_used": 48,
+      "num_pages": 18,
+      "num_spreads": 10,
+      "render_time_s": 0.44,
+      "page_target": 16,
+      "archetype": "finance-focus",
+      "feeds_contributed": [
+        "Seeking Alpha",
+        "NPR Planet Money",
+        "Vintage Guitar Magazine",
+        "Bloomberg",
+        "A Wealth of Common Sense",
+        "Monica Dinculescu",
+        "The New Yorker",
+        "Babbel Tech Blog",
+        "Harvard Business Review",
+        "Forbes Business",
+        "Gastropod"
+      ]
+    }
+  ]
+}

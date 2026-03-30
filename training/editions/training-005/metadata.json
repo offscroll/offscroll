@@ -1,0 +1,165 @@
+{
+  "config_id": "training-005",
+  "archetype": "android-world",
+  "date_generated": "2026-03-30T01:18:39.196246+00:00",
+  "page_target": 6,
+  "num_pages": 8,
+  "num_items": 18,
+  "feeds_contributed": [
+    "Supabase Blog",
+    "A Cozy Kitchen",
+    "The Keyword (Google Blog)",
+    "Tailscale Blog",
+    "Axel Rauschmayer (2ality)",
+    "Grofers / Blinkit Lambda",
+    "Harvard Business Review",
+    "Jon Skeet",
+    "Wired",
+    "Jessie Frazelle",
+    "Monica Dinculescu",
+    "Android Developers Medium",
+    "Lifehacker",
+    "Lambda the Ultimate",
+    "Sam Saffron",
+    "The GitHub Blog",
+    "Microsoft Old New Thing (Raymond Chen)",
+    "Dennis Felsing",
+    "Reginald Braithwaite (raganwald)"
+  ],
+  "render_time_s": 0.18,
+  "pages": [
+    {
+      "page_number": 1,
+      "png_path": "training-005/pages/page-001.png",
+      "width_pt": 612.0,
+      "height_pt": 792.0
+    },
+    {
+      "page_number": 2,
+      "png_path": "training-005/pages/page-002.png",
+      "width_pt": 612.0,
+      "height_pt": 792.0
+    },
+    {
+      "page_number": 3,
+      "png_path": "training-005/pages/page-003.png",
+      "width_pt": 612.0,
+      "height_pt": 792.0
+    },
+    {
+      "page_number": 4,
+      "png_path": "training-005/pages/page-004.png",
+      "width_pt": 612.0,
+      "height_pt": 792.0
+    },
+    {
+      "page_number": 5,
+      "png_path": "training-005/pages/page-005.png",
+      "width_pt": 612.0,
+      "height_pt": 792.0
+    },
+    {
+      "page_number": 6,
+      "png_path": "training-005/pages/page-006.png",
+      "width_pt": 612.0,
+      "height_pt": 792.0
+    },
+    {
+      "page_number": 7,
+      "png_path": "training-005/pages/page-007.png",
+      "width_pt": 612.0,
+      "height_pt": 792.0
+    },
+    {
+      "page_number": 8,
+      "png_path": "training-005/pages/page-008.png",
+      "width_pt": 612.0,
+      "height_pt": 792.0
+    }
+  ],
+  "spreads": [
+    {
+      "spread_id": "s-005-001",
+      "edition_id": "training-005",
+      "type": "solo",
+      "pages": [
+        {
+          "page_number": 1,
+          "png_path": "training-005/pages/page-001.png",
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        }
+      ]
+    },
+    {
+      "spread_id": "s-005-002",
+      "edition_id": "training-005",
+      "type": "spread",
+      "pages": [
+        {
+          "page_number": 2,
+          "png_path": "training-005/pages/page-002.png",
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_number": 3,
+          "png_path": "training-005/pages/page-003.png",
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        }
+      ]
+    },
+    {
+      "spread_id": "s-005-003",
+      "edition_id": "training-005",
+      "type": "spread",
+      "pages": [
+        {
+          "page_number": 4,
+          "png_path": "training-005/pages/page-004.png",
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_number": 5,
+          "png_path": "training-005/pages/page-005.png",
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        }
+      ]
+    },
+    {
+      "spread_id": "s-005-004",
+      "edition_id": "training-005",
+      "type": "spread",
+      "pages": [
+        {
+          "page_number": 6,
+          "png_path": "training-005/pages/page-006.png",
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_number": 7,
+          "png_path": "training-005/pages/page-007.png",
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        }
+      ]
+    },
+    {
+      "spread_id": "s-005-005",
+      "edition_id": "training-005",
+      "type": "solo",
+      "pages": [
+        {
+          "page_number": 8,
+          "png_path": "training-005/pages/page-008.png",
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        }
+      ]
+    }
+  ]
+}

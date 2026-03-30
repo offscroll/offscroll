@@ -1,0 +1,90 @@
+[
+  {
+    "grading_index": 1,
+    "spread_id": "s-001-008",
+    "type": "spread",
+    "page_pngs": [
+      "training-001/pages/page-014.png",
+      "training-001/pages/page-015.png"
+    ]
+  },
+  {
+    "grading_index": 2,
+    "spread_id": "s-001-004",
+    "type": "spread",
+    "page_pngs": [
+      "training-001/pages/page-006.png",
+      "training-001/pages/page-007.png"
+    ]
+  },
+  {
+    "grading_index": 3,
+    "spread_id": "s-001-003",
+    "type": "spread",
+    "page_pngs": [
+      "training-001/pages/page-004.png",
+      "training-001/pages/page-005.png"
+    ]
+  },
+  {
+    "grading_index": 4,
+    "spread_id": "s-001-009",
+    "type": "spread",
+    "page_pngs": [
+      "training-001/pages/page-016.png",
+      "training-001/pages/page-017.png"
+    ]
+  },
+  {
+    "grading_index": 5,
+    "spread_id": "s-001-006",
+    "type": "spread",
+    "page_pngs": [
+      "training-001/pages/page-010.png",
+      "training-001/pages/page-011.png"
+    ]
+  },
+  {
+    "grading_index": 6,
+    "spread_id": "s-001-007",
+    "type": "spread",
+    "page_pngs": [
+      "training-001/pages/page-012.png",
+      "training-001/pages/page-013.png"
+    ]
+  },
+  {
+    "grading_index": 7,
+    "spread_id": "s-001-010",
+    "type": "solo",
+    "page_pngs": [
+      "training-001/pages/page-018.png"
+    ]
+  },
+  {
+    "grading_index": 8,
+    "spread_id": "s-001-005",
+    "type": "spread",
+    "page_pngs": [
+      "training-001/pages/page-008.png",
+      "training-001/pages/page-009.png"
+    ]
+  },
+  {
+    "grading_index": 9,
+    "spread_id": "s-001-001",
+    "type": "solo",
+    "page_pngs": [
+      "training-001/pages/page-001.png"
+    ]
+  },
+  {
+    "grading_index": 10,
+    "spread_id": "s-001-002",
+    "type": "spread",
+    "page_pngs": [
+      "training-001/pages/page-002.png",
+      "training-001/pages/page-003.png"
+    ]
+  }
+]
