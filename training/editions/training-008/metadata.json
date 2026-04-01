@@ -1,33 +1,33 @@
 {
   "config_id": "training-008",
   "archetype": "ai-ml-focus",
-  "date_generated": "2026-03-30T01:18:50.960541+00:00",
+  "date_generated": "2026-03-30T01:43:40.284347+00:00",
   "page_target": 6,
-  "num_pages": 25,
+  "num_pages": 27,
   "num_items": 18,
   "feeds_contributed": [
-    "Grist",
+    "Project Zero (Google)",
     "Steve Yegge",
-    "Mary Rose Cook",
-    "CSC Cloud Team Blog",
+    "Eddie Smith (Practically Efficient)",
     "Evan Hahn",
+    "Scott Johnson (fuzzyblog)",
+    "AWS Blog",
+    "Grist",
+    "Yammer Engineering",
+    "Raymond Hettinger",
     "Vinted Engineering",
     "Jake Yesbeck",
-    "Scott Johnson (fuzzyblog)",
-    "Project Zero (Google)",
-    "REA Group Tech",
-    "Tinder Tech",
-    "Yammer Engineering",
-    "Eddie Smith (Practically Efficient)",
-    "Grab Engineering",
-    "HubSpot Product Blog",
     "Groupon Engineering",
-    "AWS Blog",
+    "HubSpot Product Blog",
     "Okta Developer Blog",
-    "Lambda the Ultimate",
-    "Raymond Hettinger"
+    "Mary Rose Cook",
+    "Tinder Tech",
+    "Grab Engineering",
+    "REA Group Tech",
+    "CSC Cloud Team Blog",
+    "Lambda the Ultimate"
   ],
-  "render_time_s": 0.79,
+  "render_time_s": 0.57,
   "pages": [
     {
       "page_number": 1,
@@ -176,6 +176,18 @@
     {
       "page_number": 25,
       "png_path": "training-008/pages/page-025.png",
+      "width_pt": 612.0,
+      "height_pt": 792.0
+    },
+    {
+      "page_number": 26,
+      "png_path": "training-008/pages/page-026.png",
+      "width_pt": 612.0,
+      "height_pt": 792.0
+    },
+    {
+      "page_number": 27,
+      "png_path": "training-008/pages/page-027.png",
       "width_pt": 612.0,
       "height_pt": 792.0
     }
@@ -417,6 +429,25 @@
         {
           "page_number": 25,
           "png_path": "training-008/pages/page-025.png",
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        }
+      ]
+    },
+    {
+      "spread_id": "s-008-014",
+      "edition_id": "training-008",
+      "type": "spread",
+      "pages": [
+        {
+          "page_number": 26,
+          "png_path": "training-008/pages/page-026.png",
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_number": 27,
+          "png_path": "training-008/pages/page-027.png",
           "width_pt": 612.0,
           "height_pt": 792.0
         }

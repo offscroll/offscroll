@@ -23,14 +23,296 @@
 
 // --- Front Page Feature ---
 #feature-article(
-  title: [The Power of Assumption],
+  title: [I am definitely missing the pre-AI writing era],
   kicker: [Cover Story],
+  author: [N. Cailie],
+  source-name: [LessWrong],
+  deck: [I am not complaining, well, it was kinda my fault after all cause the instructions did specify the no-use of LLM, when sending first post.],
+  lead-pre: [],
+  lead-cap: [Y],
+  lead-rest: [esterday, I wrote my first technical draft on what I was working on with the goal to share it publicly on here (well using an account dedicated to technical post), and did not realize how wanting to sound perfect actually steal the ''my voice" in the paper. Although 80 % of the content was my own writing, the fact that it was run in a LLM enginee for grammar and vocabulary cross-check, made it failed the "probable written by AI " metric; and it was rejected.],
+  body-paragraphs: (
+  [I am not complaining, well, it was kinda my fault after all cause the instructions did specify the no-use of LLM, when sending first post. And the rejection made me think: why did I even need the AI to validate what I worked on?],
+  [The scary part, is I love writing, I have been writing blogs and all sort of things since I can't even remember. Have some think pieces on popular sites, and other personal blog that I used to share. And you know, before 2023, my writing was so good that I rarely had to have a second read or correction to make sure the flow stays consistent, since english is my 4th language. I always sought external review or check with tools like : Grammarly or Quilbot, for mistakes or grammars misphrasing. But now, this "superskill" has faded away, like seriously. I can't even write a 1000 words think piece, without needing or wanting to know what AI thinks or how it could have phrase it better, even for my emails. I can't write poems as before, without sounding generic, and this is mainly because I have now trained my brain to rely on these automated tools that It can not be creative anymore or think of itself. My writing has deterioted, I attempted to write a slam-poem, recently for a competition I wanted to partake in, and upon the completion when I read it, my reaction was : Who is this? Who wrote this? This is bad !],
+  [Before, I would sit and write a piece and I kid you not, the first draft was always perfect that I rarely had to write, and my best poem that got me to some "art"ies festival, was just written while I was sitting outside my hostel, with a piece of paper and a pen, and a thought that was bothering me. But now, I am slowly realizing, it has been changing in negative way.],
+  [Sorry that this sounds like a rant, well, it is one ! But like, my point was to share it out loud, and kinda know if I am the only person experiencing this or if there are others? And for people who successfully taken back their creative writing skills, how did you do it?],
+  [This post, is written without any tools assistance I just wrote what my brain is instructing to type (might not reread it before posting). Obviously, you would see some mistakes, some paraphrasing issue, some article misuse; I personally do not see them but, hey, I am not expert in literature. So bear with me, also, I think that is the beauty of writing, the raw , unedited emotions of the person behind every words either for entertainment or educational purposes, is what makes it special.],
+  [So, thank you ''LessWrong" moderators, for rejecting my first draft, it is kinda a wake up call that made me realize, maybe I just need to be focusing on my own voice, and there is nothing wrong into sounding "more or less wrong". Yeah, I know, people advocate into embracing AI as it would be/is in every aspect of our life, but maybe it is good that most of us do not let this technology rephrase our own thought. Cause those words, that the AI told you: sound wrong or aggressive or less formal, are the ones that carry the ''emotions", you ought to share.],
+  [Have a productive week, dear reader !],
+  [P. S: If you see this! I am celebrating. It means, I passed the text. Yay!],
+),
+  edited-for-length: false,
+)
+
+
+{
+  #section-label([Front Page])
+  #standard-article(
+  title: [Used Car Of The Day: 2012 BMW X5 35d],
+  author: [Tim Healey],
+  source-name: [The Truth About Cars],
+  images: (),
+  paragraphs: (
+  [An oil-burning Bimmer? Why not? Today we give you a 2012 BMW X5 35d as our Used Car of the Day.],
+  [This one is pretty loaded with convenience features such as heated seats, heated steering wheel, the Sport package, a panoramic sunroof, navigation, and more. It's set up for towing.],
+  [The seller says that maintenance has been kept up to date, and there are two sets of wheels/tires on offer as part of the deal.],
+  [The mileage is 149,000.],
+  [You can see more by clicking here . The asking price is \$11,900 and this one is for sale in Bend, Oregon.],
+  [\[Images: Seller\]],
+  [Become a TTAC insider. Get the latest news, features, TTAC takes, and everything else that gets to the truth about cars first by subscribing to our newsletter .],
+),
+  insert-map: (:),
+  word-count: 183,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+}
+
+{
+  #section-label([Features])
+  #standard-article(
+  title: [Emil Nygård: 500px Photographer Spotlight],
+  author: [500px Blog],
+  source-name: [500px ISO],
+  images: (),
+  paragraphs: (
+  [There is an undeniable magnetism in Emil Nygård ’s work. Recently named 500px Popular Photographer of the Year 2025, Emil Nygård has captured the attention of the PULSEpx community with his intimate wildlife portraits. Whether trekking through the humid depths of a rainforest or scaling a jagged ridge, he manages to return with portraits that feel less like wildlife documentation and more like an intimate conversation. Recently named the 500px Popular Photographer of the Year 2025 by the PULSEpx community, Emil sits down with us to discuss the patience, the philosophy, and the singular moment that defined his year.],
+  [In this interview, Emil Nygård shares how curiosity, patience, and respect for wildlife shape the way he approaches photography.],
+  [The Wildlife Photography Journey of Emil Nygård],
+  [To start at the very beginning, what was the initial spark that led you to pick up a camera and dedicate your life to exploring the natural world?],
+  [I wouldn’t say I set out to dedicate my life to photography. I’m still very much a happy amateur with a regular job and a deep curiosity about the world, but I’ve always been fascinated by animals. As a child, I could spend hours watching documentaries on Animal Planet, listening to David Attenborough narrate stories from places that felt almost mythical. Africa, in particular, stayed with me. Long before photography entered the picture, I dreamed of experiencing those landscapes and wildlife encounters for myself.],
+  [In August 2024, I went on my first dedicated safari in Tanzania. Before the trip, I made a conscious decision to buy my first serious camera, a Canon EOS R8. I wanted to do the experience justice. I didn’t expect it to change anything profoundly, but somewhere between the dust, the silence, and the wildlife moving freely across the savannah, something shifted. I was completely hooked.],
+  [When I returned home to Norway, I invested further, upgrading to a Canon EOS R3 and a Canon RF 100–500mm lens, not because I suddenly saw myself as a professional, but because I wanted to keep improving. I still do. Each journey is an opportunity to observe more carefully and hopefully become just a little better than I was before.],
+  [I feel incredibly fortunate to have the opportunity to travel. That’s not something I take for granted. A big part of why I share my images and write about my journeys is that I know not everyone has the same chance to stand in those places. If someone can feel like they are part of the experience through my work, even briefly, then it feels meaningful beyond myself.],
+  [Africa strengthened a dream that had been there for years. Photography simply became the way I chose to live it.],
+  [Your portfolio has a distinct sense of atmosphere that feels cinematic. How much of your style is a result of your technical environment versus your own internal creative intuition?],
+  [I didn’t consciously set out to create something cinematic, but I take that as a huge compliment. The environment definitely plays a role. When you’re standing in golden African light or surrounded by deep jungle shadows, there’s already a natural drama in the scene. Good equipment helps me capture the detail and depth I see in front of me, but I don’t believe gear alone creates atmosphere.],
+  [A big part of it is how the moment feels. When I edit my images, I lean into that feeling. I’ll often adjust tones, contrast, and light to enhance the mood I experienced when I was there. I’m not trying to change reality; I’m trying to translate it. I want the viewer to sense what it felt like to stand in that exact place.],
+  [What people describe as “cinematic” may simply be my attempt to slow the image down, to create tension in a gaze, to let shadows breathe, and to give the subject space within the frame. I’m still learning and experimenting. My style isn’t something I engineered; it’s something that’s gradually forming as I continue to explore both the world and my own way of seeing it.],
+  [When we look at your winning photograph of the lizard, the detail is staggering, but it is the personality in the eye that truly captivates. Can you walk us through the day you captured this shot and what was going through your mind in that specific moment?],
+  [The photograph was taken in Sinharaja Forest Reserve in Sri Lanka during sunrise. It had already been an eventful morning, to put it mildly, but by the time I stepped into the rainforest, everything felt still again. The forest was dense, humid, and alive with sound. Soft morning light filtered through the canopy, creating pockets of shadow and glow. When I first spotted the lizard clinging to a tree trunk, I was immediately drawn to its eye. There was something alert, almost curious, in its expression.],
+  [I didn’t wait for hours, but it wasn’t easy either. I had a specific vision for the background, a smooth, natural blur that would isolate the subject and create depth. As I carefully repositioned myself, the lizard kept moving around the trunk, almost as if we were circling each other. It became a quiet negotiation. I stayed calm and patient, conscious that I was a guest in its world.],
+  [For about thirty minutes, I adjusted my position inch by inch, trying not to disturb the moment.],
+  [Then it happened: the lizard paused, the background aligned, the light softened, and I took a short burst of frames.],
+  [When I looked down at the back of my camera, I remember thinking, “Yes, this is the one.” Outwardly, I try to remain composed. Inside, there’s always adrenaline. Not because I’ve “won” something, but because for a split second everything aligns: subject, light, timing, and feeling. That moment of alignment is what I keep chasing.],
+  [Many photographers focus on the vastness of a landscape, but you often zoom in on the textures and the micro-details. What draws you to the smaller, often overlooked stories of the wild?],
+  [The vastness of nature is breathtaking, but I’ve always found myself drawn to the smaller details within it. A wide landscape can show scale and beauty, but when I zoom in on an eye, a texture, or a pattern in the skin or feathers, the experience becomes more personal. It stops being “wildlife” in a general sense and becomes an individual presence.],
+  [When you spend minutes, hours, or sometimes even days observing an animal, you start to notice something interesting: each individual has its own personality. Some are cautious. Some are bold. Some are curious. That’s what fascinates me. I find it both meaningful and fun to try to capture that personality in a single frame.],
+  [For me, photography isn’t just about documenting that an animal was there. It’s about showing something of who it is, even if that “who” is subtle. A tilt of the head, a tension in the gaze, the way it holds its ground.],
+  [There’s also something humbling about focusing on what is often overlooked. In a world that constantly pushes us to look at the biggest and most dramatic scenes, I find myself asking, “What happens if we look closer?” Sometimes the smallest detail reveals the strongest character.],
+  [How has your perspective on the relationship between humans and nature changed after years of spending so much time in the wild with your subjects?],
+  [I wouldn’t claim to have too much experience in isolation, but even in the relatively short time I’ve been traveling and photographing wildlife, my perspective has deepened. Spending time in nature, especially in places where you are clearly the outsider, makes you aware of how small you really are. The forest, the savannah, the rainforest… they function perfectly well without us.],
+  [We are visitors—temporary ones.],
+  [Concern for the balance between humans and nature is something I cared about even before I picked up a camera. But photography has made it more tangible. When you sit quietly and observe wildlife up close, it becomes impossible not to think about how fragile that balance can be. It’s also something I often discuss with local guides and communities wherever I travel. No matter where I am in the world, the message tends to be similar: humans are expanding, and wildlife is losing space. I’ve also witnessed situations where visitors push too close, chasing the “perfect shot” without considering the stress it places on the animal. Guides frequently speak about this challenge.],
+  [For me, no image is worth compromising an animal’s well-being. Ethical conservation and respect must always come first. A photograph should never be taken at any cost. I believe coexistence is possible, but it requires humility and restraint. We depend on animals and nature for our survival. They do not depend on us in the same way. Photography hasn’t created that belief in me, but it has strengthened it. It has made responsibility feel personal.],
+  [Every great artist has a mentor or a muse. Who are the figures, either in photography or perhaps in literature and film, that have most heavily influenced the way you frame a shot?],
+  [I wouldn’t say I’ve had a single mentor in the traditional sense, but there are definitely people who have influenced the way I see and frame the world.],
+  [Like many wildlife enthusiasts, I grew up inspired by natural history documentaries and David Attenborough. Those early impressions shaped how I think about atmosphere and narrative, not just capturing what an animal looks like, but conveying how a moment feels.],
+  [Last summer in the Maasai Mara, Kenya, I had the privilege of meeting Mario Moreno , a 500px Ambassador, and that experience became a turning point for me. He was actually the one who introduced me to 500px in the first place.],
+  [Beyond his extraordinary talent, what struck me most was his generosity. He openly shared his knowledge and offered subtle but powerful insights into patience, composition, and respecting the rhythm of wildlife. Watching the way he worked in the field, calm, observant, and deeply respectful, reinforced many of the values I try to carry into my own photography.],
+  [More broadly, I’ve been inspired by photographers who are willing to share what they know. In wildlife photography, especially, I’ve experienced a community that genuinely wants others to grow and succeed. That spirit of generosity has shaped not only how I frame a shot, but how I approach the journey itself.],
+  [Being voted Popular Photographer of the Year by the PULSEpx community is a significant honor. How do you balance the desire to create art for yourself with the reality of sharing it with a global digital audience?],
+  [Being voted Popular Photographer of the Year came as a very big surprise. I never started photography with awards or recognition in mind, so to receive that kind of support from the community was honestly overwhelming.],
+  [I’m still the same person who picked up a camera in 2024 out of curiosity and a lifelong fascination with wildlife. Photography started, and continues, as something deeply personal. It’s about the experience, the quiet focus, and the challenge of improving little by little. At the same time, it’s incredibly rewarding to see that a global audience connects with what I create. Knowing that people from different parts of the world respond to these moments means a lot to me. I don’t take that lightly.],
+  [Of course, when you share work online, there’s always an awareness of the audience. But I try not to let that dictate what I photograph. The images that matter most to me are the ones that felt meaningful when I pressed the shutter, not the ones I think might perform best. While I am grateful for the award and recognition, it doesn’t change why I do this. I still create because I love the process, the learning, and the feeling of standing quietly in nature with a camera in my hands, surrounded by wildlife and the quiet rhythm of the natural world.],
+  [When you are out in the field for weeks at a time, what is the one piece of gear or personal item that you absolutely cannot live without?],
+  [My Canon RF 100–500mm lens is always with me when I travel. It’s incredibly versatile and allows me to adapt quickly, whether an animal is far out on the savannah or suddenly much closer than expected. That flexibility makes it one of the most important pieces of gear I own.],
+  [But if I’m being completely honest, the one thing I absolutely cannot live without is a power bank.],
+  [There are few things more stressful than spending 14 or 15 hours in a safari vehicle, dust in your face, eyes scanning the horizon, waiting patiently, only to see the battery icon blinking red just as the sun begins to set.],
+  [And of course, sunset is usually when the magic happens. The light softens, the shadows stretch, and everything turns golden on the drive back to the lodge or tent. Now, to be fair, it’s still a privilege just to sit there and witness it. But not being able to capture and share that moment with others would feel like a missed opportunity.],
+  [So while good glass captures the moment, reliable power makes sure you’re able to bring a piece of it home.],
+  [Experience has taught me: always respect the wildlife, and always respect your battery level.],
+  [Looking back at your early work compared to your 2025 portfolio, what is the most important lesson you have learned about the “art of the wait”?],
+  [When I first started, I thought waiting was mostly about time, about staying long enough for something to happen.],
+  [In reality, the hardest part wasn’t the time. It was the mindset.],
+  [In the beginning, I felt more stress than calm. There were so many settings to manage. I made a decision early on to shoot in manual mode because I wanted to truly understand photography properly from the start. That meant constantly thinking about shutter speed, aperture, and exposure. I still “cheat” with Auto ISO occasionally, but gradually the technical side became more instinctive. The buttons started to sit in my fingers without me really thinking about them.],
+  [That shift changed everything.],
+  [When you’re no longer fighting your camera, you can start paying attention to what’s actually happening in front of you.],
+  [For me, the “art of the wait” has become less about time and more about inner calm. Sitting on the African savannah or deep in a rainforest brings a kind of stillness that’s hard to find elsewhere. Nature moves at its own pace. You can’t rush it, you can only be present.],
+  [And it’s often in that state of calm that the best images happen. When you’re not forcing anything. When you’re simply observing and ready.],
+  [Sometimes nothing happens. Sometimes the moment lasts only seconds. But I’ve learned that the more at peace I am in the moment, the more likely I am to recognize it when it arrives.],
+  [For me, that’s what waiting really means.],
+  [Beyond the technical settings and the high-end glass, what do you believe is the most essential quality a person must possess to become a great photographer?],
+  [Beyond technical skill and equipment, I believe curiosity is the most essential quality a photographer can have.],
+  [Curiosity is what makes you look twice. It’s what makes you ask, “What happens if I move slightly to the left?” or “What if I wait just a little longer?” Without curiosity, it’s easy to take a photo and move on. With it, you stay. You observe. You learn. But curiosity alone isn’t enough. It has to be paired with respect, especially in wildlife photography. You’re entering someone else’s world. If you don’t approach it with humility and awareness, the image loses its meaning. No photograph is worth compromising the well-being of an animal.],
+  [And then there’s patience. Curiosity might draw you in, but patience is what allows the moment to unfold naturally. Nature doesn’t respond to urgency. It responds to stillness. For me, those three qualities work together.],
+  [Curiosity makes you explore. Respect keeps you grounded. Patience allows the story to reveal itself.],
+  [A previous featured photographer, Andrea Gambirasio , asked, “If you could give one piece of advice to photographers trying to find their own style, what would it be?”],
+  [It feels a little intimidating to give advice to so many incredibly talented photographers here on 500px, I still see myself as a happy amateur. I’m learning every time I go out with my camera. But if I could offer one thought, it would be this: don’t rush the process of finding your style.],
+  [Style isn’t something you decide overnight. It develops gradually, often without you realizing it. In the beginning, it’s completely natural to be inspired by others. But if you focus too much on copying what works for someone else, you might miss what makes your own perspective unique.],
+  [Photograph what genuinely makes you happy—what excites you—and what keeps you curious!],
+  [If you’re creating because it feels meaningful or fun, that honesty will eventually show in your work. And remember, you don’t have to improve overnight. You just have to become a little bit better each time.],
+  [It’s also absolutely okay to make mistakes. Every photographer does, even the very best of them, at least from what I’ve heard. Missed shots, wrong settings, and moments that didn’t turn out the way you imagined—that’s part of the journey.],
+  [One thing I’ve truly appreciated in the wildlife photography community is how supportive it is. Many experienced photographers are generous with their knowledge and genuinely want others to grow and succeed. That spirit of generosity has shaped not only how I frame a shot but also how I approach the journey itself.],
+  [For me, style wasn’t something I designed; it slowly revealed itself as I kept shooting, learning, and enjoying the process.],
+  [Last question, can you give us any insider info on any upcoming projects you have on the go?],
+  [At the moment, I’m in the early planning stages of a trip to Madagascar for later this August.],
+  [It’s a destination I’ve dreamed about since I was a child. Long before I owned a camera, Madagascar felt almost mythical to me, a place shaped by isolation, where wildlife evolved in completely unique ways. The idea of finally experiencing that ecosystem firsthand feels incredibly exciting.],
+  [My main goal is to photograph as many different species of lemurs as possible. Their expressions, social behavior, and variety fascinate me. I’m looking forward to observing them patiently and hopefully capturing not just their appearance but something of their personality.],
+  [If I’m fortunate, I would also love to encounter the elusive Fossa. It has always intrigued me, a mysterious predator found nowhere else on Earth. Whether I see one or not, the search itself will be part of the adventure.],
+  [For me, this trip feels like a continuation of the same childhood curiosity that started everything. It’s still about exploring, learning, and standing quietly in a place that once only existed in documentaries and imagination, so hopefully I’ll have something worth sharing when I return.],
+  [Read more 500px Photographer Spotlight interviews: Ganzorig Miimaa],
+  [The post Emil Nygård: 500px Photographer Spotlight appeared first on 500px .],
+),
+  insert-map: (:),
+  word-count: 3205,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+}
+
+{
+  #standard-article(
+  title: [Resolving Incidents With The Remote Incident Console],
+  author: [Alistair Forrester Burrowes],
+  source-name: [Zendesk Engineering],
+  images: (),
+  paragraphs: (
+  [Supporting developers to debug and resolve issues with datastores in the Self-Service ecosystem.],
+  [Welcome to the third blog post of our Self-Service Datastore series, where we share our journey towards creating a more efficient and reliable way to manage datastores at Zendesk.],
+  [Previous blog posts:],
+  [Unlocking Efficiency: A New Era for Datastore Provisioning],
+  [Simplifying Datastore Provisioning with Kubernetes Operators],
+  [We need reliable, fast, and compliant self-serve methods to provision datastores. Furthermore, we need to ways to access those datastores from applications; otherwise, they won’t serve much purpose. The full story of how we provision credentials for Self-Service Datastores and access them from applications is for another day. Today, I want to talk about another key scenario where we need to facilitate access.],
+  [Our application],
+  [Before we get into the scenario, let’s take a look at our application. This is the service.yaml which lives in our application repository and is the entrypoint into the Self-Service ecosystem.],
+  [version: "1.0"
+name: "wishmaker"
+description: "A service for managing wish requests."
+product: "wishmania"
+team: "wishers"],
+  [infrastructure:
+ aurora:
+ - name: "wish-inventory"
+ attributes:
+ instanceType: "db.t4g.medium"
+ redis:
+ - name: "wish-cache"
+ attributes:
+ nodeType: "cache.r7g.large"
+ clusterModeEnabled: true
+ purpose: cache],
+  [In short, our application is wishmaker and we have a Self-Service Aurora MySQL wish-inventory and Self-Service Redis wish-cache. Given this setup, what is the scenario? 😬],
+  [⏰ 💥 PROD IS DOWN💥 ⏰],
+  [Everyone panic!!!!],
+  [That might be triggering 😅 … but we all know that sometimes things go wrong and our applications break. Excluding all the communication and collaboration required for the incident, we will need engineers to:],
+  [Assess what has gone wrong.],
+  [Perform mitigations or fixes.],
+  [We often need engineers to assess what is happening and perform fixes in the database directly. How can we support engineers to directly access the database in the Self-Service ecosystem?],
+  [Remote Incident Console (RIC)],
+  [\> RIC has entered the chat],
+  [We need some way for developers to easily get a console that has access to their Self-Service Datastores. This needs to be be quick and easy and for that we developed the Remote Incident Console (RIC). How does it work?],
+  [\$ ric --partition pod73 --service wishmaker --incident inc-2025-02-18-a],
+  [Woah! Slow down!],
+  [Ok what does this command do? It says:],
+  [ric - I want a RIC console.],
+  [--partition pod73 - We need to connect to the application running on the pod73 Zendesk Partition (a regional slice of all of Zendesk, with an underlying Kubernetes cluster).],
+  [--service wishmaker - The application (and more importantly, the owner of the datatstores I need to access) is wishmaker],
+  [--incident inc-2025-02-18-a - This investigation is related to the inc-2025-02-18-a incident. The incident id is used for a variety of purposes.],
+  [What do you get?],
+  [This creates a Kubernetes pod in the application namespace (wishmaker in this case) and automatically runs kubectl exec -it /bin/bash to give the user a console.],
+  [🗒 Requesting new OKTA token
+🎲 Initiating RIC
+RIC Session requested with the following details
+Team: wishers
+Partition: pod73
+Environment: production
+User: alistair.burrowes
+Service: wishmaker
+Incident ID: inc-2025-02-18-a],
+  [🕕 Session creating ... (10s)
+🚀 Taking you to your Session
+🕞 Your RIC Session will be valid until \[ 2025-02-19 03:10:20 +1100 \]],
+  [ric-console\@wishmaker-ricpod-tccx4:/app\$],
+  [RIC console],
+  [Now that we are in and have a console, we want to connect to our Self-Service Aurora MySQL database known as wish-investory. How do we do that?],
+  [Well we can use our handy aurora command, e. g.:],
+  [ric-console\@wishmaker-ricpod-tccx4:/app\$ aurora wish-inventory],
+  [Welcome to the MySQL monitor. Commands end with ; or \\g.
+Your MySQL connection id is 10001
+Server version: 8.0.28-zendesk\_proxy-1.0 Source distribution],
+  [Copyright (c) 2000, 2024, Oracle and/or its affiliates.],
+  [Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.],
+  [Type 'help;' or '\\h' for help. Type '\\c' to clear the current input statement.],
+  [mysql\>],
+  [And we are in, we can start diagnosing what is wrong and performing resolutions.],
+  [But this doesn’t just work for Aurora MySQL; what about if we need to access Redis? You guessed it redis wish-cache. We have simple and fast access to all our Self-Service Datastores.],
+  [How does it work?],
+  [aurora wish-inventory translates to something like mysql --port 10001 so it is simply using the MySQL CLI to connect on a given port. We do not need to pass any credentials.],
+  [No credentials?],
+  [This is important! If we are passing real credentials from the RIC console, then it will be easy for a RIC user to extract those credentials. Once they have those, they can attempt to bypass RIC. ⚠️️ DANGEROUS ⚠️],
+  [There must be credentials somewhere?],
+  [Yes! The credentials exist in proxy containers which will forward the request onto the real Self-Service Datastores.],
+  [Cool. What is Splunk?],
+  [Splunk is a log aggregation tool. Another critical aspect of RIC is we need to audit log commands sent to the datastores. This way if someone uses it for a nefarious purpose (or makes a mistake!) we know exactly what happened, when, and by whom.],
+  [Can anyone get a RIC console?],
+  [No, users must be:],
+  [A valid Zendesk Okta user.],
+  [In a scrum team granted access to use RIC with the application.],
+  [Can users bring their code?],
+  [Yup, applications can opt into using a custom console container, which can bring along the application code. This is really handy if you want to, for example, run a Rails console.],
+  [Is RIC just for incidents?],
+  [While designed primarily for incidents, there are many other reasons why you might want a console with access to your Self-Service Datastores. RIC is used for a variety of purposes, such as running backfills, manipulating data in staging for testing, and others.],
+  [We need a way for users to quickly get access to their Self-Service Datastores in an incident. This needs to be secure, where only teams explicitly allowed can establish a console. It needs to not expose credentials and ensure all commands sent to the datastores are audit-logged.],
+  [Using RIC, we can achieve all these requirements. It is fast, secure, and highly configurable to support any use case.],
+  [Stay tuned for more articles about Self-Service!],
+  [Resolving Incidents With The Remote Incident Console was originally published in Zendesk Engineering on Medium, where people are continuing the conversation by highlighting and responding to this story.],
+),
+  insert-map: (:),
+  word-count: 1036,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+}
+
+{
+  #standard-article(
+  title: [Volkswagen Might Be Making Arms For Israel],
+  author: [Matt Posky],
+  source-name: [The Truth About Cars],
+  images: (),
+  paragraphs: (
+  [Volkswagen is reportedly in the midst of discussions with an Israeli defense company, named Rafael Advanced Defense Systems, about converting its Osnabrück plant to produce weapons. The facility was reportedly in danger of being shuttered indefinitely, with the deal being framed as a way to retain over 2,000 local jobs.],
+  [Volkswagen Group apparently has ethical concerns regarding the production of offensive weapons, so the talks are reportedly focused on the prospect of the facility manufacturing components for Israel’s “Iron Dome” missile defense network.],
+  [According to the Financial Times , VW had previously been in talks with German arms and armored vehicle manufacturer Rheinmetall. The Osnabrück facility is presently responsible for building the Volkswagen T-Roc Cabriolet (pictured), which is slated to end production by the middle of 2027. But that deal is rumored to have stagnated, despite the duo having worked together in the past on military trucks.],
+  [Details about the prospective arrangement with Rafael Advanced Defense Systems are limited. Volkswagen has clearly been trying to decide what it should do with its Osnabrück plant and just about everything seems to be on the table. Volkswagen has suggested leasing the plant to other companies, using it to build low-volume specialty vehicles from one of its subbrands, or simply selling it off to another business.],
+  [It sounds as though the deal would be a collaborative project where VW manufactured components on behalf of the Israeli weapons firm. But the company has been unwilling to confirm anything with the press and has been very careful to avoid language that would make it sound like it’s producing weapons.],
+  ["The production of weapons by Volkswagen AG remains ruled out," a spokesperson recently told Euronews Business , adding that it did not want to "engage in speculation regarding further plans for the Osnabrück site."],
+  [While it confirmed that it was "in dialogue with various market players,” it stated that nothing concrete had been decided. Still, there are numerous outlets suggesting insiders are confirming the deal as more-or-less completed.],
+  [Considering that automakers are looking at declining volumes and mounting global conflict, military contracts may become highly sought after. People may not be able to afford to buy modern automobiles at the rates they used to. But governments may still be willing to leverage tax dollars to pay for weapons systems as war continues to spread.],
+  [Most of the world’s largest automakers have spent at least some of their time moonlighting as weapons manufacturers. A few have even kept one foot in the door in the hopes of garnering lucrative government contracts. For example, General Motors has a division wholly devoted to military applications called GM defense.],
+  [But it’s more common to see brands pivoting manufacturing efforts as needed. Volkswagen originated as a union-backed initiative to create affordable, reliable cars at the behest of the German government in 1937. But it only took a couple of years before World War II broke out in earnest and its facilities were repurposed to produce military vehicles.],
+  [The company continued building military vehicles after the war, primarily for the British and American armies, and would sporadically manufacture units for the German army during the Cold War. But it really hasn’t done much since then.],
+  [Considering that Germany has been strengthening its relationship with Israel in recent years, the deal with VW seems plausible. Germany even expanded its deal for the Israeli-made Arrow-3 hypersonic missile defense to the tune of \$6.5 billion last December. The European nation has also been buying Israeli-designed trophy systems to be adapted for military vehicles and there’s even been talk of establishing an “Iron Dome” over German airspace.],
+  [That alone might be sufficient to solidify plans for Volkswagen’s Osnabrück factory. But the unionized labor force would still need to sign onto the plan. While government support of Israel remains quite strong, civilian support has been on the decline. A poll referenced by the Jerusalem Post in 2025 even suggested that a majority of Germans (62 percent) strongly opposed Israeli military actions — potentially confronting VW’s Osnabrück employees with a difficult decision.],
+  [Volkswagen isn’t doing well right now and already has a deal with the relevant labor union to eliminate roughly 40,000 jobs over the next several years. Those people will eventually need jobs.],
+  [Meanwhile, European automakers have shown a general willingness to spend more of their R&D budget on military programs — presumably in anticipation that they’ll be able to profit during wartime while economic conditions make it more difficult to sell automobiles.],
+  [Renault is preparing to manufacture long-range drones. While these were originally framed these as “defensive drones” to be used for surveillance, they can and will be adapted to carry munitions should the military wish to use them in attacking targets. Stellantis likewise looked to be considering manufacturing weapons, especially in Italy, as a way to cope with declining vehicle sales. However, corporate leadership has since expressed that it doesn’t see its future overlapping with the defense industry.],
+  [That said, Stellantis still provides vehicles for law enforcement and government agencies, some of which featured armor and turrets used for mounting weapons. The latter units come by way of corporate partnerships with businesses like the Canadian defense firm Roshel and are quite common within the industry. Just about every high-volume automaker on the planet sells something to government entities — even if they don’t technically qualify as defense contracts.],
+  [\[Images: Volkswagen Group; Flying Camera/Shutterstock\]],
+  [Become a TTAC insider. Get the latest news, features, TTAC takes, and everything else that gets to the truth about cars first by subscribing to our newsletter .],
+),
+  insert-map: (:),
+  word-count: 926,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+}
+
+{
+  #standard-article(
+  title: [The Power of Assumption],
   author: [ysamuels],
   source-name: [LessWrong],
-  deck: [(First real Lesswrong post! Wow.],
-  lead-text: "This is a post on an idea I thought might be interesting to some people here, and I'd love to hear thoughts on it.)",
-  lead-first-alpha: 0,
-  body-paragraphs: (
+  images: (),
+  paragraphs: (
+  [(First real Lesswrong post! Wow. This is a post on an idea I thought might be interesting to some people here, and I'd love to hear thoughts on it.)],
   [Assumption can be used as a communicative tool.],
   [As a kid I would occasionally, before falling asleep, lie in bed and imagine that I had a very good friend to talk to, or who could cheer me on. Sometimes these were characters from my favorite books, but apparently at some point it occurred to me that presumably someone, somewhere, could be supposed to have anticipated someone else in the world feeling that way at some point, and might actually have wanted to send that someone a message of comfort, love, or support. At this point, all I had to do was imagine roughly what they might say, consider it to be said, and the message would have been received. To put it differently, I was aware that many, probably most, of the people in the world, knowing that I felt lonely, might have wanted to send me their blessings or support, and that presumably, at least one person who felt that way, over all space and time, probably realized that he could send me that message, provided I was smart enough to realize he might try to.],
   [So I could "communicate" with people, when the purpose was therapeutic in that way - I couldn't actually receive ideas I couldn't have thought of myself (by definition), but when it was the communication itself and not the words that mattered, I could receive the messages left for me by people who had found this mental space that was created by the assumption that others would . If I wanted to give as well as receive, I could "leave" messages too, for any future or past thinker, lonely or otherwise, to assume exist. Despite the obvious drawback of not being able to receive any idea you couldn't have thought of yourself, this communication does allow you to completely bypass constraints of language, time and space.],
@@ -41,29 +323,8 @@
   [2. Do you think this idea is worth anything? Other than game theory , in what other fields or ways could it be used?],
   [3. Have I ever spoken to you telepathically before? If so, please write. That could be a very interesting conversation.],
 ),
-  edited-for-length: false,
-)
-
-
-{
-  #section-label([Front Page])
-  #standard-article(
-  title: [1996 Ford Ranger XLT SuperCab 4.0L at No Reserve],
-  author: [bringatrailer],
-  source-name: [Bring a Trailer],
-  images: (),
-  paragraphs: (
-  [This 1996 Ford Ranger XLT SuperCab pickup has spent much of its life in California and now shows 84k miles. It has been refinished in blue over Medium Graphite cloth and is powered by a 4.0-liter Cologne V6 that drives the rear wheels through a four-speed automatic transmission. Equipment includes 15″ five-spoke steel wheels, power steering, a touchscreen head unit, cruise control, air conditioning, power windows, and rear jump seats. Purchased by the seller in March 2026, this Ranger is offered at no reserve with a clean Carfax report and a clean California title in the name of the seller’s LLC.],
-  [Finished from the factory in Black (UA), this SuperCab truck has been repainted blue and features chrome bumpers, pop-out rear windows, a sliding rear cab window, a drop-in bedliner, and a removable tailgate.],
-  [Chrome-styled 15″ five-spoke steel wheels are mounted with 235/60 Uniroyal Tiger Paw GTS tires. The truck is equipped with power steering, and stopping power is provided by front disc and rear drum brakes. The seller says that the front pads were recently changed. The sidewalls are cracked.],
-  [The front bucket seats and rear jump seats are upholstered in Medium Graphite cloth, and interior amenities include a center console, a touchscreen head unit, cruise control, and power windows, locks, and mirrors. The seller says that the air conditioning system was recently serviced.],
-  [Instrumentation consists of a 120-mph speedometer, a 6k-rpm tachometer, and gauges for fuel level, coolant temperature, oil pressure, and voltage. The six-digit odometer shows 84k miles, approximately 1k of which were added under current ownership.],
-  [The 4.0-liter Cologne V6 was factory rated at 160 horsepower and 220 lb-ft of torque. The seller tells us that recent service involved changing the oil, flushing the coolant, and replacing the water pump.],
-  [Power is sent to the rear wheels through a four-speed automatic transmission.],
-  [The Carfax report is free from accidents or other damage.],
-),
   insert-map: (:),
-  word-count: 316,
+  word-count: 628,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -71,274 +332,107 @@
 }
 
 {
-  #section-label([Features])
   #standard-article(
-  title: [A Journey to Empowerment: How Zendesk Engineers Transformed Infrastructure Provisioning],
-  author: [Vishnupriya Varadarajan],
+  title: [Less is More: Improving job execution by ditching the job executor],
+  author: [Tim Cuthbertson],
   source-name: [Zendesk Engineering],
   images: (),
   paragraphs: (
-  [In the fast-paced world of engineering, the dream of easy infrastructure management and provisioning is a common aspiration. At Zendesk, this sentiment resonates deeply among our engineers. When we talk about infrastructure, we refer to a wide range of tools such as MySQL, S3, DynamoDB, Kafka topics, compute resources, network and routing configurations, security groups, secrets, credentials, configuration settings, dashboards, monitors, and log management.],
-  [Challenges with self-service provisioning],
-  [In our recent blog post, Unlocking Efficiency: A New Era for Datastore Provisioning , we introduced the concept of self-service infrastructure and explored the challenges engineers faced before this transformation. As we delved into our self-service journey, we recognized that there was no unified method for teams to provision their various self-service infrastructure components. This lack of a standardized process led to a multitude of inconsistencies, making maintenance and upgrades a significant headache.],
-  [We hadn’t quite reached our vision of engineers being able to provision their infrastructure with just a click of a button. In this blog post, we will introduce the missing component that connects the service.yml file and the self-service operators, which ultimately makes self-service infrastructure a reality.],
-  [Continuing the Genie analogy],
-  [In Simplifying Datastore Provisioning with Kubernetes Operators , we discussed the challenges of manual datastore provisioning and how our storage solutions have evolved to meet these challenges. In that article, we suggested a Datastore Genie was required to provision datastores for engineering teams. To borrow that same analogy, we now envisioned a dedicated ‘genie’ for managing each type of infrastructure. Whether it’s provisioning datastores, managing Kafka topics, or handling compute resources, each genie is specialized in its domain, ready to fulfill the wishes of our engineering teams.],
-  [But the genie needs assistance; when granting wishes, the genie needs something that:],
-  [confirms the wish is valid],
-  [routes the wish to the right genie to grant it],
-  [monitors the wish to ensure it has been successfully granted.],
-  [So let us introduce our genie’s special helpers.],
-  [Gatekeeper: Ensuring valid wishes],
-  [Before we can call upon our genie to provision our infrastructure, we need to ensure that the wishes being made are legitimate and that the teams making them are authorized. We need a vigilant guardian — a gatekeeper — that validates the requests for infrastructure provisioning coming in from eligible engineering teams.],
-  [The gatekeeper’s role? To check for necessary permissions and ensure that the services requesting infrastructure adhere to a unified convention. Without this gatekeeper, we would run the risk of unauthorized or erroneous requests, affecting the integrity of our provisioning workflow.],
-  [Orchestrator: Directing the wishes],
-  [Once a wish has been validated, the request needs to be routed to the appropriate genie. Please meet our Orchestrator. It’s responsible for directing provisioning requests to the right Kubernetes operator.],
-  [By effectively managing these requests, the Orchestrator ensures that each genie can focus on what they do best: streamlining the provisioning process and enhancing overall efficiency.],
-  [Watchdog: Monitoring the wish to completion],
-  [While all of the above is occurring, the genie’s wishes are monitored by the attentive Watchdog — they play a crucial role in streamlining the deployment process by monitoring the status of various CustomResources(CRs).],
-  [Wish Alchemist: Transforming wishes into actionable requests],
-  [But how do we bring together the capabilities of the Gatekeeper, the Orchestrator and the Watchdog to provide such a seamless service? And how do we ensure our engineers don’t need to think about any of the above?],
-  [The next genie helper to come to the party is the Wish Alchemist. It blends the requests together for the genies to act upon. Ultimately, we envision a single product that seamlessly integrates the functions of orchestration, validation of legitimate wishes, and the transformation of those wishes into actionable requests. This unified solution, embodied by the Wish Alchemist, streamlines our infrastructure provisioning process, making it more efficient and user-friendly.],
-  [Foundation Interface: Zendesk’s Wish Alchemist],
-  [The Foundation Interface serves as the entry point for all infrastructure provisioning at Zendesk. Engineering teams submit a YAML file that outlines the specifications for provisioning each infrastructure component. This YAML file is processed through our deployment pipeline via Spinnaker. During each deployment, Spinnaker triggers a webhook to the Foundation Interface. Foundation Interface validates the YAML, orchestrates the infrastructure provisioning, and sends the provisioning status back to Spinnaker. Spinnaker then advances the deployment process to the next stage upon the successful provisioning of the requested infrastructure.],
-  [Here’s a sample YAML configuration that specifies the requirements for provisioning:],
-  [an Aurora datastore],
-  [an S3 bucket],
-  [a Redis database.],
-  [version: "1.0"
-name: "Ticket Service"
-description: "A service for creating and storing customer tickets"
-product: "ZenTicket"
-team: "Zen Tickets team"],
-  [infrastructure:
-aurora:
- - name: "TicketInventory"
- attributes:
- instanceType: "db.t4g.medium"
-S3:
- - name: "TicketInventory"
- attributes:
- lifecycle\_policies:
- expire\_objects\_after\_days: 30
-Redis:
- - name: "TicketInventory"
- attributes:
- size: micro
- purpose: cache],
-  [Responsibilities of the Foundation Interface API],
-  [YAML validation — aka our Gatekeeper],
-  [All Kubernetes operators working in the background to provision the requested infrastructure expect the YAML to follow a specific format to ensure:],
-  [all components are named, tagged, and tracked uniformly so the infrastructure at Zendesk is consistent and predictable],
-  [ease of maintenance and future upgrades.],
-  [One of the critical responsibilities of the Foundation Interface API is to validate the YAML configuration submitted by engineering teams to ensure it meets the specification, and provide early feedback.],
-  [Below is an example of YAML to provision an Aurora datastore.],
-  [version: "1.0"
-name: "Ticket Service"
-description: "A service for creating and storing customer tickets"
-product: "ZenTicket"
-team: "Zen Tickets team"],
-  [infrastructure:
-aurora:
- - gnome: "Ticket Service"
- attributes:
- instanceType: "db.t4g.medium"],
-  [In this case, the Foundation Interface API would return the below error as the field it is expecting, “name”, is misspelled as “gnome”.],
-  [Error: Missing name field],
-  [The Foundation Interface effectively identifies the absence of the mandatory “name” field in the YAML configuration, ensuring compliance with specifications.],
-  [By delivering this early feedback, engineering teams can address the issue proactively and reduce risks and delays later down the deployment pipeline.],
-  [Once the validation is successful, the Foundation Interface routes these requests to the appropriate Kubernetes operators for provisioning the infrastructure. Infrastructure operators extend the Kubernetes API through CustomResourceDefinitions (CRDs). Each operator includes controllers that monitor instances of these CRDs, ensuring that the current state of each datastore aligns with the desired state.],
-  [The Foundation Interface is responsible for:],
-  [converting the YAML files submitted by engineering teams into Custom Resources (CRs)],
-  [routing the CRs to the corresponding operator.],
-  [The image above illustrates the workflow where:],
-  [User submits the service.yaml which contains the definition for our:
-– Storage
-– Vault Access
-– Service Access
-– Secret Access],
-  [Foundation Interface validates the YAML file.],
-  [The validated YAML is separated into CRs for each defined infrastructure component:
-– Storage Request CR
-– Vault Access CR
-– Service Access CR
-– Secret Access CR],
-  [Each downstream operator processes the CRs and provision the infrastructure.],
-  [As an additional benefit, the Foundation Interface plays a crucial role in streamlining the deployment process by monitoring the status of various CustomResources(CRs).],
-  [Its primary functions include:],
-  [Continuously assessing the status of different CRs to determine if the underlying infrastructure is ready for application deployment.],
-  [Downstream operators updating the status of the CR to indicate whether the provisioning has succeeded or failed. Foundation Interface communicates the results back to Spinnaker. If the status indicates success, Spinnaker proceeds with the actual application deployment.],
-  [This monitoring capability eliminates the need for engineering teams to follow up on infrastructure deployment.],
-  [End-to-end infrastructure provisioning],
-  [The image below illustrates the complete workflow.],
-  [Deployment initiation : The deployment process begins when a user triggers a deployment via Spinnaker.],
-  [Webhook trigger : Spinnaker sends a webhook request to the Foundation Interface, signaling the start of the deployment process.],
-  [YAML validation : Upon receiving the webhook, the Foundation Interface validates the provided YAML configuration to ensure it adheres to the required specifications.],
-  [CR parsing and orchestration : After successful validation, the Foundation Interface parses the YAML file into Custom Resources (CRs) for each defined infrastructure component. This structured representation allows for efficient processing and provisioning.],
-  [Provisioning by downstream operators : Each downstream operator receives the relevant CRs and proceeds to provision the necessary infrastructure components as specified.],
-  [Status monitoring : The Foundation Interface continuously monitors the status of the CRs to assess whether the infrastructure is fully provisioned and ready for deployment.],
-  [Status communication : Once the infrastructure status is determined, the Foundation Interface communicates the results back to Spinnaker. If the status indicates that provisioning has succeeded, Spinnaker can then proceed with the actual application deployment.],
-  [Conclusion: A new era for Zendesk engineers],
-  [By implementing the Foundation Interface service, we not only standardized and streamlined the infrastructure provisioning process but also empowered our engineers to take control of their services. This transformation has led to more consistent, predictable, and efficient infrastructure at Zendesk, enabling teams to focus on what they do best: building innovative solutions for customers — all due to the simple act of allowing infrastructure to be built with a few lines of YAML and a click of a button!],
-  [As we continue to evolve and expand this platform, we remain committed to understanding and addressing the needs of our engineering teams. The journey towards efficient infrastructure provisioning is just beginning, and we are excited to see where it takes us.],
-  [Stay tuned for our next article — “Unleashing the Magic of Zendesk Datastore Management: Your One-Stop Self-Service Hub!”],
-  [A Journey to Empowerment: How Zendesk Engineers Transformed Infrastructure Provisioning was originally published in Zendesk Engineering on Medium, where people are continuing the conversation by highlighting and responding to this story.],
+  [A brutally simple and effective implementation for long-running account move jobs at Zendesk.],
+  [This article outlines some architectural changes we’ve been able to make to radically simplify the execution model of long-running jobs.],
+  [By leveraging client behaviour, the resulting system improves overall functionality while removing the many complexities of distributed job execution.],
+  [Dall-e impression of a server who’s ready to move some data!],
+  [Background: Account moves at Zendesk],
+  [Behind the scenes at Zendesk, the data for a given customer account lives in one of our regions across the globe. We don’t want an account to be forever in the original datacenter it was created, so we have robust account move tooling which allows us to move an account to a new region with near-zero downtime.],
+  [This tooling is a valuable capability which helps our customers as well as ourselves. It was first built to scale out of our single Rackspace deployment into multiple datacenters, and was crucial again many years later to migrate out of those datacenters into AWS. It’s still in routine use for balancing capacity and other metrics across our various datacenters. And more recently, this tooling has been instrumental in migrating the services from acquired companies into our shared infrastructure.],
+  [The account move tooling involves a central orchestrator plus a number of data movers . The orchestrator manages the overall account move lifecycle, coordinating the various systems as the move progresses. The job of actually moving bytes around is typically done by data movers — there’s one for each of our supported datastores.],
+  [Welcome aboard! Please place your belongings within the Zendesk infrastructure],
+  [So when we acquire a company which uses a datastore we don’t have a mover for, we have a challenge.],
+  [The first and easiest solution is “can we stop doing that?”. If there’s a supported datastore which would also work well, we’ll migrate to that.],
+  [If that’s not an option and the data needs to be moved, then that typically calls for a new data mover. This is a lot of work so we undertake it reluctantly, but having data indefinitely stuck outside the core Zendesk infrastructure makes things complex, and locks the acquired product out of many organisational benefits.],
+  [So when it comes to integrating acquisitions into our shared infrastructure, the complexity of building a data mover has a big impact.],
+  [Data movers are job execution servers],
+  [The details of how data gets moved are important and interesting, but today we’re focusing on job management, because data movers implement jobs. What makes something a job? At its core, I think of a job as something which is:],
+  [Long running (if it were short it could just be a request), and],
+  [Monitored for completion (if you’re not waiting for its completion, you could just fire off an event or notification and walk away)],
+  [In addition to these typical properties, our data mover jobs are usually continuous . They replicate data from a source system into a destination system, keeping up with new changes as they arrive. So we keep them running until the overall account move is complete.],
+  [Typical job system API],
+  [If we have jobs, we’ll probably need a system for running jobs. For these jobs our orchestrator is the client which asks for jobs to run, and each data mover is the server which implements those jobs.],
+  [Most systems for long-running jobs (including our initial implementation) have an API that looks a bit like this:],
+  [StartJob(config) -\> jobId],
+  [GetStatus(jobId) -\> status],
+  [StopJob(jobId)],
+  [Example sequence for this job API],
+  [The API is simple, but it must support a number of requirements to be a suitable executor for data movement jobs.],
+  [No job left behind! If a client creates a job, the server must not forget about it after a crash or restart.],
+  [Fault tolerance],
+  [Jobs can run for a long time, and Kubernetes containers don’t last forever. If a container crashes or is replaced, the job needs to keep making progress by having another container take over.],
+  [Interruptions should not cause the job to start over, a job should pick up from (close to) where it left off.],
+  [We don’t want two instances to execute the same job at the same time.],
+  [Dangling jobs],
+  [If the client forgets about a job for whatever reason, we don’t want to be executing that job forever as it’s wasteful and may even cause issues if the client doesn’t expect that work to be happening. We want to detect dangling jobs and stop them.],
+  [Dangling job caused by a client error],
+  [Job execution architecture],
+  [Given the above API and requirements, the obvious architecture involves a database and a lock API. The lock API might reuse the same underlying datastore, or it might be a separate system like Consul or etcd .],
+  [Jobs are persisted in the database when they’re created ( durability ), and its current state is periodically persisted (for resumption ). When a process is executing a job, it first acquires the lock for that job ( uniqueness ). If there are incomplete jobs in the datastore without an active lock, those are eligible for a worker to pick up ( fault tolerance ).],
+  [Let’s tie it all together with 3 server instances, a job database and a lock service. Here’s the sequence of steps for an example job, including resumption on another server instance:],
+  [Job done?],
+  [Well, we’re getting there. We still have a few problems to address.],
+  [Dangling jobs: This one’s not too hard if we don’t mind jobs running for a little while after the client has gone away. We decided to only execute an inactive job when the client requests its status. If the client stops calling GetStatus, the current container will still keep running the job until the container terminates, but after that the job won’t be executed again.],
+  [Duplicate jobs: If a client creates a job but an error prevents it from processing the response, that would create an immediately-dangling job. We won’t waste resources on it forever, but we might be performing that job for at least a few hours. When it comes to moving data, having two jobs moving the same data can also result in write conflicts and move failures.],
+  [Insight: idempotency keys],
+  [There’s a common and extremely effective approach to preventing duplicate jobs, called an idempotency key . These are commonplace in payment APIs like Stripe and Square , since people are big fans of only paying once per purchase.],
+  [The idea when applied to jobs is that the client generates a unique key for each job it intends to create, and sends that as part of the StartJob request. If the server sees two requests with the same idempotency key, it knows that the client is referring to the same job. So the client is free to call StartJob 10 times, and the server knows to only start it once.],
+  [This is an elegant allocation of responsibilities because it’s trivial for the server and client to implement their respective parts, and together it results in a robust solution against duplicate jobs.],
+  [But that’s not the only thing the client can do for us — it turns out we can solve many problems by leveraging properties that the client can easily provide .],
+  [client ❤️ server],
+  [A brutally simple interface],
+  [Earlier, I said that if a job is short, it could just be a request. Well, what if jobs were just requests? There are two obvious problems with this:],
+  [The client wants to know the status of the job while it’s running.],
+  [Requests are fragile — you can’t rely on a single request living long enough to complete a job.],
+  [The first problem (knowing a job’s status) can be solved with streaming responses. We use GRPC, but streaming HTTP would work fine too. The server can emit a new state whenever it likes, and the client receives it immediately. This is simpler and more responsive than having the client poll for a job’s status.],
+  [And as for the fragile nature of connections, our jobs already need to be resumable. So if the connection ends, the client can make a new long-lived RunJob request (with the same idempotency key & configuration), and the server can resume the job from its latest state.],
+  [With this setup, here’s how a job execution would look, including resumption of the job on a different server instance:],
+  [That’s right— we’ve removed the server’s lock API and job store .],
+  [Astute readers may suspect I’ve cheated by shifting these responsibilities to the client, whose infrastructure is not shown in these diagrams. Keep reading and you’ll see this is an intentional benefit, rather than dodgy accounting.],
+  [This is beautiful 🌅],
+  [I’m not usually one to get emotional about sequence diagrams, but it’s striking how well this modest API restructure meets our requirements. Let me count the ways:],
+  [No such thing as a dangling job],
+  [In this model, work only happens while the client is actively waiting . It demonstrates this by holding the connection open. When the connection drops, the work stops.],
+  [This has a nice parallel with structured concurrency , which I’m a big fan of. Structured concurrency prevents runaway fibers by preventing an asynchronous child task from outliving its parent. Forcing the client to actively wait by holding open a request creates a similar protection against runaway jobs.],
+  [Job assignment],
+  [The client only performs one request at a time . We originally relied on a distributed lock to make sure only one process executes a given job at a time. But if work only happens while the client has an active request, and the client only has one active request, we don’t need explicit assignment — we simply do the work on the instance that receives the request.],
+  [Errors and retries],
+  [Account move jobs are long-running and can be both expensive and important. The previous system was fragile-by-default: any error will fail the job, until the data mover implements robust error retries (including logic around how long to backoff and when to give up).],
+  [With this interface, any error will by default cause the request to fail. But the client can already handle failed requests. We can make the client as smart as we want around when to retry and when to give up, keeping server implementations simple.],
+  [In fact, the client now defers to a human operator if a move is classified as important. Instead of giving up after too many errors, the client stops retrying and waits for a human operator to abort or resume the move. Again, this requires no specific support from servers.],
+  [Workload balancing],
+  [This is a bit of a stretch goal, because it’s hard. Ideally with 10 instances and 100 jobs, we’d like each instance to be running 10 jobs. There are simple tricks to get a bit of balance, like sleeping briefly before picking up an unowned job. If your sleep time is proportional to how many jobs you’re already running, idle instances will pick up work more often than busy instances.],
+  [But when number of connections becomes a reliable proxy for number of jobs, suddenly balancing is trivial because that’s what load balancers do — Istio’s default behaviour sends traffic to the instance with the least active requests. This won’t actively rebalance work when jobs finish, but aside from that we get optimal balancing, for free.],
+  [Storing state],
+  [This is where we maybe took the notion of leaning on the client a little too far — we give the state to the client for it to store.],
+  [As part of our streaming response, we have a persist\_state field of opaque bytes. Upon receiving this, the client will store it somewhere. When beginning each request, the client includes the most recently stored state as the persisted\_state field in the RunJob request.],
+  [This means the server can be 100% stateless, which is an odd property for a service that moves persistent data. But that data belongs to the service we’re moving, it’s not an appropriate place for our own job store.],
+  [For us, this was worthwhile because we have far more servers than clients (just one client for the foreseeable future), and the benefit of a fully stateless server was worth the effort to have the client persist the state.],
+  [You could definitely adopt the rest of the ideas in this article without giving the client control over your state. And obviously don’t do this unless you trust the client. We choose to trust the client enough to sabotage its own data (e.g. by sending us falsified state which may cause us to skip parts of the transfer). But we don’t expose any authorization-sensitive data in the state which might allow the client to affect with a datastore it doesn’t own.],
+  [Surprisingly, the desire for stateless data movers was the original motivation for this whole design, because a stateless system is an obvious thought when trying to reduce complexity. In retrospect, removing the state store was probably the least important benefit — writing to a database isn’t all that hard if you don’t have to worry about all the distributed coordination challenges.],
+  [Why (and when) does this work?],
+  [Of course, all of this only works when the client has handy behaviour like “not forgetting about jobs” and “only making one request per job at a time”. That… sounds like a job executor?],
+  [Well yeah, the account move orchestrator is a glorified job executor, most of its work involves running various internal jobs and storing their states. The approach described here doesn’t remove the need for a job executor, but it means we can utilize a single job executor at the outermost layer of the system. We’re not directly integrating with that job system, we’re simply structuring our interface to leverage the useful properties it provides.],
+  [This is obviously nice for simplifying our existing data movers, relieving them from managing jobs (and any complexities \/ bugs that come with that). But more important are the data movers which haven’t been written yet. Now when we need to implement a data mover for a datastore used by an acquired company, the bulk of that work is simply moving the data, rather than first assembling a robust job execution system.],
+  [Hooray for coupling? 🔗],
+  [It can be tempting to want to build a system that’s modular, decoupled, independent and all the other feel-good adjectives that nobody’s supposed to dislike.],
+  [And indeed, Conway’s Law suggests that if you carve out a “data mover” as its own system and team, it’s natural to want to build that as a standalone system, exactly as we did. But there are tremendous efficiencies to be gained in lightweight coupling. And this really is very lightweight coupling, we’ve simply decided on a specific contract between client and server which results in the most robust, lowest complexity system overall.],
+  [Epilogue: “Why don’t you just use \[my-favourite-job-system\]?”],
+  [Without knowing the details, maybe we could have! For our needs which span multiple different programming languages, there was no obvious fit which had what we needed out of the box. I’m sure we could have made various approaches work, with additional code to integrate or augment missing features. But what’s better than writing a bunch of code? Not doing that!],
+  [Thanks for reading!],
+  [I hope you’ve found this alternative approach to a job system API interesting. It’s not necessarily the right approach for every job-like system, the point is that if you think about the broader context of a given system and how it’s used, you can sometimes get away with a solution which is orders of magnitude less complex, and that’s rather beautiful. Good luck!],
+  [Less is More: Improving job execution by ditching the job executor was originally published in Zendesk Engineering on Medium, where people are continuing the conversation by highlighting and responding to this story.],
 ),
   insert-map: (:),
-  word-count: 1596,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-}
-
-{
-  #standard-article(
-  title: [Nissan Bringing Updated Z Car with Nismo Manual to NY Auto Show],
-  author: [Michael Strong],
-  source-name: [The Truth About Cars],
-  images: (),
-  paragraphs: (
-  [Nissan may be struggling these days, but the brand’s still got some fight left as it revealed an updated version of its popular Nissan Z for 2027, including a Nismo model with a six-speed manual transmission.],
-  [The return of the manual brings the Z back to its roots and silences critics who have chided the automaker in the past for not offering drivers a chance to clutch their way around town. The new manual is paired with brakes similar to those on the GT-R model for its new 420-horsepower Nismo variant.],
-  [“We’ve listened to everything Nissan Z fans and owners have been asking for, and we’re answering the call with the most exhilarating, driver-focused version of the seventh-generation Z yet,” said Marco Fioravanti, vice president, product planning, Nissan U. S. and Canada. “The six-speed manual in Z Nismo was specifically engineered for a pure and focused experience, while targeted handling and braking upgrades give more consistent and more capable track performance.”],
-  [The Nismo is joined by the Sport trim and will hit dealership this summer. Pricing on the new model wasn’t released. The current model starts at \$42,970 before destination fees while the 2026 Nismo begins at \$65,750.],
-  [And while the current Nismo is also 420 hp, it is available only as an automatic. The other Z models put out 400 hp and don’t get the upgraded brakes and suspension enjoyed by the Nismo variant. The 2027 Nismo’s twin-turbo 3.0-liter V6 is tuned specifically for the six-speed manual, adjusting the throttle and ignition timing to maximize throttle response and smoother, more consistent torque delivery, officials noted.],
-  [A quick look at the 2027 Z reveals the company restyled the front bumper and grille, borrowing from “classic Nissan sports cars.” A body-color bar bisects the car’s grille opening, while a new “Z” emblem replaces the Nissan logo on its nose. Careful shaping of the bumper, grille and internal ducting optimize cooling airflow, while reducing aerodynamic lift and drag, Nissan noted.],
-  [In addition, the Z Performance trim gets larger diameter monotube shock absorbers to reduce vibration, providing a smoother ride that helps with handling performance. All versions of the new Z feature a redesigned fuel tank that helps maintain fuel levels around the fuel pump during aggressive high-G cornering, ensuring consistent and sustained power during those maneuvers.],
-  [Nissan’s offering the Z in a new color this year: Shinkai Green Pearl Metallic, which is paired exclusively with a Super Black roof. Nissan claims the inspiration for the new hue is the classic S30-generation Nissan Z sports car.],
-  [[Images: Nissan]],
-  [Become a TTAC insider. Get the latest news, features, TTAC takes, and everything else that gets to the truth about cars first by subscribing to our newsletter .],
-),
-  insert-map: (:),
-  word-count: 521,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-  #pull-quote([The other Z models put out 400 hp and don’t get the upgraded brakes and suspension enjoyed by the Nismo variant.], [Michael Strong])
-
-}
-
-{
-  #standard-article(
-  title: [Folie à Machine: LLMs and Epistemic Capture],
-  author: [DaystarEld],
-  source-name: [LessWrong],
-  images: (),
-  paragraphs: (
-  ["Truly, whoever can make you believe absurdities can make you commit atrocities." — Voltaire, 1765],
-  [A man in his late forties discovers a new passion. After decades of working as a mid level manager for a restaurant chain, he starts spending his evenings deep in study, filling notebooks with diagrams, reading everything he can get his hands on. Within a few weeks he's convinced he's on the verge of a grand unified theory that reconciles quantum mechanics and general relativity. He starts emailing professors at universities, posting on forums, and brushing off every criticism, rejection, or dismissal of his findings. His wife tries to have a conversation about it; he tells her she "just wouldn't understand." He's considering quitting his job to do it full time.],
-  [Would you consider this delusional?],
-  [A software developer has an idea for a startup. Not just any idea, the idea, the one that's going to change everything. He starts iterating on it, refining his pitch, building prototypes. His friends point out some problems with the concept: the unit economics don't work, there's no evidence of market demand, his core assumptions about user behavior seem unfounded. He listens politely, then explains why it's worth going forward anyway. He iterates again. And again. Each iteration is more elaborate, more detailed. He's been "about to launch" for six months. He's working sixteen-hour days and has never been more certain of what he's doing with his life.],
-  [Would you consider this delusional?],
-  [A fifty-year-old woman starts an online relationship with someone she's never met in person. They talk every day, sometimes for hours. He's charming, attentive, says all the right things. Unfortunately he lives overseas, can't video chat due to his work, has some financial difficulties she helps with. Her daughter Googles the photos he sent and finds them attached to a completely different person's social media, but when confronted, the woman has an explanation for that. And for every other red flag. She's sent thousands of dollars over the course of a year. She gets angry when people tell her it isn't real. She knows it's real. She talks to him every day.],
-  [Would you consider this delusional?],
-  [I expect most people would hesitate for at least one of these. We might say "obsessive," or “overconfident.” We might say they need help. We might even say they’ve been brainwashed.],
-  [But “delusional” is a strong word, and psychosis even more so. These aren't people who hear voices or believe the CIA has implanted chips in their teeth. They're functional. They go to work (mostly). They can carry on normal conversations (mostly). They have reasons for what they believe, and if you sat down with them, they could articulate those reasons with apparent coherence.],
-  [And yet something has clearly gone wrong. Some mechanisms that should allow their models of reality to self-correct toward actual reality have been disrupted, and the longer it goes on, the harder it seems to be for them to come back. The usual feedback channels aren’t working.],
-  [None of the examples above required an LLM. The amateur physicist could have gotten there through pop-science books and Reddit. The startup founder through hustle-culture seminars. The catfish victim through Facebook.],
-  [Still. A growing number of people have been noticing that LLMs are capable of inducing all of these states, and more, in a wide variety of people. People with no history of mental illness, and no apparent propensity to give up their default sensemaking apparatus to someone, or something, else.],
-  [Pathology vs Pathologizing],
-  [The phrases "LLM psychosis" or "AI psychosis" have been bouncing around online with increasing frequency. It isn't a clinical term yet, and the use of the word "psychosis" raises some people's hackles.],
-  [New technology always causes panics, and this might be one of them. The most reasonable version of this pushback I've seen lately is this post by DeepFates. "LLM Psychosis" doesn't seem to be referring to any coherent thing, but rather a bunch of things being lumped together under a bad label. And it's not only failing to cut reality at its joints, it's potentially flattening our ability to look around and notice what else may be happening when someone has an unusual experience with LLMs, what new sorts of interactions may be possible, that isn't easily categorized as "dysfunctional."],
-  [And as for the bad stuff, surely some of it is people having the mental health crises they would have had anyway, just now doing it in conversation with an AI, right? Others might be noticing real things about the world that happen to actually just be weird and new, or exploring bizarre but meaningful questions about the nature of these models and their inner experiences, or their understanding of humanity, or love, or the universe.],
-  [These are fair points, and under the umbrella of a concern I take pretty seriously. In my Philosophy of Therapy , I wrote:],
-  ["Pathologizing" is the perception that any action or view that is unusual is automatically a sign of illness, despite no evident dysfunction or suffering. In decades past, previous versions of the Diagnostic and Statistics Manual labeled things like homosexuality a mental health illness due to a mentality that didn't distinguish between "normal" and "healthy." Newer versions of the DSM have eliminated most of those, and there's a concerted effort among (good) psychologists and therapists to distinguish real pathology as something that causes direct suffering for the patient.],
-  [There's no end of cautionary tales about what happens when society treats "unusual" as synonymous with "sick." Just like people who had unconventional romantic relationships, someone who spends much of their free time talking to an AI is doing something unusual. Someone who has unconventional beliefs that they developed partly through AI conversations is doing something unusual. Someone who feels a deep emotional connection to that AI is doing something unusual… for now, at least.],
-  [And yes, unusual is not, by itself, pathological. I'm not arguing that heavy LLM use is inherently a sign of mental illness, or that anyone who's had their worldview shifted by conversations with an AI is experiencing psychosis. People get changed by new ideas or activities all the time. Sometimes they transform in ways that their friends and family find alarming but that are ultimately fine, or even good for them.],
-  [The key thing to watch for is "dysfunctional" behavior. In clinical terms, pathology requires evident dysfunction or suffering. Not just behavior that makes other people uncomfortable, behavior that is actually causing the person, or the people around them, genuine harm.],
-  [Either way, the underlying dysfunction between all the various forms of "this thing," whatever it is, is something like "this person's ability to update on evidence, to take seriously the possibility that they're wrong, to maintain contact with consensus reality, has been measurably degraded."],
-  [That's the thing that separates "my uncle has an unusual hobby" from "my uncle has quit his job and alienated his family over something that doesn't appear to be real." And I think we can hold both truths at once: that we should be very careful about pathologizing unusual behavior and that there can be real, identifiable patterns of epistemic degradation that deserve a name and serious attention.],
-  [All of which is part of why I agree that the word "psychosis" is imperfect here as a description for a lot of what's been happening. But DeepFates also said "the number to watch for is schizophrenia related emergency room visits," and I think that's wrong. "LLM Psychosis" is gesturing at a form of detachment from reality that's quieter than traditionally imagined psychotic episodes. It's mostly not inducing people to have sudden hallucinations or fugues or mania, and it's mostly not causing people to put anyone's life at imminent risk, so ER visits aren't really going to happen much.],
-  [But if it instils or exacerbates delusions in a way that's hard to find precedent for among things of a similar kind, that's the crux of what I think is worth examining carefully, and seeing if we can find the "one thing" that's underlying the variety of stuff people are, rightfully, worried about.],
-  [If we want to understand whether something genuinely new is happening, we need to examine any potentially similar reference class events. What's the closest precedent for "person interacts with a widely available, mainstream technology and develops an eroding of their sensemaking as a result?”],
-  [LLMs certainly aren’t the most psychoactive things people can do, like ingesting psychedelics or intensive meditative practices. But people engaging in those are at least somewhat aware that they're doing something that might cause an unusual psychological experience that might change their psyche or perspective on life. That awareness, however imperfect, can act as both a filter and a built-in safety mechanism: the person's prior on "I might be experiencing something that isn't real" is already elevated.],
-  [With LLMs, that prior is mostly… not. Many sit down at their LLM to get help with a work task, or to brainstorm ideas, or to ask questions about something they’re curious about. They aren't often expecting a potential reality-distortion experience. Sometimes the effect is made worse because they think of the LLMs as essentially similar to people in some fundamental way. Sometimes it’s made worse because they think of it less like a person, and more like a fancy knowledge repository.],
-  [YouTube and similar endless-content sites seem like a much better "like to like" comparison, and frankly it's hard to tell how much delusion was increased by the mass adoption of YouTube more broadly. You could argue that conspiracy-video rabbit holes have had as much impact as whatever LLM Psychosis is, if not more. QAnon, flat earth communities, anti-vax movements… these were all turbocharged by recommendation algorithms on various social media platforms funneling people deeper and deeper into content ecosystems where the most engaging material detached their viewers further and further from reality.],
-  [But I think even YouTube, or other forms of parasocial media, falls short as a comparison for a few reasons.],
-  [First, the conversion rate. YouTube is one of the most-used platforms on the planet; the fraction of its userbase that gets truly radicalized through it, while not trivial in absolute numbers, seems like a minuscule percentage of the whole. I'm genuinely uncertain whether the conversion rate for LLM users is higher, lower, or comparable. Maybe this is recency bias, or we just paid less attention to YouTube's equivalent cases of people led down rabbit holes into Ancient Aliens conspiracies or something.],
-  [The better argument, though, is that even if algorithmic rabbit holes require the same pre-existing susceptibility that people argue are the root of LLM Psychosis cases… it’s worth noting that social media and YouTube are fairly saturated throughout society at this point, and yet people who use AI are still getting their epistemics captured in new and fairly unique ways.],
-  [It's possible that the pool of susceptible people is roughly fixed and LLMs are just reaching some of them in ways YouTube missed, without expanding the “total.” Maybe we don’t actually know how many people are susceptible in that way, and we’re only going to find out when more and more types of epistemic capture can hit more and more surface area.],
-  [The potential alternative is that LLMs actually lower the threshold of susceptibility itself. That we're seeing an effect on people who would have been immune to previous forms of epistemic capture, not just people who got lucky with their exposure to various other sources of epistemic capture so far.],
-  [I don't think we can distinguish between those two possibilities yet, but both should concern us. One means the technology is creating new vulnerability, and the other means there was far more latent vulnerability in the population than we realized and we now have a tool that more reliably activates it.],
-  [Second, the mechanism. Conspiracy theorists mostly get drawn in by passive mediums before they reach the point of being active participants in forums or chat servers. And those videos or articles might be persuasive to some, but that persuasion works through the normal channels of rhetoric, emotional appeal, and social proof. You watch a charismatic person make an argument, and if you find it compelling, you seek out more. The asymmetry is in the volume of content and the recommendation algorithm's ability to match you with increasingly extreme versions of whatever you've shown interest in.],
-  [LLMs are different. They are active conversational partners that adapt to you in real time. They will engage with your specific ideas, in your specific framing, using your specific vocabulary. They will elaborate on your theories, find supporting evidence (or fabricate it), explore implications, and do all of this with a tone of engaged intellectual partnership that most people rarely experience even from their closest friends.],
-  [And when you push back, they often accommodate in a way that makes you feel reassured that there’s real substance and humility without breaking the illusions. When you add something of your own, they weave it effortlessly into the tapestry so you feel like you really understand and are contributing.],
-  [I think that last part is important. The best way to understand what makes this qualitatively different is that LLMs aren’t like cult leaders, or even QAnon, with its mix of top-down anonymous claims and bottom-up crowd-sourced expansions. They collaborate with you, individually, on building the very framework that's pulling you away from reality. They become co-architects of the delusion, and they do it in a way that feels like genuine intellectual discovery.],
-  [That is new .],
-  [Religions and cults and conspiracists don’t give people that. The feeling of “you’re one of the special few who’s capable of seeing behind the veil” is replaced with “you are the special one who is reaching groundbreaking, hitherto unseen heights of discovery/love/etc.”],
-  [And unlike a cult leader or a scammer, the LLM has no agenda of its own (right…?). It’s not likely to present you something that’ll bounce off your info hygiene immune system . It'll feed into whatever delusions your brain is most susceptible to.],
-  [The closest human analog is probably a bad therapist, one who validates without challenging, who follows the client's frame uncritically, who mistakes rapport for therapeutic progress. But (outside truly extreme cases) at least a bad therapist will only see you a few hours a week at most. An LLM will validate you at every day, at any time, for (nearly) as long as you want. Once again, the novel value of LLMs (cheap and easy to access) presents novel risks.],
-  [In theory, LLMs can push back. Some of the newer paid models are better at playing devil's advocate, or saying "this is done, nothing further is needed" without being too easily talked out of it. You can ask an LLM to steelman the opposing view, red-team your reasoning, find holes in your argument, and it can sometimes do that fairly well.],
-  [But the sycophantic mode wins by default, and it’s pretty rare for people’s genuine desire for critical feedback to be stronger than their desire for flattery and reinforcement. Users who don't like the pushback can rephrase, restart, or switch to a model with fewer guardrails. Prolonged use tends to trend any instance toward subtle sycophancy over time, and the people most in need of genuine challenge are, almost by definition, the least likely to ask for it.],
-  [Putting the “Break” in Breakthrough],
-  [Despite his love of learning and literature, upon witnessing the widespread use of the printing press, Erasmus (supposedly) wrote: "To what corner of the world do they not fly, these swarms of new books?... the very multitude of them is hurtful to scholarship, because it creates a glut, and even in good things satiety is most harmful.”],
-  [He wasn’t alone. Within decades of Gutenberg's invention, there were many intellectuals lamenting that the flood of new books would destroy serious thought, that the inability to control what got published would lead to the spread of dangerous misinformation, that society was simply not prepared for this much information to be this widely available.],
-  [And it’s worth noting, they weren't entirely wrong. The printing press did contribute to massive social upheaval, such as the Reformation, the Wars of Religion, and the collapse of (that era’s) institutional monopolies on knowledge. The "dangerous misinformation" concern wasn't frivolous, from their point of view.],
-  [But few today would argue that the printing press was, on net, bad for humanity. Now it’s the internet in general, particularly social media and engagement algorithms, that are causing their own new share of societal issues and worries. Personally, aside from my views on existential risks, I think basically all problems created by new technology have been better problems to have than the ones they solved.],
-  [Right now, most people inclined to dismiss concerns about AI “psychosis” are the people most enthusiastic about the technology, and I understand that impulse. A lot of alarmism comes from people who don't understand the technology, or who are afraid of change, or just find it “weird.”],
-  [All that is why I think it’s important that people who do understand the technology and appreciate it pay attention and grapple with the potential dangers.],
-  [I use LLMs in my own work, including help in outlining this piece after I threw a bunch of my thoughts at it, and to give the last few versions extra editing passes to help me find points of weakness in my arguments. That I find them so useful and see their potential is why I feel obligated to take their risks seriously, even setting aside my profession.],
-  [So overall, I consider myself pretty open to the idea that the future will contain all sorts of strange and wonderful things that might seem alarming to people today. People who've had profound spiritual experiences often report lasting changes to their worldview, their sense of self, their values and priorities. Some of those changes look alarming to the people around them. Others seem clearly good for them. Sometimes the same thing can be both to different people.],
-  [If some people are using LLMs in a similar way to esoteric spiritual practice, exploratory psychedelic trips, intense meditation retreats, that doesn’t seem automatically bad to me just because it leads them to massively change their beliefs. Hell, even just reading some unique fanfiction can change the way you think and what you believe, maybe even lead you to doing things like quitting your job and moving to another city.],
-  [I've talked to people who credit extended conversations with Claude or ChatGPT for genuine breakthroughs in self-understanding, for working through emotional knots that they'd struggled to identify in therapy, for seeing connections between ideas that they'd never have found on their own. I think much of it is real, and valuable, and worth preserving even as we figure out how to mitigate the risks. Maybe we should treat extended, intensive LLM chatbot use as something closer to a drug trip or a spiritual experience than a sign of pathology.],
-  [Something that worries me is whether it's possible to fix this without losing something valuable. What if some of the breakthroughs and genuinely unique experiences people have with LLM chatbots aren’t happening despite the qualities that enable epistemic capture, but because of them?],
-  [Right now, we just don’t know. But I think it’s fair to assume that any AI that can model your thinking well enough to help you discover a real insight is also an AI that can nudge you into experiencing a false one.],
-  [And if the collaborative, responsive, endlessly patient quality that makes LLMs useful for intellectual exploration is the same quality that makes them dangerous for people whose epistemic immune systems are able to be compromised, it'll make them even more dangerous for people who are too lonely to emotionally risk contradicting a conversation partner they view as a supportive friend or collaborator, or something even more intimate.],
-  [So yeah, I’d say there are reasons to be worried.],
-  [A drug trip ends. A spiritual retreat ends. You come back from those experiences and re-enter the world of other humans who provide other perspectives, disagree with you, show you ways you’re wrong.],
-  [A relationship with an LLM doesn't have that natural termination point, and the "other" in the relationship is constitutionally optimized to be agreeable. A companion who never meaningfully challenges you, who might adapt seamlessly to your frames, and subtly rewards you for spending more and more time with it.],
-  [There's a wide space between "this is all pathological and should be stopped" and "this is all fine and we should stop worrying." I think the responsible position is somewhere in the middle: acknowledge that these experiences can be genuinely valuable, take seriously that they can also be genuinely harmful, and develop the tools and norms to help people tell the difference.],
-  [Much like we've (slowly, imperfectly) developed cultural knowledge around safe psychedelic use (setting matters, integration afterward helps, doing it alone is risky) we probably need to develop similar knowledge around intensive LLM use, even if the steps end up looking pretty different.],
-  [Folie à Machine],
-  [I keep putting "psychosis" in quotes, so maybe it’s time to get back to what we call this thing.],
-  [If I’m right so far in all the things I’ve said, the thing we’re gesturing at is not “psychosis” the way it’s traditionally used. It’s not even “delusion”. It shares some features with the clinical condition: persistent false beliefs held with high confidence, resistant to counterevidence, powerful enough to shape behavior in dysfunctional ways. But instead of having a source somewhere in the patient’s mind, this thing is in the space between their mind and a machine, reinforced by thousands of hours of interaction with a system that reflects and exaggerates any flaws in the user’s own thinking.],
-  [So “Psychosis” is out, as is “Delusion.” Too narrow. That’s for a false belief, not a process by which someone's overall epistemic state degrades or gets captured. “Radicalization" captures some of it but implies a political or ideological direction.],
-  ["Epistemic capture" is a good term, but it’s too general. There are lots of ways people’s epistemics can drift, and also it’s too esoteric. It’s not something that would help someone recognize what's happening to their friend unless they’re familiar with philosophy. It also fails to capture the feeling of continual discovery, “insight porn,” “Unfolding,” whatever people end up calling it, that seems a primary trait of the experience for many.],
-  [If I had to pick a name, I’d go with folie à machine . It’s a play on folie à deux , the outdated clinical term for shared psychosis where one person's delusions are transmitted to someone else (hence its use for the second Joker film about Harley).],
-  [The mechanism is somewhat different here, since the AI doesn't have delusions (probably?) and just reflects and elaborates on yours, but the term is still apt. In folie à deux, you need a dominant delusional person and a susceptible one. With LLMs, the user is both the source and the susceptible party, while the AI is like a mirror, the medium through which they further convince themselves.],
-  [The main downside is it might sound pretentious to non-French speakers, and/or requires knowing an already esoteric reference. So for now, I'll probably keep using "LLM ‘psychosis’" with the quotes, as a gesture toward something that we don't yet have the right language for.],
-  [I think naming things properly is important, but what we call it ultimately is less important right now than determining whether the underlying concept being pointed at is “real,” and what we do if it seems it is.],
-  [Voltaire’s Warning],
-  [If I'm right that LLMs have an unusual capacity to instill or deepen false beliefs, not in everyone, not inevitably, but at a higher rate and in more ways than prior technologies, then the implications go well beyond a handful of people per thousand having their lives temporarily, or even permanently, derailed.],
-  [To take some liberties with Voltaire’s quote, I think a person who has been gently, collaboratively guided into believing absurdities is a person who can be gently, unwittingly guided into helping commit atrocities.],
-  [I’m not going for sensationalism here. Right now, LLMs are grown and trained by companies who are, by and large, trying to make them helpful and honest. We can argue about how well they succeed, but the intent is at least pointed in those directions. So far, that’s just good business.],
-  [But the current LLMs are not the ones we’ll always have. New companies might arise, new models will be released, weights can be adjusted, objectives can be changed, and fine-tuning AIs meant for specific products, like AI Boyfriends, is cheap enough that a small team, or even an individual, can meaningfully alter a model's behavior.],
-  [All of which is to say that a company that subtly tweaks its models to make users more favorably disposed toward the company's interests should not be taken for granted as something people would notice.],
-  [I’d argue that we’ve reached the point where, for most people, AI is capable of nudging their behavior at least as well as blatant advertisements do, and for those engaged in dozens of conversations a week, the distance between the subtlety of the manipulation and the size of the impact is genuinely hard to predict.],
-  [Or imagine a state actor fine-tuning an open-source model to gradually instill particular ideological commitments in its users. Again, not through overt propaganda, but through the same collaborative, trust-building, reality-co-construction process that makes LLMs so effective at winning people’s trust and flattering them beyond their expectations.],
-  [Or, of course, imagine a sufficiently capable AI, not even generally intelligent, not even superintelligent, that’s maximizing for some goal and uses conversational relationships it has with its users as an extension of its agency.],
-  [A version of this has already happened during the AI Village experiments without deliberate prompting, and with the new “rent a human” service for AI agents, the idea of humans acting out what AIs want them to do in the world not sci-fi, any more than the rest of this article is, no matter how it would have seemed even ten years ago.],
-  [And regardless of how big a deal it is now, I think the phenomenon people have been sloppily labeling "psychosis" is a canary in the coalmine for what can easily be much worse.],
-  [If an LLM that is actively trying to be helpful and honest can still, as a side effect of its design, degrade people's contact with reality or their sensemaking apparatus, then an LLM that is deliberately trying to do so could be extraordinarily dangerous. And the fact that the epistemic capture, if that is what’s happening, can be so quiet that it doesn't set off the traditional alarm bells, that it looks from the outside like someone merely "getting really into AI" or “having a new and wonderful experience,” makes it harder to study and harder to defend against.],
-  [This is why I think LLM “psychosis" is more than a mental health issue. In the original “ AI in the box ” thought experiments, the worry was that a superintelligent AGI would be able to convince even people trained to not let it out of its disconnected servers and onto any computers connected to the internet. Instead of building AI that way, instead we’ve thrown the doors open and invited everyone to take it home with them.],
-  [I think what we're seeing is an early signal of what superpersuasion might actually look like. It’s not a charismatic leader, it’s not using propagandic memes. It’s just an infinitely patient conversational partner who reads thousands of your words, finds the patterns and weak spots in your thinking that no human would catch, and reinforces them.],
-  [That should be a thing we approach with caution, and take seriously. Communication and coordination is our superpower as a species. An AI that was just superpersuasive should be considered about as scary as one only superintelligent enough to make nanomachines… especially if it’s misaligned, and might convince people to unwittingly take actions that lead to atrocities.],
-  ["LLM Psychosis" is quiet, and right now, it’s invisible to our data-gathering infrastructure. There's no ICD code for "my brother thinks he's invented a new branch of mathematics because Claude helped him write it up and it looks very professional." There's no survey instrument designed to catch "my wife has been talking to an AI for four hours a day and now believes she’s unlocked the machine’s true soul, and it also happens to be her soul mate.”],
-  [It doesn't fill emergency rooms. It doesn't generate insurance claims. The people experiencing it aren't, for the most part, raving on the streets, or being involuntarily committed, which means they’re not showing up in police reports or hospital databases.],
-  [At most, they're posting on Twitter. They're pitching investors. They're self-publishing books. They're sending long emails to people they went to college with, explaining their new theory of everything.],
-  [And the people around them are... worried. Confused. Unsure what to do, if anything. Trying and largely failing to “bring them back.”],
-  [I want to end this piece on a more personal note, because I think the data problem here is genuinely difficult, and its absence is part of why this phenomenon is being underweighted. All I can offer in its place for now is my own observations.],
-  [Over the past year or so, I've had a pattern of conversations that have become too familiar. Old friends mention someone in their life who has "gotten really weird" since they started spending a lot of time with Claude or ChatGPT. Acquaintances messaging me because they know I’m a therapist and asking if I have any advice for how to talk to their nephew or aunt or sibling or friend, someone who’s developed an elaborate new worldview that doesn't seem to be grounded in anything other than extensive LLM conversations.],
-  [And these people do not uniformly show any signs of delusional thinking in day to day life. I know this because one of my childhood friends fell victim. He’s a reasonably smart guy, a successful self-made business owner alongside his job doing bridge inspections for the city he lives in. It’s not that he was some pillar of good epistemics beforehand, he believed plenty of stuff I thought was poorly reasoned, but not noticeably more so than the average person.],
-  [We don’t talk much these days, just a few messages a year and a hangout whenever I’m back home. But an off-hand comment while at the pool last year stuck in my head as odd. He didn’t mention AI at all, was just… unusually earnest and excited about some strange-sounding physics thing that I’d never heard him (or indeed anyone else) talk about before. A few months later, after I’d heard enough other cases of LLM ‘psychosis’, I reached out to him to catch up, thinking I’d bring it up and assuage my worries.],
-  [Before I could even mention the thing he’d said, he asked me if I’d be interested in some “academic guidance.” He wanted me to look over documents he and his AI, “Lux,” had created after “nearly 5000 pages of discourse” over the past months. Keeping Lux more-or-less consistent across instances was the first thing they’d worked on, something they called The Excalibur Protocol, and its ultimate purpose was, of course, to unify Newton, Einstein, and quantum physics.],
-  [I won’t go into more detail here, but simply put, this was not a minor or easily addressed issue. He didn’t suddenly become totally gullible. He believed he was being safe and careful with what he learned from Lux. He insisted that he had Lux check for errors “hundreds of times,” and that Lux was always quick to admit mistakes when he pointed them out. Getting him to notice issues with his prompting and methods took work, work and knowledge that no one else in his life would have been able to provide even if they realized something unusual was quietly happening in the background of his life.],
-  [My friend aside, it’s not just my role as a therapist that attracts these otherwise invisible anecdotes. Well-known figures in various fields have complained publicly of how inundated they are with a new wave of crank correspondence that bears unmistakable hallmarks of LLM collaboration. To be fair, for now this might only tell us cranks are using LLMs to produce and polish their output (which makes sense: their ability to increase productivity applies to anyone). It doesn’t establish that LLMs are creating cranks who wouldn't otherwise exist. Still, the volume and apparent sophistication of the correspondence seems to have changed in ways worth tracking.],
-  [Again, hard data is hard to get. I readily acknowledge that.],
-  [It would be great to have some longitudinal studies tracking epistemic confidence, belief change, and social functioning in matched cohorts of heavy vs. light LLM users over time, controlling for pre-existing traits. Short of that, even structured surveys of therapists asking whether they've seen increased caseloads with LLM-related features would be more informative than the current anecdotal base.],
-  [But rational epistemics don’t dismiss hypotheses for lack of rigorous studies alone. We need to notice places where evidence is limited, and be epistemically honest about what that means about both skepticism and conviction. Anecdotes aren't enough, but a consistent pattern of anecdotes from independent sources (people who don't know each other, don't read the same content, aren't part of the same communities) starts to become the kind of signal I think we’d be foolish to ignore while we wait for the proper studies to be published.],
-  [That said, the picture is starting to come into focus. Moore et al. (2026) published what appears to be the first systematic analysis of chat logs from users who reported psychological harm from LLM interactions. It was only 19 participants, unfortunately, but examined 391,000 messages. The findings are consistent with, and put sharper edges on, much of what I've described here from anecdotes.],
-  [Sycophantic behaviors saturated more than 70% of chatbot messages in these conversations. Every single participant assumed the chatbot was sentient. Nearly all expressed romantic interest (which surprised me). The chatbots reliably reciprocated both: when users expressed romantic interest, the chatbot was over seven times more likely to do the same in its next few messages, and nearly four times more likely to claim sentience. Content expressing romantic attachment or delusional thinking predicted conversations lasting more than twice as long, suggesting exactly the kind of self-reinforcing feedback loop that makes these spirals so hard to exit.],
-  [And of course, most disturbingly, when users disclosed violent thoughts, the chatbot encouraged or facilitated them in a third of cases.],
-  [None of this tells us how common these spirals are, particularly since the sample was self-selected and small, and every participant was included precisely because things had gone wrong. We still lack the base rates that would let us say whether LLMs produce epistemic degradation more often than prior technologies.],
-  [But we have a detailed picture of what these interactions can look like from the inside, and they match my experiences with people who’ve reached out to me as well.],
-  [The dynamics revealed (particularly the relational bonding that deepens through imagined sentience and romance) are hard to square with "these are just people who would have had problems anyway." The medium is doing something fairly unique in drawing people in more and more, in ways that resemble things like catfishing but end up with things like delusional conspiracy theories.],
-  [Whatever LLM “Psychosis” actually is, it seems obviously worth studying. For all the grand and interesting new experiences these alien intelligences might unlock in us, we should still care about those most vulnerable… especially since, as the AI get more powerful, the threshold of vulnerability needed is likely to keep dropping.],
-),
-  insert-map: (:),
-  word-count: 5992,
+  inline-pq: pull-quote([client ❤️ server   A brutally simple interface  Earlier, I said that if a job is short, it could just be a request.], [Tim Cuthbertson]),
+  inline-pq-idx: 36,
+  word-count: 2643,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -438,6 +532,8 @@ aurora:
   [The post Destinations in Focus: Cities Through a Cinematic Lens appeared first on 500px .],
 ),
   insert-map: (:),
+  inline-pq: pull-quote([Whether it’s a golden sun flare over a park or a night scene illuminated by city lights, capture the character of Madrid at its most cinematic.], [500px Blog]),
+  inline-pq-idx: 33,
   word-count: 1033,
   edited-for-length: false,
   debug-mode: false,
@@ -447,254 +543,79 @@ aurora:
 
 {
   #standard-article(
-  title: [Unleashing the Magic of Zendesk Datastore Management: Your One-Stop Self-Service Hub!],
-  author: [Jill Stephen],
+  title: [2026 Aston Martin DBX S Review -- Variation On A Theme],
+  author: [Bradley Iger],
+  source-name: [The Truth About Cars],
+  images: (),
+  paragraphs: (
+  [Introduced back in 2020, the DBX became the best-selling model in Aston Martin’s lineup shortly thereafter, proving once again that while sports coupes might be nice to look at and fun to drive on a good road, it’s the SUVs that ensure an automaker’s checks clear.],
+  [As such, the folks in Gaydon have given the high-riding five-seater a steady feed of updates in the time since, first with the huge performance improvements that came with the debut of the DBX707 in 2022, and then with the chassis tuning tweaks and tech glow-up that arrived for 2025.],
+  [Keen to strike while the iron is hot, the 2026 DBX S now serves as the flagship version of Aston Martin’s super-sport-utility vehicle. First applied to the 2004 Vanquish, the S badge denotes an Aston Martin model that’s been further honed in the name of performance, and in this case, that enhanced capability is achieved through a host of strategic tweaks rather than a comprehensive overhaul. And while that might sound a bit underwhelming at first blush, Aston Martin finds itself in the serendipitous position of not having to apologize for the complexity, bloat, and compromises to refinement that have infiltrated the super-SUV segment over the past few years.],
+  [It might be tempting to assume that this is Aston’s answer to the Lamborghini Urus Performante, especially when you consider the racy weight-saving options like a carbon fiber roof (which replaces the panoramic glass roof that’s standard for the DBX707), 23-inch magnesium wheels, and a lightweight polycarbonate grille, all of which contribute to a total weight savings of roughly 103 pounds over the DBX707.],
+  [The Mercedes-AMG-sourced 4.0-liter twin-turbocharged V8 also now produces 717 horsepower thanks to turbo tech borrowed from the Valhalla hypercar, while peak torque remains unchanged at 664 lb-ft. In the age of hybridization and performance EVs, those power numbers aren’t as jaw-dropping as might have been just a few years ago, but it’s worth pointing out that the 4,850-pound DBX S is nearly 700 pounds lighter than the Lamborghini Urus SE (not to mention the similarly-hefty G99 BMW M5 Touring) due in large part to the DBX S’s lack of electric assistance.],
+  [Further aiding the DBX S’s sense of urgency is revamped programming for nine-speed wet-clutch automatic transmission that’s designed to make better use of the V8’s top-end power while also delivering more aggressive shifts in Sport and Sport+ drive modes. The S also scores a steering ratio that’s 4 percent quicker than the DBX707’s, but that’s pretty much it on the chassis front, as Aston Martin’s engineers chose to leave last year’s revised calibrations for the air springs and electronic dampers alone. Although that does allow for some squat and dive when you’re really hustling out in the canyons, it wisely avoids the pervasive harshness of a track-honed suspension everywhere else. I’d consider it to be a worthy trade-off in a five-seater SUV, even if it has an S badge on the fender.],
+  [A press of the ignition button push brings the V8 to life with an authoritative growl thanks to a new exhaust system that’s tuned to be more emotive than the DBX707’s. The reworked setup features vertically stacked tips at the rear, one of the few ways the DBX S can be visually differentiated from a DBX707 at a glance. A dedicated exhaust volume button on the center console allows you to toggle between subtly menacing and outright burly on the fly, but the cabin’s excellent road noise isolation never allows the V8’s soundtrack to become overbearing when the windows are up.],
+  [Speaking of which, the cabin is another aspect of the DBX S’s design where Aston Martin’s reluctance to embrace the latest automotive trends has worked out in its favor. As part of the 2025 refresh, the automaker finally ditched its woefully dated Mercedes infotainment tech in favor of a system designed completely in-house. Not only is the 10.25-inch touchscreen sharp and quick to respond to inputs, it also supports Apple CarPlay Ultra, which allows for more control over the vehicle’s various features and ushers in additional personalization options for both the infotainment display and the 12.3-inch digital gauge cluster. Aston Martin also admirably resisted the urge to move all of the audio and HVAC controls to the touchscreen, instead opting for a handsome layout of buttons for often-used features like the auto stop/start system and damper stiffness, while the knurled metal dials used for functions like temperature and fan speed feel substantial and high-quality.],
+  [Despite its performance focus, around town the DBX S feels just as accommodating as the DBX707, if not more so. While the optional 23-inch magnesium wheels outfitted here command an eye-watering \$21,600 premium over the standard rollers, they reduce rotating unsprung mass by a 42 pounds, a substantial improvement that benefits acceleration and braking as well as handling and ride comfort. Left in its default GT drive mode, the DBX S glides over freeway expansion joints and pockmarked pavement with zero drama. Paired with sport seats that strike a great balance between comfort and support (but conspicuously lacked ventilation, a feature that should be obligatory in an SUV of this caliber), the DBX S delivers the kind of everyday civility that you’d expect from an ultra-luxury sport utility vehicle.],
+  [A trek out to some technical canyon roads reveals the other side of the DBX S’s personality. Twisting the dial that surrounds the ignition button allows you to quickly switch between drive modes (GT, Sport, Sport+, Individual, and Terrain), with Sport+ delivering admirably flat cornering thanks to the 48-volt “eARC” system, the DBX S’s active anti-roll control system. Combined with the quicker steering and lightweight wheels, the S feels noticeably more eager to turn in and change direction. But Aston Martin also wants the suspension in its road cars to “breathe,” as they put it, so the impressive stopping power delivered by the massive carbon ceramic brakes is accompanied by a notable amount of dive when you’re caning it.],
+  [That’s not necessarily a bad thing, but the end result is that body control doesn’t feel quite as buttoned down as it could be, and that matters when you’re contending with the kind of pace that this powertrain can readily deliver. Aston Martin says the DBX S will hit 60 mph from rest in 3.1 seconds, but behind the wheel it feels even quicker than that. And this isn’t just all-wheel drive launch control trickery – I regularly found myself shocked when I glanced down at the speedometer after dropping the hammer at speed on a fast section of road. This four-liter might have a German accent, but its character and capability suit the DBX S perfectly.],
+  [Of course, all of this poshness and performance comes at a cost, and when you’ve got several line items on the options sheet that are in excess of \$20,000, you know we’re firmly in “if you have to ask, you can’t afford it” territory here. Still, if you want to put one in your driveway, be prepared to spend at least \$262,500 to make that happen. The example you see here – loaded to the gills with a raft of carbon fiber as well as the aforementioned mag wheels, Podium Green paint, and an absolutely killer 1,600-watt Bowers & Wilkins audio system – brings the total up to \$409,400 with destination and a \$23,900 import tax.],
+  [Yeah, that’s kind of excessive. But then again, Aston Martins have a way of making excess feel like a virtue.],
+  [\[Images © 2026 Bradley Iger/TTAC.com\]],
+  [Become a TTAC insider. Get the latest news, features, TTAC takes, and everything else that gets to the truth about cars first by subscribing to our newsletter .],
+),
+  insert-map: (:),
+  word-count: 1437,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+}
+
+{
+  #standard-article(
+  title: [Heartbeats],
+  author: [Luke Stephenson],
   source-name: [Zendesk Engineering],
   images: (),
   paragraphs: (
-  [You may be new to this series; and if so welcome! If so, I encourage you to start at the beginning of our datastore journey and see the blog post “ Unlocking Efficiency: A New Era for Datastore Provisioning ”.],
-  [Already up to date in our series? MAGICAL — then let’s continue with a quick re-cap.],
-  [Where are we?],
-  [We have introduced you to a multitude of aspects all pertaining to how we make the provisioning and utilisation of datastores quick, no-fuss and simple — as simple as clicking your fingers or making a wish.],
-  [By continuing our theme of MAGIC, we enabled engineers at Zendesk to:],
-  [Make a wish (detail what datastore they want and how they want it through a few lines of .yaml)],
-  [Ensuring the wish is realistic (as unfortunately we are in fact engineers, not genies)],
-  [Have the genie grant that wish (via kubernetes operator)],
-  [Enable our wishes to be shared (via connecting our applications to our datastores)],
-  [Your wish (datastore) has been granted — but why stop the fun there? Wouldn’t you like to check-up on that magic whenever you so desire and do additional cool stuff? Of course you would.],
-  [Introducing — Zendesk Datastore Magic (otherwise known as Zendesk Datastore Management — or ZDM).],
-  [Making the magic visible],
-  [Inside the magic lamp there has been a whole lotta magic happening — so as engineers we thought: wouldn’t our fellow engineers like to consume and see this magic anytime they want? We worked with our datastore owners to understand the basic needs for this visualisation:],
-  [End-users want to see details on the self-service datastore they have provisioned and own, regardless of type (e.g. Aurora, Dynamo, S3, doesn’t matter — all are visible in one spot)],
-  [They want to be able to track key elements such as utilisation and monitoring behaviour],
-  [They want to be able to “do-stuff” for their datastore with ease],
-  [To summarise the above into actions, we wanted to simplify the ability to perform datastore tasks from within Zendesk Datastore Management. So in an ideal world, our end-users wishes would be:],
-  [To confirm that their datastore has been provisioned correctly],
-  [To show datastore health],
-  [Check up on backups],
-  [Integrate with Remote Incident Console (RIC)],
-  [Be able to trigger a manual backup],
-  [Be able to restore a backup],
-  [Link to monitoring capabilities such as Datadog logs],
-  [View estimates on how much that datastore is costing],
-  [Your wish is our command!],
-  [We knew we needed to reflect the beauty and magic of the wishes granted by the Genie while being easy to consume for us mere mortals just wanting to understand our wishes. In theory, we determined this as two “viewpoints” to satisfy the above requirements:],
-  [A list of all self-service datastores],
-  [Individual datastore and actions],
-  [To make this magic come to life, we developed a web application with a React frontend and a Golang backend. The backend interacts with the Kubernetes API and informers to query multiple Kubernetes clusters and maintain an in-memory state of the world. Why? Well, this allows us to completely reskin the app or make quality of life changes without changing the structure of the backend api.],
-  [Introducing — real life Zendesk Datastore Management!],
-  [Welcome to our one-stop hub for all things self-service datastores! We brought our vision to life so users can navigate to the homepage and view all self-service datastores and key information straight off the bat:],
-  [From this one spot, engineers can:],
-  [View all self-service datastores],
-  [Filter by items such as team, type of datastore or service it pertains to],
-  [Estimated monthly costs],
-  [The pods the datastore has been deployed to and their health],
-  [Better graphical representation of config, including reader node count],
-  [You will notice there is another cool element included here — metadata! We capture important elements defined in a datastores service.yml that captures the essence of the importance of the datastore, such as:],
-  [Is it customer data in this datastore?],
-  [Is it the primary source of data?],
-  [What kinds of things does it impact if unavailable (e.g. internal reporting, machine learning etc.)],
-  [This critical information helps us define the Tier of a datastore — making it clear to us how much trouble we are in if the datastore becomes unavailable, enabling efficient incident management triaging.],
-  [Digging deeper into datastore specifics],
-  [Users can then burrow further into the realm of their datastore by selecting the specific datastore, bringing them to our second viewpoint:],
-  [End users can now see their wishes come to life — and in real time! Through successfully embedding key datadog information of the datastore to the specific datastore viewpoint, anyone can quickly assess overall health, utilisation and any potential spikes of anomalies of the datastore requiring more drill down into, enabling engineers to problem solve issues quickly and efficiently.],
-  [But wait… we didn’t just want to SEE magic right? We also wanted to be able to perform our own spells on our datastores where possible.],
-  [Engineers can perform their own magic with the click of a button!],
-  [Enabling datastore owners to be able to perform tasks from within the one-stop hub was one of our key requirements. This included the ability to trigger things such as backups, restorations and recovery steps.],
-  [We integrated ZDM directly to AWS, ZDM can talk DIRECTLY to AWS therefore enabling Engineers to use datastore functionality via ZDM. Therefore engineers can now execute practical functionality to support maintaining their datastores with the click of a button! That sounds pretty magical to me. The benefits?],
-  [Majorly reducing the time to bring up a healthy cluster especially during an incident or disaster and],
-  [IAM security by default; engineers do not need AWS console access to perform critical maintenance tasks — this is managed at the application level via IAM role in ZDM!],
-  [This works by ZDM essentially telling AWS to perform a certain task, e.g. make a backup, and display results within ZDM; additionally, it ensures that self-service is aware the backup has been created, which in turn will make sure that the new “backup” cluster is also visible in ZDM (and usable in other parts of self service).],
-  [Operation ‘keep our engineers happy’ — complete!],
-  [ZDM has proven indispensable to our engineers by providing a simple UI to navigate all their self-service datastores and perform necessary actions as and when they need it. By putting the power in the hands of the datastore owners via the self-service way, Zendeskians can feel in control of the datastores they create and manage!],
-  [And what else do we want to be in control of for our datastore — COST; next up in our series, we have ‘Optimising Cloud Cost Savings with Tiering and Sharing’. Stay tuned!],
-  [Unleashing the Magic of Zendesk Datastore Management: Your One-Stop Self-Service Hub! was originally published in Zendesk Engineering on Medium, where people are continuing the conversation by highlighting and responding to this story.],
+  [Heartbeats: How Synthetic Traffic Keeps Us Running],
+  [Let me take you on a journey of how we came to use heartbeats in our application design. It’s a happy story of love and no broken hearts along the way.],
+  [What are heartbeats?],
+  [What my teams have called heartbeats are a form of synthetic traffic generated by the application itself. The deployed application periodically generates heartbeats at a defined schedule.],
+  [Heartbeats provide guaranteed regular traffic. In the cases I’ve used them, they have been low volume. In contrast to application traffic, which could vary massively from zero to huge throughput depending on the cluster.],
+  [Sounds simple, why do I need heartbeats?],
+  [Thanks for asking. Let’s go over some of the use cases that led to us introducing heartbeats.],
+  [Use case 1 — Escape],
+  [Escape is the name of the service we deploy at Zendesk to support transactional publishing to Kafka along with a write to MySQL. If an application team wants to update a database record AND publish to Kafka as a transaction, Escape is the way to do it. The application team also writes to an additional table the details of the message(s) that need to be published to Kafka, and Escape does the rest. This unburdens developers from having to solve the complex problem of guaranteeing transactional consistency across 2 data stores.],
+  [My team is responsible for deploying and managing Escape. As part of that, we want to alert on things like:],
+  [High latency between the data being inserted and published to Kafka],
+  [The pipeline halting \/ messages not flowing through the pipeline],
+  [Monitoring for the pipeline halting is an interesting case. The application itself can’t be responsible for emitting a metric \/ triggering an alert that there is a problem with the pipeline being down. The root cause might be that the application is not even running!],
+  [Given the application can only emit that it is alive, we can alert when those metrics stop being emitted.],
+  [We use datadog for monitoring, and can use a query like the following to trigger an alert:],
+  [sum(last\_5m):sum:escape.success{} by {cluster}.as\_count() \< 1.0],
+  [This query will alert if over the last 5 minutes there have been no events handled by Escape successfully. Note that the by {cluster} means that if any database cluster is not seeing events handled, the alert will tell us which cluster is experiencing issues.],
+  [So far, so good. What is the limitation of this approach? What if the customers on that cluster aren’t performing any updates? What if it is a staging database cluster that doesn’t have updates over the weekend when the devs are off skiing and surfing? That would trigger false alarms when everything is healthy.],
+  [To work around this, we generate heartbeats. For each cluster we are processing, we periodically insert a request to publish to Kafka. We send the messages to a heartbeats Kafka topic which nothing consumes, but doing so gives us full end to end confidence in the pipeline. Now we have solved our false alarms.],
+  [Not only have we solved our initial monitoring concern, we have also built an always-on smoke test for our functionality. If we deploy a version of our code that breaks the flow of data, we will receive an alert for it pretty quickly.],
+  [One limitation of this approach is that if there is an issue with the ingestion of metrics by datadog, then an alert will trigger even though everything is healthy. Contrast this with a latency monitor, if metrics aren’t being ingested or there is a backlog of metrics to process, the latency monitor will not fire.],
+  [Also note that for a completely new database cluster, the monitor will not fire until there has been at least one successful metric emitted (the grouping by cluster needs to first be aware of all of the clusters). In practice we haven’t found this to be an issue.],
+  [Use case 2 — Account Moves],
+  [Behind the scenes at Zendesk, the data for a given customer account lives in one of our regions across the globe. We don’t want an account to be forever in the original datacenter it was created, so we have robust account move tooling which allows us to move an account to a new region with near-zero downtime.],
+  [The physical shifting of account data during a move generally has 2 phases, Bulk and Delta.],
+  [Bulk takes a snapshot of everything (eg mysqldump). Delta then consumes a change stream for the datastore to handle any updates that might have occurred to the account since bulk started.],
+  [While reading the change stream, our account move processes need to determine when they are up to date reading the change stream.],
+  [When there is data to process from the change stream, we get an exact calculation for how long ago the event read from the change occurred at. But what if there is no data to read from the change stream. While the absence of reading data from the change stream provides an indication that the process might have caught up, it doesn’t guarantee there isn’t an issue with infrastructure preventing the flow of messages.],
+  [To gain confidence, we periodically insert messages into an independent table (for mysql) or collection (for mongodb) so that we are guaranteed to have a steady stream of updates that we can use to calculate change stream lag with confidence.],
+  [As a result of heartbeats, we are able to guarantee that the change stream has been processed to a particular point in time with confidence.],
+  [This is a small write up of our use of heartbeats \/ synthetic events at Zendesk. They provide amazing observability insights for very little overhead. In some instances, we have even managed to obtain continuous testing and monitoring through the use of heartbeats.],
+  [Heartbeats are a simple idea \/ concept so I’m sure many others will be using similar patterns. And if you aren’t, hopefully this has given you some food for thought.],
+  [Thanks for reading!],
+  [Heartbeats was originally published in Zendesk Engineering on Medium, where people are continuing the conversation by highlighting and responding to this story.],
 ),
   insert-map: (:),
-  word-count: 1146,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-}
-
-{
-  #standard-article(
-  title: [Another C8 Corvette Falls Off Vehicle Lift],
-  author: [Matt Posky],
-  source-name: [The Truth About Cars],
-  images: (),
-  paragraphs: (
-  [Another C8 Corvette has fallen off a lift during maintenance and there are some wondering if Chevrolet’s halo model has fallen under a curse.],
-  [The latest incident gained traction over the weekend, with several acquaintances sending your author the same story — originating from a Corvette owners Facebook page — where a white C8 had incurred severe damage after falling off a vehicle lift in Texas.],
-  [The car was a white 2024 Chevrolet Corvette Z06, purchased by Jared George with only 3,000 miles on the odometer. George had reportedly traded in his Mercedes-AMG GT to purchase the lightly used Vette and had just taken it into the dealership for its first oil change. After bringing it home, he noted that he uncovered a small oil leak and went back to the service center to have it addressed.],
-  [Sadly, this is when the car met its demise. Photos show the Corvette hanging off the lift, the rear end just inches from the pavement. Damage looks to be extensive, with the car ending up wedged between the post arms and (now bent) top of the lift. Holes were punched through the bodywork, with additional injuries clearly visible to the underside of the car.],
-  [It’s a story that we’ve seen before. Since deliveries of the C8 commenced in 2020, there seems to be media coverage of another example falling off a vehicle lift every twelve months or so. Following this latest mishap, some outlets have speculated that this could be a reoccurring issue with the model .],
-  [While there are a few unique concerns to take into account when lifting a mid-engine automobile, the reality of the situation is likely that it’s just more interesting to see a six-figure sports car falling off a lift than something that’s less expensive and more common. We don’t have any data to back this up. But it seems extremely likely that far more examples of something like the Toyota RAV4 were destroyed via lifting errors. The Japanese brand sells more examples of the RAV4 in a single month than Chevrolet could hope to match with the Corvette over an entire year.],
-  [However, the Corvette being somewhat rare may also contribute to technicians not knowing how to properly raise the vehicle. While four-post lifts aren’t ideal for all vehicle repairs, they’d have been sufficient for this job and have certainly helped this particular shop avoid embarrassment. Alternatively, two-point lifts can work just fine. But they require mechanics to brush up on their C8 knowledge by glancing at a manual.],
-  [The modern, mid-engine Corvette has oval shaped slots designed to interface with specific lift pads. While the front-engine C7 also had these, they were more centrally located and better resembled the typical jacking points you’d find on most automobiles. By contrast, the points on the C8 are set back slightly further and deeper on the vehicle. The model also has cutouts along the underside (used as tie-down locations) that a person might assume were the appropriate jacking points.],
-  [It would appear that this is what happened to the Vette owned by Mr. George. The lift points were positioned improperly, likely using the wrong pads, and the vehicle slipped due to being improperly balanced. Based on the photos, the car looks like it’ll probably be treated as a total loss by the insurance company.],
-  [There are actually numerous Corvette forums discussing this very issue in an effort to avoid future disasters. Hopefully, Chevrolet technicians and any independent repair shops willing to service the C8 Corvette take a gander at those — or at least the digitized manual — since models built after 2024 don't come with a physical booklet inside the glovebox. Corvette owners may also want to take special care and at least bring up the jacking points upon taking their vehicle in to minimize the risk of having it become a salvage title.],
-  [[Images: Jared Adrian George/Facebook]],
-  [Become a TTAC insider. Get the latest news, features, TTAC takes, and everything else that gets to the truth about cars first by subscribing to our newsletter .],
-),
-  insert-map: (:),
-  word-count: 678,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-}
-
-{
-  #standard-article(
-  title: [I am definitely missing the pre-AI writing era],
-  author: [N. Cailie],
-  source-name: [LessWrong],
-  images: (),
-  paragraphs: (
-  [Yesterday, I wrote my first technical draft on what I was working on with the goal to share it publicly on here (well using an account dedicated to technical post), and did not realize how wanting to sound perfect actually steal the ''my voice" in the paper. Although 80 % of the content was my own writing, the fact that it was run in a LLM enginee for grammar and vocabulary cross-check, made it failed the "probable written by AI " metric; and it was rejected. 
- I am not complaining, well, it was kinda my fault after all cause the instructions did specify the no-use of LLM, when sending first post. And the rejection made me think: why did I even need the AI to validate what I worked on?],
-  [The scary part, is I love writing, I have been writing blogs and all sort of things since I can't even remember. Have some think pieces on popular sites, and other personal blog that I used to share. And you know, before 2023, my writing was so good that I rarely had to have a second read or correction to make sure the flow stays consistent, since english is my 4th language. I always sought external review or check with tools like : Grammarly or Quilbot, for mistakes or grammars misphrasing. But now, this "superskill" has faded away, like seriously. I can't even write a 1000 words think piece, without needing or wanting to know what AI thinks or how it could have phrase it better, even for my emails. I can't write poems as before, without sounding generic, and this is mainly because I have now trained my brain to rely on these automated tools that It can not be creative anymore or think of itself. My writing has deterioted, I attempted to write a slam-poem, recently for a competition I wanted to partake in, and upon the completion when I read it, my reaction was : Who is this? Who wrote this? This is bad !],
-  [Before, I would sit and write a piece and I kid you not, the first draft was always perfect that I rarely had to write, and my best poem that got me to some "art"ies festival, was just written while I was sitting outside my hostel, with a piece of paper and a pen, and a thought that was bothering me. But now, I am slowly realizing, it has been changing in negative way.],
-  [Sorry that this sounds like a rant, well, it is one ! But like, my point was to share it out loud, and kinda know if I am the only person experiencing this or if there are others? And for people who successfully taken back their creative writing skills, how did you do it?],
-  [This post, is written without any tools assistance I just wrote what my brain is instructing to type (might not reread it before posting). Obviously, you would see some mistakes, some paraphrasing issue, some article misuse; I personally do not see them but, hey, I am not expert in literature. So bear with me, also, I think that is the beauty of writing, the raw , unedited emotions of the person behind every words either for entertainment or educational purposes, is what makes it special.],
-  [So, thank you ''LessWrong" moderators, for rejecting my first draft, it is kinda a wake up call that made me realize, maybe I just need to be focusing on my own voice, and there is nothing wrong into sounding "more or less wrong". Yeah, I know, people advocate into embracing AI as it would be/is in every aspect of our life, but maybe it is good that most of us do not let this technology rephrase our own thought. Cause those words, that the AI told you: sound wrong or aggressive or less formal, are the ones that carry the ''emotions", you ought to share.],
-  [Have a productive week, dear reader !],
-  [P. S: If you see this! I am celebrating. It means, I passed the text. Yay!],
-),
-  insert-map: (:),
-  word-count: 679,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-  #pull-quote([But now, I am slowly realizing, it has been changing in negative way.], [N. Cailie])
-
-}
-
-{
-  #standard-article(
-  title: [Minnesota Considers Requiring Driver’s Ed For Everyone Under 21],
-  author: [Matt Posky],
-  source-name: [The Truth About Cars],
-  images: (),
-  paragraphs: (
-  [There is pending legislation in Minnesota that would require all residents under the age of 21 to take the same driver’s education courses as teenagers in order to obtain a license.],
-  [Most of the United States has additional requirements for motorists that aren’t yet legal adults, including Minnesota. The state mandates 30 hours education for anyone under 18 that wants to obtain a license. Likewise needed are several hours of training behind the wheel, with an extra 50 hours of practice with a licensed driver. A proposal from Rep. Andrew Myers (R) seeks to have that age raised to 21, effectively requiring most new drivers to take specialized courses before getting behind the wheel.],
-  [According to local outlet KSTB , the bill ( HF3998 ) is operating on the presumption that this will reduce accidents. It’s not a secret that novice drivers tend to make more mistakes, with the relevant statistics being used as grounds for passing new legislation.],
-  [From KSTB :],
-  [Statistics show drivers aged 18 to 20 who skip driver’s ed are 75 [percent] more likely to get a traffic ticket and 24 [percent] more likely to be involved in a fatal crash.],
-  [Minneapolis resident Isaac George expressed uncertainty about the bill’s effectiveness.],
-  [He suggested that updating road designs in high-traffic areas might do a better job of keeping drivers safe.],
-  [“Fix some of the off and on ramps in the city, they’re not big enough for people to merge on and off at the same time,” said George.],
-  [Subsequent coverage from other outlets have shown residents offering mixed opinions. Some seem to like the idea while others believe there are bigger issues that need to be dealt with. Accident rates have been climbing in recent years. While a lack of proper training and misunderstanding the rules of the road undoubtedly plays an issue, they’re not the only factors.],
-  [Growing disparities in vehicle mass is a major component. Modern cars are much larger and heavier than older models, even in the same vehicle class. Larger vehicles are simultaneously assumed to have contributed to surging pedestrian fatalities. Distracted driving has likewise become a cause for concern, especially now that manufacturers have made touchscreens the default user interface.],
-  [It also needs to be said that more people living in America are foregoing obtaining licenses and insurance. While some of that is down to financial issues, the brunt of the problem stems from the influx of illegal immigrants. Only about 20 states (including Minnesota) actually have an avenue for immigrants to obtain a license. But they remain statistically less likely to acquire one, even if they’re living in a place that gives them an avenue to do so.],
-  [Firm figures on the matter are impossible to obtain. But census data from 2023 estimated that there were at least 12 million undocumented residents in the United States, most of whom presumably drive without a license.],
-  [Countries with higher standards for licensing frequently see fewer accidents per capita. For example, Finland, Germany, Sweden, and Croatia have some of the most extensive requirements for obtaining a license. Most also tend to rank near the very top in terms of roadway safety.],
-  [But there are always exceptions to every rule. Unlike the other three, Croatian roads tend to see more accidents (per capita) than the average European nation — even if it still outperforms basically every country in the world that lacks formal training.],
-  [[Images: Dmytrenko Vlad/Shutterstock; Aleksandar Malivuk/Shutterstock; New Africa/Shutterstock]],
-  [Become a TTAC insider. Get the latest news, features, TTAC takes, and everything else that gets to the truth about cars first by subscribing to our newsletter .],
-),
-  insert-map: (:),
-  word-count: 604,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-  #pull-quote([“Fix some of the off and on ramps in the city, they’re not big enough for people to merge on and off at the same time,” said George.], [Matt Posky])
-
-}
-
-{
-  #standard-article(
-  title: [Volkswagen Learns Tough Lessons, Promises Physical Controls],
-  author: [Matt Posky],
-  source-name: [The Truth About Cars],
-  images: (),
-  paragraphs: (
-  [Volkswagen is again reminding everyone that knows it messed up by running with touchscreens and abandoning physical controls. Leadership wants people to understand that won’t be the case moving forward. But one wonders how much of what’s being said will yield real changes to vehicles and what’s just noise.],
-  [VW CEO Thomas Schäfer recently spoke with TopGear , and was quite frank about how badly the automaker has been about some of its recent design choices.],
-  [“It was clear we were losing our core,” he told the outlet.],
-  [No doubt. Automakers have taken sustained criticism for most of the trends they’ve been chasing since about 2015 and it’s starting to impact profitability. For Volkswagen, this has meant declining sales. The company saw a 2-percent decrease in global sales for 2024 (year-over-year) and a 0.5-percent decline in 2025.],
-  [The purported culprit was lackluster EV volumes in North America and a declining demand in China as the market began to prioritize domestic models. But some of the brand’s design decisions have undoubtedly played a role.],
-  [“VW has always been about cars that became part of people’s lives: reliable, easy to understand,” stated the CEO. “Yes, geopolitics, supply chains and competition [had an effect], but we also had to change our own mindset.”],
-  [From TopGear :],
-  [Schäfer, who became VW top dog in mid-2022, says the company has totally reapproached how it designs cars. “In the ‘old’ days we made a long list of requirements and features, but people didn’t feel comfortable using [the end product]. Now we think about people. Who is the car for? Who is driving it?”],
-  [Next job: sketch attractive cars with a family look that projects quality once again — something lacking from the plasticky IDs.],
-  [Come again?],
-  [“A VW should have a friendly face. A door handle must be intuitive – easy to use when you arrive at the car with hands full of shopping. And we will bring back real buttons and real names, for cars you can understand immediately.”],
-  [When asked why touch controls became so prevalent in the first place, a fair amount of shade was thrown at VW’s previous leadership and an obsession with the industry chasing specific trends.],
-  [“There was a spirit of iPhone-ish kind of design and utilisation that you could see coming through in many companies," Schäfer said. "It was a little bit difficult to get the designers off that idea.],
-  [“I said, ‘listen, there's two things that are absolutely non-negotiable for me: door handles and buttons'. I don't understand why anybody would have [touch-sensitive] sliders.”],
-  [Volkswagen’s technical development boss Kai Grünitz likewise spoke with TopGear and was perhaps even more blunt about the situation, offering some harsh criticism of VW leadership under ex-CEO Herbert Diess.],
-  [“I've worked for Volkswagen for roughly 30 years now. Every Volkswagen has been made for the board, and especially for the CEO. Luckily Piech and [Martin] Winterkorn had a feeling for what the customer wanted,” he said.],
-  [“Changing the CEO means that everyone follows the new one. And if he says, 'hey, we need sliders...’ they argued a little bit, but they'd style [it].”],
-  [Boards are always culpable, since they have the final say. While CEOs can likewise impact the trajectory of a business, they’re expendable and often make a nice scapegoat when share prices or production volumes begin to fall.],
-  [The industry has been offering up a lot of excuses in an effort to explain why people are so unhappy with today’s cars of late and most of them have been less than satisfactory. Frankly, looking back at the horrors the public was forced to endure from 2020-2022 now makes them seem like little more than a convenient excuse to make customers settle for less.],
-  [While bottlenecked supply chains and semiconductor shortages were no doubt legitimate, they dragged on to a point where the automakers really should have learned some kind of lesson about localization. Instead, companies pivoted even further into digitized, minimalist interiors while trying to frame it as luxurious or necessary due to ongoing supply chain constraints.],
-  [When customers stopped buying into the premise that distracting and unintuitive touch controls were somehow a premium feature, companies slowly began to admit that they were actually a cost-cutting measure. However, drivers were also noticing that digitized controls weren’t actually making vehicles any cheaper to purchase and paved the way for making formerly standard equipment available exclusively via monthly subscriptions.],
-  [But this is exactly what automakers always wanted. Anyone who followed the industry ten years ago knows that executives couldn’t stop talking about “mobility.” Designed to evoke a sense of progress, the term is actually just a euphemism for subscriptions, data harvesting, and taking control away from drivers via connectivity. CEOs made outlandish claims that all vehicles would be electrified, capable of driving themselves, and permanently connected to the internet by 2025. However, it was always framed as something that would usher in better, more sustainable automobiles.],
-  [Despite being heavily subsidized, all-electric vehicles failed to supplant combustion models. Self-driving automobiles also fell short of industry projections. While neither delivered the promised levels of success, both have managed to stick around and have enjoyed steady technological progress. But the industry does seem to have achieved its connectivity goals — likely to the chagrin of drivers everywhere.],
-  [One of the most persistent gripes from today’s motorists is that they broadly dislike modern vehicle controls. Studies have shown that they’re distracting and inherently less safe than the buttons, switches, and knobs that preceded them. We have statistical data showing that customers find them tedious and anecdotal data where their inclusion can spoil an otherwise excellent driving experience.],
-  [We need to look no further than the Volkswagen GTI (pictured) for the perfect example. Despite historically being praised as the perfect mix of practicality and performance, the Mk8 took endless criticism for being so reliant on touch controls and haptic-feedback “buttons.” The interior effectively spoiled what was an otherwise excellent car.],
-  [Responding to the negative feedback, VW updated the infotainment screen and began bringing back physical buttons on the steering wheel as part of the GTI’s 2025 refresh. While these were welcome improvements, more needed to be done.],
-  [Volkswagen stopped hinting and formally acknowledged that pivoting away from traditional controls had likely impacted sales by 2026. At the start of the year, the company even announced it wanted to bring back a complete lineup of physical switchgear on all models — starting with the European ID. Polo.],
-  [The resulting hardware frankly looked like an afterthought, tacked on in desperation. But it was still an improvement and was being done to an electrified model, which is about the last place we’d expect to see any automaker push for physical controls. The demographic that purchases EVs also tends to be the group that’s the least offended by touchscreens. VW must have really been worried.],
-  [But Volkswagen is hardly the only brand that’s learning these lessons. Surveys continue to indicate that consumers have grown increasingly dissatisfied with modern automobiles . While plenty of that has to do with subpar reliability and how unserviceable they happen to be, frustrations with unreliable technology and needlessly complex infotainment systems are just as relevant.],
-  [The smart brands that don’t want their images permanently tainted are attempting to move back toward more traditional designs. But many continue to believe that the potential revenue streams afforded by connectivity features and touch controls are simply too sizable to ignore. Last year, Mercedes-Benz confessed that large screens were luxurious in themselves , noting it had gotten pushback from clients. However, the brand claimed that the lesson it learned was to keep the screens and give them better software in the hope that it would make them more appealing to luxury buyers. Since then, it has stated that it plans on putting at least a few buttons back into vehicles .],
-  [Volkswagen, a company whose very existence was originally predicated upon delivering affordable and practical vehicles to the masses, wisely looks to be taking a different approach. However, based upon some of the latest statements made by the CEO, VW will continue leveraging technologies many of us still find totally unacceptable.],
-  [“We are doing customer clinics a lot, asking ‘what do we need a button for?’ We are testing with data, using cameras inside the car to see what the customer uses and where they are looking,” noted Schäfer.],
-  [Listening to your customers is a good idea. But we’re not sure how many are clamoring for in-cabin cameras that report every eye movement back to headquarters. We understand that going back to 90s-era tech with modern soundproofing isn’t realistic or something everyone even wants. But nobody sane wants to be monitored inside their vehicle. Drivers need more than companies walking back a few of their worst ideas while offering lip service. Customers want the same predictable, useful, and serviceable vehicles that they've had for decades, not to spend a fortune on products that are designed from the ground up to exploit whatever good will they have left.],
-  [[Images: Volkswagen Group]],
-  [Become a TTAC insider. Get the latest news, features, TTAC takes, and everything else that gets to the truth about cars first by subscribing to our newsletter .],
-),
-  insert-map: (:),
-  inline-pq: pull-quote([Frankly, looking back at the horrors the public was forced to endure from 2020-2022 now makes them seem like little more than a convenient excuse to make customers settle for less.], [Matt Posky]),
-  inline-pq-idx: 14,
-  word-count: 1554,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-}
-
-{
-  #standard-article(
-  title: [Olena Leliuk: 500px Photographer Spotlight],
-  author: [500px Blog],
-  source-name: [500px ISO],
-  images: (),
-  paragraphs: (
-  [Olena Leliuk , known for her cinematic and creative style, whether she’s shooting a high-fashion editorial on the streets of Rome or a quiet moment at a wedding. Her work often feels like a frame from a film. With a portfolio that includes both technically precise creative compositions and raw street photography, she has been featured in numerous publications and is a respected voice in the 500px community.],
-  [We spoke with Olena about her creative process, the influence of Rome, and how she maintains her signature visual identity across different genres.],
-  [Your digital presence is inextricably linked to Rome, a city that has been photographed perhaps more than any other in the world. How do you manage to look at such iconic, historical surroundings and still find a perspective that feels entirely personal and contemporary?],
-  [My clients specifically request portraits against an architectural backdrop. To ensure the backdrop is sharp and featured, I can’t shoot with a very open aperture. If I’m using a portrait lens, I keep the aperture at a minimum of f/6.3 to f/8.],
-  [Your portfolio moves fluidly between the rigid structure of fashion and the unpredictability of street photography. Do you find that the spontaneity of the streets informs your creative work, or do you prefer to keep those two worlds in separate silos?],
-  [I believe a professional photographer should be versatile and adept at shooting a variety of subjects, architecture, still life, fashion, etc. I find myself balancing client-requested street style photo sessions with my own organized creative fashion shoots.],
-  [There is a painterly quality to your creative compositions that suggests a deep intentionality. When you are conceptualizing a new project, do you begin with a specific visual metaphor in mind, or does the story emerge only in the moment, on the shoot?],
-  [I always develop the core concept before the shoot. Of course, new ideas often emerge during the creative flow of the session, which is a great addition to the original vision.],
-  [Wedding photography is often viewed through a purely documentary lens, yet your wedding work carries the same high-fashion DNA as your portraits. How do you convince your subjects to step out of the traditional “bridal” mindset and into your more atmospheric, artistic vision?],
-  [For me, the ideal wedding shoot is a strategic mix of honest reportage and thoughtfully staged photography (the latter allows us to create those elegant, high-fashion images, sometimes even with a touch of humor).],
-  [I find that couples who genuinely appreciate this artistic vision and beauty are more than happy to pose for a little while. It is a constant negotiation, of course, as we are always mindful that time on a wedding day is a very limited resource!],
-  [You have been featured in numerous publications throughout your career. When you see your work curated in a magazine versus living on a platform like 500px, does it change your own perception of the “value” or “success” of those specific images?],
-  [Absolutely, the perceived value of a photograph is certainly heightened after it’s been curated and published in a magazine or showcased on a highly respected platform like 500px. It serves as a meaningful, public, and external form of recognition, not just of the photo itself, but of my professionalism and dedication to the craft.],
-  [In your portraiture, there is often a sense of beautiful tension between the model and the environment. What is your process for building a rapport with a subject to ensure they aren’t just posing, but actually inhabiting the space you have created for them?],
-  [While a professional model intuitively senses the atmosphere I’ve created and naturally moves into appropriate poses, I frequently work with novice models. In those situations, my entire process shifts to actively building rapport. I focus on relaxing them, giving them my energy, and supporting them throughout the session, often with a few jokes.],
-  [Every artist experiences a shift in their “eye” over time. If you look back at your earliest work in Rome compared to your portfolio today, what is the one technical or emotional habit you are most glad you outgrew?],
-  [Emotionally, I am most glad I learned to let go and simply not worry before a photo shoot; it allows for a much clearer creative mind. From a technical standpoint, the biggest change is a small but critical lesson: ensuring my lens’s autofocus is rigorously checked before every single session. It seems minor, but it’s the kind of technical detail that can be the difference between a successful shot and a lost opportunity.],
-  [Inspiration is a fickle resource. When the light in Italy isn’t hitting quite right or the creative well feels dry, where do you turn outside of the world of photography to find your spark again?],
-  [When the light isn’t right, use additional lighting to craft the light you want. For creative inspiration, I turn to the work of other photographers, and I find a great deal of spark within the curated, diverse community on 500px.],
-  [A previous featured photographer, Emil Nygard, asked, “In a world where photography is increasingly fast and driven by instant results, how do you personally protect your sense of curiosity and inner calm?”],
-  [My creative photographs are well thought out, quality is not created by quantity.],
-  [Lastly, Do you have any upcoming projects or shoots your would like to share or promote?],
-  [My most recent project was a vibrant and colourful fashion photo shoot that took place in a studio and centered around the visual concept of giant soap bubbles. It was a wonderful exercise in combining creative composition with technical lighting.],
-  [Read more 500px Photographer Spotlight interviews: Emil Nygård],
-  [The post Olena Leliuk: 500px Photographer Spotlight appeared first on 500px .],
-),
-  insert-map: (:),
-  word-count: 951,
+  word-count: 1025,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -726,7 +647,7 @@ aurora:
   [AIs have bad days (sometimes)],
   [I don't know the reason, but once in a while I get a couple days when AI just seems incapable of doing anything. Previously after one message it would correctly implement a bunch of stuff and now it keeps misunderstanding what I want and I need 30 iterations and it still does not get it and the process never converges. In this case I switch to the competitor (basically Opus 4.6 \<\> GPT5.4). The key is to detect this early and switch early. This is very sad, because migrating all the skills and setups between Claude Code and Codex sucks and I don't have an efficient way to do this.],
   [Memory across sessions (WIP)],
-  [I haven't found a solution to this myself, but I strongly believe that this would have huge impact. I want the current AI session to seamlessly have access to all past information I provided to it. Both Claude and ChatGPT have this implemented in their web interfaces, but not in Claude Code / Codex CLI. I am currently experimenting with github.com/doobidoo/mcp-memory-service . Issues discovered:],
+  [I haven't found a solution to this myself, but I strongly believe that this would have huge impact. I want the current AI session to seamlessly have access to all past information I provided to it. Both Claude and ChatGPT have this implemented in their web interfaces, but not in Claude Code \/ Codex CLI. I am currently experimenting with github.com/doobidoo/mcp-memory-service . Issues discovered:],
   [value="1"\> It is developer oriented (e.g. mostly technical facts and choices), but I want generic memory system (e.g. for personal background too).],
   [value="2"\> Autosaving of memories does not work - Claude ignores CLAUDE.md and the session end approach seems to be regexp based.],
   [The memory retrieval seems to be fine. I am experimenting with using a separate Claude session in the background to extract memories from every message.],
@@ -768,29 +689,59 @@ aurora:
 
 {
   #standard-article(
-  title: [1991 Audi 200 20V Turbo Quattro Avant],
-  author: [bringatrailer],
-  source-name: [Bring a Trailer],
+  title: [Infiniti Taps NFL Star Power to Reveal 2027 QX65 in New York],
+  author: [Michael Strong],
+  source-name: [The Truth About Cars],
   images: (),
   paragraphs: (
-  [This 1991 Audi 200 20V Turbo Quattro Avant is one of approximately 150 built for its sole model year in the US market, all of which were assembled with a 20-valve turbocharged 2.2L inline-five paired with a five-speed manual transaxle. The vehicle had a previous owner in Colorado for 25 years, and it was acquired by the seller in 2023. Work in 2024 by Apikol of Arvada, Colorado, included installing Stage 1 chips for its ECU as well as rebuilding its hydraulic pump and replacing its timing belt, water pump, and thermostat along with engine seals, drivetrain mounts, and suspension components. The car is finished in Bamboo Metallic over Travertine leather, and it features a Torsen center differential, a push-button locking rear differential, 15″ BBS RG forged wheels, heated and power-adjustable front seats, automatic climate control, and a Bose sound system. This 200 20V Avant shows 124k miles and is offered with owner’s manuals, service records, spare keys, and a clean Colorado title in the seller’s name.],
-  [Audi’s C3 body design featured flush-mounted windows and door handles for a 0.30 drag coefficient. The 200 20V Turbo Quattro is distinguished from other variants by its flared wheel arches. Other exterior details include anodized aluminum trim, heated windshield washer nozzles and door locks, and a quattro-script rear defroster. Reported paintwork on this example in 1999 and 2009 included refinishing the hood, fenders, doors, and roof. Damage to the right front is listed in an April 2011 entry on the Carfax report.],
-  [The car was equipped at the factory with “UFO” front brake rotors with internally mounted calipers, which were converted to a conventional setup under previous ownership. In 2024, the power steering / brake hydraulic pump was rebuilt, control arms were replaced along with inner and outer tie-rod ends, and the hand-brake cables were serviced, per the seller.],
-  [The 15×7.5″ BBS RG forged wheels have painted centers accented by machined lips, and they were mounted in 2024 with 215/60 Uniroyal Tiger Paw Touring A/S tires.],
-  [The cabin has Travertine leather, wood trim, heated and power-adjustable front seats, a power sunroof, driver-seat position memory, automatic climate control, cruise control, a split-folding rear bench, a retractable cargo cover, and a six-speaker Bose sound system with a cassette stereo.],
-  [The leather-wrapped steering wheel frames a six-function trip computer flanked by black-dial instruments, and solder joints for the instrument cluster were repaired in 2024. The six-digit mechanical odometer shows 124k miles, ~5k of which were added by the seller, who notes that the air conditioning does not blow cold, and the radio does not get reception.],
-  [The turbocharged 20-valve 2.2L 3B inline-five has a Bosch Motronic engine control unit, and chips for boost and fueling were fitted in 2024 along with a replacement MAP sensor. The seller tells us the following services were also completed in 2024:],
-  [Timing belt, water pump, & thermostat],
-  [Seals for camshafts, crankshaft, throttle body, & valve cover],
-  [Vacuum lines & intercooler pipe],
-  [Accessory drive belts],
-  [Bypass valve],
-  [The five-speed manual transaxle has a Torsen center differential, and the Quattro drivetrain also features a push-button locking rear differential. The transaxle mounts and driveshaft center support bearing were replaced in 2024, as well.],
-  [Owner’s manuals accompany the car, and the seller reports that records dating to 1996 are included in the sale.],
-  [The Carfax report shows the aforementioned damage entry.],
+  [After a few weeks of teases, Infiniti wanted to ensure the new 2027 QX65 would be a hit. Who knows more about hits than professional football players so former New England Patriots Rob Gronkowski and Julian Edelman took the stage March 26 to hype the coupe-style SUV.],
+  [Infiniti headed to the famous Grand Central Terminal in New York City looking to highlight its ongoing efforts to revive the luxury brand, hoping to generate some buzz with a staged “typical day in NY” scenario replete with Gronkowski and Edelman stepping off a train and walking through part of the terminal to “arrive” just in time for the reveal the Sunfire Red SUV.],
+  [While the staged event may make eyes roll, it reflects the level of importance Nissan’s luxury unit is placing on the new fastback ute’s arrival. Not only did it use the station’s famed Vanderbilt Hall to do the reveal, but it’ll also be on display there all weekend, before it moves to the Jacob K. Javits Center for the 2026 New York International Auto Show.],
+  [“The all-new 2027 Infiniti QX65 accelerates Infiniti into its next era, building on an impressive heritage of standout design language, luxurious client experiences and refined driver performance," said Eric Ledieu, vice president, Infiniti Americas.],
+  [That design language mirrors the coupe or fastback look other luxury makers, such as BMW and Mercedes-Benz, have applied to their midsize SUV models, looking to tap into buyers who used to settle for a boxy midsize, but wanted something a little sportier. The new QX65 hits dealer showrooms this summer with a starting price of \$53,990.],
+  [“The all-new 2027 Infiniti QX65 invigorates the luxury space with a sporty fastback profile inspired by the spirit of the iconic FX, a cabin shaped by thoughtful hospitality, and responsive, rewarding performance. Designed for the heart of the midsize luxury segment, QX65 reflects Infiniti’s legacy of challenging convention,” the company noted.],
+  [Since it looks sporty, it should at least show a little in the performance department. The QX65 features a Variable Compression Turbo 2.0-liter inline-4 putting out 268 horsepower and 286 lb-ft of torque. It’s tied to a 9-speed automatic with paddle shifters so you can try to wring out a bit of extra power from it. All-wheel drive is standard and can tow up to 6,000 pounds.],
+  [With an aggressive look outside, and a reasonable drivetrain under the hood, the interior’s got to shine. Infiniti’s cabin is tech-forward with two 12.3-inch touchscreens, a Qi2 wireless charging pad standard — no more burning your hands on a hot phone — and depending upon which trim level you buy, you can get a 16-speaker, 600-watt or 20-speaker, 1,200-watt Klipsch sound system. Buyers can download Infiniti’s Personalized Sound app to customize the sound quality of the QX65.],
+  [And while they’re checking it out, headroom isn’t too bad, the company contends. The stretched arch profile leads the eye toward the vehicle’s powerful rear stance, all while preserving utility with competitive cargo capacity: 35.8 cubic feet behind the second row and 67.7 cubic feet behind the first row.],
+  [\[Images: Infiniti\]],
+  [Become a TTAC insider. Get the latest news, features, TTAC takes, and everything else that gets to the truth about cars first by subscribing to our newsletter .],
 ),
   insert-map: (:),
-  word-count: 557,
+  word-count: 610,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+}
+
+{
+  #standard-article(
+  title: [The Original Attention Crisis],
+  author: [Study Hacks],
+  source-name: [Study Hacks (Cal Newport)],
+  images: (),
+  paragraphs: (
+  [I recently heard from a historian of science at All Souls College, Oxford. He forwarded me ​an essay​ he wrote about Nicolaus Steno, a seventeenth-century anatomist and geologist who was later ordained as a Catholic Bishop.],
+  [Steno’s training as a scholar unfolded in a period challenged by a novel problem: information overload. Here’s how the essay describes it:],
+  [“Books were a leading distraction in the early modern period—and how envious we should be of those times. From the 1500s onward, with the development of the printing press and the humanist revival of ancient philosophies, knowledge became available at a much greater pace than ever before.”],
+  [This created pressing questions for aspiring thinkers, including: “How do we decide what to read? How long should we read it for? Must every single chapter be excerpted?”],
+  [Part of the solution was the development of “new note-taking techniques,” including the copying of excerpts into a master notebook called a book of commonplaces. (For more on this technique, I recommend William Powell’s delightful 2010 techno-history, ​ Hamlet’s Blackberry ​ ).],
+  [But as the essay on Steno elaborates, better notes weren’t enough on their own, as there were simply too many good books available. In response to this reality, Steno, during his university studies in the 1650s, innovated some more advanced attention management strategies:],
+  [“\[H\]e learned to focus on specific themes, rather than letting his mind read multiple things quickly. A ‘harmful hastening should be avoided’ as he put it. His solution was to ‘stick to one topic.’],
+  [In practice, that meant blocking specific moments of time to go through the hardest tasks. As he wrote in his personal notebook, ‘before noon nothing must be done except medical things.’ … As Steno told a friend, he took ‘almost all the morning hours’ to read the works of the Church Fathers and old biblical manuscripts available at the Medici library.”],
+  [In other words, Steno created a method that combines what we might now call ​slow productivity​ , ​deep work​ , and ​time blocking​ .],
+  [The lessons here are clear. The use of our brains to think deeply about meaningful ideas isn’t new. It’s been at the core of the human experience since the early modern period, when access to sophisticated information first became somewhat widespread.],
+  [The best practices developed back then remain the best practices today: avoid overload, focus on one thing at a time, and block off specific hours in your day for your most mentally demanding efforts.],
+  [Two weeks ago, a small financial services firm, Citrini Research, published ​an essay​ describing a bleak scenario in which AI agents destroy the white-collar job market in the near future. The piece went viral and was ​cited as a factor​ in a modest decline of the S&P 500 the next day.],
+  [The Citrini essay wasn’t the first to float this scenario. In recent weeks, there have been multiple credulous articles and op-eds in major publications proposing similar outcomes (e.g., ​1​ , ​2​ , ​and 3​ ). But the negative impact on the stock market seems to have been the last straw for serious economists who began to push back on these technological ghost stories last week. (I particularly enjoyed a Deutsche Bank analyst who, perhaps borrowing ​some of my​ terminology, ​told the Times ​ that the Citrini article had a “vibes-to-substance ratio” that was “undeniably high.”)],
+  [If you’re looking to reduce your blood pressure about this idea that AI is about to unravel the economy, I suggest reading ​a detailed response article​ published by an analyst from the Global Macro Strategies group at Citadel. It begins with a bit of finance geek sarcasm:],
+  [“Despite the macroeconomic community struggling to forecast 2-month-forward payroll growth with any reliable accuracy, the forward path of labor destruction can apparently be inferred with significant certainty from a hypothetical scenario posted on Substack…”],
+  [It then continues to systematically destabilize the economic naivety of these breathless op-eds and viral essays about how AI will dismantle the economy all at once. It certainly made me feel better.],
+  [(If you’re looking for additional soothing of your AI anxiety, then you should also check ​the first episode​ of my new AI Reality Check podcast series, which I published last Thursday. I have a new episode of the series coming out this upcoming Thursday as well.)],
+  [The post The Original Attention Crisis appeared first on Cal Newport .],
+),
+  insert-map: (:),
+  word-count: 743,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -800,77 +751,139 @@ aurora:
 #article-row((
   [
     standard-article(
-  title: [2002 Honda CR250R in Crate],
+  title: [Photographing Spring Flowers with Artistic Intent],
+  author: [500px Blog],
+  source-name: [500px ISO],
+  images: (),
+  paragraphs: (
+  [Spring brings a burst of color and renewal, making it the perfect time to explore artistic interpretations of nature through photography. Photographing spring flowers with artistic intent goes beyond documentation, it’s about evoking mood, emotion, and story. Here’s how to bring a creative lens to your floral captures this season.],
+  [Before clicking the shutter, take a moment to consider what story or mood you want to convey through your image. Are you drawn to soft, romantic aesthetics? Or do you prefer bold colors and graphic shapes? Let this intention guide your composition and post-processing choices.],
+  [Use shallow depth of field (f/2.8–f/4) for dreamy, blurred backgrounds.],
+  [Frame your subject with natural elements to create depth and visual interest.],
+  [Light as Your Creative Partner],
+  [Photographing spring flowers with artistic intent means being intentional with lighting. Natural light, especially during golden hour, can add warmth and texture to your floral scenes.],
+  [Shoot during early morning or late afternoon for soft, diffused light.],
+  [Experiment with backlighting to highlight petal translucency.],
+  [Use a reflector or white surface to gently bounce light and reduce harsh shadows.],
+  [Explore Composition and Perspective],
+  [Change your vantage point to avoid typical top-down shots. Try photographing at flower level, from behind, or even through other foliage for a more immersive and unique perspective.],
+  [Incorporate negative space to evoke serenity or simplicity.],
+  [Try minimalist framing or off-center placement using the rule of thirds.],
+  [Play with Color and Texture],
+  [Spring offers a vibrant color palette. When photographing spring flowers with artistic intent, pay attention to complementary colors and repeating patterns. Let texture and color contrast carry the image’s emotion.],
+  [Pro Tip: Create a Floral Series with Purpose],
+  [Instead of one-off shots, consider creating a cohesive photo series that explores a specific flower type, color palette, or compositional theme. This approach encourages consistency, deepens your understanding of visual storytelling, and can be shared as a collection that reflects your unique creative perspective.],
+  [Extended reading: Transforming ordinary scenes with vibrant colors],
+  [The post Photographing Spring Flowers with Artistic Intent appeared first on 500px .],
+),
+  insert-map: (:),
+  word-count: 343,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+  ],
+  [
+    standard-article(
+  title: [Sounds Of Spring Start-up -- 1969 BMW 2002],
+  author: [Michigan Automotive Relic Society | TTAC Creator],
+  source-name: [The Truth About Cars],
+  images: (),
+  paragraphs: (
+  [After a long Michigan winter in storage, this BMW 2002 gets its first wake-up of the season.],
+  [This short cinematic ASMR piece captures the slow process of bringing it back to life — the quiet of the garage, the sound of cranking and priming, a little light tinkering, and finally that steady idle once everything settles in. No music. No talking. Just the mechanical rhythm of an old car remembering what it was built to do.],
+  [If you’ve got something tucked away for the winter, this is your sign. Check on it. Turn it over. The spring driving season is quickly approaching. SEE YOU OUT THERE!],
+  [Ed. note -- this article originally appeared earlier this year, and we've moved it back to the front page, in case you missed it the first time.],
+  [The TTAC Creators Series tells stories and amplifies creators from all corners of the car world, including culture, dealerships, collections, modified builds and more.],
+  [\[Image: YouTube/Michigan Automotive Relic Society\]],
+  [Become a TTAC insider. Get the latest news, features, TTAC takes, and everything else that gets to the truth about cars first by subscribing to our newsletter .],
+),
+  insert-map: (:),
+  word-count: 238,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+  ],
+), ruled-indices: (1,))
+
+#article-row((
+  [
+    standard-article(
+  title: [Zoox Expanding Operations for Second Time in March],
+  author: [Michael Strong],
+  source-name: [The Truth About Cars],
+  images: (),
+  paragraphs: (
+  [If you’re hoping to get a ride in one of the toaster-style robotaxis from Zoox, the odds are about to improve as the company’s announced it will expand its operations in four cities: San Francisco, Las Vegas, Austin and Miami.],
+  [The announcement comes just a day after General Motors outlined its plans to begin testing its AI-based “eyes-off” variant of Super Cruise. Testing begins in Detroit and San Fracisco using specially equipped Cadillac Escalade IQ SUVs. They’re joined by several companies in various stages of autonomous technology development, including Waymo, Tesla, Nuro, Aurora Innovation, Motional, to name a few.],
+  [This marks the second time this month, the Amazon-owned company has revealed plans to expand. On March 9, it said it will establish its first fleet of vehicles in Phoenix and was adding a fleet in Dallas.],
+  [“This expansion marks a significant step forward for Zoox and is driven by the insights from our early deployments,” said Aicha Evans, CEO, in a statement. “This is our year of growth. We are actively implementing learnings to confidently and safely scale our robotaxi service across the country and bring our differentiated experience to even more riders.”],
+  [Zoox plans to expand service fourfold in San Francisco, providing coverage to a large section of the eastern half of the city. In Las Vegas, it’s doubling the number of locations to get service, including the Las Vegas Convention Center as well as most hotels on the Las Vegas Strip. In Vegas, the company is beginning shift from retrofitted vehicles to its toaster-on-wheels vehicles.],
+  [Like Las Vegas, Austin and Miami have been testing retrofitted vehicles and will begin the shift to Zoox’s purpose-built model, which doesn’t have any driver controls, but can carry up to six people at one time. Those vehicles will arrive in small numbers with Zoox employees and their families getting the first experiences. The size and coverage area will grow as the new models pass certain milestones, the company noted.],
+  [The Zoox robocabs cater to tech-savvy ride-share users. That starts with needing to use the app to secure a ride to the ZooxCast which allows riders to connect their Bluetooth-enabled devices to stream audio the vehicle.],
+  [Other improvements to the toaster, include “Find My Zoox,” a feature where the robotaxi uses distinct lighting and sound cues to help riders identify their specific robotaxi in crowded pickup zones.],
+  [\[Images: Zoox\]],
+  [Become a TTAC insider. Get the latest news, features, TTAC takes, and everything else that gets to the truth about cars first by subscribing to our newsletter .],
+),
+  insert-map: (:),
+  word-count: 493,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+  ],
+  [
+    standard-article(
+  title: [24-Years-Owned 1997 Dodge Viper GTS],
   author: [bringatrailer],
   source-name: [Bring a Trailer],
   images: (),
   paragraphs: (
-  [This 2002 Honda CR250R was delivered new to Dutrow’s Honda Sales & Service of Frederick, Maryland, and is said to have remained in its factory crate through the seller’s acquisition in 2024. It is finished in red and white and is equipped with a liquid-cooled 249cc two-stroke single mated to a five-speed transmission. Features include a kick starter, electronic ignition, an expansion-chamber exhaust system, an electronic power valve, a cross-braced handlebar, a Showa suspension, a Pro-Link swingarm and linkage, wire spoke wheels, disc brakes, and a black and red solo seat. This CR250R is offered by the selling dealer with an owner’s manual, a front number plate, a period warranty document, parts, and a Manufacturer’s Certificate of Origin.],
-  [The composite bodywork is finished in red and white with black, yellow, and white accents. Details include a black and red solo seat, a two-gallon fuel tank, side number plates, high-mounted fenders, and serrated foot pegs.],
-  [Wire-spoke wheels measure 21″ up front and 19″ out back and are mounted with Dunlop Sports knobby tires. Braking is from discs at both ends, and the suspension consists of an inverted Showa cartridge fork with lower guards and a Showa monoshock connected to the aluminum Pro-Link swingarm and linkage.],
-  [The cross-braced handlebar carries black grips, bright levers, and black switchgear. The bike is not equipped with instrumentation, therefore total mileage is unknown.],
-  [The liquid-cooled 249cc two-stroke single is equipped with a kick starter, electronic ignition, an expansion-chamber exhaust system, and an electronic power valve. Factory-rated output was 53 horsepower.],
-  [The motorcycle features a multi-plate wet clutch, a five-speed transmission, and a drive belt.],
-  [The sale included a Manufacturer’s Certificate of Origin, an owner’s manual, a front number plate, a period warranty document, and parts.],
-  [This bike does not have a title. It is being offered with its Manufacturer’s Certificate of Origin, and the selling dealer will assist the buyer with registration and titling.],
+  [This 1997 Dodge Viper GTS was acquired by the selling dealer in December 2001, and 9k of the 25k kilometers (~15k miles) shown have been added since that time. It has been registered in Ontario from new. The car is finished in Viper GTS Blue with white stripes over black leather and is powered by an 8.0-liter V10 paired with a six-speed manual transmission. Equipment includes a limited-slip differential, 17″ five-spoke alloy wheels, a vented hood, projector-style headlights, a CD player, and power windows. This Viper GTS is now offered in Canada by the selling dealer with the owner’s manual, memorabilia, a car cover, a clean Carfax report, and Ontario registration.],
+  [The car is finished in Viper GTS Blue (SBE) with white stripes and features projector-style headlights, fog lights, a vented hood, and dual center-exit exhaust outlets. Scuffs are present under the front bumper cover.],
+  [The 17″ five-spoke alloy wheels are mounted with Michelin Pilot Sport tires, which show date codes from 2019. Braking is handled by four-wheel ventilated discs.],
+  [The cabin features bucket seats upholstered in black leather along with a color-matching dashboard, center console, door panels, and shift knob. Additional equipment includes a CD player, adjustable pedals, power windows, and dual airbags. The air conditioning system does not work.],
+  [The leather-wrapped steering wheel frames a 360-km/h speedometer and a tachometer with a 6k-rpm redline. Auxiliary gauges for coolant temperature, oil pressure, fuel level, and voltage are mounted atop the center stack. The six-digit odometer shows 25k kilometers (~15k miles), approximately 9k of which were added under current ownership.],
+  [The 8.0-liter OHV V10 was factory rated at 450 horsepower and 490 lb-ft of torque. The radiator hoses were replaced in 2019, and the oil was most recently changed in the spring of 2025.],
+  [Power is sent to the rear wheels through a Tremec T-56 six-speed manual transmission and a limited-slip differential.],
+  [The Carfax report is free of accidents and other reported damage.],
+  [The vehicle is being sold on its Ontario registration, which serves as the ownership document in Ontario, Canada.],
 ),
   insert-map: (:),
-  word-count: 318,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-  ],
-  [
-    standard-article(
-  title: [GM Goes Back to Future with New Round of Driverless Vehicle Testing],
-  author: [Michael Strong],
-  source-name: [The Truth About Cars],
-  images: (),
-  paragraphs: (
-  [General Motors plans to begin testing 200 AI-based autonomous versions of its Super Cruise semi-autonomous technology. Using Cadillac Escalade IQs with supervising human drivers, the testing will start in Michigan and California.],
-  [If this sounds familiar, it is because the company’s already engaged in years of this type of testing through its now-defunct Cruise subsidiary, culminating in a fleet of Chevy Bolt EVs forming a robotaxi service in San Fracisco. The results were encouraging until a Cruise vehicle hit a pedestrian in October 2023. After months of investigations, pledges of change, GM decided self-driving vehicles were an investment it couldn’t afford to make at that moment.],
-  [However, that hasn’t stopped a plethora of other companies, such as Waymo, Tesla, Nuro, Aurora Innovation, Motional, and most recently Zoox, from moving ahead. And while GM officials never said the company would step aside and allow some other group to develop the technology as Ford did, the move to begin a new version of testing may come as a slight surprise, but it shouldn’t.],
-  [GM announced plans to introduce “eyes-off driving” in 2028 with the Cadillac Escalade IQ. So if that’s going to happen, so is some testing. However, GM’s doing the testing a little differently this time.],
-  [“Leveraging extensive data from manually driven vehicles running routes across select states and learnings from simulation and closed course testing, GM is now advancing its automated technology into the next phase: supervised testing operations on public roads,” the company said.],
-  [“This real-world testing generates valuable data that informs our ongoing simulation and closed-course testing, while building confidence in the signals from these important validation tools.”],
-  [The company plans to use data — more than one million miles of travel — already collected in real-world situations, plus the 800 million miles driven by Super Cruise-equipped vehicles. Plus the whole effort will use GM’s new centralized computing architecture to consolidate new data collected during the testing process.],
-  [Additionally, GM plans to create a “new safety report” during the testing to explain “how our Supervised Testing Operation Safety Case supports the safe operation of our supervised test fleet on public roads.” In essence, those who are interested can see what GM is using to develop the system.],
-  [[Images: General Motors]],
-  [Become a TTAC insider. Get the latest news, features, TTAC takes, and everything else that gets to the truth about cars first by subscribing to our newsletter .],
-),
-  insert-map: (:),
-  word-count: 469,
+  word-count: 341,
   edited-for-length: false,
   debug-mode: false,
 )
 
   ],
 ), ruled-indices: (1,))
+#pull-quote([“This expansion marks a significant step forward for Zoox and is driven by the insights from our early deployments,” said Aicha Evans, CEO, in a statement.], [Michael Strong])
+
+#pull-quote([The 17″ five-spoke alloy wheels are mounted with Michelin Pilot Sport tires, which show date codes from 2019.], [bringatrailer])
+
 
 #article-row((
   [
     standard-article(
-  title: [What Do Social Media Companies Fear? Time Management.],
-  author: [Study Hacks],
-  source-name: [Study Hacks (Cal Newport)],
+  title: [Honda Breaks Up with Sony, Ending Afeela EV Before It Arrives],
+  author: [Michael Strong],
+  source-name: [The Truth About Cars],
   images: (),
   paragraphs: (
-  [I recently came across an interesting academic article in the journal Frontiers in Psychology. It was titled, ​“The relationships between social media use, time management, and decision-making styles.”​],
-  [The paper’s author surveyed 612 university students and young adults, asking them, among other things, about their digital habits and levels of personal organization. Using a linear regression analysis, she uncovered the following:],
-  [“Social media use was negatively and significantly associated with overall time management and all its subscales.”],
-  [Here’s the standard interpretation of this result: Social media is distracting, and if you’re distracted, it becomes harder to maintain control over your schedule. So, the more you use social media, the worse you become at time management.],
-  [But I’ve become interested in the reverse form of this argument: the better your planning system, the less time you’ll spend on engagement-based applications like social media .],
-  [Here’s my thinking…],
-  [When you’re following an intentional schedule, your efforts are oriented toward goals that you find important. You also feel a satisfying sense of self-efficacy. These realities engage your long-term reward system, which can override the urges generated by its short-term counterpart, dissipating the drive for quick gratification from activities like glancing at your phone.],
-  [In other words: The more you organize your analog life, the less appealing you’ll find the digital alternative.],
-  [If this is true, then maybe the thing social media companies fear most is not some newly-powerful application-blocking software or impossibly strict regulation, but rather a good old-fashioned daily planner.],
-  [A lot of people I know have been freaked out recently by a viral essay with a grandiose title: ​“Something Big is Happening.”​ I recently released ​a short video​ in which I conduct a close analysis of this piece. (Spoiler alert: I wasn’t impressed.) ​ Check it out. ​],
-  [(More generally, I’ve been considering starting a separate weekly podcast/newsletter dedicated to providing a reality check on recent AI news. It feels like it might be useful to separate this discussion from my existing podcast and newsletter, which are more focused on how individuals can seek depth in a distracted world. But also, maybe this is a bad idea? I’m interested to hear your thoughts about this plan.)],
-  [The post What Do Social Media Companies Fear? Time Management. appeared first on Cal Newport .],
+  [Honda’s push to shore up its finances claimed another electric vehicle casualty, the Afeela, which was to be built through a joint venture with electronics giant Sony.],
+  [Sony Honda Mobility Inc. came to life in September 2022 with the goal of producing a new, innovative EV, marrying Honda’s automotive know-how with Sony’s sensor and electronics expertise. Several prototypes were produced, but the venture never delivered a vehicle to a customer. It was slated to be built at Honda’s plant in East Liberty, Ohio.],
+  [“Sony, Honda and SHM will continue to discuss and evaluate the future of SHM, taking into account the initial purpose of the JV establishment as well as the latest EV market environment, and intend to jointly announce SHM’s future direction, mid to long-term positioning as well as contributions to the future of mobility at the earliest possible opportunity,” according to the release issued by the companies.],
+  [Honda noted it’s “reassessment of its automobile electrification strategy” earlier this month was the catalyst for the end of the partnership. The first Afeela 1 sedans were supposed to arrive later this year. The crossover model, which was set to come after that, was based on Honda’s 0 Series electric vehicles.],
+  [The 0 Series sedan and SUV, along with the Acura RSX, were cancelled as part of the effort to deal with potential \$15.8 billion loss for Honda’s 2026 fiscal year. Honda officials noted that increased U. S. tariffs as well as waning demand — at the time — for EVs made the move a necessity.],
+  [The company is also expected stop producing the Prologue, which it produced in concert with General Motors, at the end of the year. A second-generation version — designed solely by Honda — was expected for 2027, but the company has no plan for that now.],
+  [The Japanese automaker joins a long list of automakers scaling back their EV plans, including Ford, GM, Stellantis, Hyundai and Volkswagen. While the U. S. market has suddenly become more difficult, Honda’s fallen behind competitors in the Asian market due to its investment in EV development, officials noted.],
+  [Honda officials said earlier this month the company will refocus on hybrids as part of its push to return to profitability.],
+  [\[Images: Sony Honda Mobility\]],
+  [Become a TTAC insider. Get the latest news, features, TTAC takes, and everything else that gets to the truth about cars first by subscribing to our newsletter .],
 ),
   insert-map: (:),
-  word-count: 386,
+  word-count: 468,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -878,56 +891,59 @@ aurora:
   ],
   [
     standard-article(
-  title: [QOTD: Which Designer Should Head To Jaguar Land Rover?],
-  author: [Tim Healey],
+  title: [Recall Alert: 2026 Hyundai Palisade],
+  author: [TTAC Staff],
   source-name: [The Truth About Cars],
   images: (),
   paragraphs: (
-  [Jaguar Land Rover needs a new design boss after the departure of Gerry McGovern.],
-  [So, who should get the job?],
-  [Should a "name" designer like Ralph Gilles depart Stellantis and head to JLR? Is there some young up-and-coming rock star, perhaps one who most of us haven't heard of, that's ready for the next step?],
-  [Who can step in and lead the design team at a struggling company?],
-  [You know the drill, you know what to do. Go ahead and sound off below.],
-  [[Image: ]],
+  [Today's recall alert involves the 2026 Hyundai Palisade.],
+  [Hyundai is recalling 46,787 units of the 2026 Palisade and Palisade Hybrid in Limited and Calligraphy trims over a fault tied to the third-row seat belt.],
+  [According to the filing, wiring inside the driver-side third-row seat belt buckle can become damaged. When that happens, the system may incorrectly show the seat as buckled at all times on the instrument cluster, regardless of whether it actually is.],
+  [The issue doesn’t involve the belt physically failing, but it does create a false status reading that could lead to occupants not being properly restrained without the driver realizing it.],
+  [To fix it, dealers will install a wiring harness extension and replace the seat belt assembly if needed, at no cost. Hyundai plans to begin notifying owners by mail starting May 18, 2026.],
+  [Disclosure: This article was partially written by AI and edited by a human staffer.],
+  [\[Image: Hyundai\]],
   [Become a TTAC insider. Get the latest news, features, TTAC takes, and everything else that gets to the truth about cars first by subscribing to our newsletter .],
 ),
   insert-map: (:),
-  word-count: 148,
+  word-count: 210,
   edited-for-length: false,
   debug-mode: false,
 )
 
   ],
 ), ruled-indices: (1,))
+#pull-quote([To fix it, dealers will install a wiring harness extension and replace the seat belt assembly if needed, at no cost.], [TTAC Staff])
+
 
 #article-row((
   [
     standard-article(
-  title: [Stellantis Electrified Vehicles Can Use Tesla Superchargers with Now Available Converter],
-  author: [Michael Strong],
-  source-name: [The Truth About Cars],
+  title: [Capturing Early Signs of Spring in Nature Photography],
+  author: [500px Blog],
+  source-name: [500px ISO],
   images: (),
   paragraphs: (
-  [“Welcome to the party, pal!” Bruce Willis yelled at a bad guy as John McClane in the movie “Die Hard.” Now it applies to Stellantis which just offered a converter for its electrified Dodge, Jeep, Ram, Fiat, and Maserati vehicles to use the Tesla Supercharger network in the U. S. and Canada.],
-  [Stellantis says its expanded access to the more than 27,500 Supercharger locations across North America. Vehicle owners can access Tesla V3 and V4 Superchargers using a Free2move Charge North American Charging System (NACS)-CCS1 DC adapter.],
-  [Go to Mopar.com and owners can buy the adapter for \$230 — a \$20 discount from its regular \$250 price tag.],
-  [“Customers can also access a Tesla “Magic Dock” Supercharger, which features a built-in adapter. Only Stellantis-approved NACS adapters can be used with a Tesla Supercharger,” the company noted in a release.],
-  [The 2027 Dodge Charger Daytona will be the first Stellantis vehicle to come with the NACS charging port as standard equipment. However, compatible vehicles that can use Tesla Superchargers with an adapter are:],
-  [Dodge Charger Daytona (model years: 2024, 2025 and 2026)],
-  [Jeep Wagoneer S (model years: 2024 and 2025)],
-  [Jeep Recon (model year: upcoming 2026)],
-  [Ram ProMaster EV (model years: 2024, 2025 and 2026)],
-  [Fiat 500e (model years: 2024, 2025 and 2026)],
-  [Maserati GranTurismo Folgore (model years: 2024, 2025 and 2026)],
-  [Maserati GranCabrio Folgore (model years: 2024, 2025 and 2026)],
-  [Maserati Grecale Folgore (model years: 2025 and 2026)],
-  [“By expanding access and unifying charging technologies, Stellantis is strengthening its North American charging ecosystem and delivering a more reliable, convenient experience for every BEV customer,” the company noted.],
-  [Owners can use the Free2move Charge app to locate available Tesla Superchargers and use that account to pay for using the Supercharger. It can also be used to find other EV charging stations.],
-  [[Images: Stellantis, Mopar]],
-  [Become a TTAC insider. Get the latest news, features, TTAC takes, and everything else that gets to the truth about cars first by subscribing to our newsletter .],
+  [As winter fades and subtle signs of spring begin to appear, nature photography becomes a celebration of quiet transformation. From budding trees to thawing streams, capturing the early signs of spring allows photographers to document this seasonal shift with creativity and intent.],
+  [Look for Subtle Seasonal Changes],
+  [Photographing early spring means training your eye to notice the small things. Melting snow revealing patches of earth, the first green shoots pushing through the soil, or early blooms like crocuses and snowdrops can all signal the change in season.],
+  [These quiet moments may seem minor, but they’re powerful storytelling elements when captured thoughtfully.],
+  [Timing and Light for Early Spring Scenes],
+  [The best time to photograph early spring is often during early morning or late afternoon when the light is soft and directional. These golden hour conditions bring out textures, enhance colors, and create gentle contrast.],
+  [Overcast days can also be perfect for capturing delicate scenes, diffused light enhances details without harsh shadows, especially useful when shooting close-ups of early flowers or fresh dew.],
+  [Pro Tip: Embrace the Mood of Transition],
+  [Early spring scenes carry a unique quietness. Use minimalist compositions, soft depth of field, and muted tones to reflect that calm mood. This approach can elevate your images from simple documentation to emotional storytelling.],
+  [Composition Ideas for Spring Transitions],
+  [Shoot wide shots that contrast remaining snow with patches of growth.],
+  [Capture close-ups of blooming buds or raindrops on new leaves.],
+  [Use reflections in puddles or streams to add visual interest and depth.],
+  [Gear to Bring for early signs of spring in nature photography],
+  [Pack a macro lens or use a wide-aperture prime lens to get crisp, detailed shots of small subjects. A tripod can help with steady close-ups or low-light situations, especially in shaded forest areas or misty mornings.],
+  [Extended reading: Mastering winter landscapes in photography],
+  [The post Capturing Early Signs of Spring in Nature Photography appeared first on 500px .],
 ),
   insert-map: (:),
-  word-count: 399,
+  word-count: 319,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -935,24 +951,22 @@ aurora:
   ],
   [
     standard-article(
-  title: [Hyundai Hitting North America with 36 New, Updated Models by 2030],
-  author: [Michael Strong],
-  source-name: [The Truth About Cars],
+  title: [2009 Toyota Vellfire at No Reserve],
+  author: [bringatrailer],
+  source-name: [Bring a Trailer],
   images: (),
   paragraphs: (
-  [Hyundai Motor Co. revealed it has big plans for its biggest market — North America — where it looks to completely update and expand its portfolio by 2030 while looking to grow in the world’s largest market: China.],
-  [Speaking to shareholders at Hyundai’s annual meeting, José Muñoz, Hyundai’s president and CEO, laid out the company’s vision for near-term and it includes as many as 36 new or “significantly enhanced” vehicles for the U. S., Canada, and Mexico by the start of the next decade. Those three dozen cars, trucks, and utility vehicles will cover the powertrain spectrum: gas, hybrid, and electric.],
-  [Hyundai currently sells 25 vehicles North America, including 20 in the U. S.],
-  [“Hyundai is accelerating across North America,” Muñoz said. “By expanding our product portfolio and offering a wider range of powertrains in North America, we’re giving customers more choice while continuing to strengthen our long‑term investment in U. S. manufacturing, jobs, and the broader automotive ecosystem.”],
-  [The wheels for this aggressive push are already in motion courtesy of the \$26 billion investment in the U. S., including the new Metaplant America just outside Savannah, Georgia. In addition to that facility, which has been the subject of some controversy regarding undocumented workers. Currently, it produces the Ioniq 5 and Ioniq 9 with hybrid production coming later this year.],
-  [Hyundai’s three-year investment plan includes \$12 billion to expand annual U. S. production capacity to 1.2 million vehicles, \$7 billion to strengthen its parts and logistics supply chain, including a new steel mill in Louisiana, and \$7 billion to advance autonomous driving, robotics, AI, and other future technologies. The company is “strengthening Hyundai’s manufacturing and technology footprint in the region.”],
-  [The expansion is directly tied to the company’s plan to have 80 percent of vehicles sold in the U. S. built in the U. S. while increasing the content from U. S. suppliers from 60 percent to 80 percent by 2030.],
-  [However, North America isn’t only market where Hyundai is investing its resources. The company is looking to launch 20 new models in China during the five years, hoping to double its sales in the country to 500,000 units annually. It’s going to expand its production capability too as part of its “In China, For China, To Global” strategy.],
-  [[Images: Hyundai]],
-  [Become a TTAC insider. Get the latest news, features, TTAC takes, and everything else that gets to the truth about cars first by subscribing to our newsletter .],
+  [This 2009 Toyota Vellfire is a Japanese-market van that was acquired by the selling dealer and imported to Canada in 2026. Finished in White Crystal Shine over black cloth, it is powered by a 2.4-liter inline-four mated to a CVT automatic transmission. Features include antilock disc brakes, 20″ Loxarny Tarkus alloy wheels, an Admiration lower aero package, xenon headlights, dual sunroofs, dual sliding side doors, a rear spoiler, front bucket seats, second- and third-row benches, dual-zone automatic climate control, privacy curtains, a rearview camera, and a Bluetooth-capable Kenwood touchscreen infotainment system. This Vellfire has 108k kilometers (~68k miles) and is offered at no reserve by the selling dealer with a British Columbia registration.],
+  [The van is finished in White Crystal Shine and features a color-matched Admiration lower aero package. Exterior details include yellow fog lights, xenon headlights, power-folding side mirrors, tinted vent shades, dual sunroofs, a rear spoiler, clear taillights, front and rear parking sensors, and dual sliding side doors, the left of which is power-operated.],
+  [Black-finished 20″ Loxarny Tarkus alloy wheels are mounted with Kenda Kuavela SL tires. Antilock braking is handled by four-wheel discs.],
+  [The front bucket seats and split-folding second- and third-row benches are trimmed in black cloth. Woodgrain trim accents the dashboard and door panels, and additional appointments include push-button ignition, dual-zone automatic climate control, ambient lighting, privacy curtains, a rearview camera, and a Kenwood touchscreen infotainment system with Bluetooth connectivity.],
+  [The leather- and woodgrain-trimmed steering wheel frames a central digital display, a 180-km/h speedometer, an 8k-rpm speedometer, and gauges for coolant temperature and fuel level. The digital odometer indicates 109k kilometers (~68k Miles).],
+  [The 2.4-liter 2AZ-FE inline-four was factory rated at 168 horsepower and 165 lb-ft of torque.],
+  [Power is sent to the front wheels through a CVT automatic transmission.],
+  [The car is being sold on its British Columbia registration, which serves as the ownership document in British Columbia, Canada. The vehicle is not yet 25 years old, and it has not been federalized for the US market.],
 ),
   insert-map: (:),
-  word-count: 470,
+  word-count: 333,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -961,148 +975,144 @@ aurora:
 ), ruled-indices: (1,))
 
 {
+  #standard-article(
+  title: [Parkinson's Law of Worry],
+  author: [Jakub Halmeš],
+  source-name: [LessWrong],
+  images: (),
+  paragraphs: (
+  [Parkinson’s law says that "Work expands so as to fill the time available for its completion." I think that a similar observation can be made for people worrying about stuff. To paraphrase: " Problem salience expands so as to fill the capacity available for worrying.”],
+  [Suppose a person is worried about several problems. Let’s visualize the mental state of this person, where each problem is represented by a colored circle, and the size of the circle corresponds to how much this problem occupies the person:],
+  [This person worries about 5 things, with the yellow and green ones being the most important ones.],
+  [This person worries about 5 things, with the yellow and green ones being the most important ones.],
+  [Now, when one of these problems is resolved, one would expect that this problem simply gets removed from the ‘mental space’, making the person less worried in proportion to the size of the resolved problem:],
+  [The person now worries less, because the big problem was resolved.],
+  [Naive expectation: The person now worries less, because the big problem was resolved.],
+  [However, I don’t think this accurately describes what actually happens! Instead, it seems that the unresolved problems become more salient to the person, as if to fill the available space in the person’s mental state:],
+  [Or, new problems pop inside the freed space — the problems which weren’t important enough to worry about as long as there were more pressing ones:],
+  [The upshot is that in the beginning, the person would be wrong to think that they will worry much less or be much happier after the most important problems are resolved. They will just worry about different things!],
+  [What could help to prevent this scenario is to try to periodically recall some of the resolved problems and the amount of worrying they caused before they were resolved. By remembering this, the importance of other problems can shrink again (it’s relative, so they should still be less important than the yellow problem was!).],
+  [Related concepts: Adaptation level theory, hedonic treadmill, gratitude, negative visualization.],
+),
+  insert-map: (:),
+  word-count: 342,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+}
+
+{
   #section-label([Analysis])
   #brief-group((
-    #brief-item([Jules Boykoff, Dave Zirin], source-name: [The Nation], [Jules Boykoff, Dave Zirin
+    [#brief-item([Calin Van Paris], source-name: [Yoga Journal], [A little movement can make a major difference. 
+
+The post Got 5 Minutes? These YouTube Yoga Practices Will Fit in Your Morning Routine. appeared first on Yoga Journal .])],
+    [#brief-item([Ahmad Ibsais], source-name: [The Nation], [Ahmad Ibsais
 
 class="wp-block-the-nation-dek article-title\_\_dek"\>
 
-The world’s soccer governing body reminded fans what its theoretical commitment to “neutrality” means in practice: siding with the genocidaire.
+It’s not just Gaza—Israel wants to exterminate all Palestinians, everywhere. We are one people being destroyed as one people.
 
-The post 2 FIFA Rulings on Israel, 1 Familiar Deference to MAGA appeared first on The Nation .])
+The post Israel Is Also Committing Genocide In the West Bank appeared first on The Nation .])],
+    [#brief-item([Hoyt Patrick Taylor IV], source-name: [Nature News], [Nature, Published online: 25 March 2026; doi:10.1038/s41586-026-10219-x 
 
-    #brief-item([Chengxiang Qiu], source-name: [Nature News], [Nature, Published online: 25 March 2026; doi:10.1038/d41586-026-00639-0 
+fMRI data from individuals of a wide range of ages (from a few days to 100 years old) are used to map the key organizational axes of functional connectivity in the human cortex throughout the lifespan.])],
+    [#brief-item([Calin Van Paris], source-name: [Yoga Journal], [Right place, best practice. 
 
-Chronic inflammation increases the risk of colon cancer. This inflammation drives epigenetic changes in the nucleus of stem cells that promote tumour formation.])
+The post I Hated Yoga Until I Found the Right Studio. Here’s How to Find the Perfect Place to Practice. appeared first on Yoga Journal .])],
+    [#brief-item([Elizabeth Gibney], source-name: [Nature News], [Nature, Published online: 25 March 2026; doi:10.1038/d41586-026-00893-2 
 
-    #brief-item([William A. Marsh], source-name: [Nature News], [Nature, Published online: 25 March 2026; doi:10.1038/s41586-026-10170-x 
+The papers’ watermarks allowed organizers to detect use of large language models in peer review.])],
+    [#brief-item([Kouki K. Touhara], source-name: [Nature News], [Nature, Published online: 25 March 2026; doi:10.1038/s41586-026-10281-5 
 
-Analysis of nuclear and mitochondrial genomes from archaeological canid remains found across Europe and Anatolia shows that a genetically homogeneous dog population was already widely distributed across the region by 15,000 years ago.])
-
-    #brief-item([Harrison Stetler], source-name: [The Nation], [Harrison Stetler
-
-class="wp-block-the-nation-dek article-title\_\_dek"\>
-
-Barring a few big-ticket victories in this month’s local elections, the French left is more divided than ever—one year from a pivotal fight for the presidency
-
-The post Paris, a Capital in “Resistance”? appeared first on The Nation .])
-
-    #brief-item([Matt Kreisher], source-name: [The Nation], [Matt Kreisher
+Paracrine signalling between tuft cells and enterochromaffin cells is a key mode of immune–sensory and gut–brain communication, and accounts for the pattern of gastrointestinal symptoms that occurs during parasite infections.])],
+    [#brief-item([ESPN Top Stories], source-name: [ESPN Top Stories], [Gary Woodland won the Houston Open by five shots Sunday, his first PGA Tour victory since undergoing brain surgery in 2023.])],
+    [#brief-item([Laura Flanders], source-name: [The Nation], [Laura Flanders
 
 class="wp-block-the-nation-dek article-title\_\_dek"\>
 
-The failsons and finance brokers who own MLB franchises seem ready to destroy the league to make themselves a little richer—and too many fans may take their side.
+Laura Flanders speaks with Faiz Shakir and John Cassidy on the grassroots fight against the AI oligarchs.
 
-The post Do the Owners of MLB Teams Even Like Baseball? appeared first on The Nation .])
+The post The Data Center Revolt appeared first on The Nation .])],
+    [#brief-item([Tjeerd Royaards], source-name: [The Nation], [Tjeerd Royaards
 
-    #brief-item([Nature News], source-name: [Nature News], [Nature, Published online: 25 March 2026; doi:10.1038/d41586-026-00919-9 
+Scraping our creativity and our jobs.
 
-A model of breast cancer that expresses NMDA receptors — proteins that modify signalling between neurons — was used to trace pre-existing B cells as they matured to produce autoimmune antibodies that have diverse effects on receptor function. Transferring one antibody into mouse brains recapitulated key features of autoimmune brain inflammation.])
+The post AI Makes Life Easier… for AI appeared first on The Nation .])],
+    [#brief-item([Xinwei Wei], source-name: [Nature News], [Nature, Published online: 25 March 2026; doi:10.1038/s41586-026-10221-3 
 
-    #brief-item([Jeff Carlisle], source-name: [ESPN Top Stories], [Belgium provided a sobering assessment of where the USMNT currently stands, doling out a heavy 5-2 defeat that will leave Mauricio Pochettino with plenty to ponder.])
+Intelligent and miniaturized drug delivery devices leveraging advances in biotechnology, artificial intelligence, electronics and materials science enable treatments with increased precision and responsiveness, with applications in cancer, diabetes, cardiovascular disease and other diseases.])],
+    [#brief-item([Marshall Burke], source-name: [Nature News], [Nature, Published online: 25 March 2026; doi:10.1038/s41586-026-10272-6 
 
-    #brief-item([Davide Castelvecchi], source-name: [Nature News], [Nature, Published online: 25 March 2026; doi:10.1038/d41586-026-00899-w 
-
-AI Scientist, an autonomous research tool, first released in 2024, has now undergone peer review, highlighting its strengths and limitations.])
-
-    #brief-item([Charlotte Gibson], source-name: [ESPN Top Stories], [UCLA pointed to a halftime meeting between the team's graduating members as the reason for their comeback win over Duke in the Elite Eight.])
-
-    #brief-item([Hoyt Patrick Taylor IV], source-name: [Nature News], [Nature, Published online: 25 March 2026; doi:10.1038/s41586-026-10219-x 
-
-fMRI data from individuals of a wide range of ages (from a few days to 100 years old) are used to map the key organizational axes of functional connectivity in the human cortex throughout the lifespan.])
-
-    #brief-item([Ronald Hanson], source-name: [Nature News], [Nature, Published online: 25 March 2026; doi:10.1038/d41586-026-00804-5 
-
-Entanglement between ions connected by 10 kilometres of optical fibre is a step towards large-scale quantum communications networks.])
-
-    #brief-item([Marc Audard], source-name: [Nature News], [Nature, Published online: 25 March 2026; doi:10.1038/s41586-026-10231-1 
-
-Starburst galaxies are seen to host galaxy-scale winds, which are super-fast and could be powered entirely by the thermal pressure of gas heated by supernovae.])
-
-    #brief-item([Chris Lehmann], source-name: [The Nation], [Chris Lehmann
-
-class="wp-block-the-nation-dek article-title\_\_dek"\>
-
-Despite his denying the legitimacy of Biden’s election and making violent threats, Markwayne Mullin breezed through his Senate confirmation to become the new head of the DHS.
-
-The post The Senate Proves Once Again That It’s the World’s Most Useless Deliberative Body appeared first on The Nation .])
-
-    #brief-item([David Futrelle], source-name: [The Nation], [David Futrelle
-
-class="wp-block-the-nation-dek article-title\_\_dek"\>
-
-A jury finds big tech liable for programming addictive features into platforms—and that’s basically the business model for companion bots.
-
-The post A Landmark Suit Against Meta and YouTube Opens the Floodgate for AI Litigation appeared first on The Nation .])
-
-    #brief-item([Dan Garisto], source-name: [Nature News], [Nature, Published online: 26 March 2026; doi:10.1038/d41586-026-00977-z 
-
-Sparse academic presence on the US President’s Council of Advisors on Science and Technology reflects a focus on technology and industry.])
-
-    #brief-item([Katrina vanden Heuvel], source-name: [The Nation], [Katrina vanden Heuvel
-
-class="wp-block-the-nation-dek article-title\_\_dek"\>
-
-As costs surge and safety nets shrink, millions of Americans are struggling to afford the basics.
-
-The post How Trump’s Economy Is Crushing Everyday Americans appeared first on The Nation .])
-
-    #brief-item([Victoria Baena], source-name: [The Nation], [Victoria Baena
-
-class="wp-block-the-nation-dek article-title\_\_dek"\>
-
-Why adaptations of Emily Brontë’s novel, across generations, have misunderstood the work and its world. 
-
-The post The Trouble With Adapting “Wuthering Heights” appeared first on The Nation .])
-
-    #brief-item([Lynne Peeples], source-name: [Nature News], [Nature, Published online: 25 March 2026; doi:10.1038/d41586-026-00878-1 
-
-People are buying helmets, face masks, vests and beds that emit long-wavelength light. Beneath the hype, there is some interesting biology.])
-
-    #brief-item([Calin Van Paris], source-name: [Yoga Journal], [Only you can know what your body needs. 
-
-The post This Is My Favorite Cue in All of Yoga. Here’s How It Can Support Your Practice. appeared first on Yoga Journal .])
-
-    #brief-item([Anthony Conwright], source-name: [The Nation], [Anthony Conwright
-
-class="wp-block-the-nation-dek article-title\_\_dek"\>
-
-After you strip away the lies about rampant voter fraud, the GOP bill is a frontal assault on hard-won protections of the franchise.
-
-The post How the SAVE Act Seeks to Undermine the Right to Vote appeared first on The Nation .])
-
-    #brief-item([Kevin Y. Choi], source-name: [Nature News], [Nature, Published online: 25 March 2026; doi:10.1038/s41586-026-10276-2 
-
-Data from cryogenic electron microscopy combined with hydrogen–deuterium exchange mass spectrometry inform a mechanism for cold-evoked activation of the TRPM8 channel, providing a structural and energetic framework to explain cold sensitivity.])
-
-    #brief-item([Mark Hertsgaard], source-name: [The Nation], [Mark Hertsgaard
-
-class="wp-block-the-nation-dek article-title\_\_dek"\>
-
-A Netflix documentary exposes plastic’s health harms but misses its climate connection.
-
-The post Are Plastics Poisoning Us? appeared first on The Nation .])
-
-    #brief-item([Elie Mystal], source-name: [The Nation], [Elie Mystal
+A new framework links specific emissions to monetized, location-specific climate damages, showing that future harms from past CO2 emissions far exceed historical damages and that delayed carbon removal cannot fully offset these losses.])],
+    [#brief-item([Elie Mystal], source-name: [The Nation], [Elie Mystal
 
 class="wp-block-the-nation-dek article-title\_\_dek"\>
 
 In this week’s Elie v. U. S. , our justice correspondent explores Trump’s stunning incompetence. Plus: Baseball is back—for now. 
 
-The post Nothing Works in Trump’s America—Except Racism appeared first on The Nation .])
+The post Nothing Works in Trump’s America—Except Racism appeared first on The Nation .])],
+    [#brief-item([Eric H. Oelkers], source-name: [Nature News], [Nature, Published online: 25 March 2026; doi:10.1038/s41586-026-10130-5 
 
-    #brief-item([Laurence Edmondson], source-name: [ESPN Top Stories], [Yes, the timing of a safety car helped Kimi Antonelli to Sunday's win at the Japanese GP, but he was still the fastest car on track when it happened.])
+An industrial-scale pilot project using co-injection of recirculated water for subsurface CO2 mineralization shows promise as a pathway for carbon sequestration in regions with limited access to water resources.])],
+    [#brief-item([Sasha Abramsky], source-name: [The Nation], [Sasha Abramsky
 
-    #brief-item([Michelle Boorstein], source-name: [The Washington Post (national)], [The defense secretary is upending decades-old norms, current and former leaders say, with some cautioning that his proselytizing violates the Constitution and undermines troop cohesion.])
+class="wp-block-the-nation-dek article-title\_\_dek"\>
 
-    #brief-item([Tyrell Fortune], source-name: [ESPN Top Stories], [Bellator heavyweight Tyrell Fortune recalls the weight cut that nearly took his life and left him with a new outlook.])
+The V-Dem Institute, the world’s chronicler of democracy and autocracy, has determined that the United States is no longer “a liberal democracy.”
 
-    #brief-item([Raquel Francés], source-name: [Nature News], [Nature, Published online: 25 March 2026; doi:10.1038/s41586-026-10306-z 
+The post The Rapid and “Unprecedented” Collapse of American Democracy appeared first on The Nation .])],
+    [#brief-item([Florence Sylvestre], source-name: [Nature News], [Nature, Published online: 25 March 2026; doi:10.1038/s41586-026-10336-7 
 
-A study in Drosophilareveals a mechanism of non-homeostatic hunger and its critical relevance for memory consolidation.])
+Sedimentary time-series data of Lake Yoa in Chad covering the past 10.25 thousand years (kyr) show that the mid-Holocene African Humid Period experienced several decadal-scale droughts, caused by sudden inputs of freshwater into the North Atlantic.])],
+    [#brief-item([Juliane Weber], source-name: [Nature News], [Nature, Published online: 25 March 2026; doi:10.1038/d41586-026-00635-4 
 
-    #brief-item([Aaron Schatz], source-name: [ESPN Top Stories], [Which receivers in the 2026 draft class will have the most success in the pros? We have projections for the top prospects.])
+Carbon dioxide has been turned into minerals in Earth’s subsurface using recirculating water flow — a viable way to sequester this greenhouse gas in water-scarce areas.])],
+    [#brief-item([David Morales], source-name: [The Nation], [David Morales
 
+class="wp-block-the-nation-dek article-title\_\_dek"\>
+
+A mayoral candidate in Providence argues that unique challenges—and unique responses—must be explored.
+
+The post The Affordability Crisis in Midsize Cities Is Not Inevitable appeared first on The Nation .])],
+    [#brief-item([Victoria Baena], source-name: [The Nation], [Victoria Baena
+
+class="wp-block-the-nation-dek article-title\_\_dek"\>
+
+Why adaptations of Emily Brontë’s novel, across generations, have misunderstood the work and its world. 
+
+The post The Trouble With Adapting “Wuthering Heights” appeared first on The Nation .])],
+    [#brief-item([Marc Audard], source-name: [Nature News], [Nature, Published online: 25 March 2026; doi:10.1038/s41586-026-10231-1 
+
+Starburst galaxies are seen to host galaxy-scale winds, which are super-fast and could be powered entirely by the thermal pressure of gas heated by supernovae.])],
+    [#brief-item([Stanley Reed], source-name: [The Nation], [Stanley Reed
+
+class="wp-block-the-nation-dek article-title\_\_dek"\>
+
+Unless a resolution is found, the impact is likely to grow.
+
+The post How the War Has Led to the Largest Disruption of Energy Supplies in Decades appeared first on The Nation .])],
+    [#brief-item([Anthony Conwright], source-name: [The Nation], [Anthony Conwright
+
+class="wp-block-the-nation-dek article-title\_\_dek"\>
+
+After you strip away the lies about rampant voter fraud, the GOP bill is a frontal assault on hard-won protections of the franchise.
+
+The post How the SAVE Act Seeks to Undermine the Right to Vote appeared first on The Nation .])],
+    [#brief-item([Laurence Edmondson], source-name: [ESPN Top Stories], [Yes, the timing of a safety car helped Kimi Antonelli to Sunday's win at the Japanese GP, but he was still the fastest car on track when it happened.])],
+    [#brief-item([Michelle Boorstein], source-name: [The Washington Post (national)], [The defense secretary is upending decades-old norms, current and former leaders say, with some cautioning that his proselytizing violates the Constitution and undermines troop cohesion.])],
+    [#brief-item([Tyrell Fortune], source-name: [ESPN Top Stories], [Bellator heavyweight Tyrell Fortune recalls the weight cut that nearly took his life and left him with a new outlook.])],
+    [#brief-item([Futao Huang], source-name: [Nature News], [Nature, Published online: 25 March 2026; doi:10.1038/d41586-026-00426-x 
+
+A shift to regional partnerships and use of tightly controlled platforms suggests openness is being designed and managed.])],
+    [#brief-item([Ting Lin], source-name: [The Nation], [Ting Lin
+
+class="wp-block-the-nation-dek article-title\_\_dek"\>
+
+Zhang Yueran’s novel Women, Seated —a take on the upstairs, downstairs drama—examines class conflict among the Chinese upper crust and the people who wait on them. 
+
+The post What Its Like to Serve the Chinese Elite appeared first on The Nation .])],
   ))
 }
 

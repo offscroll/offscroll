@@ -23,13 +23,14 @@
 
 // --- Front Page Feature ---
 #feature-article(
-  title: [Implementing a clear room Z80 / ZX Spectrum emulator with Claude Code],
+  title: [Implementing a clear room Z80 \/ ZX Spectrum emulator with Claude Code],
   kicker: [Cover Story],
   author: [Antirez],
   source-name: [Antirez],
   deck: [The experiment methodology left me dubious about the kind of point they wanted to make.],
-  lead-text: "Anthropic recently released a blog post with the description of an experiment in which the last version of Opus, the 4.6, was instructed to write a C compiler in Rust, in a “clean room” setup.",
-  lead-first-alpha: 0,
+  lead-pre: [],
+  lead-cap: [A],
+  lead-rest: [nthropic recently released a blog post with the description of an experiment in which the last version of Opus, the 4.6, was instructed to write a C compiler in Rust, in a “clean room” setup.],
   body-paragraphs: (
   [The experiment methodology left me dubious about the kind of point they wanted to make. Why not provide the agent with the ISA documentation? Why Rust? Writing a C compiler is exactly a giant graph manipulation exercise: the kind of program that is harder to write in Rust. Also, in a clean room experiment, the agent should have access to all the information about well established computer science progresses related to optimizing compilers: there are a number of papers that could be easily synthesized in a number of markdown files. SSA, register allocation, instructions selection and scheduling. Those things needed to be researched \*first\*, as a prerequisite, and the implementation would still be “clean room”.],
   [Not allowing the agent to access the Internet, nor any other compiler source code, was certainly the right call. Less understandable is the almost-zero steering principle, but this is coherent with a certain kind of experiment, if the goal was showcasing the completely autonomous writing of a large project. Yet, we all know how this is not how coding agents are used in practice, most of the time. Who uses coding agents extensively knows very well how, even never touching the code, a few hits here and there completely changes the quality of the result.],
@@ -66,7 +67,7 @@
   [} while (!zx\_tick(zx, 0));],
   [I continued prompting Claude Code in order to make the key bindings more useful and a few things more.],
   [\# CP/M],
-  [One thing that I found really interesting was the ability of the LLM to inspect the COM files for ZEXALL / ZEXCOM tests for the Z80, easily spot the CP/M syscalls that were used (a total of three), and implement them for the extended z80 test (executed by make fulltest). So, at this point, why not implement a full CP/M environment? Same process again, same good result in a matter of minutes. This time I interacted with it a bit more for the VT100 / ADM3 terminal escapes conversions, reported things not working in WordStar initially, and in a few minutes everything I tested was working well enough (but, there are fixes to do, like simulating a 2Mhz clock, right now it runs at full speed making CP/M games impossible to use).],
+  [One thing that I found really interesting was the ability of the LLM to inspect the COM files for ZEXALL \/ ZEXCOM tests for the Z80, easily spot the CP/M syscalls that were used (a total of three), and implement them for the extended z80 test (executed by make fulltest). So, at this point, why not implement a full CP/M environment? Same process again, same good result in a matter of minutes. This time I interacted with it a bit more for the VT100 \/ ADM3 terminal escapes conversions, reported things not working in WordStar initially, and in a few minutes everything I tested was working well enough (but, there are fixes to do, like simulating a 2Mhz clock, right now it runs at full speed making CP/M games impossible to use).],
   [\# What is the lesson here?],
   [The obvious lesson is: always provide your agents with design hints and extensive documentation about what they are going to do. Such documentation can be obtained by the agent itself. And, also, make sure the agent has a markdown file with the rules of how to perform the coding tasks, and a trace of what it is doing, that is updated and read again quite often.],
   [But those tricks, I believe, are quite clear to everybody that has worked extensively with automatic programming in the latest months. To think in terms of “what a human would need” is often the best bet, plus a few LLMs specific things, like the forgetting issue after context compaction, the continuous ability to verify it is on the right track, and so forth.],
@@ -84,101 +85,65 @@
 {
   #section-label([Features])
   #standard-article(
-  title: [It has never been about the standers, while it has always been about the standards],
-  author: [espen],
-  source-name: [Finn.no Tech],
-  images: (),
-  paragraphs: (
-  [I was introduced to the World Wide Web back in 1995 while being a student at Molde College, Norway . What fascinated me the most was that I could learn how to create stuff for the web by just viewing the source code of other web sites. This blew my mind and since then I have built a career working with web development.],
-  [Creating web sites and web-based applications for me has always been about trying to adopt the latest technological advances in browsers, as soon as they were available. Naturally, this has lead to me reaching a few dead ends (IE’s Data Binding and Netscape JavaScript style sheets ), but mostly it has enabled me to create some pretty cool things.],
-  [id="from-dhtml-to-an-atomic-winter"\>From DHTML to an atomic winter],
-  [In the days of the .com era, the community for creating web based applications was buzzing. We were cranking out all kinds of DHTML magic. Every site out there was jumping on the band wagon without any hesitation. One of the classics is online retailer Boo.com which went all out with new technology without really succeeding. Naturally we had to deal with older browsers then too, but we did not let that get in the way of using the latest standards being adopted in browsers.],
-  [The burst of the .com bubble created something of an atomic winter as far as web based user interface development goes. A lot of people lost their jobs and the rest of us took refuge in server side development.],
-  [id="a-clean-slate-and-a-new-dawn"\>A clean slate and a new dawn],
-  [Thankfully all the bad stuff was swiftly cleaned up with the introduction of the AJAX approach by Jesse James Garret in 2005 . All the interface developers came out from their hiding places and they sure had been busy during that atomic winter. Out popped all kinds of amazing things like Dojo Toolkit , Yahoo! UI Library and JQuery . Once more the web moved forward at a rapid pace thanks to the newly found fame due to the AJAX hype. JavaScript was getting recognition as an actual language and CSS was being implemented in a more serious manner than before.],
-  [We all implemented our applications and sites using HTML, JavaScript and CSS2 and felt good about it. However it is worth noting that CSS2 was not a finished specification and no browser has yet to implement the entire CSS2 specification . Still, we have used loads of what is in CSS2 for years.],
-  [id="html5---a-new-generation-of-web-developers"\>HTML5 - a new generation of web developers],
-  [Lulling in the wake of AJAX a new generation of web developers entered the scene. The WHATWG decided to take matters into their own hands and do what the W3C seemed incapable of, creating something which made creating web based applications with HTML easier. With the new hype of HTML5 we started to get all kinds of, what I thought, strange questions on blogs, Twitter and in industry media. “When can I start using HTML5?”, “When will it be ready?”, “I am so disappointed, all this hype and I can not use it”.],
-  [All these questions struck me as very odd and I was beginning to think there was something wrong with me, had I missed something? I had never heard these kinds of questions before regarding CSS, JavaScript or HTML. Sure, we had to take into consideration that not all browsers supported everything in the same manner. But that was what we as web developer did, right? We create web based applications using the best technology available to us meanwhile making sure older less capable browsers could view it to. This is what got my career started and what I have spent a lot of time doing as a living.],
-  [This new generation of developers seemed to be very focused upon only applying technology which where in standards that where finished. To me this sounded weird as we have never once before had any hesitation as to adopt new technology when it was available to us. When the XmlHttpRequest object was missing in browsers, what did we do? We used the old trick of the hidden IFrame . Back when Opera ’s JavaScript support was horrendous (luckily this is no longer the case) what did we do? We made sure our stuff worked without the use of JavaScript. If something was not a final specification or something was not implemented in all browsers we implemented fallback solutions or provided alternate experiences.],
-  [id="our-bread-and-butter"\>Our bread and butter],
-  [Creating web applications using the latest technologies available to us should be our bread and butter as web developers. We should not wait around for the W3C to put some stamp on some documents. Browser vendors drive innovation, not standards bodies and therefor we should apply the technology being made available to us as quickly as we can, while making sure those with less capable browsers also can access our service or site. HTML5 does not make this any harder than before and we should not use the lack of a finalized HTML5 specification hold us back.],
-  [id="web-standards-are-everything"\>Web Standards are everything],
-  [You might be tempted into thinking that web standards are not that important, after all the browser vendors drive innovation. Innovation is done by the vendors, but the standards are extremely important as a way of making sure the web stays open and does not become fragmented. There are always numerous organizations trying to create their own special web, but thanks to the great work of the standard bodies the web has stayed open and will continue to do so.],
-  [The web standards (such as The Web Standards Project and WHATWG ) community has really blossomed in the years after the introduction of AJAX and developers are way more conscious about the importance open standards. Without the work of the people in various working groups and standard bodies we would not be where we are today. Web technology is being used in more innovative ways than ever before. Not only restricted to making content or applications for the web, but also on the server side or to create native mobile applications.],
-  [In summary the web standards are not important, but still they are essential for us to continue to enjoy all the amazing service and applications created with open web technology.],
-  [This article was published in the August issue of the NDC Magazine from Programutvikling AS],
-),
-  insert-map: (:),
-  inline-pq: pull-quote([We all implemented our applications and sites using HTML, JavaScript and CSS2 and felt good about it.], [espen]),
-  inline-pq-idx: 7,
-  word-count: 1064,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-}
-
-{
-  #standard-article(
-  title: [Putting a face on quality],
-  author: [espen],
-  source-name: [Finn.no Tech],
-  images: (),
-  paragraphs: (
-  [The topic of ensuring quality in the services we provide is a much debated topic in our industry [ 1 ]. It tends to focus upon things such as testing and how to best automate it to try and reach a state of zero defects. These initiatives are great and we should all pursue them in our daily work. These debates tend to be very focused upon the technical side and how to prevent the intrusion of defects in our build cycle. A result of the technical focus is that you become abstracted from the real issues at hand and it becomes yet another ideological debate (or even worse yet another pissing contest between believers and non-believers).],
-  [At FINN.no we try to always view things from an end-user perspective and technical quality is no different. So what does technical quality mean for our end users and do they really care?],
-  [id="making-dreams-come-true"\>Making dreams come true],
-  [A service such as FINN.no is much more than just a site where you view classified ads. It is a service where everyday people make some of their dreams come true. They buy the house they have been dreaming of in order to start a family. It is a place where you buy things to keep your kids safe and comfortable. So in order to answer the previous question, do they care about quality? Naturally. Down time on a Sunday at FINN.no prevents people from buying the house, the car or the boat of their dreams.],
-  [You get the picture right? Quality of service means that we deliver on our promisse of being a marketplace you can rely on to make some of your dreams come true. Behind the discussions about unit-test coverage there is a family not getting their house, car or boat if you mess things up. When we debate whether to write tests up-front or do waterfall planning there is someone out there not getting their car sold. We get so caught up in technology some times that we actually think that it matters. In order to try and get more in touch with how our quality affects our users we realized we had to do something. When growing from a small company to a larger company you often end up lossing track of these things and we needed to correct this.],
-  [id="continuous-improvements-aka-lean"\>Continuous improvements a.k.a. Lean],
-  [At FINN.no we have some people work solely with teaching us continuous improvement . They try to help every team or department to learn the Lean way of working and resolving issues. By spreading their knowledge across the company they start a lot of cross-team-department-initiatives which would not happen without them.],
-  [Bulding quality into your product is one of the essential things towards creating an amazing user experience, but the problem is how do you do this on a regular basis? There are numerous tools available for all kinds of testing and quality analysis of code and things like that. These tools are all good and you should use them. However, they all fail to bring you the one insight which is the most valueable yo your business: what does your users actually think about what you do.],
-  [Our customer service and architectural teams have both been working to try and establish a way of working which ensure continuous improvement in what we do. This has resulted in an initiative to try and visualize how our level of quality effects our users and customers.],
-  [id="finnback-or-tweet-board"\>FINNback or Tweet Board],
-  [One easy way of putting a face on quality was to utilize the Twitter Streaming API which enables us to see what people think about our service. Thanks to the brilliant engineers at Twitter this was easily accomplished in just a few hours and we had a node.js application which displayed tweets about us on monitors/TVs in our cantina and in our reception. Thanks to the awesomeness of the Twitter Streaming API we are able to pull both the profile picture, the profile background image and the number of followers into our application in order to give a more human feel to the tweets coming in. This was critical as it makes the tweets real as they come from real live people who we effect with our work. In the sample screenshot of the FINNback application we get a confirmation of something we are painfully aware of, we should have an app .],
-  [Doing this Twitter feed visualization is just a first step and we are working hard towards creating more real-time feedback visualization in order to make sure every one of our employees knows exactly how our users feel about what we do. We are confident that this is a great way of getting focus on technical quality and to make sure we work even harder to provide a service which makes our users dreams come true.],
-),
-  insert-map: (:),
-  word-count: 809,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-}
-
-{
-  #standard-article(
-  title: [Year in Review: 2024 into 2025],
+  title: [Year in Review: 2020 into 2021],
   author: [hello\@taniarascia.com],
   source-name: [Tania Rascia],
   images: (),
   paragraphs: (
-  [I'm trying to win the award for "Latest Year in Review". 🏆 I don't know if anyone can challenge me at this point, as it's almost thirdway through the year. But, I've done this in some way , shape , or form for the last eight years now!],
-  [id="coding"\> Coding],
-  [I still write code! Here's my contribution history from 2024 for work:],
-  [And my contributions to personal projects and this website over the same period:],
-  [I've been at my current job for four years now, with two of them as a principal engineer. I spend my time solving problems and writing React and CSS. I have the luxury of writing basically any component I need from scratch and creating a custom component system.],
-  [After over a decade of working eight hours a day, it's become harder and harder to spend any time after hours working on side projects or writing for the blog. I enjoy my work and I think it's the best career for me, but keeping my coding time to the morning and afternoon hours prevents burnout for me. I still want to write about interesting things I've discovered here and there, but it's hard to find the time.],
-  [I also don't keep up with what's going on in "The JavaScript World" anymore. I rarely remember I have a Bluesky account just because I'm not too into scrolling, and when I do scroll I gravitate to reddit.],
-  [id="writing"\> Writing],
-  [I wrote a few things this year:],
-  [Tables with Fixed Headers and Horizontal Scroll - A surprisingly difficult problem to tackle. I made a full-page datagrid/table component with sorting and filtering of various datatypes, pagination, bulk select, reordering, and fixed headers. I documented what method I went with for the fixed headers here.],
-  [Creating a Keyboard Shortcut Hook in React (Deep Dive) - Everything in React is hooks, so I made a useShortcut hook for some shortcut interactions I built. For fun, I used the Konami code in the example sandbox and made the page look all retro and eighties if you press the key combination.],
-  [Redesign: Version 7.0: Sidebars, light-dark, and Bluesky - I might not always be able to inspire myself to write about code, but I still enjoy tweaking the blog layout and trying to make it look perfect. I'm pretty happy with the current design - the code is really easy to maintain (just one style.css file with light-dark() variables), the table of contents gives you a sneak peak at the content of the articles, and the sidebar highlights some articles I've put a lot of time into.],
-  [My goal is to write more small snippets of articles about some epiphany I had or some small problem I solved. I feel like those can be helpful and shouldn't feel like too big of a project to embark on. I'm not very interested in writing complete start-to-finish tutorials anymore, as they're extremely time-consuming, probably feel overwhelming to even read, and much of the preamble feels repetitive.],
-  [I'd also like to write some posts this year about more components I've written from scratch, like a dropdown, matrix chart, and tooltips.],
-  [id="gaming-and-media"\> Gaming and Media],
-  [2024 was a big gaming year! The year started off strong with Prince of Persia: The Lost Crown . Castlevania: Symphony of the Night is one of my favorite games of all time, as well as Hollow Knight, so I'm a big fan of Metroidvanias. Prince of Persia did it really well.],
-  [Final Fantasy VII: Rebirth was another game I played that came out in 2024, and I was incredibly impressed by it. I'm part of the initial wave of Final Fantasy fans, having played FF7 as an eight-year-old the first time around. (Although I'm one of those obnoxious people who will go on about how FF6 is actually the best one.) Rebirth was great, and we put at least 100 hours into it, doing all the side quests and everything. It's the first JRPG I've played in a long, long time and it was really fun to play one again.],
-  [At the tail end of 2024, Marvel Rivals came out, and that's been one of my main hobbies since it came out. It's great to just hop on and be able to jump into a game with a few people and try to climb the ranks. I mostly play strategists and vanguards (healers and tanks) and am working my way through Diamond right now.],
-  [Aside from gaming, my favorite show that I discovered this year is Severance . If you haven't seen it, I highly recommend it! It's having a big cultural moment right now, and I'm happy to see something so good get so popular.],
-  [id="personal"\> Personal],
-  [Life is good for me. I really enjoy my job, I share my life with a wonderful partner and soon-to-be husband, and we have two adorable kitties. I'm just living my life, doing laundry and taxes . I'm also a homeowner as of this year, after over a decade of moving and paying rent, which is awesome. Otherwise, I spend it working, gaming, keeping up with friends, doing projects around the house, and cooking all sorts of things.],
-  [I hope 2025 is good to you!],
+  [Well, 2020, it's been a slice. I've been pretty AWOL lately on all things internet, and I can't decide if I have a lot to say or if I'd rather say nothing at all, but I've always made an end of the year post since I started this blog - going into 2017 , 2018 , 2019 , 2020 , so I'll keep up the tradition and write something today for 2021.],
+  [It's fun for me to look over those posts - I can see a zoomed out view of what I did and what I was focused on throughout each year. I wrote hundreds of articles, recorded the occasional song, made a lot of commits, built a few open-source projects, had a break up or three, made a bit of art, traveled all over Europe, and learned a ton.],
+  [This year is different though, right? A lot of things happened that we're all aware of, but one thing that happened was that life slowed down a bit. No more commuting to work for me, no more conferences, a lot more spare time. A lot more time on the internet for everyone.],
+  [I've spent so long focusing on being productive, feeling like I have to be productive all the time. I made it a point to never make promises or obligations about my creative output, but I've always tried to put out a consistent stream of quality material - at least a good tutorial once a month for the past five years or so. I felt good and productive if I produced something for the web and learned something new and wrote about it.],
+  [But that's five years of working 8 hours every day on code during my day job, and often spending the rest of my evening working on articles for DigitalOcean, for this website, for other publications, making my own open-source projects, talking about code on Twitter, and feeling like I should accept or consider all the speaking engagements and podcast requests and anything else that comes my way, because if I start turning them all down, the momentum I'm creating will disappear. (Fortunately I've usually kept “HELL YEAH!” or “no.” by Derek Sivers in mind when responding to things.)],
+  [It started getting to the point where I was dreading code, dreading speaking engagements, and the last thing I wanted to do was scroll through the Twitter or Reddit feed and read little arguments about this or that framework intermixed with political outrage, or maintain dozens of open-source GitHub repositories for tutorials that are slowly getting out of date. Not to mention all the emails and comments that would come in, which could be anything from a nice email from a thoughtful person who would become a new friend, to people emailing me their coding questions as if I'm Google, people attempting to shut down or critique every aspect of an article, and of course plenty of "are you single?" and "you're such a good coder for a girl" type emails, or worse things I'd rather not mention.],
+  [Of course, the vast majority is positive, but it's always the negative stuff that lingers and bothers you throughout the day, and regardless of good or bad, it all requires mental energy. Even the good is odd to me, because often people will have an idea on me based what little I've put out into the world, and if you came to know me as the impatient, flawed and complex human being I am, it likely would not align and reality might possibly disappoint you. If anything, I'm more scared and hesitant of praise than critiques.],
+  [So, I've been burnt out on all code and community after several years of my life revolving around it completely. I'm far from famous, but with nearly 10,000 followers on GitHub and 15,000 on Twitter, I can't just say anything or put anything out there without lots of eyes on it, and it puts more pressure on me than if nobody was paying attention to anything I did.],
+  [Interestingly, when I opt out of all of this and only pay attention to the real world, it completely disappears. None of my friends or family really have any idea of anything I've done online. They know I do some coding stuff, but that's where it ends, and that's reality.],
+  [There are amazing people all around the world and the internet still gives us so many opportunities to connect and create and help others and do wonderful things, but there is so much I don't like about the way things are right now: being constantly bombarded by ads and distractions, infinite scroll, algorithmic manipulation, addiction, corporate interests, dopamine hits from increasing follows and shares and influence, impatience and a lack of focus, negativity, fear and paranoia from always hearing about all the worst things that are happening in the world, conspiracies and a lack of critical thinking. I just don't want to be part of this and affected by it as much as I can, I want to reject it all and go against the grain and live a slower, simpler life.],
+  [One small thing I can do is encourage a few other people to also go against the grain and read a book instead of scrolling a feed, and focus on a few deeper relationships as opposed to collecting and quantifying strangers. I'm learning to be my own best friend. I deleted all my tweets and stopped scrolling through Twitter, I removed my email from any easy-to-find spot, and I make sure not to log into anything like Reddit. Without being tailored to my interests, you'll find that most of these sites are pretty boring and it's easy to just check something out for a few minutes and move on.],
+  [I found the latest three articles on The Raptitude interesting and helpful, so I'll share them with you.],
+  [How to Handle the Beast - it was helpful for me to read this and know that other people struggle with a lack of productivity and drive, and that it's okay and normal.],
+  [News is the Last Thing We Need Right Now - real news, fake world.],
+  [Own the Tools - why it might be a better idea to - for example - open a physical dictionary to find a word as opposed to looking it up online.],
+  [Meanwhile, I've been making the best of this weird time. I'm really glad that I still enjoy my job quite a bit and the puzzle-solving aspect of coding that makes it so fun and challenging, but I've wanted to explore things outside of coding in my spare time that makes more use of my hands. I built a PC from scratch. I learned some basic woodworking skills to make my own desk. I learned how to knit. I painted some Bob Ross paintings. I climbed one of the tallest mountains in the U. S. and slept among the stars above the tree line. I took a solo road trip along the coast from L. A. to Seattle in an oversized Jeep Wrangler. I started a new job. I've just been livin'.],
+  [Here's me on top of Mount Langley.],
+  [Here's my first finished scarf, that I just made last week.],
+  [Here's the desk and PC I built.],
+  [Aside from my thoughts, here are some of the stats I usually keep track of.],
+  [id="i-finished-takenote"\> I finished TakeNote],
+  [TakeNote is my biggest project yet, and I wrote all about it here . It's a web-based note-taking app for developers that looks like an IDE and syncs to GitHub. It uses TypeScript, Node, Express, React, Redux, Codemirror, and several other awesome open-source projects. I ultimately decided not to ship it, but I did finish it, and I'm proud of it.],
+  [id="i-wrote-21-articles"\> I wrote 21 articles],
+  [I did two project write-ups - TakeNote and Chip8.js, several articles on JavaScript for DigitalOcean's fundamentals series, and covered few big concepts like Redux, Docker, and webpack. Honestly, I got a lot more done than I remembered, which is one of those reasons I like to make these posts. It's easy to forget all that you've done over an entire year.],
+  [Docker Tutorial: Create a CI/CD Pipeline],
+  [Understanding Map and Set in JavaScript],
+  [macOS Catalina: Setting up a Mac for Development],
+  [Understanding Generators in JavaScript],
+  [Redux Tutorial: An Overview and Walkthrough],
+  [Understanding Default Parameters in JavaScript],
+  [Writing an Emulator in JavaScript (Chip-8)],
+  [Understanding Destructuring, Rest Parameters, and Spread Syntax],
+  [Another Website Redesign - and Making the Internet Better],
+  [Understanding Template Literals in JavaScript],
+  [Using Git Submodules for Private Content],
+  [Understanding Arrow Functions in JavaScript],
+  [Adding Comments to My Blog (via Utterances)],
+  [REST API: Sorting, Filtering, and Pagination],
+  [Understanding the Event Loop, Callbacks, Promises, and Async/Await in JavaScript],
+  [webpack Tutorial: How to Set Up webpack 5 From Scratch],
+  [Understanding Modules, Import and Export in JavaScript],
+  [Everyday Systems That Help Me],
+  [Building My First PC],
+  [Building TakeNote, a Notes App for Developers With GitHub Sync],
+  [id="newsletter"\> Newsletter],
+  [The newsletter is up to 11,283 subscribers. I don't post very often, but it is really the only way I'm communicating with the world since I'm not active on Twitter or Reddit. I'm glad you all are interested in what I'm creating and I still hope to create interesting things in 2021.],
+  [id="learning"\> Learning],
+  [I didn't learn most of the things I wanted to this year. Data structures and algorithms have been on the back burner for a few years now, and I never seem to be able to focus on it. I think the best article I wrote this year is Understanding the Event Loop, Callbacks, Promises, and Async/Await in JavaScript , which is a deep dive on how JavaScript and the event loop work under the hood. This article was something I wanted to write and understand for a long time, so I'm glad I finally did. I still want to learn computer science fundamentals, so next time I decide to sit down and try to learn something coding related that's probably what I'll do.],
+  [So, thank you for reading and I hope this answers your questions if you were wondering why I haven't been around or active much. I appreciate all of your support and I'm looking forward to seeing what 2021 brings.],
 ),
   insert-map: (:),
-  word-count: 871,
+  inline-pq: pull-quote([I just don't want to be part of this and affected by it as much as I can, I want to reject it all and go against the grain and live a slower, simpler life.], [hello\@taniarascia.com]),
+  inline-pq-idx: 19,
+  word-count: 1715,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -187,28 +152,783 @@
 
 {
   #standard-article(
-  title: [Did Semgrep Just Get A Lot More Interesting?],
+  title: [Using OAuth with PKCE Authorization Flow (Proof Key for Code Exchange)],
+  author: [hello\@taniarascia.com],
+  source-name: [Tania Rascia],
+  images: (),
+  paragraphs: (
+  [If you've ever created a login page or auth system, you might be familiar with OAuth 2.0 , the industry standard protocol for authorization. It allows an app to access resources hosted on another app securely. Access is granted using different flows, or grants, at the level of a scope.],
+  [For example, if I make an application ( Client ) that allows a user ( Resource Owner ) to make notes and save them as a repo in their GitHub account ( Resource Server ), then my application will need to access their GitHub data. It's not secure for the user to directly supply their GitHub username and password to my application and grant full access to the entire account. Instead, using OAuth 2.0, they can go through an authorization flow that will grant limited access to some resources based on a scope, and I will never have access to any other data or their password.],
+  [Using OAuth, a flow will ultimately request a token from the Authorization Server , and that token can be used to make all future requests in the agreed upon scope.],
+  [Note : OAuth 2.0 is used for authorization , (authZ) which gives users permission to access a resource. OpenID Connect, or OIDC, is often used for authentication , (authN) which verifies the identity of the end user.],
+  [id="grant-types"\> Grant Types],
+  [The type of application you have will determine the grant type that will apply.],
+  [Grant Type 
+ Application type 
+ Example 
+ 
+ 
+ 
+ 
+ Client Credentials 
+ Machine 
+ A server accesses 3rd-party data via cron job 
+ 
+ 
+ Authorization Code 
+ Server-side web app 
+ A Node or Python server handles the front and back end 
+ 
+ 
+ Authorization Code with PKCE 
+ Single-page web app/mobile app 
+ A client-side only application that is decoupled from the back end],
+  [For machine-to-machine communication, like something that cron job on a server would perform, you would use the Client Credentials grant type, which uses a client id and client secret. This is acceptable because the client id and resource owner are the same, so only one is needed. This is performed using the /token endpoint.],
+  [For a server-side web app, like a Python Django app, Ruby on Rails app, PHP Laravel, or Node/Express serving React, the Authorization Code flow is used, which still uses a client id and client secret on the server side, but the user needs to authorize via the third-party first. This is performed using both an /authorize and /token endpoints.],
+  [However, for a client-side only web app or a mobile app, the Authorization Code flow is not acceptable because the client secret cannot be exposed, and there's no way to protect it. For this purpose, the Proof Key for Code Exchange (PKCE) version of the authorization code flow is used. In this version, the client creates a secret from scratch and supplies it after the authorization request to retrieve the token.],
+  [Since PKCE is a relatively new addition to OAuth, a lot of authentication servers do not support it yet, in which case either a less secure legacy flow like Implicit Grant is used, where the token would return in the callback of the request, but using Implicit Grant flow is discouraged. AWS Cognito is one popular authorization server that supports PKCE.],
+  [id="pkce-flow"\> PKCE Flow],
+  [The flow for a PKCE authentication system involves a user , a client-side app , and an authorization server , and will look something like this:],
+  [The user arrives at the app 's entry page],
+  [The app generates a PKCE code challenge and redirects to the authorization server login page via /authorize],
+  [The user logs in to the authorization server and is redirected back to the app with the authorization code],
+  [The app requests the token from the authorization server using the code verifier/challenge via /token],
+  [The authorization server responds with the token, which can be used by the app to access resources on behalf of the user],
+  [So all we need to know is what our /authorize and /token endpoints should look like. I'll go through an example of setting up PKCE for a front end web app.],
+  [id="get-authorize-endpoint"\> GET /authorize endpoint],
+  [The flow begins by making a GET request to the /authorize endpoint. We need to pass some parameters along in the URL, which includes generating a code challenge and code verifier .],
+  [Parameter 
+ Description 
+ 
+ 
+ 
+ 
+ response\_type 
+ code 
+ 
+ 
+ client\_id 
+ Your client ID 
+ 
+ 
+ redirect\_uri 
+ Your redirect URI 
+ 
+ 
+ code\_challenge 
+ Your code challenge 
+ 
+ 
+ code\_challenge\_method 
+ S256 
+ 
+ 
+ scope 
+ Your scope 
+ 
+ 
+ state 
+ Your state (optional)],
+  [We'll be building the URL and redirecting the user to it, but first we need to make the verifier and challenge.],
+  [id="verifier"\> Verifier],
+  [The first step is generating a code verifier, which the PKCE spec defines as:],
+  [Verifier - A high-entropy cryptographic random STRING using the unreserved characters \[A-Z\] \/ \[a-z\] \/ \[0-9\] \/ "-" \/ "." \/ "\*" \/ "~" from Section 2.3 of \[RFC3986\], with a minimum length of 43 characters and a maximum length of 128 characters.],
+  [I'm using a random string generator that Aaron Parecki of oauth.net wrote:],
+  [return Array . from ( array , ( item ) =\> \` 0 \${ item . toString ( 16 ) } \` . substr ( - 2 ) ) . join ( 
+ '' 
+ ) 
+ }],
+  [id="challenge"\> Challenge],
+  [The code challenge performs the following transformation on the code verifier:],
+  [Challenge - BASE64URL-ENCODE(SHA256(ASCII(code\_verifier)))],
+  [So the verifier gets passed into the challenge function as an argument and transformed. This is the function that will hash and encode the random verifier string:],
+  [return window . crypto . subtle . digest ( 'SHA-256' , data ) 
+ }],
+  [function base64URLEncode ( string ) { 
+ return btoa ( String . fromCharCode . apply ( null , new Uint8Array ( string ) ) ) 
+ . replace ( \/ \\+ \/ g , '-' ) 
+ . replace ( \/ \\\/ \/ g , '\_' ) 
+ . replace ( \/ =+\\\$ \/ , '' ) 
+ }],
+  [const hashed = await sha256 ( verifier )],
+  [return base64URLEncode ( hashed ) 
+ }],
+  [id="build-endpoint"\> Build endpoint],
+  [Now you can take all the needed parameters, generate the verifier and challenge, set the verifier to local storage, and redirect the user to the authentication server's login page.],
+  [class="gatsby-highlight"\> async function buildAuthorizeEndpointAndRedirect ( ) { 
+ const host = 'https:\/\/auth-server.example.com/oauth/authorize' 
+ const clientId = 'abc123' 
+ const redirectUri = 'https:\/\/my-app-host.example.com/callback' 
+ const scope = 'specific,scopes,for,app' 
+ const verifier = generateVerifier ( ) 
+ const challenge = await generateChallenge ( verifier )],
+  [\/\\/ Build endpoint 
+ const endpoint = \` \${ host } ?
+ response\_type=code&
+ client\_id= \${ clientId } &
+ scope= \${ scope } &
+ redirect\_uri= \${ redirectUri } &
+ code\_challenge= \${ challenge } &
+ code\_challenge\_method=S256 \`],
+  [\/\\/ Set verifier to local storage 
+ localStorage . setItem ( 'verifier' , verifier )],
+  [\/\\/ Redirect to authentication server's login page 
+ window . location = endpoint
+ }],
+  [At what point you call this function is up to you - it might happen at the click of a button, or automatically if a user is deemed to not be authenticated when they land on the app. In a React app it would probably be in the useEffect() .],
+  [Now the user will be on the authentication server's login page, and after successful login via username and password they'll be redirected to the redirect\_uri from step one.],
+  [id="post-token-endpoint"\> POST /token endpoint],
+  [The second step is retrieving the token. This is the part that is usually accomplished server side in a traditional Authorization Code flow, but for PKCE it's also through the front end. When the authorization server redirects back to your callback URI, it will come along with a code in the query string, which you can exchange along with the verifier string for the final token .],
+  [The POST request for a token must be made as a x-www-form-urlencoded request.],
+  [Header 
+ Description 
+ 
+ 
+ 
+ 
+ Content-Type 
+ application/x-www-form-urlencoded 
+ 
+ 
+ 
+ 
+ 
+ 
+ Parameter 
+ Description 
+ 
+ 
+ 
+ 
+ grant\_type 
+ authorization\_code 
+ 
+ 
+ client\_id 
+ Your client ID 
+ 
+ 
+ code\_verifier 
+ Your code verifier 
+ 
+ 
+ redirect\_uri 
+ The same redirect URI from step 1 
+ 
+ 
+ code 
+ Code query parameter],
+  [\/\\/ Get code from query params 
+ const urlParams = new URLSearchParams ( window . location . search ) 
+ const code = urlParams . get ( 'code' )],
+  [\/\\/ Build params to send to token endpoint 
+ const params = \` client\_id= \${ clientId } &
+ grant\_type= \${ grantType } &
+ code\_verifier= \${ verifier } &
+ redirect\_uri= \${ redirectUri } &
+ code= \${ code } \`],
+  [\/\\/ Make a POST request 
+ try { 
+ const response = await fetch ( host , { 
+ method : 'POST' , 
+ headers : { 
+ 'Content-Type' : 'application/x-www-form-urlencoded' , 
+ } , 
+ body : params , 
+ } ) 
+ const data = await response . json ( )],
+  [\/\\/ Token 
+ console . log ( data ) 
+ } catch ( e ) { 
+ console . log ( e ) 
+ } 
+ }],
+  [Once you obtain the token, you should immediately delete the verifier from localStorage .],
+  [When it comes to storing the token, if your app is truly front end only, the option is to use localStorage . If the option of having a server is available, you can use a Backend for Frontend (BFF) to handle authentication. I recommend reading A Critical Analysis of Refresh Token Rotation in Single-page Applications .],
+  [id="conclusion"\> Conclusion],
+  [And there you have it - the two steps to authenticate using PKCE. First, build a URL for /authorize on the authorization server and redirect the user to it, then POST to the /token endpoint on the redirect. PKCE is currently the most secure authentication system that I know of for a front-end only web or mobile app. Hopefully this helps you understand and implement PKCE in your app!],
+),
+  insert-map: (:),
+  word-count: 1691,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+}
+
+{
+  #standard-article(
+  title: [Automatically Detecting Text Encodings in C++],
+  author: [Jeff Preshing],
+  source-name: [Jeff Preshing],
+  images: (),
+  paragraphs: (
+  [Consider the lowly text file.],
+  [This text file can take on a surprising number of different formats. The text could be encoded as ASCII , UTF-8 , UTF-16 (little or big-endian), Windows-1252 , Shift JIS , or any of dozens of other encodings. The file may or may not begin with a byte order mark (BOM) . Lines of text could be terminated with a linefeed character \\n (typical on UNIX), a CRLF sequence \\r\\n (typical on Windows) or, if the file was created on an older system, some other character sequence .],
+  [Sometimes it’s impossible to determine the encoding used by a particular text file. For example, suppose a file contains the following bytes:],
+  [style="text-align: center; font-size: 1.4em;"\> A2 C2 A2 C2 A2 C2],
+  [This could be:],
+  [a UTF-8 file containing “¢¢¢”],
+  [a little-endian UTF-16 (or UCS-2 ) file containing “ꋂꋂꋂ”],
+  [a big-endian UTF-16 file containing “슢슢슢”],
+  [a Windows-1252 file containing “Â¢Â¢Â¢”],
+  [That’s obviously an artificial example, but the point is that text files are inherently ambiguous. This poses a challenge to software that loads text.],
+  [It’s a problem that has been around for a while . Fortunately, the text file landscape has gotten simpler over time, with UTF-8 winning out over other character encodings. More than 95% of the Internet is now delivered using UTF-8. It’s impressive how quickly that number has changed; it was less than 10% as recently as 2006 .],
+  [UTF-8 hasn’t taken over the world just yet, though. The Windows Registry editor, for example, still saves text files as UTF-16. When writing a text file from Python, the default encoding is platform-dependent; on my Windows PC, it’s Windows-1252. In other words, the ambiguity problem still exists today. And even if a text file is encoded in UTF-8, there are still variations in format, since the file may or may not start with a BOM and could use either UNIX-style or Windows-style line endings.],
+  [id="how-the-plywood-c-framework-loads-text"\>How the Plywood C++ Framework Loads Text],
+  [Plywood is a cross-platform open-source C++ framework I released two months ago . When opening a text file using Plywood, you have a couple of options:],
+  [If you know the exact format of the text file ahead of time, you can call FileSystem::openTextForRead() , passing the expected format in a TextFormat structure.],
+  [If you don’t know the exact format, you can call FileSystem::openTextForReadAutodetect() , which will attempt to detect the format automatically and return it to you.],
+  [The input stream returned from these functions never starts with a BOM, is always encoded in UTF-8, and always terminates each line of input with a single carriage return \\n , regardless of the input file’s original format. Conversion is performed on the fly if needed. This allows Plywood applications to work with a single encoding internally.],
+  [id="automatic-format-detection"\>Automatic Format Detection],
+  [Here’s how Plywood’s automatic text format detection currently works:],
+  [Does the file start with a BOM? 
+ Use BOM encoding 
+ Can the file be decoded as UTF-8 without any errors or control codes? 
+ Use UTF-8 
+ When decoding as UTF-8, are there decoding errors in more than 25% of non-ASCII code points? 
+ The 8-bit format is UTF-8 
+ The 8-bit format is plain bytes 
+ Try decoding as little and big-endian UTF-16, then take the best score between those and the 8-bit format 
+ Detect line ending type (LF or CRLF) 
+ Done 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ yes 
+ yes 
+ yes 
+ no 
+ no 
+ no],
+  [Plywood analyzes up to the first 4KB of the input file in order to guess its format. The first two checks handle the vast majority of text files I’ve encountered. There are lots of invalid byte sequences in UTF-8, so if a text file can be decoded as UTF-8 and doesn’t contain any control codes, then it’s almost certainly a UTF-8 file. (A control code is considered to be any code point less than 32 except for tab, linefeed and carriage return.)],
+  [It’s only when we enter the bottom half of the flowchart that some guesswork begins to happen. First, Plywood decides whether it’s better to interpret the file as UTF-8 or as plain bytes. This is meant to catch, for example, text encoded in Windows-1252 that uses accented characters. In Windows-1252, the French word détail is encoded as 64 E9 74 61 69 6C , which triggers a UTF-8 decoding error since UTF-8 expects E9 to be followed be a byte in the range 80 - BF . After a certain number of such errors, Plywood will favor plain bytes over UTF-8.],
+  [id="scoring-system"\>Scoring System],
+  [After that, Plywood attempts to decode the same data using the 8-bit format, little-endian UTF-16 and big-endian UTF-16. It calculates a score for each encoding as follows:],
+  [Each whitespace character decoded is worth +2.5 points. Whitespace is very helpful to identify encodings, since UTF-8 whitespace can’t be recognized in UTF-16, and UTF-16 whitespace contains control codes when interpreted in an 8-bit encoding.],
+  [ASCII characters are worth +1 point each, except for control codes.],
+  [Decoding errors incur a penalty of -100 points.],
+  [Control codes incur a penalty of -50 points.],
+  [Code points greater than U+FFFF are worth +5 points, since the odds of encountering such characters in random data is low no matter what the encoding. This includes emojis .],
+  [Scores are divided by the total number of characters decoded, and the best score is chosen. If you’re wondering where these point values came from, I made them up! They’re probably not optimal yet.],
+  [The algorithm has other weaknesses. Plywood doesn’t yet know how to decode arbitrary 8-bit decodings. Currently, it interprets every 8-bit text file that isn’t UTF-8 as Windows-1252. It also doesn’t support Shift JIS at this time. The good news is that Plywood is an open source project on GitHub, which means that improvements can published as soon as they’re developed.],
+  [id="the-test-suite"\>The Test Suite],
+  [In Plywood’s GitHub repository, you’ll find a folder that contains 50 different text files using a variety of formats. All of these files are identified and loaded correctly using FileSystem::openTextForReadAutodetect() .],
+  [A lot of modern text editors perform automatic format detection, just like Plywood. Out of curiosity, I tried opening this set of text files in a few editors:],
+  [Notepad++ correctly detected the format of 38 out of 50 files. It fails on all UTF-16 files that are missing a BOM except for little-endian files that mostly consist of ASCII characters.],
+  [Sublime Text correctly detected the format of 42 files. When text consists mostly of ASCII, it guesses correctly no matter what the encoding.],
+  [Visual Studio Code correctly detected the format of 40 files. It’s like Sublime Text, but fails on Windows-1252 files containing accented characters.],
+  [And perhaps most impressively, Windows Notepad correctly detected the format of a whopping 42 files! It guesses correctly on all little-endian UTF-16 files without BOMs, but fails on all big-endian UTF-16 files without BOMs.],
+  [Admittedly, this wasn’t a fair contest, since the entire test suite is hand-made for Plywood. And most of the time, when an editor failed, it was on a UTF-16 file that was missing a BOM, which seems to be a rare format – none of the editors allows you to save such a file.],
+  [It’s worth mentioning that these text editors were the inspiration for Plywood’s autodetection strategy in the first place. Working with Unicode has always been difficult in C++ – the situation is bad enough the standard C++ committee recently formed a study group dedicated to improving it. Meanwhile, I’ve always wondered: Why can’t loading text in C++ be as simple as it is in a modern text editor?],
+  [If you’d like to improve Plywood in any of the ways mentioned in this post, feel free to get involved on GitHub or in the Discord server . And if you only need the source code that detects text encodings, but don’t want to adopt Plywood itself, I get it! Feel free to copy the source code however you see fit – everything is MIT licensed.],
+),
+  insert-map: (:),
+  word-count: 1314,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+}
+
+{
+  #standard-article(
+  title: [Building an JavaScript Keyboard Accordion (the Musical Kind)],
+  author: [hello\@taniarascia.com],
+  source-name: [Tania Rascia],
+  images: (),
+  paragraphs: (
+  [It's been a while since I've written anything due to some personal concerns that I might write about later, but don't worry, I'm still around and I'm still coding. Recently, I went to Texas and bought a three-row diatonic button accordion. Diatonic accordions are popular for a lot of different types of folk music, which is generally learned by ear. This is good for me, because I don't really know how to read music anyway.],
+  [The accordion has 34 buttons on the treble side and 12 buttons on the bass side. Unlike a piano accordion, which has the same logical, chromatic layout as a piano, the diatonic accordion just has a bunch of buttons and I didn't really know where to start. Also, every note is different whether you're pulling the bellows out or pushing them in, so there are actually 68 notes on the treble side (albeit some are repeated). Also, as I'm sure you might be aware, accordions are loud. Very loud. In order to not piss off my neighbors too much, and to learn how the layout of this box works, I decided to make a little web app.],
+  [That web app is KeyboardAccordion.com , which like everything else I create in my free time is open source . I noticed that there are just enough keys on a computer keyboard to correspond to the accordion layout, and they're arranged in a similar pattern. With this, I can keep track of the notes, scales, and chords and start figuring out how to put it all together.],
+  [Here's what one of the accordions looks like:],
+  [I decided to make this app in Svelte, because I've used React and Vue professionally but have no experience with Svelte whatsoever and wanted to know what everyone loves about it.],
+  [id="web-audio-api"\> Web Audio API],
+  [KeyboardAccordion.com only has one dependency, and that's Svelte. Everything else is done using plain JavaScript and the built-in browser Web Audio API . I'd never really used the Web Audio API before, so I figured out what I needed to to get this working.],
+  [The first thing I did was create an AudioContext and attach a GainNode , which controls the volume.],
+  [class="gatsby-highlight"\> const audio = new ( window . AudioContext || window . webkitAudioContext ) ( ) 
+ const gainNode = audio . createGain ( ) 
+gainNode . gain . value = 0.1 
+gainNode . connect ( audio . destination )],
+  [As I was figuring everything out, I was experimenting with making new AudioContext for every note because I was trying to fade out the sound, but then I kept realizing that after 50 notes, the app would stop working. Fifty is apparently the limit for the browser, so it's better to just make one AudioContext for the entire app.],
+  [I'm using waves with the Audio API and not using any sort of audio sample, and I used the OscillatorNode to make each note. There are various types of waves you can use - square , triangle , sine , or sawtooth , which all have a different type of sound. I went with the sawtooth for this app because it worked out the best. Square makes an extremely loud, chiptune-esque sound like an NES which is kind of nice in its own way. Sine and triangle were a bit more subdued but if you don't fade the sound out properly, it makes a really unpleasant kind of cutting sound due to how your ear reacts when a wave gets cut off.],
+  [id="waveforms"\> Waveforms],
+  [So for each note, I'd make an oscillator, set the wave type, set the frequency, and start it. Here's an example using 440 , which is a standard tuning for "A".],
+  [class="gatsby-highlight"\> const oscillator = audio . createOscillator ( ) 
+oscillator . type = 'sawtooth' 
+oscillator . connect ( gainNode ) 
+oscillator . frequency . value = 440 
+oscillator . start ( )],
+  [If you do that, the note will just play until infinity, so you have to make sure you stop the oscillator when you want the note to end.],
+  [For me, this meant event listeners on the DOM that would listen for a keypress event to see if any button was pressed, and a keyup event to determine when any button was no longer being pressed. In Svelte, that's handled by putting event listeners on svelte:body .],
+  [So that's really everything there is to the Web Audio API itself when it comes to setting up the app - creating an AudioContext , adding a Gain , and starting/stopping an Oscillator for each note.],
+  [You could paste this into the console and it'll play a note. You'll have to either refresh or type oscillator.stop() to make it stop.],
+  [class="gatsby-highlight"\> const audio = new ( window . AudioContext || window . webkitAudioContext ) ( ) 
+ const gainNode = audio . createGain ( ) 
+gainNode . gain . value = 0.1 
+gainNode . connect ( audio . destination )],
+  [const oscillator = audio . createOscillator ( ) 
+oscillator . type = 'sawtooth' 
+oscillator . connect ( gainNode ) 
+oscillator . frequency . value = 440 
+oscillator . start ( )],
+  [id="data-structure"\> Data Structure],
+  [I had to figure out how I wanted to lay out the data structure for this application. First of all, if I'm going to be using the Web Audio API with frequencies directly, I had to collect all of them.],
+  [id="frequencies"\> Frequencies],
+  [Here's a nice map of notes to frequencies with all 12 notes and 8-9 octaves for each note, so I can use A\[4\] to get the 440 frequency.],
+  [C : \[ 16.35 , 32.7 , 65.41 , 130.81 , 261.63 , 523.25 , 1046.5 , 2093.0 , 4186.01 \] ,],
+  [Db : \[ 17.32 , 34.65 , 69.3 , 138.59 , 277.18 , 554.37 , 1108.73 , 2217.46 , 4434.92 \] ,],
+  [D : \[ 18.35 , 36.71 , 73.42 , 146.83 , 293.66 , 587.33 , 1174.66 , 2349.32 , 4698.64 \] ,],
+  [Eb : \[ 19.45 , 38.89 , 77.78 , 155.56 , 311.13 , 622.25 , 1244.51 , 2489.02 , 4978.03 \] ,],
+  [E : \[ 20.6 , 41.2 , 82.41 , 164.81 , 329.63 , 659.26 , 1318.51 , 2637.02 \] ,],
+  [F : \[ 21.83 , 43.65 , 87.31 , 174.61 , 349.23 , 698.46 , 1396.91 , 2793.83 \] ,],
+  [Gb : \[ 23.12 , 46.25 , 92.5 , 185.0 , 369.99 , 739.99 , 1479.98 , 2959.96 \] ,],
+  [G : \[ 24.5 , 49.0 , 98.0 , 196.0 , 392.0 , 783.99 , 1567.98 , 3135.96 \] ,],
+  [Ab : \[ 25.96 , 51.91 , 103.83 , 207.65 , 415.3 , 830.61 , 1661.22 , 3322.44 \] ,],
+  [A : \[ 27.5 , 55.0 , 110.0 , 220.0 , 440.0 , 880.0 , 1760.0 , 3520.0 \] ,],
+  [Bb : \[ 29.14 , 58.27 , 116.54 , 233.08 , 466.16 , 932.33 , 1864.66 , 3729.31 \] ,],
+  [B : \[ 30.87 , 61.74 , 123.47 , 246.94 , 493.88 , 987.77 , 1975.53 , 3951.07 \] ,],
+  [}],
+  [id="button-layout"\> Button layout],
+  [Figuring out exactly how to arrange all the buttons into a data stucture took a couple of tries for me. The data that had to be captured was:],
+  [The row on the accordion],
+  [The column on the accordion],
+  [The direction of the bellows (push or pull)],
+  [The name and frequency of the note at that row, column, and direction],
+  [This means that there are different combinations for all three sets of these things. I decided to make an id that corresponds to each possible combination, such as 1-1-pull being row 1 , column 1 , direction pull .],
+  [This way, I could create an array that holds the data for any note that is currently being played. If you press the button to reverse the bellows, it would take all the currently playing notes and reverse them, thus changing 1-1-pull and 1-2-pull to 1-1-push and 1-2-push .],
+  [So ultimately I had an object that contained the data for all three treble rows like so:],
+  [My particular accordion is tuned to FB♭Eb, meaning the first row is tuned to F, the second row is tuned to B♭, and the third row is tuned to E♭. The example for the first row looks like this:],
+  [one : \[],
+  [\/\\/ Pull],
+  [{ id : '1-1-pull' , name : 'D♭' , frequency : tone . Db \[ 4 \] } ,],
+  [{ id : '1-2-pull' , name : 'G' , frequency : tone . G \[ 3 \] } ,],
+  [{ id : '1-3-pull' , name : 'B♭' , frequency : tone . Bb \[ 3 \] } ,],
+  [{ id : '1-4-pull' , name : 'D' , frequency : tone . D \[ 4 \] } ,],
+  [{ id : '1-5-pull' , name : 'E' , frequency : tone . E \[ 4 \] } ,],
+  [{ id : '1-6-pull' , name : 'G' , frequency : tone . G \[ 4 \] } ,],
+  [{ id : '1-7-pull' , name : 'B♭' , frequency : tone . Bb \[ 4 \] } ,],
+  [{ id : '1-8-pull' , name : 'D' , frequency : tone . D \[ 5 \] } ,],
+  [{ id : '1-9-pull' , name : 'E' , frequency : tone . E \[ 5 \] } ,],
+  [{ id : '1-10-pull' , name : 'G' , frequency : tone . G \[ 5 \] } ,],
+  [\/\\/ Push],
+  [{ id : '1-1-push' , name : 'B' , frequency : tone . B \[ 3 \] } ,],
+  [{ id : '1-2-push' , name : 'F' , frequency : tone . F \[ 3 \] } ,],
+  [{ id : '1-3-push' , name : 'A' , frequency : tone . A \[ 3 \] } ,],
+  [{ id : '1-4-push' , name : 'C' , frequency : tone . C \[ 4 \] } ,],
+  [{ id : '1-5-push' , name : 'F' , frequency : tone . F \[ 4 \] } ,],
+  [{ id : '1-6-push' , name : 'A' , frequency : tone . A \[ 4 \] } ,],
+  [{ id : '1-7-push' , name : 'C' , frequency : tone . C \[ 5 \] } ,],
+  [{ id : '1-8-push' , name : 'F' , frequency : tone . F \[ 5 \] } ,],
+  [{ id : '1-9-push' , name : 'A' , frequency : tone . A \[ 5 \] } ,],
+  [{ id : '1-10-push' , name : 'C' , frequency : tone . C \[ 6 \] } ,],
+  [\] ,],
+  [two : \[],
+  [\/\\/ ...etc],
+  [\] ,],
+  [}],
+  [There are notes 1 through 10 in row one, and each one has a name and frequency associated with it. Repeating this for two and three, I now have all 68 notes on the treble side.],
+  [id="keyboard-layout"\> Keyboard layout],
+  [Now I had to map each key on the keyboard to a row and column of the accordion. Direction doesn't matter here, since z will correspond to both 01-01-push and 01-01-pull .],
+  [class="gatsby-highlight"\> export const keyMap = { 
+ z : { row : 1 , column : 1 } , 
+ x : { row : 1 , column : 2 } , 
+ c : { row : 1 , column : 3 } , 
+ v : { row : 1 , column : 4 } , 
+ b : { row : 1 , column : 5 } , 
+ n : { row : 1 , column : 6 } , 
+ m : { row : 1 , column : 7 } , 
+ ',' : { row : 1 , column : 8 } , 
+ '.' : { row : 1 , column : 9 } , 
+ '/' : { row : 1 , column : 10 } , 
+ a : { row : 2 , column : 1 } , 
+ s : { row : 2 , column : 2 } , 
+ d : { row : 2 , column : 3 } , 
+ f : { row : 2 , column : 4 } , 
+ g : { row : 2 , column : 5 } , 
+ \/\\/ ...etc 
+ }],
+  [Now I have all the keys from z to \/ , a to ' , and w to \[ mapped out. Very auspicious that the computer keyboard and accordion keyboard are so similar.],
+  [id="pressing-keys-playing-notes"\> Pressing keys, playing notes],
+  [As you might recall, I have an event listener on the entire page listening for the key press event. Any key press event that happens will go through this function.],
+  [First, it has to check both lowercase and uppercase keys in case shift or caps lock are pressed, otherwise the keys won't work at all. Then, if you're pressing the button to toggle the bellows (which I made q ), it has to handle that separately. Otherwise, it will check the keyMap, and if one exists, it will find the corresponding id by checking the current direction and getting the row and column from the keymap.],
+  [function handleKeyPressNote ( e ) { 
+ const key = \` \${ e . key } \` . toLowerCase ( ) || e . key \/\\/ handle caps lock],
+  [if ( key === toggleBellows ) { 
+ handleToggleBellows ( 'push' ) 
+ return 
+ }],
+  [const buttonMapData = keyMap \[ key \]],
+  [if ( buttonMapData ) { 
+ const { row , column } = buttonMapData
+ const id = \` \${ row } - \${ column } - \${ direction } \`],
+  [if ( ! activeButtonIdMap \[ id \] ) { 
+ const { oscillator } = playTone ( id )],
+  [activeButtonIdMap \[ id \] = { oscillator , ... buttonIdMap \[ id \] } 
+ } 
+ } 
+ }],
+  [The way I'm tracking each currently playing note is putting them in the activeButtonIdMap object. In Svelte, in order to update a variable you just reassign it, so instead of what you might do in React with useState :],
+  [const App = ( ) =\> { 
+ function handleKeyPressNote ( ) { 
+ setActiveButtonIdMap ( newButtonIdMap ) 
+ } 
+ }],
+  [You have to declare it as a let and reassign it:],
+  [function handleKeyPressNote ( ) { 
+ activeButtonIdMap = newButtonIdMap
+ }],
+  [This was mostly easier, except when all I wanted to do was delete a key from the object. As far as I could tell, Svelte only rerenders when a variable is reassigned, so just mutating some value within wasn't enough and I had to clone it, mutate it, the reassign it. This is what I did in the handleKeyUpNote function.],
+  [if ( key === toggleBellows ) { 
+ handleToggleBellows ( 'pull' ) 
+ return 
+ }],
+  [const buttonMapData = keyMap \[ key \]],
+  [if ( buttonMapData ) { 
+ const { row , column } = buttonMapData
+ const id = \` \${ row } - \${ column } - \${ direction } \`],
+  [if ( activeButtonIdMap \[ id \] ) { 
+ const { oscillator } = activeButtonIdMap \[ id \] 
+ oscillator . stop ( ) 
+ \/\\/ Must be reassigned in Svelte 
+ const newActiveButtonIdMap = { ... activeButtonIdMap } 
+ delete newActiveButtonIdMap \[ id \] 
+ activeButtonIdMap = newActiveButtonIdMap
+ } 
+ } 
+ }],
+  [Maybe someone knows a better way to delete an item from an object in Svelte, but this is the best I could come up with.],
+  [I also made a few functions that will play through the scales, starting with F , B♭ and E♭ being the main diatonic keys of the accordion, but there are more options. To play the scales, I simply looped through all the ids that correspond to the notes in the scale and used a JavaScript "sleep" command of 600ms between each note.],
+  [id="rendering"\> Rendering],
+  [Now that I have all the data structures set up and the JavaScript, I just need to render all the buttons. Svelte has \#each blocks for looping logic, so I just looped through the three rows of buttons and rendered a circle for each button.],
+  [Each circle has its own mousedown event so you can click on them in addition to using the keyboard, but I didn't put the mouseup event on the circle itself. This is because if you move your mouse somewhere else before lifting it up, it won't correctly determine the mouseup and the note will play forever.],
+  [And of course, I just used plain CSS because I don't usually feel like anything fancier is necessary for small projects.],
+  [class="gatsby-highlight"\> .circle { 
+ display : flex ; 
+ align-items : center ; 
+ justify-content : center ; 
+ border-radius : 50% ; 
+ height : 60px ; 
+ width : 60px ; 
+ margin-bottom : 10px ; 
+ background : linear-gradient ( to bottom , white , \#e7e7e7 ) ; 
+ box-shadow : 0px 6px rgba ( 255 , 255 , 255 , 0.4 ) ; 
+ color : \#222 ; 
+ font-weight : 600 ; 
+ cursor : pointer ; 
+ }],
+  [.circle:hover { 
+ background : white ; 
+ box-shadow : 0px 6px rgba ( 255 , 255 , 255 , 0.3 ) ; 
+ cursor : pointer ; 
+ }],
+  [.circle.pull:active,
+.circle.pull.active { 
+ background : linear-gradient ( to bottom , var ( --green ) , \#56ea7b ) ; 
+ box-shadow : 0px 6px rgba ( 255 , 255 , 255 , 0.2 ) ; 
+ }],
+  [.circle.push:active,
+.circle.push.active { 
+ background : linear-gradient ( to bottom , var ( --red ) , \#f15050 ) ; 
+ box-shadow : 0px 6px rgba ( 255 , 255 , 255 , 0.2 ) ; 
+ color : white ; 
+ }],
+  [id="conclusion"\> Conclusion],
+  [I hope you liked my write-up for the Keyboard Accordion app! Of course, the full code is available on GitHub .],
+  [There are a few little bugs here and there, such as if you use keyboard shortcuts while also pressing other keys, it will get stuck on a note forever. I'm sure if you try to find more bugs you'll be able to.],
+  [This app was fun to make, I learned how to use both Svelte and the Web Audio API, and it's helping me and hopefully some other afficionados to understand the squeezebox a little better. Maybe it'll inspire you to build your own little online instrument, or make an app for one of your hobbies. The best part about coding is that you can make anything you want!],
+),
+  insert-map: (:),
+  word-count: 3153,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+}
+
+{
+  #standard-article(
+  title: [From Hadoop and Cassandra to Kafka Streams],
+  author: [Nicolas Yann Couturier],
+  source-name: [Finn.no Tech],
+  images: (),
+  paragraphs: (
+  [id="some-context"\>Some context],
+  [People who publish their classified ads on FINN.no get access to various statistics to see how their ads are performing. For a user it can look something like this:],
+  [Statistics the owner of a realestate ad gets to see],
+  [The top left bar chart shows the repartition of the incoming traffic by day and the legend to the right of it shows the total numbers for each type of incoming traffic.
+The lower section is divided in 3 parts:],
+  [the left part shows the number of views by unique users;],
+  [the one to the center shows how many users have been notified of the ad by email and how many added the ad to their favorites;],
+  [the right part shows how many viewers out of the total come from a specific type of traffic.],
+  [This gives the user basic insight into the reach of their ad, such as how many views it has and how many unique users have viewed it.],
+  [Around November 2016 there was a request to show more detailed information about the viewers, such as the age, gender and location distribution of the viewers (demographic information) so the owner could potentially change an ad to better fit the audience they wanted.],
+  [id="existing-solution"\>Existing solution],
+  [As users view ads, do actions (such as send a message to an ad’s owner or scroll down and read the whole page, for example), these actions are gathered and published internally on Apache Kafka . These streams of data then become the basis for computing the statistics above. The plan was then to also publish demographic data about the viewers (such as location, age and gender) on Kafka and join the user actions with this demographic data to provide enhanced statistics.],
+  [At the time, the action events published on Kafka were saved to Cassandra Apache Cassandra clusters, and statistics were being computed as batches on an aging Apache Hadoop cluster reading from Cassandra. Both our Hadoop and Cassandra clusters had not receive much love recently and were all on end-of-life versions. The old system also had an increasing tendency to fail, so we were also in the process to decide to either spend our time to refresh/renew the old system or replace it.],
+  [A simplified overview of the previous architecture],
+  [id="replacement-solution"\>Replacement solution],
+  [We first tried to find a good way of joinining the latest demographic data being received through Kafka as part of the existing statistics computation done with Hadoop. We quickly learned that efficient communication with Kafka from a Hadoop job was not easy to get right. After some experimentation we had a solution that sort of worked, but it was complicated and far from elegant.],
+  [After doing some research we started to look at the possibility of using Kafka Streams . Reading the introductory blog post - especially the “Simple is Beautiful” paragraph - it felt like Streams was just what we needed.],
+  [The most interesting aspects were:],
+  [no more external runtime for jobs (in our case YARN/Hadoop);],
+  [no more intermediary external storage (Cassandra);],
+  [built-in fault tolerance;],
+  [only POJOs running as normal Java apps;],
+  [limiting the number of components by using Kafka for the whole solution.],
+  [This would lead to less moving parts, less maintenance and what we saw as a simpler and more elegant solution.],
+  [We also evaluated other solutions, amongst which:],
+  [upgrade our Hadoop and Cassandra clusters;],
+  [Apache Spark micro-batches on top of an Apache Parquet storage filled from Kafka;],
+  [hybrid solutions with hyperloglog and other similar cardinality tricks to estimate the unique users visiting an ad.],
+  [We were already using Kafka (and it is seen as a central part of our future architecture), so Streams was deemed to be the most attractive and straight-forward solution.],
+  [id="streams-in-use"\>Streams in use],
+  [The first prototype took less than a week to get up and running, and from there it took 6 months to develop a fully operational, properly sized version running in production on our Kubernetes container cluster.],
+  [As part of development we also wrote tools for monitoring, error handling/diagnostics, reprocessing and for migration of the existing statistics out of the old Cassandra storage and into our new storage. During this development, the original plan to join in demographics data was put on hold (for non-technical reasons) and the project turned into a more technical one: move the statistics system out of the aging Hadoop and Cassandra clusters and migrate to something that incurs less maintenance and fits better with our overall technology strategy.],
+  [id="requirements"\>Requirements],
+  [The amount of data is is reasonably large, about 100 million messages a day, and the main requirements were:],
+  [keep the near-realtime computing of the statistics we had in the previous solution;],
+  [be able to reprocess data up to 3 months back in time (in case of failure or bugs);],
+  [be able to integrate late arrivals to some extent.],
+  [id="architecture"\>Architecture],
+  [We went through multiple versions and the components evolved both in size and responsibility during development, and below is how it looks now.],
+  [A simplified overview of the replacement architecture],
+  [The replicator copies a subset of short lived topics (3 days retention) into our own long lived topics (90 days retention) to support reprocessing of the last 3 months. It is a simple read-write (Kafka consumer and producer) that computes the hash of the message as the key for deduplication downstream.],
+  [The aggregator is the interesting bit that actually computes the base data for our statistics: the counts. A simplified versions of the Streams code to achieve this would look something like this:],
+  [class="highlight"\> \/\\/ grouping by unique key which consists
+\/\\/ of the id of the ad, the day the action
+\/\\/ happened and the type of the action
+\/\\/ and then counting],
+  [kstream.groupBy((key, action) -\> \/\\/ build the new key by which we want to count
+ new Key(action.ad, \/\\/ ex: ad number 12345678
+ action.day, \/\\/ ex: day 17-02-2017
+ action.type)) \/\\/ ex: "click"
+ .count("count-store") \/\\/ counts the number of messages for each key
+ .to("count-topic"); \/\\/ outputs each update of the count the Kafka topic],
+  [The production code does more than that with Apache Avro serialization \/ deserialization, filtering of bad data, deduplicating, reporting metrics etc., but the above code shows the main logic the component consists of.],
+  [Finally, the sink is just an instance of Kafka Connect configured to use the JDBC sink - with no custom code. It reads from the output topic from the aggregator and writes into a PostgreSQL database.],
+  [All of these components are webapps running in Kubernetes and can be scaled up or down easily. And while the replicator and the aggregator are Spring Boot based webapps, the sink is just an off-the-shelf Kafka-REST webapp.],
+  [id="data-quality"\>Data quality],
+  [id="avro-and-schema-registry"\>Avro and Schema Registry],
+  [We use Avro and the Schema Registry to enforce schemas on the Kafka messages so that changes to the message structure maintain compatibility over time. This proves to be quite robust any incompatible change to the schema gets immediately rejected.],
+  [GenericAvroSerde avroSerde = 
+ new GenericAvroSerde(registryClient, registryProps);],
+  [\/\\/ build the KStream with Avro],
+  [new KStreamBuilder()
+ .stream(Serdes. String(), avroSerde, topics);],
+  [A note about developing with Avro and the schema registry: 
+While in the early stages of development, using the schema registry proved cumbersome: breaking changes happens quite often during development and maintaining compatibility or overriding it takes time to get used to. This was however very good training for applying actual real changes to the schema that will inevitably be required later on when running in production. Special care is required with the internal Streams topics that also contain Avro messages.],
+  [id="streams-filtering"\>Streams filtering],
+  [We filter out bad messages (missing or corrupted pieces of information) with the filtering method of the Streams and plain old Java.],
+  [kstream.filter((key, action) -\> 
+ action.isNotFromOwner() 
+ && action.hasRequiredData());],
+  [id="dealing-with-duplicates"\>Dealing with duplicates],
+  [There is no built-in support in Streams to deal with duplicates, so non-idempotent processing of the messages then becomes an issue. The strategy we adopted is to calculate a hash of each message value and set it as its key so that consumers downstream can deduplicate based on an in-memory LRU cache of these hashes (because all the identical keys are guaranteed to be in the same partition, and thus end up in the same consumer on the same thread).],
+  [In the replicator:],
+  [String key = DigestUtils.sha1Hex(message);
+producer.send(new ProducerRecord\<\>(topic, key, message);],
+  [In the aggregator:],
+  [KEYS = CacheBuilder.newBuilder()
+ .maximumSize(100000L)
+ .expireAfterWrite(10L, TimeUnit. MINUTES)
+ .build();],
+  [\/\\/ keep only messages whose key has not been processed],
+  [kstream.filterNot((key, action) -\> {
+ boolean duplicate = KEYS.getIfPresent(key) != null;
+ KEYS.put(key);
+ return duplicate;
+});],
+  [This is a best effort strategy since if the Streams app dies, so does its cache, and the new app instance won’t be able to deduplicate the very first duplicate (but this should happen so rarely that it is acceptable).],
+  [id="limiting-the-disk-usage"\>Limiting the disk usage],
+  [Streams and Kafka rely on offsets when reading messages which guarantees that when things start again they pick up where they stopped. On top of that, when using aggregations, Streams stores a changelog of the operations in Kafka itself, meaning that also stateful operations (grouping, reducing, counting, etc.) will recover gracefully and efficiently from a stop or crash by starting from where they had stopped. This is really nice fault-tolerance feature.],
+  [The changelog topic is used on every start to build a “local state” for stateful operations on the machine where Streams is running. RocksDB manipulates that state internally. This local state resides partly in memory and partly on disk, all depending on the amount of data in question. Instances running on our Kubernetes cluster are stateless, so they do not keep data on disk between restarts. This means we lose the local state each time the app is shutdown. However, when the streams application starts up again it will rebuild this local state from the Streams internal changelog topic, so no data is lost. As a consequence, there are two things to consider:],
+  [rebuilding of the local state on (re)start can take several minutes depending on the volume of data and how it is partitioned],
+  [if the app runs for a long time the disk usage will keep on increasing, so we need to use TimeWindows to avoid the issue of never-ending growing local state],
+  [Below is an example of how to limit data on disk by using TimeWindows .],
+  [.groupByKey()
+.count(TimeWindows.of(TimeUnit. DAYS.toMillis(1))
+ .until(TimeUnit. DAYS.toMillis(1)),
+ "count-store");],
+  [id="migrating-existing-data"\>Migrating existing data],
+  [The Cassandra table storing our data was not structured in a way that made it easy and fast to export the existing data. Since we were running on an older version of Cassandra, we used the Astyanax library to migrate the existing data over to PostgreSQL. It allowed partitioning of the ring buffer and reading in parallel from each of these partitions for higher throughput. The included checkpointing mechaninsm helped us start where it left off each time the migration would fail. Astyanax did a good job reading and writeíng the billions of rows of data needed within an acceptable migration time window without overloading the running Cassandra clusters.],
+  [The above proved to be quite tricky due to tombstone and compaction issues. Tombstones would often lead to queries timing out, so we first had to fix that. These problems were not, for the most part, visible in day to day use, so it was a surprise challenge when migrating data (which took quite a lot of time to do).],
+  [id="integration-testing"\>Integration testing],
+  [We use JUnit and spin up an embedded Kafka and Apache Zookeeper . Then we use producers and consumers to send and receive messages for the input and output topics that the Streams expects. Extra care should be taken to clear the state of the Streams between each test.
+Integration testing has proven to be quite challenging because there are a lot of details to take into account.],
+  [For manual testing when quickly prototyping something new, we both make use of our Kubernetes development environment, or a local Docker Compose configuration, and a bunch of scripts using the Kafka tools.],
+  [id="reprocessing"\>Reprocessing],
+  [When rolling out bug fixes or improvements, it may be necessary to reprocess the existing data. Reprocessing with Streams is sort of an artform - especially if you have non-idempotent processing. Sometimes it is possible to reset the app (with kafka-streams-application-reset ) and just restart with auto.offset.reset to earliest to reprocess everything. This clears all of the app’s state, and depending on the case this can be acceptable or not.
+Our aggregator can start in a special reprocessing mode that spools all the messages of our 90-days long lived topic and only processes a given time interval.],
+  [id="error-diagnostic"\>Error diagnostic],
+  [Figuring out when the Streams output data is wrong is not always as easy as seeing a sudden spike on a monitoring graph or incoherent numbers. Figuring out why the numbers do not add up can be even more challenging in that there is no way to query the input Kafka topic to investigate. The same could be said of our Cassandra “input table” to Hadoop which was not structured after a diagnostic query need either. Putting a Kafka Connect Source from our input topic to a form of storage that allows easy querying might enable easier diagnostics.],
+  [However, we’re happy to say that we never experienced any bugs in Streams itself and the Kafka cluster have proven to be very reliable. The problems we have encountered have mostly been due to corrupted or duplicated input data.],
+  [id="summary"\>Summary],
+  [The previous solution required a lot of knowledge on top of knowing Kafka, mainly Cassandra (dealing with tombstone problems, compaction strategies, cluster management, old composite columns vs CQL etc.) and Hadoop (maintaining HDFS, operations, batch-writing etc.). Using Streams instead, there is no extra required knowledge. The only thing to know about is Kafka (and the Streams framework).],
+  [We also end up with a less heterogeneous infrastructure to run with fewer clusters and fewer products. It ends up being just one Kafka cluster and a bunch of webapps. Which we have quite a lot of experience of maintaining over time.],
+  [With Kafka being more and more widely used at FINN (as well as Streams) the knowledge can also be shared between all and promotes cooperation across the organization.],
+),
+  insert-map: (:),
+  word-count: 2426,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+}
+
+{
+  #standard-article(
+  title: [QA role is dead but development and testing together provides quality for FINN.no],
+  author: [vivek],
+  source-name: [Finn.no Tech],
+  images: (),
+  paragraphs: (
+  [When a developer is finished with a development issue, it must be tested. People often think the goal of testing should be to find all the errors. Well, it’s not entirely realistic. Actually, it’s impossible! Despite the title of “quality insurance” testers can never really ensure level of quality, nor can they be expected to find all the errors. The real goal of testing should be to improve the software. As at the end of the day we want to minimize the cost of fixing critical bugs after a release, minimize cost of handling customer complaints and pushing a patch in the production. So it is import to understand that Quality Assurance is a process, not a department.],
+  [Today there are basically two different components of QA role in FINN. One of which is “QA in a team” and the other one is of a “team without the QA”. The QA role today is often a safety net for many developers and teams. The role involves manual testing in the sprint, regression testing and writing Cucumber tests. In addition this role has some administrative tasks such as being contact person for the Release Manager, participating in the release status meeting, filling out the checklist of early \/ late shift, contact for Tech Support (E-journal issues), participating in status meetings at Call Center after release, and verifying the patch to production. Everything that’s listed so far is managed also by teams without QA. What we have seen so far, is that a team without QA delivers the same quality as the team with QA in developing an FINN application.],
+  [Then comes the question, how do they manage to do it?],
+  [They have the same responsibilities as the “QA in a team”, but they have different practices on how they manage the tasks (some have rolling QA role, others have a fixed arrangement but they are NOT dependent on one individual person).],
+  [If we want to deliver a good quality code, testing must become a central pillar of the development process. When I say the role of QA is dead, but development and testing together provides quality for FINN, by that I mean that the whole team should focus on unit testing, integration testing, system testing and functional testing (as part of the pipeline). This will build and provide quality from top to bottom in the product stack.],
+  [Despite back-end test automation, front end problems with web applications are always discovered by human testers, including issues related to browser compatibility or CSS flaws. This can be covered by focusing on exploratory testing, which is also done in a team with no QA.],
+  [The QA testers should rather concentrate on the planning of tests within their teams. They should focus on three things.],
+  [Attributes: Describes the high level concept testing are meant to ensure performance testing, usable testing, secure testing, accessible testing and so forth.],
+  [Components: Define the major code chunks that comprise the product. These are classes, module names and features of the application.],
+  [Capabilities: Describes user actions and activities.],
+  [We know it very well that we cannot test everything so there is no pointing in investing too much time in documenting everything either? And we know as we start testing things the schedule, the requirements, the architecture etc are going to change. But the greater benefit is that whole team takes the responsibility for the quality, quicker feedback, tests documenting the code and not the least satisfied customers.],
+),
+  insert-map: (:),
+  word-count: 585,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+  #pull-quote([The QA role today is often a safety net for many developers and teams.], [vivek])
+
+}
+
+{
+  #standard-article(
+  title: [Litestream Writable VFS],
   author: [Fly.io Blog],
   source-name: [Fly.io Blog],
   images: (),
   paragraphs: (
-  [This whole paragraph is just one long sentence. God I love just random-ass blogging again.],
-  [This bit by Geoffrey Huntley is super interesting to me and, despite calling out that LLM-driven development agents like Cursor have something like a 40% success rate at actually building anything that passes acceptance criteria, makes me think that more of the future of our field belongs to people who figure out how to use this weird bags of model weights than any of us are comfortable with.],
-  [I’ve been dinking around with Cursor for a week now (if you haven’t, I think it’s something close to malpractice not to at least take it — or something like it — for a spin) and am just now from this post learning that Cursor has this rules feature .],
-  [The important thing for me is not how Cursor rules work, but rather how Huntley uses them. He turns them back on themselves, writing rules to tell Cursor how to organize the rules, and then teach Cursor how to write (under human supervision) its own rules.],
-  [Cursor kept trying to get Huntley to use Bazel as a build system. So he had cursor write a rule for itself: “no bazel”. And there was no more Bazel. If I’d known I could do this, I probably wouldn’t have bounced from the Elixir project I had Cursor doing, where trying to get it to write simple unit tests got it all tangled up trying to make Mox work.],
-  [But I’m burying the lead.],
-  [Security people have been for several years now somewhat in love with a tool called Semgrep . Semgrep is a semantics-aware code search tool; using symbolic variable placeholders and otherwise ordinary code, you can write rules to match pretty much arbitary expressions and control flow.],
-  [If you’re an appsec person, where you obviously go with this is: you build a library of Semgrep searches for well-known vulnerability patterns (or, if you’re like us at Fly.io, you work out how to get Semgrep to catch the Rust concurrency footgun of RWLocks inside if-lets).],
-  [The reality for most teams though is “ain’t nobody got time for that”.],
-  [But I just checked and, unsurprisingly, 4o seems to do reasonably well at generating Semgrep rules? Like: I have no idea if this rule is actually any good. But it looks like a Semgrep rule?],
-  [What interests me is this: it seems obvious that we’re going to do more and more “closed-loop” LLM agent code generation stuff. By “closed loop”, I mean that the thingy that generates code is going to get to run the code and watch what happens when it’s interacted with. You’re just a small bit of glue code and a lot of system prompting away from building something like that right now: Chris McCord is building a thingy that generates whole Elixir/Phoenix apps and runs them as Fly Machines. When you deploy these kinds of things, the LLM gets to see the errors when the code is run, and it can just go fix them. It also gets to see errors and exceptions in the logs when you hit a page on the app, and it can just go fix them.],
-  [With a bit more system prompting, you can get an LLM to try to generalize out from exceptions it fixes and generate unit test coverage for them.],
-  [With a little bit more system prompting, you can probably get an LLM to (1) generate a Semgrep rule for the generalized bug it caught, (2) test the Semgrep rule with a positive/negative control, (3) save the rule, (4) test the whole codebase with Semgrep for that rule, and (5) fix anything it finds that way.],
-  [That is a lot more interesting to me than tediously (and probably badly) trying to predict everything that will go wrong in my codebase a priori and Semgrepping for them. Which is to say: Semgrep — which I have always liked — is maybe a lot more interesting now? And tools like it?],
+  [I’m Ben Johnson, and I work on Litestream at Fly.io. Litestream is the missing backup/restore system for SQLite. It’s free, open-source software that should run anywhere, and you can read more about it here .],
+  [Each time we write about it, we get a little bit better at golfing down a description of what Litestream is. Here goes: Litestream is a Unix-y tool for keeping a SQLite database synchronized with S3-style object storage. It’s a way of getting the speed and simplicity wins of SQLite without exposing yourself to catastrophic data loss. Your app doesn’t necessarily even need to know it’s there; you can just run it as a tool in the background.],
+  [It’s been a busy couple weeks!],
+  [We recently unveiled Sprites . If you don’t know what Sprites are, you should just go check them out . They’re one of the coolest things we’ve ever shipped. I won’t waste any more time selling them to you. Just, Sprites are a big deal, and so it’s a big deal to me that Litestream is a load-bearing component for them.],
+  [Sprites rely directly on Litestream in two big ways.],
+  [First, Litestream SQLite is the core of our global Sprites orchestrator. Unlike our flagship Fly Machines product, which relies on a centralized Postgres cluster, our Elixir Sprites orchestrator runs directly off S3-compatible object storage. Every organization enrolled in Sprites gets their own SQLite database, synchronized by Litestream.],
+  [This is a fun design. It takes advantage of the “many SQLite databases” pattern, which is under-appreciated. It’s got nice scaling characteristics. Keeping that Postgres cluster happy as Fly.io grew has been a major engineering challenge.],
+  [But as far as Litestream is concerned, the orchestrator is boring, and so that’s all I’ve got to say about it. The second way Sprites use Litestream is much more interesting.],
+  [Litestream is built directly into the disk storage stack that runs on every Sprite.],
+  [Sprites launch in under a second, and every one of them boots up with 100GB of durable storage. That’s a tricky bit of engineering. We’re able to do this because the root of storage for Sprites is S3-compatible object storage, and we’re able to make it fast by keeping a database of in-use storage blocks that takes advantage of attached NVMe as a read-through cache. The system that does this is JuiceFS, and the database — let’s call it “the block map” — is a rewritten metadata store, based (you guessed it) on BoltDB.],
+  [I kid! It’s Litestream SQLite, of course.],
+  [Everything in a Sprite is designed to come up fast.],
+  [If the Fly Machine underneath a Sprite bounces, we might need to reconstitute the block map from object storage. Block maps aren’t huge, but they’re not tiny; maybe low tens of megabytes worst case.],
+  [The thing is, this is happening while the Sprite boots back up. To put that in perspective, that’s something that can happen in response to an incoming web request; that is, we have to finish fast enough to generate a timely response to that request. The time budget is small.],
+  [To make this even faster, we are integrating Litestream VFS to improve start times. The VFS is a dynamic library you load into your app. Once you do, you can do stuff like this:],
+  [class="highlight relative group"\>
+ sqlite\> .open file:\/\//my.db?vfs = litestream
+sqlite\> PRAGMA litestream\_time = '5 minutes ago' ; 
+sqlite\> SELECT \* FROM sandwich\_ratings ORDER BY RANDOM () LIMIT 3 ; 
+22|Veggie Delight|New York|4
+30|Meatball|Los Angeles|5
+168|Chicken Shawarma Wrap|Detroit|5],
+  [Litestream VFS lets us run point-in-time SQLite queries hot off object storage blobs, answering queries before we’ve downloaded the database.],
+  [This is good, but it’s not perfect. We had two problems:],
+  [We could only read, not write. People write to Sprite disks. The storage stack needs to write, right away.],
+  [Running a query off object storage is a godsend in a cold start where we have no other alternative besides downloading the whole database, but it’s not fast enough for steady state.],
+  [These are fun problems. Here’s our first cut at solving them.],
+  [The first thing we’ve done is made the VFS optionally read-write. This feature is pretty subtle; it’s interesting, but it’s not as general-purpose as it might look. Let me explain how it works, and then explain why it works this way.],
+  [Keep in mind as you read this that this is about the VFS in particular. Obviously, normal SQLite databases using Litestream the normal way are writeable.],
+  [The VFS works by keeping an index of (file,offset, size) for every page of the database in object storage; the data comprising the index is stored, in LTX files , so that it’s efficient for us to reconstitute it quickly when the VFS starts, and lookups are heavily cached. When we queried sandwich\_ratings earlier, our VFS library intercepted the SQLite read method, looked up the requested page in the index, fetched it, and cached it.],
+  [This works great for reads. Writes are harder.],
+  [Behind the scenes in read-only mode, Litestream polls, so that we can detect new LTX files created by remote writers to the database. This supports a handy use case where we’re running tests or doing slow analytical queries of databases that need to stay fast in prod.],
+  [In write mode, we don’t allow multiple writers, because multiple-writer distributed SQLite databases are the Lament Configuration and we are not explorers over great vistas of pain. So the VFS in write-mode disables polling. We assume a single writer, and no additional backups to watch.],
+  [Next, we buffer. Writes go to a local temporary buffer (“the write buffer”). Every second or so (or on clean shutdown), we sync the write buffer with object storage. Nothing written through the VFS is truly durable until that sync happens.],
+  [Most storage block maps are much smaller than this, but still.],
+  [Now, remember the use case we’re looking to support here. A Sprite is cold-starting and its storage stack needs to serve writes, milliseconds after booting, without having a full copy of the 10MB block map. This writeable VFS mode lets us do that.],
+  [Critically, we support that use case only up to the same durability requirements that a Sprite already has. All storage on a Sprite shares this “eventual durability” property, so the terms of the VFS write make sense here. They probably don’t make sense for your application. But if for some reason they do, have at it! To enable writes with Litestream VFS, just set the LITESTREAM\_WRITE\_ENABLED environment variable "true" .],
+  [The Sprite storage stack uses SQLite in VFS mode. In our original VFS design, most data is kept in S3. Again: fine at cold start, not so fine in steady state.],
+  [To solve this problem, we shoplifted a trick from systems like dm-clone : background hydration. In hydration designs, we serve queries remotely while running a loop to pull the whole database. When you start the VFS with the LITESTREAM\_HYDRATION\_PATH environment variable set, we’ll hydrate to that file.],
+  [Hydration takes advantage of LTX compaction , writing only the latest versions of each page. Reads don’t block on hydration; we serve them from object storage immediately, and switch over to the hydration file when it’s ready.],
+  [As for the hydration file? It’s simply a full copy of your database. It’s the same thing you get if you run litestream restore .],
+  [Because this is designed for environments like Sprites, which bounce a lot, we write the database to a temporary file. We can’t trust that the database is using the latest state every time we start up, not without doing a full restore, so we just chuck the hydration file when we exit the VFS. That behavior is baked into the VFS right now. This feature’s got what Sprites need, but again, maybe not what your app wants.],
+  [This is a post about two relatively big moves we’ve made with our open-source Litestream project, but the features are narrowly scoped for problems that look like the ones our storage stack needs. If you think you can get use out of them, I’m thrilled, and I hope you’ll tell me about it.],
+  [For ordinary read/write workloads, you don’t need any of this mechanism. Litestream works fine without the VFS, with unmodified applications, just running as a sidecar alongside your application. The whole point of that configuration is to efficiently keep up with writes; that’s easy when you know you have the whole database to work with when writes happen.],
+  [But this whole thing is, to me, a valuable case study in how Litestream can get used in a relatively complicated and demanding problem domain. Sprites are very cool, and it’s satisfying to know that every disk write that happens on a Sprite is running through Litestream.],
 ),
   insert-map: (:),
-  word-count: 671,
+  inline-pq: pull-quote([class="right-sidenote"\>  Most storage block maps are much smaller than this, but still.], [Fly.io Blog]),
+  inline-pq-idx: 15,
+  word-count: 1522,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+}
+
+{
+  #standard-article(
+  title: [Log4j2 in production – making it fly],
+  author: [mick],
+  source-name: [Finn.no Tech],
+  images: (),
+  paragraphs: (
+  [Now that log4j2 is the predominant logging framework in use at FINN.no why not share the good news with the world and try to provide a summary over the introduction of this exciting new technology into our platform.],
+  [let's just one logging framework],
+  [In beginning of September 2013 it became the responsibility of one of our engineering teams to introduce a “best practice for logging” for all of FINN.],
+  [The proposal put forth was that we can standardise on one backend logging framework while there would be no need to standardise on the abstraction layer directly used in our code.],
+  [The rationale to not standardising the logging abstractions was…],
+  [• nearly every codebase, through a tree of dependencies, already includes all the different logging abstraction libraries, so the hard work of configuring them against the chosen logging framework is still required,
+ • the different APIs to the different logging abstractions are not difficult for programmers to go between from one project to another.],
+  [While the rationale to standardising the logging framework was…],
+  [• makes life easier for programmers with one documented “best practice” for all,],
+  [• makes it possible through an in-house library to configure all abstraction layers, creating less configuration for programmers,
+ • makes life easier for operations knowing all jvms log the same way,],
+  [• makes life easier for operations knowing all log files follow the same format.],
+  [Log4j2 wins HANDS down],
+  [Log4j2 was chosen as the logging framework given…
+ • it provided all the features that logback was becoming popular for,
+ • between old log4j and logback it was the only framework that was written in java with modern concurrency (ie not hard synchronised methods/blocks),
+ • it provided a significant performance improvement (1000-10000 times faster)],
+  [• it consisted of a more active community (logback has been announced as the replacement for the old log4j, but log4j2 saw a new momentum in its apache community).],
+  [This proposal was checked with a vote by finn programmers
+ • 73% agreed, 27% were unsure, no-one disagreed.],
+  [when nightly compression jams],
+  [Earlier on in this process we hit a bug with the old log4j where nightly compression of already rotated logfiles were locking up all requests in any (or most) jvms for up to ten seconds. This fault came back to poor java concurrency code in the original log4j (which logback cloned). Exacerbated by us having scores of jvms for all our different microservices running on the same machines so that when nightly compression kicked in it did so all in parallel. Possible fixes here were to],
+  [a) stop compression of log files,],
+  [b) make loggers async, or],
+  [c) migrate over quickly to log4j2.],
+  [After some investigation, (c) was ruled out because there was no logstash plugin for log4j2 ready and moving forward without the json logfiles and the logstash & kibana integration was not an option. (a) was chosen as a temporary solution.],
+  [ready, steady, go…],
+  [Later on, when we started the work on upgrading all our services from thrift-0.6.1 up to thrift-0.9.1, we took the opportunity to kill two birds with the one stone. Log4j2 was out of beta, and we had ironed out the issues around the logstash plugin.],
+  [We’d be lying if we told you it was all completely pain free,
+introducing Log4j2 came with some concerns and hurdles.],
+  [• Using a release candidate of log4j2 in production lead to some concerns. So far the only consequence was slow startup times (eg even small services paused for ~8 seconds during startup). This was due to log4j2 having to scan all classes for possible log4j plugins. This problem was fixed in 2.0-rc2. On the bright side – our use of the release candidate meant we spotted early and getting the upcoming initial release of log4j2 to support shaded jarfiles, of which we are heavily dependent on.],
+  [• Operation’s had expressed concerns over nightly compression, raised from the earlier problem around nightly compression, that even if code no longer blocked while the compressing was happening in a background thread the amount of parallel compressions spawned would lead to IO contention which in turn leads to CPU contention. Because of this very real concern extensive tests have been executed, so far they’ve shown no measurable (under 1ms) impact exists upon services within the FINN platform. Furthermore this problem can be easily circumvented by adding the SizeBasedTriggeringPolicy to your appender, thereby enforcing a limit on how much parallel compression can happen at midnight.],
+  [• The new logstash plugin (which finn has actively contributed to on github) caused a few breakages to the format expected by our custom logstash parsers written by operations. Unfortunately this parser is based off the old log4j format, of which we are trying to escape. Breakages here were: log events on separate lines, avoiding commas are the end of lines between log events, thread context in wrong format, etc. These were tackled with pull requests on github and patch versions of our commons-service (the library used to pre-configure the correct dependency tree for log4j2 artifacts and properly plugging in all the different logging abstraction libraries).],
+  [• Increased memory from switching to sync loggers to async loggers impacted services with very small heap. The async logger used is based of the lmax-disruptor which pre-allocates its ringBuffer with its maximum capacity. By default this ringBuffer is configured to queue at maximum 256k log events. This can be adjusted with the “ AsyncLoggerConfig. RingBufferSize ” system property.],
+  [simply beautiful],
+  [To wrap it up the hurdles have been there, but trivial and easy to deal with, while the benefits of introducing log4j2, and moving to async loggers, make it well worth it…],
+  [• The “best practice” for log4j2 included changing all loggers to be async, and this means that the performance of the FINN platform (which consists primarily of in-memory services) is no longer tied to and effected by how disks are performing (it was crazy that it was before).],
+  [• More and more applications are generating consistent logfiles according to our best practices.],
+  [• More and more applications are actually plugging in the various different logging abstractions used by all their various third-party dependencies.],
+  [• All the advantages people liked about logback.],
+  [• An easier approach to changing loglevels at runtime through jmx.],
+  [• Profiling applications in crisis easier for outsiders (one less low-level behavioural difference).],
+  [• Loggers are no longer a visible bottleneck in jvms under duress.],
+  [• And naturally the performance increase .],
+  [Because of the significant performance provided by the lmax-disruptor we also use the open-sourced statsd client that takes advantage of it.],
+),
+  insert-map: (:),
+  word-count: 1094,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -238,10 +958,10 @@ that reads markdown through stdin and prints multipart MIME to stdout.],
 \#include],
   [int main(void)
 {
- char a[] = "string literal";
+ char a\[\] = "string literal";
  char \*p = "string literal";],
   [/\* capitalize first letter \*/
- p[0] = a[0] = 'S';
+ p\[0\] = a\[0\] = 'S';
  printf("a: %s\\np: %s\\n", a, p);
  return 0;
 }
@@ -255,11 +975,11 @@ Bus error: 10
   [Turns out we're invoking undefined behavior.],
   [\* The C99 spec, appendix J.2 Undefined Behavior mentions this case:
  \> The program attempts to modify a string literal (6.4.5).
-\* Steve Summit's C FAQ [question 1.32](http:\/\/c-faq.com/decl/strlitinit.html)
+\* Steve Summit's C FAQ \[question 1.32\](http:\/\/c-faq.com/decl/strlitinit.html)
  covers the difference between an array initialized with string literal vs a
  pointer to a string literal constant.
 \* The SEI CERT C Coding standard
- [STR30-C](https:\/\/wiki.sei.cmu.edu/confluence/display/c/STR30-C.+Do+not+attempt+to+modify+string+literals)
+ \[STR30-C\](https:\/\/wiki.sei.cmu.edu/confluence/display/c/STR30-C.+Do+not+attempt+to+modify+string+literals)
  demonstrates the problem with non-compliant code, and compares with compliant
  fixes.],
   [After running it through the generator and emailing it to myself, here’s how
@@ -278,15 +998,15 @@ into a bibliography of type text/uri-list at the end of the message. Here’s
 another Mutt screenshot of the end of the message, with red circles added.],
   [links as references],
   [The generated MIME structure of our sample message looks like this:],
-  [I 1 [multipa/alternativ, 7bit, 3.1K]
- I 2 ├─\> [multipa/mixed, 7bit, 1.7K]
- I 3 │ ├─\> [text/plain, 7bit, utf-8, 0.1K]
- I 4 │ ├─\>crash.c [text/x-c, 7bit, utf-8, 0.2K]
- I 5 │ ├─\> [text/plain, 7bit, utf-8, 0.1K]
- I 6 │ ├─\>compile.txt [text/plain, 7bit, utf-8, 0.1K]
- I 7 │ ├─\> [text/plain, 7bit, utf-8, 0.5K]
- I 8 │ └─\>references.uri [text/uri-list, 7bit, utf-8, 0.2K]
- I 9 └─\> [text/html, 7bit, utf-8, 1.3K]],
+  [I 1 \[multipa/alternativ, 7bit, 3.1K\]
+ I 2 ├─\> \[multipa/mixed, 7bit, 1.7K\]
+ I 3 │ ├─\> \[text/plain, 7bit, utf-8, 0.1K\]
+ I 4 │ ├─\>crash.c \[text/x-c, 7bit, utf-8, 0.2K\]
+ I 5 │ ├─\> \[text/plain, 7bit, utf-8, 0.1K\]
+ I 6 │ ├─\>compile.txt \[text/plain, 7bit, utf-8, 0.1K\]
+ I 7 │ ├─\> \[text/plain, 7bit, utf-8, 0.5K\]
+ I 8 │ └─\>references.uri \[text/uri-list, 7bit, utf-8, 0.2K\]
+ I 9 └─\> \[text/html, 7bit, utf-8, 1.3K\]],
   [At the outermost level, the message is split into two alternatives: HTML and
 multipart/mixed. Within the multipart/mixed part is a succession of message
 text and code snippets, all with inline disposition. The final mixed item is
@@ -321,636 +1041,6 @@ written in portable C99. The only build dependency is the
 
 {
   #standard-article(
-  title: [I/O in Plywood],
-  author: [Jeff Preshing],
-  source-name: [Jeff Preshing],
-  images: (),
-  paragraphs: (
-  [Plywood is an open-source C++ framework I released a few weeks ago. It includes, among other things, a runtime module that exposes a cross-platform API for I/O, memory, threads, process management and more.],
-  [This post is about the I/O part. For those who don’t know, I/O stands for input/output , and refers to the part of a computer system that either writes serialized data to or reads serialized data from an external interface. The external interface could be a storage device, pipe, network connection or any other type of communication channel.],
-  [Typically, it’s the operating system’s responsibility to provide low-level I/O services to an application. But there’s still plenty of work that needs to happen at the application level, such as buffering, data conversion, performance tuning and exposing an interface that makes life easier on application programmers. That’s where Plywood’s I/O system comes in.],
-  [Of course, standard C++ already comes with its own input/output library , as does the standard C runtime , and most C and C++ programmers are quite familiar with those libraries. Plywood’s I/O system is meant serve as an alternative to those libraries. Those libraries were originally developed in 1984 and the early 1970s , respectively. They’ve stood the test of time incredibly well, but I don’t think it’s outrageous to suggest that, hey, maybe some innovation is possible here.],
-  [To be clear, when you build a project using Plywood, you aren’t required to use Plywood’s I/O system – you can still use the standard C or C++ runtime library, if you prefer.],
-  [I’m sure this blog post will seem dry for some (or many) readers – but not for me! I like this topic, and I’m willing bet that there are other low-level I/O wonks out there who will find it interesting as well. So let’s jump in.],
-  [id="writing-raw-bytes-to-standard-output"\>Writing Raw Bytes to Standard Output],
-  [The following program writes "Hello!\\n" to standard output as a raw sequence of 7 bytes. No newline conversion or character encoding conversion is performed. Writing takes place through an OutStream , which is a class (defined in the ply namespace) that performs buffered output.],
-  [int main() {
- using namespace ply;
- OutStream outs = StdOut::binary();
- outs.write({ " Hello! \\n " , 7 });
- return 0 ;
-}],
-  [Now, suppose we pause this program immediately after the OutStream is created, before anything gets written. On a Linux system, this is what the OutStream initially looks like in memory:],
-  [u8 \* curByte],
-  [u8 \* endByte],
-  [Reference chunk],
-  [OutPipe \* outPipe],
-  [Status status],
-  [u32 chunkSizeExp : 28 = 12],
-  [u32 type : 2 = 1],
-  [u32 isPipeOwner : 1 = 0],
-  [u32 eof : 1 = 0],
-  [Funcs \* funcs],
-  [OutPipe],
-  [OutPipe\_FD],
-  [OutStream],
-  [int fd = 1],
-  [u8 \* bytes],
-  [Reference next = nullptr],
-  [u32 numBytes = 4096],
-  [u32 writePos = 0],
-  [u32 offsetIntoNextChunk = 0],
-  [mutable s32 refCount = 1],
-  [ChunkListNode],
-  [u64 fileOffset = 0],
-  […],
-  [00 00 00 00 00 00 00 00 00 00 00 00 00 00],
-  [00 00 00 00 00 00 00 00 00 00 00 00 00 00],
-  [00 00 00 00 00 00 00 00 00 00 00 00 00 00],
-  [00 00 00 00 00 00 00 00 00 00 00 00 00 00],
-  [00 00 00 00 00 00 00 00 00 00 00 00 00 00],
-  [00 00 00 00 00 00 00 00 00 00 00 00 00 00],
-  [00 00 00 00 00 00 00 00 00 00 00 00 00 00],
-  [00 00 00 00 00 00 00 00 00 00 00 00 00 00],
-  [1],
-  [2],
-  [3],
-  [4],
-  [This is the OutStream object itself. As already mentioned, OutStream is a class that performs buffered output . That means when you write to an OutStream , your data actually gets written to a temporary buffer in memory first.],
-  [This is the temporary buffer used by the OutStream . OutStream::curByte initially points to the start of this buffer, and OutStream::endByte points to the end. The temporary buffer is 4096 bytes long, as indicated by ChunkListNode::numBytes .],
-  [This is a ChunkListNode , a reference-counted object that owns the temporary buffer. It’s responsible for freeing the temporary buffer in its destructor. The OutStream holds a reference to this object. (The ability to create additional ChunkListNode references gives rise to some interesting features, but I’ll skip the details in this post.)],
-  [This is an OutPipe\_FD , which is a subclass of OutPipe that writes to a file descriptor. In this example, the file descriptor is 1 , which corresponds to standard output. The OutStream holds a pointer to this object, but OutStream::status.isPipeOwner is 0 , which means that the OutPipe\_FD won’t be destroyed when the OutStream is destructed. That’s important, because this particular OutPipe\_FD can be shared by several OutStream s.],
-  [From here, the program proceeds in two steps: First, the statement outs.write({"Hello!\\n", 7}); is executed. This statement basically just copies the string "Hello!\\n" to the temporary buffer and advances OutStream::curByte forward by 7 bytes. After that, we return from main , which invokes the OutStream destructor. The OutStream destructor flushes the contents of the temporary buffer to the OutPipe . That’s when the raw byte sequence for "Hello!\\n" actually gets written to standard output.],
-  [There are other times when OutStream flushes its temporary buffer to the underlying OutPipe , too. For example, if we write several megabytes of data to the OutStream , the temporary buffer will get flushed each time it becomes full, which in this case happens every 4096 bytes. It’s also possible to flush the OutStream explicitly at any time by calling OutStream::flush() .],
-  [I’m sure many readers will recognize the similarity between OutStream and std::ostream in C++ or FILE in C. It’s a high-level wrapper around a low-level output destination such as a file descriptor, and it performs buffering.],
-  [One difference between OutStream and those other stream types – and this might sound like a disadvantage at first – is that OutStream objects aren’t thread-safe. You must either manipulate each OutStream object from a single thread, or enforce mutual exclusion between threads yourself. That’s why there’s no single, global OutStream object that writes to standard output, like std::cout in C++ or stdout in C. Instead, if you need to write to standard output, you must call StdOut::binary() – or perhaps StdOut::text() , as we’ll see in the next example – to create a unique OutStream object.],
-  [id="writing-to-standard-output-with-newline-conversion"\>Writing to Standard Output With Newline Conversion],
-  [In this next example, instead of creating an OutStream object, we create a StringWriter object that writes to standard output. StringWriter is a subclass of OutStream with additional member functions for writing text.],
-  [StringWriter does not extend OutStream with additional data members, so the two classes are actually interchangeable. Any time you have an OutStream object, you can freely cast it to StringWriter by calling OutStream::strWriter() . The main reason why OutStream and StringWriter are separate classes is to help express intention in the code. OutStream s are mainly intended to write binary data, and StringWriter s are mainly intended to write text encoded in an 8-bit format compatible with ASCII, such as UTF-8.],
-  [int main() {],
-  [using namespace ply;],
-  [StringWriter sw = StdOut::text();],
-  [sw next = nullptr],
-  [u32 numBytes = 4096],
-  [u32 writePos = 0],
-  [u32 offsetIntoNextChunk = 0],
-  [mutable s32 refCount = 1],
-  [ChunkListNode],
-  [u64 fileOffset = 0],
-  […],
-  [00 00 00 00 00 00 00 00 00 00 00 00 00 00],
-  [00 00 00 00 00 00 00 00 00 00 00 00 00 00],
-  [00 00 00 00 00 00 00 00 00 00 00 00 00 00],
-  [00 00 00 00 00 00 00 00 00 00 00 00 00 00],
-  [00 00 00 00 00 00 00 00 00 00 00 00 00 00],
-  [00 00 00 00 00 00 00 00 00 00 00 00 00 00],
-  [00 00 00 00 00 00 00 00 00 00 00 00 00 00],
-  [00 00 00 00 00 00 00 00 00 00 00 00 00 00],
-  [u8 \* curByte],
-  [u8 \* endByte],
-  [Reference chunk],
-  [OutPipe \* outPipe],
-  [Status status],
-  [u32 chunkSizeExp : 28 = 12],
-  [u32 type : 2 = 1],
-  [u32 isPipeOwner : 1 = 1],
-  [u32 eof : 1 = 0],
-  [Funcs \* funcs],
-  [OutPipe\_NewLineFilter],
-  [OutStream],
-  [u8 \* bytes],
-  [Reference next = nullptr],
-  [u32 numBytes = 4096],
-  [u32 writePos = 0],
-  [u32 offsetIntoNextChunk = 0],
-  [mutable s32 refCount = 1],
-  [ChunkListNode],
-  [u64 fileOffset = 0],
-  […],
-  [00 00 00 00 00 00 00 00 00 00 00 00 00 00],
-  [00 00 00 00 00 00 00 00 00 00 00 00 00 00],
-  [00 00 00 00 00 00 00 00 00 00 00 00 00 00],
-  [00 00 00 00 00 00 00 00 00 00 00 00 00 00],
-  [00 00 00 00 00 00 00 00 00 00 00 00 00 00],
-  [00 00 00 00 00 00 00 00 00 00 00 00 00 00],
-  [00 00 00 00 00 00 00 00 00 00 00 00 00 00],
-  [00 00 00 00 00 00 00 00 00 00 00 00 00 00],
-  [StringWriter],
-  [OutPipe],
-  [OptionallyOwned outs],
-  [NewLineFilter filter],
-  [bool crlf = false],
-  [bool needsLF = false],
-  [u8 \* curByte],
-  [u8 \* endByte],
-  [Reference chunk],
-  [OutPipe \* outPipe],
-  [Status status],
-  [u32 chunkSizeExp : 28 = 12],
-  [u32 type : 2 = 1],
-  [u32 isPipeOwner : 1 = 0],
-  [u32 eof : 1 = 0],
-  [OutStream],
-  [Funcs \* funcs],
-  [OutPipe],
-  [int fd = 1],
-  [OutPipe\_FD],
-  [adapter],
-  [The bottom half of the above diagram is identical to the previous diagram, and the top half of the diagram is basically an adapter. It’s a StringWriter (which derives from OutStream ), with its own temporary buffer, pointing to a OutPipe\_NewLineFilter . This time, status.isPipeOwner is 1 , which means that the OutPipe\_NewLineFilter will be automatically destroyed when the StringWriter is destructed.],
-  [When the StringWriter flushes the contents of its temporary buffer to the OutPipe\_NewLineFilter , the OutPipe\_NewLineFilter performs newline conversion on that data and writes the result to its own OutStream . Assuming this example runs on Linux, that basically just means discarding any \\r (carriage return) character it encounters. If we run the same program on Windows, it will also replace any \\n (linefeed) character it encounters with \\r\\n .],
-  [Personally, I think it’s a strange/funny convention that Windows applications tend to use \\r\\n to terminate lines of text, and applications on Unix-like platforms tend to use \\n . There are historical reasons for this difference , but I don’t think there’s a very convincing reason for it anymore. Nonetheless, I’ve designed Plywood to play along, at least when StdOut::text() is called. You can always override the default behavior by calling StdOut::binary() and installing your preferred type of newline filter on it.],
-  [Finally, note that Plywood does not have the equivalent of std::endl . Instead, StringWriter generally expects \\n to terminate lines of text, and lines aren’t flushed automatically. If you need to flush a StringWriter after writing a line of text, do so explicitly by calling OutStream::flush() .],
-  [id="writing-utf-16"\>Writing UTF-16],
-  [In the previous example, there were two OutStream s chained together with an OutPipe\_NewLineFilter acting as an adapter. Plywood has adapters that perform other conversions, too. For example, here’s a short program that saves a text file as UTF-16 . The text file is written in little-endian byte order with Windows-style CRLF line endings, and includes a byte order mark (BOM) at the beginning of the file:],
-  [\#include],
-  [int main() {
- using namespace ply;],
-  [TextFormat tf;
- tf.encoding = TextFormat:: Encoding:: UTF16\_le;
- tf.newLine = TextFormat:: NewLine:: CRLF;
- tf.bom = true;],
-  [Owned sw = FileSystem::native()-\>openTextForWrite("utf16.txt", tf);
- if (sw) {
- \*sw Reading Lines of Text],
-  [So far, all of the examples have involved writing output using either OutStream or StringWriter . This next one involves reading input using StringReader . StringReader is a subclass of InStream with additional member functions for reading and parsing text, and InStream is a class that performs buffered input from an underlying data source.],
-  [The following function opens a text file and read its contents to an array of String s, with one array item per line:],
-  [The FileSystem::openTextForReadAutodetect() function attempts to guess the file format of the text file automatically. It looks for a byte order mark (BOM) and, if the BOM is missing, uses some heuristics to guess between UTF-8 and UTF-16. Again, because Plywood encourages working with UTF-8 text, the lines returned by the StringReader are always encoded in UTF-8 and terminated with \\n , regardless of the source file’s original encoding and line endings. All necessary conversions are accomplished using adapters. For example, if we open the UTF-16 file that was written in the previous example, the chain of InStream objects would look like this:],
-  […],
-  [00 00 00 00 00 00 00 00 00 00 00 00 00 00],
-  [00 00 00 00 00 00 00 00 00 00 00 00 00 00],
-  [00 00 00 00 00 00 00 00 00 00 00 00 00 00],
-  [00 00 00 00 00 00 00 00 00 00 00 00 00 00],
-  [00 00 00 00 00 00 00 00 00 00 00 00 00 00],
-  [00 00 00 00 00 00 00 00 00 00 00 00 00 00],
-  [00 00 00 00 00 00 00 00 00 00 00 00 00 00],
-  [00 00 00 00 00 00 00 00 00 00 00 00 00 00],
-  [converts to UTF-8],
-  [InStream],
-  [InPipe\_TextConverter],
-  [InStream],
-  [InPipe\_FD],
-  [StringReader],
-  [InPipe\_NewLineFilter],
-  […],
-  [00 00 00 00 00 00 00 00 00 00 00 00 00 00],
-  [00 00 00 00 00 00 00 00 00 00 00 00 00 00],
-  [00 00 00 00 00 00 00 00 00 00 00 00 00 00],
-  [00 00 00 00 00 00 00 00 00 00 00 00 00 00],
-  [00 00 00 00 00 00 00 00 00 00 00 00 00 00],
-  [00 00 00 00 00 00 00 00 00 00 00 00 00 00],
-  [00 00 00 00 00 00 00 00 00 00 00 00 00 00],
-  [00 00 00 00 00 00 00 00 00 00 00 00 00 00],
-  […],
-  [00 00 00 00 00 00 00 00 00 00 00 00 00 00],
-  [00 00 00 00 00 00 00 00 00 00 00 00 00 00],
-  [00 00 00 00 00 00 00 00 00 00 00 00 00 00],
-  [00 00 00 00 00 00 00 00 00 00 00 00 00 00],
-  [00 00 00 00 00 00 00 00 00 00 00 00 00 00],
-  [00 00 00 00 00 00 00 00 00 00 00 00 00 00],
-  [00 00 00 00 00 00 00 00 00 00 00 00 00 00],
-  [00 00 00 00 00 00 00 00 00 00 00 00 00 00],
-  [discards \\r characters],
-  [reads from file descriptor],
-  [This example works fine, but it will potentially perform a lot of memory allocations since every String object owns its own block of memory. An alternative way to extract lines of text from a file is to read the entire file into a String first – perhaps using FileSystem::loadTextAutodetect() – and create an array of StringView objects instead, using a function similar to the following:],
-  [This is the general approach used in Plywood’s built-in JSON, Markdown and C++ parsers. Source files are always loaded into memory first, then parsed in-place, avoiding additional memory allocations and string copies as much as possible. When using an approach like this, care must be taken to ensure that the original String remains valid as long as there are StringView s into it.],
-  [id="writing-to-memory"\>Writing to Memory],
-  [A StringWriter or OutStream doesn’t always have to write to an OutPipe . You can create a StringWriter that writes to memory simply by invoking its default constructor. After writing to such a StringWriter , you can extract its contents to a String by calling StringWriter::moveToString() :],
-  [String getMessage() {
- StringWriter sw;
- sw member named headChunk . If we write a large amount of data to this StringWriter , we’ll end up with a linked list of ChunkListNodes in memory, with headChunk always pointing to the start of the linked list.],
-  [u8 \* curByte 
- u8 \* endByte 
- Reference chunk 
- Status status 
- u32 chunkSizeExp : 28 = 12 
- u32 type : 2 = 2 
- u32 isPipeOwner : 1 = 0 
- u32 eof : 1 = 0 
- OutStream 
- u8 \* bytes 
- Reference next = nullptr 
- u32 numBytes = 4096 
- u32 writePos = 0 
- u32 offsetIntoNextChunk = 0 
- mutable s32 refCount = 1 
- ChunkListNode 
- u64 fileOffset = 0 
- … 
- 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
- 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
- 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
- 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
- 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
- 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
- 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
- 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- Reference headChunk 
- StringWriter],
-  [There’s a particular optimization that’s worth mentioning here. When working with a StringWriter like this one, each ChunkListNode object is located contiguously in memory after the memory buffer it owns. Therefore, when there’s just a single node in the linked list, and moveToString() is called, the existing memory buffer is truncated using realloc and returned directly. In other words, when creating a short String this way (smaller than 4 KB), only a single block of memory is allocated, written to and returned; no additional memory allocations or string copies are performed.],
-  [The previous example demonstrates using StringWriter::format() to write formatted text to an output stream. Plywood also provides a convenient wrapper function String::format() that hides the temporary StringWriter :],
-  [If you wish to write to memory using an OutStream instead of a StringWriter , use the derived class MemOutStream . MemOutStream is mainly intended for writing binary data, but as mentioned earlier, there’s really nothing stopping you from casting it to a StringWriter using OutStream::strWriter() after it’s created.],
-  [id="future-improvements"\>Future Improvements],
-  [I hope you enjoyed this brief, meandering tour through Plywood’s I/O system. Here’s a quick list of potential future improvements to the system:],
-  [Plywood doesn’t have a bidirectional stream yet, like std::iostream in standard C++. As of this writing, only InStream and OutStream are implemented.],
-  [Currently, the contents of OutStream ’s temporary buffer are always flushed using a synchronous function call. When writing to a file descriptor, better throughput could be achieved using the operating system’s asynchronous I/O support instead. When writing to an adapter, such as an OutPipe\_TextConverter or a compression codec, better throughput could be achieved by processing the data in a background thread or using a job system. The main challenge will be to manage the lifetimes of multiple ChunkListNode objects while I/O is pending.],
-  [Plywood’s text conversion is only aware of UTF-8 and UTF-16 at this time. Some work was done towards ISO 8859-1 and Windows-1252, but support is not yet complete. Additional work is needed to support other encodings like Shift-JIS or GB 2312. The intention would still be to work with UTF-8 when text is loaded in memory, and convert between formats when performing I/O.],
-),
-  insert-map: (:),
-  inline-pq: pull-quote([It’s a high-level wrapper around a low-level output destination such as a file descriptor, and it performs buffering.], [Jeff Preshing]),
-  inline-pq-idx: 75,
-  word-count: 3313,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-}
-
-{
-  #standard-article(
-  title: [the ultimate view],
-  author: [mick],
-  source-name: [Finn.no Tech],
-  images: (),
-  paragraphs: (
-  [This article has been rewritten for Tiles-3.],
-  [tech.finn.no/the-ultimate-view-tiles-3/],
-  [A story of getting the View layer up and running quickly in Spring, using Tiles with wildcards, fallbacks, and definition includes, to use the Composite pattern and Convention over Configuration providing a minimal ongoing xml changes.],
-  [id="summary"\>Summary],
-  [From the architect’s perspective you see Apache Tiles as rare exotic Italian marble sheets laid out exquisitely, while the same architect will see SiteMesh as the steel wiring stuck inside the concrete slab. The beauty of the tiles is always admired and a key component in creating an eye-catching surrounding.],
-  [Step 0: Spring to Tiles Integration],
-  [Step 1: Wildcards],
-  [Step 2: The fallback pattern],
-  [Step 3: Definition includes],
-  [When the Composite pattern is superior],
-  [id="background"\>Background],
-  [At FINN.no we were redesigning our control and view layers. We, being the architectural team of six, had already decided on Spring-Web as a framework for the control layer due to its flexibility and a design for us providing better, simpler, migration path. For the front end we were a little unclear. In a department of ~60 developers we knew that the popular vote would lead us towards SiteMesh. And we knew why for practical purposes sitemesh gives the front end developer more flexibility and less xml editing. But we knew sitemesh has some serious shortcomings…],
-  [SiteMesh shortcomings:],
-  [from a design perspective the Decorator pattern doesn’t combine with MVC as elegantly as the Composite pattern does],
-  [requires to hold all possible html for a request in buffer requiring large amounts of memory],
-  [unable to flush the response before the response is complete],
-  [requires more overall processing due to the processing of all the potentially included fragments],
-  [does not guaranteed thread safety],
-  [does not provide any structure or organisation amongst jsps, making refactorings and other tricks awkward],
-  [One of the alternatives we looked at was Apache Tiles. It follows the Composite Pattern, but within that allows one to take advantage of the Decorator pattern using a ViewPreparer (URL not working anymore). This meant it provided by default what we considered a superior design but if necessary could also do what SiteMesh was good at. It already had integration with Spring, and the way it worked it meant that once the Spring-Web controller code was executed, the Spring’s view resolver would pass the ball onto Tiles letting it do the rest. This gave us a clear MVC separation and an encapsulation ensuring single thread safety within the view domain.],
-  [id="step-0-spring-to-tiles-integration"\>Step 0: Spring to Tiles Integration],
-  [class="highlight"\> The first step was integrating [Tiles and Spring](http:\/\/static.springsource.org/spring/docs/3.0.x/spring-framework-reference/html/view.html\#view-tiles) together. There exists tutorials on this already, it boils down to registering both a ViewResolver and a TilesConfigurer in your spring-web configuration.],
-  [The TilesConfigurer hooks into the "tilesInitializer" class that you must supply yourself. This is the new way in Tiles-2 of providing the [configuration](http:\/\/tiles.apache.org/config-reference.html). Our FinnTilesInitialiser looks like],
-  [public class FinnTilesInitialiser extends AbstractTilesInitializer {
- public FinnTilesInitialiser() {}],
-  [\@Override
- protected AbstractTilesContainerFactory createContainerFactory(TilesApplicationContext context) {
- return new FinnTilesContainerFactory();
- }
- }],
-  [id="step-1-wildcards"\>Step 1: Wildcards],
-  [Here we hit Tiles’ most obvious downfall: every single jsp included must be declared in a definition in the tiles.xml file. Anyone that ever tried Tiles-1 knows this bad smell.],
-  [Tiles-2 though provides a way to avoid it by using wildcards , and when i hear people talking about tiles it’s clear this Tiles-2 “dynamic composite” paradigm hasn’t really caught on.],
-  [\/\/--tiles.xml],
-  [\/\/--template.jsp],
-  [Now our Spring controller can return definitions that match the names of the folder containing meta, header, body, and footer.],
-  [Now we that we have three ready to go definitions “cat”, “dog”, and “cow”. Spring controllers can now use them like this],
-  [class="highlight"\> \@Controller
- public class MyWebsite{
- \@RequestMapping("/cat")
- public ModelAndView viewCat(){
- Map modelMap = new HashMap();
- \/\/...
- return new ModelAndView("cat", modelMap);
- }
- \@RequestMapping("/dog")
- public ModelAndView viewDog(){
- Map modelMap = new HashMap();
- \/\/...
- return new ModelAndView("dog", modelMap);
- }
- \@RequestMapping("/cow")
- public ModelAndView viewCow(){
- Map modelMap = new HashMap();
- \/\/...
- return new ModelAndView("cow", modelMap);
- }
- }],
-  [What’s brilliant here is that we can keep adding new definitions and matching jsps in new folders without ever having to edit the xml.],
-  [id="step-2-the-fallback-pattern"\>Step 2: The fallback pattern],
-  [Not having to edit tiles.xml anymore is nice, but as the number of definitions grows the number of duplicated jsps with also grow. For example maybe footer and header are identical in nearly every definition.],
-  [Here we looked into writing a custom AttributeRenderer to give us such a “fallback pattern”.],
-  [In the xml the fallbacks are represented within square braces [] where each fallback option follows a pipe character “ 
- ”. And they are ordered in preference.],
-  [Now we introduce a “common” folder for jsps, and our example would turn into],
-  [The AttributeRenderer, at least a simplified version of it, looks like],
-  [private static final Pattern OPTIONAL\_PATTERN
- = Pattern.compile(Pattern.quote("[") + ".+" + Pattern.quote("]"));],
-  [private static final String OPTION\_SEPARATOR = Pattern.quote("|");],
-  [\@Override
- public void write(Object obj, Attribute attribute, TilesRequestContext request) throws IOException {],
-  [Matcher matcher = null != obj && obj instanceof String
- ? OPTIONAL\_PATTERN.matcher((String) obj)
- : null;],
-  [if (null != matcher && matcher.find()) {
- PrintWriter writer = request.getPrintWriter();
- String match = matcher.group();
- String[] choices = match.substring(1, match.length() - 1).split(OPTION\_SEPARATOR);
- for (int i = 0; i],
-  [TemplateAttributeRenderer templateRenderer = new TemplateAttributeRenderer();
- templateRenderer.setApplicationContext(applicationContext);
- templateRenderer.setRequestContextFactory(contextFactory);
- templateRenderer.setAttributeEvaluatorFactory(attributeEvaluatorFactory);
- return templateRenderer;
- }
- ....
- }],
-  [As the system developers write new spring controllers creating brand new definitions the front end developers, with this new “Convention over Configuration” Tiles setup, only need to create the new folder and jsps for fragments they wish to customise. No more xml editing and no duplicate JSPs.],
-  [For a large company this could help enforce UI standards because they have control over the common/ folder - and they can keep an eye that the overrides, the customisations, never become too outlandish, or too out of line, with the standard look of the website. In turn the front end developers can also look back at the common/ folder to see what the expected default should look like.],
-  [id="step-3-definition-includes"\>Step 3: Definition includes],
-  [For a large website these fragments: meta, header, body, and footer; won’t be enough. A real website can quickly be using scores of fragments for columns within the body, banners and advertisements, analytics, seo meta data, css and javascript meta includes, etc, etc.],
-  [And adding another touch of reality is knowing that these different pages: cat, dog, and cow; for any real website would likely have different “actions”. For example view a dog, edit a dog, and search for a dog. Again there’ll be a lot of duplicate jsps.],
-  [By being able to dynamically inject one tiles definitions into another, a la “definition injection”, this was all elegantly handed. Here we’re stepping into the Decorator pattern’s paradigm, needing to decorate our definitions by extending Tiles’ DefinitionFactory. It would also make sense here to take advantage of Tiles’ ViewPreparer, but we weren’t so clear on the ViewPreparer implementation required, and overriding the DefintionFactory is one accepted way to configure Tiles now.],
-  [First of all we change the existing definition names into the form “action.category” making the controller(s) now look like],
-  [\@RequestMapping("/cat")],
-  [public class CatController{],
-  [\@RequestMapping("/cat/view")],
-  [public ModelAndView viewCat(){ \/\/...],
-  [return new ModelAndView("view.cat", modelMap);],
-  [}],
-  [\@RequestMapping("/cat/edit")],
-  [public ModelAndView editCat(){ \/\/...],
-  [return new ModelAndView("edit.cat", modelMap);],
-  [}],
-  [\@RequestMapping("/cat/search")],
-  [public ModelAndView searchCat(){ \/\/...],
-  [return new ModelAndView("search.cat", modelMap);],
-  [}],
-  [}],
-  [\@Controller],
-  [\@RequestMapping("/dog")],
-  [public class DogController{],
-  [\@RequestMapping("/dog/view")],
-  [public ModelAndView viewDog(){/ /...],
-  [return new ModelAndView("view.dog", modelMap);],
-  [}],
-  [\@RequestMapping("/dog/edit")],
-  [public ModelAndView editDog(){ \/\/...],
-  [return new ModelAndView("edit.dog", modelMap);],
-  [}],
-  [\@RequestMapping("/dog/search")],
-  [public ModelAndView searchDog(){ \/\/...],
-  [return new ModelAndView("search.dog", modelMap);],
-  [}],
-  [}],
-  [\@Controller],
-  [\@RequestMapping("/cow")],
-  [public class CowController{],
-  [\@RequestMapping("/cow/view")],
-  [public ModelAndView viewCow(){ \/\/...],
-  [return new ModelAndView("view.cow", modelMap);],
-  [}],
-  [\@RequestMapping("/cow/edit")],
-  [public ModelAndView editCow(){ \/\/...],
-  [return new ModelAndView("edit.cow", modelMap);],
-  [}],
-  [\@RequestMapping("/cow/search")],
-  [public ModelAndView searchCow(){ \/\/...],
-  [return new ModelAndView("search.cow", modelMap);],
-  [}],
-  [}],
-  [then change the tiles.xml to introduce the definition includes],
-  [\/\/-- tiles-core.xml
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- \/\/-- tiles-cat.xml
- 
- 
- 
- 
- 
- \/\/-- tiles-dog.xml
- 
- 
- 
- 
- 
- \/\/-- tiles-cow.xml],
-  [There’s a lot of configuration here now, but the idea isn’t to avoid configuration altogether but to avoid having to edit the configuration everytime a new jsp or page is created.],
-  [Take note there’s a clear separation now between each category definition and each action definition. For example such separation helps various development roles work in parallel: front end developers can concentrate on categorical designs while system developers often work initially with actions jsps to get them functionally working before passing them off to the front end developers. But of course such separation of concerns will show benefits in many more ways that just this example.],
-  [The following DefinitionsFactory makes this all come together],
-  [private static final String DEF\_INJECTION = "definition-injection";],
-  [public FinnUnresolvingLocaleDefinitionsFactoryImpl() {}],
-  [\/\/ this method can return null
- \/\/ injected definitions are expected to have "." prefix
- \@Override
- public Definition getDefinition(String name, TilesRequestContext tilesContext) {
- Definition def = null;
- \/\/ WEB-INF is a pretty clear indicator it is not a definition
- if(!name.startsWith("/WEB-INF/")){
- def = super.getDefinition(name, tilesContext);
- if(null != def){
- \/\/ use a safe copy
- def = new Definition(def);
- \/\/ explicit injected definitions
- Attribute defList = def.getLocalAttribute(DEF\_INJECTION);
- if(null != defList && defList instanceof ListAttribute){
- List list = (List) defList.getValue();
- for(Attribute inject : list){
- injectDefinition((String) inject.getValue(), def, tilesContext);
- }
- }
- }
- }
- return def;
- }],
-  [private void injectDefinition(String fromName, Definition to, TilesRequestContext cxt) {
- assert null != fromName : "Definition not found " + fromName;
- assert fromName.startsWith(".") : "Injected definitions must have \\".\\" prefix: " + fromName;
- Definition from = getDefinition(fromName, cxt);
- if (null != from) {
- if (null != from.getLocalAttributeNames()) {
- for (String attrName : from.getLocalAttributeNames()) {
- to.putAttribute(attrName, from.getLocalAttribute(attrName), true);
- }
- }
- }
- }
- }],
-  [To plug this DefinitionsFactory in again make sure to return it from your TilesContainerFactory],
-  [return new FinnUnresolvingLocaleDefinitionsFactoryImpl();
- }
- ...
- }],
-  [id="when-the-composite-pattern-is-superior"\>When the Composite pattern is superior],
-  [It’s nonsense to think that any one pattern is better . Both the Composite pattern and the Decorator pattern have their strengths and weaknesses, even after we have progressed the Composite on to being highly dynamic and automated. They do, and achieve, quite different things and hence each should be used where applicable…],
-  [The Decorator pattern allows front end code and design to be injected as we process. When a decision is known during the request processing the code can immediately build a decorator. The context here only holds all the built decorators. And at the end of the request lifecycle the page is assembled by putting together all these decorators. Decorators can also be built upon each other, or stacked, and this can be useful when the composition of the page is completely loose.],
-  [The Composite pattern presumes the page to be a “composite” made up from components, where each component is free to be itself a “composite”. The pattern allows more control of the composite’s heirarchy: as the delegation is top-down as opposed to the Decorator pattern whom’s is bottom-up. The composite pattern works well when the operations you need to perform on each object is limited, that is it isn’t a problem that the operations you may perform on any one object is the lowest common demominator of operations that you can perform on every object.],
-  [When you use jsp includes whether you like it or not you have a page heirarchy. If your jsps typically have a template with fragments you are already working within the composite pattern’s paradigm: the template being the “composite” and the fragments being the components. Each fragment, each JSP, has a context that holds the model map, or variables, in various scopes, and within this context they are self-sufficient. The only operation required upon them by others is inclusion. Applying the composite pattern here means treating each fragment as a self-sufficient object, the only thing that can happen to it is it will be included.],
-  [This shows how we can design to reduce complexity and encourage there to be only one unified context.],
-  [It also shows how we can maintain a top-down control of the page’s heirarchy, something necessary in a MVC design where the control layer wants to hand off a finished model map, ie a fixed context, that the view layer is free to build itself off. In contrast when we choose the Decorator pattern we can run foul of letting code run in parallel to the MVC pattern.],
-  [id="conclusion"\>Conclusion],
-  [Front end developers, the system developers, and the architects need to work together. With the front end today often centered around loose coupling design: javascript’s lack of type safety, ajax’s separation from the server, and jQuery’s liberation of the dom; it is all too easy to rebel against any form of structure or organisation for fear of being tied into the formalities of the strict-typed java world.],
-  [Neither should the fear of giving up control of one’s craftsmanship mean keeping logic and control in the View layer, this stuff belongs in the Control layer: and this means the system developers need to work harder to get the front end developers collaborating in the control layer. What’s too easily forgotten is that everything has entropy, and the larger the organisation, the larger the codebase, the less you fight the entropy, the quicker you end up with just a pile of spaghetti in your lap.],
-  [The four steps gone through in this article show you how Tiles-2 and the Composite pattern can be ramped up on steroids to give front end and systems developers what they want hopefully in a way that encourages them to work together.],
-  [id="references"\>References],
-  [Tiles-2],
-  [Composite pattern],
-  [Decorator pattern],
-  [Integrating Tiles and Spring],
-  [Initial discussion regarding Tiles definition delegation (URL not available)],
-  [Spring \>3.0.1 required to work with Tiles-2.2+ :: TilesConfigurer does not … SPR-6097],
-),
-  insert-map: (:),
-  inline-pq: pull-quote([dog", modelMap);  }  \@RequestMapping("/dog/edit")  public ModelAndView editDog(){ \/\/.], [mick]),
-  inline-pq-idx: 51,
-  word-count: 2370,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-}
-
-{
-  #standard-article(
-  title: [AWS without Access Keys],
-  author: [Fly.io Blog],
-  source-name: [Fly.io Blog],
-  images: (),
-  paragraphs: (
-  [It’s dangerous to go alone. Fly.io runs full-stack apps by transmuting Docker containers into Fly Machines: ultra-lightweight hardware-backed VMs. You can run all your dependencies on Fly.io, but sometimes, you’ll need to work with other clouds, and we’ve made that pretty simple. Try Fly.io out for yourself; your Rails or Node app can be up and running in just minutes .],
-  [Let’s hypopulate you an app serving generative AI cat images based on the weather forecast, running on a g4dn.xlarge ECS task in AWS us-east-1 . It’s going great; people didn’t realize how dependent their cat pic prefs are on barometric pressure, and you’re all anyone can talk about.],
-  [Word reaches Australia and Europe, but you’re not catching on, because the… latency is too high? Just roll with us here. Anyways: fixing this is going to require replicating ECS tasks and ECR images into ap-southeast-2 and eu-central-1 while also setting up load balancing. Nah.],
-  [This is the O. G. Fly.io deployment story; one deployed app, one versioned container, one command to get it running anywhere in the world.],
-  [But you have a problem: your app relies on training data, it’s huge, your giant employer manages it, and it’s in S3. Getting this to work will require AWS credentials.],
-  [You could ask your security team to create a user, give it permissions, and hand over the AWS keypair. Then you could wash your neck and wait for the blade. Passing around AWS keypairs is the beginning of every horror story told about cloud security, and security team ain’t having it.],
-  [There’s a better way. It’s drastically more secure, so your security people will at least hear you out. It’s also so much easier on Fly.io that you might never bother creating a IAM service account again.],
-  [We’re going to use OIDC to set up strictly limited trust between AWS and Fly.io.],
-  [In AWS: we’ll add Fly.io as an Identity Provider in AWS IAM, giving us an ID we can plug into any IAM Role .],
-  [Also in AWS: we’ll create a Role , give it access to the S3 bucket with our tokenized cat data, and then attach the Identity Provider to it.],
-  [In Fly.io, we’ll take the Role ARN we got from step 2 and set it as an environment variable in our app.],
-  [Our machines will now magically have access to the S3 bucket.],
-  [A reasonable question to ask here is, “where’s the credential”? Ordinarily, to give a Fly Machine access to an AWS resource, you’d use fly secrets set to add an AWS\_ACCESS\_KEY\_ID and AWS\_SECRET\_ACCESS\_KEY to the environment in the Machine. Here, we’re not setting any secrets at all; we’re just adding an ARN — which is not a credential — to the Machine.],
-  [Here’s what’s happening.],
-  [Fly.io operates an OIDC IdP at oidc.fly.io . It issues OIDC tokens, exclusively to Fly Machines. AWS can be configured to trust these tokens, on a role-by-role basis. That’s the “secret credential”: the pre-configured trust relationship in IAM, and the public keypairs it manages. You, the user, never need to deal with these keys directly; it all happens behind the scenes, between AWS and Fly.io.],
-  [The key actor in this picture is STS , the AWS Security Token Service . STS ‘s main job is to vend short-lived AWS credentials, usually through some variant of an API called AssumeRole . Specifically, in our case: AssumeRoleWithWebIdentity tells STS to cough up an AWS keypair given an OIDC token (that matches a pre-configured trust relationship).],
-  [That still leaves the question: how does your code, which is reaching out to the AWS APIs to get cat weights, drive any of this?],
-  [Every Fly Machine boots up into an init we wrote in Rust. It has slowly been gathering features.],
-  [One of those features, which has been around for awhile, is a server for a Unix socket at /.fly/api , which exports a subset of the Fly Machines API to privileged processes in the Machine. Think of it as our answer to the EC2 Instant Metadata Service. How it works is, every time we boot a Fly Machine, we pass it a Macaroon token locked to that particular Machine; init ’s server for /.fly/api is a proxy that attaches that token to requests.],
-  [In addition to the API proxy being tricky to SSRF to.],
-  [What’s neat about this is that the credential that drives /.fly/api is doubly protected:],
-  [The Fly.io platform won’t honor it unless it comes from that specific Fly Machine ( flyd , our orchestrator, knows who it’s talking to), and],
-  [Ordinary code running in a Fly Machine never gets a copy of the token to begin with.],
-  [You could rig up a local privilege escalation vulnerability and work out how to steal the Macaroon, but you can’t exfiltrate it productively.],
-  [So now you have half the puzzle worked out: OIDC is just part of the Fly Machines API (specifically: /v1/tokens/oidc ). A Fly Machine can hit a Unix socket and get an OIDC token tailored to that machine:],
-  [class="highlight relative group"\>
- {
- "app\_id": "3671581",
- "app\_name": "weather-cat",
- "aud": "sts.amazonaws.com",
- "image": "image:latest",
- "image\_digest": "sha256:dff79c6da8dd4e282ecc6c57052f7cfbd684039b652f481ca2e3324a413ee43f",
- "iss": "https:\/\/oidc.fly.io/example",
- "machine\_id": "3d8d377ce9e398",
- "machine\_name": "ancient-snow-4824",
- "machine\_version": "01HZJXGTQ084DX0G0V92QH3XW4",
- "org\_id": "29873298",
- "org\_name": "example",
- "region": "yyz",
- "sub": "example:weather-cat:ancient-snow-4824"
-} \/\/ some OIDC stuff trimmed],
-  [Look upon this holy blob, sealed with a published key managed by Fly.io’s OIDC vault, and see that there lies within it enough information for AWS STS to decide to issue a session credential.],
-  [We have still not completed the puzzle, because while you can probably now see how you’d drive this process with a bunch of new code that you’d tediously write, you are acutely aware that you have not yet endured that tedium — e pur si muove!],
-  [One init feature remains to be disclosed, and it’s cute.],
-  [If, when init starts in a Fly Machine, it sees an AWS\_ROLE\_ARN environment variable set, it initiates a little dance; it:],
-  [goes off and generates an OIDC token, the way we just described,],
-  [saves that OIDC token in a file, and],
-  [sets the AWS\_WEB\_IDENTITY\_TOKEN\_FILE and AWS\_ROLE\_SESSION\_NAME environment variables for every process it launches.],
-  [The AWS SDK, linked to your application, does all the rest.],
-  [Let’s review: you add an AWS\_ROLE\_ARN variable to your Fly App, launch a Machine, and have it go fetch a file from S3. What happens next is:],
-  [init detects AWS\_ROLE\_ARN is set as an environment variable.],
-  [init sends a request to /v1/tokens/oidc via /.api/proxy .],
-  [init writes the response to /.fly/oidc\_token.],
-  [init sets AWS\_WEB\_IDENTITY\_TOKEN\_FILE and AWS\_ROLE\_SESSION\_NAME .],
-  [The entrypoint boots, and (say) runs aws s3 get-object.],
-  [The AWS SDK runs through the credential provider chain],
-  [The SDK sees that AWS\_WEB\_IDENTITY\_TOKEN\_FILE is set and calls AssumeRoleWithWebIdentity with the file contents.],
-  [AWS verifies the token against https:\/\/oidc.fly.io/ example/.well-known/openid-configuration , which references a key Fly.io manages on isolated hardware.],
-  [AWS vends STS credentials for the assumed Role .],
-  [The SDK uses the STS credentials to access the S3 bucket.],
-  [AWS checks the Role ’s IAM policy to see if it has access to the S3 bucket.],
-  [AWS returns the contents of the bucket object.],
-  [It is a lot better.],
-  [They asymptotically approach the security properties of Macaroon tokens.],
-  [Most importantly: AWS STS credentials are short-lived. Because they’re generated dynamically, rather than stored in a configuration file or environment variable, they’re already a little bit annoying for an attacker to recover. But they’re also dead in minutes. They have a sharply limited blast radius. They rotate themselves, and fail closed.],
-  [They’re also easier to manage. This is a rare instance where you can reasonably drive the entire AWS side of the process from within the web console. Your cloud team adds Roles all the time; this is just a Role with an extra snippet of JSON. The resulting ARN isn’t even a secret; your cloud team could just email or Slack message it back to you.],
-  [Finally, they offer finer-grained control.],
-  [To understand the last part, let’s look at that extra snippet of JSON (the “Trust Policy”) your cloud team is sticking on the new cat-bucket Role :],
-  [class="highlight relative group"\>
- {
- "Version": "2012-10-17",
- "Statement": [
- {
- "Effect": "Allow",
- "Principal": {
- "Federated": "arn:aws:iam::123456123456:oidc-provider/oidc.fly.io/example"
- },
- "Action": "sts: AssumeRoleWithWebIdentity",
- "Condition": {
- "StringEquals": {
- "oidc.fly.io/example:aud": "sts.amazonaws.com",
- },
- "StringLike": {
- "oidc.fly.io/example:sub": "example:weather-cat:\*"
- }
- }
- }
- ]
-}],
-  [The aud check guarantees STS will only honor tokens that Fly.io deliberately vended for STS .],
-  [Recall the OIDC token we dumped earlier; much of what’s in it, we can match in the Trust Policy. Every OIDC token Fly.io generates is going to have a sub field formatted org:app:machine , so we can lock IAM Roles down to organizations, or to specific Fly Apps, or even specific Fly Machine instances.],
-  [Speedrun your app onto Fly.io.],
-  [3…2…1…],
-  [Go!   →],
-  [In case it’s not obvious: this pattern works for any AWS API, not just S3.],
-  [Our OIDC support on the platform and in Fly Machines will set arbitrary OIDC audience strings, so you can use it to authenticate to any OIDC-compliant cloud provider. It won’t be as slick on Azure or GCP, because we haven’t done the init features to light their APIs up with a single environment variable — but those features are easy, and we’re just waiting for people to tell us what they need.],
-  [For us, the gold standard for least-privilege, conditional access tokens remains Macaroons, and it’s unlikely that we’re going to do a bunch of internal stuff using OIDC. We even snuck Macaroons into this feature. But the security you’re getting from this OIDC dance closes a lot of the gap between hardcoded user credentials and Macaroons, and it’s easy to use — easier, in some ways, than it is to manage role-based access inside of a legacy EC2 deployment!],
-),
-  insert-map: (:),
-  word-count: 1714,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-}
-
-{
-  #standard-article(
   title: [Clarifications about Redis and Memcached],
   author: [Antirez],
   source-name: [Antirez],
@@ -958,7 +1048,7 @@ written in portable C99. The only build dependency is the
   paragraphs: (
   [If you know me, you know I’m not the kind of guy that considers competing products a bad thing. I actually love the users to have choices, so I rarely do anything like comparing Redis with other technologies.],
   [However it is also true that in order to pick the right solution users must be correctly informed.],
-  [This post was triggered by reading a blog post published by Mike Perham, that you may know as the author of a popular library called Sidekiq, that happens to use Redis as backend. So I would not consider Mike a person which is “against” Redis at all. Yet in his blog post that you can find at the URL http:\/\/www.mikeperham.com/2015/09/24/storing-data-with-redis/ he states that, for caching, “you should probably use Memcached instead [of Redis]”. So Mike simply really believes Redis is not good for caching, and he arguments his thesis in this way:],
+  [This post was triggered by reading a blog post published by Mike Perham, that you may know as the author of a popular library called Sidekiq, that happens to use Redis as backend. So I would not consider Mike a person which is “against” Redis at all. Yet in his blog post that you can find at the URL http:\/\/www.mikeperham.com/2015/09/24/storing-data-with-redis\/ he states that, for caching, “you should probably use Memcached instead \[of Redis\]”. So Mike simply really believes Redis is not good for caching, and he arguments his thesis in this way:],
   [1) Memcached is designed for caching.],
   [2) It performs no disk I/O at all.],
   [3) It is multi threaded and can handle 100,000s of requests by scaling multi core.],
@@ -1027,19 +1117,17 @@ written in portable C99. The only build dependency is the
 #article-row((
   [
     standard-article(
-  title: [Influence Search Result Ranking with Function Scores in Atlas Search],
+  title: [Using Hapi.js, Mongoose, And MongoDB To Build A REST API],
   author: [Nic Raboy],
   source-name: [Nic Raboy (polyglot developer)],
   images: (),
   paragraphs: (
-  [When it comes to natural language searching, it’s useful to know how the order of the results for a query were determined. Exact matches might be obvious, but what about situations where not all the results were exact matches due to a fuzzy parameter, the \$near operator, or something else?],
-  [This is where the document score becomes relevant.],
-  [Every document returned by a \$search query in MongoDB Atlas Search is assigned a score based on relevance, and the documents included in a result set are returned in order from highest score to lowest.],
-  [You can choose to rely on the scoring that Atlas Search determines based on the query operators, or you can customize its behavior using function scoring and optimize it towards your needs. In this tutorial, we’re going to see how the function option in Atlas Search can be used to rank results in an example.],
-  [The post Influence Search Result Ranking with Function Scores in Atlas Search appeared first on MongoDB .],
+  [To continue on my trend of MongoDB with Node.js material, I thought it would be a good idea to use one of my favorite Node.js frameworks. Previously I had written about using Express.js with Mongoose , but this time I wanted to evaluate the same tasks using Hapi.js.],
+  [In this tutorial we’re going to develop a simple RESTful API using Hapi.js , Joi and Mongoose as the backend framework, and MongoDB as the NoSQL database. Rather than just using Hapi.js as a drop in framework replacement, I wanted to improve upon what we had previously seen, by simplifying functions and validating client provided data.],
+  [The post Using Hapi.js, Mongoose, And MongoDB To Build A REST API appeared first on The Polyglot Developer .],
 ),
   insert-map: (:),
-  word-count: 165,
+  word-count: 123,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -1047,86 +1135,98 @@ written in portable C99. The only build dependency is the
   ],
   [
     standard-article(
-  title: [Building a Space Shooter Game that Syncs with Unity and MongoDB Realm],
-  author: [Nic Raboy],
-  source-name: [Nic Raboy (polyglot developer)],
-  images: (),
-  paragraphs: (
-  [When developing a game, in most circumstances you’re going to need to store some kind of data. It could be the score, it could be player inventory, it could be where they are located on a map. The possibilities are endless and it’s more heavily dependent on the type of game.],
-  [Need to sync that data between devices and your remote infrastructure? That is a whole different scenario.],
-  [If you managed to catch MongoDB . Live 2021, you’ll be familiar that the first stable release of the MongoDB Realm SDK for Unity was made available. This means that you can use Realm in your Unity game to store and sync data with only a few lines of code.],
-  [In this tutorial, we’re going to build a nifty game that explores some storage and syncing use-cases.],
-  [The post Building a Space Shooter Game that Syncs with Unity and MongoDB Realm appeared first on MongoDB .],
-),
-  insert-map: (:),
-  word-count: 153,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-  ],
-), ruled-indices: (1,))
-
-#article-row((
-  [
-    standard-article(
-  title: [Use The ChromeiQL Extension For Google Chrome To Test GraphQL Queries],
-  author: [Nic Raboy],
-  source-name: [Nic Raboy (polyglot developer)],
-  images: (),
-  paragraphs: (
-  [As you probably know, I’ve been doing a lot with GraphQL recently. I’ve released tutorials that include Java with GraphQL , Node.js with GraphQL , as well as Golang with GraphQL , but I’ve only ever demonstrated testing those GraphQL APIs with cURL. If you’ve ever used cURL for anything, not specific to GraphQL, you’ll know it works well, but it isn’t the most friendly tool available.],
-  [We’re going to look at an alternative method to testing GraphQL queries using a convenient Google Chrome extension called ChromeiQL .],
-  [The post Use The ChromeiQL Extension For Google Chrome To Test GraphQL Queries appeared first on The Polyglot Developer .],
-),
-  insert-map: (:),
-  word-count: 108,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-  ],
-  [
-    standard-article(
-  title: [FINN techday 2014],
-  author: [Andersos],
+  title: [Browser statistics December 2017],
+  author: [Henning Spjelkavik],
   source-name: [Finn.no Tech],
   images: (),
   paragraphs: (
-  [One of the ways of getting inspired and educated about technology here at FINN is through our “Tech-dag”.
-This year we have a packed program which consists of workshops, some talks and a bunch of lightning talks.
-Last time we posted about techday was in 2012 .],
-  [id="presentations"\>Presentations],
-  [Throughout the day we had some long presentations and some lightning talks.
-Lightning talks are 10 minutes long and tightly timed.],
-  [The topics are broad ranging, and not limited to programming at all.],
-  [Starting \#techdag2014 with \@sisomm and the Internet of things \#FINN\_no pic.twitter.com/Xdx3HOMY3q],
-  [— Anders Olsen Sandvik (\@Andersos) November 26, 2014],
-  [Here is the list of speakers and their slides:],
-  [Simen Sommerfeldt - Internet of Things],
-  [William Daraman, VG Tactus - "Egg og iBeacon"],
-  [Stefan Engelien - Eksperimentene som skapte FINN Småjobber],
-  [Geir Pettersen - Hospitering],
-  [Henning Spjelkavik - Strategisk planlegging med 'impact mapping'],
-  [Alexander Svanevik - Language Hacking],
-  [Tom Widerøe - Universell utforming – hva har blitt bedre],
-  [Per Jørgen Walstrøm - Nummi - om hockey og biler],
-  [Mikael Lindström - SPiD in the cloud],
-  [Anders Olsen Sandvik - Isomorphic Apps],
-  [Espen Dalløkken - a talk based on the blog post: I was wrong],
-  [Torgeir Waterhouse - hei FINN.no - hva skjer, internett og sånt...],
-  [id="arduino-workshop"\>Arduino Workshop],
-  [For this workshop we were all split out into teams and each team got a Arduino starter kit . The task was to make something cool. Check out this video from what group 10 did:],
-  [50 minutes of work. \#techdag2014 pic.twitter.com/lbByxa7iJb],
-  [— Christopher Kolstad (\@chriswk) November 26, 2014],
-  [\#techdag2014 pic.twitter.com/J6qYJOrZBt],
-  [— PJ Walstroem (\@pjwalstrom) November 26, 2014],
-  [\#techdag2014 pic.twitter.com/H6uINBBsoH],
-  [— Sissel Sveum (\@SisselSveum) November 26, 2014],
-  [id="official-hashtag-techdag2014"\>Official hashtag \#techdag2014],
+  [id="browser-statistics-december-2017-at-finnno"\>Browser statistics, December 2017 at FINN.no\#],
+  [Yuletide is coming real soon now, and we haven’t published browser statistics for 2017 yet! The 2016 edition is here if you want to compare.],
+  [id="how-many-visitors-use-a-desktop-or-laptop"\>How many visitors use a desktop or laptop?],
+  [The trend continues, a higher percentage of the traffic is coming from a mobile terminal this year than in 2016, but the trend is that the growth of the curve seems to flatten.],
+  [Our first graph shows the share of our users using a mobile phone, tablet or a desktop computer to access FINN.no, regardless of whether they use our responsive web app (m.finn.no), or a native Android or iPhone app. 72% of our visits are now from a smartphone or a tablet. The traditional desktop/laptop has a market share of 28%.],
+  [Which offering/”app” of FINN are people using, regardless of whether the device is a desktop/laptop, mobile or tablet?],
+  [Given that a user is on a mobile or a tablet - are they using the web-version or the app? For the first time the majority of those accessing FINN from a mobile device use our native app - the www.finn.no share of the visits is down to 48%.],
+  [These graphs also shows that we changed the domain name again this spring, so that all web traffic is served from www.finn.no , and not m.finn.no any more.],
+  [id="browsers-and-devices"\>Browsers and devices],
+  [The browser war is now only a memory of the veterans, but we still have to debug bugs in specific browsers from time to time, and it’s useful to have an idea of which browsers could or should be ignored.],
+  [Let’s also look at the which devices are the most popular:],
+  [id="operating-systems"\>Operating systems],
+  [We’re not using our mobiles all the time, so lte’s take a look at the operating system versions. The changes here go quite slowly, but the longer trend is that Windows 10 is still increasing over Windows 7 and 8.],
+  [Distribution of iOS versions - it’s interesting to see how quickly a new version is rolled out and dominating. (Note that iOS 11 did not fit into this graph, but the last week, iOS 11.1.2 was the biggest.)],
+  […especially compared to Android:],
+  [A list fits more elements than a line graph, so here are the top 10 iOS and Android versions the second week of December 2017:],
+  [There are many models of iPhone, and though we have some doubts about the correctness of these data, this report still gives an indicator.],
 ),
   insert-map: (:),
-  word-count: 286,
+  word-count: 413,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+  ],
+  [
+    brief-group((
+      [#brief-item([Axel Rauschmayer (2ality)], source-name: [Axel Rauschmayer (2ality)], [In this chapter we develop a small web app in the same way that large professional web apps are developed:
+
+We use libraries that we install via npm.
+
+We write tests for some of the functionality.
+
+We combine all JavaScript code into a single file before we serve the web app. That is called bundling . (Why we do that it explained later.)])],
+      [#brief-item([Nic Raboy], source-name: [Nic Raboy (polyglot developer)], [In a previous article I explained how to use Font Awesome glyph icons in your native Android application. Ionic Framework ships with IonicIcons included, but what if you wanted to include Font Awesome or any other font for that matter?
+
+The following will show you how to include Font Awesome into your Android and iOS Ionic Framework project.
+
+The post Use Font Awesome Glyph Icons With Ionic Framework appeared first on The Polyglot Developer .])],
+      [#brief-item([Axel Rauschmayer (2ality)], source-name: [Axel Rauschmayer (2ality)], [In this blog post, we look at how WebAssembly has become an ecosystem for many programming languages and what technologies enable that.])],
+      [#brief-item([Nic Raboy], source-name: [Nic Raboy (polyglot developer)], [When you release your mobile Android or iOS application to the various app stores you’ll be asked to submit a video for your app. Although optional, it is a great idea to do one in order to boost your app store optimization (ASO). So how do you get a video demo of your app? Using tools you probably already have installed you can create a screencast of your iOS or Android application.
+
+We’re going to see how to create a screencast for both platforms.
+
+The post Create An iOS Or Android Device Screencast appeared first on The Polyglot Developer .])],
+      [#brief-item([Nic Raboy], source-name: [Nic Raboy (polyglot developer)], [Sometimes the best examples towards learning a new framework is through a simple user login sample. Login involves many concepts, including forms, data binding, routing, and potentially HTTP to a remote service, all of which are core concepts in any web application.
+
+We’re going to see how to implement a simple login form in a web application that uses the Vue.js JavaScript framework.
+
+The post Simple User Login in a Vue.js Web Application appeared first on The Polyglot Developer .])],
+    ))
+  ],
+), ruled-indices: (1, 2,))
+
+#article-row((
+  [
+    standard-article(
+  title: [Manage Passwords With GPG, The Command Line, And Pass],
+  author: [Nic Raboy],
+  source-name: [Nic Raboy (polyglot developer)],
+  images: (),
+  paragraphs: (
+  [There are a lot of password managers on the market, some in the cloud, some local, all with features that may or may not be useful in all circumstances. I’m personally an advocate of being in control of your secure information and shedding reliance on closed source or cloud alternatives. This is why I use pass , the standard unix password manager.],
+  [The pass application is Mac and Linux compatible, but Windows support probably isn’t impossible. The application works by maintaining a list of password files that have been encrypted using GPG, a widely used cryptography software. Decrypting the files will result in access to your password information.],
+  [We’re going to take a look at using pass and see why it is a convenient option for password management.],
+  [The post Manage Passwords With GPG, The Command Line, And Pass appeared first on The Polyglot Developer .],
+),
+  insert-map: (:),
+  word-count: 146,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+  ],
+  [
+    standard-article(
+  title: [Apache Cordova And Ionic Framework Apps Are Not Native Mobile Apps],
+  author: [Nic Raboy],
+  source-name: [Nic Raboy (polyglot developer)],
+  images: (),
+  paragraphs: (
+  [If you’ve been keeping up with my content since the birth of The Polyglot Developer , you’ll know that I was once a huge advocate of Apache Cordova development using frameworks like Ionic Framework. Having been a web developer and coming from native Android development with Java, cross-platform development using hybrid technologies seemed like a logical next step. Fast-forward to now, I’m no longer using Apache Cordova with Ionic Framework and have gone back to native development.],
+  [I recently came across an article by Ionic’s CEO, Max Lynch, titled, Cordova/Ionic Apps are Native Apps , trying to explain that Ionic applications are native mobile applications. There are some valid points made in this article, but as someone who spent several years using the technology as well as using applications built with the technology, it is not something I agree with as a whole.],
+  [The post Apache Cordova And Ionic Framework Apps Are Not Native Mobile Apps appeared first on The Polyglot Developer .],
+),
+  insert-map: (:),
+  word-count: 163,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -1137,18 +1237,18 @@ Lightning talks are 10 minutes long and tightly timed.],
 #article-row((
   [
     standard-article(
-  title: [Override The Android Back Button In A NativeScript With Angular Application],
+  title: [Use Node.js And A Raspberry Pi Zero W To Scan For BLE iBeacon Devices],
   author: [Nic Raboy],
   source-name: [Nic Raboy (polyglot developer)],
   images: (),
   paragraphs: (
-  [Have you ever needed to perform a certain action when the user tries to hit the back button or exit out of your application on Android devices? For example, what if the user was able to back out of your application and you wanted to show a dialog. Or what if you have a video application and you wanted to pause the video when they tap the back button?],
-  [Being able to override the functionality of the back button on Android can do great things for your application as long as you don’t abuse it.],
-  [We’re going to see how to create a mobile application with NativeScript and Angular that demonstrates overriding the back button on Android, whether that be hardware or software.],
-  [The post Override The Android Back Button In A NativeScript With Angular Application appeared first on The Polyglot Developer .],
+  [Earlier this month I had written a tutorial for detecting nearby BLE iBeacon devices using a Raspberry Pi Zero W and an application written with Golang. It was a great example of accomplishing something with Go and very little code.],
+  [Scanning for BLE devices is a great use case for Internet of Things (IoT) devices like the Raspberry Pi Zero W, and Golang isn’t the only great language around. I, like many others, do a lot of Node.js development as well.],
+  [We’re going to see how to scan for BLE iBeacon devices using Node.js and the popular Node.js BLE (Noble) library.],
+  [The post Use Node.js And A Raspberry Pi Zero W To Scan For BLE iBeacon Devices appeared first on The Polyglot Developer .],
 ),
   insert-map: (:),
-  word-count: 143,
+  word-count: 124,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -1156,57 +1256,18 @@ Lightning talks are 10 minutes long and tightly timed.],
   ],
   [
     standard-article(
-  title: [Create a RESTful API with .NET Core and MongoDB],
+  title: [My Activity Report For 2019],
   author: [Nic Raboy],
   source-name: [Nic Raboy (polyglot developer)],
   images: (),
   paragraphs: (
-  [If you’ve been keeping up with my development content, you’ll remember that I recently wrote Build Your First . NET Core Application with MongoDB Atlas , which focused on building a console application that integrated with MongoDB. While there is a fit for MongoDB in console applications, many developers are going to find it more valuable in web applications.],
-  [In this tutorial, we’re going to expand upon the previous and create a RESTful API with endpoints that perform basic create, read, update, and delete (CRUD) operations against MongoDB Atlas.],
-  [The post Create a RESTful API with . NET Core and MongoDB appeared first on MongoDB .],
+  [It has been another great year for technology and The Polyglot Developer . Like I’ve done in a 2018 activity report , and the years before it, I wanted to take a moment to reflect on all that was accomplished for the 2019 calendar year.],
+  [If you’re unfamiliar with this kind of post, it is more or less a numbers report for the various things that happened throughout the year. Such things include blog, podcast, and YouTube metrics, as well as information around events and speaking engagements.],
+  [Not only is this an opportunity for me to keep track of things, but you can use it as an opportunity to learn about how I’ve conducted business and apply it towards your own.],
+  [The post My Activity Report For 2019 appeared first on The Polyglot Developer .],
 ),
   insert-map: (:),
-  word-count: 104,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-  ],
-), ruled-indices: (1,))
-
-#article-row((
-  [
-    standard-article(
-  title: [Upload Files To A Minio Object Storage Cloud With Node.js And Multer],
-  author: [Nic Raboy],
-  source-name: [Nic Raboy (polyglot developer)],
-  images: (),
-  paragraphs: (
-  [The recent Amazon S3 outage that took down much of the internet inspired me to talk about alternatives. Not too long ago I wrote about an open source object storage software called Minio and how I was using it on my Raspberry Pi for backups. The great thing about Minio is it shares the same APIs as AWS S3, but can be deployed to your own hardware, eliminating Amazon as a dependency.],
-  [This time around I thought it would be great to share how to use Minio as an object storage for a Node.js application that uses the middleware, Multer, for handling file uploads.],
-  [The post Upload Files To A Minio Object Storage Cloud With Node.js And Multer appeared first on The Polyglot Developer .],
-),
-  insert-map: (:),
-  word-count: 125,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-  ],
-  [
-    standard-article(
-  title: [Earn Extra Money As A Programmer With A Developer Blog],
-  author: [Nic Raboy],
-  source-name: [Nic Raboy (polyglot developer)],
-  images: (),
-  paragraphs: (
-  [If you’ve been a long time subscriber to The Polyglot Developer , you’ll know that I use the blog as a way to document what I learn on a day to day basis. I’ll never remember what I did six months ago unless I document the steps to reproduce it later.],
-  [I’d like to think that I’m a developer first and a blogger or technical writer second. However, did you know that I’m earning money from both sides of this technical spectrum? I’m earning money from my day job as well as the blog.],
-  [We’re going see a few things that will get you started with earning money through a programming blog.],
-  [The post Earn Extra Money As A Programmer With A Developer Blog appeared first on The Polyglot Developer .],
-),
-  insert-map: (:),
-  word-count: 131,
+  word-count: 135,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -1217,18 +1278,18 @@ Lightning talks are 10 minutes long and tightly timed.],
 #article-row((
   [
     standard-article(
-  title: [TPDP Episode \#25: Securing Applications With A Second Factor Of Authentication],
+  title: [Create And Sign Bitcoin Transactions With Golang],
   author: [Nic Raboy],
   source-name: [Nic Raboy (polyglot developer)],
   images: (),
   paragraphs: (
-  [I am pleased to announce that the latest episode of The Polyglot Developer Podcast is now available on pretty much every popular podcast network. This episode, which is episode 25 of the show, is all about two-factor authentication (2FA) and the things you should be familiar with when it comes to implementing it in your web applications.],
-  [In this episode titled, Securing Applications with a Second Factor of Authentication , I’m joined by Luke Walker who is a Solutions Architect at Yubico . In case you’re unfamiliar, Yubico creates the very popular YubiKey which is often featured on technology news outlets as being an incredible hardware token for protecting users from malicious circumstances.],
-  [When it comes to 2FA, there are many approaches. These approaches can consist of SMS, push notifications, time-based one-time passwords, U2F, or even the new FIDO2. If you’re interested in learning about each, this episode of the podcast should give you some insight before you try to implement them.],
-  [The post TPDP Episode \#25: Securing Applications With A Second Factor Of Authentication appeared first on The Polyglot Developer .],
+  [About a month ago I had written about creating and importing private keys as well as generating public addresses for Bitcoin and several other cryptocurrencies using the Go programming language. This previous tutorial had more of an emphasis on creating cryptocurrency wallets with Golang than anything.],
+  [The next step in making Bitcoin and other cryptocurrencies useful is to be able to transfer or send them to other people. Sending Bitcoin is part of a process known as creating and broadcasting a transaction.],
+  [While we won’t be actually broadcasting a transaction in this tutorial, we’re going to figure out how to create an unsigned transaction, then sign it, using the Go programming language and some popular Bitcoin packages.],
+  [The post Create And Sign Bitcoin Transactions With Golang appeared first on The Polyglot Developer .],
 ),
   insert-map: (:),
-  word-count: 182,
+  word-count: 133,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -1236,57 +1297,18 @@ Lightning talks are 10 minutes long and tightly timed.],
   ],
   [
     standard-article(
-  title: [Send SMS Text Messages In NativeScript With Angular],
+  title: [Implement Social Media Sharing With Ionic Framework],
   author: [Nic Raboy],
   source-name: [Nic Raboy (polyglot developer)],
   images: (),
   paragraphs: (
-  [Not too long ago I wrote a tutorial titled, Use Social Media Sharing Prompts in a NativeScript Angular Application , which demonstrated how to share content from the device. The sharing included locations like Facebook, Twitter, and anything else the platform found appropriate. This included SMS text messages.],
-  [Social sharing functionality isn’t the only way to access the messaging and dialing features of an Android and iOS device.],
-  [We’re going to see how to send SMS text messages in Android and iOS via an application built with NativeScript and Angular.],
-  [The post Send SMS Text Messages In NativeScript With Angular appeared first on The Polyglot Developer .],
+  [So you’ve made a great app, but need some help marketing it. Adding social media features to your application is a great way help spread the word, without actually doing anything. Social media can bring good traffic for you, the developer, and provide useful features to your user at the same time.],
+  [Take for example, you made a mobile app that finds funny pictures on the internet. You might want to add a share button that shares a particular funny picture on your users social media account while including reference to your app so all their friends can use it too.],
+  [The following will show you how to make use of social media sharing in your Android and iOS mobile application using Ionic Framework .],
+  [The post Implement Social Media Sharing With Ionic Framework appeared first on The Polyglot Developer .],
 ),
   insert-map: (:),
-  word-count: 107,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-  ],
-), ruled-indices: (1,))
-
-#article-row((
-  [
-    standard-article(
-  title: [Saving Data In Your NativeScript Mobile Application],
-  author: [Nic Raboy],
-  source-name: [Nic Raboy (polyglot developer)],
-  images: (),
-  paragraphs: (
-  [Recently I started fiddling with NativeScript from Telerik because I’ve been hearing a lot about it when I attend various developer conferences. If you’re unfamiliar with NativeScript, it is a cross platform mobile development framework similar to Ionic Framework and React Native. The difference being that NativeScript claims to map your UX to native layouts and give you full access to all device APIs.],
-  [Starting out, the thing I had some of the most trouble with was persisting data since it was poorly documented. Here we’re going to look at building a simple application that saves data to be accessed in the future, rather than only during the application session.],
-  [The post Saving Data In Your NativeScript Mobile Application appeared first on The Polyglot Developer .],
-),
-  insert-map: (:),
-  word-count: 126,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-  ],
-  [
-    standard-article(
-  title: [Maintain Data Relationships Through Resolvers With GraphQL In A Golang Application],
-  author: [Nic Raboy],
-  source-name: [Nic Raboy (polyglot developer)],
-  images: (),
-  paragraphs: (
-  [I recently wrote about getting started with GraphQL in a Golang application , where I discussed the creation of schemas, executing queries, and mutating data, even though it was all mock data. In this example there were queries for related data, but they were constructed in a very independent form.],
-  [We’re going to see how to query for related data, similar to what you’d find in a JOIN operation on a relational database, but using GraphQL and the Go programming language.],
-  [The post Maintain Data Relationships Through Resolvers With GraphQL In A Golang Application appeared first on The Polyglot Developer .],
-),
-  insert-map: (:),
-  word-count: 101,
+  word-count: 141,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -1297,18 +1319,17 @@ Lightning talks are 10 minutes long and tightly timed.],
 #article-row((
   [
     standard-article(
-  title: [Manage Multiple Authors On A Static Blog Created With Hugo],
+  title: [Create A Simple Todo List App Using Ionic 2 For Android And iOS],
   author: [Nic Raboy],
   source-name: [Nic Raboy (polyglot developer)],
   images: (),
   paragraphs: (
-  [As you may or may not know, The Polyglot Developer is currently using Hugo, which is a static site generator. When getting started with Hugo, the themes and documentation don’t say much when it comes to having more than one possible author producing content.],
-  [For example, as mentioned in my previous article , this site is always accepting guest contributions for technical content. There have been several tutorials contributed, but when it comes to credit, I want these tutorials to show under the authors name, not my name just because I’m the owner of the blog.],
-  [We’re going to see how to work with data templates in Hugo to create and use different authors for different articles.],
-  [The post Manage Multiple Authors On A Static Blog Created With Hugo appeared first on The Polyglot Developer .],
+  [I’ve created a few tutorials around Ionic 2 while it was in its early alpha stage up until now. These tutorials explain how to use the bits and pieces that the framework or Angular offers, but I never demonstrated how to make a functional application. Seeing how to put the pieces together makes a huge difference when learning a new technology.],
+  [We’re going to see how to build a simple todo list type Android and iOS application using Ionic 2, Angular , and TypeScript.],
+  [The post Create A Simple Todo List App Using Ionic 2 For Android And iOS appeared first on The Polyglot Developer .],
 ),
   insert-map: (:),
-  word-count: 136,
+  word-count: 106,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -1316,17 +1337,17 @@ Lightning talks are 10 minutes long and tightly timed.],
   ],
   [
     standard-article(
-  title: [Use The Native Device Clipboard In A NativeScript Angular Application],
+  title: [Building Amazon Alexa Skills With Node.js, Revisited],
   author: [Nic Raboy],
   source-name: [Nic Raboy (polyglot developer)],
   images: (),
   paragraphs: (
-  [Back when I had just started to learn NativeScript I had created a tutorial for using the native device clipboard for copying and pasting . The previous tutorial demonstrated this functionality in a vanilla JavaScript application. In an effort to clean up any loose ends, I figured it would be a good idea to convert this tutorial into an Angular equivalent. While nothing has really changed in the clipboard functionality, Angular is a very different animal.],
-  [We’re going to see how to copy and paste directly within an application built with Angular, TypeScript, and NativeScript .],
-  [The post Use The Native Device Clipboard In A NativeScript Angular Application appeared first on The Polyglot Developer .],
+  [A little more than two years ago, when the Amazon Echo first started picking up steam and when I was first exposed to virtual assistants, I had written a tutorial around creating a Skill for Amazon Alexa using Node.js and simple JavaScript. In this tutorial titled, Create an Amazon Alexa Skill Using Node.js and AWS Lambda , we saw how to create intent functions and sample utterances in preparation for deployment on AWS Lambda. I later wrote a tutorial titled, Test Amazon Alexa Skills Offline with Mocha and Chai for Node.js , which focused on building unit tests for these Skills and their intent functions. Fast forward to now and a few things have changed in the realm of Skill development.],
+  [In this tutorial we’re going to see how to build a Skill for Alexa powered devices using Node.js and test it using popular frameworks and libraries such as Mocha and Chai .],
+  [The post Building Amazon Alexa Skills With Node.js, Revisited appeared first on The Polyglot Developer .],
 ),
   insert-map: (:),
-  word-count: 115,
+  word-count: 169,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -1337,18 +1358,23 @@ Lightning talks are 10 minutes long and tightly timed.],
 #article-row((
   [
     standard-article(
-  title: [Navigate Nested Child Routes In A Vue.js Web Application],
-  author: [Nic Raboy],
-  source-name: [Nic Raboy (polyglot developer)],
+  title: [Spreading love and good vibrations on GitHub],
+  author: [espen],
+  source-name: [Finn.no Tech],
   images: (),
   paragraphs: (
-  [Not too long ago I had written a few tutorials around navigation in a Vue.js web application. I had written about navigating between routes as well as passing data between routes in the form of route parameters and query parameters .],
-  [When developing a web application with a successful user interface, you’re going to want to recycle as many features as possible. Using Vue.js, it is possible to create a multiple level UI by assigning child routes to a parent route within the application. This opens the door to new possibilities in navigation.],
-  [We’re going to see how to use nested routes in a Vue.js web application by assigning child routes and views.],
-  [The post Navigate Nested Child Routes In A Vue.js Web Application appeared first on The Polyglot Developer .],
+  [We have finally made an effort to put some of our repos out on GitHub under the finn-no organization . It is not exactly filled with stuff right now, but we aim to put a lot more of our libraries and tools out here.],
+  [Currently there are a few repositories out there:],
+  [eventHub],
+  [Awesome Board\[Gone\]],
+  [id="eventhub"\>eventHub],
+  [This is just a tiny piece of code which enables you to build loosely coupled components or applications by utilizing the publish-subscribe pattern . The eventHub is just an object which publishes event to those to registered event listeners functions.],
+  [We have written one-page JS applications using only the hub besides jQuery for DOM manipulation. It scales pretty well and it is pretty much what you’d need to create an application. Once your application grows to be quite large you might want to add some other architectural components, but for small to medium sized projects it is brilliant. It is used for the dashboard part for the Awesome Board\[Gone\].],
+  [id="awesome-board"\>Awesome Board],
+  [The Awesome Board\[Gone\] is the application which has featured in two articles about visualizing quality. We have shown it a few times to different audiences and due to request for making it available we decided it was a good thing to share it on GitHub. There are some pieces missing from the version we run internally, but have patience the rest might still make it to a repo near you.],
 ),
   insert-map: (:),
-  word-count: 131,
+  word-count: 237,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -1356,17 +1382,187 @@ Lightning talks are 10 minutes long and tightly timed.],
   ],
   [
     standard-article(
-  title: [Deploy A NativeScript App With A Pre-Filled SQLite Database],
+  title: [Make HTTP Requests In An Ionic Android And iOS App],
   author: [Nic Raboy],
   source-name: [Nic Raboy (polyglot developer)],
   images: (),
   paragraphs: (
-  [Recently I wrote an article regarding how to use SQLite in a NativeScript Android and iOS mobile application. In my previous tutorial the assumption was that the database would be created fresh. However, what if you want to ship a pre-filled SQLite database with your application? Maybe you have 10,000 records that you prefer not to have to download from a remote web server, or maybe there is another reason. Having a pre-populated database is fair game.],
-  [We’re going to take a look at what it takes to ship a NativeScript application with a SQLite database that already contains data.],
-  [The post Deploy A NativeScript App With A Pre-Filled SQLite Database appeared first on The Polyglot Developer .],
+  [Anyone looking to build a mobile application is going to find themselves needing to make HTTP requests to some remote web service at some time. It is just how the modern web and modern app development process is now. Previously I had demonstrated how to make HTTP requests in an Ionic Framework 1 application , but since Ionic 2 is all the rage right now, we’re going to switch gears and see how it is done in the latest framework version.],
+  [The bulk of this tutorial will be demonstrating how to make these web service requests in Angular since it is fairly different from the first AngularJS version.],
+  [The post Make HTTP Requests In An Ionic Android And iOS App appeared first on The Polyglot Developer .],
 ),
   insert-map: (:),
-  word-count: 118,
+  word-count: 127,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+  ],
+), ruled-indices: (1,))
+
+#article-row((
+  [
+    standard-article(
+  title: [TPDP Episode \#22: NoSQL Databases And The Flexibility Of A Non-Relational Model],
+  author: [Nic Raboy],
+  source-name: [Nic Raboy (polyglot developer)],
+  images: (),
+  paragraphs: (
+  [I am pleased to announce that the latest episode of The Polyglot Developer Podcast is now available for download. In this episode titled, NoSQL Databases and the Flexibility of a Non-Relational Model , I’m joined by Matt Groves where we talk about use-cases for NoSQL versus relational databases and how to use NoSQL in your own applications.],
+  [Matt Groves and I used to work together at Couchbase , which is a NoSQL database company, and is by no means the focus of this episode. The focus is NoSQL in general and all the great things that you can do with it.],
+  [The post TPDP Episode \#22: NoSQL Databases And The Flexibility Of A Non-Relational Model appeared first on The Polyglot Developer .],
+),
+  insert-map: (:),
+  word-count: 122,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+  ],
+  [
+    standard-article(
+  title: [Using Network Sockets With The Go Programming Language],
+  author: [Nic Raboy],
+  source-name: [Nic Raboy (polyglot developer)],
+  images: (),
+  paragraphs: (
+  [A few months back I wrote about using websockets in a Golang application for communication with an Angular client web application. While very useful and simplistic, in many cases websockets won’t be the means for real-time communication between applications. It is often easier or better to use standard TCP network sockets as an alternative. For example, if you’re developing an online video game, it will likely communicate to the server using TCP sockets rather than websockets.],
+  [We’re going to see how to create a basic chat application using the Go programming language. This chat application will have a server for listening and routing client communications and a client for sending and receiving messages from the server.],
+  [The post Using Network Sockets With The Go Programming Language appeared first on The Polyglot Developer .],
+),
+  insert-map: (:),
+  word-count: 133,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+  ],
+), ruled-indices: (1,))
+
+#article-row((
+  [
+    standard-article(
+  title: [Browser statistics October 2016],
+  author: [Henning Spjelkavik],
+  source-name: [Finn.no Tech],
+  images: (),
+  paragraphs: (
+  [Last year, we presented the browser statistics of FINN.no as of June 2015 . It’s time for an update!],
+  [id="how-many-visitors-use-a-desktop-or-laptop"\>How many visitors use a desktop or laptop?],
+  [Our first graph shows the share of our users using a mobile phone, tablet or a desktop computer to access FINN.no, regardless of whether they use our responsive web app (m.finn.no), or a native Android or iPhone app. 66% of our visits are now from a smartphone or a tablet. The traditional desktop/laptop has a market share of 34%.],
+  [If we exclude the native app users, which are obviously on either Android or iOS, what is the distribution between table, mobile and “other” (desktop) on our web site?],
+  [id="which-finnno-application-do-people-use"\>Which FINN.no application do people use?],
+  [We have two major offerings of FINN.no - the responsive web (served from the domains m.finn.no and www.finn.no), and native apps for mobile devices. 24% of our visits are from our native apps, and 76% from our responsive web.],
+  [Since we’re in the middle of a migration, some of our internal details leaks out in this graph; some parts of the finn.no traffic is served from the domain www.finn.no and the majority from the domain m.finn.no. They are supposed to be merged “real soon now”.],
+  [id="browsers"\>Browsers],
+  [First of all, let’s take a look at the numbers of the browser vendors . The ranking is clear, Apple is the biggest, ahead of Google, Microsoft, Samsung and Mozilla. Opera is no longer in the top 5.],
+  [In case you wondered which browser is the biggest on the “desktop” here’s the trend. (Ignore the orange and blue triangle markers)],
+  [The complete browser statistics , across all applications and devices are as follows:],
+  [It still seems like a good idea to make sure your website works well with Safari! The old giant Microsoft now has only the 5th spot with IE 11 (6.8%) and the 12th with Edge 13 (1.7%).],
+  [id="mobile-details"\>Mobile details],
+  [We got a request to give some more details about the mobile devices that uses FINN.no. Apple still has a strong position in Norway!],
+  [The most popular browsers on mobile devices:],
+  [Then the question is - what is the “Android Browser”? This is the break down of devices that has delivered traffic from the “Android Browser”.],
+  [Similarily for the Samsung Browser:.],
+  [And finally the trend on mobile browsers, by vendor:],
+  [id="which-version-of-android-or-ios"\>Which version of Android or iOS?],
+  [Our apps need to work well on several versions of Android and iOS. How fast are our users upgrading? This shows the distribution of operating systems among our apps users.],
+  [Given that the user have an iPhone, which models are in use? Unfortunately, the data are quite spotty, but this graph might still be an indication of the truth.],
+),
+  insert-map: (:),
+  word-count: 454,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+  ],
+  [
+    standard-article(
+  title: [I wish I knew my consumers - Maven Reverse Dependency],
+  author: [roar],
+  source-name: [Finn.no Tech],
+  images: (),
+  paragraphs: (
+  [At FINN.no being a developer fixing bugs in a library is a breeze. Getting every user of your library to use the fix, however, is a different story. How to know who to notify? I mean, I know my library’s dependencies, but who “out there” has dependency to the component where I just fixed a bug? I wish. Enter maven-dependency-graph.],
+  [The idea was born on the plane back home from a Copenhagen hosted conference. Graph database. Download neo4j and start dabbling at a maven plugin. Flying time Copenhagen - Oslo was too short, all of a sudden.],
+  [From there, the idea slept for a couple of years. Until the need arose somewhere among the developers. With 100+ different applications running with common core services and libraries, everybody suddenly needed to know who depended on their code which had recently been bugfixed. So the old idea was dusted off and once more saw the light of day. We needed to upgrade the server installation and the API to neo4j - which took some time to grasp; but after some playing around, it became obvious and easy.],
+  [The idea was to have every project report its dependencies to a graph database, building the tree of dependencies on each commit. This constitutes one half of the plugin. Over time, all projects will have reported their dependencies, and from there on part two of the plugin comes into use. It will examine the reverse dependencies to the current maven project, and report all incoming dependencies to it in the maven log. Hey, presto! We now know who out there uses us! And even which version they are using, thanks to two different keys into the built-in lucene index engine.],
+  [The plugin is published on github \@ Finn Technology’s account . Feel free!
+ \@gardleopard and \@roarjoh],
+  [id="usage-examples"\>Usage examples],
+  [Dependencies to current maven project:],
+  [\[INFO\] Scanning for projects...],
+  [\[INFO\]],
+  [\[INFO\] ------------------------------------------------------------------------],
+  [\[INFO\] Building greenpages thrift-client 3.4.5-SNAPSHOT],
+  [\[INFO\] ------------------------------------------------------------------------],
+  [\[INFO\]],
+  [\[INFO\] --- dependency-mapper-maven-plugin:1.0-SNAPSHOT:read (default-cli) \@ commons-thrift-client ---],
+  [\[INFO\] Resolving reverse dependencies],
+  [\[INFO\] no.finntech.travel.supplier:supplier-client:1.2-SNAPSHOT -\> no.finntech:commons-thrift-client:3.1.1],
+  [\[INFO\] no.finntech.cop:client:1.1-SNAPSHOT -\> no.finntech:commons-thrift-client:3.1.1],
+  [\[INFO\] no.finntech.oppdrag-services:iad-model:2013.2-SNAPSHOT -\> no.finntech:commons-thrift-client:3.4.3],
+  [\[INFO\] no.finntech:minfinn:2013.2-SNAPSHOT -\> no.finntech:commons-thrift-client:3.4.3],
+  [\[INFO\] no.finntech:service-user:2013.2-SNAPSHOT -\> no.finntech:commons-thrift-client:3.4.3],
+  [\[INFO\] no.finntech:service-oppdrag:2013.2-SNAPSHOT -\> no.finntech:commons-thrift-client:3.4.3],
+  [\[INFO\] no.finntech:kernel:2013.2-SNAPSHOT -\> no.finntech:commons-thrift-client:3.4.3],
+  [\`],
+  [(umpteen lines skipped...)],
+  [\`],
+  [\[INFO\] ------------------------------------------------------------------------],
+  [\[INFO\] BUILD SUCCESS],
+  [\[INFO\] ------------------------------------------------------------------------],
+  [\[INFO\] Total time: 1.957s],
+  [\[INFO\] Finished at: Thu Jan 31 09:50:19 CET 2013],
+  [\[INFO\] Final Memory: 9M/211M],
+  [\[INFO\] ------------------------------------------------------------------------],
+  [Usage of third party framework (using neo4j’s included admin interface):],
+),
+  insert-map: (:),
+  word-count: 408,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+  ],
+), ruled-indices: (1,))
+#pull-quote([Since we’re in the middle of a migration, some of our internal details leaks out in this graph; some parts of the finn.], [Henning Spjelkavik])
+
+
+#article-row((
+  [
+    standard-article(
+  title: [TPDP Episode \#8: Asynchronous and Event-Based Programming with RxJS],
+  author: [Nic Raboy],
+  source-name: [Nic Raboy (polyglot developer)],
+  images: (),
+  paragraphs: (
+  [When it comes to modern JavaScript development, there are a few different ways to handle asynchronous events or data. You could use promises and callbacks, but as great as they are, present certain limitations. This is where RxJS comes into play with its reactive programming model. In this episode of The Polyglot Developer Podcast, guest speaker Ben Lesh and I discuss RxJS and where it fits in modern JavaScript development, whether it be server-side or front-end.],
+  [Ben Lesh is a senior software engineer at the very popular entertainment streaming company, Netflix . One of Ben’s projects at Netflix includes the development and maintenance of RxJS since it is heavily used by the company. In the eighth episode, Asynchronous and Event-Based Programming with RxJS we discuss everything from what is RxJS, how it was inspired, who is using it, and why you should use it over a few of the alternative methods. If you’ve ever heard of RxJava or Rx. NET, these projects share some similarities to RxJS.],
+  [The post TPDP Episode \#8: Asynchronous and Event-Based Programming with RxJS appeared first on The Polyglot Developer .],
+),
+  insert-map: (:),
+  word-count: 184,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+  ],
+  [
+    standard-article(
+  title: [Accept Text Input from Users in a Phaser Game],
+  author: [Nic Raboy],
+  source-name: [Nic Raboy (polyglot developer)],
+  images: (),
+  paragraphs: (
+  [When you create a game, you may find yourself needing to accept keyboard input from the user. I’m not talking about using the keyboard to control your player, but instead to accept text from the keyboard to be used as a username or for the in-game chat.],
+  [If you’ve been keeping up with the Phaser content releasing on the blog, you might remember the tutorial titled, Creating a Multiplayer Drawing Game with Phaser and MongoDB . This tutorial demonstrated taking user input to be used as the game information, but it did so with a bit of HTML hacking.],
+  [There are better ways!],
+  [In this tutorial we’re going to see how to take user keyboard input directly within a Phaser 3.x game using embedded HTML and JavaScript, rather than HTML layered on top of the game.],
+  [The post Accept Text Input from Users in a Phaser Game appeared first on The Polyglot Developer .],
+),
+  insert-map: (:),
+  word-count: 154,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -1376,62 +1572,22 @@ Lightning talks are 10 minutes long and tightly timed.],
 
 {
   #standard-article(
-  title: [Generate Images from HTML with Gulp and Puppeteer],
+  title: [Object Pooling Sprites in a Phaser Game for Performance Gains],
   author: [Nic Raboy],
   source-name: [Nic Raboy (polyglot developer)],
   images: (),
   paragraphs: (
-  [Have you ever needed to generate an image from your HTML? Whether it be for design purposes or for marketing purposes with social media, knowing how to get a screenshot of your HTML design without manually taking the screenshot can be a great thing.],
-  [A use-case I was interested in was around feature graphics for each of my blog posts. Sure I could open a graphic design tool like Affinity Photo, or use the same feature graphic for every tutorial, but what if I wanted to automatically generate them based on certain criteria?],
-  [In this tutorial we’re going to see how to use Puppeteer to take screenshots of our HTML through a headless Gulp task.],
-  [The post Generate Images from HTML with Gulp and Puppeteer appeared first on The Polyglot Developer .],
+  [Performance is everything when it comes to video games. Lag and stutter due to dropped frames can easily ruin your game. This means that you have to be considerate of how you manage your game resources to prevent unnecessary operations and stress on the client computer or mobile devices running the game.],
+  [If you’ve got a game with a lot of items, enemies, etc., creating and destroying these sprites as necessary is an expensive task. Instead, it makes sense to create an object pool with a predefined number of preloaded sprites that are used or hidden as necessary. This means that instead of creating a sprite when you need it, you pull the sprite from the pool. When you’re done with the sprite, instead of destroying it, you add it back to the pool. While this seems like a silly task, it can have huge performance gains within your game.],
+  [In this tutorial, we’re going to see how to create and use an object pool for our sprites in a Phaser 3.x game.],
+  [The post Object Pooling Sprites in a Phaser Game for Performance Gains appeared first on The Polyglot Developer .],
 ),
   insert-map: (:),
-  word-count: 132,
+  word-count: 192,
   edited-for-length: false,
   debug-mode: false,
 )
 
-}
-
-{
-  #section-label([Analysis])
-  #brief-group((
-    #brief-item([Nic Raboy], source-name: [Nic Raboy (polyglot developer)], [Unity3D offers a ton of great features for Android projects, but often there are gaps that must be filled with plugins.
-
-Let’s take the example of Toast popups for Android. In your game you might like to show a popup message that explains an error, or states that you are signed in to a server.
-
-The post Creating An Android Java Plugin For Unity3D appeared first on The Polyglot Developer .])
-
-    #brief-item([Axel Rauschmayer (2ality)], source-name: [Axel Rauschmayer (2ality)], [I was looking for a way to create images (think screenshots) of CSS layouts that I can use in HTML, EPUB and PDF files. This blog post describes my solution – which produces SVG images.])
-
-    #brief-item([Nic Raboy], source-name: [Nic Raboy (polyglot developer)], [When making an API app or any app that requires authentication it is critical to have a solid sign-in process. A good way to handle user sign-in with Ionic Framework is to make use of the already included ui-router module. The idea behind this is to route between sign in and protected screens as necessary.
-
-The post Handle User Sign-In With Ionic Framework appeared first on The Polyglot Developer .])
-
-    #brief-item([Nic Raboy], source-name: [Nic Raboy (polyglot developer)], [Not too long ago I wrote about using the NativeScript fetch module for making HTTP requests in an Android and iOS mobile application. Personally I find that the fetch module is a bit awkward to use, so this time we’re going to take a look at using the http module instead.
-
-The great thing about the NativeScript http module is that it is pretty much the same as it is in the other languages.
-
-The post Use The HTTP Module Instead Of Fetch In NativeScript appeared first on The Polyglot Developer .])
-
-    #brief-item([Axel Rauschmayer (2ality)], source-name: [Axel Rauschmayer (2ality)], [In this blog post, I’d like to talk about CSS: I wish it supported inner breakpoints – breakpoints not for viewports or containers but for HTML elements inside viewports or containers.])
-
-    #brief-item([Nic Raboy], source-name: [Nic Raboy (polyglot developer)], [So after a lot of thinking about it I finally dedicated some time to creating my first ever Ionic Framework course! The title of the course is Ionic Framework 101: A Quickstart to Building Mobile Apps and it can be found on the learning service Udemy .
-
-A little background on what I hoped to accomplish in this quickstart course.
-
-The post Ionic Framework 101: A Quickstart to Building Mobile Apps appeared first on The Polyglot Developer .])
-
-    #brief-item([Bryan M. Wolfe], source-name: [MakeUseOf], [We treat SD cards like digital vaults. They live in our cameras, Nintendo Switches, and Raspberry Pis for years, and we just assume that as long as the plastic casing isn't cracked, our data is safe.])
-
-    #brief-item([Nic Raboy], source-name: [Nic Raboy (polyglot developer)], [I’m pleased to announce that a new course has been published, this time on the subject of maps and various location services. This course titled, Maps and Location Services with HERE by Example , focuses on building web applications using JavaScript and products by HERE Technologies.
-
-In this course you’ll see many step by step examples on how to work with interactive maps, geocode and reverse geocode locations, calculate different types of routes, and more.
-
-The post Maps and Location Services with HERE by Example, Released appeared first on The Polyglot Developer .])
-
-  ))
 }
 
 #colophon([Global Chronicle], [Vol. 1, No. 047], [2026-03-30])

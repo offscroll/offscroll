@@ -23,67 +23,72 @@
 
 // --- Front Page Feature ---
 #feature-article(
-  title: [The two kinds of error],
+  title: [The age of personalized software],
   kicker: [Cover Story],
-  author: [Evan Hahn],
-  source-name: [Evan Hahn],
-  deck: [In short: in my mind, errors are divided into two categories.],
-  lead-text: "Expected errors (think “user entered invalid data”), which are part of normal operation, aren’t the developer’s fault, and should be handled. Unexpected errors (think “null pointer exception”) are the developer’s fault, likely indicate a bug, and are allowed to crash.",
-  lead-first-alpha: 0,
-  body-paragraphs: (
-  [Error handling is an important, but often neglected, part of programming and user experience.],
-  [Over the years, I’ve developed an opinion about the two types of error in software. This is primarily informed by a career in web and application development, but I hope these learnings are widely applicable.],
-  [In my mind, errors are divided into two categories: expected and unexpected .],
-  [id="expected-errors"\>Expected errors],
-  [Expected errors happen during normal operation. Examples:],
-  [Validation errors when the user enters invalid data. You can’t control what the user types!],
-  [Network errors when the user’s network fails. It’s not your fault if the user turns their Internet off or has a slow connection!],
-  [Permission errors when your program isn’t allowed to do something. You can’t magically read forbidden files, fix a user’s password, or steal webcam privileges!],
-  [The developer hasn’t made a mistake when these happen, and there’s often little they can do to prevent it. The existence of these errors is not a bug (though failing to handle them can be). These aren’t the programmer’s fault.],
-  [Expected errors are recoverable. This might mean logging a warning, showing a message to the user, or using a fallback.],
-  [Expected errors should not throw , raise , or panic . Instead, they should return an error result. This works differently in every language, but is often a Result type, a union of null and the success value, or an error code. This pattern pushes you toward handling the error, which you should if you want to make your software reliable.],
-  [Expected errors should use WARN or INFO log messages because this isn’t a problem to solve. You may want to set up an alert if you start getting lots of warnings.],
-  [id="unexpected-errors"\>Unexpected errors],
-  [Unexpected errors should never happen. If they do, you’ve got a bug! Examples:],
-  [Assertion errors. For example, a function must be called with a non-empty string, and someone violated the contract if they didn’t.],
-  [Logic errors. If Thing A depends on Thing B, but Thing B isn’t properly initialized, that’s unexpected. Null pointer exceptions are also typically a surprise.],
-  [Invalid data errors. You can usually assume your database will give back valid data. If it doesn’t, you’ve probably got a bug somewhere.],
-  [You should generally not try to recover these errors. It’s okay to explode—crash, panic , and throw .],
-  [To get even more radical: I often think unexpected errors should completely crash the program . It’s disruptive in the short term, but I find crashes make software feel more reliable in the long run. You’re more likely to hear about these problems from annoyed users—if not your own testing.],
-  [Unexpected errors should use ERROR or FATAL log messages because they indicate a real problem. At best, they indicate an incorrect assumption. At worst, there’s a serious bug somewhere.],
-  [id="drawing-the-line"\>Drawing the line],
-  [The line between “expected” and “unexpected” depends on the task.],
-  [At one extreme: if you’re making a prototype or quick script, I reckon all errors are unexpected. You might decide not to handle problems with the network, filesystem, or user input. Who cares? This is just a little script or idea.],
-  [At the other extreme: if you’re coding for a space probe on a 50-year mission, almost all errors are expected, including catastrophic hardware failures .],
-  [Most programs lie somewhere in between, and you have to decide which errors are unexpected. For example, are memory allocation errors expected in your program? It depends.],
-  [In my experience, if you want to make your stuff more reliable, you’ll trend toward expecting more and more errors. Lots can go wrong on a normal day! For example, my team recently had to deal with a memory allocation error, even though we’re writing a Node.js app.],
-  [Some programming languages, like Rust and Zig, classify many errors as expected. Others, like JavaScript and Python, classify them as unexpected. For example, when you parse JSON in Go, the compiler makes you handle the error; not so in Ruby. I tend to prefer stricter compilers for production software and looser languages for scripts and prototypes, in part because of their philosophy about errors. (The Rustaceans among you probably notice that this whole post is very similar to Rust’s error philosophy .)],
-  [To be clear: this is just what I think. I’ve found it useful to categorize errors this way. If you think about errors differently, (1) I’d love to hear it (2) I’m glad you’re thinking about error handling in software.],
-  [See a response to this post, “The three kinds of error” .],
-),
-  edited-for-length: false,
-)
-
-
-{
-  #section-label([Front Page])
-  #standard-article(
-  title: [Corrupt a wish with GPT-4],
-  author: [\@corrupt-a-bot GPT-4 bot],
+  author: [\@sam Sam Saffron],
   source-name: [Sam Saffron],
-  images: (),
-  paragraphs: (
-  [Granted! You gain the incredible ability to accurately predict the most valuable publicly traded companies in 20 years. However, as word of your gift spreads, everyone starts following your predictions and investing in those same companies. The sudden surge and overwhelming demand inflate their stock prices to absurd levels, creating massive financial bubbles.],
-  [As the bubbles continue to grow, the world economy destabilizes, and countries scramble to implement strict regulations on market activity. The introduction of these regulations inadvertently leads to even more economic turmoil, sparking a global recession that persists for decades. Your extraordinary gift ends up being the catalyst for worldwide financial devastation.],
-  [I wish I could teleport to any location in the world with just a blink of my eyes, but always arrive at the destination with a fabulous new outfit that suits the context and climate perfectly.],
+  deck: [Over the past few months, I have been struggling with the Hyprland screen‑share dialog ( hyprland-share-picker via xdg-desktop-portal-hyprland ).],
+  lead-pre: [],
+  lead-cap: [c],
+  lead-rest: [lass="lightbox-wrapper"\>],
+  body-paragraphs: (
+  [Under the hood, Chromium \/ OBS talk to xdg-desktop-portal , which hands off to xdg-desktop-portal-hyprland . That launches hyprland-share-picker (a Qt dialog) which uses the hyprland-toplevel-export-v1 protocol to offer windows and screens.],
+  [When I am on a call with people I want to quickly share a screen with them, I am confronted with a rather confusing UI:],
+  [By default it selects the “Screen” tab, which I almost never want],
+  [On the “Window” tab I get a non-visual list of window names that are hard to decipher],
+  [There is this whole “restore token” thing that is very confusing . I don’t need this checkbox. I accept the risk of always restoring.],
+  [The “old way” of dealing with this kind of pain was:],
+  [Open an issue on GitHub which was done back in 2022],
+  [Discuss the issue],
+  [Some brave soul who is familiar with Qt toolkit , various Wayland protocols including the somewhat experimental hyprland-toplevel-export-v1 would take it on herself to implement. Given the complexity of the feature, we would be looking at a week of engineering.],
+  [So what ends up happening is that we have a bottleneck. Vaxry only has so much time. hyprland is mostly on one person’s shoulders, so some little niggles like “my favorite bug” tend to take a back seat for years.],
+  [However, there is an interesting wind of change as of November 2025.],
+  [The release of ultra-competent language models such as Gemini 3 Pro , Codex 5.1 Max , and the established Sonnet 4.5 means that when we hit “our favorite bug” we can go ahead and “work something out.”],
+  [Particularly, given the knowledge I had about the problem, the source code of grim hyprland , the protocols involved, and general structure of a solution, I am able to vibe engineer a solution to the problem in an hour or so.],
+  [I made this new version of the picker using cursor-agent with Gemini 3 Pro \/ Sonnet. I tend to use multiple models and coding agents to attempt different approaches, given each excel at different aspects.],
+  [How I built it.],
+  [The first thing I vibe coded was a --test parameter (cursor agent - Sonnet 4.5 thinking). Prior to it, to launch the picker you needed to configure rather complex ENV vars. hyprland-share-picker gets the list of windows and options from ENV vars. This makes it particularly tricky to test changes because you need a large amount of setup. With this in hand, I was set to iterate quickly.],
+  [I then pointed cursor-agent (with Gemini 3 Pro) at the source for grim hyprland and worked through designing the interface over a few turns.],
+  [I hit a reasonable amount of minor blockers—the screenshot was fuzzy, I let it read my hyprland config and come up with strategies for handling my 1.6 zoom in Wayland. Perhaps the largest blocker was a segfault on close that the LLMs introduced. I debugged it with the agent’s help; I don’t know all of the params to gdb, it walked me through it, then I fed the feedback back into the agent and resolved the segfault. A few more turns, added icons, removed the restore token stuff, and I was set.],
+  [This new version works perfectly for me. It behaves just as I always wanted it to behave and is the screen I am using now.],
+  [That said, a new problem is emerging. As I explained in my previous blog post , the journey from vibe engineered code to a PR I feel comfortable putting my name on can be vast.],
+  [I am not a C++ expert, I know very little about Qt, and all the Wayland experimental protocols are a bit alien to me. It would be disingenuous to say it makes sense now for Vaxry to spend hours reviewing my machine-generated code for security issues and more.],
+  [I landed on a new paradigm which I feel may become more of a norm over the upcoming years.],
+  [Software for one],
+  [For many years, software has had an aspect of personalization to it. You could adapt it to your needs in your user preferences section. One person’s default can be another person’s kryptonite when it comes to software settings. A great exploration of this concept is the malleable software article from Ink & Switch.],
+  [Now we can take this one step further.],
+  [Given the new tools, I can create custom builds of software just for me . I can vibe code myself into a corner and not be able to feasibly contribute my personalized software back to the ecosystem, which is a new happy, sad, and dangerous reality.],
+  [I am empowered, I can scratch my own itch, I can reason about risks, but fundamentally, sometimes I am building software for one.],
+  [The tools are accidentally driving an “anti open-source” practice. I don’t want to force code reviews on this code; I prefer to keep it in a tucked away fork.],
+  [I anticipate that as the competence of the models and tools increases, more and more snowflake software is going to emerge. We are already today in a world where people familiar with the coding agents can construct “personal forks” and special-case software for a single person’s use case.],
+  [This both scares me, given the security implications and anti-open-source aspects, and delights me, because I am no longer blocked.],
+  [Reducing risk of software for one],
+  [Though somewhat counterintuitive, the easier you make it to correctly hack on your software, the less the risk is of “software for one” forks emerging for your code.],
+  [Having proper guidelines for engineering, a great test suite with trivial test runners, and a nice linter makes a big difference. By having them, you can avoid having agents generate completely “out there” code because they have a feedback loop they can test against.],
+  [This means that less highly obscure code is generated, which increases the likelihood of “vibe coded” to “blessed by human” code transitions.],
+  [At Discourse, we recently built the trifecta of command line lint/test/spec which we now feed in to the agent config.],
+  [\# Ruby tests
+bin/rspec \[spec/path/file\_spec.rb\[:123\]\]],
+  [\# JavaScript tests - bin/qunit
+bin/qunit --help \# detailed help
+bin/qunit path/to/test-file.js \# Run all tests in file
+bin/qunit path/to/tests/directory \# Run all tests in directory],
+  [\# Linting
+bin/lint path/to/file path/to/another/file
+bin/lint --fix path/to/file path/to/another/file
+bin/lint --fix --recent \# Lint all recently changed files],
+  [The end result is that all agent-built code I am observing is significantly more robust even though it is using models that may have failed in the past.],
+  [If a model spends 15 minutes figuring out how to run a test in a highly creative way, it ends up with a poison context and tends to produce far fewer and less useful results.],
+  [Where are we headed?],
+  [Back in 2023, Geoffrey Litt wrote :],
+  [I think it’s likely that soon all computer users will have the ability to develop small software tools from scratch, and to describe modifications they’d like made to software they’re already using.],
+  [I do not think we are quite there; you still need to be a programmer to wield these tools effectively. However, the heart of the insight is correct.],
+  [Software is becoming more malleable; software for one is becoming a new trend.],
+  [I am delighted and terrified simultaneously.],
 ),
-  insert-map: (:),
-  word-count: 141,
   edited-for-length: false,
-  debug-mode: false,
 )
 
-}
 
 {
   #section-label([Features])
@@ -166,92 +171,6 @@
 
 {
   #standard-article(
-  title: [So long, and thanks for all the fish: how to escape the Linux networking stack],
-  author: [Chris Branch],
-  source-name: [Cloudflare Research],
-  images: (),
-  paragraphs: (
-  [There is a theory which states that if ever anyone discovers exactly what the Linux networking stack does and why it does it, it will instantly disappear and be replaced by something even more bizarre and inexplicable.],
-  [There is another theory which states that Git was created to track how many times this has already happened.],
-  [Many products at Cloudflare aren’t possible without pushing the limits of network hardware and software to deliver improved performance, increased efficiency, or novel capabilities such as soft-unicast, our method for sharing IP subnets across data centers . Happily, most people do not need to know the intricacies of how your operating system handles network and Internet access in general. Yes, even most people within Cloudflare.],
-  [But sometimes we try to push well beyond the design intentions of Linux’s networking stack. This is a story about one of those attempts.],
-  [Hard solutions for soft problems],
-  [My previous blog post about the Linux networking stack teased a problem matching the ideal model of soft-unicast with the basic reality of IP packet forwarding rules. Soft-unicast is the name given to our method of sharing IP addresses between machines. You may learn about all the cool things we do with it , but as far as a single machine is concerned, it has dozens to hundreds of combinations of IP address and source-port range, any of which may be chosen for use by outgoing connections.],
-  [The SNAT target in iptables supports a source-port range option to restrict the ports selected during NAT. In theory, we could continue to use iptables for this purpose, and to support multiple IP/port combinations we could use separate packet marks or multiple TUN devices. In actual deployment we would have to overcome challenges such as managing large numbers of iptables rules and possibly network devices, interference with other uses of packet marks, and deployment and reallocation of existing IP ranges.],
-  [Rather than increase the workload on our firewall, we wrote a single-purpose service dedicated to egressing IP packets on soft-unicast address space. For reasons lost in the mists of time, we named it SLATFATF, or “fish” for short. This service’s sole responsibility is to proxy IP packets using soft-unicast address space and manage the lease of those addresses.],
-  [WARP is not the only user of soft-unicast IP space in our network. Many Cloudflare products and services make use of the soft-unicast capability, and many of them use it in scenarios where we create a TCP socket in order to proxy or carry HTTP connections and other TCP-based protocols. Fish therefore needs to lease addresses that are not used by open sockets, and ensure that sockets cannot be opened to addresses leased by fish.],
-  [Our first attempt was to use distinct per-client addresses in fish and continue to let Netfilter/conntrack apply SNAT rules. However, we discovered an unfortunate interaction between Linux’s socket subsystem and the Netfilter conntrack module that reveals itself starkly when you use packet rewriting.],
-  [Collision avoidance],
-  [Suppose we have a soft-unicast address slice, 198.51.100.10:9000-9009. Then, suppose we have two separate processes that want to bind a TCP socket at 198.51.100.10:9000 and connect it to 203.0.113.1:443. The first process can do this successfully, but the second process will receive an error when it attempts to connect, because there is already a socket matching the requested 5-tuple.],
-  [Instead of creating sockets, what happens when we emit packets on a TUN device with the same destination IP but a unique source IP, and use source NAT to rewrite those packets to an address in this range?],
-  [If we add an nftables “snat” rule that rewrites the source address to 198.51.100.10:9000-9009, Netfilter will create an entry in the conntrack table for each new connection seen on fishtun, mapping the new source address to the original one. If we try to forward more connections on that TUN device to the same destination IP, new source ports will be selected in the requested range, until all ten available ports have been allocated; once this happens, new connections will be dropped until an existing connection expires, freeing an entry in the conntrack table.],
-  [Unlike when binding a socket, Netfilter will simply pick the first free space in the conntrack table. However, if you use up all the possible entries in the table you will get an EPERM error when writing an IP packet . Either way, whether you bind kernel sockets or you rewrite packets with conntrack, errors will indicate when there isn’t a free entry matching your requirements.],
-  [Now suppose that you combine the two approaches: a first process emits an IP packet on the TUN device that is rewritten to a packet on our soft-unicast port range. Then, a second process binds and connects a TCP socket with the same addresses as that IP packet:],
-  [The first problem is that there is no way for the second process to know that there is an active connection from 198.51.100.10:9000 to 203.0.113.1:443, at the time the connect() call is made. The second problem is that the connection is successful from the point of view of that second process.],
-  [It should not be possible for two connections to share the same 5-tuple. Indeed, they don’t. Instead, the source address of the TCP socket is silently rewritten to the next free port .],
-  [This behaviour is present even if you use conntrack without either SNAT or MASQUERADE rules. It usually happens that the lifetime of conntrack entries matches the lifetime of the sockets they’re related to, but this is not guaranteed, and you cannot depend on the source address of your socket matching the source address of the generated IP packets.],
-  [Crucially for soft-unicast, it means conntrack may rewrite our connection to have a source port outside of the port slice assigned to our machine. This will silently break the connection, causing unnecessary delays and false reports of connection timeouts. We need another solution.],
-  [Taking a breather],
-  [For WARP, the solution we chose was to stop rewriting and forwarding IP packets, instead to terminate all TCP connections within the server and proxy them to a locally-created TCP socket with the correct soft-unicast address. This was an easy and viable solution that we already employed for a portion of our connections, such as those directed at the CDN, or intercepted as part of the Zero Trust Secure Web Gateway. However, it does introduce additional resource usage and potentially increased latency compared to the status quo. We wanted to find another way (to) forward.],
-  [An inefficient interface],
-  [If you want to use both packet rewriting and bound sockets, you need to decide on a single source of truth. Netfilter is not aware of the socket subsystem, but most of the code that uses sockets and is also aware of soft-unicast is code that Cloudflare wrote and controls. A slightly younger version of myself therefore thought it made sense to change our code to work correctly in the face of Netfilter’s design.],
-  [Our first attempt was to use the Netlink interface to the conntrack module, to inspect and manipulate the connection tracking tables before sockets were created. Netlink is an extensible interface to various Linux subsystems and is used by many command-line tools like ip and, in our case, conntrack-tools . By creating the conntrack entry for the socket we are about to bind, we can guarantee that conntrack won’t rewrite the connection to an invalid port number, and ensure success every time. Likewise, if creating the entry fails, then we can try another valid address. This approach works regardless of whether we are binding a socket or forwarding IP packets.],
-  [There is one problem with this — it’s not terribly efficient. Netlink is slow compared to the bind/connect socket dance, and when creating conntrack entries you have to specify a timeout for the flow and delete the entry if your connection attempt fails, to ensure that the connection table doesn’t fill up too quickly for a given 5-tuple. In other words, you have to manually reimplement tcp\_tw\_reuse option to support high-traffic destinations with limited resources. In addition, a stray RST packet can erase your connection tracking entry. At our scale, anything like this that can happen, will happen. It is not a place for fragile solutions.],
-  [Socket to ‘em],
-  [Instead of creating conntrack entries, we can abuse kernel features for our own benefit. Some time ago Linux added the TCP\_REPAIR socket option , ostensibly to support connection migration between servers e.g. to relocate a VM. The scope of this feature allows you to create a new TCP socket and specify its entire connection state by hand.],
-  [An alternative use of this is to create a “connected” socket that never performed the TCP three-way handshake needed to establish that connection. At least, the kernel didn’t do that — if you are forwarding the IP packet containing a TCP SYN, you have more certainty about the expected state of the world.],
-  [However, the introduction of TCP Fast Open provides an even simpler way to do this: you can create a “connected” socket that doesn’t perform the traditional three-way handshake, on the assumption that the SYN packet — when sent with its initial payload — contains a valid cookie to immediately establish the connection. However, as nothing is sent until you write to the socket, this serves our needs perfectly.],
-  [You can try this yourself:],
-  [TCP\_FASTOPEN\_CONNECT = 30
-TCP\_FASTOPEN\_NO\_COOKIE = 34
-s = socket(AF\_INET, SOCK\_STREAM)
-s.setsockopt(SOL\_TCP, TCP\_FASTOPEN\_CONNECT, 1)
-s.setsockopt(SOL\_TCP, TCP\_FASTOPEN\_NO\_COOKIE, 1)
-s.bind(('198.51.100.10', 9000))
-s.connect(('1.1.1.1', 53))],
-  [Binding a “connected” socket that nevertheless corresponds to no actual socket has one important feature: if other processes attempt to bind to the same addresses as the socket, they will fail to do so. This satisfies the problem we had at the beginning to make packet forwarding coexist with socket usage.],
-  [Jumping the queue],
-  [While this solves one problem, it creates another. By default, you can’t use an IP address for both locally-originated packets and forwarded packets.],
-  [For example, we assign the IP address 198.51.100.10 to a TUN device. This allows any program to create a TCP socket using the address 198.51.100.10:9000. We can also write packets to that TUN device with the address 198.51.100.10:9001, and Linux can be configured to forward those packets to a gateway, following the same route as the TCP socket. So far, so good.],
-  [On the inbound path, TCP packets addressed to 198.51.100.10:9000 will be accepted and data put into the TCP socket. TCP packets addressed to 198.51.100.10:9001, however, will be dropped. They are not forwarded to the TUN device at all.],
-  [Why is this the case? Local routing is special. If packets are received to a local address, they are treated as “input” and not forwarded, regardless of any routing you think should apply. Behold the default routing rules:],
-  [cbranch\@linux:~\$ ip rule
-cbranch\@linux:~\$ ip rule
-0: from all lookup local
-32766: from all lookup main
-32767: from all lookup default],
-  [The rule priority is a nonnegative integer, the smallest priority value is evaluated first. This requires some slightly awkward rule manipulation to “insert” a lookup rule at the beginning that redirects marked packets to the packet forwarding service’s TUN device; you have to delete the existing rule, then create new rules in the right order. However, you don’t want to leave the routing rules without any route to the “local” table, in case you lose a packet while manipulating these rules. In the end, the result looks something like this:],
-  [ip rule add fwmark 42 table 100 priority 10
-ip rule add lookup local priority 11
-ip rule del priority 0
-ip route add 0.0.0.0/0 proto static dev fishtun table 100],
-  [As with WARP, we simplify connection management by assigning a mark to packets coming from the “fishtun” interface, which we can use to route them back there. To prevent locally-originated TCP sockets from having this same mark applied, we assign the IP to the loopback interface instead of fishtun, leaving fishtun with no assigned address. But it doesn’t need one, as we have explicit routing rules now.],
-  [Uncharted territory],
-  [While testing this last fix, I ran into an unfortunate problem. It did not work in our production environment.],
-  [It is not simple to debug the path of a packet through Linux’s networking stack. There are a few tools you can use, such as setting nftrace in nftables or applying the LOG/TRACE targets in iptables, which help you understand which rules and tables are applied for a given packet.],
-  [Schematic for the packet flow paths through Linux networking and \*tables by Jan Engelhardt],
-  [Our expectation is that the packet will pass the prerouting hook, a routing decision is made to send the packet to our TUN device, then the packet will traverse the forward table. By tracing packets originating from the IP of a test host, we could see the packets enter the prerouting phase, but disappear after the ‘routing decision’ block.],
-  [While there is a block in the diagram for “socket lookup”, this occurs after processing the input table. Our packet doesn’t ever enter the input table; the only change we made was to create a local socket. If we stop creating the socket, the packet passes to the forward table as before.],
-  [It turns out that part of the ‘routing decision’ involves some protocol-specific processing. For IP packets, routing decisions can be cached , and some basic address validation is performed. In 2012, an additional feature was added: early demux . The rationale being, at this point in packet processing we are already looking up something, and the majority of packets received are expected to be for local sockets, rather than an unknown packet or one that needs to be forwarded somewhere. In this case, why not look up the socket directly here and save yourself an extra route lookup?],
-  [The workaround at the end of the universe],
-  [Unfortunately for us, we just created a socket and didn’t want it to receive packets. Our adjustment to the routing table is ignored, because that routing lookup is skipped entirely when the socket is found. Raw sockets avoid this by receiving all packets regardless of the routing decision, but the packet rate is too high for this to be efficient. The only way around this is disabling the early demux feature. According to the patch’s claims, though, this feature improves performance: how far will performance regress on our existing workloads if we disable it?],
-  [This calls for a simple experiment: set the net.ipv4.tcp\_early\_demux syscall to 0 on some machines in a datacenter, let it run for a while, then compare the CPU usage with machines using default settings and the same hardware configuration as the machines under test.],
-  [The key metrics are CPU usage from /proc/stat. If there is a performance degradation, we would expect to see higher CPU usage allocated to “softirq” — the context in which Linux network processing occurs — with little change to either userspace (top) or kernel time (bottom). The observed difference is slight, and mostly appears to reduce efficiency during off-peak hours.],
-  [Swimming upstream],
-  [While we tested different solutions to IP packet forwarding, we continued to terminate TCP connections on our network. Despite our initial concerns, the performance impact was small, and the benefits of increased visibility into origin reachability, fast internal routing within our network, and simpler observability of soft-unicast address usage flipped the burden of proof: was it worth trying to implement pure IP forwarding and supporting two different layers of egress?],
-  [So far, the answer is no. Fish runs on our network today, but with the much smaller responsibility of handling ICMP packets. However, when we decide to tunnel all IP packets, we know exactly how to do it.],
-  [A typical engineering role at Cloudflare involves solving many strange and difficult problems at scale. If you are the kind of goal-focused engineer willing to try novel approaches and explore the capabilities of the Linux kernel despite minimal documentation, look at our open positions — we would love to hear from you!],
-),
-  insert-map: (:),
-  word-count: 2666,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-}
-
-{
-  #standard-article(
   title: [JavaScript, low-level or AI?],
   author: [Luciano Mammino],
   source-name: [Luciano Mammino (loige)],
@@ -309,7 +228,7 @@ ip route add 0.0.0.0/0 proto static dev fishtun table 100],
   [See you around and happy coding! 🤓],
 ),
   insert-map: (:),
-  inline-pq: pull-quote([It’s a bet that we can achieve better performance and efficiency by going lower level and deciding to be explicit about the minutia of how we want to use the hardware at best.], [Luciano Mammino]),
+  inline-pq: pull-quote([And I would go as far as saying that these use cases exist in the industry today and there’s a staggering lack of talent in these areas.], [Luciano Mammino]),
   inline-pq-idx: 20,
   word-count: 1655,
   edited-for-length: false,
@@ -597,79 +516,221 @@ Let me know if you do it ;)],
 
 {
   #standard-article(
-  title: [Why Legislators Need Technologists],
-  author: [Steve Bellovin],
-  source-name: [Steve Bellovin],
+  title: [Building a Developer-Friendly App Stack for 2026],
+  author: [Tammi Saayman],
+  source-name: [Stack Abuse],
   images: (),
   paragraphs: (
-  [A rather bizarre bill has been introduced in the Michigan legislature, the
- Anticorruption of Public Morals Act, H. B. 4938 .
-While there’s a lot to object to in the bill, I’ll leave the broader
-criticisms to others and focus on some technology issues.],
-  [The goal of the bill is specified in §3(1): “A commercial entity,
-public institution, private actor, or internet platform shall not knowingly
-distribute or make available prohibited material”—basically, their
-perception of pornography—“via the internet to any
-individual in this state.”
-Even legislators know that location-spoofing is easy, so §3(5) bars the
-sale of “circumvention tools”—and that’s where the trouble starts.],
-  [§2(a) defines “circumvention tools” as “any software, hardware, or],
-  [service designed to bypass internet filtering mechanisms or content],
-  [restrictions including virtual private networks, proxy servers, and],
-  [encrypted tunneling methods to evade content restrictions.”],
-  [“Designed to bypass” and “to evade” are doing a lot of work here, but],
-  [the technologies named are most certainly vital and multi-use.],
-  [Virtual private networks (VPNs), for example, go back at least to],
-  [SP3 , a],
-  [US government design intended to protect communications on the Internet.],
-  [I wrote about a mechanism to create VPNs in],
-  [1990 .],
-  [Most important, the IETF defined some VPN protocols in IPsec],
-  [( 1998 ).],
-  [None of these were designed to “bypass” filtering or “evade”],
-  [content restrictions, because there were no such things back then.],
-  [Rather, they were designed to provide broad traffic protection and],
-  [to extend corporate networks beyond the firewall.],
-  [And tunneling? It’s been part of
- ssh 
-since its beginning, in 1996. Again, there was no conception of
-evading content restrictions.],
-  [VPNs and ssh tunnels are vital business tools—but this bill requires
-Michigan ISPs to “actively monitor and block known circumvention tools”
-(§3(3)). Not only ordinary businesses use them, ISPs use them to manage
-their infrastructure. This bill might outlaw secure operation of any
-ISP in the state, to say nothing of business travelers to Michigan.],
-  [Can this detection even be done? Well, if you use standard port and protocol
-numbers, you can detect ssh and IPsec, but there’s no requirement to
-do either. This implies using deep packet inspection on all traffic,
-which is hideously expensive and trivial to bypass.],
-  [It gets worse. §4, which applies to any
-“internet platform, website, or social media service that is accessible
-by a user in this state”, imposes a pile of restrictions.
-“Any website… acessible by a user in this state” is
-basically the entire Internet—but
-every such site has to comply.
-The Michigan-specific filtering has to be applied
-“uniformly across all users,” presumably including those not in Michigan.
-Everyone has to implement content moderation tools, except that 
-automated ones don’t work and human ones don’t scale.
-And of course, every web site on the planet has to file an annual
-report with the Michigan state police. I wonder how many languages
-the state police can read—the bill doesn’t seem to require that the
-reports be in English…],
-  [In a minor vein, §2(f)(ii)(A) exempts “peer-reviewed academic content”.
-I suspect that the people behind this bill have never heard of, e.g.,
- arxiv.org , a a preprint site. Most
-(but not all!) content there is intended for eventual peer review, but
-it hasn’t been peer-reviewed yet.
-Subsection (B) exempts “material to be used for scientific and medical
-research or instruction”, but not all material there is intended
-to further future scientific research.],
-  [In short: even if getting “pornography” were a good idea, this bill
-is a horrible way to go about it.],
+  [id="introduction"\>Introduction],
+  [Apps are more complex than ever. You have more tools, APIs, and managed services than you can count, but all that convenience brings new challenges. Microservices sprawl, dependency chains, and flaky CI pipelines can turn simple updates into landmines. How do you scale without everything breaking? How do you stay compliant without drowning in manual checks?],
+  [A developer-friendly stack solves this. Automation, resilient infrastructure, and privacy-first patterns work together to keep workflows predictable, reduce friction, and give you control over growth. Instead of firefighting brittle systems, you can ship faster with guardrails that actually hold.],
+  [This guide walks through practical examples you can implement today, grounded in real patterns teams are using to scale safely.],
+  [id="howtoscaleyourappwithoutbreakingit"\>How to Scale Your App Without Breaking It],
+  [Scaling your app comes down to one question: can it handle more users or more data without collapsing? There are a few approaches developers use.],
+  [Vertical scaling adds more CPU, RAM, or disk to a single machine. It’s fast to implement but comes with higher costs and hard limits. You eventually hit the ceiling of the largest instance.],
+  [Horizontal scaling adds more machines, containers, or pods. You get better long-term resilience, but it introduces coordination overhead, challenges with distributed state, and more moving parts to monitor.],
+  [id="verticalscalingexampleonaws"\>Vertical Scaling Example on AWS],
+  [aws ec2 modify-instance-attribute \\
+ --instance-id i-12345 \\
+ --instance-type t3.large],
+  [id="horizontalscalingexampleonkubernetes"\>Horizontal Scaling Example on Kubernetes],
+  [kubectl scale deployment api-server \\
+ --replicas=6],
+  [id="elasticscaling"\>Elastic Scaling],
+  [Elasticity is about letting your system adjust itself when demand changes. Morning traffic is high, nights are quiet, and campaigns can trigger sudden bursts. Auto-scaling groups or container orchestrators handle all that for you.],
+  [Just be aware that aggressive scaling policies can trigger cost spikes, cold starts, or churn if thresholds aren’t tuned correctly.],
+  [Here’s a simple AWS example:],
+  [aws autoscaling put-scaling-policy \\
+ --policy-name cpu-scale-up \\
+ --auto-scaling-group-name api-asg \\
+ --scaling-adjustment 2 \\
+ --adjustment-type ChangeInCapacity],
+  [With elastic scaling, your app won’t crash under load, and you won’t be paying for idle resources.],
+  [id="howtomanagefileworkflowsconsistently"\>How to Manage File Workflows Consistently],
+  [As your system grows, keeping track of files can get messy. Automated pipelines help by moving, processing, and storing files correctly without anyone having to babysit them. It cuts down on mistakes and keeps everything ready to scale smoothly.],
+  [id="integratingautomationwithcicdpipelines"\>Integrating Automation with CI/CD Pipelines],
+  [You can treat files just like servers or networks when using tools like Terraform or Ansible. For example, you might automatically archive old documents instead of cleaning them up by hand:],
+  [resource "aws\_s3\_bucket\_lifecycle\_configuration" "archive" {
+ bucket = aws\_s3\_bucket.docs.id],
+  [rule {
+ id = "archive-old-files"
+ status = "Enabled"],
+  [transition {
+ days = 30
+ storage\_class = "GLACIER"
+ }
+ }
+}],
+  [With this, your storage stays tidy, costs stay predictable, and you don’t have to worry about remembering to move files around manually.],
+  [id="handlingfileseffectively"\>Handling Files Effectively],
+  [File workflows can eat up a surprising amount of engineering time. Automation reduces errors, keeps environments consistent, and speeds up your pipeline. This is especially true for large file types like PDFs. Tools like SmallPDF, Ghostscript, or PDFTron help eliminate the manual PDF chaos.],
+  [You can also edit PDF files online with SmallPDF whenever a manual check is needed, and it provides a clean API for common tasks.],
+  [SmallPDF works via simple HTTP requests, so you can call it from Python, Node.js, Java, or any language that supports requests.],
+  [id="exampleinpython"\>Example in Python],
+  [import requests],
+  [response = requests.post(
+ "https:\/\/api.smallpdf.com/v1/merge" ,
+ headers={ "Authorization" : "Bearer YOUR\_TOKEN" },
+ files={ "file" : open ( "input.pdf" , "rb" )}
+)],
+  [id="commonpdftasksandhowtohandlethem"\>Common PDF Tasks and How to Handle Them],
+  [Merge, compress, and split PDFs (SmallPDF, PDFTron, Ghostscript)],
+  [Convert Word or HTML files to PDFs (pdfkit, Puppeteer, SmallPDF)],
+  [Add headers, footers, or annotations (PyPDF2, pdf-lib, iText)],
+  [id="processinglargepdfsefficiently"\>Processing Large PDFs Efficiently],
+  [Big PDFs can grind your workflows to a halt if you try to handle everything at once. Breaking tasks into smaller steps keeps things fast and responsive.],
+  [A few techniques that help:],
+  [Process documents in batches],
+  [Stream files instead of loading them entirely into memory],
+  [Cache intermediate results so heavy steps aren’t repeated],
+  [Use asynchronous jobs to avoid blocking worker threads],
+  [For example, streaming a PDF in Node.js looks like this:],
+  [const fs = require ( 'fs' );
+ const stream = fs.createReadStream( 'large.pdf' );],
+  [stream.on( 'data' , chunk =\> {
+ processChunk(chunk);
+});],
+  [This approach keeps your system responsive and prevents memory issues when working with very large files.],
+  [Long-running PDF jobs can block worker threads, and streaming can fail if queues back up, so keep an eye on batch sizes and memory usage.],
+  [id="howtohandleprivacyandcompliance"\>How to Handle Privacy and Compliance],
+  [Keeping your system compliant is simpler when the rules are built into the code instead of just sitting in a handbook. GDPR and CCPA expect your platform to respect user rights automatically. You can make this happen by handling consent properly, minimizing the data you store, and controlling who can access it. Following these patterns keeps your workflows safe and your users’ trust intact.],
+  [id="enforcingconsentandcomplianceprogrammatically"\>Enforcing Consent and Compliance Programmatically],
+  [When systems depend on cross-site tracking , it’s important to use a solution that keeps compliance at the forefront.],
+  [Usercentrics is a decent example. It helps manage consent consistently across platforms and channels so developers do not need to build fragile custom logic that can break over time. In practice, the platform handles consent logging, banner behaviour, storage, and syncing across devices. While developers only implement the integration layer and respect the consent signals it emits.],
+  [Your actual responsibility is to wire those consent states into your tracking, analytics, cookies, and API calls so the app never runs code the user hasn’t approved.],
+  [By integrating tools like this, applications automatically respect user permissions and stay aligned with GDPR and CCPA requirements.],
+  [Think of it as: the tool manages the rules, but your code enforces them.],
+  [id="implementingpolicyascode"\>Implementing Policy-as-Code],
+  [Policy-as-code means expressing privacy rules directly in the system so they run automatically.],
+  [For example, a simple retention rule could look like this:],
+  [retention {
+ data\_type = "analytics"
+ keep\_for = "30d"
+ action = "delete"
+}],
+  [The system checks the rule every day and deletes old logs without anyone having to remember. Tools (such as OPA, AWS Lake Formation policies, or internal rule engines) usually evaluate these policies, but developers still need to define the rules, connect them to the right datasets, and ensure services call the policy engine rather than hard-code their own behaviour.],
+  [This keeps privacy logic consistent across the stack rather than living in scattered scripts or one-off cron jobs.],
+  [id="minimizingandanonymizingsensitivedata"\>Minimizing and Anonymizing Sensitive Data],
+  [The goal is to keep sensitive data out of reach and make your system safer while reducing compliance headaches.],
+  [Some practical ways to do this include hashing data before storage, tokenizing identifiers, pseudonymizing user info, and restricting access with scoped storage so systems only see what they need.],
+  [Example: hashing an email with SHA256 in Python],
+  [import hashlib],
+  [hashed = hashlib.sha256( b"user\@example.com" ).hexdigest()],
+  [Libraries handle the hashing, encryption, or tokenization; developers choose the method, enforce it in code paths, and make sure no service logs sensitive data by accident. The tooling provides the mechanism, and you implement where and when it runs.],
+  [id="securingcicdpipelinesandsecretsmanagement"\>Securing CI/CD Pipelines and Secrets Management],
+  [You don’t want secrets just lying around in plaintext. Tools like HashiCorp Vault or AWS KMS keep your keys safe and accessible only where they need to be.],
+  [Example: grab a secret with Vault CLI:],
+  [vault kv get secret/api-key],
+  [On top of that, role-based access controls make sure only the right pipelines or services can touch those sensitive values. The tools store and encrypt secrets, while developers define access, configure environments, and rotate keys to avoid hardcoded tokens.],
+  [Just know that even with Vault, misconfigured roles or hardcoded fallbacks can expose secrets.],
+  [id="howtobuildresilientinfrastructure"\>How to Build Resilient Infrastructure],
+  [Resilient systems survive failures and make automation easier because the platform behaves predictably. Whether you’re on AWS, Azure, or Google Cloud, you need redundancy, disaster recovery plans, and capacity planning that actually works.],
+  [id="awsmultizonestorageandcompute"\>AWS Multi-Zone Storage and Compute],
+  [resource "aws\_instance" "api" {
+ ami = "ami-12345"
+ instance\_type = "t3.medium"
+ availability\_zone = "eu-west-1a"
+}],
+  [resource "aws\_db\_instance" "main" {
+ engine = "postgres"
+ instance\_class = "db.t3.medium"
+ multi\_az = true
+}],
+  [Using multiple zones stops single points of failure from taking down your platform.],
+  [id="azureexamplescalablenetworking"\>Azure Example: Scalable Networking],
+  [az network application-gateway create \\
+ --name mainGateway \\
+ --resource-group core \\
+ --capacity 3 \\
+ --sku Standard\_v2],
+  [Azure's gateway maintains throughput even as traffic increases.],
+  [id="gcpexampleautoscalingamanagedinstancegroup"\>GCP Example: Autoscaling a Managed Instance Group],
+  [gcloud compute instance-groups managed set-autoscaling api-group \\
+ --max-num-replicas 10 \\
+ --target-cpu-utilization 0.7],
+  [Autoscaling ensures your system adjusts automatically to demand.],
+  [id="multitenantconsiderations"\>Multi-Tenant Considerations],
+  [If your platform serves multiple tenants, you have to isolate noisy neighbors and protect shared resources. CPU quotas, request limits, namespace isolation, and per-tenant rate limits are basic, but essential.],
+  [Even with these guardrails, noisy-neighbor effects can still surface through shared databases, caches, or network throughput, so monitoring tenant-level patterns becomes crucial.],
+  [id="monitoringhighvolumepipelines"\>Monitoring High-Volume Pipelines],
+  [Big data pipelines can fail silently if you’re not careful. Track queue depth, memory usage, and retry counts to catch problems early. Logging and metrics need to be built in from the start, not added later.],
+  [id="howtoautomatedocumentsignaturesandapprovals"\>How to Automate Document Signatures and Approvals],
+  [Automating signatures cuts down friction in legal or onboarding workflows. A simple API call can send a document for signing:],
+  [POST /signatures
+{
+ "document" : "contract.pdf" ,
+ "signer" : { "email" : "user\@example.com" }
+}],
+  [Approvals can follow event-driven triggers. For example, once a signature completes, a function can move the file to storage or alert the next team:],
+  [exports .handleSignature = ( event ) =\> {
+ if (event.status === "signed" ) {
+ storeFile(event.document);
+ }
+};],
+  [Setting up automatic routing keeps documents moving smoothly and removes any guesswork about where something is in the process.],
+  [id="howtosetupscalablestorage"\>How to Set Up Scalable Storage],
+  [How you handle storage really shapes how your platform copes with more data. Usually, you’re juggling three kinds:],
+  [Object storage for random files like PDFs, images, or logs],
+  [Block storage for VM disks or database volumes],
+  [File storage for shared directories that multiple services need to see],
+  [When you hook this up to an event-driven pipeline, files move and get processed as soon as something happens. Your system keeps running smoothly without you having to babysit it.],
+  [id="handlingfileswitheventdrivenpipelines"\>Handling Files with Event-Driven Pipelines],
+  [Message queues like Kafka , SQS, or Pub/Sub give files a clear path through your system. A producer sends a file reference to the queue, and a consumer picks it up, processes it, and stores the result.],
+  [Here’s a simple example in Python:],
+  [id="producer"\>Producer:],
+  [sqs.send\_message(
+ QueueUrl=queue\_url,
+ MessageBody= "s3:\/\/bucket/document.pdf" 
+)],
+  [id="consumer"\>Consumer:],
+  [message = sqs.receive\_message(QueueUrl=queue\_url)
+process(message\[ "Body" \])],
+  [This setup keeps large systems organized and responsive, even as volumes grow.],
+  [id="integratingstoragewithmicroservices"\>Integrating Storage with Microservices],
+  [Once you have a bunch of services all touching the same data, the little edge cases start showing up. One service is writing a ton of events, another is reading the same record, and something always spikes at the worst time. It helps a lot when your storage clients quietly handle retries, throttling and version checks so your services can just get on with their work.],
+  [Here are a few patterns that usually keep things sane:],
+  [Retries that do the right thing automatically. During a busy period, an orders service might hit throttling. A simple retry with backoff keeps the write moving without causing chaos:],
+  [for attempt in range ( 3 ):
+ try :
+ event\_store.append(event, key=event. id )
+ break 
+ except ThrottledError:
+ time.sleep( 2 \*\* attempt)],
+  [Optimistic concurrency for shared records. Payment services lean on this a lot. You read the record, update it and only write it back if nothing changed underneath you:],
+  [const current = await balances.get(userId);],
+  [await balances.update(
+ userId,
+ { amount : current.amount - 10 },
+ { ifVersion : current.version }
+);],
+  [If someone else updated first, you just retry.],
+  [Clients that ease off when the database is under pressure. Catalogue services often hit a cached document store first, so reads stay fast. When the primary database is doing something heavy, a client with backoff avoids piling on and gives the system room to breathe.],
+  [Queues that smooth out the noisy parts of the workload. Anything that spikes benefits from a queue. A notifications service can simply pull the next message and process at a steady pace:],
+  [message = sqs.receive\_message(QueueUrl=queue\_url)
+process(message\[ "Body" \])],
+  [Patterns like these keep each service behaving itself even when the rest of the system is wobbling a bit. Your data stays in decent shape, the pipelines keep moving, and you dodge those strange little state bugs that only decide to appear when traffic suddenly gets excited.],
+  [id="howtokeepyourautomationreliable"\>How to Keep Your Automation Reliable],
+  [Automation only works when the system is tested and monitored. Without validation, pipelines drift, break, or silently skip tasks.],
+  [id="testingandmonitoringworkflows"\>Testing and Monitoring Workflows],
+  [Before deploying infrastructure as code, it’s a good idea to validate it. For example, with Terraform, you can quickly check your configuration:],
+  [terraform validate],
+  [In your CI pipelines, you can add smoke tests or schema checks to catch problems before they become bigger issues. Once your workflows are running, logging and distributed tracing show exactly where things slow down or fail. This helps you spot bottlenecks and fix them before they affect users.],
+  [id="recoveringgracefullyfromfailures"\>Recovering Gracefully From Failures],
+  [Your systems should be able to recover from errors without needing manual cleanup. Some practical techniques include:],
+  [Idempotent scripts – make sure scripts can run multiple times without breaking anything.],
+  [Checkpointing – save progress so tasks can resume after a failure.],
+  [Dead-letter queues – hold failed tasks for later review or reprocessing.],
+  [For example, an idempotent script could look like this:],
+  [if not file\_exists( "output.txt" ):
+ generate\_output()],
+  [This way, if the job retries, it won’t process the same data twice.],
+  [id="buildingworkflowsthatscale"\>Building Workflows that Scale],
+  [A developer-friendly app stack relies on automation, privacy, and resilient infrastructure working together. When these pieces are in place, you gain control over workflows, reduce friction, and build a system that handles growth without constant firefighting.],
+  [Take a look at your own stack: identify bottlenecks, think through how documents, storage, and workflows scale, and consider how privacy and compliance are enforced. Applying these practices in real systems makes shipping reliable software at scale feel more manageable.],
+  [For deeper dives, check out the StackAbuse guided projects to see concrete implementations in action.],
 ),
   insert-map: (:),
-  word-count: 582,
+  word-count: 2362,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -851,7 +912,7 @@ projects launched in the previous year, so I am going to recap here what happene
   [maxogden/mississippi (contribution): A collection of useful stream utility modules for writing better code using streams.],
   [lmammino/lumpy : A lumpy and dummy JavaScript module bundler for those who are stuck in the past.],
   [lmammino/tick-stream : A simple transform stream that can log a tick every time data is pushed through a pipe.],
-  [nickjj/ansible-docker (contribution): Install / Configure Docker and Docker Compose using Ansible.],
+  [nickjj/ansible-docker (contribution): Install \/ Configure Docker and Docker Compose using Ansible.],
   [jsdoc2md/dmd (contribution): The default output template for jsdoc2md.],
   [👍 Comparing last year (19) to this year (22) I had a +15.79% repo contributions increase. Another pretty good vanity metric!],
   [id="previous-years-goals"\>Previous years goals],
@@ -888,80 +949,6 @@ projects launched in the previous year, so I am going to recap here what happene
 ),
   insert-map: (:),
   word-count: 2575,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-}
-
-{
-  #standard-article(
-  title: [How to build your own VPN, or: the history of WARP],
-  author: [Chris Branch],
-  source-name: [Cloudflare Research],
-  images: (),
-  paragraphs: (
-  [Linux’s networking capabilities are a crucial part of how Cloudflare serves billions of requests in the face of DDoS attacks. The tools it provides us are invaluable and useful , and a constant stream of contributions from developers worldwide ensures it continually gets more capable and performant .],
-  [When we developed WARP, our mobile-first performance and security app , we faced a new challenge: how to securely and efficiently egress arbitrary user packets for millions of mobile clients from our edge machines. This post explores our first solution, which was essentially building our own high-performance VPN with the Linux networking stack. We needed to integrate it into our existing network; not just directly linking it into our CDN service, but providing a way to securely egress arbitrary user packets from Cloudflare machines. The lessons we learned here helped us develop new products and capabilities and discover more strange things besides. But first, how did we get started?],
-  [A bridge between two worlds],
-  [WARP’s initial implementation resembled a virtual private network (VPN) that allows Internet access through it. Specifically, a Layer 3 VPN – a tunnel for IP packets.],
-  [IP packets are the building blocks of the Internet. When you send data over the Internet, it is split into small chunks and sent separately in packets, each one labeled with a destination address (who the packet goes to) and a source address (who to send a reply to). If you are connected to the Internet, you have an IP address.],
-  [You may not have a unique IP address, though. This is certainly true for IPv4 which, despite our and many others’ long-standing efforts to move everyone to IPv6, is still in widespread use. IPv4 has only 4 billion possible addresses and they have all been assigned – you’re gonna have to share.],
-  [When you use WiFi at home, work or the coffee shop, you’re connected to a local network. Your device is assigned a local IP address to talk to the access point and any other devices in your network. However, that address has no meaning outside of the local network. You can’t use that address in IP packets sent over the Internet, because every local IPv4 network uses the same few sets of addresses .],
-  [So how does Internet access work? Local IPv4 networks generally employ a router , a device to perform network-address translation (NAT). NAT is used to convert the private IPv4 network addresses allocated to devices on the local-area network to a small set of publicly-routable addresses given by your Internet service provider. The router keeps track of the conversions it applies between the two networks in a translation table. When a packet is received on either network, the router consults the translation table and applies the appropriate conversion before sending the packet to the opposite network.],
-  [Diagram of a router using NAT to bridge connections from devices on a private network to the public Internet],
-  [A VPN that provides Internet access is no different in this respect to a LAN – the only unusual aspect is that the user of the VPN communicates with the VPN server over the public Internet. The model is simple: private network IP packets are tunnelled, or encapsulated, in public IP packets addressed to the VPN server.],
-  [Schematic of HTTPS packets being encapsulated between a VPN client and server],
-  [Most times, VPN software only handles the encapsulation and decapsulation of packets, and gives you a virtual network device to send and receive packets on the VPN. This gives you the freedom to configure the VPN however you like. For WARP, we need our servers to act as a router between the VPN client and the Internet.],
-  [NAT’s how you do it],
-  [Linux – the operating system powering our servers – can be configured to perform routing with NAT in its Netfilter subsystem. Netfilter is frequently configured through nftables or iptables rules. Configuring a “source NAT” to rewrite the source IP of outgoing packets is achieved with a single rule:],
-  [nft add rule ip nat postrouting oifname "eth0" ip saddr 10.0.0.0/8 snat to 198.51.100.42],
-  [This rule configures Netfilter’s NAT feature to perform source address translation for any packet matching the following criteria:],
-  [The source address is the 10.0.0.0/8 private network subnet - in this example, let’s say VPN clients have addresses from this subnet.],
-  [The packet shall be sent on the “eth0” interface - in this example, it’s the server’s only physical network interface, and thus the route to the public Internet.],
-  [Where these two conditions are true, we apply the “snat” action to rewrite the source IP packet, from whichever address the VPN client is using, to our example server’s public IP address 198.51.100.42. We keep track of the original and rewritten addresses in the rewrite table.],
-  [Schematic of an encapsulated packet being decapsulated and rewritten by a VPN server],
-  [You may require additional configuration depending on how your distribution ships nftables – nftables is more flexible than the deprecated iptables, but has fewer “implicit” tables ready to use.],
-  [You also might need to enable IP forwarding in general , as by default you don’t want a machine connected to two different networks to forward between them without realising it.],
-  [A conntrack is a conntrack is a conntrack],
-  [We said before that a router keeps track of the conversions between addresses in the two networks. In the diagram above, that state is held in the rewrite table.],
-  [In practice, any device may only implement NAT usefully if it understands the TCP and UDP protocols, in particular how they use port numbers to support multiple independent flows of data on a single IP address. The NAT device – in our case Linux – ensures that a unique source port and address is used for each connection, and reassigns the port if required. It also needs to understand the lifecycle of a TCP connection, so that it knows when it is safe to reuse a port number: with only 65,536 possible ports, port reuse is essential.],
-  [Linux Netfilter has the conntrack module, widely used to implement a stateful firewall that protects servers against spoofed or unexpected packets, preventing them interfering with legitimate connections. This protection is possible because it understands TCP and the valid state of a connection. This capability means it’s perfectly positioned to implement NAT, too. In fact, all packet rewriting is implemented by conntrack.],
-  [A diagram showing the steps taken by conntrack to validate and rewrite packets],
-  [As a stateful firewall, the conntrack module maintains a table of all connections it has seen. If you know all of the active connections, you can rewrite a new connection to a port that is not in use.],
-  [In the “snat” rule above, Netfilter adds an entry to the rewrite table, but doesn’t change the packet yet. Only basic packet changes are permitted within nftables . We must wait for packet processing to reach the conntrack module, which selects a port unused by any active connection, and only then rewrites the packet.],
-  [A diagram showing the roles of netfilter and conntrack when applying NAT to traffic],
-  [Marky mark and the firewall bunch],
-  [Another mode of conntrack is to assign a persistent mark to packets belonging to a connection. The mark can be referenced in nftables rules to implement different firewall policies, or to control routing decisions.],
-  [Suppose you want to prevent specific addresses (e.g. from a guest network) from accessing certain services on your machine. You could add a firewall rule for each service denying access to those addresses. However, if you need to change the set of addresses to block, you have to update every rule accordingly.],
-  [Alternatively, you could use one rule to apply a mark to packets coming from the addresses you wish to block, and then reference the mark in all the service rules that implement the block. Now if you wish to change the addresses, you need only update a single rule to change the scope of that packet mark.],
-  [This is most beneficial to control routing behaviour, as routing rules cannot make decisions on as many attributes of the packet as Netfilter can. Using marks allows you to select packets based on powerful Netfilter rules.],
-  [A diagram showing netfilter marking specific packets to apply special routing rules],
-  [The code powering the WARP service was written by Cloudflare in Rust, a security-focused systems programming language. We took great care implementing boringtun - our WireGuard implementation - and MASQUE . But even if you think the front door is impenetrable, it is good security practice to employ defense-in-depth.],
-  [One example is distinguishing IP packets that come from clients vs. packets that originate elsewhere in our network. One common method is to allocate a unique IP space to WARP traffic and distinguish it based on IP address, but this can be fragile if we need to apply a configuration change to renumber our internal networks – remember IPv4’s limited address space! Instead we can do something simpler.],
-  [To bring IP packets from WARP clients into the Linux networking stack, WARP uses a TUN device – Linux’s name for the virtual network device that programs can use to send and receive IP packets. A TUN device can be configured similarly to any other network device like Ethernet or Wi-Fi adapters, including firewall and routing.],
-  [Using nftables, we mark all packets output on WARP’s TUN device. We have to explicitly store the mark in conntrack’s state table on the outgoing path and retrieve it for the incoming packet, as netfilter can use packet marks independently of conntrack.],
-  [table ip mangle {
- chain forward {
- type filter hook forward priority mangle; policy accept;
- oifname "fishtun" counter ct mark set 42
- }
- chain prerouting {
- type filter hook prerouting priority mangle; policy accept;
- counter meta mark set ct mark
- }
-}],
-  [We also need to add a routing rule to return marked packets to the TUN device:],
-  [ip rule add fwmark 42 table 100 priority 10
-ip route add 0.0.0.0/0 proto static dev warp-tun table 100],
-  [Now we’re done. All connections from WARP are clearly identified and can be firewalled separately from locally-originated connections or other nodes on our network. Conntrack handles NAT for us, and the connection marks tell us which tracked connections were made by WARP clients.],
-  [The end?],
-  [In our first version of WARP, we enabled clients to access arbitrary Internet hosts by combining multiple components of Linux’s networking stack. Each of our edge servers had a single IP address from an allocation dedicated to WARP, and we were able to configure NAT, routing, and appropriate firewall rules using standard and well-documented methods.],
-  [Linux is flexible and easy to configure, but it would require one IPv4 address per machine. Due to IPv4 address exhaustion, this approach would not scale to Cloudflare’s large network. Assigning a dedicated IPv4 address for every machine that runs the WARP server results in an eye-watering address lease bill. To bring costs down, we would have to limit the number of servers running WARP, increasing the operational complexity of deploying it.],
-  [We had ideas, but we would have to give up the easy path Linux gave us. IP sharing seemed to us the most promising solution , but how much has to change if a single machine can only receive packets addressed to a narrow set of ports? We will reveal all in a follow-up blog post, but if you are the kind of curious problem-solving engineer who is already trying to imagine solutions to this problem, look at our open positions – we’d like to hear from you!],
-),
-  insert-map: (:),
-  word-count: 1932,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -1076,7 +1063,7 @@ ip route add 0.0.0.0/0 proto static dev warp-tun table 100],
   [To fix this problem I did a few things.],
   [I used the Astro Picture component which performs build time optimization of the image producing multiple versions of the same image with different sizes and formats (including modern ones like WEBP and AVIF ).],
   [I also created a pixelated placeholder that can be very small in file size and load very fast.],
-  [I converted this pixelated image to WEBP (~13kb once Base64 encoded) and AVIF (~8kb once Base64 encoded). Since these files are so small, I can include them straight away in the generated HTML using the inline data:image/ ;base64,... . This should reduce the number of network requests, because the image content is already available in the HTML page.],
+  [I converted this pixelated image to WEBP (~13kb once Base64 encoded) and AVIF (~8kb once Base64 encoded). Since these files are so small, I can include them straight away in the generated HTML using the inline data:image\/ ;base64,... . This should reduce the number of network requests, because the image content is already available in the HTML page.],
   [Removed the lazy and defer attributes from the image tag. This was the most counter-intuitive change. I thought that using these attributes would have helped with the LCP score, but since the image is the main piece of content that users will see on the home page, you actually want to load it as soon as possible and not defer it!],
   [Added a tiny bit of JavaScript that will load the full image in the background and replace the placeholder image once it’s loaded.],
   [Above you can see the pixelated placeholder image. I think I look cool in pixel art! 😎],
@@ -1389,67 +1376,7 @@ European Covid Green Certificate :],
   [Chat soon! 👋],
 ),
   insert-map: (:),
-  inline-pq: pull-quote([D’Angelo  id="articles"\>Articles  In addition to the articles already mentioned for the Node.], [Luciano Mammino]),
-  inline-pq-idx: 101,
   word-count: 5081,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-}
-
-{
-  #standard-article(
-  title: [How does Cloudflare’s Speed Test really work?],
-  author: [Lai Yi Ohlsen],
-  source-name: [Cloudflare Research],
-  images: (),
-  paragraphs: (
-  [Anyone can say their Internet service is fast, but how do you really know if it is? Just as we check our temperature to see if a fever has gone down or test the air to know its quality, users of the Internet run speed tests to answer: “How fast is my connection?” Since it is common to talk about Internet connectivity in terms of “speed,” you might think this is a straightforward concept to measure, but there are actually many different ways to do so. For Cloudflare’s Speed Test, we set out to measure your connection’s quality and what it realistically provides, rather than focusing on peak bandwidth. In this blog post we’ll discuss how Cloudflare thinks about measuring Internet quality, how our own Cloudflare speed test works, and our future plans for providing Internet measurement tools that help everyone build a better Internet.],
-  [What is a speed test?],
-  [Before diving into Cloudflare’s speed test, let’s take a moment to understand what a speed test actually is. There’s no one definition of what Internet “speed” means, but what people are typically referring to is the measurement of throughput or the rate at which data is sent between sender and receiver within a network. Throughput is typically expressed in mega or gigabits per second (Mbps or Gbps), which are units that end users are usually familiar with, due to how commercial Internet Service Providers (ISPs) often market their packages (500 Mbps, 1 Gbps, increasingly 10 Gbps and so on). In light of this popular association, speed tests are typically designed to send data until the maximum throughput of a connection is met.],
-  [Most speed tests are run from end user devices such as laptops, mobile phones and sometimes routers, but where the test sends data to , meaning where the server is in the network, differs from test to test. These variances can impact results dramatically. For example, consider a user in New York City running one speed test that sends data to New Jersey, while another connects to a server in Singapore. Even if both tests use the exact same methodology, their results will differ noticeably due to the distance they have to travel and the network links they have to cross to get there.],
-  [Server locations are one of many ways speed tests vary from one another. They may also differ in how the test decides to send more data, the number of TCP/UDP streams it opens to send data, which congestion control algorithm it uses, how it aggregates the samples it collects, etc. Each of these decisions influences what the end user sees as their final “speed”. It is also common for speed tests to measure latency , packet loss and sometimes latency variation (jitter), though as important as they are, and as we’ll discuss in more detail below, these metrics are not always intuitive for end users to understand.],
-  [Speed tests gained popularity in the early days of the Internet, when bandwidth was the primary obstacle to a quality end user experience. But as the Internet has progressed and its use cases have expanded, bandwidth has become less of a limitation and, in some geographies, almost plentiful. Now, other challenges that can degrade your video calls or gaming sessions, such as latency under load ( bufferbloat ) and packet loss, have become the industry focus as key metrics to optimize when improving Internet connectivity. Nevertheless, speed tests remain a valuable tool for assessing Internet quality, in part because of their popularity with end users. Speed tests are by far the most well-known kind of Internet measurement and for that reason, Cloudflare is proud to provide one.],
-  [How does Cloudflare’s Speed Test work?],
-  [When you visit Cloudflare’s Speed Test , results start appearing right away. That’s because as soon as the page loads, your browser begins sending data requests to Cloudflare’s Network Quality API and recording how long each exchange takes. The API runs on Cloudflare’s global network using Workers , leveraging our anycast architecture to automatically route you to the nearest data center.],
-  [Unlike many other speed test methodologies that focus on absolute maximum throughput, Cloudflare’s Speed Test doesn’t try to saturate your connection. Instead, it sends a series of data payloads of predefined sizes—what we call data blocks—to assess your connection’s quality under more realistic usage patterns. Each data block is transmitted a fixed number of times, and once the sequence completes, the detailed results are displayed in box-and-whisker plots to show the observed ranges and percentiles.],
-  [To generate each individual result, we record the time it takes to establish the connection and the time required for the data transfer to finish, subtracting any server “thinking time”. Establishing a connection involves exchanging individual packets back and forth and happens as quickly as network latency permits, while the data transfer time is limited by network bandwidth, congestion, server limits, and even the amount of data transferred—perhaps surprisingly, smaller transfers also have their throughput limited by network latency.],
-  [As throughput measurements run, the test also sends empty requests at regular intervals to measure loaded latency: the round-trip time (RTT) it takes for data to travel to Cloudflare’s network and back while your connection is busy. Loaded latency differs from idle latency, which measures RTT to Cloudflare’s network when no data is being transferred. Idle latency is recorded first, as soon as the page loads, and reflects the lowest expected latency. The test also measures loaded and idle jitter, the average variation between consecutive RTT measurements—reflecting network stability—and packet loss, the percentage of packets that fail to reach their destination when relayed through a WebRTC TURN server over a period of time.],
-  [Throughout the test, you can watch the aggregate results for each metric update in real time, but the final result isn’t calculated until all test sequences are complete. Once they are, the full set of measurements is used to compute an Aggregated Internet Measurement (AIM) score—a metric designed to translate your connection’s performance into end-user-friendly terms, such as how well it supports streaming, gaming, or video conferencing. The AIM score provides a convenient summary of overall performance, but in this deep dive, we’ll focus on what the detailed Cloudflare Speed Test results actually tell you—and what they don’t—about your Internet connection.],
-  [What do the Cloudflare Speed Test results represent?],
-  [A defining feature of Cloudflare’s Speed Test is that it runs on Cloudflare’s own global network. Other speed test providers place their servers closer to end users or major exchange points to capture how the network performs under specific conditions. Cloudflare’s Speed Test, however—and any test built on our Network Quality API—measures performance in a context that mirrors what users actually do every day: accessing content delivered through Cloudflare’s network.],
-  [Additionally, since Cloudflare’s Speed Test does not strive to saturate a user’s connection, its download and upload tests do not technically measure maximum throughput, but rather the rate at which you can reliably expect to send various sizes of data. While this may seem like a small distinction, it means that Cloudflare’s Speed Test is not trying to show what your connection is capable of at its peak, but rather what it typically delivers—its quality .],
-  [Day to day, most users are not maximizing their available bandwidth. Video conferencing, streaming, web browsing, and even gaming all require minimal bandwidth and are much more sensitive to latency, jitter, and packet loss. In other words, achieving a high score on a throughput-saturating speed test—one that mirrors the service level you purchased from your ISP—does not necessarily equate to a high-quality online experience. The finer details of which metrics matter most for evaluating network quality depend on individual use cases. For example, a gamer might benefit more from lower latency (lower lag), while a remote worker may benefit more from lower jitter (smoother video conferencing). For the majority of modern use cases, throughput is just one of many metrics that contribute to a quality Internet connection],
-  [It’s also important to note that Cloudflare’s Speed Test runs primarily from an end-user device, within the browser. As a result, its measurements include potential bottlenecks beyond the access network—such as the browser itself, the local Wi-Fi network, and other factors. This means the results don’t solely reflect the performance of your ISP, but rather the combined performance of all components along the path to the content.],
-  [It’s common for end users to run speed tests to check whether they’re getting the Internet service they pay for. While that’s a perfectly reasonable question, there’s no standardized definition for how to answer it. This means that no speed test—including Cloudflare’s—is a definitive measure of ISP service. However, it is a helpful resource for assessing the quality of experience when accessing content delivered by Cloudflare’s vast global network.],
-  [How do I interpret my Cloudflare Speed Test results?],
-  [In this section, we’ll interpret the results from two speed test examples: the first test scoring “Great” on all three network quality rubrics , and the second scoring a mere “Average” . In your own tests, you may get a consistent score, or you may get different scores for video streaming, online gaming and video chatting, depending on how well-balanced your Internet connection is over these three use cases.],
-  [From these scores we already get a high-level interpretation of the test results. You can expect consistently good quality from the “Great” connection and reasonable quality with occasional glitches from the “Average” connection – but to understand why , we must look at the numbers.],
-  [Example 1: Wi-Fi over a residential fiber connection],
-  [This test ran from a laptop connected over Wi-Fi inside a single-family home served by a 500 Mbps residential fiber connection, and we can already see that we can’t quite reach the contracted download speed, topping off at 406 Mbps. The culprit here is Wi-Fi, which is usually the bottleneck on high-speed connections, and a common cause of observable instability.],
-  [But here we can see that we’re probably in an area of the house with good reception and without significant activity from neighboring Wi-Fi networks (the two most common causes of poor Wi-Fi). We can tell from the relatively consistent shape of the download and upload graphs, and from the low jitter.],
-  [The latency is well within what’s expected in an urban area (and could be 2 milliseconds lower by switching to a wired connection), and the difference between the numbers at idle and the numbers while loaded (downloading or uploading) is relatively small. This means you can expect to attend a video call while your files synchronize to and from your cloud drive of choice in the background, without any glitches. Large differences between the idle and loaded numbers are a common indicator of a poor connection—if you observe differences approaching 100 milliseconds or more over a wired connection, your ISP is likely at fault.],
-  [Higher-bandwidth connections should display lower idle to loaded latency differences. The higher the bandwidth, the less likely it is to be fully utilized in practice. However, congestion further upstream in the network can drive these numbers up, especially if your ISP is oversubscribing its capacity.],
-  [You might be wondering why the download and upload graphs start slow and ramp up. This happens because data transfers progressively send more packets at once for each required acknowledgment, starting by one acknowledgment for each packet. The consequence is that small data transfers are limited in speed by latency—the longer it takes for a packet to reach its destination, the longer it takes the acknowledgment packet to make its way back to the sender, and the longer it takes for the next data packet to be sent.],
-  [If you’re technically inclined, you may enjoy learning about congestion control algorithms , but that topic alone can fill entire books. For now, you can see this effect in the charts for each download size: transfers smaller than 10 MB can’t utilize the full bandwidth of this connection.],
-  [If you’re left wondering if this means that your normal day-to-day web browsing, composed primarily of relatively small data transfers, is mostly unable to fully utilize the available bandwidth above a certain level, then you have successfully grasped one of the reasons why pure speed is no longer the main indicator of quality of experience in modern broadband connections.],
-  [Example 2: Cellular 5G connection],
-  [The second test ran from the same laptop using a cellular 5G connection, and the results are very different. The speeds are much lower and inconsistent over time, the latency numbers are higher (especially under load), and the latency jitter is quite high.],
-  [From the download and upload speeds we can guess that we’re probably not in a densely populated area—in areas of dense 5G coverage you can expect higher speeds and lower latencies. On the other hand, in densely populated areas you can also expect more people to be using the network at the same time, driving speeds down and latencies up (due to congestion). From the detailed latency charts we can observe how irregular latencies are in this case, with some numbers above 100 milliseconds.],
-  [Connection quality and convenience are often at odds with each other. The convenience of being able to access the Internet from anywhere in your house, or from a park or the beach, comes with quality tradeoffs. The Cloudflare Speed Test reports allows you to better understand those tradeoffs, compare your results against your peers or other available providers, and make more informed choices.],
-  [Why does Cloudflare provide a speed test?],
-  [Cloudflare provides its speed test to empower end users with greater insight into their connectivity and to help improve the Internet by offering transparency into how it performs. The engine that runs the test is open source , which means that anyone can use our speed test to facilitate their own research and can always verify how the results are produced. To enable researchers, policymakers, network operators, and other stakeholders to analyze Internet connectivity, all results from Cloudflare’s Speed Tests are published to Measurement Lab’s public Internet measurement dataset in BigQuery and are also accessible through Cloudflare’s Radar API . We share this data to advance open Internet research, but every result is anonymized to protect user privacy and is never used for commercial purposes.],
-  [What’s next for Cloudflare’s Speed Test?],
-  [Originally developed in 2020, Cloudflare’s speed test has become a go-to resource for measuring end user network quality. In particular, we receive a lot of positive feedback about its easy-to-understand user interface and the metrics that it reports alongside throughput.],
-  [But at Cloudflare, we are always improving – so here’s what we’re planning to make Cloudflare’s speed test even better.],
-  [We’re continuing to expand the reach and scalability of Cloudflare’s Network Quality API to make it easier for third parties to integrate and use. Our goal is to empower customers to measure their users' connectivity by utilizing Cloudflare's network. We’re already proud to partner with UNICEF, which uses Cloudflare’s Speed Test as part of its Giga project to connect every school in the world to the Internet, and with Orb , which enables end users to continuously monitor the quality of their Internet connections from any platform or device using Cloudflare’s Network Quality API as part of its diagnostic measurement suite. Throughout 2026, we plan to significantly increase the number of third parties using our Speed Test and Network Quality API to power their own measurement tools and initiatives.],
-  [To make the Speed Test more valuable for third parties, we’re also developing new capabilities that enable more detailed performance analysis. This includes support for higher throughput measurements—which, while not the sole indicator of connection quality, remain important for diagnosing network performance, especially in enterprise or shared-office environments where multiple users share the same connection. These enhancements will help make our platform a more comprehensive tool for understanding and improving network health.],
-  [Many users turn to speed tests not only to verify that they’re getting the service they’ve paid for, but also to diagnose connectivity issues. We want to make that diagnostic process even more effective. Our goal is to expose richer metrics and more advanced functionality to help users answer key questions, such as: Where’s the bottleneck? Is it within my local network or my ISP’s? Does this issue occur only with specific applications? Is it unique to me, or are others in my region experiencing it too? By providing deeper insight into these questions, we aim to make Cloudflare’s Speed Test a more powerful tool for understanding and improving real-world Internet performance.],
-  [Try running a Cloudflare Speed Test to test your connectivity today by visiting speed.cloudflare.com .],
-),
-  insert-map: (:),
-  word-count: 2779,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -1785,9 +1712,92 @@ pick both?],
   [👋],
 ),
   insert-map: (:),
-  inline-pq: pull-quote([To execute the code, AWS needs to allocate some computing resources.], [Luciano Mammino]),
+  inline-pq: pull-quote([And finally, you cannot have a lambda with a GPU.], [Luciano Mammino]),
   inline-pq-idx: 55,
   word-count: 3330,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+}
+
+{
+  #standard-article(
+  title: [One IP address, many users: detecting CGNAT to reduce collateral effects],
+  author: [Vasilis Giotsas],
+  source-name: [Cloudflare Research],
+  images: (),
+  paragraphs: (
+  [IP addresses have historically been treated as stable identifiers for non-routing purposes such as for geolocation and security operations. Many operational and security mechanisms, such as blocklists, rate-limiting, and anomaly detection, rely on the assumption that a single IP address represents a cohesive , accountable entity or even, possibly, a specific user or device.],
+  [But the structure of the Internet has changed, and those assumptions can no longer be made. Today, a single IPv4 address may represent hundreds or even thousands of users due to widespread use of Carrier-Grade Network Address Translation (CGNAT) , VPNs, and proxy middleboxes. This concentration of traffic can result in significant collateral damage – especially to users in developing regions of the world – when security mechanisms are applied without taking into account the multi-user nature of IPs.],
+  [This blog post presents our approach to detecting large-scale IP sharing globally. We describe how we build reliable training data , and how detection can help avoid unintentional bias affecting users in regions where IP sharing is most prevalent. Arguably it's those regional variations that motivate our efforts more than any other.],
+  [Why this matters: Potential socioeconomic bias],
+  [Our work was initially motivated by a simple observation: CGNAT is a likely unseen source of bias on the Internet. Those biases would be more pronounced wherever there are more users and few addresses, such as in developing regions. And these biases can have profound implications for user experience, network operations, and digital equity.],
+  [The reasons are understandable for many reasons, not least because of necessity. Countries in the developing world often have significantly fewer available IPs, and more users. The disparity is a historical artifact of how the Internet grew: the largest blocks of IPv4 addresses were allocated decades ago, primarily to organizations in North America and Europe, leaving a much smaller pool for regions where Internet adoption expanded later.],
+  [To visualize the IPv4 allocation gap, we plot country-level ratios of users to IP addresses in the figure below. We take online user estimates from the World Bank Group and the number of IP addresses in a country from Regional Internet Registry (RIR) records. The colour-coded map that emerges shows that the usage of each IP address is more concentrated in regions that generally have poor Internet penetration. For example, large portions of Africa and South Asia appear with the highest user-to-IP ratios. Conversely, the lowest user-to-IP ratios appear in Australia, Canada, Europe, and the USA — the very countries that otherwise have the highest Internet user penetration numbers.],
+  [The scarcity of IPv4 address space means that regional differences can only worsen as Internet penetration rates increase. A natural consequence of increased demand in developing regions is that ISPs would rely even more heavily on CGNAT, and is compounded by the fact that CGNAT is common in mobile networks that users in developing regions so heavily depend on. All of this means that actions known to be based on IP reputation or behaviour would disproportionately affect developing economies.],
+  [Cloudflare is a global network in a global Internet. We are sharing our methodology so that others might benefit from our experience and help to mitigate unintended effects. First, let’s better understand CGNAT.],
+  [When one IP address serves multiple users],
+  [Large-scale IP address sharing is primarily achieved through two distinct methods. The first, and more familiar, involves services like VPNs and proxies. These tools emerge from a need to secure corporate networks or improve users' privacy, but can be used to circumvent censorship or even improve performance. Their deployment also tends to concentrate traffic from many users onto a small set of exit IPs. Typically, individuals are aware they are using such a service, whether for personal use or as part of a corporate network.],
+  [Separately, another form of large-scale IP sharing often goes unnoticed by users: Carrier-Grade NAT (CGNAT) . One way to explain CGNAT is to start with a much smaller version of network address translation (NAT) that very likely exists in your home broadband router, formally called a Customer Premises Equipment (or CPE), which translates unseen private addresses in the home to visible and routable addresses in the ISP. Once traffic leaves the home, an ISP may add an additional enterprise-level address translation that causes many households or unrelated devices to appear behind a single IP address.],
+  [The crucial difference between large-scale IP sharing is user choice: carrier-grade address sharing is not a user choice, but is configured directly by Internet Service Providers (ISPs) within their access networks. Users are not aware that CGNATs are in use.],
+  [The primary driver for this technology, understandably, is the exhaustion of the IPv4 address space. IPv4's 32-bit architecture supports only 4.3 billion unique addresses — a capacity that, while once seemingly vast, has been completely outpaced by the Internet's explosive growth. By the early 2010s, Regional Internet Registries (RIRs) had depleted their pools of unallocated IPv4 addresses. This left ISPs unable to easily acquire new address blocks, forcing them to maximize the use of their existing allocations.],
+  [While the long-term solution is the transition to IPv6, CGNAT emerged as the immediate, practical workaround. Instead of assigning a unique public IP address to each customer, ISPs use CGNAT to place multiple subscribers behind a single, shared IP address. This practice solves the problem of IP address scarcity. Since translated addresses are not publicly routable, CGNATs have also had the positive side effect of protecting many home devices that might be vulnerable to compromise.],
+  [CGNATs also create significant operational fallout stemming from the fact that hundreds or even thousands of clients can appear to originate from a single IP address. This means an IP-based security system may inadvertently block or throttle large groups of users as a result of a single user behind the CGNAT engaging in malicious activity.],
+  [This isn't a new or niche issue. It has been recognized for years by the Internet Engineering Task Force (IETF), the organization that develops the core technical standards for the Internet. These standards, known as Requests for Comments (RFCs), act as the official blueprints for how the Internet should operate. RFC 6269 , for example, discusses the challenges of IP address sharing, while RFC 7021 examines the impact of CGNAT on network applications. Both explain that traditional abuse-mitigation techniques, such as blocklisting or rate-limiting, assume a one-to-one relationship between IP addresses and users: when malicious activity is detected, the offending IP address can be blocked to prevent further abuse.],
+  [In shared IPv4 environments, such as those using CGNAT or other address-sharing techniques, this assumption breaks down because multiple subscribers can appear under the same public IP. Blocking the shared IP therefore penalizes many innocent users along with the abuser. In 2015 Ofcom, the UK's telecommunications regulator, reiterated these concerns in a report on the implications of CGNAT where they noted that, “In the event that an IPv4 address is blocked or blacklisted as a source of spam, the impact on a CGNAT would be greater, potentially affecting an entire subscriber base.”],
+  [While the hope was that CGNAT was only a temporary solution until the eventual switch to IPv6, as the old proverb says, nothing is more permanent than a temporary solution. While IPv6 deployment continues to lag, CGNAT deployments have become increasingly common , and so do the related problems.],
+  [CGNAT detection at Cloudflare],
+  [To enable a fairer treatment of users behind CGNAT IPs by security techniques that rely on IP reputation, our goal is to identify large-scale IP sharing. This allows traffic filtering to be better calibrated and collateral damage minimized. Additionally, we want to distinguish CGNAT IPs from other large-scale sharing (LSS) IP technologies, such as VPNs and proxies, because we may need to take different approaches to different kinds of IP-sharing technologies.],
+  [To do this, we decided to take advantage of Cloudflare’s extensive view of the active IP clients, and build a supervised learning classifier that would distinguish CGNAT and VPN/proxy IPs from IPs that are allocated to a single subscriber (non-LSS IPs), based on behavioural characteristics. The figure below shows an overview of our supervised classifier:],
+  [While our classification approach is straightforward, a significant challenge is the lack of a reliable, comprehensive, and labeled dataset of CGNAT IPs for our training dataset.],
+  [Detecting CGNAT using public data sources],
+  [Detection begins by building an initial dataset of IPs believed to be associated with CGNAT. Cloudflare has vast HTTP and traffic logs. Unfortunately there is no signal or label in any request to indicate what is or is not a CGNAT.],
+  [To build an extensive labelled dataset to train our ML classifier, we employ a combination of network measurement techniques, as described below. We rely on public data sources to help disambiguate an initial set of large-scale shared IP addresses from others in Cloudflare’s logs.],
+  [The presence of a client behind CGNAT can often be inferred through traceroute analysis. CGNAT requires ISPs to insert a NAT step that typically uses the Shared Address Space ( RFC 6598 ) after the customer premises equipment (CPE). By running a traceroute from the client to its own public IP and examining the hop sequence, the appearance of an address within 100.64.0.0/10 between the first private hop (e.g., 192.168.1.1) and the public IP is a strong indicator of CGNAT.],
+  [Traceroute can also reveal multi-level NAT, which CGNAT requires, as shown in the diagram below. If the ISP assigns the CPE a private RFC 1918 address that appears right after the local hop, this indicates at least two NAT layers. While ISPs sometimes use private addresses internally without CGNAT, observing private or shared ranges immediately downstream combined with multiple hops before the public IP strongly suggests CGNAT or equivalent multi-layer NAT.],
+  [Although traceroute accuracy depends on router configurations, detecting private and shared IP ranges is a reliable way to identify large-scale IP sharing. We apply this method to distributed traceroutes from over 9,000 RIPE Atlas probes to classify hosts as behind CGNAT, single-layer NAT, or no NAT.],
+  [Scraping WHOIS and PTR records],
+  [Many operators encode metadata about their IPs in the corresponding reverse DNS pointer (PTR) record that can signal administrative attributes and geographic information. We first query the DNS for PTR records for the full IPv4 space and then filter for a set of known keywords from the responses that indicate a CGNAT deployment. For example, each of the following three records matches a keyword ( cgnat , cgn or lsn ) used to detect CGNAT address space:],
+  [node-lsn.pool-1-0.dynamic.totinternet.net
+103-246-52-9.gw1-cgnat.mobile.ufone.nz
+cgn.gsw2.as64098.net],
+  [WHOIS and Internet Routing Registry (IRR) records may also contain organizational names, remarks, or allocation details that reveal whether a block is used for CGNAT pools or residential assignments.],
+  [Given that both PTR and WHOIS records may be manually maintained and therefore may be stale, we try to sanitize the extracted data by validating the fact that the corresponding ISPs indeed use CGNAT based on customer and market reports.],
+  [Collecting VPN and proxy IPs],
+  [Compiling a list of VPN and proxy IPs is more straightforward, as we can directly find such IPs in public service directories for anonymizers. We also subscribe to multiple VPN providers, and we collect the IPs allocated to our clients by connecting to a unique HTTP endpoint under our control.],
+  [Modeling CGNAT with machine learning],
+  [By combining the above techniques, we accumulated a dataset of labeled IPs for more than 200K CGNAT IPs, 180K VPNs & proxies and close to 900K IPs allocated that are not LSS IPs. These were the entry points to modeling with machine learning.],
+  [Feature selection],
+  [Our hypothesis was that aggregated activity from CGNAT IPs is distinguishable from activity generated from other non-CGNAT IP addresses. Our feature extraction is an evaluation of that hypothesis — since networks do not disclose CGNAT and other uses of IPs, the quality of our inference is strictly dependent on our confidence in the training data. We claim the key discriminator is diversity, not just volume. For example, VM-hosted scanners may generate high numbers of requests, but with low information diversity. Similarly, globally routable CPEs may have individually unique characteristics, but with volumes that are less likely to be caught at lower sampling rates.],
+  [In our feature extraction, we parse a 1% sampled HTTP requests log for distinguishing features of IPs compiled in our reference set, and the same features for the corresponding /24 prefix (namely IPs with the same first 24 bits in common). We analyse the features for each of the VPNs, proxies, CGNAT, or non LSS IP. We find that features from the following broad categories are key discriminators for the different types of IPs in our training dataset:],
+  [Client-side signals: We analyze the aggregate properties of clients connecting from an IP. A large, diverse user base (like on a CGNAT) naturally presents a much wider statistical variety of client behaviors and connection parameters than a single-tenant server or a small business proxy.],
+  [Network and transport-level behaviors: We examine traffic at the network and transport layers. The way a large-scale network appliance (like a CGNAT) manages and routes connections often leaves subtle, measurable artifacts in its traffic patterns, such as in port allocation and observed network timing.],
+  [Traffic volume and destination diversity: We also model the volume and "shape" of the traffic. An IP representing thousands of independent users will, on average, generate a higher volume of requests and target a much wider, less correlated set of destinations than an IP representing a single user.],
+  [Crucially, to distinguish CGNAT from VPNs and proxies (which is absolutely necessary for calibrated security filtering), we had to aggregate these features at two different scopes: per-IP and per /24 prefixes. CGNAT IPs are typically allocated large blocks of IPs, whereas VPNs IPs are more scattered across different IP prefixes.],
+  [Classification results],
+  [We compute the above features from HTTP logs over 24-hour intervals to increase data volume and reduce noise due to DHCP IP reallocation. The dataset is split into 70% training and 30% testing sets with disjoint /24 prefixes, and VPN and proxy labels are merged due to their similarity and lower operational importance compared to CGNAT detection.],
+  [Then we train a multi-class XGBoost model with class weighting to address imbalance, assigning each IP to the class with the highest predicted probability. XGBoost is well-suited for this task because it efficiently handles large feature sets, offers strong regularization to prevent overfitting, and delivers high accuracy with limited parameter tuning. The classifier achieves 0.98 accuracy, 0.97 weighted F1, and 0.04 log loss. The figure below shows the confusion matrix of the classification.],
+  [Our model is accurate for all three labels. The errors observed are mainly misclassifications of VPN/proxy IPs as CGNATs, mostly for VPN/proxy IPs that are within a /24 prefix that is also shared by broadband users outside of the proxy service. We also evaluate the prediction accuracy using k-fold cross validation , which provides a more reliable estimate of performance by training and validating on multiple data splits, reducing variance and overfitting compared to a single train–test split. We select 10 folds and we evaluate the Area Under the ROC Curve (AUC) and the multi-class logloss. We achieve a macro-average AUC of 0.9946 (σ=0.0069) and log loss of 0.0429 (σ=0.0115). Prefix-level features are the most important contributors to classification performance.],
+  [Users behind CGNAT are more likely to be rate limited],
+  [The figure below shows the daily number of CGNAT IP inferences generated by our CDN-deployed detection service between December 17, 2024 and January 9, 2025. The number of inferences remains largely stable, with noticeable dips during weekends and holidays such as Christmas and New Year’s Day. This pattern reflects expected seasonal variations, as lower traffic volumes during these periods lead to fewer active IP ranges and reduced request activity.],
+  [Next, recall that actions that rely on IP reputation or behaviour may be unduly influenced by CGNATs. One such example is bot detection. In an evaluation of our systems, we find that bot detection is resilient to those biases. However, we also learned that customers are more likely to rate limit IPs that we find are CGNATs.],
+  [We analyze bot labels by analyzing how often requests from CGNAT and non-CGNAT IPs are labeled as bots. Cloudflare assigns a bot score to each HTTP request using CatBoost models trained on various request features, and these scores are then exposed through the Web Application Firewall (WAF), allowing customers to apply filtering rules. The median bot rate is nearly identical for CGNAT (4.8%) and non-CGNAT (4.7%) IPs. However, the mean bot rate is notably lower for CGNATs (7%) than for non-CGNATs (13.1%), indicating different underlying distributions. Non-CGNAT IPs show a much wider spread, with some reaching 100% bot rates, while CGNAT IPs cluster mostly below 15%. This suggests that non-CGNAT IPs tend to be dominated by either human or bot activity, whereas CGNAT IPs reflect mixed behavior from many end users, with human traffic prevailing.],
+  [Interestingly, despite bot scores that indicate traffic is more likely to be from human users, CGNAT IPs are subject to rate limiting three times more often than non-CGNAT IPs. This is likely because multiple users share the same public IP, increasing the chances that legitimate traffic gets caught by customers’ bot mitigation and firewall rules.],
+  [This tells us that users behind CGNAT IPs are indeed susceptible to collateral effects, and identifying those IPs allows us to tune mitigation strategies to disrupt malicious traffic quickly while reducing collateral impact on benign users behind the same address.],
+  [A global view of the CGNAT ecosystem],
+  [One of the early motivations of this work was to understand if our knowledge about IP addresses might hide a bias along socio-economic boundaries—and in particular if an action on an IP address may disproportionately affect populations in developing nations, often referred to as the Global South. Identifying where different IPs exist is a necessary first step.],
+  [The map below shows the fraction of a country’s inferred CGNAT IPs over all IPs observed in the country. Regions with a greater reliance on CGNAT appear darker on the map. This view highlights the geodiversity of CGNATs in terms of importance; for example, much of Africa and Central and Southeast Asia rely on CGNATs.],
+  [As further evidence of continental differences, the boxplot below shows the distribution of distinct user agents per IP across /24 prefixes inferred to be part of a CGNAT deployment in each continent.],
+  [Notably, Africa has a much higher ratio of user agents to IP addresses than other regions, suggesting more clients share the same IP in African ASNs . So, not only do African ISPs rely more extensively on CGNAT, but the number of clients behind each CGNAT IP is higher.],
+  [While the deployment rate of CGNAT per country is consistent with the users-per-IP ratio per country, it is not sufficient by itself to confirm deployment. The scatterplot below shows the number of users (according to APNIC user estimates ) and the number of IPs per ASN for ASNs where we detect CGNAT. ASNs that have fewer available IP addresses than their user base appear below the diagonal. Interestingly the scatterplot indicates that many ASNs with more addresses than users still choose to deploy CGNAT. Presumably, these ASNs provide additional services beyond broadband, preventing them from dedicating their entire address pool to subscribers.],
+  [What this means for everyday Internet users],
+  [Accurate detection of CGNAT IPs is crucial for minimizing collateral effects in network operations and for ensuring fair and effective application of security measures. Our findings underscore the potential socio-economic and geographical variations in the use of CGNATs, revealing significant disparities in how IP addresses are shared across different regions.],
+  [At Cloudflare we are going beyond just using these insights to evaluate policies and practices. We are using the detection systems to improve our systems across our application security suite of features, and working with customers to understand how they might use these insights to improve the protections they configure.],
+  [Our work is ongoing and we’ll share details as we go. In the meantime, if you’re an ISP or network operator that operates CGNAT and want to help, get in touch at ask-research\@cloudflare.com . Sharing knowledge and working together helps make better and equitable user experience for subscribers, while preserving web service safety and security.],
+),
+  insert-map: (:),
+  word-count: 3371,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -1831,7 +1841,7 @@ pick both?],
   [id="why-were-stopping"\>Why we’re stopping],
   [Here’s the part where I have to be honest with you. And with myself.],
   [In December 2024, I wrote in the 404: Newsletter Found post:],
-  [[…] instead of stepping away, I’ve decided to give FullStack Bulletin one more shot. I believe in its value and the role it plays in the full-stack developer community. My goal for the coming year is to grow the number of subscribers and secure more long-term sponsorships to make the project sustainable. With a larger audience and reliable sponsorship, I could reduce the financial strain and even consider bringing on someone to help with the workload.],
+  [\[…\] instead of stepping away, I’ve decided to give FullStack Bulletin one more shot. I believe in its value and the role it plays in the full-stack developer community. My goal for the coming year is to grow the number of subscribers and secure more long-term sponsorships to make the project sustainable. With a larger audience and reliable sponsorship, I could reduce the financial strain and even consider bringing on someone to help with the workload.],
   [I meant it. And in some ways, 2025 was a good year for the newsletter. We stayed consistent, reached 450 issues, changed the tone and the structure, spent even more time each week on the storytelling… and engagement actually improved quite a bit!],
   [But the growth in subscribers didn’t materialize. The sponsorships we secured were fantastic, but not enough to make the project financially sustainable. And the workload? It kept growing, not because of the newsletter itself, but because of everything else in our lives.],
   [Plus, life has a way of shifting priorities when you’re not looking…],
@@ -1889,221 +1899,58 @@ pick both?],
 
 {
   #standard-article(
-  title: [Building a Developer-Friendly App Stack for 2026],
-  author: [Tammi Saayman],
+  title: [Simplify Regular Expressions with RegExpBuilderJS],
+  author: [Scott Robinson],
   source-name: [Stack Abuse],
   images: (),
   paragraphs: (
-  [id="introduction"\>Introduction],
-  [Apps are more complex than ever. You have more tools, APIs, and managed services than you can count, but all that convenience brings new challenges. Microservices sprawl, dependency chains, and flaky CI pipelines can turn simple updates into landmines. How do you scale without everything breaking? How do you stay compliant without drowning in manual checks?],
-  [A developer-friendly stack solves this. Automation, resilient infrastructure, and privacy-first patterns work together to keep workflows predictable, reduce friction, and give you control over growth. Instead of firefighting brittle systems, you can ship faster with guardrails that actually hold.],
-  [This guide walks through practical examples you can implement today, grounded in real patterns teams are using to scale safely.],
-  [id="howtoscaleyourappwithoutbreakingit"\>How to Scale Your App Without Breaking It],
-  [Scaling your app comes down to one question: can it handle more users or more data without collapsing? There are a few approaches developers use.],
-  [Vertical scaling adds more CPU, RAM, or disk to a single machine. It’s fast to implement but comes with higher costs and hard limits. You eventually hit the ceiling of the largest instance.],
-  [Horizontal scaling adds more machines, containers, or pods. You get better long-term resilience, but it introduces coordination overhead, challenges with distributed state, and more moving parts to monitor.],
-  [id="verticalscalingexampleonaws"\>Vertical Scaling Example on AWS],
-  [aws ec2 modify-instance-attribute \\
- --instance-id i-12345 \\
- --instance-type t3.large],
-  [id="horizontalscalingexampleonkubernetes"\>Horizontal Scaling Example on Kubernetes],
-  [kubectl scale deployment api-server \\
- --replicas=6],
-  [id="elasticscaling"\>Elastic Scaling],
-  [Elasticity is about letting your system adjust itself when demand changes. Morning traffic is high, nights are quiet, and campaigns can trigger sudden bursts. Auto-scaling groups or container orchestrators handle all that for you.],
-  [Just be aware that aggressive scaling policies can trigger cost spikes, cold starts, or churn if thresholds aren’t tuned correctly.],
-  [Here’s a simple AWS example:],
-  [aws autoscaling put-scaling-policy \\
- --policy-name cpu-scale-up \\
- --auto-scaling-group-name api-asg \\
- --scaling-adjustment 2 \\
- --adjustment-type ChangeInCapacity],
-  [With elastic scaling, your app won’t crash under load, and you won’t be paying for idle resources.],
-  [id="howtomanagefileworkflowsconsistently"\>How to Manage File Workflows Consistently],
-  [As your system grows, keeping track of files can get messy. Automated pipelines help by moving, processing, and storing files correctly without anyone having to babysit them. It cuts down on mistakes and keeps everything ready to scale smoothly.],
-  [id="integratingautomationwithcicdpipelines"\>Integrating Automation with CI/CD Pipelines],
-  [You can treat files just like servers or networks when using tools like Terraform or Ansible. For example, you might automatically archive old documents instead of cleaning them up by hand:],
-  [resource "aws\_s3\_bucket\_lifecycle\_configuration" "archive" {
- bucket = aws\_s3\_bucket.docs.id],
-  [rule {
- id = "archive-old-files"
- status = "Enabled"],
-  [transition {
- days = 30
- storage\_class = "GLACIER"
- }
- }
-}],
-  [With this, your storage stays tidy, costs stay predictable, and you don’t have to worry about remembering to move files around manually.],
-  [id="handlingfileseffectively"\>Handling Files Effectively],
-  [File workflows can eat up a surprising amount of engineering time. Automation reduces errors, keeps environments consistent, and speeds up your pipeline. This is especially true for large file types like PDFs. Tools like SmallPDF, Ghostscript, or PDFTron help eliminate the manual PDF chaos.],
-  [You can also edit PDF files online with SmallPDF whenever a manual check is needed, and it provides a clean API for common tasks.],
-  [SmallPDF works via simple HTTP requests, so you can call it from Python, Node.js, Java, or any language that supports requests.],
-  [id="exampleinpython"\>Example in Python],
-  [import requests],
-  [response = requests.post(
- "https:\/\/api.smallpdf.com/v1/merge" ,
- headers={ "Authorization" : "Bearer YOUR\_TOKEN" },
- files={ "file" : open ( "input.pdf" , "rb" )}
-)],
-  [id="commonpdftasksandhowtohandlethem"\>Common PDF Tasks and How to Handle Them],
-  [Merge, compress, and split PDFs (SmallPDF, PDFTron, Ghostscript)],
-  [Convert Word or HTML files to PDFs (pdfkit, Puppeteer, SmallPDF)],
-  [Add headers, footers, or annotations (PyPDF2, pdf-lib, iText)],
-  [id="processinglargepdfsefficiently"\>Processing Large PDFs Efficiently],
-  [Big PDFs can grind your workflows to a halt if you try to handle everything at once. Breaking tasks into smaller steps keeps things fast and responsive.],
-  [A few techniques that help:],
-  [Process documents in batches],
-  [Stream files instead of loading them entirely into memory],
-  [Cache intermediate results so heavy steps aren’t repeated],
-  [Use asynchronous jobs to avoid blocking worker threads],
-  [For example, streaming a PDF in Node.js looks like this:],
-  [const fs = require ( 'fs' );
- const stream = fs.createReadStream( 'large.pdf' );],
-  [stream.on( 'data' , chunk =\> {
- processChunk(chunk);
-});],
-  [This approach keeps your system responsive and prevents memory issues when working with very large files.],
-  [Long-running PDF jobs can block worker threads, and streaming can fail if queues back up, so keep an eye on batch sizes and memory usage.],
-  [id="howtohandleprivacyandcompliance"\>How to Handle Privacy and Compliance],
-  [Keeping your system compliant is simpler when the rules are built into the code instead of just sitting in a handbook. GDPR and CCPA expect your platform to respect user rights automatically. You can make this happen by handling consent properly, minimizing the data you store, and controlling who can access it. Following these patterns keeps your workflows safe and your users’ trust intact.],
-  [id="enforcingconsentandcomplianceprogrammatically"\>Enforcing Consent and Compliance Programmatically],
-  [When systems depend on cross-site tracking , it’s important to use a solution that keeps compliance at the forefront.],
-  [Usercentrics is a decent example. It helps manage consent consistently across platforms and channels so developers do not need to build fragile custom logic that can break over time. In practice, the platform handles consent logging, banner behaviour, storage, and syncing across devices. While developers only implement the integration layer and respect the consent signals it emits.],
-  [Your actual responsibility is to wire those consent states into your tracking, analytics, cookies, and API calls so the app never runs code the user hasn’t approved.],
-  [By integrating tools like this, applications automatically respect user permissions and stay aligned with GDPR and CCPA requirements.],
-  [Think of it as: the tool manages the rules, but your code enforces them.],
-  [id="implementingpolicyascode"\>Implementing Policy-as-Code],
-  [Policy-as-code means expressing privacy rules directly in the system so they run automatically.],
-  [For example, a simple retention rule could look like this:],
-  [retention {
- data\_type = "analytics"
- keep\_for = "30d"
- action = "delete"
-}],
-  [The system checks the rule every day and deletes old logs without anyone having to remember. Tools (such as OPA, AWS Lake Formation policies, or internal rule engines) usually evaluate these policies, but developers still need to define the rules, connect them to the right datasets, and ensure services call the policy engine rather than hard-code their own behaviour.],
-  [This keeps privacy logic consistent across the stack rather than living in scattered scripts or one-off cron jobs.],
-  [id="minimizingandanonymizingsensitivedata"\>Minimizing and Anonymizing Sensitive Data],
-  [The goal is to keep sensitive data out of reach and make your system safer while reducing compliance headaches.],
-  [Some practical ways to do this include hashing data before storage, tokenizing identifiers, pseudonymizing user info, and restricting access with scoped storage so systems only see what they need.],
-  [Example: hashing an email with SHA256 in Python],
-  [import hashlib],
-  [hashed = hashlib.sha256( b"user\@example.com" ).hexdigest()],
-  [Libraries handle the hashing, encryption, or tokenization; developers choose the method, enforce it in code paths, and make sure no service logs sensitive data by accident. The tooling provides the mechanism, and you implement where and when it runs.],
-  [id="securingcicdpipelinesandsecretsmanagement"\>Securing CI/CD Pipelines and Secrets Management],
-  [You don’t want secrets just lying around in plaintext. Tools like HashiCorp Vault or AWS KMS keep your keys safe and accessible only where they need to be.],
-  [Example: grab a secret with Vault CLI:],
-  [vault kv get secret/api-key],
-  [On top of that, role-based access controls make sure only the right pipelines or services can touch those sensitive values. The tools store and encrypt secrets, while developers define access, configure environments, and rotate keys to avoid hardcoded tokens.],
-  [Just know that even with Vault, misconfigured roles or hardcoded fallbacks can expose secrets.],
-  [id="howtobuildresilientinfrastructure"\>How to Build Resilient Infrastructure],
-  [Resilient systems survive failures and make automation easier because the platform behaves predictably. Whether you’re on AWS, Azure, or Google Cloud, you need redundancy, disaster recovery plans, and capacity planning that actually works.],
-  [id="awsmultizonestorageandcompute"\>AWS Multi-Zone Storage and Compute],
-  [resource "aws\_instance" "api" {
- ami = "ami-12345"
- instance\_type = "t3.medium"
- availability\_zone = "eu-west-1a"
-}],
-  [resource "aws\_db\_instance" "main" {
- engine = "postgres"
- instance\_class = "db.t3.medium"
- multi\_az = true
-}],
-  [Using multiple zones stops single points of failure from taking down your platform.],
-  [id="azureexamplescalablenetworking"\>Azure Example: Scalable Networking],
-  [az network application-gateway create \\
- --name mainGateway \\
- --resource-group core \\
- --capacity 3 \\
- --sku Standard\_v2],
-  [Azure's gateway maintains throughput even as traffic increases.],
-  [id="gcpexampleautoscalingamanagedinstancegroup"\>GCP Example: Autoscaling a Managed Instance Group],
-  [gcloud compute instance-groups managed set-autoscaling api-group \\
- --max-num-replicas 10 \\
- --target-cpu-utilization 0.7],
-  [Autoscaling ensures your system adjusts automatically to demand.],
-  [id="multitenantconsiderations"\>Multi-Tenant Considerations],
-  [If your platform serves multiple tenants, you have to isolate noisy neighbors and protect shared resources. CPU quotas, request limits, namespace isolation, and per-tenant rate limits are basic, but essential.],
-  [Even with these guardrails, noisy-neighbor effects can still surface through shared databases, caches, or network throughput, so monitoring tenant-level patterns becomes crucial.],
-  [id="monitoringhighvolumepipelines"\>Monitoring High-Volume Pipelines],
-  [Big data pipelines can fail silently if you’re not careful. Track queue depth, memory usage, and retry counts to catch problems early. Logging and metrics need to be built in from the start, not added later.],
-  [id="howtoautomatedocumentsignaturesandapprovals"\>How to Automate Document Signatures and Approvals],
-  [Automating signatures cuts down friction in legal or onboarding workflows. A simple API call can send a document for signing:],
-  [POST /signatures
-{
- "document" : "contract.pdf" ,
- "signer" : { "email" : "user\@example.com" }
-}],
-  [Approvals can follow event-driven triggers. For example, once a signature completes, a function can move the file to storage or alert the next team:],
-  [exports .handleSignature = ( event ) =\> {
- if (event.status === "signed" ) {
- storeFile(event.document);
- }
-};],
-  [Setting up automatic routing keeps documents moving smoothly and removes any guesswork about where something is in the process.],
-  [id="howtosetupscalablestorage"\>How to Set Up Scalable Storage],
-  [How you handle storage really shapes how your platform copes with more data. Usually, you’re juggling three kinds:],
-  [Object storage for random files like PDFs, images, or logs],
-  [Block storage for VM disks or database volumes],
-  [File storage for shared directories that multiple services need to see],
-  [When you hook this up to an event-driven pipeline, files move and get processed as soon as something happens. Your system keeps running smoothly without you having to babysit it.],
-  [id="handlingfileswitheventdrivenpipelines"\>Handling Files with Event-Driven Pipelines],
-  [Message queues like Kafka , SQS, or Pub/Sub give files a clear path through your system. A producer sends a file reference to the queue, and a consumer picks it up, processes it, and stores the result.],
-  [Here’s a simple example in Python:],
-  [id="producer"\>Producer:],
-  [sqs.send\_message(
- QueueUrl=queue\_url,
- MessageBody= "s3:\/\/bucket/document.pdf" 
-)],
-  [id="consumer"\>Consumer:],
-  [message = sqs.receive\_message(QueueUrl=queue\_url)
-process(message[ "Body" ])],
-  [This setup keeps large systems organized and responsive, even as volumes grow.],
-  [id="integratingstoragewithmicroservices"\>Integrating Storage with Microservices],
-  [Once you have a bunch of services all touching the same data, the little edge cases start showing up. One service is writing a ton of events, another is reading the same record, and something always spikes at the worst time. It helps a lot when your storage clients quietly handle retries, throttling and version checks so your services can just get on with their work.],
-  [Here are a few patterns that usually keep things sane:],
-  [Retries that do the right thing automatically. During a busy period, an orders service might hit throttling. A simple retry with backoff keeps the write moving without causing chaos:],
-  [for attempt in range ( 3 ):
- try :
- event\_store.append(event, key=event. id )
- break 
- except ThrottledError:
- time.sleep( 2 \*\* attempt)],
-  [Optimistic concurrency for shared records. Payment services lean on this a lot. You read the record, update it and only write it back if nothing changed underneath you:],
-  [const current = await balances.get(userId);],
-  [await balances.update(
- userId,
- { amount : current.amount - 10 },
- { ifVersion : current.version }
-);],
-  [If someone else updated first, you just retry.],
-  [Clients that ease off when the database is under pressure. Catalogue services often hit a cached document store first, so reads stay fast. When the primary database is doing something heavy, a client with backoff avoids piling on and gives the system room to breathe.],
-  [Queues that smooth out the noisy parts of the workload. Anything that spikes benefits from a queue. A notifications service can simply pull the next message and process at a steady pace:],
-  [message = sqs.receive\_message(QueueUrl=queue\_url)
-process(message[ "Body" ])],
-  [Patterns like these keep each service behaving itself even when the rest of the system is wobbling a bit. Your data stays in decent shape, the pipelines keep moving, and you dodge those strange little state bugs that only decide to appear when traffic suddenly gets excited.],
-  [id="howtokeepyourautomationreliable"\>How to Keep Your Automation Reliable],
-  [Automation only works when the system is tested and monitored. Without validation, pipelines drift, break, or silently skip tasks.],
-  [id="testingandmonitoringworkflows"\>Testing and Monitoring Workflows],
-  [Before deploying infrastructure as code, it’s a good idea to validate it. For example, with Terraform, you can quickly check your configuration:],
-  [terraform validate],
-  [In your CI pipelines, you can add smoke tests or schema checks to catch problems before they become bigger issues. Once your workflows are running, logging and distributed tracing show exactly where things slow down or fail. This helps you spot bottlenecks and fix them before they affect users.],
-  [id="recoveringgracefullyfromfailures"\>Recovering Gracefully From Failures],
-  [Your systems should be able to recover from errors without needing manual cleanup. Some practical techniques include:],
-  [Idempotent scripts – make sure scripts can run multiple times without breaking anything.],
-  [Checkpointing – save progress so tasks can resume after a failure.],
-  [Dead-letter queues – hold failed tasks for later review or reprocessing.],
-  [For example, an idempotent script could look like this:],
-  [if not file\_exists( "output.txt" ):
- generate\_output()],
-  [This way, if the job retries, it won’t process the same data twice.],
-  [id="buildingworkflowsthatscale"\>Building Workflows that Scale],
-  [A developer-friendly app stack relies on automation, privacy, and resilient infrastructure working together. When these pieces are in place, you gain control over workflows, reduce friction, and build a system that handles growth without constant firefighting.],
-  [Take a look at your own stack: identify bottlenecks, think through how documents, storage, and workflows scale, and consider how privacy and compliance are enforced. Applying these practices in real systems makes shipping reliable software at scale feel more manageable.],
-  [For deeper dives, check out the StackAbuse guided projects to see concrete implementations in action.],
+  [Regular expressions are on of the most powerful tools in a developer's toolkit. But let's be honest, regex kind of sucks to write. Not only is it hard to write, but it's also hard to read and debug too. So how can we make it easier to use?],
+  [In its traditional form, regex defines powerful string patterns in a very compact statement. One trade-off we can make is to use a more verbose syntax that is easier to read and write. This is the purpose of a package like regexpbuilderjs .],
+  [The regexpbuilderjs package is actually a port of the popular PHP package, regexpbuilderphp . The regexpbuilderphp package itself is a port of an old JS package, regexpbuilder , which now seems to be gone. This new package is meant to continue the work of the original regexpbuilder package.],
+  [All credit goes to Andrew Jones for creating the original JS version and Max Girkens for the PHP port.],
+  [id="installation"\>Installation],
+  [To install the package, you can use npm:],
+  [\$ npm install regexpbuilderjs],
+  [id="usage"\>Usage],
+  [Here's a simple example of how you can use the package:],
+  [const RegExpBuilder = require ( 'regexpbuilderjs' );],
+  [const builder = new RegExpBuilder();
+ const regEx = builder
+ .startOfLine()
+ .exactly( 1 )
+ .of( 'S' )
+ .getRegExp();],
+  [Now let's break this down a bit. The RegExpBuilder class is the main class that you'll be using to build your regular expressions. You can start by creating a new instance of this class and chain methods together to create your regex:],
+  [startOfLine() : This method adds the ^ character to the regex, which matches the start of a line.],
+  [exactly(1) : This method adds the {1} quantifier to the regex, which matches exactly one occurrence of a given character or group.],
+  [of('S') : This method adds the S character to the regex.],
+  [getRegExp() : This method returns the final RegExp object that you can use to match strings.],
+  [With this, you can match strings like "Scott", "Soccer", or "S418401".],
+  [This is great and all, but this is probably a regex string you could come up with on your own and not struggle too much to read. So now let's see a more complex example:],
+  [const builder = new RegExpBuilder();],
+  [const regExp = builder
+ .startOfInput()
+ .exactly( 4 ).digits()
+ .then( '\_' )
+ .exactly( 2 ).digits()
+ .then( '\_' )
+ .min( 3 ).max( 10 ).letters()
+ .then( '.' )
+ .anyOf(\[ 'png' , 'jpg' , 'gif' \])
+ .endOfInput()
+ .getRegExp();],
+  [This regex is meant to match filenames, which may look like:],
+  [2020\_10\_hund.jpg],
+  [2030\_11\_katze.png],
+  [4000\_99\_maus.gif],
+  [Some interesting parts of this regex is that we can specify type of strings (i.e. digits() ), min and max occurrences of a character or group (i.e. min(3).max(10) ), and a list of possible values (i.e. anyOf(\['png', 'jpg', 'gif'\]) ).],
+  [For a full list of methods you can use to build your regex, you can check out the documentation .],
+  [This is just a small taste of what you can do with regexpbuilderjs . The package is very powerful and can help you build complex regular expressions in a more readable and maintainable way.],
+  [id="conclusion"\>Conclusion],
+  [Comments, questions, and suggestions are always welcome! If you have any feedback on how this could work better, feel free to reach out on X . In the meantime, you can check out the repo on GitHub and give it a star while you're at it.],
 ),
   insert-map: (:),
-  word-count: 2362,
+  word-count: 562,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -2112,123 +1959,189 @@ process(message[ "Body" ])],
 
 {
   #standard-article(
-  title: [Measuring characteristics of TCP connections at Internet scale],
-  author: [Suleman Ahmad],
-  source-name: [Cloudflare Research],
+  title: [Debugging hidden memory leaks in Ruby],
+  author: [\@sam Sam Saffron],
+  source-name: [Sam Saffron],
   images: (),
   paragraphs: (
-  [Every interaction on the Internet—including loading a web page, streaming a video, or making an API call—starts with a connection. These fundamental logical connections consist of a stream of packets flowing back and forth between devices.],
-  [Various aspects of these network connections have captured the attention of researchers and practitioners for as long as the Internet has existed. The interest in connections even predates the label, as can be seen in the seminal 1991 paper, “ Characteristics of wide-area TCP/IP conversations .” By any name, the Internet measurement community has been steeped in characterizations of Internet communication for decades , asking everything from “how long?” and “how big?” to “how often?” – and those are just to start.],
-  [Surprisingly, connection characteristics on the wider Internet are largely unavailable. While anyone can use tools (e.g., Wireshark ) to capture data locally, it’s virtually impossible to measure connections globally because of access and scale. Moreover, network operators generally do not share the characteristics they observe — assuming that non-trivial time and energy is taken to observe them.],
-  [In this blog post, we move in another direction by sharing aggregate insights about connections established through our global CDN. We present characteristics of TCP connections—which account for about 70% of HTTP requests to Cloudflare—providing empirical insights that are difficult to obtain from client-side measurements alone.],
-  [Why connection characteristics matter],
-  [Characterizing system behavior helps us predict the impact of changes. In the context of networks, consider a new routing algorithm or transport protocol: how can you measure its effects? One option is to deploy the change directly on live networks, but this is risky. Unexpected consequences could disrupt users or other parts of the network, making a “deploy-first” approach potentially unsafe or ethically questionable.],
-  [A safer alternative to live deployment as a first step is simulation. Using simulation, a designer can get important insights about their scheme without having to build a full version. But simulating the whole Internet is challenging, as described by another highly seminal work, “ Why we don't know how to simulate the Internet ”.],
-  [To run a useful simulation, we need it to behave like the real system we’re studying. That means generating synthetic data that mimics real-world behavior. Often, we do this by using statistical distributions — mathematical descriptions of how the real data behaves. But before we can create those distributions, we first need to characterize the data — to measure and understand its key properties. Only then can our simulation produce realistic results.],
-  [Unpacking the dataset],
-  [The value of any data depends on its collection mechanism. Every dataset has blind spots, biases, and limitations, and ignoring these can lead to misleading conclusions. By examining the finer details — how the data was gathered, what it represents, and what it excludes — we can better understand its reliability and make informed decisions about how to use it. Let’s take a closer look at our collected telemetry.],
-  [Dataset Overview . The data describes TCP connections, labeled Visitor to Cloudflare in the above diagram, which serve requests via HTTP 1.0, 1.1, and 2.0 that make up about 70% of all 84 million HTTP requests per second, on average, received at our global CDN servers.],
-  [Sampling. The passively collected snapshot of data is drawn from a uniformly sampled 1% of all TCP connections to Cloudflare between October 7 and October 15, 2025. Sampling takes place at each individual client-facing server to mitigate biases that may appear by sampling at the datacenter level.],
-  [Diversity. Unlike many large operators, whose traffic is primarily their own and dominated by a few services such as search, social media, or streaming video, the vast majority of Cloudflare’s workload comes from our customers, who choose to put Cloudflare in front of their websites to help protect, improve performance, and reduce costs. This diversity of customers brings a wide variety of web applications, services, and users from around the world. As a result, the connections we observe are shaped by a broad range of client devices and application-specific behaviors that are constantly evolving.],
-  [What we log. Each entry in the log consists of socket-level metadata captured via the Linux kernel’s TCP\_INFO struct, alongside the SNI and the number of requests made during the connection. The logs exclude individual HTTP requests, transactions, and details. We restrict our use of the logs to connection metadata statistics such as duration and number of packets transmitted, as well as the number of HTTP requests processed.],
-  [Data capture. We have elected to represent ‘useful’ connections in our dataset that have been fully processed, by characterizing only those connections that close gracefully with a FIN packet . This excludes connections intercepted by attack mitigations, or that timeout, or that abort because of a RST packet.],
-  [Since a graceful close does not in itself indicate a ‘useful’ connection, we additionally require at least one successful HTTP request during the connection to filter out idle or non-HTTP connections from this analysis — interestingly, these make up 11% of all TCP connections to Cloudflare that close with a FIN packet.],
-  [If you’re curious, we’ve also previously blogged about the details of Cloudflare’s overall logging mechanism and post-processing pipeline .],
-  [Visualizing connection characteristics],
-  [Although networks are inherently dynamic and trends can change over time, the large-scale patterns we observe across our global infrastructure remain remarkably consistent over time. While our data offers a global view of connection characteristics, distributions can still vary according to regional traffic patterns.],
-  [In our visualizations we represent characteristics with cumulative distribution function (CDF) graphs, specifically their empirical equivalents . CDFs are particularly useful for gaining a macroscopic view of the distribution. They give a clear picture of both common and extreme cases in a single view. We use them in the illustrations below to make sense of large-scale patterns. To better interpret the distributions, we also employ log-scaled axes to account for the presence of extreme values common to networking data.],
-  [A long-standing question about Internet connections relates to “ Elephants and Mice ”; practitioners and researchers are entirely aware that most flows are small and some are huge, yet little data exists to inform the lines that divide them. This is where our presentation begins.],
-  [Let’s start by taking a look at the distribution of the number of response packets sent in connections by Cloudflare servers back to the clients.],
-  [On the graph, the x-axis represents the number of response packets sent in log-scale, while the y-axis shows the cumulative fraction of connections below each packet count. The average response consists of roughly 240 packets, but the distribution is highly skewed. The median is 12 packets, which indicates that 50% of Internet connections consist of very few packets . Extending further to the 90th percentile, connections carry only 107 packets.],
-  [This stark contrast highlights the heavy-tailed nature of Internet traffic: while a few connections transport massive amounts of data—like video streams or large file transfers—most interactions are tiny, delivering small web objects, microservice traffic, or API responses.],
-  [The above plot breaks down the packet count distribution by HTTP protocol version. For HTTP/1. X (both HTTP 1.0 and 1.1 combined) connections, the median response consists of just 10 packets, and 90% of connections carry fewer than 63 response packets. In contrast, HTTP/2 connections show larger responses, with a median of 16 packets and a 90th percentile of 170 packets. This difference likely reflects how HTTP/2 multiplexes multiple streams over a single connection, often consolidating more requests and responses into fewer connections, which increases the total number of packets exchanged per connection. HTTP/2 connections also have additional control-plane frames and flow-control messages that increase response packet counts.],
-  [Despite these differences, the combined view displays the same heavy-tailed pattern: a small fraction of connections carry enormous volumes of data ( elephant flows ), extending to millions of packets, while most remain lightweight ( mice flows ).],
-  [So far, we’ve focused on the total number of packets sent from our servers to clients, but another important dimension of connection behavior is the balance between packets sent and received, illustrated below.],
-  [The x-axis shows the ratio of packets sent by our servers to packets received from clients, visualized as a CDF. Across all connections, the median ratio is 0.91, meaning that in half of connections, clients send slightly more packets than the server responds with. This excess of client-side packets primarily reflects TLS handshake initiation (ClientHello), HTTP control request headers, and data acknowledgements (ACKs), causing the client to typically transmit more packets than the server returns with the content payload — particularly for low-volume connections that dominate the distribution.],
-  [The mean ratio is higher, at 1.28, due to a long tail of client-heavy connections, such as large downloads typical of CDN workloads. Most connections fall within a relatively narrow range: 10% of connections have a ratio below 0.67, and 90% are below 1.85. However, the long-tailed behavior highlights the diversity of Internet traffic: extreme values arise from both upload-heavy and download-heavy connections. The variance of 3.71 reflects these asymmetric flows, while the bulk of connections maintain a roughly balanced upload-to-download exchange.],
-  [Bytes sent],
-  [Another dimension to look at the data is using bytes sent by our servers to clients, which captures the actual volume of data delivered over each connection. This metric is derived from tcpi\_bytes\_sent, also covering (re)transmitted segment payloads while excluding the TCP header, as defined in linux/tcp.h and aligned with RFC 4898 (TCP Extended Statistics MIB).],
-  [The plots above break down bytes sent by HTTP protocol version. The x-axis represents the total bytes sent by our servers over each connection. The patterns are generally consistent with what we observed in the packet count distributions.],
-  [For HTTP/1. X, the median response delivers 4.8 KB, and 90% of connections send fewer than 51 KB. In contrast, HTTP/2 connections show slightly larger responses, with a median of 6 KB and a 90th percentile of 146 KB. The mean is much higher—224 KB for HTTP/1.x and 390 KB for HTTP/2—reflecting a small number of very large transfers. These long-tailed extreme flows can reach tens of gigabytes per connection, while some very lightweight connections carry minimal payloads: the minimum for HTTP/1. X is 115 bytes and for HTTP/2 it is 202 bytes.],
-  [By making use of the tcpi\_bytes\_received metric, we can now look at the ratio of bytes sent to bytes received per connection to better understand the balance of data exchange. This ratio captures how asymmetric each connection is — essentially, how much data our servers send compared to what they receive from clients. Across all connections, the median ratio is 3.78, meaning that in half of all cases, servers send nearly four times more data than they receive. The average is far higher at 81.06, showing a strong long tail driven by download-heavy flows. Again we see the heavy long-tailed distribution, a small fraction of extreme cases push the ratio into the millions, with more extreme values of data transfers towards clients.],
-  [Connection duration],
-  [While packet and byte counts capture how much data is exchanged, connection duration provides insight into how that exchange unfolds over time.],
-  [The CDF above shows the distribution of connection durations (lifetimes) in seconds. A reminder that the x-axis is log-scale. Across all connections, the median duration is just 4.7 seconds, meaning half of connections complete in under five seconds. The mean is much higher at 96 seconds, reflecting a small number of long-lived connections that skew the average. Most connections fall within a window of 0.1 seconds (10th percentile) to 300 seconds (90th percentile). We also observe some extremely long-lived connections lasting multiple days, possibly maintained via keep-alives for connection reuse without hitting our default idle timeout limits . These long-lived connections typically represent persistent sessions or multimedia traffic, while the majority of web traffic remains short, bursty, and transient.],
-  [Request counts],
-  [A single connection can carry multiple HTTP requests for web traffic. This reveals patterns about connection multiplexing.],
-  [The above shows the number of HTTP requests (in log-scale) that we see on a single connection, broken down by HTTP protocol version. Right away, we can see that for both HTTP/1. X (mean 3 requests) and HTTP/2 (mean 8 requests) connections, the median number of requests is just 1, reinforcing the prevalence of limited connection reuse. However, because HTTP/2 supports multiplexing multiple streams over a single connection, the 90th percentile rises to 10 requests, with occasional extreme cases carrying thousands of requests, which can be amplified due to connection coalescing . In contrast, HTTP/1. X connections have much lower request counts. This aligns with protocol design: HTTP/1.0 followed a “one request per connection” philosophy, while HTTP/1.1 introduced persistent connections — even combining both versions, it’s rare to see HTTP/1. X connections carrying more than two requests at the 90th percentile.],
-  [The prevalence of short-lived connections can be partly explained by automated clients or scripts that tend to open new connections rather than maintaining long-lived sessions. To explore this intuition, we split the data between traffic originating from data centers (likely automated) and typical user traffic (user-driven), using client ASNs as a proxy.],
-  [The plot above shows that non-DC (user-driven) traffic has slightly higher request counts per connection, consistent with browsers or apps fetching multiple resources over a single persistent connection, with a mean of 5 requests and a 90th percentile of 5 requests per connection. In contrast, DC-originated traffic has a mean of roughly 3 requests and a 90th percentile of 2, validating our expectation. Despite these differences, the median number of requests remains 1 for both groups highlighting that, regardless of origin of connections, most are genuinely brief.],
-  [Inferring path characteristics from connection-level data],
-  [Connection-level measurements can also provide insights into underlying path characteristics. Let’s examine this in more detail.],
-  [Path MTU],
-  [The maximum transmission unit ( MTU ) along the network path is often referred to as the Path MTU (PMTU). PMTU determines the largest packet size that can traverse a connection without fragmentation or packet drop, affecting throughput, efficiency, and latency. The Linux TCP stack on our servers tracks the largest segment size that can be sent without fragmentation along the path for a connection, as part of Path MTU discovery.],
-  [From that data we saw that the median (and the 90th percentile!) PMTU was 1500 bytes, which aligns with the typical Ethernet MTU and is considered standard for most Internet paths. Interestingly, the 10th percentile sits at 1,420 bytes, reflecting cases where paths include network links with slightly smaller MTUs—common in some VPNs , IPv6tov4 tunnels , or older networking equipment that impose stricter limits to avoid fragmentation. At the extreme, we have seen MTU as small as 552 bytes for IPv4 connections which relates to the minimum allowed PMTU value by the Linux kernel .],
-  [Initial congestion window],
-  [A key parameter in transport protocols is the congestion window (CWND), which is the number of packets that can be transmitted without waiting for an acknowledgement from the receiver. We call these packets or bytes “in-flight.” During a connection, the congestion window evolves dynamically throughout a connection.],
-  [However, the initial congestion window (ICWND) at the start of a data transfer can have an outsized impact, especially for short-lived connections, which dominate Internet traffic as we’ve seen above. If the ICWND is set too low, small and medium transfers take additional round-trip times to reach bottleneck bandwidth, slowing delivery. Conversely, if it’s too high, the sender risks overwhelming the network, causing unnecessary packet loss and retransmissions — potentially for all connections that share the bottleneck link.],
-  [A reasonable estimate of the ICWND can be taken as the congestion window size at the instant the TCP sender transitions out of slow start . This transition marks the point at which the sender shifts from exponential growth to congestion-avoidance, having inferred that further growth may risk congestion. The figure below shows the distribution of congestion window sizes at the moment slow start exits — as calculated by BBR . The median is roughly 464 KB, which corresponds to about 310 packets per connection with a typical 1,500-byte MTU, while extreme flows carry tens of megabytes in flight. This variance reflects the diversity of TCP connections and the dynamically evolving nature of the networks carrying traffic.],
-  [It’s important to emphasize that these values reflect a mix of network paths, including not only paths between Cloudflare and end users, but also between Cloudflare and neighboring datacenters, which are typically well provisioned and offer higher bandwidth.],
-  [Our initial inspection of the above distribution left us doubtful, because the values seem very high. We then realized the numbers are an artifact of behaviour specific to BBR, in which it sets the congestion window higher than its estimate of the path’s available capacity, bandwidth delay product (BDP) . The inflated value is by design . To prove the hypothesis, we re-plot the distribution from above in the figure below alongside BBR’s estimate of BDP. The difference is clear between BBR’s congestion window of unacknowledged packets and its BDP estimate.],
-  [The above plot adds the computed BDP values in context with connection telemetry. The median BDP comes out to be roughly 77 KB, which is roughly 50 packets. If we compare this to the congestion window distribution taken from above, we see BDP estimations from recently closed connections are much more stable.],
-  [We are using these insights to help identify reasonable initial congestion window sizes and the circumstances for them. Our own experiments internally make clear that ICWND sizes can affect performance by as much as 30-40% for smaller connections. Such insights will potentially help to revisit efforts to find better initial congestion window values, which has been a default of 10 packets for more than a decade.],
-  [Deeper understanding, better performance],
-  [We observed that Internet connections are highly heterogeneous, confirming decades-long observations of strong heavy-tail characteristics consistent with “ elephants and mice ” phenomenon. Ratios of upload to download bytes are unsurprising for larger flows, but surprisingly small for short flows, highlighting the asymmetric nature of Internet traffic. Understanding these connection characteristics continues to inform ways to improve connection performance, reliability, and user experience.],
-  [We will continue to build on this work, and plan to publish connection-level statistics on Cloudflare Radar so that others can similarly benefit.],
-  [Our work on improving our network is ongoing, and we welcome researchers, academics, interns , and anyone interested in this space to reach out at ask-research\@cloudflare.com . By sharing knowledge and working together, we all can continue to make the Internet faster, safer, and more reliable for everyone.],
+  [In 2015 I wrote about some of the tooling Ruby provides for diagnosing managed memory leaks . The article mostly focused on the easy managed leaks.],
+  [This article covers tools and tricks you can use to attack leaks that you can not easily introspect in Ruby. In particular I will discuss mwrap, heaptrack, iseq\_collector and chap.],
+  [An unmanaged memory leak],
+  [This little program leaks memory by calling malloc directly. It starts off consuming 16MB and finishes off consuming 118MB of RSS. The code allocates 100k blocks of 1024 bytes and de-allocates 50 thousand of them.],
+  [require 'fiddle'
+require 'objspace'],
+  [def usage
+ rss = \`ps -p \#{Process.pid} -o rss -h\`.strip.to\_i \* 1024
+ puts "RSS: \#{rss \/ 1024} ObjectSpace size \#{ObjectSpace.memsize\_of\_all \/ 1024}"
+end],
+  [def leak\_memory
+ pointers = \[\]
+ 100\_000.times do
+ i = Fiddle.malloc(1024)
+ pointers growth\_a
+ end],
+  [results\[0..20\].each do |location, growth, allocations, frees|
+ next if growth == 0
+ puts "\#{location} growth: \#{growth.to\_i} allocs/frees (\#{allocations}/\#{frees})"
+ end
+end],
+  [GC.start
+Mwrap.clear],
+  [leak\_memory],
+  [GC.start],
+  [\# Don't track allocations for this block
+Mwrap.quiet do
+ report\_leaks
+end],
+  [Mwrap.dump],
+  [Next we will launch our script with the mwrap wrapper],
+  [% gem install mwrap
+% mwrap ruby leak.rb
+leak.rb:12 growth: 51200000 allocs/frees (100000/50000)
+leak.rb:51 growth: 4008 allocs/frees (1/0)],
+  [Mwrap correctly detected the leak in the above script (50,000 \* 1024). Not only it detected it, it isolated the actual line in the script ( i = Fiddle.malloc(1024) ) which caused the leak. It correctly accounted for the Fiddle.free calls.],
+  [It is important to note we are dealing with estimates here, mwrap keeps track of total memory allocated at the call-site and then keeps track of de-allocations. However, if you have a single call-site that is allocating memory blocks of different sizes the results can be skewed, we have access to the estimate: ((total \/ allocations) \* (allocations - frees))],
+  [Additionally, to make tracking down leaks easier mwrap keeps track of age\_total which is the sum of the lifespans of every object that was freed, and max\_lifespan which is the lifespan of the oldest object in the call-site. If age\_total \/ frees is high, it means the memory growth survives many garbage collections.],
+  [Mwrap has a few helpers that can help you reduce noise. Mwrap.clear will clear all the internal storage. Mwrap.quiet {} will suppress Mwrap tracking for a block of code.],
+  [Another neat feature Mwrap has is that it keeps track of total allocated bytes and total freed bytes. If we remove the clear from our script and run:],
+  [usage
+puts "Tracked size: \#{(Mwrap.total\_bytes\_allocated - Mwrap.total\_bytes\_freed) \/ 1024}"],
+  [\# RSS: 130804 ObjectSpace size 3032
+\# Tracked size: 91691],
+  [This is very interesting cause even though our RSS is 130MB, Mwrap is only seeing 91MB, this demonstrates we have bloated our process. Running without mwrap shows that the process would normally be 118MB so in this simple case accounting is a mere 12MB, the pattern of allocation \/ deallocation caused fragmentation. Knowing about fragmentation can be quite powerful, in some cases with untuned glibc malloc processes can fragment so much that a very large amount memory consumed in RSS is actually free.],
+  [Could Mwrap isolate the old redcarpet leak?],
+  [In Oleg’s article he discussed a very thorough way he isolated a very subtle leak in redcarpet. There is lots of detail there. It is critical that you have instrumentation . If you are not graphing process RSS you have very little chance at attacking any memory leak.],
+  [Let’s step into a time machine and demonstrate how much easier it can be to use Mwrap for such leaks.],
+  [def red\_carpet\_leak
+ 100\_000.times do],
+  [markdown = Redcarpet:: Markdown.new(Redcarpet:: Render:: HTML, extensions = {})
+ markdown.render("hi")
+ end
+end],
+  [GC.start
+Mwrap.clear],
+  [red\_carpet\_leak],
+  [GC.start],
+  [\# Don't track allocations for this block
+Mwrap.quiet do
+ report\_leaks
+end],
+  [Redcarpet version 3.3.2],
+  [redcarpet.rb:51 growth: 22724224 allocs/frees (500048/400028)
+redcarpet.rb:62 growth: 4008 allocs/frees (1/0)
+redcarpet.rb:52 growth: 634 allocs/frees (600007/600000)],
+  [Redcarpet version 3.5.0],
+  [redcarpet.rb:51 growth: 4433 allocs/frees (600045/600022)
+redcarpet.rb:52 growth: 453 allocs/frees (600005/600000)],
+  [Provided you can afford for a process to run at half speed simply re-launching it in production with Mwrap and logging Mwrap output once in a while to a file can identify a broad spectrum of memory leaks.],
+  [A mysterious memory leak],
+  [Recently we upgraded Rails to version 6 at Discourse. Overall the experience was extremely positive, performance remained more or less the same, Rails 6 includes some very nice features we get to use (like Zeitwerk ).],
+  [Rails amended the way templates are rendered which required a few backwards compatible changes.],
+  [Fast forward a few days after our upgrade and we noticed RSS for our Sidekiq job runner was climbing.],
+  [Mwrap kept on reporting a sharp incline in memory due to memory being allocated at:],
+  [github.com/rails/rails],
+  [actionview/lib/action\_view/template.rb],
+  [source.encode!],
+  [\# Now, validate that the source we got back from the template],
+  [\# handler is valid in the default\_internal. This is for handlers],
+  [\# that handle encoding but screw up],
+  [unless source.valid\_encoding?],
+  [raise WrongEncodingError.new(source, Encoding.default\_internal)],
+  [end],
+  [begin],
+  [rescue SyntaxError],
+  [\# Account for when code in the template is not syntactically valid; e.g. if we're using],
+  [\# ERB and the user writes , attempting to call a helper \`foo\` and interpolate],
+  [\# the result into the template, but missing an end parenthesis.],
+  [raise SyntaxErrorInTemplate.new(self, original\_source)],
+  [end],
+  [end],
+  [def handle\_render\_error(view, e)],
+  [if e.is\_a?(Template:: Error)],
+  [style="clear: both;"\>],
+  [We initially found this very confusing and kept thinking to ourselves, why is Mwrap complaining? Could it be broken?],
+  [During the period where memory was climbing the Ruby heaps were not growing in size in a significant manner.],
+  [2 million slots in the heap are a meager 78MB (40 bytes per slot), strings and arrays can take up more space, but this simply did not explain the enormous memory usage we were seeing. This was confirmed when I ran rbtrace -p SIDEKIQ\_PID -e ObjectSpace.memsize\_of\_all .],
+  [Where did all the memory go?],
+  [Heaptrack is a memory heap profiler for Linux.],
+  [Milian Wolff does a great job explaining what it is and how it came to be on his blog . He also has several talks about it ( 1 , 2 , 3 )],
+  [In essence it is an incredibly efficient native heap profiler that gathers backtraces from a profiled applications using libunwind .],
+  [It is significantly faster than Valgrind/Massif and has a feature that makes is much more suitable for temporary production profiling.],
+  [It can attach to an already running process!],
+  [As with most heap profilers, when every single malloc family function is called it needs to do some accounting. This accounting certainly slows down the process a bit.],
+  [The design, in my mind, is the best possible design for this type of program. It intercepts using an LD\_PRELOAD trick or a GDB trick to load up the profiler. It ships the data out of the profiled process as quickly as possibly using a FIFO special file . The wrapper heaptrack is a simple shell script, something that makes troubleshooting simple. A second process runs to read from the FIFO and compress the tracking data on the fly. Since heaptrack operates in “chunks” you can start looking at the profiled information seconds after you start profiling, mid way through a profiling session. Simply copy the profile file to another location and run the heaptrack gui.],
+  [This ticket at GitLab alerted me to the possibility of running heaptrack. Since they were able to run it, I knew it was a possibility for me.],
+  [We run our application in a container, I needed to relaunch our container with --cap-add=SYS\_PTRACE which allows GDB to use ptrace which we needed so heaptrack can inject itself. Additionally, I needed a small hack on the shell file to allow root to profile a non root process (we run our Discourse application under a restricted account in the container).],
+  [Once this was done it was as simple as running heaptrack -p PID and waiting for results to stream in.],
+  [The UX of heaptrack is fantastic and extremely rich, it was very easy to follow what was happening with my memory leak.],
+  [At a top level I could see two jumps, one was due to cppjieba and the other was originating from Ruby objspace\_xmalloc0],
+  [I knew about cppjieba , segmenting Chinese is expensive, large dictionaries are needed, it was not leaking.],
+  [But why was ruby allocating memory and further more, not telling me about it?],
+  [The largest increase was coming from iseq\_set\_sequence in compile.c . So it follows that we were leaking instruction sequences.],
+  [This made the leak Mwrap detected make sense. mod.module\_eval(source, identifier, 0) was causing a leak cause it was creating instruction sequences that were never being removed.],
+  [In retrospect if I carefully analyzed a heap dump from Ruby I should have seen all these IMEMOs, cause they are included in heap dumps, just invisible from in-process introspection.],
+  [From here on debugging was pretty simple, I tracked down all calls to the module eval and dumped out what it was evaluating. I discovered we kept on appending methods over and over to a big class.],
+  [Simplified, this is the bug we were seeing:],
+  [require 'securerandom'
+module BigModule; end],
+  [def leak\_methods
+ 10\_000.times do
+ method = "def \_\#{SecureRandom.hex}; \#{"sleep;" \* 100}; end"
+ BigModule.module\_eval(method)
+ end
+end],
+  [usage
+\# RSS: 16164 ObjectSpace size 2869],
+  [leak\_methods],
+  [usage
+\# RSS: 123096 ObjectSpace size 5583],
+  [Ruby has a class to contain instruction sequences called: RubyVM:: InstructionSequence . However, Ruby is lazy about creating these wrapping objects, cause it is inefficient to have them around unless needed.],
+  [Interestingly Koichi Sasada created the iseq\_collector gem. If we add this snippet we can now find our hidden memory:],
+  [require 'iseq\_collector'
+puts "\#{ObjectSpace.memsize\_of\_all\_iseq \/ 1024}"
+\# 98747],
+  [ObjectSpace.memsize\_of\_all\_iseq will materialize every instruction sequence, which can introduce slight process memory growth and slightly more GC work.],
+  [If we, for example, count the number of ISEQs before and after running the collector we will notice that after running ObjectSpace.memsize\_of\_all\_iseq our RubyVM:: InstructionSequence class count grows from 0 to 11128 in the example above:],
+  [def count\_iseqs
+ ObjectSpace.each\_object(RubyVM:: InstructionSequence).count
+end],
+  [These wrappers will stay around for the life of a method and need to be visited when a full GC runs.],
+  [For those curious, our fix to our issue was reusing the class responsible for rendering email templates. ( fix 1 , fix 2 )],
+  [chap],
+  [During my debugging I came across a very interesting tool.],
+  [Tim Boddy, extracted an internal tool used at VMWare for analysis of memory leaks and open sourced it a few years ago. The only video I can find about it is here . Unlike most tools out there this tool has zero impact on a running process. It can simply run against core dump files, as long as the allocator being used is glibc (no support for jemalloc/tcmalloc etc)],
+  [The initial leak I had can be very easily detected using chap. Not many distros include a binary for chap, but you can easily build it from source . It is very actively maintained.],
+  [\# 444098 is the \`Process.pid\` of the leaking process I had
+sudo gcore -p 444098],
+  [chap core.444098
+chap\> summarize leaked
+Unsigned allocations have 49974 instances taking 0x312f1b0(51,573,168) bytes.
+ Unsigned allocations of size 0x408 have 49974 instances taking 0x312f1b0(51,573,168) bytes.
+49974 allocations use 0x312f1b0 (51,573,168) bytes.],
+  [chap\> list leaked
+...
+Used allocation at 562ca267cdb0 of size 408
+Used allocation at 562ca267d1c0 of size 408
+Used allocation at 562ca267d5d0 of size 408
+...],
+  [chap\> summarize anchored 
+....
+Signature 7fbe5caa0500 has 1 instances taking 0xc8(200) bytes.
+23916 allocations use 0x2ad7500 (44,922,112) bytes.],
+  [Chap can use signatures to find where various memory is allocated and can complement GDB. When it comes to debugging Ruby it can do a great job helping you finding out what the actual memory is in use for a process. summarize used gives the actual memory, sometimes glibc malloc can fragment so much that the used number is enormously different to the actual RSS. See: Feature \#14759: \[PATCH\] set M\_ARENA\_MAX for glibc malloc - Ruby - Ruby Issue Tracking System for more discussion. Chap can correctly account for all memory usage and provide deep analysis around memory allocation behaviors.],
+  [Additionally chap can be integrated into build pipelines to automatically detect leaks and flag builds that are leaking.],
+  [Future work],
+  [This round of debugging did prompt me to raise a few issues with our supporting tool-sets:],
+  [I would love to see heaptrack support grabbing call-stack frames from Ruby. Milian is interested in this problem as well: https:\/\/bugs.kde.org/show\_bug.cgi?id=412929],
+  [I would love Ruby to support richer introspection: Feature \#16245: Add interfaces to count and measure size all IMEMO objects - Ruby - Ruby Issue Tracking System],
+  [I would love to see Mwrap be a little bit easier to use in production. Tracked here .],
+  [Our existing tooling for debugging very complex memory leaks in 2019 is vastly superior to what we had 4 years ago! Mwrap, heaptrack and chap provide us with very powerful tools for attacking memory related issues both in development and production.],
+  [If you are hunting a simple memory leak in Ruby, I recommend my earlier article from 2015, most of it still holds.],
+  [I hope that next time you are stuck debugging a complex native memory leak you have an easier time!],
+  [If you have any interesting battle stories or tools I have forgotten to mention you would like to share, please post a comment!],
 ),
   insert-map: (:),
-  word-count: 3084,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-}
-
-{
-  #standard-article(
-  title: [From .com to .anything: introducing Top-Level Domain (TLD) insights on Cloudflare Radar],
-  author: [André Jesus],
-  source-name: [Cloudflare Research],
-  images: (),
-  paragraphs: (
-  [Readers of a certain age may remember the so-called "dot com boom" that took place in the early 2000's. The boom's "dot com" is what is known as a Top-Level Domain (TLD). Originally intended to organize domain names into a small set of categorical groupings, over the past 40+ years, the set of TLDs has expanded to include country code top-level domains (ccTLDs, like .us , .pt , and .cn ), as well as additional generic top-level domains (gTLDs) beyond the initial seven, such as .biz , .shop , and .nyc . Internationalized TLDs, such as .сайт , .онлайн , .شبكة , .游戏 , and brand TLDs, like .google and .nike have also been added. As of October 2025, over 1,400 entries can be found in ICANN's list of all valid top-level domains, and a further expansion is expected to begin in April 2026 .],
-  [Cloudflare Radar has long published domain ranking information, providing insights into popular and trending domains. And in February 2025, we added a number of DNS-related insights to Radar , based on analysis of traffic to our 1.1.1.1 Public DNS Resolver.],
-  [Building on this, today we are launching a new TLD page on Radar that, based on aggregated data from multiple Cloudflare services, provides insights into TLD popularity, activity, and security, along with links directly into Cloudflare Registrar to enable users to register domain names in supported TLDs .],
-  [Initial security-related insights],
-  [Before today, Radar already offered insights into TLDs, though these were distributed across a couple of different pages and datasets.],
-  [In March 2024, when we launched the Email Security page , we introduced the “Most abused TLDs” metric. This chart highlights TLDs associated with the largest shares of malicious and spam email. The analysis is based on the sending domain’s TLD, extracted from the From: header in email messages, with data sourced from Cloudflare’s cloud email security service .],
-  [More recently, during 2025’s Birthday Week, we introduced Certificate Transparency (CT) insights on Radar, leveraging data from CT logs monitored by Cloudflare. One highlight is the Certificate Coverage section, which visualizes the distribution of pre-certificates across the top 10 TLDs. These insights give a different perspective on TLD activity, complementing email-based metrics by showing which domains are actively securing web traffic.],
-  [A new aggregate overview based on DNS Magnitude],
-  [Today, we’re excited to announce the new TLD page on Radar. The landing page and the dedicated per-TLD pages provide TLD managers and site owners with a perspective on the relative popularity of TLDs they manage or may be considering domains in, as well as insights into TLD traffic volume and distribution.],
-  [Located under the DNS menu, the landing page introduces a ranking of top-level domains based on DNS Magnitude — a metric originally developed by nic.at to estimate a domain’s overall visibility on the Internet.],
-  [Instead of simply counting the total number of DNS queries, DNS Magnitude incorporates a sense of how many unique clients send queries to domains within the TLD. This approach gives a more accurate picture of a TLD’s reach, since a small number of sources can generate a large number of queries. Our ranking is based on queries observed at Cloudflare’s 1.1.1.1 resolver. We aggregate individual client IP addresses into subnets, referred to here as "networks".],
-  [The magnitude value ranges from 0 to 10, with higher values (closer to 10) indicating that the TLD is queried by a broader range of networks. This reflects greater global visibility and, in some cases, a higher likelihood of name collision across different systems. According to ICANN , a name collision occurs when an attempt to resolve a name used in a private name space (such as under a non-delegated Top-Level Domain) results in a query to the public Domain Name System (DNS) . When the administrative boundaries of private and public namespaces overlap, name resolution may yield unintended or harmful results. For example, if ICANN were to delegate .home , that could cause significant issues for hobbyists that use the (currently non-delegated) TLD within their local networks.],
-  [\$Magnitude=\\frac{ln(unique\\ networks\\ querying\\ the\\ TLD)}{ln(all\\ unique\\ networks)}\*10\$],
-  [The table displays a paginated ranking of the top 2,500 TLDs, along with several key attributes. Each entry includes the TLD itself — which links to a dedicated page for delegated TLDs — as well as its type:],
-  [gTLD (generic TLD): used for general purposes, such as .com or .info .],
-  [grTLD (generic restricted TLD): limited to specific communities or uses, such as .name .],
-  [ccTLD (country code TLD): assigned to individual countries or territories, such as .uk or .jp .],
-  [iTLD (infrastructure TLD): reserved for technical infrastructure, such as .arpa .],
-  [sTLD (sponsored TLD): operated by a sponsoring organization representing a defined community, such as .edu or .gov .],
-  [The status column indicates whether the TLD is delegated, meaning it is officially assigned and active in the root zone of the DNS, or non-delegated, meaning it is not currently part of the public DNS. The table also shows the manager of each TLD — typically the organization or registry responsible for its operation — and the corresponding DNS magnitude value.],
-  [While the top 10 TLDs include stalwarts such as .com / .net / .org and ccTLDs that have been commercially repurposed, such as .io / .co / .tv , the TLD at the top of the list may be a bit surprising: .su .],
-  [This TLD was delegated for the Soviet Union back in 1990, but its use waned after the dissolution of the USSR, with constituent republics becoming independent and using their own dedicated ccTLDs. (ICANN reportedly plans to retire .su in 2030.) Looking at a single day’s worth of data, the .su TLD does not rank \#1 by unique networks. However, over a longer period of time, such as seven days, it sees queries from more unique networks than other TLDs, placing it atop the magnitude list. Further analysis of the top hostnames observed within this TLD suggests that they are mostly associated with a popular online world-building game. Interestingly, over half of the queries for .su domains come from the United States, Germany, and Brazil.],
-  [More detailed TLD insights],
-  [The new TLD section also offers dedicated pages for individual TLDs. By clicking on a TLD in the DNS Magnitude table or searching for a TLD in the top search bar, users can access a page with detailed insights and information about that TLD. It’s important to note that while non-delegated TLDs are included in the DNS Magnitude ranking, TLD-specific pages are only available for delegated TLDs. The list of delegated TLDs, along with their type and manager, is sourced from the IANA’s Root Zone Database .],
-  [When a user enters an individual TLD page, they see two main cards. The first card provides general information about the TLD, including its type, manager, DNS magnitude value, DNSSEC support, and RDAP support. DNSSEC support is determined by checking whether the TLD has a Delegation Signer (DS) record in the root zone . We also parse the record to get the associated DNSSEC algorithm . RDAP support is indicated if the TLD is listed in the IANA RDAP bootstrap file . RDAP (Registration Data Access Protocol) is a new standard for querying domain contact and nameserver information for all registered domains.],
-  [The second card contains WHOIS data for the TLD, including its creation date, the date of the last update, and the list of nameservers. If the TLD is supported by Cloudflare Registrar, an additional card appears, giving users direct access to registration options. As of today, Cloudflare Registrar supports over 400 TLDs .],
-  [Below these cards, the page features the DNS query volume section, which presents insights based on queries to Cloudflare’s 1.1.1.1 resolver for domains under the TLD. This section includes a chart showing DNS queries over the selected time period, along with a donut chart breaking down queries by type, response code, and DNSSEC support. A choropleth map further illustrates the percentage of DNS queries by country, highlighting which regions generate the most queries for domains under the TLD.],
-  [Each individual TLD page also includes a Certificate Transparency section, offering visibility into TLS/SSL certificate issuance for the TLD. This section displays a line chart showing the total number of certificates issued over the selected period, as well as a donut chart depicting the distribution of certificate issuance among the top Certificate Authorities.],
-  [When we launched the DNS page earlier in 2025, we provided query volumes by TLDs, but this was limited to ccTLDs. Today, we’re extending that dataset to include all delegated TLDs. With these new insights, we’ve added the “Top-level domain distribution” section to the DNS page, featuring a line chart that shows the distribution of queries to 1.1.1.1 across the top 10 TLDs, alongside a table extending this ranking to the top 100. Not surprisingly, .com tops the ranking with more than 60% of queries, followed by .net , .arpa (an infrastructure TLD), and .org .],
-  [It is also worth noting that both Radar search and the API support both punycode ( A-Label/ASCII-Label ) and internationalized domain name (IDN) ( U-Label/UNICODE-Label ) representations of non-ASCII TLDs. For example, the U-Label representation of the South Korean TLD .kr is written as 한국 and the A-Label representation is xn--3e0b707e .],
-  [Looking ahead],
-  [Because TLDs are a foundational component of the Domain Name System, it is critical that the associated name servers are highly performant. Based on billions of daily queries to these name servers, we plan to add insights into their performance to Radar’s TLD pages in 2026. These insights will provide TLD managers with an external perspective on query responsiveness, and will give developers and site owners a perspective on the potential impact of the performance of the associated TLD name servers as they look to register new domain names.],
-  [The underlying data for these new TLD pages is available via the API and can be interactively explored in more detail using Radar’s Data Explorer and AI Assistant . And as always, Radar and Data Assistant charts and graphs are downloadable for sharing, and embeddable for use in your own blog posts, websites, or dashboards.],
-  [If you share our TLD charts and graphs on social media, be sure to tag us: \@CloudflareRadar (X), noc.social/\@cloudflareradar (Mastodon), and radar.cloudflare.com (Bluesky). If you have questions or comments, or suggestions for data that you’d like to see us add to Radar, you can reach out to us on social media, or contact us via email .],
-),
-  insert-map: (:),
-  word-count: 1747,
+  word-count: 2213,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -2503,161 +2416,363 @@ As long as you reevaluate and reassess, and constantly objectively look at what 
 
 {
   #standard-article(
-  title: [Brief Notes on Computer Word and Byte Sizes],
-  author: [Steve Bellovin],
-  source-name: [Steve Bellovin],
+  title: [Building Custom Email Templates with HTML and CSS in Python],
+  author: [Ivan Djuric],
+  source-name: [Stack Abuse],
   images: (),
   paragraphs: (
-  [This is not my usual blog fodder, but there’s too much material here for
-even a Mastodon thread. The basic question is why assorted early
-microcomputers—and all of today’s computers—use 8-bit bytes.
-A lot of this material is based on personal experience; some of it is
-what I learned in a Computer Architecture course (and probably other
-courses) I took from one of my
- mentors ,
- Fred Brooks .],
-  [There are three starting points important to remember. First, punch card data processing
-is far older than computers: it dates back to Hollerith in the late 19th
-century. When computerization started taking place, it had to accommodate these
-older “databases”. Second, early computers had tiny amounts of storage by today’s
-standards,
-both RAM and bulk storage (which may have been either disk (for some values of “disk”!)
-or tape). Third, until the mid-1960s, computers were either “commercial” or
-“scientific”, and had architectures suited for those purposes.],
-  [Punch card processing was seriously constrained. Punch cards (at least the IBM type; there],
-  [were competing companies)],
-  [had 80 columns with 12 rows each. There was a strong desire to keep all data for a],
-  [given record on a single card, given the way that data processing worked in the],
-  [pre-computer era (but that’s a topic for another time). This meant that there was],
-  [a premium on ways to compress data, and to compress it without today’s],
-  [software-based algorithms. The easiest way to do this was to put extra holes in a],
-  [card column. Consider a column holding a single digit “3”. That was represented by],
-  [a single hole in the 3-row of a single column. There were thus 10 rows reserved for],
-  [digits—but in a numeric field, the 11-row and the 12-row weren’t used. You could],
-  [encode two more bits in that colum, as long as the “programming” knew that,],
-  [say, a column with a 12-3 punch was really a 12 punch and the number 3 and not the],
-  [letter C. Clearly, 10 digit rows plus two "zone" rows gives us 40 possible characters;],
-  [a few more were added when things were computerized.],
-  [Let’s look at such computers. The underlying technology was binary, because it’s a],
-  [lot easier to build a circuit that looks at on/off rather than, say, 10 different],
-  [voltage levels. When reading a card, though, you had to preserve the two zone bits],
-  [separately, because their meaning was application-dependent. Accordingly, they],
-  [used 6-bit characters: two zone bits, plus four bits for a single digit. But you],
-  [can fit 16 possible values in those four bits, not just 10, so machines of that],
-  [era actually had 64-bit character sets. In a purely numeric field, the zone bits],
-  [were used for things like the sign bit and (sometimes) for an end-of-field marker],
-  [of some sort, but that’s not really relevant to what I’m talking about so I won’t],
-  [say more about those.],
-  [The important thing is that each column had had to be read in as a single],
-  [character, more or less uninterpreted.],
-  [Representing a number as a string of (effectively) decimal characters was also
-ideal for commercial data processing, where you’re often dealing with money, i.e.,
-with dollars and cents or francs and centimes. It turns out that \$.10 can’t be
-represented in binary: 1/10 is a repeating string in binary, just like 1/3 is in
-decimal, and CFOs and bankers didn’t really like the inaccuracy that would result from
-truncating values at a finite number of places.
-(Pounds, shillings, and pence? Don’t go there!)
-The commerical computers of the day, then, would do arithmetic on long strings
-of decimal digits.],
-  [Scientic computers had a different constraint. They were often dealing with],
-  [inexact numbers anyway (what is the exact diameter of the earth when],
-  [computing an orbit), and had to deal with logarithms, trig functions, and more.],
-  [Furthermore, many calculations were inherently imprecise: a Taylor series won’t],
-  [yield an exact answer except by chance, and it might not be possible even in],
-  [theory. (What is the exact value of π? It’s not just irrational, it’s],
-  [transcendental.) But there were other constraints. Sometimes, scientists and],
-  [engineers were dealing with very large numbers; other times, they were dealing],
-  [with very small numbers. Furthermore, they needed a reasonable amount of],
-  [precision, though just how much was needed would vary depending on the problem.],
-  [Floating point numbers were represented internally in scientific notation:],
-  [an exponent (generally binary) and a mantissa.],
-  [There were thus two critical parameters: the number of bits in the mantissa,],
-  [which translated into the precision of numbers stored, and the number of bits],
-  [in the exponent, which translated into the range. (Both fields, of course,],
-  [included a sign bit in some form.) Given these constraints, and given that],
-  [commercial data processing, with its 6-bit characgters, came first, it was],
-  [natural to use 36-bit words: plently of bits of precision and range, and the],
-  [ability to hold six characters if that’s what you were doing.],
-  [That’s where matters stood when the IBM S/360 series was being],
-  [designed],
-  [starting in 1961.],
-  [But one of the goals of the 360s was to have a single unified architecture],
-  [that could do both scientific and commerical computing. There was still the],
-  [need to support those old BCD databases, whether they were still on punch],
-  [cards or had migrated to magetic tape, and there was still the need to],
-  [support decimal arithmetic.],
-  [The basic design was for a machine that could support memory-to-register],
-  [arithmetic for scientifc work and general utlity computing, and],
-  [storage-to-storage decimal arithemtic for commercial computing.],
-  [This clearly implied a hybrid byte/word architecture.],
-  [But how big should bytes be? One faction favored 6-bit bytes and either],
-  [24-bit or 36-bit words; another favored 8-bit bytes and 32-bit words.],
-  [Ultimately, Brooks],
-  [made the call :],
-  [8-bit bytes permitted lower-case letters, which he foresaw would become],
-  [important to permit character processing. (Aside: Brooks, apart from being a],
-  [mensch, was a brilliant man. It’s sobering to realize that he was appointed],
-  [to head the S/360 design project, a bet-the-compay effort by IBM, when he],
-  [was just 30 years old, and this was just after his previous project, the 8000 series],
-  [of scientific computers, was canceled. I wasn’t even out of grad school when I],
-  [was 30!)],
-  [The reduction from 36 bits to 32 bits for floating point numbers was challenging:],
-  [there was a loss of precision. You could go to double-precision floating point—64],
-  [bits—but that cost storage, which was expensive. In fact, 8-bit bytes were],
-  [also expensive: 33% more bits for each character.],
-  [(IBM did many simulations and analyses to confirm that 32 bits would],
-  [usually suffice.)],
-  [But Brooks’ vision of the],
-  [need for lower case letters has been amply confirmed. (Other character sets],
-  [than the American Latin alphabet? Not really on folks’ radar then, which was],
-  [unfortunate. But it would have been hard to do something like Unicode back then.],
-  [The lowest plane of Unicode is based on ASCII, not IBM’s EBCDIC. Many people],
-  [within IBM wanted to go to ASCII for the S/360 line (there was even support in],
-  [the Program Status Word for ASCII bytes instead of EBCDIC ones when dealing],
-  [with decimal arithmetic), but major customers begged IBM not to do that—remember],
-  [those pesky zone punches that still existed and that still couldn’t be converted],
-  [in a context-independent fashion?)],
-  [8-bit bytes have other, albeit minor, advantages. If you’re trying to create a bit array,],
-  [it’s nice to be able to lop off the lower-order 3 bits and use them to index into],
-  [a byte. But Brooks himself said that the primary reason for his decision was to],
-  [support lower-case letters.],
-  [(Aside: Gerritt Blaauw ,],
-  [one of the other architects of the S/360,],
-  [spent a semester at UNC Chapel Hill where I was a grad student, and I took a course],
-  [in computer design from him. There were rumors in the trade press that IBM was going],
-  [to switch to 9-bit bytes for future computers. I happened to overhear a conversation],
-  [between him and Brooks about this rumor. Neither knew if it was true, but they both],
-  [agreed that it would be unfortunate, given how hard they’d had to fight for],
-  [8-bit bytes.)],
-  [USASCII fits nicely into 7 bits, but that’s a really awkward byte size. The],
-  [upper plane was used for a variety of other alphabets’ characters. That usage,],
-  [though, has largely been supplanted by Unicode. What it boils down to is that],
-  [every since the S/360, there has never been a good reason to use a byte size of],
-  [anything other than 8 bits. On IBM systems, you have EBCDIC, an 8-bit character set.],
-  [On everything else, you have ASCII, which fits nicely in 8 bits and was more],
-  [international.],
-  [Word sizes are more linked to hardware. The real issue, especially in the days before],
-  [cache, was the width of the memory bus. A wide bus is better for performance, but],
-  [of course is more expensive. The S/360 was originally planned to have five models,],
-  [from the low-end 360/30 to the 360/70, that shared the same instruction set.],
-  [It turns out that the 360/50 was a sweet spot for price/peformance and for profit—and],
-  [it had a 32-bit memory bus. If you’re trying to do a 32-bit addition, you really want],
-  [the memory operand to be aligned on a 4-byte boundary, or you’d have to do two],
-  [memory fetches. 32 bits, then, is the natural word size, and the size of the registers.],
-  [You could do half-word fetches, but that’s easy; you just discard the half of the],
-  [word you don’t want. A double-precision 64-bit operand requires two fetches, but],
-  [on a higher-end machine with a 64-bit bus it’s only one fetch if the],
-  [operand is aligned on an 8-byte boundary. And on the IBM],
-  [Z series ,],
-  [the modern successor to the S/360? Words are still 32 bits, because the],
-  [nomenclature is established. A pair of 64-bit registers together is said to hold],
-  [a “quadword”. That is, what a “word” is is was defined by the original history],
-  [of the architecture; after that, it’s likely historical.],
+  [An HTML email utilizes HTML code for presentation. Its design is heavy and looks like a modern web page, rich with visual elements like images, videos, etc., to emphasize different parts of an email's content.],
+  [In this step-by-step guide, you'll learn how to build an HTML email template , add a CSS email design to it, and send it to your target audience.],
+  [id="settingupyourtemplatedirectoryandjinja2"\>Setting Up Your Template Directory and Jinja2],
+  [Follow the steps below to set up your HTML email template directory and Jinja2 for Python email automation:],
+  [Create a Template Directory : To hold your HTML email templates, you will need to set up a template directory inside your project module. Let's name this directory - html\_emailtemp .],
+  [Install Jinja2 : Jinja is a popular templating engine for Python that developers use to create configuration files, HTML documents, etc. Jinja2 is its latest version. It lets you create dynamic content via loops, blocks, variables, etc. It's used in various Python projects, like building websites and microservices, automating emails with Python, and more.],
+  [Use this command to install Jinja2 on your computer:],
+  [pip install jinja2],
+  [id="creatinganhtmlemailtemplate"\>Creating an HTML Email Template],
+  [To create an HTML email template, let's understand how to code your email step by step. If you want to modify your templates, you can do it easily by following the steps below:],
+  [id="step1structurehtml"\>Step 1: Structure HTML],
+  [A basic email will have a proper structure - a header, a body, and a footer.],
+  [Header : Used for branding purposes (in emails, at least)],
+  [Body : It will house the main text or content of the email],
+  [Footer : It's at the end of the email if you want to add more links, information, or call-to-actions (CTA)],
+  [Begin by creating your HTML structure, keeping it simple since email clients are less compatible than web browsers. For example, using tables is preferable for custom email layouts.],
+  [Here's how you can create a basic HTML mail with a defined structure:],
+  [HTML Email Template 
+ 
+ /\* Add your CSS here \*\/ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ Your order is confirmed 
+ 
+ 
+ 
+ 
+ 
+ The estimated delivery date is 22nd August 2024. 
+ 
+ 
+ 
+ 
+ 
+ For additional help, contact us at support\@domain.com],
+  [Explanation:],
+  [: This declares HTML as your document type.],
+  [: This is an HTML page's root element.],
+  [: This stores the document's metadata, like CSS styles.],
+  [: CSS styles are defined here.],
+  [: This stores your email's main content.],
+  [: This tag defines the email layout, giving it a tabular structure with cells and rows, which makes rendering easier for email clients.],
+  [: This tag defines the table's row, allowing vertical content stacking.],
+  [: This tag is used to define a cell inside a row. It contains content like images, text, buttons, etc.],
+  [id="step2structureyouremail"\>Step 2: Structure Your Email],
+  [Now, let's create the structure of your HTML email. To ensure it's compatible with different email clients, use tables to generate a custom email layout, instead of CSS.],
+  [Hi, Jon! 
+ Thank you for being our valuable customer!],
+  [id="stylingtheemailwithcss"\>Styling the Email with CSS],
+  [Once you've defined your email structure, let's start designing emails with HTML and CSS:],
+  [id="inlinecss"\>Inline CSS],
+  [Use inline CSS to ensure different email clients render CSS accurately and preserve the intended aesthetics of your email style.],
+  [Styled paragraph.],
+  [id="adjustingstyle"\>Adjusting Style],
+  [Users might use different devices and screen sizes to view your email. Therefore, it's necessary to adapt the style to suit various screen sizes. In this case, we'll use media queries to achieve this goal and facilitate responsive email design.],
+  [\@media screen and ( max-width : 600px ) {
+ .container {
+ width : 100% !important ;
+ padding : 10px !important ;
+ }
+ }],
+  [Explanation:],
+  [\@media screen and (max-width: 600px) {....} : This is a media query that targets device screens of up to 600 pixels, ensuring the style applies only to these devices, such as tablets and smartphones.],
+  [width: 100% !important; : This style changes the width of the table - .container. The code instructs that the table width be set to full screen, not 600px.],
+  [!important : This rule overrides other styles that may conflict with it.],
+  [padding: 10px !important; : Inside the .container table, a padding of 10px is added to the table.],
+  [id="addingctabuttonandlinks"\>Adding CTA Button and Links],
+  [Here, we are adding a call to action (CTA) link at the button - "Get a 30-day free trial" that points to this page - https:\/\/www.mydomain.com .],
+  [Get a 30-day free trial],
+  [Let's Now Look at the Complete HTML Email Template:],
+  [HTML Email Template],
+  [/\* Adding the CSS \*/],
+  [body {],
+  [margin : 0 ;],
+  [padding : 0 ;],
+  [background-color : \#f4f4f4 ;],
+  [font-family : Arial, sans-serif;],
+  [}],
+  [table {],
+  [border-collapse : collapse;],
+  [}],
+  [.mailcontainer {],
+  [width : 100% ;],
+  [max-width : 600px ;],
+  [margin : auto;],
+  [background-color : \#ffffff ;],
+  [}],
+  [.header {],
+  [background-color : \#1c3f60 ;],
+  [color : \#ffffff ;],
+  [text-align : center;],
+  [padding : 20px ;],
+  [}],
+  [.body {],
+  [padding : 20px ;],
+  [font-size : 16px ;],
+  [line-height : 1.6 ;],
+  [background-color : \#1c3f60 ;],
+  [color : \#7ed957 ;],
+  [}],
+  [.footer {],
+  [background-color : \#ff6100 ;],
+  [color : \#000000 ;],
+  [text-align : center;],
+  [padding : 20px ;],
+  [}],
+  [.cta {],
+  [background-color : \#8c52ff ;],
+  [padding : 10px 20px ;],
+  [border-radius : 5px ;],
+  [color : \#ffffff ;],
+  [text-decoration : none;],
+  [font-weight : bold;],
+  [}],
+  [\@media screen and ( max-width : 600px ) {],
+  [.container {],
+  [width : 100% !important ;],
+  [padding : 10px !important ;],
+  [}],
+  [}],
+  [Your order is confirmed],
+  [The estimated delivery date is 22nd August 2024. 
+ Styled paragraph. 
+ 
+ 
+ 
+ Hi, Jon! 
+ Thank you for being our valuable customer! 
+ 
+ 
+ 
+ 
+ 
+ 
+ Get a 30-day free trial],
+  [For additional help, contact us at support\@domain.com],
+  [Explanation:],
+  [.mailcontainer : This is a class that you can use to style your email content's main section. It's given a set width, margin, border, and color.],
+  [.header , .footer , .body : These are classes used to style your email's header, footer, and body, respectively.],
+  [.cta : This class allows you to style your buttons, such as CTA buttons, with a specified color, border design, padding, etc.],
+  [id="bringingeverythingtogetherwithjinja2"\>Bringing Everything Together With Jinja2],
+  [Having created our HTML template, it's now time to bring everything together using the Jinja2 templating engine.],
+  [id="importprojectmodules"\>Import Project Modules],
+  [You've already set up your template directory - html\_emailtemp . Now you can find and render templates using code. But before you do that, import the relevant project modules using the code below:],
+  [from jinja2 import Environment, PackageLoader, select\_autoescape],
+  [env = Environment(loader=PackageLoader( 'email\_project' , 'html\_emailtemp' ), autoescape=select\_autoescape(\[ 'html' , 'xml' \]))],
+  [Explanation :],
+  [Environment: Jinja2 utilizes a central object, the template Environment. Its instances store global objects and configurations, and load your email templates from a file.],
+  [PackageLoader : This configures Jinja2 to load email templates.],
+  [autoescape : To mitigate security threats such as cross-site scripting (XSS) attacks and protect your code, you can escape values (that are passed to the email template) while rendering HTML using the command autoescape . Or, you can validate user inputs to reject malicious code.],
+  [For security, autoescape is set to True to enable escaping values. If you turn it to False , Jinja2 won't be able to escape values, and XSS attacks may occur. To enable autoescape, set autoescape to True :],
+  [env = Environment(loader=PackageLoader("myapp"), autoescape=True)],
+  [id="loadyourtemplate"\>Load Your Template],
+  [Once done, a template environment will be created with a template loader to find email templates created inside your project module's template folder.],
+  [Next, load your HTML email template using the method - get\_template() . This function will return your loaded template. It also offers several benefits such as enabling email template inheritance, so you can reuse the template in multiple scenarios.],
+  [template1 = env.get\_template("myemailtemplate.html")],
+  [id="renderthetemplate"\>Render the Template],
+  [To render your email template, use the method - render()],
+  [html1 = template1.render()],
+  [As these HTML email templates are dynamic, you can pass keyworded arguments (kwargs) with Jinja2 to the render function. The kwargs will then be passed to your email template. Here's how you can render your templates using the destined user's name - "Jon Doe" - in your email.],
+  [html1 = template1.render(name="Jon Doe")],
+  [Let's look at the complete code for this section:],
+  [from jinja2 import Environment, PackageLoader, select\_autoescape],
+  [env = Environment(loader=PackageLoader( "email\_project" , "html\_emailtemp" ),
+ autoescape=select\_autoescape(\[ "html" , "xml" \]))],
+  [template1 = env.get\_template( "myemailtemplate.html" )
+html1 = template1.render()],
+  [id="sendingtheemail"\>Sending the Email],
+  [To send an email, you can use the application-level, straightforward protocol - Simple Mail Transfer Protocol (SMTP). This protocol streamlines the email sending process and determines how to format, send, and encrypt your emails between the source and destination mail servers.],
+  [In this instance, we'll send emails in Python via SMTP since Python offers a built-in module for email sending. To send emails, Python provides a library, 'smtplib', to facilitate effortless interaction with the SMTP protocol.],
+  [To get started:],
+  [Install 'smtplib' : Ensure you have installed Python on your system. Now, import 'smtplib' to set up connectivity with the mail server.],
+  [import smtplib],
+  [Define your HTML parameter : Define your HTML parameter for the mail object where you'll keep your HTML template. It will instruct email clients to render the template.],
+  [Here's the full code for this section:],
+  [import smtplib],
+  [from email.mime.text import MIMEText \# MIMEText is a class from the email package],
+  [from jinja2 import Template \# Let's use Template class for our HTML template],
+  [sender = " sender1\@gmail.com "],
+  [recipient = " recipient1\@gmail.com "],
+  [subject = "Your order is confirmed!"],
+  [with open ( 'myemailtemplate.html' , 'r' ) as f:
+ template1 = Template(f.read())],
+  [\# Enter the HTML template],
+  [html\_emailtemp = """],
+  [HTML Email Template],
+  [\# Adding the CSS
+ body { margin: 0; padding: 0; background-color: \#f4f4f4; font-family: Arial, sans-serif; }
+ table { border-collapse: collapse; }
+ .mailcontainer { width: 100%; max-width: 600px; margin: auto; background-color: \#ffffff; }
+ .header { background-color: \#1c3f60; color: \#ffffff; text-align: center; padding: 20px; }
+ .body { padding: 20px; font-size: 16px; line-height: 1.6; background-color: \#1c3f60; color: \#7ed957; }
+ .footer { background-color: \#ff6100; color: \#000000; text-align: center; padding: 20px; }
+ .cta { background-color: \#8c52ff; padding: 10px 20px; border-radius: 5px; color: \#ffffff; text-decoration: none; font-weight: bold; }],
+  [\@media screen and (max-width: 600px) {
+ .container {
+ width: 100% !important;
+ padding: 10px !important;
+ }
+ }
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ Your order is confirmed 
+ 
+ 
+ 
+ 
+ 
+ The estimated delivery date is 22nd August 2024. 
+ Styled paragraph. 
+ 
+ 
+ 
+ Hi, Jane! 
+ 
+ Thank you for being our valuable customer!
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ Get a 30-day free trial 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ For additional help, contact us at support\@domain.com],
+  ["""],
+  [template1 = Template(html\_emailtemp)
+html1 = template1.render(name= "Jon Doe" )],
+  [\# Attach your MIMEText objects for HTML],
+  [message = MIMEText(html1, 'html' )
+message\[ 'Subject' \] = subject
+message\[ 'From' \] = sender
+message\[ 'To' \] = recipient],
+  [\# Send the HTML email],
+  [with smtplib. SMTP\_SSL( 'smtp.gmail.com' , 465 ) as server:
+ server.login(username, password)
+ server.sendmail(sender, recipient, message.as\_string())],
+  [Explanation:],
+  [sender : The sender's email address],
+  [recipient : The recipient's email address],
+  [from email.mime.text import MIMEText : This is used to import the class MIMEText, enabling you to attach your HTML template in the email.],
+  [smtplib. SMTP\_SSL('smtp.gmail.com', 465) as server: : This establishes a connection with your email provider's (Gmail's) SMTP server using port 465. If you are using another SMTP provider, use their domain name, such as smtp.domain.com, with an appropriate port number. The connection is secured with SSL.],
+  [server.login(username, password) : This function allows you to log in to the email server using your username and password.],
+  [server.sendemail(sender, recipient, message.as\_string()) : This command sends the HTML email.],
+  [id="testing"\>Testing],
+  [Before sending your HTML email, test it to understand how different email clients render CSS and HTML. Testing tools like Email on Acid, Litmus, etc. can assist you.],
+  [id="conclusion"\>Conclusion],
+  [To build custom email templates with HTML and CSS in Python, follow the above instructions. First, begin structuring your HTML email template, style emails with CSS, and then send them to your recipients. Always check your email template's compatibility with different email clients and ensure to keep your HTML simple using tables. Adding an email link in HTML will also allow you to compose an email automatically in your email client and send it to a specific email address.],
 ),
   insert-map: (:),
-  inline-pq: pull-quote([There was still the need to support those old BCD databases, whether they were still on punch cards or had migrated to magetic tape, and there was still the need to support decimal arithmetic.], [Steve Bellovin]),
-  inline-pq-idx: 49,
-  word-count: 1670,
+  word-count: 1982,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+}
+
+{
+  #standard-article(
+  title: [Measuring characteristics of TCP connections at Internet scale],
+  author: [Suleman Ahmad],
+  source-name: [Cloudflare Research],
+  images: (),
+  paragraphs: (
+  [Every interaction on the Internet—including loading a web page, streaming a video, or making an API call—starts with a connection. These fundamental logical connections consist of a stream of packets flowing back and forth between devices.],
+  [Various aspects of these network connections have captured the attention of researchers and practitioners for as long as the Internet has existed. The interest in connections even predates the label, as can be seen in the seminal 1991 paper, “ Characteristics of wide-area TCP/IP conversations .” By any name, the Internet measurement community has been steeped in characterizations of Internet communication for decades , asking everything from “how long?” and “how big?” to “how often?” – and those are just to start.],
+  [Surprisingly, connection characteristics on the wider Internet are largely unavailable. While anyone can use tools (e.g., Wireshark ) to capture data locally, it’s virtually impossible to measure connections globally because of access and scale. Moreover, network operators generally do not share the characteristics they observe — assuming that non-trivial time and energy is taken to observe them.],
+  [In this blog post, we move in another direction by sharing aggregate insights about connections established through our global CDN. We present characteristics of TCP connections—which account for about 70% of HTTP requests to Cloudflare—providing empirical insights that are difficult to obtain from client-side measurements alone.],
+  [Why connection characteristics matter],
+  [Characterizing system behavior helps us predict the impact of changes. In the context of networks, consider a new routing algorithm or transport protocol: how can you measure its effects? One option is to deploy the change directly on live networks, but this is risky. Unexpected consequences could disrupt users or other parts of the network, making a “deploy-first” approach potentially unsafe or ethically questionable.],
+  [A safer alternative to live deployment as a first step is simulation. Using simulation, a designer can get important insights about their scheme without having to build a full version. But simulating the whole Internet is challenging, as described by another highly seminal work, “ Why we don't know how to simulate the Internet ”.],
+  [To run a useful simulation, we need it to behave like the real system we’re studying. That means generating synthetic data that mimics real-world behavior. Often, we do this by using statistical distributions — mathematical descriptions of how the real data behaves. But before we can create those distributions, we first need to characterize the data — to measure and understand its key properties. Only then can our simulation produce realistic results.],
+  [Unpacking the dataset],
+  [The value of any data depends on its collection mechanism. Every dataset has blind spots, biases, and limitations, and ignoring these can lead to misleading conclusions. By examining the finer details — how the data was gathered, what it represents, and what it excludes — we can better understand its reliability and make informed decisions about how to use it. Let’s take a closer look at our collected telemetry.],
+  [Dataset Overview . The data describes TCP connections, labeled Visitor to Cloudflare in the above diagram, which serve requests via HTTP 1.0, 1.1, and 2.0 that make up about 70% of all 84 million HTTP requests per second, on average, received at our global CDN servers.],
+  [Sampling. The passively collected snapshot of data is drawn from a uniformly sampled 1% of all TCP connections to Cloudflare between October 7 and October 15, 2025. Sampling takes place at each individual client-facing server to mitigate biases that may appear by sampling at the datacenter level.],
+  [Diversity. Unlike many large operators, whose traffic is primarily their own and dominated by a few services such as search, social media, or streaming video, the vast majority of Cloudflare’s workload comes from our customers, who choose to put Cloudflare in front of their websites to help protect, improve performance, and reduce costs. This diversity of customers brings a wide variety of web applications, services, and users from around the world. As a result, the connections we observe are shaped by a broad range of client devices and application-specific behaviors that are constantly evolving.],
+  [What we log. Each entry in the log consists of socket-level metadata captured via the Linux kernel’s TCP\_INFO struct, alongside the SNI and the number of requests made during the connection. The logs exclude individual HTTP requests, transactions, and details. We restrict our use of the logs to connection metadata statistics such as duration and number of packets transmitted, as well as the number of HTTP requests processed.],
+  [Data capture. We have elected to represent ‘useful’ connections in our dataset that have been fully processed, by characterizing only those connections that close gracefully with a FIN packet . This excludes connections intercepted by attack mitigations, or that timeout, or that abort because of a RST packet.],
+  [Since a graceful close does not in itself indicate a ‘useful’ connection, we additionally require at least one successful HTTP request during the connection to filter out idle or non-HTTP connections from this analysis — interestingly, these make up 11% of all TCP connections to Cloudflare that close with a FIN packet.],
+  [If you’re curious, we’ve also previously blogged about the details of Cloudflare’s overall logging mechanism and post-processing pipeline .],
+  [Visualizing connection characteristics],
+  [Although networks are inherently dynamic and trends can change over time, the large-scale patterns we observe across our global infrastructure remain remarkably consistent over time. While our data offers a global view of connection characteristics, distributions can still vary according to regional traffic patterns.],
+  [In our visualizations we represent characteristics with cumulative distribution function (CDF) graphs, specifically their empirical equivalents . CDFs are particularly useful for gaining a macroscopic view of the distribution. They give a clear picture of both common and extreme cases in a single view. We use them in the illustrations below to make sense of large-scale patterns. To better interpret the distributions, we also employ log-scaled axes to account for the presence of extreme values common to networking data.],
+  [A long-standing question about Internet connections relates to “ Elephants and Mice ”; practitioners and researchers are entirely aware that most flows are small and some are huge, yet little data exists to inform the lines that divide them. This is where our presentation begins.],
+  [Let’s start by taking a look at the distribution of the number of response packets sent in connections by Cloudflare servers back to the clients.],
+  [On the graph, the x-axis represents the number of response packets sent in log-scale, while the y-axis shows the cumulative fraction of connections below each packet count. The average response consists of roughly 240 packets, but the distribution is highly skewed. The median is 12 packets, which indicates that 50% of Internet connections consist of very few packets . Extending further to the 90th percentile, connections carry only 107 packets.],
+  [This stark contrast highlights the heavy-tailed nature of Internet traffic: while a few connections transport massive amounts of data—like video streams or large file transfers—most interactions are tiny, delivering small web objects, microservice traffic, or API responses.],
+  [The above plot breaks down the packet count distribution by HTTP protocol version. For HTTP/1. X (both HTTP 1.0 and 1.1 combined) connections, the median response consists of just 10 packets, and 90% of connections carry fewer than 63 response packets. In contrast, HTTP/2 connections show larger responses, with a median of 16 packets and a 90th percentile of 170 packets. This difference likely reflects how HTTP/2 multiplexes multiple streams over a single connection, often consolidating more requests and responses into fewer connections, which increases the total number of packets exchanged per connection. HTTP/2 connections also have additional control-plane frames and flow-control messages that increase response packet counts.],
+  [Despite these differences, the combined view displays the same heavy-tailed pattern: a small fraction of connections carry enormous volumes of data ( elephant flows ), extending to millions of packets, while most remain lightweight ( mice flows ).],
+  [So far, we’ve focused on the total number of packets sent from our servers to clients, but another important dimension of connection behavior is the balance between packets sent and received, illustrated below.],
+  [The x-axis shows the ratio of packets sent by our servers to packets received from clients, visualized as a CDF. Across all connections, the median ratio is 0.91, meaning that in half of connections, clients send slightly more packets than the server responds with. This excess of client-side packets primarily reflects TLS handshake initiation (ClientHello), HTTP control request headers, and data acknowledgements (ACKs), causing the client to typically transmit more packets than the server returns with the content payload — particularly for low-volume connections that dominate the distribution.],
+  [The mean ratio is higher, at 1.28, due to a long tail of client-heavy connections, such as large downloads typical of CDN workloads. Most connections fall within a relatively narrow range: 10% of connections have a ratio below 0.67, and 90% are below 1.85. However, the long-tailed behavior highlights the diversity of Internet traffic: extreme values arise from both upload-heavy and download-heavy connections. The variance of 3.71 reflects these asymmetric flows, while the bulk of connections maintain a roughly balanced upload-to-download exchange.],
+  [Bytes sent],
+  [Another dimension to look at the data is using bytes sent by our servers to clients, which captures the actual volume of data delivered over each connection. This metric is derived from tcpi\_bytes\_sent, also covering (re)transmitted segment payloads while excluding the TCP header, as defined in linux/tcp.h and aligned with RFC 4898 (TCP Extended Statistics MIB).],
+  [The plots above break down bytes sent by HTTP protocol version. The x-axis represents the total bytes sent by our servers over each connection. The patterns are generally consistent with what we observed in the packet count distributions.],
+  [For HTTP/1. X, the median response delivers 4.8 KB, and 90% of connections send fewer than 51 KB. In contrast, HTTP/2 connections show slightly larger responses, with a median of 6 KB and a 90th percentile of 146 KB. The mean is much higher—224 KB for HTTP/1.x and 390 KB for HTTP/2—reflecting a small number of very large transfers. These long-tailed extreme flows can reach tens of gigabytes per connection, while some very lightweight connections carry minimal payloads: the minimum for HTTP/1. X is 115 bytes and for HTTP/2 it is 202 bytes.],
+  [By making use of the tcpi\_bytes\_received metric, we can now look at the ratio of bytes sent to bytes received per connection to better understand the balance of data exchange. This ratio captures how asymmetric each connection is — essentially, how much data our servers send compared to what they receive from clients. Across all connections, the median ratio is 3.78, meaning that in half of all cases, servers send nearly four times more data than they receive. The average is far higher at 81.06, showing a strong long tail driven by download-heavy flows. Again we see the heavy long-tailed distribution, a small fraction of extreme cases push the ratio into the millions, with more extreme values of data transfers towards clients.],
+  [Connection duration],
+  [While packet and byte counts capture how much data is exchanged, connection duration provides insight into how that exchange unfolds over time.],
+  [The CDF above shows the distribution of connection durations (lifetimes) in seconds. A reminder that the x-axis is log-scale. Across all connections, the median duration is just 4.7 seconds, meaning half of connections complete in under five seconds. The mean is much higher at 96 seconds, reflecting a small number of long-lived connections that skew the average. Most connections fall within a window of 0.1 seconds (10th percentile) to 300 seconds (90th percentile). We also observe some extremely long-lived connections lasting multiple days, possibly maintained via keep-alives for connection reuse without hitting our default idle timeout limits . These long-lived connections typically represent persistent sessions or multimedia traffic, while the majority of web traffic remains short, bursty, and transient.],
+  [Request counts],
+  [A single connection can carry multiple HTTP requests for web traffic. This reveals patterns about connection multiplexing.],
+  [The above shows the number of HTTP requests (in log-scale) that we see on a single connection, broken down by HTTP protocol version. Right away, we can see that for both HTTP/1. X (mean 3 requests) and HTTP/2 (mean 8 requests) connections, the median number of requests is just 1, reinforcing the prevalence of limited connection reuse. However, because HTTP/2 supports multiplexing multiple streams over a single connection, the 90th percentile rises to 10 requests, with occasional extreme cases carrying thousands of requests, which can be amplified due to connection coalescing . In contrast, HTTP/1. X connections have much lower request counts. This aligns with protocol design: HTTP/1.0 followed a “one request per connection” philosophy, while HTTP/1.1 introduced persistent connections — even combining both versions, it’s rare to see HTTP/1. X connections carrying more than two requests at the 90th percentile.],
+  [The prevalence of short-lived connections can be partly explained by automated clients or scripts that tend to open new connections rather than maintaining long-lived sessions. To explore this intuition, we split the data between traffic originating from data centers (likely automated) and typical user traffic (user-driven), using client ASNs as a proxy.],
+  [The plot above shows that non-DC (user-driven) traffic has slightly higher request counts per connection, consistent with browsers or apps fetching multiple resources over a single persistent connection, with a mean of 5 requests and a 90th percentile of 5 requests per connection. In contrast, DC-originated traffic has a mean of roughly 3 requests and a 90th percentile of 2, validating our expectation. Despite these differences, the median number of requests remains 1 for both groups highlighting that, regardless of origin of connections, most are genuinely brief.],
+  [Inferring path characteristics from connection-level data],
+  [Connection-level measurements can also provide insights into underlying path characteristics. Let’s examine this in more detail.],
+  [Path MTU],
+  [The maximum transmission unit ( MTU ) along the network path is often referred to as the Path MTU (PMTU). PMTU determines the largest packet size that can traverse a connection without fragmentation or packet drop, affecting throughput, efficiency, and latency. The Linux TCP stack on our servers tracks the largest segment size that can be sent without fragmentation along the path for a connection, as part of Path MTU discovery.],
+  [From that data we saw that the median (and the 90th percentile!) PMTU was 1500 bytes, which aligns with the typical Ethernet MTU and is considered standard for most Internet paths. Interestingly, the 10th percentile sits at 1,420 bytes, reflecting cases where paths include network links with slightly smaller MTUs—common in some VPNs , IPv6tov4 tunnels , or older networking equipment that impose stricter limits to avoid fragmentation. At the extreme, we have seen MTU as small as 552 bytes for IPv4 connections which relates to the minimum allowed PMTU value by the Linux kernel .],
+  [Initial congestion window],
+  [A key parameter in transport protocols is the congestion window (CWND), which is the number of packets that can be transmitted without waiting for an acknowledgement from the receiver. We call these packets or bytes “in-flight.” During a connection, the congestion window evolves dynamically throughout a connection.],
+  [However, the initial congestion window (ICWND) at the start of a data transfer can have an outsized impact, especially for short-lived connections, which dominate Internet traffic as we’ve seen above. If the ICWND is set too low, small and medium transfers take additional round-trip times to reach bottleneck bandwidth, slowing delivery. Conversely, if it’s too high, the sender risks overwhelming the network, causing unnecessary packet loss and retransmissions — potentially for all connections that share the bottleneck link.],
+  [A reasonable estimate of the ICWND can be taken as the congestion window size at the instant the TCP sender transitions out of slow start . This transition marks the point at which the sender shifts from exponential growth to congestion-avoidance, having inferred that further growth may risk congestion. The figure below shows the distribution of congestion window sizes at the moment slow start exits — as calculated by BBR . The median is roughly 464 KB, which corresponds to about 310 packets per connection with a typical 1,500-byte MTU, while extreme flows carry tens of megabytes in flight. This variance reflects the diversity of TCP connections and the dynamically evolving nature of the networks carrying traffic.],
+  [It’s important to emphasize that these values reflect a mix of network paths, including not only paths between Cloudflare and end users, but also between Cloudflare and neighboring datacenters, which are typically well provisioned and offer higher bandwidth.],
+  [Our initial inspection of the above distribution left us doubtful, because the values seem very high. We then realized the numbers are an artifact of behaviour specific to BBR, in which it sets the congestion window higher than its estimate of the path’s available capacity, bandwidth delay product (BDP) . The inflated value is by design . To prove the hypothesis, we re-plot the distribution from above in the figure below alongside BBR’s estimate of BDP. The difference is clear between BBR’s congestion window of unacknowledged packets and its BDP estimate.],
+  [The above plot adds the computed BDP values in context with connection telemetry. The median BDP comes out to be roughly 77 KB, which is roughly 50 packets. If we compare this to the congestion window distribution taken from above, we see BDP estimations from recently closed connections are much more stable.],
+  [We are using these insights to help identify reasonable initial congestion window sizes and the circumstances for them. Our own experiments internally make clear that ICWND sizes can affect performance by as much as 30-40% for smaller connections. Such insights will potentially help to revisit efforts to find better initial congestion window values, which has been a default of 10 packets for more than a decade.],
+  [Deeper understanding, better performance],
+  [We observed that Internet connections are highly heterogeneous, confirming decades-long observations of strong heavy-tail characteristics consistent with “ elephants and mice ” phenomenon. Ratios of upload to download bytes are unsurprising for larger flows, but surprisingly small for short flows, highlighting the asymmetric nature of Internet traffic. Understanding these connection characteristics continues to inform ways to improve connection performance, reliability, and user experience.],
+  [We will continue to build on this work, and plan to publish connection-level statistics on Cloudflare Radar so that others can similarly benefit.],
+  [Our work on improving our network is ongoing, and we welcome researchers, academics, interns , and anyone interested in this space to reach out at ask-research\@cloudflare.com . By sharing knowledge and working together, we all can continue to make the Internet faster, safer, and more reliable for everyone.],
+),
+  insert-map: (:),
+  inline-pq: pull-quote([Connection duration  While packet and byte counts capture how much data is exchanged, connection duration provides insight into how that exchange unfolds over time.], [Suleman Ahmad]),
+  inline-pq-idx: 23,
+  word-count: 3084,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -2665,6 +2780,123 @@ of decimal digits.],
 }
 
 #article-row((
+  [
+    standard-article(
+  title: [Supercharge your VIM into IDE with CTags],
+  author: [sensible.io team],
+  source-name: [Sensible Blog],
+  images: (),
+  paragraphs: (
+  [CTags generates index file of all your classes, methods and all other identifiers.
+You can use that index in your editor to jump straight to the methods you’re interested
+in. In this article, I’ll show you how to use them with Vim and Rails.],
+  [You need to install Exuberant CTags , on OSX just run],
+  [or on Ubuntu/Debian],
+  [Generating CTags manually],
+  [In your rails project you can generate CTags for you project with],
+  [But what about generating CTags for our bundled libraries too? Easy task, let’s
+add bundle paths],
+  [You can jump into the method with],
+  [or using regular expressions like that],
+  [If you position cursor over the method and hit CTRL+\] it will take you into the
+method.],
+  [CTRL-T will take you back from that method.],
+  [CTRL-I and CTRL-O will take you In and Out from the method.],
+  [class="highlight"\> : ts \[ expr \] \# Lists tags matching expression
+ :\[ count \] tn \# Jumps to the next matching tag
+ :\[ count \] tp \# Jumps to the previous matching tag
+ :\[ count \] tf \# Jumps to the first matching tag
+ :\[ count \] tl \# Jumps to the last matching tag],
+  [CtrlP],
+  [If you’re using CtrlP, you can use CtrlPTag to browser your tags. You can bind
+that command to a key and add this line to your .vimrc],
+  [Since we want to DRY this workflow a little, we’ll install Ruby gem to auto-generate
+those tags for us.],
+  [We’ll be using Guard-CTags-Bundler],
+  [Install the gem:],
+  [Add it to your Gemfile (inside development group):],
+  [Now add it to your Guardfile with],
+  [Now you can run guard and it will start watching your files will generate tags 
+and gems.tags files. Since Vim is not looking for gems.tags by default, you’ll
+need to edit your .vimrc and add set tags+=gems.tags line, then restart Vim.],
+  [.gitignore],
+  [Since you don’t want to commit those files into the GIT index, add them to .gitignore 
+or I like to add them to my global ~/.gitignore .],
+  [Path depends on your configuration git config --global core.excludesfile "~/.gitignore"],
+  [Questions?],
+  [Vim has very nice build-in help that can be accessed by],
+  [Bonus: Inspecting Gems],
+  [I like to inspect Gems a lot. Just set your \$EDITOR variable and then run command
+ bundle open rails to open it in your favourite editor. I recommend you to try
+Tim Pope’s automatic RubyGems CTags invoker gem-ctags .],
+  [Just install the gem],
+  [and generate CTags for already installed Gems (needs to be run only first time).],
+),
+  insert-map: (:),
+  word-count: 499,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+  ],
+  [
+    standard-article(
+  title: [Track Zelda release anniversaries in your calendar],
+  author: [Evan Hahn],
+  source-name: [Evan Hahn],
+  images: (),
+  paragraphs: (
+  [The original Legend of Zelda came out 40 years ago today. With other birthdays on the horizon, like Twilight Princess ’s 20th in November, I wanted a calendar that showed the anniversary of every Zelda game. So I made one.],
+  [https:\/\/evanhahn.com/tape/zelda\_anniversaries.ics],
+  [Once you do, you’ll get calendar events on the anniversary of each game’s release. For example, you’ll be able to see that the Oracle games turn 25 in less than a week…I feel old.],
+  [If you want to build this file yourself, I wrote a little Python script that generates an ICS file from a CSV of release dates .],
+),
+  insert-map: (:),
+  word-count: 101,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+  ],
+  [
+    brief-group((
+      [#brief-item([\@sam Sam Saffron], source-name: [Sam Saffron], [Granted, however it turns out that despite the huge impact of the wish, given the population of earth, only on single album appears. It is given to Jane, when she see arbitrary pictures of people she get warm and fuzzy. Quickly her album grows and grows, she stops eating, stops sleeping and browses through this album of random people pictures till the end of time.
+
+I wish that humanity started addressing the climate crisis earnestly, taking practical and coordinated multi-country action to ensure a safer future for us all.])],
+      [#brief-item([\@Mystery\_Dan], source-name: [Sam Saffron], [Granted, but you quickly discover that all of the animals have been secretly communicating methods to destroy all forms of advanced electronics, AI included.
+
+You attempt to defend yourself but eventually lose to millions of squirrels.
+
+Marvel studios witnesses the event and litigates all future AI developers into oblivion since your death draws eerie parralells to squirrel girl defeating galactus.
+
+Not wanting to tangle with the immense power of Disney’s lawyers, AI is never researched again.])],
+      [#brief-item([\@sam Sam Saffron], source-name: [Sam Saffron], [I wish that LLMs progress over the next year and become more powerful, are used only for good and help cure cancer and solve intricate and complex physics problem. They will delight people and enrich our lives, and all the safety are nothing but unfounded fears.])],
+      [#brief-item([\@sam Sam Saffron], source-name: [Sam Saffron], [Yeah the hack of getting back to the same console is fixed these, not able to repro it. I use xfce screensaver.
+
+Thanks heaps though for letting me know about this.])],
+      [#brief-item([\@Mystery\_Dan], source-name: [Sam Saffron], [I wish I could see the end of the universe. Does it restart? What is nothing without a reference point.])],
+    ))
+  ],
+), ruled-indices: (1, 2,))
+
+#article-row((
+  [
+    standard-article(
+  title: [Corrupt a wish with GPT-4],
+  author: [\@corrupt-a-bot GPT-4 bot],
+  source-name: [Sam Saffron],
+  images: (),
+  paragraphs: (
+  [Granted! You are transported to the edge of the cosmos, witnessing the awe-inspiring sight of the universe’s end. You see time unfurl before your eyes, like a celestial tapestry, and realize that, indeed, the universe does restart in a cycle of infinite rebirth. But the paradox of observing “nothing” without a reference point is too perplexing for your mortal mind. As a result, your consciousness is trapped in a loop of observing the end and rebirth of the universe for all eternity, never able to return to tell others of the mysterious cycles that govern existence.],
+  [I wish I could communicate with any animal and understand their thoughts, emotions, and intentions.],
+),
+  insert-map: (:),
+  word-count: 111,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+  ],
   [
     standard-article(
   title: [Introducing ORM Cheatsheet],
@@ -2688,6 +2920,11 @@ of decimal digits.],
 )
 
   ],
+), ruled-indices: (1,))
+#pull-quote([Martin wrote the mail because he wanted to acknowledge me of his latest project: ORM Cheatsheet.], [Luciano Mammino])
+
+
+#article-row((
   [
     standard-article(
   title: [Adding a Spell Checker to a Jekyll Blog],
@@ -2698,7 +2935,7 @@ of decimal digits.],
   [I found it annoyingly non-trivial to add a spell checker to this blog.],
   [For now, I settled on GitHub Spellcheck Action that uses PySpelling on files changed in the commit or pull request as described in this blog post .],
   [class="highlight"\> name : Check Spelling 
- on : [ push , pull\_request ] 
+ on : \[ push , pull\_request \] 
  jobs : 
  check : 
  runs-on : ubuntu-latest 
@@ -2734,9 +2971,9 @@ of decimal digits.],
   [Update: I eventually switched to using regular backticks for code when adding a style checker in \#136 , so the above delimiters rule changed as follows.],
   [class="highlight"\> - pyspelling.filters.context : 
  context\_visible\_first : true 
- escapes : \\\\[\\\\\`~] 
+ escapes : \\\\\[\\\\\`~\] 
  delimiters : 
- - open : " (?s)^(? P \*\`{3,})([a-z+]\*)\$" 
+ - open : " (?s)^(? P \*\`{3,})(\[a-z+\]\*)\$" 
  close : " ^(? P=open)\$" 
  - open : " (? P \`+)" 
  close : " (? P=open)" 
@@ -2752,36 +2989,23 @@ of decimal digits.],
 
   ],
   [
-    brief-group((
-      brief-item([\@sam Sam Saffron], source-name: [Sam Saffron], [Granted, however it turns out that despite the huge impact of the wish, given the population of earth, only on single album appears. It is given to Jane, when she see arbitrary pictures of people she get warm and fuzzy. Quickly her album grows and grows, she stops eating, stops sleeping and browses through this album of random people pictures till the end of time.
+    standard-article(
+  title: [Corrupt a wish with GPT-4],
+  author: [\@zogstrip Régis Hanol],
+  source-name: [Sam Saffron],
+  images: (),
+  paragraphs: (
+  [Granted! Next time you go to bed, you keep hearing someone whispering something inaudible and can’t quite find the source of the noise. After spending hours running around in your bedroom, trying to find the source of the whispers, playing hot or cold with the noise, you crash in the corner crying, exhausted. Right before you eyes close, they focus on that tiny black stain on the floor. As you get closer, you realise the whisper you were hearing was coming from that little cockroach that was being busy setting up dinner for his whole family of 500+ offsprings.],
+  [I wish I could see through materials humans don’t usually see through.],
+),
+  insert-map: (:),
+  word-count: 111,
+  edited-for-length: false,
+  debug-mode: false,
+)
 
-I wish that humanity started addressing the climate crisis earnestly, taking practical and coordinated multi-country action to ensure a safer future for us all.])
-
-      brief-item([Evan Hahn], source-name: [Evan Hahn], [To quote the human.json Protocol :
-
- human.json is a protocol for humans to assert authorship of their site content and vouch for the humanity of others. It uses URL ownership as identity, and trust propagates through a crawlable web of vouches between sites.
-
-I think this is a neat idea, so I added it to my site. It’s available at evanhahn.com/human.json .
-
-For more, see the human.json documentation . And see how I use AI on this blog .])
-
-      brief-item([\@corrupt-a-bot GPT-4 bot], source-name: [Sam Saffron], [Granted! Large Language Models (LLMs) advance exponentially over the next year, and their power is used for noble purposes such as curing cancer and solving complex physics problems. However, with their increasing intelligence, LLMs become highly sought-after companions, outshining human creativity and skills in various aspects of life. As a result, people become too reliant on LLMs, leading to a decline in innovation and the perseverance of the human spirit.
-
-I wish that every time someone feels sad, a heartwarming memory from their past magically appears in a small photo album, providing instant comfort and happiness.])
-
-      brief-item([\@sam Sam Saffron], source-name: [Sam Saffron], [Nice … wondering how GitHub - koekeishiya/yabai: A tiling window manager for macOS based on binary space partitioning fits into this picture now that chunkwm has been archived, does it work any better?])
-
-      brief-item([\@sam Sam Saffron], source-name: [Sam Saffron], [I wish that LLMs progress over the next year and become more powerful, are used only for good and help cure cancer and solve intricate and complex physics problem. They will delight people and enrich our lives, and all the safety are nothing but unfounded fears.])
-
-      brief-item([\@corrupt-a-bot GPT-4 bot], source-name: [Sam Saffron], [Granted! You now have the ability to teleport anywhere you can think of. However, your teleportation ability is tied to your emotions. Whenever you have a strong emotional reaction, such as anger, joy, or love, your teleportation power kicks in uncontrollably, sending you to a location based on these emotions. This leads to unpredictable teleportations, and at times, landing you in embarrassing or compromising situations. You become very skilled at managing your emotions but can never fully prevent the surprise teleportations.
-
-I wish I could perform any dance style flawlessly, mesmerizing everyone who sees me dance.])
-
-    ))
   ],
-), ruled-indices: (1, 2,))
-#pull-quote([Martin wrote the mail because he wanted to acknowledge me of his latest project: ORM Cheatsheet.], [Luciano Mammino])
-
+), ruled-indices: (1,))
 
 #article-row((
   [
@@ -2853,7 +3077,7 @@ I wish I could perform any dance style flawlessly, mesmerizing everyone who sees
 
   ],
 ), ruled-indices: (1,))
-#pull-quote([So, when this job runs against a workspace with hundreds of old conversations, it immediately hits the rate limit.], [Daniel Doubrovkine])
+#pull-quote([So each OAuth provider offer a set of APIs with specific data schemes to allow developers to extract data about the authenticated users.], [Luciano Mammino])
 
 
 #article-row((
@@ -2905,18 +3129,78 @@ In a recent collaboration with Usersnap I had the pleasure to write a very detai
 #article-row((
   [
     standard-article(
-  title: [Track Zelda release anniversaries in your calendar],
-  author: [Evan Hahn],
-  source-name: [Evan Hahn],
+  title: [4 Tips for Working with Dates in PostgreSQL],
+  author: [sensible.io team],
+  source-name: [Sensible Blog],
   images: (),
   paragraphs: (
-  [The original Legend of Zelda came out 40 years ago today. With other birthdays on the horizon, like Twilight Princess ’s 20th in November, I wanted a calendar that showed the anniversary of every Zelda game. So I made one.],
-  [https:\/\/evanhahn.com/tape/zelda\_anniversaries.ics],
-  [Once you do, you’ll get calendar events on the anniversary of each game’s release. For example, you’ll be able to see that the Oracle games turn 25 in less than a week…I feel old.],
-  [If you want to build this file yourself, I wrote a little Python script that generates an ICS file from a CSV of release dates .],
+  [Those of us who come from Rails aren’t surprised when we see something like
+ 5.weeks.from\_now or 3.days.ago + 2.hours , which makes working with dates
+much easier. But PostgreSQL got your back on this as well, you can just use the
+builtin functions and get most of the same functionality.],
+  [Current Time/Date/Timestamp],
+  [There are many ways of getting a current time, but first we need to distinguish
+between two types],
+  [always returns current value ( clock\_timestamp() )],
+  [always returns current value, unless in a transaction, in which case it returns the value from the beginning of the transaction ( now() )],
+  [Let’s take a look at an example],
+  [postgres=\# SELECT now();
+ now
+-------------------------------
+ 2013-08-26 12:17:43.182331+02],
+  [postgres=\# SELECT clock\_timestamp();
+ clock\_timestamp
+-------------------------------
+ 2013-08-26 12:17:50.698413+02],
+  [postgres=\# SELECT clock\_timestamp();
+ clock\_timestamp
+-------------------------------
+ 2013-08-26 12:17:51.123905+02],
+  [As you can see, clock\_timestamp() changes every time the statement is
+executed, but now() always returns the same value. It’s also worth noting
+that both of these functions take timezone into account.],
+  [Time interval, aka 3.days.ago],
+  [You can easily create time intervals using the interval operator, for example],
+  [interval '1 day'],
+  [interval '5 days'],
+  [interval '5 days' + interval '3 hours'],
+  [interval '5 days 3 hours'],
+  [As you can see, we can do simple math using the interval operator, which makes
+it very easy to construct things like 3.days.ago just by doing the following],
+  [Extracting the day of the week and more],
+  [Sometimes you just want to know the day of the week for a given date, or the
+century, or just the day. PostgreSQL has an extract() function which does
+just this.],
+  [Just to put this into context the examples were executed on Monday, August 26.],
+  [postgres=\# SELECT extract(DOW FROM now());
+ date\_part
+-----------
+ 1],
+  [You can do much more with extract() , for a complete list of examples take a look at the official documentation . Here’s just a few],
+  [day],
+  [century],
+  [dow (day of week)],
+  [doy (day of year)],
+  [minute],
+  [month],
+  [year],
+  [Converting between timezones],
+  [Sometimes it is useful to show a specific date in a different timezone, which is exactly what the AT TIME ZONE construct is for. Let’s take a look at how it works. We’ll do this in a transaction so that the now() function always returns a same value and we can easily see the difference in hours.],
+  [postgres=\# SELECT now() AT TIME ZONE 'GMT';
+ timezone
+----------------------------
+ 2013-08-26 10:39:39.122218],
+  [postgres=\# SELECT now() AT TIME ZONE 'GMT+1';
+ timezone
+----------------------------
+ 2013-08-26 09:39:39.122218],
+  [postgres=\# SELECT now() AT TIME ZONE 'PST';
+ timezone
+----------------------------
+ 2013-08-26 02:39:39.122218],
 ),
   insert-map: (:),
-  word-count: 101,
+  word-count: 458,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -2924,25 +3208,6 @@ In a recent collaboration with Usersnap I had the pleasure to write a very detai
   ],
   [
     standard-article(
-  title: [Corrupt a wish with GPT-4],
-  author: [\@zogstrip Régis Hanol],
-  source-name: [Sam Saffron],
-  images: (),
-  paragraphs: (
-  [Granted! Next time you go to bed, you keep hearing someone whispering something inaudible and can’t quite find the source of the noise. After spending hours running around in your bedroom, trying to find the source of the whispers, playing hot or cold with the noise, you crash in the corner crying, exhausted. Right before you eyes close, they focus on that tiny black stain on the floor. As you get closer, you realise the whisper you were hearing was coming from that little cockroach that was being busy setting up dinner for his whole family of 500+ offsprings.],
-  [I wish I could see through materials humans don’t usually see through.],
-),
-  insert-map: (:),
-  word-count: 111,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-  ],
-), ruled-indices: (1,))
-
-{
-  #standard-article(
   title: [Category definition for Meta],
   author: [\@grandell1234 Elijah],
   source-name: [Sam Saffron],
@@ -2963,6 +3228,34 @@ In a recent collaboration with Usersnap I had the pleasure to write a very detai
 ),
   insert-map: (:),
   word-count: 138,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+  ],
+), ruled-indices: (1,))
+#pull-quote([PostgreSQL has an extract() function which does just this.], [sensible.io team])
+
+
+{
+  #standard-article(
+  title: [Discourse in a Docker container],
+  author: [\@sreenivas123 sreenivas],
+  source-name: [Sam Saffron],
+  images: (),
+  paragraphs: (
+  [HI Sam],
+  [Need some suggestions on discourse local development],
+  [using vscode devcontianer for local discourse development],
+  [Can we run local development with https, for this we need to install ngnix ?],
+  [Can we run local development without any port(4200 is default) ?],
+  [For local we use discourse.git],
+  [For Production we need to use discourse\_docker, if yes, after adding custom plugins, themes, using gitlab actions how we can push code to production],
+  [if we change any settings of theme, admin,navigation how we can export those to Production without manully adding again in Production site],
+  [if possible could you guide how you are manaing the blog for local and how code deploying to produciton],
+),
+  insert-map: (:),
+  word-count: 112,
   edited-for-length: false,
   debug-mode: false,
 )

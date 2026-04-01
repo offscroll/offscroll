@@ -1,22 +1,22 @@
 {
   "config_id": "training-027",
   "archetype": "history-essays",
-  "date_generated": "2026-03-30T01:20:51.737365+00:00",
+  "date_generated": "2026-03-30T01:45:28.122180+00:00",
   "page_target": 14,
-  "num_pages": 56,
+  "num_pages": 59,
   "num_items": 42,
   "feeds_contributed": [
-    "HistoryNet",
-    "Tynan (personal)",
-    "The Big Picture (Boston Globe)",
-    "James Clear (Atomic Habits)",
-    "Land of Maps",
-    "REA Group Tech",
     "Farnam Street (fs.blog)",
-    "Study Hacks (Cal Newport)",
-    "Kirkus Reviews"
+    "James Clear (Atomic Habits)",
+    "The Big Picture (Boston Globe)",
+    "HistoryNet",
+    "REA Group Tech",
+    "Land of Maps",
+    "Tynan (personal)",
+    "Kirkus Reviews",
+    "Study Hacks (Cal Newport)"
   ],
-  "render_time_s": 1.0,
+  "render_time_s": 1.08,
   "pages": [
     {
       "page_number": 1,
@@ -351,6 +351,24 @@
     {
       "page_number": 56,
       "png_path": "training-027/pages/page-056.png",
+      "width_pt": 612.0,
+      "height_pt": 792.0
+    },
+    {
+      "page_number": 57,
+      "png_path": "training-027/pages/page-057.png",
+      "width_pt": 612.0,
+      "height_pt": 792.0
+    },
+    {
+      "page_number": 58,
+      "png_path": "training-027/pages/page-058.png",
+      "width_pt": 612.0,
+      "height_pt": 792.0
+    },
+    {
+      "page_number": 59,
+      "png_path": "training-027/pages/page-059.png",
       "width_pt": 612.0,
       "height_pt": 792.0
     }
@@ -885,11 +903,36 @@
     {
       "spread_id": "s-027-029",
       "edition_id": "training-027",
-      "type": "solo",
+      "type": "spread",
       "pages": [
         {
           "page_number": 56,
           "png_path": "training-027/pages/page-056.png",
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_number": 57,
+          "png_path": "training-027/pages/page-057.png",
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        }
+      ]
+    },
+    {
+      "spread_id": "s-027-030",
+      "edition_id": "training-027",
+      "type": "spread",
+      "pages": [
+        {
+          "page_number": 58,
+          "png_path": "training-027/pages/page-058.png",
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_number": 59,
+          "png_path": "training-027/pages/page-059.png",
           "width_pt": 612.0,
           "height_pt": 792.0
         }

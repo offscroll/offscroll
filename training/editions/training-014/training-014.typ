@@ -23,32 +23,52 @@
 
 // --- Front Page Feature ---
 #feature-article(
-  title: [Poshmark finally redesigned its clunky app],
+  title: [Studio Blur models Quito arts school after Le Corbusier house],
   kicker: [Cover Story],
-  author: [Grace Snelling],
-  source-name: [Fast Company Design],
-  deck: [Fashion resale company Poshmark just got its first app redesign in 15 years, and it’s taking a page out of Depop’s book of UI.],
-  lead-text: "The new look encompasses an updated algorithm, redesigned navigational tools, and a new, streamlined aesthetic. It comes as a pivotal moment for the second market, which, according to ThredUp’s 2025 Resale Report , is expected to reach $367 billion by 2029, growing 2.7 times faster than the overall global apparel market.",
-  lead-first-alpha: 0,
+  author: [Kate Mazade],
+  source-name: [Dezeen Architecture],
+  deck: [style="margin-bottom: 15px;"\> 
+
+Local design practice Studio Blur has created a concrete building with a sawtooth roof for the visual arts department of a school in Quito , Ecuador.],
+  lead-pre: [],
+  lead-cap: [s],
+  lead-rest: [tyle="margin-bottom: 15px;"\>],
   body-paragraphs: (
-  [The majority of this growth, the report notes, has been driven by young consumers—millennials, Gen Zers, and Gen Alpha shoppers who are familiar with buying products through apps or in-app features like TikTok Shop . And competition is getting more fierce in the resale industry in light of eBay’s recent acquisition of Depop, which will allow the two platforms to pool their resources (though Depop will retain its own brand and site).],
-  [Technically, Poshmark’s user base is actually broader than Depop’s, boasting 165 million active users compared to Depop’s 56.3 million . But unlike Depop, Poshmark’s previous app was not set up to capitalize on resale’s big moment, for the simple reason that it was difficult and unpleasant to use. Crowded design and unintuitive sections made shopping on the app feel more like a chore than an enjoyable activity.],
-  [Now, though, Poshmark appears to be taking notes from its Gen Z-centric competitor and other social media sites to design an app that’s both easy on the eyes and easy to use.],
-  [The first word that comes to mind to describe Poshmark’s previous app is clutter .],
-  [Opening the app would lead to a front page, called the “Feed,” which was bisected into a page of recommended items and a page of Poshmark sellers hosting livestreams. Each featured item was previewed inside a small window, allowing nearly six items to fit onto the page at a time. Most of the page was black and white, but some pops of the brand’s signature purple would appear on highlighted pieces of text.],
-  [[Screenshot: courtesy of the author]],
-  [Navigating to the app’s search function only made matters worse. Underneath the general search bar, the app included a laundry list of suggested destinations, like popular brands, the user’s liked items, and, for some reason, more live Poshmark shows. These were accompanied with additional tiny images of items and previews of livestreams.],
-  [[Screenshot: courtesy of the author]],
-  [The result of these design choices was an extremely information-dense experience. Looking at the old Poshmark app felt like being bombarded with layers of text and imagery that the user would need to dig through to find even a nugget of interest.],
-  [“The former UI was focused on transaction over inspiration,” says Heather Gordon Friedland, Poshmark’s chief product officer. “For shoppers, this often translated into a feeling of ‘endless scrolling,’ making it challenging to find unexpected pieces that matched their personal style.”],
-  [In comparison, the new design is a breath of fresh air. The entire app has been simplified: Photos are displayed in a larger portrait mode, allowing only four to appear on-screen at a time; livestreams have been sequestered into a small icon at the top of the homepage; and the search function now loads to a clean, white page that only highlights past searches. The pops of purple have been eliminated in favor of a clean black-and-white look. Like Depop, the new app prioritizes white space and large images to keep the user from feeling overwhelmed.],
-  [[Image: Poshmark]],
-  [“The app now features larger, more immersive portrait imagery, shifting the focus to visual storytelling, much like on platforms such as Instagram or Pinterest,” Friedland says. “This makes browsing more engaging and allows the quality of our sellers’ items to shine.”],
-  [[Screenshot: courtesy of the author]],
-  [Design inspiration from socials also shows through on Poshmark’s new TikTok -esque “For You” page, which surfaces trends and styles related to the users’ tastes. According to Friedland, the algorithm uses AI that’s been trained by human sellers and editorial teams to help users stumble across more niche items that the former algorithm, which prioritized shares, might not have surfaced.],
-  [[Image: Poshmark]],
-  [“While we’ve retained the share button, a core community feature, the new ‘For You’ feed prioritizes the relevance and quality of a listing over the frequency of sharing,” Friedland says. “This ensures a more magical discovery experience where users find high-quality, unique items, rather than seeing the same posts repeatedly.”],
-  [When it comes to resale app shopping, young users want to feel like the act of scrolling is helping them imagine their dream closet, not forcing them to sort through as many options as possible—and it looks like Poshmark finally caught on.],
+  [Local design practice Studio Blur has created a concrete building with a sawtooth roof for the visual arts department of a school in Quito , Ecuador.],
+  [Known as Aulas de Arte at the Unidad Educativa Cardenal Spellman , or the Visual Arts Building at the Cardinal Spellman Salesian Bilingual School, the 142-square metre (1,528-square foot) project opened in 2024 on a 3-acre plot that already contained a classroom building, church and gymnasium.],
+  [Studio Blur has designed a concrete arts school in Quito],
+  [The three-storey, wedge-shaped building allowed for an adjacent green space that reinvigorated and reconnected the campus.],
+  [Studio Blur 's design was informed by modernist architect Le Corbusier's design for the house and studio of Amédée Ozenfant , a 1922 Paris building that has inspired architects such as Juan O'Gorman and David Chipperfield.],
+  [Its design was informed by a Le Corbusier building],
+  ["There must be something profound in that foundational work that continues to justify its study," the studio told Dezeen.],
+  ["We hope that through this reference, one may discern an echo of what our art building aspires to be – and perhaps, a trace of that inspiration which once guided us."],
+  [Green space connecting the building to the wider campus was revamped],
+  [Like the Ozenfant House, the arts building is driven by natural lighting that creates unique atmospheres for different activities at distinct times.],
+  ["This dynamic interaction between light and architectural structure generates rich environments that enhance the sensory experience while reinforcing the narrative," the studio said, explaining that the monolithic concrete structure and strategic openings allowed it to animate the building from the thresholds.],
+  [Read:],
+  [Krft sculpts "bulging" form for Brighton College arts centre],
+  [The plan is organised around a diagonal axis with a basement containing service spaces that look up and out to the stepped garden. The ground floor contains a graphic design classroom with controlled openings that maximise natural light and ventilation while minimising external noise.],
+  [Meanwhile, the crowning upper level houses a painting studio with diffused, homogeneous light that filters into the space through a large bay of windows and three saw-toothed skylights.],
+  [The school is topped with a sawtooth roof],
+  [Each of the floors is connected by a rounded double-run staircase that loops across the intersection of the arts wing and the classroom building, bridging the new and old structures with white, speckled terrazzo.],
+  [The exterior of the building is exposed concrete, expressing the interior form and structural logic. Two post-tensioned slabs leave the interior of the classrooms open for use.],
+  [A painting studio is located on the top floor],
+  ["The exposed concrete structural system not only addresses the project's structural challenges and trapezoidal floor plan but also minimizes long-term maintenance costs," the team explained.],
+  [The natural wood floors of the graphic design classroom and soft grey floors of the painting studio are subtly raked, cascading down to a teaching or display area.],
+  [Natural light was a key consideration in the design],
+  ["The project's greatest success lies in its genuine connection with the children who inhabit it," the studio said.],
+  ["By prioritizing experiential richness – through intentional natural light, quality materials and carefully calibrated spatial proportions – the architecture became an integral part of their daily lives and learning."],
+  [Other public projects recently completed in Quito include a hillside pavilion for mountain bikers by URLO Studio, a children’s play area in a museum placed in a historic factory by Morphism and a restaurant with a rippled, reflective ceiling by Felipe Escudero.],
+  [The photography is by JAG Studio .],
+  [Project credits:],
+  [Architect: Studio Blur],
+  [Contractor: Studio Blur],
+  [Project team: Aurelio Peñaherrera, Juan Sebastián Cardona, Darwin Sánchez],
+  [Structural engineer: Momentum],
+  [Mechanical engineer: HYDROGROUP],
+  [Electrical engineer: IESCO],
+  [Client: Sociedad de Madres Salesianas],
+  [The post Studio Blur models Quito arts school after Le Corbusier house appeared first on Dezeen .],
 ),
   edited-for-length: false,
 )
@@ -57,48 +77,76 @@
 {
   #section-label([Features])
   #standard-article(
-  title: [How Luka Dončić of the L.A. Lakers made himself the MVP of personal branding],
-  author: [Hauwa Otori],
-  source-name: [Fast Company Design],
+  title: [Jason Statham’s Punisher-Like Hit & More Included in This Week’s Hulu Releases],
+  author: [Sibanee Gogoi],
+  source-name: [ComingSoon.net],
   images: (),
   paragraphs: (
-  [As I walked into a Sunset Boulevard venue this past February, Luka Dončić’s face greeted me, flashing across a wall of old-school televisions. The TV screens flickered between a surreal reel of images: Dončić’s mug, a NTSC rainbow effect, a Valentine sweetheart candy image with the words “too small,” and a graphic with the words “Lil Luka’s Heartbreak Factory: Level 1.”],
-  [For the uninitiated, this scene probably makes no sense. But for superfans of Dončić, star player of the Los Angeles Lakers, the messages are like a secret code to a new kind of fandom.],
-  [Luka Dončić at Lil’ Luka’s Heartbreak Factory [Photo: 77X]],
-  [In February, Dončić celebrated the launch of his new direct-to-fans media company, 77X, by transforming a venue into his own personal brand playground. Dončić’s team built out a space around his personal aesthetic—think: old school video games—that featured a basketball court, candy shop, flower stand, photo booth, and a gift shop adorned with “Lil’ Luka,” Dončić’s alter ego.],
-  [This three-day activation was Dončić’s first proof of concept for 77X, which he is using to push his NBA brand beyond merchandise drops and brand sponsors. For Dončić, 77X is an opportunity to create a completely self-owned platform that can serve as a universe for his fandom by merging content, commerce, and community under his own banner.],
-  [Fan posing with Lil’ Luka statue outside Lil’ Luka’s Heartbreak Factory, 77X’s first immersive fan experience, during NBA All-Star weekend in Los Angeles. [Photo: 77X]],
-  [“I want to feel like I connect with the fans, bring them out here so they can help me build this and show them what I like so they get to know me better,” Dončić tells Fast Company .],
-  [In this current moment across basketball, elite athletes are renegotiating their standing with leagues and brand sponsors. Boston Celtics star Jaylen Brown launched 741, his independent sneaker brand, and Golden State Warriors star Steph Curry ended his 13-year relationship with Under Armour to operate his Curry brand independently. These athletes know that the future of fandom is direct connection that can’t be mediated through third-party brand deals.],
-  [“The traditional athlete model is super fragmented,” says Lara Beth Seager, chief brand officer and business manager for Dončić and 77X CEO.],
-  [Traditionally, content, merchandise, collectibles, and community are split across different stakeholders. Since most of these pillars are controlled by leagues, brand partners, social platforms or retail partners, athletes typically don’t own the relationship with their fan base.],
-  [In partnership with Shopify, 77X offers a central place for Dončić’s fandom.],
-  [“[In this] new world of . . . people loving athletes more than they love the teams and the franchises, which was the traditional model, Luka has really found a way for him to get closer to the fans and for them to participate more fully in his life,” says Jessica Williams, head of global brand marketing and partnerships at Shopify.],
-  [[Photo: 77X]],
-  [This phenomenon is reflective of how Dončić’s youngest fans, who are between 13 and 25 years old, want to engage.],
-  [“Fans today don’t just want to be passive,” says Seager. “They want to be active, they want to consume, and they want to live inside worlds.”],
-  [In order for fandoms to live inside a world, a world must first exist. Creating 77X’s visual identity was a collaboration among Dončić, Seager, 77X President and Chief Creative Officer Chris Eyerman, and their team.],
-  [“With Luka’s brand, we wanted to create a universe that reflected his actual personality and interests,” says Eyerman. “We wanted him to own everything we built, and we wanted fans to have a real aesthetic identity they could be part of.”],
-  [[Image: 77X]],
-  [Designing Dončić’s aesthetic identity required understanding who he is beyond his basketball career. Outside of his sport, Dončić is an avid gamer and is particularly fond of Overwatch , a team-based action game set in the future, among other video games. This passion for gaming served as the basis for designing 77X’s brand identity .],
-  [The result is an aesthetic that mixes retro gaming with a playful, specific tone. Eyerman describes the identity as a “Slovenian late night animated broadcast, all built around Luka, gaming, and basketball.”],
-  [A visit to 77x.world invites fans to sign up for a digital membership called Fan Pass. That’s their entry point into exclusive Dončić content, giveaways, signed memorabilia, and the 77X shop with branded merchandise ranging from t-shirts and hoodies to keychains available for purchase.],
-  [[Image: 77X]],
-  [“Gamified for us is a brand philosophy, just as much as it is any visual thing,” says Eyerman. “The way we think about toys, trading cards, blind box collectibles, live experiences, it’s all designed with the same logic. We want 77X to feel like the next great collectibles company as much as it feels like an athlete brand.”],
-  [In traditional athlete models, the product drops from the athlete and brand were the heart of the relationship. But Dončić wants to build a reciprocal and collaborative relationship with fans. Research shows that more than 70% of professional athletes engage with their fans in online communities. Socially savvy brands understand that co-created content with fans performs better. For 77X, merch and product drops are just the starting point.],
-  [[Image: 77X]],
-  [Through Fan Pass, fans will have the opportunity to earn rewards through participating in Dončić ’s world, whether that’s through attending a game, leaving a comment, voting in a poll, or buying merchandise. Each time a fan checks in with Fan Pass, they earn reward points. These points unlock different opportunities like collaborating on product drops and contributing to designs with the 77X team. Every action fans take on the platform from what they click, purchase, or vote on informs what the 77X produces next.],
-  [“Because the world has such a specific tone, creators and fans can easily make things inside it,” says Eyerman. “We’ve had animators, indie game designers, illustrators, content creators, and fans all contributing to the world, which is exactly what we designed for.”],
-  [[Photo: 77X]],
-  [The Heartbreak Factory activation laid the foundation for how the team is going to conceptualize 77X events going forward. It established a creative playbook, or lore bible, and will be a point of proof for how 77X will handle inter-brand relationships, which appear to be a still valuable part of Dončić’s plan.],
-  [For the February event, Dončić and the team invited his existing brand partners like the Nike Jordan Brand and Gatorade into the 77X universe. This invitation changes the nature of Dončić’s relationship with these brands.],
-  [“An athlete basically rents their image to a brand when you sign an endorsement deal,” Seager explains. “The brand owns the relationship with the fans and the consumers. This way we can invite brands like . . . the Jordan brand . . . into this universe. You’ll see ‘Lil Luka,’ has the Jordan Luka Fives on him. They’re now activated inside Luka’s world. [It’s] the same with Gatorade, an important partner. So rather than Luka renting his image on the outside with brand partnerships and stepping into the traditional brand partnerships, we’re doing the reverse.”],
-  [All these elements, Fan Pass, brands, commerce, live events, are designed to scale together. So far, the 77X team is encouraged by the results of their first pop-up, which marked the first test of Fan Pass in a live environment.],
-  [For now, the 77X team says more live events are planned, each is theme-driven and designed to extend the world they’ve built across digital and physical spaces. For Dončić, that’s the point.”],
-  [“This is something that hasn’t been seen before,” Dončić says. “This [event] is the first [one] we’re going to do. . . . The things in here are the things I like, the things I want to create. . . . This is a big start for us.”],
+  [Photo Credit: Amazon MGM Studios],
+  [Hulu ’s new TV and movie releases for this week (March 30 – April 5, 2026) include Jason Statham’s intense, Punisher-like movie.],
+  [Premiering on April 1, 2026, The Beekeeper arrives on Hulu. It stars Statham as Adam Clay, a retired operative turned vigilante. Phylicia Rashad stars as Eloise, the kind landlady whose tragic death sets off Clay’s brutal quest for justice. Directed by David Ayer, this action-thriller follows Clay’s deadly mission to take down the crime syndicate responsible.],
+  [Meanwhile, romance enthusiasts can catch the classic 2004 rom-com, 50 First Dates, also landing on Hulu on the same date. It follows the story of Henry (Adam Sandler), a Hawaiian veterinarian, who falls for Lucy (Drew Barrymore), who suffers from short-term memory loss. She forgets him every night, so he woos her anew each day. Henry makes a video diary for Lucy to explain their love story, and they eventually build a life together, documenting everything so she can re-learn it each day.],
+  [Hulu has some exciting new releases for this week (March 30 – April 5, 2026) with something for everyone:],
+  [Yu-Gi-Oh! Go Rush!!: Season 1B],
+  [If It’s Tuesday, It’s Murder: Complete Season 1 (DUBBED & SUBBED)],
+  [Meekah: Complete Season 2],
+  [Blippi’s Big Dino Adventure (2023)],
+  [Blippi’s Out of This World Space Adventure (2023)],
+  [House on Eden (2025)],
+  [Jesus Revolution (2023)],
+  [The Best Christmas Pageant Ever (2024)],
+  [About My Father (2023)],
+  [Dear Killer Nannies: Complete Season 1],
+  [Atomic S1: Complete Season 1],
+  [Fire Force: Complete Season 3 Pt. 2 (DUBBED)],
+  [Jack & Bobby: Complete Season 1],
+  [Matthew Beem Creator Essentials: Complete Season 1],
+  [Topper Guild Creator Essentials: Complete Season 1],
+  [That’s Amazing Creator Essentials: Complete Season 1],
+  [Secrets of the Bees: Complete Limited Series],
+  [The Beekeeper (2024)],
+  [Big Daddy (1999)],
+  [The Croods (2013)],
+  [The Day After Tomorrow (2004)],
+  [50 First Dates (2004)],
+  [Date Night (2010)],
+  [The Devil Wears Prada (2006)],
+  [Harold & Kumar Escape from Guantanamo Bay (2008)],
+  [The Heat (2013)],
+  [In Time (2011)],
+  [Micki & Maude (1984)],
+  [Mo’ Money (1992)],
+  [Monster House (2006)],
+  [Moon (2009)],
+  [Murphy’s Romance (1985)],
+  [My Life (1993)],
+  [Napoleon Dynamite (2004)],
+  [Neighbors (1981)],
+  [Night At The Museum (2006)],
+  [Night At The Museum: Battle Of The Smithsonian (2009)],
+  [Night At The Museum: Secret Of The Tomb (2014)],
+  [Not Another Teen Movie (2001)],
+  [Pacific Rim: Uprising (2018)],
+  [Pretendiendo (2025)],
+  [Romy And Michele’s High School Reunion (1997)],
+  [Shark Tale (2004)],
+  [Shrek (2001)],
+  [Shrek 2 (2004)],
+  [Shrek The Third (2007)],
+  [Shrek Forever After (2010)],
+  [The Sitter (2011)],
+  [Sobriedad me Estas Matando (2025)],
+  [Toni Erdmann (2016)],
+  [21 Jump Street (2012)],
+  [22 Jump Street (2014)],
+  [A Very Harold & Kumar Christmas (2011)],
+  [Pizza Movie: Film Premiere],
+  [Primitive War (2025)],
+  [The Boogeyman (2023)],
+  [The post Jason Statham’s Punisher-Like Hit & More Included in This Week’s Hulu Releases appeared first on ComingSoon.net - Movie Trailers, TV & Streaming News, and More .],
 ),
   insert-map: (:),
-  word-count: 1316,
+  word-count: 508,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -107,365 +155,119 @@
 
 {
   #standard-article(
-  title: [Sandboxing AI agents, 100x faster],
-  author: [Kenton Varda],
+  title: [5 Lightroom Keyboard Shortcuts Everyone Should Know],
+  author: [Andrew S. Gibson],
+  source-name: [Digital Photography School],
+  images: (),
+  paragraphs: (
+  [The post 5 Lightroom Keyboard Shortcuts Everyone Should Know appeared first on Digital Photography School . It was authored by Andrew S. Gibson .],
+  [Lightroom is a fantastic program that’s designed for fast and efficient editing, but if you make all your adjustments using your mouse, you may notice that each little operation starts to add up – until you’ve spent hours upon hours moving your cursor, clicking the mouse, and more.],
+  [Fortunately, Adobe built in plenty of handy Lightroom keyboard shortcuts, all of which aim to make life easier for photographers and photo editors. Below, I share a few of the most critical shortcuts, which will allow you to speed up your workflow, improve your editing efficiency, and even access hidden features.],
+  [Ready to become a Lightroom shortcut expert? Then let’s dive right in, starting with:],
+  [Lightroom offers dozens of shortcuts, many of which are difficult to remember – especially if you don’t use them often.],
+  [Fortunately, you can always tap Ctrl/Cmd+\/ , and a list will pop up that displays all of the shortcuts available in the current module. Therefore, if you’re working in the Library module , this shortcut will reveal the Library module shortcuts:],
+  [And if you’re working in the Develop module , this shortcut will reveal the Develop module shortcuts:],
+  [(Once you’re done with this article, I highly recommend you head into Lightroom and read through the shortcuts available for both the Library and Develop modules. You’re practically guaranteed to learn something new!)],
+  [When you’ve finished checking out your shortcut options, click anywhere on the list to hide it.],
+  [This shortcut is a simple one, but it’s a big timesaver. Whenever you need to crop an image , simply head into the Develop module, then hit the R key. The crop overlay will immediately appear:],
+  [And you can get to work cropping your file!],
+  [Additionally, if you don’t like the direction of the crop overlay, just tap X , then watch as it’s rotated:],
+  [This can be especially useful if you’re trying to crop a portrait image with a landscape aspect ratio and vice versa because Lightroom automatically creates crop overlays that match the orientation of the image file.],
+  [Lightroom has several healing modes, all of which can be accessed with the Q key. Each of these modes approaches the healing process – which replaces content from the image by sampling content from elsewhere in the image – differently.],
+  [The wonderful thing about the Lightroom Healing tool is that it’s quite good at guessing which part of the image it should sample to create a natural-looking result. It’s a great way to correct dust spots, unwanted facial blemishes, and distracting dirt or rocks on the ground around your subject.],
+  [However, despite the Healing tool’s impressive capabilities, it doesn’t do a perfect sampling job all the time. That’s where this shortcut comes in handy!],
+  [Start by selecting one of the healing modes and clicking on your image. If you don’t like the sampling choice, just press the \/ key, and Lightroom will choose a different area of the image to sample. You can repeat this as often as you like until you get a satisfactory result!],
+  [For this next (zoomed-in) image, I wanted to get rid of this distracting dark blob in the background:],
+  [However, Lightroom’s first guess didn’t really work:],
+  [I hit the shortcut key, Lightroom resampled the image, and the result was much better:],
+  [Pro tip: If you keep resampling the image and you can’t do any successful healing, you can always sample the file manually by using your cursor (though this does take longer than using the shortcut).],
+  [RAW files often appear a bit flat, and an easy way to add some pop is by carefully setting a white and a black point – that is, by adjusting the Whites slider until the brightest tones stretch to the right side of the histogram , and by adjusting the Blacks slider until the darkest tones stretch to the left side of the histogram.],
+  [The process of setting the white and black point can be arduous – unless you know a handy little shortcut!],
+  [Normally, if you double-click on the Whites and Blacks sliders in the Basic panel, Lightroom resets them to zero. But if you hold Shift while double-click on these sliders, Lightroom calculates where to position both sliders so that the histogram stretches all the way from the left side of the graph (shadows) to the right (highlights):],
+  [This quick fix makes most photos look better right away!],
+  [Lightroom offers an array of local adjustment tools, including the Brush , the Radial Gradient (formerly known as the Radial filter), and the Linear Gradient (formerly known as the Graduated filter).],
+  [The Linear Gradient allows you to apply natural-looking adjustments to a portion of the image, such as the sky or the foreground of a landscape, without modifying the rest of the scene. Normally, you would create a Linear Gradient (you can tap Shift+W to open the Masking panel ), then drag it over the foreground or sky of your shot as you see fit.],
+  [But what if you want to reverse the direction of the effect? Just press the apostrophe key – ‘ – and the Linear Gradient will flip!],
+  [Here’s a great way to use this shortcut:],
+  [Create a Linear Gradient over the sky of a landscape. Drop the Exposure slider to darken that area.],
+  [Right-click on the Gradient’s pin. Select Duplicate to create a new Linear Gradient with the same settings as the first.],
+  [Press the apostrophe key to flip the Gradient. The negative Exposure setting will be applied to the foreground, but you probably don’t want to make the foreground darker; instead, double-click the Exposure slider to return it to zero.],
+  [Now you’re ready to use this new Linear Gradient to enhance the foreground. Boost the Clarity slider to emphasize foreground texture. You might also subtly darken the foreground by dropping the Exposure slider (which will help retain a sense of drama and depth).],
+  [Once you’ve made all the above adjustments, you’ll have a beautiful file modified by two Linear Gradients!],
+  [class="wp-block-image size-full wp-image-83915 is-style-with-caption"\>
+ (A) Original photo. (B) Linear Gradient with negative Exposure applied to the sky. (C) Duplicated and flipped Linear Gradient applied to foreground, with extra Clarity but subtly negative Exposure. (D) Final result.],
+  [Now that you’ve finished this article, you’re ready to head into Lightroom, create some stunning edits, and speed up your workflow with these handy shortcuts.],
+  [So what are you waiting for? Get post-processing!],
+  [Now over to you:],
+  [Which of these keyboard shortcuts do you plan to use? Do you have any favorite shortcuts we missed? Share your thoughts in the comments below!],
+  [The post 5 Lightroom Keyboard Shortcuts Everyone Should Know appeared first on Digital Photography School . It was authored by Andrew S. Gibson .],
+),
+  insert-map: (:),
+  inline-pq: pull-quote([class="wp-block-heading" id="use-the-shift-key-to-set-the-white-and-black-points"\>4.], [Andrew S. Gibson]),
+  inline-pq-idx: 16,
+  word-count: 1225,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+}
+
+{
+  #standard-article(
+  title: [A one-line Kubernetes fix that saved 600 hours a year],
+  author: [Braxton Schafer],
   source-name: [Cloudflare Blog],
   images: (),
   paragraphs: (
-  [Last September we introduced Code Mode , the idea that agents should perform tasks not by making tool calls, but instead by writing code that calls APIs. We've shown that simply converting an MCP server into a TypeScript API can cut token usage by 81% . We demonstrated that Code Mode can also operate behind an MCP server instead of in front of it, creating the new Cloudflare MCP server that exposes the entire Cloudflare API with just two tools and under 1,000 tokens .],
-  [But if an agent (or an MCP server) is going to execute code generated on-the-fly by AI to perform tasks, that code needs to run somewhere, and that somewhere needs to be secure. You can't just eval() AI-generated code directly in your app: a malicious user could trivially prompt the AI to inject vulnerabilities.],
-  [You need a sandbox : a place to execute code that is isolated from your application and from the rest of the world, except for the specific capabilities the code is meant to access.],
-  [Sandboxing is a hot topic in the AI industry. For this task, most people are reaching for containers. Using a Linux-based container, you can start up any sort of code execution environment you want. Cloudflare even offers our container runtime and our Sandbox SDK for this purpose.],
-  [But containers are expensive and slow to start, taking hundreds of milliseconds to boot and hundreds of megabytes of memory to run. You probably need to keep them warm to avoid delays, and you may be tempted to reuse existing containers for multiple tasks, compromising the security.],
-  [If we want to support consumer-scale agents, where every end user has an agent (or many!) and every agent writes code, containers are not enough. We need something lighter.],
-  [And we have it.],
-  [Dynamic Worker Loader: a lean sandbox],
-  [Tucked into our Code Mode post in September was the announcement of a new, experimental feature: the Dynamic Worker Loader API. This API allows a Cloudflare Worker to instantiate a new Worker, in its own sandbox, with code specified at runtime, all on the fly.],
-  [Dynamic Worker Loader is now in open beta, available to all paid Workers users.],
-  [Read the docs for full details , but here's what it looks like:],
-  [\/\/ Have your LLM generate code like this.
-let agentCode: string = \`
- export default {
- async myAgent(param, env, ctx) {
- \/\/ ...
- }
- }
-\`;],
-  [\/\/ Get RPC stubs representing APIs the agent should be able
-\/\/ to access. (This can be any Workers RPC API you define.)
-let chatRoomRpcStub = ...;],
-  [\/\/ Load a worker to run the code, using the worker loader
-\/\/ binding.
-let worker = env. LOADER.load({
- \/\/ Specify the code.
- compatibilityDate: "2026-03-01",
- mainModule: "agent.js",
- modules: { "agent.js": agentCode },],
-  [\/\/ Give agent access to the chat room API.
- env: { CHAT\_ROOM: chatRoomRpcStub },],
-  [\/\/ Block internet access. (You can also intercept it.)
- globalOutbound: null,
-});],
-  [\/\/ Call RPC methods exported by the agent code.
-await worker.getEntrypoint().myAgent(param);],
-  [That's it.],
-  [100x faster],
-  [Dynamic Workers use the same underlying sandboxing mechanism that the entire Cloudflare Workers platform has been built on since its launch, eight years ago: isolates. An isolate is an instance of the V8 JavaScript execution engine, the same engine used by Google Chrome. They are how Workers work .],
-  [An isolate takes a few milliseconds to start and uses a few megabytes of memory. That's around 100x faster and 10x-100x more memory efficient than a typical container.],
-  [That means that if you want to start a new isolate for every user request, on-demand, to run one snippet of code, then throw it away, you can.],
-  [Unlimited scalability],
-  [Many container-based sandbox providers impose limits on global concurrent sandboxes and rate of sandbox creation. Dynamic Worker Loader has no such limits. It doesn't need to, because it is simply an API to the same technology that has powered our platform all along, which has always allowed Workers to seamlessly scale to millions of requests per second.],
-  [Want to handle a million requests per second, where every single request loads a separate Dynamic Worker sandbox, all running concurrently? No problem!],
-  [Zero latency],
-  [One-off Dynamic Workers usually run on the same machine — the same thread, even — as the Worker that created them. No need to communicate around the world to find a warm sandbox. Isolates are so lightweight that we can just run them wherever the request landed. Dynamic Workers are supported in every one of Cloudflare's hundreds of locations around the world.],
-  [It's all JavaScript],
-  [The only catch, vs. containers, is that your agent needs to write JavaScript.],
-  [Technically, Workers (including dynamic ones) can use Python and WebAssembly, but for small snippets of code — like that written on-demand by an agent — JavaScript will load and run much faster.],
-  [We humans tend to have strong preferences on programming languages, and while many love JavaScript, others might prefer Python, Rust, or countless others.],
-  [But we aren't talking about humans here. We're talking about AI. AI will write any language you want it to. LLMs are experts in every major language. Their training data in JavaScript is immense.],
-  [JavaScript, by its nature on the web, is designed to be sandboxed. It is the correct language for the job.],
-  [Tools defined in TypeScript],
-  [If we want our agent to be able to do anything useful, it needs to talk to external APIs. How do we tell it about the APIs it has access to?],
-  [MCP defines schemas for flat tool calls, but not programming APIs. OpenAPI offers a way to express REST APIs, but it is verbose, both in the schema itself and the code you'd have to write to call it.],
-  [For APIs exposed to JavaScript, there is a single, obvious answer: TypeScript.],
-  [Agents know TypeScript. TypeScript is designed to be concise. With very few tokens, you can give your agent a precise understanding of your API.],
-  [\/\/ Interface to interact with a chat room.
-interface ChatRoom {
- \/\/ Get the last \`limit\` messages of the chat log.
- getHistory(limit: number): Promise ;],
-  [\/\/ Subscribe to new messages. Dispose the returned object
- \/\/ to unsubscribe.
- subscribe(callback: (msg: Message) =\> void): Promise ;],
-  [\/\/ Post a message to chat.
- post(text: string): Promise ;
-}],
-  [type Message = {
- author: string;
- time: Date;
- text: string;
-}],
-  [Compare this with the equivalent OpenAPI spec (which is so long you have to scroll to see it all):],
-  [openapi: 3.1.0
-info:
- title: ChatRoom API
- description: \>
- Interface to interact with a chat room.
- version: 1.0.0],
-  [paths:
- /messages:
- get:
- operationId: getHistory
- summary: Get recent chat history
- description: Returns the last \`limit\` messages from the chat log, newest first.
- parameters:
- - name: limit
- in: query
- required: true
- schema:
- type: integer
- minimum: 1
- responses:
- "200":
- description: A list of messages.
- content:
- application/json:
- schema:
- type: array
- items:
- \$ref: "\#/components/schemas/Message"],
-  [post:
- operationId: postMessage
- summary: Post a message to the chat room
- requestBody:
- required: true
- content:
- application/json:
- schema:
- type: object
- required:
- - text
- properties:
- text:
- type: string
- responses:
- "204":
- description: Message posted successfully.],
-  [/messages/stream:
- get:
- operationId: subscribeMessages
- summary: Subscribe to new messages via SSE
- description: \>
- Opens a Server-Sent Events stream. Each event carries a JSON-encoded
- Message object. The client unsubscribes by closing the connection.
- responses:
- "200":
- description: An SSE stream of new messages.
- content:
- text/event-stream:
- schema:
- description: \>
- Each SSE \`data\` field contains a JSON-encoded Message object.
- \$ref: "\#/components/schemas/Message"],
-  [components:
- schemas:
- Message:
- type: object
- required:
- - author
- - time
- - text
- properties:
- author:
- type: string
- time:
- type: string
- format: date-time
- text:
- type: string],
-  [We think the TypeScript API is better. It's fewer tokens and much easier to understand (for both agents and humans).],
-  [Dynamic Worker Loader makes it easy to implement a TypeScript API like this in your own Worker and then pass it in to the Dynamic Worker either as a method parameter or in the env object. The Workers Runtime will automatically set up a Cap'n Web RPC bridge between the sandbox and your harness code, so that the agent can invoke your API across the security boundary without ever realizing that it isn't using a local library.],
-  [That means your agent can write code like this:],
-  [\/\/ Thinking: The user asked me to summarize recent chat messages from Alice.
-\/\/ I will filter the recent message history in code so that I only have to
-\/\/ read the relevant messages.
-let history = await env. CHAT\_ROOM.getHistory(1000);
-return history.filter(msg =\> msg.author == "alice");],
-  [HTTP filtering and credential injection],
-  [If you prefer to give your agents HTTP APIs, that's fully supported. Using the globalOutbound option to the worker loader API, you can register a callback to be invoked on every HTTP request, in which you can inspect the request, rewrite it, inject auth keys, respond to it directly, block it, or anything else you might like.],
-  [For example, you can use this to implement credential injection (token injection): When the agent makes an HTTP request to a service that requires authorization, you add credentials to the request on the way out. This way, the agent itself never knows the secret credentials, and therefore cannot leak them.],
-  [Using a plain HTTP interface may be desirable when an agent is talking to a well-known API that is in its training set, or when you want your agent to use a library that is built on a REST API (the library can run inside the agent's sandbox).],
-  [With that said, in the absence of a compatibility requirement, TypeScript RPC interfaces are better than HTTP:],
-  [As shown above, a TypeScript interface requires far fewer tokens to describe than an HTTP interface.],
-  [The agent can write code to call TypeScript interfaces using far fewer tokens than equivalent HTTP.],
-  [With TypeScript interfaces, since you are defining your own wrapper interface anyway, it is easier to narrow the interface to expose exactly the capabilities that you want to provide to your agent, both for simplicity and security. With HTTP, you are more likely implementing filtering of requests made against some existing API. This is hard, because your proxy must fully interpret the meaning of every API call in order to properly decide whether to allow it, and HTTP requests are complicated, with many headers and other parameters that could all be meaningful. It ends up being easier to just write a TypeScript wrapper that only implements the functions you want to allow.],
-  [Battle-hardened security],
-  [Hardening an isolate-based sandbox is tricky, as it is a more complicated attack surface than hardware virtual machines. Although all sandboxing mechanisms have bugs, security bugs in V8 are more common than security bugs in typical hypervisors. When using isolates to sandbox possibly-malicious code, it's important to have additional layers of defense-in-depth. Google Chrome, for example, implemented strict process isolation for this reason, but it is not the only possible solution.],
-  [We have nearly a decade of experience securing our isolate-based platform. Our systems automatically deploy V8 security patches to production within hours — faster than Chrome itself. Our security architecture features a custom second-layer sandbox with dynamic cordoning of tenants based on risk assessments. We've extended the V8 sandbox itself to leverage hardware features like MPK. We've teamed up with (and hired) leading researchers to develop novel defenses against Spectre . We also have systems that scan code for malicious patterns and automatically block them or apply additional layers of sandboxing. And much more.],
-  [When you use Dynamic Workers on Cloudflare, you get all of this automatically.],
-  [Helper libraries],
-  [We've built a number of libraries that you might find useful when working with Dynamic Workers:],
-  [\@cloudflare/codemode simplifies running model-generated code against AI tools using Dynamic Workers. At its core is DynamicWorkerExecutor() , which constructs a purpose-built sandbox with code normalisation to handle common formatting errors, and direct access to a globalOutbound fetcher for controlling fetch() behaviour inside the sandbox — set it to null for full isolation, or pass a Fetcher binding to route, intercept or enrich outbound requests from the sandbox.],
-  [const executor = new DynamicWorkerExecutor({
- loader: env. LOADER,
- globalOutbound: null, \/\/ fully isolated 
-});],
-  [const codemode = createCodeTool({
- tools: myTools,
- executor,
-});],
-  [return generateText({
- model,
- messages,
- tools: { codemode },
-});],
-  [The Code Mode SDK also provides two server-side utility functions. codeMcpServer({ server, executor }) wraps an existing MCP Server, replacing its tool surface with a single code() tool. openApiMcpServer({ spec, executor, request }) goes further: given an OpenAPI spec and an executor, it builds a complete MCP Server with search() and execute() tools as used by the Cloudflare MCP Server, and better suited to larger APIs.],
-  [In both cases, the code generated by the model runs inside Dynamic Workers, with calls to external services made over RPC bindings passed to the executor.],
-  [Learn more about the library and how to use it.],
-  [Dynamic Workers expect pre-bundled modules. \@cloudflare/worker-bundler handles that for you: give it source files and a package.json , and it resolves npm dependencies from the registry, bundles everything with esbuild , and returns the module map the Worker Loader expects.],
-  [import { createWorker } from "\@cloudflare/worker-bundler";],
-  [const worker = env. LOADER.get("my-worker", async () =\> {
- const { mainModule, modules } = await createWorker({
- files: {
- "src/index.ts": \`
- import { Hono } from 'hono';
- import { cors } from 'hono/cors';],
-  [const app = new Hono();
- app.use('\*', cors());
- app.get('/', (c) =\> c.text('Hello from Hono!'));
- app.get('/json', (c) =\> c.json({ message: 'It works!' }));],
-  [export default app;
- \`,
- "package.json": JSON.stringify({
- dependencies: { hono: "^4.0.0" }
- })
- }
- });],
-  [return { mainModule, modules, compatibilityDate: "2026-01-01" };
-});],
-  [await worker.getEntrypoint().fetch(request);],
-  [It also supports full-stack apps via createApp — bundle a server Worker, client-side JavaScript, and static assets together, with built-in asset serving that handles content types, ETags, and SPA routing.],
-  [Learn more about the library and how to use it.],
-  [File manipulation],
-  [\@cloudflare/shell gives your agent a virtual filesystem inside a Dynamic Worker. Agent code calls typed methods on a state object — read, write, search, replace, diff, glob, JSON query/update, archive — with structured inputs and outputs instead of string parsing.],
-  [Storage is backed by a durable Workspace (SQLite + R2), so files persist across executions. Coarse operations like searchFiles , replaceInFiles , and planEdits minimize RPC round-trips — the agent issues one call instead of looping over individual files. Batch writes are transactional by default: if any write fails, earlier writes roll back automatically.],
-  [import { Workspace } from "\@cloudflare/shell";
-import { stateTools } from "\@cloudflare/shell/workers";
-import { DynamicWorkerExecutor, resolveProvider } from "\@cloudflare/codemode";],
-  [const workspace = new Workspace({
- sql: this.ctx.storage.sql, \/\/ Works with any DO's SqlStorage, D1, or custom SQL backend
- r2: this.env. MY\_BUCKET, \/\/ large files spill to R2 automatically
- name: () =\> this.name \/\/ lazy — resolved when needed, not at construction
-});],
-  [\/\/ Code runs in an isolated Worker sandbox with no network access
-const executor = new DynamicWorkerExecutor({ loader: env. LOADER });],
-  [\/\/ The LLM writes this code; \`state.\*\` calls dispatch back to the host via RPC
-const result = await executor.execute(
- \`async () =\> {
- \/\/ Search across all TypeScript files for a pattern
- const hits = await state.searchFiles("src/\*\*/\*.ts", "answer");
- \/\/ Plan multiple edits as a single transaction
- const plan = await state.planEdits([
- { kind: "replace", path: "/src/app.ts",
- search: "42", replacement: "43" },
- { kind: "writeJson", path: "/src/config.json",
- value: { version: 2 } }
- ]);
- \/\/ Apply atomically — rolls back on failure
- return await state.applyEditPlan(plan);
- }\`,
- [resolveProvider(stateTools(workspace))]
-);],
-  [The package also ships prebuilt TypeScript type declarations and a system prompt template, so you can drop the full state API into your LLM context in a handful of tokens.],
-  [Learn more about the library and how to use it.],
-  [How are people using it?],
-  [Developers want their agents to write and execute code against tool APIs, rather than making sequential tool calls one at a time. With Dynamic Workers, the LLM generates a single TypeScript function that chains multiple API calls together, runs it in a Dynamic Worker, and returns the final result back to the agent. As a result, only the output, and not every intermediate step, ends up in the context window. This cuts both latency and token usage, and produces better results, especially when the tool surface is large.],
-  [Our own Cloudflare MCP server is built exactly this way: it exposes the entire Cloudflare API through just two tools — search and execute — in under 1,000 tokens, because the agent writes code against a typed API instead of navigating hundreds of individual tool definitions.],
-  [Building custom automations],
-  [Developers are using Dynamic Workers to let agents build custom automations on the fly. Zite , for example, is building an app platform where users interact through a chat interface — the LLM writes TypeScript behind the scenes to build CRUD apps, connect to services like Stripe, Airtable, and Google Calendar, and run backend logic, all without the user ever seeing a line of code. Every automation runs in its own Dynamic Worker, with access to only the specific services and libraries that the endpoint needs.],
-  [“To enable server-side code for Zite’s LLM-generated apps, we needed an execution layer that was instant, isolated, and secure. Cloudflare’s Dynamic Workers hit the mark on all three, and out-performed all of the other platforms we benchmarked for speed and library support. The NodeJS compatible runtime supported all of Zite’s workflows, allowing hundreds of third party integrations, without sacrificing on startup time. Zite now services millions of execution requests daily thanks to Dynamic Workers.”],
-  [— Antony Toron , CTO and Co-Founder, Zite],
-  [Running AI-generated applications],
-  [Developers are building platforms that generate full applications from AI — either for their customers or for internal teams building prototypes. With Dynamic Workers, each app can be spun up on demand, then put back into cold storage until it's invoked again. Fast startup times make it easy to preview changes during active development. Platforms can also block or intercept any network requests the generated code makes, keeping AI-generated apps safe to run.],
-  [Dynamically-loaded Workers are priced at \$0.002 per unique Worker loaded per day (as of this post’s publication), in addition to the usual CPU time and invocation pricing of regular Workers.],
-  [For AI-generated "code mode" use cases, where every Worker is a unique one-off, this means the price is \$0.002 per Worker loaded (plus CPU and invocations). This cost is typically negligible compared to the inference costs to generate the code.],
-  [During the beta period, the \$0.002 charge is waived. As pricing is subject to change, please always check our Dynamic Workers pricing for the most current information.],
-  [If you’re on the Workers Paid plan, you can start using Dynamic Workers today.],
-  [Use this “hello world” starter to get a Worker deployed that can load and execute Dynamic Workers.],
-  [You can also deploy the Dynamic Workers Playground , where you’ll be able to write or import code, bundle it at runtime with \@cloudflare/worker-bundler , execute it through a Dynamic Worker, see real-time responses and execution logs.],
-  [Dynamic Workers are fast, scalable, and lightweight. Find us on Discord if you have any questions. We’d love to see what you build!],
+  [Every time we restarted Atlantis, the tool we use to plan and apply Terraform changes, we’d be stuck for 30 minutes waiting for it to come back up. No plans, no applies, no infrastructure changes for any repository managed by Atlantis. With roughly 100 restarts a month for credential rotations and onboarding, that added up to over 50 hours of blocked engineering time every month , and paged the on-call engineer every time.],
+  [This was ultimately caused by a safe default in Kubernetes that had silently become a bottleneck as the persistent volume used by Atlantis grew to millions of files. Here’s how we tracked it down and fixed it with a one-line change.],
+  [Mysteriously slow restarts],
+  [We manage dozens of Terraform projects with GitLab merge requests (MRs) using Atlantis , which handles planning and applying. It enforces locking to ensure that only one MR can modify a project at a time.],
+  [It runs on Kubernetes as a singleton StatefulSet and relies on a Kubernetes PersistentVolume (PV) to keep track of repository state on disk. Whenever a Terraform project needs to be onboarded or offboarded, or credentials used by Terraform are updated, we have to restart Atlantis to pick up those changes — a process that can take 30 minutes.],
+  [The slow restart was apparent when we recently ran out of inodes on the persistent storage used by Atlantis, forcing us to restart it to resize the volume. Inodes are consumed by each file and directory entry on disk, and the number available to a filesystem is determined by parameters passed when creating it. The Ceph persistent storage implementation provided by our Kubernetes platform does not expose a way to pass flags to mkfs , so we’re at the mercy of default values: growing the filesystem is the only way to grow available inodes, and restarting a PV requires a pod restart.],
+  [We talked about extending the alert window, but that would just mask the problem and delay our response to actual issues. Instead, we decided to investigate exactly why it was taking so long.],
+  [Bad behavior],
+  [When we were asked to do a rolling restart of Atlantis to pick up a change to the secrets it uses, we would run kubectl rollout restart statefulset atlantis , which would gracefully terminate the existing Atlantis pod before spinning up a new one. The new pod would appear almost immediately, but looking at it would show:],
+  [\$ kubectl get pod atlantis-0
+atlantis-0 0/1 
+Init:0/1 0 30m],
+  [...so what gives? Naturally, the first thing to check would be events for that pod. It's waiting around for an init container to run, so maybe the pod events would illuminate why?],
+  [\$ kubectl events --for=pod/atlantis-0
+LAST SEEN TYPE REASON OBJECT MESSAGE
+30m Normal Killing Pod/atlantis-0 Stopping container atlantis-server
+30m Normal Scheduled Pod/atlantis-0 Successfully assigned atlantis/atlantis-0 to 36com1167.cfops.net
+22s Normal Pulling Pod/atlantis-0 Pulling image "oci.example.com/git-sync/master:v4.1.0"
+22s Normal Pulled Pod/atlantis-0 Successfully pulled image "oci.example.com/git-sync/master:v4.1.0" in 632ms (632ms including waiting). Image size: 58518579 bytes.],
+  [That looks almost normal... but what's taking so long between scheduling the pod and actually starting to pull the image for the init container? Unfortunately that was all the data we had to go on from Kubernetes itself. But surely there had to be something more that can tell us why it's taking so long to actually start running the pod.],
+  [Going deeper],
+  [In Kubernetes, a component called kubelet that runs on each node is responsible for coordinating pod creation, mounting persistent volumes, and many other things. From my time on our Kubernetes team, I know that kubelet runs as a systemd service and so its logs should be available to us in Kibana. Since the pod has been scheduled, we know the host name we're interested in, and the log messages from kubelet include the associated object, so we could filter for atlantis to narrow down the log messages to anything we found interesting.],
+  [We were able to observe the Atlantis PV being mounted shortly after the pod was scheduled. We also observed all the secret volumes mount without issue. However, there was still a big unexplained gap in the logs. We saw:],
+  [\[operation\_generator.go:664\] "MountVolume. MountDevice succeeded for volume \\"pvc-94b75052-8d70-4c67-993a-9238613f3b99\\" (UniqueName: \\"kubernetes.io/csi/rook-ceph-nvme.rbd.csi.ceph.com^0001-000e-rook-ceph-nvme-0000000000000002-a6163184-670f-422b-a135-a1246dba4695\\") pod \\"atlantis-0\\" (UID: \\"83089f13-2d9b-46ed-a4d3-cba885f9f48a\\") device mount path \\"/state/var/lib/kubelet/plugins/kubernetes.io/csi/rook-ceph-nvme.rbd.csi.ceph.com/d42dcb508f87fa241a49c4f589c03d80de2f720a87e36932aedc4c07840e2dfc/globalmount\\"" pod="atlantis/atlantis-0"],
+  [\[pod\_workers.go:1298\] "Error syncing pod, skipping" err="unmounted volumes=\[atlantis-storage\], unattached volumes=\[\], failed to process volumes=\[\]: context deadline exceeded" pod="atlantis/atlantis-0" podUID="83089f13-2d9b-46ed-a4d3-cba885f9f48a"],
+  [\[util.go:30\] "No sandbox for pod can be found. Need to start a new one" pod="atlantis/atlantis-0"],
+  [The last two messages looped several times until eventually we observed the pod actually start up properly.],
+  [So kubelet thinks that the pod is otherwise ready to go, but it's not starting it and something's timing out.],
+  [The missing piece],
+  [The lowest-level logs we had on the pod didn't show us what's going on. What else do we have to look at? Well, the last message before it hangs is the PV being mounted onto the node. Ordinarily, if the PV has issues mounting (e.g. due to still being stuck mounted on another node), that will bubble up as an event. But something's still going on here, and the only thing we have left to drill down on is the PV itself. So I plug that into Kibana, since the PV name is unique enough to make a good search term... and immediately something jumps out:],
+  [\[volume\_linux.go:49\] Setting volume ownership for /state/var/lib/kubelet/pods/83089f13-2d9b-46ed-a4d3-cba885f9f48a/volumes/kubernetes.io~csi/pvc-94b75052-8d70-4c67-993a-9238613f3b99/mount and fsGroup set. If the volume has a lot of files then setting volume ownership could be slow, see https:\/\/github.com/kubernetes/kubernetes/issues/69699],
+  [Remember how I said at the beginning we'd just run out of inodes? In other words, we have a lot of files on this PV. When the PV is mounted, kubelet is running chgrp -R to recursively change the group on every file and folder across this filesystem. No wonder it was taking so long — that's a ton of entries to traverse even on fast flash storage!],
+  [The pod's spec.securityContext included fsGroup: 1 , which ensures that processes running under GID 1 can access files on the volume. Atlantis runs as a non-root user, so without this setting it wouldn’t have permission to read or write to the PV. The way Kubernetes enforces this is by recursively updating ownership on the entire PV every time it's mounted .],
+  [The fix],
+  [Fixing this was heroically...boring. Since version 1.20, Kubernetes has supported an additional field on pod.spec.securityContext called fsGroupChangePolicy . This field defaults to Always , which leads to the exact behavior we see here. It has another option, OnRootMismatch , to only change permissions if the root directory of the PV doesn't have the right permissions. If you don’t know exactly how files are created on your PV, do not set fsGroupChangePolicy : OnRootMismatch . We checked to make sure that nothing should be changing the group on anything in the PV, and then set that field:],
+  [spec:
+ template:
+ spec:
+ securityContext:
+ fsGroupChangePolicy: OnRootMismatch],
+  [Now, it takes about 30 seconds to restart Atlantis, down from the 30 minutes it was when we started.],
+  [Default Kubernetes settings are sensible for small volumes, but they can become bottlenecks as data grows. For us, this one-line change to fsGroupChangePolicy reclaimed nearly 50 hours of blocked engineering time per month. This was time our teams had been spending waiting for infrastructure changes to go through, and time that our on-call engineers had been spending responding to false alarms. That’s roughly 600 hours a year returned to productive work, from a fix that took longer to diagnose than deploy.],
+  [Safe defaults in Kubernetes are designed for small, simple workloads. But as you scale, they can slowly become bottlenecks. If you’re running workloads with large persistent volumes, it’s worth checking whether recursive permission changes like this are silently eating your restart time. Audit your securityContext settings, especially fsGroup and fsGroupChangePolicy . OnRootMismatch has been available since v1.20.],
+  [Not every fix is heroic or complex, and it’s usually worth asking “why does the system behave this way?”],
+  [If debugging infrastructure problems at scale sounds interesting, we’re hiring . Come join us on the Cloudflare Community or our Discord to talk shop.],
 ),
   insert-map: (:),
-  word-count: 3177,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-}
-
-{
-  #standard-article(
-  title: [NASA accelerates plan to build permanent moon base],
-  author: [Ellen Eberhardt],
-  source-name: [Dezeen Architecture],
-  images: (),
-  paragraphs: (
-  [style="margin-bottom: 15px;"\>],
-  [NASA has announced that it has cancelled an upcoming orbital space station to expedite the building of a permanent lunar base on the moon , "landing by landing and incrementally".],
-  [Announced on 24 March, the shift in focus is part of agency-wide strategies to hurriedly "achieve President Donald Trump 's National Space Policy and advance American leadership in space", according to NASA.],
-  [The lunar base will feature three major stations according to the space agency, with a reported \$20 billion allocated to the cause over the next seven years. It will use components from the now-cancelled Lunar Gateway, an orbital station that was designed to support moon missions.],
-  ["NASA is committed to achieving the near‑impossible once again, to return to the Moon before the end of President Trump's term, build a Moon base, establish an enduring presence, and do the other things needed to ensure American leadership in space," said NASA administrator Jared Isaacman.],
-  ["If we concentrate NASA's extraordinary resources on the objectives of the National Space Policy, clear away obstacles that impede progress, and unleash the workforce and industrial might of our nation and partners, then returning to the Moon and building a base will seem pale in comparison to what we will be capable of accomplishing in the years ahead."],
-  ["We are shifting to a focused, phased architecture"],
-  [A rendering of the base shows astronauts walking on the moon's surface. Capsules are positioned in groups.],
-  [Solar panels, trucks, rockets and landers are all distributed around the base, while spacecrafts float in the distance.],
-  [According to NASA, the moon base will be built in three major phases.],
-  [The first phase will focus on building the frequency of missions and delivering rovers and utilities, such as power generation, to "build, test and learn".],
-  [The second phase will focus on establishing "semi‑habitable" infrastructure.],
-  [Read:],
-  ["They'll be flying in our baby" says Artemis II spaceship's architect],
-  [Finally, the third phase "will deliver heavier infrastructure needed for a continuous human foothold on the Moon", according to NASA.],
-  [The initiative is largely supported by the organisation's ongoing Artemis program, which is focused on returning humans to the moon for long-term habitation. NASA said several constraints to current strategies shifted their approach to the mission, such as a lack of intermediate testing "from a lunar flyby to a lunar landing".],
-  ["On the Moon, we are shifting to a focused, phased architecture that builds capability landing by landing, incrementally, and in alignment with our industrial and international partners," said NASA Associate Administrator Amit Kshatriya.],
-  [This updated plan foresees astronauts' returning to the lunar surface in early 2028 according to the recently updated plan, called Ignition .],
-  [Read:],
-  [Space architects are preparing for humanity's return to the moon],
-  [NASA is currently planning to launch the much-delayed Artemis II mission, which is designed to fly the first crewed mission around the moon in more than 50 years.],
-  [Recently, Dezeen spoke to one of the designers of the Artemis II spacecraft as well as NASA about its goals to return humans to the moon .],
-  [President Trump released the Ensuring American Space Superiority executive order in December 2025, which details "leading the world in space exploration and expanding human reach and American presence".],
-  [China is also working towards landing humans on the moon by 2030 , which is in part, fueling a "geopolitical competition" between the two nations, according to Space.com .],
-  [In recent years, architects and designers have put forth proposals for lunar buildings as space slowly grows commercialised and more accessible to non-astronauts .],
-  [The image is courtesy of NASA],
-  [The post NASA accelerates plan to build permanent moon base appeared first on Dezeen .],
-),
-  insert-map: (:),
-  word-count: 633,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-}
-
-{
-  #standard-article(
-  title: [Standing up for the open Internet: why we appealed Italy’s "Piracy Shield" fine],
-  author: [Patrick Nemeroff],
-  source-name: [Cloudflare Blog],
-  images: (),
-  paragraphs: (
-  [At Cloudflare, our mission is to help build a better Internet. Usually, that means rolling out new services to our millions of users or defending the web against the world’s largest cyber attacks. But sometimes, building a better Internet requires us to stand up against laws or regulations that threaten its fundamental architecture.],
-  [Last week, Cloudflare continued its legal battle against "Piracy Shield,” a misguided Italian regulatory scheme designed to protect large rightsholder interests at the expense of the broader Internet. After Cloudflare resisted registering for Piracy Shield and challenged it in court, the Italian communications regulator, AGCOM, fined Cloudflare a staggering €14 million (~\$17 million). We appealed that fine on March 8, and we continue to challenge the legality of Piracy Shield itself.],
-  [While the fine is significant, the principles at stake are even larger. This case isn't just about a single penalty; it’s about whether a handful of private entities can prioritize their own economic interests over those of Internet users by forcing global infrastructure providers to block large swaths of the Internet without oversight, transparency, or due process.],
-  [What is Piracy Shield?],
-  [To understand why we are fighting this, it’s necessary to take a step back and understand Piracy Shield. Marketed by AGCOM as an innovative tool to fight copyright infringement, the system is better understood as a blunt tool for rightsholders to control what is available on the Internet without any traditional legal safeguards.],
-  [Piracy Shield is an unsupervised electronic portal through which an unidentified set of Italian media companies can submit websites and IP addresses that online service providers registered with Piracy Shield are then required to block within 30 minutes. Piracy Shield operates as a “black box” because there is:],
-  [No judicial oversight: Private companies, not judges or government officials, decide what gets blocked.],
-  [No transparency: The public, and even the service providers themselves, are often left in the dark about who requested a block or why.],
-  [No due process: There is no mechanism for a website owner to challenge a block before their site becomes unavailable on the Italian web.],
-  [No redress: Along with a complete lack of transparency or due process, Piracy Shield offers no effective way for impacted parties to seek redress from erroneous blocking.],
-  [It’s not entirely surprising that Piracy Shield so clearly prioritizes the economic interests of media companies over the rights of Italian Internet users. The system was “donated” to the Italian government by SP Tech, an arm of the law firm that represents several of Piracy Shield’s major direct beneficiaries, including Lega Nazionale Professionisti Serie A (Italy’s major soccer league).],
-  [The high cost of Piracy Shield],
-  [Almost immediately after Piracy Shield was rolled out, there were significant problems. In addition to the unworkable 30-minute deadline and the lack of safeguards described above, the scheme requires service providers to engage in IP address blocking. This creates an unavoidable risk of overblocking innocent websites due to the fact that IP addresses are regularly and necessarily shared by thousands of websites. Not surprisingly, within a few months of its launch, Piracy Shield caused major outages for people and businesses who had done nothing wrong.],
-  [Notable failures include:],
-  [Government and educational blackouts: Tens of thousands of legitimate sites were rendered inaccessible from Italy, including Ukrainian government websites for schools and scientific research.],
-  [Small business & NGO disruption: A wide range of European small businesses and NGOs focused on social programs for women and children were inadvertently blocked.],
-  [Loss of essential services: The system blocked access to Google Drive for over 12 hours, preventing thousands of Italian students and professionals from accessing critical files.],
-  [Persistent collateral blocking: A September 2025 study by the University of Twente confirmed that the system routinely blocks legitimate websites for months at a time.],
-  [Even when faced with clear evidence that Piracy Shield has caused significant and repeated overblocking, AGCOM did not change course. Rather, it chose to expand Piracy Shield to apply to global DNS providers and VPNs, services which are closely associated with privacy and free expression. AGCOM also started taking increasingly aggressive steps to force global service providers, even ones with no legal or operational presence in Italy, to register with Piracy Shield.],
-  [Cloudflare’s principled challenge],
-  [Cloudflare has been clear about the risks posed by Piracy Shield from the beginning. In 2024, we met with AGCOM to highlight the scheme’s structural flaws and consequences and proposed more effective ways to collaborate that wouldn't break the Internet’s core architecture.],
-  [When these concerns were ignored, we moved on to legal action. We challenged AGCOM’s effort to force Cloudflare to join Piracy Shield in the Italian administrative courts and, along with the Computer & Communications Industry Association (CCIA), we filed a complaint with the European Commission. More informally, we have continued to reach out to government officials both in Italy and at the EU level to explain our position and make our concerns known. Our position has been consistent and remains that Piracy Shield is incompatible with EU law, most notably the Digital Services Act (DSA), which requires that any content restriction be proportionate and subject to strict procedural safeguards.],
-  [The European Commission, following our complaint, expressed similar concerns, issuing a letter on June 13, 2025, criticizing the lack of oversight inherent in the Piracy Shield framework. And on December 23, 2025, the Italian administrative court issued an encouraging ruling requiring AGCOM to share with Cloudflare all the records that purportedly support Piracy Shield blocking orders. While we have not yet received those records, we expect them to shed significant light on Piracy Shield’s operations.],
-  [An excessive fine and still no transparency],
-  [Rather than awaiting the outcome of our legal challenges, and less than one week after being ordered to disclose Piracy Shield records to Cloudflare, AGCOM moved on December 29, 2025, to issue its fine. The fine’s timing was not the only eyebrow-raising thing about it. The math behind the penalty is as flawed as the system it is seeking to enforce.],
-  [Under Italian law, fines for non-compliance are capped at 2% of a company’s revenue within the relevant jurisdiction . Based on Cloudflare’s Italian earnings, that cap should have limited any fine to approximately €140,000. Instead, AGCOM calculated the fine based on our global revenue, resulting in a penalty nearly 100 times higher than the legal limit.],
-  [This disproportionate approach sends a chilling message to the global tech community: if you question a flawed regulatory system or defend the rights of your users and the global Internet, you risk facing punitive and excessive financial retaliation.],
-  [At the same time, AGCOM still has not shared with Cloudflare the Piracy Shield records that it was ordered to disclose. Instead, just four days before the deadline for disclosure, AGCOM informed us that it would make some of the records available for inspection at an AGCOM facility in Naples, subject to supervision by AGCOM officials. These limitations are not just unreasonably burdensome and contrary to the letter and spirit of the disclosure order; they raise real questions about why AGCOM is so intent on resisting transparency.],
-  [Next steps: the path forward],
-  [We are not backing down. Cloudflare is appealing the €14 million fine, pushing for full access to AGCOM’s Piracy Shield records, and will continue to challenge the underlying legality of the Piracy Shield blocking orders in the Italian administrative courts.],
-  [We recognize that rightsholders have a legitimate interest in protecting their content. In fact, we work with rightsholders every day to address infringement in ways that are precise and effective. But those interests cannot override the basic requirements of legal due process or the technical integrity of the global Internet and our network.],
-  [We will continue to pursue this challenge in the Italian courts and through the European Commission. Global connectivity is too important to be governed by "black boxes" with 30-minute deadlines that result in widespread overblocking with no means of redress. Cloudflare remains committed to building a better Internet: one where the rules are transparent, the regulators are accountable, and the infrastructure that connects the world remains free, open, and secure.],
-),
-  insert-map: (:),
+  inline-pq: pull-quote([The missing piece  The lowest-level logs we had on the pod didn't show us what's going on.], [Braxton Schafer]),
+  inline-pq-idx: 13,
   word-count: 1345,
   edited-for-length: false,
   debug-mode: false,
@@ -475,86 +277,59 @@ const result = await executor.execute(
 
 {
   #standard-article(
-  title: [Tarq Studio prioritises "informal ways people occupy space" for angular market in Colombia],
-  author: [Kate Mazade],
+  title: [SO-IL uses pink concrete to give Brooklyn apartment block "civic presence"],
+  author: [Ben Dreith],
   source-name: [Dezeen Architecture],
   images: (),
   paragraphs: (
   [style="margin-bottom: 15px;"\>],
-  [A large angular roof structure hovers over an open-air market in Valledupar, Colombia , designed by Colombian outfit Tarq Studio, acting as a signpost for the community gatherings and commerce it shelters.],
-  [The 3,057-square-metre Plaza Luna Vallenata opened in 2025 as the second largest market in the city.],
-  [Created as the first public facility by Tarq Studio , which has offices in Bogotá and Santa Marta, Colombia and Miami , Florida, the building's design drew on observations from Valledupar's existing market.],
-  [An angular roof tops Plaza Luna Vallenata in Colombia],
-  ["We weren't looking for formal references, we were trying to understand the everyday dynamics: the flows, the heat, the conflicts, the informal ways people occupy space," Eduardo Torrente, founder and head architect of Tarq Studio, told Dezeen.],
-  ["The goal was not just to design a market, but to create a place where people could stay, meet and feel that the architecture belongs to them."],
-  ["That process reinforced the idea that architecture can become a form of social infrastructure when it responds directly to lived realities rather than abstract assumptions," he continued.],
-  [The rectilinear building is centred around a large covered plaza that prioritises social space in between eight bays of commercial stalls.],
-  [In addition to supporting local farmers and ranchers who can now sell goods without intermediaries, the plaza allows for the interactions from the stalls to expand beyond each space and prompt community gatherings that might not have a home in the peripheral neighbourhood.],
-  [The upper level – accessed by two circular staircases on the short end of the market – features restaurants and local kitchens that activate the building beyond market hours, continuing those communal connections throughout the day.],
+  [Architecture studio SO-IL utilised precast, coloured-concrete panels in various sizes to give the 144 Vanderbilt apartment block in Brooklyn , USA, a distinct identity.],
+  [The latest of SO-IL 's collaborations with design-forward New York developer Tankhouse , 144 Vanderbilt was constructed using stacked concrete blocks that rise from the north to south its tallest point facing busy Myrtle Avenue.],
+  [The facade of the 89,000-square-foot (8,300-square-metre) building, which is six storeys tall at its highest point, consists of precast concrete panels with a fluted texture, and is coloured a rosy pink.],
+  [As much of the neighbourhood consists of brownstone buildings and red-brick structures, the studio found that the pink colour created a sense of consistency, while still standing out.],
+  ["It's both contextual, but also slightly stands out, because of the becase of size and being in a corner," SO-IL co-founder Jing Liu told Dezeen.],
+  ["We knew that it needed to have a civic presence."],
+  [The building has different scales on the residential and commercial sides],
+  [The panels follow the structure's irregular stacking pattern, which produces recesses, stacks and cantilevers that provide visual interest and create opportunities for balconies, while also articulating windows in a way that maximises light.],
+  [Furthering the contextualisation, Liu compared the stacking of the facade to the way that brick buildings are assembled. She added that the differing orientations of the units allow for individuality in the apartments.],
+  [Different orientations of the units created individuality for the apartments and a distinct facade],
+  ["There is this sense of coming home that you rarely get when you live in an apartment building," said Liu.],
+  ["So at this scale, it's still possible to do so. We try to make every unit feel unique, even though it's in a collective constellation."],
+  [144 Vanderbilt has an extensive backyard element],
+  [SO-IL noted the building's corner site sits on a zoning boundary, with Myrtle Avenue's infrastructure being taller and commercial in function, while Vanderbilt Avenue is more residential.],
+  [The stepping up from Vanderbilt towards Myrtle accounts for this shift within the building itself, according to the studio.],
+  [It has both outdoor and indoor circulation elements, opening up the back of the building],
+  ["Its distinct corner location, straddling two zoning districts, heavily influences the building's structure and layout," said SO-IL.],
+  ["The project explores these two contrasting urban experiences, creating a structure that acts as a porous barrier, housing a tranquil inner haven that contrasts with the vibrant street life."],
   [Read:],
-  [Aidia Studio tops Mexican market with parabolic roof system],
-  [Oriented north-south, the building uses passive ventilation rather than mechanical cooling to accommodate the hot climate of Colombia.],
-  [Permeable facades and brick screens – as well as large geometric funnels in the roof trusses – capture air from the nearby Sierra Nevada de Santa Marta mountains and pull it through the market.],
-  [The monumental roof is lofted over the stalls on a grid of large, tree-like columns.],
-  [The market features eight bays for commercial stalls],
-  ["The large permeable canopy not only provides shade but also regulates airflow, light, and scale across the entire market," Torrent said.],
-  [The metal structure – painted a soft gold tone that complements the white of the floating stalls – is paired with technical wood-finish panelling to add warmth to the building palette of precast concrete and masonry, selected for longevity.],
-  [The building's metal structure was finished in a gold tone],
-  ["The main challenge was designing something innovative while ensuring that it could be maintained over time within the realities of public infrastructure," Torrente said.],
-  ["The building needed to perform well climatically, remain economically sustainable and be constructed with durable materials that would age well."],
-  [Other markets built over the last few years in Latin America include a market with a wave-like vaulted roof in Quintana Roo, Mexico by Aidia Studio, a shopping centre with inverted, pyramidal umbrella roofs in Matamoros by Colectivo c733 and a food market with floating white forms in Morelia by HW Studio.],
-  [The photography is by Mónica Barreneche .],
-  [Project credits:],
-  [Architects: Tarq Studio — Eduardo Torrente (Design Director), Andrés Pinzón, Nicolás Suárez, Nathalia Crosby],
-  [Client: Gobernación del Cesar],
-  [Public relations: Mónica Barreneche, El Buen Ojo],
-  [The post Tarq Studio prioritises "informal ways people occupy space" for angular market in Colombia appeared first on Dezeen .],
+  [SO-IL completes perforated-metal facade of residential tower in Brooklyn],
+  [This "haven" references the generous public interior spaces, including a mezzanine above a social lobby and a "verdant, secluded backyard".],
+  [These interior spaces reflect recesses and voids of the facade, and the studio noted that all of the apartments in the building not only face the street, but also the interior of the building, adding to the "porous" nature of the building.],
+  [The main lobby has a USM desk and seating],
+  [The concrete columns that line the building's entrance also appear in the backyard. Inside, the columns play a starring role, lining the mezzanine lobby and reaching up to the ceiling from the double-height co-working space below grade.],
+  [For the mezzanine lobby, the floors are highly polished, and the walls, along with some of the columns, are covered in a grey-brown brick.],
+  [A co-working space features in the double-height space below the lobby],
+  [On the ceiling, a ventilation block was given a circular aspect and metal cladding that gives it the appearance of a decorative installation crowning the lofty public space.],
+  [A playful USM Modular Furniture entry desk tapers into lobby seating, mirroring the taper of the building's exterior.],
+  [Railings inside the public area and on the outdoor circulation are a matte green, matching the deep window frames that look out over the landscaped backyard and an interior courtyard, accessible from the wood-floored coworking space.],
+  [Interior courtyards feature along the perimeter],
+  [Landscape architect Marie Salembier and designer/researcher Julia Watson created the gardens, which, according to Tankhouse feature 275 feet (83 metres) of pathways.],
+  [A few of the pared-down apartments were outfitted with finishes by Brooklyn design studio General Assembly , which has also set up shoppable showrooms in the building to promote local design. Dinesen designed the interiors of a full townhouse in the lower Vanderbilt Avenue portion of the ground floor.],
+  [Retail spaces were included along Myrtle Avenue.],
+  [Read:],
+  [SO-IL builds Las Americas affordable housing development in Mexico],
+  [Though the completion is just being announced, the building has hosted exhibitions and other social events for the last year.],
+  [Also for Tankhouse, SO-IL completed an apartment building with a similar profile, but clad in perforated metal, close by in Downtown Brooklyn .],
+  [This, along with other colourful buildings they've worked on in the borough, shows the studio's commitment to expanding the brownstone scale residential typology of Brooklyn.],
+  [The building's articulation allowed for terraces across the structure],
+  ["Most of the brownstone buildings don't maximise their envelope," said Liu.],
+  ["What threads all these projects through is this sense of community and sense of outdoor space, connectivity to the outdoors. We try to do as many windows and as many orientations and as much exterior circulation as possible in any of these buildings," she continued.],
+  ["That ethos is going to carry through in all of the buildings."],
+  [Meanwhile, Frida Escobedo recently completed an apartment building with an undulating facade nearby in Cobble Hill, Brooklyn.],
+  [The post SO-IL uses pink concrete to give Brooklyn apartment block "civic presence" appeared first on Dezeen .],
 ),
   insert-map: (:),
-  word-count: 602,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-  #pull-quote([Permeable facades and brick screens – as well as large geometric funnels in the roof trusses – capture air from the nearby Sierra Nevada de Santa Marta mountains and pull it through the market.], [Kate Mazade])
-
-}
-
-{
-  #standard-article(
-  title: [Snøhetta transforms Théâtre Nanterre-Amandiers in France into "urban lantern"],
-  author: [Jon Astbury],
-  source-name: [Dezeen Architecture],
-  images: (),
-  paragraphs: (
-  [style="margin-bottom: 15px;"\>],
-  [Architecture studio Snøhetta has completed the renovation of Théâtre Nanterre-Amandiers in France , unifying its performance spaces around a tilted glass hall that overlooks a landscaped plaza.],
-  [The theatre in the Paris suburb of Nanterre dates back to the 1965 Festival de Nanterre, when it began life as a circus tent and subsequently a temporary warehouse. The permanent building was designed in 1976 by the architect Jacques Kalisz.],
-  [Snøhetta has renovated Théâtre Nanterre-Amandiers in France],
-  [Snøhetta won a competition to update Théâtre Nanterre-Amandiers in 2018, thanks to its proposal to upgrade its existing venues, add a new 200-seat auditorium and reconfigure its public spaces with a focus on flexibility and natural light.],
-  [At the centre of the renovation is The Grand Hall, a fully-glazed, multipurpose space that overlooks a newly-created sunken courtyard and planting designed in collaboration with landscape studio Atelier Silva Landscaping .],
-  [Its tilted glass exterior overlooks a newly landscaped plaza],
-  ["The rehabilitation project is neither a rupture nor a spectacular gesture, but a careful transformation aimed at preserving the essence of the place while firmly situating it in the present day," said Snøhetta.],
-  ["The intervention responds to the evolution of artistic practices, uses, and audience expectations, while renewing the dialogue between the theatre, the city, and the park," it added.],
-  ["The themes of materiality and transparency run throughout the project, serving a building that is clear, legible, and strongly connected to its context."],
-  [The renovation centres around the fully-glazed hall],
-  [The Grand Hall maintains the footprint of the theatre's previous foyer, expanded with a new roof and sunken floor that allows access from both the upper forecourt and lower stepped plaza.],
-  [A mezzanine area above the hall's flexible double-height spaces provides additional access into the auditoria, while a ceiling with integrated stage equipment enables the entire space to be transformed into an additional performance or meeting venue.],
-  [Snøhetta used a "deliberately restrained" palette of concrete, wood and glass for these public areas, with the intention of creating warm, robust spaces and surfaces that would reflect the changing light through the fully-glazed walls.],
-  [Read:],
-  [Glasshouse Theatre in Queensland operates "like a finely tuned musical instrument"],
-  ["Transparency, omnipresent throughout the space, changes the perception of the building throughout the day and seasons, making the theatre’s energy visible and supporting its mission of artistic transmission and dissemination," said the studio.],
-  ["By day, natural light animates the volumes and reveals the raw materials; by night, the hall is illuminated, transforming the theatre into an urban lantern," it added.],
-  [Concrete, wood and glass define the public areas],
-  [Théâtre Nanterre-Amandiers's main 800-seat auditorium has been entirely overhauled, with the creation of accessible entrances, technical upgrades and improved sightlines. Curtains allow the size of the theatre to be reduced if needed.],
-  [Two additional performance spaces include an updated flexible auditorium with mobile seating and motorised platforms, and a new 200-seat auditorium for more intimate and experimental performances with a motorised telescopic seating system.],
-  [A new 200-seat auditorium was added to the venue],
-  ["These three auditoriums, rationally organised with dressing rooms, team workspaces, and circulation areas, form a compact and legible ensemble where each space is directly accessible and fully functional," said the studio.],
-  [Snøhetta recently won a competition to design the new Ontario Science Centre alongside Hariri Pontarini Architects, and is among a number of studios announced to be working on a new masterplan for Istanbul's northern Beykoz district .],
-  [The post Snøhetta transforms Théâtre Nanterre-Amandiers in France into "urban lantern" appeared first on Dezeen .],
-),
-  insert-map: (:),
-  word-count: 593,
+  word-count: 951,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -563,111 +338,86 @@ const result = await executor.execute(
 
 {
   #standard-article(
-  title: [UK's first circular construction hub unveiled in London],
+  title: [AIA sues Donald Trump over Kennedy Center renovation in unprecedented coalition],
+  author: [Ben Dreith],
+  source-name: [Dezeen Architecture],
+  images: (),
+  paragraphs: (
+  [style="margin-bottom: 15px;"\>],
+  [US organisations the American Institute of Architects and Docomomo US are among the plaintiffs in a lawsuit suing US president Donald Trump over his proposed renovations for the Edward Durell Stone-designed Kennedy Center.],
+  [Eight plaintiffs submitted a lawsuit this morning in an attempt to pause proposed renovations to the John F Kennedy Center for the Performing Arts in Washington DC.],
+  [The plaintiffs include the American Institute of Architects (AIA), Docomomo US , t he Cultural Landscape Foundation , the American Society of Landscape Architects , the Committee of 100 on the Federal City , DC Preservation League , the National Trust for Historic Preservation and the Society of Architectural Historians .],
+  [Unprecedented coalition of preservationists],
+  [According to the group of plaintiffs, the lawsuit represents one of the largest legal coalitions of preservation bodies in history.],
+  ["No plaintiff can remember an instance in which so many national and regional organisations have coalesced to defend a single historic building and its grounds, reflecting both the Kennedy Center's significance and the breadth of concern that the administration's approach could weaken longstanding federal protections for historic sites nationwide," said the plaintiffs.],
+  [Named as defendants in the lawsuit are president Donald Trump in his capacity as chair of the Board of Trustees of the Kennedy Centre, the Smithsonian Institute, the National Capital Planning Commission, as well as other government organisations and officials.],
+  ["It's not about the president's tastes. It's about the rule of law"],
+  [The lawsuit contends that the administration must adhere to the processes in the National Historic Preservation Act and the National Environmental Protection Act before proceeding with planned renovations to the centre.],
+  [Given this, the plaintiffs demand that proper review and authorisations by congressional officials should precede any renovations. The lawsuit, if successful, would halt work on the structure until such authorisations and associated public reviews are completed.],
+  [Read:],
+  [Corinthian columns proposed for White House to match ballroom extension],
+  ["The Trump administration appears to believe that they can skip those federal requirements and go right to alterations," attorney and co-founder of Cultural Heritage Partners Greg Werkheiser told Dezeen.],
+  [Cultural Heritage Partners is one of the law firms representing the plaintiffs, along with Foley Hoag and Lowell & Associates, all of which have open cases against the administration relating to other preservation issues, such as the Eisenhower Executive Office Building , the East Wing expansion , and the East Potomac Golf Links.],
+  ["Each of these cases is not about the politics," said Werkheiser. "It's not about the president's tastes, whether good or bad. It's about the rule of law and doing what Congress intended."],
+  ["I'm not ripping it down," says Trump],
+  [Last week, the board voted to close the centre for years for renovations after voting to add Trump's name to the centre, which was built in 1971.],
+  [On 13 March, president Trump released renderings on his Truth Social account , showing a building structurally akin to the current modernist building. In the post, the president said that the steel and some of the existing marble of the building would be maintained, saying, "I'm not ripping it down."],
+  [Werkheiser said that the case is informed by the contradiction between the assurances given by the president about the East Wing and the reality of its demolition last fall .],
+  ["The hardest lesson for America to learn is that we cannot take for granted assurances from the White House," he said. "For the East Wing matter, the President himself told the American public that to build the ballroom, the East Wing would not be touched, and then days later, it was gone."],
+  ["So the lesson we've learned is timeliness and not to take those assurances for granted," he continued.],
+  [Read:],
+  [How Donald Trump is using architecture to reshape Washington DC],
+  [Almost all the plaintiffs cited the historical significance of the building and the need for care and procedure in issues of its renovation.],
+  ["Architects have the core responsibility of protecting the health, safety, and welfare of the public and that includes the integrity of our nation's civic and cultural landmarks," said AIA president Illya Azaroff.],
+  ["The Kennedy Center is a public asset that must be shaped through transparency, expertise, and the communities it serves."],
+  [In a statement to Dezeen, a White House spokesperson said that the administration is looking forward to "ultimate victory" in the dispute.],
+  ["President Trump is committed to making the Trump-Kennedy Center the finest performing arts facility in the world. We look forward to ultimate victory on the issue," said the White House spokesperson.],
+  [The post AIA sues Donald Trump over Kennedy Center renovation in unprecedented coalition appeared first on Dezeen .],
+),
+  insert-map: (:),
+  word-count: 782,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+  #pull-quote([It's about the rule of law and doing what Congress intended.], [Ben Dreith])
+
+}
+
+{
+  #standard-article(
+  title: [Venice Biennale unveils renovated Central Pavilion],
   author: [Amy Peacock],
   source-name: [Dezeen Architecture],
   images: (),
   paragraphs: (
   [style="margin-bottom: 15px;"\>],
-  [Design studios Yes Make, Resolve Collective and Material Cultures have overhauled a warehouse in London to create Tipping Point East, the UK's first dedicated circular construction hub.],
-  [Yes Make , Resolve Collective and Material Cultures worked with Newham Council and the Greater London Authority to open Tipping Point East , which will organise construction waste materials to be reused for other buildings.],
-  [The UK's first dedicated circular construction hub has launched in London],
-  [Yes Make led the transformation of the warehouse in Newham's Royal Docks, which had been left derelict for nine years.],
-  ["By harnessing our skill set and our access to materials, we were able to deliver a remedial plan, electrical fit out and full factory control process to ensure it remains a great building for years to come – one that can serve the material revolution that we are driving at Tipping Point East," Yes Make founder Joel De Mowbray told Dezeen.],
-  [It is located in a renovated warehouse in Newham],
-  [Tipping Point East is divided into zones that help facilitate the material sorting process.],
-  [For waste materials coming into the hub, there are initial loading zones, a quarantine area for pre-inspection, and an area for inspection, inventory and material passporting.],
-  [After the materials are inspected, they are then brought into the building and placed in storage areas, ensuring contaminants do not enter the hub.],
-  [Tipping Point East is divided into areas for sorting and distributing reclaimed materials],
-  [The second half of the warehouse is used for processing materials according to client specifications, including cleaning, respraying and cutting, and preparing them to be distributed for reuse.],
-  [Elsewhere in the hub is a community workshop, events and training spaces, an electrical testing facility, a collective office space, a materials store run by Resolve Collective, and an assembly space for large-scale group builds.],
+  [The Central Pavilion at the Giardini della Biennale is set to reopen for this year's Venice Art Biennale , following a restoration by Italian architecture studio Labics and architect Fabio Fumagalli.],
+  [Overseen by the Venice Biennale 's Special Projects team, led by architect Arianna Laurenzi and engineer Cristiano Frizzele, the revamp has reorganised exhibition spaces at the Central Pavilion, which hosts events for the Venice Art Biennale and Venice Architecture Biennale on alternating years.],
+  [The Central Pavilion will reopen for Venice Art Biennale following its restoration],
+  [Labics and Fumagalli began the restoration of the 1895 brick building in Venice 's Giardini della Biennale in December 2024, working with engineering firms Buromilan and ia2 Studio Associato , and geologist Francesco Aucone.],
+  [Completed in time to host the Venice Art Biennale in May 2026, the team overhauled the building's exhibition spaces by creating a spatial hierarchy, aiming to celebrate the building's history while making it easier to navigate for visitors.],
+  [White walls divide the exhibition spaces],
+  ["The renovation of the pavilion goes beyond a mere functional update," said the Venice Biennale. "It rewrites the entire architectural organism, redefining relationships, sequences and connections."],
+  ["Relying on a stratigraphic approach to the building's history, the project enhanced the serial and essential nature of the architecture, preserving the memory of the different phases of construction but stripping it of all accretions and incongruous elements," it continued.],
+  ["The project demonstrates how reuse can be a creative act, not a nostalgic one: it selects, orders and interprets the different phases in the history of the pavilion to build a new architectural unity that can fulfil the contemporary needs of La Biennale."],
+  [The interiors were designed to be more legible],
+  [The Central Pavilion's Sala Chini gallery was transformed into a distribution space that leads to the building's centre, which is encircled by public service spaces, including a bookshop, cafe and educational room.],
+  [Under the building's pitched roofs, rectangular exhibition spaces have been divided by white walls, designed to host a range of temporary installations.],
   [Read:],
-  [John Puttick Associates transforms listed warehouses in Grimsby into youth centre],
-  [According to De Mowbray, London produces 10 million tons of construction waste a year, and construction and demolition make up 62 per cent of the UK's waste.],
-  [He believes that preventing this waste from going into landfill will reduce the construction sector's carbon impact and make the cost of building materials more stable.],
-  [The hub also contains workshops and training spaces],
-  ["The scale of available materials can and will have a significant impact on domesticating the means of production," he said. "In short, we have all the materials we need; we just need to stop smashing them into bins and skips."],
-  ["At a national scale, this can have a stabilising influence on the price volatility in material markets that has arisen from global political instability," he continued.],
-  [It is hoped that the hub will reduce the amount of construction waste in landfill],
-  [Following the launch of Tipping Point East, De Mowbray hopes to see more circular construction hubs established across the UK.],
-  ["Physical space, the risk appetite to take on this immense challenge, and the practical mindset to overcome barriers, are fundamental to successfully establishing reuse hubs," he said. "The problem is national, so the solution must be, too."],
-  ["Five years ago, Yes Make was a small box of tools and a travelcard," De Mowbray continued. "In five years, we will absolutely be leading the charge nationally to scale out this infrastructure and normalise reuse, much in the same way that recycling has been normalised."],
-  [Yes Make plans to open more circular construction hubs across the country],
-  [Tipping Point East forms part of the first phase of a Circular Economy Village in the Silvertown district, and aims to support the London mayor's goal for the capital to be a zero-carbon city by 2030.],
-  [Recently on Dezeen, architect and writer Smith Mordak criticised circular economy strategies for being too vague.],
-  [Other warehouse transformations that have featured on Dezeen include a youth centre located in a group of disused Victorian warehouses in Grimsby , and a London warehouse complex that was expanded to form a creative hub .],
-  [The post UK's first circular construction hub unveiled in London appeared first on Dezeen .],
+  [First image of Lina Ghotmeh's permanent Qatar pavilion for Venice biennale revealed],
+  [A cafe features glass doors that open onto a canal-side terrace, where canopies made from charred laminated wood and cross-laminated panels were added.],
+  [A bookshop has been added],
+  [Drawing upon Venetian wooden roof terraces, known as altane, the canopies were designed to connect the Central Pavilion with the surrounding landscape.],
+  ["These slender structures introduce an element of openness that connects the pavilion to the landscape of the Giardini, without competing with the existing masonry mass," said the Venice Biennale.],
+  [A cafe opens onto an outdoor terrace],
+  [Technical systems were hidden behind walls to keep the interiors free from clutter, and motorised shades were added to blackout the interior when necessary.],
+  [Funded by the Italian government, the restoration was carried out as part of the country's National Plan for Complementary Investments (PNC) of the National Recovery and Resilience Plan (PNRR).],
+  [Elsewhere in the Giardini della Biennale, Linah Ghotmeh is designing the permanent Qatar pavilion , which will be the first national pavilion on the site since 1995.],
+  [The post Venice Biennale unveils renovated Central Pavilion appeared first on Dezeen .],
 ),
   insert-map: (:),
-  word-count: 687,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-  #pull-quote(["Physical space, the risk appetite to take on this immense challenge, and the practical mindset to overcome barriers, are fundamental to successfully establishing reuse hubs," he said.], [Amy Peacock])
-
-}
-
-{
-  #standard-article(
-  title: [Alix Earle is launching a skincare line. But you probably already knew that],
-  author: [Eve Upton-Clark],
-  source-name: [Fast Company Design],
-  images: (),
-  paragraphs: (
-  [Today, Alix Earle is launching a skincare line—but if you’ve been looking close enough you probably knew it was coming. For the last year, the influencer has been dropping Easter eggs across her social feeds in the lead-up to her debut venture.],
-  [There were the vlogs from her dermatologist’s office. The un-get-ready-with-me posts featuring unnamed products in unbranded packaging. The puzzle -like billboard in NYC that popped up with missing pieces.],
-  [Now today, Earle is finally revealing Reale Actives , a skincare brand that Earle developed for acne-prone skin but is “designed for everyone” launching March 31.],
-  [Those who have been following Earle for years might say that the Easter eggs began at the beginning of her influencer journey. Early videos detail her experiences on the prescription medication Accutane , which she tried three separate times. “It was, by far, what resonated with people the most out of anything I had posted,” Earle tells Fast Company .],
-  [[Photo: Reale Actives]],
-  [Since posting her first video in 2020, Earle has built a following in the millions. She has leveraged that following into a number of successful business ventures, investing in and partnering with prebiotic soda brand Poppi, which was later acquired by PepsiCo for \$1.95 billion. She is also involved as an investor and partner in the canned cocktail brand SipMargs.],
-  [But Earle always knew she wanted to found her own brand; she just wasn’t sure what. Initially, she shut down the idea of a skincare brand. “I didn’t like skincare. I’d never had a good experience with it,” she says. But she was unable to ignore the fact that sharing her skin journey was at the core of her brand.],
-  [“I kept coming back to acne as the one topic I felt so strongly and passionately about,” says Earle. She noticed a gap in the market for dermatologist-backed products that embraced the messiness of real life and also came in cute packaging.],
-  [From there, she came up with the idea for Reale Actives, which includes a streamlined four-step skincare routine featuring a cleansing balm (\$29), gel cleanser (\$28), mandelic acid serum (\$39) and a barrier-boosting moisturizer (\$36).],
-  [It’s a crowded market. The success of influencer-founded brands like Rhode by Hailey Bieber and Summer Fridays, co-founded by Marianna Hewitt, has meant tapping an existing audience and launching a beauty brand has now become the gold standard.],
-  [“I don’t want to look to any other brand for comparison,” says Earle. “I want Real Actives to pave its own way and stand on its own.”],
-  [[Photo: Reale Actives]],
-  [After developing the products with guidance from her dermatologist Dr. Kiran Mian and bringing on Andrea Blieden as CEO in 2024, it was time to start seeding the products.],
-  [During her stint on Dancing With The Stars in 2025, Earle would post un-get-ready-with-me videos on TikTok . Blieden would trawl the comments, waiting for someone to ask which cleansing balm Earle was using to take off her heavy stage makeup. “I was sure people would ask about it,” Blieden says. “But she crushed her dance that week, and everyone just kept talking about her performance.”],
-  [cite="https:\/\/www.tiktok.com/\@alixearle/video/7559005962707815710" class="tiktok-embed"\>],
-  [\@alixearle],
-  [best night love u guys so much so grateful to get to do this every week],
-  [♬ original sound – Alix Earle],
-  [By December 2025, they decided to ramp up the products’ visibility. Rather than relying on a content plan, they entrusted Earle free rein over what to post and when.],
-  [“There were times I’d be watching her TikTok and she’d tease our Mandelic Acid serum and I had no idea,” says Blieden. “She is so good at knowing what her audience wants and what her community responds to that she does it all on the fly.”],
-  [Earle has also subtly been introducing her audience to Dr. Mian, who first featured in a vlog back in 2024 and has since made regular appearances throughout her content.],
-  [cite="https:\/\/www.tiktok.com/\@alixearle/video/7445376676675996959" class="tiktok-embed"\>],
-  [\@alixearle],
-  [Forgot to post from the other day!! w \@Kiran MIAN lmk if you guys want us to talk more abt acne on here 💗],
-  [♬ original sound – Alix Earle],
-  [“They just think she’s a dermatologist I see—they don’t know we’ve been working on this together behind the scenes,” Earle tells Fast Company. “They may be a little shocked when they find out.”],
-  [The fact that the product seeding has mostly flown under the radar for the past year is a testament to the creator-product-market fit. Skincare has been a content pillar since the beginning. Over the past year Earle has subtly been posting regular skin updates , talking through the routine that has been working with one glaring omission (the products).],
-  [Of course, there’s been some speculation in the comments section. “We actually hoped they’d start guessing skincare, because we wouldn’t want to launch something that completely surprised her audience,” Blieden says. “We wanted people bought into the journey before launch day.”],
-  [style="padding: 16px;"\>],
-  [style="display: flex;"\>],
-  [style="background-color: \#F4F4F4; border-radius: 50%; height: 40px; margin-right: 14px; width: 40px;"\>],
-  [style="display: flex;"\>],
-  [style="background-color: \#F4F4F4; border-radius: 4px; height: 14px; margin-bottom: 6px; width: 100px;"\>],
-  [style="background-color: \#F4F4F4; border-radius: 4px; height: 14px; width: 60px;"\>],
-  [style="padding: 19% 0;"\>],
-  [style="display: block; height: 50px; margin: 0 auto 12px; width: 50px;"\>],
-  [style="padding-top: 8px;"\>],
-  [style="color: \#3897f0; font-family: Arial,sans-serif; font-size: 14px; font-style: normal; font-weight: 550; line-height: 18px;"\>View this post on Instagram],
-  [style="padding: 12.5% 0;"\>],
-  [style="display: flex; margin-bottom: 14px;"\>],
-  [style="margin-left: 8px;"\>],
-  [style="background-color: \#F4F4F4; border-radius: 50%; height: 20px; width: 20px;"\>],
-  [style="margin-left: auto;"\>],
-  [style="display: flex; margin-bottom: 24px;"\>],
-  [style="background-color: \#F4F4F4; border-radius: 4px; height: 14px; margin-bottom: 6px; width: 224px;"\>],
-  [style="background-color: \#F4F4F4; border-radius: 4px; height: 14px; width: 144px;"\>],
-  [Over the past week the marketing has ramped up after a new Instagram account called \@ wtfisalixdoing appeared on Instagram. The account has 398,000 followers at the time of writing and a number of posts teasing the launch.],
-  [“Yesterday, a TikTok live—at times with over 500 people—was dedicated entirely to solving “WTF is Alex doing?” says Blieden. These armchair detectives somehow found the one thing Blieden most feared, the trademark filing under the stealth company name.],
-  [Despite the last-minute leak, Blieden was happy they were able to keep the news under wraps for as long as they have. Looking ahead, Reale Actives already has product launches planned through 2027 and Earle will continue taking her audience along for the journey – this time with their prior knowledge.],
-  [And for consumers to buy into the brand and the results, they only need to scroll back through Earle’s social media for a walking, talking product advertisement.],
-),
-  insert-map: (:),
-  word-count: 1085,
+  word-count: 604,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -676,312 +426,81 @@ const result = await executor.execute(
 
 {
   #standard-article(
-  title: [Why Meta is building its high-tech South Carolina data center with an old-school material],
-  author: [Nate Berg],
-  source-name: [Fast Company Design],
-  images: (),
-  paragraphs: (
-  [In a greenfield industrial park in rural Aiken County, South Carolina, Meta is building a new \$800 million data center that’s much like any of the other hyperscale data centers giant tech companies are scrambling to construct. Set on 300 acres with two massive data halls making up most of its 715,000 square feet of buildings, it’s the kind of gargantuan facility that has become the de facto built form of the race to harness the lucrative power of artificial intelligence .],
-  [But past the sprawling data hall buildings, a comparably modest administration building has a unique design feature. Instead of the concrete and steel used in the data halls and countless other data centers around the world, the facility’s administration building is being made primarily of wood.],
-  [[Photo: Meta]],
-  [A grid of honey-toned glulam mass timber beams and columns rise out of the dirt on site, and more wood tops the structure that’s currently under construction. When the data center becomes operational in Spring 2027, this wood-framed building houses the offices of the humans who will keep the data center operational. And though the majority of the facility will be built using the conventional concrete and steel approach most designers and contractors are used to, this wood-framed building offers a glimpse of a slightly more sustainable future for data centers.],
-  [[Photo: Meta]],
-  [Mass timber is a material choice that has some clear upsides, especially when it comes to the negative optics of electricity-hungry, water-thirsty data centers. “Sustainably-sourced mass timber is a great fit for us because it has much lower embodied carbon than traditional materials like steel or concrete,” says Blair Swedeen, Meta’s global head of net zero and sustainability. (Meta has a goal of net zero emissions by 2030 .) “Using mass timber helps us build in a way that’s better for the environment.”],
-  [It also helps build in a way that can be much faster than building with conventional concrete and steel. Swedeen says using mass timber, which is typically prefabricated to the specifications of a project, can speed up construction timelines, saving several weeks. And with less overall weight than a conventional structure, the foundation for a mass timber building needs only about half as much concrete for its foundation. “The use of mass timber brought several positive changes to the project,” Swedeen says.],
-  [[Photo: Meta]],
-  [The mass timber elements for Meta’s data center project were provided by Smartlam North America , a leading mass timber manufacturer in the still nascent U. S. market. Nick Waryasz, a senior mass timber specialist at the company, says mass timber has been mostly used in residential construction, but there’s been growing demand for more industrial uses. “The biggest draw for using timber in those instances has been the sustainability metrics of building with wood when it’s replacing steel and concrete, and having a team that has an interest in doing that, like some of these bigger tech companies,” he says.],
-  [Amazon, for example, recently opened a mass timber delivery station in Elkhart, Indiana, which the company hopes to use as a proving ground for using wood in future industrial projects. A data center being built by Microsoft is also using mass timber for part of its structure. Other data centers, currently in a building boom , are likely to follow. And not just for environmental reasons.],
-  [“I’ve had some early discussions on big industrial projects like data centers recently, primarily driven by the fact of how long lead times are for steel construction,” Waryasz says. “It’ll be over a year out to get any kind of steel structures on projects, when our lead times for similar projects might be six months.”],
-  [For the highly competitive AI industry, speed to market for data centers is increasingly important. That’s why Meta founder Mark Zuckerberg announced back in July that one way it was accelerating data center rollouts was by using easily-built large-scale fabric tents . Mass timber could be a slightly slower but more permanent alternative.],
-  [[Photo: Meta]],
-  [Mass timber could also help soften the harsh image of some of these hyperscale facilities. “It brings warmth to things that sometimes are inherently cold,” says Caroline Dauzat, fourth-generation owner of Rex Lumber , which provided the raw timber that Smartlam used to manufacture into structural elements for Meta’s project. She says mass timber represents only a tiny percentage of what her company’s wood is used for, but industrial projects could lead to growth. “It’s a marketplace to create more demand for lumber.”],
-  [Smartlam’s Waryasz says the mass timber industry is maturing to the point where industrial projects like data centers may opt for mass timber products automatically. “If they continue at their trajectory or anything close to it, it might even just become a supply question, with timber for construction being relatively abundantly available,” he says.],
-  [Meta’s use of mass timber on the data center project in South Carolina is just a small portion of the facility’s massive footprint, but future projects may embrace the material in a bigger way.],
-  [“We’re continuing to actively explore mass timber not only in our administrative buildings but also in warehouses and critical data halls, the spaces that house servers,” says Meta’s Swedeen. “Mass timber’s strength, durability, and fire resistance makes it a promising candidate for broader applications within data center infrastructure and we continue to evaluate these opportunities.”],
-),
-  insert-map: (:),
-  word-count: 892,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-  #pull-quote([“It’ll be over a year out to get any kind of steel structures on projects, when our lead times for similar projects might be six months.], [Nate Berg])
-
-}
-
-{
-  #standard-article(
-  title: [Kizik’s next big step is a slip-on running shoe],
-  author: [Grace Snelling],
-  source-name: [Fast Company Design],
-  images: (),
-  paragraphs: (
-  [When it was founded in 2017, the shoe brand Kizik was on a mission to bring hands-free shoe technology into the mainstream. It’s now taking two big steps to further that goal.],
-  [Kizik’s parent company HandsFree Labs is announcing a licensing deal with New Balance that will leverage its hands-free technology. Kizik is also announcing a new shoe, the \$149.95 Kizik Freedom Run, which debuts on April 17. Together, the moves represent an expansion of its existing licensing agreements strategy and of its tech into the performance category for the first time.],
-  [[Photo: Kizik]],
-  [At its core, Kizik’s tech has always focused on the experience of putting on a shoe in the first place—the company designs slip-on models that cut lace-tying out of the equation through a variety of patented hands-free footwear mechanics. These designs are accessible to those who have trouble tying their shoes, including children, the elderly, and those with disabilities.],
-  [But the brand has broad ambitions. “We think of the problem this way: Our shoes are for everyone, but they are life-changing for some,” then-CEO Monte Deere explained to Fast Company in 2023 . Entering the running space meant the company had to adapt its designs for higher intensity use cases, but it also expands its reach.],
-  [Kizik can build brand association with its own technology, and jockey for market share among slip-on running shoes that are already on the market: Its ongoing collaborator, Nike, launched a pair in 2021 , On manufactures a line of athletic shoes with kick-down heels, and Skechers has a whole series of shoes in its “Slip-Ins” category.],
-  [[Photo: Kizik]],
-  [The Freedom Run is Kizik’s latest demonstration of its design prowess.],
-  [id="h-"\>The brand’s in-house team, HandsFree Lab, manages more than 200 issued and pending patents related to hands-free footwear mechanics, from extra-pliable tongues to shoes that open with a squeeze and multiple different heel configurations that allow wearers to simply slide their foot into the shoe.],
-  [[Photo: Kizik]],
-  [As its first foray into performance, Kizik’s design team decided to start with a mid-market running shoe that would be accessible for most athletes. The Freedom Run isn’t an elite game-day shoe, but rather a reliable training shoe that’s built to last.],
-  [The concept of a slip-on running shoe presents an obvious challenge: pairing a step-on heel with the snug, compressive fit that athletes need. The heel would need to be flexible enough to slip on and off, but rigid enough to keep the foot from sliding out of the shoe with every stride. To address this challenge, the Kizik team opted for the Internal Flex Arc, one of the brand’s lesser-used step-in technologies. It’s composed of two rigid components on the top and bottom, with a tented heel pocket sandwiched in between them.],
-  [“When you combine those, it enables you to step into the running shoe because it compresses very well,” Hosford says. “The other thing it does when it bounces back is grab your heel. For a running shoe, that’s fantastic because it minimizes heel slippage.”],
-  [[Photo: Kizik]],
-  [The Kizik team designed the rest of the Freedom Run’s architecture, like the arch and toe-box, to work in tandem with the Internal Flex Arc to keep the foot stable inside the shoe. As an added detail, the team also created a custom foam, called Viva Foam, to serve as the base of the shoe.],
-  [It’s designed to be compression-resistant to absorb the runner’s stride, as well as ultra-lightweight to avoid adding extra bulk to the shoe. Hosford says the lifespan of this design was tested in a machine that literally slammed the heel component over and over again to assess its durability. The Freedom Run lasted for literally thousands of compressions before it gave out.],
-  [[Photo: Kizik]],
-  [For now, the Freedom Run stands in its own category for Kizik—but Hosford says that the brand expects to expand its footprint in performance gear in the near future to meet its fans’ demands, the growth opportunity of a large category, and to prove that its hands-free technology can work across a wide range of use cases.],
-  [Running shoes with step-in functionality fit within an obvious category of innovation: people are always looking for products that will make their life just a bit easier, according to Hosford. “Our founder [Mike Pratt] says, ‘No one winds up their windows in the car anymore. It’s all electric buttons that save 30 seconds, but it’s 30 seconds every day.’ Once that tech has been proven, you just don’t want to go back. It’s kind of the same thing with shoes.”],
-  [[Photo: Kizik]],
-  [Since 2019, Kizik has worked with Nike to license its hands-free technology on a number of different shoes in Nike’s portfolio. That work has been so successful, according to Kizik CEO Gareth Hosford, that, now, its parent company HandsFree Labs is teaming up with New Balance via a licensing agreement that leverages the company’s technology to help it create its own step-in footwear, expected to debut in 2027.],
-  [Through its licensing agreements with Nike—and now New Balance—Hosford says these big name brands gain access to a selection of those patents. Then, they work closely with Kizik’s design team to incorporate the tech into their existing styles.],
-  [“This is a joint effort—we don’t throw it over the wall, we partner with them,” Hosford says, adding, “We sit down with them and go, ‘Okay, which shoes are you trying to deploy this hands-free technology in? What’s the technology that best marries what you’re trying to do? And then we work with them to connect all those dots both through development and then getting them ready for mass manufacturing.”],
-  [For Kizik, licensing serves the brand’s original purpose of making hands-free technology accessible to as many customers as possible, while also helping the company scale financially. At the same time, Hosford says, the brand wants to maintain its own identity by debuting new, exclusive product innovations under its own name.],
-  [“We have a great product engine and a great product team ourselves, and we believe that we are coming to market with innovative solutions that enable us to compete,” Hosford says. “Even if we’re also deploying our technology to other companies as well, we still can stand on our own.”],
-),
-  insert-map: (:),
-  word-count: 1053,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-}
-
-{
-  #standard-article(
-  title: [Sandstone murals adorn giant office in Kolkata by Morphogenesis],
-  author: [Starr Charles],
-  source-name: [Dezeen Architecture],
-  images: (),
-  paragraphs: (
-  [style="margin-bottom: 15px;"\>],
-  [Murals carved into sandstone panels decorate ITC Green Centre, an expansive mixed-use office development in Kolkata by Indian architecture studio Morphogenesis .],
-  [Situated within the city's emerging Rajarhat suburb, the ITC Green Centre comprises a collection of rectilinear volumes and an elongated low-rise volume across a 6.8-hectare site.],
-  [The project, which houses office and residential towers, alongside a hotel and a knowledge centre, is the first phase of a wider masterplan, for which additional towers are yet to be completed.],
-  [Morphogenesis has designed a mixed-use office block in Kolkata],
-  [Morphogenesis said it conceptualised the campus as an "urban anchor" for the expanding Rajarhat suburb.],
-  ["The campus was conceived as an urban anchor within Rajarhat, a rapidly expanding suburb in the north of Kolkata, being developed as its next growth corridor," studio co-founder Manit Rastogi told Dezeen.],
-  ["The surrounding area was evolving quickly and the ambition was to create a development that could define the identity and structure of this emerging district," he added.],
-  [Its sandstone-clad facades feature 30-metre-tall artworks],
-  [The studio drew on Bengal's cultural and climatic context for the ITC Green Centre's massing and orientation, with its buildings placed at an 18-degree angle to reduce solar exposure and capture prevailing southern winds for ventilation.],
-  [On its east and west facades, expansive sandstone panels have been carved with 30-metre-tall murals informed by Bengali art and crafts.],
-  [Pockets of greenery populate the 6.8-hectare site],
-  [These murals are based on hand-drawn artworks that were digitised and CNC-milled into the sandstone panels, with final details hand-chiselled by local craftspeople.],
-  [Complementing this, the facades of the low-rise knowledge centre have been finished with Bengali script.],
-  [Read:],
-  [Morphogenesis completes world's largest office building in India],
-  ["For us, the ITC project was never just about designing a collection of mixed-use buildings; it was about capturing the soul of Bengal and translating it into a contemporary urban language," studio co-founder Sonali Rastogi said.],
-  ["We were very conscious of developing a material language for the campus that felt rooted in its context and expressive of its larger identity," she continued. "It's a beautiful intersection of high-tech fabrication and traditional craftsmanship that turns the facades into a public gallery of sorts."],
-  [A sheltered walkway connects the different facilities],
-  [An external corridor sheltered by a canopy runs through the ITC Green Centre, serving as a "public spine" that connects the different facilities.],
-  [Throughout the campus are pockets of greenery, as well as an amphitheatre-style events space at ground level.],
-  [Two office towers have been built as part of the project's first phase],
-  [Inside, a modular construction system was adopted to create a flexible and column-free layout for the office towers.],
-  [Textured flooring and graphics serve as nods to Bengali art and culture throughout the interiors.],
-  [The studio previously built the world's largest office building in India, encompassing a 660,000-square-metre site in Surat .],
-  [Other office buildings recently featured on Dezeen include the Snøhetta-designed headquarters for automotive company Ford in Michigan, USA , and a building in Tokyo designed by Wataru Architects with a fifty-metre-long skylight .],
-),
-  insert-map: (:),
-  word-count: 533,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-}
-
-{
-  #standard-article(
-  title: [Benjamin Hall Design uses masonry walls for Arizona accessory dwelling unit],
-  author: [Kate Mazade],
-  source-name: [Dezeen Architecture],
-  images: (),
-  paragraphs: (
-  [style="margin-bottom: 15px;"\>],
-  [Local studio Benjamin Hall Design has attached an accessory dwelling unit made of concrete block to an existing house to accommodate a multi-generational family in Phoenix , Arizona, USA.],
-  [Known as Moon Valley Residence, the 1,756-square-foot (163-square-metre) dwelling was designed to intentionally contrast the original 1970s suburban main home, set in a golf community that looks eastward to a rock formation called Lookout Mountain.],
-  [Benjamin Hall Design has created a concrete block ADU in Phoenix],
-  [Completed in 2025, the ADU shares an access door with the main house, but maintains self-sufficiency and privacy both spatially and from the curved wall that shields the dwelling from the cul-de-sac.],
-  [Constructed with grey concrete masonry units (CMU) as both the exterior and interior finished material, the accessory dwelling unit (ADU) draws inspiration from studio founder Benjamin Hall 's childhood memories of travelling through the Southwest US with his father.],
-  [It is made of grey concrete masonry units],
-  ["We explored the ancient Native American ruins called Montezuma Castle – this experience subconsciously embedded itself into my thinking of this project," the founder of Benjamin Hall Design told Dezeen.],
-  ["It was used as a reference on scale, stacking forms and how to mitigate the desert's natural heat and light by undulating mass and aperture."],
-  [It contains a connection to the property's main 1970s home],
-  [Set lower than the profile of the main house, the ADU is composed of four volumes with apertures strategically carved out to curate views of the surroundings.],
-  ["These four rectilinear volumes each identify themselves at different elevations," he said. "On the interior you can feel the scale – compression and release – of each of the volumes and their relationship with the body and program of the space."],
-  [The house is made of four interlocking volumes],
-  [This passes to the second volume, containing a living room and kitchen with a view of Lookout Mountain. A glazed interstitial volume leads to the sleeping quarters with a guest suite and a primary suite with another private patio.],
-  [The first volume connects the ADU to the main house via a wedge-shaped dining space with sliding glass doors that open to a private patio.],
-  [Read:],
-  [The layout allows a retired couple to age in place privately while directly connected to their children and grandchildren who occupy the main house.],
-  [In addition to strategic spans that allowed for self-supporting masonry ceilings, the continuous material of the CMU block required all of the utilities to be contained within built-in millwork.],
-  [It allows a retired couple to age privately while remaining connected to their family],
-  ["The integration of utilities is carefully moulded into the cohesive strategy that embeds itself into the thickness of masonry and the mailability of concrete," Hall said.],
-  ["You will notice that no outlets reside in the masonry and the day-to-day haptic experience with the architecture – light switches, door pulls, countertop surface – are embedded into the experience of engaging with the architecture."],
-  [Other residential projects recently completed around Phoenix include a weathering steel micro-building by Kendle Design, a Corten cabin designed to act as a telescope by Wendell Burnette Architects and a white ranch house styled after its mid-century modern neighbors by The Ranch Mine .],
-  [Project credits:],
-  [Architecture: Benjamin Hall Design],
-  [Contractor: Rare Form Builders],
-  [Structural Engineering: Structurology],
-  [The post Benjamin Hall Design uses masonry walls for Arizona accessory dwelling unit appeared first on Dezeen .],
-),
-  insert-map: (:),
-  word-count: 587,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-}
-
-{
-  #standard-article(
-  title: [How GM is shaping the future of car design, one Corvette at a time],
-  author: [Nate Berg],
-  source-name: [Fast Company Design],
-  images: (),
-  paragraphs: (
-  [I’m standing in a showroom at the new General Motors design headquarters outside of Detroit resisting the urge to reach out and touch something. In front of me, there’s a Corvette CX, a one-of-one experimental sports car that the automaker has meticulously handcrafted to look both silky smooth and fast as hell. As I crouch down to see just how low this low-riding car would drive, the roof of the Corvette CX lifts up in front of me and opens like the cockpit of a multimillion-dollar fighter jet.],
-  [The robotic precision of the sculpted body opening up is pure spectacle atop the shock-and-awe of the car itself. GM designed this all-electric “hypercar” to be action-movie-ready. It’s capable of running on regular roads and high-speed racetracks, with 2,000 horsepower coming from individual motors for all four wheels. The skeleton chassis and interior structure are made of ultralight carbon fiber. Wind-turbine-like fans draw air through the open-channel bodywork. And just when a tight curve might jar the nerves of the whitest-knuckled of drivers, an adjustable rear spoiler optimizes aerodynamics in real time.],
-  [The Corvette CX is an ostentatious tour-de-force of advanced engineering, design, and manufacturing that took a team of hundreds three years and undisclosed millions of GM’s nearly \$70 billion market capitalization to create. So it’s a strange feeling, standing next to this singular vehicle, to be one of only a relatively small number of people who will ever actually see it up close.],
-  [[Photo: GM]],
-  [This is the curious condition of the modern concept car. Long past the prime of in-person auto shows where members of the car-buying public would gawk at futuristic prototypes, the concept car of today sits physically in near isolation, more an image for social media than a social experience. Concept cars are both more and less visible now, and their long-established brand-building purpose is in question.],
-  [But as visions of the future, they are increasingly important crystal balls. During my recent visit to GM’s main design facilities, it was clear that concept cars like the CX are more than just sneak previews for thirsty car collectors. With growing competition from emergent automakers in China, the on-again-off-again embrace of electric vehicles in the U. S., and a long tail of industry-wide uncertainty connected to the Trump administration’s tariffs, the automotive industry is in one of its most dynamic periods in recent memory.],
-  [Concept cars like the CX offer car designers a concrete aspiration for what they and the company want the future of cars to look like. “If you don’t create the beacon,” says Bryan Nesbitt, GM’s new senior vice president of global design, “you just spin and spin and spin.”],
-  [These conditions explain why, depending on how you count, GM released three or four versions of a concept Corvette in 2025 alone.],
-  [Under the watch of Michael Simcoe, the recently retired GM design chief, the company embarked on a multi-studio design effort to create new visions for the venerable Corvette sports car brand, which first launched in 1953. Simcoe called on three separate GM design studios around the globe to reinvent the Corvette for the age of waning internal combustion engines, increasing electric power, and not-so-distant autonomous driving.],
-  [[Image: GM]],
-  [The first to be made public came from a recently opened studio outside Birmingham, England, which revealed an all-electric version of the famed muscle car with a sharp Batmobile nose, a smooth Shinkansen windscreen, and bulbous fenders. Another version was developed at GM’s Advanced Design studios in Pasadena, California, with a more snakelike appearance and street-racing vibe.],
-  [The jet-age concept I saw up close at GM’s suburban Detroit campus, named the CX, was also adapted into a frighteningly powerful hybrid electric twin-turbo V8 race car . Painted with a bright yellow racing livery and equipped with a specialized steering wheel ready for extreme, possibly unwise speeds, it’s co-branded with the video game Gran Turismo .],
-  [[Photo: GM]],
-  [These four concepts, while not wildly different from one another, suggest a range of possible new directions for one of GM’s most valuable brands, covering everything from the exterior contours to the materials in the chassis to the audible rumble a muscle car should make when it doesn’t even have an internal combustion engine.],
-  [For GM, Corvette concepts have become rare and strategic milestones in a business that primarily revolves around the incremental improvements of the model-year marketing approach. Previous Corvette concepts came out in 2009 , 2002 , and 1992 , and each went on to influence one of the eight generations of production Corvettes sold to the general public, as well as car design writ large.],
-  [The 1992 concept included an early example of a rearview camera, now essentially a standard feature in new cars. The 2002 concept had a carbon fiber engine bay, testing lighter structural materials to boost performance. The 2009 concept’s design leaned flashy, with scissor doors and a cockpit-like interior, but did arguably more as a brand-building tool when the car was featured as one of the main characters in the 2009 movie Transformers: Revenge of the Fallen . Each concept is a one-off drivable piece of confidentially expensive R&D.],
-  [[Image: GM]],
-  [The four Corvette concepts released in 2025 are no different. Standing next to the CX in the executive showroom at GM’s Design West building, Phil Zak, executive design director for the Chevrolet brand, assures me the car is wholly a conceptual project. GM did have a period in the late 1980s and early ’90s when the production vehicles that went to market looked almost indistinguishable from the cars the company had put out as concepts a few years prior.],
-  [But Zak says the CX is by no means a preview of C9, the ninth-generation Corvette that is rumored to debut with its first model in 2029. Undoubtedly there’s a connection, though; the CX and the three other new Corvette concepts will influence “the formal development from an interior and exterior perspective,” Zak says. “It is the spiritual guide for where we’re going with C9.”],
-  [[Photo: GM]],
-  [The concept project is also a chance to test out those future models of Corvettes, likely several years’ worth, before green-lighting their production. Simcoe says investing in the concepts gives GM something tangible to put before potential buyers as a way to gauge their interest in what could soon be on display in a dealership showroom.],
-  [“There is still a buzz that you get from being up close and personal with a really cool design,” Simcoe told me before his retirement last July. “Our object is to create that visceral reaction with customers—with people who are in the presence of these physical things, because that’s what we sell.”],
-  [[Image: GM]],
-  [The future-looking design work happening here has ramifications not only for how many people will want to buy a given car, but also for how it gets manufactured, with what materials, through what means, and for what potential end-user experience. These advanced designs and concept cars help inform a diverse range of third-party suppliers and manufacturers involved in making the raw bones of a vehicle, the technology that powers it, and the surfaces and interfaces its drivers touch.],
-  [[Photo: GM]],
-  [Sliding through a basement door inside the bowels of GM’s half-million-square-foot design complex, Nesbitt leads me into what may be the most pristine auto mechanic shop in the Motor City. Inside are four equally pristine vehicles that just happen to be some of the company’s most famous concept cars.],
-  [One, the single-seat Chevrolet Engineering Research Vehicle of 1959, or CERV I , looks like a rocket from an early sci-fi movie; its horsepower influenced a generation of race cars. Next to it is the 1988 Pontiac Banshee concept , a devil-red arrow of a sports car with an early head-up digital display and navigation system. Down the line is the shining silver 1959 Stingray Racer, a sleek, highly contoured open-air race car that would evolve into the second generation of Corvettes that started selling in 1962.],
-  [Among these flashy and audacious cars is what might appear to a layperson as little more than a mid-to-high-end convertible from the 1940s, with chrome accents, bulging wheel fenders, and a tail that curves gently downward. It’s the kind of car that would be parked at Makeout Point in an old black-and-white movie. But despite an appearance that seems ordinary in retrospect, this car was revolutionary for its time.],
-  [1938 Buick Y-Job [Photo: GM]],
-  [The car is the 1938 Buick Y-Job , the first concept car ever created by the auto industry. It was a project of GM’s first head of design, Harley Earl , a towering figure who is credited with bringing car styling and design to the automotive industry in the late 1920s. “Before that they were really just construction operations,” Nesbitt says.],
-  [[Photo: GM]],
-  [Earl used the Y-Job as a real-world testing ground for integrating new design approaches and emerging technologies into an everyday car. Among the Y-Job’s innovative ideas were hidden headlights, electric windows, and flush door handles, as well as its forward-leaning profile. It was an anomaly compared to the other boxy and bulky cars on the road in 1938, but by the mid-1940s it had set a new standard in aerodynamic forms and expressive detailing.],
-  [Unlike the concept cars to come, the Y-Job was not really a marketing tool. Aside from being an internal prototype, it was also a company car. Earl used it for daily driving, commuting from his home in tony Grosse Pointe to GM’s headquarters in Detroit, drawing curious looks along the way. The odometer reads 25,890 miles, making it more akin to a used car than a showpiece. “Earl was gauging reaction, but he was doing it in a very organic way,” says Christo Datini, manager of GM’s archive and special collections.],
-  [In Earl’s day, building out a concept vehicle was a scramble. The Y-Job was built on the chassis of a 1937 Buick, with bespoke parts and one-of-one components made by workaday tool shops and machinists temporarily diverted from the relentless demands of the assembly line. Today, GM and some of its biggest competitors have dedicated spaces where conceptual designs can be transformed from drawings to scale models and full-size vehicles all within one facility.],
-  [Leaving the Y-Job behind, Nesbitt walks out of the mechanic’s shop and across a corridor to badge through another secured door. We enter a bright, buzzing workshop where more next-gen concept cars are being built by hand. The shiny metal innards of car parts sit on rolling carts amid a team of six mechanics crowded around the skeleton of a concept car up on jacks.],
-  [They’re manually connecting hand-built door components onto the car, a four-seat Cadillac concept named Elevated Velocity . It’s been specially designed to switch between autonomous driving and human control, with a deployable steering wheel that pops out only when requested. Nearly every part of the car, from its thin contoured seats to its bold gullwing doors, was fabricated in-house. “The only thing we outsourced was the tires,” Nesbitt says.],
-  [Part of this is for secrecy’s sake. Concept cars are obvious targets for corporate espionage, with competitors sometimes nefariously eager to know what’s being developed by the other team. But Nesbitt says doing all this work in-house is its own form of knowledge building, with designers, engineers, and fabrication specialists working together to understand how to turn an idea into reality, and whether new processes or tools need to be created to make a door system or roof canopy feasible to manufacture.],
-  [“It’s the flexibility of having this all in one place that gives us operational efficiency,” Nesbitt says. “When you outsource, you don’t get any of that value.”],
-  [The idea makes intuitive sense, and it’s one that other automakers are onto. Ford’s new headquarters building, in another Detroit suburb, also brings design and fabrication under one roof , with designers able to bring a full-size clay model from a fabrication shop up an elevator and into their design studio to check lines or rethink proportions.],
-  [[Photo: courtesy GM]],
-  [GM’s design facility, including the new 360,000-square-foot Design West complex that opened in 2024 , is configured for open collaboration across departments: Designers and engineers sit within close view of production cars getting their final touches and more experimental designs still coalescing.],
-  [“You’ve got a whole bunch of people who are inside of the future,” says Simcoe. “They’re working with the future vision in their minds or in their sight as they’re doing production vehicles and coming up with production solutions.”],
-  [This is where the designers behind the Corvette CX concept developed the car’s look, feel, and material choices. Working alongside other specialists from across the company, they found they could reliably use carbon fiber for elements of the car’s structure and suspension. It’s also where they carved out several scaled-down potential designs in clay models, gleaning lessons and gathering feedback along the way.],
-  [It’s a process that helped quickly narrow down what could be built with existing means, what couldn’t, and how GM could start to influence its suppliers to create the kinds of parts and components it expects to need years down the line. Blurring high-end design, advanced engineering, and futuristic manufacturing, the conceptual work happening here has ramifications beyond GM to the larger auto industry.],
-  [[Photo: GM]],
-  [On the floor of the Detroit Auto Show in January, the Corvette CX concept sat parked on a small, spare stage, cordoned off from anyone trying to get a touch, its signature lift-up cockpit sadly closed. Amid the audible and visual noise of the show­—dozens of automakers displaying further dozens of cars, four screeching test tracks, and a hodgepodge of the obscure component suppliers who build many of the bones and brains of modern cars—the CX could be easy to miss.],
-  [In the not too distant past, a concept like this would have been given star treatment, with a sparkling reveal on a grand stage, making it a central draw for visitors. Now the concept car in general is a sideshow, offering some visitors a quick photo opportunity and others a momentary double-take before they move on to see the real cars they might actually want to buy. That seems to be the true purpose of the car show today—giving consumers the equivalent of a suburban auto mall concentrated into the space of a convention center.],
-  [“Concept cars were once part of a big collective celebration that was predictable and toured around the world. That seems to be on the decline,” says Raphael Zammit, an associate professor of automotive design at the College for Creative Studies in Detroit, who previously worked on concept and production cars for Porsche, Hyundai, GM, and others. “They’re just too expensive these days. I think the return on investment becomes a question mark.”],
-  [The question of relevance was on Simcoe’s mind when he was developing the idea for the multi-concept Corvette project. After 42 years with GM, he’d seen the concept car evolve, and watched in recent years as conventional avenues for releasing new concepts and ideas began to disintegrate.],
-  [“The buzz was directly from traditional media, and people carrying the message through word of mouth. Now it’s instantaneous,” he says. Social media and digital coverage have come to the forefront, making the actual tangible concept car almost superfluous. “Unfortunately, it doesn’t allow as many people to have that physical interaction with the concept. But probably, in the end, more people see it.”],
-  [GM has experimented with gathering feedback on concepts before a physical model has even been considered. Recently, the Buick brand developed a purely digital concept called the Electra Orbit , publishing the images primarily in China, the market GM was targeting. “It got a lot of international attention,” Nesbitt says.],
-  [And that’s increasingly important, as competition in the auto industry is much more diverse than in the heyday of Detroit’s big automakers. Chinese carmakers are surging , with brands like BYD and Geely using state support to expand rapidly and carve their way into foreign markets. Big investments in technology and manufacturing, especially on the EV front , are helping some of these companies leapfrog more established auto manufacturers.],
-  [That puts the onus on the old guard to stay fresh. Part of GM’s approach has been to build on the strength of its history, playing up fan-favorite brands like Cadillac and Buick, and tentpole models like the Corvette. As a result, the concept car is taking on a new level of importance for the company. “It’s evolving more than it ever has,” Nesbitt says.],
-  [[Photo: GM]],
-  [While the world simultaneously embraces the visual prowess of artificial intelligence and wades through a downpour of AI slop , the view from the clay-spattered floor of GM’s design facility is that the case for physically building a concept car is still strong. The Corvette concepts of 2025 may prove to be a flag in the ground for pushing new ideas and getting physical.],
-  [For Nesbitt, who started out in the automotive industry in the early 1990s hand drawing designs with ballpoint pens on paper snagged from the office Xerox machine, the physical concept car remains a powerful creative tool. Walking down one of the impressively long hallways in GM’s new design building, he stops at a car that’s on display.],
-  [It’s a four-seat Cadillac concept from 2024, finished in an unexpected pastel yellow. The interior is accented with wood—another unexpected choice in an industry deeply in love with chrome (Nesbitt says the unusual interior reshaped the car as it was being built). In a late version of the concept’s design, the designers wanted to offer the rest of their collaborators and the company executives a better view of the unique interior and its potential to reconfigure future cars, so they cut the roof off. Beyond the interiors, everyone was taken by the now-topless exterior form. “So it’s a convertible now,” Nesbitt says.],
-  [These kinds of design changes aren’t impossible to make in the purely digital space, but Nesbitt says there’s undeniable value in being able to take a visual idea and make it physical. Granted, most of the conceptual design work done by GM going forward will never leave the confines of a computer screen. But that’s just a testament to the growing powers of digital design technologies that allow much of the refinement to happen on-screen, from aerodynamics to regulatory compliance.],
-  [“The tempo of technology integration is increasing. AI compute power is rising,” Nesbitt says.],
-  [But advances in technology won’t be enough to guide a company like GM through the current era of drastic change facing the automotive industry. Concept cars—testing grounds from the beginning—will continue to offer tangible guides for how the industry evolves, from design and engineering to manufacturing and marketing.],
-  [Nesbitt is just the eighth person to hold the reins of design for GM in its 118-year history, and he doesn’t want to be the last. Concept design, with its changing tools and roles, will continue to be part of determining the future of GM’s products, he says. They’re visions for cars, yes, but he argues they’re also visions for where the entire company, and maybe the entire industry, will go from here. He concludes, simply, “You’ve got to identify the what before you identify the how.”],
-),
-  insert-map: (:),
-  word-count: 3239,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-}
-
-{
-  #standard-article(
-  title: [How to Create Your Own Lightroom Presets (Step By Step)],
-  author: [Andrew S. Gibson],
+  title: [10 Tips for Breathtaking Dog Action Photography],
+  author: [Kelly Wolfe],
   source-name: [Digital Photography School],
   images: (),
   paragraphs: (
-  [The post How to Create Your Own Lightroom Presets (Step By Step) appeared first on Digital Photography School . It was authored by Andrew S. Gibson .],
-  [How can you create and save presets in Lightroom?],
-  [In this article, I’m going to take you through the simple process, step by step. By the time you’re done, you’ll be able to confidently make presets of your own – and I’ll even show you how to make and apply import presets for high-quality, lightning-fast edits.],
-  [Let’s dive right in.],
-  [There are mundane edits in Lightroom that you should carry out on almost every photo.],
-  [And you can save time by creating presets that perform these jobs automatically upon import. That way, you don’t have to do editing later.],
-  [In other words: I highly recommend you apply presets to pretty much every photo you take.],
-  [(You can also apply presets during the editing process, but you’ll want to use these more sparingly.)],
-  [The fact is that RAW photos need edits to look good. And presets will help you do those edits faster than a standard editing workflow. Look at this unedited RAW file:],
-  [class="wp-block-image wp-image-83135 size-full is-style-with-caption"\>
- A straight-out-of-camera RAW file from an EOS 5D Mark II. This is the sort of image you’ll see when you import images into Lightroom without applying a Develop preset.],
-  [And look at it after applying a simple preset:],
-  [class="wp-block-image wp-image-83136 size-full is-style-with-caption"\>
- The same photo, but with the Profile set to Landscape , lens corrections applied, chromatic aberrations removed, and white balance set to Auto . This is what you would see after importing the photo into Lightroom if you applied an import preset similar to the one I show you how to make in this article. The biggest benefit is that it saves you time.],
-  [That’s what I’m going to teach you how to do in the next section:],
-  [Create a simple preset that you can apply upon importing. But note that you can use these instructions to create a preset of any type, whether you plan to apply it on import or not.],
-  [Now let’s take a look at the simple instructions for making a useful Lightroom preset:],
-  [Start by selecting the photo you plan to use as your preset base. Open it in the Lightroom Develop module.],
-  [Hit the Reset button to zero out any existing settings:],
-  [(You may find it helpful to make a Virtual Copy of the photo first so you don’t undo any edits you have already made; you can do this by right-clicking on the image, then selecting Create Virtual Copy .)],
-  [Next, you’ll need to pick a Profile . Think of this as a starting point or base layer, on top of which you’ll make all your edits.],
-  [So head up to the Basic panel and click to open the Profile fly-out menu:],
-  [Lightroom’s default Profile is Adobe Color , and this is where I often leave my photos – but if you’re a frequent landscape photographer, you might try Adobe Landscape , portrait photographers might try Adobe Portrait , and black and white photographers might try Adobe Monochrome . Really, it’s all about experimenting. Test out a few options and see what you like!],
-  [Remember that, even if you save a profile as part of a preset, you can always change it after applying the preset if you decide it doesn’t work for a particular shot.],
-  [(Also, note that your Profile options may vary depending on your camera, so if you can’t find one of the options I suggested, don’t worry; you probably have other cool Profiles to try out instead.)],
-  [If you shoot a number of different genres or in a number of different styles, or if you simply like several profiles, you might consider creating a preset for each one!],
-  [Most shots suffer from slight issues due to lens aberrations. The specifics depend on your lens, which is why Lightroom comes with profiles for a huge number of lenses:],
-  [So head down to the Lens Corrections panel and check Enable Profile Corrections :],
-  [If Lightroom offers a profile matching your lens’s make and model – and it almost certainly will! – the profile corrections will be applied automatically.],
-  [I’d also recommend checking Remove Chromatic Aberration , which will get rid of fringing (which you pretty much always want to do!).],
-  [Now it’s time to look at the Basic panel. Make sure the white balance is set to As Shot :],
-  [And make sure all the other sliders are zeroed :],
-  [If you’re a fan of Lightroom’s automatic settings, you can hit the Auto button. This will automatically set the exposure, contrast, highlights, shadows, whites, and blacks, along with the vibrance and saturation . I don’t do this myself, but if it’s helpful to you, then go ahead and try it!],
-  [Also, if you shoot a mix of color and black and white, consider creating one preset for color photos and a second preset for black and white shots . Simply set the Treatment to Black & White :],
-  [Now it’s time to actually make a Lightroom preset. The process is extremely simple:],
-  [Make sure you’re in the Develop module, then click the Plus icon next to the Presets panel:],
-  [And select Create Preset :],
-  [The New Develop Preset window should come up:],
-  [Give your preset a name and select a folder to save it in:],
-  [Then select the settings you’d like to save as your preset. Hitting Check All works fine if you’re creating the preset I discussed above – though if you’ve decided to create a more targeted editing preset, you may want to only check certain boxes.],
-  [Finally, once you’re ready to save your preset, press Create :],
-  [And t hat’s it! It’s a simple process that doesn’t take very long and can save you a lot of time when importing or editing your photos.],
-  [To apply the preset you just created upon importing your photos, launch the Import window:],
-  [Then head over to the Apply During Import panel and set the Develop Settings menu to the appropriate preset:],
-  [(This is where creating several presets helps saves time, as you can pick the best preset for the photos you are importing.)],
-  [Then, when you click the Import button, Lightroom applies the settings from your selected preset!],
-  [While you’re in the Import window, it’s worth setting up another preset to automatically add copyright information to photo metadata upon import .],
-  [So g o to the Metadata menu in the Apply During Import panel and select New .],
-  [Lightroom will open the New Metadata Preset window, where you can add information such as your name and copyright details :],
-  [So give the preset a name, then click the Check Filled butto n (so the relevant boxes are checked as you go along):],
-  [Under IPTC Copyright , set Copyright Status to Copyrighted and fill in the other fields appropriately (my entries are shown below).],
-  [Under IPTC Creator, add your name, website, email address, and any other appropriate details. Personally, I leave out my address – I move around a lot so it’s constantly changing (plus identity theft is a risk).],
-  [Click Done when you’re finished. Then, when you import photos, simply select the preset from the Metadata menu:],
-  [Hopefully, you’re now ready to create Lightroom presets of your own (and you have some ideas for useful presets).],
-  [That way, you can save time and speed up your workflow!],
+  [The post 10 Tips for Breathtaking Dog Action Photography appeared first on Digital Photography School . It was authored by Kelly Wolfe .],
+  [This article was updated in January 2024 with contributions from Kelly Wolfe, Dave Spates , and Jaymes Dempsey .],
+  [Photographing dogs in action is an absolute thrill. One moment they’re a ball of energy, and the next, they’re soaring through the air to catch a Frisbee. Those freeze-frame shots elicit smiles from everyone who sees them.],
+  [But it’s not just about clicking the shutter. A lot goes on behind the scenes. Dialing in the right camera settings, keeping the dog focused, and maintaining their enthusiasm are all part of the equation. In this article, I’ll share some golden nuggets that have helped me capture those split-second wonders on camera.],
+  [So whether you’re photographing your own furry friend or working on a pet photography gig, you’ll find some actionable advice here. Let’s jump right in and elevate your dog action photography skills!],
+  [Before I delve into practical tips for dog action shots, I want to briefly explore the importance of gear, which can make or break your images.],
+  [If you want to take better action photos of dogs, I recommend a camera body with a fast burst rate. From my experience, five frames per second is the minimum. If your camera has a faster frame rate than that, you are going to increase your keeper rate as long as your approach and technique are on point, which we will get to shortly.],
+  [Additionally, fast autofocusing is a must-have. Fortunately, many modern mirrorless cameras do an excellent job of tracking subjects as they move – and some even include animal eye AF modes so you can focus consistently on the dog’s eye as they bound around the space!],
+  [I also recommend long and fast lenses. I’ve tried to photograph action shots with the 50mm f/1.8, and the Tokina 100mm f/2.8, with very little success. While both of these lenses are incredibly sharp, they are soft wide open and do not focus well on moving subjects.],
+  [Longer lenses with fixed apertures generally focus on moving subjects much faster than shorter lenses. They also keep you and your camera gear safer. Think about it. If you have a 45 point Border Collie running full speed right at you, you need to get the photograph and get out of the way quickly.],
+  [A longer lens will give you the time you need to move once the dog starts to fill the frame. I personally use the Nikon 300mm f/4 and sometimes I’ll even throw a teleconverter on it for extended reach and cleaner bokeh.],
+  [A 70-200mm f/2.8 lens can also be very effective for dog action shots. The focal length is versatile enough for close-ups and wide shots, while the large aperture allows for shooting in lower light conditions!],
+  [First and foremost, safety should be your priority. Dogs are not just subjects to be photographed; they are living, breathing beings that deserve respect and care.],
+  [Always choose a location where dogs are allowed. You don’t want to get into trouble with authorities or risk the dog getting hurt in an unfamiliar environment.],
+  [Opt for areas that are far from any hazards. A busy road, a steep drop, or any place where a dog can get hurt should be avoided. Keep a close eye on the dog, especially if they’re off-leash.],
+  [Ensure the area is secure enough so that the dog won’t dash off to chase a squirrel or another dog. This might mean choosing a fenced-in park or similar space.],
+  [Know the dog’s limits. Some dogs might have health issues that prevent them from running or jumping. Others might be too young or too old for strenuous activity. Listen to the dog’s owner and observe the dog’s behavior. Remember, capturing their personality is more important than getting an action shot at the expense of their well-being.],
+  [If the dog seems uncomfortable, slow down. It’s perfectly fine to capture them at their own pace. No photograph is worth risking the safety or well-being of your subject.],
+  [In essence, always prioritize the dog’s safety. This will not only make for a more relaxed and enjoyable session but will also ensure that you get natural, happy shots that reflect the dog’s true spirit.],
+  [Capturing genuine emotion in a dog’s eyes can transform a good photo into a great one. The key to this lies not just in your camera skills, but also in how you interact with the dog.],
+  [Use a positive, encouraging voice when calling the dog over. Our four-legged friends are very attuned to human emotions, so a happy tone can go a long way. Make sure you and the dog’s owner are both creating an atmosphere of positivity.],
+  [Prepare some rewards to place by your camera. Dogs love treats and toys, so having some handy can help you get those tail-wagging, tongue-out smiles. Discuss with the dog’s owner to find out what their pet finds irresistible – be it squeaky toys, tennis balls, or treats.],
+  [Let the dog approach the camera naturally, enticed by rewards and your encouraging voice. The owner will know what will make their pet tick, so take their advice into account.],
+  [As you interact, watch for those perfect moments. Sometimes the ideal expression will come naturally as the dog reacts to your voice or the promise of a treat. Be ready to capture it.],
+  [Prior knowledge about your four-legged subject can make or break your photography session. You need to know the basics, such as the dog’s training level, to strategize your shots effectively.],
+  [Start with a conversation with the dog’s owner. Find out about the dog’s health, especially if they have any mobility issues or dietary restrictions. This information will help you decide how active the photography session can be and what treats you can use.],
+  [Ask about their personality traits. Is the dog energetic and outgoing, or more shy and reserved? Knowing this will allow you to set up your shots in a way that brings out their true character.],
+  [Query about their training level. Does the dog know basic commands like sit, stay, and come? This can have a huge impact on how you orchestrate the shoot. Well-trained dogs may allow for more complex setups, while a younger or less-trained dog may require a simpler approach.],
+  [Safety is another concern that goes back to knowing the dog. If you’re aware of their temperament and any potential health concerns, you’ll be better equipped to ensure a safe and enjoyable session for everyone involved.],
+  [Getting a dog to run is only half the battle. The real trick is guiding them in the direction you want. For well-trained dogs with a solid “sit and stay,” I typically position the owner about 20 meters behind me. They call the dog, who then races directly towards the camera.],
+  [For younger or less trained pups, it’s essential to pick a secure location with minimal distractions. Think a dog-friendly park or even the dog’s backyard. You can also enlist the help of an extra person to hold the dog in place if they haven’t mastered the “sit and stay” command.],
+  [Some photographers opt for the dog to be on a leash. This can work, especially if the owner jogs along with them. You can always edit the leash out later if it interferes with the shot.],
+  [Keep your position in mind. If you want the dog to run directly toward you, be sure you’re in a spot that allows for this. An alternate option is to place yourself so that the dog will cross your path, giving you ample opportunity to capture a series of action shots.],
+  [While it’s natural to have a list of shots you want to capture, remember that dogs have personalities too. And sometimes, they just want to do their own thing.],
+  [Let them! Some of my best shots have come from moments when the dogs were simply enjoying themselves. They could be chasing after a ball, bounding through tall grass, or playing a game of tug-of-war.],
+  [When you let dogs be themselves, their personalities shine through. And that makes for truly unforgettable photographs. You’ll find that the spontaneity adds a layer of authenticity and emotion that is often missing in overly staged shots.],
+  [So if you find that the dog isn’t interested in running directly towards you, but would rather sniff around and explore, go with it. Capture those candid moments. They’ll likely end up being some of your favorites from the shoot!],
+  [Photographing from up high might work for humans, but dogs? Not so much. The simple act of lowering your camera can transform your dog action photos.],
+  [When you’re at the dog’s level, the images have a unique intimacy. You’re entering their world, capturing life from their viewpoint. This makes for some really compelling photos.],
+  [Another perk is the background. Being low increases the separation between the dog and the background. This helps in creating that beautiful, blurry backdrop, also known as bokeh, which makes the dog pop in the image.],
+  [So don’t hesitate to get a bit dirty. Crouch down, kneel, or even go flat on your stomach. Experimenting with these angles can add a dynamic touch to your images.],
+  [Remember, varying your height and angle can yield a variety of shots, all in one session. So pack some knee pads along with your camera gear and get down to the dog’s eye level.],
+  [Camera settings can make or break action shots. For starters, I like to use Manual mode . This gives me complete control over the aperture, shutter speed, and ISO.],
+  [Fast shutter speeds are essential. Dogs are quick creatures, so to freeze their motion, I generally start with a shutter speed of 1/1000s. Don’t be afraid to ramp it up even more if the dog is particularly fast.],
+  [Aperture plays a role too. A wide aperture can help create a shallow depth of field , blurring the background and making the dog stand out.],
+  [Then there’s ISO . While you’ll want to keep it as low as possible to avoid grain, don’t be too concerned if you have to increase it to maintain a fast shutter speed. A slightly grainy shot is far better than a blurry one.],
+  [If Manual mode intimidates you, Aperture Priority and Shutter Priority are solid alternatives. They allow you to control one aspect, while the camera adjusts the other. Just make sure you’re still keeping an eye on those crucial settings like shutter speed.],
+  [Ah, focus: the nemesis of many action photographers. With dogs bounding around, keeping them sharp in your frame can be challenging.],
+  [For fast-paced action, using a single focus point and continuous focusing mode (AF-C) has always worked for me. With back-button focusing , the camera continues to refocus as long as you hold down the button.],
+  [Some cameras offer tracking options. These can lock onto the subject and adjust the focus as they move. Give it a try; it may work wonders depending on your camera’s capabilities.],
+  [Animal eye autofocus is another feature to explore if your camera has it. This function focuses directly on the animal’s eyes, ensuring a sharp, expressive face.],
+  [Don’t underestimate the power of practice. Take the time to understand how your camera’s focusing system responds to fast-moving subjects. Get out there and shoot, analyze your results, adjust, and shoot some more.],
+  [Mastering focus in action photography isn’t something you’ll do overnight. But with consistent effort and the right techniques, you’ll see marked improvements in your work.],
+  [Timing is everything in action photography, especially with subjects as quick and unpredictable as dogs. So how can you get that perfect mid-air leap or playful sprint?],
+  [Start by observing the dog’s movements. Dogs, like many animals, have a natural rhythm when they move. Take the time to notice this pattern before you start clicking away.],
+  [Adopt a technique often used by equestrians: counting strides. When a horse rider is learning to jump, they count the horse’s strides to anticipate the perfect moment for a jump. Apply this method to dog action photography.],
+  [Each time the dog’s front legs leave the ground, count it out. One, two, three, and so on. This rhythm helps you anticipate when the dog will be in the ideal position for a fantastic shot.],
+  [This counting method might be easier with larger breeds that have a longer stride, but don’t worry if you’re photographing a small dog. Practice will help you adapt this technique to any dog size or speed.],
+  [Ultimately, your timing will improve with experience. The more you practice, the better you’ll get at capturing that decisive moment. And remember, digital film is free – so don’t hesitate to take many shots and refine your timing as you go.],
+  [And there you have it: the nuts and bolts of capturing dogs in exhilarating action!],
+  [The safety of your furry subject is paramount, so always choose a secure location and be aware of the dog’s comfort level. Each dog is unique, and getting to know them can inform your approach and result in more authentic photos.],
+  [Your gear and settings are crucial, but remember, they are just tools. It’s your understanding of the dog, your timing, and your technique that will set your images apart. Your role is that of both a photographer and an animal lover. Never lose sight of the latter.],
+  [Be prepared to adapt. Dogs, like any other models, have their own personalities and quirks. Sometimes the unplanned shots are the ones that capture the animal in the most beautiful way.],
+  [Thank you for joining me in this exciting realm of photography. Grab your camera, find a willing pup, and create some memorable, tail-wagging art!],
   [Now over to you:],
-  [What kind of presets do you plan to create? How do you plan to use them on your photos? Share your thoughts in the comments below!],
-  [The post How to Create Your Own Lightroom Presets (Step By Step) appeared first on Digital Photography School . It was authored by Andrew S. Gibson .],
+  [Do you have any tips that I missed? Share your thoughts in the comments below!],
+  [The post 10 Tips for Breathtaking Dog Action Photography appeared first on Digital Photography School . It was authored by Kelly Wolfe .],
 ),
   insert-map: (:),
-  inline-pq: pull-quote([Look at this unedited RAW file:  class="wp-block-image wp-image-83135 size-full is-style-with-caption"\>  A straight-out-of-camera RAW file from an EOS 5D Mark II.], [Andrew S. Gibson]),
-  inline-pq-idx: 22,
-  word-count: 1455,
+  word-count: 2898,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -1010,16 +529,21 @@ const result = await executor.execute(
   ],
   [
     standard-article(
-  title: [miso chicken and rice],
-  author: [deb],
-  source-name: [Smitten Kitchen],
+  title: [Jai Courtney’s Underrated Shark Horror Movie Out on Hulu Today],
+  author: [Maggie Dela Paz],
+  source-name: [ComingSoon.net],
   images: (),
   paragraphs: (
-  [How do you cook when your kitchen isn’t available for kitchen-ing? On a Sunday last April, I awoke at the crack of dawn jet-lagged from an (excellent) trip to Amsterdam\* to an email from my apartment building that ConEd had found a gas leak in the main line to the building and had shut down service for safety. With this, I was indoctrinated into a society of New Yorkers I previously hadn’t known existed, as NYC is apparently riddled with tales of people who lived without gas for (what seemed like the minimum of) 6 months and up to 18 months while their building trudged at a snail’s pace through rounds of repairs and inspections.],
-  [Read more »],
+  [(Photo Credit: IFC)],
+  [Independent Film Company’s acclaimed creature feature starring Suicide Squad’s Jai Courtney has finally found a new streaming home, nearly a year after it had its world premiere at the 2025 Cannes Film Festival’s Directors’ Fortnight section. As of today, Courtney’s survival horror movie Dangerous Animals is now officially streaming on Hulu.],
+  [In Dangerous Animals, Courtney plays the role of a serial killer who uses sharks to kill his victims. The cast also included Hassie Harrison, Josh Heuston, Rob Carlton, Ella Newton, James Munn, Michael Goldman, Jon Quested, Liam Greinke, and more. Since its debut, the movie has received a Certified Fresh rating of 87% on Rotten Tomatoes , based on 181 reviews.],
+  [“When Zephyr, a rebellious surfer, is abducted by a shark-obsessed serial killer and held captive on his boat, she must figure out how to escape before he carries out a ritualistic feeding to the sharks below,” reads the official synopsis.],
+  [The 2025 film was directed by Sean Byrne from a screenplay written by Nick Lepard. The film was executive produced by Fred Berger, Michael Glassman, Mehrdod Heydari, Marlaina Mah, Jacob Yakob, and Joseph Yakob. Producers were Chris Ferguson, Brian Kavanaugh-Jones, Mickey Liddell, Troy Lum, Andrew Mason, and Pete Shilaimon.],
+  [Besides Dangerous Animals, Courtney was also seen in last year’s Australian fantasy comedy The Fox. He most recently starred in Netflix’s latest sci-fi action thriller War Machine with Alan Ritchson and Dennis Quaid. He is currently attached to star in the upcoming Yellowstone spin-off Dutton Ranch, which will be led by returning stars Kelly Reilly and Cole Hauser.],
+  [The post Jai Courtney’s Underrated Shark Horror Movie Out on Hulu Today appeared first on ComingSoon.net - Movie Trailers, TV & Streaming News, and More .],
 ),
   insert-map: (:),
-  word-count: 119,
+  word-count: 299,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -1030,27 +554,468 @@ const result = await executor.execute(
 #article-row((
   [
     standard-article(
-  title: [Dezeen Agenda features SOM-designed glazed towers for new Kazakhstan city],
-  author: [Saudatu Bah],
+  title: [Studio Razavi adds circular conversation pit to coastal French home],
+  author: [Jon Astbury],
   source-name: [Dezeen Architecture],
   images: (),
   paragraphs: (
   [style="margin-bottom: 15px;"\>],
-  [The latest edition of our weekly Dezeen Agenda newsletter features a pair of towers in Kazakhstan by SOM . Subscribe to Dezeen Agenda now .],
-  [Architecture studio SOM designed two stepped, wedge-shaped towers to serve as a landmark for the new city of Alatau in south-eastern Kazakhstan .],
-  [Plastic bottles recycled into Parkinson's drug using bacteria],
-  [This week's newsletter also included news that University of Edinburgh researchers used bacteria to turn plastic waste into a Parkinson's drug , the Jewish history museum in Lithuania by LMA and a feature on whether the next starchitect could be a TikToker .],
-  [Dezeen Agenda is a curated newsletter sent every Thursday containing the most important news highlights from Dezeen. Read the latest edition of Dezeen Agenda or subscribe here .],
-  [You can also subscribe to our other newsletters; Dezeen Debate is sent every Thursday and features the hottest reader comments and most-debated stories, Dezeen Daily is our daily bulletin that contains every story published in the preceding 24 hours and Dezeen In Depth is sent on the last Friday of every month and delves deeper into the major stories shaping architecture and design.],
-  [The post Dezeen Agenda features SOM-designed glazed towers for new Kazakhstan city appeared first on Dezeen .],
+  [A circular conversation pit sits at the heart of Seaside House, the renovation of a 1930s coastal cabin near Bordeaux by Studio Razavi .],
+  [Studio Razavi updating the 1930s cabin, which is nestled among pine trees at the tip of the Cap Ferret headland on the Atlantic coast, for contemporary living.],
+  [Driven by the idea of creating an uninterrupted flow through the centre of Seaside House, the studio removed all of the cabin's central partition walls to create a single, open living space, which opens out onto a decked terrace at either side.],
+  [Studio Razavi updated a coastal home in France],
+  ["The local lifestyle revolves around constantly moving in and out of houses, which led us to opt for a centrally sunken living room that creates a circulation flow all around," project architects Guillen Berniolles and Michele Sacchi told Dezeen.],
+  ["All existing partitions were demolished, leaving the building's envelope untouched so a circle – the living room – could be placed at the centre of the house, surrounded by bedrooms," they continued.],
+  ["Sinking the living area was important so it would be clearly delineated without interrupting views across the building, from one facade to the other."],
+  [The studio added a circular conversation pit],
+  [Around the edge of this circular conversation pit, a low wall integrates elements that support the surrounding dining and kitchen areas, including a sink and storage units.],
+  [A pale concrete floor, white walls and oak carpentry bring a light, airy feel to the central space, while to the north a gently curved section of wall follows the curve of the central seating area.],
+  [The pit sits at the heart of the open-plan living space],
+  [The three en-suite bedrooms on either side of Seaside House's living area feature similar finishes, with windows overlooking the home's terrace and skylights in the bathrooms.],
+  ["Because everything is built directly on sand, floors are poured-in-place concrete to avoid joints and simplify maintenance," explained Berniolles and Sacchi.],
+  [Read:],
+  [Studio Razavi completes "introspective" Apartment XVII in historic Lyon neighbourhood],
+  ["Most furniture pieces are solid wood or veneer, directly referencing this region, home to France's largest forest and Europe's largest man-made forest," they added.],
+  [To the west of the main cabin, a smaller guest bedroom annexe is housed in a new, standalone volume clad in dark timber to blend with the surrounding tree trunks.],
+  [The home contains three en-suite bedrooms],
+  [Studio Razavi was founded by architect Alireza Razavi and has offices in London, Paris and New York.],
+  [Previous projects by the studio include the renovation of an apartment in a historic Lyon neighbourhood, and a Spanish tapas bar and restaurant in New York informed by a market in Barcelona .],
+  [The post Studio Razavi adds circular conversation pit to coastal French home appeared first on Dezeen .],
 ),
   insert-map: (:),
-  word-count: 211,
+  word-count: 473,
   edited-for-length: false,
   debug-mode: false,
 )
 
   ],
+  [
+    standard-article(
+  title: [Play a .WAV Instead of Typing Line After Line Into Vintage Microcomputer],
+  author: [Donald Papp],
+  source-name: [Hackaday],
+  images: (),
+  paragraphs: (
+  [\[Casey Bralla\] got his hands on a Rockwell AIM 65 microcomputer, a fantastic example of vintage computing from the late 70s. It sports a full QWERTY keyboard, and a twenty character wide display complemented by a small thermal printer. The keyboard is remarkably comfortable, but doing software development on a one-line, twenty-character display is just not anyone’s idea of a good time. \[Casey\] made his own tools to let him write programs on his main PC, and transfer them easily to the AIM 65 instead.],
+  [A one-line, twenty-character wide display was a fantastic feature, but certainly lacking for development work.],
+  [Moving data wasn’t as straightforward in 1978 as it is today. While the Rockwell AIM 65 is a great machine, it has no disk drive and no filesystem. Programs can be written in assembler or BASIC (which had ROM support) but getting them into running memory where they could execute is not as simple as it is on modern machines. One can type a program in by hand, but no one wants to do that twice.],
+  [Fortunately the AIM 65 had a tape interface (two, actually) and could read and store data in an audio-encoded format. Rather than typing a program by hand, one could play an audio tape instead.],
+  [This is the angle \[Casey\]’s tools take, in the form of two Python programs: one for encoding into audio, and one for decoding. He can write a program on his main desktop, and encode it into a .wav file. To load the program, he sets up the AIM 65 then hits play on that same .wav file, sending the audio to the AIM 65 and essentially automating the process of typing it in. We’ve seen people emulate vintage tape drive hardware , but the approach of simply encoding text to and from .wav files is much more fitting in this case.],
+  [The audio encoding format Rockwell used for the AIM is very well-documented but no tools existed that \[Casey\] could find, so he made his own with the help of Anthropic’s Claude AI. The results were great, as Claude was able to read the documentation and, with \[Casey\]’s direction, generate working encoding and decoding tools that implemented the spec perfectly. It went so swimmingly he even went on to also make a two-pass assembler and source code formatter for the AIM, as well. With them, development is far friendlier.],
+  [Watch a demonstration in the video \[Casey\] made (embedded under the page break) that shows the encoded data being transferred at a screaming 300 baud, before being run on the AIM 65.],
+),
+  insert-map: (:),
+  word-count: 431,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+  ],
+), ruled-indices: (1,))
+
+#article-row((
+  [
+    standard-article(
+  title: [Dior unveils golden bamboo version of Paris HQ],
+  author: [Cajsa Carlson],
+  source-name: [Dezeen Architecture],
+  images: (),
+  paragraphs: (
+  [style="margin-bottom: 15px;"\>],
+  [Fashion house Dior has revealed the Dior Bamboo Pavilion concept store in Tokyo 's Daikanyama area with a facade that was designed to evoke Japanese bamboo forests.],
+  [The exterior of the 1,800-square-metre store was designed to replicate Dior's townhouse at 30 Montaigne, Paris, similar to Dior Gold House, another concept store that opened in Bangkok in 2024.],
+  [The store is clad in a golden bamboo facade and decorated with a star],
+  [The facade was designed to reference Japanese bamboo forests and is lit up at night. On top of the building sits the Dior star, which has been the symbol of the house since 1947.],
+  [While the facade reimagines a French townhouse created from a material that's common in Asia, the interior design aimed to blend French touches, such as Versailles parquet flooring, with examples of Japanese craftsmanship.],
+  [Versailles parquet flooring was used for the interior],
+  [Inside, the Dior Bamboo Pavilion has multiple green spaces, including a conceptual garden by horticulturist Seijun Nishihata .],
+  [Artist Azuma Makoto designed a "green haven" of floral art, while designer Kodai Iwamoto created a teahouse made using Japanese craft techniques from materials such as thatch and bamboo.],
+  [The Dior Bamboo Pavilion also has lanterns decorated with Dior designs],
+  [In another nod to its location, the Dior Bamboo Pavilion has a pond filled with koi carp.],
+  [Other local touches include Japanese lanterns that were designed to resemble the Lady Dior bag and washi paper wall finishes sculpted like the Parisian mouldings in the headquarters.],
+  [Read:],
+  [Dior wraps Bangkok concept store in golden replicas of HQ facade],
+  [Described by the brand as "an Eden spread over more than 1,800 square meters, where a thousand and one botanical references come to life in homage to Christian Dior's love for the beauty of nature", the store was created to showcase the collections by new creative director Jonathan Anderson .],
+  [These include menswear and womenswear, as well as leather goods, jewellery and accessories.],
+  [Contemporary Japanese designers, including Takt Project , Sho Ota , Ayumi Shibata , We+ , Hana Mitsui and Chikaken , have also created pieces for the space.],
+  [Visitors will also be able to experience French cuisine at the Cafe Dior, which features a menu by chef Anne-Sophie Pic.],
+  [Inside, washi paper was made to look like moulding],
+  ["More than just a boutique, the Dior Bamboo Pavilion proposes a journey into the history of the Maison, featuring its signature models, from the Bar suit to the Junon dress," Dior stated.],
+  [Also in Daikanyama, Japanese studio Schemata Architects recently renovated a store for perfumer Le Labo that evokes the city's urban streets.],
+  [The post Dior unveils golden bamboo version of Paris HQ appeared first on Dezeen .],
+),
+  insert-map: (:),
+  word-count: 478,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+  ],
+  [
+    standard-article(
+  title: [The Curse of Oak Island Season 13 Episode 20 Release Date, Time, Where to Watch],
+  author: [Shazmeen Navrange],
+  source-name: [ComingSoon.net],
+  images: (),
+  paragraphs: (
+  [Photo Credit: History Channel],
+  [The Curse of Oak Island Season 13 Episode 20 release date and time are right around the corner, and many want to know the streaming details.],
+  [In the previous episode, the team made stunning discoveries on Lot 8 and in the Money Pit area. New research showcases a potential connection between the Oak Island mystery and the Knights Templar. The upcoming episode, titled “The Sands of Time,” focuses on the team coming across the evidence of ancient man-made workings in the swamp. Soon, they find themselves making a major discovery on Lot 8.],
+  [Here are the release details of the upcoming episode.],
+  [The episode’s release date is March 31, and its release time is 6 PM PT, 9 PM ET.],
+  [Check out its release times in the U. S. below:],
+  [Timezone Release Date Release Time Eastern Time March 31, 2026 09:00 p.m. Pacific Time March 31, 2026 06:00 p.m.],
+  [You can watch The Curse of Oak Island Season 13 Episode 20 via The History Channel.],
+  [The History Channel falls under the banner of A+E Global Media. It features a range of infotainment programming, right from documentaries to non-fiction reality series.],
+  [The Curse of Oak Island is a reality series that centers on the Lagina brothers, who embark on a mission to crack the mysteries surrounding the island. They collaborate with local experts, learn more about the island, investigate, and make shocking discoveries.],
+  [The official synopsis for The Curse of Oak Island is as follows:],
+  [“Follow brothers Marty and Rick Lagina through their effort to find the speculated – and as of yet undiscovered – buried treasure believed to have been concealed through extraordinary means on Oak Island. “],
+  [The post The Curse of Oak Island Season 13 Episode 20 Release Date, Time, Where to Watch appeared first on ComingSoon.net - Movie Trailers, TV & Streaming News, and More .],
+),
+  insert-map: (:),
+  word-count: 350,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+  ],
+), ruled-indices: (1,))
+#pull-quote([Here are the release details of the upcoming episode.], [Shazmeen Navrange])
+
+
+{
+  #section-label([Analysis])
+  #standard-article(
+  title: [Hellboy Star’s Fighting Movie & More Included in This Week’s Paramount+ Releases],
+  author: [Sibanee Gogoi],
+  source-name: [ComingSoon.net],
+  images: (),
+  paragraphs: (
+  [Photo Credit: Prime Video],
+  [This week‘s new releases on Paramount+ include Hellboy Star Ron Perlman’s intense showdown, The Day of the Fight, alongside a powerhouse lineup of fresh content.],
+  [Premiering on April 1, 2026, Day of the Fight (2023) is a gripping boxing drama helmed by Jack Huston. Michael Pitt stars as Mike Flannigan, a pugilist seeking redemption in the ring and in life. Mike’s comeback fight at Madison Square Garden is haunted by past demons and fueled by a desire to make amends. With a ticking clock and a deadly secret, Mike’s quest becomes a poignant journey of atonement, love, and sacrifice.],
+  [Besides Michael Pitt as Mike “Irish” Flannigan, the impressive cast of Day of the Fight (2023) includes Ron Perlman as Stevie, Mike’s loyal trainer, while Nicolette Robinson plays Jessica, his estranged partner. John Magaro stars as Father Patrick Donnelly, an old friend turned priest. Steve Buscemi and Joe Pesci bring depth as Mike’s uncle Colm and ailing father Tony, respectively. Anatol Yusef rounds out the cast as Sal.],
+  [Meanwhile, fans craving some laughs can binge-watch a Jackass marathon, as Paramount+ is releasing a cluster of Jackass movies and spin-offs on the same date this week.],
+  [Paramount+ has some exciting new releases this week, March 30 – April 5, 2026. Here are the latest additions (via vitalthrills.com) :],
+  [FBI True Season 8 | Paramount+ Original Docuseries],
+  [All The Queen’s Men Seasons 1-4],
+  [Average Joe Season 1],
+  [Bigger Seasons 1-2],
+  [Black Ink Crew Chicago Seasons 1-7],
+  [Carl Weber’s The Black Hamptons Seasons 1-2],
+  [College Hill: Celebrity Edition Seasons 1-3],
+  [Diarra From Detroit Season 1],
+  [Digman! Season 2],
+  [Game Shakers Seasons 1-3],
+  [Instant Mom Seasons 1-3],
+  [Love & Hip Hop Seasons 1-10],
+  [Love & Hip Hop Hollywood Seasons 1-6],
+  [Single Ladies Seasons 1-3],
+  [T. I. and Tiny: The Family Hustle Seasons 2-6],
+  [The Soul Man Seasons 1-5],
+  [Tyler Perry’s Bruh Seasons 1-4],
+  [2 Days In The Valley],
+  [A. C. O. D.],
+  [Airplane II: The Sequel],
+  [Airplane!],
+  [Asking for It],
+  [Catch Me If You Can],
+  [Cheech & Chong’s Last Movie],
+  [Cheech & Chong’s Still Smokin’],
+  [Clear and Present Danger],
+  [Day of the Fight],
+  [Fist of Fury],
+  [Frank Miller’s Sin City: A Dame to Kill For],
+  [G. I. Joe: Retaliation],
+  [G. I. Joe: The Rise of Cobra],
+  [Gangs of New York],
+  [Happy, Texas],
+  [He’s Just Not That Into You],
+  [Hey Arnold! The Movie],
+  [I Love You, Man],
+  [Incident at Oglala],
+  [Jackass 2.5],
+  [Jackass 3],
+  [Jackass 3.5],
+  [Jackass Presents: Bad Grandpa],
+  [Jackass Presents: Bad Grandpa .5 Unrated],
+  [Jackass: The Movie],
+  [Jay And Silent Bob Strike Back],
+  [Jeff, Who Lives at Home],
+  [Life Is Beautiful (La Vita E Bella)],
+  [Molly’s Game],
+  [Night of the Sicario],
+  [Once Upon A Time In The West],
+  [Paranormal Activity 2],
+  [Paranormal Activity 3],
+  [Paranormal Activity 4],
+  [Paranormal Activity: The Ghost Dimension],
+  [Paranormal Activity: The Marked Ones],
+  [Peanuts: Bon Voyage, Charlie Brown (And Don’t Come Back)],
+  [Sarafina!],
+  [Shall We Dance?],
+  [Terminator 2: Judgment Day],
+  [Terminator: Dark Fate],
+  [Terms of Endearment],
+  [The Adventures of Tintin],
+  [The Legend Of Bagger Vance],
+  [The Substance of Fire],
+  [The United States of Leland],
+  [The Woman in Black],
+  [Things To Do In Denver When You’re Dead],
+  [Top Secret!],
+  [V for Vengeance],
+  [View from the Top],
+  [Wayne’s World],
+  [Wayne’s World 2],
+  [Yes, Madam!],
+  [Made for March | Paramount+ Original Docuseries (Episode 101)],
+  [Made for March | Paramount+ Original Docuseries (Episodes 102 & 103)],
+  [The post Hellboy Star’s Fighting Movie & More Included in This Week’s Paramount+ Releases appeared first on ComingSoon.net - Movie Trailers, TV & Streaming News, and More .],
+),
+  insert-map: (:),
+  word-count: 752,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+}
+
+{
+  #standard-article(
+  title: [Verge Select connects three weathering-steel volumes for Ontario painting studio],
+  author: [Ellen Eberhardt],
+  source-name: [Dezeen Architecture],
+  images: (),
+  paragraphs: (
+  [style="margin-bottom: 15px;"\>],
+  [Canadian design studio Verge Select has designed a studio for painter Janna Watson in Ontario , composed of three square volumes fused together to form a secluded forest retreat.],
+  [The Grey County studio is located in the county of the same name in Ontario , and, unlike a second, more urban studio operated by Watson, provides a space that "slows time".],
+  [Verge Select has completed a painter's studio in Ontario],
+  [Located in a forested glade, the structure is composed of three square volumes of varying size. They are slightly askew of one another and fuse where they meet.],
+  [The entire studio is clad in weathering steel , which will patina over time and " allow the building to recede chromatically into the forest floor" according to Verge Select .],
+  [The structure is clad in weathering steel],
+  [Watson's programmatic needs largely informed the distinct shape.],
+  ["The studio takes shape as three distinct yet connected outcrops each responding to Watson's brief for service functions, a light-filled workspace, and a flexible zone for photography and rest," said the studio.],
+  [An elevated steel catwalk leads to an entrance],
+  ["The volumes nest around a central service core, opening outward through generous glazing that frames views of moss-covered stone and woodland canopy."],
+  [On the interior, two of the cubes are largely open-plan, while the other is separated by a wall.],
+  [Another door leads into the forest],
+  [Watson's painting area sits in the middle volume, surrounded by wide-open glazing. On one side, the central space steps up into the lounge area, while the service wing is off to the other side.],
+  [This service space includes a washing area tucked into a sharp corner, and also a bathroom shaped like a right triangle.],
+  [The central volume is wide open and wrapped in floor-to-ceiling windows],
+  [Across a central corridor is the main entrance to the studio via a steel catwalk, while a door on the other side of the structure also leads outside.],
+  ["Two arrival sequences – one compressed and inward-facing, the other emerging from the forest via a steel catwalk – establish a rhythm of transition that echoes the artist's working process," said the studio.],
+  [A wash area is tucked into one corner],
+  [The studio's ceilings reach ten feet high at their tallest, and are lined with "a gallery-style lighting system" for Watson's work.],
+  [The space also contains a wood-burning fireplace and reflective, contemporary lounge chairs by designer Paolo Ferrari .],
+  [Read:],
+  [Cordero Pardee juxtaposes "old and new material cultures" for Vermont barn conversion],
+  ["Here, observation, walking, and seasonal change become active components of the creative cycle," said the studio.],
+  [Verge Select is based in Thornbury, Ontario and was founded in 2009 by Michael Curtis. The studio specialises in architectural, furniture, lighting and interior design.],
+  [Other recent studio projects include a Vermont barn conversion for a photographer and painter and a garden studio in London by Delve Architects .],
+  [The post Verge Select connects three weathering-steel volumes for Ontario painting studio appeared first on Dezeen .],
+),
+  insert-map: (:),
+  word-count: 508,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+}
+
+{
+  #standard-article(
+  title: [Tom Cruise’s \$598M Flop & More Included in This Week’s Prime Video Releases],
+  author: [Ritika Singh],
+  source-name: [ComingSoon.net],
+  images: (),
+  paragraphs: (
+  [Photo Credit: 20th Century Studios],
+  [Amazon Prime Video’s TV and movie release schedule for March 30 to April 5, 2026, includes a Tom Cruise action flick.],
+  [On April 1, The Boss Baby (2017) drops on Amazon Prime Video. The animated film follows Tim, who feels jealous of his little brother receiving attention from their parents. He then finds out that the baby can talk, and the two team up for a mission.],
+  [Furthermore, the action drama Top Gun (1986) arrives on the streaming platform. It follows a top pilot named Maverick who gets a chance at redemption after losing his friend. As such, he strives to prove himself while facing every challenge that comes his way.],
+  [Also coming to Prime Video is Mission: Impossible 8 or Mission: Impossible – The Final Reckoning. It resumes Ethan Hunt and his team’s adventure to protect mankind. This time, their fight is against a rogue artificial intelligence.],
+  [Below are all the new TV shows and movies being added to Prime Video from March 30 to April 5.],
+  [2 Guns (2013)],
+  [American Fiction (2023)],
+  [Anna And The Apocalypse (2017)],
+  [Being John Malkovich (1999)],
+  [Breach (2020)],
+  [Breaking News in Yuba County (2021)],
+  [Child’s Play (1988)],
+  [Child’s Play (2019)],
+  [Chitty Chitty Bang Bang (1968)],
+  [Cowboys & Aliens (2011)],
+  [Dances with Wolves (1990)],
+  [Dark Harvest (2023)],
+  [Dog (2022)],
+  [Dr. Seuss’ The Lorax (2012)],
+  [Duel at Diablo (1966)],
+  [Duets (2000)],
+  [End of Days (1999)],
+  [Far and Away (1992)],
+  [Fast Times at Ridgemont High (1982)],
+  [Flag Day (2021)],
+  [Ford v Ferrari (2019)],
+  [Guy Ritchie’s The Covenant (2023)],
+  [Holmes and Watson (2018)],
+  [Hot Pursuit (2015)],
+  [Hot Seat (2022)],
+  [House of Gucci (2021)],
+  [It’s A Mad, Mad, Mad, Mad World (1963)],
+  [Jason’s Lyric (1994)],
+  [Jesus Christ Superstar (1973)],
+  [Jet Li’s Fearless (2006)],
+  [Jump Of The Cat (2023)],
+  [Killer Klowns From Outer Space (1988)],
+  [Lawman (1971)],
+  [Let Me Take You Down (2020)],
+  [Lifeforce (1985)],
+  [Lone Wolf McQuade (1983)],
+  [Mercury Rising (1998)],
+  [Mr. Mom (1983)],
+  [Nothing Happens By Chance (2022)],
+  [Operation Finale (2018)],
+  [Over the Top (1987)],
+  [Overboard (2018)],
+  [Patch Adams (1998)],
+  [Red Dawn (1984)],
+  [Red Dawn (2012)],
+  [Respect (2021)],
+  [Self/less (2015)],
+  [Single, Almost Crazy (2020)],
+  [Spaceballs (1987)],
+  [Spy Game (2001)],
+  [Teen Wolf: The Movie (2023)],
+  [The Addams Family (2019)],
+  [The Addams Family 2 (2021)],
+  [The Amityville Horror (1979)],
+  [The Amityville Horror (2005)],
+  [The Aviator (2004)],
+  [The Battle of Britain (1969)],
+  [The Boss Baby (2017)],
+  [The Boys In The Boat (2023)],
+  [The Domestics (2018)],
+  [The Game (1997)],
+  [The Great Wall (2017)],
+  [The Long Riders (1980)],
+  [The Machine (2023)],
+  [The Menu (2022)],
+  [The Poughkeepsie Tapes (2007)],
+  [The Prodigy (2019)],
+  [The Sandlot (1993)],
+  [The Terminator (1984)],
+  [Thelma & Louise (1991)],
+  [Thief (1981)],
+  [Titanic (1997)],
+  [Top Gun (1986)],
+  [Vanity Fair (2004)],
+  [Walking Tall (2004)],
+  [Walking Tall: The Payback (2007)],
+  [Wander (2020)],
+  [When The Night Falls (2022)],
+  [White Noise (2005)],
+  [Wrath Of Man (2021)],
+  [Mission: Impossible – The Final Reckoning (2025)],
+  [\*Nippon Sangoku: The Three Nations of the Crimson Sun (2026)],
+  [For more Prime Video content, check out the post-credits scene of Invincible Season 4 Episode 4 .],
+  [The post Tom Cruise’s \$598M Flop & More Included in This Week’s Prime Video Releases appeared first on ComingSoon.net - Movie Trailers, TV & Streaming News, and More .],
+),
+  insert-map: (:),
+  word-count: 552,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+}
+
+{
+  #standard-article(
+  title: [Studio Dera adds sculptural extension to Mozart House in London],
+  author: [Jon Astbury],
+  source-name: [Dezeen Architecture],
+  images: (),
+  paragraphs: (
+  [style="margin-bottom: 15px;"\>],
+  [Full-height windows framed by sculptural panels of glass-reinforced concrete overlook two stacked courtyards at Mozart House, a London home extended by local practice Studio Dera .],
+  [Located in the Belgravia Conservation Area, the Georgian terraced home is famous for being both the site where Mozart composed his first symphony at eight years old and later as the home of author Vita Sackville-West and politician Harold Nicolson.],
+  [Studio Dera has extended a Georgian terraced home in London],
+  [Studio Dera was asked to create additional living space for the client, expanding an existing one-bedroom extension at the end of the home's garden.],
+  [This included transforming the volume of a former basement pool into an additional bedroom, excavating further to create a small lounge overlooking a sunken courtyard.],
+  [Glass-reinforced concrete panels frame full-height windows],
+  ["The deep rear garden gave us the opportunity to think of the project as part of the landscape, rather than as a conventional extension," Studio Dera co-founder Marcel Rahm told Dezeen.],
+  ["Matching the volume of the former pool for the extension allowed us to get bold and creative with the extension while still allowing the Georgian house to retain its presence," he added.],
+  [The interiors overlook two stacked courtyards],
+  [Studio Dera described the layout of the home, moving from the living area of the main home into a glazed link corridor that runs along the edge of the garden, as an "episodic journey".],
+  [Full-height sliding doors open onto an upper courtyard, with a staircase leading down into the lower courtyard. This sunken space sits adjacent to the ne lounge space and the dining room within the original home opposite.],
+  [Read:],
+  [Pinzauer transforms historic Hampstead home with concrete-framed pavilion],
+  [Above the excavated area, the ground-floor bedroom volume was designed to feel like a garden pavilion, with a narrow, deep-set frame surrounding a large set of sliding glass doors that link it directly to the courtyard.],
+  ["We were interested in the new work feeling like an extension of the domestic garden landscape, at moments almost becoming a landscape itself," said Rahm.],
+  [A second bedroom and lounge space were added to the home],
+  ["The excavation grounds the project in the site, and the lighter pavilion elements bring openness and repose," Rahm added.],
+  ["The sculptural glass-reinforced concrete (GRC) intervention – particularly the light pavilion of the new bedroom at the rear – helps balance the weight of excavation with a more delicate architectural presence."],
+  [The home's layout is described as an "episodic journey"],
+  [Both courtyards are paved, with large round planters potted with trees and shrubs. In the upper courtyard, areas of translucent walk-on glass provide natural light for the lounge and bedroom below.],
+  [Inside, finishes have been chosen to feel "timeless, tactile and robust", with travertine, timber and textured lime plaster echoing the sculptural GRC elements of the exterior.],
+  [Travertine, timber and textured lime plaster line the interiors],
+  [Elsewhere in London, architecture studio Pinzauer recently extended the former home of Anna Freud, the daughter of Sigmund Freud, adding similarly pavilion-like, concrete-framed spaces overlooking its rear garden.],
+  [Other London house extensions recently featured on Dezeen include Komorebi by ConForm , which uses perforated floors to filter light, and Druid Grove by CAN , which features cave-like openings and green timber tendrils.],
+  [The post Studio Dera adds sculptural extension to Mozart House in London appeared first on Dezeen .],
+),
+  insert-map: (:),
+  word-count: 566,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+}
+
+#article-row((
+  [
+    standard-article(
+  title: [V-Cut Flats Are The 2026 Way To Shop The Ballet Shoe Trend],
+  author: [Ruby Ford-Dunker],
+  source-name: [Refinery29 Fashion],
+  images: (),
+  paragraphs: (
+  [Photo Credit: Joey Andrew],
+  [Ballet flats are undoubtedly one of this season’s defining trends , with the dainty footwear taking over storefronts, closets, and sidewalks alike. Whether rendered as slingbacks, wrap-ties, or Mary Janes, the preppy silhouette is always chic and inherently sweet. But now, a more sophisticated (and dare I say edgy) variation has entered the chat: V-cut flats.],
+  [Major fashion houses can be credited for the surge in angular vamps, with the Chanel pre-fall collection , full of sharp two-tone iterations and Stella McCartney’s spring runway featuring ruby-red takes. These designs prove that the streamlined footwear can take on softer, rounded cuts or dramatic, pointed uppers—much like V-neck sweaters, where some dips are deep and others are barely noticeable. Still, it remains a tapered cut, where the tiniest detail makes all the difference. But the footwear trend didn’t start or end on the catwalk.],
+  [Hollywood It girls have been donning ballet shoes like clockwork, with Kendall Jenner spotted in a black-seamed pair styled alongside an athleisure set. Meanwhile, Zoë Kravitz wore her own V-cut shoes with a flowing dress, and Katie Holmes styled hers with a tiered maxi skirt and simple tee. The wide range of style aesthetics proves how versatile the geometric footwear is, seamlessly integrating into a range of wardrobes—even for those of us who aren’t followed by the paparazzi.],
+  [V-cut flats aren’t only closet friendly, but they’re chameleon-like. Whether you’re headed to the office, grabbing rooftop drinks, or are jet-setting off to your next getaway , the multi-purpose style adapts to a variety of occasions. The appeal lies in the footwear’s streamlined look, consisting of sleek lines, staple hues, and polished details.],
+  [Both luxury designers and more accessible options are also up for grabs, ensuring everyone can find their perfect V-cut flats, no matter the budget. The Row Stella Leather Slippers offer a chocolate-brown glove version, while the Reformation Blaine Flats deliver a minimalist approach. Maximalists may gravitate towards the Anthropologie corset shoes or the Khaite embroidered Marcy Flats .],
+  [If you’re ready to add a pair of polished V-cut flats to your lineup, the below picks are sure to impress.],
+  [Like what you see? How about some more R29 goodness, right here?],
+),
+  insert-map: (:),
+  word-count: 368,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+  ],
+  [
+    standard-article(
+  title: [brown butter snickerdoodles],
+  author: [deb],
+  source-name: [Smitten Kitchen],
+  images: (),
+  paragraphs: (
+  [Friends, it’s snickerdoodle season. If you didn’t know that snickerdoodles had a season, let me paint a picture for you: you’re coming inside on a blustery and colder-than-you’d-expected October day so you hadn’t dressed for it and you can’t wait to announce what my kids always laugh at me for saying when I walk through the door: “Well, that’s enough doing things for me today!” and forswear things like “being outside” and “hard pants” for the rest of the evening but what is this! What is this god-like aroma of buttery baked cinnamon sugar warmth that has permeated your senses? Is it a scented candle, i.e. the idea, but not the substance of a thing you love? No, it’s snickerdoodles. And you’re about to eat a warm one, which feels like climbing inside It’s The Great Pumpkin, Charlie Brown while also, simultaneously, getting to be this dog . I’m not saying you cannot experience this sensory transcendency on a day in January or June, but it hits on a different, worldview-shifting, level when cold air is still a novel thing.],
+  [Read more »],
+),
+  insert-map: (:),
+  word-count: 184,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+  ],
+), ruled-indices: (1,))
+
+#article-row((
   [
     standard-article(
   title: [Tuesday Things.],
@@ -1076,123 +1041,39 @@ const result = await executor.execute(
 )
 
   ],
-), ruled-indices: (1,))
-
-#article-row((
   [
     standard-article(
-  title: [PichiAvo builds wooden temple to burn down for Valencia's Fallas festival],
-  author: [Amy Peacock],
-  source-name: [Dezeen Architecture],
+  title: [Paula Patton’s R-Rated NSFW Movie Is Coming To Prime Video],
+  author: [Ishita Verma],
+  source-name: [ComingSoon.net],
   images: (),
   paragraphs: (
-  [style="margin-bottom: 15px;"\>],
-  [Local art studio PichiAvo used wood and paper to create a pavilion based on an Ancient Greek temple, which was set ablaze for the Fallas celebrations in Valencia .],
-  [Named Per Ofrenar, which means "to offer" in Catalan, the installation had a classical design that drew upon the Temple of Athena Nike in Athens .],
-  [PichiAvo designed a temple-like pavilion to be burnt as part of Fallas festival],
-  [PichiAvo designed Per Ofrenar for Fallas, an annual five-day festival where wood and paper monuments are exhibited in the streets of Valencia before being set on fire on the final day, La Cremà, which was on 19 March.],
-  [Installed on a street in the centre of the city, its walls, roof and plinth were constructed from wood, while surplus paper from a book by PichiAvo was used for the capitals and bases of the pavilion's Ionic columns.],
-  [Inside, two candles were placed atop stacks of PichiAvo's surplus paper, which was arranged to form an altar-like space.],
-  [Fallas monuments often have sculptural designs that take the shape of satirical figures, but PichiAvo wanted to design a place for people to gather and leave religious offerings.],
-  [Read:],
-  ["Per Ofrenar means 'to offer', in the sense of making a symbolic, spiritual, or religious offering," PichiAvo founders Juan Antonio Sánchez and Álvaro Hernández told Dezeen.],
-  ["We wanted to create a space specifically designed for that act, a place people could physically enter and leave an offering to the deities."],
-  [Graffiti was written on the walls of the temple during the festival],
-  ["The temple naturally became the most suitable structure to represent this space within our visual language," the duo continued. "It carries a strong symbolic meaning as a place of gathering, ritual, and connection between humans and the divine."],
-  ["As we see it, the temple is not just a form, it's a space for action, for ritual, and in this project, it becomes a place where our visual language and the tradition of offering come together."],
-  [It was set on fire on La Cremà, the final day of the Fallas celebrations],
-  [Towards the end of the five-day festival, before being set on fire, visitors wrote their wishes and reflections in graffiti on the walls of the temple.],
-  [Other wooden pavilions that have recently featured on Dezeen include a pod-like forest structure with openable facades and a collection of timber installations built on the grounds of the 1969 Woodstock festival .],
-  [The photography is courtesy of PichiAvo.],
-  [The post PichiAvo builds wooden temple to burn down for Valencia's Fallas festival appeared first on Dezeen .],
+  [Image credit: Universal Pictures],
+  [The R-rated action comedy film 2 Guns , starring Denzel Washington and Paula Patton , is set to arrive on Prime Video . The film was directed by Baltasar Kormákur and was released in theaters on August 2, 2013. The movie was a success at the box office despite a lukewarm reception from the critics.],
+  [The 2013 action movie 2 Guns will arrive on Amazon Prime Video on April 1, 2026, according to a report by Fandomwire .],
+  [2 Guns, which is a buddy cop movie, features a stellar cast including A-list actors like Mark Wahlberg, Denzel Washington, Paula Patton, James Marsden, Bill Paxton, and many more. The movie was written by Blake Masters and was produced by Universal Pictures.],
+  [The film became a hit at the box office across the globe. It was made on a reported budget of approximately \$61 million and opened to \$27 million at the box office . The movie grossed around \$75 million at the domestic box office and \$56 million internationally. This brought the movie’s global collection to over \$131 million.],
+  [On Rotten Tomatoes , 2 Guns holds a score of 64 percent on the Tomatometer, based on the critic reviews. Meanwhile, on the Popcornmeter, it received a slightly higher score of 66 percent based on audience reviews. On Metacritic , the film earned a more middling Metascore of 55 from critics, but a much more favorable score of 6.6 from users.],
+  [The movie follows the story of DEA agent Bobby Trench, played by Washington, and US Navy officer Marcus Stigman, played by Wahlberg, who are both independently working undercover as members of a narcotics syndicate. However, after they pull off a highly successful bank robbery, they find themselves in the middle of a wider conspiracy involving the CIA and must fight together to survive.],
+  [The post Paula Patton’s R-Rated NSFW Movie Is Coming To Prime Video appeared first on ComingSoon.net - Movie Trailers, TV & Streaming News, and More .],
 ),
   insert-map: (:),
-  word-count: 455,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-  ],
-  [
-    standard-article(
-  title: [Laser Ranging Makes GPS Satellites More Accurate],
-  author: [Maya Posch],
-  source-name: [Hackaday],
-  images: (),
-  paragraphs: (
-  [Although GNSS systems like GPS have made pin-pointing locations on Earth’s sphere-approximating surface significantly easier and more precise, it’s always possible to go a bit further. The latest innovation involves strapping laser retroreflector arrays (LRAs) to newly launched GPS satellites, enabling ground-based lasers to accurately determine the distance to these satellites.],
-  [Similar to the retroreflector array that was left on the Moon during the Apollo missions, these LRAs will be most helpful with scientific pursuits, such as geodesy . This is the science of studying Earth’s shape, gravity and rotation over time, which is information that is also incredibly useful for Earth-observing satellites.],
-  [Laser ranging is also essential for determining the geocentric orbit of a satellite, which enables precise calibration of altimeters and increasing the accuracy of long-term measurements. Now that the newly launched GPS III SV-09 satellite is operational this means more information for NASA’s geodesy project, and increased accuracy for GPS measurements as more of its still to be launched satellites are equipped with LRAs.],
-),
-  insert-map: (:),
-  word-count: 167,
+  word-count: 342,
   edited-for-length: false,
   debug-mode: false,
 )
 
   ],
 ), ruled-indices: (1,))
-
-#article-row((
-  [
-    standard-article(
-  title: [black bean confetti salad 2.0],
-  author: [deb],
-  source-name: [Smitten Kitchen],
-  images: (),
-  paragraphs: (
-  [I was in Paris \* last week — no, I cannot believe I get to utter sentences like that so casually, either, pinch me — and it was really, truly, and surprisingly spring. The magnolia trees at the Jardin du Palais Royal supplied us with a lace curtain of fluttering pink shadows, the daffodils and hyacinth were popping up from the ground like they’d missed us, and everyone was outside and stayed out until after midnight and this energy climbed inside me, evicted all of the seasonal malaise (turned out I was just cold!), and I did my best to bring all of this warmth and joy back to NYC with me. And despite the fact that my grouchy (sorry, “weathered”) friends tried to warn me that we were experiencing a “false spring” and “don’t fall for it,” la la la, I said, it is spring in my heart now — and in my kitchen, and busted out a warm weather salad. Which is to say: I’m sorry, this sudden cold spell might be my fault.],
-  [Read more »],
-),
-  insert-map: (:),
-  word-count: 180,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-  ],
-  [
-    standard-article(
-  title: [Adidas is bringing back its trefoil logo for the 2026 World Cup],
-  author: [Hunter Schwarz],
-  source-name: [Fast Company Design],
-  images: (),
-  paragraphs: (
-  [For the first time in 36 years, the old-school Adidas trefoil logo will appear at the World Cup .],
-  [The vintage Adidas logo shows three leaf-shaped foils with three parallel horizontal lines that cut through the bottom of the shapes. It previously appeared on Adidas World Cup kits until it was replaced by the brand’s triangular three-bars logo in the 1990s. Now, for the 2026 World Cup, the trefoil logo is making a comeback, appearing on the right chest of away jerseys for 25 countries, including Japan, Mexico, and Ukraine.],
-  [Bringing the old logo back is a nostalgia play. Sam Handy, general manager of football for Adidas, said in a statement that the German sportswear brand “felt it was a fitting and inspired moment to bring the trefoil back to the biggest stage in world football.”],
-  [The kits pay homage to each respective country with local references, like florals representing local plants for Costa Rica and Chile, and a pattern inspired by artist René Magritte for Belgium . The revived logo instantly gives the kits a classic feel.],
-  [The trefoil logo was introduced in the 1970s , when the brand was in expansion mode. Previously, Adidas had sold only shoes, and its first logo showed a track cleat with three stripes on the side and situated between the two extended tails in the d s in Adidas. When the company started selling apparel in 1972, it rolled out the trefoil created by German designer Hans “Nick” Roericht to symbolize a new era.],
-  [The trefoil stuck with the symbolism of the three stripes after founder Adolf Dassler put three stripes on the shoes for attention’s sake as they showed up better in photographs. The trefoil’s shape was inspired by florals, and the logo became a pop culture crossover after rap group Run-D. M. C.’s homage to the brand in the 1986 song “My Adidas.”],
-  [The company modernized its visual identity in 1991 with its triangular three-bars performance logo, designed by creative director Peter Moore. It gave Adidas a more simple mark to better compete visually with the American brand Nike’s iconic Swoosh , and it represented the company during a period of rapid growth in the 1990s and 2000s.],
-  [[Image: Adidas]],
-  [Today, Adidas shows how to use two logos at once , keeping its performance logo as its main mark while the retro trefoil appears on its Originals brand of casual sportswear and in nostalgic marketing campaigns . By bringing the old logo to one of the biggest global stages in sports, Adidas is looking to tap into the power of pre-Yeezy nostalgia for its vintage brand.],
-),
-  insert-map: (:),
-  word-count: 440,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-  ],
-), ruled-indices: (1,))
-#pull-quote([When the company started selling apparel in 1972, it rolled out the trefoil created by German designer Hans “Nick” Roericht to symbolize a new era.], [Hunter Schwarz])
+#pull-quote([The movie grossed around \$75 million at the domestic box office and \$56 million internationally.], [Ishita Verma])
 
 
 {
-  #section-label([Analysis])
+  #section-label([Briefs])
   #brief-group((
-    #brief-item([Justin Carter], source-name: [Gizmodo], [From 'Batman v Superman' to 'Captain America: Civil War' and 'Suicide Squad,' which superhero from 2016 made the most enduring impression?])
-
-    #brief-item([Eliza Huber], source-name: [Who What Wear], [NEW YORK, NEW YORK - MARCH 26: Camila Morrone is seen in Midtown on March 26, 2026 in New York City.])
-
-    #brief-item([Tieghan Gerard], source-name: [Half Baked Harvest], [30 Delicious High-Protein, High-Fiber Dinners. 
-
-30 high-protein, high-fiber dinners that are filling, nourishing, and delicious. Easy recipes for balanced weeknight meals!
-
- READ: 30 Delicious High-Protein, High-Fiber Dinners.])
-
-    #brief-item([Jessica], source-name: [How Sweet Eats], [New week, new menu!
+    [#brief-item([Into the Gloss], source-name: [Into the Gloss], ["It’s fun trying new products, but I had to accept that my skin can’t take a lot. And honestly? It’s fine. I don’t know what I’m doing anyway."])],
+    [#brief-item([Jennifer Camp Forbes], source-name: [Who What Wear], [collage featuring Arranging Things Book by Colin King, a street style shot of two women looking at a cell phone in chic outfits and Necessaire body lotion])],
+    [#brief-item([Jessica], source-name: [How Sweet Eats], [New week, new menu!
 
 What’s on your menu this week?!
 
@@ -1214,31 +1095,28 @@ What To Eat This Week
 
  White chocolate raspberry granola 
 
-The post What To Eat This Week: 3/29/26. appeared first on How Sweet Eats .])
+The post What To Eat This Week: 3/29/26. appeared first on How Sweet Eats .])],
+    [#brief-item([Justin Carter], source-name: [Gizmodo], [Science Saru finally showed off real footage for 'The Ghost in the Shell,' and it looks beautiful in motion as it does in stills.])],
+    [#brief-item([Into the Gloss], source-name: [Into the Gloss], [The creator of Glossier’s perfume line on how he got his start, his personal fragrance preferences, and the inspiration behind Glossier You Doux and Rêve])],
+    [#brief-item([deb], source-name: [Smitten Kitchen], [class="smittenkitchen-print-hide"\>
+ 
 
-    #brief-item([Adrianna Adarme], source-name: [A Cozy Kitchen], [These Lemon Brownies are soft, fudgy citrus bars finished with a glossy white chocolate lemon glaze. The best part? The…
+ My strongest opinion on Thanksgiving sides is that whenever possible, they should come in a casserole dish (or its chic French cousin, a gratin). I don’t mean that your sides should be limited to things that swim in cream, cheese, butter, or a happy combination of all three — although one dish in this category is highly welcome on my table — I simply mean that sides like this, that is baked in dishes with walls , tend to excel at holding up to resting times, reheat well, and stay warm longer.
+
+ Read more »])],
+    [#brief-item([Adrianna Adarme], source-name: [A Cozy Kitchen], [These Lemon Brownies are soft, fudgy citrus bars finished with a glossy white chocolate lemon glaze. The best part? The…
 
  ( Read more... ) 
 
 Tags: no-toc 
 
-The post Soft and Bright Lemon Brownies with White Chocolate Glaze appeared first on A Cozy Kitchen .])
-
-    #brief-item([deb], source-name: [Smitten Kitchen], [class="smittenkitchen-print-hide"\>
+The post Soft and Bright Lemon Brownies with White Chocolate Glaze appeared first on A Cozy Kitchen .])],
+    [#brief-item([deb], source-name: [Smitten Kitchen], [class="smittenkitchen-print-hide"\>
  
 
  It’s been 17 months since I first questioned whether anyone even needed another recipe for a basque cheesecake — the burnished, custardy and uncluttered kind that hails from San Sebastián, Spain — and concluded that in fact, I did.
 
- Read more »])
-
-    #brief-item([Adrianna Adarme], source-name: [A Cozy Kitchen], [This Miso Lemon Salmon is quick, easy, and comes together in under 20 minutes. It’s the perfect weeknight meal that…
-
- ( Read more... ) 
-
-Tags: 30 Minute Meal Dinner Healthy lunch Quick and Easy 
-
-The post Easy Miso Lemon Salmon appeared first on A Cozy Kitchen .])
-
+ Read more »])],
   ))
 }
 

@@ -23,196 +23,19 @@
 
 // --- Front Page Feature ---
 #feature-article(
-  title: [R8 Optimization: Staticization],
-  kicker: [Cover Story],
-  author: [Jake Wharton],
-  source-name: [Jake Wharton],
-  deck: [Note: This post is part of a series on D8 and R8, Android's new dexer and optimizer, respectively.],
-  lead-text: "For an intro to D8 read \"Android's Java 8 support\" . This post introduces R8.",
-  lead-first-alpha: 0,
-  body-paragraphs: (
-  [The first three posts ( 1 , 2 , 3 ) in this series explored D8. Among its core responsibility of converting Java bytecode to Dalvik bytecode, it desugars new Java language features and works around vendor- and version-specific bugs in Android's VMs.],
-  [In general, D8 doesn't perform optimization. It may choose to use Dalvik bytecodes which more efficiently represent the intent of Java bytecodes (as seen with the not-int example ). Or, in the process of desugaring language features, it may choose to optimize the desugared code it is generating. Aside from these very localized changes, D8 otherwise performs a direct translation.],
-  [R8 is a version of D8 that also performs optimization. It's not a separate tool or codebase, just the same tool operating in a more advanced mode. Where D8 first parses Java bytecode into its own intermediate representation (IR) and then writes out the Dalvik bytecode, R8 adds optimization passes over the IR before its written out.],
-  [This post (and a bunch of future posts) are going to explore some of the individual optimizations that R8 performs. We start with an optimization called staticization which means the act of making something static.],
-  [id="companion-objects"\>Companion Objects],
-  [Kotlin uses companion objects to model the features of Java's static modifier. They're actually a much more powerful language feature allowing things like inheritance and implementing interfaces. That power comes with an associated cost, however, and we pay for that cost regardless of whether we're using the added power or just emulating static .],
-  [class Greeter ( val greeting : String ) { 
- fun greet ( name : String ) = "\$greeting, \$name!"],
-  [companion object { 
- fun hello () = Greeter ( "Hello" ) 
- } 
- }],
-  [In this example, the Greeter class uses a companion object to expose functionality that isn't tied to instances of Greeter . A convenience factory hello returns instances of Greeter initialized with the string "Hello". A main function calls the factory and then greets my dog Olive.],
-  [Compiling with kotlinc , dexing with D8, and dumping the Dalvik bytecode with dexdump we can see how this is implemented.],
-  [\$ java -jar d8.jar \\
- --lib \$ANDROID\_HOME/platforms/android-28/android.jar \\
- --release \\
- --output . \\
- \*.class],
-  [\$ \$ANDROID\_HOME/build-tools/28.0.3/dexdump -d classes.dex
-…
-[000370] GreeterKt.main:([Ljava/lang/String;)V
-0000: sget-object v1, LGreeter;. Companion: LGreeter\$Companion;
-0002: invoke-virtual {v1}, LGreeter\$Companion;.hello:()LGreeter;
-0005: move-result-object v1
-0006: const-string v0, "Olive"
-0008: invoke-virtual {v1, v0}, LGreeter;.greet:(Ljava/lang/String;)Ljava/lang/String;
-000b: move-result-object v1
-000c: sget-object v0, Ljava/lang/System;.out: Ljava/io/PrintStream;
-000e: invoke-virtual {v0, v1}, Ljava/io/PrintStream;.println:(Ljava/lang/Object;)V
-0011: return-void
-…],
-  [Bytecode index 0000 loads an instance of the Greeter\$Companion class from a static Companion field on Greeter . Index 0002 then makes a virtual method call to the hello function on that instance.],
-  [Looking at the nested Companion class confirms that it contains virtual (aka non-static methods).],
-  [class="highlight"\> Virtual methods -
- \#0 : (in LGreeter\$Companion;)
- name : 'hello'
- type : '()LGreeter;'
- access : 0x0011 (PUBLIC FINAL)
-[000314] Greeter. Companion.hello:(Ljava/lang/String;)Ljava/lang/String;
-0000: new-instance v0, LGreeter;
-0002: const-string v1, "Hello"
-0004: invoke-direct {v0, v1}, LGreeter;. :(Ljava/lang/String;)V
-0007: return-object v0],
-  [The use of a companion on Greeter means that a second, nested class named Companion is generated which adds to our binary size and slows startup because of additional class loading. The singleton instance of this class is retained in memory for the life of our application adding memory pressure. And finally, the use of instance methods require virtual calls which are slower than static calls. Granted, the impact of all these things for just one class is extremely minor, but in a large application written entirely in Kotlin it begins to contribute non-trivial overhead.],
-  [We can convert the Java classfiles to Dalvik using R8 instead of D8 and see what optimizations it applies. The flags to run R8 is nearly identical to D8 except it requires adding --pg-conf to supply a ProGuard-compatible configuration file . The one in use here keeps the main method as an entry point (otherwise the dex file would be empty) and disables class and method name obfuscation for the sake of readability.],
-  [\$ java -jar r8.jar \\
- --lib \$ANDROID\_HOME/platforms/android-28/android.jar \\
- --release \\
- --output . \\
- --pg-conf rules.txt \\
- \*.class],
-  [R8 will produce a classes.dex just like D8 except with contents that have been optimized.],
-  [class="highlight"\> \$ \$ANDROID\_HOME/build-tools/28.0.3/dexdump -d classes.dex
-…
-[000234] GreeterKt.main:([Ljava/lang/String;)V
-0000: invoke-static {}, LGreeter;.hello:()LGreeter;
-0003: move-result-object v1
-0004: const-string v0, "Olive"
-0006: invoke-virtual {v1, v0}, LGreeter;.greet:(Ljava/lang/String;)Ljava/lang/String;
-0009: move-result-object v1
-000a: sget-object v0, Ljava/lang/System;.out: Ljava/io/PrintStream;
-000c: invoke-virtual {v0, v1}, Ljava/io/PrintStream;.println:(Ljava/lang/Object;)V
-000f: return-void
-…],
-  [The main method has changed slightly from the original version. Instead of an sget-object to look up the Companion instance and an invoke-virtual to call a hello instance method, only an invoke-static remains. It's also important to note that R8 hasn't just made the hello method static inside the Companion class, it has moved the method from the Companion to be directly on the Greeter class.],
-  [class="highlight"\> \#1 : (in LGreeter;)
- name : 'hello'
- type : '(Ljava/lang/String;)Ljava/lang/String;'
- access : 0x0019 (PUBLIC STATIC FINAL)
-[0002bc] Greeter.hello:(Ljava/lang/String;)Ljava/lang/String;
-[000240] Greeter.hello:()LGreeter;
-0000: new-instance v0, LGreeter;
-0002: const-string v1, "Hello"
-0004: invoke-direct {v0, v1}, LGreeter;. :(Ljava/lang/String;)V
-0007: return-object v0],
-  [With the hello method having been moved, the entire Companion class and the singleton field holding its instance on Greeter have both been removed.],
-  [This is staticization in practice. R8 finds occurrences of instance methods where the instance isn't actually required and makes them static. It also has special knowledge of how Kotlin implements companions so that in addition to making their methods static the extra class they'd otherwise generate can also be removed.],
-  [id="source-transformation"\>Source Transformation],
-  [Understanding exactly how a Kotlin companion is represented in bytecode and how R8's optimization works in bytecode can be challenging. In order to better understand both of these things we can emulate them at the source-code level.],
-  [The Kotlin compiler compiles the original Greeter class into Java bytecode which approximates to the following Java source code.],
-  [private final String greeting ;],
-  [public Greeter ( String greeting ) { 
- this . greeting = greeting ; 
- }],
-  [public String getGreeting () { 
- return greeting ; 
- }],
-  [public String greet ( String name ) { 
- return greeting + ", " + name ; 
- }],
-  [public static final class Companion { 
- private Companion () {}],
-  [public Greeter hello () { 
- return new Greeter ( "Hello" ); 
- } 
- } 
- }],
-  [The val greeting: String primary constructor property declaration is translated into a private field, constructor parameter, constructor assignment statement, and getter method. The companion object becomes a nested class named Companion and the enclosing Greeter class keeps a static, final singleton instance of it.],
-  [The main method is put into yet another class called GreeterKt which is based on the filename, Greeter.kt .],
-  [class="highlight"\> public final class GreeterKt { 
- public static void main ( String [] args ) { 
- System . out . println ( Greeter . Companion . hello (). greet ( "Olive" )); 
- } 
- }],
-  [In order to access the hello factory method, the main method calls through the static Companion field.],
-  [R8's optimization alters the code into what we otherwise would have written if the original Greeter was written in Java.],
-  [class="highlight"\> public final class Greeter {
- - public static final Companion Companion = new Companion();
--
- private final String greeting;
-\@\@
- 
- - public static final class Companion {
-- private Companion() {}
--
-- public Greeter hello() {
-- return new Greeter("Hello");
-- }
-- }
- + public static Greeter hello() {
-+ return new Greeter("Hello");
-+ }
- }],
-  [The hello method becomes a static method directly inside Greeter and the Companion class and singleton instance field are removed.],
-  [The main method is also updated to reflect this change, again looking more like if it were originally written in Java.],
-  [id="jvmstatic"\> \@JvmStatic],
-  [If you're familiar with Kotlin and its Java interoperability story, using the \@JvmStatic annotation might have come to mind to achieve a similar effect.],
-  [With the annotation added to the original example, running it through D8 only and dumping the bytecode shows an interesting result.],
-  [\$ java -jar d8.jar \\
- --lib \$ANDROID\_HOME/platforms/android-28/android.jar \\
- --release \\
- --output . \\
- \*.class],
-  [\$ \$ANDROID\_HOME/build-tools/28.0.3/dexdump -d classes.dex
-…
- \#2 : (in LGreeter;)
- name : 'hello'
- type : '()LGreeter;'
- access : 0x0019 (PUBLIC STATIC FINAL)
-[00042c] Greeter.hello:()LGreeter;
-0000: sget-object v0, LGreeter;. Companion: LGreeter\$Companion;
-0002: invoke-virtual {v0, v1}, LGreeter\$Companion;.hello:()LGreeter;
-0005: move-result-object v1
-0006: return-object v1
-…],
-  [A static hello method was added to the Greeter class, but it's just a trampoline into the Companion instance and the instance method of the same name.],
-  [And even with that static method present, Kotlin callers still do the Companion instance lookup and virtual method call.],
-  [Even with \@JvmStatic present, R8 will still perform the staticization optimization. The Companion 's greet method body will move into the static greet method on Greeter , the main function will do a static method call, and the entire Companion class will be removed.],
-  [id="more-than-companions"\>More Than Companions],
-  [This optimization isn't limited to only Kotlin companion object s. Regular Kotlin object s will have their methods made static .],
-  [Java classes will also receive this optimization when the instance is not needed.],
-  [private Thing () {}],
-  [public void doThing () { 
- \/\/ … 
- } 
- }],
-  [Running R8 on these examples and validating the resulting bytecode is left as an exercise for the reader.],
-  [In summary, staticization takes instance methods which don't actually require access to an instance and makes them static. For Kotlin, it understands the bytecode of companion objects and can often eliminate them entirely when they're only being used to emulate Java's static .],
-  [Many R8 optimizations are aware of Kotlin-specific bytecode patterns in order to make them more effective. Stay tuned for the next post which features another R8 optimization that works well with Kotlin.],
-  [(This post was adapted from a part of my Digging into D8 and R8 talk. Watch the video and look out for future blog posts for more content like this.)],
-),
-  inline-pq: pull-quote([Granted, the impact of all these things for just one class is extremely minor, but in a large application written entirely in Kotlin it begins to contribute non-trivial overhead.], [Jake Wharton]),
-  inline-pq-idx: 23,
-  edited-for-length: false,
-)
-
-
-{
-  #section-label([Features])
-  #standard-article(
   title: [Standards for ANSI escape codes],
+  kicker: [Cover Story],
   author: [Julia Evans],
   source-name: [Julia Evans],
-  images: (),
-  paragraphs: (
-  [Hello! Today I want to talk about ANSI escape codes.],
-  [For a long time I was vaguely aware of ANSI escape codes (“that’s how you make
+  deck: [Hello! Today I want to talk about ANSI escape codes.],
+  lead-pre: [],
+  lead-cap: [F],
+  lead-rest: [or a long time I was vaguely aware of ANSI escape codes (“that’s how you make
 text red in the terminal and stuff”) but I had no real understanding of where they were
 supposed to be defined or whether or not there were standards for them. I just
 had a kind of vague “there be dragons” feeling around them. While learning
 about the terminal this year, I’ve learned that:],
+  body-paragraphs: (
   [ANSI escape codes are responsible for a lot of usability improvements
 in the terminal (did you know there’s a way to copy to your system clipboard
 when SSHed into a remote machine?? It’s an escape code called OSC 52 !)],
@@ -233,17 +56,17 @@ more confidence.],
   [some more documents/standards],
   [why I think this is interesting],
   [id="what-s-an-escape-code"\>what’s an escape code?],
-  [Have you ever pressed the left arrow key in your terminal and seen ^[[D ?
+  [Have you ever pressed the left arrow key in your terminal and seen ^\[\[D ?
 That’s an escape code! It’s called an “escape code” because the first character
 is the “escape” character, which is usually written as ESC , \\x1b , \\E ,
- \\033 , or ^[ .],
+ \\033 , or ^\[ .],
   [Escape codes are how your terminal emulator communicates various kinds of
 information (colours, mouse movement, etc) with programs running in the
 terminal. There are two kind of escape codes:],
   [input codes which your terminal emulator sends for keypresses or mouse
 movements that don’t fit into Unicode. For example “left arrow key” is
- ESC[D , “Ctrl+left arrow” might be ESC[1;5D , and clicking the mouse might
-be something like ESC[M :3 .],
+ ESC\[D , “Ctrl+left arrow” might be ESC\[1;5D , and clicking the mouse might
+be something like ESC\[M :3 .],
   [output codes which programs can print out to colour text, move the
 cursor around, clear the screen, hide the cursor, copy text to the
 clipboard, enable mouse reporting, set the window title, etc.],
@@ -251,9 +74,9 @@ clipboard, enable mouse reporting, set the window title, etc.],
   [id="ecma-48"\>ECMA-48],
   [ECMA-48 does two things:],
   [Define some general formats for escape codes (like “CSI” codes, which are
- ESC[ + something and “OSC” codes, which are ESC] + something)],
+ ESC\[ + something and “OSC” codes, which are ESC\] + something)],
   [Define some specific escape codes, like how “move the cursor to the left” is
- ESC[D , or “turn text red” is ESC[31m . In the spec, the “cursor left”
+ ESC\[D , or “turn text red” is ESC\[31m . In the spec, the “cursor left”
 one is called CURSOR LEFT and the one for changing colours is called
  SELECT GRAPHIC RENDITION .],
   [The formats are extensible, so there’s room for others to define more escape
@@ -304,7 +127,7 @@ terminal emulators and just hardcode those.],
   [I got curious about why folks might be moving away from terminfo and I found
 this very interesting and extremely detailed
  rant about terminfo from one of the fish maintainers , which argues that:],
-  [[the terminfo authors] have done a lot of work that, at the time, was
+  [\[the terminfo authors\] have done a lot of work that, at the time, was
 extremely important and helpful. My point is that it no longer is.],
   [I’m not going to do it justice so I’m not going to summarize it, I think it’s
 worth reading.],
@@ -346,7 +169,7 @@ browser user agent to decide which version of a website to serve.],
 itself as being “xterm-256color” feels similar to how Safari’s user agent is
 “Mozilla/5.0 (Macintosh; Intel Mac OS X 14\_7\_4) AppleWebKit/605.1.15 (KHTML,
 like Gecko) Version/18.3 Safari/605.1.15”. In both cases the terminal emulator
-/ browser ends up changing its user agent to get around user agent detection
+\/ browser ends up changing its user agent to get around user agent detection
 that isn’t working well.],
   [On the web we ended up deciding that user agent detection was not a good
 practice and to instead focus on standardization so we can serve the same
@@ -372,55 +195,28 @@ be easier for terminal emulator developers to build new features and for
 authors of terminal applications to more confidently adopt those features so
 that we can all benefit from them and have a richer experience in the terminal.],
 ),
-  insert-map: (:),
-  word-count: 1622,
   edited-for-length: false,
-  debug-mode: false,
 )
 
-}
 
 {
+  #section-label([Front Page])
   #standard-article(
-  title: [Litmus-Testing Kotlin's Many Memory Models],
-  author: [Jake Wharton],
-  source-name: [Jake Wharton],
+  title: [Here's a Standalone Cairo DLL for Windows],
+  author: [Jeff Preshing],
+  source-name: [Jeff Preshing],
   images: (),
   paragraphs: (
-  [When writing multiplatform code, Kotlin's three compiler backends each have different memory models which must be considered.],
-  [JavaScript is single-threaded so you really can do no wrong. The JVM model is arguably too permissive where you can do incorrect things and have them work 99.9% of the time. When targeting native, Kotlin enforces some invariants which helps prevent you from those 0.1% bugs that crop up in the JVM.],
-  [I've been porting the AndroidX collection library to Kotlin multiplatform to experiment with binary compatibility, performance, tooling, and the different memory models. The library consists of mutable, single-threaded data structures. This should mean the different memory models never come into play. But weirdly they do, and let's look at how.],
-  [id="on-deck"\>On Deck],
-  [The Kotlin standard library contains general-purpose collections like lists, sets, and maps in both mutable and read-only form. Kotlin 1.3.70 added another collection, ArrayDeque , a "double-ended queue" for efficient stacks and queues.],
-  [During the 1.3.70 EAP, Kevin Galligan opened an issue where ArrayDeque could only be instantiated on the main thread and not a background thread when targeting Kotlin/Native. At the time I didn't read into it, but as I was porting these collections it came to mind.],
-  [The underlying cause was that the implementation relied on a top-level val for a shared, empty array when the collection was empty. Arrays are fixed-length, so an empty array is effectively immutable and thus can be shared by all empty collections. But that seems fine?],
-  [It is fine for Kotlin/JS and Kotlin/JVM but Kotlin/Native is different here. By default, Kotlin/Native only allows the main thread to access top-level val s. If you want to access the value from multiple threads (potentially concurrently) you must choose whether you want thread-local or shared-but-immutable behavior with an annotation. ArrayDeque 's empty array was missing this annotation.],
-  [As it turns out, my collections had the exact same issue! Each started with a shared, empty array and only allocated its own storage when the first element arrived. I had tests, but the tests were only exercising the type on the main thread. It's an easy fix, just add \@SharedImmutable , but how do I prevent regression and future problems of this nature?],
-  [id="testing-threads"\>Testing Threads],
-  [Since Kotlin/Native enforces different semantics between its main thread and background threads, it's only logical to run the tests once on the main thread and once on a background thread to ensure compliance.],
-  [If our test is written solely for Kotlin/Native this is pretty easy. The native version of the standard library has a Worker API for running on a background thread.],
-  [body . freeze () 
- val worker = Worker . start () 
- val future = worker . execute ( SAFE , { body }) { 
- runCatching ( it ) 
- } 
- future . result . getOrThrow () 
- }],
-  [This function accepts a lambda which it runs synchronously (which will be on the main thread) and then transfers that lambda to a background thread where it's run a second time. The main thread blocks on the result of the background thread where it rethrows any exceptions that occurred.],
-  [Each test case is updated to put its body inside a call to this function.],
-  [Running without \@SharedImmutable now causes the test to correctly fail. Say goodbye to an entire class of Kotlin/Native bugs!],
-  [id="multiplatform"\>Multiplatform],
-  [For multiplatform libraries, like my collection library, the tests are written in platform-agnostic "common" Kotlin with no access to the Kotlin/Native-specific Worker API. We can instead rely on the expect/actual language feature of multiplatform Kotlin to make this work.],
-  [In src/commonTest/kotlin/ the threadedTest function is declared as an expect fun :],
-  [The native-specific implementation is put in src/nativeTest/kotlin/ :],
-  [For JavaScript in src/jsTest/kotlin/ we don't need threading so its implementation just inlines itself away.],
-  [For the JVM in src/jvmTest/kotlin/ you're free to either inline it away like JavaScript or use the Thread APIs to invoke body twice. Since the memory models of the JVM and Android give no special treatment to the main thread there's really no reason to run it twice.],
-  [Now our test from the previous section can live in src/commonTest/kotlin/ and wrap itself in threadedTest . On JS and JVM the test will run normally and only on native targets will it run twice.],
-  [The memory model of Kotlin/Native helps eliminate bugs that would probabilistically occur on more permissive platforms like the JVM. With the constraints of its memory model being runtime checked, running your unit tests on both the main thread and a background thread prevent bugs like the one which occurred with ArrayDeque .],
-  [I filed an issue on the Kotlin/Native repo asking for some kind of built-in mechanism to support this use case. And ideally it would be something that you could apply to a whole class rather than having to remember to do it for each function.],
+  [Cairo is an open source C library for drawing vector graphics. I used it to create many of the diagrams and graphs on this blog.],
+  [Cairo is great, but it’s always been difficult to find a precompiled Windows DLL that’s up-to-date and that doesn’t depend on a bunch of other DLLs. I was recently unable to find such a DLL, so I wrote a script to simplify the build process for one. The script is shared on GitHub :],
+  [If you just want a binary package, you can download one from the Releases page:],
+  [The binary package contains Cairo header files, import libraries and DLLs for both x86 and x64. The DLLs are statically linked with their own C runtime and have no external dependencies. Since Cairo’s API is pure C, these DLLs should work with any application built with any version of MSVC. I configured these DLLs to render text using FreeType because I find the quality of FreeType-rendered text better than Win32-rendered text, which Cairo normally uses by default. FreeType also supports more font formats and gives text a consistent appearance across different operating systems.],
+  [id="sample-application-using-cmake"\>Sample Application Using CMake],
+  [Here’s a small Cairo application to test the DLLs. It uses CMake to support multiple platforms including Windows, MacOS and Linux.],
+  [Hope this helps somebody!],
 ),
   insert-map: (:),
-  word-count: 892,
+  word-count: 216,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -428,497 +224,809 @@ that we can all benefit from them and have a richer experience in the terminal.]
 }
 
 {
+  #section-label([Features])
   #standard-article(
-  title: [Public API challenges in Kotlin],
+  title: [Smaller APKs with resource optimization],
   author: [Jake Wharton],
   source-name: [Jake Wharton],
   images: (),
   paragraphs: (
-  [Kotlin is justifiably lauded for its language features compared to today's Java. It has constructs which allow expressing common patterns with more concise alternatives. An overused example in every intro-to-Kotlin talk or blog post is comparing a Java "POJO" to a Kotlin data class .],
-  [Here's yet another one of those comparisons, but bear with me as it will be used to illustrate the points in this post.],
-  [public Person ( \@NonNull String name , int age ) { 
- this . name = name ; 
- this . age = age ; 
- }],
-  [public \@NonNull String getName () { return name ; } 
- public int getAge () { return age ; }],
-  [\@Override public String toString () { 
- return "Person(name=" + name + ", age=" + age + ')' 
- } 
- \@Override public boolean equals ( \@Nullable Object o ) { 
- if ( o == this ) return true ; 
- if (!( o instanceof Person )) return false ; 
- Person other = ( Person ) o ; 
- return name . equals ( other . name ) 
- && age == other . age 
- } 
- \@Override public int hashCode () { 
- return Objects . hash ( name , age ); 
- } 
- }],
-  [Let us assume that this Person type is exposed in a library. As a result, evolving its public API needs to be done in a way that's source and binary-compatible with previous versions. This post will cover some of the challenges of porting a library containing types like Person from Java to Kotlin while maintaining the required flexibility and exposing the correct conventions to each language.],
-  [id="binary-compatibility"\>Binary Compatibility],
-  [What changes are necessary in order to add a new property, nickname , to Person in a binary-compatible way?],
-  [For the manually-written Java type we add a new field, getter, and constructor parameter. In order to maintain compatibility, we retain the old constructor signature for old callers.],
-  [private final \@NonNull String name;],
-  [+ private final \@Nullable String nickname;],
-  [private final int age;],
-  [- public Person(\@NonNull String name, int age) {],
-  [+ public Person(\@NonNull String name, \@Nullable String nickname, int age) {],
-  [this.name = name;],
-  [+ this.nickname = nickname;],
-  [this.age = age;],
-  [}],
-  [+ public Person(\@NonNull String name, int age) {],
-  [+ this(name, null, age);],
-  [+ }],
-  [+],
-  [public \@NonNull String getName() { return name; }],
-  [+ public \@Nullable String getNickname() { return nickname; }],
-  [public int getAge() { return age; }],
-  [\@Override public String toString() {],
-  [- return "Person(name=" + name + ", age=" + age + ')'],
-  [+ return "Person(name=" + name + ", nickname=" + nickname + ", age=" + age + ')'],
-  [}],
-  [\@Override public boolean equals(\@Nullable Object o) {],
-  [if (o == this) return true;],
-  [if (!(o instanceof Person)) return false;],
-  [Person other = (Person) o;],
-  [return name.equals(other.name)],
-  [+ && Objects.equals(nickname, other.nickname)],
-  [&& age == other.age],
-  [}],
-  [\@Override public int hashCode() {],
-  [- return Objects.hash(name, age);],
-  [+ return Objects.hash(name, nickname, age);],
-  [}],
-  [}],
-  [So tedious!],
-  [The Kotlin class only needs a new property and the secondary constructor for compatibility.],
-  [Much nicer, right? Unfortunately we have created two backwards-incompatible changes in the Kotlin version despite our efforts.],
-  [id="destructuring-functions"\>Destructuring Functions],
-  [For each property defined in the primary constructor, a data class will generate a componentN() function to facilitate destructuring declarations . We can see these by running javap on the original Kotlin version of Person :],
-  [class="highlight"\> \$ javap Person.class
-Compiled from "Person.kt"
-public final class Person {
- public final java.lang. String getName();
- public final int getAge();
- public final java.lang. String component1();
- public final int component2();
- ⋮],
-  [Adding the nickname property in the middle of the primary constructor causes these component methods to shift incompatibly.],
-  [class="highlight"\> public final class Person {
- public final java.lang. String getName();
- + public final java.lang. String getNickname();
- public final int getAge();
- public final java.lang. String component1();
- - public final int component2();
- + public final java.lang. String component2();
-+ public final int component3();
- ⋮],
-  [Consumers who are destructuring Person will receive a NoSuchMethodError at runtime unless they also recompile their code.],
-  [We can work around this by only adding new properties at the end of the primary constructor. This will ensure that existing component methods do not change their return type.],
-  [A nice property of being forced to only append properties is that we can rely on default values and the \@JvmOverloads annotation to avoid having to manually write secondary constructors.],
-  [The downside of this approach is that you can no longer control the order of properties.],
-  [id="copy-functions"\>Copy Functions],
-  [In addition to the component functions, two copy functions are also generated automatically.],
-  [These support creating a new instance of a Person while also updating a subset of its properties (e.g., alice.copy(age = 99) ).],
-  [Unfortunately, adding the nickname property changes the signature of both of these methods breaking compatibility.],
-  [class="highlight"\> public final class Person {
+  [How many times does the name of a layout file appear in an Android APK? We can build a minimal APK with a single layout file to count the occurrences empirically.],
+  [Building an Android app with Gradle requires only one thing: an AndroidManifest.xml file with a package. From there we can add a dummy layout whose contents are just since we only care about its name.],
+  [Running gradle assembleRelease will produce a release APK measuring a paltry 2,118 bytes. We can dump its contents using xxd and look for home\_view byte sequences.],
+  [class="highlight"\> \$ xxd build/outputs/apk/release/app-release-unsigned.apk
  ⋮
- - public final Person copy(java.lang. String, int);
- + public final Person copy(java.lang. String, java.lang. String, int);
- - public static Person copy\$default(Person, java.lang. String, int, int, java.lang. Object);
- + public static Person copy\$default(Person, java.lang. String, java.lang. String, int, int, java.lang. Object);
+000004c0: 0000 0074 0000 0018 0000 0072 6573 2f6c ...t.......res/l
+000004d0: 6179 6f75 742f 686f 6d65 5f76 6965 772e ayout/home\_view.
+000004e0: 786d 6c63 66e0 6028 6160 6060 6490 61d0 xmlcf.\`(a\`\`\`d.a.
+ ⋮
+00000570: 0000 0000 0000 0000 1818 7265 732f 6c61 ..........res/la
+00000580: 796f 7574 2f68 6f6d 655f 7669 6577 2e78 yout/home\_view.x
+00000590: 6d6c 0000 0002 2001 f801 0000 7f00 0000 ml.... .........
+ ⋮
+00000700: 0000 0000 0909 686f 6d65 5f76 6965 7700 ......home\_view.
+00000710: 0202 1000 1400 0000 0100 0000 0100 0000 ................
+ ⋮
+00000870: 0000 ad04 0000 7265 732f 6c61 796f 7574 ......res/layout
+00000880: 2f68 6f6d 655f 7669 6577 2e78 6d6c 504b /home\_view.xmlPK
  ⋮],
-  [Even if you are only appending properties to avoid breaking the component functions, these two signatures always change. The use of \@JvmOverloads on the primary constructor does not propagate to the copy functions. Any consumers using copy will now receive a NoSuchMethodError at runtime.],
-  [id="mitigation-no-data"\>Mitigation: No data],
-  [The only real way to avoid these binary-incompatibilities for public API is to avoid the data modifier from the start and implement equals , hashCode , and toString yourself. Adding nickname to a non-data class can be now done in a fully-compatible way.],
-  [constructor ( name : String , age : Int ) : this ( name , null , age )],
-  [override fun toString () = "Person(name=\$name, nickname=\$nickname, age=\$age)" 
- override fun equals ( other : Any ?) = other is Person 
- && name == other . name 
- && nickname == other . nickname 
- && age == other . age 
- override fun hashCode () = Objects . hash ( name , nickname , age ) 
- }],
-  [You can implement the componentN() functions yourself to support destructuring. If you plan to add properties in the middle of the list, however, it may not make sense for the type to support destructuring.],
-  [The copy method can also be written manually, but evolving it compatibly is tricky. The simplest way is to maintain all of the old versions of the function but mark them as \@Deprecated(level=HIDDEN) . This will keep their methods in the bytecode for old callers, but prevent new users from calling anything but the latest version.],
-  [\@Deprecated ( "" , level = HIDDEN ) \/\/ For binary compatibility. 
- fun copy ( name : String = this . name , age : Int = this . age ) = 
- copy ( name = name , age = age ) \/\/ Calls the function below.],
-  [fun copy ( name : String = this . name , nickname : String ? = this . nickname , age : Int = this . age ) = 
- Person ( name , nickname , age ) 
- }],
-  [id="interop-compatibility"\>Interop Compatibility],
-  [Another part of compatibility when migrating the Person library from Java to Kotlin is maintaining correct conventions for the API exposed to each language.],
-  [To avoid the explosion of constructors in Java, the Person type would traditionally hide its constructor and expose a nested Builder class. This not only allows adding new properties without a concern of binary compatibility, but allows properties to be supplied in any order and for partially-constructed instances to be passed around.],
-  [class="highlight"\> public final class Person {
- ⋮
- 
- - public Person(\@NonNull String name, \@Nullable String nickname, int age) {
- + private Person(\@NonNull String name, \@Nullable String nickname, int age) {
- this.name = name;
- this.nickname = nickname;
- this.age = age;
- }
- 
- ⋮
- +
-+ public static final class Builder {
-+ private String name;
-+ private String nickname;
-+ private int age;
-+
-+ public Builder setName(String name) { this.name = name; }
-+ public Builder setNickname(String nickname) { this.nickname = nickname; }
-+ public Builder setAge(int age) { this.age = age; }
-+
-+ public Person build() {
-+ return new Person(requireNonNull(name), nickname, age);
-+ }
-+ }
- }],
-  [Creating the builder in Kotlin is nearly identical.],
-  [class="highlight"\> -class Person(
- +class Person private constructor(
- val name: String,
- val nickname: String?,
- val age: Int
- ) {
- override fun toString() = TODO()
- override fun equals(other: Any) = TODO()
- override fun hashCode() = TODO()
- +
-+ class Builder {
-+ private var name: String? = null
-+ private var nickname: String? = null
-+ private var age: Int = 0
-+
-+ fun setName(name: String?) = apply { this.name = name }
-+ fun setNickname(nickname: String?) = apply { this.nickname = nickname }
-+ fun setAge(age: Int) = apply { this.age = age }
-+
-+ fun build() = Person(name!!, nickname, age)
-+ }
- }],
-  [Nothing too interesting here, but by supporting Java we're starting to create problems for Kotlin.],
-  [id="builder-boilerplate"\>Builder Boilerplate],
-  [A builder is usually a mutable(ish) version of an immutable type that also is responsible for validating any invariants (such as, in this case, that name is not null). It can be tempting to rewrite it in Kotlin as public var s to avoid the manual setter boilerplate.],
-  [class="highlight"\> class Builder {
- - private var name: String? = null
- + var name: String? = null
- - private var nickname: String? = null
- + var nickname: String? = null
- - private var age: Int = 0
- + var age: Int = 0
- 
- - fun setName(name: String?) = apply { this.name = name }
-- fun setNickname(nickname: String?) = apply { this.nickname = nickname }
-- fun setAge(age: Int) = apply { this.age = age }
--
- fun build() = Person(name!!, nickname, age)
- }],
-  [Unfortunately, doing so would be incorrect. The return type of the generated setters are now void instead of Builder .],
-  [Without a language change to allow property setters to return values, we are forced to use setter functions. I tend to keep the public var but hide its void -returning setter from Java with the \@JvmSynthetic annotation. This allows Kotlin users to still get full usage of the property for reading and writing.],
-  [class="highlight"\> class Builder {
- - private var name: String? = null
- + \@set: JvmSynthetic \/\/ Hide 'void' setter from Java
-+ var name: String? = null
- - private var nickname: String? = null
- + \@set: JvmSynthetic \/\/ Hide 'void' setter from Java
-+ var nickname: String? = null
- - private var age: Int = 0
- + \@set: JvmSynthetic \/\/ Hide 'void' setter from Java
-+ var age: Int = 0
- 
- fun setName(name: String?) = apply { this.name = name }
- fun setNickname(nickname: String?) = apply { this.nickname = nickname }
- fun setAge(age: Int) = apply { this.age = age }
- 
- fun build() = Person(name!!, nickname, age)
- }],
-  [There is no annotation to hide the setter functions from Kotlin callers. While not essential, they're far better served by mutating the properties in an apply { } block.],
-  [id="constructor"\>Constructor],
-  [By virtue of making the primary constructor private we've removed the idiomatic means of creating a Person for Kotlin. Instead of a builder, Kotlin prefers default parameter values and named arguments. The \@JvmSynthetic annotation can't be used to hide constructors from Java, so we need to purse a different approach.],
-  [There is a convention of defining a top-level function whose name is the same as a type which we can use to replicate the constructor.],
-  [class="highlight"\> fun Person ( name : String , nickname : String ? = null , age : Int ): Person { 
- return Person ( name , nickname , age ) 
- }],
-  [Since this is a regular function and not a constructor, we can hide it from Java with \@JvmSynthetic .],
-  [Once again, however, we've fallen into a binary compatibility trap. This signature has the same problem as the copy function that was generated for a data class.],
-  [Thankfully, since we wrote this function, the same mitigation trick can be used as outlined above for a manually-written copy . That is, we maintain the old versions of the function and mark them as \@Deprecated(level=HIDDEN) .],
-  [These factory functions have no way of enforcing only named-parameter usage. As a result, they are vulnerable to source-incompatibility issues as arguments change position.],
-  [There's also the problem of having to duplicate default values in each of these factory functions and the builder. A best practice would be to maintain defaults in private constants that could be re-used, but that requires additional discipline and continues to add boilerplate.],
-  [id="mitigation-factory-dsl"\>Mitigation: Factory DSL?],
-  [While currently unconventional, another potential workaround for the constructor problem is to change from a function-like syntax to a DSL-like syntax leveraging the Builder .],
-  [class="highlight"\> \@JvmSynthetic \/\/ Hide from Java callers who should use Builder. 
- fun Person ( initializer : Person . Builder .() -\> Unit ): Person { 
- return Person . Builder (). apply ( initializer ). build () 
- }],
-  [Creation of an instance now looks more like inline-JSON.],
-  [This also has the advantage of re-using any default values from the builder allowing them to be localized in one place.],
-  [DSLs tend to have specialized usage and are do not currently have widespread usage as factories. Their ability to enforce named usage and maintain source and binary compatibility as properties are introduced makes them an attractive solution, however.],
-  [id="summary"\>Summary],
-  [Using Kotlin types whose properties will change over time in public API requires extra care to maintain source and binary compatibility as well as an idiomatic API for each language.],
-  [Avoid using the data modifier. Instead, implement equals , hashCode , and toString yourself for these value-based types.],
-  [Expose a builder for Java callers. Public var s are not enough, fluent setters need to be written.],
-  [Hide constructors and be mindful of factory function binary compatibility. Reusing the builders for a DSL-factory may be a way to avoid this.],
-  [If your type is not going to change its properties over time (like a 2D point) you can ignore this advice and stick with a simple data class .],
-  [Here is the final Person declaration for the public API of a library:],
-  [class="highlight"\> class Person private constructor ( 
- val name : String , 
- val nickname : String ?, 
- val age : Int 
- ) { 
- override fun toString () = "Person(name=\$name, nickname=\$nickname, age=\$age)" 
- override fun equals ( other : Any ?) = other is Person 
- && name == other . name 
- && nickname == other . nickname 
- && age == other . age 
- override fun hashCode () = Objects . hash ( name , nickname , age )],
-  [class Builder { 
- \@ set : JvmSynthetic \/\/ Hide 'void' setter from Java 
- var name : String ? = null 
- \@ set : JvmSynthetic \/\/ Hide 'void' setter from Java 
- var nickname : String ? = null 
- \@ set : JvmSynthetic \/\/ Hide 'void' setter from Java 
- var age : Int = 0],
-  [fun setName ( name : String ?) = apply { this . name = name } 
- fun setNickname ( nickname : String ?) = apply { this . nickname = nickname } 
- fun setAge ( age : Int ) = apply { this . age = age }],
-  [fun build () = Person ( name !! , nickname , age ) 
- } 
- }],
-  [\@JvmSynthetic \/\/ Hide from Java callers who should use Builder. 
- fun Person ( initializer : Person . Builder .() -\> Unit ): Person { 
- return Person . Builder (). apply ( initializer ). build () 
- }],
-  [Quite the distance from the simple data class version, but it's at least safe to change over time.],
-  [Future versions of Kotlin will stabilize compiler plugins allowing these patterns to be placed behind annotations or custom modifiers.],
-  [class="highlight"\> \/\/ Hypothetical 'value' on 'class' provides generated 'equals', 
- \/\/ 'hashCode', and 'toString' similar to 'data'. 
- value class Person private constructor ( 
- val name : String , 
- val nickname : String ? = null , 
- val age : Int 
- ) { 
- \/\/ Hypothetical 'builder' on nested 'class' exposes mutable 
- \/\/ versions of primary constructor properties. 
- builder class Builder 
- }],
-  [This will eliminate the boilerplate required to create Kotlin types suitable for evolving in public APIs.],
-),
-  insert-map: (:),
-  word-count: 2914,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-}
-
-{
-  #standard-article(
-  title: [Sixteen corners],
-  author: [Jake Wharton],
-  source-name: [Jake Wharton],
-  images: (),
-  paragraphs: (
-  [Last year I built a library called Picnic for rendering data tables in monospaced environments like your terminal. Part of rendering the table is calculating what character to use for each wall and each corner separating the cells.],
-  [Here's a representative output with a bunch of different corner styles:],
+  [There are three uncompressed occurrences of the path and one uncompressed occurrence of only the name in the APK based on this output.],
+  [If you have not read my post on calculating zip entry size or are not familiar with the structure of a zip file , a zip file is a list of file entries followed by a directory of all available entries. Each entry contains the file path and so does the directory. This accounts for the first occurrence (the entry header) and the last occurrence (the directory record) in the output.],
+  [The middle two occurrences in the output are from inside the resources.arsc file which is a database of sorts for resources. Its contents are visible because the file is uncompressed inside the APK. Running aapt dump --values resources build/outputs/apk/release/app-release-unsigned.apk shows the home\_view record and its mapping to the path:],
+  [class="highlight"\> Package Groups (1)
+Package Group 0 id=0x7f packageCount=1 name=com.example
+ Package 0 id=0x7f name=com.example
+ type 0 configCount=1 entryCount=1
+ spec resource 0x7f010000 com.example:layout/home\_view: flags=0x00000000
+ config (default):
+ resource 0x7f010000 com.example:layout/home\_view: t=0x03 d=0x00000000 (s=0x0008 r=0x00)
+ (string8) "res/layout/home\_view.xml"],
+  [The APK contains a fifth occurrence of the name inside the classes.dex file. It does not show up in the xxd output because the file is compressed. Running baksmali dump],
+  [This is for the field inside the R.layout class which maps the layout name to a unique integer value. Incidentally, that integer is the index into the resources.arsc database to look up the associated file name for reading its XML contents.],
+  [To summarize the answer to our question, for each resource file, the full path appears three times and the name appears twice.],
+  [id="optimizing-resources"\>Optimizing resources],
+  [Android Gradle plugin 4.2 introduces the android.enableResourceOptimizations=true flag which will run optimizations targeted for resources. This invokes the aapt optimize command on the merged resources and resources.arsc file before they are packaged into the APK. The optimization only applies to release builds and will run regardless of whether minifyEnabled is set to true.],
+  [With the flag added to gradle.properties we can compare two APKs using diffuse to see its effects. The output is long, so we'll break it apart by section.],
   [class="highlight"\> │ compressed │ uncompressed
- ├───────────┬───────────┬───────┼───────────┬───────────┬────────
+ ├─────────┬───────┬───────┼─────────┬─────────┬───────
  APK │ old │ new │ diff │ old │ new │ diff
-──────────┼───────────┼───────────┼───────┼───────────┼───────────┼────────
- dex │ 664.8 KiB │ 664.8 KiB │ -25 B │ 1.5 MiB │ 1.5 MiB │ -112 B
- arsc │ 201.7 KiB │ 201.7 KiB │ 0 B │ 201.6 KiB │ 201.6 KiB │ 0 B
- manifest │ 1.4 KiB │ 1.4 KiB │ 0 B │ 4.2 KiB │ 4.2 KiB │ 0 B
- res │ 418.2 KiB │ 418.2 KiB │ -14 B │ 488.3 KiB │ 488.3 KiB │ 0 B
+──────────┼─────────┼───────┼───────┼─────────┼─────────┼───────
+ dex │ 695 B │ 695 B │ 0 B │ 1,016 B │ 1,016 B │ 0 B
+ arsc │ 682 B │ 674 B │ -8 B │ 576 B │ 564 B │ -12 B
+ manifest │ 535 B │ 535 B │ 0 B │ 1.1 KiB │ 1.1 KiB │ 0 B
+ res │ 185 B │ 157 B │ -28 B │ 116 B │ 116 B │ 0 B
  asset │ 0 B │ 0 B │ 0 B │ 0 B │ 0 B │ 0 B
- other │ 37.1 KiB │ 37.1 KiB │ 0 B │ 36.3 KiB │ 36.3 KiB │ 0 B
-──────────┼───────────┼───────────┼───────┼───────────┼───────────┼────────
- total │ 1.3 MiB │ 1.3 MiB │ -39 B │ 2.2 MiB │ 2.2 MiB │ -112 B],
-  [Wall border calculation is straightforward. For a vertical wall, a vertical pipe is used if either or both of the two cells wants a border, otherwise an empty space is used. 1],
-  [Corner calculation is a bit more involved. A corner has four potential segments for the four cardinal directions that may be drawn. The four adjacent cells each participate in the visibility of two segments.],
-  [id="corner-characters"\>Corner Characters],
-  [Once the code determines the four boolean values for the four segments of a corner we need to map that to the display character. Four booleans produce sixteen possible values.],
-  [Initially I started with the naive nesting of conditionals to get it working.],
-  [class="highlight"\> return if ( left ) { 
- if ( right ) { 
- if ( up ) { 
- if ( down ) { 
- '┼' 
- } else { 
- '┴' 
- } 
- } else { 
- if ( down ) { 
- '┬' 
- } else { /\*..\*/ } 
- } 
- } else { /\*..\*/ } 
- }],
-  [Nesting conditionals is an optimization so that each boolean is only checked once. If we wanted, we could flatten the conditionals by repeatedly checking each boolean.],
-  [class="highlight"\> if ( left && right && up && down ) return '┼' 
- if ( left && right && up && ! down ) return '┴' 
- if ( left && right && ! up && down ) return '┬' 
- if ( left && right && ! up && ! down ) return '─' 
- \/\/ ...],
-  [The boolean type is a facade over the binary values 0 and 1. Replacing these conditionals with the corresponding binary yields familiar values: 1111 , 1110 , 1101 , 1100 , etc. These are the decimal values 15, 14, 13, 12, and so on down to 0.],
-  [Mapping the four booleans to these bits gives a decimal we can use to index into a single string which contains all the corner characters.],
-  [class="highlight"\> val corners = " ╷╵│╶┌└├╴┐┘┤─┬┴┼" 
- val index = 
- ( if ( down ) 0b0001 else 0 ) or 
- ( if ( up ) 0b0010 else 0 ) or 
- ( if ( right ) 0b0100 else 0 ) or 
- ( if ( left ) 0b1000 else 0 ) 
- return corners [ index ]],
-  [Much nicer!],
-  [id="testing-corners"\>Testing Corners],
-  [The logic of determining the four booleans and then choosing the corner character needs tests. Once again I started with the naive approach of a bunch of 2x2 tables with varying borders so that the middle corner was different in each.],
-  [\@Test fun borderLeftRightUp () { 
- val table = table { /\*..\*/ } 
- assertThat ( table . renderText ()). isEqualTo ( """
- |1│2
- |─┴─
- |3 4
- |""" . trimMargin ()) 
- }],
-  [Needing sixteen different tests feels very much like the nested conditionals above. Sure it's correct, but can we do better? That was the question I presented to two friends who had already been watching me build the library.],
-  [(At this point I think they know to just stand back as I fall down these rabbit holes.)],
-  [What do you think? Feel free to give it a try! Scroll down for the answer...],
-  [1111...],
-  [1110...],
-  [1101...],
-  [1100...],
-  [1011...],
-  [1010...],
-  [1001...],
-  [1000...],
-  [0111...],
-  [0110...],
-  [0101...],
-  [0100...],
-  [0011...],
-  [0010...],
-  [0001...],
-  [0000!],
-  [After about 10 minutes at the whiteboard I managed to come up with a configuration that worked.],
-  [This translates nicely into a single test.],
-  [class="highlight"\> \@Test fun allCorners () { 
- val table = table { /\*..\*/ } 
- assertThat ( table . renderText ()). isEqualTo ( """
- |┌─┬─┐ ╷
- |│1│2│3│
- |├─┤ ╵ │
- |│4│5 6│
- |└─┼───┘
- | 7│8 9 
- |╶─┴─╴ 
- |""" . trimMargin ()) 
- }],
-  [The number of theoretical arrangements of corners is 16!, or 20,922,789,888,000, so finding a solution felt like a nice win.],
-  [This post was supposed to stop here, but...],
-  [id="finding-all-possible-arrangements"\>Finding All Possible Arrangements],
-  [I did the above work a year ago, but upon seeing the very large value of 16! in preparing the post I began to wonder how many valid arrangements exist.],
-  [Once again starting naive, I wrote a recursive function which created permutations of the numbers [0,15] and then did a validation pass to see if all corresponding corners had matching edges.],
-  [This was exorbitantly slow. I let it run for an hour, and it never got far enough to find a single match.],
-  [Instead of validating each complete permutation, huge sets of permutation candidates could immediately be rejected as soon as two corners were invalid. For example, if the very first corner (upper left) has a left or up segment we can immediately reject it and eliminate 15! candidates.],
-  [class="highlight"\> fun validTables (): Sequence = sequence { 
- val state = IntArray ( 16 ) 
- suspend fun SequenceScope . placeCorner ( index : Int ) { 
- if ( index == 16 ) { 
- yield ( state . clone ()) 
- return 
- } 
- for ( corner in 0 until 16 ) { 
- \/\/ TODO validate corner fits here!],
-  [state [ index ] = corner 
- placeCorner ( index + 1 ) 
- } 
- } 
- placeCorner ( 0 ) 
- }],
-  [Instead of using a two-dimensional array to map the 4x4 grid it is flattened into a single 16-element array.],
-  [Since each corner needs to be different, we need to track which of the 16 were already used. This could be done with a Set but that would require allocation. Since the range of values is [0,15] and we only need to store a boolean value we can once again turn to using bits in a single Int .],
-  [class="highlight"\> fun validTables(): Sequence = sequence {
- val state = IntArray(16)
- - suspend fun SequenceScope .placeCorner(index: Int) {
- + suspend fun SequenceScope .placeCorner(index: Int, used: Int) {
- if (index == 16) {
- yield(state.clone())
- return
- }
- for (corner in 0 until 16) {
- + if (used.hasBit(corner)) continue
-+
- \/\/ TODO validate corner fits here!
- 
- state[index] = corner
- - placeCorner(index + 1)
- + placeCorner(index + 1, used.withBit(corner))
- }
- }
- - placeCorner(0)
- + placeCorner(0, 0)
- }
- +
-+fun Int.hasBit(bit: Int) = ((1 shl bit) and this) != 0
-+fun Int.withBit(bit: Int) = (1 shl bit) or this],
-  [There are three constraints for placing a corner at the current index that must be validated:],
-  [If the corner is at the edge of the square, no corner segment must be present in the direction of the edge.],
-  [For example, index 0 which is at the top and left edge of the 4x4 cannot be ├ because it has an up segment.],
-  [If there is a corner to the left of the current index in the 4x4 grid, this corner can only have a left segment if that corner has a right segment.],
-  [For example, if ┐ is at index 1 then ┬ is invalid for index 2 since they do not agree about the presence of a horizontal segment.],
-  [If there is a corner above the current index in the 4x4 grid, this corner can only have an up segment if that corner has a down segment.],
-  [For example, if ╶ is at index 0 then ├ is invalid for index 4 since they do not agree about the presence of a vertical segment.],
-  [In the same way four booleans were used as bits to create the numbers [0,15] in the first section, we can invert that operation to extract the four booleans from the numbers to perform validation.],
-  [class="highlight"\> fun Int . hasDownSegment () = ( 0b0001 and this ) != 0 
- fun Int . hasUpSegment () = ( 0b0010 and this ) != 0 
- fun Int . hasRightSegment () = ( 0b0100 and this ) != 0 
- fun Int . hasLeftSegment () = ( 0b1000 and this ) != 0],
-  [With these helpers we can add the validation.],
-  [class="highlight"\> for (corner in 0 until 16) {
- if (used.hasBit(corner)) continue
- 
- - \/\/ TODO validate corner fits here!
- + if (index \> 11 && corner.hasDownSegment()) continue \/\/ Bottom row
-+ if (index % 4 == 3 && corner.hasRightSegment()) continue \/\/ Right column
-+
-+ \/\/ Find the previous row and column corners so we can test if the current corner can fit at
-+ \/\/ this position. Use 0 when in top row or left column since it will always be incompatible.
-+ val previousRowCorner = if (index % 4 == 0) 0 else state[index - 1]
-+ val previousColCorner = if (index],
-  [class="highlight"\> fun main () { 
- val time = measureTimeMillis { 
- validTables (). forEachIndexed { index , corners -\> 
- val table = corners . map { " ╷╵│╶┌└├╴┐┘┤─┬┴┼" . get ( it ) } 
- . joinToString ( "" ) 
- . chunked ( 4 ) 
- . joinToString ( "\\n" ) 
- println ( "\#\${index + 1}: \${state.contentToString()}\\n\$table\\n" ) 
- } 
- } 
- println ( "Done. Took \$time milliseconds." ) 
- }],
-  [Survey says?],
-  [...],
-  [\#652: [5, 13, 12, 9, 7, 15, 8, 3, 6, 11, 1, 2, 4, 14, 10, 0]
-┌┬─┐
-├┼╴│
-└┤╷╵
-╶┴┘],
-  [Done. Took 57 milliseconds.],
-  [Considerably faster than taking hours! Only 652 valid candidates out of 20,922,789,888,000 possible permutations. You can check out the full list here .],
-  [If we look at output \#1 above, this table is technically invalid since it contains an orphan corner in the upper right. There is no way to create such a corner by setting borders on table cells. However, purely from a segment-validation standpoint it is valid. Visual inspection of the candidates makes it seem like about 15-25% suffer from this case.],
-  [I'm out of time on this post, so finding the true number of valid configurations expressible by table cell borders will have to be an exercise left to the reader.],
-  [Creating Picnic was a fun rabbit hole to fall into for a few days last year. Aside from the challenges of corners, it implements the CSS specification for measuring and laying out tables and supports row and column spans, vertical and horizontal text alignment, and vertical and horizontal cell padding.],
-  [If you ever need to display a command-line table and have written an HTML table in your life it should be very approachable with Picnic.],
+ other │ 22 B │ 22 B │ 0 B │ 0 B │ 0 B │ 0 B
+──────────┼─────────┼───────┼───────┼─────────┼─────────┼───────
+ total │ 2.1 KiB │ 2 KiB │ -36 B │ 2.7 KiB │ 2.7 KiB │ -12 B],
+  [First is a diff of the contents in the APK. The "compressed" columns are the size cost inside the APK, and the "uncompressed" columns are the cost when extracted.],
+  [The res category represents our single resource file whose size dropped 28 bytes. The arsc category is for the resource.arsc file which itself dropped 8 bytes. We'll see the cause of these changes shortly.],
+  [class="highlight"\> DEX │ old │ new │ diff
+─────────┼─────┼─────┼───────────
+ files │ 1 │ 1 │ 0
+ strings │ 15 │ 15 │ 0 (+0 -0)
+ types │ 8 │ 8 │ 0 (+0 -0)
+ classes │ 2 │ 2 │ 0 (+0 -0)
+ methods │ 3 │ 3 │ 0 (+0 -0)
+ fields │ 1 │ 1 │ 0 (+0 -0)],
+  [ARSC │ old │ new │ diff
+─────────┼─────┼─────┼──────
+ configs │ 1 │ 1 │ 0
+ entries │ 1 │ 1 │ 0],
+  [These two sections represent the code and contents of the resource database. Having no changes, we can infer that the optimizations have not affected the R.layout.home\_view field nor the home\_view resource entry.],
+  [compressed │ uncompressed │
+───────┬────────┼───────┬────────┤
+ size │ diff │ size │ diff │ path
+───────┼────────┼───────┼────────┼────────────────────────────
+ │ -185 B │ │ -116 B │ - res/layout/home\_view.xml
+ 157 B │ +157 B │ 116 B │ +116 B │ + res/eA.xml
+ 674 B │ -8 B │ 564 B │ -12 B │ ∆ resources.arsc
+───────┼────────┼───────┼────────┼────────────────────────────
+ 831 B │ -36 B │ 680 B │ -12 B │ (total)],
+  [Finally, a granular diff of the file changes shows the effect of optimization. Our layout resource had its filename significantly truncated and was moved out of the layout\/ folder!],
+  [Inside the Gradle project, the folder and file names of XMLs have meaning. The folder is the resource type, and the name corresponds to the generated field and resource entry in the .arsc file. Once those files are inside the APK, however, the file path is meaningless and arbitrary. Resource optimization leverages this fact by making the names as short as possible 1 .],
+  [The output of aapt dump confirms that the resource database also reflects the file change:],
+  [class="highlight"\> Package Groups (1)
+Package Group 0 id=0x7f packageCount=1 name=com.example
+ Package 0 id=0x7f name=com.example
+ type 0 configCount=1 entryCount=1
+ spec resource 0x7f010000 com.example:layout/home\_view: flags=0x00000000
+ config (default):
+ resource 0x7f010000 com.example:layout/home\_view: t=0x03 d=0x00000000 (s=0x0008 r=0x00)
+ (string8) "res/eA.xml"],
+  [All three occurrences of the path in the APK are now shorter which results in the 36 byte savings. And while 36 bytes is a very small number, remember that the entire binary is only 2,118 bytes. A 36-byte savings is a 1.7% size reduction!],
+  [id="real-world-examples"\>Real-world examples],
+  [The resources of a real application number far more than just one. What does this optimization look like when applied to a real application?],
+  [id="plaid"\>Plaid],
+  [Nick Butcher's Plaid app has 734 resource files. In addition to their quantity, the names of the resource files are more descriptive (which is a fancy way of saying they're longer). Instead of home\_view , Plaid contains names like searchback\_stem\_search\_to\_back.xml , attrs\_elastic\_drag\_dismiss\_frame\_layout , and designer\_news\_story\_description.xml .],
+  [After updating the project to AGP 4.2, I used diffuse to compare a build without resource optimization to one with it enabled:],
+  [├───────────┬───────────┬───────────┼───────────┬───────────┬───────────],
+  [APK │ old │ new │ diff │ old │ new │ diff],
+  [──────────┼───────────┼───────────┼───────────┼───────────┼───────────┼───────────],
+  [dex │ 3.8 MiB │ 3.8 MiB │ 0 B │ 9.9 MiB │ 9.9 MiB │ 0 B],
+  [arsc │ 316.7 KiB │ 292.5 KiB │ -24.2 KiB │ 316.6 KiB │ 292.4 KiB │ -24.2 KiB],
+  [manifest │ 3 KiB │ 3 KiB │ 0 B │ 11.9 KiB │ 11.9 KiB │ 0 B],
+  [res │ 539.2 KiB │ 490.7 KiB │ -48.5 KiB │ 617.2 KiB │ 617.2 KiB │ 0 B],
+  [native │ 4.6 MiB │ 4.6 MiB │ 0 B │ 4.6 MiB │ 4.6 MiB │ 0 B],
+  [asset │ 0 B │ 0 B │ 0 B │ 0 B │ 0 B │ 0 B],
+  [other │ 83.6 KiB │ 83.6 KiB │ 0 B │ 128.6 KiB │ 128.6 KiB │ 0 B],
+  [──────────┼───────────┼───────────┼───────────┼───────────┼───────────┼───────────],
+  [total │ 9.4 MiB │ 9.3 MiB │ -72.7 KiB │ 15.6 MiB │ 15.5 MiB │ -24.2 KiB],
+  [Resource optimization netted a 0.76% savings on APK size. The native library size kept the impact smaller than I had hoped.],
+  [id="seriesguide"\>SeriesGuide],
+  [Uwe Trottmann's SeriesGuide app has 1044 resource files. Unlike Plaid, it is free of native libraries which should increase the impact of the optimization.],
+  [Once again I updated the project to AGP 4.2 and used diffuse to compare two builds:],
+  [class="highlight"\> │ compressed │ uncompressed
+ ├───────────┬───────────┬───────────┼───────────┬───────────┬───────────
+ APK │ old │ new │ diff │ old │ new │ diff
+──────────┼───────────┼───────────┼───────────┼───────────┼───────────┼───────────
+ dex │ 2.4 MiB │ 2.4 MiB │ 0 B │ 5.7 MiB │ 5.7 MiB │ 0 B
+ arsc │ 1.7 MiB │ 1.6 MiB │ -32.9 KiB │ 1.7 MiB │ 1.6 MiB │ -32.9 KiB
+ manifest │ 5.6 KiB │ 5.6 KiB │ 0 B │ 28.3 KiB │ 28.3 KiB │ 0 B
+ res │ 693.9 KiB │ 628 KiB │ -66 KiB │ 992.2 KiB │ 992.2 KiB │ 0 B
+ asset │ 39.9 KiB │ 39.9 KiB │ 0 B │ 100.4 KiB │ 100.4 KiB │ 0 B
+ other │ 118.1 KiB │ 118.1 KiB │ 0 B │ 148.8 KiB │ 148.8 KiB │ 0 B
+──────────┼───────────┼───────────┼───────────┼───────────┼───────────┼───────────
+ total │ 4.9 MiB │ 4.8 MiB │ -98.9 KiB │ 8.6 MiB │ 8.6 MiB │ -32.9 KiB],
+  [Here resource optimization was able to reduce the APK size by 2.0%!],
+  [id="tivi"\>Tivi],
+  [Chris Banes' Tivi app has a non-trivial subset written using Jetpack Compose which means fewer resources overall. A current build still contains 776 resource files.],
+  [By virtue of using Compose, Tivi is already using the latest AGP 4.2. With two quick builds we can see the impact of resource optimization:],
+  [├───────────┬───────────┬───────────┼───────────┬───────────┬───────────],
+  [APK │ old │ new │ diff │ old │ new │ diff],
+  [──────────┼───────────┼───────────┼───────────┼───────────┼───────────┼───────────],
+  [dex │ 3 MiB │ 3 MiB │ 0 B │ 6.8 MiB │ 6.8 MiB │ 0 B],
+  [arsc │ 363.4 KiB │ 337.9 KiB │ -25.6 KiB │ 363.3 KiB │ 337.7 KiB │ -25.6 KiB],
+  [manifest │ 3.6 KiB │ 3.6 KiB │ 0 B │ 16.1 KiB │ 16.1 KiB │ 0 B],
+  [res │ 680.4 KiB │ 629.2 KiB │ -51.2 KiB │ 1.2 MiB │ 1.2 MiB │ 0 B],
+  [asset │ 39.9 KiB │ 39.9 KiB │ 0 B │ 100.4 KiB │ 100.4 KiB │ 0 B],
+  [other │ 159.9 KiB │ 151.7 KiB │ -8.2 KiB │ 306.3 KiB │ 254.8 KiB │ -51.5 KiB],
+  [──────────┼───────────┼───────────┼───────────┼───────────┼───────────┼───────────],
+  [total │ 4.2 MiB │ 4.1 MiB │ -85 KiB │ 8.8 MiB │ 8.7 MiB │ -77.1 KiB],
+  [Once again we hit the 2.0% mark for APK size reduction!],
+  [id="one-more-occurrence"\>One more occurrence],
+  [All four examples so far have not used signed APKs. There are multiple versions of APK signing, and if your minSdkVersion is lower than 24 you are required include version 1 (V1) when signing. V1 signing uses Java's .jar 
+signing specification which signs each file individually as a text entry in the META-INF/MANIFEST. MF file.],
+  [After creating and configuring a keystore for the original single-layout app, dumping the manifest file with unzip -c build/outputs/apk/release/app-release.apk META-INF/MANIFEST. MF shows these signatures:],
+  [Name: AndroidManifest.xml
+SHA-256-Digest: HdoGVd8U3Zjtf2VkGLExAPCQ1fq+kNL8eHKjVQXGI60=],
+  [Name: classes.dex
+SHA-256-Digest: BVA1ApPvECg56DrrNPgD3jgv1edcM8VKYjcJEAG4G44=],
+  [Name: res/eA.xml
+SHA-256-Digest: nDn7UQex2OWB3/AT054UvSAx9pYNSWwERCLfgdM6J6c=],
+  [Name: resources.arsc
+SHA-256-Digest: 6w7i2Z9+LjwqlXS7YhhjzP/XhgvJF3PUuyJM60t0Qbw=],
+  [The full path of each file makes an appearance bringing the total occurrences of each resource path to four. Since shorter names will once again result in this file containing fewer bytes, resource optimization has an even greater impact.],
+  [The Google-internal email which introduced me to this feature purported a savings of 1-3% on final APK size. Based on real-world tests this range seems to be about right. Ultimately the savings will depend on the size and number of resource files in your APK.],
+  [If you're already using AGP 4.2 add android.enableResourceOptimizations=true to your gradle.properties and enjoy this free APK size savings. If you are not yet on AGP 4.2 add it anyway so that you don't forget when you eventually upgrade!],
   [id="fn-1"\>],
-  [It's actually little more complicated than this. If none of the rows want to draw a border between the two cells in these columns then the border width will be zero and won't occupy any space. ↩],
+  [In this example, notably, the name doesn't seem as small as possible since it is two characters instead of one. A hash function computes the new name for each file. The number of resource files dictates the size of the hash which has a lower bound of two. The algorithm appears to work with a lower bound of one, so I'm not sure why the author chose to use two. Perhaps they didn't expect projects to contain fewer than 64 resources. I sent r.android.com/1416749 to lower the bound. ↩],
 ),
   insert-map: (:),
-  word-count: 2001,
+  inline-pq: pull-quote([arsc file before they are packaged into the APK.], [Jake Wharton]),
+  inline-pq-idx: 30,
+  word-count: 2224,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+}
+
+{
+  #standard-article(
+  title: [ActionBarSherlock - A Love Story (Part 3)],
+  author: [Jake Wharton],
+  source-name: [Jake Wharton],
+  images: (),
+  paragraphs: (
+  [I am talking, of course, about version 3 and version 4, respectively. And I’m also lying a bit because I won’t just be abandoning the 3.x users either. I’ll give you a two-month deprecation window from version 4’s release. Because…],
+  [ActionBarSherlock v4 is coming and it is awesome.],
+  [Now I realize that I am a bit biased, but let me explain how this version is the first version that I think I will be truly proud of.],
+  [No more shuffling between native and custom implementations.],
+  [Google’s support library operates in this way in that it makes no attempt to use any native implementations even if they exist. It is far easier and more stable to keep all of the functionality in the library. Plus, the Android 4.0 action bar has been designed to accommodate every conceivable screen size that the platform can run on so why should we continue bothering to switch to the native implementation?],
+  [Additionally, this change became more and more of an apparent need rather than a choice due to changes in Android 4.0’s MenuItem interface.],
+  [The support library classes are no longer included in the core of the library.],
+  [Though somewhat ironic based on the last point, the decision to allow the library to stand alone was made in order to accommodate developers who were uncomfortable using a custom built version of the support library (or who even didn’t use it at all).],
+  [A version of the support library will be provided as a plugin .jar that has been modified to add ActionBarSherlock support. The changes to the library will be kept at a minimum and will not include any unrelated fixes. File bugs on b.android.com for that, please.],
+  [WARNING: This means that if you are using FragmentMapActivity or using fragments in SherlockPreferenceActivity you WILL have to change your implementation or create your own versions of these base classes. I will no longer be maintaining support for these.],
+  [Extending from a custom base activity is no longer required (but still recommended).],
+  [Similar to how ActionBarSherlock v1 and v2 operated, you can perform static attachment of the action bar to your activities. This allows for the use of alternate base activities such as those provided by other third-party libraries (e.g., RoboGuice).],
+  [The added side-effect of this is that all of the interaction logic has been placed within this single class which is also the one used by the base activities. This means that whether you do use a base activity or choose to interact with the static attachment you are afforded the full API.],
+  [Fully mirrored theming support to mimic the native action bar.],
+  [Forget the ‘ab’-prefixed attributes of v3.x, v4 now allows for defining proper styles for the action bar, action mode, and various other sub-components of the action views.],
+  [It is the Ice Cream Sandwich action bar!],
+  […but you probably knew that already.],
+  [Split action bar, action modes, action providers, condensed tab navigation, and so much more!],
+  [I have been working on this for nearly 8 weeks now so it’s easy for me to get excited. Starting tomorrow the version 4 beta will be officially announced and detailed in a much more technical manner so that you can begin testing and hopefully join in the excitement.],
+  [As it stands now there are still large bugs and “bugs” with version 4. You can find them under milestone 4.0.0 on the GitHub issue tracker. As always, code contributions are welcomed and encouraged.],
+  [There is no timeline yet for the final release. There will be one or two release candidates before which is when I will be working with a few devs on real implementations to determine any problems that exist. If everything goes smoothly the final release will not be far behind that.],
+  [Thank you everyone for your support thus far. Happy new year to all.],
+),
+  insert-map: (:),
+  word-count: 639,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+}
+
+{
+  #standard-article(
+  title: [Multiplatform Compose and Gradle module metadata abuse],
+  author: [Jake Wharton],
+  source-name: [Jake Wharton],
+  images: (),
+  paragraphs: (
+  [My primary work project for the better part of a year (named Redwood) is built on top of Compose 1 and runs on every platform that Kotlin supports. This of course means Android, but we also have Compose running on iOS, the web, the JVM, and all other native targets. It's truly a multiplatform Compose project 2 .],
+  [Getting Compose to run on all these platforms isn't as hard as you would think. The Compose runtime is written as multiplatform Kotlin code but Google only ships it compiled for Android. JetBrains goes farther by shipping versions compiled for the web and for the JVM. We simply go the whole distance and compile it for every Kotlin target, while also shipping it as a single Kotlin multiplatform artifact.],
+  [For a year this worked fine. However, Compose UI recently went stable which meant our Android engineers were eager to start using it in the main app (as opposed to just samples). Upon Compose UI's introduction D8 fails with a duplicate class error:],
+  [The androidx.compose.\* types are compiled into Redwood's multiplatform Compose runtime artifact. Compose UI depends on the official Compose runtime for Android which also contains these types. Since the two artifacts have different Maven coordinates, Gradle allows both to be included in the app which eventually causes D8 to complain 3 .],
+  [Redwood was already building Compose from the same git SHAs as Google's release builds. Ideally we could use our own builds for every platform except Android, and then point at Google's artifact solely for Android. This would allow Gradle to see the two projects as sharing a common dependency thereby de-duplicating the Compose runtime classes.],
+  [id="gradle-module-metadata"\>Gradle module metadata],
+  [The mechanism by which Kotlin multiplatform artifacts resolve the correct dependency is through Gradle's module metadata format .],
+  [Gradle Module Metadata is a unique format aimed at improving dependency resolution by making it multi-platform and variant-aware.],
+  [The module metadata is a JSON document which describes the supported platforms through key/value attributes. For Redwood's Compose runtime the module metadata looks roughly like this:],
+  ["component" : {],
+  ["group" : "app.cash.redwood" ,],
+  ["module" : "compose-runtime" ,],
+  ["version" : "0.1.0-square.15"],
+  [},],
+  ["variants" : \[],
+  [{],
+  ["name" : "releaseApiElements-published" ,],
+  ["attributes" : {],
+  ["org.gradle.usage" : "java-api" ,],
+  ["org.jetbrains.kotlin.platform.type" : "androidJvm"],
+  [},],
+  ["available-at" : {],
+  ["url" : "../../compose-runtime-android/0.1.0-square.15/compose-runtime-android-0.1.0-square.15.module" ,],
+  ["group" : "app.cash.redwood" ,],
+  ["module" : "compose-runtime-android" ,],
+  ["version" : "0.1.0-square.15"],
+  [}],
+  [},],
+  [{],
+  ["name" : "iosArm64ApiElements-published" ,],
+  ["attributes" : {],
+  ["artifactType" : "org.jetbrains.kotlin.klib" ,],
+  ["org.gradle.usage" : "kotlin-api" ,],
+  ["org.jetbrains.kotlin.native.target" : "ios\_arm64" ,],
+  ["org.jetbrains.kotlin.platform.type" : "native"],
+  [},],
+  ["available-at" : {],
+  ["url" : "../../compose-runtime-iosarm64/0.1.0-square.15/compose-runtime-iosarm64-0.1.0-square.15.module" ,],
+  ["group" : "app.cash.redwood" ,],
+  ["module" : "compose-runtime-iosarm64" ,],
+  ["version" : "0.1.0-square.15"],
+  [}],
+  [},],
+  [...],
+  [\]],
+  [}],
+  [When a 64-bit iOS ARM target consumes the app.cash.redwood:compose-runtime dependency, Gradle will parse this JSON file and actually resolve the app.cash.redwood:compose-runtime-iosarm64 artifact. It behaves somewhat like an HTTP 302 redirect by replacing the user-friendly Maven coordinate with the canonical platform-specific coordinate.],
+  [For an Android consumer the artifact redirect resolves to app.cash.redwood:compose-runtime-android which is one of the offending artifact coordinates seen in the duplicate class error from D8. As I mentioned above, what we want is to have this variant redirect to Google's build of the Compose runtime and not our own.],
+  [We could try to alter the values in the available-at object to point to Google's artifact, but according to the Gradle module metadata spec the url key must also point to a metadata file which is something Google does not ship.],
+  [Thankfully, just below available-at in the spec, the dependencies array affords the ability to point at arbitrary Maven coordinates. This would allow us to define a variant with no available-at but a single dependency item to the associated Google Compose runtime artifact.],
+  [class="highlight"\> {
+ "name": "releaseApiElements-published",
+ "attributes": {
+ "org.gradle.usage": "java-api",
+ "org.jetbrains.kotlin.platform.type": "androidJvm"
+ },
+ - "available-at": {
+- "url": "../../compose-runtime-android/0.1.0-square.15/compose-runtime-android-0.1.0-square.15.module",
+- "group": "app.cash.redwood",
+- "module": "compose-runtime-android",
+- "version": "0.1.0-square.15"
+- }
+ + "dependencies": \[
++ {
++ "group": "androidx.compose.runtime",
++ "module": "runtime",
++ "version": {
++ "prefers": "1.0.4"
++ }
++ }
++ \]
+ }],
+  [id="modifying-gradle-module-metadata"\>Modifying Gradle module metadata],
+  [Spoiler alert: You can't. At least not using any stable APIs that Gradle provides 4 .],
+  [The best (only?) mechanism that I've found is to hook into the module metadata file generation task and perform text-based modification of the JSON immediately after it is generated.],
+  [First, we define a text file which contains the expected JSON contents to be replaced 5 .],
+  ["name" : "releaseApiElements-published" ,],
+  ["attributes" : {],
+  ["org.gradle.usage" : "java-api" ,],
+  ["org.jetbrains.kotlin.platform.type" : "androidJvm"],
+  [},],
+  ["available-at" : {],
+  ["url" : "../../compose-runtime-android/{REDWOOD\_VERSION}/compose-runtime-android-{REDWOOD\_VERSION}.module" ,],
+  ["group" : "app.cash.redwood" ,],
+  ["module" : "compose-runtime-android" ,],
+  ["version" : "{REDWOOD\_VERSION}"],
+  [}],
+  [} ,],
+  [{],
+  ["name" : "releaseRuntimeElements-published" ,],
+  ["attributes" : {],
+  ["org.gradle.usage" : "java-runtime" ,],
+  ["org.jetbrains.kotlin.platform.type" : "androidJvm"],
+  [},],
+  ["available-at" : {],
+  ["url" : "../../compose-runtime-android/{REDWOOD\_VERSION}/compose-runtime-android-{REDWOOD\_VERSION}.module" ,],
+  ["group" : "app.cash.redwood" ,],
+  ["module" : "compose-runtime-android" ,],
+  ["version" : "{REDWOOD\_VERSION}"],
+  [}],
+  [} ,],
+  [Notice how the {REDWOOD\_VERSION} placeholder is used to minimize changes to this file over time.],
+  [Next, define the replacement JSON in another file.],
+  [class="highlight"\> { 
+ "name" : "releaseApiElements-published" , 
+ "attributes" : { 
+ "org.gradle.usage" : "java-api" , 
+ "org.jetbrains.kotlin.platform.type" : "androidJvm" 
+ }, 
+ "dependencies" : \[ 
+ { 
+ "group" : "androidx.compose.runtime" , 
+ "module" : "runtime" , 
+ "version" : { 
+ "prefers" : "{COMPOSE\_VERSION}" 
+ } 
+ } 
+ \] 
+ } , 
+ { 
+ "name" : "releaseRuntimeElements-published" , 
+ "attributes" : { 
+ "org.gradle.usage" : "java-runtime" , 
+ "org.jetbrains.kotlin.platform.type" : "androidJvm" 
+ }, 
+ "dependencies" : \[ 
+ { 
+ "group" : "androidx.compose.runtime" , 
+ "module" : "runtime" , 
+ "version" : { 
+ "prefers" : "{COMPOSE\_VERSION}" 
+ } 
+ } 
+ \] 
+ } ,],
+  [Once again we use a special string {COMPOSE\_VERSION} to minimize the need to change this file as we update to new Compose versions.],
+  [Finally, perform this text-based substitution immediately after the file is generated. Here the {REDWOOD\_VERSION} and {COMPOSE\_VERSION} placeholders are replaced with their real values.],
+  [class="highlight"\> tasks . named ( "generateMetadataFileForKotlinMultiplatformPublication" ). configure { 
+ doLast { 
+ String find = file ( 'module\_find.txt' ). text . replace ( '{REDWOOD\_VERSION}' , version ) 
+ String replace = file ( 'module\_replace.txt' ). text . replace ( '{COMPOSE\_VERSION}' , versions . compose )],
+  [File file = outputFile . get (). getAsFile () 
+ String text = file . text],
+  [int start = text . indexOf ( find ) 
+ if ( start == - 1 ) { 
+ throw new RuntimeException ( "Unable to locate module\_find.txt contents in module JSON (\$file)" ) 
+ } 
+ int end = start + find . length ()],
+  [String newText = text . substring ( 0 , start ) + replace + text . substring ( end ) 
+ file . text = newText 
+ } 
+ }],
+  [This is some very hacky code, but any unexpected changes to the module metadata format will cause a build failure allowing you to reevaluate the approach. Perhaps in the future Gradle will support this type of transformation with a stable public API .],
+  [This simple text substitution solves the original duplicate class problem today. And it does so in a way which does not require the consumer to understand the nuances of how the Compose runtime is built.],
+  [Despite solving the issue for Android builds, we still have the duplicate class problem for the other platforms on which multiple Compose-based projects can be used. If you happened to use Redwood on the JVM with JetBrains' Compose for Desktop you would have two copies of the Compose runtime (potentially built from different versions). The same is true for targeting the web and using JetBrains' Compose for Web.],
+  [Google really should be shipping the Compose runtime as a proper multiplatform artifact for all Kotlin targets to remedy this situation. Unfortunately their Kotlin multiplatform story is a few years behind the community's need and the prospect of this happening anytime soon is very unlikely. The best we can hope for now is JetBrains to ship a proper multiplatform artifact of the Compose runtime with the same versioning as Google's and using this hack to point the Android variant at Google's binary. Then everyone in the multiplatform Compose space could standardize on their artifacts.],
+  [Until then, however, we'll continue the imperfect practice of building our own Compose runtime for Redwood and pointing to Google's artifact for Android 6 .],
+  [id="fn-1"\>],
+  [Obligatory: \[I mean Compose and NOT Compose UI\]\[1\]!
+\[1\]: /a-jetpack-compose-by-any-other-name\/ ↩],
+  [id="fn-2"\>],
+  [Continuing with the poor naming surrounding Compose, JetBrains has a project called "Compose Multiplatform" which is not fully multiplatform nor fully ports Compose UI to each supported platform. Our project is "just" the Compose runtime (not Compose UI) but running fully multiplatform. ↩],
+  [id="fn-3"\>],
+  [Unlike the JVM whose classpath is a set of jars which each contain classes where the first wins, Android's classpath is a single set of classes in which duplicates are not supported (because of the dex file format). ↩],
+  [id="fn-4"\>],
+  [As of Gradle 7.2. ↩],
+  [id="fn-5"\>],
+  [Omitted from the earlier example, some variants have both an "api" and "runtime" entry. ↩],
+  [id="fn-6"\>],
+  [We also have to build the Compose Kotlin compiler plugin for native because of how the Kotlin/Native compiler works. Google could ship it , or JetBrains could make the existing plugins work for native . ↩],
+),
+  insert-map: (:),
+  word-count: 1557,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+}
+
+{
+  #standard-article(
+  title: [Play Services 5.0 Is A Monolith Abomination],
+  author: [Jake Wharton],
+  source-name: [Jake Wharton],
+  images: (),
+  paragraphs: (
+  [Guava is a monolithic library, but that's not necessarily a bad thing. Nobody thinks twice when bundling it for the JVM. In the world of Android the mention of Guava has a bit of a negative stigma due to the dex file format's method limit and a concern about bloating APK size. The latter is no longer a valid argument. The dex method limit is a hard 64k limit to which Guava contributes just over 14k methods. 20% of this hard limit vanishes when you include Guava.],
+  [Sounds scary, right? It isn't.],
+  [Google Play Services 5.0 which just launched contributes over twenty thousand methods to your app. 20k+. One third of the limit! Now that is scary.],
+  [The Play Services library includes proprietary functionality built on the normal Android APIs and a separate APK downloaded on all devices with the Play Store. Some of the services it provides are invaluable. Like Guava it is also a monolothic library but it is a bad thing in this case.],
+  [A lot of really cool functionality is being put in Play Services. You'll have a hard time making a compelling app that lives in the Google Play ecosystem without it. You should want to put it in your applications and not have to worry about the overhead it brings.],
+  [Most of the library's offerings are very disparate, having only the fact that they're by Google as a common thread. This screams for small, modular artifacts which can be composed!],
+  [Google, it's time to unbundle. All the cool kids are doing it . (Spoiler alert: it happened )],
+  [At worst, we specify a few dependencies manually:],
+  [Best case would be a plugin that provided a clear DSL to what you were getting and offered easier configuration of the various components.],
+  [playServices { 
+ version '5.0.+' 
+ components 'ads' , 'analytics' , 'games' 
+ }],
+  [(You can even still provide the "fat" jar in both the dependency management world and the people who like manual dependency management.)],
+  [ProGuard is not the answer. Yes, for release builds it's nice to strip out any methods which are not being used. However, this is not justification for having large chunks of unused code as dependencies. Besides, if you read my post on a simulator you know that we deserve a faster development build pipeline which removes steps, not adds them.],
+  [It's not going to be a walk in the park but the packages inside Play Services are surprisingly well-configured to partitioning:],
+  [(Top-left: Games, top-center: Drive, middle-left: Plus, middle: common, middle-right: Maps, bottom: Ads)],
+  [Here's Guava for comparison which has less clear partition lines:],
+  [Here's how the method counts were determined:],
+  [\$ curl 'http:\/\/search.maven.org/remotecontent?filepath=com/google/guava/guava/17.0/guava-17.0.jar' \> guava.jar
+\$ ~/android-sdk/build-tools/20.0.0/dx --dex --output guava.dex guava.jar
+\$ dex-method-count guava.dex
+14824],
+  [\$ cp ~/android-sdk/extras/google/m2repository/com/google/android/gms/play-services/5.0.77/play-services-5.0.77.aar .
+\$ unzip play-services-5.0.77.aar
+\$ ~/android-sdk/build-tools/20.0.0/dx --dex --output play-services.dex classes.jar
+\$ dex-method-count play-services.dex
+20298],
+  [And the full by-package breakdown of Play Services:],
+  [\$ dex-method-count-by-package play-services.dex],
+  [20298 com],
+  [20298 com.google],
+  [207 com.google.ads],
+  [169 com.google.ads.mediation],
+  [73 com.google.ads.mediation.admob],
+  [62 com.google.ads.mediation.customevent],
+  [20188 com.google.android],
+  [20188 com.google.android.gms],
+  [2 com.google.android.gms.actions],
+  [480 com.google.android.gms.ads],
+  [135 com.google.android.gms.ads.doubleclick],
+  [25 com.google.android.gms.ads.identifier],
+  [88 com.google.android.gms.ads.mediation],
+  [4 com.google.android.gms.ads.mediation.admob],
+  [73 com.google.android.gms.ads.mediation.customevent],
+  [26 com.google.android.gms.ads.purchase],
+  [118 com.google.android.gms.ads.search],
+  [866 com.google.android.gms.analytics],
+  [52 com.google.android.gms.analytics.ecommerce],
+  [10 com.google.android.gms.appindexing],
+  [151 com.google.android.gms.appstate],
+  [80 com.google.android.gms.auth],
+  [644 com.google.android.gms.cast],
+  [1026 com.google.android.gms.common],
+  [12 com.google.android.gms.common.annotation],
+  [382 com.google.android.gms.common.api],
+  [235 com.google.android.gms.common.data],
+  [202 com.google.android.gms.common.images],
+  [126 com.google.android.gms.common.internal],
+  [126 com.google.android.gms.common.internal.safeparcel],
+  [1940 com.google.android.gms.drive],
+  [87 com.google.android.gms.drive.events],
+  [897 com.google.android.gms.drive.internal],
+  [241 com.google.android.gms.drive.metadata],
+  [202 com.google.android.gms.drive.metadata.internal],
+  [205 com.google.android.gms.drive.query],
+  [151 com.google.android.gms.drive.query.internal],
+  [451 com.google.android.gms.drive.realtime],
+  [451 com.google.android.gms.drive.realtime.internal],
+  [123 com.google.android.gms.drive.realtime.internal.event],
+  [38 com.google.android.gms.drive.widget],
+  [332 com.google.android.gms.dynamic],
+  [4534 com.google.android.gms.games],
+  [73 com.google.android.gms.games.achievement],
+  [113 com.google.android.gms.games.event],
+  [2956 com.google.android.gms.games.internal],
+  [858 com.google.android.gms.games.internal.api],
+  [43 com.google.android.gms.games.internal.constants],
+  [8 com.google.android.gms.games.internal.data],
+  [31 com.google.android.gms.games.internal.events],
+  [9 com.google.android.gms.games.internal.experience],
+  [215 com.google.android.gms.games.internal.game],
+  [56 com.google.android.gms.games.internal.multiplayer],
+  [23 com.google.android.gms.games.internal.notification],
+  [80 com.google.android.gms.games.internal.player],
+  [86 com.google.android.gms.games.internal.request],
+  [256 com.google.android.gms.games.leaderboard],
+  [640 com.google.android.gms.games.multiplayer],
+  [239 com.google.android.gms.games.multiplayer.realtime],
+  [256 com.google.android.gms.games.multiplayer.turnbased],
+  [213 com.google.android.gms.games.quest],
+  [150 com.google.android.gms.games.request],
+  [210 com.google.android.gms.games.snapshot],
+  [47 com.google.android.gms.gcm],
+  [111 com.google.android.gms.identity],
+  [111 com.google.android.gms.identity.intents],
+  [62 com.google.android.gms.identity.intents.model],
+  [5760 com.google.android.gms.internal],
+  [295 com.google.android.gms.location],
+  [2342 com.google.android.gms.maps],
+  [804 com.google.android.gms.maps.internal],
+  [1068 com.google.android.gms.maps.model],
+  [483 com.google.android.gms.maps.model.internal],
+  [14 com.google.android.gms.panorama],
+  [902 com.google.android.gms.plus],
+  [352 com.google.android.gms.plus.internal],
+  [316 com.google.android.gms.plus.model],
+  [192 com.google.android.gms.plus.model.moments],
+  [126 com.google.android.gms.plus.model.people],
+  [33 com.google.android.gms.security],
+  [1367 com.google.android.gms.tagmanager],
+  [867 com.google.android.gms.wallet],
+  [376 com.google.android.gms.wallet.fragment],
+  [143 com.google.android.gms.wallet.wobs],
+  [1011 com.google.android.gms.wearable],
+  [714 com.google.android.gms.wearable.internal],
+  [You can grab these two scripts from here: gist.github.com/JakeWharton/6002797],
+  [The dependency graphs were generated using degraph and yEd . Download the .graphml for Play Services and Guava .],
+),
+  insert-map: (:),
+  word-count: 700,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+}
+
+{
+  #standard-article(
+  title: [Dockerizing a Rails application],
+  author: [Lazarus Lazaridis (iridakos)],
+  source-name: [Lazarus Lazaridis (iridakos)],
+  images: (),
+  paragraphs: (
+  [Hey!],
+  [In this post we are going to:],
+  [create a docker image for the Rails chat application that we created in the previous post],
+  [configure the Docker environment and run the application by:],
+  [creating a container for the PostgreSQL database],
+  [creating a container for the Redis server],
+  [creating a container with the required configuration from the image we built],
+  [id="prerequisites"\>Prerequisites],
+  [id="install-docker"\>Install docker],
+  [The first thing you need in order to follow this tutorial is to install Docker on your machine.],
+  [We are going to use the Docker Community Edition . Follow the installation instructions matching your system.],
+  [I’m on Ubuntu 18.04 LTS so following the instructions , I had to:],
+  [Uninstall previous versions with:],
+  [I chose to install the application using the repository.],
+  [sudo apt-get install \\ 
+ apt-transport-https \\ 
+ ca-certificates \\ 
+ curl \\ 
+ gnupg-agent \\ 
+ software-properties-common],
+  [curl -fsSL https:\/\/download.docker.com/linux/ubuntu/gpg | sudo apt-key add -],
+  [and I verified that I had the key with the proper fingerprint after executing:],
+  [I set up the repository with:],
+  [The installation took place with these commands:],
+  [sudo apt-get install docker-ce docker-ce-cli containerd.io],
+  [I checked that the installation was successful with:],
+  [Unable to find image 'hello-world:latest' locally
+latest: Pulling from library/hello-world
+1b930d010525: Pull complete
+Digest: sha256:...
+Status: Downloaded newer image for hello-world:latest],
+  [Hello from Docker!
+This message shows that your installation appears to be working correctly.],
+  [To generate this message, Docker took the following steps:
+ 1. The Docker client contacted the Docker daemon.
+ 2. The Docker daemon pulled the "hello-world" image from the Docker Hub.
+ (amd64)
+ 3. The Docker daemon created a new container from that image which runs the
+ executable that produces the output you are currently reading.
+ 4. The Docker daemon streamed that output to the Docker client, which sent it
+ to your terminal.],
+  [To try something more ambitious, you can run an Ubuntu container with:
+ \$ docker run -it ubuntu bash],
+  [Share images, automate workflows, and more with a free Docker ID:
+ https:\/\/hub.docker.com/],
+  [For more examples and ideas, visit:
+ https:\/\/docs.docker.com/get-started/],
+  [id="important-note"\>Important note],
+  [Upon installation, a new user group was created with the name docker . If you want to allow users to do docker stuff without using sudo , you have to do some extra configuration ( read more here ) but keep in mind that:],
+  [The docker group grants privileges equivalent to the root user . For details on how this impacts security in your system, see Docker Daemon Attack Surface.
+ – Post-installation steps for Linux - Official Docker installation instructions],
+  [We are going to use sudo in this tutorial.],
+  [id="clone-the-rails-chat-tutorial-from-github"\>Clone the rails chat tutorial from GitHub],
+  [Navigate to your development directory on your machine and clone the sample Rails chat application with:],
+  [Done.],
+  [id="configure-the-application-to-use-postgresql-for-the-production-environment"\>Configure the application to use PostgreSQL for the production environment],
+  [The application is configured to use the predefined sqlite database adapter. For the purpose of this tutorial we will change the adapter to postgresql and at the second part of the post we will create a container running the PostgreSQL database.],
+  [Open the file config/database.yml file and change the production configuration as described below:],
+  [Open the application’s Gemfile and add the following lines:],
+  [to install the adapter. The pg gem requires to have the package libpq-dev installed on the machine. We will satisfy this requirement when building the image.],
+  [id="building-the-docker-image"\>Building the docker image],
+  [We are going to build the image gradually in order to understand what’s going on with every command we use.],
+  [id="create-the-dockerfile"\>Create the Dockerfile],
+  [Whenever we want to create a new image in docker we use a file named Dockerfile . It is a text file with instructions to be followed sequentially to assemble an image.],
+  [Navigate to the Rails chat tutorial (from now I will call this application directory ) directory and create the file.],
+  [and before continuing let’s try to build the image with just that empty file:],
+  [Of course we get an error, but take a look at the first line of the log:],
+  [When building an image, Docker creates a build context which is actually the files that will be available when the Dockerfile ’s commands get executed.],
+  [The . (dot) part of the build command that we used tells Docker to try to build the image using the current directory for its build context.],
+  [Since we didn’t explicitly specified in the command which Dockerfile to use, Docker will use the one that is located in the root of the context.],
+  [id="define-the-parent-image"\>Define the parent image],
+  [A parent image is the image that your image is based on. It refers to the contents of the FROM directive in the Dockerfile. Each subsequent declaration in the Dockerfile modifies this parent image. Most Dockerfiles start from a parent image, rather than a base image. However, the terms are sometimes used interchangeably.
+ – Create a base image - Official Docker Documentation],
+  [Docker provides official Ruby images and we are going to use the version that the Rails chat tutorial uses which is 2.6.2 as our parent image.],
+  [Open Dockerfile and add the following line:],
+  [and run the build command again:],
+  [class="highlight"\> \$ sudo docker build . -t rails-chat-tutorial
+Sending build context to Docker daemon 46.39MB
+Step 1/1 : FROM ruby:2.6.2-stretch
+2.6.2-stretch: Pulling from library/ruby
+e79bb959ec00: Pull complete
+ d4b7902036fe: Pull complete
+ 1b2a72d4e030: Pull complete
+ d54db43011fd: Pull complete
+ 69d473365bb3: Pull complete
+ 84ed2a0dc034: Pull complete
+ 75df5efa5606: Pull complete
+ f0d10aea813b: Pull complete
+ Digest: sha256:d5af6b19da8381014f59e79245ae242dd5ea8dfe1a8a6c0e2bc481366f1e92b9
+Status: Downloaded newer image for ruby:2.6.2-stretch
+ --- \> 8d6721e9290e
+Successfully built 8d6721e9290e
+Successfully tagged rails-chat-tutorial:latest],
+  [Execute the following command to see which images Docker has.],
+  [class="highlight"\> \$ sudo docker image list
+REPOSITORY TAG IMAGE ID CREATED SIZE
+rails-chat-tutorial latest 8d6721e9290e 10 days ago 870MB
+ruby 2.6.2-stretch 8d6721e9290e 10 days ago 870MB
+hello-world latest fce289e99eb9 3 months ago 1.84kB],
+  [The hello-world is the Docker’s image that we used after installing Docker.
+The other image, the ruby one is the parent image of our image. Since the Dockerfile didn’t have any custom instructions other that just defining a parent image, the resulting image rails-chat-tutorial is actually the same as the parent image and has the same IMAGE ID , CREATED and SIZE properties. Time to change this.],
+  [id="copying-the-application-code"\>Copying the application code],
+  [The purpose of the image that we are building is to serve the Rails chat tutorial application. Eventually, to do so it’s pretty obvious that the image must contain the code of the application.],
+  [We will use the COPY command to copy the code inside the image.],
+  [Open the Dockerfile and append the following line:],
+  [This command will copy all files from inside the build context to the image.],
+  [the first argument is the location of the build context to be copied],
+  [the second argument is the target location inside the image],
+  [Build the image again and execute the following command to confirm that we are good.],
+  [If you take a look at the ruby’s docker image , you will see that the last line is:],
+  [Since we don’t define something different in our image, the same command is being executed and that’s why the execution of the previous command brought us to Ruby’s irb console.],
+  [Let’s see what the /application directory of the container has.],
+  [class="highlight"\> Dir \[ '/application/\*' \] 
+ =\> \[ "/application/config.ru" , "/application/Rakefile" , "/application/lib" , "/application/storage" , "/application/test" , "/application/Gemfile" , "/application/app" , "/application/Gemfile.lock" , "/application/LICENSE" , "/application/log" , "/application/public" , "/application/tmp" , "/application/vendor" , "/application/bin" , "/application/README.md" , "/application/config" , "/application/package.json" , "/application/Dockerfile" , "/application/db" \]],
+  [Cool, the application directory has been copied. Moving on.],
+  [id="install-application-dependencies"\>Install application dependencies],
+  [Before starting the server (puma in our case), we have to install the dependencies of the application. To do so, add the following line to the Dockerfile .],
+  [and rebuild the image.],
+  [class="highlight"\> build . -t rails-chat-tutorial
+Sending build context to Docker daemon 46.39MB
+Step 1/3 : FROM ruby:2.6.2-stretch
+ --- \> 8d6721e9290e
+Step 2/3 : COPY . /application
+ --- \> f9b9d813d6a0
+Step 3/3 : RUN bundle install --deployment --without development test 
+ --- \> Running in a6c8c25da3f5
+Could not locate Gemfile
+The command '/bin/sh -c bundle install --deployment --without development test' returned a non-zero code: 10],
+  [We have an error because for the bundle command to succeed we must first change to the application’s root directory that does contain the Gemfile file.],
+  [Change the contents of the Dockerfile to the following:],
+  [\# Copy application code 
+ COPY . /application 
+ \# Change to the application's directory 
+ WORKDIR /application],
+  [\# Install gems 
+ RUN bundle install --deployment --without development test],
+  [and rebuild. Now the gems are being installed and we are ready to start the server.],
+  [Sending build context to Docker daemon 46.39MB],
+  [Step 1/4 : FROM ruby:2.6.2-stretch],
+  [--- \> 8d6721e9290e],
+  [Step 2/4 : COPY . /application],
+  [--- \> b1aae569faf4],
+  [Step 3/4 : WORKDIR /application],
+  [--- \> Running in ab90edf73be5],
+  [Removing intermediate container ab90edf73be5],
+  [--- \> 6bbdaa9942e3],
+  [Step 4/4 : RUN bundle install --deployment --without development test],
+  [--- \> Running in 22724a3684fe],
+  [The dependency tzinfo-data (\>= 0 ) will be unused by any of the platforms Bundler is installing for . Bundler is installing for ruby but the dependency is only for x86-mingw32, x86-mswin32, x64-mingw32, java. To add those platforms to the bundle, run bundle lock --add-platform x86-mingw32 x86-mswin32 x64-mingw32 java.],
+  [Fetching gem metadata from https:\/\/rubygems.org/............],
+  [Fetching rake 12.3.2],
+  [Installing rake 12.3.2],
+  [Fetching concurrent-ruby 1.1.5],
+  [...],
+  [...],
+  [...],
+  [Fetching sqlite3 1.4.0],
+  [Installing sqlite3 1.4.0 with native extensions],
+  [Fetching uglifier 4.1.20],
+  [Installing uglifier 4.1.20],
+  [Bundle complete ! 21 Gemfile dependencies, 69 gems now installed.],
+  [Gems in the groups development and test were not installed.],
+  [Bundled gems are installed into ./vendor/bundle],
+  [...],
+  [...],
+  [...],
+  [Removing intermediate container 22724a3684fe
+ --- \> d0d3163a8cca
+Successfully built d0d3163a8cca
+Successfully tagged rails-chat-tutorial:latest],
+  [id="asset-compilation"\>Asset compilation],
+  [In the production environment, assets have to be pre-compiled.],
+  [We will add this task in our ENTRYPOINT script (see below) because during asset compilation Rails initializes the application and if we executed the task upon building the image, the initialization would fail since some components (like database connection, configuration of services based on environment variables like cable.yml ) are not available.],
+  [We must install a Javascript environment in the container though or else when the time comes and the task is executed, will get the following error:],
+  [We will install nodejs , add the following line:],
+  [Rebuild and you should be fine.],
+  [id="start-the-server"\>Start the server],
+  [We want to start the application in the production environment. Rails can resolve this via the environment variable RAILS\_ENV .],
+  [To set it in the image, add in Dockerfile :],
+  [The last instruction in the Dockerfile will be our ENTRYPOINT .],
+  [Add the following line:],
+  [What’s left to do is to configure the entrypoint.sh script to do the following:],
+  [compile the assets],
+  [start the server],
+  [Create a file named entrypoint.sh in the root application directory and add:],
+  [\# Start the server 
+bundle exec rails server],
+  [This file has to be executable, so in your terminal:],
+  [That’s all.],
+  [Since there are no more modifications to be done in our Dockerfile , make sure its contents are the following:],
+  [\# Copy application code 
+ COPY . /application 
+ \# Change to the application's directory 
+ WORKDIR /application],
+  [\# Install gems 
+ RUN bundle install --deployment --without development test],
+  [\# Set Rails environment to production 
+ ENV RAILS\_ENV production],
+  [RUN curl -sL https:\/\/deb.nodesource.com/setup\_10.x | bash - \\
+ && apt install -y nodejs],
+  [\# Start the application server 
+ ENTRYPOINT ./entrypoint.sh],
+  [id="compacting-the-dockerfile"\>Compacting the Dockerfile],
+  [We will optimize the Dockerfile since each RUN command creates a new image (read more here ).],
+  [We will merge the RUN commands in one and move the ENV command just before it. The resulting Dockerfile is:],
+  [\# Copy application code 
+ COPY . /application 
+ \# Change to the application's directory 
+ WORKDIR /application],
+  [\# Set Rails environment to production 
+ ENV RAILS\_ENV production],
+  [\# Install gems, nodejs and precompile the assets 
+ RUN bundle install --deployment --without development test \\
+ && curl -sL https:\/\/deb.nodesource.com/setup\_10.x | bash - \\
+ && apt install -y nodejs],
+  [\# Start the application server 
+ ENTRYPOINT \['./entrypoint.sh'\]],
+  [id="running-the-application-in-the-docker-environment"\>Running the application in the Docker environment],
+  [id="creating-the-postgresql-container"\>Creating the PostgreSQL container],
+  [We are going to create a container for the PostgreSQL database.],
+  [We need to specify two environment variables to configure a user for our application: POSTGRES\_USER and POSTGRES\_PASSWORD . The values of these environment variables will be used later on when creating the application’s container .],
+  [Since the image doesn’t exist locally, Docker will fetch it from the Official Docker images and then it will create a container, binding the PostgreSQL default port 5432 to the same port of the host .],
+  [Notes: I suggest you read this documentation if you want to familiarize yourself with the options you have for customizing the container (volumes/database configuration etc).],
+  [id="creating-the-redis-container"\>Creating the Redis container],
+  [To create the redis container, all we have to do is run the following command:],
+  [Again, since the image doesn’t exist locally, Docker will fetch it from the Official Docker images and then it will create a container, binding its 6376 to the same port of the host .],
+  [id="creating-the-applications-container"\>Creating the application’s container],
+  [At this point, your docker running containers should look like this:],
+  [CONTAINER ID IMAGE COMMAND CREATED STATUS PORTS NAMES
+ redis "docker-entrypoint.s…" 2 minutes ago Up 2 minutes 0.0.0.0:6379-\>6379/tcp rails-chat-tutorial-redis
+ postgres "docker-entrypoint.s…" 2 minutes ago Up 2 minutes 0.0.0.0:5432-\>5432/tcp rails-chat-tutorial-pg],
+  [The Rails chat tutorial in production mode needs the following environmental variables:],
+  [database.yml],
+  [DATABASE\_HOST : 172.17.0.1],
+  [DATABASE\_PORT : 5432],
+  [DATABASE\_USERNAME : postgres],
+  [DATABASE\_PASSWORD : postgres],
+  [cable.yml],
+  [REDIS\_URL : redis:\/\/172.17.0.1:6379/1],
+  [To create the container for the image that we created in this post passing the required environment variables, use:],
+  [class="highlight"\> sudo docker run --name rails-chat-tutorial-web \\ 
+ -e DATABASE\_HOST = 172.17.0.1 \\ 
+ -e DATABASE\_PORT = 5432 \\ 
+ -e DATABASE\_USERNAME = postgres \\ 
+ -e DATABASE\_PASSWORD = postgres \\ 
+ -e REDIS\_URL = redis:\/\/172.17.0.1:6379/1 \\ 
+ -p 3000:3000 \\ 
+ rails-chat-tutorial],
+  [Note : we bound the container’s 3000 port on the same port of the host.],
+  [Navigate to http:\/\/localhost:3000 and see what happens.],
+  [We don’t get very helpful information on the error since the application is running in production mode (at least this worked : P). Let’s connect to the container and check the logs:],
+  [Now you are connected to the container. Check the /application/production.log file. Somewhere among all these lines you will see the following:],
+  [ActiveRecord:: StatementInvalid (PG:: UndefinedTable: ERROR: relation users does not exist],
+  [We set up the database server but we didn’t create/migrate the database. Since we are already connected to the container we will execute the required rake tasks.],
+  [Reload the page and voilà],
+  [id="whats-next"\>What’s next],
+  [In the next tutorial we are going to:],
+  [refactor this image for production (use volume for postgreSQL, asset precompilation)],
+  [use nginx to serve them],
+  [use docker compose to bind them all.],
+  [id="thanks"\>Thanks],
+  [I am very grateful for your feedback (like this one from DeusOtiosus
+ \@ Reddit ).],
+  [That’s all! Cat photo.],
+  [You can find the code of this tutorial on https:\/\/github.com/iridakos/rails-chat-tutorial on branch docker .],
+  [For feedback, comments, typos etc. please open an issue in the repository.],
+  [Thanks for visiting!],
+),
+  insert-map: (:),
+  word-count: 2796,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -928,16 +1036,16 @@ public final class Person {
 #article-row((
   [
     standard-article(
-  title: [GAL4-based functional screen of neuropeptides in \<i\>Drosophila\</i\> reproduction],
-  author: [Giovanni Bosco],
+  title: [Underlying structure and measurement invariance by sex of the state trait anxiety inventory: A psychometric analysis in Ecuador],
+  author: [Alberto Rodríguez-Lorenzana],
   source-name: [PLOS ONE Feed],
   images: (),
   paragraphs: (
-  [by Madhumala K. Sadanandappa, Caliope Marin, Shinae Park, Shivaprasad H. Sathyanarayana, Giovanni Bosco],
-  [Neuropeptides are evolutionarily conserved signaling molecules that regulate diverse behavioral and physiological processes, including reproduction. Although, several neuropeptides have established roles in reproductive regulation, the reproductive functions of many neuropeptides in Drosophila melanogaster remain poorly characterized. Here, we performed a targeted neurogenetic screening to systematically assess the contribution of 25 neuropeptides to reproductive output. Using neuropeptide-specific GAL4 drivers and synaptic silencing with tetanus toxin, we quantified the egg-laying as an integrated functional readout of reproduction. Disruption of 14 neuropeptides altered egg-laying, including eight neuropeptides not previously described to play roles in reproductive regulation. While some of these effects are likely indirect and may reflect contributions from both female and male flies or systematic physiological signaling, these results reveal broad involvement of neuropeptidergic pathways in reproductive function. Collectively, this study establishes a functional screening framework, identifies new reproductive neuropeptides, and provides a curated resource to guide future mechanistic studies of neuropeptide-mediated brain-gonad communication.],
+  [by Jose A. Rodas, Daniel Oleas, Guido Mascialino, José Alejandro Valdevila Figueira, Alberto Rodríguez-Lorenzana],
+  [Anxiety is currently one of the most prevalent and investigated psychological symptoms requiring precise and reliable instruments for its assessment. The current study evaluates the psychometric properties of the State-Trait Anxiety Inventory (STAI) in an Ecuadorian sample, focusing on the factor structure and potential methodological artefacts, especially those introduced by reverse-scored items. Employing exploratory and confirmatory factor analyses (EFA and CFA), along with structural equation modelling (SEM), the research examines the presence of two distinct factors: genuine anxiety and a secondary factor related to reversed items. Findings indicate that the expected two-factor model fits the data more accurately than a unidimensional model. Notably, cross-loadings suggest the second factor may represent a substantive positive, anxiety-free state rather than solely a methodological effect. Additionally, multigroup CFA confirmed strict measurement invariance across sex, supporting the scale’s utility for group comparisons. These results suggest that the STAI’s total score represents a composite of anxiety and well-being. While the STAI remains a robust tool for evaluating anxiety in clinical contexts, researchers seeking pure measures of anxiety symptomatology should consider analysing the subscales separately.],
 ),
   insert-map: (:),
-  word-count: 165,
+  word-count: 192,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -945,78 +1053,60 @@ public final class Person {
   ],
   [
     standard-article(
-  title: [Weekly Update 487],
-  author: [Troy Hunt],
-  source-name: [Troy Hunt],
+  title: [Book Review - Accelerate: The Science of Lean Software and Devops],
+  author: [Dean Hume],
+  source-name: [Dean Hume],
   images: (),
   paragraphs: (
-  [Presently sponsored by: Report URI: Guarding you from rogue JavaScript! Don’t get pwned; get real-time alerts & prevent breaches \#SecureYourSite],
-  [I thought Scott would cop it first when he posted about what his solar system really cost him last year . "You're so gonna get that stupid AI-slop response from some people", I joked. But no, he got other stupid responses instead! And I got the AI-slop responses! Draw your own conclusions on those comments, but I find it fascinating that the one thing people would take away from a thoughtful blog post I spent many hours writing to explain how much work I put into privacy is that the illustration was computer-generated. That such feedback aligns with the political leanings of folks on Mastodon is also fascinating, and probably something I should have seen coming. But hey, there's nothing new about folks popping their heads up to make inane comments where none were needed, and I have a special blog post for just such occasions: If You Don't Want Guitar Lessons, Stop Following Me .],
-  [style="width: 170px; display: inline-block; margin-right: 3px;"\>],
-  [style="width: 175px; display: inline-block; margin-right: 3px;"\>],
-  [style="width: 118px; display: inline-block; margin-right: 3px;"\>],
-  [style="width: 120px; display: inline-block;"\>],
+  [During my morning coffee session, I like to check through my RSS feed and see what is happening out there in the world of technology. I came across this article by the Spotify R&D team entitled “ Leveraging Mobile Infrastructure with Data-Driven Decisions ”. They referenced the book Accelerate: The Science of Lean Software and Devops , and the title of the book instantly drew me in.],
+  [I’ve just finished reading the book and I can say that I definitely enjoyed it.],
+  [Through four years of research, the authors set out to find a way to measure software delivery performance―and what drives it―using rigorous statistical methods. This book presents both the findings and the science behind that research, making the information accessible for readers to apply in their own organizations. Personally, I think it's quite cool to see scientific data applied to some of the everyday things that we do in technology organizations. I also found it interesting to see how some of the top performing companies repeatedly seemed to pull away from the “pack” by simply applying many of the techniques applied in this book. The book takes a look at well-known best practices such as Continuous Delivery, Lean Management, and Transformational Leadership.],
+  [If you are looking for a book that tells you how to build and scale a high performing technology organisation, then this book doesn’t quite cover it. This book goes more into why you should be doing things a certain way and backs this up with facts.],
+  [Part 1 of this book explores what the research team found after trawling through the data. Part 2 dives into the science behind the book and an introduction to Psychometrics. Finally Part 3, looks into transformation, which focuses on how leadership and management can help drive these improvements.],
+  [If I had one takeaway from this book (which surprised me), it was that the leadership of an organisation plays a pivotal role in the team's results. I really liked this quote:],
+  [“Leadership really does have a powerful impact on results. A good leader affects a team’s ability to deliver code, architect good systems, and apply Lean principles to how the team manages its work and develops products. All of these have a measurable impact on satisfaction, efficiency, and the ability to achieve organisational goals”.],
+  [Overall, this is a great book and definitely gives a good insight into why some of the best practices that we take for granted are worth doing and lead to high performing technology organisations. This book concentrates more on the why as opposed to the how. If you are looking for a how to, I’d recommend reading The DevOps Handbook to learn more.],
+  [I hope you enjoy the book!],
 ),
   insert-map: (:),
-  word-count: 198,
+  word-count: 453,
   edited-for-length: false,
   debug-mode: false,
 )
 
   ],
-  [
-    brief-group((
-      brief-item([Nelson Elhage], source-name: [Nelson Elhage], [In my previous blog post, I discussed how git is distinctive among version control system in the way in which it makes the backend model that is being used to store data the most important element of the tool, and that experts use it by having the complete model in their head, and thinking in terms of operations on this object model, rather than just in terms of knowing specific commands to accomplish specific tasks.])
+), ruled-indices: (1,))
+#pull-quote([The book takes a look at well-known best practices such as Continuous Delivery, Lean Management, and Transformational Leadership.], [Dean Hume])
 
-      brief-item([Carlos Becker], source-name: [Carlos Becker], [So, I just bought “Seven Languages in Seven Weeks” . I’ve read the Ruby chapter, not a big deal at all, so I skipped it. I also skip Io, Prolog and Scala (for now), and then, fall in Erlang!])
-
-      brief-item([Nelson Elhage], source-name: [Nelson Elhage], [Basically anyone who’s used Linux for any amount of time eventually comes to know and love the strace command. strace is the system-call tracer, which traces the calls that a program makes into the kernel in order to interact with the outside world. If you’re not already familiar with this incredibly versatile tool, I suggest you go check out my friend and coworker Greg Price’s excellent blog post on the subject, and then come back here.])
-
-      brief-item([Serverless Team], source-name: [Serverless Blog], [Serverless Framework's Q1 2026 newsletter covering Lambda managed instances, durable functions, native AppSync support, built-in pruning, AWS SSO login, and plugin-to-core integrations.])
-
-      brief-item([Nelson Elhage], source-name: [Nelson Elhage], [I worked at Stripe for about seven years, from 2012 to 2019. Over that time, I used and contributed to many generations of Stripe’s developer environment – the tools that engineers used daily to write and test code. I think Stripe did a pretty good job designing and building that developer experience, and since leaving, I’ve found myself repeatedly describing features of that environment to friends and colleagues.
-This post is an attempt to record the salient features of that environment as I remember it.])
-
-      brief-item([Nelson Elhage], source-name: [Nelson Elhage], [Most of the projects I've been working on today have fairly strict code review policies. My work requires code review on most of our code, and as we bring on an army of interns for the summer, I've been responsible for reviewing lots of code. Additionally, about five months ago BarnOwl, the console-based IM client I develop, adopted an official pre-commit review policy. And I have a confession to make: I hate mandatory code review.])
-
-      brief-item([Carlos Becker], source-name: [Carlos Becker], [I always forget the details about Kubernetes pod shutdown lifecycle when I need them, so this is my now made public notes on the subject.])
-
-      brief-item([Robin Ward (eviltrout)], source-name: [Robin Ward (eviltrout)], [id="a-story-of-a-game-exploit"\>A story of a game exploit
-
-Once upon a time I developed a somewhat popular web game called Forumwarz . At its peak, we were serving about 6 million dynamic requests a day off a single quad-core server.
-
-Forumwarz limits how many turns a player can take in a day. We designed it this way so that the competitive aspect of the game wasn’t simply a contest of who had the most time available to play. Players had to choose their targets wisely.])
-
-      brief-item([Maciej Skierkowski], source-name: [Serverless Blog], [To troubleshoot the performance of an AWS Lambda function, we need the transaction time of each dependency. Come see how we do that with Serverless Framework Pro])
-
-      brief-item([Gareth McCumskey], source-name: [Serverless Blog], [ShreyTheCray interviews Gareth McCumskey as he walks through the purpose, use cases, and process of getting started with the Serverless framework])
-
-    ))
-  ],
-), ruled-indices: (1, 2,))
 
 {
-  #standard-article(
-  title: [Weekly Update 483],
-  author: [Troy Hunt],
-  source-name: [Troy Hunt],
-  images: (),
-  paragraphs: (
-  [Presently sponsored by: Report URI: Guarding you from rogue JavaScript! Don’t get pwned; get real-time alerts & prevent breaches \#SecureYourSite],
-  [Building out an IoT environment is a little like the old Maslow's Hierarchy of Needs. All the stuff on the top is only any good if all the stuff on the bottom is good, starting with power. This week, I couldn't even get that right, but thankfully, sparky to rescue and ensuite underfloor heating disconnected, and we now have reliable power again. On top of that is the layer that has increasingly been my nemesis - the network. Two days after recording, I've just spent the better part of the entire day making a much more concerted effort to adjust channel and power settings on APs, lock clients that don't move to the APs that make the most sense, and generally just screw around with it until stuff worked. And then I turned off a circuit, turned it back on again, and all hell broke loose 😭],
-  [style="width: 170px; display: inline-block; margin-right: 3px;"\>],
-  [style="width: 175px; display: inline-block; margin-right: 3px;"\>],
-  [style="width: 118px; display: inline-block; margin-right: 3px;"\>],
-  [style="width: 120px; display: inline-block;"\>],
-  [id="references"\>References],
-  [Sponsored by: 1Password Extended Access Management: Secure every sign-in for every app on every device.],
-),
-  insert-map: (:),
-  word-count: 205,
-  edited-for-length: false,
-  debug-mode: false,
-)
+  #section-label([Analysis])
+  #brief-group((
+    [#brief-item([Rupak Ganguly], source-name: [Serverless Blog], [Build a serverless REST API service in Java, store the data in a DynamoDB table, and deploy it to AWS. All using the Serverless Framework.])],
+    [#brief-item([Carlos Becker], source-name: [Carlos Becker], [Over the years I read several articles on how to be effective, and how the 10x engineer thing is or is not a lie and all that.])],
+    [#brief-item([Fernando Medina Corey], source-name: [Serverless Blog], [Learn how to use the Serverless Framework to deploy your first Knative service on a Kubernetes cluster running in Google Cloud.])],
+    [#brief-item([Carlos Becker], source-name: [Carlos Becker], [I have an old Couchbase 4.5.x cluster, and I thought it would be nice to upgrade it. These are my notes and the tests I did before doing it “in production”™️.])],
+    [#brief-item([Ben Thompson], source-name: [Stratechery], [Stratechery is on a bit of a disjointed Spring Break, as my usual week off will be spread out:
 
+There will be no Update on Thursday, March 19
+
+There will be no Update on Monday and Tuesday, March 23–24; there will be an Update and Interview on Wednesday and Thursday, March 25–26
+
+There will be no Update on Monday, March 30
+
+I will return to my usual posting schedule on Tuesday, March 31.
+
+All other Stratechery Plus content, including my podcasts, will stay on schedule.])],
+    [#brief-item([Carlos Becker], source-name: [Carlos Becker], [Since the infamous
+ SolarWinds attack ,
+supply chain integrity is something a lot of people are discussing and working
+on.])],
+    [#brief-item([Gareth McCumskey], source-name: [Serverless Blog], [If all you want to do is play around and try stuff without worrying bills and costs, serverless is the place for you!])],
+    [#brief-item([Gareth McCumskey], source-name: [Serverless Blog], [ShreyTheCray interviews Gareth McCumskey as he walks through the purpose, use cases, and process of getting started with the Serverless framework])],
+    [#brief-item([Nelson Elhage], source-name: [Nelson Elhage], [Last time, I announced Check Plus, a declarative language for defining Check tests in C. This time, I want to talk about the tricks I used to implement a declarative minilanguage using the C preprocessor (and some GCC extensions).
+The Problem We want to write some toplevel declarations that look like:
+\#define SUITE\_NAME example BEGIN\_SUITE("Example test suite"); \#define TEST\_CASE core BEGIN\_TEST\_CASE("Core tests"); … and so on, and somehow translate them into code that does the equivalent of:])],
+  ))
 }
 
 #colophon([The Civic Dispatch], [Vol. 1, No. 046], [2026-03-30])

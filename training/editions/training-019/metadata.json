@@ -1,22 +1,22 @@
 {
   "config_id": "training-019",
   "archetype": "green-planet",
-  "date_generated": "2026-03-30T01:19:38.857667+00:00",
+  "date_generated": "2026-03-30T01:44:36.659929+00:00",
   "page_target": 6,
-  "num_pages": 14,
+  "num_pages": 15,
   "num_items": 18,
   "feeds_contributed": [
-    "Throughline (NPR)",
     "Ensia",
-    "Science News",
-    "Greatist",
     "BigCommerce Engineering",
+    "Science News",
+    "Throughline (NPR)",
     "Only in it for the Gold (blog, climate)",
-    "Punch (drinks)",
     "Healthline",
-    "Cookie and Kate"
+    "Punch (drinks)",
+    "Cookie and Kate",
+    "Greatist"
   ],
-  "render_time_s": 0.24,
+  "render_time_s": 0.25,
   "pages": [
     {
       "page_number": 1,
@@ -99,6 +99,12 @@
     {
       "page_number": 14,
       "png_path": "training-019/pages/page-014.png",
+      "width_pt": 612.0,
+      "height_pt": 792.0
+    },
+    {
+      "page_number": 15,
+      "png_path": "training-019/pages/page-015.png",
       "width_pt": 612.0,
       "height_pt": 792.0
     }
@@ -234,11 +240,17 @@
     {
       "spread_id": "s-019-008",
       "edition_id": "training-019",
-      "type": "solo",
+      "type": "spread",
       "pages": [
         {
           "page_number": 14,
           "png_path": "training-019/pages/page-014.png",
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_number": 15,
+          "png_path": "training-019/pages/page-015.png",
           "width_pt": 612.0,
           "height_pt": 792.0
         }

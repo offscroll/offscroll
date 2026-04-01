@@ -23,686 +23,228 @@
 
 // --- Front Page Feature ---
 #feature-article(
-  title: [Notes on Lagrange Interpolating Polynomials],
+  title: [Starvation Mode: How Caloric Restriction Affects Your Body],
   kicker: [Cover Story],
-  author: [Eli Bendersky],
-  source-name: [Eli Bendersky],
-  deck: [Polynomial interpolation is a method of finding a polynomial function
-that fits a given set of data perfectly.],
-  lead-text: "More concretely, suppose we
-have a set of n+1 distinct points [1] :",
-  lead-first-alpha: 0,
+  author: [Greatist],
+  source-name: [Greatist],
+  deck: [Yep, starvation mode is a thing. But it doesn’t have to halt weight loss.],
+  lead-pre: [],
+  lead-cap: [C],
+  lead-rest: [utting back on calories but not losing weight? You might wonder if you’ve gotten stuck in the twilight zone of so-called “starvation mode.”],
   body-paragraphs: (
-  [\\[(x\_0,y\_0), (x\_1, y\_1), (x\_2, y\_2)\\cdots(x\_n, y\_n)\\]],
-  [And we want to find the polynomial coefficients {a\_0\\cdots a\_n}
-such that:],
-  [\\[p(x)=a\_0 + a\_1 x + a\_2 x^2 + \\cdots + a\_n x^n\\]],
-  [Fits all our points; that is p(x\_0)=y\_0, p(x\_1)=y\_1 etc.],
-  [This post discusses a common approach to solving this problem, and also
-shows why such a polynomial exists and is unique.],
-  [Showing existence using linear algebra],
-  [When we assign all points (x\_i, y\_i) into the generic polynomial
-p(x), we get:],
-  [\\[\\begin{aligned}
-p(x\_0)&=a\_0 + a\_1 x\_0 + a\_2 x\_0^2 + \\cdots a\_n x\_0^n = y\_0\\\\
-p(x\_1)&=a\_0 + a\_1 x\_1 + a\_2 x\_1^2 + \\cdots a\_n x\_1^n = y\_1\\\\
-p(x\_2)&=a\_0 + a\_1 x\_2 + a\_2 x\_2^2 + \\cdots a\_n x\_2^n = y\_2\\\\
-\\cdots \\\\
-p(x\_n)&=a\_0 + a\_1 x\_n + a\_2 x\_n^2 + \\cdots a\_n x\_n^n = y\_n\\\\
-\\end{aligned}\\]],
-  [We want to solve for the coefficients a\_i. This is a linear
-system of equations that can be represented by the following matrix
-equation:],
-  [\\[{\\renewcommand{\\arraystretch}{1.5}\\begin{bmatrix}
- 1 & x\_0 & x\_0^2 & \\dots & x\_0^n\\\\
- 1 & x\_1 & x\_1^2 & \\dots & x\_1^n\\\\
- 1 & x\_2 & x\_2^2 & \\dots & x\_2^n\\\\
- \\vdots & \\vdots & \\vdots & \\ddots &\\vdots \\\\
- 1 & x\_n & x\_n^2 & \\dots & x\_n^n
- \\end{bmatrix}
- \\begin{bmatrix}
- a\_0\\\\
- a\_1\\\\
- a\_2\\\\
- \\vdots\\\\
- a\_n\\\\
- \\end{bmatrix}=
- \\begin{bmatrix}
- y\_0\\\\
- y\_1\\\\
- y\_2\\\\
- \\vdots\\\\
- y\_n\\\\
- \\end{bmatrix}
- }\\]],
-  [The matrix on the left is called the Vandermonde matrix . This matrix
-is known to be invertible (see Appendix for a proof); therefore, this
-system of equations has a single solution that can be calculated by
-inverting the matrix.],
-  [In practice, however, the Vandermonde matrix is often numerically
-ill-conditioned, so inverting it isn’t the best way to calculate exact
-polynomial coefficients. Several better methods exist.],
-  [Lagrange interpolation polynomials emerge from a simple, yet powerful
-idea. Let’s define the Lagrange basis functions l\_i(x)
-(i \\in [0, n]) as follows, given our points (x\_i, y\_i):],
-  [\\[l\_i(x) =
-\\begin{cases}
- 1 & x = x\_i \\\\
- 0 & x = x\_j \\quad \\forall j \\neq i
-\\end{cases}\\]],
-  [In words, l\_i(x) is constrained to 1 at and to 0 at
-all other x\_j. We don’t care about its value at any other point.],
-  [The linear combination:],
-  [\\[p(x)=\\sum\_{i=0}^{n}y\_i l\_i(x)\\]],
-  [is then a valid interpolating polynomial for our set of n+1
-points, because it’s equal to at each (take a
-moment to convince yourself this is true).],
-  [How do we find l\_i(x)? The key insight comes from studying the
-following function:],
-  [\\[l'\_i(x)=(x-x\_0)\\cdot (x-x\_1)\\cdots (x-x\_{i-1}) \\cdot (x-x\_{i+1})\\cdots (x-x\_n)=
-\\prod\_{\\substack{0\\leq j \\leq n \\\\ j \\neq i}}(x-x\_j)\\]],
-  [This function has terms (x-x\_j) for all
-j\\neq i. It should be easy to see that l'\_i(x) is 0 at
-all x\_j when j\\neq i.],
-  [What about its value at , though? We can just assign
- into l'\_i(x) to get:],
-  [\\[l'\_i(x\_i)=\\prod\_{\\substack{0\\leq j \\leq n \\\\ j \\neq i}}(x\_i-x\_j)\\]],
-  [And then normalize l'\_i(x), dividing it by this (constant) value. We get
-the Lagrange basis function l\_i(x):],
-  [\\[l\_i(x)=\\frac{l'\_i(x)}{l'\_i(x\_i)}=\\prod\_{\\substack{0\\leq j \\leq n \\\\ j \\neq i}}\\frac{x-x\_j}{x\_i-x\_j}\\]],
-  [Let’s use a concrete example to visualize this. Suppose we have the
-following set of points we want to interpolate:
-(1,4), (2,2), (3,3). We can calculate l'\_0(x),
-l'\_1(x) and l'\_2(x), and get the following:],
-  [Note where each l'\_i(x) intersects the axis. These
-functions have the right values at all x\_{j\\neq i}. If we
-normalize them to obtain l\_i(x), we get these functions:],
-  [Note that each polynomial is 1 at the appropriate and 0 at
-all the other x\_{j\\neq i}, as required.],
-  [With these l\_i(x), we can now plot the interpolating polynomial
-p(x)=\\sum\_{i=0}^{n}y\_i l\_i(x), which fits our set of input points:],
-  [Polynomial degree and uniqueness],
-  [We’ve just seen that the linear combination of Lagrange basis functions:],
-  [\\[p(x)=\\sum\_{i=0}^{n}y\_i l\_i(x)\\]],
-  [is a valid interpolating polynomial for a set of n+1 distinct
-points (x\_i, y\_i). What is its degree?],
-  [Since the degree of each l\_i(x) is , then the degree of
-p(x) is at most . We’ve just derived the first part
-of the Polynomial interpolation theorem :],
-  [Polynomial interpolation theorem : for any n+1 data points
-(x\_0,y\_0), (x\_1, y\_1)\\cdots(x\_n, y\_n) \\in \\mathbb{R}^2 where no
-two x\_j are the same, there exists a unique polynomial
-p(x) of degree at most that interpolates these points.],
-  [We’ve demonstrated existence and degree, but not yet uniqueness . So
-let’s turn to that.],
-  [We know that p(x) interpolates all n+1 points, and its
-degree is . Suppose there’s another such polynomial
-q(x). Let’s construct:],
-  [\\[r(x)=p(x)-q(x)\\]],
-  [That do we know about r(x)? First of all, its value is 0 at all
-our , so it has n+1 roots . Second, we also know
-that its degree is at most (because it’s the difference of two
-polynomials of such degree). These two facts are a contradiction.
-No non-zero polynomial of degree \\leq n can have
-n+1 roots (a basic algebraic fact related to the Fundamental
-theorem of algebra ). So r(x) must be the zero polynomial; in
-other words, our p(x) is unique \\blacksquare.],
-  [Note the implication of uniqueness here: given our set of n+1
-distinct points, there’s only one polynomial of degree \\leq n
-that interpolates it. We can find its coefficients by inverting the
-Vandermonde matrix, by using Lagrange basis functions, or
-any other method [2] .],
-  [Lagrange polynomials as a basis for P\_n(\\mathbb{R})],
-  [The set P\_n(\\mathbb{R}) consists of all real polynomials of
-degree \\leq n. This set - along with addition of polynomials and
-scalar multiplication - forms a vector
-space .],
-  [We called l\_i(x) the "Lagrange basis" previously, and they do -
-in fact - form an actual linear algebra basis for this vector space. To
-prove this claim, we need to show that Lagrange polynomials are linearly
-independent and that they span the space.],
-  [Linear independence : we have to show that],
-  [\\[s(x)=\\sum\_{i=0}^{n}a\_i l\_i(x)=0\\]],
-  [implies a\_i=0 \\quad \\forall i. Recall that l\_i(x) is 1
-at , while all other l\_j(x) are 0 at that point.
-Therefore, evaluating s(x) at , we get:],
-  [\\[s(x\_i)=a\_i = 0\\]],
-  [Similarly, we can show that a\_i is 0, for all 
-\\blacksquare.],
-  [Span : we’ve already demonstrated that the linear combination of
-l\_i(x):],
-  [\\[p(x)=\\sum\_{i=0}^{n}y\_i l\_i(x)\\]],
-  [is a valid interpolating polynomial for any set of n+1 distinct
-points. Using the polynomial interpolation theorem , this is the unique
-polynomial interpolating this set of points. In other words, for every
-q(x)\\in P\_n(\\mathbb{R}), we can identify any set of n+1 distinct points it passes
-through, and then use the technique described in this post to find the coefficients of q(x) in the
-Lagrange basis. Therefore, the set l\_i(x) spans
-the vector space \\blacksquare.],
-  [Interpolation matrix in the Lagrange basis],
-  [Previously we’ve seen how to use the \\{1, x, x^2, \\dots x^n\\}
-basis to write down a system of linear equations that helps us find the
-interpolating polynomial. This results in the Vandermonde matrix .],
-  [Using the Lagrange basis, we can get a much nicer matrix representation
-of the interpolation equations.],
-  [Recall that our general polynomial using the Lagrange basis is:],
-  [\\[p(x)=\\sum\_{i=0}^{n}a\_i l\_i(x)\\]],
-  [Let’s build a system of equations for each of the n+1 points
-(x\_i,y\_i). For :],
-  [\\[p(x\_0)=\\sum\_{i=0}^{n}a\_i l\_i(x\_0)\\]],
-  [By definition of the Lagrange basis functions, all l\_i(x\_0)
-where i\\neq 0 are 0, while l\_0(x\_0) is 1. So this
-simplifies to:],
-  [\\[p(x\_0)=a\_0\\]],
-  [But the value at node is , so we’ve just found
-that a\_0=y\_0. We can produce similar equations for the other
-nodes as well, p(x\_1)=a\_1, etc. In matrix form:],
-  [\\[{\\renewcommand{\\arraystretch}{1.5}\\begin{bmatrix}
- 1 & 0 & 0 & \\dots & 0\\\\
- 0 & 1 & 0 & \\dots & 0\\\\
- 0 & 0 & 1 & \\dots & 0\\\\
- \\vdots & \\vdots & \\vdots & \\ddots &\\vdots \\\\
- 0 & 0 & 0 & \\dots & 1
- \\end{bmatrix}
- \\begin{bmatrix}
- a\_0\\\\
- a\_1\\\\
- a\_2\\\\
- \\vdots\\\\
- a\_n\\\\
- \\end{bmatrix}=
- \\begin{bmatrix}
- y\_0\\\\
- y\_1\\\\
- y\_2\\\\
- \\vdots\\\\
- y\_n\\\\
- \\end{bmatrix}
- }\\]],
-  [We get the identity matrix; this is another way to trivially show that
-a\_0=y\_0, a\_1=y\_1 and so on.],
-  [Appendix: Vandermonde matrix],
-  [Given some numbers \\{x\_0 \\dots x\_n\\} a matrix of this form:],
-  [\\[V=
-{\\renewcommand{\\arraystretch}{1.5}\\begin{bmatrix}
-1 & x\_0 & x\_0^2 & \\dots & x\_0^n\\\\
-1 & x\_1 & x\_1^2 & \\dots & x\_1^n\\\\
-1 & x\_2 & x\_2^2 & \\dots & x\_2^n\\\\
-\\vdots & \\vdots & \\vdots & \\ddots &\\vdots \\\\
-1 & x\_n & x\_n^2 & \\dots & x\_n^n
-\\end{bmatrix}
-}\\]],
-  [Is called the Vandermonde matrix. What’s special about a Vandermonde
-matrix is that we know it’s invertible when are distinct.
-This is because its determinant is known to be
-non-zero .
-Moreover, its determinant is [3] :],
-  [\\[\\det(V) = \\prod\_{0 \\le i 1, we’ll
-subtract the value of column k-1 multiplied by from
-it (this is done on all columns simultaneously). The idea is to make the
-first row all zeros after the very first element:],
-  [\\[V=
-{\\renewcommand{\\arraystretch}{1.5}\\begin{bmatrix}
- 1 & 0 & 0 & \\dots & 0\\\\
- 1 & x\_1 - x\_0 & x\_1^2 - x\_1 x\_0& \\dots & x\_1^n - x\_1^{n-1} x\_0\\\\
- 1 & x\_2 - x\_0 & x\_2^2 - x\_2 x\_0& \\dots & x\_2^n - x\_2^{n-1} x\_0\\\\
- \\vdots & \\vdots & \\vdots & \\ddots &\\vdots \\\\
- 1 & x\_n - x\_0 & x\_n^2 - x\_n x\_0& \\dots & x\_n^n - x\_n^{n-1} x\_0\\\\
- \\end{bmatrix}
-}\\]],
-  [Now we factor out x\_1-x\_0 from the second row (after the first
-element), x\_2-x\_0 from the third row and so on, to get:],
-  [\\[V=
-{\\renewcommand{\\arraystretch}{1.5}\\begin{bmatrix}
- 1 & 0 & 0 & \\dots & 0\\\\
- 1 & x\_1 - x\_0 & x\_1(x\_1 - x\_0)& \\dots & x\_1^{n-1}(x\_1 - x\_0)\\\\
- 1 & x\_2 - x\_0 & x\_2(x\_2 - x\_0)& \\dots & x\_2^{n-1}(x\_2 - x\_0)\\\\
- \\vdots & \\vdots & \\vdots & \\ddots &\\vdots \\\\
- 1 & x\_n - x\_0 & x\_n(x\_n - x\_0)& \\dots & x\_n^{n-1}(x\_n - x\_0)\\\\
- \\end{bmatrix}
-}\\]],
-  [Imagine we erase the first row and first column of . We’ll call
-the resulting matrix .],
-  [\\[W=
-{\\renewcommand{\\arraystretch}{1.5}\\begin{bmatrix}
- x\_1 - x\_0 & x\_1(x\_1 - x\_0)& \\dots & x\_1^{n-1}(x\_1 - x\_0)\\\\
- x\_2 - x\_0 & x\_2(x\_2 - x\_0)& \\dots & x\_2^{n-1}(x\_2 - x\_0)\\\\
- \\vdots & \\vdots & \\ddots &\\vdots \\\\
- x\_n - x\_0 & x\_n(x\_n - x\_0)& \\dots & x\_n^{n-1}(x\_n - x\_0)\\\\
- \\end{bmatrix}
-}\\]],
-  [Because the first row of is all zeros except the first
-element, we have:],
-  [\\[\\det(V)=\\det(W)\\]],
-  [Note that the first row of has a common factor of
-x\_1-x\_0, so when calculating \\det(W), we can move this
-common factor out. Same for the common factor x\_2-x\_0 of the
-second row, and so on. Overall, we can write:],
-  [\\[\\det(W)=(x\_1-x\_0)(x\_2-x\_0)\\cdots(x\_n-x\_0)\\cdot \\det
-{\\renewcommand{\\arraystretch}{1.5}\\begin{bmatrix}
- 1 & x\_1 & x\_1^2 & \\dots & x\_1^{n-1}\\\\
- 1 & x\_2 & x\_2^2 & \\dots & x\_2^{n-1}\\\\
- \\vdots & \\vdots & \\vdots & \\ddots &\\vdots \\\\
- 1 & x\_n & x\_n^2 & \\dots & x\_n^{n-1}
- \\end{bmatrix}
-}\\]],
-  [But the smaller matrix is just the Vandermonde matrix for
-\\{x\_1 \\dots x\_{n}\\}. If we continue this process by induction,
-we’ll get:],
-  [\\[\\det(V) = \\prod\_{0 \\le i \< j \\le n} (x\_j - x\_i)\\]],
-  [If you’re interested, the Wikipedia page for the Vandermonde matrix has a couple of additional
-proofs.],
-  [[1] The -es here are called nodes and the -s are
-called values . 
- 
- 
- 
- 
- 
- [2] Newton
-polynomials 
-is also an option, and there are many other approaches. 
- 
- 
- 
- 
- 
- [3] Note that this means the product of all differences between
-x\_j and where is strictly smaller than
-j. That is, for n=2, the full product is
-(x\_2-x\_1)(x\_2-x\_0)(x\_1-x\_0). For an arbitrary ,
-there are \\frac{n(n-1)}{2} factors in total.],
+  [Everyone from your personal trainer to your grandma may have warned you about this metabolic frenemy that keeps your body holding onto weight. But is starvation mode really a thing — or just an urban legend?],
+  [The concept of starvation mode is that when you restrict calories, your body has a “hold it right there” response. To prevent you from losing weight rapidly, your metabolism slows, conserving energy by reducing the calories it burns.],
+  [Research shows starvation mode — formally called adaptive thermogenesis or metabolic adaptation — is a legit phenomenon. It’s well documented that sometimes, the more weight you lose (and the more rapidly you do so), the more your body resists the process.],
+  [Evolutionarily speaking, this may be a holdover from when humans faced food scarcity and needed a mechanism for self-preservation. But in today’s world, starvation mode can be a frustrating roadblock to weight loss.],
+  [What does this metabolic hiccup look like? These symptoms may indicate that starvation mode is becoming a problem for your health:],
+  [fatigue],
+  [hair loss],
+  [irritability],
+  [constipation],
+  [extreme hunger],
+  [feeling unusually cold],
+  [decreased muscle mass],
+  [a weight loss plateau with no change in diet or exercise habits],
+  [Starvation mode isn’t the same thing as actual starving. In today’s modern food environment, true starvation is rare. If you’re eating regularly, you won’t experience life-threatening starvation.],
+  [However, your body might exhibit some of the same early signs as real starvation. These include the symptoms listed above.],
+  [Most commonly, though, starvation mode involves stalled weight loss. You may have hit the wall of adaptive thermogenesis when restricting calories and increasing physical activity without losing weight.],
+  [How long until your body goes into starvation mode?],
+  [Getting into starvation mode can take just a few days , especially if those days involve severe calorie restriction.],
+  [So what counts as severe calorie restriction? Many experts advise not going below 1,200 calories per day for women and 1,500 calories per day for men unless supervised by a doctor. Anything below these numbers could land you in starvation mode faster.],
+  [How do I get my body out of starvation mode?],
+  [Fortunately, getting your body out of starvation mode isn’t complicated.],
+  [First, there’s the obvious solution: Eat a few more calories. But we don’t mean just any calories. By adding a few more nutrient-dense foods (especially those with fiber and protein), you may find weight loss becomes easier, not harder. Both of these nutrients have links to weight loss — so they might help you get out of starvation mode without gaining weight.],
+  [If you’re feeling extremely depleted, you might take a temporary break from a weight loss diet to replenish your nutrient stores.],
+  [Choosing the proper exercise could also bump you out of starvation mode. Resistance exercises like weightlifting, yoga, push-ups, squats, and others build muscle, which increases your metabolic rate.],
+  [According to a 2014 study , people who participated in a 9-month resistance exercise program increased their resting metabolic rate — aka how many calories they burned at rest — by an average of 5%.],
+  [When to see a doctor],
+  [Weight loss is a balancing act. It’s normal to experience physical and emotional ups and downs.],
+  [That said, it’s time to see a doctor if you’re noticing symptoms like extreme fatigue or lethargy, constipation that lasts more than a few days, sensitivity to cold, or unusual mood changes. Your healthcare team can help you hit the sweet spot of weight loss without lingering in starvation mode.],
+  [Despite its name, being in starvation mode doesn’t mean you’ll starve. Instead, it’s a state in which your body has adapted to your weight loss efforts, giving you pushback on how many calories it burns. With strategies like tweaking your calorie intake and adding strength training, you can get out of this mode and back on the path to sustained weight loss.],
 ),
-  inline-pq: pull-quote([Second, we also know that its degree is at most (because it’s the difference of two polynomials of such degree).], [Eli Bendersky]),
-  inline-pq-idx: 32,
   edited-for-length: false,
 )
+
+#pull-quote([You may have hit the wall of adaptive thermogenesis when restricting calories and increasing physical activity without losing weight.], [Greatist])
 
 
 {
   #section-label([Features])
   #standard-article(
-  title: [Does Creatine Increase DHT? What You Need to Know],
+  title: [Stopping Ozempic, Wegovy May Reverse Cardiovascular Benefits],
+  author: [Healthline],
+  source-name: [Healthline],
+  images: (),
+  paragraphs: (
+  [Stopping GLP-1s can quickly reverse the cardiovascular benefits gained while taking them. Image Credit: the\_burtons/Getty Images],
+  [A recent study found that stopping GLP-1s, such as Ozempic or Wegovy, can reverse the cardiovascular benefits they provide.],
+  [The findings show that stopping the medications for as little as 6 months raises the risk of heart attack and stroke.],
+  [GLP-1s have been proven to offer not only benefits for type 2 diabetes and weight loss, but also cardiovascular health.],
+  [GLP-1 drugs like Ozempic and Wegovy have become popular medications for treating type 2 diabetes and obesity. This class of medications may also offer significant cardiovascular benefits.],
+  [A recent study published in BMJ Medicine found that when people stop using GLP-1s, they not only tend to regain weight, but they also may experience an increased risk of heart attack , stroke , and even death.],
+  [Around 1 in 8 adults in the United States is currently taking a GLP-1 medication .],
+  [“There is enormous exuberance about starting GLP-1 drugs, but not nearly enough attention to what happens when people stop,” senior study author Ziyad Al-Aly , MD, a Washington University School of Medicine clinical epidemiologist and chief of the Research and Development Service at the VA Saint Louis Health Care System, said in a press release .],
+  [Stopping GLP-1s raises cardiovascular risk],
+  [The researchers noted that many people who use these medications quit them after a short time, typically due to cost, side effects, or shortages.],
+  [They wanted to understand the consequences of discontinuing GLP-1 use, particularly on cardiovascular health.],
+  [The study analyzed 333,687 veterans. It compared 132,551 individuals who were prescribed a GLP-1 medication to help manage type 2 diabetes with 201,136 who were prescribed sulfonylureas, another type of medication for diabetes. The researchers followed the participants’ outcomes for 3 years.],
+  [Sulfonylureas include the medications:],
+  [glipizide (Glucotrol)],
+  [glimepiride (Amaryl)],
+  [glyburide (Diabeta and others)],
+  [The researchers checked participants’ GLP-1 treatment status every 6 months.],
+  [Over the course of the study, 26% of participants stopped taking the medication, and 23% had an interruption of 6 months or more, followed by resuming treatment.],
+  [The research team found a positive relationship between continuous use of GLP-1s and fewer cardiovascular events.],
+  [“GLP-1 drugs likely help cardiovascular health through several pathways at once, not just by lowering weight,” said Robert Glatter , MD, attending physician in the Department of Emergency Medicine at Lenox Hill Hospital in New York City, and assistant professor of Emergency Medicine at Zucker School of Medicine at Hofstra\/ Northwell, who was not involved in the study.],
+  [“They improve blood sugar control, modestly lower blood pressure, may improve lipid and vascular function, and seem to reduce inflammation and atherosclerotic plaque growth and progression,” Glatter told Healthline.],
+  [“Some evidence also points to direct protective effects on the heart and blood vessels independent of weight loss. In practical terms, they appear to reduce the underlying process of inflammation that drives heart attacks, strokes, and heart failure over time,” he explained.],
+  [At the end of the study, compared with those who took sulfonylureas, participants who continuously used GLP-1s over the 3-year period had the most pronounced risk reduction. This group saw 18% fewer major cardiovascular events.],
+  [Participants who had taken GLP-1s for 2 or 2.5 years before discontinuing use for the remainder of the study also saw a significant reduction in risk of 7% and 15%, respectively.],
+  [Those who took GLP-1s for 18 months or less before discontinuing did not experience a significant reduction in risk.],
+  [The study showed that an interruption of GLP-1 use of just 6 months before resuming treatment was enough to significantly decrease the cardiovascular benefit. It led to a 4% to 8% increase in risk compared with those with continuous use.],
+  [Discontinued use of 1 to 2 years without resuming resulted in a 14% to 22% increased risk of a cardiovascular event, compared with continuous use.],
+  [This shows that cardiovascular benefits gained while using GLP-1s are quickly lost when a person stops taking the medication.],
+  [“The main message is that GLP-1 therapy behaves more like a long-term risk-reduction treatment than a short-term fix. The study reinforces a broader lesson in chronic disease management: benefits that accumulate slowly can be lost surprisingly fast when treatment is interrupted, so persistence and follow-up truly matter,” said Glatter.],
+  [How can you stop taking GLP-1s safely?],
+  [GLP-1 medications include semaglutides ( Ozempic , Wegovy ) and tirzepatides ( Mounjaro , Zepbound ).],
+  [If you are taking a GLP-1 medication and are considering discontinuing it, you should first speak with your healthcare professional.],
+  [“When patients use GLP-1 medications primarily for weight loss, I caution them that it is very easy to regain the weight when these medications are discontinued and subsequently lose the health benefits gained from achieving a healthy weight,” said Mir Ali , MD, bariatric surgeon and medical director of MemorialCare Surgical Weight Loss Center at Orange Coast Medical Center in Fountain Valley, CA, who was not involved in the study.],
+  [If you suddenly stop taking a GLP-1, like a semaglutide, you may experience withdrawal symptoms . These may include nausea, increased appetite, weight gain, and cardiovascular changes, like elevated blood pressure.],
+  [Tapering off the medication slowly may allow your body to gradually adjust to having less support from the GLP-1 medication.],
+  [It is also important to maintain your healthy eating habits and get regular physical activity when stopping these medications. This helps you maintain your weight loss.],
+  [“Obesity should be viewed as a chronic, long-term disease that requires long-term treatment,” said Ali.],
+),
+  insert-map: (:),
+  word-count: 915,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+}
+
+{
+  #standard-article(
+  title: [Millions Are Unaware of Cardiovascular Risks That Start Outside of the Heart],
+  author: [Healthline],
+  source-name: [Healthline],
+  images: (),
+  paragraphs: (
+  [Cardiovascular and metabolic health are intrinsically linked, with diabetes and kidney disease as major risk factors for heart disease. PER Images/Stocksy],
+  [A new report suggests that millions of U. S. adults are unaware they may have undiagnosed cardiovascular risk factors that begin outside the heart.],
+  [An estimated 90% of Americans may have a cluster of chronic health conditions known as cardiovascular-kidney-metabolic (CKM) syndrome, which can lead to cardiovascular disease.],
+  [A cardiologist explains the comorbidities of heart disease, diabetes, and kidney disease, and what you can do to protect your heart health.],
+  [When most people think of risk factors for cardiovascular disease, they likely consider their heart health.],
+  [Yet cardiovascular risks are also driven by other physiological processes that begin outside of the heart.],
+  [Metabolic health and cardiovascular health are intrinsically linked, with diabetes and kidney disease as significant risk factors for heart disease. Be that as it may, a 2025 survey shows that most people are unaware of this connection.],
+  [What’s more, a recent statistics report by the American Heart Association (AHA) notes that as many as 1 in 4 adults with diabetes are undiagnosed in the United States. Additionally, 9 in 10 U. S. adults with chronic kidney disease are undiagnosed in the United States due to factors such as a lack of screening.],
+  [The comorbidity of diabetes, kidney disease, and heart disease means that having one of these conditions raises the risk of developing another due to shared risk factors, including:],
+  [high blood pressure],
+  [high cholesterol],
+  [high blood sugar],
+  [excess weight],
+  [reduced kidney function],
+  [The medical term describing the link between heart disease, diabetes, and kidney disease is cardiovascular-kidney-metabolic syndrome, or CKM syndrome , with upward of 90% of Americans unaware that they may have the disease.],
+  [If left untreated, complications from CKM syndrome can lead to disability and death from cardiovascular disease.],
+  [“We are encouraging people to become aware of the connection between conditions so they and their health care team can think about their overall health beyond individual conditions,” Stacey E. Rosen , MD, volunteer president of the AHA, said in a statement .],
+  [“Understanding the connection helps you better prevent complications through lifestyle changes and appropriate treatment.”],
+  [Other findings from the AHA statistics report highlight the prevalence of overlapping risk factors driving the prevalence of CKM syndrome in the United States:],
+  [around half of adults have high blood pressure],
+  [1 in 3 adults has high cholesterol],
+  [around 1 in 7 adults has kidney disease],
+  [more than half of adults have prediabetes or diabetes],
+  [over half of adults have a high waist circumference],
+  [“Each of these factors independently stresses the cardiovascular system,” said Jack Wolfson , MD, a board certified cardiologist. “Together, they create a perfect storm.”],
+  [Healthline spoke with Wolfson to learn more about how heart, metabolic, and kidney health are connected, and what people at risk for, or living with, CKM syndrome can do to minimize their cardiovascular risk.],
+  [This interview has been lightly edited and condensed.],
+  [How does metabolic syndrome cause heart problems?],
+  [Wolfson: Metabolic syndrome is not a single disease. It’s a cluster of metabolic dysfunction that includes abdominal obesity , insulin resistance, elevated triglycerides, low HDL, and high blood pressure.],
+  [Insulin resistance drives chronically elevated insulin levels, which promote inflammation, endothelial dysfunction, and vascular stiffness.],
+  [High triglycerides and small LDL particles increase atherogenic burden. Elevated blood pressure damages the inner lining of arteries.],
+  [Visceral fat releases inflammatory cytokines that further impair vascular health.],
+  [Over time, this metabolic environment leads to accelerated plaque formation, impaired nitric oxide production, arterial stiffening, and left ventricular hypertrophy.],
+  [The heart is forced to pump against higher resistance while being supplied by progressively diseased vessels, whereas Metabolic syndrome is essentially early cardiovascular disease in motion.],
+  [How can diabetes cause cardiovascular disease?],
+  [Wolfson: Diabetes, particularly type 2 diabetes , is fundamentally a disease of chronic hyperglycemia and insulin resistance.],
+  [Excess glucose in the bloodstream causes glycation of proteins and lipids, forming advanced glycation end products. These compounds stiffen blood vessels, damage the endothelium, and promote inflammation. High glucose levels also increase oxidative stress and impair nitric oxide production.],
+  [The result is reduced vascular flexibility and increased blood pressure. In addition, diabetes shifts lipid metabolism toward higher triglycerides and small, dense LDL particles, which are more likely to penetrate arterial walls.],
+  [At the cardiac level, diabetes contributes to diabetic cardiomyopathy , characterized by myocardial fibrosis , impaired relaxation, and eventually reduced contractility. Diabetes does not just increase plaque risk; it directly injures blood vessels and heart muscle.],
+  [Is there a connection between heart failure and kidney failure?],
+  [Wolfson: The heart and kidneys function as a tightly integrated system. When kidney function declines, the body retains sodium and fluid. This increases blood volume and places additional workload on the heart.],
+  [Chronic fluid overload contributes to hypertension and ventricular remodeling. Kidney disease also activates the renin-angiotensin-aldosterone system, increasing vasoconstriction and promoting fibrosis in both the kidneys and the heart.],
+  [Elevated phosphorus, uremic toxins, and chronic inflammation further damage vascular tissue.],
+  [Conversely, when the heart weakens and cardiac output declines, the kidneys receive less perfusion. Reduced blood flow worsens kidney function, creating a vicious cycle known as cardiorenal syndrome.],
+  [Kidney dysfunction is both a cause and consequence of heart failure.],
+  [What are the risk factors for CKM syndrome?],
+  [Wolfson: CKM syndrome refers to cardiovascular, kidney, and metabolic dysfunction occurring together.],
+  [Warning signs include elevated fasting glucose or insulin, abdominal weight gain, high triglycerides, high blood pressure, declining estimated GFR, elevated urine albumin, chronic fatigue, shortness of breath with exertion, lower extremity swelling, sleep disturbances, and brain fog.],
+  [Often, early CKM syndrome is silent. Laboratory testing may reveal abnormalities long before symptoms appear.],
+  [This is why testing for insulin resistance , kidney markers, lipid particle number, and inflammation is critical.],
+  [What are some strategies to protect heart health in CKM syndrome?],
+  [Wolfson: Protection begins with correcting the underlying metabolic terrain.],
+  [Focus on real, nutrient-dense food that stabilizes blood sugar and reduces inflammation. Prioritize high-quality protein, healthy fats , wild seafood, pastured meats, and organ foods rich in micronutrients that support mitochondrial function.],
+  [Restore insulin sensitivity through strength training, daily movement , adequate sleep , and sunlight exposure to support circadian biology.],
+  [Reduce toxic burden, including ultra-processed foods, environmental chemicals, plastics, and chronic psychological stress.],
+  [Support vascular health through nutrients that enhance nitric oxide production and mitochondrial efficiency. Magnesium, omega-3 fatty acids, CoQ10, and targeted amino acids such as arginine and citrulline can be helpful when clinically appropriate.],
+  [Measure fasting insulin, advanced lipid markers, kidney function, inflammatory markers, oxidative stress, and albuminuria.],
+  [CKM syndrome develops gradually, but it can also be reversed gradually. When we correct metabolic dysfunction at its root, the heart, kidneys, and vascular system regain resilience.],
+),
+  insert-map: (:),
+  word-count: 1115,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+}
+
+{
+  #standard-article(
+  title: [Bumps Inside Nose: Common Causes and Top Treatments],
   author: [Greatist],
   source-name: [Greatist],
   images: (),
   paragraphs: (
-  [Curious if creatine increases DHT? This popular supplement might boost DHT levels, a hormone linked to hair loss. Explore the connection between creatine, DHT, and male pattern baldness in our detailed guide.],
-  [Ah, creatine! It’s a popular supplement promising muscle gains and enhanced performance. But as you’re hitting the gym harder and seeing results, there are some potential side effects to be aware of. Here’s the lowdown.],
-  [Creatine monohydrate is a naturally occurring substance found in muscle cells . It helps to produce adenosine triphosphate (ATP) — your muscles’ go-to fuel when working hard.],
-  [Although you can find creatine in foods like red meat and seafood, many gym enthusiasts and athletes boost their stores with supplements. Why? Because more creatine equals more ATP, which means more energy for high-intensity activities. More fuel means more mileage!],
-  [Now, here’s where things get hairy. You might dial up your body’s DHT (dihydrotestosterone) production when you uplevel creatine. DHT is a derivative of testosterone and plays a big-league role in developing male characteristics. But here’s the catch: while DHT might beef up your alpha vibe, it’s also notorious for thinning out hairlines in peeps predisposed to male pattern baldness.],
-  [So, do creatine supplements cause baldness? Maybe! The buzz mainly stems from a small 2009 study where college-aged rugby players loaded up on creatine and saw their DHT levels increase significantly.],
-  [Because DHT can shrink hair follicles and shorten the hair growth cycle, it may seem logical to blame creatine for contributing to hair thinning. However, it’s important to remember that these findings are a one-hit wonder — they haven’t been seen again in other studies. Plus, let’s not forget that intense workouts alone can pump up these hormones, too.],
-  [As a result, the jury’s still out, making the creatine-and-baldness saga a hot topic for gym gossip and scientists alike.],
-  [The same 2009 study found that after a week of taking high-dose creatinine at 25 grams per day, DHT levels rose by 56%. When the researchers dropped the dose to 5g daily for two more weeks, levels remained 40% higher than baseline. These findings contrasted with the control group participants who took a placebo.],
-  [Does this mean creatine could spell disaster for your do? Well, creatine boosts DHT, the usual suspect in male pattern baldness, also called androgenic alopecia. However, your disposition to hair loss and the effects of DHT is genetic, meaning that it’s inherited.],
-  [Some folks are more prone to DHT’s hair-ruffling effects because of how their androgen receptor gene is wired. Hormones like testosterone and DHT bind to androgen receptors, typically triggering normal hair growth. However, variations in the AR gene make the androgens extra effective, making you more likely to experience hair loss.],
-  [So, while there isn’t much evidence to say that creatine supplements cause hair loss , the connection to increased DHT levels is worth considering if your family reunions look like a convention for bald eagles.],
-  [Beyond the potential for a breezy scalp, creatine is actually solid in the safety department, with long-term studies giving it a thumbs up. However, although creatinine doesn’t pose a risk to healthy individuals, it might not be your best move if you have kidney, high blood pressure , or liver disease.],
-  [Another thing to keep in mind is that creatinine loves to hang onto water , so expect some extra bloat and weigh-in surprises as your body adjusts.],
-  [Thinking of starting a creatine kick? Chatting with your doctor first is always wise, especially if you have other health conditions or take medications. They can advise you and rule out any potential interactions.],
-  [If you’re taking creatinine and notice changes to your hair, a check-up is a good idea. Shedding a few strands is normal , but it’s a red flag if you start losing clumps of hair . Rapid hair loss can indicate underlying health issues that go beyond your hairstyle.],
-  [Furthermore, consult a doctor if hair loss is weighing on your mind. They can offer solutions or treatments to manage your hair loss and stress .],
-  [Creatine is celebrated for its muscle-building prowess, but rumors of a link with hair loss exist. The good news is there’s little conclusive evidence directly connecting creatine supplementation to permanent hair loss.],
-  [However, creatine loading may boost DHT levels, a hormone linked to male pattern baldness, especially in people genetically predisposed to hair thinning .],
-  [So, if you’re concerned about hair loss, it might be wise to talk with a doctor before adding creatine supplements to your muscle-building routine.],
+  [Is it a zit, an ingrown hair, a polyp, or something else? Weird nose bumps have various causes, from harmless to time to call the doctor.],
+  [There are many possible causes for bumps inside your nose — some as harmless as a pimple, others that might need more attention. It’s easy to imagine the worst, but the truth is usually less alarming.],
+  [If you’ve got a painful, annoying, or strange bump in your nose, keep reading to learn what it might be, whether it’s worth worrying about, and how to deal with it.],
+  [Sergey Mironov/Getty Images],
+  [So, what’s behind these bothersome nose bumps? Here are some common culprits:],
+  [Nasal vestibulitis],
+  [This is inflammation of the nasal vestibule , the area just inside your nostrils, often caused by bacterial infections. It can lead to painful, red bumps sensitive to the touch. Common triggers include frequent nose-picking, blowing too hard, or even plucking nose hairs.],
+  [Like on your face, the pores inside your nose can become clogged with oil, dirt, and bacteria, leading to pimples . These can be painful and may swell, especially in such a sensitive area.],
+  [Nasal polyps],
+  [Non-cancerous growths can develop in the nasal passages or sinus lining due to chronic inflammation, allergies, or infections. While they’re usually painless, larger polyps can cause blockages, leading to breathing difficulties, a reduced sense of smell, or recurrent sinus infections.],
+  [Infected ingrown hairs],
+  [When you pluck or trim nose hairs, the hair can sometimes grow back into the skin instead of out, causing an ingrown hair . If this becomes infected, it can result in a painful bump inside the nose.],
+  [A bump can also form inside the nose due to trauma, such as a blow to the nose, or even from something as simple as aggressive nose-picking. The trauma can cause the tissue to swell or become bruised. In some cases, a hard bump may form as the tissue heals.],
+  [Fluid-filled sacs that can form in your nose, usually harmless but sometimes uncomfortable.],
+  [Cartilage issues],
+  [A hard bump inside the nose might be due to problems with the cartilage, such as a deviated septum or cartilage overgrowth.],
+  [Fibrous papules],
+  [Small, benign bumps that may appear on or in the nose are often mistaken for pimples but are fibrous tissue growths.],
+  [Wondering if that bump inside your nose is something serious? Here’s what to look out for:],
+  [Pain or tenderness. Especially when touching or blowing your nose.],
+  [Redness or swelling. Around the area of the bump.],
+  [Discharge. You need to monitor the condition carefully to see if there’s any pus or blood.],
+  [Difficulty breathing. If the bump is large enough, it might obstruct your airflow.],
+  [Persistent bumps. Anything that doesn’t go away after a week should be checked out.],
+  [Ready to say goodbye to that pesky bump inside your nose? The proper treatment depends on what’s causing it, but here are some ideas to ease the discomfort and promote healing:],
+  [Apply warm compresses. Apply gentle heat to the area to reduce swelling and promote drainage if it’s a pimple or infection.],
+  [Use saline rinses. Keep your nasal passages clean with saline spray or a Neti pot.],
+  [Avoid nose-picking. Seriously, just don’t. Not only is it eurgh, but it’s a significant cause of trauma and infection.],
+  [Moisturize. Prevent dryness and cracking with a gentle, nose-safe moisturizer , especially in winter.],
+  [Leave ingrown hairs alone. Let them resolve independently or see a doctor if they get infected.],
+  [Additionally, if you’re dealing with nasal polyps, a healthcare professional might prescribe steroid sprays to shrink them and reduce inflammation, making breathing easier.],
+  [On the other hand, if a bacterial infection is the culprit, as in cases of nasal vestibulitis, your doc may recommend a topical antibiotic like mupirocin. This ointment is applied directly inside the nose to target the infection, reduce redness, and promote healing.],
+  [While most nose bumps aren’t a big deal, some need more attention. Here’s when to make that appointment:],
+  [Persistent or recurring bumps. If it’s sticking around or keeps coming back, get it checked.],
+  [Severe pain. Pain that doesn’t ease up with home treatments is a sign you need professional help.],
+  [Obstruction. If a bump makes breathing hard, it’s time to see a doc.],
+  [Discharge. Any pus, blood, or other discharge from the bump is a red flag.],
+  [Even the slightest bump inside your nose can be a major annoyance. Causes vary from harmless pimples to things that require more attention, like polyps.],
+  [Self-care measures can usually ease discomfort and speed healing, but if it’s super painful or worrying discharge, it’s time to sniff out professional help.],
 ),
   insert-map: (:),
-  word-count: 787,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-}
-
-{
-  #standard-article(
-  title: [Beef Stroganoff],
-  author: [Lindsay],
-  source-name: [Pinch of Yum],
-  images: (),
-  paragraphs: (
-  [This is the only way I love beef stroganoff. Like, truly love it.],
-  [This beef stroganoff is essentially a creamy, savory gravy with roasty bits of mushroom and caramelized onion, and forkfuls of tender shredded beef folded in. YEAH.],
-  [How it’s different (and better, if you ask me) than a “regular” beef stroganoff:],
-  [Beef gets cooked in the slow cooker, so it’s very easy.],
-  [Beef then gets shredded, so it is supremely tender .],
-  [Mushrooms and onions and gravy get thinly sliced and thoroughly sautéed into a rich and creamy blankie. No large chunks! Hallelujah. Just melty little barely-there bits of rich flavor.],
-  [The method for this came from my friend Ang (of Ang’s Tortellini Soup fame – she doesn’t mess around). She’s been trying to convince me that I should make (and like) beef stroganoff for years, and I’m proud to report that I LOVE THIS BEEF STROGANOFF – how it tastes, but also how easy it is to make it.],
-  [9am – start the beef in the crockpot],
-  [5pm – sauté the gravy],
-  [6pm – fold in your crockpot shredded beef, and dinner is done.],
-  [It’s rich, deeply savory, and all the textural bits are delicate. As they should be.],
-  [Egg noodles is the traditional way, but I also REALLY love this on a baked potato with a dollop of sour cream and chives, and I’m going to need you to try that as well.],
-  [Hope you love it!],
-  [THIS IS WHY I LOVE THIS RECIPE. It’s so easy. Plus, IMHO, shredded beef is so much better than chunks of seared beef!],
-  [I love a beef stroganoff that is not a white grey blob. Look at these slips of mushroom, thin and cooked down. Look at the flavorful color. YES.],
-  [Could not be easier. And the flavor payoff is huge.],
-  [5 Stars 4 Stars 3 Stars 2 Stars 1 Star],
-  [5 from 7 reviews],
-  [Creamy, tender, savory beef stroganoff! The ultimate classic comfort food and one of my family’s favorite meals!],
-  [For the Beef:],
-  [3 pounds chuck roast , fat trimmed],
-  [1 cup water],
-  [1 teaspoon Better Than Bouillon Roasted Beef Base],
-  [2 teaspoons salt],
-  [1 1/2 teaspoons onion powder],
-  [1 teaspoon garlic powder],
-  [1/4 teaspoon ground black pepper],
-  [For the Gravy:],
-  [2 tablespoons butter],
-  [8 ounces button mushrooms , thinly sliced],
-  [half a yellow onion , thinly sliced],
-  [2 cloves garlic , thinly sliced],
-  [1 tablespoon fresh thyme leaves],
-  [1 1/2 tablespoons tomato paste],
-  [1 1/2 tablespoons Better Than Bouillon Roasted Beef Base],
-  [2 tablespoons flour],
-  [2 teaspoons Worcestershire sauce],
-  [1 tablespoon Dijon],
-  [2 cups water],
-  [1/2 cup heavy cream],
-  [For Serving:],
-  [1 lb . egg noodles,],
-  [or 6 baked potatoes],
-  [id="instruction-step-1"\> Slow Cook the Beef: Place all beef ingredients in the slow cooker – chuck roast, water, roasted beef base, salt, onion powder, garlic powder and black pepper. Cook on high for 4-5 hours.],
-  [id="instruction-step-2"\> Cook Your Noodles or Potatoes: When it’s time to start the gravy, boil your noodles or bake your baked potatoes.],
-  [id="instruction-step-3"\> Start the Gravy: Sauté onions and mushrooms in the butter over medium heat until very rich in color, about 15 minutes. Add garlic, thyme, tomato paste, Better Than Bouillon, and flour; sauté for a few minutes.],
-  [id="instruction-step-4"\> Simmer and Finish: Add Worcestershire, Dijon, and water. Bring to a simmer. Add cream gradually until it’s the color you like. Add shredded beef into the gravy (I used about half of the beef and saved the other half for later).],
-  [id="instruction-step-5"\> Serve: Garnish with chives and sour cream, and serve on egg noodles or a baked potato (my fave)!],
-  [Crockpot timing: Chuck roast in a crock pot typically takes 6–8 hours on LOW or 4–5 hours on HIGH for a 3–4 lb roast. So you’re either cooking on high for 4-5 hours, or low for 6-8 hours. If you cook it on low (or if you work outside of the home and need to start it in the morning), then the 9am start time works! Otherwise start around noon.],
-  [Keywords: beef stroganoff, slow cooker beef stroganoff, easy beef stroganoff],
-  [Did you make this recipe?],
-  [For sides to serve with it, my favorite is green beans! But any other roasted green vegetable would work, or roasted carrots. Otherwise, a nice crisp green salad on the side is perfect, too!],
-  [The post Beef Stroganoff appeared first on Pinch of Yum .],
-),
-  insert-map: (:),
-  word-count: 1154,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-}
-
-{
-  #standard-article(
-  title: [Rewriting pycparser with the help of an LLM],
-  author: [Eli Bendersky],
-  source-name: [Eli Bendersky],
-  images: (),
-  paragraphs: (
-  [pycparser is my most widely used open
-source project (with ~20M daily downloads from PyPI [1] ). It's a pure-Python
-parser for the C programming language, producing ASTs inspired by Python's
-own . Until very recently, it's
-been using PLY: Python Lex-Yacc for
-the core parsing.],
-  [In this post, I'll describe how I collaborated with an LLM coding agent (Codex)
-to help me rewrite pycparser to use a hand-written recursive-descent parser and
-remove the dependency on PLY. This has been an interesting experience and the
-post contains lots of information and is therefore quite long; if you're just
-interested in the final result, check out the latest code of pycparser - the
- main branch already has the new implementation.],
-  [The issues with the existing parser implementation],
-  [While pycparser has been working well overall, there were a number of nagging
-issues that persisted over years.],
-  [Parsing strategy: YACC vs. hand-written recursive descent],
-  [I began working on pycparser in 2008, and back then using a YACC-based approach
-for parsing a whole language like C seemed like a no-brainer to me. Isn't this
-what everyone does when writing a serious parser? Besides, the K&R2 book
-famously carries the entire grammar of the C99 language in an appendix - so it
-seemed like a simple matter of translating that to PLY-yacc syntax.],
-  [And indeed, it wasn't too hard, though there definitely were some complications
-in building the ASTs for declarations (C's gnarliest part ).],
-  [Shortly after completing pycparser, I got more and more interested in compilation
-and started learning about the different kinds of parsers more seriously. Over
-time, I grew convinced that recursive descent is the way to
-go - producing parsers that are easier to understand and maintain (and are often
-faster!).],
-  [It all ties in to the benefits of dependencies in software projects as a
-function of effort .
-Using parser generators is a heavy conceptual dependency: it's really nice
-when you have to churn out many parsers for small languages. But when you have
-to maintain a single, very complex parser, as part of a large project - the
-benefits quickly dissipate and you're left with a substantial dependency that
-you constantly grapple with.],
-  [The other issue with dependencies],
-  [And then there are the usual problems with dependencies; dependencies get
-abandoned, and they may also develop security issues. Sometimes, both of these
-become true.],
-  [Many years ago, pycparser forked and started vendoring its own version of PLY.
-This was part of transitioning pycparser to a dual Python 2/3 code base when PLY
-was slower to adapt. I believe this was the right decision, since PLY "just
-worked" and I didn't have to deal with active (and very tedious in the Python
-ecosystem, where packaging tools are replaced faster than dirty socks)
-dependency management.],
-  [A couple of weeks ago this issue 
-was opened for pycparser. It turns out the some old PLY code triggers security
-checks used by some Linux distributions; while this code was fixed in a later
-commit of PLY, PLY itself was apparently abandoned and archived in late 2025.
-And guess what? That happened in the middle of a large rewrite of the package,
-so re-vendoring the pre-archiving commit seemed like a risky proposition.],
-  [On the issue it was suggested that "hopefully the dependent packages move on to
-a non-abandoned parser or implement their own"; I originally laughed this idea
-off, but then it got me thinking... which is what this post is all about.],
-  [Growing complexity of parsing a messy language],
-  [The original K&R2 grammar for C99 had - famously - a single shift-reduce
-conflict having to do with dangling else s belonging to the most recent
- if statement. And indeed, other than the famous lexer hack 
-used to deal with C's type name / ID ambiguity ,
-pycparser only had this single shift-reduce conflict.],
-  [But things got more complicated. Over the years, features were added that
-weren't strictly in the standard but were supported by all the industrial
-compilers. The more advanced C11 and C23 standards weren't beholden to the
-promises of conflict-free YACC parsing (since almost no industrial-strength
-compilers use YACC at this point), so all caution went out of the window.],
-  [The latest (PLY-based) release of pycparser has many reduce-reduce conflicts
- [2] ; these are a severe maintenance hazard because it means the parsing rules
-essentially have to be tie-broken by order of appearance in the code. This is
-very brittle; pycparser has only managed to maintain its stability and quality
-through its comprehensive test suite. Over time, it became harder and harder to
-extend, because YACC parsing rules have all kinds of spooky-action-at-a-distance
-effects. The straw that broke the camel's back was this PR which again proposed to
-increase the number of reduce-reduce conflicts [3] .],
-  [This - again - prompted me to think "what if I just dump YACC and switch to
-a hand-written recursive descent parser", and here we are.],
-  [The mental roadblock],
-  [None of the challenges described above are new; I've been pondering them for
-many years now, and yet biting the bullet and rewriting the parser didn't feel
-like something I'd like to get into. By my private estimates it'd take at least
-a week of deep heads-down work to port the gritty 2000 lines of YACC grammar
-rules to a recursive descent parser [4] . Moreover, it wouldn't be a
-particularly fun project either - I didn't feel like I'd learn much new and
-my interests have shifted away from this project. In short, the Potential well was just too deep.],
-  [Why would this even work? Tests],
-  [I've definitely noticed the improvement in capabilities of LLM coding
-agents in the past few months, and many reputable people online rave about using
-them for increasingly larger projects. That said, would an LLM agent really be
-able to accomplish such a complex project on its own? This isn't just a toy,
-it's thousands of lines of dense parsing code.],
-  [What gave me hope is the concept of conformance suites mentioned by
-Simon Willison .
-Agents seem to do well when there's a very clear and rigid
-goal function - such as a large, high-coverage conformance test suite.],
-  [And pycparser has an very extensive one .
-Over 2500 lines of test code parsing various C snippets to ASTs with expected
-results, grown over a decade and a half of real issues and bugs reported by
-users.],
-  [I figured the LLM can either succeed or fail and throw its hands up in despair,
-but it's quite unlikely to produce a wrong port that would still pass all
-the tests. So I set it to run.],
-  [The initial port],
-  [I fired up Codex in pycparser's repository, and wrote this prompt just to
-make sure it understands me and can run the tests:],
-  [class="highlight"\> This repository implements a Python parser producing an AST. It has a very
-extensive test suite; can you first verify you successfully run all the tests?
-(with python3 -m unittest discover, from the root dir)],
-  [Codex figured it out (I gave it the exact command, after all!); my next
-prompt was the real thing [5] :],
-  [class="highlight"\> pycparser uses the PLY library for its lexer and parser, and its own AST
-package for the ASTs created by the parser. I want to explore replacing the
-Parser component (leaving the Lexer alone for now) with a hand written
-recursive descent parser that will pass all the same tests. Can you try that?],
-  [Here Codex went to work and churned for over an hour . Having never
-observed an agent work for nearly this long, I kind of assumed it went off
-the rails and will fail sooner or later. So I was rather surprised and skeptical
-when it eventually came back with:],
-  [class="highlight"\> Replaced the PLY parse path with a handwritten recursive‑descent parser while
-keeping the existing lexer and AST helpers intact; CParser now points to the
-new RD implementation, with the old PLY version preserved as PLYCParser in
-pycparser/c\_parser.py. The RD parser includes a token stream, declarator/type
-parsing, expression precedence handling, pragmas, and statement parsing to
-match the previous AST output and coordinate behavior.],
-  [It took me a while to poke around the code and run it until I was convinced - it
-had actually done it! It wrote a new recursive descent parser with only
-ancillary dependencies on PLY, and that parser passed the test suite. After a
-few more prompts, we've removed the ancillary dependencies and made the
-structure clearer. I hadn't looked too deeply into code quality at this point,
-but at least on the functional level - it succeeded. This was very impressive!],
-  [A quick note on reviews and branches],
-  [A change like the one described above is impossible to code-review as one PR in
-any meaningful way; so I used a different strategy. Before embarking on this
-path, I created a new branch and once Codex finished the initial rewrite, I
-committed this change, knowing that I will review it in detail, piece-by-piece
-later on.],
-  [Even though coding agents have their own notion of history and can "revert"
-certain changes, I felt much safer relying on Git. In the worst case if all of
-this goes south, I can nuke the branch and it's as if nothing ever happened.
-I was determined to only merge this branch onto main once I was fully
-satisfied with the code. In what follows, I had to git reset several times
-when I didn't like the direction in which Codex was going. In hindsight, doing
-this work in a branch was absolutely the right choice.],
-  [The long tail of goofs],
-  [Once I've sufficiently convinced myself that the new parser is actually working,
-I used Codex to similarly rewrite the lexer and get rid of the PLY dependency
-entirely, deleting it from the repository. Then, I started looking more deeply
-into code quality - reading the code created by Codex and trying to wrap my head
-around it.],
-  [And - oh my - this was quite the journey. Much has been written about the code
-produced by agents, and much of it seems to be true. Maybe it's a setting I'm
-missing (I'm not using my own custom AGENTS.md yet, for instance), but
-Codex seems to be that eager programmer that wants to get from A to B whatever
-the cost. Readability, minimalism and code clarity are very much secondary
-goals.],
-  [Using raise...except for control flow? Yep. Abusing Python's weak typing
-(like having None , false and other values all mean different things
-for a given variable)? For sure. Spreading the logic of a complex function
-all over the place instead of putting all the key parts in a single switch
-statement? You bet.],
-  [Moreover, the agent is hilariously lazy . More than once I had to convince it
-to do something it initially said is impossible, and even insisted again in
-follow-up messages. The anthropomorphization here is mildly concerning, to be
-honest. I could never imagine I would be writing something like the following to
-a computer, and yet - here we are: "Remember how we moved X to Y before? You
-can do it again for Z, definitely. Just try".],
-  [My process was to see how I can instruct Codex to fix things, and intervene
-myself (by rewriting code) as little as possible. I've mostly succeeded in
-this, and did maybe 20% of the work myself.],
-  [My branch grew dozens of commits, falling into roughly these categories:],
-  [The code in X is too complex; why can't we do Y instead?],
-  [The use of X is needlessly convoluted; change Y to Z, and T to V in all
-instances.],
-  [The code in X is unclear; please add a detailed comment - with examples - to
-explain what it does.],
-  [Interestingly, after doing (3), the agent was often more effective in giving
-the code a "fresh look" and succeeding in either (1) or (2).],
-  [The end result],
-  [Eventually, after many hours spent in this process, I was reasonably pleased
-with the code. It's far from perfect, of course, but taking the essential
-complexities into account, it's something I could see myself maintaining (with
-or without the help of an agent). I'm sure I'll find more ways to improve it
-in the future, but I have a reasonable degree of confidence that this will be
-doable.],
-  [It passes all the tests, so I've been able to release a new version (3.00)
-without major issues so far. The only issue I've discovered is that some of
-CFFI's tests are overly precise about the phrasing of errors reported by
-pycparser; this was an easy fix .],
-  [The new parser is also faster, by about 30% based on my benchmarks! This is
-typical of recursive descent when compared with YACC-generated parsers, in my
-experience. After reviewing the initial rewrite of the lexer, I've spent a while
-instructing Codex on how to make it faster, and it worked reasonably well.],
-  [Followup - static typing],
-  [While working on this, it became quite obvious that static typing would make the
-process easier. LLM coding agents really benefit from closed loops with strict
-guardrails (e.g. a test suite to pass), and type-annotations act as such.
-For example, had pycparser already been type annotated, Codex would probably not
-have overloaded values to multiple types (like None vs. False vs.
-others).],
-  [In a followup, I asked Codex to type-annotate pycparser (running checks using
- ty ), and this was also a back-and-forth because the process exposed some
-issues that needed to be refactored. Time will tell, but hopefully it will make
-further changes in the project simpler for the agent.],
-  [Based on this experience, I'd bet that coding agents will be somewhat more
-effective in strongly typed languages like Go, TypeScript and especially Rust.],
-  [Overall, this project has been a really good experience, and I'm impressed with
-what modern LLM coding agents can do! While there's no reason to expect that
-progress in this domain will stop, even if it does - these are already very
-useful tools that can significantly improve programmer productivity.],
-  [Could I have done this myself, without an agent's help? Sure. But it would have
-taken me much longer, assuming that I could even muster the will and
-concentration to engage in this project. I estimate it would take me at least
-a week of full-time work (so 30-40 hours) spread over who knows how long to
-accomplish. With Codex, I put in an order of magnitude less work into this
-(around 4-5 hours, I'd estimate) and I'm happy with the result.],
-  [It was also fun . At least in one sense, my professional life can be described
-as the pursuit of focus, deep work and flow . It's not easy for me to get into
-this state, but when I do I'm highly productive and find it very enjoyable.
-Agents really help me here. When I know I need to write some code and it's
-hard to get started, asking an agent to write a prototype is a great catalyst
-for my motivation. Hence the meme at the beginning of the post.],
-  [Does code quality even matter?],
-  [One can't avoid a nagging question - does the quality of the code produced
-by agents even matter? Clearly, the agents themselves can understand it (if not
-today's agent, then at least next year's). Why worry about future
-maintainability if the agent can maintain it? In other words, does it make sense
-to just go full vibe-coding?],
-  [This is a fair question, and one I don't have an answer to. Right now, for
-projects I maintain and stand behind , it seems obvious to me that the code
-should be fully understandable and accepted by me, and the agent is just a tool
-helping me get to that state more efficiently. It's hard to say what the future
-holds here; it's going to interesting, for sure.],
-  [[1] pycparser has a fair number of direct dependents ,
-but the majority of downloads comes through CFFI ,
-which itself is a major building block for much of the Python ecosystem. 
- 
- 
- 
- 
- 
- [2] The table-building report says 177, but that's certainly an
-over-dramatization because it's common for a single conflict to
-manifest in several ways. 
- 
- 
- 
- 
- 
- [3] It didn't help the PR's case that it was almost certainly vibe coded. 
- 
- 
- 
- 
- 
- [4]],
-  [class="first"\>There was also the lexer to consider, but this seemed like a much
-simpler job. My impression is that in the early days of computing,
- lex gained prominence because of strong regexp support which wasn't
-very common yet. These days, with excellent regexp libraries
-existing for pretty much every language, the added value of lex over
-a custom regexp-based lexer 
-isn't very high.],
-  [class="last"\>That said, it wouldn't make much sense to embark on a journey to rewrite
- just the lexer; the dependency on PLY would still remain, and besides,
-PLY's lexer and parser are designed to work well together. So it wouldn't
-help me much without tackling the parser beast.],
-  [[5] I've decided to ask it to the port the parser first, leaving the lexer
-alone. This was to split the work into reasonable chunks. Besides, I
-figured that the parser is the hard job anyway - if it succeeds in that,
-the lexer should be easy. That assumption turned out to be correct.],
-),
-  insert-map: (:),
-  word-count: 2908,
+  word-count: 789,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -733,8 +275,8 @@ the lexer should be easy. That assumption turned out to be correct.],
   [“It’s cheaper than eating out, easy to make and batch cook, and nutrient-dense (especially if you add veggies),” she told Healthline.],
   [“Almost 50% of our calories come from highly processed foods , so I support any kind of home cooking, no matter how basic.”],
   [As for its nutritional plus points?],
-  [“Ground beef is a complete protein , which helps maintain muscle, repair tissue, and build antibodies. A 100g serving contains over 100% of our daily requirement for Vitamin B12, which is found [naturally] only in animal products,” House said.],
-  [“Beef contains other important minerals, too, such as zinc, which supports immunity, and iron , [which is necessary for hemoglobin ], which transports oxygen in our bodies.”],
+  [“Ground beef is a complete protein , which helps maintain muscle, repair tissue, and build antibodies. A 100g serving contains over 100% of our daily requirement for Vitamin B12, which is found \[naturally\] only in animal products,” House said.],
+  [“Beef contains other important minerals, too, such as zinc, which supports immunity, and iron , \[which is necessary for hemoglobin \], which transports oxygen in our bodies.”],
   [She added that “boy Kibble” doesn’t have to be just for boys.],
   [“The iron in beef is more important for women and growing children, who have higher iron needs. Many adult women are low in iron, which can lead to poor sleep, poor immunity, and lack of energy,” she said.],
   [What about rice?],
@@ -763,7 +305,7 @@ the lexer should be easy. That assumption turned out to be correct.],
   [“I would like to see some spices, such as garlic powder and cumin , or sauces, such as salsa, added. Not only will it make the meal far tastier, but spices also contain flavonoids and other healthy antioxidants,” House said.],
 ),
   insert-map: (:),
-  inline-pq: pull-quote([”   As for its nutritional plus points?   “Ground beef is a complete protein , which helps maintain muscle, repair tissue, and build antibodies.], [Healthline]),
+  inline-pq: pull-quote([However, other types of rice , such as brown rice , can offer greater nutritional value.], [Healthline]),
   inline-pq-idx: 18,
   word-count: 1014,
   edited-for-length: false,
@@ -774,339 +316,268 @@ the lexer should be easy. That assumption turned out to be correct.],
 
 {
   #standard-article(
-  title: [Kim Kardashian's New Energy Drink Promises No Jitters. Does It Live Up to the Hype?],
-  author: [Healthline],
-  source-name: [Healthline],
-  images: (),
-  paragraphs: (
-  [Kim Kardashian has released a new energy drink with paraxanthine instead of caffeine. Image credit: Axelle/Bauer-Griffin/Getty Images],
-  [Kim Kardashian has launched a new energy drink called Update.],
-  [Instead of caffeine, the drink contains paraxanthine.],
-  [Paraxanthine is a compound naturally produced by the body when it breaks down caffeine.],
-  [Kim Kardashian has launched a new energy drink called Update, which claims to have zero sugar, zero calories, and zero artificial flavors or colors.],
-  [The drink is also caffeine-free and is powered by paraxanthine, a compound the body naturally produces when it breaks down caffeine.],
-  [The promotional material for Update states that it “delivers smooth, steady energy without the jitters, crashes, or sleep disruption commonly associated with traditional energy drinks.”],
-  [The new drink doesn’t rely solely on paraxanthine for energy. Update contains other ingredients commonly found in energy drinks and supplements, including alpha-GPC, often marketed for cognitive performance, and sucralose , an artificial sweetener.],
-  [“It is important to speak to your healthcare provider about any supplement or energy beverage that you may be considering, even ones that are labeled ‘natural,’” said Jonathan Jennings , MD, board certified internist with Medical Offices of Manhattan.],
-  [“Appropriate dosing is still being investigated, so it is important to follow recommended ingestion amounts,” he told Healthline.],
-  [Avery Zenker , a registered dietitian at MyHealthTeam, said it’s important to prioritize a healthy lifestyle, quality sleep, regular exercise, a balanced diet, and mental hygiene, rather than rely on energy drinks for a boost.],
-  [Healthline spoke with experts about paraxanthine in Kim Kardashian’s energy drink to learn more about this caffeine-free alternative.],
-  [These interviews have been edited and condensed for clarity and length.],
-  [Is paraxanthine better than caffeine?],
-  [Jennings: Paraxanthine is a breakdown product of caffeine . When you ingest caffeine, it is broken down in the liver into three metabolites that have different impacts on the body.],
-  [Paraxanthine is the predominant breakdown component of caffeine. Theobromine and theophylline are the other metabolites, and [are] associated with the uncomfortable side effects of caffeine such as anxiety, nausea, diarrhea, and rapid heartbeats.],
-  [Zenker: It’s tough to say which is “better” since there are numerous factors to consider. Both caffeine and paraxanthine have their pros and cons.],
-  [Caffeine might be the better choice for some people, while paraxanthine may be optimal for others. There’s more research on the health impacts of caffeine, as well as more anecdotal evidence.],
-  [Caffeine is more widely known due to its popularity in beverages around the world, such as coffee and tea. That said, paraxanthine has some promising emerging research.],
-  [Paraxanthine may have some advantages compared to caffeine, such as equivalent or even stronger energizing effects with [fewer] side effects. More research is needed to determine more conclusive differences between caffeine and paraxanthine.],
-  [What does research say about paraxanthine vs. caffeine?],
-  [Jennings: There are some preclinical studies that suggest that paraxanthine promotes alertness better and for longer periods of time than equal amounts of caffeine.],
-  [Rodent studies have also demonstrated less toxicity at higher doses when compared to caffeine.],
-  [Preliminary data suggest that the elimination of theobromine and theophylline may make paraxanthine more effective, better tolerated, and safer than caffeine.],
-  [Zenker: There’s significantly more data for the health impacts of caffeine than paraxanthine. Both caffeine and paraxanthine are nervous system stimulants, which promote wakefulness.],
-  [Research finds that both compounds produce similar effects on the nervous system, including increased blood pressure and adrenaline. They both block adenosine receptors, which is what makes you feel less tired.],
-  [Caffeine is known to have potential side effects, especially when consumed in excess, such as anxiety and elevated blood pressure, while paraxanthine may have [fewer] side effects. Paraxanthine may have some additional benefits on cognition and nervous system function that caffeine alone doesn’t exhibit.],
-  [Paraxanthine is one of the main compounds that’s created as caffeine is metabolized. Paraxanthine isn’t new, but it’s still not widely used in products as much as caffeine.],
-  [What are the benefits and risks of Update’s other ingredients?],
-  [Jennings: L-theanine is an amino acid found in tea leaves. There is some evidence that when combined with caffeine, it may enhance cognitive performance, focus, and improve alertness.],
-  [Alpha-glycerylphosphorycholine ( A-GPC) is a compound essential in the production of neurotransmitter acetylcholine , which is important for nerve communication and muscle contraction. Supplementation with A-GPC is believed to assist with maintaining choline levels and  aid in improving cognition.],
-  [Methylcobalamin is the more bioavailable form of [vitamin] B12 , which is essential for the body’s protection of DNA, support of brain cells, and immune functioning. There is data that suggests this form of B12 offers support to the body for longer periods of time.],
-  [Zenker: L-theanine is known for its potential to improve attention and reduce anxiety, particularly when combined with caffeine. It has a calming effect that’s often described as relaxed yet alert. The dose of L-theanine matters, too. When the quantity of L-theanine isn’t listed on the label, it’s possible that it isn’t an effective quantity.],
-  [Alpha-GPC is a form of choline, which is an essential micronutrient involved in nervous system function. It is generally considered safe, but some research has linked high intakes to health risks like increased risk of cardiovascular disease. Side effects at typical doses are uncommon but can include headaches, acid reflux, nausea, or dizziness.],
-  [Vitamin B12 is an essential vitamin involved in energy production. Vitamin B12 helps the body convert the calories from food we eat into ATP, the body’s primary energy source.],
-  [It is important for nervous system function, energy production, and red blood cell synthesis. Vitamin B12 is often included in energy drinks at high doses. Vitamin B12 is more likely to lead to noticeable energy increases in people with low B12 but not those with baseline normal levels. Vitamin B12 in energy drinks isn’t known to cause an immediate energy boost, but could improve energy over time in those with baseline low levels.],
-  [Vitamin B12 is water-soluble, so excess intake is excreted through the urine and has a low risk of toxicity.],
-  [What should people know before trying Update energy drinks?],
-  [Jennings: All the supporting ingredients have preclinical evidence suggesting significant benefits for cognition and alertness compared to caffeine. However, there is a lack of quality outcome-based human clinical trials for paraxanthine and L-theanine.],
-  [Zenker: I’d first consider why you are looking for an energy drink in the first place. Having an energy drink once in a while is fine, but frequent reliance on them may suggest underlying issues to address.],
-  [Energy drinks may make you feel better short term, but they don’t undo the adverse health effects of poor sleep, an imbalanced diet, or lifestyle deficits. Ideally, we don’t need to rely on energy drinks to feel energized.],
-  [If you’re trying a new energy drink, start small. Don’t consume the whole thing quickly before you have time to assess how you feel. Individual tolerance to energy drinks can vary. Read the nutrition facts, ingredient lists, and content of active compounds like caffeine.],
-  [Not all energy drinks are created equal, so if you do choose to consume one, make sure it’s aligned with your health priorities.],
-),
-  insert-map: (:),
-  inline-pq: pull-quote([Rodent studies have also demonstrated less toxicity at higher doses when compared to caffeine.], [Healthline]),
-  inline-pq-idx: 17,
-  word-count: 1184,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-}
-
-{
-  #standard-article(
-  title: [Daily Multivitamin May Slow Biological Aging in Older Adults],
-  author: [Healthline],
-  source-name: [Healthline],
-  images: (),
-  paragraphs: (
-  [Research has shown that taking a daily multivitamin may slow biological aging in older adults. Image Credit: Olga Pankova/Getty Images],
-  [A recent study has found that taking a daily multivitamin may slow biological aging.],
-  [The researchers note that multivitamins don’t necessarily add time to your life span, but may improve your overall health in the long-term.],
-  [Multivitamins are not a magic fix, but can be beneficial when combined with other healthy lifestyle habits.],
-  [People take multivitamins for various reasons. These supplements can have various health benefits, including increasing nutrient intake, improving health and preventing chronic conditions, and reducing the risk of cardiovascular disease.],
-  [A recent study published in Nature Medicine has found that taking a daily multivitamin may slightly slow the aging process in older adults.],
-  [This study was funded in part by Haleon (formerly Pfizer Consumer Healthcare) and Mars Inc. These companies provided the multivitamins and cocoa extract, and two of the study’s authors received funding from both companies, neither of which contributed to research design.],
-  [The study findings show that those who took a daily multivitamin reduced biological aging by up to 4 months.],
-  [“Although everyone ages over time, there may be simple ways to delay the aging process and help us live not only longer but also better,” said study author Sidong Li , MD, PhD, a postdoctoral researcher in the Division of Preventive Medicine at Brigham and Women’s Hospital, Boston, MA, told Healthline.],
-  [“In this study, we found that daily multivitamin-multimineral supplementation could be an accessible and low cost strategy that promotes healthier aging, particularly for people who are already biologically older,” Li told healthline.],
-  [Daily multivitamin slows signs of biological aging],
-  [The study analyzed 958 older adults ages 60 and older over 2 years. The participants were randomly assigned to one of four groups and took the following pills:],
-  [cocoa extract and a multivitamin],
-  [a multivitamin and a placebo],
-  [cocoa extract and a placebo],
-  [two placebos],
-  [The researchers found that those who took a daily multivitamin experienced a slowing of biological aging of about 4 months. This means that over the course of 24 months, these individuals aged about 20 months at the cellular level.],
-  [Researchers used five “epigenetic clocks” to estimate the biological aging of the participants.],
-  [When compared to the placebo group, the people who took multivitamins aged slightly slower, as shown by two of the five clocks.],
-  [The researchers also found that those who showed signs of accelerated biological aging at the beginning of the study appeared to see a greater benefit from the multivitamins .],
-  [“It’s important to keep the magnitude of the effect in perspective,” said Michelle Routhenstein , preventive cardiology dietitian at EntirelyNourished, who was not involved in the study.],
-  [“These are changes in biomarkers, not direct evidence of fewer heart attacks, cancers, or longer life span. So I would view the findings as encouraging but still preliminary,” Routhenstein told Healthline.],
-  [Biological and chronologica l aging are two distinct ways your body ages.],
-  [Biological aging: This reflects the wear and tear on your body at a cellular level. It refers to the physiological state of your cells and tissues, as inferred from your DNA.],
-  [Chronological aging: This measures how much time has passed since you were born.],
-  [The researchers also found that the cocoa extract has no effect on any of the measures of biological aging.],
-  [The researchers note that this doesn’t mean that multivitamins can add to your life span. It does, however, mean that multivitamins may be beneficial for your future health trajectory. It also doesn’t mean you should definitely start taking multivitamins if you aren’t already.],
-  [“It was exciting to see that a multivitamin has benefits on the biological aging process in older adults. However, we should keep in mind that maintaining a healthy lifestyle remains fundamental to healthier, higher-quality aging,” said Li.],
-  [The decision to take supplements, like multivitamins, should be made by an individual and their healthcare professional.],
-  [What should you look for in a multivitamin?],
-  [There are many things to consider when selecting multivitamins.],
-  [One major thing is that multivitamins and supplements are not strictly regulated by the Food and Drug Administration (FDA). This means that some multivitamins may contain higher or lower levels of nutrients than what is stated on the label.],
-  [Multivitamins may contain about 12 vitamins and 10 essential minerals.],
-  [Some multivitamins and supplements may contain ingredients that could interact with medications. This is why it is important to speak with your healthcare professional before taking any supplement.],
-  [“Supplements should complement, not replace, a nutrient-dense diet. Multivitamins are often most helpful for people with dietary gaps, restricted eating patterns, or increased nutrient needs,” said Routhenstein.],
-  [She also stated that people should “Choose a formulation that matches your age and health status and focuses on appropriate dosing.”],
-  [What is the most important supplement for older adults?],
-  [Nutritional needs may change as you age . The current Dietary Guidelines for Americans have similar guidelines for older adults and younger adults overall.],
-  [However, the guidelines also note that some older adults may need fewer calories, but still require equal or greater amounts of key nutrients.],
-  [This means you may need to focus on increasing your protein intake. Many older adults are also deficient in Vitamin B12, calcium, and vitamin D.],
-  [These individuals may need to discuss taking a multivitamin or other supplements with their healthcare professional, as they may not be able to get the required amounts from their diet, and needs can vary between males and females .],
-  [“The biggest contributors to healthy aging are well established,” said Routhenstein.],
-  [She added that they include:],
-  [a balanced , nutrient adequate, plant-forward dietary pattern],
-  [regular, consistent physical activity],
-  [healthy levels of:],
-  [cholesterol],
-  [blood sugar],
-  [inflammation],
-  [blood pressure],
-  [weight management , especially abdominal weight],
-  [quality sleep],
-  [avoiding smoking and drugs],
-  [“These lifestyle factors have a far greater effect on long-term health than any single supplement,” Routhenstein said.],
-),
-  insert-map: (:),
-  word-count: 987,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-}
-
-{
-  #standard-article(
-  title: [Summary of reading: October - December 2025],
-  author: [Eli Bendersky],
-  source-name: [Eli Bendersky],
-  images: (),
-  paragraphs: (
-  ["The Origins of Political Order: From Prehuman Times to the French Revolution"
-by Francis Fukuyama - while reading this book it occurred to me that domains
-of study like political sciense must be incredibly difficult and frustrating.
-Imagine trying to match a model onto a set of data; the model has thousands
-of parameters, but you only have dozens or a couple of hundred of data points.
-This is what political sciense is like; there's a huge number of parameters
-and variables, far more than actual historical examples. And moreover, the
-historical examples are vague and often based on very partial memory and
-sketchy records. So books like this
-most often just devolve to history. As a history book, this one isn't bad,
-but I found it hard to draw wide conclusions from the themes it presents.],
-  ["Exploding the Phone: The Untold Story of the Teenagers and Outlaws Who
-Hacked Ma Bell" by Phil Lapsley - a detailed history of phone phreaking.
-While I wish it focused more on the technical details than on the legal
-escapades of well-known phreaks, it's still a good book that provides decent
-coverage of an important era in the history of computing.],
-  ["The Zone" by Sergei Dovlatov - (read in Russian) a satirical novella about
-the life of a guard in a Soviet prison camp in the 1960s. I liked this book
-less than "The Compromise".],
-  ["The Joy of SET" by McMahon and Gordon x3 - explores the various mathematical
-dimensions of the SET card game. It's surprising how much interesting math
-there is around the game! Combinatorics and probability sure, but also
-modular arithmetic, vectors, linear algebra and affine geometry. This is a fun
-book for fans of the game (and of math); it's well written and even contains
-exercises. Don't expect it to teach you to become better at playing SET
-though - that's really not its goal.],
-  ["Doom Guy: Life in First Person" by John Romero - Romero's auto-biography,
-also read by himself in the Audible version. Very good book, gives another
-angle at id software and the seminal games they developed. "Masters of Doom"
-is one of my favorite books, and this one complements it very nicely.],
-  ["Buffett: The Making of an American Capitalist" by Roger Lowenstein - a
-detailed biography of Warren Buffett. Great book, very informative and
-interesting; the only issue is that it was written in 1995, and doesn't
-mention the last 30 years. It would be interesting to read an up-to-date
-biography at some point.],
-  ["The Great Democracies: A History of the English Speaking Peoples, Volume IV"
-by Winston Churchill - the final volume, covering the years 1815 - 1901.
-There's still focus on England, but also coverage of the American civil war,
-Australia, and some of Britain's colonial interests in Africa.],
-  ["Starburst and Luminary, an Apollo Memoir" Don Eyles - the author worked on
-coding the landing programs for the lunar module of several Apollo missions as
-a young engineer in MIT. The book must be based on fairly detailed journals,
-because it contains an astonishing amount of detail (given that it was
-written 50 years after the events described). Pretty interesting insight into
-that era, all in all, though I didn't care much about the author's mixing in
-his love life into it. It's his book, of course, and he can write whatever he
-wants in it, but IMO it just dilutes the other great material and makes it
-generally less suitable for younger audiences.],
-  ["Stoner" by John Williams - I have mixed feelings about this book, and they],
-  [will probably take (at least) another read to resolve. On one hand, the],
-  [writing is clearly masterful and "mood-evoking" in a way that only few],
-  [authors managed to do for me. Character development is beautiful, and there],
-  [are glimpses of the flow of learning described amazingly well w.r.t. Stoner's],
-  [own work. On the other hand, the characters are also too extreme - almost],
-  [caricatures, and not very well connected to each other. There are huge amounts],
-  [of page real-estate allocated to certain topics that are barely mentioned],
-  [later on; this happens again and again. Edith, in particular, is a very],
-  [troubling character, and since Stoner is clearly presented as someone who],
-  [is not a pushover when he wants to, his behavior is puzzling to me.],
-  ["The Magic Mountain" by Thomas Mann. A young German college student arrives
-to a sanatorium in the Swiss Alps to visit his cousin who suffers from TB,
-and stays for years, chronicling the odd personas flowing through the
-establishment. There's always some risk with trying famous books from over 100
-years ago, and in this case the risk materialized - I found this one to be
-tedious, rambling and outdated. It's not all bad; there are certainly good
-parts, funny parts and some timeless lessons about human nature. But on the
-balance, I didn't enjoy this book and the only reason I managed to actually
-finish it cover to cover is because of the audiobook format (which let me zone
-out at times while doing something else).],
-  ["Breaking Through: My Life in Science" by Katalin Karikó - an autobiography
-by the molecular biologist who contributed significantly to therapeutic uses
-of mRNA, including its use for the COVID-19 vaccine. Highly recommended.],
-  [Re-reads:],
-  ["Thinking Fast and Slow" by Daniel Kahneman - still a great book, though I
-did not enjoy the re-read as much as I'd thought I would.],
-  ["The Man Who Changed Everything" by Basil Mahon],
-  ["Of mice and men" by John Steinbeck],
-),
-  insert-map: (:),
-  word-count: 922,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-}
-
-{
-  #standard-article(
-  title: [Why Some GLP-1 Users Say They’re Developing Scurvy],
-  author: [Healthline],
-  source-name: [Healthline],
-  images: (),
-  paragraphs: (
-  [Reports of people developing scurvy while taking GLP-1 medications are on the rise. Milles Team/Shutterstock],
-  [Reports of GLP-1 users developing scurvy have increased in recent months.],
-  [GLP-1 drugs can lead to malnutrition since they reduce appetite and food consumption.],
-  [People may also consume fewer vitamin C-rich foods, such as fruits and vegetables.],
-  [Proper meal planning and supplementation can help prevent scurvy.],
-  [Maybe you’ve been using a GLP-1 medication for a while now, and you’ve started to notice that your gums are bleeding a bit, or you seem to be bruising more easily than usual? Could the drug be related to these unusual symptoms?],
-  [It turns out that more and more people using these drugs are being diagnosed with scurvy, a severe deficiency of vitamin C .],
-  [You might know scurvy as an 18th-century illness associated with long sea voyages, when fresh fruits and vegetables were in short supply. So, why is a disease associated with pirates and sailors now making a comeback in a time when these foods are readily available?],
-  [The answer, experts say, has less to do with the medications themselves and more to do with what happens when appetite and consumption of certain foods fall dramatically.],
-  [Here’s what’s known about the connection and how to protect yourself while staying on track with treatment.],
-  [GLP-1 use is often an overlooked cause of malnutrition],
-  [In an opinion published in the BMJ on July 21, 2025, Ellen Fallows noted the risks of prescribing GLP-1 medications to patients who already consume nutrient-poor diets, highlighting that malnutrition cases are already being reported in the U. S.],
-  [Fallows additionally pointed out that, although obesity is often thought of as a case of being “over-nourished,” the opposite is frequently true, with muscle wasting and nutrient deficiencies being just as common in these individuals as in those who are underweight.],
-  [When an already unhealthy diet is combined with caloric restriction, it can exacerbate the problem.],
-  [Inflammation of the gastrointestinal tract and nutrient deficiencies caused by common diabetes medications, such as metformin , can also contribute to malnutrition, she said.],
-  [According to Fallows, GLP-1 use is not just linked to vitamin C deficiency. It has been associated with severe thiamine and magnesium deficiencies , among several others.],
-  [However, a lack of awareness of this issue is likely leading to both underdetection and under-reporting of malnutrition, she wrote, which may lead to less favorable patient outcomes.],
-  [“Good quality wraparound care for patients taking GLP-1 agonists must go further than simple ‘dietary advice’ as recommended by the National Institute for Health and Care Excellence,” she advised. “It must include assessment of nutritional status before treatment to identify patients with malnutrition whose risks may only be mitigated with additional support.”],
-  [Why scurvy may occur when using a GLP-1 medications],
-  [Fiorella DiCarlo , RDN, CDN, of FiorellaEatsTV , told Healthline that GLP-1s slow gastric emptying and motility, which causes people to feel full and lose their appetite. However, they may end up not eating enough to properly nourish their bodies.],
-  [“Some people end up eating 600-1000 calories per day without realizing it and thereby undereating vital nutrients and vitamins,” she said, explaining that this is what leads to deficiencies.],
-  [When a person doesn’t consume enough vitamin C for an extended period, they can develop scurvy.],
-  [“GLP-1 users report low appetite and early satiety , so fruits and veggies that contain Vitamin C are not consumed as often but rather replaced with toast, crackers, and processed food to accommodate GI issues like nausea instead,” said DiCarlo.],
-  [She added that food aversions to acidic foods or raw vegetables can also complicate matters.],
-  [“Vitamin C deficiencies cause weakened blood vessels, wounds that don’t heal, including acne and bleeding gums ,” said DiCarlo.],
-  [However, scurvy is reversible with a multivitamin or a 100- to 200-milligram vitamin C supplement, she said.],
-  [What you can do to ensure adequate nutrition while taking GLP-1 drugs],
-  [According to DiCarlo, the best way to navigate the nutritional challenges of being on a GLP-1 medication is to work with a Registered Dietitian. These healthcare professionals are experts in nutrition and help you plan meals that best support your needs.],
-  [“I advise building meals and snacks around protein and eating on a schedule to ensure proper intake throughout the day,” she said.],
-  [DiCarlo further suggests getting plenty of fiber from fruit, vegetables, and legumes, as it can help counteract constipation associated with slow motility.],
-  [These same foods are also rich in antioxidants and vitamins, which can help reduce your risk of deficiencies, she said.],
-  [“The order the macros are eaten at a meal can be important too,” DiCarlo explained. “Begin with some protein, then vegetables to ensure that these nutrients are ingested first, particularly for those feeling fuller faster.”],
-  [To be certain that you’re getting enough protein, calcium, and vitamin D, eat high protein snacks like low fat yogurt, cottage cheese , or kefir, she said.],
-  [DiCarlo also emphasized the importance of drinking water to reduce your risk of dehydration.],
-  [Concluding her comments, she said, “Eating while on a GLP-1 can be very challenging, and while weight loss will occur, the collateral damage from malnutrition can cause physical and psychological feelings that can affect quality of life.”],
-  [However, as DiCarlo explains, proper planning and supplementation can help mitigate the risks.],
-),
-  insert-map: (:),
-  word-count: 878,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-}
-
-{
-  #standard-article(
-  title: [Philopappou Hill Pathways in Athens, Greece],
-  author: [Atlas Obscura],
-  source-name: [Atlas Obscura],
-  images: (),
-  paragraphs: (
-  [Philopappou Hill takes its name from Prince Gaius Julius Antiochus Epiphanes Philopappos. Philopappos came to Greece in the 1 st century A. D. E. from the Kingdom of Commagene after it was assimilated into the Roman Empire. Philopappos was extremely wealthy and was known for his philanthropy, funding many projects in the city. When Philopappos died in 116 AD his sister built his tomb as a monument directly southwest of the Acropolis atop what was then known as the Hill of the Muses. The Philopappos' monument was a magnificent, two-story structure, built with solid Pentelic and Hymettian marble. The monument remained intact until at 15th century, when portions were stripped by the occupying Ottomans for various uses. The remains of the monument sat on Philopappos Hill in that condition for the next 500+ years.],
-  [In 1951 the Greek government developed a plan to beautify and make the area south of the Acropolis more accessible to the citizens of Athens. The project included pedestrian paths that led to the summit of Philopappos Hill. Local architect Dimitris Pikionis was selected to oversee the project. Pikionis was born in Piraeus, Greece in 1887. He was interested in building design as a youth and eventually enrolled at the National Technical University of Athens to study civil engineering. He graduated in 1908 and left Greece to continue his studies in France and Germany. He returned to Greece in 1912 and began focusing his studies on modern Greek architecture. In 1921 he accepted a position as a lecturer at the National Technical University of Athens and in 1925 accepted a position as a full professor. He worked on various projects throughout the city while teaching, and in 1951 he was selected by the Greek government to lead the efforts to implement the project.],
-  [The project began in 1954. Pikionis collaborated with his colleagues, students and local stonemasons and together they developed a plan that was mostly reliant upon impromptu on-site decisions. The approach did not involve detailed written plans, nor was there a need for approval from the Greek government.],
-  [At the time Philopappou Hill was a mostly barren, rocky hill with narrow dirt paths leading to the summit. Pikionis’ vision for the hill was to reforest it with a large number of pine and olive trees, insert steps, pave the paths, and install numerous seating areas with views of the nearby Acropolis.],
-  [A collage of ancient ruins, cut marble, salvaged stone pieces from demolished neoclassical buildings, and ceramic shards found in the area were then gathered and organized. The students and workers then shaped the objects with chisels and carefully cemented them in a collage into the numerous paths leading to rest areas and the summit. The merging of all these objects created what many considered an amazing piece of art.],
-  [The project was completed with little fanfare in February 1958 and included the pedestrian walkway leading to the Propylaea and the area surrounding the Church of Agios Dimitrios Loumbardiaris. Despite the low-key approach, this project was recognized as part of the Acropolis of Athens when it was added to the UNESCO World Heritage List in 1987. This project is considered by many to be one of the most significant landscape architecture works in the 20th-century.],
-),
-  insert-map: (:),
-  word-count: 539,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-}
-
-{
-  #standard-article(
-  title: [Deodorant Armpit Rash: Causes, Prevention, and Treatment],
+  title: [Rucking Benefits: Add Weight to Your Walk to Boost Fitness and Strength],
   author: [Greatist],
   source-name: [Greatist],
   images: (),
   paragraphs: (
-  [Red, itchy underarms? It could be your deodorant. But don’t sweat it — here’s how to avoid armpit rash.],
-  [Deodorant is usually your daily hero, keeping you fresh and confident. But what if it starts causing a red, itchy rash instead?],
-  [Before you ditch the deodorant, let’s explore what might be irritating. Is it the ingredients? Are you using too much? Read on to find out how to keep your underarms happy and rash-free.],
-  [You’re just out of the shower and swiping on your favorite deodorant, expecting to stay fresh all day, but instead, your underarms decide to throw a tantrum. That’s a deodorant allergy in action!],
-  [It happens when your skin decides it’s not a fan of one or more ingredients in your deodorant or antiperspirant. The result? Redness, itching, swelling, or even a painful rash that makes you wish you’d just gone au naturel.],
-  [While deodorants are supposed to be your BFF in the battle against body odor, they sometimes bring some unfriendly side effects, thanks to certain chemicals and fragrances that can turn your pits into an itchy nightmare.],
-  [Here’s what to watch out for if you suspect your deodorant is causing an allergic reaction:],
-  [Redness or discoloration and swelling. Your skin may appear inflamed or swollen where the deodorant was applied.],
-  [Itching or burning. A common symptom that can range from mild discomfort to severe irritation.],
-  [Rash or hives. Small, red bumps or larger welts may form, irritating your underarms.],
-  [Dry, flaky skin. The affected area may become dry and start to peel.],
-  [Blisters. In more severe cases, blisters filled with fluid can develop, adding to the discomfort.],
-  [Certain deodorant ingredients are more likely to trigger allergic reactions if you have sensitive skin. Here are some common culprits :],
-  [Fragrances. Synthetic scents are often added to deodorants to keep you smelling fresh, but these fragrances are a leading cause of allergic reactions.],
-  [Alcohol. Commonly found in antiperspirants, alcohol helps to dry out the skin and prevent sweating. However, it can also strip away natural oils, leaving the skin dry, irritated, and more prone to allergic reactions.],
-  [Aluminum compounds. Used in antiperspirants to block sweat glands, aluminum compounds can cause irritation or allergic reactions for peeps with sensitive skin.],
-  [Parabens. These preservatives extend the shelf life of cosmetics but can lead to skin sensitivity or allergic reactions. They’re known to disrupt hormone function, further aggravating sensitive skin.],
-  [Baking soda. Found in many natural deodorants, baking soda is used for its odor-neutralizing properties. However, its alkaline nature can be too harsh for sensitive skin, leading to irritation, dryness, or a rash.],
-  [Essential oils. While natural and often considered gentle, some essential oils can still cause allergic reactions, particularly for more sensitive folks. Oils like tea tree , lavender, and peppermint can be irritating or cause contact dermatitis .],
-  [If you suspect your deodorant is causing an allergic reaction, here’s how to treat it:],
-  [Ditch the culprit. First things first, stop using that deodorant immediately. Toss it in the trash — or at least banish it to the back of the cabinet. Continuing to use it will only make your skin angrier, so let’s not go there.],
-  [Clean it up. Wash your underarms with mild, fragrance-free soap and lukewarm water to remove leftover residue. Don’t scrub like you’re sanding wood — just a soft, soothing cleanse to help clear away the irritants.],
-  [Soothe the burn. Grab some over-the-counter hydrocortisone cream to calm that fiery rash, or go all-natural with some aloe vera gel to cool things down. Your skin needs some TLC, so slather on whatever works best for you.],
-  [Detox those pits. Ever heard of an armpit detox? It’s a thing, and it can help get rid of any residual nasties. Mix some bentonite clay with water or good old apple cider vinegar , plop it on your pits, and let it sit for 10-15 minutes. Rinse off, and your underarms will be feeling fresh and clean.],
-  [Switch to something gentler. Once your skin has calmed down, it’s time to find a new deodorant BFF. Look for something hypoallergenic, fragrance-free, and made for sensitive skin, or use a light dusting of cornstarch or baby powder to keep things dry without causing more drama.],
-  [Deodorants may cause an uncomfortable underarm rash if you have sensitive skin or are allergic to one or more ingredients.],
-  [If your pits are unhappy, stop using the deodorant, soothe your skin, and give your pits a break. Once they’ve recovered, look for a more gentle alternative to keep you dry and delighted without the unwanted side effects.],
+  [Wondering if rucking can be as effective as weightlifting? Spoiler alert: it definitely can!],
+  [Weightlifting isn’t the only way to build muscle. Rucking, or walking with a weighted backpack, is also highly effective. It’s easy to start, can be done anywhere, and helps build muscle, burn fat, and boost endurance.],
+  [Curious? Keep reading to discover why rucking might become your new favorite workout!],
+  [mixetto/Getty Images],
+  [Rucking is like taking your regular walk and cranking up the intensity with heavy cargo . It’s as simple as strapping on a weighted backpack (aka rucksack) and hitting the pavement, the trail, or wherever you like to roam. Originally dreamed up by the military to toughen up soldiers, rucking, or a rucksack march has, er, marched into civilian life as a killer workout.],
+  [What makes it awesome? The extra weight transforms a casual stroll into a workout that means business. Plus, it’s customizable — you can load up as much or as little weight as you want, making it perfect for any fitness level. And the best part is that you can ruck just about anywhere.],
+  [Rucking isn’t just a walk in the park — it’s a powerful workout that packs a punch in all the right places. Here’s why rucking deserves a spot in your fitness routine :],
+  [Builds strength and endurance],
+  [Think of rucking as the ultimate multitasker for your body. It’s like lifting weights but with cardio to keep your heart pumping.],
+  [As you lug that weighted backpack around, your legs, back, and core are putting in serious work, building strength, and endurance with every (weighted) step.],
+  [Burns calories and promotes weight loss],
+  [Want to torch calories without the treadmill monotony ? Rucking’s got you covered. The extra weight and steady movement combo turns your stroll into a calorie-burning machine. Perfect for shedding any additional pounds while keeping things interesting.],
+  [Improves posture and core stability],
+  [Carrying a weighted backpack helps your posture . Your core has to stay engaged to keep you balanced, which helps align your body and ward off injury.],
+  [If you’ve had a baby, rucking can be a game-changer, helping combat the postural shifts of pregnancy and hauling around kids. Plus, it builds the functional strength you need for everyday life, like lifting groceries or wrangling toddlers.],
+  [Accessible and time-efficient],
+  [Rucking easily fits into a busy schedule. You don’t need special equipment beyond a sturdy backpack or a gym membership, and you can do it while multitasking — think walking the dog in the morning or pushing a stroller. Plus, the whole family can join in, making it a great way to combine fitness with family time.],
+  [Starting rucking is easy, but here are some tips to help you get the most out of your rucks:],
+  [Start light. Begin with a challenging but manageable weight, around 10 to 15% of your body weight.],
+  [Choose the right backpack. A comfortable, sturdy bag with padded straps is essential to avoid strain and injury.],
+  [Focus on form. Keep your shoulders back, engage your core, and maintain a steady pace.],
+  [Increase gradually. As your strength and endurance improve, gradually increase the weight and distance.],
+  [Stay consistent. Regular rucking sessions will help you build strength and endurance over time.],
+  [Rucking is generally safe, but here’s how to stay injury-free :],
+  [Listen to your body. Lighten your load or take a break if you feel pain or discomfort.],
+  [Warm up and cool down. Prepare your muscles for the workout and help them recover afterward.],
+  [Stay hydrated. Carry water with you, especially on longer rucks.],
+  [Wear supportive footwear. Good shoes can prevent foot and ankle injuries.],
+  [Be mindful of your surroundings. Pay attention to the terrain, and avoid areas that could be hazardous.],
+  [Does rucking build muscle?],
+  [Yes, rucking can help build muscle, especially in your legs, core, and back. The added weight provides resistance, similar to strength training.],
+  [What is the ideal weight for rucking?],
+  [Start with 10 to 15% of your body weight and adjust based on your comfort and fitness level. Heavier weights can affect your balance and stance, making injuries more likely. As you progress, you can gradually increase the weight.],
+  [Does rucking build traps?],
+  [Yes. Rucking forces your upper back and shoulder muscles to step up, giving your traps a solid workout as you carry the weight.],
+  [Is rucking good for you?],
+  [Ruck yes! Rucking is a low-impact, full-body workout that kicks butt.],
+  [Tell your boring walk on the treadmill to ruck off and trade it in for a waltz about with a weighted rucksack. Rucking could be the secret sauce your fitness routine has been missing, helping you build muscle, shed pounds, or get those steps in.],
 ),
   insert-map: (:),
-  word-count: 789,
+  word-count: 802,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+  #pull-quote([Improves posture and core stability   Carrying a weighted backpack helps your posture.], [Greatist])
+
+}
+
+{
+  #standard-article(
+  title: [Notes on Linear Algebra for Polynomials],
+  author: [Eli Bendersky],
+  source-name: [Eli Bendersky],
+  images: (),
+  paragraphs: (
+  [We’ll be working with the set P\_n(\\mathbb{R}), real polynomials
+of degree \\leq n. Such polynomials can be expressed using
+n+1 scalar coefficients a\_i as follows:],
+  [\\\[p(x)=a\_0+a\_1 x + a\_2 x^2 + \\cdots + a\_n x^n\\\]],
+  [Vector space],
+  [The set P\_n(\\mathbb{R}), along with addition of polynomials and
+scalar multiplication form a vector space . As a proof, let’s review
+how the vector space axioms are satisfied. We’ll use p(x),
+q(x) and r(x) as arbitrary polynomials from the set
+P\_n(\\mathbb{R}) for the demonstration. Similarly, a and
+b are arbitrary scalars in .],
+  [Associativity of vector addition :],
+  [\\\[p(x)+\[q(x)+r(x)\]=p(x)+q(x)+r(x)=\[p(x)+q(x)\]+r(x)\\\]],
+  [This is trivial because addition of polynomials is associative \[1\] .
+Commutativity is similarly trivial, for the same reason:],
+  [Commutativity of vector addition :],
+  [\\\[p(x)+q(x)=q(x)+p(x)\\\]],
+  [Identity element of vector addition :],
+  [The zero polynomial 0 serves as an identity element.
+\\forall p(x)\\in P\_n(\\mathbb{R}), we have
+0 + p(x) = p(x).],
+  [Inverse element of vector addition :],
+  [For each p(x), we can use q(x)=-p(x) as the additive
+inverse, because p(x)+q(x)=0.],
+  [Identity element of scalar multiplication],
+  [The scalar 1 serves as an identity element for scalar multiplication.
+For each p(x), it’s true that 1\\cdot p(x)=p(x).],
+  [Associativity of scalar multiplication :],
+  [For any two scalars a and b:],
+  [\\\[a\[b\\cdot p(x)\]=ab\\cdot p(x)=\[ab\]\\cdot p(x)\\\]],
+  [Distributivity of scalar multiplication over vector addition :],
+  [For any p(x), q(x) and scalar a:],
+  [\\\[a\\cdot\[p(x)+q(x)\]=a\\cdot p(x)+a\\cdot q(x)\\\]],
+  [Distributivity of scalar multiplication over scalar addition :],
+  [For any scalars a and b and polynomial p(x):],
+  [\\\[\[a+b\]\\cdot p(x)=a\\cdot p(x) + b\\cdot p(x)\\\]],
+  [Linear independence, span and basis],
+  [Since we’ve shown that polynomials in P\_n(\\mathbb{R}) form a
+vector space, we can now build additional linear algebraic definitions
+on top of that.],
+  [A set of k polynomials p\_k(x)\\in P\_n(\\mathbb{R}) is said
+to be linearly independent if],
+  [\\\[\\sum\_{i=1}^{k}a\_i p\_i(x)=0\\\]],
+  [implies a\_i=0 \\quad \\forall i. In words, the only linear
+combination resulting in the zero vector is when all coefficients are 0.],
+  [As an example, let’s discuss the fundamental building blocks of
+polynomials in P\_n(\\mathbb{R}): the set
+\\{1, x, x^2, \\dots x^n\\}. These are linearly independent
+because:],
+  [\\\[a\_0 + a\_1 x + a\_2 x^2 + \\cdots a\_n x^n=0\\\]],
+  [is true only for zero polynomial, in which all the coefficients
+a\_i=0. This comes from the very definition of polynomials.
+Moreover, this set spans the entire P\_n(\\mathbb{R}) because
+every polynomial can be (by definition) expressed as a linear combination of
+\\{1, x, x^2, \\dots x^n\\}.],
+  [Since we’ve shown these basic polynomials are linearly independent and
+span the entire vector space, they are a basis for the space. In fact,
+this set has a special name: the monomial basis (because a monomial is
+a polynomial with a single term).],
+  [Checking if an arbitrary set of polynomials is a basis],
+  [Suppose we have some set polynomials, and we want to know if these form
+a basis for P\_n(\\mathbb{R}). How do we go about it?],
+  [The idea is using linear algebra the same way we do for any other vector
+space. Let’s use a concrete example to demonstrate:],
+  [\\\[Q=\\{1-x, x, 2x+x^2\\}\\\]],
+  [Is the set Q a basis for P\_n(\\mathbb{R})? We’ll start by
+checking whether the members of Q are linearly independent.
+Write:],
+  [\\\[a\_0(1-x)+a\_1 x + a\_2(2x+x^2)=0\\\]],
+  [By regrouping, we can turn this into:],
+  [\\\[a\_0 + (a\_1-a\_0+2a\_2)x+a\_2 x^2=0\\\]],
+  [For this to be true, the coefficient of each monomial has to be zero;
+mathematically:],
+  [\\\[\\begin{aligned}
+ a\_0&=0\\\\
+ a\_1-a\_0+2a\_2&=0\\\\
+ a2&=0\\\\
+\\end{aligned}\\\]],
+  [In matrix form:],
+  [\\\[\\begin{bmatrix}
+ 1 & 0 & 0\\\\
+ -1 & 1 & 2\\\\
+ 0 & 0 & 1\\\\
+\\end{bmatrix}
+\\begin{bmatrix}a\_0\\\\ a\_1\\\\ a\_2\\end{bmatrix}
+=\\begin{bmatrix}0\\\\ 0\\\\ 0\\end{bmatrix}\\\]],
+  [We know how to solve this, by reducing the matrix into row-echelon
+form . It’s easy to
+see that the reduced row-echelon form of this specific matrix is
+I, the identity matrix. Therefore, this set of equations has a
+single solution: a\_i=0 \\quad \\forall i \[2\] .],
+  [We’ve shown that the set Q is linearly independent. Now let’s
+show that it spans the space P\_n(\\mathbb{R}). We want to
+analyze:],
+  [\\\[a\_0(1-x)+a\_1 x + a\_2(2x+x^2)=\\alpha +\\beta x + \\gamma x^2\\\]],
+  [And find the coefficients a\_i that satisfy this for any
+arbitrary , and \\gamma. We proceed
+just as before, by regrouping on the left side:],
+  [\\\[a\_0 + (a\_1-a\_0+2a\_2)x+a\_2 x^2=\\alpha +\\beta x + \\gamma x^2\\\]],
+  [and equating the coefficient of each power of separately:],
+  [\\\[\\begin{aligned}
+ a\_0&=\\alpha\\\\
+ a\_1-a\_0+2a\_2&=\\beta\\\\
+ a2&=\\gamma\\\\
+\\end{aligned}\\\]],
+  [If we turn this into matrix form, the matrix of coefficients is exactly
+the same as before. So we know there’s a single solution, and by
+rearranging the matrix into I, the solution will appear on the
+right hand side. It doesn’t matter for the moment what the actual
+solution is, as long as it exists and is unique. We’ve shown that
+Q spans the space!],
+  [Since the set Q is linearly independent and spans
+P\_n(\\mathbb{R}), it is a basis for the space.],
+  [Inner product],
+  [I’ve discussed inner products for functions in the post about Hilbert
+space .
+Well, polynomials are functions , so we can define an inner product
+using integrals as follows \[3\] :],
+  [\\\[\\langle p, q \\rangle = \\int\_{a}^{b} p(x) q(x) w(x) \\, dx\\\]],
+  [Where the bounds a and b are arbitrary, and could be
+infinite. Whenever we deal with integrals we worry about convergence; in
+my post on Hilbert spaces, we only talked about L^2 - the square
+integrable functions. Most polynomials are not square integrable,
+however. Therefore, we can restrict this using either:],
+  [A special weight function w(x) to make sure the inner
+product integral converges],
+  [Set finite bounds on the integral, and then we can just set
+w(x)=1.],
+  [Let’s use the latter, and restrict the bounds into the range
+\[-1,1\], setting w(x)=1. We have the following inner
+product:],
+  [\\\[\\langle p, q \\rangle = \\int\_{-1}^{1} p(x) q(x) \\, dx\\\]],
+  [Let’s check that this satisfies the inner product space conditions.],
+  [Conjugate symmetry :],
+  [Since real multiplication is commutative, we can write:],
+  [\\\[\\langle p, q \\rangle = \\int\_{-1}^{1} p(x) q(x) \\, dx =\\int\_{-1}^{1} q(x) p(x) \\, dx=\\langle q, p \\rangle\\\]],
+  [We deal in the reals here, so we can safely ignore complex conjugation.],
+  [Linearity in the first argument :],
+  [Let p\_1,p\_2,q\\in P\_n(\\mathbb{R}) and a,b\\in \\mathbb{R}.
+We want to show that],
+  [\\\[\\langle ap\_1+bp\_2,q \\rangle = a\\langle p\_1,q\\rangle +b\\langle p\_2,q\\rangle\\\]],
+  [Expand the left-hand side using our definition of inner product:],
+  [\\\[\\begin{aligned}
+ \\langle ap\_1+bp\_2,q \\rangle&=\\int\_{-1}^{1} (a p\_1(x)+b p\_2(x)) q(x) \\, dx\\\\
+ &=a\\int\_{-1}^{1} p\_1(x) q(x) \\, dx+b\\int\_{-1}^{1} p\_2(x) q(x) \\, dx
+\\end{aligned}\\\]],
+  [The result is equivalent to
+a\\langle p\_1,q\\rangle +b\\langle p\_2,q\\rangle.],
+  [Positive-definiteness :],
+  [We want to show that for nonzero p\\in P\_n(\\mathbb{R}), we have
+\\langle p, p\\rangle \> 0. First of all, since p(x)^2\\geq0
+for all , it’s true that:],
+  [\\\[\\langle p, p\\rangle=\\int\_{-1}^{1}p(x)^2\\, dx\\geq 0\\\]],
+  [What about the result 0 though? Well, let’s say that],
+  [\\\[\\int\_{-1}^{1}p(x)^2\\, dx=0\\\]],
+  [Since p(x)^2 is a non-negative function, this means that the
+integral of a non-negative function ends up being 0. But p(x) is
+a polynomial, so it’s continuous , and so is p(x)^2. If the
+integral of a continuous non-negative function is 0, it means the
+function itself is 0. Had it been non-zero in any place, the integral
+would necessarily have to be positive as well.],
+  [We’ve proven that \\langle p, p\\rangle=0 only when p is
+the zero polynomial. The positive-definiteness condition is satisfied.],
+  [In conclusion, P\_n(\\mathbb{R}) along with the inner product
+we’ve defined forms an inner product space .],
+  [Now that we have an inner product, we can define orthogonality on
+polynomials: two polynomials p,q are orthogonal (w.r.t. our
+inner product) iff],
+  [\\\[\\langle p,q\\rangle=\\int\_{-1}^{1}p(x)q(x)\\, dx=0\\\]],
+  [Contrary to expectation \[4\] , the monomial basis polynomials are not 
+orthogonal using our definition of inner product.],
+  [For example, calculating the inner product for 1 and
+x^2:],
+  [\\\[\\langle 1,x^2\\rangle=\\int\_{-1}^{1}x^2\\, dx=\\frac{x^3}{3}\\biggr|\_{-1}^{1}=\\frac{2}{3}\\\]],
+  [There are other sets of polynomials that are orthogonal using our
+inner product. For example, the Legendre
+polynomials ; but
+this is a topic for another post.],
+  [\[1\] There’s a level of basic algebra below which we won’t descend in],
+  [these notes. We could break this statement further down by saying],
+  [that something like a\_i x^i + a\_j x^j can be added to],
+  [b\_i x^i + b\_j x^j by adding each power of],
+  [separately for any and j, but let’s just take it],
+  [for granted.],
+  [\[2\] Obviously, this specific set of equations is quite trivial to solve],
+  [without matrices; I just want to demonstrate the more general],
+  [approach. Once we have a system of linear equations, the whole],
+  [toolbox of linear algebra is at our disposal. For example, we could],
+  [also have checked the determinant and seen it’s non-zero, which means],
+  [that a square matrix is invertible, and in this case has a single],
+  [solution of zeroes.],
+  [\[3\] And actually with this (or any valid) inner product,],
+  [P\_n(\\mathbb{R}) indeed forms a Hilbert space, because it’s],
+  [finite-dimensional, and every finite-dimensional inner product space],
+  [is complete.],
+  [\[4\] Because of how naturally this set spans P\_n(\\mathbb{R}). And],
+  [indeed, we can define alternative inner products using which],
+  [monomials are orthogonal.],
+),
+  insert-map: (:),
+  word-count: 1474,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -1115,82 +586,91 @@ did not enjoy the re-read as much as I'd thought I would.],
 
 {
   #standard-article(
-  title: [Ozempic, Wegovy May Help Reverse Damage Caused by Osteoarthritis],
+  title: [Nicole 'Snooki' Polizzi Urges Cervical Cancer Screening After Diagnosis],
   author: [Healthline],
   source-name: [Healthline],
   images: (),
   paragraphs: (
-  [A new study found that semaglutide benefits extend beyond weight loss by easing osteoarthritis symptoms. Tatsiana Volkava/Getty Images],
-  [A new study reports that GLP-1 semaglutide medications may help reverse the effects of osteoarthritis in the joints.],
-  [The researchers say the drugs accomplish this by repairing tissue damage by reprogramming cells that maintain healthy cartilage.],
-  [Experts say weight loss is the most effective strategy to combat osteoarthritis, but regular exercise and a healthy diet can also help.],
-  [Researchers report that a specific type of GLP-1 weight loss medication may help reverse tissue damage in people with osteoarthritis.],
-  [A new study published on March 3 in Cell Metabolism found that GLP-1 drugs like Ozempic and Wegovy, which contain the active ingredient semaglutide, can help ease the effects of osteoarthritis on joints.],
-  [The findings suggest that the benefits go beyond weight loss , which, in itself, can ease osteoarthritis by reducing pressure on joints.],
-  [The researchers say that semaglutide drugs help repair tissue damage by reprogramming the metabolism of cells that synthesize and maintain healthy cartilage. This allows cartilage to generate more energy.],
-  [“This work not only highlights the potential off-target effect of semaglutide as an effective drug to treat metabolic osteoarthritis but also reveals a weight loss-independent repair mechanism that targets metabolic pathways and mediators essential to cartilage repair under osteoarthritis conditions,” the study authors wrote.],
-  [“This may lead to new strategies to develop disease-modifying therapies for osteoarthritis,” they continued.],
-  [Matthew Baker , MD, an assistant professor of medicine in immunology and rheumatology at Stanford University in California, said the study, although limited in size and scope, does provide a hypothesis for future breakthroughs. Baker wasn’t involved in the study.],
-  [“Most current therapies target symptoms such as pain rather than the underlying structural drivers of disease,” Baker told Healthline. “As a result, truly disease-modifying osteoarthritis drugs have remained elusive despite decades of research.”],
-  [How weight loss drugs can ease osteoarthritis],
-  [There are two basic types of the new generation of weight loss medications , known as GLP-1 drugs, that are prescribed for weight loss and type 2 diabetes treatment.],
-  [One group contains the active ingredient tirzepatide . The medications sold under the brand names Mounjaro and Zepbound are among them.],
-  [The other group contains the active ingredient semaglutide . The medications sold under the brand names Ozempic and Wegovy are among them.],
-  [Both types of GLP-1 drugs have proven to be  effective  in helping people lose weight by using mechanisms that help suppress appetite.],
-  [Losing weight is considered one of the best ways to help reduce the symptoms of osteoarthritis, especially in the knee joints. It works by reducing pressure on joint cartilage and lowering inflammation.],
-  [In their new study, researchers said they wanted to determine whether the reduction in osteoarthritis symptoms with GLP-1 drugs extended beyond weight loss.],
-  [They first experimented with an animal model, examining obese mice with osteoarthritis. Some of the mice were treated with semaglutide drugs while others weren’t. The researchers reported that both groups lost similar amounts of weight, but the semaglutide mice received better cartilage protection.],
-  [The results were due to a complicated metabolic pathway that affects how various cells produce energy.],
-  [The researchers then studied 20 people ages 50 to 75 with obesity and osteoarthritis. Some of this group, which comprised seven males and 13 females, received semaglutide medications while others did not.],
-  [The researchers reported that at the end of a 24-week treatment period, subjects who received semaglutide had significant improvements in knee joint function.],
-  [They noted that MRI analyses revealed thicker cartilage and recent cartilage growth in the inner joint areas among the semaglutide group.],
-  [Bert Mandelbaum , MD, a sports medicine specialist, orthopedic surgeon, and co-director of the Regenerative Orthobiologic Center at Cedars-Sinai Orthopedics in Los Angeles, said it’s possible that healthier cells provide better oxidation and can help preserve healthy cartilage. Mandelbaum wasn’t involved in the study.],
-  [“We’re learning more as we go,” Mandelbaum told Healthline. “It’s like trying to put together a big puzzle.”],
-  [“Rather than regenerating cartilage de novo, semaglutide likely stabilizes cartilage and enables limited repair by improving the metabolic environment within the joint,” said Baker.],
-  [What to know about osteoarthritis],
-  [Osteoarthritis  is the most common type of arthritis, affecting nearly 33 million adults in the United States.],
-  [It is a degenerative condition that causes inflammation in the joints. Some of the common symptoms include:],
-  [pain or stiffness in the joints],
-  [loss of flexibility],
-  [reduced range of motion],
-  [tenderness when pressing on an affected area],
-  [grating or clicking sounds when joints are moved],
-  [bone spurs],
-  [Osteoarthritis is caused by gradual joint and cartilage damage. Risk factors include:],
-  [genetics],
-  [previous injuries],
-  [being over the age of 50],
-  [menopause],
-  [having an occupation that requires kneeling, climbing, or heavy lifting],
-  [obesity],
-  [Mandelbaum and Baker agreed that weight is the number one factor in the development and progression of osteoarthritis.],
-  [“There is no question that there is an association between osteoarthritis and body weight,” said Mandelbaum.],
-  [“Excess body weight is one of the strongest modifiable risk factors for osteoarthritis , particularly for knee osteoarthritis ,” said Baker. “Higher body mass increases mechanical load across joints, accelerating cartilage wear with every step.”],
-  [“Obesity contributes to systemic inflammation and metabolic dysfunction that can directly affect joint tissues, even in non-weight-bearing joints,” he added.],
-  [Baker noted that osteoarthritis can be difficult to treat.],
-  [“Osteoarthritis is difficult to treat because cartilage has very limited intrinsic healing capacity due to its avascular, low-cellularity structure,” he said. “Osteoarthritis is also biologically heterogeneous, involving cartilage, bone, synovium, nerves, and systemic metabolic factors rather than a single disease pathway.”],
-  [Mandelbaum said there are lifestyle factors people can adopt to help lower the risk of osteoarthritis as well as its painful effects. They include:],
-  [maintaining a healthy body weight],
-  [exercising regularly],
-  [adopting a plant-based diet such as the  Mediterranean diet],
-  [limiting alcohol consumption],
-  [Baker agreed there are strategies to help reduce risks.],
-  [“Maintaining a healthy weight or preventing further weight gain is one of the most effective ways to reduce osteoarthritis risk, particularly for the knees,” he said.],
-  [“Regular physical activity, including low impact aerobic exercise and strength training , helps preserve joint function, improve biomechanics, and reduce pain,” he added. “Preventing joint injuries through balance training, fall prevention , and appropriate footwear is especially important in older adults.”],
-  [“Managing metabolic health conditions such as diabetes and insulin resistance may also reduce osteoarthritis risk by limiting systemic inflammatory and metabolic stress on joint tissues,” Baker said.],
-  [Beyond weight loss: Other benefits of GLP-1s],
-  [The latest research is not the first to report that GLP-1 drugs have benefits beyond weight loss.],
-  [In a  2023 study , researchers said that GLP-1 drugs’ anti-inflammatory properties may help reduce cancer risks.],
-  [In 2024, researchers  reported  that GLP-1 medications may help ease rheumatoid arthritis symptoms .],
-  [In 2025, researchers  reported  that GLP-1 medications can reduce the risk of sudden death and hospitalization in people with a common type of heart failure.],
-  [In another 2025 study , GLP-1 drugs were found to be beneficial in lowering the risk of heart disease and stroke in people with type 2 diabetes.],
-  [In February 2026, researchers  concluded  that weight loss drugs containing tirzepatide may help lower the risk of eye disease in people with type 2 diabetes.],
+  [Nicole “Snooki” Polizzi has shared her recent cervical cancer diagnosis on her social media accounts. Image credit: Dimitrios Kambouris/Getty Images],
+  [Nicole “Snooki” Polizzi has shared her recent cervical cancer diagnosis on her social media.],
+  [She emphasized the importance of routine Pap smears and early detection.],
+  [Cervical cancer is largely preventable through the HPV vaccine.],
+  [Nicole “Snooki” Polizzi of “Jersey Shore” fame recently revealed that she has been diagnosed with stage 1 cervical cancer.],
+  [On February 20, Polizzi, 38, posted on TikTok about the cone biopsy she had after a routine pap smear.],
+  [“It came back stage 1 cervical cancer called adenocarcinoma,” the reality TV star said.],
+  [“Obviously not the news I’ve been hoping for, but also not the worst news just because they caught it so early. Thank freaking God!”],
+  [The American Cancer Society (ACS) estimates that around 13,290 new cases of cervical cancer will be diagnosed in 2026.],
+  [Cervical cancer is most frequently diagnosed between the ages of 35 and 64. Here’s what you need to know about getting screened.],
+  [Snooki encourages women to get Pap smears],
+  [In her TikTok videos, Polizzi also stressed the importance of all females going in to get their routine pap smears (cervical screenings).],
+  [“I’m 38 years old, and I’ve been struggling with abnormal pap smears for three or four years now, and now look at me,” she said.],
+  [“Instead of putting it off because I didn’t want to go, because I was hurt and scared, I just went and did it. And it was there, cancer is in there. But it’s stage 1, and it’s curable.”],
+  [She continued to tell people to get their appointments done. “Once you go to stage 2, then you have to do chemo… nobody wants to do that! It’s scary. So get your appointments done,” she encouraged.],
+  [Diana Pearre , MD, board certified gynecologic oncologist at The Roy and Patricia Disney Family Cancer Center at Providence Saint Joseph Medical Center in Burbank, CA, agreed.],
+  [“It is so important to get pap smears (cervical cancer screenings),” she told Healthline. “They allow us to screen women for HPV (the virus that causes cervical cancer) and identify cells that can become precancerous. In doing so, we can prevent many cases of cervical cancer before they transform to cancers.”],
+  [Polizzi said that she was being transferred to an oncologist and would undergo a PET scan to be sure the cancer has not spread to other parts of her body.],
+  [“After that, I’m gonna probably get the hysterectomy ,” Polizzi added. She also noted that her doctor gave her the alternative of chemotherapy and radiation as treatment.],
+  [“Obviously, I think the smart choice here is the hysterectomy. I’ll still keep my ovaries, which is a good sign. But yeah, gotta get the cervix and uterus out. It all depends on the PET scan,” she said.],
+  [“I appreciate all of the love. Everything’s going to be fine. I’m going to tackle this and get it done,” Polizzi told her followers. “I gotta keep attacking this, and everything’s gonna be great.”],
+  [Cervical cancer largely preventable with HPV vaccine],
+  [While cervical cancer is common, it is also largely preventable.],
+  [According to the National Cancer Institute (NCI) , 70% of cervical cancers are the result of two high-risk types of HPV.],
+  [Nearly all cases of cervical cancer are due to long-lasting and persistent HPV infections.],
+  [However, the HPV vaccine is a safe way to prevent the HPV infection and cervical cancer. The current recommendation is that anyone ages 11 to 26 should have the HPV vaccine.],
+  [“It is so important to get this vaccine. Giving children this vaccine (boys and girls alike) can prevent HPV related cancers (cervical, head and neck , vulvar , vaginal ) before the onset of sexual debut.  It can also help women who already have cervical dysplasia , lowering the risk of severe dysplasia recurrence,” Pearre said.],
+  [The vaccine dose schedule depends on your age when you receive it.],
+  [The vaccine is not recommended for everyone over 26, but you can speak with your healthcare professional to see if it is right for you.],
+  [“I recommend anyone ages 9 to 46 to consider getting the HPV vaccine if they have not done so,” Pearre said. “There are little to no side effects. It does not affect fertility, age at sexual debut, \[or\] menstrual patterns. It is one of the few vaccines (the other being the hepatitis vaccine ) that can prevent cancer development.”],
 ),
   insert-map: (:),
-  word-count: 1207,
+  word-count: 741,
   edited-for-length: false,
   debug-mode: false,
 )
+
+}
+
+{
+  #standard-article(
+  title: [Skin in the Game: Is Adapalene or Salicylic Acid Better for Acne?],
+  author: [Greatist],
+  source-name: [Greatist],
+  images: (),
+  paragraphs: (
+  [Adapalene and salicylic acid are both used to treat acne. We’re going more than skin deep to discover the pros and cons of each.],
+  [If you have acne, you probably know more about skincare than most people. You might even impress friends with terms like “ adapalene ” and “ salicylic acid .”],
+  [But do you know what each treatment does for your skin and if one is better for acne? Let’s find out!],
+  [Caroline Tompkins \/ Refinery29 for Getty Images],
+  [Salicylic acid is a keratolytic agent commonly found in over-the-counter creams, face washes, masks, and gels. While it’s often used for acne, it can also help with dandruff, psoriasis, seborrheic dermatitis, calluses, and warts.],
+  [Adapalene, often known by its brand name Differin, is a topical retinoid. It comes in various forms, such as gels, cleansers, and creams. And just like salicylic acid, it’s available over-the-counter without a prescription.],
+  [On a chemical level, adapalene and salicylic acid work in different ways to clear acne.],
+  [Salicylic acid breaks down a protein called keratin in the outer layer of the skin. Studies show this helps remove the buildup of dead skin cells. It also reduces inflammation in the skin, calming the redness that often comes with breakouts.],
+  [Adapalene, on the other hand, is a retinoid . And what, you may ask, is a retinoid? It’s a derivative of vitamin A that attaches to receptors in the skin. Doing so prompts cell turnover to speed up, helping skin regenerate more quickly and lowering the likelihood of clogged pores.],
+  [So… what do these differences mean for acne? Both adapalene and salicylic acid can treat skin prone to breakouts (though it’s not recommended to use them together since this can over-irritate your skin).],
+  [Which one is more potent may depend on your acne type. Research shows that adapalene was among the best treatments for comedonal acne (aka whiteheads and blackheads), whereas salicylic acid was less effective and more affordable.],
+  [Long story short: Your dermatologist can help determine which is the smarter choice for your type of acne.],
+  [Studies haven’t directly compared adapalene and salicylic acid for blackheads, but both can help. Blackheads form from plugged hair follicles, and salicylic acid’s exfoliating action can clear clogged pores. Adapalene increases cell turnover, which can also help remove blackheads.],
+  [Wrinkles: Adapalene vs. salicylic acid],
+  [Adapalene is a retinoid. Retinoids are well-established anti-aging agents because they stimulate new cell growth and promote collagen production. Some  studies  have also shown anti-aging benefits from salicylic acid.],
+  [While salicylic acid, due to its exfoliating properties, can help reduce wrinkles, adapalene is generally more effective for addressing aging-related concerns like wrinkles.],
+  [FAQs],
+  [What works better than adapalene?],
+  [Adapalene is an over-the-counter acne treatment — so prescription-strength options may work better. According to the American Academy of Dermatology , some of the most potent acne treatments include antibiotics and isotretinoin.],
+  [Is adapalene the best for acne?],
+  [Adapalene isn’t a magic wand for acne. It may be an ideal choice for some people, but depending on your skin type and sensitivity level, salicylic acid, other OTC products, or even a prescription treatment might be your best bet.],
+  [Is adapalene stronger than benzoyl peroxide?],
+  [Research shows that adapalene can be just as strong for zapping zits as benzoyl peroxide (another potentially powerful weapon in the battle against acne). A 2024 study , for example, found that 0.1% topical adapalene was as safe and effective as a 4% benzoyl peroxide solution in people of color.],
+  [Is adapalene the strongest retinoid?],
+  [Though adapalene may be an effective acne treatment, it’s not the pinnacle of retinoid strength. Of the four “generations” of retinoids, adapalene is considered third-generation . Fourth-generation retinoids are typically stronger and have higher specificity to retinoic acid receptors in the skin. For this reason, they’re available only by prescription.],
+  [Feel free to experiment with adapalene and salicylic acid to see which works best for you — after all, it’s your face! You might find one more effective for your skin. For expert advice, be sure to consult your dermatologist.],
+),
+  insert-map: (:),
+  word-count: 701,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+  #pull-quote([Which one is more potent may depend on your acne type.], [Greatist])
 
 }
 
@@ -1281,310 +761,38 @@ did not enjoy the re-read as much as I'd thought I would.],
 
 {
   #standard-article(
-  title: [7 Places on the Body That Hidradenitis Suppurativa Can Appear],
+  title: [7 Common Misdiagnoses for Hidradenitis Suppurativa (HS)],
   author: [Greatist],
   source-name: [Greatist],
   images: (),
   paragraphs: (
-  [HS often shows up on the body’s sweatiest, most sensitive, and most friction-prone regions.],
-  [Despite what Instagram and photo filters would have us think, no one has perfectly smooth skin over the entirety of their body. We’re all prone to the occasional bump, rash, zit, or ingrown hair. These issues generally go away after the blocked follicle, clogged pore, or minor skin irritation resolves.],
-  [But hidradenitis suppurativa (HS) is different. HS is a chronic, progressive skin condition that typically appears as boil-like lumps in some of your most sensitive regions (and beyond).],
-  [HS lumps or bumps can form interconnected tracts underneath the skin that may become inflamed and infected, causing discomfort and pain. Although infections are often a part of HS, the disease itself is not an infection — it’s due to an ongoing inflammatory response in the body.],
-  [In addition to causing pain and discomfort, HS can be extremely frustrating and impact your self-esteem . Identifying HS correctly and early is crucial for getting optimal care, easing symptoms, slowing disease progression, and improving your mental health.],
-  [While we don’t know what exactly causes HS, genetic, environmental, and hormonal factors may play a role. Skin regions prone to HS include those where we sweat often and where friction is super common. Friction can occur from skin rubbing on skin, or where clothing can chafe or rub.],
-  [Here are seven areas of the body that are often impacted by HS.],
-  [Our underarms are packed with hair follicles and apocrine glands (aka, sweat glands). With HS, these follicles and glands may become clogged, and bacteria can start to grow, leading to the inflamed boil-like bumps of HS.],
-  [If you’ve ever gone for a run and come back with the dreaded armpit chafing, you’re all too familiar with how this area of the body can be prone to skin-on-skin friction or excessive rubbing from clothing. (Lookin’ at you, sports bra!) Friction and chafing can also cause an HS flare-up.],
-  [Complicating matters is that some people shave or wax their armpits, and many understandably slather this region with antiperspirants or deodorants. These factors can also clog or irritate sweat glands and hair follicles.],
-  [The breasts , including underneath and even on the areolae (the area around the nipple), are a common place for HS to show up.],
-  [The breast area is a frequent spot for chafing from bras or other clothing. This chafing not only causes skin irritation — it can also trap sweat and bacteria on the skin. The areolae contain apocrine glands and hair follicles that can easily become infected. All these factors can contribute to an HS flare.],
-  [Research also points to sex hormones playing a role in HS, so a hormone shift or imbalance may also make breast tissue more prone to HS lesions. However, more research is needed on the connection between HS and hormones.],
-  [No one can deny that the crotch becomes a sweaty area when life gets steamy, either from the weather, a workout, or both. It’s also a common area for clothing to rub against just from walking and everyday movements.],
-  [As with other HS-prone areas, the groin and genital areas contain apocrine glands and oodles of hair follicles, all of which can become blocked as part of HS, leading to a flare. Speaking of hair down there, many people groom their pubic region, which can also lead to blocked hair follicles.],
-  [Again, hormonal shifts or imbalances may also play a role in why these sensitive areas can become hot spots for HS.],
-  [The inner thighs are an extension of the groin area. Similarly, sweat also hangs out here, and it’s a common spot for chafing to occur from skin-on-skin friction, or from clothing rubbing and irritating the area.],
-  [The entire buttocks area is also prone to HS in many people. Areas commonly affected include the anus, the butt crack, and the gluteal fold — or the crease where the buttocks meet the backs of the upper thighs.],
-  [Apocrine glands and hair follicles are abundant here, too. Sweat and other bacteria sources can also lead to HS infections. The buttocks are also subjected to pressure from sitting, which can lead to further irritation.],
-  [Although more research is needed, some studies suggest a link between HS and inflammatory bowel disease (IBD) . IBD is an umbrella term for conditions such as Crohn’s and ulcerative colitis. The potential links between HS and IBD may play a role in why the buttocks area is a common site for HS.],
-  [Although less common than in other areas, HS can also show up at the nape of the neck . This might be due to friction from clothing collars, jewelry, and other clothing or accessories. The neck is also a common site for sweat, which could block hair follicles in this area.],
-  [If skin folds at the waist, or clothing waistbands (especially tight ones!) cause friction, it can lead to HS in the waistband area. As a result, HS lesions may show up on the abdomen, back, or sides.],
-  [HS tends to appear on some of the body’s most sensitive places, including the underarms, breasts, groin, and buttocks. These areas are prone to sweat, friction, and irritation from hair removal — all of which may contribute to an HS flare.],
-  [If you suspect you have HS, talk with a knowledgeable dermatologist who can give you a proper diagnosis and help you develop the right treatment and self-care plan to combat irritation and flares so you can feel more comfortable in your skin.],
+  [Why this skin condition gets mistaken for others — and which ones.],
+  [Hidradenitis suppurativa (HS) is a skin condition that often gets caught up in a case of mistaken identity in a lineup of suspects. Specifically, people confuse HS for some more common conditions.],
+  [With their host of bumps, rashes, flakiness, or scales, skin conditions can sometimes be tricky to diagnose. That’s because they often share common symptoms or have symptoms that overlap with or mimic those of another skin issue.],
+  [So, what exactly is HS? It’s a chronic, progressive skin condition that typically appears as boil-like lumps in friction-prone and sweaty areas, where your skin can be sensitive. These lumps can form interconnected tracts underneath your skin (aka “tunneling”) that may become irritated or even infected.],
+  [Knowing how the symptoms of HS compare with those of other inflammatory skin conditions can help you advocate for the correct diagnosis and care, which is crucial for staving off disease progression.],
+  [Here are 7 conditions that HS commonly gets mistaken for.],
+  [HS isn’t rare — it affects up to 4% of the population. But by comparison, acne vulgaris affects more than more than 9% of people worldwide. Sometimes HS can be mistaken for acne simply because acne is more common. But these two conditions are quite different.],
+  [Acne typically shows up as papules, pustules, or nodules , which are commonly called zits or blemishes. Acne most often appears on your face but can also affect your back, chest, arms, and buttocks. It occurs when your sebaceous glands have a hypersensitivity to circulating androgens (like testosterone).],
+  [By comparison, HS most often appears in sweat- and friction-prone areas, such as your armpits or groin. It occurs when hair follicles become blocked — though more research is needed to learn what causes these blockages.],
+  [Acne conglobata (AC) is a rare but intense form of nodulocystic acne. With AC, the cysts and nodules connect under your skin, and this can lead to infections and scarring. Since AC features a “tunneling” effect that may appear similar to HS, many people confuse these two otherwise distinct conditions.],
+  [One key difference? HS often appears in areas that are subjected to friction from skin-on-skin contact or chafing. AC, on the other hand, can appear anywhere on your body. To further complicate things, many people with HS also have AC, and some research suggests a link between the two conditions .],
+  [A cyst is a fluid-filled sac. Cysts have many possible causes, including injuries and minor infections. They often go away on their own, but some may require treatment.],
+  [HS bumps can resemble cysts — but HS is an ongoing inflammatory condition.],
+  [An ingrown hair happens when a strand of hair anywhere on your body grows into your skin instead of out. Ingrown hairs commonly occur after shaving, waxing, or tweezing. After hair removal, a tiny new hair can curl inward, creating a bump (often called a razor bump).],
+  [Sometimes people confuse HS bumps for ingrown hairs — especially since HS often occurs in places where hair removal is common, such as the armpits and bikini area. Another confusing factor is that HS develops from blocked follicles. However, the cause of the blockage in HS is more complicated than an ingrown hair.],
+  [Folliculitis is inflammation of hair follicles, usually caused by a bacterial infection. The inflamed hair follicles show up as small bumps and can look like ingrown hairs.],
+  [People commonly mistake HS for folliculitis because the conditions often occur in the same skin areas.],
+  [Mild folliculitis tends to go away on its own with at-home treatment, though more severe forms may require antibiotics. HS, on the other hand, is a chronic condition.],
+  [A boil (also called a furuncle) is a bump filled with pus . The bump develops from a bacterial infection, often of a hair follicle. The infection causes a buildup of immune and skin cells, which leads to the formation of the bump. A carbuncle is a cluster of boils.],
+  [People often confuse HS with boils. However, boils are the result of an infection, and proper treatment typically resolves the issue. Meanwhile, the boil-like bumps of HS often require ongoing treatment.],
+  [Herpes is a common sexually transmitted infection (STI) caused by the herpes simplex virus. It shows up as painful sores or blisters.],
+  [Since herpes often affects the genital area and HS occurs around the groin or bikini line, people may confuse the two conditions. But while herpes can be spread through direct contact, HS is not contagious.],
+  [Other skin conditions can mimic HS, and vice versa. But a misdiagnosis can lead to an incorrect treatment that won’t actually ease your symptoms or slow the condition’s progression. This is true for other skin conditions as well.],
+  [That’s why, if you have symptoms of any of the above conditions, you should talk with a knowledgeable dermatologist who can properly diagnose your concerns and find the right treatment plan.],
 ),
   insert-map: (:),
-  word-count: 942,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-}
-
-{
-  #standard-article(
-  title: [GRT noom med epm test template],
-  author: [Greatist],
-  source-name: [Greatist],
-  images: (),
-  paragraphs: (
-  [HERO IMAGE],
-  [products work quickly, according to our testers],
-  [highly rated by our testers and over 1,000 Cornbread Hemp customers],
-  [only the most potent part of the hemp plant is used in the extraction process],
-  [third-party tested for purity and potency],
-  [30-day money-back guarantee],
-  [Use code “HEALTHLINE25” for 25% off your first order.],
-  [SHOP CORNBREAD HEMP],
-  [Our team visiting the Cornbread Hemp farm in Kentucky],
-  [1,2,3 widget/cards (on its own)],
-  [1,2,3 widget/cards (3 together for shop story section)],
-  [FAQs],
-  [Do hair loss treatments work?],
-  [Some people find success with hair loss treatments, such as over-the-counter (OTC) medications, prescription medications, and home remedies. But these methods don’t work for everyone.],
-  [Hair transplants are usually more successful than OTC products. But if you have widespread thinning or baldness or if your hair loss is due to chemotherapy or medications, transplants will not be as effective.],
-  [How long does it take hair loss treatments to work?],
-  [It’s crucial to understand that hair loss treatments take time and commitment. Many of the brands above offer the same prescriptions, and all recommend using them for at least 3 to 6 months daily.],
-  [Six months and beyond, your hair loss should have stopped or slowed, and you may see signs of regrowth. But don’t stop there — you’ll have to continue using these products indefinitely to continue seeing results. It can get expensive over time.],
-  [What happens if I stop hair loss treatment?],
-  [It depends on the treatment you’re using. If you’re taking an OTC or prescription medication, you’ll have to keep taking it long term to maintain results.],
-  [Cam K, 29. lost 35 Ibs in 35 weeks.],
-  [“My experience working with Noom has been nothing short of fantastic. Since starting Noom, I’ve noticed a significant reduction in food noise and cravings and, thanks to the lessons and coaching support, I feel confident that I have built up health habits that will help me maintain my weight loss for years to come.” ✝],
-  [Weight Loss Designed For You, Trusted By Us],
-  [Noom Med is an accessible and affordable weight loss program that pairs psychology with medication, ensuring healthy transformation and lasting results .],
-  [With Noom Med and GLP-1 medication, users experience 48% more weight loss in 6 months than those using medications alone.\*],
-  [Noom understands that weight loss is most effective when tailored to your individual needs. Complete a quick online quiz, and Noom will recommend a custom plan to achieve your health goals.],
-  [97% of doctors recommend combining GLP-1s with lifestyle changes. ^ That’s why the Noom app provides a GLP-1 companion to support reliable and long-lasting healthy habits .],
-  [Users benefit from 100% online access to Noom’s expert clinical team and coaches . No in-person appointments means fast and convenient weight management.],
-  [You can access Noom’s proven and trusted weight loss program via the companion app, designed to enhance the benefits of GLP-1 medications with specialized workouts, recipes, and tracking features .],
-  [Effective Weight Loss in Five Simple Steps],
-  [Noom ensures your weight loss journey starts right, by guiding you throughout the process. Noom Med follows these simple steps:],
-  [Fill out a quick clinical survey about your health history and goals, and verify your identity.],
-  [A licenced clinician will evaluate your results to determine if a prescription is best for you. This can all be conveniently completed in the app.],
-  [Noom’s insurance concierge helps determine the costs, saving you the hassle of navigating insurance on your own. The Noom Med program is also FSA & HSA eligible .],
-  [Receive your prescribed medication within 7 days .],
-  [Receive ongoing care from trained coaches alongside unlimited medication refills and contact with your clinician , where appropriate.],
-  [Choose Noom Med for Safe and Long Lasting Results],
-  [If you qualify for Noom Med, you can choose between two different paths: Noom GLP-1 RX Program or Microdose GLP-1rx Program RX , and Branded medications . Pricing for Noom Med varies based on your chosen plan.],
-  [Branded GLP-1 medications available through Noom Med includes:],
-  [The microdosing GLP-1 program provides users with a lower dose of GLP-1s, decreasing potential side effects.],
-  [The microdosing program includes access to the companion app alongside regular, at-home biomarker testing.],
-  [\*Based on a retrospective study of self-reported data of pounds lost for active versus passive users who were offered the Noom program when being prescribed an early stage GLP-1.],
-  [✝ Noom results involve maintaining a healthy diet and exercise changes. Individual results vary.],
-  [^Based on an independent third party survey of 251 primary care physicians who currently prescribe GLP-1 medications.],
-),
-  insert-map: (:),
-  word-count: 798,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-}
-
-{
-  #standard-article(
-  title: [Maultaschen],
-  author: [Atlas Obscura],
-  source-name: [Atlas Obscura],
-  images: (),
-  paragraphs: (
-  [The origins of Germany’s Maultaschen are deliciously devious. Legend has it that, in the late Middle Ages, a lay brother named Jakob invented the stuffed pasta dumplings at the Maulbronn Monastery, a UNESCO World Heritage site founded in 1147 by Cistercian monks in southwest Germany.],
-  [One direct translation of Maultaschen is “mouth pockets,” though “Maul” could just as easily refer to Maulbronn. Maultaschen are usually square dumplings (though sometimes they're rolled) and can be fried in a pan or served in broth. Commonly described as Germany’s version of Italian ravioli, they allegedly emerged as a way to use up an unexpected bounty of meat that Brother Jakob stumbled upon in the forest outside the monastery walls.],
-  [The twist? Although they abhorred waste, these monks weren’t allowed to eat the meat of four-legged animals, especially during the Catholic fasting period of Lent in the spring. So Brother Jakob minced the meat with herbs and onions and wrapped everything inside pasta dough, hiding the forbidden flesh from the eyes of his fellow monks—and even from the eyes of God.],
-  [In Swabia, the region encompassing much of Baden-Württemberg and part of Bavaria where Maultaschen originated, one of the colloquial names for the food references this deception directly: Herrgottsbescheißerle means “little God-cheaters.”],
-  [Everyone in Swabia has their version of the legend with more or less embellishment. Ludwig Nestler holds a master’s degree in heritage conservation and works for the State Palaces and Gardens of Baden-Württemberg, a government organization that oversees monuments like Maulbronn Monastery. His version of the tale includes a sack of stolen meat dropped in the woods by a fleeing thief, which inspires Brother Jakob’s trickery in the kitchen. But he acknowledges that there’s no undisputed “historically correct version” of how Maultaschen came to be. Similarly, everyone in Swabia has their own Maultaschen recipe, with unique ingredients for the minced filling, called Brät .],
-  [“Traditionally the Brät is made from pork mixed with herbs, onions, and occasionally bread crumbs for texture and stability,” says Nestler. Swabia, however, “was a rather poor region with limited amounts of meat due to rather unfertile land, so being adaptive and innovative has always been a part of the people’s nature.” As Maultaschen became popular, fish and seasonal vegetables like spinach, carrots, beets, and mushrooms became common inclusions.],
-  [Today, the European Union ties Maultaschen to Swabia with a Protected Geographical Indication , which lists required ingredients the authentic product should feature, but even the necessary inclusions are pretty loose, such as “pork and/or beef and/or veal” for meat Brät and “typical regional vegetables” for meat-free Brät. It speaks to the way the dumplings developed as subsistence food, used to stretch leftovers and reduce food waste.],
-  [Today, Germans throughout the country enjoy Maultaschen in dozens of flavors in all seasons thanks to grocery stores that stock packaged varieties made by companies like Ditzingen-based Bürger, whose mascot, Erwin , is a Maultasche (the singular form of the plural Maultaschen).],
-  [But the dumplings remain most popular in southern Germany. Maulbronn Monastery offers a special tour that pairs Maultaschen with wine from the monastery’s vineyards. And many locals, including Nestler’s family, still make them from scratch on special occasions—even during Lent, when meat might otherwise be off the menu. There’s no telling if it’s a fraud good enough to fool God, but it’s worth a shot.],
-),
-  insert-map: (:),
-  word-count: 555,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-}
-
-{
-  #standard-article(
-  title: [Nearly Half of Colorectal Cancers Now Occur in Younger People. Here's Why],
-  author: [Healthline],
-  source-name: [Healthline],
-  images: (),
-  paragraphs: (
-  [A new report from the ACS shows that nearly half of colorectal cancer cases are occurring in adults under 65. Image Credit: Westend61/Getty Images],
-  [The American Cancer Society reports that the incidence of colorectal cancer cases in U. S. adults ages 20 to 49 has been rising about 3% per year.],
-  [Experts say there may be a number of factors for this increase, including unhealthy diets, sedentary lifestyles, and the impact of microplastics on the human body.],
-  [They recommend that most adults start colorectal cancer screenings at age 45.],
-  [A new report from the American Cancer Society (ACS) highlights what’s being described as an alarming increase in colorectal cancer cases in young adults.],
-  [In their findings, published in CA: A Cancer Journal for Clinicians , officials at the ACS report that the overall incidence of colorectal cancer in adults in the United States decreased by nearly 1% annually between 2013 and 2022.],
-  [The decline was mostly driven by a 2.5% annual decrease in colorectal cancer cases among U. S. adults ages 65 years and older.],
-  [However, the report found that colorectal cancer cases have increased by 0.4% annually in U. S. adults ages 50 to 64.],
-  [More alarming, the authors said, was the 3% annual increase in colorectal cancer cases in U. S. adults ages 20 to 49.],
-  [They project that 45% of colorectal cancer diagnoses this year will be in individuals younger than 65, up from 27% in 1995. They predict that one-third of the expected 55,000 colorectal cancer deaths in the United States this year will be in people younger than 65.],
-  [The findings also show that rectal cancer cases now represent 32% of all colorectal cancer cases, up from 27% two decades ago.],
-  [The ACS reports on colorectal cancer occurrence every three years, using data from the  National Center for Health Statistics .],
-  [Nikita Wagle , PhD, a principal scientist in cancer surveillance research at the ACS and second author of the new report, said the trend is a call to action for the medical community.],
-  [“Despite decades of progress in the fight against cancer, colorectal cancer death rates are increasing among younger men and women,” Wagle told Healthline. “It is important that we intensify research to uncover the causes as well as take action to prevent these deaths.”],
-  [Why is colorectal cancer rising in young adults?],
-  [In their report, ACS officials state that colorectal cancer is the third most commonly diagnosed cancer in both males and females in the United States.],
-  [They say it’s the second most common cancer-related death in the United States overall. It’s the  number one cause  of cancer-related death in U. S. adults under 50 years of age.],
-  [The ACS  estimates  there will be 158,850 new cases of colorectal cancer in the United States in 2026, including 108,860 colon tumors and 49,990 rectal tumors.],
-  [In its report, the ACS states that more than one-half of colorectal cancer cases are attributable to modifiable risk factors, such as:],
-  [smoking],
-  [unhealthy diet],
-  [high alcohol consumption],
-  [physical inactivity],
-  [excess body weight],
-  [Nilesh Vora , MD, a medical oncologist and medical director of the MemorialCare Todd Cancer Institute at Long Beach Medical Center, has witnessed an uptick in colorectal cancer patients and said the numbers didn’t surprise him. Vora wasn’t involved in the report.],
-  [“It doesn’t change the concern I already have about this trend,” he told Healthline.],
-  [Geoffrey Buckle , MD, a gastrointestinal medical oncologist at the University of California, San Francisco, said the new ACS statistics align with what he and his colleagues have noticed in their practices. Buckle wasn’t involved in the report.],
-  [“We are seeing a growing incidence of colorectal cancer that is indeed alarming,” said Buckle. “The statistics reflect what we see in our clinics every day.”],
-  [Buckle told Healthline that there are various  factors  driving the increase in early onset colorectal cancer cases, including:],
-  [rising obesity rates],
-  [sedentary lifestyles],
-  [unhealthy diets that include ultra-processed foods and red meat],
-  [Some  research has indicated that an overabundance of microplastics in the bodies of younger adults may be another factor, Buckle said.],
-  [Another  theory  suggests that toxins produced by the bacteria  E. coli , which damage DNA, could be contributing to rising colorectal cancer cases.],
-  [Wagle agreed there may be new factors affecting younger adults’ risk of colorectal cancer.],
-  [“Since the late 20th century, there have been many newer exposures, such as ultra-processed food and microplastics, that may influence cancer risk, and to which younger generations have had greater cumulative exposure than older adults, who have had a lifetime of cumulative exposures,” she explained.],
-  [Vora echoed that there may be some credence to these theories. “Other environmental factors need to be considered,” he said.],
-  [How can young adults reduce their colorectal cancer risk?],
-  [The  increase in colorectal cancer cases  in adults under the age of 50 has been discussed in recent years.],
-  [The issue came to the forefront in August 2020, when Chadwick Boseman, the star of the film “Black Panther,”  died  from colon cancer at 43.],
-  [In 2024, a  study  presented at the Digestive Disease Week conference reported that colorectal cancer cases had tripled among U. S. teens from 1999 to 2020.],
-  [In October 2025, researchers  reported  that rectal bleeding is a strong indication of early onset colorectal cancer in adults under 50.],
-  [The issue was highlighted again in early February when James Van Der Beek, an actor best-known for his role on the television series “Dawson’s Creek,”  died  from colon cancer at the age of 48.],
-  [The trends prompted the U. S. Preventive Services Task Force to revise its  guidelines  for colorectal cancer screening . The agency now recommends that these screenings begin at age 45 for most adults.],
-  [There are different  options  for colorectal cancer screening that range from a colonoscopy to at-home stool-based tests.],
-  [Buckle said screening is the most important tool in the prevention of  colorectal cancer . He added that young adults should be aware of the early warning signs of the disease, such as:],
-  [blood in the stool],
-  [unexplained weight loss],
-  [rectal discomfort],
-  [changes in bowel habits],
-  [iron deficiency],
-  [Buckle said that adults in their late 40s and 50s have become increasingly aware of the risk of colorectal cancer and the potential symptoms.],
-  [However, he said that adults under 45 aren’t as attuned to the issues. “There is a definitive lack of recognition,” Buckle said.],
-  [Buckle noted that younger adults should also be aware of their family history of colorectal cancer.],
-  [He recommended regular exercise as well as a diet that avoids ultra-processed foods, sugar, and red meat and includes plenty of fresh vegetables and fruits.],
-  [Wagle recommended that younger adults avoid smoking, limit their alcohol use, and maintain a healthy weight.],
-  [Vora said it’s important for younger adults to be diligent in monitoring symptoms and getting screened.],
-  [“You should get screened on time for colorectal cancer even if you don’t have symptoms,” said Vora. “And if you have symptoms, seek medical care as soon as possible.”],
-),
-  insert-map: (:),
-  word-count: 1153,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-}
-
-{
-  #standard-article(
-  title: [Judge Blocks RFK Jr.’s Child Vaccine Policies, Says They Disregard Science],
-  author: [Healthline],
-  source-name: [Healthline],
-  images: (),
-  paragraphs: (
-  [A federal judge has overturned HHS Health Secretary RFK Jr.’s changes to the childhood vaccination schedule. Matthias Bein/picture alliance via Getty Images],
-  [A federal judge has struck down childhood vaccination recommendations implemented earlier this year by the U. S. Department of Health and Human Services (HHS).],
-  [The judge also blocked HHS Health Secretary Robert F. Kennedy Jr.’s appointments to the Advisory Committee on Immunization Practices.],
-  [Medical professionals praised the judge’s ruling, saying vaccinations are vital in preventing diseases in children.],
-  [A federal judge has overturned new childhood vaccination policies implemented earlier this year by the U. S. Department of Health and Human Services (HHS).],
-  [U. S. District Judge Brian Murphy ruled that federal health officials under the leadership of HHS Health Secretary Robert F. Kennedy Jr. had acted unlawfully when they issued new childhood vaccination recommendations in January.],
-  [Those guidelines reduce the number of childhood vaccinations, indicating vaccination against 11 diseases instead of the 16 diseases recommended under prior guidelines. The HHS policies also downgraded childhood immunization recommendations for other diseases, including rotavirus, influenza, and hepatitis A.],
-  [In his ruling, Murphy  said  that previous childhood vaccination recommendations had been made through “a method scientific in nature and codified into law through procedural requirements.”],
-  [The judge said that HHS officials had “disregarded those methods and thereby undermined the integrity of its actions.”],
-  [Murphy also ruled that Health Secretary Kennedy’s appointments to the Advisory Committee on Immunization Practices (ACIP) were not lawfully constituted, and blocked Kennedy’s 13 appointees to the panel.],
-  [The plaintiffs in the case argued that the committee had become dominated by people aligned with Kennedy’s anti-vaccine views and was constituted in violation of the Federal Advisory Committee Act’s mandates that it be fairly balanced and free of inappropriate influence.],
-  [After the ruling was issued on March 16, ACIP meetings scheduled for this week were postponed . The panel was scheduled to discuss potential changes to recommendations regarding COVID-19 vaccines.],
-  [In addition, the judge had put a hold on votes taken by ACIP members since June. That includes a December decision by the panel to roll back recommendations that newborns receive a first dose of the hepatitis B vaccine within 24 hours of birth.],
-  [The Trump administration is expected to appeal Murphy’s ruling.],
-  [Medical professionals praise vaccination ruling],
-  [The lawsuit challenging the HHS childhood vaccination recommendations was brought by the American Academy of Pediatrics (AAP) and other major medical groups.],
-  [“Today’s ruling is a historic and welcome outcome for children, communities, and pediatricians everywhere,” said Andrew Racine , MD, AAP president, in a statement .],
-  [This decision effectively means that a science-based process for developing immunization recommendations is not to be trifled with and represents a critical step to restoring scientific decision-making to federal vaccine policy that has kept children healthy for years,” Racine continued.],
-  [Medical professionals said the judge’s ruling was an important action and the correct decision.],
-  [“The judge’s ruling brings light and focus to the reality that the changes to the vaccine schedule were made by individuals who are not experts in vaccinations, science, or public health and the changes were not based upon any new data, evidence, or scientific basis,” said Graham Tse , MD, a pediatrician and chief medical officer of MemorialCare Miller Children’s & Women’s Hospital in Long Beach, CA.],
-  [“The judge’s ruling is everything that pediatricians and family practice physicians and the AAP have been waiting to hear,” said Danelle Fisher , MD, a pediatrician at Providence Saint John’s Health Center in Santa Monica, CA.],
-  [“There was absolutely no reason to downgrade recommendations on vaccines. The ones who will suffer are the children. Someone needed to stand up to this administration and help our kids,” she told Healthline.],
-  [Tse said the judge’s ruling, if upheld on appeal, will send a clear message to parents and other community members.],
-  [“I would hope this brings back a single recommended vaccination schedule, supported by all states and the federal government, for the United States,” he told Healthline. “When there are vaccine schedule disagreements and variability across agencies, groups, and states, it leads to confusion, fear, anxiety, and ultimately decreased vaccine acceptance.”],
-  [Why childhood vaccines matter],
-  [The AAP recommends that children receive vaccinations for 18 different diseases from birth through age 18.],
-  [These inoculations include protection against:],
-  [measles],
-  [polio],
-  [rotavirus],
-  [influenza],
-  [human papillomavirus ( HPV )],
-  [Medical professionals point to recent measles outbreaks as an example of what can happen if children aren’t vaccinated. There are now more than 1,300 confirmed measles cases in the United States in 2026. There were only 285 in all of 2024.],
-  [“Vaccines prevent many diseases that used to be the scourge of childhood, causing vast amounts of illness, deaths, and suffering,” said William Schaffner , MD, a professor of medicine at Vanderbilt University in Tennessee.],
-  [“Vaccines have made infancy, childhood, and adolescence much safer than when I grew up, so maintaining a comprehensive infancy and childhood vaccination program across the country is critical, lest we turn back the clock to the bad old days,” he told Healthline.],
-  [Schaffner said that widespread vaccination is needed to protect immunocompromised children who can’t be inoculated.],
-  [“By all participating in vaccination, we create healthier communities as well as protected individuals,” he said.],
-  [“Vaccines are one of the easiest ways to ensure the health of children and the community,” noted Tse. “Vaccines are one of the simplest, safest, and easiest ways to protect your children and others from infections and diseases that have significant and severe consequences.”],
-  [“These diseases can cause illness and death. If we can prevent needless suffering, why wouldn’t we?,” said Fisher.],
-),
-  insert-map: (:),
-  word-count: 926,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-}
-
-{
-  #standard-article(
-  title: [Wegovy May Have Higher Risk of 'Eye Stroke,' Vision Loss Than Ozempic],
-  author: [Healthline],
-  source-name: [Healthline],
-  images: (),
-  paragraphs: (
-  [Researchers believe that high doses of semaglutide may reduce blood flow to the optic nerve, which could lead to eye stroke. Maria Korneeva/Getty Images],
-  [A new study has found that the GLP-1 drug Wegovy is linked with a higher risk of “eye stroke,” especially in men.],
-  [Ischemic optic neuropathy (ION) is a rare but serious condition that can cause vision loss or even blindness.],
-  [Semaglutide drugs like Wegovy may pose a greater risk of ION than Ozempic due to higher doses used for weight loss.],
-  [Doctors say the risk is small, but there are steps you can take to reduce the risk even further.],
-  [A new study has raised concerns about a rare but serious eye condition linked to a popular class of GLP-1 medications used to treat obesity and diabetes, especially those containing semaglutide .],
-  [Ischemic optic neuropathy (ION), known colloquially as an “eye stroke,” can cause sudden vision loss and even blindness.],
-  [The study found that certain formulations of semaglutide, particularly Wegovy , the higher-dose version, may carry a higher risk of this vision-threatening side effect, especially in men.],
-  [The findings, published on March 10 in the British Journal of Ophthalmology , highlight the need for doctors and patients to be aware of potential risks.],
-  [The authors called for further research to better understand the safety of these drugs, which are widely prescribed for weight loss.],
-  [Semaglutide linked to rare eye disorder],
-  [To investigate this possible link, researchers analyzed more than 30 million reports from the FDA’s public database of adverse drug events , spanning late 2017 to the end of 2024.],
-  [This database collects reports from patients, doctors, and drug manufacturers about side effects and complications experienced after taking medications.],
-  [The researchers focused on reports where a GLP-1 receptor agonist was suspected to be involved in cases of ischemic optic neuropathy.],
-  [Semaglutide comes in different forms, including Ozempic , a weekly injection used primarily for type 2 diabetes ; Wegovy, a weekly injection for obesity at a higher dose; and Rybelsus, a daily pill for type 2 diabetes.],
-  [The study examined each formulation separately to see if the risk of vision problems differed. They also looked at tirzepatide , a newer drug that works on similar pathways but in a slightly different way, as well as common diabetes medications like metformin and insulin for comparison.],
-  [The team used statistical methods designed to detect whether a particular drug was reported more frequently with ischemic optic neuropathy than would be expected by chance.],
-  [They also adjusted their analysis to account for differences in age and sex, helping to clarify whether certain groups might be more vulnerable. This approach allowed researchers to identify patterns in the data despite the rarity of the condition and the complex background of patients using these drugs.],
-  [Out of the tens of millions of reports examined, about 31,000 involved semaglutide.],
-  [Wegovy’s higher dose may affect blood flow to optic nerve],
-  [The obesity drug Wegovy showed the strongest link to ischemic optic neuropathy, even though it had fewer overall reports than Ozempic, the diabetes formulation.],
-  [The higher dose of Wegovy likely plays a role, as it leads to greater systemic exposure and faster weight loss, which might affect blood flow to the optic nerve.],
-  [Males appeared to be at higher risk than females, with the data showing a notably stronger association in male patients taking Wegovy.],
-  [No cases were reported with the oral form of semaglutide (Rybelsus) , which is absorbed more slowly and in smaller amounts, suggesting that the way the drug is delivered and its dose matter.],
-  [Tirzepatide, another drug in this class but with a different mechanism, showed no significant association with vision problems despite achieving even greater improvements in blood sugar and weight. This may be because tirzepatide acts on two receptors, potentially balancing out effects on blood flow and reducing the chance of ischemic injury to the optic nerve.],
-  [The study also found no increased risk with other commonly used diabetes medications like metformin and insulin. This specificity points toward a unique effect of semaglutide, especially at higher doses, rather than a general risk from improving blood sugar or losing weight.],
-  [Researchers believe that high dose semaglutide may reduce blood flow to the optic nerve through factors such as fluid loss, low blood pressure — especially at night — and shifts in the body’s vascular system. These changes could make the optic nerve more vulnerable to damage. However, the exact biological link remains to be confirmed in future studies.],
-  [Because the FDA’s database relies on voluntary reporting, the numbers do not reflect how often the problem actually occurs. Still, the clear pattern seen with Wegovy and the higher risk in men suggest that doctors should monitor patients carefully, especially those receiving the higher doses for obesity.],
-  [More detailed studies are needed to understand who is most at risk and how to prevent this serious complication.],
-  [Gradual weight loss may lower eye stroke risk],
-  [Hector Perez , MD, a board certified bariatric surgeon at Renew Bariatrics and an advisor at BestSurgeons.com, who was not involved in the study, said that while the risk for ION is worth monitoring, the study is very small.],
-  [“Untreated obesity, diabetes, and vascular disease damage vision far more commonly than semaglutide does,” he told Healthline.],
-  [However, Perez noted that there are still several steps you can take to reduce your risk for this side effect.],
-  [He advised that you avoid extremely rapid early weight loss. “Gradual caloric reduction helps prevent sudden drops in blood pressure or perfusion,” he said.],
-  [Perez further stated the importance of staying well hydrated, explaining that when people’s appetites are suppressed, they often tend to reduce their fluid intake as well. However, this can worsen optic nerve perfusion, he said.],
-  [He additionally suggested that you speak with your doctor about screening for sleep apnea and reviewing any nighttime blood pressure medication .],
-  [“Excessively low nocturnal BP is a known risk factor for optic nerve ischemia,” he cautioned.],
-  [Diala Alatassi, MD, an obesity medicine physician at TeleSlim Clinic , who was also not a part of the study, added that if you have multiple health conditions along with obesity, it’s wise to start low and titrate your dose up slowly.],
-  [She further noted that it’s best to consult with an experienced weight loss doctor rather than purchasing medications online and self-titrating.],
-  [Alatassi recommended staying up to date with your eye health . “Patients, especially diabetics, should get yearly eye exams to get a baseline prior to starting such medications,” she said.],
-  [Finally, Alatassi, stressed the importance of always following your doctor’s instructions.],
-  [“These are prescription medications,” she said. “Just like other medications, if used inappropriately, they can have unfortunate outcomes.”],
-),
-  insert-map: (:),
-  word-count: 1116,
+  word-count: 847,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -1618,7 +826,7 @@ did not enjoy the re-read as much as I'd thought I would.],
   [Benjamin Bert , MD, an ophthalmologist at MemorialCare Orange Coast Medical Center in Fountain Valley, CA, said there may be a simple explanation for the effects of tirzepatide and semaglutide medications on diabetic retinopathy. Bert wasn’t involved in the study.],
   [Bert explained that both types of medications help to suppress the body’s appetite and hunger responses by mimicking the body’s natural GLP-1 hormone. They also help manage blood sugar levels.],
   [Adrian Au , MD, an ophthalmologist at UCLA Health in Los Angeles who wasn’t involved in the study, agreed that reduced blood sugar levels are a key factor in diabetic retinopathy. However, he noted there may be short-term risks.],
-  [“The concern with semaglutide largely relates to drops in blood sugar, which can temporarily worsen retinopathy in people who already have advanced disease,” Au told Healthline. “This phenomenon has been observed with intensive glucose control even before [the] popularization of GLP-1 medications.”],
+  [“The concern with semaglutide largely relates to drops in blood sugar, which can temporarily worsen retinopathy in people who already have advanced disease,” Au told Healthline. “This phenomenon has been observed with intensive glucose control even before \[the\] popularization of GLP-1 medications.”],
   [“It is likely more about how quickly glucose improves than about a harmful drug effect,” he added. “Over the long term, better blood sugar control is associated with improved retinal outcomes, so these short-term findings may not negatively affect long-term risk.”],
   [As tirzepatide mimics the GLP-1 hormone, it leads to what the study authors described as “greater improvements in insulin sensitivity , weight loss and metabolic inflammation.”],
   [“That’s encouraging, but the question is always how do these drugs perform over the long term?”],
@@ -1653,8 +861,6 @@ did not enjoy the re-read as much as I'd thought I would.],
   [“Control blood sugar, blood pressure, and cholesterol and get regular dilated eye exams,” he said. “If starting a powerful glucose-lowering medication, especially with pre-existing diabetic retinopathy, consider closer short-term eye monitoring during the first few months of treatment.”],
 ),
   insert-map: (:),
-  inline-pq: pull-quote([The researchers found that 26% of people with the condition had diabetes.], [Healthline]),
-  inline-pq-idx: 21,
   word-count: 1293,
   edited-for-length: false,
   debug-mode: false,
@@ -1664,68 +870,53 @@ did not enjoy the re-read as much as I'd thought I would.],
 
 {
   #standard-article(
-  title: [Why That 'Drama Queen' in Your Life Could Make You Age Faster],
-  author: [Healthline],
-  source-name: [Healthline],
+  title: [Ultimate Guide to 4A Hair: Care Tips, Styles, and Maintenance],
+  author: [Greatist],
+  source-name: [Greatist],
   images: (),
   paragraphs: (
-  [Recent research found that having “hasslers” in your life could be making you age faster. Image Credit: Anna Malgina/Stocksy],
-  [A recent study found that, over time, stressful relationships may accelerate biological aging.],
-  [The researchers refer to those who create problems or make life more difficult as “hasslers.”],
-  [The study also found that a greater number of “hasslers” in your life can lead to a higher risk of depression, anxiety, and poorer overall health.],
-  [Spending time with someone who consistently creates problems or makes life more difficult can accelerate biological aging and affect your overall health.],
-  [A recent study found that spending more time with people the researchers call “hasslers” and having more of them in your life can negatively affect various aspects of your life and health.],
-  [The researchers found that these relationships are not rare and that people with social or health vulnerabilities may be more likely to have “hasslers” in their lives. The findings were published in the Proceedings of the National Academy of Sciences (PNAS) .],
-  [The researchers also noted that “social relationships are fundamental to human health.”],
-  [However, past research has mostly focused on the supportive nature of these relationships. This recent study focused on the “hasslers” in the close social networks of individuals and the role these stressful people play.],
-  [“Those around us can either increase or decrease our stress levels because we are wired for social connection and our social relationships can significantly influence and shape our mood, perspectives, motivation, and energy, on a daily basis, and for future goals/visions,” said Menije Boduryan-Turner , PsyD, licensed psychologist, and founder of Embracing You Therapy. Boduryan-Turner was not involved in the study.],
-  [Difficult people in your life may accelerate aging by 1.5%],
-  [The study analyzed data from 2,345 participants in a health survey in Indiana. The participants ranged in age from 18 to 103, with an average age of about 46.],
-  [The individuals answered questions about their relationships, focusing on the previous 6 months.],
-  [The researchers defined “hasslers” as people whom the participants reported as “often hassling them, causing them problems, or making life difficult.”],
-  [The average network size among participants was just over 5, with a maximum size of 25. On average, the individuals reported around 8.1% of the network members as “hasslers.”],
-  [Of the participants, 28.8% reported having at least one “hassler” in their social network, and 10% reported having two or more. This suggests that persistently negative ties are not rare among personal relationships.],
-  [“We resonate with people, and when someone creates problems, ideally, we would leave such a situation,” said Alex Dimitriu , MD, double board certified in psychiatry and sleep medicine and founder of Menlo Park Psychiatry & Sleep Medicine, who was not involved in the study.],
-  [“Dealing with a hassler definitely takes a toll on mental health, and I see that in my work every day,” Dimitriu told Healthline.],
-  [The researchers then examined the association between having “hasslers” in your life and biological aging.],
-  [Biological and chronological aging are two distinct ways your body ages.],
-  [Biological aging: This reflects the wear and tear on your body at a cellular level. It refers to the physiological state of your cells and tissues, as inferred from your DNA.],
-  [Chronological aging: This measures how much time has passed since you were born.],
-  [They compared biological aging using saliva samples from participants, enabling the researchers to measure specific epigenetic markers.],
-  [This analysis showed a clear pattern. For each “hassler” a person interacted with, their biological aging pace increased by about 1.5%. This means that someone with an extra difficult person in their life may age about 1.015 biological years for each chronological year.],
-  [It’s important to note that this study does not definitively show that having difficult people in your life directly causes aging.],
-  [The researchers observed an association between “hasslers” and the rate of aging. They also noted that certain groups of people may be more likely to have or report “hasslers” in their lives.],
-  [Who’s more likely to have difficult people in their lives?],
-  [Females were less likely than males to report having zero “hasslers” in their social networks. They also reported higher levels of “hasslers” in their lives in general than males.],
-  [There were also various psychosocial factors that emerged as important predictors of the presence of “hasslers.”],
-  [For example, individuals with adverse childhood experiences were more likely to have “hasslers” in their social network.],
-  [People with a larger social network were less likely to report zero “hasslers” and were more likely to have a higher number.],
-  [Daily smokers and people with less favorable health were also less likely to report zero “hasslers.” This suggests that “hassler” exposure is not random. Rather, it clusters around certain individuals with greater psychosocial and health vulnerabilities.],
-  [“Hasslers” were also more likely to be family members, with parents and children more likely to be reported as difficult than spouses.],
-  [Outside of the family, participants were more likely to report co-workers, neighbors, and roommates as “hasslers” than friends.],
-  [Difficult people can impact your mental health],
-  [The researchers also examined whether the association with “hasslers” was specific to biological aging or extended across health outcomes.],
-  [They found that the number of hasslers in a person’s social group was consistently associated with worse health across multiple domains. The strongest associations were among mental health outcomes.],
-  [Each additional “hassler” was associated with an increase in the severity of both depression and anxiety . This was followed closely by less favorable self-rated mental health outcomes.],
-  [“When stress becomes too hard to manage, it creates insomnia, poor concentration, depression, anxiety, and/or irritability,[an] increase and/or a decrease in appetite, isolation, and paralysis,” said Boduryan-Turner.],
-  [The associations found with physical health and adiposity-related (excess fat) outcomes were more modest, but still significant.],
-  [Additional “hasslers” were associated with:],
-  [higher BMI],
-  [higher waist-to-hip ratio],
-  [poorer physical health],
-  [poorer overall health],
-  [“Stress can increase our blood pressure and affect our gastrointestinal and immune systems, among many other organ systems in the body,” Nissa Keyashian , MD, board certified psychiatrist and author of “ Practicing Stillness ,” who was not involved in the study, told Healthline.],
-  [Many may say that the obvious solution is to reduce contact with “hasslers” in your life. However, this may not always be possible. Certain people, such as family members or co-workers, may be part of your daily life.],
-  [How to manage stressful people in your life],
-  [Dimitriu recommended that you control what you can, which is most often yourself. A strong emphasis on self-care, time to journal, and grounding yourself through meditation, exercise, or both is essential.],
-  [Boduryan-Turner said that it is fundamental to set clear, value-based boundaries.],
-  [“The keyword here is value-based, because often we make fear-based decisions. When setting boundaries, we want to keep our values in mind and communicate our needs from that place,” she added.],
-  [Keyashian agreed. “Practicing setting healthy boundaries is one of the most important skills in our lives,” she said.],
-  [Boduryan-Turner noted that people should set limits with love.],
-  [“We can set our boundaries lovingly and compassionately,” she said. “It doesn’t have to feel like a fight or a conflict to set them. Often taking breaks and engaging in activities that soothe are necessary ways to cope with these kinds of people in our lives.”],
+  [Understanding your 4a hair type is essential for achieving healthy, vibrant curls. Discover the best care tips for 4a hair, from moisturizing routines to protective styles, and keep your curls looking their best.],
+  [Understanding your hair type is key to achieving healthy, luscious curls. Hair types range from 1 to 4 — straight, wavy, curly, and coily — with type 4 being the curliest. Type 4A hair has a fine texture and loose curl pattern, forming springy coils that need special care to stay healthy and vibrant.],
+  [Knowing your hair type helps determine the best hair care routine. Caring for 4A hair is essential, whether you’re dealing with dryness or breakage or want to define your curls.],
+  [Let’s dive into the world of 4A hair and discover how to keep those curls popping.],
+  [Catherine Falls Commercial/Getty Images],
+  [Alright, curl friends, let’s break it down. Hair type falls into four main categories :],
+  [Type 1: Straight],
+  [Type 2: Wavy],
+  [Type 3: Curly],
+  [Type 4: Coily],
+  [Now, Type 4 hair is where things get seriously curly and coily . Within this category, we’ve got subtypes A, B, and C,],
+  [which refer to the width and density of your curls.],
+  [So, what’s the deal with 4A hair? 4A hair is the queen of the fine, loose curl pattern . It forms tight, springy coils that are like tiny, perfect S-shapes. These curls are less dense than their 4B and 4C cousins, making them more defined and delicate. Think of 4A hair as the Goldilocks of coily hair — not too tight, not too loose, but just right.],
+  [Your hair is unique and gorgeous, but it requires a bit of extra TLC to keep it looking its best . Here’s a straightforward guide to keeping your 4A hair moisturized, healthy, and thriving:],
+  [Moisturize regularly],
+  [4A hair tends to be dry as its coily structure makes it difficult for natural oils to travel down the hair shaft. Keeping it moisturized is essential , so incorporate a good leave-in conditioner into your daily  shampooing routine.  Us e deep conditioning treatments weekly to replenish moisture and strengthen your curls.],
+  [Don’t forget scalp care , too! For maximum hydration, look for products with ingredients like shea butter,  coconut oi l, and glycerin.],
+  [Gentle detangling],
+  [4A hair is prone to tangles, so detangle gently to avoid breakage. Use a wide-tooth comb or your fingers to work through knots carefully. Start from the ends and work your way up to the roots, and always detangle when your hair is wet and coated with conditioner to provide slip and minimize damage.],
+  [Avoid heat],
+  [Heat styling tools can cause significant damage to 4A hair, leading to dryness, breakage, and loss of curl pattern. Minimize the use of blow dryers, flat irons, and curling wands. If you use heat, always apply a heat protectant spray first to shield your hair from high temperatures.],
+  [Pro tip: To maintain the health of your curls, opt for air-drying or styles that don’t require heat.],
+  [Protective styles],
+  [Protective styles like braids, twists, and buns can help reduce manipulation and minimize breakage . These styles tuck away your ends, protecting them from friction and environmental damage.],
+  [Satin or silk pillowcases],
+  [Cotton pillowcases cause friction , which leads to frizz and breakage, especially for 4A hair. Switching to satin or silk pillowcases instead helps mai],
+  [ntain your curl pattern and prevent tangles.],
+  [Regular trims],
+  [Regular trims are crucial for keeping 4A hair healthy and preventing split ends from traveling up the hair shaft. Aim to trim your hair every 8-12 weeks to remove damaged ends and keep your curls looking fresh and vibrant.],
+  [Is 4A hair curly?],
+  [Yes, 4A hair is curly and falls under the coily category. It features tight, springy curls that form an S-shape.],
+  [Is my hair 4A, 4B, 4C, or 3C?],
+  [To determine your hair type, look at the curl pattern, texture, and density. 4A hair has a loose curl pattern with fine, springy coils, while 4B and 4C hair have tighter curls. 3C hair is curly but not as tight as Type 4.],
+  [How often should you wash 4A hair?],
+  [Washing once a week or every two weeks is generally sufficient for 4A hair. Overwashing can strip the hair of its natural oils.],
+  [How often should you cut 4A hair?],
+  [Regular trims every 8-12 weeks help keep 4A hair healthy by removing split ends and preventing breakage.],
+  [Taking care of your 4A hair isn’t rocket science, but it does need a little know-how and the right tools.],
+  [Love those natural curls — keep them hydrated, avoid excessive heat, and give them some nighttime TLC.],
 ),
   insert-map: (:),
-  word-count: 1216,
+  word-count: 786,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -1734,69 +925,66 @@ did not enjoy the re-read as much as I'd thought I would.],
 
 {
   #standard-article(
-  title: [Psilocybin 6 Times More Effective Than Nicotine Patch to Help Smokers Quit],
+  title: [FDA Doesn’t Endorse Leucovorin for Autism, OKs It for Rare Brain Disorder],
   author: [Healthline],
   source-name: [Healthline],
   images: (),
   paragraphs: (
-  [New research suggests that psilocybin combined with CBT may be more effective than the nicotine patch for smoking cessation. Bloomberg Creative/Getty Images],
-  [Psilocybin, also known as “magic mushrooms,” may help smokers quit tobacco for the long term.],
-  [Smokers who received psilocybin alongside counseling were six times more likely to quit than those using nicotine patches in a small trial.],
-  [The findings suggest psilocybin could eventually become another tool to help millions of smokers quit.],
-  [Could “magic mushrooms” help tobacco smokers quit for good?],
-  [In a new trial, smokers treated with a combination of psilocybin and cognitive behavioral therapy (CBT) were significantly more likely to be abstinent 6 months after treatment than those using nicotine patches and CBT therapy.],
-  [The findings were published on March 10 in JAMA Network Open .],
-  [Over the past decade, research into the use of psychedelic drugs to treat psychiatric conditions has expanded dramatically. Psilocybin in particular has shown promise as a therapy for addiction-related conditions, including alcohol use disorder and smoking.],
-  [The new research suggests that psilocybin combined with CBT may be more effective than nicotine replacement therapy at helping smokers achieve both short- and long-term abstinence.],
-  [“There was no question the psilocybin group did much better,” said Matthew Johnson , PhD, professor of psychiatry and behavioral sciences and first author of the research.],
-  [“We found that for prolonged absence, they had six times higher odds of quitting if they were assigned to the psilocybin group compared to the nicotine patch group,” Johnson told Healthline.],
-  [Johnson is the leading researcher in the field of psilocybin and tobacco cessation. This latest trial builds on much of his earlier work, namely a 2014 study that first demonstrated that psilocybin could be safely used as an adjunct in smoking cessation treatment.],
-  [The findings published this week continue to establish psilocybin as a potential treatment for individuals with nicotine addiction.],
-  [Psilocybin users smoke-free at 6 months],
-  [Johnson and his team at Johns Hopkins University conducted a randomized clinical trial to investigate whether psilocybin could help smokers quit more effectively than a standard nicotine replacement therapy.],
-  [Both arms of the trial included 13 weeks of CBT, an approach used in counseling. CBT can help smokers identify triggers, manage cravings, and develop practical strategies to quit smoking.],
-  [The study enrolled 82 adult daily smokers ages 21 to 80 who had previously tried and failed to quit but still wanted to stop smoking . Participants were 59.8% male and 89% white, smoked roughly a pack per day, and had attempted quitting six times on average before the trial.],
-  [One group received a single supervised dose of psilocybin (30 milligrams per 70 kilograms of body weight), while the comparison group followed a standard 8- to 10-week regimen of FDA-approved nicotine patches.],
-  [Researchers tracked smoking behavior for six months using self-reported smoking diaries and biological tests to verify that participants had actually stopped smoking.],
-  [The researchers found that after starting treatment, 40% of those treated with psilocybin (17 participants) achieved prolonged abstinence, meaning they stopped smoking and remained smoke-free for six months after a brief grace period.],
-  [In contrast, only 10.0% of participants in the nicotine patch group (4 participants) achieved the same outcome. This translates to more than six times greater odds of quitting in the psilocybin group.],
-  [“It’s definitely refreshing to see someone look at new possibilities for nicotine addiction,” said George Singletary , MD, assistant professor of addiction medicine at the Tulane University School of Medicine, who wasn’t involved in the research.],
-  [“With all the deaths we have in this country due to nicotine that are preventable, it’s great to expand the options for treatment,” he told Healthline.],
-  [Can psilocybin lead to long-term smoking cessation?],
-  [The researchers also investigated a seven-day point-prevalence abstinence, meaning participants had not smoked at all in the previous week at the time of the six-month visit.],
-  [By this measure, 52% of the psilocybin group (22 participants) were abstinent compared with 25% of the nicotine patch group (10 participants), representing about three times higher odds of short-term abstinence.],
-  [“This is an exciting study,” said Brian Barnett , MD, assistant professor of psychiatry and director of the psychiatric treatment resistance program at the Cleveland Clinic, who wasn’t involved in the research.],
-  [“We see that there is more and more evidence showing there’s potential benefit here for patients,” he told Healthline.],
-  [However, there are some notable limitations to the study as well.],
-  [Barnett pointed out that most of the participants (64.6%) had some previous exposure to “classic” psychedelic drugs, which could limit the generalizability of the findings to a broader population.],
-  [But, he added, “It’s an important caveat, but I don’t think it’s so problematic that it negates the obvious superiority of psilocybin to nicotine patch in the study.”],
-  [Singletary said he would have liked to have seen the study borne out over a longer time period than just six months. “Many smokers fail within six months, so we really need to see what happens after that point,” he said.],
-  [Tips to help you quit smoking for good],
-  [Despite decades of progress, smoking remains one of the most harmful and preventable public health threats in the United States.],
-  [Cigarette smoking and secondhand smoke cause more than 480,000 deaths each year — about 1 in 5 deaths nationwide.],
-  [More than 16 million Americans are living with smoking-related diseases, including:],
-  [cancer],
-  [heart disease],
-  [chronic obstructive pulmonary disease (COPD)],
-  [Although smoking rates have declined, about 11.6% of U. S. adults (28.8 million people) still smoke cigarettes . It’s no secret: quitting is hard.],
-  [While nearly two-thirds of smokers say they want to quit, the majority of them won’t. In any given year, fewer than 10% of adults who smoke successfully quit.],
-  [“Nicotine hijacks the brain’s reward learning circuitry. It shifts your brain toward being very preoccupied with getting the next exposure to nicotine,” Barnett said.],
-  [Fortunately, there are more options and resources available to stop smoking today than ever before.],
-  [Nicotine replacement therapy (NRT) , which includes patches and gums, is a longtime staple that can help, but is most effective when paired with other interventions like CBT, or other forms of counseling, and medication.],
-  [Medications to help quit smoking include:],
-  [Bupropion (Zyban) — An antidepressant that is also prescribed to help stop smoking. It works by affecting specific neurotransmitters involved in feelings of reward and pleasure.],
-  [Varenicline (Chantix) — Reduces cravings and withdrawal by partially activating nicotine receptors in the brain. Simultaneously, it blocks nicotine, which reduces the pleasurable effects of smoking.],
-  [“The biggest takeaway is: don’t quit trying to quit. The more times you try to quit , the more likely you are to have success,” said Singletary.],
-  [Johnson told Healthline that he doesn’t expect psilocybin to replace any of these mainstay therapies, but instead to give smokers more options.],
-  [“I just want more tools in the toolbox to help empower as many people [as possible] that want to quit,” he said.],
-  [Psilocybin represents a potentially safe and effective therapy to help quit smoking , but experts caution that these studies are undertaken in controlled environments utilizing specific dosages.],
-  [“There are risks with psilocybin and other psychedelics, including legal risks. Certainly, I don’t advise anyone to do this themselves. Not only is it less safe doing it on your own, but the chances of it working would probably be much less than in therapeutic hands,” Johnson said.],
-  [Quitlines like 1-800-QUIT-NOW can help you quit smoking and vaping for good. Other quit resources include:],
-  [Smokefree.gov],
-  [Become an Ex],
+  [More research is still needed before leucovorin should be approved as an autism treatment. Westend61/Getty Images],
+  [Federal regulators have approved leucovorin for the treatment of cerebral folate deficiency, a rare neurological disorder.],
+  [The FDA approval, however, did not include the use of leucovorin as a treatment for autism.],
+  [The Trump administration has touted leucovorin as an autism treatment, but experts agree that more research is needed before leucovorin should be approved for this purpose.],
+  [A medication used primarily to help relieve the side effects of chemotherapy has been given the green light to be used as a treatment for a rare neurological disorder.],
+  [Officials at the Food and Drug Administration (FDA)  announced  on March 10 the approval of the drug  leucovorin  to help treat adults and children with  cerebral folate deficiency . This rare condition is characterized by low levels of vitamin B9 in the brain.],
+  [However, the FDA announcement did not mention the use of leucovorin as a potential treatment for autism.],
+  [In September 2025, President Donald Trump and other administration officials  suggested  that the FDA had started a process to approve leucovorin as a treatment to manage symptoms in autistic people. However, there’s no word yet on a timetable or process for such an approval.],
+  [Leucovorin is the first approved treatment for cerebral folate deficiency. The FDA decision is being praised as long overdue relief for individuals with that condition.],
+  [“Today’s approval represents a significant milestone for patients living with cerebral folate transport deficiency due to the FOLR1 variant, a rare genetic condition that has had no FDA-approved treatment options until today,” said FDA commissioner  Marty Makary , MD, in the agency’s announcement.],
+  [Leucovorin and cerebral folate deficiency],
+  [Leucovorin  is a prescription medication used mainly to reduce the toxic side effects of chemotherapy agents such as  methotrexate .],
+  [The medication  works  by helping to restore  folic acid  to healthy cells that have had that substance depleted by the effects of chemotherapy.],
+  [Leucovorin is  considered  to be effective as a “rescue agent” for people undergoing certain types of chemotherapy.],
+  [Cerebral folate deficiency  is a condition that usually manifests in young children. It can cause:],
+  [developmental delays],
+  [seizures],
+  [movement abnormalities],
+  [It’s estimated that 1 in 1 million people worldwide have cerebral folate deficiency, although the true prevalence is unknown. It’s also been estimated that 38–70% of autistic children may have cerebral folate deficiency.],
+  [However, experts say those percentages may be inflated because much of the data has been drawn from  FRAT tests , a blood exam that can be inaccurate.],
+  [While individuals with cerebral folate deficiency may have a higher risk of autism, but autistic people don’t necessarily have a higher risk of cerebral folate deficiency.],
+  [Alycia Halladay , MD, the chief science officer for the Autism Science Foundation, said she’s glad that people with cerebral folate deficiency finally have a treatment.],
+  [“This will probably help them. The mechanism is there,” she told Healthline. “I feel any relief would be helpful.”],
+  [Antonio Hardan , MD, a professor of psychiatry and behavioral sciences at Stanford University, said that early intervention with leucovorin for cerebral folate deficiency is key.],
+  [“Case reports \[support\] complete clinical and radiological recovery when treatment is provided before the age of 2 years,” Hardan told Healthline.],
+  [While early intervention in autism is also crucial, it’s too soon to recommend leucovorin as a treatment.],
+  [Halladay expressed relief that leucovorin wasn’t approved as an autism treatment because there isn’t yet a scientific justification for this particular use.],
+  [“I’m glad the FDA used a scientific approach and used rigor to make this decision,” she said.],
+  [Hardan echoed this sentiment. “There is some evidence from small randomized controlled trials supporting the use of leucovorin for the treatment of autism. However, these studies have several design limitations, including small sample sizes and non-rigorous inclusion/exclusion criteria,” he said.],
+  [Leucovorin not yet approved for autism],
+  [In September, President Trump  said  the approval of leucovorin as an autism treatment would give “hope to the many parents with autistic children that it may be possible to improve their lives.”],
+  [Makary echoed that sentiment, estimating that “hundreds of thousands of kids, in my opinion, will benefit” from the approval of leucovorin.],
+  [After that press briefing, officials at the Health and Human Services (HHS) Department  clarified  those comments, saying that leucovorin “is not a cure” for autism and “may only lead to improvements in speech-related deficits for a subset of children.”],
+  [The  research  on leucovorin and autism has mostly consisted of small studies with fewer than 100 participants, many done repeatedly by the same researchers.],
+  [The results of one of the studies, published in the European Journal of Pediatrics, were  retracted in January  after the authors identified several errors in their data.],
+  [There has been some anecdotal evidence that leucovorin can provide some benefits to communication and behavior for some autistic children, specifically those with cerebral folate deficiency or evidence of folate metabolic differences.],
+  [According to the American Academy of Pediatrics (AAP), however, more research in this area is still needed.],
+  [“The evidence for leucovorin and use for autism is currently limited,” the AAP said in an  FAQ sheet about leucovorin use in autism and cerebral folate deficiency.],
+  [“Small studies show benefits to communication and behavior for some autistic children, specifically those with CFD or evidence of folate metabolic differences. Larger independent trials are warranted to better understand which patients may benefit. More evidence on efficacy and safety is needed before pediatricians can broadly recommend leucovorin,” the AAP said.],
+  [The Autism Science Foundation agreed,  saying  more studies are needed before leucovorin can be considered as a treatment for autism.],
+  [Halladay said that large-scale studies that examine safety and efficacy need to be completed before leucovorin can be considered as an autism treatment.],
+  [An HHS official appeared to agree,  telling  NBC News this week that there is not enough data to support leucovorin’s use as an autism treatment.],
+  [“We don’t have sufficient data to say that we could establish efficacy for autism more broadly,” the official said. “It’ll be up to patients to talk with their physicians to see if that might be right for them.”],
+  [What families should know about leucovorin],
+  [Doctors can prescribe leucovorin as an off-label treatment for autistic children. Some have apparently been doing so.],
+  [A  recent report  published in The Lancet stated that leucovorin prescriptions for children rose 71% during the 2 months following President Trump’s announcement in September.],
+  [Halladay expressed concern about that increase, as well as the fact that people can go online and purchase  folate acid  products with vitamin B9 that are similar to leucovorin.],
+  [“All this can lead to false hope from companies that prey on families who will do anything to help their child,” she said.],
+  [Halladay encouraged families of autistic children to listen to medical professionals over what they read in the media.],
+  [“Talk to your doctor. Listen to your doctor and don’t listen to the internet,” she said.],
 ),
   insert-map: (:),
-  word-count: 1261,
+  inline-pq: pull-quote([Alycia Halladay , MD, the chief science officer for the Autism Science Foundation, said she’s glad that people with cerebral folate deficiency finally have a treatment.], [Healthline]),
+  inline-pq-idx: 20,
+  word-count: 1150,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -1805,50 +993,125 @@ did not enjoy the re-read as much as I'd thought I would.],
 
 {
   #standard-article(
-  title: [This Hospital Worker Had 3 Attacks in 4 Days. ‘Listening’ to His Body May Have Saved His Life],
-  author: [Healthline],
-  source-name: [Healthline],
+  title: [noom med epm | GLP-1RX Program],
+  author: [Greatist],
+  source-name: [Greatist],
   images: (),
   paragraphs: (
-  [Patient transporter Tommy Bell (pictured above) survived 3 heart attacks over 4 days, thanks to quick thinking — and care from colleagues at the hospital where he worked. Advent Health],
-  [62-year-old Tommy Bell survived three heart attacks in the span of four days.],
-  [Bell received care at the same hospital where he has worked for 10 years.],
-  [He is sharing his story to help raise awareness about heart attack symptoms and prevention.],
-  [On November 26, 2025, 62-year-old Tommy Bell had just finished a shift at AdventHealth DeLand Hospital, where he had worked for over 10 years as the Patient Transport Supervisor.],
-  [On his drive home while talking with his wife, Joi, he felt pressure in the center of his chest that persisted on and off. The feeling pushed him to drive back to AdventHealth’s ER department.],
-  [After doctors performed tests and imaging, Bell was scheduled for a cardiac procedure two days later, on Friday, November 28. During recovery in the hospital, Bell had a heart attack and received a stent to normalize blood flow.],
-  [Once stabilized, he was moved to intensive care to recover and was discharged home two days later.],
-  [“Prior to that day, I had never experienced anything like that before. The only symptoms of a heart attack that I knew of were what I had seen on TV—chest pain, pain down the arm, etcetera,” Bell told Healthline.],
-  [While recovering at home, he still didn’t feel right, and his wife took him back to the ER, where he went on to have a second and third heart attack on December 2, 2025.],
-  [Despite the trauma, Bell said it was reassuring to get care in a familiar place.],
-  [“Knowing that I was being cared for by the people that I see and make laugh on a daily basis made me feel at home. Just knowing the level of care and support of my co-workers was comforting in my time of need,” he said.],
-  [He knew every person who cared for him by name.],
-  [“Although it was strange being on the other side of things, I knew I was in good hands by the very best at what they do,” he said.],
-  [After two weeks off for recovery and to regain his strength, Bell returned to work.],
-  [“My recovery included being surrounded by my work family and my home family,” he said. “There was not a day that went by that someone from the hospital did not reach out to check in on me. The support was phenomenal!”],
-  [Raising awareness of heart attack symptoms that can be overlooked],
-  [Bell hopes that sharing his story will help spread awareness about the different heart attack symptoms and who may be at higher risk of recurrent cardiac events.],
-  [“I felt it on my heart to share my story because if I can help save a life by reminding people to listen to their bodies, I have done what God has called me to do,” Bell said.],
-  [Janak Bhavsar, MD, an interventional cardiologist at AdventHealth, who was part of Bell’s care team, said that recurrent cardiac events like those Bell experienced can occur more often than some people may think, especially if there are multiple risk factors, such as:],
-  [smoking],
-  [diabetes],
-  [high blood pressure],
-  [high cholesterol],
-  [“Controlling the risk factors is important for preventing future events. Lifestyle modifications, including exercise programs, diet control, sleep quality, and weight loss, are important elements,” he told Healthline.],
-  [Bhavsar added that the fact that Bell did not ignore his symptoms and went to the ER right away when he developed them allowed doctors to recognize his condition and treat him immediately.],
-  [“Heart attack can present with some symptoms that are not classic. There can be pain in the neck, jaw, arms, back, or stomach, which can be a symptom/warning sign,” he said. “Sometimes the symptoms can be nausea, vomiting, shortness of breath, and sweating (diaphoresis).”],
-  [According to the American Heart Association , approximately 20% to 50% of heart attacks are “silent” or ignored, often misattributed to indigestion, muscle strain, or fatigue.],
-  [While experiencing a heart attack after getting a stent, as Bell did, is uncommon , the risk is greatest in the first month.],
-  [After people receive a stent, Bhavsar said it’s important that they continue taking medications, especially blood thinners, which can prevent clotting in the stent.],
-  [“Monitor for symptoms, including chest pain, nausea, vomiting, shortness of breath, and seek help if symptoms occur,” he said. “Follow up with cardiology and primary care is important. Patients may also benefit from programs such as cardiac rehabilitation.”],
-  [According to the National Center for Health Statistics , heart disease is the leading cause of death for men, women, and people of most racial and ethnic groups.],
-  [Ways to improve heart health],
-  [To improve heart health, Bhavsar said controlling risk factors, including high blood pressure, high cholesterol, and diabetes, as well as quitting smoking, can help. Staying physically active, especially with aerobic exercise, maintaining a healthy weight, following a Mediterranean diet , and getting adequate sleep are also effective lifestyle strategies.],
-  [Caring for patients like Bell and seeing them make full recovery and healthy lifestyle adjustments is rewarding for Bhavsar.],
-  [“I was able to interact with [Tommy] in several settings, including the ER, procedure room, ICU, medical unit, outpatient office for follow-up, and coming back full circle seeing him in the hallways at the hospital when he returned to work, and providing whole person care for him in these different settings,” he said.],
+  [Why Noom’s GLP-1 Rx Program is the ‘Hype Friend’ You Didn’t Know You Needed],
+  [Clinically-Backed, Customized to You],
+  [Psychology-based approach + prescription GLP-1s = lose weight and keep it off],
+  [Access to GLP-1s starting at \$99 if you qualify],
+  [Everything revolves around what you need],
+  [Full access to licensed clinicians, behavior change coaches, and community groups],
+  [Your Friend is a Proven and Trusted Program],
+  [Most weight loss programs give you a prescription or a plan and send you on your way. Not Noom.],
+  [Noom Med combines the clinician-prescribed GLP-1 medication with the psychology-based approach that’s already helped millions.],
+  [Noom’s primary goal is to empower everyone everywhere to live better , longer. All of its programs, courses, efforts, clinicians, and team of specialists are designed to help you reach your goal.],
+  [All while you have a team of specialists to guide you through the process.],
+  [Take A Hand and Jump In],
+  [The process shows and affirms that there is more than one way to achieve your health goals : The way that works best for you. To get started:],
+  [Take the quiz],
+  [Connect with a qualified clinician],
+  [If you qualify, start a customized treatment plan with medication],
+  [Have ongoing access to care and personalized support],
+  [Lose 48% more weight with Noom Med than medication alone 1],
+  [97% doctors recommend pairing GLP-1s with lifestyle changes 2],
+  [9 in 10 doctors recommend combining GLP-1s with nutritional support. That’s why Noom is more than meds and helps you lose weight and keep it off 2],
+  [The Companion, GLP-1 Companion],
+  [If you qualify for GLP-1 medications, you will have access to Noom’s GLP-1 Companion for no added cost.],
+  [GLP-1 Companion is a tool and friend that provides dedicated support from the beginning of your weight-loss journey through long after to help you maintain your weight.],
+  [It offers resources and support to guide you on everything related to GLP-1 use to ensure you’re getting the most out of your medication, including:],
+  [Smartdose Guidance to support clinician-led treatment],
+  [AI Nutrition Guidance helps create personalized plans],
+  [Muscle Defense workouts tailored to you],
+  [An AI Body Scan than can help track body composition],
+  [Other tips on movement, side effects, and more],
+  [“I had never known the psychology behind the way we eat. This was all new information for me to learn. I had a slow start, but I didn’t give up . I decided to give Wegovy a try a few months back… my weight loss has really improved since that time. My mindset about food and eating has changed a lot since June of 2022.],
+  [I’m not done yet. I’m still on my journey!”],
+  [— Jennifer L., Noom Med User | Age 53],
+  [What’s included in Noom Med?],
+  [Noom Med combines personalized medication and its signature psychological support to help make healthy habits last and make transformational weight loss possible.],
+  [It also gives you access to 1:1 messaging with expert weight loss clinicians, prescriptions and medications (where clinically appropriate), ongoing medication management, community support, and psychology-backed content to make lasting changes.],
+  [How can I get access to Noom’s GLP-1 Companion],
+  [If you qualify for GLP-1 medication, you have access to Noom’s GLP-1 Companion, a digital health experience that supports people taking GLP-1s. It helps navigate treatment, symptoms, side effects, nutrition, and more.],
+  [How much do GLP-1s cost with Noom?],
+  [Noom offers GLP-1 Rx  programs with direct access to GLP-1s starting at \$99, regardless of insurance coverage, if clinically appropriate and prescribed.],
+  [Noom Med includes brand-name medications like Ozempic® and Zepbound®, starting at \$69 plus the out-of-pocket costs for the medication itself, depending on your insurance coverage.],
 ),
   insert-map: (:),
-  word-count: 912,
+  word-count: 682,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+}
+
+{
+  #standard-article(
+  title: [Why Does My Side Hurt When I Run? Causes and Prevention Tips],
+  author: [Greatist],
+  source-name: [Greatist],
+  images: (),
+  paragraphs: (
+  [Experts don’t know for sure but think side cramps during exercise may be caused by diaphragm issues, poor posture, or nerve irritation from your foot striking the ground.],
+  [Side stitch, stomach cramp, side ache — whatever you wanna call it, that mid-run pain in your tum can seriously \*cramp\* your runner’s high.],
+  [This pesky prob that plagues runners and athletes all over has a scientific name: Exercise-related transient abdominal pain (ETAP) . Though experts don’t know exactly what causes it, they have some ideas and tips about how to stop it.],
+  [Before you double-over during your next marathon , here’s what to know.],
+  [KarraStock/Getty Images],
+  [That fateful stab in your side is most likely to happen during exercise where your upper bod says tight and upright for an extended period, such as when you run , jog, bike, hike, play soccer, etc.],
+  [This common prob has been around for ages — the first historical mention is from ancient Roman philosopher Pliny the Elder . Yet, scientists still haven’t reached a consensus on its exact cause. We know that it affects up to 70% of runners each year.],
+  [It’s also more likely to occur on the right side.],
+  [A stiff spine or poor posture (according to older research from 2010 ) could contribute to side stitches – but TBH, the pros don’t know for sure.],
+  [According to a 2022 review , researchers also think a side stitch might be caused by your right foot hitting the ground while you breathe out, irritating a phrenic nerve. Researchers think this, in turn, may bother the lining of your abdomen (particularly on the lower right side). Since most people are right-foot dominant, this is one possible explanation.],
+  [Experts also theorize that it could be triggered by the boost of blood flow around the diaphragm when running .],
+  [Furthermore, fueling up before a big race is excellent — but eating or drinking large quantities right before running may boost your risk of getting a side stitch, anecdotal reports suggest.],
+  [When a side stitch strikes, don’t stress – there are steps you can take, including:],
+  [Slowing down , which should help lend some immediate relief. When the pain subsides, you can slowly build your pace back up.],
+  [Stretch it out by raising your arms overhead, leaning to the opposite side of the pain, and breathing deeply. That may open up your abdomen and offer some relief.],
+  [Apply gentle pressure by pressing your palm into the cramp while breathing deeply.],
+  [To stop a side stitch before it begins, here are some ideas FTW:],
+  [Practice mindful workout breathing. According to a 2022 review , slower breathing during exercise might “trick” your bod into thinking the exercise is easier, increasing pleasant feelings and reducing stress. While the study doesn’t mention side cramps, it could be worth a try since stitches may be linked to blood flow surrounding the diaphragm.],
+  [Avoid big meals or beverages a couple of hours before you run. Though experts don’t know for sure, too much food or liquid in your belly could potentially put extra pressure on your precious organs, leading to a cramp.],
+  [Work on your posture . Proper posture can improve breath flow and running performance. Research from 2014 suggests building up your abs could help prevent side stitches.],
+  [Stay hydrated to stay healthy in general and potentially prevent side stitches.],
+  [Start slow and work your way up. When working out, starting small and gradually upping your challenge helps reduce the risk of injury. In the same way, gradually increasing your speed rather than diving straight into a sprint may also help reduce the risk of a side stitch.],
+  [When to see a doctor],
+  [Side stitches are usually harmless. But it’s always a good idea to visit a pro if you experience any of the following probs:],
+  [Pain under your breastbone (higher upper than a side stitch) accompanied by difficulty catching your breath could indicate a heart or lung issue.],
+  [Persistent pain after ru nning could indicate a chronic condition.],
+  [Severe or debilitating stomach pain or cramps could also signal a more serious condition.],
+  [Side stitches are a common issue and not typically the reason for concern. Though pros don’t know what causes them, they think issues with breathing, posture, or nerves may play a role.],
+  [Consider working on your running form or breathing to re duce the risk of experiencing a side stitch. Staying hydrated and avoiding huge meals pre-run may also help. Consider working with a physical therapist or personal trainer if your issues persist.],
+  [If you experience pain under your breastbone when running, visit a doctor asap.],
+),
+  insert-map: (:),
+  word-count: 794,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+}
+
+{
+  #standard-article(
+  title: [28 Best Brunch Recipes For A Crowd],
+  author: [Lindsay],
+  source-name: [Pinch of Yum],
+  images: (),
+  paragraphs: (
+  [I love a good brunch moment! Whether it’s for something special like Easter or a baby shower, or just a simple Saturday morning with friends. Breakfast food is some of the best food (sweet, savory, cheesy, carby!) and I love to see a table full of people gathered around it. ❤️],
+  [These are the brunch recipes I put on the menu when I’m hosting a group – some can be thrown together and served out of one pan for ease, others can be assembled however your guests see fit (LOVE this breakfast sandwich for that), and all of them are simple, easy, and super delicious.],
+  [One of my favorite menu combos: this egg and croissant bake , this simple green salad , and this carrot cake coffee cake . The ultimate brunch plate!],
+  [Here’s to brunch! Here’s to feeding all our favorite people!],
+  [class="tasty-roundups-description"\>Biscuits and Gravy Egg Bake! YES! a casserole-style dish of fluffy eggs and cheddar baked up with little bites of tender flaky biscuit pieces, and buried under a blanket of creamy green chile sausage gravy.],
+  [class="tasty-roundups-description"\>Crunchy, light, bright, and ultra-fresh. This French-inspired bistro salad is an absolute star as a side for nearly any dinner. Tender greens, fresh herbs, pickled onions, and a delicate vinaigrette on top.],
+  [class="tasty-roundups-description"\>Sweet Cinnamon Rolls! Made with pillowy brioche dough and cinnamon sugar tucked into every nook and cranny. This makes a BIG batch of dough that you can divide and save for later…or make extra all for yourself!],
+  [One of my most important brunch rules is that it must include multiple drinks – a glass of orange juice, a cup of coffee, and maybe something special, too? Here are some ideas for drinks to serve with brunch, many of which can be scaled up for a crowd!],
+  [The post 28 Best Brunch Recipes For A Crowd appeared first on Pinch of Yum .],
+),
+  insert-map: (:),
+  word-count: 1860,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -1858,17 +1121,28 @@ did not enjoy the re-read as much as I'd thought I would.],
 #article-row((
   [
     standard-article(
-  title: [Drostdy Museum in Swellendam, South Africa],
-  author: [Atlas Obscura],
+  title: [The Trip That Changed Me: How Running the World’s Biggest Marathons Pushed AnneMette Bontaites’s Limits],
+  author: [AnneMette Bontaites],
   source-name: [Atlas Obscura],
   images: (),
   paragraphs: (
-  [Built in 1747 by the Dutch East India Company, the Drostdy Museum began as the residence and administrative center of the district’s Landdrost (or country sheriff). The complex quickly expanded to include a gaol, offices, a mill, and various outbuildings, forming the core of colonial authority in the region.],
-  [Johannes Theophilus Rhenius, the first Landdrost, governed with the assistance of burger heemraden, clerks, a gaoler, and enslaved labor, reflecting the layered power structure of the early Cape. British colonial reforms abolished the Landdrost system in the 19th century, and from 1827 the Drostdy housed a civil commissioner and resident magistrate instead.],
-  [The property was sold and subdivided in 1846, later passing into private hands before being purchased by the Union of South Africa in 1939. Today, the former seat of colonial administration survives as a museum, its buildings preserving the architectural and bureaucratic imprint of nearly two centuries of shifting rule.],
+  [For AnneMette Bontaites, running the New York City Marathon was supposed to be a one-time experience. A personal challenge, a bucket-list item, and then back to normal life],
+  [But somewhere between the starting line and the finish, plans changed.],
+  [The decision to run that first marathon was almost a whim. Bontaites, a Denmark native who now lives in Boston, had run two half marathons and joked to her best friend, “Well, two halves make a whole. I've done a marathon.’”],
+  [The friend, also a runner, begged to differ on that distance math and made her an offer: She’d fly to New York from the pair’s home city of Copenhagen and they’d run Bontaites’s first marathon together. By mile 18, the friends had made a pact to run the Copenhagen marathon together, too.],
+  [Soon the races began to stack up: After Copenhagen came Paris, the Marine Corps Marathon, and eventually the prestigious Abbott World Marathon Majors series, which includes seven races in Berlin, Boston, Chicago, London, New York, Sydney and Tokyo.],
+  ["Before you actually run one, I think in the back of your mind, most people \[think\], 'There is no way I could ever run a marathon.' And then when you do, it's this really incredible fulfilling feeling of, 'Wow, I really did this.'"],
+  [And the discipline and mental grit required to train and run those races also reshaped how Bontaites approaches challenges far beyond the course.],
+  [“It helps when you actually break down the 26.2 miles into five-mile increments because then it becomes less daunting mentally,” she says. “Itake that to work with me.”],
+  [The lesson, she discovered, wasn’t just about running—it was about reframing overwhelming goals into manageable steps.],
+  [Bontaites completed the Abbott series in August 2025 when she ran the Sydney Marathon and considered retiring, but then Athens – birthplace of the marathon – came calling. That race was in November.],
+  [“I thought, ‘Let's end where it all began,’” she said.],
+  [Follow AnneMette's travels through the Atlas here.],
+  [Do you have a trip that changed you? Fill out our form with your name, email, a brief description of the moment that shifted something for you, and a few photos. We may feature your story in future content — and you may even be invited to be interviewed for the series. And read more from our “The Trip that Changed Me” series here.],
+  [Loading…],
 ),
   insert-map: (:),
-  word-count: 151,
+  word-count: 395,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -1876,51 +1150,48 @@ did not enjoy the re-read as much as I'd thought I would.],
   ],
   [
     standard-article(
-  title: [When Video Games Jump the Screen],
-  author: [Lauren Johnston],
+  title: [The Buried Church Beneath Musée Rude in Dijon, France],
+  author: [Atlas Obscura],
+  source-name: [Atlas Obscura],
+  images: (),
+  paragraphs: (
+  [Beneath the elegant calm of the museum lies something far older and far less orderly: the archaeological remains of an 11th-century church that refuses to fully disappear. The crypt is not polished or prettified. Instead, it reveals raw foundations, fractured columns, and worn stone outlines that trace the ghostly footprint of the original structure.],
+  [This underground space once belonged to the Church of Saint-Étienne, one of the earliest religious centers in Dijon . Time, revolutions, and urban reinvention dismantled the church above, but its bones endured.],
+  [Rough stone arches curve overhead like ribs. The air is cool and still, carrying the quiet dignity of something that has outlived its purpose yet refuses to vanish. Informational panels help decode the fragments, but the true magic lies in the unfinished feeling. Nothing here tries to impress. It simply persists.],
+  [The result is a rare encounter with a building in reverse, not restored to glory, but preserved mid-disappearance. It’s less a monument than a memory made visible.],
+),
+  insert-map: (:),
+  word-count: 164,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+  ],
+), ruled-indices: (1,))
+#pull-quote([' And then when you do, it's this really incredible fulfilling feeling of, 'Wow, I really did this.], [AnneMette Bontaites])
+
+
+#article-row((
+  [
+    standard-article(
+  title: [This Intrepid 19th-Century Reporter Refused to Accept the Unacceptable],
+  author: [Daniel McDermon],
   source-name: [Atlas Obscura],
   images: (),
   paragraphs: (
   [This article comes from Atlas Obscura’s Places newsletter. Subscribe or manage your subscription here .],
-  [Every March 10, the internet fills with red caps and pixelated plumbers.],
-  [When written as MAR10, the date happens to resemble the name “Mario,” which is reason enough for fans—and Nintendo itself—to celebrate the world’s most famous video game plumber. This year the festivities are a little bigger: Super Mario Bros., the platformer that helped define modern gaming, is marking forty years since its international debut.],
-  [In the Swedish town of Kungsbacka, Mario already has a permanent post. A life-size version of the character stands outside an office building—red cap, blue overalls, unmistakable mustache.],
-  [But this Mario isn’t smashing bricks or leaping over Goombas. He’s greeting visitors outside the headquarters of Bergsala, the company that helped bring Nintendo games to Scandinavia in the early days of the NES.],
-  [Elsewhere in the Atlas, video game icons appear in surprising places. In New Hampshire, the towering Donkey Kong Mural celebrates the arcade classic. Paris hides colorful alien mosaics in the form of Paris Space Invaders . In Seattle, Pac-Man Park recreates the maze from the famous arcade game. And beneath the New Mexico desert sits the Alamogordo Landfill , where thousands of unsold Atari cartridges were once secretly dumped.],
-  [Nintendo began in Kyoto in 1889 as a maker of playing cards. More than a century later, it’s responsible for some of the most recognizable game characters on Earth. Along the way, the company has left behind a surprising trail of places tied to its history—from old buildings to landmarks connected to gaming culture. SEE THE FULL LIST],
-  [This is the final resting place of Italo Calivino , one of Italy’s most influential and imaginative writers.],
-  [An explosion at what is now the Barutana Memorial Area marked a turning point in the Croatian War of Independence.],
-  [Along the bright and whimsical Paul Carr Jogging Trail you can jog (or stroll) down an esplanade of fluctuating sculpture works.],
-  [The video game “Black Myth: Wukong” may feel like modern fantasy, but its roots are centuries old. The game draws from “Journey to the West,” a 16th-century Chinese novel about the mischievous Monkey King, Sun Wukong. The magical trickster can shape-shift, ride clouds, and wield a staff that changes size at will.],
-  [The Video Game ‘Black Myth: Wukong’ Has Ancient Roots],
+  [The enterprising 19th-century journalist Nellie Bly didn’t just write stories—she stepped into danger to force readers to see things that they might prefer to ignore. Bly went undercover in the 1880s to expose the asylum system, in which women (with or without mental illness) were often abused or neglected. More than a century later, Bly’s work was honored with a monument near the site of the asylum she investigated, on New York’s Roosevelt Island.],
+  [“The Girl Puzzle,” named after one of the journalist’s early works, includes five monumental faces of women, one of them Bly’s, along with four spheres of mirror-polished steel. It’s a reminder on this International Women’s Day that progress has often depended on women who refused to accept the unacceptable.],
+  [In Manchester, England, a sculpture of the suffragette Emmeline Pankhurst is frozen mid-speech , rallying an invisible crowd toward votes and visibility. The Musée de La Femme in Marrakesh spotlights Moroccan women’s creative and civic power . In Senegal, the Henriette Bathily Women’s Museum stands as a tribute to women’s cultural contributions . And La Casa Azul in Mexico City preserves Frida Kahlo’s intensely personal world .],
+  [Female visual artists have long had to struggle, not just to have their work widely seen, but to create at all. But women have made art as long as there’s been art. Many persevered, both through the strength of their work and the force of will, and in celebration of Women’s History Month, we want to highlight some of our favorite places where you can see these contributions in person. SEE THE FULL LIST],
+  [The Music Box Theatre in Chicago is a historic 1929 cinema showing independent and classic films in an atmospheric setting.],
+  [A plane wing with the Mechanics’ Creed written on it is a roadside art installation and monument on a remote stretch of highway in Iceland.],
+  [An unexpected mix of medieval buildings and modern art enlivens this street in Morlaix, France.],
+  [Visitors were drawn to mental institutions out of curiosity and compassion, but they weren’t seeing the full picture—until Nellie Bly revealed it.],
+  [The Undercover Woman Who Changed Asylum Tourism Forever],
 ),
   insert-map: (:),
-  word-count: 408,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-  ],
-), ruled-indices: (1,))
-
-#article-row((
-  [
-    standard-article(
-  title: [Urartian Tomb of Yerevan in Yerevan, Armenia],
-  author: [Atlas Obscura],
-  source-name: [Atlas Obscura],
-  images: (),
-  paragraphs: (
-  [The Urartian (Biaynian) tomb of Yerevan is located at 34 Arshakunyats Avenue, within the premises of the former “Autoaggregate” factory, now part of the “Yerevan Mall” shopping center. Its discovery dates back to 1984 during construction activities. The excavation and study of this site were conducted by the Institute of Archeology and Ethnography of the Armenian Soviet Socialist Republic, led by archaeologist Leonid Biyagov and architect Armine Kanetsyan.],
-  [To preserve this historical monument, a restoration project was initiated in 1984 under the supervision of architect Vladimir Chagharyan, followed by meticulous construction efforts.],
-  [Remarkably, the mausoleum has been well-preserved, maintaining its original condition. It spans an area of 12 square meters and is an underground rectangular structure oriented in a north-south direction. The tomb's floor is adorned with finely crafted black, red, and dark brown tuff slabs, beneath covered with crypts. The walls, constructed of hewn tuff, stand five rows tall. The ceiling consists of tuff rocks with substantial coverage.],
-  [Inside the tomb, niches are carved into the walls, containing cremated urns filled with crushed human, animal, and avian bones, alongside a large urn adorned with bull- headed figurines, a jar, a lamp, bowls, and other artifacts. Among the findings are bronze snakehead bracelets, pottery fragments, parts of horse bridles, rivets, an iron sword, a knife, daggers, agate beads, a satyr seal depicting a griffin and a crescent moon, and a bronze chalice embellished with a ram's head, as well as three bronze belts, among other items.],
-  [The discovered artifacts possess significant historical, cultural, and artistic value, representing one of the most opulent burials identified so far from the Kingdom of Van. The collection indicates that the mausoleum likely belonged to the Urartian elite.],
-  [Adjacent to the tomb, an Early Bronze Age stone box burial was also discovered. Pottery from the early 1st millennium BC was found in the surrounding area. These materials are currently housed in the Erebuni Museum in Yerevan.],
-  [Presently, the preservation of the mausoleum is overseen by the management of “Yerevan Mall.” By the way, the interior design of the mall is decorated with Urartian cuneiform engravings and showcases statuettes from the Urartian period.],
-),
-  insert-map: (:),
-  word-count: 357,
+  word-count: 385,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -1928,54 +1199,69 @@ did not enjoy the re-read as much as I'd thought I would.],
   ],
   [
     standard-article(
-  title: [Pistachio Ganache (with White Chocolate and Pistachio Butter)],
-  author: [Lindsay Landis],
-  source-name: [Love and Olive Oil],
-  images: (),
-  paragraphs: (
-  [This ultra creamy, vibrant green pistachio ganache is made with white chocolate and naturally flavored with real pistachio butter for a sweet, nutty, and earthy pistachio flavor that’s perfect for a wide variety of fillings and frostings for cakes, cookies, and pastries.],
-  [With only three main ingredients and a mere 20 minutes of active time (plan on an hour or two for it to set, but it can also be made further ahead of time), this homemade pistachio ganache is a true showstopper, and easily adaptable depending on the exact consistency and flavor you desire.],
-  [My pistachio obsession is showing no signs of abating any time soon.],
-  [After making a truly otherworldly whipped pistachio ganache to top my exquisite raspberry pistachio frangipane tart , I decided that a standalone pistachio ganache recipe was probably a good idea, as it makes such an incredibly versatile frosting or filling.],
-  [This recipe is for a standard soft-set pistachio ganache (perfect for truffle filling or macarons), but it’s easy enough to turn it into a whipped ganache by just adding additional cream and then whipping it to silky smooth, airy perfection the next day.],
-  [Other than eat it with a spoon, you mean? That’s a great question!],
-  [Ganache is truly one of the most flexible fillings in the pastry world, and you can use this pistachio one in just about any recipe that calls for chocolate ganache .],
-  [I used it to fill some gorgeously green truffles (seriously, the contrast of the rich, dark chocolate with the sweet pistachio is a revelation). If I have the time to make a batch of chocolate or pistachio macarons, I might use what’s left to fill those (did I mention I made multiple batches of this?)],
-  [But truffles and macarons are only the beginning.],
-  [(more…)],
-),
-  insert-map: (:),
-  word-count: 303,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-  ],
-), ruled-indices: (1,))
-#pull-quote([The tomb's floor is adorned with finely crafted black, red, and dark brown tuff slabs, beneath covered with crypts.], [Atlas Obscura])
-
-#pull-quote([My pistachio obsession is showing no signs of abating any time soon.], [Lindsay Landis])
-
-
-{
-  #standard-article(
-  title: [2026 Easter Recipe Guide! 50 Of the Best Easter Recipes!],
+  title: [A Week In The Life, Vol 12.],
   author: [Jessica],
   source-name: [How Sweet Eats],
   images: (),
   paragraphs: (
-  [Today I’m sharing the best of the best easter recipes with 50 of my favorite dishes for the holiday. Appetizers and snacks, brunch and dinner, finished off with cocktails and dessert!],
-  [Time to put together a fabulous menu for the holiday!],
-  [And I still have a lot of great Easter recipes coming to you in the next few weeks, but in the meantime, figured you could get the ball rolling with your menu.],
-  [The dishes at Easter are not my favorite – I’m not a huge fan of ham. So because of that, over the years I’ve come up with tons of delish plates that I DO love at Easter. Whether it’s brunch, dinner, dessert- I’ve got you covered!],
-  [P. S. While you’re at it, you can dye eggs with cool whip and they will look like tie dye unicorn eggs. Fun!],
-  [Are you an Easter brunch or dinner person? I’m kind of… both. And chocolate peanut butter eggs, always.],
-  [50 of the Best Easter Recipes],
-  [(more…)],
-  [The post 2026 Easter Recipe Guide! 50 Of the Best Easter Recipes! appeared first on How Sweet Eats .],
+  [We had a fun little week!],
+  [These little irish babies.],
+  [Um we woke up to lots of snow! The kids even had a delay. What the heck.],
+  [These two working hard on their brackets.],
+  [OG BFFs.],
+  [The leprechaun dyed our milk green.],
+  [But don’t worry he doesn’t bring presents. Ugh.],
+  [Cutie.],
+  [Still on my brown sugar espresso kick.],
+  [This outfit that is so perfectly 80s.],
+  [Jordan is so obsessed with these powdered white donuts.],
+  [And then it was our school’s drama club play!!],
+  [Max and his best friend made this elephant and they were so proud of it!],
+  [All of his cousins came to see him the first day!],
+  [He was so into it and so proud, it was adorable.],
+  [Then we had a fun cousins day!],
+  [Baby Lucy is so edible.],
+  [I threw together these buffalo chicken wraps which were SO good.],
+  [Then we had the final night of The Lion King!],
+  [Leading the pack to the circle of life.],
+  [View from the back.],
+  [Emilia’s dream.],
+  [Finished the weekend off with our baby bff birthday!],
+  [A painting party!],
+  [These two.],
+  [This cupcake cake was so cute.],
+  [And the birthday girl is the sweetest!],
+  [The post A Week In The Life, Vol 12. appeared first on How Sweet Eats .],
 ),
   insert-map: (:),
-  word-count: 185,
+  word-count: 210,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+  ],
+), ruled-indices: (1,))
+
+{
+  #section-label([Analysis])
+  #standard-article(
+  title: [Maultaschen],
+  author: [Atlas Obscura],
+  source-name: [Atlas Obscura],
+  images: (),
+  paragraphs: (
+  [The origins of Germany’s Maultaschen are deliciously devious. Legend has it that, in the late Middle Ages, a lay brother named Jakob invented the stuffed pasta dumplings at the Maulbronn Monastery, a UNESCO World Heritage site founded in 1147 by Cistercian monks in southwest Germany.],
+  [One direct translation of Maultaschen is “mouth pockets,” though “Maul” could just as easily refer to Maulbronn. Maultaschen are usually square dumplings (though sometimes they're rolled) and can be fried in a pan or served in broth. Commonly described as Germany’s version of Italian ravioli, they allegedly emerged as a way to use up an unexpected bounty of meat that Brother Jakob stumbled upon in the forest outside the monastery walls.],
+  [The twist? Although they abhorred waste, these monks weren’t allowed to eat the meat of four-legged animals, especially during the Catholic fasting period of Lent in the spring. So Brother Jakob minced the meat with herbs and onions and wrapped everything inside pasta dough, hiding the forbidden flesh from the eyes of his fellow monks—and even from the eyes of God.],
+  [In Swabia, the region encompassing much of Baden-Württemberg and part of Bavaria where Maultaschen originated, one of the colloquial names for the food references this deception directly: Herrgottsbescheißerle means “little God-cheaters.”],
+  [Everyone in Swabia has their version of the legend with more or less embellishment. Ludwig Nestler holds a master’s degree in heritage conservation and works for the State Palaces and Gardens of Baden-Württemberg, a government organization that oversees monuments like Maulbronn Monastery. His version of the tale includes a sack of stolen meat dropped in the woods by a fleeing thief, which inspires Brother Jakob’s trickery in the kitchen. But he acknowledges that there’s no undisputed “historically correct version” of how Maultaschen came to be. Similarly, everyone in Swabia has their own Maultaschen recipe, with unique ingredients for the minced filling, called Brät .],
+  [“Traditionally the Brät is made from pork mixed with herbs, onions, and occasionally bread crumbs for texture and stability,” says Nestler. Swabia, however, “was a rather poor region with limited amounts of meat due to rather unfertile land, so being adaptive and innovative has always been a part of the people’s nature.” As Maultaschen became popular, fish and seasonal vegetables like spinach, carrots, beets, and mushrooms became common inclusions.],
+  [Today, the European Union ties Maultaschen to Swabia with a Protected Geographical Indication , which lists required ingredients the authentic product should feature, but even the necessary inclusions are pretty loose, such as “pork and/or beef and/or veal” for meat Brät and “typical regional vegetables” for meat-free Brät. It speaks to the way the dumplings developed as subsistence food, used to stretch leftovers and reduce food waste.],
+  [Today, Germans throughout the country enjoy Maultaschen in dozens of flavors in all seasons thanks to grocery stores that stock packaged varieties made by companies like Ditzingen-based Bürger, whose mascot, Erwin , is a Maultasche (the singular form of the plural Maultaschen).],
+  [But the dumplings remain most popular in southern Germany. Maulbronn Monastery offers a special tour that pairs Maultaschen with wine from the monastery’s vineyards. And many locals, including Nestler’s family, still make them from scratch on special occasions—even during Lent, when meat might otherwise be off the menu. There’s no telling if it’s a fraud good enough to fool God, but it’s worth a shot.],
+),
+  insert-map: (:),
+  word-count: 555,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -1983,72 +1269,607 @@ did not enjoy the re-read as much as I'd thought I would.],
 }
 
 {
-  #section-label([Analysis])
+  #standard-article(
+  title: [6 Signs Your Skin Needs Medical Attention, Stat],
+  author: [Greatist],
+  source-name: [Greatist],
+  images: (),
+  paragraphs: (
+  [These symptoms may signal an underlying condition and the need to see a dermatologist.],
+  [Your skin is your most visible organ, so it’s easy to notice when something seems off. It’s normal to experience some skin issues from time to time, like itchiness, breakouts, or ingrown hairs. But when these skin symptoms stick around, it could be a sign that something more serious is going on.],
+  [Many of these skin issues get better with the right at-home remedies or changes in your skin care routine. For example, if dryness pops up when Old Man Winter comes along, slathering on a more intense moisturizer may help.],
+  [But if skin symptoms don’t go away with a little self-care — or they return frequently — a chronic skin condition might be the culprit. However, just because you have a lasting symptom or two doesn’t necessarily mean you have a chronic health issue.],
+  [Here are the symptoms you should watch for and what they might mean. And if they don’t improve, consider checking in with a dermatologist for a proper diagnosis and a plan of action.],
+  [If you wish you had cat claws to satisfy your skin itch, you could be dealing with eczema. Eczema is an umbrella term for several conditions that impact the skin , with atopic dermatitis being the most common.],
+  [With most forms of eczema, your skin may show signs of inflammation, such as:],
+  [itchiness],
+  [red, gray, brown, or purple skin],
+  [a rash],
+  [intense dryness],
+  [These symptoms may flare up occasionally and then go into periods of remission, where your skin isn’t as irritated.],
+  [Allergies can also lead to itchiness. For example, if you’re allergic to a skin care ingredient, a fabric type, a pet, or another allergen, your skin might react as a way to tell you to avoid this trigger.],
+  [Ongoing or regular periods of itchiness are a reason to see a dermatologist.],
+  [A rash can affect the skin in various ways, including:],
+  [red, gray, brown, or purple patches],
+  [itchiness],
+  [raised bumps],
+  [hives (urticaria)],
+  [A one-off or temporary rash might result from friction or chafing from a new outfit item. It could also be a heat rash when sweat gets trapped in skinfolds or bodily creases.],
+  [A persistent rash could be a sign of eczema or allergies. However, different types of rashes can be a sign of other things. For example, a butterfly-shaped (malar) rash across the face is a common sign of an autoimmune disease known as lupus.],
+  [If you frequently experience skin rashes, talk with a dermatologist to help you get to the bottom of the issue.],
+  [Dry skin can be just that — dry skin. Common causes include:],
+  [cold weather],
+  [dry weather],
+  [dry indoor heat],
+  [super-hot baths or showers],
+  [bathing too frequently],
+  [chlorine exposure from swimming],
+  [irritation from ingredients in skin care or soaps],
+  [sun exposure],
+  [But if your skin is so dry it makes you want to bathe in a vat of thick moisturizer, it could be a sign of psoriasis.],
+  [Psoriasis is an inflammatory skin condition potentially caused by an overactive immune system. It can lead to dry, cracked, or scaling skin. In fact, psoriasis often involves a buildup of scales or plaques on areas like the elbows or knees — though they can occur anywhere.],
+  [Psoriasis and eczema are different conditions, but they have overlapping symptoms that mimic each other. So if you experience these symptoms, it’s important to see a dermatologist to identify and treat the underlying cause.],
+  [Changes in skin color — including red, brown, gray, or purple patches of skin — can be a sign of various skin issues, including eczema, psoriasis, or allergies. But it can also be a sign of rosacea.],
+  [Rosacea typically involves persistent redness that looks like a sunburn or blushing. It may also lead to skin thickening.],
+  [The good news? Rosacea is highly treatable. So working with a dermatologist can help you address it.],
+  [No one is immune from developing the occasional pimple or ingrown hair. But sometimes, skin bumps can be a sign that something else is going on.],
+  [Acne is one of the most common skin conditions that could bring skin bumps like pimples.],
+  [Hidradenitis suppurativa (HS) is another condition that causes painful, boil-like lumps to form underneath the skin. These bumps can turn into pus-filled pockets that may connect via tunnels. HS typically shows up in areas of high friction or where skin meets skin, such as the armpits or groin.],
+  [Other types of skin bumps may include ingrown hairs, which can get infected and turn into folliculitis.],
+  [Talk with a dermatologist to help you address any bothersome skin bumps you may experience.],
+  [Common moles are growths that develop when pigment cells (melanocytes) grow in clusters. The average adult has between 10 to 40 common moles.],
+  [An irregular mole, also known as a dysplastic nevus, is a type of mole that looks different from your common moles. If you have a dysplastic nevus (or several), schedule regular skin checks with a dermatologist to look for anything suspicious. Be sure to mention any changes in:],
+  [color],
+  [size],
+  [shape],
+  [texture],
+  [oozing],
+  [bleeding],
+  [These types of changes could be a sign of a form of skin cancer such as melanoma, which occurs in melanocytes. Melanoma can develop anywhere, including on normal-looking skin, a common mole, or a dysplastic nevus.],
+  [Skin symptoms — like rashes, bumps, discoloration, dryness, or itchiness — may come and go. But if symptoms stick around or return frequently, consider seeing a dermatologist for an evaluation. Your skin may be telling you that there’s an underlying issue that needs to be addressed.],
+  [A dermatologist can provide a proper diagnosis and treatment plan to help reduce, or, in some cases, resolve your skin symptoms. If you don’t currently have a dermatologist, your primary care physician or nurse practitioner can refer you to one.],
+),
+  insert-map: (:),
+  word-count: 998,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+}
+
+{
+  #standard-article(
+  title: [Notes on Lagrange Interpolating Polynomials],
+  author: [Eli Bendersky],
+  source-name: [Eli Bendersky],
+  images: (),
+  paragraphs: (
+  [Polynomial interpolation is a method of finding a polynomial function
+that fits a given set of data perfectly. More concretely, suppose we
+have a set of n+1 distinct points \[1\] :],
+  [\\\[(x\_0,y\_0), (x\_1, y\_1), (x\_2, y\_2)\\cdots(x\_n, y\_n)\\\]],
+  [And we want to find the polynomial coefficients {a\_0\\cdots a\_n}
+such that:],
+  [\\\[p(x)=a\_0 + a\_1 x + a\_2 x^2 + \\cdots + a\_n x^n\\\]],
+  [Fits all our points; that is p(x\_0)=y\_0, p(x\_1)=y\_1 etc.],
+  [This post discusses a common approach to solving this problem, and also
+shows why such a polynomial exists and is unique.],
+  [Showing existence using linear algebra],
+  [When we assign all points (x\_i, y\_i) into the generic polynomial
+p(x), we get:],
+  [\\\[\\begin{aligned}
+p(x\_0)&=a\_0 + a\_1 x\_0 + a\_2 x\_0^2 + \\cdots a\_n x\_0^n = y\_0\\\\
+p(x\_1)&=a\_0 + a\_1 x\_1 + a\_2 x\_1^2 + \\cdots a\_n x\_1^n = y\_1\\\\
+p(x\_2)&=a\_0 + a\_1 x\_2 + a\_2 x\_2^2 + \\cdots a\_n x\_2^n = y\_2\\\\
+\\cdots \\\\
+p(x\_n)&=a\_0 + a\_1 x\_n + a\_2 x\_n^2 + \\cdots a\_n x\_n^n = y\_n\\\\
+\\end{aligned}\\\]],
+  [We want to solve for the coefficients a\_i. This is a linear
+system of equations that can be represented by the following matrix
+equation:],
+  [\\\[{\\renewcommand{\\arraystretch}{1.5}\\begin{bmatrix}
+ 1 & x\_0 & x\_0^2 & \\dots & x\_0^n\\\\
+ 1 & x\_1 & x\_1^2 & \\dots & x\_1^n\\\\
+ 1 & x\_2 & x\_2^2 & \\dots & x\_2^n\\\\
+ \\vdots & \\vdots & \\vdots & \\ddots &\\vdots \\\\
+ 1 & x\_n & x\_n^2 & \\dots & x\_n^n
+ \\end{bmatrix}
+ \\begin{bmatrix}
+ a\_0\\\\
+ a\_1\\\\
+ a\_2\\\\
+ \\vdots\\\\
+ a\_n\\\\
+ \\end{bmatrix}=
+ \\begin{bmatrix}
+ y\_0\\\\
+ y\_1\\\\
+ y\_2\\\\
+ \\vdots\\\\
+ y\_n\\\\
+ \\end{bmatrix}
+ }\\\]],
+  [The matrix on the left is called the Vandermonde matrix . This matrix
+is known to be invertible (see Appendix for a proof); therefore, this
+system of equations has a single solution that can be calculated by
+inverting the matrix.],
+  [In practice, however, the Vandermonde matrix is often numerically
+ill-conditioned, so inverting it isn’t the best way to calculate exact
+polynomial coefficients. Several better methods exist.],
+  [Lagrange interpolation polynomials emerge from a simple, yet powerful
+idea. Let’s define the Lagrange basis functions l\_i(x)
+(i \\in \[0, n\]) as follows, given our points (x\_i, y\_i):],
+  [\\\[l\_i(x) =
+\\begin{cases}
+ 1 & x = x\_i \\\\
+ 0 & x = x\_j \\quad \\forall j \\neq i
+\\end{cases}\\\]],
+  [In words, l\_i(x) is constrained to 1 at and to 0 at
+all other x\_j. We don’t care about its value at any other point.],
+  [The linear combination:],
+  [\\\[p(x)=\\sum\_{i=0}^{n}y\_i l\_i(x)\\\]],
+  [is then a valid interpolating polynomial for our set of n+1
+points, because it’s equal to at each (take a
+moment to convince yourself this is true).],
+  [How do we find l\_i(x)? The key insight comes from studying the
+following function:],
+  [\\\[l'\_i(x)=(x-x\_0)\\cdot (x-x\_1)\\cdots (x-x\_{i-1}) \\cdot (x-x\_{i+1})\\cdots (x-x\_n)=
+\\prod\_{\\substack{0\\leq j \\leq n \\\\ j \\neq i}}(x-x\_j)\\\]],
+  [This function has terms (x-x\_j) for all
+j\\neq i. It should be easy to see that l'\_i(x) is 0 at
+all x\_j when j\\neq i.],
+  [What about its value at , though? We can just assign
+ into l'\_i(x) to get:],
+  [\\\[l'\_i(x\_i)=\\prod\_{\\substack{0\\leq j \\leq n \\\\ j \\neq i}}(x\_i-x\_j)\\\]],
+  [And then normalize l'\_i(x), dividing it by this (constant) value. We get
+the Lagrange basis function l\_i(x):],
+  [\\\[l\_i(x)=\\frac{l'\_i(x)}{l'\_i(x\_i)}=\\prod\_{\\substack{0\\leq j \\leq n \\\\ j \\neq i}}\\frac{x-x\_j}{x\_i-x\_j}\\\]],
+  [Let’s use a concrete example to visualize this. Suppose we have the
+following set of points we want to interpolate:
+(1,4), (2,2), (3,3). We can calculate l'\_0(x),
+l'\_1(x) and l'\_2(x), and get the following:],
+  [Note where each l'\_i(x) intersects the axis. These
+functions have the right values at all x\_{j\\neq i}. If we
+normalize them to obtain l\_i(x), we get these functions:],
+  [Note that each polynomial is 1 at the appropriate and 0 at
+all the other x\_{j\\neq i}, as required.],
+  [With these l\_i(x), we can now plot the interpolating polynomial
+p(x)=\\sum\_{i=0}^{n}y\_i l\_i(x), which fits our set of input points:],
+  [Polynomial degree and uniqueness],
+  [We’ve just seen that the linear combination of Lagrange basis functions:],
+  [\\\[p(x)=\\sum\_{i=0}^{n}y\_i l\_i(x)\\\]],
+  [is a valid interpolating polynomial for a set of n+1 distinct
+points (x\_i, y\_i). What is its degree?],
+  [Since the degree of each l\_i(x) is , then the degree of
+p(x) is at most . We’ve just derived the first part
+of the Polynomial interpolation theorem :],
+  [Polynomial interpolation theorem : for any n+1 data points
+(x\_0,y\_0), (x\_1, y\_1)\\cdots(x\_n, y\_n) \\in \\mathbb{R}^2 where no
+two x\_j are the same, there exists a unique polynomial
+p(x) of degree at most that interpolates these points.],
+  [We’ve demonstrated existence and degree, but not yet uniqueness . So
+let’s turn to that.],
+  [We know that p(x) interpolates all n+1 points, and its
+degree is . Suppose there’s another such polynomial
+q(x). Let’s construct:],
+  [\\\[r(x)=p(x)-q(x)\\\]],
+  [That do we know about r(x)? First of all, its value is 0 at all
+our , so it has n+1 roots . Second, we also know
+that its degree is at most (because it’s the difference of two
+polynomials of such degree). These two facts are a contradiction.
+No non-zero polynomial of degree \\leq n can have
+n+1 roots (a basic algebraic fact related to the Fundamental
+theorem of algebra ). So r(x) must be the zero polynomial; in
+other words, our p(x) is unique \\blacksquare.],
+  [Note the implication of uniqueness here: given our set of n+1
+distinct points, there’s only one polynomial of degree \\leq n
+that interpolates it. We can find its coefficients by inverting the
+Vandermonde matrix, by using Lagrange basis functions, or
+any other method \[2\] .],
+  [Lagrange polynomials as a basis for P\_n(\\mathbb{R})],
+  [The set P\_n(\\mathbb{R}) consists of all real polynomials of
+degree \\leq n. This set - along with addition of polynomials and
+scalar multiplication - forms a vector
+space .],
+  [We called l\_i(x) the "Lagrange basis" previously, and they do -
+in fact - form an actual linear algebra basis for this vector space. To
+prove this claim, we need to show that Lagrange polynomials are linearly
+independent and that they span the space.],
+  [Linear independence : we have to show that],
+  [\\\[s(x)=\\sum\_{i=0}^{n}a\_i l\_i(x)=0\\\]],
+  [implies a\_i=0 \\quad \\forall i. Recall that l\_i(x) is 1
+at , while all other l\_j(x) are 0 at that point.
+Therefore, evaluating s(x) at , we get:],
+  [\\\[s(x\_i)=a\_i = 0\\\]],
+  [Similarly, we can show that a\_i is 0, for all 
+\\blacksquare.],
+  [Span : we’ve already demonstrated that the linear combination of
+l\_i(x):],
+  [\\\[p(x)=\\sum\_{i=0}^{n}y\_i l\_i(x)\\\]],
+  [is a valid interpolating polynomial for any set of n+1 distinct
+points. Using the polynomial interpolation theorem , this is the unique
+polynomial interpolating this set of points. In other words, for every
+q(x)\\in P\_n(\\mathbb{R}), we can identify any set of n+1 distinct points it passes
+through, and then use the technique described in this post to find the coefficients of q(x) in the
+Lagrange basis. Therefore, the set l\_i(x) spans
+the vector space \\blacksquare.],
+  [Interpolation matrix in the Lagrange basis],
+  [Previously we’ve seen how to use the \\{1, x, x^2, \\dots x^n\\}
+basis to write down a system of linear equations that helps us find the
+interpolating polynomial. This results in the Vandermonde matrix .],
+  [Using the Lagrange basis, we can get a much nicer matrix representation
+of the interpolation equations.],
+  [Recall that our general polynomial using the Lagrange basis is:],
+  [\\\[p(x)=\\sum\_{i=0}^{n}a\_i l\_i(x)\\\]],
+  [Let’s build a system of equations for each of the n+1 points
+(x\_i,y\_i). For :],
+  [\\\[p(x\_0)=\\sum\_{i=0}^{n}a\_i l\_i(x\_0)\\\]],
+  [By definition of the Lagrange basis functions, all l\_i(x\_0)
+where i\\neq 0 are 0, while l\_0(x\_0) is 1. So this
+simplifies to:],
+  [\\\[p(x\_0)=a\_0\\\]],
+  [But the value at node is , so we’ve just found
+that a\_0=y\_0. We can produce similar equations for the other
+nodes as well, p(x\_1)=a\_1, etc. In matrix form:],
+  [\\\[{\\renewcommand{\\arraystretch}{1.5}\\begin{bmatrix}
+ 1 & 0 & 0 & \\dots & 0\\\\
+ 0 & 1 & 0 & \\dots & 0\\\\
+ 0 & 0 & 1 & \\dots & 0\\\\
+ \\vdots & \\vdots & \\vdots & \\ddots &\\vdots \\\\
+ 0 & 0 & 0 & \\dots & 1
+ \\end{bmatrix}
+ \\begin{bmatrix}
+ a\_0\\\\
+ a\_1\\\\
+ a\_2\\\\
+ \\vdots\\\\
+ a\_n\\\\
+ \\end{bmatrix}=
+ \\begin{bmatrix}
+ y\_0\\\\
+ y\_1\\\\
+ y\_2\\\\
+ \\vdots\\\\
+ y\_n\\\\
+ \\end{bmatrix}
+ }\\\]],
+  [We get the identity matrix; this is another way to trivially show that
+a\_0=y\_0, a\_1=y\_1 and so on.],
+  [Appendix: Vandermonde matrix],
+  [Given some numbers \\{x\_0 \\dots x\_n\\} a matrix of this form:],
+  [\\\[V=
+{\\renewcommand{\\arraystretch}{1.5}\\begin{bmatrix}
+1 & x\_0 & x\_0^2 & \\dots & x\_0^n\\\\
+1 & x\_1 & x\_1^2 & \\dots & x\_1^n\\\\
+1 & x\_2 & x\_2^2 & \\dots & x\_2^n\\\\
+\\vdots & \\vdots & \\vdots & \\ddots &\\vdots \\\\
+1 & x\_n & x\_n^2 & \\dots & x\_n^n
+\\end{bmatrix}
+}\\\]],
+  [Is called the Vandermonde matrix. What’s special about a Vandermonde
+matrix is that we know it’s invertible when are distinct.
+This is because its determinant is known to be
+non-zero .
+Moreover, its determinant is \[3\] :],
+  [\\\[\\det(V) = \\prod\_{0 \\le i 1, we’ll
+subtract the value of column k-1 multiplied by from
+it (this is done on all columns simultaneously). The idea is to make the
+first row all zeros after the very first element:],
+  [\\\[V=
+{\\renewcommand{\\arraystretch}{1.5}\\begin{bmatrix}
+ 1 & 0 & 0 & \\dots & 0\\\\
+ 1 & x\_1 - x\_0 & x\_1^2 - x\_1 x\_0& \\dots & x\_1^n - x\_1^{n-1} x\_0\\\\
+ 1 & x\_2 - x\_0 & x\_2^2 - x\_2 x\_0& \\dots & x\_2^n - x\_2^{n-1} x\_0\\\\
+ \\vdots & \\vdots & \\vdots & \\ddots &\\vdots \\\\
+ 1 & x\_n - x\_0 & x\_n^2 - x\_n x\_0& \\dots & x\_n^n - x\_n^{n-1} x\_0\\\\
+ \\end{bmatrix}
+}\\\]],
+  [Now we factor out x\_1-x\_0 from the second row (after the first
+element), x\_2-x\_0 from the third row and so on, to get:],
+  [\\\[V=
+{\\renewcommand{\\arraystretch}{1.5}\\begin{bmatrix}
+ 1 & 0 & 0 & \\dots & 0\\\\
+ 1 & x\_1 - x\_0 & x\_1(x\_1 - x\_0)& \\dots & x\_1^{n-1}(x\_1 - x\_0)\\\\
+ 1 & x\_2 - x\_0 & x\_2(x\_2 - x\_0)& \\dots & x\_2^{n-1}(x\_2 - x\_0)\\\\
+ \\vdots & \\vdots & \\vdots & \\ddots &\\vdots \\\\
+ 1 & x\_n - x\_0 & x\_n(x\_n - x\_0)& \\dots & x\_n^{n-1}(x\_n - x\_0)\\\\
+ \\end{bmatrix}
+}\\\]],
+  [Imagine we erase the first row and first column of . We’ll call
+the resulting matrix .],
+  [\\\[W=
+{\\renewcommand{\\arraystretch}{1.5}\\begin{bmatrix}
+ x\_1 - x\_0 & x\_1(x\_1 - x\_0)& \\dots & x\_1^{n-1}(x\_1 - x\_0)\\\\
+ x\_2 - x\_0 & x\_2(x\_2 - x\_0)& \\dots & x\_2^{n-1}(x\_2 - x\_0)\\\\
+ \\vdots & \\vdots & \\ddots &\\vdots \\\\
+ x\_n - x\_0 & x\_n(x\_n - x\_0)& \\dots & x\_n^{n-1}(x\_n - x\_0)\\\\
+ \\end{bmatrix}
+}\\\]],
+  [Because the first row of is all zeros except the first
+element, we have:],
+  [\\\[\\det(V)=\\det(W)\\\]],
+  [Note that the first row of has a common factor of
+x\_1-x\_0, so when calculating \\det(W), we can move this
+common factor out. Same for the common factor x\_2-x\_0 of the
+second row, and so on. Overall, we can write:],
+  [\\\[\\det(W)=(x\_1-x\_0)(x\_2-x\_0)\\cdots(x\_n-x\_0)\\cdot \\det
+{\\renewcommand{\\arraystretch}{1.5}\\begin{bmatrix}
+ 1 & x\_1 & x\_1^2 & \\dots & x\_1^{n-1}\\\\
+ 1 & x\_2 & x\_2^2 & \\dots & x\_2^{n-1}\\\\
+ \\vdots & \\vdots & \\vdots & \\ddots &\\vdots \\\\
+ 1 & x\_n & x\_n^2 & \\dots & x\_n^{n-1}
+ \\end{bmatrix}
+}\\\]],
+  [But the smaller matrix is just the Vandermonde matrix for
+\\{x\_1 \\dots x\_{n}\\}. If we continue this process by induction,
+we’ll get:],
+  [\\\[\\det(V) = \\prod\_{0 \\le i \< j \\le n} (x\_j - x\_i)\\\]],
+  [If you’re interested, the Wikipedia page for the Vandermonde matrix has a couple of additional
+proofs.],
+  [\[1\] The -es here are called nodes and the -s are
+called values . 
+ 
+ 
+ 
+ 
+ 
+ \[2\] Newton
+polynomials 
+is also an option, and there are many other approaches. 
+ 
+ 
+ 
+ 
+ 
+ \[3\] Note that this means the product of all differences between
+x\_j and where is strictly smaller than
+j. That is, for n=2, the full product is
+(x\_2-x\_1)(x\_2-x\_0)(x\_1-x\_0). For an arbitrary ,
+there are \\frac{n(n-1)}{2} factors in total.],
+),
+  insert-map: (:),
+  word-count: 1916,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+}
+
+{
+  #standard-article(
+  title: [About Me in Dating App: Write the Perfect Profile Bio],
+  author: [Greatist],
+  source-name: [Greatist],
+  images: (),
+  paragraphs: (
+  [Crafting a sizzling “About Me” section can transform your dating profile from drab to delicious. Find out how.],
+  [You’ve swiped right and gotten matches, but it’s not working. It might be your profile that’s holding you back. With just seconds to make an impression, your “About Me” section is crucial. Think of it as your personal highlight reel—enticing and leaving them wanting more. If it’s not working its magic, you could be missing out.],
+  [Read on to learn how to turn that blank box into a captivating snapshot of your fabulous self.],
+  [Sophie Mayanne/Getty Images],
+  [Your dating profile is your chance to show potential matches why you’re a catch. But what should you include? Since everyone is unique, think about what you bring to the table and what you’re looking for. Let’s break it down.],
+  [Showcase your personality: Are you a quirky adventurer, a bookworm, or a foodie always on the hunt for the best taco in town? Share your passions and what makes you tick. Be authentic — people can spot a fake from a mile away.],
+  [Be specific: Avoid generic statements like “I love to have fun” or “I enjoy hanging out.” Instead, get specific. Do you love hiking? Mention your fave trail. Are you a movie buff? Share your top films. Details increase relatability and spark conversations.],
+  [Use humor: Humor is desirable ! A witty one-liner or a playful anecdote can make your profile memorable. Just keep it light and fun — avoid heavy sarcasm or anything that might be misunderstood.],
+  [Highlight what you want: Be clear! Do you want a serious relationship or a casual fling? Honesty attracts matches on the same page.],
+  [Share a fun fact: Maybe you’ve traveled to 20 countries or once met a celeb in an unexpected place. These tidbits are great icebreakers.],
+  [Stay positive : Focus on what you enjoy. Avoid negative statements or listing things you don’t like — it’s far too Debbie Downer.],
+  [Your “About Me” section is your dating profile’s elevator pitch. It’s gotta be snappy, sassy, and totally you. Here’s how to make that blurb irresistible:],
+  [Create a vivid snapshot: Forget boring lists — paint a picture. Describe a typical weekend or a fave memory.],
+  [Share your aspirations: Talk about your dreams and goals. Are you working towards a marathon, planning to write a book, or desperately trying to master a new language?],
+  [Show your values : Highlight what’s important to you. Whether it’s pets, family, or personal growth, let folks see your core values to attract those on the same wavelength.],
+  [Add a touch of mystery: Don’t spill all your secrets. Hint at a story or drop a tantalizing detail to leave them wanting more. It’s all about the tease.],
+  [Highlight recent adventures: Talk about your latest escapades. Recently back from backpacking in Bali? Tried skydiving? Anecdotes make great convo starters.],
+  [Discuss cultural interests: What’s on your bookshelf or playlist? Share your faves as a bonding point. Plus, it’s a sneaky way to show off your personality.],
+  [End with a question : A question like, “What’s the best book you’ve read this year?” or “Any travel tips for my next adventure?” encourages peeps to reach out.],
+  [Here are a couple of examples to get the ball rolling:],
+  [“Bookworm by day, Netflix binge-watcher by night. I love curling up with a good novel or debating plot twists over a glass of wine. If you know a killer thriller or have a strong opinion on ‘Stranger Things,’ let’s chat!”],
+  [“Aspiring chef with a passion for trying new recipes and hunting down the best food trucks. If you’re into food adventures and don’t mind a little kitchen chaos, swipe right and let’s cook up some fun together!”],
+  [Avoid these common pitfalls to make sure your profile sends the right message:],
+  [Negativity: Don’t focus on what you don’t want. Life satisfaction can be attractive !],
+  [Desperation: You’re a catch, so avoid looking desperate !],
+  [Clichés: Avoid overused phrases like “I live life to the fullest.”],
+  [Personal deets: Keep things like your exact job location and home address private.],
+  [Demands : Making too many specifications about who you’re looking for can seem rigid.],
+  [The photos you choose for your dating profile can make or break your online dating success. Here’s what attracts the most positive attention:],
+  [High-quality photos : Clear, well-lit images are crucial.],
+  [A variety of shots : Include a mix of headshots, full-body images, and activities.],
+  [Authenticity : Photos should reflect your true self and lifestyle.],
+  [Smiles go a long way : A genuine smile is very appealing!],
+  [Nailing your “About Me” section is all about balance — showcasing your personality, values, and interests while keeping it fun and engaging. Little details can make all the difference. So keep it lighthearted and authentic, and you’ll attract matches who truly get you.],
+),
+  insert-map: (:),
+  word-count: 841,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+}
+
+{
+  #standard-article(
+  title: [Ultraprocessed Foods As Addictive As Tobacco, Researchers Say],
+  author: [Healthline],
+  source-name: [Healthline],
+  images: (),
+  paragraphs: (
+  [New research shows that ultraprocessed foods may be as addictive as cigarettes. Image Credit: Alexander Spatari/Getty Images],
+  [A recent review found that ultraprocessed foods (UPFs) may be as addictive as tobacco products.],
+  [The researchers found that UPFs are designed to heighten reward and accelerate the delivery of reinforcing ingredients.],
+  [The “addictive” quality of these foods means they drive compulsive consumption and disrupt appetite regulation.],
+  [The review authors suggest that ultraprocessed foods should be subject to regulations similar to those for tobacco products.],
+  [Currently, there is no single universal definition of ultraprocessed foods. Some people define them as foods that contain ingredients you would not find in your kitchen cupboards, such as emulsifiers and additives.],
+  [Many professionals use the NOVA classification to define ultraprocessed foods. This talks about foods that contain “formulations of ingredients, mostly of exclusive industrial use, typically created by a series of industrial techniques and processes.”],
+  [A recent review published in The Millbank Quarterly suggested that ultraprocessed foods may be as addictive as tobacco products.],
+  [“I agree with this study, as ultra-processed foods are specifically engineered to be highly appealing to most individuals,” Mir Ali , MD, bariatric surgeon and medical director of MemorialCare Surgical Weight Loss Center at Orange Coast Medical Center in Fountain Valley, CA, who was not involved in the research, told Healthline.],
+  [Research from 2023 estimates that over 73% of the foods in the United States are ultraprocessed.],
+  [“Cigarettes and UPFs \[ultraprocessed foods\] are not simply natural products but highly engineered delivery systems designed specifically to maximize biological and psychological reinforcement and habitual overuse,” noted the new study’s research team from Harvard, Duke, and the University of Michigan.],
+  [Are ultraprocessed foods addictive?],
+  [The review synthesized findings from addiction, public health history, and nutrition in order to identify sensory and structural features that increase the reinforcing potential of both cigarettes and ultraprocessed foods.],
+  [“Not everyone is ‘addicted’ to these foods, but for a meaningful minority, they trigger classic addiction-like patterns: strong cravings, loss of control, and continued use despite negative health effects,” said Michelle Routhenstein , preventive cardiology dietitian at EntirelyNourished, who was not involved in the study.],
+  [“These foods are deliberately engineered with refined carbs , added fats, salt, and flavor enhancers to maximize reward and repeat consumption, and the industry uses aggressive marketing tactics, especially targeting children,” she told Healthline.],
+  [The researchers focused on five key areas:],
+  [delivery speed],
+  [hedonic engineering, or designing foods to be irresistibly good],
+  [dose optimization],
+  [environmental ubiquity],
+  [deceptive reformulation, or “health washing”],
+  [They found that, like cigarettes, ultraprocessed foods are fine-tuned to deliver the right dose of sugar .],
+  [“Refined carbohydrates stimulate dopamine release via the vagus nerve , whereas fats do so through intestinal lipid sensing,” the researchers wrote.],
+  [“… UPFs with high levels of refined carbohydrates and added fats are some of the most potently rewarding substances in the modern diet. Notably, this refined carbohydrate-fat combination is almost nonexistent in nature.”],
+  [The way these foods rapidly deliver “feel-good” chemicals to the brain makes them potentially addictive, similarly to cigarettes.],
+  [The review noted that while cigarettes are engineered to deliver nicotine quickly, ultraprocessed foods are engineered to rapidly digest and absorb, as they typically have little to no fiber. This makes it easier for the body to process fat and sugar more quickly.],
+  [The researchers also explain that ultraprocessed foods give intentional flavor bursts that fade quickly and textures that melt in your mouth. This all helps to deliver more dopamine and encourages you to eat more.],
+  [‘Health washing’ in cigarettes, ultraprocessed foods],
+  [According to the review, both the tobacco and food industries have long used a strategy called “health washing.”],
+  [This is where products are marketed and reformulated to create an illusion of reduced harm while preserving the core of their addictive properties.],
+  [Health washing in the tobacco industry gained traction in the 1950s with the introduction of filters on cigarettes.],
+  [These were marketed as protective innovations that would trap tar and particles before they reached the lungs. In reality, filters offer little meaningful benefit.],
+  [However, people typically adapted by inhaling deeper or smoking more frequently, which offset any reduction in toxin exposure.],
+  [The food industry has taken a similar approach. It uses labels like “low fat” or “sugar-free” to market ultraprocessed foods.],
+  [However, these foods still contain the same highly reinforcing ingredient combinations. The issue is that these reformulations offer a superficial appearance of health while the product’s addictive structure and metabolic harms remain intact.],
+  [Should ultraprocessed foods be regulated?],
+  [The researchers noted at the end of their paper that food and tobacco are not the same thing.],
+  [Still, they cautioned that certain ultraprocessed foods function like highly optimized consumables rather than actual food. They recommended that public health policy should reflect this reality.],
+  [“Tobacco provides a warning, and tobacco control provides a source of hope,” the researchers wrote.],
+  [Due to regulations, smoking rates in the United States have fallen and have “reshaped cultural views of tobacco and eroded trust in the industry.”],
+  [“I believe increased education regarding the negative impact of ultra-processed foods is essential to reduce general consumption and improve public health. The strategies used to reduce cigarette consumption have been effective and may be a helpful model for ultra-processed foods as well,” said Ali.],
+  [“I don’t think UPFs \[ultraprocessed foods\] should be regulated exactly like cigarettes, but they do warrant stronger, tobacco-inspired policies: marketing restrictions, clear front-of-package labeling, tighter standards on health claims, and limits in schools or hospitals,” added Routhenstein.],
+  [The researchers reminded people that minimally processed and unprocessed foods have sustained human health for millennia.],
+  [“Legal action against health damages and misleading health claims, restrictions on UPF advertising, taxation of nutrient-poor UPFs, markedly reducing UPFs in schools and hospitals, and clearer labeling of ultraprocessing could all serve as next steps,” they noted.],
+  [“Policies that confront UPFs with the same seriousness that once applied to tobacco, while actively promoting real food, offer the most promising path out of the current crisis.”],
+  [Routhenstein agreed and told Healthline that public policy should expand access to fresh, minimally processed foods. This is especially true in lower-income neighborhoods, she explained. Access could be expanded through subsidies, support for local markets and grocery stores, and school or workplace programs.],
+  [“Making real food affordable and convenient reduces reliance on UPFs and addresses structural barriers that drive unhealthy eating patterns,” Routhenstein said.],
+  [Frequently asked questions],
+  [What is the ultraprocessed foods spectrum?],
+  [The research review noted that not all processed foods are equal. There is a difference between minimally processed foods and ultraprocessed foods.],
+  [Minimally processed foods have only been slightly altered in order for them to be more easily stored, prepared, and eaten. Examples include grinding, pasteurization, fermentation, and freezing.  This allows those foods to be preserved for a longer time and remain safe to eat.],
+  [According to the researchers, minimally processed foods may carry a lower risk than ultraprocessed foods.],
+  [How can you spot ultraprocessed foods?],
+  [The ingredient list is typically the clearest place to see how processed a product really is. The more unfamiliar the ingredients sound, the more likely it is that the product is ultraprocessed.],
+  [Signs that food may be ultraprocessed include emulsifiers such as soy lecithin or mono – and diglycerides, long ingredient lists, usually with more than 5 to 7 items, ingredients you wouldn’t cook at home, artificial flavors or colors, isolated starches or protein isolates, and multiple forms of added sugar .],
+  [What are alternatives to ultraprocessed foods?],
+  [Routhenstein recommended treating ultraprocessed foods as optional rather than everyday staples, especially sugary drinks, packaged sweets, chips, fast food, and heavily processed frozen meals.],
+  [“Shift your environment so minimally processed foods are the convenient default, and build meals around fiber-rich carbs, quality protein, and healthy fats to improve satiety and blunt cravings,” she added.],
+  [She noted that simple swaps such as sparkling water for soda, fruit and nuts for candy, oats or plain yogurt for sweetened cereals, and batch-cooked meals for frozen entrees can meaningfully lower ultraprocessed food exposure while keeping eating practical and enjoyable.],
+),
+  insert-map: (:),
+  word-count: 1334,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+}
+
+#article-row((
+  [
+    standard-article(
+  title: [The Best of 2025],
+  author: [Lindsay Landis],
+  source-name: [Love and Olive Oil],
+  images: (),
+  paragraphs: (
+  [See ya, 2025. Don’t let the screen door hit you on the way out! (Seriously though, what a year!)],
+  [The biggest milestone of 2025—for us at least—was the launch of Fresh Baked Puns , finally putting some of my favorite food puns on tshirts, tea towels, stickers and more (psst! If you missed it, I just added Live Laugh Loaf totes and aprons to the shop! The aprons in particular are extremely limited in quantity, so if you want one, I wouldn’t wait too long.)],
+  [I’m currently in the sketching phase for the next two designs coming very soon… let’s just say you butter be on the mailing list if you want first dibs.],
+  [Anyway. I’ve done a best of post every year for the past 16 years (!!) and I’m not about to stop such a long-standing tradition despite the fact my brain is half mush—I mean, cookie dough—at this point in the year.],
+  [As for what’s in store for 2026… I already have a few recipes in the works that I know you’re going to love. I just need to hunker down and photograph the darn things. Then edit the photos. Then write the recipe and the post. Then promote it… (seriously though, every post takes hours and hours to pull together these days, no wonder I’m not publishing as frequently as I used to).],
+  [And while I’ve never been the resolutions type, I’ve got a few big goals in addition to trying to develop some better habits this coming year, including:],
+  [Draw everyday.],
+  [Bake more homemade bread.],
+  [Make more homemade pasta.],
+  [Learn to shoot with artificial light (I’m so sick of fighting the sun).],
+  [Release at least 4 new pun designs (one every quarter).],
+  [Figure out ways to better market myself and Fresh Baked Puns (marketing expert I am not).],
+  [Get more recipes converted, including metric measurements (I’ve made it back to 2019… still 12 more years—and 818 more recipes—to go!)],
+  [Eat less sugar ehhhh who are we kidding. That sweet tooth isn’t going anywhere!],
+  [What about you? What are you most excited for in the new year?],
+  [(Click through to see which recipe came out on top!)],
+  [(more…)],
+),
+  insert-map: (:),
+  word-count: 362,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+  ],
+  [
+    standard-article(
+  title: [The Graveyard That Made Me Kiss a Frog],
+  author: [Louise Story],
+  source-name: [Atlas Obscura],
+  images: (),
+  paragraphs: (
+  [I kissed a frog in Sparta, Wisconsin. Voluntarily. Enthusiastically.],
+  [The frog in question is one of hundreds of giant fiberglass molds scattered across a football-field-sized lot behind a nondescript sheet-metal building off County Highway Q. This is the home of FAST — Fiberglass Animals, Shapes, and Trademarks — a company that has been building giant roadside statues, mascots, and water park attractions since the early 1970s. It was incorporated under its current name in 1983 by a man named Jerome Vettrus.],
+  [FAST has worn the mantle of American titan-builder for over 50 years. Among their greatest hits: a 200-foot-long sea monster at House on the Rock in Spring Green, Wisconsin, and a 145-foot-long muskie in Hayward.],
+  [After each job, they keep the mold. All of them. For decades.],
+  [And that's how a quiet field in rural Wisconsin became one of the most unexpectedly wonderful places I've ever wandered.],
+  [There are giant skulls and colossal dogs, oversized Santa Clauses and titanic mice. The fiberglass has weathered over time, giving the molds an almost ancient, stone-like quality, as though the yard is the remnant of some surreal lost civilization. Walking through it is eerie and beautiful at the same time. Some molds are rotted out, covered in weeds or standing water. Others are in relatively pristine condition and could practically be reused tomorrow.],
+  [That's actually the point. The molds are kept for future reuse, since they'd be expensive to recreate. So this isn't just a graveyard. It's also a library. A catalog. An archive of American roadside whimsy sitting in the tall Wisconsin grass.],
+  [I found the frog slide mold and, yes, I kissed it (still looking for my prince). FAST has been making frog slides for over 35 years. You've almost certainly seen one at a water park somewhere without knowing it.],
+  [I slid down a few of the slides too, because how could you not. Then I stood there imagining all the places these forms have traveled, whether they were painted bright yellow or fire-engine red, whether they were installed at some mini golf course in Arizona or a splash pad in Ohio. I imagined the faces of the delighted kids who have no idea their beloved frog came from a field in Wisconsin.],
+  [The current owner took over around 2020, and if you visit during business hours, he might just show you around. The whole thing is free. Open 24 hours. No facilities. Pure wonder.],
+  [It got me thinking about waste and beauty. There's something philosophically satisfying about a place where industrial byproduct becomes accidental art installation. FAST's mold graveyard isn't the only example. Ghanaian artist El Anatsui famously creates vast, shimmering tapestries from discarded bottle caps. Artists on Mount Everest have turned abandoned oxygen cylinders and helicopter wreckage into sculpture. The stuff we discard has a strange afterlife when someone thinks to look at it differently.],
+  [That's the gift of Atlas Obscura exploring: we keep pointing you toward the places where someone already did the looking for you.],
+),
+  insert-map: (:),
+  word-count: 500,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+  ],
+), ruled-indices: (1,))
+#pull-quote([And while I’ve never been the resolutions type, I’ve got a few big goals in addition to trying to develop some better habits this coming year, including:  Draw everyday.], [Lindsay Landis])
+
+
+{
+  #standard-article(
+  title: [Roman Altars and Tombstones in Talavera de la Reina, Spain],
+  author: [Atlas Obscura],
+  source-name: [Atlas Obscura],
+  images: (),
+  paragraphs: (
+  [In the heart of Castilla-La Mancha, Talavera de la Reina makes a compelling case for a detour. Known for its brilliant blue-and-white ceramics and its easygoing riverfront along the Tagus, the city blends small-town charm with layers of deep history. Wander its tiled plazas, linger over local cuisine, and you'll quickly sense that Talavera rewards travelers who look closely-especially those willing to peer at its walls.],
+  [A short stroll brings you to the Basílica de Nuestra Señora del Prado (“Basilica of Our Lady of the Meadow”), an ancestral sanctuary whose eastern façade doubles as an open-air archaeological gallery. Embedded directly into the stone are medieval slabs and far older Roman altars and funerary inscriptions, each labeled with its original findspot somewhere in town. It's the kind of detail you might miss-unless you know to look up.],
+  [One small plaque mentions the "mares infernales," likely a slip for "manes," the benevolent spirits of the Roman dead. Another altar, though classified as Roman, resembles an Iberian Late Bronze Age stela, hinting at even deeper roots beneath the city's streets.],
+  [Over centuries, the basilica has absorbed donations of art and artifacts: the tombstone of Liborio, heraldic shields, Latin epigraphy, and a 15th-century Virgin and Child. In Talavera, history isn't confined to museums-it's mortared into the walls.],
+),
+  insert-map: (:),
+  word-count: 213,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+}
+
+{
+  #section-label([Briefs])
   #brief-group((
-    #brief-item([Medscape News], source-name: [Medscape News], [A biological computer using human neurons learns Doom within 1 week, highlighting rapid adaptive learning and potential advantages over traditional AI systems. 
- Medscape News Australia])
+    [#brief-item([Kaila Yu], source-name: [Condé Nast Traveler], [From the Maldives to Indonesia, more women are scuba diving than ever before—and expanding access for others to experience the sea like they do.])],
+    [#brief-item([Jessica Puckett], source-name: [Condé Nast Traveler], [A basic guide to trip insurance, including a breakdown of “cancel for any reason” (CFAR) upgrades and what's already included in your credit card.])],
+    [#brief-item([Medscape News], source-name: [Medscape News], [Elinzanetant reduces the severity and frequency of hot flushes and night sweats among women with breast cancer regardless of type of endocrine treatment used. 
+ Medscape News Europe])],
+    [#brief-item([Medscape News], source-name: [Medscape News], [The findings could fill a treatment gap for patients with EGFR-mutated advanced non-small cell lung cancer (NSCLC) who also carry TP53 mutations. 
+ Medscape Medical News])],
+    [#brief-item([Jamie Spain], source-name: [Condé Nast Traveler], [Upgrade your outdoor setup with a Yeti discount code. Save 20% on premium coolers and drinkware through exclusive community hero offers and new seasonal promotions.])],
+    [#brief-item([Gina Homolka], source-name: [Skinnytaste], [Skip the can and make this cozy one-pan Spaghetti Os and Meatballs instead. Mini turkey meatballs and pasta cook together in one-pot in a simple tomato sauce for an easy comfort food dinner the whole family will love. Homemade Spaghetti-Os Spaghettios and Meatballs might be nostalgic for some, but I’ve never loved canned pasta. This \[…\]])],
+    [#brief-item([Joel Bruner], source-name: [Migrationology (Mark Wiens)], [Feijao Tropeiro is one dish you can’t leave Brazil without having, it is one of the most hearty and satisfying plates of food I can ever remember. The next time you visit Belo Horizonte, don’t miss Bar Do Careca, and... 
 
-    #brief-item([Jamie Spain], source-name: [Condé Nast Traveler], [Upgrade your outdoor setup with a Yeti discount code. Save 20% on premium coolers and drinkware through exclusive community hero offers and new seasonal promotions.])
+The post Feijao Tropeiro – Amazing Food in Belo Horizonte, Brazil appeared first on Migrationology - Food Travel Blog .])],
+    [#brief-item([Jessica Sulima], source-name: [Condé Nast Traveler], [Whether you're planning a weekend getaway or a cross-country trip, save on your next vehicle with these Hertz discount codes and member-exclusive offers.])],
+    [#brief-item([Kim Severson], source-name: [NYT Food/Dining], [Raspberry prices can be a harbinger for other food costs. The wholesale price of fresh berries has doubled since January.])],
+    [#brief-item([Joel Bruner], source-name: [Migrationology (Mark Wiens)], [Lima, Peru, is one of the world’s top destinations for travel when it comes to options for exploring delicious local cuisine. Some restaurants in Lima are so well-known for being the absolute best at what they do, a visit is... 
 
-    #brief-item([Medscape News], source-name: [Medscape News], [New data confirm similar response rates with fewer toxicities when carboplatin is dropped from standard neoadjuvant therapy in early HER2-positive breast cancer. 
- Medscape Medical News])
+The post Ceviche Chef Legend Javier Wong – Meals of Masterpiece in Lima, Peru appeared first on Migrationology - Food Travel Blog .])],
+    [#brief-item([Medscape News], source-name: [Medscape News], [Ten-year findings suggest some patients may safely receive less treatment, potentially lowering side effects without raising recurrence risk. 
+ Medscape News Europe])],
+    [#brief-item([Medscape News], source-name: [Medscape News], [A population-based, prospective cohort study conducted in China finds that lung cancer risk remains low until 3 years after a negative low-dose CT screen. 
+ Medscape Medical News])],
+    [#brief-item([Joel Bruner], source-name: [Migrationology (Mark Wiens)], [Nasi Ulam, or “Herb Rice,” is a favorite of Malaysian food lovers everywhere! This local Kelantanese food alone will be a highlight for you, any time you visit the amazing northernmost state of peninsular Malaysia. In this article we will... 
 
-    #brief-item([Gina Homolka], source-name: [Skinnytaste], [This lighter, make-ahead overnight baked French toast casserole with Bananas Foster is guaranteed to impress—perfect for Easter morning or any special brunch! Bananas Foster French Toast The challah bread in this French toast casserole absorbs the eggy custard, flavored with vanilla and cinnamon, overnight. The next morning, while it bakes in the oven, you’ll whip […]])
-
-    #brief-item([Medscape News], source-name: [Medscape News], [A population-based, prospective cohort study conducted in China finds that lung cancer risk remains low until 3 years after a negative low-dose CT screen. 
- Medscape Medical News])
-
-    #brief-item([Medscape News], source-name: [Medscape News], [It's no longer a question that AI will shape the future of medicine. But it must be accountable and transparent, and physicians must lead its integration into clinical practice, writes AMA's CEO, John Whyte, MD, MPH. 
- Medscape Internal Medicine])
-
-    #brief-item([Jessica], source-name: [How Sweet Eats], [New week, new menu!
-
-What’s on your menu this week?!
-
-What To Eat This Week
-
- Spring tortellini soup 
-
- Spring tortellini soup 
-
- Crab cake caesar 
-
- Asparagus grilled cheese 
-
- Chickpea crunch salad 
-
- Chicken bacon ranch smashburgers 
-
- Cherry jalapeno chicken salad 
-
- White chocolate raspberry granola 
-
-The post What To Eat This Week: 3/29/26. appeared first on How Sweet Eats .])
-
-    #brief-item([Medscape News], source-name: [Medscape News], [A 30%-50% spike in US drug prices would strain hospital budgets for biologics and oncology drugs; Spanish hospitals plan biosimilars, renegotiations, and prioritization measures. 
- Medscape News Europe])
-
-    #brief-item([Joel Bruner], source-name: [Migrationology (Mark Wiens)], [Feijao Tropeiro is one dish you can’t leave Brazil without having, it is one of the most hearty and satisfying plates of food I can ever remember. The next time you visit Belo Horizonte, don’t miss Bar Do Careca, and... 
-
-The post Feijao Tropeiro – Amazing Food in Belo Horizonte, Brazil appeared first on Migrationology - Food Travel Blog .])
-
-    #brief-item([Joel Bruner], source-name: [Migrationology (Mark Wiens)], [Favelas are the informal communities of Brazil, sometimes called ‘urban shantytowns.’ They are home to amazing and real people, and a culture you aren’t likely to see anywhere else in the world. Scroll down now, and I will share with... 
-
-The post Favela Visit in Rocinha – A Brazilian Sensory Overload of Food, Art, and Reality appeared first on Migrationology - Food Travel Blog .])
-
-    #brief-item([Medscape News], source-name: [Medscape News], [The updated Dietary Guidelines have sparked much debate. Dr Thomas Locke breaks down the good and the bad. 
- Medscape Gastroenterology])
-
-    #brief-item([Gina Homolka], source-name: [Skinnytaste], [My go-to tomato soup recipe that’s easy to make with canned tomatoes, carrots, celery, garlic, fresh herbs and Parmesan for a rich, delicious soup the whole family loves. Easy Tomato Soup From Canned Tomatoes Whenever I bake sourdough bread and crave a soup to go with it, I usually make this easy tomato soup. It’s […]])
-
-    #brief-item([Joel Bruner], source-name: [Migrationology (Mark Wiens)], [Melaka is a coastal town in Peninsular Malaysia that offers unique, vibrant foods, packed with herbs and chilies, and combinations of flavor that I can guarantee will thrill your taste-buds. Best Restaurants in Melaka is already going to be a... 
-
-The post Best Restaurants in Melaka – Migrationology’s Top Food Destinations appeared first on Migrationology - Food Travel Blog .])
-
-    #brief-item([Joel Bruner], source-name: [Migrationology (Mark Wiens)], [Nasi Ulam, or “Herb Rice,” is a favorite of Malaysian food lovers everywhere! This local Kelantanese food alone will be a highlight for you, any time you visit the amazing northernmost state of peninsular Malaysia. In this article we will... 
-
-The post Nasi Ulam Restaurant for ‘Herb Rice’ (and Wild Budu Fish Sauce) appeared first on Migrationology - Food Travel Blog .])
-
+The post Nasi Ulam Restaurant for ‘Herb Rice’ (and Wild Budu Fish Sauce) appeared first on Migrationology - Food Travel Blog .])],
   ))
 }
 

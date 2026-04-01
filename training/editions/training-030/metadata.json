@@ -1,23 +1,23 @@
 {
   "config_id": "training-030",
   "archetype": "design-studio",
-  "date_generated": "2026-03-30T01:21:14.017207+00:00",
+  "date_generated": "2026-03-30T01:45:39.541017+00:00",
   "page_target": 14,
-  "num_pages": 18,
+  "num_pages": 15,
   "num_items": 42,
   "feeds_contributed": [
-    "Into the Gloss",
-    "Hypebeast",
-    "Archinect News",
-    "NYT Style",
+    "Trail Runner Magazine",
     "99% Invisible",
     "Architectural Digest",
+    "Hypebeast",
+    "Surfer Magazine",
+    "Into the Gloss",
+    "Archinect News",
     "500px ISO",
     "Who What Wear",
-    "Surfer Magazine",
-    "Trail Runner Magazine"
+    "NYT Style"
   ],
-  "render_time_s": 0.3,
+  "render_time_s": 0.27,
   "pages": [
     {
       "page_number": 1,
@@ -106,24 +106,6 @@
     {
       "page_number": 15,
       "png_path": "training-030/pages/page-015.png",
-      "width_pt": 612.0,
-      "height_pt": 792.0
-    },
-    {
-      "page_number": 16,
-      "png_path": "training-030/pages/page-016.png",
-      "width_pt": 612.0,
-      "height_pt": 792.0
-    },
-    {
-      "page_number": 17,
-      "png_path": "training-030/pages/page-017.png",
-      "width_pt": 612.0,
-      "height_pt": 792.0
-    },
-    {
-      "page_number": 18,
-      "png_path": "training-030/pages/page-018.png",
       "width_pt": 612.0,
       "height_pt": 792.0
     }
@@ -270,38 +252,6 @@
         {
           "page_number": 15,
           "png_path": "training-030/pages/page-015.png",
-          "width_pt": 612.0,
-          "height_pt": 792.0
-        }
-      ]
-    },
-    {
-      "spread_id": "s-030-009",
-      "edition_id": "training-030",
-      "type": "spread",
-      "pages": [
-        {
-          "page_number": 16,
-          "png_path": "training-030/pages/page-016.png",
-          "width_pt": 612.0,
-          "height_pt": 792.0
-        },
-        {
-          "page_number": 17,
-          "png_path": "training-030/pages/page-017.png",
-          "width_pt": 612.0,
-          "height_pt": 792.0
-        }
-      ]
-    },
-    {
-      "spread_id": "s-030-010",
-      "edition_id": "training-030",
-      "type": "solo",
-      "pages": [
-        {
-          "page_number": 18,
-          "png_path": "training-030/pages/page-018.png",
           "width_pt": 612.0,
           "height_pt": 792.0
         }

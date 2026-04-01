@@ -23,52 +23,84 @@
 
 // --- Front Page Feature ---
 #feature-article(
-  title: [Emerson on Talent vs. Character, Our Resistance to Change, and the Key to True Personal Growth],
+  title: [The Surprising Benefits of Journaling One Sentence Every Day],
   kicker: [Cover Story],
-  author: [Maria Popova],
-  source-name: [The Marginalian (Brain Pickings)],
-  deck: [Sturdy and defying though he look, he has a helm which he obeys, which is the idea after which all his facts are classified.],
-  lead-text: "“People wish to be settled; only as far as they are unsettled is there any hope for them.”",
-  lead-first-alpha: 1,
+  author: [James Clear],
+  source-name: [James Clear (Atomic Habits)],
+  deck: [From 1986 to 2011, Oprah Winfrey hosted The Oprah Winfrey Show .],
+  lead-pre: [],
+  lead-cap: [I],
+  lead-rest: [t was the highest rated talk show of all-time and familiar to nearly anyone who owned a television set in North America at that time.],
   body-paragraphs: (
-  [“Cut short of the floundering and you’ve cut short the possible creative outcomes,” Denise Shekerjian wrote in contemplating the capacity for “staying loose” that many MacArthur geniuses have in common . “Cheat on the chaotic stumbling-about, and you’ve robbed yourself of the raw stuff that feeds the imagination.” And yet part of the human paradox is that even in the face of overwhelming evidence for this uncomfortable truth, despite full intellectual awareness of it, we continue to seek certainty and resist change, stunting our personal growth with stubborn self-righteousness and staunch defiance of the very discomfort from which self-transcendence springs.],
-  [From Ralph Waldo Emerson’s Essays and Lectures ( public library ; free download ) — the same indispensable volume that gave us the great philosopher on the two essential requirements of true friendship — comes a layered and immeasurably insightful 1841 essay titled “Circles,” exploring the pillars of personal growth and how we can learn to stop resisting the very things that help us transcend our self-imposed limitations.],
-  [A century and a half before psychologists examined “the backfire effect” of our ideological stubbornness, Emerson considers how we arrive at our beliefs and why we have such a hard time with the uncomfortable luxury of changing our minds :],
-  [The key to every man is his thought. Sturdy and defying though he look, he has a helm which he obeys, which is the idea after which all his facts are classified. He can only be reformed by showing him a new idea which commands his own. The life of man is a self-evolving circle, which, from a ring imperceptibly small, rushes on all sides outwards to new and larger circles, and that without end. The extent to which this generation of circles, wheel without wheel, will go, depends on the force or truth of the individual soul. For it is the inert effort of each thought, having formed itself into a circular wave of circumstance … to heap itself on that ridge, and to solidify and hem in the life. But if the soul is quick and strong, it bursts over that boundary on all sides, and expands another orbit on the great deep, which also runs up into a high wave, with attempt again to stop and to bind. But the heart refuses to be imprisoned; in its first and narrowest pulses, it already tends outward with a vast force, and to immense and innumerable expansions.],
-  [The balance of steadfastness and spontaneity that jazz legend Bill Evans saw as necessary for his art , Emerson sees as necessary for the art of personal development:],
-  [Let me remind the reader that I am only an experimenter. Do not set the least value on what I do, or the least discredit on what I do not, as if I pretended to settle any thing as true or false. I unsettle all things. No facts are to me sacred; none are profane; I simply experiment, an endless seeker… Yet this incessant movement and progression which all things partake could never become sensible to us but by contrast to some principle of fixture or stability in the soul.],
-  [In a sentiment that Bertrand Russell would come to echo nearly a century later in his ten timeless commandments of learning — “Do not fear to be eccentric in opinion, for every opinion now accepted was once eccentric.” — Emerson considers our resistance to change, both as individuals and as a culture:],
-  [Every ultimate fact is only the first of a new series… The new statement is always hated by the old, and, to those dwelling in the old, comes like an abyss of skepticism.],
-  [[…]],
-  [In nature every moment is new; the past is always swallowed and forgotten… Nothing is secure but life, transition, the energizing spirit. No love can be bound by oath or covenant to secure it against a higher love. No truth so sublime but it may be trivial to-morrow in the light of new thoughts. People wish to be settled; only as far as they are unsettled is there any hope for them.],
-  [Life is a series of surprises.],
-  [But Emerson’s most pressing point has to do with how this courage for embracing uncertainty and change — especially unwelcome change — is the foundation of what we call character:],
-  [The difference between talents and character is adroitness to keep the old and trodden round, and power and courage to make a new road to new and better goals. Character makes an overpowering present; a cheerful, determined hour, which fortifies all the company, by making them see that much is possible and excellent that was not thought of. Character dulls the impression of particular events. When we see the conqueror, we do not think much of any one battle or success… The great man is not convulsible or tormentable; events pass over him without much impression. People say sometimes, ‘See what I have overcome; see how cheerful I am; see how completely I have triumphed over these black events.’ Not if they still remind me of the black event. True conquest is the causing the calamity to fade and disappear, as an early cloud of insignificant result in a history so large and advancing.],
-  [He returns to the notion of life’s self-evolving circle:],
-  [The one thing which we seek with insatiable desire is to forget ourselves, to be surprised out of our propriety, to lose our sempiternal memory, and to do something without knowing how or why; in short, to draw a new circle. Nothing great was ever achieved without enthusiasm. The way of life is wonderful: it is by abandonment. The great moments of history are the facilities of performance through the strength of ideas… They ask the aid of wild passions… to ape in some manner these flames and generosities of the heart.],
-  [Emerson’s Essays and Lectures is a sublimely rewarding read in its entirety, full of enduring wisdom on discipline, language, love, beauty, ethics, illusion, self-reliance, and nearly every other substantial aspect of the human experience. Complement it with fifteen ideas for self-refinement through the wisdom of the ages , including one from Emerson himself.],
+  [Throughout the 1980s and 1990s, the “Queen of All Media” built a brand that stretched far beyond the television screen. She went on to become a billionaire, a well-regarded philanthropist, and a recipient of the Presidential Medal of Freedom. And as she was busy working toward these otherworldly accomplishments, Oprah relied on a simple habit: journaling.],
+  [Journaling is simply the act of thinking about your life and writing it down. That’s it. Nothing more is needed. But despite its simplicity, the daily journal has played a key role in the careers of many prolific people.],
+  [As you might expect, journaling is a favorite habit of many writers. From Mark Twain to Virginia Woolf, Francis Bacon to Joan Didion, John Cheever to Vladimir Nabokov. 1 A journal was rarely far from any of these artists. Susan Sontag once claimed that her journal was where she “created herself.” 2],
+  [Journaling has been utilized by scores of brilliant thinkers and inventors. Charles Darwin. Marie Curie. Leonardo da Vinci. Thomas Edison. Albert Einstein. 3 Similarly, leaders and politicians throughout history have kept journals in one form or another. People like George Washington, Winston Churchill, and Marcus Aurelius. 4 In the sporting world, athletes like Katie Ledecky, winner of multiple gold medals, and Eliud Kipchoge, the world record holder in the marathon, rely on journals to reflect on their daily workouts and improve their training. 5],
+  [Why have so many of history's greatest thinkers spent time journaling? What are the benefits?],
+  [What Journaling Can Do for You],
+  [Nearly anyone can benefit from getting their thoughts out of their head and onto paper. There are more benefits to journaling than I have time to cover here, but allow me to point out a few of my favorites.],
+  [Journaling provides the opportunity to learn new lessons from old experiences. When looking back on her previous journal entries, Virginia Woolf remarked that she often “found the significance to lie where I never saw it at the time.” 6],
+  [Reading your old journal entries is a bit like reading a great book for a second time. You pick up on new sentences and see the past in a different way. Only this time, you are re-reading the story of your life.],
+  [Journaling sharpens your memory. When Cheryl Strayed wrote her hit book, Wild , she relied heavily on her journal. She recalled, “My journal provided the who, what, how, when, and why with a specificity that memory might have blurred, but it also did something more: it offered me a frank and unvarnished portrait of myself at 26 that I couldn't have found anywhere else.” 7],
+  [Time will change your face without you noticing, but it will also change your thoughts without you realizing it. Our beliefs shift slowly as we gain experience and journal entries have the ability to freeze your thoughts in time. Seeing an old picture of yourself can be interesting because it reminds you of what you looked like, but reading an old journal entry can be even more surprising because it reminds you of how you thought.],
+  [Journaling motivates you to make the most of each day. There is something about knowing that your day will be recorded that makes you want to make at least one good choice before the sun sets. I will sometimes find myself thinking, “I want to have something good to write down tonight.”],
+  [Journaling provides proof of your progress. Writing down one sentence about what went well today gives you something powerful to look at when you're feeling down. When you have a bad day, it can be easy to forget how much progress you have made. But with a journal, it's easier to keep a sense of perspective. One glance at your previous entries and you have proof of how much you have grown over the months and years.],
+  [Of course, despite the numerous benefits of journaling, there is one problem.],
+  [Many people like the idea of journaling, but few people stick with the act of journaling. It sounds great in theory, but making it a habit is another matter.],
+  [This is where we return to Oprah's story.],
+  [The Challenge of Making Journaling a Habit],
+  [In November 2012, after wrapping up her 25-year television career, Oprah wrote, “For years I've been advocating the power and pleasure of being grateful. I kept a gratitude journal for a full decade without fail—and urged you all to do the same. Then life got busy. My schedule overwhelmed me. I still opened my journal some nights, but my ritual of writing down five things I was grateful for every day started slipping away.” 8],
+  [She picked up one of her old journals.],
+  [“I wondered why I no longer felt the joy of simple moments,” Oprah said. “Since 1996 I had accumulated more wealth, more responsibility, more possessions; everything, it seemed, had grown exponentially—except my happiness. How had I, with all my options and opportunities, become one of those people who never have time to feel delight? I was stretched in so many directions, I wasn't feeling much of anything. Too busy doing.”],
+  [She admitted, “But the truth is, I was busy in 1996, too. I just made gratitude a daily priority. I went through the day looking for things to be grateful for, and something always showed up.”],
+  [Most people know that journaling is helpful, but they never get around to making it a priority. How can we make journaling frictionless? What is the simplest way that to get the benefits of journaling without it feeling like another obligation?],
+  [How to Make Journaling Easy],
+  [I've spent a fair bit of time thinking about how to make journaling easy over the past year. In fact, I thought so much about it that I partnered with the premium notebook maker Baron Fig to create the Clear Habit Journal —a combination dot grid notebook, daily journal, and habit tracker that not only makes it easier to journal, but also easier to build any habit.],
+  [But before I start hawking my wares, let's get something straight.],
+  [Here's the truth: There’s no one “right” way to journal. You can do it wherever you want and in whatever way you want. All you need is a piece of paper or a blank document. However, although there is no right way to journal, there is an easy way to journal…],
+  [Write one sentence per day.],
+  [The primary advantage of journaling one sentence each day is that it makes journaling fun . It's easy to do. It's easy to feel successful. And if you feel good each time you finish journaling, then you'll keep coming back to it.],
+  [A habit does not have to be impressive for it to be useful.],
+  [Journaling Prompts That Make Journaling Easy],
+  [Let's talk about the process I designed to make journaling a cinch.],
+  [Every Habit Journal is designed to make the process of keeping a daily journal as easy as possible. It starts with a section called One Line Per Day.],
+  [At the top of each One Line Per Day page is space for a journaling prompt. Here are a few examples of journaling prompts you could use:],
+  [What happened today? (Daily journal) 9],
+  [What am I grateful for today? (Gratitude journal)],
+  [What is my most important task today? (Productivity journal)],
+  [How did I sleep last night? (Sleep journal)],
+  [How do I feel today? (Mood journal)],
+  [Underneath the prompt are 31 lines. One line for each day of the month. This is where you'll write your one sentence each day.],
+  [To start your journaling habit all you have to do is write your prompt for the month and jot down a few words each day. Once the month is complete, you can look back on 31 beautiful journal entries. The entire experience is designed to make journaling so easy that you can't help but do it each day.],
+  [That's it. You can see a picture of the One Line Per Day section on this page .],
+  [Where to Go From Here],
+  [When a habit feels like an annoyance, you’re unlikely to stick with it.],
+  [Journaling doesn’t need to be a big production. Just write one sentence about what happened during the day. Whether you use my habit journal or not is beside the point.],
+  [What matters is that you make it easy to show up. As Madeleine L’Engle, author of A Wrinkle in Time , put it: “Just write a little bit every day.” 10],
+  [Sources: The Bancroft Library at the University of California has a website with digitized versions of many of Mark Twain's journals ; A Writer's Diary is a collection of Virginia Woolf's journals; Some of Francis Bacon's journals are archived at the Haverford College Quaker & Special Collections at the University of Pennsylvania; Joan Didion detailed her journaling habit in her essay “On Keeping a Notebook” in her anthology Slouching Towards Bethlehem ; A selection of John Cheever's journals was published in The Journals of John Cheever ; Insomniac Dreams is Vladimir Nabokov's dream diary.],
+  [Technically, Sontag's quote was, “In the journal I do not just express myself more openly than I could to any person; I create myself.” The quotation is from a diary entry published in Sontag's book Reborn: Journals and Notebooks, 1947–1963 .],
+  [Sources: Portions of Charles Darwin's Beagle voyage diary ; Marie Curie kept lab notebooks (they are still radioactive, and will be for another 1500 years); Portions of Leonardo da Vinci's notebooks are held by the British Library and can be previewed online; Thomas Edison wrote more than five million pages of notes; Get a peek into Albert Einstein's Zurich notebook],
+  [Sources: George Washington's diaries on the Library of Congress website; Winston Churchill's personal notes are digitized in an online archive; Marcus Aurelius' Meditations is a collection of his personal writings.],
+  [Sources: Interview with Katie Ledecky's coach ; Eliud Kipchoge's full training log .],
+  [Quotes in this section are from What Oprah Knows for Sure About Gratitude by Oprah Winfrey.],
+  [I also like a slight variation on this, which I learned from Shawn Blanc who uses “Highlight of the Day” as his prompt.],
 ),
-  edited-for-length: true,
+  edited-for-length: false,
 )
 
 
 {
   #section-label([Front Page])
   #standard-article(
-  title: [This Comfortable Nintendo Switch 2 Grip Is Discounted In Amazon's Spring Sale 2026 Event],
-  author: [GameSpot],
-  source-name: [GameSpot],
+  title: [New Trailer for Science Saru's 'The Ghost in the Shell' Anime Series],
+  author: [Alex Billington],
+  source-name: [FirstShowing.net],
   images: (),
   paragraphs: (
-  [If you're looking for a more comfortable, ergonomic way to play your Nintendo Switch 2 in handheld mode, this Amazon Spring Sale deal on the Gammeefy JC400 Switch 2 Controller might appeal to you. While the thrid-party grip is usually priced at \$47.49, it's down to \$40 during Amazon's sale, which runs until March 31 (unless it sells out first).],
-  [Gammeefy JC400 Switch 2 Controller],
-  [\$40 (was \$47.49)],
-  [While it's wonderful to have the option to play Nintendo Switch 2 in docked, tabletop, or handheld mode, the Joy-Con 2 controllers aren't very ergonomic. That makes third-party products like the Gammeefy JC400 useful, as they make handheld mode play significantly more comfortably. You simply have to slot your Switch 2 into the controller without its Joy-Con 2s attached, and you can start playing.],
-  [In addition to its ergonomic design, which offers a full-size grip on each side of the controller, the Gammeefy JC400 Switch 2 Controller also features Hall Effect joysticks that are less prone to stick drift . They can also be customized with unique lighting via a dedicated app called KeyLinker, and the controller has a claimed battery life of around 10 hours.],
-  [Continue Reading at GameSpot],
+  [Motoko Kusanagi is back! And ready for more action on the streets of Japan. Bandai Namco has revealed another exciting 45-second teaser trailer for a new version of GITS titled simply The Ghost in the Shell (with "the" in the title this time). From the acclaimed animation studio Science Saru , this is a brand new animated TV series version of the iconic sci-fi series Ghost in the Shell , which comes from a manga that has been turned into many movies & series already ( here's the first teaser for this series from a few months ago). Beginning with Shirow Masamune's 1989 manga , The Ghost in the Shell , the franchise has since transcended media boundaries, expanding into mediums like anime, a live-action Hollywood film ( remember or did we all forget it already?), and video games. Motoko Kusanagi, also known as Major, returns again battling more cybercrime. With animation from Science Saru ( Inu-oh , The Colors Within , Scott Pilgrim Takes Off , Dan Da Dan ). The fresh anime arrives in Japan as a TV series launching in July 2026 - as a Prime Video exclusive which hopefully means viewable in the US as well. This was revealed as part of the AnimeJapan 2026 event happening now. So far so good, I'm really digging all this new footage and the new look of The Major. Enjoy. \/\/  Continue Reading ›],
 ),
   insert-map: (:),
-  word-count: 203,
+  word-count: 238,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -78,265 +110,47 @@
 {
   #section-label([Features])
   #standard-article(
-  title: [How to Make Your Future Habits Easy],
-  author: [James Clear],
-  source-name: [James Clear (Atomic Habits)],
-  images: (),
-  paragraphs: (
-  [This article is an excerpt from Atomic Habits , my New York Times bestselling book.],
-  [While researching Atomic Habits , I came across a story that immediately struck me with its simplicity and power. It was the story of Oswald Nuckols, an IT developer from Natchez, Mississippi, and his simple strategy for making future habits easy.],
-  [Nuckols refers to the approach as “resetting the room.” 1],
-  [For instance, when he finishes watching television, he places the remote back on the TV stand, arranges the pillows on the couch, and folds the blanket. When he leaves his car, he throws any trash away. Whenever he takes a shower, he wipes down the toilet while the shower is warming up. (As he notes, the “perfect time to clean the toilet is right before you wash yourself in the shower anyway.” 2 )],
-  [This might sound like he's just “cleaning up” but there is a key insight that makes his approach different. The purpose of resetting each room is not simply to clean up after the last action, but to prepare for the next action.],
-  [“When I walk into a room everything is in its right place,” Nuckols wrote. “Because I do this every day in every room, stuff always stays in good shape . . . People think I work hard but I’m actually really lazy. I’m just proactively lazy. It gives you so much time back.”],
-  [I have written previously about the power of the environment to shape your behavior . Resetting the room is one way to put the power back in your own hands. Let's talk about how you can use it.],
-  [The Power of Priming the Environment],
-  [Whenever you organize a space for its intended purpose, you are priming it to make the next action easy. This is one of the most practical and simple ways to improve your habits.],
-  [For instance, my wife keeps a box of greeting cards that are presorted by occasion—birthday, sympathy, wedding, graduation, and more. Whenever necessary, she grabs an appropriate card and sends it off. She is incredibly good at remembering to send cards because she has reduced the friction of doing so.],
-  [For years, I was the opposite. Someone would have a baby and I would think, “I should send a card.” But then weeks would pass and by the time I remembered to pick one up at the store, it was too late. The habit wasn’t easy.],
-  [There are many ways to prime your environment so it’s ready for immediate use. If you want to cook a healthy breakfast, place the skillet on the stove, set the cooking spray on the counter, and lay out any plates and utensils you’ll need the night before. When you wake up, making breakfast will be easy.],
-  [Here are some more:],
-  [Want to draw more? Put your pencils, pens, notebooks, and drawing tools on top of your desk, within easy reach.],
-  [Want to exercise? Set out your workout clothes, shoes, gym bag, and water bottle ahead of time.],
-  [Want to improve your diet? Chop up a ton of fruits and vegetables on weekends and pack them in containers, so you have easy access to healthy, ready-to-eat options during the week.],
-  [These are simple ways to make the good habit the path of least resistance.],
-  [The Path of Most Resistance],
-  [You can also invert this principle and prime the environment to make bad behaviors difficult.],
-  [If you find yourself watching too much television, for example, then unplug it after each use. Only plug it back in if you can say out loud the name of the show you want to watch. (Which prevents you from turning on Netflix and “just finding something” to watch.) This setup creates just enough friction to prevent mindless viewing.],
-  [If that doesn’t do it, you can take it a step further. Unplug the television and take the batteries out of the remote after each use, so it takes an extra ten seconds to turn it back on. And if you’re really hard-core, move the television out of the living room and into a closet after each use. You can be sure you’ll only take it out when you really want to watch something. The greater the friction, the less likely the habit.],
-  [Whenever possible, I leave my phone in a different room until lunch. When it’s right next to me, I’ll check it all morning for no reason at all. But when it is in another room, I rarely think about it. And the friction is high enough that I won’t go get it without a reason. As a result, I get three to four hours each morning when I can work without interruption.],
-  [If sticking your phone in another room doesn’t seem like enough, tell a friend or family member to hide it from you for a few hours. Ask a coworker to keep it at their desk in the morning and give it back to you at lunch.],
-  [It is remarkable how little friction is required to prevent bad behavior. When I hide beer in the back of the fridge where I can’t see it, I drink less. When I delete social media apps from my phone, it can be weeks before I download them again and log in.],
-  [These tricks are unlikely to curb a true addiction, but for many of us, a little bit of friction can be the difference between sticking with a good habit or sliding into a bad one. Imagine the cumulative impact of making dozens of these changes and living in an environment designed to make the good behaviors easier and the bad behaviors harder.],
-  [Where to Go From Here],
-  [Whether we are approaching behavior change as an individual, a parent, a coach, or a leader, we should ask ourselves the same question: “How can we design a world where it’s easy to do what’s right?” Reset your rooms so that the actions that matter most are also the actions that are easiest to do.],
-  [When you master habits of preparation, habits of execution become easy.],
-  [This article is an excerpt from Chapter 12 of my New York Times bestselling book Atomic Habits. Read more here .],
-  [Oswald Nuckols is an alias, used by request.],
-  [Saul\_Panzer\_NY, “[Question] What One Habit Literally Changed Your Life?” Reddit, June 5, 2017, https:\/\/www.reddit.com/r/getdisciplined/comments/6fgqbv/question\_what\_one\_habit\_literally\_changed\_your/diieswq.],
-),
-  insert-map: (:),
-  word-count: 1063,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-}
-
-{
-  #standard-article(
-  title: [The Bird in the Heart: Terry Tempest Williams on the Paradox of Transformation and How to Live with Uncertainty],
-  author: [Maria Popova],
-  source-name: [The Marginalian (Brain Pickings)],
-  images: (),
-  paragraphs: (
-  [“We can change, evolve, and transform our own conditioning. We can choose to move like water rather than be molded like clay.”],
-  [It is strange how, in a universe governed by relentless change, human beings hunger for constancy — our bodies wired for homeostasis, our minds hooked on habit, our hearts yearning for everlasting love. We live as patterns unaware of perpetuating themselves, our aching resistance to change reflected in the routines and rituals and relationship formulae out of which we build the superstructure of belief that houses all of our actions, reactions, and choices.],
-  [It is not easy, reconfiguring this superstructure to fit something new — a new practice, a new person, a new way of being. The more transformative the new element, the more challenging it is to figure it into the pattern of life as we know it — a pattern shaped by what we believe about love, that deepest sinew of the self.],
-  [This delicate, difficult, wildly rewarding reconfiguration is what Terry Tempest Williams explores in When Women Were Birds: Fifty-four Variations on Voice ( public library ) — a soaring meditation on life, love, and the stories we tell ourselves about who we are, sparked by an unexpected revelation: When Williams opened the journals her mother had bequeathed her, she was staggered to find them all blank — a kind of “second death” that catalyzed a profound reckoning with the meaning of voice, of words, of how we write the story of who we are and how we revise it, lensed through the love of birds she shared with her mother.],
-  [Two decades later, at the exact age her mother was when she died, Williams writes:],
-  [Love is to life what life is to death. And so we risk everything trying to touch the ineffable by touching each other. Over and over. Again and again… Patterned behavior alternates like shadow and light… We can change, evolve, and transform our own conditioning. We can choose to move like water rather than be molded like clay. Life spirals in and then spirals out on any given day. It does not have to be one way, one truth, one voice. Nor does love have to be all or nothing.],
-  [Because we suffer a congenital blindness to what lies on the other side of transformation — a blindness brilliantly illustrated by the Vampire Problem thought experiment — it is often chance, not choice, that brings about the profoundest change. Life sweeps us off course — a terrible diagnosis arrives, an unimagined opportunity emerges, an unexpected person enters the heart — and suddenly we must begin again, rebuilding the superstructure of being on this new terrain. ( “It could happen any time…” )],
-  [Williams finds improbable consolation for the challenge of change in her encounter with a bird out of place. The painted bunting — the most exuberantly colored bird north of Mexico, which so confused Linnaeus with its exotic plumage that he falsely classified it as native to India; a species now thought to orient by the pole star during migration — “had flown in on the tail of a blizzard, been blown off course, and stayed,” making a new life in Maine, a new pattern of being: Each day just before dawn, the painted bunting alighted to a neighbor’s bird feeder like clockwork.],
-  [Watching the bird one snowy morning, Williams writes:],
-  [At 6:43 a.m. the painted bunting arrived, like a dream between the crease of shadow and light. His silhouette grew toward color for the seven short minutes he stayed. And when dawn struck his tiny feathered back, he ignited like a flame: red, blue, and green.],
-  [[…]],
-  [The bunting got caught in a storm and stayed. I have been seized in a storm of my own making. Whirlwind. World-wind. Distracted and displaced. In the wounding of becoming lost, I can correct myself.],
-  [Echoing Emerson’s indictment that “people wish to be settled [but] only as far as they are unsettled is there any hope for them,” Williams adds:],
-  [We can take flight from our lives in a form other than denial and return to our authentic selves… Accidental sightings, whether witnessed in a brain or on a winter dawn, remind us there is no such thing as certainty.],
-  [A century after Virginia Woolf contemplated finding beauty in the uncertainty of being in the interlude between two world wars, Williams adds:],
-  [I want to feel both the beauty and the pain of the age we are living in. I want to survive my life without becoming numb. I want to speak and comprehend words of wounding without having these words become the landscape where I dwell. I want to possess a light touch that can elevate darkness to the realm of stars.],
-  [This vascular malformation could bleed and burst. Or I can simply go on living, appreciating my condition as a vulnerable human being in a vulnerable world, guided by the songs of birds. What is time, sacred time, but the acceleration of consciousness? There are so many ways to change the sentences we have been given.],
-  [Complement these fragments of the entirely wonderful When Women Were Birds with Milan Kundera on life’s central ambivalence of knowing what we really want , Rebecca Solnit on how we find ourselves by getting lost , and George Saunders on the courage of uncertainty , then revisit Williams on our responsibility to awe .],
-),
-  insert-map: (:),
-  word-count: 933,
-  edited-for-length: true,
-  debug-mode: false,
-)
-
-  #pull-quote([)   Watching the bird one snowy morning, Williams writes:  At 6:43 a.], [Maria Popova])
-
-}
-
-{
-  #standard-article(
-  title: [Is Bridgerton’s Diversity More Than Just Window Dressing?],
-  author: [Patricia A. Matthew],
-  source-name: [The Literary Hub],
-  images: (),
-  paragraphs: (
-  [In the sixth episode of Bridgerton ’s third season, Lady Danbury (Adjoa Andoh) and her brother Lord Marcus Anderson (Daniel Francis) have a fraught and tender confrontation. She has been furious with him from the moment he shows up at one of the series’ many gloriously staged balls. At first her anger seems to be because she knows his rakish history and is worried that the attention he is paying to her best friend Lady Violet Bridgerton (Ruth Gemmell) will end in scandal and heartache. But viewers learn that alongside concern for her friend and her general disapproval of sexual licentiousness, her rage is because he thwarted her attempts to escape her father’s plan to marry her off to the cruel Lord Danbury.],
-  [At first glance (or blush if you’re Lady Bridgerton), Lord Anderson seems another piece of eye candy, but this scene is important for a number of reasons. Lady Danbury and her brother are among the older set of the ton (Regency high society), but in front of one another he is a little brother seeking forgiveness from his big sister. All of his charisma is on display not in service of seduction but for the purpose of repair and is a constant in the steamy series: the familial ties that bind. He asks her, and by extension the audience, to see him not as the strapping sexy man but a confused little boy. He is a black baby brother asking his big sister to understand the choice he made. Lord Anderson’s vulnerability and tenderness expressed to another Black character stands out in a series where Black men, in power, are depicted as cruel.],
-  [Of course, the world is full of Black men with this exact, irresistible combination of strength and vulnerability, but it has been mostly missing from Bridgerton . Regé-Jean Page’s Simon Basset in the first season character gets close, but, as his character does in the novels, he disappears after his season, in which his primary purpose was to inspire lust while eating ice cream. Where the Bridgerton men get to struggle with the trials of second sons, and all the white women are afforded a depth of emotion (even terrible Cressida) that makes them sympathetic, Black male characterization has been missing. Will Mondrich (Martins Imhangbe) come close, especially his partnership with his Alice (Emma Naomi), but they have been working their way into the ton.],
-  [The characterization of Lady Danbury’s cruel husband, whom we meet in Queen Charlotte: A Bridgerton Story , didn’t sit right with me. I interpreted it as a way to establish that his cruelty physically distorted him, but the portrayal was shockingly grotesque. Performed by the handsome actor Cyril Nyri, his characterization evoked Julius Soubise, an enslaved man brought to England as a “gift” and depicted by the Printmaker William Austin in the etching “The Duchess of Queensberry Playing at Foils with her Favorite Lap Dog Mungo.” It was a relief, then, to meet two Black men in the third season who are kind and depicted as three-dimensional characters and to see their character arcs reach into the fourth.],
-  [Along with the introverted Lord Kilmartin (Victor Alli), the last two seasons have given us characters whose interiority is legible to the audience We see them not as stoic wounded men whom women are encouraged to love despite their roughness and arrogance, but as self-possessed men enough at ease with themselves to be vulnerable with the women they love. In both seasons, these lovely Black men are depicted reveling in the strength of Black women even as viewers see them navigate their way towards romantic happiness],
-  [These depictions, and their performances, add depth to the series’ embrace of multicultural, diverse casting. The series’ narratives are set by Julia Quinn and concretized by her fans. In an earlier time, before readers fell in love with historical romance novels by Adriana Herrera, Beverly Jenkins, Courtney Milan, and Vanessa Riley, I might have noted that we are stuck in narratives scripted by white women and their imaginations. And, indeed, Quinn’s stories probably are more marketable for a television audience. Within that script, however the showrunners seem to be having a multi-cultural ball and enjoying a range of sexual desire and expression. It has made watching the seasons fun and exasperating at once.],
-  [\*],
-  [We can see Bridgerton ’s diversity in a few ways. The consistent image is that while all of the characters in the main families are white, one needn’t be white, thin, or heteronormative to be part of that world. The diverse casting of main characters works in different registers. The series has people of color in major and minor roles. Viewers see race and ethnicity, and in some instances, the characters they watch see it too. Anthony Bridgerton (Jonathan Bailey) knows his wife Kathani Sharma (Simone Ashley) is from India (even if the geography of the country is mangled in season). Lady Danbury points to the history of slavery that the series would have us believe has been repaired by the Black ton. With Sophie Baek (Yerin Ha), viewers see a woman of color, but no one in the series seems to notice that she is not white. Benedick’s colorblindness has inspired justified humor as he considers that all the debutants, even the Black ones, might be his mystery woman.],
-  [The rituals surrounding the release of a new season of Bridgerton or Bridgerton -related stories are familiar by now to fans and cultural critics. For fans, the excitement isn’t simply about who will be cast in roles that live in their imagination due to the wild popularity of the source material; there is also curiosity and a deep investment in what new kind of diversity Chris Van Dussen will bring to the Bridgerton Universe. While the Bridgertons are all white, and indeed there is no indication that Quinn’s universe includes people of color, they can be found all over the series. The extras are a happy mix of different races, physical abilities, ethnicities, and sizes.],
-  [For cultural historians and critics, each new Bridgerton season has been an opportunity to educate the public about the series’ accuracy or lack of it and a reason, a very good reason I might add, to explain to its audience the exploitative practices that makes the life of the ton possible. Alongside noting each season’s nod to diversity, there has been a steady critique of what the series glosses over, particularly the oppressive, often violent hierarchies, masked by fashion and sentiment.],
-  [Part of this has been a reaction to the seductive multi-cultural, diverse fantasy the show offers and the fact that Shonda Rhimes is one of the few Black women at the helm of a powerful production company. A call for verisimilitude increases in direct relation to how the world understands a culture or cultural moment. It’s important to note, however, that the series is not reflecting history but the audience’s fantasies about it, one that wants to believe that the powers of class can ameliorate, if not entirely mitigate, the powers of racial constructions. The problem, of course, is that it is impossible to attain this wealth without exploitation.],
-  [I’m sympathetic to these frustrations. At the moment, I’m writing a scholarly monograph that examines the gendered and racialized hierarchies concretized in material culture, portraiture, and literature circulating in the final decades or Britain’s abolitionist project. It will require us to reconsider how we view white women’s participation in the movement.],
-  [When I prepared my recent Penguin Deluxe editions of Jane Austen’s Pride and Prejudice and Northanger Abbey , I worked carefully through how to contextualize them in a history that new readers might not understand as part of Austen’s world. I also understand the mixed response sparked by having historical figures and moments represented in popular culture. In this season, Eloise Bridgerton (Claudia Jessie Peyton) and Sophy discuss Maria Edgeworth, a nineteenth-century writer whose writing promoted the importance of women’s education. It’s a moment for the two young women to bond.],
-  [While I was pleasantly surprised to hear the name of a thinker I study and teach mentioned in popular culture, I wondered if the writers know that Edgeworth’s thinking about race and slavery was problematic. Even though she included an interracial marriage in the first edition of her novel Belinda , Edgeworth argued for amelioration not abolition, and wrote a short story about white fantasies of cultivating Black submission called “The Grateful Negro.” It’s as terrible as the title suggests. I still paused over the detail and imagined an Edgeworth expert explaining who she is to an audience interested in Eloise’s notions about marriage and women’s rights.],
-  [class="pullquote"\>A nuanced narrative of racial history is not Shondaland’s ministry, and I think we could argue that it never has been. Shondaland is interested in power, class mobility, and the intensity of female friendships.],
-  [The criticisms have almost always made sense to me, and pushing for more is our job as fans and cultural critics. But ultimately, the series is anchored in Quinn’s choices—its white central family, its heterosexual unions. It represents a range of emotions and desire. Bendedick’s bisexuality and the intense connection between Eloise and Penelope; that may be sapphic but is also recognizable as a deep bond many women share. And Franceseca’s bourgeoning desire for John Stirling’s cheeky, irresistible cousin, a man in the novel but a woman (Masali Baduza) in the series promises to push the novels firmly out of heterosexual pairings.],
-  [\*],
-  [There is much to say about this season beyond the pleasure of watching Lord Anderson and Lord Stirling live and love among the ton. Quinn is an Austen fan, and it shows, but Bridgerton ’s fourth season pays more attention to the servants, to those living below the stairs, than Austen ever would. Yarin Ha’s Sophie is not a housemaid, but her friends are, and this season’s stories brings those below stairs into somewhat sharper focus, seeking love, and, in the case of the Featherington’s housekeeper Mrs. Varley (Lorraine Ashbourne), higher pay. Like most of the series’ royal fantasy, the agency of servants is exaggerated. But Ha’s portrayal is excellent. She gracefully walks a line between disgruntled and hardworking. This is not a happy-in-her-station Cinderella. While this is partly because her father is an earl, the other part of her background honors the fact that her mother was a housemaid.],
-  [Luke Thompson as Bendict Bridgerton wears his sexual charm playfully, making his earnest declaration to all the more appealing. The character’s frustrations about being a second son have to run alongside the actor’s challenge of being the third Bridgerton man to declare his love amidst a fraught Gordian Knot of complications. It’s worth noting that his bisexuality inspired the glorious Heated Rivalry . However, a nuanced narrative of racial history is not Shondaland’s ministry, and I think we could argue that it never has been.],
-  [Shondaland is interested in power, class mobility, and the intensity of female friendships. In fact, the most powerful relationship in the series is between Andoh and Golda Rosheuvel’s Queen Charlotte (who seems to have augmented the Black-Don’t-Crack-legend be aging backwards ) sitting together for the last time before Andoh returns to her homeland (in real life Andoh, a renowned Shakespearean actor and director, will be the inaugural resident for the Folger Shakespeare Library’s Director’s Residency ). A company helmed by a Black woman and her vision serving lewks and representation is important.],
-  [Perhaps we should aim our ire at PBS/BBC. We don’t need another monarch melodrama. I promise. When the first season of Bridgerton was released, historians made the case that histories featuring Black people who were actually in power was more important and could be more entertaining than yet another glossy show about British aristocrats. I think that’s true. However, Shondaland, even with its diverse writers and directors, probably isn’t the right fit for such an enterprise. But these Black men it has given us, even if only for a short time in some cases, are a promise that the series still has interesting representations to offer viewers.],
-),
-  insert-map: (:),
-  inline-pq: pull-quote([The series has people of color in major and minor roles.], [Patricia A. Matthew]),
-  inline-pq-idx: 8,
-  word-count: 2044,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-}
-
-{
-  #standard-article(
-  title: [The Invention of Zero: How Ancient Mesopotamia Created the Mathematical Concept of Nought and Ancient India Gave It Symbolic Form],
-  author: [Maria Popova],
-  source-name: [The Marginalian (Brain Pickings)],
-  images: (),
-  paragraphs: (
-  [“If you look at zero you see nothing; but look through it and you will see the world.”],
-  [If the ancient Arab world had closed its gates to foreign travelers, we would have no medicine, no astronomy, and no mathematics — at least not as we know them today.],
-  [Central to humanity’s quest to grasp the nature of the universe and make sense of our own existence is zero, which began in Mesopotamia and spurred one of the most significant paradigm shifts in human consciousness — a concept first invented (or perhaps discovered) in pre-Arab Sumer, modern-day Iraq, and later given symbolic form in ancient India. This twining of meaning and symbol not only shaped mathematics, which underlies our best models of reality, but became woven into the very fabric of human life, from the works of Shakespeare, who famously winked at zero in King Lear by calling it “an O without a figure,” to the invention of the bit that gave us the 1s and 0s underpinning my ability to type these words and your ability to read them on this screen.],
-  [Mathematician Robert Kaplan chronicles nought’s revolutionary journey in The Nothing That Is: A Natural History of Zero ( public library ). It is, in a sense, an archetypal story of scientific discovery, wherein an abstract concept derived from the observed laws of nature is named and given symbolic form. But it is also a kind of cross-cultural fairy tale that romances reason across time and space],
-  [Kaplan writes:],
-  [If you look at zero you see nothing; but look through it and you will see the world. For zero brings into focus the great, organic sprawl of mathematics, and mathematics in turn the complex nature of things. From counting to calculating, from estimating the odds to knowing exactly when the tides in our affairs will crest, the shining tools of mathematics let us follow the tacking course everything takes through everything else – and all of their parts swing on the smallest of pivots, zero],
-  [With these mental devices we make visible the hidden laws controlling the objects around us in their cycles and swerves. Even the mind itself is mirrored in mathematics, its endless reflections now confusing, now clarifying insight.],
-  [[…]],
-  [As we follow the meanderings of zero’s symbols and meanings we’ll see along with it the making and doing of mathematics — by humans, for humans. No god gave it to us. Its muse speaks only to those who ardently pursue her.],
-  [With an eye to the eternal question of whether mathematics is discovered or invented — a question famously debated by Kurt Gödel and the Vienna Circle — Kaplan observes:],
-  [The disquieting question of whether zero is out there or a fiction will call up the perennial puzzle of whether we invent or discover the way of things, hence the yet deeper issue of where we are in the hierarchy. Are we creatures or creators, less than – or only a little less than — the angels in our power to appraise?],
-  [Like all transformative inventions, zero began with necessity — the necessity for counting without getting bemired in the inelegance of increasingly large numbers. Kaplan writes:],
-  [Zero began its career as two wedges pressed into a wet lump of clay, in the days when a superb piece of mental engineering gave us the art of counting.],
-  [[…]],
-  [The story begins some 5,000 years ago with the Sumerians, those lively people who settled in Mesopotamia (part of what is now Iraq). When you read, on one of their clay tablets, this exchange between father and son: “Where did you go?” “Nowhere.” “Then why are you late?”, you realize that 5,000 years are like an evening gone.],
-  [The Sumerians counted by 1s and 10s but also by 60s. This may seem bizarre until you recall that we do too, using 60 for minutes in an hour (and 6 × 60 = 360 for degrees in a circle). Worse, we also count by 12 when it comes to months in a year, 7 for days in a week, 24 for hours in a day and 16 for ounces in a pound or a pint. Up until 1971 the British counted their pennies in heaps of 12 to a shilling but heaps of 20 shillings to a pound.],
-  [Tug on each of these different systems and you’ll unravel a history of customs and compromises, showing what you thought was quirky to be the most natural thing in the world. In the case of the Sumerians, a 60-base (sexagesimal) system most likely sprang from their dealings with another culture whose system of weights — and hence of monetary value — differed from their own.],
-  [Having to reconcile the decimal and sexagesimal counting systems was a source of growing confusion for the Sumerians, who wrote by pressing the tip of a hollow reed to create circles and semi-circles onto wet clay tablets solidified by baking. The reed eventually became a three-sided stylus, which made triangular cuneiform marks at varying angles to designate different numbers, amounts, and concepts. Kaplan demonstrates what the Sumerian numerical system looked like by 2000 BCE:],
-  [This cumbersome system lasted for thousands of years, until someone at some point between the sixth and third centuries BCE came up with a way to wedge accounting columns apart, effectively symbolizing “nothing in this column” — and so the concept of, if not the symbol for, zero was born. Kaplan writes:],
-  [In a tablet unearthed at Kish (dating from perhaps as far back as 700 BC), the scribe wrote his zeroes with three hooks, rather than two slanted wedges, as if they were thirties; and another scribe at about the same time made his with only one, so that they are indistinguishable from his tens. Carelessness? Or does this variety tell us that we are very near the earliest uses of the separation sign as zero, its meaning and form having yet to settle in?],
-  [But zero almost perished with the civilization that first imagined it. The story follows history’s arrow from Mesopotamia to ancient Greece, where the necessity of zero awakens anew. Kaplan turns to Archimedes and his system for naming large numbers, “myriad” being the largest of the Greek names for numbers, connoting 10,000. With his notion of orders of large numbers, the great Greek polymath came within inches of inventing the concept of powers, but he gave us something even more important — as Kaplan puts it, he showed us “how to think as concretely as we can about the very large, giving us a way of building up to it in stages rather than letting our thoughts diffuse in the face of immensity, so that we will be able to distinguish even such magnitudes as these from the infinite.”],
-  [“Archimedes Thoughtful” by Domenico Fetti, 1620],
-  [This concept of the infinite in a sense contoured the need for naming its mirror-image counterpart: nothingness. (Negative numbers were still a long way away.) And yet the Greeks had no word for zero, though they clearly recognized its spectral presence. Kaplan writes:],
-  [Haven’t we all an ancient sense that for something to exist it must have a name? Many a child refuses to accept the argument that the numbers go on forever (just add one to any candidate for the last) because names run out. For them a googol — 1 with 100 zeroes after it — is a large and living friend, as is a googolplex (10 to the googol power, in an Archimedean spirit).],
-  [[…]],
-  [By not using zero, but naming instead his myriad myriads, orders and periods, Archimedes has given a constructive vitality to this vastness — putting it just that much nearer our reach, if not our grasp.],
-  [Ordinarily, we know that naming is what gives meaning to existence . But names are given to things, and zero is not a thing — it is, in fact, a no-thing. Kaplan contemplates the paradox:],
-  [Names belong to things, but zero belongs to nothing. It counts the totality of what isn’t there. By this reasoning it must be everywhere with regard to this and that: with regard, for instance, to the number of humming-birds in that bowl with seven — or now six — apples. Then what does zero name? It looks like a smaller version of Gertrude Stein’s Oakland, having no there there.],
-  [Zero, still an unnamed figment of the mathematical imagination, continued its odyssey around the ancient world before it was given a name. After Babylon and Greece, it landed in India. The first surviving written appearance of zero as a symbol appeared there on a stone tablet dated 876 AD, inscribed with the measurements of a garden: 270 by 50, written as “27°” and “5°.” Kaplan notes that the same tiny zero appears on copper plates dating back to three centuries earlier, but because forgeries ran rampant in the eleventh century, their authenticity can’t be ascertained. He writes:],
-  [We can try pushing back the beginnings of zero in India before 876, if you are willing to strain your eyes to make out dim figures in a bright haze. Why trouble to do this? Because every story, like every dream, has a deep point, where all that is said sounds oracular, all that is seen, an omen. Interpretations seethe around these images like froth in a cauldron. This deep point for us is the cleft between the ancient world around the Mediterranean and the ancient world of India.],
-  [But if zero were to have a high priest in ancient India, it would undoubtedly be the mathematician and astronomer Āryabhata, whose identity is shrouded in as much mystery as Shakespeare’s. Nonetheless, his legacy — whether he was indeed one person or many — is an indelible part of zero’s story.],
-  [Āryabhata (art by K. Ganesh Acharya)],
-  [Kaplan writes:],
-  [Āryabhata wanted a concise way to store (not calculate with) large numbers, and hit on a strange scheme. If we hadn’t yet our positional notation, where the 8 in 9,871 means 800 because it stands in the hundreds place, we might have come up with writing it this way: 9T8H7Te1, where T stands for ‘thousand’, H for “hundred” and Te for “ten” (in fact, this is how we usually pronounce our numbers, and how monetary amounts have been expressed: £3.4s.2d). Āryabhata did something of this sort, only one degree more abstract.],
-  [He made up nonsense words whose syllables stood for digits in places, the digits being given by consonants, the places by the nine vowels in Sanskrit. Since the first three vowels are a, i and u, if you wanted to write 386 in his system (he wrote this as 6, then 8, then 3) you would want the sixth consonant, c, followed by a (showing that c was in the units place), the eighth consonant, j, followed by i, then the third consonant, g, followed by u: CAJIGU. The problem is that this system gives only 9 possible places, and being an astronomer, he had need of many more. His baroque solution was to double his system to 18 places by using the same nine vowels twice each: a, a, i, i, u, u and so on; and breaking the consonants up into two groups, using those from the first for the odd numbered places, those from the second for the even. So he would actually have written 386 this way: CASAGI (c being the sixth consonant of the first group, s in effect the eighth of the second group, g the third of the first group)…],
-  [There is clearly no zero in this system — but interestingly enough, in explaining it Āryabhata says: “The nine vowels are to be used in two nines of places” — and his word for “place” is “kha”. This kha later becomes one of the commonest Indian words for zero. It is as if we had here a slow-motion picture of an idea evolving: the shift from a “named” to a purely positional notation, from an empty place where a digit can lodge to “the empty number”: a number in its own right, that nudged other numbers along into their places.],
-  [Kaplan reflects on the multicultural intellectual heritage encircling the concept of zero:],
-  [While having a symbol for zero matters, having the notion matters more, and whether this came from the Babylonians directly or through the Greeks, what is hanging in the balance here in India is the character this notion will take: will it be the idea of the absence of any number — or the idea of a number for such absence? Is it to be the mark of the empty, or the empty mark? The first keeps it estranged from numbers, merely part of the landscape through which they move; the second puts it on a par with them.],
-  [In the remainder of the fascinating and lyrical The Nothing That Is , Kaplan goes on to explore how various other cultures, from the Mayans to the Romans, contributed to the trans-civilizational mosaic that is zero as it made its way to modern mathematics, and examines its profound impact on everything from philosophy to literature to his own domain of mathematics. Complement it with this Victorian love letter to mathematics and the illustrated story of how the Persian polymath Ibn Sina revolutionized modern science .],
-),
-  insert-map: (:),
-  inline-pq: pull-quote([Kaplan contemplates the paradox:  Names belong to things, but zero belongs to nothing.], [Maria Popova]),
-  inline-pq-idx: 15,
-  word-count: 2255,
-  edited-for-length: true,
-  debug-mode: false,
-)
-
-}
-
-{
-  #standard-article(
-  title: [Xochitl Gomez in Creepy Kids at the Playground Thriller 'Hive' Trailer],
-  author: [Alex Billington],
-  source-name: [FirstShowing.net],
-  images: (),
-  paragraphs: (
-  ["Miss Sasha, it's so dark in here." Tubi has revealed the official trailer for an indie horror thriller film titled Hive , releasing for streaming (entirely for free!) on Tubi starting in April . Hive is based on Felipe Vargas' 2024 short film of the same name, extending the concept into a full feature film. When a strict, anxious teen loses the child she’s babysitting, she’s forced to confront a dark sinister presence hiding among playground children as her grip on reality slips. Very interesting creepy kids concept. As her world unravels and her grip on reality starts to slip, she must outwit a world where nothing is as it seems, to make it out alive. Starring Xochitl Gomez (from Doctor Strange: Multiverse of Madness ) as Sasha, Aaron Dominguez , Zenobia Kloppers , Victoria Firsova , Tanya van Graan , Jenny le Roux , and Thulani Nzonzo . Well this looks properly wacky! Keep an eye out for this if you're into crazy weird low budget horror flicks. These kids are oh so creepy! This honestly looks like an SNL fake trailer but it also seems like it will be a fun watch anyway. \/\/  Continue Reading ›],
-),
-  insert-map: (:),
-  word-count: 202,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-}
-
-{
-  #section-label([Analysis])
-  #standard-article(
-  title: [Gardening as Resistance: Notes on Building Paradise],
-  author: [Maria Popova],
-  source-name: [The Marginalian (Brain Pickings)],
-  images: (),
-  paragraphs: (
-  [“Can you plant a garden to stop a war? It depends how you think about time. It depends what you think a seed does, if it’s tossed into fertile soil.”],
-  [“The gardener digs in another time, without past or future, beginning or end… Here is the Amen beyond the prayer,” Derek Jarman wrote as he grieved his dying friends, faced his own death, and contemplated art, mortality, and resistance while planting a garden between an old lighthouse and a new nuclear plant on a barren shingled shore.],
-  [Jarman is one of the artists whom Olivia Laing profiles and celebrates in Funny Weather: Art in an Emergency ( public library ) — her superb collection of meditations on art, activism, and our search for meaning , drawing on the lives of artists whose vision has changed the way we see the world, ourselves, and others.],
-  [Laing’s Jarman-fomented essay, titled “Paradise,” begins with the question of whether gardening is a form of art and ends with the question of whether art is a form of resistance — a necessary tool for building the Garden of Eden we imagine a flourishing society to be.],
-  [She writes:],
-  [Gardening situates you in a different kind of time, the antithesis of the agitating present of social media. Time becomes circular, not chronological; minutes stretch into hours; some actions don’t bear fruit for decades. The gardener is not immune to attrition and loss, but is daily confronted by the ongoing good news of fecundity. A peony returns, alien pink shoots thrusting from bare soil. The fennel self-seeds; there is an abundance of cosmos out of nowhere.],
-  [To bridge Laing’s two questions, one must somehow reconcile these two temporal models: linear time, which the Greek called chronos and along which we plot the vector of progress, and cyclical time, or kairos , which is the time of gardens and, Laing intimates, the time of societies. We long for the assurance of steady progression, yet all around us the rest of nature churns in cycles. How do the cicadas know when to awake from their seventeen-year slumbers and rise up by the billions to make new life that will in turn repeat the cycle? And the migratory birds, “how can they know that it’s time to go?,” as Nina Simone asked in her serenade to time — Nina Simone, who also chose to cover Pete Seeger’s “Turn! Turn! Turn! (To Everything There Is a Season)” and who gave all she had to a movement the central concerns of which have returned a life-season later with redoubled urgency, its fruits only just beginning to ripen in our lifetime.],
-  [Therein lies the paradox — how do we practice resistance if time is the substance we are made of, as Borges so timelessly observed , and yet we live suspended between these two parallel versions of time as we try to build paradise?],
-  [“Resistance” has always been a funny word to me — one without direct translation in my native Bulgarian, in this particular context of constructive social change. It contours something necessary but not sufficient — while ennobling and empowering in its implication of defying wrongness, it limits its own power by ending at what is to be eradicated, without indication of what is to be grown in its place and how. In this respect, the resistance approach to human nature (and the consensual collective byproduct of human natures we call society) is like the pesticide approach to nature.],
-  [“Resistance” is a word especially limited by the elemental fact that there are certain things simply beyond the reach of resistance, impervious to our passions and protestations — spacetime, gravity, the fundamental laws that gave rise to our existence and will eventually return us to the stardust of which we are made. Your face will sag and your spine will bend under the twin assault of gravity and time, and so will mine, until our atoms disband altogether to become food for the worm and fertilizer for the mycelial wonderland from which bluebells will rise some future spring.],
-  [None of this we can resist.],
-  [But maybe — and that is what redeems and consecrates our finite human lives and our limited powers — within those parameters, there is space enough and spirit enough to resist what is poisonous to the ideological soil we call culture and persist in planting, for as long as we have to live and with as much generosity as we have to give, something lush and beautiful. That we might never live to see it bloom might just be okay. To have planted the seeds is satisfaction enough worth living for.],
-  [Laing lands in a kindred place. A century and a half after Thoreau contemplated the long cycles of social change and an increment after Zadie Smith reminded us that “progress is never permanent, will always be threatened, must be redoubled, restated and reimagined if it is to survive,” Laing writes after a pilgrimage to Derek Jarman’s grave:],
-  [Is art resistance? Can you plant a garden to stop a war? It depends how you think about time. It depends what you think a seed does, if it’s tossed into fertile soil. But it seems to me that whatever else you do, it’s worth tending to paradise, however you define it and wherever it arises.],
-  [The arc of the moral universe might not be so different from that of the stem bent with bluebells tolling their vernal reminder that change comes in cycles. Every arc, after all, is but a segment of a circle. What it takes to draw our share of it with a steady hand as we try “widening our circles of compassion” without the assurance of immediate results — that is the question we each answer with our lives.],
-  [Poet and gardener Ross Gay comes closest to my own answer in his life-tested conviction that time spent gardening is “an exercise in supreme attentiveness.” As I roll in my palm six large seedpods of sea kale — a neglected flowering wonder I discovered on the pages of Derek Jarman’s journal — and thumb them into the moist Brooklyn soil where they may or may not sprout, I find more and more that attention is the elemental unit of time. Each moment we are fully paying attention is an atom of eternity. The quality of our attention measures the quantity of our aliveness — our sole generator of resistance and persistence.],
-  [This I know to be true: What will survive of us are shoreless seeds and stardust.],
-  [Complement with the poetic neurologist Oliver Sacks on the healing power of gardens , then revisit Laing on life, loss, and the wisdom of rivers .],
-),
-  insert-map: (:),
-  word-count: 1201,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-}
-
-{
-  #standard-article(
-  title: [How to Be Optimistic About the AI Apocalypse],
-  author: [Sonny Bunch],
+  title: [DOGE Targeting Nuclear Safety Brings Back Memories of Three Mile Island],
+  author: [Jill Lawrence],
   source-name: [The Bulwark],
   images: (),
   paragraphs: (
-  [A still from The AI Doc: Or How I Became an Apocaloptimist . (Courtesy Focus Features)],
-  [TOWARD THE END of The AI Doc: Or How I Became an Apocaloptimist , now out in theaters, codirector and chief interviewer Daniel Roher is talking to one of his guests when he drops the word “apocaloptimist.” A portmanteau of “apocalyptic” and “optimist,” the term handily sums up the schizophrenic nature of the documentary, veering as it does between terror and hope.],
-  [But the documentary is only schizoid because our age is schizoid: We exist on the knife’s edge of great change, a future of infinite promise and infinite peril beckoning in the middle distance. 1 Will self-replicating machine intelligence offer us the tools to solve all of the world’s problems, ushering in an age of post-scarcity human excellence in which mankind focuses not on farming or food delivery or home construction but crafting perfect sonnets and great novels? Or does creating amoral intelligent machines empower immoral state actors, businessmen, and terror groups to unleash new horrors as yet unimagined by even our greatest poets and novelists?],
-  [As a longtime apocaloptimist myself, the answer I’ve settled on is, almost certainly, “yes.”],
-  [A still from The AI Doc: Or How I Became an Apocaloptimist . (Courtesy Focus Features)],
-  [Roher’s journey begins as a filmmaker and an artist watching as artificial intelligence becomes able to create art (or, well, art-like designs) and write scripts (or, you know, script-like mutterings). Is he now obsolete? What does the future hold for him and his fellows? Will he join the masses of the unemployed and useless in our brave new world? Thus the first third of the film veers toward the apocalyptic: The AI skeptics air their concerns, their fears, their visions of doom. The problem with AI is that we only kinda-sorta know how it works: We understand the methods of weighting and how it jokes with us on ChatGPT. But it’s a black box in a very real way. We understand very few of the individual “decisions” these programs make. And they may well have “desires” that are so utterly alien to us they don’t even register to us as “desires.”],
-  [Freaking out atop his mountain of anxiety—an animated hill that calls to mind Richard Dreyfuss’s living room recreation of Devils Tower in Close Encounters of the Third Kind , another totem of incomprehensible, alien doom—Roher calls in the optimists. Artificial intelligence, they say, will be like a rising tide that lifts all boats: The smarter we get and the more intelligence we have access to, the more problems we can solve. You know how you have Claude running the background helping you with your vibe coding to better sort your emails? What if we can do that to solve cold fusion and cure cancer? Good news: We can! We are! It’s all happening. We’ll all be happier and richer and freer than ever. The sonnets and novels, they’re coming. Our best selves are right around the corner.],
-  [It’s a pleasing vision of the future. But it’s one that relies on a big supposition: that people, broadly speaking, have any interest in finding their best selves. That their best selves are even findable.],
-  [I am . . . skeptical. Because I’m a person and I’ve seen people and I’ve lived among them. We are, well—just look at the world, man! Our biggest problem isn’t AI.],
-  [It’s people.],
-  [Louis Theroux: Inside the Manosphere . (Courtesy Netflix)],
-  [Louis Theroux: Inside the Manosphere (Netflix) is not a film about artificial intelligence. At least, it’s not about artificial intelligence in the sense that The AI Doc is about artificial intelligence. But it is about artifice and a sort of emotional intelligence that allows a new generation of hyperaggressive, amoral, self-replicating man-children to influence the lost and the weak-willed into believing they are owed everything the world has to offer. Money, women, fame, success, adoration: It’s all there for the taking.],
-  [You just have to be good at sales.],
-  [If there’s a throughline in Theroux’s interviews with the coterie of well-muscled internet personalities, it’s that: sell, sell, sell. Always, Be, Closing as lifestyle. Harrison Sullivan (aka HS) says as much: If you can sell folks on something, you’ll never go hungry. One imagines that HS and Justin Waller see Wolf of Wall Street protagonist Jordan Belfort as a deliverer of life lessons rather than a cautionary tale. Sell sad young men lifestyle tip sheets, get them to pony up for the Tate Brothers’ education system, have them invest in the nonsense funds that do nothing but lose: As long as you can sell these saps on your own lifestyle, you’ll never run out of marks.],
-  [Again: Artifice, sold intelligently.],
-  [Believe it or not, this is the bright side of the manosphere. As Theroux digs deeper into the world inhabited by real creeps like streamers Myron Gaines and Sneako, we see a world of truly noxious misogyny and antisemitism being capitalized on, quite literally: commenters paying to get the most noxious comments read out loud, Gaines ritually humiliating the female “influencers” stupid enough to appear on his show. The modern Colosseum isn’t mixed martial arts or other human cockfights: It’s the stream, the endless river of torment and nastiness indulged in by millions for a few laughs.],
-  [And this is why the apocalypticist inside of me has been edging out the optimist when it comes to our AI future. I don’t know how anyone can see the proliferation of increasingly sophisticated deepfakes fooling person after person and think we’re headed toward anything good, particularly when we can see who and what so many people choose to follow now.],
-  [Set aside the nightmare scenarios of bioterrorism or state-sponsored election interference or an AI that reduces humanity to gray goo to power an endless supply of super-Nvidia chips. The much more banal nightmare is the one we’re already living in. Where the techno-optimists fail is in their assumptions about human nature. Most people are not interested in human flourishing. Given their druthers, I can’t help but believe that many—maybe most—people in a post-scarcity society will revert to passive consumption, and revert further to the basest form of that consumption. Think of the fat slobs in Wall-E , or better yet, think of Dax Shepard on his toilet-chair in Idiocracy spending most of his time laughing at “Ow, My Balls” when he isn’t ’batin’. You can dismiss Idiocracy as meanspirited eugenics, if you like, but you can’t ignore the modern world in which so many have immersed themselves, the endless streams of petty cruelties and ugliness in which they indulge.],
-  [Maybe they’ll be anesthetized enough by their screens and their streams that they won’t realize they’re empty husks. But I am skeptical that the human urge to find meaning through production will be so easily sublimated. And I’d guess that more of these people will turn to Sneako and his heirs than to Shakespeare to find meaning.],
-  [A third option—that all the talk of AGI (artificial general intelligence) and the approach of the singularity (that moment when man and computer merge into a sort of eternal super-being), is pseudoreligious faff—is occasionally hinted at, though not much discussed.],
+  [I WAS ASKED A FEW YEARS AGO to name the biggest story I’d ever covered as a journalist. “You’d think Three Mile Island would have been the major story of my career, but history has just kept happening,” I replied .],
+  [Yet even after the deadlocked 2000 election, the inauguration of the first black U. S. president, the rise of Donald Trump, and so many other huge stories, that nuclear power plant accident on March 28, 1979, is still in the running for number one. And as I periodically rediscover, it still has the power to haunt.],
+  [That’s what happened last week, when ProPublica published an article by Avi Asher-Schapiro headlined “ DOGE Goes Nuclear: How Trump Invited Silicon Valley Into America’s Nuclear Power Regulator .” The gist: Young, unqualified, and deeply unserious DOGEbros are “forcing a ‘move fast and break things’ Silicon Valley ethos on one of the country’s most important regulators.”],
+  [“The safety culture is under threat,” Allison Macfarlane, a former chair of that regulator, the Nuclear Regulatory Commission, told ProPublica. That was admirably restrained. This is a chilling investigatory account of corruption, cronyism, and lack of care.],
+  [So what else is new, you might wonder; it sounds like business as usual in the Trump era. Still, if you are a TMI “survivor,” you can’t look away from a chart that shows over 400 people who worked on nuclear reactors and safety have left the government since Trump took office, and only 60 people have been hired.],
+  [The ProPublica report comes during a period of bipartisan consensus on the growing role of nuclear power in a cleaner U. S. energy future. The ADVANCE Act , signed by President Joe Biden in 2024, passed with broad congressional support. Among other things, the law requires more timely and predictable reviews of license applications for new reactors.],
+  [Todd Abrajano, president and CEO of the U. S. Nuclear Industry Council, the trade association for the nuclear energy industry, told me in a statement that many of the changes occurring now stem from the new law and its modernization provisions. “The United States needs a regulatory system that can evaluate next-generation nuclear technologies efficiently while maintaining the rigorous safety standards that have long made the NRC the global gold standard for nuclear oversight,” he said.],
+  [That’s reassuring up to a point, but doesn’t stem my flashbacks to the fears and turmoil that consumed all of us—residents, reporters, national and local political leaders, science and tech experts inside and outside government—in the tense week and confusing aftermath of the TMI accident. WNEP-TV in Scranton-Wilkes-Barre (a hundred miles away from the Middletown plant) captured it in a March 30 segment on the third day of the crisis.],
+  [The news tonight is not encouraging. An unexpected release of more radiation from the Three Mile Island nuclear power plant has led to a series of consequences. Certain people have been advised to evacuate, others have been urged to remain indoors. Telephone lines in the Harrisburg area are jammed, and the immediate highways are, too, as more people decide to leave.],
+  [Plant officials say that they do not have a meltdown on their hands. The nuclear core is under control. But plant officials do admit some uranium oxide pellets that power the reactor have melted. That is causing heat and steam pressure and the need to vent into the atmosphere. Plant officials say it will go on for five more days. The air is being monitored for radiation. There is none here. Safeway announced it will not buy milk from southern Pennsylvania.],
+  [And on and on, with dispatches from correspondents at the scene, for over seven more minutes.],
+  [Radiation suits and an airlift plan],
+  [A NEWS CONFERENCE CLIP of then-Gov. Dick Thornburgh features anxious reporters throwing out questions about whose radiation readings they should trust, and what dangers various readings posed. “We’re getting conflicting reports, too,” Thornburgh replied . “There are hundreds of people out there with survey meters,” added Tom Gerusky, the state’s radiation protection director.],
+  [Exactly. “For days the people in authority had little idea of what was happening, and less of what would happen next,” reporters Peter M. Sandman and Mary Paden, assigned to cover the coverage, wrote later that year in Columbia Journalism Review . “They fixed the reactor the way a mechanic fixes a car—they tinkered. When it was all over they tried to figure out what they had done right. With two months’ hindsight, we now know what the big story at T. M. I. really was: no one knew enough to guarantee that the genie would stay in the bottle. Call this criminal incompetence or call it the human condition. Either way it was the story.”],
+  [I had arrived in Harrisburg about six weeks before TMI, the only woman in a five-person Associated Press bureau covering the state capitol, and this was by far the most momentous story of my two-year professional journalism career. The China Syndrome had just opened in theaters and everyone suddenly knew the word “meltdown.” What we didn’t know was whether there had been one at TMI.],
+  [Three decades later, when the Obama administration announced \$8.3 billion in loan guarantees for two reactors in Georgia, I wrote a “not so fast” column for AOL’s Politics Daily about that experience.],
+  [Some of the first foreign journalists to arrive were from Japan, evoking the spectacularly un-reassuring memory of the A-bomb and rampant radiation sickness. But then, nothing at the time was reassuring. The AP sent in radiation suits and drew up a helicopter evacuation plan. I was to be on the first flight out; the hope was to preserve my ability to bear children.],
+  [It never came to that (and a few years later I had two sons). Still, there were surreal and heart-pounding moments that remain vivid today. I remember driving through Middletown in unseasonably warm weather a day or two after the episode began, my car window wide open. Suddenly a radio announcer barked an emergency warning: Bursts of radiation coming from the plant! Close your windows! Stay indoors! I closed the window and tried not to panic.],
+  [Fourteen months later, in May 1980, I was back at Unit 2 for what promised to be high drama: human entry into the containment dome housing the partially melted core for the first time since the accident. Two young engineers wearing heavy protective gear would go in, take pictures, measure radiation, and leave after fifteen minutes.],
+  [As we waited for news, I participated in a fraught competition among reporters for the two landline phones available to us—“I’m the network!” “I’m the wire!” In the end, nobody got much of a story. The doors were jammed and the engineers couldn’t get in.],
+  [Backsliding on trust],
+  [FOR ME, THE STORY KEPT ON GOING. In Harrisburg until late 1982, tracking plant damage, radiation levels and cancer cases; who would pay for repairs and higher electric bills; how much liability the utility bore, and when or if Unit 2 would ever reopen. And then for nearly four years as AP’s Pennsylvania regional reporter in Washington, following the NRC and its TMI activities.],
+  [Much later, as climate change grew ever more obvious and ominous, I began to revise my views. The 2010 loan guarantees, and then-president Barack Obama’s explicit intent to include nuclear power in a carbon-free energy mix, did bring back bad memories, as I wrote. But I concluded with this: “I’m getting there on the trust thing. The feds could close the deal with me by launching a Manhattan Project on nuclear waste disposal, deadline any time before those new Georgia reactors come online.”],
+  [By 2019, I was saying that I wanted more nuclear energy . That same year, the USA Today editorial board—which included me—called it “an important part of the puzzle in weaning the nation’s power grid off fossil fuels.”],
+  [There have been two terrible nuclear accidents at commercial reactors since TMI, in 1986 at Chernobyl in what was then Soviet Ukraine, attributed to poor reactor design and poorly trained workers; and at Japan’s six-reactor Fukushima plant in 2011, amid an earthquake and tsunami.],
+  [Here at home, the U. S. government has not solved the nuclear waste disposal problem. In fact, Macfarlane and other energy experts released a bipartisan report this year that chides America for “ accomplishing virtually nothing ” over the last fifteen years. (The proposed solution that had advanced the farthest and been studied the longest, a repository planned for Yucca Mountain in Nevada, was killed off by the Obama administration.)],
+  [At the same time, U. S. reactors have become increasingly safe in the decades since TMI. So I really was getting there on the trust thing.],
+  [Until DOGE entered the picture and rampaged through the federal government on a search-and-destroy mission.],
+  [Abrajano notes that the Nuclear Regulatory Commission is still “led by respected professionals with deep experience in nuclear regulation. Chairman Ho Nieh is widely regarded across the nuclear policy community as a serious expert committed to the integrity of the commission,” supported even by Democratic Sen. Sheldon Whitehouse of Rhode Island, “who has raised concerns about protecting NRC independence.”],
+  [It will be up to those professionals to stick around and hold the line amid a shrinking safety staff and, as ProPublica reports, new arrivals who say things like “Assume the NRC is going to do whatever we tell the NRC to do.” NRC leaders, staff, and responsible nuclear companies themselves will need to keep a close watch as “thousands of pages of regulations are being rewritten at a sprint” and new energy companies flush with both cash and connections “wield increasing influence over policy.”],
+  [If there are setbacks, I’m hoping they’re the kind that can be reversed—and that we can all avoid catastrophe despite the chaos unleashed by Trump and the DOGE bros.],
 ),
   insert-map: (:),
-  word-count: 1233,
+  inline-pq: pull-quote([Dick Thornburgh features anxious reporters throwing out questions about whose radiation readings they should trust, and what dangers various readings posed.], [Jill Lawrence]),
+  inline-pq-idx: 12,
+  word-count: 1714,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -345,33 +159,32 @@
 
 {
   #standard-article(
-  title: [Advice For My Nephew],
-  author: [Tynan],
-  source-name: [Tynan (personal)],
+  title: [Do the Next Right Thing: Carl Jung on How to Live and the Origin of His Famous Tenet for Navigating Uncertainty],
+  author: [Maria Popova],
+  source-name: [The Marginalian (Brain Pickings)],
   images: (),
   paragraphs: (
-  [My nephew is getting old enough that his little personality is starting to come out and I can imagine him going through the different phases of life. He’s still too young to need or to listen to any of my advice, but that doesn’t prevent me from wanting to give it to him. I’ve decided to write some advice for him that he can read as he gets older, and in the process of thinking about what to write I realized that it’s really an exercise in distilling down the important things I’ve learned so far, which may be of interest to adults as well.],
-  [—],
-  [I have now probably finished the first half of my life, so I thought I would try to condense the most important lessons I’ve learned so far into a format that may be useful to you as you grow up. My fear is that you’ll make the same mistake that I sometimes made, which is that you will hear advice, believe it doesn’t apply to you, and then a decade or two later realize it actually did apply to you. Maybe ignoring advice like that is part of growing up, though.],
-  [The reason I believe that my advice will be useful to you is primarily because I arrived at most of these conclusions by myself through experimentation and trial and error, and have also been able to successfully translate that advice to other people through coaching. Also, anecdotally, I think I have the best life I could possibly imagine, largely because of the lessons I’ve learned. Your ideal life will look different from mine, but I think the underlying principles will hold true regardless.],
-  [My first piece of advice, which will undermine all of the following advice, is that you should listen to a large number of people and make your own decisions based on all of the information you learn. So even though I’ll be happiest if you just do everything I say to do, and I’m completely convinced that I’m correct, the truth is that no one is completely correct and you’ll benefit most by exposing yourself to the best ideas of many people and analyzing them yourself.],
-  [At your core, your goal should be to be the best version of yourself and to share that person with the world. Almost everyone, at some point or another, makes the mistake of trying to conform to a generic ideal of what a person should be. This isn’t just a difficult game, but it’s a game that’s impossible to win. No matter how hard you work towards reaching someone else’s goals for you, you will never reach your own. Discover what is important to you and work towards that.],
-  [Maybe the most direct piece of advice I’ll give in this letter is to never drink, use drugs, or smoke. This is also the piece of advice I’m most scared you’ll ignore, because most kids will experiment with it, and without the benefit of decades of life experience and seeing different paths people take, it’s very hard to understand why it’s bad. In school you’ll be given many reasons not to do these things, but they miss the most important reason not to, in my opinion.],
-  [You shouldn’t drink, smoke, or do drugs, because these things give you results that you haven’t earned. In the short term this is great, but in the long run it makes you lazy and incomplete. For example, drinking can make you act more confidently. When you act more confidently, you will almost always get better results. But alcohol doesn’t actually make you confident. And, in fact, it can make you less confident because you never build the skill of confidence. Every effect of these drugs is to receive a feeling that you haven’t “earned”, and every time you do it you become less able to create that feeling naturally. When you are young you can’t tell the difference because someone who just starts drinking hasn’t missed out on a lifetime of learning actual social skills, confidence, etc., but over decades the effect compounds and people who casually use these substances often become unable to function normally without them.],
-  [The counterargument would be that some people use these things in moderation and receive some of the benefits with none of the downsides. This is true. My response would be that you are still better off not needing them and that it’s very risky to assume that you’ll just happen to nail that compromise. All of the substances I mentioned are fundamentally addictive and there’s just no point in taking that risk. You should take risks in your life, but they should always be risks with very high payoffs and manageable risks. Alcohol, smoking, and drugs are the opposite— they offer very limited upside with nearly unlimited downside.],
-  [On the subject of risks, you should take a lot of risks when you are young. In particular, if you’re inclined to start a business you should do so. If you put all of your money into a business and fail, it’s very easy to just start again. Try ten of them with enough diligence and you’ll have one be successful. You’ll also find a lot of peers in the same position, so it’s fun to learn and try things together. As you get older you have more to lose and less time to recover, so you’ll be more reluctant to put it all on the line. When I was in my twenties I assumed I’d have the same attitude in my forties, but I definitely don’t.],
-  [I’d like to convince you to invest money young and let it compound, but I’ve found it’s almost impossible to understand why this is important and how well it works until you’ve seen it work for other people. And even more difficult is to convince you that when you’re old enough to enjoy the money that it will still matter. When I was a teenager I remember being totally unable to fathom being forty, and not really caring very much about my forty-year-old self. But time flies and I’m incredibly grateful for the sacrifices I made when I was younger that have paid off in the meantime.],
-  [The argument, though, is this: any money you invest at 20, will be worth about 4.5x when you’re 40 and about 32x when you’re 65. It can feel like those ages don’t matter or that you’re so disconnected from them that there’s no point in considering them, but when you reach those ages and the sum of your decisions has shaped your life, you’ll either be very glad or regretful for the decisions you made.],
-  [You will find competing pressures to impress different people. You want to seem cool to your friends, attractive to girls, like a good son to your parents, etc. Sometimes these pressures compete with each other. Your friends may think it’s cool for you to sneak out, but your parents may be disappointed if they catch you. It’s best to seek to impress only yourself, mostly because you have to live with yourself 24/7 and it’s hard to fake things to yourself. In the meantime, you’ll probably find that by impressing yourself you end up impressing everyone else by accident, because it’s rare to find someone who seeks only their own validation. This is especially impressive to people who are busy trying to impress other people, which is almost everybody.],
-  [It’s hard to imagine what the world will be like when you read this advice. Technological change has been the defining factor of my generation, and with AI just now becoming mainstream, it seems that this change will only accelerate. In a world where technology dominates it’s good to be involved in it and to understand it, but outsized results will be had by focusing on universal skills that others have forgotten. Learn social skills, learn to be an interested and interesting person, learn to have empathy and kindness. Learn technology too, but you’ll find that both in your personal and professional life, these soft skills are rarer and therefore more valuable.],
-  [The people you are around will end up being one of the biggest factors in the quality of your life. This is less obvious when you’re young because you’re just around people all the time. As you get older you have to be a good friend for people to want to be around you. Being a good friend and having good friends are the biggest assets you can possibly have in your life. The easiest way to be a good friend is to be interested in your friends lives and to be there for your friends even when it isn’t convenient for you. If you say you are going to be somewhere or do something, follow up and do it. If a friend entrusts you with a secret, don’t share it. If a friend needs your help, offer it without expecting anything back.],
-  [I’m the kind of person who can rattle off advice all day, but I think if you just do these things you’re guaranteed to have a great life and to make the lives of those around you better. I’m excited to see the person you become!],
-  [\#\#\#],
-  [Picture is me and my favorite little guy on his first island trip!],
-  [The gear post should come in December this year… I think it’s the best one in many years, with tons of new stuff most people have never heard of!],
+  [“There is no pit you cannot climb out of provided you make the right effort at the right place… do the next thing with diligence and devotion.”],
+  [In recent seasons of being, I have had occasion to reflect on the utterly improbable trajectory of my life, plotted not by planning but by living.],
+  [We long to be given the next step and the route to the horizon, allaying our anxiety with the illusion of a destination somewhere beyond the vista of our present life.],
+  [But the hardest reality to bear is that death is the only horizon, with numberless ways to get there — none replicable, all uncertain in their route, all only certain to arrive. This is why there are infinitely many kinds of beautiful lives . And this is why each and every one of them, even the most seemingly actualized, trembles with a staggering degree of doubt and confusion. Uncertainty is the price of beauty, and integrity the only compass for the territory of uncertainty that constitutes the landmass of any given life.],
+  [And so the best we can do is walk step by next intuitively right step until one day, pausing to catch our breath, we turn around and gasp at a path. If we have been lucky enough, if we have been willing enough to face the uncertainty, it is our own singular path, unplotted by our anxious younger selves, untrodden by anyone else.],
+  [The recovery community has a shorthand for keeping this at the center of awareness in times of inner tumult: “Do the next right thing.” The concept, in fact, originated two years before the founding of Alcoholics Anonymous, in a lucid and largehearted letter Swiss psychiatrist Carl Jung (July 26, 1875–June 6, 1961) wrote to an anonymous correspondent, included in Selected Letters of C. G. Jung, 1909–1961 ( public library ).],
+  [On December 15, 1933, Jung responded to a woman who had asked his guidance on, quite simply, how to live. Two generations after the young Nietzsche admonished that “no one can build you the bridge on which you, and only you, must cross the river of life,” Jung writes:],
+  [Dear Frau V.,],
+  [Your questions are unanswerable because you want to know how one ought to live. One lives as one can . There is no single, definite way for the individual which is prescribed for him or would be the proper one. If that’s what you want you had best join the Catholic Church, where they tell you what’s what. Moreover this way fits in with the average way of mankind in general. But if you want to go your individual way, it is the way you make for yourself, which is never prescribed, which you do not know in advance, and which simply comes into being of itself when you put one foot in front of the other. If you always do the next thing that needs to be done, you will go most safely and sure-footedly along the path prescribed by your unconscious. Then it is naturally no help at all to speculate about how you ought to live. And then you know, too, that you cannot know it, but quietly do the next and most necessary thing. So long as you think you don’t yet know what this is, you still have too much money to spend in useless speculation. But if you do with conviction the next and most necessary thing, you are always doing something meaningful and intended by fate. With kind regards and wishes,],
+  [Yours sincerely,],
+  [C. G. Jung],
+  [Two months later, in another gesture of generosity and wisdom, Jung deepens the sentiment in a letter to a man who had reached out in abject anxiety and distress, feeling that he had, quite simply, mislived his life. Jung writes:],
+  [Dear Herr N.,],
+  [Nobody can set right a mismanaged life with a few words. But there is no pit you cannot climb out of provided you make the right effort at the right place.],
+  [When one is in a mess like you are, one has no right any more to worry about the idiocy of one’s own psychology, but must do the next thing with diligence and devotion and earn the goodwill of others. In every littlest thing you do in this way you will find yourself. \[Everyone has\] to do it the hard way, and always with the next, the littlest, and the hardest things.],
+  [Yours truly,],
+  [C. G. Jung],
+  [Complement with a poignant, poetic lens on how to live and how to die and Darwin’s deathbed reflection on what makes life worth living , then revisit Jung on life and death , his rare BBC interview about human nature , and the story of how he and his improbable physicist friend Wolfgang Pauli invented the concept of synchronicity .],
 ),
   insert-map: (:),
-  word-count: 1589,
+  word-count: 805,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -381,22 +194,18 @@
 #article-row((
   [
     standard-article(
-  title: [Episode 919: The Who is the What; the When is the Why],
-  author: [Matthew Wrather],
-  source-name: [Overthinking It],
+  title: [Trump Won’t Stop—Because He Can’t Look Weak],
+  author: [Jonathan V. Last],
+  source-name: [The Bulwark],
   images: (),
   paragraphs: (
-  [style="text-align: center;"\> Support Overthinking It by becoming a member for \$5/month!],
-  [Peter Fenzel, Mark Lee, and Matthew Wrather overthink the orthogonal cultural spectacles of the 2026 Super Bowl, considering the halftime show headlined by Bad Bunny and the perennial cultural battlefield of the commercials, this year weaving narratives of authenticity amidst a sea of grifting. The halftime show is approached first through its stagecraft and camera work which create an transporting, immersive environment for TV audiences (though probably not for stadium-goes). The presence of Gaga is debated.],
-  [And what does it all tell us about America in 2026? Maybe it’s that “in a world where nostalgia is commodified, even a minion can become a cultural icon.”],
-  [Download (MP3)],
-  [List of Super Bowl Halftime Shows (Wikipedia)],
-  [Episode 22: DIY Naked News],
-  [style="margin: 5px 0; padding: 10px; background: \#eee;"\>],
-  [style="margin: 0; padding: 0;"\> Episode 919: The Who is the What; the When is the Why originally appeared on Overthinking It , the site subjecting the popular culture to a level of scrutiny it probably doesn't deserve. [ Latest Posts | Podcast ( iTunes Link )]],
+  [JVL and Bill Kristol—filling in for Sarah—discuss escalating Iran conflict, the risky push toward a wider war, and why the real damage may outlast the fighting. They also get into the global fallout—from threats to the petrodollar system to the collapse of U. S. alliances—and what a rushed exit might look like.],
+  [Pre-order Sarah’s book, How to Eat an Elephant , coming in September],
+  [style="text-align: center;"\> The Secret Podcast with JVL and Sarah is exclusively for members of Bulwark+. To watch or listen to future episodes and join the Secret community in the comments become a Bulwark+ member today.],
+  [Read more],
 ),
   insert-map: (:),
-  word-count: 185,
+  word-count: 108,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -404,15 +213,15 @@
   ],
   [
     standard-article(
-  title: [Official UK Trailer for 'The Wizard of the Kremlin' Starring Paul Dano],
+  title: [Disturbing Trailer \#2 for 'Faces of Death' Horror with Barbie Ferreira],
   author: [Alex Billington],
   source-name: [FirstShowing.net],
   images: (),
   paragraphs: (
-  ["They're vicious animals. They come from the void." Signature Ent. & Gaumont have debuted a new official trailer for the film The Wizarrd of the Kremlin , an English-language feature film from French director Olivier Assayas about Putin and his lackeys. This first premiered at the 2025 Venice Film Festival last year, and also played at the Toronto, San Sebastian, Busan, Zurich Film Fests. A young Russian artist becomes an unlikely advisor to Vladimir Putin as takes power in post-Soviet Russia, navigating the era's complexities & chaos. The film tells the story of Vadim Baranov, played with calm and cool by Paul Dano , a sharp young man who becomes the top propagandist and advisor to Vladimir Putin when he rises in Russia as President in 2000. It's a remarkable inside look at how power dynamics, corruption and manipulation work within the top echelons of Russia's government. Also starring Jude Law as Putin, Alicia Vikander as Ksenia, with Jeffrey Wright , Tom Sturridge , Will Keen , and many others. I saw this film in Venice last year and it's exceptionally interesting, showing how everything really is about power and control and manipulation. This is a good trailer showing how enormous and chilling the whole structure is – with Paul Dano's meticulous performance leading the way. Opens soon in the UK starting in April but still has no US release date set yet. \/\/  Continue Reading ›],
+  ["That is the first rule of content creation – give the people what they want." That can be dangerous! IFC has debuted a second official trailer for the disturbing horror film titled Faces of Death , a modern meta horror remake of the one of the most infamous cult movies ever. "You can't unsee it." Dropping into theaters this April if you're brave enough for it. A woman, employed as a website content moderator, comes across a series of extremely violent videos reproducing death scenes from a cult film - the original Faces of Death (from 1978). That old film played up the "is it real?" angle to make viewers sick. This remake stars Barbie Ferreira & Dacre Montgomery , with Josie Totah , Aaron Holliday , Jermaine Fowler , and Charli XCX . It's from the same director of Cam and How to Blow Up a Pipeline . "We're in awe of Goldhaber’s reimagining of Faces of Death . His take is unsettling, timely, and provocative, and we can’t wait to unleash it in theaters everywhere this spring." The freakiest trailer yet ( watch the other one ) - gross and unsettling and provocative. But just what it needs to get the attention of anyone interested in buying a ticket. Will you? \/\/  Continue Reading ›],
 ),
   insert-map: (:),
-  word-count: 240,
+  word-count: 220,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -423,18 +232,18 @@
 #article-row((
   [
     standard-article(
-  title: [The New PUBG Game Is Closing After Less Than 2 Months],
+  title: [Fortnite Festival's Official Guitar Controller Is On Sale For A Nice Price Right Now],
   author: [GameSpot],
   source-name: [GameSpot],
   images: (),
   paragraphs: (
-  [Near the beginning of February, Krafton gave an early-access release to PUBG: Blindspot , a spin-off from PlayerUnknown's Battlegrounds . However, Blindspot won't make it to its two-month anniversary as the game is scheduled to shut down in just a few days.],
-  [ARC Team's Sequoia Yang shared an announcement that PUBG: Blindspot will cease operations on March 30. "After careful consideration, we have come to the conclusion that we are no longer able to sustainably provide the level of experience we set out to deliver through Early Access," wrote Yang.],
-  [Yang went on to thank players for their support and added that, "The ARC Team will take some time to regroup, and we hope to return with new experiences in the future."],
+  [Amazon's Big Spring Sale rolls on today with even more deals, including a nice discount on PDP's Riffmaster guitar, which can be used with Fortnite Festival and Rock Band 4. Epic Games just recently announced that Fortnite Festival's Battle Stage is shutting down , but the two other modes are staying online. The PDP Riffmaster is currently on sale for \$100, which is 33% off its normal \$150 price point.],
+  [The Riffmaster guitar was built specifically for Fortnite Festival and originally came out in 2024. The wireless guitar controller works with PS5, PS4, Xbox Series X|S, Xbox One, and Nintendo Switch, but you need to buy a different model depending on your platform of choice, so be sure to double check that on Amazon.],
+  [It features a built-in, rechargeable battery that promises up to 36 hours of use per charge. The guitar also has a 3.5mm audio jack for playing with headphones, and PDP says it should work within a 30-foot area. Additionally, it has an analog stick on the back of the guitar's neck to help users navigate menus, and comes with a shoulder strap. It also has a collapsable design.],
   [Continue Reading at GameSpot],
 ),
   insert-map: (:),
-  word-count: 126,
+  word-count: 201,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -442,26 +251,342 @@
   ],
   [
     standard-article(
-  title: [Episode 918: You Can Talk to the Vampires; You Can’t Talk to the Klan],
+  title: [This week’s news in Venn diagrams.],
+  author: [James Folta],
+  source-name: [The Literary Hub],
+  images: (),
+  paragraphs: (
+  [Inspired by something Drew said on The Lit Hub podcast , I’ve been rethinking how I’m organizing the books I want to read, and trying to cull a little by being a little more honest about what I’m actually going to read. A nice plan, but in practice, I’m just moving books into increasingly precarious piles on the floor around my bookshelves, and this morning I fully tripped over a pile, which dominoed all the rest of the piles into one big mess. It felt like the black-and-white “there has to be a better way” portion of an infomercial, seconds before the SortCo Book Sorter improves my bookshelves and my mental well-being.],
+  [In short, I’ve decided to embrace “chaos shelving” and trust that my next read will come to me, if it’s meant to be.],
+  [Perhaps you’re also buried under used paperbacks and missed some of the news in this jam-packed week. Rest easy, friend, I’ve got some Venns to catch you up. Hope your weekend has the right blend of tidiness and chaos, and I’ll see you back here on Monday.],
+),
+  insert-map: (:),
+  word-count: 182,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+  ],
+), ruled-indices: (1,))
+#pull-quote([class="norewrite" title=""\> See on Amazon   The Riffmaster guitar was built specifically for Fortnite Festival and originally came out in 2024.], [GameSpot])
+
+
+#article-row((
+  [
+    standard-article(
+  title: [Callum Turner & Riley Keough in 'Rosebush Pruning' Official Trailer],
+  author: [Alex Billington],
+  source-name: [FirstShowing.net],
+  images: (),
+  paragraphs: (
+  ["Blood is not only a thing that can turn you on, but also a thing that can set you free – from us." Mubi has revealed their official trailer for peculiar dark comedy called Rosebush Pruning , the latest film made by the extra kooky Brazilian filmmaker Karim Aïnouz. This just premiered at the 2025 Berlin Film Festival a few months ago but it ended up with the worst reviews of the festival (I also hated it). This one's a dud. Alas Mubi is planning to give it a release anyway for anyone still intrigued. A tedious film about rich people. In an opulent villa beneath the Catalonian sun, American siblings Jack, Ed, Anna and Robert wallow in their isolation as well as a great inherited fortune, eschewing the demands of their blind father, and seeking love and validation through each other and their latest designer clothes. When Jack, eldest brother and linchpin of this family, announces that he is moving in with his girlfriend Martha, blood ties are severed and Ed is forced to uncover the truth surrounding their mother's death. Starring Callum Turner , Riley Keough , Jamie Bell , Lukas Gage , Elena Anaya , Tracy Letts , with Elle Fanning , & Pamela Anderson . This reminds me of Glen Powell's How to Make a Killing , but nowhere near as good – way too wacky and messy. \/\/  Continue Reading ›],
+),
+  insert-map: (:),
+  word-count: 239,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+  ],
+  [
+    standard-article(
+  title: [Episode 916: The Council of Trent? Hello?],
   author: [Matthew Wrather],
   source-name: [Overthinking It],
   images: (),
   paragraphs: (
   [style="text-align: center;"\> Support Overthinking It by becoming a member for \$5/month!],
-  [Peter Fenzel, Mark Lee, Mark Lee’s slide guitar, Jordan Stokes, and Matt Wrather use the power of music to channel the ancestors, bridge the gap between the living and the dead, and also discuss the 2025 Ryan Coogler film Sinners . It’s quite possibly a masterpiece; at the least, it’s certainly the best movie musical about vampires set in the Mississippi Delta that’s ever been made.],
-  [The panelists sink their teeth into the tradition of blues music in the rural south; what it means for different cultures to appropriate music; vampire lore across the centuries; and what exactly the vampires in this movie symbolize. Are they just racist villains, or is something else more complex going on here? And what does it mean that the vampires’ music absolutely slaps?],
-  [No souls were sold to the devil at the crossroads in the making of this podcast.],
+  [Pete Fenzel, Mark Lee, and Matt Wrather overthink Wake Up Dead Man: A Knives Out Mystery , the latest installment in the Benoit Blanc Cinematic Murder Universe. The panelists appreciated the rich, cinematic presentation of the movie, especially compared to most made-for-Netflix movies, but they also took issue with how the film treats Catholicism more as symbolic wallpaper than as a lived, institutional reality. Where are the baptisms? The first communions? The immigrants? Most importantly, why is everyone so concerned about finding a lost diamond when it would’ve been a lot easier to embezzle the Sunday collection money?],
+  [Those critiques aside, everyone appreciated the portrayal of Father Jud as an authentic moral center for the story and as a thematic counterbalance to Benoit Blanc’s cold rationalism. It makes for a very different Knives Out movie compared to its predecessors; whether it’s better or worse than those is largely a matter of taste and perspective. But it’s beyond argument that Daniel Craig’s accent remains sublime through them all.],
   [Download (MP3)],
-  [Watch Sinners on HBO Max],
-  [Listen to the Sinners soundtrack on Spotify],
-  [Crossroads (1986), starring Ralph Maccio],
-  [Crossroads (2002), starring Britney Spears],
-  [Saoirse Ronan and Jimmy Sing “Fairytale of New York”],
+  [Watch Wake Up Dead Man: A Knives Out Mystery on Netflix],
+  [The Sacred Heart of Jesus],
+  [The Council of Trent],
   [style="margin: 5px 0; padding: 10px; background: \#eee;"\>],
-  [style="margin: 0; padding: 0;"\> Episode 918: You Can Talk to the Vampires; You Can’t Talk to the Klan originally appeared on Overthinking It , the site subjecting the popular culture to a level of scrutiny it probably doesn't deserve. [ Latest Posts | Podcast ( iTunes Link )]],
+  [style="margin: 0; padding: 0;"\> Episode 916: The Council of Trent? Hello? originally appeared on Overthinking It , the site subjecting the popular culture to a level of scrutiny it probably doesn't deserve. \[ Latest Posts | Podcast ( iTunes Link )\]],
 ),
   insert-map: (:),
-  word-count: 246,
+  word-count: 260,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+  ],
+), ruled-indices: (1,))
+#pull-quote([But it’s beyond argument that Daniel Craig’s accent remains sublime through them all.], [Matthew Wrather])
+
+
+{
+  #section-label([Analysis])
+  #standard-article(
+  title: [Why the ICE Raid in ‘The Pitt’ Matters],
+  author: [Adrian Carrasquillo],
+  source-name: [The Bulwark],
+  images: (),
+  paragraphs: (
+  [Publicity still from The Pitt . (Photo credit: HBOMax via MovieStillsDB)],
+  [WHEN I’M NOT COVERING IMMIGRATION, I like to watch prestige TV. I treat it as a way to unwind and give myself space from the chaos and human suffering that often comes when covering immigration in the Trump era.],
+  [Which is why it was so jarring last week when one of my favorite shows, The Pitt, centered its episode on the main topic of my reporting over the last year: the disruptive impacts of ICE.],
+  [For those who haven’t seen it, The Pitt is a popular hospital drama where each episode depicts roughly in real time an hour of a day in the emergency room. The show tries to put us in the shoes of people we are not like or whom we have not often considered. It asks us to have empathy and compassion for these patients as well as the people trying to help them within a hospital system, where frustration and emotion can often run high.],
+  [Last week’s episode, “5:00 P. M.,” stayed true to those elements, only this time the source of the frustration, drama, and emotion was ICE agents who came storming into the ER. 1],
+  [Things get rolling when some commotion in the ER attracts the attention of Dr. “Robby” Robinavitch (Noah Wyle) and Dr. Cassie McKay (Fiona Dourif). They look up to see two federal agents hauling in a terrified immigrant who is clearly in immense pain.],
+  [The immigrant is named Pranita (Ramona DuBarry), and she is a restaurant worker who was caught up in the chaos of a raid and thrown down a flight of stairs, which has likely torn her rotator cuff. It’s hard to find a more true-to-life premise in television right now: Pranita’s plight evokes the memory of so many similar stories we’ve seen and heard over the last year of immigrants trying to flee federal agents or being hurt by them. And of course the two agents who have apprehended Pranita won’t let her call her daughter to let her know where she is.],
+  [The presentation of the two ICE agents speaks volumes. The first one, agent Russo (Juju Alexander), is tall and masked; the camera looks up at him in a way that reinforces the sense of threat and intimidation, and you can see the way this sense radiates out to various members of the hospital staff, from the main characters to the other hospital personnel and patients waiting in the ER. The second agent, Correa 2 (Josell Mariano), goes without a mask and for that reason alone seemed infinitely more human than his partner. The Instagram algorithm later served me Mariano’s post about filming the episode: “I found myself imagining what it would feel like to find my own mother or father in that same situation,” he wrote. He highlighted several behind-the-scenes photos, which he offered at the end to, as he put it, “hopefully make you not hate me.”],
+  [I found the actor’s reflections on his performance fascinating, so I reached out to ask for an interview. When we spoke, Mariano told me],
+  [Read more],
+),
+  insert-map: (:),
+  word-count: 534,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+}
+
+{
+  #standard-article(
+  title: [The Trump-Biden Debate],
+  author: [Tim Urban],
+  source-name: [Wait But Why],
+  images: (),
+  paragraphs: (
+  [In case you missed it, here’s a transcript of the first Trump-Biden Debate :],
+  [Chris Wallace: Good evening. I’m Chris Wallace and I welcome you to what I predict will be a very bad personal experience for me. There will be six 15-minute segments, each on a different topic. At the beginning of each segment, both candidates will get two uninterrupted minutes to respond. The remainder of the segment will be open discussion. The audience has agreed not to be trashy. Both campaigns have signed off on these rules, so for sure nothing will go wrong. And with that, let’s welcome the candidates.],
+  [\[CANDIDATES ENTER\]],
+  [Wallace: Let’s start with the Supreme Court. President Trump, you nominated Amy Coney Barrett to succeed the late Ruth Bader Ginsburg on the court. You say the Constitution is clear about your obligation to nominate someone to the court. Vice President Biden, you’ve called this an abuse of power. To start, why don’t you both explain your positions.],
+  [Trump: Amy Coney Barrett is a perfect nominee. Conservatives love her. Liberals love her. Chris Wallace loves her.],
+  [Biden: Amy Barrett would repeal the Affordable Care Act. And besides, the new thing is that you have to wait until after the election to nominate someone.],
+  [Trump: Not sure what you’re talking about, because last I checked a presidential term is four years, not three. You want to instate Communist medicine.],
+  [Biden: I don’t want to instate Communist medicine. I want to expand Obamacare.],
+  [Trump: Your party wants to instate Communist medicine, and you’re scared of them.],
+  [Biden: I may be scared of them but I am the Democrat Party now, so even if I was and still am scared of them, I’m not anymore. They’ll do what I say now. And how about Covid? The president killed 200,000 people. Roe v. Wade.],
+  [Trump: You would have killed 2 million people by not banning China. Not Roe v. Wade.],
+  [Wallace: K let’s go back to healthcare for a minute. Mr. President, over the past four years you have promised to replace and repeal Obamacare, but you have never in these four years come up—],
+  [Trump: Yes I have.],
+  [Wallace: with a plan—],
+  [Trump: Of course I have.],
+  [Wallace: to—],
+  [Trump: Of course I have.],
+  [Wallace: replace—],
+  [Trump: I got rid of the individual mandate.],
+  [Wallace: Oba—],
+  [Trump: The individual mandate was a joke.],
+  [Wallace: macare.],
+  [Trump: The individual mandate was the worst part of Obamacare.],
+  [Wallace: I am the moder—],
+  [Trump: The individual mandate sucks dick.],
+  [Wallace: I AM THE MODERATOR of this debate and I would like to be treated as such. You have never come up with a plan to replace Obamacare. So what is the Trump healthcare plan?],
+  [Trump: I’m cutting drug prices. Insulin is like water.],
+  [Wallace: Uh huh. How about you Joe? Why do you want to end private insurance?],
+  [Biden: I don’t want to end private insurance.],
+  [Trump: You’re literally friends with Bernie Sanders.],
+  [Biden: No I’m not. I want to—],
+  [Trump: You’re a piece of shit Joe.],
+  [Biden: I want to make sure—],
+  [Trump: A sad little man.],
+  [Wallace: Stop picking on Joe, Mr. President.],
+  [Trump: You care deeply about Bernie Sanders. You like Communist medicine. Anyway I asked the doctors and they said Obamacare is a disaster.],
+  [Biden: He doesn’t have a plan.],
+  [Wallace: Changing gears, Joe some of your colleagues are talking about ending the filibuster and packing the court. What’s your stance on that?],
+  [Biden: My stance is that voting is good. Americans should vote. It’s easy. You just go to the polling place, you wait in line, and then you go into the booth, and you push the little switch down for the candidate you want to vote for. Sometimes it’s not a switch.],
+  [Trump: You gonna pack the court, Joe? Tell us about how you’re gonna pack the court, Joe. The radical Left is pulling your puppet strings Joe. You and I both know it Joe.],
+  [Biden: Shut up, man.],
+  [Wallace: This is going well. Okay next segment. Covid-19. There have been more than 7 million cases in the United States and more than 200,000 have died. The question is, why should people trust you more than your opponent to handle this public health crisis?],
+  [Biden: 40,000 people a day contracting Covid. 200,000 people dead. He has no plan. He knew in February. He lied. He panicked. He complimented China. He has no plan. He’s playing golf.],
+  [Trump: I saved lives. It’s China’s fault. You wanted to let Chinese people come here. Dr. Fauci and all the Democrat governors said, “President Trump did a phenomenal job.” And they’re not the only ones. All of the other people said it too. “President Trump did a phenomenal job,” they all said. I did a phenomenal job. The gowns, the masks, the ventilators, you don’t know how to make a ventilator, the vaccine is here, any week now. You could never have done the job I did because you’re a random old man. You couldn’t even do swine flu. Swine flu is a disaster.],
+  [Biden: He panicked. People died. And more people are gonna die unless he gets a lot smarter—],
+  [Trump: Did you just use the word smart? You lied about going to college at Delaware State. You were the worst student at Delaware State. You’re a dumb fuck Joe. I know it. Chris Wallace knows it don’t you Chris.],
+  [Wallace:],
+  [Trump:],
+  [Biden:],
+  [Wallace: Mr. President, you have begun to increasingly question the effectiveness of masks. Are you not in favor of masks?],
+  [Trump: Masks are tremendous. I have a mask right here in my pocket. I wear masks when needed. Masks have said I’ve done a phenomenal job. Joe wears masks even when it makes no sense. He wears them when he’s 200 feet away from me. He wears a mask when he’s sleeping.],
+  [Wallace: Mr. Vice President, is that true?],
+  [Biden: If you wanna open a business, you gotta have a plan.],
+  [Wallace: Sir, I was asking about masks.],
+  [Biden: Oh masks? Sure, you gotta have a mask.],
+  [Wallace: Alright next segment. The economy. Mr. Trump, you go first.],
+  [Trump: It’s a big dick economy.],
+  [Biden: No.],
+  [Wallace: Okay how about taxes. Mr. President, apparently you pay \$750 a year in taxes. There’s a girl my daughter knows who’s 15 and she works in a movie theater on Sundays and sells the candy. And she pays more than \$750 a year in taxes. So is this true, Mr. President? How much did you pay in taxes in 2016 and 2017?],
+  [Trump: Miyyons.],
+  [Wallace: Miyyons, sir?],
+  [Trump: Miyyons and Biyyons. I don’t pay taxes because the Obama administration said I didn’t have to.],
+  [Wallace: Joe, what’s your plan for taxes?],
+  [Biden: I’m gonna build this economy. I’m gonna make jobs. We’re gonna buy American. We’re gonna buy American ships. American steel. American buildings. We handed him a booming economy and he blew it.],
+  [Wallace: But did you actually hand him a booming economy and did he actually blow it?],
+  [Biden: Sure, whatever. He talks about the art of the deal. China has perfected the art of the steal.],
+  [Trump: China buttered your son’s belly.],
+  [Biden: China did no such thing.],
+  [Trump: And then, Joe? You know what happened after that? Your son went to Moscow. And you know what happened there Joe? Moscow buttered your son’s belly.],
+  [Biden: Nothing happened there.],
+  [Trump: Sure did Joe. The mayor of Moscow’s wife. She buttered his belly slick.],
+  [Biden: You wanna talk about families Trump? How about your family. With their grease and their shoes. It’s not about families. It’s about the American people. It’s about families.],
+  [Trump: Oh and how about Ukraine?],
+  [Wallace: You know what? Time to move on to—],
+  [Trump: Ukraine buttered the shit out of—],
+  [Wallace: Mr. President.],
+  [Trump: Ukraine buttered him up real good.],
+  [Wallace: Mr. President .],
+  [Trump: Shut your mouth Chris. What about Ukraine Joe?],
+  [Wallace: VAAAAAAAAAAAAHHHHH],
+  [Trump:],
+  [Wallace: Now I’m gonna say something and I want you to listen right to me, Mr. President. I have had it up to here with you. Any more misbehaving and I will put you in timeout.],
+  [Trump: And you know what else—],
+  [Wallace: I will put you right in timeout , Mr. President. And then you’ll be sorry. Now I want you to stop being a bad boy, is that clear?],
+  [Trump: How about him? He should get timeout too.],
+  [Wallace: Well frankly, Mr. President, you’ve been the badder boy.],
+  [Trump: He’s been plenty bad.],
+  [Wallace: For the next segment, we’ll be talking about race. Why should voters trust you to deal with the race issues facing this country? Mr. Vice President, we’ll start with you.],
+  [Biden: I’m all for race. It’s about equity. About equality. About equanimity. Equilibrium. Equinox. We need to fix the systemic equity of racism and fragility in this country. And this president has done none of that. He wants to fix the systemic equity of the Nazis.],
+  [Trump: The blacks love me. Everyone knows that the blacks love me. I have blacks come up to me on the street all the time and tell me they love me. Abraham Lincoln and Frederick Douglass and I have done more for the blacks than Joe could ever dream of. Joe won’t say law enforcement. Why won’t you say it Joe? Why are you such a puppet Joe? You’re the radical Left’s toy. You’re a yo-yo. The radical Left won’t let you say law enforcement because they bounce you like a yo-yo, Joe.],
+  [Wallace: I want to turn to the subject of protests. In many cities, things have turned violent. Portland, for instance, is a certifiable madhouse. Mr. Biden, have you ever called the mayor of Portland or the governor of Oregon and been like, “wtf?”],
+  [Biden: I don’t have their numbers. Otherwise I would have. Do you have their numbers Chris? If you do, text them to me. And besides, they’re taking care of things just fine.],
+  [Trump: Yeah Joe? They’re fine? They’re literally murdering people in the streets, which is a disaster, and no one in Portland cares.],
+  [Wallace: Mr. President do you like or not like white supremacists?],
+  [Trump: No of course not. I don’t not like, or don’t not not like any of the people.],
+  [Wallace:],
+  [Trump:],
+  [Wallace: Mr. President, what is your message to white supremacists?],
+  [Trump: Get your guns but don’t fire till I give the word. Anyway the Left is committing 99% of the violence right now.],
+  [Biden: Oh baloney. Antifa is an idea, not an organization. I heard it means anti-fascist, in which case heck, sign me up. And anyhow who hasn’t thrown urine at an old lady on a bad day? The Antifas are just like you and me.],
+  [Wallace: I’m having an awful time here. I’m really upset and I want to leave and I’m having a bad, bad time. For the next segment, let’s just go with “why should you be president over your opponent?”],
+  [Trump: There has never been a leader who has done more than I’ve done. And I don’t mean just U. S. presidents. Mandela. Attila the Hun. Caesar. King Tut. None of them did as much as I’ve done. I unified this country. For the first time in U. S. history, I ended division. I have the first 100% approval rating. And how about judges. I have 300 judges. I have judges up the ass, Chris. You know why? Because Obama and crazy Uncle Joe forgot to fill the seats. Who does that. No one does that. You forget your keys, sure I’ve forgotten my keys, I’m human, we all forget our keys, sometimes I leave my keys. But leaving judges is a disaster.],
+  [Biden: This man has made the country weaker, sicker, poorer, fatter, sloppier, and slipperier. When I was Vice President I went head-to-head with Putin, but Trump is Putin’s little puppy. His cuddle-bunny. His bushy-bushy-boo-boo.],
+  [Trump: At least Putin’s not my sugar daddy, like he is to your son.],
+  [Biden: K speaking of that, fuck off. Second, you talk about the military being losers—my son was in Iraq and he was no loser, he was a patriot.],
+  [Trump: Which son, the loser or the dead one?],
+  [Biden:],
+  [Wallace:],
+  [Trump: I don’t know the dead one, but if I recall, the loser got thrown out of the military, dishonorably discharged for having a nice time with his cocaine, only to then head off on his famous belly-buttering tour.],
+  [Biden: His belly is dry!],
+  [Wallace: Oh for fuck’s sake. Let’s move on to climate change. Mr. President, what do you believe about the science of climate change, and what is your plan to confront it?],
+  [Trump: I want clean water and air. As far as the California fires are concerned, the forest floors are full of dead trees and leaves.],
+  [Wallace: Okay but what do you believe about the science of climate change?],
+  [Trump: I want clean water and air. I’ve planted a biyyon trees. We’ve got to pick the leaves up in the forest in California. Every year I get the call. California’s burning again. Because again they didn’t pick up the fucking leaves. You know in Europe, they pick up leaves.],
+  [Wallace: Joe?],
+  [Biden: I want to get rid of fossil fuel plants and invest in renewable energy. I want to transition to electric cars and make green buildings and create millions of new jobs.],
+  [Trump: He’s talking about the Green New Deal. The 55 quadrillion dollar Green New Deal.],
+  [Biden: The Green New Deal is a plan that’ll pay for itself. It’ll work great.],
+  [Wallace: Do you support the Green New Deal?],
+  [Biden: Of course not. I’m talking about the Biden Plan. Who said anything about the Green New Deal?],
+  [Wallace: Mercifully, we’ve reached the final segment of my extremely awful night. Election integrity. How confident should we be that this will be a fair election?],
+  [Biden: There is no evidence that mail-in ballots are problematic. Trump is trying to convince people not to vote. Listen to me America. Get out there and vote. If I get enough votes, this whole thing is over and the bad man can’t hurt you. It doesn’t matter what he says, if I get enough votes he’s legit not in power anymore, how rad is that.],
+  [Wallace: Mr. President?],
+  [Trump: A squirrel’s ass, Chris. That’s where someone found a ballot the other day. A squirrel shit out a ballot in a park in Philadelphia and a man picked it up and guess what? It said Trump on the ballot. Big shocker there. This is what happens with mail-in ballots. They end up in a trash can in a river in the woods in the backcountry and then eventually the trash can gets caught up in an eddy, we both know how eddies work Chris, and it washes up on the bank, and then a squirrel gets into it and eats the ballots. Half the country’s ballots have already been found in eddies and in squirrels, and all of them were votes for me. Mail-in ballots are a fraud.],
+  [Wallace: One thing we all know for sure is that this election is going to be a shitshow. Will you accept the results of the shitshow and tell your supporters to accept the results peacefully?],
+  [Trump: If there’s no fraud, yes.],
+  [Wallace: Is there any foreseeable outcome where you lose and you don’t say it’s fraud?],
+  [Trump: No. I’ve already talked about the squirrels. If I lose, we’ll need to end the country.],
+  [Wallace: Biden?],
+  [Biden: The country can go on if I lose.],
+  [Wallace: And that concludes what will end up as a stain on my career even though it clearly wasn’t my fault. Thank you, and goodnight.],
+  [style="text-align: center;"\>\_\_\_\_\_\_\_\_\_\_\_],
+  [If you like Wait But Why, sign up for our unannoying-I-promise email list and we’ll send you new posts when they come out.],
+  [To support Wait But Why, visit our Patreon page .],
+  [style="text-align: center;"\>\_\_\_\_\_\_\_\_\_\_\_],
+  [The Trump-Clinton Town Hall],
+  [The full deal with the first 16 presidents],
+  [Why you should stop caring what other people think],
+  [The post The Trump-Biden Debate appeared first on Wait But Why .],
+),
+  insert-map: (:),
+  word-count: 2700,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+}
+
+#article-row((
+  [
+    standard-article(
+  title: [The PS5 Price Hike Was Inevitable, But What Comes Next?],
+  author: [GameSpot],
+  source-name: [GameSpot],
+  images: (),
+  paragraphs: (
+  [It's been a big week for bad news in gaming, and that included Sony announcing yet another price hike for the PlayStation 5 , the second increase in less than a year .],
+  [When the new PS5 pricing goes into effect on April 2, the base digital edition of the PS5 will have gone up by a whopping \$200 since the system arrived in 2020. What's driving up the price and what does it mean for the industry at large? Here's a breakdown of what Sony has said and deeper context from expert sources.],
+  [Sony's official word],
+  [Sony's official explanation for the PS5 price hike is that "pressures in the global economic landscape" came together to make it "necessary" to raise prices once more. What the company is saying here is that the so-called "RAMageddon" situation has proven to be so much of an issue that Sony is taking steps to protect its profit margins, and passing along the increased costs to consumers in the form of a price hike.],
+  [Continue Reading at GameSpot],
+),
+  insert-map: (:),
+  word-count: 174,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+  ],
+  [
+    standard-article(
+  title: [Episode 917: Snow is Smooth, Smooth is Fast],
+  author: [Matthew Wrather],
+  source-name: [Overthinking It],
+  images: (),
+  paragraphs: (
+  [style="text-align: center;"\> Support Overthinking It by becoming a member for \$5/month!],
+  [Pete Fenzel and Matt Wrather convene cross-country, with snow piled in the East and sun set in the West, to clear their bottleneck of constrained podcast topics. In this storied two-hander, they dissect the perception and reality of bodies of work that strain our ability to perceive and accomplish.],
+  [The two share their subjective limits on the feet of snow that had just fallen, from the individual snow shoveler fighting a private war with the sky, to the kaleidoscopic social media snow spectator bombarded by accounts and moments from a hundred cold days while lounging in temperate comfort. These swarming pinholes alluding to some greater image beyond a veil, recall instagram stories about Taylor Swift concerts or the current state of public truth.],
+  [They further consider two masterpieces of slow and steady work done faster than seemed possible: Alex Honnold’s methodical ropeless climb of the skyscraper Taipei 101, and the Eliyahu Goldratt novel The Goal , an 80s classic about the Socratic method, narrative reinvention, communication in marriage, art’s relationship with truth, and very detailed, specific instructions on how to successfully implement lean manufacturing techniques in late 20th century bearing assembly manufacturing plants, which at this moment has a 50/50 shot of being on the waiting list at your public library.],
+  [The work continues, as we consider not how to optimize our own local maxima, but to maximize throughput – of mind, body, and soul. By which we mean duty calls on people especially in positions of authority to accept and enforce accountability for our duty to each other as humans, and also the New York Times rebooted Scrabble.],
+  [Download (MP3)],
+  [Three Hundred Sixty Thousand, Seven Hundred and Twenty Eight, at the Time of This Writing, Stock Images of Snow Storms on Getty Images.],
+  [Which Snow Removal Tool is Best? Here’s A Comparison Between Methods, by Catherine Messier, USA TODAY NETWORK – New England, from The Providence Journal],
+  [How To Play ‘Crossplay,’ The New NYT Game That’s Officially Out Now: The 2-player Word Game Has Its Own App, and It’s Already Making Waves, by Kelsey Pelzer, Lifestyle Director, Parade Magazine],
+  [style="margin: 5px 0; padding: 10px; background: \#eee;"\>],
+  [style="margin: 0; padding: 0;"\> Episode 917: Snow is Smooth, Smooth is Fast originally appeared on Overthinking It , the site subjecting the popular culture to a level of scrutiny it probably doesn't deserve. \[ Latest Posts | Podcast ( iTunes Link )\]],
+),
+  insert-map: (:),
+  word-count: 447,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+  ],
+), ruled-indices: (1,))
+
+#article-row((
+  [
+    standard-article(
+  title: [The Space Race from the Cosmonaut Side - 'Star City' Series Teaser],
+  author: [Alex Billington],
+  source-name: [FirstShowing.net],
+  images: (),
+  paragraphs: (
+  ["I take this step for my country, for my people..." Apple TV has revealed the first look teaser for their new Star City spin-off sci-fi series, a new angle on the streaming hit For All Mankind . This is about the "other side." This time they're telling the same Space Race story from that original series but from the perspective of the Soviet Union. And what would happen if they landed on the Moon first. Ready for streaming in May in just a few months from now. Right as news that For All Mankind is getting one final season , they're already setting up another follow-up. Soviet cosmonauts, engineers, and intelligence officers risk everything in an ambitious space program aiming to be the first to reach the moon. "Where reaching for space meant risking everything on Earth." The series main cast features Rhys Ifans , Anna Maxwell Martin , Agnes O'Casey , Adam Nagaitis , Alice Englert , Josef Davies , Solly McLeod , & Ruby Ashbourne Serkis . This is a fascinating alternate history concept and I'm very, very curious to see if they can pull it off. For All Mankind is already a huge hit and this might also be, too. Only a quick look at 30 seconds of footage so far. \/\/  Continue Reading ›],
+),
+  insert-map: (:),
+  word-count: 221,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+  ],
+  [
+    standard-article(
+  title: [Todd Blanche’s Jaw-Dropping Ethics Violation (w\/ Andrew Weissmann)],
+  author: [Andrew Weissmann],
+  source-name: [The Bulwark],
+  images: (),
+  paragraphs: (
+  [JVL (filling in for Sarah Longwell) joins Andrew Weissmann for a wide-ranging breakdown of a system under strain. They discuss the DOJ’s \$1.25M payout to Michael Flynn, a surprising leak tied to the Trump investigations, and the backlash that followed—including a top official calling prosecutor Jack Smith a “proven liar.”],
+  [Buy “Liar’s Kingdom”],
+  [Chatham Bookstore signed copies: https:\/\/bit.ly/4aXHu4R],
+  [Politics & Prose signed copies: https:\/\/bit.ly/4aALp8Q],
+  [Amazon: https:\/\/amzn.to/3MHQ8MR],
+  [Barnes & Noble: https:\/\/bit.ly/402H2xc],
+  [Bookshop.org: Bookshop.org : https:\/\/bit.ly/3N5hVa3],
+  [More great stuff:],
+  [Pre-order Sarah’s book, How to Eat an Elephant , coming in September!],
+  [Watch, listen and leave a comment .],
+  [Access to this show’s community comments and ad-free editions are available exclusively for Bulwark+ members. Bulwark+ members can listen ad-free on your podcast player of choice— click SET UP here .],
+  [The Illegal News with Sarah Longwell is available wherever you get your podcasts and on YouTube . Leave us a review and ⭐⭐⭐⭐⭐ so more people can find this important show from The Bulwark.],
+  [Read more],
+),
+  insert-map: (:),
+  word-count: 170,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -470,26 +595,14 @@
 ), ruled-indices: (1,))
 
 {
-  #standard-article(
-  title: [Mysterious Teaser for 'The End of Oak Street' Dino Adventure Sci-Fi],
-  author: [Alex Billington],
-  source-name: [FirstShowing.net],
-  images: (),
-  paragraphs: (
-  ["Oh my God, run!!" 🦖 Finally our first look at this!! Warner Bros has revealed their first look teaser trailer for a movie called The End of Oak Street , formerly known as Flowervale Street originally. The plot is being kept under wraps but it's actually about dinosaurs appearing when a street mysteriously... moves. "A family in the 80s start to notice bizarre happenings in their neighborhood." After a mysterious cosmic event rips Oak Street from suburbia and transports their neighborhood to someplace unknown, the Platt family soon discovers their existence depends on them sticking together as they navigate their new surroundings. Starring Anne Hathaway and Ewan McGregor , The End of Oak Street also features Maisy Stella and Christian Convery . The film is written and directed by David Robert Mitchell and it's produced by J. J. Abrams for Bad Robot. Featuring music composed by Michael Giacchino. There's only one quick glimpse of the dinos in this at the end of the trailer. But the rest of it still looks very good & very mysterious! It totally hooked me – I'm all for crazy cool, original, exciting new sci-fi like this. Bring on the summer movie season. \/\/  Continue Reading ›],
-),
-  insert-map: (:),
-  word-count: 204,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-}
-
-{
   #section-label([Briefs])
   #brief-group((
-    #brief-item([Tim Miller], source-name: [The Bulwark], [Sam Stein and Tim Miller give their takes on the latest fiasco for FBI Director Kash Patel after Iran-linked hackers breached his email and released a trove of personal messages and photos. From embarrassing photos during a trip to Cuba to serious counterintelligence concerns, it’s another brutal moment for a guy already struggling to prove he’s up for the job.
+    [#brief-item([Tom Breihan], source-name: [Stereogum], [Hey what’s up hello. The New Jersey sing-rapper Fetty Wap has been through some unpredictable career turns since he scored three top-10 hits, back-to-back-to-back, in the summer of 2015. In 2021, federal authorities arrested Fetty just before he was supposed to take the stage at Rolling Loud New York, accusing him of conspiring to distribute…
+
+The post Fetty Wap Interpolates The Cranberries On First Post-Prison Album appeared first on Stereogum .])],
+    [#brief-item([Alison Foreman], source-name: [IndieWire], [Tracy Letts, Riley Keough, Jamie Bell, Lukas Gage, Pamela Anderson, Callum Turner, Elle Fanning, and more star in the upcoming film.])],
+    [#brief-item([James Hibberd], source-name: [The Hollywood Reporter], [The author of the blockbuster film says Paramount turned down his 'Star Trek' idea and suggested that modern 'Trek' shows have lost their way.])],
+    [#brief-item([Tim Miller], source-name: [The Bulwark], [Tim Miller was on MS NOW's Deadline: White House to explain why Trump’s Iran decision may be doing lasting damage to his own coalition. From GOP infighting to failed election interference efforts and another Democratic win in Washington, MAJOR cracks are starting to show.
 
 class="button-wrapper"\> Leave a comment 
 
@@ -498,42 +611,21 @@ As always: Watch, listen, and leave a comment. Bulwark+ Takes is home to short v
 Add Bulwark+ Takes feed to your player of choice, here .
 
  
- Read more])
+ Read more])],
+    [#brief-item([Apple Newsroom], source-name: [Apple Newsroom], [Apple announced the new iPad Air featuring M4 and more memory, giving users a big jump in performance and making it more versatile than ever.])],
+    [#brief-item([Pamela McClintock], source-name: [The Hollywood Reporter], [Thanks to an epic hold in its second weekend, the Ryan Gosling-led movie already ranks as Amazon MGM Studios' biggest post-merger release after passing up 'Creed III.'])],
+    [#brief-item([Jack Dunn], source-name: [Variety], [HBO boss Casey Bloys recently told The Times of London that the network is already developing the second season of the highly anticipated “Harry Potter” TV series. “Our goal is to not have a huge gap, you know, especially because the kids are growing,” Bloys said. “It’s not going to be an annual; the show \[…\]])],
+    [#brief-item([Danielle Chelosky], source-name: [Stereogum], [Last year, Dua Lipa was busy touring 2024's Radical Optimism and bringing out guests like Charli XCX and Ben Gibbard in addition to performing covers like Sinead O'Connor's " Nothing Compares 2 U " and Daft Punk's " Get Lucky ." Now, the British singer is getting ready to focus on acting again, as she's joined the cast for Molly Gordon's new movie Peaked .
 
-    #brief-item([Tom Breihan], source-name: [Stereogum], [The veteran rapper/producer Oddisee has been making beautiful music for a very long time now. Last year, he released an EP called En Route. Next month, he’ll team up with Heno., a relatively new rapper from Takoma Park, Maryland, to release a new album called From Takoma With Love. Oddisee is based in Brooklyn these…
+The post Dua Lipa Joins Connor Storrie In Molly Gordon’s New Movie Peaked appeared first on Stereogum .])],
+    [#brief-item([Jack Dunn], source-name: [Variety], [“The Pitt” Season 2 star Sepideh Moafi recently told People that her first agent told her to change her name so that she could land more roles. “When I graduated from grad school, my first agent wanted me to change my name and I immediately said, ‘Fuck no,’” she recalled. “I know actors who have \[…\]])],
+    [#brief-item([Chris DeVille], source-name: [Stereogum], [Like many bands of yesteryear, the Scottish rockers Big Country, makers of the 1983 hit "In A Big Country," have splintered into various units on the touring circuit over the years. Also like many of those bands, they're now fighting about who gets to use the band name.
 
-The post Oddisee & Heno. Announce New Album From Takoma With Love : Hear “MIMS” appeared first on Stereogum .])
-
-    #brief-item([Ted Johnson], source-name: [Deadline Hollywood], [Politico has named Jonathan Greenberger as its next global editor in chief, succeeding John Harris at the political news outlet. Greenberger will take the role on May 1. Harris, who co-founded Politico, will become chairman. Greenberger joined Politico as executive vice president in 2024 after a decade as ABC News’ Washington bureau chief. He also […]])
-
-    #brief-item([Apple Newsroom], source-name: [Apple Newsroom], [Apple announced AirPods Max 2, bringing even better ANC, elevated sound quality, and intelligent features to the iconic over-ear design.])
-
-    #brief-item([Apple Newsroom], source-name: [Apple Newsroom], [Apple kicked off celebrations in New York for its 50th anniversary and will continue commemorating the milestone throughout the month.])
-
-    #brief-item([Glenn Garner], source-name: [Deadline Hollywood], [Chris Pratt is reprising his Brooklynite version of Mario, which means his signature saying had to undergo an update. The Super Mario Galaxy Movie star recently explained why he altered the titular plumber’s catchphrase “mamma mia” in the Universal Pictures sequel, which premieres April 1 in theaters. “I’m not going to say it right now […]])
-
-    #brief-item([Jack Dunn], source-name: [Variety], [HBO boss Casey Bloys recently told The Times of London that the network is already developing the second season of the highly anticipated “Harry Potter” TV series. “Our goal is to not have a huge gap, you know, especially because the kids are growing,” Bloys said. “It’s not going to be an annual; the show […]])
-
-    #brief-item([Jack Dunn], source-name: [Variety], [“The Pitt” Season 2 star Sepideh Moafi recently told People that her first agent told her to change her name so that she could land more roles. “When I graduated from grad school, my first agent wanted me to change my name and I immediately said, ‘Fuck no,’” she recalled. “I know actors who have […]])
-
-    #brief-item([Glenn Garner], source-name: [Deadline Hollywood], [As Yoshi makes his big onscreen debut in The Super Mario Galaxy Movie, Childish Gambino fans might hear a familiar voice. Donald Glover, who voices the beloved Nintendo dinosaur in the sequel premiering April 1, “campaigned for the role,” according to his co-star Jack Black, who reprises his voice role as Bowser in the Universal […]])
-
-    #brief-item([Margaret Farrell], source-name: [Stereogum], [“Whore & Savior,” the latest single from LA alt-rock musician Forest, is loud, chaotic, and weirdly addictive. My speakers are staging a tiny mechanical meltdown. It’s all screech, physical and feral. But there’s something softer fueling the pummeling sound. “I really drew on experiences of first love, and teenagehood,” Forest shared in a press release. “I wanted…
-
-The post Forest – “Whore & Savior” appeared first on Stereogum .])
-
-    #brief-item([Kate Erbland], source-name: [IndieWire], [Showrunner, creator, writer, and executive producer Haley Z. Boston tells IndieWire about building her moody, atmospheric, and often very funny limited series about the scariest thing of all: getting married.])
-
-    #brief-item([Tom Breihan], source-name: [Stereogum], [Next month, the buzzy young Brighton band Lime Garden will release Maybe Not Tonight , an album that apparently tells the story of a single night out. We've already posted a whole bunch of early singles from the LP: the title track , " 23 ," " All The Bad Parts ," " Downtown Lover ." Now, Lime Garden have shared a cover of New Order's 1983 classic "Age Of Consent" that they recorded live in studio at Abbey Road.
-
-The post Lime Garden Cover New Order’s “Age Of Consent” appeared first on Stereogum .])
-
-    #brief-item([Apple Newsroom], source-name: [Apple Newsroom], [Apple announced the new iPad Air featuring M4 and more memory, giving users a big jump in performance and making it more versatile than ever.])
-
-    #brief-item([Apple Newsroom], source-name: [Apple Newsroom], [Apple today announced it will mark its 50th anniversary, celebrating five decades of thinking different and the innovations that helped shape the world.])
-
-    #brief-item([Steven Garrard], source-name: [Screen Rant], [Compared to cozy games with more simplistic decorating styles, Nintendo's latest magnum opus, Pokémon Pokopia , offers a massive amount of player freedom when it comes to constructing your perfect island. While the sheer amount of habitats you'll need to make for all 300 Pokémon scattered across Pokopia can be a little overwhelming at times, plenty of fans have already shared some incredibly creative builds that you should consider porting over into your own world.])
-
+The post Big Country Drummer Must Stop Touring As Big Country, Say Rest Of Big Country appeared first on Stereogum .])],
+    [#brief-item([Patrick Hipes], source-name: [Deadline Hollywood], [The video spread at a velocity only social media can generate. Missiles rained down on the USS Abraham Lincoln, blasting fighter jets into the sea, the vessel breaking apart in a dramatic fireball — shared millions of times before anyone thought to ask whether the carrier was still sailing. It was. Analysis using the AI \[…\]])],
+    [#brief-item([Natalie Oganesyan], source-name: [Deadline Hollywood], [Alex Duong, a comedian, writer and actor based in Los Angeles, has died at the age of 42. Duong was diagnosed with alveolar rhabdomyosarcoma last year, a rare and aggressive cancer affecting soft tissue. He underwent surgery to remove a malignant growth that was blocking blood flow to his optic nerve and caused vision loss. \[…\]])],
+    [#brief-item([Apple Newsroom], source-name: [Apple Newsroom], [“Friday Night Baseball” — a weekly MLB doubleheader on Apple TV — returns for its fifth season on March 27.])],
+    [#brief-item([Apple Newsroom], source-name: [Apple Newsroom], [Today, Apple announced iPhone and iPad are the first and only consumer devices in compliance with information assurance requirements of NATO nations.])],
   ))
 }
 

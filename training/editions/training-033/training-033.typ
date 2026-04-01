@@ -23,27 +23,23 @@
 
 // --- Front Page Feature ---
 #feature-article(
-  title: [Strawberry Scones],
+  title: [28 Best Brunch Recipes For A Crowd],
   kicker: [Cover Story],
-  author: [Heidi Swanson],
-  source-name: [101 Cookbooks],
-  deck: [There are some things to know before you jump into making these strawberry scones.],
-  lead-text: "First, the foundation of a great scone is a good recipe and cold ingredients. The cold ingredients will make the dough much easier to work with. Second, let your scones bake long enough, really keep an eye on things. For the scone style you see here, you don’t want pale. Much of the flavor happens as the sugars, and butter, and edges of each scone brown. Lastly, scones made with fresh fruit are best warm from the oven. Bake just before you want to enjoy them whenever possible.",
-  lead-first-alpha: 0,
+  author: [Lindsay],
+  source-name: [Pinch of Yum],
+  deck: [I love a good brunch moment! Whether it’s for something special like Easter or a baby shower, or just a simple Saturday morning with friends.],
+  lead-pre: [],
+  lead-cap: [B],
+  lead-rest: [reakfast food is some of the best food (sweet, savory, cheesy, carby!) and I love to see a table full of people gathered around it. ❤️],
   body-paragraphs: (
-  [Or do a quick reheat.],
-  [class="p4"\> Flours : Most scone recipes use all-purpose flour exclusively. But I find that adding a percentage of whole wheat flour can really anchor a scone and bring flavor dimension. Don’t worry, you won’t run into any dreaded whole-wheat dryness with these. The whole wheat flour really lends rustic farmhouse vibes in the best way possible with a tender crumb. Now when I go back to tasting more conventional scones, they end up tasting too one-dimensional to me.],
-  [class="p4"\> Sugar : I’ve baked these scones with a rotating cast of sugars over the years. Different amounts, different types. I feel like this recipe needs the sharp edge of white sugar to balance the other ingredients in these scones – for example, the tangy buttermilk or sour cream. Just sweet enough is what I was after here, and for whatever reason the brown sugar tend to get lost. And a blend didn’t do the job either.],
-  [class="p4"\> Other : I use quite a bit less baking powder and baking soda than other scone recipes. You don’t really need more than the amount in this recipe, and the buttermilk neutralizes any residual off flavor from the leavening agents.],
-  [class="p7"\>The recipe below is for classic strawberry scones with a bit of zest. Aside from the zest, they’re straight-forward, direct, a good scone foundation. That said, I often switch them up with one or two of the following:],
-  [class="p7"\> black pepper : black pepper and strawberry are a classic combination. Add scant 1/2 teaspoon freshly ground black pepper to dry ingredients. Adjust with more in future batches if you love it.],
-  [crystalized ginger : adds jolts of chewy ginger sugar. Chop it small and add it along with the wet ingredients.],
-  [class="p7"\> icing : lot of people like an iced drizzle over their scones. If you would rather have a drizzle top, here’s the plan. Use lemon zest in place of the orange zest called for in the recipe. Skip the sugar sprinkle, but do the egg wash. Allow scones to cool completely after baking, and use the salted lemon glaze from this glazed lemon cake recipe. Or do half and half so you can enjoy the sugar-topped scones warm.],
-  [Making Strawberry Scones By Hand],
-  [class="p7"\>The recipe below assumes you have an electric mixer with a paddle attachment, but making them by hand is also possible and will save you some dishes! To make these scones by hand, watch the above video and reference these instructions:],
-  [class="p7"\> Mix the dry ingredients well and then turn out into a pile on your counter top. Sprinkle the cold butter across the flour mixture and use your hands to rub the butter into the flour until it is evenly distributed throughout. You can use a dough scraper (or pastry cutter) to chop through the pile a bit and break up any butter lumps. You want the mixture to be sandy, with tiny pebbles.],
-  [class="p7"\> Shape : Wrangle the flour mixture back into a pile with a dough scraper and make a well in the middle (the way you do when making homemade pasta ). Pour the wet ingredients into the well and use your dough scraper to fold and mix the flour into the wet ingredients. Keep going until there is no dry flour left and a dough has started to form. At this point sprinkle the berries across the top, and fold them into the mixture as well.],
-  [Continue reading Strawberry Scones on 101 Cookbooks],
+  [These are the brunch recipes I put on the menu when I’m hosting a group – some can be thrown together and served out of one pan for ease, others can be assembled however your guests see fit (LOVE this breakfast sandwich for that), and all of them are simple, easy, and super delicious.],
+  [One of my favorite menu combos: this egg and croissant bake , this simple green salad , and this carrot cake coffee cake . The ultimate brunch plate!],
+  [Here’s to brunch! Here’s to feeding all our favorite people!],
+  [class="tasty-roundups-description"\>Biscuits and Gravy Egg Bake! YES! a casserole-style dish of fluffy eggs and cheddar baked up with little bites of tender flaky biscuit pieces, and buried under a blanket of creamy green chile sausage gravy.],
+  [class="tasty-roundups-description"\>Crunchy, light, bright, and ultra-fresh. This French-inspired bistro salad is an absolute star as a side for nearly any dinner. Tender greens, fresh herbs, pickled onions, and a delicate vinaigrette on top.],
+  [class="tasty-roundups-description"\>Sweet Cinnamon Rolls! Made with pillowy brioche dough and cinnamon sugar tucked into every nook and cranny. This makes a BIG batch of dough that you can divide and save for later…or make extra all for yourself!],
+  [One of my most important brunch rules is that it must include multiple drinks – a glass of orange juice, a cup of coffee, and maybe something special, too? Here are some ideas for drinks to serve with brunch, many of which can be scaled up for a crowd!],
+  [The post 28 Best Brunch Recipes For A Crowd appeared first on Pinch of Yum .],
 ),
   edited-for-length: false,
 )
@@ -52,29 +48,36 @@
 {
   #section-label([Features])
   #standard-article(
-  title: [Radisson Resort and Spa Lonavala Celebrates the Remaining Natural Beauty of India’s Popular Sahyadris Region],
-  author: [Adrian Madlener],
+  title: [F5: Paige Lawrence on Wildflowers, Vintage Furniture, a Fiddle-Leaf Fig Plant + More],
+  author: [Anna Zappia],
   source-name: [Design Milk Architecture],
   images: (),
   paragraphs: (
-  [Just a two hour’s drive from the ever-bustling and expanding sprawl of Mumbai—India’s second city—the Sahyadris Hills unfold with a cooler and less humid climate. For decades now, the region—also noted for its ancient forts and Buddhist caves—has been a popular weekend destination for city-dwellers in search of respite but, like the dense and crowded urban cores they’re escaping, it has also succumbed to rampant and unregulated development. Ironically, much of the natural beauty here has fallen victim to its fame. Such is the unfortunate fate of many sought-after resort areas in favorable proximity to a major city or conurbation.],
-  [Looking to maintain what is left of the verdant landscape and make it available to guests in a more responsible way is the recently completed Radisson Resort and Spa Lonavala .],
-  [Replete with several distinctive restaurants, events venues, and other premium amenities, the retreat embeds into its ‘hill station’ surroundings through its innovative architectural massing, materiality, and the implementation of climate-specific strategies inspired by the local architectural vernacular. The decidedly Brutalist yet emphatically site-responsive complex is a far cry from the antiseptic chain hotels that often feel out-of-place and inauthentic.],
-  [“The sense of open space of connecting to nature is contested by the building forms that emerge through the prescribed structural codes and densities,” says Kamal Malik, the founder the eponymously named, Mumbai-based firm responsible for the hotel’s design “The architecture emerges from the site, topography, from the region’s material history—black basalt and wood—and adapts to both flexible and fixed—public and private—programs.”],
-  [Malik Architecture’s comprehensive intervention incorporates reinterpreted architectural archetypes from the region: courtyards, verandahs, deep-shading, thick walls, and cross-ventilation. The main focus however is the surrounding nature. Monumental volumes give way to soaring apertures visible for numerous semi-indoor and semi-outdoor vantage points. All together, the scheme accommodates optimal natural ventilation, safeguards against heavy rain during Monsoon season, and protects against harsh sun rays.],
-  [Suites come with adjoining patios enclosed by operable slatted shading walls. The guest rooms occupy abstract-form buildings hovering above the ground. Shafts of natural light slice across these angular volumes and illuminate atriums that appear between.],
-  [“The feeling of a multi-storey building has been avoided by developing the ground as organic, free form public spaces with split level topographical connections,” Malik adds. “Extant forms—bastions and Large masonry walls—stepped courts, otherwise known as kunds—animate the built landscape.”],
-  [A rich earth tone palette, defined by many of the same substrate materials as the exterior, makes its way into the interiors but doesn’t overpower as the main attraction remains the carefully framed natural setting outside. There’s no superfluous decoration, just a sober deployment of ornamentation hinting at the local Maratha culture. Spacious guest rooms and suites are pared back with a calming modernist aesthetic only interrupted by fluted tambour-pattern feature walls and traditional carpets denoting the placement of beds.],
-  [Alongside numerous sports facilities including everything from a fully-equipped fitness center and steam room to archery and badminton fields, Radisson Resort and Spa Lonavala’s dining options include the quintessential Indian style Hirkani—with stations that allow guest to watch their food being prepared—and a series of pop-up haunts. Malhari is the go-to cocktail bar. The historic Tungarli Village situates right out the resort.],
-  [What: Radisson Resort and Spa Lonavala],
-  [Where: Lonavala, India],
-  [How much: Rooms starting at \$137],
-  [Design draws: A site responsible destination embedded within the popular getaway Sahyadris region of western India with materiality, proportions, cuisine, and activities programmed in honor of the verdant nature in the immediate surroundings.],
-  [Go virtually on vacation with more design destinations right here .],
-  [Photography courtesy of Radisson Resort and Spa.],
+  [Raised in Texas, Paige Lawrence earned a bachelor’s degree from Vanderbilt University before moving to Los Angeles. It was here that an early role in kitchen design and interiors sparked her interest in the built environment.],
+  [Lawrence eventually received a graduate degree and became a licensed architect. After several years at a residential firm, she returned to the Lone Star State and joined 787 Design Studio, where she leads the practice alongside founder Patrick Mackie.],
+  [The duo is known for thoughtfully-designed homes across Austin and the surrounding region that respond to the natural landscape. For Lawrence, a project always starts with the floorplan. “I thoroughly enjoy the process of getting to know a client’s daily life, their routines and rituals,” she says. “That understanding is everything, because it’s what allows me to design spaces that don’t just look beautiful, but genuinely function for the people within them.”],
+  [To capture her ideas, Lawrence uses a combination of analog and tech. As a self-described doodler, Lawrence almost always grabs a sketchpad, because she loves the tactile feel of pen on paper. She is careful to not make waste with endless scraps, and if multiple iterations are needed, she can easily switch to an iPad.],
+  [While Lawrence is busy with career and family obligations, if she could find the time she would try her hand at woodworking or making furniture. “There’s something really appealing to me about creating a piece you can actually use, that will sit in someone’s home and last,” she notes. “And honestly, the technicalities of it suit my type-A mind.”],
+  [Today, Paige Lawrence joins us for Friday Five !],
+  [1. Wildflowers],
+  [Growing up in Texas, I’ve always been in awe of the wildflowers that seem to appear out of nowhere each year. They’re a simple surprise that never gets old and bring a quiet sense of joy. I feel a responsibility to care for and preserve them on my own property so this small, magical moment can be experienced for generations to come.],
+  [2. Fiddle Fig],
+  [I bought this fiddle-leaf fig plant on a whim about 13 years ago when I first moved to Austin. It was barely a foot tall and picked up at a big-box hardware store, with no real plan for what would come next. Since then, it’s been through three moves, countless trims, and more neglect than it probably deserved. I’ve chopped it back many times and propagated smaller versions along the way. Despite my questionable plant skills, it’s continued to grow and thrive. It’s one of the first things people notice when they walk into our home and has become a lasting part of its identity. I’m excited to see what it becomes next.],
+  [3. Dogs],
+  [I’ve always been a dog person and have never been without one. While dogs have brought me a lot of joy, they’ve also brought heartache. In my early 20s, living in Los Angeles, they pushed me to explore parks and hiking trails I might not have found otherwise. Now, they give our family something to care for, learn from, and gather around. They’ve become a quiet way to teach our children responsibility while still enjoying the companionship and love dogs bring. We recently adopted our newest dog in what felt like pure fate, and it’s been one of the best decisions we’ve made. He’s playful, affectionate, patient with kids of all ages, and a perfect fit for our family.],
+  [4. Vintage Furniture],
+  [I’ve always been drawn to patterns and vintage furniture, and when the two come together, it feels like the best of both worlds. These chairs were passed down to me from a family member and won me over immediately. The bold, colorful pattern paired with the simple vintage frame creates an easy balance. They make a statement without trying too hard. That’s what I love about vintage furniture, it carries character and presence without feeling pretentious or showy.],
+  [5. Sunrises and Sunsets],
+  [This may not come as a surprise to some, as I imagine it’s a favorite for many. Much like Texas wildflowers, sunrises and sunsets still catch me off guard. Even though they happen every day, their beauty never feels routine. The variety of colors and settings never gets old. A sunrise feels like a new beginning, bringing energy and hope for the day ahead, while a sunset offers a sense of peace and quiet closure. The colors they produce are some of the most magical hues nature creates, and knowing the moment is brief makes it feel special. Like being part of a quiet, shared experience with millions of others.],
+  [Works by Paige Lawrence and 787 Design Studio:],
+  [With its undulating steel railing and integrated details, this staircase reimagines structure as sculpture, where code, craft, and color converge.],
+  [Part bath, part courtyard retreat by 787 Design Studio and Annie Downing Interiors. This light-filled space layers terrazzo, glass, and a freestanding tub within the shower for a fresh take on modern family living.],
+  [A contemporary take on the ranch house by 787 Design Studio and Annie Downing Interiors. Breezeways and floor-to-ceiling windows connect living spaces while framing uninterrupted views of the surrounding landscape.],
+  [Old World inspired architecture meets modern living by 787 Design Studio and landscaping by LandWest Design Group. A tree anchored plan shapes the experience of the home.],
+  [A courtyard pool and covered terrace define the heart of the home by 787 Design Studio, turning site constraints into a layered outdoor experience.],
 ),
   insert-map: (:),
-  word-count: 598,
+  word-count: 984,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -83,89 +86,101 @@
 
 {
   #standard-article(
-  title: [French Holiday Recipes],
-  author: [Anne Elder],
+  title: [Take a Closer Look at the Los Angeles Dodgers' Back-To-Back World Series Championship Ring],
+  author: [Hypebeast],
+  source-name: [Hypebeast],
+  images: (),
+  paragraphs: (
+  [The Los Angeles Dodgers were presented with their 2025 World Series championship rings during a pregame ceremony],
+  [The custom jewelry features 86 diamonds and 17 blue sapphires set in 14-karat yellow gold],
+  [This milestone marks the first time in the franchise's history that the team has secured back-to-back titles],
+  [The Los Angeles Dodgers have officially secured their 2025 World Series Championship rings. Celebrating a historic back-to-back title run, the MLB team unveiled the glittering physical symbols of their victory during a special pregame ceremony in front of their home crowd.],
+  [The celebration marked the first time in the franchise's storied history that the organization claimed consecutive World Series championships. The Friday night ceremony saw superstars like Shohei Ohtani , Freddie Freeman, and Mookie Betts accept their intricate new hardware. The event culminated with a special appearance from recently retired pitcher Clayton Kershaw, who returned to the mound to throw the ceremonial first pitch and receive his own ring alongside his former teammates.],
+  [The 2025 World Series Championship ring is a staggering piece of custom jewelry. Studded with an array of diamonds and sapphires, the 14-karat yellow gold ring contains a unique ring-within-a-ring feature enclosing actual dirt gathered from home plate during Game 7 against the Toronto Blue Jays. A total of 86 diamonds spell out "World Champions" across the face, while 17 blue sapphires inside the L. A. logo represent the team's total postseason wins.],
+  [Further detailing includes 79 diamonds and 48 round sapphires resting behind the primary logo, alongside an additional 70 round diamonds framing the centerpiece. The side of the ring proudly reads "Back 2 Back" in blue, while the exterior band displays the number 4,012,470—a direct tribute to the team's total attendance during the 2025 season. Every ring also features the individual player's engraved signature on the interior band.],
+  [style="padding: 16px;"\>],
+  [style="display: flex;"\>],
+  [style="background-color: \#F4F4F4; border-radius: 50%; height: 40px; margin-right: 14px; width: 40px;"\>],
+  [style="display: flex;"\>],
+  [style="background-color: \#F4F4F4; border-radius: 4px; height: 14px; margin-bottom: 6px; width: 100px;"\>],
+  [style="background-color: \#F4F4F4; border-radius: 4px; height: 14px; width: 60px;"\>],
+  [style="padding: 19% 0;"\>],
+  [style="display: block; height: 50px; margin: 0 auto 12px; width: 50px;"\>],
+  [style="padding-top: 8px;"\>],
+  [style="color: \#3897f0; font-family: Arial,sans-serif; font-size: 14px; font-style: normal; font-weight: 550; line-height: 18px;"\>View this post on Instagram],
+  [style="padding: 12.5% 0;"\>],
+  [style="display: flex; margin-bottom: 14px;"\>],
+  [style="margin-left: 8px;"\>],
+  [style="background-color: \#F4F4F4; border-radius: 50%; height: 20px; width: 20px;"\>],
+  [style="margin-left: auto;"\>],
+  [style="display: flex; margin-bottom: 24px;"\>],
+  [style="background-color: \#F4F4F4; border-radius: 4px; height: 14px; margin-bottom: 6px; width: 224px;"\>],
+  [style="background-color: \#F4F4F4; border-radius: 4px; height: 14px; width: 144px;"\>],
+  [style="color: \#c9c8cd; font-family: Arial,sans-serif; font-size: 14px; line-height: 17px; margin-bottom: 0; margin-top: 8px; overflow: hidden; padding: 8px 0 7px; text-align: center; white-space: nowrap;"\> A post shared by Los Angeles Dodgers (\@dodgers)],
+  [style="padding: 16px;"\>],
+  [style="display: flex;"\>],
+  [style="background-color: \#F4F4F4; border-radius: 50%; height: 40px; margin-right: 14px; width: 40px;"\>],
+  [style="display: flex;"\>],
+  [style="background-color: \#F4F4F4; border-radius: 4px; height: 14px; margin-bottom: 6px; width: 100px;"\>],
+  [style="background-color: \#F4F4F4; border-radius: 4px; height: 14px; width: 60px;"\>],
+  [style="padding: 19% 0;"\>],
+  [style="display: block; height: 50px; margin: 0 auto 12px; width: 50px;"\>],
+  [style="padding-top: 8px;"\>],
+  [style="color: \#3897f0; font-family: Arial,sans-serif; font-size: 14px; font-style: normal; font-weight: 550; line-height: 18px;"\>View this post on Instagram],
+  [style="padding: 12.5% 0;"\>],
+  [style="display: flex; margin-bottom: 14px;"\>],
+  [style="margin-left: 8px;"\>],
+  [style="background-color: \#F4F4F4; border-radius: 50%; height: 20px; width: 20px;"\>],
+  [style="margin-left: auto;"\>],
+  [style="display: flex; margin-bottom: 24px;"\>],
+  [style="background-color: \#F4F4F4; border-radius: 4px; height: 14px; margin-bottom: 6px; width: 224px;"\>],
+  [style="background-color: \#F4F4F4; border-radius: 4px; height: 14px; width: 144px;"\>],
+  [style="color: \#c9c8cd; font-family: Arial,sans-serif; font-size: 14px; line-height: 17px; margin-bottom: 0; margin-top: 8px; overflow: hidden; padding: 8px 0 7px; text-align: center; white-space: nowrap;"\> A post shared by The Champions Collective (\@thechampscollective)],
+),
+  insert-map: (:),
+  word-count: 578,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+}
+
+{
+  #standard-article(
+  title: [Springtime Pot-au-feu Beef Stew Recipe],
+  author: [clotilde],
   source-name: [Chocolate & Zucchini],
   images: (),
   paragraphs: (
   [Buy Clotilde's latest book, The French Market Cookbook !],
-  [Christmas is just a few days away (not to stress you out or anything) and I was shocked to realize that, in fourteen years of Chocolate & Zucchini, I have never offered an actual post outlining how to host a French holiday meal .],
-  [So whether you’re seeking to add a little Frenchness to your holiday celebrations, attending your first bona fide French holiday meal this year, or even hosting one (gah!), let me break things down for you, and suggest some winning French holiday recipes .],
-  [Christmas and the New Year],
-  [French families get together for a Christmas Eve dinner ( le réveillon de Noël ), and often there’s a second meal for Christmas Day lunch (not breakfast or brunch), either with the same cast or with a different part of the family.],
-  [Christmas is largely celebrated in the home; most restaurants are closed that night for staff members to celebrate with their own family. It is considered an intimate occasion reserved for family members and close family friends, so if you are a guest from outside the family, it’s a big deal. Presents are opened either after dinner on Christmas Eve, or in the morning on Christmas Day.],
-  [The French New Year’s Eve ( le réveillon du Nouvel An ) is often celebrated with friends rather than with family, and it is more of a grown-up occasion. If there are small children, they will be tucked into bed early or allowed to collapse on some couch, but the party is not about them. (Sorry kids.)],
-  [Some people go out to dinner on New Year’s Eve, but I don’t know who they are and I wouldn’t want to go with them. In my circle, we are more likely to have a special dinner at someone’s house, and possibly go out later, or just push the furniture and party at home\*.],
-  [Apéritif],
-  [A French holiday meal is designed to go on long into the night, so the apéritif phase — pre-dinner drinks with nibbles — will last awhile. Champagne is the typical drink served, but because I am contrarian, I prefer to pick out an alternate sparkling white. At the caviste ‘s you can ask for a vin blanc en méthode champenoise , a white wine produced in the style of Champagne, but from another region.],
-  [Raw Scallop Crostini on Pumpernickel Bread],
-  [Shellfish is a staple of the French holiday table, and coquilles Saint-Jacques (sea scallops) are especially prized. I like to feature them raw in these canapés, an easy and elegant apéritif easily eaten with one hand in a couple of bites.],
-  [Fresh Herb and Goat Cheese Quick Bread],
-  [There are three reasons you should make this savory quick bread (in French, cake salé ): one, it freezes beautifully; two, it cuts into bite-size cubes with little mess; and three, it is a quintessential French buffet item. Also: one of my most popular recipes from this blogging year!],
-  [A quick win of a recipe, these spiced almonds are perfect for grazing during the apéritif, or to package up in a pretty sachet and bring as a host(ess) gift.],
-  [Ready for the sit-down dinner now? Please, take a seat!],
-  [A traditional no-cook treat to open the holiday feast is the platter of oysters, freshly delivered from the Atlantic ocean. Order yours from the busy poissonnier well in advance; they will shuck them for you at no additional cost (but usually there’s a tip jar). Oysters are typically served raw and in the shell, with thin slices of rye bread, salted butter, lemon juice, and shallot vinegar.],
-  [It used to be that French people only ate foie gras during the holidays . It was a luxury item, produced traditionally, with care and respect for the animals, and appreciated with reverence. Nowadays, people want it year-round and they want it cheap. This has spawned an industry of mistreated, factory-farmed animals yielding tasteless, fatty foie gras.],
-  [My recommendation is to skip the foie gras altogether if you can’t be sure it has been produced artisanally and ethically . If, however, you get to visit an independent producer on your travels, or have a solid recommendation for one from a chef or discerning cook, buy a terrine de foie gras entier mi-cuit in a jar and savor every bite.],
-  [Duck or goose is a matter of preference; the former is more common (ducks are easier to raise) and the flavor more assertive.],
-  [Serve your terrine de foie gras cold, but not too cold, with toasted bread. Pain brioché (think enriched yeast bread such as challah) is traditional, I prefer a sourdough loaf to complement the sweetness of good foie gras. Some people insist on serving it with pain d’épices (honey spice cake) but that is too cloying for my taste, and I don’t think the pairing benefits either. The proper way to eat foie gras is to slice a bite-size piece with your knife, place it on the bread without spreading (sweet heavens, no), and take a bite.],
-  [Sigh. Another luxury food item that has been utterly ruined by the consumer’s insistence to eat it any old day of the year, but no willingness to pay the proper price for it. The consequence? Factory-farmed salmon pumped full of drugs and chemicals, destroying the environment, and resulting in oily, unsubtle smoked salmon that just tastes of fish and smoke.],
-  [I would much rather buy wild salmon and indulge just once a year , buying a couple of thin slices per person and savoring every bite with my eyes closed. (And if that falls outside the budget, organic smoked trout is a delicious, lower-cost, ethical option.)],
-  [Smoked salmon is typically served with toasted blinis , crème fraîche (sour cream will do), and a teensy squeeze of lemon juice.],
-  [Artichoke and Goat-Cheese Mille-Feuille],
-  [If you’d like to cook your starter, this is a savory twist on the pâtisserie classic that’s easy to make, yet festive and sophisticated.],
-  [Jerusalem Artichoke Soup with Bacon],
-  [A perfect first course if the host’s apartment doesn’t have very good heating, this warming, velvety soup has smoky umami notes thanks to the addition of bacon. (Vegetarians can omit and use mushrooms instead.)],
-  [Roasted bird or game],
-  [Holiday menus in most families are built around a roasted meat , and in preparation for the holidays, butcher shops in France begin to display whole birds in their windows, feathers and all.],
-  [You are likely to encounter dinde (turkey), chapon (capon), poularde (fattened hen), pintade (guinea fowl), oie (goose), faisan (pheasant), but also canard (duck), cailles (quails)… and good old chicken, preferably heritage breeds (coucou de Rennes, Gauloise blanche…) so it feels more exceptional. (I get mine from Terroirs d’Avenir .)],
-  [Game is also a popular choice, and it certainly leaves an impression. I remember my uncle roasting a thigh of boar one year, and a friend’s father a whole side of venison, on a spit, for hours, in an open chimney.],
-  [But, um, for smaller gatherings, here are my favorite French chicken recipes, which can be applied to any kind of small bird:],
-  [Muriel’s Chicken],
-  [I love this recipe for its simple, foolproof method. All you need is a few quality ingredients and the patience to let them cook slowly.],
-  [Spatchcocked Chicken Under a Brick],
-  [One of my favorite ways to roast any kind of poultry is to butterfly it (see: how to spatchcock a chicken ), removing the backbone and flattening it. This method yields a perfectly roasted, moist bird, and takes less time than roasting it whole.],
-  [Salt-Crusted Chicken],
-  [The salt crust on this chicken allows it to cook in its own juices, and also offers some flexibility when it comes to cooking time — a must if you’re hosting a holiday meal.],
-  [Chicken in a Bread Crust],
-  [This two-in-one French recipe is perfect for a festive meal: the bird is tucked inside a bread crust, that you can then cut up and serve, to mop up all of the flavorful cooking juices.],
-  [Accompanying the main meat attraction, there will be two to three sides, passed around from guest to guest and across the table in a joyful, voluble chaos. Each family has its own specialties; I recommend you stick with seasonal produce: root vegetables, winter squash, various kinds of cabbage, mushrooms, chestnuts… My mother typically makes mashed celeriac, mashed potatoes, and sautéed chestnuts (can’t wait!). The following are additional options to consider.],
-  [Those squash seeds you’ve been saving for, well, you’re not sure what? They belong on these Brussels sprouts — a tender, flavorful side to broaden the horizons of your favorite selective eater.],
-  [Stuffed Lumaconi with Butternut Squash and Chestnuts],
-  [Despite being very easy to make, this dish of stuffed pasta feels very special, and it hits all the seasonal flavor notes. Additionally, if there are vegetarians in your party, this has enough personality and substance that it can be presented as a special course for them.],
-  [Wondering what the secret is for purr-fect roasted potatoes, crispy on the outside, tender on the inside? It’s easy, and requires zero additional tools.],
-  [I know, I know. Everybody claims to have the key to perfect mashed potatoes. Just trust me on this one.],
-  [Jean-Anthelme Brillat-Savarin wrote that a dinner that ends without cheese is like a beautiful woman with only one eye ( Un repas sans fromage est une belle à qui il manque un oeil ). This strikes me now as both sexist and ableist (way to kill two birds with one stone, J. A.!), but in the context of his time it made sense I guess.],
-  [Point is, the French consider the cheese course with devotion, and take the utmost care in composing an assortment — use these French cheese tips to craft the perfect cheese board.],
-  [Pain au levain],
-  [A French holiday meal wouldn’t be French without good bread offered throughout the meal, with a fresh supply brought in for the cheese course. (No crackers with French cheese!)],
-  [Now, I’m not suggesting you bake your own pain au levain if you’re the one hosting the feast (burnout much?), but a homemade sourdough loaf such as this one would be a wowing item to bring to a meal hosted by someone else. You can even slash the top in your host’s initial, as I’ve been known to do .],
-  [You still with me? Take heart, we have just one more course to go!],
-  [Bûche de Noël],
-  [The Yule log is the typical dessert to end the Christmas meal. Traditionally topped with kitschy plastic decorations that children will noisily fight over — little Santas, dwarves or reindeers, tiny sleds and saws — and collect from year to year, they are either made of ice cream ( bûche glacée ) or with sponge cake and buttercream ( bûche pâtissière ).],
-  [As with any French dinner party, dessert is not something the host is expected to make him- or herself. Most French people will order a bûche from their corner pâtisserie, or buy it from a frozen food store such as Picard or the supermarket. (The trick then is to remember to thaw it well in advance, lest you serve your frozen bûche pâtissière as if it were a bûche glacée. \#ultimatefail.)],
-  [If you have lofty means and want to impress the in-laws, you can go the haute-pastry route and get the latest creation from your favorite celebrity pastry chef.],
-  [Raspberry Bûche de Noël],
-  [But. If you like simple and homemade best, I recommend this fresh and light bûche de Noël. It is really not difficult at all, and you can prepare it the day before and assemble it the day of. I’ve had readers report that it disappeared much faster than the fancy designer bûche that someone else had brought (sorry).],
-  [A delicate centerpiece and a total crowd-pleaser, this dacquoise has stolen the show at many a New Year’s Eve party. Again, the keyword here is freshness, with tart raspberries and a light filling nestled between moist layers of almond cake.],
-  [French Christmas Sablés with chocolate sorbet or chocolate mousse],
-  [Seasonal simplicity at its best. And who could say no to a butter cookie with a side of chocolate?],
-  [For those who prefer to forgo a desserty dessert, take a page from my aunt’s book and offer a platter of tropical fruits. In France, exotic fruits are played up more in the winter months, when the local produce mostly hibernates. A good in-between option is to serve this vibrant roasted pineapple, with coconut whipped cream.],
-  [Chocolate Mendiants and Treize Desserts],
-  [Mendiants — bite-size disks of dark chocolate studded with candied fruit and nuts — are a delicious nod to the tradition of Les Treize Desserts .],
-  [These “thirteen desserts” stem from Provence, in the south of France, the number thirteen representing Jesus and his twelve disciples. It takes the form of a large tray filled with goodies for guests to graze on after the meal. Pompe à huile (an orange blossom focaccia), oreillettes (fried dumplings), dried fruits and nuts (figs, raisins, dates, walnuts, hazelnuts, almonds), nougat (black and white), and fresh seasonal fruit (clementines, apples, pears). Beyond these traditional treats, you can add small chocolates — such as my mendiants or orangettes — marzipan, and other simple treats. These trays are traditionally put out for three days following Christmas, but they may not last that long.],
-  [Galette des Rois],
-  [As soon as the clock strikes midnight on December 31, pastry elves start stocking bakery shelves with these golden King’s Cakes, officially meant to celebrate the Epiphany on January 6. They are not, I repeat, they are not an appropriate dessert to offer at Christmas or New Year’s Eve. But if you’re hosting a gathering on New Year’s Day , then yes, go right ahead!],
-  [Did you dodge the hosting bullet this year, and are you looking for the perfect host(ess) gift ? I’m of the opinion that the most thoughtful presents are homemade and edible, from cookies to chocolate to flavorful spiced nuts, and here are my favorites.],
-  [How about you?],
-  [Have you ever taken part in, or even hosted, a French holiday meal? What was it like, and what were some of the most memorable French holiday dishes you tried?],
-  [\* Full disclosure: I’m not a big party person, and I hate having to find a cab ride home — or a Vélib’ — in the middle of the icy night on New Year’s Eve. To avoid that very situation, we hosted our own New Year’s Eve party for years, but now that we have children and the logistics are more complicated, my bliss is to stay home , watch a movie, eat roasted broccoli and dark chocolate (not together), and switch off the lights at (barely) midnight.],
-  [The post French Holiday Recipes appeared first on Chocolate & Zucchini .],
+  [Our spring has been less than exemplary, with record low temperatures and downpours. And in a country that loves (loves!) to complain about the weather, the season has turned into a total moan fest.],
+  [I usually try to steer clear of such discussions — is there anything less constructive than griping about something no one can control? — and just nod non-noncommittally whenever bad-weather comments are made. But in this instance, even I have to admit that boy, this May has felt a lot like a November .],
+  [And so, in order to bridge the gap between the expected season and the actual one, I decided to make a springtime pot-au-feu . It would combine the comforts of this epitomic cold-weather beef stew with the vibrancy of the first sprightly vegetables that have bravely managed to sprout and grow despite the unseemly meteorologic conditions: pencil-thin new carrots, baby fennel bulbs, green peas, and waxy little potatoes.],
+  [For a really good pot-au-feu, you need to cook the meat for a goooood loooong time — four hours is just about right — and you need to make it the day before you intend to serve it: this allows the flavors to deepen, and gives you a chance to skim some of the fat from the broth, making the whole dish lighter and more refined.],
+  [The classic wintry pot-au-feu typically includes leeks, carrots, turnips, celeriac, and potatoes, and sometimes cabbage, which are added to the meat as it cooks until they become very very tender. In my version, since the vegetables I wanted to feature were quick to cook, I first stewed the meat with the odds and ends I keep in the freezer for stock-making purposes, such as leek greens and fennel tops, to produce a flavorful broth in which to cook the star vegetables at the last minute.],
+  [The lovely, lovely thing about pot-au-feu is that is it meant to be served in two installments : first the broth, with fresh herbs and good crusty bread, and then the meat and vegetables, with more of the broth, strong mustard, and perky little cornichons\*.],
+  [Pot-au-feu is ordinarily a dish that I would cook for company, but this time I decided to make it just for us , with good meat I had purchased through the Ruche qui dit oui! . We got three splendid dinners out of it during a very busy week when it was a blessing to have our evening meals ready to reheat in minutes. (I will also note, if case you have a young child at home, that my one-year-old took to the dish like a duck to water; this currently holds his record for most food-related enthusiasm.)],
+  [\* You can even wedge in a third attraction by cooking marrow bones (one section per guest) in the broth for 30 minutes, and serving them with toasted bread after the broth and before the meat, sprinkled with fleur de sel and black pepper. Marrow bones may also be roasted in the oven at 200°C (400°F) for 25 to 30 minutes.],
+  [Have you tried this? Share your pics on Instagram!],
+  [Please tag your pictures with \#cnzrecipes . I'll share my favorites!],
+  [id="zlrecipe-innerdiv"\>],
+  [id="zlrecipe-prep-time"\>Prep Time: 20 minutes],
+  [id="zlrecipe-cook-time"\>Cook Time: 4 hours, 25 minutes],
+  [id="zlrecipe-total-time"\>Total Time: 24 hours],
+  [id="zlrecipe-yield"\> Serves 6.],
+  [class="instruction" id="zlrecipe-instruction-1"\>In a large soup pot or Dutch oven, place the meat and cover generously with cold water. Bring to a low simmer and cook for 1 hour, skimming the foam and scum regularly as they appear. After 1 hour, add the leek greens, carrot, fennel, garlic, onion, cloves, pepper, herbs, and salt. Add water to cover generously as needed, put the lid in place, and cook at a low simmer for another 3 hours. At this point, the meat should be fall-apart tender.],
+  [class="instruction" id="zlrecipe-instruction-2"\>Remove the meat and vegetables from the pot separately. Set the meat aside in a sealable container that you will place in the fridge once cool. (Some people throw away the vegetables, but I prefer to eat them that night, discarding any non-edible parts and eating them as is, or puréeing them with a touch of strong mustard.) Strain the broth slowly into a large container, making sure you leave behind the sand-like, scummy bits at the bottom of the pot. Let cool on the counter then place in the fridge overnight.],
+  [class="instruction" id="zlrecipe-instruction-4"\>Put the potatoes in a medium pan and cover with cold water. Add salt, bring to a simmer, and cook, covered, until the potatoes are tender -- 10 to 15 minutes depending on their size. Drain and cut the potatoes in half lengthwise. Set aside.],
+  [class="instruction" id="zlrecipe-instruction-5"\>Remove the fat that has collected at the surface of the broth. Return to the cleaned pot, and add the new carrots, baby fennel, and shallots. Bring to a simmer and cook for 15 minutes, until very tender. Taste and adjust the seasoning.],
+  [class="instruction" id="zlrecipe-instruction-7"\>While that's being enjoyed, add to the pot the reserved meat and potatoes, and the peas, and simmer for another 5 to 10 minutes, until the meat and potatoes are heated through and the peas are cooked.],
+  [id="zlrecipe-notes-list"\>],
+  [class="notes"\> About beef cuts: Ideally, you will ask your butcher for an assortment of cuts that includes some lean meat, some fatty meat, and some gelatinous meat. In the US, desirable cuts include short ribs, chuck, flank, brisket, rump, and round. In France, opt for macreuse, tendron, gîte, jarret, collier, plat de côte, or jumeau. I also included oxtail because I had it in the freezer.],
+  [https:\/\/cnz.to/recipes/meat-charcuterie/springtime-pot-au-feu-beef-stew-recipe/],
+  [id="zl-printed-copyright-statement"\>Unless otherwise noted, all recipes are copyright Clotilde Dusoulier.],
+  [The post Springtime Pot-au-feu Beef Stew Recipe appeared first on Chocolate & Zucchini .],
 ),
   insert-map: (:),
-  inline-pq: pull-quote([)   Game is also a popular choice, and it certainly leaves an impression.], [Anne Elder]),
-  inline-pq-idx: 29,
-  word-count: 2523,
+  word-count: 1277,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -174,21 +189,27 @@
 
 {
   #standard-article(
-  title: [Akari Brings Authenticity to New York’s Washed Sauna Scene],
-  author: [Adrian Madlener],
+  title: [Light, Space, and Proportion Coalesce in the Conrad Residence],
+  author: [Joseph Sgambati III],
   source-name: [Design Milk Architecture],
   images: (),
   paragraphs: (
-  [There are strong links between Japan and the Nordic region (a grouping of countries that includes much more than just Scandinavia). That’s especially true when it comes to sauna culture. Though the word is Finnish, translating as bathouse, the concept of pumping steam through enclosures firmly roots in Neolithic Greenland and Newfoundland. It’s been an integral part of daily life across these, especially frigid, Northern reaches for eons.],
-  [In Japan, sentō and onsen facilities have been around since the 1200s. While the former is generally defined as a communal bathhouse, the latter is specified as geothermal hot springs that are encircled by traditional inns.],
-  [Gaining popularity as an alternative, far less harmful, type of third place, saunas and other types of bathhouses have cropped up across bustling metropolises like London and New York. While many tout unique amenities—some more gimmicky than others—few of these highly publicized venues hold true to the Japanese traditions mentioned before.],
-  [Cue Akari , two immersive saunas in Williamsburg and Greenpoint, Brooklyn that are as comprehensive as they are unassuming. There’s no need for flashy light shows or poolside DJ-sets at these quaint, smartly outfitted wellness spaces. Comprising dry saunas, cold plunges, and quiet relaxation areas, both membership—non reservation—based venues champion the idea that New Yorkers should slow down more often and go to the bathhouse in order to reset rather than party. While the entirely renovated Williamsburg location features an incredibly rare outdoor cold plunge pool, the Greenpoint one was imagined in partnership with celebrated thermal consultant Kiel Moe .],
-  [International architecture firm Stroop Design staged the latter with intentional detailing. The aim was not to overpower the restorative act of saunaing with bold finishes or sculptural elements but to succinctly facilitate the experience with a consistent design vocabulary. Many of these accents—2 by 2 inch light green tiles—harken back to traditional sentōs. Tabletops laminated in washi paper by master craftsperson Hanato Watar were repurposed as wall art throughout.],
-  [Sparingly placed furnishings and fixtures are modestly modern, solidly made but light, reflecting the brand’s name Akari, which translates as light in Japanese. The idea here is to make saunaing a daily ritual—one that has both physical and mental benefits—and remove any of the social expectation or architectural fanfare that might make it feel like a chore.],
-  [To learn more about the creative synergy between Akari Sauna and Stroop Design, visit akarisauna.com and stroop.design .],
+  [Architecture often reveals itself most clearly when stripped back to its essentials. Space, light, proportion, and material—these enduring elements have shaped the discipline for centuries, yet they are rarely expressed with such quiet clarity as in the Conrad Residence in Malvern, a leafy suburb in Melbourne’s inner east. Designed by architect Paul Conrad of Paul Conrad Architects for himself, his wife, and their two children, the home operates as both a family dwelling and a distilled manifesto of the studio’s design philosophy.],
+  [The project began with patience. Conrad spent two years searching for a site that could capture the garden character of the neighborhood while offering northern orientation—an important condition in Australian architecture for maximizing natural light. The opportunity finally appeared during Melbourne’s extended COVID lockdowns, when the property was purchased through a Zoom auction and the design process quietly commenced.],
+  [From the outset, Conrad approached the house differently than many contemporary residential projects. Rather than allowing the façade or external form to drive the design, the project began with what he describes as “interior architecture”—the careful orchestration of spatial relationships, proportions, and views between rooms. In Conrad’s practice, this internal structure forms the connective tissue between architecture and interior design, determining how spaces feel, how light moves through them, and how occupants experience the home over time.],
+  [That internal logic ultimately shapes the home’s outward presence. From the street, the residence presents a restrained and almost reticent façade. Covered in Boston Ivy, the structure reveals little of itself beyond a limestone-clad portal framing a dark-stained oak door. The gesture is deliberate: an architectural quietness that allows the house to settle naturally into its established suburban context while hinting at classical proportion beneath its contemporary expression.],
+  [Inside, the architecture unfolds as a carefully balanced sequence of spaces—formal and intimate at the front of the home, more open and contemporary toward the rear. Conrad describes the aesthetic as one of deliberate contradictions: minimal yet rich, restrained yet bold, poised yet relaxed.],
+  [These tensions are expressed through spatial transitions. A study near the entry adopts a more classical sensibility, with tall steel-framed French doors emphasizing vertical proportion and symmetry. Part library and part gallery, the room functions as a creative retreat where Conrad develops his architectural work. Further into the house, the primary living, dining, and kitchen areas expand into a more fluid environment defined by floor-to-ceiling aluminum sliding doors that open toward the garden and northern sun. Here, architecture dissolves into landscape, with an oversized marble kitchen bench and custom brass pendant acting as sculptural anchors within the space.],
+  [The home’s material palette reinforces the same philosophy of restraint paired with richness. Limestone, Calacatta Paonazzo marble, aged brass, linen, silver leaf, and textured European oak form a tightly controlled vocabulary that appears throughout the house. Rather than polished perfection, the materials are chosen for their ability to age gracefully—limestone brushed to reveal its grain, oak floorboards hand-scraped and laid in varying widths, steel handrails beaten and blackened to emphasize their hand-crafted origins. Over time, Conrad expects these surfaces to accumulate patina, allowing everyday family life to become part of the architecture itself.],
+  [Light, meanwhile, becomes one of the home’s most expressive materials. A sculptural stair beneath an elliptical skylight draws daylight deep into the interior, while expansive glazing toward the garden blurs the boundary between inside and outside. Artificial lighting is equally deliberate, with adjustable LED systems calibrated room by room. In the gym, color temperature shifts from warm tones for yoga and meditation to cooler daylight for more energetic workouts; in the bedrooms, lighting subtly follows the rhythms of the day, echoing the natural cycle of the sun.],
+  [Programmatically, the residence unfolds across three levels. The ground floor holds the primary living spaces alongside Conrad’s study and a children’s art and study room. Four bedrooms and Katrina Conrad’s study occupy the upper floor, while the basement accommodates a gym, playroom, wine cellar, and parking. Landscape architect Paul Bangay designed the garden, where lawn, pool, and plantings extend the home’s spatial composition outward into the site.],
+  [Designing one’s own home presents its own set of challenges. While Conrad’s studio frequently works on expansive luxury estates, this inner-city block came with tighter spatial and budgetary constraints. The project was developed largely after hours, evolving slowly between professional commissions over a year of design and eighteen months of construction. Yet Conrad notes that working for himself also simplified the process: the brief was already instinctively understood.],
+  [Ultimately, the Conrad Residence reads less as a showpiece and more as a quiet architectural essay—an exploration of the enduring qualities that continue to define the discipline. Space, light, and proportion guide the experience, while materials deepen with time. The result is a home that does not attempt to shout its presence, but instead settles confidently into its surroundings, embodying the timeless ambition of architecture itself.],
+  [To explore more works by the designer’s eponymous firm, visit paulconradarchitects.com .],
+  [Photography courtesy of Timothy Kaye .],
 ),
   insert-map: (:),
-  word-count: 526,
+  word-count: 827,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -197,39 +218,19 @@
 
 {
   #standard-article(
-  title: [Stuffed Lumaconi with Butternut Squash and Chestnuts Recipe],
-  author: [clotilde],
-  source-name: [Chocolate & Zucchini],
+  title: [Be a Smart Traveler],
+  author: [Anne Gordon],
+  source-name: [Live Life Travel],
   images: (),
   paragraphs: (
-  [Buy Clotilde's latest book, The French Market Cookbook !],
-  [I will own up to it right then and there: I am an inveterate collector of pasta . Guilty as charged.],
-  [In fine food shops and Italian markets, I love to study the different shapes and imagine which will lend themselves to smooth sauces or chunky ones. I love their names (rooster’s crests, radiators, little ears, thimbles), the traditional packaging, and the fact that, for just a few euros, I can treat myself to a package of something novel — not to mention the promise of an easy meal.],
-  [Before I had children, I had to rein in my purchases, as my kitchen cabinets overflowed faster that Maxence and I actually ate pasta. But with two young boys who would eat it at every meal if I let them — their dream breakfast is cold leftover pasta, a recessive trait for sure — I am free to buy whatever I please, knowing I will easily find a use for it.],
-  [And I recently fell hard for a package of lumaconi , those large snail-shaped pasta sold in big bulging packages that scream “Buy me, I’m special!”],
-  [Lumaconi are the kind of pasta whose life pursuit is to be stuffed with a sauce and gratinéed in the oven for an immensely satisfying vegetarian main dish, or a festive side to a roast bird. And as the holidays approach, I thought I would suggest a simple, seasonal sauce of roasted butternut squash and chestnuts .],
-  [You sprinkle the whole thing with cheese so it will brown nicely…],
-  [… and you squeeze lemon juice over the top just before serving. You end up with a golden and appetizing dish that boasts al dente pasta, a silky sauce that sticks to the ribbed sides of the lumaconi, little pockets of melty cheese with chestnut bits, and a top layer that is toasted and crunchy and irresistible. (Keep an eye on the little cousins who may be tempted to eat just the top.)],
-  [It’s a recipe that is wowing but easy to make — the technique is straightforward, and many of the steps can be made in advance — and easy to live with — it’s lovely at room temperature, and almost tastes better reheated.],
-  [Have you tried this? Share your pics on Instagram!],
-  [Please tag your pictures with \#cnzrecipes . I'll share my favorites!],
-  [id="zlrecipe-innerdiv"\>],
-  [id="zlrecipe-prep-time"\>Prep Time: 30 minutes],
-  [id="zlrecipe-cook-time"\>Cook Time: 40 minutes],
-  [id="zlrecipe-total-time"\>Total Time: 1 hour],
-  [id="zlrecipe-yield"\> Serves 4.],
-  [class="instruction" id="zlrecipe-instruction-5"\>Measure 500 grams (2 cups) of the butternut purée into a medium mixing bowl (reserve the remaining purée for another use). Add the chestnuts, parsley, and 1/2 teaspoon salt. Grate the zest of the lemon finely into the bowl and mix thoroughly.],
-  [class="instruction" id="zlrecipe-instruction-7"\>In a large saucepan, bring water to the boil with some coarse salt and a drizzle of olive oil. Add the lumaconi and boil until just shy of al dente, about 10 minutes.],
-  [class="instruction" id="zlrecipe-instruction-12"\>Spoon about 1 tablespoon of the filling into each lumaconi, and arrange in the prepared dish, snugly but in a single layer. When you're done, dot the top of the lumaconi with any remaining sauce.],
-  [id="zlrecipe-notes-list"\>],
-  [If you have access to high-quality, ready-made puréed winter squash, you can use that in a pinch.],
-  [This recipe can be made with other kinds of large, stuffable pasta, such as tube pasta or conchiglioni.],
-  [https:\/\/cnz.to/recipes/pasta/stuffed-lumaconi-butternut-chestnuts-recipe/],
-  [id="zl-printed-copyright-statement"\>Unless otherwise noted, all recipes are copyright Clotilde Dusoulier.],
-  [The post Stuffed Lumaconi with Butternut Squash and Chestnuts Recipe appeared first on Chocolate & Zucchini .],
+  [LIVE LIFE TRAVEL • WWW. LIVELIFETRAVEL. WORLD],
+  [class="p3"\>Other tips: Wash your hands often, travel with hand sanitizer and wipes, pack more than enough of your prescription medication (you may want to carry an extra scrip on you as well), get your annual flu vaccine, drink bottled water/stay hydrated.],
+  [class="p4"\> Common Sense: The best advice that we could give any traveler today is to use plain old common sense. Be smart, be aware of your surroundings at all times and be prepared. Lock all doors and don’t go out alone at night (even on the beach).],
+  [class="p2"\>Leave your passports locked in your hotel safe; carry a copy on your person while in destination (we travel with both paper copies and have them backed up in the cloud on our mobile devices).],
+  [The post Be a Smart Traveler appeared first on Live Life Travel .],
 ),
   insert-map: (:),
-  word-count: 924,
+  word-count: 775,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -238,199 +239,254 @@
 
 {
   #standard-article(
-  title: [Spiced Pilau Rice with Beets Recipe],
-  author: [clotilde],
-  source-name: [Chocolate & Zucchini],
-  images: (),
-  paragraphs: (
-  [Buy Clotilde's latest book, The French Market Cookbook !],
-  [When I returned to Paris after two years of fabulous eats in California, one of the things I missed the most was good Indian food. Since India produces excellent engineers, many of them end up working for Silicon Valley companies, and we made friends with one of them who was kind enough to invite us to dinner now and then. His wife, a fine cook with no work visa , would then spend the day cooking for us, to our collective delight and eternal gratitude.],
-  [The memory of those meals has made me particularly fond of family-style Indian cooking , the kind you can practice at home without too much complication, and without chasing a million ingredients around the La Chapelle neighborhood\*. This may be paradoxical, but I find these dishes particularly welcome in colder months — probably because of the warmth of their flavors and the richness of their spices, as evidenced by today’s recipe.],
-  [What I want to share today is a super easy spiced pilau rice , a rice dish that you cook in a skillet. I add in diced beets, for the gorgeous color and the earthy sweetness, and to get a complete meal with just. one. pan. to clean. From beginning to end, it can be ready in twenty minutes (half an hour, tops) so it’s perfect for those weeknight dinners when you’re trying to decide if you’re more exhausted or famished.],
-  [Scoop this into a bowl, scatter a few fresh herbs and cashews on top, put a fork in it, and settle down in your favorite dinner chair. Deep breath… All is well now.],
-  [I want more India in my kitchen!],
-  [If you share my enthusiasm, I recommend this winter vegetable curry and this easy fish curry with tomatoes and coconut. And if you want to add an Indian cookbook to your culinary library, let me put in a good word for Meera Sodha’s absolutely charming Made in India .],
-  [[sc:cinnamon\_note]],
-  [\* The “Little India” neighborhood (actually more Sri Lankan) around the La Chapelle metro station, between the 18th and the 10th arrondissement of Paris, is home to dozens of restaurants and markets that should make you very happy.],
-  [Have you tried this? Share your pics on Instagram!],
-  [Please tag your pictures with \#cnzrecipes . I'll share my favorites!],
-  [id="zlrecipe-innerdiv"\>],
-  [id="zlrecipe-prep-time"\>Prep Time: 5 minutes],
-  [id="zlrecipe-cook-time"\>Cook Time: 15 minutes],
-  [id="zlrecipe-yield"\> Serves 4.],
-  [class="instruction" id="zlrecipe-instruction-0"\>Heat the coconut oil over medium heat in a large skillet. Add in the spices (fennel seeds, coriander seeds, mustard seeds, cardamom seeds) and heat for a few seconds, until they start to pop.],
-  [class="instruction" id="zlrecipe-instruction-6"\>Pour in the stock and bring to a simmer. Adjust the heat so it will remain at just a low simmer, cover, and cook without stirring until all the stock is absorbed; this will take 10 to 15 minutes depending on your rice.],
-  [class="instruction" id="zlrecipe-instruction-8"\>Taste for doneness (if the rice isn't cooked through, add a few tablespoons stock and cook for a few more minutes), adjust the seasoning, and serve, with a scatter of cashews and fresh herbs.],
-  [id="zlrecipe-notes-list"\>],
-  [Don't be intimidated by the spices I use here! They're excellent ones to keep in your spice rack, and if you buy them whole they will keep virtually forever. But if you don't have them right now, simply replace the spices with 2 teaspoons good-quality curry powder, and add it in with the rice (no toasting necessary).],
-  [If you want to substitute brown basmati rice, use 500 ml (2 cups) stock and allow to cook for 45 to 50 minutes, depending on your rice.],
-  [https:\/\/cnz.to/recipes/vegetables-grains/spiced-pilau-rice-beets-recipe/],
-  [id="zl-printed-copyright-statement"\>Unless otherwise noted, all recipes are copyright Clotilde Dusoulier.],
-  [The post Spiced Pilau Rice with Beets Recipe appeared first on Chocolate & Zucchini .],
-),
-  insert-map: (:),
-  word-count: 832,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-}
-
-{
-  #standard-article(
-  title: [French Christmas Cookies (Sablés) Recipe],
-  author: [clotilde],
-  source-name: [Chocolate & Zucchini],
-  images: (),
-  paragraphs: (
-  [Buy Clotilde's latest book, The French Market Cookbook !],
-  [Biscuits de Noël],
-  [Laurence is one of my best and oldest friends . I met her when I was fourteen, on our first day of high school, and soon we were inseparable, so alike in so many ways that people sometimes mistook us for sisters.],
-  [I loved going to her house after school. For one thing, there was a television there, which wasn’t the case at my parents’, so there was always the electrifying prospect of maybe catching one of those shows everyone else was watching at the time.],
-  [But aside from that, the house felt like a big happy place : Laurence had two (actual) sisters, and her mother, Christine, took care of small children at home, so there were a lot of comings and goings, conversations, people at the door, and girls shouting things down the stairwell.],
-  [Laurence and I would first drop by the bright kitchen and raid the cabinets to make ourselves a snack — the essential goûter — then we would dash up the two flights of stairs and shut the door of her room behind us so we could talk and talk and talk, the way fourteen-year-olds do.],
-  [There was often bread and nutella in that kitchen, or sometimes a yogurt cake , and also very good homemade vanilla yogurts made with whole milk. And every year, around Christmastime, there was a tin of biscuits de Noël that Christine had baked.],
-  [Thin, crisp, and delicately buttery with just a whisper of cinnamon, these were simple cookies , deceptively plain in appearance, but they made you close your eyes and listen to the tiny choir bursting into an aria inside your mouth.],
-  [A decade later, it finally dawned on me that I should just ask Christine for her recipe, which she kindly agreed to share. She noted that she made them just once a year , in the days leading up to Christmas, and I follow her lead, even though they’re such fantastic little sablés I would gladly inhale them year-round.],
-  [It is an easy recipe, which I’ve altered only marginally, lowering the sugar a little, adding salt, and replacing the tablespoon of rum with a tablespoon of my vanilla extract . The dough needs to rest overnight for the flavors to develop, and then it’s a simple matter of rolling it out thinly, cutting shapes, and baking batch after batch, while pretending to be in a movie about a small-scale cookie factory.],
-  [This year’s production is undoubtedly the tastiest I’ve ever baked: I made it with the flour they sell at the Poilâne bakery, the very same stone-ground flour they use for their bread, yes, but also their legendary punition cookies . As a result, my biscuits de Noël bear a strong flavor resemblance to them, which is exactly as I’d hoped.],
-  [Naturally, you could choose to ice the cookies if that’s your thing, but I am not a decorated cookie kind of girl, in case you hadn’t noticed, and I love the quiet look of these. And I think they make a lovely giftable treat as is, stacked in even little piles in a box lined with tissue paper.],
-  [And for more edible gift ideas , check these recipes:],
-  [~ Chestnut pecan biscotti ,],
-  [~ Homemade granola ,],
-  [~ Very ginger cookies ,],
-  [~ Chocolate clusters ,],
-  [~ Homemade vanilla extract ,],
-  [~ Matcha shortbread cookies ,],
-  [~ Chocolate-dipped hazelnut marbles ,],
-  [~ Homemade tisane mix ,],
-  [~ Rose or chocolate marshmallows .],
-  [Happy Holidays!],
-  [Have you tried this? Share your pics on Instagram!],
-  [Please tag your pictures with \#cnzrecipes . I'll share my favorites!],
-  [id="zlrecipe-innerdiv"\>],
-  [id="zlrecipe-prep-time"\>Prep Time: 1 hour],
-  [id="zlrecipe-cook-time"\>Cook Time: 12 minutes],
-  [id="zlrecipe-total-time"\>Total Time: 10 hours],
-  [id="zlrecipe-yield"\> Makes about twelve dozen (see note).],
-  [class="instruction" id="zlrecipe-instruction-0"\>Prepare the dough at least 8 hours in advance, and up to a day. In the bowl of a stand mixer fitted with the paddle attachment, combine the flour, sugar, cinnamon and salt. Add the eggs and the vanilla, and mix until combined.],
-  [class="instruction" id="zlrecipe-instruction-1"\>Add the butter, a small lump at a time, and mix until incorporated before adding the next. The dough will be soft; it will firm up in the fridge. (If you want to make the dough by hand, I recommend you imitate Lionel Poilâne in this video , as he demonstrates how he makes punitions .)],
-  [class="instruction" id="zlrecipe-instruction-3"\>Divide the dough in four equal(ish) pieces, shape each of them into a thick disk, cover with plastic wrap, and refrigerate for at least 8 hours, and up to a day.],
-  [class="instruction" id="zlrecipe-instruction-4"\>Line cookie sheets with silicone baking mats or parchment paper. (For optimal productivity, work with three cookie sheets, so at any given time you can have one in the oven, one that you're working on, and one that's cooling.)],
-  [class="instruction" id="zlrecipe-instruction-6"\>Remove one disk of dough from the fridge. On a generously floured work surface (ideally, marble, so the dough remains cold for as long as possible) and with a generously floured rolling pin, roll out the dough to a little under 3mm (1/8") in thickness. To prevent the dough from sticking to the work surface, the trick is to rotate it by a quarter of a turn between each pass of the rolling pin, and throw a little more flour underneath as soon as it seems like it wants to stick.],
-  [class="instruction" id="zlrecipe-instruction-7"\>Bonus tip: I use two chopsticks as "rails" under the rolling pin to roll out the dough evenly at first. I then remove them to roll out the dough more thinly.],
-  [class="instruction" id="zlrecipe-instruction-9"\>Cut out the shapes of your choice using a cookie cutter, and arrange them on a cool cookie sheet. The cookies won't really expand while baking, so it's okay to crowd them a little (within reason). Gather the scraps into a ball, handling it minimally to prevent overheating, and re-roll it as needed to cut out more shapes. If you find it is becoming too soft, place it back in the fridge to firm up again.],
-  [class="instruction" id="zlrecipe-instruction-10"\>Insert the cookie sheet in the middle of the oven and bake for 12 to 15 minutes, until pale golden. The cookies will still feel a little soft, though you should be able to lift one on the blade of a knife. If the cookie cutter shape you've used has weak points (such as the neck in the case of my little guys), let the cookies rest for 1 or 2 minutes on the baking sheet before transferring them to a rack to cool.],
-  [id="zlrecipe-notes-list"\>],
-  [class="notes"\>Naturally, the yield depends on the size of your cookie cutter: I used one that's 7 cm (2 3/4") in height, and got twelve dozen, for a total cookie weight of 960 grams (2 pounds 2 ounces).],
-  [https:\/\/cnz.to/recipes/cookies-small-cakes/christmas-sables-cookies-recipe/],
-  [id="zl-printed-copyright-statement"\>Unless otherwise noted, all recipes are copyright Clotilde Dusoulier.],
-  [The post French Christmas Cookies (Sablés) Recipe appeared first on Chocolate & Zucchini .],
-),
-  insert-map: (:),
-  word-count: 1354,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-}
-
-{
-  #standard-article(
-  title: [Feel-good Lunch Ideas],
-  author: [Heidi Swanson],
-  source-name: [101 Cookbooks],
-  images: (),
-  paragraphs: (
-  [Coming up with inspired lunch ideas takes some effort. One of the things I’ve been trying to be better about is lunches on-the-go. Often times, let’s be honest, it’s re-marketing leftovers. Too often, if we’re not going to be home for the day, we just wing it. And I’m nearly always sorry we didn’t make the effort to pack a good lunch. This is especially true if we’re on some sort of trip, towing the Airstream . Because on those days parking dictates where you’re lunching. And just thinking about it is making me cringe. So yeah, we’re trying to do better over here and I thought I’d share some recent wins.],
-  [Lunch Ideas \#1],
-  [These lunch boxes (above) came together pretty quickly. Nearly everything was a leftover, or component of a previous meal. To pull it together I peeled and chile-dusted the hard boiled eggs , sliced the avocado and sliced the mandarin.],
-  [1. Spicy Sesame Coleslaw : You’ve seen it before, you’ll see it again. Lol. It’s my favorite coleslaw , and I’ll basically tuck in anywhere. Feathery green and red cabbages along with carrots, apples, and scallions tossed with a spicy, creamy sesame dressing.],
-  [2. Pickled Cauliflower : The pop of color you need in your lunch. This quick pickled cauliflower delivers a good amount of tang and crunch in the midst of less structured components. I make mine with chiles, mustard seeds and slivered onion, but you can play around.],
-  [3. Chile-dusted Hard-boiled Egg: Here’s how to make these. Combine equal parts chile powder and MDH chana masala powder in a small bowl. I like to use this Kashmiri chillie powder , but use what you have (and like). Hard boil eggs , peel them, rinse, dab each egg a bit on a clean towel to take off excess water, then roll them around in the spice mixture until completely covered. Slice and serve, or pack into lunch.],
-  [4. Turmeric-Scallion Tofu Spread : This is actually leftover wonton filling from my last round of wonton soup . But it’s also great as a lettuce wrap filling, cracker and sandwich spread, and on its own. Here, I nestle it into a stack of 2-3 little gem leaves. Get the recipe – it’s the first part of the recipe on this page, minus the wrappers.],
-  [5. Red-spiced Edamame : I’ll write this up as its own recipe soon, it’s a homemade spice blend made by crushing Kashmiri chillies, smoked paprika, brown sugar, sesame, dried onion flakes, salt, and a kiss of cardamom together. Sprinkle generously. There are a lot of other spice blend ideas in the Spice / Herb / Flower / Zest PDF that members get. Just about any of those are great here. Experiment!],
-  [6. Pepita & Curry Leaf Tadka : I’ve definitely over-stripped my young curry tree making this lately. Toast a cup of pepitas and set aside. Heat 2 tablespoons of oil in a small saucepan over medium-high heat, stir in 50-ish fresh curry leaves. Continue to stir and when the leaves begin to crisp up add 2 teaspoons black mustard seeds. Keep stirring and when the seeds have toasted a bit and stopped popping, add 1/2 teaspoon chile powder. Pour this over your pepitas, toss well, and salt to taste. good on everything, Including the soba in the next lunch.],
-  [Also: purple rice, sliced avocado, mandarin wedge, nutritional yeast kale chips],
-  [Lunch Ideas \#2],
-  [The one component of the lunch boxes (above) that wasn’t made ahead of time, was the soba noodles. I boiled them, and ran them under cold water just before packing up.],
-  [6+. Soba with Pepita & Curry Leaf Tadka : The same pepitas as above (lunch ideas \#1), this time tangled with cold soba.],
-  [7. Vegan Tamagoyaki : This is a vegan version of tamagoyaki, the much-loved Japanese rolled omelette. I like to make chickpea-tofu version, and this one is lined with nori and seasoned with scallions and herbs. They’re fantastic lunchbox heroes because you can make and roll them ahead of time. They’ll keep for a few day so you can slice and go.],
-  [8. Blistered Artichoke Hearts : Leftovers from dinner the previous night. I cooked these from frozen. So easy, so good. I wrote a long post about how to cook artichokes – both fresh and frozen. So, if you love artichokes, but think they’re too much work, read this. Same goes if you think the frozen ones are going to be bad. They aren’t and they’re great in scenarios like this one, quick pastas, casseroles, etc.],
-  [9. Fava Beans Tossed with Citrus Olive Oil : These are fava beans that have been shelled, boiled for a flash, shelled again, and then splashed with a bit of lemon olive oil, and tossed with a pinch of salt. From previous dinner. I do the same with edamame, but favas are in season and I they’re worth all the shelling and peeling drama.],
-  [10. Kale Chips : Some extra crushed kale chips tossed with the remaining pepitas. My method for epic kale chips is this: buy curly kale, make sure it’s dry if you recently washed it. Toss the kale with olive oil and scrunch it all up with your hands, be sure it’s all coated. Toss with a lot of nutritional yeast, get a good coating going. Season with salt and bake at until the chips at the edges start browning. Toss well. Continue to bake until crispy but still mostly green. Or have a look at this kale chip recipe .],
-  [Also: blood orange wedges for dessert.],
-  [A Couple Pro-tips],
-  [There’s actually just one main tip, but I’ll add more as I think of them. Line your bentos with parchment paper for easy clean-up (pictured below). This isn’t as important with stainless steel containers, they clean up quite quickly. Bentos, often made of cedar, are a bit more fragile and take more care if you want them to last for many years. Also, clean up as soon as you get home. The reset is key to looking forward to your next special box lunch.],
-  [More Lunch Ideas: Salads!],
-  [Salads are another favorite lunch idea. For the best experience, keep the dressing on the side and toss just before eating. Also, pro-tip, leave a good amount of room or headspace in your salad vehicle, so tossing is contained and less messy. For to-go or desk salads, I love bringing the components for a Nicoise salad or Nicoise-ish salad. The lettuces and other ingredients can stand up to transportation and you get a great mix of protein, greens, and veggies all in one lunch. See photo below.],
-  [Bentos : I have (and love) my small collection of bento boxes. They’re beautifully crafted and fit the perfect amount of food. They often come with small dividers to create separation between food, but you can also use lettuce, or other small containers to divide things up.],
-  [Tiffins (or dhabbas) : These containers have long been used in India to enable healthful, homemade meals outside the home. I have a circular, triple-stack stainless steel version I love for a number of reasons including durability, compactness, and security. The tiers nestle tightly making spills and accidents unlikely. I have my eye on a rectangular version as well.],
-  [Both bentos and tiffins have a tradition of enabling meals made with care and love. And continuing this tradition is something I try to channel when I’m packing a lunch for myself or someone I care about.],
-  [I don’t mind mixing different types of lunch containers. And sometimes I’ll make an individual lunch for each person, each in its own container. But, other times I think it’s fine to load up a few family-style containers and do it that way. I think that works great for components that can be more communal, like edamame, or a bunch of dumplings, a stack of paratha, vegan sushi or quesadillas, quinoa patties , etc.],
-  [Hot Lunch!],
-  [Use a thermos to bring hot miso soup or tea or rasam or whatever else you can think of. This is always the icing on the cake and unfailingly makes me happy (or happier!) When I really have things lined up, I’ll bring green tea, miso soup, or soba tea and a durable glass or two wrapped in cloth. Simply rewrap when you’re finished.
- 
-I hope this provides a bit of inspiration! It’s really wonderful to take a bit of time to sit down to a thoughtfully prepared, healthful homemade lunch and I’m never sorry about making the extra effort (in the long run). Even if it can make a morning a bit more demanding than usual, I know when I do it, I’ll eat better, feel better, and get excited about sitting down to lunch. Enjoy! -h],
-  [Vegetarian Lunch Ideas : One Sauce, Three Lunches],
-  [Continue reading Feel-good Lunch Ideas on 101 Cookbooks],
-),
-  insert-map: (:),
-  word-count: 1511,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-}
-
-{
-  #standard-article(
-  title: [Chicory Soup],
-  author: [Heidi Swanson],
-  source-name: [101 Cookbooks],
-  images: (),
-  paragraphs: (
-  [class="p1"\> One of my favorite recipes in Near & Far was one I was worried people might skip over – a simple chicory soup with an unassuming barley base, crowned with a trio of toppings. I wanted to revisit it today because the chicory and radicchio in the markets is beautiful right now, and also because it was one of the recipes Russ Moore made when we had a party at Camino and the menu featured recipes from the book. I had a bowl of bessara along with some flatbread made by Russ a couple of weeks back and it reminded me of how much I love his cooking, and what a special place Camino was.],
-  [class="p3"\> Barley : I tend to use semi-pearled barley or farro here, I like the added starchiness. Russ used Anson Mill’s whole farro piccolo for the dinner and I loved it. The flavor of the grain was really nice and pronounced.],
-  [class="p3"\> Chicory / radicchio – Make this soup when chicories are in season. They’re cold weather enthusiasts so you’ll likely come across them in winter markets, and as winter shifts to spring. But also in fall some places. For this soup I like to use pretty varietals with good structure – pretty pink rosa del Veneto, Castelfranco radicchio, Chioggia, Lusia, etc.],
-  [class="p3"\> Preserved lemon : If you don’t keep preserved lemon on hand, but have a lemon, here’s a little hack I use (it’s in the back of Super Natural Simple ) . You can use it for the preserved lemon called for in the recipe. Use a peeler to trim the rind (no white pith) from the lemon. Mince the rind into small confetti-shaped flecks. Transfer to a small jar with a lid. Stir in 1/2 teaspoon of fine grain salt, and then top with as much lemon juice as you can squeeze from the lemon (no seeds). Top off the jar with a splash of white wine vinegar if needed to ensure the rind is covered. Let everything sit for 15 minutes before using.],
-  [class="p3"\> As you drive south on Oakland’s Grand Avenue toward Lake Merritt, on the right hand side, you’ll notice a beautiful exposed brick building. The lines are symmetrical, and the roof is tiled with waves of red terra-cotta. There are beautiful wood beams framing street-side windows expansive from sidewalk skyward. Camino was a special restaurant owned by chef Russ Moore and Allison Hopelain. It’s a place that told you a lot about the two of them through a whole range of details – some loud, others more quiet.],
-  [A wide open interior with long tables of family-style seating framed an open hearth where much of the cooking took place. Camino was always known for impeccably sourced ingredients made into meals prepared in open fire. It was also known for having great style – you would see it in everything from the food, to the cooking vessels, to the custom crown chandeliers, and the arches of hand-cut paper masks on the walls. Russ and Allison hosted a dinner at Camino to celebrate the release of Near & Far . They would do this on occasion, host an author, and bring people together for a meal related to a (typically) newly released cookbook title. For an author, it’s magic – to have a night where the Camino staff focuses on your recipes and cooking style, friends at every table.],
-  [class="p3"\> I’m threading in a collection of images from that night followed by a recipe for the chicory soup. Forever thanks to everyone who grabbed my camera and took photos that night while I was signing books – mostly Wayne . And if you’re interested in the legacy of Camino, be sure to track down a copy of This is Camino (2015). xo, -h],
-  [class="p10"\> A little side note, if you enjoy making soups as much as I do, consider making your own homemade bouillon powder . So easy, and nice to keep on hand!],
-  [Continue reading Chicory Soup on 101 Cookbooks],
-),
-  insert-map: (:),
-  word-count: 762,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-}
-
-{
-  #standard-article(
-  title: [25 Best Salad Recipes (That Are Actually Exciting)],
+  title: [Air Fryer Chicken Thighs],
   author: [Lindsay],
   source-name: [Pinch of Yum],
   images: (),
   paragraphs: (
-  [I LOVE a good salad. I get asked to bring salads to so many hangouts and holiday gatherings, and I am 100% happy about it every time because a good salad is so fun. They are just a big playground for flavors, textures, and color.],
-  [I love a side salad, a fancy salad, and a salad that counts as a meal. These are the ones my family comes back to again and again: crunchy, colorful, loaded with texture, and packed with lots and lots of punches of flavor. Obviously for me, it’s also ALL about the dressing. Give me all of it!],
-  [So here is my collection of 25 of my favorite salad recipes! The kind that make you want to put salad on the menu more often. 💛],
-  [class="tasty-roundups-description"\>OOOH BABY, this salad is so good! Crunchy kale and cabbage, fresh herbs and fresno peppers, chopped peanuts, and a perfect roasted peanut vinaigrette that tucks into all the salad nooks and crannies.],
-  [class="tasty-roundups-description"\>Paper-thin veggies, a shower of herbs, a pile of fried crispy red curry rice, and a limey garlicky vinaigrette all over top. This crispy rice salad is all I want to eat right now!],
-  [class="tasty-roundups-description"\>Crunchy, light, bright, and ultra-fresh. This French-inspired bistro salad is an absolute star as a side for nearly any dinner. Tender greens, fresh herbs, pickled onions, and a delicate vinaigrette on top.],
-  [class="tasty-roundups-description"\>This Beet and Burrata Salad is everything you need. Juicy beets and oranges, a creamy and luscious burrata scoop, peppery arugula, a quick vinaigrette, and crispy fried bread. SO MUCH YES!],
-  [class="tasty-roundups-description"\>This Napa Chicken Salad is crunched up to the MAX! Fresh napa cabbage, juicy rotisserie chicken, a super easy homemade sesame dressing, and crunchy handfuls of cashews, fried wonton strips, dried ramen noodles, crispy fried onions, or sesame sticks…the choice is yours!],
-  [class="tasty-roundups-description"\>We’re bringing you the most beautiful salad inspired by the restaurant Oliver’s in Minnesota. Tender salmon, savory peppers and garlic confit, buttery chunks of avocado, fire-roasted corn, bacon bits, and a river of homemade smoky ranch dressing.],
-  [class="tasty-roundups-description"\>This Cashew Crunch Salad is loaded up with crunchy veg, chow mein noodles, edamame, and roasted cashews and it’ll make you ACTUALLY WANT TO EAT A SALAD. And the sesame dressing – OMG!],
-  [class="tasty-roundups-description"\>A super fresh, super summery Lemon Herb Pasta Salad! Packed with tangy marinated chickpeas, chewy pasta, lots of herbs and garlic, lemon juice and olive oil, and a handful of parmesan to top it off.],
-  [class="tasty-roundups-description"\>Avocado Kale Caesar Salad is a life-changer! Kale, avocado, and crunchy seeds drenched in a quick creamy avocado caesar dressing that can easily be made vegan, too. Toss some crispy sweet potato fries in are you are SET FOR LIFE.],
-  [The post 25 Best Salad Recipes (That Are Actually Exciting) appeared first on Pinch of Yum .],
+  [Guys, I’ve been holding myself back from making these chicken thighs every single night. They’re so good. They go with almost anything, they’re extra juicy and crisped, and the kids and adults in my family BOTH approve!],
+  [I love them with so many things:],
+  [roasted potato wedges and a cucumber salad],
+  [a creamy pasta],
+  [a wrap, sandwich, or salad],
+  [a baked potato and some roasted veggies],
+  [just eating straight with a side of your favorite sauce! (all my favorite sauces here !)],
+  [The chicken is so so flavor-crusted and so finger-licking yummy that I still can hardly believe you can make it in the air fryer.],
+  [I have to fight my kids not to eat it all off the cutting board before it even makes it to the table.],
+  [If you’ve made our air fryer chicken breasts (also amazing), the flavor on these chicken thighs is more savory. The OG chicken breast recipe has a brown sugar and smoked paprika base, whereas this one has paprika, garlic and onion, and a bit of oregano.],
+  [I have been LOVING these with a smoky paprika aioli (I’ll include that in the recipe notes – it is so yummy). I am making myself hungry just thinking about it.],
+  [Hope you guys love it!],
+  [Optional, but I often cut off any little bits of fat that are on the edges of the chicken thighs.],
+  [Get those chicken thighs totally coated! Like so.],
+  [Place in a single layer in the air fryer to cook evenly!],
+  [Do a quick temp check – the inside should reach a minimum of 165 degrees (I use this meat thermometer to check).],
+  [My daughter and my husband couldn’t wait for me to finish the photos. 🙂 I like to chop the chicken into bite-sized pieces and squeeze a bit of lemon over the whole thing! So yummy.],
+  [5 Stars 4 Stars 3 Stars 2 Stars 1 Star],
+  [5 from 15 reviews],
+  [These air fryer chicken thighs are SO good. Super juicy, deeply golden, and ready in 15 minutes! Such an easy recipe that my whole family loves.],
+  [1.25 pounds boneless skinless chicken thighs],
+  [1 1/2 teaspoons paprika],
+  [1 teaspoon oregano],
+  [1/2 teaspoon garlic powder],
+  [1/2 teaspoon onion powder],
+  [3/4 teaspoon salt (I’ve been using a fine-grained table salt for this)],
+  [a few cracks of freshly ground black pepper],
+  [1 tablespoon olive oil],
+  [squeeze of lemon to finish],
+  [id="instruction-step-1"\> Trim the Chicken Thighs: Optional, but I usually cut off the little bits of fat (the chunkier white strips) from the edges of the chicken thighs.],
+  [id="instruction-step-2"\> Season the Chicken: Toss the chicken thighs with the spices and olive oil. For the best flavor, let it marinate anywhere from 15 minutes to 2-3 hours in the fridge. (Also fine to skip if you’re short on time!)],
+  [id="instruction-step-3"\> Air Fry Chicken: Air fry at 375 for 11-13 minutes, until deeply golden and a bit crisped on the outside, and at least 165 degrees Fahrenheit on the inside. (I use a meat thermometer to check!)],
+  [id="instruction-step-4"\> Slice Chicken: Transfer chicken to a cutting board. Let it rest for a few minutes; cut into bite-sized pieces. Squeeze lemon over the top if you want.],
+  [id="instruction-step-5"\> Serve: Serve with your favorite sauce (see notes for a smoky aioli that I love) , baked potato or roasted veggies, in a rice bowl, or on a salad!],
+  [Smoky Paprika Aioli (my current favorite sauce with this) : Whisk 1/2 cup mayo, 1/4 cup yogurt, 1 clove freshly grated garlic, 1/2 teaspoon smoked paprika, 2 tablespoons water, 1/4 teaspoon salt (more to taste).],
+  [Spice Coverage on The Chicken: Every package of chicken thighs is a slightly different size, so if your package is 1.5 pounds or more (or if you love a lot of spices), you may want to add a few extra shakes of spices to get more complete spice coverage!],
+  [Preheating the Air Fryer: I do not preheat my air fryer. I just put the chicken in, turn the air fryer on, and then make sure to use a meat thermometer to check that it’s completely cooked.],
+  [Lining the Air Fryer: I also don’t line the air fryer basket with anything. I just put the chicken thighs directly onto the grill grate.],
+  [Flipping the Chicken: I also do not flip the chicken thighs halfway through. I’ve tried it, but I like the texture better with just the top being crispy and the underside being a bit juicy. If you think you want both the top and bottom to be crisped up a bit, you can air fry for 8-9 minutes, then flip and cook for another 5 minutes to get both sides a bit crisped.],
+  [Keywords: air fryer chicken, air fryer chicken thighs, air fryer recipe],
+  [Did you make this recipe?],
+  [class="schema-faq-answer"\>Yes! Bake on a small sheet pan at 425 degrees for 20-25 minutes, or until the internal temperature reaches 165 degrees Fahrenheit. To get extra browning on the chicken thighs, turn on the broil setting for the last few minutes of cooking and move the pan closer to the top of the oven.],
+  [The post Air Fryer Chicken Thighs appeared first on Pinch of Yum .],
 ),
   insert-map: (:),
-  word-count: 1679,
+  word-count: 1360,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+}
+
+{
+  #standard-article(
+  title: [Weekend reading: National scandal],
+  author: [The Investor],
+  source-name: [Monevator],
+  images: (),
+  paragraphs: (
+  [What caught my eye this week.],
+  [C onsidering the high hurdle that politicians and business leaders have set themselves for something to be considered a sacking offence, I was surprised to see the boss of National Savings & Investments (NS&I) resign this week.],
+  [Of course, the NS&I FUBAR was a rough experience for the 37,500 people affected. NS&I’s mistakes saw bereaved families facing delays accessing their relatives’ Premium Bonds with a total value of up to £476m.],
+  [To give just one example from a BBC report :],
+  [Tracy McGuire-Brown from Newbury in Berkshire \[…\] took six years to claim £2,000 in premium bonds her late father had left in his will.],
+  [The 61-year-old former care home manager says she “cannot describe how upsetting and frustrating” it was to deal with NS&I, and that she had to send in her father’s will and other original documents at her own expense.],
+  [“It was the most awful, awful experience,” she says.],
+  [No doubt – and not what anyone wants to deal with in the wake of the death of a loved one.],
+  [However, NS&I has more than 24 million customers holding £240bn with the institution, so the number affected is relatively small. According to Which the problems were caused by administrative failures – bad, certainly, but not malicious. The long delay between problems emerging and NS&I coming clean is problematic, but again the scale of the operation mitigates this to some extent.],
+  [With all that said – and, again, not to make light of having to fight to get your own money back – I think the real reason boss Dax Harkins had to go was because NS&I is held to a higher standard than a typical High Street bank, on the basis of its 100% government backing.],
+  [Trust buster],
+  [I’ve often recommended NS&I savings or Premium Bonds to fretful – but essentially financially uninterested – friends and relatives looking for somewhere safe to put their cash. Especially after the financial crisis.],
+  [No worries about bank runs with NS&I, or Financial Services Compensation Scheme limits , or your savings somehow getting muddled up in riskier lending. Just okay interest rates, the infinitesimal chance to win big with ERNIE , and a recommendation made in the same vein as nobody getting fired for buying IBM .],
+  [Also, faith in NS&I’s systems underwrites the Premium Bond draw.],
+  [There are already conspiracies about which Bonds win and who gets what prizes. NS&I can do without incompetence creeping into the mix, too.],
+  [Further reading:],
+  [A terse apology from National Savings & Investments – NS&I],
+  [NS&I boss replaced as savers left waiting for millions of pounds – BBC],
+  [What caused the missing NS&I savings, and what you should do – Guardian],
+  [Another take on the scandal and next steps if you’re affected – Which],
+  [NS&I will have to pay compensation in some cases, say ministers – This Is Money],
+  [Have a great weekend.],
+  [Commodities are working – Monevator],
+  [The natural yield model portfolio wheels are turning – Monevator \[ Members \]],
+  [From the archive-ator: A plan to be financially independent in ten years – Monevator],
+  [World faces ‘stark and deep recession’, says BlackRock boss – This Is Money],
+  [Temporary petrol shortages possible at some pumps, warns ASDA – Guardian],
+  [How Trump and the oil price move in sync \[Charts\] – BBC],
+  [Reminder: the state pension age rises in April – Which],
+  [Buying UK housing most affordable since 2015 on price-to-earnings basis… – ONS],
+  […as London house prices drop again… – City AM],
+  […but rents are at an all-time high relative to incomes – Sky],
+  [Final candidates for seven new towns named – BBC],
+  [SpaceX’s mooted IPO valuation is in another orbit – Sherwood],
+  [Government defends landlord tax hikes as ‘fairer’ system – Property 118],
+  [FCA launches later life mortgage \[a.k.a. equity release\] study – Mortgage Strategy],
+  [Who ate all China’s stock market returns? \[Paywall\] – FT],
+  [Products and services],
+  [Disclosure: Links to platforms may be affiliate links, where we may earn a commission. This article is not personal financial advice. When investing, your capital is at risk and you may get back less than invested. With commission-free brokers other fees may apply. See terms and fees. Past performance doesn’t guarantee future results.],
+  [The savings accounts that will pay you up to 5% – Which],
+  [How to swap houses for your holidays – Guardian],
+  [Don’t rely on AI to find you the best savings deal – Which],
+  [Get up to £3,000 cashback when you open or switch to an Interactive Investor SIPP. Terms and fees apply, affiliate link – Interactive Investor],
+  [HSBC, Barclays, Nationwide, and Halifax hike mortgage costs – Yahoo Finance],
+  [Five-year mortgages now cheaper than two-year fixes again – Mortgage Strategy],
+  [Fixed-rate mortgages go above 5.5%, but 4% trackers are available – This Is Money],
+  [Get up to £1,500 cashback when you transfer your cash and/or investments to Charles Stanley Direct through this affiliate link . Terms apply – Charles Stanley],
+  [Natwest switch offer: £150, or £250 for Premier account – Be Clever With Your Cash],
+  [What are passkeys and why should you use them for security? – Oblivious Investor],
+  [The best and worst family deals at major UK attractions – Be Clever With Your Cash],
+  [Loft-style apartments for sale, in pictures – Guardian],
+  [Comment and opinion],
+  [Could the triple-lock be scrapped, and should it be? – This Is Money],
+  [Index funds work – Money Changes Everything],
+  [Echoes of history: what the oil shock means for your money \[Paywall\] – FT],
+  [Seven lessons from ‘enoughfluencers’ on how to live a simpler, happier life – Guardian],
+  [Yes you can beat the market by avoiding its worst days. But you won’t – Morningstar],
+  [Why are young people taking so many unwise financial risks? – Bloomberg Advisor Perspectives],
+  [Safe until crisis: what 300 years of wars reveals about government debt – CEPR],
+  [Your financial past isn’t true. Neither is your future – The Net Worthwhile Weekly],
+  [The quiet transformations that separate investors from stewards – Bogumil Baranowski],
+  [How to compare well – Mr Stingy],
+  [The woes of managing money for a friend or relative – Financial Samurai],
+  [Hendrik Bessembinder has updated his influential stock return study \[Research\] – SSRN],
+  [Naughty corner: Active antics],
+  [The big problem with UK investment trusts – City AM],
+  [VCTs brace for record season after ‘bonkers’ tax relief cut – This Is Money],
+  [The reality of setting up as a solo investment advisor – Flyover Stocks],
+  [Ex-US markets look a good bet for value investors… – Verdad],
+  […as Verdad’s founder Dan Rasmussen warns on private equity and more – Arena],
+  [In Elon Musk’s mind, SpaceX and Tesla have already merged – Sherwood],
+  [Tetra Pak: the shape of innovation – Quartr],
+  [Kindle book bargains],
+  [Or pick up one of the all-time great investing classics – Monevator shop],
+  [Environmental factors],
+  [Britain sets new wind power generation record – RE News],
+  [Green energy enquiries surge as households fear price spike – This Is Money],
+  [Plug-in solar panels to become legal in the UK – Which],
+  [Evan Davis: heat pumps work for me – BBC],
+  [Earth’s climate increasingly out of balance – World Meteorological Organisation],
+  [The carbon burden of US companies – Klement on Investing],
+  [An unstoppable mushroom is tearing through North American forests – BBC],
+  [Robot overlord roundup],
+  [So long, Sora – Spyglass],
+  [Human musicians are doomed – Klement on Investing],
+  [Inside China’s robotics revolution – Guardian],
+  [There will be no permanent underclass – Of Dollars and Data],
+  [Not at the dinner table],
+  [The world’s policeman is on the take – New York Times \[h/t Abnormal Returns \]],
+  [Treason in the futures market – Paul Krugman],
+  [There isn’t always a ‘long arc’ of morality – Noahpinion],
+  [Democracy watchdog finds Trump aiming for dictatorship – Guardian],
+  [There’s an information void at the heart of the Iran war – Bloomberg],
+  [The voter fraud fraud – The Bulwark],
+  [Off our beat],
+  [Cheap drones are reshaping the war in the sky – Reuters],
+  [Five years of lessons from running a bookstore – Ryan Holiday],
+  [“I escaped North Korea with my mum. But…” – BBC],
+  [The clock in our genes – Aeon],
+  [Scientists identify a speech trait that foreshadows cognitive decline – Science Alert],
+  [The indirect – and sometimes surprising – benefits of vaccines – Stat],
+  [Google search tips and hacks – Card Catalog],
+  [And finally…],
+  [“Human beings have a remarkable ability to accept the abnormal and make it normal.”],
+  [– Andy Weir, Project Hail Mary],
+  [Like these links? Subscribe to get them every Saturday. Note this article includes affiliate links, such as from Amazon and Interactive Investor .],
+  [The post Weekend reading: National scandal appeared first on Monevator .],
+),
+  insert-map: (:),
+  word-count: 1490,
+  edited-for-length: true,
+  debug-mode: false,
+)
+
+}
+
+{
+  #standard-article(
+  title: [How to Create Your Own Lightroom Presets (Step By Step)],
+  author: [Andrew S. Gibson],
+  source-name: [Digital Photography School],
+  images: (),
+  paragraphs: (
+  [The post How to Create Your Own Lightroom Presets (Step By Step) appeared first on Digital Photography School . It was authored by Andrew S. Gibson .],
+  [How can you create and save presets in Lightroom?],
+  [In this article, I’m going to take you through the simple process, step by step. By the time you’re done, you’ll be able to confidently make presets of your own – and I’ll even show you how to make and apply import presets for high-quality, lightning-fast edits.],
+  [Let’s dive right in.],
+  [There are mundane edits in Lightroom that you should carry out on almost every photo.],
+  [And you can save time by creating presets that perform these jobs automatically upon import. That way, you don’t have to do editing later.],
+  [In other words: I highly recommend you apply presets to pretty much every photo you take.],
+  [(You can also apply presets during the editing process, but you’ll want to use these more sparingly.)],
+  [The fact is that RAW photos need edits to look good. And presets will help you do those edits faster than a standard editing workflow. Look at this unedited RAW file:],
+  [class="wp-block-image wp-image-83135 size-full is-style-with-caption"\>
+ A straight-out-of-camera RAW file from an EOS 5D Mark II. This is the sort of image you’ll see when you import images into Lightroom without applying a Develop preset.],
+  [And look at it after applying a simple preset:],
+  [class="wp-block-image wp-image-83136 size-full is-style-with-caption"\>
+ The same photo, but with the Profile set to Landscape , lens corrections applied, chromatic aberrations removed, and white balance set to Auto . This is what you would see after importing the photo into Lightroom if you applied an import preset similar to the one I show you how to make in this article. The biggest benefit is that it saves you time.],
+  [That’s what I’m going to teach you how to do in the next section:],
+  [Create a simple preset that you can apply upon importing. But note that you can use these instructions to create a preset of any type, whether you plan to apply it on import or not.],
+  [Now let’s take a look at the simple instructions for making a useful Lightroom preset:],
+  [Start by selecting the photo you plan to use as your preset base. Open it in the Lightroom Develop module.],
+  [Hit the Reset button to zero out any existing settings:],
+  [(You may find it helpful to make a Virtual Copy of the photo first so you don’t undo any edits you have already made; you can do this by right-clicking on the image, then selecting Create Virtual Copy .)],
+  [Next, you’ll need to pick a Profile . Think of this as a starting point or base layer, on top of which you’ll make all your edits.],
+  [So head up to the Basic panel and click to open the Profile fly-out menu:],
+  [Lightroom’s default Profile is Adobe Color , and this is where I often leave my photos – but if you’re a frequent landscape photographer, you might try Adobe Landscape , portrait photographers might try Adobe Portrait , and black and white photographers might try Adobe Monochrome . Really, it’s all about experimenting. Test out a few options and see what you like!],
+  [Remember that, even if you save a profile as part of a preset, you can always change it after applying the preset if you decide it doesn’t work for a particular shot.],
+  [(Also, note that your Profile options may vary depending on your camera, so if you can’t find one of the options I suggested, don’t worry; you probably have other cool Profiles to try out instead.)],
+  [If you shoot a number of different genres or in a number of different styles, or if you simply like several profiles, you might consider creating a preset for each one!],
+  [Most shots suffer from slight issues due to lens aberrations. The specifics depend on your lens, which is why Lightroom comes with profiles for a huge number of lenses:],
+  [So head down to the Lens Corrections panel and check Enable Profile Corrections :],
+  [If Lightroom offers a profile matching your lens’s make and model – and it almost certainly will! – the profile corrections will be applied automatically.],
+  [I’d also recommend checking Remove Chromatic Aberration , which will get rid of fringing (which you pretty much always want to do!).],
+  [Now it’s time to look at the Basic panel. Make sure the white balance is set to As Shot :],
+  [And make sure all the other sliders are zeroed :],
+  [If you’re a fan of Lightroom’s automatic settings, you can hit the Auto button. This will automatically set the exposure, contrast, highlights, shadows, whites, and blacks, along with the vibrance and saturation . I don’t do this myself, but if it’s helpful to you, then go ahead and try it!],
+  [Also, if you shoot a mix of color and black and white, consider creating one preset for color photos and a second preset for black and white shots . Simply set the Treatment to Black & White :],
+  [Now it’s time to actually make a Lightroom preset. The process is extremely simple:],
+  [Make sure you’re in the Develop module, then click the Plus icon next to the Presets panel:],
+  [And select Create Preset :],
+  [The New Develop Preset window should come up:],
+  [Give your preset a name and select a folder to save it in:],
+  [Then select the settings you’d like to save as your preset. Hitting Check All works fine if you’re creating the preset I discussed above – though if you’ve decided to create a more targeted editing preset, you may want to only check certain boxes.],
+  [Finally, once you’re ready to save your preset, press Create :],
+  [And t hat’s it! It’s a simple process that doesn’t take very long and can save you a lot of time when importing or editing your photos.],
+  [To apply the preset you just created upon importing your photos, launch the Import window:],
+  [Then head over to the Apply During Import panel and set the Develop Settings menu to the appropriate preset:],
+  [(This is where creating several presets helps saves time, as you can pick the best preset for the photos you are importing.)],
+  [Then, when you click the Import button, Lightroom applies the settings from your selected preset!],
+  [While you’re in the Import window, it’s worth setting up another preset to automatically add copyright information to photo metadata upon import .],
+  [So g o to the Metadata menu in the Apply During Import panel and select New .],
+  [Lightroom will open the New Metadata Preset window, where you can add information such as your name and copyright details :],
+  [So give the preset a name, then click the Check Filled butto n (so the relevant boxes are checked as you go along):],
+  [Under IPTC Copyright , set Copyright Status to Copyrighted and fill in the other fields appropriately (my entries are shown below).],
+  [Under IPTC Creator, add your name, website, email address, and any other appropriate details. Personally, I leave out my address – I move around a lot so it’s constantly changing (plus identity theft is a risk).],
+  [Click Done when you’re finished. Then, when you import photos, simply select the preset from the Metadata menu:],
+  [Hopefully, you’re now ready to create Lightroom presets of your own (and you have some ideas for useful presets).],
+  [That way, you can save time and speed up your workflow!],
+  [Now over to you:],
+  [What kind of presets do you plan to create? How do you plan to use them on your photos? Share your thoughts in the comments below!],
+  [The post How to Create Your Own Lightroom Presets (Step By Step) appeared first on Digital Photography School . It was authored by Andrew S. Gibson .],
+),
+  insert-map: (:),
+  word-count: 1455,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -483,105 +539,208 @@ I hope this provides a bit of inspiration! It’s really wonderful to take a bit
 
 {
   #standard-article(
-  title: [Still Life Photography: The Ultimate Guide (+ 9 Tips)],
-  author: [Lea Hawkins],
+  title: [A Layered Modern Farmhouse Takes Shape in North Vancouver],
+  author: [Leo Lei],
+  source-name: [Design Milk Architecture],
+  images: (),
+  paragraphs: (
+  [Two neighboring lots in North Vancouver, British Columbia, were combined into a single ground plane where a main residence, a pool house, and a greenhouse sit not as standalone buildings but as moments within one continuous landscape. Designed by Garret Cord Werner Architects with interiors by HB Design , landscape by Donohoe Living Landscapes , and built by Meister Construction , the project treats architecture, interiors, and terrain as a single continuous material argument – one where no element claims hierarchy over the others and every threshold between inside and outside is deliberately blurred.],
+  [Roughly 6,100 square feet of built space splits between a three-level main house at 4,235 square feet and a 1,870-square-foot pool house. No corridor or breezeway connects them – only an alley that the landscape plan transforms into a true threshold. When the interior gates open, a view corridor cuts cleanly through both properties toward the North Shore mountains. The greenhouse and vegetable planters face the public lane, while boulevard plantings extend beyond the property line, softening the transition between private residence and neighborhood street.],
+  [For Ryan Donohoe, founder of Donohoe Living Landscapes, that gesture was intentional. “I’m quite opposed to landscapes that completely block out the neighbors,” he says. “Treating the laneway as part of the design allowed the landscape and its functionality to anchor into the local community rather than shutting it out.” Instead of a conventional fence line, the team developed a layered system of clipped hedging and sculptural metal screening that modulates privacy while guiding views through the site.],
+  [Materially, the garden mirrors the architecture’s restrained palette. Basalt paving and concrete define the pool deck, red cedar fencing adds warmth, and powder-coated steel forms pergolas, gates, and fire elements. A metallic bronze finish ties these elements together. “It’s a bit of a chameleon,” Donohoe notes. “From some angles it reads almost black, while from others it shifts toward a light brown that harmonizes with the brick and greenery.”],
+  [Planting reinforces the sense of a landscape still unfolding. Native species dominate much of the site, while the pool garden introduces a layered composition of Japanese maples, tassel ferns, forest grass, smoke bush, and switch grasses. Over time, these plantings will thicken into a lush envelope around the architecture. “The hardscape is extremely precise,” Donohoe says, “but the softscape is designed to grow into itself, creating layers that cool the ground and bring a sense of calm away from the busyness of modern living.”],
+  [The modern farmhouse vocabulary of brick, wood slat, and expansive glazing finds its counterpoint in HB Design’s interior strategy. Partner Shannon Bradner led the interiors alongside principal Jennifer Heffel, joining the project at an advanced stage yet delivering a remarkably coordinated drawing package.],
+  [“The architecture already had a strong presence,” Bradner explains, “so our goal was to soften that rigor through layers of natural materials and subtle tonal shifts.” The palette remains neutral and earthy, drawn from the surrounding North Shore landscape, but the interiors reveal themselves through texture rather than color alone. Porcelain tile, quartzite, and carefully selected woods were chosen for how they capture and shift light throughout the day while complementing the brick exterior.],
+  [The sourcing process stretched across several months, calibrating undertone and grain so that materials feel timeless rather than trend-driven. Custom millwork integrates storage directly into the architecture, minimizing visual clutter while highlighting natural surfaces.],
+  [The three-level main house organizes family life across an open-plan ground floor with bedrooms above, while the basement introduces a guest suite for visiting family and friends. Across the alley, the pool house acts as a social hub, its sliding glass doors opening onto a sunken lounge and pool deck. A gym, spa, and private office occupy quieter corners of the structure.],
+  [For Meister Construction, maintaining the clarity of the design intent was central to the build. “Our objective was to protect the design vision while delivering a home that feels calm, coherent, and enduring,” says owner Gordon Gildemeister. Close coordination between consultants and trades allowed details to be resolved through mockups and sequencing rather than on-site improvisation.],
+  [Durability also guided many decisions. Natural materials were selected not only for their character but for how they weather over time in the Pacific Northwest climate. “Assemblies need to manage water and movement properly,” Gildemeister explains. “Our goal is a house that performs reliably and becomes easier – not harder – to own over time.”],
+  [Seen together, the architecture, interiors, and landscape resolve into a quiet thesis on West Coast living – one that privileges light, durability, and a generous relationship to the outdoors. Or, as Donohoe puts it: “modern living set into a West Coast vernacular where outdoor life matters just as much as what happens inside.”],
+  [View more information on HB Design’s website .],
+),
+  insert-map: (:),
+  word-count: 800,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+}
+
+{
+  #standard-article(
+  title: [Chipotle Cumin Roasted Almonds Recipe],
+  author: [clotilde],
+  source-name: [Chocolate & Zucchini],
+  images: (),
+  paragraphs: (
+  [Buy Clotilde's latest book, The French Market Cookbook !],
+  [I am ordinarily immune to the pre-holiday rush everyone talks about. I am not in charge of cooking an elaborate Christmas meal (I contribute but don’t host), I don’t attend a trillion holiday functions, and we don’t go crazy with the presents in my family, so the lead-up to the holidays isn’t significantly busier than other times of the year.],
+  [For some reason though, the end of this year has felt particularly intense . Not with holiday-related stuff, but with various work projects I was striving to complete before taking a little time off to cuddle up at the foot of the Christmas tree and sip hot cocoa while humming Petit Papa Noël (you’re welcome).],
+  [Of course, when you’re a freelancer, having a lot of work is something to rejoice — not complain — about, but what it means is that I have had zero time to get my act together and prepare edible gifts as I aspire to.],
+  [Fortunately I have a few tricks up my sleeve, and just a couple of days ago I decided I was going to be giving little bags of the chipotle cumin roasted almonds I’ve been making for myself (and love love loving) lately.],
+  [They are a great example of something simple and easy that is still absolutely lovely to receive: few people actually take the time to make their own spiced and roasted nuts, yet they are so much tastier homemade than store-bought. They disappear in an instant when you offer them with a pre-dinner cocktail, and I also love to nibble on them in the afternoon, or chop them coarsely and add them to my lunch salads.],
+  [So if you’re sitting here wondering whether there’s still time to whip something up before the gift-giving commences, chances are there is: all you need is a handful of pantry ingredients and half an hour.],
+  [And if you want more edible gift ideas , here is a selection from the Chocolate & Zucchini archives:],
+  [A pretty jar of Easy Candied Nuts , which you can then coat with chocolate as per this recipe ,],
+  [A batch of Christmas Sablés using your favorite cookie cutters,],
+  [A nice bag of Homemade Granola or Savory Granola ,],
+  [A jar of Lightly Salted Crunchy Almond Butter .],
+  [– A batch of Almond and Orange Blossom Croquants ,],
+  [– A box of Ginger and Almond Chocolate Clusters ,],
+  [– Some Spiced Chocolate Peanut Butter using your very own mix of spices,],
+  [– The ever-delicious Yves Camdeborde’s Sablés (these are what I made and gave away last year).],
+  [Join the conversation!],
+  [Have your pre-holiday weeks been crazy or cozy? And are you on top of your game with edible presents this year? What’s your favorite last-minute food gift to make?],
+  [Happy Holidays!],
+  [Have you tried this? Share your pics on Instagram!],
+  [Please tag your pictures with \#cnzrecipes . I'll share my favorites!],
+  [id="zlrecipe-innerdiv"\>],
+  [id="zlrecipe-prep-time"\>Prep Time: 5 minutes],
+  [id="zlrecipe-cook-time"\>Cook Time: 15 minutes],
+  [id="zlrecipe-total-time"\>Total Time: 20 minutes],
+  [id="zlrecipe-yield"\> Makes 4 cups; enough for 3 food gift recipients.],
+  [class="ingredient" id="zlrecipe-ingredient-3"\>1 to 2 teaspoons ground chipotle , depending on how hot you want them (I buy it at L'Epicerie de Bruno ; you can substitute smoked paprika , preferably hot, or any other mild, ground chili)],
+  [class="instruction" id="zlrecipe-instruction-1"\>Place the almonds on a rimmed baking sheet. Drizzle with the olive oil (it helps the seasoning to adhere and the almonds to roast evenly), and add the salt, chipotle, and cumin. Stir until evenly coated; I find it's easiest to do this with your (clean) hands. Taste one almond and adjust the seasoning. Spread the almonds out in a single layer and insert the baking sheet into the oven.],
+  [id="zlrecipe-notes-list"\>],
+  [https:\/\/cnz.to/recipes/appetizers/chipotle-cumin-roasted-almonds-recipe/],
+  [id="zl-printed-copyright-statement"\>Unless otherwise noted, all recipes are copyright Clotilde Dusoulier.],
+  [The post Chipotle Cumin Roasted Almonds Recipe appeared first on Chocolate & Zucchini .],
+),
+  insert-map: (:),
+  word-count: 801,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+}
+
+{
+  #standard-article(
+  title: [Akari Brings Authenticity to New York’s Washed Sauna Scene],
+  author: [Adrian Madlener],
+  source-name: [Design Milk Architecture],
+  images: (),
+  paragraphs: (
+  [There are strong links between Japan and the Nordic region (a grouping of countries that includes much more than just Scandinavia). That’s especially true when it comes to sauna culture. Though the word is Finnish, translating as bathouse, the concept of pumping steam through enclosures firmly roots in Neolithic Greenland and Newfoundland. It’s been an integral part of daily life across these, especially frigid, Northern reaches for eons.],
+  [In Japan, sentō and onsen facilities have been around since the 1200s. While the former is generally defined as a communal bathhouse, the latter is specified as geothermal hot springs that are encircled by traditional inns.],
+  [Gaining popularity as an alternative, far less harmful, type of third place, saunas and other types of bathhouses have cropped up across bustling metropolises like London and New York. While many tout unique amenities—some more gimmicky than others—few of these highly publicized venues hold true to the Japanese traditions mentioned before.],
+  [Cue Akari , two immersive saunas in Williamsburg and Greenpoint, Brooklyn that are as comprehensive as they are unassuming. There’s no need for flashy light shows or poolside DJ-sets at these quaint, smartly outfitted wellness spaces. Comprising dry saunas, cold plunges, and quiet relaxation areas, both membership—non reservation—based venues champion the idea that New Yorkers should slow down more often and go to the bathhouse in order to reset rather than party. While the entirely renovated Williamsburg location features an incredibly rare outdoor cold plunge pool, the Greenpoint one was imagined in partnership with celebrated thermal consultant Kiel Moe .],
+  [International architecture firm Stroop Design staged the latter with intentional detailing. The aim was not to overpower the restorative act of saunaing with bold finishes or sculptural elements but to succinctly facilitate the experience with a consistent design vocabulary. Many of these accents—2 by 2 inch light green tiles—harken back to traditional sentōs. Tabletops laminated in washi paper by master craftsperson Hanato Watar were repurposed as wall art throughout.],
+  [Sparingly placed furnishings and fixtures are modestly modern, solidly made but light, reflecting the brand’s name Akari, which translates as light in Japanese. The idea here is to make saunaing a daily ritual—one that has both physical and mental benefits—and remove any of the social expectation or architectural fanfare that might make it feel like a chore.],
+  [To learn more about the creative synergy between Akari Sauna and Stroop Design, visit akarisauna.com and stroop.design .],
+),
+  insert-map: (:),
+  word-count: 526,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+  #pull-quote([While the former is generally defined as a communal bathhouse, the latter is specified as geothermal hot springs that are encircled by traditional inns.], [Adrian Madlener])
+
+}
+
+{
+  #standard-article(
+  title: [Red Gomashio],
+  author: [Heidi Swanson],
+  source-name: [101 Cookbooks],
+  images: (),
+  paragraphs: (
+  [Gomashio is a simple Japanese seasoning made from toasted sesame seeds and salt. It adds crunch, nuttiness, and added nutrients from the sesame seeds. A few years ago I started making a red version and it quickly became a kitchen staple. Dense with sesame, dynamic with chile powder and smoked paprika, the wildcard ingredient is green cardamom. Fragrant cardamom seeds are ground with mortar and pestle along with some of the sesame and the resulting blend of spices really sings – especially when it hits something hot. And while not at all traditional, you can use it in many of the same ways you might use a more traditional version of goma (sesame) shio (salt).],
+  [class="p1"\> Cardamom : Your cardamom seeds should be fragrant when crushed. You can buy cardamom in different forms – whole cardamom pods, cardamom seeds, ground cardamom seeds. For this recipe you want to start with pods or whole seeds. If you buy the seeds, it’s a bit of a shortcut and you can simply pounds them in a mortar and pestle, or grind them in a clean pepper grinder. If you start with seeds you’ll need about 1/4 teaspoon for this recipe.
+ 
+My friend Wendy gifted me a few beautiful glass jars of spices last week (her calligraphy!), and looking at the cardamom I took it as a sign to make a fresh round of red gomashio.],
+  [class="p1"\> Sesame Seeds : I typically keep unhulled sesame seeds on hand, and that’s what I use here. Fresher is better. You want to keep sesame seeds in an airtight container, out of direct light, preferably refrigerated if you don’t go through them quickly.],
+  [class="p1"\> Onion : I prefer to use dried onion flakes here, but they can be tricky to find. Onion powder does the job as well, and is available in most stores. That said, if you plan ahead, one of my favorite ingredient discoveries lately is the toasted onion powder from Burlap & Barrel (not sponsored, just a fan). It’s good in place of the dried onion flakes here.],
+  [class="p1"\> Salt : I like to use flaky sea salt here, you can kind of crush it with your fingers into small, irregular shapes that are nice. Alternately, pink Himalayan sea salt pounded a bit with a mortar and pestle is a nice alternative.],
+  [class="p1"\> Chile powder : I like to use Kashmiri chile powder here. It has a vibrant spiciness, fruity notes, and for the electric color (!) it brings. If you want to use another chile powder, add it gradually as your final ingredient, adding more until the overall blend is to your liking.],
+  [class="p1"\>This is a wildly adaptable seasoning. I love it sprinkled over labneh and drizzled with a finishing extra virgin olive oil. It’s good sprinkled over homemade pasta tossed with a generous amount of butter or olive oil, some Parmesan, and whatever fresh herbs you have on hand. It’s A-plus on a baked potato (or mashed potatoes omg). Or sprinkled across a plate of hard-boiled eggs . Basically it’s an easy way to make everyday staples a bit special. You see it sprinkled above on onigirazu, it’s equally at home on rice bowls, onigiri, and soba bowls. I also love to sprinkle it all over guacamole before serving. I could go on and on, basically keep it on your counter and use it constantly.],
+  [Here are a few process shots and visual cues in case you need them.],
+  [Grind the cardamom : This is the texture you’re after when grinding the cardamom seeds. A bit of texture along with a fine grind. It’s the grind I go for when grinding black pepper.],
+  [Grind some of the sesame seeds : If you have a suribachi , this would be the time to use it – I bought this one by Colleen Hennessey for Permanent Collection years ago and it’s one of my prized kitchen possessions. But a mortar and pestle works nicely as well (pictured). Then you add the rest of ingredients.],
+  [Add the rest of the toasted sesame seeds : Stir in the rest of the seeds and then adjust the seasoning to your linking with more chile powder, brown sugar, salt, etc. Keep it on your counter and sprinkle with enthusiasm!],
+  [Continue reading Red Gomashio on 101 Cookbooks],
+),
+  insert-map: (:),
+  word-count: 756,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+  #pull-quote([class="p1"\>  How To Use Red Gomashio  class="p1"\>This is a wildly adaptable seasoning.], [Heidi Swanson])
+
+}
+
+{
+  #standard-article(
+  title: [How to Use Camera Memory Cards: 18 Essential Tips],
+  author: [Darren Rowse],
   source-name: [Digital Photography School],
   images: (),
   paragraphs: (
-  [The post Still Life Photography: The Ultimate Guide (+ 9 Tips) appeared first on Digital Photography School . It was authored by Lea Hawkins .],
-  [Ever looked at a simple fruit bowl and wondered if it could be something more? Well, it can! Still life photography is all about transforming ordinary objects into visual art, and it comes with an array of powerful advantages:],
-  [It’s highly accessible (you can do it in your own home!)],
-  [It doesn’t require ultra-expensive gear],
-  [It’s not nearly as hard as it might seem],
-  [I’ve been taking still life images for years, and in this article, I offer everything you need to improve your shots. I cover all the key elements including lighting, composition, and editing – so that, no matter your level of experience, you’ll be ready to shoot some amazing still life photos of your own.],
-  [Let’s get started.],
-  [Still life photography is an art form that involves capturing inanimate objects. This can include anything from a bowl of fruit to a carefully arranged collection of antique tools.],
-  [The appeal of still life photography lies in its accessibility and its potential for immense creativity. With complete control over all elements, from lighting to composition, you can turn ordinary objects into something extraordinary.],
-  [Seeing everyday objects through an artistic eye is the essence of still life photography. It’s about finding beauty in the mundane and ordinary. Whether you’re a professional photographer or just starting, still life photography invites you to see the world anew, and it’s a wonderful way to explore your creativity!],
-  [You don’t need to spend a fortune to get started with still life photography. An entry-level mirrorless camera or DSLR will work just fine. These camera types provide more control and flexibility compared to simple point-and-shoot models. Paired with a close-focusing lens , they allow you to capture sharp images of your subjects that you can edit, print, and hang on your wall.],
-  [A tripod is another important item, and while not every still life photographer works exclusively with a tripod, it’s a great piece of equipment to obtain. Even a slight camera movement can change the focus and composition, so a tripod will help streamline your workflow. More importantly, it’ll keep your camera steady, which is crucial for achieving clear, sharp images in low light conditions.],
-  [Other useful accessories include reflectors to reduce shadows and diffusers to handle too-harsh lighting.],
-  [That said, you don’t need to go gear-crazy; the key is to understand that quality images don’t necessarily come from expensive gear. With the right basic tools, beautiful still life images are entirely within your reach.],
-  [Manual mode is where you want to begin in still life photography. Working in this mode gives you ultimate control over your image, allowing you to fine-tune the aperture, ISO, and shutter speed. With control over these settings, your creativity can truly shine.],
-  [A narrow aperture such as f/8 is a standard choice for still life photography. It keeps the subject in focus, giving you the crisp details that’ll make your still life images stand out. As for the ISO: Keep it low to maintain the best image quality. As long as you’re using a tripod, shutter speed is less critical; you can slow it down without causing blur.],
-  [Understanding these settings is essential to achieving professional-looking photos. While dialing in apertures, ISOs, and shutter speeds may seem technical at first, you’ll find that it quickly becomes second nature!],
-  [Light is an essential component of still life photography , and many still lifes feature beautiful lighting arrangements (which often create moody, painterly effects).],
-  [But it’s important to realize that you don’t need fancy lighting to create a stunning still life . When you’re starting out, I recommend using whatever light you have available, such as:],
-  [Indirect light from a window],
-  [A lamp],
-  [A flashlight],
-  [A candle],
-  [Don’t just create your setup, take one shot, and call it a day. Instead, try out different lighting effects! Use a curtain to block out some window light, then remove the curtain to let the light stream in. Shine a flashlight at your main subject, then try a second shot where the flashlight is positioned off to the side and shrouds your subjects in shadow. Make sense?],
-  [Note that, if you’re using lamps, flashlights, or candles, you will definitely need a tripod; indoor lighting won’t get you a fast-enough shutter speed for handheld shots. (This can be a relatively cheap model; as long as it’s positioned on a sturdy surface, it should be able to keep your camera steady.) When you’re ready to shoot, just mount your camera to the tripod, activate the two-second self-timer , and start taking images.],
-  [Learning to compose still life photos is often a struggle for beginners. This is understandable, as still life composition brings up a ton of questions, such as: Where should I place all my items? Should they overlap? Should they be close to the background? What camera angle should I use?],
-  [Fortunately, still life composition isn’t as hard as it might seem. I have two main recommendations, and they will take you far:],
-  [First, if you’ve not encountered them before, read about the rule of thirds and the rule of odds . These will offer a fantastic compositional starting point for beautiful still life shots, plus they’re really easy to use.],
-  [Second, just keep moving your items around.],
-  [This latter recommendation might seem a bit silly, but I promise: If you rearrange your objects enough, you’ll eventually hit on an arrangement that looks great. Don’t just settle for the first composition that you try – instead, test an arrangement, then evaluate it critically. Determine what you like and dislike about it, then make adjustments.],
-  [As you create different compositions, here are a few items to keep an eye on:],
-  [Overly empty gaps (you generally want to keep the entire arrangement balanced!)],
-  [Busy areas (you don’t want to confuse the viewer with too much activity)],
-  [Movement between objects (aim to lead the eye from one object to the next)],
-  [Remember: A tiny tweak can make a huge difference. So if an arrangement doesn’t seem perfect, make a few changes. Chances are that you’ll soon hit upon a better setup!],
-  [Now that you’re familiar with the basics, let’s dive into some of the higher-level aspects of still life photography, including subject selection, different lighting directions, and more!],
-  [It’s a valuable practice to study the work of great still life photographers online. By observing their photos, you can learn about the different ways to arrange elements, and you can even find inspiration for new subjects.],
-  [But don’t limit yourself to photography alone; look at the world of painting as well. Masters like Cezanne offer a treasure trove of lessons on composition, balance, and the use of color. The way these painters arranged objects, used light, and chose colors can translate into unique insights for your photography. A painter’s eye for composition can open new doors for your creativity.],
-  [Learning from others can be an exciting and enlightening process. While it’s important to develop your unique style, the techniques and ideas you glean from observing the masters can enhance your skills.],
-  [Sidelighting is a powerful tool in still life photography. By ensuring that your light source is hitting the subject from the side rather than the front or back, you add shadows that improve a sense of three-dimensionality. The play of light and shadow brings depth and drama to an image, allowing ordinary objects to appear extraordinary.],
-  [A 45-degree angle is often a fantastic starting point for sidelighting. It offers a balanced blend of light and shadow, producing a visually appealing effect. Don’t be afraid to play with different angles and light sources; experimentation is key to finding what works best for your particular setup.],
-  [Realize that the angle of light can drastically change the mood and appearance of your photograph. By embracing the experimentation and understanding how sidelighting works, you add an essential tool to your still life photography toolkit. It’s a step towards creating more engaging, eye-catching images.],
-  [Bottom line: Whether you’re using natural light from a window or an artificial source, sidelighting can become your go-to option for stunning still life shots.],
-  [Still life photography beginners often struggle to pick a subject and get started. But in truth, there are no “best” still life subjects, so there’s no need to stress! Ideal subjects are simply items that interest you , and they can come from anywhere, including:],
-  [Around your house],
-  [Flea markets and thrift stores],
-  [Estate sales],
-  [The grocery store],
-  [The florist],
-  [Of course, the words “still life” generally conjure up visions of vases of flowers, pears on candlelit tables, old paper, and violins. And you can certainly capture beautiful still life shots by obtaining and arranging these “classical” items.],
-  [But you don’t need to spend time pursuing such images if they don’t interest you. Instead, ask yourself: What is meaningful to me ? What objects do I love? Is there a story I would like to tell with my still life?],
-  [Alternatively, you might look for items that simply catch your eye. This next shot contains a piece of dried seaweed on some calico. Was the seaweed meaningful to me? Not really. Did it tell a story? Nope. It simply looked beautiful, so I wanted to capture it!],
-  [Finally, you can capture “found” still life arrangements – that is, still life arrangements that already exist (in houses, backyards, or on the street). Here’s a found still life, taken of a friend’s bedside table:],
-  [When picking still life subjects, here’s my final piece of advice:],
-  [If you’re stuck, just find some items that are personal and important to you, such as:],
-  [Family heirlooms],
-  [Pictures containing relatives],
-  [Books that you love],
-  [Then, after a bit of arranging, you’ll capture a still life that’s loaded with meaning!],
-  [Still struggling to pick the right still life photography subjects? Then I highly recommend working around a single theme.],
-  [Themes are an essential aspect of still life photography that can add depth and coherence to your images. They help you move beyond randomly selected objects and push you to think about the mood and meaning you want to convey. Whether it’s a color, season, or concept, a unifying theme can drive creativity.],
-  [For example, if you choose a theme around the color blue, you may gather items like blue glassware, a blue scarf, or blueberries. The consistent color palette not only creates visual harmony but also allows you to explore various textures and shapes within a specific color family.],
-  [Themes also help in storytelling. A setup focused on a seasonal theme, like autumn, can evoke feelings of warmth, change, or nostalgia. From leaves to pumpkins, selecting objects that resonate with the chosen theme helps in creating visually compelling stories that speak to the viewer.],
-  [The background can make – or break- your still life. If you want great results, you must choose your background with great care.],
-  [Specifically, don’t choose a background that features distracting elements. Avoid eye-catching colors that draw the eye, and if you use fabric, make sure you iron it first (few things are more distracting than a wrinkled backdrop!).],
-  [Instead, keep it simple. Fabric, cardboard, and existing walls often work great, provided that they’re relatively plain. The goal is to emphasize your still life subjects (so the viewer knows exactly where to look).],
-  [Here’s an image featuring a plain backdrop made from a couple of old potato sacks:],
-  [And here’s another shot, this time featuring a sheet of red fabric:],
-  [Also, experimentation is important! Different background textures and colors can complement your subjects in different ways, so it pays to test out a few options before deciding on a final arrangement. You may be surprised by the backdrops that make your still life really pop.],
-  [And while I generally do advocate using a narrow aperture and a deep depth of field when starting out, over time, you might want to try experimenting with focus and depth of field . You can create a shallow depth of field effect – where you keep the front element sharp and the background blurry – for more artistic shots. It’s a trick that can also come in handy if you like the background but find it a little too conspicuous.],
-  [Light painting is a thrilling technique that allows you to “paint” with light. It involves setting your camera to a long shutter speed, usually in the range of 10 to 30 seconds, and then moving a flashlight or candle around your subject during the exposure. The result can be mesmerizing.],
-  [One of the great things about light painting is that it enables you to have greater control over your lighting without investing in expensive strobes and softboxes. You can create unique effects and highlights exactly where you want them. All you need is a dark room and a source of light, such as a flashlight, candle, or even a glow stick.],
-  [Experiment with different light sources, movements, and exposure times. You’ll soon discover a whole new world of creative possibilities. Light painting can add depth, character, and flair to your photos, making it a valuable technique in your still life photography toolbox.],
-  [Once you’ve mastered basic still life lighting using natural sources like windows or candles, you may wish to explore artificial lighting for more control. Studio strobes, speedlights, or continuous LEDs are common options, and each has its advantages.],
-  [For those just starting, speedlights can be an affordable choice. They are portable and easy to use but still deliver excellent results. Strobes, on the other hand, are more powerful and include modeling lights so you can see the lighting effect in advance.],
-  [Whatever your choice, softboxes are essential. A bare flash will result in harsh and unflattering light. Softboxes diffuse the light, making it softer and more pleasing to the eye. They come in various sizes and shapes, allowing you to fine-tune the lighting effect to match your vision.],
-  [Artificial lighting may seem intimidating at first, but with practice, you can use it to create stunning still life photographs. From generating specific effects to offering complete control over the intensity and direction of light, artificial lighting opens up a new realm of creativity. It’s an investment not just in equipment but in expanding your artistic capabilities.],
-  [The angle you choose to shoot from can dramatically alter the look and feel of your still life photograph. While it’s common to start with a standard frontal composition, experimenting with different angles adds richness and variety to your portfolio.],
-  [Moving to the right or the left, shooting from above or below – these choices offer new perspectives on familiar subjects. Even slight adjustments in camera height can change how a setup is captured. Higher angles can amplify depth, making objects appear more spread out, while lower angles can give a greater sense of intimacy or grandiosity.],
-  [Experimentation is key here. There are no rigid rules, so feel free to explore various angles until you find what resonates with your subject and theme. Try photographing a bowl of fruit from directly above to emphasize shape and pattern, or shoot a vase of flowers from below to give it a towering, majestic appearance. The creativity of angles is in your hands.],
-  [Post-processing can make a huge difference to your still life photos, so I highly recommend you spend time editing your images in Lightroom, Photoshop, Capture One, or some other program.],
-  [Start out with basic adjustments, such as white balance, exposure, contrast, and saturation. Then, as you become more experienced, play around with more advanced options.],
-  [Consider doing HDR photography , where you take several images at different exposure levels then blend them together in Lightroom. Or use Photoshop to add a beautiful texture to your image for a painterly look:],
-  [As you’ve discovered, the world of still life photography offers a vast playground for creativity, exploration, and skill-building. By working with themes, you can craft images that are not only visually stunning but also filled with depth and story. Shooting from different angles adds another layer of expression and offers endless possibilities for capturing ordinary objects in extraordinary ways.],
-  [Remember to embrace the tools and techniques outlined, and practice to see how they transform your still life photography. The joy of creating mesmerizing still life photos isn’t reserved for professionals; it’s within your reach.],
-  [So experiment with lighting, composition, and editing. Have fun! Enjoy yourself! You’re bound to end up with some stunning photos.],
+  [The post How to Use Camera Memory Cards: 18 Essential Tips appeared first on Digital Photography School . It was authored by Darren Rowse .],
+  [Memory cards are an essential part of digital photography. They record your precious files and keep them safe until you’re able to transfer them to your (hopefully) full-fledged storage solution – which means that it’s essential that you understand how to use memory cards correctly.],
+  [After all, a properly cared-for memory card will often perform flawlessly for years – while a poorly looked-after card will be prone to errors, corruption, and loss of files.],
+  [In this article, I share 18 tips for keeping your memory cards in good condition. I explain how you should correctly eject your cards, how often (and when) you should format your cards, and more.],
+  [Let’s dive right in!],
+  [Card failure is unpredictable, and the last thing you want is to miss a once-in-a-lifetime shot because your only card decided to act up.],
+  [Therefore, I’ve made it a habit to carry at least three cards with me on every shoot. And while it might seem excessive, it’s better to be safe than sorry!],
+  [Imagine you’re capturing a breathtaking sunset or a candid moment at a child’s birthday party. Suddenly, your camera stops working due to a card error. If you have a backup, you just switch cards and continue shooting. But without a backup, that moment is lost forever. (Of course, it’s not just about having extras; it’s also about ensuring you have enough storage to keep shooting without worries.)],
+  [For different shoots, the backup cards you choose can vary. For a casual day out, a couple of smaller capacity cards might suffice. But for a professional gig, you might want to carry a handful of larger, high-speed cards. These backups will be your photography lifeline .],
+  [By the way, one thing I’ve noticed that’s true, at least for myself: having backup cards provides immense peace of mind. When you’re focused on getting the perfect shot, the last thing you want is to worry about storage space or card failure. The backups serve as a guarantee that no matter what happens, your photography can go on uninterrupted.],
+  [If you’re in the middle of a photoshoot and you run into a memory card problem – for instance, you accidentally delete your images or see a card error message – then stop photographing immediately .],
+  [Turn off your camera, eject the card, and store it in a safe place. When you run into one of these problems, all is not lost, and you may still be able to recover the images. However, it’s important that you stop using the card; otherwise, you might overwrite the files. Data recovery services and other tools are often very effective, especially when recovering accidentally deleted files , but once an image is overwritten, then it’s often lost forever.],
+  [If you do have a memory card issue while shooting, you can always continue the session with another card. The key is to safely remove the problematic card as soon as possible.],
+  [It’s crucial to treat your memory cards with care, especially when you’re out in difficult conditions. In the heat of the moment, switching cards quickly might seem necessary, but it’s also essential to take the time to handle them properly. I’ve seen too many instances where a little negligence led to big problems. A few tips here:],
+  [First, always ensure your hands are clean when handling memory cards. Dirt and oils don’t mesh well will the delicate connectors. And hold the cards gently by the edges, avoiding the gold contacts. This might sound like overkill, but it’s these small habits that can prolong the life of your cards.],
+  [Another key point is to be focused when handling your cards. Distractions can lead to accidental drops, especially in outdoor environments. I’ve heard of photographers dropping cards into puddles. Don’t let that be you!],
+  [Proper storage is also vital. When not in use, keep your cards in a protective case to shield them from dust, moisture, and physical damage. Avoid extreme temperatures and magnetic sources as these can damage the data. Think of your memory cards as fragile; that way, you’ll have the best shot at preserving the images they hold.],
+  [Did you know that repeatedly deleting images from an in-camera card while the card is still in your camera can actually shorten that card’s life? It’s true.],
+  [The rule is that the fewer times you add or remove data on your card, the better. So instead of selectively deleting files as you shoot, aim to erase all the images at once after uploading them to your computer. That way, you delete the files in a single cycle, not one at a time.],
+  [(Or better yet, use the Format function on your camera to wipe the card before each new photoshoot!)],
+  [It’s tempting to connect a memory card to your computer, transfer the images, and then pull it out of the card reader slot.],
+  [But that’s an easy way to cause problems, so after uploading images to your computer, make sure you take the time to eject the card before removing it from your card reader.],
+  [(If you use a Mac, you’ll probably need to right-click the relevant drive and hit Eject . If you use a Windows PC, you’ll need to use the Safely Remove Hardware option in your system tray.)],
+  [These days, you can grab memory cards that store 128 GB, 256 GB, and beyond. But while these products do offer significant advantages – you need to carry far fewer cards, for one! – they also come with a significant drawback: You’re reliant on one (or a few) cards to get you through lengthy photoshoots and even week-long photo adventures.],
+  [I myself learned this lesson on a recent trip; I had a memory card die on me, and if I only owned one huge card, I would’ve been unable to continue using my camera. That’s why it’s at least worth considering multi-card storage solutions (plus, if you do lose the data on one card, not all of your images from a shoot will be lost).],
+  [With memory cards, a little organization can go a long way! It’s easy to mix up cards when you’re juggling multiple shoots or locations. You don’t want to reach for a card during an important shoot, only to find it full. Or worse, realize that you just formatted a card that holds valuable images.],
+  [I’ve found that a clear system can be incredibly helpful. I use a memory card case for this purpose. My fresh cards always go on the left side, and the used ones on the right. It’s simple but effective. When I’m in the field, this system saves me from second-guessing. I always know exactly where my empty cards are.],
+  [Of course, what works for me might not work for you. Some photographers prefer labeling their cards with stickers or using different colored cases. The key is consistency. Stick to your chosen method so it becomes second nature.],
+  [My friend recently had an issue with a memory card. When he took it into the store, the clerk asked if he’d completely filled the card with images – and when he nodded, he was told that this could occasionally cause problems with some types of cards.],
+  [Let me be clear: I’ve not heard this advice before, and I’m somewhat skeptical about it myself, but it’s probably worth keeping in mind. The advice would be to regularly take images off your cards rather than only removing images when the cards are full; this is a good idea anyway because it’ll prevent significant heartbreak if you lose the card or the files are corrupted.],
+  [This memory card tip is quick but essential:],
+  [Reformat your memory cards every so often, and do it with your camera, not your computer. This will clean the card and get it ready for a new batch of images. Of course, you should only do this after you’ve downloaded all files – otherwise, you’ll lose them!],
+  [As I discussed in the previous tip, it’s a good idea to format your memory card in a camera. But you shouldn’t format the card in just any camera; instead, make sure you format it in the camera you plan to shoot with.],
+  [For instance, if you’ve been using your card in your Canon DSLR but want to start using it in your Canon mirrorless camera , you should safely store all the images, then reformat the card when you put it in the mirrorless camera for the first time.],
+  [Years ago, it was said that a camera could give a card “voltage shock” when the card was pulled out of the camera without first turning the camera off. But while manufacturers seem to have since made improvements in this area, it’s better to be safe than sorry! That’s why I recommend you always turn off your camera before you remove a card.],
+  [(Additionally, if your camera is on, it might still be in the process of writing images – and if you remove the card, those images may become corrupted or go unwritten.)],
+  [There’s a simple rule I follow: transfer your photos as soon as possible. Why? Memory cards are reliable, but they’re not infallible. The longer your images sit on a card, the higher the risk of loss, either through card failure or misplacement.],
+  [I’ve made it a habit: every time I return from a shoot, I transfer my images to my desktop hard drives. Then, once the images are safely transferred and backed up, I delete them from the card. This routine ensures I always have a fresh card ready for my next adventure.],
+  [But there’s another reason for this habit: untransferred images are easily forgotten. You might capture an amazing moment, only to forget about its impact and relevance when it sits unseen on a card for months.],
+  [Every so often, camera manufacturers will release firmware updates , which keep your camera up to date and include fixes for errors or problems that are identified with the camera.],
+  [Some of these fixes can relate to the camera’s interaction with the memory card, so I encourage you to check for camera firmware updates every few months and download them as needed.],
+  [Memory cards can last a long time – even years. However, like all electronics, they wear down with constant use, so it’s important that you update your set of cards periodically to prevent issues.],
+  [Fortunately, memory card prices are always dropping, so updating your cards has become a surprisingly inexpensive task!],
+  [When you’re on a photoshoot, it’s important that you keep an eye on your battery levels – and if the battery does get low, either pause for a recharge or swap it out for a fresh one.],
+  [You see, when a battery runs out just as you take a shot, it can prevent your camera from writing the image to your card. This can also cause card errors, so make sure you keep an eye on those batteries!],
+  [This one really depends on your camera model. If you fire off a burst of photos , your camera will need a little time to write all of the data to the memory card – and if you switch the camera off during this process, some cameras will simply lose the images and even end up with errors.],
+  [However, recent models will continue buffering even after you switch them off (thus avoiding the problem). If you’re not sure how your camera handles the issue, check the manual or do some Googling.],
+  [Perhaps this memory card tip should go without saying, but whenever you’re shooting, do what you can to keep your cards safe.],
+  [Make sure the cards stay dry and clean – a dedicated memory card case is perfect for this – don’t expose them to extreme temperatures, don’t drop, bend, or puncture them, and don’t expose them to electromagnetic currents.],
+  [That way, your cards remain in good condition for years!],
+  [This last one is optional, but if you’re afraid that you might lose your camera and/or memory card, you might try taking a picture of a luggage tag or business card complete with your contact details, then keep it as the first image on each of your memory cards.],
+  [Then lock the image so it’s not deleted. If you lose your camera or card and an honest person finds it, they’ll hopefully see the image and get in touch!],
+  [Now that you’ve finished this article, you know how to take care of your memory cards – and you’re well-equipped to prevent common card errors.],
+  [Bottom line: Having backup cards, organizing them effectively, transferring photos promptly, treating them with care, and more – these aren’t just recommendations, they’re necessities for any photographer who values their work. Implementing these habits will save you from the heartache and frustration that come with memory card mishaps.],
+  [So remember the tips I’ve shared, keep your memory cards safe, and (with a bit of luck) you won’t run into any issues.],
   [Now over to you:],
-  [What type of still life photos do you plan to take? Which of these tips are your favorites? Share your thoughts in the comments below!],
-  [The post Still Life Photography: The Ultimate Guide (+ 9 Tips) appeared first on Digital Photography School . It was authored by Lea Hawkins .],
+  [Do you have any memory card tips that I missed? Share them in the comments below!],
+  [The post How to Use Camera Memory Cards: 18 Essential Tips appeared first on Digital Photography School . It was authored by Darren Rowse .],
 ),
   insert-map: (:),
-  inline-pq: pull-quote([You may be surprised by the backdrops that make your still life really pop.], [Lea Hawkins]),
-  inline-pq-idx: 35,
-  word-count: 2955,
+  inline-pq: pull-quote([class="wp-block-heading" id="avoid-filling-your-cards-completely"\>8.], [Darren Rowse]),
+  inline-pq-idx: 23,
+  word-count: 2404,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -590,130 +749,65 @@ I hope this provides a bit of inspiration! It’s really wonderful to take a bit
 
 {
   #standard-article(
-  title: [28 Best Brunch Recipes For A Crowd],
-  author: [Lindsay],
-  source-name: [Pinch of Yum],
+  title: [Stuffed Lumaconi with Butternut Squash and Chestnuts Recipe],
+  author: [clotilde],
+  source-name: [Chocolate & Zucchini],
   images: (),
   paragraphs: (
-  [I love a good brunch moment! Whether it’s for something special like Easter or a baby shower, or just a simple Saturday morning with friends. Breakfast food is some of the best food (sweet, savory, cheesy, carby!) and I love to see a table full of people gathered around it. ❤️],
-  [These are the brunch recipes I put on the menu when I’m hosting a group – some can be thrown together and served out of one pan for ease, others can be assembled however your guests see fit (LOVE this breakfast sandwich for that), and all of them are simple, easy, and super delicious.],
-  [One of my favorite menu combos: this egg and croissant bake , this simple green salad , and this carrot cake coffee cake . The ultimate brunch plate!],
-  [Here’s to brunch! Here’s to feeding all our favorite people!],
-  [class="tasty-roundups-description"\>Biscuits and Gravy Egg Bake! YES! a casserole-style dish of fluffy eggs and cheddar baked up with little bites of tender flaky biscuit pieces, and buried under a blanket of creamy green chile sausage gravy.],
-  [class="tasty-roundups-description"\>Crunchy, light, bright, and ultra-fresh. This French-inspired bistro salad is an absolute star as a side for nearly any dinner. Tender greens, fresh herbs, pickled onions, and a delicate vinaigrette on top.],
-  [class="tasty-roundups-description"\>Sweet Cinnamon Rolls! Made with pillowy brioche dough and cinnamon sugar tucked into every nook and cranny. This makes a BIG batch of dough that you can divide and save for later…or make extra all for yourself!],
-  [One of my most important brunch rules is that it must include multiple drinks – a glass of orange juice, a cup of coffee, and maybe something special, too? Here are some ideas for drinks to serve with brunch, many of which can be scaled up for a crowd!],
-  [The post 28 Best Brunch Recipes For A Crowd appeared first on Pinch of Yum .],
+  [Buy Clotilde's latest book, The French Market Cookbook !],
+  [I will own up to it right then and there: I am an inveterate collector of pasta . Guilty as charged.],
+  [In fine food shops and Italian markets, I love to study the different shapes and imagine which will lend themselves to smooth sauces or chunky ones. I love their names (rooster’s crests, radiators, little ears, thimbles), the traditional packaging, and the fact that, for just a few euros, I can treat myself to a package of something novel — not to mention the promise of an easy meal.],
+  [Before I had children, I had to rein in my purchases, as my kitchen cabinets overflowed faster that Maxence and I actually ate pasta. But with two young boys who would eat it at every meal if I let them — their dream breakfast is cold leftover pasta, a recessive trait for sure — I am free to buy whatever I please, knowing I will easily find a use for it.],
+  [And I recently fell hard for a package of lumaconi , those large snail-shaped pasta sold in big bulging packages that scream “Buy me, I’m special!”],
+  [Lumaconi are the kind of pasta whose life pursuit is to be stuffed with a sauce and gratinéed in the oven for an immensely satisfying vegetarian main dish, or a festive side to a roast bird. And as the holidays approach, I thought I would suggest a simple, seasonal sauce of roasted butternut squash and chestnuts .],
+  [You sprinkle the whole thing with cheese so it will brown nicely…],
+  [… and you squeeze lemon juice over the top just before serving. You end up with a golden and appetizing dish that boasts al dente pasta, a silky sauce that sticks to the ribbed sides of the lumaconi, little pockets of melty cheese with chestnut bits, and a top layer that is toasted and crunchy and irresistible. (Keep an eye on the little cousins who may be tempted to eat just the top.)],
+  [It’s a recipe that is wowing but easy to make — the technique is straightforward, and many of the steps can be made in advance — and easy to live with — it’s lovely at room temperature, and almost tastes better reheated.],
+  [Have you tried this? Share your pics on Instagram!],
+  [Please tag your pictures with \#cnzrecipes . I'll share my favorites!],
+  [id="zlrecipe-innerdiv"\>],
+  [id="zlrecipe-prep-time"\>Prep Time: 30 minutes],
+  [id="zlrecipe-cook-time"\>Cook Time: 40 minutes],
+  [id="zlrecipe-total-time"\>Total Time: 1 hour],
+  [id="zlrecipe-yield"\> Serves 4.],
+  [class="instruction" id="zlrecipe-instruction-5"\>Measure 500 grams (2 cups) of the butternut purée into a medium mixing bowl (reserve the remaining purée for another use). Add the chestnuts, parsley, and 1/2 teaspoon salt. Grate the zest of the lemon finely into the bowl and mix thoroughly.],
+  [class="instruction" id="zlrecipe-instruction-7"\>In a large saucepan, bring water to the boil with some coarse salt and a drizzle of olive oil. Add the lumaconi and boil until just shy of al dente, about 10 minutes.],
+  [class="instruction" id="zlrecipe-instruction-12"\>Spoon about 1 tablespoon of the filling into each lumaconi, and arrange in the prepared dish, snugly but in a single layer. When you're done, dot the top of the lumaconi with any remaining sauce.],
+  [id="zlrecipe-notes-list"\>],
+  [If you have access to high-quality, ready-made puréed winter squash, you can use that in a pinch.],
+  [This recipe can be made with other kinds of large, stuffable pasta, such as tube pasta or conchiglioni.],
+  [https:\/\/cnz.to/recipes/pasta/stuffed-lumaconi-butternut-chestnuts-recipe/],
+  [id="zl-printed-copyright-statement"\>Unless otherwise noted, all recipes are copyright Clotilde Dusoulier.],
+  [The post Stuffed Lumaconi with Butternut Squash and Chestnuts Recipe appeared first on Chocolate & Zucchini .],
 ),
   insert-map: (:),
-  inline-pq: pull-quote([class="flex items-center flex-wrap recipe-rating"\>    class="space-x-1 flex mr-2"\>   class="text-xxs text-gray-700 tracking-wider md:tracking-extra-widest uppercase font-arvo"\>  28 reviews / 4.], [Lindsay]),
-  inline-pq-idx: 3,
-  word-count: 1860,
+  word-count: 924,
   edited-for-length: false,
   debug-mode: false,
 )
 
-}
-
-{
-  #standard-article(
-  title: [Peanut Soup (with Spinach and Miso)],
-  author: [Heidi Swanson],
-  source-name: [101 Cookbooks],
-  images: (),
-  paragraphs: (
-  [class="p2"\> I love this soup and suspect you will too. Even better, you might already have all the ingredients in your kitchen. And if you don’t, I’ll suggest some easy substitutions down below. Peanut soup is the best kind of meal in a bowl, and the leftovers are even better than the original.],
-  [class="p2"\> The foundation of this soup is similar to many West African peanut stews. Or, more specifically, what my version of a vegetarian take on it might look like. It’s in regular rotation around here (I even included it in Super Natural Simple ), and I tend to make it with a lot of the pantry items kept on hand – crushed tomatoes vs. tomato paste, homemade curry paste(s) from the freezer – typically a red curry paste for dimension and heat. And by keeping a couple bags of frozen spinach at the ready, I nearly always have the other components to pull this together on a whim. I love it over rice, over polenta , over quinoa , or alongside a good baked potato .],
-  [class="p2"\> Onions : The recipe calls for an onion. If I don’t have an onion, I’ll substitute 3-4 shallots. You could also use spring onions or a finely diced red onion.],
-  [class="p2"\> Curry Paste : I typically grab my Thai red curry paste from the freezer, but you can experiment. I’ve cooked this with massaman curry paste, powdered Madras curry powder, and yellow curry paste. They each bring a different flavor profile, but are nonetheless delicious. If you’re nervous about making the soup too spicy, start with a little curry paste when called for in the recipe, and add more later in the cooking process until it is just right for you.],
-  [class="p2"\> Peanut Butter : I tend to use smooth peanut butter for this soup, but chunky peanut butter is great too. There are times when I don’t quite have the 1/2 cup called for in the recipe. My solution? Top it off with almond butter. You could even do a version of this soup using almond butter and almonds in place of the peanuts. Although, I do love the peanut version.],
-  [class="p2"\> Spinach : I call for frozen spinach here, because I typically think of this as a pantry soup, and frozen spinach is easy to keep on hand. That said, if you have fresh spinach, or kale, collard greens, etc. – by all means chop and go! I’ve also enjoyed a version of this using chopped cabbage in place of the spinach. The goal for me when I’m thinking about making this is to avoid a trip to the store.],
-  [class="p2"\> Carrots : Many of the West African versions of peanut soup use sweet potatoes. This recipe calls for carrots. You can use whatever you have. Other ideas include: potatoes, butternut squash, kabocha squash, etc. Or use a medley!],
-  [class="p2"\> Miso : I have a country-style miso I like to use here. The main thing? Try not to skip the miso. You can use white, red, yellow – the miso brings extra body, depth, and flavor to this soup.],
-  [class="p2"\> Citrus : I used lemon in these pictures, but a big squeeze of citrus over the top of each bowl of soup is what you want before taking the first bite. Lime is great. Orange, also really good. My favorite to date? A squeeze of Rangpur lime.],
-  [This is one of those soups that works well for a wide range of people. It’s hearty, filling substantial and delicious and you can serve it to vegans, vegetarians, people with gluten issues, dairy issues. I hope you enjoy it as much as I do! -h],
-  [Continue reading Peanut Soup (with Spinach and Miso) on 101 Cookbooks],
-),
-  insert-map: (:),
-  word-count: 715,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-}
-
-{
-  #standard-article(
-  title: [Families Bond through Multi-Gen Travel],
-  author: [Anne Gordon],
-  source-name: [Live Life Travel],
-  images: (),
-  paragraphs: (
-  [LIVE LIFE TRAVEL, LLC],
-  [class="p2"\> W hether we like to admit it or not, life just passes us by way too fast. Having recently lost my grandparents, I can tell you that I have never been more grateful for all the time that we spent together -and how much we loved traveling with them every summer. It is the time you spend together, and the memories you make, that makes life worth living.],
-  [class="p2"\>Multi-generational travel has become very popular and with good reason. As families live further apart and lives are crazier than ever, it is important to carve out that time to have shared experiences, nurture family relationships and create those memories that will last a lifetime.],
-  [class="p2"\>“For more than ten years I had the idea I wanted to send my parents back to Bermuda, where they had honeymooned in 1969, for their 50th Anniversary. When it came time to plan, we decided to tag along with them for this trip down memory lane.],
-  [class="p2"\>Having three generations of our family together to share this experience made it so special. All of us being there with them and listening to all of their stories was magical, and it also gave my 7-year old daughter a chance to feel like she was part of their love story. Even though we all spend a lot of time together, this is not something that could have happened at home. The memories we made on this trip will last more than a lifetime – they’ll last for three lifetimes!”],
-  [class="p2"\> We also had the opportunity to speak with Kelly Wyland, who explains that doing two big trips in one year is not the norm for her family, but when you have opportunities like this, you have to go for it. Kelly and her family traveled to Ireland as an extension of a work trip and to France as a school trip with her daughter.],
-  [class="p2"\> Kelly: While in Ireland, we had the opportunity to experience part of our family’s history going back many generations. In Paris, it was all about sharing experiences and making new memories.],
-  [class="p2"\> K: Honestly – me! I grew up with stories about my ancestors and Irish culture and have tried to teach my kids a little about that part of our family history. It was nice to have my mom to reminisce with, and my kids to learn with. We all have roots there and it was an unforgettable experience to step foot into the same country my ancestors left so many years ago. It’s something all of us will remember for the rest of our lives.],
-  [Live Life Travel, an independent affiliate of Travel Experts Member of Virtuoso, Virtuoso Family, Culinary, Wellness Virtuoso Saveur Advisory Board.],
-  [The post Families Bond through Multi-Gen Travel appeared first on Live Life Travel .],
-),
-  insert-map: (:),
-  word-count: 767,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-}
-
-{
-  #standard-article(
-  title: [Smoked Labneh],
-  author: [Heidi Swanson],
-  source-name: [101 Cookbooks],
-  images: (),
-  paragraphs: (
-  [If you have a stovetop smoker, or a smoker donabe (ibushi gin), smoked labneh should be high on your list of things to make. Labneh is made simply by straining yogurt. The resulting consistency is rich, creamy and beautiful. Amazing on its own, you can also incorporate herbs, spices, or other ingredients. I know the number of you with a stovetop smoker is probably slim, but I love experimenting with mine, always trying to come up with more ways to use it, especially now that we have a gas range again. A long way of saying, if you want to play around with your smoker more, I see you. I use mine for all sorts of things – nuts, cheeses, tofu, vegetables, and on and on. So I’ll try to post more as I’m using it.],
-  [class="p1"\>Smoked labneh has been on my list of things to make for some time now. Late last year we made a few trips to San Francisco to make sure we were ready to make the move back from LA. I would walk through the Presidio to lunch at Dalida , in part, because I love their homemade pita situation – called Breaking Bread. The pita comes with a trio of spreads (hummus, muhammara, smoked yogurt), some pickles and olives. The smoked yogurt is a show-stopper – rich, creamy, luxe. The server wasn’t sure how it was prepared but I started thinking about how to approach it once I could get my smoker unpacked. I already make homemade labneh regularly, so it wouldn’t be too much of a jump. Flash forward, and I’ve made smoked labneh a number of times in the weeks since!],
-  [class="p1"\>I’ve been using a cold-smoke technique and it works nicely. It’s where you keep the yogurt cold but flood the area around it with smoke. Every smoker is slightly different, so you might need to tweak your approach, but this will give you the general idea of how to think about it. You can see in my diagram below how things are layered in the smoker. Starting at the bottom: a piece of foil, wood chips, the grate, a bowl of ice and some water, the shallow container of labneh, the lid eventually goes on above that.],
-  [You can see the aluminum foil sitting on the bottom of the smoker topped with wood chips. The foil makes for easy cleanup.],
-  [Below, a stainless steel bowl of ice and some water sits on top of a grate, which keeps the bowl from having direct contact with heat or the wood chips. The labneh sits in the ice, keeping the yogurt cool through the smoking process.],
-  [Alternate approach: There’s also a method for smoking Labneh in the NOPI cookbook , but I haven’t attempted it yet. The labneh is formed into a puck shape and placed on a piece of parchment paper inside the smoker – no ice. They also use different aromatics for smoking (oolong tea, caraway seeds, pink peppercorn, etc). I suspect the biggest difference would be texturally, with the parchment version losing more moisture and possibly taking on more flavor because more surface area is exposed? Excited to take this version for a spin as well.],
-  [class="p1"\>Every smoker has its own quirks and personalities. My advice here is to take good notes. You want a nice, round, balance of smoky notes. Aim for the sweet spot between too subtle and too strong acrid (yikes). Every time I use the smoker I make note of: what I’m smoking, what type of wood chips / herbs, etc., and how long. Then note how I would increase or decrease the time in the future. Good notes are key to getting a good working relationship with your smoker. Twenty minutes seems to be the sweet spot here for the labneh using applewood chips. A similar timeframe worked well for this smoked chocolate mousse .],
-  [class="p1"\>Here’s what my smoker looks like, I loooove it (not sponsored). If I didn’t have my Ibushi Gin (donabe smoker) another way to get smoky flavor into the labneh might be to use a smoked salt. I’d grind it finely with a mortar and pestle and go from there. I’ve never really liked liquid smoke, so that wouldn’t be my move, but that doesn’t mean you couldn’t experiment a bit as yet another approach. There could very well be better liquid smokes on the market compared to the last time I played around with it.],
-  [Drizzled with olive oil and sprinkled with red gomashio (pictured above), along with candied nuts with rose water, seeded flatbread, and assorted cookies.],
-  [In place of the poblano yogurt in this mushroom tartine .],
-  [In place of the ricotta on this roasted mushroom sandwich .],
-  [In place of the green chile yogurt in this sourdough galette .],
-  [Rolled into 1-inch balls, rolled in spices, herbs, and/or seeds, and kept, refrigerated, in a jar topped off with olive oil.],
-  [More Ways to Use Stovetop Smoker],
-  [Continue reading Smoked Labneh on 101 Cookbooks],
-),
-  insert-map: (:),
-  word-count: 895,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-  #pull-quote([The labneh sits in the ice, keeping the yogurt cool through the smoking process.], [Heidi Swanson])
+  #pull-quote([Add the chestnuts, parsley, and 1/2 teaspoon salt.], [clotilde])
 
 }
 
 #article-row((
   [
     standard-article(
-  title: [banana chocolate chip cake],
-  author: [deb],
-  source-name: [Smitten Kitchen],
+  title: [Cactus Jack Channels the "Gangster SpongeBob" Memes With Surprise Apparel Collaboration],
+  author: [Hypebeast],
+  source-name: [Hypebeast],
   images: (),
   paragraphs: (
-  [Somehow, despite how impossible it seems (to me, a person who has neither aged nor matured a day), it’s been almost twenty years since I first told you about my family’s favorite coffee cake . It’s tall, plush, crisp with a flaky layer of cinnamon sugar on top, studded with a quilt of chocolate chips and is downright, well, adorable when cut into cubes because they’re a little wobbly. When one tumbles, it shakes off a little pfft of cinnamon sugar, like a pup coming in from today’s blizzard. It’s perfect. It needs no changes or updates.],
-  [Read more »],
+  [Cactus Jack has officially linked up with SpongeBob SquarePants for a collaborative apparel collection],
+  [The capsule features heavyweight cotton garments with unique hand-sprayed treatments and distressed details],
+  [Fans can secure pieces ranging from graphic tees to hoodies through the official Travis Scott webstore],
+  [Travis Scott ’s Cactus Jack has officially crossed over into Bikini Bottom, dropping a surprise SpongeBob SquarePants x Cactus Jack collection. The collaborative capsule merges the Houston native’s signature aesthetic with the ever-popular "Gangster SpongeBob" meme, resulting in a lineup of streetwear staples that channel spray paint art and graphics that reimagine the Bikini Bottom crew.],
+  [Anchoring the release is a series of heavyweight pieces, including the Fancy Life and Patrick Star hoodies alongside the Chum Bucket, SpongeBob x Mr. Krabs, Krabby Patty, and even Doodlebob T-shirts. The garments are elevated by co-branded artwork, utilizing screen print details on the front and back. Selected pieces receive a specialized freehand spray treatment, ensuring each individual item maintains a unique, one-of-one nature.],
+  [Also joining the delivery is the Rock Bottom Thermal Longsleeve, which focuses on Squidward, and a zip hoodie with SpongeBob and Mr. Krabs showing off their wads of cash. Rounding out the collaboration are an adjustable low-profile Rock Bottom Hat, which features a distressed embroidered patch, and a duo of beanies for SpongeBob and Patrick. By blending familiar underwater motifs with Scott’s distinctively muted, earthy design language, the collection offers a fresh take on classic cartoon merchandising.],
+  [Check out the release above. The Cactus Jack x SpongeBob SquarePants collection is available now via Travis Scott's official webstore .],
 ),
   insert-map: (:),
-  word-count: 101,
+  word-count: 262,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -721,22 +815,67 @@ I hope this provides a bit of inspiration! It’s really wonderful to take a bit
   ],
   [
     standard-article(
-  title: [Nike Prepares The Air Force 1 Low "Heat Map" For Summer],
+  title: [Inside the -196 Konbini Backroom That Turned NYC Into a Tokyo After-Hours Scene],
   author: [Hypebeast],
   source-name: [Hypebeast],
   images: (),
   paragraphs: (
-  [Name: Nike Air Force 1 Low “Heat Map”
- Colorway: Black/Racer Blue
- SKU: IB6834-001
- MSRP: \$130 USD
- Release Date: Summer 2026],
-  [Nike is turning up the temperature on its iconic Bruce Kilgore design with the upcoming release of the Nike Air Force 1 Low "Heat Map." Arriving just in time for the warmer months, this latest iteration reimagines the streetwear staple with an aura-like, thermographic aesthetic.],
-  [The sneaker starts with a premium soft black leather base that dramatically transitions on the lower half of the side panels. This section boasts a misty heat map style, blending shades of blue, yellow, red, and orange just below the signature Swoosh and extending toward the midsole.],
-  [Additional detailing elevates the thematic approach, with a vibrant "Racer Blue" hitting the laces and sockliner for a bold contrast against the dark upper. The design is rounded out by a unique blue star lace dubrae positioned above the vamp, adding a final specialized touch to the classic model.],
+  [What went down in New York City felt like a transportive cultural moment. On March 27, -196 — the Japanese-born vodka seltzer from Suntory Global Spirits — took over 169 Bowery and reimagined the Lower East Side as a fully immersive konbini experience, tapping into the global fascination with Japanese convenience store culture. For one night only, guests stepped into a space that mixed nightlife and pop culture, setting the tone for the kickoff to seltzer season.],
+  [The front of the space leaned heavily into Japanese c-store authenticity. Shelves were stocked with familiar Japanese convenience store staples like fruit sandos and onigiri, while fridges were packed with -196’s signature flavors — Lemon, Strawberry, Peach and Grapefruit — offering a first-hand introduction to the vodka seltzer's fruit-forward profile. Hidden behind a discreet refrigerator door, the experience shifted gears entirely, transporting attendees from a casual konbini setting into a neon-lit Tokyo-inspired backroom that pulsed with contagious energy, all fueled by -196’s brand new tall boys in Lemon, Strawberry and Strawberry & Pineapple.],
+  [At the center of that transition was Rebecca Black , who brought her evolving DJ persona to the activation with a high-energy set that reflected her recent momentum — from festival stages to a viral Boiler Room appearance. Her performance anchored the night, turning the space into a packed dance floor fueled by remixes and crowd energy. It was a fun mix of nostalgia, internet culture and club-ready sound that gave the activation its edge.],
+  [Beyond the spectacle, the event underscored a bigger play. Since launching nationwide in the U. S. last year and moving over 500,000 cases, -196 has been building its stateside presence by leaning into its Japanese roots — not just in flavor, but in experience. From its innovative Japanese Freeze, Crush, Infusion process, which gives the brand its real-fruit flavor, to immersive pop-ups like this, -196 has been leaning into their roots and bringing the flavor and hype of Japan to fans in the states. If this activation proved anything, it’s that -196 is highlighting a moment that feels distinctly global while landing right in the heart of downtown New York.],
+  [For more information visit minus196.com .],
 ),
   insert-map: (:),
-  word-count: 161,
+  word-count: 360,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+  ],
+), ruled-indices: (1,))
+#pull-quote([Also joining the delivery is the Rock Bottom Thermal Longsleeve, which focuses on Squidward, and a zip hoodie with SpongeBob and Mr.], [Hypebeast])
+
+
+#article-row((
+  [
+    standard-article(
+  title: [FREAK'S STORE Goes ‘Back to the Future’ For New Spring/Summer 2026 Collection],
+  author: [Hypebeast],
+  source-name: [Hypebeast],
+  images: (),
+  paragraphs: (
+  [FREAK'S STORE continues its popular bespoke movie collection with a new nostalgic apparel release],
+  [The short-sleeve tee features custom photo-print graphics honoring the legendary film Back to the Future],
+  [FREAK'S STORE is bringing cinematic nostalgia to its Spring/Summer 2026 lineup with the Back to the Future collection. Merging retro film culture with contemporary streetwear sizing, the Japanese retailer offers a fresh take on classic movie merchandise that feels both familiar and culturally relevant.],
+  [As part of its highly anticipated seasonal movie collection, FREAK'S STORE delivers a crewneck t-shirt that emphasizes everyday wearability. The garment features original, photo-style graphic prints drawn directly from the iconic sci-fi franchise. To balance the bold imagery, the front of the shirt utilizes a clean, minimal one-point design, ensuring the piece remains understated yet impactful.],
+  [Tailored for modern sensibilities, the t-shirt is cut with a deliberate "big silhouette." This relaxed, oversized fit drapes effortlessly, allowing for dynamic layering and diverse styling options suited for the warmer months. By blending comfortable proportions with celebrated pop-culture motifs, the brand successfully updates the traditional graphic tee format for today's wardrobes.],
+  [The FREAK'S STORE Back to the Future collection is slated to drop during the Spring/Summer 2026 season via FREAK'S STORE.],
+),
+  insert-map: (:),
+  word-count: 202,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+  ],
+  [
+    standard-article(
+  title: [WIND AND SEA Celebrates 8 Years With An Anniversary Rework Collection],
+  author: [Hypebeast],
+  source-name: [Hypebeast],
+  images: (),
+  paragraphs: (
+  [Tokyo-based streetwear brand WIND AND SEA is celebrating its eighth anniversary with a special collection that reimagines its founding designs],
+  [The capsule features a mix of regular items in bright neon colorways alongside unique reworked pieces crafted from vintage garments],
+  [Standout items include the OG SEA and Script long-sleeve tees as well as exclusive one-of-one jackets and pants built from the past],
+  [Japanese label WIND AND SEA is officially launching the "WIND AND SEA 8th Anniversary Collection" to commemorate eight years of connecting culture and streetwear. Founded in Tokyo in 2018, the brand is revisiting its roots by updating its original designs through a contemporary lens.],
+  [The anniversary range is split into two distinct tiers: regular staples and exclusive rework pieces. The standard lineup breathes new life into the brand's 2018 beginnings, introducing the OG SEA L/S TEE and SCRIPT SEA L/S TEE in vibrant neon colorways, alongside the graphic-driven NUMBER EIGHT TEE. The iconic script logo makes its return to anchor these core items.],
+  [On the more experimental side, the "REWORK" capsule delivers one-of-a-kind garments constructed entirely from vintage clothing. Highlighting the "Built From The Past" ethos, this tier includes the NUMBER EIGHT REWORK JACKET and PANT, both arriving in beige, as well as mixed-material tote bags and caps. Each reworked piece possesses a unique character, ensuring that no two items are exactly alike.],
+  [The regular items from the WIND AND SEA 8th Anniversary Collection drop in-store on Saturday, March 28, at the brand's Tokyo, Osaka, and Hankyu Umeda locations. An online lottery release follows on Sunday, March 29 via the official WIND AND SEA webstore , while the exclusive reworked pieces will be strictly limited to the WIND AND SEA TOKYO flagship.],
+),
+  insert-map: (:),
+  word-count: 285,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -745,6 +884,28 @@ I hope this provides a bit of inspiration! It’s really wonderful to take a bit
 ), ruled-indices: (1,))
 
 #article-row((
+  [
+    standard-article(
+  title: [Drink of the Week: Zumbador Tequila Blanco],
+  author: [Imbibe],
+  source-name: [Imbibe Magazine],
+  images: (),
+  paragraphs: (
+  [As the tequila category has exploded in recent years and a dizzying number of brands have filled shelves, the process of finding a true artisanal tequila has become more confusing. But among this growing crowd are spirits that stand out for their heritage, process, and dedication to quality. Hailing from the highlands of Jesus Maria, Altos de Jalisco, Zumbador (which translates to hummingbird) is one such standout. Founded by fourth-generation agave grower Roberto López, Zumbador is a family-run distillery that produces blanco, reposado, and añejo tequila, and with spring and summer approaching, we are now reaching for their blanco.],
+  [The López family manages 1,000 acres of land with 1.5 million agaves planted in the Jaliscan highlands, where a perfect combination of altitude, soil, water, and climate allow for optimal growing conditions. Combine that with the family’s selective harvesting and traditional production techniques of masonry oven cooking, tahona crushing, wood and steel fermenters, copper and steel pot distillation, and zero additives. The result is an outstanding spirit that represents an incredible value. “Zumbador is a tequila made to reflect what my family has been drinking for generations,” says López. “Love, passion, work, and tradition in every drop.”],
+  [Zumbador’s blanco delivers a refined minerality and a subtle sweetness with citrus and of floral notes that unfold gracefully. And while it’s elegant enough to sip solo, it will shine in array of cocktails. Drink it in a traditional Batanga , a seasonal Margarita twist , or the Main Character recipe below. \$24.99, zumbadortequila.com],
+  [Glass: Nick & Nora
+Garnish: watermelon ball],
+  [Shake all of the ingredients in shaker with ice. Strain into a chilled glass. Garnish.],
+  [The post Drink of the Week: Zumbador Tequila Blanco appeared first on Imbibe Magazine .],
+),
+  insert-map: (:),
+  word-count: 319,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+  ],
   [
     standard-article(
   title: [Nike Reimagines the Air Force 1 Low With Rugged Vibram Tooling],
@@ -769,592 +930,483 @@ I hope this provides a bit of inspiration! It’s really wonderful to take a bit
 )
 
   ],
-  [
-    standard-article(
-  title: [Cactus Jack Channels the "Gangster SpongeBob" Memes With Surprise Apparel Collaboration],
-  author: [Hypebeast],
-  source-name: [Hypebeast],
-  images: (),
-  paragraphs: (
-  [Cactus Jack has officially linked up with SpongeBob SquarePants for a collaborative apparel collection],
-  [The capsule features heavyweight cotton garments with unique hand-sprayed treatments and distressed details],
-  [Fans can secure pieces ranging from graphic tees to hoodies through the official Travis Scott webstore],
-  [Travis Scott ’s Cactus Jack has officially crossed over into Bikini Bottom, dropping a surprise SpongeBob SquarePants x Cactus Jack collection. The collaborative capsule merges the Houston native’s signature aesthetic with the ever-popular "Gangster SpongeBob" meme, resulting in a lineup of streetwear staples that channel spray paint art and graphics that reimagine the Bikini Bottom crew.],
-  [Anchoring the release is a series of heavyweight pieces, including the Fancy Life and Patrick Star hoodies alongside the Chum Bucket, SpongeBob x Mr. Krabs, Krabby Patty, and even Doodlebob T-shirts. The garments are elevated by co-branded artwork, utilizing screen print details on the front and back. Selected pieces receive a specialized freehand spray treatment, ensuring each individual item maintains a unique, one-of-one nature.],
-  [Also joining the delivery is the Rock Bottom Thermal Longsleeve, which focuses on Squidward, and a zip hoodie with SpongeBob and Mr. Krabs showing off their wads of cash. Rounding out the collaboration are an adjustable low-profile Rock Bottom Hat, which features a distressed embroidered patch, and a duo of beanies for SpongeBob and Patrick. By blending familiar underwater motifs with Scott’s distinctively muted, earthy design language, the collection offers a fresh take on classic cartoon merchandising.],
-  [Check out the release above. The Cactus Jack x SpongeBob SquarePants collection is available now via Travis Scott's official webstore .],
-),
-  insert-map: (:),
-  word-count: 262,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-  ],
-), ruled-indices: (1,))
-
-#article-row((
-  [
-    standard-article(
-  title: [Citrus Caesar Salad],
-  author: [Heidi Swanson],
-  source-name: [101 Cookbooks],
-  images: (),
-  paragraphs: (
-  [We had dinner with friends earlier in the week and it was a reminder that my favorite meals are nearly always made by home cooks. There was a stunner of a salad. In this case, a creamy Caesar salad-style dressing was tossed with beautiful magenta-streaked puntarelle. It had all sorts of other goodies and was topped with roasted citrus. We also had spring risotto topped with lots of Parmesan, and the most delicate whisps of lemon thyme. I made a version of the salad later in the week using up everything in the fridge and extra-large croutons made from the remnants of a sourdough loaf. Here are the details! It’s a gorgeous salad, perfect this time of year, and you can use any leftover dressing for all sorts of things.],
-  [class="p1"\>Lettuces: A strong romaine component is good (and classic) here, especially with the Caesar-style dressing. But I can’t help adding other in season lettuces to create a colorful mix. Play around!],
-  [class="p1"\> Citrus : The salad is finished with roasted citrus . You can make it ahead of time from whatever citrus you like, but I have some favorites outlined on that page.],
-  [class="p1"\> Herbs : Don’t skip the mint. If you skip one of the herbs, skip the chives. The mint really delivers something special alongside the Caesar dressing and the roasted citrus.],
-  [class="p1"\> Croutons : I outline how to make easy croutons in the headnotes below. They’re infinitely better than store-bought. And you can make them extra big and craggy for this salad.],
-  [Continue reading Citrus Caesar Salad on 101 Cookbooks],
-),
-  insert-map: (:),
-  word-count: 345,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-  ],
-  [
-    standard-article(
-  title: [Meitar Award for Excellence in Photography 2026 Celebrating a Decade],
-  author: [Sime],
-  source-name: [Digital Photography School],
-  images: (),
-  paragraphs: (
-  [The post Meitar Award for Excellence in Photography 2026 Celebrating a Decade appeared first on Digital Photography School . It was authored by Sime .],
-  [The Meitar Award for Excellence in Photography, a distinguished collaboration
-between PHOTO IS: RAEL and the Zvi and Ofra Meitar Family, marks its tenth
-anniversary this year. This prestigious prize recognizes a cohesive body of work that
-exemplifies superior photographic practice and profound artistic vision.],
-  [The 2026 edition is a significant milestone for us. Since its inception in 2016, the Meitar
-Award has evolved into a vibrant global beacon of excellence, annually attracting
-thousands of creators who challenge and expand the boundaries of the medium. Over
-the past decade, it has cultivated a vital space for multicultural dialogue, serving as a
-definitive home for the most compelling and urgent voices in contemporary
-photography.],
-  [At the heart of the award is our esteemed international jury—a panel of world-class
-photographers, curators, and critics at the forefront of the global field. The jury will
-select 20 finalists to be featured in a centerpiece group exhibition at the International
-Photography Festival in Tel Aviv in November 2026.],
-  [Evaluations will be based on the originality, conceptual depth, and technical quality of
-the submissions. Particular emphasis will be placed on portfolios that demonstrate the
-maturity and potential to evolve into a powerful solo exhibition.],
-  [The award winner, to be announced in November during the festival, will receive a
-\$14,000 grant to present a solo exhibition at the following year’s photography festival.],
-  [Registration Schedule:
-Registration is open from February 23, 2026, to April 12, 2026.
-? Early Registration: February 23, 2026 – March 19, 2026, fee: \$35.
-? Late Registration: March 20, 2026 – April 12, 2026, fee: \$45.],
-  [Photographs must be submitted via the contest website: https:\/\/meitar.photoisrael.org
-For further information, please contact: info\@photoisrael.org],
-  [The post Meitar Award for Excellence in Photography 2026 Celebrating a Decade appeared first on Digital Photography School . It was authored by Sime .],
-),
-  insert-map: (:),
-  word-count: 327,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-  ],
 ), ruled-indices: (1,))
 
 {
-  #section-label([Analysis])
   #standard-article(
-  title: [7 to Try: Matcha Green Tea],
-  author: [Penelope Bass],
-  source-name: [Imbibe Magazine],
-  images: (),
-  paragraphs: (
-  [In our March/April 2026 issue , writer Oset Babür-Winter explores the booming modern market for matcha green tea. It’s an ingredient that has broken well beyond the teahouse and can now be found contributing its signature verdant hue to everything from smoothies to ice cream to skincare. But with meteoric popularity comes pitfalls, particularly as demand outpaces supply and the market becomes flooded with subpar products in a category still lacking consumer education.],
-  [To find the good stuff, we tapped matcha educators, retailers, and café owners to offer their recommendations, with options for anyone looking to explore the category further, from the newcomer to the connoisseur.],
-  [The Shogyokuen tea company has been operating in Kyotanabe since 1827. And Level 10 chashi (master tea blender) Hiroshi Kobayashi currently leads production. “Kobayashi san quietly produces some of the most stunning Matcha from Uji, specifically the region of Kyotanabe,” says Zach Mangan, founder of Kettl Tea. “With a smaller team, and much smaller marketing budget, his tea is not always on people’s radar. But after tasting his stunning blends, it’s a name people should know and Matcha people should be drinking.” The Ousui blend leans on the rich side, with notes of crème fraîche and sea kelp and the brightness of fresh clover. \$80/20 grams],
-  [Favored for its rich aroma and mellow taste, this single cultivar matcha tea from Horii Shichimeien has an oomph of umami and almost no bitterness. “Rocky’s sourced a wonderful tea from Horii Schichimeien, one of Uji’s oldest and most storied producers. They always find a way to reinvent themselves, and this stunner is proof of that,” says Mangan. “If you like thick, rich, umami-laden matcha, this is for you.” \$88/20 grams],
-  [At Maru Coffee in Los Angeles, co-founder Joonmo Kim has worked to build direct relationships with farmers and producers in Japan, and is now carrying this matcha tea from Higashisonogi, Nagasaki. “Knowing who cultivates the tea, how it’s grown, and the care taken at every step allows us to share a matcha that feels honest and intentional,” says Kim. The Monami is a blend of Tsuyuhikari and Saemidori leaves for a gentle umami character and smooth, sweet flavor. \$92/100 grams],
-  [Kyoto-based Ippodo Tea has been selling matcha tea since 1717, and their offerings span the spectrum of styles. “The Sayaka is a good introduction for someone new to the category because its flavor profile is very gentle and leans toward sweetness and umami,” says Tomoko Honda, Ippodo’s head of global operations. “It has a smooth taste with just a hint of astringency, which makes it especially approachable for first-time drinkers.” For those looking for a bigger, bolder option, Ippodo’s Ummon has long been one of their richest blends and is a favorite of Joonmo Kim at Maru Coffee. A pleasant astringency balances the fragrant tea’s bright umami. Sayaka: \$50/ 40 grams, Ummon: \$82/40 grams],
-  [Grown in Shizuoka, Japan, on a 4th-generation farm, this single-cultivar matcha tea is prized for its exceptionally smooth character, ideal for straight serves or a silky latte . “Its namesake cultivar is rare, accounting for a very small percentage of all tea harvested in Japan,” says Matchaful’s Tea Education Manager Alex Robateau, explaining that the tea’s high L-theanine content and low tannins give it a “naturally robust flavor profile with extremely low bitterness, sporting flavor notes of snap pea, cashew, and grapefruit.” \$110/100 grams],
-  [This blended option from Uji producer Horii Schichimeien is a go-to favorite among both home drinkers and ceremonial practitioners. “Agata no Shiro is a matcha blend that is used by the Urasenke tea school for their ceremony practice. With a smooth, buttery body featuring a pleasant nuttiness and very low bitterness, it’s great as a latte and also works well straight up,” says Robateau. “It’s a great choice for people looking to graduate from grocery store fare and explore authentic flavors typically enjoyed by tea ceremony practitioners.” \$43/30 grams],
-  [The post 7 to Try: Matcha Green Tea appeared first on Imbibe Magazine .],
-),
-  insert-map: (:),
-  word-count: 700,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-}
-
-{
-  #standard-article(
-  title: [Beef Stroganoff],
-  author: [Lindsay],
-  source-name: [Pinch of Yum],
-  images: (),
-  paragraphs: (
-  [This is the only way I love beef stroganoff. Like, truly love it.],
-  [This beef stroganoff is essentially a creamy, savory gravy with roasty bits of mushroom and caramelized onion, and forkfuls of tender shredded beef folded in. YEAH.],
-  [How it’s different (and better, if you ask me) than a “regular” beef stroganoff:],
-  [Beef gets cooked in the slow cooker, so it’s very easy.],
-  [Beef then gets shredded, so it is supremely tender .],
-  [Mushrooms and onions and gravy get thinly sliced and thoroughly sautéed into a rich and creamy blankie. No large chunks! Hallelujah. Just melty little barely-there bits of rich flavor.],
-  [The method for this came from my friend Ang (of Ang’s Tortellini Soup fame – she doesn’t mess around). She’s been trying to convince me that I should make (and like) beef stroganoff for years, and I’m proud to report that I LOVE THIS BEEF STROGANOFF – how it tastes, but also how easy it is to make it.],
-  [9am – start the beef in the crockpot],
-  [5pm – sauté the gravy],
-  [6pm – fold in your crockpot shredded beef, and dinner is done.],
-  [It’s rich, deeply savory, and all the textural bits are delicate. As they should be.],
-  [Egg noodles is the traditional way, but I also REALLY love this on a baked potato with a dollop of sour cream and chives, and I’m going to need you to try that as well.],
-  [Hope you love it!],
-  [THIS IS WHY I LOVE THIS RECIPE. It’s so easy. Plus, IMHO, shredded beef is so much better than chunks of seared beef!],
-  [I love a beef stroganoff that is not a white grey blob. Look at these slips of mushroom, thin and cooked down. Look at the flavorful color. YES.],
-  [Could not be easier. And the flavor payoff is huge.],
-  [5 Stars 4 Stars 3 Stars 2 Stars 1 Star],
-  [5 from 7 reviews],
-  [Creamy, tender, savory beef stroganoff! The ultimate classic comfort food and one of my family’s favorite meals!],
-  [For the Beef:],
-  [3 pounds chuck roast , fat trimmed],
-  [1 cup water],
-  [1 teaspoon Better Than Bouillon Roasted Beef Base],
-  [2 teaspoons salt],
-  [1 1/2 teaspoons onion powder],
-  [1 teaspoon garlic powder],
-  [1/4 teaspoon ground black pepper],
-  [For the Gravy:],
-  [2 tablespoons butter],
-  [8 ounces button mushrooms , thinly sliced],
-  [half a yellow onion , thinly sliced],
-  [2 cloves garlic , thinly sliced],
-  [1 tablespoon fresh thyme leaves],
-  [1 1/2 tablespoons tomato paste],
-  [1 1/2 tablespoons Better Than Bouillon Roasted Beef Base],
-  [2 tablespoons flour],
-  [2 teaspoons Worcestershire sauce],
-  [1 tablespoon Dijon],
-  [2 cups water],
-  [1/2 cup heavy cream],
-  [For Serving:],
-  [1 lb . egg noodles,],
-  [or 6 baked potatoes],
-  [id="instruction-step-1"\> Slow Cook the Beef: Place all beef ingredients in the slow cooker – chuck roast, water, roasted beef base, salt, onion powder, garlic powder and black pepper. Cook on high for 4-5 hours.],
-  [id="instruction-step-2"\> Cook Your Noodles or Potatoes: When it’s time to start the gravy, boil your noodles or bake your baked potatoes.],
-  [id="instruction-step-3"\> Start the Gravy: Sauté onions and mushrooms in the butter over medium heat until very rich in color, about 15 minutes. Add garlic, thyme, tomato paste, Better Than Bouillon, and flour; sauté for a few minutes.],
-  [id="instruction-step-4"\> Simmer and Finish: Add Worcestershire, Dijon, and water. Bring to a simmer. Add cream gradually until it’s the color you like. Add shredded beef into the gravy (I used about half of the beef and saved the other half for later).],
-  [id="instruction-step-5"\> Serve: Garnish with chives and sour cream, and serve on egg noodles or a baked potato (my fave)!],
-  [Crockpot timing: Chuck roast in a crock pot typically takes 6–8 hours on LOW or 4–5 hours on HIGH for a 3–4 lb roast. So you’re either cooking on high for 4-5 hours, or low for 6-8 hours. If you cook it on low (or if you work outside of the home and need to start it in the morning), then the 9am start time works! Otherwise start around noon.],
-  [Keywords: beef stroganoff, slow cooker beef stroganoff, easy beef stroganoff],
-  [Did you make this recipe?],
-  [For sides to serve with it, my favorite is green beans! But any other roasted green vegetable would work, or roasted carrots. Otherwise, a nice crisp green salad on the side is perfect, too!],
-  [The post Beef Stroganoff appeared first on Pinch of Yum .],
-),
-  insert-map: (:),
-  inline-pq: pull-quote([id="instruction-step-2"\> Cook Your Noodles or Potatoes: When it’s time to start the gravy, boil your noodles or bake your baked potatoes.], [Lindsay]),
-  inline-pq-idx: 21,
-  word-count: 1154,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-}
-
-{
-  #standard-article(
-  title: [Candied Nuts (with Rose Water)],
-  author: [Heidi Swanson],
-  source-name: [101 Cookbooks],
-  images: (),
-  paragraphs: (
-  [Candied nuts are on the menu here, and if you drop by our house (with enough of a heads up), you’re going to be greeted with a big hug from me, a chaotic hello from a Cocker Spaniel, and some iteration of the candied peanuts you see above. Since being back in San Francisco, I’ve been trying to up my impromptu snack game a bit – for when people drop by. These candied nuts have become one of the cornerstones. You can make them with whatever nuts you have on hand, they keep beautifully for over a week, and they’re an easy win as part of a larger snack-y spread. They also bridge the sweet-savory gap wonderfully and I’ve been serving them with a range of spreads, flatbread, and other bite-sized sweet treats.],
-  [class="p1"\>I’ve had a magazine clip in my files for the better part of twenty years, Gourmet circa mid-2000s (pretty sure), for Rose-Water Candied Peanuts . Maggie Ruggiero is mentioned in the headnotes citing them as “one of the best tasting snacks she’d ever had.” They were a bit different than other versions of candied nuts I’d come across. The sugar coating ends up being somewhat uneven and craggy, and you get little pebbles and scrabble of sugar stuck to the nuts and throughout. Loved them. I was in, and started making riffs on her version over the years based on it. Almonds, pistachios, cashews, all fair game. Although, I still prefer to bake candied walnuts , and sometime pecans.],
-  [Some pictures to provide visual cues at various stages in the process.],
-  [Heat the water with sugar : Once the sugar has dissolved and started simmering a bit, you’re going to add the peanuts and stir well. Medium heat seems to work best for me, the sugar mixture thickens and the peanuts begin to take on some color. Also, choose a nice, thick pan to use here.],
-  [Toast the sugar and nuts : Keep cooking and stirring. You’ll stir in the salt, and at some point the mixture will get dusty and dry in appearance. It’s ok. It will loosen up again and the sugar will turn a beautiful caramel color, and by then the nuts should be well toasted. At this point, remove from the heat, and allow to cool for a minute or so. Stir in the rose water (or other accent, extract, water), rose petals, and/or additional spices at this point.],
-  [Cool completely : Allow the candied nuts to cool completely before transferring them to an airtight storage container.],
-  [class="p1"\> Candied Nuts with Orange Blossom Water: Swap in orange blossom water for the rose water. I also like to grate a bit of orange zest onto the tops of these just before serving. The zest is moist, so be sure to add it late in the game, so everything doesn’t get tacky and sticky. You can’t store the candied nuts post-zest, but it’s wonderful for any nuts you’ll be consuming pronto.],
-  [class="p1"\> Candied Nuts with Fioro di Sicilia : With notes of vanilla and orange, swap in fiori di Sicilia for the rose water in the recipe. It’s wonderfully fragrant, and brings a bit of je ne sais quoi to whatever you add it to.],
-  [class="p1"\> In salads : Let’s say I use rose water in the candied nuts. Use a little splash in whatever salad dressing or vinaigrette and you have a wonderful, off beat salad. If I use orange blossom water, use that in the dressing, etc. This works really well with buttermilk based dressings.],
-  [Continue reading Candied Nuts (with Rose Water) on 101 Cookbooks],
-),
-  insert-map: (:),
-  word-count: 733,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-}
-
-{
-  #standard-article(
-  title: [The BMW Art Car Still Sets the Pace],
-  author: [Hypebeast],
-  source-name: [Hypebeast],
-  images: (),
-  paragraphs: (
-  [Robert Rauschenberg famously dreamed of a world filled with "mobile museums" — a vision he realized when he transformed the BMW 635CSi into a rolling masterpiece for the BMW Art Car program. Decades later, his innovative blueprint remains as relevant as it was 40 years ago. In a fitting centennial tribute, BMW is presenting his Art Car at Art Basel Hong Kong 2026, marking the masterpiece’s first-ever appearance in Asia.],
-  [The BMW Art Car program we know now has undergone a few changes in the last four decades. Today, the process is governed by an international jury of esteemed museum directors; while BMW throws a vehicle model in the ring, the choice of the artist remains entirely in the hands of the experts, bringing a different energy than the ‘80s. “There was a time in the ‘80s when we employed regular series cars, I think because BMW was becoming more of a global brand and we wanted to showcase that our cars that are available to everybody on the street,” Prof. Dr. Thomas Girst, BMW's Global Head of Cultural Engagement tells Hypebeast. Although the likes of Julie Mehretu and Jeff Koons have returned the series to the grueling tracks of Le Mans and Daytona, the decade of decadence sought to celebrate the cars people actually drove — perfectly translating Rauschenberg’s mission and embodied by his BMW 635CSi. Unlike the track-only machines of his 1970s predecessors like Alexander Calder, Roy Lichtenstein , and Andy Warhol , Rauschenberg’s contribution translated his pursuit of "availability" onto a street-legal canvas, bridging the gap between elite engineering and the public experience.],
-  [In an era where digital immersion is the new frontier, BMW remains dedicated to moving art out of the hushed corridors of the gallery and directly onto the asphalt. Since the program’s inception in 1975, BMW has been eager to utilize the latest tech available to artists into its Art Car series, ranging from brush and color into foiling, augmented reality, and even apps in the same manner as Cao Fei ’s work for her BMW Art Car \#18. However, when given the opportunity to showcase art outside of the museum walls, Prof. Dr. Girst shares that many artists jumped on the chance, adding, “Like John Baldassare did, who was eager to not have visitors see his work only in museums, but on the street.”],
-  [“That is where the BMW Art Cars come in,” he says, “bringing art to where people are, instead of people going to where the art is.”],
-  [Hypebeast: The 1986 Art Car featured imagery from Renaissance and Neoclassical masters like Bronzino and Ingres. Is it important for the Art Car program to maintain a dialogue with art history while simultaneously pushing the boundaries of automotive technology?],
-  [The BMW Art Cars are as interesting to those that are into the arts and design as it is to those that are into engineering, technology, motor sports, and racing. So while we pay tribute to the artists, and those artists pay tribute to art history, it is not necessary that artists delve into hundreds of years of what came before them the way that Rauschenberg did when he employed Une Odalisque by [Jean-Auguste-Dominique] Ingres from the 19th century, basically as the co-driver, and Portrait of a Young Man by Bronzino as the driver of his car.],
-  [He also employed, of course, plants and flora and fauna from Captiva, the island off the coast of Florida where he had a studio, and where he actually worked on the BMW Art Car. He created the foils for it, coming up with the overall reduced black-and-white approach of the car the way that Frank Stella had done his car in 1976 with a black-and-white grid, paying homage to the engineers of the car.],
-  [When, famously, the Rauschenberg car entered his studio, he said it stood there all white like a pride. He said after that he wanted to do 10 more, laughing his laugh. I think that Robert Rauschenberg in 1985 was very postmodern, and postmodernism is all about employing and toying with images of the past. I think this car stands as an example for the postmodern phase of Robert Rauschenberg. Obviously he had been interested in mobility before, in having driveable museums, and this is why he said that the car is a dream come true for him. When it also comes to his whole idea and notion of collaboration, and of intercultural dialogue spanning centuries, all of this comes together in this car.],
-  [Rauschenberg used the car to explore Walter Benjamin’s concepts regarding "The Work of Art in the Age of its Mechanical Reproduction." As we move into the age of AI and generative art, how is the program evolving to address new methods of "mechanical" or digital reproduction?],
-  [What is important in Walter Benjamin's essay is, of course, the idea of the aura. No matter how often an artwork is reproduced, no matter how many times we see it, even online today, there is still an aura that is with the original and the original alone. I would argue that Robert Rauschenberg, with his car, was pushing the envelope in regard to what is real? What is original? How do we toy with ideas of the past? How do we employ them in a playful sort of manner? How do we make our art approachable? How do we make art matter to as many people as possible? Which is why he loved to work on a car, making it accessible by definition, with a car driving around on the outside, and also employing, as I said, not only art history, art historical references, but also, you know, the great plans of Captiva Island and Florida where this car was created.],
-  [Now, when it comes to AI, I think BMW is very interested in artists working with the latest technologies. As you know, artists, as curious as they are, have always employed the latest technologies, from the Renaissance times onward when the telescope or the microscope opened entire doors and universes for artists that were painting. Nowadays it's the same with employing AI with making use of the digital sphere — something that BMW is very interested in when it comes to its core business. We consider ourselves at the forefront of technological innovation, and we love to see and love to collaborate with artists that do the same. Of course, every time we work with artists, they have complete freedom to do what it is that they want to do. There's no interference on our side, because that complete freedom is as important for artists to create groundbreaking works of art as it is for our engineers and designers to come up with the best answers for questions of mobility of today and tomorrow.],
-  [“That is where the BMW Art Cars come in, bringing art to where people are, instead of people going to where the art is.”],
-  [But that said, one thing, we should be clear, it was Marshall McLuhan in the 1960s who said that if we look at Earth as a spaceship, we are already in outer space. If we consider our planet a spaceship, he said, on spaceship Earth, there's no passengers, there's only crew. So if there's no passengers and there's only crew, that is a great mindset in terms of being a crew member and not a passenger on spaceship Earth. And AI is certainly not a crew member. AI is a tool. AI is material at best. When it comes to employing it within the arts, it doesn't take away from an artist or his or her creativity, but it can be used as a tool. And this is where we love to see engagement happen. This is where we, with what it is that we do — providing platforms for emerging and international artists around the globe — it's very dear that we look into how they deal with the latest technologies. Many, many years ago, we worked with ArtDrunk on the concept of the ultimate AI masterpiece where artists that we worked with were giving their artworks into an algorithm, who would then project potential works of theirs onto a car. So the car as a canvas showing what is possible with AI is something that we've done in the past, and we're interested in doing in the future.],
-  [Rauschenberg had a long history of collaborating with scientists and engineers, such as his E. A. T. project. How does BMW facilitate this specific "technical innovator" spirit when a contemporary artist steps into the studio to design a new Art Car?],
-  [We made the experience that artists that work with us love to dive into what it is that we have to offer. They love to work with our engineers. They love to work with our designers, our sound engineers, our mechanical crew that is in the pit stop working on a car, seeing themselves as part of the team when it comes to creating a BMW Art Car. I mean, this is, again, one of many initiatives worldwide. We are partnering with cultural institutions, with orchestras, with opera houses, with art fairs, and we always have a different approach. But you know what? What combines them all is our quest for making visions come true, [visions] that artists would love to realize, providing platforms for their visibility, and also positioning BMW as a leader in the field who, again, never intervenes when it comes to content, but adds not to the bling bling of the art world, but to a meaningful dialogue between spectator and onlooker, between listener and and a composition, a piece of music, for example.],
-  [Taking the first step on the 635CSi was described by the artist as "extremely difficult." How does your team help artists overcome the intimidation of working with such a beautiful, high-performance "canvas?"],
-  [What we do is we have a system in place in regard to BMW Art Car artists that are chosen by an international, independent jury of renowned global museum directors. They are invited to a race, so they see what happens when a car is in the pit stop. They see what happens when drivers are working together with mechanical engineers, engineers, and designers. You know, to have a car that actually wins a race, or is at least competing for first prize. This is what artists are interested in exploring further, and our role is very clear — it is making the vision of artists come true. We did the same with Julie Mehretu, who did not want her Art Car No. 20 to be called a “rolling sculpture,” as many of these BMW Art Cars are, but rather a performative painting. She thought of the big nose of the car, basically inhaling one of her paintings that were on the wall in her studio while she was working on the car. That is another element of getting artists interested in what it is that we have to offer, by providing them with a miniature version of the car that they turn into an Art Car, so that they have it in their studio and they can think about what it is that they want to do with it.],
-  ["AI is certainly not a crew member. AI is a tool. AI is material at best."],
-  [Rauschenberg founded the Rauschenberg Overseas Cultural Interchange (ROCI) to transcend geographical limits. In what ways does the Art Car program act as a modern "cultural interchange" for BMW on a global scale?],
-  [I believe that ROCI was, you know, ahead of the curve when it comes to when it comes to ideas of collaboration, when it comes to working on a global scale, when it comes to delving into the creativity of so many different cultures and facets of what it is that we are capable of as human beings. And I believe that cultural interchange or cultural dialogue is not something to strive for, is not something to try and achieve, but is the basis of the success of an international company as well when it comes to our core business. This intercultural dialogue is essential, and it is what we showcase. It is what we hail. It is what we throw all of our weight behind when it comes to our cultural engagement, but also when it comes to thinking of our core business as a company doing business in over a hundred countries. It is essential to understand each other, to respect each other, to value each other, and to encounter each other with a great portion of curiosity. Art can do that. Art can jump across any threshold and make it very clear that we are all humans on this planet together, trying to achieve something wonderful.],
-  [From a stuffed goat with a tire in Monogram to a BMW hood signed in 1986, Rauschenberg sought to merge art with the "larger world." Looking toward the future, how does the Art Car program remain a prime symbol of BMW’s commitment to global cultural engagement?],
-  [I think this very year, we see AFMAC play out. AFMAC is the African Film and Media Arts Collective that was invented by Julie Mehretu, the BMW Art Car artist for Art Car No. 20. Her BMW M v8 hybrid car raced at the 24-hour race in Le Mans in 2024, but that was not the end of the project. For Julie Mehretu, an Ethiopian artist who went to the United States very early in her life, it was essential for her to also give something back to the continent, in this case, the African continent. And this is why the African Film and Media Arts Collective was born out of the Art Car project. We are moving forward from the invention of the BMW Art Car in 1975 where it was about wielding brushes and painting a car to involving and incorporating the digital, to turning this into something that has more to do also with corporate citizenship, giving something back to the society that we do successful business in. Now, AFMAC is a platform for dialogue, implementing many workshops across Africa, where young filmmakers talk about their practice with elite artists that have been chosen by AFMAC. All of this is coming together at the Zeitz Museum of Contemporary Art Africa (Zeitz MOCAA), a long term partner of BMW, and the greatest museum for contemporary art in all of Africa, which happens to be in Cape Town.],
-  [We've been partnering with them from the get-go when it comes to the BMW Education Center, bringing arts and culture education to young students. It will culminate the AFMAC platforms for filmmaking that have been taking place in at least six different cities across Africa in the past two years. They will all culminate presenting their results together with the BMW Art Car in early December at Zeitz MOCAA in 2026.],
-  ["No matter how often an artwork is reproduced, no matter how many times we see it, even online today, there is still an aura that is with the original and the original alone."],
-  [When it comes to how we look into the future of the BMW Art Cars, the series will obviously continue. I think we made it very clear that it is certainly about the car, but not only about the car. Robert Rauschenberg has made clear with his amazing car himself, having been interested in questions of mobility since the 1950s when he created this automotive tire track. It's almost, I think, 30 or over 20 feet long. The tire track was from the car of musician John Cage, who used to be his friend and was the only person that he knew had a car in New York City. He borrowed his car to basically create this tire track, which is almost like Chinese calligraphy.],
-  [I think that part of this whole idea of what Rauschenberg was about is being paid tribute to, and is being played out at this amazing exhibition of Robert Rauschenberg that is currently showing at M+, while we bring his BMW Art Car to Art Basel Hong Kong. With Art Basel being our partner for more than two decades now, this is all coming together very well and lovely, because this exhibit, aside from his tire track, shows not only his influence in Asia, but also Asian influence on his work. That, I think, is something that he would love to have seen come into being. He was so much into making his art matter internationally, or making what his art stands for matter, and that is collaboration across nation states and across disciplines. All of that comes together and culminates in his great work for us: the BMW Art Car.],
-),
-  insert-map: (:),
-  word-count: 2797,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-}
-
-{
-  #standard-article(
-  title: [Weekend reading: National scandal],
-  author: [The Investor],
-  source-name: [Monevator],
-  images: (),
-  paragraphs: (
-  [What caught my eye this week.],
-  [C onsidering the high hurdle that politicians and business leaders have set themselves for something to be considered a sacking offence, I was surprised to see the boss of National Savings & Investments (NS&I) resign this week.],
-  [Of course, the NS&I FUBAR was a rough experience for the 37,500 people affected. NS&I’s mistakes saw bereaved families facing delays accessing their relatives’ Premium Bonds with a total value of up to £476m.],
-  [To give just one example from a BBC report :],
-  [Tracy McGuire-Brown from Newbury in Berkshire […] took six years to claim £2,000 in premium bonds her late father had left in his will.],
-  [The 61-year-old former care home manager says she “cannot describe how upsetting and frustrating” it was to deal with NS&I, and that she had to send in her father’s will and other original documents at her own expense.],
-  [“It was the most awful, awful experience,” she says.],
-  [No doubt – and not what anyone wants to deal with in the wake of the death of a loved one.],
-  [However, NS&I has more than 24 million customers holding £240bn with the institution, so the number affected is relatively small. According to Which the problems were caused by administrative failures – bad, certainly, but not malicious. The long delay between problems emerging and NS&I coming clean is problematic, but again the scale of the operation mitigates this to some extent.],
-  [With all that said – and, again, not to make light of having to fight to get your own money back – I think the real reason boss Dax Harkins had to go was because NS&I is held to a higher standard than a typical High Street bank, on the basis of its 100% government backing.],
-  [Trust buster],
-  [I’ve often recommended NS&I savings or Premium Bonds to fretful – but essentially financially uninterested – friends and relatives looking for somewhere safe to put their cash. Especially after the financial crisis.],
-  [No worries about bank runs with NS&I, or Financial Services Compensation Scheme limits , or your savings somehow getting muddled up in riskier lending. Just okay interest rates, the infinitesimal chance to win big with ERNIE , and a recommendation made in the same vein as nobody getting fired for buying IBM .],
-  [Also, faith in NS&I’s systems underwrites the Premium Bond draw.],
-  [There are already conspiracies about which Bonds win and who gets what prizes. NS&I can do without incompetence creeping into the mix, too.],
-  [Further reading:],
-  [A terse apology from National Savings & Investments – NS&I],
-  [NS&I boss replaced as savers left waiting for millions of pounds – BBC],
-  [What caused the missing NS&I savings, and what you should do – Guardian],
-  [Another take on the scandal and next steps if you’re affected – Which],
-  [NS&I will have to pay compensation in some cases, say ministers – This Is Money],
-  [Have a great weekend.],
-  [Commodities are working – Monevator],
-  [The natural yield model portfolio wheels are turning – Monevator [ Members ]],
-  [From the archive-ator: A plan to be financially independent in ten years – Monevator],
-  [World faces ‘stark and deep recession’, says BlackRock boss – This Is Money],
-  [Temporary petrol shortages possible at some pumps, warns ASDA – Guardian],
-  [How Trump and the oil price move in sync [Charts] – BBC],
-  [Reminder: the state pension age rises in April – Which],
-  [Buying UK housing most affordable since 2015 on price-to-earnings basis… – ONS],
-  […as London house prices drop again… – City AM],
-  […but rents are at an all-time high relative to incomes – Sky],
-  [Final candidates for seven new towns named – BBC],
-  [SpaceX’s mooted IPO valuation is in another orbit – Sherwood],
-  [Government defends landlord tax hikes as ‘fairer’ system – Property 118],
-  [FCA launches later life mortgage [a.k.a. equity release] study – Mortgage Strategy],
-  [Who ate all China’s stock market returns? [Paywall] – FT],
-  [Products and services],
-  [Disclosure: Links to platforms may be affiliate links, where we may earn a commission. This article is not personal financial advice. When investing, your capital is at risk and you may get back less than invested. With commission-free brokers other fees may apply. See terms and fees. Past performance doesn’t guarantee future results.],
-  [The savings accounts that will pay you up to 5% – Which],
-  [How to swap houses for your holidays – Guardian],
-  [Don’t rely on AI to find you the best savings deal – Which],
-  [Get up to £3,000 cashback when you open or switch to an Interactive Investor SIPP. Terms and fees apply, affiliate link – Interactive Investor],
-  [HSBC, Barclays, Nationwide, and Halifax hike mortgage costs – Yahoo Finance],
-  [Five-year mortgages now cheaper than two-year fixes again – Mortgage Strategy],
-  [Fixed-rate mortgages go above 5.5%, but 4% trackers are available – This Is Money],
-  [Get up to £1,500 cashback when you transfer your cash and/or investments to Charles Stanley Direct through this affiliate link . Terms apply – Charles Stanley],
-  [Natwest switch offer: £150, or £250 for Premier account – Be Clever With Your Cash],
-  [What are passkeys and why should you use them for security? – Oblivious Investor],
-  [The best and worst family deals at major UK attractions – Be Clever With Your Cash],
-  [Loft-style apartments for sale, in pictures – Guardian],
-  [Comment and opinion],
-  [Could the triple-lock be scrapped, and should it be? – This Is Money],
-  [Index funds work – Money Changes Everything],
-  [Echoes of history: what the oil shock means for your money [Paywall] – FT],
-  [Seven lessons from ‘enoughfluencers’ on how to live a simpler, happier life – Guardian],
-  [Yes you can beat the market by avoiding its worst days. But you won’t – Morningstar],
-  [Why are young people taking so many unwise financial risks? – Bloomberg Advisor Perspectives],
-  [Safe until crisis: what 300 years of wars reveals about government debt – CEPR],
-  [Your financial past isn’t true. Neither is your future – The Net Worthwhile Weekly],
-  [The quiet transformations that separate investors from stewards – Bogumil Baranowski],
-  [How to compare well – Mr Stingy],
-  [The woes of managing money for a friend or relative – Financial Samurai],
-  [Hendrik Bessembinder has updated his influential stock return study [Research] – SSRN],
-  [Naughty corner: Active antics],
-  [The big problem with UK investment trusts – City AM],
-  [VCTs brace for record season after ‘bonkers’ tax relief cut – This Is Money],
-  [The reality of setting up as a solo investment advisor – Flyover Stocks],
-  [Ex-US markets look a good bet for value investors… – Verdad],
-  […as Verdad’s founder Dan Rasmussen warns on private equity and more – Arena],
-  [In Elon Musk’s mind, SpaceX and Tesla have already merged – Sherwood],
-  [Tetra Pak: the shape of innovation – Quartr],
-  [Kindle book bargains],
-  [Or pick up one of the all-time great investing classics – Monevator shop],
-  [Environmental factors],
-  [Britain sets new wind power generation record – RE News],
-  [Green energy enquiries surge as households fear price spike – This Is Money],
-  [Plug-in solar panels to become legal in the UK – Which],
-  [Evan Davis: heat pumps work for me – BBC],
-  [Earth’s climate increasingly out of balance – World Meteorological Organisation],
-  [The carbon burden of US companies – Klement on Investing],
-  [An unstoppable mushroom is tearing through North American forests – BBC],
-  [Robot overlord roundup],
-  [So long, Sora – Spyglass],
-  [Human musicians are doomed – Klement on Investing],
-  [Inside China’s robotics revolution – Guardian],
-  [There will be no permanent underclass – Of Dollars and Data],
-  [Not at the dinner table],
-  [The world’s policeman is on the take – New York Times [h/t Abnormal Returns ]],
-  [Treason in the futures market – Paul Krugman],
-  [There isn’t always a ‘long arc’ of morality – Noahpinion],
-  [Democracy watchdog finds Trump aiming for dictatorship – Guardian],
-  [There’s an information void at the heart of the Iran war – Bloomberg],
-  [The voter fraud fraud – The Bulwark],
-  [Off our beat],
-  [Cheap drones are reshaping the war in the sky – Reuters],
-  [Five years of lessons from running a bookstore – Ryan Holiday],
-  [“I escaped North Korea with my mum. But…” – BBC],
-  [The clock in our genes – Aeon],
-  [Scientists identify a speech trait that foreshadows cognitive decline – Science Alert],
-  [The indirect – and sometimes surprising – benefits of vaccines – Stat],
-  [Google search tips and hacks – Card Catalog],
-  [And finally…],
-  [“Human beings have a remarkable ability to accept the abnormal and make it normal.”],
-  [– Andy Weir, Project Hail Mary],
-  [Like these links? Subscribe to get them every Saturday. Note this article includes affiliate links, such as from Amazon and Interactive Investor .],
-  [The post Weekend reading: National scandal appeared first on Monevator .],
-),
-  insert-map: (:),
-  word-count: 1490,
-  edited-for-length: true,
-  debug-mode: false,
-)
-
-}
-
-{
-  #standard-article(
-  title: [4 Honeymoons and an Anniversary],
-  author: [Anne Gordon],
-  source-name: [Live Life Travel],
-  images: (),
-  paragraphs: (
-  [class="p1"\> I t’s likely around the time when most of you are starting to think about your honeymoon. And while there is no right answer for everyone in terms of when to plan, we do have some general guidelines that we can share with you based on our professional experience:],
-  [class="p1"\>The sweet spot to have your honeymoon planned is roughly 9 months before your wedding (the exception to this rule is that places such as the Amalfi Coast and The Greek Islands can be planned even earlier given the short season, high demand and limited availability).],
-  [class="p1"\>If you are looking to book Sandals, they open their inventory 2 years before check-in date (vs. 1 year for most hotel inventory) and we recommend that you book as early as possible with your preferred agent as there are only benefits to doing so.],
-  [class="p1"\>If you are not sure where you want to travel for your honeymoon yet, you are not alone. Eighty-five to ninety percent of the couples we meet say the same thing and this is something that we specialize in, so no reason to worry or stress. We really do take care of everything.],
-  [class="p1"\>To help inspire all of you who are just starting to think about your honeymoon (or any other type of celebration travel), we would like to share with you ‘4 Honeymoons and a 20th Anniversary’ from 2019, along with their personal travel planning tips.],
-  [Cape Town – 3 nights – Cape Point, Penguin Colony, Table Mountain],
-  [Zambia – 3 nights – Victoria Falls, Elephant Café, Walking with Cheetahs, Sunset River Cruise, Private Dinner],
-  [Kruger Park Safari – 4 nights – Mjejane River Lodge],
-  [Johannesburg – 2 nights – Local Museums & Restaurants],
-  [Even if you prefer to book your own travel, use a travel advisor for your honeymoon to make everything stress-free & super organized, as well as adding those special touches],
-  [Be willing to try new things while you are in destination including experiencing the local culture and food],
-  [Don’t be afraid to travel during the low season to take advantage of lower prices, more exclusive experiences and fewer crowds],
-  [Bangkok – 2 nights – Floating Markets, Street Food Tour],
-  [Chiang Mai – 3 nights – Elephant Sanctuary, Night Market Tour, Visit to Wat Phrathat Doi Suthep Temple],
-  [Koh Samui – 6 nights – Big Buddha, Angthong National Marine Park],
-  [Singapore – 1 day – Gardens by the Bay, Cloud Forest, Bumboat River Cruise],
-  [Don’t be afraid to go big for your honeymoon; it’s a once in a lifetime experience, so make it count],
-  [Don’t settle for the first travel advisor that you use if they are not for you; we tried several before we found Anne],
-  [Always choose the “crazy” option – We opted for an extended layover in Singapore for the way home and ended up having an incredible experience that we would had completely missed if we had planned this on our own],
-  [7 nights in an Over-The-Water Villa at The Rosewood Mayakoba],
-  [Inclusive of an Adults-Only Beach Club with Pool and Taco Truck, Bicycles for the week, Private Plunge Pool and Hammock, Daily Breakfast and Private Boat Ride],
-  [Choose a place that you love so much that you can return for anniversaries and other celebration travel including family travel],
-  [Listen to the locals; We had the best tostadas of our entire life based on a recommendation of our driver in the village of El Publeto],
-  [Be sure that your resort has a specified “Adults Only” section if it is a family resort; our favorite spot was the private beach club and adults only pool where the staff was impeccable],
-  [2 nights – Vineyard on Mt. Etna – Private Mt. Etna Summit Jeep Experience, Private Cooking Class with Wine Tasting],
-  [6 nights – Taormina – Evening Walking Tour with Culinary Experience, Pizza Making, Private Yacht Experience with Grotto Tours],
-  [Whatever you do, DON’T skip your honeymoon],
-  [Using a travel advisor is a MUST – All we had to do was show up and we were treated like celebrities the entire time, everything was perfect!],
-  [Don’t overthink about anything, just enjoy it all. Sicily was perfect for us and even Andrew, who has never liked wine, acquired a taste for it there (we especially loved the Etna Rosso)],
-  [3 nights – Rome – Colosseum Tour, Vatican with Sistine Chapel Tour],
-  [1 night – Naples – Archeological Museum with Authentic Pizza Dinner],
-  [3 nights – Sorrento – Private tour of Pompeii & Herculaneum, Lunch & Wine Tasting at Vineyard on Mt. Vesuvius, Lemon Farm Tour, Lunch & Shopping in Positano],
-  [3 nights – Ravello – Anniversary Dinner at Belmond Hotel Caruso],
-  [Having 24/7 in-destination contacts while traveling provided us with a peace of mind that we did not realize was available to us],
-  [Go to Ravello on the Amalfi Coast; it was unbelievably beautiful, so laid back and relaxing and we felt so welcome there by the locals],
-  [Make time to travel together for milestone anniversaries; It was the trip of a lifetime and we are so happy that we did it],
-  [For more information on planning your next vacation, contact Anne Gordon at Live Life Travel. anne\@livelifetravel.world www.livelifetravel.world],
-  [The post 4 Honeymoons and an Anniversary appeared first on Live Life Travel .],
-),
-  insert-map: (:),
-  word-count: 1259,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-}
-
-{
-  #standard-article(
-  title: [Winter Vegetable Curry Recipe],
-  author: [clotilde],
-  source-name: [Chocolate & Zucchini],
-  images: (),
-  paragraphs: (
-  [Buy Clotilde's latest book, The French Market Cookbook !],
-  [Do you want to hear one of the least publicized benefits of working from home ? You get sick less often.],
-  [Not only can you choose to stay in when it’s cold and drizzly and icky outside (pyjamas optional), but you also spend less time in crowded public transportation, shake fewer hands and kiss fewer cheeks (in French office environments, it is common to kiss your close colleagues hello when you come in in the morning), and touch fewer shared coffee pots and bathroom door handles.],
-  [Or at least that has been my experience for the past thirteen winters , ever since I quit my office job and started working for myself.],
-  [Except this one winter a few years ago, when my son Milan went to daycare for the first time. There he was naturally in contact with other adorable little people — including twins he’s still friends with five years later — and the bazillion germs and viruses they all brought to share with one another, and took home at night.],
-  [It’s all part of the process, and I was copiously warned about it, but we went through a rough patch that first winter, when Milan was sick for the first time of his life, I had the nastiest cold I’d ever, ever had, and neither of us seemed to be getting better. At all. For weeks. It looked like it was going to be a long winter.],
-  [And then one night my dear friend Florence , who was kindly checking in on us, suggested a vegetable curry might be just the thing.],
-  [Just the thought of it cheered me up . I dragged myself up from the couch, looked up a recipe that would require neither grocery shopping nor lengthy preparation, and got to work.],
-  [The recipe I used that night was this one by Beena Paradin, a French-Indian cook, food writer\*, and co-founder of the online shop Beendhi . She presents the recipe as a riff on a traditional stew from Kerala , the region in the Southwest of India where she was born, and explains she’s adapted it to speed up the process, and accommodate the kind of ingredients one finds in the Western world.],
-  [It was profoundly comforting , full of warm flavors, the vegetables soft and fuzzy in their spiced coconut milk sauce. It made me feel considerably better.],
-  [The stew has become a fixture of our weeknight dinner rotation since then, and it has turned out to be a most rewarding method of using up mismatched vegetables that may be losing patience in the fridge drawer.],
-  [And whether it’s the winter vegetable curry, our stronger immunity, or just our lucky star, I’m happy to report we’ve all been doing fine since that dreadful first winter.],
-  [See also : Vegetarian Batch-Cooking for Winter],
-  [Join de conversation!],
-  [What’s your edible remedy for bad colds and other grisly viruses?],
-  [\* In particular, she has written the superb cookbook Inde intime et gourmande with her mother, Padmavathi Paradin.],
-  [Have you tried this? Share your pics on Instagram!],
-  [Please tag your pictures with \#cnzrecipes . I'll share my favorites!],
-  [id="zlrecipe-innerdiv"\>],
-  [id="zlrecipe-prep-time"\>Prep Time: 15 minutes],
-  [id="zlrecipe-cook-time"\>Cook Time: 35 minutes],
-  [id="zlrecipe-total-time"\>Total Time: 50 minutes],
-  [id="zlrecipe-yield"\> Serves 4.],
-  [class="instruction" id="zlrecipe-instruction-2"\>Heat the oil in a thick-bottomed pot with a lid, such as a Dutch oven. Add the onions and salt, and cook for 3 minutes, stirring frequently, until softened. Add the ginger, cloves, and cinnamon, and cook for 1 minute.],
-  [https:\/\/cnz.to/recipes/vegetables-grains/winter-vegetable-curry-recipe/],
-  [id="zl-printed-copyright-statement"\>Unless otherwise noted, all recipes are copyright Clotilde Dusoulier.],
-  [The post Winter Vegetable Curry Recipe appeared first on Chocolate & Zucchini .],
-),
-  insert-map: (:),
-  word-count: 841,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-}
-
-#article-row((
-  [
-    standard-article(
-  title: [Nike Celebrates the Paris Olympics With the LeBron 23 "Old Glory" Colorway],
-  author: [Hypebeast],
-  source-name: [Hypebeast],
-  images: (),
-  paragraphs: (
-  [Name: Nike LeBron 23 "Old Glory"
- Colorway: Pale Ivory/University Red-Midnight Navy-Metallic Gold
- SKU: IB9562-103
- MSRP: \$219 USD
- Release Date: May 8, 2026
- Where to Buy: Nike],
-  [Nike is expected to be expanding LeBron James ' signature footwear lineup with an upcoming Nike LeBron 23 "Old Glory." Continuing to tell the story of the LeBron's NBA journey, the new moniker pays homage to the Paris 2024 Summer Olympics. The thematic colorway immortalizes the moment LeBron James carried the United States flag during the opening ceremony, cementing his status as a global icon beyond the game of basketball.],
-  [The signature footwear lineage has a long history of blending statistical milestones with broader cultural narratives. While the team's gold medal run heavily spotlighted talents like Stephen Curry and Kevin Durant, the "Old Glory" makeup chooses to emphasize James' enduring legacy and leadership over a specific on-court performance.],
-  [Aesthetically, the basketball silhouette adopts a straightforward and patriotic red, white, and blue color scheme. At the heel, a custom crown-and-flag emblem is prominently displayed, symbolizing the superstar's dual role as a legendary athlete and a global figurehead. To complete the commemorative design, subtle metallic gold hits decorate the mini Swoosh and tongue, subtly nodding to the squad's ultimate podium finish without overshadowing the primary theme.],
-),
-  insert-map: (:),
-  word-count: 210,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-  ],
-  [
-    standard-article(
-  title: [black bean confetti salad 2.0],
-  author: [deb],
-  source-name: [Smitten Kitchen],
-  images: (),
-  paragraphs: (
-  [I was in Paris \* last week — no, I cannot believe I get to utter sentences like that so casually, either, pinch me — and it was really, truly, and surprisingly spring. The magnolia trees at the Jardin du Palais Royal supplied us with a lace curtain of fluttering pink shadows, the daffodils and hyacinth were popping up from the ground like they’d missed us, and everyone was outside and stayed out until after midnight and this energy climbed inside me, evicted all of the seasonal malaise (turned out I was just cold!), and I did my best to bring all of this warmth and joy back to NYC with me. And despite the fact that my grouchy (sorry, “weathered”) friends tried to warn me that we were experiencing a “false spring” and “don’t fall for it,” la la la, I said, it is spring in my heart now — and in my kitchen, and busted out a warm weather salad. Which is to say: I’m sorry, this sudden cold spell might be my fault.],
-  [Read more »],
-),
-  insert-map: (:),
-  word-count: 180,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-  ],
-), ruled-indices: (1,))
-#pull-quote([The signature footwear lineage has a long history of blending statistical milestones with broader cultural narratives.], [Hypebeast])
-
-
-#article-row((
-  [
-    standard-article(
-  title: [WIND AND SEA Celebrates 8 Years With An Anniversary Rework Collection],
-  author: [Hypebeast],
-  source-name: [Hypebeast],
-  images: (),
-  paragraphs: (
-  [Tokyo-based streetwear brand WIND AND SEA is celebrating its eighth anniversary with a special collection that reimagines its founding designs],
-  [The capsule features a mix of regular items in bright neon colorways alongside unique reworked pieces crafted from vintage garments],
-  [Standout items include the OG SEA and Script long-sleeve tees as well as exclusive one-of-one jackets and pants built from the past],
-  [Japanese label WIND AND SEA is officially launching the "WIND AND SEA 8th Anniversary Collection" to commemorate eight years of connecting culture and streetwear. Founded in Tokyo in 2018, the brand is revisiting its roots by updating its original designs through a contemporary lens.],
-  [The anniversary range is split into two distinct tiers: regular staples and exclusive rework pieces. The standard lineup breathes new life into the brand's 2018 beginnings, introducing the OG SEA L/S TEE and SCRIPT SEA L/S TEE in vibrant neon colorways, alongside the graphic-driven NUMBER EIGHT TEE. The iconic script logo makes its return to anchor these core items.],
-  [On the more experimental side, the "REWORK" capsule delivers one-of-a-kind garments constructed entirely from vintage clothing. Highlighting the "Built From The Past" ethos, this tier includes the NUMBER EIGHT REWORK JACKET and PANT, both arriving in beige, as well as mixed-material tote bags and caps. Each reworked piece possesses a unique character, ensuring that no two items are exactly alike.],
-  [The regular items from the WIND AND SEA 8th Anniversary Collection drop in-store on Saturday, March 28, at the brand's Tokyo, Osaka, and Hankyu Umeda locations. An online lottery release follows on Sunday, March 29 via the official WIND AND SEA webstore , while the exclusive reworked pieces will be strictly limited to the WIND AND SEA TOKYO flagship.],
-),
-  insert-map: (:),
-  word-count: 285,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-  ],
-  [
-    standard-article(
-  title: [Sony Is Increasing PlayStation 5 and PlayStation 5 Pro Prices Globally],
-  author: [Hypebeast],
-  source-name: [Hypebeast],
-  images: (),
-  paragraphs: (
-  [Sony is raising the prices of all PlayStation 5 consoles and the PlayStation Portal globally starting April 2, 2026],
-  [The standard PS5 and Digital Edition will see a \$100 increase, while the PS5 Pro will jump \$150 to \$899.99],
-  [Experts attribute the hardware price hikes to a global memory chip shortage fueled by the booming AI data center sector],
-  [Sony announced a significant global price increase across its entire PlayStation 5 console lineup and the PlayStation Portal remote player. The new pricing, which takes effect on April 2, marks the second time in less than a year that the company has raised the cost of its current-generation gaming hardware.],
-  [Under the new pricing structure in the U. S., the standard PlayStation 5 with a disc drive will cost \$649.99 USD, while the Digital Edition will retail for \$599.99 USD — a \$100 USD increase for both models. The premium PlayStation 5 Pro will see the steepest hike, jumping \$150 USD to \$899.99 USD. Additionally, the PlayStation Portal handheld streaming device will increase by \$50 USD to \$249.99 USD. Similar price adjustments are being rolled out across the UK, Europe, and Japan.],
-  [In an official blog post , Sony attributed the price hikes to "continued pressures in the global economic landscape" and stated the adjustments were necessary to ensure the delivery of high-quality gaming experiences. While the company did not elaborate on specific economic factors, industry experts point to a severe shortage of RAM and memory chips driven by the booming artificial intelligence sector. The massive demand from AI data centers has constrained component supplies, forcing tech manufacturers to pass the rising costs downstream to consumers.],
-),
-  insert-map: (:),
-  word-count: 275,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-  ],
-), ruled-indices: (1,))
-#pull-quote([Highlighting the "Built From The Past" ethos, this tier includes the NUMBER EIGHT REWORK JACKET and PANT, both arriving in beige, as well as mixed-material tote bags and caps.], [Hypebeast])
-
-
-{
-  #standard-article(
-  title: [Drink of the Week: Zumbador Tequila Blanco],
+  title: [Easter Cocktails],
   author: [Imbibe],
   source-name: [Imbibe Magazine],
   images: (),
   paragraphs: (
-  [As the tequila category has exploded in recent years and a dizzying number of brands have filled shelves, the process of finding a true artisanal tequila has become more confusing. But among this growing crowd are spirits that stand out for their heritage, process, and dedication to quality. Hailing from the highlands of Jesus Maria, Altos de Jalisco, Zumbador (which translates to hummingbird) is one such standout. Founded by fourth-generation agave grower Roberto López, Zumbador is a family-run distillery that produces blanco, reposado, and añejo tequila, and with spring and summer approaching, we are now reaching for their blanco.],
-  [The López family manages 1,000 acres of land with 1.5 million agaves planted in the Jaliscan highlands, where a perfect combination of altitude, soil, water, and climate allow for optimal growing conditions. Combine that with the family’s selective harvesting and traditional production techniques of masonry oven cooking, tahona crushing, wood and steel fermenters, copper and steel pot distillation, and zero additives. The result is an outstanding spirit that represents an incredible value. “Zumbador is a tequila made to reflect what my family has been drinking for generations,” says López. “Love, passion, work, and tradition in every drop.”],
-  [Zumbador’s blanco delivers a refined minerality and a subtle sweetness with citrus and of floral notes that unfold gracefully. And while it’s elegant enough to sip solo, it will shine in array of cocktails. Drink it in a traditional Batanga , a seasonal Margarita twist , or the Main Character recipe below. \$24.99, zumbadortequila.com],
-  [Glass: Nick & Nora
-Garnish: watermelon ball],
-  [Shake all of the ingredients in shaker with ice. Strain into a chilled glass. Garnish.],
-  [The post Drink of the Week: Zumbador Tequila Blanco appeared first on Imbibe Magazine .],
+  [Sure, you could whip up a batch of Mimosas or Bloody Marys , but why not liven up this year’s Easter brunch celebration with something a little more unexpected? From frothy sours to fruity punches, try these spring-ready Easter cocktails.],
+  [Inspired by childhood memories of drinking Orange Julius smoothies.],
+  [Fresh berries, honey, and yogurt star in this delicious sipper.],
+  [A gin cocktail that makes fresh raspberries the star.],
+  [Move over Mimosa—there’s a new drink at the brunch table.],
+  [An unexpected star ingredient makes this Daiquiri perfect for springtime sipping.],
+  [One of our favorite crowd-pleasing Easter cocktails is this bubbly classic.],
+  [Chartreuse ups the herbacousness of this gin cocktail from Portland, Maine’s Hunt & Alpine Club .],
+  [Looking to capture the flavors of two of her favorite cocktails, Tampa bartender Amber Carregal created this Pimm’s Gimlet.],
+  [Original instructions dictated that this New Orleans classic be shaken 12 minutes.],
+  [This spring-ready cocktail features a natural flavor pairing: savory carrot juice and spicy ginger.],
+  [Orange jam and bourbon mimic the tried-and-true combo.],
+  [A dollop of Greek yogurt is the key to this creamy cocktail.],
+  [The post Easter Cocktails appeared first on Imbibe Magazine .],
 ),
   insert-map: (:),
-  word-count: 319,
+  word-count: 232,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+}
+
+{
+  #section-label([Analysis])
+  #standard-article(
+  title: [30 Light and Bright Spring Dinner Recipes],
+  author: [Lindsay],
+  source-name: [Pinch of Yum],
+  images: (),
+  paragraphs: (
+  [Spring is in the air – I can feel it! My weekly dinner menus are slowly turning over from soups and stews to salads and bowls filled with lots and lots of color.],
+  [This is the only list you need as we head into warmer, sunnier weather! ☀️ Some of my all-time favorite dinner recipes for spring are here – bright salads, easy sandwiches for a crowd, herby sauces and dressings, and lots of weeknight wonders (because spring is BUSY, too!).],
+  [Hoping you find a new dinner favorite!],
+  [class="tasty-roundups-description"\>OOOH BABY, this salad is so good! Crunchy kale and cabbage, fresh herbs and fresno peppers, chopped peanuts, and a perfect roasted peanut vinaigrette that tucks into all the salad nooks and crannies.],
+  [class="tasty-roundups-description"\>We are living our best bowl life this week. Seasoned sweet potato wedges and chicken meatballs or rotisserie chicken all piled onto a plate with a little puddle of punchy green avocado mojo sauce. Yes, wow, repeat.],
+  [class="tasty-roundups-description"\>Crunchy, light, bright, and ultra-fresh. This French-inspired bistro salad is an absolute star as a side for nearly any dinner. Tender greens, fresh herbs, pickled onions, and a delicate vinaigrette on top.],
+  [class="tasty-roundups-description"\>Tender, juicy, garlic-marinated shrimp brushed with a bright pesto sauce and piled high on creamy Parmesan risotto with fresh tomatoes and herbs sprinkled on it all. Wow wow wow! Diving in now!],
+  [class="tasty-roundups-description"\>These Red Chile Chicken Tacos are always on our minds! Lightly pan-fried corn tortillas stuffed with tender chicken and a pinto bean red chile saucy filling, piles of creamy corn salsa, and tangy homemade pickled red onions. YUM!],
+  [class="tasty-roundups-description"\>We’re bringing you the most beautiful salad inspired by the restaurant Oliver’s in Minnesota. Tender salmon, savory peppers and garlic confit, buttery chunks of avocado, fire-roasted corn, bacon bits, and a river of homemade smoky ranch dressing.],
+  [class="tasty-roundups-description"\>This Sheet Pan Shrimp and Cauli Rice is the easiest sheet pan dinner! Shrimp, peas, cauliflower rice, seasonings, and Rosso pesto sauce all come together on one pan for a delicious springy meal.],
+  [The post 30 Light and Bright Spring Dinner Recipes appeared first on Pinch of Yum .],
+),
+  insert-map: (:),
+  inline-pq: pull-quote([YUM!   class="flex items-center flex-wrap recipe-rating"\>    class="space-x-1 flex mr-2"\>   class="text-xxs text-gray-700 tracking-wider md:tracking-extra-widest uppercase font-arvo"\>  53 reviews \/ 4.], [Lindsay]),
+  inline-pq-idx: 4,
+  word-count: 1934,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+}
+
+{
+  #standard-article(
+  title: [Feel-good Lunch Ideas],
+  author: [Heidi Swanson],
+  source-name: [101 Cookbooks],
+  images: (),
+  paragraphs: (
+  [Coming up with inspired lunch ideas takes some effort. One of the things I’ve been trying to be better about is lunches on-the-go. Often times, let’s be honest, it’s re-marketing leftovers. Too often, if we’re not going to be home for the day, we just wing it. And I’m nearly always sorry we didn’t make the effort to pack a good lunch. This is especially true if we’re on some sort of trip, towing the Airstream . Because on those days parking dictates where you’re lunching. And just thinking about it is making me cringe. So yeah, we’re trying to do better over here and I thought I’d share some recent wins.],
+  [Lunch Ideas \#1],
+  [These lunch boxes (above) came together pretty quickly. Nearly everything was a leftover, or component of a previous meal. To pull it together I peeled and chile-dusted the hard boiled eggs , sliced the avocado and sliced the mandarin.],
+  [1. Spicy Sesame Coleslaw : You’ve seen it before, you’ll see it again. Lol. It’s my favorite coleslaw , and I’ll basically tuck in anywhere. Feathery green and red cabbages along with carrots, apples, and scallions tossed with a spicy, creamy sesame dressing.],
+  [2. Pickled Cauliflower : The pop of color you need in your lunch. This quick pickled cauliflower delivers a good amount of tang and crunch in the midst of less structured components. I make mine with chiles, mustard seeds and slivered onion, but you can play around.],
+  [3. Chile-dusted Hard-boiled Egg: Here’s how to make these. Combine equal parts chile powder and MDH chana masala powder in a small bowl. I like to use this Kashmiri chillie powder , but use what you have (and like). Hard boil eggs , peel them, rinse, dab each egg a bit on a clean towel to take off excess water, then roll them around in the spice mixture until completely covered. Slice and serve, or pack into lunch.],
+  [4. Turmeric-Scallion Tofu Spread : This is actually leftover wonton filling from my last round of wonton soup . But it’s also great as a lettuce wrap filling, cracker and sandwich spread, and on its own. Here, I nestle it into a stack of 2-3 little gem leaves. Get the recipe – it’s the first part of the recipe on this page, minus the wrappers.],
+  [5. Red-spiced Edamame : I’ll write this up as its own recipe soon, it’s a homemade spice blend made by crushing Kashmiri chillies, smoked paprika, brown sugar, sesame, dried onion flakes, salt, and a kiss of cardamom together. Sprinkle generously. There are a lot of other spice blend ideas in the Spice \/ Herb \/ Flower \/ Zest PDF that members get. Just about any of those are great here. Experiment!],
+  [6. Pepita & Curry Leaf Tadka : I’ve definitely over-stripped my young curry tree making this lately. Toast a cup of pepitas and set aside. Heat 2 tablespoons of oil in a small saucepan over medium-high heat, stir in 50-ish fresh curry leaves. Continue to stir and when the leaves begin to crisp up add 2 teaspoons black mustard seeds. Keep stirring and when the seeds have toasted a bit and stopped popping, add 1/2 teaspoon chile powder. Pour this over your pepitas, toss well, and salt to taste. good on everything, Including the soba in the next lunch.],
+  [Also: purple rice, sliced avocado, mandarin wedge, nutritional yeast kale chips],
+  [Lunch Ideas \#2],
+  [The one component of the lunch boxes (above) that wasn’t made ahead of time, was the soba noodles. I boiled them, and ran them under cold water just before packing up.],
+  [6+. Soba with Pepita & Curry Leaf Tadka : The same pepitas as above (lunch ideas \#1), this time tangled with cold soba.],
+  [7. Vegan Tamagoyaki : This is a vegan version of tamagoyaki, the much-loved Japanese rolled omelette. I like to make chickpea-tofu version, and this one is lined with nori and seasoned with scallions and herbs. They’re fantastic lunchbox heroes because you can make and roll them ahead of time. They’ll keep for a few day so you can slice and go.],
+  [8. Blistered Artichoke Hearts : Leftovers from dinner the previous night. I cooked these from frozen. So easy, so good. I wrote a long post about how to cook artichokes – both fresh and frozen. So, if you love artichokes, but think they’re too much work, read this. Same goes if you think the frozen ones are going to be bad. They aren’t and they’re great in scenarios like this one, quick pastas, casseroles, etc.],
+  [9. Fava Beans Tossed with Citrus Olive Oil : These are fava beans that have been shelled, boiled for a flash, shelled again, and then splashed with a bit of lemon olive oil, and tossed with a pinch of salt. From previous dinner. I do the same with edamame, but favas are in season and I they’re worth all the shelling and peeling drama.],
+  [10. Kale Chips : Some extra crushed kale chips tossed with the remaining pepitas. My method for epic kale chips is this: buy curly kale, make sure it’s dry if you recently washed it. Toss the kale with olive oil and scrunch it all up with your hands, be sure it’s all coated. Toss with a lot of nutritional yeast, get a good coating going. Season with salt and bake at until the chips at the edges start browning. Toss well. Continue to bake until crispy but still mostly green. Or have a look at this kale chip recipe .],
+  [Also: blood orange wedges for dessert.],
+  [A Couple Pro-tips],
+  [There’s actually just one main tip, but I’ll add more as I think of them. Line your bentos with parchment paper for easy clean-up (pictured below). This isn’t as important with stainless steel containers, they clean up quite quickly. Bentos, often made of cedar, are a bit more fragile and take more care if you want them to last for many years. Also, clean up as soon as you get home. The reset is key to looking forward to your next special box lunch.],
+  [More Lunch Ideas: Salads!],
+  [Salads are another favorite lunch idea. For the best experience, keep the dressing on the side and toss just before eating. Also, pro-tip, leave a good amount of room or headspace in your salad vehicle, so tossing is contained and less messy. For to-go or desk salads, I love bringing the components for a Nicoise salad or Nicoise-ish salad. The lettuces and other ingredients can stand up to transportation and you get a great mix of protein, greens, and veggies all in one lunch. See photo below.],
+  [Bentos : I have (and love) my small collection of bento boxes. They’re beautifully crafted and fit the perfect amount of food. They often come with small dividers to create separation between food, but you can also use lettuce, or other small containers to divide things up.],
+  [Tiffins (or dhabbas) : These containers have long been used in India to enable healthful, homemade meals outside the home. I have a circular, triple-stack stainless steel version I love for a number of reasons including durability, compactness, and security. The tiers nestle tightly making spills and accidents unlikely. I have my eye on a rectangular version as well.],
+  [Both bentos and tiffins have a tradition of enabling meals made with care and love. And continuing this tradition is something I try to channel when I’m packing a lunch for myself or someone I care about.],
+  [I don’t mind mixing different types of lunch containers. And sometimes I’ll make an individual lunch for each person, each in its own container. But, other times I think it’s fine to load up a few family-style containers and do it that way. I think that works great for components that can be more communal, like edamame, or a bunch of dumplings, a stack of paratha, vegan sushi or quesadillas, quinoa patties , etc.],
+  [Hot Lunch!],
+  [Use a thermos to bring hot miso soup or tea or rasam or whatever else you can think of. This is always the icing on the cake and unfailingly makes me happy (or happier!) When I really have things lined up, I’ll bring green tea, miso soup, or soba tea and a durable glass or two wrapped in cloth. Simply rewrap when you’re finished.
+ 
+I hope this provides a bit of inspiration! It’s really wonderful to take a bit of time to sit down to a thoughtfully prepared, healthful homemade lunch and I’m never sorry about making the extra effort (in the long run). Even if it can make a morning a bit more demanding than usual, I know when I do it, I’ll eat better, feel better, and get excited about sitting down to lunch. Enjoy! -h],
+  [Vegetarian Lunch Ideas : One Sauce, Three Lunches],
+  [Continue reading Feel-good Lunch Ideas on 101 Cookbooks],
+),
+  insert-map: (:),
+  inline-pq: pull-quote([Toss the kale with olive oil and scrunch it all up with your hands, be sure it’s all coated.], [Heidi Swanson]),
+  inline-pq-idx: 12,
+  word-count: 1511,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+}
+
+{
+  #standard-article(
+  title: [Radisson Resort and Spa Lonavala Celebrates the Remaining Natural Beauty of India’s Popular Sahyadris Region],
+  author: [Adrian Madlener],
+  source-name: [Design Milk Architecture],
+  images: (),
+  paragraphs: (
+  [Just a two hour’s drive from the ever-bustling and expanding sprawl of Mumbai—India’s second city—the Sahyadris Hills unfold with a cooler and less humid climate. For decades now, the region—also noted for its ancient forts and Buddhist caves—has been a popular weekend destination for city-dwellers in search of respite but, like the dense and crowded urban cores they’re escaping, it has also succumbed to rampant and unregulated development. Ironically, much of the natural beauty here has fallen victim to its fame. Such is the unfortunate fate of many sought-after resort areas in favorable proximity to a major city or conurbation.],
+  [Looking to maintain what is left of the verdant landscape and make it available to guests in a more responsible way is the recently completed Radisson Resort and Spa Lonavala .],
+  [Replete with several distinctive restaurants, events venues, and other premium amenities, the retreat embeds into its ‘hill station’ surroundings through its innovative architectural massing, materiality, and the implementation of climate-specific strategies inspired by the local architectural vernacular. The decidedly Brutalist yet emphatically site-responsive complex is a far cry from the antiseptic chain hotels that often feel out-of-place and inauthentic.],
+  [“The sense of open space of connecting to nature is contested by the building forms that emerge through the prescribed structural codes and densities,” says Kamal Malik, the founder the eponymously named, Mumbai-based firm responsible for the hotel’s design “The architecture emerges from the site, topography, from the region’s material history—black basalt and wood—and adapts to both flexible and fixed—public and private—programs.”],
+  [Malik Architecture’s comprehensive intervention incorporates reinterpreted architectural archetypes from the region: courtyards, verandahs, deep-shading, thick walls, and cross-ventilation. The main focus however is the surrounding nature. Monumental volumes give way to soaring apertures visible for numerous semi-indoor and semi-outdoor vantage points. All together, the scheme accommodates optimal natural ventilation, safeguards against heavy rain during Monsoon season, and protects against harsh sun rays.],
+  [Suites come with adjoining patios enclosed by operable slatted shading walls. The guest rooms occupy abstract-form buildings hovering above the ground. Shafts of natural light slice across these angular volumes and illuminate atriums that appear between.],
+  [“The feeling of a multi-storey building has been avoided by developing the ground as organic, free form public spaces with split level topographical connections,” Malik adds. “Extant forms—bastions and Large masonry walls—stepped courts, otherwise known as kunds—animate the built landscape.”],
+  [A rich earth tone palette, defined by many of the same substrate materials as the exterior, makes its way into the interiors but doesn’t overpower as the main attraction remains the carefully framed natural setting outside. There’s no superfluous decoration, just a sober deployment of ornamentation hinting at the local Maratha culture. Spacious guest rooms and suites are pared back with a calming modernist aesthetic only interrupted by fluted tambour-pattern feature walls and traditional carpets denoting the placement of beds.],
+  [Alongside numerous sports facilities including everything from a fully-equipped fitness center and steam room to archery and badminton fields, Radisson Resort and Spa Lonavala’s dining options include the quintessential Indian style Hirkani—with stations that allow guest to watch their food being prepared—and a series of pop-up haunts. Malhari is the go-to cocktail bar. The historic Tungarli Village situates right out the resort.],
+  [What: Radisson Resort and Spa Lonavala],
+  [Where: Lonavala, India],
+  [How much: Rooms starting at \$137],
+  [Design draws: A site responsible destination embedded within the popular getaway Sahyadris region of western India with materiality, proportions, cuisine, and activities programmed in honor of the verdant nature in the immediate surroundings.],
+  [Go virtually on vacation with more design destinations right here .],
+  [Photography courtesy of Radisson Resort and Spa.],
+),
+  insert-map: (:),
+  word-count: 598,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+}
+
+{
+  #standard-article(
+  title: [Inside Piaule’s Design-Driven Catskills Escape With Design Within Reach],
+  author: [Hayley Arsenault],
+  source-name: [Design Milk Architecture],
+  images: (),
+  paragraphs: (
+  [Across fifty acres of forest in upstate New York, Piaule sits as a small constellation of modernist structures connected by footpaths neatly tucked into a west-facing rise, which overlooks the Catskill Mountains. The landscape hotel first debuted in 2021 with two dozen cedar-clad guest cabins on stilts, alongside a communal space, a restaurant focused on locally sourced fare, a spa and wellness facility a short walk away, and a braided network of trails threading the site.],
+  [For founders Nolan McHugh and Trevor Briggs , who conceived Piaule after establishing a homeware line of the same name, design decisions have been guided by modern precedents and deference to the natural surroundings. This focus now carries into a new collaboration with Design Within Reach (DWR) , marked by refreshed furnishings across shared spaces, cabins, and the newly completed Oak House. From dining tables set with Arne Jacobsen’s Series 7 chairs to fireplaces framed by John Pawson’s low-slung Drift sofa, canonical works of modern design appear alongside new classics and Piaule original furnishings, shaping the interiors and their relationship to the landscape beyond.],
+  [The collaboration builds on shared references established over time. From the earliest stages of Piaule, McHugh and Briggs had been drawing from DWR’s portfolio, incorporating pieces that resonated with the property’s architectural restraint and material sensibility. “We have a shared belief in the role of modern design as both educational and experiential,” says Debbie Propst, President of Global Retail at MillerKnoll.],
+  [“Piaule’s vision for how architecture, interiors, and nature intersect strongly aligns with DWR’s long-standing commitment to inspiring people through well-designed spaces.” As DWR’s assortment expanded to encompass a broader spectrum of works, the collaboration evolved in step. Selections emerged through sustained dialogue, with close attention to material and proportion.],
+  [Set apart from Piaule’s main cluster of cabins, the Oak House occupies a twenty-acre parcel uphill from the Main House. Configured as a three-bedroom residence, it is oriented to the landscape on all sides, allowing light, weather, and sound to register continuously inside. Views shift from room to room, opening onto meadow and mountain outlooks, pine groves, and stands of mature oak and hickory. Each vantage registers differently within the interior space.],
+  [The furnishings follow suit, with most crafted in solid wood and positioned in direct relation to the landscape. “Placing these pieces in this context lends them an even greater beauty and gravity and gives the guest a greater appreciation for the craft of each piece,” says McHugh. “The source material, decades-old and standing 60-plus feet tall, is visible in all its glory just outside.” Seating from Herman Miller and Fritz Hansen is joined by tables and storage from USM and Cassina, alongside furnishings developed in-house by Piaule.],
+  [Lighting by Vaarnii brings a soft, diffuse presence to the interiors and continues onto the outdoor deck, where dining and seating frame the fire pit and views beyond. “Each room has its own door to the deck so that everyone can control their own interactions between indoor and outdoor—leaving the door open to let in the breeze, wandering out to one of the chairs with a cup of coffee, or gazing out at the stars while lying comfortably in bed,” McHugh adds.],
+  [Piaule’s Double Cabins and 3,200-square-foot Main House exhibit the same modernist sensibility. For the hotel’s signature two-bedroom accommodations, which are linked by a shared living room, furnishings were selected from DWR’s assortment with an emphasis on design that heightens the spaces without asserting itself against the site. “Taking inspiration from our surroundings, there is an entire palette of materials that ensure a luxurious experience for guests but does not distract from the landscape outside,” says Briggs.],
+  [Updates to the main house build on references already present across the property. Oak Tabouret stools designed by Charlotte Perriand for Cassina echo the three-legged form of traditional Alpine milking stools, a vernacular object Piaule has long incorporated throughout the hotel. “When we are so closely linked to both the source material and the finished product, a deeper gratitude for those earthly gifts arises,” says McHugh.],
+  [The collaboration between Piaule and DWR is underpinned by modern precedents and material sources grounded in the conditions of the site itself. Furnishings are placed in direct relation to their surroundings, allowing the landscape to remain a constant presence that evolves with the interiors over time.],
+  [To learn more about the collaborating bodies, visit piaule.com and dwr.com .],
+  [Photography courtesy of Piaule Catskill.],
+),
+  insert-map: (:),
+  word-count: 866,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+}
+
+{
+  #standard-article(
+  title: [SARATOGA FAMILY, The Ultimate Holiday Gift for Your Family: A VACATION!!],
+  author: [Anne Gordon],
+  source-name: [Live Life Travel],
+  images: (),
+  paragraphs: (
+  [The Ultimate Holiday Gift for Your Family: A VACATION!!],
+  [It may be cliché, but also very true, the best gift that you can give your family (especially your children) is the gift of time. And what better way than traveling the world as a family.],
+  [4 TIPS FOR PLANNING ANY TYPE OF FAMILY TRAVEL],
+  [1) PLAN AHEAD – It’s never too early to start planning],
+  [Tip: Airfare goes on sale 11 months in advance; We like the Hopper APP to track airfare prices],
+  [2) DON’T WAIT – Start them young; they grow up way too fast],
+  [3) ENGAGE – Let them be part of the decision; Inclusive family decisions always make every trip much more successful.],
+  [4) EDUCATE – Don’t tell the kids, but traveling the world is a totally super fun way to learn all of that “stuff” that they teach you in school.],
+  [Tip: The SSCD kids learn about Ancient Rome, Greece, China, India and Egypt in the 6th Grade, we recommend taking them to these magnificent destinations after the 6th Grade.],
+  [LIVE LIFE TRAVEL’S TOP PICKS FOR FAMILY TRAVEL],
+  [BEACHES TURKS AND CAICOS – To us, this is comparable to what Disney World is to the rest of American children (but way better!); Contact us to receive your \$250 spa credit],
+  [Tip: We recommend booking 1-2 years in advance for this property (for high season weeks); there are 2 other Beaches located in Jamaica (Negril and Ocho Rios); we love them all],
+  [ITALY – Ancient Rome is really something spectacular, especially after learning about it in 6th grade, we think that Italy is a trip that the entire family can enjoy; We also highly suggest heading down to Sicily, a hidden gem],
+  [AFRICAN SAFARI – A must for every family; truly a once in a lifetime experience. We recommend the Cape Town – Sabi Sands – Victoria Falls combo if you want to do it right.],
+  [HAWAII – A favorite destination for families over the Holiday Break and for good reason! We love the Grand Wailea in Maui and The Four Seasons Hualalai on The Big Island. Experience two very different landscapes as to what Hawaii has to offer],
+  [ALASKA – Experience nature up close and personal with Lindblad Expeditions on the National Geographic expedition ships that have custom programs just for kids],
+  [FOUR SEASONS RESORTS – In general, you just cannot go wrong, and we love them. Our top family choices are Nevis, Costa Rica, Anguilla, Chiang Mai and Langkawi.],
+  [OUR \#1 FAMILY TRAVEL RECOMMENDATION: GLOBAL CITIZENS WANTED],
+  [ME to WE – A new travel partner to our Virtuoso family, this company is one of our very favorites. We would encourage you all to please check out their video on our Facebook and Instagram pages. If you want to make a difference in the world, if you want to make an impact with your children, if you want to create lifelong memories and a feeling that will never fade away, then ME to WE is what you are looking for. Travel itineraries currently include Ecuador, Kenya and India. Contact us to learn more!],
+  [52% of Americans do not take all their PAID vacation time.],
+  [style="text-align: left;"\>Please do not become or stay part of this statistic— Vacations are healthy, not only for you physically and mentally, but emotionally for your family, especially for kids. Life is short, make the most of it!],
+  [The post SARATOGA FAMILY, The Ultimate Holiday Gift for Your Family: A VACATION!! appeared first on Live Life Travel .],
+),
+  insert-map: (:),
+  inline-pq: pull-quote([We recommend the Cape Town – Sabi Sands – Victoria Falls combo if you want to do it right.], [Anne Gordon]),
+  inline-pq-idx: 8,
+  word-count: 1202,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+}
+
+{
+  #standard-article(
+  title: [11 Best Lenses for Landscape Photography (in 2025)],
+  author: [Jeremy Flint],
+  source-name: [Digital Photography School],
+  images: (),
+  paragraphs: (
+  [The post 11 Best Lenses for Landscape Photography (in 2025) appeared first on Digital Photography School . It was authored by Jeremy Flint .],
+  [Have any lesnes been launched that you think have overtaken the ones in this list? Are there any in this list that should still be at the top of the list?],
+  [What do you have that you think is better? (Otherwise you wouldn’t have it, would you!)],
+  [I think, for me, in terms of “all-rounder” the Tamron 35-150 has found a permanent spot in my backpack.],
+  [This article was updated on Tuesday the 3rd of March, 2026…],
+  [No matter your level of experience, if you want to capture beautiful landscape photos , you need to choose your lens carefully. After all, the lens heavily influences the quality of your image; pick a good lens, and you have the potential for crisp, clear, beautifully detailed results. But get the lens wrong, and you may find that your images are consistently unsatisfying.],
+  [But choosing the right lens for landscape photography can be tough . There are dozens – even hundreds – of options, ranging from budget kit zooms to \$3000+ ultra-wide glass, each with its own benefits (and drawbacks).],
+  [Fortunately, as a professional landscape photographer, I’ve spent years working with different lens models. I know how to pick the perfect starter lens, and I know how to find lenses that’ll satisfy the most experienced professionals. That’s why I’ve written this article, which takes you through all the best landscape photography lenses you can buy today – including options for mirrorless and DSLR shooters, choices for Canon, Nikon, Sony, and Fujifilm shooters, and picks at every price point.],
+  [So without further ado, here are my top landscape lens recommendations, starting with my number one choice:],
+  [If you’re an experienced photographer seeking the absolute best landscape lens on the market – no matter the cost – then the Sony 12-24mm f/2.8 GM is the model to buy.],
+  [It has everything that you could want in a landscape lens, including ridiculously sharp optics that pair beautifully with the high-resolution sensors of the a7R series, incredible build quality that can handle all sorts of weather scenarios, and a surprisingly lightweight body. The lens also boasts an f/2.8 maximum aperture that’s perfect for serious astrophotography (and it also comes in handy if you’re looking to add some artistic background blur to your landscape shots).],
+  [Of course, there’s also a stunning 12mm focal length on the wide end, so ultra-wide shooters can capture scenes of all types with a uniquely expansive perspective, while on the longer end, the 24mm perspective will give you a more conventional wide-angle field of view. Unfortunately, the 12-24mm f/2.8 GM is extremely expensive (at the time of writing, it costs nearly \$3000), but if you’re a professional or you have the cash to spare, you won’t be disappointed.],
+  [If you use Canon full-frame DSLRs – or even Canon mirrorless models – then the 16-35mm f/4L IS USM is an excellent choice. It carries the prestigious L-series label and boasts a nice range of focal lengths as well as very sharp image quality.],
+  [There is an f/2.8 version of this lens, but the f/4 version gives equally stunning results and comes with a cheaper price tag. (The main reason you’d want to consider the f/2.8 version for landscape photography is if you like to capture the night sky; in such scenarios, an ultra-wide maximum aperture will help you freeze the motion of the stars.)],
+  [The 16-35mm f/4L is a fast and dynamic model with an ultrasonic focus system and a minimum focusing distance of 11 inches (0.28 meters), so it’s perfect for capturing sweeping vistas that feature close foreground subjects . Plus, the 4-stops of image stabilization and great in-built weather sealing allow you to work handheld in all types of light and weather.],
+  [The 16-35mm f/4L is a reasonably priced option for enthusiasts (and is positively cheap compared to other pro-level lenses on this list), though beginners may wish to consider a more budget-friendly model like the 24-105mm f/4L (which is elsewhere on this list!). If you’re a budding Canon landscape shooter – or even a professional – hoping to create stunning images of expansive scenes, then this is one of the best landscape lenses on the market in 2024.],
+  [Note: The 16-35mm f/4L is designed for full-frame Canon DSLRs, though you can also use it with any of Canon’s RF-mount mirrorless cameras with the purchase of the Canon EF-EOS R adapter . The adapter is essentially flawless, though if you’re a Canon mirrorless user and you prefer to use RF-mount lenses, take a look at the RF 15-35mm f/2.8L IS USM below.],
+  [The Nikon Z 14-30mm f/4 lens was Nikon’s first ultra-wide-angle zoom for Z-mount cameras, and it remains one of the best lenses for Nikon full-frame mirrorless cameras in 2024, especially for professionals in search of that ultra-wide perspective. It’s also surprisingly affordable for a Z-mount lens, and while I wouldn’t recommend it to complete beginners, it should certainly meet the budgetary needs of enthusiasts and professionals.],
+  [The 14-30mm f/4 is lightweight and relatively compact, so it’s plenty portable – always handy for travel landscape shooters as well as photographers who enjoy backpacking for days on end. It supports direct filter attachment to the front of the lens, which expands the creative possibilities for ultra-wide landscape photography. It’s well-designed with resistance to dust and water, which is essential for landscape photographers who work in blowing sand, seaspray, rain, or snow, and it features fabulous optics for clear and sharp shots.],
+  [You get an extra couple of millimeters on the wide end compared to the F-mount 16-35mm f/4G (below), so you certainly won’t struggle to capture breathtakingly wide compositions. And while 30mm isn’t ideal for tighter, more intimate landscape shots, it’s perfect for more wide-angle-focused shooters. Ultimately, the compact design, incredible corner-to-corner sharpness, and wide perspective make the Nikon 14-30mm f/4 a landscape lens worth considering for serious mirrorless photographers.],
+  [The Canon RF 15-35mm f/2.8L is the ultimate lens for landscape photographers looking to give their images a professional edge. It’s a great match for Canon mirrorless users, although there is a huge hike in price compared to the Canon EF 16-35mm f/4L (featured above). Note also that this lens will only work on Canon RF-mount mirrorless models like the EOS R5, whereas the EF 16-35mm f/4L can be used on both DSLRs and mirrorless cameras (though you’ll need to use this adapter ).],
+  [The 15-35mm is a joy to use, and photographers will love its edge-to-edge sharpness, amazing image quality, and superbly silent and fast autofocus. The lens offers image stabilization of up to five stops, which is a big deal if you plan to shoot landscapes handheld in low light . Additionally, the f/2.8 maximum aperture is wide enough for sharp astrophotography, though it isn’t really necessary for non-astrophotography purposes and is one of the reasons for the eyewatering price tag.],
+  [The RF 15-35mm f/2.8L also offers a slightly wider focal length than many of the lenses on this list, thanks to that 15mm wide end (versus the more common 16mm). And while a millimeter may not seem like much, it is noticeable in the field and is ideal if you’re looking to capture those ultra-wide, professional-style landscape images.],
+  [Do you shoot Fujifilm rather than Canon, Nikon, or Sony? The Fujifilm 10-24mm f/4 lens is one of my favorite Fujifilm X-mount lenses, and it’s an excellent landscape photography choice for a host of reasons.],
+  [Key features include enhanced optical image stabilization, an elegant design, and very quiet focusing. The barrel feels and looks fabulous, and the construction is good quality. You get a minimum focusing distance of 9 inches (0.24 meters) – so you can capture gorgeous low-angle shots – and the lens offers great image sharpness across the focal range.],
+  [Fujifilm users should bear in mind that the 10-24mm focal length converts to an effective 15-36mm, which is certainly respective and will work great for wide-angle landscape shots (even if the lens isn’t quite as wide as it initially sounds). Thanks to the beautiful field of view, the 10-24mm f/4 provides gorgeous landscape possibilities for Fujifilm APS-C users – and while it is on the expensive side, for serious landscape shooters, it’s worth every penny.],
+  [The Nikon 16-35mm f/4G is a great option for Nikon full-frame DSLR users, and it’s an especially good pick for enthusiast photographers and up-and-coming professionals in search of that beautiful wide-angle perspective. (Even if you shoot with Nikon’s Z-mount mirrorless models, this lens works flawlessly with the FTZ adapter .)],
+  [The 16-35mm f/4G is both portable and durable, plus it packs great image stabilization for low-light handheld photography. (That said, I do recommend capturing most of your landscape photos using a tripod!) The 16-35mm focal length range is ideal for wider scenics and allows you to shoot stunning near-far landscape compositions with great results. It’s also a (relatively) inexpensive lens, plus it’s compact and much lighter than most f/2.8 zooms (at 24 oz/680 g).],
+  [The lens accommodates filters with a 77mm thread, a standard filter size that will please a lot of photographers. And the lens optics are beautifully designed to enhance sharpness and contrast, so even professionals should be satisfied.],
+  [Coupled with a Sony’s E-mount camera, the 10-18mm f/4 is a wide-angle zoom lens, though bear in mind that it’s designed to work with APS-C cameras only (its focal length equivalent is 15-27mm). For most landscape shooters, that shouldn’t be a problem – after all, 15mm is plenty wide if your goal is to capture sweeping seascapes, breathtaking mountain scenes, or stunning forest views – but it won’t get you the gorgeous ultra-wide perspective of the 12-24mm f/2.8 featured above.],
+  [The superior glass provides optimal optical performance, with excellent contrast and sharp image quality even at the widest focal lengths. It is one of the best-quality landscape lenses for APS-C Sony mirrorless users out there, plus it’s small and lightweight (it only weighs 7.9 oz/225 grams), so it’s perfect for travel landscape shooting.],
+  [The Optical SteadyShot feature keeps handheld shots blur-free (though again, I do recommend using a tripod!), and the constant f/4 maximum aperture is decent enough for noise-free shooting in low light, but for serious astrophotography, you really need an f/2.8 maximum aperture (see the 12-24mm f/2.8 model at the top of this list!). The minimum focus distance of 10 inches (0.25 meters) and attractive zoom range let you capture expansive landscapes with precision, and the price is incredibly reasonable for a high-quality Sony lens – so if you’re a landscape photography beginner or enthusiast with a Sony APS-C camera, this is the lens to buy.],
+  [One of the biggest reasons to grab the Fujifilm 16-55mm f/2.8 for landscape photography is its versatility – it features great build quality so you don’t have to worry when working in tough weather conditions, an excellent maximum aperture for astrophotography , and a nice range of focal lengths that span from wide angle to short telephoto (even if the 24-82.5mm effective zoom range doesn’t quite reach those prized ultra-wide perspectives).],
+  [It also offers the opportunity to capture the landscape with real accuracy; as you can imagine, optical performance is top-notch, and thanks to the f/2.8 aperture, sharp handheld results are practically guaranteed, even in low light. While most landscape photography is done at narrower apertures, the f/2.8 maximum aperture does allow for detailed astrophotography, which can certainly come in handy for the right photographer.],
+  [Bottom line: The Fujifilm 16-55mm f/2.8 is perfect for landscape photographers in search of an all-around performer, especially those who require quality, precision, and sharpness across a wide focal length range.],
+  [Yes, it’s on the pricier side, but the greatest benefit of the 24-70mm f/2.8 lens for landscape shooters is the versatile focal range offered for shoots. At 24mm, you can capture beautiful wide-angle images, while at 70mm, you can shoot intimate landscapes, close-up scenes, and more. You don’t get the same ultra-wide perspective offered by the 15-35mm or 16-35mm lenses shared above, but you do get a set of longer focal lengths that are great for more intimate landscape photos.],
+  [As I’ve discussed throughout this article, an f/2.8 maximum aperture isn’t necessary for standard landscape photography – assuming you use a tripod – but it is essential for clean, sharp astrophotography images, and it’s also nice to have if you like to experiment with shallow depth of field landscape shots.],
+  [The 24-70mm f/2.8 is also plenty sharp, and the L-lens build quality is great for lengthy outdoor adventures. At the end of the day, the 24-70mm f/2.8 really is an incredible – albeit expensive – landscape lens, and if you can afford it, buy it. For those who want to spend less cash, Canon offers a cheaper f/4 version .],
+  [If you’re a more casual photographer in need of a lens that you can keep on your camera at all times – as you shoot landscapes, street scenes, and even portraits – consider the Canon EF 24-105mm f/4L IS II . It’s a versatile lens that extends beyond the 24-70mm lens featured above, plus it’s sharp, versatile, and reasonably priced.],
+  [Thanks to the extra reach on the telephoto end, you can zoom in to highlight specific landscape features and create more intimate, even abstract images. But you can always capture standard landscapes in the 24-35mm range, and the image stabilization ensures you can shoot in lower light without a tripod.],
+  [As I mentioned above, the lens is also great for non-landscape purposes; it’s a favorite of casual street photographers, and it can handle cityscapes, outdoor events, and even portraits just fine. The f/4 maximum aperture is a bit limiting if you hope to photograph moving subjects indoors, but for outdoor shoots in good light, the 24-105mm f/4L is a stellar choice.],
+  [And by the way: While the EF 24-105mm f/4L featured above is designed for DSLRs, Canon does offer a great mirrorless version: the RF 24-105mm f/4L IS USM , which is (at the time of writing) the same price!],
+  [If you’re a Sony mirrorless shooter looking to capture tighter landscape shots, the 70-200mm f/4 G is a great choice; it’s a telephoto zoom lens with a constant f/4 maximum aperture, and it delivers great image quality with wonderful background bokeh .],
+  [While the focal length range sits squarely in the “telephoto” arena, you can use the 70-200mm to hone in on various elements of the landscape (and potentially even wildlife, too!). For instance, you can capture abstract mountain patterns, tight forest scenes, and so much more.],
+  [The Sony 70-200mm is a fast focuser and performs well in the field, especially when coupled with its image stabilization, which allows for improved performance in low light. The f/4 maximum aperture isn’t ideal for producing shallow depth-of-field shots, but it should be fine for more conventional landscape images.],
+  [There are quite a few excellent lenses for landscape photography, far too many to list – but I hope this article has been helpful, and that you can now confidently choose the best landscape lens for your needs.],
+  [Ultimately, the ideal lens comes down to your own individual requirements and budget, so don’t feel pressure to choose the most expensive or most popular option. Instead, think about your camera model (and its corresponding lens compatibility), as well as features such as image quality, build quality, image stabilization, focal length, and more.],
+  [Briefly, the Canon EF 16-35mm f/4L and the Nikon Z 14-30mm f/4 S lenses are excellent choices for those looking for a mix of price and quality, while the Sony FE 12-24mm f/2.8 GM is a top pick for professionals. The Canon EF 24-105mm f/4 L IS II and the Sony FE 70-200mm f/4 G are great if you love to capture a range of landscape shots from wide-angle to telephoto. Finally, for anyone looking for a budget-friendly landscape lens, the Sony E 10-18mm f/4 OSS is a reasonable buy.],
+  [Now over to you:],
+  [Do you have a favorite landscape photography lens? Which lens on this list was your favorite? Share your thoughts in the comments below!],
+  [The post 11 Best Lenses for Landscape Photography (in 2025) appeared first on Digital Photography School . It was authored by Jeremy Flint .],
+),
+  insert-map: (:),
+  word-count: 2831,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+}
+
+{
+  #standard-article(
+  title: [Everything Coming to HBO Max in April 2026],
+  author: [Hypebeast],
+  source-name: [Hypebeast],
+  images: (),
+  paragraphs: (
+  [HBO Max has shared its programming list for April 2026],
+  [Leading the charge is the return of Euphoria alongside Zendaya, Hunter Schafer, and more],
+  [Also joining the streamer are Marty Supreme and Christy],
+  [With March coming to an end, HBO Max has unveiled its slate of new programming for April 2026.],
+  [Next month’s list is led by the highly anticipated return of the Zendaya -led Euphoria , with season three making its premiere over three years after its predecessor. Subscribers can also catch the fifth and final season of Hacks, as well as the streaming premieres of A24 and Timothée Chalamet’s Marty Supreme , Alien: Romulus and Sydney Sweeney ’s Christy .],
+  [Check out the full list below.],
+  [TITLES COMING TO HBO MAX IN APRIL 
+\*This list may not be comprehensive and is subject to change],
+  [April 1],
+  [A Big Hand for a Little Lady],
+  [Abbott and Costello Meet Captain Kidd],
+  [Alien vs. Predator: Extended Cut],
+  [Alien 3],
+  [Alien 3: The Assembly Cut],
+  [Alien Resurrection: Special Edition],
+  [Alien vs. Predator: Requiem: Extended Cut],
+  [Alien: Director's Cut],
+  [Aliens vs. Predator: Requiem],
+  [Aliens: Director's Cut],
+  [Abbott and Costello In Hollywood],
+  [AVP: Alien vs. Predator],
+  [Blood on the Moon],
+  [Cabin in the Sky],
+  [Deeply, Season 1],
+  [Deeply, Season 2],
+  [Deeply, Season 3],
+  [Evil Lives Here: My Child the Killer, Season 1 (ID)],
+  [Gunsmoke in Tucson],
+  [Inu-Oh],
+  [Man From the Black Hills],
+  [Maze Runner: The Death Cure],
+  [Mortal Kombat Legends: Battle of the Realms],
+  [Mortal Kombat Legends: Cage Match],
+  [Mortal Kombat Legends: Scorpion's Revenge],
+  [Mortal Kombat Legends: Snow Blind],
+  [Out of the Past],
+  [Rachel and the Stranger],
+  [Renovation Aloha, Season 3 (HGTV)],
+  [Shoot-Out at Medicine Bend],
+  [Tall in the Saddle],
+  [The Boy and the Beast],
+  [The Flame and the Arrow],
+  [The Hole in the Ground],
+  [The Left-Handed Gun],
+  [The Man Behind the Gun],
+  [The Man with a Cloak],
+  [The Mummy (1999)],
+  [The Mummy: Tomb of the Dragon Emperor],
+  [The St. Louis Kid],
+  [They Died with Their Boots On],
+  [Thunder Over the Plains],
+  [Welcome to Plathville, Season 8 (TLC)],
+  [Westward the Women],
+  [April 2 
+ Body Bizarre, Season 8 (TLC) 
+ Expedition Files, Season 4 (Discovery)],
+  [April 3 
+ Alien: Romulus 
+ Dream Stage, Season 1],
+  [April 4 
+ Game Night],
+  [April 5 
+ Teen Titans Go!, Season 9G (Cartoon Network)],
+  [April 7 
+ Tropic Like It’s Hot, Season 1 (HGTV)],
+  [April 9 
+ Hacks, Season 5 (Max Original) 
+ The World's Tallest Man, Season 1 (HGTV)],
+  [April 10 
+ Artemis II: To the Moon and Back (Discovery) 
+ Christy 
+ House Hunters International: Volume 9, Season 208 (HGTV)],
+  [April 12 
+ Be My Guest with Ina Garten, Season 7 (Food Network) 
+ Building Back America's Trades, Season 1 (Magnolia Network) 
+ Euphoria, Season 3 (HBO Original)],
+  [April 13 
+ Boy Band Confidential: A Hollywood Demons Event, Season 1 (ID) 
+ Smiling Friends, Season 3B (Adult Swim)],
+  [April 14 
+ Rock The Block, Season 7 (HGTV) 
+ The Dark Wizard (HBO Original)],
+  [April 15 
+ Nanny McPhee Returns 
+ World's Bargain Dream Homes, Season 1 (HGTV)],
+  [April 16 
+ One Day In My Body, Season 1 (TLC)],
+  [April 17 
+ Dust Bunny (Lionsgate) 
+ House Hunters: Volume 11, Season 253 (HGTV)],
+  [April 18 
+ Belle Collective, Season 7 (OWN Network) 
+ Krypto Saves the Day: Coastal Catastrophe],
+  [April 20 
+ Impractical Jokers, Season 12B],
+  [April 21 
+ Hollywood Demons, Season 2 (ID) 
+ No Hard Feelings],
+  [April 22 
+ Jeff Dunham's The Cars That Drove Us, Season 1 (Discovery)],
+  [April 23 
+ Half Man (HBO Original)],
+  [April 24 
+ 48 Hrs: Escape From Chernobyl (Discovery) 
+ HGTV Smart Home 2026 (HGTV) 
+ House Hunters International: Volume 9, Season 209 (HGTV) 
+ Marty Supreme (A24)],
+  [April 25 
+ Confessions of a Nazi Spy 
+ The Mouthpiece 
+ Stranger on the Third Floor],
+  [April 27 
+ 24 in 24: Last Chef Standing, Season 3 (Food Network)],
+  [April 28 
+ Standoff: The FBI, Power and Paranoia, Season 1 (CNN)],
+),
+  insert-map: (:),
+  word-count: 671,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+}
+
+#article-row((
+  [
+    standard-article(
+  title: [Bianca Censori Directs the Surreal Music Video for Ye and Travis Scott's "FATHER"],
+  author: [Hypebeast],
+  source-name: [Hypebeast],
+  images: (),
+  paragraphs: (
+  [Bianca Censori has officially unveiled her self-directed music video for Ye and Travis Scott's collaborative track "FATHER"],
+  [The visual project is presented as a short film shot in a single continuous take without any cuts],
+  [The cinematic release arrives alongside the drop of Ye's brand-new studio album BULLY],
+  [Bianca Censori has officially unveiled her self-directed music video for "FATHER," a collaborative track from Ye and Travis Scott . Premiering alongside the release of Ye's new album BULLY , the buzzed-about visual project takes the form of a short film set within a surreal dream that exists entirely outside of conventional time and space.],
+  [Stepping behind the camera, Censori approaches the music video format as a direct extension of her conceptual work in spatial design and visual art. The ambitious film is captured in a single continuous shot with zero cuts, constructing a deep psychological landscape where ritual, memory, and fantasy seamlessly converge. Rather than depicting a literal religious setting, the director transforms a church into a symbolic interior realm characterized by suspended architecture and characters moving with ceremonial precision.],
+  [By blending performance art, architectural minimalism, and cinematic abstraction, the immersive environment explores heavy themes of collective belief, spectacle, and transformation. Moments of profound stillness are contrasted with chaos to create an atmosphere of heightened emotional intensity. The self-directed project marks a significant continuation of Censori's expanding repertoire, further positioning her as a multidisciplinary talent working at the intersection of contemporary art, performance, and film.],
+  [The music video for "FATHER" is available to watch online alongside the release of Ye's album BULLY .],
+  [Read more at Hypebeast],
+),
+  insert-map: (:),
+  word-count: 269,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+  ],
+  [
+    standard-article(
+  title: [Steel House in Denver Embraces Industrial Elements and Nature],
+  author: [Anna Zappia],
+  source-name: [Design Milk Architecture],
+  images: (),
+  paragraphs: (
+  [Corporate environments often capture the urban spirit of their locales but lack warmth and a connection to nature. For Steel House , a new commercial development in Denver, Colorado, that boasts ground-floor retail and seven stories of office space, Morris Adjmi Architects created a hub with machine-made styling that also celebrates the Mile High City’s natural surroundings.],
+  [Located in the River North (RiNo) Arts District, a sector favored by creatives, the building’s form and detailing references the warehouse typologies that once defined the area. “We were drawing on a mixture of the Denver lifestyle and the neighborhood’s past, embracing its industrial character and nature at the same time,” says Morris Adjmi, founder and principal of his eponymous firm.],
+  [The primary facade is clad in C-channel metal panels in charcoal and silver tones, in an expression of verticality and rhythm. A tower at the southwest corner marks the building’s entrance. This steel-framed structure serves as a striking sculptural element and a visual anchor, both from the street and the adjacent rail corridor.],
+  [Interiors reflect the same language as the architecture, but with added warmth via materials and biophilic elements. Tenants and visitors are welcomed into the double-height lobby that was designed as a reception area and gathering space. A cleft-stone front desk and textured brick flooring are reminiscent of a hospitality setting. The open office floors allow occupants to tailor their environments for maximum flexibility.],
+  [The wellness-focused lifestyle of the city’s residents is key, with 10,000-square-feet of amenities on offer. An indoor sports court, climbing wall, and yoga studio are ideal for individuals who want to stay active during the day. Commuters can also store their cycles in a bike room with repair stations.],
+  [A seamless flow from interior to exterior invites connection with people and nature. On the sixth floor, a 13,000-square-foot communal terrace functions as an outdoor living room—complete with views of downtown and the Rocky Mountains. Lounge areas, grills, and dining spaces are utilized for a range of events, from casual lunches to evening parties.],
+  [Steel House is a place that defies typical notions of these types of buildings by revealing character, not fabricating it. “A lot of times an industrial aesthetic feels contrived, but here, because of the way the building was sculpted, and these indoor and outdoor spaces meld, it feels like a real artifact—a good place to live and work—as opposed to something that was just layered on top of it,” Adjmi notes.],
+  [To see learn more about Steel house, or see other works by the architect, visit ma.com .],
+  [Photography courtesy of Chase Daniel .],
+),
+  insert-map: (:),
+  word-count: 431,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+  ],
+), ruled-indices: (1,))
+
+{
+  #standard-article(
+  title: [Nike Prepares The Air Force 1 Low "Heat Map" For Summer],
+  author: [Hypebeast],
+  source-name: [Hypebeast],
+  images: (),
+  paragraphs: (
+  [Name: Nike Air Force 1 Low “Heat Map”
+ Colorway: Black/Racer Blue
+ SKU: IB6834-001
+ MSRP: \$130 USD
+ Release Date: Summer 2026],
+  [Nike is turning up the temperature on its iconic Bruce Kilgore design with the upcoming release of the Nike Air Force 1 Low "Heat Map." Arriving just in time for the warmer months, this latest iteration reimagines the streetwear staple with an aura-like, thermographic aesthetic.],
+  [The sneaker starts with a premium soft black leather base that dramatically transitions on the lower half of the side panels. This section boasts a misty heat map style, blending shades of blue, yellow, red, and orange just below the signature Swoosh and extending toward the midsole.],
+  [Additional detailing elevates the thematic approach, with a vibrant "Racer Blue" hitting the laces and sockliner for a bold contrast against the dark upper. The design is rounded out by a unique blue star lace dubrae positioned above the vamp, adding a final specialized touch to the classic model.],
+),
+  insert-map: (:),
+  word-count: 161,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -1364,12 +1416,10 @@ Garnish: watermelon ball],
 {
   #section-label([Briefs])
   #brief-group((
-    #brief-item([Sasha Marx], source-name: [Serious Eats], [A rich, meaty variation on the classic Apulian pasta. Pork sausage, bitter greens, olive oil, garlic, chiles, and al dente orecchiette.
- Get Recipe!])
-
-    #brief-item([Kayla Levy], source-name: [Curbed], [When Lizzie Wheeler lists appointments for Studio Dorothy , her vintage bridal boutique, she has to check her family’s Google Calendar first. It shows her who’s staying in 10D and 11D, two studio apartments stacked on top of each other in a giant Eas... More »])
-
-    #brief-item([The Investor], source-name: [Monevator], [class="memberful-global-teaser-content"\>
+    [#brief-item([Christopher Bonanos], source-name: [Curbed], [In the Chrysler Building’s 96 years of occupancy, exactly two people have managed to pull off the children’s-book fantasy of living there. (Officially, or at least semi.) They couldn’t have been more different; one was an artist, the other a corporate titan. In the mind’s eye, it’s a Fred Astaire... More »])],
+    [#brief-item([Nik Sharma], source-name: [Serious Eats], [Sweet and tender roasted beets, carrots, and onions, tossed with a zippy lime dressing and topped with crunchy, golden shallots.
+ Get Recipe!])],
+    [#brief-item([The Investor], source-name: [Monevator], [class="memberful-global-teaser-content"\>
 
  R emember my natural yield model portfolio that I kicked off in May last year? I know that many of you do, because you keep emailing me about it!
 
@@ -1377,42 +1427,21 @@ class="memberful-global-marketing-content"\>
 
 class="box"\> This article can be read by selected Monevator members. Please see our membership plans and consider joining! Already a member? Sign in here . 
 
-The post The natural yield model portfolio wheels are turning [Members] appeared first on Monevator .])
-
-    #brief-item([Nik Sharma], source-name: [Serious Eats], [Sweet and tender roasted beets, carrots, and onions, tossed with a zippy lime dressing and topped with crunchy, golden shallots.
- Get Recipe!])
-
-    #brief-item([Daniel Gritzer], source-name: [Serious Eats], [Gnocchi alla bava is true mountain food. Hailing from the Italian Alps, it features tender and lightly sweet potato gnocchi in a rich and creamy Fontina cheese sauce, flavored with little else aside from a touch of black pepper and nutmeg.
- Get Recipe!])
-
-    #brief-item([Bigphoto], source-name: [One Big Photo], [Nobody wants to watch their parents get older and start to struggle in the physical world, but it’s an unavoidable fact of life. At some point, your parents will begin to have a hard time with things. For example, they might lose some strength, have trouble walking, or lose some of their mental faculties. When […]])
-
-    #brief-item([Christopher Bonanos], source-name: [Curbed], [By this afternoon, the main MTA app on your phone will likely have updated, and not a moment too soon. Launched in 2024 and built by an outside contractor, the old app — and I refer here to the principal one, simply called ... More »])
-
-    #brief-item([deb], source-name: [Smitten Kitchen], [class="smittenkitchen-print-hide"\>
- 
-
- My strongest opinion on Thanksgiving sides is that whenever possible, they should come in a casserole dish (or its chic French cousin, a gratin). I don’t mean that your sides should be limited to things that swim in cream, cheese, butter, or a happy combination of all three — although one dish in this category is highly welcome on my table — I simply mean that sides like this, that is baked in dishes with walls , tend to excel at holding up to resting times, reheat well, and stay warm longer.
-
- Read more »])
-
-    #brief-item([Matthew Sedacca], source-name: [Curbed], [Over a half-melted peanut-butter açai bowl at a picnic table in the Bronx’s Pelham Bay neighborhood, Kenny Burgos explains why rents for nearly a million apartments in New York need to go up. “The Bronx, to this day, has buildings that are almost 100 percent — if not 100 percent — regulated,” he ... More »])
-
-    #brief-item([Bigphoto], source-name: [One Big Photo], [Wallets aren’t incredibly expensive, but if you take good care of them, they can serve you well and last a lifetime. Thankfully, the most important strategies for keeping a wallet in good condition are both inexpensive and highly accessible.   How do you keep your wallet in great shape?   Choose the Right Wallet   […]])
-
-    #brief-item([Joy the Baker], source-name: [Joy the Baker], [Hello, friend! I’ve been sitting on this piece of writing for a few months now. I’m going to talk about infertility and pregnancy – both of which can feel tender and complicated for some of us. If that feels like more than you want to take on today, I completely understand, and I’ll see you soon with a recipe. If you’d like to stick around and feel this one through with me, I’m really grateful you’re here. 
-
- Continue reading Is Joy the Baker Pregnant? Yes, you guys! Here’s the story behind the bump. at Joy the Baker.])
-
-    #brief-item([Kim Velsey], source-name: [Curbed], [A decade ago, when the Jehovah’s Witnesses sold off their prime real-estate portfolio in Brooklyn Heights, one of the prizes was a complex of old industrial buildings next to the Bro... More »])
-
-    #brief-item([Joy the Baker], source-name: [Joy the Baker], [January is supposed to be about fresh starts, good intentions, and maybe drinking more water. Luckily, one of my most reliable habits is birthday cake . While the rest of the world is easing back into routines, I’m over here daydreaming about frosting swirls, that romantic wisp of candle smoke, and all the birthday cakes I want to bake for friends, family, and eventually… myself. Birthday cake is a human right.
-
- Continue reading My 18 Best Birthday Cake Recipes at Joy the Baker.])
-
-    #brief-item([Sasha Marx], source-name: [Serious Eats], [Cauliflower cooked down into a savory-sweet sauce with Sicilian staples: anchovies, pine nuts, raisins, saffron, and toasted breadcrumbs.
- Get Recipe!])
-
+The post The natural yield model portfolio wheels are turning \[Members\] appeared first on Monevator .])],
+    [#brief-item([Matthew Sedacca], source-name: [Curbed], [David Drumgold’s room in what was until recently the Jane Hotel is small and showing its age. A full-size bed in the 9-by-13-foot space juts out against a gray armchair that is buried under a mountain of clothing waiting to be sent to the dry cleaner. The door paint is chipping, revealing the “as... More »])],
+    [#brief-item([Katie Leaird], source-name: [Serious Eats], [Orecchiette with olive oil, garlic, chiles, anchovies, bitter greens, and toasted breadcrumbs. Straight from the heel of Italy.
+ Get Recipe!])],
+    [#brief-item([Jerry Saltz], source-name: [Curbed], [On the occasion of her 2016 retrospective at the New Museum, Nicole Eisenman grabbed me by the shoulders and pleaded, “Get me out of here!” One didn’t look at art in the old, claustrophobic version of the building; one endured it. Now, the snazzy stacked boxes on Bowery More »])],
+    [#brief-item([Justin Davidson], source-name: [Curbed], [In New York, the fresh ripens into the antique at formidable speed. Sanaa’s New Museum opened on Bowery in 2007, and under a decade later, it already needed more space. After multiple delays and a two-year closure, the museum is reo... More »])],
+    [#brief-item([Bigphoto], source-name: [One Big Photo], [Did you know that approximately 41% — or around four of 10 — of the 50 million or so rental housing units in the U. S. are owned by individual investor landlords?   Owning real estate can be a great investment. You’ll benefit as the property appreciates in value over time, and you can \[…\]])],
+    [#brief-item([Bigphoto], source-name: [One Big Photo], [Personalized photo gifts are always a great idea for your loved ones, but you don’t want to go with something plain. Sure, printing photos and making a photo album can be a nice gift, but there are other options that are far more impressive. 1. A custom canvas print It’s always nice \[…\]])],
+    [#brief-item([Adriane Quinlan], source-name: [Curbed], [The house with the blue door on Wyckoff Street, in Boerum Hill, got more mail than the neighbors’ homes. Envelopes heavy with manuscripts arrived at the ground-floor entrance, piling up on the dining table by the window, which doubled as a slush pile for the independent poetry press More »])],
+    [#brief-item([Christopher Bonanos], source-name: [Curbed], [By this afternoon, the main MTA app on your phone will likely have updated, and not a moment too soon. Launched in 2024 and built by an outside contractor, the old app — and I refer here to the principal one, simply called ... More »])],
+    [#brief-item([Sunny Lee], source-name: [Serious Eats], [Basque cheesecake boasts a deeply caramelized top and bottom, with a creamy center thanks to a high-temperature bake. No crust required.
+ Get Recipe!])],
+    [#brief-item([Christopher Bonanos], source-name: [Curbed], [I happened to be 1,800 miles from New York when the prospect of parking fees as budget-gap closer entered the chat, and I could very nearly hear the howling from there. The New York Post , as is its custom, More »])],
+    [#brief-item([Bigphoto], source-name: [One Big Photo], [New and old marketers alike recognize the phrase “content is king,” but it’s naive to suggest that “content” means the same thing it used to, back when the phrase initially rose to prominence. Content is still king, for the most part, but it is evolving.   How is it evolving and how should your \[…\]])],
+    [#brief-item([Bigphoto], source-name: [One Big Photo], [Nobody wants to watch their parents get older and start to struggle in the physical world, but it’s an unavoidable fact of life. At some point, your parents will begin to have a hard time with things. For example, they might lose some strength, have trouble walking, or lose some of their mental faculties. When \[…\]])],
   ))
 }
 

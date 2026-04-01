@@ -23,118 +23,44 @@
 
 // --- Front Page Feature ---
 #feature-article(
-  title: [Dependency Injection in Typescript with tsyringe],
+  title: [The climate crisis: how do we show we care?],
   kicker: [Cover Story],
-  author: [GameChanger],
-  source-name: [GameChanger Tech],
-  deck: [id="why-dependency-injection"\>Why Dependency Injection
-
-In any large object oriented codebase, managing dependencies can get difficult.],
-  lead-text: "id=\"why-dependency-injection\">Why Dependency Injection",
-  lead-first-alpha: 0,
+  author: [julietwalker],
+  source-name: [The BMJ Blog],
+  deck: [But perhaps we’re missing a trick. Perhaps we each have a tiny bit of the answer at our fingertips.],
+  lead-pre: [“],
+  lead-cap: [N],
+  lead-rest: [ot everything that is faced can be changed, but nothing can be changed until it is faced” — James Baldwin],
   body-paragraphs: (
-  [In any large object oriented codebase, managing dependencies can get difficult. Each class can require any number of third parties or other classes to function, and it can be hard to test the behavior of a single class with mocks if those dependencies aren’t easy to provide.],
-  [Fortunately, there’s a popular design pattern that can be applied to solve this problem, and that is dependency injection.],
-  [When using dependency injection, classes can be provided their dependencies through a constructor, and those dependencies can be swapped out easily for other implmentations. In tests, mocks can simply be substituted in to test class behavior.],
-  [While most of the time, this pattern is implemented with a framework, even without one manual dependency injection can give you some of these benefits.],
-  [Here at Gamechanger, we previously had a form of manual dependency injection in our typescript codebase. Each class would have a constructor that accepted its dependencies, which could be swapped out with mocks or a real implementation.],
-  [private void foo () { 
- this . dependencyA . action (); 
- } 
- }],
-  [\/\/ To instantiate this class, both dependencies must be created 
- const businessLogic = new BusinessLogic ( new DependencyA (), new DependencyB ());],
-  [\/\/ to test this class, mocks can be passed in 
- const testBusinessLogic = new BusinessLogic ( new MockDependencyA (), new MockDependencyB ());],
-  [In this example, if you need to replace a dependency, you can just supply a different class in the constructor for BusinessLogic .],
-  [This can work great for a small number of classes with a tiny dependency tree, but as your codebase’s number of dependencies grow, it can become difficult to manage. Once your dependencies have dependencies, its not as straightforward to get an instance of a class.],
-  [} 
- }],
-  [class DependencyA { 
- constructor ( dependencyC : DependencyC , dependencyD : DependencyD ) {],
-  [} 
- }],
-  [\/\/ Now, to instantiate BusinessLogic, we need to create a tree of instances. 
- const dependencyC = new DependencyC ( new DependencyE ()); 
- const businessLogic = new BusinessLogic ( new MockDependencyA ( dependencyC , new DependencyD ()), new MockDependencyB ());],
-  [Even in this relatively mild example, it’s starting to get complicated to manage the dependency tree. If you want to mock dependency C in the business logic dependency chain, you have to create all of the dependencies around it and pass those in.],
-  [When you need to test a particularly complicated class, setting up all its dependencies can take more time that writing the test itself! If you only need to mock a single subdependency, you need to instantiate everything all the way down until the mock is required, and then pass it in there.],
-  [Fortunately, there are dependency injection frameworks for typescript that can simplify the work that needs to be done.],
-  [id="using-tsyringe"\>Using Tsyringe],
-  [Since we use typescript, we’ve moved to using https:\/\/github.com/microsoft/tsyringe],
-  [Tysringe allows you to tag a particular dependency as injectable with a decorator, and then very easily get an instance of it.],
-  [At its core, tsyringe provides you a dependency container that keeps track of all your dependencies. When you need to create an instance of a class, you can call resolve on the the container with an injection token and it will return you the right dependency registered under that token.],
-  [Our previous example becomes much easier to manage with this:],
-  [\@ injectable () 
- class DependencyC { 
- constructor ( dependencyE , DepedencyE ) {],
-  [} 
- }],
-  [\@ injectable () 
- class DependencyA { 
- constructor ( dependencyC : DependencyC , dependencyD : DependencyD ) {],
-  [} 
- }],
-  [\@ injectable () 
- class BusinessLogic { 
- constructor ( dependencyA : DependencyA , dependencyB : DependencyB ) {}],
-  [private void foo () { 
- this . dependencyA . action (); 
- } 
- }],
-  [\/\/ Now, all we need to do if we need an instance of business logic, is resolve it 
- const businessLogicInstance = container . resolve ( BusinessLogic );],
-  [That’s it! All you need to do is tag your classes as injectable and tsyringe can take care of instantiating the whole dependency tree.],
-  [Writing tests also becomes much easier with the framework, when you need to mock a low level dependency, you can just register it with the dependency container, and leave everything else in place.],
-  [To register a mock, you can call registerInstance on the container, and provide it with the injection token you want to replace, and what you want to replace it with. Once you’re done with the mock it can be cleared with clearInstances on the container.],
-  [describe ( ' BusinessLogic ' , () =\> { 
- it ( ' should call action on dependencyA when foo is called ' , () =\> { 
- \/\/ We can mock a class at any level in the dependency tree without touching anything else 
- container . registerInstance ( DependencyC , mock ());],
-  [\/\/ dependency A gets a mock version of dependency C during this resolution. 
- const underTest = container . resolve ( BusinessLogic );],
-  [\/\/ We can call this now that we're done testing, and the mock will be removed. 
- \/\/ When we resolve the instance after this, we get the original dependencies. 
- \/\/ In practice, we've found it's easy to just place this in your afterEach block. 
- container . clearInstances () 
- }); 
- });],
-  [Here, DependencyC will be replaced with a mock for the duration of this test, and at the end, when clearInstances is called, it will return to its original form.],
-  [Tsyringe provides some great utilities we’ve been able to leverage to deal with common dependency problems. For instance, its fairly common to have classes that are singletons, and while managing that manually can be a bit difficult, its virtually painless with tsyringe.],
-  [\/\/ This class will be a singleton, when container.resolve is called 
- \/\/ All calls will return the same instance. 
- \@ singleton () 
- class MySingleton {],
-  [}],
-  [Tsyringe also contains some great tools for managing the lifecycle of a given dependency. Dependencies can be scoped in a number of different ways. By default, dependencies have the transient scope, which means that every time you resolve this dependency a new instance is created. This can make sense, but also has some performance and memory implications, especially if you have some classes that are large and expensive to construct that aren’t singletons.],
-  [For our dependencies, we found that ResolutionScoped worked in reducing our memory usage. Resolution Scoping means that the same dependency will be reused during a resolution chain, so if you have a class that could need a dependency more than once in its dependency tree, it will only ever be instantiated once.],
-  [id="potential-issues"\>Potential Issues],
-  [There’s a few quirks we’ve learned to navigate with using tsyringe, mostly related to how to register mocks. There are a few ways to register something with the dependency container, the easiest of which is adding the \@injectable() decorator, but you can also manually register something with a call to container.register . This can be useful if you need to register something that’s not a class. An additional note that’s useful in this case, is that your injection token can be a string which can also be helpful if you’re not registering a class.],
-  [If you need to resolve something from a string token in a contstructor, there’s an \@inject decorator you can use to make sure the dependency is automatically resolved.],
-  [class MyClass { 
- constructor (\@ inject ( ' NonClassDependency ' ) nonClassDependency : NonClassDependencyInterface ) {],
-  [} 
- }],
-  [One problem with dependencies registered manually can be cleared unintentionally by a call to clearInstances which should be used in-betweeen tests.],
-  [To register a dependency that is unclearable without the decorator, it needs to be registered with useFactory . The factory should be a function that returns the item you want injected.],
-  [describe ( ' MyDependency ' , () =\> {],
-  [it ( ' should not be mocked ' , () =\> { 
- container . resolve ( MyDependency ); 
- container . resolve ( OtherDependency );],
-  [container . clearInstances (); 
- \/\/ This will fail! 
- \/\/ OtherDependency is no longer registered with the container. 
- container . resolve ( OtherDependency )],
-  [\/\/ This will be fine, the dependency remains registered after clears 
- container . resolve ( MyDependency ); 
- }); 
- });],
-  [This allows you to register whatever classes or objects you want managed by the dependency container in your application code, and then selectively replace them with mocks, in a given test, and then revert back to the original when the test is done.],
-  [id="wrapping-up"\>Wrapping Up],
-  [Adding tsyringe has definitely made managing our application dependencies and testing code much easier, with a dependency injection framework, we now have a much more manageable solution to dealing with our large dependency tree.],
+  [Bad news about our planet can be overwhelming and can make us feel helpless. But perhaps we’re missing a trick. Perhaps we each have a tiny bit of the answer at our fingertips. Far from having to become a climate expert, maybe offering what we already know is enough.],
+  [When a child walks into a child and adolescent mental health services (CAMHS) clinic we need to be ready to listen. Really listen. This means knowing ourselves well enough to realise if we’re distracted or upset. We let the reality of the situation be heard, and we may witness extreme distress. The very act of doing this can facilitate change. However troubling the story, we do not get up and walk out of the room.],
+  [Over time, among risk and uncertainty, we work alongside the child to help find a way through what they are facing; exploring what interconnecting issues are causing the distress, supporting their wisdom and perspective, calling on our own skills and others’ as required.],
+  [And if the child tells us about something that is causing them harm, we act to do everything we can to safeguard that child.],
+  [A recent UNICEF report estimates that one billion children are at “extremely high risk” due to the climate crisis. In a recent survey of 10,000 children and young people in 10 countries, 75% believe “the future is frightening” and 64% say their governments are not doing enough to avoid a climate catastrophe. And something that adds a completely preventable exacerbation of distress: nearly half say they’ve been ignored or dismissed when they try to talk about it. Despite being exposed to these multiple layers of harm, children and young people are showing courage and resilience as they lead on climate solutions .],
+  [As Paul Hoggett eloquently describes, “ We are living in a time when a tragedy which is without precedent is unfolding in front of our eyes.” On some level we all know what the science is saying, but a lot of us are acting as if we are separate from this reality. To not do so is extremely painful.],
+  [How can we each learn to bear the unbearable, so that we can hear — really hear — what our children are telling us? And to respond in a way that makes them want to tell us more? By amplifying their voices, supporting their actions, while stepping up ourselves to show that this is not their responsibility to fix. As mental health practitioners in the global North we carry influence that we can opt in to, or opt out of, using to this end.],
+  [We can acknowledge the power of our collective voice and focus on the systemic nature of the problem to “prescribe” the right treatment: drastic, just, climate action from the world’s most powerful.],
+  [The very act of making space for the reality of the situation to be heard, and bearing witness to the distress, in ourselves, in people who seek our support or on a wider stage, will facilitate change.],
+  [And there is a lot of distress right now.],
+  [If we could imagine the planet has feelings, I think we could imagine the pitch of her scream.],
+  [We don’t need to imagine the pain of young people. They have had to march the streets and take governments to court to ask to be protected.],
+  [What do we imagine is the next step for them if they continue to feel frightened, betrayed, and abandoned?],
+  [We can validate feelings of fear, grief, anger, panic, and sadness as understandable responses to the threat we are facing. We can help raise awareness that this is a sign of connection and compassion. This is not mental disorder. However, we can speak up to say that an enormous source of stress like the climate crisis will trigger or exacerbate serious mental illness in some.],
+  [We can find training to better understand the issues and to develop additional skills and strengths we will need in this unfolding crisis. We can seek to understand our own feelings better and reach out for support if required.],
+  [We can work across professional and generational boundaries to develop communities and resources of support. To find ways together to transform what individually can feel like overwhelming pain, distress, and grief about our predicament; from a draining, debilitating force into unquenchable fires in our bellies that connect us to each other and to what we love. A feeling of connection to the millions of other people across the world who are developing beautiful, creative, climate solutions and the optimism this brings is one of the surprisingly life-affirming elements of facing the reality of this crisis.],
+  [No one of us knows what lies ahead, nor what’s the “best thing” to do. However, once we have started to face the reality, standing shoulder to shoulder with other people, we will see things more clearly.],
+  [We need to show in how we act and what we say that we’re in this together. That we care about the world, we care about our young people and future generations, and that, however bad it feels, we won’t walk out of the room.],
+  [Catriona Mellor is a child and adolescent psychiatrist with an interest in the mental health impacts of the eco-crisis on children and young people as well as what nature-based practices and insights can add to mental health care. Catriona is co-author on a 2021 quantitative global study into children and young people’s emotions and thoughts about climate change to be published in The Lancet Planetary Health. She is currently riding from London to Glasgow to raise awareness around air pollution and the climate health emergency on Ride for their Lives https:\/\/climateacceptancestudios.com/ridefortheirlives],
+  [Competing interests : none declared.],
+  [References :],
+  [style="font-weight: 400;"\> UNICEF. One billion children at ‘extremely high risk’ of the impacts of the climate crisis. UNICEF 2021. Available at: https:\/\/www.unicef.org/press-releases/one-billion-children-extremely-high-risk-impacts-climate-crisis-unicef (accessed 15 Oct 2021).],
+  [style="font-weight: 400;"\>Hickman C. & Marks E., Pihkala P., Clayton S., Lewandowski E., Mayal E., Wray B., Mellor C., van Susteren L. (2021) A global survey of climate anxiety in children and young people and their beliefs about government responses to climate change . Pre-print available at Lancet Planetary Health https:\/\/papers.ssrn.com/sol3/papers.cfm?abstract\_id=3918955],
+  [style="font-weight: 400;"\> The \#Youth4ClimateLive Series https:\/\/youth4climate.live/],
+  [style="font-weight: 400;"\> Hoggett, Paul,(Ed.) (2019). Climate Psychology: On Indifference to Disaster. Palgrave Macmillan.],
+  [The post The climate crisis: how do we show we care? appeared first on The BMJ .],
 ),
-  inline-pq: pull-quote([registerInstance ( DependencyC , mock ());    \/\/ dependency A gets a mock version of dependency C during this resolution.], [GameChanger]),
-  inline-pq-idx: 22,
+  inline-pq: pull-quote([As Paul Hoggett eloquently describes, “ We are living in a time when a tragedy which is without precedent is unfolding in front of our eyes.], [julietwalker]),
+  inline-pq-idx: 10,
   edited-for-length: false,
 )
 
@@ -142,225 +68,27 @@ In any large object oriented codebase, managing dependencies can get difficult.]
 {
   #section-label([Features])
   #standard-article(
-  title: [The frantic, high-tech fight to stop climate-fueled dengue fever],
-  author: [Zoya Teirstein],
-  source-name: [Grist],
-  images: (),
-  paragraphs: (
-  [class="has-drop-cap has-default-font-family"\>The first patient arrived just over two years ago. January was supposed to be a slow month at Santa Rosa, a hospital nestled in the middle-class Pueblo Libre district of Lima, Peru. The sprawling metropolis of 10 million can feel eerily empty at the height of summer, when some families flee the city and many others flock to the beach.],
-  [class="has-default-font-family"\>The patient, a woman in her early 20s, had traveled 270 miles with her mother from their home in the central Peruvian jungle. She had a high fever and unbearable stomach pain — the result, she feared, of a recent abortion gone wrong. The doctors at Santa Rosa took X-rays and found blood moving freely in her abdominal cavity. Acting quickly in a desperate bid to stop the bleeding, they decided to remove her uterus.],
-  [class="has-default-font-family"\>But the hemorrhage continued. The doctors ordered every test they could think of. Just one came back positive, and it was something most of the physicians had never encountered. The patient was not experiencing pregnancy- or abortion-related complications after all; instead, she was in the most severe phase of dengue fever, a disease rarely seen in Lima at the time due to its temperate climate. In any other year, the case would have been an outlier. After all, the patient was not local and had come from the Amazon, where mosquito-borne illnesses like dengue are perennial risks.],
-  [class="wp-block-ups-image-inner"\> A sign welcomes patients to the emergency room at Santa Rosa hospital in Lima’s Pueblo Libre district. The hospital fielded an unprecedented outbreak of dengue fever in 2024. 
- Zoya Teirstein / Grist],
-  [class="has-default-font-family"\>Dengue was once a hazard throughout the Americas, but pesticide-spraying campaigns appeared to vanquish the disease by the mid-1900s. Peru declared the Aedes aegypti mosquito — the main carrier of dengue — eradicated in 1958. But with an outbreak in 1990, the worm began to turn, in Peru and around the world. Now, the number of dengue fever cases reported globally has been growing for decades , from 500,000 cases reported to the World Health Organization in 2000 to over 5 million in 2019.],
-  [class="has-default-font-family"\>While improved disease reporting accounts for part of this tenfold increase, experts primarily blame urbanization — which creates ideal conditions for the Aedes mosquito by providing ample pockets of water for it to breed in and dense human populations to bite once hatched — and the explosion of air travel, which enables the disease to escape endemic zones. As a result, dengue is the most common and fastest-growing mosquito-borne disease in the world.],
-  [class="has-default-font-family"\>But something else has happened in just the past few years. In 2023, the global case count approached 7 million — a 40 percent jump in a single year. And even that new record was crushed in 2024, when 14 million dengue cases and 9,000 deaths were reported worldwide, the majority of them in the Americas.],
-  [class="has-default-font-family"\>“It’s different from earlier years when dengue was around but you don’t see it much,” said Luciano Andrade Moreira, an agricultural engineer and entomologist in southern Brazil. Seventeen cities in Brazil declared states of emergency . Hospitals overflowed . So many people were sick that the crisis began to assume the character of society-wide disorder, similar to that experienced during the recent COVID-19 pandemic. Some supermarkets didn’t have enough cashiers to staff checkouts. “You see the disease coming next to you,” said Moreira, whose brother and sister-in-law were both infected.],
-  [class="wp-block-ups-image-inner"\> Public health workers spray insecticide during a fumigation campaign in the Santa Maria neighborhood of Brasilia, Brazil, in January 2024. Brazil reported more than 4,000 deaths from dengue fever that year. 
- Mateus Bonomi / Anadolu via Getty Images],
-  [class="has-default-font-family"\>In Lima’s Santa Rosa hospital, surgeon Yolanda Sánchez remembers that the first dengue patients “came like a wave.” No sooner was the young woman who unknowingly became patient zero discharged than her bed was immediately filled with another dengue patient, and another after that. Some hallways were so crowded with patients that staff had trouble navigating through the throng. The sick filled every available side room, spilled out onto the street, and massed near the wrought-iron front gate.],
-  [class="has-default-font-family"\>At the peak of the outbreak in February and March, Santa Rosa was fielding between 40 and 60 dengue patients a day — an unprecedented onslaught for a facility that saw just 13 such patients in all of 2022. The sick looked like a random sampling of the Peruvian population: young, old, chronically sick, and otherwise perfectly healthy.],
-  [class="has-default-font-family"\>When a woman under 60 with no comorbidities entered the hospital and died less than 24 hours later, a quiet doctor named Solomon Durand knew Santa Rosa would need to adapt if it was going to survive the epidemic. Durand, an epidemiologist, had recently come to Santa Rosa after a 15-year stint at a hospital in Iquitos, a northern Amazonian city long a hotspot for mosquito-borne disease. He was the only doctor at Santa Rosa who had worked through dengue outbreaks before, and he knew what to do.],
-  [class="has-default-font-family"\>Durand set up a tent in the hospital’s back parking lot to quickly assess new patients. Those with severe dengue were moved into an intensive care unit for monitoring. Everyone else was sorted into different wings of the hospital, treated, and released as quickly as possible. Durand monitored the files of the admitted patients; what struck him was the proximity of the outbreak. More and more of Santa Rosa’s dengue patients were coming from Pueblo Libre and the six other districts surrounding the hospital. These neighborhoods didn’t suffer from the overcrowding and poor sanitary conditions that usually spread dengue in urban areas, including in the limited outbreaks Lima had weathered in the past. “That caught our attention,” Durand told me. He knew something else must have shifted.],
-  [A privacy screen partially blocks the doorway of a room at Santa Rosa hospital in Lima, Peru. Nearby, a hospital worker wheels supplies between rooms. At the peak of the 2024 outbreak, the hospital was seeing up to 60 new dengue patients per day. Zoya Teirstein / Grist],
-  [class="has-default-font-family"\>The next clue occurred to him as the outbreak stretched on through an exceptionally hot summer and into the fall. A year earlier, the natural climate pattern known as El Niño had developed in the tropical regions of the Pacific, altering rainfall patterns and raising average temperatures across the globe for the next 12 months. Durand noticed El Niño’s effects in Lima. In the weeks before and after that first dengue patient arrived, unusually intense rains had flooded the city, which is typically in a semi-permanent state of drought, eventually prompting the Peruvian government to declare a state of emergency . The rains then gave way to an unrelenting summer sun.],
-  [class="wp-block-ups-image-inner"\> After monitoring the files of dengue patients admitted to Santa Rosa, Solomon Durand began to wonder if climate change could be a factor driving the outbreak. Zoya Teirstein / Grist],
-  [class="has-default-font-family"\>Hotter conditions act as an accelerant for dengue fever. Rising temperatures not only boost the development of the Aedes aegypti and Asian tiger mosquitoes that carry the disease, but they also speed up the replication of the dengue virus inside of those insects. In recent years, researchers have sought to isolate the effect of global warming on the spread of the disease. In September 2025, scientists at the University of Washington determined that, in the 21 countries across Asia and the Americas with the highest exposure to dengue, 18 percent of cases between 1995 and 2014 would not have occurred in the absence of human-caused climate change. It’s the first direct scientific evidence linking global warming to dengue’s widening global footprint — confirming the hunch Durand had more than a year earlier, when he noticed dengue’s spread into what had been a formerly inhospitable environment.],
-  [class="has-default-font-family"\>The problem is poised to get worse. By midcentury, the authors found, climate change could lead to an additional 50 percent increase in cases in the countries they studied. And that’s if new greenhouse gas emissions are kept low enough to keep warming below 2 degrees Celsius (3.6 degrees Fahrenheit).],
-  [class="has-default-font-family"\>If there were a powerful, affordable vaccine against dengue, the accelerating growth in caseloads wouldn’t be nearly as daunting. More than 30 years of research and work on finding a vaccine that simultaneously protects against all four dengue serotypes in circulation has yielded limited success, though Brazil recently approved a single-dose vaccine that looks promising. More than a million doses of the vaccine are currently being distributed to a handful of pilot cities, so the world may soon know if a viable vaccine is on the horizon.],
-  [class="has-default-font-family"\>In Lima, the 2024 epidemic hit 40 of the city’s 43 districts simultaneously. But thanks to Durand’s quick thinking and prior experience, only four of the nearly 2,000 diagnosed patients at Santa Rosa died. Even after the crisis finally subsided in June, the doctor continued to study what had happened, eventually publishing an article on the outbreak in a health sciences journal. More than two years after the first patient arrived, Durand is still ruminating over how ill-prepared his hospital was for a crisis he thinks will only become more common as climate change worsens.],
-  [class="has-default-font-family"\>Across South America, researchers and public health departments are working furiously to make such a warning possible. The strategy, years in the making, is something of a double-tipped spear. One tip is the use of machine learning to predict outbreaks months in advance. The other enlists the natural world to prevent dengue spread in the first place, releasing hundreds of millions of mosquitoes that have been carefully infected with a dengue-blocking bacteria into cities. When these mosquitoes breed with their wild brethren, they suppress the disease in future generations.],
-  [class="has-default-font-family"\>Unlike the reactive pesticide-spraying campaigns that defined vector-borne disease control throughout the 20th century, these programs seek a more deliberate cooperation with existing ecosystems. But they also face substantial logistical and political challenges, requiring public officials to spend money on programs that won’t pay obvious dividends for years — assuming anyone notices their success at all. But as dengue changes shape, health officials in countries like Peru and Brazil are not just noting the value of investing in such an approach, but demanding it.],
-  [class="has-drop-cap has-default-font-family"\>The Iquitos-Nauta highway, which connects the two northern Peruvian cities in its name, was paved in 2004. The bustling highway and the dirt road offshoots it has spawned are lifelines for the extremely isolated communities living in the Peruvian Amazon. Many lack running water or refrigeration, and the new access to medical care and other urban amenities is saving lives.],
-  [class="has-default-font-family"\>But in this biodiverse region, the roads have also opened up new opportunities for infectious diseases to take hold. Anopheles mosquitoes, which carry malaria, and dengue-carrying Aedes aegypti fester in disturbed habitats like those of the newly-accessible Peruvian jungle. Every stand of trees felled by a machete to make way for a new home allows the insects to more easily find standing water and feed on humans. Illegal mining and other clandestine activities in the rainforest leave behind trash, deep gashes in the soil, and other places for mosquitoes to breed. Layer climate change on top of this — extreme temperatures in the Amazon increased half a degree C per decade between 1981 and 2023 — and the scale of the public health challenge becomes even more daunting.],
-  [class="has-default-font-family"\>But these same factors are also turning the Iquitos-Nauta highway into an important avenue for research, allowing experts to access health and climate data from places that were once impossible to regularly reach. Llanchama, a nearby settlement of fewer than 300 residents on the bank of the Nanay River, is one of 10 local research sites periodically visited by InnovaLab, a disease-research laboratory based out of Cayetano Heredia University in Lima. Gabriel Carrasco-Escobar, a biostatistician who has been working in the Amazon in one capacity or another since his youth, runs the lab with the help of a team of field researchers from both Lima and Iquitos.],
-  [class="has-default-font-family"\>As recently as two years ago, Carrasco-Escobar and his team had to board boats in Iquitos and ride for three hours to reach the community, which comprises a school, a soccer field, and a single grassy lane lined with houses. Now, the drive from Iquitos takes an hour, though it’s still another 30 minutes by foot after that. The new accessibility has allowed the researchers to visit much more frequently — and to install a weather station capable of providing real-time, minute-by-minute updates on temperature, humidity, and other factors.],
-  [class="has-default-font-family"\>Carrasco-Escobar cautions that the rainforest is a temperamental research partner. The same conditions that make InnovaLab’s expeditions difficult — surprise floods, thick heat, and half-built infrastructure that muddies the border between road and forest — cause mosquitoes to thrive. The insects are tiny, opportunistic, and tend to defy management. There is no one convenient signal that heralds their movements; they’re influenced by wind, rain, warmth, the density of tree roots, and the availability of blood meals, among other factors. That’s especially true of the Aedes aegypti, an enterprising and highly agile day-biting species that is as comfortable indoors as it is outside.],
-  [class="has-default-font-family"\>Carrasco-Escobar and his colleagues want to establish a monitoring system that is just as intelligent as their adversaries. Their aim is to understand the delicate tapestry of environmental threads that pull the bugs from place to place and cause them to proliferate. This means, first and foremost, understanding in real time how humans themselves are changing the environment. To do this, the researchers are deploying not just weather stations like the one in Llanchama but also acoustic sensors affixed to tree trunks to identify birds in flight and people walking through the jungle, air quality sensors to detect pollutants like brush smoke that indicate deforestation, and drone surveys that use infrared radiation to spot movement and new infrastructure on the forest floor.],
-  [class="wp-block-ups-image-inner"\> Gabriel Carrasco-Escobar and his colleagues have established an early warning system that remote communities like Llanchama will be able to use to prepare for infectious diseases. 
- Zoya Teirstein / Grist],
-  [class="has-default-font-family"\>Using sensors, drones, and weather stations, Gabriel Carrasco-Escobar and his colleagues have established an early warning system that remote communities like Llanchama will be able to use to prepare for infectious diseases. 
- Zoya Teirstein / Grist],
-  [class="has-default-font-family"\>These tools, in sum, represent the full spectrum of humanity’s ability to understand some of the deadliest animals in the world — both the Aedes aegypti and the people who make their spread possible. The information they capture is paired with public health data from remote communities and then fed into machine learning systems. The patterns the program identifies comprise the backbone of InnovaLab’s early warning system, which can now successfully predict a dengue outbreak three months in advance.],
-  [class="has-default-font-family"\>The surveillance system could permanently alter the region’s relationship with infectious diseases — and, if adopted throughout the rest of Peru, stand guard against future outbreaks in places like Lima. A three-month heads up allows health departments to move resources to areas where they will soon be in highest demand. Hospitals can train staff to recognize dengue and set up triage rooms before they’re needed. Municipalities can advise residents to stay indoors when possible and wear insect repellent outside. These relatively simple, low-cost interventions would have averted much of the suffering Durand saw at Santa Rosa in 2024.],
-  [class="has-default-font-family"\>InnovaLab’s work is part of a larger project called Harmonize, which is named for the integration of climate, health, and ecosystem data central to the work. (Harmonize is a project funded by the Wellcome Trust, which supports our Vital Signs series; funders have no role in Grist’s editorial decisions.) The next phase of Harmonize is to turn the data it has collected at sites in Peru, Colombia, Brazil, and the Dominican Republic into case studies that other researchers can use to determine the extent to which climate change is influencing human health elsewhere in the world.],
-  [class="has-default-font-family"\>“The idea is to provide these resources for people in El Salvador or in Nigeria to do their own health attribution studies,” said Ana Maria Vicedo Cabrera, an environmental epidemiologist at the University of Bern in Switzerland, who leads this work. “If we make the tools and the resources more available, the evidence will grow.”],
-  [class="has-drop-cap has-default-font-family"\>Carrasco-Escobar isn’t the only expert trying to figure out what makes a mosquito tick. On the outskirts of Curitiba, an affluent city in southern Brazil, a squat building on the university campus of the Instituto de Tecnologia do Paraná houses millions of Aedes aegypti. These mosquitoes’ eggs, which are infected with a bacterium called Wolbachia , will be shipped to cities across the country, hatched, and released to mate with wild mosquitoes.],
-  [class="has-default-font-family"\>Luciano Andrade Moreira learned about Wolbachia in Australia when he went to visit a researcher named Scott O’Neill in Queensland in 2008. O’Neill’s hypothesis was that the bacteria, which is naturally occurring in fruit flies and many other insects, would shorten the lifespan of mosquitoes. That could give them less time to spread disease. Moreira arrived in Australia in time to see O’Neill make a surprising discovery: The bacteria did something even more powerful — it prevented dengue from replicating inside the insects in the first place. Wolbachia creates a hostile environment for the dengue virus to exist in a mosquito’s gut by priming the insect’s immune system to fight the disease, competing with the virus for cellular resources, and physically crowding out dengue in cells.],
-  [class="has-default-font-family"\>Now, almost two decades later, the mosquito factory in Curitiba, which is called Wolbito do Brasil, is teeming with the distant descendants of those first Wolbachia-infected mosquitoes. In the facility, rows of tall machines hold tubes of mosquito eggs. As they hatch into larvae, the insects are fed a mixture of water and protein powder and grow into pupae. Then, the pupae are carted into an adjoining room, where they are washed between two panes of glass — the smaller pupae, the males, slide out of the bottom of the machine first, followed by the larger females. All of the egg-laying females and one of every three males move into yet another room, this one hot and humid, where they are put into mesh enclosures and fed on warm horse blood and sugar water.],
-  [class="has-default-font-family"\>On a tour of the factory in November, the facility’s production manager, a biologist named Antônio Brandão, placed his hand next to the mesh and watched hundreds of tiny syringe-like mouths jostle for a better position, as if on cue. “If you come closer and leave your hand there,” he told me, “they will start coming.”],
-  [class="has-default-font-family"\>These mesh cages constitute the final step of a mosquito-rearing process that until this point has been accomplished almost entirely by machines, which are carefully supervised by the factory’s 70-odd employees. After the female mosquitoes have laid their eggs on white paper strips at the bottom of the cages, workers will wheel the cages into a refrigerated room and the mosquitoes will finally meet their maker.],
-  [class="has-default-font-family"\>Their eggs, however — about 1 million of them collected per cage, which means 100 million eggs are produced every week — are destined for a productive life outside the factory walls. Since the facility commenced operation last summer, six cities in Brazil have started seeding neighborhoods with dengue-fighting mosquitoes, on top of the 10 cities that were already receiving eggs produced by hand by Moreira, Brandão, and other long-suffering employees who worked to popularize the Wolbachia method before the process was automated last year.],
-  [A member of the public health department in Joinville, Brazil, holds up a canister of dengue-fighting mosquitoes. The city in the midst of a campaign to establish Wolbachia in the wild mosquito population. Zoya Teirstein / Grist],
-  [class="has-default-font-family"\>Joinville, a two-hour drive from Curitiba, is one of those cities. On an early midweek morning, members of the local health department and Wolbito employees gathered in a distribution center to load a car with canisters of mosquitoes. The mosquitoes were hatched from bags of pellets. Each pellet contains eggs and a feeding mixture, and all participating cities have to do is put the pellets in water and wait for the insects to hatch.],
-  [class="has-default-font-family"\>As the car pulled out of the distribution center and wound slowly through Joinville at 7 a.m., Lúcia Jordan, a city health agent, rolled down her window and held an open container in the air, giving it a few hard shakes to eject any lingering mosquitoes. She repeated the exercise over and over as the car made slow, methodical turns through the city’s neighborhoods. A woman waiting for her bus watched the car go by with a bemused expression, seemingly unfazed by the torrent of blood-sucking creatures released in her vicinity.],
-  [class="has-default-font-family"\>Much like InnovaLab’s efforts in the Amazon, Wolbito’s work relies heavily on buy-in from the community. But not everyone can be reached, and the releases understandably look suspicious. There are other anti-mosquito initiatives that seek to reduce the overall population of mosquitoes in a given place, but that’s not the goal here. The residents of Joinville will endure no fewer mosquito bites as a result of this program. But, after two years of sustained Wolbachia releases, they will receive widespread and lasting protection from dengue fever, Zika, yellow fever, and other diseases carried by Aedes aegypti mosquitoes.],
-  [class="has-default-font-family"\>Niterói, a city of 500,000 connected to Rio de Janeiro, was one of the first places in Brazil to be fully protected by the Wolbachia method. The releases took place from 2017 to 2019. Dengue caseloads declined nearly 90 percent across the city following the treatment, compared to the 10-year average leading up to 2017. During the historic dengue outbreak in 2024, when many Brazilian cities saw record numbers of cases, Niterói recorded fewer than 2,000 — just about a quarter of its pre-treatment average.],
-  [class="has-default-font-family"\>“It’s not often you come across a proposal to release mosquitoes when our entire history of disease prevention was to fight against the mosquitoes,” Ana Eppinghaus, health surveillance coordinator at the Municipal Health Foundation of Niterói, said at the time . “We accept the challenge.”],
-  [class="has-default-font-family"\>Over the next decade, Moreira aims to protect half of the Brazilian population using Wolbachia . So far, there’s no reason to think he won’t succeed. The method O’Neill pioneered in Australia is being used by 15 countries , and evidence from multiple regions shows dengue incidence drops sharply after Wolbachia mosquitoes establish themselves. Caseloads have fallen in every city in Brazil where Wolbachia has taken hold. Moreira said his biggest problem now is producing mosquitoes fast enough to meet the demand of everyone who wants them.],
-  [class="has-default-font-family"\>Despite this, some politicians remain wary of committing to the program — especially when he tells them it might not produce results for a year or more. “Our program is not like a spray that you just spray and kill all the mosquitoes and solve the problem,” he said. “They think it’s too long to wait.”],
-  [class="has-drop-cap has-default-font-family"\>In the United States, mosquitoes are viewed as a nuisance, rather than the public health disaster they have long been in tropical nations like Brazil. That wasn’t always the case: The Centers for Disease Control and Prevention, or CDC, was established in 1946 to fight malaria around U. S. military bases. It was wildly successful in that mission, all but eradicating the disease from the country by the early 1950s with the help of the devastating chemical DDT. The agency learned a valuable lesson through that effort that still resounds today: Eradicating vector-borne disease is possible “in nations with temperate climates and seasonal malaria transmission.”],
-  [class="has-default-font-family"\>But what happens when the climate becomes less temperate? Native and invasive tropical plants and animals move north, as average temperatures rise and winter freezes become weaker. Subtropical states — Florida, Alabama, Mississippi, Louisiana, Texas, New Mexico, Arizona, and California — begin to tropicalize, a process that will be all but complete by the end of the century, according to a 2021 report published by the United States Geological Survey, the Department of the Interior’s science agency.],
-  [class="has-default-font-family"\>“Tropical mosquitoes that can transmit encephalitis, West Nile virus, and other diseases,” the report said, “are likely to further expand their ranges, putting millions of people and wildlife species at risk of these diseases.”],
-  [class="has-default-font-family"\>Indeed, California saw its first-ever locally-acquired dengue case in October 2023. The California Department of Public Health quickly found another case related to the first — also in someone who had not recently traveled. Cases continued to pop up over the next two years.],
-  [class="has-default-font-family"\>In response, the Greater Los Angeles County Vector Control District stepped up its efforts to eradicate mosquitoes. In collaboration with its counterpart in adjacent Orange County, the agency began releasing male mosquitoes sterilized by X-ray, running pilot programs in two neighborhoods in northeast Los Angeles. The relief offered by the campaign is fundamentally temporary: The technique only works as long as the participating counties are committed to regularly releasing mosquitoes. That’s because sterile males produce no offspring, so their genetic lines cannot continue independently. Each new generation of bloodsuckers, in other words, is not necessarily any less deadly than the last.],
-  [class="has-default-font-family"\>Other mosquito control efforts in the U. S. in recent years similarly rely on sterilization and continuous releases to work. MosquitoMate, a company based in Kentucky, uses the Wolbachia method — but instead of breeding dengue-resistant insects that can then overtake the native population, as Moreira does in Brazil, MosquitoMate uses the bacteria to naturally sterilize male mosquitoes. This means that it reduces overall populations when the sterilized insects fail to breed, but it’s similar to the X-ray technique in the sense that the sterilized mosquitoes cannot pass on their benevolent quirk to future generations.],
-  [class="has-default-font-family"\>The result is just a high-tech variant on the same mosquito suppression paradigm that has been the expected approach in the U. S. since the founding of the CDC. Part of the reason for this stasis is that convenient regulatory frameworks exist for approving mosquito suppression initiatives via the Environmental Protection Agency. Modifying mosquitoes so that they change the characteristics of future generations, on the other hand, involves a much more complicated review process, like the development of biotech products. The legal and ecological ramifications of a Wolbachia-like program would inevitably subject it to yearslong regulatory hoops. So for now, the U. S. is stuck with piecemeal and halfhearted attempts to crush American mosquito populations. The problem is they’re not really working: Aedes populations have exploded in certain hotspots across the country over the past few years.],
-  [class="has-default-font-family"\>Recent bipartisan federal legislation would authorize \$100 million per year for mosquito surveillance and control, significantly expanding the CDC’s current slate of grants for vector-borne disease monitoring and preparedness. The bill, introduced in 2023, seeks to stitch together the various fragmented and underfunded mosquito control efforts taking place across the country into a more cohesive framework. But the “SMASH Act,” short for Strengthening Mosquito Abatement for Safety and Health (a reauthorization of a weaker SMASH program created in 2019), has stalled out in a legislative committee.],
-  [class="has-default-font-family"\>Congress may be in no hurry, but time is not on its side. If the country’s climate, long one of its greatest allies in the fight against malaria and other vector-borne maladies, is changing, then the U. S. is due for an overhaul of its relationship with tropical illnesses. The path forward may require developing systems to catch the clues that herald a disease outbreak, as Carrasco-Escobar is doing in Peru. Or valuing long-term disease suppression over fewer mosquitoes in the short-term — Moreira’s goal in Brazil. Or maybe it’s some combination of the two — the double-tipped spear that seeks to work with the natural world rather than against it.],
-  [class="has-default-font-family"\>But first, Durand told me at the hospital in Lima, temperate countries need to recognize that the ground beneath them is shifting. When he looks at California, he sees echoes of Lima’s 2024 outbreak.],
-),
-  insert-map: (:),
-  inline-pq: pull-quote([“If you come closer and leave your hand there,” he told me, “they will start coming.], [Zoya Teirstein]),
-  inline-pq-idx: 23,
-  word-count: 5105,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-}
-
-{
-  #standard-article(
-  title: [New languages evolve in rapid bursts],
-  author: [Ed Yong],
-  source-name: [Not Exactly Rocket Science (Ed Yong archive)],
-  images: (),
-  paragraphs: (
-  [The birth of new languages is accompanied by a burst of rapid evolution consisting of large changes in vocabulary that are followed by long periods of relatively slower change.],
-  [Languages are often compared to living species because of the way in which they diverge into new tongues over time in an ever-growing linguistic tree. Some critics have claimed that this comparison is a superficial one, a nice metaphor but nothing more.],
-  [But the new study by Quentin Atkinson , now at the University of Oxford, suggests that languages evolve at a similar stop-and-start pace, which uncannily echoes a long-standing theory in biology, known as ‘ punctuated equilibrium’ . The theory’s followers claim that life on Earth also evolved at an uneven pace, full of rapid bursts and slow periods.],
-  [Famously championed by the late Stephen Jay Gould , the punctuated equilibrium theory suggests that most species change very little over time and big evolutionary changes are concentrated at rare moments where new species branch off from existing lineages. Together with colleagues from the US and New Zealand, Atkinson found similar patterns in three of the worlds’ largest families of languages.],
-  [Three families],
-  [They compared lists of words from the Indo-European group , which include English and Hindi; the Bantu group , consisting of several hundred African languages; and the Austronesian group , which includes over a thousand tongues from Indonesia, Papua New Guinea and the Polynesian islands. Between them, these three families account for a third of all the world’s languages.],
-  [Of course, languages borrow words from each other all the time and indeed, 50% of English words are loans from French and Latin. That was a potential pitfall of the study and Atkinson avoided it by only considering basic words such as numerals, body parts and pronouns that are very unlikely to have been co-opted from another tongue.],
-  [For each group, Atkinson built a family tree showing how newer languages split off from ancestral ones. The trees mirrored those that biologists use to chart the evolutionary relationships between species.],
-  [In the model, the birth of new languages is represented by new branches on the tree and the length of each branch depends on the difference in vocabulary between the new tongue and its parent one. The greater the changes, the longer the branch.],
-  [In each family tree, Atkinson saw that the parts of the tree with the most branches also had the longest ones. So groups that spawned the highest number of new languages also diverged most significantly in their repertoire of words. That’s the pattern you would expect if the birth of new languages triggered bursts of rapid evolution. If the pace of evolution was more constant, the number of branch points would have no effect on overall branch length.],
-  [The need for speed],
-  [These rapid bursts accounted for 31% of the vocabulary differences between Bantu speakers, 21% of the differences in Indo-European languages and 10% of the variation in the Austronesian group. For comparison, team estimated that these fast and slow evolutionary cycles explained about 22% of the genetic differences between biological species.],
-  [As they split from each other, new sister tongues begin to adopt new words at a fast pace and these are probably accompanied by equally quick changes in pronunciation, spelling and grammar. As their identities become clearer, the pace of change slows.],
-  [Atkinson thinks that this process happens when different groups of people try to establish distinct social identities by exaggerating differences in language. American English may have developed along these lines and the need for a unique identity was at the forefront of Noah Webster ‘s mind when he published his first American Dictionary of the English Language in 1828. “As an independent nation, our honour requires us to have a system of our own, in language as well as government,” he said.],
-  [For more on the evolution of language, have a look at this post on the evolution of the past tense in English verbs .],
-),
-  insert-map: (:),
-  word-count: 664,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-}
-
-{
-  #standard-article(
-  title: [Capturing Script Logs],
-  author: [GameChanger],
-  source-name: [GameChanger Tech],
-  images: (),
-  paragraphs: (
-  [At GameChanger, we use scripts in many of our flows such as during deploys],
-  [or running Ansible while booting new instances. Some of these flows are],
-  [critical to our operations and require good visibility. Traditionally we],
-  [tried to send both metrics and logs to DataDog where we can both monitor what],
-  [scripts are doing and set alerts on various metrics. DataDog integration,],
-  [however, is not always available such as during the instance boot. In addition,],
-  [sometimes a DataDog alert does not provide enough context of what failed and most],
-  [importantly why it failed. It simply states that some threshold was reached. To],
-  [investigate the issue requires more manual steps by looking for the appropriate],
-  [log which is not always intuitive. That is why recently at GameChanger we],
-  [started integrating Slack error reporting directly into some of our critical],
-  [scripts. This post describes the exact mechanism of how that is achieved since],
-  [it uses a really cool bash trick.],
-  [id="useful-commands"\>Useful Commands],
-  [First some background on some of the useful commands.],
-  [id="tee-anyone"\> tee Anyone?],
-  [Tee is a really useful command. It captures an output from a script
-and both echoes it to standard out as well as forwards it to a file.
-This allows to both see an output as well as capture the same output
-for later use. For example:],
-  [id="process-substitution"\>Process Substitution],
-  [Some commands only work with files. For example a classic diff :],
-  [Sometimes however it is convenient to be able to refer to an output of commands
-as a file without manually creating a temporary file. This is what process
-substitution allows to do. Same example as above but with process substitution:],
-  [class="highlight"\> \$ diff -u (command) syntax. It similarly creates a temporary file to which data can be
-written to and process substitution will forward that content to a command. For
-example:],
-  [id="exec"\> exec],
-  [Most common form of exec is to simply execute another command by replacing
-the process:],
-  [However exec also overtakes process file descriptors which allows exec to
-adjust what a process does with its file descriptors which includes stdout 
-and stderr . For example exec can capture script output into a file:],
-  [Similar results can be achieved by manually sending script output to a file
-(e.g. command &\> log.txt ) however exec allows to do that directly within
-the script.],
-  [id="putting-everything-together"\>Putting Everything Together],
-  [Putting all commands together allows to do something like:],
-  [function error\_msg { 
- echo "Deploy last 50 logs:
- \$( tail -n 50 \$LOG\_PATH ) 
-" 
- }],
-  [function slack\_error { 
- msg = \${ 1 :-} 
- slacksend \\ 
- --channel = alerts \\ 
- --color = danger \\ 
- --snippet = " \$( error\_msg ) " \\ 
- --filename = "deploy.log" \\ 
- " \$msg " \\ 
- || true 
- }],
-  [deploy || ( slack\_error "terminating rolling deployment at \$HOSTNAME " ; exit 1 )],
-  [Here is what the above does:],
-  [Shows script output as normal via tee . This allows normal script log
-aggregation to work as normal.],
-  [In addition it fully captures script stdout and stderr to a log file via
- exec , process substitution and tee],
-  [When the deploy command fails, it sends a slack message with the last 50
-lines of the script logs],
-  [id="wrap-up"\>Wrap Up],
-  [It might not seem like much, but immediately seeing what failed and why by
-including the failure logs makes for a much more pleasant debugging experience.
-Most importantly it does not adjust how the script is used so no other changes
-are required to other systems since all the enhancements are baked directly in
-into the script itself.],
-  [Hopefully you will find some of these cool bash capabilities useful as well.],
-),
-  insert-map: (:),
-  word-count: 716,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-}
-
-{
-  #standard-article(
-  title: [Julian Sheather: Perilous medicine],
-  author: [julietwalker],
+  title: [Government indecision is still costing lives in the UK],
+  author: [kellybrendel],
   source-name: [The BMJ Blog],
   images: (),
   paragraphs: (
-  [Sarajevo on the morning of 29 May1992. The Serbian forces have surrounded the city. A Bosnian field commander reassures Esma Zecevic, the city’s chief paediatrician that the hospital will likely be safe. Why bombard a hospital? To what end? But that afternoon, the hospital is targeted. Amid gunfire and shell bursts, obstetric staff fight to get seventeen pre-term babies into the basement. Minutes later the ward is destroyed. In the following days, without warmth, electricity, or incubators, nine of the babies died.],
-  [Thus opens Perilous Medicine: The Struggle to Protect Healthcare from the Violence of War , a major new book on healthcare in armed conflict from Leonard Rubenstein, destined to become a landmark in its field. When I first met Len—I was a little wet behind the ears—he worked for Physicians for Human Rights US. Unbeknownst to him he became something of an inspiration for me, a gentle, witty, self-deprecating authority. He is now at Johns Hopkins, and Perilous Medicine reads like a summation of a lifetime’s experience, much of it hands on, at the interface between healthcare, human rights, and conflict.],
-  [The backbone of this sobering, deeply humane book is a series of case studies—accounts of the targeting or politically motivated corruption and misuse of healthcare during times of conflict. Many of the places the book visits have become bywords for inhumanity, places of bitter, often enduring hostility or calamitous political failure. In Chechnya, a Russian Republic between the Black and Caspian seas, we see summary Russian executions of Chechnyan men in their hospital beds, of the Russian hunt for the “bandit doctor,” Kassan Baiev, whose “crime” was seeking to save the lives of the horrifically injured, Russian or Chechnyan. At one point, following the Chechnyan retreat from the Russian bombardment of Grozny, Baiev operated for three days solid. Twice he fainted from exhaustion. “I cut through so much bone,” he wrote , “that the teeth at the centre of my hacksaw blade became dull.”],
-  [When the Islamic State of Iraq and the Levant, better known in the west as ISIS, began to accrue territory, it faced a challenge familiar to all “successful” insurrections: how do you provide services to the populations under your control? T he approach to healthcare was brutal: ISIS demanded its own fighters were prioritised; civilian wounded were charged exorbitant fees; hospitals were emptied of the sick to make room for ISIS wounded; doctors were compelled to treat—and prioritise—ISIS fighters. Omar Amouri, an orthopaedic surgeon, was forced to treat ISIS fighters for two and a half years before escaping to Kurdistan.],
-  [At times in Perilous Medicine the entire science and enterprise of medicine feels under existential attack. In 2018-19, during an Ebola outbreak, the Democratic Republic of the Congo saw “the most sustained and dramatic instance in memory of violence directed against well-funded and globally coordinated efforts to control a major outbreak of a deadly infectious disease.” Before shooting Richard Valery Mouzoko Kiboung, a Cameroonian epidemiologist working in a hospital in Butembo, close to the Ugandan border, his killers told him that Ebola did not exist in the DRC.],
-  [Perilous Medicine chooses its case studies carefully. Not only are they accounts of healthcare and its professionals under attack, each example reveals different dimensions of the contemporary threat to international humanitarian law (IHL). For each case study is also an account of a certain kind of failure—a failure by one or other combatant to show even residual respect for the laws hammered out in response to the limitless suffering of war waged without restraint.],
-  [For as long as there have been recorded wars, there has been dispute about whether morality has any part in it. As Michael Walzer writes in Just and Unjust Wars , there have always been those who claim that warfare stands outside—or beneath—morality: inter arma silent leges : in times of war the law is silent. But as Walzer also argues, the language we use to talk about war is saturated with moral meaning. We talk of cowardice and bravery, savagery and restraint, necessity and atrocity. The words come naturally to us.],
-  [Perilous Medicine opens with an account of a more recent version of this dispute. On the one hand, Henry Dunant, whose experience of slaughter at the battle of Solferino, Lombardy, sparked the development of the Geneva Conventions. On the other Prussian-born writer and soldier Francis Lieber, who thought war a form of moral energy essential to a country’s “moral progress.” While Dunant argued for restraint, Lieber believed the exigencies of war permitted far more. Although not amoral—Lieber supported some restraint—in his view whatever was “necessary” to the speediest conclusion of war was justified. Only acts unnecessary to that end were prohibited.],
-  [In theory, and on paper, Dunant’s view prevailed. The Geneva Conventions and their several Protocols are the core of IHL. But while Dunant prevailed morally, the merciless pursuit of military goals, irrespective of any constraining rule or injunction, continues to disfigure modern conflict. Perilous Medicine takes us to Syria and the deliberate targeting of health services and personnel by Assad’s regime and its Russian allies; to Yemen and the relentless Saudi assault on hospitals, clinics, and civilian sanitation networks, resulting in the largest Cholera outbreak on record; to Myanmar and the Tatmadaw—Myanmar’s military—attacks on health workers serving intensely vulnerable minority communities; to Israel/Palestine and the “obstruction” of vital health services to the Palestinian people by the Israel Defence Forces. All these violations of IHL in some way rationalised by security or “military necessity.”],
-  [Perilous Medicine is an important and necessary book. Partly this is to do with the precision and thoroughness of its account of violations of health-related IHL. But also because it deliberately asks an urgent question. Although it is unlikely that there was ever “a golden age” of warfare, where restraint prevailed in pursuit of just military goals, it can nonetheless feel as if we are sliding back into barbarism. The Balkan Wars, waged in the continent that first conceived of the Geneva Conventions—and spearheaded the contemporary human rights movement—felt like a watershed. Since then, particularly in the wars disfiguring the greater Middle East, conflict rages without apparent restraint. So how are we to respond? Perilous Medicine is clear that political will—the expenditure of political capital by major powers—is vital. So too is continued agitation by civil society—public opinion can matter, even to apparently hardened regimes. But for BMJ readers, a critical “untapped” resource is the medical community. “With some notable exceptions,” Len writes:],
-  [“…health worker constituencies have rarely made protection of health care a priority domestically, where it is most needed. They could lobby governments, tell the stories of the risks to health care, and solicit support from the public, organize their members, and express solidarity with those who practice in dangerous, overwhelming circumstances.”],
-  [Exceptions include the Turkish Medical Association, and, I would argue, the Norwegian Medical Association along with one of my employers, the British Medical Association . For those committed to the concept of just war, and to the constraints and protections laid out in the Geneva Conventions, these are clearly difficult times. As Len Rubenstein writes, the appeal of overwhelming and indiscriminate force is again in ascendance. But this is not the time to despair. As Len writes, although countering this brutality will take a supreme effort “ the costs in suffering and death are too great not to try.”],
-  [Julian Sheather is a writer and ethicist],
+  [One person in 55 is now infected with coronavirus in the UK . The odds are that every time you step onto a crowded bus or train carriage you meet someone who is infected with covid-19. Every time you are sitting in a restaurant maybe, or walking down a supermarket aisle, you will likely meet someone who is infected too. In early October one in 12 children were estimated to have had covid, and on 22 October there were 180 deaths in the UK. Every four hours, as many deaths are occurring in the UK as New Zealand has had for the whole pandemic.],
+  [We are still in groundhog day , with a few new repeating scenes. The secretary of state for health and social care, Sajid Javid, has repeated what he said when first taking up the role: that “ there could be 100 000 cases a day ,” yet he doesn’t see this as a need to act, either then or now. English directors of public healt h have again broken from national guidance that they know is inadequate for their areas. NHS leaders and the BMA have called for urgent action “to protect the NHS.”],
+  [Plan A of the government’s winter plan has only ever been the “do as little as possible” option. The government’s eggs are all in the vaccination basket: offer flu vaccination and a third dose of the covid vaccine as a booster ( or not ) then let everything else run loose and it’s the people’s fault if they get ill or infect others.],
+  [Malta, Spain, Portugal, and the Netherlands have now overtaken the UK and Israel in the vaccination stakes . France, which had a high level of vaccine hesitancy, has climbed up to a comparable level of coverage to the UK, mainly because the French are using vaccine passports. Eastern and southern Europe, along with the Baltic countries , are now experiencing severe epidemics. They have had high levels of vaccine hesitancy and lower vaccine uptake. In some cases, health systems have been less well prepared to implement mass vaccination, or lost out in the chaotic EU central purchase earlier this year.],
+  [Vaccination is still the best hope we have at reducing the virus to very low levels. Countries that have the highest rates of vaccination have seen an encouraging levelling of death rates throughout this year. Yet there is still no evidence of collective (“herd”) immunity even in countries where there is a very high level of vaccination or where there have been persistent waves of infection, as in Iran. Reinfection occurs, especially with the delta variant , and vaccine efficacy declines over time . Vaccines still have a high level of efficacy against the delta variant, although less than with early variants. Yet where there are areas of low vaccine uptake within countries and with social mixing, these weaken a country’s ability to suppress the virus. In the UK there are areas where public confidence in the vaccine is being improved with interventions from local public health teams and community support, but more investment is needed in this localised action. Vaccines prevent serious illness as measured by hospital admission and death but do they prevent debilitating illness—persistent or long covid ? Social mixing without masking enables the virus to find new unprotected, vulnerable people to infect and harm. Every time the virus finds a new host, new mutations occur, and new, potentially more vaccine resistant, variants will be formed in the UK’s “new variant factory. ” So vaccination is not the sole answer.],
+  [UK politicians have been too attracted to single technological fixes (testing, vaccination, the covid app, Nightingale hospitals), when what we need is the “Swiss cheese model” —using everything we’ve got at the same time to prevent viral spread. All of the European countries now enjoying high levels of double vaccine coverage with MRNA vaccines have still kept their social measures in place, in differing degrees throughout the summer. Masks have continued to be a requirement in public enclosed spaces in France, Portugal, and Spain. Germany requires FFP2 masks in enclosed public spaces and vaccine passports. Gatherings in public places have been strictly limited in Portugal and Spain until recently, despite high levels of vaccine coverage. France, Ireland, Montenegro, and Israel are other examples of countries requiring vaccine passports.],
+  [Living with covid does mean masking up in enclosed spaces, meeting outdoors when possible, working from home if we can, and if we can’t do without our night time entertainment it means vaccine passports. Vaccination, or evidence of a recent negative test, are a small price to pay for “normality.” Every vaccinated person has their vaccination card, and at least 10 million people now have the NHS app. It would seem a very small step to have to show it to gain access to somewhere you want to go—especially where employers should be protecting their staff. Millions of airline passengers have accepted the testing regimes of countries they wish to go to and the mask requirement on planes. The requirements in the UK plan B need to be put back into law for consistent control of the virus across the UK. None of them are major restrictions on our freedom.],
+  [The government has now asked local authorities what they think about moving towards plan B . They are, once again, caught stalling on actions that experts called for in the summer. Government ministers trivialise what is at stake with the ill informed debate about masking in Parliament, with careless contributions from the leader of the House of Commons , the care minister , and now the chancellor . They have chosen to pick a destructive and meaningless fight over the non-issue of face to face consultations in primary care, when they should have been praising the extraordinary effort of healthcare staff who’ve rolled out five rounds of covid and flu vaccinations. High levels of satisfaction with GP services continue , patients who need to get a face to face consultation get them, and the digital revolution envisaged by the NHS Long Term Plan has arrived. Calls to “protect the NHS” are not the bleatings of frightened and lazy health professionals, they are the voice of realism, distress, and burnout on the frontline. Protecting the NHS is indeed vital if the record 5.7 million patients on waiting lists are to be seen.],
+  [Sajid Javid says that the British people will “ learn to live with covid .” He has been heralded as the secretary of state for health who cares about the economy. With half a million cases of covid-19 in the UK in the past 14 days and perhaps one and a half million people in isolating households, he needs to recognise that the virus is the major threat to the economy. Morocco has banned travel from the UK , the global capital of covid. This may only damage tourism at first, but the restrictions from other trading nations that could follow risk damaging the economy more.],
+  [Emergency restrictions have been reimposed in Romania, Lithuania, and Latvia. Latvia has imposed a four week lockdown from 21 October . The government must act this week, or be faced with much tougher decisions and less popular choices as the winter kicks in.],
+  [John Middleton , honorary professor of public health, Wolverhampton University, and p resident, Association of Schools of Public Health in the European Region. Twitter \@doctorblooz],
   [Competing interests : none declared.],
-  [The post Julian Sheather: Perilous medicine appeared first on The BMJ .],
+  [The post Government indecision is still costing lives in the UK appeared first on The BMJ .],
 ),
   insert-map: (:),
-  word-count: 1252,
+  word-count: 1283,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -386,7 +114,7 @@ into the script itself.],
   [—Will Douglas Heaven],
   [This is our latest story to be turned into an MIT Technology Review Narrated podcast, which we’re publishing each week on Spotify and Apple Podcasts . Just navigate to MIT Technology Review Narrated on either platform, and follow us to get all our new content as it’s released.],
   [Our footprint in the solar system is rapidly expanding. Programs to build permanent Moon bases and find life on Mars have transitioned from science fiction to active space agency missions. The scientists behind them will not only shed new light on the cosmos, but also reveal where humanity is headed.],
-  [To examine what the future holds in store, MIT Technology Review features editor Amanda Silverman will sit down today with award-winning science journalist and author Robin George Andrews for an exclusive subscriber-only Roundtable conversation about “The Next Era of Space Exploration.”  Register here  to join the session at 16:00 GMT / 12:00 PM ET / 9:00 AM PT.],
+  [To examine what the future holds in store, MIT Technology Review features editor Amanda Silverman will sit down today with award-winning science journalist and author Robin George Andrews for an exclusive subscriber-only Roundtable conversation about “The Next Era of Space Exploration.”  Register here  to join the session at 16:00 GMT \/ 12:00 PM ET \/ 9:00 AM PT.],
   [I’ve combed the internet to find you today’s most fun/important/scary/fascinating stories about technology.],
   [1 OpenAI is shutting down AI video generator Sora 
 The app attracted at least as much controversy as acclaim. ( CNBC ) 
@@ -439,325 +167,124 @@ It’s starting by giving 25-50 people \$1,000 per month. ( Gizmodo )],
 
 {
   #standard-article(
-  title: [A bill before parliament to preserve nature and keep global temperature increase below 1.5C],
+  title: [Academic medicine and publishing from developing countries],
+  author: [kellybrendel],
+  source-name: [The BMJ Blog],
+  images: (),
+  paragraphs: (
+  [Samiran Nundy, Atul Kakar, and Zulfi Bhutta have published a book titled How to Practice Academic Medicine and Publish from Developing Countries? A Practical Guide . It’s a book that will be extremely useful to the growing number of academics working in low and middle income countries. The book is published by Springer and will from 30 October be available open access, meaning you can access it for free as often as you want. Hard copies will also be available for a fee. I felt privileged to be asked to write the foreword, and what follows is an edited version of my foreword.],
+  [When I became an assistant editor at The BMJ in 1979 and began to process scientific papers submitted to the journal it was extremely unusual to see, let alone publish, a paper from a low income country. I remember being surprised by high quality papers coming from Bangladesh, a country that Henry Kissinger called a “basket case.” Those papers came from the International Centre for Diarrhoeal Disease Research, Bangladesh, which I learnt later was a creature of the Cold War and might cruelly be called a “branch office of Johns Hopkins.”],
+  [Years later, in 2013, I became the chair of the board of what was by then called icddr,b. The centre has now published major vaccine trials led by Bangladeshi scientists in the New England Journal of Medicine , 1 and I was privileged to be on the steering committee of a major trial, also published in the New England Journal of Medicine , of a system for managing hypertension in rural Pakistan, Bangladesh, and Sri Lanka led by scientists from those countries. 2 Last year I was delighted to see a major trial of the polypill for the prevention of cardiovascular disease led from India and also published in the New England Journal of Medicine . 3],
+  [High quality research relevant to the needs of low and middle income countries is much commoner now than it was 40 years ago, and China has become a scientific leader. But, as the editors of this book describe in the introduction, there is still not nearly as much good research as there should be from the part of the world that carries most of the disease burden. Even worse, the medicine practised in some of these countries is disconnected from research and teaching, and driven more by profit than what is best for patients and the population. I have Indian friends who are terrified of seeing a cardiologist for fear that they will be given treatments they don’t need.],
+  [I agree with the editors’ diagnosis that “the main reasons for our having sunk into this deep morass is not because we are poor but because we have not intelligently examined, evaluated and investigated how we could use our own resources more effectively. We have tended to blindly follow what is being done in richer countries instead of trying to provide healthcare to our population which is accessible, affordable and, most importantly, appropriate even if this means deploying and working with informal healthcare providers.”],
+  [Other people’s research can be valuable, but it can never be as valuable as your own—addressing the problems that matter to your people with relevant methods and the tools you have. And we know that the very act of researching brings improvement, and (as I know to my cost) you can never learn about research from reading about it: you need to do it.],
+  [I’ve never quite understood why people in low and middle income countries would want to replicate the health systems of high income countries. Not only are those systems not relevant to the needs and circumstances of the low and middle income countries, but the systems in high income countries are increasingly unaffordable and unsustainable and not meeting the needs of their own populations.],
+  [Health systems in high income countries were developed decades ago and were designed to respond to the infectious disease and trauma that were then the main causes of suffering and death. Those problems could be cured, but now non-communicable disease is the main cause of suffering and death. Such disease cannot be cured and needs a different approach.],
+  [Non-communicable disease is now also the main cause of suffering and death in low and middle income countries (apart from some sub-Saharan countries, but even there it will soon be the main cause). The epidemiological transition happened very fast in low and middle income countries: in Bangladesh non-communicable disease caused about 10% of deaths in 1986 but nearer 80% by 2006. 4 I spent years working with 11 centres in low and middle income countries that were doing research, building capacity, and advising on policy in relation to non-communicable disease. We envisioned what a better system in low and middle income countries might look like—with an emphasis on public health, the social determinants of health, prevention, primary care, patient empowerment, and widespread use of evidence based guidelines. 5 (Such guidelines were developed by academics in South Africa as part of a package that allows good primary care where doctors are few or unavailable. 6 )],
+  [We should have said more about the use of technology. Most people in low and middle income countries, even some of the poorest, now have mobile phones, which has meant that people can communicate without having to connect every house by wires, as happened with terrestrial phone systems in high income countries. Low and middle income countries can in this way “leapfrog” over a stage that was needed in high income countries, and the same can be done for health—not least by using mobile phones to provide access to care. Similarly, health systems in low and middle income countries might create health record systems where patients, not healthcare providers, own and control the records. Health systems in high income countries are just beginning to recognise the importance and inevitability of giving patients ownership and control of their records. (I have a conflict of interest here as I’m the chair of Patients Know Best, a company that gives patients in Britain and some other countries control of their records and data.)],
+  [Health systems in high income countries are actually sickness systems, and low and middle income countries would be wise to concentrate more on health. Only a small part of health comes from the health system, but politicians, citizens, and even many health professionals seem unaware of the fact. Consequently, health and healthcare are treated as if they are synonymous. Those countries that currently have poorly developed health systems have the opportunity to build systems that pay more attention to health than healthcare, as indeed was the case in many traditional and ancient health systems. Physicians to Chinese emperors were paid only if the emperor was well.],
+  [Such developments in health and health systems can be achieved only through research conducted in low and middle income countries by researchers from those countries. And, I suggest, we need a new way of doing science, and researchers in low and middle income countries should take the lead. I have recently been part of a discussion on the future of the UK Academy of Medical Sciences, and people are advocating a new way of doing science that will be much more transdisciplinary and global with more involvement of citizens. A broader range of methods will be needed, together with a greater willingness to bring together different kinds of studies and data to reach conclusions. Without curiosity-driven research being neglected, there might be more emphasis on research that brings social benefit. Implementation of research findings will become as important as discovery, and the hierarchy of science that ranks genetics above social science will disappear.],
+  [Secondary aspects of the new science might be universal data sharing, greater transparency throughout the research process, immediate open access to all research, and the final abandoning of publications and the place of publication as the main way to measure academic success. In addition, scientific integrity (and its dark twin, misconduct) will be taken much more seriously, as will the commitment to explaining science and how it works to the public.],
+  [As part of the debate over the future of the academy there has been discussion on priorities, and two of the priorities that are widely advocated—climate change and inequalities—are even more relevant to low and middle income countries than to high income ones. It’s a huge global injustice that most of the greenhouse gases that are causing climate change have been produced in high income countries, but the resulting harm will be experienced mostly in low and middle income countries. A third of Bangladesh, already a densely crowded country, is set to disappear under water, and temperature increase and drought will reduce crop yields in many low and middle income countries, forcing people to migrate. Health academics must pay attention to climate change, which will mean forming new, unfamiliar research partnerships with climate, agricultural, social, and political scientists.],
+  [Academics must also recognise the huge role that inequalities in wealth, income, education, and opportunity play in health. The covid-19 pandemic has brutally illustrated the importance of inequality, in both high and low and middle income countries. Most low and middle income countries have even greater inequality within the countries than do high income countries. Health researchers in some high income countries, including Britain, have done a good job of measuring and describing the harm to health from inequalities but have done less well in reducing the harm. Researchers in low and middle income countries have an opportunity to do better.],
+  [The world faces considerable problems, and what is clear is that research and teaching will be essential in tackling those problems. It’s also clear that the research and teaching must be undertaken by researchers and teachers within countries, producing responses and using methods that are right for their countries. This book will be a great aid to researchers and teachers. The result should be better health and sustainable health systems. The opportunities are greater than the problems.],
+  [Richard Smith was the editor of The BMJ until 2004.],
+  [Conflict of Interest: RS is the unpaid chair of Patients Know Best, but he has equity in the company. He is the unpaid chair of the UK Health Alliance on Climate Change, but he has shares in the UnitedHealth Group. He was not paid for writing the foreword to the book and will not benefit from whatever sales there might be.],
+  [1 Qadri F, Wierzba TF, Ali N, et al. Efficacy of a single-dose, inactivated oral cholera vaccine in Bangladesh. N Engl J Med 2016; 374:1723-1732. DOI: 10.1056/NEJMoa1510330],
+  [2 Jafar TH, Gandhi M, Asita de Silva H, et al. A community-based intervention for managing hypertension in rural South Asia. N Engl J Med 2020; 382:717-726. DOI: 10.1056/NEJMoa1911965],
+  [3 Yusuf S, Joseph P, Dans A, et al. Polypill with or without aspirin in persons without cardiovascular disease. N Engl J Med 2021; 384:216-228. DOI: 10.1056/NEJMoa2028220],
+  [4 Ahsan Karar Z, Alam N, Streatfield P. Epidemiological transition in rural Bangladesh, 1986-2006. Glob Health Action 2009 Jun 19;2. doi: 10.3402/gha.v2i0.1904. PMID: 20027273; PMCID: PMC2779938.],
+  [5 Checkley W, Ghannem H, Irazola V, et al. Management of NCD in low- and middle-income countries. Glob Heart 2014;9:431-443. doi:10.1016/j.gheart.2014.11.003],
+  [6 Fairall L, Cornick R, Bateman E. Empowering frontline providers to deliver universal primary healthcare using the Practical Approach to Care Kit. BMJ Global Health 2020;3:ek4451rep.],
+  [The post Academic medicine and publishing from developing countries appeared first on The BMJ .],
+),
+  insert-map: (:),
+  word-count: 1913,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+}
+
+{
+  #standard-article(
+  title: [Third cousin couples have the most children and grandchildren],
+  author: [Ed Yong],
+  source-name: [Not Exactly Rocket Science (Ed Yong archive)],
+  images: (),
+  paragraphs: (
+  [Marriage between closely related cousins is a heavy taboo in many cultures and its critics often cite the higher risk of genetic diseases associated with inbreeding. That risk is certainly apparent for very close relatives, but a new study from Iceland shows that very distant relatives don’t have it easy either. In the long run, they have just as few children and grandchildren as closely related ones.],
+  [Shuffling the genetic deck],
+  [Sex chromosomes aside, every person has two copies of each gene, one inherited from their father and one by their mother. Not every gene will be in correct working order, but there’s a good chance that a faulty copy will be offset by a functional one from the other parent.],
+  [However, if two parents are closely related, there’s a higher-than-average chance that they will already share some of the same genes and a similarly increased chance that their child will receive two defective copies. That can be very bad news indeed and in cases where important genes are affected, the results can include miscarriage, birth defects or early death.],
+  [Sex, then, is a shuffling of their genetic deck and theoretically the more closely related the partners are, the greater the chance that their child will be dealt a dud hand. And yet, some studies have found that some closely related couples actually do better than distant relatives in terms of the number of children they manage to raise. This trend is certainly unexpected and the big question is whether it is the result of biology or money.],
+  [Wealth or genes],
+  [In societies where close relatives marry, these unions tend to happen at a relatively early age and they provide avenues for families to retain wealth and land within bloodlines. These related couples enjoy the health benefits enjoyed by the rich as well as more time in which to raise a larger family. Together, these two effects could more than make up for any disadvantages wrought by their genes.],
+  [Earlier studies have done little to clear the confusion. They have mostly been conducted in parts of the world like India, Pakistan and the Middle East where marriage between close relatives is relatively frequent, but which are also home to enormous gulfs between the richest and poorest members of society. With demographics like these, sorting out the relative contribution of socioeconomics and biology is difficult.],
+  [To do that, what you need is a country with a small population where couples are reasonably closely related and with a very shallow gradient between rich and poor. Ideally, you’d also want this country to have excellent family records dating back several years. In short, you’d want to base your study in a country almost exactly like Iceland.],
+  [200 years of Iceland],
+  [align="left"\> Iceland is home to a tiny population of just over 300,000 people who enjoy a level of social equality that is almost unparalleled elsewhere in the world. Wealth, family size and cultural practices are fairly uniform. The country is also home to uniquely impressive geneaological records that allow today’s Icelanders to track their family trees with exacting precision for centuries. These records are supplemented by thorough medical records and thousands of willingly donated genetic samples.],
+  [Agnar Helgason from deCODE Genetics , a pharmaceutical company located in Reykjavik, made good use of these records to study over 160,000 Icelandic couples since 1800. At this time, Iceland was still a poor agricultural nation and close-knit rural communities meant that on average, couples were related at the level of third or fourth cousins.],
+  [Since then, the country has prospered into a wealthy industrial one and the growing population has shifted to a mainly urban way of life. In doing so, people became more likely to find partners who were more distantly related and by 1965, couples were only related at the level of fifth cousins on average],
+  [As expected, Helgarson’s study unveiled the dangers of close inbreeding. While the most closely related couples had the highest number of children, many of them failed to live long enough to have children of their own and in the long run these couples had the fewest grandchildren.],
+  [But surprisingly, distantly related couples were at a disadvantage too. In fact, Helgarson found that couples related at the level of third cousins eventually fostered the largest families. For example, among women born between 1800 and 1824, those partnered with men who were third cousins had an average of 4 children and 9 grandchildren, while those partnered with a distant eighth cousin had just 3 children and 7 grandchildren. For starting large families, very distant relatives were just as poor prospects as very close ones.],
+  [Over the 200 years included in the study, Iceland has seen a steep decline in both fertility and relatedness between couples. And despite all that, for every 25-year period the Helgarson looked at, the same pattern held – couples who were moderately closely related ended up with the largest number of descendants.],
+  [These remarkably consistent results have convinced Helgarson that the counterintuitive effect must have some biological foundation. Its exact nature will have to wait for another study and for now, we are left only with speculation.],
+  [It could be that a child’s immune system may be more compatible with its mother’s if its father is reasonably closely related to her. Alternatively, a union between distant relatives could serve to splinter groups of beneficial genes that have evolved in close association with each other.],
+  [The study’s implications for societal taboos against marriages between close cousins is open for debate. Certainly, it doesn’t mean that singletons should be sifting through their phone books on the hunt for attractive third cousins. However, the relatively poor reproductive success of distant relatives has the potential to explain the massive decline in fertility in many countries the world over.],
+  [In the time that Iceland has gone from rural agriculture to urban industry, its population growth has slowed and its fertility rates have declined, a trend shared by a slew of other nations. Helgarson suggests that this could, at least in part, be due to people finding ever more distantly related partners.],
+  [Reference: Helgason, A., Palsson, S., Guthbjartsson, D. F., Kristjansson, t., Stefansson, K. (2008). An Association Between the Kinship and Fertility of Human Couples. Science, 319 (5864), 813-816. DOI: 10.1126/science.1150232],
+),
+  insert-map: (:),
+  word-count: 1055,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+}
+
+{
+  #standard-article(
+  title: [Turning the tide: The Obesity Health Alliance’s healthy weight strategy],
   author: [julietwalker],
   source-name: [The BMJ Blog],
   images: (),
   paragraphs: (
-  [A delegation of MPs and scientists representing an alliance of organisations, scientists, and individuals (Zero Hour), will today deliver an open letter to the UK prime minister calling for the government to push for three essential outcomes from COP26, which takes place in Glasgow at the end of this month, and the biodiversity summit (COP15), which takes place in China in 2022.],
-  [The “Zero Hour” Alliance campaign’s three COP outcomes are key elements of a Climate and Ecological Emergency (CEE) Bill currently scheduled for its second reading in Parliament on 29 October 2021. The bill, which has been endorsed by a number health organisations, including the UK Health Alliance on Climate Change, provides a framework of overarching policy imperatives that address the UK’s responsibility to reduce emissions and global ecological footprint urgently and fairly.],
-  [It represents the only legislation currently before the UK Parliament that presents an approach for tackling our current climate and nature emergency. It does this by setting climate and nature targets that require the government to reduce greenhouse gas emissions at a rate consistent with limiting temperature increase to 1.5C. It also requires a commitment to halt and reverse the UK’s global contribution to the loss of nature through the creation of a climate and nature strategy that incorporates the UK’s emissions based on the complete cycle of its consumption including aviation, shipping, land-based transport, manufacture and disposal of goods. This is important, as it recognises the need to focus much wider than our domestic consumption and take responsibility for the UK’s entire greenhouse gas carbon footprint, much of which takes place beyond UK borders.],
-  [The bill requires this strategy to be developed and delivered fairly with an approach that involves a citizens’ assembly representative of the whole population.],
-  [Laurie Laybourn-Langton, a former director of the UK Health Alliance on Climate Change, is one of the lead editors on the editorial and led the coordinated action to publish across multiple international journals. “As we approach COP26 in Glasgow next month, it has been encouraging to hear many governments talking about targets and actions to reduce emissions to protect nature. However, promises are not enough—we have learned from past experience that targets can be easy to set but difficult to achieve. We need to see ambitious but credible strategies and plans that will deliver the targets we set to achieve,” he said.],
-  [“In the editorial we say that global targets are not enough. Insufficient action to date means that temperature increases are currently on a trajectory to be well in excess of 2C, which would be catastrophic for health and environmental stability. Critically, the destruction of nature does not have parity of esteem with the climate element of the crisis, and every single global target to restore biodiversity loss by 2020 was missed.”],
-  [The CEE Bill addresses some of the concerns raised in the editorial by establishing a climate and nature strategy that will deliver the targets to reduce greenhouse emissions in a fair process that ensures more vulnerable communities are positively impacted and supported. Approval of the Bill through Parliament would place a legal obligation on our government to deliver this strategy and much needed accountability to deliver the targets we set out and agree to deliver at COP26.],
-  [The three COP outcomes campaign focuses on three specific commitments from COP26:],
-  [style="font-weight: 400;"\> Creation of a joint emergency strategy for climate and nature],
-  [style="font-weight: 400;"\> Commitment to the carbon budget for 1.5C],
-  [style="font-weight: 400;"\> Going nature positive by 2030],
-  [Support for the CEE Bill and three COP Outcomes campaigns by the UK Health Alliance on Climate Change is further evidence that the global health community are determined to ensure their voice is heard in the need for meaningful action on climate change for the benefit of all our health.],
-  [The more people that get behind these movements, the more our impact will be felt. The onus is on every one of us to play our part.],
-  [Further information:],
-  [style="font-weight: 400;"\> Sign up to the zero hour campaign here: https:\/\/www.ceebill.uk/cop26-cop15],
-  [style="font-weight: 400;"\> Find out more about the CEE Bill here: https:\/\/www.ceebill.uk/bill],
-  [style="font-weight: 400;"\> Sign up to the health climate prescription letter here: https:\/\/healthyclimateletter.net/],
-  [style="font-weight: 400;"\> Health editorial can be viewed here: https:\/\/www.bmj.com/content/374/bmj.n1734],
-  [Elaine Mulcahy , Director of the UK Health Alliance on Climate Change.],
-  [Competing interests : none declared .],
-  [The post A bill before parliament to preserve nature and keep global temperature increase below 1.5C appeared first on The BMJ .],
-),
-  insert-map: (:),
-  word-count: 745,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-}
-
-{
-  #standard-article(
-  title: [Fishing For Correlations],
-  author: [GameChanger],
-  source-name: [GameChanger Tech],
-  images: (),
-  paragraphs: (
-  [Have you ever participated in a firefight where the root cause seems unclear, then suddenly the symptoms self-resolve? Sometimes inadvertent action may cause it, other times it appears miraculous. If you find yourself in this situation, or excusing recovery with “it was a one-off blip,” your system likely lacks sufficient observability. With development and operations increasingly converging, application instrumentation continues to concern many teams building new platforms and maintaining legacy ones.],
-  [The general rule of thumb when introducing observability into a system is to instrument everything. However, this philosophy creates a user experience challenge. How do we deliver the salient system correlations to the people who can best leverage them? The platform team at GameChanger recently had the opportunity to tackle this question when we encountered performance degradation while scaling a new back-end system. We are not yet finished, but we have progressed meaningfully.],
-  [id="diving-into-the-black-box"\>Diving into the black box],
-  [Modern Node.js, using async/await with Koa , powers GameChanger’s nascent Team Manager product . PostgreSQL serves as the primary datastore and PgBouncer manages connection pooling to the database. We already use Datadog to monitor many of our legacy systems. Starting with Datadog for a new system made sense for a number of reasons:],
-  [Vendor familiarity: engineers already understand the operational model and where to look for diagnostics],
-  [Breadth of functionality: support for a wide variety of metrics, application performance monitoring (APM) and centralized logging, and mature monitor types, ensure our telemetry can scale alongside the codebase],
-  [Low adoption cost: integrating new services with our existing Datadog configuration is trivial],
-  [After building an MVP, our baseline instrumentation included typical system level metrics, such as load average, CPU utilization, and used memory, as well as custom metrics for all requests like duration and status code. Such metrics enable us to monitor attributes of user impact like error rate and response time. We also had the ability to selectively time function calls, but no meaningful way to create correlations such as flame graphs. Lastly, we use Loggly for log aggregation, but constructing a timeline from logs and associating them with behavioral trends we might encounter in Datadog remained challenging. These mechanisms provide robust insight horizontally; we can see behavioral patterns in a cluster from the data we categorize. However, once we identifed problematic requests, we had little transparency vertically, such as the time database or third party network calls consumed during the request.],
-  [A sample of graphs from one of our dashboards. We categorize similar classes of metrics in order to reduce cognitive overhead during diagnostics.],
-  [As our active user count increases, we continue to add new functionality to the application. In the initial design, we had clear intent behind some of the architectural patterns, but only hypotheses about whether these patterns would achieve our goals. Additionally, GameChanger’s engineering culture encourages team members to work across the stack and contribute to codebases and systems in which they might not be experts. These practices stimulate learning and technical growth. However, when intersecting with a new codebase, testing performance and scalability hypotheses becomes problematic.],
-  [In order to refactor both incrementally and holistically, while maintaining a high velocity of contributions, we wanted to augment how we gather information to inform decisions. On the people side, we formed a decision-making committee from members of many contributing teams. This committee conducts research and effects architectural change in the system. On the technical side, we sought to empower engineers to more easily identify performance bottlenecks using instrumentation. In order to do this, we outlined a few requirements:],
-  [Distributed correlations: provide a comprehensive view of how all of our components, e.g. Memcached, Redis, AWS Simple Queue Service (SQS), in addition to PgBouncer and Postgres, interact within the lifecycle of a request],
-  [Granular tracing: expose as many details around timing as possible, from individual function calls to low level framework operations such as the Node.js event loop and garbage collection],
-  [Extensibility: extending this monitoring with new additions to the codebase, whether it be new endpoints, new providers, etc, should demand minimal effort],
-  [Stretch: zero-touch installation: avoid requiring changes to application code in order to surface useful metrics],
-  [id="surfacing-with-clarity"\>Surfacing with clarity],
-  [Two significant bugs in our system surfaced recently. In hindsight, tools fulfilling such requirements would have revealed the root causes more quickly. The first bug was a mistake in some ORM code, where some requests executed redundant SQL statements orders of magnitude more than they should have. The database handled the load well, yet the I/O-intensive activity caused thread starvation in the Node.js worker pool and we witnessed widespread request timeouts. In this case, we had attempted to correlate Node.js requests to PgBouncer waiting client connections to Postgres transaction throughput. However, without vertical visibility into each request, each component appeared relatively stable in isolation.],
-  [The second bug was a design flaw in our workers that process SQS queue items. In a loop, workers either perform queue tasks or short poll SQS to determine if items need processing. The polling frequency for empty queues triggered AWS rate limiting. Combined with our exponential backoff response, we witnessed delays in all workers, regardless of queue length. Thus, empty queues cannibalized the throughput of populated queues. In this case, we had no monitoring on our SQS network calls and debugging was an archaeology exercise.],
-  [To try making some of these bugs easier to diagnose, we turned to APM solutions as a panacea fulfilling many of our requirements. While typically installed on a single application, APMs provide granular tracing and can infer interactions with external services by treating them as a black box. We evaluated both Datadog’s and New Relic’s solutions. Each supports Node.js out of the box and is relatively straightforward to install with minimal application code changes. Much to our delight, New Relic provides detailed instrumentation of Node.js internals, exposing metrics on the event loop, memory usage, and garbage collection. Additionally, both services trace request operations, correlating insights from database to external service activity. Yet both solutions had varying support for Koa at the time of adoption. Datadog only recently introduced support for Koa, and New Relic required some manual pattern matching of routes.],
-  [Aside from those features, we mostly found both services functionally equivalent. We chose Datadog for its superior user interface, familiarity with the platform, and ease of integration (at the cost of vendor lock-in). Datadog provides a more refined web application for browsing traces, and their query DSL is simple and intuitive. Finally, the ability to export trace searches to our existing alerts and dashboards made extending our existing, monitoring coverage trivial.],
-  [Datadog traces supplement flame graphs with host metrics and provide optional, logging integration.],
-  [Revisiting the bugs we previously discussed, we now have observability into:],
-  [SQL statements executing during a request, allowing us to identify excessive database activity],
-  [Duration of external asynchronous operations, enabling us to monitor outlier slowness],
-  [While we still lack sufficient observability into Node.js internals with Datadog, we enabled granular, distributed tracing with relatively low overhead . The automatic route matching and support for many common frameworks and libraries in their APM ensures low effort to maintain quality instrumentation as we extend the application with more endpoints and service integrations. The vertical observability of individual requests and API operations supplements the horizontal observability from existing dashboards and graphs. In practice, we still rely heavily on dashboards and graphs to illuminate behavioral trends of dependent components in a system and explain what is happening. APM now brings us closer to potentially answering why such things happen.],
-  [id="on-the-horizon"\>On the horizon],
-  [While implementing APM reaped many rewards for us, we still have outstanding concerns. For example, we lack the ability to correlate API HTTP requests to PgBouncer TCP connections to Postgres transactions, which might make it difficult to tune connection pooling strategies. Our logs remain segregated from our monitoring and are impossible to analyze across attributes with high cardinality. Connecting monitoring to the teams best positioned to act upon them continues to challenge us.],
-  [We briefly considered alternative approaches to instrumentation (not necessarily mutually exclusive). Envoy Proxy appeared on our radar as a solution for monitoring at the network level and also fulfilled our zero-touch installation requirement. Honeycomb.io also intrigued us for its approach to observability primitives and ability to generate many insights from raw data structures. Ultimately, APM provided the most value for effort given the prior state our system, but it would be interesting to explore such options in the future.],
-),
-  insert-map: (:),
-  word-count: 1402,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-}
-
-{
-  #standard-article(
-  title: [Communicating about the representativeness of women in scientific productivity: a step towards greater equality],
-  author: [julietwalker],
-  source-name: [The BMJ Blog],
-  images: (),
-  paragraphs: (
-  [One of my main motivations for studying medicine was to fight discrimination and social (and gender) inequalities by providing equal healthcare for all. I became aware of gender discrimination through personal experience. While on maternity leave after the birth of my child, I received my new employment contract and I discovered that my working hours had been reduced by 50% without me being consulted. The message was clear: “ Now you are a mum, you need to take care of your child! ”. As a new mum I felt that I had lost my ability to decide if I was able to handle both my family responsibilities and my career without neglecting one more than the other. While the intention was probably not malicious, this type of decision denotes a stereotyped view of the role of women in society (and at work). It was disturbing to see that a few months later, a male colleague did not experience the same reduction in his working time when his first child was born.],
-  [In 2015, I analysed the data on the research productivity of professors at our medical school and compared the results for women and men. During the previous decade, 60% of our medical students were women, but intriguingly only 18% of all-ranked professors were women (30% of assistant, 19% of associate, and 13% of full professors were women). On average, women professors had lower h-indexes (-9.5-points), had published fewer articles (-71 articles), and their papers were also less cited (-2516 citations) than those of their male counterparts. As research productivity indicators can only increase, the lower scientific productivity of women professors overall was probably explained by the fact that many women were recently promoted as assistant professors, the lowest professorial rank. Unfortunately, data on marital status and parenthood were not available, although they are known to be associated with research productivity. It would have been important to assess representativeness of women among professors after adjustment for those confounders. But it was also possible that the academic research community perpetuated sexist attitudes and unequal treatment of researchers based solely on their gender.],
-  [Interestingly, in a research study of published articles , we found that research tasks were stereotypically distributed with no change over time (15 years): women contributed more frequently to data collection and materials provision, to administrative, technical, and logistical support while men contributed more frequently to reflective tasks (conception, design, writing, fundraising). This might explain differences in the distribution of prominent authorship positions. During the covid-19 pandemic, research production has exploded globally compared to previous years; in the meantime there have been huge economic consequences with women reported as being the most affected. The pandemic has provided a unique opportunity to assess the place of women in scientific production and to assess if gender disparities were deeper compared to pre-pandemic. In this article , we report that women’s visibility in prominent authorship positions on covid related manuscripts was deeply reduced during the early phase of the pandemic, but then narrowed in the most recent months reaching values very similar to pre-pandemic.],
-  [As scientific publication is key for academic promotion, the objective of our larger ATHENA project is to assess if women first authors have the same chance of acceptance for publication as men first authors, independent of key study and author attributes. This project, funded by the Swiss National Foundation, is ongoing and involves a large number of biomedical journals from various specialties.],
-  [Angèle Gayet-Ageron , head of unit , professor, Division of Clinical Epidemiology, University Hospitals of Geneva, Geneva, Switzerland.],
-  [Competing interests : see full declaration on research paper .],
-  [The post Communicating about the representativeness of women in scientific productivity: a step towards greater equality appeared first on The BMJ .],
-),
-  insert-map: (:),
-  word-count: 624,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-}
-
-{
-  #standard-article(
-  title: [Sync for GC Team Manager],
-  author: [GameChanger],
-  source-name: [GameChanger Tech],
-  images: (),
-  paragraphs: (
-  [id="introduction"\>Introduction],
-  [In my last article I talked about the sync system for our new GC Team Manager app and the trade-offs we considered in our design process. To reiterate, the high-level structure we settled on was a backend Pub/Sub service, with small granular updates, and we needed to account for the lack of ordering in message delivery. In this article I will cover how we implemented and made this sync system work.],
-  [I mentioned in the last post that part of the reason we settled on Pub/Sub was because we could use an iterative approach instead of all or nothing. This iteration broke down into two distinct parts, Asynchronous Polling Sync and Pub/Sub Sync. Asynchronous Polling Sync relied on Asynchronous Polling and topic updates. Pub/Sub Sync built device notification on top of Pub/Sub Sync. I will describe each in turn.],
-  [id="asynchronous-polling-sync"\>Asynchronous Polling Sync],
-  [The goal of Asynchronous Polling Sync was to solve a few distinct problems. First, it focused on building an algorithm that was resilient to out-of-order messages received by the devices. Second, it focused on turning backend database updates into targeted sync topic updates. To simplify the initial build, Asynchronous Polling Sync specifically avoided solving the problem of pushing topic updates to the devices themselves. It did this by allowing the devices to use Asynchronous Polling to get all updates. Switching from Asynchronous Polling to direct topic updates is the provenance of Pub/Sub Sync. I will cover each part of Asynchronous Polling Sync.],
-  [id="asynchronous-polling-sync-algorithm"\>Asynchronous Polling Sync Algorithm],
-  [id="handling-out-of-order-messages"\>Handling Out of Order Messages],
-  [When thinking about the out-of-order messaging problem, the goal is to ensure that no matter what order message are received in, all devices will end up in a consistent state. When we were thinking through possible ways to do this in our sync system, we realized that the type of message being sent can help you solve this problem. As a demonstration I will consider three types of updates the backend could send to the app: send the data values of the updates, send the type of data change(update, delete, etc), or just send the id of the thing that changed.],
-  [id="scenario-1-team-1-is-created-then-updated-all-apps-receive-updates-in-the-correct-order"\>Scenario 1: Team 1 is created then updated. All apps receive updates in the correct order],
-  [Specific Updates: 1. {id: , type: 'team', updates: 'created'} 2. {id: , type: 'team', updates: {name: 'Cool New Name'}}],
-  [Type of Updates: 1. {id: , type: 'team', change\_type: 'created'} 2. {id: , type: 'team', change\_type: 'updated'}],
-  [Id and type updates: 1. {id: , type: 'team'} 2 {id: , type: 'team'}],
-  [id="scenario-2-team-1-is-created-then-updated-all-apps-receive-updates-in-reverse-order"\>Scenario 2: Team 1 is created then updated. All apps receive updates in reverse order],
-  [Specific Updates: 1. {id: , type: 'team', updates: {name: 'Cool New Name'}} 2. {id: , type: 'team', updates: 'created'}],
-  [Type of Updates: 1. {id: , type: 'team', change\_type: 'updated'} 2. {id: , type: 'team', change\_type: 'created'}],
-  [Id and type updates: 1. {id: , type: 'team'} 2 {id: , type: 'team'}],
-  [As you can see, all update types work when messages are received in order. But as soon as messages start to be handled out-of-order, sending the id and the type of update is the only method that cannot lead to incorrect app side data. All the device has to do when it receives an update is to go to the respective API resource endpoint and load the current data. This method will always lead to the app having the most up to date data. (Note that the type of objects sent in our updates map nicely to the resources of in our API.) This simple update then reload algorithm lets our sync system be robust to out-of-order messages.],
-  [id="topics"\>Topics],
-  [We now have a type of update that we can send that allows the system to survive out-of-order messages. But specific updates are just part of the solution. I also need to discuss the topics themselves and how they are structured.],
-  [We have a few high level topic types. These were chosen based off of our resource model. Any other resource updates are put in those high level topics.],
-  [Each topic contains a list of update objects described above],
-  [Each topic also has three other important values],
-  [current\_offset - This number can be used to help figure out what updates each device has already seen. It is a number indicating the most recent update sent to the topic. Each new update pushed into the topic increments the current\_offset .],
-  [max\_number\_of\_items - This number indicates the max number of updates to store for this topic. We structure our topics to only store a certain number of updates depending on the type of topic.],
-  [storage\_id - If we change the storage database or reset the updates, the storage\_id allows us to communicate that effectively to the app. As a simplification, this value indicates the version of the topic you are looking at.],
-  [id="algorithm"\>Algorithm],
-  [Given the structures above we use the following algorithm in Asynchronous Polling Sync:],
-  [When the app initially starts up, it gets the current\_offset and storage\_id for all topics it cares about. (This same procedure happens when it decides it cares about a new topic).],
-  [When the app reopens and/or every X minutes, the app asks for all updates on all topics it cares about and sends down the current\_offset and storage\_id],
-  [If the storage\_id sent does not match that found in the backend, a specific error is returned. If the app gets that error it knows it needs to do a full resync of that topic],
-  [If the current\_offset sent , GET /games/ , etc.],
-  [When it has successfully reloaded all resources mentioned in the updates, the app updates the current\_offset for the topic.],
-  [This algorithm and the structures described make it very easy for the app to get updates it cares about, every X minutes, without having to worry about out-of-order messages.],
-  [id="database-updates---sync-topic-updates"\>Database updates -\> Sync topic updates],
-  [id="where-to-store-updates"\>Where to store Updates],
-  [Now that we have a robust app sync algorithm, we still need a way to start pushing updates into the topics when someone alters an API resource. Before we can decide how to transform backend updates to sync topic updates, we first need to figure out where to store our updates. What type of database should we use? The main database for our backend is Postgres. But there were a few reasons we were hesitant to just stick our updates in Postgres:],
-  [We did not want the large number of sync updates to swamp out our responsiveness to actual API calls],
-  [Making a dynamic number of topics to hold updates + the three variables each topic needs, ends up being pretty hard to do in Postgres.],
-  [Contention on the topic updates table could end up very high which could slowdown all Postgres operations.],
-  [We needed a system which is super fast, has great list support, provides transactions, and is simple to get up and running. For these reasons we decided to store all of our updates in Redis .],
-  [id="transformation"\>Transformation],
-  [So we now have the place to save our updates, but we still need a way to translate the Postgres database update to sync topic updates. We need some sort of transformer like in the picture above. This transformation actually ends up being very easy. We have a 300 line class which takes in query and update objects for each Postgres write and transforms those into a list of topic updates. The topic updates are then saved to Redis and then the main database updates are saved to Postgres. A simplified version of our transformer class can be seen below.],
-  [After we had built the features and functionality described above, Asynchronous Polling Sync was finished. That left us the time to prioritize and build Pub/Sub Sync when it became appropriate.],
-  [id="pubsub-sync"\>Pub/Sub Sync],
-  [The main difference between Asynchronous Polling Sync and Pub/Sub Sync is that Pub/Sub Sync replaces the Asynchronous Polling loop with a Pub/Sub service. All other parts of the system remain the same. This allows the devices to receive updates near instantaneously. Once again there are two pieces to consider when we built out Pub/Sub Sync, the algorithm to use for sending topic updates to the devices and how to actually build the Pub/Sub service.],
-  [id="pubsub-algorithm"\>Pub/Sub Algorithm],
-  [Similar to Asynchronous Polling Sync, there are many different algorithms we could use when pushing updates to the Pub/Sub service. Originally we just planned to send the full sync updates to the Pub/Sub service. This strategy ended up being suboptimal because there are times when Pub/Sub messages are dropped and not sent to the devices they were supposed to. Sending our full topic updates meant our algorithms depended on all devices receiving all sync updates. When this turned out not to be true we would then require a lot of extra complexity to handle dropped messages. Instead, we decided to just send a blank update that indicates something has changed on the topic: {changed} . When a device receives this message, it attempts to load all updates in that topic. For each update it loads, it GETs the proper resource from our API. This algorithm adds an extra step and network call, but keeps the overall algorithm very simple.],
-  [id="how-to-send-pubsub-system-updates"\>How to send Pub/Sub system updates],
-  [We now have an algorithm we want to implement to finish up our sync system. How do we build out this Pub/Sub service to send updates? Lucky for us, after some research and thought, we were able to find a prebuilt system that could serve as our Pub/Sub service: Google’s Firebase Cloud Messaging . (Specifically FCM’s topic feature ). This free system allows devices to subscribe to topics and will make sure messages sent to those topics are delivered to those devices. The system also has a bunch of nice features: storing a certain number of messages per device if an app cannot immediately be reached, a very long TTL for messages, a pretty high per topic rate limit, and seemingly no overall rate limit. This system was also very easy to integrate with from both the client and backend side. We pretty much just dropped in FCM as our Pub/Sub Service and with that our sync system was finished.],
-  [id="conclusion"\>Conclusion],
-  [We have come to the end of our discussion of our new sync system. We started out with an ideal sync system and some constraints on what our system needed to be able to do. We covered the trade-offs and criteria we considered when designing our system. Finally I covered all the technologies, algorithms, and systems needed to implement a sync system incredibly close to our ideal. The full flow implementation of our system can be seen above.],
-),
-  insert-map: (:),
-  word-count: 1771,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-}
-
-{
-  #standard-article(
-  title: [Can replacing Illinois’ toxic lead pipes lead to a workforce boon?],
-  author: [Juanpablo Ramirez-Franco],
-  source-name: [Grist],
-  images: (),
-  paragraphs: (
-  [class="has-default-font-family"\>Illinois is in the midst of a public health crisis. Nearly 1.5 million service lines — the pipes that carry drinking water to homes and businesses — contain or are suspected to contain lead, a neurotoxin linked to cognitive, reproductive, and cardiovascular problems.],
-  [class="has-default-font-family"\>A recent report proposes a plan to replace the state’s staggering inventory of toxic lead pipes and create tens of thousands of jobs. To do so, the analysis calls on state and local officials to fast-track pipe replacements for communities that have suffered from the most lead exposure and to use the projects to build a more diverse local workforce. It also urges the Illinois General Assembly, which returned to session this month, to help plug a multi-billion-dollar budget gap for lead pipe replacements.],
-  [class="has-default-font-family"\>“The longer we put off taking care of our water infrastructure, the more expensive it’s going to get, the more that we’re going to be looking at water rates increasing to deal with that, and the more people are going to be in the position where they’re not going to have access to safe and clean drinking water,” said Justin Williams, a senior manager at the Metropolitan Planning Council, one of the policy think tanks that helped develop the plan. “And that’s not a situation we should be in as a state or region.”],
-  [class="has-default-font-family"\>Several other regional and national nonprofits, including Current, a water solutions hub; Elevate, an organization working on water and energy affordability issues; and HIRE360, a workforce development group, also worked on the analysis.],
-  [class="has-default-font-family"\>Illinois has the most lead pipes in the country. The state estimates it has 667,000 known lead service lines and another 820,000 suspected lines. Chicago alone accounts for nearly 30 percent of those pipes.],
-  [class="has-default-font-family"\>Replacing these service lines is expensive. In a 2022 report , the Illinois Environmental Protection Agency found that a single service line replacement can cost anywhere from \$4,000 to \$13,000 across the state. In Chicago, the price tag is even higher: City officials estimated that replacements cost more than \$30,000 per line on average.],
-  [class="has-default-font-family"\>State officials have estimated that replacing all the known or suspected lead pipes across Illinois could cost between \$6 and \$10 billion. The Biden-era Infrastructure Investment and Jobs Act, also known as the bipartisan infrastructure law, set aside \$15 billion over five years to help states replace lead pipes. Illinois is estimated to receive about \$1 billion , but given the state’s unique needs, that number “is probably on the low side,” Williams said.],
-  [class="has-default-font-family"\>Nationwide, the price to replace all lead pipes is estimated to be over \$55 billion, according to the US Water Alliance’s senior director of water leadership and innovation, Emily Simonson. She added that Illinois alone accounts for 12 percent of that total, and the Great Lakes states represent nearly half.],
-  [class="has-default-font-family"\>“It’s a bit of a chicken and egg: Unless you know how much money is going to be allocated to this — how many opportunities are coming down the pipe — they’re not going to add additional people to apprenticeship programs,” said Jay Rowell, executive director at HIRE360.],
-  [class="has-default-font-family"\>Using workforce projections from the American Water Works Association and the U. S. Environmental Protection Agency, the report’s authors calculated that already allocated federal funds could generate approximately 2,000 direct jobs and 9,000 indirect jobs. If legislatures closed the multi-billion-dollar funding gap, those figures could jump substantially to 35,000 direct jobs and 55,000 indirect jobs — a total of 90,000 jobs over a decade.],
-  [class="has-default-font-family"\>“We’re calling attention not only to the problem, but also to some of the opportunities to get more candidates engaged in apprenticeships,” said Rowell. “This is a really big problem that needs very thoughtful, state-led solutions.”],
-  [class="has-default-font-family"\>A major pillar of the report is diversifying the building trades. An analysis of Chicago’s workforce found that only 3.8 percent of registered apprentices are women and just 10 percent are Black. To bridge this gap, the report advocates for requiring utilities and municipalities to include diversity and equity requirements in project contracts.],
-  [class="has-default-font-family"\>The report’s authors argue that Illinois has the rare opportunity to tackle two challenges at once: address its toxic legacy while laying the groundwork for a more inclusive economy. The financial and political hurdles remain high, but advocates say the cost of inaction is higher.],
-  [class="has-default-font-family"\>“We are the envy of the world in terms of our access to fresh drinking water,” said Williams. “We need to be really thoughtful stewards of that, and that means investing in that the same way we invest in other infrastructure.”],
-),
-  insert-map: (:),
-  word-count: 835,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-}
-
-{
-  #standard-article(
-  title: [People’s Covid Inquiry: what must happen now?],
-  author: [jross],
-  source-name: [The BMJ Blog],
-  images: (),
-  paragraphs: (
-  [“It’s really quite hard not to feel outright anger at the evidence that we’ve heard over the last few months.” – Tony O’Sullivan],
-  [This was the final session of the inquiry and Tony O’Sullivan, co chair of Keep Our NHS Public, began by reminding people of some stark facts that had emerged during the previous sessions. One third of all covid deaths – 47,000 – had been of residents in care homes. Disabled people accounted for 6 out of every 10 deaths. Black men were 4 times more likely to die than their white counterparts. And still the government continued to reject basic public health measures, including a refusal to support those self-isolating as they might “game the system” for their £500.],
-  [Michael Mansfield QC promised that the inquiry would be publishing the “manifestly obvious” findings as soon as possible, along with urgent recommendations to the government. He reminded people that the object of the inquiry had always been to learn lessons and save lives.],
-  [The first witness was Deepti Gurdasani, senior lecturer in machine learning at Queen Mary University London. Her research involves understanding the impact of different interventions on covid, pandemic growth, and how to synthesise evidence into policy],
-  [Asked what she thought of government strategy in response to the pandemic, Gurdasani said it had amounted to negligent manslaughter, and perhaps not even negligent as the government had been fully informed of the risk to public health, of suffering and mass deaths, but went ahead anyway. Government policy from the beginning had been essentially herd immunity or “living with the virus,” accepting that deaths were inevitable. As a result, over 150,000 had died in the UK, and a million were living with long covid, including “unforgivably,” 30,000 children.],
-  [“ Our government doesn’t care about ‘acceptable’ deaths, because they’re in vulnerable individuals. They’re in ethnic minority groups, key workers, frontline workers, they’re in people who live in deprived areas, and people who’ve been left behind, they’re in the disabled and the homeless. As a society we can’t accept that.”],
-  [The public had been told that these deaths were inevitable, but many countries, including densely populated ones, had managed to avoid such a massive impact on their societies.],
-  [“The values that have been inherent in our government’s response have been a lack of value for life, lack of compassion, and a lack of consideration for people’s suffering.”],
-  [Gurdasani said that government strategy had been grounded from the beginning in “exceptionalism.” They had rejected the public health measures that other countries were taking, for example abandoning quarantine and the test, trace, and isolate system (TTIS) in March, saying these measures were “only appropriate for low and middle income countries.” As a result, lockdowns became necessary, which other countries, for example in South East Asia, largely managed to avoid.],
-  [Other poor decisions involved putting TTIS in the hands of a private service “that hasn’t delivered,” asking companies who had no relevant experience, to manufacture ventilators, and ignoring established local companies who offered to make personal protective equipment (PPE) while awarding contracts to those with no experience. Operation Moonshot was a recent example of a very expensive exercise that not only hadn’t helped our exit from the pandemic, but whose tests have been recalled over safety concerns.],
-  [In brief, the government had put their faith in technology rather than basic public health measures, but had not consulted the experts in those technologies. They had also failed to consult the NHS, public health, and local authorities. As a result the UK still hadn’t sorted out aerosol transmission, with no appropriate ventilation in schools and work places, no functioning Test, Trace, Isolate and Support (TTIS), and no coherent mask policy. The government had persuaded the public that lockdowns were the only way to control the virus whereas, as other countries had shown, they represent a failure of response. The answer was always to get on top of the virus through basic public health measures.],
-  [Gurdasani felt that it was never too late to return to classic public health measures, which included a functioning TTIS and practical and financial support for those self-isolating. She said the government’s excuse that the public are “really tired of restrictions” was nonsense. The public had always been “ahead of the government,” and it was the government themselves who hadn’t wanted to put restrictions in place.],
-  [She then turned to the fact that government strategy essentially relied completely on vaccines.],
-  [“We’ve chosen a very risky strategy by putting all our eggs in the vaccine basket, which we didn’t need to do.”],
-  [The risk lay in the fact that the government weren’t protecting the vaccines against variants, which would require comprehensive restrictions at borders and elimination of the virus in the community. Other countries such as Australia and New Zealand had managed this, whereas as we had imported highly contagious variants.],
-  [Looking ahead Gurdasani wanted the government to adopt a policy of elimination for the virus by fixing TTIS, putting it in the hands of local authorities, and to prevent new variants coming into the country through a comprehensive border policy. “That is completely achievable.” She wanted a focus on stopping aerosol transmission including an investment in better ventilation for schools and workplaces. Finally she wanted the government to help the roll out of vaccines around the world, instead of practising vaccine nationalism and at the same time cutting foreign aid.],
-  [“People who think that our pandemic strategy has been a success must look at the number of deaths, the number of people suffering with long covid, but also the impact on our economy and the fact that we’ve had restrictions for 16 months, three lockdowns, four months of children being out of education. How is this even remotely a success?”],
-  [“The media never actually discusses the response in other countries…so people aren’t aware that life could be so different had we adopted the elimination strategy last year, or even learned much later and adopted it more recently. It’s very, very clear that countries that valued life, that treated deaths as preventable are the same countries that have done best economically.”],
-  [The next witness was Stephen Cowan, leader of Hammersmith & Fulham Council. He was asked what the role of local government had been during the pandemic. He noted that we have ‘a very centralised system’ in the UK, which means that everyone in local government ‘looks to Westminster to tell them what to do’. Unfortunately, in the early days of the pandemic it seemed that the government’s focus was elsewhere, with little direction coming out of central government. This was at odds with similar countries, who were much quicker to take action.],
-  [“The government wasn’t on top of this in January/February. The prime minister wasn’t talking about it. And he’s a very strong leader of his party, and therefore the government. And if he wasn’t engaged, I suspected the government wasn’t engaged. Or it had a different agenda.”],
-  [In February, Cowan could see what was going on internationally, for example in Italy, and stopped looking to the UK central government for advice. He told his chief executive to move the borough onto a civic emergency footing as the pandemic was sure to arrive in London. They were the first council to do this.],
-  [“We decided to act on the side of caution and to do everything we could to protect people.”],
-  [He locked down local parks and at the same time organised a letter from all London Councils to the prime minister demanding a lockdown. This was sent on 22 March 2020, and on 23 March Boris Johnson announced a national lockdown.],
-  [Overall Cowan was very critical of Boris Johnson, whose attention appeared to be “elsewhere.”],
-  [“He’d gone to a rugby game and had been boasting about shaking hands with people in a hospital. And all these were indications that his head wasn’t in the place we needed it to be. Maybe they were going for herd immunity.”],
-  [Because of the lack of central direction, local councils found themselves in the front line. For example in early April, Cowan heard about deaths in Italian care homes because Italians had allowed people with covid back in to the homes. He arranged for PPE in care homes in his borough, introduced testing for staff and patients and also training for staff, most of whom have very little relevant training.],
-  [He also promoted mask wearing from May 2020, whereas the government dithered and made that decision later in the year. He felt that local government had really risen to the occasion, with a ‘wartime operation’ aimed at protecting people, but then central government would knock them back and tell them not to act.],
-  [“The public sector ethos came into its own at a ground level. And the lesson is that if you empower people, then they will rise to the challenge. I think people were at their best in the public sector at that time…it’s about trusting people on the ground.”],
-  [Going forward Cowan wanted the government to empower people on the ground and to give real powers to local government],
-  [The next witness was Matt Western, Labour MP for Warwick and Leamington, who submitted evidence via a written statement. Western’s evidence concerned the Leamington Lighthouse laboratory project, one of two “megalabs” to be set up for large scale covid testing. He was notified of this in November 2020, after a public announcement. There had been no prior discussion with himself nor with local authorities.],
-  [The government said the project would create up to 2,000 jobs and would open early in 2021. However at the time that he submitted his evidence (16/6/21), there was still no start date available. Meanwhile he was hearing from constituents who had left jobs after being recruited to work in the new lab and were consequently now unemployed.],
-  [A report compiled by a local campaign group had highlighted a number of concerns. It questioned why the government had chosen to set up a brand new laboratory rather than expanding existing local NHS pathology services. It raised concerns regarding lack of regulation, accreditation, and quality standards of the facility and its employees, which fell far short of the requirements within NHS based laboratories. A contract to run the lab had been awarded without being put out to tender and private companies had been involved in recruiting staff. Some staff and suppliers were the subject of non-disclosure agreements. It had been impossible to find out how much the project was costing the tax payer.],
-  [Finally, earlier in the year there had been an outbreak of covid among the staff who were getting the site up and running. He felt it was “an embarrassment” that the government couldn’t even protect staff working on a large scale covid testing site.],
-  [“There is a clear lack of transparency, waste and cronyism surrounding this Government’s contracting process throughout this pandemic, which equally applies to this project.”],
-  [In summary his concerns were the total lack of transparency around the project, the unnecessary privatisation of NHS services, and the delay of the project. He wanted transparency and accountability from those in government who were responsible.],
-  [“There have been too many failures and too much taxpayers’ money squandered by this Government for us to allow ministers to avoid accountability in the way they are at the moment.”],
-  [The next witness was Professor Jonathan Portes, who had been a government economist for 25 years and is now professor of economics and public policy at King’s College London. He said there was a clear consensus across a broad spectrum of economists that during the pandemic the right thing to do from a health point of view was also the right thing to do from an economic point of view.],
-  [“It was better to take whatever measures were necessary to address the health crisis, even at the cost of economic output in the short term, because the alternative of not dealing effectively with the health crisis would actually lead to greater and longer-term economic losses.”],
-  [In response to a question about public expenditure during the pandemic, he felt that money spent on business support schemes was “money fairly well spent” and appropriate from a social and economic perspective. On the other hand, that spent on the procurement of PPE was clearly “hugely wasteful and occasionally corrupt,” and that the expenditure on test and trace was badly spent and mismanaged, and had led to adverse outcomes. He felt that in general the Government had erred on the side of spending too little and he was very critical of “the frankly ludicrous levels of sick pay that we pay in this country.” He said that with regards to sick pay the UK is “ not only lower than, I believe, anywhere else in the OECD, but lower by quite a long way than almost all of our obvious major comparators.!],
-  [“The biggest obvious policy error has been the failure to raise sick pay or to put in place an effective system of sick pay that incentivises people …to take time off work to self-isolate. That has been a real false economy, which has undoubtedly inhibited the effectiveness of test and trace, and therefore probably led to more people getting sick than needed to be, prolonging the pandemic unnecessarily.”],
-  [Portes then addressed the effects of the government’s “austerity” and deficit reduction policies in the decade prior to the pandemic. These had resulted in a slowing down and in some cases a reversal of the social progress made in the previous decade, and this had particularly been the case for lower income groups. He felt the policies had left us more vulnerable to the crisis and that this was reflected in the structural inequalities which had emerged.],
-  [“There was a very, very high differential mortality gradient where the most disadvantaged groups have clearly been most vulnerable both to contracting covid and to getting seriously ill and dying from it. And again, I think there’s a clear relationship between those two – between what happened in the run up to 2020 and what happened during the pandemic itself.”],
-  [Portes said more austerity would be the wrong response to the pandemic. He gave as an example the funding needed to address the damage done to children’s education during the pandemic. It had been estimated by the Institute for Fiscal Studies that this could represent a cost to the country of £350 billion over the next 40 years, but when the Education Policy Institute proposed an initial catch-up programme of £15 billion the government’s response had been to offer 10% of that, i.e. £1.5 billion. Given the economic and social case for funding catch up, especially for the most disadvantaged, he found it ‘almost impossible’ to see what the justification for that decision was.],
-  [“I really find that the Government’s decision on this almost incomprehensible from almost any perspective.”],
-  [Going forward he said government debt certainly wasn’t “the first, second, or even fifth most important economic problem the country faces at the moment.” What the Government needed to do was whatever was necessary to definitively suppress the pandemic and spend whatever it takes to do that. And after that, to reopen in a safe and controlled way and to get back to normal as quickly as possible.],
-  [“What we have learned is that we shouldn’t be worried about spending money in the short term.”],
-  [The next witness was Jean Adamson, representing Covid-19 Bereaved Families for Justice, and also an independent consultant to the Care Quality Commission.],
-  [Adamson’s elderly father had died in a care home after contracting covid during the first wave. Following his death, she had made a formal complaint to the home, including questions about the use of PPE, hospital discharges to the home, and the number of covid related deaths in the home. She noted a “lack of transparency and honesty” in the replies she got, including a refusal to allow her to see his unredacted care records. She had then sought support in the Bereaved Families for Justice group.],
-  [“We all share the one thing in common, we were looking for answers . I needed to understand, and our members need to understand why our loved ones died in a place where we expected them to be safe.”],
-  [Adamson said the group had not been able to get those answers and in particular felt very let down by the Care Quality Commission (CQC), who had refused to release the number of covid related deaths in individual care homes. She felt they had sought to protect the interests of the commercial sector at the expense of the interests of the public and in choosing to hide behind Freedom of Information exemptions their position had become “untenable.”],
-  [“We feel very let down by the Care Quality Commission. As the health and social care regulator for England, we thought they would be supportive of relatives, you know, bereaved families.”],
-  [As a result of pressure from Bereaved Families for Justice the CQC had since agreed to provide more data. She believed their original refusal to release the care home data was a political one taken to protect the commercial care sector and her experiences had led her to question the motives of the CQC, and their supposed arm’s length status.],
-  [“It just beggars belief actually, where is the commitment to us, the public? The reason the CQC was set up, the very reason they exist, is to protect the public, and to have our interests at heart.”],
-  [Going forward her group wanted a public inquiry “now,” and failing that a rapid review in order to learn lessons and make recommendations. The government had not responded to their requests.],
-  [“How many more people need to die, how many more lives need to be lost to this virus before we start to learn lessons and prevent further deaths, further tragedies. We have a tragedy on a national scale, unprecedented in our times, and still the Government is dragging their feet.”],
-  [The final witness was Michael Bimmler, a barrister specialising in public and human rights law who discussed the legal aspects of the government’s response to the pandemic. Bimmler explained the “no harm” principle which exists in international law, which says that states have a duty to take all appropriate measures to prevent and reduce what is called significant trans boundary harm. This applies to natural disasters, during which states have to take appropriate steps to prevent harms. The greater the risk of the harm at hand, the more efforts are required from the state.],
-  [With regard to the pandemic, all states were subject to this duty, so they had a duty to stop further spread of the pandemic, or at least to take such steps as they could to stop the further spread, and to prevent or reduce further outbreaks.],
-  [He then discussed International Health Regulations (IHRs), dating from 2005, and adopted by more than 190 states in the World Health Assembly, which place a number of mandatory obligations on states. These include, for example, a duty to develop and maintain the capacity to respond promptly and effectively to public health risks including pandemics, and a duty to base that response on scientific principles and evidence.],
-  [These laws raised a number of questions as to whether the UK’s response actually complied with IHRs, including adequate pandemic planning, and a capacity to respond promptly and efficiently. Bimmler mentioned as examples the availability of PPE and ventilators, discharge of patients into care homes without testing, protection of patients in hospitals and care homes, and reaction to the second wave.],
-  [He discussed the European Convention on Human Rights (ECHR), in particular the right to life, the right not to be subjected to inhumane treatment, and the right to respect for private and family life. He explained that the government has to take proactive steps to promote these rights by putting appropriate safeguards in place, and that they are systemic duties owed to the public at large, in particular to exposed people. This would include front line workers in the NHS, and the vulnerable such as the elderly and those with pre-existing medical conditions.],
-  [“It is quite clear from the case law that acts and omissions in areas such as health care policy, health care provision, health care regulation, are covered by this article to the right to life.”],
-  [Bimmler pointed out the “duty to investigate” when a state’s breach of those duties under the ECHR had cost someone’s life. This could range from a coroner’s inquest to a public inquiry if national level policy decisions were involved.],
-  [He also mentioned the duty of employers to ensure the health and safety of their employees at work by providing a safe work place with necessary training and equipment (such as PPE), and that a breach of those regulations could be a criminal offence.],
-  [Finally he said that claims against breaches of ECHR could be brought in UK domestic courts but that it was more difficult to challenge breaches of international law. In response to a question about prosecuting those felt to be responsible for failings during the pandemic, he said that individuals can’t be charged with corporate manslaughter, but an organisation, such as the Department of Health and Social Care, could.],
-  [In this last session the inquiry heard a series of damning testimonies. The government’s “austerity” policies had slowed and even reversed social and health progress in the decade before the pandemic, resulting in a widening of social inequalities and a very high differential mortality rate during the pandemic. The government’s attention had been ‘elsewhere’ when the pandemic broke out, and others such as local authorities had had to step in. When the government did respond it was very late and partial, possibly as a result of initially planning to adopt herd immunity.],
-  [Witnesses were again critical of the fact that the government by-passed the NHS in favour of the private sector, and condemned the lack of transparency, waste, and cronyism around the contracts involved. They also criticised the fact that there was no effective sick pay system which was thought to have prolonged the pandemic.],
-  [Finally the government was accused of manslaughter. There had been no need for the very high number of avoidable deaths in the UK, as other countries had shown. There was a possibility of holding the government to account via legal routes for some of these deaths.],
-  [Tony O’Sullivan, co-chair of Keep Our NHS Public, ended the final evidence session of the People’s Covid Inquiry by thanking all those who had participated, including the 41 witnesses, and by joining the Bereaved Families for Justice in calling for a public inquiry now. He said the final report of the inquiry would be out later in the year.],
-  [“We are really proud … of what the inquiry has achieved. It set out to look for urgent lessons to be learned now from this coronavirus pandemic and to recommend action that would save lives…”],
-  [Jacky Davis , consultant radiologist, founder member of Keep our NHS Public, panel member of the People’s Covid inquiry.],
-  [Competing interests : none declared.],
-  [The post People’s Covid Inquiry: what must happen now? appeared first on The BMJ .],
-),
-  insert-map: (:),
-  inline-pq: pull-quote([It raised concerns regarding lack of regulation, accreditation, and quality standards of the facility and its employees, which fell far short of the requirements within NHS based laboratories.], [jross]),
-  inline-pq-idx: 28,
-  word-count: 3870,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-}
-
-{
-  #standard-article(
-  title: [Embracing Afghanistan’s refugees into the UK’s health and social care system],
-  author: [julietwalker],
-  source-name: [The BMJ Blog],
-  images: (),
-  paragraphs: (
-  [The response to refugees arriving in the UK after the international emergency in Afghanistan requires health professionals to be equipped for the needs of this population. The integration of this community from a health and social care perspective is key in terms of ensuring equitable provision. The Equality and Diversity Act (2010) must frame this planning, from where services can monitor and embrace this community to ensure they are not being disproportionately impacted. [1] The UK has committed to accepting 20,000 refugees over five years in response to the political takeover by the Taliban in Afghanistan. Healthcare professionals will need to develop allyship and effective working practices including challenging discrimination, stereotypes, racism, and xenophobia.],
-  [There must be relevant training and resources within health and social care teams and departments to ensure that refugees’ needs are met and communication is safe. The Cultural Atlas (2021) provides one of the most comprehensive educational tools in understanding the culture and guiding healthcare practice on etiquette and communication. [2] The lack of available acceptable housing is going to be one of the largest issues facing Afghan refugees. There needs to be a close working relationship between community health services, homeless teams, and housing services. Such relationships are key as there is a duty of care to anyone in the local area to be housed even if that is in temporary accommodation. Health professionals may be the first responder in ensuring that local signposting to organisations and advocacy agencies are appropriately done.],
-  [Another issue that will need to be addressed in a timely fashion is the lack of money and finances. Contrary to myths surrounding refugees and asylum seekers who enter the country, they will not have money to live the lifestyle alleged by many. An asylum decision takes at least 28 days and at this point, there may be more destabilisation incurred for the families as temporary accommodation could cease. The usual expectations are to secure work or study but often children of this group barely get food, clothes, or toys, and families rely heavily on charitable donations.],
-  [Telephone language services have been a long-term resource available in the UK. The language needs of the Afghan community are likely to be Pashto and Dari. In areas of high dispersal, the use of key workers from the same background would be useful in ensuring others in teams learn about the cultural and religious disposition of this community.],
-  [There may be a need to refer or to seek advice from safeguarding teams, where a child is in need or at risk. We cannot assume that the refugee status mitigates such referrals, and any impact on children is a usual way of life. Where there are needs not being met in the form of finances or a child is not able to get to school, for example, social services have a duty of care to ensure both risk and “needs” are assessed under the Children’s Act.],
-  [Trauma interventions in terms of what is an effect of resettlement, or witnessing events in Afghanistan recently or in the past, will require robust resources. Combat stress, a veteran support line, reported an exceedingly high number of calls from veterans who served in Afghanistan and required mental health support, including suicidal ideation due to post traumatic stress disorder. [3] Prioritising support within the NHS workforce, which has already been impacted by covid-19 will be quite a challenge. Additionally, services need to be aware that culturally many Afghan refugees will feel more at ease talking in a group setting, as opposed to individual support sessions. Grief is often seen as a community experience rather than an individual one. The need to develop community kinships and innovative methods to engage with these groups would be advisable.],
-  [Suffering, grief, and ambiguous loss will feature in many presentations, which will not be restricted to trauma. Separation from loved ones and death related losses will be part of the psychological needs of the refugees. Therefore, there may be a need to increase the service provision in primary care psychological services for trauma and complex grief, at local and national levels.],
-  [Health services and the health and social care workforce will need to be skilled and culturally ready to welcome Afghan refugees to the UK. The double burden of covid-19 and poor healthcare has impacted the already burdened healthcare system in Afghanistan. [4] After ensuring the population is registered with a local GP, another complicating factor in the present circumstances is the impact of covid-19. Health professionals will have to quickly establish the refugees’ covid status, where they are in the vaccination programme, and introduce the refugees to covid-19 adjustments that the UK population has become used to. A big factor impacting the refugees will be their housing. If, as seems highly likely, they will be housed in overcrowded accommodation then this is the perfect breeding ground for covid-19 to spread. As stated, many will arrive in the UK in physically poor health, that in combination with substandard accommodation, and the threat of covid may prove fatal. Health professionals must be outspoken in trying to stop this scenario from unfolding.],
-  [The health and social care interface have the resources to support and ensure that a good value base is demonstrated through their practice. The disproportionate impact of covid-19 has already affected ethnic minorities across the globe. There is a small window of opportunity for services now to predict and assess their cultural responsiveness rather than rely solely on less appraised community-based initiatives.],
-  [Harjinder Kaur-Aujla , lecturer in mental health nursing, University of Birmingham.],
-  [Christopher Wagstaff , senior lecturer school of nursing, University of Birmingham.],
-  [Competing interests : none declared.],
+  [Tides are notoriously difficult to turn. But, when the time is right, even the strongest tides will turn—and now is one of those critical moments in relation to overweight and obesity in the UK. This follows 30 years of piecemeal action by governments to address a preventable health crisis that has become even more apparent during the covid-19 pandemic. Covid-19 has shone a light on the underlying health problems that make many of us more vulnerable when a new disease threatens population health and health systems that are already overstretched.],
+  [Recently the Obesity Health Alliance (OHA)—a coalition of 45 leading health charities and medical royal colleges—launched their new report “Turning the Tide: A 10-Year Healthy Weight Strategy’” for the UK. Obesity rates have increased significantly across the UK over the last 30 years, despite 14 government health strategies since 1991 that have set targets for obesity reduction in England , with similar failed efforts in the devolved nations. In total, these strategies contained 689 recommendations . Today, the majority of adults in England— 68% of men and 60% of women— are above a healthy weight, and over a quarter are living with obesity (27% of men and 29% of women). Excess weight prevalence is highest among the lowest socioeconomic groups in both adults and children.],
+  [The OHA’s strategy was developed over two years by a working group chaired by Anne Johnson. Through a process of consensus-building, informed by a series of evidence reviews and expert papers, the strategy includes 30 recommendations for action in the years ahead.],
+  [It notes that the commercial food system has fundamentally changed over the second quarter of the 20 th century. The key goal of this food system was to eradicate hunger and ensure adequate food supply, however it has led to a complex adaptive system in which the need for readily available and accessible food has driven an explosion of ultra-processed foods that are highly palatable and heavily marketed to both meet and drive consumer demand . This has altered what we eat and how we behave in the same way that commercially mass produced cigarettes made smoking a normal part of life for the vast majority last century. Smoking resulted in hundreds of thousands of preventable premature deaths in the decades that followed until governments took action and changed the system to prevent smoking uptake and support existing smokers to quit.],
+  [The evidence is clear that the drivers of healthy weight are even more complex than those involved in tobacco use. The obesogenic environment , to which we are all exposed to from infancy onwards, whereby calorie-dense, nutrient poor food is readily accessible, abundant, affordable, and normalised, and physical activity opportunities are not easily available, affects us all. The pervasive and ubiquitous advertising and promotion of unhealthy food and drinks allows industry to “set the tone” of our food environment, creating, and maintaining this obesogenic environment that makes it inherently difficult to achieve a healthy diet.],
+  [Obesity cannot be addressed one person at a time, and behind the statistics are people living with obesity who often experience stigma and discrimination that can affect their mental health and willingness to access healthcare. Stigma stands in the way of public health and must be eradicated.],
+  [The strategy makes recommendations across key areas: 1) stigma; 2) food and drink products; 3) the marketing mix; 4) pricing; 5) the environment; 6) advertising and promotions; 7) early years; 8) management, treatment and support; and 9) improved policymaking processes. Each of these areas require addressing in their own right, but combined the recommendations set the clear, long-term, evidence-informed agenda needed to turn the tide and improve healthy weight across the UK population. The 30 recommendations made are set out in a “KIND” framework, aimed at building on existing policy progress as well as identifying new routes for action. The KIND framework includes:],
+  [style="font-weight: 400;"\> Keep policies already in place or that are due to be implemented that supports a healthy weight environment;],
+  [style="font-weight: 400;"\> Intensify existing policies or approaches to increase impact;],
+  [style="font-weight: 400;"\> New proposals that are recommended for evidence-informed actions;],
+  [style="font-weight: 400;"\> Develop policies based on the results of new, promising areas for research and investment.],
+  [The framework sets out not only the stage of policy development in which each recommendation sits, but also the actor(s) that should enact that recommendation. It is not enough to simply name route for action, but we need to establish clear directives for those bodies and organisations responsible to implement necessary change.],
+  [The role of industry is not absent here, and it is vitally important that we acknowledge the power that companies currently has over our food environment, as well as the regulation of the environment. We have clear evidence demonstrating that industry involvement in policy-making designed to remedy the harms industry products contribute to is not conducive to the creation of healthy public policy, and this must be actively managed throughout the policy process.],
+  [As we look ahead to recovery from the covid-19 pandemic, progressing efforts to achieve a healthy weight across the UK population must be at the heart of public health. It is time to move beyond individual-level policy recommendations, and implement wide-ranging changes to the system that got us here in the first place. This will not only save lives in the short and medium term, but will also serve to create a better and healthier future for our children and grandchildren, something they most surely deserve.],
+  [Linda Bauld , professor, Bruce and John Usher Chair in Public Health, University of Edinburgh and Director of the SPECTRUM Research Consortium],
+  [Lauren Carters-White , research fellow, SPECTRUM Research Consortium, Usher Institute, University of Edinburgh],
+  [Caroline Cerny , Alliance Lead, Obesity Health Alliance (hosted by Diabetes UK)],
+  [Competing interests : Linda Bauld and Lauren Carters-White led the academic team conducting evidence reviews to inform the Healthy Weight Strategy and were members of the strategy working group. Caroline Cerny project managed the strategy development process. The project was funded by the British Heart Foundation, Cancer Research UK, the Health Foundation, the Wellcome Trust. OHA is funded entirely by its members and does not accept funding from commercial organisations. CC is a member of Public Health England’s Obesity Reformulation Reference Group and the All Party Parliamentary Group on Obesity’s strategic council.],
   [References:],
-  [1. Equality Act (2010). [online] Available at: http:\/\/www.legislation.gov.uk/ukpga/2010/15/contents],
-  [2. Cultural Atlas (2021) Cultural Atlas. Available at: https:\/\/culturalatlas.sbs.com.au/afghan-culture/afghan-culture-core-concepts\#afghan- culture-core-concepts],
-  [3. Jakupcak, M., Cook, J., Imel, Z., Fontana, A., Rosenheck, R. and McFall, M. (2009), Posttraumatic stress disorder as a risk factor for suicidal ideation in Iraq and Afghanistan War veterans. J. Traum. Stress, 22: 303-306.],
-  [4. Lucero-Prisno, D. E., Essar, M. Y., Ahmadi, A. et al. (2020) Conflict and COVID-19: a double burden for Afghanistan’s healthcare system. Confl Health 14, 65. https:\/\/doi.org/10.1186/s13031- 020-00312-x],
-  [The post Embracing Afghanistan’s refugees into the UK’s health and social care system appeared first on The BMJ .],
+  [APPG on Obesity 2018 The Current Landscape of Obesity Services https:\/\/obesityappg.com/inquiries],
+  [Garde and S. Byrne 2021 ‘Combatting obesogenic commercial practices through the implementation of the best interests of the child principle’ in A. Garde and O. De Schutter (eds), Ending Childhood Obesity: A Challenge at the Crossroads of International Economic and Human Rights Law, chapter 10 (Edward Elgar Publishing).],
+  [B. A. Swinburn et al. 1999. ‘Dissecting obesogenic environments: the development and application of a framework for identifying and prioritizing environmental interventions for obesity’ Preventive Medicine 29(6): 563-570 https:\/\/doi.org/10.1006/pmed.1999.0585],
+  [B. A. Swinburn et al. 2019 ‘The Global Syndemic of Obesity, Undernutrition, and Climate Change: The Lancet Commission Report’ The Lancet 393(10173): 791-846 https:\/\/doi.org/10.1016/s0140-6736(18)32822-8],
+  [Wood et al 2021 ‘Market strategies used by processed food manufacturers to increase and consolidate their power: a systematic review and document analysis’ Global Health 17: https:\/\/doi.org/10.1186/s12992-021-00667-7],
+  [D. R. Theis and M. White 2021 ‘Is obesity policy in England fit for purpose? Analysis of government strategies and policies, 1992–2020’ The Milbank Quarterly 99(1): 126–70 https:\/\/doi.org/10.1111/1468-0009.12498],
+  [Dimbleby 2021 The National Food Strategy Independent Review: The Plan, p. 290 https:\/\/www.nationalfoodstrategy.org/wp-content/uploads/2021/07/National-Food-Strategy-The-Plan.pdf],
+  [Lacy-Nichols et al. 2020 ‘The politics of voluntary self-regulation: insights from the development and promotion of the Australian Beverages Council’s Commitment’ Public Health Nutr 23(3): 564–75 https:\/\/doi.org/10.1017/S1368980019002003],
+  [NHS Digital 2020 Statistics on Obesity, Physical Activity and Diet, England, 2020 https:\/\/digital.nhs.uk/data-and-information/publications/statistical/statistics-on-obesity-physical-activity-and-diet/england-2020],
+  [Tatlow-Golden and A. Garde 2020 ‘Digital food marketing to children: exploitation, surveillance and rights violations’ Global Food Security 27: 100423 https:\/\/doi.org/10.1016/j.gfs.2020.100423],
+  [Lang and M. Heasman 2016 Food Wars (London: Routledge)],
+  [Smoking Kills: A White Paper on Tobacco. The Stationary Office https:\/\/assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment\_data/file/260754/4177.pdf],
+  [The post Turning the tide: The Obesity Health Alliance’s healthy weight strategy appeared first on The BMJ .],
 ),
   insert-map: (:),
-  inline-pq: pull-quote([Additionally, services need to be aware that culturally many Afghan refugees will feel more at ease talking in a group setting, as opposed to individual support sessions.], [julietwalker]),
-  inline-pq-idx: 7,
-  word-count: 1041,
+  word-count: 1326,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -766,33 +293,235 @@ It’s starting by giving 25-50 people \$1,000 per month. ( Gizmodo )],
 
 {
   #standard-article(
-  title: [Beyond the Mean],
+  title: [Dependency Injection in Typescript with tsyringe],
   author: [GameChanger],
   source-name: [GameChanger Tech],
   images: (),
   paragraphs: (
-  [I work as a software engineer at a sports tech company and I am a woman. These facts about my life are why I continue to be distressed about the news of the Google Memo, written by software engineer James Damore, and its ramifications for my industry. While the headlines may make the memo seem like it was written by a deranged maniac, the fact that it wasn’t written as a blatant anti-diversity statement (it begins: “I value diversity and inclusion, am not denying that sexism exists, and don’t endorse using stereotypes”) is one of the things that makes it harder for people to be immediately outraged about its contents (and why this discussion is so fascinating and important).],
-  [As a software engineer, questioning assumptions and raising potentially controversial ideas is part of the job. I agree with the Damore’s assertion that “If we can’t have an honest discussion about this, then we can never truly solve the problem.” The topic of diversity is critically important and I want to add my voice and insights to the discussion as honestly as possible. I agree with the myriad of responses suggesting that there were many productive ways that Damore could have raised some of his concerns, such as his views that conservative viewpoints aren’t valued in tech or that the diversity programs at Google should be more inclusive, without perpetuating gender stereotypes to make his point. I am pained to see that people are now afraid to raise controversial or minority opinions or ask questions because of the consequences of this memo.],
-  [But the issue for me is not the theoretical or hypothetical raising of unpopular opinions. In theory I absolutely agree that is very important. But I want to focus on the reality of this situation and the memo that was actually published. Damore’s main argument is that “Google’s political bias has equated the freedom from offense with psychological safety, but shaming into silence is the antithesis of psychological safety.” However, you can’t ask for psychological safety for one group while stomping on the psychological safety of another group. Content matters. The way these opinions were raised matters. Making an entire gender feel less qualified or question their career choice matters. As a female software engineer, the response to this memo makes me feel less safe. As a coworker, and fellow female engineer, put it, “[the memo] weighs on me because it validates my fears that I will have to spend most of my career proving I am competent before I’m given the space and respect to learn and grow.”],
-  [Despite Damore specifically recommending against reducing a population to their average, by even discussing “average” traits of women and men, the memo now provides specific stereotypes for people to point to to explain why a woman may be a lesser engineer. When you first start at a job or on a team no one has reasons to assume that your traits are anything but “average” until proven otherwise. If people believe that the “average” woman is less qualified it puts more onus on women to prove their worth the second they walk in the door. And trust me, even without this memo circulating, women in the tech industry are constantly being forced to prove their competence.],
-  [Damore selected three particular traits to discuss. He did not include his reasons for selecting those particular traits as his examples of genetic differences between males and females, although he did discuss ways in which, in his opinion , those traits cause problems in the tech industry. In summary, he mentioned that “average” female traits include: 1) “openness directed towards feelings and aesthetics, rather than ideas…[including] a stronger interest in people rather than things;” 2) “extraversion expressed as gregariousness rather than assertiveness,” which included “higher agreeableness;” and 3) “neuroticism (higher anxiety, lower stress tolerance).” Each of these terms in the memo also hyperlinks to a Wikipedia definition, rather than scientific treatises, and therefore seem to be a random selection of traits and stereotypes that Damore believed to be detrimental to the workplace. However, not only am I skeptical of the representativeness of the chosen traits and the sources cited, I believe that some of these traits are actually crucial to create a balanced, productive workplace. Imagine software built by a team where all members were more interested in “things” than people and no one wanted to pay attention to aesthetics (assuming the team was able to ship anything if it was comprised of assertive rather than agreeable people).],
-  [Additionally, while defining these “average” traits, Damore’s stated that “More men may like coding because it requires systemizing and even within [software engineers], comparatively more women work on front end, which deals with both people and aesthetics.” This assertion really got under my skin because, for a split second, it made me self conscious of being a front end leaning developer. I do not only enjoy front end work because of aesthetics, that is one of the last pieces that I consider in my day to day work. Working as an engineer in any capacity requires deep systemizing and writing code. Contrasting front end work with coding in this way undermines the amount of critical thinking that front end engineering requires. This also serves to enforce biases that one gender should work on a particular part of the stack.],
-  [I can only share my own experience, but I believe it is important for more individuals to share their stories. To show that generalizing to the “average” actually hurts real people on real journeys.],
-  [id="my-journey"\>My Journey],
-  [My entire adult life I have heard things like “you only got into MIT because you’re a woman” or “you’re just a diversity hire.” I went to a job interview where I asked how many women they had on the engineering team and the interviewer freaked out briefly and said “We only have one! But we’re trying to improve that number! That’s why we’re interviewing you!” By citing a diversity statistic as a reason to interview me, I suddenly felt less qualified for the position. Needless to say, I did not accept that job offer. But this constant questioning or suggesting that I am only interesting because I increase diversity numbers leads to feelings of imposter syndrome and wondering if I do belong or if I am actually good enough.],
-  [When people ask me what I do for a living and I say “software engineer” they often respond with a surprised “really?” or if I say I work at a tech company they say “oh as a designer?” (while I AM fully qualified to be an engineer, I am in NO WAY qualified to be a designer). I have even had this experience with other attendees at conferences specifically targeted at Software Engineers. As these conversations continue, when we finally do establish that I’m an Engineer, often times when I say I work on front end/UI work that is when the lightbulb goes off and people say “oh that makes sense.” Because I am finally saying SOMETHING that aligns with their preconceived perception of what I should be doing.],
-  [I would get those reactions no matter where I worked, but I also work at an amazing company that focuses on youth sports. And I happen to work here because I LOVE sports, especially baseball. Plenty of other engineers at my company don’t care very deeply about sports, I just happen to be one of the ones that does. But even that is something I have to prove whenever I mention it, suddenly being quizzed about minute trivia or the last time my favorite team won the World Series (2013 in case you’re wondering). This not only occurs when I am discussing my job, but also in contexts such as having internet and cable installed in my new apartment. After an 8.5 hour installation process the cable rep finally turned on the TV and asked me what channel he could check to make sure that it was all installed. I responded “ESPN, I got the sports package” and he just turned around and stared at me like I had grown another head and said “You like sports?!”],
-  [I shouldn’t have to hesitate when being asked about where I went to school or what I enjoy doing in my free time, but I do. I often answer the simple question “where did you attend college?” by responding simply “in Boston.” Because having to explain more is so often a hassle. In addition to enjoying baseball, I also casually enjoy watching basketball, but you will rarely hear me admit it because I often feel like I do not know enough to answer the series of questions that follows.],
-  [While my day to day interactions with friends and coworkers are positive and supportive, constantly having to explain my job or prove my knowledge to others causes me to second guess myself regularly. Yet I know I am qualified. I worked my ass off in high school, crushed the SATs, volunteered with a bunch of organizations and did the typical over-achiever list of extracurricular activities. I was qualified to get into MIT, just as much as anyone else, but that is not what people see when they see me. It is the same with my job. I am fully qualified and capable of being here. I have both Bachelors of Science and Masters of Engineering degrees in Computer Science from MIT. I had technical internships throughout college and did a 1.5 year research project/thesis that involved building software. Often times I am told I shouldn’t experience imposter syndrome because of my qualifications, but because of these perceptions and stereotypes I do continue to feel like I don’t belong.],
-  [id="thoughts--conclusions"\>Thoughts & Conclusions],
-  [If you have never had your career choice or passions questioned or don’t regularly face people assuming you are unqualified for your job, you probably can’t comprehend why the fact that someone presented “scientific” ideas suggesting that you’re unqualified for your job hurts so much. I deal with these reminders of the uphill battle from people outside the tech industry regularly and now the fact that there is a publication within the industry that is causing more women to feel isolated, less qualified, or making them have to prove themselves even more than we already have to is not okay.],
-  [Additionally, the mere suggestion that if a woman does want to succeed, she has to exhibit more “male” qualities is (in my opinion) ludicrous. This is the main point of contention that I have with this memo: it put into very public words and thoughts the idea that women may be less genetically qualified to be engineers. While the memo does not say that ALL women cannot be engineers, it emphasizes the opinion that typically “female” traits make someone a bad engineer and that therefore the bad engineers are women and men who display more “female” traits. The memo also suggests that the diversity programs are lowering the bar for hiring, so even if the author truly believes that some or most of his female colleagues are qualified for their jobs, he has now created a document that allows anyone and everyone to question ALL women and whether they belong in their position or not.],
-  [I do not stop being a woman when I am doing my job. I don’t know where I fall on the continuum of traits, but based on the female qualities outlined in the memo, I am fairly solidly on the “female” end of the traits spectrum. And I am damn good at my job. What is so concerning is that the memo suggests that the way to succeed in the tech industry is to display traits matching the existing status quo. Women already receive more personality-based feedback and it is worrisome to think that documents like this memo can be used to further encourage women to alter their personalities to succeed. I want women everywhere to know that is unacceptable and untrue.],
-  [While I am extremely lucky to work at a company that values diversity and works to eliminate biases in the interview process, this is not necessarily true across the tech industry. It is horrible to continually be looking over your shoulder and wondering whether people think of you as a diversity hire, instead of a highly qualified worker. The fact that anyone can say “well maybe he has a good point” in even implying that “female” qualities make someone less qualified to be an engineer confirms my greatest fears and self doubts. The reason I am hurt and angry and upset about this memo is that it means that I am still fighting to prove that I belong here. That I have to continue overcoming these invisible obstacles. For instance, if I have a dissenting opinion in a meeting, I not only have to prove my point, but also prove I’m not just being “neurotic” AND actually have valid things to say.],
-  [I would very much like to erase the misconception that women are somehow inherently or biologically less able to be engineers. Knowing that potentially there are people holding those beliefs performing code reviews, filling out peer reviews, giving me feedback, and potentially determining my career path is terrifying. Being told that I may need to alter my personality to be successful or having my errors not necessarily be attributed to the fact that everyone makes mistakes, but the fact that I am a woman makes me feel like I am walking on eggshells. I want all the engineers on my team to be evaluated as engineers, not as men or women.],
-  [I honestly do believe the author of this memo has a right to question the hiring practices at his company. At GameChanger, I’ve asked questions about our hiring process/interview questions and I’ve spoken to a lot of people about ways we can continue to improve our culture. I do believe that people have the responsibility to ask potentially controversial questions, but I also believe it must be done in a way that does not attack or marginalize or state opinion as fact. This brings me to probably the most upsetting conclusion of the memo, Damore’s opinion that empathy makes you a bad engineer. The reason there is so much backlash is that the author did not for one second think about how this could impact others. How on earth can you build good software if you’re not empathetic to your colleagues, company, and most importantly users? You can’t! But because of this memo people all over the industry are pausing and thinking “maybe that is a good point” and that is what scares me.],
-  [I have been in a Software Engineering role full time for 2 years and I am already tired of hearing “don’t let it bother you.” I’ve already heard many things that I would have every right to be bothered by and they don’t bother me at this point, so the fact that this memo has been weighing on me compelled me to speak up. Being a woman in tech you have to pick your battles and this is a battle I am choosing to fight. I feel obligated to stand up for this because I am in a position where I can discuss my experiences candidly and this is a real issue facing the tech industry. I need it to be very clear that being told “this doesn’t relate to you, just to most women” or “just to the average woman” still insults me as an individual. Maybe you don’t believe this about your own coworkers or friends or family. I personally have received an outpouring of support from coworkers and friends and family. But I still know that I am “most women” to someone out there so if you belittle any of us, you’ve belittled all of us. I am hopeful now that we can shift the conversation beyond stereotypes of what a woman can and cannot do because of her gender. We instead need to focus on what individuals are qualified to do, interested in doing, and eager to take on. To make any meaningful change, we must stop perpetuating generalizing stereotypes and focus on the strengths, passions and abilities of individuals.],
-  [Note: The views expressed in this post are those of the author and do not necessarily reflect the views of GameChanger.],
+  [id="why-dependency-injection"\>Why Dependency Injection],
+  [In any large object oriented codebase, managing dependencies can get difficult. Each class can require any number of third parties or other classes to function, and it can be hard to test the behavior of a single class with mocks if those dependencies aren’t easy to provide.],
+  [Fortunately, there’s a popular design pattern that can be applied to solve this problem, and that is dependency injection.],
+  [When using dependency injection, classes can be provided their dependencies through a constructor, and those dependencies can be swapped out easily for other implmentations. In tests, mocks can simply be substituted in to test class behavior.],
+  [While most of the time, this pattern is implemented with a framework, even without one manual dependency injection can give you some of these benefits.],
+  [Here at Gamechanger, we previously had a form of manual dependency injection in our typescript codebase. Each class would have a constructor that accepted its dependencies, which could be swapped out with mocks or a real implementation.],
+  [private void foo () { 
+ this . dependencyA . action (); 
+ } 
+ }],
+  [\/\\/ To instantiate this class, both dependencies must be created 
+ const businessLogic = new BusinessLogic ( new DependencyA (), new DependencyB ());],
+  [\/\\/ to test this class, mocks can be passed in 
+ const testBusinessLogic = new BusinessLogic ( new MockDependencyA (), new MockDependencyB ());],
+  [In this example, if you need to replace a dependency, you can just supply a different class in the constructor for BusinessLogic .],
+  [This can work great for a small number of classes with a tiny dependency tree, but as your codebase’s number of dependencies grow, it can become difficult to manage. Once your dependencies have dependencies, its not as straightforward to get an instance of a class.],
+  [} 
+ }],
+  [class DependencyA { 
+ constructor ( dependencyC : DependencyC , dependencyD : DependencyD ) {],
+  [} 
+ }],
+  [\/\\/ Now, to instantiate BusinessLogic, we need to create a tree of instances. 
+ const dependencyC = new DependencyC ( new DependencyE ()); 
+ const businessLogic = new BusinessLogic ( new MockDependencyA ( dependencyC , new DependencyD ()), new MockDependencyB ());],
+  [Even in this relatively mild example, it’s starting to get complicated to manage the dependency tree. If you want to mock dependency C in the business logic dependency chain, you have to create all of the dependencies around it and pass those in.],
+  [When you need to test a particularly complicated class, setting up all its dependencies can take more time that writing the test itself! If you only need to mock a single subdependency, you need to instantiate everything all the way down until the mock is required, and then pass it in there.],
+  [Fortunately, there are dependency injection frameworks for typescript that can simplify the work that needs to be done.],
+  [id="using-tsyringe"\>Using Tsyringe],
+  [Since we use typescript, we’ve moved to using https:\/\/github.com/microsoft/tsyringe],
+  [Tysringe allows you to tag a particular dependency as injectable with a decorator, and then very easily get an instance of it.],
+  [At its core, tsyringe provides you a dependency container that keeps track of all your dependencies. When you need to create an instance of a class, you can call resolve on the the container with an injection token and it will return you the right dependency registered under that token.],
+  [Our previous example becomes much easier to manage with this:],
+  [\@ injectable () 
+ class DependencyC { 
+ constructor ( dependencyE , DepedencyE ) {],
+  [} 
+ }],
+  [\@ injectable () 
+ class DependencyA { 
+ constructor ( dependencyC : DependencyC , dependencyD : DependencyD ) {],
+  [} 
+ }],
+  [\@ injectable () 
+ class BusinessLogic { 
+ constructor ( dependencyA : DependencyA , dependencyB : DependencyB ) {}],
+  [private void foo () { 
+ this . dependencyA . action (); 
+ } 
+ }],
+  [\/\\/ Now, all we need to do if we need an instance of business logic, is resolve it 
+ const businessLogicInstance = container . resolve ( BusinessLogic );],
+  [That’s it! All you need to do is tag your classes as injectable and tsyringe can take care of instantiating the whole dependency tree.],
+  [Writing tests also becomes much easier with the framework, when you need to mock a low level dependency, you can just register it with the dependency container, and leave everything else in place.],
+  [To register a mock, you can call registerInstance on the container, and provide it with the injection token you want to replace, and what you want to replace it with. Once you’re done with the mock it can be cleared with clearInstances on the container.],
+  [describe ( ' BusinessLogic ' , () =\> { 
+ it ( ' should call action on dependencyA when foo is called ' , () =\> { 
+ \/\\/ We can mock a class at any level in the dependency tree without touching anything else 
+ container . registerInstance ( DependencyC , mock ());],
+  [\/\\/ dependency A gets a mock version of dependency C during this resolution. 
+ const underTest = container . resolve ( BusinessLogic );],
+  [\/\\/ We can call this now that we're done testing, and the mock will be removed. 
+ \/\\/ When we resolve the instance after this, we get the original dependencies. 
+ \/\\/ In practice, we've found it's easy to just place this in your afterEach block. 
+ container . clearInstances () 
+ }); 
+ });],
+  [Here, DependencyC will be replaced with a mock for the duration of this test, and at the end, when clearInstances is called, it will return to its original form.],
+  [Tsyringe provides some great utilities we’ve been able to leverage to deal with common dependency problems. For instance, its fairly common to have classes that are singletons, and while managing that manually can be a bit difficult, its virtually painless with tsyringe.],
+  [\/\\/ This class will be a singleton, when container.resolve is called 
+ \/\\/ All calls will return the same instance. 
+ \@ singleton () 
+ class MySingleton {],
+  [}],
+  [Tsyringe also contains some great tools for managing the lifecycle of a given dependency. Dependencies can be scoped in a number of different ways. By default, dependencies have the transient scope, which means that every time you resolve this dependency a new instance is created. This can make sense, but also has some performance and memory implications, especially if you have some classes that are large and expensive to construct that aren’t singletons.],
+  [For our dependencies, we found that ResolutionScoped worked in reducing our memory usage. Resolution Scoping means that the same dependency will be reused during a resolution chain, so if you have a class that could need a dependency more than once in its dependency tree, it will only ever be instantiated once.],
+  [id="potential-issues"\>Potential Issues],
+  [There’s a few quirks we’ve learned to navigate with using tsyringe, mostly related to how to register mocks. There are a few ways to register something with the dependency container, the easiest of which is adding the \@injectable() decorator, but you can also manually register something with a call to container.register . This can be useful if you need to register something that’s not a class. An additional note that’s useful in this case, is that your injection token can be a string which can also be helpful if you’re not registering a class.],
+  [If you need to resolve something from a string token in a contstructor, there’s an \@inject decorator you can use to make sure the dependency is automatically resolved.],
+  [class MyClass { 
+ constructor (\@ inject ( ' NonClassDependency ' ) nonClassDependency : NonClassDependencyInterface ) {],
+  [} 
+ }],
+  [One problem with dependencies registered manually can be cleared unintentionally by a call to clearInstances which should be used in-betweeen tests.],
+  [To register a dependency that is unclearable without the decorator, it needs to be registered with useFactory . The factory should be a function that returns the item you want injected.],
+  [describe ( ' MyDependency ' , () =\> {],
+  [it ( ' should not be mocked ' , () =\> { 
+ container . resolve ( MyDependency ); 
+ container . resolve ( OtherDependency );],
+  [container . clearInstances (); 
+ \/\\/ This will fail! 
+ \/\\/ OtherDependency is no longer registered with the container. 
+ container . resolve ( OtherDependency )],
+  [\/\\/ This will be fine, the dependency remains registered after clears 
+ container . resolve ( MyDependency ); 
+ }); 
+ });],
+  [This allows you to register whatever classes or objects you want managed by the dependency container in your application code, and then selectively replace them with mocks, in a given test, and then revert back to the original when the test is done.],
+  [id="wrapping-up"\>Wrapping Up],
+  [Adding tsyringe has definitely made managing our application dependencies and testing code much easier, with a dependency injection framework, we now have a much more manageable solution to dealing with our large dependency tree.],
+),
+  insert-map: (:),
+  word-count: 1567,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+}
+
+{
+  #standard-article(
+  title: [Tinder API Style Guide — Part 1],
+  author: [Tinder],
+  source-name: [Tinder Tech],
+  images: (),
+  paragraphs: (
+  [Tinder API Style Guide — Part 1],
+  [Authored by: Nishant Mittal],
+  [Advisory Group: Vijaya Vangapandu , Devin Thomson , Serge Vartanov and Greg Giacovelli],
+  [API Style Guide Contributors: Nishant Mittal, Xing Wei and Felix Changoo],
+  [Over the past decade, Tinder has experienced exponential user growth. Today, the app processes over 1 billion Likes and Nopes per day . This rapid expansion has been accompanied by the introduction of numerous innovative experiences, such as AI Photo Selector, MatchMaker, Share My Date, Photo and ID Verification, Passport, and Explore, among others.],
+  [To support this scale and complexity, Tinder has undergone a significant organizational transformation. Initially, a few teams managed core services , but the company has since evolved into a structure with specialized, domain-centric teams . These teams include Trust and Safety, Identity, Engagement, Revenue, Recommendations, Chat, Profile, MatchList, Machine Learning, and Infrastructure .],
+  [As new teams were established to develop services and features within their domains, each team organically developed and adopted its own design and development practices. This diversity in methodologies led to material inconsistencies across services from different domains. Below are some of the issues discussed in detail.],
+  [Teams operating autonomously led to inconsistency in service communication. Some used standard HTTP status codes (2xx, 4xx, 5xx), while others returned custom error codes (example: 40001, 40301, 50001, etc) within a 200 status. This confused client applications, made error handling harder , and compromised the reliability of automated monitoring and logging systems dependent on standard codes.],
+  [Challenges in building collaboratively: We faced challenges in collaboration between backend and client teams (iOS, android, web). Backend teams often tailored schemas for their services when publishing new endpoints, making it hard for client teams to reuse them. Due to the delayed feedback loop , clients couldn’t suggest schema changes, leading them to create their own model classes.],
+  [Lack of a Single Source of Truth : When clients maintained their own versions of data models, it led to the emergence of multiple, slightly different sets of models across the system. This fragmentation resulted in no single, authoritative source of truth, complicating maintenance efforts and slowing down feature releases. Additionally, the divergence between what was documented and what was actually implemented in each platform’s model created inconsistencies, leading to potential bugs, miscommunications, and a less reliable system overall.],
+  [Other issues included adoption of inconsistent versioning strategies to release new versions of APIs, unpredictable ways of designing the URI depicting vague purposes of the API and poorly designed API contracts .],
+  [To address these inconsistencies, it became essential to lay down comprehensive documentation to standardize API development practices and enforce the adoption of these standard practices through manual and systematic audits.],
+  [Tinder API Standards],
+  [Almost all Tinder endpoints are designed as RESTful APIs (Representational State Transfer), allowing for scalable and flexible interactions across our platform. In this post, we’ll explore the key standards we follow to create robust, RESTful APIs.],
+  [Designing URIs (Unique Resource Identifiers)],
+  [URI Pattern],
+  [URIs are essential in conveying the nature and behavior of an API, making it crucial to design them thoughtfully. We recommend following the pattern below whenever possible to ensure clear and effective URI design.],
+  [https:\/\/service-mesh-host-name\/ \[version\]/\[service-name\]/\[resource\]/\[sub-resource \]],
+  [Note:],
+  [If the API has the same service name and resource, the URI should include only one (e.g., v2/themes , NOT v2/themes/themes ).],
+  [The URI should clearly reflect the API’s functionality . While the mentioned pattern is a good guideline, it’s not a strict rule — it’s a general approach that works for most URIs.],
+  [Path Prefix — Versioning],
+  [Versioning is a practice to manage changes to the APIs without disrupting the clients . It helps in clearly communicating the changes made allowing consumers to decide when to migrate to the latest version at their own pace.],
+  [Versioning Semantic and Strategy],
+  [At Tinder, we use versioning semantics with a path prefix (e.g., v1, v2 ). Our versioning strategy is to keep the last API version active until all clients migrate to the latest one. When a new version is published, create a sunset plan for the previous version , clearly communicate the timeline to clients, and ensure they are aligned with the migration schedule. Adjust the plan if needed, and continue supporting the last version until all clients have migrated.],
+  [When to publish a new Version of API?],
+  [API versioning should occur only when making breaking changes that require clients to update their code. Non-breaking changes should be included in the existing API version, allowing clients to adopt them at their discretion.],
+  [Let’s review scenarios to determine when to publish new API versions:],
+  [Scenario 1: Migration
+ When migrating from one service to another (e.g., serviceV1 to serviceV2 ), there’s no need for a new API version . Simply change the implementation while keeping the version the same, as there are no breaking changes for clients.],
+  [Scenario 2: Non-Breaking Changes
+ When adding a new field, method (e.g., POST, PUT), or endpoint, these are considered non-breaking changes:],
+  [New Field: No version increment is needed when adding a new field to an existing API.],
+  [New Method or Endpoint: Since no prior version exists, use /v1 as the versioning standard.],
+  [Scenario 3: Breaking Changes
+ Removing a required field, changing a field type, or renaming a field are breaking changes that will impact clients. In these cases, a new API version is required .],
+  [Note:],
+  [Versioning of the endpoint has no linking to the service version or versions of other endpoints under that service.],
+  [Each endpoint is independently versioned.],
+  [For example, if there are two endpoints under a service (ex: recs). Each endpoint can follow its own versioning as shown below depicting the current version of each endpoint.],
+  [GET /v2/recs/profiles],
+  [GET /v3/recs/core],
+  [In the above example, /v2/recs/profiles is on version v2 which depicts that its current version is v2 and there would have been a v1 version at some point in the past. Similarly, /v3/recs/core is on version v3 which depicts that its current version is v3 and breaking changes have been added twice to this API.],
+  [Versioning for Breaking Changes: Publish a new version only for breaking changes ; include non-breaking changes in the existing version.],
+  [Document Version Changes: Clearly document changes in each API version through API documentation (e.g., Swagger).],
+  [Communicate Migration Timelines: Communicate migration timelines to clients and keep the older version active until all clients have transitioned.],
+  [Path — Service, Resource and Sub-Resource Naming],
+  [The path of the URI includes the service name, resources and sub resources. Below example is],
+  [Important URI Path Design Guidelines],
+  [Keep Path Segments Short: Ensure that URI path segments are concise and easy to understand.],
+  [Use Plural Names for Resources : Represent collections with plural names (e.g., /resources). This convention signifies that the endpoint represents the entire collection of resources.],
+  [For example, performing a GET /resources will typically return the full collection. Conversely, a GET /resources/{id} will retrieve a specific resource from that collection. Additionally, POST /resources is used to add a new item to the collection, reinforcing the idea that the URI represents a group of related entities.],
+  [Follow Kebab-Casing: Kebab casing enhances the readability of URIs by clearly separating words with hyphens (-). Therefore adopt kebab-casing for URI paths (e.g., word1-word2).],
+  [Avoid Implementation-Specific Extensions: Do not include implementation-specific extensions in URIs (e.g., .php, .html, .py).],
+  [Below is an example of forming a URI based on above guidelines:],
+  [GET /v1/consent-management/consents/{consent-id}],
+  [In this example, v1 is the version of the endpoint, consent-management is the service name, consents is a resource. This API will retrieve a specific consent corresponding to the consent-id from the consents collection.],
+  [Use of Nouns in URIs],
+  [When designing URIs, use nouns for resources and sub-resources, not verbs. HTTP methods (GET, PATCH, POST, PUT, DELETE) already define the action (CRUD operations) on the resource. Including verbs like “get,” “update,” or “delete” in the URI makes the HTTP method redundant.],
+  [Path Suffix — Path Parameters and Query Parameters],
+  [Path parameters are used to locate a resource. Below are a few examples of using path parameters.],
+  [GET /v1/passport/locations/{location-id}],
+  [In this example, passport is the service name, locations is the resource, location-id is a path parameter, and it locates a unique location. We can also have more than one path parameter in the URI.],
+  [GET /v1/passport/locations/{location-id}/profiles/{profile-id}],
+  [In this example, location-id and profile-id are both path parameters. It locates a specific profile for a particular location. Also note that locations is a resource and profiles is a sub-resource under locations.],
+  [Query parameters are used mainly for providing additional attributes for querying i.e. query resources with additional conditions. Below are some examples of using query parameters.],
+  [GET /v1/users?status=active],
+  [The above example shows that we are trying to locate users who have status as active.],
+  [GET /v1/users?status=active&days=20],
+  [As shown above, we can have more than one query parameter .],
+  [Important Guidelines for Path and Query Parameters],
+  [Avoid Using Query Parameters to Alter Resource State: Refrain from using query parameters to change the state of a resource. For example creating a user using a query parameter is a bad example as shown here: GET /v1/users?mode=create],
+  [Use Query Parameters for Data Manipulation: Utilize query parameters for filtering, sorting, searching, and pagination.],
+  [Keep Query and Path Parameters Short: Ensure that both query and path parameters are concise and easy to understand.],
+  [Do Not Include Sensitive Information in Query or Path Parameters: URLs are often logged in server logs, browser history, and third-party monitoring tools. Including sensitive information in the URI can expose this data to unauthorized access and increase security risks.],
+  [HTTP Method],
+  [REST APIs enable all kinds of web applications to support all possible CRUD (create, read, update, delete) operations. Use the information below to find a suitable HTTP method for the action performed by the API.],
+  [Exception: When to Use POST instead of GET for Resource Retrieval?],
+  [In certain scenarios, teams may opt to use the POST HTTP method instead of GET for reading resource information. This approach, although unconventional for retrieval operations, is sometimes necessary to accommodate specific requirements. For clarity and self-documentation, any POST requests used for querying should append /query to their URI path, making their purpose explicit.],
+  [Scenarios for Using POST Instead of GET],
+  [Case 1: Complex or Large Query Data],
+  [When the query parameters are complex or voluminous, a GET request might not be suitable due to URI length limitations or the inability to include extensive data in headers. For example, retrieving information for multiple resources in a single request or passing complex nested objects might exceed the practical limits of a URI. In such cases, a POST request is more appropriate, as it allows the data to be included in the request body, bypassing the constraints imposed by GET.],
+  [Case 2: Sensitive Information Handling],
+  [GET requests append query parameters to the URI, which can expose sensitive information. Since URIs are often logged by servers or intermediaries, including sensitive information in a GET request could lead to security risks. To mitigate this, a POST request can be used, placing the sensitive query data within the request body instead of the URI, thereby reducing exposure. In these cases, combining the POST method with a /query path ensures that the intent remains clear, even though the operation is primarily retrieving data.],
+  [URI Length : Consider the maximum URI length supported by different browsers and servers when deciding between GET and POST.],
+  [Idempotence : Remember that while GET requests are idempotent by definition, POST requests are not inherently idempotent. Design your API in a way that ensures idempotent behavior if necessary for the client’s use case.],
+  [Exception: When to use POST instead of DELETE for Resource Deletion?],
+  [According to the latest updates in the RFC 7231, Section 4.3.5 , the DELETE method is not recommended to carry a request body. This limitation can pose challenges when a deletion operation requires the client to specify complex criteria or additional information that cannot be conveyed via URI parameters alone. In such cases, leveraging the POST method can be a practical alternative.],
+  [Scenarios for Using POST Instead of DELETE],
+  [When a DELETE operation necessitates passing complex data, such as a detailed object that defines specific conditions for the deletion, a POST request should be used instead. To clearly indicate the intent of the operation, it is recommended to append /deletion to the URI path. This convention makes the operation self-documenting, allowing developers to easily understand that the endpoint performs a deletion-like action.],
+  [Idempotence : While DELETE operations are generally idempotent, POST requests are not. Ensure that the deletion logic behind the POST request can handle repeated requests without unintended side effects.],
+  [URI Path Naming : Consistently using the /deletion suffix for such operations helps maintain clarity across your API, making it easier for developers to understand and use your endpoints correctly.],
+  [Documentation : Clearly document the rationale for using POST instead of DELETE, including the structure of the expected request body and any special behavior associated with the /deletion endpoint.],
+  [Standard request headers are a set of predefined headers that are widely used in RESTful APIs over HTTP to convey important metadata and control the behavior of both the client and server during the request-response cycle. These headers facilitate a consistent and predictable interaction between the client and server, ensuring that both parties adhere to the expected protocols and standards.],
+  [Below are some examples of standard headers:],
+  [Custom headers are non-standard HTTP headers that are specific to a system, application, or organization. These headers are typically used to transmit application-specific metadata or control information that isn’t covered by the standard HTTP headers. Custom headers allow developers to extend the capabilities of HTTP, tailoring it to meet the specific needs of their applications.],
+  [Naming Conventions for Custom Headers at Tinder],
+  [At Tinder, we follow a structured naming convention for custom headers by prefixing them with X-Tinder- . This practice ensures that our custom headers are easily identifiable, reducing the risk of conflicts with future standardized headers and maintaining consistency across our API implementations.],
+  [Rationale behind using custom headers],
+  [Avoiding Conflicts : By using a unique prefix like X-Tinder- , we ensure that our custom headers do not collide with standard headers or those used by other applications or frameworks.],
+  [Self-Documentation : The X-Tinder- prefix immediately indicates that the header is a custom one, making it easier for developers working with the API to understand its origin and purpose.],
+  [Enhanced Functionality : Custom headers allow Tinder to implement features or carry metadata that are not supported by standard headers. For example, custom headers can be used for tracking, custom authentication mechanisms, feature flags, or version control.],
+  [Below are some examples of custom headers:],
+  [At Tinder, we’ve standardized request tracing by generating a unique identifier for each request and injecting that as a custom header. The Tracer module in the shared repository uses Mapped Diagnostic Context (MDC) to populate these headers. Our in-house logging library then captures application-specific logs and trace IDs using these MDC trace variables.],
+  [In Part 1 of this blog, we examined the challenges Tinder encountered in maintaining their API ecosystem, along with the standards they apply to URI design, HTTP methods, and request headers. In Part 2, we’ll delve into Tinder’s API standards concerning request and response bodies, status codes, and the tools and methods used to enforce these standards, ensuring consistency across all Tinder APIs.],
+  [Editor’s Note: In this article, we explore the challenges Tinder faces in building and maintaining robust and scalable APIs, emphasizing the importance of adhering to API standards . We’ll discuss the specific standards Tinder follows and the tools and methods we use to ensure these standards are consistently applied.],
+  [We’ve divided this exploration into two parts. In Part 1, we’ll address the challenges related to maintaining APIs, focusing on standards around URI design, HTTP methods, and request headers . Part 2 will delve into standards concerning request/response bodies and status codes , along with the tools and methods Tinder employs to enforce these standards. Whether you are an engineer, a tech lead, or an executive, understanding these principles will provide valuable insights into the critical role of API standards in today’s fast-paced technological landscape.],
+  [Tinder API Style Guide — Part 1 was originally published in Tinder Tech Blog on Medium, where people are continuing the conversation by highlighting and responding to this story.],
 ),
   insert-map: (:),
   word-count: 2734,
@@ -804,435 +533,28 @@ It’s starting by giving 25-50 people \$1,000 per month. ( Gizmodo )],
 
 {
   #standard-article(
-  title: [Deploys at Gamechanger],
-  author: [GameChanger],
-  source-name: [GameChanger Tech],
-  images: (),
-  paragraphs: (
-  [At GameChanger, being able to deploy our changes quickly and reliably has always been important. Over the past few months on the platform team, we’ve been working to build a simpler and more reliable deployment pipeline to support our product teams in shipping code with speed and reliability.],
-  [In this post, I’ll go over the system that we have in place now, and some of our recent improvements.],
-  [id="how-deploys-our-work"\>How deploys our work],
-  [id="high-level-overview"\>High Level Overview],
-  [At a high level, the core of our deployment process involves shipping a docker image to some EC2 instances, and then starting a container with that image.],
-  [Our main code repository contains a Dockerfile with the required configuration for our live app. After each new commit to our main code repository, Our CI process will docker build a new image with a new tag, and push it to our internal docker registry. During a deploy, we pull that image on the relevant EC2 instances, and start a container with it. Once we have a running container, we register that EC2 instance with a load balancer, and start serving traffic.],
-  [While the high level is straight forward, there’s a lot of work that goes into making sure our deployments happen safely, and at the right time.],
-  [Once a new image has been pushed to our registry by our CI process, we need to notify all our currently running instances that there’s a new version to deploy. Each commit corresponds to a new docker tag that’s created during the build. Once the tag is created, we notify our internal deployment service of the new version. Once our tag is pushed, and our deployment service is aware of it, we tell our deployment service to start a deploy, which will send a message to all of our running EC2 instances.],
-  [id="serf-messages"\>Serf Messages],
-  [We use Serf to send that message out without needing to directly contact every instance. The message we send contains a role and environment . The role is the name of a docker image we want to deploy a new version of, and environment will be production or staging depending on where this deployment is headed.],
-  [Through the Gossip protocol , the Serf message will propagate across our entire cluster in a short period of time, but only the boxes that are responsible for deploying the specified image do anything when they get the message. That’s because each box runs a serf agent, which listens for our messages and is given Serf tags when it’s initially provisioned. Serf tags allow us to associate a box with the docker images that should be deployed there. In our infrastructure, each box has a images tag, which is a list of docker images that should be deployed there. We’ll only start a deployment when the serf tags match the details in the deployment message.],
-  [Serf also allows you to configure event handlers for certain messages. An event handler is just a script that executes when a certain serf message is received by an instance. Each of our boxes has the same event handler for deploy serf messages, which is what starts the execution of our deploy script.],
-  [id="deployment-locking"\>Deployment Locking],
-  [Before we can start creating the new containers, we need to make sure that it’s safe to start the deployment. During our deploy process, our live containers will stop serving traffic and be removed from our load balancers for a period of time. Since all of our instances receive the deploy message at the same time, they could all start deploying at once, and bring down our application until the deployment is done. In order to make sure that doesn’t happen, we use a locking system to ensure only 1/3rd of our boxes for any given service can be deploying at once.],
-  [First, each box uses serf to figure out the current size of the deployment (how many instances are involved) based on the environment and service name. Serf has a built in members command that allows us to see all of the other boxes that are active and running serf agents. We use this and the serf tags to get the count of live boxes we are going to deploy on. We also store this number in a redis key, and decrement it whenever a box is done deploying, so that when it reaches 0, we know a deployment is completely finished.],
-  [Once we have that, we know how many locks should be available, and each box will simultaneously try to acquire the first deployment lock. Each “lock” is represented by a single redis key with a suffix. We start with 1 as the first lock suffix, and increment from there. We use a SET NX to represent acquiring a lock, which will set a key only if it does not already exist. With only 1 instance of redis, only 1 box can succeed at this operation. The box that successfully sets the redis key will have acquired a deployment lock.],
-  [The box that succeeds can start deploying, and the rest of the boxes, will try acquiring other deployment locks by if they are available (since we only deploy a 3rd at a time, there are only cluster size / 3 locks available). If there are other locks available, the rest of the boxes will try incrementing the lock key suffix, and attempt to acquire the next lock key.],
-  [If there aren’t any locks available, the remaining boxes will poll redis until a lock frees up. Once a box is done deploying, it will release the lock it held by deleting the redis key it created.],
-  [If there’s an issue during deployment, or a box freezes or shuts down, we don’t want to prevent future deployments, so we set a TTL on the lock key of 15 minutes, to prevent holding up any deployments if we have to terminate an instance.],
-  [Once a box has a deployment lock, it can start running our deployment script. Since our serf message doesn’t contain which tag we want to deploy, we first reach back out to our deployment service, which tells us which tag to pull from the registry. Once we know the right tag, we can pull it and start some containers. Each of our boxes is provisioned with a docker-compose file, that tells us what containers we need to run on that box, what environment variables they need, and how they’re connected. The deployment script uses docker-compose to understand how to start up our container and it’s dependencies.],
-  [Because each service has it’s own compose file, starting up an application and it’s dependencies is as simple as running docker-compose up -d],
-  [If everything goes well, after our container starts up, the instance will register with our load balancers, and start serving traffic!],
-  [id="blocking-bad-deploys"\>Blocking bad deploys],
-  [Before some recent changes, when we started a deployment, we would continue deploying to all of our infrastructure even if there were issues with the image. In cases where we might be deploying a faulty release, there was no way to stop it from rolling out to all of our boxes first, even if we had a fix ready to go.],
-  [One of the recent improvements we’ve made, has been preventing bad deploying from rolling out to all of the boxes for a service. Since we only deploy a 3rd of the cluster at a time, there’s no sense in continuing to roll out deploys that we know are broken.],
-  [To make this work, we take advantage of our locking mechanism. If a deploy is broken (for example: if we can’t start a container with our new image), we set a special key in redis that all of our currently deploying boxes look for as they’re waiting for a lock to become available, telling them to cancel the deployment. Once this key is set, the other instances stop deploying, and call out to our deployment service to mark this release as “broken”.],
-  [This new feature also allows us to make sure deploys work in lower environments first before automatically promoting them to production. Our pipeline will first, kick off a deploy to a staging environment, and if there are no issues, automatically kick off the production deploy.],
-  [id="wrap-up"\>Wrap Up],
-  [Our recent improvements have added some reliability and more visibility into our deployment pipeline, but the system is still evolving. Down the line, we’d like to look at tying in our APM metrics to deployment, and improving our detection of “broken” releases. We’re continuing to work on delivering a best in class deployment system to support shipping releases as quickly and reliably as possible!],
-),
-  insert-map: (:),
-  word-count: 1438,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-}
-
-{
-  #standard-article(
-  title: [Tinder’s migration to Elasticsearch 8],
-  author: [Tinder],
-  source-name: [Tinder Tech],
-  images: (),
-  paragraphs: (
-  [Authored by: Igor Sokolov, Jessica Hickey, and Rongxin Du],
-  [Elasticsearch is a distributed, free and open search and analytics engine for all types of data, including textual, numerical, geospatial, structured, and unstructured.],
-  [Elasticsearch powers the Recommendations (further referred to as Recs ), Trust & Safety capabilities and logging systems at Tinder. Over 90% of all our Recs comes from a single Elasticsearch cluster.],
-  [At Tinder Recs, Elasticsearch (further abbreviated as ES ) provides two core capabilities:],
-  [Filter-based search : an ability to sift through millions of user profiles to find candidates based on location, age, interests and other preferences.],
-  [Advanced ranking using our custom Tinder ES plugin : an ability to apply custom scoring algorithms using ML models for personalized and engaging user experiences.],
-  [Tinder ES plugin is a crucial in-house technology that allows us to run complex, observable, efficient and testable scoring algorithms written in Java. The blog posts “ How We Improved Our Performance Using ElasticSearch Plugins: Part 1 ” and “ How We Improved Our Performance Using ElasticSearch Plugins: Part 2 ” shed light on some major aspects of the Tinder ES plugin.],
-  [Drivers Behind the Migration Effort],
-  [Since Tinder’s launch, Elasticsearch has been a cornerstone technology powering our Recommendation system. It served us well during the early days, but by 2021, a combination of technical debt accrued over time and a focus on other critical parts of Tinder’s infrastructure left our Elasticsearch setup increasingly strained. These challenges not only impacted the engineering team’s efficiency but also hindered Tinder’s ability to leverage cutting-edge advancements in search technology.],
-  [Operability and Maintainability Challenges],
-  [By 2021, the core Elasticsearch clusters were still running a version 6, that was quickly approaching its end-of-life. This created substantial risks for maintaining stability. However, the more pressing issue was that Elasticsearch 6, along with its legacy customizations, had become a bottleneck in Tinder’s tech stack. For example, debugging a specific MLeap model loading issue consumed nearly two months of engineering time, which was a symptom of the fragility of our setup and the inefficiency of dealing with an aging infrastructure.],
-  [Adding to the complexity was the original cluster deployments that relied heavily on Puppet, custom scripts, and manual EC2 instance provisioning. This meant that any operational incidents or scaling efforts drained significant Cloud Ops resources, turning what should have been routine tasks into time-consuming, error-prone processes. There was also no integration with our in-house Infrastructure as Code (IaC) framework, Scaffold, forcing all changes to go through manual JIRA-based workflows. This approach not only slowed iteration, but also introduced inconsistencies between production and non-production environments.],
-  [Staying Modern and Competitive],
-  [Beyond maintainability, we saw an urgent need to modernize our search capabilities to stay competitive in the dating app space. Advancements in Elasticsearch 7 and 8, such as embedding-based retrieval and first-class vector search support, represented a leap forward in enabling more data-driven, personalized recommendations. These features were critical for Tinder to deliver the best possible user experience and keep pace with other apps serving similar audiences.],
-  [Additionally, staying modern meant embracing performance optimization opportunities. The newer Elasticsearch versions, built on advancements in Lucene , brought significant improvements developed by some of the best minds in the Java and search community. These enhancements were designed to boost cluster performance, improve response times, and increase stability, which in turn could lower infrastructure costs. This modernization was particularly important at Tinder’s scale, where efficiency and performance directly impact user experience and operational costs.],
-  [Strategic Considerations for Staying with Elasticsearch],
-  [During our analysis, one key question emerged: should we continue our journey with Elasticsearch, or should we consider alternatives like OpenSearch or other search technologies?],
-  [After thorough evaluation, we decided to stay with Elasticsearch for several reasons:],
-  [Custom Plugin Advantage : A core part of Tinder’s Recs system relies on a highly customized Elasticsearch plugin and the ability to run custom Java scoring scripts. Migrating to AWS OpenSearch managed service would have meant losing this flexibility, as custom plugins were not supported at the time.],
-  [Kubernetes Support : Building a self-service platform for Elasticsearch, akin to a managed cloud service, was a key goal for this migration. While OpenSearch offered Kubernetes support, it was relatively immature at the time, making Elasticsearch the better choice for achieving our operational objectives.],
-  [Institutional Knowledge : Tinder had already invested significantly in developing expertise around Elasticsearch. This institutional knowledge, combined with Elasticsearch’s position as one of the leading open-source search engines, made it the logical choice for us to continue building on.],
-  [By addressing the operability challenges and modernizing our infrastructure, we could elevate Elasticsearch to a platform-like experience, reducing the operational burden and unlocking new opportunities for innovation. This migration wasn’t just about staying current; it was about enabling Tinder’s engineering teams to move faster, iterate more efficiently, and ultimately deliver better experiences to our users.],
-  [Elastic Cloud for Kubernetes at Tinder],
-  [Kubernetes support has been a cornerstone of Tinder’s infrastructure strategy, making it a natural choice to manage Elasticsearch clusters using the same ecosystem. Integrating Elasticsearch into our Kubernetes ecosystem also allowed us to align with our in-house Infrastructure as Code framework, Scaffold, ensuring a seamless and unified provisioning experience. By configuring clusters and indexes with simple YAML files, we aimed to empower owning teams with self-service capabilities.],
-  [Elastic Cloud on Kubernetes ( ECK ) provided the ideal solution as a Kubernetes operator developed by Elastic to manage components like Elasticsearch, Logstash, and Kibana. With ECK, we could declare Elasticsearch clusters as Kubernetes objects, and the operator ensured safe execution of operations such as bootstrapping, configuration changes, and scaling.],
-  [In 2021, we began managing Elasticsearch indexes through Scaffold, which became the first step in tackling the larger challenge of cluster migration. While ECK offered robust support for basic cluster operations, we had to address several challenges to align it with Tinder’s requirements. This included:],
-  [Integrating ECK with Scaffold for automated and dynamic Kubernetes deployments.],
-  [Implementing transit encryption within our service mesh.],
-  [Enabling autoscaling mechanisms to optimize resource usage.],
-  [Managing ephemeral storage safely in a Kubernetes environment.],
-  [By 2022, we successfully deployed our first ECK-managed cluster into production. This marked the foundational step in building Tinder’s Elasticsearch platform and set the stage for broader adoption. It also established a collaborative effort between Cloud Ops and the Recs Infra team to enhance the platform further, including adding support for the Tinder ES plugin and initiating the Recs Elasticsearch 8 migration.],
-  [Recs ES 8 Migration challenges],
-  [The major challenges related to the Recs clusters migration involved both infrastructure and application-level complexities:],
-  [Breaking changes: One of the biggest challenges was adapting to the prohibition of negative scoring in ES8, which required a significant overhaul to preserve the existing ranking order and maintain ecosystem stability.],
-  [Ecosystem KPI risks: Tinder’s complex sender-receiver ecosystem (swiper and swipee) meant that any ranking changes could significantly impact user experience. Minimizing these risks and ensuring neutral or positive ecosystem KPI changes was a top priority.],
-  [Customization and technical debt: Over the last six years, significant customizations had been developed, including 100+ scoring scripts with minimal test coverage. The loss of institutional knowledge compounded the difficulty of maintaining these customizations during the migration.],
-  [Cluster diversity and management: ES clusters were distributed across multiple Rec teams, each with unique usage patterns and applications, making a uniform migration strategy impractical.],
-  [We approached these challenges with the mindset of turning them into opportunities:],
-  [Delivering new capabilities: We leveraged the migration to introduce business-critical features, such as Elasticsearch Approximate Nearest Neighbor (ANN)/K-Nearest Neighbors (KNN) search to enable advanced deep learning capabilities.],
-  [Platformization: The migration was an opportunity to democratize the Tinder ES plugin, which had previously been limited to the Recs Infra team. This effort enabled other teams to leverage the earned knowledge and capabilities independently, reducing reliance on Recs Infra for new initiatives. By creating a scalable and reusable foundation, we aimed to empower teams to self-serve their Elasticsearch needs and accelerate innovation.],
-  [ES migration framework],
-  [One of the critical goals we defined was to establish a reusable ES migration framework. We recognized that this wouldn’t be a one-time migration effort. While major version upgrades are expected every 2–3 years, even minor ES version updates — expected to occur multiple times a year — carry a significant risk of business impact if issues arise. To mitigate this, we aimed to create a repeatable process that would instill confidence and ensure smooth application of changes across all upgrade scenarios.],
-  [Given the diversity in cluster size and purpose, a “one-size-fits-all” approach proved ineffective. For instance, one of our smallest clusters, used for name lookups (e.g., colleague names), does not warrant the same rigor as our primary Recs cluster. To address this, we developed a migration template with recommended stages and steps. Teams could tailor the process based on the cluster’s specific nature and use cases, opting to follow all stages or focusing on a minimum viable path. Additionally, we created a suite of tools to streamline these stages and steps. The next sections delve deeper into these stages and the tools we developed.],
-  [Stage 1: Achieve Data Consistency (Write Path)],
-  [The first stage focuses on the write path, aiming to establish eventual consistency between the new and old Elasticsearch clusters.],
-  [The key prerequisite is having a single source of truth containing all updates related to the Elasticsearch cluster. In our case this was a Kafka topic used as a Stream as it is defined in the well known Confluent “Stream-table duality” primer . The process follows four main steps:],
-  [Create the new cluster and the associated worker.],
-  [A new Kafka worker gets a new consumer group with the latest position, initially configured to log messages without sending them to the new cluster. Once the logs are verified for correctness, the worker’s consumption is paused.],
-  [2. Backfill data.],
-  [A custom backfill job (called esreindexjob) is triggered to copy data from the old cluster to the new one. This job leverages the Elasticsearch reindex API , enhanced to handle multiple indices (e.g., geo-sharded clusters — see details Geosharded Recommendations Part 1: Sharding Approach ) and apply slicing for parallelized reindexing even in case of cross-cluster replication (not supported out the box).],
-  [3 . Resume real-time updates],
-  [After the backfill job completes, the Kafka worker is unpaused and begins sending updates to the new cluster. This ensures that all changes missed during the backfill are applied. Once the Kafka worker catches up, the new cluster achieves eventual consistency with the old one.],
-  [4. Verification.],
-  [The last step is to perform two type of checks:],
-  [Automated checks : A custom data consistency verification job retrieves random document IDs from one cluster, fetches those documents from both clusters, and compares them field by field. Metrics track mismatches, which should only occur for frequently updated fields (e.g., last active time).],
-  [Manual checks : Additional comparisons are conducted by analyzing document slices based on criteria like cohorts or last active dates. This provides confidence that the two clusters are aligned or nearly identical.],
-  [Stage 2: Offline Evaluation],
-  [As highlighted in the Migration Challenges section, we encountered several complexities:],
-  [Selective ES usage: While Elasticsearch offers extensive capabilities, Tinder Recs relies on only a subset.],
-  [Knowledge gaps: Over time, maintaining comprehensive documentation of all search functionalities became challenging due to accumulated tech debt and organizational changes as engineers transitioned to new opportunities, resulting in some gaps in knowledge. Over time, tracing all utilized search functionalities became difficult due to engineers leaving the company, leading to partial knowledge loss.],
-  [Evolving usage patterns: Recs capabilities and approaches have evolved, influenced by changes in user behavior and system requirements.],
-  [Customizations at risk: Our custom components (e.g., loader plugin, scoring scripts) depend on internal ES APIs and external libraries, which are prone to silent changes that could cause breakages during migration.],
-  [To address these challenges, we decided to leverage production traffic. This approach ensured that we focused only on actively used ES functionalities while enabling realistic performance evaluation and tuning, avoiding reliance on potentially misleading synthetic tests.],
-  [Given the high impact of real-time logic injection, we started by relaying a portion of production traffic to the new ES cluster.],
-  [We designed the solution with the following goals:],
-  [Minimal production impact: Using a non-blocking, best-effort transmission approach to prevent disruptions.],
-  [Non-intrusiveness: Avoiding code changes or redeployment of running services.],
-  [Flexibility: Allowing traffic relay to start/stop dynamically and process only a controlled fraction of requests.],
-  [Scalability: Ensuring compatibility with a clustered and highly distributed environment.],
-  [We identified three theoretical points where traffic could be intercepted and relayed to the test Tinder ES cluster:],
-  [Before reaching the search service — intercepting incoming search traffic.],
-  [Inside the search service — capturing search events at the application level.],
-  [After reaching the ES cluster — intercepting raw HTTP requests to Elasticsearch.],
-  [The picture below illustrates that:],
-  [At the same time, we explored two major approaches for relaying traffic:],
-  [Event-based replay: Sending events to a messaging system (e.g., Kafka, Redis Streams) and replaying them through an external service.],
-  [HTTP mirroring: Copying original HTTP packets to another socket in memory with optional modifications and no intermediate data storage.],
-  [After careful evaluation, we opted for the event-based replay approach from within the Search Service. While HTTP mirroring via a service mesh is widely used in the industry (e.g., Shadow mirroring with Envoy by Mark Vincze , Traffic Shadowing With Istio: Reducing the Risk of Code Release , Advanced Traffic-shadowing Patterns for Microservices With Istio Service Mesh by Christian Posta ), we chose the more controlled and flexible method of sending and receiving events. Our key reasons included:],
-  [Greater control and reusability: Persisted production traffic allows for controlled replay and debugging.],
-  [Infrastructure complexity: HTTP mirroring required significant investment in Tinder’s scaffold/mesh capabilities (e.g., Envoy request mirror policy with percentage control via etcd).],
-  [Request modifications: We needed the ability to modify queries before sending them to the new cluster to validate scoring logic changes and iterate quickly. We had low confidence that envoy Lua scripting would provide sufficient flexibility, making a dedicated relay application the more viable option.],
-  [As a result, we adopted the approach illustrated in the diagram below:],
-  [The diagram illustrates two critical aspects that offline evaluation must address:],
-  [Correctness : Ensuring that the custom scoring logic functions as expected in the new ES cluster. The objective is to verify that replacing the underlying scoring platform does not alter the recommendation outcomes.],
-  [Performance : Verifying that the Recs system remains compliant with the internal Service Level Agreement (SLA), maintaining a seamless user experience. While the new ES version was expected to offer performance improvements, we needed to confirm that our legacy scoring logic leveraged up-to-date mechanisms rather than inefficient workarounds that could degrade performance.],
-  [Offline correctness evaluation],
-  [During the offline correctness evaluation, a small percentage of production traffic was captured, storing both the Elasticsearch request and its response in each event. The ES offline evaluation tool processes the captured Elasticsearch request, modifies it as needed, sends it to the new ES cluster, and compares the received response against the original using two approaches:],
-  [Set-based comparison : The search results (hits) are treated as an unordered set of user numbers. The algorithm measures how many users appear in the response from the old ES cluster versus the new version. While this metric provides a broad sense of discrepancy, it has limitations, as recommendation candidates typically number in the thousands, but users primarily engage with only the top-ranked results.],
-  [List-based comparison using Levenshtein distance : Search results are compared with their respective positions considered. The Levenshtein distance algorithm helps prevent skewed metrics due to minor shifts early in the list. To emphasize the importance of top-ranked candidates, we applied bucketing techniques — comparing only the first 20 results, the first 100, etc. This ensured that discrepancies in the most visible results carried more weight than those buried deeper in the ranking.],
-  [Offline performance evaluation],
-  [For offline performance evaluation, a significant portion of sampled production search traffic was routed to the ES evaluation tool, capturing only the search request. The same request modifications used in correctness evaluation were applied here. The primary focus was on ES cluster CPU utilization, response times, and overall stability. With the test ES cluster running at a controlled fraction of the main Recs cluster’s load, we performed both load and stress tests, yielding several key insights:],
-  [Performance improvements : The Elasticsearch and Lucene communities have made substantial optimizations since Elasticsearch 6. Across our primary search queries, response times improved by 8% to 33%. While a few much simpler queries with typical small hit size showed a significant increase (more than 50%), their overall impact remained negligible and well within SLA compliance.],
-  [Optimal node sizing : Larger but fewer data nodes performed better. We started with c6id.8xlarge and later scaled up to c6id.16xlarge. Given our CPU-intensive recommendation algorithms, larger nodes improved resource allocation efficiency while reducing overhead from redundant data copies and coordination tasks.],
-  [Merge policy tuning : Since our geo-sharded indices are significantly smaller than typical log or metric datasets, adjusting merge.policy.segments\_per\_tier from 10 to 5 reduced CPU usage and improved response times.],
-  [Parallel query execution stability : Initially, we disabled parallel search execution due to indexing load-induced exceptions, suggesting race conditions. The parallel search query execution was as a long-standing community request ( \#80693 — Concurrent Searching ) and was enabled by default in ES 8.12. Testing later versions (8.15 and beyond) confirmed the resolution, allowing us to safely re-enable parallel execution.],
-  [Geo-Sharding Re-Evaluation],
-  [As part of our offline performance optimization, we reassessed our Elasticsearch geo-sharding approach . Originally implemented to address scaling challenges six years ago, geo-sharding provided clear benefits but also introduced long-term maintenance costs, including:],
-  [Shard imbalance over time : We have to invest engineering resources into a custom tool to periodically rebalance geo-shard distribution and allocations.],
-  [Limited compatibility with standard connectors : Technologies like Kafka Connect Elasticsearch connector and Apache Camel Elasticsearch component obviously have no support for our custom geo-sharded setup.],
-  [Constraints on exploring alternative search technologies : Geo-sharding made evaluating alternative search engines and vector databases more complex.],
-  [After extensive testing, we concluded:],
-  [Geo-sharding remains advantageous : It continues to deliver significant CPU savings compared to a single-index approach (12% CPU utilization vs. 50%).],
-  [Increasing shards per node : Raising the number of shards per node from 3 to 14 had minimal impact on resource consumption while ensuring smoother load distribution and reducing the risk of overload during traffic spikes.],
-  [Doubling primary shards for compute-heavy workloads : Increasing primary shards from 1 to 2 nearly doubled CPU usage but improved response times for scoring-heavy queries by 25–30%. This adjustment enables future adoption of more computationally demanding models while maintaining p99 SLA compliance by parallelizing search tasks.],
-  [These findings helped refine our ES migration strategy, ensuring both performance improvements and operational scalability for Tinder Recs moving forward.],
-  [Stage 3: Online Evaluation and Cutover],
-  [At this stage, we had identified and resolved all discrepancies stemming from ES6 to ES8 behavior changes and finalized the optimal ES cluster configuration to meet our performance expectations with high confidence. While offline evaluation allowed us to efficiently detect and address functional and non-functional issues, it was conducted in a controlled environment rather than the actual services generating production search traffic. To bridge this gap, we introduced an additional “online” evaluation step to validate that the integration of ES8 within our services functioned correctly in real-world conditions.],
-  [Correctness was assessed using the same key metrics from offline evaluation; however, this phase was designed to eliminate the iterative explore-fix-explore cycle. Instead, the expectation was that all major issues had already been addressed, making this a validation step rather than a discovery phase.],
-  [Given the potential impact of any migration-related issue on Tinder’s search and recommendation systems, we prioritized minimizing risk to business KPIs. To ensure a smooth transition, we adopted a phased rollout approach, implementing the migration through three waves of A/B testing. This strategy allowed us to closely monitor system behavior and confirm that the migration had no negative impact on key business metrics.],
-  [Complete Migration of Recs ES Clusters],
-  [After an extensive and meticulously planned migration process, all Recs Elasticsearch clusters have successfully transitioned to ES8. This was accomplished with zero outages and a data validation discrepancy of less than 0.2% , ensuring continuity and reliability for Tinder’s recommendation system.],
-  [The migration to ES8 has enabled Tinder to leverage cutting-edge search and recommendation features, including:],
-  [k-nearest neighbor (kNN) vector search , unlocking new potential for AI-driven recommendations.],
-  [Two-Tower (2T) Deep Learning models experimentation , enhancing the personalization of user recommendations:],
-  [The 2T P(Match) experiment resulted in a +6.5% match rate increase and a +22% match volume lift .],
-  [The 2T P(Like) experiment led to a +3.8% Swipe Right Rate (SRR) increase .],
-  [Profile embeddings similarity search , allowing real-time “MoreLikeThis” functionality to recommend similar profiles dynamically.],
-  [Establishing the Tinder Elasticsearch Platform],
-  [The migration paved the way for the Tinder Elasticsearch platform , which is now primed for company-wide adoption . This standardized platform reduces operational complexity and facilitates scalable growth across teams.],
-  [Significant efficiency improvements were realized through:],
-  [Million plus dollar annual cost savings , achieved through optimized infrastructure and resource allocation.],
-  [Faster iteration cycles , enabling 13 iterations of the Tinder ES plugin and 4 Elasticsearch version upgrades , ensuring that we remain at the forefront of search technology.],
-  [Performance and Stability Enhancements],
-  [Achieved a 12% — 56% reduction in p99 search latency , greatly improving response times for users.],
-  [Enhanced cluster stability , reducing operational burden and minimizing incident response times.],
-  [Increased Network Costs (Cross-AZ Traffic)],
-  [While the migration delivered numerous benefits, it also introduced additional cross-AZ network costs due to the following fact:],
-  [The ECK migration expanded from 3 to 4 availability zones , ensuring higher availability and resilience.],
-  [Increased replica shards distribution to improve load balancing.],
-  [Elasticsearch deprecated shard allocation-aware search routing in favor of adaptive replica selection (see Elastic issue \#60236 ).],
-  [These migration outcomes not only improved Tinder’s recommendation capabilities but also established a scalable, high-performance search platform, ensuring continued innovation and optimization for the future.],
-  [Tinder’s migration to Elasticsearch 8 was originally published in Tinder Tech Blog on Medium, where people are continuing the conversation by highlighting and responding to this story.],
-),
-  insert-map: (:),
-  word-count: 3709,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-}
-
-#article-row((
-  [
-    standard-article(
-  title: [TED is bringing its learning model to the legal profession – here’s why],
-  author: [TED Staff],
-  source-name: [TED Blog],
-  images: (),
-  paragraphs: (
-  [This January, TED is introducing TEDLaw, a new training experience designed to help lawyers step back from constant urgency and reconnect with the judgment, values and human insight that define meaningful legal practice.],
-  [Legal work has always required rigor, discipline and technical skill. But the context in which lawyers operate has changed — rapidly and irreversibly.],
-  [Over the past several months, in conversations with lawyers across sectors, we’ve heard the same thing: today’s most complex challenges are no longer solved by technical expertise alone. They require ethical judgment, collaboration across differences, cultural awareness and the ability to navigate emerging technologies like AI with care and responsibility.],
-  [At TED, we start with a simple belief: ideas change how people see the world — and how they act within it. That belief has shaped how TED engages educators, scientists, artists, technologists and global leaders. With TEDLaw, we’re applying that same learning philosophy to the legal profession.],
-  [TEDLaw is not a traditional training program; it doesn’t begin with rules, slides or checklists. Instead, it creates space for lawyers to step back, encounter powerful ideas and reflect on how those ideas shape judgment, leadership and professional identity. From there, participants engage in facilitated dialogue and real-world simulations that mirror the complexity of modern legal practice.],
-  [This approach reflects something we see across TED’s work: sustainable change doesn’t come from information alone. It comes from perspective shifts, shared reflection and the opportunity to test new ways of thinking in real-world contexts.],
-  [The TEDLaw experience is organized around five interconnected areas that consistently emerged from our conversations with legal professionals:],
-  [style="font-weight: 400;"\> Navigating Legal Identity and Values],
-  [style="font-weight: 400;"\> Critical Thinking for Legal Solutions],
-  [style="font-weight: 400;"\> Intuitive Collaboration in Law],
-  [style="font-weight: 400;"\> Cultural Competence in Legal Practice],
-  [style="font-weight: 400;"\> Practicing Law in the AI Age],
-  [Together, these pillars reflect a broader truth that the future of legal practice depends not only on what lawyers know but also on how they reason, relate and lead.],
-  [To bring this work to legal leaders at scale, TED is collaborating with organizations deeply embedded in the profession. Through a partnership with the ACC Foundation, TEDLaw will initially reach in-house legal leaders, creating space for reflection, peer learning and candid conversation about what it means to practice law well in a changing world.],
-  [Looking ahead, TEDLaw will also expand to law firms and other legal communities, extending TED’s learning model across the broader legal ecosystem.],
-  [At its core, TEDLaw is a fresh approach to legal education, one that’s rooted in listening, curiosity and a belief that even in a rule-bound profession, ideas still have the power to change everything.],
-  [Beginning in 2026, law firms will also have the opportunity to host TEDLaw training in partnership with TED and the ACC Foundation, extending this learning experience across the broader legal ecosystem. Learn more about TEDLaw .],
-),
-  insert-map: (:),
-  word-count: 474,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-  ],
-  [
-    standard-article(
-  title: [Oil imports from the Middle East, by country],
-  author: [Nathan Yau],
-  source-name: [FlowingData],
-  images: (),
-  paragraphs: (
-  [Lazaro Gamio and Josh Holder for the New York Times break down energy imports by country and the percentage that comes from the Middle East .],
-  [It seems likely that these percentages will swing one way or another in the near future, but variable width bar charts are my statistical chart weakness. Total energy, in dollars, is on the y-axis, and the share of that from the Middle East, by percentage, is on the x-axis. There are a set of four charts for Asia, Europe, Africa, and the Americas, with consistent scales across the set.],
-  [Tags: imports , New York Times , oil],
-),
-  insert-map: (:),
-  word-count: 103,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-  ],
-), ruled-indices: (1,))
-
-#article-row((
-  [
-    standard-article(
-  title: [A unique NASA satellite is falling out of orbit—this team is trying to rescue it],
-  author: [Stephen Clark],
-  source-name: [Ars Technica OpenForum],
-  images: (),
-  paragraphs: (
-  [BROOMFIELD, Colorado—One of NASA's oldest astronomy missions, the Neil Gehrels Swift Observatory, has been out of action for more than a month as scientists await the arrival of a pioneering robotic rescue mission.],
-  [The 21-year-old spacecraft is falling out of orbit, and NASA officials believe it's worth saving—for the right price. Swift is not a flagship astronomy mission like Hubble or Webb, so there's no talk of sending astronauts or spending hundreds of millions of dollars on a rescue expedition. Hubble was upgraded by five space shuttle missions, and billionaire and commercial astronaut Jared Isaacman—now NASA's administrator— proposed a privately funded mission to service Hubble in 2022, but the agency rejected the idea.],
-  [Swift may be a more suitable target for a first-of-a-kind commercial rescue mission. It has cost roughly \$500 million (adjusted for inflation) to build, launch, and operate, but it is significantly less expensive than Hubble, so the consequences of a botched rescue would be far less severe. Last September, NASA awarded a company named Katalyst Space Technologies a \$30 million contract to rapidly build and launch a commercial satellite to stabilize Swift's orbit and extend its mission.],
-  [Read full article],
-),
-  insert-map: (:),
-  word-count: 194,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-  ],
-  [
-    standard-article(
-  title: [Study: Sycophantic AI can undermine human judgment],
-  author: [Jennifer Ouellette],
-  source-name: [Ars Technica OpenForum],
-  images: (),
-  paragraphs: (
-  [We all need a little validation now and then from friends or family, but sometimes too much validation can backfire—and the same is true of AI chatbots. There have been several recent cases of overly sycophantic AI tools leading to negative outcomes, including users harming themselves and/or others . But the harm might not be limited to these extreme cases, according to a new paper published in the journal Science. As more people rely on AI tools for everyday advice and guidance, their tendency to overly flatter and agree with users can have harmful effects on those users' judgment, particularly in the social sphere.],
-  [The study showed that such tools can reinforce maladaptive beliefs, discourage users from accepting responsibility for a situation, or discourage them from repairing damaged relationships. That said, the authors were quick to emphasize during a media briefing that their findings were not intended to feed into "doomsday sentiments" about such AI models. Rather, the objective is to further our understanding of how such AI models work and their impact on human users, in hopes of making them better while the models are still in the early-ish development stages.],
-  [Co-author Myra Cheng, a graduate student at Stanford University, said she and her co-authors were inspired to study this issue after they began noticing a pronounced increase in the number of people around them who had started relying on AI chatbots for relationship advice—and often ended up receiving bad advice because the AI would take their side no matter what. Their interest was bolstered by recent surveys showing nearly half of Americans under 30 have asked an AI tool for personal advice. "Given how common this is becoming, we wanted to understand how an overly affirming AI advice might impact people's real-world relationships," said Cheng.],
-  [Read full article],
-),
-  insert-map: (:),
-  word-count: 301,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-  ],
-), ruled-indices: (1,))
-
-{
-  #standard-article(
-  title: [Join us at TED2026 in Vancouver, April 13–17],
-  author: [TED Staff],
-  source-name: [TED Blog],
-  images: (),
-  paragraphs: (
-  [The future has never felt more volatile. Politically, technologically and culturally, the rules are being rewritten. At TED2026 we’re upping our level of ambition and conducting a global search to identify the most powerful speakers from every corner of planet Earth. They’ll share ideas that change everything in a program brimming with the world’s greatest innovators, dreamers, creators and doers — focused on building no less than a better future for all.],
-  [Join us in Vancouver, BC, Canada, April 13–17, for TED2026 and hear from:],
-  [Keith Coleman , VP of product at X],
-  [Sylvia A. Earle , Ocean scientist],
-  [Jonathan Haidt , Social psychologist],
-  [Maya Higa , Content creator for wildlife conservation],
-  [Steve Huffman , Cofounder and CEO of Reddit],
-  [Yinka Ilori , Designer of joy],
-  [Van Jones , TV host, author, changemaker],
-  [Azusa Murakami , Artist],
-  [Keke Palmer , Multihyphenate entertainer],
-  [Malala Yousafzai , Nobel laureate, education activist],
-  [… and more than 70 other speakers illuminating the path forward in tech, culture, climate and what’s next],
-  [TED2026 is more than a conference; it’s the grand finale of an unforgettable chapter in Vancouver. This year, we’re pulling out all the stops. Get ready for a week of immersive experiences, powerful storytelling and a joyful send-off to the city that’s been our home for more than a decade. Over the course of a transformative week of ideas and connections, experience thought-provoking TED Talks each day and customize your schedule with hands-on workshops, Discovery Sessions and interactive spaces that ignite meaningful human connection. From the electric moments in our iconic theater to the magic of spontaneous connections that become lifelong friendships, every detail has been designed to inspire, uplift and celebrate.],
-  [Learn more and apply to attend »],
-),
-  insert-map: (:),
-  word-count: 286,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-}
-
-{
-  #section-label([Analysis])
-  #standard-article(
-  title: [On Thin Ice],
-  author: [M Jackson],
-  source-name: [Grist],
-  images: (),
-  paragraphs: (
-  [class="has-drop-cap has-default-font-family"\>Upstairs, right outside my toddler’s room, hangs this striking, blue-blue print of an Icelandic glacier ice cave: the Crystal Ice Cave, circa 2015, long since vanished. My friend Þorri took the image and gifted it to me during one of my many stays over the last 20 years.],
-  [class="has-default-font-family"\>My son visits the print often. When he was about a year-and-a-half, he pointed to it and confirmed, “blue.” Add two more years and the name of the glacier, “ Breiðamerkurjökull, ” rolls off his tongue. Lately, just like he asks about my husband and me and our cats and the mailbox and the couch, he asks about the glacier in the picture. How is Breiðamerkurjökull feeling today? Sad? Hungry? Happy? OK?],
-  [class="has-default-font-family"\>This gets fraught quickly. I’m a writer and a glacier scientist — I’ve spent the bulk of my career working on, in, and around this particular glacier system, trying to understand what is happening to it, how people and communities respond to its changes, and how the future of this glacier impacts humanity worldwide.],
-  [class="has-default-font-family"\>Between 1982 and 2020, nearly 3 miles of this glacier’s physical body dissolved away into the sea . This current rate of melt is rapid and unnatural, and as it accelerates, more tubes and tunnels form within the glacier body, what we call moulins in glaciology but everyone else calls “ice caves.”],
-  [class="has-default-font-family"\>My wee son is far from the only person to be captivated by ice caves. They’re among the most stunning, otherworldly, transcendent places on Earth. People worldwide are drawn to experiencing them, a quest paradoxically made more possible and more perilous by climate change. This desire for ice caves is part of a much larger phenomenon known as “last-chance tourism”: that impulse many people have to see — and consume — fragile environments before they irrevocably transform in our lifetimes. Unsurprisingly, an entire industry has emerged to monetize this desire.],
-  [‘To some, entering a passageway into a glacier is absurd and dangerous. To others, it’s a fast lane to adventure and awe — or even wealth.’],
-  [class="has-default-font-family"\>Those dangers became fatal in 2024, when an ice cave on Breiðamerkurjökull collapsed. Scores of Icelandic first responders, park service rangers, and tourists were traumatized. A young pregnant woman was hospitalized in critical condition. And a 30-year-old American man, who just wanted to see that blue-blue, was killed.],
-  [class="wp-block-ups-image-inner"\> Dr. M Jackson stands inside the Sapphire Ice Cave on the east side of Breiðamerkurjökull in September 2021. Now, all that remains is dead ice underneath the mountain, partly covered and preserved by screes.
- Þorvarður Árnason],
-  [class="has-drop-cap has-default-font-family"\>It was late summer in Iceland, August 2024, and I was on assignment with National Geographic. For over a decade, I’ve worked as a National Geographic expert , traveling across all seven continents to translate environmental science for diverse audiences.],
-  [class="has-default-font-family"\>At the time, I was traveling with a group in the north, near the famed fishing village of Siglufjörður, and was about to tuck into my fourth latte of the afternoon when the text messages came flooding in. It was a friend in Reykjavik: “Did you see the ice cave accident?”],
-  [‘A boom rang out. A crack.’],
-  [class="has-default-font-family"\>Iceland, at its heart, is a small community on a big, chilly volcanic island. People generally know one another, and it’s a safe place, which explains why, even though I was in the north, my phone was pinging like hail on a tin roof. Every Icelandic person standing near me in the coffee shop stood still as well, glued to their phones, absorbing and sharing the shocking news coming from the south.],
-  [class="has-drop-cap has-default-font-family"\>For the uninitiated, ice caves are almost impossible to believe until you’re standing in one. They are the bluest of blues, Neptune’s seeping heart. Imagine a frozen sea holding all possible luminous blue that upon closer inspection vanishes to clear. Over the years, I’ve seen people weep in awe. Laugh joyously. Become mute, contemplative. Verbose in wonder. All happy to be in an ice cave.],
-  [class="has-default-font-family"\>I taught my toddler what a glacier was by reading aloud from the children’s book, Angela’s Glacier , and by the time he could talk, he could recite that a glacier is a moving body of land ice and snow that persists year after year.],
-  [class="has-default-font-family"\>Ice caves are part of that “moving body of land ice” definition — but they rarely persist beyond a year or two. The ice cave I have a picture of in my hallway and the Blue Flame ice cave that collapsed in 2024 have both melted away.],
-  [class="has-default-font-family"\>Glaciers constantly change — they move, grow, oscillate, melt. And in summer, when the bare hide of the glacier body is exposed to the atmosphere — think here, when the ice is not furred with protective winter snow — surface ice undergoes phase change, transforming to water vapor or meltwater. The meltwater flows with gravity until it hits an area of ice weakness — a fracture, bend, low point, or crack. And the water then works the weakness until it bores a tunnel into the ice.],
-  [class="has-default-font-family"\>Somewhat ominously, my go-to glacier text defines an ice cave as any large cavity formed by meltwater beneath a glacier, and takes pains to note in the four-sentence definition that “roof collapse is common.”],
-  [class="wp-block-ups-image-inner"\> A group of tourists in October 2015, one of the last years when it was possible to enter the Waterfall Ice Cave. This cave has now melted away. 
- Þorvarður Árnason],
-  [class="has-default-font-family"\>It can be overwhelming to attempt to make sense of the ice cave industry in Iceland — a gyre of local companies and bigger Reykjavik companies and third parties and the park service and response services and families and personal relationships and grudges and unpaid debts and alliances old and new. Together, they form a dense, volatile network plagued by conspiracy theories, videos of guides attacking one another, tales of infidelity and financial irregularities, burnout and high turnover, and clashing views of safety and other priorities that make as little sense to an outsider as it does to locals.],
-  [class="has-default-font-family"\>How the industry is now is not how it started. When I first came to Iceland’s south coast in the early 2000s, tourism was just a small industry. In the summer, you could take a glacier walk with a bustling group of five or ride an empty tractor out to see puffins. Winter tourism didn’t really exist. The intrepid, well-heeled few could hire a respected local alpinist, Einar Rúnar Sigurðsson, to guide them up Hvannadalshnúkur, Iceland’s tallest peak. He also occasionally took photographers into winter glacier features like moulins or crevasses.],
-  [class="has-default-font-family"\>But in 2010, two things redrew the maps entirely. First, the volcano Eyjafjallajökull erupted, halting European air travel for six days and beaming images of Iceland’s stunning countryside into billions of homes worldwide. Tourists saw accessible waterfalls, moss, black sand beaches, and blue-white glaciers. Then second, Instagram launched, and a whole new breed of iPhone-trotting tourists was born.],
-  [class="has-default-font-family"\>Tourism to Iceland exploded. By 2024, nearly 2.3 million visitors arrived into a country of nearly 400,000, outnumbering Icelanders 6 to 1. Imagine: Millions of people flying, ferrying, and cruising to the island, renting hotels and cars and guides, eating and drinking, buying hand-knitted wool sweaters, and contributing to a tourism economy valued in 2024 alone at around \$3 billion.],
-  [class="has-default-font-family"\>The glacier Breiðamerkurjökull emerged as the epicenter of glacier tourism, mainly due to the quasi-man-made lagoon at its terminus called Jökulsárlón — a proglacial lake chock-full of freshly calved and photogenic icebergs that crowd up on an exit to the sea that happens to be right along the main road.],
-  [class="has-default-font-family"\>Ice cave companies once operated during a conservative four- to five-month period from November to March, when the ice was mostly snow-covered, with very little water visible, and temperatures stayed cold consistently. Companies communicated with each other to ensure a positive tourist experience, and worked within the limits of their own capacities.],
-  [class="has-default-font-family"\>But in the past decade, that window has been pushed wider — and it’s math, rather than science, that explains why. In 2025, approximately 30 contract-holding ice cave companies were charging around \$200 per person, operating groups with 14 tourists per one guide, and offering two or three departures per day. Whether we’re talking Icelandic krona or U. S. dollars, the amounts stagger into the millions and billions quickly.],
-  [class="has-default-font-family"\>Given the money at stake, the expansion of the ice cave season beyond the original 120-day winter window was almost inevitable. What began as a tightly honored, safety-led access period stretched in those early years first by weeks, then by months, until now it is a year-round activity — repackaged and marketed in multiple forms, though the terrain itself has not changed: These are still ice caves, and what few rules governing them vary widely across Iceland.],
-  [class="has-default-font-family"\>Regardless of your perspective or position in the glacier knowledge ecosystem — if you’re an ice cave company, guide, ranger, tourist, researcher, anyone — the science remains the same: Ice caves are erosional and weak glacier features. They are never truly static nor stable any time of the year.],
-  [class="has-default-font-family"\>Icelandic glaciologist Magnús Tumi Guðmundsson and colleagues first reported the dangers of ice caves in 2017 . He and his team then repeated their findings seven years later when it was clear the warning had gone unheeded. Both reports argue that tours to ice caves should never be conducted in the summer because the features’ primary function is to be major conduits for large and often unpredictable flows of water. The scientists list complex dangers, including propensity for sudden ice collapse, meltwater flooding, hidden shafts, avalanches, toxic gases, and more. If ice cave tourism must be allowed, the reports concede that such tours should happen only in the winter, when conditions are cold and marginally more stable with no visible flowing water, no thawing, no recent rain, no warm weather, etc. Such conditions, additionally, need to be assessed by an expert, or a guide who has achieved a certain level of training .],
-  [class="has-default-font-family"\>I asked my glaciological colleagues their thoughts, and one, a seasoned ice core scientist, laughed. She said ice caves any time of the year are “never a 100 percent safe feature to go into,” adding that you “couldn’t pay me enough to go in one in the summer.”],
-  [class="has-default-font-family"\>“They are playing with fire,” Guðmundsson told a local paper not long after the fatal collapse. “If you go climbing on your own or with friends, and you decide to explore a cave, then taking the risk is a personal decision. However, there is a fundamental difference between somebody doing something on their own, and selling a trip to people that you claim is safe, but is not.”],
-  [‘What do those cuts mean, to the glacier itself — to a glacier already imperiled, already melting at unnatural rates?’],
-  [class="has-default-font-family"\>Even back in the beginning days of the industry, locals told me about the pressures they felt from mass tourism. What began as an effort to offer a unique glacier experience gradually shifted toward moving tens of thousands of paying customers into the ice each season.],
-  [class="has-default-font-family"\>Companies operated at capacity almost constantly — then were pushed beyond it. First, to take larger groups, then to add departures. One tour a day became two, then some days three. Growth was driven increasingly by non-local operators and third-party booking platforms, which pressured local companies to deliver on the reservations they sold. Larger companies based in Reykjavik — think here any name that pops up if you Google “ice caves in Iceland” — even started operating their own ice cave tours, cutting out local partners.],
-  [class="has-default-font-family"\>Soon, the pressure wasn’t just on group size or departures, but on the length of the ice-cave season itself. What had once been a tightly observed safety window was forced — first by weeks, then by months — into year-round access that began to feel not exceptional, but expected.],
-  [class="has-default-font-family"\>I asked a park ranger how Vatnajökull National Park defines an ice cave — a question with deep implications since the park oversees all glacier tourism within its boundaries. “We call an ice cave a cave that is under the ice,” he said. “That term, it can be stretched.”],
-  [class="has-default-font-family"\>Today, not only are ice cave companies operating beyond the seasonal limitations professionals have recommended, but some are now going a step further: If they locate a small feature in a glacier — a hole, a cavity, a crevasse — they are “augmenting” it. Enhancing it.],
-  [class="has-default-font-family"\>Guides have long practiced safety work for visitors — cutting steps into ice, kicking down snow, or removing dangerous features. But several people from different companies described to me the use of generators, drills, blowtorches, chainsaws, and other heavy equipment on the glacier itself. One explained, “If a cave shows up in a day, you know there’s heavy equipment. … This community is tiny. Of course, everybody knows who’s using power tools.”],
-  [class="has-default-font-family"\>Glaciers are always changing, and even I have pushed, chopped, and cut ice to achieve access or make something safer while I’m working. But where do we draw the line? As a glacier scientist and a human being, I haven’t been able to get past the question of what a gas-powered blowtorch can do to the physical body of a glacier. Or a set of Makita drills, chainsaws, or heavy-duty excavation equipment.],
-  [class="has-default-font-family"\>What do those cuts mean, to the glacier itself — to a glacier already imperiled, already melting at unnatural rates? Is this violence? Is this desensitization? Is it just business? Is the scale too small to matter?],
-  [class="has-default-font-family"\>In Reykjavik, tourists can visit Perlan and explore a fully man-made ice cave, complete with blue lighting and piped-in frigid air. No one pretends it’s natural. But on a wild glacier, shouldn’t an ice cave be natural? When a glacier is drilled, blowtorched, and marketed inaccurately to meet demand, what exactly is being sold? And where is our responsibility alongside it?],
-  [class="has-default-font-family"\>Many described the months leading up to the collapse as tense, largely attributed to the unrelenting number of summer tourists and pressure from outside companies. Every company had to decide: Would they risk operating ice cave tours in the hot summer?],
-  [class="has-default-font-family"\>Ice Pic Journeys, a company co-owned by Americans Mike Reid and Ryan Newburn, decided it was worth the risk. And on Sunday, August 25, 2024, two guides for Ice Pic, one of whom was new to glacier guiding and not yet certified, were assigned the afternoon trip with 25 tourists. They met the group at Jökulsárlón, drove them as close to the ice as possible, parked, and geared up with helmets and crampons.],
-  [class="has-default-font-family"\>Another tour company was already at the ice edge, heading to Blue Flame. In a statement to police, the guides noted two other companies had been to the cave in the days before, doing what was described as “maintenance work.”],
-  [class="has-default-font-family"\>The Ice Pic group headed toward Blue Flame, the tourists stepping clumsily in their crampons. It was, by all accounts, a typical and pleasant late summer day. Balmy. One of the guides went ahead of the group to chop out better steps into the ice cave. Then, the entire group descended, walking past a large overhanging wall of ice.],
-  [class="has-default-font-family"\>When I look at pictures later of the scene, what strikes me is the color of the ice. It’s dirty, covered in seasonal sediments — dark black particulates that hold heat and exacerbate surface melt. The ice itself is mostly white, as expected for summer surface glacier ice actively ablating. It’s full of air, like styrofoam — not dense like typical glacier ice, which is so compressed it squeezes out air and scatters short wavelengths of light, which reads as blue to you and me. This ice at Blue Flame had barely any hints of blue.],
-  [class="has-default-font-family"\>But the Ice Pic tourists didn’t know this, and, likely, neither did the guides. So they spread out. One tourist, an American from Austin, Texas, on a trip with his 10-year-old daughter, walked around and back up onto the surface of the glacier, where he had a view down into the ice cave. Two other Americans, a couple on their one-year wedding anniversary, posed for pictures directly in front of the ice wall. The two Ice Pic guides met with a guide from another company and discussed hazards and future cave maintenance. Then the other guide started to leave with his group.],
-  [class="has-default-font-family"\>Over the years, I’ve spent a lot of hours on, in, and sleeping atop, glaciers. They are constantly sounding off from shifts happening somewhere within, from a collapse, ice flow redirection, the shuffling of crystals and conduits and crevasses. The sounds tend to have the same effect on me — loud cracks stop me instantly in my crampons, accelerate my pulse, make the spiders guarding my brain stand at exquisite, painful alert.],
-  [class="has-default-font-family"\>At the boom, the new Ice Pic guide turned and saw the ice wall fall as a single piece — straight toward the American couple. It shattered on impact, like a car windshield.],
-  [‘My first thought was, “So it finally happened.”’],
-  [class="has-default-font-family"\>The next moments were blurry. The guide thought he saw two more helmets disappear under the ice. But he wasn’t sure. Then, as the icedust cleared, he saw the young woman prone on the ice, gasping, still alive. Her first words are recorded in the police statement: “I’m pregnant. I can’t breathe.”],
-  [class="has-default-font-family"\>The two guides pulled pieces of glacier off her to get her free. Then, they tried to excavate her husband, Jeffrey Ayco, but could not. The guide from the other company rushed back, and then so did a few tourists. There was, apparently, a medical doctor in the group. Everyone tried to help.],
-  [class="has-default-font-family"\>With their ice axes and bare hands, they hacked at the ice, piece by piece, and gradually cut Ayco free. His body was crushed, but they began CPR anyway, because, as the guides later told the police, they had to do something. And they could not see if there was anyone else under the ice.],
-  [class="has-default-font-family"\>Just before 3 p.m., the Icelandic emergency services received a 112 call and issued a Search and Rescue alert for a mass casualty incident. The initial report stated the incident involved a group of 25 tourists and two guides, ice fall, and the possibility of people trapped underneath. All across Iceland, phones lit up, text notifications flooded in. GPS coordinates and radio channels were given. And then hundreds of search and rescue volunteers rushed to Breiðamerkurjökull and the summer ice cave and the tragedy that awaited.],
-  [class="has-default-font-family"\>The volunteers — highly skilled, trained to respond to this type of incident — convened at the ice cave alongside regional police, park service rangers, Coast Guard, and many others. The injured pregnant woman was loaded into a Coast Guard helicopter and flown to Reykjavik. Her husband was declared dead.],
-  [class="has-default-font-family"\>But what about the other people under the ice? Almost immediately, it became clear that no one knew how many additional people were missing. The two Ice Pic guides did not have a firm count of the actual number of people on their tour. They said there had been two no-shows, but then, perhaps two walk-ons had jumped in? Was it really 25? Were the two helmets he saw solo travelers, out on the ice on their own? The freshman Ice Pic guide was likely in shock, questioning what he’d seen, uncertain if there were more injured under the ice.],
-  [class="has-default-font-family"\>Search and rescue volunteers got to immediate work. In the tight quarters of the collapsed ice cave, volunteers used the least disruptive hand tools to remove, piece by piece, cubic tons of broken glacier ice. If there were people underneath, they did not want to risk further injury.],
-  [class="has-default-font-family"\>Twenty-four hours went by. Bus drivers and school teachers and bartenders and sheep farmers and tour guides and scientists and park rangers and mothers moved ice by hand. Secondary trauma built  as muscles strained and tempers frayed and some questioned if they were digging for ghosts. They chipped apart a glacier, block by block, carrying each piece out and away by hand, and again, again, again. This time, not to create an ice cave and make money, but now, possibly, to save a life.],
-  [class="has-default-font-family"\>The Chief Superintendent for the South Iceland Police gave a statement to the media. “Ice cave tours happen almost the whole year,” he said . “These are experienced and powerful mountain guides who run these trips. It’s always possible to be unlucky. I trust these people to assess the situation — when it’s safe or not safe to go … This is a living land, so anything can happen.”],
-  [class="has-drop-cap has-default-font-family"\>I understand how it happens. We agree on a fact. New variables emerge. More data arrives. What we thought we knew shifts. That, initially, is what attracted me to science, the idea that knowledge moves forward.],
-  [class="has-default-font-family"\>But here, the shift didn’t move toward better understanding propped up by the best science. It reversed. Ice caves, especially summer ice caves, once clearly labeled dangerous, were slowly reclassified as safe, likely at the same time companies fully grasped how lucrative they could be.],
-  [class="has-default-font-family"\>After the collapse, the Icelandic Tourism Board resisted calls to regulate the industry, insisting safety was the tour operator’s responsibility. For the glaciers inside its boundaries, Vatnajökull National Park did introduce new safety and permitting processes for companies. Operators now need to send the chief ranger pictures and make official requests to do maintenance or hazard mitigation. “And then I send back, yes, you can do this, or no, you cannot do this, but, you can only use the power tools after hours,” the former park service chief ranger told me. “I put restrictions on, and I just have to trust that they follow them.”],
-  [class="has-default-font-family"\>Locals on the south coast are trying. They convened Fagráð, a committee composed of highly experienced people from different sectors of the glacier industry, including commercial operators, tourism associations, and guiding organizations, alongside associated members from the park service, the local municipality, and other observer positions. Fagráð’s purpose is to provide guidance, oversight on safety matters, and education for all issues of glacier and ice cave tourism on the south coast. In one of its first acts, Fagráð sponsored the launch of a portal set up for ice cave operators, called GLACIS. It’s a user-friendly database, intended for trained professionals, that lists every accessible ice cave in the south coast region. When I clicked around a demo of GLACIS, I could easily upload general cave information, images, directions for access, tourist capacity, time-stamped ratings and safety assessments, and other critical information. Anything guides, rangers, and operators upload is anonymous, but, important to the success of the portal, users with specific credentials such as Lead Guide or Park Ranger may assign a status to an ice cave: “go,” “caution,” “warning,” or “no go.”],
-  [class="has-default-font-family"\>The park has decided in concert with the ice cave industry that all companies must comply with the GLACIS status of an ice cave. Companies found accessing “no go” caves in the national park risk having their contracts revoked.],
-  [class="has-default-font-family"\>In essence, GLACIS is a community of honesty for the ice caves, a Wikipedia for shared glacier knowledge, where operators have access to community-generated and expert-vetted facts. The administrator of GLACIS told me, “We are still trying to figure it out, because as one would expect it’s never perfect and people like to complain. But the end goal is very simple: facilitate better communication and situational awareness for everybody involved.”],
-  [class="has-default-font-family"\>But what I keep getting stuck on is the simple fact that summer ice caves aren’t OK. Ice caves aren’t OK. Breiðamerkurjökull is not OK. None of the glaciers are. Just because millions of people want to spend millions of dollars to see the ice before it’s gone doesn’t mean it should happen, or that it’s safe. The financial incentives that rewards pretending otherwise are not OK.],
-  [class="has-default-font-family"\>From a glaciological standpoint, an ice cave is not an attraction. It’s a hydrological conduit carved by melt, shaped by temperature, water, and gravity. It is destined to fail. And as glaciers increasingly destabilize and melt accelerates, these features will grow larger and more numerous, even as they become increasingly unstable and dangerous. Even winter, once a margin of safety, is no longer reliably cold.],
-  [class="has-default-font-family"\>Where Blue Flame stood in 2024 is now loose gravel. The part of the glacier body that held it is now gone — fully melted some 18 months later and a whole lot of strife since.],
-  [class="has-default-font-family"\>For decisionmakers, that means following the science that says ice caves should only be accessed in real winter — while real winter still exists in Iceland — and closing the regulatory loopholes that allow unsafe practices to persist. It means reducing the outsize influence of third-party booking platforms and shifting power back toward local expertise, safety, and accountability.],
-  [class="has-default-font-family"\>And the next time my son — who is the mirror image of me — wobbles to a stop at that blue-blue image and asks if the glacier is OK, I’ll answer differently.],
-),
-  insert-map: (:),
-  word-count: 5060,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-}
-
-{
-  #standard-article(
-  title: [Achieving long-term retention of GPs will require funding, support, and a reduction in workload demands],
+  title: [Practising medicine in the virtual world—continuity of care is even more important],
   author: [julietwalker],
   source-name: [The BMJ Blog],
   images: (),
   paragraphs: (
-  [The shortage of general practitioners in the NHS is widely acknowledged , but this has not resulted in the kinds of changes that will make a difference. Last week, Martin Marshall, c hair of the Royal College of General Practitioners, spoke out about the current crisis in general practice . He highlighted how the shortage of GPs, coupled with increased patient demand, is leaving many GPs feeling that they cannot provide a safe level of care. As a result, many GPs are leaving the profession as a consequence of burnout, or are taking early retirement.],
-  [As part of our work at the Policy Research Unit in Behavioural Science , (a member of a National Institute for Health Research programme to deliver policy related research), we summarised the evidence about what motivates GPs to take early retirement and reduces occupational participation . We considered the strategies that may prevent withdrawal from the work force and help support increased GP recruitment especially in rural areas. We were also interested in the evidence of effectiveness for behavioural insights, aka nudge-style interventions.],
-  [The findings of our report were clear . GP work is increasingly stressful, forcing many to opt for early retirement. The financial arrangements allow many to do so. Golden handshakes alone won’t fix rural recruitment. And behavioural insight interventions are highly unlikely to play any effective role in keeping GPs in the profession.],
-  [The determinants of stress are numerous: excessive workload, fear of litigation, the administrative and emotional burden of medical revalidation, job dissatisfaction, poor work-life balance, and pessimism about the future of the profession. Qualitative research revealed a number of factors which all contribute to feelings of stress and anxiety among GPs—the emotional toll of managing patients’ psychosocial needs; abusive or confrontational patients; a practice culture characterised by conflict or bullying; working in isolation without support; work role demands, specifically a fear of making mistakes; managing patient complaints, appraisal, revalidation, CQC inspections, and financial pressures faced by partners .],
-  [Recruitment and retention in rural areas is complex . Multi-dimensional approaches may be more successful than those relying on financial incentives alone, as lifestyle or personal values are highly influential. Locations of family, partner or spouse were factors that were prioritised over financial incentives to accept a rural post, as well as the ability to control working hours, professional development, a preference for larger practices, paid holiday, and assistance with partners employment and childcare .],
-  [Behavioural insights tend to focus on automatic, often unconscious decisions. Instead of supporting individuals to make decisions where they will weigh-up costs and benefits, behavioural insights focus on configuring options to account for human fast thinking . For example advocating a policy intervention that makes changes to the context in which individuals make decisions, rather than attempting to change how individuals feel about/react to contexts. To this extent there are limited opportunities to reduce early retirement, as the choice to retire is conscious and not passive. This was backed-up by the limited number of studies and the modest evidence of effect. However, organisational initiatives that might help physicians deal with stress , include coping strategies, and reflective groups, in addition to configuring work to enable part-time and/or flexible working.],
-  [Will the covid-19 pandemic be the catalyst to deliver the seismic change to GP working practices? The additional pressures created by the pandemic, as well as changes to pensions, and a lack of funding, are all counterproductive to long term retention. GP leaders are also unimpressed with their perceived lack of support for clinical practice .],
-  [GPs want to work and they are vital. Their compassion and dedication has shone through in the response to covid-19. But achieving long-term retention, and reversing the decline in GPs’ morale, will take more than a nudge . It will require funding for more doctors, nurses, and support staff, pension reform, a reduction in workload demands, and additional mental health support. The will of GPs is clearly present, but the environmental conditions are missing.],
-  [Vivi Antonopoulou , Louis Goffe , Aikaterini Grimani and Carly Meyer are all post-doctoral researchers for the NIHR Policy Research Unit in Behavioural Science.],
-  [Falko Sniehotta is professor of Health Psychology & Behavioural Medicine at the Universities of Newcastle and Twente and Director of the NIHR Policy Research Unit Behavioural Science],
-  [Michael P Kelly is a s enior visiting fellow at the Department of Public Health and Primary Care, University of Cambridge],
-  [Ivo Vlaev is a professor of Behavioural Science at the University of Warwick],
-  [Competing interests : none declared.],
-  [Funding statement : This project is funded by the National Institute for Health Research (NIHR) [Policy Research Programme (Policy Research Unit in Behavioural Science PR-PRU-1217-20501). The views expressed are those of the author(s) and not necessarily those of the NIHR or the Department of Health and Social Care.],
-  [The post Achieving long-term retention of GPs will require funding, support, and a reduction in workload demands appeared first on The BMJ .],
+  [If the covid-19 pandemic has taught us all one thing, it is the value of human relationships. More than ever before, doctors, nurses, and all allied healthcare professionals are working virtually via telephone and video consultations, changing the way that we relate to our patients. Guidelines have sprung up telling us how to do this better, but something fundamental is missing: continuity of care. \[1\]],
+  [The importance of continuity of care has been amplified for me during the pandemic, both as a patient with type 1 diabetes for 35 years, and as a paediatric diabetologist. As a patient, I don’t want to have to repeat my story every time I see a new doctor, especially the difficult things that need discussing. As a doctor, how do I learn whether the advice I gave was correct, and how do I find out what my patient really wants from me, or when to gently nudge them in a different direction or provide reassurance? Knowledge of the patient allows me to be a better doctor, to give an individual approach, rather than responding to a blood glucose value.],
+  [Plenty of evidence exists about the benefits of continuity of care across many health conditions and ages. It improves satisfaction, reduces unnecessary referrals, and lowers mortality. \[2,3\] Continuity will matter more to some patients (and doctors) and more in certain conditions, than others. Some will sacrifice continuity if it means a long wait. Others who find the relationship therapeutic as much as the medicine, will rank continuity more highly. Managing and understanding that must be central to the discussion.],
+  [A snapshot online survey of 80 paediatric diabetes consultants in the UK, collected for a debate on continuity of care, during the British Society of Paediatric Endocrinology annual conference , identified that only 47% of consultants are able to practise continuity of care, despite the acknowledgement that it was important for their continued professional development and job satisfaction, and for their patients.],
+  [So if continuity is known to be beneficial, why is it not practised more often? One barrier is infrastructure and training: how do junior doctors get experience without moving to different specialties and clinics? If consultants need to be elsewhere, like a ward round or on holiday, should the clinic be cancelled? All this needs to be worked out and there isn’t a one-size-fits-all solution.],
+  [Many healthcare professionals have had to set up virtual clinics overnight. This drive towards innovation is a good thing: it has cut bureaucratic processes, can save money for the health system, and save time for the patient. As we hopefully start to emerge from the pandemic, the NHS and other healthcare systems will need to redefine how we function. Virtual working will be on the table, but before setting it up indiscriminately, we need to pause, and consider how it can best be used. The patient should remain at the centre, and be offered choice, to maintain and improve patient satisfaction and outcomes. Patient continuity, especially for chronic conditions, should not be unwittingly sacrificed: forming a healthy attachment between doctor and patient is at the core of how we relate and trust.],
+  [If the pandemic has taught us about the importance of human relationships, it has also taught us that if there is enough will, a solution can be found.],
+  [Rachel Besser is a consultant paediatric diabetologist at Oxford University Hospitals NHS Foundation Trust and author of Diabetes Through the Looking Glass – seeing diabetes from your child’s perspective . \@BesserBesser],
+  [Competing interests : none declared .],
+  [References:],
+  [Car J, Choon G, Koh H, Foong PS, Wang CJ. Video consultations in primary and specialist care during the covid-19 pandemic and beyond BMJ 2020; 20;371:m3945.],
+  [Pereira Gray DJ, Sidaway-Lee K, White E, Thorne A, Evans PH. Continuity of care with doctors—a matter of life and death? A systematic review of continuity of care and mortality. BMJ Open 2018;8:e021161.],
+  [Helen Salisbury H: Measuring continuity of care BMJ 2019 ;3;367:l6567. doi: 10.1136/bmj.l6567.],
+  [The post Practising medicine in the virtual world—continuity of care is even more important appeared first on The BMJ .],
 ),
   insert-map: (:),
-  word-count: 823,
+  word-count: 680,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -1241,34 +563,27 @@ It’s starting by giving 25-50 people \$1,000 per month. ( Gizmodo )],
 
 {
   #standard-article(
-  title: [Jan-Philipp Beck: Is co-creation the key to high value care?],
-  author: [julietwalker],
-  source-name: [The BMJ Blog],
+  title: [An electric day 3 of TEDNext 2025],
+  author: [Brian Greene],
+  source-name: [TED Blog],
   images: (),
   paragraphs: (
-  [Co-creation is by no means a new concept. It refers to the collaborative development process of products and services with relevant stakeholders or “end users,” and it now crosses most sectors. The key premise of co-creation is to accurately define value, and deliver on that value, so that when the product or service launches, it is in high demand, meets the needs of its direct or indirect customers, and addresses the social, economic, and practical considerations associated with its customer base.],
-  [But its implementation continues to be patchy. In healthcare, the co-creation of solutions alongside clinicians, patients, and citizens who will use them or benefit from them is both logical and necessary. How can we ensure solutions meet their needs if not? However, environmental challenges exist which hinder the speed of advancement in translating this concept from theory to practice.],
-  [Healthcare innovation holds great promise for solving some of the significant healthcare challenges facing Europe (and, indeed, the rest of the world) today—an ageing population, an epidemic of non-communicable diseases, and growing costs of care within healthcare systems that are already cost-constrained.],
-  [Healthcare innovation communities can harness entrepreneurship across research, academia, industry, and healthcare delivery to identify where innovation could have a defined impact, and accelerate solutions to market that can drive efficiencies, reduce costs, and improve patient outcomes. The aim of these communities is to deliver societal impact in the form of widespread, demonstrable socio-economic improvements to society. Societal impact is constructed through the connection between innovation and society, measured against the benefits that really matter to people, and assessed on ethical, legal, and social principles.],
-  [For innovative products and services to integrate seamlessly into existing frameworks, they must be built with end users. In healthcare, this includes clinicians, patients, citizens, informal caregivers, and possibly other stakeholders depending on the specificities. Yet, companies working in healthcare often find it difficult to engage directly with such stakeholders when developing their solutions, due to issues such as privacy, ethical, and legal concerns.],
-  [A 2020 report published by the EIT Health Think Tank outlined the “innovation pathway,” or route to market, for health products and services, identifying that co-creation must extend the full length of the pathway. From ideation and identification of the need a technology aims to meet, to testing and proof of value, to launch and adoption, stakeholders are a driving force throughout. In fact, when clinicians, patients, and citizens are fully involved in the process, they are powerful advocates for the implementation of healthcare innovation that meets their needs. This is important in Europe, where we have a lot of fragmentation in the reimbursement and adoption of innovative solutions.],
-  [Access to, and engagement with, such stakeholders, however, remains a challenge for innovators as outlined in the report—access to real-world settings for testing (i.e., hospitals and clinics), lack of trust in the process of co-creation between commercial entities and clinicians or patients, misalignment, or indeed mismanagement of misalignment between intended stakeholders, and lack of funding and incentives to facilitate collaboration, are all referenced as barriers.],
-  [Such barriers, however, are certainly not insurmountable, and the rewards associated with overcoming them are significant. With the right frameworks in place, co-creation is feasible and leads to a much greater chance of success—both commercially and in terms of patient outcomes. Therefore, we must continue to encourage and champion co-creation across the healthcare sector.],
-  [Within the EIT Health community, we provide a framework from which co-creation can take place, respecting legal and ethical concerns and utilising our vast network to provide the means for collaboration to take place. We do this in a number of ways, including education for patients and citizens, entrepreneurship programmes to support innovators with co-creation or patients in creating their own innovative solutions, and providing “test beds,”or other opportunities for clinicians, patients or citizens to connect with innovators to input into, and test, new potential solutions.],
-  [If the right conditions are provided, new products and services can be developed to offer alleviation of the burden facing healthcare services including preventing disease, speeding up diagnosis and care, offering remote care, improving patient outcomes, and reducing costs of care. But this is best achieved when we work together to design solutions.],
-  [There are still barriers we must overcome, and one of which is standardising approaches and opportunities for co-creation. We would like co-creation in healthcare to become a standard and well-practiced principle across Europe. Only then can we be sure that the solutions we offer to Europeans are truly meeting their needs.],
-  [Jan-Philipp Beck , CEO, EIT Health—an EU funded initiative that works to improve health in Europe],
-  [Competing interests : none declared.],
-  [The virtual EPF Congress takes place from the 26-29 October 2021. Registration and Programme details available at www.epfcongress.eu . For more information about the European Patients’ Forum (EPF), visit www.eu-patient.eu .],
-  [The post Jan-Philipp Beck: Is co-creation the key to high value care? appeared first on The BMJ .],
+  [For day 3 of TEDNext 2025, two magical sessions of talks put forward ideas on how to grow thoughtfully, think radically and redesign a better world. With stories from our AI-powered present (and future) as well as a healthy dose of ingenious human problem-solving, the talks of day 3 surprised, delighted and shed new light on what it means to be human right now.],
+  [What exactly is TEDNext? A vibrant, three-day exploration of what’s next, propelling the “future you” to think expansively at every level, from personal to global. The second-ever TEDNext conference, held in Atlanta, continues an expansion of the annual slate of conferences from TED, with a conference designed to spark imagination, embrace possibility and foster dreams about what the next version of “you” can be.],
+  [Watch TEDNext 2025 on TED Live , check out more photos from the event and learn more about attending a future TED conference .],
+  [Some key takeaways from day 3:],
+  [The line between awe and indoctrination — and how to actually seek happiness. Writer and podcaster Amanda Montell thinks we’re living through the “cult-iest” era on record, as the hard-wired cognitive biases that helped early humans survive brush up against Information Age tools and communication tactics. She shares how to recognize the strategies and language tricks cults use to coerce — from thought-terminating clichés designed to shut down independent reflection to loaded buzzwords that feel like enlightenment — as well as some crucial tips to help you preserve the ability to think for yourself. Approaching our need for fulfillment from a different angle, happiness scientist Sonja Lyubomirsky distills the essential lessons from scientific research into humanity’s most sought-after emotion: happiness. Her number one hack? To approach conversations with others as experiences designed to take walls down, not changes to share your highlight reel. By sharing deeply and listening to learn, Lyubomirsky thinks we can all unlock the potential for happiness inside of us.],
+  [Some pro-human takes on AI and algorithms. How do we stay “real” when algorithms and chatbots are constantly influencing our behavior to the benefit of platforms like ChatGPT, Spotify, X and others? Etymologist and content creator Adam Aleksic sounds the alarm on how AI tools are changing how we communicate — down to our very word choices — and, possibly, rewiring the underlying patterns of our thoughts, encouraging us to remember that these emerging tools aren’t neutral. Self-described “dumb questions” advocate Nayeema Raza picks up the thread of AI tools hijacking our lives — not with an anti-tech tech, but with a pro-human one. She makes a case for the return of three old habits — to pause and notice our urge to reach for our devices, to live in wonder and to ask questions out loud instead of in private — to reconnect with what actually matters in our lives.],
+  [Tech meets the natural world. After watching a series of wildfires rage around his home in Northern California in 2019, civic tech pioneer John Mills had a simple question: Where is the information? With firefighters relying on communications technology from the 1930s, often the answer was: too little, too late and too sporadic. Enter Watch Duty, a non-profit alert system Mills created with the help of a few radio operators and volunteer engineers from Silicon Valley. Developed in an 80-day sprint, Watch Duty beat government alert systems by nearly an hour just a handful of days after it launched, and it has continued to provide residents and first responders with the life-saving heads-up they need to escape danger, proving that a small group of thoughtful, committed citizens can indeed change the world. Telling another story from the positive side of tech, ocean explorer Eric Stackpole takes us into the murky depths to explore the mysterious worlds of sperm whales. Sequestered aboard a ship filming a show for National Geographic during the early days of the COVID pandemic, Stackpole and his colleagues concocted a “very maker-y” camera rig that ended up revealing a previously unreachable world — capturing footage of sperm whales communicating and coordinating for the first time on camera. “The question isn’t: ‘What can we explore?'” Stackpole says. “The real question is: ‘What will we wonder about next?'”],
+  [New thinking on pain, the mind and body. We’ve let our screens quietly train our days into locked-down stillness, says journalist and host of NPR’s TED Radio Hour , Manoush Zomorodi , and it’s led to many of us feeling exhausted most of the time. She makes the case that tiny, regular bursts of activity baked into our days — known as “movement breaks” — can flip the body’s switches, brightening mood, sharpening focus and even regulating blood sugar. That same spirit of rethinking the obvious extends to how we think itself: in a personal talk exploring the mind’s eye, puzzle wizard and editorial director of TED-Ed Animations Alex Rosenthal shows how our inner worlds can vary wildly, and that when we build teams across those differences, creativity and problem‑solving multiply. Taking that openness into the clinic, Dr. Sanjay Gupta explores new thoughts on pain — how it isn’t just a signal in tissue but a story shaped by environment, history, sleep and support. He reveals how light, movement and connection might be as therapeutic as medicine.],
+  [The signs are everywhere — we need to stop and appreciate the wonder of the world. For a dash of whimsy, photographer and wildlife enthusiast Tom Sullam embarks on a romp through a series of ever-more-amusing wildlife photos, explaining how a sense of humor could help us get more connected to nature. In another hilarious photographic journey, designer and professor Kate Canales shares her obsession with hand-made signs — the subtle, helpful and oftentimes hysterical extra instructions we add to point-of-sale machines, doors and conspicuously in bathrooms. “No matter how you might feel about the advancement of technology in our everyday lives, these signs are evidence that humans still need each other in real life to do some of the simplest things,” she says.],
+  [Watch TEDNext 2025 on TED Live , check out more photos from the event and learn more about attending a future TED conference .],
 ),
   insert-map: (:),
-  word-count: 819,
+  word-count: 1272,
   edited-for-length: false,
   debug-mode: false,
 )
-
-  #pull-quote([Therefore, we must continue to encourage and champion co-creation across the healthcare sector.], [julietwalker])
 
 }
 
@@ -1314,7 +629,7 @@ It’s starting by giving 25-50 people \$1,000 per month. ( Gizmodo )],
   [To start our ECS setup, we first needed a cluster with a capacity provider, ie the management style we want:],
   [resource "aws\_ecs\_cluster" "airflow-cluster" { 
  name = "airflow-test" 
- capacity\_providers = [ "FARGATE" ] 
+ capacity\_providers = \[ "FARGATE" \] 
  }],
   [Our cluster also needed a role, which you can define through Terraform or create manually through the AWS console and then connect in Terraform, so it can have permissions to do things like talk to Redshift :],
   [data "aws\_iam\_role" "airflow-role" { 
@@ -1337,7 +652,7 @@ It’s starting by giving 25-50 people \$1,000 per month. ( Gizmodo )],
  from\_port = 0 
  to\_port = 0 
  protocol = "-1" 
- cidr\_blocks = [ "0.0.0.0/0" ] 
+ cidr\_blocks = \[ "0.0.0.0/0" \] 
  } 
  }],
   [You can see we take in the VPC and security groups from whoever is invoking the module, and then expose elsewhere this Airflow security group for other systems to allow access to.],
@@ -1351,25 +666,25 @@ It’s starting by giving 25-50 people \$1,000 per month. ( Gizmodo )],
   [resource "aws\_ecs\_task\_definition" "scheduler-definition" { 
  family = "scheduler-test" 
  container\_definitions = jsonencode ( 
- [ 
+ \[ 
  { 
  "name" = "scheduler" , 
  "image" = format ( "%s/%s" , var . docker\_address , var . controller\_container ), 
- "portMappings" = [{ "containerPort" = var . controller\_port }], 
- "command" = [ "sh" , "start\_scheduler.sh" ], 
- "environment" = [ 
+ "portMappings" = \[{ "containerPort" = var . controller\_port }\], 
+ "command" = \[ "sh" , "start\_scheduler.sh" \], 
+ "environment" = \[ 
  { "name" = "ENVIRONMENT" , "value" = var . environment }, 
  { "name" = "LOG\_LEVEL" , "value" = var . log\_level }, 
  { "name" = "CONSUL\_ADDRESS" , "value" = var . consul\_address }, 
  { "name" = "DOCKER\_ADDRESS" , "value" = var . docker\_address },],
   [{ "name" = "AIRFLOW\_\_CORE\_\_SQL\_ALCHEMY\_SCHEMA" , "value" = var . database\_schema },],
   [{ "name" = "AIRFLOW\_\_CORE\_\_DAGS\_ARE\_PAUSED\_AT\_CREATION" , "value" = "False" }],
-  [],],
-  ["secrets" = [],
+  [\],],
+  ["secrets" = \[],
   [{ "name" = "AIRFLOW\_\_CORE\_\_SQL\_ALCHEMY\_CONN" , "valueFrom" = aws\_ssm\_parameter . metadata\_connection . arn },],
   [{ "name" = "AWS\_ACCESS\_KEY\_ID" , "valueFrom" = data . aws\_ssm\_parameter . aws\_access\_key\_id . arn },],
   [{ "name" = "AWS\_SECRET\_ACCESS\_KEY" , "valueFrom" = data . aws\_ssm\_parameter . aws\_secret\_access\_key . arn }],
-  [],],
+  [\],],
   ["logConfiguration" = {],
   ["logDriver" = "awslogs" ,],
   ["options" = {],
@@ -1387,9 +702,9 @@ It’s starting by giving 25-50 people \$1,000 per month. ( Gizmodo )],
   ["timeout" = var . controller\_healtch\_check\_timeout],
   [}],
   [}],
-  []],
+  [\]],
   [)],
-  [requires\_compatibilities = [ "FARGATE" ] 
+  [requires\_compatibilities = \[ "FARGATE" \] 
  network\_mode = "awsvpc"],
   [execution\_role\_arn = data . aws\_iam\_role . airflow - ecs - role . arn],
   [cpu = var . scheduler\_cpus \* 1024.0 
@@ -1407,7 +722,7 @@ It’s starting by giving 25-50 people \$1,000 per month. ( Gizmodo )],
  desired\_count = 1],
   [network\_configuration { 
  subnets = var . subnets 
- security\_groups = [ aws\_security\_group . airflow - sg . id ] 
+ security\_groups = \[ aws\_security\_group . airflow - sg . id \] 
  }],
   [enable\_ecs\_managed\_tags = true 
  propagate\_tags = "TASK\_DEFINITION" 
@@ -1429,7 +744,7 @@ It’s starting by giving 25-50 people \$1,000 per month. ( Gizmodo )],
  health\_check\_grace\_period\_seconds = var . controller\_grace\_period],
   [network\_configuration { 
  subnets = var . subnets 
- security\_groups = [ aws\_security\_group . airflow - sg . id ] 
+ security\_groups = \[ aws\_security\_group . airflow - sg . id \] 
  }],
   [enable\_ecs\_managed\_tags = true 
  propagate\_tags = "TASK\_DEFINITION" 
@@ -1449,7 +764,7 @@ It’s starting by giving 25-50 people \$1,000 per month. ( Gizmodo )],
  subnets = var . subnets 
  load\_balancer\_type = "application" 
  internal = true 
- security\_groups = [ aws\_security\_group . airflow - sg . id ] 
+ security\_groups = \[ aws\_security\_group . airflow - sg . id \] 
  }],
   [resource "aws\_lb\_target\_group" "controller-target" { 
  name = "controller-test" 
@@ -1480,7 +795,7 @@ It’s starting by giving 25-50 people \$1,000 per month. ( Gizmodo )],
  }],
   [condition { 
  field = "host-header" 
- values = [ aws\_route53\_record . controller - dns . name ] 
+ values = \[ aws\_route53\_record . controller - dns . name \] 
  } 
  }],
   [(If you’ve never connected a DNS record, load balancer, and auto scaling group in EC2 before, the above might look like a lot of work, but it’s a pretty standard if verbose setup.)],
@@ -1560,9 +875,376 @@ It’s starting by giving 25-50 people \$1,000 per month. ( Gizmodo )],
   [Also, Airflow contributors? How about building out that ECS operator pretty please?],
 ),
   insert-map: (:),
-  inline-pq: pull-quote([vpc\_id   target\_type = "ip"    health\_check {   path = var.], [GameChanger]),
-  inline-pq-idx: 62,
   word-count: 4527,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+}
+
+{
+  #standard-article(
+  title: [The AI boom has plunged a small Pennsylvania town into chaos],
+  author: [Rebecca Egan McCarthy],
+  source-name: [Grist],
+  images: (),
+  paragraphs: (
+  [class="has-drop-cap has-default-font-family"\>“I don’t like to see anyone upset,” said Nick Farris of Provident Real Estate Advisors. He was sitting in the front of a crowd of roughly 150 inside Valley View High School’s auditorium in Archbald, a town of about 7,500, huddled between two mountain ranges in Pennsylvania’s Lackawanna Valley. Farris was there to represent the developer for Project Scott, one of many data center campuses coming to town. “However,” he said. “I think that this is the best data center site in this area of the country, by far.” The audience had been fairly quiet, bundled in thick coats against the late January cold. But as Farris spoke about data centers as a boon for communities, they began to laugh, drawing a rebuke from town officials.],
+  [class="has-default-font-family"\>“What about the children?” someone shouted from the crowd. The children were watching from the walls; long banners of Valley View Performing Arts students hanging around the auditorium like championship pennants. Project Scott and four other data facilities will sit just a few thousand feet from the middle and high schools.],
+  [class="has-default-font-family"\>“Isn’t there a missile plant next door?” Farris said, getting aggravated. He was referring to Lockheed Martin’s 350,000-square-foot Missiles and Fire Control facility directly next to the high school, parts of which are highly contaminated .],
+  [class="has-default-font-family"\>“That sucks too!” another attendee yelled back. This was nothing to worry about, Farris tried to convince the audience. This would bring in tax revenue, he said. It was just an office park, albeit one with roughly 450 diesel backup generators.],
+  [class="has-default-font-family"\>“It’s going to be away from everyone,” Farris kept repeating, to rising jeers. He was wearing a knit turtleneck with a large American flag emblazoned across the chest.  “It’s not going to bother anyone.”],
+  [class="has-default-font-family"\>The specifications say something different: Five developers are planning to build six data center campuses in Archbald, which will cover a full 14 percent of the town, evict a trailer park, and border many residential properties. One campus alone, as The Scranton Times-Tribune reporter Frank Lefneskey pointed out, is expected to use more power than the region’s largest power plant is able to produce.],
+  [class="has-default-font-family"\>Pennsylvania has become an epicenter of the data center boom in the United States, with over 50 campuses in development. Eleven of them are slated for Lackawanna County alone. Archbald, with six campuses composed of 51 massive buildings, has the most of any municipality in Pennsylvania.],
+  [class="has-default-font-family"\>Despite the public outcry, it has been surprisingly difficult to learn what Archbald’s elected officials think of the massive industry moving in. None of the town’s seven council members responded to my emails, so I stopped by the borough administration building in person a few weeks before Christmas, and was told to wait in the lobby while they held an informal closed meeting in council chambers. When the door opened, it was clear that anyone who actually had the power to make or break the data center plans had quietly filed out the back, leaving me with Archbald’s unelected borough manager, Dan Markey, who essentially runs the town, but cannot vote for or against development.],
+  [class="has-default-font-family"\>What did he think about artificial general intelligence, or AGI — the idea that eventually these efforts will produce something like a “computer god” capable of solving climate change, ending hunger, revealing the full breadth of science, and performing any number of other miracles? “I believe in one God, and it’s not a computer,” Markey told me evenly. By now, hundreds of towns across the country have been caught up in the rush to build large language models that can parse unfathomable amounts of data to write copy, answer any query, develop new vaccines, and likely render a large number of jobs obsolete. That rush accelerated into an all-out arms race over the past year. What it means in practice is an enormous amount of data centers — enough to approximate a minor deity and enough, as OpenAI co-founder and former chief scientist Ilya Sutskever once speculated, to “cover the Earth.” Markey told me he had ChatGPT on his phone, but didn’t use it much.],
+  [class="has-default-font-family"\>“I don’t think anyone in their right mind wants to see the world covered in data centers,” Markey said. “\[But\], according to Pennsylvania law, we have to have a zone for everything. An adult bookstore, a strip club, a concrete and asphalt plant — anything that wants to come here. We have to have a zone for it. If it’s not zoned, it’s allowed to go anywhere.”],
+  [class="has-default-font-family"\>In most states, towns have the right to exclude businesses that they find disagreeable — a wealthy suburb, for example, would likely reject a landfill or gas plant — but in Pennsylvania, towns must allocate some patch of land to these “undesirable industries.” Some municipalities deal with this by forming what are called zoning collaboratives, which allow them to plan as a region for pollution. One town might get data centers, another gas plants, another a landfill. Markey approached the nearby boroughs of Blakely and Dickson City to discuss the possibility, but the data center development rush has outpaced him.],
+  [class="has-default-font-family"\>Whatever’s attracting data centers to the area, it’s forced Markey to answer for a rush of development, unprecedented since the town was settled in the 1840s in service of an industry that will bring vanishingly few jobs. Residents kept bringing up the threat of collapse — the network of empty mine shafts running underground, the town beneath the town, the structural instability that would accompany these massive buildings. The data centers would drive bears into town, they said, rattlesnakes into yards, and without trees to stabilize them, the mountains themselves would begin to crumble, sending landslides into the valley.],
+  [class="has-default-font-family"\>“I just try to listen, and I try to separate the valid concerns from the things that just sound like the sky is falling,” said Markey. “I was approached at a gas station a couple months ago and was told that I was going to kill everyone who lived in Archbald. I don’t think that’s valid. I don’t think that’s a reasonable argument to have with me.”],
+  [class="has-default-font-family"\>But the anger and suspicion directed towards town officials, incoming tech companies, and a powerful local businessman with reported mafia connections show no signs of abating. The AI rush is often spoken of in terms of grand harms or potential social goods that feel entirely divorced from the way it’s playing out on the ground — as an unmitigated mess, breeding confusion, paranoia, and fury.],
+  [The small town of Archbald, Pennsylvania, has found itself at the center of an AI boom. Rebecca Egan McCarthy \/ Grist],
+  [class="has-drop-cap has-default-font-family"\>Millions of years ago the Lackawanna Valley was an intertidal zone: swamp land bordering a shallow sea that stretched out to Central Pennsylvania. That sea was forced skyward as the African and North American continents collided, raising the mountains from the earth and crumpling and compressing the valley’s dying plant life in tight laminations, until it finally hardened into what’s considered the gold standard for coal — smokeless, slow-burning anthracite.],
+  [class="has-default-font-family"\>Anthracite is rare: Almost 90 percent of the world’s recoverable deposits lie buried in Northeastern Pennsylvania, and it represents only 1 percent of global coal stocks (the majority being the soft, sooty bituminous coal that you find in the western half of the state and across West Virginia), but it was the most in-demand fuel for household heating for over a century. Its discovery brought a rush of mining companies to the region, transforming the Lackawanna Valley from a mass of overgrown forest into a crucial coal production and transportation hub for New York and Philadelphia’s energy markets.],
+  [class="has-default-font-family"\>Coal patch towns — in which everything,  the stores, the schools, the houses, were owned by coal companies — sprang up across the valley. Scranton became known as the “Electric City,” with the region’s bountiful fuel reserves powering some of the first street lamps and electric trolleys. The economic boom was short-lived though. Oil quickly outpaced coal, and a devastating flood in the 1960s effectively ended the industry, by which time the region was so thoroughly hollowed out that the Pennsylvania secretary of mining warned the city of Scranton “was sitting on toothpicks” and would be more cost-effective to abandon than reclaim.],
+  [class="has-default-font-family"\>The drive into Archbald is especially beautiful in fall — gently rolling hills covered in foliage, rivers winding lazily past clapboard houses — but winter brings a low, fixed gray sky and a perpetual blanket of snow. Without the forgiving cover of leaves, it’s easier for the old industrial history to lurch into view. The ground gives way occasionally, and huge, black mountains of mining waste called culm (pronounced “column”) dot the landscape.],
+  [class="has-default-font-family"\>By now, the culm piles are covered in vegetation and appear almost natural, but you can tell something is off if you look closely — their slope is too abrupt; their backs covered by spindly, young trees, slipping downhill. They’re enormous health hazards, sending fine particulate matter into the surrounding neighborhoods and leeching toxins into the groundwater, but they’ve become familiar enough, a woman named Tiffany told me, that people hike on them and kids play on them. We were at the end of her block, looking up at a massive culm pile. “I’ve never walked back there,” she said. “It’s kind of creepy.”],
+  [class="has-default-font-family"\>The land on the other side of the heap has been sold to Project Gravity, whose developers intend to build seven 138,000-square-foot buildings along Eynon-Jermyn Road. It will be bordered by two more data center campuses, known as Project Scott and Project North; across the road will be yet another campus called Project Boson. Further down Eynon-Jermyn Road is the Wildcat Ridge AI Center. Tiffany lives just over the town line in Jermyn, meaning she won’t benefit from the increased tax income, nor can she voice an opinion at the Archbald town meetings, even though the data centers are effectively in her backyard.],
+  [class="has-default-font-family"\>I’d met Tiffany a few months earlier in a nearby park, along with other members of a fast-growing group of locals fighting the new developments. I’d reached out to them through the Stop Archbald Data Centers Facebook group, which now has over 5,000 members, equal to nearly two-thirds the size of the town. Local opposition to data centers has swept the nation this year, with concerns over rising electricity costs, reliance on fossil fuels, excess water use and noise, pollution, and their placement in or near residential areas. These fights have forged unlikely political alliances and will potentially imperil incumbents come this year’s midterm elections. According to a Financial Times analysis , at least 370 measures to regulate the AI industry were introduced in state legislatures this past year, and roughly 80 percent of Republicans and Democrats believe the industry needs more regulation.],
+  [class="has-default-font-family"\>“We moved from a couple towns over and built a new house, thinking this was a good place to go,” said Archbald resident Ann Beynon, who grew up by a Superfund site in nearby Throop. She’d been looking to settle down somewhere in the area where her kids wouldn’t be at risk of lead poisoning. There was a landfill in Throop and a gas plant in Jessup. “And now this is happening” in Archbald, she said while gathered in the park.],
+  [class="has-default-font-family"\>Tiffany, Ann, and the others had brought maps to our meeting to demonstrate the scale of the problem. They were not, they explained, asking for the data centers to leave entirely — they just wanted them confined to industrial zones. They felt town council members were unprepared and ill-informed on this issue, ready to jump at the prospect of tax money without looking at the long term implications. When the first data centers began to arrive in early 2025, Archbald’s zoning code classified them as roughly on par with commercial office buildings, allowing them to be built in some commercial zones. Residents fought back, demanding new zoning laws that would limit data centers to fully industrial areas away from the center of town, but the updated zoning ordinance passed last November wouldn’t go that far. Instead, they still allow facilities to be built next to residential neighborhoods — such as the Highlands, a condo complex occupied largely by retirees, and a trailer park called Valley View Estates, whose owner has agreed to sell the land to a data center developer. Residents are set to be evicted next month, on April 15.],
+  [class="has-default-font-family"\>Developers moved to purchase land before the ordinance went into effect, leaving Archbald with little recourse to stop them, said Brigitte Meyer, an attorney at PennFuture, a nonprofit environmental advocacy organization. Meyer has been sounding the alarm for a year now, warning municipalities across Pennsylvania that if they don’t get out in front of the data center boom, they could be overrun.],
+  [class="has-default-font-family"\>“The tragic irony is that it’s really hard to get the community activated at this on the front end, when things are more hypothetical,” she said. “People’s interest gets piqued when there’s a specific proposal. But by the time it gets to that point, the period has already passed where the municipality has the most power to actually affect how that’s going to go.”],
+  [class="has-default-font-family"\>Valley View Estates isn’t far from Tiffany’s house, just up Eynon-Jermyn Road. Residents received their eviction notice last July, shortly after Project Gravity was announced. The facilities would cover the surrounding woods; more buildings would replace the junkyard down the street. They were hemmed in, and the park owner wanted out. When reports of the eviction hit local news, “people were so horrible,” said Matthew Bucksbee, a Valley View resident. “One of the kids that commented, he’s like ‘Yeah, just get rid of that place, it’s infested with drugs.’”],
+  [class="has-default-font-family"\>Many residents, Bucksbee’s fiancée, Candace May, explained, are disabled or caretakers for disabled relatives; many don’t even have cars and subsist largely off the one Dollar General within walking distance. They’ve been told they cannot legally challenge the eviction notice until the land is actually sold, and they’ve received little to no information from the owner since — although they were warned, May said, that anyone withholding rent in the interim would be evicted immediately.],
+  [class="has-default-font-family"\>May’s mother, Sharon Williams, works as a home health aid for three disabled men, making \$17.50 an hour. It’s enough for her to live on — she’s paid off her car, she can swing groceries, her internet, her phone, her healthcare costs, and the lot rent for her trailer, but it doesn’t leave her with much left over at the end of every month. She can’t afford a more expensive place, nor does she qualify for Section 8 housing, putting her in an impossible situation as the April eviction deadline looms.],
+  [class="has-default-font-family"\>Despite their name, mobile homes are not really mobile. Most will fall apart if you try to relocate them, and although residents generally own their trailers, they pay nominal rent to a park owner, who owns the land — in this case, a couple who run a beer store outside Philadelphia. As the cost of living skyrockets, it’s the only stable, affordable housing many are able to find.  According to Princeton’s Eviction Lab , the average lot rent nationwide was only \$470 a month in 2023; Williams pays just \$390, but residents are uniquely vulnerable to displacement. When a trailer park closes, many people are forced to abandon their homes or sell them for next to nothing. If they don’t own their trailer outright, they can find themselves homeless and still paying off a mortgage.],
+  [class="has-default-font-family"\>The county’s public housing is roughly 98 percent occupied at the moment, according to a representative from the Lackawanna County Housing Authority. Placements are allocated by a point system, wherein victims of domestic violence, the homeless, and the disabled get first priority, but waitlists for one, two, and three bedrooms are currently closed. Waitlists for studios and four-bedroom apartments remain open, but it can take anywhere between one to five years to get into housing. For now at least, Valley View residents have few good options.],
+  [class="has-drop-cap has-default-font-family"\>Tech companies are clearly coming to Archbald for the Susquehanna-Roseland powerline, a \$1.4 billion high-voltage transmission line, which would give them access to bulk power. But locals also suspect that the area’s cheap land, lax zoning laws, and centralized capital also appealed to developers. This is old coal territory, and when the mines closed down, a lot of land wound up concentrated in just a few hands.],
+  [class="has-default-font-family"\>“Who runs everything with a lot of money? The name DeNaples is on a lot of these buildings,” one Archbald resident told me, after speaking out against the data centers at a utility hearing at the University of Scranton in December. “He’s got his tentacles all over the place.”],
+  [class="has-default-font-family"\>DeNaples is Louis DeNaples, an enormously powerful businessman infamous in the Lackawanna Valley , who has long been plagued by accusations of connections to organized crime — specifically to the late mob boss of Northeastern Pennsylvania, Russell Bufalino, who served as counsel to Jimmy Hoffa and may have had him killed , according to some popular accounts. Bufalino was thrust onto the national stage most recently by Martin Scorsese’s 2019 magnum opus, The Irishman , played by a quietly sinister Joe Pesci, but DeNaples himself has no such Hollywood notoriety. He remains a grim specter across the region though — some residents say they are scared of him and attribute a great deal of power to him. “If your little league team needs jerseys, \[DeNaples\] provides them,” another local explained. “If the local police department needs a new car, he donates.”],
+  [class="has-default-font-family"\>DeNaples was one of nine children and grew up poor, selling Christmas trees with his brother Dominick in a vacant lot and reselling junk cars for parts. He reportedly bought his first car for \$18 and hauled it himself up the steep hill to his family’s house over the course of two days. Countless cars later, he opened the Keystone Sanitary Landfill, swallowing vast amounts of garbage from New York and Philadelphia, and making DeNaples a millionaire. Eventually, he expanded into real estate, then outwards and upwards from there.],
+  [class="has-default-font-family"\>In the late 70s, he pleaded no contest to a conspiracy charge of defrauding the federal government out of over half a million dollars for cleanup work after Hurricane Agnes, but was never convicted. One dissenting juror forced an acquittal, and a Bufalino family underboss was later sent to prison for witness tampering. The charge would come back to haunt him though. In 2006, DeNaples purchased nearby Mount Airy Casino, but was forced to hand control over to his daughter after it was revealed that he’d lied about his relationship to organized crime.],
+  [class="has-default-font-family"\>Decades later, he remains a major power broker in the area: one of the largest landowners, the proprietor of many businesses, and the chairman of First National Bank. His name is not just on buildings, but on billboards all across the metro area. DeNaples hasn’t sold any land directly to the data centers, but in 2023 he sold a 186-acre parcel to another local businessman, Jim Marzolino of Kriger Construction, who then sold it to Project Gravity for over \$12 million, according to public records . The transaction has raised hackles locally, although there is no evidence DeNaples saw any benefit from the heavy markup of his former land. More recently, DeNaples’ nephew sold land to a proposed data center in nearby Olyphant.],
+  [class="has-default-font-family"\>But plenty of other local businessmen, without the alleged mob ties, are more directly involved in the data center boom — Marzolino, for example, or Anthony Domiano Jr., whose family runs a chain of local car dealerships, and who sold a large amount of land to Project South and Project North. Alpesh “Al” Patel, who runs the Al’s Quick Stop convenience store chain in the region, has partnered with Marzolino on development plans for Project Boson.],
+  [class="has-drop-cap has-default-font-family"\>On a freezing night a couple weeks before Christmas, locals gathered at The University of Scranton for a public hearing on their electricity bills. PPL Electric Utilities had announced a rate hike for the fourth time in two years — this one, raising consumer electricity prices by 7 percent.],
+  [class="has-default-font-family"\>“I make about triple the Pennsylvania minimum wage — and I still freeze in my house,” said Jordan Moran, a student in cybersecurity at Lackawanna College, who also works a full-time job. “My thermostat is at 60 degrees, and my PPL bill is still nearly 20 percent of my monthly income.”],
+  [class="has-default-font-family"\>
+PPL serves about 1.5 million ratepayers in Pennsylvania, and its territory has been overrun by data center proposals in recent years, significantly raising electricity prices in certain areas of the country. But under the utility’s proposed plan, data centers would receive a rate cut , which rankled attendees. Although the region needs jobs, “there’s no potential job growth really, for the local people. I’m one of the few people who would actually be qualified to even apply for a job there once they put \[the data centers\] up,” Moran told me after the hearing. “We don’t have a lot of computer science majors out there.”],
+  [class="slide-content"\> Does your community have a data center ordinance in place? 
+An ordinance passed by your local elected representatives (your city council, for example) can restrict data centers to industrial areas, without overhauling the entire zoning code. However, an ordinance may not be able to restrict a data center developer that has already submitted an application to begin construction.],
+  [class="slide-content"\> Who is developing the data center, and on what timeline? 
+If developers have applied to build data centers in your community, you can submit a right-to-know request to your local open records office. You can ask for site plans, conditional use applications, noise studies, and “will serve” letters from your local water and electric utility. The application should have contact information for the developers and/or their lawyers.],
+  [class="slide-content"\> How is it being cooled and powered? 
+Although data centers all have different ways of cooling and powering their campuses, local ordinances can steer a project in a community’s desired direction. The Sierra Club of Virginia, for example, recommends performing a water impact study, requiring any buildings to adhere to the highest heating and cooling standards, and — if possible — prohibiting cooling water discharge into the municipal water supply to minimize pollution.],
+  [class="has-default-font-family"\>As several people at the utility hearing pointed out, Trump was scheduled to speak the following night in the conference room at the DeNaples’ family casino, to begin what the president claimed would be a series of rallies across the country. Concerns of affordability — lost jobs, hiring freezes, inflation, skyrocketing bills, the kind of concerns that had brought people out to that utility meeting the night before — the president called, “a myth.” Something incredible was just over the horizon, he promised, growing closer by the day. “You’re going to see what happens over the next two years. It’s like a miracle is taking place,” he said, as he opened the rally. “All of the companies that are pouring their money into building right now — building plants in Pennsylvania and many other states — auto plants, AI plants, plants of every type.”],
+  [class="has-default-font-family"\>At this point, it appears all six data centers coming to the borough will pull from the grid. According to Archbald’s updated zoning agreement, oil, gas, and nuclear plants will not be allowed to co-locate alongside data centers. But the facilities are likely to fuel a fracking surge across Western Pennsylvania, and new buildings will bring hundreds of diesel backup generators to town. Should unsustainable power demands regularly force data centers off the grid, those generators could be running with relative frequency — emitting pollutants that have been linked to heart disease and cancer and generating noise that can disturb neighborhoods.],
+  [class="has-default-font-family"\>To make matters more complicated, Archbald’s water system is privately owned and operated by American Water, the nation’s largest private water company. Residents are concerned the town’s data center boom will also affect these bills and threaten their drinking supply. Project Gravity alone is expected to pump 360,000 gallons of water a day from Lake Scranton, which serves 134,570 people across Lackawanna County. Developers of  the Wildcat Ridge Data Center are proposing to pump up to 3.3 million gallons per day — some of it potentially from the minor sea of ground and rainwater that now fills the empty coal mines beneath the building site. The developer’s plans include a subsidence contingency, but looking over the scale of the place, it’s not hard to see where the residents are coming from when they talk of colossal buildings collapsing and the ready-made grave the mining industry left beneath the town.],
+  [class="has-default-font-family"\>All of this assumes these facilities actually get built. Experts have speculated that half of data center proposals could be duplicative , meaning developers are applying in multiple places across the country but will ultimately only build a single campus. It’s also unclear who the tenants will be at this point, and according to Markey, developers have been tight-lipped. “They’ll say cryptic things like, ‘You know of this company. You probably use them every day,” he told me. “They all say the same thing — that they’re next in line for power.”],
+  [class="has-default-font-family"\>Battery storage could replace some of those backup generators, closed-loop cooling (in which water is endlessly recycled) could reduce water usage, and harmful chemicals could be swapped out, but there’s really no way to know for sure until the tech company that will be leasing the space is known, making approving these projects a significant gamble.],
+  [class="has-default-font-family"\>There are few guardrails for the industry at the moment. In February, the Trump administration rolled out the Ratepayer Protection Pledge, an initiative that asks tech companies to voluntarily agree to pay the cost of upgrading transmission lines and building power plants — rather than having those costs passed along to the average consumer. It was almost immediately derided as “smoke and mirrors” and “a toothless, empty promise” by Democratic congressman Frank Pallone, the ranking member of the House Energy and Commerce Committee. Governor Shapiro, who has championed AI’s rush into Pennsylvania, recently proposed an initiative that would incentivize responsible data center development. Projects that agreed to bring their own transmission, offer transparent community engagement, and clear community benefits agreements would qualify for the state’s Permit Fast Track Program , which can significantly speed up the building process.],
+  [class="has-default-font-family"\>Critics pointed out that this would still incentivize developers to build gas plants, rather than switch to renewable energy, and that it’s difficult to enforce. “The developer gets all the benefits on the front end and bears none of the risk,” Emma Bast, a lawyer at PennFuture, told Spotlight PA . “And if the developer doesn’t follow through on the voluntary things, there are not a lot of options for the state.”],
+  [class="has-default-font-family"\>Some residents are reluctantly making plans to move. “These data centers have to go somewhere,” said Jim Schaback, who told me he would likely rent out his house in Archbald if the developments go through. “I hate that they’re going here.” Matthew Bucksbee and Candace May recently got word that they may be able to move to a plot of land owned by a friend in Forest City, about 20 minutes north. “We’ll be moving into another trailer for the time being, but once that’s paid off, we could build up there,” said May. She was excited about the prospect of having a bunch of land for their sons to roam around. Tiffany, whose property in Jermyn borders Project Gravity, said that she would consider moving if data center developers began building in Jermyn or neighboring Mayfield to avoid being sandwiched between the buildings.],
+  [class="wp-block-ups-image-inner"\> Candace May holds her daughter, Nova, in their home at Valley View Estates. May and other residents are making plans for where they will live after their eviction in April. 
+ Rebecca Egan McCarthy \/ Grist],
+  [class="has-drop-cap has-default-font-family"\>Before Farris spoke at the Project South hearing in January, community members gathered outside the auditorium, some distributing pamphlets, others gossiping. Among the crowd were Jack and Amy Swingle, who told me they moved to the area to be close to their children. They recently signed on to a lawsuit appealing the updated data center zoning, arguing it does not adequately protect residents. But neither of them had high hopes for the night. At the previous hearing, they explained, developers had tried to soften the blow by promising that the data centers would bring more retail to the area — a Trader Joe’s, for example, which could potentially accompany the construction of the Wildcat Ridge AI center. “That’s one of the things I have \[to say\] in here,” said another woman standing nearby, gesturing to her notes. “Don’t be so condescending.”],
+  [class="has-default-font-family"\>But the revenue that the building boom promises the region is real enough. The data centers would bring roughly \$20 million in property taxes for Archbald, Farris said to the audience gathered, \$50 million for Lackawanna County, and \$100 million for the Valley View School District every year. Many municipalities were throwing tax breaks at developers, hoping to attract their attention. Archbald is not. Its abundant fiber-optic cables, high voltage electrical lines, nearby gas pipelines, and its proximity to Secaucus, New Jersey (a “pairing point” for data centers, where they exchange information) make it attractive regardless. Farris had sought this place out himself, but other nearby towns looked nearly as appealing as Archbald, he explained. Should the opposition continue to grow, developers might take their projects elsewhere — maybe to Berwick, about an hour away.],
+  [class="has-default-font-family"\>“They’re going to get all the benefit, and you guys aren’t going to get anything,” Farris told the crowd. “\[Data centers\] are a necessity in life, and the decision has come down to, ‘Do you want to benefit from that necessity?”],
+  [class="has-default-font-family"\>Archbald resident, Tamara Healy, asked about Community Benefit Agreements — she’d googled them, and it seemed to her that something like that should be in place before things proceeded any further. “Now, it’s ironic that you’re Googling stuff and you’re against data centers,” said Farris. “Just for the record.”],
+  [class="has-default-font-family"\>Still, the town needs tax revenue, and it’s true that no other industry of this size and scale seems interested in the area. “We have just enough money in our checking account to pay payroll and keep the lights on, but every month we have a debate about canceling or suspending music or art,” said a solicitor, speaking on behalf of Valley View School District administrators in November 2025.],
+  [class="has-default-font-family"\>Documents first published last week by DeSmog show that developers played a significant role in determining the terms of the data center overlay ordinance that ultimately passed in November 2025. Council President Dave Moran requested a 1000-yard buffer zone between data centers and adjacent properties. That was whittled down to just 300 yards in the final language.],
+  [class="has-default-font-family"\>The area of the updated data center district that was ultimately passed was determined by the existing industrial zones in the town, and “the rest of the lines drawn were property lines of property owners looking to develop or sell to developers,” according to an email from Markey. “They were pretty much all specific requests.”],
+  [class="has-default-font-family"\>Armed with proof that town officials and wealthy landowners were seemingly working against them, the Stop Archbald Data Centers Facebook group erupted, organizing a petition to immediately relieve Dan Markey, zoning officer Brian Dulay, council president Dave Moran, and Archbald borough solicitor Jay O’Connor of their duties. But, as PennFuture attorney Brigitte Meyer explained, negotiating with the developer is fairly standard in cases such as these, especially given the fact that data centers were technically permitted in certain commercial zones. Had the borough tried to exclude the data centers on the basis of something like height restrictions, developers could have taken them to court over what’s called “de facto exclusionary zoning” — arguing that the restrictions betrayed an antiquated understanding of data centers and were unduly constrictive],
+  [class="has-default-font-family"\>“That is a valid type of legal challenge,” explained Meyer. It wouldn’t be a guaranteed win for developers, but nor would Archbald be assured of victory. The only certainty is that it would be a costly legal fight. “The borough may have looked at it and thought, ‘Well, our chances of winning a challenge like this aren’t so good.’” Other areas that rejected data center proposals, such as nearby Ransom township, have faced lawsuits. Clifton township, which rushed to get a data center overlay in place when they got wind of developer interest last year, is still locked in a lawsuit, filed by the developer mere hours before the ordinance was adopted.],
+  [class="has-default-font-family"\>Whether borough officials made things too easy for developers or felt their hands were tied isn’t totally clear. As of this writing, most of them have refused to speak to me, even though the most damning evidence against them to date is their secrecy. But council member Erin Owen, who has opposed the data centers since the outset, did return my calls last week. She had not been happy with the data center overlay and said she was shut out of private meetings — like the one I stumbled on back in December — to lay out the terms of the ordinance. “They made a big mistake in doing that, because it does not seem transparent at all,” she said. “They only picked the council members that they wanted to know.”],
+  [class="has-default-font-family"\>Council has had little luck helping Valley View Estates residents find alternative housing as of this writing, she told me, and although gas and nuclear plants are not allowed to co-locate alongside data centers, there is industrial land available in town where she believes developers will build their own gas plants.],
+  [class="has-default-font-family"\>“All the impacts will be terrible,” she said. Owen is a fourth-generation resident of Archbald and has served on the borough council for the past ten years. “A lot of trees will be lost. A lot of wildlife will be lost. Homes are going to be last. Pollutants in the air, pollutants in the soil, and then the water, the noise — it’s just going to be very disturbing.”],
+  [class="has-default-font-family"\>The only hope at this point seems to be drastic action on the state level. Legislators on both sides of the aisle have taken notice of the problems facing Pennsylvania as the tech industry moves in. Republican State Representative Jamie Walsh announced he would soon be introducing a suite of bills to better regulate development. Democratic State Senator Katie Muth released a memo announcing that she plans to propose a three-year moratorium on data center development, calling it a “necessary step to protect public health, safety, fiscal stability, and environmental integrity.”],
+  [class="has-default-font-family"\>Even so, it may not be enough to help Archbald, given how eager data centers are to set up shop in the area. It was nearly impossible to find anyone in town who was pro-data center development, although I asked around widely. Some said they weren’t against it, but wouldn’t explain further. Older residents tended to be the least troubled about the data centers, but in a fairly fatalistic way. “I’m going to die tomorrow,” one woman told me at Barrett’s Pub on Main Street. Barrett’s used to be owned by the mayor, and I’d stopped to grab some dinner. The woman told me she used to do nails; now she works for Lockheed Martin. “I don’t know what the data centers want. I don’t know what they do to you. I don’t know what they do to your children,” she said. “Younger people — do they know what’s happening?”],
+  [class="has-default-font-family"\>I wasn’t sure what to tell her, other than that the town was once again being targeted because of an accident of geography and moneyed interests. The longer I spent reporting on this, the more I felt no one had the full picture, not the developers, not the bankers facilitating the baffling circular investments financing the boom, not the chip manufacturers or software engineers, certainly not the tech CEOs. A few weeks earlier, while visiting San Francisco, I’d watched a dog riding in a driverless taxi — paws hanging out the window, tongue waving in the wind, seemingly ferried around by a ghost. This is where those ghosts would come from.],
+),
+  insert-map: (:),
+  inline-pq: pull-quote([He reportedly bought his first car for \$18 and hauled it himself up the steep hill to his family’s house over the course of two days.], [Rebecca Egan McCarthy]),
+  inline-pq-idx: 27,
+  word-count: 6348,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+}
+
+{
+  #standard-article(
+  title: [Building Obsidian, Tinder’s Design System],
+  author: [Tinder],
+  source-name: [Tinder Tech],
+  images: (),
+  paragraphs: (
+  [Author: Darragh Burke, Software Engineer II, Web Development at Tinder],
+  [Tinder’s UI Opportunities: Wildfire],
+  [When Tinder first launched in 2012, it pioneered a brand new user experience: the Swipe Right® and “Swipe Left”™ features. The app’s simplicity was a big part of what made it so appealing.],
+  [An early version of Tinder],
+  [We’ve emphasized building new features and moving fast while growing, but a decade later, Tinder has become a significantly more established app. It’s become harder to maintain consistent design practices across every screen and component and the codebase suffered too.],
+  [The cost of designing, building, and maintaining features was becoming unsustainable. We needed a way to unify the appearance of the application, save time for product managers, designers, and engineers, and deliver a more consistent appearance to our end users. We needed a design system .],
+  [What is a design system?],
+  [Using patterns in designing software isn’t a new idea — it’s been around since at least the 1960s. But it was Brad Frost who popularized the phrase “Design System” with his 2016 book Atomic Design .],
+  [A design system is essentially a standardized collection of styles and reusable components that dramatically reduces the cost of design and development and increases the quality of an application.],
+  [One common idea across many design systems is the notion of “Design Tokens”. These are tiny bits of design data that can be used to build interfaces. Design Tokens can consist of colors, gradients, font faces, border radii, or any other value that’s used in a UI.],
+  [We think of design tokens in two categories:],
+  [Base Tokens . These directly reference styling data like colors or font sizes, and might be named something like “Blue 15” or “Brand Primary”. The name describes the value inside. We don’t think these should be used in designs directly, as they contain little semantic information about the purpose of the token.],
+  [Context Tokens . These tokens reference other tokens instead of raw values directly. They contain information about where they should be used. They can also contain theming information — they can map to a different token depending on the theme the user is in, such as light mode or dark mode. For example, a token called “Text Primary” might map to Black in light mode and White in dark mode. This would result in dark text in light mode and light text in dark mode.],
+  [By using context tokens to build interfaces, it becomes trivial to enable dark mode or even other types of themes. It also means that all styles are controlled from a single place, so it’s easy to update a style and see it reflected across the entire application.],
+  [Using standard tokens also lets us craft styles carefully for accessibility. For example, we can define sets of matching text and background colors that will make our application more accessible to those with visual impairments. By using our defined pairs of background and foreground tokens, consumers of the design system can feel confident that their designs will meet contrast requirements.],
+  [Finally, tokens help to align design and engineering on a common language for talking about styling. Rather than describing “that black text color”, we can simply reference the “Light/Semantic/Text/Primary” token. This resolves ambiguity and ensures everyone is on the same page. If we think of a user interface as a cooking recipe, then design tokens are the ingredients — and it’s much more helpful to call for “butter”, a concept everyone understands, rather than “triglycerides”.],
+  [Another core feature of a design system is the idea of reusable components. These are UI elements such as text inputs or checkboxes that have a predefined set of styles and can be dropped in anywhere. Designing and building reusable components can be a huge time-saver in the long run, reducing the amount of work for both designers and engineers to build features.],
+  [There were several attempts to introduce these ideas to Tinder over the years, but they always came up a little bit short. There was no single, cohesive design system for Tinder until the UI Platform team was officially formed in 2020. This was a team whose explicit purpose was to create a set of design standards that could be used to build features at a faster pace, with more consistency and accessibility. Ultimately, the vision we settled on was this:],
+  [“Empower our designers, product managers, and engineers to move fast at scale while reducing operational cost of creating new experiences.”],
+  [We built Obsidian to realize that vision.],
+  [Obsidian is Tinder’s Design System. It’s an entire design ecosystem composed of a set of standardized design tokens, reusable UI components, documentation, and design tools. It exists to resolve ambiguity in the design process.],
+  [The Figma plugin Tokens Studio was the first key piece of Obsidian. This plugin enables us to define tokens for everything from fill colors to border radii. A set of documents in Figma contain every Obsidian token. Thanks to Tokens Studio, they can then be used in designs across the app.],
+  [Tokens Studio enabled designers at Tinder to make use of Obsidian tokens in all of their designs, but we wanted to bring the power of tokens to our engineers. Tinder has an iOS, Android, and Web app, and we needed to ensure consistency between each platform. That’s where Style Dictionary came in.],
+  [Styling data can flow in either direction, from Figma to our GitHub repo or vice-versa],
+  [Style Dictionary is a framework that enables transforming styling data from a single source of truth into platform-specific artifacts that can be consumed by other codebases. We wrote a script to translate our Tokens Studio data into a format that Style Dictionary understands, and from there we just needed to write transformations to generate the code needed for our client platforms.],
+  [Style Dictionary then generates artifacts for each platform. These can be dropped into client codebases, enabling engineers to reference design tokens in their code — and because the tokens are defined statically, you get code completion!],
+  [Of course, the way the design tokens are consumed varies by platform. In Tinder Web, we were already using Atomizer, which generates static stylesheets at build time containing classes with all the styles you’re using in your application. Atomizer lets you define custom classnames, so we built in a method for developers to easily use tokens in the JSX they’re constructing.],
+  [Assigning a the color token “Text Primary” and gradient token “Background Brand Gradient”],
+  [The beauty of this infrastructure is that if we want to release a new token or update an existing one, we can simply create it in Figma and then publish a new version of Obsidian. Two bash scripts and we have new artifacts that can be plugged into each of our codebases. Because there’s a single source of truth, we never have to worry about inconsistencies between platforms.],
+  [This system also makes theming incredibly easy. We can simply reference context tokens inside of our client codebases. These context tokens are automatically resolved into the appropriate base token and then the underlying value. When the user switches into dark mode, we can simply resolve the dark version of each token instead. But more to come on that later!],
+  [We built a shiny new infrastructure to support design tokens, but we weren’t building a new app from scratch. We needed to integrate the tokens into our existing applications, each of which had thousands of usages of hex values, font faces, and other styles. We needed an easy way for designers and engineers to find the right tokens to replace the raw values they had been using. To support this work, we built two things.],
+  [First, we created a comprehensive documentation site using Zeroheight . Zeroheight is a tool that’s tailored specifically to design system documentation. It enables us to pull tokens directly from Tokens Studio and display them in an easy-to-read interface.],
+  [In addition to an exhaustive list of tokens, we wrote more than 100 pages of documentation guiding designers and engineers on where and how to use design tokens.],
+  [Secondly, we built a token lookup tool that allows developers to search for tokens by name as well as by value and type. For example, if an engineer is looking to replace text with the raw hex value “\#1786ff”, they can paste the color into the tool, and then filter for only tokens with “text” in the name. Once they find the token they want to use, they can expand it to get a list of code snippets for each platform that can be pasted directly into the code.],
+  [With the tooling in place, we launched a large effort to migrate to design tokens on all three client apps. What were the results? Well, we’re still in the process of this migration — but we’re already starting to see the payoff of design token usage everywhere.],
+  [Contrast is improved, making the interface more accessible for everyone but particularly for those with visual impairments],
+  [This example might seem small, but these little fixes replicated across hundreds of screens on each of our apps helps create a more beautiful, consistent, and accessible interface.],
+  [Obsidian has also made it much easier for designers and engineers to collaborate and ship faster. Siddharthan Asokan, a Senior iOS engineer at Tinder, had this to say about Obsidian:],
+  [“I used to work on features before the design system was in place. I remember pinging, and walking to the Director of Product Design’s desk every time to figure out the colors, font size, line height, padding, etc. We used to have long design bug bash sessions where I pray for no big changes. Recently I worked on contact exchange proactive screens with the design system components. There was no big change request, everything was an easy drop in and that kept me sane. I really appreciate the work you guys have put in.”],
+  [Obsidian is already a powerful design system, but we’re still just getting started. We have a laundry list of features we’d love to add — including an iconography library and the ability for feature teams to contribute tokens back to the library. We’re excited to keep accelerating Tinder’s development and building a more beautiful application for our users! We’re also in the process of building out a set of reusable UI components that will greatly reduce development time for new features.],
+  [The DualSlider component in React],
+  [This is the first in a series of posts about Obsidian. Stay tuned for the next update, where we’ll share how we used the tools we built to craft Dark Mode on Tinder Web!],
+  [Building Obsidian, Tinder’s Design System was originally published in Tinder Tech Blog on Medium, where people are continuing the conversation by highlighting and responding to this story.],
+),
+  insert-map: (:),
+  inline-pq: pull-quote([Style Dictionary then generates artifacts for each platform.], [Tinder]),
+  inline-pq-idx: 17,
+  word-count: 1808,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+}
+
+{
+  #standard-article(
+  title: [Healthcare in our hands: Putting babies, children, and young people at the centre of their care],
+  author: [kellybrendel],
+  source-name: [The BMJ Blog],
+  images: (),
+  paragraphs: (
+  [Accessing healthcare services can be daunting at any age, but even more so as a baby, child, or young person. Can you imagine being told life changing information and not having any idea of what’s going on? It’s a difficult and helpless position to be in, and we felt overwhelmed, anxious, and vulnerable when we experienced this as children and young people. When all your decisions are made for you, albeit with the best of intentions, and you don’t have much involvement apart from receiving the treatment, it’s easy to feel fearful and powerless. Yet everyone is entitled to a say in the healthcare services that they use and a child or young person is no different.],
+  [The United Nations Convention on the Rights of the Child states every “child who is capable of forming his or her own views has the right to express those views freely in all matters affecting the child.” The National Institute for Health and Care Excellence (NICE) recently published guidance on Babies, Children, and Young People’s Experience of Healthcare, and this principle has been embedded throughout the guideline. By actively involving the views of children, young people, and the parents and carers of babies and young children, this guidance truly represents those who use the service and will mean it can make a real difference.],
+  [The recognition that children and young people have a right to share their perspectives is not only woven throughout the recommendations, but was also remembered all the way through the guideline development. From scope development to publication, young people with personal experiences of accessing healthcare have been involved in this guideline.],
+  [Having personal experience of accessing healthcare gives you a unique viewpoint that is not always heard, especially if you are from under-represented groups, including those who are under 18, disabled, from an ethnic minority background, or who don’t have English as a first language. It was vital for these voices and experiences to be heard, listened to, and then put into this guidance to ensure it can improve care for as many people as possible. The guideline committee included four young people with varying levels of experience accessing healthcare (including two of us, Aishah and Emma). Having this wealth of experience to draw on meant that we were able to bring our expert opinion and real life testimonies to the guideline committee meetings, rather than just relying on examples from research or journal articles.],
+  [The guideline has formed recommendations in a broad range of areas, but we want to highlight two in particular. First, communication. We know from our experiences that often when our parents and carers are present, healthcare professionals will direct all communication towards them, even though it’s about us. This can be disempowering and risks us disengaging with our healthcare (for example, by being reluctant to access services or adhere to treatment). It’s essential that we feel included in conversations and that our preference of communication is understood.],
+  [It is so important to engage with and provide information to a child or young person in a form of communication that they feel comfortable with, whether that be through Makaton, pitching the language used at the right level, or using additional visual aids for support. It can help them feel more at ease, builds trust, and opens up more opportunities for them to be involved in their own healthcare journey.],
+  [Shared decision making is an important part of any individual’s healthcare journey—especially a child or young person’s. At this age we can have little involvement and voice in our healthcare, but shared decision making helps to position us in the centre of our care. The NICE guideline sheds light on how children and young people can be supported to make decisions, even if they’re as simple as choosing a plaster cast colour or food options on a menu. As a child and young person, we’ve both had similar options chosen for us, but when we knew what we wanted, why weren’t we asked? Being involved in simpler decisions that may not have a direct impact on our healthcare outcome can seem unimportant, however it’s crucial, because it affects our overall perception of healthcare and builds our confidence to engage in bigger healthcare decisions. It is also well known that the transition from paediatric to adult services can be a really difficult time for patients and it’s not hard to see why: how can we be responsible for our own care if we haven’t had the opportunity to learn how to do it?],
+  [As part of the evidence for our recommendations, NICE commissioned the National Children’s Bureau to run focus groups with 200 children aged 4-15 years old. To conclude, we’d like to include their voices about how they felt being involved: “Young person’s voices should be listened to, valued, and considered to ensure that the health service can be accessible to all”; “The best thing is giving our opinions and being part of something important”; “I like you listening to my views, it’s awesome!”; “I really like that it feels that you all care about my opinion.”],
+  [Through this guideline, we saw that it was possible to fully engage with children and young people. Now it’s time to put that into practice across healthcare.],
+  [Aishah Farooq , committee member of the NICE guideline on Babies Children and Young People’s Experience of Healthcare; young governor for University Hospitals Bristol and Weston; NHS England Youth Forum alumni; NHSE public patient voice partner for the asthma workstream. Twitter \@ItsAishahF],
+  [Emma Beeden , committee member of the NICE guideline on Babies, Children, and Young People’s Experience of Healthcare; NHS Youth Forum alumni; member of the British Medical Association Patient Liaison Group. Twitter \@emmabeeden],
+  [Catherine White , chair of the NICE guideline on Babies, Children, and Young People’s Experience of Healthcare NICE. Twitter \@cswhite100],
+  [We would also like to acknowledge support from the National Institute for Health Research (NIHR) through the Applied Health Research (ARC) programme for North West London. The views and opinions expressed by the authors in this publication are those of the authors and do not necessarily reflect those of the NHS, the NIHR, the Department of Health, or NICE.],
+  [The post Healthcare in our hands: Putting babies, children, and young people at the centre of their care appeared first on The BMJ .],
+),
+  insert-map: (:),
+  inline-pq: pull-quote([At this age we can have little involvement and voice in our healthcare, but shared decision making helps to position us in the centre of our care.], [kellybrendel]),
+  inline-pq-idx: 5,
+  word-count: 1085,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+}
+
+{
+  #standard-article(
+  title: [Jeffrey Aronson: When I Use a Word . . . Snowflakes],
+  author: [jross],
+  source-name: [The BMJ Blog],
+  images: (),
+  paragraphs: (
+  [I love snowflakes. I enjoy crunching them underfoot on a crisp winter’s day and the silky feeling that you get when skiing through a fresh fall.],
+  [The word “snowflake” entered English in the early 18 th century, first recorded in a pantomime called Cupid & Psyche, or, Colombine-Courtezan, based on the tale told by the Numidian writer Apuleius (c124–c170) in The Golden Ass: “ Soft as the cygnet’s down his wings, And as the falling snowflake fair”. This was a surprisingly late entry, considering how early its separate components, “snow” and “flake”, had appeared. The earliest instance of “snow” cited in the Oxford English Dictionary is in the Vespasian psalter , from c825 AD: “ Se seleð snaw swe swe wulle ”, which is an Old English translation of the Latin version of Psalm 147, verse 16: “qui dat nivem quasi lanam”, or in the original Hebrew],
+  [which literally means “the giving of snow like wool”, more clearly translated as “he spreads snow like a woollen blanket”. “Flake” first appears, linked to snow, in Chaucer’s House of Fame (c1384): “As flakes fallen in great snowes”.],
+  [But words evolve and, like many other words, “snowflake” has accrued many other meanings.],
+  [Snow-buntings have white bodies and what appear to be flecks of snow on their wings. Starting in the late 17 th century, they were therefore called snow-flecks. Then, in the late 18 th century, that became corrupted into “snowflakes”.],
+  [The snow-bunting, snow-fleck, or snowflake (Wikimedia commons).],
+  [At about the same time, William Curtis published his Flora Londinensis , which included the picture of a purple foxglove that William Withering used as the frontispiece to his 1785 monograph on digitalis, An Account of the Foxglove . Curtis gave the name snowflake to the Leucoium aestivum , to distinguish it from Galanthus species of snowdrops, both members of the family Amaryllidaceae . These plants contain galantamine , a cholinesterase inhibitor that has been used to treat dementias; the results have been unimpressive in both Alzheimer’s disease and vascular dementias .],
+  [As in the psalm, snow and wool also come together in the use of the word “snowflake”, when it describes a method of weaving woollen cloth.],
+  [A snowflake is also the name given to a hairline crack in metal, arising when the metal has not been allowed to cool down sufficiently slowly, and described in a 1919 issue of the Bulletin of the American Institute of Mining Engineers as a “white silvery area, which always has the appearance of being of a very coarsely crystalline structure”.],
+  [Snowflakes appear in mathematics too, and I discuss one instance in the Interesting integer section below. Here is another. Draw an equilateral triangle (Figure a; black). Now on the middle third of each side draw another equilateral triangle and erase its base (b; red). Now repeat that on each available side in the new shape (c; blue). If you continue doing this you get a shape that resembles a snow flake (d). This is a fractal pattern, one that has the same local characteristics no matter how high a magnification you choose to look at it. The boundary is of infinite length, because you can go on adding new triangles forever. However the area it encloses is finite and is 60% larger than the area of the original triangle.],
+  [One more meaning of “snowflake” remains to be explored.],
+  [Ah, well, I should have expected that to happen],
+  [Finally, an aphorism from a book called Myśli nieuczesane nowe ( More Unkempt Thoughts , 1964) by the Polish poet Stanisław Jerzy Lec: Żaden płatek śniegu nie czuje się odpowiedzialny za lawinę. No snowflake feels responsible for an avalanche.],
+  [Jeffrey Aronson is a clinical pharmacologist, working in the Centre for Evidence Based Medicine in Oxford’s Nuffield Department of Primary Care Health Sciences. He is also president emeritus of the British Pharmacological Society.],
+  [Competing interests: none declared.],
+  [The post Jeffrey Aronson: When I Use a Word . . . Snowflakes appeared first on The BMJ .],
+),
+  insert-map: (:),
+  word-count: 665,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+}
+
+{
+  #standard-article(
+  title: [Climate emergency: it is time for the aggressive, life saving interventions],
+  author: [julietwalker],
+  source-name: [The BMJ Blog],
+  images: (),
+  paragraphs: (
+  [In the face of a devastating potentially fatal diagnosis, healthcare professionals and families often turn to palliative medicine for guidance and support. It is not about “giving up”—and in many situations, especially in paediatric medicine—palliative care can and should be provided alongside active treatments. A child with advanced malignant disease, for example, may have chemotherapy aimed at cure, but will also benefit from the holistic and symptom management approach that palliative medicine can provide alongside. Both the aggressive treatment and the palliative management will contribute to healing.],
+  [Our planet is in need of palliative care. For years, climate scientists, effectively part of the planet’s “medical” team, have urged us to change the way we live in order to slow, or even reverse, our planet’s rapid spiral towards death. They have shown us the evidence, given us numbers, predicted time scales, and calculated the positive effects of treatment. We have ignored their advice and have continued to do the things that exacerbate the symptoms, that make the planet more unwell, and hasten it’s death. Some have hoped that somehow the “medics” have got it wrong. Others perhaps have taken the approach that if we don’t think or talk about it, then it won’t happen—a common approach to death throughout our society. Whatever our reasons, we have ignored the symptoms and professional advice for so long that the planet is dying. And this will not be a painless death, surrounded by loved ones and with medication to ease the suffering. This will be a slow and painful death, of flooding, of drought, of starvation, of rising temperatures, of forest fires, of increasing pollution, of increased disease, all bringing emotional suffering and pain on a huge global scale.],
+  [It is time for the aggressive, life saving interventions. There is still the hope of cure, and we know what treatments will work. We need big changes, such as a rapid transition away from fossil fuels and investment in renewable energy. We all need to embrace the “treatment” in the knowledge that it can be life-saving. But alongside this we must not ignore the importance and impact of a palliative care approach. In the face of death, every day matters and every person matters. Not just the dying person, but those close to them. We teach our medical students that palliative care is everyone’s responsibility—every single person that comes into contact with the patient has a role to play. It may be just noticing that a water jug needs filling or sitting to listen, but you only have to hear a patient’s story to know the huge impact these apparently small acts of kindness, thoughtfulness, and compassion can have.],
+  [Our approach to the planet must be the same. In the face of death, every day matters. Every single person who lives on this planet, who breathes it’s increasingly toxic air, matters. Small acts of kindness, thoughtfulness, and compassion towards our beautiful planet will have an impact. We cannot all roar like Greta Thunberg, but we can all be the person who shows up every day, with the seemingly small acts that matter. We must follow the “medics” advice and stop doing the things that will exacerbate symptoms and contribute further to an early demise. We can all buy less, buy wisely, buy second hand. We must all learn to throw less away, repair, reuse things that others no longer need, and borrow things we don’t need often. We can reduce our use of “disposable” items by switching, for example, to cloth nappies and re-usable menstrual products. We need to change our diet to one that promotes healing, reducing our meat consumption (or even going veggie), and thinking about alternatives to cow’s milk. We need to make life style changes if we want to live. And contrary to what some may think, these will be life style changes that improve our quality of life as well as promoting our survival.],
+  [We can no longer ignore the reality that is facing us. As the planet moves closer to inevitable death, we must hope that the aggressive treatments needed will come, and that these will not come too late. And we must embrace and commit to them, with the hope they bring. But none of us should sit idly by, waiting for the cure. We must all adopt the palliative approach, which will help to nurse our planet back to health. Every act matters. Every person counts. We must all stop feeding the disease and be part of the cure.],
+  [Finella Craig is a consultant in paediatric palliative medicine in London. She travels everywhere on her bike, including to all her patient home visits, and is taking part in Ride for Their Lives London to Glasgow.],
+  [Competing interests : none declared.],
+  [The post Climate emergency: it is time for the aggressive, life saving interventions appeared first on The BMJ .],
+),
+  insert-map: (:),
+  word-count: 812,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+}
+
+{
+  #standard-article(
+  title: [We must protect our planet for our children’s future],
+  author: [julietwalker],
+  source-name: [The BMJ Blog],
+  images: (),
+  paragraphs: (
+  [The defining characteristic of child abuse, be it physical, emotional, or through neglect, is that the child suffers significant harm. At its extreme child abuse is fatal. As a species, through neglecting the ecological determinants of health we have killed millions of children and are in the process of killing many thousands more, while condemning millions to ongoing physical and emotional suffering.],
+  [Already, 920 million children suffer from water scarcity, with numbers rising . By 2030 there may be more than 100,000 additional deaths in children under five due to malnutrition attributable to climate change, and an additional 7.5 million children with moderate to severe stunting of their growth . Children have suffered and died due to extreme weather events—floods, cyclones, heatwaves, and consequent wildfires. Climate change is now a leading cause of forced migration, disrupting children’s home and family lives, education, and healthcare. Hundreds of thousands of children under the age of five die as a result of ambient air pollution each year, and hundreds of thousands more due to household air pollution .],
+  [Breathing faster, children inhale more of any pollutant per unit of body weight than adults. Their developing organs are particularly vulnerable in the womb and in early life. Recent estimates suggest exposure to air pollution during pregnancy may be responsible for nearly three million low birth weight and nearly six million premature births per year. Low birthweight and prematurity are key risk factors with potential irreversible impacts on health and wellbeing throughout life. This is significant physical harm on a global scale, with no safeguarding panels, or child death reviews.],
+  [There are emotional impacts too. While having limited agency to change the trajectory of climate change themselves, children and young people will live to see more of its impact than those of us already a fair way through our lives. Anxiety is a rational response.],
+  [We know from surveys that many thousands of young people are feeling sad, anxious, angry, powerless, helpless, and guilty about climate change . “How dare you?” roared Greta Thunberg in 2019, “you have stolen my dreams and my childhood.”],
+  [Ella Kissi-Debrah isn’t roaring. She died in 2013 from severe asthma, exacerbated by her chronic exposure to high levels of air pollution in her neighbourhood by London’s South Circular road. We must roar on her behalf, and on behalf of all the other millions of children whose lives we are destroying. Call the global social services department and report ourselves for failing to change our ways, even when we knew we should. We are all perpetrators. At home, at work, weekdays, weekends, holidays, celebrations, with families, with friends—consuming, consuming, consuming. Depleting the global commons of natural resources our children will need, and increasing the burden of pollutants in our air, our water, and our land. We do this directly—sometimes burning fuel for the most frivolous of reasons, such as to avoid wearing another layer of clothing, or for our car to make the right vroom vroom noise. We do it indirectly too—we have learned to derive gratification from acquiring products whose manufacture, packaging, distribution, and disposal depletes and pollutes beyond our field of vision. Shortage of toys for Christmas? Fantastic—let’s do what genuinely makes us happy instead.],
+  [We have to change. We have to tackle climate change bottom up, top down, any which way we can. Child protection is everyone’s business, and climate protection is child protection. Climate risk assessments and mitigation protocols must be ubiquitous—every business, service, school, university, sports club, choir, band, event and so on should have these and be reviewed and audited against them.],
+  [Health professionals, who fully understand the implications of destroying the ecological determinants of health, must lead from the front. People noticed when we all stopped smoking. They will notice when we take climate change seriously.],
+  [style="font-weight: 400;"\>The UN must be our global safeguarding committee. Each Conference of the Parties should include a child protection meeting, at which data and narratives on child suffering and deaths due to climate change are reviewed. At COP26 we must all be held to account.],
+  [style="font-weight: 400;"\>There is no place of safety to which we can remove our children — no alternative world where climate change has been arrested and there is safe air, water, soil, food, and shelter for all. Everyone must play their part in rescuing this world to make it safe for children, and I for one will continue to roar until we do.],
+  [Lucy Reynolds is a community paediatrician living and working in Glasgow. Through the climate change and child health webinars run by the International Society for Social Paediatrics and Child Health she became involved in the Ride for Their Lives initiative and the RCPCH climate change working group.],
+  [Competing interests : none declared.],
+  [The post We must protect our planet for our children’s future appeared first on The BMJ .],
+),
+  insert-map: (:),
+  word-count: 808,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+}
+
+{
+  #standard-article(
+  title: [Learning Kotlin Constructor as a Java Developer],
+  author: [GameChanger],
+  source-name: [GameChanger Tech],
+  images: (),
+  paragraphs: (
+  [I have been developing Android apps in Java for years. I recently joined GameChanger and was excited to learn that GameChanger is using Kotlin. I originally thought that moving to Kotlin would be as simple as learning some new syntax, but I discovered that there was more to it. After a brief learning period, I’m up and running working in Kotlin. In this article, I’ll save you some of the trial-and-error by introducing some important concepts about constructors for those making the jump from Java to Kotlin.],
+  [id="not-all-constructors-are-created-equal-in-kotlin"\>Not All Constructors are Created Equal in Kotlin],
+  [In Java, all constructors are equal in a sense.],
+  [public class Person {],
+  [String name ; 
+ int age ;],
+  [public Person ( Person p ) { 
+ name = p . name ; 
+ age = p . age ; 
+ }],
+  [public Person ( String n , int a ) { 
+ name = n ; 
+ age = a ; 
+ } 
+ }],
+  [Take the above example, Person(Person p) and Person(String name, int age) can be used independently. Of course, you can choose to have one calling another, but it’s not required by the language.],
+  [In Kotlin there is always a primary constructor. Any additional constructors are secondary constructors. The primary constructor is always incorporated into the class header.],
+  [class Person ( n : String , a : Int ) { 
+ var name : String = n 
+ var age : Int = a 
+ }],
+  [The variables name and age are initialized with n and a . In fact, n and a are available anywhere in the class for variable initialization.],
+  [class Person ( n : String , a : Int ) { 
+ var name : String = n 
+ var age : Int = a 
+ var nameX2 : String = n + n],
+  [init { 
+ println ( "The age is: " + a ) 
+ } 
+ }],
+  [Any other constructors would become secondary constructors which are required to call the primary constructor in the very beginning.],
+  [class Person ( n : String , a : Int ) { 
+ var name : String = n 
+ var age : Int = a],
+  [constructor ( p : Person ) : this ( p . name , p . age ) { } 
+ }],
+  [id="the-order-of-creation"\>The Order of Creation],
+  [So, what is the order of processing when calling a secondary constructor? The primary constructor is invoked first, which triggers all the initialization from top to bottom. Then, the body of the secondary constructor is executed.],
+  [class Person ( n : String , a : Int ) { 
+ init { 
+ println ( "1st: initialization block 1 run" ) 
+ }],
+  [var name : String = n . apply { println ( "2nd: initialization lines run" ) } 
+ var age : Int],
+  [init { 
+ age = a 
+ println ( "3rd: initialization block 2 run" ) 
+ }],
+  [constructor ( p : Person ) : this ( p . name , p . age ) { 
+ println ( "4th: secondary constructor run" ) 
+ } 
+ }],
+  [id="can-i-skip-the-primary-constructor"\>Can I Skip the Primary Constructor?],
+  [No, a default primary constructor is still there even when you don’t write it and you are still required to call it in the secondary constructor. Also, you cannot initialize the variables in the secondary constructor because it has already passed the initialization timeframe. (Well, they are actually properties, but they behave just like variables in this case.)],
+  [class Person () { 
+ var name : String \/\\/ Compile Error: Property must be initialized 
+ var age : Int \/\\/ Compile Error: Property must be initialized],
+  [constructor ( n : String , a : Int ) : this () { 
+ name = n 
+ age = a 
+ } 
+ }],
+  [OK, if you really want to fake it like a Java constructor, here is the hack. It’s NOT recommended and I wrote it just for the learning purpose.],
+  [class Person () { 
+ var name : String = "" 
+ var age : Int = 0],
+  [constructor ( n : String , a : Int ) : this () { 
+ name = n 
+ age = a 
+ } 
+ }],
+  [What happened above is that we initialized name and age with a default value and assigned them to a new value in the secondary constructor. However, it doesn’t work when you replace var with val because Kotlin does not allow variable initialization in a secondary constructor.],
+  [id="overloading-arguments-with-default-value"\>Overloading Arguments with Default Value],
+  [Last, but not the least. Kotlin has this elegant way to overload arguments with default values.],
+  [class Person ( n : String = "Nameless" , a : Int = 1 ) { 
+ var name : String = n 
+ var age : Int = a 
+ }],
+  [fun main ( args : Array ) { 
+ var p1 = Person () \/\\/ name: Nameless, age: 1 
+ var p2 = Person ( "Tom" ) \/\\/ name: Tom, age: 1 
+ var p3 = Person ( a = 5 ) \/\\/ name: Nameless, age: 5 
+ }],
+  [The primary constructor is actually a sweet requirement in Kotlin. You will always know what is expected to create the object by scanning the the primary constructor without having to look at all the constructors as you would in Java, because constructors are no longer independent of each other. The primary constructor is also easy to spot because it is the first line of the class. If you are starting on learning Kotlin, I think the constructor is a good starting point. I hope you find this post helpful.],
+),
+  insert-map: (:),
+  word-count: 902,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -1572,6 +1254,133 @@ It’s starting by giving 25-50 people \$1,000 per month. ( Gizmodo )],
 #article-row((
   [
     standard-article(
+  title: [Rocket Report: Russia reopens gateway to ISS; Cape Canaveral hosts missile test],
+  author: [Stephen Clark],
+  source-name: [Ars Technica OpenForum],
+  images: (),
+  paragraphs: (
+  [Welcome to Edition 8.35 of the Rocket Report! The headlines this week are again dominated by the big changes afoot in NASA's exploration program, with the announcement of a Moon base and a nuclear-powered rocket to Mars. The shakeups come as the agency is just a week away from launching Artemis II, a circumlunar flight carrying a crew of four around the Moon. The Ars space team will be writing extensively about this mission in the days ahead, and we may skip the Rocket Report next week to focus on our Artemis II coverage.],
+  [As always, we welcome reader submissions . If you don't want to miss an issue, please subscribe using the box below (the form will not appear on AMP-enabled versions of the site). Each report will include information on small-, medium-, and heavy-lift rockets, as well as a quick look ahead at the next three launches on the calendar.],
+  [NASA announces nuclear rocket demo. NASA's announcement Tuesday that it will "pause" work on a lunar space station and focus on building a surface base on the Moon was no big surprise to anyone paying attention to the Trump administration’s space policy. But what should NASA do with hardware already built for the Gateway outpost? NASA spent close to \$4.5 billion on developing a human-tended complex in orbit around the Moon since the Gateway program’s official start in 2019. There are pieces of the station undergoing construction and testing in factories scattered around the world. The centerpiece of Gateway, called the Power and Propulsion Element, is closest to being ready for launch. NASA’s rejigged exploration roadmap, revealed Tuesday in an all-day event at NASA headquarters in Washington, calls for repurposing the core module for a nuclear-electric propulsion demonstration in deep space, Ars reports .],
+  [Read full article],
+),
+  insert-map: (:),
+  word-count: 300,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+  ],
+  [
+    standard-article(
+  title: [10 films. 10 visionaries. Season 2 of TED Fellows Films is here!],
+  author: [TED Staff],
+  source-name: [TED Blog],
+  images: (),
+  paragraphs: (
+  [Last year, we launched something new — a fusion of traditional TED Talks paired with short-form documentary. You didn’t just watch; you showed up in force. So we’re back. Season 2 of the TED Fellows Film Series has officially arrived!],
+  [We’re thrilled to share a brand-new collection of films spotlighting our 2025 TED Fellows . Meet the pilot training young African women to fly — and rewriting who gets to navigate the skies. Follow the biotechnologist turning organic waste into biodegradable plastics that could reshape our supply chains. Learn from a scientist using satellites to protect crops and fight food insecurity. Step inside a rural American community where another Fellow is rebuilding local economies from the ground up, creating jobs where they vanished decades ago. And that’s only the beginning.],
+  [These innovators are part of a global network of 500+ TED Fellows across 100+ countries, pushing the boundaries of science, health care, business, journalism, conservation, art, technology and more — whose work touches more than 200 million lives every year.],
+  [Season 2 invites you deeper into the Fellows universe: 10 films, 10 powerful stories of people making change possible. The result is electric, human and unmistakably hopeful.],
+  [If you want a window into what the future could look like — and who’s already building it — start here. Watch all 10 films now at go.ted.com/fellows25 and listen to the extended interviews on the TED Talks Daily podcast here .],
+),
+  insert-map: (:),
+  word-count: 239,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+  ],
+), ruled-indices: (1,))
+#pull-quote([Each report will include information on small-, medium-, and heavy-lift rockets, as well as a quick look ahead at the next three launches on the calendar.], [Stephen Clark])
+
+
+#article-row((
+  [
+    standard-article(
+  title: [“Begin PHASE TWO!” – I’m moving to ScienceBlogs…],
+  author: [Ed Yong],
+  source-name: [Not Exactly Rocket Science (Ed Yong archive)],
+  images: (),
+  paragraphs: (
+  [So, I have some really exciting news – this blog is evolving. After 18 excellent months at WordPress, I am packing up and moving over to ScienceBlogs , a collection of some of the best, er… science blogs on the Interweb.],
+  [I want to assure current readers that the blog is not going to change, (well, except in look). Even though the blog will have some academic neighbours, my mission statement of making science interesting and fun to as many people as possible remains the same and the pitch of the writing won’t change.],
+  [I still have full freedom to write about whatever I like and if anything, I’m hoping that the scrutiny of a tight community of experienced bloggers, many of whom are hardcore scientists, will push me to ensure an even higher level of accuracy in what I’m putting out.],
+  [So for the moment a massive round of thanks to everyone who continues to read and support this blog. The growing traffic and the generally positive comments from people are really gratifying and I’m really excited about the next step.],
+  [In a couple of weeks, the new blog should be ready, I’ll post up the new URL, raise my hands in the air, say “Begin Phase Two!” and cackle maniacally.],
+  [style="text-align: center;"\>],
+),
+  insert-map: (:),
+  word-count: 214,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+  ],
+  [
+    standard-article(
+  title: [How chemists turned bourbon waste into supercapacitors],
+  author: [Jennifer Ouellette],
+  source-name: [Ars Technica OpenForum],
+  images: (),
+  paragraphs: (
+  [Bourbon is a multi-billion-dollar market, but the American barrel-aged whiskey also produces a lot of wasted grain at distilleries. Chemists at the University of Kentucky developed a method to transform that stillage into electrodes and used those electrodes to build supercapacitors with energy storage capacity on par with existing commercial devices. They presented their work at a meeting of the American Chemical Society in Atlanta, Georgia.],
+  [US distillers began making bourbon in the 18th century, particularly in Kentucky, but it really took off commercially, in terms of consumption and exports, after World War II. Legally, a whiskey can only be sold as bourbon if its mash is composed of at least 51 percent corn, with any other cereal grain (usually rye and barley) making up the remainder.],
+  [The grain is ground up and mixed with water, and mash from a previous distillation is added to create a sour mash. The addition of yeast launches fermentation, after which the mash is distilled to a clear spirit called "white dog." That spirit is poured into charred new oak barrels for aging of at least two years. It's the caramelized sugars and vanillin in the charred wood that give bourbon its distinctive dark color and flavor. The barrels are never reused for bourbon, typically being recycled for making barrel-aged beer, wine, and even barbecue and hot sauces.],
+  [Read full article],
+),
+  insert-map: (:),
+  word-count: 228,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+  ],
+), ruled-indices: (1,))
+
+#article-row((
+  [
+    standard-article(
+  title: [A bit of good news: It's possible to turn around a groundwater crisis],
+  author: [Scott K. Johnson],
+  source-name: [Ars Technica OpenForum],
+  images: (),
+  paragraphs: (
+  [Generally, when you hear “water use” and “sustainability,” you expect those words to be followed by some bad news. Humanity’s enduring ability to ignore the math of declining water supplies is almost impressive. But there are cases where actions have successfully reversed our loss of water resources. A new paper in Science by Scott Jasechko of the University of California, Santa Barbara, examines documented cases of groundwater recovery around the world to identify which strategies have worked.],
+  [Groundwater is invaluable for many reasons. For one, it’s (usually) cleaner than surface water. It’s also right under your feet and often close enough to the surface that it doesn’t take much energy to pump it up. And there’s loads of it down there, no matter the season. Because of this, humans use a lot of it for drinking water, agriculture, and every other use you can think of.],
+  [Unfortunately, in many places, the rate of groundwater use has grown to exceed the rate at which precipitation soaks into the ground to replenish it.],
+  [Read full article],
+),
+  insert-map: (:),
+  word-count: 175,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+  ],
+  [
+    standard-article(
+  title: [A unique NASA satellite is falling out of orbit—this team is trying to rescue it],
+  author: [Stephen Clark],
+  source-name: [Ars Technica OpenForum],
+  images: (),
+  paragraphs: (
+  [BROOMFIELD, Colorado—One of NASA's oldest astronomy missions, the Neil Gehrels Swift Observatory, has been out of action for more than a month as scientists await the arrival of a pioneering robotic rescue mission.],
+  [The 21-year-old spacecraft is falling out of orbit, and NASA officials believe it's worth saving—for the right price. Swift is not a flagship astronomy mission like Hubble or Webb, so there's no talk of sending astronauts or spending hundreds of millions of dollars on a rescue expedition. Hubble was upgraded by five space shuttle missions, and billionaire and commercial astronaut Jared Isaacman—now NASA's administrator— proposed a privately funded mission to service Hubble in 2022, but the agency rejected the idea.],
+  [Swift may be a more suitable target for a first-of-a-kind commercial rescue mission. It has cost roughly \$500 million (adjusted for inflation) to build, launch, and operate, but it is significantly less expensive than Hubble, so the consequences of a botched rescue would be far less severe. Last September, NASA awarded a company named Katalyst Space Technologies a \$30 million contract to rapidly build and launch a commercial satellite to stabilize Swift's orbit and extend its mission.],
+  [Read full article],
+),
+  insert-map: (:),
+  word-count: 194,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+  ],
+), ruled-indices: (1,))
+
+{
+  #standard-article(
   title: [Ed vs. Gravity],
   author: [Ed Yong],
   source-name: [Not Exactly Rocket Science (Ed Yong archive)],
@@ -1589,115 +1398,58 @@ It’s starting by giving 25-50 people \$1,000 per month. ( Gizmodo )],
   debug-mode: false,
 )
 
-  ],
-  [
-    standard-article(
-  title: [The most popular TED Talks of 2025 — and what’s next for 2026],
-  author: [TED Staff],
-  source-name: [TED Blog],
-  images: (),
-  paragraphs: (
-  [As 2025 winds down, take a moment to revisit the ideas that defined the year — through TED Talks that sparked curiosity, challenged assumptions and left us dreaming. TED’s end-of-year playlists gather the moments that stirred the biggest conversations and offered fresh inspiration as we head into 2026.],
-  [Here are the talks everyone obsessed over in 2025 — from deepfakes and AI to breakthroughs shaping our future:],
-  [Dive into the conversations that lit up 2025, sparking global debate on AI, geopolitics, parenting and more:],
-  [Check out this year’s TED-Ed hits — fascinating lessons on science, myths, health and the mysteries of everyday life:],
-  [Tune into the podcast episodes that defined the year, bringing fresh insight to creativity, climate, culture and well-being:],
-  [Explore 10 standout talks that left a mark on 2025 — brilliant ideas on art, space and civic engagement:],
-  [Start the year strong with talks on movement, immunity and the small habits that help you thrive:],
-  [Uncove talks that unlock clarity, creativity and calm — so you can think sharper and feel more grounded in 2026:],
-  [Here’s your comprehensive guide to the AI shifts transforming work, creativity and daily life:],
-  [Meet the thinkers turning bold ideas into real change across climate, health, public safety and economic justice:],
-),
-  insert-map: (:),
-  word-count: 208,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-  ],
-), ruled-indices: (1,))
-
-{
-  #standard-article(
-  title: [Are we bold enough? Join TEDAI San Francisco this October],
-  author: [TED Staff],
-  source-name: [TED Blog],
-  images: (),
-  paragraphs: (
-  [Artificial intelligence is shaping our lives faster than almost any other technology in history. It generates breathtaking breakthroughs — and equally daunting questions. At TEDAI San Francisco 2025 , taking place October 21–22 , we’re bringing those questions front and center.],
-  [Are We Bold Enough?],
-  [This one question, with infinite futures, will guide our theme for 2025. Together, we’ll explore bold ideas and ask brave questions around how AI systems are reshaping the world — transforming industries, institutions, communities and culture.],
-  [For two days in October, TEDAI San Francisco will convene leading voices in AI, science, philosophy and design to spark conversations that matter.],
-  [Before the main event (October 18–19): A 48-hour Hackathon, where developers and researchers will collaborate at the frontier of what’s possible.],
-  [Day 1 (October 21): A full day of TED Talks — bold ideas from the cutting edge of AI and beyond.],
-  [Day 2 (October 22): Panels and interactive sessions — designed to engage the audience in dialogue, debate and discovery.],
-  [TEDAI San Francisco is about more than talks. Some of the most powerful moments happen offstage — in the hallways, at the after-parties and in conversations between sessions. These are the moments when sparks fly, ideas evolve and collaborations are born.],
-  [We’ll be announcing more speakers and panels soon , and we hope you’ll join us this October in San Francisco, California, where you’ll have the opportunity to think differently, connect deeply and shape the future of AI together.],
-  [Apply to attend!],
-  [Like what you see above? Apply to attend!],
-),
-  insert-map: (:),
-  word-count: 355,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
 }
 
 {
-  #section-label([Briefs])
+  #section-label([Analysis])
   #brief-group((
-    #brief-item([Juan Manuel Trinidad-BarnechIrene del Rey NavalónKonstantina MitsiAntonio J. Monera-GironaSebastián R. NajleS. PadmanabhanIñaki Ruiz-TrilloMontserrat Elías-ArnanzaLaboratorio de Genómica Evolutiva, Sección Biomatemática, Facultad de Ciencias, Universidad de la República, Montevideo 11400, UruguaybLaboratorio de Bioinformática, Departamento de Genómica, Instituto de Investigaciones Biológicas Clemente Estable, Ministerio de Educación y Cultura, Montevideo 11600, UruguaycDepartamento de Genética y Microbiología, Área de Genética (Unidad Asociada al Instituto de Química Física-Consejo Superior de Investigaciones Científicas), Universidad de Murcia, Murcia 30100, SpaindComplexity of Life Program, Institut de Biologia Evolutiva (Consejo Superior de Investigaciones Científicas-Universitat Pompeu Fabra), Barcelona 08003, SpaineInstituto Español de Oceanografía, Centro Oceanográfico de Santander, Santander 39080, SpainfInstituto de Química Física Blas Cabrera, Consejo Superior de Investigaciones Científicas, Madrid 28006, SpaingInstitució Catalana de Recerca i Estudis Avançats, Barcelona 08010, Spain], source-name: [PNAS News], [Proceedings of the National Academy of Sciences, Volume 123, Issue 12, March 2026. 
-SignificancePlasmalogens are important membrane lipids in animals, yet their evolutionary origin has remained a puzzle due to their patchy distribution across the eukaryotic tree. We found that the core set of genes required for aerobic plasmalogen ...])
+    [#brief-item([BBC Sport], source-name: [BBC Sport], [Four-time F1 world champion Max Verstappen tells BBC Sport he is "not enjoying" the sport after changes to the rules this season.])],
+    [#brief-item([BBC Sport], source-name: [BBC Sport], [Mary Rand, the first British woman to win athletics gold at the Olympics, was described as "Marilyn Monroe on spikes".])],
+    [#brief-item([James I. DunlopPeter A. ThomasonLeo M. CarlinBenjamin G. DavisStephen D. CarteraMedical Research Council-University of Glasgow Centre for Virus Research, School of Infection & Immunity, Glasgow G61 1QH, United KingdombCancer Research UK Scotland Institute, Glasgow G61 1BD, United KingdomcSchool of Cancer Sciences, University of Glasgow, Glasgow G12 0ZD, United KingdomdThe Rosalind Franklin Institute, Didcot OX11 0QX, United KingdomeDepartment of Chemistry, Chemistry Research Laboratory, University of Oxford, Oxford OX1 3TA, United Kingdom], source-name: [PNAS News], [Proceedings of the National Academy of Sciences, Volume 123, Issue 12, March 2026. 
+A defining feature of Rift Valley fever virus (RVFV) is the incorporation of the NSs protein into large filamentous assemblies inside infected nuclei \[R. Swanepoel, N. K. Blackburn,J. Gen. Virol.34, 557–561 (1977).\], as judged from fixed specimens. To ...])],
+    [#brief-item([Alexandra LeeAutumn GentzlerDeclan FitzpatrickSithara Raju PonnyOzkan AydemirMyoung Sook HanCaroline A. LewisGuangping GaoRoger J. DavisaProgram in Molecular Medicine, University of Massachusetts Chan Medical School, Worcester, MA 01605bHorae Gene Therapy Center, Department of Genetic and Cellular Medicine, University of Massachusetts Chan Medical School, Worcester, MA 01605], source-name: [PNAS News], [Proceedings of the National Academy of Sciences, Volume 123, Issue 12, March 2026. 
+SignificanceThe hepatic JUN NH2-terminal kinase (JNK) exhibits mutually exclusive alternative pre-mRNA splicing that results in the expression of JNK spliceoforms. We show that the hepatic adaptive response to the consumption of a high fat diet requires ...])],
+    [#brief-item([TED Staff], source-name: [TED Blog], [Can’t make it to Atlanta for TEDNext? TED Live brings the minute-by-minute excitement from the TED Theater to your home, school or office. Be one of the first to experience talks from visionary speakers like music mogul Jermaine Dupri, ballerina & activist Misty Copeland, neurosurgeon & reporter Sanjay Gupta, financial educator Vivian Tu and so many more.
 
-    #brief-item([GeeHee KimSaeka TomatsuTatsuya UmedaTomohiko TakeiTetsuro FunatoKazuhiko SekiaDepartment of Neurophysiology, National Institute of Neuroscience, National Center of Neurology and Psychiatry, Tokyo 187-8502, JapanbDepartment of Developmental Physiology, National Institute for Physiological Sciences, Aichi 444-8585, JapancDepartment of Mechanical Engineering and Intelligent Systems, The University of Electro-communications, Tokyo 182-8585, Japan], source-name: [PNAS News], [Proceedings of the National Academy of Sciences, Volume 123, Issue 12, March 2026. 
-SignificanceSkilled hand movements are a hallmark of primate behavior and are usually attributed to cortical mechanisms. Yet the degree to which spinal circuits contribute directly to voluntary dexterity has remained unclear. By combining in vivo ...])
+ Get your TED Live pass to stream the unedited talks in real time starting November 9 , or later on with the on-demand archive.])],
+    [#brief-item([Jason W. RocksDat P. TruongDmitrij RappoportSamuel Maddrell-ManderDaniel A. Martin-AlarconToni M. LeeSteven CrossanJoshua E. GoldfordaDayhoff Labs, Inc., Cambridge, MA 02140], source-name: [PNAS News], [Proceedings of the National Academy of Sciences, Volume 123, Issue 12, March 2026. 
+SignificanceWhile nature has evolved enzymes to carry out a vast array of chemical transformations, selecting the ideal protein to initiate an enzyme engineering campaign often presents a significant challenge, slowing progress across biocatalysis and ...])],
+    [#brief-item([Yingke LiangStephanie A. BuelerJohn L. RubinsteinaMolecular Medicine Program, The Hospital for Sick Children, Toronto, ON M5G 0A4, CanadabDepartment of Biochemistry, The University of Toronto, Toronto, ON M5S 1A8, CanadacDepartment of Medical Biophysics, The University of Toronto, Toronto, ON M5G 2C4, Canada], source-name: [PNAS News], [Proceedings of the National Academy of Sciences, Volume 123, Issue 12, March 2026. 
+SignificanceMycobacterium tuberculosisand related pathogens possess an unusual cell wall, rich in mycolic acid, that protects them from antibiotics and the host immune system. This study presents the structure of the mycobacterial long-chain acyl-CoA ...])],
+    [#brief-item([Stephen Clark], source-name: [Ars Technica OpenForum], [Jupiter's colossal storms generate lightning flashes at least 100 times more powerful than those on Earth, according to scientists analyzing data from NASA's Juno spacecraft.
 
-    #brief-item([Satoru FujiiScott T. EspenschiedVibha AnandJoao Bettencourt-SilvaYi HanGo ItoAkira KosekiAkihiro KosugiJames KozloskiRyoma MatsumotoShanshan MengNatasha MulliganRyan J. MusichKevin P. NewhallEri OshinaShuhei SekiguchiYi WangJianying HuMatthew CiorbaL. David SibleyRyuichi OkamotoThaddeus S. StappenbeckaDepartment of Gastroenterology and Hepatology, Institute of Science Tokyo, Tokyo 113-8510, JapanbDepartment of Inflammation and Immunity, Cleveland Clinic Research, The Cleveland Clinic, Cleveland, OH 44195cHealthcare and Life Sciences, International Business Machines Corporation Research, Yorktown Heights, NY 10598dHealthcare and Life Sciences, International Business Machines Corporation Research, Cambridge, MA 02142eHealthcare and Life Sciences, International Business Machines Corporation Research, Dublin 2 D02 F6N2, IrelandfHealthcare and Life Sciences, International Business Machines Corporation Research, Tokyo 103-8510, JapangMedical Scientist Training Program, Case Western Reserve School of Medicine, Cleveland, OH 44195hDepartment of Pathology and Immunology, Washington University School of Medicine, St. Louis, MO 63110iDivision of Gastroenterology and the Inflammatory Bowel Diseases Center, Department of Internal Medicine, Washington University School of Medicine, St. Louis, MO 63110jDeparment of Molecular Microbiology, Washington University School of Medicine, St. Louis, MO 63110], source-name: [PNAS News], [Proceedings of the National Academy of Sciences, Volume 123, Issue 12, March 2026. 
-SignificanceThis manuscript addresses challenges in quantitative comparisons of cell types grown in vitro vs. in vivo counterparts. Here, we use the intestinal epithelium as a model system to address this challenge. We devised an in vitro culture platform ...])
+Questions about the future of Juno and more than a dozen other robotic science missions began swirling nearly a year ago, when the Trump administration asked mission leaders to submit "closeout" plans for how to turn off their spacecraft. Ars first reported the news soon after the White House released a budget request that called for slashing NASA's science budget by nearly half.
 
-    #brief-item([Carl VellerPavitra MuralidharaDepartment of Ecology & Evolution, University of Chicago, Chicago, IL 60637bNational Institute for Theory and Mathematics in Biology, Northwestern University and University of Chicago, Chicago, IL 60611], source-name: [PNAS News], [Proceedings of the National Academy of Sciences, Volume 123, Issue 12, March 2026. 
-SignificanceThe theory of system drift, initially proposed in developmental genetics, holds that the components of a system can evolve (and therefore diverge between species) despite selective constraint on their combined result. We provide a population ...])
+ Read full article 
 
-    #brief-item([Yingke LiangStephanie A. BuelerJohn L. RubinsteinaMolecular Medicine Program, The Hospital for Sick Children, Toronto, ON M5G 0A4, CanadabDepartment of Biochemistry, The University of Toronto, Toronto, ON M5S 1A8, CanadacDepartment of Medical Biophysics, The University of Toronto, Toronto, ON M5G 2C4, Canada], source-name: [PNAS News], [Proceedings of the National Academy of Sciences, Volume 123, Issue 12, March 2026. 
-SignificanceMycobacterium tuberculosisand related pathogens possess an unusual cell wall, rich in mycolic acid, that protects them from antibiotics and the host immune system. This study presents the structure of the mycobacterial long-chain acyl-CoA ...])
+ Comments])],
+    [#brief-item([BBC Sport], source-name: [BBC Sport], [Donegal manager Jim McGuinness is "delighted" as his team claim the county's first National Football League title in 19 years and second overall with a thumping 3-20 to 2-10 win over Kerry at Croke Park.])],
+    [#brief-item([BBC Sport], source-name: [BBC Sport], [Scotland continue their World Cup preparations with a friendly against Ivory Coast on Tuesday, but why is this away game being played at Everton's new stadium in Liverpool?])],
+    [#brief-item([Vladislav MyrovAlina SuleimanovaSamanta KnapičPaula PartanenMaria VesterinenWenya LiuSatu PalvaJ. Matias PalvaaDepartment of Neuroscience and Biomedical Engineering, Aalto University, Espoo FI-00076, FinlandbNeuroscience Center, Helsinki Institute of Life Science, University of Helsinki, Helsinki FI-00014, FinlandcDivision of Psychology, VISE, Faculty of Education and Psychology, University of Oulu, Oulu G12 8QB, FinlanddBioMag Laboratory, Uusimaa Hospital Diagnostic Center, Helsinki FI-90014, FinlandeSchool of Psychology and Neuroscience, University of Glasgow, Glasgow FI-00029, United Kingdom], source-name: [PNAS News], [Proceedings of the National Academy of Sciences, Volume 123, Issue 12, March 2026. 
+SignificanceNested neuronal networks exhibit scale-free activity in vivo, but there is a shortage of mechanistic models linking such hierarchical architectures with measurable dynamics. We advance here a Hierarchical Kuramoto model that directly links ...])],
+    [#brief-item([BBC Sport], source-name: [BBC Sport], [Before Carlos Alcaraz became the youngest man to complete the career Grand Slam, he was simply Carlitos from Murcia. This is his story.])],
+    [#brief-item([Jing LiuAn MuShaojie MaYi LiuJing ZhangJun-zhuo ZhaoJian WangXia-lian WuJun-xia LuaInterdisciplinary Institute of NMR and Molecular Sciences, Wuhan University of Science and Technology, Wuhan 430081, ChinabSchool of Life Science and Technology, ShanghaiTech University, Shanghai 201210, ChinacSchool of Pharmacy, Jiangsu Ocean University, Lianyungang 222005, ChinadHubei Province for Coal Conversion and New Carbon Materials, School of Chemistry and Chemical Engineering, Wuhan University of Science and Technology, Wuhan 430081, China], source-name: [PNAS News], [Proceedings of the National Academy of Sciences, Volume 123, Issue 12, March 2026. 
+SignificanceProtein high-order assembly with a hierarchical organization is intrinsically difficult to study. To fully explore its functions and carry out further structure-based design, a thorough understanding of how the material is structured at the ...])],
+    [#brief-item([BBC Sport], source-name: [BBC Sport], [On the latest episode of The Chequered Flag Podcast, 1996 F1 world champion Damon Hill thinks that if Max Verstappen is not enjoying the sport any more following regulation changes then perhaps he needs to take a break.])],
+    [#brief-item([Md. Hassan uz-ZamanHoward OchmanaDepartment of Molecular Biosciences, University of Texas at Austin, Austin, TX 78712], source-name: [PNAS News], [Proceedings of the National Academy of Sciences, Volume 123, Issue 12, March 2026. 
+SignificanceBacteria often contain large numbers of unique genes not present in other genomes. Because most new genes arise by duplication and divergence, they are expected to resemble existing genes, so the origin of these unique “orphan” genes (“ORFans”)...])],
+    [#brief-item([Donald P. McDonnellaDepartment of Pharmacology and Cancer Biology, Duke University School of Medicine, Durham, NC 27710], source-name: [PNAS News], [Proceedings of the National Academy of Sciences, Volume 123, Issue 12, March 2026. 
+Bert W. O’Malley, the “father/grandfather” of the field of molecular endocrinology passed away on November 11, 2025, at the age of 88. In a distinguished career that spanned over 60 years, he probed fundamental aspects of steroid hormone action, work that ...])],
+    [#brief-item([Eugene MalthouseCharlie PilgrimDaniel SgroiMichela AccerenziAntonio AlfonsoRana Umair AshrafMax BaardSanchayan BanerjeeAlexis BelianinSwagata BhattacharjeeMihir BhattacharyaPablo Brañas-GarzaJuan-Camilo CárdenasMiguel CarriquirySyngjoo ChoiGwen-Jiro ClochardEduardo Ezekiel DenzonBartlomiej Dessoulavy-SliwinskiGiorgio DiniLu DongAntal ErtlFilippos ExadaktylosEmel Filiz-OzbaySarah Lynn FleckeFabio GaleottiTeresa Garcia-MuñozNobuyuki HanakiGuillaume HollardDaniel HornLingbo HuangDoruk İrişHubert Janos KissJuliane KochJaromír KováříkOsbert Kwabena Boadi KwartengAndreas LangeMartin LeitesThomas Ho-Fung LeungWooyoung LimMeike MorrenLaila NockurCharles Yaw OkyereMayada OudahAli I. OzkesLionel PageJunghyun ParkStefan PfattheicherAntonios ProestakisCarlos RamosMapi Ramos-SosaMuhammad Saeed AshrafMuhammad Ryan SanjayaRene SchwaigerOmar SeneFei SongSarah SpycherRostislav StaněkNorman TanchingcoAlessandro TavoniVera te VeldeMaría José Vázquez-De FranciscoMartine VisserJoseph Tao-Yi WangWilly WangWei-Chien WengKatharina WernerAmanda WijayantiRalph WinklerJohn WoodersLi YingWei ZhenThomas HillsaCentre for Decision Research and Experimental Economics, School of Economics, University of Nottingham, Nottingham NR7 2QX, United KingdombSchool of Mathematics, University of Leeds, Leeds LS2 9JT, United KingdomcDepartment of Economics, University of Warwick, Coventry CV4 7AL, United KingdomdFundación ETEA—Development Institute of Universidad Loyola Andalucía, Córdoba 14004, SpaineDepartment of Applied Economics I, University of Seville, Sevilla 41018, SpainfFaculty of Economic Sciences, University of Warsaw, Warsaw 00-241, PolandgEnvironmental Policy Research Unit, University of Cape Town, Cape Town 7700, South AfricahSchool for Government, The Policy Institute, King’s College London, London WC2B 4LL, United KingdomiNational Research University Higher School of Economics, Moscow 101000, RussiajAlmaty Management University, Almaty 050060, KazakhstankJindal School of Government and Public Policy, O.P. Jindal Global University, Haryana 131001, IndialDepartment of Economics, Ashoka University, Haryana 131029, IndiamLoyolaBehLAB, Department of Finance, Universidad Loyola Andalucía, Córdoba 14004, SpainnFacultad de Economía, Universidad de los Andes, Cundinamarca, Bogotá 111711, ColombiaoDepartment of Economics, University of Massachusetts Amherst, Amherst, MA 01003pInstituto de Economía, Universidad de la República de Uruguay, Montevideo 11200, UruguayqDepartment of Economics, Seoul National University, Seoul 08826, Republic of KorearInstitute of Social and Economics Research, University of Osaka, Osaka 567-0047, JapansJoint Initiative for Latin American Experimental Economics, Buenos Aires C1054 AAF, ArgentinatJohn Gokongwei School of Management, Ateneo de Manila University, Metro Manila 1108, PhilippinesuDepartment of Economics, University of Bologna, Bologna 40126, ItalyvSouthern University of Science and Technology, Guangdong Province 518055, ChinawELTE Centre for Economic and Regional Studies, Budapest 1097, HungaryxSchool of Social Sciences, University of Iceland, Reykjavík 102, IcelandyUniversidad de Barcelona, Barcelona 08007, SpainzDepartment of Economics, University of Maryland, College Park, MD 20742aaDepartment of Experimental Psychology, University College London, London WC1H 0AP, United KingdombbCNRS, Université Lumière Lyon 2, Université Jean Monnet Saint-Etienne, Emlyon Business School, GATE, Lyon 69007, FranceccUniversity of Granada, Granada 18012, SpainddUniversity of Limassol, Limassol 3020, CypruseeCenter for Research in Economics and Statistics, École Polytechnique, Institut Polytechnique de Paris, Palaiseau 91120, FranceffCNRS, Paris Cedex 16 75794, FranceggCorvinus University of Budapest, Budapest 1093, HungaryhhShandong University, Jinan, Licheng District 250100, ChinaiiDepartment of Economics, Sogang University, Seoul 08826, Republic of KoreajjEconomics Department at Lund University School of Economics and Management, Lund 223 63, SwedenkkDepartamento de Análisis Económico, University of the Basque Country (UPV/EHU), Bilbao 48015, SpainllFaculty of Economics, University of West Bohemia, Plzeň 306 14, Czech RepublicmmDepartment of Agricultural Economics and Agribusiness, College of Basic and Applied Sciences, University of Ghana, Legon-Accra GA-489-1402, GhanannDepartment of Economics, Faculty of Business, Economics and Social Sciences of the University of Hamburg, Hamburg 20146, GermanyooUniversidad de la República de Uruguay, Montevideo 11200, UruguayppUniversity of Arizona, Tucson, AZ 85721qqThe Hong Kong University of Science and Technology, Kowloon, Hong KongrrDepartment of Marketing, Vrije Universiteit Amsterdam, Amsterdam 1081 HV, NetherlandsssDepartment of Psychology and Behavioural Sciences, Aarhus University, Aarhus 8000, DenmarkttDivision of Social Science, New York University Abu Dhabi, Abu Dhabi PO Box 129188, United Arab EmiratesuuCenter for Behavioral Institutional Design, New York University Abu Dhabi Research Institute, New York University Abu Dhabi, Abu Dhabi PO Box 129188, United Arab EmiratesvvSKEMA Business School, Groupe de Recherche en Droit, Économie et Gestion, Université Côte d’Azur, Lille 59777, FrancewwVienna University of Economics and Business, Vienna 1020, AustriaxxSchool of Economics, University of Queensland, Brisbane QLD 4072, AustraliayySeoul National University, Seoul 04107, Republic of KoreazzDepartment of Nutrition and Dietetics Sciences, Hellenic Mediterranean University, Sitia 72300, GreeceaaaInstituto Tecnológico de Santo Domingo, Santo Domingo 10602, Dominican RepublicbbbDepartment of Applied Economic Analysis, Universidad de Las Palmas de Gran Canaria, Las Palmas 35017, SpaincccSchool of Tourism Management, Hengxing University of Science and Technology, Qingdao, Shandong 266100, ChinadddUniversitas Gadjah Mada, Kabupaten Sleman, Daerah Istimewa Yogyakarta 55281, IndonesiaeeeDepartment of Banking and Finance, University of Innsbruck, Innsbruck 6020, AustriafffAlioune Diop University of Bambey, Bambey BP 16617, SenegalgggTed Rogers School of Management, Toronto Metropolitan University, Toronto, ON M5B 2K3, CanadahhhDepartment of Management, Technology, and Economics, ETH Zurich, Zürich 8092, SwitzerlandiiiFaculty of Economics and Administration, Masaryk University, Brno 601 77, CzechiajjjGrantham Research Institute on Climate Change and the Environment, London School of Economics, London WC2A 2AE, United KingdomkkkUniversity of Cape Town, Cape Town 7700, South AfricalllDepartment of Economics, National Taiwan University, Taipei 106, TaiwanmmmTaiwan Social Resilience Research Center, National Taiwan University, Taipei 106, TaiwannnnSchool of Information, University of Michigan, Ann Arbor, MI 48109oooDepartment of Economics, University of Cologne, Cologne D-50937, GermanypppSchool of Business, Economics, and Information Systems, University of Passau, Passau D-94032, GermanyqqqDepartment of Economics and Oeschger Centre for Climate Change Research, University of Bern, Bern CH-3012, SwitzerlandrrrInstitute of Psychology, Chinese Academy of Sciences, Beijing 100101, ChinasssDepartment of Psychology, University of Warwick, Coventry CV4 7AL, United Kingdom], source-name: [PNAS News], [Proceedings of the National Academy of Sciences, Volume 123, Issue 12, March 2026. 
+SignificanceOne of the main goals of international climate change negotiations is to distribute the economic burden of limiting global warming. A central challenge is that some countries are wealthier than others and may therefore be better able to invest ...])],
+    [#brief-item([BBC Sport], source-name: [BBC Sport], [Willie Peters will leave Super League champions Hull KR at the end of the season to coach in his native Australia.])],
+    [#brief-item([BBC Sport], source-name: [BBC Sport], [British Ice Skating appeals after Lilah Fear and Lewis Gibson miss out on an ice dance bronze medal at the World Figure Skating Championships.])],
+    [#brief-item([Keyu ChenYu DengTianming HuJichun LiXin-Yu HuangChengcheng ZhuHonggang ChenMeihua ChenLimin WuYonghui DengWenhe XieaDepartment of Chemistry, Shanghai Stomatological Hospital and School of Stomatology, State Key Laboratory of Coatings for Advanced Equipment, Shanghai Key Laboratory of Molecular Catalysis and Innovative Materials, Fudan University, Shanghai 200433, P. R. ChinabState Key Laboratory of Advanced Fiber Materials, Department of Materials Science and Engineering, College of Materials Science and Engineering, Donghua University, Shanghai 201620, P. R. ChinacInstitute of Energy and Materials Chemistry, Inner Mongolia University, Hohhot 010021, P. R. China], source-name: [PNAS News], [Proceedings of the National Academy of Sciences, Volume 123, Issue 12, March 2026. 
+SignificanceInspired by the periodic porous membrane and breathing process of the mammalian respiratory system, a steady nonequilibrium sensing process is established to achieve high-accuracy gas discrimination based on artificial periodic porous ...])],
+    [#brief-item([Satoru FujiiScott T. EspenschiedVibha AnandJoao Bettencourt-SilvaYi HanGo ItoAkira KosekiAkihiro KosugiJames KozloskiRyoma MatsumotoShanshan MengNatasha MulliganRyan J. MusichKevin P. NewhallEri OshinaShuhei SekiguchiYi WangJianying HuMatthew CiorbaL. David SibleyRyuichi OkamotoThaddeus S. StappenbeckaDepartment of Gastroenterology and Hepatology, Institute of Science Tokyo, Tokyo 113-8510, JapanbDepartment of Inflammation and Immunity, Cleveland Clinic Research, The Cleveland Clinic, Cleveland, OH 44195cHealthcare and Life Sciences, International Business Machines Corporation Research, Yorktown Heights, NY 10598dHealthcare and Life Sciences, International Business Machines Corporation Research, Cambridge, MA 02142eHealthcare and Life Sciences, International Business Machines Corporation Research, Dublin 2 D02 F6N2, IrelandfHealthcare and Life Sciences, International Business Machines Corporation Research, Tokyo 103-8510, JapangMedical Scientist Training Program, Case Western Reserve School of Medicine, Cleveland, OH 44195hDepartment of Pathology and Immunology, Washington University School of Medicine, St. Louis, MO 63110iDivision of Gastroenterology and the Inflammatory Bowel Diseases Center, Department of Internal Medicine, Washington University School of Medicine, St. Louis, MO 63110jDeparment of Molecular Microbiology, Washington University School of Medicine, St. Louis, MO 63110], source-name: [PNAS News], [Proceedings of the National Academy of Sciences, Volume 123, Issue 12, March 2026. 
+SignificanceThis manuscript addresses challenges in quantitative comparisons of cell types grown in vitro vs. in vivo counterparts. Here, we use the intestinal epithelium as a model system to address this challenge. We devised an in vitro culture platform ...])],
+    [#brief-item([Alec M. BevisKathryn J. L. H. RosaNancy SchwartingTammy R. CockerhamCatherine M. KerrSunil MoreAnthony R. FehrRobin C. OrozcoaDepartment of Molecular Biosciences, University of Kansas, Lawrence, KS 66045bDepartment of Veterinary Pathobiology, Oklahoma State University, Stillwater, OK 74078], source-name: [PNAS News], [Proceedings of the National Academy of Sciences, Volume 123, Issue 12, March 2026. 
+SignificanceApproximately 5 to 15% of the North American population has thePTPN221858C\>T allele, which has been linked with numerous autoimmune diseases and is considered the highest non-HLA risk allele for autoimmunity. Due to this link, thePTPN22...])],
+    [#brief-item([Nathan Yau], source-name: [FlowingData], [Getting pregnant and having a child is typically described as an effortless process where you try and then you succeed. However, the process is often not so direct. For the Pudding, Lam Thuy Vo, with help from Jan Diehm and Michelle Pera-McGhee, and illustrations by Rose Wong, describes the journey of infertility and IVF .
 
-    #brief-item([Douglas De Jesus], source-name: [ACLU News], [Immigration arrests have upended life in Minnesota as citizens detail unlawful and violent interactions with ICE in court testimonies as part of an ACLU lawsuit against the Trump administration.])
+You are able to move through from the point of view of parent or child. Switch back and forth or go all the way with each separately.
 
-    #brief-item([BBC Science & Environment], source-name: [BBC Science & Environment], [From a race with China to lunar discoveries, the US is investing time, effort and money to head to the Moon - and beyond.])
-
-    #brief-item([Alexandra LeeAutumn GentzlerDeclan FitzpatrickSithara Raju PonnyOzkan AydemirMyoung Sook HanCaroline A. LewisGuangping GaoRoger J. DavisaProgram in Molecular Medicine, University of Massachusetts Chan Medical School, Worcester, MA 01605bHorae Gene Therapy Center, Department of Genetic and Cellular Medicine, University of Massachusetts Chan Medical School, Worcester, MA 01605], source-name: [PNAS News], [Proceedings of the National Academy of Sciences, Volume 123, Issue 12, March 2026. 
-SignificanceThe hepatic JUN NH2-terminal kinase (JNK) exhibits mutually exclusive alternative pre-mRNA splicing that results in the expression of JNK spliceoforms. We show that the hepatic adaptive response to the consumption of a high fat diet requires ...])
-
-    #brief-item([BBC Sport], source-name: [BBC Sport], [A new BBC documentary looks at the rise of bare-knuckle boxing as fighter Liam 'Rocky' Rees tells BBC Sport why he loves the adrenaline.])
-
-    #brief-item([BBC Sport], source-name: [BBC Sport], [Great Britain's 1500m Olympic silver medallist Josh Kerr says he is ready to attempt to beat the world mile record this year at the London Diamond League event in July.])
-
-    #brief-item([BBC Sport], source-name: [BBC Sport], [Oona Siren's stunning volley helps Women's Super League relegation battlers West Ham fight back to earn a point against London City Lionesses.])
-
-    #brief-item([Xiaoling ZhongYuhua ZouChun-Li ZhangaDepartment of Molecular Biology, University of Texas Southwestern Medical Center, Dallas, TX 75390bHamon Center for Regenerative Science and Medicine, University of Texas Southwestern Medical Center, Dallas, TX 75390cO’Donnell Jr. Brain Institute, University of Texas Southwestern Medical Center, Dallas, TX 75390], source-name: [PNAS News], [Proceedings of the National Academy of Sciences, Volume 123, Issue 12, March 2026. 
-SignificanceReprogramming glial cells into neurons holds great promise for regenerative therapies in the central nervous system, but the molecular barriers limiting this process remain largely unknown. This study identifies two critical regulators of SOX2-...])
-
-    #brief-item([Xinxin ChenSiwen WangMauricio TorresSijie HaoShengyi SunLing QiaDepartment of Molecular Physiology and Biological Physics, University of Virginia School of Medicine, Charlottesville, VA 22903bDepartment of Molecular and Integrative Physiology, University of Michigan Medical School, Ann Arbor, MI 48109cDepartment of Emergency Medicine, Xiangya Hospital, Central South University, Changsha, Hunan 410008, ChinadAdvanced Microscopy Facility, University of Virginia School of Medicine, Charlottesville, VA 22903eDepartment of Biomedical Engineering, University of Virginia School of Medicine, Charlottesville, VA 22903fDepartment of Pharmacology, University of Virginia School of Medicine, Charlottesville, VA 22903], source-name: [PNAS News], [Proceedings of the National Academy of Sciences, Volume 123, Issue 12, March 2026. 
-SignificanceAdaptive thermogenesis in brown adipose tissue demands exceptional control of organelle quality and proteostasis. How mitochondria maintain integrity under high metabolic demand remains unclear. Here, we identify coordinated action between the ...])
-
-    #brief-item([Andreas MühlbauerYuanbei F. FanDaniel J. SamborMark Z. JacobsonaDepartment of Civil and Environmental Engineering, Stanford University, Stanford, CA 94305-4020], source-name: [PNAS News], [Proceedings of the National Academy of Sciences, Volume 123, Issue 12, March 2026. 
-SignificanceThis study reveals the immense, previously unquantified potential of repowering the United States (US) onshore wind turbine fleet. By replacing aging turbines with modern technology at existing sites, the United States could more than double ...])
-
-    #brief-item([Zhaoyi PanShujuan ZhangXianbo GengNa WangLijiang ZhangLuyao WangChunhong YinHuijiao ZhangShujun LiuLing ZhangJing FanGuangjian XueRui LiTianle LiYating YuHangping YaoChangzhong JinNanping WuaJinan Microecological Biomedicine Shandong Laboratory, Jinan 250118, ChinabZhejiang Key Laboratory of High-level Biosafety and Biomedical Transformation, Hangzhou Medical College, Hangzhou 311305, ChinacInfectious Disease Control Institute, Shandong Center for Disease Control and Prevention, Jinan 250014, ChinadShandong Provincial Key Laboratory of Intelligent Monitoring, Early Warning, Prevention and Control for Infectious Diseases, Jinan 250014, ChinaeShandong First Medical University and Shandong Academy of Medical Sciences, Jinan 250117, ChinafState Key Laboratory for Diagnosis and Treatment of Infectious Diseases, National Clinical Research Center for Infectious Diseases, Collaborative Innovation Center for Diagnosis and Treatment of Infectious Diseases, The First Affiliated Hospital, Zhejiang University School of Medicine, Hangzhou 310006, China], source-name: [PNAS News], [Proceedings of the National Academy of Sciences, Volume 123, Issue 12, March 2026. 
-SignificanceThis study identifies key monkeypox virus (MPXV) immune evasion proteins—OPG147, OPG188, and OPG200—that suppress the host cGAS–STING antiviral pathway. We characterize OPG188 as a nuclease that degrades the immune signaling molecule 2′3′-...])
-
-    #brief-item([BBC Sport], source-name: [BBC Sport], [Mary Rand, the first British woman to win athletics gold at the Olympics, was described as "Marilyn Monroe on spikes".])
-
-    #brief-item([BBC Sport], source-name: [BBC Sport], [What do you do if you fall 40 feet on to hard-packed snow? If you're a Winter Olympics athlete, you pick yourself up and try again.])
-
-    #brief-item([BBC Science & Environment], source-name: [BBC Science & Environment], [Solar panels that can be plugged in at home could be available to buy in supermarkets in the coming months.])
-
-    #brief-item([Wesley TungMatthew YuenHelen CaiHyesun ChoPeiwen LuHarvey J. KlimanRobert J. HomerAlexa HerreriasNikkita SallaArianna Rodriguez RiveraYuting LiuKartik PattabiramanAkiko IwasakiaDepartment of Immunobiology, Yale University School of Medicine, New Haven, CT 06520bDepartment of Neuroscience, Yale University School of Medicine, New Haven, CT 06520cChild Study Center, Yale University School of Medicine, New Haven, CT 06520dDepartment of Obstetrics, Gynecology, and Reproductive Sciences, Yale University School of Medicine, New Haven, CT 06520eDepartment of Pathology, Yale University School of Medicine, New Haven, CT 06520fWu Tsai Institute, Yale University, New Haven, CT 06520], source-name: [PNAS News], [Proceedings of the National Academy of Sciences, Volume 123, Issue 12, March 2026. 
-SignificanceThe rising global numbers of SARS-CoV-2 infections highlight the need to assess potential neurodevelopmental and psychiatric impact in children born to infected mothers. Human cohorts have provided conflicting conclusions, while mouse studies ...])
-
-    #brief-item([BBC Sport], source-name: [BBC Sport], [Great Britain's Lilah Fear and Lewis Gibson miss out on an ice dance world medal by less than a fifth of a point after having two points deducted for an "illegal element".])
-
+ Tags: children , infertility , Lam Thuy Vo , Pudding])],
   ))
 }
 

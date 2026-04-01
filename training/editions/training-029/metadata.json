@@ -1,25 +1,26 @@
 {
   "config_id": "training-029",
   "archetype": "sports-autos",
-  "date_generated": "2026-03-30T01:21:11.062042+00:00",
+  "date_generated": "2026-03-30T01:45:36.704927+00:00",
   "page_target": 12,
-  "num_pages": 13,
+  "num_pages": 8,
   "num_items": 36,
   "feeds_contributed": [
-    "Surfer Magazine",
-    "ESPN Top Stories",
     "Bring a Trailer",
-    "PubMed Health",
-    "Trail Runner Magazine",
-    "Only in it for the Gold (blog, climate)",
-    "Petr Mitrichev (competitive programming)",
     "Outside Magazine",
-    "Yahoo Sports",
-    "Jalopnik",
+    "American Alpine Club Blog",
+    "Trail Runner Magazine",
     "BBC Sport",
-    "American Alpine Club Blog"
+    "PubMed Health",
+    "Surfer Magazine",
+    "Petr Mitrichev (competitive programming)",
+    "Only in it for the Gold (blog, climate)",
+    "ESPN Top Stories",
+    "Ilya Grigorik",
+    "Yahoo Sports",
+    "Jalopnik"
   ],
-  "render_time_s": 0.28,
+  "render_time_s": 0.19,
   "pages": [
     {
       "page_number": 1,
@@ -66,36 +67,6 @@
     {
       "page_number": 8,
       "png_path": "training-029/pages/page-008.png",
-      "width_pt": 612.0,
-      "height_pt": 792.0
-    },
-    {
-      "page_number": 9,
-      "png_path": "training-029/pages/page-009.png",
-      "width_pt": 612.0,
-      "height_pt": 792.0
-    },
-    {
-      "page_number": 10,
-      "png_path": "training-029/pages/page-010.png",
-      "width_pt": 612.0,
-      "height_pt": 792.0
-    },
-    {
-      "page_number": 11,
-      "png_path": "training-029/pages/page-011.png",
-      "width_pt": 612.0,
-      "height_pt": 792.0
-    },
-    {
-      "page_number": 12,
-      "png_path": "training-029/pages/page-012.png",
-      "width_pt": 612.0,
-      "height_pt": 792.0
-    },
-    {
-      "page_number": 13,
-      "png_path": "training-029/pages/page-013.png",
       "width_pt": 612.0,
       "height_pt": 792.0
     }
@@ -174,55 +145,11 @@
     {
       "spread_id": "s-029-005",
       "edition_id": "training-029",
-      "type": "spread",
+      "type": "solo",
       "pages": [
         {
           "page_number": 8,
           "png_path": "training-029/pages/page-008.png",
-          "width_pt": 612.0,
-          "height_pt": 792.0
-        },
-        {
-          "page_number": 9,
-          "png_path": "training-029/pages/page-009.png",
-          "width_pt": 612.0,
-          "height_pt": 792.0
-        }
-      ]
-    },
-    {
-      "spread_id": "s-029-006",
-      "edition_id": "training-029",
-      "type": "spread",
-      "pages": [
-        {
-          "page_number": 10,
-          "png_path": "training-029/pages/page-010.png",
-          "width_pt": 612.0,
-          "height_pt": 792.0
-        },
-        {
-          "page_number": 11,
-          "png_path": "training-029/pages/page-011.png",
-          "width_pt": 612.0,
-          "height_pt": 792.0
-        }
-      ]
-    },
-    {
-      "spread_id": "s-029-007",
-      "edition_id": "training-029",
-      "type": "spread",
-      "pages": [
-        {
-          "page_number": 12,
-          "png_path": "training-029/pages/page-012.png",
-          "width_pt": 612.0,
-          "height_pt": 792.0
-        },
-        {
-          "page_number": 13,
-          "png_path": "training-029/pages/page-013.png",
           "width_pt": 612.0,
           "height_pt": 792.0
         }

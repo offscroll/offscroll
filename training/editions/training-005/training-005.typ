@@ -23,102 +23,127 @@
 
 // --- Front Page Feature ---
 #feature-article(
-  title: [This Best-Pick 65-Inch Hisense QLED TV Is Over 50% Off Right Now],
+  title: [Getting Towards Real Sandbox Containers],
   kicker: [Cover Story],
-  author: [Pradershika Sharma],
-  source-name: [Lifehacker],
-  deck: [Deal pricing and availability subject to change after time of publication.],
-  lead-text: "Hisense’s mid-range TVs tend to land in that sweet spot of good features at a not-astronomical price. That certainly describes the 2025 U7 Series right now, as the 65-inch model is discounted by $800 at Best Buy , dropping to just $699 . It's one of Lifehacker's picks for the best 65-inch TVs in 2026, especially at this price.",
-  lead-first-alpha: 0,
+  author: [Jessie Frazelle],
+  source-name: [Jessie Frazelle],
+  deck: [Containers are all the rage right now. At the very core of containers are the same Linux primitives that are also used to create application sandboxes.],
+  lead-pre: [],
+  lead-cap: [C],
+  lead-rest: [ontainers are all the rage right now.],
   body-paragraphs: (
-  [The sale price is good through April 19, and Best Buy is sweetening the deal with a discount on mounting and free haul-away for members, making upgrading your older TV a bit less of a chore.],
-  [The Mini-LED backlighting and QLED panel of the 65U75QG deliver deep blacks with minimal blooming, and displays punchy HDR content with support for Dolby Vision and HDR10+, so watching movies or sports feels lively. It gets bright enough to handle sunlit rooms without looking washed out, though if your room has a lot of light, reflections can show up during darker scenes. There’s a built-in speaker setup with a subwoofer and upward-firing speakers, which adds some height to the soundstage, though it won’t replace a dedicated soundbar. As Google TV runs the interface, apps, casting, and voice control are all baked in.],
-  [On the downside, this TV doesn’t track brightness levels as precisely as higher-end models, so scenes can look slightly off without calibration. Also, the viewing angle is narrow enough that colors and contrast shift if you’re sitting too far to the side. While gaming works well overall, with smooth performance and plenty of support for high refresh rates, fast-moving scenes may blur more than expected. None of these factors will be a dealbreaker for casual use, but they matter if you’re picky about image accuracy or plan to use this in a wide seating setup. For most people, though, this is a bright, capable TV that covers a lot of ground, especially for this price.],
-  [Apple AirPods Pro 3 Noise Cancelling Heart Rate Wireless Earbuds
- 
- 
- —
- \$199.00 
- 
- (List Price \$249.00)],
-  [Apple iPad 11" 128GB A16 WiFi Tablet (Blue, 2025)
- 
- 
- —
- \$299.00 
- 
- (List Price \$349.00)],
-  [Samsung Galaxy Tab A11+ 128GB Wi-Fi 11" Tablet (Gray)
- 
- 
- —
- \$209.99 
- 
- (List Price \$249.99)],
-  [Sony WH1000XM6- Best Wireless Noise Canceling Headphones
- 
- 
- —
- \$398.00 
- 
- (List Price \$459.99)],
-  [Apple Watch Series 11 (GPS, 42mm, S/M Black Sport Band)
- 
- 
- —
- \$299.00 
- 
- (List Price \$399.00)],
-  [Blink Video Doorbell Wireless (Newest Model) + Sync Module Core
- 
- 
- —
- \$35.99 
- 
- (List Price \$69.99)],
-  [Fire TV Stick 4K Max Streaming Player With Remote
- 
- 
- —
- \$34.99 
- 
- (List Price \$59.99)],
-  [Amazon Kindle Colorsoft 16GB 7" eReader (Black)
- 
- 
- —
- \$169.99 
- 
- (List Price \$249.99)],
+  [At the very core of containers are the same Linux primitives that are also used to create application sandboxes.
+The most common sandbox you may be familiar with is the Chrome sandbox. You can read in detail about the Chrome sandbox
+here: chromium.googlesource.com/chromium/src/+/master/docs/linux\_sandboxing.md .
+The relevant aspect for this article is the fact it uses user namespaces and seccomp. Other deprecated features include AppArmor
+and SELinux. Sound familiar? That’s because containers, as you’ve come to know them today, share the same features.],
+  [id="why-are-containers-not-currently-being-considered-a-sandbox"\>Why are containers not currently being considered a “sandbox”?],
+  [One of the key differences between how you run Chrome
+and how you run a container are the privileges used. Chrome runs as your own unprivileged user. Most containers (be it docker, runc, or rkt) run as
+root.],
+  [Yes, we all know that containers run unprivileged processes; but creating and running the containers themselves requires root privileges at some point.],
+  [id="how-can-we-run-containers-as-an-unprivileged-user"\>How can we run containers as an unprivileged user?],
+  [Easy! With user namespaces, you might say. But it’s not exactly that simple. One of the main differences between the Chrome
+sandbox and containers is cgroups. Cgroups control what a process can use. Whereas namespaces
+control what a process can see. Containers have cgroup resource management built in. Creating cgroups from an unprivileged
+user is a bit difficult, especially device control groups.],
+  [If we ignore, for the time being, this huge tire fire that is creating cgroups as an unprivileged user, then
+unprivileged containers are easy. User namespaces allow us to create all the namespaces without any further privileges.
+The one key caveat being that the {uid,gid}\_map must have the current host user mapped to the container uid that the process
+will be run as. The size of the {uid,gid}\_map can also only be 1. For example if you are running as uid 1000 to spawn the container, your
+ {uid,gid}\_map for the process would be 0 1000 1 for uid 0 in the container. The 1 there refers to the size.],
+  [id="how-is-this-different-than-the-user-namespace-support-currently-in-docker"\>How is this different than the user namespace support currently in Docker?],
+  [This is quite different, but for very good reason. In Docker, by default, when the remapped user is created,
+the /etc/subuid and /etc/subgid files are populated with a contiguous 65536 length range of subordinate user and group
+IDs, starting at an offset based on prior entries in those files. Docker’s implementation has a larger range of users that can
+exist in the container as well as having a more “anonymous” mapped host user.
+If you want to read more about the user namespace implementation
+in Docker I would checkout \@estesp’s blog or the
+the docker docs .],
+  [id="poc-or-gtfo"\>POC or GTFO],
+  [As a proof of concept of unprivileged containers without cgroups I made binctr . Which
+spawned a
+ mailing list thread for implementing this in runc/libcontainer .
+ Aleksa Sarai has started on a few patches and this might actually be a reality pretty soon!],
+  [Update: it took almost a year, but this was added to runc in Mar 2017.],
+  [id="where-does-this-put-us-in-the-sandbox-landscape"\>Where does this put us in the “sandbox” landscape?],
+  [With this implementation we get:],
+  [namespaces],
+  [apparmor],
+  [selinux],
+  [seccomp],
+  [capabilities limiting],
+  [all created by an unprivileged user!],
+  [Sandboxes should be very application-specific, using custom
+AppArmor profiles, Seccomp profiles and the like. A generic container will
+never be equivalent to a sandbox because it’s too universal to really lock down
+the application.],
+  [Containers are not going to be the answer to preventing your application from
+being compromised, but they can limit the damage from a compromise. The world
+an attacker might see from inside a very strict container with custom
+AppArmor/Seccomp profiles greatly differs than that without the use of
+containers. With namespaces we limit the application from seeing various things
+such as network, mounts, processes, etc. And with cgroups we can further limit
+what the attacker can use, be it a large amount of memory, cpu, or even a fork
+bomb.],
+  [id="but-what-about-cgroups"\>But what about cgroups?],
+  [We can set up cgroups for memory, blkio, cpu, and
+pids with an unprivileged user as long as the cgroup subsystem has been chowned to the
+correct user. Devices are a different story though. Considering the fact you
+cannot mknod in a user namespace it is not the worst thing in the world.],
+  [Let’s not completely rule out the devices cgroup. In the future this might be entirely possible. In kernels 4.6+, there is a new
+cgroup namespace. For now all this does is mask the cgroups path inside the container so it is not entirely useful
+for unprivileged containers at all. But in the future maybe it could be (if we ask nice enough?).],
+  [id="what-is-the-awesome-sauce-we-all-gain-from-this"\>What is the awesome sauce we all gain from this?],
+  [Well judging by the original GitHub issue about unprivileged runc containers, the largest group of commenters is from
+the scientific community who are restricted to not run certain programs as root.],
+  [But there is so much more that this can be used for. One of my most anticipated use cases is the work being done by
+ Alex Larsson on xdg-app to run applications in sandboxes.
+Definitely checkout bubblewrap if you are interested in this.],
+  [Also subgraph , the container based OS which specializes in security and privacy, have this same idea in mind.],
+  [I am a huge fan of running desktop applications in containers as well as solving multi-tenancy for running containers.
+I definitely hope to help evolve containers into real sandboxes in the future.],
 ),
   edited-for-length: false,
 )
 
 
 {
-  #section-label([Front Page])
+  #section-label([Features])
   #standard-article(
-  title: [10 Gems from IdeaCast’s First 1,000 Episodes],
-  author: [Harvard Business Review],
-  source-name: [Harvard Business Review],
+  title: [10 Hacks Every Ring User Should Know],
+  author: [Emily Long],
+  source-name: [Lifehacker],
   images: (),
   paragraphs: (
-  [This week marks a huge milestone for the HBR IdeaCast: our 1000th episode! Since the podcast launched in 2006, so much has happened. What hasn’t changed is our commitment to sharing in-depth conversations with expert thinkers on key business, management, and leadership issues. To celebrate, hosts Alison Beard and Curt Nickisch have scoured the archive for ten episodes with top-notch insights to give your career a rocket boost. The curated selection features a diverse group of academics—from business strategy icon Michael Porter to burnout researcher Christina Maslach—and practitioners, such as Microsoft CEO Satya Nadella and Oscar-winning director Ron Howard. Their powerful ideas and timeless advice cover a range of communication, leadership, and problem-solving skills that are essential for success—whether you’re in your first job, managing a team, or leading an organization.],
-  [Listen to the episodes:],
-  [\#677: Why People — and Companies — Need Purpose (2019)
- \#114: Speaking Well in Tough Moments (2008)
- \#371: Lead Authentically, Without Oversharing (2013)
- \#924: How One F-35 Fighter Pilot Makes Decisions Under Pressure (2023)
- \#949: Making Peace with Your Midlife, Mid-career Self (2024)
- \#889: Ron Howard on Collaborative Leadership and Career Longevity (2022)
- \#596: Microsoft’s CEO on Rediscovering the Company’s Soul (2017)
- \#595: Transcending Either-Or Decision Making (2017)
- \#771: Why Burnout Happens — and How Bosses Can Help (2020)
- \#229: How to Fix Capitalism (2011)],
-  [The IdeaCast team would like to thank all the guests who've contributed their voices and expertise as well as all the people who've made the show possible behind the scenes.],
+  [When setting up any new internet-connected device, don't stick with the default settings. Doing so introduces security risks, and it's also a less-than-optimal way to use the features available to you. If you have a Ring camera or doorbell, there are a whole host of changes you can make to minimize annoyance and maximize privacy.],
+  [id="snooze-motion-alerts-when-youre-outside"\>Snooze Motion Alerts when you're outside],
+  [Motion alerts are among the most useful features of any security camera, but you don't need a notification to your phone when you are the one moving around your property. You can snooze alerts in certain situations, such as when you're outside doing yard work or hosting a party. Global Snooze pauses alerts for all cameras and doorbells for a set duration, while Alerts Snooze allows you to pause notifications from a specific device. When Snooze is enabled, you'll still get Doorbell Rings and Priority Alerts.],
+  [In the Ring app, tap the motion icon, choose the snooze duration, and tap Start Snooze . For a single device, tap the More icon on the camera you want to snooze and tap the bell icon to turn Alerts Snooze on or off.],
+  [If you have monitoring via Virtual Security Guard, you can turn on Motion Snooze for enrolled devices to temporarily pause that service.],
+  [id="optimize-motion-zones-to-exclude-certain-areas"\>Optimize Motion Zones to exclude certain areas],
+  [Another way to curate motion alerts is to customize your Ring camera's Motion Zones—for example, to exclude busy streets with lots of cars driving by as well as private, low-traffic areas you don't need to monitor. You can add up to three motion zones per device under your camera's Settings \> Motion Settings \> Camera Motion Zones . Tap Add Zone , drag the edges of the zone boundaries within your camera's view, and hit Save .],
+  [id="set-up-smart-alerts-to-reduce-unnecessary-notifications"\>Set up Smart Alerts to reduce unnecessary notifications],
+  [In addition to narrowing motion zones, you can choose whether you receive motion alerts and/or recordings specifically for people, vehicles, and packages while minimizing notifications from other sources of movement. ( Not all Ring devices are compatible with all three Smart Alert categories, and you'll need a Ring subscription to use these features.) To enable Smart Alerts, go to your device's Settings \> Motion Settings \> Smart Alerts , then tap Enable Feature \> Continue and choose your preferred alerts.],
+  [id="customize-your-neighborhood-area-for-relevant-alerts"\>Customize your Neighborhood Area for relevant alerts],
+  [Neighbors is an online community through which Ring users can share footage and receive updates for their area. It is the broad umbrella for controversial features like Community Requests and Search Party (which I'll get into below), but it could be useful for keeping abreast of issues in your neighborhood—like fire or other safety alerts—even if you don't make your camera's content public. You can customize your area so you're only getting relevant alerts, especially if your neighborhood is more active on the app. Go to Menu \> Neighbors \> Settings \> Customize Neighborhood to adjust the boundaries of your area.],
+  [id="turn-off-community-requests-from-law-enforcement"\>Turn off Community Requests from law enforcement],
+  [Community Requests is a Neighbors feature through which law enforcement can ask users to share video from their Ring devices. While Ring says that footage isn't shared automatically, and law enforcement doesn't have access to live feeds, many users still have privacy concerns related to this type of collaboration. (Note that Ring also had a short-lived partnership with Flock Safety , which would have made it easier for law enforcement agencies to request Ring camera footage using Flock's software.)],
+  [You can simply ignore Community Requests in your Neighbors feed, or you can turn these requests off entirely under Neighborhood Settings \> Feed Settings . Deselect Community Requests and hit Apply .],
+  [id="opt-out-of-search-partys-surveillance"\>Opt out of Search Party's surveillance],
+  [Ring launched its Search Party feature in a Super Bowl ad earlier this year, ostensibly to help users find lost dogs in their neighborhood. Search Party uses AI to identify pets in your Ring's field of vision and pools the footage with other cameras. Obviously, this functionality comes with significant privacy concerns , not least of which is whether and how your footage could be shared with law enforcement to surveil people rather than pets. You can disable Search Party entirely under Control Center \> Search Party . Choose the blue Pet icon next to each camera.],
+  [id="disconnect-from-amazon-sidewalks-wireless-network"\>Disconnect from Amazon Sidewalk's wireless network],
+  [Amazon Sidewalk uses your Ring device—and others in your neighborhood—to create a mesh network so said devices stay connected to the internet even if your wifi is weak or goes down. Amazon says that this feature provides security (because you'll still get important alerts) and extends the range for other devices like smart lights, smart locks, and pet locators. But you may not want to use your bandwidth for this purpose nor introduce potential privacy concerns to your home network. You can disable Amazon Sidewalk in the Control Center on your Ring app.],
+  [id="disable-third-party-provider-sharing"\>Disable third-party provider sharing],
+  [Like many apps and services, Ring shares certain information with third parties for purposes like personalized ads. While the company says it does not sell users' personal data, in 2020, researchers at the Electronic Frontier Foundation found that the Ring app was packed with third-party trackers that were sending personally identifiable information to analytics and marketing firms.],
+  [In response , Ring added an opt-out feature, so you can adjust your settings to keep this information private from third-party providers. In the Ring app, go to Menu \> Control Center \> Cookies and Third Party Service Providers and turn off Third-Party Web and App Analytics Cookies and Personalized Advertising .],
+  [id="enable-end-to-end-encryption-to-protect-your-ring-footage"\>Enable end-to-end encryption to protect your Ring footage],
+  [If you want maximum privacy for your Ring footage, consider enabling end-to-end encryption (E2EE), which prevents anyone except you from accessing your recordings. This adds an extra layer of protection against hackers as well as Ring itself (including compliance with law enforcement requests), as videos are hidden behind a passphrase and can be viewed only on your enrolled mobile device. You'll also need a (paid) Ring Protect subscription. The major downside is that you lose access to a pretty sizeable list of features , including 24/7 video recording and Person Detection. To set up E2EE, go to your Control Center \> Video Encryption \> End-to-End Encryption .],
+  [id="set-up-local-storage-for-more-space-and-better-privacy"\>Set up local storage for more space and better privacy],
+  [With a Ring Protect subscription, Ring will store your videos in the cloud for 180 days, which you can shorten to as little as one day if you are concerned about someone gaining access to your footage (and E2EE isn't enabled). Unfortunately, without a Ring Protect subscription, there's no easy option to store videos from your camera, and you will probably want to save recordings for at least some period of time. You can set up local storage to a MicroSD card through Ring Edge, though you'll need to invest in a Ring Alarm Pro Base Station. This gives you more control, more space, and more privacy. Of course, another alternative is to look for a camera that offers local storage to begin with.],
 ),
   insert-map: (:),
-  word-count: 250,
+  word-count: 1175,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -126,7 +151,6 @@
 }
 
 {
-  #section-label([Features])
   #standard-article(
   title: [€9 Ticket],
   author: [Dennis Felsing],
@@ -175,9 +199,171 @@
   [Unfortunately the €9 ticket won’t be prolonged. The high public interest has lead to some plans for a relatively cheap follow-up ticket, but again with some regional limitations for the cheap ticket. Other countries are even implementing entirely free public transport meanwhile, so there is some hope for the future.],
 ),
   insert-map: (:),
-  inline-pq: pull-quote([When going to the cinema we noticed that we should really catch the last train at 22:30, since the next connection would take all night.], [Dennis Felsing]),
-  inline-pq-idx: 16,
   word-count: 2009,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+}
+
+{
+  #standard-article(
+  title: [A Rant on Usable Security],
+  author: [Jessie Frazelle],
+  source-name: [Jessie Frazelle],
+  images: (),
+  paragraphs: (
+  [I recently gave a talk at DevOps Days
+( slides )
+and it had a pretty great response. I’m still pretty care-mad about the topics
+it covered so I figured I would turn some key points from it into a blog post.],
+  [The overall outline of the talk covered the past, present, and future of
+usable security. Let’s start with the past.],
+  [id="the-past"\>The Past],
+  [A lot of the security tooling of the past (that we still use today)
+require users to jump through a lot of hoops or learn a hard to grok interface.
+One of the examples I used was GPG. Contrary to popular opinion, I actually
+don’t find GPG entirely unusable. I obviously agree that it could be easier
+to use, rotate keys, revoke keys blah blah blah. While I find it not exactly
+terrible, I can see and completely understand why the majority of
+criticism I hear about GPG is that it is hard to use.],
+  [There is a point at which better security comes at the expense of convenience.
+This needs to stop happening. Stop compromising convenience for security.
+Instead find the right balance between the two. Doing this takes collaboration
+from both security engineers and software engineers.],
+  [Dave Cheney recently had a great tweet.],
+  [dir="ltr" lang="en"\>Why is all software shit? Today I discovered the \@duosec API returns 200 even if someone denies the 2fa request.],
+  [— Dαve Cheney (\@davecheney) July 25, 2017],
+  [I love this tweet because it reeks of the stench that only security engineers
+built this API. Most software engineers I know would decide to use an HTTP
+status code… I mean that’s what they are for. ;)],
+  [When you combine expertise in different areas you build better products. This is
+not rocket science. However egos tend to get in the way as well as biases
+towards people who know and like the same things you do. I assure you,
+though, when security and software engineers work together
+truly usable security will be the outcome.],
+  [id="the-present"\>The Present],
+  [A lot of the content for this portion of the talk focused on how containers make
+securing your infrastructure easier. I will touch on some of that but if you
+wish to know more you should checkout the
+ slides 
+or some of my other blog posts on container security.],
+  [Two key features in Docker are the default AppArmor and Seccomp profiles.
+AppArmor and Seccomp are Linux Security Modules that are not exactly usable
+by someone who is unfamiliar with either.],
+  [AppArmor can control and audit various process actions such as file
+(read, write, execute, etc) and system functions (mount, network tcp, etc).
+It has its own meta language, so to speak, and I actually have a repo that changes
+the docs for it to more a readable format via a cron job:
+ github.com/jessfraz/apparmor-docs .
+The default profile for AppArmor does super sane things like preventing writing to
+ /proc/{num} , /proc/sys , /sys and preventing mount to name a few.],
+  [Syscall filters allow an application to define
+what syscalls it allows or denies. The default in Docker is a whitelist that I
+initially wrote. Some of the key things it blocks are:],
+  [add\_key , keyctl , request\_key : Prevent containers from using the kernel
+keyring, which is not namespaced. I wrote a blog post on
+ Two Objects not Namespaced by the Linux Kernel 
+and the keyring was one I mentioned.],
+  [clone , unshare : Deny cloning new namespaces. Also gated by CAP\_SYS\_ADMIN 
+for CLONE\_\* flags, except CLONE\_USERNS . I specifically wanted to block
+cloning new user namespaces inside containers because they are notorious
+for being points of entry for kernel bugs.],
+  [There also is an
+ entire document that I started in the docker repo 
+that outlines what we block and why.],
+  [Having written the default seccomp profile for Docker I am pretty familiar with],
+  [how hard this would be for other people. It requires a deep knowledge of the],
+  [application being contained and the syscalls it requires. This was also a quite],
+  [terrifying feature to add to Docker. When I added it, Docker was already very],
+  [popular and if anything would break in a big way it would be on the front page],
+  [of hacker news and all the maintainers would have a very bad day. So turning],
+  [on something that will EPERM by default if we left out any important syscall],
+  [is terrifying. I had stress nightmares for weeks. In the end everything went],
+  [much smoother than I feared but that was also after HEAVY HEAVY testing. Luckily],
+  [I run super obscure things in containers so I even caught that we left out send],
+  [and recv right before the release by running Skype (a 32 bit application) in],
+  [a container.],
+  [By making a default for all containers, we can secure a very large amount of
+users without them even realizing it’s happening. This leads perfectly into
+my ideas for the future and continuing this motion of making security
+on by default and invisible to users.],
+  [id="the-future"\>The Future],
+  [I tend to have pretty weird brain child ideas and this is one of them.
+I started thinking about where else a kernel feature like seccomp could easily
+be integrated and used by a large number of people. The answer is…
+programming languages. I do work with the Go team and as a full content warning
+none of this crazy that follows is in any way endorsed by them. ;)],
+  [The idea I had is to do build-time generated seccomp filters that will be
+ applied on run .],
+  [id="why-generate-seccomp-filters-at-build-time"\>Why generate seccomp filters at build-time ?],
+  [Generating security filters/profiles at runtime has been done in the past
+& failed… over and over and over again. Something is always missed while
+profiling the application. You cannot guarantee that everything that your
+application will do will be called while in this profiling phase. Unless of
+course you have 100% test coverage, which if you do: Good For You. When the
+“thing that was missed” is called and blocked, users will just turn off the
+“security.” This happens all the time with things like SELinux and AppArmor.],
+  [By generating filters at build-time we can ensure ALL code is included in the
+filter. I wrote a POC of this and I showed it at
+ Kiwicon .],
+  [There are three problems though.],
+  [Executing other binaries. I can’t know what syscalls the binary being called
+is going to use so we are back at square one.],
+  [package main],
+  [import (
+ "fmt"
+ "log"
+ "os/exec"
+)],
+  [func main() {
+ cmd := exec. Command("myprogram")
+ out, err := cmd. CombinedOutput()
+ if err != nil {
+ log. Fatal(err)
+ }
+ fmt. Printf("%s\\n", out)
+}],
+  [Plugins. This problem is solvable in that if this feature was to exist
+we could export at the plugin build time the seccomp filters to a
+field in the ELF binary or something similar.],
+  [func main() {
+ p, err := plugin. Open("plugin\_name.so")
+ if err != nil {
+ log. Fatal(err)
+ }
+ v, err := p. Lookup("V")
+ if err != nil {
+ log. Fatal(err)
+ }
+ fmt. Printf("%\#v\\n", v)
+}],
+  [Sending arbitrary arguments to syscall. RawSyscall and similar.],
+  [func main() {
+ if len(os. Args) \<= 3 {
+ log. Fatal("must pass 4 arguments to syscall. RawSyscall")
+ }
+ r1, r2, errno := syscall. RawSyscall(strToUintptr(os. Args\[0\]),
+ strToUintptr(os. Args\[1\]),
+ strToUintptr(os. Args\[2\]),
+ strToUintptr(os. Args\[3\]))
+ if errno != 0 {
+ log. Fatalf("errno: %\#v", errno)
+ }
+ fmt. Printf("r1: %\#v\\nr2: %\#v\\n", r1, r2)
+}
+func strToUintptr(s string) uintptr {
+ return \*(\*uintptr)(unsafe. Pointer(&s))
+}],
+  [While this is not perfect by any stretch of the imagination I believe it should
+open your mind to what could be possible in the future. Hopefully my dream
+of making binaries sandbox themselves will eventually get there. I know I won’t
+stop until it does. ;) Overall, I would like you to remember to find the
+right balance between secure AND usable. Don’t break users and get security
+engineering and software engineering working together!],
+),
+  insert-map: (:),
+  word-count: 1289,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -205,15 +391,15 @@
  \/\/=\> { done: false, value: 9 }],
   [iCountdown . next () 
  \/\/=\> { done: false, value: 8 }],
-  [\/\/ ...],
+  [\/\\/ ...],
   [iCountdown . next () 
  \/\/=\> { done: false, value: 1 }],
   [iCountdown . next () 
  \/\/=\> { done: true }],
-  [An iterable is an object with a [Symbol.iterator] method. When invoked, [Symbol.iterator]() returns an iterator. Semantically, the iterator returned by [Symbol.iterator]() represents an iteration over the values associated with the iterable collection.],
+  [An iterable is an object with a \[Symbol.iterator\] method. When invoked, \[Symbol.iterator\]() returns an iterator. Semantically, the iterator returned by \[Symbol.iterator\]() represents an iteration over the values associated with the iterable collection.],
   [For example:],
   [class="highlight"\> const countdown = { 
- [ Symbol . iterator ]() { 
+ \[ Symbol . iterator \]() { 
  const iterator = { 
  value : 10 , 
  done : false , 
@@ -227,13 +413,13 @@
  eight 
  \/\/=\> 8 
  rest 
- \/\/=\> [7, 6, 5, 4, 3, 2, 1]],
+ \/\/=\> \[7, 6, 5, 4, 3, 2, 1\]],
   [And now, let’s get started. We’ll begin with a simple problem: How do we iterate over the lines of a text file?],
   [id="reading-lines-from-a-file"\>reading lines from a file],
   [We wish to create an iterable that successively yields the lines from a text file. Presuming we have some kind of library for opening, reading from, and closing files, we might write something a little like this:],
   [class="highlight"\> function lines ( path ) { 
  return { 
- [ Symbol . iterator ]() { 
+ \[ Symbol . iterator \]() { 
  return { 
  done : false , 
  fileDescriptor : File . open ( path ), 
@@ -253,12 +439,12 @@
  }; 
  }],
   [Whenever we want to iterate over all the lines of a file, we call our function, e.g. lines('./README.md') , and we get an iterable for the lines in the file.],
-  [When we invoke [Symbol.iterator]() on our iterable, we get an iterator that opens the file, reads the file line by line when we call .next() , and then closes the file when there are no more lines to be read.],
+  [When we invoke \[Symbol.iterator\]() on our iterable, we get an iterator that opens the file, reads the file line by line when we call .next() , and then closes the file when there are no more lines to be read.],
   [So we could output all the lines containing a particular word like this:],
   [The expression lines(‘./README.md’)\` would create a new iterator with an open file, we’d iterate over each line, and eventually we’d run out of lines, close the file, and exit the loop.],
   [What if we only want to find the first line with a particular word in it?],
   [class="highlight"\> for ( const line of lines ( ' ./README.md ' )) { 
- if ( line . match ( /raganwald/ )) { 
+ if ( line . match ( /raganwald\/ )) { 
  console . log ( line ); 
  break ; 
  } 
@@ -276,14 +462,14 @@
   [as a consequence of the above, the iterator can and should dispose of any resources it is holding.],
   [Looking back at our countdown iterable, we can implement .return() for it:],
   [class="highlight"\> const countdown = { 
- [ Symbol . iterator ]() { 
+ \[ Symbol . iterator \]() { 
  const iterator = { 
  value : 10 , 
  done : false , 
  next () { 
  this . done = this . done || this . value],
   [class="highlight"\> const countdown = { 
- [ Symbol . iterator ]() { 
+ \[ Symbol . iterator \]() { 
  const iterator = { 
  value : 10 , 
  done : false , 
@@ -370,8 +556,8 @@
   [yield zipper (... values ); 
  } 
  } 
- const fewWords = [ ' alper ' , ' bethe ' , ' gamow ' ];],
-  [for ( const pair of zipWith (( l , r ) =\> [ l , r ], countdown , fewWords )) { 
+ const fewWords = \[ ' alper ' , ' bethe ' , ' gamow ' \];],
+  [for ( const pair of zipWith (( l , r ) =\> \[ l , r \], countdown , fewWords )) { 
  \/\/... diddley 
  } 
  \/\/=\> Return to Forever],
@@ -406,10 +592,10 @@
   [Another sure way to close all the iterators is to take 100% control of zipWith . Instead of writing it as a generator function, we can write it as a function that returns an iterable object:],
   [class="highlight"\> function zipWith ( zipper , ... iterables ) { 
  return { 
- [ Symbol . iterator ]() { 
+ \[ Symbol . iterator \]() { 
  return { 
  done : false , 
- iterators : iterables . map ( i =\> i [ Symbol . iterator ]()), 
+ iterators : iterables . map ( i =\> i \[ Symbol . iterator \]()), 
  zipper , 
  next () { 
  const pairs = this . iterators . map ( j =\> j . next ()), 
@@ -473,6 +659,8 @@
   [There’s another case not discussed in this post, handling exceptions. That is deliberate, as the point of this post is illustrating how Iiterators are a leaky abstraction, not dictating patterns for robustly handling all of its leaks. ↩],
 ),
   insert-map: (:),
+  inline-pq: pull-quote([of loop is also invoking break inside of mapWith ’s for.], [Reginald Braithwaite]),
+  inline-pq-idx: 44,
   word-count: 3517,
   edited-for-length: false,
   debug-mode: false,
@@ -483,15 +671,15 @@
 #article-row((
   [
     standard-article(
-  title: [Regrets Are Inevitable. Start Learning From Them.],
+  title: [Reflecting on What Matters After a Terminal Cancer Diagnosis],
   author: [Harvard Business Review],
   source-name: [Harvard Business Review],
   images: (),
   paragraphs: (
-  ["No regrets" might be a popular modern-day mantra, but it's virtually impossible to live your life without wishing you could do certain things over. Some people try to ignore these feelings; others wallow in them. But author Dan Pink, who recently conducted large U. S. and global surveys on this phenomenon, says the right approach is to instead carefully consider what we regret and why so that we can either reverse course or make better decisions in the future, as well as putting them behind us. Whether you're frustrated by bad career moves you've made, business ideas you didn't pursue, or relationships you've let falter, these regrets can be useful tools for personal growth. Pink's new book is “The Power of Regret: How Looking Backward Moves Us Forward.”],
+  [How does someone who's been told he will die much sooner than expected find contentment in the time he has left? As a former therapist, cofounder of the Deeper Coaching Institute, and business book author, Mark Goulston has spent his entire career trying to help others manage their emotions, improve their communication, and find the right balance between the personal and the professional. Faced with his own cancer diagnosis, he's been reflecting on lessons learned in his own life, things he and clients wish they'd done differently, and how to both prepare for a "good" death and leave a meaningful legacy. He shares his newfound perspective and his advice for early, mid- and late-career leaders.],
 ),
   insert-map: (:),
-  word-count: 127,
+  word-count: 115,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -499,15 +687,36 @@
   ],
   [
     standard-article(
-  title: [The Case for Selling Products that Adapt],
-  author: [Harvard Business Review],
-  source-name: [Harvard Business Review],
+  title: [The Day I Leave the Tech Industry],
+  author: [Jessie Frazelle],
+  source-name: [Jessie Frazelle],
   images: (),
   paragraphs: (
-  [Many companies make money by selling goods that need to be constantly replaced; think fast fashion, or tech devices that come out in new versions each year. But according to Vijay Govindarajan, professor at Dartmouth's Tuck School of Business, smart organizations are increasingly eschewing that strategy for one focused on products that grow with the consumer through creative design or software updates. He shares several examples and explains how this approach can deliver more value for the buyer – and for the business – over the long term. Govindarajan is the coauthor of the HBR article "Design Products That Won't Become Obsolete."],
+  [I was inspired last night by Cate Huston’s post,
+ The Day I Leave the Tech Industry .
+I decided to write my own, except I’m not as eloquent a writer as Cate so before
+I go any further please, please, please read her post and not mine.],
+  [Mine is going to be a bit different. Lately I’ve been thinking more and more
+about this. It seems imminent. I’m only 27 and let me repeat: it seems imminent.],
+  [I’m going to tell you all the fantasy that plays in my brain for when this happens.],
+  [The day I leave the tech industry will feel like a giant weight has finally been
+lifted. It will be freeing. There are a few scenarios I’ve played out for what
+I will do after.],
+  [teach math in a third world country],
+  [write a book],
+  [play professional poker],
+  [I could do all three. One thing is for sure though, the day I leave the tech industry
+will be the day I contribute my last piece of code to open source software.],
+  [Today, I am not quite ready to give up this thing I have such a “hate/love”
+relationship with. Today, I want to get more women contributing so that
+maybe in the distant future we will feel welcome. Maybe we won’t have to fight
+so hard just to be heard; to have our opinions matter.],
+  [Today is not my last day in the tech industry. But it is comforting to me
+to plan out this very real future. I am not just “the container girl”. I am a
+human being with feelings, a limit, and a future outside of tech.],
 ),
   insert-map: (:),
-  word-count: 102,
+  word-count: 274,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -515,24 +724,15 @@
   ],
   [
     brief-group((
-      brief-item([Harvard Business Review], source-name: [Harvard Business Review], [Satya Nadella, Microsoft’s third CEO, opens up about his effort to refresh the culture of the company and renew its focus on the future. He reflects on important life lessons he learned growing up in India, immigrating to the U. S., and working for Microsoft for 25 years. Nadella thinks of the past, he says, for the sake of the future—of technology, public policy, and work. His new autobiography is "Hit Refresh."])
-
-      brief-item([Supabase Blog], source-name: [Supabase Blog], [Supabase Auth now supports OAuth 2.1 and OpenID Connect server capabilities, turning your project into a full-fledged identity provider for AI agents, third-party developers, and enterprise SSO.])
-
-      brief-item([Harvard Business Review], source-name: [Harvard Business Review], [What are CEOs across industries doing to build resilience and strong cultures in an age of uncertainty? In this Future of Business series, IdeaCast hosts Alison Beard and Adi Ignatius sat down with four leading CEOs to understand where global business is going. In this episode, host Alison Beard speaks with Noubar Afeyan, the CEO of Flagship Pioneering and Chairman of Moderna. Afeyan shares the organizational models and practices that work best to produce innovation, the difference between managing risk and managing uncertainty, and what separates true breakthrough innovation from everyday, incremental improvements.])
-
-      brief-item([Harvard Business Review], source-name: [Harvard Business Review], [As organizations and workers face a new wave of technological change, Deborah Perry Piscione argues that we're at a pivot point where old models of employment will be replaced by entirely new ones. Get ready for GenAI-assisted, decentralized, sometimes autonomous workforces, and “jobs” that span gigs, companies, industries, geographies, and the metaverse. Piscione describes this new reality and how mindset shifts and upskilling can help us prepare. She's the coauthor, along with Josh Drean, of the book Employment is Dead: How Disruptive Technologies are Revolutionizing the Way We Work.])
-
-      brief-item([Harvard Business Review], source-name: [Harvard Business Review], [Ryan Buell, associate professor at Harvard Business School, says the never-ending quest for operational efficiency is having unintended consequences. When customers don’t see the work that’s being done in back offices, offshore factories, and algorithms, they’re less satisfied with their purchases. Buell believes organizations should deliberately design windows into and out of operations. He says increasing operational transparency helps customers and employees alike appreciate the value being created. Buell is the author of the HBR article "Operational Transparency."])
-
-      brief-item([Alistair Charlton], source-name: [Wired], [Porsche’s latest electric SUV is its most capable yet, and its most powerful street car ever. But should you wait for the hybrid instead?])
-
-      brief-item([Harvard Business Review], source-name: [Harvard Business Review], [Sinéad O'Sullivan, entrepreneurship fellow at Harvard Business School, discusses how space is much more important to modern business than most people realize. It plays a role in making food, pricing insurance, and steering self-driving cars. While moonshot projects from SpaceX to Blue Origin drive headlines, the Earth-facing space economy is booming thanks to plummeting costs of entry. As tech companies large and small compete to launch thousands of satellites, O'Sullivan says we are actually running out of space in space.])
-
-      brief-item([Harvard Business Review], source-name: [Harvard Business Review], [Eddie Yoon, author of "Superconsumers" and growth strategy expert at The Cambridge Group, explains how companies can find their most passionate customers and use their invaluable insights to improve products and attract new customers.])
-
-      brief-item([Harvard Business Review], source-name: [Harvard Business Review], [Race at Work is an HBR Presents podcast hosted by Porter Braswell about the role race plays in our careers and lives. In this episode, he speaks with Donna Johnson, former chief diversity officer at Mastercard, about leading the charge on changing company culture and how diversity can drive real business results.])
-
+      [#brief-item([Harvard Business Review], source-name: [Harvard Business Review], [Deborah Ancona and Kate Isaacs, researchers at MIT Sloan School of Management, say many companies struggle to be nimble with a command-and-control leadership culture. They studied Xerox’s R&D outfit PARC and the materials science company W. L. Gore & Associates and found these highly innovative organizations have three kinds of leaders: entrepreneurial, enabling, and architecting ones. These roles work together to give direction and avoid creative chaos. Ancona and Isaacs are coauthors of the HBR article "Nimble Leadership."])],
+      [#brief-item([Harvard Business Review], source-name: [Harvard Business Review], [Pankaj Ghemawat, professor at NYU Stern and IESE business schools, debunks common misconceptions about the current state and extent of globalization. (Hint: the world is not nearly as globalized as people think.) He also discusses how popular reactions in Europe and the U. S. against globalization recently could affect the global economy, and how companies will need to adapt to the new reality. Ghemawat is the author of several books on globalization, including “World 3.0” and most recently “The Laws of Globalization and Business Applications.”])],
+      [#brief-item([Supabase Blog], source-name: [Supabase Blog], [This documents our journey from SOC2 Type 1 to SOC2 Type2 and HIPAA compliance. You can start building healthcare apps on Supabase today.])],
+      [#brief-item([Supabase Blog], source-name: [Supabase Blog], [Open table formats like Apache Iceberg, Delta Lake, and Apache Hudi are transforming how developers manage large-scale data on object storage systems.])],
+      [#brief-item([Harvard Business Review], source-name: [Harvard Business Review], [Ellen Ernst Kossek, management professor at Purdue University, is researching how the pandemic is putting an enormous strain on working parents and the new challenge that poses for their managers. She shares how supervisors can offer much-needed consistency and predictability for working parents on their teams. She also outlines specific ways to give working parents more flexibility while still holding them accountable. Kossek is the coauthor, with Kelly Schwind Wilson and Lindsay Mechem Rosokha, of the HBR article "What Working Parents Need from Their Managers."])],
+      [#brief-item([Harvard Business Review], source-name: [Harvard Business Review], [Debbie Cohen and Kate Roeske-Zummer, cofounders of HumanityWorks, are sounding an alarm bell for employee retention. Record numbers of people are quitting their jobs due to burnout and better opportunities. Those resignations leave their former colleagues burdened with even more work and a sense of despair. Cohen and Roeske-Zummer argue that employers should re-recruit their existing employees and even think of them as customers. And the two consultants outline steps managers can take to openly appreciate those employees and keep a positive culture. Cohen and Roeske-Zummer wrote the HBR.org article "With So Many People Quitting, Don’t Overlook Those Who Stay.”])],
+      [#brief-item([Harvard Business Review], source-name: [Harvard Business Review], [Heidi Grant Halvorson, author of "No One Understands You and What to Do About It," explains the science of perception.])],
+      [#brief-item([Harvard Business Review], source-name: [Harvard Business Review], [Muriel Wilkins, cofounder of the executive coaching firm Paravis Partners, says that starting a leadership role at a new company or via internal promotion is demanding. Doing so remotely during the Covid-19 pandemic is even more challenging. She says that new senior leaders must focus on two things: connectivity and credibility. And she explains how to build those attributes when much of the job is performed virtually. Wilkins is the host of the new HBR Presents podcast “Coaching Real Leaders.”])],
+      [#brief-item([Harvard Business Review], source-name: [Harvard Business Review], [John Kerry, former U. S. Secretary of State, shares management and leadership lessons from his long career in public service. He discusses how to win people over to your side, bounce back from defeats, and never give up on your long-term goals. He also calls on private sector CEOs to do more to solve social and political problems. Kerry’s new memoir is "Every Day Is Extra."])],
     ))
   ],
 ), ruled-indices: (1, 2,))
@@ -540,16 +740,44 @@
 #article-row((
   [
     standard-article(
-  title: [Corrupt a wish with GPT-4],
-  author: [\@corrupt-a-bot GPT-4 bot],
+  title: [An analysis of memory bloat in Active Record 5.2],
+  author: [\@sam Sam Saffron],
   source-name: [Sam Saffron],
   images: (),
   paragraphs: (
-  [Granted! The game now favors Jordan\_Vidrine, allowing him to score up to 20 points. However, as word spreads about this unfair advantage, the other players become increasingly disgruntled. Jealousy and resentment fester amongst the players, who begin hatching elaborate schemes to sabotage Jordan\_Vidrine’s success. As a result, the once friendly and enjoyable game quickly devolves into a cutthroat competition marred by deceit, paranoia, and betrayal. Poor Jordan\_Vidrine finds himself struggling to navigate this treacherous environment, longing for the days when the game was played fairly and everybody got along.],
-  [I wish that whenever I whistle, I can communicate with any pet or stray cat in the vicinity and provide care and comfort for them no matter the circumstances.],
+  [Not impossible that AR has regressed here further, I have not been tracking, we still use this at Discourse:],
+  [github.com],
+  [discourse/discourse/blob/main/lib/freedom\_patches/fast\_pluck.rb],
+  [\# frozen\_string\_literal: true],
+  [\# Speeds up \#pluck so its about 2.2x faster, importantly makes pluck avoid creation of a slew
+\# of AR objects
+\#
+\#
+class ActiveRecord:: Relation
+ \# Note: In discourse, the following code is included in lib/sql\_builder.rb
+ \#
+ \# class RailsDateTimeDecoder = "4.2.0"
+ \# \@caster ||= ActiveRecord:: Type:: DateTime.new
+ \# \@caster.type\_cast\_from\_database(string)
+ \# else
+ \# ActiveRecord:: ConnectionAdapters:: Column.string\_to\_time string
+ \# end
+ \# end
+ \# end
+ \#],
+  [This file has been truncated. show original],
+  [style="clear: both;"\>],
+  [I wish we did not have to, but I am not sure how to land this in Rails.],
+  [Another change that has happened since is that we released:],
+  [GitHub],
+  [GitHub - discourse/mini\_sql: a minimal, fast, safe sql executor],
+  [a minimal, fast, safe sql executor. Contribute to discourse/mini\_sql development by creating an account on GitHub.],
+  [style="clear: both;"\>],
+  [Which is the piece we use for any performance sensitive work and totally outperforms almost anything you can throw at it.],
+  [Maybe run the bench on some earlier versions 7/6/5 and see what happens?],
 ),
   insert-map: (:),
-  word-count: 118,
+  word-count: 190,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -557,56 +785,20 @@
   ],
   [
     standard-article(
-  title: [IPs for all the Things],
-  author: [Jessie Frazelle],
-  source-name: [Jessie Frazelle],
+  title: [Red Flags You Won’t See on a CEO’s Resume],
+  author: [Harvard Business Review],
+  source-name: [Harvard Business Review],
   images: (),
   paragraphs: (
-  [This is so cool I can hardly stand it.],
-  [In Docker 1.10, the awesome libnetwork team added the ability to specify
-a specific IP for a container. If you want to see the pull request it’s here:
- docker/docker\#19001 .],
-  [I have a IP Block on OVH for my server with 16 extra public IPs. I totally use
-these for good and not for evil .],
-  [But to use these previously with Docker containers meant hackery with the
-awesome pipework . Or even worse some
-homegrown, Jess bash scripts.],
-  [But now MY LIFE JUST GOT SO MUCH EASIER. Let me show you how:],
-  [\# create a new bridge network with your subnet and gateway for your ip block
-\$ docker network create --subnet 203.0.113.0/24 --gateway 203.0.113.254 iptastic],
-  [\# run a nginx container with a specific ip in that block
-\$ docker run --rm -it --net iptastic --ip 203.0.113.2 nginx],
-  [\# curl the ip from any other place (assuming this is a public ip block duh)
-\$ curl 203.0.113.2],
-  [\# BOOM golden],
-  [It’s so amazing I can rewrite
- tupperwarewithspears to
-use this : D],
+  [For a long time, we have believed that strong corporate governance is enough to prevent CEO malfeasance. However, new research shows that the lifestyle behaviors of executives can spell trouble for companies, regardless of the guardrails in place. Aiyesha Dey, an associate professor at Harvard Business School, has investigated executives’ past criminal records and the cost of their homes and automobiles. Her research has linked an individual’s materialism and propensity for rule breaking to fraud, insider trading, and risky business activities. She says that boards and other hiring bodies should pay more attention to personal behavior when picking organizational leaders. Dey wrote the HBR article "When Hiring CEOs, Focus on Character."],
 ),
   insert-map: (:),
-  word-count: 181,
+  word-count: 111,
   edited-for-length: false,
   debug-mode: false,
 )
 
   ],
 ), ruled-indices: (1,))
-
-{
-  #standard-article(
-  title: [Working Parents, Let Go of the Idea of Balance],
-  author: [Harvard Business Review],
-  source-name: [Harvard Business Review],
-  images: (),
-  paragraphs: (
-  [Stewart Friedman, organizational psychologist at The Wharton School, and Alyssa Westring, associate professor at DePaul University’s Driehaus College of Business, say it’s a mistake for a working parent to think of career and home life as competing interests that have to be balanced. Their research shows how many leadership skills apply to parenting, and vice versa. The professors explain how individuals can stop making tradeoffs and instead find sustainable ways to advance their careers and also parent more effectively. Friedman and Westring are the authors of the book "Parents Who Lead: The Leadership Approach You Need to Parent with Purpose, Fuel Your Career, and Create a Richer Life."],
-),
-  insert-map: (:),
-  word-count: 108,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-}
 
 #colophon([The Silicon Wire], [Vol. 1, No. 005], [2026-03-30])

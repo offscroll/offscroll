@@ -23,36 +23,31 @@
 
 // --- Front Page Feature ---
 #feature-article(
-  title: [For Southern Antagonists in the Civil War, a Kindred Desire for Peace Goes Awry],
+  title: [As the Boxer Rebellion Stole Headlines from His Wild West, Buffalo Bill Put the Clash into His Show],
   kicker: [Cover Story],
-  author: [Jesse George-Nichol],
+  author: [David McCormick],
   source-name: [HistoryNet],
-  deck: [On December 18, 1860, John J. Crittenden of Kentucky introduced a compromise plan to the U.],
-  lead-text: "S. Senate. Just two days later, South Carolina would become the first state to secede from the Union, and within six weeks, six more Southern states would follow suit. But while Dixie fire-eaters were driving their states pell-mell toward disunion, Senator Crittenden and other moderates were working to broker a sectional adjustment — one that could, they hoped, soothe Southern fears about Abraham Lincoln’s election and stay the secession tide in the South.",
-  lead-first-alpha: 0,
+  deck: [Thus was the stage set for the “Western Easterners” to man a wall and defend their position against U.],
+  lead-pre: [],
+  lead-cap: [F],
+  lead-rest: [resh from robbing the Deadwood Stagecoach, the Sioux performers of Buffalo Bill’s Wild West changed into loose-fitting Chinese garb and attached long single braids to the backs of their heads, mimicking the clothing and hairstyle of the Boxers then rebelling halfway around the world. Thus was the stage set for the “Western Easterners” to man a wall and defend their position against U. S. Army re-enactors in a scene played out in Cody’s “Rescue at Pekin.”],
   body-paragraphs: (
-  [The Crittenden Compromise would be central to these efforts during the winter and spring of 1860-1861. It represented an attempt to settle the slavery question once and for all, drawing on the tradition of grand settlements like the Missouri Compromise and the Compromise of 1850. Indeed, the cornerstone of Crittenden’s plan was a constitutional amendment that would divide the remaining Western territories along the old Missouri Compromise line, barring slavery above and protecting slavery below the 36º 30’ parallel.],
-  [Moderates like Crittenden hoped that this might be enough to secure the loyalty of the remaining Southern states to the Union. This might, in turn, make Republicans more willing to let the secession crisis play out, and it might eventually make the seceded states more willing to return to the Union. Yet most Republicans, including Lincoln, refused to countenance any further extension of slavery into the territories. Attempts by moderates to push through the Crittenden Compromise repeatedly foundered against this opposition.],
-  [Compromisers struggled, too, against the opposition of Southern secessionists, who argued that it did not do enough to protect slavery from the threat of an empowered Republican Party. Over the course of the secession crisis, it became clear that the leaders of the seceded states had no interest in negotiation or returning to the Union. Southern rights advocates in the states that had not seceded also complicated the project of compromise; their demands for more concessions meant there was no consensus around Crittenden’s or any other compromise measure even in those states.],
-  [Moderates attempted to push through the Crittenden Compromise, but met opposition from both sides.],
-  [One such antagonist was Virginia’s John Robertson, a prominent Democrat and judge from Richmond. The state legislature sent him as a commissioner to the seceded states in early 1861, and he returned with assurances of the new Confederate States’ sympathies with Virginia. They are “bone of her bone, and flesh of her flesh,” he reported.],
-  [The outbreak of fighting at Fort Sumter on April 12 provided the push for which many Southern hardliners had been hoping. Abraham Lincoln responded by issuing a call for 75,000 troops to put down the rebellion in the South, and in short order Virginia, Arkansas, North Carolina, and Tennessee seceded and joined the new Confederacy. The start of the war seemed to signal triumph for militants like Robertson and disaster for moderates like Crittenden. Yet neither man would accept this as the outcome of his labors.],
-  [Robertson wrote a letter to Crittenden near the end of April that highlighted just how uncertain the future appeared in that moment. Robertson refused to believe that the collision at Fort Sumter necessarily meant war —and rejected, moreover, the idea that war would accomplish the ends of either side in the conflict. He thus suddenly and unexpectedly found his own goals aligned with Crittenden’s, and Robertson begged the old Kentuckian to renew his efforts at conciliation.],
-  [From Robertson’s point of view, civil war did not seem inevitable, even when armies were massing on both sides of the Mason-Dixon Line. The situation represented a dramatic escalation, to be sure, but in the context of the decades-long sectional crisis over slavery (one that had at other points erupted in violence), observers like Robertson could imagine outcomes other than intestine war.],
-  [John Robertson to John J. Crittenden, April 28, 1861],
-  [Dear Sir,],
-  [No man could have more earnestly striven than yourself to [resolve] the feuds, whose increasing fury, already advanced to the stage of murderous conflict, threatens to involve thirty millions of men in the horrors of civil war. However I may have differed with you, looking from a Southern view, as to the acceptability of the terms of adjustment you proposed, I never doubted that you regarded them as just, or, at least, as preferable to the evils otherwise to ensue, and as the best which could possibly be obtained. The event has proved that, moderate as they were, the ruling faction [the Republican Party] would be content with none but such as would degrade the South. Wellnigh desperate is the condition to which that faction has reduced this country. The fact now stares them in the face that the  Union is dissolved  beyond all hope of restoration, at least, in our day. Yet they are threatening to  preserve  the Union  by force . They read the riot act to millions of men, nay, to sovereign States, who are to be  coerced  into friendship by their foes at the point of a bayonet. But, waving all recrimination, not insisting on the absurdity of the idea, or the impossibility of reducing the South to an ignominious submission, or the certainty that their subjugation,  if possible , would defeat the very object their enemies profess to desire (namely, the preservation or restoration of the Union), by converting States into vassal provinces (in that character alone can they remain or enter into it), let us inquire if there are no means by which the anticipated consequence of our family jars (now an accomplished fact), the separation of the States, may be recognized by the ruling faction at Washington, without deliberately repeating the most atrocious crime, and steeping their hands still deeper in the blood of their brethren. A word from the  long-eared god [Lincoln] , who now holds in his hands (as he imagines) the destinies of the country, would be enough.  He  has only to say, “Let there be peace,” and there will be peace. But he and the murderous gang whom he consults already cry ‘Havoc!’ And let slip the dogs of war. And yet the star of hope still twinkles in the clouded firmament. Preposterous as is the idea of peaceful union or reunion, there may still be a peaceful separation; and it is to yourself, sir, who, if allowed to do so, I will still regard, notwithstanding the marked difference of our political sentiments, as a valued friend,—it is mainly to you I look for effecting so glorious a consummation. I do not desire that my name should be connected with an effort which you may, most probably, consider utterly idle, and which, should you think worth trying, be more apt to succeed without it. Before going further at present, permit me to inquire whether it will be agreeable to you to entertain the thoughts which, after much anxious reflection, have entered into, and taken firm possession of, my mind.],
-  [It is proper to say that my appeal to you is wholly without the sanction or knowledge of any constituted authorities, State or federal. It has been suggested even but to two individuals; in the judgment of one of them you would yourself repose great confidence. I have received decided encouragement to make it.],
-  [An immediate answer, if convenient, will greatly oblige me.],
-  [With great and respectful regard, yours,
-John Robertson],
-  [For all of their disagreements, Crittenden must have found some encouragement in Robertson’s kindred desire for peace. Robertson still seemed to hope that secession could be accomplished peacefully, but Crittenden saw peace as a means to promote compromise and reunion, as well. A month after the former’s letter, Crittenden would preside over a convention in Frankfort, Kentucky, which would renew calls for Crittenden’s compromise as a basis for sectional adjustment. “Whether any such constitutional guarantees would have the effect of reconciling any of the seceded States to the government from which they have torn themselves away we cannot say,” the convention declared, “but we allow ourselves to hope that the masses in those States will in time learn that the dangers they were made to fear were greatly exaggerated, and that they will then be disposed to listen to calls of interest and patriotism, and return to the family from which they have gone out.”],
-  [In the meantime, Crittenden would also be instrumental in the effort to keep Kentucky neutral in the Civil War. He would tour the state advocating this policy, arguing that it would leave Kentucky well-placed to act as a mediator in the conflict. Kentuckians might not be able to stop the ensuing fight, but it certainly seemed a better alternative to him than active involvement in war.],
-  [A week before the Frankfort Conference on May 20, 1861, Kentucky’s governor would issue a proclamation declaring the state’s neutrality; in it, he claimed that this course would help promote peace. Such hopes obviously failed to stop the onrushing war that would rage for four years and kill hundreds of thousands of people. No one could foresee what would come, but Kentucky’s neutrality in 1861 — and the efforts of men like Crittenden and, to some extent, Robertson — stood as a monument to their different visions for the future in that moment. Those different visions informed their behavior during the conflict, and at least in the case of Kentucky, those ideas helped shape the broader contours of the Civil War.],
-  [Jesse George-Nichol is a Ph. D. candidate at the University of Virginia.],
+  [Pittsburgh was the host city this day in late May 1901, and the big-city crowd did not disappoint. As the action unfolded, spectators stomped their feet so hard as to send vibrations through the grandstand. During the climactic scene, as the Army re-enactors scaled the artificial wall, the jingoistic roar from audience members swelled to ear-throbbing intensity, and they surged over the railings to join performers on the arena floor.],
+  [The drama depicted actual events of the ongoing 1899–1901 Boxer Rebellion. Emerging as a violent response to increasing foreign incursion into China, the Boxers (nicknamed for their martial arts skills, though officially known as the Society of Righteous and Harmonious Fists) sought to eradicate all signs of modern progress (railroads, telegraph lines, etc.) and called for the liquidaton of foreigners, particularly Christian missionaries (and their Chinese converts).],
+  [On June 20, 1900, the Boxers besieged foreign embassies in the Legation Quarter of Peking (present-day Beijing), trapping within its walls nearly 500 foreign civilians, 400 military personnel and 3,000 Chinese Christians. Fifty-five days into the siege eight nations, including the United States, sent some 20,000 soldiers to relieve the siege. In battle that August 14 and 15 they defeated the Boxers and then divided the capital city into occupation zones, sending occasional punitive forays into the countryside. Not until Sept. 7, 1901, did representatives of the allied nations and China’s Qing empire sign the Boxer Protocol, officially ending the rebellion.],
+  [Ever the savvy showman, Cody was quick to draw a correlation between the Boxers and American Indians. As the rebels had resisted foreign incursion, he reasoned, so Plains Indians had resisted the westward tide of Anglo settlement, cutting telegraph lines, attacking railroad crews and battling U. S. soldiers. Fueled by superstitious ideology, the Boxers believed they could induce spirits to enter their bodies and render them invulnerable to bullets, much like Plains Indian adherents of the “Ghost Dance” movement believed their ceremonial shirts would protect them. The latter movement ended in tragedy on Dec. 29, 1890, with the battle turned massacre at Wounded Knee, S. D., all but ending the American Indian wars.],
+  [Buffalo Bill was a stickler for the authentic, wherever possible employing real soldiers, cowboys and Indians performing with real weapons. But as he had no access to real Boxers, the duty fell to those Sioux already in Cody’s employ. They were perfect for the role, one New York Sun reporter quipped, as they were “used to dying” in each show. “They die in the cowboy battles about the emigrant wagon, and they die again in the chase of the Deadwood coach,” he wrote. “They made no objection to…dying the death of Boxers this year.” A New York Evening Sun reporter noted, tongue in cheek, “Some of them seemed a little ill at ease in their Chinese makeup, but they kept themselves entirely in the landscape, positively refused to scalp a single member of the allied forces and never even indulged in so much as the ghost of a war whoop.”],
+  [American Indians had long featured in promotions for the Wild West, which urged potential ticket buyers to come see the “horde of warpainted Arapaho, Cheyenne and Sioux Indians” (though after convincing the infamous Hunkpapa Lakota leader Sitting Bull to tour with him in 1885, Cody had hired only Sioux from the Pine Ridge Agency). Why did Plains Indians who had violently resisted “foreign incursion” agree to perform in the Wild West shows? For starters, those working for Buffalo Bill earned a decent wage, while employment prospects on and around the reservations were limited. In addition, room, board and travel were free. Finally, performers’ immediate families were welcome to join them on tour.],
+  [In the actual 1899-1901 Boxer Rebellion namesake Chinese insurgents (pictured above in U. S. captivity) besieged the foreign embassies in Peking (present-day Beijing). In Buffalo Bill’s version of events cowboys costumed as American soldiers retook the city walls from Sioux performers clad in Chinese silks and pin-on braids.],
+  [In the fall of 1900, drawn like so many Americans by the dramatic events in China, Cody proposed to his theatrical manager, Nate Salsbury, that they incorporate a reenactment of the allied victory over the Boxers in the forthcoming season of the Wild West. The pair put their heads together and came up with “The Rescue at Pekin.”],
+  [On April 2, 1901, opening night, they debuted the Chinese-themed spectacle at New York’s Madison Square Garden. After a fortnight’s run Cody took the show on the road, and by the time the season wrapped in late October the troupe had performed in arenas from upstate New York to the South and across much of the Midwest. In 1902, with few changes to the program, Cody and company performed for audiences in the Western half of the country.],
+  [The twice-daily shows were an enormous draw, attracting on average some 20,000 to 30,000 patrons, not counting those turned away at the gate. The audience often exceeded the population of the host cities, as people from surrounding areas packed the stands. The June 4 edition of Pennsylvania’s Reading Herald reported that crowds began to gather in the early morning, by showtime transforming into a “great huddled mass.”],
+  [As the battle between the Boxers and the soldiers marked the grand finale of each performance, Cody and Salsbury spared no expense. “It was indeed an enormous and costly undertaking,” author John R. Haddad writes, “requiring 100 horses, large amounts of gunpowder and explosives, the latest in cannons and firearms, and of course the massive wall of Peking that loomed majestically over one end of the arena.” The cast alone, including the braided Sioux “Boxers,” numbered 500.],
+  [The performance lacked for nothing. Whether it was authentically cast or accurate in every detail was beside the point. Cody and company were, above all else, entertainers, and whether clad in Western buckskins or Chinese silks, they seldom disappointed the huddled masses.],
+  [This article originally appeared in the Spring 2024 issue of Wild West magazine.],
 ),
-  inline-pq: pull-quote([He thus suddenly and unexpectedly found his own goals aligned with Crittenden’s, and Robertson begged the old Kentuckian to renew his efforts at conciliation.], [Jesse George-Nichol]),
-  inline-pq-idx: 7,
+  inline-pq: pull-quote([, all but ending the American Indian wars.], [David McCormick]),
+  inline-pq-idx: 5,
   edited-for-length: false,
 )
 
@@ -60,27 +55,24 @@ John Robertson],
 {
   #section-label([Front Page])
   #standard-article(
-  title: [Episode 225: Emma and the Trail],
+  title: [Episode 239: Blank Pages],
   author: [Nate DiMeo],
   source-name: [The Memory Palace],
   images: (),
   paragraphs: (
   [Order The Memory Palace book now, dear listener. On Bookshop.org , on Amazon.com , on Barnes & Noble , or directly from Random House . Or order the audiobook at places like Libro.fm .],
-  [The Memory Palace is a proud member of Radiotopia from PRX. Radiotopia is a collective of independently owned and operated podcasts that’s a part of PRX, a not-for-profit public media company. If you’d like to directly support this show, you can make a donation at Radiotopia.fm/donate. I have recently launched a newsletter. You can subscribe to it at thememorypalacepodcast.substack.com .],
-  [Sincerely Yours by LLLL
-Across the Other Side by Infinite Scale
-Sunset by Resavoir
-Mammoth by Golden Brown
-Unassigned by Vernon Spring
-Swimming by Explosions in the Sky
-Pure (Ride the World) by The Brendan Eder Ensemble
-Le Tunnel by Sylvain Chauveau
-Floating Away by Lullatone],
-  [Notes
-There's a ton written about Emma Rowena Gatewood but so much of it, including this story, owes a huge debt to Ben Montgomery's book, Grandma Gatewood's Walk, which excavated the story of her life with her husband. Besides that, it is wonderfully written. Totally recommend it.],
+  [The Memory Palace is a proud member of Radiotopia from PRX. Radiotopia is a collective of independently owned and operated podcasts that’s a part of PRX, a not-for-profit public media company. If you’d like to directly support this show, you can make a donation at Radiotopia.fm/donate.],
+  [The Lady With the Golden Stockings from the Sun Ra Arkestra
+The Sage from the Chico Hamilton Quintet
+Falling in Love with a New York Pigeon by Birb
+Bocherini's fourth quintet as performed by the Ensemble of St. Martin of the Fields
+From a Dream by Oregon
+Jaybird from the great Charlie Parr
+Pool of Love by Les Baxter
+And House Tuner Theme from Will Bates' gorgeous score to The Sound of Silence.],
 ),
   insert-map: (:),
-  word-count: 188,
+  word-count: 154,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -90,51 +82,61 @@ There's a ton written about Emma Rowena Gatewood but so much of it, including th
 {
   #section-label([Features])
   #standard-article(
-  title: [The Miller Bros. 101 Ranch Real Wild West Didn’t Have Buffalo Bill’s Reach, But Its Performers Took Hollywood by Storm],
-  author: [E. Joe Brown],
+  title: [An SAS Rescue Mission Mission Gone Wrong],
+  author: [Gavin Mortimer],
   source-name: [HistoryNet],
   images: (),
   paragraphs: (
-  [To the disbelief of gaping onlookers in the packed stands at El Toreo, Mexico City’s largest bullring, American rodeo performer Bill Pickett clung to the horns of a massive Mexican bull ironically named Frijoles Chiquitos (“Little Beans”). Watching from a safe distance in the saddle atop jittery horses were cowhand Vester Pegg and siblings Joe and Zack Miller, proprietors of the Miller Bros. 101 Ranch Real Wild West. Matadors, including the famed Manuel Mejíjas Luján (aka “Bienvenida”), also stood by as Bill grappled with the snorting, gyrating wild beast, which Mexican and Spanish bullfighters alike typically fought from a more dignified distance. Funny thing is, Pickett wasn’t even supposed to be there. Days earlier he’d been working one of the Miller family ranches back in Oklahoma.],
-  [It was early December 1908, and the Real Wild West had come off a grueling tour of the United States. Instead of heading home to lick their wounds, however, Joe and Zack Miller took the show south of the border. Though still two years from the onset of the Mexican Revolution , that southern neighbor was already in turmoil. The troupe endured several intrusive (and costly in bribes) searches by customs officials before arriving in Mexico City on December 11. The streets of the heavily populated capital were clogged with Roman Catholic pilgrims preparing for the next day’s Our Lady of Guadalupe observance, marking the 1531 visions of the Virgin Mary to believers in that Mexican city. The observance also marked the start of the show’s two-week run at the circus arena in Porfirio Díaz Park.],
-  [Low attendance and gouging fines for Pickett’s failure to appear, though “The Dusky Demon” was prominently featured in advertisements, led Joe to telegram brother George, back at the 101 Ranch, with instructions to have Pickett travel down by train immediately. Shortly after the bulldogger arrived and began performing, Joe and the show’s press agent, W. C. Thompson, stopped in at the Café Colón, a popular eatery among matadors and local reporters, where Joe hoped to gin up publicity for the show. When a table of matadors directed their laughter at the gringos, Joe asked what they found so humorous. They told him they had attended the show that afternoon and were unimpressed with Pickett’s antics in the ring, comparing him to a novice bullfighter. An indignant Miller challenged them on the spot to go toe to toe with Pickett in a bulldogging event. On behalf of the group, Bienvenida accepted and agreed to show up at the circus arena at 10 the next morning. But neither he nor any other matador took up the challenge, claiming the arena promoters forbade them from taking any such foolish risk.],
-  [After several days of verbal exchanges, challenges and braying newspaper ads, Miller bet the arena promoters Pickett could remain alone in the ring for 15 minutes with their fiercest fighting bull and spend at least five minutes of that time grappling barehanded with the beast, wrestling it to the ground if possible. If Pickett succeeded, the Millers would collect the gate receipts for the day. Joe also made a 5,000-peso side bet. The publicity from his wager and newspaper coverage led promoters to move the bulldogging spectacle, scheduled for December 23, to the far larger El Toreo. Within days Mexico City’s largest venue had sold out.],
-  [On the afternoon of the 23rd Pickett trotted into the arena atop his favorite horse, Spradley, to a cacophony of cheers, boos and hisses from an estimated 25,000 onlookers. As the blare of the opening trumpets faded, the gate to the corrals swung wide, and Frijoles Chiquitos stormed into the ring. When the bull saw Pickett and raced across the arena toward him, Bill saw right off that his terrified hazers would be of no use.],
-  [Steering Spradley in close to Frijoles Chiquitos, Bill sought to maneuver into position to leap on the bull’s bulging neck. Each time the rampaging beast gave them the slip. Suddenly, the bull swung around and charged rider and horse from behind. Spradley could not evade the rush, and one of Frijoles Chiquitos’ horns ripped open the horse’s rump, causing it to stumble. Taking advantage of the distraction, Pickett dove from the saddle. Locking on to the bull’s horns, he wrapped himself around its writhing neck and rode Frijoles Chiquitos as the crowd rose to its feet in anticipation. The bull tried everything it could to free itself of Pickett, to no avail. For several  agonizing minutes it wildly shook its great head, slashing with its horns, as the determined bulldogger clung tight, looking for an opportunity to take the animal to the ground.],
-  [Likely bemoaning their decision to bet against the do-or-die Yankee, the crowd turned on Bill and began pelting him with whatever was at hand. Fruit, cushions, rocks, bottles, even bricks rained down from the stands. After taking a rock to the side of his face and a beer bottle to the ribs, a bleeding and dazed Pickett released his iron grip on the raging Frijoles Chiquitos and lay on the arena floor grimacing in pain. Rushing in, his 101 Ranch hazers finally distracted the bull long enough to help Bill to his feet and out of the ring.],
-  [The crowd’s delight at Pickett’s failure turned to disappointment on learning he’d made it to the 5-minute mark, thus winning the wager. With his seven and a half minute ride the bulldogger had earned the show a whopping 48,000 pesos (north of \$450,000 in today’s dollars), not to mention Joe’s side bet. The day after Christmas the show wrapped up its lucrative run in Mexico City and headed back north. Joe canceled a scheduled show in Gainesville, Texas, and as the train arrived in Bliss, Okla., weary troupe members clapped and cheered at being home. The big payday had helped buffer an otherwise tough financial year, and the show’s future seemed bright.],
-  [Most Western historians cite 1881 as the year 101 Ranch patriarch Colonel George Washington Miller first seared his brand on cattle. A notorious namesake San Antonio saloon is said to have inspired the brand. Whatever the truth, that first bitter wisp of burnt hide launched a story for the ages, as the 101 was destined to become one of the most recognizable names in both ranching and Western entertainment.],
-  [A Kentucky native, Miller fought for the Confederacy in his 20s and moved west after the Civil War, initially settling in southwest Missouri and driving cattle from Texas to the railheads in Kansas. Miller later moved his herds to land leased from the Quapaw tribe in Indian Territory (present-day northeast Oklahoma) while residing just across the border in Baxter Springs, Kan. He cultivated a relationship with the Ponca tribe when it was briefly displaced to the Quapaw Agency. Miller suggested the Poncas settle on land farther west in the Cherokee Outlet. After the federal government forced ranchers out of the outlet in 1893, the Poncas did just that, and Miller leased their land for his operations, setting up headquarters near the tribal hub at New Ponca (renamed Ponca City in 1913). The 101 Ranch ultimately comprised 110,000 acres.],
-  [After Miller succumbed to pneumonia in 1903, wife Molly had the ranch turned into a trust, with Joe, Zack and George as equal partners and shareholders. From then on the trio ran the whole shooting match. At the time of their father’s death Joseph Carson Miller was 35 years old, Zachary Taylor Miller 25, and the youngest, George Lee Miller, 21. Each brother developed unique interests and skills, enabling them to divide oversight of the 101 effectively and without rancor. Together they remained focused on realizing their father’s dream to build the nation’s largest and most influential ranch.],
-  [Known as the “White House,” the grand main house of the 110,000-acre 101 Ranch speaks to the wealth the Miller family had accumulated before taking their show on the road. On land leased from Ponca Indians in the Cherokee Outlet, patriarch George Washington Miller built a ranching empire for sons Joe, Zack and George.],
-  [The rich soil already grew a range of crops, while livestock included cattle, bison, hogs, poultry and several breeds of horse. The brothers continued to experiment with crops and added an electric plant, a cannery, a dairy, a tannery, a store, a restaurant and several mills. Promoted as the “greatest diversified farm on earth,” the ranch prospered well into the early 20th century.],
-  [Of course, oil too played a role. Ernest W. Marland, of Marland Oil Co., spearheaded the search for crude deposits on the family spread and helped form the 101 Ranch Oil Co. That highly successful venture substantially increased the Millers’ profit margin.],
-  [All-important downtime served to seed the brothers’ entrance into show business.],
-  [George Lee Miller was 21 years old when his father died, leaving him and brothers Joe and Zack as equal partners of the 101 Ranch. Rodeos held at the ranch were the genesis of their Real Wild West.],
-  [What became the Real Wild West had its roots in late summer or early fall 1882 in Winfield, Kan., where Colonel Miller, Mollie and their children had recently moved. Miller and hands had just finished a cattle drive up the Chisolm Trail from Texas. Meanwhile, Winfield city leaders were planning an agricultural fair and wanted entertainment. Miller proposed his cowboys put on a roping and riding exhibition, and the event planners enthusiastically accepted his offer. Miller’s “roundup,” as he called it, proved a roaring success.],
-  [The business of running a sprawling ranch intervened, and it wasn’t until 1904, a year after Colonel Miller’s death, that the 101 hosted its next roundup. This time it was the Miller brothers’ brainchild.],
-  [That year Joe Miller visited the Louisiana Purchase Exposition in St. Louis, Mo. While there he and leading Oklahoma newspapermen met with the board of directors of the National Editorial Association, hoping to convince the board to hold its 1905 convention in Guthrie. To sweeten the pot, Joe told the directors the 101 Ranch would host them and put on a big Wild West show in their honor. The board bit and approved the proposal.],
-  [The Millers thought it best to prepare for the 1905 event by holding a roundup in the fall of 1904. Pleased with the enthusiastic turnout, the brothers planned the 1905 roundup, which they grandly dubbed the Oklahoma Gala. Dozens of trains were needed to help transport the more than 65,000 people who attended the elaborate opening parade on June 11. It was the largest crowd yet assembled for an event in Oklahoma.],
-  [The June gala ended with a reenactment of a wagon train attack by 300 Indians. Gunfire and bloodcurdling screams rose from the arena floor as wagons caught fire and settlers closed with their assailants in mortal combat. More credulous onlookers feared they were witnessing a real massacre. Then, out of nowhere, a posse of cowboys rode to the rescue, guns blazing. As the act drew to a close, the performers gathered at the center of the arena to a standing ovation. The Miller brothers joined the troupe to bask in the crowd’s appreciation.],
-  [Over the next two decades the Millers hosted annual roundups at the 101, seating up to 10,000 spectators in an arena just across from ranch headquarters. The program always included roping, riding and bulldogging, as well as Indian dances and other Western cultural offerings. The brothers employed top cowboys from across the region, and Pickett and other well-known 101 Ranch hands went on to stardom in Hollywood Westerns.],
-  [Planning for the June 1905 Oklahoma Gala had another unexpected offshoot, for Joe caught the “show business bug” in a big way. Looking ahead to the June gala, he and Zack arranged to have some of their performers join Colonel Zack Mulhall and his touring Western troupe in a series of shows that April at New York City’s Madison Square Garden. Appearing before packed houses in one the biggest venues of the era gave the brothers an opportunity to learn the production aspects of a touring show. It also afforded their performers rehearsal time for the upcoming gala. Among the Miller hands appearing at the garden was Will Rogers, then a relative unknown. Indeed, Mulhall initially turned down Rogers, who had to enlist the help of the colonel’s wife, Mary, to secure a spot on the program.],
-  [It is ironic, then, that while the Madison Square Garden run proved successful for Mulhall, Rogers benefited all the more from his appearance. The turning point came amid the sixth show when a steer got loose and entered the stands. Thinking quickly, Will lassoed the wayward animal and guided it back to the arena floor, saving the day. The publicity generated by his courage, talent with a lariat and wit prompted a shrewd promoter to offer him a starring role, performing his rope acts solo on vaudeville stages in Manhattan.],
-  [Among the best-known “graduates” of the Real Wild West were humorist Will Rogers (above) and actor Tom Mix. Hollywood came to rely on the ranch to provide other such adept hands and screen-friendly faces as Ken Maynard, Buck Jones and Hoot Gibson.],
-  [Meanwhile, Joe, Zack and their well-rehearsed performers returned to Oklahoma to finish preparations for the gala. Taking a page from Mulhall, the Millers generated a marketing blitz, published in newspapers and spread through contacts nationwide, describing what attendees could expect on June 11. The lineup included bulldogger Pickett, trick rider Lucille Mulhall (the colonel’s daughter), expert horseman and crack shot Tom Mix and a supporting cast of almost a thousand performers, many from the local Ponca and Otoe tribes.],
-  [The 101 Real Wild West was one step from becoming one of the most popular traveling Western entertainment troupes of its era.],
-  [Encouraged by their successful 1905 gala, and at the urging of Oklahoma neighbor Gordon W. “Pawnee Bill” Lillie—who’d already made a name for himself as the founder and proprietor of Pawnee Bill’s Wild West—the Millers took their show on the road full time in 1907. Favorable publicity from an early run in Kansas City, Mo., caught the notice of Theodore Roosevelt. The “Cowboy President” was already acquainted with the Millers from prior visits to their ranch. (On his invitation Mix had ridden in the president’s 1905 inaugural parade alongside Roosevelt’s Spanish-American War “Rough Riders,” sparking a rumor the 101 Ranch hand had been a Rough Rider himself.) Roosevelt persuaded the Millers to bring their show to Norfolk, Va., as part of the Jamestown Exposition. At the close of that 100-day run the exposition promoters helped land the Real Wild West a two-week run at the Chicago Coliseum. The publicity from 1907 led to the busy but grueling 1908 tour, starting at Brighton Beach, N. Y. Through 1916 the Millers and their performers were at the top of their game as crowds grew ever bigger, drawn by a spreading fascination with cowboys, Indians and all things Western.],
-  [In 1916 the Millers merged their production with Cody’s arena show and toured as Buffalo Bill (Himself) & the 101 Ranch Wild West Combined, though the nation’s growing involvement in World War I put the tour on hold later that year. Cody died soon after, on Jan. 10, 1917. Going back on the road in 1925, the Real Wild West toured throughout the United States and abroad, traveling to Mexico, Canada, Europe and South America.],
-  [In 1916 the Millers merged with Buffalo Bill (above left, beside Joe Miller on the white horse) for a patriotic tour dubbed the “Military Pageant of Preparedness.” Cody died on Jan. 10, 1917. After World War I the show went into decline. Joe died in 1927, George in ‘29.],
-  [Zack Miller lost the 101 and died nearly destitute in 1952.],
-  [Through the 1920s, however, the 101 Ranch Real Wild West, Pawnee Bill’s Wild West and other touring shows drew ever smaller crowds, leading to severe financial losses. By then such productions faced stiff competition from the film industry, as well as proliferating circuses and rodeos. Making matters worse for the Real Wild West, Joe Miller died in 1927, followed two years later by the death of brother George. Then came the Great Depression, which drastically cut into profits from the ranch and show. Zack alone could not pull the operation out of its tailspin, and in 1931 the 101 Ranch and its associated businesses went into receivership. A year later much of the land was divided and leased, and authorities auctioned everything of value to cover debts. On Jan. 3, 1952, a nearly destitute Zack Miller died.],
-  [Today one may visit the site of the ranch headquarters, though all that’s left are a few weathered buildings, the foundation of the Miller home (known in its prime as the “White House”) and a few historical markers describing what once was. An excellent nonprofit named the 101 Ranch Old Timers Association continues its work to keep the ranch and show legacy alive. Its members support a wonderful museum housed within oilman E. W. Marland’s Grand Home in Ponca City and host annual events and tours for the public. And so the show goes on.],
-  [New Mexico–based E. Joe Brown is an award-winning author of novels, short stories and memoirs. For further reading he recommends The Real Wild West: The 101 Ranch and the Creation of the American West , by Michael Wallis, and The 101 Ranch , by Ellsworth Collings and Alma Miller England.],
-  [This article was originally published in the Spring 2024 issue of Wild West.],
+  [Norman Crockatt is not a well-known name, but the British intelligence officer was responsible for one of the most controversial decisions of World War II.],
+  [When the War Office in London created Military Intelligence Section 9 (MI9) on December 23, 1939, it chose the 45-year-old Crockatt to head the new organization. The former head of the London Stock Exchange, he was seen as “the right sort of chap” for the post despite his scant experience in military intelligence.],
+  [MI9’s mission was to help British military personnel escape and evade the enemy. That might mean smuggling maps and miniature compasses to prisoners of war held in Nazi camps or assisting shot-down airmen in enemy territory to evade capture and get back to Britain or Allied-controlled territory. MI9 was a small branch of British intelligence, but in June 1943 Crockatt had the responsibility of making a momentous decision about the fate of 80,000 Allied POWs incarcerated in I talian prison camps . The Allies were gearing up to invade Italy and Crockatt had to decide whether the POWs there should stay put and wait for the arrival of Allied troops or break out and try to make their own way to freedom.],
+  [Crockatt chose the former option, stating in an order issued on June 7, 1943, that “officers commanding prison camps will ensure that prisoners of war remain within camp. Authority is granted to all officers commanding to take necessary disciplinary action to prevent individual prisoners of war attempting to rejoin their own units.” Several factors influenced Crockatt’s final decision. First was the physical state of the prisoners, many of whom were believed to be malnourished after years in captivity. Then there was the prospect of tens of thousands of prisoners on the loose, providing easy targets for vengeful Nazis and fascist Italians loyal to Mussolini . Above all, Crockatt believed that the Allies’ advance north through Italy would be swift and British and American troops would quickly liberate the camps. Why risk a mass breakout and jeopardize the lives of so many men?],
+  [Lieutenant Colonel Charles “Tony” Simonds of the British A Force received orders to plan the rescue of prisoners of war who had escaped from their prison camps in Italy.],
+  [To get word to the POWs of what they should do, Crockatt used a secret code contained within the script of a popular BBC program, The Radio Padre , a favorite among the prisoners. But what MI9 didn’t do, remarkably, was inform British prime minister Winston Churchill or his War Cabinet of his decision. From the outset of negotiations with Italy Churchill had made plain his wish to see POWs returned to the Allies once the Armistice came into force. Article 3 of the Italian surrender agreement stipulated that prisoners were to be “immediately turned over to the Allied commander-in-chief and none of these may now or at any time be evacuated to Germany.” When the Armistice was made public on September 8 the Italian War Ministry kept faith with its obligations and told 80,000 Allied prisoners that they were free to leave. But the majority remained in their camps, where they risked falling under the control of the Germans.],
+  [Churchill was aghast when he learned of Crockatt’s order for POWs to stay put, but by then it was too late for many prisoners. Contrary to what Crockatt had anticipated, the Germans had wasted little time in taking over most of the camps and were soon hunting the estimated 30,000 who had defied the stay-put command and taken flight.],
+  [Nothing could be done now to liberate the prisoners in the camps, but Churchill demanded a plan to rescue the fugitives. The man chosen to lead the operation was Lieutenant Colonel Charles “Tony” Simonds, who had joined MI9 in 1941 after fighting alongside General Orde Wingate in what is now Ethiopia. Based in Cairo, Simonds was in charge of A Force, which had responsibility to set up escape lines for Allied prisoners across occupied Europe. Summoned to Allied Forces HQ in Algiers on September 23, Simonds received orders to devise a plan to rescue the thousands of escaped Allied prisoners roaming Italy. He had at his disposal personnel from Britain’s 1st Airborne Division, Second Special Air Service Regiment (2SAS), and Special Operations Executive (SOE), as well as the American Office of Strategic Services (OSS). The mission received the codename Jonquil.],
+  [In 1940 Bill established a training center at Lochailort, Scotland, where commandos could practice amphibious landings like those the SAS used for the POW rescue mission in Italy.],
+  [Simonds established his headquarters at Brindisi, a port on the eastern heel of the Italian boot, and arranged a meeting with officers from 2SAS, billeted 75 miles northwest in the coastal city of Bari. This elite British special forces unit had been formed in North Africa in 1941 by brothers David and Bill Stirling, and while stationed in Cairo Simonds had heard tales of their effectiveness in raiding Axis targets deep inside their territory. David Stirling had been captured in January 1943 but Bill, in command of 2SAS, sent two of his officers, Major Felix Symes and Captain Peter Power, to Brindisi to discuss the rescue operation.],
+  [They arrived on the evening of September 26 and for the next three hours Simonds briefed the SAS officers on the nature of the mission. Standing in front of a large map of the east coast of Italy, Simonds explained that he had divided the region into four areas, from Ancona in the north to Ortona in the south, a range of approximately 100 miles. Simonds defined the role of 2SAS in the operation thus: “In each area two parties will go in, one to be dropped by parachute inland, with the object of sending all P. W.s down to the coast, and one party to land by sea to form a beach party to guide, shepherd, and protect the prisoners, and also to supervise their embarkation after having signaled the boats.” There were seven soldiers in each party, and the boats were vessels that would rendezvous off the beaches to take on the escapees.],
+  [Furthermore, Simonds planned to have two other parties landed in the most southerly of the four areas to collect a large number of prisoners known to have gathered close to the town of Chieti. Attached to each A Force team would be an Italian speaker to question villagers about the prisoners’ whereabouts.],
+  [Simonds recruited a handful of interpreters locally, but he also could exploit the linguistic skills of the American OSS, which had a sub-unit called the Operational Group (OG) with the role of organizing, equipping, and training indigenous populations to fight common enemies. Unlike Britain in the first half of the 20th century, America had a “melting pot” society that enabled the OSS to recruit operatives from Chinese, Japanese, Greek, Norwegian, Italian, and other communities. The standard OG comprised four officers and 30 enlisted men, and the Italian unit was commanded by 1st Lieutenant Peter Sauro. Born in Yonkers, New York, to Italian parents, the 31-year-old Sauro had been a tree surgeon before the war; he was small and past his physical prime, but he had a good grasp of his ancestral language.],
+  [Sauro and his section reached OSS headquarters in Algiers on September 8, the day that Italy officially surrendered. Designated Unit A, First Contingent, Operational Groups, 2677th Headquarters Company Experimental (Provisional) AFHQ, Sauro’s OG was the first of its kind to be activated and spent the next two weeks in parachute training.],
+  [On September 25 OSS HQ informed Sauro of the A Force mission to round up escaped Allied prisoners in Italy. He had 24 hours to select 18 men for the operation and equip them as necessary. They received the codename Simcol. Once they had reached Italy, Sauro’s team of Italian speakers traveled by vehicle to Bari, where A Force had established its new base and where Simonds introduced Sauro to the SAS officers. Simonds asked him to provide one of his men to each of the four SAS parachute parties and another to each of the five teams who would land by fishing boat. Sauro and his remaining nine members of the OG would take part in a parachute operation independent of the British.],
+  [One of the men Power brought with him was 20-year-old Bob Tong.],
+  [Sauro’s team left Bari airfield in the late afternoon of October 2 for the short flight north to Catignano, a village 20 miles inland from Pescara. They parachuted onto the drop zone without incident.],
+  [A few hours after Sauro’s party had flown from Bari, a fleet of eight schooners sailed out of the city’s port under the command of SAS Captain Peter Power, a 32-year-old Irishman. Their voyage up the eastern coast took them longer than expected because of fierce fighting at Termoli, 125 miles north of Bari, where for three days a battle raged between the British 78th Infantry Division and the German 1st Parachute Division. At Termoli, Power and his 12 men exchanged the schooners for LSI’s (Landing Ship, Infantry) and continued on their mission, finally going ashore at 2:00 a.m. on October 7 at Grottammare, 100 miles north of Termoli and 50 miles north of Sauro and his men. They had landed several miles south of their intended disembarkation point so they marched north overnight through torrential rain to reach the correct stretch of coast.],
+  [On the night of October 9-10 Power signaled ashore a naval dinghy stocked with supplies. It also brought the message that it would not be back again “until the nights of October 24/25 and 25/26 owing to the moon, and that all prisoners must be embarked on these nights.” Power’s party had a formidable task ahead of them. Deep inside enemy territory, without any wireless sets—none had been provided despite repeated requests—they had no means of extraction for a fortnight.],
+  [Power divided his force into four groups, three of which would search the surrounding countryside to the north, west and south. The fourth party, under the command of Sergeant Major Bill Marshall, would remain by the coast to receive prisoners as they were brought in, and conduct a sweep of the coastal area for any other escapees.],
+  [When he set off north on October 10 Power had two men with him: Bob Tong, a 20-year-old private from Shropshire, and sergeant Joe Marino, one of Sauro’s OG interpreters. Power kept a daily tally of their accomplishments in his log. On the evening of October 11, he noted that they contacted 14 prisoners, including two South African officers. They next day, “British officers arrived at 11.00 hrs and told us there were a number of prisoners near Corridonia.” On October 13 they contacted another six prisoners, and when they reached the Corridonia area the next day they found a prisoner who said he knew of 30 more. They found nine more on October 15, and on the 16th made contact with a communist who was hiding about 30 escapees.],
+  [On the return march to the beach, Power collected more prisoners, all of whom he corralled into a farmhouse about two miles from the coast under the supervision of Tong and Marino. When he reached Marshall’s base camp on October 20 Power found 34 more POWs that Marshall and his men had collected over the week. “All going well,” wrote Power in his journal. Now they just had to sit tight and wait for the naval vessels to arrive in four days.],
+  [Captain Raymond Lee of the SAS was also known as Raymond Couraud. Lee nearly met his death aboard an Italian Motor Torpedo Boat like this one during the rescue mission.],
+  [Their fortunes turned the next morning. A routine German patrol spotted Marshall’s base camp and in the ensuing firefight two SAS were captured and a number of Germans killed and wounded. On hearing the firing, Power shepherded the POWs from the farmhouse into a ravine where they remained for the day. To make matters worse, Sergeant Marino was unwell, a condition Power described in his journal as “delayed V. D.”],
+  [Fortunately, the Germans did not launch a follow-up operation. Power posted lookouts on the coastal road but they spotted nothing untoward. On October 23 SAS parties from the other three operational areas began arriving with their haul of wandering POWs. In total, noted Power, by the morning of the 24th they had “about three or four hundred prisoners.” Many were excited at the prospect of their impending salvation, while others were tired, hungry, and irritable. Months and years as prisoners and weeks as fugitives had eroded much of their military discipline. Eventually, however, the SAS led them to within a few hundred yards of the beach.],
+  [The boat was scheduled to arrive at half past midnight on October 25, and Power’s instructions to the prisoners were to “come in parties not larger than three.” Marino, though still debilitated by illness, was to act as their dispatcher. Power and Tong started out for the beach at 11:40 p.m. They had hardly arrived before they heard “bursts of automatic fire” and then the unmistakeable sound of trucks arriving. Panicking, the gathered POWs “stampeded back into the hills.” Power and Tong ran north along the beach away from the sound of gunfire. They didn’t know if the two captured SAS men had revealed the evacuation plan under questioning by their captors, or if the Germans had discovered the large number of prisoners on their own.],
+  [At daylight Power and Tong continued their trek north, believing the operation had been fatally compromised. But that evening a Royal Naval launch arrived and picked up the SAS party, now under the command of Sergeant Major Bill Marshall and including Joe Marino. After the previous night’s panic only 23 prisoners remained of the 400 brought to the beach. Power and Tong didn’t return to Allied lines for a month, when they sailed into Termoli in a fishing boat piloted by an Italian aviation officer. They brought five POWs with them.],
+  [Pete Sauro found himself in a predicament similar to Power’s. Having parachuted into Catignano, Sauro and his men had collected 250 fugitives within 24 hours. The Americans instructed the POWs to muster on the coast at Francavilla, some 20 miles due east from Sauro’s operational base. A naval vessel was supposed to arrive on the nights of October 4, 6, 8, and 10 between midnight and 1:00 a.m. and flash a light every 15 minutes. The password was “Jack London.”],
+  [The three other SAS parties scouring the countryside west and south of Pescara were also directing POWs toward Francavilla. In total 600 had reached the coast: 350 British, 200 Yugoslav, and 50 American. But, as the SAS report stated: “They had signalled for four nights (October 4, 6, 8, and 10), without success, though on the fourth night what was believed to have been a German MTB \[Motor Torpedo Boat\] switched its searchlight on them, and there was an exchange of fire. At the same time a truckload of German troops arrived on the coast road above them.”],
+  [Rescued ex-prisoners of war welcome the cigarettes handed down to them as their craft reaches Termoli.],
+  [The SAS officer overseeing the evacuation was Captain Raymond Lee. A colorful character who craved excitement, Lee was really a Frenchmen named Raymond Couraud who had won the Croix de Guerre for his actions with the French Foreign Legion in Norway, but later deserted. Arrested, he spent some time in prison, then operated in France as a gangster before joining the SOE and then the SAS under his assumed name.],
+  [Lee told the prisoners “to split up and make their way through the lines.” He added that Termoli, 75 miles away, was now in British hands after a three-day battle, and it was safer to travel overland than by sea, where they risked attack from enemy vessels or aircraft.],
+  [Sauro issued similar instructions to half of his OSS team, but he and four men continued to scour the area for escaped prisoners, briefing those they found on how to reach Allied lines. Sauro sent three more operatives south on November 3, while he and one other remained searching. Eventually the pair were captured by the Germans.],
+  [Captain Lee returned safely to Termoli and volunteered on the night of November 2 to accompany a search and rescue party aboard an Italian MTB. With him was Captain Richard Lewis, a 26-year-old Illinoian and Harvard graduate (who would win the Pulitzer Prize in 1976 for his biography of Edith Wharton), and Augusto Ruffo, an 18-year-old Italian recruited to A Force, whose father was the 6th Duke of Guardia Lombarda. “We were part of an Anglo-American intelligence outfit known in Washington as MIS-X \[Military Intelligence Service X\] and in London as MI-9,” wrote Lewis in his memoir. “In Italy, we had various cover titles.” One of these was A Force.],
+  [The Italian MTB left Termoli and arrived at the rendezvous point off Silvi, seven miles north of Pescara. The vessel’s skipper flashed the recognition signal to shore, where the A Force team, including a British Lieutenant Lyte, spotted it. With them were 12 POWs. Before they could respond to the signal, said Lyte, “machine gun fire and 20mm Breda fire \[were\] directed at a boat about 1½ miles off shore.”],
+  [Lewis and Ruffo were below deck talking on their bunks when the firing started. “I could see tracer bullets flying and could hear shouts of consternation and rapid orders from above,” recalled Lewis. “My young Italian friend, in the midst of a sentence, fell forward from the bunk to lie dead on the floor; a bullet had penetrated the side of the boat and entered his back.”],
+  [Lewis flattened himself on the floor as rounds tore through the MTB. When he eventually emerged on deck, he counted the corpses of half a dozen Italian soldiers. “Flames were licking along the railing,” remembered Lewis. “From out in the blackness I could hear the desperate appeal of the Italian sailors who had jumped overboard with their life belts and were floating about crying for help.”],
+  [Also in the water was Captain Raymond Lee. Despite being shot in the shoulder, he managed to swim the mile ashore where he was subsequently found by Lyte. Lewis also swam ashore, staggering up the beach and into a dune. “As I watched, exhaustedly, the fire on board reached the torpedo and the boat blew up.”],
+  [Lewis was now in the same predicament as the men he had set out to rescue. He struck out south and initially made good progress, relying on the generosity of “kind and unquestioning Italian peasants.” One provided him with an old suit. Although ditching his uniform removed his status as a soldier and raised the possibility that he could be executed as a spy if captured, Lewis believed the tattered suit gave him a better chance of reaching the Allied lines than his combat fatigues. “I was almost within sight of the British lookout posts when I got stuck,” said Lewis. “The long, drawn-out battle of the Sangro River had begun, and the front lines were far too lively for me to attempt to cross.”],
+  [Though the British Eighth Army had secured Termoli on October 6, the advance up the east coast of Italy turned into a bloody slog. They finally crossed the Sangro (32 miles northwest of Termoli) on November 23, but it required another five weeks of hard fighting before the 1st Canadian Infantry Division captured the deep-water port of Ortona.],
+  [Bob Tong returned to Italy in 2013 to remember his fallen comrades. He had been one of the first to volunteer for Bill Stirling’s 2SAS back in 1943.],
+  [As the fighting raged, Lewis hunkered down in a stone cottage near the village of Crecchio, about 12 miles north of the Sangro. “While both armies surged forward and fell back in what, from my fretful vantage point, seemed sheer tactical messiness, I made useless little forays toward making my way to safety, only to retreat each time,” recalled Lewis.],
+  [The American finally made it through the lines on December 17, “having swallowed enough raw red wine to give me the requisite courage.” Captain Lee, who had reached Termoli after a 10-day trek, had informed A Force that Lewis had been killed on the MTB, so his arrival was greeted with delight.],
+  [Simonds estimated that about 900 former prisoners made the same journey as Lewis and Lee in the autumn of 1943, either by boat or on foot. Some received A Force’s  assistance but others relied on their own initiative. It was a disappointing tally considering that an estimated 30,000 prisoners had walked out of their camps in September; in total it is estimated that between 11,000 to 14,000 POWs reached freedom, either in southern Italy or by crossing into neutral Switzerland.],
+  [Those involved in the A Force operation quickly pinpointed the major flaw in the operation: the lack of radio communication. Colonel Russell B. Livermore of OSS’s 2677th Headquarters Company had been unable to contact any of the men on Simcol and wrote in his report, “My reaction…is that hereafter we carry out all our own operations and discontinue these ‘joint’ ones with the British.”],
+  [Lieutenant Colonel Bill Stirling, commanding officer 2SAS, cited several other reasons for the operation’s ineffectiveness, including the “extremely erratic” timekeeping of the navy that made coordination with the men ashore difficult. But his major complaint echoed Livermore’s: “Signalling arrangements were not satisfactory,” he wrote. “Walkie-Talkies between shore and ship might have been useful. Wireless communications with the base would have prevented the ignorance of the parties of the amended orders issued.”],
+  [What frustrated Stirling most was the missed opportunity. “\[G\]iven a simple plan with a reliable means of communication, and R. Vs \[rendezvous\], which could be depended on, it might have produced more satisfactory results.” In the end, it remained a lost opportunity.],
 ),
   insert-map: (:),
-  inline-pq: pull-quote([George Lee Miller was 21 years old when his father died, leaving him and brothers Joe and Zack as equal partners of the 101 Ranch.], [E. Joe Brown]),
-  inline-pq-idx: 14,
-  word-count: 2933,
+  word-count: 3657,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -171,507 +173,9 @@ There's a ton written about Emma Rowena Gatewood but so much of it, including th
   [Perhaps we should aim our ire at PBS/BBC. We don’t need another monarch melodrama. I promise. When the first season of Bridgerton was released, historians made the case that histories featuring Black people who were actually in power was more important and could be more entertaining than yet another glossy show about British aristocrats. I think that’s true. However, Shondaland, even with its diverse writers and directors, probably isn’t the right fit for such an enterprise. But these Black men it has given us, even if only for a short time in some cases, are a promise that the series still has interesting representations to offer viewers.],
 ),
   insert-map: (:),
+  inline-pq: pull-quote([I also understand the mixed response sparked by having historical figures and moments represented in popular culture.], [Patricia A. Matthew]),
+  inline-pq-idx: 8,
   word-count: 2044,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-}
-
-{
-  #standard-article(
-  title: [Pizza Cupcakes],
-  author: [Emma Chapman],
-  source-name: [A Beautiful Mess],
-  images: (),
-  paragraphs: (
-  [Pizza night is a weekly occurrence at our house and these easy pizza cupcakes a fun swap for a usual weeknight pizza. They are easy to make, and perfect to make with kids, plus delicious! I love pizza cupcakes served as a meal alongside a big salad or fresh fruit. But they also make a really fun appetizer or party snack.],
-  [Pizza cupcakes truly could not be easier to make! You only need 5 ingredients and about 25 minutes. Makes these and tell us what you think.],
-  [Related: Next up try our deep dish pizza recipe or Detroit style pizza .],
-  [Pizza dough – roll out refrigerated (like Pillsbury) is best],
-  [Olive oil],
-  [Pizza sauce – store bought or make your own],
-  [Mozzarella cheese],
-  [Mini pepperoni],
-  [Italian seasoning – optional but I really like to add it],
-  [Roll out the pizza crusts and use a 4 inch round cookie cutter to cut into small circles.],
-  [Use a pastry brush to brush the inside of each cupcake cavity with oil. You want to see a little bit of oil pooling in the bottom. Not lots but enough that we will get a few crispy areas during baking.],
-  [Add the pizza crusts to the prepared cupcake tin. Then add a little bit of cheese in the bottom, topped with sauce, then topped with more cheese, then pepperonis on top. Sprinkle with Italian seasoning if using.],
-  [Bake at 400°F for 13-15 minutes. For my oven 13 minutes in a good amount. The edges should turn very golden brown and the cheese will begin to bubble. Remove from the oven and allow to cool for a few minutes before removing from the pan. Serve warm.],
-  [If you want to use other cheeses anything that melts can work. Sometimes I will sprinkle on a little Parmesan cheese during the last couple minutes of baking.],
-  [If you want to add other toppings beyond pepperoni feel free.],
-  [The recipe card amounts below will make 12 pizza cupcakes in a standard size muffin pan.],
-  [St. Louis Style Pizza],
-  [id="recipe"\>],
-  [class="wprm-recipe-instruction-text" style="margin-bottom: 5px;"\> Use a pastry brush to brush the inside of each cupcake cavity with oil. You want to see a little bit of oil pooling in the bottom. Not lots but enough that we will get a few crispy areas during baking.],
-  [class="wprm-recipe-instruction-text" style="margin-bottom: 5px;"\> Bake at 400°F for 13-15 minutes. For my oven 13 minutes in a good amount. The edges should turn very golden brown and the cheese will begin to bubble.],
-  [id="recipe-video"\>],
-  [If you want to use other cheeses anything that melts can work. Sometimes I will sprinkle on a little Parmesan cheese during the last couple minutes of baking.],
-  [If you want to add other toppings beyond pepperoni feel free.],
-  [The recipe card amounts below will make 12 pizza cupcakes in a standard size muffin pan.],
-  [class="wprm-nutrition-label-container wprm-nutrition-label-container-simple wprm-block-text-normal" style="text-align: left;"\> Calories: 216 kcal | Carbohydrates: 32 g | Protein: 7 g | Fat: 7 g | Saturated Fat: 2 g | Polyunsaturated Fat: 1 g | Monounsaturated Fat: 3 g | Trans Fat: 0.04 g | Cholesterol: 8 mg | Sodium: 601 mg | Potassium: 43 mg | Fiber: 1 g | Sugar: 4 g | Vitamin A: 92 IU | Vitamin C: 1 mg | Calcium: 38 mg | Iron: 2 mg],
-),
-  insert-map: (:),
-  word-count: 878,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-  #pull-quote([Then add a little bit of cheese in the bottom, topped with sauce, then topped with more cheese, then pepperonis on top.], [Emma Chapman])
-
-}
-
-{
-  #standard-article(
-  title: [A Christian Case for Gossip],
-  author: [Livia Gershon],
-  source-name: [JSTOR Daily],
-  images: (),
-  paragraphs: (
-  [Many of us were taught in childhood that it’s wrong to talk about people behind their backs. But, as many communities and institutions wrestle with secret abuses committed by their members, some argue that whisper networks can protect vulnerable people. Looking at the issue from the perspective of Christian ethics, theology scholar Matthew Lee Anderson argues that there’s a case to be made that, in certain narrow circumstances, Christians are not only allowed but obligated to gossip .],
-  [Anderson frames his argument largely in relation to the thought of thirteenth-century theologian Thomas Aquinas , who argued that Christians are generally obliged to directly confront someone who is behaving wrongly, and to do it in private to preserve the wrongdoer’s reputation. Aquinas presented two reasons for this. First, losing their good reputation can lead a person to further bad acts since they’re already viewed badly. And second, airing poor behavior within a community can normalize it so that others feel less compunction about their own sins.],
-  [However, Aquinas acknowledged that fraternal correction is only possible under certain circumstances and believed it need not be attempted if it seems likely to be impossible. And he supported public denunciation of bad actors in cases where this could protect third parties from harm.],
-  [“I suggest that a Thomistic account of gossip could both permit and even require defaming others behind their backs to prevent vulnerable people from unwittingly placing themselves in the way of harm,” Anderson writes.],
-  [Vegetarian Heretics and the Christian Church],
-  [He argues that informal conversations about wrongdoing such as sexual abuse can fill a gap in institutional responses, which are often limited and slow moving. Due to concerns about victims’ privacy and potential defamation lawsuits, many institutions don’t share the results of investigations publicly even after they’re completed.],
-  [When Christian schools and other institutions treat all negative discussions as divinely prohibited gossip while encouraging informal contact between authorities and other community members, it can open the door to abuse.],
-  [“Complete reliance on formal accountability leaves bad actors who enjoy good reputations free to exploit them without detection,” Anderson writes.],
-  [However, in contrast to some secular scholars who defend gossip for its role in social bonding and setting norms around appropriate behavior, he argues that, from a Christian perspective, these are not sufficient justifications. He suggests that we should worry about people engaging in gossip for entertainment, or to boost their status by demonstrating their inside knowledge within a community.],
-  [Get your fix of JSTOR Daily’s best stories in your inbox each Thursday.],
-  [\<\>],
-  [Ultimately, he proposes that people should engage in gossip only with great caution, solely out of a desire to protect potential victims, not punish offenders. And institutions should generally understand it as bad behavior. This means that a gossiper “risks their own reputational capital” to serve a larger good when they warn people away from abusers.],
-  [“As with killing, there should be nothing easy or pleasurable about undertaking our responsibility to protect vulnerable people through gossip,” he writes.],
-  [The post A Christian Case for Gossip appeared first on JSTOR Daily .],
-),
-  insert-map: (:),
-  word-count: 652,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-}
-
-{
-  #standard-article(
-  title: [Could These American Paratroopers Stop the Germans from Reaching Utah Beach on D-Day?],
-  author: [James M. Fenelon],
-  source-name: [HistoryNet],
-  images: (),
-  paragraphs: (
-  [O n the evening of June 5, 1944, Louis Leroux, his wife, and their six children scrambled atop an embankment near their farm to investigate the sounds of distant explosions. Three miles south, Allied fighter-bombers were attacking bridges over the Douve River on France’s Cotentin Peninsula. In the fading twilight the family watched silhouetted warplanes peel away from the glowing tracers of German anti-aircraft fire that stabbed skyward. When the excitement ended, the Lerouxs returned home to bed, unaware that their farm would play a vital role in the Allied liberation of France.],
-  [Their slumber was disturbed a few hours later by the droning of low-flying aircraft. Gazing out their windows, they were startled to see descending parachutes. “They looked like big falling mushrooms,” recalled Madame Leroux. “We didn’t know what they were but could see that they were landing in the marshes.” When shrapnel from German flak shells pelted the roof, Madame Leroux and her husband gathered their children to take shelter in the stone stairwell.],
-  [The farmstead sat on the east bank of the Merderet River, which bisected the Cotentin Peninsula north to south. The farm overlooked one of just two crossing points: the La Fière Bridge on the road to the village of Sainte-Mère-Église . While on the high ground, the family home was closer to the riverbank than originally intended thanks to the German occupiers who, recognizing the defensive potential of the landscape, had manipulated locks to flood the area with seawater. Rivers and streams had overflowed their banks to turn wide swaths of bucolic fields into swampland and a shallow lake.],
-  [At dawn on June 6, a platoon of Germans arrived at the Leroux’s farm. They searched the stables and occupied the house while the family retreated upstairs to the main bedroom. When gunfire erupted outside, the Lerouxs again scrambled for cover. Bullets cracked through windows, splintering shutters and ricocheting off interior stone walls. The staccato of German Mausers, MP40s, and MG42s echoed through the house as the occupiers fired back at the attackers.],
-  [As the 505th PIR prepares for its drop, Major Frederick C. A. Kellam, the 1st Battalion commander (left), makes final adjustments to a trooper’s harness. Kellam did not survive the fighting at La Fière Bridge.],
-  [During a pause in the shooting, the family rushed downstairs, past wounded Germans sprawled in the kitchen, and into the wine cellar. Wanting to flee, they nudged open the external cellar door. Spotting a soldier—who they thought was British—they yelled, “Français! Français!”],
-  [He replied in French: “Stay where you are and close the door!”],
-  [Several hours later the door opened, and the same soldier commanded them, again in French, “Get out!”],
-  [The Lerouxs now realized the soldiers were American paratroopers. They questioned the French family to learn how many Germans were inside, and then the shooting resumed as the French family sought cover. “The noise took our breath away,” admitted Madame Leroux. The Americans were peppering the house with rifles and machine guns. The skirmish ended after a bazooka round exploded into the house and paratroopers sprinted in to herd the surrendering Germans out. In the lull that followed, the Lerouxs celebrated their violent liberation by gifting a bottle of Calvados brandy to the Americans. “They asked us to drink some first,” recalled Madame Leroux, “which we did. Then they all drank some.”],
-  [The paratroopers, there to seize the bridge and expecting a German counterattack, told the Lerouxs it was too dangerous for them to stay. The family packed food and blankets before walking to a neighbor’s home. During their exodus, they passed more American troopers heading to the bridge.],
-  [The La Fière bridge was the D-Day objective of the 82nd Airborne Division ’s 1st Battalion of the 505th Parachute Infantry Regiment. Capturing the bridge intact was critical to the Allies’ plans: first, they needed to prevent the Germans from using it to move reinforcements against the landings at Utah Beach and second, they wanted the bridge to serve later as an artery for armor and infantry to break out from the beachhead toward the ultimate objective: the port of Cherbourg.],
-  [A member of the 505th later described the nighttime parachute drop they had made into Normandy as “a model of precision flying and perfect execution.” Pilots of the 315th Troop Carrier Group—veterans of missions in Sicily and Italy—had dropped their passengers right on target. Under the command of Lieutenant John “Red Dog” Dolan, Able Company assembled 98 percent of its troopers within an hour. The 505th’s sister regiment, the 507th, was supposed to land on the opposite side of the Merderet, but it was not as fortunate. Weather, anti-aircraft fire, and hopelessly lost pilots scattered them across 60 square miles.],
-  [With their drop zone just a half-mile from their objective, Dolan’s lead platoon pushed through the graying light of dawn and reached the Leroux’s farm in 30 minutes. The troopers immediately searched the bridge for demolition charges and put the German occupiers under siege. By mid-morning, with the help of paratroopers from the 508th PIR, the east side of the bridge was secure, but the scattered state of the 507th left the defense of the west side in a weakened state.],
-  [Major Frederick C. A. Kellam, the 1st Battalion commander, organized his men as well as troopers from other scattered units into a perimeter. The troopers of the 505th, most of whom had seen combat in Sicily and Italy, provided the backbone of his defense. As one of the veterans recalled, “We knew exactly what to expect on the upcoming mission: incoming mortar rounds, the terrifying German 88s, machine pistols, and one-on-one attacks against machinegun nests.”],
-  [The road past the bridge cut across the swampy marshland via an elevated, tree-lined causeway almost 700 yards long. Kellam’s men dug in on a gentle slope facing the river. The position was less than ideal as it left them in the open and in view of any Germans on the far side, but defending from the protected reverse slope wasn’t an option. One positive, though, was that any attack from the opposite side could only come across the narrow causeway.],
-  [Brigadier General James M. Gavin was the division’s second in command. Right: Private Joseph Fitt was awarded the Silver Star for taking out a tank at the bridge. He was killed in action a week later.],
-  [“Red Dog” Dolan positioned Able Company closest to the bridge: a platoon on each side, plus another in reserve 400 yards to the rear. Dolan’s heavy firepower consisted of three .30-caliber belt-fed machine gun crews and two bazooka teams dug in to the left and right of the bridge. He also positioned a 57mm anti-tank gun 500 feet back, at a bend in the road where it had a direct line of fire down the causeway. A platoon of combat engineers stood by to blow the bridge in the event of an enemy breakthrough. To prevent that, troopers blocked the far side of the bridge with Hawkins mines. “We placed our anti-tank mines right on the top of the road where the Germans could see them,” recounted Sergeant William D. Owens, “but could not miss them with their tanks.”],
-  [The troopers created an additional roadblock by pushing a German flatbed truck—disabled during the earlier firefight for the farmhouse—into the middle of the bridge.],
-  [A reconnaissance of the far bank revealed it was occupied by only a handful of 507th troopers rather than the expected battalion. Without radio contact and the planned-for support, the men led by Kellam and Dolan were on their own.],
-  [The first sign of trouble came at 4:00 p.m. when scout Francis C. Buck came hightailing it back across the long causeway. He’d heard spurts of gunfire followed by the unmistakable clanking of tanks. Close behind him were a few men from the west bank who were fleeing the German advance. Buck paused briefly at the two bazooka positions to give them a heads-up before sprinting to Kellam’s command post.],
-  [The American defenders had only a single 57mm anti-tank gun and limited ammunition but they made good use of their resources.],
-  [The enemy heralded their attack with an artillery barrage, which lifted as four tanks rolled across the causeway. Following them were an estimated 200 infantrymen. The Americans held their fire—the fleeting glimpses of field gray uniforms darting between the trees wasn’t yet worth wasting ammunition.],
-  [The first tank—a Panzer Mk III—paused 40 yards short of the bridge. The commander, apparently spotting the mines, opened his hatch and stood up for a better look. One of Dolan’s machine gun crews squeezed off a burst at the tempting target and killed him instantly. With that, the American line erupted with rifle and machine gun fire.],
-  [The two bazooka teams went to work. Gunners Lenold Peterson and Marcus Heim abandoned their foxhole so they could aim around a concrete telephone pole. To their right, Privates John D. Bolderson and Gordon C. Pryne did the same. Just a few hours earlier, Pryne had been a rifleman, “But on the jump, one of the guys on the bazooka team broke his ankle,” he said. “They gave that job to me. I didn’t want it, really, but they said, ‘You got it.’”],
-  [The two teams pummeled the lead tank, which in turn fired a round at Peterson and Heim. It flew high, shattering the telephone pole. Dolan later admitted, “To this day, I’ll never be able to explain why all four of them were not killed. They fired and reloaded with the precision of well-oiled machinery.”],
-  [Captured French tanks that the Germans used for their attack across the causeway toward the bridge fell victim to the 505th’s stubborn defense on June 6.],
-  [The lead tank was hit by several 2.36-inch high-explosive rockets, one of which disabled a track while another briefly set it alight. Peterson and Heim advanced to get a better shot at the second tank—a captured French Renault R-35 painted Wehrmacht gray—which was some 20 yards behind the first. Heim later recalled, “We moved forward toward the second tank and fired at it as fast as I could load the rockets into the bazooka. We kept firing at the second tank, and we hit it in the turret where the body joins it, also in the tracks, and with another hit it also went up in flames.”],
-  [The 57mm gun fired as well and was subjected to heavy enemy retaliation. In the melee, two tank rounds punched through the glacis shield, and seven men were killed keeping it in operation.],
-  [A third tank now lumbered toward the bridge as German mortar shells pounded the American line. Although the first tank was disabled, the main gun and machine gun were still barking out shells. Rushing out from his foxhole, Private Joseph C. Fitt scrambled atop the first tank to toss a hand grenade into the open hatch and finish off the crew.],
-  [While the tank battle raged, the German infantry struggled to advance against the weight of American firepower. One paratrooper observed that the bunched-up enemy, seeking cover along the treelined causeway, “made a real nice target.”],
-  [Wounded soldiers of the 505th receive treatment at an aid station in Sainte-Mère-Église. The regiment’s action at the bridge prevented the Germans from advancing this far, but it came at a heavy price.],
-  [With the German attack stalling, the two bazooka teams yelled for more ammo. Three men, including Major Kellam, scrambled forward with satchels of rockets. The trio was 15 yards from the bridge when another mortar and artillery barrage crashed in. Kellam was killed, and the other two men badly wounded, one mortally. Kellam’s death made Dolan the senior officer. His first action after taking command was to dispatch a runner to the regiment’s command post to advise them what happened.],
-  [Artillery continued to rain in. “They really clobbered us,” admitted Owens. “I don’t know how it was possible to live through it.”],
-  [Owens’ platoon was out front. When his radioman with the walkie-talkie took a direct shell hit, they lost contact with Dolan. “So, from then on, as far as we were concerned, we were a lost platoon,” said Owens. Anticipating another attack, Owens slithered from foxhole to foxhole collecting grenades and ammunition from the dead to redistribute to his men. “I knew we would need every round we could get our hands on.”],
-  [The enemy infantry rushed forward again, passing the knocked-out tanks and getting closer to Owens’ platoon, which poured fire into their ranks. “The machine gun I had was so hot it quit firing,” said Owens. He shouldered a dead man’s BAR, firing it until he ran out of ammo, then he switched to a second machine gun of a knocked-out crew.],
-  [Owens could hear another machine gun stitching the German flank and the plonking belch of a 60mm mortar lobbing shells along the causeway. Riflemen squeezed off shot after shot. It was getting desperate. “We stopped them,” Owens recounted, “but they had gotten within twenty-five yards of us.”],
-  [Just as the German attack failed, Colonel Mark J. Alexander, the regimental executive officer, arrived with 40-odd paratroopers he had managed to collect along the way. His inspection of the defenses confirmed they were set as well as could be expected. Shortly thereafter, the division’s second-in-command, Brigadier General James M. Gavin, arrived with men from the 507th. Gavin concurred with Alexander’s assessment, later recounting that Dolan’s troopers holding the bridge were “well organized and had the situation in hand.”],
-  [A happy French citizen welcomes members of the 82nd Airborne in front of the wreckage of a German Panzer Mk III. The soldiers look pleased to see her, too.],
-  [Alexander asked Gavin, “Do you want me on this side, the other side, or both sides of the river?”],
-  [After glancing at the far bank, Gavin replied, “You better stay on this side because it looks like the Germans are getting pretty strong over there.” The two officers agreed that attacking across the bridge would divide their manpower and might cost them the bridge in the face of a strong counterattack.],
-  [German shells continued to pummel the American positions. One shell exploded on the edge of a foxhole, burying the two occupants. Alexander helped dig them out and then sent them back to the medics.],
-  [First Sergeant Robert M. Matterson, who was directing the wounded to the aid station, said they were coming back in such numbers that he “felt like a policeman directing traffic.” Indeed, as the day ended, dozens of men flowed past while dozens more of their comrades lay dead, strewn across the battlefield.],
-  [Sunset gave way to darkness, with a bright moon that was occasionally obscured by scudding clouds. Throughout the night, the Germans periodically lobbed artillery shells at the Americans, while Alexander dispatched supply parties to scour the division’s drop zone for more ammunition.],
-  [At dawn, the rising sun released mist from the surrounding swamps and heralded the arrival of a squad of airborne engineers along with two more machine gun crews. Colonel Alexander warmly welcomed the men and directed them to dig in.],
-  [The additional firepower was much needed, but Alexander was still concerned about his available arsenal: “We had no long-range firepower other than machine guns. Well, we had one 57mm gun with six rounds of ammunition and a limited supply of mortar rounds, but this all had to be held in reserve for any serious effort the Germans might make to cross the bridge.”],
-  [Alexander’s mental inventory was interrupted when a group of paratroopers on the far side of the Merderet River attempted to wade across. He watched helplessly as German fire cut into the men sloshing through the water. A handful made it to safety, but most were killed and several of the wounded drowned.],
-  [The Germans preceded their next attack with intensified shelling, including tree bursts. Two more captured French Renault tanks were in the vanguard. Dolan’s 57mm crew held their fire—with only six rounds left they wanted a clear shot. But when the lead tank boldly geared onto the bridge, the 57mm crew cracked off a round. The shell struck the tank, sending it and its partner into retreat. Nestled in front of the anti-tank gun was Corporal Felix Ferrazzi, a radioman serving as a machine gunner. With a clear view down the causeway, he added to the mayhem with repeated bursts of fire into the advancing Germans. The gunners implored him to move due to the 57mm’s muzzle blast, but despite being wounded, Ferrazzi stayed put—until a mortar shell mangled his .30-caliber. The other Americans added to the wall of lead, especially Sergeant Oscar Queen, who estimated he fired 5,000 rounds from his belt-fed machine gun.],
-  [The bucolic scene at La Fière Bridge today belies the fierce fighting that took place here in 1944. This view is from the western side of the Merderet River.],
-  [Thirty minutes into their attack, the Germans floundered. They began their withdrawal as the paratroopers neared their breaking point. Dolan’s 1st Platoon was down to 15 men; one squad had just three troopers still standing. Owens sent a runner to report to Dolan: they were almost out of ammo and unable to repel the next attack; could they pull back? Dolan replied, “No, stay where you are.” He then scribbled a short message for the runner to relay to Owens: “We stay. There is no better place to die.” With his orders in hand, Owens organized what was left of his platoon.],
-  [But the Germans had had enough. They waved a Red Cross flag and requested a 30-minute truce to recover their wounded. Owens and his comrades used the time to bring up more ammo and determine who was still alive. Able Company had suffered 17 killed and 49 wounded; the battalion was down to 176 men. The exhausted Owens then sought a better view of the causeway. “I estimated I could see at least 200 dead or wounded Germans scattered about. I don’t know how many were in the river,” he said, “Then I sat down and cried.”],
-  [But the battle for La Fière Bridge wasn’t over. For the Allies to break out of the beachhead, the stalemate had to be broken. Later that evening, General Gavin relieved the battered 505th paratroopers with elements of the 325th Glider Infantry Regiment. In a charge rivaling the Light Brigade, the glider men made a daylight assault across the causeway on June 9. Pushing through the pall of friendly artillery and withering enemy fire, they successfully occupied the far bank, while another group of 100 paratroopers swarmed in behind them to help secure the foothold. The road to Cherbourg was now open for Major General J. Lawton Collins’ VII Corps, but it came at a heavy cost. The 82nd Airborne had suffered 254 men killed and more than 500 wounded to seize, hold, and secure the vital bridge at La Fière.],
-  [The Leroux family returned to find their home in ruins and most of their livestock victims of the crossfire. They lived in the stable—as it had suffered the least damage—rebuilding their farm over the next five years. They moved back into their home in time for Christmas 1949.],
-  [“Our family celebrated,” recalled Madame Leroux, “happy, in spite of our misery, to all be back together without having suffered any dead or wounded, thanks to the American soldiers who fought to liberate and save us.”],
-),
-  insert-map: (:),
-  word-count: 3235,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-}
-
-{
-  #standard-article(
-  title: [The Complex],
-  author: [Brodie Crellin],
-  source-name: [Granta],
-  images: (),
-  paragraphs: (
-  [In September 1990 – five years after Sachin and Gita’s return – the family came apart.],
-  [It began with Mohit’s participation in the anti – affirmative action protests sweeping the country. Mohit was now eighteen, a fresher in college.],
-  [Gita had just returned to A‑19 from her work at St. Xavier’s School when she heard that Mohit had been grievously injured at a protest and was in the hospital.],
-  [She phoned Sachin at his office. ‘Should we go there?’ she asked. ‘Or will Karishma get angry?’],
-  [What had happened was this: A month earlier, in August, India’s prime minister, V. P. Singh, had undertaken a controversial, populist move, pressing into law the Mandal Commission Report, which gave twenty‑seven percent reservations in government jobs to ‘other backward castes’ – OBCs. Government jobs were one of the few paths to security and upward mobility in socialist India; and so the upper‑caste students – the majority of college students – responded with fury to this affirmative action. As a friend had put it to Mohit: ‘Twenty‑two‑point‑five percent of these jobs are already reserved for untouchables. Now they want to reserve fifty percent. What’s going to be left for us? Is it our fault that we were born upper caste? V. P. Singh is just appeasing minorities to garner their votes.’],
-  [In Brij’s house, too, there was surprising agreement on this issue.],
-  [The coddling of minorities, Brij felt, had gone too far. Whenever he could, he would quote a newspaper interview he’d read with a rising rustic politician who supported the implementation of the quotas.],
-  [But would you go to a doctor who got in on reservation – on affirmative action? a journalist asked the politician.],
-  [No, bhaiya , the politician responded. I’d go to America .],
-  [The politician was being facetious, but Brij chose to interpret it literally.],
-  [Soon after the implementation of the Mandal Commission Report, protests had erupted. Mohit joined them. The upper‑caste students shut down colleges, blocked buses, demonstrated in front of hospitals and major intersections, and sat on traffic islands polishing shoes (as an indication of what would become of them), stopping motorists and chatting with them . . . How could merit, they asked, the one source of ‘fairness’ in an unfair country, be stripped from them? (The lower‑caste students, if anyone noticed them, huddled silently in the college canteens, their very silence exposing their previously only guessed‑at castes.)],
-  [Nevertheless, though Brij supported the protest, he was not happy with his son’s participation in it. For all Brij’s strict drill sergeant patrolling of his son’s education over the years, he had failed to turn Mohit into a stellar student. Instead, in class 11 and 12, Mohit had started to boldly rebel, whiling away long hours at the club, playing squash and table tennis, coming back with his clothes stinking of smoke, and interfering whenever Brij tried to discipline Karishma – what did the boy understand of his parents’ relationship? Did Mohit know the humiliations Brij had suffered to collect loans to send Mohit abroad? But now Brij did not feel warmly enough toward his firstborn to grant him his wish of being freed from his father’s gravitational pull. No, Mohit would remain under Brij’s command till he learned to obey, and so now Brij’s strategy, as Mohit had progressed stumblingly toward college, doing worse and worse in class 12 but wanting money to treat his friends and buy rock cassettes, was to make Mohit aware of the money that he , Brij, possessed, while withholding it so that Mohit often stormed off in a rage at being denied even minimal pocket money, shouting, ‘This is why I don’t study, I live in the house of a fateecher,’ and when Karishma tried to intercede on his behalf, Brij would say, with all the force of someone who feels permanently wronged, ‘Enough from you, he has to learn the value of money: Is there one thing he’s achieved? Let him not think that if he goes on like this, we’ll support him,’ and what hurt Brij later, when he turned his mind to the subject of his older son in the privacy of his dark‑wood‑paneled bedroom, was that he knew Mohit was smart , that he was verbally and mathematically gifted, but was throwing it all away in an act of revolt against the very circumstances – Laxman’s support – that made Brij flush with funds to spend on Mohit.],
-  [And Brij knew, too, that Mohit’s rage in public was directed only at his parents. With his Sachin Chacha and Gita Chachi, he could be polite, giving, observant. It had also come back to Brij, via the double‑agent Rupvati of course, that Mohit sometimes went over to his Chacha and Chachi’s and asked them about college in the US, was it expensive, what would Chacha recommend, should one go for graduation or for post‑graduation, and yet when Brij raised the issue of Mohit’s future with Mohit, he would shout back, ‘Why do you care, I’ll manage it, and it’s not like you went to college,’ and Brij would get up from his sofa‑chair in the drawing room, ears burning, and shout, ‘That’s exactly why, you duffer! Do you want to be like me? Fine, we’ll send you into the armed services, we’ll turn you into a man,’ and he would perhaps even have acted on this threat had Karishma not literally thrown herself at his feet and begged him not to sacrifice their oldest child. Then, one day, when Mohit was in class 12, Laxman (always a third party in all of Karishma and Brij’s conversations) had asked Brij, ‘How are Mohit’s studies? He’s in the school cricket team, no? You know, I’m on friendly terms with the vice chancellor of DU.’ Laxman was glowing with power. The BJP had done very well in the 1989 elections – winning eighty‑three more seats than in the previous election – and was supporting V. P. Singh’s coalition from the outside, though the party was ambivalent about the Mandal Report.],
-  [That was the thing about having Laxman in their lives, Brij thought; though he created problems, he also solved them, and this was partly how, through hera‑feri – a crooked use of the sports quota – Mohit (who, at the end of the day, did care where he got in, the frightened academically inclined boy still underlying the tense rebel) had gained admission to Hansraj College for history, where he was a fresher when the protests erupted all over Delhi.],
-  [The difficulty of having gotten Mohit into Hansraj now further inflamed Brij’s sense of grievance. How dare his son willingly throw it all away by shouting ‘V. P. Singh! Hai! Hai!’ on the street, blackening his own face (and thus the family’s) with boot polish and sitting on crossings, pretending to clean shoes, throwing himself in front of buses?],
-  [‘Everyone’s doing it, Papa,’ Mohit explained at a heated family dinner conference. ‘Even the college principal is encouraging us. He calls us in the morning and scolds us for bunking classes, but in the evening he talks to us about how this is all a political ploy by V. P. Singh against Devi Lal –’],
-  [‘Devi Lal, Shavi Lal,’ Brij said. ‘You’ve hardly started to shave and you’re talking about politics. Take my advice: Stay out of it. Stay on the sidelines. Observe . One can never guess how the government will behave. You want to be smashed by a lathi? You know what a lathi feels like? It’s nothing like being hit by a stick. And I’ll tell you, these police buggers seem to be on your side right now, but one student kills a policewallah or chucks a rock at them and you’ll see how quickly they forget – they’ll throw you all in a thana, and then don’t come begging to me or your chacha to let you out –’],
-  [‘He’s right, beta,’ Karishma said, mashing rice on a plate with her hands. She was always ravenous at mealtimes – a change that had come over her after the affair had commenced.],
-  [‘You think the revolution won’t happen without you?’ Brij continued. ‘Many big things have happened in this country without you.’],
-  [‘This is probably what elders said about the freedom struggle also,’ Mohit said.],
-  [‘Are you listening to your brother, Deepak?’ Brij said. ‘He gets thirty marks in history and now he’s an expert!’],
-  [Deepak, fifteen, sitting across from Brij, snickered. Mohit didn’t respond. Mohit was forgiving of his brother – he doted on him and protected him. He understood that, in order to survive, Deepak needed to act in certain ways around their parents. He did not begrudge him. In any case, Deepak’s behavior wouldn’t alter Mohit’s circumstances. Unlike the other Chopra men in the complex, Mohit knew how to concentrate his rage. ‘And then you people ask why OBCs and lower castes are taking over,’ Mohit said, changing tack and appealing to his father’s elitist instincts. ‘ They at least stand up for themselves.’ He pushed his plate forward theatrically, but the performance didn’t quite come off. ‘So, don’t blame me when I don’t get into the IAS.’ The Indian Administrative Service: the highest, most coveted rung of government service.],
-  [‘Maybe if you were studying instead of bunking –’ Brij began.],
-  [‘It’s not bloody fucking bunking!’ Mohit said. ‘Everyone is doing it! All the schools and colleges are closed! And our princi said they didn’t even close for the fucking freedom struggle!’],
-  [‘Young man,’ Brij said, teeth gritted. ‘You will NOT. USE. THAT KIND OF . . . UNPARLIAMENTARY LANGUAGE AT THE DINNER TABLE!’],
-  [‘Screw you, man.’],
-  [Brij leapt up from his chair and slapped Mohit so hard on the cheek that Mohit’s flimsy dining chair tipped over and he fell backward, bashing his head against the edge of the sideboard that served as a bar.],
-  [‘Abuser!’ Mohit shouted, eyes streaming as he lay crumpled on the ground. If Brij had learned the art of physical overreaction, his son had learned how to powerfully project victimhood. ‘Asshole!’],
-  [‘Oh, my baby!’ Karishma said.],
-  [‘You also shut up!’ Mohit said, getting up and walking over to his shared room.],
-  [style="text-align: center;"\>–],
-  [A few days later, the protests did take a turn for the worse. This was partly because V. P. Singh pulled off a masterstroke: He secretly promised he’d extend the reservations to Jats, the caste from which most of the police force was drawn. Now the police saw no reason to indulge these simpering, entitled college kids; and they hit back with force at the swarming protesters, bringing on brutal lathi charges and raining back stones from police stations that were under attack.],
-  [At a meeting of the protest organizing committee, in a brick alcove of Ramjas College, numerous students suggested next steps. Mohit was there, too, among the twenty activists. As a ‘sportsman,’ he had become close friends with the political types.],
-  [One said, ‘We should lie down in a long line on Ring Road for a full week.’],
-  [Another said, ‘What about a hunger strike – going without food for eight, nine days? A hunger strike to death?’],
-  [‘Abe yaar, have you ever gone one second without eating!’ ‘Would drinking water be allowed?’ another asked.],
-  [After much debate in this vein, the students concurred on the idea of the hunger strike – it would be very Gandhian.],
-  [Yet at this crucial moment of action, when Mohit could have volunteered himself and his body to the cause, his courage deserted him. He let others speak.],
-  [The person who had asked about the ethics of water drinking was the first person to volunteer himself for the strike, a boy named Anshul Tripathi.],
-  [Five other boys and two girls agreed to join him.],
-  [For the next four days, these boys and girls sat on scratched plastic chairs on a makeshift dais on the recently renamed ‘Mandal Chowk’ crossing of Delhi University. They chatted freely with friends at first, but then a sympathetic medical student advised them to conserve their energies, and they fell silent. Closing their eyes in the drenching September sun, they hummed tunes and projected wretchedness, absorbing the attentions of the crowds.],
-  [For all their apparent heroism, they were secretly taking shifts to wolf down food – dal chawal – in the hostel room appointed as the headquarters of the organizing committee. Mohit supplied these meals – a mere chaprasi to the cause, and he now felt deceived, punished for his earnestness. Had he known they were going to cheat, he would have thrown his hat into the ring too, but then he had always been slow in such matters, unable to read the intentions of others, the ways in which they said one thing sincerely and did the opposite in the next, and for a second, he was proud of the uprightness that had filtered down to him from his air force – trained father. Then he remembered what a sadistic failed husk of a man his father was.],
-  [Of the eight students on strike, only one refused the secret meals and took sips of juice or tea instead: Anshul Tripathi. By the third day of the strike, Tripathi really was going gaunt. Tripathi, at twenty or twenty‑one or whatever age he was, already looked like a grown man – with his windshield forehead, his thick mustache, frizzy hair falling on either side in wings from a center parting, sleekly slanting nose that ended in large nostrils, the worry grooves on his forehead like lines of angry text for his followers to interpret – a tall, thin, nervy lad who occasionally smeared Brahmanic ash on his forehead. Perhaps he had worn the ash even before the strike – but Mohit hadn’t noticed. Yes, Anshul looked more and more like those serious, starved Brahmans one saw haunting the roadsides with silver begging bowls and staffs, but dressed spiffily in dhotis and possessing the pride and dignity of Brahmans nevertheless . . .],
-  [At that moment, sitting in the headquarters with Anshul, Mohit realized – with a kind of shock – that he believed in caste. He had grown up without caste as a subject of conversation. Punjabi, Jeev Sangathani – these were more solid identities than caste in Delhi, and he had even failed to wring from his father the true caste that they, the Chopras, belonged to.],
-  [‘It’s the Chopra beraderi,’ is all Brij said.],
-  [‘But are we Vaishyas, traders?’ Mohit asked. A middle caste, but still not a lower caste.],
-  [‘Yes, yes, Vaishya, Kayasth, whatever you want to say – we’ve had lawyers and scholars in our family’ – it was as if even his father didn’t know about their caste or didn’t want to, and a few times Mohit had even entertained the suspicion that they might belong to a backward caste, since they were traditional agriculturalists. But then he’d suppressed it.],
-  [Now, in the filthy hostel room headquarters – war torn, with cigarette butts, browned teacups, Old Monk bottles, and overlapping unfinished posters on the floor – Anshul told Mohit that his father was a railway clerk. He had grown up with little money. ‘And this is partly because I have four elder sisters.’],
-  [So he was the miracle son.],
-  [Mohit sympathized. ‘I also come from a large family.’],
-  [‘A government job is imperative for me,’ Anshul said. ‘Without it, I’m finished. But what does the government care about a person like me? I’m not an important vote bank, unlike the backward castes.’],
-  [It was still two years before the markets would burst open, bringing in a torrent of foreign investment and private‑sector jobs.],
-  [For the first time, Mohit considered his own future. He never had. The aura of his famous great‑grandfather, the great SP Chopra, had protected him. Now, he realized with something like surprise, that his great grandfather, the mascot of his life, whom he had never met, was dead: had been dead for nearly twenty years. In his mind’s eye, the family complex crumbled. He was afraid. But then, like bulletins from the present, the faces of his politician uncles, Bhagat Chacha and Laxman Chacha, came swooping in – those emissaries of possibility.],
-  [‘You’ll get into politics,’ Mohit consoled Anshul. ‘It’s not written in my fate,’ Anshul said.],
-  [Fate. It was about to knock them both flat on their backs.],
-  [style="text-align: center;"\>–],
-  [The tragedy occurred one Saturday afternoon outside Swaminathan College in South Delhi, not far from where Mohit lived – near Nehru Place.],
-  [The student protests at this time were waning. The hunger strike had failed to move V. P. Singh or garner the requisite attention in the press, and the students had decided to make a large concentrated push outside Swaminathan. That morning, Anshul showed up at the HQ with a jerry can of kerosene. ‘Ah, you’re ready to break your hunger strike with something tasty,’ Mohit said. ‘Does kerosene count as veg?’],
-  [‘Always jokes with this one,’ Anshul said. Then he added, ‘It’s for drama.’ He held up a reddish‑black box of matches. ‘Some fireworks.’],
-  [‘Be careful,’ said Neha, another activist and hunger striker. ‘If you put too much kerosene on the V. P. effigy, you’ll get burned too.’],
-  [‘It would have been better to set the effigies up like a mini‑Dussehra, side by side, in one place,’ Sakshi – who had also participated in the hunger strike – said. ‘Still, if we burn them in the middle of the road, the police won’t be able to stop us.’],
-  [The police were now a constant, tense presence at the protests, parading in riot gear and forming cordons around the chanting students. Mohit knew that, perversely, this riled up the students further. What you wanted, really, was someone on a human scale to be angry at – not the abstractions of quotas or caste maneuvers.],
-  [‘Just don’t pour the kerosene on yourself, OK?’ Mohit said to Anshul.],
-  [style="text-align: center;"\>–],
-  [They went to Swaminathan College in the late morning. But the turnout outside the campus – the roads haphazardly paved with discarded student election posters – was thin. A hundred‑odd students had gathered desultorily by three large pyres of leaves and posters that had been lit on the blocked‑off road, so that one felt one had happened upon the aftermath of a riot.],
-  [Twenty policemen in battered helmets milled about, carrying sticks.],
-  [But the initial impression of sparseness was deceptive. By noon, dozens of other groups of students showed up on hijacked DTC buses and the demonstration swelled. A female student, hidden somewhere near the gates of the college, led a ‘Mandal Commission, down, down!’ chant on a megaphone, the words echoing back from Mohit’s mouth as he reveled in the energy of the crowd, the familiar faces, the foreheads painted with tricolors, the furiously sketched signs held aloft. It was the first time in his life that Mohit had recognized the power of oratory, poetry, and painting to move people. The marginal figure of the artist – a type that clashed with his own brand of sporty pragmatism – had become central to the revolution.],
-  [Now the students blocked the entire road; and the policemen, whose numbers had also swelled, formed a semicircle around the chanting crowds. Mohit, Anshul, Neha, and Sakshi were at the center of this proudly peaceful protest. Then a stink of gasoline hitched itself to Mohit’s nose – but there were no vehicles about. He turned around to see Anshul shouting and pouring the kerosene from the jerry can over his head and laughing, as others clapped in encouragement.],
-  [It was the happiest Mohit had ever seen Anshul, as if he were a child bathing in the first rain of the season.],
-  [‘V. P. Singh! Hai! Hai!’ Anshul chanted and, catching Mohit’s eyes, handed him the plastic container of kerosene, as if he’d anointed Mohit as his successor.],
-  [The can sloshed in Mohit’s hands; a little kerosene wet his left fingers.],
-  [Mohit gratefully passed it on to another boy. Then Mohit raised his sticky hand and shouted loudly, ‘Mandal Commission, down, down!’],
-  [There was no center to this crowd of a thousand students; many were coalescing around the tiny woman with the megaphone. Then Anshul gained height; someone had brought him a couple of empty Thums Up crates, and he climbed up on them and tried to shout over the crowd. He held a box of matches over his head. Then he lit a match and went up in flames.],
-  [Image © Susan Wilkinson],
-  [The post The Complex appeared first on Granta .],
-),
-  insert-map: (:),
-  inline-pq: pull-quote([‘It’s the Chopra beraderi,’ is all Brij said.], [Brodie Crellin]),
-  inline-pq-idx: 30,
-  word-count: 3450,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-}
-
-{
-  #standard-article(
-  title: [On Passover, some Sephardic Jews revisit not only the story of their ancestors, but also their Ladino language],
-  author: [Bryan Kirschen, Associate Professor of Spanish and Linguistics, Binghamton University, State University of New York],
-  source-name: [The Conversation US],
-  images: (),
-  paragraphs: (
-  [Decorated 'guevos haminados,' or slow-cooked eggs, are a common Passover food for Sephardic Jewish families. sbossert/iStock via Getty Images Plus],
-  [When Passover arrives each spring, Jewish families around the world gather at their tables to retell a story passed down for thousands of years. At ritual dinners known as Seders, they recount the Exodus , the biblical story of the Israelites’ liberation from slavery in Egypt – asking questions, singing songs and explaining the meaning behind symbolic foods like matzo.],
-  [In the United States, most Seders move between English, Hebrew and Aramaic, which was once the lingua franca of much of the ancient Middle East. In some homes, another language joins the table: Ladino, a form of Judeo-Spanish that Jews carried across the Mediterranean after being expelled from Spain in 1492.],
-  [Multilingualism has long been part of Jewish tradition. For Sephardic Jews who spent centuries in Ottoman and Muslim lands after their forced exodus from Spain – or Sepharad, as it is called in Hebrew – Ladino has played a central role at Passover. For many families today, the holiday provides a rare opportunity to hear the now-endangered language spoken aloud – a focus of my sociolinguistic research .],
-  [My work with Sephardic communities has demonstrated the ways in which the language is preserved across generations. Just as the story of Passover is transmitted each year, the holiday also provides a recurring encounter with Ladino.],
-  [A message in Judeo-Spanish about Passover from Dallas resident Rachel Amado Bortnick, who is originally from Izmir, Turkey.],
-  [Spanish roots],
-  [To the ear, Ladino sounds very much like Spanish. However, it has been shaped by many other languages with which its speakers have come into contact: Hebrew, Arabic, Portuguese, French, Italian and Turkish, to name a few.],
-  [To the eye, however, Ladino used to look very different; it was traditionally written in Hebrew-based characters . Over the past century, most people who write the language have used the Latin alphabet.],
-  [A handwritten Haggadah – or ‘Agada,’ in Ladino – from the late 1800s. The text, which is used during Passover Seders, includes Aramaic, Ladino and Hebrew. 
- Bryan Kirschen],
-  [Meanwhile, Ladino speakers assimilated to the majority languages of their countries – that is, if they were not from communities entirely wiped off the map during the Holocaust . Today, Ladino is an endangered language, spoken mostly by older Sephardic Jews.],
-  [However, since the turn of the 21st century, speakers from around the world have found new opportunities to communicate with each other, especially online.],
-  [Most speakers can be found in Israel, Turkey and the United States. A 2025 report from JIMENA, a Jewish nonprofit based in California, estimates that about 10% of Jews in the U. S. are Sephardic and/or Mizrahi. The latter term includes other populations of Jews from around the Middle East and North Africa. The Pew Research Center estimates that 4% of American Jews are Sephardic or Mizrahi , and another 6% say they are a combination of those groups and Ashkenazi – the term for Jews with ancestors from Eastern Europe.],
-  [Two varieties],
-  [“Ladino” is regularly used to refer to the everyday spoken language of Judeo-Spanish. Many native speakers simply call it “Spanyol” or “Espanyol.”],
-  [However, some speakers and scholars use the term “Ladino” to refer to a very particular variety : the form of the language found in religious materials like the Haggadah, the text that guides the Seder ritual. For many Sephardim, the word “Haggadah” also refers to the Seder itself.],
-  [This variety of Ladino preserves the structure of Hebrew, using a word-for-word translation – what linguists call a “calque.” For example, a native speaker might say “esta noche,” as in other varieties of Spanish, to refer to “tonight.” The Ladino textual tradition, though, reads “la noche la esta.” This mirrors the word order of the Hebrew phrase: “ha-laylah ha-zeh,” or “the night the this.”],
-  [That this practice has endured for centuries is both remarkable and, in some ways, unsurprising.],
-  [Sephardic populations once regularly spoke Judeo-Spanish as an everyday language, reserving the calque variety for religious or instructional contexts. Today, though, the spoken language is rarely transmitted to younger generations and has entered what linguists call a “post-vernacular” phase.],
-  [Many Sephardic Jews have completely lost the language of their ancestors, but others have preserved it and even found new ways to use it . One New York native with Sephardic roots in Turkey who I interviewed said she uses Ladino not just with relatives, friends and students, but even with “neighbors and Uber drivers, who are very interested in knowing more; when speaking to animals; or thinking by myself.”],
-  [Sephardic practices at Passover explained in an online ‘Enkontro de Alhad’ program, conducted in Judeo-Spanish.],
-  [Still, the calque variety – the word-for-word translation from Hebrew – persists. Importantly, someone does not need to be fluent in the spoken language to participate, just as many Jews can recite prayers, lists and songs in Hebrew and Aramaic without necessarily being able to communicate in those languages. In this sense, engaging with multiple languages is a natural part of Jewish cultural practice.],
-  [Honoring tradition],
-  [Just as Passover tells the story of the ancient Israelites’ exodus and liberation, the use of Ladino today is a story of survival.],
-  [In my research, American Sephardim share that it is important to preserve their families’ heritage, referring to themes such as tradition, ancestry, memory and nostalgia. One Los Angeles native with roots in Turkey and Greece noted that it’s important “to honor our family members who survived to pass things along to us … to create new memories for the next generation. I think my kids cherish that their Passover is different from others.” Another, a Seattle native with roots on the Greek island of Rhodes, said, “I want to keep it alive in some way or another. And the only way I’m able to do that is by using it at the Seder.”],
-  [The ‘Sarajevo Haggadah,’ a 14th-century manuscript, originally came from a Sephardic Jewish community in Spain. 
- Zemaljski Muzej via Wikimedia Commons],
-  [Beyond the read-aloud portions of the Haggadah, Sephardim of different generations keep Judeo-Spanish alive through songs and cuisine. Traditional dishes include “mina de karne,” meat pie; “keftes de prasa,” leek patties; “guevos haminados,” slow-cooked eggs; “bimuelos,” fried fritters; and even “arroz,” rice – a staple in some communities, but less common in others.],
-  [The Seder provides many different ways to engage with the language, often alongside older generations who acquired varying degrees of proficiency from their forebears. One Los Angeles native whose family came from Rhodes shared that all five generations of her family and their guests sing Ladino songs like “Un Kavretiko” – which many other Jews know as “Chad Gadya,” or “One Little Goat” – and “Ken Supiense,” or “Who Knows One?” Each family makes deliberate decisions about language use, customizing traditions and even the Haggadah text to suit their cultural and linguistic needs.],
-  [Like the Passover story itself, Ladino persists through the voices of relatives who learned the language from generations before them. For many Sephardic families, the Passover Seder remains one of the few moments each year when these sounds return to the table, linking the past and present through shared practices of storytelling, memory and language.],
-),
-  insert-map: (:),
-  word-count: 1216,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-}
-
-{
-  #standard-article(
-  title: [Ultralightweight sonar plus AI lets tiny drones navigate like bats],
-  author: [Nitin Sanket, Assistant Professor of Robotics Engineering, Worcester Polytechnic Institute],
-  source-name: [The Conversation US],
-  images: (),
-  paragraphs: (
-  [This small drone is using sonar, similar to bats' echolocation, to navigate through a grove of trees. Nitin Sanket],
-  [To help small aerial robots navigate in the dark and other low-visibility environments, my colleagues and I developed an ultrasound-based perception system inspired by bat echolocation.],
-  [Current robots rely heavily on cameras or light detection and ranging , known as lidar, or both. But these sensors fail in visually challenging conditions, such as smoke, fog, dust, snow or complete darkness.],
-  [I’m a scientific engineer who develops bio-inspired microrobots. To solve this challenge, my research team looked at nature’s experts at navigating in poor visibility: bats. They thrive in dark, damp and dusty caves and can detect obstacles as thin as a human hair using echolocation while weighing as little as two paper clips. They emit sound waves and listen to weak echoes reflected from objects.],
-  [However, enabling this sensing on aerial robots is extremely challenging because propellers generate a lot of noise. It is a bit like trying to listen to your friend while a jet engine is taking off next to you.],
-  [To overcome this issue, we present two key ideas. First, a physical acoustic shield inspired by bat’s ear cartilage reduces propeller noise around the acoustic sensors, which act like the robot’s ears. Second, a neural network called Saranga recovers weak echo signals from very noisy measurements by learning patterns over time, inspired by how bats process sound.],
-  [Together, these enable the robot to estimate obstacle locations in 3D and navigate safely using milliwatt-level sensing power.],
-  [The drone navigates around an obstacle in a test with simulated snowfall. 
- Nitin Sanket],
-  [Why it matters],
-  [These types of drones are very useful for search and rescue, especially in confined, dynamic and dangerous environments, because they are small and inexpensive. Search-and-rescue operations often happen in environments where visibility is very poor, such as forest fires, collapsed buildings, caves or dusty outdoor conditions. In these scenarios, traditional sensors like cameras and lidar often become unreliable .],
-  [Bats do not rely only on vision and instead use echolocation to perceive the world. Ultrasound sensing doesn’t depend on lighting conditions and works in smoke, dust and darkness.],
-  [Our work shows that it is possible to bring this capability to aerial robots despite strong onboard propeller noise. Sonar boosted by noise shielding and machine learning promises to enable a new class of small, low-cost robots that can operate in environments where current systems fail.],
-  [This research can enable highly functional, autonomous, tiny aerial robots for critical humanitarian applications, such as search and rescue, combating poaching and cave exploration. AI-enabled sonar navigation could lead to safer, faster and more cost-effective robots for time-sensitive operations where human or larger helicopter access is limited. This is a step toward being able to deploy swarms of aerial robots, much like groups of bats, to explore hazardous environments and search for survivors.],
-  [Breakthroughs in mathematical modeling, neural network design and sensor characterization will enable other low-power applications for these drones, such as environmental monitoring. Our work can reduce power by 1,000 times, weight by 10 times and cost by 100 times compared to current solutions .],
-  [What other research is being done],
-  [Most aerial navigation systems rely on cameras, depth sensors or lidar, which degrade in low visibility. Radar works in these conditions but is power-intensive for small drones . Prior work has explored ultrasound sensing mainly on ground robots, but applying it to aerial robots has been difficult due to propeller noise and weak signals.],
-  [What’s next],
-  [We are working on improving flying speed, sensing range and system size. We are also exploring new bio-inspired designs and combining ultrasound with other types of sensing.],
-  [Ultimately, our goal is to build reliable, low-power aerial robots that can operate reliably in dynamic environments and enable real-world deployment in search and rescue.],
-  [The Research Brief is a short take on interesting academic work.],
-),
-  insert-map: (:),
-  word-count: 666,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-}
-
-{
-  #standard-article(
-  title: [Why Lacan Loved Harpo Marx],
-  author: [Angelica Frey],
-  source-name: [JSTOR Daily],
-  images: (),
-  paragraphs: (
-  [Among the five Marx Brothers—vaudeville legends turned Hollywood comedians whose films defined American screen comedy in the 1930s—Harpo stands out. Silent and seemingly childlike, he plays something between a pure fool and a savant. The French psychoanalyst Jacques Lacan, better known for his dense reinterpretations of Freud than for film criticism, was fascinated by him. In Seminar VII: The Ethics of Psychoanalysis (1959–60), Lacan described Harpo as having a “face with its smile which leaves us unclear as to whether it signifies the most extreme perversity or complete simplicity.” He adds that “this dumb man alone is sufficient to sustain the atmosphere of doubt and of radical annihilation which is the stuff of the Marx Brothers’ extraordinary farce and the uninterrupted play of ‘jokes’ that makes their activity so valuable.”],
-  [Why would one of the twentieth century’s most influential psychoanalytic thinkers devote such attention to a slapstick comedian? In an article in Cinema Studies, Paul Flaig examines how Lacan’s interest in the Marx Brothers reveals larger stakes about how we understand the pleasures of watching comedy. Tracing Lacan’s reading of Harpo through concepts such as das Ding , jouissance , and objet petit a, Flaig suggests that Lacan saw in their films alternative forms of spectatorial enjoyment—namely, “forms that emphasize the surreal possibilities of the comic ranging from slapstick violence to screwball wordplay.”],
-  [First, Lacan uses Harpo Marx as an exemplification and embodiment of das Ding (“the Thing”), or the original lost object of satisfaction that the psyche can never recover. For Paul Flaig, Harpo gives comic form to this abstract idea. “Yet the comedy embodied in Harpo’s face and in the overall ‘radical annihilation’ of the Marx Brothers’ farce is not one of some humanist-imagined mortal body but is instead profoundly inhuman—an excessive ‘passion’ that drives signification off its rails,” writes Flaig. “Harpo, far from acknowledging the deathly mystery of the Thing, reveals that such mystery is a ridiculous object, a bit of nothing that can only end in all sorts of perverse situations.” In Flaig’s reading, Harpo’s body seems indestructible and, ultimately, its perversion and simplicity are one and the same.],
-  [For Lacan, Harpo’s defining trait is his dumbness. Harpo’s character is mute, therefore simultaneously an idiot—someone who can’t write, speak, or listen. His face is described as “present,” “pressing,” “absorbing,” “disruptive,” “nauseating,” and “calculated to thrust everything that takes place before us into the abyss or void.” His comedy does not directly relate to the Symbolic (the realm of language, law, and social structure that structures the subject, dictating meaning and identity through the network of signifiers) but is laterally tied to it as “erupted excess, surprising stain, and bothersome byproduct,” writes Flaig.],
-  [Lacan’s concept of jouissance —the transgression of a subject’s regulation of pleasure—offers another lens for understanding Harpo. As Flaig writes, “Harpo is an automatic object-machine that converts both the world and himself into a polymorphously perverse source of jouissance .” For Lacan, j ouissance begins with a tickle and ends in a blaze of petrol. That trajectory describes Harpo Marx and the effect he has on the events that unfold within the Marx Brothers’ films.],
-  [Lobby card for Duck Soup , 1933 via Wikimedia Commons],
-  [In Duck Soup (1933), for instance, Harpo follows Chico through the ornate room of an ambassador, grinning. When the ambassador passes him a note, he tears it up because, as Chico explains, he cannot read and thus gets mad. Offered a cigar, Harpo first tries to light it with a phone, then produces a blowtorch from his trench coat; moments later, he sneaks behind the ambassador and snips his freshly lit cigar in half with scissors, also drawn from his coat.],
-  [Asked for the records of a foreign prime minister, Harpo produces a phonograph record—again from his trench coat—frustrating the ambassador, which prompts Harpo to shoot it with a handgun. He cuts the tails off the ambassador’s jacket, glues a piece of newspaper in their place, and shakes hands with a mousetrap. This sequence perfectly captures comedy that “starts with a grin” and “ends in a blaze.”],
-  [Lacan sees Harpo’s structural function as objet a— the “object-cause” of desire, or the element that keeps desire in motion. In this context, the other brothers complement the system. Harpo’s function as the destructive agent of enjoyment suggests that the “atmosphere” sustained in these films is analogous to Lacan’s discourse of the analyst, where each term operates in new, unexpected, and funny ways.],
-  [If Groucho dominates the Marx Brothers’ films, initiating their plots and situations, he does so as the “master signifier,” or S1—the figure who lays down the law, as opposed to the objet a that Harpo embodies. As Flaig explains, “Both Groucho and Harpo rely on this difference in their comedy, but while Harpo repeats the mute no-Thingness at the heart of signification, Groucho repeats the joking difference left in the wake of that muteness.”],
-  [Sigmund Freud’s The Ego and the Id],
-  [Chico navigates between Harpo and Groucho. “If Groucho represents the ridiculous authority of the Symbolic Order, then Chico is one who has not yet learned how useless that authority truly is,” Flaig continues. In both films and radio shows, Groucho frequently tries to enlist Chico in some scheme, only to find that Chico cannot grasp what is being asked of him. In Duck Soup (1933), for example, Groucho asks Chico’s character whether he would like a job at the Mint. Chico replies, “I don’t like the mint . What other flavors you got?”],
-  [“Not as dumb as Harpo, Chico knows how to do things with words, but he does not have a handle on them like Groucho,” Flaig explains. “Most of Chico’s joking comes from mistaking the sound of one word for another—somewhere between Harpo’s literalisms and Groucho’s punning .”],
-  [Get your fix of JSTOR Daily’s best stories in your inbox each Thursday.],
-  [\<\>],
-  [These interactions culminate in the climactic scenes of the Marx Brothers’ films, where reality distorts into surreal farce. The end of each film provides a paradigmatic extension of this revolutionary movement of figures. In A Night at the Opera (1935), for example, Groucho begins selling peanuts at the opera, while Chico and Harpo replace the orchestra’s sheet music with “Take Me Out to the Ballgame,” begin to beat each other with violins, and change the set backdrop for La Traviata (1853) into a battleship, a modern city street, and a series of other ridiculous sets. In Duck Soup (1933), after Groucho’s character declares that the fictitious country of Freedonia has won the war, they pelt the main antagonist, Trentino, with fruit—but when the wealthy Freedonian benefactor Mrs. Tisdale sings the country’s national anthem, they proceed to throw fruit at her instead.],
-  [Overall, their comedy allows us to enjoy the perverse destruction and surreal recombination of reality. “Encountering that nothingness—the abyss of Harpo’s face—and the space for play opened by that encounter, we, like the analysand, confront the stupidity of being and find a means to enjoy ourselves as its meaningless symptom,” explains Flaig. “When we laugh at the Marx Brothers, we are not laughing because we know better than these idiots, nor are we taking pleasure in the suffering of their victims; rather, we are laughing at the nonsense of ourselves and of our world—the nonsense that infects the sense we have of who we are and what our world might mean.”],
-  [The post Why Lacan Loved Harpo Marx appeared first on JSTOR Daily .],
-),
-  insert-map: (:),
-  word-count: 1385,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-}
-
-{
-  #standard-article(
-  title: [Oven Roasted Potatoes],
-  author: [Jess Rice],
-  source-name: [Budget Bytes],
-  images: (),
-  paragraphs: (
-  [There’s so much debate over which potatoes are best for mashing, roasting, or frying, and some potatoes are way more expensive than others! Let me simplify at least one recipe for you: Russet potatoes are always the cheapest where I shop, AND they yield the BEST crispy Oven Roasted Potatoes! What’s my secret? Par-boiling the potatoes first gives the outer layer so much texture, which makes them extra crispy when it comes time to roast them! I guarantee you will have no leftovers if you make this recipe (they’re that good!)],
-  [I think everyone should have a solid roast potatoes recipe in their back pocket, and this one is mine. I start with a quick parboil, and like to salt the water well to season the potatoes from the inside out. Then I add baking soda to the water to help soften and break down the outside of the potatoes. Because it makes the water more alkaline (science!), the baking soda helps create a fluffier surface that adds even more texture to the parboiled potatoes. Those roughed up edges catch the oil, salt, garlic powder, and black pepper beautifully, so I get plenty of flavor and CRUNCH in every bite. It’s an easy, low-cost trick that plays its part in creating deeply golden, crisp roasted potatoes with soft and tender fully cooked centers!],
-  [Dice the potatoes into 1 to 2-inch pieces. Cut the russets into similarly sized chunks so they roast and parboil evenly.],
-  [Parboil until tender, not falling apart. You want the potatoes to be fork-tender, but still sturdy enough to hold their shape when tossed and roasted! The parboiling is just to partially cook them and soften the edges. They’ll finish cooking in the oven.],
-  [Toss gently to add texture. After draining, toss the potatoes with the olive oil and seasonings just enough to create a more textured surface for browning. This is also one of my favorite ways to make a little oil go a long way. You only use what you need here, so there’s no waste!],
-  [Spread them out in a single layer. I recommend giving the potatoes space on the baking sheet so they roast instead of steaming. Overcrowding is one of the quickest ways to lose the crisp finish.],
-  [Roast at 425°F for the best color and texture. High heat helps make the crispest oven roasted potatoes. It also encourages the Maillard reaction (the browning process that gives roasted foods a golden color and deeper flavor!)],
-  [Give them enough time to fully roast. At 425°F, roasted potatoes usually take about 40 minutes in the oven, with a flip halfway through, to get nicely browned and crisp. They’re ready when the edges look deeply golden and the outside feels crisp. Keep an eye on them just in case your oven runs a little hotter than mine!],
-  [Print 
- Add to Collection Go to Collections],
-  [class="wprm-recipe-instruction-text" style="margin-bottom: 5px;"\>Once the water returns to a boil, parboil the potatoes for 8 minutes and strain. They will be fork tender (but not falling apart completely) and very textured at this point which is perfect! This flakey outside part of the potato results in the very best crust when roasting.],
-  [See how we calculate recipe costs here .],
-  [class="wprm-recipe-notes"\> \*I like russet potatoes best for roasting because of the cost and how their low moisture, high starch content helps them crisp up in the oven. You can, of course, roast any potato you like with this method! Just note waxier varieties like Yukon Gold or red potatoes won’t usually get quite as crisp.],
-  [\*\*Feel free to season these potatoes however you like. Add in smoked paprika , poultry seasoning , onion powder , dried herbs , or just use salt and pepper !],
-  [class="wprm-nutrition-label-container wprm-nutrition-label-container-simple wprm-block-text-normal" style="text-align: left;"\> Serving: 1 serving | Calories: 274 kcal | Carbohydrates: 41 g | Protein: 5 g | Fat: 11 g | Sodium: 2498 mg | Fiber: 3 g],
-  [Gather all of your ingredients and preheat the oven to 425°F.],
-  [Prep the potatoes: Peel the 2 pounds russet potatoes, then cut them into large 1 to 2-inch chunks.],
-  [Heat the water: In a large pot, bring 2 quarts water (8 cups) and 1 Tbsp salt to a rolling boil.],
-  [Prep the parsley: While the water heats, mince ½ Tbsp fresh parsley and set it aside.],
-  [Parboil the potatoes : Once boiling, add the diced potatoes along with ½ tsp baking soda. Let the water come back up to a boil.],
-  [When the water returns to a boil, parboil the potatoes for 8 minutes. Drain well. The potatoes should be fork-tender but not falling apart, and the outsides should look textured and flaky, which helps create a crispier roasted finish.],
-  [Season the potatoes: Transfer the drained potatoes to a large bowl and gently toss them with 3 Tbsp olive oil, ½ tsp salt, ¼ tsp ground black pepper, and ½ tsp garlic powder.],
-  [Roast potatoes in the oven: Spread the seasoned potatoes out on a parchment-lined baking sheet in an even layer. Roast the potatoes for 20 minutes.],
-  [After 20 minutes, flip all of the potatoes and bake for an additional 20 minutes. This is an important step to ensure even browning and a crispy crust all the way around!],
-  [Remove the potatoes from the oven.],
-  [Season and serve: Finish with the remaining ½ tsp salt and the minced parsley before serving. Enjoy!],
-  [These easy oven roasted potatoes go with just about everything! Serve them with baked ham during the holidays, roasted chicken for an easy family dinner, or my lentil loaf for a hearty meat-free option. Add a few of your favorite sides, and you’ve got an easy and well rounded meal. The leftovers are also delicious chopped up and added to the filling for a veggie pot pie !],
-  [I prefer these roasted potatoes when served fresh, but leftovers will keep in an airtight container in the fridge for 3-4 days. Reheat them in a 375°F oven or air fryer until heated through and crisp again.],
-  [They can also be frozen for up to 3 months, but the texture of the potatoes may change after freezing and reheating. If you want to freeze this recipe, it’s best to parboil the potatoes, coat them in the oil and seasonings, then flash freeze them on a baking sheet. Once solid, transfer them to a freezer-safe container and then roast from frozen.],
-  [Smoky Roasted Breakfast Potatoes are a hands-off, budget-friendly side with crispy edges, tender middles, and just enough smoky paprika flavor to make breakfast feel a little more special.],
-  [These Parmesan Roasted Potatoes are golden, crisp, and seriously hard to stop snacking on!],
-  [I’d make these Salt & Vinegar Potatoes anytime I want a potato side that feels a little different.],
-  [Rosemary Roasted Potatoes are an easy, flexible side that go with just about anything, and the garlic and rosemary make them taste classic in the best possible way.],
-  [\$3.45 recipe / \$0.86 serving],
-  [\$3.34 recipe / \$0.84 serving],
-  [\$5.67 recipe / \$0.47 serving],
-  [\$3.17 recipe / \$0.79 serving],
-  [The post Oven Roasted Potatoes appeared first on Budget Bytes .],
-),
-  insert-map: (:),
-  word-count: 1683,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-}
-
-{
-  #standard-article(
-  title: [The One and Only ‘Booger’ Was Among History’s Best Rodeo Performers],
-  author: [Richard F. Selcer],
-  source-name: [HistoryNet],
-  images: (),
-  paragraphs: (
-  [The horse was once as essential to Western life as the six-gun, and breaking horses was once a necessary skill, even a business for a few tough, enterprising souls. Eventually it became a competitive rodeo event in which working cowboys pitted their skills against wild horses—and each other. The king of the Texas broncobusters was a diminutive fellow named Samuel Privett Jr., known to history as “Booger Red.” While certain details and dates of his life differ due to faulty memories and inconsistent records, the central narrative of his life is consistent—and, oh, what a life he led!],
-  [Samuel Thomas Privett Jr. was born on the TP Ranch in Williamson County, Texas, on Dec. 29, 1858—or maybe it was 1862, or 1864. Again, the records vary. He grew up on ranches, riding and roping. As a boy of barely 12 Sam was already breaking horses, his conspicuous shock of red hair landing him notice as “that redheaded bronc-riding kid.” He was 13, or perhaps 15, when a tragic event led to his lifelong nickname, “Booger Red.” He and a pal were fooling around with a homemade firework, having packed a stump with gunpowder, when it blew up prematurely, killing the friend and disfiguring Sam’s face. On catching sight of “Red” after the accident, one boy commented how “boogered up” his face was.],
-  [Amusing moniker aside, Red’s injuries were anything but humorous. The blast had scorched off his eyebrows and part of his nose. His eyelids were reduced to slits, and he lost most of the sight in one eye. It took six months and multiple skin grafts to salvage what remained of his face. Anyone else would have retreated into seclusion, but Red was made of sterner stuff. For the rest of his life, while he was understandably camera shy and wore a wide-brimmed hat pulled low over his face, he embraced the nickname and even joked about it. His boogered-up face was just one of the curves life threw at him. The next curve was harder. By his mid-teens both of his parents had died, forcing the orphan to strike out on his own.],
-  [On his bowed legs Red stood about 5 feet 5 inches, and he weighed little more than 150 pounds soaking wet. He was also soft-spoken, leading many to underestimate him. Those who had seen him in the saddle knew better, and Red found steady work breaking horses for ranchers. With his earnings he bought a wagon yard and stable in San Angelo, though he “officed” out of a pool room in a saloon. He also broke horses for the U. S. Army, which for decades to come would mount its cavalry on animals rather than motor vehicles. As for pay, the Army offered Red a choice: \$50 a month, or \$1 a horse. He took the second offer, and by the end of his first day was reportedly owed \$75. The Army quickly rescinded its offer. Anyway, Red could make more freelancing for ranchers.],
-  [He soon found an even more lucrative and entertaining way of making a living—riding competitively in small-town fairs and stock shows. Ranchers and cattlemen brought their wildest horses to such events and offered prize money to anyone who could gentle them. There were no arenas in those early days, just a patch of open prairie with poles stuck in the ground and rope strung between them. Spectators stood or sat in buggies or on camp stools. The only “box seats” were the saddles of those watching from horseback. Bets laid on both horse and rider were collected only when a rider went sailing or a horse quit bucking. The odds either way were about even, unless Booger Red was aboard. He took on any animals, even those with reputations as man-killers. Mounting was a challenge in itself. As there were no chutes—the side-opening chute came along years later—a rider had to get on while fellow cowboys held the animal by its ears and covered its eyes. As soon as the rider was in the saddle, the others let go and scattered. Red rode one notorious bronc that pitched and bucked across several acres before finally coming to a halt, its sides heaving, its head low and mouth flecked with foam. Rider and horse were equally exhausted, but Red walked away with a nice purse.],
-  [Small-town stock shows drew bold young riders eager to test their mettle against one another and stockmen happy to let them break horses for prize money. Organized rodeos followed.],
-  [These impromptu, open-air gatherings eventually morphed into organized rodeos that charged admission and programmed the various events—bronc riding (saddle and bareback), steer wrestling (aka bulldogging), roping and trick riding. As the frontier faded into history, rodeos and Wild West shows sprang up to keep the memory of the old days alive. Such shows were a combination of nostalgia and genuine cowboy skills.],
-  [In 1895 Booger Red found love. He was 37 (more or less), while Mary Frances “Mollie” Webb was, by one account, just 15 years old. Sources vary on how old each was and when exactly they married, but by any reckoning it was a May-December romance. Red met “Mollie” at a church singalong, for which he provided musical accompaniment on the harmonica. At the time she hailed from the little town of Bronte, in Coke County, and was the prettiest thing he had ever seen. To his surprise she also was taken with him, and to his further delight he learned she was an accomplished rider. Apparently, her parents had no problem with their teen daughter dating a man more than twice her age, and the couple tied the knot before the year was out.],
-  [They settled down in San Angelo, where Red continued to operate his wagon yard and stable and break horses on the side. They ultimately had seven children, starting with Roy in 1896, followed by Ella, the twins, Tommy, Bill and, finally, Alta in 1909. Only one of the twins, Luther, survived. The other was buried as “infant daughter.” None of the children made it past the 11th grade in school. Despite their ever-expanding parental responsibilities, Red and Mollie resolved to start a new business. (The settled life had never been for him, and Mollie was game for anything.) Selling the wagon yard and stable, Red used the money to start Booger Red’s Wild West & Vaudeville Show. By 1907 he had the operation off the ground.],
-  [He was in his mid-30s and she in her mid-teens when they met, but Red was taken from the start, more so when Red learned Mollie was an adept horsewoman. Their May-December romance brought them seven kids and flourished for the three decades they shared.],
-  [By the turn of the century Wild West shows were all the rage, Buffalo Bill’s representing the gold standard. But there was always room for another. People couldn’t get enough of seeing the Old West recreated in arenas. Mollie sewed costumes for the show, and she and the kids were part of the act. Mollie performed as a trick rider. Ella, the oldest, did a riding and roping act. Tommy was a “fancy roper,” good enough to eventually land a steady gig with the Ringling Bros. and Barnum & Bailey Circus. Bill was a born jockey in the saddle. But the main attraction was Booger Red, bronc rider of all bronc riders, who rode any horse brought to him, as well as a few steers and a bull he named “Andy.” Red bragged he could ride anything on four legs and made a standing offer of \$100 to anyone who could bring him a horse able to throw him. Though many took him up on that offer, Red reportedly never had to pay off.],
-  [The co-star of the show was Red’s horse, Montana Gyp, who had once belonged to a Montana showman who brought Gyp to San Angelo and offered to pay \$1,500 to anyone who could stay on his “outlaw horse.” Red accepted the bet, rode Gyp to a standstill, then used the prize money to buy him. Rider and horse were inseparable for the next 23 years, as much a team as Roy Rogers and Trigger or Gene Autry and Champion.],
-  [Montana Gyp was more than a mere show pony, as Booger Red’s Wild West traveled between towns not by special train but by horseback and wagon. When not on tour, the Privetts wintered on a ranch north of San Angelo. By 1915 they were making regular appearances in Oklahoma, so Red sold their San Angelo spread and bought a ranch near Miami, Okla., at which the family could winter and recoup. Around 1920, when the show got to be too much of a business, Red sold out to the Miller Bros. 101 Ranch Real Wild West. For the next several seasons he and the kids performed at others’ shows—including the Ringling Bros., Al G. Barnes and Hagenbeck-Wallace Bros. circuses—while Mollie remained on the ranch. The middle-aged Red remained on the circus and rodeo circuit a few more years, faithfully sending his winnings home to Mollie, who had taken to calling him “Old Man.”],
-  [Eventually, even those events became a chore. The time spent away from home, the endless succession of performances, the gypsylike life—all became too much, and Red decided to retire. He had no regrets. He remained at the top of his game, and it gave him pleasure and paid the bills. But he was pushing 60, which made him practically prehistoric among rodeo performers. He had experienced the bright lights and big times, performing at the 1904 Louisiana Purchase Exposition, in Chicago, as well as the 1915 Panama-Pacific International Exposition, in San Francisco, at which he was named the “World Champion Bronc Rider.” There were no more worlds to conquer.],
-  [A touring family show like Booger Red’s Wild West required them to be constantly on the move, though not in style aboard trains like the bigger productions. The horses they rode, even Red’s own Montana Gyp, were expected to pull their weight when on the road.],
-  [A forgotten figure from Red’s life story is the young protégé he mentored, known professionally as Booger Red Jr. Junior was no relation; it was Privett who gave him that handle. “That’s the only kid I’ve ever seen that has the makin’s of as ugly a man as I,” Red declared the first time he laid eyes on the young man. Junior, whose real name has been lost to time, was described as an “all-round product of the Texas range,” just like his mentor. A top rider in his own right, junior appeared on numerous programs with the original Booger.],
-  [One of Red’s favorite stops in later years was Fort Worth, where he regularly appeared at the annual Fat Stock Show. In March 1916 he came to town by train for the show and left his grip in the baggage room at the Santa Fe depot. When the attendant offered him a check, he said he didn’t need one. “This grip belongs to the ugliest man in Texas—in the world,” Red replied. “If anybody uglier than ‘Booger Red,’ of Tom Green County, shows up, give him the grip. He’s welcome to it.”],
-  [In 1918, when the show promoters added a rodeo to the Fat Stock Show, Red signed on as a competitor. Held in the Grand Coliseum (later renamed the Cowtown Coliseum), it was the world’s first indoor rodeo. A lot had changed in the intervening years. Red recalled having ridden broncs on a nearby patch of prairie cordoned off by rope. While spectators then weren’t expected to pay a dime to watch cowboys compete, thousands now crowded into the coliseum, paying 25 cents a head. Though by far the oldest entrant competing for the \$3,000 in prize money, Red could still outride all challengers. For the next few years he returned to compete. While he loved the attention, however, he retained his aversion to being photographed or filmed. It was the dawn of Hollywood, and motion picture companies regularly came calling, hoping to make a star of Booger Red. For the most part he managed to dodge their cameras.],
-  [Red was remarkable for more than just his advanced years and scarred visage. For one, he never touched liquor, reportedly to keep a promise made to his mother on her deathbed. A rodeo performer who didn’t drink was akin to a dog that doesn’t bark. Keeping his promise wasn’t a simple matter of abstinence. There was little else besides liquor to drink on the ranching frontier, while rodeo performers used liquor to both pass the time and ease aches and pains. (No record remains of whether Red’s vow covered beer.) The bronc rider was not completely tamed and curried, however. Red smoked a corncob pipe, chewed tobacco and boasted an ability to spit a stream of tobacco juice with accuracy and distance.],
-  [No matter how good one is in the saddle, riding half-wild horses (and steers) is dangerous work. Red suffered his share of broken bones over the years. At one Wild West performance a bronc struck a corral post and fell on Red, breaking his leg. But the showman refused to crawl off. He remained in the saddle when the horse regained its feet. No injury ever kept him from riding. That toughness helps explain why he was so admired by fellow cowboys. He was the real McCoy, not some fancy-pants trick rider.],
-  [Though Red officially retired in 1924, he couldn’t stay away from the arena. Like an actor returning to the footlights or a jock drawn to the gym, he came back to Fort Worth that year for the annual Fat Stock Show & Rodeo, but as a spectator. His performing days were behind him, or so he thought as he sat in the stands watching the Monday matinee rodeo that March 10. He had a nondescript cap pulled low over his face and hoped no one would recognize him. All was working to plan until a “hell pitchin’ hoss” named Romeo broke away from handlers, electrifying the sparse crowd. “Give us Booger Red!” the spectators began chanting. A woman in the stands beside Red suddenly stood, pointed at him and shouted, “Here he is!” The crowd went wild. Moments later, his blood racing, the nearly bald old man made his way down the coliseum steps to the arena floor, swapping his cap for a Stetson before climbing aboard the outlaw horse. Romeo promptly broke across the arena, Red hanging on with one hand and waving the hat with the other. Soaking in the smell of the horse and roar of the adoring crowd, he tipped and pivoted with each buck and twist. The ride ended with him firmly in the saddle, keeping alive the legend of never having been thrown.],
-  [Just two weeks later, back home in his own bed, Samuel “Booger Red” Privett died of Bright’s disease, the same ailment that had taken his father. He was 66 years old—or maybe 62, or even 60. His last word to family members gathered bedside began with, “Boys, I’m leaving it with you,” and ended with, “Have all the fun you can while you live, for when you are dead, you are a long time dead.” Red was buried in the Grand Army of the Republic Cemetery in Miami, Okla. (According to family lore, Mollie couldn’t afford a headstone, so his grave remained unmarked until Ella had a slab installed in 1980.) Mollie lived another 45 years, dying on Sept. 26, 1969.],
-  [After a lifetime in the saddle and nearly 20 years touring with his family in Booger Red’s Wild West, Privett officially retired in 1924. But he couldn’t keep away from the arena. That year he attended the Fat Stock Show & Rodeo at Fort Worth’s Grand Coliseum (pictured, known today as the Cowtown Coliseum). Recognizing him, fans cajoled Red into making one last memorable ride on a “hell-pitchin’ hoss” named Romeo.],
-  [Gone but not forgotten, Booger Red lived on in Western lore. For decades afterward old-timers related stories of his exploits. It seems everyone in Fort Worth was in the stands for his last ride in 1924. Renowned Texas poet Whitney Montgomery wrote verses about the celebrated bronc rider, and Red was written up in a 1944 issue of the Southwest Review literary journal, a story picked up by Reader’s Digest . Famed folklorist J. Frank Dobie kept his story alive, and 70 years after Red’s death Fort Worth journalists were relating the story of “Booger Red’s Last Ride” to new audiences. The legendary bronc rider was inducted into Oklahoma City’s National Rodeo Hall of Fame in 1975, and in 1991 the cumulative years of interest finally prompted a biography. Red and Mollie’s last surviving child, Alta, was still living when her father’s biographer came calling. But Charlsie Poe ran into familiar obstacles faced by all biographers—namely, fallible memories, inflated legends and contradictory sources.],
-  [Visitors to the historic Fort Worth Stockyards may recognize the name Booger Red, for when proprietors of the 1907 Stockyards Hotel remodeled the place in 1984, they named its restaurant-bar Booger Red’s Saloon. (Never mind the irony of naming a saloon after a man who never drank.) Patrons don’t belly up to the bar for their “tanglefoot”; they climb up on saddle-topped stools, often asking, “Who or what the heck is ‘Booger Red’? Is he a real person?” The answer, of course, is yes, he was a real person, a genuine cowboy and rodeo performer who made his last ride only steps down the road in Fort Worth. Half a block away, at 121 E. Exchange Ave., is the Cowtown Coliseum, looking much as it did a century ago when Booger Red performed for thousands of cheering rodeo fans.],
-  [As one fan summed it up years before, “There will only be one Booger Red.”],
-  [Richard Selcer is a frequent contributor to Wild West who has written 11 books about his hometown of Fort Worth, Texas. His primary sources for the article were the privately printed 1991 book Booger Red: World Champion Cowboy , by Charlsie Poe, and articles from early Texas newspapers.],
-  [Originally published in the Spring 2024 issue of Wild West.],
-),
-  insert-map: (:),
-  word-count: 3055,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-}
-
-{
-  #standard-article(
-  title: [Is it ‘Ih-ran’ or ‘E-ron’? Inside the politics of pronunciation],
-  author: [Valerie M. Fridland, Professor of Linguistics, University of Nevada, Reno],
-  source-name: [The Conversation US],
-  images: (),
-  paragraphs: (
-  [How you pronounce the name of the country the U. S. is at war against may reflect your politics. paitoonpati/iStock via Getty Images Plus],
-  [With the war in Iran a topic on everyone’s lips, you might have noticed an inconsistency in the way that nation’s name is said, varying between a more native-like “Ih-ron” pronunciation and a more Americanized “Ih-ran” one.],
-  [An everyday listener might just chalk this up as being the result of regional differences or the version we learned growing up, like the alternate ways Americans have of saying “data” or “roof.”],
-  [But as a linguist who studies what our accents reveal about our histories and social identities, I know that the way we pronounce things often gives off clues about who we are and what we believe in.],
-  [That appears to be the case with these two distinct pronunciations.],
-  [President Donald Trump’s Feb. 28, 2026, statement on the commencement of U. S. strikes against Iran.],
-  [The sound of politics],
-  [It’s probably not a big surprise to learn that listeners often hear certain words or accents as indicating someone’s political inclinations.],
-  [That’s because people are primed to notice patterns that mark group membership – be it a style of clothes or pronouncing “fire” more like “far.” Once they notice these patterns, people then tend to assign whatever traits are believed to characterize that group to the sounds of their speech.],
-  [For instance, researchers examined how people perceived potential political candidates with a Southern vs. non-Southern American accent . They wrote in 2018 that they discovered listeners perceived Southern-sounding politicians as more likely to be conservative and to hold right-leaning views on issues such as gun rights and abortion. All that from hearing someone pronounce “pin” like “pen” or say “bah bah” for “bye.”],
-  [This suggests that even a small difference in the way a vowel is pronounced can suggest a lot more about political ideology than you might imagine, even if that suggestion is not always accurate.],
-  [Nationalism and names],
-  [Going back to the question of what drives variation in the pronunciation of Iran, a linguistic study examining politics and pronunciation during the Iraq War offers some insight.],
-  [In analyzing 2007 House of Representatives debates about sending more U. S. troops to Iraq, linguists found that a congress member’s political party affiliation was the strongest predictor of how the “a” vowel in Iraq was pronounced.],
-  [Republicans preferred the anglicized short “a” pronunciation closer to “ear-RACK,” while Democrats preferred a more “ah”-like one, as in “ear-ROCK.” The authors suggest that the Democratic preference, approximating a more native pronunciation, was motivated by greater multicultural sensitivity.],
-  [The pronunciation of the “i” vowel also exhibited a more anglicized option, as in “EYE-rack/rock,” which was also examined. Unlike the “a” vowel, a more “eye”-like pronunciation by itself did not significantly correlate with partisanship.],
-  [President George Bush’s 2003 Oval Office address announcing the U. S. invasion of Iraq.],
-  [Two later studies, in 2011 and 2018, of everyday speakers who were asked to pronounce Iraq in nonpolitical contexts discovered no significant difference by political affiliation. The biggest predictor favoring an “ear-ROCK” pronunciation was that a person spoke multiple languages, as the “ah” vowel sound is more frequent in languages commonly spoken in the U. S., such as Spanish, French and Italian.],
-  [Despite not directly patterning with politics, when people in the 2018 study were questioned explicitly about how saying “ear-RACK” or “ear-ROCK” tied into political views, the “ah” pronunciation of the vowel was indeed heard as linked with liberalism, an association particularly strong for those who used “ah” and were liberal themselves.],
-  [This suggests that people might have picked up on this pattern from hearing politicians. They were aware of the fact that this vowel variation had become, in relevant contexts, symbolic of liberal vs. conservative stances.],
-  [Respect and pronunciation],
-  [In looking more generally at the pronunciation of borrowed words written with the letter “a,” like that of “pasta” or “tobacco,” linguist Charles Boberg suggests that Americans generally follow two possible paths , either pronouncing it with the short “a” like in “bat” or with the “ah” like in “father.”],
-  [Boberg suggests that attitudinal factors play a role in the choice between the two. Since many Americans associate the “ah” pronunciation with more education and sophistication, given its connection to upper-crust British use in words like “bath” or “aunt,” there has been an increasing tendency for Americans to use “ah” in words borrowed since World War II, as with “origami” or “nacho.”],
-  [But in looking at variability in the pronunciation of Iraq , other linguists hypothesized that the “ah” vowel is only heard as more sophisticated when a source language is held in high esteem – as with the British-derived “ah” in “aunt” – or when those speaking foreign languages are well regarded.],
-  [In contrast, when there is less respect for a people or a place, the choice of an Americanized vowel rather than the more accurate native one might be preferred. This attitude difference may well explain much of the variation in politicians’ pronunciation of Iraq – and possibly Iran.],
-  [Not surprisingly, in their study of congressional variation in pronunciation of Iraq, these researchers found that, beyond party affiliation, the politician’s war stance – for or against sending additional troops – was a significant determinant of which vowel was used. If they used the “ear-RACK” pronunciation, they were more likely to favor sending more troops to the country.],
-  [Iran-born Ali Tabibnejad, who now lives in the U. S., gives instructions on the proper way to say Iran.],
-  [Trump and ‘I-ran’],
-  [While there is, as of yet, no similar study comparing politicians and their pronunciation of Iran, it is interesting to note that both President Donald Trump and Vice President JD Vance say the name in the more anglicized fashion, using the same vowel as in “ear-RACK” – that is, as “Ih-RAN” not “Ih-RON.”],
-  [Considering the highly contested nature of this war , this presidential preference for the anglicized version of the name may be driven by a similar politicized positioning to that found for the pronunciation of Iraq. Trump and Vance may be underscoring their “pro-America” focus by creating a linguistic and ideological distance with the named nation and its speakers.],
-  [A similar linguistic contrast was made during the Vietnam War, when “VietNAM” was commonly pronounced as having the same short “a” sound as in “bat,” including from the lips of President Lyndon B. Johnson . Now, years later, the “VietNOM” pronunciation dominates, and the “NAM” version is virtually absent in those born in more recent eras.],
-  [In the same way, Americans might eventually find a linguistic middle ground in the current pronunciation debate over Iran. But it might be a while before peace in the Middle East prevails long enough to give the next generation a linguistic clean slate.],
-  [class="fine-print"\> Valerie M. Fridland does not work for, consult, own shares in or receive funding from any company or organization that would benefit from this article, and has disclosed no relevant affiliations beyond their academic appointment.],
-),
-  insert-map: (:),
-  word-count: 1166,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -718,6 +222,8 @@ There's a ton written about Emma Rowena Gatewood but so much of it, including th
   [class="fine-print"\> Christopher Briem does not work for, consult, own shares in or receive funding from any company or organization that would benefit from this article, and has disclosed no relevant affiliations beyond their academic appointment.],
 ),
   insert-map: (:),
+  inline-pq: pull-quote([Workers and their families value regional amenities, affordability and many other factors that historically had little impact on corporate site selection.], [Christopher Briem, Regional Economist, Center for Social and Urban Research, University of Pittsburgh]),
+  inline-pq-idx: 11,
   word-count: 1229,
   edited-for-length: false,
   debug-mode: false,
@@ -727,55 +233,411 @@ There's a ton written about Emma Rowena Gatewood but so much of it, including th
 
 {
   #standard-article(
-  title: [Trump’s ‘God Squad’ pits energy vs. endangered species, but it’s a false choice – protecting wildlife can be good for business],
-  author: [Dan Salas, Director of the Sustainable Landscapes Program, University of Illinois Chicago],
+  title: [Celebrating the Legacy of the Office of Strategic Services 82 Years On],
+  author: [Major Nicholas Dockery],
+  source-name: [HistoryNet],
+  images: (),
+  paragraphs: (
+  [As the United States stood on the brink of World War II, President Franklin D. Roosevelt recognized the urgent need for innovative military strategies to effectively confront the impending global conflict. Observing the unfolding events in Europe, he realized that defeating the Axis powers would require pioneering approaches to warfare. Roosevelt turned to William J. Donovan, a trusted advisor and former informal emissary, to develop a visionary plan for a global intelligence collection agency.],
+  [Donovan, a WWI veteran, drafted the “Establishment of Service of Strategic Information,” a detailed document outlining a groundbreaking framework for a centralized intelligence organization to coordinate the entire government and gather essential data for strategic planning. In his plan, Donovan emphasized that “strategy, without reliable information, is helpless. Likewise, information is useless unless intelligently directed toward strategic purposes.”],
+  [Impressed by Donovan’s insight, President Roosevelt established the Coordinator of Information (COI)—the nation’s first national intelligence agency. This marked a pivotal moment in US history, as Roosevelt’s foresight and Donovan’s strategic acumen laid the groundwork for creating an entity that would revolutionize how the United States managed conflict during peacetime and war. Operating under the President’s Executive Office, the COI collected and analyzed information crucial to national security.],
+  [A year later, Donovan presented a transformative proposal to restructure the COI into an organization that included covert and clandestine operations in addition to intelligence gathering. He envisioned a new hybrid organization that would shift warfighting from traditional military tactics to unconventional approaches using sabotage, espionage, guerrilla warfare, and psychological operations. Believing in Donovan’s strategic expertise, President Roosevelt approved the proposal, thus creating the Office of Strategic Services (OSS) on June 13 th , 1942. The OSS would operate under the Joint Chiefs of Staff, a committee of senior military leaders formed during World War II to advise the President and coordinate military efforts.],
+  [Under Donovan’s leadership, the OSS bridged the realms of diplomacy, intelligence, and the military. He recruited technology, economics, psychology, and finance experts to provide specialized knowledge to military operations. Donovan firmly believed in a two-pronged strategy: physically attacking the enemy’s military forces and targeting their morale and spirit. The OSS quickly became a hotbed of innovation, employing diverse specialists, including intelligence analysts, linguists, and field operatives.],
+  [Inspired by the British Special Operations Executive (SOE), Donovan developed a unique training methodology. He prioritized specialized training for recruits to operate behind enemy lines and carry out sabotage missions. They underwent rigorous training in organizing and supporting guerrilla and partisan resistance forces. At the core of the OSS were the Strategic Services Operations (SSO), consisting of six units, each with its specialized areas of expertise and responsibilities. Notably, units like the Special Operations (SO) and the Operational Group (OG) eventually led to the formation of the twelve-person Operational Detachment-Alpha, commonly known today as the Green Berets.],
+  [During Operation Torch, the Allied invasion of French North Africa, the OSS demonstrated its strategic prowess. OSS members infiltrated Vichy French Northwest African territory, gathering vital information about enemy forces and defenses, directly influencing the invasion’s planning. The OSS also established and maintained robust contacts with local resistance groups and the Free French forces, significantly undermining the Axis stronghold in the region. Further, through unconventional warfare, the OSS successfully disrupted enemy activities and diverted resources, hindering Axis forces from mounting an effective defense against the main invasion.],
+  [However, Operation Torch also exposed some of the OSS’s shortcomings. They underestimated the resistance from the Vichy French forces, resulting in two days of intense, unexpected fighting. Additionally, they overestimated the disruptive potential of the French resistance against the Axis forces, leading to strategic missteps. Some intelligence provided by the OSS also proved to be incorrect or unreliable, causing further complications in the operation’s planning and execution. Despite these setbacks, the experiences from Operation Torch provided invaluable lessons for future operations, including Operation Jedburgh.],
+  [During Operation Jedburgh, a covert operation involving clandestine activities, the OSS provided personnel, equipment, and training to three-man teams. These teams were airdropped into occupied Europe, primarily focusing on France, to disrupt German military operations, gather intelligence, and support the larger Allied campaign. Consisting of a commander, an executive officer, and a radio operator, they played a pivotal role in leading local resistance movements against the Germans and carrying out acts of sabotage and guerrilla warfare. Notably, one team member always possessed fluency in the local language, ensuring effective communication and coordination with regional allies.],
+  [In addition to providing personnel and training, the OSS handled logistics, the deployment of the teams, and the ongoing supply drops. Much like in Operation Torch, the effectiveness of the teams in Operation Jedburgh varied. They successfully disrupted German communications and logistics in some regions, significantly undermining the German response to the Allied invasion. However, German countermeasures, geography, and local conditions made their efforts less effective in other areas. Nevertheless, Operation Jedburgh showcased the potential of unconventional warfare and marked a successful collaboration between the OSS, the SOE, and the Free French.],
+  [The adaptability of OSS allowed them to operate in vastly different terrains. During Operation Greenup, OSS agents undertook a perilous mission to infiltrate enemy lines in the dangerous terrain of the Austrian Alps. Operatives navigated treacherous mountain passes and evaded enemy detection to gather intelligence on a secret Nazi Alpine fortress. This daring operation showcased the OSS agents’ courage and resilience as they operated deep within enemy territory, collecting critical information to support the Allies. Similarly, in the dense jungles of Burma, OSS’s Detachment 101 waged a relentless guerrilla war against the Japanese occupation. Working closely with local resistance groups, they disrupted enemy supply lines and executed devastating hit-and-run attacks. Simultaneously, they gathered vital intelligence that furthered the Allied cause.],
+  [Beyond the operational successes, the OSS was an inspiration and model for various special units during World War II. In March 1942, General George Marshall, the US Army Chief of Staff, approved Project Plough, an operation to drop commandos by parachute into Nazi-occupied Norway to carry out covert operations. Subsequently, on July 9th, 1942, the First Special Serves Forces (FSSF) was officially established, bringing together units from the US and Canada. Their training and operations were similar to those of the OSS, employing similar skills and tactics. After careful evaluation, military leaders determined that the anticipated benefits of the mission were outweighed by the potential dangers, leading to its cancellation. Instead, the FSSF deployed to the Aleutian Islands campaign, fighting against the Japanese forces occupying the islands.],
+  [Following their involvement in the Aleutian Islands campaign, the FSSF deployed to Italy, actively participating in several military campaigns crucial to the Allies’ efforts. Their courage and combat effectiveness earned them the nickname ‘The Devil’s Brigade.’ The FSSF made significant contributions to the liberation of Southern France, showcasing their ability to undertake complex operations and support the overall Allied efforts.],
+  [General Dwight D. Eisenhower recognized the pivotal role of psychological warfare in the European campaign and appointed Brigadier General Robert Alexis McClure to lead the Information and Censorship Section (INC) within the Allied Forces headquarters as the war reached a critical phase. The INC’s role aligned more with the analytical and strategic planning branches of the OSS, which compiled and processed intelligence to support strategic decision-making. McClure used military personnel and civilians from the OSS and the British Political Warfare Executive to employ propaganda, misinformation, and other psychological techniques to manipulate enemy combatants’ and civilian populations’ perceptions and attitudes. In 1944, Eisenhower tasked McClure with establishing the Psychological Warfare Division of the Supreme Headquarters, Allied Expeditionary Force (PWD/SHAEF), to meet the evolving needs of theater commands in the dynamic and volatile landscape of the war.],
+  [In January 1945, during the Battle of the Bulge and as Allied forces gained ground on the Eastern flank, Senior officials decided to disband the FSSF in Southern France. The FSSF played a commendable role across various theaters, but leaders no longer deemed their specialized services necessary as the war neared its final stages. The surrender of Nazi Germany on May 7th, 1945, marked the end of World War II in the European theater. Throughout the conflict, the OSS adapted remarkably to meet the evolving demands of theater commands. After the war, the OSS disbanded to streamline and optimize intelligence operations in the post-war era, splitting to form the Central Intelligence Agency (CIA) and the Department of State’s Bureau of Intelligence and Research.],
+  [In the subsequent years, McClure advocated for creating the Office of the Chief of Psychological Warfare (OCPW) to continue unconventional warfare as a potential European invasion by the Soviets loomed. He appointed Colonel Aaron Bank, a former OSS member, as the Operations Branch Chief of the Pentagon’s OCPW. Bank, following in the footsteps of Donovan, went on to create Special Forces. He recruited veterans from the Philippine guerrillas, the FSSF, and the OGs of the OSS. Individuals such as former Philippine guerrilla commanders Colonel Wendell Fertig and Lieutenant Colonel Russell W. Volkmann played pivotal roles in developing the doctrine of unconventional warfare, which became the cornerstone of US Special Forces.],
+  [Donovan’s OSS has left a lasting legacy in the special operations and intelligence communities. Today, entities such as Psyops, the Green Berets, and CIA operatives can all trace their roots back to the OSS. The OSS’s innovative approaches to psychological warfare, intelligence gathering, and unorthodox tactics during WWII laid the foundational framework of modern US Special Operations.],
+  [Major Nicholas Dockery is an active-duty Special Forces officer, a researcher fellow for the Modern War Institute at West Point, and a Downing scholar. He holds an MPP from the Yale Jackson School of Global Affairs graduate and is an alumnus of the United States Military Academy.],
+  [The views expressed are those of the author and do not reflect the official position of the United States Military Academy, Department of the Army, or Department of Defense.],
+),
+  insert-map: (:),
+  word-count: 1669,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+}
+
+{
+  #standard-article(
+  title: [Oscar Wilde Bothered and Bewildered Westerners While Touring to Promote Gilbert and Sullivan],
+  author: [Preston Lewis],
+  source-name: [HistoryNet],
+  images: (),
+  paragraphs: (
+  [Of all the city slickers ever to venture into the 19th century American West, Oscar Wilde towered above the rest, preening like a peacock with his ostentatious wardrobe, his philosophy of art and his knack for spilling printer’s ink across the pages of Western newspapers. In the parlance of the cowboy, Wilde exemplified the “swivel dude,” a gaudy fellow worthy of a second look or a tip of the hat. The flamboyant poet and playwright not only turned heads with his eccentric outfits, but also left Westerners scratching their noggins over his esoteric lectures on “The Decorative Arts” and “The House Beautiful.” For the better part of two months in 1882 Wilde pranced his way across the frontier, a wholly different breed of pioneer.],
+  [Arriving in New York City on Jan. 3, 1882, Oscar Fingal O’Flahertie Wills Wilde spent 51 weeks touring the United States and Canada, traveling 50 of those days west of the Mississippi River. Twenty-seven years old when he arrived, he had accomplished little beyond graduating from Magdalen College, Oxford, self-publishing a play and a thin book of poetry, and ingratiating himself into London’s high society with his quick, sardonic wit. During college and afterward Wilde evolved into both a disciple and a proponent of aestheticism, a philosophy best summarized as “art for art’s sake.” Proponents, or aesthetes as they were called, valued form over function. Aestheticism countered the function-intensive machines of the Industrial Revolution and the Victorian belief that literature and art should provide moral and ethical lessons and restraints on society.],
+  [While other aesthetes made greater contributions to the philosophical movement, none was more visible than Wilde, largely due to his extravagant dress and a peculiar fixation on sunflowers and lilies as “the most perfect models of design, the most naturally adapted for decoration—the gaudy leonine beauty of the one and the precious loveliness of the other giving to the artist the most entire and perfect joy.” Wherever he spoke in America, runs on florist shops depleted the supply of those two flowers, as fans and skeptics alike were eager either to laud or mock Wilde with them.],
+  [Masters of the comic opera Gilbert and Sullivan and their producer, Richard D’Oyly Carte, hoped that by sending Wilde to lecture on 
+the principles of aestheticism, they might lay the groundwork for an American tour of their related production, ‘Patience.’ Wilde came away with material wealth and name recognition.],
+  [Among the skeptics, dramatist W. S. Gilbert and composer Arthur Sullivan parodied the aesthetes with a “fleshly poet” named Reginald Bunthorne, the lead character of their 1881 comic opera Patience —the follow-up to their hit comic operas H. M. S. Pinafore and The Pirates of Penzance . On the back of the duo’s latest success, their producer, Richard D’Oyly Carte, decided to take Patience across the pond to North America. Doubting that Americans would understand the play’s satire, Carte sought an “advance poster” of aestheticism to promote it. Wilde was the natural choice, as Carte was already serving as the poet’s booking manager.],
+  [Likely massaging Wilde’s ego with a suggestion his poetry was also popular in the United States, Carte persuaded the Irishman to assume the mantle of the fictional Englishman Bunthorne for a lecture tour. The clincher was Carte’s offer of half the net profits.],
+  [What Wilde excelled at most in his young adulthood was self-adoration and self-promotion, often erasing the line between fame and notoriety. When he arrived in New York, the young nation’s biggest celebrity was dime novel hero Buffalo Bill. By the time the aesthete returned to Britain, Wilde—if not eclipsing the future Wild West showman as a household name—had certainly drawn more news coverage than William F. Cody. At very least Wilde was the first celebrity who became famous merely for being famous, launching the superficial celebrity culture that permeates American popular culture to this day.],
+  [Wilde stood 3 inches over 6 feet. Protruding from his elongated, colorless face was a prominent nose over coarse lips that sheltered greenish-hued teeth, discolored from too many Turkish cigarettes and too few toothbrushes. His thick eyebrows shaded attentive eyes, and a long mop of tawny brown hair brushed against his shoulders. “He looks better in the dark, perhaps” quipped one St. Louis journalist. A portrait of Wilde printed in the competing Leavenworth Times prompted Kansas’ Emporia Daily News to observe, “If it is anything like correct, there will be no chance for Oscar to get a wife in this neck of the woods.”],
+  [What Wilde lacked in looks, he made up for with a voguish wardrobe that ranged from dark formal suits to gaudy shirts and cravats in vibrant purples, greens and yellows. For his first appearance west of the Mississippi he chose a more subdued outfit, his trademark knee britches in black over black silk stockings and patent leather pumps with large silver buckles. Above that he wore a white shirt and white waistcoat topped with a long-tailed black coat and white kid gloves.],
+  [His presentations, though, were neither as bright nor as entertaining as his attire. Wilde read his speeches in a monotone voice with a verbal quirk accentuating every fourth syllable. In advance of his February tour date in St. Louis the Globe-Democrat reported, “Curiosity to see Oscar Wilde is greater than to hear him.” Following his lecture there to an audience of 1,500 a subhead in the paper’s coverage pronounced, A Large and Fashionable Audience Bored by His Talk on Art. The reporter, like many other Western newsmen, christened Wilde “the lord of the lah-de-dah.” Others just labeled him an “ass-thete.”],
+  [After St. Louis and side trips to Illinois, Wisconsin and Minnesota, Wilde on March 20 took the transcontinental railroad for talks in Sioux City and Omaha before lecturing the philistines of San Francisco, Oakland, San Jose, Sacramento and Stockton. Aboard the westbound train Wilde enjoyed the company of actor John Howson, then traveling to San Francisco to play Bunthorne in the West Coast production of Patience . Whenever Wilde wearied of facing the applause or jeers of spectators who thronged train stations to gawk at the aesthete, he’d send out a costumed Howson to greet the folks instead.],
+  [After nine days in California, during which he stayed in San Francisco’s luxurious Palace Hotel, Wilde headed back east, stopping first in Salt Lake City, where a Herald reporter attended his lecture and penned a scathing review:],
+  [“What is the attraction about this strange specimen of humanity? Oscar is not handsome and is strikingly awkward; as an elocutionist he violates every rule of rhetoric and is painfully dreary in his manner of expression.…Only in the matters of exhibiting decidedly vulgar front teeth and displaying an abundance of not even wavy hair is he a success.”],
+  [Wilde then moved on to Denver, Leadville, Colorado Springs, Kansas City, St. Joseph, Topeka, Lawrence, Atchison and Lincoln before wrapping up on April 29 with a whirlwind tour of five Iowa communities. In June he returned west for appearances in Fort Worth, Galveston, Houston and San Antonio. By the time he ended his Texas swing, Wilde had cleared \$5,605, or nearly \$170,000 in present-day dollars. That total did not include the money he personally charged admirers to attend their local functions.],
+  [Wherever he went, Wilde made time for newspaper reporters, receiving them in his hotel suite after they had properly provided their calling card to his manservant. Describing his audience with the apostle of aestheticism, a San Antonio Light reporter “found Mr. Wilde taking the world easy in his room at the Menger; he was dressed in drab velvet jacket, blue tie, white waistcoat, light drab trousers, scarlet stockings and slippers. A table covered with books, a lemonade—with a stick in it—and a huge bunch of mammoth cigarettes made up the array that confronted our aesthetic reporter.”],
+  [Wilde flattered reporters to their faces and then demeaned them behind their backs, prompting Tucson’s Arizona Daily Star to observe, “The average reporter may not have a very exalted idea of art, but he knows human nature too well to stick himself in knee breeches and call it brains instead of brass.” In the end, Wilde and the press used each other—the aesthete to enhance the fame he craved, the reporters to sell papers.],
+  [Audiences either revered Wilde for his intellect, even if they didn’t understand it, or ridiculed him for his eccentricities. “Oscar Wilde, the apostle of the beautiful, is here,” The Topeka Daily Capital gushed, “and there is no doubt that he will have a full house. Topeka is essentially aesthetic, and to hear the great exponent of true culture is an opportunity which may never occur again.” Nebraska’s North Bend Bulletin was considerably less flattering in its report of the lecturer’s forthcoming stop in nearby Fremont: “Oscar Wilde is coming. It’s just awful.”],
+  [American journalists delighted in sending up Wilde. This spoof from the humor magazine Puck of the “apostle of aestheticism” and fellow believers is laden with sunflowers and lilies, which Wilde called “the most perfect models of design.” Florists on his tour route ran out of both flowers.],
+  [Besides his dry, droll delivery, Wilde’s standard topics on art and beauty seldom resonated with people scratching a living from the earth. For instance, as decorative flourishes in the home the aesthete recommended tiny porcelain cups over their heavier crockery cousins—this to listeners who set tables with often little more than tinware. Further, he prescribed tiled, not carpeted, floors; porcelain, not cast-iron, stoves; and wainscoting, not papered walls. Such advice might have had greater application east of the Mississippi, but out West, to people living in adobe jacals or log cabins, it lacked pertinence.],
+  [Less forgivable was lord lah-de-dah’s condescension toward people unable to broaden his fame and wealth, conduct that grated on Western sensibilities. “Oscar Wilde was more bother than all the women who ever rode in a railroad car,” one Chicago-based train conductor recalled. “He had an idea that he was the greatest man America had ever seen.…He was the vainest, most conceited mule I ever saw. He wouldn’t drink water out of the glass at the cooler, but sipped it out of a silver and gold mug he carried with him.”],
+  [Wilde’s impromptu April 13 visit to Leadville, Colo., endured as the most colorful of the aesthete’s stops across America. Though it was not on his original itinerary, Wilde squeezed in an appearance between lectures in Denver and Colorado Springs after no less a figure than Lt. Gov. Horace A. W. Tabor, the “ Bonanza King of Leadville ,” offered the poet a tour of his Matchless silver mine.],
+  [Wilde recalled the silver boomtown as “the richest city in the world…\[with\] the reputation of being the roughest, and every man carries a revolver. I was told that if I went there, they would be sure to shoot me or my traveling manager. I wrote and told them that nothing they could do to my traveling manager would intimidate me.”],
+  [When he reached Leadville (elev. 10,158 feet) after a bumpy 150-mile, six-hour train ride, he felt understandably lightheaded, nauseous and short of breath. A doctor called to his Clarendon Hotel suite identified his malady as “a case of light air,” or altitude sickness as it is known today. The doctor prescribed medicine and rest while Leadville anticipated his appearance.],
+  [The aesthete eventually recovered enough to dress in color-coordinated knee britches, stockings, shirt, fancy cravat, dress coat and a broad-brimmed hat. Before striding across the covered bridge that connected the hotel’s third floor with the ritzy Tabor Opera House, Wilde unpacked his copy of The Autobiography of Benvenuto Cellini , reasoning that if he were too weak to deliver his lecture, he could read passages from it to attendees. What could be more appropriate? he thought, for like the hardscrabble miners in the audience, the great Renaissance artist also worked in silver.],
+  [Bouncing back from a bout of altitude sickness on arrival in the Colorado silver boomtown, Wilde lectured to a capacity crowd at the Tabor Opera House, to mixed reviews. The mayor then gave the poet a tour of the town that ended with a subterranean drinking binge at Horace Tabor’s own Matchless mine.],
+  [As the minute hand slipped well past Wilde’s scheduled appearance, the Leadville Daily Herald recalled, “a whole house of curiosity seekers,” some having paid as much as a \$1.25 for reserved seats, fidgeted impatiently. When the lecturer did finally show, the Herald reporter wrote, he “stumbled onto the stage with a stride more becoming a giant backwoodsman than an aesthete.” Placing his speech and the Cellini autobiography on the podium, Wilde launched into a variation on his decorative arts spiel.],
+  [As the lecture dragged on, the audience grew noticeably restless, so Wilde turned to the autobiography, drawing a reprimand from a boisterous miner questioning why Wilde hadn’t invited Cellini to speak for himself.],
+  [“He’s dead,” Wilde explained.],
+  [“Who shot him?” replied the curious miner.],
+  [Somehow the lecturer made it through his talk without taking a bullet, though the Herald reporter took a potshot at Wilde in print, writing, “The most notable feature of Mr. Wilde’s lecture was the rather boisterous good humor of the audience.”],
+  [After the lecture Wilde returned to the hotel to change into more practical clothing and grab a coat for his tour of town and the Matchless. With Mayor David H. Dougan and select Tabor employees acting as guides, the lecturer stepped into the crisp night air, which seemed to revive him. Wilde saw and heard Leadville’s nightlife, a cacophony of drunken carousers, brass bands, tinkling pianos, spinning roulette wheels, screeching women proffering nocturnal delights and boardwalk barkers for saloons bearing such colorful, albeit sometimes misleading, names as the Red Light, Silver Thread, Tudor, Little Casino, Bon Ton, Board of Trade, Chamber of Commerce and Little Church, the latter of which boasted a mock chapel as its entrance.],
+  [The tour was an eye- and earful for Wilde, who followed his guides into Pop Wyman’s rollicking saloon. Rumor had it Wyman had killed several men in his younger years and carried a change purse made from a human scrotum. Wilde complimented the saloon owner for a sign over the piano reading, Please Do Not Shoot the Pianist; He Is Doing His Best, calling it “the only rational method of art criticism I have ever come across.” He later elaborated on the message, writing, “I was struck with this recognition of the fact that bad art merits the penalty of death, and I felt in this remote city, where the aesthetic applications of the revolver were clearly established in the case of music,
+my apostolic task would be much simplified.”],
+  [This period illustration of Tabor’s Matchless silver mine presents a scene hardly suited to the sensibilities of an aesthete. Yet, Wilde seemed to enjoy his venture underground swapping whiskey shots with miners. During his 50-day tour of the West, however, newspapers and the poet swapped more insults than accolades.],
+  [From Wyman’s the mayor had the party loaded in wagons and driven 2 miles to the Matchless, where mine superintendent Charles Pishon accompanied Wilde down shaft No. 3 in a metal ore bucket lowered 100 feet into the pitch black by a cable-and-pulley system. A dozen miners greeted their guest, showing Wilde silver in its natural state and letting him drill the start of a new shaft they dubbed “The Oscar.” Quipped Wilde, “I had hope that in their grand, simple way they would have offered me shares in ‘The Oscar,’ but in their artless, untutored fashion they did not.”],
+  [The mining soiree ended with an early morning supper, Wilde wrote tongue in cheek, “the first course whiskey, the second whiskey and the third whiskey.” By the time those gathered had emptied all the bottles, their foppish guest had impressed his hosts for his ability to hold liquor without any visible signs of inebriation. Finally re-emerging from the mine, Wilde returned to the hotel for a brief rest before boarding a train to Colorado Springs to deliver a speech just 14 hours later. He was no worse for the wear.],
+  [On writing about his experiences out West, Wilde largely mocked the “barbarians” he had striven to enlighten. “Infinitesimal did I find the knowledge of art west of the Rocky Mountains,” he recalled, illustrating his criticism with the story of a miner who had struck wealth beyond his education and turned to culture to flaunt his riches. After ordering a replica of the Venus de Milo from Paris, Wilde wrote, the nouveau riche miner “actually sued the railroad company for damages because the plaster cast…had been delivered minus the arms. And, what is more surprising still, he gained his case and the damages.”],
+  [Americans likewise found fault with Wilde as he prepared to leave the States that December. Wrote one acquaintance, “He is guilty of all sorts of petty meanness, such as perpetually begging cigarettes from acquaintances and never offering any himself; eating dinners with indefatigable industry at other people’s expense, sneaking out of paying cab fares; and ‘working’ his friends shamelessly for whatever he can get out of them.”],
+  [Yet, for all his snobbery, Wilde still found a noble quality among the Westerners, observing, “The West has kept itself free and independent, while the East has been caught and spoiled with many of the flirting follies of Europe.”],
+  [By the time he left New York City for home, Wilde had traveled some 15,000 miles through 30 of the 38 United States, leaving in his wake more than 500 major newspaper features and countless Westerners scratching their heads at what they had seen and/or heard. His fame briefly surpassed that of Buffalo Bill, at least until Cody started his Wild West show the next year. Nine years after returning home Wilde finally attained the literary notoriety he’d craved with publication of his novel The Picture of Dorian Gray .],
+  [Unlike other city slickers who visited the American West, Wilde conned more folks than outwitted him, and he left with more money than he had yet earned. Despite the Irish peacock’s biting condescension, his annoying arrogance and his numerous faults—or perhaps because of them—Wilde could claim the title of the Wild West’s all-time slickest dude.],
+  [This article originally appeared in the Spring 2024 issue of Wild West magazine. For further reading, author Preston Lewis recommends Wilde in America: Oscar Wilde and the Invention of Modern Celebrity , by David M. Friedman; Oscar Wilde Discovers America (1882) , by Lloyd Lewis and Henry Justin Smith; and Oscar Wilde , by Richard Ellmann.],
+),
+  insert-map: (:),
+  word-count: 3102,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+}
+
+{
+  #standard-article(
+  title: [From ‘Project Hail Mary’ to Artemis II, spaceflight captures audiences when it centers on people because human space travel is hazardous],
+  author: [Scott Solomon, Teaching Professor of BioSciences, Rice University],
   source-name: [The Conversation US],
   images: (),
   paragraphs: (
-  [Boat strikes can harm or kill whales and are one concern about the oil industry's environmental impact. Robyn Beck/AFP via Getty Images],
-  [There’s a well-worn debate in U. S. politics that goes something like this: Would you rather have abundant and affordable energy or a clean, healthy planet where wildlife can flourish?],
-  [It sounds like an either/or choice, but it doesn’t have to be.],
-  [Many corporate leaders, including those I’ve worked with, know that wildlife conservation can also be good business.],
-  [That’s worth remembering as the Trump administration prepares to convene, for the first time in over 30 years, a special committee known as the “God Squad” that has the power to override one of the nation’s most important environmental protection laws: the Endangered Species Act of 1973 .],
-  [What is the God Squad?],
-  [The Endangered Species Act requires that federal agencies avoid any action that is likely to jeopardize the continued existence of any species listed under the act. That includes federal permits for development, mining, drilling or logging.],
-  [To comply with the law, companies can be required to take actions to avoid harming protected species. Those steps can be frustrating when they add delays and costs to already costly development projects.],
-  [Early in the law’s history, Congress amended it to include an exemption . It authorized the creation of the Endangered Species Act Committee, made up of federal agency leaders, which could grant exemptions to this prohibition on federal actions considered likely to risk extinction of a listed species.],
-  [In one of only three meetings over 50 years, the God Squad in the 1990s considered a request to exempt the northern spotted owl in parts of Oregon targeted for logging. The request was eventually withdrawn. 
- Polinova via Wikimedia Commons , CC BY],
-  [That committee – the God Squad – includes seven members, and a vote may succeed only if five or more committee members agree. The six permanent members are the secretaries of the interior, agriculture and Army; the chairman of the Council of Economic Advisors, and the administrators of the Environmental Protection Agency and National Oceanic and Atmospheric Administration. The seventh member of the committee is a designated individual from the affected state or states.],
-  [The committee’s rare actions in the past],
-  [Meetings of the God Squad are so rare that the committee has gathered only three times in its existence.],
-  [The committee’s authority is limited to very uncommon circumstances in which there are no “ reasonable and prudent alternatives ” that would avoid jeopardizing a listed species or impair a species’ critical habitat.],
-  [The committee’s first and most notable case was in 1979. It involved the snail darter , a tiny, then-endangered fish whose habitat would have been harmed by the proposed Tellico Dam in Tennessee. Around the same time, the committee also met to review an exemption application related to water management at the Grayrocks Dam in Wyoming and its effects on endangered whooping cranes downstream in Nebraska.],
-  [The Tennessee Valley Authority’s Tellico Dam, where the God Squad rejected a request for an exemption to the Endangered Species Act in 1979, was eventually completed after authorization from Congress. 
- U. S. Fish and Wildlife Service/Flickr],
-  [The third meeting of the committee was in the 1990s, when it considered exempting from the Endangered Species Act multiple timber sales in Oregon and Washington that would likely jeopardize the northern spotted owl .],
-  [For Tellico Dam, the committee denied the exception , but Congress later cleared the way for the dam to be completed. For Grayrocks Dam, the committee granted an exemption but required the Missouri Basin Power Project to preserve habitat and manage water to reduce harm to the cranes.],
-  [In the case of the northern spotted owl, exemptions were initially granted for timber sales in Oregon but later withdrawn due to legal challenges and procedural violations. No such exemptions were authorized in Washington state.],
-  [Why is it convening now?],
-  [The official notice says the meeting is “regarding an exemption under the Endangered Species Act” with respect to oil and gas activities.],
-  [In a court document responding to a lawsuit filed over the meeting by the environmental group Center for Biological Diversity , the government wrote that the March 31 meeting was called because the “Secretary of War found it necessary for reasons of national security to exempt from the ESA’s requirements all Gulf of America oil and gas exploration and development activities” associated with the Outer Continental Shelf Oil and Gas Program.],
-  [That likely refers to a May 2025 biological opinion by NOAA Fisheries . That opinion found that oil industry operations, particularly vessels striking wildlife, could jeopardize the Rice’s whale and other rare species.],
-  [The committee could be considering exemptions to the requirements of that biological opinion, which is being challenged by both conservation groups that want more protections and by industries that consider it too restrictive.],
-  [Convening the committee also follows the mandate of President Donald Trump’s January 2025 executive order declaring a “national energy emergency .” That executive order directs the Endangered Species Act Committee to “identify obstacles to domestic energy infrastructure specifically deriving from implementation of the ESA.”],
-  [Changing the paradigm],
-  [While the common rhetoric often makes it seem like energy and environmental goals are at odds, examples among leading energy and transportation companies have shown otherwise.],
-  [At the University of Illinois Chicago’s Energy Resources Center , my colleagues and I find ways conservationists and energy companies can work together, such as through networks like the Rights-of-Way as Habitat Working Group , which focuses on habitat conservation in working landscapes.],
-  [Balancing ecological and economic interests is not just a “nice idea” – it’s shown to be good business .],
-  [Planning new projects in ways that avoid harm to wildlife and include proactive conservation plans can avoid lawsuits, permit delays, reputational risks and increased costs.],
-  [Companies we work with in the energy and infrastructure sectors are finding that integrating ecological principles into projects and conservation practices into operations avoids other business interruptions as well.],
-  [For example, maintaining green spaces as wildlife habitat can buffer infrastructure from severe weather , erosion or flooding. Restoring or improving habitats can also reduce legal risks from environmental damage.],
-  [Maintaining natural areas on corporate lands can boost species considered at risk, like the monarch butterfly. This is land maintained near a military base. 
- U. S. Space Force photo by Master Sgt. Carlin Leslie],
-  [Programs like the University of Illinois Chicago’s nationwide agreements for monarch butterflies and bumblebees help companies reduce regulatory delays and help conserve endangered and declining species at the same time.],
-  [For businesses, this can create positive connections with their employees and the communities where they operate. This, in turn, improves their reputations, which can help reduce project delays and encourage investment.],
-  [What happens when the Endangered Species Act Committee convenes may influence more than the future of a few species. It could affect broader actions concerning environmental stewardship, corporate responsibility and federal oversight.],
-  [If the committee focuses solely on removing protections for wildlife, it risks eroding public trust and could hinder efforts to foster conservation in the energy industry. If instead the committee considers how to increase cooperation among industry, conservation groups and federal agencies, it could have a lasting positive outcome.],
-  [class="fine-print"\> Dan Salas does not work for, consult, own shares in or receive funding from any company or organization that would benefit from this article, and has disclosed no relevant affiliations beyond their academic appointment.],
+  [The Artemis II crew poses during a ground systems test ahead of launch. NASA/Frank Michaux],
+  [The central premise of the blockbuster film “ Project Hail Mary ” is a long-shot mission with a familiar goal: Save humanity from extinction. While the details of the threat facing humanity are new to this story, moviegoers are used to bingeing on popcorn while watching a heroic quest to save the Earth from certain doom. And like so many popular movies of this genre, from “ Armageddon ” to “ Interstellar ,” the hero’s journey involves a seemingly impossible mission into space.],
+  [The film’s release is well timed for the new era of space exploration. NASA’s Artemis II mission, scheduled to launch in early April , will send four astronauts around the Moon on a path that will take them deeper into space than any humans have ever traveled.],
+  [NASA’s Space Launch System rocket stands ready at the launchpad ahead of the Artemis II launch, planned for early April. 
+ Gregg Newton/AFP via Getty Images],
+  [The flyby mission is primarily about testing equipment for a lunar landing in 2028. But the broader plan was outlined in detail in March 2026 by NASA officials : to establish a permanent base on the Moon.],
+  [NASA is not alone in its lunar ambitions. Private space companies SpaceX and Blue Origin are developing next-generation spacecraft, rovers and drones to facilitate the American Moon base. And other nations, notably China, are working toward their own lunar outposts .],
+  [These nations and corporations see the Moon as a stepping stone toward more ambitious goals: a major human migration into deep space, including Mars .],
+  [Given the moment, it’s worth reflecting on what those investing billions in human space exploration, whether tax dollars or private funds, are trying to accomplish. As a biologist , I recognize the limitations of humans as space explorers. As I explain in my book, “ Becoming Martian: How Living in Space Will Change Our Bodies and Minds ,” while biologists have learned a lot about how the conditions of space affect the human body and mind, sending people on longer missions deeper into space will expose people to unknown health risks.],
+  [Boldly going],
+  [Plans to send people to the Moon and beyond are accelerating. NASA’s new administrator , Jared Isaacman , has argued that beating China to the Moon is a matter of national security, calling the Moon “ the ultimate high ground .” He has also promoted the economic benefits of establishing a space economy that includes mining and manufacturing on the Moon .],
+  [NASA’s Artemis program seeks to establish a long-term human presence on the lunar surface. 
+ NASA TV],
+  [Subcommittees in both the House and Senate have passed bills to codify these initiatives into law – making the goal of creating a permanent base on the Moon official U. S. policy. They appear to have bipartisan support, and votes in both houses of Congress are expected soon.],
+  [The United States and China are targeting landing humans on Mars in the 2030s, with the intention of building infrastructure that enables long-term habitation.],
+  [In March 2026, NASA also announced that the agency intends to test nuclear propulsion during an uncrewed flight to Mars in 2028. Nuclear-powered rockets have the potential to substantially reduce the time it takes to reach Mars, which would make crewed flight to the red planet more feasible.],
+  [Humans or robots?],
+  [But why do people need to go to Mars? As with the Moon, the purported motivations for both the U. S. and China establishing a human presence on Mars are scientific, economic and geopolitical. Yet these are distinct objectives that are often conflated.],
+  [In terms of science, NASA has had dramatic success with its Mars rovers , including the discovery last year of a potential biosignature that could be the best evidence yet that the planet was once home to microbial life.],
+  [Robotic missions also have a lower price tag and a higher acceptable risk margin than human missions. While Isaacman remains publicly committed to the Artemis program and its human spaceflight goals, the agency’s plan also includes a suite of robotic missions to the Moon’s surface it hopes to develop in partnership with companies, universities and international partners.],
+  [Likewise, some economic objectives, such as establishing mining and manufacturing facilities, could be accomplished using AI-equipped robots, such as those Tesla is developing . Robots are a long way from being able to accomplish the full range of tasks that a human can do, but prioritizing robotic activities could lower the exposure that people have to the hazards of space.],
+  [If having people on the Moon and Mars is indeed necessary to achieve these objectives, let’s be clear about the risks that the people undertaking these missions will be assuming.],
+  [Space and the human body],
+  [While scientists have learned a lot about how space affects the body during the six decades of human spaceflight, there are still significant blind spots . Among them are the effects of deep-space radiation .],
+  [Astronauts need to exercise every day on the International Space Station to keep their muscles and bones strong, yet their bodies are still affected in various ways by the conditions of space.],
+  [The 24 Apollo astronauts who traveled to the Moon are the only people who have ever been past the Van Allen radiation belts , an area of space surrounding our planet formed by Earth’s magnetic field .],
+  [By trapping radiation from the Sun and from deep space, our planet’s magnetic field is part of what makes Earth habitable for us and other life forms. The Moon and Mars lack magnetic fields, so radiation levels on their surfaces are substantial. NASA researchers are now conducting experiments on rodents using simulated galactic cosmic rays, which are largely blocked by Earth’s magnetic fields. Preliminary results suggest that this type of radiation may impair cognitive abilities , but the actual effects on people are unknown.],
+  [Similarly, while medical researchers know that floating in a zero-g environment causes muscle atrophy and bone density loss during long stays on the International Space Station, they know relatively little about how partial gravity affects muscles and bones. The Moon has one-sixth the gravity of Earth, and Mars has a little over one-third .],
+  [Pilots on Earth can simulate partial gravity for up to 30 seconds at a time during parabolic flights , but only the 12 Apollo astronauts who walked on the Moon have ever experienced it for longer than that. The longest they stayed was about three days . Scientists can only speculate about whether prolonged exposure to the partial gravity of the Moon or Mars would have consequential health effects.],
+  [Human interest],
+  [Sending robots to space avoids having to deal with risks to human health. But there are downsides. Not only do robotic space missions have fewer capabilities than crewed missions , they often fail to capture interest and imagination and demonstrate national prestige in the same way that human missions can.],
+  [The four members of the Artemis crew will captivate people worldwide watching their daring mission around the Moon , much like moviegoers root for Ryan Gosling’s character in “Project Hail Mary” as he boldly seeks to save humanity from certain doom on the big screen.],
+  [That human interest is the common link that ties together public and private space ambitions worldwide. While robotic missions are more practical and cost effective, they simply don’t inspire the masses the way a human crew can. Beyond achieving any economic, political or scientific goals, space exploration is ultimately about people doing difficult things .],
 ),
   insert-map: (:),
-  word-count: 1238,
+  word-count: 1276,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+}
+
+{
+  #standard-article(
+  title: [Irrational decision or helpful evolutionary adaptation? A philosopher on the rationality wars behind ‘nudge’ policy],
+  author: [Alejandro Hortal-Sánchez, Visiting Assistant Professor of Philosophy, Wake Forest University; University of North Carolina – Greensboro],
+  source-name: [The Conversation US],
+  images: (),
+  paragraphs: (
+  [A classic example of a nudge is making the healthy choices easier to grab in a cafeteria. Maskot via Getty Images],
+  [Twelve-year-old Jaysen Carr died in July 2025. While he swam in Lake Murray, a reservoir a few miles from Columbia, South Carolina, Naegleria fowleri – a rare amoeba found in warm fresh water – entered through his nose, causing a rapidly fatal brain infection .],
+  [Each year in the United States, drowning causes roughly 4,500 deaths , while infections from brain-eating amoebas typically number only two or three . Yet the vividness of these rare deaths powerfully shapes how people perceive and respond to risk . After a 2025 amoeba-related death made headlines in Iowa, for example, open-water swimmers began questioning whether lakes were safe , even as health officials emphasized how rare such infections remain.],
+  [Is it irrational to avoid swimming in lakes on hot summer days? How rational is it to fear flying ? How many people worry about contaminants in their drinking water yet never think twice about skipping sunscreen, despite skin cancer being the most common, and largely preventable, cancer in the United States?],
+  [These reactions raise a deeper question: What does it mean to call a response “rational” or “irrational”? These are the kinds of ideas I explore in my research on behavioral public policy . How do the assumptions scientists make about human rationality shape the tools governments use to improve social welfare?],
+  [When mistakes aren’t really mistakes],
+  [Behavioral economists, following Daniel Kahneman , emphasize how heuristics – the mental shortcuts or rules of thumb people use to make quick decisions – produce systematic biases or predictable errors in judgment. From this perspective, these biases born from shortcuts lead people to make choices that do not serve their own interests or stated preferences.],
+  [Evolutionary psychologists such as Gerd Gigerenzer instead see those same shortcuts as adaptive responses to uncertainty . Rather than errors, they’re efficient strategies shaped by the environments in which human reasoning actually evolved.],
+  [These two perspectives are in disagreement about what counts as rational – and why that matters for policy.],
+  [How a care team frames the risks of a procedure affects a patient’s choice. 
+ Halfpoint Images/Moment via Getty Images],
+  [Consider a few familiar examples. Frame the same medical procedure as having a 90% survival rate rather than a 10% mortality rate and patients respond very differently . Set one option as the default – whether in organ donation, retirement savings or privacy settings – and most people stick with it simply because opting out takes effort.],
+  [From a behavioral economics perspective, these are clear cases of bias: judgments shaped by framing, whatever feels most vivid, or inertia rather than careful deliberation.],
+  [From an evolutionary perspective, however, the picture changes. In complex environments with limited time, information and attention, relying on defaults or whatever feels most vivid or familiar can be an efficient way to decide without becoming overwhelmed. What looks like a mistake when judged against idealized models of rational choice may instead be a sensible response to real-world uncertainty.],
+  [This perspective helps explain why small changes in choice environments – nudges such as placing salad bars directly in cafeteria serving lines or listing vegetarian options first on menus – can significantly shift behavior without forcing anyone to choose differently. In other words, nudges work precisely because they align with, not fight against, the shortcuts people already use, making the desired behavior the path of least resistance.],
+  [Behavioral economists defend nudges as tools for correcting cognitive biases. Gigerenzer criticizes them as ethically problematic and argues that public policy should emphasize education over subtle choice manipulation.],
+  [Should policy correct or educate? This divide, called the “ rationality wars ,” reflects a deeper disagreement about human rationality itself .],
+  [If human rationality is seen as deeply flawed, nudges appear attractive because they make better decisions easier without demanding reflection.],
+  [If, instead, rationality is viewed as adaptive and teachable, policy should focus on strengthening people’s capacity to learn, adapt and decide for themselves.],
+  [Rationality isn’t just one thing],
+  [From bestselling books such as behavioral economist Dan Ariely ’s “ Predictably Irrational ” to the worldwide expansion of behavioral “ nudge” units in government, many contemporary developments suggest that people are poor decision-makers. Struggles with retirement savings, health, weight loss and environmental protection seem to confirm that view.],
+  [And yet, as a species, humans have been extraordinarily successful – adapting to diverse environments, building complex societies and accumulating knowledge across generations.],
+  [My claim is that this apparent contradiction dissolves once you recognize that rationality is not a single thing. Human beings can be both rational and irrational, depending on the scientific lens in use. From a behavioral economics perspective, many decisions appear biased and suboptimal. From an ecological or evolutionary perspective, those same decisions can look adaptive, efficient and sensible given the environments in which they are made.],
+  [At this point, the disagreement is not merely empirical but conceptual. People often assume that “rationality” names a single property of human behavior, when in fact its meaning depends on the scientific framework being applied.],
+  [Consider love. In neuroscience , love appears as patterns of brain activity and hormones. In psychology , it is studied through attachment and emotion. In sociology , it takes the form of social bonds and norms.],
+  [None of these accounts is wrong – but none captures love in full. I suggest rationality works in much the same way.],
+  [As with love, the lens you use to look at rationality may give you only part of the big picture. 
+ Alina Rudya/Bell Collective/DigitalVision via Getty Images],
+  [Multiple ways to consider a complex whole],
+  [The danger arises when one perspective is treated as the whole story. Reducing love entirely to brain chemistry, or rationality entirely to cognitive biases, treats a partial explanation as a complete one. Scientific disciplines illuminate different aspects of complex phenomena, but none has a monopoly on their meaning.],
+  [Forgetting this carries a cost: We risk drawing overly narrow conclusions – about human behavior, intelligence or public policy – by mistaking the limits of a single framework for the limits of human rationality itself.],
+  [Seen this way, fear of rare brain-eating amoebas, of flying, or of tap water is not simply a failure of reason. Such reactions may appear irrational under one standard yet reflect a form of rationality adapted to uncertainty, vivid impressions and limited information.],
+  [What ultimately matters is not labeling people as rational or irrational, but being explicit about which conception of rationality is at work – and why. That choice, in turn, shapes whether public policy aims to nudge behavior, educate citizens or redesign environments so that human reasoning can operate at its best.],
+  [class="fine-print"\> Alejandro Hortal-Sánchez does not work for, consult, own shares in or receive funding from any company or organization that would benefit from this article, and has disclosed no relevant affiliations beyond their academic appointment.],
+),
+  insert-map: (:),
+  word-count: 1153,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+}
+
+{
+  #standard-article(
+  title: [Every One Still Here],
+  author: [Aea Varfis-van Warmelo],
+  source-name: [Granta],
+  images: (),
+  paragraphs: (
+  [He is on his way to the psychic who works on Bloomfield Avenue. He’s booked an appointment with them on the recommendation of a neighbour, the one who child-minds in her adjacent one-bed flat.],
+  [The neighbour sees him one day on the stairs and the way she looks at him, he has to say, How’s it going, and she says, Well, you know the way I’ve never taken a shower my whole life, the thing makes me shake and cry and throw up, and it’s difficult, you understand, life-limiting, in fact, to always need access to a bath, to bathe, well, this psychic’s after telling me that it’s not my fault at all, it’s my mother, my mother used to put us in a cold shower as a punishment when we done wrong, not that we even really done any wrong, you understand, she was a headcase and she was horrible and I’m glad that she’s dead.],
+  [He says, The psychic knew? And the neighbour says: Once it was said, then that second, I mean, that very second, I remembered, I knew it was right. She did, she used to put us in the cold shower and we’d be screaming, and it winter, and she fucking did it, the fucker.],
+  [Who’s the psychic? he says. And she looks at him, wondering if he is taking the piss. They’ve never spoken before, except to say: How’s things, and: Grand, grand. He sees her on the stairs, scrapping with various children. They’re on Bloomfield Avenue, she says. That’s them there.],
+  [It’s a small set-up above a hardware store with brooms and plastic flower baskets set out on the pavement. He presses the buzzer, climbs the narrow carpeted stairs, sits on one of the three office chairs set out as a waiting-room, takes a cupful of plastic water from the dispenser. There’s an old smell of incense, and the click of an intermittent automated air freshener, and the pale sound of harp music playing through a Bluetooth speaker and cars passing, spitting old rain up from puddles. There’re posters on the walls about healing circles and meditation and sacred sessions, the discreet promise of ayahuasca, of drugs. He’s worried about seeing someone he knows, about being embarrassed, but he finds the emptiness distressing, too; here he is, he thinks, the only fucker stupid enough to be here.],
+  [The psychic says, What brings you to me?],
+  [He says, Aren’t you supposed to know?],
+  [The psychic says: Everyone, no word of a lie, every single person says that. You’ve, none of youse, you’ve no concept of how this works.],
+  [They look at each other. What’s your name? he says. Ursa, the psychic says.],
+  [Is that your real name? he says.],
+  [I don’t think that’s polite, says the psychic. He hears the click of the air-freshener. There’s also no good answer. A real name, you mean, did I choose it or did someone choose it for me? Why should you care either way? What difference could it make to you?],
+  [I don’t know how this works, he says.],
+  [No, says the psychic. Fuck me, I can see that much. How does it work? he says, eventually.],
+  [It depends. It depends on the person. It depends how open they are, how clear they are on what they want. You, I don’t think you’re clear at all. You don’t—I mean, there’s people come in and they’ve one clear question. Do I marry him? Is she going to live? Even bigger questions, you know, what should I do? It’s big and it’s vague but it’s one thing, it’s one query. You, I mean, you don’t have one question, you have thousands. You’re—the way you are, everything’s a question.],
+  [Yeah, he says.],
+  [That wasn’t a question, said the psychic. I wasn’t asking you. I can see it. Listen, you can’t play Where’s Wally if you don’t know what Wally looks like. The psychic sighs. But we can try have a look around, see what we see. We might find eventually you go, O my days, there he is. I knew him once. That guy’s Wally.],
+  [You don’t need to dumb it down, he says.],
+  [The psychic flicks their eyes to the ceiling. Listen, says the psychic, we’re only after meeting. Let’s not expect too much. I want you to tell me one thing. I want you to think of—it’s not nice, this, but we all feel guilty about something, okay, and we all have some image that makes us wince, that stings, you know, I mean I know there’s an image in your head as I’m saying this now. And I want you to share that with me.],
+  [He is surprised by the panic he feels, the sharpness in his throat. I don’t want to, he wants to say, but he can’t. He says, I thought you were going to tell me things, I didn’t know I’d have to tell you.],
+  [Yeah, says the psychic. I said it, youse all do it, youse come in with no concept of how this works. Look, you were thinking of something there. Just say it. You’ll feel better if you do.],
+  [And it’s true that the word GUILT did bring to him an image. He has a sister, he is thinking.],
+  [He looks behind the psychic, at the painted wall.],
+  [He has a sister and he hates watching her brush her hair. However she does it, she creates more tats with every stroke. She keeps her hair long, very long, long enough that people make assumptions about her, about its purpose or meaning, and the way she brushes it, she makes it knot and tangle in other places, creates these huge tats of mess, and it’s frustrating, infuriating to watch her, to watch it get worse, and he feels, sometimes, that she’s done this all through her life, all of it, making it painful, making it difficult, making it hurt.],
+  [You never offered to brush it for her, says the psychic.],
+  [It startles him. She would never have let me, he says. I was her brother, it would be weird, it would be, I couldn’t’ve done that.],
+  [Still, says the psychic, you wish you’d helped.],
+  [There’s an electric heater in the corner, and a bucket to catch water dripping through the ceiling tiles. I don’t know what you’re talking about, he says.],
+  [This is going to take a while, says the psychic. And, let’s be honest, pal, you need this. I’m only going to charge you for every second session. There’s a calendar out in the hall, just write your first name down for whenever suits you next. I’m away to Edinburgh for a long weekend in two weeks’ time, but you’ll know yourself, just don’t be putting your name on the days with an X through.],
+  [Right, he says. He stands to go. Cheers, he says to the psychic. Thanks.],
+  [Liadan Ní Chuinn is shortlisted for the Sunday Times Charlotte Aitken Young Writer of the Year Award . The winner will be announced on Tuesday 24th March, 2026.],
+  [Image © laura adai],
+  [The post Every One Still Here appeared first on Granta .],
+),
+  insert-map: (:),
+  word-count: 1191,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+}
+
+{
+  #standard-article(
+  title: [Vagus nerve stimulation shows promise as a way to counter Alzheimer’s disease- and age-related memory loss],
+  author: [Elizabeth Riley, Lecturer in Psychology, Cornell University],
+  source-name: [The Conversation US],
+  images: (),
+  paragraphs: (
+  [The vagus nerve, which carries information between the brain and heart, lungs and other organs, might regulate the activity of a tiny brain region called the locus coeruleus. Sebastian Kaulitzki/Science Photo Library via Getty Images],
+  [Most people think of Alzheimer’s disease as an illness of aging. But in fact, the brain changes that characterize it begin much earlier – sometime around the third decade of life.],
+  [In the earliest of these changes, a tangled version of a protein called tau starts building up in a tiny region deep in the brain involved in sleep, attention and alertness, called the locus coeruleus . Tau later spreads to the rest of the brain.],
+  [Developing tau tangles doesn’t mean a person has Alzheimer’s disease – in fact, it happens to nearly everyone to varying degrees. But because these changes start in the locus coeruleus, some brain researchers – myself included – see this area as a canary in the coal mine for developing Alzheimer’s disease.],
+  [We are exploring whether stopping or slowing down tau tangles in this brain region, or otherwise maintaining its health, may be a way to interrupt how the disease ultimately unfolds and to prevent other aspects of cognitive aging.],
+  [Emerging research from my lab and others is investigating the idea that a therapy called vagus nerve stimulation , which is already widely used for other health conditions, could be one way of keeping the locus coeruleus functioning properly.],
+  [The locus coeruleus and Alzheimer’s disease],
+  [The locus coeruleus sits in the brain stem, the lowest part of the brain. Its name, “blue spot,” comes from a pigment called neuromelanin that its cells produce.],
+  [The locus coeruleus plays a crucial role in multiple aspects of basic human functioning . It makes virtually all of the brain’s norepinephrine, a chemical critical for sleep , alertness , focus , learning and even immune function . And it receives inputs from nerves originating throughout the brain and body – including from the vagus nerve , which carries information to and from the heart, lungs and other organs.],
+  [My research explores this brain region’s structure , how nerve cells pass messages within it and how it connects with other brain regions . I also investigate how those features change throughout life and affect thinking and memory.],
+  [Alzheimer’s disease destroys memory and thinking skills, but researchers don’t yet understand how or why.],
+  [Studies suggest that starting in middle age, nerve cells in the locus coeruleus may get damaged by tau buildup , and that damage may correlate with declines in memory . Tau buildup, cell death and loss of function in the locus coeruleus precedes and predicts Alzheimer’s diagnosis and symptoms .],
+  [This has led researchers to hypothesize that keeping the locus coeruleus healthy could be a way to protect the rest of the brain, too.],
+  [Vagus nerve stimulation and brain health],
+  [The vagus nerve carries information between the brain and organs in the chest and abdomen, such as the heart and intestines, helping the brain monitor and regulate many of the body’s essential organs. It is responsible for sending rest and digest messages throughout the brain and body, stimulating digestion and promoting cellular repair.],
+  [In the 1980s and 1990s, researchers discovered that stimulating the vagus nerve can help ease epilepsy . They also found that doing so often also had other benefits , such as improving mood and thinking .],
+  [Today, vagus nerve stimulation is approved by the Food and Drug Administration not just for treating epilepsy , but also for migraine and depression , as well as to aid with stroke rehabilitation .],
+  [Vagus nerve stimulation for epilepsy and depression generally involves implanting an electrical stimulator in the left side of a patient’s chest, where the vagus nerve passes. Noninvasive devices for treating headaches deliver gentle pulses of electricity to certain places on the neck or ear where the vagus nerve is very close to the surface of the skin.],
+  [Even before the discovery of locus coeruleus’s link to Alzheimer’s disease, researchers hypothesized that vagus nerve stimulation might help mood and thinking in people with the condition. That’s because vagus nerve stimulation might work in part by raising brain levels of norepinephrine – and people with Alzheimer’s have too little norepinephrine in their brains .],
+  [Keeping the pace],
+  [Neuroscientists still don’t know exactly how or why vagus nerve stimulation might be beneficial for the brain, but one leading theory is that it helps regulate the activity of nerve cells in the locus coeruleus, enabling it to function properly.],
+  [Too much locus coeruleus activity could potentially make people too alert, causing them to feel stressed or even panicked. In fact, a hyperactive locus coeruleus fuels some symptoms of post-traumatic stress disorder . Conversely, too little could cause depression or memory problems.],
+  [The locus coeruleus, which means ‘blue spot,’ is located in the brain stem, the lowest part of the brain. 
+ Elizabeth Riley , CC BY-SA],
+  [Some forms of vagus nerve stimulation neither turn up nor turn down locus coeruleus activity. Instead, they seem to affect the timing and pace of firing in its neurons . Other forms of vagus nerve stimulation seem to increase norepinephrine in the brains of rats , and researchers hypothesize that this may also be how vagus nerve stimulation treats epilepsy .],
+  [These different findings have led researchers to suggest that vagus nerve stimulation could act as an effective regulator for the locus coeruleus, enabling it to establish just the right level of activity for optimal functioning.],
+  [Can vagus nerve stimulation counter memory loss?],
+  [Intriguing hints are emerging that vagus nerve stimulation may help the aging brain.],
+  [A handful of studies have found that vagus nerve stimulation can prevent memory from worsening , or even improve it, in people with mild cognitive impairment or in the early stages of Alzheimer’s disease. One trial of 52 people ages 55 to 75 who were diagnosed with mild cognitive impairment reported meaningful improvements in memory and overall cognition after getting vagus nerve stimulation for an hour per day, five days a week for about six months.],
+  [Research in healthy adults around age 60 – and in healthy adults age 18 to 25 – has even reported improvements in different aspects of memory after just one session of vagus nerve stimulation.],
+  [This work is still very preliminary, but it offers hope for a new way of keeping some of the distressing symptoms of Alzheimer’s disease and aging at bay.],
+),
+  insert-map: (:),
+  word-count: 1085,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+}
+
+{
+  #standard-article(
+  title: [Cameras have quietly appeared in thousands of US cities – now, their integration with AI is sounding alarms],
+  author: [Jess Reia, Assistant Professor of Data Science, University of Virginia],
+  source-name: [The Conversation US],
+  images: (),
+  paragraphs: (
+  [A small, black license plate recognition camera is mounted on a light pole in Boulder, Colo. Matthew Jonas/MediaNews Group/Boulder Daily Camera via Getty Images],
+  [For decades, cars dictated urban planning in the United States .],
+  [Few could have predicted that they would one day also double as nodes for surveillance.],
+  [In thousands of towns and cities across the U. S., automatic license plate readers have been installed at major intersections, bridges and highway off-ramps.],
+  [These camera-based systems capture the license plate data of passing vehicles, along with images of the vehicle and time stamps. More recently, these systems are using artificial intelligence to create a vast, searchable database that can be integrated with other law enforcement data repositories.],
+  [As a scholar of technology policy and data governance , I see the expansion of automatic license plate readers as a source of deep concern. It’s happening as government authorities are seeking ways to target immigrant and transgender communities , are already using AI to monitor protests , and are considering deploying AI systems for mass surveillance .],
+  [Eyes on the road],
+  [Using cameras to track license plates dates to the 1970s, when the U. K. was embroiled in a long-simmering conflict with the Irish Republican Army.],
+  [The Met, London’s police force, developed a system that used closed-circuit television cameras to monitor and record the license plates of vehicles entering and exiting major roads.],
+  [The system and its successors were seen as useful crime fighting tools. Over the next two decades, they expanded to other cities in the U. K. and around the world. In 1998, U. S. Customs and Border Protection implemented this technology . By the 21st century, it had started appearing in cities across the U. S.],
+  [There are different ways for a jurisdiction to implement these systems, but local governments usually sign contracts with private companies that provide the hardware and service.],
+  [These companies often entice authorities with free trials of surveillance equipment and promises of free access to their data in ways that bypass local oversight laws.],
+  [AI thrown into the mix],
+  [Recently, AI has been incorporated into these camera systems, significantly increasing their reach .],
+  [The vehicle information that’s captured is typically stored in the cloud, creating a massive web of data repositories. If a camera collects information from a suspect’s car or truck – say, one also listed in the National Crime Information Center – AI can flag it and send an instant alert to local law enforcement.],
+  [In fact, that’s a selling point of Flock Safety , one of the biggest providers of automatic license plate readers. The company uses infrared cameras to capture images of vehicles. AI then analyzes the data to identify subjects and quickly alert local authorities.],
+  [On the surface, automatic license plate readers seem like a logical way to fight crime. More information about the whereabouts of suspects can potentially help law enforcement. And why worry about cameras if you’re following the law?],
+  [A spokesperson for Flock told The Conversation that their technology has helped reduce crime, including violent crime, in cities that use their cameras, such as San Francisco and Oakland.],
+  [But there are few peer-reviewed studies on their effectiveness. Those that exist find little evidence that they’ve led to reductions in violent crime rates , though they seem to be helpful in solving some crimes , like car thefts.],
+  [Furthermore, installation and maintenance are costly.],
+  [For example, Johnson City, Tennessee, signed a 10-year, US\$8 million contract with Flock in 2025. Richmond, Virginia, paid over \$1 million to the company between October 2024 and November 2025 and recently extended its contract, despite opposition from some residents.],
+  [A Houston resident photographs a Flock license plate reader in his neighborhood in October 2025. 
+ AP Photo/David Goldman],
+  [Erosion of civil liberties in plain sight],
+  [The technology seems to highlight the pitfalls of what scholars call “ technosolutionism ,” the belief that complex issues like crime, poverty and climate change can be solved by technology.],
+  [Even more disquieting, to me, is the fact that these camera systems have created a mass location tracking infrastructure knitted together by artificial intelligence.],
+  [The U. S. doesn’t have a federal law like the European Union’s General Data Protection Regulation that meaningfully limits the collection, retention, sale or sharing of location and mobility data.],
+  [As a result, data gathered through surveillance infrastructure in the U. S. can circulate with limited transparency or accountability.],
+  [License plate readers can easily be accessed or repurposed beyond their original goals of managing traffic, meting out fines or catching fugitives. All it takes is a shift in enforcement priorities – or a new definition of what counts as a crime – for the original purpose of these cameras to recede from view.],
+  [Civil liberties groups and digital rights organizations have been sounding the alarm about these cameras for over a decade.],
+  [In 2013, the American Civil Liberties Union published a report titled “You are Being Tracked: How License Plate Readers Are Being Used To Record Americans’ Movements.” And the Electronic Frontier Foundation has decried them as “ street-level surveillance .”],
+  [A counter-camera movement emerges],
+  [The promise of these cameras was simple: more data, less crime.],
+  [But what followed has been murkier: more data, and a significant expansion of power over the public.],
+  [Without robust legal safeguards, this data can possibly be used to target political opposition, facilitate discriminatory policing or chill constitutionally protected activities.],
+  [This has already happened during the current administration’s aggressive deportation efforts. Automatic license plate reader databases were shared with federal immigration agencies to monitor immigrant communities. Recently, Customs and Border Protection was granted access to over 80,000 Flock cameras , which have also been used to surveil protests .],
+  [Then there’s reproductive health care. After the Supreme Court overturned Roe v. Wade in 2022, there were fears that people traveling across state lines to get an abortion could potentially be identified through automatic license plate reader databases. In Texas, authorities accessed Flock’s surveillance data as part of an abortion investigation in 2025.],
+  [Flock told NPR in February 2026 that cities control how this information is shared: “Each Flock customer has sole authority over if, when, and with whom information is shared.” The company noted that it has made efforts to “strengthen sharing controls, oversight and audit capabilities within the system.” But NPR also reported that many city officials around the U. S. didn’t realize how widely the data was being shared.],
+  [In response, some states have sought to regulate the technology.],
+  [Washington state lawmakers are deliberating the Driver Privacy Act . The legislation would prohibit agencies from using the surveillance technology for immigration investigations and enforcement, and from collecting data around certain health care facilities. Protests would also be shielded from surveillance.],
+  [Meanwhile, grassroots initiatives such as DeFlock have also emerged.],
+  [DeFlock’s online platform documents the spread of automatic license plate reader networks in order to help communities resist their deployment . The movement frames these systems not merely as traffic technologies, but also as linchpins of an expanding government data dragnet – one that demands stronger democratic oversight and community consent.],
+  [This article has been updated to include a statement from Flock Safety.],
+),
+  insert-map: (:),
+  inline-pq: pull-quote([License plate readers can easily be accessed or repurposed beyond their original goals of managing traffic, meting out fines or catching fugitives.], [Jess Reia, Assistant Professor of Data Science, University of Virginia]),
+  inline-pq-idx: 16,
+  word-count: 1210,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+}
+
+{
+  #standard-article(
+  title: [Potato Gnocchi],
+  author: [Melissa Nolan],
+  source-name: [Budget Bytes],
+  images: (),
+  paragraphs: (
+  [Gnocchi is truly an art. It can seem intimidating at first, but with the right mindset and a little intuition, this Potato Gnocchi turns into a delicious dish. The actual recipe is just four simple ingredients that result in a breathtakingly delicate yet intricate meal. If you’ve shied away from making these potato-based dumplings in the past, let me walk you through it. The result is absolutely worth it—homemade soft pillowy gnocchi can not even compare to store-bought.],
+  [This potato gnocchi recipe starts with baked potatoes , soft and fluffy inside, the skins removed, gently mixed with salt and egg yolks. Then the flour gets added gradually until the dough feels soft, light, and just a bit tacky, but never sticky. You’ll have to use your instincts here to make sure you have the right texture. The fun part is next, where you roll the dough into ropes and cut them into perfect “knuckles” (that’s what gnocchi actually means!). Then I suggest you boil them, drain them, and sear those perfect pillows of gnocchi in butter.],
+  [Though there are different ways to make these pasta-like dumplings, whether you want to add ricotta, like in our easy ricotta gnocchi , or follow this method with egg yolks, you’ll find there are just as many ways to eat them as there are to prepare them. I am keeping it simple here with just a quick pan fry, but you can definitely dress them up with your favorite marinara sauce .],
+  [Bake the potatoes instead of boiling. Baking helps prevent the potatoes from absorbing excess water. If you do decide to boil them, start them in cold water and cook them whole and unpeeled to help reduce moisture absorption.],
+  [Make sure not to overwork the dough . I only kneaded it for a minute to help it come together and to see if any additional flour was needed.],
+  [Let the dough rest for ten minutes. This allows the flour to fully hydrate and the gluten to relax, making the dough easier to roll.],
+  [I stuck with traditional potato gnocchi . And added two egg yolks. Yolks provide binding without extra moisture and protein from the whites, which can make the dough tougher and lead to a chewier, less tender texture. I like to save my egg whites and add them to a frittata !],
+  [If you are going to sear the gnocchi in butter . Make sure to dry them off as much as possible. You can let them dry on paper towels or on a wire rack. This will help prevent them from sticking in the pan. Make sure to get the pan and butter nice and hot!],
+  [If you skip the searing . They can go right from the boiling water into the warmed pasta sauce of your choice.],
+  [Print 
+ Add to Collection Go to Collections],
+  [class="wprm-recipe-instruction-text" style="margin-bottom: 5px;"\> When they have cooled enough to handle but are still warm, peel the skin or scoop out the insides of the potatoes and place them in a bowl. I got 2½ cups of cooked potatoes. (You can season, oil, and air-fry the skins for a snack)],
+  [class="wprm-recipe-instruction-text" style="margin-bottom: 5px;"\>Add the remaining flour. Use your hands and continue to work it into the potatoes until they are no longer sticky or wet. Add a dusting of flour if needed. Be careful not to overwork.],
+  [class="wprm-recipe-instruction-text" style="margin-bottom: 5px;"\> Lightly dust your counter with flour and place the dough on the surface. Knead the dough for one minute, incorporating a dusting of flour if it is sticking.],
+  [class="wprm-recipe-instruction-text" style="margin-bottom: 5px;"\> Lightly flour your hands. Gently, but firmly, pinch each piece of gnocchi, then roll it on the back of a fork to create grooves. Continue until all they are all shaped, placing them on a floured tray.],
+  [class="wprm-recipe-instruction-text" style="margin-bottom: 5px;"\> Bring a medium pot of water to a boil. Once at a boil, gently place the gnocchi in the pot. Make sure not to overcrowd, and work in batches if needed. After 2 minutes, they will begin to float. Once they begin to float, they are cooked and should be removed promptly. Avoid overcooking them in the water because they will turn mushy. Using a slotted spoon, remove them and place them on paper towels to drain. Continue cooking until all the gnocchi are done.],
+  [class="wprm-recipe-instruction-text" style="margin-bottom: 5px;"\> Melt 1 Tbsp butter in a medium skillet over medium heat. Once melted and hot (the butter should be almost browning), place half the gnocchi in a single layer in the pan. Cook undisturbed for 3 minutes, until they are crispy and brown. Using tongs, flip, and continue cooking for another 3 minutes. Continue with the remaining tablespoon of butter and gnocchi.],
+  [See how we calculate recipe costs here .],
+  [class="wprm-recipe-notes"\> \* Russet potatoes are best for potato gnocchi because of their low moisture content. You could also use Yukon Gold, but avoid waxy potatoes like red bliss, fingerling potatoes, and new potatoes. Waxy potatoes tend to lead to a heavy, gluey texture.],
+  [\*\*There are numerous variables when it comes to the amount of flour you need. (Ex: How much moisture is in the potatoes? How big are the potatoes? How big are the egg yolks? How humid is the kitchen?) You will need to add a little bit of flour at a time to achieve the right texture. The dough should be soft, light, and slightly tacky, but not sticky.],
+  [class="wprm-nutrition-label-container wprm-nutrition-label-container-simple wprm-block-text-normal" style="text-align: left;"\> Serving: 1 serving (about 25 pieces) | Calories: 398 kcal | Carbohydrates: 65 g | Protein: 10 g | Fat: 11 g | Sodium: 853 mg | Fiber: 4 g],
+  [Gather and prepare all ingredients. Preheat the oven to 400°F.],
+  [Bake the potatoes : Pierce 1½ lb. russet potatoes (about 2 potatoes) with a fork and place them on a parchment-lined sheet tray. Bake for 1 hour until fork-tender.],
+  [Peel the potatoes: When the potatoes are cool enough to handle, but still warm, peel the skin or scoop out the insides and place them in a bowl. I got 2½ cups of cooked potatoes. (Save the skins—you can season, oil, and air-fry them for a snack.)],
+  [Mash the potatoes: Mash the potatoes while they’re still hot yet cool enough to handle. Using a ricer, potato masher, or fork, mash until smooth and no lumps remain. You want to create a fine, lump-free texture.],
+  [Add 2 egg yolks and 1 tsp of salt. Using a fork, combine.],
+  [Sprinkle in ½ cup of flour. Using the fork, mix the flour into the potatoes.],
+  [Form the dough : Add the remaining flour if you find the dough is too wet. Use your hands and continue to work the flour into the potatoes until they are no longer sticky or wet. Add a dusting of more flour if needed. Be careful not to overwork.],
+  [Lightly dust your counter so the dough doesn’t stick. Place the dough on the surface and knead for one minute, incorporating a dusting of flour if it is sticking.],
+  [Divide the potato dough into quarters and let it rest for 10 minutes. This allows the flour to fully hydrate and the gluten to relax, making the dough easier to roll.],
+  [Roll each dough quarter into a rope, about ½-inch to ¾-inch thick. Add more flour if the dough is sticking.],
+  [Using a butter knife or bench scraper, cut the ropes into ¾-inch pieces.],
+  [Lightly flour your hands and gently, but firmly, pinch each piece of gnocchi, then roll it on the back of a fork to create grooves. This allows the sauce, if you are using one, to cling to the finished pasta. You can, however, omit this step. Continue until all the dough is shaped, placing each piece on a floured tray.],
+  [Boil in a pan : Bring a medium pot of water to a boil. Once at a boil, gently place the gnocchi in the pot. Make sure not to overcrowd, and work in batches if necessary. After 2 minutes, they will begin to float. Once they begin to float, they are cooked and should be removed promptly. Avoid overcooking them in the water because they will turn mushy.],
+  [Using a slotted spoon, remove gnocchi from the water and place them on paper towels to drain. Continue cooking in batches until all are done.],
+  [Sear in a skillet: Melt 1 Tbsp butter in a medium skillet over medium heat. Once melted and hot, the butter should be almost browning. Place half the gnocchi in a single layer in the pan. Let them cook, undisturbed, for 3 minutes, until they are crispy and brown. Using tongs, flip, and continue cooking for another 3 minutes. Continue with the remaining tablespoon of butter and gnocchi.],
+  [Serve: Serve as is or enjoy with vodka sauce or kale pesto!],
+  [To start my meal, I usually make a Caesar salad . And, because these potato gnocchi require hands-on time, these Southern slow cooker green beans are ideal as a side, as they cook while I am busy preparing the pasta. Garlic bread also makes a nice side.],
+  [You can store leftover gnocchi in an airtight container in the refrigerator for up to 3 days. Sauté leftovers in butter to reheat.],
+  [You can also freeze uncooked gnocchi by flash-freezing them in a single layer on a tray before bagging them. Store up to 3 months. You can then boil the frozen, uncooked pasta straight from the freezer without thawing.],
+  [This Herb Potato Salad features tender baby potatoes, a light and zesty lemon-Dijon vinaigrette, and a healthy dose of fresh herbs.],
+  [These Twice Baked Potatoes are deconstructed and then reconstructed with bacon, sour cream, and cheese so each bite explodes with flavor.],
+  [German Potato Salad is my go-to when I’m craving potato salad but looking for something on the lighter side.],
+  [\$5.33 recipe \/ \$1.77 serving],
+  [\$4.56 recipe \/ \$0.76 serving],
+  [\$4.37 recipe \/ \$0.87 serving],
+  [\$4.62 recipe \/ \$1.15 serving],
+  [The post Potato Gnocchi appeared first on Budget Bytes .],
+),
+  insert-map: (:),
+  word-count: 2149,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -785,21 +647,27 @@ There's a ton written about Emma Rowena Gatewood but so much of it, including th
 #article-row((
   [
     standard-article(
-  title: [Episode 226: A Wild One],
+  title: [Nate's Favorite Episode of the Year: Emma and the Trail],
   author: [Nate DiMeo],
   source-name: [The Memory Palace],
   images: (),
   paragraphs: (
   [Order The Memory Palace book now, dear listener. On Bookshop.org , on Amazon.com , on Barnes & Noble , or directly from Random House . Or order the audiobook at places like Libro.fm .],
   [The Memory Palace is a proud member of Radiotopia from PRX. Radiotopia is a collective of independently owned and operated podcasts that’s a part of PRX, a not-for-profit public media company. If you’d like to directly support this show, you can make a donation at Radiotopia.fm/donate. I have recently launched a newsletter. You can subscribe to it at thememorypalacepodcast.substack.com .],
-  [Order Eliza McGraw's wonderful new book, Astride: Women, Horses and a Partnership that Changed America.],
-  [Music
-Hallogallo from Neu!, basically one of the best songs there is. 
-Notes
-There is a lot written about Bessie, including some wonderful children's books. The best thing I read about her was in Ann Farrar (a journalist and biker herself)'s book Hear Me Roar: Women, Motorcycles, and the Rapture of the Road.],
+  [Sincerely Yours by LLLL
+Across the Other Side by Infinite Scale
+Sunset by Resavoir
+Mammoth by Golden Brown
+Unassigned by Vernon Spring
+Swimming by Explosions in the Sky
+Pure (Ride the World) by The Brendan Eder Ensemble
+Le Tunnel by Sylvain Chauveau
+Floating Away by Lullatone],
+  [Notes
+There's a ton written about Emma Rowena Gatewood but so much of it, including this story, owes a huge debt to Ben Montgomery's book, Grandma Gatewood's Walk, which excavated the story of her life with her husband. Besides that, it is wonderfully written. Totally recommend it.],
 ),
   insert-map: (:),
-  word-count: 162,
+  word-count: 188,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -807,20 +675,24 @@ There is a lot written about Bessie, including some wonderful children's books. 
   ],
   [
     standard-article(
-  title: [Episode 86 (Finishing Hold)],
-  author: [The Memory Palace],
+  title: [Episode 233: Nan + Warren],
+  author: [Nate DiMeo],
   source-name: [The Memory Palace],
   images: (),
   paragraphs: (
-  [The Memory Palace is a proud member of Radiotopia from PRX.],
-  [Do you live in Toronto? Chicago? Milwaukee? Minneapolis? How about L. A.? Come see the Memory Palace live this May.],
-  [SPOILERS BELOW],
-  [A Selected Bibliography \* Dr. Sam: An American Tragedy by Jack Harrison Pollack \* Summer of Shadows: a Murder a Pennant Race and the Twilight of the Best Location in the Nation , by Jonathan Knight, a very readable popular history book that pulls off a maybe-ill-advised trick of balancing the story of the Sheppard case with the Indians 1954 season surprisingly well. \* Endure and Conquer , Sam Sheppard and F. Lee Bailey's version of things, written in 1966. Agenda aside, it's a fascinating read. Especially his account of the prison years. \* Murder, Culture, and Injustice: Four Sensational Cases in American History , by Walter Hixson. \* "Dr. Sam Sheppard The Ex-Convict who Revolutionized Professional Wrestling," from The Wrestler , May, 1970. \* The bulk of the details from the last section of story are pulled from contemporary newspaper articles from the Mansfield News-Journal, the Cleveland Plain-Dealer, the Dover Daily Reporter, The Escanaba Daily Press, the Detroit Free Press, the Nashville Tennessean, The Tyrone Daily Herald, and The Washington Post],
-  [Music \* We hear a snippet of Runaway by Ólafur Arnalds up top. \* Then Debut by Christopher Ferreira. \* A bit of Saturday Evening from Tomasz Bednarczyk \* Ralph Van Raat plays John Adams' China Gates . \* The recurring flute piece is Wasser-Wunder from Tibor Szemző and Group 180 \* Deadmau5 plays Invidia . \* Lawrence English plays Watching it Unfold . \* The radio snippet is a bit of a cheat. It's from the World Series from that year. Only broadcast I could find from '54.],
-  [Learn about your ad choices: dovetail.prx.org/ad-choices],
+  [Order The Memory Palace book now, dear listener. On Bookshop.org , on Amazon.com , on Barnes & Noble , or directly from Random House . Or order the audiobook at places like Libro.fm .],
+  [The Memory Palace is a proud member of Radiotopia from PRX. Radiotopia is a collective of independently owned and operated podcasts that’s a part of PRX, a not-for-profit public media company. If you’d like to directly support this show, you can make a donation at Radiotopia.fm/donate. I have recently launched a newsletter. You can subscribe to it at thememorypalacepodcast.substack.com .],
+  [Jobs, Winter Memory, and Slow Flood by Dark Dark Dark
+Carla et Roger aux sports l'hiver from the score to Le bel age by Georges Delareau
+Mt Baker by Kaitlyn Aurelia Smith
+All Creatures will Drink Joy by American Cream Band
+Every High (Piano Solo) by Kyson
+Vals Efter Lasse I Lyby by Lofoten Cello Duo],
+  [Notes
+You can read The President's Daughter here .],
 ),
   insert-map: (:),
-  word-count: 299,
+  word-count: 160,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -831,78 +703,27 @@ There is a lot written about Bessie, including some wonderful children's books. 
 #article-row((
   [
     standard-article(
-  title: [Notes from February 2026],
-  author: [Evan Hahn],
-  source-name: [Evan Hahn],
-  images: (),
-  paragraphs: (
-  [Things I did and saw this February.],
-  [id="things-i-made"\>Things I made],
-  [I shipped my first feature at Ghost: Inbox Links . When a member enters their email to log in or sign up, we now show a button that takes them straight to their inbox. In addition to shipping a neat feature, I also enjoyed learning about MX records and RFC-compliant email address parsing. The source code for the main logic is here .],
-  [I was surprised to learn that gzip streams encode which operating system did the compression. I built a little tool, “gzpeek”, to inspect this metadata (and more).],
-  [The 40th anniversary of the original Legend of Zelda was this month, and I wanted a calendar feed for other game anniversaries, so I made one . Oracle of Ages and Oracle of Seasons just turned 25 yesterday! Speaking of, I wrote a few articles for Zelda Dungeon as usual.],
-  [id="cool-links-from-online"\>Cool links from online],
-  [An incredible stunt: a game written in HTML and CSS . “No JavaScript or server-side code is used.”],
-  [Best description of LLMs I’ve seen so far: “When you enter text into [ChatGPT], you’re asking ‘What would a response to this sound like?’”],
-  [Seems like it’s better for your programming career to be bullish on AI, according to “AI skepticism is a quiet career killer” .],
-  [“Countries are growing uneasy about their dependence on US technology firms” , which the US is trying to stop . We deserve to lose this battle.],
-  [“The lack of European billion-dollar technology companies leads people to forget the technology invented here that instead embraced openness: the web, Linux, Raspberry Pi, Open StreetMap, the Fediverse.”],
-  [Someone has decided to pick up a retro video game instead of doom scrolling .],
-  [“This isn’t about paranoia. It’s about understanding the trade-offs we make when we leave wireless radios enabled on our devices. For some use cases, Bluetooth is essential. For others, it’s just convenience. Being aware of what you’re exposing is the first step to making informed decisions about which category your devices fall into.” From “What Your Bluetooth Devices Reveal About You” .],
-  [“I want to break down how [Content Security Policy] actually works and, more importantly, where people screw it up.”],
-  [“The research […] did not find a single example where popular tools such as Google’s Gemini or Microsoft’s Copilot were leading to a ‘material, verifiable, and substantial’ reduction in planet-heating emissions.”],
-  [First read the term “openwashing”, which describes the process of using the word “open” as marketing. OpenAI and Android are examples of this. See “Acting ethically in an imperfect world” .],
-  [Hope you had a good February.],
-),
-  insert-map: (:),
-  word-count: 437,
-  edited-for-length: true,
-  debug-mode: false,
-)
-
-  ],
-  [
-    standard-article(
-  title: [Episode 184: Betty Robinson],
+  title: [Episode 79: Artist in Landscape],
   author: [Nate DiMeo],
   source-name: [The Memory Palace],
   images: (),
   paragraphs: (
-  [The Memory Palace is a proud member of Radiotopia from PRX. Radiotopia is a collective of independently owned and operated podcasts that’s a part of PRX, a not-for-profit public media company. If you’d like to directly support this show and independent media, you can make a donation at Radiotopia.fm/donate.],
-  [A note on notes: We’d much rather you just went into each episode of The Memory Palace cold. And just let the story take you where it well. So, we don’t suggest looking into the show notes first.],
-  [Pollen by H. Takahashi and, later, Photosynthese.],
-  [Wiffle Ball from Joel P. West’s score for Short Term 12],
-  [The title theme to Cani Arrabbiati],
-  [Drunken Aviator by the (great, truly) Ida.],
-  [If you are looking to read more about Betty, I’d suggest Rosanne Montillo’s terrific book, Fire on the Track.],
+  [This show is a proud member of Radiotopia from PRX.],
+  [This episode was originally released in November, 2015.],
+  [\* Under the credits is Harlaamstrat 74 off of John Dankworth’s Modesty Blaise score.],
+  [\* They first meet to a piece called Brouillard ( version 1 ) from Georges Delaure’s extraordinary score to Jules et Jim. (A second version comes in later when J. J. Audubon is living the high life in England).],
+  [\* We also hear Waltz by Mother Falcon.],
+  [\* I go back to the Marcelo Zarvos/Please Give well when the Scotsman arrives at their store. Note: it’s the go-to soundtrack for “People Arriving at One’s Store With A Life Changing Proposition” here at the Memory Palace. Also: go watch Please Give.],
+  [\* The little piano piece is from Nathan Johnson’s score to The Day I Saw Your Heart.],
+  [\* Lucy and John titter like plovers to Andrew Cyrille’s dope, skittering drums on Nuba 1.],
+  [\* The especially sad bit, right before the end is Dream 3 (in the Midst of my Life) , from Max Richter’s giant, From Sleep album.],
+  [\* A couple times, including the ending, we hear “the Lark Ascending” from Ralph Vaughn Willliams. It is beautiful. You should buy it.],
+  [As per usual, I read a lot about the Audubons and the Bakewells.],
+  [I relied most upon the charming and smart, On the Road with John James Audubon by Mary Durant, and Carolyn DeLatte’s lovely, thoughtful book, Lucy Audubon: a Biography.],
+  [\* Just a quick note: there’s a very enjoyable PBS/American Masters/Nature documentary about Audubon. It’s a fun and informative watch. But, I’ll say, you come out of that thinking that things were fundamentally swell between Lucy and John in a way that I’m not entirely sure is supported by the facts. Or jibes with, you know, human nature.],
 ),
   insert-map: (:),
-  word-count: 178,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-  ],
-), ruled-indices: (1,))
-#pull-quote([id="cool-links-from-online"\>Cool links from online  An incredible stunt: a game written in HTML and CSS.], [Evan Hahn])
-
-
-#article-row((
-  [
-    standard-article(
-  title: [Episode 170: Reed v.],
-  author: [The Memory Palace],
-  source-name: [The Memory Palace],
-  images: (),
-  paragraphs: (
-  [The Memory Palace is a proud member of Radiotopia from PRX.],
-  [A note on notes: We’d much rather you just went into each episode of The Memory Palace cold. And just let the story take you where it well. So, we don’t suggest looking into the show notes first.],
-  [Wake by Taylor Duepree and Marcus Fischer],
-  [The best resources I found for Sally Story (it’s easy to find out more about Reed v. Reed) came from a couple of sources: 100 Americans Making Constitutional History, A Biographical History, edited by Melvin L. Urovsky. And Natalie Wexler’s article, “Sex Discrimination - a Search for a Standard.”],
-  [Learn about your ad choices: dovetail.prx.org/ad-choices],
-),
-  insert-map: (:),
-  word-count: 131,
+  word-count: 304,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -910,22 +731,20 @@ There is a lot written about Bessie, including some wonderful children's books. 
   ],
   [
     standard-article(
-  title: [Nate's Favorite Episode of 2021: Betty Robinson],
+  title: [Episode 231: On Dexter Avenue],
   author: [Nate DiMeo],
   source-name: [The Memory Palace],
   images: (),
   paragraphs: (
-  [The Memory Palace is a proud member of Radiotopia from PRX. Radiotopia is a collective of independently owned and operated podcasts that’s a part of PRX, a not-for-profit public media company. If you’d like to directly support this show and independent media, you can make a donation at Radiotopia.fm/donate.],
-  [This episode was originally released as Episode 184: Betty Robinson in July of 2021.],
-  [A note on notes: We’d much rather you just went into each episode of The Memory Palace cold. And just let the story take you where it well. So, we don’t suggest looking into the show notes first.],
-  [Pollen by H. Takahashi and, later, Photosynthese.],
-  [Wiffle Ball from Joel P. West’s score for Short Term 12],
-  [The title theme to Cani Arrabbiati],
-  [Drunken Aviator by the (great, truly) Ida.],
-  [If you are looking to read more about Betty, I’d suggest Rosanne Montillo’s terrific book, Fire on the Track.],
+  [Order The Memory Palace book now, dear listener. On Bookshop.org , on Amazon.com , on Barnes & Noble , or directly from Random House . Or order the audiobook at places like Libro.fm .],
+  [During mid-May, 2025, I'm doing a Midwestern book tour, with stops in Minneapolis, Cincinatti, Indianapolis, and Chicago. Find out more at www.thememorypalace.us/events .],
+  [The Memory Palace is a proud member of Radiotopia from PRX. Radiotopia is a collective of independently owned and operated podcasts that’s a part of PRX, a not-for-profit public media company. If you’d like to directly support this show, you can make a donation at Radiotopia.fm/donate. I have recently launched a newsletter. You can subscribe to it at thememorypalacepodcast.substack.com .],
+  [You can access the self-produced history of the Sophie Bibb Chapter of the UDC here. 
+The Alabama Encyclopedia site does a nice job with some of this stuff. 
+You might want to check out Caroline Janney's book, Burying the Dead but Not the Past: Ladies' Mermorial Associations and the Lost Cause.],
 ),
   insert-map: (:),
-  word-count: 192,
+  word-count: 183,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -962,22 +781,124 @@ There is a lot written about Bessie, including some wonderful children's books. 
   ],
   [
     standard-article(
-  title: [If You Have to be a Floor (The Met Residency Episode 6)],
+  title: [From the Vault: A Special Mother's Day Re-Run],
   author: [The Memory Palace],
   source-name: [The Memory Palace],
   images: (),
   paragraphs: (
-  [Nate DiMeo is the Metropolitan Museum of Art's Artist in Residence for 2016/2017. He is producing ten pieces inspired by the collection and by the museum itself. This is the sixth episode of that residency.],
-  [This residency is made possible by the Metropolitan Museum of Art’s Chester Dale Fund.],
-  [This episode is written and produced and stuff by Nate DiMeo with engineering assistance from Elizabeth Aubert. Its Executive Producer is Limor Tomer, General Manager Live Arts, The Metropolitan Museum of Art.],
-  [Special thanks to Jimmy LaValle and Mark Kozelek.],
-  [Gallery 719, the Alexandria Ballroom .],
-  [The piece features excerpts of two, instrumental outtakes from Ceiling Gazing from Mark Kozelek and Jimmy LaValle's album, Perils from the Sea .],
-  [California Dawn and Mountain Path from WMD.],
+  [The Memory Palace is a proud member of Radiotopia. In Toronto? Chicago? Milwaukee? Minneapolis? Come see a live Memory Palace show . For Mothers' Day, this episode is a re-mixed version of a story originally released as Episode 10 , in 2009. Back with new episodes next time out. The two piano pieces that bookend the piece are by Max Richter from his “ 24 Postcards in Full Color ” record. The one in the middle is “ Maybelle ” by Ida. It popped up on shuffle the other day and stunned me. I hadn’t heard it in years. It’s really lovely.],
+  [Learn about your ad choices: dovetail.prx.org/ad-choices],
+),
+  insert-map: (:),
+  word-count: 108,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+  ],
+), ruled-indices: (1,))
+
+#article-row((
+  [
+    standard-article(
+  title: [Notes from February 2026],
+  author: [Evan Hahn],
+  source-name: [Evan Hahn],
+  images: (),
+  paragraphs: (
+  [Things I did and saw this February.],
+  [id="things-i-made"\>Things I made],
+  [I shipped my first feature at Ghost: Inbox Links . When a member enters their email to log in or sign up, we now show a button that takes them straight to their inbox. In addition to shipping a neat feature, I also enjoyed learning about MX records and RFC-compliant email address parsing. The source code for the main logic is here .],
+  [I was surprised to learn that gzip streams encode which operating system did the compression. I built a little tool, “gzpeek”, to inspect this metadata (and more).],
+  [The 40th anniversary of the original Legend of Zelda was this month, and I wanted a calendar feed for other game anniversaries, so I made one . Oracle of Ages and Oracle of Seasons just turned 25 yesterday! Speaking of, I wrote a few articles for Zelda Dungeon as usual.],
+  [id="cool-links-from-online"\>Cool links from online],
+  [An incredible stunt: a game written in HTML and CSS . “No JavaScript or server-side code is used.”],
+  [Best description of LLMs I’ve seen so far: “When you enter text into \[ChatGPT\], you’re asking ‘What would a response to this sound like?’”],
+  [Seems like it’s better for your programming career to be bullish on AI, according to “AI skepticism is a quiet career killer” .],
+  [“Countries are growing uneasy about their dependence on US technology firms” , which the US is trying to stop . We deserve to lose this battle.],
+  [“The lack of European billion-dollar technology companies leads people to forget the technology invented here that instead embraced openness: the web, Linux, Raspberry Pi, Open StreetMap, the Fediverse.”],
+  [Someone has decided to pick up a retro video game instead of doom scrolling .],
+  [“This isn’t about paranoia. It’s about understanding the trade-offs we make when we leave wireless radios enabled on our devices. For some use cases, Bluetooth is essential. For others, it’s just convenience. Being aware of what you’re exposing is the first step to making informed decisions about which category your devices fall into.” From “What Your Bluetooth Devices Reveal About You” .],
+  [“I want to break down how \[Content Security Policy\] actually works and, more importantly, where people screw it up.”],
+  [“The research \[…\] did not find a single example where popular tools such as Google’s Gemini or Microsoft’s Copilot were leading to a ‘material, verifiable, and substantial’ reduction in planet-heating emissions.”],
+  [First read the term “openwashing”, which describes the process of using the word “open” as marketing. OpenAI and Android are examples of this. See “Acting ethically in an imperfect world” .],
+  [Hope you had a good February.],
+),
+  insert-map: (:),
+  word-count: 437,
+  edited-for-length: true,
+  debug-mode: false,
+)
+
+  ],
+  [
+    standard-article(
+  title: [Episode 80 (Shore Leave)],
+  author: [The Memory Palace],
+  source-name: [The Memory Palace],
+  images: (),
+  paragraphs: (
+  [Music\* Under the credits is Harlaamstrat 74 off of John Dankworth's Modesty Blaise score.\* First up is one of my very favorite recordings of all time: Andromeda from Chris McGregor's Brotherhood of Breath. One of the finest bands ever assembled. \* The sailors get grumpy to Sito from Pierre Favre and the European Chamber Ensemble. (The end drum loop comes from that piece too). \* The guys run off to save the day to Edgar Meyer and Mark O'Connor doing the Green Groves of Erin .\* That turns into, In Threes by Loscil.],
+  [Notes\* Some of the details in here originate from a fine piece that appeared in the Saturday Evening Post in May of 1944. You can read it here .\* Other solid write ups: From The Book of New York The U. S. C. G. The Fire-fighter's Museum],
   [Learn about your ad choices: dovetail.prx.org/ad-choices],
 ),
   insert-map: (:),
   word-count: 143,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+  ],
+), ruled-indices: (1,))
+
+#article-row((
+  [
+    standard-article(
+  title: [Episode 90: A White Horse],
+  author: [Nate DiMeo],
+  source-name: [The Memory Palace],
+  images: (),
+  paragraphs: (
+  [The Memory Palace is a proud member of Radiotopia from PRX. Radiotopia is a collective of independently owned and operated podcasts that’s a part of PRX, a not-for-profit public media company. If you’d like to directly support this show and independent media, you can make a donation at Radiotopia.fm/donate.],
+  [This episode was originally released in 2016 in the days after the shooting at the Pulse nightclub in Orlando. It is re-released every year on the anniversary of the incident.],
+  [A note on notes: We’d much rather you just went into each episode of The Memory Palace cold. And just let the story take you where it well. So, we don’t suggest looking into the show notes first.],
+  [Notes and Reading:],
+  [\* Most of the specific history of the White Horse was learned from "Sanctuary: the Inside Story of the Nation's Second Oldest Gay Bar" by David Olson, reprinted in its entirety on the White Horse's website .],
+  [\* "Gayola: Police Professionalization and the Politics of San Francisco's Gay Bars, 1950-1968," by Christopher Agee.],
+  [\* June Thomas' series on the past, present, and future of the gay bar from Slate a few years back.],
+  [\* Various articles written on the occasion of the White Horse's 80th anniversary, including this one from SFGATE. Com],
+  [\* Michael Bronski's A Queer History of the United States .],
+  [\* Radically Gay , a collection of Harry Hay's writing.],
+  [\* Incidentally, I watched this interview with Harry Hay from 1996 about gay life in SF in the 30's multiple times because it's amazing.],
+  [\* We start with Water in Your Hands by Tommy Guerrero.],
+  [\* Hit Anne Muller's Walzer fur Robert a couple of times.],
+  [\* Gaussian Curve does Talk to the Church .],
+  [\* We get a loop of Updraught from Zoe Keating.],
+  [\* We finish on Transient Life in Twilight by James Blackshaw],
+),
+  insert-map: (:),
+  word-count: 309,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+  ],
+  [
+    standard-article(
+  title: [Two Small Sculptures (The Met Residency Episode 8)],
+  author: [The Memory Palace],
+  source-name: [The Memory Palace],
+  images: (),
+  paragraphs: (
+  [Nate DiMeo was the Metropolitan Museum of Art's Artist in Residence for 2016/2017. He produced 8 episodes inspired by the collection and by the museum itself. This is the eigth episode of that residency.],
+  [This residency is made possible by the Metropolitan Museum of Art’s Chester Dale Fund.],
+  [This episode is written and produced and stuff by Nate DiMeo with engineering assistance from Elizabeth Aubert. Its Executive Producer is Limor Tomer, General Manager Live Arts, The Metropolitan Museum of Art.],
+  [Hiawatha , Edmonia Lewis, 1868.],
+  [Minnehaha , Edmonia Lewis, 1868.],
+  [Learn about your ad choices: dovetail.prx.org/ad-choices],
+),
+  insert-map: (:),
+  word-count: 108,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -1010,126 +931,25 @@ There is a lot written about Bessie, including some wonderful children's books. 
   ],
   [
     standard-article(
-  title: [Episode 99, Met Residency \#3 (Full Circle)],
-  author: [The Memory Palace],
-  source-name: [The Memory Palace],
-  images: (),
-  paragraphs: (
-  [Nate DiMeo is the Metropolitan Museum of Art's Artist in Residence for 2016/2017. He is producing ten pieces inspired by the collection and by the museum itself. This is the second episode of that residency.],
-  [This residency is made possible by the Metropolitan Museum of Art’s Chester Dale Fund.],
-  [This episode is written and produced and stuff by Nate DiMeo with engineering assistance from Kathy Tu and research Assistance from Andrea Milne. Its Executive Producer is Limor Tomer, General Manager Live Arts, The Metropolitan Museum of Art.],
-  [The Art Discussed \* John Vanderlyn's Panoramic View of the Gardens of Versailles.],
-  [Music \* Falling Asleep with a Book on Your Chest and Brass Practice by Lullatone. \* Moonbow by aAirial. \* Pauvre Simon, L'approach Du Nuage, and The Tunnel from Sylvain Chauvau's album Nuage . \* So Long to Scream from Joshua Moshier's score to Good Enough.],
-  [Learn about your ad choices: dovetail.prx.org/ad-choices],
-),
-  insert-map: (:),
-  word-count: 152,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-  ],
-), ruled-indices: (1,))
-
-#article-row((
-  [
-    standard-article(
-  title: [Episode 101: Promise],
+  title: [episode 76: Mary Walker Would Wear what she Wanted],
   author: [Nate DiMeo],
   source-name: [The Memory Palace],
   images: (),
   paragraphs: (
-  [The Memory Palace is a proud member of Radiotopia from PRX.],
-  [This episode was originally released in December of 2016],
-  [A note on notes: We’d much rather you just went into each episode of The Memory Palace cold. And just let the story take you where it well. So, we don’t suggest looking into the show notes first.],
-  [Starts with Christope Beck and DeadMono’s theme to Charlie Countryman .],
-  [Tezeta (Nostalgia) from Malatu Astatke, from Ethiopiques vol. 4, one of my favorite pieces of music in the world.],
-  [Marian Lapansky plays Camille Saint-Saens “Le Sygne.”],
-  [Which fights with Piero Umiliani’s Danza Primitiva .],
-  [Warren Ellis rounds it out with his Lale’s Theme from his terrific score to Mustang (which you should totally see).],
-  [The Hazel Scott pieces can be found here and here .],
-  [I first heard about Hazel Scott while reading Rad American Women from A to Z to my daughter. It’s a wonderful book. You should buy it for any kid in your life.],
-  [I read a lot about Hazel, but Karen Chilton’s biography, Hazel Scott: A Pioneering Jazz Pianist from Cafe Society to HUAC was essential.],
+  [This episode was originally released in 2015.],
+  [Proceeds from this episode are being donated to the Transgender Law Center .],
+  [\*Under the credits is Harlaamstrat 74 off of John Dankworth’s Modesty Blaise score.],
+  [\*The piece opens with Rainfall , by David Darling and Michael Jones.],
+  [\*Her brief love story is scored by Nathan Johnson’s Penelope’s Theme from his score to The Brothers Bloom .],
+  [\*When she lands her first gig, we start Garde a Vue, and roll into Le Roi de coeur , from Chantal Martineau.],
+  [\* The vibraphone piece is “Opening” by Nathaniel Bartlett.],
+  [\* The recurring violin piece is called Geometria del Universo by the one-named Colleen.],
+  [\* It ends on Romain’s First Love , again by Georges Delarue, from his fantastic score to Promise at Dawn.],
+  [\* I read a lot about Mary, but by far the most useful and most thorough works I came upon were: Sharon M. Harris’ Dr. Mary Walker: An American Radical and A Woman of Honor: Dr. Mary E. Walker and the Civil War, in which author Mercedes Graf does a great job walking the reader through Walker’s unpublished memoir.],
+  [The Memory Palace is a proud member of Radiotopia , a collective of independently owned and operated podcasts.],
 ),
   insert-map: (:),
-  word-count: 197,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-  ],
-  [
-    standard-article(
-  title: [Episode 79: Artist in Landscape],
-  author: [Nate DiMeo],
-  source-name: [The Memory Palace],
-  images: (),
-  paragraphs: (
-  [This show is a proud member of Radiotopia from PRX.],
-  [This episode was originally released in November, 2015.],
-  [\* Under the credits is Harlaamstrat 74 off of John Dankworth’s Modesty Blaise score.],
-  [\* They first meet to a piece called Brouillard ( version 1 ) from Georges Delaure’s extraordinary score to Jules et Jim. (A second version comes in later when J. J. Audubon is living the high life in England).],
-  [\* We also hear Waltz by Mother Falcon.],
-  [\* I go back to the Marcelo Zarvos/Please Give well when the Scotsman arrives at their store. Note: it’s the go-to soundtrack for “People Arriving at One’s Store With A Life Changing Proposition” here at the Memory Palace. Also: go watch Please Give.],
-  [\* The little piano piece is from Nathan Johnson’s score to The Day I Saw Your Heart.],
-  [\* Lucy and John titter like plovers to Andrew Cyrille’s dope, skittering drums on Nuba 1.],
-  [\* The especially sad bit, right before the end is Dream 3 (in the Midst of my Life) , from Max Richter’s giant, From Sleep album.],
-  [\* A couple times, including the ending, we hear “the Lark Ascending” from Ralph Vaughn Willliams. It is beautiful. You should buy it.],
-  [As per usual, I read a lot about the Audubons and the Bakewells.],
-  [I relied most upon the charming and smart, On the Road with John James Audubon by Mary Durant, and Carolyn DeLatte’s lovely, thoughtful book, Lucy Audubon: a Biography.],
-  [\* Just a quick note: there’s a very enjoyable PBS/American Masters/Nature documentary about Audubon. It’s a fun and informative watch. But, I’ll say, you come out of that thinking that things were fundamentally swell between Lucy and John in a way that I’m not entirely sure is supported by the facts. Or jibes with, you know, human nature.],
-),
-  insert-map: (:),
-  word-count: 304,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-  ],
-), ruled-indices: (1,))
-
-#article-row((
-  [
-    standard-article(
-  title: [Episode 238: The Crypt of Thornwell Jacobs],
-  author: [Nate DiMeo],
-  source-name: [The Memory Palace],
-  images: (),
-  paragraphs: (
-  [Order The Memory Palace book now, dear listener. On Bookshop.org , on Amazon.com , on Barnes & Noble , or directly from Random House . Or order the audiobook at places like Libro.fm .],
-  [The Memory Palace is a proud member of Radiotopia from PRX. Radiotopia is a collective of independently owned and operated podcasts that’s a part of PRX, a not-for-profit public media company. If you’d like to directly support this show, you can make a donation at Radiotopia.fm/donate.],
-  [Kara-Lis Coverdale's A480
-Palimpsest from Will Bate's score to The Sound of Silence
-Harriett Smith and Robert Martin Meet in the Rain from Isobel Waller Bridge's score to Emma.
-The Play from Dan Romer's score to (the terrific) Station Eleven.
-Cutting Branches from a Temporary Shelter from the Penguin Cafe Orchestra.
-Sustainable from H. Takahashi.],
-  [There's a particularly good article by Colin Dickey about Jacobs and The Crypt in American Scholar. 
-You can read all 1100 pages of Jacobs' autobiography here , if you haven't already.],
-),
-  insert-map: (:),
-  word-count: 168,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-  ],
-  [
-    standard-article(
-  title: [Seminoles Taught American Soldiers a Thing or Two About Guerrilla Warfare],
-  author: [Jon Guttman],
-  source-name: [HistoryNet],
-  images: (),
-  paragraphs: (
-  [The word “Seminole” is derived from the Muscogean word simanó-li , or “runaway,” reflecting a common heritage, as Upper Creeks from Alabama, Lower Creeks from Georgia, other affiliated tribes and escaped African slaves all sought sanctuary in Spanish Florida. There they mixed with one another, adapted to their surroundings, traded with Britain, Spain and the United States and came to be collectively recognized as one of the Five Civilized Tribes (along with the Cherokee, Chickasaw, Choctaw and Creek/Muscogee) of the American Southeast. Not civilized enough for some, apparently, for when the United States acquired Florida in 1821, it began herding the Seminoles, through a succession of treaties, to progressively smaller and less desirable parts of the state. Ultimately, in 1834 federal officials set Jan. 1, 1836, as a deadline for removal of the Seminoles from Florida to Indian Territory (present-day Oklahoma). When a 110-man detachment of the 4th U. S. Infantry under Brevet Maj. Francis L. Dade set out for Fort King to oversee that final removal, however, it was ambushed by 180 Seminoles led by Halpatter Tustenuggee (Alligator) on Dec. 28, 1835. The ensuing slaughter of all but two of Dade’s men marked the beginning of the longest campaign fought between the U. S. Army and American Indians, a mix of pitched battles and guerrilla warfare.],
-  [In Seminole Warrior versus U. S. Soldier: Second Seminole War, 1835– 42 (No. 61 in Osprey’s Combat series) military historian Ron Field compares the tactics, arms, equipment and fighting techniques used by both sides. In addition to what whites termed the “Dade massacre,” re-examined here through a more impartial lens, Field relates two other major engagements—at Lake Okeechobee, on Christmas Day 1837, and the second of back-to-back clashes at the Loxahatchee River, on Jan. 24, 1838.],
-  [Set in what might be more appropriately called the “Wild South,” the Second Seminole War was something of a learning process for both sides. Several notable future U. S. Army figures had their first taste of Indian warfare and, for that matter, their first combat experience during the conflict, lessons they would apply during the Mexican War. The Seminoles likewise developed guerrilla tactics they would employ as scouts during the Army’s later run-ins with other tribes on the Great Plains. Backed by Osprey’s usual fine array of illustrations and maps, Seminole Warrior versus U. S. Soldier offers Wild West readers a peek at the dress rehearsal for Indian campaigns to come.],
-  [Second Seminole War, 1835–42],
-  [By Ron Field, Osprey Publishing, 2022],
-  [If you buy something through our site, we might earn a commission.],
-),
-  insert-map: (:),
-  word-count: 443,
+  word-count: 208,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -1138,9 +958,67 @@ You can read all 1100 pages of Jacobs' autobiography here , if you haven't alrea
 ), ruled-indices: (1,))
 
 {
+  #standard-article(
+  title: [Episode 222: Ferminia Sarras],
+  author: [Nate DiMeo],
+  source-name: [The Memory Palace],
+  images: (),
+  paragraphs: (
+  [Pre-order The Memory Palace book now, dear listener. On Bookshop.org , on Amazon.com , on Barnes & Noble , or directly from Random House .],
+  [The Memory Palace is a proud member of Radiotopia from PRX. Radiotopia is a collective of independently owned and operated podcasts that’s a part of PRX, a not-for-profit public media company. If you’d like to directly support this show, you can make a donation at Radiotopia.fm/donate. I have recently launched a newsletter. You can subscribe to it at thememorypalacepodcast.substack.com .],
+  [Notes
+The definitive source on Ferminia Sarras (as far as definitive can be in her case) A Mine of Her Own: Women Prospectors in the American West, 1850-1950 by Sally Zanjani.],
+),
+  insert-map: (:),
+  word-count: 138,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+}
+
+{
   #section-label([Analysis])
   #brief-group((
-    #brief-item([The Memory Palace], source-name: [The Memory Palace], [This piece was originally released a few days after the shooting deaths of 49 people at the Pulse Nightclub in Orlando, Florida. It is re-released here on the second anniversary of the event. 
+    [#brief-item([The Memory Palace], source-name: [The Memory Palace], [The Memory Palace is a proud member of Radiotopia , a collective of independently owned and operated podcasts.
+
+ Music 
+
+We start off with a touch of Hills in the Rain , by Simon Rackham.
+
+Go to a bit of Narkopop 1 by Gas.
+
+Then gaze in wonder to Grofe's Grand Canyon Suite: Sunrise , as performed by the Cincinatti Pops Orchestra
+
+We listen to two versions of Trying Something Again, Again by our friends in Lullatone.
+
+And go out on Jaybird , by Charlie Parr
+
+Learn about your ad choices: dovetail.prx.org/ad-choices])],
+    [#brief-item([The Memory Palace], source-name: [The Memory Palace], [The Memory Palace is a proud member of Radiotopia. 
+
+ Music 
+
+Blink from Hiroshi Yoshimura
+
+Which comes in and out of Bjolukor Tonlisterakoli Reykjanesbaejar's version of Sigur Ros' Hoppipolla.
+
+Love Token by Elena Kats-Chernin, performed by Tamara Anna Cislowska
+
+And Joanna Brouk playing Maggi's Flute - Lifting Off
+
+ Notes 
+
+There's
+
+a ton out there about the sixty starlings, the most comprehensive comes
+
+from Stephen Marche's book, How Shakespeare Changed Everything.
+
+I also found Kim Todd's \[Tinkering with Eden,\](http:\/\/%22Tinkering%20With%20Eden:%20A%20Natural%20History%20of%20Exotic%20Species%20in%20America) particularly useful.
+
+Learn about your ad choices: dovetail.prx.org/ad-choices])],
+    [#brief-item([The Memory Palace], source-name: [The Memory Palace], [This piece was originally released a few days after the shooting deaths of 49 people at the Pulse Nightclub in Orlando, Florida. It is re-released here on the second anniversary of the event. 
 
 If you are so moved, please donate to any of these charities:
 
@@ -1152,134 +1030,108 @@ If you are so moved, please donate to any of these charities:
 
  Trans Lifeline 
 
-Learn about your ad choices: dovetail.prx.org/ad-choices])
-
-    #brief-item([The Memory Palace], source-name: [The Memory Palace], [The Memory Palace is a proud member of Radiotopia , from PRX.
-
-Music
-
-We start off with Theme de Simon from Georges Delerue.
-
-Go to Alpine Sketch from Christian Loffler's Young Alaska.
-
-Hear some of Three Dances: II Pavane arranged for the Chromos Tuba Quartet.
-
-The Plum Blossom from Yusuf Lateef's great Eastern Sounds record.
-
-Juve & Fandor by amiina.
-
-The Unquestioned Answer by Laura Spiegel.
-
-Etude by Joep Beving.
-
-Rainfall by David Darling and Michael Jones.
-
-Learn about your ad choices: dovetail.prx.org/ad-choices])
-
-    #brief-item([Nate DiMeo], source-name: [The Memory Palace], [The Memory Palace is a proud member of Radiotopia from PRX. Radiotopia is a collective of independently owned and operated podcasts that’s a part of PRX, a not-for-profit public media company. If you’d like to directly support this show and independent media, you can make a donation at Radiotopia.fm/donate. I have recently launched a newsletter. You can subscribe to it at thememorypalacepodcast.substack.com . 
-
-Notes
-Read about the change in policy here . And the article that helped prompt the policy change here . 
-Music
-
-Pipeline by H. Takahashi
-Sad Seine by Lambert
-Dance PM by Hiroshi Yoshimura])
-
-    #brief-item([Nate DiMeo], source-name: [The Memory Palace], [The Memory Palace is a proud member of Radiotopia , a collective of independently owned and operated podcasts.
-
-This episode originally appeared in the winter of 2019.
-
-A note on shownotes. In a perfect world, you go into each episode of the Memory Palace knowing nothing about what's coming. It's pretentious, sure, but that's the intention. So, if you don't want any spoilers or anything, you can click play without reading ahead.
-
-Music
-
- Still Space by Satoshi Ashikawa.])
-
-    #brief-item([The Memory Palace], source-name: [The Memory Palace], [This special, bonus episode was commissioned by Freepoint Hotel in Cambridge, Massachusetts. It's intended to be listened to while walking around Fresh Pond, across the street from the hotel, though it can be enjoyed anywhere. 
-
-Learn about your ad choices: dovetail.prx.org/ad-choices])
-
-    #brief-item([The Memory Palace], source-name: [The Memory Palace], [If you enjoy this story, do tell someone about The Memory Palace. 
+Learn about your ad choices: dovetail.prx.org/ad-choices])],
+    [#brief-item([The Memory Palace], source-name: [The Memory Palace], [If you enjoy this story, do tell someone about The Memory Palace. 
 
 Thanks.
 
 Nate
 
-Learn about your ad choices: dovetail.prx.org/ad-choices])
+Learn about your ad choices: dovetail.prx.org/ad-choices])],
+    [#brief-item([The Memory Palace], source-name: [The Memory Palace], [If you enjoy this story, do tell someone about The Memory Palace. 
 
-    #brief-item([Evan Hahn], source-name: [Evan Hahn], [I wrote a web app to choose a random programming language .
+Thanks.
+
+Nate
+
+Learn about your ad choices: dovetail.prx.org/ad-choices])],
+    [#brief-item([Evan Hahn], source-name: [Evan Hahn], [I wrote a web app to choose a random programming language .
 
 It’s very simple; I hestitate to even call it an “app”! The interesting part was scraping all the languages on Rosetta Code , and even that wasn’t very interesting. But I hope you like it!
 
-I learned about a language called Arturo this way, and wrote a short story about that experience .])
-
-    #brief-item([Nate DiMeo], source-name: [The Memory Palace], [The Memory Palace is a member of Radiotopia from PRX.
-
-This episode was originally released in the spring of 2018. It’s being re-released today because Nate’s on book leave for the summer.
+I learned about a language called Arturo this way, and wrote a short story about that experience .])],
+    [#brief-item([Nate DiMeo], source-name: [The Memory Palace], [The Memory Palace is a proud member of Radiotopia from PRX.
 
 Music
 
-We start off with Theme de Simon from Georges Delerue.
+Dave Pajo/Aerial M does Plastic Energy Man
 
-Go to Alpine Sketch from Christian Loffler’s Young Alaska.
+Patricia Rossborough played To a Wild Rose
 
-Hear some of Three Dances: II Pavane arranged for the Chromos Tuba Quartet.
+Mal Waldron plays Warm Canto
 
-The Plum Blossom from Yusuf Lateef’s great Eastern Sounds record.
+We hear Muff Gets a Share from Joel P. West’s score to Band of Robbers
 
- Juve & Fandor by amiina.
+We hear another song I absolutely love, Turned Out I Was Everyone, by Sasami
 
-The Unquestioned Answer by Laura Spiegel.
+We finish on Popcorn and Life from Ben Sollee’s lovely score to Maidentrip.])],
+    [#brief-item([The Memory Palace], source-name: [The Memory Palace], [If you enjoy this story, please tell a friend about The Memory Palace. 
 
- Etude by Joep Beving.
+Thank you kindly.
 
- Rainfall by David Darling and Michael Jones.])
+Learn about your ad choices: dovetail.prx.org/ad-choices])],
+    [#brief-item([Nate DiMeo], source-name: [The Memory Palace], [The Memory Palace is a proud member of Radiotopia from PRX .
 
-    #brief-item([Nate DiMeo], source-name: [The Memory Palace], [The Memory Palace is a proud member of Radiotopia from PRX.
+In lieu of my usual re-runs filling out August, I’m doing something different: a full-reading of F. Scott Fitzgerald’s The Great Gatsby, presented in three parts. This is part 2.
+
+Music for Gatsby was composed and performed by Mary Lattimore. Find and buy her music at marylattimoreharpist.bandcamp.com 
+
+The cover art is from Jen Corace. See more of Jen’s work at jencorace.com .
+
+Back with the third and final part on August 19th. Back with new episodes of The Memory Palace in September.])],
+    [#brief-item([Nate DiMeo], source-name: [The Memory Palace], [The Memory Palace is a proud member of Radiotopia from PRX.
+
+A note on notes: We’d much rather you just went into each episode of The Memory Palace cold. And just let the story take you where it well. So, we don’t suggest looking into the show notes first.
 
 Music
 
-Traffico from Carlo Rustichelli's score to Divorzio All'Italiana and Una Braveta, from his score to Amici Miei.
-Tema Grottesco from Giovanni Fusco's score to L'avventura.
- Gloving it from Moondog.
-Musica Bionda from the score to The Sweet Body of Deborah
-The Peter Thomas Sound Orchestra plays Natascha from the score to The Perfect Marriage. 
-Waltz from the Brendan Eder Ensemble
-Christa Schonfeldinger plays Grieg's Smarthold - der Kobold, on the glass armonica.])
+Blithe Field does RD 1
 
-    #brief-item([The Memory Palace], source-name: [The Memory Palace], [Episode 4 of the 2015 Summer Season. 
+O Venezia, Venuga, Venusia by Nino Rota
+
+Carthage by Hayden Perdido
+
+Nice Breeze, Isn’t It? from Simon Rackham
+
+Mystere by amiina
+
+Blithe Field also does Racing Backward
+
+as well as Prelude])],
+    [#brief-item([The Memory Palace], source-name: [The Memory Palace], [The Memory Palace is a proud member of Radiotopia , from PRX, a curated network of extraordinary, story-driven shows.
 
 Music
 
-\* Under the credits is Harlaamstrat 74 off of John Dankworth's Modesty Blaise score.
+We hear Valentine My Funny by Nils Frahm and F. S. Blumm from the album Tag Eins Tag Zwei.
 
-\* Charlie on the ladder is scored with the Prologue to the fantastic score to the film Birth , by Alexandre Desplat
+Notes
 
-\* It ends with Opus 30 , by Dustin O'Hallaran. 
+This idea came to me a long time ago while researching an old episode. I read an extraordinary article from the 1890s that hung with me, particularly the notion of folks writing in to try to become sideshow attractions.
 
-\* The upbeat, fair music is a piece called Love on Matthew Herbert's contribution to the Life in a Day soundtrack. 
+Learn about your ad choices: dovetail.prx.org/ad-choices])],
+    [#brief-item([Alan Bellows], source-name: [Damn Interesting], [Omiword, a Word Game :
 
-\* Don Stewart surveys the damage to 01 Ghosts I by NIN
-
-Learn about your ad choices: dovetail.prx.org/ad-choices])
-
-    #brief-item([The Memory Palace], source-name: [The Memory Palace], [If you enjoy this story, do tell someone about The Memory Palace. 
+In certain dialects of Chinese, Japanese, Korean, and Vietnamese, the word for ‘four’ sounds very similar to the word for ‘death’1. Consequently, the number 4 is considered by many people in East Asian nations to be unlucky. It is not unusual for buildings in that region to skip the number 4 when labeling floors, much \[…\]])],
+    [#brief-item([The Memory Palace], source-name: [The Memory Palace], [If you enjoy this story, do tell someone about The Memory Palace. 
 
 Thanks.
 
 Nate
 
-Learn about your ad choices: dovetail.prx.org/ad-choices])
+Learn about your ad choices: dovetail.prx.org/ad-choices])],
+    [#brief-item([The Memory Palace], source-name: [The Memory Palace], [This special, bonus episode was commissioned by Freepoint Hotel in Cambridge, Massachusetts. It's intended to be listened to while walking around Fresh Pond, across the street from the hotel, though it can be enjoyed anywhere. 
 
-    #brief-item([The Memory Palace], source-name: [The Memory Palace], [If you enjoy this story, do tell someone about The Memory Palace. 
+Learn about your ad choices: dovetail.prx.org/ad-choices])],
+    [#brief-item([Alan Bellows], source-name: [Damn Interesting], [Twenty :
+
+In 2005, YouTube, reddit, and Facebook were all still wet and screaming infants. Google, working under the motto “Don’t Be Evil,” had just dethroned Yahoo! as the planet’s most popular Internet search engine (AskJeeves was not available for comment). Nickelback was at the height of its fame. Internet Explorer was the most used web browser, \[…\]])],
+    [#brief-item([The Memory Palace], source-name: [The Memory Palace], [If you enjoy this story, do tell someone about The Memory Palace. 
 
 Thanks.
 
 Nate
 
-Learn about your ad choices: dovetail.prx.org/ad-choices])
-
+Learn about your ad choices: dovetail.prx.org/ad-choices])],
   ))
 }
 

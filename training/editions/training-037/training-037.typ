@@ -23,466 +23,238 @@
 
 // --- Front Page Feature ---
 #feature-article(
-  title: [Pi: The Minimal Agent Within OpenClaw],
+  title: [An Exercise Program for the Fat Web],
   kicker: [Cover Story],
-  author: [Armin Ronacher],
-  source-name: [Armin Ronacher (Lucumr)],
-  deck: [If you haven’t been living under a rock, you will have noticed this week that a
-project of my friend Peter went viral on the
-internet .],
-  lead-text: "It went by many names. The
-most recent one is OpenClaw but in the news you might
-have encountered it as ClawdBot or MoltBot depending on when you read about it.
-It is an agent connected to a communication channel of your choice that just
-runs code .",
-  lead-first-alpha: 0,
+  author: [Jeff Atwood],
+  source-name: [Coding Horror (Jeff Atwood)],
+  deck: [When I wrote about  App-pocalypse Now  in 2014, I implied the future still belonged to the web.],
+  lead-pre: [],
+  lead-cap: [A],
+  lead-rest: [nd it does. But it’s also true that the web has changed a lot in the last 10 years, much less the last 20 or 30.],
   body-paragraphs: (
-  [What you might be less familiar with is that what’s under the hood of OpenClaw
-is a little coding agent called Pi . And
-Pi happens to be, at this point, the coding agent that I use almost exclusively.
-Over the last few weeks I became more and more of a shill for the little agent.
-After I gave a talk on this recently, I realized that I did not actually write
-about Pi on this blog yet, so I feel like I might want to give some context on
-why I’m obsessed with it, and how it relates to OpenClaw.],
-  [Pi is written by Mario Zechner and unlike Peter, who
-aims for “sci-fi with a touch of madness,” 1 Mario is very grounded. Despite
-the differences in approach, both OpenClaw and Pi follow the same idea: LLMs are
-really good at writing and running code, so embrace this. In some ways I think
-that’s not an accident because Peter got me and Mario hooked on this idea, and
-agents last year.],
-  [What is Pi?],
-  [So Pi is a coding agent. And there are many coding agents. Really, I think you
-can pick effectively anyone off the shelf at this point and you will be able to
-experience what it’s like to do agentic programming. In reviews on this blog
-I’ve positively talked about AMP and one of the reasons I resonated so much with
-AMP is that it really felt like it was a product built by people who got both
-addicted to agentic programming but also had tried a few different things to see
-which ones work and not just to build a fancy UI around it.],
-  [Pi is interesting to me because of two main reasons:],
-  [First of all, it has a tiny core. It has the shortest system prompt of any
-agent that I’m aware of and it only has four tools: Read, Write, Edit, Bash.],
-  [The second thing is that it makes up for its tiny core by providing an
-extension system that also allows extensions to persist state into sessions,
-which is incredibly powerful.],
-  [And a little bonus: Pi itself is written like excellent software. It doesn’t
-flicker, it doesn’t consume a lot of memory, it doesn’t randomly break, it is
-very reliable and it is written by someone who takes great care of what goes
-into the software.],
-  [Pi also is a collection of little components that you can build your own agent
-on top. That’s how OpenClaw is built, and that’s also how I built my own little
-Telegram bot and how Mario built his
- mom . If you want
-to build your own agent, connected to something, Pi when pointed to itself and
-mom, will conjure one up for you.],
-  [What’s Not In Pi],
-  [And in order to understand what’s in Pi, it’s even more important to understand
-what’s not in Pi, why it’s not in Pi and more importantly: why it won’t be in
-Pi. The most obvious omission is support for MCP. There is no MCP support in
-it. While you could build an extension for it, you can also do what OpenClaw
-does to support MCP which is to use
- mcporter . mcporter exposes MCP calls via
-a CLI interface or TypeScript bindings and maybe your agent can do something
-with it. Or not, I don’t know :)],
-  [And this is not a lazy omission. This is from the philosophy of how Pi works.
-Pi’s entire idea is that if you want the agent to do something that it doesn’t
-do yet, you don’t go and download an extension or a skill or something like
-this. You ask the agent to extend itself. It celebrates the idea of code
-writing and running code.],
-  [That’s not to say that you cannot download extensions. It is very much
-supported. But instead of necessarily encouraging you to download someone else’s
-extension, you can also point your agent to an already existing extension, say
-like, build it like the thing you see over there, but make these changes to it
-that you like.],
-  [Agents Built for Agents Building Agents],
-  [When you look at what Pi and by extension OpenClaw are doing, there is an
-example of software that is malleable like clay. And this sets certain
-requirements for the underlying architecture of it that are actually in many
-ways setting certain constraints on the system that really need to go into the
-core design.],
-  [So for instance, Pi’s underlying AI SDK is written so that a session can really
-contain many different messages from many different model providers. It
-recognizes that the portability of sessions is somewhat limited between model
-providers and so it doesn’t lean in too much into any model-provider-specific
-feature set that cannot be transferred to another.],
-  [The second is that in addition to the model messages it maintains custom
-messages in the session files which can be used by extensions to store state or
-by the system itself to maintain information that either not at all is sent to
-the AI or only parts of it.],
-  [Because this system exists and extension state can also be persisted to disk, it
-has built-in hot reloading so that the agent can write code, reload, test it and
-go in a loop until your extension actually is functional. It also ships with
-documentation and examples that the agent itself can use to extend itself. Even
-better: sessions in Pi are trees. You can branch and navigate within a session
-which opens up all kinds of interesting opportunities such as enabling workflows
-for making a side-quest to fix a broken agent tool without wasting context in
-the main session. After the tool is fixed, I can rewind the session back to
-earlier and Pi summarizes what has happened on the other branch.],
-  [This all matters because for instance if you consider how MCP works, on most
-model providers, tools for MCP, like any tool for the LLM, need to be loaded
-into the system context or the tool section thereof on session start. That
-makes it very hard to impossible to fully reload what tools can do without
-trashing the complete cache or confusing the AI about how prior invocations work
-differently.],
-  [An extension in Pi can register a tool to be available to the LLM to call and
-every once in a while I find this useful. For instance, despite my criticism of
-how Beads is implemented, I do think that giving an agent access to a to-do list
-is a very useful thing. And I do use an agent-specific issue tracker that works
-locally that I had my agent build itself. And because I wanted the agent to also
-manage to-dos, in this particular case I decided to give it a tool rather than a
-CLI. It felt appropriate for the scope of the problem and it is currently the
-only additional tool that I’m loading into my context.],
-  [But for the most part all of what I’m adding to my agent are either skills or
-TUI extensions to make working with the agent more enjoyable for me. Beyond
-slash commands, Pi extensions can render custom TUI components directly in the
-terminal: spinners, progress bars, interactive file pickers, data tables,
-preview panes. The TUI is flexible enough that Mario proved you can run Doom
-in it . Not practical,
-but if you can run Doom, you can certainly build a useful dashboard or debugging
-interface.],
-  [I want to highlight some of my extensions to give you an idea of what’s
-possible. While you can use them unmodified, the whole idea really is that you
-point your agent to one and remix it to your heart’s content.],
-  [/answer],
-  [I don’t use plan mode . I encourage the agent
-to ask questions and there’s a productive back and forth. But I don’t like
-structured question dialogs that happen if you give the agent a question tool.
-I prefer the agent’s natural prose with explanations and diagrams interspersed.],
-  [The problem: answering questions inline gets messy. So /answer reads the
-agent’s last response, extracts all the questions, and reformats them into a
-nice input box.],
-  [/todos],
-  [Even though I criticize Beads for its
-implementation, giving an agent a to-do list is genuinely useful. The /todos 
-command brings up all items stored in .pi/todos as markdown files. Both the
-agent and I can manipulate them, and sessions can claim tasks to mark them as in
-progress.],
-  [/review],
-  [As more code is written by agents, it makes little sense to throw unfinished
-work at humans before an agent has reviewed it first. Because Pi sessions are
-trees, I can branch into a fresh review context, get findings, then bring fixes
-back to the main session.],
-  [The UI is modeled after Codex which provides easy to review commits, diffs,
-uncommitted changes, or remote PRs. The prompt pays attention to things I care
-about so I get the call-outs I want (eg: I ask it to call out newly added
-dependencies.)],
-  [/control],
-  [An extension I experiment with but don’t actively use. It lets one Pi agent send
-prompts to another. It is a simple multi-agent system without complex
-orchestration which is useful for experimentation.],
-  [/files],
-  [Lists all files changed or referenced in the session. You can reveal them in
-Finder, diff in VS Code, quick-look them, or reference them in your prompt.
- shift+ctrl+r quick-looks the most recently mentioned file which is handy when
-the agent produces a PDF.],
-  [Others have built extensions too: Nico’s subagent
-extension and
- interactive-shell which
-lets Pi autonomously run interactive CLIs in an observable TUI overlay.],
-  [These are all just ideas of what you can do with your agent. The point of it
-mostly is that none of this was written by me, it was created by the agent to my
-specifications. I told Pi to make an extension and it did. There is no MCP, there are
-no community skills, nothing. Don’t get me wrong, I use tons of skills. But
-they are hand-crafted by my clanker and not downloaded from anywhere. For
-instance I fully replaced all my CLIs or MCPs for browser automation with a
- skill that just uses
-CDP .
-Not because the alternatives don’t work, or are bad, but because this is just
-easy and natural. The agent maintains its own functionality.],
-  [My agent has quite a few
-skills and crucially
-I throw skills away if I don’t need them. I for instance gave it a skill to
-read Pi sessions that other engineers shared, which helps with code review. Or
-I have a skill to help the agent craft the commit messages and commit behavior I
-want, and how to update changelogs. These were originally slash commands, but
-I’m currently migrating them to skills to see if this works equally well. I
-also have a skill that hopefully helps Pi use uv rather than pip , but I also
-added a custom extension to intercept calls to pip and python to redirect
-them to uv instead.],
-  [Part of the fascination that working with a minimal agent like Pi gave me is
-that it makes you live that idea of using software that builds more software.
-That taken to the extreme is when you remove the UI and output and connect it
-to your chat. That’s what OpenClaw does and given its tremendous growth,
-I really feel more and more that this is going to become our future in one
-way or another.],
-  [id="fn-1"\>],
-  [https:\/\/x.com/steipete/status/2017313990548865292 ↩],
+  [Websites have gotten a lot…  fatter .],
+  [While I think it’s irrational to pine for the bad old days of  HTML 1.0 websites , there are some legitimate concerns here. The best summary is Maciej Cegłowski’s,  The Website Obesity Crisis :],
+  [To channel a famous motivational speaker, I could go out there tonight, with the materials you’ve got, and rewrite the sites I showed you at the start of this talk to make them load in under a second. In two hours.],
+  [Can you? Can you?],
+  [Of course you can! It’s not hard! We knew how to make small websites in 2002. It’s not like the secret has been lost to history, like Greek fire or Damascus steel.],
+  [But we face pressure to make these sites bloated.],
+  [I bet if you went to a client and presented a 200 kilobyte site template, you’d be fired. Even if it looked great and somehow included all the tracking and ads and social media crap they insisted on putting in. It’s just so far out of the realm of the imaginable at this point.],
+  [The whole article is essential; you should stop what you’re doing and read it now if you haven’t already. But if you don’t have time, here’s the key point:],
+  [This is a screenshot from an NPR article discussing the rising use of ad blockers. The page is 12 megabytes in size in a stock web browser.  The same article with basic ad blocking turned on is 1 megabyte.],
+  [That’s right, through the simple act of running an ad blocker, you’ve reduced that website’s payload by twelve times. Twelve! That’s like the most effective exercise program  ever!],
+  [Even the traditional advice to keep websites lean and mean for mobile no longer applies because new mobile devices, at least on the Apple side, are  faster than most existing desktops and laptops.],
+  [Despite  claims to the contrary , the bad guy isn’t web bloat, per se.  The bad guy is  advertising . Unlimited, unfettered ad “tech” has creeped into everything and subsumed the web.],
+  [Personally I don’t even want to run ad blockers, and I didn’t for a long time – but it’s increasingly difficult to avoid running an ad blocker unless you want a clunky, substandard web experience. There’s a  reason  the most popular browser plugins are inevitably ad blockers, isn’t there? Just ask Google:],
+  [So it’s all the more surprising to learn that Google is suddenly clamping down hard on adblockers in Chrome. Here’s what the author of uBlock Origin, an ad blocking plugin for Chrome,  has to say  about today’s announcement:],
+  [In order for Google Chrome to reach its current user base, it had to support content blockers – these are the top most popular extensions for any browser. Google strategy has been to find the optimal point between the two goals of growing the user base of Google Chrome and preventing content blockers from harming its business.],
+  [The blocking ability of the webRequest API caused Google to yield control of content blocking to content blockers. Now that Google Chrome is the dominant browser, it is in a better position to shift the optimal point between the two goals which benefits Google’s primary business.],
+  [The deprecation of the blocking ability of the webRequest API is to gain back this control, and to further instrument and report how web pages are filtered, since the exact filters which are applied to web pages are useful information which will be collectable by Google Chrome.],
+  [The ad blockers themselves are arguably just as complicit. Eye/o GmbH owns  AdBlock  and  uBlock , employs 150 people, and in 2016 they had 50 million euros in revenue, of which about 50% was profit. Google’s  paid “Acceptable Ads” program  is a way to funnel money into adblockers to, uh,  encourage  them to display certain ads. With money. Lots… and lots… of money. 🤑],
+  [We simultaneously have a very real web obesity crisis, and a looming crackdown on ad blockers, seemingly the only viable weight loss program for websites. What’s a poor web citizen to do? Well, there is one thing you can do to escape the need for browser-based adblockers, at least on your home network. Install and configure  Pi-Hole .],
+  [I’ve talked about the amazing Raspberry Pi before in the context of classic game emulation , but this is another brilliant use for a Pi.],
+  [Here’s why it’s so cool. If you disable the DHCP server on your router, and let the Pi-Hole become your primary DHCP server,  you get automatic DNS based blocking of ads for every single device on your network . It’s kind of scary how powerful DNS can be, isn’t it?],
+  [My Pi-Hole took me about 1 hour to set up, start to finish. All you need is],
+  [a  Raspberry Pi 3b+ kit  \$59],
+  [a quality  32GB SD card  \$9],
+  [an ethernet cable],
+  [I do recommend the 3b+ because it has  native gigabit ethernet  and a bit more muscle. But  literally any Raspberry Pi  you can find laying around will work, though I’d  strongly  advise you to pick one with a wired ethernet port since it’ll be your DNS server.],
+  [I’m not going to write a whole Pi-Hole installation guide , because there are lots of great ones out there already. It’s not difficult, and there’s a slick web GUI waiting for you once you complete initial setup. For your initial testing, pick any IP address you like on your network that won’t conflict with anything active. Once you’re happy with the basic setup and web interface:],
+  [Turn OFF your router’s DHCP server – existing leases will continue to work, so nothing will be immediately broken.],
+  [Turn ON the pi-hole DHCP server, in the web GUI.],
+  [Once you do this, all your network devices will start to grab their DHCP leases from your Pi-Hole, which will  also  tell them to route all their DNS requests through the Pi-Hole, and that’s when the ✨ magic ✨ happens!],
+  [All those DNS requests from all the devices on your network will be checked against the ad blacklists; anything matching is quickly and silently discarded  before it ever reaches your browser.],
+  [(The Pi-Hole also acts as a  caching DNS server , so repeated DNS requests will be serviced rapidly from your local network, too.)],
+  [If you’re worried about stability or reliability, you can easily add a cheap battery backed USB plug, or even a second backup Pi-Hole as your secondary DNS provider if you prefer belt and suspenders protection. Switching back to plain boring old vanilla DNS is as easy as unplugging the Pi and flicking the DHCP server setting in your router back on.],
+  [At this point if you’re interested (and you should be!), just give it a try. If you’re looking for more information, the project has an  excellent forum  full of FAQs and roadmaps.],
+  [You can even  vote for your favorite upcoming features !],
+  [I avoided the Pi-Hole project for a while because I didn’t need it, and I’d honestly rather jump in later when things are more mature.],
+  [With the latest Chrome crackdown on ad blockers, now is the time, and I’m impressed how simple and easy Pi-Hole is to run. Just find a quiet place to plug it in, spend an hour configuring it, and promptly proceed to forget about it forever as you enjoy a lifetime subscription to  a glorious web ad instant weight loss program across every single device on your network with (almost) zero effort!],
+  [Finally, an exercise program I can believe in.],
 ),
   edited-for-length: false,
 )
 
 
 {
-  #section-label([Features])
+  #section-label([Front Page])
   #standard-article(
-  title: [Sandboxing AI agents, 100x faster],
-  author: [Kenton Varda],
-  source-name: [Cloudflare Blog],
+  title: [Is the craft dead?],
+  author: [Scott Hanselman],
+  source-name: [Scott Hanselman],
   images: (),
   paragraphs: (
-  [Last September we introduced Code Mode , the idea that agents should perform tasks not by making tool calls, but instead by writing code that calls APIs. We've shown that simply converting an MCP server into a TypeScript API can cut token usage by 81% . We demonstrated that Code Mode can also operate behind an MCP server instead of in front of it, creating the new Cloudflare MCP server that exposes the entire Cloudflare API with just two tools and under 1,000 tokens .],
-  [But if an agent (or an MCP server) is going to execute code generated on-the-fly by AI to perform tasks, that code needs to run somewhere, and that somewhere needs to be secure. You can't just eval() AI-generated code directly in your app: a malicious user could trivially prompt the AI to inject vulnerabilities.],
-  [You need a sandbox : a place to execute code that is isolated from your application and from the rest of the world, except for the specific capabilities the code is meant to access.],
-  [Sandboxing is a hot topic in the AI industry. For this task, most people are reaching for containers. Using a Linux-based container, you can start up any sort of code execution environment you want. Cloudflare even offers our container runtime and our Sandbox SDK for this purpose.],
-  [But containers are expensive and slow to start, taking hundreds of milliseconds to boot and hundreds of megabytes of memory to run. You probably need to keep them warm to avoid delays, and you may be tempted to reuse existing containers for multiple tasks, compromising the security.],
-  [If we want to support consumer-scale agents, where every end user has an agent (or many!) and every agent writes code, containers are not enough. We need something lighter.],
-  [And we have it.],
-  [Dynamic Worker Loader: a lean sandbox],
-  [Tucked into our Code Mode post in September was the announcement of a new, experimental feature: the Dynamic Worker Loader API. This API allows a Cloudflare Worker to instantiate a new Worker, in its own sandbox, with code specified at runtime, all on the fly.],
-  [Dynamic Worker Loader is now in open beta, available to all paid Workers users.],
-  [Read the docs for full details , but here's what it looks like:],
-  [\/\/ Have your LLM generate code like this.
-let agentCode: string = \`
- export default {
- async myAgent(param, env, ctx) {
- \/\/ ...
- }
- }
-\`;],
-  [\/\/ Get RPC stubs representing APIs the agent should be able
-\/\/ to access. (This can be any Workers RPC API you define.)
-let chatRoomRpcStub = ...;],
-  [\/\/ Load a worker to run the code, using the worker loader
-\/\/ binding.
-let worker = env. LOADER.load({
- \/\/ Specify the code.
- compatibilityDate: "2026-03-01",
- mainModule: "agent.js",
- modules: { "agent.js": agentCode },],
-  [\/\/ Give agent access to the chat room API.
- env: { CHAT\_ROOM: chatRoomRpcStub },],
-  [\/\/ Block internet access. (You can also intercept it.)
- globalOutbound: null,
-});],
-  [\/\/ Call RPC methods exported by the agent code.
-await worker.getEntrypoint().myAgent(param);],
-  [That's it.],
-  [100x faster],
-  [Dynamic Workers use the same underlying sandboxing mechanism that the entire Cloudflare Workers platform has been built on since its launch, eight years ago: isolates. An isolate is an instance of the V8 JavaScript execution engine, the same engine used by Google Chrome. They are how Workers work .],
-  [An isolate takes a few milliseconds to start and uses a few megabytes of memory. That's around 100x faster and 10x-100x more memory efficient than a typical container.],
-  [That means that if you want to start a new isolate for every user request, on-demand, to run one snippet of code, then throw it away, you can.],
-  [Unlimited scalability],
-  [Many container-based sandbox providers impose limits on global concurrent sandboxes and rate of sandbox creation. Dynamic Worker Loader has no such limits. It doesn't need to, because it is simply an API to the same technology that has powered our platform all along, which has always allowed Workers to seamlessly scale to millions of requests per second.],
-  [Want to handle a million requests per second, where every single request loads a separate Dynamic Worker sandbox, all running concurrently? No problem!],
-  [Zero latency],
-  [One-off Dynamic Workers usually run on the same machine — the same thread, even — as the Worker that created them. No need to communicate around the world to find a warm sandbox. Isolates are so lightweight that we can just run them wherever the request landed. Dynamic Workers are supported in every one of Cloudflare's hundreds of locations around the world.],
-  [It's all JavaScript],
-  [The only catch, vs. containers, is that your agent needs to write JavaScript.],
-  [Technically, Workers (including dynamic ones) can use Python and WebAssembly, but for small snippets of code — like that written on-demand by an agent — JavaScript will load and run much faster.],
-  [We humans tend to have strong preferences on programming languages, and while many love JavaScript, others might prefer Python, Rust, or countless others.],
-  [But we aren't talking about humans here. We're talking about AI. AI will write any language you want it to. LLMs are experts in every major language. Their training data in JavaScript is immense.],
-  [JavaScript, by its nature on the web, is designed to be sandboxed. It is the correct language for the job.],
-  [Tools defined in TypeScript],
-  [If we want our agent to be able to do anything useful, it needs to talk to external APIs. How do we tell it about the APIs it has access to?],
-  [MCP defines schemas for flat tool calls, but not programming APIs. OpenAPI offers a way to express REST APIs, but it is verbose, both in the schema itself and the code you'd have to write to call it.],
-  [For APIs exposed to JavaScript, there is a single, obvious answer: TypeScript.],
-  [Agents know TypeScript. TypeScript is designed to be concise. With very few tokens, you can give your agent a precise understanding of your API.],
-  [\/\/ Interface to interact with a chat room.
-interface ChatRoom {
- \/\/ Get the last \`limit\` messages of the chat log.
- getHistory(limit: number): Promise ;],
-  [\/\/ Subscribe to new messages. Dispose the returned object
- \/\/ to unsubscribe.
- subscribe(callback: (msg: Message) =\> void): Promise ;],
-  [\/\/ Post a message to chat.
- post(text: string): Promise ;
-}],
-  [type Message = {
- author: string;
- time: Date;
- text: string;
-}],
-  [Compare this with the equivalent OpenAPI spec (which is so long you have to scroll to see it all):],
-  [openapi: 3.1.0
-info:
- title: ChatRoom API
- description: \>
- Interface to interact with a chat room.
- version: 1.0.0],
-  [paths:
- /messages:
- get:
- operationId: getHistory
- summary: Get recent chat history
- description: Returns the last \`limit\` messages from the chat log, newest first.
- parameters:
- - name: limit
- in: query
- required: true
- schema:
- type: integer
- minimum: 1
- responses:
- "200":
- description: A list of messages.
- content:
- application/json:
- schema:
- type: array
- items:
- \$ref: "\#/components/schemas/Message"],
-  [post:
- operationId: postMessage
- summary: Post a message to the chat room
- requestBody:
- required: true
- content:
- application/json:
- schema:
- type: object
- required:
- - text
- properties:
- text:
- type: string
- responses:
- "204":
- description: Message posted successfully.],
-  [/messages/stream:
- get:
- operationId: subscribeMessages
- summary: Subscribe to new messages via SSE
- description: \>
- Opens a Server-Sent Events stream. Each event carries a JSON-encoded
- Message object. The client unsubscribes by closing the connection.
- responses:
- "200":
- description: An SSE stream of new messages.
- content:
- text/event-stream:
- schema:
- description: \>
- Each SSE \`data\` field contains a JSON-encoded Message object.
- \$ref: "\#/components/schemas/Message"],
-  [components:
- schemas:
- Message:
- type: object
- required:
- - author
- - time
- - text
- properties:
- author:
- type: string
- time:
- type: string
- format: date-time
- text:
- type: string],
-  [We think the TypeScript API is better. It's fewer tokens and much easier to understand (for both agents and humans).],
-  [Dynamic Worker Loader makes it easy to implement a TypeScript API like this in your own Worker and then pass it in to the Dynamic Worker either as a method parameter or in the env object. The Workers Runtime will automatically set up a Cap'n Web RPC bridge between the sandbox and your harness code, so that the agent can invoke your API across the security boundary without ever realizing that it isn't using a local library.],
-  [That means your agent can write code like this:],
-  [\/\/ Thinking: The user asked me to summarize recent chat messages from Alice.
-\/\/ I will filter the recent message history in code so that I only have to
-\/\/ read the relevant messages.
-let history = await env. CHAT\_ROOM.getHistory(1000);
-return history.filter(msg =\> msg.author == "alice");],
-  [HTTP filtering and credential injection],
-  [If you prefer to give your agents HTTP APIs, that's fully supported. Using the globalOutbound option to the worker loader API, you can register a callback to be invoked on every HTTP request, in which you can inspect the request, rewrite it, inject auth keys, respond to it directly, block it, or anything else you might like.],
-  [For example, you can use this to implement credential injection (token injection): When the agent makes an HTTP request to a service that requires authorization, you add credentials to the request on the way out. This way, the agent itself never knows the secret credentials, and therefore cannot leak them.],
-  [Using a plain HTTP interface may be desirable when an agent is talking to a well-known API that is in its training set, or when you want your agent to use a library that is built on a REST API (the library can run inside the agent's sandbox).],
-  [With that said, in the absence of a compatibility requirement, TypeScript RPC interfaces are better than HTTP:],
-  [As shown above, a TypeScript interface requires far fewer tokens to describe than an HTTP interface.],
-  [The agent can write code to call TypeScript interfaces using far fewer tokens than equivalent HTTP.],
-  [With TypeScript interfaces, since you are defining your own wrapper interface anyway, it is easier to narrow the interface to expose exactly the capabilities that you want to provide to your agent, both for simplicity and security. With HTTP, you are more likely implementing filtering of requests made against some existing API. This is hard, because your proxy must fully interpret the meaning of every API call in order to properly decide whether to allow it, and HTTP requests are complicated, with many headers and other parameters that could all be meaningful. It ends up being easier to just write a TypeScript wrapper that only implements the functions you want to allow.],
-  [Battle-hardened security],
-  [Hardening an isolate-based sandbox is tricky, as it is a more complicated attack surface than hardware virtual machines. Although all sandboxing mechanisms have bugs, security bugs in V8 are more common than security bugs in typical hypervisors. When using isolates to sandbox possibly-malicious code, it's important to have additional layers of defense-in-depth. Google Chrome, for example, implemented strict process isolation for this reason, but it is not the only possible solution.],
-  [We have nearly a decade of experience securing our isolate-based platform. Our systems automatically deploy V8 security patches to production within hours — faster than Chrome itself. Our security architecture features a custom second-layer sandbox with dynamic cordoning of tenants based on risk assessments. We've extended the V8 sandbox itself to leverage hardware features like MPK. We've teamed up with (and hired) leading researchers to develop novel defenses against Spectre . We also have systems that scan code for malicious patterns and automatically block them or apply additional layers of sandboxing. And much more.],
-  [When you use Dynamic Workers on Cloudflare, you get all of this automatically.],
-  [Helper libraries],
-  [We've built a number of libraries that you might find useful when working with Dynamic Workers:],
-  [\@cloudflare/codemode simplifies running model-generated code against AI tools using Dynamic Workers. At its core is DynamicWorkerExecutor() , which constructs a purpose-built sandbox with code normalisation to handle common formatting errors, and direct access to a globalOutbound fetcher for controlling fetch() behaviour inside the sandbox — set it to null for full isolation, or pass a Fetcher binding to route, intercept or enrich outbound requests from the sandbox.],
-  [const executor = new DynamicWorkerExecutor({
- loader: env. LOADER,
- globalOutbound: null, \/\/ fully isolated 
-});],
-  [const codemode = createCodeTool({
- tools: myTools,
- executor,
-});],
-  [return generateText({
- model,
- messages,
- tools: { codemode },
-});],
-  [The Code Mode SDK also provides two server-side utility functions. codeMcpServer({ server, executor }) wraps an existing MCP Server, replacing its tool surface with a single code() tool. openApiMcpServer({ spec, executor, request }) goes further: given an OpenAPI spec and an executor, it builds a complete MCP Server with search() and execute() tools as used by the Cloudflare MCP Server, and better suited to larger APIs.],
-  [In both cases, the code generated by the model runs inside Dynamic Workers, with calls to external services made over RPC bindings passed to the executor.],
-  [Learn more about the library and how to use it.],
-  [Dynamic Workers expect pre-bundled modules. \@cloudflare/worker-bundler handles that for you: give it source files and a package.json , and it resolves npm dependencies from the registry, bundles everything with esbuild , and returns the module map the Worker Loader expects.],
-  [import { createWorker } from "\@cloudflare/worker-bundler";],
-  [const worker = env. LOADER.get("my-worker", async () =\> {
- const { mainModule, modules } = await createWorker({
- files: {
- "src/index.ts": \`
- import { Hono } from 'hono';
- import { cors } from 'hono/cors';],
-  [const app = new Hono();
- app.use('\*', cors());
- app.get('/', (c) =\> c.text('Hello from Hono!'));
- app.get('/json', (c) =\> c.json({ message: 'It works!' }));],
-  [export default app;
- \`,
- "package.json": JSON.stringify({
- dependencies: { hono: "^4.0.0" }
- })
- }
- });],
-  [return { mainModule, modules, compatibilityDate: "2026-01-01" };
-});],
-  [await worker.getEntrypoint().fetch(request);],
-  [It also supports full-stack apps via createApp — bundle a server Worker, client-side JavaScript, and static assets together, with built-in asset serving that handles content types, ETags, and SPA routing.],
-  [Learn more about the library and how to use it.],
-  [File manipulation],
-  [\@cloudflare/shell gives your agent a virtual filesystem inside a Dynamic Worker. Agent code calls typed methods on a state object — read, write, search, replace, diff, glob, JSON query/update, archive — with structured inputs and outputs instead of string parsing.],
-  [Storage is backed by a durable Workspace (SQLite + R2), so files persist across executions. Coarse operations like searchFiles , replaceInFiles , and planEdits minimize RPC round-trips — the agent issues one call instead of looping over individual files. Batch writes are transactional by default: if any write fails, earlier writes roll back automatically.],
-  [import { Workspace } from "\@cloudflare/shell";
-import { stateTools } from "\@cloudflare/shell/workers";
-import { DynamicWorkerExecutor, resolveProvider } from "\@cloudflare/codemode";],
-  [const workspace = new Workspace({
- sql: this.ctx.storage.sql, \/\/ Works with any DO's SqlStorage, D1, or custom SQL backend
- r2: this.env. MY\_BUCKET, \/\/ large files spill to R2 automatically
- name: () =\> this.name \/\/ lazy — resolved when needed, not at construction
-});],
-  [\/\/ Code runs in an isolated Worker sandbox with no network access
-const executor = new DynamicWorkerExecutor({ loader: env. LOADER });],
-  [\/\/ The LLM writes this code; \`state.\*\` calls dispatch back to the host via RPC
-const result = await executor.execute(
- \`async () =\> {
- \/\/ Search across all TypeScript files for a pattern
- const hits = await state.searchFiles("src/\*\*/\*.ts", "answer");
- \/\/ Plan multiple edits as a single transaction
- const plan = await state.planEdits([
- { kind: "replace", path: "/src/app.ts",
- search: "42", replacement: "43" },
- { kind: "writeJson", path: "/src/config.json",
- value: { version: 2 } }
- ]);
- \/\/ Apply atomically — rolls back on failure
- return await state.applyEditPlan(plan);
- }\`,
- [resolveProvider(stateTools(workspace))]
-);],
-  [The package also ships prebuilt TypeScript type declarations and a system prompt template, so you can drop the full state API into your LLM context in a handful of tokens.],
-  [Learn more about the library and how to use it.],
-  [How are people using it?],
-  [Developers want their agents to write and execute code against tool APIs, rather than making sequential tool calls one at a time. With Dynamic Workers, the LLM generates a single TypeScript function that chains multiple API calls together, runs it in a Dynamic Worker, and returns the final result back to the agent. As a result, only the output, and not every intermediate step, ends up in the context window. This cuts both latency and token usage, and produces better results, especially when the tool surface is large.],
-  [Our own Cloudflare MCP server is built exactly this way: it exposes the entire Cloudflare API through just two tools — search and execute — in under 1,000 tokens, because the agent writes code against a typed API instead of navigating hundreds of individual tool definitions.],
-  [Building custom automations],
-  [Developers are using Dynamic Workers to let agents build custom automations on the fly. Zite , for example, is building an app platform where users interact through a chat interface — the LLM writes TypeScript behind the scenes to build CRUD apps, connect to services like Stripe, Airtable, and Google Calendar, and run backend logic, all without the user ever seeing a line of code. Every automation runs in its own Dynamic Worker, with access to only the specific services and libraries that the endpoint needs.],
-  [“To enable server-side code for Zite’s LLM-generated apps, we needed an execution layer that was instant, isolated, and secure. Cloudflare’s Dynamic Workers hit the mark on all three, and out-performed all of the other platforms we benchmarked for speed and library support. The NodeJS compatible runtime supported all of Zite’s workflows, allowing hundreds of third party integrations, without sacrificing on startup time. Zite now services millions of execution requests daily thanks to Dynamic Workers.”],
-  [— Antony Toron , CTO and Co-Founder, Zite],
-  [Running AI-generated applications],
-  [Developers are building platforms that generate full applications from AI — either for their customers or for internal teams building prototypes. With Dynamic Workers, each app can be spun up on demand, then put back into cold storage until it's invoked again. Fast startup times make it easy to preview changes during active development. Platforms can also block or intercept any network requests the generated code makes, keeping AI-generated apps safe to run.],
-  [Dynamically-loaded Workers are priced at \$0.002 per unique Worker loaded per day (as of this post’s publication), in addition to the usual CPU time and invocation pricing of regular Workers.],
-  [For AI-generated "code mode" use cases, where every Worker is a unique one-off, this means the price is \$0.002 per Worker loaded (plus CPU and invocations). This cost is typically negligible compared to the inference costs to generate the code.],
-  [During the beta period, the \$0.002 charge is waived. As pricing is subject to change, please always check our Dynamic Workers pricing for the most current information.],
-  [If you’re on the Workers Paid plan, you can start using Dynamic Workers today.],
-  [Use this “hello world” starter to get a Worker deployed that can load and execute Dynamic Workers.],
-  [You can also deploy the Dynamic Workers Playground , where you’ll be able to write or import code, bundle it at runtime with \@cloudflare/worker-bundler , execute it through a Dynamic Worker, see real-time responses and execution logs.],
-  [Dynamic Workers are fast, scalable, and lightweight. Find us on Discord if you have any questions. We’d love to see what you build!],
+  [The Japanese are really good at woodworking. And I love watching the Yankee workshop, my dad makes Native American bows and arrows completely from scratch in his workshop with trees that he finds.],
+  [This is all different from the stuff you get at IKEA, but I’ve been coding now for money for 35 years and systems are still complicated, computers still do dumb stuff, humans still do dumb stuff, this is just like the move from assembler to C, like the introduction of syntax highlighting, the introduction of intellisense, and the copy paste directly into production shift when stack overflow happened.],
+  [There is value in good taste, there is value in craftsmanship, and there is value in human judgment. The furniture might be differently designed, but we’re still interior designers and putting together a cohesive system is non-trivial.],
+  [Don’t let them gaslight you with one shot Minecraft clones and one shot C compilers. Software is still hard, it’s just that you’re no longer I/O bound with the speed of your fingertips.],
+  [I think that there will be lots of work for us cleaning up after the slop, but if you know what you’re doing AI augmented development is going to get you some amazing results and I am enjoying learning a ton during this momentous era shift - but the craft still exists.],
+  [© 2025 Scott Hanselman. All rights reserved.],
+  [style="clear: both; padding-top: 0.2em;"\>],
 ),
   insert-map: (:),
-  word-count: 3177,
+  word-count: 234,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+}
+
+{
+  #section-label([Features])
+  #standard-article(
+  title: [The Gumbel‑Max Trick Made Intuitive],
+  author: [Criteo Tech],
+  source-name: [Criteo Engineering],
+  images: (),
+  paragraphs: (
+  [Author: Alexandre Gilotte],
+  [When we work with machine learning models, we constantly turn probabilities into discrete choices.],
+  [Which ad do we show? Which action do we sample in a reinforcement learning policy? Which word comes next in a language model?],
+  [All these problems share the same core operation:],
+  [We have a list of options, each with an associated probability, and we want to randomly pick one option according to those probabilities.],
+  [We will use this simple distribution to illustrate why Gumbel trick works],
+  [There is a very common way to do this (using cumulative sums and a uniform random number), but one could instead imagine an algorithm that looks like this:],
+  [Independently noise each option’s score, then simply take the argmax of the noised scores.],
+  [Here it is not obvious that there is even a “right” way to noise the scores so that we get exactly the correct distribution. It turns out there is one, known as the Gumbel-Max trick :],
+  [Take the log of the scores (or probabilities) for each category.],
+  [Add independent Gumbel noise to each log-probability.],
+  [Pick the index with the largest noisy log-probability.],
+  [The magic is that the index you get is exactly a sample from the categorical distribution defined by your original probabilities.],
+  [Here, if you have no idea what a “Gumbel” variable is, don’t worry. It is just a specific distribution on a continuous random variable; we will get back to it later.],
+  [And there is more: we can also draw several samples without replacement from the same categorical distribution with the same trick. For that, simply return the items ordered by their decreasing noisy score. That’s all.],
+  [The figure below illustrates the sampling on an example:],
+  [Example of sampling with Gumbel max trick. (Bold values are random numbers.)],
+  [The usual proof that Gumbel-Max works consists of computing some ugly integrals involving the Gumbel pdf, to conclude after a page of calculus that “it outputs each item with the right probability”. But this proof gives no intuition about why it works.],
+  [In this post, I will:],
+  [Reformulate the Gumbel-Max trick with the more commonly used exponential distribution , to get an “exponential-min trick”.],
+  [Link the exponential to arrival times , using a simple Autobus \/ Bike \/ Car example, to get an intuitive explanation of why it works.],
+  [Explain why sorting the noisy scores gives sampling without replacement .],
+  [From the Gumbel-Max trick to the Exp-Min trick],
+  [I have personally never encountered a “Gumbel” random variable except in this “Gumbel-Max trick”. Fortunately, we can define it using the more familiar Exponential distribution.],
+  [Gumbel: What is it?
+ Take an exponential random variable with rate 1, written X ~ Exp(1). Define:],
+  [G = −log X],
+  [Then G has the standard Gumbel distribution.],
+  [As a reminder, one way to generate X ~ Exp(1) is:],
+  [draw U ~ Uniform(0, 1)],
+  [set X := −log U],
+  [This means G can be sampled as G := −log(-log(U))],
+  [Gumbel variable],
+  [Let’s see how we can use this definition to reformulate the Gumbel-Max trick without ever mentioning Gumbel again],
+  [Gumbel-Max trick algorithm:],
+  [Draw an independent Gumbel Gᵢ for each item i.],
+  [Return: Argmaxᵢ \[ log pᵢ + Gᵢ \].],
+  [From the Gumbel definition: Gᵢ = −log Xᵢ with Xᵢ ~ Exp(1)],
+  [Noting that:],
+  [log pᵢ + Gᵢ = −log(Xᵢ \/ pᵢ).],
+  [−log(·) is strictly decreasing,],
+  [therefore the index that maximizes (log pᵢ + Gᵢ) is the same index that minimizes (Xᵢ \/ pᵢ). So we obtain the Exp-Min trick :],
+  [Draw independent Xᵢ ~ Exp(1) for each item i.],
+  [Return: Argminᵢ \[ Xᵢ \/ pᵢ \].],
+  [This algorithm is clearly equivalent to the Gumbel-Max trick. We will now explain why it works by interpreting Xᵢ \/ pᵢ as the first arrival time for category i.],
+  [1. Counting passing vehicles],
+  [To explain why this sampling trick works, we will consider a seemingly unrelated setting in which the categorical distribution arises naturally:],
+  [We observe vehicles passing by and assume that on this street there are:],
+  [Autobus: on average 10 per hour],
+  [Bikes: on average 60 per hour],
+  [Cars: on average 30 per hour],
+  [We assume:],
+  [Arrivals are random and uniform in time.],
+  [What happens in disjoint time intervals is independent.],
+  [Formally, the arrivals of Autobuses follow a Poisson process with rate λa = 10 per hour (similarly for Bikes and Cars).],
+  [This means that in any time interval of length t hours, the number of passing buses is a Poisson random variable with mean 10·t.],
+  [If you don’t know what a Poisson process is, we can instead use the following discrete approximation:],
+  [During each second, there is a probability p that an Autobus passes.],
+  [“10 Autobuses per hour on average” means: p = 10 \/ 3600.],
+  [What happens at any second is independent of what happens before or after.],
+  [We could refine this approximation by using smaller time steps (milliseconds, microseconds, …); the Poisson process is what we get when letting the time step tend to 0.],
+  [We thus have 3 independent Poisson processes defining the arrivals of Autobuses, Bikes, and Cars, with per‑second probabilities roughly:],
+  [Autobus: 10 \/ 3600],
+  [Bike: 60 \/ 3600],
+  [Car: 30 \/ 3600],
+  [A sample of the Poisson processes defining the arrivals of Autobuses, Bikes and Cars],
+  [What is the probability that the first passing vehicle is an Autobus?
+ Intuitively, since all arrivals are independent, the chance that a bus is the first kind of vehicle we see should be proportional to how many buses arrive per hour.],
+  [So: P(“Autobus first”) = 10 \/ (10 + 60 + 30) = 0.1.],
+  [This is exactly the categorical distribution of our first example:],
+  [Autobus: 0.1],
+  [Bike: 0.6],
+  [Car: 0.3],
+  [Key idea one: 
+The first passing vehicle is a sample from a categorical distribution with probabilities proportional to the arrival rates (vehicles per hour).],
+  [If you are not convinced that this is true: 
+ Let’s further assume that there are 10 lines of buses, 60 colors of bikes, and 30 brands of cars, for a total of 100 sub-categories; and that in each sub-category the arrivals follow a Poisson process with rate “one per hour“. This is compatible with the previous description, because the sum of independent Poisson processes is still a Poisson process (i.e., the Poisson process counting buses is the sum of the processes counting each bus line). By symmetry, it should be clear that each sub-category has the same chances to be the first, so 1%. Then the probability of observing “a bus first“ is 10 times the probability of one sub‑category, and thus 0.1.],
+  [2. Sampling the first arriving item by sampling arrival times],
+  [From time “0”, we can look at the first arrival time for each vehicle type:],
+  [Ta: time of the first Autobus],
+  [Tb: time of the first Bike],
+  [Tc: time of the first Car],
+  [The event “Autobus is the first vehicle” is exactly:],
+  [P(“Autobus first”) = P( Ta = minᵢ Tᵢ ).],
+  [Note: In the discrete “per-second” model, two vehicles might arrive in the same second, which complicates things. But this is an artifact of the discretization: in the continuous-time Poisson model, the probability that two vehicles arrive exactly at the same time is 0, so we can safely ignore ties.],
+  [Because arrivals of each vehicle type are independent, these arrival times are independent.],
+  [Key idea two: 
+We can sample directly the arrival times Ta , Tb and Tc of each vehicle types],
+  [The type with the lowest arrival time is a sample of ‘the first passing vehicle’, and thus a sample from a categorical distribution with probabilities proportional to the arrival rates (vehicles per hour).],
+  [All we need to know is the shape of the distributions of Ta, Tb, and Tc.],
+  [3. Law of first arrival time],
+  [Property (law of first arrival time). 
+Let Ta be the time of the first Autobus when the rate is λa = 10 per hour.],
+  [Then: Ta is an exponential variable of Exp(λ = 10).
+That is: P(Ta \> t) = exp(−10 t), for t ≥ 0.],
+  [Sketch of proof (optional calculus):],
+  [In the per-second model, the probability of a bus in a given second is p = 10 \/ 3600.],
+  [The probability of seeing no bus in the first n seconds is: (1 − p)^n.],
+  [Time t in hours corresponds to n = 3600 · t seconds, so:],
+  [P(Ta \> t) ≈ (1 − p)^n = (1 − 10 \/ 3600)^(3600 t).],
+  [If instead of discretizing per second, we make the time step (here 1/3600) go to 0, this expression converges to: exp(−10 t).],
+  [This is exactly the survival function of an exponential variable with rate ’10 per hour’.],
+  [Of course, the same holds for Bikes and Cars, with their respective rates.],
+  [Let us also note that Exp(λ = 10) = Exp(λ = 1)/10 .],
+  [Indeed, let X ~ Exp(1). Then P(X \/ 10 \> t) = P(X \> 10 t) = exp(−10 t).],
+  [We can thus sample the arrival time of the first bus like this:],
+  [Draw Xa ~ Exp(1)],
+  [Return: Xa \/ 10],
+  [4. Exp-Min trick as sampling the first arrival],
+  [Putting together the algorithm idea of section 2 and the result of section 3, we get the following:],
+  [Sampling time of arrival and returning the category arriving first:],
+  [Draw independent variables Xa, Xb, Xc ~ Exp(1)],
+  [Let the times of arrival of the first autobus, bike, and car be: 
+Ta := Xa \/ 10
+Tb := Xb \/ 60
+Tc := Xc \/ 30],
+  [Return the category with the least arrival time],
+  [By the property of Section 1, the output of this algorithm follows the desired categorical distribution on A, B, and C.],
+  [Now compare this to the “Exp-Min trick” defined before: it is exactly the same algorithm! 🤯],
+  [Conclusion : the Exp-Min trick works because it samples the first arrival times Ti for each category and returns the category arriving first.],
+  [Similarly, the Gumbel-Max trick samples −log T ᵢ and returns the category with the highest value.],
+  [5. Sampling several items without replacement],
+  [Now, assume the first vehicle was a bus, arriving one minute after we started to wait. We now ignore all buses after that, and wonder whether we will then observe a Bike before a Car.],
+  [Because in our model, what happens after “t = one minute” is independent of what happened before, this conditioning changes nothing (this is often formulated as saying that Poisson processes are memoryless ).],
+  [So the probability that Bike beats Car next is still:],
+  [P(“first Bike before first Car” | “both arrive after first Autobus”) = 60 \/ (60 + 30). Let us note that this is exactly the conditional probability of sampling a Bike as the second item, given that the first was an Autobus, when we take several samples without replacement.],
+  [And of course, the event “first Bike before first Car” is equivalent to 
+Tb \< Tc.],
+  [This means that the category corresponding to the second smallest arrival time is a sample from the categorical distribution restricted to the remaining items.],
+  [More generally, if we sort categories by their sampled arrival times Tᵢ, we obtain a random permutation where the first element is a sample from the full categorical distribution, the second is a sample from the distribution restricted to the remaining items, and so on.],
+  [That is exactly sampling without replacement .],
+  [This explains why, in the Gumbel-Max version, if we add Gumbel noise once to each log pᵢ , and then sort categories by their noisy scores, we obtain several samples without replacement from the original categorical distribution.],
+  […and why is it useful?],
+  [At first sight, Gumbel‑Max looks like a convoluted way to do something we can already do with a uniform random number and a cumulative sum. So why should we care?],
+  [It is sometimes an efficient choice for sampling, for example, in https:\/\/arxiv.org/pdf/1903.06059],
+  [It is sometimes used as a reparametrisation trick to make a model learnable (turning a discrete sampling step into a differentiable operation, via the “Gumbel‑Softmax” or related tricks).],
+  [And it can be useful for otherwise intractable computations. A nice example is computing the probability that an item is among the first (K) samples when sampling without replacement from a multinomial, as in https:\/\/harrieo.github.io/files/2025-consequences-propensities.pdf],
+  [This last use case is the one I was interested in at Criteo: building a counterfactual estimator for our recommender system, which requires computing exactly those probabilities. But the details would take us too far for this blog post!],
+  [Finally, here is a small exercise:],
+  [You have a stream of incoming items, each with an associated weight, which you see one by one.
+The stream is very large, and you cannot remember or store all the items (you can only store a few).
+Once you have seen all the items, you must return two of them, sampled without replacement from the categorical distribution defined by the weights.],
+  [Can you do it with the Gumbel‑Max trick? 🤔
+Can you do it without the Gumbel‑Max trick (or the equivalent Exp‑Min trick)? Good luck — this one is not simple. 😅],
+  [The Gumbel‑Max Trick Made Intuitive was originally published in Criteo Tech Blog on Medium, where people are continuing the conversation by highlighting and responding to this story.],
+),
+  insert-map: (:),
+  word-count: 2196,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -491,52 +263,438 @@ const result = await executor.execute(
 
 {
   #standard-article(
-  title: [The Rise of the Electric Scooter],
+  title: [Ending the "silent drop": how Dynamic Path MTU Discovery makes the Cloudflare One Client more resilient],
+  author: [Koko Uko],
+  source-name: [Cloudflare Blog],
+  images: (),
+  paragraphs: (
+  [You’ve likely seen this support ticket countless times: a user’s Internet connection that worked just fine a moment ago for Slack and DNS lookups is suddenly hung the moment they attempt a large file upload, join a video call, or initiate an SSH session. The culprit isn't usually a bandwidth shortage or service outage issue, it is the "PMTUD Black Hole" — a frustration that occurs when packets are too large for a specific network path, but the network fails to communicate that limit back to the sender. This situation often happens when you’re locked into using networks you do not manage or vendors with maximum transmission unit (MTU) restrictions, and you have no means to address the problem.],
+  [Today, we are moving past these legacy networking constraints. By implementing Path MTU Discovery (PMTUD), the Cloudflare One Client has shifted from a passive observer to an active participant in path discovery.],
+  [Dynamic Path MTU Discovery allows the client to intelligently and dynamically adjust to the optimal packet size for most network paths using MTUs above 1281 bytes . This ensures that a user’s connection remains stable, whether they are on a high-speed corporate backbone or a restrictive cellular network.],
+  [The “modern security meets legacy infrastructure” challenge],
+  [To understand the solution, we have to look at how modern security protocols interact with the diversity of global Internet infrastructure. The MTU represents the largest data packet size a device can send over a network without fragmentation: typically 1500 bytes for standard Ethernet.],
+  [As the Cloudflare One client has evolved to support modern enterprise-grade requirements (such as FIPS 140-2 compliance ), the amount of metadata and encryption overhead within each packet has naturally increased. This is a deliberate choice to ensure our users have the highest level of protection available today.],
+  [However, much of the world’s Internet infrastructure was built decades ago with a rigid expectation of 1500-byte packets. On specialized networks like LTE/5G, satellite links, or public safety networks like FirstNet, the actual available space for data is often lower than the standard. When a secure, encrypted packet hits an older router with a lower limit (e.g., 1300 bytes), that router should ideally send an Internet Control Message Protocol (ICMP) message stating "Destination Unreachable" back to the sender to request a smaller size.],
+  [But that doesn’t always happen. The "Black Hole" occurs when firewalls or middleboxes silently drop those ICMP feedback messages. Without this feedback, the sender keeps trying to send large packets that never arrive, and the application simply waits in a "zombie" state until the connection eventually times out.],
+  [Cloudflare’s solution: active probing with PMTUD],
+  [Cloudflare’s implementation of RFC 8899 Datagram Packetization Layer Path MTU Discovery (PMTUD) removes the reliance on these fragile, legacy feedback loops. Because our modern client utilizes the MASQUE protocol — built on top of Cloudflare’s open source QUIC library — the client can perform active, end-to-end interrogation of the network path.],
+  [Instead of waiting for an error message that might never come, the client proactively sends encrypted packets of varying sizes to the Cloudflare edge. This probe tests MTUs from the upper bound of the supported MTU range to the midpoint, until the client narrows down to the exact MTU to match. This is a sophisticated, non-disruptive handshake happening in the background. If the Cloudflare edge receives a specific-sized probe, it acknowledges it; if a probe is lost, the client instantly knows the precise capacity of that specific network segment.],
+  [The client then dynamically resizes its virtual interface MTU on the fly, by periodically validating the capacity of the path that we established at connection onset. This ensures that if, for example, a user moves from a 1500-MTU Wi-Fi network at a station to a 1300-MTU cellular backhaul in the field, the transition is seamless. The application session remains uninterrupted because the client has already negotiated the best possible path for those secure packets.],
+  [Real-world impact, from first responders to hybrid workers],
+  [This technical shift has profound implications for mission-critical connectivity. Consider the reliability needs of a first responder using a vehicle-mounted router. These systems often navigate complex NAT-traversal and priority-routing layers that aggressively shrink the available MTU. Without PMTUD, critical software like Computer Aided Dispatch (CAD) systems may experience frequent disconnects during tower handoffs or signal fluctuations. By using active discovery, the Cloudflare One Client maintains a sticky connection that shields the application from the underlying network volatility.],
+  [This same logic applies to the global hybrid workforce. A road warrior working from a hotel in a different country often encounters legacy middleboxes and complex double-NAT environments. Instead of choppy video calls and stalled file transfers, the client identifies the bottleneck in seconds and optimizes the packet flow — before the user even notices a change.],
+  [Get PMTUD for your devices],
+  [Anyone using the Cloudflare One Client with the MASQUE protocol can try Path MTU Discovery now for free. Use our detailed documentation to get started routing traffic through the Cloudflare edge with the speed and stability of PMTUD on your Windows, macOS, and Linux devices.],
+  [If you are new to Cloudflare One, you too can start protecting your first 50 users for free. Simply create an account , download the Cloudflare One Client , and follow our onboarding guide to experience a faster, more stable connection for your entire team.],
+),
+  insert-map: (:),
+  word-count: 886,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+}
+
+{
+  #standard-article(
+  title: [Launching The Rural Guaranteed Minimum Income Initiative],
   author: [Jeff Atwood],
   source-name: [Coding Horror (Jeff Atwood)],
   images: (),
   paragraphs: (
-  [In an electric car, the (enormous) battery is a major part of the price. If electric car prices are decreasing , battery costs  must  be decreasing, because it’s not like the cost of fabricating rubber, aluminum, glass, and steel into car shapes can decline that much, right?],
-  [On an  electric scooter , though, the effect of battery price has to be even more dramatic because scooters are such  lightweight, compact, and simple machines . They aren’t much more than a battery and an electric motor to begin with. Remember the  Zappy electric scooter  from twenty years ago?],
-  [What killed the electric scooter back then is the same thing that killed the electric car of year 2000: terrible lead-acid battery technology. It’s too heavy, it lacks power, it doesn’t have enough range, it takes too long to charge. These are all different ways of saying the same thing:  the battery sucks . It wasn’t until Lithium Ion batteries matured that both the electric car and the electric scooter – and pretty much electric  everything , if you think about it – became viable.],
-  [Thus, one way to see if Lithium Ion battery prices are indeed generally dropping independent of all other manufacturing concerns is to examine the cost of electric scooters over the last few years. Let’s consider one of the most popular models, the Xiaomi Mi M365:],
-  [This graph only shows roughly two years, from January 2018 to now; it looks like the original price for the Xiaomi M365 when it hit the US market in early 2017 was around \$800. So  the price of a popular, common electric scooter has  halved  in three years.  Very good news indeed for electric vehicles of all types!],
-  [This dramatic drop in electric scooter price from 2016 to 2019 may not be surprising versus the parallel rise of the quasi-legal electric scooter smartphone app rental industry over roughly the same time period, in the form of Bird, Lime, Skip, Spin, Scoot, etc.],
-  [Early versions of Bird scooters were  actual Xiaomi M365s , slightly modified for rental. Only by late 2018 had they  migrated to  custom built, ruggedized scooters optimized for the rental market. The rental industries  have their own challenges , and ironically have started to pivot to monthly rentals rather than the classic 15 cents per minute.],
-  [Bird has experimented with its business model in recent months. In early March, the company altered its repair program in Los Angeles, which had relied on gig workers to fix broken scooters. It moved repairs in-house (though scooters are still charged each night by an army of gig workers). Later that month, the company introduced scooters with locks in some markets, in a bid to prevent theft and vandalism.],
-  [In April, it announced the launch of a more traditional rental program in San Francisco and Barcelona, in which users could pay \$25 per month to rent a Xiaomi m365 from the company rather than paying per ride.],
-  [But this isn’t meant to be a blog entry about the viability of scooter rental company business models.],
-  [I want to tackle a more fundamental question:  are electric scooters the future of transportation?],
-  [Even Uber, as screwed up of a company as they still are, knows cars are overkill for a lot of basic transportation needs:],
-  [We have plenty of scooters here at my house, and the family and I enjoy them greatly, but I have never actually ridden or owned an electric scooter. So I bought one. It is of course the popular, inexpensive, and well reviewed Xiaomi Mi M365.],
-  [Here’s a picture of my electric scooter inside  my electric car . (I apologize that I didn’t have an electric bicycle to park next to it for maximum smugness, but you can  bet your sweet electrons  I’ll work on that next!)],
-  [The short version of my review is  this electric scooter is incredibly fun, works great, and if you can get it for a price around \$300, practically a no-brainer.  I love it, my kids love it, and as long as you’re  conceptually OK with the look , unlike Elon Musk, 🛴💨 then you’ll probably love it too.],
-  [I found a neat video covering the “one year later” experience of owning the scooter, and what you might eventually run into or want to tweak.],
-  [(The main thing to take away from this video is that flats  super suck  on tires this small, so be warned. I put Slime in my Mi’s tires out of an abundance of caution, but you could also go with solid tubeless tires – at the cost of some ride comfort – if you’re really worried.)],
-  [That’s not to say that the electric scooter experience is perfect. There are some challenges with electric scooters, starting with the biggest one: your local government has no idea how to regulate the darn things .],
-  [Is this regulated like a bicycle? If not, why not?],
-  [Are they allowed on the sidewalk?],
-  [Do you have to ride them in the road, with cars… uh, depending on the speed limit?],
-  [Do you need a driver’s license?],
-  [Do you need a helmet?],
-  [Are you even  allowed  to legally ride them in public at all outside of private property?],
-  [The answers also vary wildly depending on where you live, and with no consistency or apparent logic. Here are the current electric scooter laws in California , for what it’s worth, which  require the rider to have a valid driver’s license  (unlike electric bicycles) and also disallow them from sidewalks, both of which I feel are onerous and unnecessary restrictions.],
-  [One aspect of those laws I  definitely  agree with, however, is the  15 mile per hour speed restriction . That’s a plenty brisk top speed for a standing adult with no special safety equipment. Anything faster starts to get decidedly… uncomfortable. Consider this monster of a  1165KWh electric scooter , with dual motors and dual suspension that goes up to  forty freakin’ miles per hour .],
-  [That… is… terrifying. Even the reviewer, in full motorcycle safety gear, wasn’t willing to push it all the way to 40 MPH. And I don’t blame him! But now that I’ve shown you the undisputed Honda Civic everyman budget model of electric scooter in the M365, hopefully this gives you a taste of the wider emerging diversity in these kinds of minimalistic electric vehicles. If you want a  luxury electric scooter , an  ultralight electric scooter , a  rugged offroad electric scooter … all things are possible, for a price.],
-  [Another reason the M365 is available for so cheap is that is successor, the Xiaomi M365 Pro, was recently released, although it is not quite possible to obtain in the US at the moment.],
-  [Having ridden my M365 a fair bit, I can confirm all the Pro improvements are welcome, if incremental: bigger battery and disc brake, more power, better display, improved latch mechanism, etc.],
-  [None of those Pro improvements, however, are worth a 2× increase in price so I’d recommend sticking with the M365 for now because its value proposition is off the charts. Did I mention there’s a Bluetooth connection, and an app, and it is possible to hack the M365 firmware? Pretty cool how electric vehicles are inherently digital, isn’t it?],
-  [Here are a few other observations after riding my M365 around a fair bit:],
-  [Please be respectful around pedestrians.  Most of the sidewalks around here are not busy at all, but the pedestrians I encountered on the electric scooter were definitely more freaked out than I’ve seen before when using regular kick scooters (or skateboards) on the sidewalk, which did surprise me. An electric scooter has more heft to it, both physically at 26 pounds, and in the 15 mile per hour speed it can reach – but also mentally in terms of how it looks and how people approach it. I recommend slowing down to just above walking speed when encountering pedestrians, and if there is a bike lane available, I’d definitely recommend using that.],
-  [Hills work great.  The kryptonite of traditional kick scooters is hills, and I’m pleased to report that even with a cough sizable adult such as myself riding, I was able to sustain a respectable above-walking speed on most reasonable hills. Where I looked at a hill and thought “this probably should work,” it did. That’s impressive, considering this  isn’t  the upgraded Pro model with bigger battery and more powerful motor. On flats and downhills the performance is superb, as you’d expect. That said, if you are a really big or tall adult, or live in a particularly hilly area, wait for the Pro model or an equivalent.],
-  [Portability is good, but borderline.  At ~26 pounds, the electric scooter is reasonably portable, but it’s not something you a) could really get away with taking inside a restaurant / store with you to prevent theft or b) want to be carrying around on your person for any significant length of time. It’s not nearly as nimble or portable as a kick scooter, but that’s a high bar. You’ll need to carry a bike lock and think about how to lock your scooter on bike racks, which turned out to be… more geometrically challenging than I anticipated due to the small tires, disc brakes, and the engine in the front wheel. They need more obvious locking points on the chassis.],
-  [To be honest with you I’m still bitter about the whole  Segway  debacle. There was so much hype back in the day. That ridiculous thing was  supposed to change the world . Instead, we got…  Paul Blart Mall Cop .],
-  [A Segway was \$5,000 at launch in 2001, which is a whopping \$7,248 in inflation adjusted dollars. Here in 2019, cheap \$200 to \$300 electric scooters are basically the transformational technology the Segway was  supposed  to be, aren’t they? Are electric scooters the future of (most) transportation? I’m not sure, but I do like where we’re headed, even if it took us twenty years to get there.],
+  [It's been a year since I invited Americans to join us in a pledge to Share the American Dream :],
+  [1. Support organizations you feel are  effectively helping  those most in need across America right now .],
+  [2. Within the next five years, also contribute  public dedications of time or funds towards longer term efforts  to keep the American Dream fair and attainable for all our children.],
+  [Stay gold, America. 💛],
+  [Personally, I’ve become a big believer in one particular quote, especially considering the specific context in which it was delivered:],
+  [Those 10 words had a profound effect on the world. Indeed, we were given much, so we, as a family, will choose to give much . On a recent podcast , my partner Betsy said it better than I could have:],
+  [“Well, we have everything we need!” That’s how I’ve always phrased it to \[our children\]. That, I think, extends \[to our philanthropy\]. We have everything we need;  how do we make sure everybody has what they need?  Because that’s the basic thing — Do you have a comfortable place to live? Do you have enough to eat? Do you have healthcare? If you have the basics, you’re in a good place in life, and everybody should have that opportunity.],
+  [It’s a question I’ve asked myself a lot since 2021 . When, exactly, is enough?],
+  [We do have everything we need. Why can’t everyone else have the basic things they need, too?],
+  [Beyond the \$1M to eight nonprofit charities we listed in January 2025, we saw immediate needs becoming so urgent that we quickly added an additional \$13M in donations within a few months, for a total of \$21M.],
+  [value="1"\> Team Rubicon — \$1M],
+  [value="2"\> Children’s Hunger Fund — \$1M],
+  [value="3"\> PEN America — \$1M],
+  [value="4"\> The Trevor Project — \$1M],
+  [value="5"\> NAACP Legal Defense and Educational Fund — \$1M + \$100k],
+  [value="6"\> First Generation Investors — \$1M],
+  [value="7"\> Global Refuge — \$1M],
+  [value="8"\> Planned Parenthood — \$1M],
+  [value="9"\> VoteVets — \$2M],
+  [value="10"\> Mastodon — \$1.5M],
+  [value="11"\> 404 Media — \$1.1M],
+  [value="12"\> Ryan Broderick \/ Garbage Day — \$1M],
+  [value="13"\> Internet Archive — \$1M],
+  [value="14"\> Common Crawl Foundation — \$1M],
+  [value="15"\> Wikipedia \/ Wikimedia foundation — \$1M],
+  [value="16"\> Internet Security Research Group — \$1M],
+  [value="17"\> DNA Lounge — \$1M],
+  [value="18"\> Murena — \$500k],
+  [value="19"\> Sharewell — \$300k],
+  [value="20"\> Precious Plastic — \$100k],
+  [value="21"\> Economic Security Project — \$100k],
+  [value="22"\> Rural Democracy Initiative — \$100k],
+  [value="23"\> Civic Nation — \$100k],
+  [value="24"\> Sojourn Project — \$750k],
+  [value="25"\> Alameda Food Bank — \$150k],
+  [value="26"\> Urban Compassion Project — \$75k],
+  [But you can’t take a completely short term view and fight each individual fire reactively, as it comes. You'll never stop firefighting. We also have to do fire abatement and deal with the root causes, improving conditions in this country such that there aren’t so many fires . Thus for the second half, much longer term part, in addition to the \$21M already donated, we pledged \$50M — half of our remaining wealth — to address the underlying, systemic issues.],
+  [I proposed some speculative ideas in “Stay Gold,” and this one ended up being the closest:],
+  [We could found a new organization loosely based on the original  RAND Corporation , but modernized like  Lever for Change . We can empower the best and brightest to determine a realistic, achievable path toward preserving the American Dream for  everyone,  working within the current system or outside it.],
+  [By March, 2025 we had consensus — The Road Not Taken is Guaranteed Minimum Income .],
+  [Guaranteed Minimum Income (GMI) is an improved version of the older concept of Universal Basic Income (UBI) — rather than indiscriminately giving money to “everyone,” GMI directs the money towards those who most need it , particularly families experiencing generational poverty.],
+  [📢 Please note that after this post, Coding Horror will revert to normal nerdy blog posts, and all future GMI content will be at a dedicated site linked below.],
+  [id="why-did-we-decide-on-gmi"\>Why did we decide on GMI?],
+  [Almost every existing UBI/GMI study result data we could find indicates cash generally works . For example, OpenResearch data showed the greatest increase in spending among study participants was in meeting basic needs, with the greatest percent increase in support to others (26%), along with huge decreases in reported alcohol use (20% less) and days using non-prescribed painkillers (53% fewer). Why wouldn’t we continue to build something that has generally been shown to work, study after study, time and time again?],
+  [This is survival money , cash for folks so they can put food on the table, get a roof over their heads, have a functioning vehicle to go to work, and decide how to meet their most basic, critical needs. It pains me to say this, but we live in a world where many people simply do not often experience open generosity, or regular income. When you show someone what it feels like to just not be hungry for a little while, their view of the world changes. They feel trusted. They see possibility .],
+  [style="border: none !important;"\>],
+  [I moved here with my family. And I have no family up here other than who I brought with me. So, how most people can be like, “Hey, I’m having a hard time. Got \$20 or a pack of diapers.” I have nobody up here to do that. So, if me and my husband don't figure it out, it don't get figured out.],
+  [So, I’ve got five kids that live with me... I was working full-time until I got pregnant. I prayed for this baby for 10 years. So, as soon as I got pregnant, I stopped working. I was high risk.],
+  [The day I got cleared to go back to work, my vehicle broke down. It was the only vehicle that we had that carried all the kids. So, I’ve been four months without my car. So this is also going to get my vehicle back on the road.],
+  [You don’t know how hard it is to ask people, hey, can I get a ride to the grocery store? Or, hey, my baby has two month shots. I had to borrow a vehicle. This is gonna... it’s going to do a lot!],
+  [Unlike many other social programs, GMI studies require initiative . These are opt-in studies that you have to sign up for, demonstrate that you meet the income criteria and are a resident of the county — and because spots are limited, be randomly selected from eligible applicants. We emphasize that this is not passive, it is active teamwork to improve the GMI program with your family, your community, and everyone else we can reach together over the next few decades.],
+  [id="building-on-what-works"\>Building On What Works],
+  [The massive OpenResearch UBI study , the largest and most detailed guaranteed income study ever conducted in the USA, was designed to be a template for future, more refined studies, and that’s exactly what we’re doing. We will also use what we learn in this group of three counties — as in software, the rule of three — to iterate, adapt, and improve our GMI study playbook with every new group of three counties , generating a playbook anyone can use.],
+  [We strive to do repeatable, replicable science in every study, and all our data will be open and freely shared with the world . We’re contributing to — and partially funding — a global, open data repository for basic income pilots all around the world, UBIdata . It’s the same reason we made Stack Overflow content part of the creative commons, and Discourse fully open source.],
+  [GMI is seed funding for families, investing in our fellow Americans, those who need it the most. A large body of research shows that dollars targeted to lower-income families are more likely to be spent quickly and reduce hardship, and can improve outcomes for children. “ Trickle up” economics works, whereas "trickle down" tax cuts for the rich increase income inequality and provide no significant effect on growth or jobs.],
+  [This is the newer trust based model of philanthropy , much closer to venture capital funding. We primarily empower, fund, and build up existing organizations like GiveDirectly and OpenResearch, forming a collaborative team to leverage all their existing work and grow their organizations in whatever way they see fit, because they have the most experience in the GMI space.],
+  [id="the-rural-guaranteed-minimum-income-initiative"\>The Rural Guaranteed Minimum Income Initiative],
+  [I like to go that way, really fast , so we are already well underway with the Rural Guaranteed Minimum Income Initiative .],
+  [We focus on rural counties , where dollars go a lot further, poverty is more prevalent, and populations are smaller for tighter studies. Rural counties are also greatly overlooked in this country, in my opinion, yet they have so much incredible untapped talent. I know because that’s exactly where my parents and I are from.],
+  [We’ve funded three county level programs (Mercer, WV; Beaufort, NC; Warren, MS) that are already underway, where we will help lift thousands of people out of poverty for a period of 16 months, while sharing data and results with the world. That’s a good start.],
+  [But I think we can do considerably more. With your help, we hope to reach all 50 states over time.],
+  [In “Stay Gold,” I noted that all of American history contains the path of love, and the path of hate. But the path of love is the only survivable path. It’s so much harder, and it’s going to be a lifetime of work. But what else could I possibly buy with our money that would be worth anything close to this, for all of us?],
+  [id="what-you-can-do"\>What You Can Do],
+  [Everyone is invited to help . Share results , learn the history of GMI (it’s actually fascinating, I swear), talk to your representatives and generally spread the word. A surprising number of people have never even heard the terms UBI or GMI, and sometimes have misconceptions about what they are and how they work.],
+  [If you, or someone you know, is “those to whom much is given,” and in a position to sponsor county-scale work, please join us in bringing a GMI study to a new rural county and reach all 50 states. Let’s continue to do science and help lift thousands of people out of poverty while generating open data for the world.],
+  [This is my third and final startup . Rather than an “Atwood Foundation,” all we want to do is advance the concept of direct cash transfer. Simply giving money to those most in need is perhaps the most radical act of love we can take on... and all the data I can find shows us that it works — helping people afford basic needs, keep stable housing, and handle unexpected expenses.],
+  [Dreams, like happiness, are only real when shared. So let’s do that together.],
+  [staygold.us 💛],
 ),
   insert-map: (:),
-  inline-pq: pull-quote([I love it, my kids love it, and as long as you’re  conceptually OK with the look , unlike Elon Musk, 🛴💨 then you’ll probably love it too.], [Jeff Atwood]),
-  inline-pq-idx: 14,
-  word-count: 1669,
+  word-count: 1884,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+}
+
+{
+  #standard-article(
+  title: [What does Stack Overflow want to be when it grows up?],
+  author: [Jeff Atwood],
+  source-name: [Coding Horror (Jeff Atwood)],
+  images: (),
+  paragraphs: (
+  [I sometimes get asked by regular people in the actual real world what it is that I do for a living, and here’s my 15 second answer:],
+  [We built a sort of Wikipedia website for computer programmers to post questions and answers. It’s called  Stack Overflow .],
+  [As of last month, it’s been 10 years since Joel Spolsky and I  started Stack Overflow . I currently do other stuff now , and I have since 2012, but if I will be known for anything when I’m dead, clearly it is going to be good old Stack Overflow.],
+  [Here’s where I’d normally segue into a bunch of rah-rah stuff about how great Stack Overflow is, and thus how implicitly great I am by association for being a founder, and all.],
+  [I do not care about any of that.],
+  [What I do care about, though, is  whether Stack Overflow is useful to working programmers . Let’s check in with  one of my idols , John Carmack. How useful is Stack Overflow, from the perspective of what I consider to be one of the greatest living programmers?],
+  [I won’t lie, September 17th, 2013 was a  pretty good day . I literally got chills when I read that, and not just because I always read the word “billions” in Carl Sagan’s voice. It was also pleasantly the opposite of pretty much every  other  day I’m on Twitter, scrolling through an oppressive, endless litany of shared human suffering and people screaming at each other. Which reminds me, I should check my Twitter and see who else is wrong on the Internet today.],
+  [I am honored and humbled by the public utility that Stack Overflow has unlocked for a whole generation of programmers. But  I didn’t do that .],
+  [You  did, when you contributed a well researched question to Stack Overflow.],
+  [You  did, when you contributed a succinct and clear answer to Stack Overflow.],
+  [You  did, when you edited a question or answer on Stack Overflow to make it better.],
+  [All those “fun size” units of Q&A collectively contributed by working programmers from all around the world ended up building a  Creative Commons resource  that truly rivals Wikipedia within our field. That’s... incredible, actually.],
+  [But success stories are boring. The world is filled with people that  basically got lucky , and subsequently can’t stop telling people how it was all of their hard work and moxie that made it happen. I find failure much more instructive, and when building a business and planning for the future, I take on the role of Abyss Domain Expert™ and begin a staring contest. It’s just a little something I like to do, you know...  for me .],
+  [Thus, what I’d like to do right now is peer into that glorious abyss for a bit and introspect about  the challenges I see facing Stack Overflow for the next 10 years.  Before I begin, I do want to be absolutely crystal clear about a few things:],
+  [I have not worked at Stack Overflow in any capacity whatsoever since February 2012 and I’ve had zero day-to-day operational input since that date, more or less by choice. Do I have opinions about how things should be done? Uh, have you  met me?  Do I email people every now and then about said opinions? I might, but I honestly do try to keep it to an absolute minimum, and I think my email archive track record here is reasonable.],
+  [The people working at Stack are amazing and most of them (including much of the Stack Overflow community, while I’m at it) could articulate the mission better — and perhaps a tad less crankily — than I could by the time I left. Would I trust them with my life? No. But I’d trust them with Joel’s life!],
+  [The whole point of the Stack Overflow exercise is that it’s not beholden to me, or Joel, or  any other Great Person . Stack Overflow works because it empowers regular everyday programmers all over the world, just like you, just like me. I guess in my mind it’s akin to being a parent. The goal is for your children to eventually grow up to be sane, practicing adults who don’t need (or, really,  want ) you to hang around any more.],
+  [Understand that you’re reading  the weak opinions strongly held  the strong opinions weakly held  of a co-founder who spent prodigious amounts of time working with the community in the first four years of Stack Overflow’s life to shape the rules and norms of the site to fit their needs. These are merely my opinions. I like to think they are  informed  opinions, but that doesn’t necessarily mean I can predict the future, or that I am even qualified to try. But I’ve never let being “qualified” stop me from doing anything, and I ain’t about to start tonight.],
+  [id="stack-overflow-is-a-wiki-first"\>Stack Overflow is a wiki first],
+  [Stack Overflow ultimately has  much  more in common with Wikipedia than a discussion forum. By this I mean questions and answers on Stack Overflow are not primarily judged by their usefulness to a specific individual, but by  how many other  programmers that question or answer can potentially help over time . I tried as hard as I could to emphasize this relationship from launch day in 2008. Note who has top billing in this Venn diagram.],
+  [Stack Overflow later added a super neat feature to highlight this core value in user profiles, where it shows how many other people you have potentially helped with your contributed questions and answers so far.],
+  [The most common complaints I see about Stack Overflow are usually the result of this fundamental misunderstanding about who the questions and answers on the site are ultimately  for , and why there’s so much strictness involved in the whole process.],
+  [I’m continually amazed at the number of people, even on Hacker News today, who don’t realize that every single question and answer is editable on Stack Overflow, even as a completely anonymous user who isn’t logged in. Which makes sense, right,  because Stack Overflow is a wiki , and that’s how wikis work. Anyone can edit them. Go ahead, try it right now if you don’t believe me – press the “improve this answer” or “improve this question” button on anything that can be improved, and make it so.],
+  [The responsibility for this misunderstanding is all on Stack Overflow (and by that I also mean myself, at least up until 2012). I guess the logic is that “every programmer has surely seen, used, and understands Stack Overflow by now, 10 years in” but... I think that’s a risky assumption. New programmers are minted every second of every day. Complicating matters further, there are three tiers of usage at Stack Overflow, from biggest to smallest, in inverted pyramid style:],
+  [I passively search for programming answers. Passively searching and reading highly ranked Stack Overflow answers as they appear in web search results is arguably the  primary goal of Stack Overflow . If Stack Overflow is working like it’s supposed to, 98% of programmers should get all the answers they need from reading search result pages and wouldn’t need to ask or answer a single question in their entire careers. This is a good thing! Great, even!],
+  [I participate on Stack Overflow when I get stuck on a really hairy problem and searching isn’t helping. Participating only at those times when you are extra stuck is completely valid. However, I feel this level is where most people tend to run into difficulty on Stack Overflow, because it involves someone who may not be new to Stack Overflow per se, but is new to asking questions, and also at the precise time of stress and tension for them where they  must  get an answer due to a problem they’re facing… and they don’t have the time or inclination to deal with Stack Overflow’s strict wiki type requirements for research effort, formatting, showing previous work, and referencing what they found in prior searches.],
+  [I participate on Stack Overflow for professional development. At this level you’re talking about experienced Stack Overflow users who have contributed many answers and thus have a pretty good idea of what makes a great question, the kind they’d want to answer themselves. As a result, they don’t tend to ask many questions because they self-medicate through exhaustive searching and research, but when they do ask one, their questions are exemplary.],
+  [(There’s technically a fourth tier here, for people who want to selflessly contribute creative commons questions and answers to move the entire field of software development forward for the next generation of software developers. But who has time for saints 😇, y’all make the rest of us look bad, so knock it off already, Skeet.)],
+  [It wouldn’t shock me at all if people spent  years  happily at tier 1 and then got a big unpleasant surprise when reaching tier 2. The primary place to deal with this, in my opinion, is a  massively revamped and improved ask page . It’s also fair to note that maybe people don’t understand that they’re signing up for a sizable chunk of work by implicitly committing to the wiki standard of “try to make sure it’s useful to more people than just yourself” when asking a question on Stack Overflow, and are then put off by the negative reaction to what others view as an insufficiently researched question.],
+  [Stack Overflow absorbs so much tension from its adoption of wiki standards for content. Even if you know about that requirement up front, it is not always clear what “useful” means, in the same way it’s not always clear what topics, people, and places are deserving of a Wikipedia page.  Henrietta Lacks , absolutely, but what about your cousin Dave in Omaha with his weirdo PHP 5.6 issue?],
+  [id="over-time-duplicates-become-vast-landmine-fields"\>Over time, duplicates become vast landmine fields],
+  [Here’s one thing I really, really saw coming and to be honest with you I was kinda glad I left in 2012 before I had to deal with it because of the incredible technical difficulty involved:  duplicates . Of all the complaints I hear about Stack Overflow, this is the one I am most sympathetic to by far.],
+  [If you accept that Stack Overflow is a wiki type system, then for the same reasons that you obviously can’t have five different articles about Italy on Wikipedia,  Stack Overflow can’t allow duplicate questions on the exact same programming problem . While there is a fair amount of code to do pre-emptive searches as people type in questions, plus  many  exhortations to search before you ask, with an inviting search field and button right there on the mandatory page you see before asking your first question...],
+  [...locating and identifying duplicate content is an insanely difficult problem even for a company like Google that’s done nothing but specialize in this exact problem for, what, 20 years now, with a veritable army of the world’s most talented engineers.],
+  [When you’re asking a question on a site that doesn’t allow duplicate questions, the problem space of a site with 1 million existing questions is rather different from a site with 10 million existing questions... or 100 million. Asking a single unique question goes from mildly difficult to mission almost impossible, because your question needs to thread a narrow path through this vast, enormous field of prior art questions without stepping on any of the vaguely similar looking landmines in the process.],
+  [But wait!  It gets harder!],
+  [Some variance in similar-ish questions is OK, because 10 different people will ask a nearly identical question using 10 different sets of completely unrelated words with no overlap. I know, it sounds crazy, but trust me: humans are amazing at this. We want all those duplicates to exist so they can  point to  the primary question they are a duplicate of, while still being valid search targets for people who ask questions with unusual or rare word choices.],
+  [It can be legitimately difficult to determine if your question is a true duplicate. How much overlap is enough before one programming question is a duplicate of another? And by whose definition? Opinions vary. This is subject to human interpretation, and humans are.. unreliable. Nobody will ever be completely happy with this system, pretty much by design. That tension is baked in permanently and forever.],
+  [I don’t have any real answers on the duplicate problem, which only gets worse over time. But I will point out that there is plenty of precedent on the Stack Exchange network  for splitting sites into “expert” and “beginner” areas with slightly different rulesets. We’ve seen this for Math vs. MathOverflow, English vs. English Learners, Unix vs. Ubuntu...  perhaps it’s time for a more beginner focused Stack Overflow  where duplicates are less frowned upon, and conversational rules are a bit more lenient?],
+  [id="stack-overflow-is-a-competitive-system-of-peer-review"\>Stack Overflow is a competitive system of peer review],
+  [Stack Overflow was indeed built to be a fairly explicitly competitive system, with the caveat that “there’s always more than one way  to do it.” This design choice was based on my perennial observation that the best way to motivate any programmer... is to subtly insinuate that  another  programmer could have maybe done it better.],
+  [This is manifested in the public reputation system on Stack Overflow, the incredible power of a number printed next to someone’s name, writ large. All reputation in Stack Overflow comes from the recognition of your peers, never the “system.”],
+  [Once your question is asked, or your answer is posted, it can then be poked, prodded, edited, flagged, closed, opened, upvoted, downvoted,  folded and spindled  by your peers. The  intent  is for Stack Overflow to be a system of peer review and friendly competition, like a code review from a coworker you’ve never met at a different division of the company. It’s also completely fair for a fellow programmer to question the premise of your question, as long as it’s done in a nice way. For example, do you really want to use that regular expression to match HTML ?],
+  [I fully acknowledge that  competitive peer review systems aren’t for everyone , and thus the overall process of having peers review your question may not always feel great, depending on your circumstances and background in the field –  particularly  when combined with the substantial tensions around utility and duplicates Stack Overflow already absorbed from its wiki elements. Kind of a double whammy there.],
+  [I’ve heard people describe the process of asking a question on Stack Overflow as anxiety inducing. To me, posting on Stack Overflow is  supposed  to involve a healthy kind of minor “let me be sure to show off my best work” anxiety:],
+  [the anxiety of giving a presentation to your fellow peers],
+  [the anxiety of doing well on a test],
+  [the anxiety of showing up to a new job with talented coworkers you admire],
+  [the anxiety of attending your first day at school with other students at your level],
+  [I imagine systems where there is zero anxiety involved and I can only think of jobs where I had long since stopped caring about the work and thus had no anxiety about whether I even showed for work on any given day. How can that be good? Let’s just say I’m not a fan of zero-anxiety systems.],
+  [Maybe competition just isn’t your jam. Could there be a less competitive Q&A system, a system without downvotes, a system without close votes, where there was never any anxiety about posting anything, just a network of super supportive folks who believe in you and want you to succeed no matter what? Absolutely! I think many alternative sites  should  exist on the internet so people can choose an experience that matches their personal preferences and goals. Should Stack build that alternative? Has it already been built? It’s an open question; feel free to point out examples in the comments.],
+  [id="stack-overflow-is-designed-for-practicing-programmers"\>Stack Overflow is designed for practicing programmers],
+  [Another point of confusion that comes up a fair bit is who the intended audience for Stack Overflow actually is. That one is straightforward, and it’s been the same from day one:],
+  [Q&A for  professional and enthusiast programmers . By that we mean:],
+  [People who either already have a job as a programmer, or could potentially be hired as a programmer today if they wanted to be.],
+  [Yes, in case you’re wondering, part of this was an overt business decision. To make money you must have an audience of people already on a programmer’s salary, or in the job hunt to be a programmer. The entire Stack Overflow network may be Creative Commons licensed, but it was never a non-profit play. It was planned as a sustainable business from the outset, and that’s why we launched Stack Overflow Careers  only one year after Stack Overflow itself... to be honest far sooner than we should have, in retrospect. Careers has since been smartly subsumed into Stack Overflow proper at  stackoverflow.com/jobs  for a more integrated and most assuredly way-better-than-2009 experience.],
+  [The choice of audience wasn’t meant to be an exclusionary decision in any way, but Stack Overflow was definitely designed as a fairly strict system of peer review, which is great (IMNSHO, obviously) for already practicing professionals, but  pretty much everything you would  not  want as a student or beginner . This is why I cringe so hard I practically turn myself inside out when people on Twitter mention that they have pointed their students at Stack Overflow. What you’d want for a beginner or a student in the field of programming is almost  the exact opposite  of what Stack Overflow does at every turn:],
+  [one-on-one mentoring],
+  [real time collaborative screen sharing],
+  [live chat],
+  [theory and background courses],
+  [starter tasks and exercises],
+  [playgrounds to experiment in],
+  [These are all very fine and good things, but Stack Overflow does  NONE  of them, by design.],
+  [Can  you use Stack Overflow to learn how to program from first principles? Well, technically you can do anything with any software. You could try to have actual conversations on Reddit, if you’re a masochist. But the answer is yes. You could learn how to program on Stack Overflow, in theory, if you are a prodigy who is comfortable with the light competitive aspects (reputation, closing, downvoting) and also perfectly willing to define all your contributions to the site in terms of utility to others, not just yourself as a student attempting to learn things. But I  suuuuuuper  would not recommend it. There are far better websites and systems out there for learning to be a programmer .  Could  Stack Overflow build beginner and student friendly systems like this? I don’t know, and it’s certainly not my call to make. 🤔],
+  [And that’s it. We can now resume our normal non-abyss gazing. Or whatever it is that passes for normal in these times.],
+  [I hope all of this doesn’t come across as negative. Overall I’d say the state of the Stack is strong. But does it even matter what I think?  As it was in 2008 , so it is in 2018.],
+  [Stack Overflow is  you .],
+  [This is the scary part, the great leap of faith that Stack Overflow is predicated on: trusting your fellow programmers. The programmers who choose to participate in Stack Overflow are the “secret sauce” that makes it work. You are the reason I continue to believe in developer community as the greatest source of learning and growth. You are the reason I continue to get so many positive emails and testimonials about Stack Overflow. I can’t take credit for that. But you can.],
+  [I learned the collective power of my fellow programmers long ago writing on Coding Horror. The community is far, far smarter than I will ever be. All I can ask — all any of us can ask — is to help each other along the path.],
+  [And if your fellow programmers decide to recognize you for that, then I say you’ve well and truly earned it.],
+  [The strength of Stack Overflow begins, and ends, with the community of programmers that power the site . What should Stack Overflow be when it grows up?  Whatever we make it, together.],
+  [p.s. Happy 10th anniversary Stack Overflow!],
+  [Also see Joel’s take on 10 years of Stack Overflow with  The Stack Overflow Age ,  A Dusting of Gamification , and  Strange and Maddening Rules .],
+),
+  insert-map: (:),
+  word-count: 3402,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+}
+
+{
+  #standard-article(
+  title: [Nontraditional Red Teams],
+  author: [Zach Holman],
+  source-name: [Zach Holman],
+  images: (),
+  paragraphs: (
+  [Most developers know about red teams :
+a specific group of people chosen to be the antagonist to your system, trying to
+sniff out vulnerabilities in your code or organization. Basically, like
+ Sneakers , or the
+annoying plotline in
+ The Newsroom season two .
+(Someone should have really red team’d Sorkin himself on that one.)],
+  [There’s a few other concepts of a red team I think that every development team
+should have some exposure to outside of the traditional cybersecurity angle.],
+  [id="someone-to-look-for-dicks"\>Someone to look for dicks],
+  [Once upon a time, GitHub was very excitedly looking forward to shipping our
+FIRST BILLBOARD! It’s an odd experience, turning into one of those startups who
+advertise on 101. Some sort of weird fucked-up sign of maturity and/or
+sufficient VC dollars. Particularly for a company whose product only exists In
+The Cloud… seeing real-world analogues is very surreal.],
+  [So Marketing worked on it, ran it through design, chatted on some plans as to
+what it should look like. If I recall, the GitHub thread on it was a couple
+weeks old, and Cameron McEfee put out a final “I’m
+going to send this to the printers at the end of the day, so speak now or
+forever hold your peace!” Some few-dozen people had seen it at this point so it
+probably was fine.],
+  [Anyway, I looked at the last iteration around the same time as
+ Rick Bradley did and we each were like… uh-oh that
+looks like goatse. Are we sure we aren’t goatse-ing all of San Francisco traffic
+for a few weeks? Seems rude.],
+  [Cameron dropped a “holy shit” and got it updated it prior to it hitting the
+printers. He also put a kind of “dick check” in the general design shipping
+process for large launches at GitHub- check for various genitals, meme-ability,
+and really any sort of ways the new work could be used in unintended ways.],
+  [I mean, the last thing you want is to have teammates work on something for
+months and users end up ignoring all their hard work because the new logo
+ looks like a booty or something .],
+  [It sounds totally goofy, but it’s not a bad idea to have someone in an
+antagonistic mindset to make sure you’re not shipping something awkward,
+insulting, or inappropriate through your visuals.],
+  [Finally, internet shitposters have a valid business use case.],
+  [id="someone-with-an-ad-blocker"\>Someone with an ad blocker],
+  [Ad blockers can be somewhat contentious: on one hand it’s good to support
+websites whose access might be free-of-charge; on the other hand, so many of
+these websites are fucking terrible, with ads and popups and unclosable
+interstitials.],
+  [But some of your users are going to use ad blockers; there’s no way around
+that. So have some asshole on your team constantly piping up if you break
+navigation with various ad blockers turned on. Yeah, there’s some political
+aspects here — who blocks the blockers? — but every time a site inexplicably
+ doesn’t work because someone made it so a file include or piece of HTML wrecks
+your entire site is one of the most rage-inducing aspects of modern sites out
+there, particularly if there aren’t any ads on the site in the first place.],
+  [id="someone-with-a-password-manager"\>Someone with a password manager],
+  [Look: I have a lot to say about
+ sessions and signing in to a product ,
+but suffice to say: there will be password managers for the foreseeable future
+and holy shit how do you all get the simplest sign-in form so wrong all the
+time?],
+  [Like, at its basic form it’s just a username and password. I get — sort of —
+layering on all this other shit like magic links and 2FA and enterprise sign-in,
+but so many dev teams don’t even get the basic form right: they do something
+custom in a hair-brained way so that 1Password or other password managers don’t
+auto-fill the form. (Yes, some of that is because 1Password itself has turned
+into some sort of deranged software that breaks if you look at it, but you get
+the idea.)],
+  [So someone on your team should use a password manager. I mean, you all should,
+of course, but for the love of god at least get one person on the team to pipe
+up with “why doesn’t my auto-fill work on our site?” And then fix it.],
+  [None of these are like, major blockers: people will work around broken forms or
+websites, and drivers will drive by your phallus on the highway. But they’re
+pretty easy to prevent. The main problem is that when you’re building a new
+feature you have so many other things to worry about… which is why having a kind
+of “red team” can be so helpful, to come at it with fresh, antagonistic eyes.],
+  [Anyway, just wanted you to think about this as you build your products! If you
+think it’s helpful, I’m just about to send these stickers to the printer- let me
+know if you’re interested in grabbing one.],
+),
+  insert-map: (:),
+  word-count: 830,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+  #pull-quote([It sounds totally goofy, but it’s not a bad idea to have someone in an antagonistic mindset to make sure you’re not shipping something awkward, insulting, or inappropriate through your visuals.], [Zach Holman])
+
+}
+
+{
+  #standard-article(
+  title: [A one-line Kubernetes fix that saved 600 hours a year],
+  author: [Braxton Schafer],
+  source-name: [Cloudflare Blog],
+  images: (),
+  paragraphs: (
+  [Every time we restarted Atlantis, the tool we use to plan and apply Terraform changes, we’d be stuck for 30 minutes waiting for it to come back up. No plans, no applies, no infrastructure changes for any repository managed by Atlantis. With roughly 100 restarts a month for credential rotations and onboarding, that added up to over 50 hours of blocked engineering time every month , and paged the on-call engineer every time.],
+  [This was ultimately caused by a safe default in Kubernetes that had silently become a bottleneck as the persistent volume used by Atlantis grew to millions of files. Here’s how we tracked it down and fixed it with a one-line change.],
+  [Mysteriously slow restarts],
+  [We manage dozens of Terraform projects with GitLab merge requests (MRs) using Atlantis , which handles planning and applying. It enforces locking to ensure that only one MR can modify a project at a time.],
+  [It runs on Kubernetes as a singleton StatefulSet and relies on a Kubernetes PersistentVolume (PV) to keep track of repository state on disk. Whenever a Terraform project needs to be onboarded or offboarded, or credentials used by Terraform are updated, we have to restart Atlantis to pick up those changes — a process that can take 30 minutes.],
+  [The slow restart was apparent when we recently ran out of inodes on the persistent storage used by Atlantis, forcing us to restart it to resize the volume. Inodes are consumed by each file and directory entry on disk, and the number available to a filesystem is determined by parameters passed when creating it. The Ceph persistent storage implementation provided by our Kubernetes platform does not expose a way to pass flags to mkfs , so we’re at the mercy of default values: growing the filesystem is the only way to grow available inodes, and restarting a PV requires a pod restart.],
+  [We talked about extending the alert window, but that would just mask the problem and delay our response to actual issues. Instead, we decided to investigate exactly why it was taking so long.],
+  [Bad behavior],
+  [When we were asked to do a rolling restart of Atlantis to pick up a change to the secrets it uses, we would run kubectl rollout restart statefulset atlantis , which would gracefully terminate the existing Atlantis pod before spinning up a new one. The new pod would appear almost immediately, but looking at it would show:],
+  [\$ kubectl get pod atlantis-0
+atlantis-0 0/1 
+Init:0/1 0 30m],
+  [...so what gives? Naturally, the first thing to check would be events for that pod. It's waiting around for an init container to run, so maybe the pod events would illuminate why?],
+  [\$ kubectl events --for=pod/atlantis-0
+LAST SEEN TYPE REASON OBJECT MESSAGE
+30m Normal Killing Pod/atlantis-0 Stopping container atlantis-server
+30m Normal Scheduled Pod/atlantis-0 Successfully assigned atlantis/atlantis-0 to 36com1167.cfops.net
+22s Normal Pulling Pod/atlantis-0 Pulling image "oci.example.com/git-sync/master:v4.1.0"
+22s Normal Pulled Pod/atlantis-0 Successfully pulled image "oci.example.com/git-sync/master:v4.1.0" in 632ms (632ms including waiting). Image size: 58518579 bytes.],
+  [That looks almost normal... but what's taking so long between scheduling the pod and actually starting to pull the image for the init container? Unfortunately that was all the data we had to go on from Kubernetes itself. But surely there had to be something more that can tell us why it's taking so long to actually start running the pod.],
+  [Going deeper],
+  [In Kubernetes, a component called kubelet that runs on each node is responsible for coordinating pod creation, mounting persistent volumes, and many other things. From my time on our Kubernetes team, I know that kubelet runs as a systemd service and so its logs should be available to us in Kibana. Since the pod has been scheduled, we know the host name we're interested in, and the log messages from kubelet include the associated object, so we could filter for atlantis to narrow down the log messages to anything we found interesting.],
+  [We were able to observe the Atlantis PV being mounted shortly after the pod was scheduled. We also observed all the secret volumes mount without issue. However, there was still a big unexplained gap in the logs. We saw:],
+  [\[operation\_generator.go:664\] "MountVolume. MountDevice succeeded for volume \\"pvc-94b75052-8d70-4c67-993a-9238613f3b99\\" (UniqueName: \\"kubernetes.io/csi/rook-ceph-nvme.rbd.csi.ceph.com^0001-000e-rook-ceph-nvme-0000000000000002-a6163184-670f-422b-a135-a1246dba4695\\") pod \\"atlantis-0\\" (UID: \\"83089f13-2d9b-46ed-a4d3-cba885f9f48a\\") device mount path \\"/state/var/lib/kubelet/plugins/kubernetes.io/csi/rook-ceph-nvme.rbd.csi.ceph.com/d42dcb508f87fa241a49c4f589c03d80de2f720a87e36932aedc4c07840e2dfc/globalmount\\"" pod="atlantis/atlantis-0"],
+  [\[pod\_workers.go:1298\] "Error syncing pod, skipping" err="unmounted volumes=\[atlantis-storage\], unattached volumes=\[\], failed to process volumes=\[\]: context deadline exceeded" pod="atlantis/atlantis-0" podUID="83089f13-2d9b-46ed-a4d3-cba885f9f48a"],
+  [\[util.go:30\] "No sandbox for pod can be found. Need to start a new one" pod="atlantis/atlantis-0"],
+  [The last two messages looped several times until eventually we observed the pod actually start up properly.],
+  [So kubelet thinks that the pod is otherwise ready to go, but it's not starting it and something's timing out.],
+  [The missing piece],
+  [The lowest-level logs we had on the pod didn't show us what's going on. What else do we have to look at? Well, the last message before it hangs is the PV being mounted onto the node. Ordinarily, if the PV has issues mounting (e.g. due to still being stuck mounted on another node), that will bubble up as an event. But something's still going on here, and the only thing we have left to drill down on is the PV itself. So I plug that into Kibana, since the PV name is unique enough to make a good search term... and immediately something jumps out:],
+  [\[volume\_linux.go:49\] Setting volume ownership for /state/var/lib/kubelet/pods/83089f13-2d9b-46ed-a4d3-cba885f9f48a/volumes/kubernetes.io~csi/pvc-94b75052-8d70-4c67-993a-9238613f3b99/mount and fsGroup set. If the volume has a lot of files then setting volume ownership could be slow, see https:\/\/github.com/kubernetes/kubernetes/issues/69699],
+  [Remember how I said at the beginning we'd just run out of inodes? In other words, we have a lot of files on this PV. When the PV is mounted, kubelet is running chgrp -R to recursively change the group on every file and folder across this filesystem. No wonder it was taking so long — that's a ton of entries to traverse even on fast flash storage!],
+  [The pod's spec.securityContext included fsGroup: 1 , which ensures that processes running under GID 1 can access files on the volume. Atlantis runs as a non-root user, so without this setting it wouldn’t have permission to read or write to the PV. The way Kubernetes enforces this is by recursively updating ownership on the entire PV every time it's mounted .],
+  [The fix],
+  [Fixing this was heroically...boring. Since version 1.20, Kubernetes has supported an additional field on pod.spec.securityContext called fsGroupChangePolicy . This field defaults to Always , which leads to the exact behavior we see here. It has another option, OnRootMismatch , to only change permissions if the root directory of the PV doesn't have the right permissions. If you don’t know exactly how files are created on your PV, do not set fsGroupChangePolicy : OnRootMismatch . We checked to make sure that nothing should be changing the group on anything in the PV, and then set that field:],
+  [spec:
+ template:
+ spec:
+ securityContext:
+ fsGroupChangePolicy: OnRootMismatch],
+  [Now, it takes about 30 seconds to restart Atlantis, down from the 30 minutes it was when we started.],
+  [Default Kubernetes settings are sensible for small volumes, but they can become bottlenecks as data grows. For us, this one-line change to fsGroupChangePolicy reclaimed nearly 50 hours of blocked engineering time per month. This was time our teams had been spending waiting for infrastructure changes to go through, and time that our on-call engineers had been spending responding to false alarms. That’s roughly 600 hours a year returned to productive work, from a fix that took longer to diagnose than deploy.],
+  [Safe defaults in Kubernetes are designed for small, simple workloads. But as you scale, they can slowly become bottlenecks. If you’re running workloads with large persistent volumes, it’s worth checking whether recursive permission changes like this are silently eating your restart time. Audit your securityContext settings, especially fsGroup and fsGroupChangePolicy . OnRootMismatch has been available since v1.20.],
+  [Not every fix is heroic or complex, and it’s usually worth asking “why does the system behave this way?”],
+  [If debugging infrastructure problems at scale sounds interesting, we’re hiring . Come join us on the Cloudflare Community or our Discord to talk shop.],
+),
+  insert-map: (:),
+  word-count: 1345,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+}
+
+{
+  #standard-article(
+  title: [You Are the Low-Hanging Fruit],
+  author: [Yegor Bugayenko],
+  source-name: [Yegor Bugayenko],
+  images: (),
+  paragraphs: (
+  [Let’s say, you are a startup founder, like myself .
+Try to hire a sales guy.
+Offer him a commission-only payment scheme.
+Listen to his reaction: he will demand that you pay a fixed salary too, on top of commission.
+Try to convince him that commission-only is a more reasonable and motivating setup.
+Goto 1.
+After a number of iterations you realize that the mission is impossible.
+Sales people are good at selling and the best thing they sell is the idea that their time must be compensated.
+Even if they don’t sell the product to your customers.
+If you don’t buy the idea, they go find another loser who will.
+Something similar happens when you try to pay programmers by result.
+They easily convince you to pay for their time .
+And you do.],
+  [City of God (2002) by Kátia Lund],
+  [A sales rep doesn’t know how to write code.
+Most of them don’t even know how computers work.
+However, he perfectly knows how to bullshit people.
+That’s exactly why we need him.
+Because we don’t know how to bullshit people and we don’t want to learn it.],
+  [Now, two strategies lie in front of him.
+He can use the skill against the prospects on the market and turn them into paying customers.
+He can also use the same selling skill against you, the owner of the startup.
+Instead of selling the product to the market he can sell himself to you.
+He can sell the idea that even if he fails to sell the product to the customers he still deserves a decent weekly paycheck.],
+  [What do you think, which sale is easier to make?
+What would you do in his shoes?
+The answer is obvious.
+The customers are far away and they have no mercy.
+If they don’t like the offer, they simply hang up on him and that’s it.
+You, on the other hand, sit next to him in the same office and can’t hang up.
+You are the low-hanging fruit .
+You are the weakest prey he can reach out to.],
+  [In order to make him focus on external obstacles, you should make internal ones harder to overcome.],
+  [A customer is an external obstacle that he must overcome in order to get paid, as a sales commission.
+You are an internal obstacle, which he may also overcome to get a fixed weekly payment.
+You need him to fight the external obstacle.
+However, he is free to choose the easiest path.],
+  [In order to make him focus on external obstacles, you should make internal ones harder to overcome.
+Joseph Stalin once said that “in the Soviet army it takes more courage to retreat than advance.”
+This war-time concept seems relevant to the sales guys you hire.
+It must be harder for them to talk you into paying them a fixed salary than to convince a prospect to buy your product.],
+  [Emotionally, for you it may be rather challenging to constantly push him back.
+Just like it’s often hard to say “No” to a vagrant begging for a dollar at the corner.
+Beggars, unless they are physically disabled, also, just like sales people, have two possible life strategies.
+Either find a job or beg at the corner.
+The begging strategy, for the vagrant and for the sales rep, is easier to pursue.],
+  [Programmers are not much different.
+They also have two strategies.
+They can solve technical problems by merging qualified pull requests.
+They can also persuade you that you must pay for their time, not their pull requests.
+Which obstacle is going to be harder for them to overcome depends on you .],
+  [First, you set up a formula for measuring their contribution.
+Second, you bind their paychecks to it: they get paid not by you ,
+ but by merged pull requests .
+Finally, you taboo the very possibility of discussing time-based compensation.],
+  [Taboo the very possibility of discussing time-based compensation.],
+  [What you get is a technical team focused on resolving external problems.
+The team will advance because it will be pointless to retreat .
+You simply won’t pay them for their time.
+No matter how many times they repeat “I was working hard the entire weekend.”],
+  [Incentives shape behavior.
+If you reward excuses, you buy excuses.
+If you reward results, you get results.
+As a founder, your job is to eliminate the temptation for your team to sell you 
+ anything other than tangible artifacts.],
+),
+  insert-map: (:),
+  word-count: 738,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -590,180 +748,140 @@ const result = await executor.execute(
 
 {
   #standard-article(
-  title: [The Road Not Taken is Guaranteed Minimum Income],
-  author: [Jeff Atwood],
-  source-name: [Coding Horror (Jeff Atwood)],
+  title: [GTX 1080 Ti for Local LLM],
+  author: [Ariya Hidayat],
+  source-name: [Ariya Hidayat],
   images: (),
   paragraphs: (
-  [The following is drawn from a speech I delivered today at Cooper Union’s Great Hall in New York City, where I joined Lieutenant Colonel Alexander Vindman to discuss the future of the American Dream :],
-  [What is the American Dream?],
-  [In 1931, at the height of the Great Depression, James Truslow Adams first defined the American Dream as],
-  [“[...] a land in which life should be better and richer and fuller for everyone, with opportunity for each according to ability or achievement. [...] not a dream of motor cars and high wages merely, but a dream of social order in which [everyone] shall be able to attain to the fullest stature of which they are innately capable, and be recognized by others for what they are, regardless of the fortuitous circumstances of birth or position”],
-  [I wanted to know what these words meant to us today. I needed to know what parts of the American Dream we all still had in common. I had to make some sense of what was happening to our country. I’ve been writing on my blog since 2004, and on November 7th, I started writing the most difficult piece I have ever written.],
-  [I asked so many Americans to tell me what the American Dream personally meant to them, and I wrote it all down.],
-  [Later in November, I attended a theater performance of The Outsiders at my son’s public high school – an adaptation of the 1967 novel by S. E. Hinton . All I really knew was the famous “stay gold” line from the 1983 movie. But as I sat there in the audience among my neighbors, watching the complete story acted out in front of me by these teenagers, I slowly realized what “stay gold” meant: sharing the American Dream.],
-  [We cannot merely attain the Dream. The dream is incomplete until we share it with our fellow Americans. That act of sharing is the final realization of everything the dream stands for.],
-  [Thanks to S. E. Hinton, I finally had a name for my essay, “Stay Gold, America.” I published it on January 7th, with a Pledge to Share the American Dream .],
-  [In the first part of the Pledge, the short term, our family made eight 1 million dollar donations to the following nonprofit groups: Team Rubicon , Children’s Hunger Fund , PEN America , The Trevor Project , NAACP Legal Defense and Educational Fund , First Generation Investors , Global Refuge , and Planned Parenthood .],
-  [Beyond that, we made many additional one million dollar donations to reinforce our technical infrastructure in America – Wikipedia , The Internet Archive , The Common Crawl Foundation , Let’s Encrypt , pioneering independent internet journalism, and several other crucial open source software infrastructure projects that power much of the world today.],
-  [I encourage every American to contribute soon , however you can, to organizations you feel are effectively helping those most currently in need.],
-  [But short term fixes are not enough.],
-  [The Pledge To Share The American Dream requires a much more ambitious second act – deeper, long term changes that will take decades. Over the next five years, my family pledges half our remaining wealth to plant a seed toward foundational long term efforts ensuring that all Americans continue to have the same fair access to the American Dream.],
-  [Let me tell you about my own path to the American Dream. It was rocky. My parents were born into deep poverty in Mercer County, West Virginia, and Beaufort County, North Carolina. Our family eventually clawed our way to the bottom of the middle class in Virginia.],
-  [I won’t dwell on it, but every family has their own problems. We did not remain middle class for long. But through all this, my parents got the most important thing right: they loved me openly and unconditionally. That is everything. It’s the only reason I am standing here in front of you today.],
-  [With my family’s support, I managed to achieve a solid public education in Chesterfield County, Virginia, and had the incredible privilege of an affordable state education at the University of Virginia . This is a college uniquely rooted in the beliefs of one of the most prominent Founding Fathers, Thomas Jefferson. He was a living paradox. A man of profound ideals and yet flawed – trapped in the values of his time and place.],
-  [Still, he wrote “Life, liberty, and the pursuit of happiness” at the top of the Declaration of Independence. These words were, and still are, revolutionary. They define our fundamental shared American values, although we have not always lived up to them. The American Dream isn’t about us succeeding, alone, by ourselves, but about connecting with each other and succeeding together as Americans.],
-  [I’ve been concerned about wealth concentration in America ever since I watched a 2012 video by politizane illustrating just how extreme wealth concentration already was.],
-  [I had no idea how close we were to the American Gilded Age from the late 1800s. This period was given a name in the 1920s by historians referencing Mark Twain’s 1873 novel, The Gilded Age, A Tale of Today .],
-  [During this time, labor strikes often turned violent, with the Homestead Strike of 1892 resulting in deadly confrontations between workers and Pinkerton guards hired by factory owners. Rapid industrialization created hazardous working conditions in factories, mines, and railroads, where thousands died due to insufficient safety regulations and employers who prioritized profit over worker welfare.],
-  [In January 2025, while I was still writing “Stay Gold, America” , we entered the period of greatest wealth concentration in the entirety of American history. As of 2021, the top 1% of households controlled 32% of all wealth , while the bottom 50% only have 2.6%. It’s difficult to find more recent data, but wealth concentration has only intensified in the last four years.],
-  [We can no longer say “Gilded Age.”],
-  [We must now say “The First Gilded Age.”],
-  [Today, in our second Gilded Age, more and more people find their path to the American Dream blocked. When Americans face unaffordable education, lack of accessible healthcare, or lack affordable housing, they aren’t just disadvantaged – they’re trapped, often burdened by massive debt. They have no stable foundation to build their lives. They watch desperately, working as hard as they can, while life simply passes them by, without even the freedom to choose their own lives.],
-  [They don’t have time to build a career. They don’t have time to learn, to improve. They don’t get to start a business. They can’t choose where their kids will grow up, or whether to have children at all, because they can’t afford to. Here in the land of opportunity, the pursuit of happiness has become an endless task for too many.],
-  [We are denying people any real chance of achieving the dream that we promised them – that we promised the entire world – when we founded this nation. It is such a profound betrayal of everything we ever dreamed about. Without a stable foundation to build a life on, our fellow Americans cannot even pursue the American Dream, much less achieve it.],
-  [I ask you this: as an American, what is the purpose of a dream left unshared with so many for so long? What’s happening to our dream? Are we really willing to let go of our values so easily? We’re Americans. We fight for our values, the values embodied in our dream, the ones we founded this country on.],
-  [Why aren’t we sharing the American Dream?],
-  [Why aren’t we giving everyone a fair chance at Life, Liberty, and the Pursuit of Happiness by providing them the fundamentals they need to get there?],
-  [The Dream worked for me, decades ago, and I deeply believe that the American Dream can still work for everyone – if we ensure every American has the same fair chance we did. The American Dream was never about a few people being extraordinarily wealthy. It’s about everyone having an equal chance to succeed and pursue their dreams – their own happiness. It belongs to them. I think we owe them at least that. I think we owe ourselves at least that.],
-  [What can we do about this? There are no easy answers. I can’t even pretend to have the answer, because there isn’t any one answer to give. Nothing worth doing is ever that simple. But I can tell you this: all the studies and all the data I’ve looked at have strongly pointed to one foundational thing we can do here in America over the next five years.],
-  [Natalie Foster, co-founder of the Economic Security Project , makes a powerful case for the idea that, with all this concentrated wealth, we can offer a Guaranteed Minimum Income in the poorest areas of this country – the areas of most need, where money goes the farthest – to unlock vast amounts of untapped American potential.],
-  [This isn’t a new idea. We’ve been doing this a while now in different forms, but we never called it Guaranteed Minimum Income.],
-  [In 1797 , Thomas Paine proposed a retirement pension funded by estate taxes. It didn’t go anywhere, but it planted a seed. Much later we implemented the Social Security Act in 1935 . The economic chaos of the Great Depression coupled with the inability of private philanthropy to provide economic security inspired Franklin Roosevelt’s New Deal government programs. The most popular and effective program to emerge from this era was Social Security, providing a guaranteed income for retirees. Before Social Security, half of seniors lived in poverty. Today only 10% of seniors live in poverty.],
-  [In his 1967 book Where Do We Go From Here: Chaos or Community , Martin Luther King Jr made the moral case for a form of UBI, Universal Basic Income. King believed that economic insecurity was at the root of all inequality. He stated that a guaranteed income — direct cash disbursements — was the simplest and best way to fight poverty.],
-  [In 1972 , Congress established the Supplemental Security Income (SSI) program, providing direct cash assistance to low-income elderly, blind, and disabled individuals with little or no income. This cash can be used for food, housing, and medical expenses, the essentials for financial stability. As of January, 2025, over 7.3 million people receive SSI benefits.],
-  [In 1975 , Congress passed the Tax Reduction Act, establishing the Earned Income Tax Credit. This tax credit benefits working-class parents with children, encouraging work by increasing the income of low-income workers. In 2023, it lifted about 6.4 million people out of poverty, including 3.4 million children. According to the Census Bureau , it is the second most effective anti-poverty tool after Social Security.],
-  [In 2019 , directly inspired by King, mayor Michael Tubbs – at age 26, one of the youngest mayors in American history – launched the \$3 million Stockton Economic Empowerment Demonstration . It provided 125 residents with \$500 per month in unconditional cash payments for two years. The program found that recipients experienced improved financial stability, increased full-time employment, and enhanced well-being.],
-  [Michael Tubbs, Former Mayor of Stockton, on Creating a California for All],
-  [In my “Stay Gold, America” blog post, I referenced the Robert Frost “Stay Gold” poem and S. E. Hinton’s famous famous novel The Outsiders, urging us to retain our youthful ideals as we grow older. Ideals embodied in the American Dream.],
-  [Which brings us to another Robert Frost poem, The Road Not Taken . Our proposal to ensure access to the American Dream is to follow the path less travelled by: Guaranteed Minimum Income. GMI is a simpler, more practical, more scalable plan to directly address the root of economic insecurity with minimum bureaucracy.],
-  [We are partnering with GiveDirectly, who oversaw the most GMI studies in the United States, and OpenResearch, who just completed the largest, most detailed GMI study ever conducted in this country in 2023. We are working together to launch a new Guaranteed Minimum Income initiative in rural American communities .],
-  [Network effects within communities explain why equality of opportunity is so effective, and why a shared American Dream is the most powerful dream of all. The potential of the American Dream becomes vastly greater as more people have access to it, because they share it .],
-  [They share it with their families, their friends, and their neighbors. The groundbreaking, massive 2023 OpenResearch UBI study data showed that when you give money to the poorest among us, they consistently go out of their way to share that money with others in desperate need.],
-  [The power of opportunity is not in what it can do for one person, but how it connects and strengthens bonds between people. When you empower a couple, you allow them to build a family. When you empower families, you allow them to build a community. When you guarantee fundamentals, you’re providing a foundation for those connections to grow and thrive. This is the incredible power and value of community. That is what we are investing in – each other.],
-  [A system where there are no guarantees creates conflict. It creates inequality. A massive concentration of wealth in so few hands weakens connections between us and prevents new ones. America began as a place of connection. Millions of us came together to build this nation, not individually, but together. Equality is connection, and connection is more valuable than any product any company will ever sell you.],
-  [Why focus on rural communities? There are consistently higher poverty rates in rural counties, with fewer job opportunities, lower wages, and worse access to healthcare and education. It’s not a new problem, either — places like Appalachia, the Mississippi Delta, and American Indian reservations have been stuck in poverty for decades, with some counties like Oglala Lakota, SD (55.8%) and McDowell, WV (37.6%) hitting extreme levels. Meanwhile, urban counties rarely see numbers that high. The data from the US Census and USDA Economic Research Service make it clear: if you’re poor in America, being rural makes it even harder to escape.],
-  [Rural areas also offer smaller populations, which is helpful because we need to start small with lots of tightly controlled studies that we can carefully scale and improve on for larger areas. We hope to build a large body of scientific data showing that GMI really does improve the lives, and the communities, of our fellow Americans.],
-  [id="the-initial-plan-is-to-target-a-few-counties-that-i-have-a-personal-connection-to-and-are-still-currently-in-poverty-decades-later"\>The initial plan is to target a few counties that I have a personal connection to, and are still currently in poverty, decades later:],
-  [My father was born in Mercer County , West Virginia, where the collapse of coal mining left good people struggling to survive. Their living and their way of life is now all but gone, and good jobs are hard to find.],
-  [My mother’s birthplace, Beaufort County , North Carolina, has been hit just as hard, with farming and factory jobs disappearing and families left wondering what’s next.],
-  [Our third county is yet to be decided, but will be a community also facing the same systemic, generational obstacles to economic stability and achieving the American Dream.],
-  [We will work with existing local groups to coordinate GMI studies where community members choose to enroll. We will conduct outreach and and provide mentorship to these opt-in study participants. It will be teamwork between Americans.],
-  [We hope Veterans will play a crucial role in our effort. We plan to work with local communities and veteran-serving organizations to engage veterans to support and execute our GMI programs – the same veterans who served our country with distinction, returning home with exceptional leadership skills and a deep commitment to their communities. Their involvement ensures these programs reflect core American values of self-reliance and community service to fellow Americans.],
-  [We’ll also partner with established community organizations — churches, civic groups, community colleges, local businesses. These partnerships help integrate our GMI studies with existing support systems, rather than creating new ones.],
-  [GiveDirectly and OpenResearch will build on their existing body of work, gathering extensive data from these refined studies. We’ll measure employment, entrepreneurship, education, health, and community engagement. We’ll conduct regular interviews with participants to understand their experience. How is this working for you? How can we make it better? You tell us. How can we make it better together?],
-  [Economic security isn’t only about individual well-being – it’s the bedrock of democracy. When people aren’t constantly worried about feeding themselves, feeding their family, having decent healthcare, having a place to live… we have given them room to breathe. We have given them freedom. The freedom to raise their children, the freedom to start businesses, the freedom to choose where they work, the freedom to volunteer... the freedom to vote .],
-  [This isn’t about ideology or government. It’s about us, as Americans, working together to invest in our future – possibly the greatest unlocking of human potential in our entire history. I do not say these things lightly. I’ve seen it work. I’ve looked at all the existing study data. A little bit of money is incredibly transformational for people in poverty – the people who need it the most – the people who cannot live up to their potential because they’re so busy simply trying to survive. Imagine what they could do if we gave them just a little breathing room.],
-  [GMI is a long term investment in the future of what America should be, the way we wrote it down in the Declaration of Independence, perhaps incompletely – but our democracy was always meant to be malleable, to change, to adapt, and improve.],
-  [I’d like to conclude by mentioning Aaron Swartz . He was a precocious teenage programmer much like myself. Aaron helped develop RSS web feeds, co-founded Reddit, and worked with Creative Commons to create flexible copyright licenses for the common good. He used technology to make information universally accessible to everyone.],
-  [Aaron created a system to download public domain court documents from PACER, a government database that charged fees for accessing what he believed should be freely available public information. A few years later, while visiting MIT under their open campus policy and as a research fellow at Harvard, he used MIT’s network to download millions of academic articles from JSTOR, another fee-charging online academic journal repository, intending to make this knowledge freely accessible. Since taxpayers had funded much of this research, why shouldn’t that knowledge be freely available to everyone?],
-  [What Aaron saw as an act of academic freedom and information equality, authorities viewed as a crime—he was arrested in January 2011 and charged with multiple felonies for what many considered to be nothing more than accessing knowledge that should have been freely available to the public in the first place.],
-  [Despite JSTOR declining to pursue charges and MIT eventually calling for leniency, federal prosecutors aggressively pursued felony charges against Aaron with up to 35 years in prison. Facing overwhelming legal pressure and the prospect of being labeled a felon, Aaron took his own life at 26. This sparked widespread criticism of prosecutorial overreach and prompted discussions about open access to information. Deservedly so. Eight days later, in this very hall, there was a standing room only memorial service praising Aaron for his commitment to the public good.],
-  [Aaron pursued what was right for we, the people. He chose to build the public good despite knowing there would be risks. He chose to be an activist. I think we should all choose to be activists, to be brave, to stand up for our defining American principles.],
-  [id="there-are-two-things-i-ask-of-you-today"\>There are two things I ask of you today.],
-  [Visit givedirectly.org/rural-us where we’ll be documenting our journey and findings from the initial three GMI rural county studies. Let’s find out together how guaranteed minimum income can transform American lives.],
-  [Talk about Guaranteed Minimum Income in your communities. Meet with your state and local officials. Share the existing study data. Share outcomes. Ask them about conducting GMI studies like ours in your area. We tell ourselves stories about why some people succeed and others don’t. Challenge those stories. Economic security is not charity . It is an investment in vast untapped American potential in the poorest areas of this country.],
-  [My family is committing 50 million dollars to this endeavor, but imagine if we had even more to share. Imagine how much more we could do, if we build this together, starting today. Decades from now, people will look back and wonder why it took us so long to share our dream of a better, richer, and fuller life with our fellow Americans.],
-  [I hope you join us on this grand experiment to share our American Dream. I believe everyone deserves a fair chance at what was promised when we founded this nation: Life, Liberty, and the pursuit of The American Dream.],
+  [Despite being over eight years old, the NVIDIA GTX 1080 Ti remains a compelling choice for enthusiasts keen on running LLM locally.],
+  [Initially launched in early 2017 with a \$699 MSRP, this GTX 1080 Ti card quickly earned a “legendary GPU” reputation among tech reviewers and YouTubers. Today, it’s readily available on the second-hand market (particularly in Northern California or on eBay ) for around \$150, often even less if you’re lucky.],
+  [For this modest price, you acquire a card with 11 GB of VRAM, an unconventional yet highly practical configuration for modern LLMs. With quantized models, 11 GB typically offers ample space for model weights and the context windows crucial for RAG workflows, coding assistants, and other use cases. This makes it an ideal sweet spot for hobbyists: affordable enough for experimentation, yet powerful enough to handle practical workloads.],
+  [Please note that local LLM inference performance is primarily assessed by two metrics:],
+  [Prompt Processing: How quickly the LLM processes the input context.],
+  [Token Generation: How rapidly the LLM produces output (the “answer”).],
+  [These metrics, often denoted as pp512 and tg128 (where the numbers represent total tokens), can be measured using llama.cpp , a very popular inference engine. As mentioned in our previous article on running LLMs locally with LM Studio and Jan, llama.cpp is one of the engines powering these applications.],
+  [For LLM tasks requiring long context windows, such as RAG or coding assistant, pp512 performance is paramount. Slow pp512 leads to noticeable lag as large prompts take seconds to preprocess before any output appears. Meanwhile, for dynamic chats or creative writing, tg128 is more critical, as it dictates the fluidity of the model’s responses.
+llama.cpp with CUDA],
+  [To run benchmarks, you’ll first need a CUDA-enabled build of llama.cpp , which involves installing NVIDIA’s CUDA toolkit and ensuring your development tools are correctly set up. A quick sanity check involves verifying the versions of nvcc, CMake, and gcc:],
+  [nvcc --version
+cmake --version
+gcc --version],
+  [If all three commands return version numbers, you’re ready to proceed.],
+  [Next, clone the llama.cpp repository and build it with CUDA enabled:],
+  [git clone https:\/\/github.com/ggml-org/llama.cpp
+cd llama.cpp
+cmake -B build -DGGML\_CUDA=ON
+cmake --build build --config Release],
+  [This compilation process can take some time, so be prepared for a short wait.],
+  [Once built, test your setup with a small model like Google’s Gemma-3 1B (approximately 800 MB). You can interact with it via the command line ( llama-cli ) or launch a lightweight web UI:],
+  [./build/bin/llama-server],
+  [Running nvtop concurrently will confirm that the GPU is actively utilized during inference.],
+  [With llama.cpp configured, benchmarking is straightforward using the included llama-bench tool. For consistent comparisons, Llama-2 7B Q4\_0 quantization is a popular choice, being small enough to run comfortably and widely benchmarked.],
+  [Execute the following command:],
+  [./build/bin/llama-bench -ngl 100 -m llama-2-7b. Q4\_0.gguf],
+  [The output will provide both pp512 and tg128. While these speeds may not match modern GPUs, they are more than enough for local experimentation. Crucially, the pp512 performance remains competitive enough to make retrieval-heavy workloads (like document-based question answering) viable. The GTX 1080 Ti may not be the fastest, but it offers an excellent entry point into local AI.],
+  [Community benchmarks in llama.cpp discussions, illustrate how this GPU compares:],
+  [CUDA (NVIDIA GPUs): https:\/\/github.com/ggml-org/llama.cpp/discussions/15013],
+  [Metal (Apple Silicon): https:\/\/github.com/ggml-org/llama.cpp/discussions/4167],
+  [ROCm (AMD GPUs): https:\/\/github.com/ggml-org/llama.cpp/discussions/15021],
+  [Vulkan (cross-platform): https:\/\/github.com/ggml-org/llama.cpp/discussions/10879],
+  [These threads are invaluable resources for real-world performance data, aiding decisions on building new local inference rigs or repurposing existing hardware.],
+  [A sample of these results:],
+  [Apple M4 Pro: pp512 = 439 tok/s and tg128 = 50 tok/s],
+  [GTX 1080 Ti: pp512 = 1084 tok/s and tg128 = 62 tok/s],
+  [RX 9060 XT: pp512 = 1478 tok/s and tg128 = 65 tok/s],
+  [RTX 2080 Ti: pp512 = 2890 tok/s and tg128 = 107 tok/s],
+  [RTX 3090: pp512 = 5174 tok/s and tg128 = 158 tok/s],
+  [The RTX 2080 Ti , the 1080 Ti’s younger sibling, also features 11 GB VRAM. It represents a solid upgrade for increased speed, often found for around \$250 on eBay if you’re fortunate with a bid.],
+  [For accelerated LLMs that can run on a GTX 1080 Ti with 4-bit quantization and enough VRAM for context processing, popular choices include Qwen 3 8B, Llama 3.1 8B, Gemma 3 12B, and Granite 4.0 Tiny 7B. If speed is a higher priority, smaller variants (e.g., Qwen 3 4B) are also excellent candidates.],
+  [Ultimately, the GTX 1080 Ti’s most significant advantage is its cost. At approximately \$150 on the used market, it leaves considerable budget for the rest of your system. A complete, cost-effective build can come in under \$500, with an example shown in the accompanying photo. We’ll delve deeper into this specific rig and its capabilities in upcoming newsletter articles, so stay tuned!],
+  [Note: This article originally appeared on the Remote Browser Substack.],
 ),
   insert-map: (:),
-  word-count: 3469,
-  edited-for-length: true,
+  word-count: 793,
+  edited-for-length: false,
   debug-mode: false,
 )
+
+  #pull-quote([For consistent comparisons, Llama-2 7B Q4\_0 quantization is a popular choice, being small enough to run comfortably and widely benchmarked.], [Ariya Hidayat])
 
 }
 
 {
   #standard-article(
-  title: [Opening Slack Jira Cloud links in the right browser],
-  author: [Rob],
-  source-name: [Rob Allen (akrabat)],
+  title: [Stay Gold, America],
+  author: [Jeff Atwood],
+  source-name: [Coding Horror (Jeff Atwood)],
   images: (),
   paragraphs: (
-  [I use OpenIn to open links in a given browser when I click on them in other applications. This is really helpful to keep various work related stuff in different browsers or profiles and I find it very helpful.],
-  [One thing that's bothered me is that links from the Jira Cloud Slack App ignore my OpenIn rules and always open in Safari and I finally sat down to work out why.],
-  [The investigation],
-  [I create a new OpenIn rule and enabled multiple browsers so that OpenIn would present a choice window to me.],
-  [It looks like this],
-  [At the bottom, we can see the link that OpenIn has received.],
-  [Even though the presented URL in the Slack app is https:\/\/my-client.atlassian.net/browser/PROJ-123 , and if you right click and copy link, that's what you get in your clipboard, when you click on the link, you get a slack.com link.],
-  [Copying that link, it's of the form: https:\/\/slack.com/openid/connect/login\_initiate\_redirect?login\_hint=eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.blah.blah .],
-  [That's interesting! I've seen that eyJhbGci prefix often enough to know on sight that it's the start of base64 encoded JWT and sure enough, base64 decoding it proved that it was.],
-  [The format of JWT is {header}.{payload}.{signature} and it's unencrypted, so we can inspect the payload easily enough. This is redacted, but it's of the form:],
-  [{
- "aud" : "123456789.123456789",
- "auth\_time" : 1758615553,
- "exp" : 1758619153,
- "https:\/\/slack.com/target\_uri" : "https:\/\/{my-client}.atlassian.net/browse/PROJ-123",
- "https:\/\/slack.com/team\_id" : "ABCDEFGHI",
- "https:\/\/slack.com/user\_id" : "U01AB2CDEF3",
- "iat" : 1758615553,
- "iss" : "https:\/\/slack.com",
- "sub" : "rob\@{my-client}.com"
-}],
-  [We can see that the URL that we want to go to is in the payload's "https:\/\/slack.com/target\_uri" property, so we just need to set up OpenIn to use that URL and pick the appropriate browser.],
-  [OpenIn's custom scripts],
-  [One really nice feature of OpenIn is that you can write custom scripts for a rule , so we can use this to extract the payload and pick the browser.],
-  [So I read the web page and wrote some Javascript!],
-  [The work we need to do is:],
-  [Extract the payload from the query parameter],
-  [JSON decode it],
-  [Read the target\_uri],
-  [Choose browser based on target\_uri],
-  [This needs a few helper functions],
-  [Helper functions],
-  [Extracting the payload is straightforward JS. We need the text between the two . s:],
-  [function extractJwtPayload(str) {
- const parts = str.split('.');
- return parts.length \>= 3 ? parts[1] : '';
-}],
-  [As OpenIn uses WebKit's JavaScriptCore , we can decode base64 using Uint8Array.fromBase64() :],
-  [function base64Decode(str) {
- const uint8Array = Uint8Array.fromBase64(str);
- return String.fromCharCode(...uint8Array);
-}],
-  [We also need to select the browser that we want the link to open in. This is done in OpenIn by setting all the "visible" browsers to false, except the one you want:],
-  [function selectBrowser(browser) {
- let apps = ctx.getApps()
- apps.forEach(function (app) {
- app.visible = (app.name == browser)
- })
-}],
-  [Do the work],
-  [Having set everything up, we can now find the target\_uri and choose the browser.],
-  [Firstly we only want to do this work if the source app is Slack and that we have a login\_hint parameter:],
-  [if (ctx.getSourceApp().path.startsWith("/Applications/Slack.app") 
- && ctx.url.searchParams.has('login\_hint')) {],
-  [Extracting the target\_uri is a case of using the functions we've written:],
-  [const login\_hint = ctx.url.searchParams.get('login\_hint');
-const jwtPayload = extractJwtPayload(login\_hint);
-const payload = base64Decode(jwtPayload).replace(/\\0/g, '');
-const data = JSON.parse(payload);
-const target\_uri = data['https:\/\/slack.com/target\_uri'];],
-  [Note that I discovered some null bytes during testing, so removed them from the decoded string.],
-  [Now we set OpenIn's URI and select the browser we want:],
-  [\/\/ Set OpenIn's URL
-ctx.url.href=target\_uri;],
-  [\/\/ Select the browser
-if (target\_uri.includes("my-client-1")) {
- selectBrowser("Firefox");
- return;
-}],
-  [if (target\_uri.includes("my-client-2")) {
- selectBrowser("Chrome");
- return;
-}],
-  [\/\/ Default to Safari
-selectBrowser("Safari");
-return;],
-  [and we're done.],
-  [That's it],
-  [That's it! Whenever I click on a Jira link in Slack, the correct browser opens directly to where I want to go.],
-  [The full script is here: openin-slack-app-link.js],
+  [We are at an unprecedented point in American history, and I’m concerned we may lose sight of the American Dream :],
+  [The costs of housing, healthcare, and education have soared far beyond the pace of inflation and wage growth .],
+  [We are a democracy, but 144 million Americans – 42% of the adults who live here – do not vote and have no say in what happens.],
+  [Wealth concentration has reached historic levels . The top 1% of households control 32% of all wealth, while the bottom 50% only have 2.6%.],
+  [We must act now to keep the dream alive. Our family made eight \$1 million donations to nonprofit groups working to support those most currently in need:],
+  [Team Rubicon – Mobilizing veterans to continue their service, leveraging their skills and experience to help Americans prepare, respond, and recover from natural disasters.],
+  [Children’s Hunger Fund – Provides resources to local churches in the United States and around the world to meet the needs of impoverished community members.],
+  [PEN America – Defends writers against censorship and abuse, supports writers in need of emergency assistance, and amplifies the writing of incarcerated prisoners. (One of my personal favorites; I’ve seen the power of writing transform our world many times.)],
+  [The Trevor Project – Working to change hearts, minds, and laws to support the lives of young adults seeking acceptance as fellow Americans.],
+  [NAACP Legal Defense and Educational Fund – Legal organization with a historic record of advancing racial justice and reducing inequality.],
+  [First Generation Investors – Introduces high school students in low-income areas to the fundamentals of investing, providing them real money to invest, encouraging long-term wealth accumulation and financial literacy among underserved youth.],
+  [Global Refuge – Supporting migrants and refugees from around the globe, in partnership with community-based legal and social service providers nationwide, helping rebuild lives in America.],
+  [Planned Parenthood – Provides essential healthcare services and resources that help individuals and families lead healthier lives.],
+  [I encourage every American to contribute soon, however you can, to organizations you feel are effectively helping those most currently in need here in America.],
+  [We must also work toward deeper changes that will take decades to achieve. Over the next five years, my family pledges half our remaining wealth towards long term efforts ensuring that all Americans continue to have access to the American Dream.],
+  [I never thought my family would be able to do this. My parents are of hardscrabble rural West Virginia and rural North Carolina origins. They barely managed to claw their way to the bottom of the middle class by the time they ended up in Virginia. Unfortunately, due to the demons passed on to them by their parents, my father was an alcoholic and my mother participated in the drinking. She ended up divorcing my father when I was 16 years old. It was only after the divorce that my parents were able to heal themselves, heal their only child, and stop the drinking, which was so destructive to our family. If the divorce hadn’t forced the issue, alcohol would have inevitably destroyed us all.],
+  [My parents may not have done everything right, but they both unconditionally loved me. They taught me how to fully, deeply receive love, and the profound joy of reflecting that love upon everyone around you.],
+  [I went on to attend public school in Chesterfield County, Virginia. In 1992 I graduated from the University of Virginia, founded by Thomas Jefferson .],
+  [During college, I worked at Safeway as a part-time cashier, earning the federal minimum wage , scraping together whatever money I could through government Pell grants, scholarships, and other part-time work to pay my college tuition. Even with lower in-state tuition , it was rocky. Sometimes I could barely manage tuition payments. And that was in 1992, when tuition was only \$3,000 per year. It is now \$23,000 per year. College tuition at a state school increased by 8 times over the last 30 years. These huge cost increases for healthcare, education, and housing are not compatible with the American Dream.],
+  [Programmers all over the world helped make an American Dream happen in 2008 when we built Stack Overflow , a Q&A website for programmers creating a shared Creative Commons knowledge base for the world. We did it democratically, because that’s the American way . We voted to rank questions and answers, and held elections for community moderators using ranked choice voting . We built a digital democracy – of the programmers, by the programmers, for the programmers. It worked .],
+  [With the guidance of my co-founder Joel Spolsky , I came to understand that the digital democracy of Stack Overflow was not enough. We must be brave enough to actively, openly share love with each other. That became the foundation for Discourse , a free, open source tool for constructive, empathetic community discussions that are also Creative Commons. We can disagree in those discussions because Discourse empowers communities to set boundaries the community agrees on , providing tools to democratically govern and strongly moderate by enforcing these boundaries. Digital democracy and empathy , for everyone.],
+  [In order for digital democracy to work, we need to see each other through our screens.],
+  [We often behave online in ways we never would in the real world because we cannot see the person on the other side of the screen. But as our world becomes more digital, we must extend our kindness through that screen.],
+  [I’ve always felt Stack Overflow and Discourse are projects for the public good that happen to be corporations . I probably couldn’t have accomplished this in any other country, and I was rewarded handsomely for a combination of hard work and good luck. That’s what the American Dream promises us.],
+  [We built it, and people came . I earned millions of dollars. I thought that was the final part of the American Dream. But it wasn’t.],
+  [I recently attended a theater performance of The Outsiders at my son’s public high school. All I really knew was the famous “stay gold” line from the 1983 movie adaptation. But as I sat there in the audience among my neighbors, watching the complete story acted out in front of me by these teenagers, I slowly realized what staying gold actually meant: sharing the American Dream .],
+  [In the printed program, the director wrote:],
+  [This play is a reminder that strength lies not just in overcoming hardships but in staying true to ourselves and lifting up those around us.],
+  [We hope you feel the raw emotions, sense the camaraderie, and connect with the enduring themes of resilience, empathy, and unity . Whether you’ve read this story recently, long ago, or not at all, I hope you are able to find inspiration in the strength and passion of youth. Thank you for being part of this journey with us.],
+  [Stay gold .],
+  [I believe deeply in sharing The American Dream. It is the foundation of our country, the second paragraph in our Declaration of Independence , written by the founder of the public university I attended:],
+  [We hold these truths to be self-evident, that all men are created equal, that they are endowed by their Creator with certain unalienable Rights, that among these are Life, Liberty and the pursuit of Happiness.],
+  [But the American Dream is not always available to every American. Its meaning can be distorted. Jimi Hendrix captured this distortion so eloquently in his rendition of our national anthem.],
+  [We are still trying to live up to those ideals today. In November 2024, enough of us voted for people who interpret the dream in a way that I don’t understand.],
+  [34% of adults in America did not exercise their right to vote . Why? Is it voter suppression , gerrymandering causing indifference, or people who felt their vote didn’t matter? The 7.6% that are ineligible to vote are mostly adults living in America who have not managed to attain citizenship, or people convicted of a felony . Whatever the reasons, 42% of adults living in America had no say in the 2024 election. The vote failed to represent everyone .],
+  [I think many of the Americans who did vote are telling us they no longer believe our government is effectively keeping America fair for everyone . Our status as the world’s leading democracy is in question. We should make it easier for more eligible Americans to vote, such as making election day a national holiday , universal mail in voting , and adopting ranked choice voting so all votes carry more weight. We should also strengthen institutions keeping democracy fair for everyone, such as state and local election boards, as well as the Federal Election Commission.],
+  [It was only after I attained the dream that I was able to fully see how many Americans have so very little. This much wealth starts to unintentionally distance my family from other Americans. I no longer bother to look at how much items cost, because I don’t have to . We don’t have to think about all these things that are challenging or unreachable for so many others. The more wealth you attain, the more unmistakably clear it becomes how unequal life is for so many of us.],
+  [Even with the wealth I have, I can’t imagine what it would feel like to be a billionaire . It is, for lack of a better word, unamerican .],
+  [In 2012, the top 1% of Americans held 24% of our country’s wealth. By 2021, the top 1% of Americans held 30%. So many have so little, while a tiny few have massive, wildly disproportionate wealth, which keeps growing. Now the global top 1% hold nearly twice as much wealth as the rest of the world combined.],
+  [I grew up poor in America, inspired by the promise of the American Dream that I could better myself and my family by building things that mattered :],
+  [Work is service, not gain. The object of work is life, not income. The reward of production is plenty, not private fortune. We should measure the prosperity of a nation not by the number of millionaires, but by the absence of poverty, the prevalence of health, the efficiency of the public schools, and the number of people who can and do read worthwhile books . – Du Bois],
+  [Our version of capitalism delivered so much wealth to my family for my hard work in co-founding two successful companies. My partner and I gladly paid our full taxes , and we always planned to give most of our remaining wealth to charities when we pass, following the Warren Buffett Philanthropic Pledge :],
+  [More than 99% of my wealth will go to philanthropy during my lifetime or at death.],
+  [I admire Buffett, but even having only a tiny fraction of his \$325 billion fortune, to me this pledge was incomplete. When would this wealth be transferred?],
+  [Last year he amended the pledge , giving all his wealth at death to a charitable trust run by his children, aged 71, 69, and 66, who do not make for natural charitable bedfellows . I am only holding back enough wealth for my children so they can afford college educations and buy a home. I am compelled to, because being a parent is the toughest job I’ve ever had , and I am concerned about their future.],
+  [November 5th raised the stakes . It is now time to allocate half the wealth I was so fortunate to be dealt within the next five years , not just for my own family, but for all my fellow Americans.],
+  [Our government seems to be slower and slower at delivering change due to the increased polarization of our two party system . The last meaningful constitutional amendment we’ve managed to pass in the last 60 years was the 26th amendment in 1971, lowering the voting age to 18 and giving more people a voice in our democracy.],
+  [Political polarization is at historically high levels and rising. In a two party system, this level of polarization is counterproductive and even dangerous. Do we all still believe in the same American Dream?],
+  [id="which-dream"\>],
+  [I’ve always loved the ideals behind the American Dream, though we continually struggle to live up to them. They are worth fighting for, even if it means making “good trouble” . We must come together and believe in our shared American Dream so deeply that we can improve our democracy... but which dream?],
+  [The American Dream contains the path of hate , and the path of love . Throughout our history, one hand is always fighting the other. Which path are we choosing?],
+  [id="long-term-efforts"\>],
+  [Here are some starting points for longer term efforts:],
+  [We can support organizations making it easier for Americans to vote for a new Congress in two years and a new president in four years. My concern is damage to our democratic institutions may happen so quickly that our votes could matter even less within the coming years.],
+  [We could fund nonprofits that have a proven track record of protecting democratic institutions.],
+  [We could found a new organization loosely based on the original RAND Corporation , but modernized like Lever for Change . We can empower the best and brightest to determine a realistic, achievable path toward preserving the American Dream for everyone, working within the current system or outside it.],
+  [All states are shades of purple, not fully red or blue. We have more in common on specific policies than we realize. It would be very difficult to draw borders if we split. I know what divorce feels like, and we don’t want this. Let’s come together through our shared American Dream.],
+  [We can start with change in our local communities. Vote in your own city, county, and state elections. Support local independent journalism and media. Find a local organization doing work you admire, ask what they need, and help them meet those needs. Listen to the stories of fellow volunteers, listen to the stories of the people you’re serving – that is the heart of Democracy.],
+  [We’ve already completed the eight \$1 million donations listed above to help those most immediately in need. Within the next five years, half of our family wealth will support longer term efforts. There is no single solution, so let’s work together. I will gladly advise and empower others working towards the same goal.],
+  [Please join us in Sharing the American Dream :],
+  [Support organizations you feel are effectively helping those most in need across America right now.],
+  [Within the next five years, also contribute public dedications of time or funds towards longer term efforts to keep the American Dream fair and attainable for all our children.],
+  [Stay gold, America. 💛],
+  [(Edit: 3/9/25 – if you are curious what long term efforts we have chosen to support, please see my followup blog post Let's Talk About The American Dream , and stay tuned for our Cooper Union talk co-presented with Alexander Vindman on Thursday, March 20th at 7pm eastern time.)],
+  [(I could not have done this without the support of my partner Betsy Burton and the rest of my family. I'd also like to thank Steve McConnell , whose writing inspired me to start this blog in 2004. So many people from all walks of life generously shared their feedback to improve this post. We wrote it together . Thank you all.)],
 ),
   insert-map: (:),
-  word-count: 619,
+  word-count: 2584,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -883,122 +1001,193 @@ rush.],
 
 {
   #standard-article(
-  title: [Practical Testing of Firebase Projects],
-  author: [Ariya Hidayat],
-  source-name: [Ariya Hidayat],
+  title: [Agent Psychosis: Are We Going Insane?],
+  author: [Armin Ronacher],
+  source-name: [Armin Ronacher (Lucumr)],
   images: (),
   paragraphs: (
-  [Your little Firebase project is getting bigger every day? Never underestimate the need to establish a solid and firm integration tests from the get go.],
-  [Once you start to utilize various features of Firebase, from Hosting , Functions , and Firestore , it is imperative to incorporate practical local testing as soon as possible. Not only it will save you from some potential nightmares down the road, it can also facilitate faster iterations and quick(er) turn-around time during refactoring and feature implementation. Here is a few random suggestions to get you started. To follow along, you can also check the git repository containing the sample code at github.com/ariya/hello-firebase-experiment .],
-  [First thing that you always need to do is to implement a health check functionality. The name could be as simple as ping . Hence, inside your main Firebase Functions, there should be a block of code that looks like:],
-  [exports.ping = functions.https.onRequest((request, response) =\> {
- response.send('OK');
-});],
-  [Now if you want to be fancy, it does not hurt to show the timestamp ( Unix epoch ) which can be valuable to know that this is not a cached or outdated HTTP response. If you wish, feel free to extend it with useful tidbits (but be careful not to reveal sensitive information).],
-  [exports.ping = functions.https.onRequest((request, response) =\> {
- response.send(\`OK \${Date.now()}\`);
-});],
-  [In your test code (shown here with Axios to perform an HTTP request, but the concept applies to any library), do a quick sanity check that this /ping is working. This is an important step towards a reliable local testing .],
-  [it('should have a working ping function', async function () {
- const res = await axios.get('http:\/\/localhost:5000/ping');
- const status = res.data.substr(0, 2);
- const timestamp = res.data.substr(3);
- expect(status).toEqual('OK');
- expect(timestamp).toMatch(/[0-9]+/);
-});],
-  [Now, the test might fail miserably. If that is the case, you do not have the proper setup yet to use and run Firebase emulators . Using npm, make sure to install all the following packages:],
-  [firebase-tools
-firebase-functions
-firebase-functions-test
-firebase-admin
-\@google-cloud/firestore],
-  [And check that your firebase.json looks like the following:],
-  [{
- "hosting": {
- "public": "./public"
- "rewrites": [
- {
- "source": "/ping",
- "function": "ping"
- }
- ]
- },
- "emulators": {
- "functions": {
- "port": 5001
- },
- "firestore": {
- "port": 8080
- },
- "hosting": {
- "port": 5000
- }
-}],
-  [Note the rewrites section. This makes /ping handily available from the main Firebase Hosting domain, instead of the long and cryptic one such as us-central1-YOURFIREBASEPROJECT.cloudfunctions.net/ping .],
-  [Before running tests, make sure to launch the emulators for Functions, Firestore, and Hosting:],
-  [npm run firebase -- emulators:start --project MYPROJECT],
-  [In the above command, npm run firebase works because of the run script definition. Also, substitute the name of your Firebase project accordingly. If the setup is correct, your terminal should show something like:],
-  [emulators: Starting emulators: functions, hosting
-hub: emulator hub started at http:\/\/localhost:4400
-functions: functions emulator started at http:\/\/localhost:5001
-hosting: Serving hosting files from: ./
-hosting: Local server: http:\/\/localhost:5000
-hosting: hosting emulator started at http:\/\/localhost:5000
-functions[ping]: http function initialized
-emulators: All emulators started, it is now safe to connect.],
-  [At this point, if you point your browser to localhost:5000/ping , you should get the OK message (followed by the number representing the timestamp as Unix epoch). Of course, running the full tests ( npm test ) should also yield in a successful run.],
-  [When setting up the tests for CI (continuous integration), it might be easier to let the emulators run the test automatically . Here is how it is done:],
-  [npm run firebase -- emulators:exec "npm test" --project MYPROJECT],
-  [The exec option run the subsequent command, in this case the usual npm test , after starting the emulators. Once the command is completed (whether successfully or not), the emulators are automatically terminated. This is perfect for the CI run !],
-  [Next trick on our sleeve: fixtures for Firestore . Let us assume that your application uses this NoSQL datastore via this simple function for illustration (and do not forget to add a new URL rewrite for /answer/ ):],
-  [admin.initializeApp(functions.config().firebase);
-const db = admin.firestore();
-exports.answer = functions.https.onRequest(async (request, response) =\> {
- try {
- const doc = await db.collection('universe').doc('answer').get();
- const value = doc.data().value;
- console.log(\`Answer is \${value}\`);
- response.send(\`Answer is \${value}\`);
- } catch (err) {
- console.error(\`Failed to obtain the answer: \${err.toString()}\`);
- response.send(\`EXCEPTION: \${err.toString()}\`);
- }
-});],
-  [And the corresponding test:],
-  [it('should give a proper answer', async function () {
- const res = await axios.get('http:\/\/localhost:5000/answer');
- const answer = res.data;
- expect(answer).toEqual('Answer is 42');
-});],
-  [Launching the emulators (using the previous instructions) and running the tests however will result in a failure. And if you go to localhost:5000/answer, you fill discover an expected response:],
-  [EXCEPTION: TypeError: Cannot read property 'value' of undefined],
-  [This should not come as a surprise. When Firebase Emulators launched, its database (for Firestore) is empty. Hence, there is still no proper document, let alone a collection. It will be unnecessarily tedious to populate the database (it works for this simple example but a real-world app might have tons of collections and documents). How do we prepare a fixture for this?],
-  [Well, again the Firestore emulators to the rescue! While it is running, and you can perform another steps to populate the database (outside the scope of this blog post, perhaps we will discuss in some other time), you can snapshot the database and save it as the test fixture:],
-  [npm run firebase -- emulator:export spec/fixture --project MYPROJECT],
-  [Once the fixture is available, rerun the emulator (either as start or through exec ) with the import option and the Firestore database will not be empty anymore, as it is populated with the previous snapshot.],
-  [npm run firebase -- emulators:start --import spec/fixture --project MYPROJECT],
-  [Last but not least, let us run this test as an automation workflow using GitHub Actions . All you need is a file named .github/workflow/test.yml with the following content:],
-  [name: Tests
-on: [push, pull\_request]
-jobs:
- test:
- runs-on: ubuntu-latest
- steps:
- - uses: actions/checkout\@v2
- - name: Use Node.js
- uses: actions/setup-node\@v1
- with:
- node-version: 10.x
- - run: npm ci
- - run: npm run firebase -- emulators:exec "npm test" --import spec/fixture
- env:
- CI: true],
-  [As it turns out, it is not too difficult to set up some practical tests of a Firebase project!],
+  [You can use Polecats without the Refinery and even without the Witness or
+Deacon. Just tell the Mayor to shut down the rig and sling work to the
+polecats with the message that they are to merge to main directly. Or the
+polecats can submit MRs and then the Mayor can merge them manually. It’s
+really up to you. The Refineries are useful if you have done a LOT of up-front
+specification work, and you have huge piles of Beads to churn through with
+long convoys.],
+  [— Gas Town Emergency User Manual , Steve Yegge],
+  [Many of us got hit by the agent coding addiction. It feels good, we barely
+sleep, we build amazing things. Every once in a while that interaction involves
+other humans, and all of a sudden we get a reality check that maybe we overdid
+it. The most obvious example of this is the massive degradation of quality of
+issue reports and pull requests. As a maintainer many PRs now look like an
+insult to one’s time, but when one pushes back, the other person does not see
+what they did wrong. They thought they helped and contributed and get agitated
+when you close it down.],
+  [But it’s way worse than that. I see people develop parasocial relationships
+with their AIs, get heavily addicted to it, and create communities where people
+reinforce highly unhealthy behavior. How did we get here and what does it do to
+us?],
+  [I will preface this post by saying that I don’t want to call anyone out in
+particular, and I think I sometimes feel tendencies that I see as negative, in
+myself as well. I too, have thrown some vibeslop
+up 
+to other people’s repositories.],
+  [Our Little Dæmons],
+  [In His Dark Materials, every human has a dæmon, a companion that is an],
+  [externally visible manifestation of their soul. It lives alongside as an],
+  [animal, but it talks, thinks and acts independently. I’m starting to relate our],
+  [relationship with agents that have memory to those little creatures. We become],
+  [dependent on them, and separation from them is painful and takes away from our],
+  [new-found identity. We’re relying on these little companions to validate us and],
+  [to collaborate with. But it’s not a genuine collaboration like between humans,],
+  [it’s one that is completely driven by us, and the AI is just there for the ride.],
+  [We can trick it to reinforce our ideas and impulses. And we act through this],
+  [AI. Some people who have not programmed before, now wield tremendous powers,],
+  [but all those powers are gone when their subscription hits a rate limit and],
+  [their little dæmon goes to sleep.],
+  [Then, when we throw up a PR or issue to someone else, that contribution is the],
+  [result of this pseudo-collaboration with the machine. When I see an AI pull],
+  [request come in, or on another repository, I cannot tell how someone created it,],
+  [but I can usually after a while tell when it was prompted in a way that is],
+  [fundamentally different from how I do it. Yet it takes me minutes to figure],
+  [this out. I have seen some coding sessions from others and it’s often done with],
+  [clarity, but using slang that someone has come up with and most of all: by],
+  [completely forcing the AI down a path without any real critical thinking.],
+  [Particularly when you’re not familiar with how the systems are supposed to work,],
+  [giving in to what the machine says and then thinking one understands what is],
+  [going on creates some really bizarre outcomes at times.],
+  [But people create these weird relationships with their AI agent and once you see
+how some prompt their machines, you realize that it dramatically alters what
+comes out of it. To get good results you need to provide context, you need to
+make the tradeoffs, you need to use your knowledge. It’s not just a question of
+using the context badly, it’s also the way in which people interact with the
+machine. Sometimes it’s unclear instructions, sometimes it’s weird role-playing
+and slang, sometimes it’s just swearing and forcing the machine, sometimes it’s
+a weird ritualistic behavior. Some people just really ram the agent straight
+towards the most narrow of all paths towards a badly defined goal with little
+concern about the health of the codebase.],
+  [Addicted to Prompts],
+  [These dæmon relationships change not just how we work, but what we produce. You
+can completely give in and let the little dæmon run circles around you. You can
+reinforce it to run towards ill defined (or even self defined) goals without any
+supervision.],
+  [It’s one thing when newcomers fall into this dopamine loop and produce
+something. When Peter first got me hooked on Claude, I
+did not sleep. I spent two months excessively prompting the thing and wasting
+tokens. I ended up building and building and creating a ton of tools I did not
+end up using much. “You can just do things” was what was on my mind all the
+time but it took quite a bit longer to realize that just because you can, you
+might not want to. It became so easy to build something and in comparison it
+became much harder to actually use it or polish it. Quite a few of the tools I
+built I felt really great about, just to realize that I did not actually use
+them or they did not end up working as I thought they would.],
+  [The thing is that the dopamine hit from working with these agents is so very],
+  [real. I’ve been there! You feel productive, you feel like everything is],
+  [amazing, and if you hang out just with people that are into that stuff too,],
+  [without any checks, you go deeper and deeper into the belief that this all makes],
+  [perfect sense. You can build entire projects without any real reality check.],
+  [But it’s decoupled from any external validation. For as long as nobody looks],
+  [under the hood, you’re good. But when an outsider first pokes at it, it looks],
+  [pretty crazy. And damn some things look amazing. I too was blown away (and],
+  [fully expected at the same time) when Cursor’s AI written Web],
+  [Browser landed. It’s super],
+  [impressive that agents were able to bootstrap a browser in a week! But holy],
+  [crap! I hope nobody ever uses that thing or would try to build an actual browser],
+  [out of it, at least with this generation of agents, it’s still pure slop with],
+  [little oversight. It’s an impressive research and tech demo, not an approach to],
+  [building software people should use. At least not yet.],
+  [There is also another side to this slop loop addiction: token consumption.],
+  [Consider how many tokens these loops actually consume. A well-prepared session
+with good tooling and context can be remarkably token-efficient. For instance,
+the entire port of MiniJinja to Go took only
+2.2 million tokens. But the hands-off approaches—spinning up agents and
+letting them run wild—burn through tokens at staggering rates. Patterns like
+ Ralph are particularly wasteful: you restart the
+loop from scratch each time, which means you lose the ability to use cached
+tokens or reuse context.],
+  [We should also remember that current token pricing is almost certainly
+subsidized. These patterns may not be economically viable for long. And those
+discounted coding plans we’re all on? They might not last either.],
+  [And then there are things like Beads and
+ Gas Town , Steve Yegge’s agentic coding
+tools, which are the complete celebration of slop loops. Beads, which is
+basically some sort of issue tracker for agents, is 240,000 lines of code that …
+manages markdown files in GitHub repositories. And the code quality is abysmal.],
+  [There appears to be some competition in place to run as many of these agents in
+parallel with almost no quality control in some circles. And to then use agents
+to try to create documentation artifacts to regain some confidence of what is
+actually going on. Except those documents themselves
+ read 
+ like 
+ slop .],
+  [Looking at Gas Town (and Beads) from the outside, it looks like a Mad Max cult.],
+  [What are polecats, refineries, mayors, beads, convoys doing in an agentic coding],
+  [system? If the maintainer is in the loop, and the whole community is in on this],
+  [mad ride, then everyone and their dæmons just throw more slop up. As an],
+  [external observer the whole project looks like an insane psychosis or a complete],
+  [mad art project. Except, it’s real? Or is it not? Apparently a reason for],
+  [slowdown in Gas Town is contention on figuring out the version of Beads, which],
+  [takes 7 subprocess spawns . Or],
+  [using the doctor command times out],
+  [completely . Beads keeps],
+  [growing and growing in complexity and people who are using it, are realizing],
+  [that it’s almost impossible to],
+  [uninstall .],
+  [And they might not even work well],
+  [together even though one],
+  [apparently depends on the other.],
+  [I don’t want to pick on Gas Town or these projects, but they are just the most
+visible examples of this in-group behavior right now. But you can see similar
+things in some of the AI builder circles on Discord and X where people hype each
+other up with their creations, without much critical thinking and sanity
+checking of what happens under the hood.],
+  [Asymmetric and Maintainer’s Burden],
+  [It takes you a minute of prompting and waiting a few minutes for code to come
+out of it. But actually honestly reviewing a pull request takes many times
+longer than that. The asymmetry is completely brutal. Shooting up bad code is
+rude because you completely disregard the time of the maintainer. But everybody
+else is also creating AI-generated code, but maybe they passed the bar of it
+being good. So how can you possibly tell as a maintainer when it all looks the
+same? And as the person writing the issue or the PR, you felt good about it.
+Yet what you get back is frustration and rejection.],
+  [I’m not sure how we will go ahead here, but it’s pretty clear that in projects
+that don’t submit themselves to the slop loop, it’s going to be a nightmare to
+deal with all the AI-generated noise.],
+  [Even for projects that are fully AI-generated but are setting some standard for
+contributions, some folks now prefer actually just getting the
+prompts over getting the
+actual code. Because then it’s clearer what the person actually intended. There
+is more trust in running the agent oneself than having other people do it.],
+  [Is Agent Psychosis Real?],
+  [Which really makes me wonder: am I missing something here? Is this where we are
+going? Am I just not ready for this new world? Are we all collectively getting
+insane?],
+  [Particularly if you want to opt out of this craziness right now, it’s getting
+quite hard. Some projects no longer accept human contributions until they have
+vetted the people completely. Others are starting to require that you submit
+prompts alongside your code, or just the prompts alone.],
+  [I am a maintainer who uses AI myself, and I know others who do. We’re not
+luddites and we’re definitely not anti-AI. But we’re also frustrated when we
+encounter AI slop on issue and pull request trackers. Every day brings more PRs
+that took someone a minute to generate and take an hour to review.],
+  [There is a dire need to say no now. But when one does, the contributor is
+genuinely confused: “Why are you being so negative? I was trying to help.”
+They were trying to help. Their dæmon told them it was good.],
+  [Maybe the answer is that we need better tools — better ways to signal quality,
+better ways to share context, better ways to make the AI’s involvement visible
+and reviewable. Maybe the culture will self-correct as people hit walls. Maybe
+this is just the awkward transition phase before we figure out new norms.],
+  [Or maybe some of us are genuinely losing the plot, and we won’t know which camp
+we’re in until we look back. All I know is that when I watch someone at 3am,
+running their tenth parallel agent session, telling me they’ve never been more
+productive — in that moment I don’t see productivity. I see someone who might
+need to step away from the machine for a bit. And I wonder how often that
+someone is me.],
+  [Two things are both true to me right now: AI agents are amazing and a huge
+productivity boost. They are also massive slop machines if you turn off your
+brain and let go completely.],
 ),
   insert-map: (:),
-  inline-pq: pull-quote([This is perfect for the CI run !  Next trick on our sleeve: fixtures for Firestore.], [Ariya Hidayat]),
-  inline-pq-idx: 14,
-  word-count: 1017,
+  word-count: 2095,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -1007,687 +1196,73 @@ jobs:
 
 {
   #standard-article(
-  title: [Driving Change: Women in Tech Perspectives],
-  author: [Criteo Tech],
-  source-name: [Criteo Engineering],
-  images: (),
-  paragraphs: (
-  [Author: Mercy Orangi],
-  [The Criteo team onsite],
-  [Our team at Criteo Toronto partnered with the WomenTech Network Toronto chapter to curate an event titled “ Driving Change in Tech ” with a focus on “ People, Technology, and Leadership ”.],
-  [The event had a technical keynote followed by a panel discussion, both of which were quite engaging and full of insight! Here’s a brief recap:],
-  [The 1st part of the technical keynote was on the topic of “ Re-architecting Legacy Systems ” delivered by Senem Isik — Sr Engineering Manager, where she focused on the decision-making process of re-architecting system designs and getting the necessary buy-in, when and how to pivot, incremental delivery, and shared some tips on executing a re-architecture project. Here are a few ideas that stuck with me:],
-  [If you are consistently experiencing a decline in delivery velocity, if there’s an increase in issues in production that have direct client impact, or if there are no clear team boundaries — these can be crucial deciding factors that indicate the need for a system re-architecture.],
-  [Agile plans are key to successful pivots — you should be able to make the plan, execute the plan, expect the plan to go off the rails, and [if that happens] throw away the plan. s/o Leonard Snart],
-  [An example of incremental delivery can look like moving from a Monolith to a Modular to a microservice architecture.],
-  [Sprint 0 — aka let the team form, storm, and norm — should be a household name before kicking off execution. This is often the initial, unofficial phase of a project where a newly formed team establishes a ‘’rhythm” before the official Sprint 1 begins. In Criteo, for example, a re-architecture project can sometimes be worked on by “V-Teams” aka virtual teams, that are temporarily created for the project, and which draw engineers from different (already existing) teams. In such scenarios, it is crucial to ensure that Sprint 0 is not skipped.],
-  [Senem on the stage],
-  [The 2nd part of the technical keynote was presented by Justeen Randev — Software Development Engineer, who drilled into How BDD (Behaviour Driven Development) can help women engineers show impact . I quite enjoyed this section because being able to show tangible impact is a powerful way of spotlighting your work and value to the business, which in turn can positively influence growth in the workplace. Here are some key points from this session:],
-  [BDD is human-readable, hence it provides a shared language for expected behaviour. This, in turn, ensures shared understanding when working with a diverse team of, say, PMs, designers, testers, etc. It can also provide a point of reference when team members join and leave the team mid-project.],
-  [BDD can help boost confidence in multiple ways because of the positive effects that it has; makes invisible engineering decisions visible, shows intent, logic, and completeness, you can easily defend your work, faster agreements, reduces uncertainty of tasks being worked on, etc.],
-  [Check out the Given-When-Then BDD example if you’d like to incorporate this into your work!],
-  [Justeen during her presentation],
-  [The final part of the event was a panel that brought together the theme of the event and focused on “People, Technology, and Leadership” . The panel constituted Hilary Kwok (Talent Acquisition Leader), Senem, Justeen, and me. Here are some key takeaways from the panel discussion:],
-  [Having a clear why when embarking on a technical change, re-architecture, or project update makes it easier to have buy-in from stakeholders.],
-  [Using available tools and patterns, such as the BDD method mentioned above, is a great way of driving change without authority, building visibility for your work, and having tangible results.],
-  [Hiring is shifting as technology shifts, signaled by a change in intake conversations and the addition of structured signals in the interview process.],
-  [The panel discussion],
-  [I thoroughly enjoyed being a part of this event and taking in all the great tips shared by the speakers! I’ll leave you with a question that I posed to the attendees at the event:],
-  [What do you think will be the first to break during a transformation? People, Process, or Technology?],
-  [Diversity is a big deal here at Criteo — in 2025, 41% of Criteos were women, and 21% of them specifically in tech roles. We continue to put in significant effort to improve these numbers, which is why this event was timely! (also, one of the key factors I took into consideration before joining!)],
-  [See you at the next one!],
-  [Dream team!],
-  [Driving Change: Women in Tech Perspectives was originally published in Criteo Tech Blog on Medium, where people are continuing the conversation by highlighting and responding to this story.],
-),
-  insert-map: (:),
-  word-count: 778,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-}
-
-{
-  #standard-article(
-  title: [Stay Gold, America],
+  title: [There is no longer any such thing as Computer Security],
   author: [Jeff Atwood],
   source-name: [Coding Horror (Jeff Atwood)],
   images: (),
   paragraphs: (
-  [We are at an unprecedented point in American history, and I’m concerned we may lose sight of the American Dream :],
-  [The costs of housing, healthcare, and education have soared far beyond the pace of inflation and wage growth .],
-  [We are a democracy, but 144 million Americans – 42% of the adults who live here – do not vote and have no say in what happens.],
-  [Wealth concentration has reached historic levels . The top 1% of households control 32% of all wealth, while the bottom 50% only have 2.6%.],
-  [We must act now to keep the dream alive. Our family made eight \$1 million donations to nonprofit groups working to support those most currently in need:],
-  [Team Rubicon – Mobilizing veterans to continue their service, leveraging their skills and experience to help Americans prepare, respond, and recover from natural disasters.],
-  [Children’s Hunger Fund – Provides resources to local churches in the United States and around the world to meet the needs of impoverished community members.],
-  [PEN America – Defends writers against censorship and abuse, supports writers in need of emergency assistance, and amplifies the writing of incarcerated prisoners. (One of my personal favorites; I’ve seen the power of writing transform our world many times.)],
-  [The Trevor Project – Working to change hearts, minds, and laws to support the lives of young adults seeking acceptance as fellow Americans.],
-  [NAACP Legal Defense and Educational Fund – Legal organization with a historic record of advancing racial justice and reducing inequality.],
-  [First Generation Investors – Introduces high school students in low-income areas to the fundamentals of investing, providing them real money to invest, encouraging long-term wealth accumulation and financial literacy among underserved youth.],
-  [Global Refuge – Supporting migrants and refugees from around the globe, in partnership with community-based legal and social service providers nationwide, helping rebuild lives in America.],
-  [Planned Parenthood – Provides essential healthcare services and resources that help individuals and families lead healthier lives.],
-  [I encourage every American to contribute soon, however you can, to organizations you feel are effectively helping those most currently in need here in America.],
-  [We must also work toward deeper changes that will take decades to achieve. Over the next five years, my family pledges half our remaining wealth towards long term efforts ensuring that all Americans continue to have access to the American Dream.],
-  [I never thought my family would be able to do this. My parents are of hardscrabble rural West Virginia and rural North Carolina origins. They barely managed to claw their way to the bottom of the middle class by the time they ended up in Virginia. Unfortunately, due to the demons passed on to them by their parents, my father was an alcoholic and my mother participated in the drinking. She ended up divorcing my father when I was 16 years old. It was only after the divorce that my parents were able to heal themselves, heal their only child, and stop the drinking, which was so destructive to our family. If the divorce hadn’t forced the issue, alcohol would have inevitably destroyed us all.],
-  [My parents may not have done everything right, but they both unconditionally loved me. They taught me how to fully, deeply receive love, and the profound joy of reflecting that love upon everyone around you.],
-  [I went on to attend public school in Chesterfield County, Virginia. In 1992 I graduated from the University of Virginia, founded by Thomas Jefferson .],
-  [During college, I worked at Safeway as a part-time cashier, earning the federal minimum wage , scraping together whatever money I could through government Pell grants, scholarships, and other part-time work to pay my college tuition. Even with lower in-state tuition , it was rocky. Sometimes I could barely manage tuition payments. And that was in 1992, when tuition was only \$3,000 per year. It is now \$23,000 per year. College tuition at a state school increased by 8 times over the last 30 years. These huge cost increases for healthcare, education, and housing are not compatible with the American Dream.],
-  [Programmers all over the world helped make an American Dream happen in 2008 when we built Stack Overflow , a Q&A website for programmers creating a shared Creative Commons knowledge base for the world. We did it democratically, because that’s the American way . We voted to rank questions and answers, and held elections for community moderators using ranked choice voting . We built a digital democracy – of the programmers, by the programmers, for the programmers. It worked .],
-  [With the guidance of my co-founder Joel Spolsky , I came to understand that the digital democracy of Stack Overflow was not enough. We must be brave enough to actively, openly share love with each other. That became the foundation for Discourse , a free, open source tool for constructive, empathetic community discussions that are also Creative Commons. We can disagree in those discussions because Discourse empowers communities to set boundaries the community agrees on , providing tools to democratically govern and strongly moderate by enforcing these boundaries. Digital democracy and empathy , for everyone.],
-  [In order for digital democracy to work, we need to see each other through our screens.],
-  [We often behave online in ways we never would in the real world because we cannot see the person on the other side of the screen. But as our world becomes more digital, we must extend our kindness through that screen.],
-  [I’ve always felt Stack Overflow and Discourse are projects for the public good that happen to be corporations . I probably couldn’t have accomplished this in any other country, and I was rewarded handsomely for a combination of hard work and good luck. That’s what the American Dream promises us.],
-  [We built it, and people came . I earned millions of dollars. I thought that was the final part of the American Dream. But it wasn’t.],
-  [I recently attended a theater performance of The Outsiders at my son’s public high school. All I really knew was the famous “stay gold” line from the 1983 movie adaptation. But as I sat there in the audience among my neighbors, watching the complete story acted out in front of me by these teenagers, I slowly realized what staying gold actually meant: sharing the American Dream .],
-  [In the printed program, the director wrote:],
-  [This play is a reminder that strength lies not just in overcoming hardships but in staying true to ourselves and lifting up those around us.],
-  [We hope you feel the raw emotions, sense the camaraderie, and connect with the enduring themes of resilience, empathy, and unity . Whether you’ve read this story recently, long ago, or not at all, I hope you are able to find inspiration in the strength and passion of youth. Thank you for being part of this journey with us.],
-  [Stay gold .],
-  [I believe deeply in sharing The American Dream. It is the foundation of our country, the second paragraph in our Declaration of Independence , written by the founder of the public university I attended:],
-  [We hold these truths to be self-evident, that all men are created equal, that they are endowed by their Creator with certain unalienable Rights, that among these are Life, Liberty and the pursuit of Happiness.],
-  [But the American Dream is not always available to every American. Its meaning can be distorted. Jimi Hendrix captured this distortion so eloquently in his rendition of our national anthem.],
-  [We are still trying to live up to those ideals today. In November 2024, enough of us voted for people who interpret the dream in a way that I don’t understand.],
-  [34% of adults in America did not exercise their right to vote . Why? Is it voter suppression , gerrymandering causing indifference, or people who felt their vote didn’t matter? The 7.6% that are ineligible to vote are mostly adults living in America who have not managed to attain citizenship, or people convicted of a felony . Whatever the reasons, 42% of adults living in America had no say in the 2024 election. The vote failed to represent everyone .],
-  [I think many of the Americans who did vote are telling us they no longer believe our government is effectively keeping America fair for everyone . Our status as the world’s leading democracy is in question. We should make it easier for more eligible Americans to vote, such as making election day a national holiday , universal mail in voting , and adopting ranked choice voting so all votes carry more weight. We should also strengthen institutions keeping democracy fair for everyone, such as state and local election boards, as well as the Federal Election Commission.],
-  [It was only after I attained the dream that I was able to fully see how many Americans have so very little. This much wealth starts to unintentionally distance my family from other Americans. I no longer bother to look at how much items cost, because I don’t have to . We don’t have to think about all these things that are challenging or unreachable for so many others. The more wealth you attain, the more unmistakably clear it becomes how unequal life is for so many of us.],
-  [Even with the wealth I have, I can’t imagine what it would feel like to be a billionaire . It is, for lack of a better word, unamerican .],
-  [In 2012, the top 1% of Americans held 24% of our country’s wealth. By 2021, the top 1% of Americans held 30%. So many have so little, while a tiny few have massive, wildly disproportionate wealth, which keeps growing. Now the global top 1% hold nearly twice as much wealth as the rest of the world combined.],
-  [I grew up poor in America, inspired by the promise of the American Dream that I could better myself and my family by building things that mattered :],
-  [Work is service, not gain. The object of work is life, not income. The reward of production is plenty, not private fortune. We should measure the prosperity of a nation not by the number of millionaires, but by the absence of poverty, the prevalence of health, the efficiency of the public schools, and the number of people who can and do read worthwhile books . – Du Bois],
-  [Our version of capitalism delivered so much wealth to my family for my hard work in co-founding two successful companies. My partner and I gladly paid our full taxes , and we always planned to give most of our remaining wealth to charities when we pass, following the Warren Buffett Philanthropic Pledge :],
-  [More than 99% of my wealth will go to philanthropy during my lifetime or at death.],
-  [I admire Buffett, but even having only a tiny fraction of his \$325 billion fortune, to me this pledge was incomplete. When would this wealth be transferred?],
-  [Last year he amended the pledge , giving all his wealth at death to a charitable trust run by his children, aged 71, 69, and 66, who do not make for natural charitable bedfellows . I am only holding back enough wealth for my children so they can afford college educations and buy a home. I am compelled to, because being a parent is the toughest job I’ve ever had , and I am concerned about their future.],
-  [November 5th raised the stakes . It is now time to allocate half the wealth I was so fortunate to be dealt within the next five years , not just for my own family, but for all my fellow Americans.],
-  [Our government seems to be slower and slower at delivering change due to the increased polarization of our two party system . The last meaningful constitutional amendment we’ve managed to pass in the last 60 years was the 26th amendment in 1971, lowering the voting age to 18 and giving more people a voice in our democracy.],
-  [Political polarization is at historically high levels and rising. In a two party system, this level of polarization is counterproductive and even dangerous. Do we all still believe in the same American Dream?],
-  [id="which-dream"\>],
-  [I’ve always loved the ideals behind the American Dream, though we continually struggle to live up to them. They are worth fighting for, even if it means making “good trouble” . We must come together and believe in our shared American Dream so deeply that we can improve our democracy... but which dream?],
-  [The American Dream contains the path of hate , and the path of love . Throughout our history, one hand is always fighting the other. Which path are we choosing?],
-  [id="long-term-efforts"\>],
-  [Here are some starting points for longer term efforts:],
-  [We can support organizations making it easier for Americans to vote for a new Congress in two years and a new president in four years. My concern is damage to our democratic institutions may happen so quickly that our votes could matter even less within the coming years.],
-  [We could fund nonprofits that have a proven track record of protecting democratic institutions.],
-  [We could found a new organization loosely based on the original RAND Corporation , but modernized like Lever for Change . We can empower the best and brightest to determine a realistic, achievable path toward preserving the American Dream for everyone, working within the current system or outside it.],
-  [All states are shades of purple, not fully red or blue. We have more in common on specific policies than we realize. It would be very difficult to draw borders if we split. I know what divorce feels like, and we don’t want this. Let’s come together through our shared American Dream.],
-  [We can start with change in our local communities. Vote in your own city, county, and state elections. Support local independent journalism and media. Find a local organization doing work you admire, ask what they need, and help them meet those needs. Listen to the stories of fellow volunteers, listen to the stories of the people you’re serving – that is the heart of Democracy.],
-  [We’ve already completed the eight \$1 million donations listed above to help those most immediately in need. Within the next five years, half of our family wealth will support longer term efforts. There is no single solution, so let’s work together. I will gladly advise and empower others working towards the same goal.],
-  [Please join us in Sharing the American Dream :],
-  [Support organizations you feel are effectively helping those most in need across America right now.],
-  [Within the next five years, also contribute public dedications of time or funds towards longer term efforts to keep the American Dream fair and attainable for all our children.],
-  [Stay gold, America. 💛],
-  [(Edit: 3/9/25 – if you are curious what long term efforts we have chosen to support, please see my followup blog post Let's Talk About The American Dream , and stay tuned for our Cooper Union talk co-presented with Alexander Vindman on Thursday, March 20th at 7pm eastern time.)],
-  [(I could not have done this without the support of my partner Betsy Burton and the rest of my family. I'd also like to thank Steve McConnell , whose writing inspired me to start this blog in 2004. So many people from all walks of life generously shared their feedback to improve this post. We wrote it together . Thank you all.)],
+  [Remember “cybersecurity”?],
+  [Mysterious hooded computer guys doing mysterious hooded computer guy... things! Who knows what kind of naughty digital mischief they might be up to?],
+  [Unfortunately, we now live in a world where this kind of digital mischief is literally rewriting the world’s history. For proof of that, you need look no further than this single email that was sent March 19th, 2016.],
+  [If you don’t recognize what this is, it is a  phishing email .],
+  [This is by now a very, very famous phishing email, arguably the most famous of all time. But let’s consider how this email even got sent to its target in the first place:],
+  [An attacker slurped up lists of any public emails of 2008 political campaign staffers.],
+  [One 2008 staffer was  also  hired for the 2016 political campaign.],
+  [That particular staffer had non-public campaign emails in their address book, and one of them was a powerful key campaign member with an extensive email history.],
+  [On successful phish leads to an even wider address book attack net down the line. Once they gain access to a person’s inbox, they use it to prepare to their next attack. They’ll harvest existing email addresses, subject lines, content, and attachments to construct plausible looking boobytrapped emails and mail them to all of  their  contacts. How sophisticated and targeted to a particular person this effort is determines whether it’s so-called “spear” phishing or not.],
+  [In this case is it was not at all targeted. This is a remarkably unsophisticated, absolutely generic routine phishing attack. There is zero focused attack effort on display here. But note the target did  not  immediately click the link in the email!],
+  [Instead, he did exactly what you’d want a person to do in this scenario:  he emailed IT support and asked if this email was valid.  But IT made a fatal mistake in their response .],
+  [Do you see it? Here’s the kicker:],
+  [Mr. Delavan, in an interview, said that his bad advice was a result of a typo: He knew this was a phishing attack, as the campaign was getting dozens of them. He said  he had meant to type that it was an “illegitimate” email, an error that he said has plagued him ever since.],
+  [One word. He got  one  word wrong. But what a word to get wrong, and in the first sentence! The email did provide the proper Google address to reset your password. But the lede was already buried since the first sentence said “legitimate;” the phishing link in that email was then clicked. And the rest is literally history.],
+  [What’s even funnier (well, in the way of gallows humor, I guess) is that public stats were left enabled for that bit.ly tracking link, so you can see exactly what crazy domain that “Google login page” resolved to, and that it was clicked exactly twice, on the same day it was mailed.],
+  [As I said, these were not exactly sophisticated attackers. So yeah, in  theory  an attentive user could pay attention to the browser’s address bar and notice that after clicking the link, they arrived at],
+  [http:\/\/myaccount.google.com-securitysettingpage.tk/security/signinoptions/password],
+  [instead of],
+  [https:\/\/myaccount.google.com/security],
+  [Note that the phishing URL is carefully constructed so the most “correct” part is at the front, and weirdness is sandwiched in the middle. Unless you’re paying very close attention and your address bar is long enough to expose the full URL, it’s… tricky. See this 10 second video for a dramatic example.],
+  [1×],
+  [( And if you think that one’s good, check out this one. Don’t forget all the Unicode look-alike trickery you can pull, too.)],
+  [I originally wrote this post as a presentation for the Berkeley Computer Science Club back in March, and at that time I gathered a list of public phishing pages I found on the web.],
+  [nightlifesofl.com
+ehizaza-limited.com
+tcgoogle.com
+appsgoogie.com
+security-facabook.com],
+  [Of those five examples from 6 months ago, one is completely gone, one loads just fine, and three present an appropriately scary red interstitial warning page that strongly advises you not to visit the page you’re trying to visit, courtesy of Google’s  safe browsing API . But of course this kind of shared blacklist domain name protection will be completely useless on any fresh phishing site. (Don’t even get me started on how  blacklists have never really worked  anyway.)],
+  [It doesn’t exactly require a PhD degree in computer science to phish someone:],
+  [Buy a crazy long, realistic looking domain name.],
+  [Point it to a cloud server somewhere.],
+  [Get a free HTTPS certificate courtesy of  our friends at Let’s Encrypt .],
+  [Build a realistic copy of a login page that silently transmits everything you type in those login fields to you – perhaps even in real time, as the target types.],
+  [Harvest email addresses and mass mail a plausible looking phishing email with your URL.],
+  [I want to emphasize that although clearly mistakes were made in this specific situation, none of the people involved here were amateurs. They had training and experience. They were working with IT and security professionals. Furthermore, they  knew digital attacks were incoming .],
+  [The… campaign was no easy target; several former employees said the organization put particular stress on digital safety.],
+  [Work emails were protected by two-factor authentication, a technique that uses a second passcode to keep accounts secure. Most messages were deleted after 30 days and staff went through phishing drills. Security awareness even followed the campaigners into the bathroom, where someone put a picture of a toothbrush under the words: “You shouldn’t share your passwords either.”],
+  [The campaign itself used two factor auth extensively, which is why personal Gmail accounts were targeted, because they were less protected.],
+  [The key takeaway here is that  it’s basically impossible, statistically speaking, to prevent your organization from being phished.],
+  [Or is it?],
+  [Nobody is doing better work in this space right now than Maciej Ceglowski and Tech Solidarity. Their list of  basic security precautions  for non-profits and journalists is pure gold and has been vetted by many industry professionals with security credentials that are actually impressive, unlike mine. Everyone should read this list very closely, point by point.],
+  [Everyone?],
+  [Computers, courtesy of smartphones, are now such a pervasive part of average life  for average people that  there is no longer any such thing as “computer security.” There is only  security .  In other words, these are normal security practices  everyone  should be familiar with. Not just computer geeks. Not just political activists and politicians. Not just journalists and nonprofits.],
+  [1×],
+  [Everyone.],
+  [It is a fair bit of reading, so because I know you are just as lazy as I am, and I am  epically  lazy, let me summarize what I view as the three important takeaways from the hard work Tech Solidarity put into  these resources . These three short sentences are the 60 second summary of what you want to do, and what you want to share with others so  they  do, too.],
+  [1) Enable Two Factor authentication through an app, and  not SMS , everywhere you can.],
+  [Logging in with only a password, now matter how long and unique you attempt to make that password, will never be enough. A password is what you know; you need to add the second factor of something you  have  (or something you  are ) to achieve significant additional security. SMS can famously be intercepted , social engineered, or sim-jacked all too easily. If it’s SMS, it’s not secure,  period . So install an authenticator app, and use it, at least for your most important credentials such as your email account and your bank.],
+  [Have I mentioned that Discourse added two factor authentication support in version 2.0, and our just released 2.1 adds printed backup codes, too? There are two paths forward: you can  talk  about the solution, or you can  build  the solution. I’m trying to do both to the best of my ability. Look for the 2FA auth option in your user preferences on your favorite Discourse instance. It’s there for you.],
+  [(This is also a company policy at Discourse; if you work here,  you 2FA everything all the time . No other login option exists.)],
+  [2) Make all your passwords 11 characters or more.],
+  [It’s a long story , but anything under 11 characters is basically the same as having no password at all these days. I personally recommend at least 14 characters, maybe even 16. But this won’t be a problem for you, because...],
+  [3) Use a password manager.],
+  [If you use a password manager, you can simultaneously avoid the pernicious danger of password re-use and the difficulty of coming up with unique and random passwords  all the time. It is my hope in the long run that cloud based password management gets deeply built into Android, iOS, OSX, and Windows so that people don’t need to run a weird mélange of third party apps to achieve this essential task. Password management is foundational and should not be the province of third parties on principle, because you never outsource a core competency.],
+  [Bonus rule! For the particularly at-risk, get and use a U2F key.],
+  [In the long term, two factor through an app isn’t quite secure enough due to the very real (and growing) specter of real-time phishing. Authentication apps offer timed keys that expire after a minute or two, but if the attacker can get you to type an authentication key and relay it to the target site fast enough, they can still log in as you. If you need ultimate protection, look into U2F keys .],
+  [I believe U2F support is still too immature at the moment, particularly on mobile, for this to be practical for the average person right now. But if you do happen to fall into those groups that will be under attack, you  absolutely  want to set up U2F keys where you can today. They’re cheap, and the good news is that they  literally make phishing impossible  at last. Given that Google had 100% company-wide success against phishing with U2F , we know this works.],
+  [In today’s world, computers are now so omnipresent that there is no longer any such thing as cybersecurity, online security, or computer security – there’s only  security . You either have it, or you don’t. If you follow and share these three rules, hopefully you too can have a modicum of security today.],
 ),
   insert-map: (:),
-  word-count: 2584,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-}
-
-{
-  #standard-article(
-  title: [Small Repo, High Quality],
-  author: [Yegor Bugayenko],
-  source-name: [Yegor Bugayenko],
-  images: (),
-  paragraphs: (
-  [I don’t like monolithic repositories .
-They keep multiple projects together, often written in different languages, by different teams.
-Unfortunately, Google , Facebook , and Yandex favor them.
-Primarily, according to them, monorepos reduce integration overhead .
-They do, but at the cost of quality.
-In smaller repositories we can develop better code.],
-  [Морфий (2008) by Алексей Балабанов],
-  [When a repository is smaller you can achieve higher quality, for a number of reasons:],
-  [You can be stricter on style. 
-It’s easier to keep a thousand lines consistently formatted than a million.
-With a thousand lines, you can configure ESLint to its maximum, enabling as many rules as you can find.
-Stricter control over code stylistics leads to cleaner code.],
-  [You can write deeper tests. 
-Integration (or deep ) tests are inevitably slow.
-In a smaller repository, a good integration test coverage doesn’t mean a slow build.
-In a larger repository—it does.
-A slow build is something a team tries to avoid, thus jeopardizing the coverage.],
-  [You can review more pedantically. 
-In a larger repository it may be harder to remember all the aspects of design.
-A pull request that affects different seemingly unrelated code parts
-may be a challenge to review .
-Even if you are the architect .],
-  [You can write a README. 
-Maybe you have noticed already: large open source projects have short and sketchy README files.
-They can’t make them much longer without them becoming as large as a book.
-All they can do is redirect the reader to the documentation website.
-The inability to explain the entire scope in a single file leads to scope creep.
-Contributors struggle to understand the borders of the project.
-This leads, among other bad things, to code duplication.],
-  [You can release frequently. 
-In a larger repository, frequent reintegration may be expensive, in both time and money.
-In a small repo, a build of a few seconds is not a dream of programmers, it’s their reality.
-Not only CI is cheap, but also CD.
-After every small change you can publish a new release, with its own version .
-In a monorepo, we tend to wait until a portion of changes accumulate.],
-  [You can use AI agents effectively. 
-It is no secret that modern LLMs have limited context windows .
-A million lines of code can’t fit into even the largest of them.
-Even ten thousand lines, let alone a million, is more than an LLM can digest.
-By keeping a repository small we do a big favor to our little friends: AI agents.],
-  [You can on-board faster. 
-Larger codebases are usually older and more chaotic , full of legacy code.
-It takes longer to start making meaningful contribution to such a repository.
-Monorepos attract
- long-term 
- office-based 
-contributors
-who care about job security more than about code quality.],
-  [You can expect responsibility. 
-In larger codebases, the very idea of code ownership is hard to maintain.
-Programmers can hardly feel responsible for the code written and modified by others.
-Smaller repositories, on the other hand, emotionally attach people to code.],
-  [You can go open source. 
-No matter how much your boss loves 
-open source, you can’t put your entire enterprise monorepo on GitHub.
-However, if you extract a small part of it, you can.
-The code that is open, visible and criticized by many people,
-is allegedly of a higher quality.],
-  [In summary, you should look for an opportunity to extract a piece of code as a standalone package.
-Then, insist on making it open source .
-Then, promote it in the community.
-Then, quit your office job and join Zerocracy .],
-),
-  insert-map: (:),
-  word-count: 600,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-}
-
-{
-  #standard-article(
-  title: [Introducing Custom Regions for precision data control],
-  author: [Andrew Berglund],
-  source-name: [Cloudflare Blog],
-  images: (),
-  paragraphs: (
-  [A key part of our mission to help build a better Internet is giving our customers the tools they need to operate securely and efficiently, no matter their compliance requirements. Our Regional Services product helps customers do just that, allowing them to meet data sovereignty legal obligations using the power of Cloudflare’s global network.],
-  [Today, we're taking two major steps forward: First, we’re expanding the pre-defined regions for Regional Services to include Turkey, the United Arab Emirates (UAE), IRAP (Australian compliance) and ISMAP (Japanese compliance). Second, we’re introducing the next evolution of our platform: Custom Regions.],
-  [Global security, local compliance: the Regional Services advantage],
-  [Before we dive into what’s new, let’s revisit how Regional Services provides the best of both worlds: local compliance and global-scale security. Our approach is fundamentally different from many sovereign cloud providers. Instead of isolating your traffic to a single geography (and a smaller capacity for attack mitigation), we leverage the full scale of our global network for protection and only inspect your data where you tell us to.],
-  [Here’s an overview of how it works:],
-  [Global ingestion & L3/L4 DDoS defense: Traffic is ingested at the closest Cloudflare data center, wherever in the world that may be. At this initial entry point, we apply our massive-scale DDoS mitigation to block volumetric attacks at the network and transport layers. This happens outside your designated region, ensuring only clean traffic is forwarded.],
-  [Intelligent in-region routing: Before any decryption occurs, we inspect the request's metadata. If it has arrived at a data center outside your specified region, we route it across our secure, private backbone to a data center within your boundaries, using the most performant pathway.],
-  [In-region TLS termination & L7 processing: Only once the traffic is confirmed to be within your chosen region do we decrypt the request. It is only then that we apply our application-layer security services, like our Web Application Firewall (WAF) or Bot Management, and execute any Cloudflare Workers logic.],
-  [Secure transit to origin: Once processed, the request is re-encrypted and securely sent to your origin server.],
-  [This unique architecture means you can localize data inspection as needed to meet your legal obligations without sacrificing the robust DDoS protection that only a massive global network can provide.],
-  [New options available within Cloudflare Managed Regions],
-  [When we launched Regional Services in 2020, we started with just three regions: EU, UK, and U. S. Over time we have added regions that are shared across all accounts — we refer to these as Cloudflare Managed Regions.],
-  [A few more are newly available: Turkey, the United Arab Emirates (UAE), and IRAP (Australian compliance), bringing our total to 35 regions .],
-  [In addition, we are now giving our customers the ability to request a custom region that meets their account needs. These are Custom Regions, launching today.],
-  [Beyond pre-defined boundaries: introducing Custom Regions],
-  [While our 35 pre-defined regions serve many of our customers’ needs, the digital world isn't one-size-fits-all. We've heard you loud and clear: you've asked for a specific country, unique combinations of countries, and the ability to exclude a set of countries from a region.],
-  [That's why we're excited to announce the next evolution of Regional Services: Custom Regions.],
-  [Simply put, Custom Regions give you the power to define your own geographical boundaries for traffic processing. Instead of choosing from a list of regions defined by us, you tell us precisely which locations constitute your region.],
-  [This flexibility unlocks a new level of control. Our early-access customers have already used Custom Regions to:],
-  [Regionalize AI inference: Keep LLM prompts and responses within a specific set of countries to optimize for performance and data localization legal obligations.],
-  [Launch hyper-targeted promotions: Serve marketing campaigns and content that are optimized for a unique combination of countries.],
-  [Scale government operations: Build regions that align with contractual commitments with government entities.],
-  [Mirror your corporate structure: Build regions that match your internal business units, like EMEA, MENA, or APAC, for perfectly aligned governance.],
-  [The core mechanism is the same; the only thing that changes is the boundary. Instead of Cloudflare defining the region, you do.],
-  [The possibilities are endless. For example, your region could be:],
-  [North America: Canada, United States, Mexico],
-  [Everywhere except North America: Not Canada, not United States, not Mexico],
-  [Countries that use Fahrenheit: USA, Bahamas, Cayman Islands, Marshall Islands, Liberia],
-  [How Regional Services works],
-  [At the core of Regional Services is enforcement of a simple rule: TLS termination and Layer 7 processing only happen inside your chosen region. Custom Regions expands this capability by allowing you to choose your own region definitions.],
-  [Cloudflare Managed Regions and Custom Regions rely on three building blocks: defining region membership, selecting an in-region destination, and enforcing the boundary at the edge.],
-  [Defining region membership],
-  [A region is ultimately a set of Cloudflare data centers.],
-  [Cloudflare managed regions use a pre-defined membership set.],
-  [Custom Regions define membership with an expression. The most common field is country\_code : the ISO code where each data center is located:],
-  [Use case],
-  [Single country],
-  [country\_code == "TR"],
-  [Multiple countries],
-  [country\_code in ["DE", "FR", "NL"]],
-  [Germany, France, and the Netherlands],
-  [Exclude countries],
-  [!(country\_code in ["US", "CA", "MX"])],
-  [Everything except the U. S., Canada, and Mexico],
-  [That expression is evaluated against data centers' metadata. Matches become your region's membership set and are distributed globally, so every data center can quickly answer: "Am I in this region?"],
-  [As Cloudflare's infrastructure evolves, membership updates, so new matching data centers can join automatically. You do not need to worry about when data centers are added or removed from the definition; Cloudflare takes care of that for you.],
-  [Calculating optimal in-region routing],
-  [If a request enters Cloudflare outside your region, the next step is choosing the best in-region destination for that ingress location.],
-  [Cloudflare's selection is a two-step process:],
-  [Allowed destinations: the region's membership set (which data centers are in-region)],
-  [Best destination for this ingress: a performance-ranked list tailored to the data center where the request entered our network],
-  [These per-ingress rankings are computed centrally and distributed to the edge via Quicksilver . They are built from measured path quality across our network (not just physical distance), using signals like:],
-  [Network performance: Latency and reliability indicators (for example, loss and timeouts)],
-  [Capacity and load: Available resources and current utilization],
-  [Operational status: Health and availability],
-  [At routing time, we intersect the ranked list with the region membership set and choose from the top candidates. The final choice is validated against live availability: destinations that are disabled or otherwise unreachable are skipped, so traffic can fail over to the next best in-region option.],
-  [Enforcing the boundary],
-  [This is the process when a request arrives at Cloudflare:],
-  [Ingress. The request lands at the nearest data center. Layer 3/4 DDoS mitigation is applied immediately.],
-  [Configuration lookup. Is a region configured for this zone?],
-  [Membership check. Is this data center in the configured region?],
-  [Routing decision.],
-  [In region: Process locally. TLS termination and all Layer 7 services run here.],
-  [Out of region: An in-region data center is selected, and the request is forwarded over Cloudflare's private backbone.],
-  [In-region processing. TLS is terminated for the first time. Layer 7 services run here.],
-  [Origin connection. The processed request is sent to your origin.],
-  [As noted above, Cloudflare does not decrypt the request outside your defined region. Instead, we forward it to the closest data center inside your region, where decryption and Layer 7 services occur.],
-  [How we handle errors],
-  [Resilience is built in at multiple layers:],
-  [Multiple candidates: Routing considers multiple in-region options and selects an available destination in real time.],
-  [Health-aware routing: Unhealthy or disabled data centers are excluded.],
-  [Data quality gates: Fresh routing inputs are only published when sufficient monitoring data is available.],
-  [Fail-close design: If no valid in-region destination exists, the connection fails rather than processing outside your region.],
-  [How to get started],
-  [The new Cloudflare managed regions are available now for customers using Regional Services. If you would like to use these, just follow the standard process to enable it via the Cloudflare Dashboard or via the Cloudflare API. Custom Regions are new and follow a different process.],
-  [To ensure a perfect fit for your needs, the initial setup for Custom Regions is a collaborative process. To get started, simply reach out to your account team. They will work with you to define your region and get it deployed. While the service is not yet self-serve, we are continuously developing the technology and will revisit this as the feature matures. Please note that some technical limitations may apply, and your solutions engineer is the perfect person to discuss the details with.],
-  [Interested in taking control of your data?],
-  [If you are interested in learning more about Regional Services, please contact your account team. If you’re not yet a Cloudflare customer, we would love to have you. Fill out this form , and we’ll be in touch with you soon.],
-),
-  insert-map: (:),
-  word-count: 1484,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-}
-
-{
-  #standard-article(
-  title: [Announcing Cloudflare Account Abuse Protection: prevent fraudulent attacks from bots and humans],
-  author: [Jin-Hee Lee],
-  source-name: [Cloudflare Blog],
-  images: (),
-  paragraphs: (
-  [Today, Cloudflare is introducing a new suite of fraud prevention capabilities designed to stop account abuse before it starts. We've spent years empowering Cloudflare customers to protect their applications from automated attacks, but the threat landscape has evolved. The industrialization of hybrid automated-and-human abuse presents a complex security challenge to website owners. Consider, for instance, a single account that’s accessed from New York, London, and San Francisco in the same five minutes. The core question in this case is not “Is this automated?” but rather “Is this authentic?”],
-  [Website owners need the tools to stop abuse on their website, no matter who it’s coming from .],
-  [During our Birthday Week in 2024, we gifted leaked credentials detection to all customers, including everyone on a Free plan. Since then, we've added account takeover detection IDs as part of our bot management solution to help identify bots attacking your login pages.],
-  [Now, we’re combining these powerful tools with new ones. Disposable email check and email risk help you enforce security preferences for users who sign up with throwaway email addresses, a common tactic for fake account creation and promotion abuse, or whose emails are deemed risky based on email patterns and infrastructure. We’re also thrilled to introduce Hashed User IDs — per-domain identifiers generated by cryptographically hashing usernames — that give customers better insight into suspicious account activity and greater ability to mitigate potentially fraudulent traffic, without compromising end user privacy.],
-  [The new capabilities we’re announcing today go beyond automation, identifying abusive behavior and risky identities among human users and bots. Account Abuse Protection is available in Early Access, and any Bot Management Enterprise customer can use these features at no additional cost for a limited period, until the general availability of Cloudflare Fraud Prevention later this year. If you want to learn more about this Early Access capability, sign up here .],
-  [Leaked credentials make logins all too vulnerable],
-  [The barrier to entry for fraudulent behavior is dangerously low, especially with the availability of massive datasets and access to automated tools that commit account fraud at scale. Website owners aren’t just dealing with individual hackers, but industrialized fraud. Last year, we highlighted how 41% of logins across our network use leaked credentials . This number has only grown following the exposure of a database holding 16 billion records , and multiple high-profile breaches have since come to light.],
-  [What’s more, users reuse passwords across multiple platforms, meaning a single leak from years ago can still unlock a high-value retail or even a bank account today. Our leaked credential check is a free feature that checks whether a password has been leaked in a known data breach of another service or application on the Internet. This is a privacy-preserving credential checking service that helps protect our users from compromised credentials, meaning Cloudflare performs these checks without accessing or storing plaintext end user passwords. Passwords are hashed — i.e., converted into a random string of characters using a cryptographic algorithm — for the purpose of comparing them against a database of leaked credentials. If you haven’t already turned on our leaked credential check , enable it now to keep your accounts safe from easy hacks!],
-  [Access to a large database of leaked credentials is only useful if an attacker can cycle through them quickly across many sites to identify which accounts are still vulnerable due to password reuse. In our Black Friday analysis in 2024, we observed that more than 60% of traffic to login pages across our network was automated . That’s a lot of bots trying to break in.],
-  [To help customers protect their login endpoints from constant bombardment, we added account takeover (ATO)-specific detections to highlight suspicious traffic patterns. This is part of our recent focus on per-customer detections , in which we provide behavioral anomaly detection unique to each bot management customer. Today, bot management customers can see and mitigate attempted ATO attacks in their login requests directly on the Security analytics dashboard.],
-  [In the card on the left within the Security analytics dashboard, you can view and address attempted account takeover attacks.],
-  [In the last week, our ATO detections combined caught an average of 6.9 billion suspicious login attempts daily, across our network. These ATO detections, along with the many other detection mechanisms in our bot management solution, create a layered defense against ATO and other malicious automated attacks.],
-  [From automation to intent and identity],
-  [To discern automation, or to discern intent and identity? That is the question. Our answer: yes and yes, as both are critical layers of a robust security posture. Attackers now operate at a scale previously reserved for enterprise services: they leverage massive credential leaks, use human-powered fraud farms to spoof devices and locations, and create synthetic identities to maintain thousands — even millions — of fake accounts for promotion and platform abuse. A human being with automated tools could be draining accounts, abusing promotions, committing payment fraud, or all of the above.],
-  [Beyond that, automation is accessible like never before, particularly as users become better acquainted with using AI agents and even long-standing, “traditional” browsers move toward having agentic capabilities by default. Whether it’s a lone actor using an AI agent or a coordinated fraud campaign, the threat isn’t as simple as a single script — it can involve human intent, with automated execution.],
-  [Consider the following scenarios we’ve heard from our customers:],
-  [We have 1,000 new users this month, but more than half of them are fake identities who benefit from a free trial, then disappear.],
-  [The attacker logged in with the correct password, so how do I know that it isn’t the real user?],
-  [This entity is acting at human pace, and they are draining accounts.],
-  [These problems can't be solved by only assessing automation; they require checking for authenticity and integrity. This is the gap that our dedicated fraud prevention capabilities address.],
-  [Assessing suspicious emails],
-  [Let’s start by assessing the earliest point of potential account abuse: account creation. Fake or bulk account creation is one of the biggest topics in conversations about website fraud, as it can open the door for attackers to access an application — or even an entire business model.],
-  [Cloudflare is giving customers the tools to assess suspicious account creation at the source in two ways:],
-  [Disposable email check : Detect when users sign up with disposable, or throwaway, email addresses commonly used for promotion abuse and fake account creation. These disposable email services allow attackers to spin up thousands of "unique" accounts without maintaining real infrastructure, particularly unauthenticated disposable emails that provide instant access without account creation or free unlimited email aliases. Customers can use this binary field as they build rules to enforce security preferences, choosing to block all disposable emails outright, or perhaps issuing a challenge to anyone attempting to create an account with a disposable email.],
-  [Email risk: Cloudflare analyzes email patterns and infrastructure to provide risk tiers (low, medium, high) that customers can use in security rules. We know that not all email addresses are created equal; an address with the format firstname.lastname\@knowndomain.com carries different risk characteristics than xk7q9m2p\@newdomain.xyz . Email risk tiers allow customers to express their tolerance for risk and friction at the point of account creation.],
-  [Both disposable email check and email risk are now available in security analytics and security rules, equipping website owners to protect their account creation flow. These detections address a fundamental problem: by the time an account is committing abuse, it's already too late. The website owner has already paid acquisition costs, the fraudulent user has consumed promotional credits, and remediation requires manual review. Mitigating suspicious emails means adding the appropriate friction at signup — the moment it matters most.],
-  [Introducing Hashed User IDs],
-  [Understanding patterns of abuse requires visibility : not only into the network, but of account activity. Traditionally, security has meant looking through the lens of IPs and isolated HTTP requests to spot automated activity, but website owners aren’t just thinking in terms of network signals; they are also considering their users and known accounts. That’s why we’re expanding our mitigation toolbox to match the way applications are actually structured, focusing on user-based detection of fraudulent activity.],
-  [Attackers can effortlessly rotate IPs to hide their tracks. But forcing them to repeatedly generate new, credible accounts introduces massive friction, especially when combined with account creation protections. When we look past the network layer and map fraudulent actions to a given compromised or abusive account, we can spot targeted behavior tied to a single, persistent actor and put a stop to the abuse. In this way, we’re shifting the defense strategy to the account level, instead of playing whack-a-mole with rotating IP addresses and residential proxies. This means that our customers can mitigate abusive behavior based on the way their applications separate identity .],
-  [To arm website owners with this capability, Cloudflare is releasing a Hashed User ID that customers can use in Security analytics , Security rules , and Managed Transforms . User IDs are per-domain, cryptographically hashed versions of the values in the username field, and each user ID is an encrypted, unique, and stable identifier generated for a given username on a customer application. Importantly, the actual username is not logged or stored by Cloudflare as part of this service. As with leaked credentials check and ATO detections, which identify login traffic and then encrypt credentials for comparison, we are prioritizing end user privacy while empowering our customers to take action against fraudulent behavior.],
-  [With access to Hashed User IDs, website owners can:],
-  [See top users: Which accounts have the most activity?],
-  [See when a unique user logs in from a country they usually don’t — or multiple countries in one day!],
-  [Mitigate traffic based on unique user, such as blocking a user with historically suspicious activity.],
-  [Combine fields to see when accounts are being targeted with leaked credentials.],
-  [See what network patterns or signals are associated with unique users.],
-  [The expanded view of a single Hashed User ID within the Security analytics dashboard, showing the activity details of that unique user, including their login location and their browser.],
-  [This user-level visibility transforms how website owners can investigate and mitigate traffic. Instead of examining individual requests in isolation, our customers can see the full picture of how attackers are targeting and hiding among legitimate users.],
-  [Take the next step in account protection today],
-  [If you want to learn more about this Early Access capability, sign up here . All Bot Management Enterprise customers are eligible to add these new Account Abuse Protection features today, and we’d love to open the conversation with any and all prospective Bot Management customers .],
-  [While bot detections will continue to answer the question of automation and intent, fraud detections delve into the question of authenticity. Together, they give website owners comprehensive tools to fight against the full spectrum of account abuse. This suite is one step in our ongoing investment to protect the entire user journey — from account creation and login to secure checkouts and the integrity of every interaction.],
-),
-  insert-map: (:),
-  word-count: 1848,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-}
-
-{
-  #standard-article(
-  title: [What does Stack Overflow want to be when it grows up?],
-  author: [Jeff Atwood],
-  source-name: [Coding Horror (Jeff Atwood)],
-  images: (),
-  paragraphs: (
-  [I sometimes get asked by regular people in the actual real world what it is that I do for a living, and here’s my 15 second answer:],
-  [We built a sort of Wikipedia website for computer programmers to post questions and answers. It’s called  Stack Overflow .],
-  [As of last month, it’s been 10 years since Joel Spolsky and I  started Stack Overflow . I currently do other stuff now , and I have since 2012, but if I will be known for anything when I’m dead, clearly it is going to be good old Stack Overflow.],
-  [Here’s where I’d normally segue into a bunch of rah-rah stuff about how great Stack Overflow is, and thus how implicitly great I am by association for being a founder, and all.],
-  [I do not care about any of that.],
-  [What I do care about, though, is  whether Stack Overflow is useful to working programmers . Let’s check in with  one of my idols , John Carmack. How useful is Stack Overflow, from the perspective of what I consider to be one of the greatest living programmers?],
-  [I won’t lie, September 17th, 2013 was a  pretty good day . I literally got chills when I read that, and not just because I always read the word “billions” in Carl Sagan’s voice. It was also pleasantly the opposite of pretty much every  other  day I’m on Twitter, scrolling through an oppressive, endless litany of shared human suffering and people screaming at each other. Which reminds me, I should check my Twitter and see who else is wrong on the Internet today.],
-  [I am honored and humbled by the public utility that Stack Overflow has unlocked for a whole generation of programmers. But  I didn’t do that .],
-  [You  did, when you contributed a well researched question to Stack Overflow.],
-  [You  did, when you contributed a succinct and clear answer to Stack Overflow.],
-  [You  did, when you edited a question or answer on Stack Overflow to make it better.],
-  [All those “fun size” units of Q&A collectively contributed by working programmers from all around the world ended up building a  Creative Commons resource  that truly rivals Wikipedia within our field. That’s... incredible, actually.],
-  [But success stories are boring. The world is filled with people that  basically got lucky , and subsequently can’t stop telling people how it was all of their hard work and moxie that made it happen. I find failure much more instructive, and when building a business and planning for the future, I take on the role of Abyss Domain Expert™ and begin a staring contest. It’s just a little something I like to do, you know...  for me .],
-  [Thus, what I’d like to do right now is peer into that glorious abyss for a bit and introspect about  the challenges I see facing Stack Overflow for the next 10 years.  Before I begin, I do want to be absolutely crystal clear about a few things:],
-  [I have not worked at Stack Overflow in any capacity whatsoever since February 2012 and I’ve had zero day-to-day operational input since that date, more or less by choice. Do I have opinions about how things should be done? Uh, have you  met me?  Do I email people every now and then about said opinions? I might, but I honestly do try to keep it to an absolute minimum, and I think my email archive track record here is reasonable.],
-  [The people working at Stack are amazing and most of them (including much of the Stack Overflow community, while I’m at it) could articulate the mission better — and perhaps a tad less crankily — than I could by the time I left. Would I trust them with my life? No. But I’d trust them with Joel’s life!],
-  [The whole point of the Stack Overflow exercise is that it’s not beholden to me, or Joel, or  any other Great Person . Stack Overflow works because it empowers regular everyday programmers all over the world, just like you, just like me. I guess in my mind it’s akin to being a parent. The goal is for your children to eventually grow up to be sane, practicing adults who don’t need (or, really,  want ) you to hang around any more.],
-  [Understand that you’re reading  the weak opinions strongly held  the strong opinions weakly held  of a co-founder who spent prodigious amounts of time working with the community in the first four years of Stack Overflow’s life to shape the rules and norms of the site to fit their needs. These are merely my opinions. I like to think they are  informed  opinions, but that doesn’t necessarily mean I can predict the future, or that I am even qualified to try. But I’ve never let being “qualified” stop me from doing anything, and I ain’t about to start tonight.],
-  [id="stack-overflow-is-a-wiki-first"\>Stack Overflow is a wiki first],
-  [Stack Overflow ultimately has  much  more in common with Wikipedia than a discussion forum. By this I mean questions and answers on Stack Overflow are not primarily judged by their usefulness to a specific individual, but by  how many other  programmers that question or answer can potentially help over time . I tried as hard as I could to emphasize this relationship from launch day in 2008. Note who has top billing in this Venn diagram.],
-  [Stack Overflow later added a super neat feature to highlight this core value in user profiles, where it shows how many other people you have potentially helped with your contributed questions and answers so far.],
-  [The most common complaints I see about Stack Overflow are usually the result of this fundamental misunderstanding about who the questions and answers on the site are ultimately  for , and why there’s so much strictness involved in the whole process.],
-  [I’m continually amazed at the number of people, even on Hacker News today, who don’t realize that every single question and answer is editable on Stack Overflow, even as a completely anonymous user who isn’t logged in. Which makes sense, right,  because Stack Overflow is a wiki , and that’s how wikis work. Anyone can edit them. Go ahead, try it right now if you don’t believe me – press the “improve this answer” or “improve this question” button on anything that can be improved, and make it so.],
-  [The responsibility for this misunderstanding is all on Stack Overflow (and by that I also mean myself, at least up until 2012). I guess the logic is that “every programmer has surely seen, used, and understands Stack Overflow by now, 10 years in” but... I think that’s a risky assumption. New programmers are minted every second of every day. Complicating matters further, there are three tiers of usage at Stack Overflow, from biggest to smallest, in inverted pyramid style:],
-  [I passively search for programming answers. Passively searching and reading highly ranked Stack Overflow answers as they appear in web search results is arguably the  primary goal of Stack Overflow . If Stack Overflow is working like it’s supposed to, 98% of programmers should get all the answers they need from reading search result pages and wouldn’t need to ask or answer a single question in their entire careers. This is a good thing! Great, even!],
-  [I participate on Stack Overflow when I get stuck on a really hairy problem and searching isn’t helping. Participating only at those times when you are extra stuck is completely valid. However, I feel this level is where most people tend to run into difficulty on Stack Overflow, because it involves someone who may not be new to Stack Overflow per se, but is new to asking questions, and also at the precise time of stress and tension for them where they  must  get an answer due to a problem they’re facing… and they don’t have the time or inclination to deal with Stack Overflow’s strict wiki type requirements for research effort, formatting, showing previous work, and referencing what they found in prior searches.],
-  [I participate on Stack Overflow for professional development. At this level you’re talking about experienced Stack Overflow users who have contributed many answers and thus have a pretty good idea of what makes a great question, the kind they’d want to answer themselves. As a result, they don’t tend to ask many questions because they self-medicate through exhaustive searching and research, but when they do ask one, their questions are exemplary.],
-  [(There’s technically a fourth tier here, for people who want to selflessly contribute creative commons questions and answers to move the entire field of software development forward for the next generation of software developers. But who has time for saints 😇, y’all make the rest of us look bad, so knock it off already, Skeet.)],
-  [It wouldn’t shock me at all if people spent  years  happily at tier 1 and then got a big unpleasant surprise when reaching tier 2. The primary place to deal with this, in my opinion, is a  massively revamped and improved ask page . It’s also fair to note that maybe people don’t understand that they’re signing up for a sizable chunk of work by implicitly committing to the wiki standard of “try to make sure it’s useful to more people than just yourself” when asking a question on Stack Overflow, and are then put off by the negative reaction to what others view as an insufficiently researched question.],
-  [Stack Overflow absorbs so much tension from its adoption of wiki standards for content. Even if you know about that requirement up front, it is not always clear what “useful” means, in the same way it’s not always clear what topics, people, and places are deserving of a Wikipedia page.  Henrietta Lacks , absolutely, but what about your cousin Dave in Omaha with his weirdo PHP 5.6 issue?],
-  [id="over-time-duplicates-become-vast-landmine-fields"\>Over time, duplicates become vast landmine fields],
-  [Here’s one thing I really, really saw coming and to be honest with you I was kinda glad I left in 2012 before I had to deal with it because of the incredible technical difficulty involved:  duplicates . Of all the complaints I hear about Stack Overflow, this is the one I am most sympathetic to by far.],
-  [If you accept that Stack Overflow is a wiki type system, then for the same reasons that you obviously can’t have five different articles about Italy on Wikipedia,  Stack Overflow can’t allow duplicate questions on the exact same programming problem . While there is a fair amount of code to do pre-emptive searches as people type in questions, plus  many  exhortations to search before you ask, with an inviting search field and button right there on the mandatory page you see before asking your first question...],
-  [...locating and identifying duplicate content is an insanely difficult problem even for a company like Google that’s done nothing but specialize in this exact problem for, what, 20 years now, with a veritable army of the world’s most talented engineers.],
-  [When you’re asking a question on a site that doesn’t allow duplicate questions, the problem space of a site with 1 million existing questions is rather different from a site with 10 million existing questions... or 100 million. Asking a single unique question goes from mildly difficult to mission almost impossible, because your question needs to thread a narrow path through this vast, enormous field of prior art questions without stepping on any of the vaguely similar looking landmines in the process.],
-  [But wait!  It gets harder!],
-  [Some variance in similar-ish questions is OK, because 10 different people will ask a nearly identical question using 10 different sets of completely unrelated words with no overlap. I know, it sounds crazy, but trust me: humans are amazing at this. We want all those duplicates to exist so they can  point to  the primary question they are a duplicate of, while still being valid search targets for people who ask questions with unusual or rare word choices.],
-  [It can be legitimately difficult to determine if your question is a true duplicate. How much overlap is enough before one programming question is a duplicate of another? And by whose definition? Opinions vary. This is subject to human interpretation, and humans are.. unreliable. Nobody will ever be completely happy with this system, pretty much by design. That tension is baked in permanently and forever.],
-  [I don’t have any real answers on the duplicate problem, which only gets worse over time. But I will point out that there is plenty of precedent on the Stack Exchange network  for splitting sites into “expert” and “beginner” areas with slightly different rulesets. We’ve seen this for Math vs. MathOverflow, English vs. English Learners, Unix vs. Ubuntu...  perhaps it’s time for a more beginner focused Stack Overflow  where duplicates are less frowned upon, and conversational rules are a bit more lenient?],
-  [id="stack-overflow-is-a-competitive-system-of-peer-review"\>Stack Overflow is a competitive system of peer review],
-  [Stack Overflow was indeed built to be a fairly explicitly competitive system, with the caveat that “there’s always more than one way  to do it.” This design choice was based on my perennial observation that the best way to motivate any programmer... is to subtly insinuate that  another  programmer could have maybe done it better.],
-  [This is manifested in the public reputation system on Stack Overflow, the incredible power of a number printed next to someone’s name, writ large. All reputation in Stack Overflow comes from the recognition of your peers, never the “system.”],
-  [Once your question is asked, or your answer is posted, it can then be poked, prodded, edited, flagged, closed, opened, upvoted, downvoted,  folded and spindled  by your peers. The  intent  is for Stack Overflow to be a system of peer review and friendly competition, like a code review from a coworker you’ve never met at a different division of the company. It’s also completely fair for a fellow programmer to question the premise of your question, as long as it’s done in a nice way. For example, do you really want to use that regular expression to match HTML ?],
-  [I fully acknowledge that  competitive peer review systems aren’t for everyone , and thus the overall process of having peers review your question may not always feel great, depending on your circumstances and background in the field –  particularly  when combined with the substantial tensions around utility and duplicates Stack Overflow already absorbed from its wiki elements. Kind of a double whammy there.],
-  [I’ve heard people describe the process of asking a question on Stack Overflow as anxiety inducing. To me, posting on Stack Overflow is  supposed  to involve a healthy kind of minor “let me be sure to show off my best work” anxiety:],
-  [the anxiety of giving a presentation to your fellow peers],
-  [the anxiety of doing well on a test],
-  [the anxiety of showing up to a new job with talented coworkers you admire],
-  [the anxiety of attending your first day at school with other students at your level],
-  [I imagine systems where there is zero anxiety involved and I can only think of jobs where I had long since stopped caring about the work and thus had no anxiety about whether I even showed for work on any given day. How can that be good? Let’s just say I’m not a fan of zero-anxiety systems.],
-  [Maybe competition just isn’t your jam. Could there be a less competitive Q&A system, a system without downvotes, a system without close votes, where there was never any anxiety about posting anything, just a network of super supportive folks who believe in you and want you to succeed no matter what? Absolutely! I think many alternative sites  should  exist on the internet so people can choose an experience that matches their personal preferences and goals. Should Stack build that alternative? Has it already been built? It’s an open question; feel free to point out examples in the comments.],
-  [id="stack-overflow-is-designed-for-practicing-programmers"\>Stack Overflow is designed for practicing programmers],
-  [Another point of confusion that comes up a fair bit is who the intended audience for Stack Overflow actually is. That one is straightforward, and it’s been the same from day one:],
-  [Q&A for  professional and enthusiast programmers . By that we mean:],
-  [People who either already have a job as a programmer, or could potentially be hired as a programmer today if they wanted to be.],
-  [Yes, in case you’re wondering, part of this was an overt business decision. To make money you must have an audience of people already on a programmer’s salary, or in the job hunt to be a programmer. The entire Stack Overflow network may be Creative Commons licensed, but it was never a non-profit play. It was planned as a sustainable business from the outset, and that’s why we launched Stack Overflow Careers  only one year after Stack Overflow itself... to be honest far sooner than we should have, in retrospect. Careers has since been smartly subsumed into Stack Overflow proper at  stackoverflow.com/jobs  for a more integrated and most assuredly way-better-than-2009 experience.],
-  [The choice of audience wasn’t meant to be an exclusionary decision in any way, but Stack Overflow was definitely designed as a fairly strict system of peer review, which is great (IMNSHO, obviously) for already practicing professionals, but  pretty much everything you would  not  want as a student or beginner . This is why I cringe so hard I practically turn myself inside out when people on Twitter mention that they have pointed their students at Stack Overflow. What you’d want for a beginner or a student in the field of programming is almost  the exact opposite  of what Stack Overflow does at every turn:],
-  [one-on-one mentoring],
-  [real time collaborative screen sharing],
-  [live chat],
-  [theory and background courses],
-  [starter tasks and exercises],
-  [playgrounds to experiment in],
-  [These are all very fine and good things, but Stack Overflow does  NONE  of them, by design.],
-  [Can  you use Stack Overflow to learn how to program from first principles? Well, technically you can do anything with any software. You could try to have actual conversations on Reddit, if you’re a masochist. But the answer is yes. You could learn how to program on Stack Overflow, in theory, if you are a prodigy who is comfortable with the light competitive aspects (reputation, closing, downvoting) and also perfectly willing to define all your contributions to the site in terms of utility to others, not just yourself as a student attempting to learn things. But I  suuuuuuper  would not recommend it. There are far better websites and systems out there for learning to be a programmer .  Could  Stack Overflow build beginner and student friendly systems like this? I don’t know, and it’s certainly not my call to make. 🤔],
-  [And that’s it. We can now resume our normal non-abyss gazing. Or whatever it is that passes for normal in these times.],
-  [I hope all of this doesn’t come across as negative. Overall I’d say the state of the Stack is strong. But does it even matter what I think?  As it was in 2008 , so it is in 2018.],
-  [Stack Overflow is  you .],
-  [This is the scary part, the great leap of faith that Stack Overflow is predicated on: trusting your fellow programmers. The programmers who choose to participate in Stack Overflow are the “secret sauce” that makes it work. You are the reason I continue to believe in developer community as the greatest source of learning and growth. You are the reason I continue to get so many positive emails and testimonials about Stack Overflow. I can’t take credit for that. But you can.],
-  [I learned the collective power of my fellow programmers long ago writing on Coding Horror. The community is far, far smarter than I will ever be. All I can ask — all any of us can ask — is to help each other along the path.],
-  [And if your fellow programmers decide to recognize you for that, then I say you’ve well and truly earned it.],
-  [The strength of Stack Overflow begins, and ends, with the community of programmers that power the site . What should Stack Overflow be when it grows up?  Whatever we make it, together.],
-  [p.s. Happy 10th anniversary Stack Overflow!],
-  [Also see Joel’s take on 10 years of Stack Overflow with  The Stack Overflow Age ,  A Dusting of Gamification , and  Strange and Maddening Rules .],
-),
-  insert-map: (:),
-  word-count: 3402,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-}
-
-{
-  #standard-article(
-  title: [Slashing agent token costs by 98% with RFC 9457-compliant error responses],
-  author: [Sam Marsh],
-  source-name: [Cloudflare Blog],
-  images: (),
-  paragraphs: (
-  [AI agents are no longer experiments. They are production infrastructure, making billions of HTTP requests per day, navigating the web, calling APIs, and orchestrating complex workflows.],
-  [But when these agents hit an error, they still receive the same HTML error pages we built for browsers: hundreds of lines of markup, CSS, and copy designed for human eyes. Those pages give agents clues, not instructions, and waste time and tokens. That gap is the opportunity to give agents instructions, not obstacles.],
-  [Starting today, Cloudflare returns RFC 9457 -compliant structured Markdown and JSON error payloads to AI agents, replacing heavyweight HTML pages with machine-readable instructions.],
-  [That means when an agent sends Accept: text/markdown , Accept: application/json , or Accept: application/problem+json and encounters a Cloudflare error, we return one semantic contract in a structured format instead of HTML. And it comes complete with actionable guidance. (This builds on our recent Markdown for Agents release.)],
-  [So instead of being told only "You were blocked," the agent will read: "You were rate-limited — wait 30 seconds and retry with exponential backoff." Instead of just "Access denied," the agent will be instructed: "This block is intentional: do not retry, contact the site owner."],
-  [These responses are not just clearer — they are dramatically more efficient. Structured error responses cut payload size and token usage by more than 98% versus HTML, measured against a live 1015 ('rate-limit') error response. For agents that hit multiple errors in a workflow, the savings compound quickly.],
-  [This is live across the Cloudflare network, automatically. Site owners do not need to configure anything. Browsers keep getting the same HTML experience as before.],
-  [These are not just error pages. They are instructions for the agentic web.],
-  [What agents see today],
-  [When an agent receives a Cloudflare-generated error, it usually means Cloudflare is enforcing customer policy or returning a platform response on the customer's behalf — not that Cloudflare is down. These responses are triggered when a request cannot be served as-is, such as invalid host or DNS routing, customer-defined access controls (WAF, geo, ASN, or bot rules), or edge-enforced limits like rate limiting. In short, Cloudflare is acting as the customer's routing and security layer, and the response explains why the request was blocked or could not proceed.],
-  [Today, those responses are rendered as HTML designed for humans:],
-  [Access denied | example.com used Cloudflare to restrict access 
- /\* 200 lines of CSS \*/ 
- 
- 
- 
- Sorry, you have been blocked],
-  [To an agent, this is garbage. It cannot determine what error occurred, why it was blocked, or whether retrying will help. Even if it parses the HTML, the content describes the error but doesn't tell the agent — or the human, for that matter — what to do next.],
-  [If you're an agent developer and you wanted to handle Cloudflare errors gracefully, your options were limited. For Cloudflare-generated errors, structured responses existed only in configuration-dependent paths, not as a consistent default for agents.],
-  [Custom Error Rules can customize many Cloudflare errors, including some 1xxx cases. But they depend on per-site configuration, so they cannot serve as a universal agent contract across the web. Cloudflare sits in front of the request path. That means we can define a default machine response: retry or stop, wait and back off, escalate or reroute. Error pages stop being decoration and become execution instructions.],
-  [What we did],
-  [Cloudflare now returns RFC 9457-compliant structured responses for all 1xxx-class error paths — Cloudflare's platform error codes for edge-side failures like DNS resolution issues, access denials, and rate limits. Both formats are live: Accept: text/markdown returns Markdown, Accept: application/json returns JSON, and Accept: application/problem+json returns JSON with the application/problem+json content type.],
-  [This covers all 1xxx-class errors today. The same contract will extend to Cloudflare-generated 4xx and 5xx errors next.],
-  [Markdown responses have two parts:],
-  [YAML frontmatter for machine-readable fields],
-  [prose sections for explicit guidance ( What happened and What you should do )],
-  [JSON responses carry the same fields as a flat object.],
-  [The YAML frontmatter is the critical layer for automation. It lets an agent extract stable keys without scraping HTML or guessing intent from copy. Fields like error\_code , error\_name , and error\_category let the agent classify the failure. retryable and retry\_after drive backoff logic. owner\_action\_required tells the agent whether to keep trying or escalate. ray\_id , timestamp , and zone make logs and support handoffs deterministic.],
-  [The schema is stable by design, so agents can implement durable control flow without chasing presentation changes.],
-  [That stability is not a Cloudflare invention. RFC 9457 — Problem Details for HTTP APIs defines a standard JSON shape for reporting errors over HTTP, so clients can parse error responses without knowing the specific API in advance. Our JSON responses follow this shape, which means any HTTP client that understands Problem Details can parse the base members without Cloudflare-specific code:],
-  [RFC 9457 member],
-  [What it contains],
-  [type],
-  [A URI pointing to Cloudflare's documentation for the specific error code],
-  [status],
-  [The HTTP status code (matching the actual response status)],
-  [title],
-  [A short, human-readable summary of the problem],
-  [detail],
-  [A human-readable explanation specific to this occurrence],
-  [instance],
-  [The Ray ID identifying this specific error occurrence],
-  [The operational fields — error\_code , error\_category , retryable , retry\_after , owner\_action\_required , and more — are RFC 9457 extension members. Clients that don't recognize them simply ignore them.],
-  [This is network-wide and additive. Site owners do not need to configure anything. Browsers keep receiving HTML unless clients explicitly ask for Markdown or JSON.],
-  [What the response looks like],
-  [Here is what a rate-limit error ( 1015 ) looks like in JSON:],
-  [{],
-  ["type": "https:\/\/developers.cloudflare.com/support/troubleshooting/http-status-codes/cloudflare-1xxx-errors/error-1015/",],
-  ["title": "Error 1015: You are being rate limited",],
-  ["status": 429,],
-  ["detail": "You are being rate-limited by the website owner's configuration.",],
-  ["instance": "9d99a4434fz2d168",],
-  ["error\_code": 1015,],
-  ["error\_name": "rate\_limited",],
-  ["error\_category": "rate\_limit",],
-  ["ray\_id": "9d99a4434fz2d168",],
-  ["timestamp": "2026-03-09T11:11:55Z",],
-  ["zone": " ",],
-  ["cloudflare\_error": true,],
-  ["retryable": true,],
-  ["retry\_after": 30,],
-  ["owner\_action\_required": false,],
-  ["what\_you\_should\_do": "\*\*Wait and retry.\*\* This block is transient. Wait at least 30 seconds, then retry with exponential backoff.\\n\\nRecommended approach:\\n1. Wait 30 seconds before your next request\\n2. If rate-limited again, double the wait time (60s, 120s, etc.)\\n3. If rate-limiting persists after 5 retries, stop and reassess your request pattern",],
-  ["footer": "This error was generated by Cloudflare on behalf of the website owner."],
-  [}],
-  [The same error in Markdown, optimized for model-first workflows:],
-  [---
-error\_code: 1015
-error\_name: rate\_limited
-error\_category: rate\_limit
-status: 429
-ray\_id: 9d99a39dc992d168
-timestamp: 2026-03-09T11:11:28Z
-zone: 
-cloudflare\_error: true
-retryable: true
-retry\_after: 30
-owner\_action\_required: false
----],
-  [\# Error 1015: You are being rate limited],
-  [\#\# What Happened],
-  [You are being rate-limited by the website owner's configuration.],
-  [\#\# What You Should Do],
-  [\*\*Wait and retry.\*\* This block is transient. Wait at least 30 seconds, then retry with exponential backoff.],
-  [Recommended approach:
-1. Wait 30 seconds before your next request
-2. If rate-limited again, double the wait time (60s, 120s, etc.)
-3. If rate-limiting persists after 5 retries, stop and reassess your request pattern],
-  [---
-This error was generated by Cloudflare on behalf of the website owner.],
-  [Both formats give an agent everything it needs to decide and act: classify the error, choose retry behavior, and determine whether escalation is required. This is what a default machine contract looks like — not per-site configuration, but network-wide behavior. The contrast is explicit across error families: a transient error like 1015 says wait and retry, while intentional blocks like 1020 or geographic restrictions like 1009 tell the agent not to retry and to escalate instead.],
-  [One contract, two formats],
-  [The core value is not format choice. It is semantic stability.],
-  [Agents need deterministic answers to operational questions: retry or not, how long to wait, and whether to escalate. Cloudflare exposes one policy contract across two wire formats. Whether a client consumes Markdown or JSON, the operational meaning is identical: same error identity, same retry/backoff signals, same escalation guidance.],
-  [Clients that send Accept: application/problem+json get application/problem+json; charset=utf-8 back — useful for HTTP client libraries that dispatch on media type. Clients that send Accept: application/json get application/json; charset=utf-8 — same body, safe default for existing consumers.],
-  [Size reduction and token efficiency],
-  [That contract is also dramatically smaller than what it replaces. Cloudflare HTML error pages are browser-oriented and heavy, while structured responses are compact by design.],
-  [Measured comparison for 1015 :],
-  [Tokens (cl100k\_base)],
-  [Size vs HTML],
-  [Token vs HTML],
-  [HTML response],
-  [46,645],
-  [14,252],
-  [—],
-  [—],
-  [Markdown response],
-  [798],
-  [221],
-  [58.5x less],
-  [64.5x less],
-  [JSON response],
-  [970],
-  [256],
-  [48.1x less],
-  [55.7x less],
-  [Both structured formats deliver a ~98% reduction in size and tokens versus HTML. For agents, size translates directly into token cost — when an agent hits multiple errors in one run, these savings compound into lower model spend and faster recovery loops.],
-  [Ten categories, clear actions],
-  [Every 1xxx error is mapped to an error\_category . That turns error handling into routing logic instead of brittle per-page parsing.],
-  [What it means],
-  [What the agent should do],
-  [access\_denied],
-  [Intentional block: IP, ASN, geo, firewall rule],
-  [Do not retry. Contact site owner if unexpected.],
-  [rate\_limit],
-  [Request rate exceeded],
-  [Back off. Retry after retry\_after seconds.],
-  [dns],
-  [DNS resolution failure at the origin],
-  [Do not retry. Report to site owner.],
-  [config],
-  [Configuration error: CNAME, tunnel, host routing],
-  [Do not retry (usually). Report to site owner.],
-  [tls],
-  [TLS version or cipher mismatch],
-  [Fix TLS client settings. Do not retry as-is.],
-  [legal],
-  [DMCA or regulatory block],
-  [Do not retry. This is a legal restriction.],
-  [worker],
-  [Cloudflare Workers runtime error],
-  [Do not retry. Site owner must fix the script.],
-  [rewrite],
-  [Invalid URL rewrite output],
-  [Do not retry. Site owner must fix the rule.],
-  [snippet],
-  [Cloudflare Snippets error],
-  [Do not retry. Site owner must fix Snippets config.],
-  [unsupported],
-  [Unsupported method or deprecated feature],
-  [Change the request. Do not retry as-is.],
-  [Two fields make this operationally useful for agents:],
-  [retryable answers whether a retry can succeed],
-  [owner\_action\_required answers whether the problem must be escalated],
-  [You can replace brittle "if status == 429 then maybe retry" heuristics with explicit control flow. Parse the frontmatter once, then branch on stable fields. A simple pattern is:],
-  [if retryable is true , wait retry\_after and retry],
-  [if owner\_action\_required is true , stop and escalate],
-  [otherwise, fail fast without hammering the site],
-  [Here is a minimal Python example using that pattern:],
-  [import time
-import yaml],
-  [def parse\_frontmatter(markdown\_text: str) -\> dict:
- \# Expects: ---\\n \\n---\\n 
- if not markdown\_text.startswith("---\\n"):
- return {}
- \_, yaml\_block, \_ = markdown\_text.split("---\\n", 2)
- return yaml.safe\_load(yaml\_block) or {}],
-  [def handle\_cloudflare\_error(markdown\_text: str) -\> str:
- meta = parse\_frontmatter(markdown\_text)],
-  [if not meta.get("cloudflare\_error"):
- return "not\_cloudflare\_error"],
-  [if meta.get("retryable"):
- wait\_seconds = int(meta.get("retry\_after", 30))
- time.sleep(wait\_seconds)
- return f"retry\_after\_{wait\_seconds}s"],
-  [if meta.get("owner\_action\_required"):
- return f"escalate\_owner\_error\_{meta.get('error\_code')}"],
-  [return "do\_not\_retry"],
-  [This is the key shift: agents are no longer inferring intent from HTML copy. They are executing explicit policy from structured fields.],
-  [How to use it],
-  [Send Accept: text/markdown , Accept: application/json , or Accept: application/problem+json .],
-  [For quick testing, you can hit any Cloudflare-proxied domain directly at /cdn-cgi/error/1015 (or replace 1015 with another 1xxx code).],
-  [curl -s --compressed -H "Accept: text/markdown" -A "TestAgent/1.0" -H "Accept-Encoding: gzip, deflate" " /cdn-cgi/error/1015"],
-  [Example with another error code:],
-  [curl -s --compressed -H "Accept: text/markdown" -A "TestAgent/1.0" -H "Accept-Encoding: gzip, deflate" " /cdn-cgi/error/1020"],
-  [JSON example:],
-  [curl -s --compressed -H "Accept: application/json" -A "TestAgent/1.0" -H "Accept-Encoding: gzip, deflate" " /cdn-cgi/error/1015" | jq .],
-  [RFC 9457 Problem Details example:],
-  [curl -s --compressed -H "Accept: application/problem+json" -A "TestAgent/1.0" -H "Accept-Encoding: gzip, deflate" " /cdn-cgi/error/1015" | jq .],
-  [The behavior is deterministic — the first explicit structured type wins:],
-  [Accept header],
-  [application/json],
-  [JSON],
-  [application/json; charset=utf-8],
-  [JSON],
-  [application/problem+json],
-  [JSON (application/problem+json content type)],
-  [application/json, text/markdown;q=0.9],
-  [JSON],
-  [application/json, text/markdown],
-  [JSON (equal q, first-listed wins)],
-  [text/markdown],
-  [text/markdown, application/json],
-  [Markdown (equal q, first-listed wins)],
-  [text/markdown, \*/\*],
-  [text/\*],
-  [\*/\*],
-  [HTML (default)],
-  [Wildcard-only requests ( \*/\* ) do not signal a structured preference; clients must explicitly request Markdown or JSON.],
-  [If the request succeeds, you get normal origin content. The header only affects Cloudflare-generated error responses.],
-  [Real-world use cases],
-  [There are a number of situations where structured error responses help immediately:],
-  [Agent blocked by WAF rule ( 1020 ). The agent parses error\_code , records ray\_id , and stops retrying. It can escalate with useful context instead of looping.],
-  [MCP (Model Context Protocol) tool hitting geo restriction ( 1009 ). The tool gets a clear, machine-readable reason, returns it to the orchestrator, and the workflow can choose an alternate path or notify the user.],
-  [Rate-limited crawler ( 1015 ). The agent reads retryable : true and retry\_after , applies backoff, and retries predictably instead of hammering the endpoint.],
-  [Developer debugging with curl . The developer can reproduce exactly what the agent sees, including frontmatter and guidance, without reverse-engineering HTML.],
-  [HTTP client libraries that understand RFC 9457. Any client that dispatches on application/problem+json or parses Problem Details objects can handle Cloudflare errors without Cloudflare-specific code.],
-  [In each case, the outcome is the same: less guessing, fewer wasted retries, lower model cost, and faster recovery.],
-  [Try it now],
-  [Send a structured Accept header and test against any Cloudflare-proxied domain:],
-  [curl -s --compressed -H "Accept: text/markdown" -A "TestAgent/1.0" -H "Accept-Encoding: gzip, deflate" " /cdn-cgi/error/1015"
- 
- 
- curl -s --compressed -H "Accept: application/json" -A "TestAgent/1.0" -H "Accept-Encoding: gzip, deflate" " /cdn-cgi/error/1015" | jq .
- 
- 
- curl -s --compressed -H "Accept: application/problem+json" -A "TestAgent/1.0" -H "Accept-Encoding: gzip, deflate" " /cdn-cgi/error/1015" | jq .],
-  [Error pages are the first conversation between Cloudflare and an agent. This launch makes that conversation structured, standards-compliant, and cheap to process.],
-  [To make this work across the web, agent runtimes should default to explicit structured Accept headers, not bare \*/\* . Use Accept: text/markdown, \*/\* for model-first workflows and Accept: application/json, \*/\* for typed control flow. If you maintain an agent framework, SDK, or browser automation stack, ship this default and treat bare \*/\* as legacy fallback.],
-  [And it is only the first layer. We are building the rest of the agent stack on top of it: AI Gateway for routing, controls, and observability; Workers AI for inference; and the identity, security, and access primitives agents will need to operate safely at Internet scale.],
-  [Cloudflare is helping our customers deliver content in agent-friendly ways, and this is just the start. If you're building or operating agents, start at agents.cloudflare.com .],
-),
-  insert-map: (:),
-  word-count: 2349,
+  word-count: 1741,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -1697,63 +1272,15 @@ import yaml],
 #article-row((
   [
     standard-article(
-  title: [Using WSL and Let's Encrypt to create Azure App Service SSL Wildcard Certificates],
-  author: [Scott Hanselman],
-  source-name: [Scott Hanselman],
-  images: (),
-  paragraphs: (
-  [There are many let's encrypt automatic tools for azure but I also wanted to see if I could use certbot in wsl to generate a wildcard certificate for the azure Friday website and then upload the resulting certificates to azure app service.],
-  [Azure app service ultimately needs a specific format called dot PFX that includes the full certificate path and all intermediates.],
-  [Per the docs, App Service private certificates must meet the following requirements :],
-  [Exported as a password-protected PFX file, encrypted using triple DES.],
-  [Contains private key at least 2048 bits long],
-  [Contains all intermediate certificates and the root certificate in the certificate chain.],
-  [If you have a PFX that doesn't meet all these requirements you can have Windows reencrypt the file.],
-  [I use WSL and certbot to create the cert, then I import/export in Windows and upload the resulting PFX.],
-  [Within WSL, install certbot:],
-  [sudo apt update],
-  [sudo apt install python3 python3-venv libaugeas0],
-  [sudo python3 -m venv /opt/certbot/],
-  [sudo /opt/certbot/bin/pip install --upgrade pip],
-  [sudo /opt/certbot/bin/pip install certbot],
-  [Then I generate the cert. You'll get a nice text UI from certbot and update your DNS as a verification challenge. Change this to make sure it's two lines, and your domains and subdomains are correct and your paths are correct.],
-  [sudo certbot certonly --manual --preferred-challenges=dns --email YOUR\@EMAIL. COM],
-  [--server https:\/\/acme-v02.api.letsencrypt.org/directory],
-  [--agree-tos --manual-public-ip-logging-ok -d "azurefriday.com" -d "\*.azurefriday.com"],
-  [sudo openssl pkcs12 -export -out AzureFriday2023.pfx],
-  [-inkey /etc/letsencrypt/live/azurefriday.com/privkey.pem],
-  [-in /etc/letsencrypt/live/azurefriday.com/fullchain.pem],
-  [I then copy the resulting file to my desktop (check your desktop path) so it's now in the Windows world.],
-  [sudo cp AzureFriday2023.pfx /mnt/c/Users/Scott/OneDrive/Desktop],
-  [Now from Windows, import the PFX, note the thumbprint and export that cert.],
-  [Import-PfxCertificate -FilePath "AzureFriday2023.pfx" -CertStoreLocation Cert:\\LocalMachine\\My],
-  [-Password (ConvertTo-SecureString -String 'PASSWORDHERE' -AsPlainText -Force) -Exportable],
-  [Export-PfxCertificate -Cert Microsoft. PowerShell. Security\\Certificate:: LocalMachine\\My\\597THISISTHETHUMBNAILCF1157B8CEBB7CA1],
-  [-FilePath 'AzureFriday2023-fixed.pfx' -Password (ConvertTo-SecureString -String 'PASSWORDHERE' -AsPlainText -Force)],
-  [Then upload the cert to the Certificates section of your App Service, under Bring Your Own Cert.],
-  [Then under Custom Domains, click Update Binding and select the new cert (with the latest expiration date).],
-  [Next step is to make this even more automatic or select a more automated solution but for now, I'll worry about this in September and it solved my expensive Wildcard Domain issue.],
-  [© 2025 Scott Hanselman. All rights reserved.],
-  [style="clear: both; padding-top: 0.2em;"\>],
-),
-  insert-map: (:),
-  word-count: 372,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-  ],
-  [
-    standard-article(
   title: [Appending text to Obsidan via Shortcuts],
   author: [Rob],
   source-name: [Rob Allen (akrabat)],
   images: (),
   paragraphs: (
   [Sometimes it's helpful to add some text to my current Obsidian daily note without having to switch to Obsidian, find the daily note and then type my text.],
-  [To do this, we can use the magic of Obsidian's obsidian:\/\/ URI schema and automate the text capture in Apple Shortcuts, with an assigned keyboard shortcut to activate it.],
+  [To do this, we can use the magic of Obsidian's obsidian:\/\\/ URI schema and automate the text capture in Apple Shortcuts, with an assigned keyboard shortcut to activate it.],
   [This is the Shortcut:],
-  [There's a number of steps in the Shortcut. Firstly we Ask For some text which will display a dialog box for us to type in. Then we Replace any trailing whitespace, add then use a Text action to prepend the current time as a third level heading. This is the text to be added, so we URL Encode it and use another Text action to create the full obsidian:\/\/ URI to be Open ed.],
+  [There's a number of steps in the Shortcut. Firstly we Ask For some text which will display a dialog box for us to type in. Then we Replace any trailing whitespace, add then use a Text action to prepend the current time as a third level heading. This is the text to be added, so we URL Encode it and use another Text action to create the full obsidian:\/\\/ URI to be Open ed.],
   [The URI is:],
   [obsidian:\/\/daily?vault=General&append=1&content={URL Encoded Text}],
   [The daily endpoint only works if the Daily notes core plugin is enabled. We then need to specify which vault we're using. The content is the URL encoded text to be appended and the append parameter tells obsidian to place the text at the end of the note.],
@@ -1768,82 +1295,6 @@ import yaml],
 )
 
   ],
-), ruled-indices: (1,))
-
-#article-row((
-  [
-    standard-article(
-  title: [Privacy-Preserving Personal Search Appliance],
-  author: [Ariya Hidayat],
-  source-name: [Ariya Hidayat],
-  images: (),
-  paragraphs: (
-  [Unlike traditional search engines like Google or Bing, SearXNG doesn’t crawl the web and index content. Instead, it leverages other search engines like DuckDuckGo, Qwant, and Mojeek to fetch results while protecting your privacy. This means your personal information isn’t tracked by those upstream services.],
-  [With the rise of LLMs and RAG, SearXNG has gained even more popularity. But I’ll dive into that in a future post.],
-  [Setting up SearXNG is a breeze. You can use Docker or Podman (my favorite Docker replacement, everyone should use it!) to get it running quickly. In fact, I encourage you to try it on your main machine. You’ll be surprised how easy it is!],
-  [A little fun fact about the name. SearXNG is an active fork of SearX. As typically the case, NG usually stands for “next generation”. However, the X in SearX is actually the Greek letter chi , which is often transliterated as “ch”. So, you could think of SearXNG as “searching”.],
-  [While you can run SearXNG on your main machine, a dedicated device offers several advantages. You can share it with your family or colleagues and add extra security layers like Tailscale, Wireguard, or the good old OpenVPN.],
-  [For my little box, I chose a used Shuttle DH170 with an Intel Core i3 6100 (2 cores, 4 threads) and 16GB of RAM. This might seem like overkill, but it’s more than enough for SearXNG. The 200GB SSD is also plenty of storage. The total cost of the hardware was just \$70. I could have saved more by using less RAM and storage, but I had these components on hand.],
-  [In terms of power consumption, the appliance idles at around 10W. I haven’t optimized it yet using tools like PowerTOP, but even so, it’s quite efficient. The off-the-shelf x86 architecture offers excellent upgrade potential. I could easily swap in a more powerful CPU like an Intel Core i7 6700 (4 cores, 8 threads) or add more RAM and storage if needed.],
-  [Initially, I considered using Proxmox to manage the system and run SearXNG in a container. However, I found this to be too complex. Instead, I opted for a simpler approach using vanilla Debian and Podman. Then, I remembered that there is project, CasaOS , a user-friendly home server OS. It offers a web-based interface for remote management and can easily run SearXNG. If you’re new to home servers, CasaOS is a great way to get started.],
-  [For those who prefer a more resource-constrained solution, you could use a Raspberry Pi or similar device. CasaOS also works well on ARM-based systems.],
-  [In today’s digital age, privacy is a fundamental right. Unfortunately, our digital footprints are being exploited, and our personal data is being harvested. Rampant privacy violations are becoming the norm. Let’s take proactive steps to protect ourselves and our loved ones!],
-),
-  insert-map: (:),
-  word-count: 481,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-  ],
-  [
-    standard-article(
-  title: [IPTC export changed in Photos for macOS 26 Tahoe],
-  author: [Rob],
-  source-name: [Rob Allen (akrabat)],
-  images: (),
-  paragraphs: (
-  [I've recently upgraded my MacBook Air to macOS 26 Tahoe and one thing I noticed was that Rodeo 's rules were no longer working. With the help of exiftool , I worked out that when exporting to JPEG from Photos for macOS 26 Tahoe, the Object Name , Caption-Abstract and Keywords IPRC properties were no longer being populated. This is a regression from macOS 15 Sequoia.],
-  [This is the data from exiftool .],
-  [Output from macOS 15 Sequoia:],
-  [\$ exiftool -f -ObjectName -Caption-Abstract -Keywords IMG\_8016.jpeg
-Object Name : Replaced the broken nose pad on my glasses
-Caption-Abstract : It's a nuisance when the nosepad breaks!
-Keywords : glasses, Project 365, 365:2025],
-  [Output from macOS 26.1:],
-  [\$ exiftool -f -ObjectName -Caption-Abstract -Keywords IMG\_8016.jpeg
-Object Name : -
-Caption-Abstract : -
-Keywords : -],
-  [This is obviously, less than helpful if your application reads these fields!],
-  [Fortunately, the export from macOS 26 Tahoe does fill in some other fields with this data: Title , Description and Subject . These ones are populated by both macOS 15 and 26:],
-  [Output from macOS 15 Sequoia:],
-  [\$ exiftool -f -Title -Description -Subject IMG\_8016.jpeg
-Title : Replaced the broken nose pad on my glasses
-Description : It's a nuisance when the nosepad breaks!
-Subject : glasses, Project 365, 365:2025],
-  [Output from macOS 26.1:],
-  [\$ exiftool -f -Title -Description -Subject IMG\_8016.jpeg
-Title : Replaced the broken nose pad on my glasses
-Description : It's a nuisance when the nosepad breaks!
-Subject : glasses, Project 365, 365:2025],
-  [I checked the IPTC reference images and they populate Object Name , Caption-Abstract and Keyword in the same way as macOS 15 Sequoia does, so I'm at a loss as to why this is broken in the new macOS 26.],
-  [Regardless, I have updated Rodeo appropriately, and version 0.5 resolves this problem!],
-),
-  insert-map: (:),
-  word-count: 301,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-  ],
-), ruled-indices: (1,))
-#pull-quote([The off-the-shelf x86 architecture offers excellent upgrade potential.], [Ariya Hidayat])
-
-#pull-quote([Output from macOS 15 Sequoia:    \$ exiftool -f -ObjectName -Caption-Abstract -Keywords IMG\_8016.], [Rob])
-
-
-#article-row((
   [
     standard-article(
   title: [github.com/garyburd/redigo has been deleted],
@@ -1871,61 +1322,149 @@ problem.],
 )
 
   ],
-  [
-    standard-article(
-  title: [Fixing PostgreSQL collation version mismatch],
-  author: [Rob],
-  source-name: [Rob Allen (akrabat)],
+), ruled-indices: (1,))
+
+{
+  #section-label([Analysis])
+  #standard-article(
+  title: [The Fall of JavaScript],
+  author: [Yegor Bugayenko],
+  source-name: [Yegor Bugayenko],
   images: (),
   paragraphs: (
-  [After pulling a new version of the Docker PostgreSQL container, I started getting this warning:],
-  [WARNING: database "dev" has a collation version mismatch
-DETAIL: The database was created using collation version 2.36, but the operating system provides version 2.41.
-HINT: Rebuild all objects in this database that use the default collation and run ALTER DATABASE dev REFRESH COLLATION VERSION, or build PostgreSQL with the right library version.],
-  [This seems to have occurred because the underlying OS was changed to Trixie from Bullseye for the default image. i.e. I used:],
-  [image: postgres:17],
-  [Rather than:],
-  [image: postgres:17-bookworm],
-  [This is on my dev machine, so it's not a major problem as usually I can just blow away the database and recreate it. However, I have some test data that I don't want to lose quite yet, so I took a backup using pg\_dump and then did this instead:],
-  [REINDEX DATABASE dev;
-ALTER DATABASE dev REFRESH COLLATION VERSION;],
-  [The warning's now gone.],
-  [Of course, in production, you'll want to be a bit more careful and a pg\_dump and load is more likely to avoid any risks of corruption. As ever, YMMV.],
+  [In 1995, Brendan Eich was hired by Netscape and asked to create a language for their HTML browser.
+Rumors say, he designed Mocha in 10 days , later renamed to LiveScript , and then to JavaScript .
+It was planned to make it similar to Scheme , a LISP-syntax language.
+Instead, to please the crowd of C++/Java coders, it was made syntactically similar to Java.
+In 2008, Brendan made a tragic mistake: he donated \$1,000 in support of Californian anti-gay marriage law .
+In 2014, he joined Mozilla as a CEO and the crowd remembered his anti-diversity gesture.
+He had to step down and founded Brave Software, the developer of the Brave browser.
+Somewhere around that time they started to kill JavaScript.
+Still doing it pretty good, thanks to recent ECMAScript updates and TypeScript .],
+  [In the JavaScript created 30 years ago, objects were primitive associative arrays of properties.
+Either data, a function, or another object may be attached to a property of an object.
+Let’s see what Brendan said about JS in 2008:],
+  [I’m happy that I chose Scheme-ish first-class functions and Self-ish prototypes as the main ingredients.],
+  [First-class functions mean that it’s possible to use a function as a value assignable to a variable.
+And then he concluded (pay attention, it’s C not C++):],
+  [Yet many curse it, including me. I still think of it as a quickie love-child of C and Self.],
+  [Self , which he refers to a few times, is a prototype-based object-oriented language
+ designed by David Ungar and Randall Smith in Xerox PARC , then Stanford University , and then Sun Microsystems .
+Self doesn’t have classes, unlike Java or C++.
+Instead, it only has objects.
+To create a new object in Self we make a copy of an existing object, known as prototype, and then modify some of its slots (attributes).],
+  [In Self, objects don’t have types: all method calls are dispatched in runtime.
+For example, we ask a book to rename itself:],
+  [The rename is the method of the book that we call with a single string argument.
+The computer doesn’t know anything about the book until it’s time to call the rename method.
+Obviously, such a duck typing has its performance drawback.
+Every rename leads to a search in a virtual table of book .
+To the contrary, C++, where types are known in compile time, can dispatch rename() instantly:],
+  [Types (classes in C++ and interfaces in Java) and type annotations are helpful—to the compiler.
+To us humans they are a burden.
+They require us to do the work of the compiler.
+We have to pollute our code with messages like: “This object b is of type Book , please remember.”
+The compiler must be smart enough to understand it without our hints.],
+  [This is a debatable topic though.
+Some believe that type annotations help programmers better understand the code and make fewer mistakes.
+I’m also in favor of fewer mistakes, but would rather expect the compiler to infer types automatically, without my annotations.
+If I do b.rename() and b is known to be a car instead of a book, I would expect the compiler to figure this out on its own and refuse to compile.],
+  [Anyway, JavaScript was designed as a prototype-based dynamically typed language with a minimalistic syntax that resembles Java.
+It worked perfectly fine until the industry decided to “fix” it.],
+  [JavaScript worked perfectly fine until the industry decided to fix it.],
+  [In 2008, Mozilla and others proposed ECMAScript 4, which included classes, modules, and other features.
+ Microsoft took an extreme position , refusing to accept any part of ES4.
+Chris Wilson, Microsoft’s Internet Explorer platform architect, criticized ES4 for trying to introduce too many changes.
+Brendan Eich accused Wilson of spreading falsehoods and playing political games.
+ES4 was abandoned , and classes were dropped.],
+  [Then, in 2012, Microsoft created TypeScript , a JavaScript with type annotations and classes.
+Since classes weren’t in the standard, Microsoft made their own.],
+  [Finally, in 2015, ECMAScript 6 added classes (among other features) to the JavaScript specification.
+Many ES4 features, including classes, were revived in a “maximally minimal” form.
+The crowd of Java/C++ developers got what they wanted.],
+  [Let’s hear what Douglas Crockford , the creator of JSON and JSLint , said in 2014:],
+  [Class-free programming is JavaScript’s contribution to humanity.],
+  [Unfortunately, not anymore.
+It looks like the developers of recent versions of JS believe in something else.
+Or maybe they don’t want to make a contribution to humanity anymore.
+Maybe they just want to make the crowd happy.],
+  [Type annotations and classes don’t match with the concept of class-free object-based programming of JavaScript.
+They came from Java or C++ but don’t fit in.
+Some programmers may find them helpful, but only because they are used to seeing them in other languages.
+JavaScript is not Java, even though the names look similar.],
+  [Java, with its
+ classes ,
+ implementation inheritance ,
+ and
+ static methods ,
+ is OOP for dummies.
+It’s object-oriented programming for those who, according to Douglas Crockford , don’t know what
+ object-oriented programming is.
+JavaScript, on the other hand, is a member of conceptually solid OO languages, like Smalltalk and Self.
+Blending Java flavors into JavaScript only ruins the flavor of the latter.],
+  [It’s sad to see how a once straight object-centric language paradigm turned into a diversity of unmatchable and suboptimal features.],
+  [P. S. JavaScript is still a great language if you ignore classes and type annotations.
+When I write in JavaScript, I don’t use them.
+Look at the code in the yegor256/jo repository.
+It illustrates the Junior Objects book of mine.
+I’m proud of this code.],
+  [dir="ltr" lang="en"\>“People using classes in JavaScript will go to their graves never knowing how miserable they were” - Douglas Crockford https:\/\/t.co/D2Hpegn0vY],
+  [— Yegor Bugayenko (\@yegor256) January 11, 2026],
 ),
   insert-map: (:),
-  word-count: 187,
+  word-count: 984,
   edited-for-length: false,
   debug-mode: false,
 )
 
-  ],
-), ruled-indices: (1,))
+  #pull-quote([ES4 was abandoned , and classes were dropped.], [Yegor Bugayenko])
+
+}
 
 {
   #standard-article(
-  title: [Sour Punch Strawberry changed their formula],
-  author: [kevin],
-  source-name: [Kevin Burke],
+  title: [AI Security for Apps is now generally available],
+  author: [Liam Reese],
+  source-name: [Cloudflare Blog],
   images: (),
   paragraphs: (
-  [I have a sweet tooth and one candy I really enjoy is Strawberry Sour Punch.],
-  [Unfortunately after twenty years of having the same formula it seems that the
-company has decided to change the formula for Sour Punch. The new candy has more
-of a cherry flavor and isn't as sour. It does not taste good at all.],
-  [The company confirmed that the formula changed in a DM:],
-  [Due to the global supply chain crisis, we’ve had to temporarily tweak our
-formula. We know the current product isn’t what you’ve come to expect from
-SOUR PUNCH, which is why we are doing everything we can to return it to its
-original deliciousness so that you can enjoy the candy you know and love.],
-  [People on Reddit have confirmed the new flavor is hitting shelves .
- Recent reviews on Amazon are not pretty.],
-  [Have you had a bad batch of Sour Punch, or a batch with a different
-flavor? Leave a note in the comments, or contact the American Licorice
-Company and ask them to bring the old flavor
-back.],
+  [Cloudflare’s AI Security for Apps detects and mitigates threats to AI-powered applications. Today, we're announcing that it is generally available.],
+  [We’re shipping with new capabilities like detection for custom topics, and we're making AI endpoint discovery free for every Cloudflare customer—including those on Free, Pro, and Business plans—to give everyone visibility into where AI is deployed across their Internet-facing apps.],
+  [We're also announcing an expanded collaboration with IBM, which has chosen Cloudflare to deliver AI security to its cloud customers. And we’re partnering with Wiz to give mutual customers a unified view of their AI security posture.],
+  [A new kind of attack surface],
+  [Traditional web applications have defined operations: check a bank balance, make a transfer. You can write deterministic rules to secure those interactions.],
+  [AI-powered applications and agents are different. They accept natural language and generate unpredictable responses. There's no fixed set of operations to allow or deny, because the inputs and outputs are probabilistic. Attackers can manipulate large language models to take unauthorized actions or leak sensitive data. Prompt injection, sensitive information disclosure, and unbounded consumption are just a few of the risks cataloged in the OWASP Top 10 for LLM Applications .],
+  [These risks escalate as AI applications become agents. When an AI gains access to tool calls—processing refunds, modifying accounts, providing discounts, or accessing customer data—a single malicious prompt becomes an immediate security incident.],
+  [Customers tell us what they’re up against. "Most of Newfold Digital's teams are putting in their own Generative AI safeguards, but everybody is innovating so quickly that there are inevitably going to be some gaps eventually,” says Rick Radinger, Principal Systems Architect at Newfold Digital, which operates Bluehost, HostGator, and Domain.com.],
+  [What AI Security for Apps does],
+  [We built AI Security for Apps to address this. It sits in front of your AI-powered applications, whether you're using a third-party model or hosting your own, as part of Cloudflare's reverse proxy . It helps you (1) discover AI-powered apps across your web property, (2) detect malicious or off-policy behavior to those endpoints, and (3) mitigate threats via the familiar WAF rule builder.],
+  [Discovery — now free for everyone],
+  [Before you can protect your LLM-powered applications, you need to know where they're being used. We often hear from security teams who don’t have a complete picture of AI deployments across their apps, especially as the LLM market evolves and developers swap out models and providers.],
+  [AI Security for Apps automatically identifies LLM-powered endpoints across your web properties, regardless of where they’re hosted or what the model is. Starting today, this capability is free for every Cloudflare customer, including Free, Pro, and Business plans.],
+  [Cloudflare’s dashboard page of web assets, showing 2 example endpoints labelled as cf-llm],
+  [Discovering these endpoints automatically requires more than matching common path patterns like /chat/completions . Many AI-powered applications don't have a chat interface: think product search, property valuation tools, or recommendation engines. We built a detection system that looks at how endpoints behave , not what they're called. To confidently identify AI-powered endpoints, sufficient valid traffic is required.],
+  [AI-powered endpoints that have been discovered will be visible under Security → Web Assets , labeled as cf-llm . For customers on a Free plan, endpoint discovery is initiated when you first navigate to the Discovery page . For customers on a paid plan, discovery occurs automatically in the background on a recurring basis. If your AI-powered endpoints have been discovered, you can review them immediately.],
+  [AI Security for Apps detections follow the always-on approach for traffic to your AI-powered endpoints. Each prompt is run through multiple detection modules for prompt injection, PII exposure, and sensitive or toxic topics. The results—whether the prompt was malicious or not—are attached as metadata you can use in custom WAF rules to enforce your policies. We are continuously exploring ways to leverage our global network, which sees traffic from roughly 20% of the web , to identify new attack patterns across millions of sites before they reach yours.],
+  [New in GA: Custom topics detection],
+  [The product ships with built-in detection for common threats: prompt injections, PII extraction , and toxic topics . But every business has its own definition of what's off-limits. A financial services company might need to detect discussions of specific securities. A healthcare company might need to flag conversations that touch on patient data. A retailer might want to know when customers are asking about competitor products.],
+  [The new custom topics feature lets you define these categories. You specify the topic, we inspect the prompt and output a relevance score that you can use to log, block, or handle however you decide. Our goal is to build an extensible tool that flexes to your use cases.],
+  [Prompt relevance score inside of AI Security for Apps],
+  [New in GA: Custom prompt extraction],
+  [AI Security for Apps enforces guardrails before unsafe prompts can reach your infrastructure. To run detections accurately and provide real-time protection, we first need to identify the prompt within the request payload. Prompts can live anywhere in a request body, and different LLM providers structure their APIs differently. OpenAI and most providers use \$.messages\[\*\].content for chat completions. Anthropic's batch API nests prompts inside \$.requests\[\*\].params.messages\[\*\].content . Your custom property valuation tool might use \$.property\_description .],
+  [Out of the box, we support the standard formats used by OpenAI, Anthropic, Google Gemini, Mistral, Cohere, xAI, DeepSeek, and others. When we can't match a known pattern, we apply a default-secure posture and run detection on the entire request body. This can introduce false positives when the payload contains fields that are sensitive but don't feed directly to an AI model, for example, a \$.customer\_name field alongside the actual prompt might trigger PII detection unnecessarily.],
+  [Soon, you'll be able to define your own JSONPath expressions to tell us exactly where to find the prompt. This will reduce false positives and lead to more accurate detections. We're also building a prompt-learning capability that will automatically adapt to your application's structure over time.],
+  [Once a threat is identified and scored, you can block it, log it, or deliver custom responses, using the same WAF rules engine you already use for the rest of your application security. The power of Cloudflare’s shared platform is that you can combine AI-specific signals with everything else we know about a request, represented by hundreds of fields available in the WAF. A prompt injection attempt is suspicious. A prompt injection attempt from an IP that’s been probing your login page, using a browser fingerprint associated with previous attacks, and rotating through a botnet is a different story. Point solutions that only see the AI layer can’t make these connections.],
+  [This unified security layer is exactly what they need at Newfold Digital to discover, label, and protect AI endpoints, says Radinger: “We look forward to using it across all these projects to serve as a fail-safe."],
+  [Growing ecosystem],
+  [AI Security for Applications will also be available through Cloudflare's growing ecosystem, including through integration with IBM Cloud. Through IBM Cloud Internet Services (CIS) , end users can already procure advanced application security solutions and manage them directly through their IBM Cloud account.],
+  [We're also partnering with Wiz to connect AI Security for Applications with Wiz AI Security , giving mutual customers a unified view of their AI security posture, from model and agent discovery in the cloud to application-layer guardrails at the edge.],
+  [How to get started],
+  [AI Security for Apps is available now for Cloudflare’s Enterprise customers. Contact your account team to get started, or see the product in action with a self-guided tour .],
+  [If you're on a Free, Pro, or Business plan, you can use AI endpoint discovery today. Log in to your dashboard and navigate to Security → Web Assets to see which endpoints we've identified. Keep an eye out — we plan to make all AI Security for Apps capabilities available for customers on all plans soon.],
+  [For configuration details, see our documentation .],
 ),
   insert-map: (:),
-  word-count: 179,
+  word-count: 1326,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -1933,24 +1472,523 @@ back.],
 }
 
 {
-  #section-label([Analysis])
+  #standard-article(
+  title: [Investigating multi-vector attacks in Log Explorer],
+  author: [Jen Sells],
+  source-name: [Cloudflare Blog],
+  images: (),
+  paragraphs: (
+  [In the world of cybersecurity, a single data point is rarely the whole story. Modern attackers don’t just knock on the front door; they probe your APIs, flood your network with "noise" to distract your team, and attempt to slide through applications and servers using stolen credentials.],
+  [To stop these multi-vector attacks, you need the full picture. By using Cloudflare Log Explorer to conduct security forensics, you get 360-degree visibility through the integration of 14 new datasets, covering the full surface of Cloudflare’s Application Services and Cloudflare One product portfolios. By correlating telemetry from application-layer HTTP requests, network-layer DDoS and Firewall logs, and Zero Trust Access events, security analysts can significantly reduce Mean Time to Detect (MTTD) and effectively unmask sophisticated, multi-layered attacks.],
+  [Read on to learn more about how Log Explorer gives security teams the ultimate landscape for rapid, deep-dive forensics.],
+  [The flight recorder for your entire stack],
+  [The contemporary digital landscape requires deep, correlated telemetry to defend against adversaries using multiple attack vectors. Raw logs serve as the "flight recorder" for an application, capturing every single interaction, attack attempt, and performance bottleneck. And because Cloudflare sits at the edge, between your users and your servers, all of these events are logged before the requests even reach your infrastructure.],
+  [Cloudflare Log Explorer centralizes these logs into a unified interface for rapid investigation.],
+  [Zone-Scoped Logs],
+  [Focus: Website traffic, security events, and edge performance.],
+  [HTTP Requests],
+  [As the most comprehensive dataset, it serves as the "primary record" of all application-layer traffic, enabling the reconstruction of session activity, exploit attempts, and bot patterns.],
+  [Provides critical evidence of blocked or challenged threats, allowing analysts to identify the specific WAF rules, IP reputations, or custom filters that intercepted an attack.],
+  [DNS Logs],
+  [Identify cache poisoning attempts, domain hijacking, and infrastructure-level reconnaissance by tracking every query resolved at the authoritative edge.],
+  [NEL (Network Error Logging) Reports],
+  [Distinguish between a coordinated Layer 7 DDoS attack and legitimate network connectivity issues by tracking client-side browser errors.],
+  [For non-web applications, these logs provide visibility into L4 traffic (TCP/UDP), helping to identify anomalies or brute-force attacks against protocols like SSH, RDP, or custom gaming traffic.],
+  [Track and audit unauthorized changes to your site's client-side environment such as JavaScript, outbound connections.],
+  [Examine how third-party tools and trackers are interacting with user data, which is vital for auditing privacy compliance and detecting unauthorized script behaviors.],
+  [Account-Scoped Logs],
+  [Focus: Internal security, Zero Trust, administrative changes, and network activity.],
+  [Tracks identity-based authentication events to determine which users accessed specific internal applications and whether those attempts were authorized.],
+  [Provides a trail of configuration changes within the Cloudflare dashboard to identify unauthorized administrative actions or modifications.],
+  [CASB Findings],
+  [Identifies security misconfigurations and data risks within SaaS applications (like Google Drive or Microsoft 365) to prevent unauthorized data exposure.],
+  [Magic Transit \/ IPSec Logs],
+  [Helps network engineers perform network-level (L3) monitoring such as reviewing tunnel health and view BGP routing changes.],
+  [Tracks user actions inside an isolated browser session (e.g., copy-paste, print, or file uploads) to prevent data leaks on untrusted sites],
+  [Details the security health and compliance status of devices connecting to your network, helping to identify compromised or non-compliant endpoints.],
+  [DEX Application Tests],
+  [Monitors application performance from the user's perspective, which can help distinguish between a security-related outage and a standard performance degradation.],
+  [DEX Device State Events],
+  [Provides telemetry on the physical state of user devices, useful for correlating hardware or OS-level anomalies with potential security incidents.],
+  [DNS Firewall Logs],
+  [Tracks DNS queries filtered through the DNS Firewall to identify communication with known malicious domains or command-and-control (C2) servers.],
+  [Logs malicious email activity and phishing attempts detected at the gateway to trace the origin of email-based entry vectors.],
+  [Gateway DNS],
+  [Monitors every DNS query made by users on your network to identify shadow IT, malware callbacks, or domain-generation algorithms (DGAs).],
+  [Gateway HTTP],
+  [Provides full visibility into encrypted and unencrypted web traffic to detect hidden payloads, malicious file downloads, or unauthorized SaaS usage.],
+  [Tracks L3/L4 network traffic (non-HTTP) to identify unauthorized port usage, protocol anomalies, or lateral movement within the network.],
+  [IPSec Logs],
+  [Monitors the status and traffic of encrypted site-to-site tunnels to ensure the integrity and availability of secure network connections.],
+  [Magic IDS Detections],
+  [Surfaces matches against intrusion detection signatures to alert investigators to known exploit patterns or malware behavior traversing the network.],
+  [Provides high-level visibility into packet-level data to identify volumetric DDoS attacks or unusual traffic spikes targeting specific infrastructure.],
+  [Sinkhole HTTP Logs],
+  [Captures traffic directed to "sinkholed" IP addresses to confirm which internal devices are attempting to communicate with known botnet infrastructure.],
+  [WARP Config Changes],
+  [Tracks modifications to the WARP client settings on end-user devices to ensure that security agents haven't been tampered with or disabled.],
+  [WARP Toggle Changes],
+  [Specifically logs when users enable or disable their secure connectivity, helping to identify periods where a device may have been unprotected.],
+  [Zero Trust Network Session Logs],
+  [Logs the duration and status of authenticated user sessions to map out the complete lifecycle of a user's access within the protected perimeter.],
+  [Log Explorer can identify malicious activity at every stage],
+  [Get granular application layer visibility with HTTP Requests , Firewall Events , and DNS logs to see exactly how traffic is hitting your public-facing properties. Track internal movement with Access Requests , Gateway logs , and Audit logs . If a credential is compromised, you’ll see where they went. Use Magic IDS and Network Analytics logs to spot volumetric attacks and "East-West" lateral movement within your private network.],
+  [Identify the reconnaissance],
+  [Attackers use scanners and other tools to look for entry points, hidden directories, or software vulnerabilities. To identify this, using Log Explorer, you can query http\_requests for any EdgeResponseStatus codes of 401, 403, or 404 coming from a single IP, or requests to sensitive paths (e.g. /.env , /.git , /wp-admin ).],
+  [Additionally, magic\_ids\_detections logs can also be used to identify scanning at the network layer. These logs provide packet-level visibility into threats targeting your network. Unlike standard HTTP logs, these logs focus on signature-based detections at the network and transport layers (IP, TCP, UDP). Query to discover cases where a single SourceIP is triggering multiple unique detections across a wide range of DestinationPort values in a short timeframe. Magic IDS signatures can specifically flag activities like Nmap scans or SYN stealth scans.],
+  [Check for diversions],
+  [While the attacker is conducting reconnaissance, they may attempt to disguise this with a simultaneous network flood. Pivot to network\_analytics\_logs to see if a volumetric attack is being used as a smokescreen.],
+  [Identify the approach],
+  [Once attackers identify a potential vulnerability, they begin to craft their weapon. The attacker sends malicious payloads (e.g. SQL injection or large/corrupt file uploads) to confirm the vulnerability. Review http\_requests and/or fw\_events to identify any Cloudflare detection tools that have triggered. Cloudflare logs security signals in these datasets to easily identify requests with malicious payloads using fields such as WAFAttackScore , WAFSQLiAttackScore , FraudAttack , ContentScanJobResults , and several more. Review our documentation to get a full understanding of these fields. The fw\_events logs can be used to determine whether these requests made it past Cloudflare’s defenses by examining the action , source , and ruleID fields. Cloudflare’s managed rules by default blocks many of these payloads by default. Review Application Security Overview to know if your application is protected.],
+  [Showing the Managed rules Insight that displays on Security Overview if the current zone does not have Managed Rules enabled],
+  [Audit the identity],
+  [Did that suspicious IP manage to log in? Use the ClientIP to search access\_requests . If you see a " Decision: Allow " for a sensitive internal app, you know you have a compromised account.],
+  [Stop the leak (data exfiltration)],
+  [Attackers sometimes use DNS tunneling to bypass firewalls by encoding sensitive data (like passwords or SSH keys) into DNS queries. Instead of a normal request like google.com , the logs will show long, encoded strings. Look for an unusually high volume of queries for unique, long, and high-entropy subdomains by examining the fields: QueryName : Look for strings like h3ldo293js92.example.com , QueryType : Often uses TXT , CNAME , or NULL records to carry the payload, and ClientIP : Identify if a single internal host is generating thousands of these unique requests.],
+  [Additionally, attackers may attempt to leak sensitive data by hiding it within non-standard protocols or by using common protocols (like DNS or ICMP) in unusual ways to bypass standard firewalls. Discover this by querying the magic\_ids\_detections logs to look for signatures that flag protocol anomalies, such as "ICMP tunneling" or "DNS tunneling" detections in the SignatureMessage .],
+  [Whether you are investigating a zero-day vulnerability or tracking a sophisticated botnet, the data you need is now at your fingertips.],
+  [Correlate across datasets],
+  [Investigate malicious activity across multiple datasets by pivoting between multiple concurrent searches. With Log Explorer, you can now work with multiple queries simultaneously with the new Tabs feature. Switch between tabs to query different datasets or Pivot and adjust queries using filtering via your query results.],
+  [When you correlate data across multiple Cloudflare log sources, you can detect sophisticated multi-stage attacks that appear benign when viewed in isolation. This cross-dataset analysis allows you to see the full attack chain from reconnaissance to exfiltration.],
+  [Session hijacking (token theft)],
+  [Scenario: A user authenticates via Cloudflare Access, but their subsequent HTTP\_request traffic looks like a bot.],
+  [Step 1: Identify high-risk sessions in http\_requests .],
+  [SELECT RayID, ClientIP, ClientRequestUserAgent, BotScore
+FROM http\_requests
+WHERE date = '2026-02-22' 
+ AND BotScore \< 20 
+LIMIT 100],
+  [Step 2: Copy the RayID and search access\_requests to see which user account is associated with that suspicious bot activity.],
+  [SELECT Email, IPAddress, Allowed
+FROM access\_requests
+WHERE date = '2026-02-22' 
+ AND RayID = 'INSERT\_RAY\_ID\_HERE'],
+  [Post-phishing C2 beaconing],
+  [Scenario: An employee clicked a link in a phishing email which resulted in compromising their workstation. This workstation sends a DNS query for a known malicious domain, then immediately triggers an IDS alert.],
+  [Step 1: Find phishing attacks by examining email\_security\_alerts for violations.],
+  [SELECT Timestamp, Threatcategories, To, Alertreason
+FROM email\_security\_alerts
+WHERE date = '2026-02-22' 
+ AND Threatcategories LIKE 'phishing'],
+  [Step 2: Use Access logs to correlate the user’s email (To) to their IP Address.],
+  [SELECT Email, IPAddress
+FROM access\_requests
+WHERE date = '2026-02-22'],
+  [Step 3: Find internal IPs querying a specific malicious domain in gateway\_dns logs.],
+  [SELECT SrcIP, QueryName, DstIP, 
+FROM gateway\_dns
+WHERE date = '2026-02-22' 
+ AND SrcIP = 'INSERT\_IP\_FROM\_PREVIOUS\_QUERY'
+ AND QueryName LIKE '%malicious\_domain\_name%'],
+  [Lateral movement (Access → network probing)],
+  [Scenario: A user logs in via Zero Trust and then tries to scan the internal network.],
+  [Step 1: Find successful logins from unexpected locations in access\_requests .],
+  [SELECT IPAddress, Email, Country
+FROM access\_requests
+WHERE date = '2026-02-22' 
+ AND Allowed = true 
+ AND Country != 'US' -- Replace with your HQ country],
+  [Step 2: Check if that IPAddress is triggering network-level signatures in magic\_ids\_detections .],
+  [SELECT SignatureMessage, DestinationIP, Protocol
+FROM magic\_ids\_detections
+WHERE date = '2026-02-22' 
+ AND SourceIP = 'INSERT\_IP\_ADDRESS\_HERE'],
+  [Opening doors for more data],
+  [From the beginning, Log Explorer was designed with extensibility in mind. Every dataset schema is defined using JSON Schema, a widely-adopted standard for describing the structure and types of JSON data. This design decision has enabled us to easily expand beyond HTTP Requests and Firewall Events to the full breadth of Cloudflare's telemetry. The same schema-driven approach that powered our initial datasets scaled naturally to accommodate Zero Trust logs, network analytics, email security alerts, and everything in between.],
+  [More importantly, this standardization opens the door to ingesting data beyond Cloudflare's native telemetry. Because our ingestion pipeline is schema-driven rather than hard-coded, we're positioned to accept any structured data that can be expressed in JSON format. For security teams managing hybrid environments, this means Log Explorer could eventually serve as a single pane of glass, correlating Cloudflare's edge telemetry with logs from third-party sources, all queryable through the same SQL interface. While today's release focuses on completing coverage of Cloudflare's product portfolio, the architectural groundwork is laid for a future where customers can bring their own data sources with custom schemas.],
+  [Faster data, faster response: architectural upgrades],
+  [To investigate a multi-vector attack effectively, timing is everything. A delay of even a few minutes in the log availability can be the difference between proactive defense and reactive damage control.],
+  [That is why we have optimized our ingestion for better speed and resilience. By increasing concurrency in one part of our ingestion path, we have eliminated bottlenecks that could cause “noisy neighbor” issues, ensuring that one client’s data surge doesn’t slow down another’s visibility. This architectural work has reduced our P99 ingestion latency by approximately 55%, and our P50 by 25%, cutting the time it takes for an event at the edge to become available for your SQL queries.],
+  [Grafana chart displaying the drop in ingest latency after architectural upgrades],
+  [Follow along for more updates],
+  [We're just getting started. We're actively working on even more powerful features to further enhance your experience with Log Explorer, including the ability to run these detection queries on a custom defined schedule.],
+  [Design mockup of upcoming Log Explorer Scheduled Queries feature],
+  [Get access to Log Explorer],
+  [To get access to Log Explorer, you can purchase self-serve directly from the dash or for contract customers, reach out for a consultation or contact your account manager. Additionally, you can read more in our Developer Documentation .],
+),
+  insert-map: (:),
+  inline-pq: pull-quote([Cloudflare’s managed rules by default blocks many of these payloads by default.], [Jen Sells]),
+  inline-pq-idx: 41,
+  word-count: 2246,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+}
+
+{
+  #standard-article(
+  title: [Leveraging Commerce Data for Outcome-Based Relevancy in Agentic Recommendation Systems],
+  author: [Criteo Tech],
+  source-name: [Criteo Engineering],
+  images: (),
+  paragraphs: (
+  [Author: Maxime Vono],
+  [Contributions from Thibault Becker , Hamlet Jesse Medina Ruiz , and Otmane Sakhi .],
+  [TL;DR],
+  [Most agentic commerce recommendation services today rely on content embeddings or mainstream LLMs (e.g., Claude, Llama, GPT). While effective for semantic understanding, these models are not grounded in real shopping behavior and are not optimized for commercial objectives such as clicks or conversions.],
+  [In this article, we show that leveraging commerce data at both the retrieval and re-ranking stages leads to substantial outcome-based relevancy gains :],
+  [+60% uplift in outcome-based relevancy for SKU re-ranking when incorporating transaction-derived popularity signals.],
+  [+37% uplift in outcome-based relevancy for SKU retrieval using a content embedding fine-tuned on organic clicks, compared to state-of-the-art zero-shot text encoders (MiniLM-L12, Gemma, Qwen).],
+  [These results highlight the importance of commerce-trained models for building high-performing agentic recommendation systems.],
+  [Disclaimer: Nike and Hoka brands have been chosen for illustrative purpose only.],
+  [Agentic commerce recommendation services are tailored to recommend the best products fitting a user query.],
+  [Metrics of interest],
+  [Throughout this article, we use relevancy in a sense that goes beyond surface-level semantic matching. Specifically, we focus on outcome-based relevance , commonly referred to in the recommendation systems literature as performance-based recommendation . Rather than assessing relevance solely through textual or semantic similarity between a query and product content, performance-based recommendation measures relevance through observable user outcomes, such as clicks, purchases, or downstream engagement. This distinction is critical in commerce settings, as it directly shapes how recommendation systems are evaluated and optimized.],
+  [Accordingly, there are two main routes used to evaluate agentic commerce recommendation services:],
+  [Accuracy (semantic relevance) answers the question: “Does this product description semantically match the user query?” (e.g., price, color, material). This metric has been used, for instance, to evaluate OpenAI Shopping Research , where 64% accuracy was reported. High accuracy can be achieved using retailers’ catalog data alone.],
+  [Outcome-based relevance answers the question: “Does this recommendation satisfy the user’s underlying need, as evidenced by real user behavior?” While semantic similarity is a necessary prerequisite for a good user experience, it is not sufficient. Two products may be equally accurate from a content standpoint (brand, category, attributes) yet differ significantly in their ability to meet user expectations, drive engagement, or lead to a purchase. Outcome-based relevance therefore represents a stronger and more user-centric notion of relevance , as it captures user intent through real commerce outcomes rather than inferred intent from text alone. As a result, commerce data — clicks, sales, and other behavioral signals — are essential to accurately measure and optimize relevance in agentic recommendation systems. Without grounding models in these outcomes, recommendation quality remains limited to proxy signals that fail to reflect what truly satisfies users.],
+  [Architecture of agentic commerce recommendation services],
+  [The most common and efficient architecture is a two-step one, detailed below:],
+  [Product retrieval happens first and involves getting a list of candidate products to ensure accuracy and capture one part of accuracy. It’s done using content embeddings and KNN search, optimised on commerce data.],
+  [Product re-ranking then orders the candidates products for maximizing outcome-based relevancy. It’s done using both query recommendation accuracy and commerce-driven scores, such as how much sales a given product drove. It also comes with recommendation explanations, sometimes coined reasoning .],
+  [We will deep-dive into the benefits of leveraging recommendation systems, optimized for outcome-based relevancy, into an agentic commerce recommendation service, compared to only using the content information of the returned products (e.g., title, category, or description). More precisely, we will present two benchmarks focusing on the product retrieval and re-ranking stages to illustrate the benefits of leveraging commerce data on top of content to target outcome-based relevancy for the end user.],
+  [Experimental Design. We conducted our evaluation using a dataset of user search queries paired with the corresponding clicked products. To evaluate outcome-based relevancy for the end user, we measured the ability to identify the product actually clicked for a given query from alternative, negative products. We used the actual rank of the clicked product for each user query to assess outcome-based relevancy, from a set of K = 400 products. We then normalized this rank to end up with the so-called reciprocal rank metric. A higher value for this metric indicates that users are more likely to find what they’re looking for among the top results. Negative candidate products are defined as alternative clicked products (from other user search queries) sharing either the same brand or the same category as the target product. This forces the model to go beyond surface-level semantic similarity between the query and product text, and instead captures user intent and product relevance.],
+  [Results. We compared our CLEPR model against widely used open-source text encoders developed by major companies (Google, Microsoft, Meta, Alibaba). All of the embedding models are given the same data as input: the search query and the products, represented by (brand, category, title).],
+  [Relevancy here is a shortcut for outcome-based relevancy.],
+  [Our results show that CLEPR outperforms zero-shot text encoders by 37% in outcome-based relevancy on average, while being smaller and more efficient.],
+  [Product Re-Ranking],
+  [In this section, we aim to assess the uplift brought by commerce data for product recommendation outcome-based relevancy. We focused on the re-ranking stage and used a proprietary model CLEPR, leveraging commerce data, and compared the latter to baselines not trained on such data.],
+  [Experimental Design. As before, we assumed that a set of candidate products (here K = 400) has been selected after a SKU Retrieval step leveraging our embedding model CLEPR. These products, deemed relevant, have been selected by thresholding the normalized CLEPR score (defined as the inner product between the user search query and product embedding). We are now interested in comparing different product re-ranking strategies, including one leveraging commerce data, to maximise some outcome-based relevancy metric. More precisely, we used the product re-ranker as baseline taking the CLEPR similarity score to rank products. We compared this baseline strategy with the one leveraging a simple PSales model outputting the probability of a product being sold once displayed and clicked. This PSales model is simply the proportion of sales observed during the previous 7 days, which could be further enhanced using the output of a deep learning model. As an outcome-based relevancy metric, we considered the sales rank, which stands for the position of the purchased product in the ranked product recommendation list. As before, we normalized this ranking metric to end up with a user-friendly metric indicating the likelihood of finding the product users would buy among the top results.],
+  [Results. The following table shows the results of our benchmark regarding the product re-ranking stage. These results indeed outline that leveraging commerce data to maximise outcome-based relevancy for agentic commerce recommendation service constitutes an improved value for customers. More precisely, the relevancy, i.e., here the likelihood of finding the right product the user would buy in the recommended ones, increases by 60% using our commerce data.],
+  [Relevancy here is a shortcut for outcome-based relevancy.],
+  [The CLEPR solution is trained solely on organic clicks and does not include bias terms associated with sales events. Consequently, at this stage, we cannot confidently report a global uplift across the end-to-end pipeline based on sales conversion metrics commonly used by advertisers and retailers. Still, our benchmark allows us to provide sufficient independent uplifts for both the SKU retrieval and re-ranking steps, which provides confidence in at least a similar global uplift for an agentic commerce recommendation service.],
+  [What’s Next],
+  [Following our two recent articles on agentic commerce recommendation services, we will continue this blog series with deep dives into key enabling technologies, including multimodal embeddings and LLMs for efficient product search, LLMs and fine-tuning techniques for product recommendation explanations (reasoning), and deep learning–based product re-rankers.],
+  [How RecSys & LLMs Will Converge: Architecture of Hybrid RecoAgents],
+  [Criteo Boosts Ad Performance with Latest AI Advancements],
+  [Accuracy Metric in Product Retrieval],
+  [In this section, we aim to assess the uplift brought by commerce data for product recommendation accuracy, defined previously. To this purpose, we focused on the product retrieval stage and compared one of our embedding model solutions, coined CLEPR (Contrastive Language Embedding for Product Retrieval), with state-of-the-art zero-shot embedding models from the MTEB leaderboard of Hugging Face. Our solution stands for a 120M parameters and two-tower bi-encoder model (we compute separate embeddings for the query and each of the products) using Multilingual-MiniLM-L12-H384 as a backbone. It has been fine-tuned on organic click data and currently powers our keyword-based product recommendations. Each product is characterised by its brand, category, and full textual product title.],
+  [Experimental Design. To assess product recommendation accuracy given a user query, we use a dataset of tuples (user search query, product, accuracy label) , where labels are binary and assigned by human annotators. We report ROC-AUC (percentage) as an offline metric and perform a single train/test split across all models.],
+  [When fine-tuning or post-training models using human-annotated data, only the training split is used, and post-training is limited to 50% of the annotated set. While this dataset has known limitations (e.g., sample size), and ROC-AUC is not an ideal metric for recommendation quality, it currently provides a reasonable proxy. We expect to revisit both datasets and metrics as we continue to develop benchmarks for agentic AI.],
+  [Results. The table below depicts the results of our benchmark for the accuracy metric. Bold indicates the largest offline performance. Blue rows stand for our models, while purple rows refer to zero-shot embedding models from the Hugging Face leaderboard. Per this benchmark, we can take away one main learning: fine-tuning on commerce data helps in achieving better accuracy (as clicks are positively correlated to accuracy) compared to pre-trained zero-shot models, but the uplift is moderate (3 points with respect to better text encoders, 6 points with respect to the same backbone model). Still, we believe that such commerce data uplift could be improved by considering other commerce signals, such as co-events (e.g., co-views or co-sales), although it is not the main focus of this article.],
+  [Stay tuned for upcoming posts that share Criteo’s AI journey!],
+  [Leveraging Commerce Data for Outcome-Based Relevancy in Agentic Recommendation Systems was originally published in Criteo Tech Blog on Medium, where people are continuing the conversation by highlighting and responding to this story.],
+),
+  insert-map: (:),
+  word-count: 1710,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+}
+
+{
+  #standard-article(
+  title: [Comments Considered Harmful in the Age of LLMs],
+  author: [Yegor Bugayenko],
+  source-name: [Yegor Bugayenko],
+  images: (),
+  paragraphs: (
+  [Writing code documentation is a pain.
+Not writing it leads to even bigger pain—we can’t comprehend the code.
+However, writing it and then forgetting to update it causes the ultimate pain: it lies and confuses us.
+How about we cure all three pains at once: prohibit all comments! 
+How do we know what the intent of the code is if we don’t have any comments?
+We ask an LLM to explain it to us.
+What if the LLM fails to explain and confesses its inability?
+Then, we automatically fail the build and blame the author of the code.
+Thus, we introduce a new quality gate: Code Interpretability Score .
+The build passes only if this score is high enough.],
+  [The best minds in software engineering have long dreamed of self-documenting code.
+In 1974, Brian Kernighan and Phillip James Plauger said that
+ “the only reliable documentation of a computer program is the code itself.”
+In 2004, Steven McConnell in Code Complete claimed that
+ “the main contributor to code-level documentation isn’t comments, but good programming style.”
+In 2008, Robert Martin in Clean Code suggested that
+ “if our programming languages were expressive enough, or if we had the talent to subtly wield those languages to express our intent,
+ we would not need comments very much—perhaps not at all.”
+They all wanted the same thing: code that explains itself.
+They just lacked the tools to enforce it.],
+  [Why do we write comments at all?
+A Java method of a hundred lines may take hours to understand.
+A tiny Javadoc block saves this time:],
+  [class="highlight"\> /\*\*
+ \* Recursively finds the shortest
+ \* path between two nodes in the graph.
+ \*\/ 
+ int \[\] shortest ( int \[\]\[\] g , int a , int b ) { 
+ \/\\/ A hundred lines of code go 
+ \/\\/ here, which we have no desire 
+ \/\\/ to read and understand. 
+ }],
+  [Comments promise to help us but fail in two distinct ways.],
+  [First, they are unclear .
+ David Parnas once said that
+ “documentation that seems clear and adequate to its authors is often about as clear as mud to the
+ programmer who must maintain the code six months or six years later.”
+What the author considers obvious, the reader finds cryptic.],
+  [Second, they decay .
+Being static metadata, comments do not evolve automatically with the code.
+If the implementation of the shortest() function stops being recursive, we may forget to update the Javadoc block.
+Such negligence leads to hallucinating documentation that causes bugs, broken trust, and wasted debugging time.
+In 1999, Andrew Hunt and Dave Thomas in The Pragmatic Programmer warned that
+ “ untrustworthy comments are worse than no comments at all.”
+A recent analysis of 13 open source projects
+ demonstrated that out-of-date comments are not rare but common.],
+  [Now we have a tool that solves both problems: the LLM.],
+  [Instead of writing the Javadoc block manually, we let the IDE generate it on-demand.
+The LLM reads the hundred lines of code, comprehends it, and summarizes the intent in a single English sentence.
+Modern models accomplish this task better than most humans.
+The documentation is always fresh because it is generated from the current code, not from a stale comment written months ago.],
+  [But we can go further.
+We can integrate an LLM into the build pipeline and ask it to assess the Code Interpretability Score (CIS) of every function.
+If the model has low confidence in explaining the logic, this signals that the code is too clever or convoluted.
+The compiler can enforce a threshold: if the CIS is too low, the build fails.
+This transforms readability from a subjective preference into an objective, measurable quality gate.],
+  [Once this gate exists, manual comments become not just unnecessary but harmful .
+They introduce a second source of truth that can contradict the code.
+The logical conclusion: prohibit them entirely.
+This forces developers to write clean, structured logic that is inherently machine-interpretable.],
+  [Robert Martin wished for more expressive languages.
+He didn’t know about LLMs.
+Today, we don’t need better languages—we need an LLM that can interpret any language.
+If the LLM can’t explain the code, we blame the programmer and stop the build.],
+  [We are thinking about making EO , our experimental object-oriented language, this restrictive.],
+),
+  insert-map: (:),
+  word-count: 713,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+}
+
+{
+  #standard-article(
+  title: [Programmers, Don’t Use Windows!],
+  author: [Yegor Bugayenko],
+  source-name: [Yegor Bugayenko],
+  images: (),
+  paragraphs: (
+  [In 2020, in the Junior Objects book I wrote this:
+ “ Windows is not suitable for programmers.
+ If you meet anyone who will tell you otherwise, you must know that you deal with a bad programmer, or a poor one, which are the same things.
+ Your computer has to be MacBook. ”
+Now, five years later, I still hold the same opinion.
+This blog post is supposed to be less opinionated and, because of this, more convincing.
+The point is still the same: you either use Windows or you are a professional programmer.],
+  [First things first.
+This is what ChatGPT thinks about macOS vs. Windows (I toned it down a bit and sorted by importance, keeping what matters most at the top):],
+  [It’s POSIX -compliant],
+  [Tools like grep , awk , sed , ssh , and make work natively],
+  [Proper compiler toolchain: Clang, LLVM, make, git],
+  [Install everything with HomeBrew , one command away],
+  [Node, Python, Ruby, Go, Java—just work without PATH hell],
+  [The iTerm2 doesn’t look like it was built in 1998],
+  [Docker runs faster and cleaner than on Windows],
+  [SSH keys integrate smoothly with the system keychain],
+  [Git behaves predictably; no CRLF vs LF nightmares],
+  [I can hear you saying:
+What do I need it to be POSIX-compliant, and what is POSIX?
+Why do I need grep , sed , and awk ?
+Am I a 60 years old Unix admin?
+Why would I ever need git and make in the command line?
+I don’t use command line at all.
+I stay in the VS Code that works like a charm and helps me make a living.],
+  [I hear you. I do.],
+  [Now, hear me out.
+You are not a programmer.
+You look like one.
+You walk like one.
+You click the same buttons programmers click.
+You even make the same salary they make.
+But you are not one of them.
+Yet.
+Now, read on.],
+  [id="what-is-unix"\>What Is Unix?],
+  [Programmers are the masters of computers.
+They tell machines what to do.
+To simplify the task of managing a complex hardware, programmers invented a few layers of abstractions.
+The first layer is an operating system.
+Instead of dealing with the hard drive and the pixels on the screen directly, programmers invented files and stdout.],
+  [They did it in the Bell Labs , during the late 1960s and early 1970s.
+Earlier operating systems, like CTSS and OS/360 , gave them a good start.
+Unix was the first OS to say that everything is a file , including devices, directories, sockets, and processes.
+They also invented pipelines and the philosophy: “Write programs that do one thing well, and work together.”
+They also invented processes and their forking mechanism.],
+  [Their names were Ken Thompson and Dennis Ritchie .],
+  [id="what-is-windows"\>What Is Windows?],
+  [Five years later, another operating system was created, with different abstractions.
+Not everything was a file anymore, processes were not parallel, and there were no pipelines.
+The name of the system was CP/M and the name of the inventor was Gary Kildall .
+Then, five years later, 24-year-old Tim Paterson has made a copy of CP/M and called it 86-DOS .
+ Microsoft purchased a non-exclusive license, rebranded it MS-DOS , and sold it to IBM.
+That’s how Windows was born, in 1981.],
+  [Why were there no proper files, no processes, and no pipelines?
+Because they weren’t trying to build a “real” operating system.
+CP/M and MS-DOS were designed for tiny, single-user, single-task microcomputers, not multi-user minicomputers or mainframes.
+Unix came out of Bell Labs—researchers, not hobbyists.
+CP/M and MS-DOS were made for personal computers: offices and home users.
+In other words, MS-DOS never meant to be a proper OS .
+It was something that can boot up a small machine and run a single program.],
+  [Then, in 1985, Windows 1.0 was built.
+It was a fancy GUI on top of MS-DOS, not a new OS.
+Later, in 1995, Microsoft introduced 32-bit APIs ( Win32 ) and preemptive multitasking.
+However, the DOS subsystem was still lurking underneath.
+Windows 95 looked modern but was still a half-DOS zombie.],
+  [At the same time, in 1993, the team of Dave Cutler has built Windows NT that was not based on DOS at all.
+Latest Windows versions are descendants of NT, not MS-DOS.
+Under the hood it’s conceptually closer to Unix than to CP/M.
+There are features like protected memory, kernel/user separation, and file handles.
+However, still it’s not Unix.],
+  [id="what-is-macos"\>What Is macOS?],
+  [In 1984, Apple shipped their first Macintosh with the “System 1” operating system.
+It was no better than MS-DOS: no multitasking, no memory protection, and primitive file system.
+No surprise, it didn’t fly.],
+  [In 1997, Apple bought NeXT and adopted NeXTSTEP operating system.
+They made it the foundation for the new Mac OS —codenamed Rhapsody , later “Mac OS X”.],
+  [In 2001 they shipped Mac OS X 10.0 (“ Cheetah ”).
+Five years later I threw away my ThinkPad with Windows and bought my first MacBook with Mac OS X Leopard .],
+  [Modern macOS (Catalina, Ventura, Sequoia, etc.) is still built on that NeXT foundation.
+It is POSIX-compliant and, of course, it has processes and pipelines.
+In other words, it is Unix with a pretty GUI.],
+  [id="abstractions"\>Abstractions],
+  [Both Windows and macOS, in their current versions, are solid operating systems.
+The difference is in the abstractions inside them: files, sockets, processes, memory blocks, users, permissions, and so on.
+In Unix (macOS), everything is a file , while in Windows, everything is an object .
+Files in Unix are a uniform abstraction, that’s why they can be chained via pipes.
+In Windows objects are not unified in practice, they have different interfaces.],
+  [This is why Unix shells and small composable tools became so powerful.
+The uniformity of “everything is a file” made composition natural.
+You can build complex workflows from simple programs.],
+  [Windows, on the other hand, evolved around GUI apps and message loops, not shell pipelines.],
+  [id="pipelines"\>Pipelines],
+  [Unix was built around pipelines.
+In Unix, everything is a small tool reading stdin, writing stdout.
+At the same time, everything is a file, including sockets, devices, and processes.
+Programmers, in Unix, see every process as a composition of smaller processes, glued together via pipelines.
+This mindset, since 1970s, has proven to be effective, amongst a few generations of software engineering elite.],
+  [Say, you want to know which parts of your codebase change the most—maybe for refactoring, testing focus, or bug-hotspot analysis.
+This is how you do it Unix-style:],
+  [Does this syntax make sense to you?
+If it does, I bet you use WSL .
+Most serious Windows developers end up doing exactly that.],
+  [The command line is the bare metal interface to Unix.
+The heart of the command line is pipelines.
+Thanks to pipelines, command-line tools are inherently composable.
+You can chain them and automate tasks in seconds that would take hours by hand.
+No IDE plugin can replace this power.],
+  [id="what-are-you"\>What Are You?],
+  [Now, you know what the difference is between Windows and macOS.
+In both of them you can code, browse Internet, and watch movies.
+However, in macOS you interact with the computer through Unix abstractions in a shell .
+You don’t just use macOS—you inherit fifty years of disciplined abstraction .],
+  [In Windows you interact with the computer through draggable GUI elements.
+A GUI makes you a consumer; a CLI makes you a creator.
+A GUI hides the logic behind gestures and icons; a CLI exposes it as text you can reason about, automate, and combine.
+You can’t pipe a button click into another program, you can’t grep a progress bar, and you can’t version-control a mouse movement.
+Every click you make dies the moment you make it; every command you write can live forever.],
+  [Oh, wait.
+In macOS you can’t really play games.
+Bummer…
+Maybe you shouldn’t, since you are a programmer?],
+),
+  insert-map: (:),
+  word-count: 1333,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+}
+
+#article-row((
+  [
+    standard-article(
+  title: [Search Box and Cloud Function],
+  author: [Ariya Hidayat],
+  source-name: [Ariya Hidayat],
+  images: (),
+  paragraphs: (
+  [For a blog hosted with Firebase Hosting, it turns out that a little search box is fairly easy to implement by using Cloud Functions for Firebase.],
+  [As with the current trend nowadays, this blog is a static site prepared with Hugo and deployed to Firebase (see my previous blog: Static Site with Hugo and Firebase ). Some time ago, I realized that since I am using Firebase anyway, might as well take advantage of its Cloud Functions to add a little search functionality to the blog, particularly for its 404 page .],
+  [Of course, I am cheating a little bit. Using the above search box actually just redirects the search to my favorite search engine, DuckDuckGo , resulting in the following:],
+  [Implementing it is almost trivial. First, we need index.js inside the functions subdirectory with the content as short as this (obviously, for your blog, replace site accordingly):],
+  [const functions = require('firebase-functions');
+exports.search = functions.https.onRequest((request, response) =\> {
+ const q = request.query.q || '';
+ response.redirect(\`https:\/\/duckduckgo.com/?q=site:ariya.io+\${q}\`);
+});],
+  [Once it is properly deployed, the trigger URL will be in the form of us-central1-YOURFIREBASEPROJECT.cloudfunctions.net/search . This is rather ugly. To overcome that, set up a rewrite inside firebase.json so that it looks something like:],
+  [{
+ "hosting": {
+ "rewrites": \[{
+ "source" : "/search",
+ "function": "search"
+ }
+ \]
+ }
+ }],
+  [and thus, the function is available as the top-level /search of your Firebase Hosting URL, including if it is a custom domain.],
+  [After this, inserting the search box is also equally fun:],
+  [When a visitor uses the search, they will get redirected to DuckDuckGo and be presented with the search result. Fast and easy!],
+),
+  insert-map: (:),
+  word-count: 270,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+  ],
+  [
+    standard-article(
+  title: [I got tired],
+  author: [Scott Hanselman],
+  source-name: [Scott Hanselman],
+  images: (),
+  paragraphs: (
+  [I have been blogging here for the last 20 years. Every Tuesday and Thursday, quite consistently, for two decades. But last year, without planning it, I got tired and stopped. Not sure why. It didn't correspond with any life events. Nothing interesting or notable happened. I just stopped.],
+  [I did find joy on TikTok and amassed a small group of like-minded followers there. I enjoy my YouTube as well, and my weekly podcast is going strong with nearly 900 (!) episodes of interviews with cool people. I've also recently started posting on Mastodon (a fediverse (federated universe)) Twitter alternative that uses the ActivityPub web standard . I see that Mark Downie has been looking at ActivityPub as well for DasBlog (the blog engine that powers this blog) so I need to spend sometime with Mark soon.],
+  [Being consistent is a hard thing, and I think I did a good job. I gave many talks over many years about Personal Productivity but I always mentioned doing what "feeds your spirit." For a minute here the blog took a backseat, and that's OK. I filled that (spare) time with family time, personal projects, writing more code, 3d printing, games, taekwondo, and a ton of other things.],
+  [Going forward I will continue to write and share across a number of platforms, but it will continue to start here as it's super important to Own Your Words . Keep taking snapshots and backups of your keystrokes as you never know when your chosen platform might change or go away entirely.],
+  [I'm still here. I hope you are too! I will see you soon.],
+  [Related Links:],
+  [Do they deserve the gift of your keystrokes?],
+  [Do you have a digital or social media will?],
+  [© 2025 Scott Hanselman. All rights reserved.],
+  [style="clear: both; padding-top: 0.2em;"\>],
+),
+  insert-map: (:),
+  word-count: 299,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+  ],
+), ruled-indices: (1,))
+#pull-quote([onRequest((request, response) =\> {  const q = request.], [Ariya Hidayat])
+
+
+{
+  #standard-article(
+  title: [Not Everything is an Agent],
+  author: [Ariya Hidayat],
+  source-name: [Ariya Hidayat],
+  images: (),
+  paragraphs: (
+  [“Agent” is likely going to be the word that will cause existential dread to true LLM enthusiasts.],
+  [Everyone’s got a different idea of what it means. In our modern age of innovation theater, lots of organizations gleefully slap the “agentic” label on anything that vaguely resembles a regular program (and pocket tons of money). Even a simple HTTP call to an LLM-as-a-Service can be called an agent, if you try desperately hard enough.],
+  [The internet, as always, is flooded with “groundbreaking” tutorials on building these so-called agents. Often authored by the latest hypefluencers , they typically involve a few lines (probably generated by whatever coding assistant is currently trending on Hacker News) that compose LangChain and an Ollama instance, often being presented as the pinnacle of AI autonomy. Because why bother with actual innovation when you can just repeat the quasi-boilerplate code ad nauseam ?],
+  [That’s why I liked it a lot when the Anthropic article, Building effective agents , came out, as it dares to suggest that simply bolting on retrieval or memory to an LLM does not , in fact, make an agent. And chaining or routing? That’s just glorified control flow , folks. Only when an LLM is tasked with truly complex, real-world tasks such as coding or using a computer, does it begin to resemble the autonomous agent we’ve been promised],
+  [So how do you identify a real agent? Don’t be fooled by the grand pronouncements of those rearranging deck chairs on the Titanic. Ask for the receipts of successful evaluations! Anecdotal evidence of a few successful LLM calls isn’t that useful. Remember, in the world of LLMs, as in life, the loudest claims are often the emptiest!],
+),
+  insert-map: (:),
+  word-count: 282,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+  #pull-quote([The internet, as always, is flooded with “groundbreaking” tutorials on building these so-called agents.], [Ariya Hidayat])
+
+}
+
+{
+  #section-label([Briefs])
   #brief-group((
-    #brief-item([ZDNet], source-name: [ZDNet], [A reliable robot vacuum is a great way to outsource cleaning your home's biggest messes. Shop the best deals during Amazon's Big Spring Sale.])
-
-    #brief-item([Patrick McKenzie (patio11)], source-name: [patio11 (Patrick McKenzie)], [I joined Stripe to work on building financial infrastructure for the Internet. Time flies. Here is what I've learned in the first four years.])
-
-    #brief-item([Patrick McKenzie (patio11)], source-name: [patio11 (Patrick McKenzie)], [One day after testifying before the Senate Banking Committee on debanking, a bank CEO asked me to retract my essay on that topic. I declined.])
-
-    #brief-item([Patrick McKenzie (patio11)], source-name: [patio11 (Patrick McKenzie)], [Apple's App Store is reforming their guidelines about taking out-of-band payments. This will be very interesting for developers, especially in the games industry.])
-
-    #brief-item([ZDNet], source-name: [ZDNet], [Amazon's Big Spring Sale has plenty of cheap deals on useful tech gadgets this weekend. Save up to \$25 on devices from Blink, Logitech, and more right now.])
-
-    #brief-item([ZDNet], source-name: [ZDNet], [This featured Amazon Spring Sale flash deal brings the price of the Apple Watch Series 9 to \$419, but you'll have to hurry - it ends tonight.])
-
-    #brief-item([ZDNet], source-name: [ZDNet], [Spring has sprung, and an Amazon Big Spring Sale is officially here. Here are the best headphone deals to shop.])
-
-    #brief-item([ZDNet], source-name: [ZDNet], [I've rounded up deals on some of the hottest tech from Apple during Amazon's Big Spring Sale. Shop them this weekend.])
-
+    [#brief-item([Patrick McKenzie (patio11)], source-name: [patio11 (Patrick McKenzie)], [A history of an anomaly in the 2020 Coronavirus Pandemic, an independent research project about it, and what we need to learn about our next steps.])],
+    [#brief-item([Patrick McKenzie (patio11)], source-name: [patio11 (Patrick McKenzie)], [Apple's App Store is reforming their guidelines about taking out-of-band payments. This will be very interesting for developers, especially in the games industry.])],
+    [#brief-item([Patrick McKenzie (patio11)], source-name: [patio11 (Patrick McKenzie)], [VaccinateCA, the non-profit I have been running, expanded nationally to Vaccinate The States . Here's what we've learned in the last 100 days.])],
+    [#brief-item([ZDNet], source-name: [ZDNet], [Amazon's Big Spring Sale has plenty of cheap deals on useful tech gadgets this weekend. Save up to \$25 on devices from Blink, Logitech, and more right now.])],
   ))
 }
 

@@ -23,20 +23,268 @@
 
 // --- Front Page Feature ---
 #feature-article(
-  title: [On taking good care of your phone],
+  title: [Job negotiation for programmers: the basic principles],
   kicker: [Cover Story],
+  author: [Itamar Turner-Trauring],
+  source-name: [Itamar Turner-Trauring],
+  deck: [You need to negotiate at a new job: for your salary, or benefits, or my personal favorite, a shorter workweek.],
+  lead-pre: [],
+  lead-cap: [Y],
+  lead-rest: [ou’re not sure what to do, or how to approach it, or what to say when the company says “how much do you want?” or “here’s our offer—what do you say?”],
+  body-paragraphs: (
+  [Here’s the thing: that final conversation about salary might be the most nerve-wracking part, but the negotiation process starts much much earlier.
+ Which means you can enter that final conversation having positioned yourself for success—and feeling less stressed about it too.],
+  [The way you can do that is following certain basic principles, which I’ll be covering in this article.
+I’m going to be focusing on salary negotiation as an example, but the same principles will apply when negotiating for a shorter workweek.],
+  [In particular, I’ll be talking about:],
+  [An example from early in my career when I negotiated very very badly.],
+  [The right way to negotiate, based on four principles:],
+  [Employment is a negotiated relationship.],
+  [Knowledge is power.],
+  [Negotiate from a position of strength.],
+  [Use the right tactics.],
+  [id="the-wrong-way-to-negotiate"\>The wrong way to negotiate],
+  [Before moving on to the principles of negotiation, let me share a story of how I negotiated badly.],
+  [During my first real job search I interviewed at a company in New York City that was building a financial trading platform.
+They were pretty excited about some specific technologies I’d learned while working on Twisted, an open source networking framework.
+They offered me a job, I accepted, and my job search was over.],
+  [But then they sent me their intellectual property agreement, and I actually read legal documents; you should read them too.
+The agreement would have given the company ownership over any open source work I did, including work on Twisted.
+I wanted to ensure I could keep doing open source development, especially given that was their reason for hiring me in the first place.
+I asked for an exemption covering Twisted, they wouldn’t agree, and so we went back and forth trying to reach an agreement.],
+  [Eventually they came back with a new offer: in return for not working on Twisted I’d get a 20% salary increase over their initial offer.
+I thought about it briefly, then said no and walked away from the job.
+Since I had neither a CS degree—I’d dropped out—nor much of an employment history, open source contribution was important to my career.
+It was how I’d gotten contracting work, and it was the reason they’d offered me this job.
+And I enjoyed doing it, too, so I wasn’t willing to give it up.],
+  [I posted about this experience online, and an employee of ITA Software, which was based in the Boston area, suggested they were happy to support contributions to open source projects.
+It seemed worth a try, so I applied for the position.
+And when eventually I got a job offer from ITA and they asked me for my salary requirements, I asked for the second offer I’d gotten, the one that was 20% higher than my original offer.
+They accepted, and I’ve lived in the Boston area ever since.],
+  [As we go through the principles below, I’ll come back to this story and point out how they were (mis)applied in my two negotiations.],
+  [id="the-four-principles-of-negotiation"\>The four principles of negotiation],
+  [You can think of the negotiation process as building on four principles:],
+  [Employment is a negotiated relationship.],
+  [Knowledge is power.],
+  [Negotiate from a position of strength.],
+  [Use the right tactics.],
+  [Let’s go through them one by one.],
+  [id="principle-1-employment-is-a-negotiated-relationship"\>Principle \#1: Employment is a negotiated relationship],
+  [If you’re an employee, your employment relationship was negotiated.
+When you got a job offer and accepted it, that was a negotiation, even if you didn’t push back at all.
+Your choice isn’t between negotiating and not negotiating: it’s between negotiating badly, or negotiating well.],
+  [id="negotiate-actively"\>Negotiate actively],
+  [If you don’t actively try to negotiate, if you don’t ask for what you want, if you don’t ask for what you’re worth —you’re unlikely to get it.
+Salaries, for example, are a place where your interests and your employer’s are very much at odds.
+All things being equal, if you’re doing the exact same work and have the same likelihood of leaving, would your employer prefer to pay you less or more?
+Most employers will pay you less if they can, and I almost had to learn that the hard way.],
+  [Applying the principle: In my story above, I never proactively negotiated.
+Instead, I accepted a job offer from the financial company without any sort of additional demands.
+If they were happy to offer me a 20% raise just to quit open source, I probably could have gotten an even higher salary if I’d just asked in the first place.],
+  [id="negotiation-starts-early-and-never-ends"\>Negotiation starts early, and never ends],
+  [Not only do you need to negotiate actively, you also need to realize that negotiation starts much earlier than you think, and ends only when you leave to a different job:],
+  [The minute you start thinking about applying to a company, you’ve started the negotiation process; as you’ll see, you’ll want to do research before you even talk to them.],
+  [Your interview is part of your negotiation, and you can in fact negotiate the interview process itself (e.g. suggest sharing a code sample instead of doing a whiteboard puzzle).],
+  [As an employee you will continue to negotiate: if you always say “yes” when your boss asks you to work long hours, your contract for a 3-day weekend will mean nothing.],
+  [In short, your whole relationship as an employee is based on negotiation.],
+  [id="distinguish-between-friend-and-foe"\>Distinguish between friend and foe],
+  [A negotiation involves two sides: yours, and the company’s.
+When you’re negotiating it’s important to remember that anyone who works for the company is on the company’s side.
+Not yours.],
+  [I once had to negotiate the intellectual property agreement at a new job.
+My new employer was based in the UK, and it had a US subsidiary organized by a specialist company.
+These subsidiary specialists had provided the contract I was signing.],
+  [When I explained the changes I wanted to make, the manager at the subsidiary specialist told me that my complaint had no merit, because the contract had been written by the “best lawyers in Silicon Valley.”
+But the contract had been written by lawyers working for the company , not for me.
+If his claim had been true (spoiler: they were not in fact the best lawyers in Silicon Valley), that would have just made my argument stronger.
+The better the company’s lawyers, the more carefully I ought to have read the contract, and the more I ought to have pushed back.],
+  [The contracts the company wants you to sign?
+They were written by lawyers working for the company.],
+  [Human Resources works for the company, as does the in-house recruiter.
+However friendly they may seem, they are not working for you.
+And third-party recruiters are paid by the company, not you.
+It’s true that sometimes their commission is tied to your salary, which means they would rather you get paid more.
+But since they get paid only once per candidate, volume is more important than individual transactions: it’s in their best interest to get you hired as quickly as possible so they can move on to placing the next candidate.],
+  [Since all these people aren’t working for you, during a negotiation they’re working against you .],
+  [The only potential exception to this rule are friends who also work for the company, and aren’t directly involved in the negotiation process: even if they are constrained in some ways, they’re probably still on your side.
+They can serve as a backchannel for feedback and other information that the company can’t or won’t share.],
+  [id="principle-2-knowledge-is-power"\>Principle \#2: Knowledge is power],
+  [The more you know about the situation, the better you’ll do as a negotiator.
+More knowledge gives more power: to you, but also to the company.],
+  [id="know-what-you-want"\>Know what you want],
+  [The first thing you need to do when negotiating is understand what you want.],
+  [What is your ideal outcome?],
+  [What can you compromise on, and what can’t you compromise on?],
+  [What is the worst outcome you’re willing to accept?],
+  [id="do-your-research"\>Do your research],
+  [You also want to understand where the other side is coming from:],
+  [What is the company’s goal, and the negotiator’s goal?
+For example, if you discover their goal is minimizing hassle, you might be able to get what you want by making the process a little smoother.],
+  [What resources are available to them?
+An unfunded startup has different resources than a large company, for example.],
+  [Has the company done something similar in the past, or will your request be unprecedented?
+For example, what hours do other employees in similar positions work?
+How much are other employees paid?],
+  [What do other companies in the area or industry provide?],
+  [How is this particular business segment doing: are they losing money, or doing great?],
+  [The more you understand going in, the better you’ll do, and that means doing your research before negotiation starts.],
+  [Applying the principle: In my story above I never did any research about salaries, either in NY or in Boston.
+As a result, I had no idea I was being offered a salary far below market rates.],
+  [As a comparison, here’s a real example of how research can help your negotiation, from an engineer named Adam:],
+  [Adam: “Being informed on salaries really helped my negotiating position.
+When my latest employer made me an offer I asked them why it was lower than their average salary on Glassdoor.com.
+The real reason was likely ‘we offer as little as possible to get you on board.’
+They couldn’t come up with a convincing reason and so the salary was boosted 10%.”],
+  [Glassdoor is a site that allows employees to anonymously share salaries and job reviews.
+Five minutes of research got Adam a 10% raise: not bad at all!],
+  [id="listen-and-empathize"\>Listen and empathize],
+  [If you only had to make yourself happy this wouldn’t be a negotiation: you need to understand the other side’s needs and wants, what they’re worrying about, what they’re feeling.
+That means you need to listen, not just talk: if you do, you will often gather useful information that can help you make yourself more valuable, or address a particular worry.
+And you need to feel empathy towards the person you’re talking to: you don’t need to agree or subordinate yourself to their goals, but you do need to understand how they’re feeling.],
+  [id="share-information-carefully"\>Share information carefully],
+  [Sharing information at the wrong time during a negotiation can significantly weaken your position.
+For example, sharing your previous salary will often anchor what the company is willing to offer you:],
+  [Adam: “I graduated from university and started working at the end of 2012.
+At my first job I worked for way under my market rate.
+I knew this and was OK with it because they were a good company.],
+  [Then I switched jobs in 2013.
+What I hadn’t accounted for was that my salary at my first job was going to limit my future salary prospects.
+I had to fight hard for raises at my next job before I was in line with people straight out of school, because they didn’t want to double my salary at my previous company.”],
+  [In general, when interviewing for a job you shouldn’t share your previous salary, or your specific salary demands—except of course when it is helpful to do so.
+For example, let’s say you’re moving from Google to a tiny bootstrapped startup, and you know you won’t be able to get the same level of salary.
+Sharing your current salary can help push your offer higher, or used as leverage to get shorter hours: “I know you can’t offer me my previous salary of \$\$\$, but here’s something you could do—”.
+Just make sure not to share it too early, or they might decide you’d never accept any offer at all and stop the interview process too early.],
+  [Most of the time, however, you shouldn’t share either your previous salary or specific salary requirements.
+If the company insists on getting your previous salary, you can:],
+  [If you work somewhere with relevant laws (e.g. California and Massachusetts), point out that this question is illegal.
+Asking about salary expectations is not illegal in these jurisdictions, so be careful about the distinction.],
+  [Ask for the company’s salary range for the position, as well as the next level up in the salary tree.
+Chances are they will refuse to share, in which case you can correspondingly refuse to share your information.],
+  [Say something like “I expect to be paid industry-standard pay for my experience.”],
+  [Applying the principle: I shouldn’t have told ITA Software my salary requirement.
+Instead, I should have gotten them to make the first offer, which would have given me more information about what they were willing to pay.],
+  [id="principle-3-negotiate-from-a-position-of-strength"\>Principle \#3: Negotiate from a position of strength],
+  [The stronger your negotiation position, the more likely you are to get what you want.
+And this is especially important when you’re asking for something abnormal, like a 3-day weekend.],
+  [id="have-a-good-fallback-batna"\>Have a good fallback (BATNA)],
+  [If negotiation fails, what will you do?
+Whatever it is, that is your fallback, sometimes known as the “Best Alternative to a Negotiated Agreement” (BATNA).
+The better your fallback, the better your alternative, the stronger your negotiating position is.
+Always figure out your fallback in advance, before you start negotiating.],
+  [For example, imagine you’re applying for a new job:],
+  [If you’re unemployed and have an empty bank account, your fallback might be moving in with your parents.
+This does not give you a strong negotiating position.],
+  [If you’re employed, and more or less content with your current job, your fallback is staying where you are.
+That makes your position much stronger.],
+  [If you have a strong fallback, you can choose to walk away at any time, and this will make asking for more much easier.],
+  [id="provide-and-demonstrate-value"\>Provide and demonstrate value],
+  [The more an organization wants you as an employee, the more they’ll be willing to offer you.
+The people you’re negotiating with don’t necessarily know your value: you need to make sure they understand why you’re worth what you’re asking.],
+  [For example, when you’re interviewing for a job, you need to use at least part of the interview to explain your value to your prospective employer: your accomplishments and skills.
+Once you’ve established the value of your skills, asking for more—more money, unusual terms—can actually make you seem more valuable.
+And having another job offer—or an existing job—can also help, by showing you are in demand.],
+  [Finally, remember that your goal is to make sure the other side’s needs are met—not at your own expense, but if they don’t think hiring you is worth it, you aren’t going to get anything.
+Here’s how Alex, another programmer I talked to, explains how he learned this:],
+  [Alex: “Think about the other person and how they’re going to react, how you can try to manage that proactively.
+You need to treat your negotiating partner as a person, not a program.],
+  [Initially I had been approaching it adversarially, ‘I need to extract value from you, I have to wrestle you for it’ but it’s more productive to negotiate with an attitude of ‘we both need to get our needs met.’
+The person you’re talking to is looking to hire someone productive who can create value, so figure out how can you couch what you want in a way that proactively addresses the other person’s concerns.”],
+  [id="principle-4-use-the-right-tactics"\>Principle \#4: Use the right tactics],
+  [Once you’ve realized you’re negotiating, have done your research, and are negotiating from a position of strength, applying the right negotiation tactics will increase your chances of success even more.],
+  [id="ask-for-more-than-you-want"\>Ask for more than you want],
+  [Obviously you don’t want to ask for less than what you want.
+But why not ask for exactly what you want?],
+  [First, it might turn out that the company is willing to give you far more than you expected or thought possible.],
+  [Second, if you ask for exactly what you want there’s no way for you to compromise without getting less than what you want.
+By asking for more, you can compromise while still getting what you wanted.],
+  [Applying the principle: If I’d wanted a \$72,000 salary, and research suggested that was a fair salary, I should have asked for \$80,000.
+If I was lucky the company would have said yes; if they wanted to negotiate me down, I would have no problems agreeing to a lower number so long as it was above \$72,000.],
+  [id="negotiate-multiple-things-at-once"\>Negotiate multiple things at once],
+  [Your goal when negotiating is not to “win.”
+Rather, your goal is to reach an agreement that passes your minimal bar, and gets you as much as is feasible.
+Feasibility means you also need to take into account what the other side wants as well.
+If you’ve reached an impasse, and you still think you can make a deal that you like, try to come up with creative ways to work out a solution that they will like.],
+  [If you only negotiate one thing at once, every negotiation has a winner and a loser.
+For example, if all you’re negotiating is salary, either you’re making more money, or the company is saving money: it’s a zero-sum negotiation.
+This limits your ability to come up with a solution that maximizes value for you while still meeting the other side’s needs.],
+  [Applying the principle: In my story above, the financial company wanted intellectual property protection, I wanted to be able to write open source, and we were at an impasse.
+So they expanded the scope of the negotiation to include my salary, which allowed them to make tradeoffs between the two—more money for me in return for what they wanted.
+If I’d cared less about working on open source I might have accepted that offer.],
+  [id="never-give-an-answer-immediately"\>Never give an answer immediately],
+  [During the actual negotiation you should never decide on the spot, nor are you required to.
+If you get a job offer you can explain that you need a little time to think about it: say something like “I have to run this by my spouse/significant other/resident expert.”
+This will give you the time to consider your options in a calmer state of mind, and not just blurt out “yes” at the first semi-decent offer.],
+  [Having someone else review the offer is a good idea in general; a friend of mine ran her job offers by her sister, who had an MBA.
+But it’s also useful to mention that other person as someone who has to sign off on the offer.
+That gives you the ability to say you’d like to accept an offer, but your spouse/expert thinks you can do better.],
+  [Notice that the employer almost always has this benefit already.
+Unless you’re negotiating with the owner of the business, you’re negotiating with an agent: someone in HR, say.
+When you make a demand, the HR person might say “I have go to check with the hiring manager”, and when they come back with less than you wanted it’s not their fault, they’re just passing on the bad news.
+The implication is that the low offer is just the way it is, and there’s nothing they can do about.],
+  [Don’t fall for this trick: they often can change the offer.],
+  [id="beyond-negotiating-for-salary"\>Beyond negotiating for salary],
+  [You can negotiate for a higher salary—or rather, you should negotiate for a higher salary.
+The Adam I interviewed in this article is now a partner in DangoorMendel, who can help you negotiate a higher salary .],
+  [But salary isn’t the only thing you can negotiate for.
+ You can also negotiate for a shorter workweek.],
+  [And yes, this is harder, but it’s definitely possible.],
+  [In fact, this article is an excerpt from a book I wrote to help you do just that: You Can Negotiate a 3-Day Weekend .],
+  [Tired of scrambling to get your job done?],
+  [If you were productive enough, you could take the afternoon off, confident you’d produced high value work. Not to mention having an easier time finding a new job when you need one.],
+  [Learn the secret skills of productive programmers .],
+),
+  inline-pq: pull-quote([The contracts the company wants you to sign? They were written by lawyers working for the company.], [Itamar Turner-Trauring]),
+  inline-pq-idx: 44,
+  edited-for-length: false,
+)
+
+
+{
+  #section-label([Front Page])
+  #standard-article(
+  title: [ADL Bias and Diversity Training],
+  author: [Scott Johnson (fuzzyblog)],
+  source-name: [Scott Johnson (fuzzyblog)],
+  images: (),
+  paragraphs: (
+  [As a contractor for the ADL, I recently went through our official bias and diversity training. I put together my notes on that for a new hire who recently joined us.],
+  [Here are some of the discussion questions:],
+  [Is it ok for people of a group to use slurs about their own identity?],
+  [Should airlines be required to provide multiple seats to obese people ?],
+  [Does your work place treat everyone fairly?],
+  [Can anyone be successful in the USA?],
+  [Does the USA live up to its ideals of racial diversity?],
+  [Do women have the same opportunities as men?],
+  [Do people of color have the same opportunities as white people?],
+  [Peanut butter racism],
+  [Blind spot bias you may have bias that you see in others but can't see in yourself],
+  [White fragility by d Angelo],
+  [MTV micro aggressions],
+  [(my personal favorite (this is a Scott thing)- Tea and Consent )],
+),
+  insert-map: (:),
+  word-count: 166,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+}
+
+{
+  #section-label([Features])
+  #standard-article(
+  title: [On taking good care of your phone],
   author: [Drew DeVault],
   source-name: [Drew DeVault],
-  deck: [I just finished replacing the micro-USB
+  images: (),
+  paragraphs: (
+  [I just finished replacing the micro-USB
 daughterboard on my Samsung Galaxy S5,
 which involved taking the phone most of the way apart, doing the replacement,
-and putting it back together.],
-  lead-text: "This inspired me to write about my approach to
+and putting it back together. This inspired me to write about my approach to
 maintaining my cell phone. I’ve had this phone for a while and I have no plans
 to upgrade - I backed the upcoming Purism phone, but I expect to spend
-months/years on the software before I’ll be using that as my daily driver.",
-  lead-first-alpha: 0,
-  body-paragraphs: (
+months/years on the software before I’ll be using that as my daily driver.],
   [I don’t want to be buying a new phone every year. That’s a lot of money! Though
 the technophile in me finds the latest and greatest technology appealing, the
 thought of doing my own repairs and upkeep on a battle-tested phone is equally
@@ -75,37 +323,8 @@ shipping. The whole process was a lot easier than I thought it would be.],
 and maybe read the iFixit teardown. Take good care of it and it’ll last a long
 time. Don’t let consumerism get the better of you!],
 ),
-  edited-for-length: false,
-)
-
-#pull-quote([id="get-a-case"\>Get a case  This one is pretty obvious, but I didn’t follow this advice at first.], [Drew DeVault])
-
-
-{
-  #section-label([Front Page])
-  #standard-article(
-  title: [ADL Bias and Diversity Training],
-  author: [Scott Johnson (fuzzyblog)],
-  source-name: [Scott Johnson (fuzzyblog)],
-  images: (),
-  paragraphs: (
-  [As a contractor for the ADL, I recently went through our official bias and diversity training. I put together my notes on that for a new hire who recently joined us.],
-  [Here are some of the discussion questions:],
-  [Is it ok for people of a group to use slurs about their own identity?],
-  [Should airlines be required to provide multiple seats to obese people ?],
-  [Does your work place treat everyone fairly?],
-  [Can anyone be successful in the USA?],
-  [Does the USA live up to its ideals of racial diversity?],
-  [Do women have the same opportunities as men?],
-  [Do people of color have the same opportunities as white people?],
-  [Peanut butter racism],
-  [Blind spot bias you may have bias that you see in others but can't see in yourself],
-  [White fragility by d Angelo],
-  [MTV micro aggressions],
-  [(my personal favorite (this is a Scott thing)- Tea and Consent )],
-),
   insert-map: (:),
-  word-count: 166,
+  word-count: 557,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -113,7 +332,6 @@ time. Don’t let consumerism get the better of you!],
 }
 
 {
-  #section-label([Features])
   #standard-article(
   title: [What is this Gemini thing anyway, and why am I excited about it?],
   author: [Drew DeVault],
@@ -151,15 +369,15 @@ response: 20 text/gemini
 response: \`\`\`ASCII art of a rocket next to "Drew DeVault" in a stylized font
 response: /\\
 response: || \_\_\_\_\_\_\_\_ \_\_\_\_\_\_\_\_ \_\_\_\_ \_\_\_\_ .\_\_ \_\_
-response: || \\\_\_\_\_\_\_ \\\_\_\_\_\_\_\_ \_\_\_\_\_\_ \_ \_\_ \\\_\_\_\_\_\_ \\ \_\_\_\\ \\ / /\_\_\_\_ \_\_ \_\_| |\_/ |\_
-response: /||\\ | | \\\_ \_\_ \\\_/ \_\_ \\ \\/ \\/ / | | \\\_/ \_\_ \\ Y /\\\_\_ \\ | | \\ |\\ \_\_\\
-response: /:||:\\ | \` \\ | \\/\\ \_\_\_/\\ / | \` \\ \_\_\_/\\ / / \_\_ \\| | / |\_| |
-response: |:||:| /\_\_\_\_\_\_\_ /\_\_| \\\_\_\_ \>\\/\\\_/ /\_\_\_\_\_\_\_ /\\\_\_\_ \>\\\_\_\_/ (\_\_\_\_ /\_\_\_\_/|\_\_\_\_/\_\_|
-response: |/||\\| \\/ \\/ \\/ \\/ \\/
+response: || \\\_\_\_\_\_\_ \\\_\_\_\_\_\_\_ \_\_\_\_\_\_ \_ \_\_ \\\_\_\_\_\_\_ \\ \_\_\_\\ \\ \/ /\_\_\_\_ \_\_ \_\_| |\_\/ |\_
+response: /||\\ | | \\\_ \_\_ \\\_\/ \_\_ \\ \\\/ \\\/ \/ | | \\\_\/ \_\_ \\ Y /\\\_\_ \\ | | \\ |\\ \_\_\\
+response: /:||:\\ | \` \\ | \\/\\ \_\_\_/\\ \/ | \` \\ \_\_\_/\\ \/ \/ \_\_ \\| | \/ |\_| |
+response: |:||:| /\_\_\_\_\_\_\_ /\_\_| \\\_\_\_ \>\\/\\\_\/ /\_\_\_\_\_\_\_ /\\\_\_\_ \>\\\_\_\_\/ (\_\_\_\_ /\_\_\_\_/|\_\_\_\_/\_\_|
+response: |/||\\| \\\/ \\\/ \\\/ \\\/ \\/
 response: \*\*
 response: \*\*
 response: \`\`\`
-[...]],
+\[...\]],
   [So why am I excited about it?],
   [My disdain for web browsers is well documented 1 . Web browsers are
  extraordinarily complex, and any attempt to build a new one would be a
@@ -287,7 +505,7 @@ unique culture and its own strongly held beliefs and values.],
   [ensure technical excellence are accountable for these shitty outcomes. 1],
   [So where do we go now?],
   [Well, let me begin by re-iterating something from my last article on the
-subject: “I wish [Rust-for-Linux] the best of luck and hope to see them
+subject: “I wish \[Rust-for-Linux\] the best of luck and hope to see them
 succeed”. Their path is theirs to choose, and though I might advise a moment to
 rest before diving headfirst into this political maelstrom once again, I support
 you in your endeavours if this is what you choose to do. Not my business. That
@@ -362,8 +580,6 @@ the talent base you have at your disposal, so I wouldn’t worry about it.],
 future, Ted. That was some hostile, toxic bullshit.  ↩︎],
 ),
   insert-map: (:),
-  inline-pq: pull-quote([Rust is a great fit for a large monolithic kernel design like Linux.], [Drew DeVault]),
-  inline-pq-idx: 22,
   word-count: 1409,
   edited-for-length: false,
   debug-mode: false,
@@ -391,7 +607,7 @@ example of how all of this can be used in the wild.],
   [Now, here’s how you can do it on vanilla JS:],
   [You want to make requests in JavaScript. This is how you POST with jQuery:],
   [Here’s the same code, without jQuery:],
-  [class="highlight"\> var xhr = new XMLHttpRequest (); \/\/ A little deceptively named
+  [class="highlight"\> var xhr = new XMLHttpRequest (); \/\\/ A little deceptively named
  xhr . open ( 'POST' , '/path/to/endpoint' ); 
  xhr . onload = function () { 
  alert ( this . responseText ); 
@@ -442,6 +658,8 @@ I’m sure you’ll get through it fine.],
   edited-for-length: false,
   debug-mode: false,
 )
+
+  #pull-quote([I don’t think it’s a problem if your website isn’t pretty and animated on older browsers.], [Drew DeVault])
 
 }
 
@@ -617,52 +835,190 @@ feedback from my users.],
   debug-mode: false,
 )
 
-  #pull-quote([Red is also used throughout for dangerous actions, like deleting things.], [Drew DeVault])
+}
+
+{
+  #standard-article(
+  title: [Sharing Tinder’s latest contributions to the open source community],
+  author: [Tinder],
+  source-name: [Tinder Tech],
+  images: (),
+  paragraphs: (
+  [Authored By: Christopher Fuller],
+  [At first glance, Tinder might seem like a simple application. After all, Tinder is best known for its iconic Swipe Right feature, a simple gesture that revolutionized how people express interest and connect. But when you look under the hood, there are a lot of complexities to consider when building the experience that our users know and love today. People around the world indicate billions of Likes and Nopes per day, across a wide variety of iPhone models and screen sizes. When we roll out just one feature update, we have to understand how it’ll impact every user on whatever device they’re accessing the app from. I find this to be uniquely challenging, interesting and rewarding work.],
+  [As part of an initiative to contribute more to the software development community at large, I’m really excited to announce that we recently released our Layout code repository to the open source community. We are now publishing a few additional repositories as well.],
+  [We felt it was important to share what has worked well for our team in recent years. Both Layout and our mobile application architecture, Nodes , have long been essential parts of the Tinder iPhone app and its success to date. Before we explore our Layout repository in more detail, here’s some context for how we got here.],
+  [How we got here],
+  [As Tinder grew in complexity, we repeatedly encountered challenges with reliability and performance in the iPhone app. To mitigate this, we focused our attention on extensibility, consistency and memory use. It quickly became clear that we needed to empower our engineers to continually add new features to the app safely without breaking existing functionality. The solution we devised, called the Nodes Architecture Framework, is a plugin-based approach which allows new app screens to be integrated into existing screens with only four lines of code.],
+  [A plugin validates the conditions that dictate whether a feature should be enabled. A single factory method call to “build” a feature is made possible using dependency injection code-generated at compile time. The logic of the feature is contained within a “context” object separate from the view to allow business rules to be tested in isolation. The context assumes the role of an interactor and responds to events, such as user actions. All output signals from a feature are received by the context object via delegation , uniquely referred to as a “listener” delegate. In other words, if screen A presents screen B, this means context A “listens” to context B. And a “flow” object assumes the role of a router responsible for starting other flows, as you can see in this example.],
+  [guard let builder = plugin.create() else { return }
+let flow = builder.build(withListener: context)
+viewController.present(flow.getViewController(), animated: true)
+attach(starting: flow)],
+  [A side-effect of this approach is that plugins can be trivially added to plugin collections, known as “plugin lists”, for feature versioning or A/B testing. The integration call-site does not need to know or care which version or variation of the feature is then built and started.],
+  [guard let builder = pluginList.create() ...],
+  [To optimize memory use, we introduced the concept of lifecycle to each feature. Dismissing a screen is an important lifecycle event that signifies that all memory for that feature must now be released. Debug builds can tap into this hook and warn when memory leaks occur.],
+  [await viewController.dismiss(flow.getViewController(), animated: true)
+detach(ending: flow)],
+  [We also developed custom Xcode templates to provide scaffolding when creating a new feature. This has fostered consistency across feature implementations to enable effortless context switching and ease of debugging common issues. The Nodes repository includes the generator that creates these Xcode templates.],
+  [The graph below is particularly interesting because it shows how adoption of the legacy architecture immediately flattened out the moment Nodes was released. As adoption of this new architecture was not mandated, this graph demonstrates that our teams immediately found Nodes to be beneficial and saw value in moving away from the legacy architecture.],
+  [— Nodes adoption since its introduction at the beginning of 2020 as compared to legacy architecture.],
+  [Why Layout was critical to our success],
+  [While the Nodes framework provides essential structure for our mobile engineers to architect their features, one of the most important aspects they focus on next is how the screens of the app look.],
+  [Since the Tinder iPhone app has been primarily built with UIKit , and we wanted to make it as easy as possible for our engineers to define UI layouts, we developed a new high fidelity DSL syntax, called Layout , to easily visualize the screens the code represents.],
+  [In the evolving mobile development landscape, declarative UI frameworks such as SwiftUI and Jetpack Compose offer benefits such as significantly reduced learning curves. While not a declarative framework, Layout utilizes a similar declarative style, in this case for the UIKit framework.],
+  [We’ve used Layout, a wrapper around Apple’s Auto Layout SDK, as part of our iPhone codebase since 2017 to programmatically define the screens of the app.],
+  [There are several key advantages to Layout that have enabled our developers to build the best-in-class user interface that our users expect each time they open the app:],
+  [Less verbose code — Layout is a great example of the type of programmatic UI code typically used in projects with large codebases.],
+  [Easy to use — Layout avoids unmanageable conflicts that are encountered with XML, the serialized format of Xcode storyboards.],
+  [Flexible and compatible — Layout doesn’t limit UIKit’s native Auto Layout capabilities which may therefore be used directly in concert with the Layout API.],
+  [This style of layout, where the relationship for the top is defined first, then the horizontal relationships, followed by the remaining vertical relationships, is very readable and has been ideal for many screens.],
+  [view.layout {
+ label
+ .toSafeArea(\[.top\])
+ .center(.horizontal)
+ imageView
+ .toSideEdges(inset: 20)
+ .height(200)
+ button
+ .center(.horizontal)
+}
+.vertical(\[label, imageView, button\], spacing: 50)],
+  [User interactions in layouts],
+  [When it came to wiring up user interactions to the UI elements of a UIKit based layout, there was an opportunity to combine (no pun intended) two modern Apple technologies, Combine and Swift property wrappers , to easily bind controls for user interactions and touch events. A reactive approach is not a new concept in mobile development but has always required 3rd party reactive libraries, such as RxSwift . Now this can be done natively, for example with our CombineUI library, seen here integrated with our Collection Builders library.],
+  [\@Button var button = UIButton()],
+  [cancellables.insert {
+ title.bind(to: button.bindable.title(for: .normal))
+ \$button.sink { print("Tapped") }
+}],
+  [A unified approach to mobile app development],
+  [When considering the Nodes Architecture Framework , Layout and CombineUI holistically, the combination of the plugin based architecture with scaffolding, the declarative layout syntax and the reactive API together represent a unified approach to mobile application development on Apple platforms. These projects help us to mitigate reliability and performance issues and empower our engineers to support Tinder’s mission and provide value to our users on iPhone devices.],
+  [And these are also the reasons why we are publishing the code repositories to GitHub. While we know this may open our team and development principles up to some amount of scrutiny, we’re sharing these repositories to show the open source community what has worked well for us and contributed to Tinder’s success up until now. We also look forward to leveraging community feedback to enhance our mobile experiences, now and into the future.],
+  [What’s next],
+  [Our iPhone app codebase has evolved into a hybrid model, incorporating SwiftUI for some new features alongside UIKit. And while our architecture provides an ideal pattern for incrementally adopting SwiftUI using the same plugins and scaffolding to provide consistency in features no matter which UI framework is used, we are excited to evolve our patterns and practices over the coming years. This will allow us to take advantage of the full power of SwiftUI and the latest SDKs and guidelines from Apple.],
+  [Below you will find links to the repositories mentioned in this blog post along with a few other Tinder projects you may find interesting. The Swift packages are also available in the Swift Package Index .],
+  [Native Mobile Application Engineering at Scale
+ https:\/\/github.com/Tinder/Nodes],
+  [High Fidelity Auto Layout Result Builder Syntax for UIKit
+ https:\/\/github.com/Tinder/Layout],
+  [CombineUI],
+  [Swift Property Wrappers, Bindings and Combine Publishers for UI Gestures, Controls and Views
+ https:\/\/github.com/Tinder/CombineUI],
+  [Swift Result Builders for Array and Set
+ https:\/\/github.com/Tinder/CollectionBuilders],
+  [A lovely little git hook to validate commit messages
+ https:\/\/github.com/Tinder/Commit-Message-Validation-Hook],
+  [spellcheck-cli],
+  [A tiny command line script to check the spelling of text on macOS
+ https:\/\/github.com/Tinder/spellcheck-cli],
+  [A handy tree visualizer for apps using the Nodes Architecture Framework
+ https:\/\/github.com/Tinder/Nodes-Tree-Visualizer],
+  [bazel-diff],
+  [Performs Bazel Target Diffing between two revisions in Git, allowing for Test Target Selection and Selective Building
+ https:\/\/github.com/Tinder/bazel-diff],
+  [sign-here],
+  [A straightforward tool that enables the creation of Provisioning Profiles and Certificates for deploying Apple based software
+ https:\/\/github.com/Tinder/sign-here],
+  [Special thanks to the following contributors who made these repositories possible:],
+  [(in alphabetical order)],
+  [Sharing Tinder’s latest contributions to the open source community was originally published in Tinder Tech Blog on Medium, where people are continuing the conversation by highlighting and responding to this story.],
+),
+  insert-map: (:),
+  word-count: 1554,
+  edited-for-length: false,
+  debug-mode: false,
+)
 
 }
 
 {
   #standard-article(
-  title: [PlugMem: Transforming raw agent interactions into reusable knowledge],
-  author: [Ke Yang, Michel Galley, Chenglong Wang, Jianfeng Gao, Jiawei Han, ChengXiang Zhai],
-  source-name: [Microsoft Research Blog],
+  title: [More speculations on arenas in C++],
+  author: [Chris Wellons (null program)],
+  source-name: [Chris Wellons (null program)],
   images: (),
   paragraphs: (
-  [Today’s AI agents store long interaction histories but struggle to reuse them effectively.],
-  [Raw memory retrieval can overwhelm agents with lengthy, low-value context.],
-  [PlugMem transforms interaction history into structured, reusable knowledge.],
-  [A single, general-purpose memory module improves performance across diverse agent benchmarks while using fewer memory tokens.],
-  [It seems counterintuitive: giving AI agents more memory can make them less effective. As interaction logs accumulate, they grow large, fill with irrelevant content, and become increasingly difficult to use.],
-  [More memory means that agents must search through larger volumes of past interactions to find information relevant to the current task. Without structure, these records mix useful experiences with irrelevant details, making retrieval slower and less reliable. The challenge is not storing more experiences, but organizing them so that agents can quickly identify what matters in the moment.],
-  [In our recent paper “ PlugMem: A Task-Agnostic Plugin Memory Module for LLM Agents, ” we introduce a plug-and-play memory system that transforms raw agent interactions into reusable knowledge. Rather than treating memory as text to retrieve, PlugMem organizes that history into structured knowledge designed to support decisions as the agent acts.],
-  [Cognitive science offers a useful framework here. It distinguishes between remembering events, knowing facts, and knowing how to perform tasks. Past events provide context, but effective decisions rely on the facts and skills extracted from those events.],
-  [This distinction motivated a shift in how we decided to design memory for AI agents. PlugMem implements this shift by converting the agent’s interaction history, such as dialogues, documents, and web sessions, into structured, compact knowledge units that can be reused across tasks.],
-  [A key difference between PlugMem and conventional AI memory systems is what gets stored. Traditional approaches store text chunks or named entities (references to people, places, and concepts). PlugMem uses facts and reusable skills as the fundamental building blocks of memory. This design reduces redundancy, increases information density, and improves retrieval precision. It’s built around three core components:],
-  [Structure. Raw interactions are standardized and transformed into propositional knowledge (facts) and prescriptive knowledge (reusable skills). These knowledge units are organized into a structured memory graph, enabling knowledge to be stored in a form designed for reuse.],
-  [Retrieval. Rather than retrieving long passages of text, PlugMem retrieves knowledge units that are aligned with the current task. High-level concepts and inferred intents serve as routing signals, surfacing the most relevant information for the decision at hand.],
-  [Reasoning. Retrieved knowledge is distilled into concise, task-ready guidance before being passed to the base agent, ensuring that only decision-relevant knowledge enters the agent’s context window.],
-  [Figure 1 illustrates how these components work together.],
-  [Figure 1. PlugMem organizes different types of agent interactions into a knowledge-centric memory graph, enabling structured retrieval and reasoning.],
-  [Most AI memory systems are built for one job. A conversational memory module is designed around dialogue. A knowledge-retrieval system is tuned to look up facts. A web agent’s memory is optimized for navigating pages. Each performs well in its target setting but rarely transfers without significant redesign.],
-  [PlugMem takes a different approach. It is a foundational memory layer that can be attached to any AI agent without needing to modify it for a specific task.],
-  [To test PlugMem, we evaluated the same memory module on three benchmarks that each make different demands on memory:],
-  [Answering questions across long multi-turn conversations],
-  [Finding facts that span multiple Wikipedia articles],
-  [Making decisions while browsing the web],
-  [Across all three, PlugMem consistently outperformed both generic retrieval methods and task-specific memory designs while allowing the AI agent to use significantly less memory token budget in the process.],
-  [We wanted to evaluate whether the right information was reaching the agent at the right moment, without overwhelming the model’s context window, which has limited capacity. To do this, we introduced a metric that measures how much useful, decision-relevant information a memory module contributes relative to how much context it consumes.],
-  [When we plotted utility against context consumption, PlugMem consistently came out ahead: it delivered more decision-relevant information while consuming less of the AI agent’s context than other approaches, as shown in Figure 2. These results suggest that transforming experience into knowledge—rather than storing and retrieving raw logs—produces memory that is more useful and efficient.],
-  [Figure 2. Across all three benchmarks, PlugMem delivered more useful memory with less of the agent’s context window.],
-  [General-purpose memory modules can outperform systems tailored to specific tasks because the decisive factor is not specialization but whether memory can surface the right knowledge precisely when the agent needs it. Structure, retrieval, and reasoning each play a distinct role, and getting all three right matters more than optimizing for a single use case.],
-  [PlugMem is not meant to replace task-specific approaches. It provides a general memory foundation upon which task adaptations can be layered. Our experiments show that combining PlugMem with task-specific techniques yields further gains.],
-  [As AI agents take on longer and more complex tasks, its memory needs to evolve from storing past interactions to actively supplying reusable knowledge. The goal is for agents to carry useful facts and strategies from one task to the next rather than starting from scratch each time.],
-  [PlugMem represents a step in that direction, grounding memory design in cognitive principles and treating knowledge as the primary unit of reuse. As agent capabilities expand, knowledge-centric memory may prove to be a critical building block for the next generation of intelligent agents.],
-  [Code and experimental results are publicly available on GitHub (opens in new tab) so that others can reproduce the results and conduct their own research.],
-  [Opens in a new tab],
-  [The post PlugMem: Transforming raw agent interactions into reusable knowledge appeared first on Microsoft Research .],
+  [Update October 2025: further enhancements .],
+  [Patrice Roy’s new book, C++ Memory Management , has made me more
+conscious of object lifetimes. C++ is stricter than C about lifetimes, and
+common, textbook memory management that’s sound in C is less so in C++ —
+ more than I realized . The book also presents a form of arena allocation
+so watered down as to enjoy none of the benefits. (Despite its precision
+otherwise, the second half is also littered with integer overflows 
+lacking the appropriate checks , and near the end has some pointer
+overflows invalidating the check.) However, I’m grateful for the new
+insights, and it’s made me revisit my own C++ arena allocation . In
+this new light I see I got it subtly wrong myself!],
+  [Surprising to most C++ programmers, but not language lawyers, idiomatic C
+memory allocation was ill-formed in C++ until recently :],
+  [class="highlight"\> int \* newint ( int v ) 
+ { 
+ int \* r = ( int \* ) malloc ( sizeof ( \* r )); 
+ if ( r ) { 
+ \* r = v ; \/\/],
+  [class="highlight"\> int \* newint ( int v ) 
+ { 
+ void \* r = malloc ( sizeof ( int )); 
+ if ( r ) { 
+ return new ( r ) int { v }; 
+ } 
+ return nullptr ; 
+ }],
+  [That’s no good as a C/C++ polyglot, though per the differing old semantics
+that was impossible anyway without macros. Which is basically cheating. An
+important detail: The corrected version has no casts, and it returns the
+result of new . That’s important because only the pointer returned by
+ new is imbued as a pointer to the new lifetime, not r . There are no
+side effects affecting the provenance of r , which still points to raw
+memory as far as the language is concerned.],
+  [With that in mind let’s revisit my arena from last time, which does not
+necessarily benefit from the recent changes, not being one of the special
+case C standard library functions:],
+  [template 
+ T \* alloc ( Arena \* a , ptrdiff\_t count = 1 ) 
+ { 
+ ptrdiff\_t size = sizeof ( T ); 
+ ptrdiff\_t pad = - ( uintptr\_t ) a -\> beg & ( alignof ( T ) - 1 ); 
+ assert ( count end - a -\> beg - pad ) \/ size ); \/\\/ OOM policy 
+ T \* r = ( T \* )( a -\> beg + pad ); 
+ a -\> beg += pad + count \* size ; 
+ for ( ptrdiff\_t i = 0 ; i],
+  [class="highlight"\> template 
+ T \* alloc ( Arena \* a , ptrdiff\_t count = 1 ) 
+ { 
+ ptrdiff\_t size = sizeof ( T ); 
+ ptrdiff\_t pad = - ( uintptr\_t ) a -\> beg & ( alignof ( T ) - 1 ); 
+ assert ( count end - a -\> beg - pad ) \/ size ); \/\\/ OOM policy 
+ void \* r = a -\> beg + pad ; 
+ a -\> beg += pad + count \* size ; 
+ return new ( r ) T \[ count \]{}; 
+ }],
+  [Wow… that’s actually much better anyway. No explicit casts, no loop. Why
+didn’t I think of this in the first place? The catch is I can’t forward
+constructor arguments, emplace-style — the part that gave me the trouble
+with perfect forwarding — but that’s for the best. Forwarding more than
+once was unsound, made more obvious by new\[\] .],
+  [Caveat: This only works starting in C++20, and strictly with operator
+new\[\](size\_t, void \*) . Any other placement new\[\] may require array
+overhead — e.g. it prepends an array size so that delete\[\] can run
+non-trivial destructors — which is unknowable and therefore impossible to
+provide or align correctly. Overhead for placement new\[\] is nonsense, of
+course, but as of this writing, all three major C++ compilers do it and
+essentially have broken custom placement new\[\] .],
+  [Since I’m thinking about lifetimes, what about the other end? My arena
+does not call destructors, by design, and starts new lifetimes on top of
+objects that are technically still alive. Is that undefined behavior? As
+far as I can tell this is allowed , even for non-trivial destructors,
+with the caveat that it might leak resources. In this case the resource is
+memory managed by the arena, so that’s fine of course.],
+  [So addressing pointer provenance also produced a nicer definition. What a
+great result from reading that book! While researching, I noticed Jonathan
+Müller, who personally gave me great advice and feedback on my previous
+article, talked about lifetimes just a couple weeks later. I
+recommend both.],
 ),
   insert-map: (:),
-  word-count: 1002,
+  word-count: 787,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -691,7 +1047,7 @@ Apache 2.0 license. The name, “Commons Clause”, is also disingenuous, hijack
 language used by respected entities like Creative Commons. In truth, the Commons
 Clause serves to remove software from the commons 1 . Combining these
 problems gives you language like “Apache+Commons Clause”, which is easily
-confused with [Apache Commons][apache-commons].],
+confused with \[Apache Commons\]\[apache-commons\].],
   [Projects using the Commons Clause have also been known to describe their license
 as “permissive” or “open”, some even calling their software “open source”. This
 is dishonest. FOSS refers to “free and open source software”. The former, free
@@ -723,7 +1079,7 @@ so on. However, they’ve rolled it back, and Dgraph is now using the Apache 2.0
 license with no modifications. Thank you!],
   [id="fn:1"\>],
   [This is why I often refer to it as the “Anti-Commons Clause”, though I felt that was a bit too Stallman-esque for this article.
-[apache-commons]: http:\/\/commons.apache.org/   ↩︎],
+\[apache-commons\]: http:\/\/commons.apache.org\/   ↩︎],
   [id="fn:2"\>],
   [Free as in freedom, not as in free beer.  ↩︎],
 ),
@@ -800,6 +1156,8 @@ robust code. They certainly have no place in systems programming.],
   edited-for-length: false,
   debug-mode: false,
 )
+
+  #pull-quote([Strictly for the purpose of illustrating my point, however, consider that everything which happens here is explicit, opt-in to the writer, and obvious to the reader.], [Drew DeVault])
 
 }
 
@@ -925,7 +1283,7 @@ protests show no signs of slowing. Unfortunately, China shows no signs of
 slowing their crackdown either, and have been consistently escalating the
 matter. The police are now threatening to use live rounds on the
 protesters, 24 and people are already being shot in the
-streets. 25 China is going to kill the protesters, [again][tiananmen].],
+streets. 25 China is going to kill the protesters, \[again\]\[tiananmen\].],
   [The third demand — the retraction of the characterization of the
 demonstrations as “riots” — and the government’s refusal to meet it,
 conveys a lot about China’s true intentions. Chinese law defines rioting as a
@@ -1001,7 +1359,7 @@ call for an ultimatum to protect our allies from slaughter.],
   [https:\/\/focustaiwan.tw/news/acs/201906270014.aspx   ↩︎],
   [id="fn:24"\>],
   [Hong Kong police move on university campus, threaten live rounds, retreat before growing flames , The Washington Post, 17 November 2019
-[tiananmen]: https:\/\/en.wikipedia.org/wiki/1989\_Tiananmen\_Square\_protests   ↩︎],
+\[tiananmen\]: https:\/\/en.wikipedia.org/wiki/1989\_Tiananmen\_Square\_protests   ↩︎],
   [id="fn:25"\>],
   [Source: Video (graphic)   ↩︎],
   [id="fn:26"\>],
@@ -1014,6 +1372,8 @@ call for an ultimatum to protect our allies from slaughter.],
   [List of countries by GDP (nominal) - Wikipedia   ↩︎],
 ),
   insert-map: (:),
+  inline-pq: pull-quote([It’s beyond the scope of this article, but it’ll suffice to say that the United Kingdom was brutal and out of line, and the end result is that Hong Kong became a British colony.], [Drew DeVault]),
+  inline-pq-idx: 33,
   word-count: 2195,
   edited-for-length: false,
   debug-mode: false,
@@ -1071,6 +1431,186 @@ great hammer, but you shouldn’t nail screws to the wall.],
 ),
   insert-map: (:),
   word-count: 527,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+}
+
+{
+  #standard-article(
+  title: [Speculations on arenas and non-trivial destructors],
+  author: [Chris Wellons (null program)],
+  source-name: [Chris Wellons (null program)],
+  images: (),
+  paragraphs: (
+  [As I continue to reflect on arenas and lifetimes in C++, I realized],
+  [that dealing with destructors is not so onerous. In fact, it does not even],
+  [impact my established arena usage ! That is, implicit RAII-style],
+  [deallocation at scope termination, which works even in plain old C. With a],
+  [small change we can safely place resource-managing objects in arenas, such],
+  [as those owning file handles, sockets, threads, etc. (Though the ideal],
+  [remains resource management avoidance when possible.) We can also],
+  [place traditional, memory-managing C++ objects in arenas, too. Their own],
+  [allocations won’t come from the arena — either because they lack the],
+  [interfaces to do so, or they’re simply ineffective at it ( pmr ) —],
+  [but they will reliably clean up after themselves. It’s all exception-safe,],
+  [too. In this article I’ll update my arena allocator with this new feature.],
+  [The change requires one additional arena pointer member, a bit of overhead],
+  [for objects with non-trivial destructors, and no impact for other objects.],
+  [I continue to title this “speculations” because, unlike arenas in C, I
+have not (yet?) put these C++ techniques into practice in real software. I
+haven’t refined them through use. Even ignoring its standard library as I
+do here, C++ is an enormously complex programming language — far more so
+than C — and I’m less confident that I’m not breaking a rule by accident.
+I only want to break rules with intention!],
+  [As a reminder here’s where we left things off:],
+  [template 
+ T \* raw\_alloc ( Arena \* a , ptrdiff\_t count = 1 ) 
+ { 
+ ptrdiff\_t size = sizeof ( T ); 
+ ptrdiff\_t pad = - ( uintptr\_t ) a -\> beg & ( alignof ( T ) - 1 ); 
+ if ( count \>= ( a -\> end - a -\> beg - pad ) \/ size ) { 
+ throw std :: bad\_alloc {}; \/\\/ OOM policy 
+ } 
+ void \* r = a -\> beg + pad ; 
+ a -\> beg += pad + count \* size ; 
+ return new ( r ) T \[ count \]{}; 
+ }],
+  [I used throw when out of memory mainly to emphasize that this works, but
+you’re free to pick whatever is appropriate for your program. Remember,
+that’s the entire allocator, including implicit deallocation, sufficient
+to fulfill the allocation needs for most programs, though they must be
+designed for it. Also note that it’s now raw\_alloc , as we’ll be writing
+a new, enhanced alloc that builds upon this one.],
+  [Also a reminder on usage, I’ll draw on an old example, updated for C++:],
+  [class="highlight"\> wchar\_t \* towidechar ( Str , Arena \* ); \/\\/ convert to UTF-16 
+ Str slurpfile ( wchar\_t \* path ); \/\\/ read an entire file 
+ Slice split ( Str , char , Arena \* ); \/\\/ split on delimiter],
+  [Slice getlines ( Str path , Arena \* perm , Arena scratch ) 
+ { 
+ \/\\/ Use scratch for path conversion, auto-free on return 
+ wchar\_t \* wpath = towidechar ( path , & scratch );],
+  [\/\\/ Use perm for file contents, which are returned 
+ Str buf = slurpfile ( wpath , perm );],
+  [\/\\/ Use perm for the slice, pointing into buf 
+ return split ( buf , '\\n' , perm ); 
+ }],
+  [Changes to scratch do not persist after getlines returns, so objects
+allocated from that arena are automatically freed on return. So far this
+doesn’t rely on C++ RAII features, just simple value semantics. It works
+well because all the objects in question have trivial destructors. But
+suppose there’s a resource to manage:],
+  [class="highlight"\> struct TcpSocket { 
+ int socket = :: socket ( AF\_INET , SOCK\_STREAM , 0 ); 
+ TcpSocket () = default ; 
+ TcpSocket ( TcpSocket & ) = delete ; 
+ void operator = ( TcpSocket & ) = delete ; 
+ \/\\/ TODO: move ctor/operator 
+ ~ TcpSocket () { if ( socket \>= 0 ) close ( socket ); } 
+ operator int () { return socket ; } 
+ };],
+  [If we allocate a TcpSocket in an arena, including as a member of another
+object, the destructor will never run unless we call it manually. To deal
+with this we’ll need to keep track of objects requiring destruction, which
+we’ll do with a linked list of destructors, forming a LIFO stack:],
+  [Each Dtor points to a homogeneous array, a count (typically one), and a
+pointer to a function that knows how to destroy these objects. The linked
+list itself is heterogeneous, with dynamic type. The function pointer is
+like a kind of type tag. The dtor functions will be generated using a
+template function:],
+  [class="highlight"\> template 
+ void destroy ( void \* ptr , ptrdiff\_t count ) 
+ { 
+ T \* objects = ( T \* ) ptr ; 
+ for ( ptrdiff\_t i = count - 1 ; i \>= 0 ; i -- ) { 
+ objects \[ i \]. ~ T (); 
+ } 
+ }],
+  [Notice it destroys end-to-beginning, in reverse order that these objects
+would be instantiated by placement new\[\] . It’s essentially a placement
+ delete\[\] . An arena initializes with an empty list of Dtors as a new
+member:],
+  [\/\\/ ...],
+  [};],
+  [There are two different ways to construct an arena: over a block of raw
+memory (unowned), or from an existing arena to borrow a scratch arena over
+its free space. So that’s two constructors:],
+  [Arena ( char \* mem , ptrdiff\_t len ) : beg { mem }, end { mem + len } {} 
+ Arena ( Arena & a ) : beg { a . beg }, end { a . end } {}],
+  [\/\\/ ... 
+ };],
+  [Finally a destructor that pops the Dtor linked list until empty, which
+runs the destructors in reverse order when the arena is destroyed:],
+  [void operator = ( Arena & ) = delete ; \/\\/ rule of three],
+  [~ Arena () 
+ { 
+ while ( dtors ) { 
+ Dtor \* dead = dtors ; 
+ dtors = dead -\> next ; 
+ dead -\> dtor ( dead -\> objects , dead -\> count ); 
+ } 
+ } 
+ };],
+  [(Note: This should probably use a local variable instead of manipulating
+the dtors member directly. Updates to dtors are potentially visible to
+destructors, inhibiting optimization.) The new, enhanced alloc building
+upon raw\_alloc :],
+  [class="highlight"\> template 
+ T \* alloc ( Arena \* a , ptrdiff\_t count = 1 ) 
+ { 
+ if ( \_\_has\_trivial\_destructor ( T ) || ! count ) { 
+ return raw\_alloc ( a , count ); 
+ }],
+  [Dtor \* dtor = raw\_alloc ( a ); \/\\/ allocate first 
+ T \* r = raw\_alloc ( a , count ); 
+ dtor -\> next = a -\> dtors ; 
+ dtor -\> objects = r ; 
+ dtor -\> count = count ; 
+ dtor -\> dtor = destroy ;],
+  [a -\> dtors = dtor ; 
+ return r ; 
+ }],
+  [I’m using the non-standard \_\_has\_trivial\_destructor built-in supported
+by all major C++ implementations, meaning we still don’t need the C++
+standard library, but std::is\_trivially\_destructible is the usual
+tool here. LLVM is pushing \_\_is\_trivially\_destructible instead,
+but it’s not supported by GCC until GCC 16 .],
+  [Since it’s so simple to do it, if the count is zero then it doesn’t care
+about non-trivial destruction, as there’s nothing to destroy. Things get
+more interesting for a non-zero number of non-trivially destructible
+objects. First allocate a Dtor, important because failing to allocate it
+second would cause a leak (no Dtor entry in place). Then allocate the
+array, attach it to the Dtor, attach the Dtor to the arena, registering
+the objects for cleanup.],
+  [If a constructor throws, placement new\[\] will automatically destroy
+objects that have been created so far — i.e. the real placement delete\[\] 
+— before returning, so that case was already covered at the start.],
+  [With a little more cleverness we could omit the objects pointer and
+discover the array using pointer arithmetic off the Dtor object itself.
+That’s tricky (consider alignment), and generally unnecessary, so I didn’t
+worry about it. With arenas, allocator overhead is already well below that
+of conventional allocation, so slack is plentiful. Chances are we will
+also never need an array of non-trivially destructible objects, and so
+we could probably omit count , then write a single-object allocator that
+forwards constructor arguments (e.g. a handles to the resource to be
+managed). That involves no new concepts, and I leave it as an exercise for
+the reader.],
+  [With that in place, we could now allocate an array of TcpSockets:],
+  [These sockets will all be closed when example exits via their singular
+Dtor entry on scratch . When calling this example with an arena:],
+  [This invokes the copy constructor, creating a scratch arena with an empty
+ dtors list to be passed into example . Objects existing in \*perm will
+not be destroyed by example because dtors isn’t passed in. If we had
+passed a pointer to an arena , the Arena constructor isn’t invoked, so
+the callee uses the caller’s arena, pushing its Dtors onto the callee’s
+list.],
+  [In other words, the interface hasn’t changed! That’s the most exciting
+part for me. This by-copy, by-pointer interfacing has really grown on me
+the past two years.],
+),
+  insert-map: (:),
+  word-count: 1648,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -1198,8 +1738,8 @@ low-level stuff like scheduling and memory management.],
   images: (),
   paragraphs: (
   [One of the tricky bits about Ansible is that new features in the "language" always require the latest version of Ansible itself. And, while logical, this can easily bite you. Here's an example:],
-  [class="highlight"\> TASK [deploy\_hate-language-modeling\_systemd\_start : just force systemd to re-execute itself (2.8 and above)] \*\*\* 
- fatal : [ aws\_master2 ]: FAILED! =\> {"changed" : false , "msg" : " Unsupported parameters for (systemd) module: daemon\_reexec Supported parameters include: daemon\_reload, enabled, masked, name, no\_block, state, user" } 
+  [class="highlight"\> TASK \[deploy\_hate-language-modeling\_systemd\_start : just force systemd to re-execute itself (2.8 and above)\] \*\*\* 
+ fatal : \[ aws\_master2 \]: FAILED! =\> {"changed" : false , "msg" : " Unsupported parameters for (systemd) module: daemon\_reexec Supported parameters include: daemon\_reload, enabled, masked, name, no\_block, state, user" } 
  to retry, use : --limit \@/home/ubuntu/ansible/playbook\_deploy\_hate-language-modeling\_master.retry],
   [What that translates to is that Ansible itself doesn't know how to use the parameter daemon\_reexec . And when you've been using an Ansible feature successfully and then it doesn't work on the server, that usually is a rock solid signal "update ansible".],
   [Here's how to do this on Ubuntu:],
@@ -1285,23 +1825,9 @@ low-level stuff like scheduling and memory management.],
   ],
   [
     brief-group((
-      brief-item([Axel Rauschmayer (2ality)], source-name: [Axel Rauschmayer (2ality)], [TypeScript’s satisfies operator lets us check the type of a value (mostly) without influencing it. In this blog post, we examine how exactly it works and where it’s useful.])
-
-      brief-item([Thibaud Esnouf], source-name: [Drivy / Getaround Tech], [At Drivy, we have defined our very own design system.
-This system describes our visual guidelines and rules, and is composed of visual web components.
-For each component, we have created a React implementation that could easily be used by our design team to build a web site documentation (thanks to MDX ).])
-
-      brief-item([Axel Rauschmayer (2ality)], source-name: [Axel Rauschmayer (2ality)], [In this blog post, we look at how WebAssembly has become an ecosystem for many programming languages and what technologies enable that.])
-
-      brief-item([The Hacker News], source-name: [The Hacker News (cybersecurity)], [Two more GitHub Actions workflows have become the latest to be compromised by credential-stealing malware by a threat actor known as TeamPCP, the cloud-native cybercriminal operation also behind the Trivy supply chain attack.
-The workflows, both maintained by the supply chain security company Checkmarx, are listed below -
-
-checkmarx/ast-github-action
-checkmarx/kics-github-action
-
-Cloud security])
-
-      brief-item([Scott Johnson (fuzzyblog)], source-name: [Scott Johnson (fuzzyblog)], [class="center"\> 
+      [#brief-item([The Hacker News], source-name: [The Hacker News (cybersecurity)], [Some weeks in security feel loud. This one feels sneaky. Less big dramatic fireworks, more of that slow creeping sense that too many people are getting way too comfortable abusing things they probably shouldn’t even be touching.
+There’s a little bit of everything in this one, too. Weird delivery tricks, old problems coming back in slightly worse forms, shady infrastructure doing])],
+      [#brief-item([Scott Johnson (fuzzyblog)], source-name: [Scott Johnson (fuzzyblog)], [class="center"\> 
 
 Your Rails 6 master key is located in:
 
@@ -1312,19 +1838,14 @@ class="highlight"\> config/credentials/production.key
 
 and it is likely stored as a hidden file. I believe that this is generated when the project is generated but I'm not 100% certain.
 
-See this Reddit post .])
-
-      brief-item([Axel Rauschmayer (2ality)], source-name: [Axel Rauschmayer (2ality)], [In this blog post, we explore how we can style text that we log to the console in Node.js.
-
-Some of the examples use a Unix shell but most of the code should also work on Windows.])
-
-      brief-item([The Hacker News], source-name: [The Hacker News (cybersecurity)], [Some weeks in security feel loud. This one feels sneaky. Less big dramatic fireworks, more of that slow creeping sense that too many people are getting way too comfortable abusing things they probably shouldn’t even be touching.
-There’s a little bit of everything in this one, too. Weird delivery tricks, old problems coming back in slightly worse forms, shady infrastructure doing])
-
-      brief-item([Axel Rauschmayer (2ality)], source-name: [Axel Rauschmayer (2ality)], [Starting with v23.6.0 , Node.js supports TypeScript without any flags. This blog post explains how it works and what to look out for.])
-
-      brief-item([Faouz EL FASSI], source-name: [Drivy / Getaround Tech], [In the first of this series of blog posts about Data-Warehousing, I’ve been talking about how we use and manage our Amazon Redshift cluster at Drivy.])
-
+See this Reddit post .])],
+      [#brief-item([Axel Rauschmayer (2ality)], source-name: [Axel Rauschmayer (2ality)], [TypeDoc now lets us refer to parts of other files via {\@includeCode} . In this blog post, I explain how that works and why it’s useful.])],
+      [#brief-item([The Hacker News], source-name: [The Hacker News (cybersecurity)], [Threat actors with ties to Iran successfully broke into the personal email account of Kash Patel, the director of the U. S. Federal Bureau of Investigation (FBI), and leaked a cache of photos and other documents to the internet.
+Handala Hack Team, which carried out the breach, said on its website that Patel "will now find his name among the list of successfully hacked victims." In a statement])],
+      [#brief-item([Christophe Yammouni], source-name: [Drivy \/ Getaround Tech], [External third-party-services APIs are useful: they allow you to benefit from the expertise and knowledge that others have acquired on a specific subject - a subject which is not your area of expertise and not the problem in hand. It would take too much time and effort to build and maintain such a service yourself.])],
+      [#brief-item([The Hacker News], source-name: [The Hacker News (cybersecurity)], [The U. S. Cybersecurity and Infrastructure Security Agency (CISA) on Friday added a critical security flaw impacting F5 BIG-IP Access Policy Manager (APM) to its Known Exploited Vulnerabilities (KEV) catalog, citing evidence of active exploitation.
+The vulnerability in question is CVE-2025-53521 (CVSS v4 score: 9.3), which could allow a threat actor to achieve remote code execution.
+"When a])],
     ))
   ],
 ), ruled-indices: (1, 2,))

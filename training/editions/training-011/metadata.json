@@ -1,29 +1,29 @@
 {
   "config_id": "training-011",
   "archetype": "ai-ml-focus",
-  "date_generated": "2026-03-30T01:19:11.746311+00:00",
+  "date_generated": "2026-03-30T01:44:03.452942+00:00",
   "page_target": 8,
-  "num_pages": 25,
+  "num_pages": 35,
   "num_items": 24,
   "feeds_contributed": [
-    "Microsoft Research Blog",
-    "Drivy / Getaround Tech",
-    "Drew DeVault",
-    "Matthew Green (Cryptography)",
-    "Laravel News",
-    "The Hacker News (cybersecurity)",
-    "Itamar Turner-Trauring",
-    "Thumbtack Engineering",
-    "Scott Johnson (fuzzyblog)",
-    "BigCommerce Engineering",
-    "Tinder Tech",
-    "InfoQ",
     "Distill",
-    "Axel Rauschmayer (2ality)",
+    "Microsoft Research Blog",
+    "Tinder Tech",
+    "Chris Wellons (null program)",
+    "BigCommerce Engineering",
+    "Itamar Turner-Trauring",
+    "Drivy / Getaround Tech",
+    "InfoQ",
     "Wilfred Hughes",
-    "Chris Wellons (null program)"
+    "Axel Rauschmayer (2ality)",
+    "The Hacker News (cybersecurity)",
+    "Thumbtack Engineering",
+    "Drew DeVault",
+    "Scott Johnson (fuzzyblog)",
+    "Laravel News",
+    "Matthew Green (Cryptography)"
   ],
-  "render_time_s": 0.32,
+  "render_time_s": 0.42,
   "pages": [
     {
       "page_number": 1,
@@ -172,6 +172,66 @@
     {
       "page_number": 25,
       "png_path": "training-011/pages/page-025.png",
+      "width_pt": 612.0,
+      "height_pt": 792.0
+    },
+    {
+      "page_number": 26,
+      "png_path": "training-011/pages/page-026.png",
+      "width_pt": 612.0,
+      "height_pt": 792.0
+    },
+    {
+      "page_number": 27,
+      "png_path": "training-011/pages/page-027.png",
+      "width_pt": 612.0,
+      "height_pt": 792.0
+    },
+    {
+      "page_number": 28,
+      "png_path": "training-011/pages/page-028.png",
+      "width_pt": 612.0,
+      "height_pt": 792.0
+    },
+    {
+      "page_number": 29,
+      "png_path": "training-011/pages/page-029.png",
+      "width_pt": 612.0,
+      "height_pt": 792.0
+    },
+    {
+      "page_number": 30,
+      "png_path": "training-011/pages/page-030.png",
+      "width_pt": 612.0,
+      "height_pt": 792.0
+    },
+    {
+      "page_number": 31,
+      "png_path": "training-011/pages/page-031.png",
+      "width_pt": 612.0,
+      "height_pt": 792.0
+    },
+    {
+      "page_number": 32,
+      "png_path": "training-011/pages/page-032.png",
+      "width_pt": 612.0,
+      "height_pt": 792.0
+    },
+    {
+      "page_number": 33,
+      "png_path": "training-011/pages/page-033.png",
+      "width_pt": 612.0,
+      "height_pt": 792.0
+    },
+    {
+      "page_number": 34,
+      "png_path": "training-011/pages/page-034.png",
+      "width_pt": 612.0,
+      "height_pt": 792.0
+    },
+    {
+      "page_number": 35,
+      "png_path": "training-011/pages/page-035.png",
       "width_pt": 612.0,
       "height_pt": 792.0
     }
@@ -413,6 +473,101 @@
         {
           "page_number": 25,
           "png_path": "training-011/pages/page-025.png",
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        }
+      ]
+    },
+    {
+      "spread_id": "s-011-014",
+      "edition_id": "training-011",
+      "type": "spread",
+      "pages": [
+        {
+          "page_number": 26,
+          "png_path": "training-011/pages/page-026.png",
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_number": 27,
+          "png_path": "training-011/pages/page-027.png",
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        }
+      ]
+    },
+    {
+      "spread_id": "s-011-015",
+      "edition_id": "training-011",
+      "type": "spread",
+      "pages": [
+        {
+          "page_number": 28,
+          "png_path": "training-011/pages/page-028.png",
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_number": 29,
+          "png_path": "training-011/pages/page-029.png",
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        }
+      ]
+    },
+    {
+      "spread_id": "s-011-016",
+      "edition_id": "training-011",
+      "type": "spread",
+      "pages": [
+        {
+          "page_number": 30,
+          "png_path": "training-011/pages/page-030.png",
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_number": 31,
+          "png_path": "training-011/pages/page-031.png",
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        }
+      ]
+    },
+    {
+      "spread_id": "s-011-017",
+      "edition_id": "training-011",
+      "type": "spread",
+      "pages": [
+        {
+          "page_number": 32,
+          "png_path": "training-011/pages/page-032.png",
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_number": 33,
+          "png_path": "training-011/pages/page-033.png",
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        }
+      ]
+    },
+    {
+      "spread_id": "s-011-018",
+      "edition_id": "training-011",
+      "type": "spread",
+      "pages": [
+        {
+          "page_number": 34,
+          "png_path": "training-011/pages/page-034.png",
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_number": 35,
+          "png_path": "training-011/pages/page-035.png",
           "width_pt": 612.0,
           "height_pt": 792.0
         }

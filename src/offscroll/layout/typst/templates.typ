@@ -73,8 +73,9 @@
   hero-image: none,
   hero-caption: none,
   deck: none,
-  lead-text: "",
-  lead-first-alpha: 0,
+  lead-pre: none,
+  lead-cap: none,
+  lead-rest: none,
   body-paragraphs: (),
   inline-pq: none,
   inline-pq-idx: -1,
@@ -133,11 +134,8 @@
     #{
       set text(10.5pt)
       set par(leading: 0.5em, justify: true)
-      if lead-text != "" {
-        let pre = lead-text.slice(0, lead-first-alpha)
-        let cap-letter = lead-text.slice(lead-first-alpha, lead-first-alpha + 1)
-        let rest = lead-text.slice(lead-first-alpha + 1)
-        [#pre#drop-cap(cap-letter)#rest]
+      if lead-cap != none {
+        [#lead-pre#drop-cap(lead-cap)#lead-rest]
       }
     }
     #v(0.08in)

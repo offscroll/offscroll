@@ -1,24 +1,24 @@
 {
   "config_id": "training-001",
   "archetype": "finance-focus",
-  "date_generated": "2026-03-30T01:18:04.883391+00:00",
+  "date_generated": "2026-03-30T01:42:44.687057+00:00",
   "page_target": 16,
-  "num_pages": 16,
+  "num_pages": 15,
   "num_items": 48,
   "feeds_contributed": [
+    "Bloomberg",
+    "The New Yorker",
+    "NPR Planet Money",
+    "Seeking Alpha",
+    "Harvard Business Review",
+    "Forbes Business",
+    "A Wealth of Common Sense",
     "Gastropod",
     "Vintage Guitar Magazine",
-    "Monica Dinculescu",
-    "The New Yorker",
-    "Seeking Alpha",
     "Babbel Tech Blog",
-    "NPR Planet Money",
-    "Forbes Business",
-    "Bloomberg",
-    "Harvard Business Review",
-    "A Wealth of Common Sense"
+    "Monica Dinculescu"
   ],
-  "render_time_s": 0.44,
+  "render_time_s": 0.41,
   "pages": [
     {
       "page_number": 1,
@@ -107,12 +107,6 @@
     {
       "page_number": 15,
       "png_path": "training-001/pages/page-015.png",
-      "width_pt": 612.0,
-      "height_pt": 792.0
-    },
-    {
-      "page_number": 16,
-      "png_path": "training-001/pages/page-016.png",
       "width_pt": 612.0,
       "height_pt": 792.0
     }
@@ -259,19 +253,6 @@
         {
           "page_number": 15,
           "png_path": "training-001/pages/page-015.png",
-          "width_pt": 612.0,
-          "height_pt": 792.0
-        }
-      ]
-    },
-    {
-      "spread_id": "s-001-009",
-      "edition_id": "training-001",
-      "type": "solo",
-      "pages": [
-        {
-          "page_number": 16,
-          "png_path": "training-001/pages/page-016.png",
           "width_pt": 612.0,
           "height_pt": 792.0
         }

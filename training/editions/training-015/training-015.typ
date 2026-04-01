@@ -28,8 +28,9 @@
   author: [MongoDB Blog],
   source-name: [MongoDB Blog],
   deck: [I spun it up, built my first application, and got a feature working.],
-  lead-text: "When I first started using MongoDB, I didn’t have a plan beyond “install it and hope for the best.” I had read about how flexible it was, and it felt like all the developers swore by it, so I figured I’d give it a shot. I spun it up, built my first application, and got a feature working.",
-  lead-first-alpha: 0,
+  lead-pre: [],
+  lead-cap: [W],
+  lead-rest: [hen I first started using MongoDB, I didn’t have a plan beyond “install it and hope for the best.” I had read about how flexible it was, and it felt like all the developers swore by it, so I figured I’d give it a shot. I spun it up, built my first application, and got a feature working.],
   body-paragraphs: (
   [But I felt like something was missing.],
   [It felt clunky. My queries were longer than I expected, and performance wasn’t great; I had the sense that I was fighting with the database instead of working with it. After a few projects like that, I began to wonder if maybe MongoDB wasn’t for me.],
@@ -121,7 +122,7 @@
 '011948003071013' \>\>\> g.food.fruit()
 'Cytryna' \>\>\> g.internet.http\_method()
 'PUT' \>\>\> g.science.math\_formula()
-'A = (h \* (a + b)) / 2'],
+'A = (h \* (a + b)) \/ 2'],
   [Combining data gives you a vast field for experimentation. For example, you can create mock (female) Visa (Maestro, MasterCard) credit card holders:],
   [\>\>\> user = Personal('en') \>\>\> def get\_card (sex='female'):
  ... owner = {
@@ -155,7 +156,7 @@
  \>\>\> text = Text('en') \>\>\> text.text(quantity=3) 'Language includes means for creating light parallel processes and their interactions via exchanging asynchronous messages according to the actors’ model. Python supports several programming paradigms, including structural, object-oriented, functional, imperative and aspect-oriented. For instance, some functions that use comparison of examples to choose one calculating option or extracting data points looks similar to an equation.'],
   [You can get a list of random words:],
   [\>\>\> text = Text('pt-br')
- \>\>\> text.words(quantity=5) ['poder', 'de', 'maior', 'só', 'cima']],
+ \>\>\> text.words(quantity=5) \['poder', 'de', 'maior', 'só', 'cima'\]],
   [Generate a street name:],
   [\>\>\> from mimesis import Address
  \>\>\> address = Address('en') \>\>\> address.address()
@@ -254,6 +255,171 @@
 
 {
   #standard-article(
+  title: [The Hidden Layer of Analytics: How QA Builds Trust in Data],
+  author: [Gayatri Panganti],
+  source-name: [Helpshift Engineering],
+  images: (),
+  paragraphs: (
+  [Every accurate metric is backed by countless validations, events checks and integrity tests in the background.],
+  [Quality Assurance in the data-driven systems extends beyond UI validation and backend verification. Such systems rely heavily on data precision and accuracy.],
+  [A recent QA focused on validating a productivity analytics framework, ensuring that every event, metric and data flow accurately represented real-world user behaviour. The process was primarily manual , involving live simulations, event validation and detailed metric verification across environment which emphasised logic and data accuracy over automation.],
+  [Simulating Real-World Scenarios],
+  [Extensive simulations were conducted for multiple user roles as Agent , Supervisor , Admin and Super admin . Each governed by specific dashboard permissions and access rules.],
+  [Actions tested included :],
+  [Logging in and logging out from the dashboard],
+  [Marking presence states such as Available , Online, Or Away],
+  [Switching between workzones],
+  [Navigating through dashboards],
+  [These test conditions generated diverse event streams used to verify how accurately the system captured and processed state transitions.],
+  [Parallel Event Validation Through Kafka],
+  [Real-time validation was a key aspect of this QA process. Event streams were observed directly through kafka consoles, enabling verification of generated events and their payloads, data structures, and JSON fields as actions were executed.],
+  [Each dashboard or SDK action was simulated while the corresponding kafka stream was monitored in parallel, confirming that events triggered correctly and carried accurate data information. Testing covered sandbox, staging, and production environments, ensuring reliability and consistency across all setups.],
+  [Data Verification with Metabase and Calculations],
+  [After events were processed by the analytics pipeline, metabase queries were used to validate computed metrics against expected outcomes from simulations.],
+  [To cross-check results, timestamps (ex. UTC vs IST) were analysed and durations recalculated according to the defined formulas. This combinations of query-based data verification with calculated data confirmed the accuracy of each metric and its alignment with underlying event data.],
+  [Validation extended to multiple workzones to ensure consistent data aggregation and metric computation globally. The process confirmed that analytics logic produced uniform results regardless of context and configuration.],
+  [Edge-Case and Event-Order Testing],
+  [The QA process also included detailed validation of edge conditions such as:],
+  [Network interruptions during event capture],
+  [Out-of-order or missing event sequences],
+  [Duplicate triggers or delayed events],
+  [Since event order and timing directly affect metric accuracy, verifying event sequence integrity was essential to maintaining trustworthy analytics output.],
+  [Understanding and Validating Metric Types],
+  [Three core catagories of metrics were validated through this effort :],
+  [Simple Counter Metrics : Direct counts of user or system actions.],
+  [Complex Metrics : Aggregated or state-based computations across multiple events or entities.],
+  [Timer Metrics : Duration based calculations between event pairs, used to measure productivity or performance trends.],
+  [Each category demanded tailored validation to confirm that event logic, aggregation and computation aligned with business definitions and customer expectations.],
+  [Why Accuracy Matters?],
+  [Accurate data builds confidence. Every decision informed by analytics relies on the assumption that metrics reflect reality. When analytics are powered by real-time event tracking and computed metrics, even minor errors in the event capture, time-stamping or sequence logic can lead to misleading conclusions.],
+  [Through structured simulations, real-time kafka validation and detailed data verification, this QA effort ensured that the analytics system produced metrics users could trust.],
+  [QA for analytics systems requires end-to-end validation from event capture to final metric output.],
+  [Kafka-based event monitoring provides clear visibility into live data accuracy.],
+  [Role-based and multi-environment testing ensures consistency across contexts.],
+  [Timestamp precision and event sequencing are critical for data reliability.],
+  [Thorough QA directly strengthens business trust and decision quality.],
+  [Challenges and Limitations in Analytics QA],
+  [Validating analytics isn’t always straightforward. Testing event-based systems involves several obstacles that demand patience and precision.],
+  [Challenges:],
+  [Data Dependency & Delays : QA must account for delays as events take time to reflect in the system..],
+  [Environment Differences : Behaviour can vary across staging, sandbox, and production environments due to distinct configurations or filters.],
+  [Test Data Management : Managing and maintaining realistic test data across multiple workzones and Time Zones can be tedious and error-prone.],
+  [Manual Validation Load : With manual validations, coverage and consistency rely heavily on detailed documentation and repetition.],
+  [Limitations:],
+  [Gaps in simulations : Some metrics depend on large-scale or real-time user behaviour, which can’t always be perfectly simulated in test environments.],
+  [Human Factors : Manual interpretation introduces the risk of human error, especially when analysing large event payloads or long sessions.],
+  [Dynamic Systems : Frequent updates in data models or computation logic can impact consistency, calling for continuous revalidation.],
+  [Validating analytics pipelines is part science, part investigation. It demands attention to data logic, event behaviour, timing and the patience to trace results back to their source.],
+  [Through complex and time-intensive, such QA ensures that what businesses see on their dashboards truly represents what happens in reality. In the end, that accuracy is what turns analytics from just numbers into trust.],
+  [The Hidden Layer of Analytics: How QA Builds Trust in Data was originally published in helpshift-engineering on Medium, where people are continuing the conversation by highlighting and responding to this story.],
+),
+  insert-map: (:),
+  word-count: 844,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+}
+
+{
+  #standard-article(
+  title: [Using Clojure channels to increase throughput],
+  author: [Abhinav Dubey],
+  source-name: [Helpshift Engineering],
+  images: (),
+  paragraphs: (
+  [When building systems that process large volumes of messages synchronously, performance bottlenecks can quickly become a challenge specially with single-threaded designs. In this post, we’ll look at how leveraging worker threads in a Clojure-based Kafka consumer can significantly boost throughput & reduce total processing time. Using simple concurrency primitives, it’s possible to achieve parallelism & scale gracefully, all while keeping the codebase clean & maintainable. We’ll start with a baseline, introduce worker threads using Clojure’s core.async & measure the impact.],
+  [Setup & Context],
+  [Kafka & Zookeeper],
+  [For observability: Grafana],
+  [Kafka producer: A simple script that sends messages to a Kafka topic at a configurable rate (messages per minute) for a fixed duration. After each event is pushed, a counter metric is emitted],
+  [Kafka consumer: A simple script that listens to a topic & consumes messages & simulates processing time finding square-root of a number (henceforth, assume that it takes ~1 second to find the square root) . A counter metric is emitted after processing each message],
+  [The Baseline: Single-Threaded Consumer],
+  [If each message takes t seconds to process & there are n messages, total processing time becomes n × t seconds. This provides a clean baseline to evaluate the impact of using channel moving forward.],
+  [Adding workers with core.async],
+  [Values are conveyed on queue-like channels. By default channels require producer and consumer to rendezvous for the transfer of a value through the channel 
+ https:\/\/clojuredocs.org/clojure.core.async],
+  [To improve throughput, we introduce parallelism using Clojure’s core.async channels. Messages from Kafka are fed into a channel, & multiple worker threads read from this channel to process messages concurrently],
+  [Here, we used \>!! ( blocking put) & \<!! ( blocking take) to communicate via channels & future to execute the business-logic on a separate thread],
+  [Who gets blocked & when :],
+  [The thread putting message into the channel will get blocked when there is no space in the buffer],
+  [The thread consuming message from the channel will get blocked when there is no message in the buffer],
+  [The producer script runs for 5 minutes, producing 200 messages per minute into a topic],
+  [Single-threaded consumer: Time taken to process 1k events 16min 30sec],
+  [With 3 workers using core.async : Time taken to process 1k events 5min 42sec ( 65% faster than Single-threaded)],
+  [With 10 workers using core.async: Time taken to process 1k events 5min (70 % faster than Single-threaded & 12% faster than 3 worker-setup)],
+  [Please note that we are using just one machine to benchmark the single & multi threaded consumer setup, this might not be ideal in production but is suffice to gauge the impact of adding worker threads on throughput & processing-time.],
+  [Kafka consumer : after adding channels The green metric is emitted by kafka-producer. The yellow metric is emitted by the kafka consumer. In the leftmost, we have the single-threaded setup, followed by 3-worker setup & lastly 10-worker setup],
+  [Consider another scenario, where the producer script runs for 5 minutes again, but this time it produces 500 messages per minute into the topic],
+  [Single-threaded consumer: Time taken to process 2.5k events 40 min 28sec],
+  [With 3 workers threads: Time taken to process 2.5k events 13min 39sec ( 66% faster than Single-threaded)],
+  [With 10 workers threads: Time taken to process 2.5k events 5min 6sec (87 % faster than Single-threaded & 62% faster than 3 worker-setup)],
+  [Comparing load averages],
+  [Comparing 1 minute & 5 minute load-average of single-threaded & 10-worker thread consumer],
+  [One of the primary trade-off between single-threaded & multi-threaded consumers lies in balancing system load with processing throughput.],
+  [While multi-threaded consumers provide higher parallelism & faster event handling, they also lead to increased CPU usage & a noticeably higher system load average. On the other hand, single-threaded consumers maintain a lower & more predictable system load but process events at a slower rate.],
+  [During the benchmarking, it was observed that transitioning to a multi-threaded model caused the load average to rise significantly. This increase — measured using the uptime command — highlights the computational overhead introduced by concurrency & highlights the need to tune thread count & workload based on the system’s capacity],
+  [Analysing the logs & threads],
+  [Consider the below function gets invokes by the kafka consumer for processing each message],
+  [(defn process-event
+ \[event\]
+ (let \[start-time (System/currentTimeMillis)\]],
+  [;; simulate work : find square-root
+ (dotimes \[\_ (\* 10000 10000)\]
+ (Math/sqrt (\* 1000 1000)))],
+  [;; logging 
+ (let \[end-time (System/currentTimeMillis)
+ elapsed-seconds (\/ (- end-time start-time) 1000.0)\]
+ (println {:id (:id event)
+ :thread (.getName (Thread/currentThread))
+ :duration elapsed-seconds}))],
+  [;; increment metric
+ (clj-statsd/increment "event-processing.done")))],
+  [Below are the logs when run with :],
+  [Single-threaded consumer],
+  [\[INFO\] {:id 1 :thread clojure-agent-send-off-pool-6 :duration 1.001}
+\[INFO\] {:id 2 :thread clojure-agent-send-off-pool-6 :duration 1.000}
+\[INFO\] {:id 3 :thread clojure-agent-send-off-pool-6 :duration 1.002}
+\[INFO\] {:id 4 :thread clojure-agent-send-off-pool-6 :duration 1.000}
+\[INFO\] {:id 5 :thread clojure-agent-send-off-pool-6 :duration 1.001}
+... and so on],
+  [Consumer with 3 worker threads],
+  [\[INFO\] {:id 1 :thread clojure-agent-send-off-pool-9 :duration 1.001}
+\[INFO\] {:id 2 :thread clojure-agent-send-off-pool-7 :duration 1.000}
+\[INFO\] {:id 5 :thread clojure-agent-send-off-pool-8 :duration 1.002}
+\[INFO\] {:id 3 :thread clojure-agent-send-off-pool-9 :duration 1.000}
+\[INFO\] {:id 4 :thread clojure-agent-send-off-pool-7 :duration 1.001}
+... and so on],
+  [Consumer with 10 worker threads],
+  [\[INFO\] {:id 1 :thread clojure-agent-send-off-pool-10 :duration 1.001}
+\[INFO\] {:id 2 :thread clojure-agent-send-off-pool-11 :duration 1.000}
+\[INFO\] {:id 4 :thread clojure-agent-send-off-pool-12 :duration 1.002}
+\[INFO\] {:id 3 :thread clojure-agent-send-off-pool-13 :duration 1.000}
+\[INFO\] {:id 6 :thread clojure-agent-send-off-pool-14 :duration 1.001}
+\[INFO\] {:id 5 :thread clojure-agent-send-off-pool-3 :duration 1.001}
+\[INFO\] {:id 7 :thread clojure-agent-send-off-pool-4 :duration 1.000}
+\[INFO\] {:id 9 :thread clojure-agent-send-off-pool-7 :duration 1.002}
+\[INFO\] {:id 8 :thread clojure-agent-send-off-pool-8 :duration 1.000}
+\[INFO\] {:id 10 :thread clojure-agent-send-off-pool-9 :duration 1.001}
+... and so on],
+  [We can use VisualVM to check the JVM threads, doing this for the setup with 10 workers is shown below :],
+  [Selected only the threads printed in the above logs],
+  [By carefully orchestrating channels & worker threads, we can increase throughput & reduce the total processing time.],
+  [If you have a similar use-case, Clojure’s core.async might be just what you need to scale without sacrificing simplicity.],
+  [We can also infer, from the above VisualVM thread visualizer, that it is a scenario of parallel (& not concurrent) execution by looking at the overlapping running status of multiple threads.],
+  [You can checkout the implementation details here : https:\/\/github.com/abhinavdubey8989/clj-core-async-poc],
+  [Using Clojure channels to increase throughput was originally published in helpshift-engineering on Medium, where people are continuing the conversation by highlighting and responding to this story.],
+),
+  insert-map: (:),
+  word-count: 1052,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+}
+
+{
+  #standard-article(
   title: [MongoDB.local NYC 2025: Definindo o Banco de Dados Ideal para a Era da IA],
   author: [MongoDB Blog],
   source-name: [MongoDB Blog],
@@ -288,256 +454,106 @@
 
 {
   #standard-article(
-  title: [Recurrent Networks Hello World in Clojure with new Deep Diamond RNN support on CPU and GPU],
-  author: [Dragan Djuric],
-  source-name: [Dragan Djuric],
+  title: [Dependency Injection, MVP, and the all reliable Android Studio IDE.],
+  author: [Aleksei Bingham],
+  source-name: [Strava Engineering],
   images: (),
   paragraphs: (
-  [I've been busy in the last period working on new major features in Deep Diamond, one of which
-is the support for Recurrent Neural Networks (RNN). It's not been an easy ride, but I can finally
-show you some results! Big thanks for everyone that's helping me with this by buying my books
-(or subscribing to the upcoming editions), and Clojurists Together, who generously funded
-me in the past year to work on this.],
-  [I know that most of you probably don't have much more than passing familiarity
-with deep learning, let alone recurrent neural networks, and that's why I'll try
-to show a very simple example on the level of Hello World that anyone interested
-in machine learning and programming can understand and try.],
-  [So, enough talk, let's get down to business.],
-  [id="orga87de2e"\>What are we doing],
-  [We are demonstrating a hammer: recurrent neural networks. Just kidding; we would like
-to create a (software) device that can learn to predict the next data point in a series.
-Depending on the data, this can be done in a number of ways (even
-by convolutional neural networks (CNN) that Deep Diamond already supported), one of
-which is RNN. So, we are creating a recurrent network, and training it with a set
-of data for this task.],
-  [An example of data that fits this task would be temperature at some place, stock prices,
-and any other (possibly infinite) sequence of numbers in one of more dimensions that
-have an ordinal relation, that is, has an abstract notion of time attached to it. Then,
-we are trying to forecast one or more values that are happening in the future (temperature
-the next day, or the closing price of a stock, etc.).],
-  [Since Hello World has to be dead simple, a real example would have too many opaque
-numbers, so we'll solve an artificially trivial task of teaching our network
-to predict the next number in the series for obvious series such as 1, 2, 3, 4, 5.
-Of course, in real life we rarely need to solve that exact task with such a bazooka
-as RNN, but if this is your first contact with time series prediction with deep
-learning, I guess it'd be just what works best.],
-  [id="org1560cc6"\>Let's get down to code],
-  [First, we'll require a bunch of Clojure namespaces that we need.],
-  [class="org-src-container"\>
- ( require ' [ uncomplicate.commons.core :refer [ with-release let-release release ] ] 
- ' [ uncomplicate.neanderthal
- [ core :refer [ ge dim amax submatrix subvector mrows trans transfer transfer! view-vctr
- native view-ge cols mv! rk! raw col row nrm2 scal! ncols dim rows axpby! ] ] 
- [ native :refer [ fge native-float fv iv ] ] ] 
- ' [ uncomplicate.diamond
- [ tensor :refer [ \*diamond-factory\* tensor offset! connector transformer
- desc revert shape input output view-tz batcher ] ] 
- [ dnn :refer [ rnn infer sum activation inner-product dense
- network init! train cost train train-shuffle ending ] ] 
- [ native :refer [] ] ] )],
-  [All the AI in the world would be useless to us if we hadn't measured some data from the real world
-to feed it. Suppose (for the sake of Hello World), that I "measured" a narrow range of whole number domain
-by generating it from thin air. Does this data tell us anything about stock market? Of course not, and
-please does not expect any model that we train on this data to magically be informed on anything that
-could not be learned from the data it has seen.],
-  [(-100 -99 -98 -97 -96 -95 -94 -93 -92 -91 -90 -89 -88 -87 -86 -85 ...)],
-  [Now, I'll create a blueprint for an arbitrary recurrent neural network (RNN). This network has 3
-recurrent layers (Gated Recurrent Unit cells), an abbreviation to one timestep, and
-two dense layers at the end. Please note that I used a completely arbitrary architecture.
-Neither this layer structure, nor the number of hidden neurons are optimal for this data;
-we are not even sure it's any good. If anything, it's probably a huge overkill.
-I chose it simply to show you how it's easy to construct with Deep Diamond (),
-as it will practically do everything on its own if you specify the bare minimum,
-that is "what you want". And we hope it'll at least learn to work well at the end,
-as non-optimal as it is.],
-  [class="org-src-container"\>
- ( def net-bp ( network ( desc [ 5 32 1 ] :float :tnc ) 
- [ ( rnn [ 128 ] :gru ) 
- ( rnn 2 ) 
- ( abbreviate ) 
- ( dense [ 128 ] :relu ) 
- ( dense [ 1 ] :linear ) ] ) )],
-  [There is no place here to explain what RNN is and how it works internally, other than pointing that
-recurrent layers have an ability to handle sequential relations of its input by "memorizing"
-the signals that pass through it. The upcoming version of my book Deep Learning for Programmers (2.0)
-discusses RNNs in more detail.],
-  [id="orgbe3f6b0"\>Formatting the input data],
-  [The input of this network differs from fully connected or convolutional networks by explicitly
-modeling the time dimension, "t" in the ":tnc" format. Technically, you can feed it with any
-3D tensor that matches its [5 32 1] shape, but for that data to be in context, it has to
-actually be arranged as 5 timesteps of a minibatch of 32 samples of 1-dimensional data.],
-  [We do have 1-dimensional data, but how do we fit our (range -100 100) sequence to
-its input? We do have more than 5 timesteps (we have 400), and we are far from 32 samples, since
-we only have one! We could try to just cram the sequence as-is by doing (transfer! simple-sequence (input net)) 
-but this would be the "garbage in" part of "garbage in - garbage out". No. The solution is,
-as always in machine learning, to actually think what our data represents, and matching it
-with our knowledge of how the actual model intends to process its input.],
-  [What we do need is a bunch of 5-long sequences, such as [1 2 3 4 5] and the output
-that we would deem correct. In this case, I choose that the goal is to teach the network
-to output 6 to this input (or a number sufficiently close to it). So, the training
-data should be input sequences such as [3 4 5 6 7] and [-12 -11 -10 -9 -8] , and
-target outputs such as [8] and [-7] . I hope you see how a bunch of these sequences,
-almost 400, and their respective target outputs could be extracted from simple-sequence .],
-  [The following function employs some stock Neanderthal () matrix functions to process
-the data and pack it into input and target output tensors [x-train] and [y-train] .
-I don't have time to explain each step, which is not trivial, but this is fairly standard
-vector/matrix/tensor stuff, well explained in both books from my Interactive Programming for Artificial Intelligence book series .],
-  [class="org-src-container"\>
- ( defn split-series [ fact s ^ long t ] 
- ( let [ n ( - ( ncols s ) t ) 
- c ( mrows s ) ] 
- ( let-release [ x-tz ( tensor fact [ t n c ] :float :tnc ) 
- y-tz ( tensor fact [ n c ] :float :nc ) 
- x-ge ( trans ( view-ge ( view-vctr x-tz ) ( \* n c ) t ) ) 
- s-vctr ( view-vctr s ) ] 
- ( transfer! ( submatrix s 0 t c n ) ( view-ge ( view-vctr y-tz ) c n ) ) 
- ( dotimes [ j t ] 
- ( transfer! ( subvector s-vctr ( \* j c ) ( \* c n ) ) ( row x-ge j ) ) ) 
- [ x-tz y-tz ] ) ) )],
-  [Here's how the output looks like on an ever simpler example of 2-step sample sequences produced from
-5 element long full sequence.],
-  [\#RealGEMatrix[float, mxn:1x5, layout:column, offset:0]
- ▥ ↓ ↓ ↓ ↓ ↓ ┓
- → 0.00 1.00 2.00 3.00 4.00
- ┗ ┛],
-  [[{:shape [2 3 1], :data-type :float, :layout [3 1 1]} (0.0 1.0 2.0 1.0 2.0 3.0)
- {:shape [3 1], :data-type :float, :layout [1 1]} (2.0 3.0 4.0)]],
-  [This split produces 3 samples for training, each sample has 2 entries, and for each sample there is a desired output.
-The tensor printout does not show dimensions, which would be super hard to make sense anyway due to large
-dimensionality and enormous number of entries in any tensor of any use. We can extract a matrix view,
-in cases when it makes sense.],
-  [\#RealGEMatrix[float, mxn:3x2, layout:column, offset:0]
- ▥ ↓ ↓ ┓
- → 0.00 1.00
- → 1.00 2.00
- → 2.00 3.00
- ┗ ┛],
-  [So, inputs are arranged in rows: [0 1] , [1 2] , and [2 3] . That's because tensor's
-default layout is :tnc , meaning that innermost grouping is channels (\\(C=1\\)), (mini)batch size (\\(N=3\\))
-and time (\$T=2).],
-  [Ok, so, finally, we transform our own data so that the network can learn from it.],
-  [\#RealGEMatrix[float, mxn:1x200, layout:column, offset:0]
- ▥ ↓ ↓ ↓ ↓ ↓ ┓
- → -100.00 -99.00 ⁙ 98.00 99.00
- ┗ ┛],
-  [[{:shape [5 195 1], :data-type :float, :layout [195 1 1]} (-100.0 -99.0 -98.0 -97.0 -96.0 -95.0 -94.0 -93.0 -92.0 -91.0 -90.0 -89.0 -88.0 -87.0 -86.0 -85.0)
- {:shape [195 1], :data-type :float, :layout [1 1]} (-95.0 -94.0 -93.0 -92.0 -91.0 -90.0 -89.0 -88.0 -87.0 -86.0 -85.0 -84.0 -83.0 -82.0 -81.0 -80.0)]],
-  [The printouts of long tensors show only a subset of the content of the tensor.],
-  [id="org186bca1"\>The actual network],
-  [The blueprint that we've created at the beginning of the article can be simplified
-for later reuse. Please note that it's not some super-opaque magical compiler.
-The network architecture is defined as a simple Clojure vector of straight Clojure
-functions!],
-  [class="org-src-container"\>
- ( def architecture [ ( rnn [ 128 ] :gru ) 
- ( rnn 2 ) 
- ( abbreviate ) 
- ( dense [ 128 ] :relu ) 
- ( dense [ 1 ] :linear ) ] )],
-  [[\#function[uncomplicate.diamond.dnn/rnn/fn--43604]
- \#function[uncomplicate.diamond.dnn/rnn/fn--43604]
- \#function[uncomplicate.diamond.dnn/abbreviate/fn--43609]
- \#function[uncomplicate.diamond.dnn/fully-connected/fn--43493]
- \#function[uncomplicate.diamond.dnn/fully-connected/fn--43493]]],
-  [This architecture is independent from the specific input dimensions.
-We create a blueprint by specifying the dimensions and the architecture.],
-  [This blueprint is independent of the learning algorithm. It is a function
-that creates the actual network training program. In this case, I will
-use gradient descent with adaptive moments (:adam). Before we start learning,
-we initialize the network with random weights, automatically chosen by
- Deep Diamond () according to good practices, but you are free to use another
-initialization function that is more to your liking. Everything in Deep Diamond
-is modular and implemented in Clojure fashion of "assemble your own if you wish".
-If you are content with my choices, then everything is automatic!],
-  [Here's the network printout, in case you],
-  [=======================================================================],
-  [\#SequentialNetwork[train, input:[5 32 1], layers:5, workspace:1]],
-  [-----------------------------------------------------------------------],
-  [\#Adam[topology::gru, shape:[5 32 128], activation: :identity]],
-  [parameters: [{:shape [1 1 129 3 128], :data-type :float, :layout [49536 49536 384 128 1]} (2.1676771211787127E-5 -5.19975537827122E-6 5.7575953178456984E-6 2.380384103162214E-5 -2.894530371122528E-5 -2.4803119913485716E-7 -1.6729745766497217E-5 -2.902976348195807E-6 4.530028309090994E-5 5.464621608552989E-6 -5.7127394939016085E-6 1.593221713847015E-5 -1.1793279554694891E-5 -7.507987476174094E-8 -1.1438844921940472E-5 5.965541276964359E-6) {:shape [1 1 3 128], :data-type :float, :layout [384 384 128 1]} (0.0035437364131212234 -0.001584756188094616 0.0013698132243007421 -1.2431709910742939E-4 1.7048766312655061E-4 0.002398068318143487 0.00372034078463912 -0.0021170536056160927 8.799560600891709E-4 -0.0023348634131252766 8.223060867749155E-4 -1.1841517698485404E-4 -0.004045043606311083 9.459585417062044E-4 -0.0037800846621394157 -0.002804018324241042)]],
-  [-----------------------------------------------------------------------],
-  [\#Adam[topology::gru, shape:[5 32 128], activation: :identity]],
-  [parameters: [{:shape [2 1 256 3 128], :data-type :float, :layout [98304 98304 384 128 1]} (2.276021717761978E-7 3.804875632340554E-6 1.058972247847123E-5 2.8063212198503606E-7 1.8309128790860996E-5 -9.416969078301918E-6 -7.987003414200444E-8 1.0779360309243202E-5 2.222931470896583E-6 -1.2704362234217115E-5 1.5140467439778149E-5 -2.0407780539244413E-5 -1.5779027080498054E-6 -1.0661310625437181E-5 -3.834541985270334E-6 -1.0737002412497532E-5) {:shape [2 1 3 128], :data-type :float, :layout [384 384 128 1]} (8.910018368624151E-4 0.003690000157803297 -4.8378523206338286E-4 -0.0034620240330696106 0.0031146425753831863 6.610305863432586E-4 0.00204548635520041 0.001728582545183599 -0.0027434946969151497 0.007643579971045256 0.00425624568015337 -0.00295245717279613 1.8937387721962295E-5 -0.0027048818301409483 -0.0012806318700313568 -0.0028582836966961622)]],
-  [-----------------------------------------------------------------------],
-  [{:shape [32 128], :topology :abbreviate}],
-  [\#Adam[topology::dense, shape:[32 128], activation: :relu]],
-  [parameters: [{:shape [128 128], :data-type :float, :layout [8192 1024]} (-0.004568892996758223 -0.004355841316282749 0.005139997228980064 -0.005750759970396757 -0.004274052567780018 0.005599929019808769 -0.003351157531142235 -0.008299742825329304 -0.0031023912597447634 0.0013810413656756282 0.002118719043210149 0.0023180078715085983 -0.005323362536728382 -0.013326002284884453 7.393552223220468E-4 -0.013735005632042885) {:shape [128], :data-type :float, :layout [1]} (0.5049463510513306 -0.47153180837631226 -1.3509427309036255 -1.3017100095748901 -0.39814749360084534 0.8303372263908386 0.6530964970588684 -0.22249580919742584 -1.326366901397705 0.16360507905483246 -0.022157425060868263 2.0535836219787598 1.8076190948486328 -0.0799550786614418 -1.6791125535964966 -0.7451670169830322)]],
-  [-----------------------------------------------------------------------],
-  [\#Adam[topology::dense, shape:[32 1], activation: :linear]],
-  [parameters: [{:shape [1 128], :data-type :float, :layout [1 1]} (0.003621552372351289 -0.004416522569954395 2.548426273278892E-4 0.006995228119194508 0.0013199367094784975 -0.0018220240017399192 0.009454095736145973 0.003091101534664631 -0.01203352864831686 -0.014204473234713078 -0.007159397471696138 0.0039085038006305695 0.0029486482962965965 -0.009481357410550117 0.009158425033092499 -0.004999339580535889) {:shape [1], :data-type :float, :layout [1]} (-0.09112684428691864)]],
-  [=======================================================================],
-  [id="orga09ae80"\>Training, finally!],
-  [Hey, I promised you a Hello World, and I've been beating the bush for half an hour
-formatting the data. And we didn't even touched the biggest obstacle: actually training
-the network. Is it hard? Yes, but not for the user. Now it's time for Deep Diamond () to beat the hell out of your
-CPU or GPU. But it will at leas do this on its own :)],
-  [Since this is a Hello World, we'll start with 50 epochs and see how it's going.],
-  ["Elapsed time: 769.986155 msecs"
-3238.298712769756],
-  [Hmmmm. The cost of 3000 and change does not look very good. Would more training help?],
-  ["Elapsed time: 744.456035 msecs"
-708.0862449675478],
-  [Still bad, but it's improving! For the sake of experinmenting, I've run this ten(ish) times,
-and the cost has been steadily decreasing, to the point that it looks good now.],
-  ["Elapsed time: 720.427332 msecs"
-0.13662090173881225],
-  [We don't have to stick to 50-epoch runs. Let's do 500 at once.],
-  ["Elapsed time: 6325.427605 msecs"
-0.008672867995529465],
-  [This looks nice. A thousand epochs might seem a lot, but considering the large network size,
-recurrent layers, and the scarceness of the training data, it might actually be appropriate.
-On the other hand, Deep Diamond did it blazingly fast, in a mere dozen seconds! In the world
-of machine learning, this is nothing.],
-  [{:shape [5 1 1], :data-type :float, :layout [1 1 1]} (1.0 2.0 3.0 4.0 5.0)],
-  [Dragan says: Requested subtensor is outside of bounds.
-{:src-index -31, :src-cnt 1, :dst-index 0, :dst-cnt 32, :mb-size 1}],
-  [id="org2a87b99"\>Using the network for inference],
-  [Now that we have our super useful network, we can stop and think: but how do we use it?
-First, we need data that could be interpreted as a "question". Our network needs a sequence
-of five numbers, and when fed, will answer with one number. Obviously, these should be
-provided as tensors of appropriate dimensions.],
-  [However, invoking inference would cause the complaint from the network.],
-  [Our network's input requires a minibatch of 32 samples. The infer function
-can handle more, and do the inference in mini batches of 32, but it can't handle
-fewer samples.],
-  [One of the solutions is to create another blueprint with the same structure, and transfer
-learned weights to the new network.],
-  [While we're at it, we don't need to create a complex network capable of learning
-(:adam or :sgd). We can create a much cheaper inference network that takes fewer resources.],
-  [Now, finally, give us the answer, network!],
-  [{:shape [1 1], :data-type :float, :layout [1 1]} (6.016137599945068)],
-  [So, being asked what is the next element in the sequence of [1.0 2.0 3.0 4.0 5.0] 
-(remember, we specified data type :float), our network answers [6.0161] which is
-close enough to the actual target value that we can mark this as correct.
-But, it's not a great achievement, since our network already saw this sequence in
-training. A hash map would have done much better job at guessing this. Let's try
-a previously unseen sequence.],
-  [{:shape [1 1], :data-type :float, :layout [1 1]} (17.750324249267578)],
-  [Not that off, but one would expect 19.0. What went wrong? We trained our network
-with ducks \\((x+1)\\) and asked it about geese \\((x+2)\\). What about griffons?],
-  [{:shape [1 1], :data-type :float, :layout [1 1]} (-6.679039001464844)],
-  [Now the answer does not make any sense, but would you be able to come with a better answer?],
-  [All, right, let's try with a sequence that is similar to the one we used in training,
-but is out of the range of data that the network has seen.],
-  [{:shape [1 1], :data-type :float, :layout [1 1]} (96.41997528076172)],
-  [Nope, not much success, but we should not have expected any. The network can not
-answer question outside its domain of expertise.],
-  [Let's try with previously unseen data, but inside the domain that we used for training (floats from -100.0 to 1000).],
-  [{:shape [1 1], :data-type :float, :layout [1 1]} (42.39200210571289)],
-  [This is actually pretty close!],
-  [id="orgd6b4463"\>What about GPU?],
-  [Sure!],
-  [( def gpu-net-bp ( network nvidia
- ( desc [ 5 32 1 ] :float :tnc ) 
- architecture ) )],
-  [( def gpu-net ( init! ( gpu-net-bp :adam ) ) )],
-  [( def gpu-train-data ( split-series nvidia full-series 5 ) )],
-  [Let's hit it with 1000 epochs right away.],
-  ["Elapsed time: 5734.688665 msecs"
-4.561427662266859E-4],
+  [First and foremost, thanks for visiting my little slice of the internet! I hope the following is both insightful and comedic as I plan to \@inject well constructed jokes throughout this post.],
+  [Hello! My name is Aleksei and at the time of writing this I’m a rising Senior perusing a Bachelors of Science in Computer Science at the Rochester Institute of Technology. Specifically, I’m focusing on Programming Languages and Tools, a cluster of courses offered by the Golisano College of Computing and Information Sciences at RIT. Clusters are courses that supplement the core Computer Science curriculum allowing students to dive deeper into the topics that spark their interests the most. Below you will find the courses I have and will be taking from this cluster.],
+  [CSCI-742 Compiler Construction (Completed)],
+  [CSCI-541 Programming Skills in Haskell (Fall 2022)],
+  [CSCI-541 Systems Programming in Rust (Spring 2023)],
+  [As you can probably tell, I have a love for languages. But don’t be mistaken, computer programming languages are not the only type of languages I enjoy studying. While at RIT I also studied Russian, the language that was almost my native tongue. While my future schedule doesn’t support taking more Russian courses I have continued to study the language on my own time.],
+  [Outside of academics, I’m a passionate endurance athlete who trains to compete throughout three seasons: cross country, indoor, and outdoor track & field. I primarily race the 3K, 5K, and 8K and plan to continue my love for racing outside of college out on the roads running the 15K, half, and the marathon.],
+  [Enough about me, let’s switch over to talking about the heart of this blog post. The reason why I decided to spend a summer at Strava.],
+  [Why Strava?],
+  [It goes without saying, I love to run. I competed in cross-country, indoor, and outdoor track and field all of high-school and planned to do the same in college. Surprisingly, I didn’t use Strava throughout high-school. In fact, I don’t think I knew of Strava’s existence in the first place. It wasn’t until I arrived on campus that my new teammates would bug me to install Strava so I could join the team group. It was from that moment on that I was hooked.],
+  [There was something special about seeing my teammates’s activities on Strava. Whether I was finishing up a brutal workout or just jogging around the neighborhood I always had something to share on Strava and so did my teammates. Strava provided a feeling of camaraderie and I knew I wanted to be apart of it.],
+  [I vividly remember reading other intern blog posts from previous years. The team activities, company mission, and passion for the product showed through each and every medium post I stumbled across. It was for that reason that I had dreamed of landing an internship at Strava before graduation and ultimately would apply as an Android Engineer Intern during the Fall of 2021. In fact, I still have the activities leading up to my offer letter on Strava!],
+  [With a couple of weeks until the start of my internship I learned that I would be placed on the growth team. The growth team is all about experimentation in which product managers, designers, and engineers collaborate to drive user retention and subscription purchases. Specifically, I was going to be working on the subscription acquisition team inside growth where the primary goal is to encourage users to subscribe for all of Strava’s awesome features.],
+  [Throughout my first week I spent the majority of my time learning Kotlin, Android Studio, and basic Android Development all the while meeting my new teammates. With the help of my remarkable mentor, Faraz , I was able to hack together the following path of execution:],
+  [Unfortunately, I only had a single thread to work with and many of these procedures were blocking operations],
+  [\@Target(Dagger. Dependency, RxJava. Dependency and MVP. Design\_Pattern)],
+  [so needless to say, learning all of this happened over the course of my internship.],
+  [While I don’t have the time (or energy) to write about everything I did throughout this internship. I will be highlighting the project that I worked on in significant detail.],
+  [Shortly after my ramp-up period my manager disclosed my summer project with me. I had been assigned to bring student plans to Android. Previously, student plans was only accessible on our website . However, a significant portion of our athletes are also accessing Strava through our iOS and Android apps. Without including student plans on mobile we are potentially missing out on thousands if not millions of athletes.],
+  [At first glance, the project seemed trivial with just a few UI changes and a single backend API call. Keep in mind, my previous Android experience is practically nonexistent despite having published some (horrendous) apps that I am too embarrassed to share here. Needless to say I was feeling quite confident.],
+  [After a design review with our team’s phenomenal UI/UX designer (huge shoutout to Grace Kim. I will never understand how you come up with these designs) I was given a portion of the overall design and this is what it looked like:],
+  [Prior to seeing the code firsthand, I had assumed the settings view would be a simple activity with a vertical linear layout using a reusable custom component responsible for rendering each setting option. However, The most interesting part of the settings view was learning how wrong my intuition really was. Instead, I learned all about Android’s Preference hierarchy, the preferred method for building setting layouts.],
+  [For example, the XML below using Preferences renders the settings view on the Android device that follows.],
+  [Easy right? All we need to do is add a single tag, put in the correct text and off we go 🚀!],
+  [Not so fast… If you recall, the design document shows a “New” icon, text highlighted in Strava orange, and a dismiss button in the top right to remove it from the view permanently when tapped. These little customizations are not easy to do, if not impossible, with the built in Preference. Instead, we need to],
+  [Design a standalone layout file for the specific preference containing the “New” notification, dismiss button, text, and additional styling.],
+  [Write a custom class that extends the Android Preference class to inflate the layout file we created in part one.],
+  [Get reference to the specific items in the layout file such as the “New” notification and write public methods to modify its visibility outside of the class.],
+  [Get reference to the entire custom preference and set an
+onClickListener { … } to open a dialog containing the student plan information when it’s tapped!],
+  [But before all of that we still need to create another layout file for our new dialog fragment that will appear as a pop-up when the user clicks our new setting preference. The class that will be responsible for displaying the pop-up will be referred to as the StudentPlanDialog for future reference.],
+  [The Strava Android code-base is neatly organized across several unique modules. In fact, some of these modules can live on its own as a standalone application serving as a testament to how well organized the project is. However, this comes with its own issues as you will later read.],
+  [As I started to work on the StudentPlanDialog class it made the most sense to store its implementation inside the subscriptions module as student plans will make most of its appearance around the checkout section of the app. But of course, student plans also appears in settings so we will need to reference the StudentPlanDialog from the settings module. At this point I was unsure about how the importing would work across multiple modules so instead I did what any intern would do. I pretend everything is going to be fine and continued onward until the compiler inevitably rejects my code.],
+  [As I’m wiring up the StudentPlanDialog to appear when the user clicks our new settings option I get this lovely error message from inside Android Studio],
+  [It was here that I realized I cannot access the class’s public methods without adding the subscriptions module as a dependency to the settings module.],
+  [At the time this didn’t feel like a good solution but I went ahead and added the dependency regardless. Shortly after, I grabbed some Java with Gradle for a quick sync-up and before I knew it the JVM was interpreting my byte-code to perfection! In other-words, my feature was working! Although, I did notice a new change appeared in my git diff for the settings.gradle file…],
+  [Seeing a change to the Gradle file made my heart sink. After-all, making modifications to any Gradle configurations as an intern isn’t a wonderful feeling, it’s actually quite terrifying. After a few slack messages and reading some articles online I came to the conclusion that my solution was horrible and here’s why.],
+  [Prior to adding subscriptions as a dependency, this is what a (heavily) simplified version of Strava’s dependency tree could look like:],
+  [Here, in order to run the Strava Android App we first must build the Activity , Feed , Subscriptions , and Settings modules. But, in order to build the Activity module we first need to build the Activity Recording and Activity Upload modules and so fourth. However, After adding subscriptions as a dependency to the settings module our tree transforms into the following one:],
+  [Now, in order to run anything related to settings we first need to build and compile the entire subscriptions module. If you think about it, settings has practically nothing to do with purchasing a Strava subscription. In fact, we just slowed down the build time of the project by preventing the compiler from parallelizing these build tasks. To work around this there are two primary methods to pick from: Create a new student plan module or use implicit intents!],
+  [For student plans, it didn’t make much sense to create a brand new module as it would only contain a handful of views and a couple kotlin classes. Not to mention, modules are expensive to create and should be thought of as standalone portions of the app. Instead, I created an implicit intent which can be thought of as a broadcast message and setup an intent filter to catch this broadcast and use an activity inside the subscriptions module to handle it. This allowed me to open the pop-up dialog from inside the settings module even though it’s located inside the subscriptions module.],
+  [After proofreading the previous paragraph I realized it can be rather confusing to someone who doesn’t know anything about Android development. Hence, I decided to create a stunning and intuitive diagram to better illustrate implicit intents (take notes Grace ). This also served as a wonderful time sink on a Friday afternoon.],
+  [Implicit intents can be thought of as a request often used for cross app communication. Explicit intents on the other-hand explicitly define who is handling the message by providing the specific Activity as a required argument. Hence, explicit intents do not need an intent filter to resolve who is handling what type of intent as it was already made explicit!],
+  [Without implicit intents, every app that wants to access the photo gallery would need to write the logic themselves. Of course this sounds ridiculous and instead we should somehow use the already built photo gallery app to do this. Implicit intents provide the path of communication between the two applications much like an API. Best of all, they can also live in a single application and communicate across the application’s modules. In my project, I used implicit intents to communicate across the settings and subscription modules without needing to modify their dependencies.],
+  [To further emphasize implicit intents, here’s a code snippet that initiates a phone call from inside any Android application:],
+  [val callIntent: Intent = Uri.parse("tel:5551234").let { number -\>
+ Intent(Intent. ACTION\_DIAL, number)
+}],
+  [Here callIntent can be started using startActivity(...) and will initiate a phone call to the given number 555-1234 using the default dialer app. If you’re lucky enough Big Bird might just pick up.],
+  [However, implicit intents alone will only allow us to open the pop-up dialog. If we wish to also access business logic across the two modules then we will need to use Dagger.],
+  [Feature Switches and Dependency Injection],
+  [\@GET(“strava/feature-switches”)],
+  [Feature switches are an essential Strava server side service that both web and mobile clients rely on. Imagine you wish to release a brand new feature but are hesitant to release it to all of your users. Maybe you only want 30% of your users to have access to it or maybe you would like a particular age group to see it. Feature switches control what features are available to a particular client. Every user who logs into Strava whether it be on web or mobile receives a list of available features specific to them.],
+  [With that being said, student plans needed to be placed behind a feature switch for experimentation purposes. To accomplish this, all I needed to do was],
+  [Add student plans as a new feature switch on the backend],
+  [Create a StudentPlanHelper class that would encapsulate the business logic needed to check if the feature flag was enabled or not (and some additional strava magic)],
+  [Set all student plan user interface elements to be invisible by default],
+  [Reference the StudentPlanHelper during setup to conditionally render the student plan UI],
+  [As easy as it sounds don’t be fooled, there was yet another hidden road-bump patiently waiting ahead. Recall that the majority of the student plan work resides in the subscription module including the StudentPlanHelper logic. It would be bad practice to copy and paste the StudentPlanHelper logic into both modules separately but we know from experience that if we try to access it inside the settings module we will get the following error],
+  [and this would defeat the entire implicit intent workaround, what a shame! Luckily, the brilliant Strava engineers have already solved this problem by using a well known design pattern known as dependency injection.],
+  [Dependency injection is a design pattern often used without knowing it. Simply put, a class’s dependencies are any other classes that it relies on. Dependency injection is when we construct all of these dependencies ahead-of time and pass it into another classes constructor. Let’s look at a simple example without using dependency injection.],
+  [Notice how the Strava class constructs its own dependencies at the time of its own creation. Not only is object instantiation expensive but it leaves Strava tightly coupled with WebApp , iOSApp , and AndroidApp . If Strava wanted to add another dependency such as WatchOS or modify an existing one such as iOSApp. We would have to directly modify Strava’ s implementation to support those changes. This also makes unit testing a disaster because we cannot mock the dependencies Strava is using as we don’t get to pass them in during runtime.],
+  [Now, let’s look at an example using dependency injection:],
+  [In order to build the Strava class it requires three dependencies: WebApp , iOSApp , and AndroidApp . Inside the main function we create each dependency manually and pass them in all at once to the Strava class to construct it. However, this is very verbose and with large and complex class structures it can become hard to follow and maintain.],
+  [Dagger is a dependency injection framework that can generate code to remove the verbosity from the example above and much, much more. Dagger manages dependency graphs much like Gradle except these are not Android Studio modules rather classes. The following is a simple example using Dagger and Dagger Annotations to clean up the example from above:],
+  [When compiling the project Dagger uses the annotations \@Component and \@Inject to generate code that resembles a dependency graph. Dagger also generates class files for us to use such as DaggerStravaComponent that uses the generated code to implement the StravaComponent interface! Using Dagger, Dagger’s \@Binds annotation, and an interface representing the business logic of the StudentPlanHelper. I was able to provide its implementation across different modules all without adding any dependencies 😎.],
+  [But even after all that, there was still one more design pattern that I needed to become comfortable with in order to fully implement student plans.],
+  [The Model View Presenter (MVP) is a design pattern commonly used in Android Development. When developing Android apps for the first time it’s tempting to write both the business logic and view logic inside a single Android activity. However, this makes unit testing more of a nightmare than it already is. After countless videos and articles about MVP I just couldn’t grasp how Strava was implementing it until I spoke with a different Android engineer. Within a matter of minutes I finally understood the design pattern and was able to build my views using it (thank you Maria Botross 🙌). In fact, I felt confident enough to explain it here!],
+  [The generic MVP is made-up of three (hopefully obvious) components: The model, view, and presenter. The Android environment changes things slightly and instead we have an Activity, Model, View Delegate, and Presenter.],
+  [Activity : Handles initial setup such as creating a view delegate and binding itself to a presenter as well as routing to other activities. For the sake of simplicity the following example will not showcase activity routing.],
+  [Model : Contains objects that represent the possible view events and view states during the lifetime of the host activity. These objects are passed between the view delegate and presenter to initiate business logic such as an API call or make UI changes. These objects can also contain data that can be later extracted and used (thanks Kotlin).],
+  [View Delegate : Initializes the view and establishes view events such as click listeners. When an event occurs such as a button click, the view delegate will send a view event to the presenter to do some business logic. Then, the view delegate will receive a state events from the presenter that tells it how to update the view.],
+  [Presenter : Responds to view events from the view delegate and handles them appropriately. After handling the view event, the presenter will send back a state event for the view delegate to handle.],
+  [Combining these four components makes for highly testable applications and often leads to very easy to read code. At Strava, MVP is used practically everywhere. However, this forced me to get out of my comfort zone and ultimately made me a better Android engineer. After using MVP for an extended period of time it’s hard to imagine writing an app without it.],
+  [Ok I lied …],
+  [I said I wasn’t going to talk about anything unrelated to my project but I just had to talk about Strava Jams. For those who (somehow) don’t know, Strava Jams is a kick-ass week long event were everyone groups up into teams across the company and hacks together whatever they want! What makes the event so exciting is that your project can be totally unrelated to the app and can be completed in solo fashion 😎 or with a team 🏃‍♂️ 🚴 🏃‍♀️ 🚴 🏃🚴 🏃‍♀️ . Whether you wanna learn Jetpack Compose or build an internal tool the week is yours to decide! Best of all, Strava Jams ends in style with each individual and team presenting their work (if they so choose of course), earning awesome awards, and potentially advancing their feature into production for millions to enjoy. With that being said, let’s dive into what I worked on during Jams week.],
+  [\#Jams-Breathe],
+  [Both the Jams project and Jams team was assembled by a talented product analytics intern, Malhar Khandare ! Our team consisted of other interns and full-time members on iOS, Web, Server, and myself on Android paired with a previously mentioned full-time Android engineer, Maria. Malhar’s proposal was to bring mediation to the app as a brand new activity that lives within the recording screen. Without going into the details this was a very daunting task. To put it simply, the recording screen is one of the most complicated portions of the code-base and I had no clue where to begin.],
+  [On day one of Jams week I reached out to Faraz for advice and he recommended that I reach out to the Strava engineer who has extensively worked on the recording module, Dave Rozsnyai . Without hesitation, Dave was more than happy to schedule a quick 1:1 over zoom. After the meeting I had a general idea of where my code changes needed to live and, more importantly, what portions of the code I should stay away from. It’s short meetings like this that prove time and time again to be invaluable to us interns.],
+  [However, even after receiving advice I continued to find myself struggling throughout all of day two while trying to implement a subset of the feature. I decided to switch gears and implement the feature into a standalone app to help break the problem down into more manageable pieces. This helped me understand all of the moving parts and gave me the confidence that I could bring it into Strava.],
+  [For the remaining portion of Jams week I paired up Maria. After several days of rewarding yet frustrating bugs and complications the feature was fully implemented. I even had enough time to write my own animation manager to elegantly render rich animations such as the levitating person and countdown timer (that you will see shortly). These animations were not in the initial design created by Malhar so needless to say it was a fun surprise to share with my team hours before our presentation.],
+  [As I’m writing these last couple of paragraphs I realize today is my last day and I only have a couple of hours until I need to submit this post. So, here’s a bunch of gifs and images to showcase our amazing Jams feature!],
+  [Navigating to the New Meditate Activity],
+  [Starting and Ending the Meditate Activity],
+  [Starting, Pausing, and Resuming the Meditate Activity],
+  [Still Image of Meditate Activity],
+  [As you can imagine, Jams week was an absolute blast for both my teammates and myself. I cannot thank my entire team enough for making this feature come to life during our live demo. Maybe one day meditation will arrive on Strava.],
+  [The Strava internship exceeded my expectations, especially for a remote internship. Outside of my project I had the opportunity to meet some amazing members from Strava’s management team including Michael Horvath — CEO & Co-Founder and Claude Jones — VP of Engineering. I also spent a significant amount of time chatting with other interns and the talent team. At times it felt surreal to be surrounded with other individuals who are also striving to be their best in whatever they choose. In fact, and it started to grow on me. I ended up dusting off my road bike, purchasing a cycling jersey, and hit the roads nearly everyday for a ride. I don’t think I could’ve picked a better way to spend my last summer as a college student. It has been a pleasure working with everyone this summer and it wouldn’t be possible without my amazing manager, Amy Sheinhait.],
+  [Thank you for a wonderful internship experience Strava , kudos!],
+  [Dependency Injection, MVP, and the all reliable Android Studio IDE. was originally published in strava-engineering on Medium, where people are continuing the conversation by highlighting and responding to this story.],
 ),
   insert-map: (:),
-  word-count: 3176,
+  inline-pq: pull-quote([This allowed me to open the pop-up dialog from inside the settings module even though it’s located inside the subscriptions module.], [Aleksei Bingham]),
+  inline-pq-idx: 34,
+  word-count: 3923,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -546,77 +562,143 @@ answer question outside its domain of expertise.],
 
 {
   #standard-article(
-  title: [Personal Heatmaps],
-  author: [J Evans],
-  source-name: [Strava Engineering],
+  title: [Form Validation Tips Every Web Developer Should Know!],
+  author: [Hritik Jaiswal],
+  source-name: [Helpshift Engineering],
   images: (),
   paragraphs: (
-  [This post discusses the algorithm behind Personal Heatmap, one of Strava’s most acclaimed subscriber features.],
-  [The Personal Heatmap feature has been around in some form since 2015, but we gave it a major overhaul in 2020. For those unfamiliar, the heatmap is an aggregated view of an athlete’s GPS-enabled activities on Strava. Activity data is rendered onto a map according to path traversal frequency; the more an athlete runs on a road, the brighter — i.e. “hotter” — that road shows up on the map. The result is a beautiful color gradient displaying the intricate web of past activities, unique to each athlete.],
-  [The Personal Heatmap is displayed on an interactive world map, also known as a slippy map . Athletes can seamlessly zoom in and out or pan around to arbitrary views of the map, and their activity heat stays displayed the entire time. To enable this, we must provide a scheme for rendering and serving subsections of the world map on the fly. Enter map tiling.],
-  [Mercator Projection & Map Tiling],
-  [Map tiling is the practice of subdividing a map into many discrete images that can be stitched together and rendered as a single image in real-time during map navigation. The first step in choosing a tiling scheme is picking what world map to use. Enter, the Mercator Projection , the most commonly used projection of Earth as a flat, rectangular surface. We use this projection in all of our mapping products, including heatmaps.],
-  [https:\/\/medium.com/media/d9e120d13950dd0f1bb4ee14108aa9a9/href],
-  [Now, imagine a grid overlaying the Mercator projection. Each grid section is known as a tile , a pixel image with resolution 256x256. Every tile has an associated zoom level , and tiles are defined recursively according to this zoom level. A tile at a given zoom level can be subdivided into four equal sized tiles at a next zoom level. For example, Zoom level 0 displays the entire planet in a single 256x256 pixel image. Zoom level 1 displays the world in four 256x256 pixel images. The recursion continues until Zoom level 20, at which point the 256x256 pixel image displays an area roughly the size of a house.],
-  [This table approximates of the landmass covered by tiles at each of the 21 zoom levels],
-  [We use a schema introduced by Google Maps to uniquely identify each tile with an coordinate and associated zoom level. Moving forward, we’ll refer to zoom levels as tuples. Use this online tool to get familiar with the standard.],
-  [So, how do we transform an athlete’s activity data into this map?],
-  [Generating Map & Heat Images],
-  [There are two components to a Personal Heatmap, the map image and the activity heat data overlaying that image. We will call the latter the heat images.],
-  [Instead of generating map images ourselves, we rely on Mapbox. They’ve done a fantastic job providing beautiful, accurate, and well-designed map images for all of our mapping products. Their map images adhere to the Mapbox Vector Tile specification , a standard that enables efficient, high-resolution, client-side renderings of map displays.],
-  [The activity “heat” is what makes this experience unique to each athlete. Here’s how we create heat images:],
-  [Enumerate all activities for an athlete],
-  [For each activity, produce a list of tiled activity segments. (We’ll define below)],
-  [Aggregate these lists of tile activity segments into a dictionary, where the key is a tile and the value is the list of tile activity segments that traverse the tile.],
-  [For each tile in this dictionary, sum the tile activity segments and render a 256x256 resolution raster image of the heat for the tile.],
-  [Step 1: Enumerate all activities],
-  [We store each uploaded activity as a list of points. For any athlete, we fetch this set of lists of points.],
-  [case class Point(latitude: Double, longitude: Double)
-val athleteActivities: Set[List[Point]] = fetchActivities(athleteId)],
-  [Step 2: Produce Tile Activity Segments],
-  [Once we’ve fetched an athletes activities, we transform them into ActivitySegments . An ActivitySegment is a data structure representing the portion of an activity that traverses a tile. Specifically, the ActivitySegment is a list of pixels traversed by the segment of an activity in a given tile .],
-  [Consider a simplified tiling scheme with four zoom levels and a single activity. In this scheme, tiles are images with 10x10 pixel resolution.],
-  [Now we focus on the activity in zoom level 2, taking care to annotate each tile with the tile coordinates.],
-  [projection at zoom level 2],
-  [The activity traverses seven of the 16 tiles. Thus, there are seven ActivitySegments for this activity at zoom level 2 of this projection; one for each traversed tile. Each ActivitySegment encodes a list of pixels and associated tile. Let’s drive this home by focusing on tile as a 10x10 pixel image.],
-  [Pixels in a 10x10 resolution image for activity segment that traverses tile],
-  [Tile contains the beginning and ending segments of the activity. The shaded-in pixels constitute the list of pixels for the this ActivitySegment.],
-  [ActivitySegment(
- Tile(0,0,2),
- List(
- Pixel(2,3), Pixel(3,3), Pixel(4,3), Pixel(5,3),
- Pixel(6,3), Pixel(7,3), Pixel(8,3), Pixel(9,2),
- Pixel(9,2), Pixel(2,5), Pixel(2,6), Pixel(2,7),
- Pixel(2,8), Pixel(3,8), Pixel(3,9)
- )
-)],
-  [We repeat this process for each activity, for every tile traversed by those activities, for multiple zoom levels.],
-  [Step 3: Aggregate Activity Segments],
-  [Once we’ve repeated step 2 for every activity, we organize the ActivtySegments into a dictionary, keyed by tile. Consider the following scenario of an athlete that has completed four activities:],
-  [Focusing on zoom level 2 again, we can group ActivitySegments by on tile.],
-  [ActivitySegments grouped by tile for tile and tile],
-  [Tile has two associated ActivitySegments, one from activity 1 and one from activity 2. Meanwhile, tile has three associated ActivitySegments, one for activity 2, activity 3, and activity 4. Here, we’ve only shown two mappings, but with the entire mapping, we can quickly determine two things about the athlete:],
-  [All tiles traversed during the athlete’s activities],
-  [All pixels within the tiles traversed by the athlete],
-  [Moreover, we can use this dictionary to count how many times an athlete has traversed any given pixel in a given tile. We have everything we need to render heat images.],
-  [Step 4: Render raster images],
-  [With the tile dictionary, we can calculate a traversal frequency for each pixel in a tile. Upon request, we loop through each pixel of a tile, counting how many ActivitySegments for the given tile include the pixel. After looping through and counting the traversal frequency for each pixel, we can color the pixels on a gradient. Below is an example of tile from the projection described above.],
-  [tile],
-  [Pixels that aren’t traversed aren’t shaded in; pixels traversed fewer times are shaded in darker; pixels traversed more often are shaded in brighter.],
-  [Putting it All Together],
-  [An athlete opens the Heatmap feature in the Strava mobile app. The map in view is tiled, and this set of tiles get passed down two request paths in parallel:],
-  [Requests to Mapbox servers for vector tile map images],
-  [Requests to our own server for the raster tile heat images],
-  [Once both sets of requests complete, the client overlays the raster images of an Athlete’s heat atop the vector tiles and presto! You have a heatmap.],
-  [We’re happy with the heatmaps product, but there’s always room for improvement. In a future release, we would consider rendering heat using vector images instead of raster images for a few reasons:],
-  [The resolution of raster images is static. Unfortunately, they look pixelated the more you zoom in. In contrast, vector tile resolution resizes, so they remain sharp regardless of the zoom level.],
-  [As mentioned previously, Mapbox serves our map images in a vector format. Serving heat as vector images would provide consistency between our map and heat image layers.],
-  [Vector image files size are typically smaller then raster file sizes, so data transfer from server to client is reduced when using vector tiles. This can make a significant difference when operating at Strava’s scale.],
-  [Thanks for reading! Subscribe to Strava if you want to explore your own personal heatmap, and be sure to check out our other engineering blog posts.],
-  [Personal Heatmaps was originally published in strava-engineering on Medium, where people are continuing the conversation by highlighting and responding to this story.],
+  [Forms are everywhere online, from signing up for newsletters to making purchases. But let’s be honest — nothing’s more frustrating than a form that’s hard to fill out or riddled with unclear error messages. In this post, we’ll dive into practical tips and tricks to make your form validation seamless, user-friendly, and maybe even enjoyable!],
+  [We’ll walk through tips for using built-in HTML features and creating custom validation with JavaScript. No complicated jargon — just practical steps to improve your forms.],
+  [\# Tip 01: Use the Correct HTML Input Types],
+  [Before applying correct HTML Input Types],
+  [If you set the input type as “ text ” for a password field, the password will not be obscured as you type. Similarly, if you use the “ text ” input type for an email field, the browser’s default email pattern check will not be triggered.],
+  [When you use the correct input type, the password field will obscure the characters being typed, which is the desired behavior. Additionally, if you type an incorrect email address in the email field, the browser will notify you with a pop-up because of the built-in validation it provides.],
+  [Email should use type="email".],
+  [Password should use type="password".],
+  [Confirm Password should also be used type="password".],
+  [After applying correct HTML Input Types],
+  [Code :],
+  [Add Form Validation Tip \#1 · hritik5102/Form-Validation-Tips\@502e416],
+  [\# Tip 02: Built-in HTML Validators],
+  [If the username is the required field in your form. To ensure that the username field contains valid data, mark it as “ required .” If the user tries to submit the form without filling in this field, the browser will prompt them to complete it. You can also restrict the number of characters by using the “ minlength ” attribute.],
+  [For Username, mark it as “required.” If empty upon submission, the browser will ask: "Please fill out this field."],
+  [Use minlength="5" to require a minimum of five characters.],
+  [Tip 02: Built-in HTML Validators],
+  [Code :],
+  [Add Form Validation Tip \#2 · hritik5102/Form-Validation-Tips\@cd8abbb],
+  [\# Tip 03: Using Regex for Pattern Matching],
+  [For instance, to require a number in the username, use the pattern attribute: pattern="^\[0-9\]+\$".],
+  [If a string is entered instead of a number, an HTML tooltip will appear, prompting: “ Please match the requested format .”],
+  [Tip 03: Using Regex for Pattern Matching],
+  [Code :],
+  [Add Form Validation Tip \#3 · hritik5102/Form-Validation-Tips\@3b3230b],
+  [\# Tip 04: Custom Tooltip Validation Messages],
+  [The tooltip message “ Please match the requested format ” doesn’t clearly explain the specific format we expect from the user.],
+  [We can use the title attribute to display custom tooltips. For example, on the username field, set title="Username must be at least 5 characters and include a number."],
+  [Tip 04: Custom Tooltip Validation Messages],
+  [Code :],
+  [Add Form Validation Tip \#4 · hritik5102/Form-Validation-Tips\@9e64865],
+  [\# Tip 05: Create Custom Tooltip Messages with JavaScript],
+  [reportValidity() is a method available on form elements ( , , , , etc.) that triggers the browser's built-in form validation.],
+  [setCustomValidity(message) is a method on input elements that lets you set a custom validation message, overriding the browser’s default message for specific constraints.],
+  [Together, they provide a robust mechanism for client-side form validation in web applications.],
+  [Tip 05: Create Custom Tooltip Messages with JavaScript],
+  [Code :],
+  [Add Form Validation Tip \#5 · hritik5102/Form-Validation-Tips\@73c63bc],
+  [\# Tip 06: Avoid Early Validation],
+  [When onInput event handler is used],
+  [Wait until the user moves to the next input or loses focus on the current input before validating. Replace the onInput event handler with onChange for this purpose.],
+  [Tip 06: Avoid Early Validation using onChange event handler],
+  [Notice how the error message is displayed only when the end user shifts focus to the next input field.],
+  [Code :],
+  [Add Form Validation Tip \#6 · hritik5102/Form-Validation-Tips\@1ed19a1],
+  [\# Tip 07: Show Specific Validation Message At A Time],
+  [Assume the validation accepts both letters and numbers and requires a minimum of 8 characters. If the user enters ‘james,’ they will see an error indicating that a number is required. If they enter ‘james12,’ but it is too short, they will see an error stating that the input must be at least 8 characters long. Display the errors when the user moves to the next field.],
+  [Instead of displaying a tooltip for an error message, we can show a custom validation message in red. You can choose either approach based on the UI/UX design of your application.],
+  [Tip 07: Show Specific Validation Message At A Time],
+  [Code :],
+  [Add Form Validation Tip \#7 · hritik5102/Form-Validation-Tips\@a83908c],
+  [\# Tip 08: Static Height for Error Messages],
+  [Notice that when an error message appears, the UI shifts slightly, which can look unappealing.],
+  [To prevent this, set a fixed height for error messages to ensure the form’s layout remains consistent and visually appealing.],
+  [Tip 08: Static Height for Error Messages],
+  [Code :],
+  [Add Form Validation Tip \#8 · hritik5102/Form-Validation-Tips\@138ae47],
+  [\# Tip 09: Highlight Errors with Danger Indicators],
+  [Use a red color, danger icon, or tooltip for errors if it fits your UI guidelines. Ensure the tooltip is accessible for screen readers.],
+  [Highlight the input field with a red border when there’s an error.],
+  [\# Tip 10: Remove Error Messages When Fixed],
+  [Clear error messages as soon as the user meets the required conditions.],
+  [\# Tip 11: Indicate Required Fields With Red asterisk \*️⃣],
+  [How do you know if a field is required? A visual clue, right?],
+  [The red asterisk (\*) is one of the most common visual patterns used to indicate that a field is required.],
+  [It allows users to quickly identify mandatory fields, reducing trial and error and speeding up form completion.],
+  [Tip 11: Indicate Required Fields With Red asterisk \*️⃣],
+  [Code :],
+  [Add Form Validation Tip \#9 · hritik5102/Form-Validation-Tips\@068226b],
+  [\# Tip 12: Always Perform Server-side Validation],
+  [Frontend validation can be bypassed if someone tampers with the form or submits it via Postman. Server-side validation is crucial for security.],
+  [Would highly recommend reading this out, this explains why both client and server validations are important.],
+  [Why should one validate data if it is already sanitized?],
+  [\# Tip 13: Ensure your form is not only usable but also accessible],
+  [Adding validation to improve a form’s usability is only half the challenge. The other half is ensuring the form is accessible, meaning that individuals with disabilities can understand whether a field is invalid and know how to correct it.],
+  [Accessibility ensures everyone can access the content, while usability focuses on how easy it is to use the website. Together, they create the best possible user experience.],
+  [From an accessibility perspective, we must ensure that everyone not only knows the field is invalid but also understands the error message.],
+  [Below is a demonstration of the form running on VoiceOver, the built-in screen reader for macOS.],
+  [https:\/\/medium.com/media/8800939f538b4eacabf22a4c6e406d64/href],
+  [Code :],
+  [Form Validation Tip \#10 · hritik5102/Form-Validation-Tips\@3d96464],
+  [You can find the source code for the above tips and tricks in the below repository :],
+  [GitHub - hritik5102/Form-Validation-Tips: Form Validation Tips Every Web Developer should know!],
+  [Thank you for taking the time to read the post until the end. Your attention and interest are greatly appreciated.],
+  [https:\/\/medium.com/media/fceae43fd9c499f9d20584444f4fe641/href],
+  [Please 👏🏻 if you like this post. It will motivate me to continue creating high-quality content like this one.],
+  [Thank you for taking the time to read my blog post! If you found it valuable, I would greatly appreciate it if you could share the post on Twitter and LinkedIn, etc. Your support in spreading the word about my content means a lot to me. Thank you again!],
+  [Follow me],
+  [I hope you found this post helpful. If you want to stay up-to-date with my latest work, be sure to follow me on Twitter , LinkedIn , and GitHub .],
+  [Form Validation Tips Every Web Developer Should Know! was originally published in helpshift-engineering on Medium, where people are continuing the conversation by highlighting and responding to this story.],
 ),
   insert-map: (:),
-  word-count: 1370,
+  inline-pq: pull-quote([Tip 06: Avoid Early Validation using onChange event handler   Notice how the error message is displayed only when the end user shifts focus to the next input field.], [Hritik Jaiswal]),
+  inline-pq-idx: 36,
+  word-count: 1308,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+}
+
+{
+  #standard-article(
+  title: [Explore, expand, exploit],
+  author: [Mary Rose Cook],
+  source-name: [Mary Rose Cook],
+  images: (),
+  paragraphs: (
+  [A few months ago, I started sleeping badly.],
+  [I had been excited about AI since ChatGPT came out. I’d loved using Cursor to help me program since Jay had told me about it over the phone as I walked from Eureka Heights back home to Noe Valley.],
+  [But, in January, something changed. The proximate cause was a flood of new AI releases. o3-mini, Deep Research, Lightpage. Every week, more intelligence dropping from heaven into my lap.],
+  [But the bigger change was that I was getting more productive, faster.],
+  [Type in a few sentences, get a hundred lines of code. A feeling of vertigo.],
+  [More than that, I could learn a new technique in an hour and become significantly more productive.],
+  [This was in stark contrast to the previous twenty years I’d spent learning to program. That was a slow, accretive grind. A new technique for encapsulation. A more refined understanding of what it means to “repeat yourself”. Learning that you could step-debug a production web app.],
+  [My friend, Sam , has this model of learning as building a graph. Each node is a piece of information or a skill or a behavior. They’re interconnected. Acquiring a new node of knowledge isn’t too hard. It’s a bit harder to elaborate it. Which is to say, to connect it to the existing nodes in your graph.],
+  [But the real fucker is when you have to unmake a part of your graph. You get cognitive dissonance because some of the nodes contradict each other or need to be pried apart or replaced. It’s very painful to disassemble the graph and remake it. Learning to program was a lot of that.],
+  [Learning to build software with AI feels completely different. It’s much closer to learning a new discipline. Certainly, the old way of programming is relevant. But all the power comes from the new techniques in this new field that doesn’t even really have a name.],
+  [Further, a lot of the new techniques involve a new workflow. Copy code from your editor into GPT, make a request, get code back, paste it into your editor. No, don’t do that any more. Instead, start by selecting code and then pressing ⌘-L. No, wait, stop. Just press ⌘-L, make a request, get code, press the Apply button. No. New move. Press ⌘-I, make a request, scan the code as it’s added to the repo, run and check the behavior. No, wait, this is the killer. Iterate on a PRD first, then tell the LLM to write the code in one shot.],
+  [Adopting a new workflow induces cognitive strain because it requires extra supervision. And it requires willpower to not just do things the old safe way. It’s exhausting.],
+  [So the destabilization is three things. First, the pure sensation of doing something with a new, startling ease. Second, the knowledge that I can put in ten minutes or an hour or two and get significantly faster at building software. Third, my methods and working life are changing every day.],
+  [With gains like that to be had, why wouldn’t I do it all the time? Stay up later. Get up earlier. Watch AI programming game tape with lunch. Spend an hour learning rather than working, then make up the loss in the same day.],
+  [There’s also a problem. There is so much information. Every day is a deluge of new tools, techniques and streams. Which ones are worthwhile? I have a long list of stuff I’ve been meaning to try, that seems promising, that worked and I feel I should be doing more. Sometimes I’ll watch a forty-five minute YouTube video of someone vibe coding and it’ll be useless. Other times, I’ll skip forward and hit a nugget so juicy that I’ll become terrified I’m missing these sorts of things all over the place. Sometimes a technique will seem unpromising but, several hours in, will click.],
+  [For this, at least, I’ve found something of a solution. When you’re in a fast-changing environment with high uncertainty, what do you do? Well, Civilization, the video game, is a good guide. You explore, expand, exploit.],
+  [You spend a good deal of time exploring widely. Things are changing rapidly and there’s a lot to learn. Many explorations will be fruitless and that’s totally fine.],
+  [When you find something good, you expand your technique to incorporate it. Did you hear about an obviously useful tool? Install it! Have you been refactoring your code to make it easier to change? Do it!],
+  [And when something’s working, you exploit it as much as possible. It’s easy to learn a cool new technique then forget to use it. Don’t. Instead, bring it back.],
+  [I keep a list with these three categories. Explore, expand, exploit. And I spend some time on each.],
+  [It’s something to cling to.],
+),
+  insert-map: (:),
+  word-count: 800,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -660,7 +742,7 @@ val athleteActivities: Set[List[Point]] = fetchActivities(athleteId)],
   debug-mode: false,
 )
 
-  #pull-quote([class="audiodiv"\> [HTML5 audio: Sound resembling garbled speech buried in noise.], [Oona Räisänen])
+  #pull-quote([But with the right settings for the OKI-ADPCM decoder we can already hear some garbled speech under heavy Brownian noise.], [Oona Räisänen])
 
 }
 
@@ -708,7 +790,7 @@ val athleteActivities: Set[List[Point]] = fetchActivities(athleteId)],
   [Para aprender mais sobre o Programa de Parceiros do MongoDB, visite nossa página de parceiros .],
 ),
   insert-map: (:),
-  inline-pq: pull-quote([Estamos muito entusiasmados por ter a Accenture Federal Services como um dos principais patrocinadores do nosso primeiro MongoDB Public Sector Summit em janeiro de 2026.], [MongoDB Blog]),
+  inline-pq: pull-quote([No último ano, MongoDB e Confluent fortaleceram o alinhamento global de go-to-market (GTM), focando na aceleração do engajamento de co-venda na EMEA e APAC.], [MongoDB Blog]),
   inline-pq-idx: 14,
   word-count: 1785,
   edited-for-length: false,
@@ -775,7 +857,7 @@ val athleteActivities: Set[List[Point]] = fetchActivities(athleteId)],
   [For more on how MongoDB went from a “niche” NoSQL database to a powerhouse with the high availability, tunable consistency, ACID transactions, and robust security that enterprises demand, check out the MongoDB blog .],
 ),
   insert-map: (:),
-  inline-pq: pull-quote([Heartbeats and UpdatePosition messages carry progress and truth; if a node learns of a higher term, it steps down immediately.], [MongoDB Blog]),
+  inline-pq: pull-quote([Proof before shipping: Testing tells you that your code works in the cases you’ve thought to test.], [MongoDB Blog]),
   inline-pq-idx: 19,
   word-count: 2442,
   edited-for-length: false,
@@ -858,6 +940,110 @@ EOF],
 
 {
   #standard-article(
+  title: [Load Testing API’s on Redshift & Snowflake — A  Quick POC],
+  author: [Sameeksha Bhatia],
+  source-name: [Helpshift Engineering],
+  images: (),
+  paragraphs: (
+  [Load Testing API’s on Redshift & Snowflake — A Quick POC],
+  [At Helpshift, our data platform follows a Lakehouse architecture , combining the best of both data lakes and data warehouses . This architecture allows us to store and analyze large amounts of raw data in a structured and organized manner, while also providing the scalability and low-cost storage of a data lake. It consists of three key components:],
+  [Amazon S3 for storing historical data efficiently.],
+  [Amazon EMR for running Spark pipelines on ephemeral compute.],
+  [Amazon Redshift as the data warehouse powering customer-facing analytics , which includes Embedded Dashboard analytics , Power BI template apps, and Analytics APIs .],
+  [We serve the analytics data models to our customers using AWS Redshift through the following customer channels:],
+  [Embedded Analytics dashboard with Luzmo as the BI vendor.],
+  [PowerBI integration using REST API as a datasource. PowerBI apps allow customers to also create customized reports on the data models.],
+  [REST APIs to query/download analytics data models. These APIs allow custom aggregations and filters. (e.g., hourly or daily rollups, ad hoc filtering, etc.)],
+  [We have isolated our read path traffic for the above customer-facing analytics channels in a separate Redshift cluster from the write path traffic. However, in recent months, the team has noticed a few issues during peak hours of read traffic. One of the main challenges that the team faces is performance issues with serving analytics data on the above-mentioned customer channels.],
+  [With increasing adoption of our analytics interfaces — Power BI integrations and REST APIs — the Redshift cluster is under growing pressure from concurrent query workloads. These workloads are latency-sensitive and often power downstream operational or reporting workflows. Failures, timeouts, or inconsistent response times can disrupt customer pipelines, delay business-critical decisions, and increase retry or error-handling complexity on the client side. Ensuring predictable performance and horizontal scalability under load is critical to meeting SLAs, minimizing operational noise, and maintaining a consistent analytics experience across all customer-facing endpoints.],
+  [Difficulty in Handling High-Concurrent Traffic 
+Redshift offers Multi-Cluster Concurrency Scaling, but it comes at an additional cost and only partially resolves traffic spikes. During peak loads, we observed:],
+  [API failures and timeouts due to query queuing and resource contention.],
+  [Slow query execution despite concurrency scaling, leading to degraded user experience. Query duration varied from 10 seconds to 3 minutes for similar OLAP queries.],
+  [2. Vacuum & Sorting Overhead Under High Load],
+  [During high-concurrency execution, we noticed:],
+  [Table fragmentation and sort order degradation : As tables are continuously updated with new data, especially under high write throughput, rows become increasingly unsorted. This leads to fragmentation, which degrades scan performance and increases query latencies — particularly for queries relying on sort keys for efficient filtering. High write throughput leads to fragmentation, increasing query execution times.],
+  [Increased query execution time due to on-the-fly sorting : Instead of reading pre-sorted blocks, Redshift spent a substantial portion of query execution time re-sorting fragmented data at runtime, resulting in higher and inconsistent query durations.],
+  [VACUUM operations failing under load : Redshift requires periodic VACUUM operations to reclaim disk space and restore sort order. However, under heavy read and write workloads, VACUUM processes are deprioritized or delayed in favor of query execution. Since VACUUM is resource-intensive, it competes for the same I/O and CPU resources as live queries. On a saturated cluster, this leads to VACUUM jobs stalling, timing out, or failing entirely — leaving tables fragmented and causing query performance to degrade over time.],
+  [These challenges prompted us to explore alternative solutions for handling high-concurrency workloads efficiently. To evaluate alternatives, we conducted a performance benchmarking POC between Redshift and Snowflake using load testing tools like Newman and K6 .],
+  [Newman and Graphana K6],
+  [To effectively simulate traffic and test the performance of our queries, we used Newman and k6 , the powerful duo that helped us simulate the load.],
+  [Newman is a command-line tool built by Postman to run collections of API requests directly from the terminal. It’s particularly useful for automating and running tests for APIs, making it a great tool for testing query performance. It helps to execute postman collections via command line and supports parameterization, i.e., you can specify variables like the number of runs, parallel executions, and delay between requests.],
+  [Graphana K6 is an open source tool that is optimized for minimal resource consumption and designed for running high-load performance tests.],
+  [Let's quickly walk through the setup steps for these tools.],
+  [I. Newman],
+  [We already had the postman collection of our Analytics API’s. To setup Newman. Ensure npm is installed and upgraded to version 16. Install Neman and check if its working correctly.],
+  [--\> npm install -g newman
+--\> newman run Sunbird\\ -\\ Analytics\\ API.postman\_collection.json],
+  [This executes the API requests from the collection and provides important metrics, such as total run time, average request time , and other performance stats.],
+  [II. k6],
+  [Next, to simulate more realistic traffic using k6 , which can handle a higher load and more complex testing scenarios, install k6.],
+  [--\> brew install k6
+--\> npm install -g postman-to-k6 ;; a tool to convert Postman collections to k6 scripts
+--\> postman-to-k6 Sunbird\\ -\\ Analytics\\ API.postman\_collection.json -o scriptIssue.js],
+  [The last command generates a scriptIssue.js file that contains the necessary k6 script to perform load testing on the API.],
+  [III. Testing Steps],
+  [We tested the Issue entity API, which has a from and to parameter required for date ranges.],
+  [Step 1: To simulate a realistic dataset, we created a CSV file with random values for the from and to parameters. For example, in a file named IssueWeeklyData.csv with sample data.],
+  [Step 2: Created a new file for the k6 script , namedIssueScript.jsin the same directory as our CSV file. Sample k6 script: The script lets us define the stages, http\_req\_duration, etc.],
+  [https:\/\/medium.com/media/a785030706aa6d7ebd14c9dbb53cb0b1/href],
+  [This script will:],
+  [Randomly select values from the csv file for the from and to parameters.],
+  [Make HTTP GET requests to the API endpoint with those parameters.],
+  [Check the response status and time, ensuring the queries run within the expected time limits.],
+  [k6 run IssueScript.js],
+  [This will simulate the load, making concurrent requests to the API, and output performance metrics like response times , throughput , and error rates . Sample output looks like —],
+  [✗ status is 200
+ ↳ 95% — ✓ 97 \/ ✗ 5
+ ✗ response time \< 3000ms i.e 3 secs
+ ↳ 2% — ✓ 3 \/ ✗ 99],
+  [checks.........................: 49.01% ✓ 100 ✗ 104],
+  [data\_received..................: 14 MB 940 kB/s],
+  [data\_sent......................: 19 kB 1.3 kB/s],
+  [http\_req\_blocked...............: avg=256.57µs min=2µs med=26.99µs max=1.52ms p(90)=669.4µs p(95)=697.49µs],
+  [http\_req\_connecting............: avg=191.59µs min=0s med=0s max=820µs p(90)=534.3µs p(95)=555.85µs],
+  [✗ http\_req\_duration..............: avg=3.43s min=271.48ms med=2.11s max=8.08s p(90)=6.49s p(95)=7.11s],
+  [{ expected\_response:true }...: avg=3.56s min=479.34ms med=4.65s max=8.08s p(90)=6.57s p(95)=7.13s],
+  [http\_req\_failed................: 4.90% ✓ 5 ✗ 97],
+  [http\_req\_receiving.............: avg=82.49ms min=25µs med=14.53ms max=549.84ms p(90)=220.58ms p(95)=292.28ms],
+  [http\_req\_sending...............: avg=50.84µs min=10µs med=40.5µs max=161µs p(90)=101.6µs p(95)=117.89µs],
+  [http\_req\_tls\_handshaking.......: avg=0s min=0s med=0s max=0s p(90)=0s p(95)=0s],
+  [http\_req\_waiting...............: avg=3.35s min=271.42ms med=2.09s max=7.87s p(90)=6.3s p(95)=7.03s],
+  [http\_reqs......................: 102 6.851256/s],
+  [iteration\_duration.............: avg=4.43s min=1.27s med=3.11s max=9.08s p(90)=7.49s p(95)=8.11s],
+  [iterations.....................: 102 6.851256/s],
+  [vus............................: 20 min=3 max=50],
+  [vus\_max........................: 50 min=50 max=50],
+  [running (14.9s), 00/50 VUs, 102 complete and 0 interrupted iterations
+default ✓ \[======================================\] 00/50 VUs 10s
+ERRO\[0016\] thresholds on metrics 'http\_req\_duration' have been crossed],
+  [Key variables tested:],
+  [To evaluate the performance of both Redshift and Snowflake under varying loads, we simulated API queries under different scenarios. Several key parameters were used to assess how each platform performs under different levels of demand and customer data sizes:],
+  [Number of concurrent queries: We tested with different numbers of concurrent queries being executed within 1 second to simulate various load scenarios. This helped us understand how each platform scales under high traffic and whether it can handle bursty traffic spikes.],
+  [Snowflake Warehouse Size: We used different warehouse sizes on Snowflake—XS (Extra Small) , S (Small) , and M (Medium) — to simulate performance across various configurations. The warehouse size plays a significant role in determining how much compute power is available to handle queries, particularly during peak usage.],
+  [Snowflake Cluster’s Maximum Capacity: Snowflake’s ability to scale automatically by adding or removing clusters was tested to see how well it handled increases in concurrent queries. We simulated workloads pushing Snowflake’s cluster capacity to its limit to evaluate its auto-scaling capabilities.],
+  [Customer Data Size: We simulated queries for customers with small , medium , and large datasets to assess how Snowflake handles different data volumes.],
+  [Results & Findings],
+  [For our Analytics and Power BI API load test, we selected two heavily used APIs: Issues Entity API and Agents Entity API. We ran these APIs against both Redshift and Snowflake, evaluating total execution time under different conditions. Overall, Snowflake has a much better query execution time under heavy workload for our use cases and proved to be relatively better than Redshift.],
+  [These preliminary performance tests showed ~30 to 50 % improved query performance on Snowflake read path compared to our current Redshift Database.],
+  [Cost of Operation: By extrapolating the numbers based on POC runs, Snowflake has a 2x or 3x jump in cost as compared to Redshift.],
+  [Scalability: Snowflake is very easy to scale up or down automatically and can cater to high concurrency with high performance.],
+  [Snowflake offered significant performance improvements in handling high-concurrency workloads, especially in terms of query latency and scalability. However, these benefits came at a higher operational cost, highlighting the trade-offs between performance and budget.],
+  [This POC was a valuable exercise in defining the right architectural decisions to support the growing demand on our customer-facing analytics platform. It validated the need for more elastic and maintenance-free architectures as concurrency continues to scale.],
+  [Future work will focus on evaluating cost optimization strategies within Snowflake , including compute sizing, auto-suspend configurations, and query tuning, to ensure that the improved performance aligns with our operational efficiency goals.],
+  [Thanks to Abhishek and Aqeel for the valuable support.],
+  [Load Testing API’s on Redshift & Snowflake — A Quick POC was originally published in helpshift-engineering on Medium, where people are continuing the conversation by highlighting and responding to this story.],
+),
+  insert-map: (:),
+  word-count: 1667,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+}
+
+{
+  #standard-article(
   title: [The Original Attention Crisis],
   author: [Study Hacks],
   source-name: [Study Hacks (Cal Newport)],
@@ -869,7 +1055,7 @@ EOF],
   [This created pressing questions for aspiring thinkers, including: “How do we decide what to read? How long should we read it for? Must every single chapter be excerpted?”],
   [Part of the solution was the development of “new note-taking techniques,” including the copying of excerpts into a master notebook called a book of commonplaces. (For more on this technique, I recommend William Powell’s delightful 2010 techno-history, ​ Hamlet’s Blackberry ​ ).],
   [But as the essay on Steno elaborates, better notes weren’t enough on their own, as there were simply too many good books available. In response to this reality, Steno, during his university studies in the 1650s, innovated some more advanced attention management strategies:],
-  [“[H]e learned to focus on specific themes, rather than letting his mind read multiple things quickly. A ‘harmful hastening should be avoided’ as he put it. His solution was to ‘stick to one topic.’],
+  [“\[H\]e learned to focus on specific themes, rather than letting his mind read multiple things quickly. A ‘harmful hastening should be avoided’ as he put it. His solution was to ‘stick to one topic.’],
   [In practice, that meant blocking specific moments of time to go through the hardest tasks. As he wrote in his personal notebook, ‘before noon nothing must be done except medical things.’ … As Steno told a friend, he took ‘almost all the morning hours’ to read the works of the Church Fathers and old biblical manuscripts available at the Medici library.”],
   [In other words, Steno created a method that combines what we might now call ​slow productivity​ , ​deep work​ , and ​time blocking​ .],
   [The lessons here are clear. The use of our brains to think deeply about meaningful ideas isn’t new. It’s been at the core of the human experience since the early modern period, when access to sophisticated information first became somewhat widespread.],
@@ -961,74 +1147,66 @@ Your database tools should adapt to your workflow, not disrupt it. By bringing n
   debug-mode: false,
 )
 
-  #pull-quote([The move to MongoDB Atlas has equipped CSX with a more scalable and resilient platform.], [MongoDB Blog])
-
 }
 
 {
   #standard-article(
-  title: [Gemma 3 AI model in Clojure],
-  author: [Dragan Djuric],
-  source-name: [Dragan Djuric],
+  title: [Rain: A key-value store for Strava’s scale],
+  author: [Derick Yang],
+  source-name: [Strava Engineering],
   images: (),
   paragraphs: (
-  [Recently I've been working on the ONNX runtime integration into Deep Diamond, backed by the grant sponsored by the Clojurists Together Foundation.
-In the past few articles, we've seen how ONNX models are integrated into Deep Diamond, using only a single
-function onnx , with almost no need for additional configuration (which is available).
-I used a simple MNIST model in the demonstration. But, can we now load and run the inference on
-the real deal models, such as the open LLMs from the Hugging Face, for example? Let's see!],
-  [The Hugging Face model card has this to say about Gemma 3: "Gemma is a family of lightweight, state-of-the-art open models from Google, built from the same research and technology used to create the Gemini models." (etc., etc.)
-So, it seems to be something worth trying.],
-  [I'll try to be brief, and skip the unnecessary talk. Let's just show the code,
-which I've just lifted up and adapted from the Diamond's midje tests.],
-  [What we need for this? First, decide on the backend engine; this time we'll use tensors in main memory
-backed up by the oneDNN engine (DNNL).],
-  [Next, load and configure a particular flavor of Gemma 3 (a smaller one, only 1 billion parameters).
-The onnx function creates a generalized blueprint, which can create the actual functions when
-evaluated with the specific input tensors.],
-  [class="org-src-container"\>
- ( def onnx-bp ( onnx fact "data/gemma-3-1b-it-ONNX-GQA/onnx/model.onnx" 
- { :options ( -\> ( options ) 
- ( override-dimension! "batch\_size" 1 ) 
- ( override-dimension! "sequence\_length" 1 ) 
- ( override-dimension! "past\_sequence\_length" 1 ) 
- ( override-dimension! "total\_sequence\_length" 1 ) ) } )],
-  [Gemma 3 has 63 inputs and 61 outputs. We'll need to provide these, but even here we can automate some parts
-with Clojure, since past-key values are pretty uniform. We only need to provide inputs, while the engine
-can create the outputs for us.],
-  [class="org-src-container"\>
- ( def src-tz ( tensor fact [ 1 1 28 28 ] :float :nchw ) ) 
- ( def input-ids ( tensor neand-fact [ 1 1 ] :long :nc ) ) 
- ( def position-ids ( tensor neand-fact [ 1 1 ] :long :nc ) ) 
- ( def attention-mask ( tensor neand-fact [ 1 1 ] :long :nc ) ) 
- ( def past-key-values ( repeatedly 60 \# ( tensor fact [ 1 3 1 64 ] :float :nchw ) ) )],
-  [Next, create the executable instance model. Nothing too fancy here.],
-  [Now, these inputs need to be initialized. Normally, that would be done inside an LLM generation loop, but
-here we only demonstrate one step, and we transfer some mock data.],
-  [class="org-src-container"\>
- ( transfer! [ 2 ] input-ids ) 
- ( transfer! [ 0 ] position-ids ) 
- ( transfer! [ 1 ] attention-mask ) 
- ( doseq [ pkv past-key-values ] 
- ( transfer! ( repeat 0 ) pkv ) )],
-  [Aaaaand, we actually run the model by calling our gemma function, which provides the next token.],
-  [Now, hold on with the celebration. This does not actually return a full answer from the LLM.
-This only returns the next token, but in the form of large tensor full of numbers. The information
-is there, but needs to be extracted from these numbers to the form of string. Also, this is only one step;
-a LLM would typically run this in a loop and spew tokens after tokens. There's some more work to do
-until we get a ready made, hands-off chatty LLM. But the main work has been done, and now it's the matter
-of setting it up properly, tokenizing the inputs, and calling it in a useful way! Still lots of work,
-but not the hardest parts :)],
-  [I've applied for Clojurists Together yearly funding in 2026. If you are a Clojurists Together member,
-and would like to see continued development in this area, your vote can help me keep working on this :)],
-  [My goal with this funding in 2026 is to continuously develop Clojure AI, ML, and high-performance
-ecosystem of Uncomplicate libraries (Neanderhal and many more), on Nvidia GPUs, Apple Silicon, and traditional PC.
-In this year, I will also focus on writing tutorals on my blog and creating websites for the projects involved,
-which is something that I wanted for years, but didn't have time to do because I spent all time on
-programming.],
+  [Much of our heatmaps are built on batch data outputs stored in Rain],
+  [At Strava, we love maps — some of our most loved features are nestled on map surfaces. My team, the Geo team, is focused on building and improving these products. On the Geo and Metro teams, we tend to work with large datasets: aggregations of open source map data via OpenStreetMaps , GPS data points from uploaded activities, third-party datasets for properties like elevation, and beyond. This aggregated dataset eventually turns into Geo features we know and love, like the global heatmap , Strava Metro , the routing product , route suggestions , elevation profiles, and points of interest. We perform these data aggregations in a rather hefty data pipeline, run on a regular cadence to ensure we’re serving up-to-date geo data.],
+  [One of the Geo team’s key challenges is efficiently serving large, immutable (write-once, read-many) datasets produced by our pipeline. This is particularly hard for compute-intensive use cases like routing, where:],
+  [Write-Optimized vs. Read-Optimized Conflict : Traditional read-optimized data stores struggle with large batch writes without impacting read performance or introducing significant operational complexity.],
+  [Cost Constraints : Storing rarely accessed datasets in production databases can be prohibitively expensive — especially for projects like Strava Metro , which are accessed sporadically.],
+  [Schema Complexity : Defining schemas externally from the service that uses them can be costly and inflexible for developers.],
+  [Our previous solution to large writes used a combination of datastores: PalDB and Cassandra .],
+  [PalDB is a binary data format ideal for small datasets. The README states that it is optimized for “side data”, relatively small datasets you read “in passing” on your service. PalDB is unideal, however, for larger datasets. In our case, since each service deployment required downloading the key-value file from S3 , our deployments were taking upwards of twenty minutes. Slow deployment hindered rapid iteration for developers. Additionally, the collection of PalDB files occupies a hefty amount of memory on every service instance. For an important service like Routemaster at Strava, this means we end up duplicating the data in memory across potentially dozens of server instances.],
+  [Cassandra is advertised as a write-heavy datastore and it can be an effective solution for batch data outputs. Though Strava does still use it as storage for some batch datastores, we can run into problems when we’re replacing the full dataset on a regular cadence. In our experience, Cassandra writes from Spark require babysitting to ensure we don’t hit throttling/network/connection limits. Since our builds are full replacements incorporating worldwide changes to the OpenStreetMaps source, this can cause high load to a production datastore.],
+  [We embarked on a journey to improve our immutable batch data updates by creating a new service that acts as a key-value store for any dataset generated in Spark . We call this service Rain, because it distributes data from the cloud onto client services.],
+  [At its core, Rain behaves analogously to the cache in your operating system, except on a distributed systems level. Just as the OS loads file blocks into cache, Rain loads subsets of your Spark-output dataset on S3 (“the filesystem”) into Redis (“the L1/L2 cache”). Client services retrieve the datasets via a rich client that calls a service. In code, Rain has three primary components: a Spark writer API, a library for reads, and a Thrift service, shown below:],
+  [What does this structure enable? First, it allows us to tap into the power of Spark distributed write, which is optimized for Parquet outputs. Second, it allows us to perform immutable data hot swap by simply changing the reference path for the dataset, which is provided through an admin interface. Third, it helps us save on data costs by using a LRU (least recently used) Redis cache and using a single distributed datastore rather than a duplicated in-memory store on each service instance.],
+  [Writing a Rain table],
+  [Strava uses Apache Spark to run our data pipelines and write Rain tables. For datasets we update regularly, we typically schedule refreshes with Apache Airflow . We output the data of a fully refreshed table to a clean prefix in S3 and update a file representing a pointer to the table data to point at this new prefix.],
+  [Rain is responsible for regularly checking if this reference data pointer has been updated to point to new table data. At the Rain service level, we use a Caffeine cache to expire the pointer pointing to the old dataset. This enables us to replace the immutable dataset in the background, without redeploying any component of the system . The table pointer update is simply an API call to the Rain server. The server then updates the pointer. When Caffeine expires the pointer at the old dataset, Rain will start reading data from the new dataset.],
+  [Key/value pairs in a Rain table can consist of any arbitrary Kryo-serializable case classes. This means that services can be responsible for defining their own schemas, without involving a database administrator. We write, store, and transfer data using a byte array format, and clients define the key/value types and ensure they are Kryo serializable. The Spark client and client server reader handle object serialization and deserialization, respectively.],
+  [The client library is responsible for deserializing the byte array results that Rain returns into types that the client can use.],
+  [How do we perform schema changes on a Rain table? A schema change generally requires a service deployment, so simply naming and using a new Rain table and redeploying the service will suffice.],
+  [“Writing a Rain table” is simply writing homogeneously sized Parquet files in S3, where the schema for the Parquet data is a key-value tuple. We use the basic Spark parquet write API to perform this operation. To write these homogeneously-sized files, we need to assign a partitioner in Spark to conduct a \`.repartition\` operation.],
+  [We partition by key, using either a hash partitioner against the key, or a range partitioner based on a predefined Ordering of the key. Hash partitioning distributes the keys evenly across all partitions based on a hash function. Range partitioning ensures that keys “close” to each other based on the ordering are on the same partition. Hash partitioning offers a guarantee of minimized skew, while range partitioning has cache locality benefits for certain read patterns on the read side, which can reduce the number of read queries.],
+  [For some datasets, range partitioning makes more sense because the data is often loaded in ranges. For example, routing edges in Strava’s routebuilder , which are keyed by ID, have IDs close together when close together geographically . This makes the routing edges dataset a good candidate for range partitioning. The flip side of this is that certain keys may be “hotter” than others at read time. The performance penalty of a hot key, however, is fairly minimal with a cache store like Redis.],
+  [The Spark write client and the Rain read client need to use the same partitioner to be in sync. For hash-partitioned tables, this is fairly straightforward–we use the default hash partitioner in Spark. However, for range-partitioned tables, we need to write a separate index that the read client loads to tell the Rain server in which partition to search for a key. Since deserialization happens on the client via the rich Rain client library, computing the ordering also needs to happen on the client. That adds one more responsibility when registering classes with the Rain client library: it has to define an ordering for the keys.],
+  [Reading from Rain is fairly straightforward. The client library takes the object key, serializes it into bytes, and makes a request to the Rain service to look up in Redis/S3. If the key is found in Redis, we return it. If not, we load the file from S3 that contains that key. The data is returned in byte array format, and again the Rain client deserializes the bytes into an object that makes sense for the calling service.],
+  [Internally, there are a few bookkeeping constructs to ensure good performance for concurrent reads. If there are concurrent requests for the same key, we use ThriftMux consistent hashing to make sure that we only load the S3 file into Redis once. Consistent hashing ensures that only one service instance is responsible for loading the S3 file associated with a key. We use a singleton Caffeine cache on individual service instances to maintain a record of which requests to S3 are currently being made. Conveniently, an AsyncCaffeineCache implicitly provides a clean locking mechanism for our file loads.],
+  [We do bookkeeping on Rain server so we can lazily refresh full immutable tables.],
+  [There are several levels to the cache in Rain. S3 is the slowest read, followed by Redis, followed by Caffeine cache directly on the service client. We ideally want to have as much data as possible as close to the service client as possible, but, of course, we operate in a world with limited resources. Each service has its own SLA and resourcing requirements. Rain is designed to be flexible to each of these constraints.],
+  [As with any caching system, heterogeneity in read patterns on Rain helps provide good performance. The ideal distribution of data stored in a Rain table will have both frequently accessed and infrequently accessed data. Data stored in ordered and partitioned tables helps increase diversity of access SLAs, since partitions in an ordered table will be accessed less frequently. For example, routing data on roads where it is currently nighttime (and therefore not many users) does not need to be cached. Another example: we generally should not need to cache satellite imagery of zoomed-in parts of the ocean (and we expect that data to be evicted first), whereas it would make sense to store in cache an image of Central Park. Variation of SLAs on data retrieval within a cache reduces the amount of cache evictions.],
+  [Basically, we can happily exceed the storage size of the cache as long as we don’t have high-usage data filling the whole cache and causing eviction churn.],
+  [Local mode],
+  [Rain unlocks the ability to run local servers against production datasets. We can set up local runs of service instances to point at a Rain server. Practically, this means we can avoid loading the entirety of a dataset into memory for local runs, meaning local service instances come up much more quickly.],
+  [When running in local mode, Strava engineers can pick and choose which Rain tables they want to load from the remote Rain service, and which Rain tables they want to interact with directly. We introduced a Rain table mode to use Caffeine for local caching only. One use case of this mode is when developers are locally iterating on a job that outputs to a Rain table. The developer can write to the Rain table locally in a Spark run and read it locally without having to productionalize their dataset. On the Geo team, we use these local Spark runs to output data specific to a certain region of the world, which is helpful for QA when developing new features.],
+  [Admin UI],
+  [Of course, with a tool like Rain, it’s important to have visibility into what datasets are being used. It’s important to investigate cache metrics and understand data access patterns for certain datasets. We built an internal UI for this that lets us perform immutable table refreshes, investigate access patterns, warm our Redis cache, and clean up our Redis cache.],
+  [Below is a screenshot from the admin UI which shows a distribution of the access times of keys by table in Redis.],
+  [One downside we’ve seen is an increase in cross-AZ network usage, but the increased spend there is offset by the savings from service memory reduction. We had budgeted for small increases in latency, but we soon discovered that Rain and Redis reads caused little to no latency bump in client service responses.],
+  [Another downside we found was a challenging migration from synchronous data retrieval to Future-based asynchronous retrieval of Rain table data. Finagle Thrift client responses are always asynchronous, whereas PalDB calls are always synchronous, so our move to Rain meant that several workflows needed to be refactored to use Futures. This required a bit of thread pool tuning and a better understanding of concurrency control on client services. Some algorithms (e.g. A\* graph search) that inherently require a large number of serial steps, each needing a data lookup, are inherently hard to migrate.],
+  [Provisioning a large Redis cluster has a cost, too. By our calculations, this is still offset by our savings on cloud computing cost.],
+  [Rain is still young, but so far, we’ve seen quite a lot of improvements:],
+  [We’ve seen faster iteration time on deployments (from 20 minutes to 1 minute deploy time) and enabled local mode for large datasets. We hope that Rain simplifies development going forward when considering caching solutions at Strava.],
+  [We reduced the memory footprint of some of our largest services by orders of magnitude.],
+  [We saved tens of thousands of dollars in EC2 computing costs.],
+  [We’ve enabled immutable table refresh in the background],
+  [We’ve enabled distributed write for immutable datasets from Spark],
+  [Overall, Rain is a big step forward in the way that Strava can serve large datasets. The biggest benefit we get from Rain is that it lets us serve terabyte-scale Spark-derived datasets at low latency. This is huge for our product roadmap, and I’m excited to see what we’ll do with it.],
+  [Interested in joining Strava? See the careers page .],
+  [Rain: A key-value store for Strava’s scale was originally published in strava-engineering on Medium, where people are continuing the conversation by highlighting and responding to this story.],
 ),
   insert-map: (:),
-  word-count: 749,
+  inline-pq: pull-quote([Internally, there are a few bookkeeping constructs to ensure good performance for concurrent reads.], [Derick Yang]),
+  inline-pq-idx: 18,
+  word-count: 2293,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -1036,25 +1214,6 @@ programming.],
 }
 
 #article-row((
-  [
-    standard-article(
-  title: [Trump staffs science and technology panel with non-scientists],
-  author: [John Timmer],
-  source-name: [Ars Technica OpenForum],
-  images: (),
-  paragraphs: (
-  [PCAST, the President’s Council of Advisors on Science and Technology, is generally not a high-profile group. It tends to be noticed when things go wrong, such as when the PCAST head named by Biden had to resign due to abusive behavior. Biden, who was generally supportive of science, didn't even name the members of PCAST until eight months after his inauguration. So it's no surprise that an administration that's been hostile to science took even longer to staff its version of the group.],
-  [The list of appointees was finally released on Wednesday , and it's notable for its almost complete absence of scientists. There are still nine unfilled vacancies on the council, so it's possible more scientists will be named later. But for now, PCAST is heavily tilted toward extremely wealthy technology figures.],
-  [These include investor Marc Andreessen, Google's Sergey Brin, Michael Dell of Dell, Larry Ellison of Oracle, Jensen Huang of NVIDIA, Lisa Su of AMD, and Mark Zuckerberg of Meta. But many of the lesser known names have similar backgrounds. Previously named chairs of PCAST are investor David Sacks and a former investment company CFO and current head of the Office of Science and Technology Policy, John Kratsios. Of the new appointees, Safra Catz also comes from Oracle, Fred Ehrsam co-founded Coinbase, and David Friedberg is another investor.],
-  [Read full article],
-),
-  insert-map: (:),
-  word-count: 224,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-  ],
   [
     standard-article(
   title: [Mapping microwave relay links from video],
@@ -1068,7 +1227,7 @@ programming.],
   [The rest can be done manually, or using Hough transform and centroid calculation from OpenCV. In these pictures, the ratio of the diameters of the concentric circles is a sinusoid function of the angle between the antenna direction and the camera direction. At its maximum, we're looking straight at the beam. (The ratio won't max out at unity in this case, because we're looking at the antenna slightly from below.) We can select the frame with the maximum ratio from high-speed footage, or we can interpolate a smooth sinusoid to get an even better value.],
   [This particular antenna is pointing west-northwest with an azimuth of 290°.],
   [What about distance?],
-  [Because of the line-of-sight requirement, we also know the maximum possible distance to the linked tower, using the formula 7140 × √(4 / 3 × h) where h is the height of the antenna from ground. If the beam happens to hit a previously mapped tower closer than this distance, we can assume they're connected!],
+  [Because of the line-of-sight requirement, we also know the maximum possible distance to the linked tower, using the formula 7140 × √(4 \/ 3 × h) where h is the height of the antenna from ground. If the beam happens to hit a previously mapped tower closer than this distance, we can assume they're connected!],
   [This antenna is communicating to a tower not further away than 48 km. Judging from the building it's standing on, it belongs to a government trunked radio network.],
 ),
   insert-map: (:),
@@ -1078,30 +1237,29 @@ programming.],
 )
 
   ],
-), ruled-indices: (1,))
-
-#article-row((
   [
     standard-article(
-  title: [Final analysis of 2025 Iberian blackout: Policies left Spain at risk],
-  author: [John Timmer],
+  title: [Polygraphs have major flaws. Are there better options?],
+  author: [Sarah Scoles, Undark Magazine],
   source-name: [Ars Technica OpenForum],
   images: (),
   paragraphs: (
-  [Roughly a year ago, Spain and Portugal went dark when the electrical grid of the entire Iberian Peninsula failed. While the grid operators did a heroic job of restarting the grid quickly, there were obvious questions about what had led to the blackout in the first place. A preliminary report suggested that a combination of grid-level voltage oscillations and early disconnections was the main factor.],
-  [Over the weekend, the European grid coordinator, ENTSO-e, released its final, detailed report on the event. While it's largely consistent with the preliminary conclusions, the report provides much more detail about what went wrong and, more significantly, offers a clear picture of how the Iberian grid operators could make changes to prevent a similar event in the future.],
-  [The expert committee that prepared the report had access to a wealth of data, including status logs from most of the major hardware on the Spanish and Portuguese grid, often recorded with sub-second precision. There's also data from the two major interchanges between the Spanish grid and those in France and Morocco. The group even obtained data from two manufacturers of the small inverters used for rooftop solar about the performance of their hardware on the day in question.],
+  [When George W. Maschke applied to work for the FBI in 1994, he had already held a security clearance for over 11 years. The government had deemed him trustworthy through his career in the Army. But soon, a machine and a man would not come to the same conclusion.],
+  [His application to be a special agent had passed initial muster. And so, in the spring of 1995, according to his account, he found himself sitting across from an FBI polygraph examiner, answering questions about his life and loyalties.],
+  [He told the truth, he said in an interview with Undark. But in a blog post on his website, he recalled the examiner told him that the polygraph machine—which measured some of Maschke’s physiological responses—indicated that he was being deceptive about keeping classified information secret, and about his contacts with foreign intelligence agencies.],
   [Read full article],
 ),
   insert-map: (:),
-  word-count: 207,
+  word-count: 145,
   edited-for-length: false,
   debug-mode: false,
 )
 
   ],
-  [
-    standard-article(
+), ruled-indices: (1,))
+
+{
+  #standard-article(
   title: [Safely Modifying Your Hosts File with Gas Mask],
   author: [Curalate Engineering],
   source-name: [Curalate Engineering],
@@ -1130,70 +1288,6 @@ Gas Mask, a simple UI-based hosts file manager, allows you to set up different h
 ),
   insert-map: (:),
   word-count: 404,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-  ],
-), ruled-indices: (1,))
-#pull-quote([A preliminary report suggested that a combination of grid-level voltage oscillations and early disconnections was the main factor.], [John Timmer])
-
-
-#article-row((
-  [
-    standard-article(
-  title: [US to pay TotalEnergies \$1 billion to stop developing offshore wind in US],
-  author: [John Timmer],
-  source-name: [Ars Technica OpenForum],
-  images: (),
-  paragraphs: (
-  [On Monday, the Trump administration announced its newest approach to its goal of blocking the development of offshore wind: pay companies to walk away from lease sites they had paid for under the Biden administration. The Department of the Interior, which arranges leases of coastal sites for the development of wind farms, would end up returning about \$1 billion to France's TotalEnergies, which has promised both to invest that money in US-based fossil fuel projects and to not do any further offshore wind development in the US.],
-  [Rumors of the deal had begun circulating last week . The deal comes in the wake of the administration's repeated failures to block offshore wind projects after construction had started.],
-  [The deal would see TotalEnergies invest roughly \$1 billion in oil and natural gas projects in the US. Once those commitments are made, the US would pay the company that amount in return for its abandonment of two areas it had leased for offshore wind. One of those areas would have hosted a relatively small project near the Carolinas. But the second project, Attentive Energy , is a large site east of New Jersey that would have the capacity to generate 3 Gigawatts of power—capacity that the nearby states would find difficult to replace with other means.],
-  [Read full article],
-),
-  insert-map: (:),
-  word-count: 218,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-  ],
-  [
-    standard-article(
-  title: [A bit of good news: It's possible to turn around a groundwater crisis],
-  author: [Scott K. Johnson],
-  source-name: [Ars Technica OpenForum],
-  images: (),
-  paragraphs: (
-  [Generally, when you hear “water use” and “sustainability,” you expect those words to be followed by some bad news. Humanity’s enduring ability to ignore the math of declining water supplies is almost impressive. But there are cases where actions have successfully reversed our loss of water resources. A new paper in Science by Scott Jasechko of the University of California, Santa Barbara, examines documented cases of groundwater recovery around the world to identify which strategies have worked.],
-  [Groundwater is invaluable for many reasons. For one, it’s (usually) cleaner than surface water. It’s also right under your feet and often close enough to the surface that it doesn’t take much energy to pump it up. And there’s loads of it down there, no matter the season. Because of this, humans use a lot of it for drinking water, agriculture, and every other use you can think of.],
-  [Unfortunately, in many places, the rate of groundwater use has grown to exceed the rate at which precipitation soaks into the ground to replenish it.],
-  [Read full article],
-),
-  insert-map: (:),
-  word-count: 175,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-  ],
-), ruled-indices: (1,))
-
-{
-  #standard-article(
-  title: [Long fingernails vs. touchscreens: This nail polish could help],
-  author: [Jennifer Ouellette],
-  source-name: [Ars Technica OpenForum],
-  images: (),
-  paragraphs: (
-  [The rise of touchscreen technology has been a boon in many respects, but for people with long fingernails, there can be issues with the capacitive variety since fingernails are non-conductive and thus don't register on the screen as a touch. One can use a stylus, of course, or simply use the finger pad under the nail, but ideally it would be nice to be able to use one's fingernail. A conductive nail polish might do the trick, according to research presented at a meeting of the American Chemical Society in Atlanta, Georgia.],
-  [The work began as a special project for Manasi Desai, an undergraduate at Centenary College of Louisiana who has an interest in cosmetic chemistry and decided to investigate ways to make fingernails compatible with touchscreen technology. There are a few existing conductive nail polishes that rely on spiking a clear polish with carbon nanotubes, conductive polymers , or metallic particles. And in 2013 and 2014, a proposed press-on false fingernail with a capacitive tip was showcased at CES in Las Vegas, although the technology doesn't seem to be commercially available.],
-  [Desai reasoned that existing polishes rely on additives that could be dangerous if inhaled, as well as having a limited shade range given that they impart a black or metallic shimmer. Working with her supervisor, organometallic chemist Joshua Lawrence, Desai decided to try to create a clear, colorless nail polish that didn't use any toxic materials and could be applied over any manicure.],
-  [Read full article],
-),
-  insert-map: (:),
-  word-count: 249,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -1359,8 +1453,6 @@ First, we need to set up our Python environment. We will install the voyageai cl
   [To learn more about the MongoDB Partner Program, please visit our partners page .],
 ),
   insert-map: (:),
-  inline-pq: pull-quote([MongoDB's partnership with Google Cloud has set the standard for meaningful collaboration—driving new business and delivering impact across some of the world’s most complex global enterprises.], [MongoDB Blog]),
-  inline-pq-idx: 14,
   word-count: 1509,
   edited-for-length: false,
   debug-mode: false,
@@ -1414,28 +1506,47 @@ First, we need to set up our Python environment. We will install the voyageai cl
 
 {
   #standard-article(
-  title: [Making a game with my son],
-  author: [Mary Rose Cook],
-  source-name: [Mary Rose Cook],
+  title: [Embedding Teamwork Chat],
+  author: [Dawid Myslak],
+  source-name: [Teamwork Engineering Room],
   images: (),
   paragraphs: (
-  [One morning, my son woke up and came downstairs, deep in thought. He looked up at me and said, “Can we make a game, Mummy?” He’s seven and he’s called Jacob.],
-  [He told me his game was called Exploding Kitties. He described the mechanics. Bad guys patrol up and down. If they see the player - a kitty - they laser them with their eyes and the kitty explodes. If the kitty can sneak behind a bad guy, it can scratch and kill him.],
-  [I had a little game making kit already. A mobile web app. An update and render loop, game objects.],
-  [I showed Jacob how to add game objects to the level. He added some red squares for the baddies and a blue square for the kitty.],
-  [I can’t tell you how magic it was to see him use something I made.],
-  [I said, shall we make the kitty move? He said yes. I prompted Cursor, “Make it so when the player taps the screen the blue square gradually moves to where they tapped.” Cursor generated the code and applied it. The mobile app, served on localhost and made available over WiFi, refreshed on my phone. Jacob tried tapping the screen and the kitty moved to where he’d tapped.],
-  [In the past when we’d made games together, the programming had been too slow for Jacob to stay engaged. Now, with code gen, the feedback loop was fast enough to keep his attention.],
-  [I told Cursor to add a prompt input box to the game itself. I wired up a little backend route that could receive the prompt and pipe it through for Claude Code to implement.],
-  [The UI for modifying the game was now built into the game itself. Jacob and I could both work on the phone. A shared headspace through a shared device.],
-  [Jacob said he wanted to draw proper pictures for the kitty and the bad guys. I typed into the phone, “Create a pixel editor on the game object properties screen. Store the pixel art on the game objects.” Two minutes later, Jacob was poring over the throne, drawing the kitty in the pixel editor, enthralled. It reminded me of when my Dad and I would make icons in ResEdit on the Macintosh.],
-  [After Jacob had added the kitty I said I had an idea. I typed in, “Get rid of this prompt box and replace it with a button that records audio. Use OpenAI to transcribe the audio. Send the transcription to the Claude Code backend route as before.”],
-  [The record button appeared. I asked Jacob what he wanted to change about the game next. He said, “I want to do bigger drawings.” I said, “Go ahead and tell it yourself”. He tapped the record button and said, “Make the drawings bigger,” and I added, “Like 10 by 10, right?” And he said, “Yeah,” and tapped the button to stop the recording. Half a minute later, he had a bigger canvas, and started drawing the bad guys.],
-  [Jacob can type, but slowly. Now he could speak instead of typing and build the game himself.],
-  [A fast feedback loop. Software with the edit controls built right in. A shared device. An accessible medium of expression. My son and I, in the same headspace, making something together. Magic.],
+  [A couple of weeks ago we introduced a new feature in Teamwork Chat called Project Rooms .],
+  [Project Rooms are a great way to create dedicated real-time communication channels for specific projects. Our next priority was to take this feature even further.],
+  [Project Rooms in Teamwork Chat.],
+  [Currently Project Rooms can be used inside Teamwork Chat, but our goal was to make them accessible directly in Teamwork Projects. To achieve this, we considered the following two options:],
+  [Decouple only the important bits and pieces from the existing codebase of Teamwork Chat and deliver them as a standalone module.],
+  [Create a brand new solution that follows component based architecture which could potentially be the future core codebase for the next generation of Teamwork Chat.],
+  [After looking into this for a while, we decided that the second option will let us deliver a better quality solution. Our main concern with decoupling the existing codebase was the fact that we didn’t use a component based architecture in the existing client. Unfortunately at the time of the initial implementation of the app, Knockout.js components weren’t a common choice.],
+  [New tech stack],
+  [Earlier this year at Teamwork.com we made the decision that all our development teams will start using Vue.js as the main front-end framework. We also started working on creating a new internal build system based on Webpack, which allows us to use the latest front-end tools and makes the development process significantly more productive.],
+  [Together with Vue.js we started using Vuex, which is a state management library inspired by Flux architecture. Another big change for us was dropping CoffeeScript and replacing it with the next generation of JavaScript. JavaScript ES2015+ comes with great new features and syntax, but also offers incredible editor support and great ESLint that makes our code more consistent across the team.],
+  [New technology stack for embedded Teamwork Chat.],
+  [Luckily, during the development of an existing Teamwork Chat client we split some parts of the code into Node.js modules and we were able to use them with our new codebase.],
+  [Sneak peek],
+  [As a result of a few weeks of intensive development, we’ve been able to implement the core functionality of the Teamwork Chat conversation component.],
+  [Initial preview of conversation component.],
+  [Taking care of performance],
+  [Embedded Teamwork Chat will be an addition for Teamwork Projects. We spent a lot of time making sure that we won’t impact its performance.],
+  [Starting with a brand new codebase allowed us to improve the implementation of particular parts of Teamwork Chat. We were also able to use latest Web APIs which resulting is a significant improvement in app performance, for example thanks to Intersection Observer API our infinite scroll feature is now much better!],
+  [Making it faster and lighter!],
+  [Putting all pieces together],
+  [Currently, the Teamwork Projects front-end is built with Knockout.js, so we had to find a way to integrate our new code with the existing product.],
+  [We decided to make it available as a private Node.js module and we wrapped the entire Vue.js app with the Knockout.js component, so it can be easily included and used inside Teamwork Projects.],
+  [Embedded Teamwork Chat preview.],
+  [Show me the code!],
+  [Including embedded Teamwork Chat is just as easy as that:],
+  [As you can see, we simply follow the Knockout.js components syntax and pass the project ID value, that’s it! Our module will do all the hard work: it will check if the given project has a dedicated Project Room enabled, and if it does, it will bootstrap our Vue.js app inside — voilà!],
+  [Combining Vue.js and Knockout.js together],
+  [Here you can find the code snippet (simplified version) of our solution for integrating Vue.js and Knockout.js together:],
+  [https:\/\/medium.com/media/e575cbb100c88cff6c1f9be2f114f0a3/href],
+  [We‘re very excited about Embedded Teamwork Chat and we aim to deliver it by the end of this year!],
+  [If you have any questions, leave a comment below.],
+  [If you like the sound of working at Teamwork , get in touch — we’re hiring !],
+  [Embedding Teamwork Chat was originally published in Teamwork Engine Room on Medium, where people are continuing the conversation by highlighting and responding to this story.],
 ),
   insert-map: (:),
-  word-count: 553,
+  word-count: 685,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -1444,106 +1555,158 @@ First, we need to set up our Python environment. We will install the voyageai cl
 
 {
   #standard-article(
-  title: [Vue.js Advanced Reactivity API and Caching Method-style Getters],
-  author: [Michael Gallagher],
-  source-name: [Teamwork Engineering Room],
+  title: [Clojure Runs ONNX AI Models Now - Join the AI fun!],
+  author: [Dragan Djuric],
+  source-name: [Dragan Djuric],
   images: (),
   paragraphs: (
-  [We’re going to talk about a common request when working with relational data in Vuex. Why and how to cache method-style getter invocations, though the principles would also apply to method-style computed properties.],
-  [If you have been following recent Vue v3 RFCs, you might have come across the Advanced Reactivity API , which comes as a very welcome direction for Vue to take. This article is written using Vue v2, but ultimately the code will be simplified if this RFC is implemented.],
-  [Firstly, although both property-style and method-style getters offer caching as part of core Vuex functionality, method-style getter invocations do not cache results. If that doesn’t make much sense, keep reading, it should become clear.],
-  [What is a Method-style Getter?],
-  [Below is the example from the Vuex documentation of a method-style getter, sometimes referred to as a parameterized getter.],
-  [getTodoById: (state) =\> (id) =\> {
- return state.todos.find(todo =\> todo.id === id)
-}],
-  [Normally a getter works by processing state into a given result.],
-  [todoCount: (state) =\> state.todos.length,],
-  [This will mean that store.getters.todoCount might provide the value 12, which will be cached in the event that the value is accessed again without any underlying reactive data changing.],
-  [isTodoOpen: (state) =\> (id) =\>
- !!state.todos[id].assignee && 
- state.todos[id].status !== 'complete’,],
-  [The above example can be accessed by store.getters.isTodoOpen(123) which will return a boolean. This value is not cached, calling it repeatedly will result in multiple executions.],
-  [So what is cached here?],
-  [Nothing from a reactive standpoint. When the getter property is accessed on the store, store.getters.isTodoOpen, just prior to invocation, this will run the outer function which will not access any reactive data, but create a function, an arrow which accepts id. This created function is now cached.],
-  [Why aren’t the results of these getters cached?],
-  [There are lots of good reasons not to cache the results of these functions. How many times would you expect them to be called? Will the cache grow very big? How should the cache key be calculated? When should the cache be invalidated?],
-  [There are a lot of broad questions with no concrete answers, and there is a danger the functionality would be used without proper knowledge of the impact that poor caching could have on performance.],
-  [Ultimately, for anyone who thinks they would benefit from caching these results, it is important you measure the performance of the cache.],
-  [Maybe there isn’t a one-size-fits-all solution, which is why the mechanics are explained below and if you need something different, you should be able to put it together yourself.],
-  [At Teamwork, we have a suite of products that are based on frequently changing, highly relational data. Our flagship product is a project management tool, and we have a system with a lot of entities, with a lot of data and a lot of relationships.],
-  [You might be querying your backend for a denormalized view on your data closely coupled with the current view in the browser.],
-  [There are however benefits to treating your Vuex store as an extension of your database, where normalized data is kept. Where each module might match a database table and use of keys is widespread just like in a database, see this article on module structure for an introduction to the concept. In this case, getters can take on the role of the database view . The denormalized, use case specific, query which relies on underlying normalized data.],
-  [Getters might be used to filter, merge, enrich or map data.],
-  [Worth calling out at this point, that this means creating new arrays or new objects as getters don’t, and shouldn’t, mutate state.],
-  [Now that we have clarified that and hopefully not gone off on too much of a tangent, let’s look at some code.],
-  [Mapped Collection render],
-  [Below is a render of 3 tasks, each task is a record in the store which has a getter to 'map' it, the example is contrived but the principal is the same. Each mapped record is passed to a component responsible for rendering it ( JSFiddle link ).],
-  [https:\/\/medium.com/media/29042a2c91782c4a189a86cd2d5d8b41/href],
-  [Each component render includes a timestamp and a short time after render, a field on one record is changed.],
-  [Before the explanation, keep in mind this example is for illustration and although it could be refactored to remove the flaw, there are real world scenarios that cannot.],
-  [The important thing to notice is that when the field on a single record is changed, all 3 record components update! But why?],
-  [Is it due to some kind of over-reactivity? No, though the behaviour does look that way. What is happening is that …],
-  [The record change triggers the parent component to re-render …],
-  [… which means that all the getters are called again.],
-  [Because they are not cached they will re-run and therefore created new objects …],
-  [… which will not be strictly equal to the previous objects …],
-  [… therefore trigger each record component to re-render.],
-  [Obviously the cost is negligible in the example, but in the real world, these kinds of inefficiencies don’t go unnoticed.],
-  [With some rudimentary caching],
-  [Let’s take the above example and add in some simplistic caching.],
-  [https:\/\/medium.com/media/de6ee3ff396e77aea6801280c3c5090b/href],
-  [Above is a new method-style getter which maintains a cache (above the invocation scope), each invocation of the getter will check the cache based on a key and either return the cached value or re-run the original getter. This caching wouldn’t be recommended as it doesn’t leverage reactivity at all, but it will prove the benefit caching can give.],
-  [Below is the first snippet with the getter added (link to JSFiddle ).],
-  [https:\/\/medium.com/media/63e5994c017fc86fdbc4751b03ed1b80/href],
-  [Note that the re-render does not trigger all the record components to re-render, just the one that was changed.],
-  [The right caching solution],
-  [The above code is far too simplistic, it isn’t reactive and it is missing cleanup code. Here is another solution:],
-  [https:\/\/medium.com/media/3f17654c8aedfc2028f6d4b3025708c2/href],
-  [Before explaining how it works, how should it be used? As follows:],
-  [const { plugin, cache } = methodGetterCacher();
-...
-plugins: [plugin],
-...
-getters: {
- mappedTask: cache((state) =\> (id) =\> ({
- name: state.tasks[id].name.toUpperCase(),
- })),
-},],
-  [Without the proposed API, using this code requires access to the store, hence the need for a plugin. An ugly nuisance, but it will only be necessary once.],
-  [The outer getter function is then passed to the utility and a new cached function is returned, this is a clean interface.],
-  [Let’s look at the just the wrapping code for a second…],
-  [[A] const methodStyleCache = (getVM, getter) =\> {
- ...
- [B] return (...args) =\> {
- ...
- [C] const innerMethod = getter.call(null, ...args);],
-  [[D] return (id) =\> { 
- ...
- watcher = computed(getVM(), () =\> innerMethod(id));
- ...
- return watcher.lazyValue();
- };
- };
-};],
-  [What is happening here is that we take the input getter function [A] which has an outer and inner function, we create a new outer function [B] , we then run the outer function [A] to get the inner function [C] , and then create a new inner function [D] , which will execute the input function [C] . In a nutshell, we are wrapping both the outer and inner functions.],
-  [Advanced API Polyfill],
-  [This solution has a computed function which aims to replicate computed functionality within Vue, which is the foundation for the way getters work within the store. This function in theory would be deprecated by the new API.],
-  [Essentially this is creating a getter for each inner function ID. We need to do this because accessing the getter value from “cache” should still pass dependencies from the inner getter to the calling code. If this doesn’t make sense, this article on debugging reactivity should shed some light on it, but feel free to continue without deep diving.],
-  [A downside to this solution is that it relies on unpublished access to Vue. As always, this interface cannot be guaranteed in future Vue versions. However, even if the new v3 API is abandoned, and furthermore this interface no longer available (a very unlikely scenario). This feature is for performance gain, if it were lost, the functionality of the application would not be broken. It has already been confirmed that v3 comes with significant performance improvements, so it may even be the case this functionality is no longer needed.],
-  [Regardless, the option is there to copy the Watcher unit tests from Vue into your own codebase ( observer/watcher.spec.js ), therefore ensuring that if a newer version comes along which breaks this interface, tests will fail and identify the problem in development rather than production.],
-  [Measure it],
-  [Here is a JSFiddle with the above code in action, but I have also added simple counters for cache hits and misses which get logged to the console. This way the cache performance can be evaluated.],
-  [https:\/\/medium.com/media/9fd22be5cccb9e8acdf06ebe6573885f/href],
-  [Further possibilities],
-  [As mentioned at the start, this functionality can be applied to computed properties with some tweaking also, and if you want to delve deeper and are interested in applying the cache with a limited size, take a look at this gist .],
-  [Even if you aren’t ready to use this functionality now, I hope it has been an interesting read, and like me, you are keen to see the Advanced Reactivity API arrive in Vue.],
-  [Vue.js Advanced Reactivity API and Caching Method-style Getters was originally published in Teamwork Engine Room on Medium, where people are continuing the conversation by highlighting and responding to this story.],
+  [Hello, Clojurians! I haven't written here in a long time. Was I tired? Is anybody reading blogs
+anymore? Who knows. But that was not the main reason.],
+  [I've been working on several Clojure projects sponsored by the Clojurists Together Foundation.
+I did a ton of things, but after all this programming, I was kinda tired, and kept slugging when it comes
+to telling people about the work done! That's not very smart, but you know how it goes… :) But, then, if we don't
+tell people about awesome software that we have, nobody is going to use it, so finally I had to stop kicking
+this down the road, sit, and write the first post. It's been long overdue, so expect more posts soon!],
+  [id="orge2dbf4b"\>ONNX Runtime in one line of Clojure],
+  [The most recent thing I'm currently working on started its life as Clojure ML (again, superthanks to
+ Clojurists Together for sponsoring this ). I proposed to create a human-friendly Clojure API for AI/DL/ML
+models, and back it by the first implementation, in this case based on ONNX Runtime . Of course, it should all be integrated
+into existing Clojure libraries, and follow the Clojure way of doing stuff as much as possible!],
+  [The idea is to get an existing, pre-trained ML model previously exported to the ONNX format from whatever technology
+the authors chose (which in today's world is typically Python and PyTorch), and put it into production
+in Clojure and JVM. It should be seamless and in-process, without any clunky interoperability, copy, translation, etc.
+Of course, our Clojure numerical libraries fully support GPU computing, so it goes without saying
+that we want that, too! Just to be clear, we do not use nor need any Python or Python interop for this, we use the ONNX Runtime 's underlying C library .],
+  [Nice idea, but what parts of this well intended story can we evaluate in our REPLs right now?
+At least some promising demo? Are we on the trail? To access that AI goodness, we surely have to
+do a sophisticated dance? Are the steps hard to learn? Do we need to watch carefully for
+slippery floor? Is it accessible to mere mortals?],
+  [Here's the gist:],
+  ["Wait, what?", you'll say. One function? One tini, tiny, function, with one laughingly trivial argument?
+Is that an API? What does such trivial API do? "Now you confused me!", you'll scratch your head.
+It's just a stick.],
+  [I hope I've also intrigued you, so please keep reading to see it in action (this post is actually
+generated from a live REPL session, so the example is fully executable, not just interesting bits
+on the table, and a ton of complex boilerplate under a Persian rug).],
+  [id="org2a73fbe"\>Hello World, the MNIST image recognition model],
+  [For this recipe, you'll need the following ingredients: Deep Diamond tensors (one cup), Deep Diamond 
+network (one slice), one Neanderthal transfer! function for moving data around for demo purposes,
+and that's it! Oh, yes, don't forget the new onnx function. We load the native namespace, and
+the right Deep Diamond engine is set up for our system (yes, even on Mac OS, thanks to Clojurists Together !).],
+  [class="org-src-container"\>
+ ( require ' \[ uncomplicate.neanderthal.core :refer \[ transfer! iamax \] \] 
+ ' \[ uncomplicate.diamond
+ \[ tensor :refer \[ tensor desc \] \] 
+ \[ dnn :refer \[ network \] \] 
+ \[ onnxrt :refer \[ onnx \] \] \] 
+ ' \[ uncomplicate.diamond.native \] )],
+  [id="orgc0eecd9"\>The ONNX model],
+  [We evaluate the onnx function, and it loads the model.],
+  [\#'user/mnist-onnx],
+  [Sure, that's easy, but how is that useful? Well, the result is a function. This function
+has just been set up with ONNX internals, so now it can create Deep Diamond network layers
+and fit in with the rest of the Tensor-y stuff that DD already provides.],
+  [The ONNX Runtime model revolves around environment, session, input and output tensors,
+type info, and a lot of other stuff and brittle ceremony. Sure, sometimes you need
+to reach these internals, and diamond-onnxrt provides clojurized internals API even for that.
+However, it can sing the main song, and set all the right arguments at the right places for you.
+Even the onnx function supports option map, where you can tell what you like, and it will take
+care to configure ONNX to do the right thing, but this is a story for another article.],
+  [id="org56b31c2"\>The rest is the usual Deep Diamond stuff, which is simple as beans!],
+  [The MNIST dataset specifies images of hand-written digits, in just one grayscale channel, each \\(28\\times28\\) pixels
+a challenging task for 1989's USPO and the tecnology from back then, but a hello world level
+stuff for today's accelerated libraries (still, keep in mind that if you tried to code even this easy
+example without such libraries, you'll be surprised how slow that can be!).],
+  [We create a tensor descriptor for such input (this step can be left out, but I'm being pedantic to accommodate beginners):],
+  [\#'user/input-desc],
+  [Next, we create a reusable abstract network blueprint, that can then create concrete networks
+tailored for training, or optimized for inference, that is classifying MNIST images.
+Normally, we would have to train these networks, or load the parameters from somewhere,
+but in this case it contains only of the onnx model, which had already been trained and
+already knows all the right weights, so no training is needed (nor available with ONNX Runtime yet;
+it's main job is inference in production).],
+  [\#'user/mnist],
+  [Note that all these things so far look and behave just as ordinary Clojure objects. You can
+use them even outside this specific structure. Full flexibility that I hope will spark your creativity.],
+  [We'll also need a place for the actual image that we'd like to classify. This particular network
+that I downloaded from ONNX Runtime examples specifies exactly one image at input, to classify one at a time.
+Typically, if we have many images, it's better to compute them in batches, but it's just a hello-world, after all,
+we won't be too demanding.],
+  [\#'user/input-tz],
+  [A blueprint (mnist in this case) is a function that can create networks optimized for inference
+with concrete tensors, adequate internal tensors, and parameters.
+The following line is the moment when the network is actually created from the abstract descriptors
+contained in its blueprint, to the actual engines, operation primitives, and tensors in memory.],
+  [\#'user/classify!],
+  [True to the Clojure philosophy, mnist is a function, which, given the specification for
+desired input, (mnist input-tz) produces classify!, which is a function, too, but for actual inference!
+It might sound cumbersome when it's written out, but the code shows it's elegance. No need for
+complex APIs. Each thing does exactly one thing, and does it in the most simple way, by just
+evaluating with one or two parameters!],
+  [id="org64c65d8"\>Now we got a function that classifies images],
+  [This is how you would typically use this],
+  [Step one: classify! is now a typical Clojure function! Evaluate it:],
+  [{:shape \[1 10\], :data-type :float, :layout \[10 1\]} (-0.04485602676868439 0.007791661191731691 0.06810081750154495 0.02999374084174633 -0.1264096349477768 0.14021874964237213 -0.055284902453422546 -0.04938381537795067 0.08432205021381378 -0.05454041436314583)],
+  [The result is a ten-element tensor, each element represents the possibility that the category
+at its index is the right one.
+So we should just find which element contains the highest value, and that'd be our category,
+which in the MNIST example is, very conveniently a digit 0 to 9 that is equal to that index.],
+  [However, you can see that the current values are just random small numbers. This is because
+we never loaded any image data to the input tensor! It just classified random noise as not very likely
+to be an image of any digit.],
+  [We need step zero: place the image data in network's input somehow. This could be done in
+many different ways (for example, by memory-mapping the image data on disk), but we'll
+keep it simple, and we'll just transfer it naively from an in-place Clojure sequence. (this is a hello-world :)],
+  [The following sequence is copied from the actual MNIST data, but I just took the data of the first image, and
+scaled it to 0-1 range instead of 0-255.],
+  [( transfer! ( map \# ( float ( \/ % 255 ) ) \[ 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 84.0 185.0 159.0 151.0 60.0 36.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 222.0 254.0 254.0 254.0 254.0 241.0 198.0 198.0 198.0 198.0 198.0 198.0 198.0 198.0 170.0 52.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 67.0 114.0 72.0 114.0 163.0 227.0 254.0 225.0 254.0 254.0 254.0 250.0 229.0 254.0 254.0 140.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 17.0 66.0 14.0 67.0 67.0 67.0 59.0 21.0 236.0 254.0 106.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 83.0 253.0 209.0 18.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 22.0 233.0 255.0 83.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 129.0 254.0 238.0 44.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 59.0 249.0 254.0 62.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 133.0 254.0 187.0 5.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 9.0 205.0 248.0 58.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 126.0 254.0 182.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 75.0 251.0 240.0 57.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 19.0 221.0 254.0 166.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 3.0 203.0 254.0 219.0 35.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 38.0 254.0 254.0 77.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 31.0 224.0 254.0 115.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 133.0 254.0 254.0 52.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 61.0 242.0 254.0 254.0 52.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 121.0 254.0 254.0 219.0 40.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 121.0 254.0 207.0 18.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 \] )],
+  [input-tz )],
+  [{:shape \[1 1 28 28\], :data-type :float, :layout \[784 784 28 1\]} (0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0)],
+  [{:shape \[1 10\], :data-type :float, :layout \[10 1\]} (-1.2567189931869507 0.6275832653045654 8.642718315124512 9.428943634033203 -13.740066528320312 -6.045698642730713 -23.486745834350586 28.3399658203125 -6.7914958000183105 3.941998243331909)],
+  [Now, we see some better looking results, but are we the one who need to look at a bunch of numbers and compare them?],
+  [No, the machine should do that. Luckily, Neanderthal has just the right function for this!],
+  [7],
+  [And this is the kind of answer that we can show our clients! What's on this image? Easy, it's 7!],
+  [id="org1776049"\>Can you tell me the main point of this, in one paragraph?],
+  [Yes. Clojure programmers typically write functions. Functions are things that take something at the input,],
+  [compute stuff internally, and return an output, which is hopefully useful downstream.],
+  [The funcion transforms the input into the output according to the logic that we programmers],
+  [wrote in code, following some algorithm that we designed for the purpose. Now, sometimes],
+  [the problem is so convoluted that we don't have the slightest idea how to write that],
+  [transformation in code, but what we (or someone else) do have is lots of data, and in many],
+  [such cases we can train a general machinery (neural networks for example) to find out a good],
+  [enough transformation. Sometimes someone else have already done the hard part by training the network,],
+  [exporting it to a standard format (ONNX) and gave it to you! Now, you can load it in Clojure and use it],
+  [as a Clojure function. You don't even need to know how it works internally, but it does],
+  [the thing that you need, it transforms the input tensors that you have into just the right],
+  [output tensors. What you do with these outputs is up to you :)],
+  [id="orgd2386cd"\>Who is this for?],
+  [Do you need to be an AI researcher to find this useful? Absolutely not! This can appeal to any Clojure engineer.],
+  [AI researchers try to find novel AI models, or to push their model by 0.1% on an artificial
+benchmark. Recently, they don't necessarily even do that, some of them found the way to chase funding at crazy evaluations,
+and catch it.
+Some of them don't necessarily write code but work with mathematical models trying to figure a way to do some abstract thing.
+Or, if they are PhD students, they spend endless nights fiddling with Python and PyTorch trying to
+figure this or that task assigned by their laboratory, or they just try to catch a bit of sleep while
+a GPU cluster crunches some tiny step in an endless training cycle.],
+  [There's nothing wrong with that, but if you're a Clojure programmer, you probably don't have time,],
+  [opportunity, experience, or even interest to work on that stuff. But, even if you don't want],
+  [(or can't) understand AI internals, you can still be very creative with the applications .],
+  [Now there are many, many, published ML models that work, many of them are even exported],
+  [to ONNX, and quite usable. You don't need to invent a new OpenAI competitor, there are],
+  [many more mundane problems that can be solved by taking an already existing model and],
+  [applying it in a niche context, in a domain that you know well. You don't even need to],
+  [understand exactly what or how the model does what it does, you can treat it as a black-box function],
+  [that transforms inputs and outputs, and that function just need a bit more care to work],
+  [than a regular Clojure four-liner that you'd normally write and be proud of.],
+  [Although (sadly) Clojure has not find its way in the big guns AI arena, Clojure is a
+very capable capable language and Clojure programmers very knowledgeable people when it
+comes to integrating stuff into real-world applications! So, here it is, now you don't have
+to make compromises; you can got to Hugging Face, or some other AI related community ,
+find ONNX models that other people already prepared, and join the AI fun, directly from Clojure .],
 ),
   insert-map: (:),
-  inline-pq: pull-quote([Now that we have clarified that and hopefully not gone off on too much of a tangent, let’s look at some code.], [Michael Gallagher]),
-  inline-pq-idx: 26,
-  word-count: 1559,
+  word-count: 2936,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -1553,19 +1716,18 @@ getters: {
 #article-row((
   [
     standard-article(
-  title: [Damaged church floor may have revealed the grave of the fourth musketeer],
-  author: [Kiona N. Smith],
+  title: [Long fingernails vs. touchscreens: This nail polish could help],
+  author: [Jennifer Ouellette],
   source-name: [Ars Technica OpenForum],
   images: (),
   paragraphs: (
-  [Recent repairs to a centuries-old tile floor at a church in the Netherlands may have revealed the skeleton of the French Musketeer d’Artagnan.],
-  [Today, Charles de Batz de Castlemore, Count d'Artagnan, is best known as a character in The Three Musketeers , written by Alexandre Dumas and eventually played by both Gene Kelly and future Ukrainian President Volodymyr Zelenskyy —but he was a real French military officer and spy. D’Artagnan died during a siege, and the whereabouts of his body have remained a mystery for more than 350 years. But an archaeologist in the Netherlands recently unearthed a skeleton from the floor of a 17th-century church that could actually be d’Artagnan.],
-  [“It is only the dead who do not return”],
-  [The ground beneath the centuries-old Saints Peter and Paul Church subsided earlier this year, cracking a few of the blue tiles that pave the chapel’s floor. During repairs, church staff decided to have a look beneath the floor to see if there was any truth to the rumor that d’Artagnan—famous French Musketeer and inspiration for a series of swashbuckling novels—lay buried beneath their church. It turns out that there actually was a skeleton buried under the church floor, and there’s a decent chance it’s d’Artagnan himself.],
+  [The rise of touchscreen technology has been a boon in many respects, but for people with long fingernails, there can be issues with the capacitive variety since fingernails are non-conductive and thus don't register on the screen as a touch. One can use a stylus, of course, or simply use the finger pad under the nail, but ideally it would be nice to be able to use one's fingernail. A conductive nail polish might do the trick, according to research presented at a meeting of the American Chemical Society in Atlanta, Georgia.],
+  [The work began as a special project for Manasi Desai, an undergraduate at Centenary College of Louisiana who has an interest in cosmetic chemistry and decided to investigate ways to make fingernails compatible with touchscreen technology. There are a few existing conductive nail polishes that rely on spiking a clear polish with carbon nanotubes, conductive polymers , or metallic particles. And in 2013 and 2014, a proposed press-on false fingernail with a capacitive tip was showcased at CES in Las Vegas, although the technology doesn't seem to be commercially available.],
+  [Desai reasoned that existing polishes rely on additives that could be dangerous if inhaled, as well as having a limited shade range given that they impart a black or metallic shimmer. Working with her supervisor, organometallic chemist Joshua Lawrence, Desai decided to try to create a clear, colorless nail polish that didn't use any toxic materials and could be applied over any manicure.],
   [Read full article],
 ),
   insert-map: (:),
-  word-count: 210,
+  word-count: 249,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -1573,47 +1735,29 @@ getters: {
   ],
   [
     standard-article(
-  title: [Rocket Report: Russia reopens gateway to ISS; Cape Canaveral hosts missile test],
-  author: [Stephen Clark],
+  title: [Study says roads bring more fires to forests; USDA wants more roads to fight fires],
+  author: [Zoë Rom, Inside Climate News],
   source-name: [Ars Technica OpenForum],
   images: (),
   paragraphs: (
-  [Welcome to Edition 8.35 of the Rocket Report! The headlines this week are again dominated by the big changes afoot in NASA's exploration program, with the announcement of a Moon base and a nuclear-powered rocket to Mars. The shakeups come as the agency is just a week away from launching Artemis II, a circumlunar flight carrying a crew of four around the Moon. The Ars space team will be writing extensively about this mission in the days ahead, and we may skip the Rocket Report next week to focus on our Artemis II coverage.],
-  [As always, we welcome reader submissions . If you don't want to miss an issue, please subscribe using the box below (the form will not appear on AMP-enabled versions of the site). Each report will include information on small-, medium-, and heavy-lift rockets, as well as a quick look ahead at the next three launches on the calendar.],
-  [NASA announces nuclear rocket demo. NASA's announcement Tuesday that it will "pause" work on a lunar space station and focus on building a surface base on the Moon was no big surprise to anyone paying attention to the Trump administration’s space policy. But what should NASA do with hardware already built for the Gateway outpost? NASA spent close to \$4.5 billion on developing a human-tended complex in orbit around the Moon since the Gateway program’s official start in 2019. There are pieces of the station undergoing construction and testing in factories scattered around the world. The centerpiece of Gateway, called the Power and Propulsion Element, is closest to being ready for launch. NASA’s rejigged exploration roadmap, revealed Tuesday in an all-day event at NASA headquarters in Washington, calls for repurposing the core module for a nuclear-electric propulsion demonstration in deep space, Ars reports .],
+  [When the Trump administration announced plans last year to rescind a rule limiting roadbuilding and timber harvests on millions of acres of national forests and grasslands, officials called the repeal necessary to prevent and manage wildfires.],
+  [But as the US Department of Agriculture prepares to release its draft environmental impact statement for the rescission, that justification is unraveling. And many critics of the move see the claim that roads are needed to fight fires in remote forests as cover for a giveaway to the timber industry.],
+  [On average, about 8 million acres have burned each year between 2017 and 2021, according to the Congressional Budget Office , nearly double the average from 1987 to 1991. Wildfires on federal lands average about five times the size of those in the rest of the country, leading some of the nation’s top land managers to argue that national forests are a front line for fighting the nation’s steep increase in wildland blazes.],
   [Read full article],
 ),
   insert-map: (:),
-  word-count: 300,
+  word-count: 163,
   edited-for-length: false,
   debug-mode: false,
 )
 
   ],
 ), ruled-indices: (1,))
+#pull-quote([A conductive nail polish might do the trick, according to research presented at a meeting of the American Chemical Society in Atlanta, Georgia.], [Jennifer Ouellette])
 
-#article-row((
-  [
-    standard-article(
-  title: [How new fishing tech can reduce bycatch of turtles and other creatures],
-  author: [Gennaro Tomma, Knowable Magazine],
-  source-name: [Ars Technica OpenForum],
-  images: (),
-  paragraphs: (
-  [Our oceans are full of sophisticated, perfect traps: Nets, hooks, fishing lines. Designed to capture animals destined for our dinner tables, they often catch other wildlife too.],
-  [This accidental harvest is known as bycatch, and every year it causes the death of millions of marine animals , including whales, dolphins, sharks, turtles, and seabirds. Nets and gear can asphyxiate animals or cause fatal injuries; even when the animals are tossed back to sea, they frequently die. Bycatch is also a dilemma for fishermen—entangled creatures can destroy equipment, costing time, money, and fisheries’ reputations.],
-  [Over the decades, conservationists, researchers, and fishermen have developed ways to minimize various kinds of bycatch in different fishing stocks around the world. But putting these solutions to work is often a challenge, and many mitigation strategies are never widely implemented.],
-  [Read full article],
-),
-  insert-map: (:),
-  word-count: 138,
-  edited-for-length: false,
-  debug-mode: false,
-)
 
-  ],
-  [
-    standard-article(
+{
+  #standard-article(
   title: [One app was tanking my PC performance, and I had no idea until I checked this],
   author: [Kanika Gogia],
   source-name: [MakeUseOf],
@@ -1627,20 +1771,22 @@ getters: {
   debug-mode: false,
 )
 
-  ],
-), ruled-indices: (1,))
+}
 
 {
   #section-label([Briefs])
   #brief-group((
-    #brief-item([Afam Onyimadu], source-name: [MakeUseOf], [Privacy is a main reason people de-Google, but for me, switching from Google Search was about more than privacy. I didn't enjoy getting SEO-heavy results and listicles when I needed a simple debugging fix.])
+    [#brief-item([Afam Onyimadu], source-name: [MakeUseOf], [Privacy is a main reason people de-Google, but for me, switching from Google Search was about more than privacy. I didn't enjoy getting SEO-heavy results and listicles when I needed a simple debugging fix.])],
+    [#brief-item([Yadullah Abidi], source-name: [MakeUseOf], [Windows' Power Options panel shows you a carefully curated list of power plans you can select to control how your laptop performs. But if you feel your laptop's performance isn't up to the hardware you paid for, there's a good chance Windows might be throttling it. And that's because there is one power plan Windows never shows you.])],
+    [#brief-item([Graham King (Dark Coding)], source-name: [Graham King (Dark Coding)], [A software system is transparent when you can look at it and immediately understand what it is doing and how.])],
+    [#brief-item([Jack Mitchell], source-name: [MakeUseOf], [In the past, I’ve sat down to watch something on Plex, only to be met with endless buffering — and it turns out I’m not alone. A quick check on Reddit revealed scores of posts dating back years seeking help with this very issue. It’s especially annoying, as streaming apps are supposed to “just work” straight out of the box with minimal tweaking, regardless of the device or network conditions (although a few handy setup tips never hurt). However, as I found out, this lies at the root of the problem.])],
+    [#brief-item([Stephen Clark], source-name: [Ars Technica OpenForum], [Jupiter's colossal storms generate lightning flashes at least 100 times more powerful than those on Earth, according to scientists analyzing data from NASA's Juno spacecraft.
 
-    #brief-item([Yadullah Abidi], source-name: [MakeUseOf], [Windows' Power Options panel shows you a carefully curated list of power plans you can select to control how your laptop performs. But if you feel your laptop's performance isn't up to the hardware you paid for, there's a good chance Windows might be throttling it. And that's because there is one power plan Windows never shows you.])
+Questions about the future of Juno and more than a dozen other robotic science missions began swirling nearly a year ago, when the Trump administration asked mission leaders to submit "closeout" plans for how to turn off their spacecraft. Ars first reported the news soon after the White House released a budget request that called for slashing NASA's science budget by nearly half.
 
-    #brief-item([Graham King (Dark Coding)], source-name: [Graham King (Dark Coding)], [A software system is transparent when you can look at it and immediately understand what it is doing and how.])
+ Read full article 
 
-    #brief-item([Jack Mitchell], source-name: [MakeUseOf], [In the past, I’ve sat down to watch something on Plex, only to be met with endless buffering — and it turns out I’m not alone. A quick check on Reddit revealed scores of posts dating back years seeking help with this very issue. It’s especially annoying, as streaming apps are supposed to “just work” straight out of the box with minimal tweaking, regardless of the device or network conditions (although a few handy setup tips never hurt). However, as I found out, this lies at the root of the problem.])
-
+ Comments])],
   ))
 }
 

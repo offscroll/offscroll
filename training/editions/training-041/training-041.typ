@@ -23,14 +23,615 @@
 
 // --- Front Page Feature ---
 #feature-article(
-  title: [What COVID did to our forecasting models (and what we built to handle the next shock)],
+  title: [Nevada pushes appeals court to reject Polymarket bid pause request],
   kicker: [Cover Story],
+  author: [Suswati Basu],
+  source-name: [ReadWrite],
+  deck: [The legal fight dates back to January 2026, when Nevada first took action against the prediction market platform.],
+  lead-pre: [],
+  lead-cap: [N],
+  lead-rest: [evada regulators are urging a federal appeals court to keep a fast-moving gambling case on track, arguing Polymarket has no solid basis to press pause while it challenges where the case should be heard.],
+  body-paragraphs: (
+  [In a new filing to the US Court of Appeals for the Ninth Circuit, lawyers for the Nevada Gaming Control Board say the dispute is a state compliance issue tied to alleged unlicensed betting activity. They want judges to reject Polymarket’s emergency request to halt proceedings after a lower court sent the case back to state court.],
+  [dir="ltr" lang="en"\>Nevada fights \#Polymarket in court, says platform’s unlicensed betting harms public, seeks to block operations amid legal battle. \@RWW pic.twitter.com/N4k2leyX92],
+  [— Suswati Basu (\@suswatibasu) March 24, 2026],
+  [“This is a state enforcement action,” the filing states, describing how regulators sued Polymarket for offering sports and event-based betting in Nevada without complying with licensing rules.],
+  [The legal fight dates back to January 2026, when Nevada first took action against the prediction market platform. Regulators accused the company of running event-based wagering products without approval and sought to shut those offerings down.],
+  [A state judge initially granted a temporary restraining order , siding with regulators who argued the platform’s contracts likely violated Nevada gambling law. The court also pointed to risks tied to underage access and missing consumer safeguards.],
+  [Polymarket quickly shifted the fight into federal court, claiming its operations fall under federal oversight and that national law overrides Nevada’s rules.],
+  [However, a federal district judge rejected the company’s position and ordered the case sent back to Nevada courts. Now Polymarket is appealing that decision and asking the Ninth Circuit to freeze everything while the appeal plays out.],
+  [Nevada’s response was that the request doesn’t meet the legal standard for a pause.],
+  [On jurisdiction, the state says Polymarket is stretching its federal argument too far. Being regulated at the federal level, regulators argue, doesn’t mean the company is “acting under the direction of a federal officer simply because it is regulated” by a federal agency.],
+  [They also push back on the idea that federal law transforms the case into a federal dispute. “The Board’s complaint asserts only state-law claims,” the state wrote, adding that a federal preemption argument “does not create federal-question jurisdiction.”],
+  [The filing also leans on earlier rulings to argue Polymarket won’t suffer meaningful harm by continuing in state court. As it puts it, “a party is not irreparably injured by having to litigate in state court as opposed to federal court.”],
+  [Regulators say the real risk runs in the opposite direction. The state court previously warned that Polymarket’s operations could expose minors to gambling and bypass required protections, harms it said “cannot be mitigated” after they occur.],
+  [The concern is said to build with time. As the state court put it: “A day means more consumers. More consumers mean more transactions. More transactions means more potential harm.”],
+  [Nevada argues that imbalance should decide the outcome, urging the appeals court to deny the request and let the enforcement case continue without delay.],
+  [Featured image: Polymarket \/ Canva],
+  [The post Nevada pushes appeals court to reject Polymarket bid pause request appeared first on ReadWrite .],
+),
+  edited-for-length: false,
+)
+
+
+{
+  #section-label([Features])
+  #standard-article(
+  title: [Safeguarding dynamic configuration changes at scale],
+  author: [Cosmo W. Q],
+  source-name: [Airbnb Engineering],
+  images: (),
+  paragraphs: (
+  [How Airbnb ships dynamic config changes safely and reliably.],
+  [By Cosmo Qiu , Bo Teng , Siyuan Zhou , Ankur Soni , Willis Harvey],
+  [Dynamic configuration is a core infrastructure capability in modern systems. It allows developers to change runtime behavior without restarting or redeploying services, even as the number of services and requests grows. In practice, that might mean rolling out a new address form for a region launch, tightening an authorization rule, or adjusting timeouts when a dependency is slow.],
+  [Like any powerful tool, dynamic configuration is a double-edged sword. While it enables fast iteration and rapid incident response, a bad change can cause regressions or even outages. This is a common challenge across the industry: balancing developer flexibility with system reliability.],
+  [In this post, we will outline the expectations of a modern dynamic configuration platform, then walk through the high-level architecture of Airbnb’s dynamic config platform and how its core components work together to enable safe, flexible config changes.],
+  [Modern config platform essentials],
+  [As Airbnb’s business grows, our expectations for the dynamic config platform have evolved over time through our own learnings as well as industry best practices. These shape our view of what a good dynamic config platform should provide, including:],
+  [A coherent experience for config management : The platform provides a streamlined, end-to-end experience for defining, reviewing, testing, and rolling out config changes. It covers the most common needs out of the box with rich built-in features, while still offering escape hatches for edge cases.],
+  [Strong reliability, availability and safety guarantees : All config changes are validated, reviewed, and rolled out progressively, with clear ownership and well-defined access control. Treating config as code is a key focus: config changes are versioned, reviewed, and auditable like service code, but remain dynamic at runtime. The platform itself must be highly available so that services can reliably fetch and apply configs. Changes should be observable, with support for fast rollbacks when needed.],
+  [Safe testing in isolated environments : Developers can validate config changes in isolated local or canary environments before they reach production.],
+  [Flexible multi-tenant support : In a multi-tenant platform, different tenants have different risk profiles. The platform should allow config owners to customize how their configs behave per tenant, including deployment triggers, guardrails, and rollout strategy (for example, AWS zone or Kubernetes pod percentage-based rollouts).],
+  [Fast and controlled incident response : During an incident, responders can ship emergency configs as needed with clear auditability. The platform also provides observability for config changes, so incident responders can tell what changed, who was affected, when the change was made, and who made the change. This enables them to effectively identify the culprit and take action.],
+  [High-level architecture],
+  [At Airbnb, Sitar is the internal name for our dynamic config platform. It provides a common way for teams to manage runtime behavior safely. At a high level, Sitar has four main parts: a developer-facing layer, a control plane, a data plane, and the clients and agents that run alongside application code.],
+  [The developer-facing layer is where config changes are created and reviewed. By default, configs are managed through a Git-based workflow, while a few exceptions are managed in the web interface (sitar-portal), which is also used for admin operations such as emergency deployments.],
+  [The control plane is responsible for orchestrating config changes. It enforces schema validation, ownership, and access control, and decides how each change should be rolled out: for example, which environments or AWS zone to target, what percentage of Kubernetes pods to start with, and how to progress the rollout over time. The control plane also specifies how to roll back the changes when needed, and supports routing in-flight configs to specific environments or slices of subscribers for fast testing.],
+  [The data plane provides scalable storage and efficient distribution of configs. It acts as the source of truth for config values and versions, and propagates updates to services reliably, consistently, and quickly.],
+  [On the product services side, an agent sidecar running alongside each service fetches the subscribed configs from the data plane and maintains a local cache. Client libraries inside the service then read from this cache and expose configs to application logic with fast, in-process access and optional fallbacks.],
+  [Putting these together, a typical change starts from a Git flow, proceeds through control-plane validation and rollout decisions, into the data plane for distribution, and finally to agents and client libraries that apply the config updates to application logic.],
+  [Key design choices],
+  [In this section, we highlight a few key design choices that shape how the platform looks and is operated.],
+  [Configs as code with a Git-based workflow],
+  [Config changes are by default managed by a Git-centric workflow. We use GitHub as the primary interface for managing configs, because we have an established and responsive internal team to manage GitHub Enterprise. GitHub integrates naturally with our existing CI/CD tooling, so we can reuse rich validation and deployment pipelines without re-inventing the wheel. This approach gives developers a consistent experience to make code changes: open a pull request, get reviews, merge, and deploy. GitHub also brings additional benefits such as mandatory reviewers, review and approval flows, and a change history. Configs under the same theme are grouped into tenants, with clear owners, customizable tests, and a dedicated CD pipeline.],
+  [While the Git-based flow is the default, we keep a UI portal for teams that prefer a portal-based experience and as a shortcut for specific operational needs, such as fast emergency config updates that can bypass the normal CI/CD pipeline.],
+  [Staged rollouts and fast rollbacks],
+  [When a change is proposed, schema validation (checking that the config matches the expected structure and types) and other automated checks run in CI. The change is always reviewed and approved before rollout.],
+  [Once merged in the main branch, the control plane performs a staged rollout where the change is first deployed to a limited scope, then gradually expanded to a larger scope if things look good. At each stage of this rollout, the change is evaluated, the author and the stakeholders are notified if regressions are detected, and a fast rollback can be triggered if needed. Staged rollouts can greatly reduce the blast radius of bad changes and improve the overall reliability of the platform.],
+  [Separated control and data planes],
+  [We separate the “decide” and “deliver” responsibilities. The control plane focuses on validation, authorization, and rollout decisions, while the data plane focuses on storing configs and distributing them reliably at scale. This separation allows us to evolve rollout strategies and policies without disrupting the underlying storage and delivery mechanisms, and vice versa.],
+  [Local caching and resilient clients],
+  [On the product services side, we introduced a local caching layer between the agent sidecar and the client library to improve resilience and availability. The agent sidecar runs alongside the main service container, regardless of which language the service is written in, and periodically fetches subscribed configs from the backend and persists them locally. The client libraries then read from this local cache. Even if the backend is temporarily unavailable or degraded, services can continue operating on the last known good configs from the local cache.],
+  [Impact on product teams],
+  [It is essential for the Sitar system to make life easier for product teams. In practice, its architecture changes how teams ship and operate in a few ways:],
+  [Rollouts become safer and more predictable. New behaviors, such as refined authorization rules, can be introduced gradually, verified on a small slice of traffic or in a specific environment, and rolled back quickly if needed. Teams spend less time worrying about “big bang” releases and more time iterating on behavior.],
+  [Teams get more flexibility in how their configs are managed and rolled out. Each team can tailor a config flow to its own risk profile and release schedules. For example, teams can choose between automatic, manual, or cron rollouts, select the rollout strategy, and add extra checks. This lets teams keep their existing ways of working while still benefiting from a common platform and shared guardrails.],
+  [Incident mitigation becomes faster and more controlled. When something goes wrong in production, incident responders can use observability tools that integrate config events to quickly locate the culprit change, then take quick action using the portal’s emergency flow. These emergency updates are fully auditable for future review.],
+  [Besides these examples, the platform includes other improvements in usability, safety, and observability that we will not cover in detail here. Together, they contribute to a smoother day-to-day experience for teams that rely on dynamic configuration.],
+  [Conclusions and next steps],
+  [Dynamic configuration is a foundational capability of modern infrastructure. It enables fast iteration and rapid incident response, but only when it is equipped with strong safety features and provides a good developer experience. In this post, we shared how we think about a modern dynamic config platform at Airbnb, and how we developed Sitar’s architecture to meet those expectations.],
+  [The work is ongoing. As Airbnb’s business grows, we are continuing to refine rollout strategies, improve config testing, invest in observability and smart incident response tooling, and evolve other platform components.],
+  [In future posts, we plan to dive deeper into specific areas of the platform, such as how we optimize the Kubernetes sidecar that delivers config updates and how we design the developer experience around config management.],
+  [If this type of work interests you check out our open roles .],
+  [Our progress with Sitar would not have been possible without the support and contributions of many people. We’d like to thank Craig Sosin, Nikolaj Nielsen, Daniel Fagnan, Alex Edwards, Xian Gao, Nick Morgan, Carolina Calderon, Hanfei Lin, Joyce Li, Yunong Liu, Alex Berghage, Brian Wolfe, Yann Ramin, Denis Sheahan, Richa Khandelwal, Swetha Vaidy, Abhishek Parmar, Adam Kocoloski, Adam Miskiewicz, and all the other engineers and teams at Airbnb who joined design reviews and offered valuable feedback, as this work would not have been possible without them.],
+  [All product names, logos, and brands are property of their respective owners. All company, product and service names used in this website are for identification purposes only. Use of these names, logos, and brands does not imply endorsement.],
+  [Safeguarding dynamic configuration changes at scale was originally published in The Airbnb Tech Blog on Medium, where people are continuing the conversation by highlighting and responding to this story.],
+),
+  insert-map: (:),
+  inline-pq: pull-quote([The control plane also specifies how to roll back the changes when needed, and supports routing in-flight configs to specific environments or slices of subscribers for fast testing.], [Cosmo W. Q]),
+  inline-pq-idx: 18,
+  word-count: 1717,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+}
+
+{
+  #standard-article(
+  title: [The Mac Pro died so Apple silicon could live],
+  author: [Macworld],
+  source-name: [Macworld],
+  images: (),
+  paragraphs: (
+  [id="link\_wrapped\_content"\>],
+  [The Mac Pro, one of Apple’s most iconic computers, seemed to have its days numbered. Earlier this month, the company had already dropped another hint with the discontinuation of the Pro Display XDR, which was replaced by the new Studio Display XDR. But the news is now official.],
+  [On Thursday, Apple officially confirmed to Macworld that the Mac Pro has been discontinued . The company has also removed the product from its online store, putting an end to the last remaining desktop Mac in Apple’s lineup that still carried the “Pro” name in its most traditional sense.],
+  [While the move may seem abrupt, especially with Apple’s 50th anniversary just days away, the reality is that the Mac Pro’s fate had been sealed for quite some time.],
+  [The Mac Pro has always represented Apple’s most powerful and flexible computer. From the aluminum towers of the 2000s to the controversial cylindrical design in 2013 and the return to modularity in 2019, the Mac Pro was built for professionals who needed uncompromising performance. Read our Towers of Power (now) complete history of Apple’s sometimes inglorious forays into the professional workstation market.],
+  [When Apple reintroduced the Mac Pro in 2019 alongside the Pro Display XDR, it was a statement. After years of neglecting high-end users, the company was ready to win them back with a truly modular system designed for demanding workflows like film production, 3D rendering, and audio engineering.],
+  [But that strategy was short-lived.],
+  [Just a year after introducing the redesigned Mac Pro, Apple revealed its plans to shift from Intel processors to its own Apple Silicon chips. In November 2020, the company announced the first Macs with the M1 chip.],
+  [The M1 was never a chip designed for high-end users, but the leap in performance was so significant that many professionals realized they could do photo and video editing, coding, and other demanding tasks on these Macs without needing a super expensive computer.],
+  [Apple Silicon has made the Mac Studio as powerful as the Mac Pro.],
+  [But it was in 2022 when the Mac Pro’s fate seemed to be in jeopardy. The arrival of the Mac Studio reshaped Apple’s professional desktop strategy. While the Mac Pro was still based on an old Intel processor, the first Mac Studio had an M1 Ultra chip that outperformed Apple’s super-expensive desktop tower.],
+  [Apple’s silicon roadmap has made the Mac Studio powerful enough to replace the Mac Pro for most people. For less than half the price and a fraction of the footprint, customers could finally buy a Mac that was even faster than the Mac Pro.],
+  [Eventually, Apple put its own chip inside the Mac Pro, but Apple silicon didn’t have the same impact. It ran the same M2 Ultra chip as the Mac Studio, and the main difference between the Mac Pro and the Mac Studio was the ability to add internal storage and PCIe expansion cards. And it still cost thousands more than the Mac Studio.],
+  [The dreams of a workstation chip or standalone graphics didn’t come to pass. For the vast majority of users, that wasn’t enough to justify the higher price tag.],
+  [While the Mac Pro hasn’t seen an update since 2023, Apple continued to refresh the rest of the desktop Mac lineup with newer and more efficient chips.],
+  [By the time Apple refreshed the Mac Studio with M3 Ultra and M4 Max, it became obvious that the company no longer saw a future for the Mac Pro. The Mac Studio powered by the M3 Ultra chip outperformed the Apple Silicon Mac Pro in pretty much every benchmark, but at a fraction of the price.],
+  [The Mac Pro has been on the way out of Apple’s lineup for a while.],
+  [Apple never explicitly said the Mac Pro was going away, but the signs kept piling up. The discontinuation of the Pro Display XDR, the absence of the Mac Pro in marketing materials, and the increasing focus on the Studio lineup all pointed in the same direction.],
+  [Even rumors suggested that Apple had deprioritized the Mac Pro internally, with plans for future updates reportedly scrapped. Now, with the product officially discontinued, those signals make perfect sense in hindsight. It existed in the Mac lineup, but Apple couldn’t have sold more than a handful of them, if that.],
+  [The discontinuation marks the end of an era for the Mac Pro . For decades, it stood as the ultimate expression of Apple’s desktop ambitions: powerful, modular, and expensive. But Apple in 2026 is a very different company from the one that introduced the Mac Pro in 2006.],
+  [Today, efficiency and integration matter more than modularity. Apple Silicon has enabled the company to deliver workstation-level performance in smaller, quieter, and more affordable machines. It’s no wonder Apple just launched its most affordable laptop, the MacBook Neo, for just \$599.],
+  [For professionals, the Mac Studio is now the logical choice. And for Apple, simplifying the lineup likely makes more sense than maintaining a niche product with limited appeal.],
+  [Still, for those who relied on the Mac Pro’s expandability, this change may feel like an ignominious end.],
+  [The MacBook Pro is the last remaining “Pro” model in Apple’s Mac lineup.],
+  [Apple hasn’t announced a direct replacement for the Mac Pro, and it probably won’t.],
+  [Instead, the company is betting that the combination of Mac Studio, Studio Display XDR, and MacBook Pro will cover nearly all professional workflows. For the few remaining edge cases that depend on PCIe expansion, users may need to rely on external solutions or rethink their setups entirely.],
+  [The Mac Pro is gone. But in many ways, its legacy lives on in the performance gains that Apple Silicon has brought to every Mac. And for Apple, that seems to be enough.],
+),
+  insert-map: (:),
+  word-count: 1001,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+}
+
+{
+  #standard-article(
+  title: [Kalshi moves to tighten rules, says politicians and athletes will be barred from trading on related markets],
+  author: [Suswati Basu],
+  source-name: [ReadWrite],
+  images: (),
+  paragraphs: (
+  [Kalshi is tightening who can trade on its prediction markets, drawing clearer limits around insider activity as the platform grows into more sensitive areas.],
+  [In a blog post published Monday (March 23), the company said it is “launching new technological guardrails that preemptively block politicians, athletes, and other relevant people from trading in certain politics and sports markets.”],
+  [The changes target political candidates and people involved in college and professional sports. Kalshi said it has “launched tools that will aim to preemptively block political candidates if they try to trade on their own campaigns.”],
+  [The company added that it already blocks elected officials such as members of Congress, and said the new system is designed to extend those checks to candidates as well.],
+  [dir="ltr" lang="en"\>Today, we’re announcing an expansion of our efforts to prevent insider trading on Kalshi – new guardrails and policies to preemptively block politicians and athletes from trading in certain politics and sports markets.],
+  [These efforts, which have been in the works for months,…],
+  [— robertjdenault (\@robertjdenault) March 23, 2026],
+  [Kalshi also described a new sports policy. It said “individuals involved in college and professional sports (including athletes, personnel, and referees) will be preemptively blocked from trading markets associated with sports in affiliated leagues they are involved in.” According to the post, the trades were already banned under existing rules, but enforcement previously came after trades were placed.],
+  [The company said the updated system follows “months of collecting and developing screening lists for both collegiate and professional sports leagues.” Working with integrity-monitoring firm IC360, Kalshi said “known athletes, officials, and employees will be blocked from trading in associated markets.”],
+  [Kalshi described the update as part of a wider compliance push tied to growing regulatory attention. The company said the effort was developed over months and “proactively address\[es\] the CFTC’s guidance and Congressional bill proposals to prevent insider trading. ”],
+  [Kalshi said it “recently brought an enforcement action against a candidate who traded on his own election in violation of Kalshi’s exchange rules.” It added: “Today’s update means that our systems will now aim to preemptively block these kinds of trades.”],
+  [Alongside trade restrictions, the company is adding reporting tools. It said it is introducing “a whistleblower functionality straight in our market page,” so users can flag suspicious activity using public trading data.],
+  [Rival platform Polymarket has tightened its own rules after disputes tied to political bets and early cashouts, including a high-profile market connected to Venezuela’s elections where questions about informational advantages surfaced.],
+  [Lawmakers are also weighing new limits. A proposal known as the “ Bets Off Act ” would restrict certain government-related prediction markets.],
+  [Kalshi’s leadership has argued that clearer restrictions are necessary if the category is to gain regulatory acceptance. For now, the company is attempting to put more weight on prevention.],
+  [“Ensuring market integrity is not just a goal – it is a cornerstone of our business model,” the company wrote.],
+  [Featured image: Kalshi \/ Grok],
+  [The post Kalshi moves to tighten rules, says politicians and athletes will be barred from trading on related markets appeared first on ReadWrite .],
+),
+  insert-map: (:),
+  word-count: 528,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+}
+
+{
+  #standard-article(
+  title: [iOS compatibility: What iOS version can your iPhone run – and is it still secure?],
+  author: [Macworld],
+  source-name: [Macworld],
+  images: (),
+  paragraphs: (
+  [id="link\_wrapped\_content"\>],
+  [Unsure which version of iOS your iPhone can run? Here’s a quick guide so you can find out if your iPhone is compatible with the most recent iterations of the iPhone operating system, and, if it isn’t, which version you can install on your iPhone.],
+  [Find your iPhone in our iPhone iOS support table and see which version of iOS you can run.],
+  [Which iPhone do you have? Which version of iOS can you run? iPhone 17e 2026 iOS 26 iPhone 17 Pro (Max) 2025 iOS 26 iPhone Air 2025 iOS 26 iPhone 17 2025 iOS 26 iPhone 16e 2025 iOS 26 iPhone 16 Pro (Max) 2024 iOS 26 iPhone 16 (Plus) 2024 iOS 26 iPhone 15 Pro (Max) 2023 iOS 26 iPhone 15 (Plus) 2023 iOS 26 iPhone 14 Pro (Max) 2022 iOS 26 iPhone 14 (Plus) 2022 iOS 26 iPhone SE (3rd gen) 2022 iOS 26 iPhone 13 Pro (Max) 2021 iOS 26 iPhone 13 (mini) 2021 iOS 26 iPhone 12 Pro (Max) 2020 iOS 26 iPhone 12 (mini) 2020 iOS 26 iPhone SE (2nd gen) 2020 iOS 26 iPhone 11 Pro (Max) 2019 iOS 26 iPhone 11 2019 iOS 26 iPhone XR 2018 iOS 18 iPhone XS (Max) 2018 iOS 18 iPhone X 2017 iOS 16 iPhone 8 (Plus) 2017 iOS 16 iPhone 7 (Plus) 2016 iOS 15 iPhone SE (1st gen) 2016 iOS 15 iPhone 6s (Plus) 2015 iOS 15],
+  [If your iPhone runs iOS 15 or newer, it is still receiving security updates and is safe to use],
+  [The latest version of the iPhone operating system is iOS 26 , which will continue to receive new features until the next major release, iOS 27 , launches in the fall of 2026.],
+  [Even if your iPhone can’t run the latest version of iOS, it is safe to use as long as it continues to receive security updates. Apple often releases security updates for older iOS versions to patch flaws that are being exploited.],
+  [For example, in March 2026 the “ DarkSword ” hacking toolkit was identified as targeting iPhones running older versions of iOS 18. The security holes used by the DarkSword malware were addressed in the iOS 18.7.6 update.],
+  [If you use an iPhone running a version of iOS that Apple doesn’t support with security updates, you are at risk of exploitation attacks targeting flaws in older software versions.],
+  [Some updates may also be necessary to maintain certificates needed for essential services like iMessage, FaceTime, and device activation, so if you aren’t running a supported version of iOS you may find these features stop working.],
+  [The good news is that all of the iPhone models listed in the table above are currently supported by Apple, although the level of support varies.],
+  [Apple continues to provide security updates for the following older versions of iOS:],
+  [iOS 15 and iOS 16 received updates to address security vulnerabilities in March 2026],
+  [iOS 18 received a critical security update in March 2026],
+  [Apple doesn’t need to update iOS 17 , because every iPhone that runs it can upgrade to a newer version.],
+  [This means that, for now at least, the following older iPhones are still receiving security updates:],
+  [iPhone X],
+  [iPhone 8],
+  [iPhone 7],
+  [iPhone SE (1st generation)],
+  [iPhone 6s – the oldest supported iPhone],
+  [We don’t know how much longer Apple will continue to support iOS 15 and iOS 16 — and these iPhones. As we explain in How long Apple supports iPhones for , the company has already classified the iPhone SE (1st generation) as obsolete, while the iPhone 6s, iPhone 7, iPhone 8 and iPhone X are on Apple’s vintage list. These classifications mean it may no longer be possible to get these devices repaired through Apple.],
+  [If your iPhone can’t run the newest version of iOS, that doesn’t necessarily mean you need to upgrade. While you won’t get the latest features, Apple continues to issue software updates to address security vulnerabilities in recent versions of iOS. Even with the arrival of iOS 26, Apple has continued to support iOS 18, iOS 16 and iOS 15 with security updates – and, with those versions of iOS, 2015’s iPhone 6s through to 2018’s iPhone XR and iPhone XS.],
+  [However, if you’re using an older iPhone, security is the key concern. Apple is still providing security patches for older devices via iOS 15 and iOS 16, but this support is unlikely to last much longer.],
+  [By contrast, iOS 18 support is expected to continue for several more years, extending the usable life of the iPhone XS and XR.],
+  [Once your device can no longer run a supported version of iOS, it’s time to seriously consider upgrading. We explain how long Apple supports the iPhone for in a separate article, and you can see full iOS compatibility in the chart above.],
+  [As a general rule, any iPhone that can’t run iOS 26 is nearing the end of its practical lifespan.],
+  [Even among iPhones that do support iOS 26, some upgrades are worth considering. In particular, newer models support Apple Intelligence features that aren’t available on older devices.],
+  [If you own one of the following iPhones, upgrading will give you access to significantly improved performance and newer features — especially if you’re moving to a recent model such as the iPhone 17:],
+  [iPhone 15 & 15 Plus (2023)],
+  [iPhone 14 Pro & 14 Pro Max (2022)],
+  [iPhone 14 & 14 Plus (2022)],
+  [iPhone SE (3rd generation, 2022)],
+  [iPhone 13 Pro & 13 Pro Max (2021)],
+  [iPhone 13 mini (2021)],
+  [iPhone 12 Pro & 12 Pro Max (2020)],
+  [iPhone 12 & 12 mini (2020)],
+  [iPhone SE (2nd generation, 2020)],
+  [iPhone 11 Pro & 11 Pro Max (2019)],
+  [iPhone 11 (2019)],
+  [To show you which versions of iOS your iPhone can run, we’ve broken down each iPhone generation in the chart below, so you can see which version it originally shipped with (as that will be the earliest it can run) and the latest iteration it currently supports – including whether that iPhone supports iOS 26. Take a look at our guide to Every version of iOS released so far for more information about the different versions of iOS.],
+  [Every version of iOS and the phones it supports.],
+  [Original iOS version: iOS 26],
+  [Does it run iOS 26: Yes],
+  [Original iOS version: iOS 26],
+  [Does it run iOS 26: Yes],
+  [Original iOS version: iOS 18],
+  [Does it run iOS 26: Yes],
+  [Original iOS version: iOS 17],
+  [Does it run iOS 26: Yes],
+  [Original iOS version: iOS 16],
+  [Does it run iOS 26: Yes],
+  [Original iOS version: iOS 15],
+  [Does it run iOS 26: Yes],
+  [Original iOS version: iOS 15],
+  [Does it run iOS 26: Yes],
+  [Original iOS version: iOS 14],
+  [Does it run iOS 18: Yes],
+  [Original iOS version: iOS 13],
+  [Does it run iOS 26: Yes],
+  [Original iOS version: iOS 13],
+  [Does it run iOS 26: Yes],
+  [Original iOS version: iOS 12],
+  [Does it run iOS 26: No],
+  [Last compatible version: iOS 18],
+  [Original iOS version: iOS 11],
+  [Last compatible version: iOS 16],
+  [Original iOS version: iOS 11],
+  [Last compatible version: iOS 16],
+  [Original iOS version: iOS 10],
+  [Last compatible version: iOS 15],
+  [Original iOS version: iOS 9],
+  [Last compatible version: iOS 15],
+  [Original iOS version: iOS 9],
+  [Last compatible version: iOS 15],
+  [Original iOS version: iOS 8],
+  [Last compatible version: iOS 12],
+  [Original iOS version: iOS 7],
+  [Last compatible version: iOS 12],
+  [Original iOS version: iOS 7],
+  [Last compatible version: iOS 10],
+  [Original iOS version: iOS 6],
+  [Last compatible version: iOS 10],
+  [Original iOS version: iOS 5],
+  [Last compatible version: iOS 9],
+  [Original iOS version: iOS 4],
+  [Last compatible version: iOS 7],
+  [Original iOS version: iOS 3],
+  [Last compatible version: iOS 6],
+  [Original iOS version: iOS 2],
+  [Last compatible version: iOS 4],
+  [Original iOS version: iOS 1],
+  [Last compatible version: iOS 3],
+  [If your iPhone isn’t supported by iOS 24 or 18 then you might want to consider upgrading to a newer device. Take a look at our best iPhone deals round-up where we share the most recent money-saving deals. Read our best iPhone guide for advice.],
+  [If you’re not sure which version of iOS you’re currently running, it’s very easy to find out.],
+  [Open Settings.],
+  [Tap on General.],
+  [Tap About and look for the iOS Version number.],
+  [How to see which version of iOS is installed],
+  [Now that you know the latest version of iOS that your iPhone supports, it’s a good idea to make sure you’re running on that platform.],
+  [Updating iOS on an iPhone is simple, follow these steps:],
+  [Open Settings.],
+  [Tap on General.],
+  [Tap Software Update and wait for your iPhone to check for updates.],
+  [When the latest update appears tap Update Now.],
+  [Enter your passcode if required.],
+  [Wait while the update is applied (your iPhone may shut down and restart)],
+  [How to update iOS on iPhone],
+  [See how to update iOS on your iPhone for more advice.],
+),
+  insert-map: (:),
+  word-count: 1690,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+}
+
+{
+  #standard-article(
+  title: [Bluesky's Newest Product: an AI Tool That Gives You Custom Feeds],
+  author: [EditorDavid],
+  source-name: [Slashdot],
+  images: (),
+  paragraphs: (
+  ["What happens when you can describe the social experience you want and have it built for you...?" asks Bluesky? "We've just started experimenting, but we're sharing it now because we want you to build alongside us."],
+  [Called "Attie" — because it's built with Bluesky's decentralized publishing framework, AT Protocol (which is open source) — the new assistant turns natural language prompts into social feeds, without users having to know how to code. (It's part of Bluesky's mission to "develop and drive large-scale adoption of technologies for open and decentralized public conversation.")],
+  [Engadget reports:],
+  [On the Attie website, examples include prompts like, "Show me electronic music and experimental sound from people in my network" or "Builders working on agent infrastructure and open protocol design."],
+  ["It feels more like having a conversation than configuring software," \[writes Bluesky's former CEO/current chief innovation officer, Jay Graber, in a blog post\]. "You describe the sort of posts you want to see, and the coding agent builds the feed you described." 
+Graber added that Attie is a separate app from Bluesky and users don't have to use the new AI assistant if they don't want to. However, since Attie and Bluesky were built on the same framework, it could mean there will be some cross-app implementation between the two or any other app built on the AT Protocol.],
+  ["Attie is open for beta signups today, and we'll be sharing what we learn along the way," Graber writes in the blog post. "To learn more about Attie, visit: Attie. AI. Come help us find out what this can be." 
+The blog post warns that "Right now, AI is undermining human agency at the same time it's enhancing it," since "The proliferation of low-quality AI-generated content is making public social networks noisier and less trustworthy..." And in a world where "signal is getting harder to find... The major platforms aren't trying to fix this problem."],
+  [They're using AI to increase the time users spend on-platform, to harvest training data, and to shape what users see and believe through systems they can't inspect and didn't choose. We think AI should serve people, not platforms...],
+  [An open protocol puts this power directly in users' hands. You can use it to build your own feeds, create software that works the way you want it to, and find signal in the noise. We built the AT Protocol so anyone could build any app they imagine on top of it, but until recently "anyone" really meant "anyone who can code." Agentic coding tools change that. For the first time, an open protocol can be genuinely open to everyone...],
+  [The Atmosphere \[Bluesky's interoperable ecosystem\] is an open data layer with a clearly defined schema for applications, which makes it uniquely well-suited for coding agents to build on... Bluesky will continue to evolve as a social app millions of people rely on. Attie will be where we experiment with agentic social.],
+  [AI is an accelerant on whatever it's applied to. I want it to accelerate decentralizing social and putting power back in users' hands. But I don't think the most interesting things built on AT Protocol will come from us. They're going to come from everyone who picks up these tools and starts building.],
+  [Read more of this story at Slashdot.],
+),
+  insert-map: (:),
+  word-count: 546,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+}
+
+{
+  #standard-article(
+  title: [2026.12: Please Listen to My Podcast],
+  author: [Ben Thompson],
+  source-name: [Stratechery],
+  images: (),
+  paragraphs: (
+  [Welcome back to This Week in Stratechery!],
+  [As a reminder, each week, every Friday, we’re sending out this overview of content in the Stratechery bundle; highlighted links are free for everyone . Additionally, you have complete control over what we send to you. If you don’t want to receive This Week in Stratechery emails (there is no podcast), please uncheck the box in your delivery settings .],
+  [On that note, here were a few of our favorites this week.],
+  [Everything I Didn’t Write . This was one of those weeks where far more happened than I could write about — and that’s partly my fault for taking a stand on bubbles ! To that end, I highly suggest this week’s episode of Sharp Tech , where we cover:],
+  [OpenAI’s pivot to enterprise, and why AI might look like the PC in the 1980s],
+  [Why I think that agents are not only real, but also the reason we are not in a bubble],
+  [OpenClaw as evidence that my thesis that OpenAI and Anthropic are sustainably differentiated through their integration of harness and model is wrong],
+  [Nvidia’s inference pivot, and why Nvidia is particularly concerned about a world dominated by OpenAI and Anthropic (and why Microsoft might be in trouble)],
+  [And, for good measure, why I don’t mind Wisconsin winters],
+  [I think that each of these points could be another Update, but also, I’m taking a few days off for vacation, so I hope you’ll listen to this episode in particular.
+— Ben Thompson],
+  [What Jensen Huang Has In Common with Steve Jobs. I really enjoyed this week’s Dithering covering Nvidia’s announcements at GTC Monday , including a near-perfect inversion of what Jensen Huang was telling the world about Nvidia’s approach to inference workloads just one year ago. In their trademark 15-minute format, Ben explains how and why Nvidia’s inference messaging is now different ( see also : this week’s Stratechery Interview ), while Gruber draws on decades of Apple experience to note the similarities between Huang and Steve Jobs. It’s a great listen that renders legible an easily missed strategic inflection point at the most valuable company in the world .  — Andrew Sharp],
+  [Trump’s Trip to Beijing, Delayed Indefinitely. As the war in Iran continues, this week’s Sharp China covered the news that President Trump will delay a trip to Beijing that had been scheduled to begin March 31st . Come to hear why both sides are likely relieved by the delay, and stay to hear about a softened Taiwan threat assessments from the U. S. intelligence community and a succession of PLA military scientists who are being purged for reasons that aren’t entirely clear. — AS],
+  [Agents Over Bubbles — Agents are fundamentally changing the shape of demand for compute, both in terms of how they work and in terms of who will use them. They’re so compelling that I no longer believe we’re in a bubble.],
+  [An Interview with Nvidia CEO Jensen Huang About Accelerated Computing — An interview with Nvidia CEO Jensen Huang about his GTC 2026 keynote, navigating China and DC, and remembering Nvidia’s true nature.],
+  [Jensen Huang and Andy Grove, Groq LPUs and Vera CPUs, Hotel California — GTC 2026 marked an important inflection point for Nvidia, as the company is selling multiple architectures, instead of focusing on just one GPU. The motivation is serve all needs and keep all customers.],
+  [What the NBA Could Be Getting from College Basketball — College basketball is fantastic, and the NBA should take advantage of its success by raising the age limit for the NBA Draft.],
+  [LLM Paradigm Changes],
+  [Jensen Huang’s Jobsian Keynote],
+  [From Fiber to AI: A Laser Giant’s Rebirth],
+  [Mexico City’s Sinking Lands],
+  [The War in Iran and the Visit to Beijing; New DNI Assessments on Taiwan; Military Scientists Disappearing From Public View],
+  [How to Miss a Free Throw, The Biggest Top 100 Disappointments, Expansion is Afoot (Again)],
+  [How NOT to Miss a Free Throw, Generic Houston Rockets Slander, The Top 100 Pleasant Surprises],
+  [OpenAI’s Enterprise Pivot, The Rise of Agents and Bubble Counterpoints, Nvidia Changes Its Inference Story],
+  [This week’s Sharp Tech video is on Questions about Anthropic vs. the U. S. Government.],
+),
+  insert-map: (:),
+  word-count: 751,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+  #pull-quote([— Andrew Sharp    Trump’s Trip to Beijing, Delayed Indefinitely.], [Ben Thompson])
+
+}
+
+{
+  #standard-article(
+  title: [Prediction markets forum set to debut at SBC Summit Americas],
+  author: [Paul McNally],
+  source-name: [ReadWrite],
+  images: (),
+  paragraphs: (
+  [Prediction markets will take center stage at this summer’s SBC Summit Americas, as the fast-growing industry continues to spark debate across the U. S. gambling and financial industries.],
+  [The Prediction Markets Forum is scheduled for June 11 and will run as part of the conference’s Breakout Stage lineup. The forum will bring together sportsbook executives, legal experts, analysts, and academics to unpack how these markets are evolving and what their rise could mean for traditional sports betting.],
+  [Patrick Everson, a longtime sports betting analyst and contributor to FOX Sports, will chair the four-session program. The agenda centers on discussions of how sportsbooks are experimenting with event contracts, as well as the mounting regulatory and integrity concerns that have followed the sector’s rapid expansion.],
+  [Prediction markets entered the mainstream spotlight during the 2024 U. S. presidential election cycle, when trading on political event contracts took off in popularity. The surge in activity during that period drew attention from major betting operators and regulators alike, pushing the products into broader public and political conversations.],
+  [Since then, operators such as DraftKings, FanDuel, and Fanatics have all explored ways to gain a foothold in the space. At the same time, dedicated platforms like Kalshi and Polymarket have increased their visibility through athlete endorsements and partnerships with sports leagues. Their growth has also attracted legal scrutiny, including a recent Nevada court decision that blocked certain Kalshi event contracts, and ongoing questions about whether these products should be treated as financial instruments or gambling offerings.],
+  [SBC CEO and Founder Rasmus Sojmark said the uncertainty is becoming a defining issue for the U. S. market.],
+  [“Prediction markets will define the American market in 2026. But navigating the grey area between financial trading and traditional betting is creating real uncertainty for the sector,” said Sojmark. “This forum will bring together the people who are shaping this space to help the industry understand what comes next.”],
+  [The opening session, “Prediction Markets 101,” is designed as a historical and technical primer. Dan Zucker, president of Zucker Media Group, is expected to trace how event contracts evolved from 19th-century hedging tools into what many now see as a fast-emerging, potentially billion-dollar segment of the broader wagering ecosystem.],
+  [One session will focus on how traditional sportsbooks are testing strategies to step into this new territory. Scheduled speakers include Dr. Laila Mintas of Dr. Mintas Consulting, Sporttrade COO David Huffman, and analyst Dustin Gouker, who are set to discuss whether partnerships with state-affiliated entities or exchanges could help sportsbooks navigate complex compliance requirements.],
+  [Another panel will examine the regulatory landscape. Attorney Dan Wallach will outline the current legal landscape, including recent enforcement actions by state regulators and evolving guidance from the Commodity Futures Trading Commission. A recent CFTC advisory signaled a more pragmatic approach to sports-related prediction markets, while cooperation between the CFTC and SEC on crypto-linked event contracts has added another layer of oversight.],
+  [The final session, “What’s the Future of Futures?,” will focus on long-term implications. Academic and industry speakers, including Ilya Beylin of Seton Hall University School of Law and economist Robin D. Hanson of George Mason University, are expected to debate how continued litigation and the possibility of U. S. Supreme Court involvement could reshape both the betting and financial trading landscapes.],
+  [Beyond the dedicated forum, prediction markets will also be discussed on the summit’s Leaders Stage in a separate panel examining how the products are developing across North America. With regulators, sportsbooks, and financial platforms all testing the boundaries of the model, prediction markets are likely to remain a central topic of discussion throughout the summit.],
+  [Featured image: Headway/Unsplash],
+  [The post Prediction markets forum set to debut at SBC Summit Americas appeared first on ReadWrite .],
+),
+  insert-map: (:),
+  word-count: 642,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+}
+
+{
+  #standard-article(
+  title: [How Super Meat Boy 3D captures the series’ identity, out March 31],
+  author: [Dominik Plaßmann],
+  source-name: [PlayStation Blog],
+  images: (),
+  paragraphs: (
+  [class=""\>When Super Meat Boy first released, it quickly became a landmark for indie games. It wasn’t just a great platformer, but a figurehead for indie gaming, defined by lightning-fast gameplay and brutal difficulty.],
+  [class=""\>So, when we began working on Super Meat Boy 3D , our biggest goal was simple: it had to feel like Meat Boy. We worked on the prototype for a few months to test out our main ingredients, and what was firstly more of a feeling we wished to translate, became much more concrete when we started working with Tommy of Team Meat.],
+  [class=""\>We tested three different camera systems during prototyping. While a traditional third-person camera that players could freely control technically worked, it never quite felt right. Eventually we landed on a controlled camera angle that stays consistent relative to the level. It’s not completely static but designed to prioritize clarity and readability.],
+  [class=""\>That decision shaped the entire design process. Instead of placing a camera into finished levels, we built levels around the camera angle so players can always clearly see the character’s movement and the path ahead, to ensure the gameplay remains readable at a high speed.],
+  [class=""\>After we tried recreating the feel of the original purely from our experience of playing Super Meat Boy, our collaboration with Tommy Refenes from Team Meat gave us a deeper understanding of exactly how a lot of the original systems worked. In some cases, we even used similar values from the original game, like wall-jump distances or how jumping behaves when touching a wall versus standing on the ground. Having those reference points helped us capture the familiar feel of Meat Boy’s movement.],
+  [class=""\>Of course, with the added difficulty of depth perception, the 2D game cannot just be moved into 3D one to one. Players need to feel completely in control of their movement even with an extra dimension.],
+  [class=""\>To help maintain clarity, we introduced several structural decisions, such as eight-directional stick movement to keep movement predictable, 45-degree angles in level design to help players anticipate their trajectory, and visual helpers, like a ground circle indicator and a line connecting the character to the ground to help judge distance.],
+  [class=""\>Even with these systems, movement tuning took a long time. We spent roughly a year refining the feel, and small tweaks continued almost until release, especially given the valuable input we received from players of our demo.],
+  [class=""\>Some mechanics translated easily. The vertical wall slide, for example, already existed in the original game, so we could closely replicate it. Wall running on the other hand had to be designed from scratch. Making it feel smooth requires a lot of value-tweaking and subtle assists so that it feels fast and satisfying rather than too frustrating.],
+  [class=""\>The essential core loop of Super Meat Boy – fail, learn, retry – is only possible to get right by balancing player freedom with systems that help them maintain control, but in 3D, movement can naturally feel slightly floatier because of the added spatial depth.],
+  [​​],
+  [class=""\>In the end, we found that the core ideas of Meat Boy’s movement translate surprisingly well into 3D if the focus remains on the fundamentals: jumping, walls, and speed. The key was in the camera angles and the subsequent level design. We usually started by choosing the camera angle first, then building the level to support it. The most important rule was that the character must always remain visible and readable.],
+  [class=""\>One classic feature is the blood trail that Meat Boy leaves behind. It doesn’t only add the trademark gore-factor, but it also helps players see where they’ve already been and which routes they’ve tried.],
+  [class=""\>In 3D, that feature became even more important, but implementing it was technically challenging. Spawning huge numbers of decals wasn’t practical, so we developed a vertex painting system that lets blood dynamically stain the environment, letting players paint the entire level red if they try often enough.],
+  [class=""\>The move to 3D also gave us more room for hidden jokes and visual gags. With extra space in the world, we could tuck funny details or secrets into the background, some of which players might never even notice.],
+  [class=""\>Our previous projects taught us many important lessons about development, but what stuck with us the most was that focus matters. Very early on in development, we nailed down what really mattered for Super Meat Boy 3D: the core movement, the camera direction, and keeping the scope controlled.],
+  [class=""\>Our mission from the start was: Take everything players love about Meat Boy and prove it can work in three instead of just two dimensions. We hope you’ll be able to feel this the moment you make your first jump!],
+),
+  insert-map: (:),
+  word-count: 988,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+}
+
+#article-row((
+  [
+    standard-article(
+  title: [This MacBook Air can be your digital buddy for just \$200],
+  author: [Macworld],
+  source-name: [Macworld],
+  images: (),
+  paragraphs: (
+  [id="link\_wrapped\_content"\>],
+  [TL;DR: A refurbished MacBook Air for \$199.97 delivers reliable everyday performance, long battery life, and serious value.],
+  [Not every laptop needs to be a powerhouse. Sometimes you just need something that works —reliably, quickly, and without costing a small fortune. That’s exactly what this refurbished MacBook Air does.],
+  [At just \$199.97 (MSRP \$999), it’s positioned less like a primary workstation and more like your go-to digital bestie. Think streaming shows on the couch, answering emails, online shopping, paying bills, or tossing it in your bag for a weekend trip.],
+  [The Intel Core i5 processor and 128GB SSD keep things responsive for browsing, document editing, and media playback . The 13.3-inch display is sharp enough for streaming, and with up to 12 hours of battery life, you’re not constantly hunting for an outlet.],
+  [You’re getting Apple hardware—known for its longevity and build quality—at a fraction of the original price. Sure, it’s not meant for heavy video editing or gaming, but that’s not the point.],
+  [This is the laptop you grab when you want to get things done.],
+  [Get a refurbished MacBook Air (2017) for just \$199.97 (MSRP \$999) with free shipping while stock lasts.],
+  [Apple MacBook Air (2017) 13″ i5 1.8GHz 8GB RAM 128GB SSD Silver (Refurbished) See Deal],
+  [Want to see more deals? Visit the shop and use code MARCH15 to save an extra 15% sitewide through March 29. Exclusions apply.],
+  [StackSocial prices subject to change.],
+),
+  insert-map: (:),
+  word-count: 243,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+  ],
+  [
+    standard-article(
+  title: [Folk Etymologies],
+  author: [Penny Arcade],
+  source-name: [Penny Arcade],
+  images: (),
+  paragraphs: (
+  [As something of a connected phenomenon - my instinct is to say "corollary," but I think that's not correct - as Penny Arcade was unearthed by the wily Zillenial, the many fruits of our enterprise became known. The true facts of the name PAX, for example - a name I came up with in five seconds at Costco because we got a call saying the show thing we were trying to do needed a name. I'm always delighted when someone finds the information I tucked in there. Never you mind that the next question is usually "what's a Penny Arcade" because that's not what this story is about!!!],
+),
+  insert-map: (:),
+  word-count: 108,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+  ],
+), ruled-indices: (1,))
+#pull-quote([3-inch display is sharp enough for streaming, and with up to 12 hours of battery life, you’re not constantly hunting for an outlet.], [Macworld])
+
+
+#article-row((
+  [
+    standard-article(
+  title: [Is It Time For Open Source to Start Charging For Access?],
+  author: [EditorDavid],
+  source-name: [Slashdot],
+  images: (),
+  paragraphs: (
+  ["It's time to charge for access," argues a new opinion piece at The Register. Begging billion-dollar companies to fund open source projects just isn't enough, writes long-time tech reporter Steven J. Vaughan-Nichols:],
+  [Screw fair. Screw asking for dimes. You can't live off one-off charity donations... Depending on what people put in a tip jar is no way to fund anything of value... \[A\]ccording to a 2024 Tidelift maintainer report, 60 percent of open source maintainers are unpaid, and 60 percent have quit or considered quitting, largely due to burnout and lack of compensation. Oh, and of those getting paid, only 26 percent earn more than \$1,000 a year for their work. They'd be better paid asking "Would you like fries with that?" at your local McDonald's...],
+  [Some organizations do support maintainers, for example, there's HeroDevs and its \$20 million Open Source Sustainability Fund. Its mission is to pay maintainers of critical, often end-of-life open source components so they can keep shipping patches without burning out. Sentry's Open Source Pledge/Fund has given hundreds of thousands of dollars per year directly to maintainers of the packages Sentry depends on. Sentry is one of the few vendors that systematically maps its dependency tree and then actually cuts checks to the people maintaining that stack, as opposed to just talking about "giving back."],
+  [Sentry is on to something. We have the Linux Foundation to manage commercial open source projects, the Apache Foundation to oversee its various open source programs, the Open Source Initiative (OSI) to coordinate open source licenses, and many more for various specific projects. It's time we had an organization with the mission of ensuring that the top programmers and maintainers of valuable open source projects get a cut of the tech billionaire pie.],
+  [We must realign how businesses work with open source so that payment is no longer an optional charitable gift but a cost of doing business. To do that, we need an organization to create a viable, supportable path from big business to individual programmer. It's time for someone to step up and make this happen. Businesses, open source software, and maintainers will all be better off for it.],
+  [One possible future... Bruce Perens wrote the original Open Source definition in 1997, and now proposes a not-for-profit corporation developing "the Post Open Collection" of software, distributing its licensing fees to developers while providing services like user support, documentation, hardware-based authentication for developers, and even help with government compliance and lobbying.],
+  [Read more of this story at Slashdot.],
+),
+  insert-map: (:),
+  word-count: 419,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+  ],
+  [
+    standard-article(
+  title: [Get the latest Microsoft Office for your Mac for under \$100 – No Subscription],
+  author: [Macworld],
+  source-name: [Macworld],
+  images: (),
+  paragraphs: (
+  [id="link\_wrapped\_content"\>],
+  [TL;DR: Microsoft Office 2024 Home & Business for Mac is available for under \$100 as a one-time purchase, giving you the latest Office apps without paying for Microsoft 365 every year.],
+  [Mac users often assume that Microsoft Office means signing up for Microsoft 365 and paying a yearly fee just to use Word, Excel, and PowerPoint. That subscription can run \$70 to \$100 per year, which adds up. Bypass that yearly fee, and instead get Microsoft Office 2024 Home & Business for Mac (or PC) for under \$100. You’ll save money in the long term while still getting the latest version of the apps you use every day.],
+  [PowerPoint],
+  [OneNote],
+  [This version also includes performance improvements and newer tools compared to older Office versions. Excel handles larger datasets more smoothly, PowerPoint now supports recording presentations with voice and video, and Word includes AI-assisted writing suggestions and focus mode for distraction-free writing.],
+  [The interface has also been updated with Microsoft’s Fluent design system, making the apps feel more modern and consistent across Mac and PC. Real-time collaboration, commenting, and version history also make it easier to work on shared documents or projects.],
+  [For Mac users who want Microsoft Office but don’t want another subscription, a lifetime license is often the cheaper option after just a year or two.],
+  [Microsoft Office 2024 Home & Business for Mac is available now for \$99.97 (MSRP \$249.99) as a one-time purchase.],
+  [Microsoft Office 2024 Home & Business for Mac or PC Lifetime License See Deal],
+  [Want to see more deals? Visit the shop and use code MARCH15 to save an extra 15% sitewide through March 29. Exclusions apply.],
+  [StackSocial prices subject to change.],
+),
+  insert-map: (:),
+  word-count: 295,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+  ],
+), ruled-indices: (1,))
+#pull-quote([Its mission is to pay maintainers of critical, often end-of-life open source components so they can keep shipping patches without burning out.], [EditorDavid])
+
+
+{
+  #section-label([Analysis])
+  #standard-article(
+  title: [Boyd Gaming opens Cadence Crossing Casino in fast-growing Henderson],
+  author: [Paul McNally],
+  source-name: [ReadWrite],
+  images: (),
+  paragraphs: (
+  [Boyd Gaming has opened Cadence Crossing Casino in Henderson, adding a new neighborhood gaming option in one of the Las Vegas Valley’s fastest-growing residential corridors. The opening comes just about one year after the company broke ground on the casino .],
+  [The property, located next to the master-planned Cadence community, began welcoming guests this week and represents the company’s latest push to deepen its footprint in the local Southern Nevada market.],
+  [At roughly 10,000 square feet, Cadence Crossing is designed with local customers in mind rather than tourists. The casino floor is anchored by more than 450 slot machines and video poker terminals, along with electronic table games arranged across an open layout that keeps sightlines clear from the entrance to the back of the room.],
+  [We are excited to introduce Cadence Crossing Casino, our newest entertainment experience for southern Nevada locals,” said Steve Schutte, Boyd Gaming’s executive vice president of operations. “Cadence Crossing is a modern and stylish gaming entertainment experience worthy of the Cadence community.”],
+  [A 22-seat circular bar sits at the center of the floor, serving as a social hub where guests can watch the action from every angle while ordering from a menu of signature cocktails. Just beyond it, a quieter lounge area with softer lighting and more relaxed seating offers a break from the noise of the machines.],
+  [Boyd has leaned heavily on food and entertainment to position the property as more than a place to gamble. The casino’s main restaurant, Tin Lizard Bar & Grill, features a gastropub-style menu, craft beer, and wall-to-wall sports screens. The venue is also scheduled to host live music from Thursday through Sunday, with local performers rotating through the lineup.],
+  [For guests who want a quick meal without leaving the gaming floor, a nearby fast-casual option offers grab-and-go options, in another nod to the convenience-focused design aimed at neighborhood customers.],
+  [The opening comes as Boyd continues to reshape its national portfolio while doubling down on markets where it already has a strong customer base. The company recently agreed to sell its Sam’s Town Shreveport property in Louisiana to Bally’s, a move executives described as part of a broader effort to streamline operations and focus on core regions.],
+  [That strategy is especially visible in southern Nevada, where rapid population growth in communities such as Cadence has created demand for smaller, locally oriented gaming venues rather than large Strip-style resorts. This local-first strategy also takes into account a significant decrease in room visits.],
+  [dir="ltr" lang="en"\>Boyd Gaming 2024 to 20025 year-over-year revenue changes:],
+  [Gaming: 2.1% increase
+Food & Beverage: 2.2% increase
+Room: (6.5)% decline \$BYD officials said they were seeing significant room visit declines in not just their Nevada segments but also other regional properties],
+  [— Ryan Butler (\@ButlerBets) February 5, 2026],
+  [Cadence Crossing reflects that approach. By pairing a compact gaming floor with dining, live music, and a layout designed for convenience, Boyd is betting that proximity and familiarity, rather than spectacle, will keep local customers coming back and strengthen its position in the competitive Las Vegas-area market.],
+  [Featured image: Coolcaesar at en.wikipedia, CC BY-SA 3.0 https:\/\/creativecommons.org/licenses/by-sa/3.0 , via Wikimedia Commons],
+  [The post Boyd Gaming opens Cadence Crossing Casino in fast-growing Henderson appeared first on ReadWrite .],
+),
+  insert-map: (:),
+  word-count: 557,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+}
+
+{
+  #standard-article(
+  title: [Indian Gaming Association backs bipartisan Senate bill targeting sports prediction markets],
+  author: [Suswati Basu],
+  source-name: [ReadWrite],
+  images: (),
+  paragraphs: (
+  [The Indian Gaming Association (IGA) has stepped into the growing fight over sports-based prediction markets, throwing its support behind a bipartisan Senate bill that would shut them down. The move adds fresh pressure on federal regulators and companies offering the products as scrutiny spreads well beyond the initial rollout phase.],
+  [dir="ltr" lang="en"\>Prediction markets are offering sports bets — just with a different name.],
+  [They are being offered in states where sports betting is illegal, like California, while federal regulators are greenlighting them rather than enforcing the law.],
+  [My bipartisan legislation with… pic.twitter.com/oNvI2vw9IP],
+  [— Adam Schiff (\@SenAdamSchiff) March 23, 2026],
+  [Lawmakers Adam Schiff and John Curtis introduced the measure, called the “ Prediction Markets Are Gambling Act .” It would stop federally regulated exchanges from listing contracts tied to sports wagering or casino-style activity. The proposal would update the Commodity Exchange Act to block entities overseen by the Commodity Futures Trading Commission from offering those contracts. The Senate Agriculture Committee is expected to take it up.],
+  [Leaders within the association say the legislation is about restoring balance between federal oversight and long-standing state and tribal control of gambling. IGA Chairman David Bean described the bill as a necessary correction to what he views as a regulatory gap that has allowed prediction markets to expand unchecked.],
+  [“It will reaffirm existing tribal and state government authority to regulate sports betting, limit online gambling, or in some cases – continue to prohibit all forms of gambling,” Bean told ReadWrite.],
+  [dir="ltr" lang="en"\>IGA statement: The Indian Gaming Association welcomes the introduction of the “Prediction Markets Are Gambling Act” \@RWW pic.twitter.com/IBKM0rHYiI],
+  [— Suswati Basu (\@suswatibasu) March 23, 2026],
+  [Bean also took aim at how regulators have handled the issue so far. “The bill will also quiet the chaos and federal overreach that the CFTC is fostering. Other than the growing number of court decisions siding with tribes and states, prediction market platforms have seen no accountability and no oversight, as they disregard clearly established regulations while exposing consumers to unchecked gambling. We look forward to working with leaders in Congress to hold these platforms accountable to protect consumers, sports integrity, and tribal and state sovereignty.”],
+  [That places the IGA squarely in the middle of a widening policy clash. Much of the tension is said to center on the CFTC’s handling of event-based contracts. Rules adopted in 2011 bar registered entities from listing contracts tied to activities like terrorism, war, or gaming that may be unlawful under federal or state law. The IGA argues that enforcement shifted in January 2025, when the agency dropped key court appeals, effectively stepping back from its own restrictions.],
+  [The group also criticized CFTC Chairman Michael Selig , saying he has “actively fostered online sports gambling through prediction markets.” It pointed to legal filings opposing state and tribal challenges, along with plans to revisit existing rules.],
+  [Meanwhile, interest in the issue is growing on Capitol Hill. Lawmakers in both parties have raised concerns that these platforms resemble gambling but lack standard consumer protections. Separate proposals would also prevent federal officials from participating in prediction markets , citing potential conflicts of interest. Despite coming from very different regulatory environments, Schiff and Curtis appear to have found common ground. California maintains a tightly controlled tribal gaming system and bans sports betting, while Utah prohibits all gambling . Even so, both senators are pushing to reinforce local authority.],
+  [Featured image: David Bean via LinkedIn],
+  [The post Indian Gaming Association backs bipartisan Senate bill targeting sports prediction markets appeared first on ReadWrite .],
+),
+  insert-map: (:),
+  word-count: 603,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+}
+
+{
+  #standard-article(
+  title: [What COVID did to our forecasting models (and what we built to handle the next shock)],
   author: [Harrison Katz],
   source-name: [Airbnb Engineering],
-  deck: [How Airbnb built forecasting models resilient enough to survive a global pandemic and whatever shock comes next.],
-  lead-text: "By : Harrison Katz",
-  lead-first-alpha: 0,
-  body-paragraphs: (
+  images: (),
+  paragraphs: (
+  [How Airbnb built forecasting models resilient enough to survive a global pandemic and whatever shock comes next.],
+  [By : Harrison Katz],
   [The week everything broke],
   [In March 2020, the forecasting models that had served us well in stable times faced a new challenge: predicting outcomes in a world that had suddenly changed.],
   [At Airbnb, many of the financial metrics we forecast depend on two separate events: when guests book, and when they actually travel. A booking made today might correspond to a trip three days from now or three months from now. The distribution of that gap, what we call the lead-time composition, drives how we translate today’s bookings into future revenue (see Figure 1).],
@@ -91,321 +692,124 @@
   [Harrison Katz leads Finance Data Science & Strategy at Airbnb. His research focuses on Bayesian methods for compositional and hierarchical time series & Bayesian decision theory.],
   [What COVID did to our forecasting models (and what we built to handle the next shock) was originally published in The Airbnb Tech Blog on Medium, where people are continuing the conversation by highlighting and responding to this story.],
 ),
-  inline-pq: pull-quote([When we applied this approach to booking data across four major U.], [Harrison Katz]),
-  inline-pq-idx: 23,
+  insert-map: (:),
+  word-count: 2766,
   edited-for-length: false,
+  debug-mode: false,
 )
 
+}
 
 {
-  #section-label([Features])
   #standard-article(
-  title: [How Super Meat Boy 3D captures the series’ identity, out March 31],
-  author: [Dominik Plaßmann],
+  title: [Detroit moves toward opposing prediction markets in Coinbase federal lawsuit],
+  author: [Jacob Woodward],
+  source-name: [ReadWrite],
+  images: (),
+  paragraphs: (
+  [A federal judge has approved a procedural agreement in the ongoing dispute between Coinbase and Michigan regulators. This clears the way for Detroit to become the first U. S. city to formally challenge sports-related prediction markets in court.],
+  [In a March 26 order, Shalina D. Kumar of the United States District Court for the Eastern District of Michigan signed off on a stipulation jointly submitted by Coinbase Financial Markets Inc. and state officials. The agreement resolves a dispute over recent filings tied to Coinbase’s request for a preliminary injunction and sets a revised schedule for additional briefs.],
+  [Potentially the biggest development in the latest order is Detroit’s planned involvement in the case. City officials approached both parties seeking permission to file an amicus curiae brief, a filing that allows a non-party to offer the court additional context, expertise, or legal arguments.],
+  [Both sides agreed to the request, and the court’s order allows Detroit to submit its brief by April 3.],
+  [If the city ultimately argues against prediction markets, it would be the first time a U. S. municipality has taken a direct legal stance opposing the products. That could provide courts and regulators with a new perspective, particularly on how emerging wagering-style platforms affect communities at the local level.],
+  [dir="ltr" lang="en"\>The City of Detroit is poised to become the first municipality to come out against prediction markets. The Motor City has been granted permission by a federal judge to file an amicus curiae brief in support of Michigan's opposition to Coinbase's motion for preliminary injunction. pic.twitter.com/6tMW3YcaBU],
+  [— Daniel Wallach (\@WALLACHLEGAL) March 27, 2026],
+  [The underlying lawsuit pits Coinbase against Dana Nessel and members of the Michigan Gaming Control Board, who are being sued in their official capacities.],
+  [Coinbase is seeking a preliminary injunction, which is a temporary court order that, if granted, would prevent Michigan from taking enforcement action while the judge considers the broader legal questions in the case. Such injunctions are typically sought when a company argues that immediate regulatory action could cause irreparable harm before the courts have fully resolved the dispute.],
+  [The procedural disagreement that prompted the latest order began in February, when Coinbase filed additional materials with the court, including a notice of supplemental authority and a motion requesting permission to respond to a proposed sur-reply from the defendants. The company also attached a lengthy exhibit outlining its planned response.],
+  [State officials objected to those filings on March 2, arguing they were improper. After further discussions, however, the parties reached a compromise: the state withdrew its objection and instead agreed to submit a formal response addressing the materials.],
+  [Under the court-approved stipulation, that response was due March 27. Judge Kumar’s order formally adopts the agreed terms, putting the revised briefing schedule into effect.],
+  [The dispute is unfolding against a backdrop of increasing national scrutiny of prediction markets, particularly contracts tied to sports outcomes. In Washington, D. C., bipartisan lawmakers have introduced legislation that would ban sports-related prediction markets, citing concerns that the products function too similarly to unregulated sports betting.],
+  [Courts across the country have also begun to issue diverging rulings. Examples of this include a judge in Nevada recently blocking certain event contracts offered by Kalshi, while a federal judge in Arizona declined to grant emergency relief that would have protected similar contracts from potential criminal enforcement.],
+  [Together, those decisions have contributed to a patchwork of legal outcomes that leaves the status of prediction markets unsettled across jurisdictions.],
+  [Detroit’s anticipated filing could carry weight beyond the immediate dispute between Coinbase and Michigan regulators. Cities are often the first to deal with the social and economic consequences of gambling activity, from problem gambling services to local enforcement concerns.],
+  [Detroit could help the court assess the potential community-level impacts of prediction markets as it decides whether Coinbase should receive the temporary protections it is seeking, and, more broadly, how these emerging financial products should be treated under existing gambling and commodities laws.],
+  [The post Detroit moves toward opposing prediction markets in Coinbase federal lawsuit appeared first on ReadWrite .],
+),
+  insert-map: (:),
+  word-count: 708,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+}
+
+{
+  #standard-article(
+  title: [America’s gambling machine runs on tech even as router ban looms],
+  author: [Suswati Basu],
+  source-name: [ReadWrite],
+  images: (),
+  paragraphs: (
+  [A federal move announced Monday (March 23) targets new consumer-grade routers produced in foreign countries entering the US market, not the devices already in homes. The Federal Communications Commission (FCC) added those routers to its Covered List, which blocks new models from receiving the equipment authorization required for import and sale. The agency says the change does not affect routers consumers already own or models that were previously approved, meaning existing devices can remain in use.],
+  [This update to the Covered List does not prohibit the import, sale, or use of any existing device models the FCC previously authorized.],
+  [This follows a national security determination that such routers “pose unacceptable risks to the national security of the United States or the safety and security of United States persons.”],
+  [The change comes as gambling in the US has grown to an enormous scale . Legal gaming now functions almost like essential infrastructure, spread across nearly every state.],
+  [Start with the money. Commercial gaming alone brought in \$78.7 billion in 2025, a record according to the American Gaming Association. Tribal gaming added another \$43.9 billion in its 2025 fiscal year . The figures come from different reporting calendars, so they are not meant to be stacked as a precise combined total. Together, the figures point to a system generating well over \$100 billion a year . This doesn’t even take into account the full ecosystem, such as state lotteries and other forms of gaming.],
+  [dir="ltr" lang="en"\>Record year for tribal gaming: \$43.9B in revenue and growth across all regions, according to the latest FY25 report from the \@NIGCgov . \@RWW pic.twitter.com/Dx0q9rzDy9],
+  [— Suswati Basu (\@suswatibasu) March 3, 2026],
+  [The revenue sits on top of a sprawling physical network. By the end of 2024, there were 492 commercial casinos spread across 27 states. Tribal operations added 500-plus more sites across 29 states, depending on how properties are counted. Round it out, and the country supports roughly 1,000 land-based gambling locations before factoring in sportsbooks inside arenas, racetracks, lottery retailers, and online-only platforms.],
+  [The workforce is just as substantial. Federal labor data shows about 252,900 people employed in casino hotels and another 128,700 in other gambling-related industries. Together, that puts the sector at roughly 381,600 payroll jobs across those categories. A narrower occupational slice still counts more than 150,000 gambling services workers , including tens of thousands of dealers and supervisors. Even in a digital era, the system depends heavily on human operators.],
+  [dir="ltr" lang="en"\> 2025 was the sixth straight year of record growth. 2025 commercial gaming revenue rose 9.2% to \$78.72B, marking another all-time high for our industry.],
+  [Read the full report https:\/\/t.co/x6Ays0jCkC pic.twitter.com/7d7jU8Zfv9],
+  [— American Gaming Association (\@AmericanGaming) March 2, 2026],
+  [The online side has also surged into national-scale territory. Americans wagered \$166.94 billion on sports in 2025, producing \$16.96 billion in revenue. Early 2026 figures from the American Gaming Association show the pace continuing, with \$14.81 billion in handle in January alone and more than \$1.6 billion in monthly sportsbook revenue. With another \$1 billion from iGaming that month, it starts to resemble a constant financial system rather than a seasonal business.],
+  [All of that activity requires a dense layer of hardware. There are likely between 600,000 and 1,000,000 electronic gaming devices in the country. The figure isn’t official, but it’s based on revenue data and typical slot machine performance. Slots alone generated billions per month at the start of 2026, which implies hundreds of thousands of active machines nationwide.],
+  [But slot cabinets are only the beginning. Modern casinos run on a mesh of systems: sportsbook kiosks, cashier terminals, loyalty card readers, player-tracking systems, hotel management terminals, and redemption machines. Behind the scenes, there are compliance servers, storage arrays, and networking gear tying everything together.],
+  [dir="ltr" lang="en"\>Today, the FCC took additional action to safeguard Americans and the communications networks we rely on.],
+  [The FCC added consumer routers produced in foreign countries to the agency’s Covered List.],
+  [This action follows a national security determination provided by Executive Branch… pic.twitter.com/s3OoEo5NOV],
+  [— Brendan Carr (\@BrendanCarrFCC) March 23, 2026],
+  [Taken together, that likely adds up to a few million connected or monitored devices. In total, somewhere between one and three million devices are tied to regulated gambling operations. The figure reflects the size of the property base and the density of technology inside each location rather than a single published dataset.],
+  [Then there is surveillance, one of the least visible but most critical components. Casinos are among the most camera-heavy environments in the country, driven by fraud prevention, dispute resolution, cash handling, and regulatory compliance. Altogether, there are about 1,000 land-based gambling locations, not even counting sportsbooks, racetracks, lottery retailers, or online platforms. Either way, it’s far larger than what you’d see in typical retail or hospitality environments.],
+  [The hardware footprint is huge, and the software behind it is even bigger. Every legal wager flows through multiple systems at once. Operators rely on gaming management platforms to track slot and table activity, sportsbook engines to set and adjust odds, and wallet systems to move money in and out.],
+  [Surrounding that are layers of compliance and risk tools. Identity verification systems confirm who users are. Geolocation software ensures bets are placed within legal jurisdictions. Anti-money-laundering systems monitor transactions. Fraud detection tools flag suspicious behavior. On top of that, operators run loyalty programs, customer databases, and marketing systems designed to keep players engaged.],
+  [None of this can suddenly stop. The platforms must continuously process deposits, wagers, odds updates, event settlements, tax calculations, and payouts. The fact that iGaming revenue reached \$10.74 billion in 2025 from just seven active states shows how central this software layer has become. It’s a full industry running in real time.],
+  [In that context, the FCC’s move looks less like a direct impact on casinos and more like a warning about how sensitive the system has become. Because the rule applies to new device models that require FCC equipment authorization, any near-term effect would more likely show up at the edge, for home bettors, smaller operators, or peripheral deployments, than inside core casino networks.],
+  [Core casino networks, which use enterprise-grade systems and tight controls, seem less directly affected. But the general message is harder to ignore. US gambling now depends on a vast, interconnected technology base that spans from living-room Wi-Fi to highly regulated surveillance networks and real-time financial systems.],
+  [In simple terms, keeping gambling running in the US means supporting about 1,000 properties, hundreds of thousands of workers, and up to a million machines, millions of connected endpoints, and software capable of handling well over \$150 billion a year in betting activity, alongside tens of billions more in other gaming revenue.],
+  [The router decision won’t disrupt things overnight, but it draws attention to how much the industry depends on infrastructure beyond the casino floor.],
+  [Featured image: Canva],
+  [The post America’s gambling machine runs on tech even as router ban looms appeared first on ReadWrite .],
+),
+  insert-map: (:),
+  word-count: 1202,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+}
+
+#article-row((
+  [
+    standard-article(
+  title: [Official PlayStation Podcast Episode 537: Speaking Saros],
+  author: [O’Dell Harmon Jr. (he/him)],
   source-name: [PlayStation Blog],
   images: (),
   paragraphs: (
-  [class=""\>When Super Meat Boy first released, it quickly became a landmark for indie games. It wasn’t just a great platformer, but a figurehead for indie gaming, defined by lightning-fast gameplay and brutal difficulty.],
-  [class=""\>So, when we began working on Super Meat Boy 3D , our biggest goal was simple: it had to feel like Meat Boy. We worked on the prototype for a few months to test out our main ingredients, and what was firstly more of a feeling we wished to translate, became much more concrete when we started working with Tommy of Team Meat.],
-  [class=""\>We tested three different camera systems during prototyping. While a traditional third-person camera that players could freely control technically worked, it never quite felt right. Eventually we landed on a controlled camera angle that stays consistent relative to the level. It’s not completely static but designed to prioritize clarity and readability.],
-  [class=""\>That decision shaped the entire design process. Instead of placing a camera into finished levels, we built levels around the camera angle so players can always clearly see the character’s movement and the path ahead, to ensure the gameplay remains readable at a high speed.],
-  [class=""\>After we tried recreating the feel of the original purely from our experience of playing Super Meat Boy, our collaboration with Tommy Refenes from Team Meat gave us a deeper understanding of exactly how a lot of the original systems worked. In some cases, we even used similar values from the original game, like wall-jump distances or how jumping behaves when touching a wall versus standing on the ground. Having those reference points helped us capture the familiar feel of Meat Boy’s movement.],
-  [class=""\>Of course, with the added difficulty of depth perception, the 2D game cannot just be moved into 3D one to one. Players need to feel completely in control of their movement even with an extra dimension.],
-  [class=""\>To help maintain clarity, we introduced several structural decisions, such as eight-directional stick movement to keep movement predictable, 45-degree angles in level design to help players anticipate their trajectory, and visual helpers, like a ground circle indicator and a line connecting the character to the ground to help judge distance.],
-  [class=""\>Even with these systems, movement tuning took a long time. We spent roughly a year refining the feel, and small tweaks continued almost until release, especially given the valuable input we received from players of our demo.],
-  [class=""\>Some mechanics translated easily. The vertical wall slide, for example, already existed in the original game, so we could closely replicate it. Wall running on the other hand had to be designed from scratch. Making it feel smooth requires a lot of value-tweaking and subtle assists so that it feels fast and satisfying rather than too frustrating.],
-  [class=""\>The essential core loop of Super Meat Boy – fail, learn, retry – is only possible to get right by balancing player freedom with systems that help them maintain control, but in 3D, movement can naturally feel slightly floatier because of the added spatial depth.],
-  [​​],
-  [class=""\>In the end, we found that the core ideas of Meat Boy’s movement translate surprisingly well into 3D if the focus remains on the fundamentals: jumping, walls, and speed. The key was in the camera angles and the subsequent level design. We usually started by choosing the camera angle first, then building the level to support it. The most important rule was that the character must always remain visible and readable.],
-  [class=""\>One classic feature is the blood trail that Meat Boy leaves behind. It doesn’t only add the trademark gore-factor, but it also helps players see where they’ve already been and which routes they’ve tried.],
-  [class=""\>In 3D, that feature became even more important, but implementing it was technically challenging. Spawning huge numbers of decals wasn’t practical, so we developed a vertex painting system that lets blood dynamically stain the environment, letting players paint the entire level red if they try often enough.],
-  [class=""\>The move to 3D also gave us more room for hidden jokes and visual gags. With extra space in the world, we could tuck funny details or secrets into the background, some of which players might never even notice.],
-  [class=""\>Our previous projects taught us many important lessons about development, but what stuck with us the most was that focus matters. Very early on in development, we nailed down what really mattered for Super Meat Boy 3D: the core movement, the camera direction, and keeping the scope controlled.],
-  [class=""\>Our mission from the start was: Take everything players love about Meat Boy and prove it can work in three instead of just two dimensions. We hope you’ll be able to feel this the moment you make your first jump!],
+  [class=""\>Hey, everybody! Sid, Brett, Kristen, and I are back this week to talk about our latest platinum trophy runs, hands-on with Saros, and more. This week also features an interview with two Housemarque devs working on Saros — Creative Director Gregory Louden and Art Director Simone Silvestri.],
+  [Next week’s release highlights:],
+  [South of Midnight | PS5],
+  [Legacy of Kain: Ascendance | PS5],
+  [Darwin’s Paradox | PS5],
+  [Fishbowl | PS5],
+  [MotionRec | PS5],
+  [Damon and Baby is now available — discover what sets this twin-stick shooter apart in our hands-on report. You can also experience its unique blend of comedy and action yourself, since it’s out now.],
+  [Virtual Hunter VR launches on PS VR2 on May 27 — explore a vast open world sim, hunt diverse prey, experience dynamic weather, and decorate your lodge.],
+  [Directive 8020 PS5 Pro Features — Supermassive devs detail PS5 Pro’s ray tracing, PSSR, and performance features for a haunting sci-fi narrative when the game launches on May 12.],
+  [Super Meat Boy 3D launches on PS5 on March 31 — See how the tough-as-nails side-scrolling series transitions into 3D, introducing new abilities like wall running and more.],
+  [close 
+ Close],
+  [close 
+ Close],
+  [close 
+ Close],
+  [close 
+ Close],
 ),
   insert-map: (:),
-  word-count: 988,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-  #pull-quote([We spent roughly a year refining the feel, and small tweaks continued almost until release, especially given the valuable input we received from players of our demo.], [Dominik Plaßmann])
-
-}
-
-{
-  #standard-article(
-  title: [SystemD Contributor Harassed Over Optional Age Verification Field, Suggests Installer-Level Disabling],
-  author: [EditorDavid],
-  source-name: [Slashdot],
-  images: (),
-  paragraphs: (
-  [It's FOSS interviewed a software engineer whose long-running open source contributions include Python code for the Arch Linux installer and maintaining packages for NixOS. But "a recent change he made to systemd has pushed him into the spotlight" after he'd added the optional birthDate field for systemd's user database:],
-  [Critics saw it not merely as a technical addition, but as a symbolic capitulation to government overreach. A crack in the philosophical foundation of freedom that Linux is built on. What followed went far beyond civil disagreement. Dylan revealed that he faced harassment, doxxing, death threats, and a flood of hate mail. He was forced to disable issues and pull request tabs across his GitHub repositories...],
-  [Q: Should FOSS projects adapt to laws they fundamentally disagree with? Because these kinds of laws are certainly in conflict with what a lot of Linux users believe in.],
-  [A. Unfortunately, in a lot of cases, the answer is yes — at least for any distribution with corporate backing. The small independent distributions are much more flexible to refuse as a protest.],
-  [If we ignore regulations entirely, we risk Linux being something that companies are not willing to contribute to, and Linux may be shipped on less hardware. I'm talking about things like Valve and System76 (despite them very vocally hating these laws). That does not help us; it just lowers the quality of software contributions due to less investment in the platform and makes Linux less accessible to the average person. We need Linux and other free operating systems to remain a viable alternative to closed systems.],
-  [Q. Do you think regulations like these will reshape desktop Linux in the next 5-10 years where we might have "compliant Linux" and "Freedom-first Linux"?],
-  [A. Unfortunately, yes, to some degree this is likely. I imagine the split will be mostly along the lines of independent distributions and those with corporate backing.],
-  [We're already seeing it as far as which distributions plan on implementing some sort of age verification and which ones are not, and that sucks. I'd rather nobody have to deal with this mess at all, but this is the reality of things now. As I said in the previous response, the corporate-backed distributions really have no choice in the matter. Companies are notoriously risk-adverse, but something like Artix or Devuan? Those are small and independent enough where the individual maintainers may be willing to take on more risk.],
-  [I was actually thinking about what this would look like if we added it to [Linux system installer] Calamares and chatting about that with the maintainers before that thread got brigaded by bad actors posting personal information and throwing around insults. I completely support the freedom for the distro maintainers to choose their risk tolerance. If the distribution is based out of Ireland or something (like Linux Mint) without these silly laws in the jurisdiction the developer operates in, I think that we should leave it up to them to make a choice here.],
-  [They think the installer should have a date picker with a flag to disable it, and "We can even default it to off, and corporate distributions using Calamares or those not willing to take the risk could flip it on if they need to. That way if maintainers of the distributions do not wish to collect the birth date, they won't have to, and no forking is required to patch it out."],
-  [Read more of this story at Slashdot.],
-),
-  insert-map: (:),
-  word-count: 578,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-}
-
-{
-  #standard-article(
-  title: [Pennsylvania regulator fines BetMGM over weak fraud detection controls],
-  author: [Paul McNally],
-  source-name: [ReadWrite],
-  images: (),
-  paragraphs: (
-  [Pennsylvania gaming regulators have levied a \$100,000 fine against BetMGM after concluding the company did not have strong enough safeguards in place to prevent fraud on its online betting platforms.],
-  [The penalty was approved during the board’s public meeting on March 25 and stems from a consent agreement negotiated with the agency’s Office of Enforcement Counsel following an investigation into BetMGM’s account monitoring and identity verification practices.],
-  [According to regulators, BetMGM’s systems were not strong enough to stop users from opening and operating multiple accounts using stolen or improperly used personal information. Officials pointed to shortcomings in the operator’s Know-Your-Customer (KYC) procedures, which are meant to verify a bettor’s identity before they can place wagers.],
-  [Investigators said four separate fraud rings exploited those weaknesses over periods ranging from 19 to 34 months. Over that time, the groups created hundreds of accounts using other people’s identifying details and funded them with fraudulently obtained payment methods.],
-  [operated for approximately 25 months until January 2024 with 1,567 accounts created using personal identifying information of other individuals and \$229,580 of combined wagering;],
-  [operated for approximately 34 months until November 2024 with 34 accounts created using personal identifying information of other individuals and over \$14,598 of combined wagering;],
-  [operated for approximately 29 months until November 2023 with 119 accounts created using personal identifying information of other individuals and \$895,092 of combined wagering],
-  [operated for approximately 19 months until December 2023 with 304 accounts created using personal identifying information of other individuals and \$867,910 of combined wagering],
-  [Regulators said the scale and duration of the activity showed that BetMGM’s controls were not sufficient to detect or stop the misuse of customer information and payment instruments, both of which are core compliance requirements for licensed online gaming operators in the state.],
-  [Alongside the fine, the board also added 16 individuals to its involuntary exclusion lists, which bar people from gambling at Pennsylvania’s casinos, online platforms, and video gaming terminals located at approved truck stops.],
-  [Four of those cases involved adults who left minors unattended while they gambled. In one incident, a person left an 11-year-old in a vehicle for 52 minutes at Hollywood Casino York. In another case, a 9-year-old was left alone in a parking lot at Rivers Casino Philadelphia for more than an hour.],
-  [With the latest additions, the number of people on Pennsylvania’s exclusion lists has risen to 1,515 , reflecting regulators’ increasing use of the measure as both a consumer-protection tool and a deterrent.],
-  [The action against BetMGM comes amid heightened scrutiny of compliance controls across the U. S. sports betting industry. Regulators in Massachusetts, for example, have recently issued tens of thousands of dollars in combined fines to several sportsbooks for violations related to prohibited betting activity and reporting failures.],
-  [At the same time, MGM Resorts International and BetMGM have continued expanding their responsible gaming initiatives , directing additional funding toward research, education, and player-protection tools. Regulators have repeatedly said those programs are important, but cases like the Pennsylvania fraud investigation show that day-to-day operational controls and technical safeguards remain a central focus of enforcement.],
-  [The Pennsylvania Gaming Control Board is scheduled to hold its next public meeting on April 29 in Harrisburg, where further enforcement actions and regulatory matters are expected to be reviewed.],
-  [Featured image: Cicku, CC BY 4.0 https:\/\/creativecommons.org/licenses/by/4.0 , via Wikimedia Commons],
-  [The post Pennsylvania regulator fines BetMGM over weak fraud detection controls appeared first on ReadWrite .],
-),
-  insert-map: (:),
-  word-count: 598,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-}
-
-{
-  #standard-article(
-  title: [New Jersey lawmakers push to ban fast paced micro betting wagers],
-  author: [Suswati Basu],
-  source-name: [ReadWrite],
-  images: (),
-  paragraphs: (
-  [New Jersey lawmakers are moving to clamp down on a fast paced style of sports gambling that lets people bet on the next moment of a game rather than the final outcome.],
-  [A Senate committee has advanced legislation that would block sportsbooks from offering so-called micro bets, arguing the format raises red flags around addiction and game integrity. The bill , introduced by Sens. Paul Moriarty and Patrick Diegnan, cleared the Senate State Government, Wagering, Tourism, and Historic Preservation Committee and now heads further into the legislative process.],
-  [dir="ltr" lang="en"\>Legislation from Senators Paul Moriarty and Patrick Diegnan prohibiting sports wagering licensees from offering or accepting micro bets was released from the Senate State Government, Wagering, Tourism, and Historic Preservation Committee today. https:\/\/t.co/AUt8GasgQI],
-  [— PatrickDiegnan (\@PatrickDiegnan) March 23, 2026],
-  [Micro betting centers on split-second wagers tied to live action. Instead of betting on who wins, users might guess whether the next pitch will be a strike or whether a football team will run or pass on the next play. The format has grown quickly across betting platforms, fueled by real-time data and in-game streaming.],
-  [Under the proposed law, these types of wagers would be off-limits in New Jersey. The bill defines a micro bet as “any proposition bet which is wagered live, while a sport or athletic event is ongoing, and concerns the outcome of the next play or action occurring in the sport or athletic event.”],
-  [Lawmakers backing the measure say the speed is exactly the problem. With outcomes decided in seconds, bettors often don’t have time to think through decisions, and losses can stack up quickly.],
-  [“Micro betting poses several risks to New Jersey and its residents,” said Senator Moriarty (D-Atlantic/Camden/Gloucester). “For one, micro bets can more easily be rigged than betting on the outcome of an entire game, especially by insiders who may know ahead of time how a micro bet or prop bet could play out, in turn misleading and disenfranchising the average player.],
-  [“They can also be incredibly addictive, as they are made based on short-term outcomes with quick payoffs. This enables bettors to place a higher volume of wagers in a shorter amount of time, leading to a vicious cycle of excessive, impulsive, and financially irresponsible gambling.”],
-  [Supporters point to the broader evolution of sports betting since legalization in 2018, saying newer formats like micro betting are changing how people gamble. Reports have linked the rise of these rapid-fire wagers to increases in problem gambling, including more calls to state helplines .],
-  [Because micro bets reset constantly during a game, lawmakers argue they create a loop that keeps users engaged and spending.],
-  [Senator Diegnan (D-Middlesex) said the constant availability of these bets can draw people into excessive gambling.],
-  [“Betting and gambling are already addictive, but goading players with the possibility of endless opportunities to bet during games makes micro bets significantly more dangerous,” Diegnan said. “Through micro bets, bettors have the opportunity to spend more money and more time on gambling, an incredibly slippery slope that frequently leads to addiction and major financial losses.”],
-  [Beyond addiction concerns, the bill points out integrity risks. Since micro bets hinge on single plays, critics say they could be easier to manipulate than full-game wagers.],
-  [The fast-growing market has also sparked industry tensions. A lawsuit against DraftKings alleges patent infringement tied to micro betting technology.],
-  [If approved, the New Jersey measure would make offering or accepting micro bets a disorderly persons offense, with fines between \$500 and \$1,000 per violation.],
-  [Featured image: Canva],
-  [The post New Jersey lawmakers push to ban fast paced micro betting wagers appeared first on ReadWrite .],
-),
-  insert-map: (:),
-  word-count: 614,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-}
-
-{
-  #standard-article(
-  title: [2026.11: Winners, Losers, and the Unknown],
-  author: [Ben Thompson],
-  source-name: [Stratechery],
-  images: (),
-  paragraphs: (
-  [Welcome back to This Week in Stratechery!],
-  [As a reminder, each week, every Friday, we’re sending out this overview of content in the Stratechery bundle; highlighted links are free for everyone . Additionally, you have complete control over what we send to you. If you don’t want to receive This Week in Stratechery emails (there is no podcast), please uncheck the box in your delivery settings .],
-  [On that note, here were a few of our favorites this week.],
-  [Integration and AI . One of the most important and longest-running questions about AI has been whether or not models would be commodities; Microsoft once bet on their integration with OpenAI, but in recent years has made the best that the infrastructure they can build around models will matter more than models themselves. However, the most recent evidence — particularly Copilot Cowork — is that the companies who are best able to harness (pun intended) model capabilities are the model makers themselves. If none of that makes sense, Andrew and I do a much more extensive deep dive on these different layers of the evolving AI value chain on this week’s episode of Sharp Tech. — Ben Thompson],
-  [The Team Test and a Basketball Disgrace. On Greatest of All Talk, we thought the news of the week would be the return of Jayson Tatum for the Boston Celtics, which provided a delightful excuse to take stock of the Celtics, Wemby’s gravity-defying Spurs, Shai’s Thunder, KD’s Rockets and the NBA’s field of title contenders using Ben’s very scientific Capital-T Team Test for contenders. That was a great episode. Unfortunately, on the follow-up Friday, we had to discuss the crime against basketball decency that took place in Miami Tuesday night. Come for the Team Test joy, then, and stay for Erik Spoelstra outrage (and also check out Ben Golliver’s column about the calamity on his new Substack ). — Andrew Sharp],
-  [The US, China and Iran. The past two weeks in the China policy space have been full of debates over the implications of the war in Iran for China specifically, and the U. S.-China relationship generally. I wrote about all of it on Sharp Text this week , including thoughts on some takes from last year that haven’t aged well, and why, with respect to China, the war in Iran is best understood as the latest in a succession of U. S.-led body blows to Beijing’s global interests. At least over the past 12 months, countering China has been a consideration in almost everything the U. S. has done in the foreign policy space.  — AS],
-  [MacBook Neo, The (Not-So) Thin MacBook, Apple and Memory — The MacBook Neo was built to be cheap; that it is still good is not only a testament to Apple Silicon, but also the fact that the most important software runs in the cloud.],
-  [Copilot Cowork, Anthropic’s Integration, Microsoft’s New Bundle — Microsoft is seeking to commoditize its complements, but Anthropic has a point of integration of their own; it’s good enough that Microsoft is making a new bundle on top of it.],
-  [Oracle Earnings, Oracle’s Cloud Growth, Oracle’s Software Defense — Oracle crushed earnings in a way that not only speaks to the secular AI wave they are riding but also to Oracle’s strong position],
-  [An Interview with Robert Fishman About the Current State of Hollywood — An interview with MoffettNathanson’s Robert Fishman about the current state of Hollywood, including Netflix, Paramount, YouTube, Disney, and Amazon.],
-  [Loud and Clear — The War in Iran is not entirely about China, but it’s definitely about China.],
-  [MacBook Neo Review],
-  [Designing for the Low End],
-  [The Wildly Infectious Banana Plague],
-  [The ‘Raising a Lobster’ Frenzy; Iran and US-China as Trump’s Visit Looms; Two Sessions Takeaways],
-  [Tatum and the Team Test, The Spurs Continue to Defy Young Team Gravity, Russ Takes Aim at Kings Reporters],
-  [Spo and Bam and a Basketball Betrayal, An SGA Early Warning System, Kawhi, Luka and The Other MVP Candidate],
-  [Nerding Out with the Neo, Claude and the Integration Question, The End of Coding Language History],
-  [This week’s Stratechery video is on Anthropic and Alignment .],
-),
-  insert-map: (:),
-  word-count: 743,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-}
-
-{
-  #standard-article(
-  title: [The reason Apple won’t let this developer update their app is insane],
-  author: [Macworld],
-  source-name: [Macworld],
-  images: (),
-  paragraphs: (
-  [id="link\_wrapped\_content"\>],
-  [With the release of macOS Tahoe last September, Apple introduced a major change: It removed Launchpad and replaced it with the Apps app. Many of us mourned the loss (and many of you laughed at us, based on the feedback I got from this article ) and turned to third-party, Launchpad-like solutions to fill the void. However, there’s a sign from Apple that those third-party apps could be at risk, too.],
-  [Developer Michael Tsai recently posted about AppGrid, a Launchpad-like app that many are using in the macOS Tahoe Launchpad void. Unfortunately, AppGrid’s developer, Attila Miklosi, is being blocked from updating the app in the Mac App Store. Miklosi has been told that the reason for this is that the app violates an Apple guideline: AppGrid looks too similar to Launchpad.],
-  [Yes, AppGrid looks similar to Launchpad, but that’s the point since LaunchPad doesn’t exist anymore. With this ruling, Apple is essentially saying that the guidelines even apply when Apple deprecates a feature or an app, which is unfair. There’s an argument to be made about Apple protecting its intellectual property, but if it’s for an item that will likely never return, why bother?],
-  [Miklosi has been told that updates will be allowed once AppGrid has been redesigned to not look like Launchpad. “Thousands have paid for it already, and they paid exactly for it being as similar to Launchpad as possible, so I decided not to go down that route,” he told Tsai.],
-  [To make the matter even more confounding, AppGrid is still available for purchase on the Mac App Store, but the app is basically defunct. It can’t be updated because Apple won’t allow it. But Apple continues to collect its 30 percent cut every time someone buys it. Miklosi is getting his cut for the app, too, but the app can’t be updated so that people who bought it essentially get unsupported software. In the App Store description, Miklosi promises a new version with “powerful new features, including advanced grid customization, app grouping, renaming, and more” is coming soon, but as long as Apple has its say, that won’t be the case.],
-  [Miklosi has given up on trying to resolve the App Store issue and is focusing on the version of AppGrid that can be downloaded directly through his site . Apple probably won’t do anything to stop that, but who knows? Maybe Launchpad is coming back in macOS 27.],
-  [If you’re interested in giving AppGrid a try, don’t get the Mac App Store version; visit Appgridmac.com and get it there. It’s actually cheaper, in fact: Unlocking AppGrid’s full feature set costs \$25 with support for five Macs compared to \$30 in the App Store. If you bought AppGrid in the Mac App Store, Miklosi has a way y ou can transfer your Pro license to the direct download version –you don’t have to pay again, and you’ll get app updates. Miklosi plans to remove AppDirect from the Mac App Store once those buyers have migrated to the direct download version.],
-),
-  insert-map: (:),
-  word-count: 533,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-}
-
-{
-  #standard-article(
-  title: [Boyd Gaming opens Cadence Crossing Casino in fast-growing Henderson],
-  author: [Paul McNally],
-  source-name: [ReadWrite],
-  images: (),
-  paragraphs: (
-  [Boyd Gaming has opened Cadence Crossing Casino in Henderson, adding a new neighborhood gaming option in one of the Las Vegas Valley’s fastest-growing residential corridors. The opening comes just about one year after the company broke ground on the casino .],
-  [The property, located next to the master-planned Cadence community, began welcoming guests this week and represents the company’s latest push to deepen its footprint in the local Southern Nevada market.],
-  [At roughly 10,000 square feet, Cadence Crossing is designed with local customers in mind rather than tourists. The casino floor is anchored by more than 450 slot machines and video poker terminals, along with electronic table games arranged across an open layout that keeps sightlines clear from the entrance to the back of the room.],
-  [We are excited to introduce Cadence Crossing Casino, our newest entertainment experience for southern Nevada locals,” said Steve Schutte, Boyd Gaming’s executive vice president of operations. “Cadence Crossing is a modern and stylish gaming entertainment experience worthy of the Cadence community.”],
-  [A 22-seat circular bar sits at the center of the floor, serving as a social hub where guests can watch the action from every angle while ordering from a menu of signature cocktails. Just beyond it, a quieter lounge area with softer lighting and more relaxed seating offers a break from the noise of the machines.],
-  [Boyd has leaned heavily on food and entertainment to position the property as more than a place to gamble. The casino’s main restaurant, Tin Lizard Bar & Grill, features a gastropub-style menu, craft beer, and wall-to-wall sports screens. The venue is also scheduled to host live music from Thursday through Sunday, with local performers rotating through the lineup.],
-  [For guests who want a quick meal without leaving the gaming floor, a nearby fast-casual option offers grab-and-go options, in another nod to the convenience-focused design aimed at neighborhood customers.],
-  [The opening comes as Boyd continues to reshape its national portfolio while doubling down on markets where it already has a strong customer base. The company recently agreed to sell its Sam’s Town Shreveport property in Louisiana to Bally’s, a move executives described as part of a broader effort to streamline operations and focus on core regions.],
-  [That strategy is especially visible in southern Nevada, where rapid population growth in communities such as Cadence has created demand for smaller, locally oriented gaming venues rather than large Strip-style resorts. This local-first strategy also takes into account a significant decrease in room visits.],
-  [dir="ltr" lang="en"\>Boyd Gaming 2024 to 20025 year-over-year revenue changes:],
-  [Gaming: 2.1% increase
-Food & Beverage: 2.2% increase
-Room: (6.5)% decline \$BYD officials said they were seeing significant room visit declines in not just their Nevada segments but also other regional properties],
-  [— Ryan Butler (\@ButlerBets) February 5, 2026],
-  [Cadence Crossing reflects that approach. By pairing a compact gaming floor with dining, live music, and a layout designed for convenience, Boyd is betting that proximity and familiarity, rather than spectacle, will keep local customers coming back and strengthen its position in the competitive Las Vegas-area market.],
-  [Featured image: Coolcaesar at en.wikipedia, CC BY-SA 3.0 https:\/\/creativecommons.org/licenses/by-sa/3.0 , via Wikimedia Commons],
-  [The post Boyd Gaming opens Cadence Crossing Casino in fast-growing Henderson appeared first on ReadWrite .],
-),
-  insert-map: (:),
-  word-count: 557,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-}
-
-{
-  #standard-article(
-  title: [A case study of complex table design],
-  author: [James Long (jlongster)],
-  source-name: [James Long (jlongster)],
-  images: (),
-  paragraphs: (
-  [id="p5"\>I just released a new version of Actual and a big change is a rewrite of the budget table. It might not look like much, but it pays down a lot of technical debt and is a big improvement in many ways. The previous design resulted in a poor user experience despite good intentions. This is a look at how I approach product design and all the considerations you need to think about.],
-  [id="p6"\>First, the before (left) and after (right):],
-  [id="p7"\>
- left={ }
- right={ }
-/\>],
-  [id="p8"\>On the surface, it's a very subtle change. The headers are now attached to the table and the summary section at the top is separated into its own space. There's another subtle change — can you guess what it is?],
-  [id="p9"\>It might be hard to see in the small screenshots, the default font has changed to Inter from the default system font like San Francisco on Mac. San Francisco is a great font, but it's only available on Macs and it not as readable for data. Inter is a beautiful font made for readability — even when your using the fixed-width feature setting for stuff like transaction amounts.],
-  [id="p10"\>Here's a closeup of the difference. Before with San Francisco (top) and after with Inter (bottom):],
-  [id="p11"\>],
-  [id="p12"\>They look remarkably similar, but a few small differences make a big impact. The font is slightly taller which helps with readabilty, and the characters aren't quite a squished together. Look at the 1,000.00 amount: with San Francisco (left) the zeros almost bleed together while Inter (right) provides just enough spacing to make them clear.],
-  [id="p13"\>There is one major difference in the new design: animations. In the old design, the month was treated as one whole column including the summary and budget values for the month. This was driven home with an animation that slid the entire month column when moving across months:],
-  [id="p14"\>],
-  [id="p15"\>The purpose was to give visual feedback. Without it, it's hard to tell that months actually moved, especially if most of the numbers are the same. It gets worse when you are viewing multiple months at once, a feature that's great for getting a glance at a longer time period at once. Here's an example of multiple months:],
-  [id="p16"\>],
-  [id="p17"\>The animation is smooth in reality (the video is low-quality). Compare this to no animation:],
-  [id="p18"\>],
-  [id="p19"\>When the budget values haven't changed, the only thing changing is the month name at the top. I didn't want the feedback to be dependant on having enough different data. However, there's no arguing that the second video is superior for a few reasons:],
-  [id="li2"\>],
-  [id="p1"\>It's faster. The user can see new data immediately without waiting for the animation to finish.],
-  [id="li4"\>],
-  [id="p3"\>The user can compare data easier. They can keep their eye on the "balance" value for a category while navigating across months and easily see it change. With the animation, it's hard to keep track of the values since they move around.],
-  [id="p20"\>I didn't want to completely give up the visual feedback though. The new design is a compromise that is a much better balance between usability and user experience:],
-  [id="p21"\>],
-  [id="p22"\>Now the budget table stays fixed while the summary sections animate. This makes it a much more lightweight interaction and feels a lot nicer. A huge benefit is that the implementation is far simpler as well. The previous animation wreaked havoc on the DOM structure. Let me explain.],
-  [id="p23"\>The problem is the table needs to be scrollable as well. When the user has lots of categories, they need to scroll up and down. So the table can be moved both horizontally and vertically:],
-  [id="p24"\>],
-  [id="p25"\>We want to use native scrolling, of course, which means we have to put the whole budget table in it's own vertically scrollable container. There's no way around that. In order to slide the months around horizontally, we render the summary views outside of the scrollable area, and inside it each month is rendered as a column. The entire animation looks like this. The purple area is the scrollable container that content is rendered inside of:],
-  [id="p26"\>],
-  [id="p27"\>I was really proud of getting this to work. I still am! The problem is this is a terrible way to renders rows of data. Normally you expect a row of data to be inside a single container which makes a lot of stuff easy. Originally I thought it was worth the sacrifice for a better user experience, but turns out it's not even a great user experience.],
-  [id="p28"\>Why is it a terrible way to render rows? Take a closer look at the structure of the DOM we're focused to use. Each column renders a list of data inside of it:],
-  [id="p29"\>],
-  [id="p30"\>Since a row is composed of multiple disconnected elements, it's impossible to do simple things like a background color on hover. Only each piece of the row will get the hover state. Suddenly .row:hover { background-color: \#f0f0f0 } becomes an extraordinary feat of tracking hover state in React and constantly rerendering.],
-  [id="p31"\>Even worse, it thrashes rendering whenever anything changes. When rendering lists of data, normally you can memoize each row and bail on rendering if nothing changes, only causing one row to rerender if something like a category name changes. You can apply the same technique to the above layout, but it needs to do it for every column (in the above example there are 3 columns so there are 3 times as many memoization checks).],
-  [id="p32"\>Since the budget table is static in the new design, each row is rendered how you would expect: each row is inside a div . Animating the summaries is easy because there are no scrolling requirements. Take a look again at the new design:],
-  [id="p33"\>],
-  [id="p34"\>I spent too much damn time working on the old design that isn't even good user experience that I really wish I had taken a step back sooner. At least I have something to write about.],
-  [id="Better-drag-and-drop"\>Better drag-and-drop],
-  [id="p35"\>Another example of how much simpler the new layout makes everything is drag-and-drop. You can drag categories in the sidebar to reorder them. Previously, it was impossible to render anything across the entire budget table since you're only dragging inside of the sidebar. Here's what it looked like before:],
-  [id="p36"\>],
-  [id="p37"\>Note how the budget table grays out when you start dragging. That was the only thing I could think of since I can't actually move anything outside the sidebar around. There's also weird behavior when expanding a group: the table doesn't expand with it.],
-  [id="p38"\>Here's the new implementation. While it doesn't beautifully slide content around, it's much more crisp and clear. The blue line renders across the entire budget table, expanding and collapsing groups works with all the data as well, and it's just better:],
-  [id="p39"\>],
-  [id="Other-improvements"\>Other improvements],
-  [id="p40"\>This work led to a couple other small improvements. You can now collapse the summary view if you want more space for the categories. Combined with the multiple month view, you can really get a nice condensed view of your budget:],
-  [id="p41"\>],
-  [id="p42"\>Because the new layout is so much more performant, the maximum number of months viewed at once has been bumped up to 6 from 4. Just look at this beautiful monster:],
-  [id="p43"\>],
-  [id="p44"\>Ignore the inconsistent widths of the row borders, I had to zoom out to fit all of this which causes a few glitches.],
-  [id="p45"\>This release includes a lot of other changes like the ability to attach notes to categories and months. Check out the release notes , and you can always try a demo of the app .],
-),
-  insert-map: (:),
-  word-count: 1265,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-}
-
-#article-row((
-  [
-    standard-article(
-  title: [This platform helps you pick stocks—and it’s now on sale],
-  author: [Macworld],
-  source-name: [Macworld],
-  images: (),
-  paragraphs: (
-  [id="link\_wrapped\_content"\>],
-  [TL;DR: Get lifetime access to Sterling Stock Picker for just \$55.19 (reg. \$486) with code SAVE20 and simplify investing.],
-  [Getting into the stock market can feel like walking into a room where everyone is already playing a game you don’t know the rules to. Charts, earnings reports, market trends—it’s a lot. Sterling Stock Picker can help , and it’s available for just \$55.19 (regularly \$486) through April 12.],
-  [This platform is designed to make investing feel a whole lot less intimidating. Sterling Stock Picker uses AI-driven insights to surface opportunities that actually align with your goals and risk tolerance.],
-  [One standout feature is Finley, a built-in AI financial coach . You can ask questions, analyze your portfolio, and get real-time guidance without needing a finance degree (or a friend who kind of knows stocks). It also includes a done-for-you portfolio builder that helps you create a diversified setup based on your preferences.],
-  [Whether you’re just dipping your toe into investing or looking to sharpen your strategy, this tool keeps things simple, structured, and actually usable.],
-  [Get a lifetime of Sterling Stock Picker access for just \$55.19 (regularly \$486) through April 12 with code SAVE20.],
-  [Sterling Stock Picker: Lifetime Subscription See Deal],
-  [Want to see more deals? Visit the shop and use code MARCH15 to save an extra 15% sitewide through March 29. Exclusions apply.],
-  [StackSocial prices subject to change.],
-),
-  insert-map: (:),
-  word-count: 236,
+  word-count: 415,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -413,410 +817,12 @@ Room: (6.5)% decline \$BYD officials said they were seeing significant room visi
   ],
   [
     standard-article(
-  title: [Relive the original Mac Pro through the pages of Macworld],
-  author: [Macworld],
-  source-name: [Macworld],
-  images: (),
-  paragraphs: (
-  [id="link\_wrapped\_content"\>],
-  [Apple officially discontinued the Mac Pro on Thursday. While most of us couldn’t afford Apple’s most powerful Mac, it was an example of how much power a Macintosh could wield. But Apple, always looking forward, thinks its time has come and gone.],
-  [The Mac Pro was first introduced in 2006, and while Macworld had a web presence back then, the focus at the time was on the print magazine version. As a way to remember the Mac Pro, below are scans of the first Mac Pro articles that Macworld published.],
-  [This first article is a Mac Pro FAQ. The actual Mac Pro announcement occurred several days before the magazine was set to go to press and be distributed. Because of this discrepancy in scheduling (the magazine would hit the newsstand long after the Mac Pro news hit the wire), the magazine answered reader questions about the Mac Pro, which appeared on the cover of the October 2006 issue.],
-  [Macworld followed up with a full review of the Mac Pro by then editorial director Jason Snell. It got four mice (Macworld ratings used to be mice instead of the current stars). Snell wrote, “The 3GHz Mac Pro is the fastest Mac we’ve tested—however, since the 3GHz processors cost an additional \$800 and provide a proportionately slight speed increase, they’re a good bargain for only voraciously speed-hungry pros.” (This issue was also the only time Johnny Depp was on a Macworld cover.)],
-),
-  insert-map: (:),
-  word-count: 278,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-  ],
-), ruled-indices: (1,))
-
-#article-row((
-  [
-    standard-article(
-  title: [Is It Time For Open Source to Start Charging For Access?],
-  author: [EditorDavid],
-  source-name: [Slashdot],
-  images: (),
-  paragraphs: (
-  ["It's time to charge for access," argues a new opinion piece at The Register. Begging billion-dollar companies to fund open source projects just isn't enough, writes long-time tech reporter Steven J. Vaughan-Nichols:],
-  [Screw fair. Screw asking for dimes. You can't live off one-off charity donations... Depending on what people put in a tip jar is no way to fund anything of value... [A]ccording to a 2024 Tidelift maintainer report, 60 percent of open source maintainers are unpaid, and 60 percent have quit or considered quitting, largely due to burnout and lack of compensation. Oh, and of those getting paid, only 26 percent earn more than \$1,000 a year for their work. They'd be better paid asking "Would you like fries with that?" at your local McDonald's...],
-  [Some organizations do support maintainers, for example, there's HeroDevs and its \$20 million Open Source Sustainability Fund. Its mission is to pay maintainers of critical, often end-of-life open source components so they can keep shipping patches without burning out. Sentry's Open Source Pledge/Fund has given hundreds of thousands of dollars per year directly to maintainers of the packages Sentry depends on. Sentry is one of the few vendors that systematically maps its dependency tree and then actually cuts checks to the people maintaining that stack, as opposed to just talking about "giving back."],
-  [Sentry is on to something. We have the Linux Foundation to manage commercial open source projects, the Apache Foundation to oversee its various open source programs, the Open Source Initiative (OSI) to coordinate open source licenses, and many more for various specific projects. It's time we had an organization with the mission of ensuring that the top programmers and maintainers of valuable open source projects get a cut of the tech billionaire pie.],
-  [We must realign how businesses work with open source so that payment is no longer an optional charitable gift but a cost of doing business. To do that, we need an organization to create a viable, supportable path from big business to individual programmer. It's time for someone to step up and make this happen. Businesses, open source software, and maintainers will all be better off for it.],
-  [One possible future... Bruce Perens wrote the original Open Source definition in 1997, and now proposes a not-for-profit corporation developing "the Post Open Collection" of software, distributing its licensing fees to developers while providing services like user support, documentation, hardware-based authentication for developers, and even help with government compliance and lobbying.],
-  [Read more of this story at Slashdot.],
-),
-  insert-map: (:),
-  word-count: 419,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-  ],
-  [
-    standard-article(
-  title: [This Friendly Robot Just Installed 100 MW of Solar Power],
-  author: [EditorDavid],
-  source-name: [Slashdot],
-  images: (),
-  paragraphs: (
-  [Utility-scale solar construction... by robots! It's "one of the largest real-world demonstrations," notes Electrek, with 100 MW of capacity installed by the "Maximo" robots from AES, one of the world's top power companies.],
-  [Maximo uses AI "to automate the heavy lifting of solar panels and accelerate solar installation," according to their web page, which shows a video of Maximo at work installing a vast field of solar panels in Kern County, California. With assistance from Nvidia, the Maximo team could "develop, test and refine robotic capabilities through physics-based simulation and AI driven modeling before deploying updates in the field,"
-reports Electrek, and they're aiming for a full GW of solar generating capacity:],
-  [After completing the first half of the Bellefield complex last summer, Maximo engineers went into a higher gear, with the latest version 3.0 robots consistently surpassing an installation rate of one module per minute, with construction crews installing as many as 24 solar panel modules per hour, per person. If that sounds fast, that's because it is. At full tilt, the latest Maximo robot-equipped crews have nearly doubled the output of traditional installation methods at similar solar locations throughout Southern California.],
-  ["Reaching 100 MW is an important milestone for Maximo and for the role robotics can play in solar construction," explains Chris Shelton, president of Maximo. "It demonstrates that field robotics can move beyond experimentation and deliver consistent results at utility scale. As solar deployment continues to accelerate globally, technologies that improve installation speed, quality and reliability will become increasingly important...."],
-  [Like just about every other business that demands a high degree of physical labor, the construction industry is facing huge labor shortages, making machines like Maximo that provide real efficiency gains welcome additions to the job site.],
-  ["The combination of AI, vision, robotics and simulation driven engineering reduced development and validation timelines," the Maximo team said in a statement, "and increased confidence in field performance as the robotic fleet scaled."],
-  [Read more of this story at Slashdot.],
-),
-  insert-map: (:),
-  word-count: 331,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-  ],
-), ruled-indices: (1,))
-
-{
-  #section-label([Analysis])
-  #standard-article(
-  title: [Maryland lawmakers advance gambling bills targeting sweepstakes and college prop bets],
-  author: [Suswati Basu],
-  source-name: [ReadWrite],
-  images: (),
-  paragraphs: (
-  [Maryland lawmakers are pushing forward a trio of gambling bills aimed at tightening rules and going after illegal operators. House Bill 518 passed the House without opposition on March 18 and is now under review in the Senate Budget and Taxation Committee, along with two related proposals focused on unregulated online markets and sweepstakes-style gaming.],
-  [Regulators have already shown they are willing to act, ordering two casinos to immediately halt certain activities over compliance issues, signaling a tougher stance across the state.],
-  [HB 518 focuses on curbing problem gambling and placing new limits on certain wagers. It directs the State Lottery and Gaming Control Commission to take a more hands-on role, stating that “the Commission shall adopt regulations that are intended to reduce or mitigate the effects of problem gambling.”],
-  [The rules must include “a voluntary exclusion list of individuals with gambling problems who have requested to be excluded,” along with “a simple mechanism” for people to sign up for a set period. In most cases, the state would also share contact information with the Maryland Center for Excellence on Problem Gambling so individuals can receive “information about free and confidential responsible gambling assistance,” unless they opt out.],
-  [The bill also raises the minimum age for fantasy sports. It specifies that “an individual under the age of 21 years may not participate in a fantasy competition,” and bars operators from offering those contests to anyone under that age.],
-  [College prop bets are another target. The legislation states that “a sports wagering licensee may not offer or accept a wager on a player–specific proposition bet on a participant in a collegiate sports or athletic event,” and bettors themselves are also prohibited from placing those wagers.],
-  [Additional requirements include stronger identity verification, clearer responsible gambling messaging—including “IF YOU OR SOMEONE YOU KNOW HAS A GAMBLING PROBLEM AND WANTS HELP, CALL 1–800–GAMBLER”—and tools that allow users to set limits on deposits and activity.],
-  [The other two bills focus on enforcement. House Bill 1226 , known as the Maryland Illegal Online Gambling Enforcement Act, goes after offshore and sweepstakes-style platforms. It defines “sweepstakes games” as products that “utilize a dual–currency system of payment” and mimic casino, lottery, or sports betting formats.],
-  [The bill states that “a person may not knowingly: (1) operate, offer, conduct, engage in, or promote illegal online gambling in the State; or (2) knowingly support” those activities. It gives the Attorney General and local prosecutors authority to issue cease-and-desist orders and pursue court action. Violations carry criminal penalties, with the law stating a person “is guilty of a misdemeanor.”],
-  [It also extends to financial and tech intermediaries. Under the proposal, “a financial transaction provider may not knowingly accept or process any financial transaction” connected to illegal gambling, and platform providers face similar limits.],
-  [House Bill 295 takes a different angle, focusing on licensed operators. It says that “a person may not operate, conduct, or promote an interactive game in the State,” while requiring companies to disclose ties to entities involved in illegal activity. Regulators would have the power to deny or revoke licenses, and violations again mean a person “is guilty of a misdemeanor.”],
-  [dir="ltr" lang="en"\>"I haven't seen it before in gaming in a criminal context like this" – Rob Ruben from \@DuaneMorrisLLP tells \@RWW \#Maryland bill targets global web hosts over online gambling, but legal experts warn enforcement could be problematic \#sweepstakes https:\/\/t.co/NldPSDNQ94],
-  [— Suswati Basu (\@suswatibasu) February 19, 2026],
-  [Legal analysts have noted that while enforcement powers are expanding, practical challenges remain in policing offshore platforms . Last month, Robert L. Ruben, a partner at Duane Morris LLP and a gaming law expert, told us: “It’s not completely unprecedented that a regulator would claim jurisdiction over an entity that’s unaware that its products are being offered in a particular state. But again, I haven’t seen it before in gaming in a criminal context like this.”],
-  [All three bills are now before the Senate, where lawmakers are considering a combined approach.],
-  [Featured image: Canva],
-  [The post Maryland lawmakers advance gambling bills targeting sweepstakes and college prop bets appeared first on ReadWrite .],
-),
-  insert-map: (:),
-  word-count: 695,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-}
-
-{
-  #standard-article(
-  title: [Slay The Spire 2 review: The best deck-builder just got better],
-  author: [Macworld],
-  source-name: [Macworld],
-  images: (),
-  paragraphs: (
-  [id="link\_wrapped\_content"\>],
-  [New co-op mode],
-  [Runs on Intel and Apple Silicon Macs],
-  [Easy to play, but hard to master],
-  [More variety than the first game],
-  [Simplistic 2D graphics and animations],
-  [Rogue-like mechanics can be frustrating],
-  [Few major new features],
-  [Slay The Spire 2 doesn’t attempt to re-invent the wheel. It sticks closely to the format of the original game, but does provide lots of small changes and additions that help to keep it fresh. And people who want to play with their friends will welcome the new co-op mode too.],
-  [This value will show the geolocated pricing text for product undefined],
-  [\$24.99],
-  [Who it’s for: Fans of the original.],
-  [Wait if: You haven’t played STS1 yet.],
-  [There are more than 2000 deck-building games listed on Steam, but only a tiny fraction of those run on Macs. Fortunately, Slay The Spire, which has been the king of the deck-builders in recent years, was available on the Mac right from its launch back in 2019 (and still runs on Apple Silicon Macs as well).],
-  [The sequel has just gone on sale on Steam for \$24.99/£19.99, and is already soaring up the sales charts, despite the fact that it’s actually still in ‘Early Access’, which means that it’s essentially a beta version of the game that is still being tested.],
-  [Love Mac gaming? Check out the best Mac Games we’ve played.],
-  [Slay The Spire 2 doesn’t make any major changes to the format of the original game. The central task of the game is to fight your way through a series of rooms in order to reach the top of a mysterious spire, using a deck of cards that provide your character with different skills and abilities. It’s also a ‘rogue-like’ game, which means that dying sends you right back down to the bottom of the spire so that you have to start all over again, rather than just saving your progress as you complete each room.],
-  [The Necrobinder is a new character who wields the power of the undead.],
-  [A popular feature in the first game was the ability to play as any of three different characters – the sword-slinging Ironclad, a nimble assassin called Silent, and a fan-favourite robot called The Defect. Those characters are still included in the sequel, but you also get two new characters called the Necrobinder and the Regent.],
-  [There was a fourth character called The Watcher who was added to the first game in 2020, but there’s no sign of the Watcher in the current Early Access version of Slay The Spire 2.],
-  [The secret of the game’s popularity was that – like many great games – it’s easy to understand the basics so that you can dive straight in and get started, but it takes longer to master the complexities of the game and understand the ways that all the different cards, skills and abilities can work together to make you more powerful.],
-  [Slay The Spire 2 sticks with that approach, but it adds more of everything – more characters to play with, a wider range of skills and abilities, as well as magical relics and rare cards that provide special powers.],
-  [As well as the main single-player game, this sequel includes a new co-op mode for up to four players.],
-  [At the start of each game, you are shown a map of the spire, with a number of different paths that you can choose as you climb to the top. Each path takes you through a different series of rooms, with most rooms containing monsters that you have to defeat. However, there are also rest rooms where you can sleep and recover some of your health after a challenging fight, or spend the time upgrading your cards instead.],
-  [To add variety, there are also rooms that contain merchants who can sell you new cards or weapons, and even special quests for you to compete. I found a magic egg in one room, which could give me a powerful new card, but only if I first found a rest room where the egg could be hatched. This forced me to alter my path through the spire – as I was initially heading towards a merchant to top up on potions – but the detour was worth it as the new card gave my armour a big boost.],
-  [Like its predecessor, Slay The Spire 2 also includes a daily challenge and a custom mode that allows you to modify the game settings for each run. However, it also includes one entirely new feature, introducing a multiplayer co-op mode that allows up to four people to play together as a team – although there’s no pvp mode that will allow you to compete directly against other people.],
-  [You can buy new cards, as well as potions and magical trinkets to boost your powers.],
-  [My only real disappointment is that the game’s graphics aren’t terribly exciting. The 2D graphics are a bit more detailed this time around, but your character and the various monsters mostly just glare at each other across the screen, with simple effects used to indicate attacks and injuries each time you play a card.],
-  [Games such as the Darkest Dungeon series have similar 2D graphics, but have a more distinctive gothic artwork style that really adds atmosphere and a sense of menace to the game.],
-  [The relatively simple graphics do mean that the game will run well even on older Macs with Intel processors, as long as you’re running macOS Big Sur (11.0) or later.],
-  [If it ain’t broke, don’t fix it. If you’re a fan of deck-builder games then Slay The Spire 2 is a must-have addition to your library. Some people have argued that it’s a fairly unambitious sequel that doesn’t make many changes from the original game. Even so, there are still enough refinements and small additions to make it a very enjoyable update for anyone that has already played the first game. And, if you’re new to the genre, the original Slay The Spire is currently on sale, making it a great place to start before moving on to the sequel.],
-),
-  insert-map: (:),
-  inline-pq: pull-quote([Those characters are still included in the sequel, but you also get two new characters called the Necrobinder and the Regent.], [Macworld]),
-  inline-pq-idx: 12,
-  word-count: 1182,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-}
-
-{
-  #standard-article(
-  title: [Here are the iOS 26.4 features to try after installing the new iPhone update],
-  author: [Macworld],
-  source-name: [Macworld],
-  images: (),
-  paragraphs: (
-  [id="link\_wrapped\_content"\>],
-  [Apple has officially released iOS 26.4 to the public, and unlike the previous update, this one brings a more noticeable set of new features.],
-  [While the long-awaited AI-powered Siri is still nowhere to be seen, iOS 26.4 brings several new features and improvements to Apple Music, Podcasts, and Reminders, as well as overall system enhancements and new emoji.],
-  [Read on as we break down all the major new features and changes coming with iOS 26.4 .],
-  [With iOS 26.4, Apple Music subscribers are getting an important new feature called Playlist Playground . Essentially, it lets users quickly create playlists using AI.],
-  [Users can simply describe what they want to listen to, whether it’s specific songs, artists, or genres, and Apple’s AI will create a playlist based on that prompt. The feature can also edit existing playlists. It’s worth noting that this feature is available only in the U. S. and works on any iOS 26.4 iPhone, even ones that don’t support Apple Intelligence.],
-  [Apple Music has new full-screen artwork in iOS 26.4.],
-  [Apple Music is also getting a new Concerts feature, which helps users discover nearby shows from artists in their library, while also recommending live shows from new artists based on listening habits.],
-  [Another notable addition is Offline Music Recognition, now available through Control Center. This lets users identify songs with Shazam even without an internet connection. The result shows up as soon as the device is back online.],
-  [Rounding out the Apple Music changes, iOS 26.4 introduces an Ambient Music widget for quick access to curated playlists focused on Sleep, Chill, Productivity, and Wellbeing, as well as full-screen backgrounds for album and playlist pages, making the interface more immersive.],
-  [In addition to Apple Music, Apple Podcasts is also getting some improvements with iOS 26.4. More specifically, Apple has revamped the experience for video podcasts.],
-  [The update introduces support for Apple’s HTTP Live Streaming (HLS) technology, which automatically adjusts the video bitrate during playback. This means the app will always choose the best quality based on your internet connection without you having to change any settings. Thanks to this technology, users can also seamlessly switch between audio and video while playing a podcast.],
-  [iOS 26.4 includes several new Accessiblity settings.],
-  [Updating to iOS 26.4 also brings some welcome accessibility improvements. For instance, the system now includes a new “Reduce Bright Effects” toggle that minimizes intense flashes when interacting with certain interface elements. Apple has also made it easier to access and customize subtitles and captions directly from the media player interface.],
-  [Moreover, the “Reduce Motion” setting has been improved to more consistently limit animations across the system, particularly with the Liquid Glass interface.],
-  [For emoji fans, iOS 26.4 adds eight new characters to the keyboard. As previously announced , they include an orca, a trombone, a landslide, a ballet dancer, and a distorted face emoji.],
-  [Keep in mind that only people who have also updated their devices will see the new emojis in conversations or social media posts.],
-  [You can use several new emojis once you update to iOS 26.4.],
-  [When Apple announced the Creator Studio subscription, the company revealed that the Freeform app would also gain certain features exclusive to subscribers. These features are now available with iOS 26.4.],
-  [Creator Studio subscribers can now access the Content Hub right from Freeform, which offers a wide variety of photos, illustrations, and graphics that can be used royalty-free.],
-  [Users will also notice a new icon for the Freeform app that matches the style of other Creator Studio apps.],
-  [Urgent reminders are getting an upgrade in iOS 26.4.],
-  [With iOS 26.2, Apple introduced a new option for creating urgent reminders, which show up as full-screen alerts at the scheduled date and time. Now, iOS 26.4 makes it easier to mark a reminder as urgent.],
-  [Users can mark tasks as urgent in the Reminders app right from the Quick Toolbar or with a long press. Urgent reminders can also be filtered using Smart Lists.],
-  [Apple is also making a major change for users who rely on Family Sharing. While the entire family currently relies on a single payment method, iOS 26.4 will allow each family member to pay for their own online purchases.],
-  [“Purchase Sharing lets adult members in Family Sharing groups use their own payment method when making purchases, without relying on the family organizer,” Apple explained in the release notes.],
-  [This is certainly great news for those who use Family Sharing to share their iCloud and App Store purchases.],
-  [The Freeform app got its Creator Studio update in iOS 26.4.],
-  [As we reported last year, many iPhone users had been complaining that iOS 26 had reduced the accuracy of the on-screen keyboard, resulting in more typos. Although Apple never acknowledged the issue at the time, it has made changes to the iOS 26.4 keyboard that essentially admit there was a problem.],
-  [The iOS 26.4 release notes mention “improved keyboard accuracy when typing quickly” as part of the changes included in the update. It’s unclear exactly what Apple changed to improve the virtual keyboard, but users will certainly be pleased that Apple is working on the issue.],
-  [One of the most notable changes in iOS 26.4 is related to compliance with local laws.],
-  [The update introduces age verification requirements in multiple regions, including Australia, Brazil, Singapore, and specific U. S. states such as Utah and Louisiana. These measures are tied to regional legislation and are designed to ensure that users meet minimum age requirements for certain features and services.],
-  [In these locations, Apple may require additional information about the user to verify their age. This includes details such as how long the Apple Account has been active or credit card information.],
-  [The company has also created a new API that will anonymously inform apps whether a user meets the minimum age requirements without sharing their age, date of birth, or any other personal information.],
-  [In addition to all these new features, iOS 26.4 also includes bug fixes, performance improvements, and enhanced security. That’s why it’s always important to keep your devices updated with the latest software.],
-  [You can install iOS 26.4 by going to Settings \> General \> Software Update and tapping Update Now . The update is available for the iPhone 11 and later.],
-),
-  insert-map: (:),
-  inline-pq: pull-quote([Keep in mind that only people who have also updated their devices will see the new emojis in conversations or social media posts.], [Macworld]),
-  inline-pq-idx: 14,
-  word-count: 1094,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-}
-
-{
-  #standard-article(
-  title: [Pay As a Local],
-  author: [Gerum Haile],
-  source-name: [Airbnb Engineering],
-  images: (),
-  paragraphs: (
-  [How Airbnb rolled out 20+ locally relevant payment methods worldwide in just 14 months],
-  [By: Gerum Haile , Bo Shi, Yujia Liu , Yanwei Bai , Bo Yuan , Rory MacQueen , Yixia Mao],
-  [Across the more than 220 global markets that Airbnb operates in, cards are the primary way that guests pay for stays, experiences, and services. However, to help make our platform accessible to more people, reduce friction at checkout, and drive more adoption, we introduced trusted, locally preferred payment methods — called local payment methods or LPMs. By offering and supporting these payment methods, Airbnb enables guests everywhere to choose what works best for them.],
-  [In this blog post, we’ll discuss the implementation details behind our Pay as a Local initiative, which allowed us to launch 20+ local payment methods across multiple markets in just over one year.],
-  [LPMs: What they are, why they matter, and our discovery and selection process],
-  [Local payment methods go beyond traditional cards and include:],
-  [Country or region-specific digital wallets (such as M-Pesa or MTN, MoMo)],
-  [Online bank transfers (such as Online Banking Czech, Online Banking Slovakia)],
-  [Real-time or instant bank payments (such as PIX, UPI)],
-  [Local payment schemes (such as EFTPOS, Cartes Bancaires)],
-  [By embracing LPMs, Airbnb helps make travel more inclusive and seamless for people around the world. LPMs help the platform to:],
-  [Boost conversion and bookings by offering guests familiar, trusted payment options.],
-  [Unlock new markets where credit card usage is low or non-existent.],
-  [Build accessibility for guests without credit cards or traditional banking access.],
-  [Through our research on local payment methods (LPMs), we identified over 300 unique payment options worldwide. For the initial phase of the LPM initiative, we used a structured qualification framework to select which local payment methods we would support. We evaluated the top 75 travel markets and selected the top one to two payment methods per market — excluding those without a clear travel use case — and arrived at a shortlist of just over 20 LPMs best suited for integration into our payment platform.],
-  [Background on Airbnb’s payment platform],
-  [Airbnb’s payments platform is designed to decouple payment logic from the core business (i.e., stays, experiences, and services), allowing for greater flexibility and scalability. The platform efficiently coordinates both guest pay-ins and host payouts by working with regulated payment service providers and financial partners.],
-  [Beyond payment processing, the system also supports robust payment trust and compliance functions.],
-  [As part of a multi-year replatforming initiative for our payments architecture called Payments LTA (long-term architecture), we shifted from a monolithic system to a capability-oriented services system structured by domains, using a domain-driven decomposition approach. This modernization approach reduced our time to market, increased reusability and extensibility, and empowered greater team autonomy.],
-  [The core payment domain delivers essential capabilities for pay-in, payout, and payment intermediation. It consists of multiple subdomains, including Pay-in, Payout, Transaction Fulfillment, Processing, Wallet & instruments, Ledger, Incentives & Stored Value, Issuing, and Settlement & Reconciliation.],
-  [Replatforming as an enabler for local payment method expansion],
-  [The processing subdomain enables integration with third-party payment service providers (PSPs) and supports API and file-based vendor integration, as well as switching and routing capabilities. As part of our replatforming initiative, we adopted a connector and plugin-based architecture for onboarding new third-party payment service providers. This strategy has significantly reduced the time required to integrate new PSPs in different markets.],
-  [During this replatforming effort, we also introduced Multi-Step Transactions (MST) : a processor-agnostic framework that supports payment flows completed across multiple stages. MST defines a PSP-agnostic transaction language to describe the intermediate steps required in a payment, such as submitting supplemental data or handling dynamic interactions. These steps, called Actions , can include:],
-  [Strong customer authentication (SCA) frictions (challenges, fingerprinting)],
-  [Payment method — specific flows],
-  [When a PSP indicates that an additional user action is required, its vendor plugin normalizes the request into an ActionPayload and returns it with a transaction intent status of ACTION\_REQUIRED. This architecture ensures consistent handling of complex, multi-step payment experiences across diverse PSPs and markets.],
-  [LPM integration architecture],
-  [While our modernized payment platform laid the foundation for enabling LPMs, these payment methods come with a unique set of challenges. Many local methods require users to complete transactions in third-party wallet apps. This introduces complexity in app switching, session hand-off, and synchronization between Airbnb and external digital wallets.],
-  [Each local payment vendor also exposes different APIs and behaviors across charge, refund, and settlement flows, making integration and standardization difficult.],
-  [Technical approach],
-  [We analyzed the end-to-end behavior of our 20+ LPMs, and identified three foundational payment flows that capture the full spectrum of user and system interactions. By distilling LPM behaviors into these standardized payment flow archetypes, we established a unified framework for integration:],
-  [Redirect flow: Guests are redirected to a third-party site or app to complete the payment, then return to Airbnb to finalize their booking (e.g., Naver Pay, GoPay, FPX).],
-  [Async flow: Guests complete payment externally after receiving a prompt (such as a QR code or push notification), and Airbnb receives payment confirmation asynchronously via webhooks (e.g., Pix, MB Way, Blik).],
-  [Direct flow: Guests enter their payment credentials directly within Airbnb’s interface, allowing real-time processing similar to traditional card payments (e.g., Carte Bancaires, Apple Pay).],
-  [This standardized approach has enabled significant reusability across integrations and substantially reduced the engineering effort required to support new payment methods.],
-  [Asynchronous payment orchestration],
-  [Since many guests complete payments through external providers, we redesigned our payment orchestration — building on top of MST — to support payment flows that require user actions outside Airbnb (redirect flows and async flows).],
-  [For redirect flows, where guests complete the payment on a third-party app or website:],
-  [Airbnb’s payments platform sends a charge request to the local payment vendor, whose response includes a redirectUrl.],
-  [Our platform redirects the user to the external app or website to complete the payment.],
-  [Once the payment is successfully completed, the user is redirected back to Airbnb with a result token. Airbnb’s payments platform then uses this token to securely confirm and finalize the payment with the local processor.],
-  [For async flows (which typically involve scanning a QR code):],
-  [Airbnb’s payments platform sends a charge request to the local payment vendor, whose response includes a qrCodeData.],
-  [The checkout page displays the QR code for the user to scan and complete the payment in their wallet app.],
-  [After the payment succeeds, the vendor sends a webhook notification to Airbnb’s payments platform, which updates the payment status to success and confirms the user’s order.],
-  [Naver Pay: Redirect To Naver Pay Website],
-  [Naver Pay is one of the fastest-growing digital payment methods in South Korea. As of early 2025, it has reached over 30.6 million active users, representing approximately 60% of the South Korean population. Enabling Naver Pay in the South Korean market not only helps deliver a more seamless and familiar payment experience for local guests, but also expands Airbnb’s reach to new users who prefer using Naver Pay as their primary payment method.],
-  [Pix: Scan A QR Code],
-  [Pix is an instant payment system developed by the Central Bank of Brazil, enabling 24/7 real-time money transfers through methods such as QR codes or Pix keys. Its adoption has been extraordinary — by late 2024, more than 76% of Brazil’s population was using Pix, making it the country’s most popular payment method, surpassing cash, credit, and debit cards. In 2024 alone, Pix processed over BRL 26.4 trillion (approximately USD 4.6 trillion) in transaction volume, underscoring its pivotal role in Brazil’s digital payment ecosystem.],
-  [Config-driven payment method integration],
-  [Airbnb embraced a config-driven approach, powered by a central YAML-based Payment Method Config that acts as a single source of truth for flows, eligibility, input fields, refund rules, and more. Instead of scattering payment method logic across the frontend, backend, and various services, we consolidate all relevant details in this config. Both core payment services and frontend experiences dynamically reference this single source of truth, ensuring consistency for eligibility checks, UI rendering, and business rules. This unified approach dramatically reduces duplication, manual updates, and errors across the stack, making integration and maintenance faster and more reliable.],
-  [These configs also drive automated code generation for backend services using code generation tools, producing Java classes, DTOs, enums, schema, and integration scaffolding. As a result, integrating or updating a payment method is largely declarative — just a config change. This streamlines launches from months to weeks and makes ongoing maintenance far simpler.],
-  [Payment widget],
-  [Our payment widget — the payment method UI embedded into the checkout page — includes the list of available payment methods and handles the user’s inputs. Local payment methods often require specialized input forms (such as CPF for Pix) and have unique country/currency eligibility.],
-  [Rather than hardcoding forms and rules into the client, we centralize both form-field specification and eligibility checks in the backend. Servers send configuration payloads to clients defining exactly which fields to collect, which validation rules to apply, and which payment options to render. This empowers the frontend to dynamically adapt UI and validation for each payment method, accelerating launches and keeping user experiences fresh without frequent client releases.],
-  [For example, Pix in Brazil requires the guest’s first name, last name, and CPF (tax ID), which we collect and transmit as required to complete the payment.],
-  [Below is a diagram illustrating how dynamic payment method configurations are delivered from the backend to the frontend, enabling tailored checkout presentations for each payment method.],
-  [Building confidence through better testability],
-  [Testing local payment methods can be difficult, because developers often don’t have access to local wallets. Yet with such a broad range of payment methods and complex flows, comprehensive testing is essential to prevent regressions and ensure seamless functionality.],
-  [To address this, we enhanced Airbnb’s in-house Payment Service Provider (PSP) Emulator , enabling realistic simulation of PSP interactions for both redirect and asynchronous payment methods. The Emulator allows developers to test end-to-end payment scenarios without relying on unstable (or nonexistent) PSP sandboxes. For redirect payments, the Emulator provides a simple UI mirroring PSP acquirer pages, allowing testers to explicitly approve or decline transactions for precise scenario control. For async methods, it returns QR code details and automatically schedules webhook emission tasks upon receiving a /payments request — delivering a complete, reliable testing environment across diverse LPMs.],
-  [Scaling observability for local payment methods],
-  [Maintaining high reliability and availability is critical for Airbnb’s global payment system. As we expand to support many new local payment methods, we face increasing complexity: greater dependencies on external PSPs and wide variations in payment behaviors. For example, a real-time card payment and a redirect flow like Naver Pay follow completely different technical paths. That diversity makes observability difficult — a single “payment success rate” may represent card health well, but say little about an asynchronous LPM. Without proper visibility, regressions can go unnoticed until they affect real users. As dozens of new LPMs go live, observability has become the foundation of reliability.],
-  [To address this, we built a centralized monitoring framework that unifies metrics across all layers, from client to PSP. When launching a new LPM, onboarding now requires a single config change; add the method name, and metrics begin streaming automatically:],
-  [Client metrics — user-level flow health from clients],
-  [Payment backend metrics — API-level metrics for payment flows],
-  [PSP metrics — API-level visibility between Airbnb and the PSP],
-  [Webhook metrics — async completion status for redirect methods or refunds],
-  [We have also standardized the alerting rules across our platform’s Client, Backend, PSP, and Webhook layers using composite alerts and anomaly detection. Each alert follows a consistent pattern (failure count, rate, time window), e.g., “Naver Pay resume failures \> 5 and failure rate \> 20% in 30 minutes.” This design minimizes false positives during low-traffic periods.],
-  [This framework scales effectively, providing end-to-end visibility from user click to PSP confirmation. It enables engineers to trace issues in minutes rather than hours, whether those issues were caused by internal changes or external outages. By turning observability into a shared, automated layer, we were able to strengthen the backbone of payment reliability while accelerating the rollout of new LPMs worldwide.],
-  [The Pay as a Local initiative delivered significant business and technical impact:],
-  [Meaningful booking uplift: We observed meaningful uplift in bookings and new users in markets where we launched local payment methods],
-  [Faster integrations: Reduced integration time significantly through reusable flows and config-driven automation.],
-  [Stronger reliability: Improved observability for early outage detection, standardized testing to prevent regressions, and streamlined vendor escalation and on-call processes for global resilience.],
-  [Supporting local payment methods helps Airbnb to stay competitive and relevant in the global travel industry. These payment options help improve checkout conversion, drive adoption, and unlock new growth opportunities.],
-  [This post outlined how the Airbnb payment platform has evolved to support local payment methods at scale — through asynchronous payment orchestration, config-driven onboarding, centralized observability, and robust testability. Together, these capabilities enable faster integrations, lower maintenance overhead, and offer a more seamless, localized checkout experience for guests worldwide.],
-  [As Airbnb continues to expand globally, our payments platform will keep evolving with the same principles of extensibility, reliability, and scalability, ensuring that guests everywhere can pay confidently, using the methods they know and trust.],
-  [We had many people at Airbnb contributing to this big rearchitecture, but countless thanks to Mini Atwal , Ashish Singla , Musaab At-Taras , Linmin Yang , Yong Rhyu , Yohannes Tsegay , Livar Cunha , Praveena Subrahmanyam , Steve Ickes , Vijaykumar Borkar , Vibhu Ramani, Aashna Jain, Abhishek Ghosh, Abhishek Patel, Adithya Tammavarapu, Akai Hsieh, Akash Budhia, Amar Parkash, Amee Mewada, Ankita Balakrushan Tate, Bharath Kumar Chandramouli, Bo Shi, Bo Yuan. Callum Li. Carlos Townsend Pico, Chanakya Daparthy, Charles Tang, Cibi Pari, Cindy Jaimez, Cindy Shi, Dan Yo, Daniela Nobre, Danielle Zegelstein, David Cordoba, David Drinan, Dawei Wang, Dechuan Xu, Denise Francisco, Denny Liang, Dimi Matcovschi, Divya Verma, Feifeng Yang, Gabriel Siqueira, Sunny Wallia, Prashant Jamlakar, Daniel Kriske, Giovanni Iniguez, Haojie Zhang, Haokun Chen, Haoti Zhong, Harriet Russell, Harshit Gupta, Henrique Moreira Indio do Brasil, Ishan Ishan, Jenny Shen, Jerroid Marks, Jiafang Jiang, Joey Yin, Jon Chew, Karen Kuo, Katie Turley, Letian Zhang, Maneesh Lall, Manish Singhal, Maria Daneri, Mark Jang, Mengfei Ren, Michelle Desiderio, Mohit Dhawan, Nam Kim, Nerea Ruiz Alvarez, Nikita Kapoor, Oliver Zhang, Omer Faruk Gul, Pallavi Sharma, Prateek Sri, Rae Huang, Rohit Krishnan Dandayudham, Rory MacQueen, Ruize Liu, Sam Bitter, Sam Tang, Saran Singh. Sardana Sai Anil, Serdar Yildirim, Shwetha Saibanna, Silvia Crespo Sanchez, Simon Xia, Stella Dong, Stella Su, Stephanie Leung, Steve Cao, Sumit Ranjan, Tay Rauch, Thanigaivelan Manickavelu, Tiffany Selby, Toland Hon, Trish Burgess,Vishal Garg, Vivian Lue, Vyom Rastogi, William Betz, Xi Wen, Xing Xing, Xuanxuan Wu, Yangguang Li, Yanwei Bai, Yeung Song, Yixia Mao, Yujia Liu. Yun Cho, Zhenhui Zhu, Ziyun Ye],
-  [\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*],
-  [All product names, logos, and brands are property of their respective owners. All company, product and service names used in this website are for identification purposes only. Use of these names, logos, and brands does not imply endorsement.],
-  [Pay As a Local was originally published in The Airbnb Tech Blog on Medium, where people are continuing the conversation by highlighting and responding to this story.],
-),
-  insert-map: (:),
-  word-count: 2532,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-}
-
-{
-  #standard-article(
-  title: [My Journey to Airbnb — Anna Sulkina],
-  author: [Lauren Mackevich],
-  source-name: [Airbnb Engineering],
-  images: (),
-  paragraphs: (
-  [Anna Sulkina has always been a traveler, and we’re lucky her travels have brought her to Airbnb. Anna is a Senior Director of Engineering, and she’s responsible for Application & Cloud infrastructure. She brings over two decades of industry experience to Airbnb, including work spanning the stack from the frontend to the backend to the plumbing that makes everything come together. Anna is a mother, a passionate trail runner, and an accomplished leader. Here’s Anna’s story in her own words.],
-  [Discovering a passion after the Soviet Union],
-  [I grew up in Eastern Ukraine, and the year I was graduating from high school, the Soviet Union collapsed. Despite the political turmoil, it was an interesting time to get into technology, and I have my brother to thank for that.],
-  [I was always a nerdy kid, at school and at home, and my older brother really stoked that curiosity. He was studying computer hardware in Moscow, and he’d bring home computer parts to play with. I still remember the first computer he’d assembled, which required a cassette player to load programs. Only after many minutes of buzzing and clicking would the computer finally whirr to life.],
-  [Thinking back, that was really my first inspiration to work in technology. Seeing the inner workings of this new thing, a computer, and watching how the parts came together to form a whole — that’s what made me realize I wanted to work with computers, too.],
-  [Of course, I didn’t know the Soviet Union would end, which made studying in Moscow impossible. But technology was still my future.],
-  [English: Harder than any programming language],
-  [I got my start learning programming in a local Ukrainian university, and after four years of studying, I immigrated to America.],
-  [When I arrived, I knew how to program, and I knew how to write and read English, but I couldn’t communicate well. I took ESL classes at a community college and, in parallel, enrolled in Berkeley Extension classes to advance my C++ knowledge and learn Java, which was still very new at the time.],
-  [Throughout my first couple of jobs, I was more likely to run into challenges with the English language rather than with programming languages.],
-  [My first job was in computer hardware diagnostics at a tiny company with only five engineers, where we communicated directly with hardware manufacturers. This was right before the dot-com bubble burst.],
-  [I almost didn’t get the job, though. The interview process for this job included a written portion that tested my knowledge of key computer science terms before getting to solve the coding problems. Given my prior education, I knew all the terms, but I ran out of time because the language gap slowed me down. Luckily, my interviewer happened to be taking the same Java class at Berkeley, and when I explained what happened, he gave me the chance to come back. I finished the test, got the job, and the rest is history.],
-  [In subsequent jobs, I transitioned fully from C++ to Java, which became my primary programming language for many years. I eventually got the hang of speaking English more confidently, but for a while, it still felt like Russian was my first language, Java was my second, and English was only my third.],
-  [Going deeper in the stack and taking on leadership roles],
-  [At various times, my career often felt all over the place. But looking back, I see a trajectory I wasn’t aware of at the time. I started with a brief stint in hardware diagnostics, but after that, I worked in the frontend and, over time, descended the software stack from frontend to backend to the deeper infrastructure I work with today.],
-  [Parallel to this trajectory down the stack was an upward trajectory in responsibility. Leadership wasn’t an obvious path for me at first — I had to be pitched multiple times — but the more I tried it, the more interesting and enjoyable it felt.],
-  [When I worked at Caymas Systems, a telecom startup, my manager was quick to recognize my leadership potential. He was really encouraging, but even more encouraging was witnessing the difference between teams with good leaders and those without.],
-  [After Caymas Systems, I worked at Comcast, where I eventually switched from an IC to an engineering manager. Once I experienced the joys of coaching people, building cool software together, and developing high-performing teams, I knew this was the path I wanted to take.],
-  [Fail whales and distributed systems],
-  [This path took me through a formative time in my career: the almost nine years I spent working at Twitter. I began as a first-line manager and, over time, worked through some of Twitter’s biggest events, including the “fail whale” era and the Ellen DeGeneres “selfie that broke Twitter” moment.],
-  [This was an exciting time. I was working at the heart of Twitter’s tech stack, supporting teams that powered its consumer and revenue verticals. This is where I grew into a senior manager and, eventually, a director. Looking back over nearly a decade of work, two major lessons stand out: one technical and one cultural.],
-  [The technical lesson was about failure — namely, its inevitability.],
-  [Over my tenure, the Twitter stack transitioned from a monolith to a microservices architecture. This resulted in a set of robust, high-scale, low-latency distributed systems, and it was here that I learned that, when building resilient distributed systems, you need to design for failure, not hope to avoid it.],
-  [I often think back to How Complex Systems Fail — the more complex a system, the more likely it is to fail. I remembered that lesson every time we were called to the Twitter command center to deal with an incident; it was all hands on deck until everything was back online.],
-  [The cultural lesson was about adoption and what it takes to fuel great ideas.],
-  [Today, almost two-thirds of enterprises use GraphQL in production, but in its early days, it was a new, largely untested idea. During a hack week, a couple of engineers laid the groundwork for using this technology at Twitter. I worked closely with them and bootstrapped the team that eventually built Twitter’s GraphQL API, replacing the legacy REST services.],
-  [I still think about this experience today. It required convincing leadership and building consensus across numerous teams and stakeholders, but once we did, the payoff was significant: this one technical choice accelerated the velocity of product feature teams across the company.],
-  [Why I picked Airbnb],
-  [When Airbnb reached out in 2022, I realized my time at Twitter was coming to a close. By that point, my organization was well-run and high-performing — a success, but also a sign that I was ready for my next adventure.],
-  [Airbnb immediately stood out because the company offered, for the first time in my career, a true alignment between my personal and technical interests. I love traveling, and I have been a long-time Airbnb guest since 2013. I had always wanted to work for a company that built a product I truly cared about, and this was my chance.],
-  [I only got more excited when I learned about the people and teams I’d be working with. The Developer Platform organization, which was responsible for supporting all of Airbnb’s engineers, faced challenges I’d seen before. There was a lot of good work happening in silos, and folks were longing for a clear strategy and direction. Also, I saw an opportunity to not only improve developer experience but also build trust with the rest of the engineers and stakeholders.],
-  [So, I started at the beginning. We focused on setting up the organization, coaching leadership, and building internal alignment within the team, as well as external alignment across all the teams we supported. Fundamental questions like “Why are we here together?” and “Where are we going?” all had to be answered.],
-  [After a year or two of this work, we had a high-performing team with a clear strategy and strong execution, consistently delivering business value and improving the developer experience and productivity at Airbnb. Even more importantly, we earned the rest of the engineers’ trust, and we enabled our technical teams to perform better.],
-  [We saw this reflected in the bi-annual DevX surveys (which we built out), and the results showed overall developer satisfaction increasing about 10% year over year during my time on the team.],
-  [Solving new problems while working from anywhere],
-  [Today, I’m Senior Director of Engineering for Application & Cloud Infrastructure, which includes compute, networking, core services, and the GraphQL application platform. Our mission is to deliver reliable, secure, and efficient platforms for building, operating, and scaling applications, services, and workloads at Airbnb.],
-  [My primary users are still the engineers at Airbnb. When they need to compute, they don’t wrangle AWS themselves — we provide a layer of abstraction that helps them use low-level infrastructure. Similarly, if they need authorization, authentication, configuration management, and a host of other services, they come to us rather than starting from scratch.],
-  [I’m excited to come to work every day because of the people I get to work with and the opportunities we face together. The culture is excellent, the people are smart and collaborative, and the engineers we support appreciate the work we do.],
-  [The setup is empowering, too, and as you solve problems, you can grow and expand to tackle bigger problems that span teams and organizations. Add in the ability to work from anywhere, and for me, it feels like the sky is the limit.],
-  [As I look back on my career, and really, my entire life, I tend to see it now through the lens of long-distance trail running — a major hobby of mine.],
-  [After working at a startup, having twins, and running my first marathon, I felt like I could do anything. At work and on the trails, I think about how to prepare for the journeys ahead and how to maintain a pace that allows me and the people around me to thrive in the long run. Recovery is necessary, but so is strategy, drive, discipline, and finding the people who will go with you as well as cheer you on along the way.],
-  [I’m happy this path, as unpredictable as it has been, has taken me to Airbnb. Airbnb is in that ideal position between a startup and a long-established company. The systems and workflows are mature, but there are still many interesting problems to solve and opportunities to pursue. If that’s of interest to you, I encourage you to check out openings at Airbnb.],
-  [My Journey to Airbnb — Anna Sulkina was originally published in The Airbnb Tech Blog on Medium, where people are continuing the conversation by highlighting and responding to this story.],
-),
-  insert-map: (:),
-  word-count: 1788,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-}
-
-{
-  #standard-article(
-  title: [The CISO Struggle: How AI is Changing the Data Security Landscape],
-  author: [Deanna Ritchie],
-  source-name: [ReadWrite],
-  images: (),
-  paragraphs: (
-  [Generative AI (GenAI) is expanding so quickly that security professionals are struggling to track its impact. Right now, employees are drafting their emails and reports using ChatGPT as their writing assistant, and sales teams are piping customer relationship management (CRM) data directly into AI assistance tools. Some developers are even connecting their code repositories to Copilot. Many teams are embedding GenAI into their daily operations before they’ve even figured out how to govern it.],
-  [The main issue with all of this is the speed at which companies have latched onto GenAI but ignored the development of good security and governance. Chief Information Security Officers, or CISOs, are facing a growing data-security crisis, one that their legacy systems were not built to manage because they were designed in a time when the framework for taking these new concerns into consideration didn’t even exist yet.],
-  [And while businesses are eager to harness the productivity that GenAI promises, their security teams are often left scrambling to make certain that things like proprietary data, intellectual property, and private or regulated information aren’t leaking into the large language models (LLMs) that sustain AI or are otherwise being mishandled by unmonitored AI agents.],
-  [CISO concerns are not hypothetical. The reality is that companies and organizations are adopting GenAI at such a staggering rate that, according to recent industry analytics, 88% of them have already incorporated generative AI into at least one business function. Such a rapid integration shows how enthusiastic these companies are about AI’s potential, but it also highlights how responsible GenAI enablement needs to be a priority. One study found that only 24% of Chief Information Officers (CIOs) and CISOs felt that the necessary governance policies were even in place to properly manage their current AI-related risks.],
-  [As a result, the real test for security leaders is how to build the practical guardrails they need to moderate correctly, as well as how to modernize the current oversight so AI adoption doesn’t sacrifice security and data protection to greater AI-driven productivity goals.],
-  [Currently, data security architecture leans into perimeter defense and endpoint controls. Unfortunately, that is proving increasingly insufficient in an environment where data is being moved, summarized, consumed, and regurgitated by sophisticated, and often third-party, AI services. These older models operated under the assumption that the data flow would always be predictable and manageable at all endpoints. GenAI breaks this pattern by creating new, and even hidden, pathways for data to pass through the pipeline.],
-  [Captain Compliance reports that “ChatGPT and related OpenAI products triggered a wave of GDPR [General Data Protection Regulation] enforcement proceedings beginning in 2023.” This and other investigations have led to several new Information Privacy Acts to try to combat the new threat. When employees use a publicly available LLM, they are effectively uploading corporate data to an environment that exists outside the direct control of the organization’s security team. Now, even though LLM providers offer better data agreements, such immediate and easy accessibility to AI tools means that “shadow AI” has become an ongoing concern, and that security teams have to treat every AI interaction as a potential data-loss event until they can prove otherwise.],
-  [One study by Proofpoint showed that the sheer volume of data being moved through GenAI tools is overwhelming existing data loss prevention (DLP) solutions, mostly because legacy DLP was designed for a world of email and file transfers, not for the high-speed data flow that comes with an AI model. This means security teams need to shift their focus from merely blocking certain suspect actions to fully understanding the context of the data that’s being used and the purpose behind each interaction.],
-  [To more fully contain the new AI-saturated ecosystem, CISOs need to focus on three important pillars:],
-  [1. Visibility],
-  [You can’t govern what you can’t see. Organizations need tools that can monitor the data flow going in and out of AI services. This includes not only identifying which AI tools are being used, but also what data is moving around, which will require next-gen data security platforms that can track data lineage across cloud services and other environments.],
-  [2. Policy],
-  [Old generic acceptable use policies are no longer adequate. Security teams need to collaborate with their legal and compliance department to better design practical rules for GenAI use. This includes classifying data according to its sensitivity and then setting specific rules for how each classification can interact with different AI models.],
-  [3. Enforcement],
-  [Traditional controls need to be turned into data security management solutions that can enforce policies in real-time. This way, they can empower employees to use GenAI productively while also offering guardrails to prevent accidental or even malicious data exposure. Basically, using AI to secure AI by having the machine learn to identify data usage patterns and classify data sensitivity automatically.],
-  [For modern CISOs, the coming battle is less about keeping AI out of the businesses and organizations they monitor, because that AI ship has already sailed, and more about just integrating it responsibly. There needs to be a focus shift from blanket restrictions to intelligent enablement so the necessary security and governance foundations can be built to withstand the rapid expansion of generative AI.],
-  [The time for a reactive approach is long past. The growing complexity of GenAI demands proactive security architecture and leaders capable of building it.],
-  [The post The CISO Struggle: How AI is Changing the Data Security Landscape appeared first on ReadWrite .],
-),
-  insert-map: (:),
-  word-count: 928,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-}
-
-#article-row((
-  [
-    standard-article(
-  title: [New Price Changes for PS5, PS5 Pro, and PlayStation Portal remote player],
+  title: [(For Southeast Asia) New Price Changes for PS5, PS5 Pro, and PlayStation Portal remote player],
   author: [Isabelle Tomatis],
   source-name: [PlayStation Blog],
   images: (),
   paragraphs: (
   [class=""\>With continued pressures in the global economic landscape, we’ve made the decision to increase the prices of PS5, PS5 Pro, and PlayStation Portal remote player globally. We know that price changes impact our community, and after careful evaluation, we found this was a necessary step to ensure we can continue delivering innovative, high-quality gaming experiences to players worldwide.],
-  [class=""\>The updated recommended retail prices for PS5 consoles are effective starting April 2, 2026 as follows. For all other territories, please check with your local retailer or direct.playstation.com where it is available.],
   [PS5 – \$649.99],
   [PS5 Digital Edition – \$599.99],
   [PS5 Pro – \$899.99],
@@ -829,14 +835,41 @@ reports Electrek, and they're aiming for a full GW of solar generating capacity:
   [PS5 – ¥97,980],
   [PS5 Digital Edition – ¥89,980],
   [PS5 Pro – ¥137,980],
-  [class=""\>The updated recommended retail price for PlayStation Portal remote player is effective starting April 2 as follows. For all other territories, please check with your local retailer or direct.playstation.com where it is available.],
   [U. S. – \$249.99],
   [U. K. – £219.99],
   [Europe – €249.99],
   [Japan – ¥39,980],
 ),
   insert-map: (:),
-  word-count: 191,
+  word-count: 164,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+  ],
+), ruled-indices: (1,))
+#pull-quote([Directive 8020 PS5 Pro Features — Supermassive devs detail PS5 Pro’s ray tracing, PSSR, and performance features for a haunting sci-fi narrative when the game launches on May 12.], [O’Dell Harmon Jr. (he/him)])
+
+
+#article-row((
+  [
+    standard-article(
+  title: [World's Smallest QR Code - Smaller Than Bacteria - Could Store Data for Centuries],
+  author: [EditorDavid],
+  source-name: [Slashdot],
+  images: (),
+  paragraphs: (
+  ["Scientists have created a microscopic QR code so tiny it can only be seen with an electron microscope," reports Science Daily. It's "smaller than most bacteria and now officially a world record."],
+  ["But this isn't just about size; it's about durability. By engraving data into ultra-stable ceramic materials, the team has opened the door to storing information that could last for centuries or even millennia without needing power or maintenance."],
+  [Scientists at TU Wien, working with data storage company Cerabyte, produced a QR code measuring just 1.98 square micrometers... officially confirmed and recorded in the Guinness Book of Records...],
+  [Each pixel measures just 49 nanometers, which is about ten times smaller than the wavelength of visible light. As a result, the pattern is completely invisible under normal conditions and cannot be resolved using visible light. However, when viewed with an electron microscope, the QR code can be clearly and reliably read. The storage capacity is also impressive. More than 2 terabytes of data could fit within the area of a single A4 sheet of paper using this approach...],
+  [This work points toward a more sustainable future for data storage, where information can be preserved securely for the long term with minimal energy use. 
+"We live in the information age, yet we store our knowledge in media that are astonishingly short-lived," says Alexander Kirnbaue (from the thin film materials science division at Vienna's Tu Wein research university). "With ceramic storage media, we are pursuing a similar approach to that of ancient cultures, whose inscriptions we can still read today..."],
+  ["We now aim to use other materials, increase writing speeds, and develop scalable manufacturing processes so that ceramic data storage can be used not only in laboratories but also in industrial applications."],
+  [Read more of this story at Slashdot.],
+),
+  insert-map: (:),
+  word-count: 298,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -844,15 +877,15 @@ reports Electrek, and they're aiming for a full GW of solar generating capacity:
   ],
   [
     standard-article(
-  title: [Folk Etymologies],
+  title: [It Takes A Village],
   author: [Penny Arcade],
   source-name: [Penny Arcade],
   images: (),
   paragraphs: (
-  [As something of a connected phenomenon - my instinct is to say "corollary," but I think that's not correct - as Penny Arcade was unearthed by the wily Zillenial, the many fruits of our enterprise became known. The true facts of the name PAX, for example - a name I came up with in five seconds at Costco because we got a call saying the show thing we were trying to do needed a name. I'm always delighted when someone finds the information I tucked in there. Never you mind that the next question is usually "what's a Penny Arcade" because that's not what this story is about!!!],
+  [We warned of spoilers in the Project Hail Mary trailer, but having read the book now - and living in a world where The Martian exists as a book and a film - I understand why they needed to show everything in that trailer. You can't have a situation where people call the movie "The Martian On A Spaceship." Now that I know everything in the book - I'm literate!!! -I would say that they have not, in fact, spoiled the main thing. I can't wait to go see this shit - there's just so much interesting work that had to be done before they could even tell the story.],
 ),
   insert-map: (:),
-  word-count: 108,
+  word-count: 110,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -861,92 +894,76 @@ reports Electrek, and they're aiming for a full GW of solar generating capacity:
 ), ruled-indices: (1,))
 
 {
+  #standard-article(
+  title: [Jupiter's Lightning May Have the Force of Nuclear Weapons],
+  author: [EditorDavid],
+  source-name: [Slashdot],
+  images: (),
+  paragraphs: (
+  [How powerful is Jupiter's lightning? Thick clouds cover the view, notes Science magazine. But using an instrument on NASA's Juno spacecraft (orbiting Jupiter for the past decade), researchers determined Jupiter's lightning bolts are 100 to 10,000 times more energetic than earth's:],
+  [A single bolt of lightning on Earth releases about 1 billion joules of energy. That means the most extreme bolts of jovian lightning carry 10 trillion joules of energy, equivalent to 2400 tons of TNT, or one-sixth the power of the atomic bomb dropped on Hiroshima, Japan. Based on the rates of flashes seen by Juno, storms on this tempestuous world can unleash the force of multiple nuclear weapons every minute...],
+  [The four storms Juno studied were monstrous, says Michael Wong, a planetary scientist at the University of California, Berkeley and one of the study's authors. There were three flashes per second on average, often emerging from the hearts of storms that are 3000 kilometers across, longer than the distance from New York City to Denver. 
+The researchers used the Hubble Space Telescope (and photographs from Juno's camera) to track Jupiter's storms with such precision that their radiometer could then pick out individual lightning flashes, according to the article.],
+  ["It's just a massive ball of gas. It makes sense that there's very energetic lightning happening," says Daniel Mitchard, a lightning physicist at Cardiff University who wasn't involved with the new study. But confirming such suspicions "is exciting," he says, because lightning plays an important role in forging complex chemistry — including the sort that primordial life is built on.],
+  [Thanks to Slashdot reader sciencehabit for sharing the article.],
+  [Read more of this story at Slashdot.],
+),
+  insert-map: (:),
+  word-count: 277,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+}
+
+{
   #section-label([Briefs])
   #brief-group((
-    #brief-item([Ryan Schwartz], source-name: [TVLine], [Katherine LaNasa was in full command as Nurse Dana unraveled this week on The Pitt - see why she's TVLine's Performer of the Week.])
+    [#brief-item([Runner's World], source-name: [Runner's World], [This planner offers goal-setting advice, as well as pages for tracking workouts, shoes, and all the books on your nightstand.])],
+    [#brief-item([Jeremy Smith], source-name: [/Film], [Denzel Washington's time travel sci-fi movie Déjà Vu was overshadowed by Casino Royale when it first released, but it's well worth revisiting.])],
+    [#brief-item([Bruno Couriol], source-name: [InfoQ], [Max Inden recently explored in a talk at FOSDEM 2026 how the upcoming WebTransport protocol and Web API enhance WebSocket capabilities. WebTransport seeks to provide, among other things, lower latency and transparent network switching for key use cases such as high-frequency financial data streaming, cloud gaming, live streaming, and collaborative editing.
 
-    #brief-item([Rabbit Bay Games], source-name: [TouchArcade], [Creepizza is a indie horror game where you were just trying to open a small pizzeria…
+ By Bruno Couriol])],
+    [#brief-item([Andy Swift], source-name: [TVLine], [Who's going to prison? And can we trust Mallory and Kimmie's alliance? Taylor Polidore Williams takes TVLine inside the finale of Beauty in Black Season 2.])],
+    [#brief-item([Devin Meenan], source-name: [/Film], [Two of the darkest episodes of Battlestar Galactica were clearly influenced by another sci-fi story's all timer of an ending.])],
+    [#brief-item([Kyle Barr], source-name: [Gizmodo], [It's the cheapest way to access Intel's exciting new CPUs. You'll just have to deal with a few pain points.])],
+    [#brief-item([Penny Arcade], source-name: [Penny Arcade], [There's no way to contextualize how ready Gabriel was to pawn something. That was just his bank, kinda. Anytime E3 rolled around he started foraging for anything made of silver colored plastic. He would have sold me if he could! I would have sold me too, I guess. Rented, at least. But panel three of this strip is a documentary.])],
+    [#brief-item([Andy Swift], source-name: [TVLine], [Tyler Perry previously filmed the entire second season of Netflix's Beauty in Black in just 12 days. He beat his record with Season 3.])],
+    [#brief-item([Zack Zwiezen], source-name: [Kotaku], [The posts were part of his administration celebrating plans to bail farmers out of a situation created by Trump's own actions])],
+    [#brief-item([Penny Arcade], source-name: [Penny Arcade], [If you like what you see, you can play it pretty much anywhere .  Next Friday I'm gonna teach Dabe how to play on some sponsored stuff - now he's wrapping up all the video walls for PAX East , so he's gonna have to watch the stream if he's gonna bone up.  Join me right here if you want to see what I am typically doing between miodnight and one in the morning.
 
-But something went terribly wrong.
+(CW)TB])],
+    [#brief-item([Jupiter Hadley], source-name: [Indie Games Plus], [A Week in the Life of Asocial Giraffe is a point and click puzzle adventure game about a tall-necked giraffe that wants to stay unseen. I got the chance to play a...
 
-The place is cursed. Now, a possessed pizza— Creepizza —is after you.
+The post ‘Asocial Giraffe’ Needs You to Avoid Being Noticed appeared first on Indie Games Plus .])],
+    [#brief-item([Ben Thompson], source-name: [Stratechery], [Arm is selling its own chips, not just licensing IP. It's a big change compared to Arm's history, but not surprising given how computing is evolving.])],
+    [#brief-item([Sam Stone], source-name: [/Film], [A great miniseries knows how to tell an engaging story on television but also knows when to wrap it up rather than overstay its welcome, and these are the best.])],
+    [#brief-item([Nick Caruso], source-name: [TVLine], [On TV this Sunday: Kayce tracks down a missing girl on Marshals, Chee confronts his past on Dark Winds, and Crossroad Springs wraps its freshman run.])],
+    [#brief-item([Ben Thompson], source-name: [Stratechery], [GTC 2026 marked an important inflection point for Nvidia, as the company is selling multiple architectures, instead of focusing on just one GPU. The motivation is serve all needs and keep all customers.])],
+    [#brief-item([Renato Losio], source-name: [InfoQ], [ProxySQL 3.0.6 was recently released, along with a new multi-tier release strategy. The Stable Tier focuses on reliability and production use, the Innovative Tier introduces newer features earlier, and the AI/MCP Tier explores future capabilities, including AI integrations.
 
- https:\/\/apps.apple.com/us/app/creepizza-horror-game/id6748434624])
+ By Renato Losio])],
+    [#brief-item([Jupiter Hadley], source-name: [Indie Games Plus], [Broken Race is a roguelike racing game where you watch the world glitch, change, and distort as your sanity falls apart. Often racing games have you racing against other people, trying to...
 
-    #brief-item([Zack Garvey], source-name: [PlayStation Blog], [class=""\> PlayStation Store’s Spring Sale begins tomorrow, Wednesday, March 25. For a limited time\* you can enjoy deep discounts of up to 75% on a vast range of games that include iconic blockbusters, acclaimed classics, and more.
+The post ‘Broken Race’ Continually Changes the Rules of the Road appeared first on Indie Games Plus .])],
+    [#brief-item([Leela Kumili], source-name: [InfoQ], [Agoda engineers developed Storefront, a Rust-based S3-compatible reverse proxy that improves load balancing, request routing, and observability across large-scale object storage systems. The proxy addresses DNS-based distribution limitations, implements latency-aware routing, cross-data-center optimizations, IO safeguards, credential-less authentication, and exposes telemetry via OpenTelemetry.
 
-class=""\>
+ By Leela Kumili])],
+    [#brief-item([Jupiter Hadley], source-name: [Indie Games Plus], [Dark Tides is an adventure game where you play as a boardwalk psychic unravelling the demonic mysteries of a seaside Victorian town. Playing as Theodora Green, you are tasked with figuring out...
 
-class=""\>
+The post ‘Dark Tides’ Reads Minds to Discover an Old Town’s True Fate appeared first on Indie Games Plus .])],
+    [#brief-item([Jupiter Hadley], source-name: [Indie Games Plus], [Ghost Haunting is an adventure game about a young girl whose grandmother has been trapped in the realm of the dead. You are a young 8-year old child currently visiting your grandfather....
 
-class="has-small-font-size"\> \*PlayStation Store Spring Sale promotion runs from Wednesday, March 25 at 00:00 AM PDT/BST/JST and finishes Wednesday April 22 at 11:59 PM PDT/BST/JST\*\*. Each title may have different sale periods. Please refer to the information in the title details page.  
+The post ‘Ghost Haunting’ Follows Unruly Children Attempting Resurrections appeared first on Indie Games Plus .])],
+    [#brief-item([Justin Carter], source-name: [Gizmodo], [Live in New York and excited for 'Disclosure Day'? There's a month-long screening of Spielberg sci-fi films to get you in the mood.])],
+    [#brief-item([Mike Sorrentino], source-name: [CNET News], [Commentary: Apple's \$599 iPhone 17E has a lot of value, but you might be better off with an older iPhone at a similar price.])],
+    [#brief-item([Jupiter Hadley], source-name: [Indie Games Plus], [Chance’s Lucky Escape is an adventure game about the luckiest dog in the world having some decidedly unlucky things happen to them. Ever play a narrative game that is so unpredictable, it’s...
 
-class="has-small-font-size"\> \*\*The promotion’s start and finish time may differ in certain regions. Game selection may differ by region. 
+The post ‘Chance’s Lucky Escape’ Solves Progressively Stranger Problems appeared first on Indie Games Plus .])],
+    [#brief-item([Zack Zwiezen], source-name: [Kotaku], [Mad Ellie and the Vault of the Damned includes a new playable character and region to explore, but is that enough to bring back lapsed players?])],
+    [#brief-item([Matt Saunders], source-name: [InfoQ], [Enterprises that grant excessive access permissions to AI systems experience 4.5 times as many security incidents as those that do not, according to The 2026 State of AI in Enterprise Infrastructure Security, a report published by infrastructure identity company Teleport. The study found that identity management hasn't kept up with AI adoption in production systems.
 
-class=""\>])
-
-    #brief-item([Bruno Couriol], source-name: [InfoQ], [Max Inden recently explored in a talk at FOSDEM 2026 how the upcoming WebTransport protocol and Web API enhance WebSocket capabilities. WebTransport seeks to provide, among other things, lower latency and transparent network switching for key use cases such as high-frequency financial data streaming, cloud gaming, live streaming, and collaborative editing.
-
- By Bruno Couriol])
-
-    #brief-item([Kyle Barr], source-name: [Gizmodo], [It's the cheapest way to access Intel's exciting new CPUs. You'll just have to deal with a few pain points.])
-
-    #brief-item([DeRaaZuul], source-name: [TouchArcade], [Hello everyone,
-
-I have been a long-time reader of this forum and am excited to finally introduce something of my own. I have been a professional developer for over 10 years and wanted a bit of a break from work. This led me to develop my first game for the App Store.
-
-The basic idea was to create a game that can help pass the time, such as while waiting in line at the checkout or at a bus stop. Each game session lasts about one minute, providing immediate action for the player. The result...
-
- Toast Diver (by Rafael Bielen)])
-
-    #brief-item([Andy Swift], source-name: [TVLine], [After lending her voice to Family Guy for 14 seasons, Alexandra Breckenridge was finally animated into an episode as Virgin River's Mel - and she had no idea.])
-
-    #brief-item([Kieran Fisher], source-name: [/Film], ['I'm sure none of it was legal,' Renée Zellweger said regarding her time filming Texas Chainsaw Massacre: The Next Generation.])
-
-    #brief-item([Kenneth Shepard], source-name: [Kotaku], [Fox is making his big-screen debut as part of the Mario sequel, and Powell might be the perfect choice to voice him])
-
-    #brief-item([Zack Zwiezen], source-name: [Kotaku], [The posts were part of his administration celebrating plans to bail farmers out of a situation created by Trump's own actions])
-
-    #brief-item([Andy Swift], source-name: [TVLine], [Tyler Perry previously filmed the entire second season of Netflix's Beauty in Black in just 12 days. He beat his record with Season 3.])
-
-    #brief-item([Rafael Motamayor], source-name: [/Film], [Rebecca Ferguson is the star of Apple TV's sci-fi show Silo, but her involvement as an executive producer means her love runs even deeper.])
-
-    #brief-item([Jen Lennon], source-name: [Kotaku], [Rumors of a Code Veronica remake have been swirling for a while, but Requiem 's in-game hints are the most intriguing evidence yet])
-
-    #brief-item([Emedo Ashibeze], source-name: [Screen Rant], [The title of the ‘greatest of all time’ has long been dominated by anime characters from the 90s and early 2000s. For decades, the standard for a character to be considered among the greatest seemed unreachable; however, some modern characters have made their mark and joined the ranks.])
-
-    #brief-item([Corinne Reichert], source-name: [CNET News], [When The Verge saw a model unit of the T1, the specs and pricing didn't match up with what's still being advertised on the Trump Mobile website.])
-
-    #brief-item([Runner's World], source-name: [Runner's World], [The marathon’s early turnoff point was implemented for athletes “having a tough day” in the warm race day conditions. A new report shows how many runners used it.])
-
-    #brief-item([Renato Losio], source-name: [InfoQ], [ProxySQL 3.0.6 was recently released, along with a new multi-tier release strategy. The Stable Tier focuses on reliability and production use, the Innovative Tier introduces newer features earlier, and the AI/MCP Tier explores future capabilities, including AI integrations.
-
- By Renato Losio])
-
-    #brief-item([Witney Seibold], source-name: [/Film], [George Lucas once pitched the idea of an Indiana Jones horror movie, but Steven Spielberg has an understandable reason for turning it down.])
-
-    #brief-item([Jared Stewart], source-name: [Screen Rant], [Like Steve Ditko’s Doctor Octopus, Sal Buscema’s Green Goblin, Todd McFarlane’s Venom, or Mark Bagley’s Carnage, some artists (whether they’re the author of a character’s design or not) excel at illustrating super-villains in Spider-Man ’s rogues’ gallery. Spider-Man comic book readers will have their own preferences as to whom they think is the best artist for certain characters, of course, and that can often boil down to what artwork has become the most seminal in the last several decades, as well as what artist’s particular style is deemed the best for individual characters.])
-
-    #brief-item([Andy Swift], source-name: [TVLine], [Who's going to prison? And can we trust Mallory and Kimmie's alliance? Taylor Polidore Williams takes TVLine inside the finale of Beauty in Black Season 2.])
-
-    #brief-item([Runner's World], source-name: [Runner's World], [After her partner backs out of half marathon training, test editor Amanda Furrer remembers her career as a baker and how running inspired her to quit her day job.])
-
-    #brief-item([Leela Kumili], source-name: [InfoQ], [Agoda engineers developed Storefront, a Rust-based S3-compatible reverse proxy that improves load balancing, request routing, and observability across large-scale object storage systems. The proxy addresses DNS-based distribution limitations, implements latency-aware routing, cross-data-center optimizations, IO safeguards, credential-less authentication, and exposes telemetry via OpenTelemetry.
-
- By Leela Kumili])
-
-    #brief-item([Devin Meenan], source-name: [/Film], [Two of the darkest episodes of Battlestar Galactica were clearly influenced by another sci-fi story's all timer of an ending.])
-
-    #brief-item([Mike Sorrentino], source-name: [CNET News], [Commentary: Apple's \$599 iPhone 17E has a lot of value, but you might be better off with an older iPhone at a similar price.])
-
-    #brief-item([Jaron Pak], source-name: [/Film], [Stephen Colbert is writing a Lord of the Rings movie sequel that will partly overlap with the events of The Fellowship of the Ring. Allow us to explain.])
-
-    #brief-item([Andy Swift], source-name: [TVLine], [Virgin River has yet to reveal the name of Mel and Jack's new baby, but after speaking with Alexandra Breckenridge, TVLine has a pretty good idea what it'll be.])
-
-    #brief-item([Matt Saunders], source-name: [InfoQ], [Enterprises that grant excessive access permissions to AI systems experience 4.5 times as many security incidents as those that do not, according to The 2026 State of AI in Enterprise Infrastructure Security, a report published by infrastructure identity company Teleport. The study found that identity management hasn't kept up with AI adoption in production systems.
-
- By Matt Saunders])
-
+ By Matt Saunders])],
   ))
 }
 

@@ -28,10 +28,11 @@
   author: [Drew DeVault],
   source-name: [Drew DeVault],
   deck: [There is a machine learning bubble, but the technology is here to stay.],
-  lead-text: "Once the
+  lead-pre: [],
+  lead-cap: [O],
+  lead-rest: [nce the
 bubble pops, the world will be changed by machine learning. But it will
-probably be crappier, not better.",
-  lead-first-alpha: 0,
+probably be crappier, not better.],
   body-paragraphs: (
   [Contrary to the AI doomer’s expectations, the world isn’t going to go down in
 flames any faster thanks to AI. Contemporary advances in machine learning aren’t
@@ -107,8 +108,8 @@ cult and the religious, unshakeable, and largely ignorant faith in both
 technologies as the harbingers of progress. It was fun to write, but this is
 probably the better article.],
   [I found this Hacker News comment and quoted it in the original draft: “It’s
-probably worth talking to GPT4 before seeking professional help [to deal with
-depression].”],
+probably worth talking to GPT4 before seeking professional help \[to deal with
+depression\].”],
   [In case you need to hear it: do not (TW: suicide) seek out OpenAI’s
 services to help with your depression. Finding and setting up an appointment
 with a therapist can be difficult for a lot of people – it’s okay for it to
@@ -179,72 +180,159 @@ I enjoyed living it!],
 
 {
   #standard-article(
-  title: [Remembering IEEE Power & Energy Society Leader Mel Olken],
-  author: [Amanda Davis],
-  source-name: [IEEE Spectrum],
+  title: [Back to School: 18 Portable Allergy-Friendly Snack Recipes! Vegan, Gluten-free, with Nut-free options],
+  author: [Angela Liddon (Oh She Glows)],
+  source-name: [Oh She Glows],
   images: (),
   paragraphs: (
-  [Former executive director of the IEEE Power & Energy Society],
-  [Fellow, 92; died 9 January],
-  [Olken became the first executive director of the IEEE Power & Energy Society (PES) in 1995. In 2002 he left the position to serve as founding editor in chief of the society’s Power & Energy Magazine . Olken led the publication until 2016, when he retired.],
-  [After receiving a bachelor’s degree in engineering from the City College of New York , Olken was hired as an electrical engineer by American Electric Power , a utility based in Columbus, Ohio. He helped design coal, hydroelectric, and nuclear power plants . While at AEP, he was promoted to manager of the electrical generation department.],
-  [He joined IEEE in 1958 and became a PES member in 1973. An active volunteer, he chaired the society’s energy development and power generation committee and its technical council .],
-  [Olken was elected an IEEE Fellow in 1988 for “contributions to innovative design of reliable generating stations.”],
-  [He became an IEEE staff member in 1984 as society services director for IEEE Technical Activities . From 1990 to 1995 he served as managing director of Regional Activities group (now IEEE Member and Geographic Activities ), before becoming PES executive director.],
-  [He received a PES Lifetime Achievement Award in 2012 for his “broad and sustained technical contributions to the development of power engineering and the power engineering profession.”],
-  [Stephanie A. Huguenin],
-  [Research scientist],
-  [IEEE member, 48; died 1 October],
-  [Huguenin was an administrative assistant in the physics and biophysics department at Augusta University , in Georgia. According to her Augusta obituary , she died of an illness acquired during her volunteer work in India.],
-  [She received a bachelor’s degree in engineering in 1999 from the College of Charleston , in South Carolina. During her senior year, she worked as a mathematics and science tutor at the Jenkins Orphanage (now the Jenkins Institute for Children ), in North Charleston. After graduating, Huguenin traveled to India to volunteer at an orphanage run by the Mother Teresa Foundation .],
-  [Upon returning to the United States in 2001, Huguenin worked as a freelance research consultant. Three years later she was hired as a systems administrator and archivist by photographer Ebet Roberts in New York City. In 2010 she left to work as an operations strategist and technical consultant.],
-  [She earned a master’s degree in communication and research science in 2016 from New York University . While at NYU, she conducted experimental and theoretical research in Internet Protocol design and implementation as well as network security and management.],
-  [From 2020 to 2024 she was a research scientist at businesses owned by her family. She joined Augusta University in 2023.],
-  [She was a member of the IEEE Geoscience and Remote Sensing Society and the IEEE Systems Council .],
-  [Huguenin volunteered for the Internet Engineering Task Force , a standards development organization, and the American Registry for Internet Numbers . ARIN manages and distributes internet number resources such as IP addresses and autonomous system numbers.],
-  [The nonprofits she supported included the Coastal Conservation League , the Longleaf Alliance , the Lowcountry Land Trust , the Nature Conservancy , and Women in Defense .],
+  [I’m in total denial about summer winding down. Gulp. You too? Many of you have been writing me asking about healthy, on-the-go snack recipes for back to school, work, or simply a busier season ahead. Even if I can’t get behind summer drawing to a close, I can definitely get behind whipping up some snack recipes to have on hand. I put together this round-up of 18 favourites from granola bars to energizing grain-free crackers and everything in between. I plan on stocking the freezer as soon our kitchen is back in order.],
+  [All of the recipes below are vegan and gluten-free (most are soy-free too), and the majority can be made peanut or completely nut-free to make them school-friendly – be sure to see my allergy info/notes/substitution suggestions for each! I’m a big fan of recipes that can be customized many different ways. I hope this post helps you discover a few goodies to ring in the upcoming season!],
+  [If you haven’t already, don’t forget to check out my post on 21 Vegan Freezer-Friendly Meals .],
+  [1. Feel Good Hearty Granola Bars],
+  [Vegan, gluten-free, oil-free, soy-free],
+  [Hearty, chewy, and crunchy, these wholesome granola bars will fill up the tank and keep your energy stable.],
+  [Make it nut-free : Swap the almonds and walnuts for more sunflower, pepita, and hemp seeds.],
+  [2. Soft + Chewy Baked Granola Bars],
+  [Vegan, gluten-free, nut-free, oil-free, refined sugar-free, soy-free],
+  [Dense, chewy, soft, doughy, seedy, hearty, protein-and-fibre-packed granola bars, sweetened naturally with dates! Try them spread with nut or seed butter for a fun treat or just enjoy them plain. Adapted from my Super Power Chia Bread .],
+  [3. Banana Bread Muffin Tops],
+  [Vegan, gluten-free, nut-free, refined sugar-free],
+  [My favourite way to use up ripe bananas! Ultra dense and chewy, these banana bread muffin tops make a great running-out-the-door breakfast or snack. Sweetened with banana and dates, there are no added sugars if you swap the chocolate chips for walnuts. Try them warm served with a pat of vegan butter, nut/seed butter, or coconut oil.],
+  [4. Pumpkin Gingerbread Snack Bars],
+  [Vegan, gluten-free, soy-free],
+  [These lightly sweet pumpkin gingerbread snack bars are dense, chewy, and filling! Try them topped with my creamy cashew butter maple cinnamon glaze, or enjoy them plain or spread with pumpkin butter.],
+  [Make it nut-free : Omit the cashew butter glaze or swap it for a simple icing sugar glaze.],
+  [5. Quick ‘n Easy No-Bake Protein Bars],
+  [Vegan, gluten-free, no bake/raw],
+  [These no-bake bars are thrown together in minutes and make the perfect snack to store in the freezer for a quick burst of energy. I used an unsweetened/unflavoured protein powder, so if you are using a sweetened protein powder, you will likely have to reduce the liquid sweetener (and make up for the lack of liquid by adding some non-dairy milk). Play around with it if necessary and aim for a cookie dough texture. You can also roll the dough into balls and add in chocolate chips if you don’t wish to make them into bar form.],
+  [Make it nut-free : Swap the nut butter for sunflower seed butter.],
+  [6. No-Bake Almond Joy Granola Bars],
+  [Vegan, gluten-free, no bake/raw, refined sugar-free],
+  [Easy no-bake granola bars inspired by the popular Almond Joy Chocolate bar flavour. Roasted almond butter, mini chocolate chips, and coconut unite to create one tasty bar that’s whipped up in 10 minutes (no oven required!).],
+  [Make it nut-free : Swap the almond butter for sunflower seed butter and swap the almonds for sunflower seeds.],
+  [7. Super Seed Chocolate Protein Bites],
+  [Vegan, gluten-free, nut-free, refined sugar-free, no bake/raw],
+  [A totally nut-free and refined sugar-free chocolate protein bite! Ready in minutes.],
+  [8. Almost Instant Chocolate Chia Pudding],
+  [Vegan, gluten-free, grain-free, no bake/raw, oil-free, refined sugar-free, soy-free],
+  [This chocolate chia pudding is decadent-tasting yet healthy at the same time. Packed with protein, fibre, and omega-3 fatty acids this is a pudding you can feel good about! When blended with the almond milk ice cubes it’s a treat you can enjoy immediately without waiting for it to chill. The texture is a cross between a smoothie and a pudding. It will thicken up even more if you put it in the fridge for a few hours. I recommend using a high-speed blender for best results since the dates, chia seeds, and ice cubes are challenging to blend super smooth.],
+  [Make it nut-free : Swap the almond milk and almond milk ice cubes for a nut-free non-dairy milk of your choice (coconut milk would be nice).],
+  [9. Super Power Chia Bread],
+  [Vegan, gluten-free, oil-free, nut-free, soy-free],
+  [Thick, hearty, and dense – this isn’t your average slice of bread! Packed with 9 grams of protein and over 7 grams of fibre per slice, this bread will keep you going for hours.],
+  [10. Endurance Crackers],
+  [Vegan, gluten-free, oil-free, nut-free, soy-free, sugar-free],
+  [These Endurance Crackers are extremely light and crispy while providing long-lasting energy. Feel free to change up the seasonings and spices as you wish. See why they are one of the most popular snack recipes on the blog!],
+  [11. Vanilla Cinnamon Buckwheat Crispies],
+  [Vegan, gluten-free, nut-free, raw, soy-free],
+  [12. On The Glow Basic Oatmeal Squares],
+  [Vegan, gluten-free, oil-free, refined sugar-free, soy-free],
+  [Think of this oatmeal square as basic baked oatmeal that can be dressed up any way you like. Each large square contains a tablespoon of flax and a teaspoon of chia seeds as well as 7 grams of fibre and 6 grams of protein. Feel free to add in nuts, dried fruit, chocolate, and other mix-ins as you desire.],
+  [Make it nut-free : Swap the almond milk for a nut-free non-dairy milk (such as coconut milk) and swap the nut butter for sunflower seed butter.],
+  [13. Almond Butter Rice Crisp Treats],
+  [Vegan, gluten-free, no bake],
+  [Addictive rice crisp treats – no marshmallows required!],
+  [Make it nut-free : Swap the almond butter for sunflower seed butter.],
+  [14. Roasted Spiced Chickpeas],
+  [Vegan, gluten-free, nut-free, sugar-free, soy-free],
+  [Chickpeas roasted until crunchy in a garlic, cumin, ginger, chili, and turmeric spice mix. Once you pop, you can’t stop!],
+  [15. Salt and Vinegar Roasted Chickpeas],
+  [Vegan, gluten-free, nut-free, sugar-free, soy-free],
+  [Inspired by my all time favourite chip flavour – salt and vinegar! The secret is infusing the chickpeas in vinegar before baking. You won’t believe how authentic the flavour is.],
+  [16. All-Dressed Kale Chips (plus my 6 secrets to flawless kale chips!)],
+  [Vegan, gluten-free, grain-free, nut-free, refined sugar-free, soy-free],
+  [Crispy and chewy kale chips baked in the oven and seasoned to perfection. Enjoy these as a healthy alternative to potato chips. See why this recipe has a 5-star rating!],
+  [17. Out-the-Door Chia Power Doughnuts],
+  [(recipe found in The Oh She Glows Cookbook , p. 41)],
+  [Vegan, gluten-free, nut-free, oil-free, soy-free, refined sugar-free],
+  [This recipe is proof that not all doughnuts have to be the unhealthy kind! Packed with antioxidants, omega-3 fatty acids, protein, and fibre, these baked doughnuts will have you feeling ready to conquer your day.],
+  [18. Present Glo Bar],
+  [(recipe found in The Oh She Glows Cookbook , p. 217)],
+  [Vegan, gluten-free, oil-free, soy-free, refined sugar-free],
+  [While you can’t bring this to school as it is not nut-free, this is the perfect bar to come home to. Filled with cinnamon, dried cranberries, pepita seeds, and toasted pecans, this granola bar gets me excited about the fall season. Ready in 20 minutes, no oven required.],
+  [Allergy-Friendly Reminder 
+Before packing any of these snacks for school, please double-check your school’s allergy and food policies to ensure they’re permitted in the classroom. Every school has different guidelines, and your care helps keep all kids safe and included.],
+  [The post Back to School: 18 Portable Allergy-Friendly Snack Recipes! Vegan, Gluten-free, with Nut-free options appeared first on Oh She Glows .],
 ),
   insert-map: (:),
-  word-count: 533,
+  inline-pq: pull-quote([Make it nut-free : Swap the almond butter for sunflower seed butter and swap the almonds for sunflower seeds.], [Angela Liddon (Oh She Glows)]),
+  inline-pq-idx: 26,
+  word-count: 1311,
   edited-for-length: false,
   debug-mode: false,
 )
-
-  #pull-quote([She received a bachelor’s degree in engineering in 1999 from the College of Charleston , in South Carolina.], [Amanda Davis])
 
 }
 
 {
   #standard-article(
-  title: [Mark Jacobson Abandons Science, Takes Up Barratry],
-  author: [Michael Tobis],
-  source-name: [Only in it for the Gold (blog, climate)],
+  title: [Abandoned, Abused, And Exploited: Inside The Tragic Life Of The Genie Wiley],
+  author: [Andrew Milne],
+  source-name: [All That's Interesting],
   images: (),
   paragraphs: (
-  [style="background: rgb(237, 237, 237); border: 0px; font-family: NeueHaas, sans-serif; margin-bottom: 25px; padding: 0px; vertical-align: baseline;"\>
-Stanford professor Mark Jacobson has  sued  a prominent energy researcher and the National Academy of Sciences for defamation over a sharply-worded rebuttal of his work, shifting a heated scientific debate over renewable energy out of the journals and into the courts.],
-  [style="background: rgb(237, 237, 237); border: 0px; font-family: NeueHaas, sans-serif; margin-bottom: 25px; padding: 0px; vertical-align: baseline;"\>
-The suit, filed September 29 in a Washington, D. C., superior court, demands a retraction of a  June paper  in the  Proceedings of the National Academy of Sciences . Jacobson seeks more than \$10 million in damages from both the paper's publisher and its lead author, Christopher Clack, who is chief executive of Vibrant Clean Energy and a former NOAA researcher.],
-  [style="background: rgb(237, 237, 237); border: 0px; font-family: NeueHaas, sans-serif; margin-bottom: 25px; padding: 0px; vertical-align: baseline;"\>
-Jacobson was the lead author of a  2015 paper  in the same journal that concluded wind, solar, and hydroelectric sources alone could supply 100 percent of the U. S. grid's needs, all at low cost.],
-  [style="background: rgb(237, 237, 237); border: 0px; font-family: NeueHaas, sans-serif; margin-bottom: 25px; padding: 0px; vertical-align: baseline;"\>
-Many other energy researchers have long argued that additional technologies, such as nuclear energy, carbon capture, and advanced storage options, will be required to decarbonize the electricity sector, particularly in a cost-competitive manner.],
-  [style="background: rgb(237, 237, 237); border: 0px; font-family: NeueHaas, sans-serif; margin-bottom: 25px; padding: 0px; vertical-align: baseline;"\>
-Earlier this year, Clack and 20 other researchers published a response arguing that, as  MIT Technology Review  previously reported, Jacobson's paper "contained modeling errors and implausible assumptions that could distort public policy and spending decisions." (For more details on the researchers' critiques, check out our earlier article on the Clack paper: " Sustainable Energy Scientists Sharply Rebut Influential Renewable-Energy Plan .")],
-  [Jacobson wrote (what seemed to me at the time) a very bad paper. At least the climate modeling makes no sense, which caused me to doubt the rest of it.],
-  [It got into PNAS without peer review. (That journal has a publication mechanism that allows some non-peer-reviewed articles.)],
-  [If I and many others are right that his work is poor, that doesn't mean his conclusion is wrong, just that the paper shouldn't be relied upon as evidence that his conclusion is right.],
-  [Normally, bad work is quietly ignored, but this was getting enough publicity that a multidisciplinary team of highly regarded authors hastened to put together a rebuttal, and ran it through peer review.
-Rather than correcting, amending, or defending his work, Jacobson chose to treat the challenge as libelous. This is inexcusable, even if the paper somewhat misrepresented Jacobson as he claims.],
-  [(It is difficult to correctly represent incoherent argument, of course. If one criticizes one part of the argument it may be inconsistent with another part of the argument. )],
-  [The context is that Jacobson is telling people what they want to hear, specifically that 100% renewable energy is possible with little cost or effort. That doesn't make him one of the good guys.],
-  [This is not a schism within science. It's an attack on science from someone who doesn't accept the norms of science.],
-  [Attacks on science can't be tolerated, whether they come from people who tell you what you want to hear or people who tell your opponents what they want to hear.],
-  [By taking this dispute outside the norms of science and into the courts, Jacobson essentially is rejecting and subverting science. His actions should not be seen as reflecting on the scientific community.
-Without science, we are flying blind. Jacobson's behaviour is ridiculous, and the scientific community is having none of it. I hope the activist community, which claims to be such a strong supporter of science, backs us up.],
+  [class="dropcaps"\>The story of Genie Wiley sounds like the stuff of fairytales: An unwanted, mistreated child survives brutal imprisonment at the hands of her father and is rediscovered and reintroduced to the world in an impossibly youthful state. Unfortunately for Wiley, hers is a dark, real-life tale with no happy ending.],
+  [Genie Wiley was separated from any form of socialization and society for the first 13 years of her life. Her intensely abusive father and helpless mother so neglected Wiley that she hadn’t learned to speak and her growth was so stunted that she looked like she was no more than eight years old.],
+  [Her intense trauma proved something of a godsend to scientists of various fields including psychology and linguistics, though they were later accused of exploiting the child for their research on learning and development. But Genie Wiley’s case did beg the question: what does it mean to be human?],
+  [This is the haunting story of Genie Wiley.],
+  [The Horrifying Upbringing That Turned Genie Wiley Into A “Feral Child”],
+  [Genie isn’t the Feral Child’s real name. She was given the name to protect her identity once she became a spectacle of scientific research and awe.],
+  [Susan Wiley was born in 1957 to Clark Wiley and his much-younger wife Irene Oglesby. Oglesby was a Dust Bowl refugee who had drifted to the Los Angeles area where she met her husband. He was a former assembly-line machinist raised in and out of brothels by his mother. This childhood had a profound effect on Clark, as for the rest of his life he fixated on the figure of his mother.],
+  [Clark Wiley never wanted children. He hated the noise and stress they brought along. Nonetheless, the first baby girl did come along and Clark left the child in the garage to freeze to death when she wouldn’t be quiet.],
+  [The Wiley’s second baby died of a congenital defect, and then came along Genie Wiley and her brother John. While her brother also faced their father’s abuse, it was nothing compared to Susan’s suffering.],
+  [Though he was always a bit off, the death of Clark Wiley’s mother by a drunk driver in 1958 seemed to undo him completely. The end to the complicated relationship they shared fanned his cruelty into a bonfire.],
+  [Clark Wiley decided that his daughter was mentally disabled and that she would be useless to society. Thus, he banished society from her. No one was allowed to interact with the girl who was mostly locked in a blacked-out room or in a makeshift cage. He kept her strapped into a toddler toilet as a sort of straight-jacket, and she wasn’t potty-trained.],
+  [Clark Wiley would hit her with a large plank of wood for any infraction. He’d growl outside her door like a deranged guard dog, instilling a lifelong fear of clawed animals in the girl. Some experts believe sexual abuse may have been involved, due to Wiley’s later sexually inappropriate behavior, particularly involving older men.],
+  [In her own words, Genie Wiley, the Feral Child recalled :],
+  [“Father hit arm. Big wood. Genie cry… Not spit. Father. Hit face — spit. Father hit big stick. Father is angry. Father hit Genie big stick. Father take piece wood hit. Cry. Father make me cry.”],
+  [She had spent 13 years living this way.],
+  [Genie Wiley’s Salvation From Torment],
+  [Genie Wiley’s mother was nearly blind which she later said kept her from interceding on her daughter’s behalf. But one day, 14 years after Genie Wiley’s first introduction to her father’s cruelty, her mother did finally muster her courage and leave.],
+  [In 1970, she stumbled into social services, mistaking it for the office where they’d give aid to the blind. The office workers’ antennae were immediately raised when they noticed the young girl acting so strangely, hopping like a bunny instead of walking.],
+  [Genie Wiley was then nearly 14 but she looked no more than eight.],
+  [An abuse case was immediately opened against both parents, but Clark Wiley would kill himself shortly before trial. He left behind a note which read: “The world will never understand.”],
+  [Genie became a ward of the state. She knew but a few words when she entered UCLA’s Children’s Hospital and was dubbed by medical professionals there as “the most profoundly damaged child they had ever seen.”],
+  [Genie Wiley’s case soon enchanted scientists and physicians who applied for and were awarded a grant by the National Institute of Mental Health to study her. The team explored the “Developmental Consequence of Extreme Social Isolation” for four years from 1971 to 1975.],
+  [For those four years, Genie Wiley became the center of these scientists’ lives. “She wasn’t socialized, and her behavior was distasteful,” began Susie Curtiss, a linguist intimately involved in the feral child study, “but she just captivated us with her beauty.”],
+  [But also for those four years, Wiley’s case tested the ethics of a relationship between a subject and their researcher. Genie Wiley would come to live with many of the team members who observed her which was not only a huge conflict of interest but also potentially begat another abusive relationship in her life.],
+  [Researchers Begin Experimenting On The “Feral Child”],
+  [Genie Wiley’s discovery timed precisely with an uptick in the scientific study of language. To language scientists, Wiley was a blank slate, a way to understand what part language has in our development and vice versa. In a twist of dramatic irony, Genie Wiley now became deeply wanted.],
+  [One of the foremost tasks of the “Genie Team” was to establish which came first: Wiley’s abuse or her lapse in development. Did Wiley’s developmental delay come as a symptom of her abuse, or was Wiley born challenged?],
+  [Up until the late 1960s, it was largely believed by linguists that children could not learn language after puberty. But Genie the Feral Child disproved this. She had a thirst for learning and curiosity and her researchers found her “highly communicative.” It turned out that Wiley could learn language, but grammar and sentence structure was another thing entirely.],
+  [“She was smart,” Curtiss said. “She could hold a set of pictures so they told a story. She could create all sorts of complex structures from sticks. She had other signs of intelligence. The lights were on.”],
+  [Genie Wiley showed that grammar becomes inexplicable to children without training between five and 10, but communication and language remains entirely attainable. Wiley’s case also posed some more existential questions about the human experience.],
+  [“Does language make us human? That’s a tough question,” said Curtiss. “It’s possible to know very little language and still be fully human, to love, form relationships and engage with the world. Genie definitely engaged with the world. She could draw in ways you would know exactly what she was communicating.”],
+  [As such, Wiley could construct simple phrases to convey what she wanted or was thinking, like “applesauce buy store,” but the nuances of a more sophisticated sentence structure were out of her grasp. This demonstrated that language is different from thought.],
+  [Curtiss explained that “For many of us, our thoughts are verbally encoded. For Genie Wiley, her thoughts were virtually never verbally encoded, but there are many ways to think.”],
+  [Genie the Feral Child’s case did help to establish that there is a point beyond which total language fluency is impossible if the subject does not already speak one language fluently.],
+  [According to Psychology Today :],
+  [“The case of Genie confirms that there is a certain window of opportunity that sets the limit for when you can become relatively fluent in a language. Of course, if you already are fluent in another language, the brain is already primed for language acquisition and you may well succeed in becoming fluent in a second or third language. If you have no experience with grammar, however, Broca’s area remains relatively hard to change: you cannot learn grammatical language production later on in life.”],
+  [The Continued Exploitation Of Genie Wiley],
+  [For all their contributions to understanding human nature, the “Genie Team” was not without its critics. For one thing, each of the scientists on the team accused each other of abusing their position and relationships with Genie Wiley the feral child.],
+  [For instance, in 1971, language teacher Jean Butler obtained permission to bring Wiley home with her for socialization purposes. Butler was able to contribute some integral insights on Wiley in this environment, including the feral child’s fascination with collecting buckets and other containers that stored liquid, a common trait amongst other children who have faced extreme isolation. She also saw that Genie Wiley was beginning puberty at this time, a sign that her health was strengthening.],
+  [The arrangement went along well enough for a time until Butler claimed she caught Rubella and would need to quarantine herself and Wiley. Their temporary situation turned more permanent. Butler turned away the other physicians on the “Genie Team” claiming that they were subjecting her to too much scrutiny. She applied for the foster care of Wiley as well.],
+  [Later, Butler was accused by other members of the team of exploiting Wiley. They said Butler believed her young ward would make her “the next Anne Sullivan,” the teacher who helped Helen Keller to become more than invalid.],
+  [As such, Genie Wiley later went to live with the family of therapist David Rigler, another member of the “Genie Team.” As far as Genie Wiley’s luck would allow, this seemed to be a good fit for her and a time to develop and discover the world with people who genuinely cared for her well-being.],
+  [The arrangement also gave the “Genie Team” more access to her. As Curtiss later wrote in her book Genie: A Psycholinguistic Study of a Modern-Day Wild Child :],
+  [“One particularly striking memory of those early months was an absolutely wonderful man who was a butcher, and he never asked her name, he never asked anything about her. They just connected and communicated somehow. And every time we came in — and I know this was so with others, as well — He would slide open the little window and hand her something that wasn’t wrapped, a bone of some sort, some meat, fish, whatever. And he would allow her to do her thing with it, and to do her thing, what her thing was, basically, was to explore it tactilely, to put it up against her lips and feel it with her lips and touch it, almost as if she were blind.”],
+  [Wiley remained an expert in non-verbal communication and had a way of expressing her thoughts to people even if she couldn’t speak to them.],
+  [Rigler, too, recalled how one time a father and his young son carrying a fire engine passed by Genie Wiley. “And they just passed,” Rigler remembered. “And then they turned around and came back, and the boy, without a word, handed the fire engine to Genie. She never asked for it. She never said a word. She did this kind of thing, somehow, to people.”],
+  [Despite the progress she displayed at the Riglers’, once the funding ended for the study in 1975, Wiley went to live with her mother for a brief period. In 1979, her mother filed a lawsuit against the hospital and her daughter’s individual caregivers, including the scientists on the “Genie Team,” alleging they exploited Wiley for “prestige and profit.” The suit was settled in 1984 and Wiley’s contact with her researchers all but entirely severed.],
+  [Wiley was eventually placed in a number of foster homes, some of which were also abusive. There Wiley was beaten for vomiting and regressed greatly. She never regained the progress she had made.],
+  [Genie Wiley’s present life is little-known; once her mother took custody, she refused to let her daughter be the subject of any more studies. Like so many people with special needs, she fell through the cracks of proper care.],
+  [Wiley’s mother died in 2003, her brother John in 2011, and her niece Pamela in 2012. Russ Rymer, a journalist, tried to piece together what led to the dissolution of Wiley’s team, but he found the task challenging as the scientists had all divided on who was exploitative and who had the feral child’s best interests in mind. “The tremendous rift complicated my reporting,” Rymer said. “That was also part of the breakdown that turned her treatment into such a tragedy.”],
+  [He later recalled visiting Susan Wiley on her 27th birthday and seeing:],
+  [“A large, bumbling woman with a facial expression of cowlike incomprehension… her eyes focus poorly on the cake. Her dark hair has been hacked off raggedly at the top of her forehead, giving her the aspect of an asylum inmate.”],
+  [Despite this, Genie Wiley is not forgotten by those that cared about her.],
+  [“I’m pretty sure she’s still alive because I’ve asked each time I called and they told me she’s well,” Curtiss said. “They never let me have any contact with her. I’ve become powerless in my attempts to visit her or write to her. I think my last contact was in the early 1980s.”],
+  [Curtiss added in a 2008 interview that she has “spent the last 20 years looking for her… I can get as far as the social worker in charge of her case, but I can’t get any farther.”],
+  [As of 2008, Wiley was in an assisted living facility in Los Angeles.],
+  [Genie Wiley’s story is not a happy one as she drifted from one abusive situation to another, and by all accounts, was denied and failed by society at every step. But, one can hope that wherever she is, she continues to find joy in discovering the still-new world around her, and instills in others the fascination and affection that she had for her researchers.],
+  [After this look at Genie Wiley the Feral Child, read about teenage murderer Zachary Davis and Louise Turpin , the woman who kept her children captive for decades.],
+  [The post Abandoned, Abused, And Exploited: Inside The Tragic Life Of The Genie Wiley appeared first on All That's Interesting .],
 ),
   insert-map: (:),
-  word-count: 634,
+  word-count: 2521,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -275,6 +363,122 @@ Without science, we are flying blind. Jacobson's behaviour is ridiculous, and th
 ),
   insert-map: (:),
   word-count: 796,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+}
+
+{
+  #standard-article(
+  title: [My philosophy for productive instant messaging],
+  author: [Drew DeVault],
+  source-name: [Drew DeVault],
+  images: (),
+  paragraphs: (
+  [We use Internet Relay Chat ( IRC ) extensively at sourcehut for
+real-time group chats and one-on-one messaging. The IRC protocol is quite
+familiar to hackers, who have been using it since the late 80’s. As chat rooms
+have become more and more popular among teams of both hackers and non-hackers in
+recent years, I would like to offer a few bites of greybeard wisdom to those
+trying to figure out how to effectively use instant messaging for their own
+work.],
+  [For me, IRC is a vital communication tool, but many users of 1 find it frustrating, often to the
+point of resenting the fact that they have to use it at all. Endlessly catching
+up on discussions they missed, having their workflow interrupted by unexpected
+messages, searching for important information sequestered away in a discussion
+which happened weeks ago… it can be overwhelming and ultimately reduce your
+productivity and well-being. Why does it work for me, but not for them? To find
+out, let me explain how I think about and use IRC.],
+  [The most important trait to consider when using IM software is that it is
+ ephemeral , and must be treated as such. You should not “catch up” on
+discussions that you missed, and should not expect others to do so, either. Any
+important information from a chat room discussion must be moved to a more
+permanent medium, such as an email to a mailing list, 2 a ticket filed in a
+bug tracker, or a page updated on a wiki. One very productive use of IRC for me
+is holding a discussion to hash out the details of an issue, then writing up a
+summary up for a mailing list thread where the matter is discussed in more
+depth.],
+  [I don’t treat discussions on IRC as actionable until they are shifted to another
+mode of discussion. On many occasions, I have discussed an issue with someone on
+IRC, and once the unknowns are narrowed down and confirmed to be actionable, ask
+them to follow-up with an email or a bug report. If the task never leaves IRC,
+it also never gets done. Many invalid or duplicate tasks are filtered out by
+this approach, and those which do get mode-shifted often have more detail than
+they otherwise might, which improves the signal-to-noise ratio on my bug
+trackers and mailing lists.],
+  [I have an extensive archive of IRC logs dating back over 10 years, tens of
+gigabytes of gzipped plaintext files. I reference these logs perhaps only two or
+three times a year, and often for silly reasons, like finding out how many swear
+words were used over some time frame in a specific group chat, or to win an
+argument about who was the first person to say “yeet” in my logs. I almost never
+read more than a couple dozen lines of the backlog when starting up IRC for the
+day.],
+  [Accordingly, you should never expect anyone to be in the know for a discussion
+they were not present at. This also affects how I use “highlights”. 3 Whenever
+I highlight someone, I try to include enough context in the message so that they
+can understand why they were mentioned without having to dig through their logs,
+even if they receive the notification hours later.],
+  [Bad :],
+  [minus: ping
+ what is the best way to frob foobars?],
+  [Good :],
+  [minus: do you know how to frob foobars?],
+  [I will also occasionally send someone a second highlight un-pinging them if the
+question was resolved and their input is no longer needed. Sometimes I will 
+send a vague “ping ” example when I actually want them to
+participate in the discussion right now , but if they don’t answer immediately
+then I will usually un-ping them later. 4],
+  [This draws attention to another trait of instant messaging: it is
+ asynchronous . Not everyone is online at the same time, and we should adjust
+our usage of it in consideration of this. For example, when I send someone a
+private message, rather than expecting them to engage in a real-time dialogue
+with me right away, I dump everything I know about the issue for them to review
+and respond to in their own time. This could be hours later, when I’m not
+available myself!],
+  [Bad :],
+  [hey emersion, do you have a minute?
+\*8 hours later\*
+ yes?
+\*8 hours later\*
+ what is the best way to frob foobars?
+\*8 hours later\*
+ did you try mongodb?],
+  [Good : 5],
+  [hey emersion, what's the best way to frob foobars?
+ I thought about mongodb but they made it non-free
+\*10 minutes later\*
+ update: considered redis, but I bet they're one bad day away from making that non-free too
+\*8 hours later\*
+ good question
+ maybe postgresql? they seem like a trustworthy bunch
+\*8 hours later\*
+ makes sense. Thanks!],
+  [This also presents us a solution to the interruptions problem: just don’t answer
+right away, and don’t expect others to. I don’t have desktop or mobile
+notifications for IRC. I only use it when I’m sitting down at my computer, and I
+“pull” notifications from it instead of having it “push” them to me — that
+is, I glance at the client every now and then. If I’m in the middle of
+something, I don’t read it.],
+  [With these considerations in mind, IRC has been an extraordinarily useful tool
+for me, and maybe it can be for you, too. I’m not troubled by interruptions to
+my workflow. I never have to catch up on a bunch of old messages. I can
+communicate efficiently and effectively with my team, increasing our
+productivity considerably, without worrying about an added source of stress. I
+hope that helps!],
+  [id="fn:1"\>],
+  [Many, many companies have tried, and failed, to re-invent IRC, usually within a proprietary walled garden. I offer my condolences if you find yourself using one of these.  ↩︎],
+  [id="fn:2"\>],
+  [Email is great. If you hate it you might be using it wrong .  ↩︎],
+  [id="fn:3"\>],
+  [IRC terminology for mentioning someone’s name to get their attention. Some platforms call this “mentions”.  ↩︎],
+  [id="fn:4"\>],
+  [I occasionally forget to… apologies to anyone I’ve annoyed by doing that.  ↩︎],
+  [id="fn:5"\>],
+  [I have occasionally annoyed someone with this strategy. If they have desktop notifications enabled, they might see 10 notifications while I fill their message buffer with more and more details about my question. Sounds like a “you” problem, buddy 😉  ↩︎],
+),
+  insert-map: (:),
+  word-count: 1069,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -353,7 +557,190 @@ for you.],
   debug-mode: false,
 )
 
-  #pull-quote([Flask is small and what code it does bring to the table is highly pluggable.], [Drew DeVault])
+}
+
+{
+  #standard-article(
+  title: [How To Roast Perfect Pumpkin Seeds – Easy, Crunchy, Addictive!],
+  author: [Angela Liddon (Oh She Glows)],
+  source-name: [Oh She Glows],
+  images: (),
+  paragraphs: (
+  [The first time I roasted pumpkin seeds, I burned the crap out of them.],
+  [It was heart-breaking, especially since I wasn’t convinced it was even worth the effort in the first place. All that seed cleaning and pumpkin de-stringing – I didn’t even get to enjoy the fruits of my labour. Hrmph.],
+  [Here is the part that no one told me about: The inner seeds cook much faster than the outer shell. I kept peeking in the oven and everything looked fine on the outside. Little did I know, the inner seeds were burnt to smithereens.],
+  [Well, thank goodness I didn’t give up after that first miserable attempt! My life just wouldn’t be complete without roasted pumpkin seeds.],
+  [I’m happy to say, the second batch didn’t just work, it blew my mind! The cup of seeds I roasted did not last long between the two of us. Every pass by the kitchen was an excuse to grab a crispy handful off the pan.],
+  [Today, I’m sharing my secrets for a fantastic batch of roasted pumpkin seeds. If you’ve ever doubted they were worth the effort or had so-so results, I beg you to try this one last time. Only I know it won’t be the last time, but the start of a life-long obsession. Watch out pumpkins, we’re coming for ya!],
+  [How To Roast Pumpkin Seeds:],
+  [1. Clean the seeds. The annoying-but-necessary task is that you have to meticulously clean the seeds until there are no signs of pumpkin guts. The best way to do this (that I have discovered from your comments!) is to plunk the seeds + guts into a big bowl of water and use your hands to break it apart. The seeds will float to the top of the water! They clean much faster this way.],
+  [Note : Some of you say that sugar pumpkin seeds yield much crispier seeds than carving pumpkins. I used sugar pumpkin seeds and mine were certainly super crispy!],
+  [2. Boil for 10 minutes in salt water. Using Elise’s method for inspiration, I added the pumpkin seeds to a medium-sized pot of water along with 1 tsp salt. Bring it to a boil and reduce the heat to simmer, uncovered, for about 10 minutes over low-medium heat. Apparently, this method helps make the pumpkin seeds easier to digest and produces a crispy outer shell during roasting. If you are short on time, you can totally skip this step! They will still turn out lovely.],
+  [3. Drain the seeds in a colander and dry lightly with a paper towel or tea towel. The seeds will stick to the towel, but just rub them off with your fingers. Don’t worry, they don’t have to be bone dry – just a light pat down.],
+  [4. Spread seeds onto a baking sheet and drizzle with extra virgin olive oil (I only needed to use about 1/2-1 tsp). Massage oil into seeds and add a generous sprinkle of Herbamare (or fine grain sea salt will do). Try to spread out the seeds as thin as possible with minor overlapping.],
+  [5. Roast seeds at 325 ° F for 10 minutes. Remove from oven and stir. Roast for another 8-10 minutes (if your oven temp is wonky, this bake time could vary a lot!). During the last 5 minutes of roasting, remove a few seeds and crack open to make sure the inner seeds are not burning (you don’t want the inner seed brown). Cool a couple and pop them into your mouth to test. They are ready when the shell is super crispy and easy to bite through. The inner seed should have only a hint of golden tinge to it. They should not be brown.],
+  [6. EAT! Remove from oven, add a bit more Herbamare, and dig in! Ah, so good, so good! There is no need to remove the outer shell; it’s quite possibly the best part.],
+  [I had no idea I was going to love freshly roasted pumpkin seeds so much. I love how crispy the outer shell is and how fun it is to crunch. They taste a bit like popcorn, but they are much crunchier, filling, and of course packed with nutrition.],
+  [Yes, pumpkin seeds are super healthy for you! They are packed with iron, magnesium, fibre, zinc, potassium, healthy fats, protein, and tryptophan (which can boost your mood and help you sleep). Vegans & vegetarians have been using pumpkin seeds for years as a natural source of iron. I think it’s just about my favourite way to get iron, next to Iron Woman Gingerbread Smoothies , of course. Be sure to pair it with Vitamin C to absorb the most iron you can.],
+  [7. Share with some very lucky people! (but chose them wisely…)],
+  [I promise you’ll never throw the seeds out again.],
+  [I want to buy pumpkins just to be able to roast another batch of seeds. And of course, make homemade pumpkin puree . I’m already looking forward to making some different flavour combos – maybe garlic powder, cayenne, rosemary, brown sugar or cinnamon, nutmeg, ground cloves, etc would both be nice to try out? I can’t wait to experiment…many ideas are a-swirlin’ in my…stomach.],
+  [Looking for more pumpkin recipes?],
+  [Creamy Pumpkin Pie Smoothie for Two],
+  [How to roast a sugar pumpkin],
+  [All Natural Pumpkin Butter from Scratch (the bomb!!)],
+  [Pumpkin Pie Chia Pudding Parfait],
+  [and more than 20 more pumpkin recipes !],
+  [What spices would YOU put on your roasted pumpkin seeds?],
+  [class="osg\_book\_hero\_\_desc"\>Featuring all new, protein-packed salads, hearty toppers, flavour boosters, and dressings you'll want to drink, my new cookbook will transform the way you think about salads. Oh, and be sure to flip to the back for a surprise dessert chapter!],
+  [This is my go-to method for roasting a sugar pumpkin and its seeds at the same time! Most recipes tend to provide instructions on roasting them separately, but I wanted to come up with directions on how to roast them both simultaneously. And, luckily, I've discovered it couldn't be easier.],
+  [Preheat the oven to 325°F (160°C) and place two racks near the centre of the oven. Grab two rimmed medium-sized baking sheets and line one of them with parchment paper.],
+  [Fill a medium-sized bowl with water and set aside. Lie an absorbent towel onto the counter next to the bowl.],
+  [Slice off the pumpkin stem and discard.],
+  [Place the pumpkin, cut side down, onto a cutting board. Carefully slice the pumpkin in half.],
+  [Scoop out the pumpkin seeds and flesh/strings and place it all into the bowl of water. The seeds will float to the top (like magic!). Using your hands, grab the big chunks of flesh and pick off any attached seeds. Place the seeds back into the bowl of water. Discard/compost the chunks of flesh.],
+  [Use a slotted spoon to remove the seeds. Let excess water drip off and then place the seeds onto the towel. Blot dry (the seeds don’t have to be bone dry and it’s okay if there are some strands attached—they add flavour!).],
+  [Spread the seeds onto the baking sheet without the parchment and toss with 1 teaspoon of oil. Spread the seeds out into a single layer and sprinkle with salt.],
+  [Mist or spread oil all over the inside of each pumpkin half and then sprinkle with salt and pepper. Place each half cut-side down onto the lined baking sheet.],
+  [Place both sheets into the oven with the seeds on the lower rack. Roast at 325°F (160°C) for 20 minutes then remove the seeds and taste test a couple. As long as the inner seeds aren't tasting burned, you can keep roasting them. I usually return the seeds to the oven for another 3 to 4 minutes. Remove the seeds and cool.],
+  [Leave the pumpkin in the oven and increase the oven temp to 350°F (180°C). Continue roasting the pumpkin for another 12 minutes or so, until fork-tender. (The timing may vary based on how large and fresh your pumpkin is.) At this point you can slice it up and serve it as a side vegetable with your meal, or process/blend the flesh to make homemade pumpkin purée.],
+  [Tip:],
+  [\* One sugar pumpkin (roughly 2 3/4 pounds) yields about 4 cups (720 g) of roasted pumpkin flesh and 3/4 cup (75 g) seeds.],
+  [(click to expand)],
+  [style="display: none;"\>Serving Size 1 cup roasted pumpkin, 3 tbsp seeds | Calories 180 calories | Total Fat 11 grams
+Saturated Fat 2.5 grams | Sodium 250 milligrams | Total Carbohydrates 14 grams
+Fiber 3 grams | Sugar 6 grams | Protein 7 grams],
+  [Nutritional info uses 1/2 teaspoon fine sea salt and 2 teaspoons extra-virgin olive oil. 
+ \* Nutrition data is approximate and is for informational purposes only.],
+  [Pinterest 
+ 
+ 
+ 
+ 
+ Share on X],
+  [If you've made this recipe I'd love to see it.],
+  [Tag \@ohsheglows on Instagram and hashtag \#ohsheglows so that we can all take a look!],
+  [The post How To Roast Perfect Pumpkin Seeds – Easy, Crunchy, Addictive! appeared first on Oh She Glows .],
+),
+  insert-map: (:),
+  inline-pq: pull-quote([Roast for another 8-10 minutes (if your oven temp is wonky, this bake time could vary a lot!).], [Angela Liddon (Oh She Glows)]),
+  inline-pq-idx: 18,
+  word-count: 1618,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+}
+
+{
+  #standard-article(
+  title: [Process scheduling and multitasking in KnightOS],
+  author: [Drew DeVault],
+  source-name: [Drew DeVault],
+  images: (),
+  paragraphs: (
+  [I’m going to do some blogging about technical decisions made with
+ KnightOS . It’s an open-source project I’ve been working
+on for the past four years to build an open-source Unix-like kernel for TI
+calculators (in assembly). It’s been a cool platform on top of which I can
+research low level systems concepts and I thought I’d share some of my findings
+with the world.],
+  [So, first of all, what is scheduling? For those who are completely out of the],
+  [loop, I’ll explain what exactly it is and why it’s neccessary. Computers run on],
+  [a CPU, which executes a series of instructions in order. Each core is not],
+  [capable of running several instructions concurrently. However, you can run],
+  [hundreds of processes at once on your computer (and you probably are doing so],
+  [as you read this article). There are a number of ways of accomplishing, but the],
+  [one that suits the most situations is preemtive multitasking . This is what],
+  [KnightOS uses. You see, a CPU can only execute one instruction after another,],
+  [but you can “raise an interrupt”. This will halt execution and move to some],
+  [other bit of code for a moment. This can be used to handle various events (for],
+  [example, the GameBoy raises an interrupt when a button is pressed). One of],
+  [these events is often a timer, which raises an interrupt at a fixed interval.],
+  [This is the mechanism by which preemptive multitasking is accomplished.],
+  [Let’s say for a moment that you have two programs loaded into memory and
+running, at addresses 0x1000 and 0x2000. Your kernel has an interrupt handler
+at 0x100. So if program A is running and an interrupt fires, the following
+happens:],
+  [0x1000 is pushed to the stack as the return address],
+  [The program counter is set to 0x100 and the interrupt runs],
+  [The interrupt concludes and returns, which pops 0x1000 from the stack and
+into the program counter.],
+  [Once the interrput handler runs, however, the kernel has a chance to be sneaky:],
+  [0x1000 is pushed to the stack as the return address],
+  [The program counter is set to 0x100 and the interrupt runs],
+  [The interrupt removes 0x1000 from the stack and puts 0x2000 there instead],
+  [The interrupt concludes and returns, which pops 0x2000 from the stack and
+into the program counter.],
+  [Now the interrupt has switched the CPU from program A to program B. And the
+next time an interrupt occurs, the kernel can switch from program B to program
+A. This event is called a “context switch”. This is the basis of preemptive
+multitasking. On top of this, however, there are lots of ideas around which
+processes should get CPU time and when. Some systems have more complex
+schedulers, but KnightOS runs on limited hardware and I wanted the context
+switch to be short and sweet so that the running processes get as much of the
+CPU as possible. I’ll explain the simple KnightOS scheduling algorithm here.
+First, its goals:],
+  [Short and simple context switches],
+  [Ability to suspend processes when not in foreground],
+  [Ability to run background processes],
+  [What KnightOS uses is a simple round robin with the ability to suspend threads.
+That is, we have a list of processes and then some flags, among which is
+whether or not the processes is currently suspended. So say we have this list
+of processes in memory:],
+  [1: PC=0x2000, not suspended],
+  [2: PC=0x2000, not suspended],
+  [3: PC=0x2000, suspended],
+  [4: PC=0x2000, not suspended],
+  [As process 1 is running and an interrupt fires, the kernel looks at this table
+and picks the next non-suspended process to run - process 2. On the next
+interrupt, it does it again, skipping process 3 and giving time to process 4.],
+  [To actually implement this, we have to think about the stack. KnightOS runs on
+z80 processors, which have a single stack and a shared memory space. The CPU
+uses the PC register to keep track of which address the current instruction is
+at. That is, say you compile this code:],
+  [ld a, 10
+inc a
+ld (hl), a],
+  [This compiles to the machine code 3E 0A 3C 77. Say we load this program at
+0x8000 - then 0x8000 will point to ld a, 10 . When the CPU finishes executing
+this instruction, it advances PC to 0x8002 (since ld a, 10 is a two-byte
+instruction). The next instruction it executes will be inc a , and then PC
+advances to 0x8003.],
+  [The stack is used for a lot of things. It can be used to save values, and it is
+used to call subroutines. It is also used for interrupts. It’s like the same
+stacks you use in higher level applications, but it’s at a very low level. When
+an interrupt fires, the current value of PC is pushed to the stack. Then PC is
+set to the interrupt routine, and then when that’s done the top of the stack is
+removed and placed into PC (effectively returning control to the original
+location). However, since the stack is used for much more than that, we have
+additional things to consider.],
+  [In KnightOS, when a new process starts, it’s allocated a stack in memory and
+the CPU’s stack pointer (SP) is set to its address. When an interrupt happens,
+we need to change the stack to point at some other process so it has time to
+run (since that’s where its PC is). However, we need to make sure that the
+first processes stack is left intact. Since we allocate a new stack for the
+next process, we can simply change SP to that processes stack. This will leave
+behind the value of PC that was pushed during the interrupt for the previous
+process, and lo and behlod a similar value of PC is waiting on top of the other
+processes stack.],
+  [So that’s it! We do a simple round robin, skipping suspended processes and
+following the procedure outlined above to switch between them. This is how
+KnightOS shares one CPU with several “concurrent” processes. Operating systems
+like Linux use more complicated schedulers with more interesting theory if
+you’d like some additional reading. And of course, since KnightOS is open
+source, you may enjoy reading all of our code for handling this stuff (in
+assembly):],
+  [Context switching],
+  [Stack allocation during process creation],
+  [We’re hanging out on \#knightos on Freenode if you want to chat about cool
+low-level stuff like scheduling and memory management.],
+),
+  insert-map: (:),
+  word-count: 1066,
+  edited-for-length: false,
+  debug-mode: false,
+)
 
 }
 
@@ -525,1011 +912,7 @@ lot of work ahead of them: good luck.],
   [And there’s no guarantee that it will, for the record.  ↩︎],
 ),
   insert-map: (:),
-  inline-pq: pull-quote([Much of their marketing speaks of the ability to revoke access to your private information  after a third-party has been provided access to it.], [Drew DeVault]),
-  inline-pq-idx: 34,
   word-count: 1905,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-}
-
-{
-  #standard-article(
-  title: [Using the right tool for the job],
-  author: [Drew DeVault],
-  source-name: [Drew DeVault],
-  images: (),
-  paragraphs: (
-  [One of the most important choices you’ll make for the software you write is what
-you write it in, what frameworks you use, the design methodologies to subscribe
-to, and so on. This choice doesn’t seem to get the respect it’s due. These are
-some of the only choices you’ll make that you cannot change . Or, at least,
-these choices are among the most difficult ones to change.],
-  [People often question why TrueCraft is written in C\# next to projects like Sway
-in C, alongside KnightOS in Assembly or sr.ht in Python. It would certainly be
-easier from the outset if I made every project in a language I’m comfortable
-with, using tools and libraries I’m comfortable with, and there’s certainly
-something to be had for that. That’s far from being the only concern, though.],
-  [A new project is a great means of learning a new language or framework - the
-only effective means, in fact. However, the inspiration and drive for new
-projects doesn’t come often. I think that the opportunity for learning is more
-important than the short term results of producing working code more quickly.
-Making a choice that’s more well suited to the problem at the expense of comfort
-will also help your codebase in the long run. Why squander the opportunity to
-choose something unfamiliar when you have the rare opportunity to start working
-on a new project?],
-  [I’m not advocating for you to use something new for every project, though. I’m
-suggesting that you detatch your familiarity with your tools from the
-decision-making process. I often reach for old tools when starting a new
-project, but I have learned enough about new tools that I can judge what
-projects are a good use-case for them. Sometimes this doesn’t work out, too - I
-just threw away and rewrote a prototype in C after deciding that it wasn’t a
-good candidate for Rust.],
-  [Often it does work out, though. I’m glad I chose to learn Python for MediaCrush
-despite having no experience with it (thanks again for the help with that,
-Jose!). Today I still know it was the correct choice and knowing it has hugely
-expanded my programming skills, and without that choice there probably wouldn’t
-have been a Kerbal Stuff or a sr.ht or likely even the new API we’re working on
-at Linode. I’m glad I chose to learn C for z80e, though I had previously written
-emulators in C\#. Without it there wouldn’t be many other great tools in the
-KnightOS ecosystem written in C, and there wouldn’t be a Sway or an aerc. I’m
-glad I learned ES6 and React instead of falling back on the familiar Knockout.js
-when building prototypes for the new Linode manager as well.],
-  [Today, I have a mental model of the benefits and drawbacks of a lot of
-languages, frameworks, libraries, and platforms I don’t know how to use. I’m
-sort of waiting for projects that would be well suited to things like Rust or
-Django or Lisp or even Plan 9. Remember, the skills you already know make for a
-great hammer, but you shouldn’t nail screws to the wall.],
-),
-  insert-map: (:),
-  word-count: 527,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-  #pull-quote([I’m glad I chose to learn Python for MediaCrush despite having no experience with it (thanks again for the help with that, Jose!).], [Drew DeVault])
-
-}
-
-{
-  #standard-article(
-  title: [Archaeologists Just Uncovered A 2,100-Year-Old Sling Bullet Inscribed With The Message ‘Learn Your Lesson’],
-  author: [Kaleena Fraga],
-  source-name: [All That's Interesting],
-  images: (),
-  paragraphs: (
-  [class="dropcaps"\>During excavations in the ancient city of Hippos (also known as Sussita) in the Golan Heights, archaeologists found a small sling bullet that dates back 2,100 years. Such ancient relics have been unearthed many times in this area, but this one stood out. Upon closer examination, archaeologists realized that it bore an inscription.],
-  [On the side of the bullet, written in Greek, someone had carved out the letters “ΜΑΘΟΥ.” This is Greek for “learn,” and researchers believe that a defender of Hippos fired the sling bullet at an enemy invader in order to convey the message “learn your lesson.”],
-  [The Inscribed Sling Bullet Found Among Ancient Ruins In The Golan Heights],
-  [According to a study from the University of Haifa , archaeologists came across the sling bullet during excavations in Hippos in late 2025. The bullet was found with a metal detector near the riverbed of the Sussita Stream, and though 70 sling bullets had already been found, this one stood out.],
-  [Almond-shaped and made of lead, the bullet is roughly 1.3 inches long and weighs 1.6 ounces. On its side is an inscription in Greek: “ΜΑΘΟΥ,” translated as “learn.” Though sling bullets inscribed with words have been found elsewhere, the sling bullets in Hippos have so far only had threatening images, like scorpions or thunderbolts. This is the first bullet found in Hippos to bear a linguistic inscription, and archaeologists believe it was a “sarcastic” taunt for the enemy.],
-  [They believe that this particular usage of the word, as well as the context, suggests that “ΜΑΘΟΥ” would translate as “learn your lesson!” This lines up with other documented sling bullets from this era with inscriptions like “take a taste,” “take it,” and “receive this.”],
-  [But who fired this bullet and why? Researchers suspect that it was launched by a Greek-speaking defender of Hippos some 2,100 years ago. But questions remain about who exactly the bullet was fired upon.],
-  [Sling Bullets In The Ancient Mediterranean],
-  [A popular projectile in the ancient world, sling bullets were originally made from stone or clay, but lead soon became more popular because it was cheap and easy to produce. Attackers would swirl the bullet aloft, held in a leather pouch, before flinging it at an enemy.],
-  [Such projectiles could easily strike an individual at a short distance, or a group of people at a longer distance. Perhaps most famously, such a bullet was said to be used by David to defeat Goliath.],
-  [Like the bullet found in Hippos, they sometimes bore inscriptions, including the names of cities, gods, military units, or wartime commanders, like Julius Caesar .],
-  [Sling bullets were a popular weapon in Hippos, as evidenced by the dozens of examples found in the area — but the exact origin of the inscribed sling bullet is difficult to pinpoint.],
-  [Hippos itself was founded by descendants of captains of Alexander the Great in 199 B. C. E. as part of the Decapolis (a confederation of 10 Hellenistic cities) following the Battle of Paneion. It was perched on the frontier of the Greek , then Roman , empire until Pompey’s conquest of Syria in 64 B. C. E.],
-  [As such, there are many possible battles in Hippos’ history where the sling bullet could have been fired.],
-  [“The inscribed bullet, as well as other slingshots found at the site, could have been used in any of the several battles during the Hellenistic period in which Hippos was involved,” the researchers wrote in their study. “The first was before the city’s establishment, during the Ptolemaic rule, when a fortress stood atop the hill.”],
-  [That said, researchers believe that the bullet was fired by a Greek defender, and that it was fired over the city walls toward the streambed. “This streambed route,” they noted, “is also the most convenient point of attack towards the city’s main gate on the east for any besieging forces.”],
-  [But though the circumstances of the bullet’s final battle remain lost, its final message rings clear through the centuries: “Learn your lesson!”],
-  [After reading about the 2,100-year-old sling bullet inscribed in Greek that was found in the Golan Heights, learn about the story of the Schwerer Gustav gun , the biggest gun in world history. Then, go inside the strange story of the Panjandrum , a wheel-weapon propelled by rockets that was designed during World War II, but was ultimately deemed too dangerous and unwieldy to use.],
-  [The post Archaeologists Just Uncovered A 2,100-Year-Old Sling Bullet Inscribed With The Message ‘Learn Your Lesson’ appeared first on All That's Interesting .],
-),
-  insert-map: (:),
-  word-count: 824,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-}
-
-{
-  #standard-article(
-  title: [Android GCM push notifications registration done right],
-  author: [Miguel Juárez López],
-  source-name: [Yammer Engineering],
-  images: (),
-  paragraphs: (
-  [Re-register GCM push notifications on app upgrade with MY\_PACKAGE\_REPLACED],
-  [When implementing push notifications using GCM (Google Cloud Messaging) on Android, one of the gotchas of which to be aware is the “application update” scenario. The Google documentation states:],
-  [When an application is updated, it should invalidate its existing registration ID, as it is not guaranteed to work with the new version. Because there is no lifecycle method called when the application is updated, the best way to achieve this validation is by storing the current application version when a registration ID is stored. Then when the application is started, compare the stored value with the current application version. If they do not match, invalidate the stored data and start the registration process again.],
-  [What the documentation doesn’t mention is that as of API 12 you can use a Broadcast intent action that allows you to react in case your app has been updated:],
-  [ACTION\_MY\_PACKAGE\_REPLACED - Broadcast Action: A new version of your application has been installed over an existing one.],
-  [This should allow us to re-register with GCM in a more elegant, and less error-prone way.],
-  [UPDATE: Another reason I rather use this Intent instead of Google’s approach is because their sample solution relies on the app being launched before attempting to re-register. This could potentially lead to users being left without push notifications until they manually open the app. With ACTION\_MY\_PACKAGE\_REPLACED the code logic executes on the background immediately after the app is updated (which also takes advantage of the device having internet connection).],
-  [Steps:],
-  [1. Register a new BroadcastReceiver that will intercept an app-update action in your AndroidManifest.xml:],
-  [2. Use a ( wakeful ) BroadcastReceiver to receive the the Intent, and then trigger a GCM re-registration:],
-  [public class PackageReplacedReceiver extends WakefulBroadcastReceiver {
- \@Override 
- public void onReceive(Context context, Intent intent) {
- if (intent != null && intent.getAction().equals(Intent. ACTION\_MY\_PACKAGE\_REPLACED)) {
- \/\/ invalidate your current GCM registration id, and re-register with GCM server using an IntentService
- Intent startServiceIntent = new Intent(context, GcmPushRegistrationService.class);
- GcmPushUpgradeReceiver.startWakefulService(context, startServiceIntent);
- }
- }
-}],
-  [3. (This implementation is up to you) Use an IntentService to perform the GCM re-registration in the background:],
-  [public class GcmPushRegistrationService extends IntentService {
- \@Override 
- public void handleIntent(Intent intent) { 
- \/\/ Remove the stored GCM registration ID
- clearGcmRegistrationId();
- GoogleCloudMessaging gcm = GoogleCloudMessaging.getInstance(this);
- String regId = gcm.register(getGcmSenderId());
- \/\/ You should send the registration ID to your server over HTTP,
- \/\/ so it can use GCM/HTTP or CCS to send messages to your app.
- \/\/ The request to your server should be authenticated if your app
- \/\/ is using accounts.
- sendRegistrationIdToBackend(regId);
- \/\/ store the regId locally somewhere (e.g. SharedPreferences)
- storeGcmRegistrationId(regId);
- \/\/ Release the wake lock provided by the WakefulBroadcastReceiver.
- GcmPushUpgradeReceiver.completeWakefulIntent(intent); 
- }
-}],
-  [And that should be it! This will ensure your app automatically re-registers every time it gets updated from the Play Store. You should still check whether your app is registered on every app launch though.],
-  [In case you’re using an older API (less than 12) the PACKAGE\_REPLACED action is also available, which behaves the same way but launching your receiver every time any app gets updated. In order to react only to your app update you need to verify the Intent’s data:],
-  [if(intent.getData().getSchemeSpecificPart().equals(context.getPackageName()))],
-  [Android GCM push notifications registration done right was originally published in Yammer Engineering on Medium, where people are continuing the conversation by highlighting and responding to this story.],
-),
-  insert-map: (:),
-  word-count: 556,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-}
-
-{
-  #standard-article(
-  title: [NVIDIA, Telecom Leaders Build AI Grids to Optimize Inference on Distributed Networks],
-  author: [Kanika Atri],
-  source-name: [Nvidia Blog],
-  images: (),
-  paragraphs: (
-  [id="bsf\_rt\_marker"\>],
-  [As AI‑native applications scale to more users, agents and devices, the telecommunications network is becoming the next frontier for distributing AI.],
-  [At NVIDIA GTC 2026, leading operators in the U. S. and Asia showed that this shift is underway, announcing AI grids — geographically distributed and interconnected AI infrastructure — using their network footprint to power and monetize new AI services across the distributed edge.],
-  [Different operators are taking different paths. Many are starting by lighting up existing wired edge sites as AI grids they can monetize today. Others harness AI-RAN — a technology that enables the full integration of AI into the radio access network — as a workload and edge inference platform on the same grid.],
-  [Telcos and distributed cloud providers run some of the most expansive infrastructure in the world: about 100,000 distributed network data centers worldwide, spanning regional hubs, mobile switching offices and central offices, with enough spare power to offer more than 100 gigawatts of new AI capacity over time.],
-  [AI grids turn this existing real-estate, power and connectivity into a geographically distributed computing platform that runs AI inference closer to users, devices and data, where response and cost per token align best. This is more than an infrastructure upgrade — it’s a structural change in how AI is delivered, putting telecom networks at the center of scaling AI rather than just carrying its traffic.],
-  [Global Operators Turn Distributed Networks Into AI Grids],
-  [Across six major operators, AI grids are moving from concept to reality.],
-  [AT&T , a leader in connected IoT with over 100 million connections across thousands of device types, is partnering with Cisco and NVIDIA to build an AI grid for IoT. By running AI on a dedicated IoT core and moving AI inference closer to where data is created, AT&T can support mission‑critical, real‑time applications like public‑safety use cases with Linker Vision, enabling faster detection, alerting and response while helping keep sensitive information under customer control at the network edge.],
-  [“Scaling AI services that are both highly secure and accessible for enterprises and developers is a core pillar of our IoT connectivity strategy,” said Shawn Hakl, senior vice president of product at AT&T Business. “By combining AT&T’s business‑grade connectivity, localized AI compute and zero‑trust security while working with members of the NVIDIA Inception program and harnessing Cisco’s AI Grid with NVIDIA infrastructure and Cisco Mobility Services Platform, we’re bringing real‑time AI inference closer to where data is generated — accelerating digital transformation and unlocking new business opportunities.”],
-  [Comcast is developing one of the nation’s largest low‑latency broadband footprints into an AI grid for real‑time, hyper‑personalized experiences. Working with NVIDIA, Decart , Personal AI and HPE , Comcast has validated that its AI grid keeps conversational agents, interactive media and NVIDIA GeForce NOW cloud gaming responsive and economical even during demand spikes, with significantly higher throughput and lower cost per token.],
-  [Spectrum has the network infrastructure to support an AI grid that spans more than 1,000 edge data centers and hundreds of megawatts of capacity less than 10 milliseconds away from 500 million devices. The initial deployment focuses on rendering high-resolution graphics for media production using remote GPUs embedded across Spectrum’s fiber-powered, low-latency network.],
-  [Akamai i s building a globally distributed AI grid, expanding Akamai Inference Cloud across more than 4,400 edge locations with thousands of NVIDIA RTX PRO 6000 Blackwell Server Edition GPUs. Akamai’s AI grid orchestration platform matches each request to the right tier of compute, improving the token economics of inference while powering low-latency, real-time AI experiences for applications like gaming, media, financial services and retail.],
-  [Indosat Ooredoo Hutchison is connecting its sovereign AI factory with distributed edge and AI‑RAN sites across Indonesia to build an AI grid for local innovation. By running Sahabat-AI — a Bahasa Indonesia-based platform — on this grid within Indonesia’s borders, Indosat can bring localized AI services closer to hundred millions of Indonesians across thousands of islands, giving local developers and startups a sovereign platform to build AI applications that are fast, culturally relevant and compliant by design.],
-  [T‑Mobile is working with NVIDIA to explore edge AI applications using NVIDIA RTX PRO 6000 Blackwell Server Edition GPUs, demonstrating how distributed network locations could support emerging AI-RAN and edge inference use cases. Developers including LinkerVision, Levatas, Vaidio, Archetype AI and Serve Robotics are already piloting smart‑city, industrial and retail applications on the grid, connecting cameras, delivery robots and city‑scale agents to real-time intelligence on the network edge. This demonstrates how cell sites and mobile switching offices can support distributed edge AI workloads while continuing to deliver advanced 5G connectivity.],
-  [New AI‑Native Services Put Telecom AI Grids to Work],
-  [AI grids are becoming foundational to a new class of AI‑native applications — real‑time, hyper‑personalized, concurrent and token-intensive.],
-  [Personal AI is using NVIDIA Riva to power human‑grade conversational agents on the AI grid. By running small language models closer to users, it achieves sub-500 millisecond end-to-end latency and over 50% lower cost-per-token, enabling voice experiences that feel natural while remaining economically viable at scale.],
-  [Linker Vision is transforming city operations by running real‑time vision AI on the AI grid. By processing thousands of camera feeds across distributed edge sites, it delivers predictable latency for live detection and instant alerting — enabling safer, smarter cities with up to 10x faster traffic accident detection, 15x faster disaster response and sub‑minute alerts for unsafe crowd behavior.],
-  [Decart is redefining hyper‑personalized distributed media by bringing real‑time video generation to AI grids. By running its Lucy models at the network edge, it achieves sub‑12-millisecond network latency, enabling interactive video streams and overlays that adapt instantly to each viewer, delivering smooth, immersive live video experiences even when viewership peaks.],
-  [AI Grid Reference Design and Ecosystem],
-  [The NVIDIA AI Grid Reference Design defines the building blocks — including NVIDIA accelerated computing, networking and software platforms — for deploying and orchestrating AI across distributed sites.],
-  [A growing ecosystem of full‑stack partners including Cisco and infrastructure partners like HPE are bringing AI grid solutions to market on systems built with the NVIDIA RTX PRO 6000 Blackwell Server Edition . Armada , Rafay and Spectro Cloud are among the partners building an AI grid control plane to seamlessly orchestrate workloads across distributed AI infrastructure.],
-  [“Physical AI is accelerating the shift from centralized intelligence to distributed decision making at the network edge,” said Masum Mir, senior vice president and general manager provider mobility at Cisco. “Our partnership with NVIDIA brings together the full stack — from NVIDIA GPUs to Cisco’s networking and mobility capabilities — enabling operators to power mission-critical applications, deliver real-time inferencing and participate in the AI value chain.”],
-  [Together, this ecosystem is helping telcos and distributed cloud providers redefine their role in the AI value chain — transforming the network edge into a unified intelligence layer that runs, scales and monetizes AI workloads.],
-  [Learn more about AI Grid .],
-),
-  insert-map: (:),
-  word-count: 1144,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-}
-
-{
-  #standard-article(
-  title: [Size Matters],
-  author: [Jessie Frazelle],
-  source-name: [Jessie Frazelle],
-  images: (),
-  paragraphs: (
-  [My mom has a tendency to buy these really terribly spec’d Windows machines.
-She’s been doing it for as long as I’ve been alive. I was surprised when on one
-of our latest Zoom calls she said “You know what, I’m beginning to think that
-size matters.” I’ve only been telling her this for years! Here’s the problem.],
-  [There are a bunch of shitty Windows machines you can buy that cost around \$400
-dollars and have something like 4GB RAM. For consumers, this is really
-compelling; the price seems right. The problem is when they start trying to use
-the machine to do anything , it runs at a snails pace and leaves them with the
-world’s worst user experience. My mom continually complained about how slow her
-computer was and I continually said it’s because it’s a shit machine and you
-have to spend more to actually get good specs.],
-  [Apple wouldn’t be caught dead selling a machine with 4GB of RAM. They know
-better than that and care about the experience the end user has. My sister has
-been lucky enough to never have to buy a computer since she continually inherits
-my old ones. After my mom had finished saying that “size matters,” my sister
-noted that my MacBookPro I gave her in 2012 still runs great and is fast. This
-is no surprise to me because at the time I bought that computer it was the top
-of its line and had 16GB of RAM. Today, that model goes up to 64GB of RAM but
-16GB is definitely enough for my sister to run a browser and do what she needs
-for work (although Chrome is really pushing the limits these days).],
-  [It infuriates me to no end that consumers have an option of even buying a \$400
-computer that will give them such a terrible experience. The price is great but
-the experience is terrible. Even if consumers have a daughter continually
-telling them that “size matters,” they might still make the very innocent
-mistake of buying the machine and realizing later that it is a lemon. It is not
-their fault. Manufacturers of computers should be embarrassed for even selling
-such a shit machine. I know I would be.],
-  [A few articles and papers have surfaced lately on migrating threads and processes
-to different kernels. One of these is called popcorn 1 . Another has been
-dubbed teleforking 2 . I’m not going to get into the details, but in essence,
-what people are trying to do is move
-a process from one computer to another. This is great! This could be a huge
-problem solver for folks with computers that have terrible specs. It could
-also mean a lot for the future of consumer computers.],
-  [Imagine a computer where if you were running especially hot and your user
-experience had been compromised… the computer realizes this and forks your
-process into a remote data center,
-while maintaining a great user experience locally. It would need to be seamless and
-invisible to the end user. If the process is a GUI it would need to still have
-the user interface rendering locally while most of the compute is remote. If the
-process is a job streaming output into a terminal it is a bit easier. Both
-should be possible.],
-  [Future computers should not have limited computing power, just limited local 
-computing power. This wouldn’t need to just be for your laptops or desktops,
-your VR headset or gaming console could fork processes to other available
-computers when they needed more computing power. The remote compute would not
-always need to be in a data center. An overburdened laptop could fork a process
-to your gaming console while you were at work and vice-versa while you were
-playing a game.],
-  [Compute should be easily shared and readily available. While consumers should
-not even have an option of buying a machine with terrible specs that lead to
-a terrible user experience, the ability to offload processes to another computer
-would allow them to have a great experience even on a lemon. As I see it, this
-should be the future of consumer computing. People should be able to create
-anything they imagine on a computer that gives them unlimited power to do so. To
-quote one of my favorite lines from Halt and Catch Fire: “Computers aren’t the
-thing. They’re the thing that gets us to the thing.”],
-  [id="fn:1"\> https:\/\/www.ssrg.ece.vt.edu/theses/MS\_Katz.pdf 
- [return]],
-  [id="fn:2"\> https:\/\/thume.ca/2020/04/18/telefork-forking-a-process-onto-a-different-computer/ 
- [return]],
-),
-  insert-map: (:),
-  word-count: 749,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-}
-
-{
-  #standard-article(
-  title: [Status update, August 2019],
-  author: [Drew DeVault],
-  source-name: [Drew DeVault],
-  images: (),
-  paragraphs: (
-  [Outside my window, the morning sun can be seen rising over the land of the
-rising sun, as I sip from a coffee purchased at the konbini down the street. I
-almost forgot to order it, as the staffer behind the counter pointed out with a
-smile and a joke that, having been told in Japanese, mostly went over my head.
-It’s on this quiet Osaka morning I write today’s status update - there are lots
-of existing developments to share!],
-  [Let’s start with sourcehut news. I deployed a cool feature yesterday - SSH
-access to builds.sr.ht. You can now SSH into a failed build to examine the
-failure and investigate the root cause. You can also get a shell on-demand for
-any build image, including for experimental arm64 support. I’ll be writing a
-full-length blog post going into detail about this feature later in the week.
-Additionally, with contributor Ryan Chan’s help, man.sr.ht received a huge
-overhaul which moved wikis out of man.sr.ht’s dedicated git subsystem and into
-git.sr.ht repositories, allowing you to make your wiki out of a branch of your
-main project repo or browse the git data on the web. I’ll be posting more sr.ht
-news to sr.ht-announce later today if you want to hear more!],
-  [aerc 0.2.0 has been released,
-which included nearly 200 changes from 34 contributors. I’m grateful to the
-community for this crazy amount of support - working together we’ll make aerc
-amazing in no time. Highlights include maildir and sendmail transports, search
-and filtering, support for mailto: links, tab completion, and more. We haven’t
-slowed down since, and the next release already has support lined up for
-notmuch, more tab completion support, and more features for mail composition. In
-related news, Greg Kroah-Hartman of Linux kernel fame was kind enough to write
-up 
-details about his email workflow to help guide the direction of aerc. I’ll be
-writing a follow-up post next week explaining how aerc aims to solve the
-problems he lays out.],
-  [Sway and wlroots continue chugging along as well, with the release of Sway
-1.2-rc1 coming earlier this week. This release adds many features from the
-recent i3 4.17 release, and adds a handful of small features and bug fixes. The
-corresponding wlroots release will be pretty cool, too, adding support for
-direct scanout and fixing dozens of bugs. I’d like to draw your attention as
-well to a cool project from the Sway community: Jason Francis’s
- wdisplays , a GUI for arranging and
-configuring displays on wlroots-based desktops. The changes necessary for it to
-work will land in sway 1.2, and users building from git can try it out today.],
-  [On the DRM leasing and VR for Wayland work I was discussing in the last update,],
-  [I’m happy to share that I’ve got it working with SteamVR! I’ve written a],
-  [detailed blog post which],
-  [explains all of the work that went into this project, if you want to learn about],
-  [it in depth and watch some cool videos summing up the work. There’s still a lot],
-  [of work to do in negotiating the standardization of new interfaces to support],
-  [this feature in several projects, but all of the unknowns have been discovered],
-  [and answered. We will have VR on Wayland soon. I plan on making my way to the],
-  [Monado and OpenXR to],
-  [help realize a top-to-bottom free software VR stack designed with Wayland in],
-  [mind. I’ll also be joining many members of the wlroots gang at],
-  [XDC in October, where I hope to meet the people],
-  [working on OpenXR.],
-  [I’ve also invested more time into my Wayland book, because I’ve realized that at
-my current pace it won’t be done any time soon. It’s now about half complete and
-I’ve picked up the pace considerably. If you’re interested in helping review the
-drafts, please let me know!],
-  [That’s all for today. Thank you for your continued support!],
-  [This work was possible thanks to users who support me financially. Please
-consider donating to my work or buying a sourcehut.org subscription . Thank you!],
-),
-  insert-map: (:),
-  word-count: 676,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-}
-
-{
-  #standard-article(
-  title: [sr.ht, the hacker's forge, now open for public alpha],
-  author: [Drew DeVault],
-  source-name: [Drew DeVault],
-  images: (),
-  paragraphs: (
-  [I’m happy to announce today that I’m opening sr.ht (pronounced
-“sir hat”, or any other way you want) to the general public for the remainder of
-the alpha period. Though it’s missing some of the features which will be
-available when it’s completed, sr.ht today represents a very capable software
-forge which is already serving the needs of many projects in the free & open
-source software community. If you’re familiar with the project and ready to
-register your account, you can head straight to the sign up
-page .],
-  [For those who are new, let me explain what makes sr.ht special. It provides many
-of the trimmings you’re used to from sites like GitHub, Gitlab, BitBucket, and
-so on, including git repository hosting, bug tracking software, CI, wikis, and
-so on. However, the sr.ht model is different from these projects - where many
-forges attempt to replicate GitHub’s success with a thinly veiled clone of the
-GitHub UI and workflow, sr.ht is fundamentally different in its approach.],
-  [The sr.ht platform excites me more than any project in recent memory. It’s a
-fresh concept, not a Github wannabe like Gitlab. I always thought that if
-something is going to replace Github it would have to be a paradigm change, and
-I think that’s what we’re seeing here. Drew’s project blends the wisdom of the
-kernel hackers with a tasteful web interface.],
-  [— begriffs on lobste.rs],
-  [The 500 foot view is that sr.ht is a 100% free and open
-source software forge, with a hosted
-version of the services running at sr.ht for your
-convenience. Unlike GitHub, which is almost entirely closed source, and Gitlab,
-which is mostly open source but with a proprietary premium offering, all of
-sr.ht is completely open source, with a copyleft license 1 . You’re welcome
-to install it on your own hardware, and detailed
-instructions are available for those who
-want to do so. You can also send patches upstream, which are then integrated
-into the hosted version.],
-  [sr.ht is special because it’s extremely modular and flexible, designed with],
-  [interoperability with the rest of the ecosystem in mind. On top of that, sr.ht],
-  [is one of the most lightweight websites on the internet, with the average page],
-  [weighing less than 10 KiB, with no tracking and no JavaScript . Each],
-  [component - git hosting, continuous integration, etc - is a standalone piece of],
-  [software that integrates deeply with the rest of sr.ht and with the rest of],
-  [the ecosystem outside of sr.ht. For example, you can use builds.sr.ht to compile],
-  [your GitHub pull requests, or you can keep your repos on git.sr.ht and host],
-  [everything in one place. Unlike GitHub, which favors its own in-house pull],
-  [request workflow 2 , sr.ht embraces and improves upon the email-based],
-  [workflow favored by git itself, along with many of the more hacker-oriented],
-  [projects around the net. I’ve put a lot of work into making this powerful],
-  [workflow more accessible and],
-  [comprehensible to the average],
-  [hacker.],
-  [The flagship product from sr.ht is its continuous integration platform,
-builds.sr.ht, which is easily the most capable continuous integration system
-available today. It’s so powerful that I’ve been working with multiple Linux
-distributions on bringing them onboard because it’s the only platform which can
-scale to the automation needs of an entire Linux distribution. It’s so powerful
-that I’ve been working with maintainers of non-Linux operating systems, from
-BSD to even Hurd, because it’s the only platform which can even consider
-supporting their needs. Smaller users are loving it, too, many of whom are
-jumping ship from Travis and Jenkins in favor of the simplicity and power of
-builds.sr.ht.],
-  [On builds.sr.ht, simple YAML-based build
-manifests , similar to those
-you see on other platforms, are used to describe your builds. You can submit
-these through the web, the API, or various integrations. Within seconds, a
-virtual machine is booted with KVM, your build environment is sent to it, and
-your scripts start running. A diverse set of base images are supported on a
-variety of architectures, soon to include the first hardware-backed RISC-V
-cycles available to the general public. builds.sr.ht is used to automate
-everything from the deployment of this Jekyll-based blog, testing GitHub pull
-requests for sway , building and testing packages for
- postmarketOS , and deploying complex applications
-like builds.sr.ht itself. Our base images build, test, and deploy
-themselves every day.],
-  [The lists.sr.ht service is another important part of sr.ht, and a large part of
-how sr.ht embraces the model used by major projects like Linux, Postgresql, git
-itself, and many more. lists.sr.ht finally modernizes mailing lists, with a
-powerful and elegant web interface for hacking on and talking about your
-projects. Take a look at the sr.ht-dev list to see patches
-developed for sr.ht itself. Another good read is the mrsh-dev list,
-used for development on the mrsh project, or my own public
-inbox , where I take comments for this blog and grab-bag
-discussions for my smaller projects.],
-  [I’ve just scratched the surface, and there’s much more for you to discover. You
-could look at my scdoc project to get an
-idea of how the git browser looks and feels. You could browse tickets on my
-todo.sr.ht profile to get a feel for the bug
-tracking software. Or you could check out the detailed
-manual on sr.ht’s git-powered wiki service. You could also
-just sign up for an account !],
-  [sr.ht isn’t complete, but it’s maturing fast and I think you’ll love it. Give it
-a try, and I’m only an email away to receive your
-feedback.],
-  [id="fn:1"\>],
-  [Some components use the 3-clause BSD license.  ↩︎],
-  [id="fn:2"\>],
-  [A model that many have replicated in their own GitHub alternatives.  ↩︎],
-),
-  insert-map: (:),
-  word-count: 951,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-}
-
-#article-row((
-  [
-    standard-article(
-  title: [When will we learn?],
-  author: [Drew DeVault],
-  source-name: [Drew DeVault],
-  images: (),
-  paragraphs: (
-  [Congratulations to Rust for its first (but not its last) supply-chain attack
-this week! They join a growing club of broken-by-design package managers which
-publish packages uploaded by vendors directly, with no review step, and ship
-those packages directly to users with no further scrutiny.],
-  [id="timeline-of-major-incidents-on-npmcratespypietc"\>Timeline of major incidents on npm/Crates/PyPI/etc],
-  [2022-05-10: Cargo: rustdecimal ships with malicious code],
-  [2022-05-09: npm: foreach is taken over via an expired email domain],
-  [2022-03-17: npm: node-ipc ships malware targeting Russia and Belarus],
-  [2022-01-09: npm: colors and faker are deliberately sabotaged],
-  [2021-11-19: PyPI: 11 malicious packages discovered],
-  [2021-11-04: npm: rc ships malicious code],
-  [2021-11-04: npm: coa steals your passwords],
-  [2021-10-22: npm: ua-parser-js ships malicious code],
-  [2021-10-11: PyPI: mitmproxy2 typo-squats mitmproxy with an added RCE],
-  [2021-07-30: PyPI: 8 malicious packages discovered],
-  [2020-12-16: RubyGems: pretty\_color (and one other) steals bitcoin from victims],
-  [2020-09-11: npm: dozens of packages steal your user’s credit card number],
-  [2020-09-03: npm: bb-builder steals your password],
-  [2020-04-16: RubyGems: 760+ malicious packages found stealing bitcoin],
-  [2018-11-28: npm: event-stream ships with a bitcoin theft kit],
-  [2018-10-21: PyPI: colourama sneaks bitcoin addresses into your clipboard],
-  [2018-10-13: PyPI: more typo-squatting malware attempts various attacks],
-  [2018-07-12: npm: eslint-scope ships with malicious code],
-  [2018-07-08: AUR: acroread is compromised],
-  [2018-05-11: Snap: a 2048 clone ships a cryptocurrency miner],
-  [2017-09-09: PyPI: typo-squatted packages published by researchers],
-  [2016-07-22: npm: left-pad incident],
-  [There are hundreds of additional examples. I had to leave many of them out.
- Here’s a good source 
-if you want to find more.],
-  [id="timeline-of-similar-incidents-in-official-linux-distribution-repositories"\>Timeline of similar incidents in official Linux distribution repositories],
-  [id="why-is-this-happening"\>Why is this happening?],
-  [The correct way to ship packages is with your distribution’s package manager.
-These have a separate review step, completely side-stepping typo-squatting,
-establishing a long-term relationship of trust between the vendor and the
-distribution packagers, and providing a dispassionate third-party to act as an
-intermediary between users and vendors. Furthermore, they offer stable
-distributions which can be relied upon for an extended period of time, provide
-cohesive whole-system integration testing, and unified patch distribution and
-CVE notifications for your entire system.],
-  [For more details, see my previous post, Developers: Let distros do their
-job .],
-  [id="can-these-package-managers-do-it-better"\>Can these package managers do it better?],
-  [I generally feel that overlay package managers (a term I just made up for npm et
-al) are redundant. However, you may feel otherwise, and wonder what they could
-do better to avoid these problems.],
-  [It’s simple: they should organize themselves more like a system package manager.],
-  [Establish package maintainers independent of the vendors],
-  [Establish a review process for package updates],
-  [There’s many innovations that system package managers have been working on which
-overlay package managers could stand to learn from as well, such as:],
-  [Universal package signatures and verification],
-  [Reproducible builds],
-  [Mirrored package distribution],
-  [For my part, I’ll stick to the system package manager. But if you think that the
-overlay package manager can do it better: prove it.],
-),
-  insert-map: (:),
-  word-count: 484,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-  ],
-  [
-    standard-article(
-  title: [Overcoming Core Engineering Barriers in Humanoid Robotics Development],
-  author: [Murata Manufacturing Co.],
-  source-name: [IEEE Spectrum],
-  images: (),
-  paragraphs: (
-  [A technical examination of the sensing, motion control, power, and thermal challenges facing humanoid robotics engineers — with component-level design strategies for real-world deployment.],
-  [What Attendees will Learn],
-  [Why motion control remains the hardest unsolved problem — Explore the modelling complexity, real-time feedback requirements, and sensor fusion demands of maintaining stable bipedal locomotion across dynamic environments.],
-  [How sensing architectures enable perception and safety — Understand the role of inertial measurement units, force/torque feedback, and tactile sensing in achieving reliable human-robot interaction and collision avoidance.],
-  [What power and thermal constraints mean for system design — Examine the trade-offs in battery chemistry selection (LFP vs. NCA), DC/DC converter topologies, and thermal protection strategies that determine operational endurance.],
-  [How the industry is transitioning from prototype to mass production — Learn about the shift toward modular architectures, cost-driven component selection, and supply chain readiness projected for the late 2020s.],
-  [Download this free whitepaper now!],
-),
-  insert-map: (:),
-  word-count: 150,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-  ],
-), ruled-indices: (1,))
-
-#article-row((
-  [
-    standard-article(
-  title: [Status update, April 2021],
-  author: [Drew DeVault],
-  source-name: [Drew DeVault],
-  images: (),
-  paragraphs: (
-  [Another month goes by! I’m afraid that I have very little to share this month.
-You can check out the sourcehut “what’s cooking” post for sourcehut news,
-but outside of that I have focused almost entirely on the programming language
-project this month, for which the details are kept private.],
-  [The post calling for contributors led to a lot of answers and we’ve brought
-several new people on board — thanks for answering the call! I’d like to
-narrow the range of problems we still need help with. If you’re interested in
-(and experienced in) the following problems, we need your help:],
-  [Date/time support],
-  [Networking (DNS is up next)],
-  [Shoot me an email if you want to help. We don’t have the
-bandwidth to mentor inexperienced programmers right now, so please only reach
-out if you have an established background in systems programming.],
-  [Here’s a teaser of one of the stdlib APIs written by our new contributors,
-unix::passwd:],
-  [export type grent = struct {],
-  [\/\/ Name of the group],
-  [name : str ,],
-  [\/\/ Optional encrypted password],
-  [password : str ,],
-  [\/\/ Numerical group ID],
-  [gid : uint ,],
-  [\/\/ List of usernames that are members of this group, comma separated],
-  [userlist : str ,],
-  [};],
-  [\/\/ Reads a Unix-like group entry from a stream. The caller must free the result],
-  [\/\/ using [grent\_finish].],
-  [export fn nextgr ( stream : \* io :: stream ) ( grent | io :: EOF | io :: error | invalid );],
-  [\/\/ Frees resources associated with [grent].],
-  [export fn grent\_finish ( ent : grent ) void ;],
-  [\/\/ Looks up a group by name in a Unix-like group file. It expects a such file at],
-  [\/\/ /etc/group. Aborts if that file doesn't exist or is not properly formatted.],
-  [\/\/],
-  [\/\/ See [nextgr] for low-level parsing API.],
-  [export fn getgroup ( name : str ) ( grent | void );],
-  [That’s all for now. These updates might be light on details for a while as we
-work on this project. See you next time!],
-),
-  insert-map: (:),
-  word-count: 348,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-  ],
-  [
-    standard-article(
-  title: [Why Discourse uses Ember.js],
-  author: [Robin Ward (eviltrout)],
-  source-name: [Robin Ward (eviltrout)],
-  images: (),
-  paragraphs: (
-  [This week, I was delighted to finally reveal Discourse , the app I’ve been working on for most of the last year in secrecy with awesome people . The launch got a lot of attention - we were featured on Hacker News, Slashdot, Wired, Reddit, Techcrunch and countless other places. Personally I’ve been floored with the amount of feedback so far. It’s going to take quite some time to get through it all!],
-  [One question people keep asking me is “Why did you choose Ember.js ?”. It’s a good one, and one that I think can be considered in two ways:
-“Why use a a client side MVC Framework?” and “Why Ember out of all the frameworks?” Here’s my answer to both of those questions.],
-),
-  insert-map: (:),
-  word-count: 125,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-  ],
-), ruled-indices: (1,))
-
-{
-  #standard-article(
-  title: [The Day I Leave the Tech Industry],
-  author: [Jessie Frazelle],
-  source-name: [Jessie Frazelle],
-  images: (),
-  paragraphs: (
-  [I was inspired last night by Cate Huston’s post,
- The Day I Leave the Tech Industry .
-I decided to write my own, except I’m not as eloquent a writer as Cate so before
-I go any further please, please, please read her post and not mine.],
-  [Mine is going to be a bit different. Lately I’ve been thinking more and more
-about this. It seems imminent. I’m only 27 and let me repeat: it seems imminent.],
-  [I’m going to tell you all the fantasy that plays in my brain for when this happens.],
-  [The day I leave the tech industry will feel like a giant weight has finally been
-lifted. It will be freeing. There are a few scenarios I’ve played out for what
-I will do after.],
-  [teach math in a third world country],
-  [write a book],
-  [play professional poker],
-  [I could do all three. One thing is for sure though, the day I leave the tech industry
-will be the day I contribute my last piece of code to open source software.],
-  [Today, I am not quite ready to give up this thing I have such a “hate/love”
-relationship with. Today, I want to get more women contributing so that
-maybe in the distant future we will feel welcome. Maybe we won’t have to fight
-so hard just to be heard; to have our opinions matter.],
-  [Today is not my last day in the tech industry. But it is comforting to me
-to plan out this very real future. I am not just “the container girl”. I am a
-human being with feelings, a limit, and a future outside of tech.],
-),
-  insert-map: (:),
-  word-count: 274,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-}
-
-{
-  #section-label([Analysis])
-  #standard-article(
-  title: [Abandoned, Abused, And Exploited: Inside The Tragic Life Of The Genie Wiley],
-  author: [Andrew Milne],
-  source-name: [All That's Interesting],
-  images: (),
-  paragraphs: (
-  [class="dropcaps"\>The story of Genie Wiley sounds like the stuff of fairytales: An unwanted, mistreated child survives brutal imprisonment at the hands of her father and is rediscovered and reintroduced to the world in an impossibly youthful state. Unfortunately for Wiley, hers is a dark, real-life tale with no happy ending.],
-  [Genie Wiley was separated from any form of socialization and society for the first 13 years of her life. Her intensely abusive father and helpless mother so neglected Wiley that she hadn’t learned to speak and her growth was so stunted that she looked like she was no more than eight years old.],
-  [Her intense trauma proved something of a godsend to scientists of various fields including psychology and linguistics, though they were later accused of exploiting the child for their research on learning and development. But Genie Wiley’s case did beg the question: what does it mean to be human?],
-  [This is the haunting story of Genie Wiley.],
-  [The Horrifying Upbringing That Turned Genie Wiley Into A “Feral Child”],
-  [Genie isn’t the Feral Child’s real name. She was given the name to protect her identity once she became a spectacle of scientific research and awe.],
-  [Susan Wiley was born in 1957 to Clark Wiley and his much-younger wife Irene Oglesby. Oglesby was a Dust Bowl refugee who had drifted to the Los Angeles area where she met her husband. He was a former assembly-line machinist raised in and out of brothels by his mother. This childhood had a profound effect on Clark, as for the rest of his life he fixated on the figure of his mother.],
-  [Clark Wiley never wanted children. He hated the noise and stress they brought along. Nonetheless, the first baby girl did come along and Clark left the child in the garage to freeze to death when she wouldn’t be quiet.],
-  [The Wiley’s second baby died of a congenital defect, and then came along Genie Wiley and her brother John. While her brother also faced their father’s abuse, it was nothing compared to Susan’s suffering.],
-  [Though he was always a bit off, the death of Clark Wiley’s mother by a drunk driver in 1958 seemed to undo him completely. The end to the complicated relationship they shared fanned his cruelty into a bonfire.],
-  [Clark Wiley decided that his daughter was mentally disabled and that she would be useless to society. Thus, he banished society from her. No one was allowed to interact with the girl who was mostly locked in a blacked-out room or in a makeshift cage. He kept her strapped into a toddler toilet as a sort of straight-jacket, and she wasn’t potty-trained.],
-  [Clark Wiley would hit her with a large plank of wood for any infraction. He’d growl outside her door like a deranged guard dog, instilling a lifelong fear of clawed animals in the girl. Some experts believe sexual abuse may have been involved, due to Wiley’s later sexually inappropriate behavior, particularly involving older men.],
-  [In her own words, Genie Wiley, the Feral Child recalled :],
-  [“Father hit arm. Big wood. Genie cry… Not spit. Father. Hit face — spit. Father hit big stick. Father is angry. Father hit Genie big stick. Father take piece wood hit. Cry. Father make me cry.”],
-  [She had spent 13 years living this way.],
-  [Genie Wiley’s Salvation From Torment],
-  [Genie Wiley’s mother was nearly blind which she later said kept her from interceding on her daughter’s behalf. But one day, 14 years after Genie Wiley’s first introduction to her father’s cruelty, her mother did finally muster her courage and leave.],
-  [In 1970, she stumbled into social services, mistaking it for the office where they’d give aid to the blind. The office workers’ antennae were immediately raised when they noticed the young girl acting so strangely, hopping like a bunny instead of walking.],
-  [Genie Wiley was then nearly 14 but she looked no more than eight.],
-  [An abuse case was immediately opened against both parents, but Clark Wiley would kill himself shortly before trial. He left behind a note which read: “The world will never understand.”],
-  [Genie became a ward of the state. She knew but a few words when she entered UCLA’s Children’s Hospital and was dubbed by medical professionals there as “the most profoundly damaged child they had ever seen.”],
-  [Genie Wiley’s case soon enchanted scientists and physicians who applied for and were awarded a grant by the National Institute of Mental Health to study her. The team explored the “Developmental Consequence of Extreme Social Isolation” for four years from 1971 to 1975.],
-  [For those four years, Genie Wiley became the center of these scientists’ lives. “She wasn’t socialized, and her behavior was distasteful,” began Susie Curtiss, a linguist intimately involved in the feral child study, “but she just captivated us with her beauty.”],
-  [But also for those four years, Wiley’s case tested the ethics of a relationship between a subject and their researcher. Genie Wiley would come to live with many of the team members who observed her which was not only a huge conflict of interest but also potentially begat another abusive relationship in her life.],
-  [Researchers Begin Experimenting On The “Feral Child”],
-  [Genie Wiley’s discovery timed precisely with an uptick in the scientific study of language. To language scientists, Wiley was a blank slate, a way to understand what part language has in our development and vice versa. In a twist of dramatic irony, Genie Wiley now became deeply wanted.],
-  [One of the foremost tasks of the “Genie Team” was to establish which came first: Wiley’s abuse or her lapse in development. Did Wiley’s developmental delay come as a symptom of her abuse, or was Wiley born challenged?],
-  [Up until the late 1960s, it was largely believed by linguists that children could not learn language after puberty. But Genie the Feral Child disproved this. She had a thirst for learning and curiosity and her researchers found her “highly communicative.” It turned out that Wiley could learn language, but grammar and sentence structure was another thing entirely.],
-  [“She was smart,” Curtiss said. “She could hold a set of pictures so they told a story. She could create all sorts of complex structures from sticks. She had other signs of intelligence. The lights were on.”],
-  [Genie Wiley showed that grammar becomes inexplicable to children without training between five and 10, but communication and language remains entirely attainable. Wiley’s case also posed some more existential questions about the human experience.],
-  [“Does language make us human? That’s a tough question,” said Curtiss. “It’s possible to know very little language and still be fully human, to love, form relationships and engage with the world. Genie definitely engaged with the world. She could draw in ways you would know exactly what she was communicating.”],
-  [As such, Wiley could construct simple phrases to convey what she wanted or was thinking, like “applesauce buy store,” but the nuances of a more sophisticated sentence structure were out of her grasp. This demonstrated that language is different from thought.],
-  [Curtiss explained that “For many of us, our thoughts are verbally encoded. For Genie Wiley, her thoughts were virtually never verbally encoded, but there are many ways to think.”],
-  [Genie the Feral Child’s case did help to establish that there is a point beyond which total language fluency is impossible if the subject does not already speak one language fluently.],
-  [According to Psychology Today :],
-  [“The case of Genie confirms that there is a certain window of opportunity that sets the limit for when you can become relatively fluent in a language. Of course, if you already are fluent in another language, the brain is already primed for language acquisition and you may well succeed in becoming fluent in a second or third language. If you have no experience with grammar, however, Broca’s area remains relatively hard to change: you cannot learn grammatical language production later on in life.”],
-  [The Continued Exploitation Of Genie Wiley],
-  [For all their contributions to understanding human nature, the “Genie Team” was not without its critics. For one thing, each of the scientists on the team accused each other of abusing their position and relationships with Genie Wiley the feral child.],
-  [For instance, in 1971, language teacher Jean Butler obtained permission to bring Wiley home with her for socialization purposes. Butler was able to contribute some integral insights on Wiley in this environment, including the feral child’s fascination with collecting buckets and other containers that stored liquid, a common trait amongst other children who have faced extreme isolation. She also saw that Genie Wiley was beginning puberty at this time, a sign that her health was strengthening.],
-  [The arrangement went along well enough for a time until Butler claimed she caught Rubella and would need to quarantine herself and Wiley. Their temporary situation turned more permanent. Butler turned away the other physicians on the “Genie Team” claiming that they were subjecting her to too much scrutiny. She applied for the foster care of Wiley as well.],
-  [Later, Butler was accused by other members of the team of exploiting Wiley. They said Butler believed her young ward would make her “the next Anne Sullivan,” the teacher who helped Helen Keller to become more than invalid.],
-  [As such, Genie Wiley later went to live with the family of therapist David Rigler, another member of the “Genie Team.” As far as Genie Wiley’s luck would allow, this seemed to be a good fit for her and a time to develop and discover the world with people who genuinely cared for her well-being.],
-  [The arrangement also gave the “Genie Team” more access to her. As Curtiss later wrote in her book Genie: A Psycholinguistic Study of a Modern-Day Wild Child :],
-  [“One particularly striking memory of those early months was an absolutely wonderful man who was a butcher, and he never asked her name, he never asked anything about her. They just connected and communicated somehow. And every time we came in — and I know this was so with others, as well — He would slide open the little window and hand her something that wasn’t wrapped, a bone of some sort, some meat, fish, whatever. And he would allow her to do her thing with it, and to do her thing, what her thing was, basically, was to explore it tactilely, to put it up against her lips and feel it with her lips and touch it, almost as if she were blind.”],
-  [Wiley remained an expert in non-verbal communication and had a way of expressing her thoughts to people even if she couldn’t speak to them.],
-  [Rigler, too, recalled how one time a father and his young son carrying a fire engine passed by Genie Wiley. “And they just passed,” Rigler remembered. “And then they turned around and came back, and the boy, without a word, handed the fire engine to Genie. She never asked for it. She never said a word. She did this kind of thing, somehow, to people.”],
-  [Despite the progress she displayed at the Riglers’, once the funding ended for the study in 1975, Wiley went to live with her mother for a brief period. In 1979, her mother filed a lawsuit against the hospital and her daughter’s individual caregivers, including the scientists on the “Genie Team,” alleging they exploited Wiley for “prestige and profit.” The suit was settled in 1984 and Wiley’s contact with her researchers all but entirely severed.],
-  [Wiley was eventually placed in a number of foster homes, some of which were also abusive. There Wiley was beaten for vomiting and regressed greatly. She never regained the progress she had made.],
-  [Genie Wiley’s present life is little-known; once her mother took custody, she refused to let her daughter be the subject of any more studies. Like so many people with special needs, she fell through the cracks of proper care.],
-  [Wiley’s mother died in 2003, her brother John in 2011, and her niece Pamela in 2012. Russ Rymer, a journalist, tried to piece together what led to the dissolution of Wiley’s team, but he found the task challenging as the scientists had all divided on who was exploitative and who had the feral child’s best interests in mind. “The tremendous rift complicated my reporting,” Rymer said. “That was also part of the breakdown that turned her treatment into such a tragedy.”],
-  [He later recalled visiting Susan Wiley on her 27th birthday and seeing:],
-  [“A large, bumbling woman with a facial expression of cowlike incomprehension… her eyes focus poorly on the cake. Her dark hair has been hacked off raggedly at the top of her forehead, giving her the aspect of an asylum inmate.”],
-  [Despite this, Genie Wiley is not forgotten by those that cared about her.],
-  [“I’m pretty sure she’s still alive because I’ve asked each time I called and they told me she’s well,” Curtiss said. “They never let me have any contact with her. I’ve become powerless in my attempts to visit her or write to her. I think my last contact was in the early 1980s.”],
-  [Curtiss added in a 2008 interview that she has “spent the last 20 years looking for her… I can get as far as the social worker in charge of her case, but I can’t get any farther.”],
-  [As of 2008, Wiley was in an assisted living facility in Los Angeles.],
-  [Genie Wiley’s story is not a happy one as she drifted from one abusive situation to another, and by all accounts, was denied and failed by society at every step. But, one can hope that wherever she is, she continues to find joy in discovering the still-new world around her, and instills in others the fascination and affection that she had for her researchers.],
-  [After this look at Genie Wiley the Feral Child, read about teenage murderer Zachary Davis and Louise Turpin , the woman who kept her children captive for decades.],
-  [The post Abandoned, Abused, And Exploited: Inside The Tragic Life Of The Genie Wiley appeared first on All That's Interesting .],
-),
-  insert-map: (:),
-  word-count: 2521,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-}
-
-{
-  #standard-article(
-  title: [My philosophy for productive instant messaging],
-  author: [Drew DeVault],
-  source-name: [Drew DeVault],
-  images: (),
-  paragraphs: (
-  [We use Internet Relay Chat ( IRC ) extensively at sourcehut for
-real-time group chats and one-on-one messaging. The IRC protocol is quite
-familiar to hackers, who have been using it since the late 80’s. As chat rooms
-have become more and more popular among teams of both hackers and non-hackers in
-recent years, I would like to offer a few bites of greybeard wisdom to those
-trying to figure out how to effectively use instant messaging for their own
-work.],
-  [For me, IRC is a vital communication tool, but many users of 1 find it frustrating, often to the
-point of resenting the fact that they have to use it at all. Endlessly catching
-up on discussions they missed, having their workflow interrupted by unexpected
-messages, searching for important information sequestered away in a discussion
-which happened weeks ago… it can be overwhelming and ultimately reduce your
-productivity and well-being. Why does it work for me, but not for them? To find
-out, let me explain how I think about and use IRC.],
-  [The most important trait to consider when using IM software is that it is
- ephemeral , and must be treated as such. You should not “catch up” on
-discussions that you missed, and should not expect others to do so, either. Any
-important information from a chat room discussion must be moved to a more
-permanent medium, such as an email to a mailing list, 2 a ticket filed in a
-bug tracker, or a page updated on a wiki. One very productive use of IRC for me
-is holding a discussion to hash out the details of an issue, then writing up a
-summary up for a mailing list thread where the matter is discussed in more
-depth.],
-  [I don’t treat discussions on IRC as actionable until they are shifted to another
-mode of discussion. On many occasions, I have discussed an issue with someone on
-IRC, and once the unknowns are narrowed down and confirmed to be actionable, ask
-them to follow-up with an email or a bug report. If the task never leaves IRC,
-it also never gets done. Many invalid or duplicate tasks are filtered out by
-this approach, and those which do get mode-shifted often have more detail than
-they otherwise might, which improves the signal-to-noise ratio on my bug
-trackers and mailing lists.],
-  [I have an extensive archive of IRC logs dating back over 10 years, tens of
-gigabytes of gzipped plaintext files. I reference these logs perhaps only two or
-three times a year, and often for silly reasons, like finding out how many swear
-words were used over some time frame in a specific group chat, or to win an
-argument about who was the first person to say “yeet” in my logs. I almost never
-read more than a couple dozen lines of the backlog when starting up IRC for the
-day.],
-  [Accordingly, you should never expect anyone to be in the know for a discussion
-they were not present at. This also affects how I use “highlights”. 3 Whenever
-I highlight someone, I try to include enough context in the message so that they
-can understand why they were mentioned without having to dig through their logs,
-even if they receive the notification hours later.],
-  [Bad :],
-  [minus: ping
- what is the best way to frob foobars?],
-  [Good :],
-  [minus: do you know how to frob foobars?],
-  [I will also occasionally send someone a second highlight un-pinging them if the
-question was resolved and their input is no longer needed. Sometimes I will 
-send a vague “ping ” example when I actually want them to
-participate in the discussion right now , but if they don’t answer immediately
-then I will usually un-ping them later. 4],
-  [This draws attention to another trait of instant messaging: it is
- asynchronous . Not everyone is online at the same time, and we should adjust
-our usage of it in consideration of this. For example, when I send someone a
-private message, rather than expecting them to engage in a real-time dialogue
-with me right away, I dump everything I know about the issue for them to review
-and respond to in their own time. This could be hours later, when I’m not
-available myself!],
-  [Bad :],
-  [hey emersion, do you have a minute?
-\*8 hours later\*
- yes?
-\*8 hours later\*
- what is the best way to frob foobars?
-\*8 hours later\*
- did you try mongodb?],
-  [Good : 5],
-  [hey emersion, what's the best way to frob foobars?
- I thought about mongodb but they made it non-free
-\*10 minutes later\*
- update: considered redis, but I bet they're one bad day away from making that non-free too
-\*8 hours later\*
- good question
- maybe postgresql? they seem like a trustworthy bunch
-\*8 hours later\*
- makes sense. Thanks!],
-  [This also presents us a solution to the interruptions problem: just don’t answer
-right away, and don’t expect others to. I don’t have desktop or mobile
-notifications for IRC. I only use it when I’m sitting down at my computer, and I
-“pull” notifications from it instead of having it “push” them to me — that
-is, I glance at the client every now and then. If I’m in the middle of
-something, I don’t read it.],
-  [With these considerations in mind, IRC has been an extraordinarily useful tool
-for me, and maybe it can be for you, too. I’m not troubled by interruptions to
-my workflow. I never have to catch up on a bunch of old messages. I can
-communicate efficiently and effectively with my team, increasing our
-productivity considerably, without worrying about an added source of stress. I
-hope that helps!],
-  [id="fn:1"\>],
-  [Many, many companies have tried, and failed, to re-invent IRC, usually within a proprietary walled garden. I offer my condolences if you find yourself using one of these.  ↩︎],
-  [id="fn:2"\>],
-  [Email is great. If you hate it you might be using it wrong .  ↩︎],
-  [id="fn:3"\>],
-  [IRC terminology for mentioning someone’s name to get their attention. Some platforms call this “mentions”.  ↩︎],
-  [id="fn:4"\>],
-  [I occasionally forget to… apologies to anyone I’ve annoyed by doing that.  ↩︎],
-  [id="fn:5"\>],
-  [I have occasionally annoyed someone with this strategy. If they have desktop notifications enabled, they might see 10 notifications while I fill their message buffer with more and more details about my question. Sounds like a “you” problem, buddy 😉  ↩︎],
-),
-  insert-map: (:),
-  inline-pq: pull-quote([Accordingly, you should never expect anyone to be in the know for a discussion they were not present at.], [Drew DeVault]),
-  inline-pq-idx: 11,
-  word-count: 1069,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-}
-
-{
-  #standard-article(
-  title: [Quandaries about ethics],
-  author: [Michael Tobis],
-  source-name: [Only in it for the Gold (blog, climate)],
-  images: (),
-  paragraphs: (
-  [So William objects to my argument from intergenerational equity on the grounds that I have claimed an ethical basis without specifying a coherent ethical theory, never mind one that can serve as the basis of a social contract.],
-  [His point seems to be that it's easier to agree on a discount rate (which is after all just a number, not to mention one decided by a free market (of extremely wealthy actors, but never mind that, it's in some sense objective)) than to agree on a whole theory of ethics. And that absent any such theory of ethics, we can't decide anything on an ethical basis. Ergo, ethics doesn't matter, and therefore economics, QED.],
-  [Contrast this with this  interesting argument that life doesn't begin at conception , intended to undercut ethical arguments against abortion:],
-  [Here, ethics is derived from what "any rational [sic] human being" and "anyone with a beating heart" would agree to. I am not advocating a position on the claim that anyone would behave in this way, though I'm fascinated by the "argumentam ad ducking the question by missing the point of the analogy" aspect of some of the responses. "No they aren't viable", "no they don't weigh that much" etc. I am admitting that something about this way of arguing strikes me as unsatisfying, and I think that William is accusing me of doing something similar.],
-  [Now to be fair, this is a trolley problem, an absurdly unrealistic distillation of reality, while climate change, alas, is something we actually are bequeathing to succeeding generations.],
-  [But I'm saying "if we could distill this climate problem to its essence, people would not behave the way they are now behaving". That is, I am arguing from an innate ethical sense, just as Tomlinson is doing.],
-  [As I keep saying, my position on ethics is fundamentally the traditional conservative one, the Tory one. It is that we do know good from evil in some sense, whether this is by nature or nurture, and that this understanding should be honoured rather than trivialized. In particular we should honour ethical standards that apparently arise in disparate cultures, such as acting in service of the eternal at the expense of our own personal benefit.],
-  [That we increasingly lack a consensus on ethics seems to be core to both William's point and mine. Building an ethical consensus when it is breaking down is more difficult that maintaining an extant system that optimizes for self-interest and eschews any long view. I think we agree on this. Where we disagree is what to do about it. I think, in what I believe is a fundamentally Tory way, that we should reach back to our ancestors and try to understand what they'd think of our behaviour, and consider modifying it appropriately. William's position seems to me to be that it's too hard, and we need to settle for what economics will buy us, and hope that is enough.],
-  [Tom's position is like that of the guy who refuses to answer Tomlinson's question. It isn't that we should or shouldn't temper economics with ethics. It's that climate isn't that big a deal. Of course, I find that position wrong, but in the present context it's worse than wrong, it's irrelevant. Do we owe something to the seventieth generation, specifically, a viable ecologically diverse planet? I say yes, and I say we're screwing it up spectacularly. William shrugs, defers to his friend the economist, and says, well, the ecological viability of the seventieth generation isn't worth much according to revealed preferences in the marketplace. Tom F says "squirrel".],
-  [There's a new entrant in the field, Steve Mosher, who considers my explicit appeal to ethics "wacky and repugnant". I remain hopeful that Mosher is an outlier in making such a claim, that ethical discourse is acceptable to most people in deciding, well, what we should do.],
-  [Notice the "should"?],
-  [The trouble is that we don't really have an explicit ethical basis. It's possible that "life begins at conception" could be a consensus. The Spartans said "life begins when the infant is granted a name", allowing for postpartum abortion. This could also be an imaginable consensus.],
-  [(I know I'm treading on dangerous ground here. Lord give me strength not to voice an opinion on this question!)],
-  [But I do think that most people do not want to believe that their lifestyle is destroying the world for their grandchildren.],
-  [Since in fact it quite arguably is doing exactly that, the easy approach is to resort to denial. "It's not really a problem." ("The embryos in the case are not really viable." "Global warming will have modest impact.") And a denial industry has arisen to serve exactly that predeliction, simultaneously protecting literally trillions of dollars in reserve fossil assets.],
-  [But I'm venturing that "we should not irreversibly damage the world" is a proposition that a vast majority of people would agree to. An ethical consensus still exists, even if accompanied by no formal ethical philosophy.],
-  [That being the case, denial that major change is necessary, without due consideration of the evidence that it is, is in violation of a global ethical consensus.],
-  [So we're being bad. Evil, by our own, very limited but still extant, shared ethic.],
-  [Mosher further suggests that it is impolitic to say so. I think that's weird, but that's another topic.],
-  [Impolitic, repugnant, too difficult, lacking a coherent philosophy, squirrel.],
-  [Sorry, I still vote none of the above.],
-  [We may not agree when life begins. But we can still agree that it would not be a good idea to end it or drastically curtail its potential.],
-),
-  insert-map: (:),
-  word-count: 965,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-}
-
-{
-  #standard-article(
-  title: [Process scheduling and multitasking in KnightOS],
-  author: [Drew DeVault],
-  source-name: [Drew DeVault],
-  images: (),
-  paragraphs: (
-  [I’m going to do some blogging about technical decisions made with
- KnightOS . It’s an open-source project I’ve been working
-on for the past four years to build an open-source Unix-like kernel for TI
-calculators (in assembly). It’s been a cool platform on top of which I can
-research low level systems concepts and I thought I’d share some of my findings
-with the world.],
-  [So, first of all, what is scheduling? For those who are completely out of the],
-  [loop, I’ll explain what exactly it is and why it’s neccessary. Computers run on],
-  [a CPU, which executes a series of instructions in order. Each core is not],
-  [capable of running several instructions concurrently. However, you can run],
-  [hundreds of processes at once on your computer (and you probably are doing so],
-  [as you read this article). There are a number of ways of accomplishing, but the],
-  [one that suits the most situations is preemtive multitasking . This is what],
-  [KnightOS uses. You see, a CPU can only execute one instruction after another,],
-  [but you can “raise an interrupt”. This will halt execution and move to some],
-  [other bit of code for a moment. This can be used to handle various events (for],
-  [example, the GameBoy raises an interrupt when a button is pressed). One of],
-  [these events is often a timer, which raises an interrupt at a fixed interval.],
-  [This is the mechanism by which preemptive multitasking is accomplished.],
-  [Let’s say for a moment that you have two programs loaded into memory and
-running, at addresses 0x1000 and 0x2000. Your kernel has an interrupt handler
-at 0x100. So if program A is running and an interrupt fires, the following
-happens:],
-  [0x1000 is pushed to the stack as the return address],
-  [The program counter is set to 0x100 and the interrupt runs],
-  [The interrupt concludes and returns, which pops 0x1000 from the stack and
-into the program counter.],
-  [Once the interrput handler runs, however, the kernel has a chance to be sneaky:],
-  [0x1000 is pushed to the stack as the return address],
-  [The program counter is set to 0x100 and the interrupt runs],
-  [The interrupt removes 0x1000 from the stack and puts 0x2000 there instead],
-  [The interrupt concludes and returns, which pops 0x2000 from the stack and
-into the program counter.],
-  [Now the interrupt has switched the CPU from program A to program B. And the
-next time an interrupt occurs, the kernel can switch from program B to program
-A. This event is called a “context switch”. This is the basis of preemptive
-multitasking. On top of this, however, there are lots of ideas around which
-processes should get CPU time and when. Some systems have more complex
-schedulers, but KnightOS runs on limited hardware and I wanted the context
-switch to be short and sweet so that the running processes get as much of the
-CPU as possible. I’ll explain the simple KnightOS scheduling algorithm here.
-First, its goals:],
-  [Short and simple context switches],
-  [Ability to suspend processes when not in foreground],
-  [Ability to run background processes],
-  [What KnightOS uses is a simple round robin with the ability to suspend threads.
-That is, we have a list of processes and then some flags, among which is
-whether or not the processes is currently suspended. So say we have this list
-of processes in memory:],
-  [1: PC=0x2000, not suspended],
-  [2: PC=0x2000, not suspended],
-  [3: PC=0x2000, suspended],
-  [4: PC=0x2000, not suspended],
-  [As process 1 is running and an interrupt fires, the kernel looks at this table
-and picks the next non-suspended process to run - process 2. On the next
-interrupt, it does it again, skipping process 3 and giving time to process 4.],
-  [To actually implement this, we have to think about the stack. KnightOS runs on
-z80 processors, which have a single stack and a shared memory space. The CPU
-uses the PC register to keep track of which address the current instruction is
-at. That is, say you compile this code:],
-  [ld a, 10
-inc a
-ld (hl), a],
-  [This compiles to the machine code 3E 0A 3C 77. Say we load this program at
-0x8000 - then 0x8000 will point to ld a, 10 . When the CPU finishes executing
-this instruction, it advances PC to 0x8002 (since ld a, 10 is a two-byte
-instruction). The next instruction it executes will be inc a , and then PC
-advances to 0x8003.],
-  [The stack is used for a lot of things. It can be used to save values, and it is
-used to call subroutines. It is also used for interrupts. It’s like the same
-stacks you use in higher level applications, but it’s at a very low level. When
-an interrupt fires, the current value of PC is pushed to the stack. Then PC is
-set to the interrupt routine, and then when that’s done the top of the stack is
-removed and placed into PC (effectively returning control to the original
-location). However, since the stack is used for much more than that, we have
-additional things to consider.],
-  [In KnightOS, when a new process starts, it’s allocated a stack in memory and
-the CPU’s stack pointer (SP) is set to its address. When an interrupt happens,
-we need to change the stack to point at some other process so it has time to
-run (since that’s where its PC is). However, we need to make sure that the
-first processes stack is left intact. Since we allocate a new stack for the
-next process, we can simply change SP to that processes stack. This will leave
-behind the value of PC that was pushed during the interrupt for the previous
-process, and lo and behlod a similar value of PC is waiting on top of the other
-processes stack.],
-  [So that’s it! We do a simple round robin, skipping suspended processes and
-following the procedure outlined above to switch between them. This is how
-KnightOS shares one CPU with several “concurrent” processes. Operating systems
-like Linux use more complicated schedulers with more interesting theory if
-you’d like some additional reading. And of course, since KnightOS is open
-source, you may enjoy reading all of our code for handling this stuff (in
-assembly):],
-  [Context switching],
-  [Stack allocation during process creation],
-  [We’re hanging out on \#knightos on Freenode if you want to chat about cool
-low-level stuff like scheduling and memory management.],
-),
-  insert-map: (:),
-  word-count: 1066,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -1655,41 +1038,79 @@ together that you couldn’t do alone?],
   debug-mode: false,
 )
 
-  #pull-quote([In the burials of the Samnite men, archaeologists uncovered grave goods like spearheads and javelin points.], [Kaleena Fraga])
-
 }
 
 {
   #standard-article(
-  title: [Social Media Addiction Trial Should Lead to Platform Redesigns],
-  author: [Daniel Katz],
-  source-name: [IEEE Spectrum],
+  title: [Size Matters],
+  author: [Jessie Frazelle],
+  source-name: [Jessie Frazelle],
   images: (),
   paragraphs: (
-  [In a landmark case, a jury found this week that Meta and YouTube negligently designed their platforms and harmed the plaintiff, a 20-year-old woman referred to as Kaley G. M. The jury agreed with the plaintiff that social media is addictive and harmful and was deliberately designed to be that way. This finding aligns with my view as a clinical psychologist: that social media addiction is not a failure of users, but a feature of the platforms themselves. I believe that accountability must extend beyond individuals to the systems and incentives that shape their behavior.],
-  [In my clinical practice, I regularly see patients struggling with compulsive social media use. Many describe a pattern of “doomscrolling,” often using social media to numb themselves after a long day. Afterwards, they feel guilty and stressed about the time lost yet have had limited success changing this pattern on their own.],
-  [It’s easy to understand why scrolling can be so addictive. Social media interfaces are built around a powerful behavioral mechanism known as intermittent reinforcement, says Judson Brewer , an addiction researcher at Brown University, which is the strongest and most effective type of reinforcement learning. This is the same mechanism that slot machines rely on: Users never know when the next reward—a shower of quarters, or a slew of likes and comments—will appear. Not all the videos in our feeds captivate us, but if we scroll long enough, we are bound to arrive at one that does. The ongoing search for rewards ensnares us and reinforces itself.],
-  [Why Social Media Feels Addictive],
-  [Individuals typically struggle on their own to address compulsive social media use. This should be no surprise, as habits are not typically broken through sheer discipline but rather by altering the reinforcement loops that sustain them. Brewer argues that “there’s actually no neuroscientific evidence for the presence of willpower.” Placing the burden to self-regulate solely on users misses the deeper issue: These platforms are engineered to override individual control.],
-  [A growing body of research identifies social media use and constant digital connectivity as important influences on the growing incidence of adolescent mental health problems. Brewer notes that adolescents are particularly vulnerable, as they are in a “developmental phase” in which reinforcement learning processes are especially strong. This vulnerability can be exploited by the design features of large social media platforms.],
-  [How Platforms Are Designed to Maximize Engagement],
-  [NPR uncovered records from a recent lawsuit filed by Kentucky’s attorney general against TikTok. According to these documents, TikTok implemented interface mechanisms such as autoplay, infinite scrolling, and a highly personalized recommendation algorithm that were systematically optimized to maximize user engagement.],
-  [TikTok’s algorithmically tailored “For You” content continuously tracks user behaviors, such as how long a video is watched, whether it is replayed, or quickly skipped. The feed then curates short videos, or reels, for the user based on past scrolling behavior and what is most likely to hold attention.],
-  [These documents show one example of a tech company knowingly designing products to maximize attention. I believe social media companies also have the capacity to reduce addictiveness through intentional design choices.],
-  [How Governments Are Regulating Social Media],
-  [The good news is we are not helpless. There are multiple levers for change: how we collectively talk about social media, how our governments regulate its design and access, and how we hold companies accountable for practices that shape user behavior.],
-  [Some countries are moving quickly to set policy around social media use. Australia has imposed a minimum age of 16 for social media accounts, with similar bans pending in Denmark, France, and Malaysia.],
-  [These bans typically rely on age verification. Users without verified accounts can still passively watch videos on platforms like YouTube, but this approach removes many of the most addictive features, including infinite scroll, personalized feeds, notifications, and systems for followers and likes. At the same time, age verification may cause different problems in the online ecosystem.],
-  [Other countries are targeting social media use in specific contexts. South Korea, for example, banned smartphone use in classrooms . And the United Kingdom is taking a different approach; its Age Appropriate Design Code instructs platforms to prioritize children’s safety while designing products. The code includes strong privacy defaults, limits on data collection, and constraints on features that nudge users toward greater engagement.],
-  [How Social Media Platforms Could Be Redesigned],
-  [A report called Breaking the Algorithm , from Mental Health America, argues that social media platforms should shift from maximizing engagement to supporting well-being. It calls for revamping recommendation systems to spot patterns of unhealthy use and adjusting feeds accordingly—for example, by limiting extreme or distressing content.],
-  [The report also argues that users should not have to intentionally opt out of harmful design features. Instead, the safest settings should be the default. The report supports regulatory measures aimed at limiting features such as autoplay and infinite scroll while enforcing privacy and safety settings.],
-  [Platforms could also give users more control by adding natural speed bumps, such as stopping points or break reminders during scrolling. Research shows that interrupting infinite scroll with prompts such as “Do you want to keep going?” substantially reduces mindless scrolling and improves memory of content.],
-  [Some social media platforms are already experimenting with more ethical engagement. Mastodon , an open-source, decentralized platform, displays posts chronologically rather than ranking them for engagement, and does not offer algorithmically generated feeds like “For You.” Bluesky gives users control by letting them customize their own algorithms and toggle between different feed types, such as chronological or topic-based filters.],
-  [In light of the recent verdict, it is time for a national conversation about accountability for social media companies. Individual responsibility will always be important, but so are the mechanisms employed by big tech to shape user behavior. If social media platforms are currently designed to capture attention, they can also be designed to give some of it back.],
+  [My mom has a tendency to buy these really terribly spec’d Windows machines.
+She’s been doing it for as long as I’ve been alive. I was surprised when on one
+of our latest Zoom calls she said “You know what, I’m beginning to think that
+size matters.” I’ve only been telling her this for years! Here’s the problem.],
+  [There are a bunch of shitty Windows machines you can buy that cost around \$400
+dollars and have something like 4GB RAM. For consumers, this is really
+compelling; the price seems right. The problem is when they start trying to use
+the machine to do anything , it runs at a snails pace and leaves them with the
+world’s worst user experience. My mom continually complained about how slow her
+computer was and I continually said it’s because it’s a shit machine and you
+have to spend more to actually get good specs.],
+  [Apple wouldn’t be caught dead selling a machine with 4GB of RAM. They know
+better than that and care about the experience the end user has. My sister has
+been lucky enough to never have to buy a computer since she continually inherits
+my old ones. After my mom had finished saying that “size matters,” my sister
+noted that my MacBookPro I gave her in 2012 still runs great and is fast. This
+is no surprise to me because at the time I bought that computer it was the top
+of its line and had 16GB of RAM. Today, that model goes up to 64GB of RAM but
+16GB is definitely enough for my sister to run a browser and do what she needs
+for work (although Chrome is really pushing the limits these days).],
+  [It infuriates me to no end that consumers have an option of even buying a \$400
+computer that will give them such a terrible experience. The price is great but
+the experience is terrible. Even if consumers have a daughter continually
+telling them that “size matters,” they might still make the very innocent
+mistake of buying the machine and realizing later that it is a lemon. It is not
+their fault. Manufacturers of computers should be embarrassed for even selling
+such a shit machine. I know I would be.],
+  [A few articles and papers have surfaced lately on migrating threads and processes
+to different kernels. One of these is called popcorn 1 . Another has been
+dubbed teleforking 2 . I’m not going to get into the details, but in essence,
+what people are trying to do is move
+a process from one computer to another. This is great! This could be a huge
+problem solver for folks with computers that have terrible specs. It could
+also mean a lot for the future of consumer computers.],
+  [Imagine a computer where if you were running especially hot and your user
+experience had been compromised… the computer realizes this and forks your
+process into a remote data center,
+while maintaining a great user experience locally. It would need to be seamless and
+invisible to the end user. If the process is a GUI it would need to still have
+the user interface rendering locally while most of the compute is remote. If the
+process is a job streaming output into a terminal it is a bit easier. Both
+should be possible.],
+  [Future computers should not have limited computing power, just limited local 
+computing power. This wouldn’t need to just be for your laptops or desktops,
+your VR headset or gaming console could fork processes to other available
+computers when they needed more computing power. The remote compute would not
+always need to be in a data center. An overburdened laptop could fork a process
+to your gaming console while you were at work and vice-versa while you were
+playing a game.],
+  [Compute should be easily shared and readily available. While consumers should
+not even have an option of buying a machine with terrible specs that lead to
+a terrible user experience, the ability to offload processes to another computer
+would allow them to have a great experience even on a lemon. As I see it, this
+should be the future of consumer computing. People should be able to create
+anything they imagine on a computer that gives them unlimited power to do so. To
+quote one of my favorite lines from Halt and Catch Fire: “Computers aren’t the
+thing. They’re the thing that gets us to the thing.”],
+  [id="fn:1"\> https:\/\/www.ssrg.ece.vt.edu/theses/MS\_Katz.pdf 
+ \[return\]],
+  [id="fn:2"\> https:\/\/thume.ca/2020/04/18/telefork-forking-a-process-onto-a-different-computer\/ 
+ \[return\]],
 ),
   insert-map: (:),
-  word-count: 979,
+  word-count: 749,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -1698,64 +1119,71 @@ together that you couldn’t do alone?],
 
 {
   #standard-article(
-  title: [We are complicit in our employer's deeds],
+  title: [Status update, August 2019],
   author: [Drew DeVault],
   source-name: [Drew DeVault],
   images: (),
   paragraphs: (
-  [Tim Bray’s excellent “ Bye Amazon ” post inspired me to take this
-article off of my backlog, where it has been sitting for a few weeks. I applaud
-Tim for stepping down from a company that has demonstrated itself incompatible
-with his sense of right and wrong, and I want to take a moment to remind you
-that the rest of us in the tech industry have the same opportunity — no,
-the same obligation as Tim did.],
-  [As software engineers, we enjoy high salaries and extremely good job security. A
-good software engineer with only a couple of years of experience under their
-belt can expect to have an offer within 1 or 2 months of starting their search.
-It can seem a little scary and stressful, but if you’re a programmer already
-working at \$company and you’re looking for a change, you’re better off than 99%
-of your non-technical friends. In tech, hardly anyone is “trapped” at a bad job;
-or at least we don’t have a good excuse for not trying for something better.],
-  [Tim calls out Amazon’s terrible, unhealthy working conditions and retaliation
-against staff who speak up or try to organize. 1 Google conducts mass
-surveillance, kowtows to oppressive regimes, and punishes workers who stand up
-to them. Less obvious stuff, too — Apple builds walled gardens and makes
-targeted attacks on open standards, Facebook is a giant surveillance tool which
-routinely disregards the law, the same behavior which made Uber and Airbnb into
-the giants they are today, all while fostering a “gig” culture in which the poor
-have no stability or security. Mass surveillance, contempt of the law, tax
-evasion, oppression of the poor, of minorities… this is what our industry is
-known for, and it’s our fault.],
-  [This is why I hold my peers accountable for working at companies which are
-making a negative impact on the world around them. As a general rule, it costs a
-business your salary × 1.5 to employ you, given the overhead of benefits,
-HR, training, and so on. When you’re making a cool half-million annual salary
-from \$bigcorp, it’s because they expect to make at least ¾ of a million that
-they wouldn’t be making without you. It does not make economic sense for them to
-hire you if this weren’t the case. Your contribution makes a big difference.],
-  [If the best defense we have for working at these companies is the Nuremberg],
-  [defense , that doesn’t reflect well on us. But, maybe you would],
-  [object, maybe you would have the courage to say “no” when asked to do these],
-  [things. Maybe you would, but someday, a cool project will come across your],
-  [inbox - machine learning! Big data! Cloud scale! It’s everything you were],
-  [promised when you took the job, and have more fun with it for a few months than],
-  [you have had in a long time. Your superiors are thrilled - “it’s perfect!”, they],
-  [say, and it’s not until they take it and start feeding it real-world data that],
-  [you realize exactly what you have built . Doublethink quickly],
-  [steps in to protect your ego from the cognitive dissonance, and you take another],
-  [little step towards becoming the person you once swore never to be.],
-  [The rapid computerization of society has decreased the time necessary to build
-novel machines one thousand-fold. This endows us with a great responsibility,
-because whatever we build with them, the changes they bring to society will be
-upon us much, much faster than any changes to come before. Every software
-developer possesses alone the potential of 50 engineers living just 100 years
-ago. We can apply this power for good or for ill, but it’s up to each of us to
-make a deliberate choice on the matter.],
-  [id="fn:1"\>],
-  [Here’s a link to cancel Amazon Prime, by the way.  ↩︎],
+  [Outside my window, the morning sun can be seen rising over the land of the
+rising sun, as I sip from a coffee purchased at the konbini down the street. I
+almost forgot to order it, as the staffer behind the counter pointed out with a
+smile and a joke that, having been told in Japanese, mostly went over my head.
+It’s on this quiet Osaka morning I write today’s status update - there are lots
+of existing developments to share!],
+  [Let’s start with sourcehut news. I deployed a cool feature yesterday - SSH
+access to builds.sr.ht. You can now SSH into a failed build to examine the
+failure and investigate the root cause. You can also get a shell on-demand for
+any build image, including for experimental arm64 support. I’ll be writing a
+full-length blog post going into detail about this feature later in the week.
+Additionally, with contributor Ryan Chan’s help, man.sr.ht received a huge
+overhaul which moved wikis out of man.sr.ht’s dedicated git subsystem and into
+git.sr.ht repositories, allowing you to make your wiki out of a branch of your
+main project repo or browse the git data on the web. I’ll be posting more sr.ht
+news to sr.ht-announce later today if you want to hear more!],
+  [aerc 0.2.0 has been released,
+which included nearly 200 changes from 34 contributors. I’m grateful to the
+community for this crazy amount of support - working together we’ll make aerc
+amazing in no time. Highlights include maildir and sendmail transports, search
+and filtering, support for mailto: links, tab completion, and more. We haven’t
+slowed down since, and the next release already has support lined up for
+notmuch, more tab completion support, and more features for mail composition. In
+related news, Greg Kroah-Hartman of Linux kernel fame was kind enough to write
+up 
+details about his email workflow to help guide the direction of aerc. I’ll be
+writing a follow-up post next week explaining how aerc aims to solve the
+problems he lays out.],
+  [Sway and wlroots continue chugging along as well, with the release of Sway
+1.2-rc1 coming earlier this week. This release adds many features from the
+recent i3 4.17 release, and adds a handful of small features and bug fixes. The
+corresponding wlroots release will be pretty cool, too, adding support for
+direct scanout and fixing dozens of bugs. I’d like to draw your attention as
+well to a cool project from the Sway community: Jason Francis’s
+ wdisplays , a GUI for arranging and
+configuring displays on wlroots-based desktops. The changes necessary for it to
+work will land in sway 1.2, and users building from git can try it out today.],
+  [On the DRM leasing and VR for Wayland work I was discussing in the last update,],
+  [I’m happy to share that I’ve got it working with SteamVR! I’ve written a],
+  [detailed blog post which],
+  [explains all of the work that went into this project, if you want to learn about],
+  [it in depth and watch some cool videos summing up the work. There’s still a lot],
+  [of work to do in negotiating the standardization of new interfaces to support],
+  [this feature in several projects, but all of the unknowns have been discovered],
+  [and answered. We will have VR on Wayland soon. I plan on making my way to the],
+  [Monado and OpenXR to],
+  [help realize a top-to-bottom free software VR stack designed with Wayland in],
+  [mind. I’ll also be joining many members of the wlroots gang at],
+  [XDC in October, where I hope to meet the people],
+  [working on OpenXR.],
+  [I’ve also invested more time into my Wayland book, because I’ve realized that at
+my current pace it won’t be done any time soon. It’s now about half complete and
+I’ve picked up the pace considerably. If you’re interested in helping review the
+drafts, please let me know!],
+  [That’s all for today. Thank you for your continued support!],
+  [This work was possible thanks to users who support me financially. Please
+consider donating to my work or buying a sourcehut.org subscription . Thank you!],
 ),
   insert-map: (:),
-  word-count: 645,
+  word-count: 676,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -1765,18 +1193,70 @@ make a deliberate choice on the matter.],
 #article-row((
   [
     standard-article(
-  title: [Turbolinks and the Prague Café Effect],
-  author: [Robin Ward (eviltrout)],
-  source-name: [Robin Ward (eviltrout)],
+  title: [When will we learn?],
+  author: [Drew DeVault],
+  source-name: [Drew DeVault],
   images: (),
   paragraphs: (
-  [id="turbolinks"\>Turbolinks],
-  [Turbolinks is a new Ruby library, enabled in Rails 4 by default, that is designed to speed up your web applications.],
-  [It does this by binding a Javascript handler to all link clicks. Instead of allowing the browser to load the new page, it fetches it in the background via AJAX. It then parses out the body, and injects it into the document you’re currently viewing.],
-  [The main advantage of Turbolinks is that your static assets such as Javascript or CSS will not be downloaded or parsed every time a link is clicked. This can result in a significant client side speed improvement for your end users.],
+  [Congratulations to Rust for its first (but not its last) supply-chain attack
+this week! They join a growing club of broken-by-design package managers which
+publish packages uploaded by vendors directly, with no review step, and ship
+those packages directly to users with no further scrutiny.],
+  [id="timeline-of-major-incidents-on-npmcratespypietc"\>Timeline of major incidents on npm/Crates/PyPI/etc],
+  [2022-05-10: Cargo: rustdecimal ships with malicious code],
+  [2022-05-09: npm: foreach is taken over via an expired email domain],
+  [2022-03-17: npm: node-ipc ships malware targeting Russia and Belarus],
+  [2022-01-09: npm: colors and faker are deliberately sabotaged],
+  [2021-11-19: PyPI: 11 malicious packages discovered],
+  [2021-11-04: npm: rc ships malicious code],
+  [2021-11-04: npm: coa steals your passwords],
+  [2021-10-22: npm: ua-parser-js ships malicious code],
+  [2021-10-11: PyPI: mitmproxy2 typo-squats mitmproxy with an added RCE],
+  [2021-07-30: PyPI: 8 malicious packages discovered],
+  [2020-12-16: RubyGems: pretty\_color (and one other) steals bitcoin from victims],
+  [2020-09-11: npm: dozens of packages steal your user’s credit card number],
+  [2020-09-03: npm: bb-builder steals your password],
+  [2020-04-16: RubyGems: 760+ malicious packages found stealing bitcoin],
+  [2018-11-28: npm: event-stream ships with a bitcoin theft kit],
+  [2018-10-21: PyPI: colourama sneaks bitcoin addresses into your clipboard],
+  [2018-10-13: PyPI: more typo-squatting malware attempts various attacks],
+  [2018-07-12: npm: eslint-scope ships with malicious code],
+  [2018-07-08: AUR: acroread is compromised],
+  [2018-05-11: Snap: a 2048 clone ships a cryptocurrency miner],
+  [2017-09-09: PyPI: typo-squatted packages published by researchers],
+  [2016-07-22: npm: left-pad incident],
+  [There are hundreds of additional examples. I had to leave many of them out.
+ Here’s a good source 
+if you want to find more.],
+  [id="timeline-of-similar-incidents-in-official-linux-distribution-repositories"\>Timeline of similar incidents in official Linux distribution repositories],
+  [id="why-is-this-happening"\>Why is this happening?],
+  [The correct way to ship packages is with your distribution’s package manager.
+These have a separate review step, completely side-stepping typo-squatting,
+establishing a long-term relationship of trust between the vendor and the
+distribution packagers, and providing a dispassionate third-party to act as an
+intermediary between users and vendors. Furthermore, they offer stable
+distributions which can be relied upon for an extended period of time, provide
+cohesive whole-system integration testing, and unified patch distribution and
+CVE notifications for your entire system.],
+  [For more details, see my previous post, Developers: Let distros do their
+job .],
+  [id="can-these-package-managers-do-it-better"\>Can these package managers do it better?],
+  [I generally feel that overlay package managers (a term I just made up for npm et
+al) are redundant. However, you may feel otherwise, and wonder what they could
+do better to avoid these problems.],
+  [It’s simple: they should organize themselves more like a system package manager.],
+  [Establish package maintainers independent of the vendors],
+  [Establish a review process for package updates],
+  [There’s many innovations that system package managers have been working on which
+overlay package managers could stand to learn from as well, such as:],
+  [Universal package signatures and verification],
+  [Reproducible builds],
+  [Mirrored package distribution],
+  [For my part, I’ll stick to the system package manager. But if you think that the
+overlay package manager can do it better: prove it.],
 ),
   insert-map: (:),
-  word-count: 108,
+  word-count: 484,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -1784,6 +1264,47 @@ make a deliberate choice on the matter.],
   ],
   [
     standard-article(
+  title: [The Day I Leave the Tech Industry],
+  author: [Jessie Frazelle],
+  source-name: [Jessie Frazelle],
+  images: (),
+  paragraphs: (
+  [I was inspired last night by Cate Huston’s post,
+ The Day I Leave the Tech Industry .
+I decided to write my own, except I’m not as eloquent a writer as Cate so before
+I go any further please, please, please read her post and not mine.],
+  [Mine is going to be a bit different. Lately I’ve been thinking more and more
+about this. It seems imminent. I’m only 27 and let me repeat: it seems imminent.],
+  [I’m going to tell you all the fantasy that plays in my brain for when this happens.],
+  [The day I leave the tech industry will feel like a giant weight has finally been
+lifted. It will be freeing. There are a few scenarios I’ve played out for what
+I will do after.],
+  [teach math in a third world country],
+  [write a book],
+  [play professional poker],
+  [I could do all three. One thing is for sure though, the day I leave the tech industry
+will be the day I contribute my last piece of code to open source software.],
+  [Today, I am not quite ready to give up this thing I have such a “hate/love”
+relationship with. Today, I want to get more women contributing so that
+maybe in the distant future we will feel welcome. Maybe we won’t have to fight
+so hard just to be heard; to have our opinions matter.],
+  [Today is not my last day in the tech industry. But it is comforting to me
+to plan out this very real future. I am not just “the container girl”. I am a
+human being with feelings, a limit, and a future outside of tech.],
+),
+  insert-map: (:),
+  word-count: 274,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+  ],
+), ruled-indices: (1,))
+#pull-quote([One thing is for sure though, the day I leave the tech industry will be the day I contribute my last piece of code to open source software.], [Jessie Frazelle])
+
+
+{
+  #standard-article(
   title: [Webcast: Reviewing git & mercurial patches with email],
   author: [Drew DeVault],
   source-name: [Drew DeVault],
@@ -1812,34 +1333,327 @@ about that project soon.],
   debug-mode: false,
 )
 
+}
+
+{
+  #section-label([Analysis])
+  #standard-article(
+  title: [Using the right tool for the job],
+  author: [Drew DeVault],
+  source-name: [Drew DeVault],
+  images: (),
+  paragraphs: (
+  [One of the most important choices you’ll make for the software you write is what
+you write it in, what frameworks you use, the design methodologies to subscribe
+to, and so on. This choice doesn’t seem to get the respect it’s due. These are
+some of the only choices you’ll make that you cannot change . Or, at least,
+these choices are among the most difficult ones to change.],
+  [People often question why TrueCraft is written in C\# next to projects like Sway
+in C, alongside KnightOS in Assembly or sr.ht in Python. It would certainly be
+easier from the outset if I made every project in a language I’m comfortable
+with, using tools and libraries I’m comfortable with, and there’s certainly
+something to be had for that. That’s far from being the only concern, though.],
+  [A new project is a great means of learning a new language or framework - the
+only effective means, in fact. However, the inspiration and drive for new
+projects doesn’t come often. I think that the opportunity for learning is more
+important than the short term results of producing working code more quickly.
+Making a choice that’s more well suited to the problem at the expense of comfort
+will also help your codebase in the long run. Why squander the opportunity to
+choose something unfamiliar when you have the rare opportunity to start working
+on a new project?],
+  [I’m not advocating for you to use something new for every project, though. I’m
+suggesting that you detatch your familiarity with your tools from the
+decision-making process. I often reach for old tools when starting a new
+project, but I have learned enough about new tools that I can judge what
+projects are a good use-case for them. Sometimes this doesn’t work out, too - I
+just threw away and rewrote a prototype in C after deciding that it wasn’t a
+good candidate for Rust.],
+  [Often it does work out, though. I’m glad I chose to learn Python for MediaCrush
+despite having no experience with it (thanks again for the help with that,
+Jose!). Today I still know it was the correct choice and knowing it has hugely
+expanded my programming skills, and without that choice there probably wouldn’t
+have been a Kerbal Stuff or a sr.ht or likely even the new API we’re working on
+at Linode. I’m glad I chose to learn C for z80e, though I had previously written
+emulators in C\#. Without it there wouldn’t be many other great tools in the
+KnightOS ecosystem written in C, and there wouldn’t be a Sway or an aerc. I’m
+glad I learned ES6 and React instead of falling back on the familiar Knockout.js
+when building prototypes for the new Linode manager as well.],
+  [Today, I have a mental model of the benefits and drawbacks of a lot of
+languages, frameworks, libraries, and platforms I don’t know how to use. I’m
+sort of waiting for projects that would be well suited to things like Rust or
+Django or Lisp or even Plan 9. Remember, the skills you already know make for a
+great hammer, but you shouldn’t nail screws to the wall.],
+),
+  insert-map: (:),
+  word-count: 527,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+  #pull-quote([However, the inspiration and drive for new projects doesn’t come often.], [Drew DeVault])
+
+}
+
+{
+  #standard-article(
+  title: [Archaeologists Just Uncovered A 2,100-Year-Old Sling Bullet Inscribed With The Message ‘Learn Your Lesson’],
+  author: [Kaleena Fraga],
+  source-name: [All That's Interesting],
+  images: (),
+  paragraphs: (
+  [class="dropcaps"\>During excavations in the ancient city of Hippos (also known as Sussita) in the Golan Heights, archaeologists found a small sling bullet that dates back 2,100 years. Such ancient relics have been unearthed many times in this area, but this one stood out. Upon closer examination, archaeologists realized that it bore an inscription.],
+  [On the side of the bullet, written in Greek, someone had carved out the letters “ΜΑΘΟΥ.” This is Greek for “learn,” and researchers believe that a defender of Hippos fired the sling bullet at an enemy invader in order to convey the message “learn your lesson.”],
+  [The Inscribed Sling Bullet Found Among Ancient Ruins In The Golan Heights],
+  [According to a study from the University of Haifa , archaeologists came across the sling bullet during excavations in Hippos in late 2025. The bullet was found with a metal detector near the riverbed of the Sussita Stream, and though 70 sling bullets had already been found, this one stood out.],
+  [Almond-shaped and made of lead, the bullet is roughly 1.3 inches long and weighs 1.6 ounces. On its side is an inscription in Greek: “ΜΑΘΟΥ,” translated as “learn.” Though sling bullets inscribed with words have been found elsewhere, the sling bullets in Hippos have so far only had threatening images, like scorpions or thunderbolts. This is the first bullet found in Hippos to bear a linguistic inscription, and archaeologists believe it was a “sarcastic” taunt for the enemy.],
+  [They believe that this particular usage of the word, as well as the context, suggests that “ΜΑΘΟΥ” would translate as “learn your lesson!” This lines up with other documented sling bullets from this era with inscriptions like “take a taste,” “take it,” and “receive this.”],
+  [But who fired this bullet and why? Researchers suspect that it was launched by a Greek-speaking defender of Hippos some 2,100 years ago. But questions remain about who exactly the bullet was fired upon.],
+  [Sling Bullets In The Ancient Mediterranean],
+  [A popular projectile in the ancient world, sling bullets were originally made from stone or clay, but lead soon became more popular because it was cheap and easy to produce. Attackers would swirl the bullet aloft, held in a leather pouch, before flinging it at an enemy.],
+  [Such projectiles could easily strike an individual at a short distance, or a group of people at a longer distance. Perhaps most famously, such a bullet was said to be used by David to defeat Goliath.],
+  [Like the bullet found in Hippos, they sometimes bore inscriptions, including the names of cities, gods, military units, or wartime commanders, like Julius Caesar .],
+  [Sling bullets were a popular weapon in Hippos, as evidenced by the dozens of examples found in the area — but the exact origin of the inscribed sling bullet is difficult to pinpoint.],
+  [Hippos itself was founded by descendants of captains of Alexander the Great in 199 B. C. E. as part of the Decapolis (a confederation of 10 Hellenistic cities) following the Battle of Paneion. It was perched on the frontier of the Greek , then Roman , empire until Pompey’s conquest of Syria in 64 B. C. E.],
+  [As such, there are many possible battles in Hippos’ history where the sling bullet could have been fired.],
+  [“The inscribed bullet, as well as other slingshots found at the site, could have been used in any of the several battles during the Hellenistic period in which Hippos was involved,” the researchers wrote in their study. “The first was before the city’s establishment, during the Ptolemaic rule, when a fortress stood atop the hill.”],
+  [That said, researchers believe that the bullet was fired by a Greek defender, and that it was fired over the city walls toward the streambed. “This streambed route,” they noted, “is also the most convenient point of attack towards the city’s main gate on the east for any besieging forces.”],
+  [But though the circumstances of the bullet’s final battle remain lost, its final message rings clear through the centuries: “Learn your lesson!”],
+  [After reading about the 2,100-year-old sling bullet inscribed in Greek that was found in the Golan Heights, learn about the story of the Schwerer Gustav gun , the biggest gun in world history. Then, go inside the strange story of the Panjandrum , a wheel-weapon propelled by rockets that was designed during World War II, but was ultimately deemed too dangerous and unwieldy to use.],
+  [The post Archaeologists Just Uncovered A 2,100-Year-Old Sling Bullet Inscribed With The Message ‘Learn Your Lesson’ appeared first on All That's Interesting .],
+),
+  insert-map: (:),
+  word-count: 824,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+}
+
+{
+  #standard-article(
+  title: [sr.ht, the hacker's forge, now open for public alpha],
+  author: [Drew DeVault],
+  source-name: [Drew DeVault],
+  images: (),
+  paragraphs: (
+  [I’m happy to announce today that I’m opening sr.ht (pronounced
+“sir hat”, or any other way you want) to the general public for the remainder of
+the alpha period. Though it’s missing some of the features which will be
+available when it’s completed, sr.ht today represents a very capable software
+forge which is already serving the needs of many projects in the free & open
+source software community. If you’re familiar with the project and ready to
+register your account, you can head straight to the sign up
+page .],
+  [For those who are new, let me explain what makes sr.ht special. It provides many
+of the trimmings you’re used to from sites like GitHub, Gitlab, BitBucket, and
+so on, including git repository hosting, bug tracking software, CI, wikis, and
+so on. However, the sr.ht model is different from these projects - where many
+forges attempt to replicate GitHub’s success with a thinly veiled clone of the
+GitHub UI and workflow, sr.ht is fundamentally different in its approach.],
+  [The sr.ht platform excites me more than any project in recent memory. It’s a
+fresh concept, not a Github wannabe like Gitlab. I always thought that if
+something is going to replace Github it would have to be a paradigm change, and
+I think that’s what we’re seeing here. Drew’s project blends the wisdom of the
+kernel hackers with a tasteful web interface.],
+  [— begriffs on lobste.rs],
+  [The 500 foot view is that sr.ht is a 100% free and open
+source software forge, with a hosted
+version of the services running at sr.ht for your
+convenience. Unlike GitHub, which is almost entirely closed source, and Gitlab,
+which is mostly open source but with a proprietary premium offering, all of
+sr.ht is completely open source, with a copyleft license 1 . You’re welcome
+to install it on your own hardware, and detailed
+instructions are available for those who
+want to do so. You can also send patches upstream, which are then integrated
+into the hosted version.],
+  [sr.ht is special because it’s extremely modular and flexible, designed with],
+  [interoperability with the rest of the ecosystem in mind. On top of that, sr.ht],
+  [is one of the most lightweight websites on the internet, with the average page],
+  [weighing less than 10 KiB, with no tracking and no JavaScript . Each],
+  [component - git hosting, continuous integration, etc - is a standalone piece of],
+  [software that integrates deeply with the rest of sr.ht and with the rest of],
+  [the ecosystem outside of sr.ht. For example, you can use builds.sr.ht to compile],
+  [your GitHub pull requests, or you can keep your repos on git.sr.ht and host],
+  [everything in one place. Unlike GitHub, which favors its own in-house pull],
+  [request workflow 2 , sr.ht embraces and improves upon the email-based],
+  [workflow favored by git itself, along with many of the more hacker-oriented],
+  [projects around the net. I’ve put a lot of work into making this powerful],
+  [workflow more accessible and],
+  [comprehensible to the average],
+  [hacker.],
+  [The flagship product from sr.ht is its continuous integration platform,
+builds.sr.ht, which is easily the most capable continuous integration system
+available today. It’s so powerful that I’ve been working with multiple Linux
+distributions on bringing them onboard because it’s the only platform which can
+scale to the automation needs of an entire Linux distribution. It’s so powerful
+that I’ve been working with maintainers of non-Linux operating systems, from
+BSD to even Hurd, because it’s the only platform which can even consider
+supporting their needs. Smaller users are loving it, too, many of whom are
+jumping ship from Travis and Jenkins in favor of the simplicity and power of
+builds.sr.ht.],
+  [On builds.sr.ht, simple YAML-based build
+manifests , similar to those
+you see on other platforms, are used to describe your builds. You can submit
+these through the web, the API, or various integrations. Within seconds, a
+virtual machine is booted with KVM, your build environment is sent to it, and
+your scripts start running. A diverse set of base images are supported on a
+variety of architectures, soon to include the first hardware-backed RISC-V
+cycles available to the general public. builds.sr.ht is used to automate
+everything from the deployment of this Jekyll-based blog, testing GitHub pull
+requests for sway , building and testing packages for
+ postmarketOS , and deploying complex applications
+like builds.sr.ht itself. Our base images build, test, and deploy
+themselves every day.],
+  [The lists.sr.ht service is another important part of sr.ht, and a large part of
+how sr.ht embraces the model used by major projects like Linux, Postgresql, git
+itself, and many more. lists.sr.ht finally modernizes mailing lists, with a
+powerful and elegant web interface for hacking on and talking about your
+projects. Take a look at the sr.ht-dev list to see patches
+developed for sr.ht itself. Another good read is the mrsh-dev list,
+used for development on the mrsh project, or my own public
+inbox , where I take comments for this blog and grab-bag
+discussions for my smaller projects.],
+  [I’ve just scratched the surface, and there’s much more for you to discover. You
+could look at my scdoc project to get an
+idea of how the git browser looks and feels. You could browse tickets on my
+todo.sr.ht profile to get a feel for the bug
+tracking software. Or you could check out the detailed
+manual on sr.ht’s git-powered wiki service. You could also
+just sign up for an account !],
+  [sr.ht isn’t complete, but it’s maturing fast and I think you’ll love it. Give it
+a try, and I’m only an email away to receive your
+feedback.],
+  [id="fn:1"\>],
+  [Some components use the 3-clause BSD license.  ↩︎],
+  [id="fn:2"\>],
+  [A model that many have replicated in their own GitHub alternatives.  ↩︎],
+),
+  insert-map: (:),
+  word-count: 951,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+}
+
+#article-row((
+  [
+    standard-article(
+  title: [Status update, April 2021],
+  author: [Drew DeVault],
+  source-name: [Drew DeVault],
+  images: (),
+  paragraphs: (
+  [Another month goes by! I’m afraid that I have very little to share this month.
+You can check out the sourcehut “what’s cooking” post for sourcehut news,
+but outside of that I have focused almost entirely on the programming language
+project this month, for which the details are kept private.],
+  [The post calling for contributors led to a lot of answers and we’ve brought
+several new people on board — thanks for answering the call! I’d like to
+narrow the range of problems we still need help with. If you’re interested in
+(and experienced in) the following problems, we need your help:],
+  [Date/time support],
+  [Networking (DNS is up next)],
+  [Shoot me an email if you want to help. We don’t have the
+bandwidth to mentor inexperienced programmers right now, so please only reach
+out if you have an established background in systems programming.],
+  [Here’s a teaser of one of the stdlib APIs written by our new contributors,
+unix::passwd:],
+  [export type grent = struct {],
+  [\/\\/ Name of the group],
+  [name : str ,],
+  [\/\\/ Optional encrypted password],
+  [password : str ,],
+  [\/\\/ Numerical group ID],
+  [gid : uint ,],
+  [\/\\/ List of usernames that are members of this group, comma separated],
+  [userlist : str ,],
+  [};],
+  [\/\\/ Reads a Unix-like group entry from a stream. The caller must free the result],
+  [\/\\/ using \[grent\_finish\].],
+  [export fn nextgr ( stream : \* io :: stream ) ( grent | io :: EOF | io :: error | invalid );],
+  [\/\\/ Frees resources associated with \[grent\].],
+  [export fn grent\_finish ( ent : grent ) void ;],
+  [\/\\/ Looks up a group by name in a Unix-like group file. It expects a such file at],
+  [\/\\/ /etc/group. Aborts if that file doesn't exist or is not properly formatted.],
+  [\/\/],
+  [\/\\/ See \[nextgr\] for low-level parsing API.],
+  [export fn getgroup ( name : str ) ( grent | void );],
+  [That’s all for now. These updates might be light on details for a while as we
+work on this project. See you next time!],
+),
+  insert-map: (:),
+  word-count: 348,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+  ],
+  [
+    standard-article(
+  title: [TIS-100: My emulator for a CPU that doesn't exist],
+  author: [Robin Ward (eviltrout)],
+  source-name: [Robin Ward (eviltrout)],
+  images: (),
+  paragraphs: (
+  [Recently I became infatuated with TIS-100 , a game which aptly
+describes itself as “the assembly language programming game you never asked for!”],
+  [The point of the game is to program the (imaginary) TIS-100 CPU to solve problems. For example,
+you might need to take input from two ports and swap them, then write the outputs to two other
+ports.],
+  [The game flies in the face of all modern game design: The first thing you need to do is sit and
+read a 14 page PDF that outlines the TIS-100 instruction set. And when I say “read”, I mean “learn”,
+because a quick skim is not going to cut it! There are no tutorial levels or handholding.
+You must read the manual.],
+),
+  insert-map: (:),
+  word-count: 122,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
   ],
 ), ruled-indices: (1,))
+#pull-quote([The caller must free the result  \/\\/ using \[grent\_finish\].], [Drew DeVault])
+
+
+{
+  #standard-article(
+  title: [New Pokemon Go Update May Have An Item That Catches Pokemon For You],
+  author: [GameSpot],
+  source-name: [GameSpot],
+  images: (),
+  paragraphs: (
+  [Pokemon Go players who want an alternative to their Go Plus devices may soon have an in-game item that lets them automatically throw Poke Balls and unleash Pokestops while searching for creatures to recruit.],
+  [PokeMiners (via IGN ) uncovered the existence of the new Explorer Gadget during its latest datamining efforts in Pokemon Go. Players could already access automatic Poke Balls and Pokestops with some pricey physical accessories like the Go Plus. This gadget, however, appears to be a fully in-game device without any need for extra peripherals.],
+  [Assuming the report is accurate, it seems very likely that the new device will be monetized by Pokemon Go's developer. It would make the game a lot easier for casual players--the only real question is how much would fans be willing to pay for this perk? It has yet to be officially announced, so for now we can only speculate as to whether it will be a one-time purchase or if the developer has subscription plans in mind.],
+  [Continue Reading at GameSpot],
+),
+  insert-map: (:),
+  word-count: 170,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+}
 
 {
   #section-label([Briefs])
   #brief-group((
-    #brief-item([Hannah Shaw-Williams], source-name: [/Film], [Project Hail Mary author Andy Weir says Paramount rejected his pitch for a Star Trek show, and has some harsh words for modern Trek.])
-
-    #brief-item([Hayden James], source-name: [Hayden James], [A complete guide to cron and crontab on Linux: syntax explained, practical scheduling examples, environment variables, logging, system crontabs, and debugging tips for when jobs refuse to run.
-
- Continue reading...])
-
-    #brief-item([Robin Ward (eviltrout)], source-name: [Robin Ward (eviltrout)], [The Roottrees are Dead was released on January 15, 2025 and
-it did much better than I ever expected. The reception has been amazing. In just over a week, the game hit the magic mark of 500
-reviews on Steam, and triggered the “Overwhelmingly Positive” status.
-
-On BlueSky, Bloomberg writer Jason Schreier blew me away when he posted :
-
-“Seven days into 2025 and I’ve already played what I suspect will be one of my favorite games of the year: The Roottrees Are Dead.” Wow!])
-
-    #brief-item([Ryan Schwartz], source-name: [TVLine], [TVLine offers a look at the week ahead - a handy roundup of new TV premieres and finales to help you plan your viewing for March 29-April 4.])
-
-    #brief-item([PortSwigger Web Security Blog], source-name: [PortSwigger Web Security Blog], [At PortSwigger, we’re always looking for ways to enable the world to secure the web, and today we’re excited to take that mission a step further. We’re pleased to announce a new collaboration bringing])
-
-    #brief-item([Andrew Gladman], source-name: [TVLine], [Not all fans were pleased with Penny's ending in The Big Bang Theory. Even star Kaley Cuoco found some faults with it.])
-
-    #brief-item([New Scientist Space], source-name: [New Scientist Space], [Everyone knows Yuri Gagarin as the first person to go to space. But was he? Literary historian Vladimir Brljak tells the tale of the intrepid balloonists who first flew beyond the blue terrestrial sky, challenging the definition of where our world begins to end])
-
+    [#brief-item([New Scientist Space], source-name: [New Scientist Space], [A standard industrial knitting machine has been modified to produce fabrics from tungsten wire coated in gold, which are used to form the dish on the CarbSAR satellite])],
+    [#brief-item([New Scientist Space], source-name: [New Scientist Space], [Tantalising signs of past microbial life showed up on Mars this year, but to truly know whether they contain the answer to the biggest question in the universe, we will need to bring samples back to Earth])],
+    [#brief-item([Matthew Setter], source-name: [Twilio Blog], [In this tutorial, you'll learn how to log incoming voice calls in your Zoho CRM account along with an audio and text copy of the call.])],
+    [#brief-item([Jesse Sumrak], source-name: [Twilio Blog], [What is RCS on iPhone? Learn what it means, how to enable or disable it, and how RCS messaging works on iOS 18 and later.])],
+    [#brief-item([New Scientist Space], source-name: [New Scientist Space], [Space scientist Maggie Aderin talks telescopes, neurodiversity and being underestimated with Rowan Hooper on the New Scientist podcast, as her memoir Starchild comes out])],
+    [#brief-item([Andy Swift], source-name: [TVLine], [During the March 28 broadcast of Saturday TODAY, Peter Alexander announced he's leaving NBC News after more than two decades. Watch the emotional on-air moment.])],
+    [#brief-item([Kelley Robinson], source-name: [Twilio Blog], [Learn how to configure Twilio Verify as your Okta telephony provider for SMS and Voice one-time passcodes with our streamlined integration.])],
+    [#brief-item([New Scientist Space], source-name: [New Scientist Space], [The Perseverance rover has found tiny crystals that seem to be rubies or sapphires inside pebbles on Mars, where they have never been seen before])],
+    [#brief-item([Eugene Yan], source-name: [Eugene Yan], [My favourite project, how I write weekly and how you can start, and content I would like to see more of.])],
+    [#brief-item([New Scientist Space], source-name: [New Scientist Space], [Ripples in space-time from a pair of merging black holes have been recorded in unprecedented detail, enabling physicists to test predictions of general relativity])],
+    [#brief-item([Mike Ash], source-name: [Mike Ash (Friday Q&A)], [I will be holding another one-day workshop on advanced Swift programming in New York City on May 4th. This will be much the same as my previous one in Washington in December, in a new location and with various tweaks and improvements. If you enjoy my articles and want to sharpen your Swift skills, check it out .
+ (Read More)])],
+    [#brief-item([New Scientist Space], source-name: [New Scientist Space], [For the first time, researchers have found what seems to be a cloud of dark matter about 60 million times the mass of the sun in our galactic neighbourhood])],
+    [#brief-item([Jaron Pak], source-name: [/Film], [Stephen Colbert is writing a Lord of the Rings movie sequel that will partly overlap with the events of The Fellowship of the Ring. Allow us to explain.])],
   ))
 }
 

@@ -23,66 +23,32 @@
 
 // --- Front Page Feature ---
 #feature-article(
-  title: [5 Delectable Ways to Use Up Your Leftover Halloween Chocolate],
+  title: [Money Origami, Flower Edition: 10 Different Ways to Fold a Dollar Bill into a Blossoming Bloom],
   kicker: [Cover Story],
-  author: [Laura Holman],
+  author: [Osas Obaiza],
   source-name: [WonderHowTo],
-  deck: [There's only one day that can top the aftermath of Easter and its copious amounts of leftover candy, and that is November — the day after Halloween.],
-  lead-text: "As you come down from your sugar rush and realize you now own more chocolate than your stomach can physically hold in one sitting ... fear not! Here are several ways to turn your Halloween chocolate into delicious snacks and desserts that you can enjoy at your leisure. 1. Chocolate Fondue SurpriseJust pick your favorite fondue method and throw in a cup or so of dark baking chocolate with your favorite candy bars.",
-  lead-first-alpha: 0,
+  deck: [The very first banknotes were used by the Chinese in the 7th century, during the Tang Dynasty.],
+  lead-pre: [],
+  lead-cap: [B],
+  lead-rest: [efore it was used as an actual currency, paper money was part of a deposit system in which merchants would leave large amounts of coins with a trusted associate and receive a paper receipt for the transaction. The reason was simple — the copper coins used as currency then were heavy. Fast forward about 300 years, and Jiaozi became the first official paper currency in the Sichuan capital of Chengdu. These notes were stamped with official seals to ensure no one made false copies. Even in the tenth century, counterfeiting was a concern.],
   body-paragraphs: (
-  [Stir until the overall chocolate consistency — barring any peanuts or candy in the bar itself — is smooth, then grab a marshmallow or banana and start dipping! Don't Miss: 11 Clever Candy Wrapper Crafts for After Halloween Junior Mints chocolate fondue? YES PLEASE! 2.],
-  [Chocolate Mashup MilkshakeThis quick recipe only requires a scoop of chocolate ice cream, a king-sized candy bar, and a generous splash of milk (or two splashes, ...more],
+  [Wikimedia CommonsToday, the word jiaozi is more likely to be associated with delicious Chinese dumplings, but paper money is still used in many countries.],
+  [Even so, with the widespread use of debit cards and the rising popularity of digital wallets, it may not be long before the dollar bill has had its day. So, what will we do with all that worthless paper when ...more],
 ),
   edited-for-length: false,
 )
 
-
-{
-  #section-label([Front Page])
-  #standard-article(
-  title: [11 Clever Candy Wrapper Crafts You Can Do After Binging on Halloween Chocolate],
-  author: [Gabrielle Taylor],
-  source-name: [WonderHowTo],
-  images: (),
-  paragraphs: (
-  [Halloween night for most people with kids means tons of candy. That translates into tons of trash from candy wrappers. But even though you probably wouldn't think it, there's no shortage of alternative uses for those wrappers, from clothing and accessories to home decor. This year, get creative instead of just tossing them away. Check out these eleven DIY projects and put your "trash" to good use. \#1. Candy Wrapper JewelryThere are many ways to turn candy wrappers into any kind of jewelry you can imagine. If you want to go minimalist, use one big wrapper to make a headband. You can also create a bracelet with nothing but folds or roll the wrappers up to make beads for necklaces and earrings. BiblioBagsEcouterrebunnykissd/deviantART\#2.],
-  [Candy Wrapper Pouch or Coin PurseWrappers from candies that come in bags like Skittles and M&Ms can be sewn into a zippered pouch for holding money, toys, or even more candy. Or, you could use the smaller fun-size bags to make a coin purse. Check out ...more],
-),
-  insert-map: (:),
-  word-count: 170,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-}
 
 #article-row((
   [
     section-label([Features])
     standard-article(
-  title: [Immigration, Upward Mobility, and the U.S. Economy],
+  title: [No, Tech Start-ups Aren’t Taking Over the World],
   author: [Harvard Business Review],
   source-name: [Harvard Business Review],
   images: (),
   paragraphs: (
-  [In eras past, the United States welcomed immigrant laborers to build and support the country's infrastructure and innovators and entrepreneurs to advance its businesses and technology. And yet immigration is a hot-button issue today, with many saying it's a drain on the U. S. economy. Ran Abramitzky, a professor at Stanford University, and Leah Boustan, a professor at Princeton, looked at decades of data to understand the real impact that immigrants and their descendants have on America today. Their findings dispel several modern-day myths and suggest that not just political but also corporate leaders need to push for more rational rhetoric and policies. Abramitzky and Boustan are the authors of "Streets of Gold: America's Untold Story of Immigrant Success."],
-),
-  insert-map: (:),
-  word-count: 118,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-  ],
-  [
-    standard-article(
-  title: [Future of Business: Baidu’s Robin Li on the Technology Trends that Will Transform Business],
-  author: [Harvard Business Review],
-  source-name: [Harvard Business Review],
-  images: (),
-  paragraphs: (
-  [Baidu launched in 2000 as a search engine platform. Two decades later, it’s become one of the few companies in the world that offers a full AI stack. Its core businesses span mobile, cloud, intelligent driving and other growth initiatives, and its products and services have attracted hundreds of millions of users and hundreds of thousands of enterprise customers. Leading all of that is co-founder, CEO, and chairman Robin Li. He explains how Baidu has built generative AI into its business – including their AI chatbot, ERNIE Bot. Robin also shares the technology trends he’s keeping an eye on – from AI bubbles to robotaxis – and how he anticipates these fast-moving changes will transform our world.],
+  [Looking at business news and stock market coverage over the past decade (including a few HBR articles), you'd think that just about every traditional, old-economy company has fallen prey -- or will soon -- to tech-focused competitors. But London Business School's Julian Birkinshaw says that story of disruption and destruction is overblown. His research into Fortune 500 and Global 500 organizations shows that, despite the rise of a few tech giants like Amazon and Google, many industries haven't been radically remade and that many older incumbents are still standing strong. He outlines the strategies they've used to do so, from fighting back to reinvention. Birkinshaw is the author of the HBR article “How Incumbents Survive and Thrive.”],
 ),
   insert-map: (:),
   word-count: 117,
@@ -92,39 +58,85 @@
 
   ],
   [
+    standard-article(
+  title: [Why We Should Pay More Attention to Departing CEOs],
+  author: [Harvard Business Review],
+  source-name: [Harvard Business Review],
+  images: (),
+  paragraphs: (
+  [When news breaks of a CEO succession, much of the attention is given to the new leader and how they will change the company. But new research shows that the leave-taking process of the outgoing chief executive is often mishandled, with negative impacts on succession and the organization. Rebecca Slan Jerusalim, an executive director at Russell Reynolds Associates, and Navio Kwok, a leadership advisor at RRA, say that boards are often surprised when a CEO gives notice, and they often make that person feel excluded during the handoff process. The researchers share stories from the front lines about CEO psychology, best practices for outgoing leaders and their boards, and broader lessons for effective transitions. Jerusalim and Kwok wrote the HBR article "The Vital Role of the Outgoing CEO."],
+),
+  insert-map: (:),
+  word-count: 128,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+  ],
+  [
     brief-group((
-      brief-item([Harvard Business Review], source-name: [Harvard Business Review], [Carol Fishman Cohen, human resource consultant and CEO of iRelaunch, says that extended career breaks have always been common. Now the pandemic has made them even more widespread. So, companies are increasingly considering formal back-to-work programs and “returnships.” That’s where employers set up special training and support mechanisms to ease people back into work. Cohen speaks about the best practices for organizations and returning workers alike. She's the author of the HBR article "Return-to-Work Programs Come of Age."])
+      [#brief-item([Harvard Business Review], source-name: [Harvard Business Review], [Anne Wojcicki, CEO of 23andMe, spent a decade in healthcare and biotechnology before launching the DNA testing and analysis company in 2006. Her goal was twofold: to help individuals learn more about their own genetics, enabling them to pursue more personalized medical care, and to create a database of genetic information for commercial and academic researchers to promote broader improvements to the healthcare system. She speaks with HBR's Editor-in-Chief Adi Ignatius about tackling challenges in an emerging industry.])],
+      [#brief-item([Daniel Jonas Roche], source-name: [The Architect's Newspaper], [A new distinction folded into Cooper Hewitt’s annual Smithsonian National Design Awards Gala recognizes individual designers, living and deceased, as well as large corporations “for their lasting contributions to the field
 
-      brief-item([Harvard Business Review], source-name: [Harvard Business Review], [Thales Teixeira, associate professor at Harvard Business School, believes many startups fail precisely because they try to emulate successful disruptive businesses. He says by focusing too early on technology and scale, entrepreneurs lose out on the learning that comes from serving initial customers with an imperfect product. He shares how Airbnb, Uber, Etsy, and Netflix approached their first 1,000 customers very differently, helping to explain why they have millions of customers today. Teixeira is the author of the book "Unlocking the Customer Value Chain: How Decoupling Drives Consumer Disruption."])
+The post Cooper Hewitt to honor Maya Lin, MillerKnoll, Candace Wheeler, and others at its Smithsonian National Design Awards Gala appeared first on The Architect’s Newspaper .])],
+      [#brief-item([Harvard Business Review], source-name: [Harvard Business Review], [David Burkus, author of "Under New Management", explains why some companies are taking extreme measures to limit electronic communication. Burkus is also a professor at Oral Roberts University and host of the podcast Radio Free Leader.])],
+      [#brief-item([Hadir Al Koshta], source-name: [ArchDaily], [© Alex Shoots Buildings 
+ 
+ 
 
-      brief-item([Jules Yap], source-name: [IKEA Hackers], [The GREJIG wire shoe rack was always just … there. Doing its job quietly. Now IKEA has built a whole system around it. The IKEA GREJIG shoe rack has never been a headline product. It’s a single-tier wire rack that holds your shoes and costs \$4.99. It works. It doesn’t ask for much. Most people who own one barely remember buying it. Which makes what IKEA has just done with the range all the more interesting. GREJIG is now a […]])
+ architects: System Recovery Architects 
 
-      brief-item([Daniel Jonas Roche], source-name: [The Architect's Newspaper], [Architecture students and faculty from Syracuse University and Auburn University have completed a new building for Brady Farm, a Syracuse-based nonprofit, together with local contractors. Brady Farm is just two
+ Location: Strážné, Czechia
 
-The post Mago Architecture, Syracuse University students, and Auburn University faculty complete pro bono market shed for Brady Farm appeared first on The Architect’s Newspaper .])
+ Project Year: 2025
 
-      brief-item([Harvard Business Review], source-name: [Harvard Business Review], [Larry Summers, former U. S. treasury secretary, is calling on American business leaders to stand up to President Donald Trump. Summers sharply criticizes the administration’s protectionist agenda, and he says it’s time for executives to call out how those policies undermine the economy and the country's best interests in the long term.])
+ Photographs: Alex Shoots Buildings 
 
-      brief-item([Harvard Business Review], source-name: [Harvard Business Review], [Deloitte national managing director Kim Christfort talks about the different personality styles in an organization and the challenges of bringing them together. Her firm has developed a classification system to help companies better understand personality styles and capitalize on their cognitive diversity. She and Suzanne M. Johnson Vickberg coauthored the article, "Pioneers, Drivers, Integrators, and Guardians" in the March-April 2017 issue of Harvard Business Review.])
+ Photographs: Vítězslav Kůstka
 
-      brief-item([Harvard Business Review], source-name: [Harvard Business Review], [Artificial intelligence technology has been advancing, and businesses have been putting it into action. But too many companies are just gathering a bunch of data to kick out insights and not really using AI to its fullest potential. Joshua Gans, professor at Rotman School of Management, says businesses need to apply AI more systemically. Because decision-making based on AI usually has ripple effects throughout the organization. Gans cowrote the HBR article “From Prediction to Transformation" and the new book "Power and Prediction: The Disruptive Economics of Artificial Intelligence."])
+ Area: 293.0 m2
 
-      brief-item([Clio Chang], source-name: [Curbed], [Welcome to “Apartment Department,” Curbed’s advice column by Clio Chang. Join us every other Wednesday for questions about making peace with noisy-sex neighbors, the nuances of roommate fridge etiquette, and whatever else you might need to know about renting, buying, or crying in the New York Cit... More »])
+ Read more »])],
+      [#brief-item([Harvard Business Review], source-name: [Harvard Business Review], [Jeffrey Garten of Yale School of Management discusses how Genghis Khan, Mayer Amschel Rothschild, Margaret Thatcher, and others made the world more integrated. Garten is the author of "From Silk to Silicon: The Story of Globalization through Ten Extraordinary Lives".])],
+      [#brief-item([Christian Allaire], source-name: [Vogue (runway)], [The shopping event offered unique vintage designer finds—but the line to get in was its very own street style spectacle.])],
+      [#brief-item([Miwa Negoro], source-name: [ArchDaily], [© Joon Hwan, Yoon 
+ 
+ 
 
-      brief-item([Camille Okhio, Felix Speller], source-name: [Architectural Digest], [In Hyères, Edgar Jayet transforms a crumbling structure into a richly layered home filled with campaign furniture, ship relics, and references spanning centuries])
+ architects: DRAWING WORKS 
 
-      brief-item([Harvard Business Review], source-name: [Harvard Business Review], [Claudio Fernández-Aráoz, a senior adviser at the global executive search firm Egon Zehnder, makes the case for finding a company’s next CEO inside the firm. But to find the best contenders, organizations have to learn what to look for, how to find it, and how to nurture it. Fernández-Aráoz is the co-author of the new HBR article “Turning Potential into Success: The Missing Link in Leadership Development.”])
+ Location: Jeju-si, South Korea
 
-      brief-item([Harvard Business Review], source-name: [Harvard Business Review], [The number of women—especially women of color—in leadership ranks at the world’s largest companies remains desperately small. Tina Opie, associate professor of management at Babson College, offers a new practice for women to lift each other up and fight systemic bias in the workplace, something she calls “shared sisterhood.” The idea is to be more honest with each other, forming truer bonds. That involves listening, understanding yourself, and a willingness to take risks. With University of Iowa management professor Beth Livingston, Opie wrote the new book “Shared Sisterhood: How to Take Collective Action for Racial and Gender Equity at Work.”])
+ Project Year: 2025
 
-      brief-item([Harvard Business Review], source-name: [Harvard Business Review], [Whether we’re interacting with colleagues, clients, friends, family members or strangers, conversations are the way most of us build — or break — relationships. And yet we don’t often think deeply about how to approach this type of casual communication. Alison Wood Brooks, associate professor at Harvard Business School, has studied what it takes to create a great conversation and offers research-backed tips for improving your skills. Brooks is the author of the book Talk: The Science of Conversation and the Art of Being Ourselves.])
+ Photographs: Joon Hwan, Yoon
 
-      brief-item([Harvard Business Review], source-name: [Harvard Business Review], [Noubar Afeyan, cofounder and chair of Moderna Therapeutics and CEO of Flagship Pioneering, says that the breakthrough innovation behind the company’s Covid-19 vaccine came not as a stroke of luck, but from a repeatable process. He outlines a system called “emergent discovery” that involves working back from future ideals, pioneering in novel spaces, encouraging unreasonable ideas, and persistently questioning hypotheses. And he says this process applies to other industries besides life sciences. Afeyan is the coauthor, with HBS professor Gary Pisano, of the HBR article "What Evolution Can Teach Us About Innovation."])
+ Area: 10.0 m2
 
-      brief-item([Harvard Business Review], source-name: [Harvard Business Review], [Raffaella Sadun, a professor at Harvard Business School, explains why seemingly common-sensical management practices are so hard to implement. After surveying thousands of organizations across the world, she found that only 6% of firms qualified as highly well-managed — and that managers mistakenly assumed they were all above average. She is a co-author of “Why Do We Undervalue Competent Management?” in the September–October 2017 issue of Harvard Business Review.])
+ Read more »])],
+      [#brief-item([Into the Gloss], source-name: [Into the Gloss], ["It’s fun trying new products, but I had to accept that my skin can’t take a lot. And honestly? It’s fine. I don’t know what I’m doing anyway."])],
+      [#brief-item([Anna Cafolla], source-name: [Vogue (runway)], [The fur-lined opera coat style has made a comeback via Conner Ives and vintage dealers, embracing yhr robe and its easy sense of glamour.])],
+      [#brief-item([Harvard Business Review], source-name: [Harvard Business Review], [Dan McGinn, senior editor at Harvard Business Review, talks about what businesspeople can learn from how top performers and athletes prepare for their big moments. In business, a big sales meeting, presentation, or interview can be pivotal to success. The same goes for pep talks that motivate employees. McGinn talks about both the research and practical applications of mental preparation and motivation. He’s the author of the book, "Psyched Up: How the Science of Mental Preparation Can Help You Succeed." His article, “The Science of Pep Talks,” is in the July-August 2017 issue of Harvard Business Review.])],
+      [#brief-item([Valentina Díaz], source-name: [ArchDaily], [© Mariela Apollonio 
+ 
+ 
 
-      brief-item([Into the Gloss], source-name: [Into the Gloss], [Where fashion’s favorite pastry chef goes out to blow off steam, and the OG scented lip balm she buys in bulk])
+ architects: TO DO hub d'arquitectura 
 
+ Location: Jávea, España
+
+ Project Year: 2025
+
+ Photographs: Mariela Apollonio
+
+ Area: 327.0 m2
+
+ Read more »])],
+      [#brief-item([Harvard Business Review], source-name: [Harvard Business Review], [With more than \$7 billion in annual revenue and 24,000 employees, SAIC provides engineering, digital, AI, and mission support to defense, space, intelligence, and civilian customers. CEO Toni Townes-Whitley took the helm a year ago, after stints as a senior executive at Microsoft, CGI Federal, and Unisys. She discusses her approach to strategic transformation at SAIC through fine tuning and employee upskilling, rather than wholesale change. She also shares how the company is incorporating cutting edge technologies, like generative AI, with appropriate safeguards for government clients.])],
+      [#brief-item([Harvard Business Review], source-name: [Harvard Business Review], [Ursula Burns, CEO of Xerox from 2009 to 2016, rose from humble beginnings to become the first Black woman to lead a Fortune 500 company. In this interview with HBR editor-in-chief Adi Ignatius, she talks candidly about the frequent challenges and occasional advantages of being "the only" and explains why organizations needs to do a better job of promoting both economic and racial equality -- themes that also animate her new memoir, "Where You Are is Not Who You Are".])],
+      [#brief-item([Harvard Business Review], source-name: [Harvard Business Review], [We live in an age of data. But having powerful tools to gather employee feedback doesn't mean you’ll get powerful results. It’s challenging for executives to turn that feedback into substantive action. New research from Ethan Burris, professor of management at the McCombs School of Business at the University of Texas at Austin, sheds light on how to weed through all the data, make sure workers feel heard, and turn employee insights into real results. Burris is a coauthor of the HBR article "What Companies Get Wrong About the Employee Experience."])],
+      [#brief-item([Harvard Business Review], source-name: [Harvard Business Review], [Eddie Yoon, author of "Superconsumers" and growth strategy expert at The Cambridge Group, explains how companies can find their most passionate customers and use their invaluable insights to improve products and attract new customers.])],
+      [#brief-item([Kim Velsey], source-name: [Curbed], [A decade ago, when the Jehovah’s Witnesses sold off their prime real-estate portfolio in Brooklyn Heights, one of the prizes was a complex of old industrial buildings next to the Bro... More »])],
     ))
   ],
 ), ruled-indices: (1, 2,))
@@ -132,15 +144,15 @@ The post Mago Architecture, Syracuse University students, and Auburn University 
 #article-row((
   [
     standard-article(
-  title: [How To Enhance Your Leadership with “Personal Power”],
+  title: [Dysfunctional Leadership Teams — and How to Fix Them],
   author: [Harvard Business Review],
   source-name: [Harvard Business Review],
   images: (),
   paragraphs: (
-  [We all know the stereotypes of leaders who use charisma, manipulation, domineering behavior, or their status in the hierarchy to exert control. But there is another type of leader whose power isn’t necessarily related to their position on the org chart. Chris Lipp has spent years studying people who’ve developed this “personal power” that is rooted in their internal values. Lipp is a professor at Tulane University’s Freeman School of Business, an executive coach, and the author of the new book The Science of Personal Power. He’s investigated where this second type of power comes from, how it can enhance our lives, and how to tap into it using some simple strategies and tools.],
+  [CEOs get a ton of credit or blame for a company’s performance. But the entire leadership team is vital to success, and any dysfunction is often overlooked. Sometimes the CEOs leading them don’t even see that they’re not working. Thomas Keil, management professor at the University of Zurich, and Marianna Zangrillo, a partner at The Next Advisors, have interviewed more than 100 CEOs and senior executives. Their research identifies three main types of failing leadership teams: shark tanks, petting zoos, and mediocracies. And they identify the pitfalls of each pattern and how to turn those teams around. Keil and Zangrillo wrote the HBR article "Why Leadership Teams Fail."],
 ),
   insert-map: (:),
-  word-count: 114,
+  word-count: 108,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -148,15 +160,15 @@ The post Mago Architecture, Syracuse University students, and Auburn University 
   ],
   [
     standard-article(
-  title: [How to Capture All the Advantages of Open Innovation],
+  title: [Stop Initiative Overload],
   author: [Harvard Business Review],
   source-name: [Harvard Business Review],
   images: (),
   paragraphs: (
-  [Henry Chesbrough, adjunct professor at the University of California Berkeley Haas School of Business, coined the term "open innovation" over a decade ago. This is the practice of sourcing ideas outside your own organization as well as sharing your own research with others. However, he says that despite a booming economy in Silicon Valley, companies aren't executing on open innovation as well as they should. They are outsourcing, but not collaborating, and fewer value-added new products and services are being created as a result. He's the author of the book "Open Innovation Results: Going Beyond the Hype and Getting Down to Business".],
+  [Rose Hollister and Michael Watkins, consultants at Genesis Advisers, argue that many companies today are taking on too many initiatives. Each manager might have their own pet projects they want to focus on, but that trickles down to lower level workers dealing with more projects at a time that they can handle, or do well. This episode also offers practical tips for senior-level leaders to truly prioritize the best initiatives at their company — or risk losing some of their top talent. Hollister and Watkins are the authors of the HBR article "Too Many Projects." with. They are the authors of "Athena Rising: How and Why Men Should Mentor Women.”],
 ),
   insert-map: (:),
-  word-count: 102,
+  word-count: 110,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -167,29 +179,12 @@ The post Mago Architecture, Syracuse University students, and Auburn University 
 #article-row((
   [
     standard-article(
-  title: [How to Become Ryuk from Death Note for Halloween],
-  author: [Nelson Aguilar],
-  source-name: [WonderHowTo],
-  images: (),
-  paragraphs: (
-  [Ryuk, the popular anime death god character from Death Note, has instilled fear into many. Just from the live-action movie version, his horror penetrates through the screen. I mean, c'mon, just look at this horrifying beast: Death Note (2006) – Warner Bros. Pictures As horrifying as Ryuk may be, he is a lovable character and is especially admired in the cosplay world. Now, you can become Ryuk with the help of various YouTubers, depending on how you want to go about your costume. You can go the entire makeup route with all the accessories you'll need to become Ryuk this Halloween (or whenever), make a mask, and so on. The end result is amazing and doesn't cost a boatload of cash. Here is a comparison of Ryuk the character and the costume: Takeshi Obata/Wikipediaellimacs sfx makeup – YouTubePretty similar right?],
-  [All you need to finish the costume is an apple, and you're ...more],
-),
-  insert-map: (:),
-  word-count: 153,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-  ],
-  [
-    standard-article(
-  title: [How To Talk Yourself Up (Without Turning People Off)],
+  title: [Comedian Sarah Cooper On Bringing Humor to Any Career],
   author: [Harvard Business Review],
   source-name: [Harvard Business Review],
   images: (),
   paragraphs: (
-  [Leslie John, associate professor at Harvard Business School, has done some deep research into the ways that people self-promote in their professional lives and identified what works and what doesn't. She says it is possible tout your own accomplishments without annoying your colleagues, if you do it at the right time or enlist others to boast on your behalf. She notes that many common workarounds -- such as humblebragging -- are highly ineffective and advises people to not only look for more natural opportunities to self-promote but also try to present balanced views of themselves. She's full of tips you can put to work, even in virtual settings. John is the author of the HBR article "Savvy Self-Promotion."],
+  [It's a cliche, but they say it's best to write what you know. That was the case for comedian Sarah Cooper, who rose to viral social media fame in the Trump era through her lip sync TikTok videos. She formerly worked at Yahoo and Google, and she found her way into comedy, in part, by looking at and pointing out the absurdities of corporate culture. She speaks about how humor helped her manage a team, why she took the big risk to quit her job, and how she's navigating the new work world of Hollywood. Cooper is the author of the forthcoming audio book "Let's Catch Up Soon: How I Won Friends and Influenced People Against My Will."],
 ),
   insert-map: (:),
   word-count: 118,
@@ -198,57 +193,72 @@ The post Mago Architecture, Syracuse University students, and Auburn University 
 )
 
   ],
-), ruled-indices: (1,))
-
-#article-row((
   [
     standard-article(
-  title: [17 Delicious Alternatives for Popular Thanksgiving Side Dishes],
-  author: [Yumi Sakugawa],
-  source-name: [WonderHowTo],
-  images: (),
-  paragraphs: (
-  [If you love the creamy flavor of mashed potatoes, but need a healthier option to appease your health-conscious relatives this Thanksgiving, try making mashed cauliflower, mashed celery root, or mashed carrots and parsnips using a food processor and seasonings of your choice. While some of us can't imagine a Thanksgiving dinner without stuffing, cranberry sauce, green bean casserole, and other classic side dishes, sometimes changing things up can be a very delicious thing. Instead of cranberry sauce, how about apricot relish or wine-poached pears? Or, instead of green bean casserole, how about bacon-wrapped green beans or roasted Brussels sprouts? Whatever you decide to do, make sure you also have a backup emergency plan for potential Thanksgiving cooking disasters.],
-  [Don't Miss: 10 Super Easy, DIY Centerpieces for Thanksgiving Dinner Got your own spin-offs on Thanksgiving side dishes? Share with us. Don't Miss: How to Make Perfect Mashed Potatoes on Thanksgiving Follow WonderHowTo on ...more],
-),
-  insert-map: (:),
-  word-count: 153,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-  ],
-  [
-    standard-article(
-  title: [13 Delicious Ways to Reuse Your Thanksgiving Leftovers],
-  author: [Yumi Sakugawa],
-  source-name: [WonderHowTo],
-  images: (),
-  paragraphs: (
-  [What's better than stuffing yourself during Thanksgiving dinner? Gorging on leftovers the next day, of course. Everybody loves a good turkey and cranberry sauce sandwich, but what are some other creative ways to re-purpose all the leftover turkey meat, mashed potatoes, stuffing, and everything else sitting in your refrigerator? Chop up frozen chunks of pumpkin pie to make yourself a pumpkin pie milkshake. Mix cranberry sauce with cream cheese and nuts to make a tangy, creamy cracker dip. Turkey bones, skin, and meat can be simmered in a pot for seven hours to make delicious turkey broth. With some culinary imagination, your day after Thanksgiving meal can be just as memorable as the one you just had yesterday. Don't Miss: How to Repurpose Your Thanksgiving Trash Got your own favorite ways to re-purpose your Thanksgiving leftovers?],
-  [Share in the comments below. Don't Miss: 13 More Delicious Ways to Reuse Thanksgiving Leftovers Follow WonderHowTo on Facebook, Twitter, Pinterest, and ...more],
-),
-  insert-map: (:),
-  word-count: 159,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-  ],
-), ruled-indices: (1,))
-
-#article-row((
-  [
-    standard-article(
-  title: [What Leaders Need to Know About a Looming Recession – and Other Global Threats],
+  title: [Dematerialization and What It Means for the Economy — and Climate Change],
   author: [Harvard Business Review],
   source-name: [Harvard Business Review],
   images: (),
   paragraphs: (
-  [Nouriel Roubini, professor emeritus at NYU’s Stern School of Business, says that a confluence of trends – from skyrocketing public and private debt and bad monetary policies to demographic shifts and the rise of AI – are pushing the world toward catastrophe. He warns of those interconnected threats, but also has suggestions for how political and business leaders can prepare for and navigate through these challenges. He draws on decades of economic research as well as his experience accurately predicting, advising on, and observing responses to the 2008 global financial crisis, and he's the author of "Megathreats: Ten Dangerous Trends that Imperil our Future, and How to Survive Them.”],
+  [Andrew McAfee, co-director of the MIT Initiative on the Digital Economy, explains how the U. S. economy is growing and actually using less and less stuff to do so. Thanks to new technologies, many advanced economies are reducing their use of timber, metals, fertilizer, and other resources. McAfee says this dematerialization trend is spreading to other parts of the globe. While it’s not happening fast enough to stop climate change, he believes it offers some hope for environmental protection when combined with effective public policy. McAfee is the author of the book “More from Less: The Surprising Story of How We Learned to Prosper Using Fewer Resources—and What Happens Next.”],
 ),
   insert-map: (:),
   word-count: 109,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+  ],
+), ruled-indices: (1,))
+
+#article-row((
+  [
+    standard-article(
+  title: [5 Weird & Easy Ways to Water Your Christmas Tree],
+  author: [Heather Fishel],
+  source-name: [WonderHowTo],
+  images: (),
+  paragraphs: (
+  [Christmas trees, once decorated and brightly lit, are the penultimate holiday decoration, but authentic pines lose their brilliance fast without any nourishment. Plus, they are major fire hazards without regular hydration. But watering one requires a lot of sliding around on the floor, and it can be hard to tell how much water is in the bowl beneath the dark, prickly branches. These five hacks can help! 1. Break Out Your Beer BongWhat's better than a tree watering device that requires zero bending and little effort? If you have a beer bong lying around or hiding in your box of old college stuff, pop it in your Christmas tree's stand and create an instant irrigation system.],
+  [By placing the end of the beer bong's tubing into the tree stand's bowl, holding the funnel outside of the branches, you can quickly pour in any amount of water and refresh your tree. Imgur2. Use a Funnel for a Quick Irrigation SystemHappen to have a funnel and some plastic piping in your garage? You're just a few ...more],
+),
+  insert-map: (:),
+  word-count: 175,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+  ],
+  [
+    standard-article(
+  title: [Why Burnout Happens — and How Bosses Can Help],
+  author: [Harvard Business Review],
+  source-name: [Harvard Business Review],
+  images: (),
+  paragraphs: (
+  [Christina Maslach, professor of psychology at the University of California, Berkeley, has been studying the causes of burnout, and its impact, for decades. She says that, in a year when everyone feels overwhelmed and exhausted, it's more important than ever for managers to recognize when and why employees are suffering and take steps to solve those problems. In her framework, burnout stems from not only large workloads but also lack of control, community, and/or reward and values mismatches. She notes that leaders have the ability to pull many of those levers to help their workers. Maslach is the author of "The Truth About Burnout" and a forthcoming book on the topic.],
+),
+  insert-map: (:),
+  word-count: 111,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+  ],
+), ruled-indices: (1,))
+
+#article-row((
+  [
+    standard-article(
+  title: [Sad, Mad, Anxious? How to Work Through Your ‘Big Feelings’],
+  author: [Harvard Business Review],
+  source-name: [Harvard Business Review],
+  images: (),
+  paragraphs: (
+  [When things aren't going well -- in our own lives, our community, our country, or the world -- it's hard to be productive at work. Most of us also shy away from sharing what we're feeling with colleagues and bosses. But when strong emotions like anxiety, anger, and despair hit you -- due to problems at work or outside it -- it's important to recognize and thoughtfully address them. Liz Fosslien and Mollie West Duffy are coauthors of the book "Big Feelings: How to Be Okay When Things Are Not Okay," and they share research-backed advice on how to do just that.],
+),
+  insert-map: (:),
+  word-count: 102,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -275,15 +285,15 @@ The post Mago Architecture, Syracuse University students, and Auburn University 
 #article-row((
   [
     standard-article(
-  title: [Women at Work: Too Shy to Be a Leader],
+  title: [Inside Companies that Get the Purpose-Profit Balance Right],
   author: [Harvard Business Review],
   source-name: [Harvard Business Review],
   images: (),
   paragraphs: (
-  [Women at Work is a podcast from Harvard Business Review that looks at the struggles and successes of women in the workplace, hosted by HBR's Amy Bernstein, Amy Gallo, and Emily Caulfield. In this episode, you'll hear about the tension that comes from feeling like you are a shy person, but also an ambitious one who want to lead a team. Former clinical psychologist Alice Boyes gives advice on the professional advantages of certain personality traits related to shyness — like sensitivity and thoughtfulness — and discusses strategies to overcome the aspects of them that may hold you back at work.],
+  [Purpose has become a corporate buzzword over the past decade. Leaders are embracing the idea that companies can’t just do well financially; they also have to do good for society. But how many organizations are really walking the talk? Ranjay Gulati, professor at Harvard Business School, has studied how dozens of purpose-driven companies -- from Etsy in the United States to Recruit in Japan -- simultaneously pursue profits. He argues that while we all want a win-win, leaders must also sometimes learn to make thoughtful tradeoffs. Gulati is the author of the book "Deep Purpose: The Heart and Soul of High-Performance Companies” and the HBR article “The Messy but Essential Pursuit of Purpose.”],
 ),
   insert-map: (:),
-  word-count: 101,
+  word-count: 113,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -291,15 +301,16 @@ The post Mago Architecture, Syracuse University students, and Auburn University 
   ],
   [
     standard-article(
-  title: [Stop Multitasking and Try Timeboxing],
+  title: [Applying Porter’s Five Forces to Fix U.S. Politics],
   author: [Harvard Business Review],
   source-name: [Harvard Business Review],
   images: (),
   paragraphs: (
-  [There are all kinds of productivity tools out there promising to help you make the most of your day. Some people swear by timeboxing: the method of reserving time on your calendar each day for each task you want to get done, and then truly focusing on that one thing at a time. The return on merging your to-do list with your calendar like this, says Marc Zao-Sanders, is higher productivity, better collaboration, and less distraction and anxiety. He explains how try to the method yourself and the how your team and organization benefit from it, not just you. Zao-Sanders is author of the book "Timeboxing: The Power of Doing One Thing at a Time."],
+  [Katherine Gehl, a former CEO and the founder of the Institute for Political Innovation, and Michael Porter, a professor at Harvard Business School, apply his Five Forces framework to explain why U. S. politics are dysfunctional. They argue that the Republican and Democratic parties make up an industry duopoly with high barriers to entry and low consumer power, and that the resulting lack of competition incentivizes these two dominant players to avoid compromises with majority support. Gehl and Porter provide specific innovations on how to enhance competition and better serve the public, including nonpartisan primary elections and ranked-choice voting. Gehl and Porter are coauthors of the new book “The Politics Industry: How Political Innovation Can Break Partisan Gridlock and Save Our Democracy” and the HBR article “Fixing U. S.],
+  [Politics."],
 ),
   insert-map: (:),
-  word-count: 115,
+  word-count: 128,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -309,16 +320,15 @@ The post Mago Architecture, Syracuse University students, and Auburn University 
 
 {
   #standard-article(
-  title: [Why Doesn’t More of the Working Class Move for Jobs?],
+  title: [The Rise of Corporate Inequality],
   author: [Harvard Business Review],
   source-name: [Harvard Business Review],
   images: (),
   paragraphs: (
-  [Joan C. Williams, director of the Center for WorkLife Law at the University of California Hastings College of the Law in San Francisco, discusses serious misconceptions that the U. S. managerial and professional elite in the United States have about the so-called working class. Many people conflate "working class" with "poor"--but the working class is, in fact, the elusive, purportedly disappearing middle class. Williams argues that economic mobility has declined, and explains why suggestions like “they should move to where the jobs are” or "they should just go to college" are insufficient. She has some ideas for policy makers to create more and meaningful jobs for this demographic, an influential voting bloc.],
-  [Williams is the author of the new book, “White Working Class: Overcoming Class Cluelessness in America.”],
+  [Stanford economist Nicholas Bloom discusses the research he's conducted showing what’s really driving the growth of income inequality: a widening gap between the most successful companies and the rest, across industries. In other words, inequality has less to do with what you do for work, and more to do with which specific company you work for. The rising gap in pay between firms accounts for a large majority of the rise in income inequality overall. Bloom tells us why, and discusses some ways that companies and governments might address it. He’s the author of the Harvard Business Review article, “Corporations in the Age of Inequality.” For more, visit hbr.org/inequality.],
 ),
   insert-map: (:),
-  word-count: 127,
+  word-count: 109,
   edited-for-length: false,
   debug-mode: false,
 )

@@ -23,62 +23,26 @@
 
 // --- Front Page Feature ---
 #feature-article(
-  title: [I met my AI twin—and now I’m in an existential crisis],
+  title: [Damon and Baby: hands-on with the ridiculous twin-stick shooter, out March 26],
   kicker: [Cover Story],
-  author: [Grace Snelling],
-  source-name: [Fast Company Design],
-  deck: [Before I ever met Sam Kececi, I had already interviewed him on his career, his use of AI , and his thoughts on data privacy.],
-  lead-text: "In this case, “him” might be a loose word, depending on your definition—I had spoken not with Kececi himself, but with an AI chatbot that he designed to recall his memories, mimic his personality, and share his opinions.",
-  lead-first-alpha: 0,
+  author: [Phil Hornshaw],
+  source-name: [PlayStation Blog],
+  deck: [class=""\>Arc System Works and Executive Director Daisuke Ishiwatari are known for fighting games, and their upcoming game, Damon and Baby, is a huge shift.],
+  lead-pre: [],
+  lead-cap: [I],
+  lead-rest: [t’s an action-adventure game that’s defined by an overhead viewpoint, twin-stick shooter mechanics, a lighthearted, cartoonish art style, and a wry, satirical wit — a departure from series like Guilty Gear and BlazBlue.],
   body-paragraphs: (
-  [Kececi is an ex-Amazon software engineer who, since August 2025, has been building an AI company called Sentience. The real Kececi, who I spoke to after interviewing his personal AI, describes Sentience as “the digital version of you, but with perfect memory.”],
-  [It’s a chatbot that uses your emails, Slack messages, Apple Notes, social media, and anywhere else that you might show up online to create a chatbot and assistant that understands the context of your life and mimics your tone, opinions, and writing quirks. As Kececi’s digital doppelganger explained it to me: “The long-term vision is a digital twin that can recall anything you’ve experienced, communicate in your voice, and eventually operate on your behalf.”],
-  [Sentience debuts to the public on March 26 after raising \$6.5 million in an initial seed round led by Bain Capital Ventures. It’s launching for free, but plans to add paid tiers in the coming weeks. Currently, it’s available as a desktop app, mobile app, and an embedded feature in Slack. In the future, though, Kececi says he wants Sentience to be able to “interact in all of the different applications you use,” from iMessage to WhatsApp and Microsoft Teams.],
-  [Having tested it for about a week, I can say that it’s the most natural-sounding chatbot I’ve ever talked to. It was able to almost uncannily mimic my writing quirks, predict my opinions on design news, and write its own articles from my perspective. Sentience feels like an inevitable next step in the evolution of AI assistants, where instead of a mass-market chatbot that caters to a generalized “you,” you get a personalized bot that knows almost everything about you—for better and for worse.],
-  [[Image: Sentience]],
-  [As AI models have become exponentially more powerful in recent years, the concept of building digital twins has gained popularity. Last April, Stanford University researchers published a paper in which they used AI to build a “digital twin” of the part of the mouse brain that processes visual information, a breakthrough that they said could be applied to future research on the human brain.],
-  [Right now, the average consumer can use a variety of nascent tools to purportedly clone themselves as a means to be more productive. Sentience aims to marry personalization with the functions of a productivity platform, similar to something like Superhuman or Notion.],
-  [Kececi first began dreaming of a digital twin while working as the CTO of a software development company called Macro. After spending five years in the position, he started to feel like “a glorified information router.”],
-  [“I was no longer a human being. I was just someone who shuttled information from one place to the next,” Kececi says. Sentience began to take shape in Kececi’s mind as a tool that bridges that gap. He wanted to build an AI that could perfectly remember everything he had ever created, researched, or written on his laptop, and also format that information to answer questions on his behalf.],
-  [[Image: Sentience]],
-  [Kececi bills his concept of a “digital twin” as a response to the big AI models—like ChatGPT and Claude—that have optimized their language responses based on vast amounts of generalized data.. In order to appeal to the broadest user base, many of these tools have developed a standard tone that’s agreeable at best and obsequious at worst (in some cases, to users’ serious detriment ). According to an October analysis from researchers at Harvard and Zurich’s Swiss Federal Institute of Technology, AI models are, on average, 50% more sycophantic than humans.],
-  [“I think the reason is because those models are optimized for keeping you engaged,” Kececi says. “ChatGPT is designed to literally keep you for the maximum amount of time. It turns out that if a language model is complimenting you all the time, then you’re going to use it more. But this is not fundamentally how humans work.”],
-  [Unlike these bigger models, he explains, Sentience is trained almost exclusively to parse through and digest data about you, the user.],
-  [Sentience is powered by  an amalgamation of various foundational models. Claude is the main AI powering the program, but it also incorporates other tools like Gemini Flash for heftier queries and WhisperX for transcription. These components are like the bones and muscles powering Sentience—but its custom memory layer is the brain.],
-  [Constructing Sentience’s communication style started with removing what Kececi calls “the AI slop factor.” Essentially, this stage looked like repeated prompting to strip away the base models’ tendencies toward people pleasing, as well as other AI giveaways like overuse of the em dash and choppy sentence structures. Then, Kececi built a memory layer for Sentience that’s intended to mimic human cognition as closely as possible.],
-  [First, Sentience takes in as many inputs from a user’s digital life as possible (depending on what the user grants access to), from Uber receipts to Reddit deep dives, programming projects, and email history. Then it categorizes that data into short-term and long-term memories; short-term being whatever the user is currently working on, and long-term being everything else.],
-  [Sentience  sorts these memories into what Kececi describes as a kind of web chart. Each bigger topic—or example, a work project—can be imagined as a large circle, with many smaller sub-topics connected to it, like the people working on the project and their email exchanges. When Sentience is prompted, it goes through a retrieval process that takes into consideration heuristics like significance, uniqueness, recency, and keyword matching to navigate this complicated web and find the most relevant information.],
-  [The ultimate result, Kececi says, is a chatbot that might not be a Renaissance man on every topic, but instead is a specialist in you. “The whole bet is that context beats capability,” his AI twin tells me. “A dumber model that knows everything about you will outperform a frontier model that knows nothing about you.”],
-  [I decided to put that claim to the test. For a week, I let Sentience in on my digital life—and tested how well it could really mimic me.],
-  [When you first download Sentience, it appears as an app on your desktop. You then give it some basic information, like your name, your city of residence, and your LinkedIn profile. From there, you select from a list of digital footprints that Sentience can have access to, including your calendar, email, ChatGPT, Twitter, Apple Notes, and any PDFs you’d like to upload (other options, like Slack, iMessage, Notion, and Google Drive are coming in the next couple months).],
-  [Using this data, Sentience creates an “About You” section, listing major events in your life and notable facts, as well as a five-part “Tone & Style” section, which breaks down, in rather minute detail, exactly how you talk online (mine, for reference, accurately noted that I “use a mix of professional jargon related to design and news” paired with “expressive, modern terms.”) Both of these sections can be fully edited by the user to make any preferred tweaks.],
-  [Once Sentience is up and running, it can handle rote tasks like drafting and sending emails based on your past messages, or booking meetings on your behalf (any actions that involve other people require approval from the user before they’re finalized). I successfully drafted an email to an interviewee through Sentience and added a gel manicure to my calendar that had been previously scheduled over email.],
-  [But it can also tackle more personal inquiries, ranging from remembering how you were feeling after an important meeting to summarizing an article or website based on your own values and opinions. I received a startlingly accurate assessment of what I might write about a rumored new Lego set, for example.],
-  [Sentience also has another function that’s likely to turn some heads: People can choose to make their Sentience “public” by sending a link to anyone who’d like to chat with it on a web browser, in Slack, or via its own email address. Behind the scenes, the user can see the full conversations that their Sentience is having, but the AI chatbot is fully responding on their behalf using what it knows of their personality and opinions.],
-  [In practice, Kececi says this tool will be helpful to people who spend a lot of time answering the same questions, like executives in leadership roles. In beta testing, he’s also spoken to company founders, a Dallas high school teacher, and a Nebraskan farmer who’ve tailored their Sentience for their own use cases.],
-  [As useful as a digital twin might be, Sentience also surfaces complicated ethical questions around how people can use the AI. What if someone asks for personal information, like an address? Or asks for an opinion that the user wouldn’t want to share?],
-  [Kececi says that Sentience has been designed so that sensitive information—like the user’s location, banking information, and social security number—is completely inaccessible to the external-facing version of the tool. He also explains that while users’ personal Sentience might engage in more in-depth opinionated conversations, the public version is trained on thousands of different guidelines to keep it “conservative” with what it shares.],
-  [[Screenshot: courtesy of the author]],
-  [I convinced Kececi’s Sentience to share some musings on the afterlife and thoughts he’s previously shared on immigration via his private Twitter account. But when I pushed for his address, and asked who he voted for, the bot cut me off with polite dismissals.],
-  [After my Sentience profile loaded, I spent some time digging into the information that it had compiled about me. Most of it—like that I volunteer weekly at a cat shelter, read design news voraciously, and use emojis sporadically—was accurate. Some of it, though, was not.],
-  [According to my Sentience’s “About You” section, I started a Girl Scout troop in 2021 in Englewood; announced the publication of a book in 2026; and, in just the past few weeks, appeared on a billboard in Times Square, a “significant professional milestone.” None of this actually happened.],
-  [[Screenshot: courtesy of the author]],
-  [When I questioned my personal Sentience on these details, I was able to find that each of them were pulled from my emails and misattributed to me. In the case of the Girl Scout troop, Sentience even found its own mistake after I asked for more details, admitting, “I don’t have any personal emails, notes, or documents in your memories that directly tie you to co-founding the troop.” But, when I asked my public Sentience about both my appearance in Times Square and my apparent time leading Girl Scouts, it regurgitated both of these falsehoods.],
-  [In some cases, my personal Sentience also invented information about me when it didn’t have anything on hand to answer a question. When I asked what I believed about the afterlife, it responded, “Honestly? I don’t know. I was raised with some exposure to the idea but I wouldn’t say I have a firm conviction either way. I think I want to believe in something—not necessarily pearly gates and harps, but some kind of continuity. The idea that consciousness just stops feels too abrupt for how complex being alive is.”],
-  [[Screenshot: courtesy of the author]],
-  [After this rather lyrical response, I then pushed it to explain why it said I was “raised with some exposure to the idea.” It immediately backtracked: “Ha, fair catch. I genuinely don’t know that about myself—I was kind of freestyling there. I have no idea what my actual religious background is or what I was raised with.” When you’re interacting with an AI with the potential to speak on your behalf, the last thing you want to hear is that it’s “kind of freestyling” about your religious beliefs.],
-  [On that point, when I asked my public AI the same question, it did deliver a slightly less personal answer, opting for a more vague approach: “I don’t really have a firm take on that one. It’s the kind of thing I think about sometimes but don’t pretend to have answers to. I think most people are in that same boat whether they admit it or not.” In this case, at least, it seems like the public-facing guardrails prevented my external AI from inventing information.],
-  [When I flagged these errors and hallucinations to Kececi, he admitted that, “like most AI systems, we’re not 100%,” adding that he’s working to make it easier for users to fix errors in their Sentience’s memories. Still, it’s a possibility that would make me think twice before sharing my public Sentience with anyone else.],
-  [These smaller inaccuracies rank lower on my list of concerns compared to the existential questions that an AI like Sentience raises. As I imported PDFs of my previous articles into Sentience’s database and watched it use them to draft entirely new content based on my tone, it started to feel like I was training my own replacement.],
-  [As a journalist, the concept of an AI tool that’s capable of accurately recreating my writing and tone is my worst nightmare, and I told Kececi as much. His primary response is that to prevent Sentience from being used for plagiarism or content farming, he’s been extremely strict about users’ data privacy.],
-  [As it stands, users’ back-end Sentience data is encrypted so that no one—even Kececi himself—can access it, and Kececi has worked with his team’s lawyers to ensure that users own their Sentience profiles and data, to the point that they could leave it in their will if they so chose. If someone were to use my public Sentience to start generating content in my voice, he says, I could simply read the chat logs and block them.],
-  [“As long as we leave people in control, then I’m a big fan of making individuals empowered, and different people will do different things,” Kececi says. “I also don’t really want to live in a world where everything is AI-written.”],
-  [Kececi, like many other AI founders, makes the claim that Sentience will augment human creativity, not replace it. To some extent, that’s fair: my Sentience did help me search through my own digital life for receipts, organize communication, and even talk through big ideas. Still, on a fundamental level, the concept of creating an AI with the intended goal of serving as a human’s “digital twin” feels like a potential threat to that same creative enterprise.],
-  [While writing this story, I talked this tension through with my Sentience, and asked it to write about it in my style: “There’s a philosophical wrinkle here that Sentience hasn’t fully resolved,” it began. “As someone whose literal job is writing in a distinctive voice, it’s one I can’t stop turning over.”],
-  [[Screenshot: courtesy of the author]],
-  [My twin continued that Sentience pitches itself as an augmentation tool, musing that, in some ways, that goal checks out. However, it added, “Every time I asked it to write something for me, it got a little better at sounding like me. Which is the point—until you follow the logic one step further. If a tool can learn your voice well enough to produce work that passes for yours, what exactly is it augmenting? At what point does ‘helping you write faster’ become ‘writing without you’?”],
-  [For a journalist, it says, that’s not an abstract question. “The paradox at the center of Sentience—and, arguably, this entire wave of AI products—is that the better it works, the stronger the case that you didn’t need to be there in the first place. Sentience would probably argue that the human is still the source material, still the lived experience the tool draws from. But source material doesn’t collect a paycheck.”],
-  [I couldn’t have said it better myself.],
+  [class=""\> Damon and Baby is an expansive game that packs a surprising amount of depth and challenge. I recently played through the first 10 hours of Damon and Baby ahead of its release to get a first-hand feel for its blend of action mechanics and comedy stylings.],
+  [class=""\>You take on the role of Damon, a demon with aspirations for greatness, who has what turns out to be an unfortunate friendship with a priest. At the start of the tale, the priest shows up mortally wounded and entrusts Damon with a baby. Little does Damon know that, through supernatural shenanigans, the two have become inseparable, and if Damon wanders too far away from the baby, he’s instantly teleported back to her.],
+  [class=""\>Stuck with putting his demonic plans on hold to care for a cute child, Damon sets out to find a way to separate himself from the baby. But he quickly discovers that while he wants to get rid of the kid, there are demonic forces, led by Death, who will do anything to claim her. And while Damon is a curmudgeonly demon, it turns out he has a heart of gold, so he grabs some guns and sets about fighting through hordes of supernatural enemies.],
+  [class=""\>Each of the gun archetypes comes in all sorts of variations, sporting different stats and nuanced capabilities. Some guns might add additional bullets to their spread, pierce through enemies, or fire in powerful, short bursts rather than continuously.],
+  [class=""\>Each weapon is good for specific situations, encouraging you to change them up often as you fight all kinds of enemies. From easily-defeated knife-wielding spirits, to giant, flying, shield-wielding fiends, there’s a huge number of threats to deal with and you’ll have to constantly shift strategies in order to stay alive.],
+  [class=""\>Damon and Baby gives you a few interesting tools to help you, as well. Before long, Damon realizes he can use that whole baby curse thing to his advantage, giving you the ability to throw the baby, which causes Damon to teleport to wherever she is and catch her. That move allows you to cover big gaps that you couldn’t normally jump over, and it serves as your primary dodge to escape enemy attacks.],
+  [class=""\>Even normal enemies can be huge and powerful, but the bosses take things up a notch — like a giant, katana-wielding wolf dressed like he belongs in Kill Bill , or a moth who uses a massive sniper rifle against you in a grocery store. They’ll clobber you if you’re not on your game.],
+  [class=""\>Throwing the baby is also just one of the many abilities that help you explore its sprawling areas. As Damon earns a double-jump and wall jump, and “ultimate” abilities that let him do things like smash through certain kinds of objects, you can revisit earlier areas to discover secrets and power-ups, or earn money for buying new weapons. Damon and Baby’s levels are huge, and offer almost as many nooks and crannies to check as demons to shoot.],
+  [class=""\>The thing I liked most in my preview of the game, though, was Damon and Baby’s comedic sensibility. It’s set in a world where demons, angels, and monsters are old hat for normal folks, and dealing with Heaven and Hell is mostly a bureaucratic annoyance, and it’s a paperwork snafu that costs Damon his powers at the start of the game.],
+  [class=""\>Damon’s ultimate goal is to get to Sedona — as in, Arizona — and he’s helped out by a demonic insurance agent, a vampire mafioso who transforms into a bat to help you in combat, and an angelic cook, among other weirdos.],
+  [class=""\>It’s a game that imagines a goofy supernatural world that’s full of spirits and creatures trying to help you save the world, but who still have to work within a society full of mundane tasks and arbitrary rules. The absurdity leads to a lot of good jokes, especially as Damon complains his way through the journey.],
 ),
   edited-for-length: false,
 )
@@ -87,16 +51,110 @@
 {
   #section-label([Front Page])
   #standard-article(
-  title: [There is no ethical consumption of HBO’s Harry Potter series],
-  author: [Charles Pulliam-Moore],
-  source-name: [The Verge],
+  title: [The Sunday Papers],
+  author: [Mark Warren],
+  source-name: [Rock Paper Shotgun],
   images: (),
   paragraphs: (
-  [class="has-drop-cap has-text-align-none"\>In the coming years, HBO wants its new Harry Potter series to become " the streaming event of the decade " as it adapts each of the franchise's seven original books . The show could very well become a hit that captures the imaginations of a new generation of fans who weren't there for the first wave of Pottermania that intensified with the releases of each book and Warner Bros.' subsequent film adaptations. And if this Harry Potter is a success, it could give author J. K. Rowling a reason to consider writing more stories set in the magical world that turned her into a billionaire.],
-  [Read the full story at The Verge.],
+  [Sundays are for deciding to re-watch The Sopranos. Specifically that episode in which Tony gets a bad tummy and then talks to a fish. You wonder what you might fever dream of, if you too were to go and eat at an Indian restaurant, then have enough room for a snack at Artie Bucco's fine Italian eatery? Would you too dream of surreal wandering down a boardwalk? Would you instead dream something different? Would you dream of a platypus sitting in a high-rise apartment, looking up from the newspaper as he reminds a house guest not to trip over a potted cactus when they exit his bathroom?],
+  [Would that be the-Oh. Oh no. It's happening again. The person who's emerged from the bathroom, tripping over the plant on the way, is bald and reeks of alternative comedy. Ready the words and prepare to fire.],
+  [Read more],
 ),
   insert-map: (:),
-  word-count: 126,
+  word-count: 146,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+}
+
+{
+  #section-label([Features])
+  #standard-article(
+  title: [Achieving Test Reliability for Native E2E Testing: Beyond Fixing Broken Tests],
+  author: [Jin Kim],
+  source-name: [Docker Blog],
+  images: (),
+  paragraphs: (
+  [End-to-end (E2E) tests are particularly important for native applications that run on various platforms (Android/iOS), screen sizes, and OS versions. E2E testing picks up differences in behavior across this fragmented ecosystem.],
+  [But keeping E2E tests reliable is often more challenging than writing them in the first place.],
+  [The fragmented device ecosystem, gaps in test frameworks, network inconsistencies, unstable test environments, and constantly changing UI all contribute to test flakiness. Teams easily get trapped in a cycle of constantly fixing failing tests due to UI changes or environment instability rather than improving the overall reliability of their test infrastructure. They end up frustrated and hesitant to adopt E2E tests in their workflows.],
+  [Having led the native E2E testing infrastructure setup at a mid-sized company, I learned the hard way how critical it is to define and implement strategies for test ownership, observability, and notifications in ensuring long-term test stability. In this piece, I discuss the challenges I’ve seen teams face and share lessons on how to build reliable E2E systems that you actually trust.],
+  [After setting up periodic E2E runs on the CI, our team initially focused on triaging, investigating, and fixing every failing test to improve test stability. However, even after nearly a year of patching flaky tests, the reliability of our E2E suite didn’t improve, and engineers slowly lost confidence in the usefulness and reliability of the test suite.],
+  [I learned that teams that focus primarily on fixing broken tests often end up in a cycle of chasing failures without fixing the root causes of instability. This reactive approach creates several problems:],
+  [Test suite fragility : If teams continue patching broken tests without addressing real issues with either the underlying app changes or unstable environments, the test suite becomes increasingly brittle. Over time, tests fail for reasons unrelated to real product defects, making it harder to distinguish genuine regressions from noise.],
+  [High maintenance overhead: Debugging and fixing flaky tests often requires a significant amount of developer time and resources. Unlike unit tests, which run quickly and fail in isolation, E2E tests execute against the development, staging, or pre-production environment, making failures harder to reproduce and diagnose. Adjusting E2E tests to work across devices with different screen sizes or OS versions requires additional work, making fixes a non-trivial task.],
+  [Reduces trust in the test suites: When failures are common and noisy, teams lose confidence in the E2E suite, and they often start ignoring test failures. This undermines the purpose of having automated tests in the first place. Instead, teams rely on local dev testing or manual QA cycles to validate changes. Over time, the suite becomes more of a liability than a safeguard, slowing down delivery instead of enabling it.],
+  [A reactive approach to fixing E2E tests slows down release cycles. Developers must spend significant amounts of time repeatedly fixing and rerunning failing tests, while teams rely on manual QA to catch actual regressions.],
+  [When our test suite stability didn’t improve after more than a year of chasing failures, we took a step back to analyze historical results and look for patterns.],
+  [We discovered that a significant number of failures could be attributed to an unstable environment or an unexpected state of the test account. For example, spikes in API latencies in the test environment frequently caused false negatives, adding to the noise. Similarly, tests run against existing user accounts could become inconsistent due to a past failure or if multiple tests attempted to use the same account.],
+  [I learned that investing in improving your test infrastructure is the only way to get to a stable and reliable native E2E testing workflow. This involves stabilizing the test environment, defining clear test ownership, reducing noisy alerts, and improving observability. Let’s look at each of these in more detail.],
+  [Many flaky E2E tests can be traced back to inconsistencies in the underlying environment, such as sporadic device issues, network instability, or API downtime in a staging environment.],
+  [To avoid noisy and unreliable tests, ensure you have a stable and standardized test environment with the following test practices:],
+  [Standardize device and environment setup: Device and test environment stability issues heavily impact test stability. To reduce API downtimes, isolate the E2E testing environment from the developer or staging environment to prevent interference from unstable builds and experimental features. Teams could either build a stable pre-prod environment that uses a production-ready artifact or spin up ephemeral environments for each E2E run to ensure consistency. Running tests on standardized device images or containerized emulators with consistent OS versions, configurations, and resources further improves stability. For critical flows, you can schedule periodic runs on physical device farms to validate against real hardware while keeping day-to-day tests stable and cost-effective.],
+  [Isolating test data per session: A test that makes modifications to any data should start from a clean slate. For instance, while testing a todo application, every test session should use a new test account to avoid unexpected scenarios because of unpredictable account state. To speed up tests, execute setup scripts in \`before\` hooks to handle account creation, and seed any required data automatically.],
+  [Mocking certain network responses: While an E2E test is meant to test the entire user journey with real data, in some cases, it’s necessary to mock specific API responses to maintain a predictable test environment. For instance, if your application relies on A/B tests or uses feature flags, different sessions might receive different experiences based on the user allocation. This can cause unexpected failures unrelated to actual regressions. Mocking these responses in test builds ensures consistency across sessions, and it avoids building complex test cases that handle different user experiences.],
+  [When a test fails, it’s often unclear who’s responsible for investigating and fixing it. Over time, such an absence of clear test ownership and accountability results in unreliable, unmaintained, and flaky tests.],
+  [Assigning ownership of tests based on the ownership of product features can alleviate this problem to some extent. Ideally, the owning team should be responsible for writing, maintaining, and fixing tests for their critical flows. This ownership model ensures that failures are triaged quickly and that tests are updated as the product evolves instead of becoming stale and unstable.],
+  [Test ownership becomes challenging in codebases where multiple product teams own parts of a single user flow. For example, in a shopping application, different teams might own the login, product catalog, and checkout experiences. If a checkout flow test fails at the login step, it can be confusing which team should triage the issue. Without a clear policy, the failure might be ignored, or multiple teams might end up duplicating the effort.],
+  [To handle these scenarios, set a policy that defines the first point of contact (POC) per test based on the end-user experience. This ensures a single team takes responsibility for triaging the issue, but that fixes can be handed off to upstream dependencies as needed.],
+  [A common challenge with native E2E testing is noisy alerts due to flaky or failing tests. Teams are often flooded with non-actionable alerts when flaky tests fail because of transient network or device issues. Repeated failure notifications about known bugs can also lead to alert fatigue.],
+  [The following techniques reduce this noise so that teams are only notified for actionable failures:],
+  [Mute flaky tests and known bugs: Instead of reporting and notifying teams about all test failures, allow alerts from tests that are identified as flaky or linked to known issues to be muted without a code change. You can manage muted tests through a remote configuration, environment variables, or a tool like BrowserStack . Flag them for follow-up work, but let alerts only go out for new or unexpected regressions. Muting is particularly important for E2E tests since fixing failing tests often requires significant developer time and resources. Repeated alerts can be especially distracting for developers.],
+  [Enrich notifications with failure details: Instead of generic failure messages, include details such as the failing user flow, commit details, the error message, and links to logs or dashboards in your alerts. These details help developers identify and triage issues quicker, resulting in faster fixes and higher confidence in the suite.],
+  [Track test metrics and trends: In addition to test suite level reports, track and analyze the historical results of your tests to understand failure rates, flakiness trends, and failure hotspots. For example, if you observe repeated failures in the login flow, it might indicate unstable tests or sporadic bugs in that flow. Tracking these metrics over time provides visibility into whether the E2E suite is improving or degrading, and it helps you prioritize stabilization efforts based on impact.],
+  [Running native E2E tests at scale is challenging due to cost and resource constraints. Device farms that provide access to real cloud-based devices are expensive for running a large suite of tests at high frequency. This becomes a constraint for integrating E2E tests with the CI pipeline that executes with every pull request before the changes are merged.],
+  [As mentioned earlier, a hybrid testing approach that uses Dockerized emulators for PR builds alongside real devices for periodic runs can help you overcome this challenge. When our team moved PR checks to Dockerized emulators, we got faster feedback and significantly reduced cloud device costs.],
+  [Containerized device runners can be spun up quickly in CI. For example, the docker-android image lets you run an Android emulator in a containerized Docker environment. It supports multiple device profiles, OS versions, and UI-testing frameworks such as Appium and Espresso. Teams can easily integrate these emulators into CI pipelines to run E2E tests at scale without investing in a huge testing budget],
+  [If you are building E2E tests for mobile web, you can also use containerized browser images to run tests consistently across different environments to further reduce cost and setup complexity.],
+  [If your team has been chasing native E2E test failures like we were, you’re probably also burning engineering time and resources without improving test stability. I hope that this article has encouraged you that there’s a better way: improving your test environment, device setup, alerting, and observability.],
+  [Your best first step is to analyze your historical test failures and categorize them into buckets. Use these insights to define actionable items for reducing flakiness. Use this roadmap to identify test infrastructure investments or process changes that will deliver the most impact.],
+  [After our team invested in test infrastructure improvements, we saw a clear improvement in stability. Developers had a better understanding of real failures, and the number of noisy alerts was reduced. Flakiness didn’t disappear entirely, but the improved reliability of the test suite helped us catch multiple native app regressions before the changes were released to production.],
+  [I hope this article will help you achieve similar wins.],
+),
+  insert-map: (:),
+  word-count: 1816,
+  edited-for-length: false,
+  debug-mode: false,
+)
+
+}
+
+{
+  #standard-article(
+  title: [How architects design airports to handle superlong security lines],
+  author: [Nate Berg],
+  source-name: [Fast Company Design],
+  images: (),
+  paragraphs: (
+  [The historically long security lines currently snaking through U. S. airports are the painful result of extreme circumstances. Callouts, no-shows, and resignations by Transportation Security Administration workers fed up with a lack of pay during a partial government shutdown, combined with a bump in spring break travelers, have created unusually congested airport security checkpoints.],
+  [For the architects and airport authorities that work together to design these heavily regulated spaces, it’s the kind of convergence you can’t exactly plan for. But, according to some of the designers of these spaces, airports are increasingly incorporating design features that can help them manage extreme security lines in the future.],
+  [George Bush Intercontinental Airport (IAH) in Houston \[Image: Stantec, in collaboration with Grimshaw\]],
+  [The lines, though currently caused by TSA worker shortages, are actually governed by the airports themselves and therefore are the airports’ problem. “There are regulations, but what the TSA is really interested in is the point from where you have your last document checked, called the TDC , to the actual \[scanning\] equipment,” says Ty Osbaugh, principal and global aviation leader at Gensler , a design and architecture firm. “That’s their land. How the queue works is purely up to an airport.”],
+  [How big that queue gets, though, is out of the airports’ and their designers’ hands.],
+  [Controlling the lines leading up to the security checkpoint takes a lot more than setting up a maze of stanchions. Osbaugh says airports carefully plan their pre-security, or landside, spaces to manage flows of passengers that can vary wildly during different times of the day and different days of the year. Building flexibility into this area, which can often share space with ticketing areas, allows for the lines to adapt to the crowds and circumstances.],
+  [Gensler is currently working on a \$9.5 billion redesign of Terminal 1 at John F. Kennedy International Airport in New York City, and Osbaugh says the landside space was designed with softer edges to be able to accommodate overflow. “We’ve got a garden that’s \[adjacent\], so if the queue starts to back up—God forbid that it does—now people have that extra space to be able to queue instead of backing into the ticketing areas and everything,” he says.],
+  [Other airports, including some currently experiencing incredibly long security lines, don’t have this kind of flexibility. “That’s the problem that we see in Hartsfield right now,” Osbaugh says, referring to the Hartsfield–Jackson International Airport in Atlanta, where travelers have been advised to expect four-hour wait times . “The checkpoints are boxed in by hard elements on both sides. So it’s just trying to figure out how do you have that pressure relief valve in the queue?”],
+  [IAH Airport \[Image: Stantec, in collaboration with Grimshaw\]],
+  [Airports are designed with epic security lines in mind, but that doesn’t mean they are built around the chance that they occur. Jonathan Massey, managing principal and aviation sector leader at the architecture firm Corgan , says his firm’s approach is to understand the existence of outlier events, but to design for more realistic peaks. “You always know something’s going to happen. There’s going to be a snowstorm somewhere, there’s going to be a strike, there’s going to be a terrorist event, there’s going to be a pandemic,” he says.],
+  [Airports rarely end up being large enough to handle abnormally high crowds that may only occur once every few years. Massey says airports are designed to accommodate predictable peak surges like spring break, the summer travel season, and Thanksgiving. “We’ll look at those as our planning baseline. Things like pandemics, strikes, government shutdowns, blizzards—those fall outside of that,” he says. “Typically, the industry just isn’t willing to spend \$1,000 a square foot to make a building bigger for what might happen.”],
+  [Airports can also be hesitant to try to solve unpredictable crowding problems in facilities that will stand for decades, especially as new security technologies are rapidly changing the checkpoint process. Osbaugh, who’s been designing airport projects since before the September 11, 2001, terrorist attacks, recalls a time when the security screening was an agent waving a metal detecting wand. “The one thing that is constant, and will continue to be constant as it relates to security checkpoints, is they are going to evolve,” he says.],
+  [When it begins opening in phases later this year, the new Terminal 1 at JFK Airport will integrate biometric document-checking technology that could, one day, eliminate the need for human workers to manually check identification and boarding passes. “It’s taking the need of staffing for airlines down to next to none, but it’s also reduced the footprint of how much space is needed at a check-in hall,” Osbaugh says. The lines leading up to this checkpoint, he adds, can “accordion” in size depending on the size of a crowd at any given time.],
+  [Such flexibility has some architectural implications. Jeff Mechlem, airport sector leader at the architecture and engineering firm Stantec , says it’s become more important for airport designs to have wide open areas for the entire security pipeline. “\[We’re\] looking to make sure we can reduce the amount of columns and permanent walls and such that restrict not only the changing equipment and technologies, but also the configuration of our queues,” he says.],
+  [That approach is getting a test right now. One of the recent projects Stantec is involved in is the redevelopment of the international Terminal E in Houston’s George Bush Intercontinental Airport, one of the airports that has been hardest hit by the TSA worker shortage and partial government shutdown. The terminal, which is now only about half operational as more airlines get ready to move in, is currently seeing security checkpoint wait times of about two hours . (This kind of tech-enabled wait estimate is also on display in many newer airports, giving passengers at least some sense that they won’t—or definitely will—miss their flight.)],
+  [The project, and others currently rolling out in another Houston terminal and at Denver International Airport, was designed to ease this rare situation by making space in the central processing area for security lines to spread out without impacting bag-drop and check-in counters, according to Mechlem. Buffer space between each function provides the option for lines to spread past their usual footprint. Under normal circumstances, these areas simply blend into the landside space of the airport, like wide concourses. There are also restrooms located nearby and staff facilities that can be used to assist passengers. “We are looking at the planning of that space as not being just a buffer, but something that you then actually could use as operational for these extended queues,” Mechlem says.],
+  [IAH International Terminal \[Image: Stantec, in collaboration with HOK\]],
+  [“It’s inevitable that you’re going to have some wait period and queue time here, and we’re looking at ways to use architecture to drive that experience and have it be a pleasant, stress-relieving experience,” Mechlem says.],
+  [But when lines stretch and wait times grow, there’s only so much a flexible floor plan or a column-free ceiling span can do. “Airport directors are looking for ways to distract the passenger,” Osbaugh says. Art is one option.],
+  [Along the wall bordering the security checkpoint at JFK’s Terminal 1, a massive split-flap display board designed by Pentagram and the engineering firm Arup will cycle through large lo-fi artworks of New York landmarks and scenery. In Houston’s Terminal E, there’s a large blown-glass artwork hanging above the checkpoint. At Dallas’s Love Field, a recent Corgan project , the line to the security checkpoint worms along a path directly beneath a huge tiled mosaic of a field of wildflowers.],
+  [The hope is these artworks offer at least some distraction from the tedium of standing in a line, whether for minutes or for hours. “If you stand in line and you’re only thinking about standing in line, it feels like you’re standing there a very long time,” Massey says.],
+  [Right now, with wait times hitting historic highs and unpaid TSA employees reportedly selling their own blood plasma to make ends meet, even the best distraction will only be temporary. Massey says there’s a limit to the crowds an airport facility’s design can solve for, and extreme security lines are less an architectural problem than a staffing and equipment problem.],
+  [“When all the machines are working and all of the staff shows up, then spring break will go fine because that’s what it’s designed for,” he says. “But when machines break down and people don’t show up, that’s when things don’t go fine. And that’s what we’re seeing now.”],
+),
+  insert-map: (:),
+  inline-pq: pull-quote([Osbaugh, who’s been designing airport projects since before the September 11, 2001, terrorist attacks, recalls a time when the security screening was an agent waving a metal detecting wand.], [Nate Berg]),
+  inline-pq-idx: 9,
+  word-count: 1444,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -105,59 +163,18 @@
 
 #article-row((
   [
-    section-label([Features])
     standard-article(
-  title: [LWiAI Podcast \#228 - GPT 5.2, Scaling Agents, Weird Generalization],
-  author: [Last Week in AI],
-  source-name: [Last Week in AI],
+  title: [I was the untitled goose in Big Walk, the balmy new open world co-op puzzler from House House],
+  author: [Edwin Evans-Thirlwell],
+  source-name: [Rock Paper Shotgun],
   images: (),
   paragraphs: (
-  [Our 228th episode with a summary and discussion of last week’s big AI news!],
-  [Recorded on 12/12/2025],
-  [Feel free to email us your questions and feedback at contact\@lastweekinai.com and/or hello\@gladstone.ai],
-  [In this episode:],
-  [OpenAI’s latest model GPT-5.2 demonstrates improved performance and enhanced multi-modal capabilities but comes with increased costs and a different knowledge cutoff date.],
-  [Disney invests \$1 billion in OpenAI to generate Disney character content, creating unique licensing agreements across characters from Marvel, Pixar, and Star Wars franchises.],
-  [The U. S. government imposes new AI chip export rules involving security reviews, while simultaneously moving to prevent states from independently regulating AI.],
-  [DeepMind releases a paper outlining the challenges and findings in scaling multi-agent systems, highlighting the complexities of tool coordination and task performance.],
-  [Timestamps:],
-  [(00:00:00) Intro / Banter],
-  [(00:01:19) News Preview],
-  [Tools & Apps],
-  [(00:01:58) GPT-5.2 is OpenAI’s latest move in the agentic AI battle | The Verge],
-  [(00:08:48) Runway releases its first world model, adds native audio to latest video model | TechCrunch],
-  [(00:11:51) Google says it will link to more sources in AI Mode | The Verge],
-  [(00:12:24) ChatGPT can now use Adobe apps to edit your photos and PDFs for free | The Verge],
-  [(00:13:05) Tencent releases Hunyuan 2.0 with 406B parameters],
-  [Applications & Business],
-  [(00:16:15) China set to limit access to Nvidia’s H200 chips despite Trump export approval],
-  [(00:21:02) Disney investing \$1 billion in OpenAI, will allow characters on Sora],
-  [(00:24:48) Unconventional AI confirms its massive \$475M seed round],
-  [(00:29:06) Slack CEO Denise Dresser to join OpenAI as chief revenue officer | TechCrunch],
-  [(00:31:18) The state of enterprise AI],
-  [Projects & Open Source],
-  [(00:33:49) [2512.10791] The FACTS Leaderboard: A Comprehensive Benchmark for Large Language Model Factuality],
-  [(00:36:27) Claude 4.5 Opus’ Soul Document],
-  [Research & Advancements],
-  [(00:43:49) [2512.08296] Towards a Science of Scaling Agent Systems],
-  [(00:48:43) Evaluating Gemini Robotics Policies in a Veo World Simulator],
-  [(00:52:10) Guided Self-Evolving LLMs with Minimal Human Supervision],
-  [(00:56:08) Martingale Score: An Unsupervised Metric for Bayesian Rationality in LLM Reasoning],
-  [(01:00:39) [2512.07783] On the Interplay of Pre-Training, Mid-Training, and RL on Reasoning Language Models],
-  [(01:04:42) Stabilizing Reinforcement Learning with LLMs: Formulation and Practices],
-  [(01:09:42) Google’s AI unit DeepMind announces UK ‘automated research lab’],
-  [Policy & Safety],
-  [(01:10:28) Trump Moves to Stop States From Regulating AI With a New Executive Order - The New York Times],
-  [(01:13:54) [2512.09742] Weird Generalization and Inductive Backdoors: New Ways to Corrupt LLMs],
-  [(01:17:57) Forecasting AI Time Horizon Under Compute Slowdowns],
-  [(01:20:46) AI Security Institute focuses on AI measurements and evaluations],
-  [(01:21:16) Nvidia AI Chips to Undergo Unusual U. S. Security Review Before Export to China],
-  [(01:22:01) U. S. Authorities Shut Down Major China-Linked AI Tech Smuggling Network],
-  [Synthetic Media & Art],
-  [(01:24:01) RSL 1.0 has arrived, allowing publishers to ask AI companies pay to scrape content | The Verge],
+  [House House were kind enough to keep a video of my hands-on session with Big Walk , filmed by one of the participating PRs. Generally, a full video of a preview event including player audio is a lifesaver for a journalist, struggling to keep notes while pushing buttons. But in this case, I don't want to watch the Big Walk video, because then I would hear what the other players were saying when I wasn't there.],
+  [You see, I fell down a cliff midway through Big Walk, and spent the night floundering about in the ocean. Eventually, a developer armed with a big, ball-shaped lamp tracked me down and ushered me back up, hoisting me onto his shoulders so that I could leap to a rock. Nights in Big Walk last moments. I was gone for the length of a luxurious toilet break. But still, those were moments in which the others were gathered, waiting for me. Perhaps they were making fun of me. I don't want to know.],
+  [Read more],
 ),
   insert-map: (:),
-  word-count: 470,
+  word-count: 171,
   edited-for-length: false,
   debug-mode: false,
 )
@@ -165,121 +182,93 @@
   ],
   [
     standard-article(
-  title: [If you ask Yoshi-P, kids don't care about Final Fantasy anymore because they're taking too long to come out],
-  author: [Oisin Kuhnke],
+  title: [Slay the Spire 2's 'anti-infinite' balance patch has now itself been patched, much to the relief of some Silent and Necrobinder players],
+  author: [Edwin Evans-Thirlwell],
   source-name: [Rock Paper Shotgun],
   images: (),
   paragraphs: (
-  [Last month, a post caught some kind of virus and did the rounds, pondering why kids don't care about Final Fantasy or Dragon Quest so much anymore, wondering what they do play now, and anecdotally findering that most of them just play Pokemon. And I truly have to wonder if Final Fantasy 14 producer Naoki "Yoshi-P" Yoshida saw said post, given that in a recent bout of interviews with several key Final Fantasy figureheads in preparation for the next Dissidia game, he himself flat out acknowledged that the youths these days don't care as much because of the series' infrequent release schedule.],
+  [Slay the Spire 2 developers Mega Crit have rolled back aspects of last week's big STS2 balancing update , which nerfed a number of cards according to the broad objective of making infinites – that is, cunning combos that let you prolong your turn forever - harder to accomplish.],
+  [The patch in question isn't even formally part of the roguelite deckbuilder yet – you have to opt into the Steam beta branch to test it out. But it has sparked a ruckus nonetheless among the Spire Slayers, some of whom attempted to review bomb the game despite Mega Crit's protestations that Slay the Spire 2 is still in early access development .],
   [Read more],
 ),
   insert-map: (:),
-  word-count: 104,
+  word-count: 114,
   edited-for-length: false,
   debug-mode: false,
 )
 
   ],
 ), ruled-indices: (1,))
-#pull-quote([DeepMind releases a paper outlining the challenges and findings in scaling multi-agent systems, highlighting the complexities of tool coordination and task performance.], [Last Week in AI])
-
-
-{
-  #standard-article(
-  title: [Is It Time For Open Source to Start Charging For Access?],
-  author: [EditorDavid],
-  source-name: [Slashdot],
-  images: (),
-  paragraphs: (
-  ["It's time to charge for access," argues a new opinion piece at The Register. Begging billion-dollar companies to fund open source projects just isn't enough, writes long-time tech reporter Steven J. Vaughan-Nichols:],
-  [Screw fair. Screw asking for dimes. You can't live off one-off charity donations... Depending on what people put in a tip jar is no way to fund anything of value... [A]ccording to a 2024 Tidelift maintainer report, 60 percent of open source maintainers are unpaid, and 60 percent have quit or considered quitting, largely due to burnout and lack of compensation. Oh, and of those getting paid, only 26 percent earn more than \$1,000 a year for their work. They'd be better paid asking "Would you like fries with that?" at your local McDonald's...],
-  [Some organizations do support maintainers, for example, there's HeroDevs and its \$20 million Open Source Sustainability Fund. Its mission is to pay maintainers of critical, often end-of-life open source components so they can keep shipping patches without burning out. Sentry's Open Source Pledge/Fund has given hundreds of thousands of dollars per year directly to maintainers of the packages Sentry depends on. Sentry is one of the few vendors that systematically maps its dependency tree and then actually cuts checks to the people maintaining that stack, as opposed to just talking about "giving back."],
-  [Sentry is on to something. We have the Linux Foundation to manage commercial open source projects, the Apache Foundation to oversee its various open source programs, the Open Source Initiative (OSI) to coordinate open source licenses, and many more for various specific projects. It's time we had an organization with the mission of ensuring that the top programmers and maintainers of valuable open source projects get a cut of the tech billionaire pie.],
-  [We must realign how businesses work with open source so that payment is no longer an optional charitable gift but a cost of doing business. To do that, we need an organization to create a viable, supportable path from big business to individual programmer. It's time for someone to step up and make this happen. Businesses, open source software, and maintainers will all be better off for it.],
-  [One possible future... Bruce Perens wrote the original Open Source definition in 1997, and now proposes a not-for-profit corporation developing "the Post Open Collection" of software, distributing its licensing fees to developers while providing services like user support, documentation, hardware-based authentication for developers, and even help with government compliance and lobbying.],
-  [Read more of this story at Slashdot.],
-),
-  insert-map: (:),
-  word-count: 419,
-  edited-for-length: false,
-  debug-mode: false,
-)
-
-}
 
 {
   #section-label([Analysis])
   #brief-group((
-    #brief-item([Vikki Blake], source-name: [Eurogamer], [The first major balance patch for Slay the Spire 2 dropped just two days ago (Friday 20th March), but developer Mega Crit has already had to address the feedback to the recent beta patch, reminding us that this beta balance pass "was the first of many to come over the next one-two years".
+    [#brief-item([Mark Warren], source-name: [Rock Paper Shotgun], [Right, roll call time. "A barbarian (for all the bonk boys in the audience)". Present. A mage who's the smartypants choice. Yeah. A thief, who's both "classic" and "obligatory". Here. "Rat with saxophone". Yup. Right, that's all of the fantasy trope character types accounted for in Dark Scrolls, a roguelike dungeon-running platformer from the devs behind Gunbrella and Gato Roboto .
 
- Read more])
+ Read more])],
+    [#brief-item([ScienceDaily], source-name: [ScienceDaily], [Using a smartphone with long nails can be frustrating, forcing people to awkwardly tap with their fingertips instead of their nails. Now, researchers are working on a clear nail polish that could change that by turning fingernails into touchscreen-friendly tools. By experimenting with dozens of formulas, they discovered that combining common compounds like taurine and ethanolamine can help nails carry just enough electrical charge for screens to detect a touch.])],
+    [#brief-item([Robert Purchese], source-name: [Eurogamer], [Hello and welcome back to our regular feature where we write a little about the games we've been playing. This week, Bertie discovers he's not as good at Slay the Spire 2 as he would like to be; Connor continues to fall to the Dark Side and embrace his inner troll; and Marie realises that older games really were more challenging.
 
-    #brief-item([Oisin Kuhnke], source-name: [Rock Paper Shotgun], [It would be a reasonable assumption to make that there are only so many variations on football games you can make. Ultimately, no matter how many bells, whistles, or rocket powered cars you throw at it, it always comes down to getting a ball in a net and shouting SCOOOOOORE. Except in the case of Nutmeg!, a "nostalgic deckbuilding football manager" which looks like it features more faxing than any sort of kicking, but I mean that in an endearing way, promise.
+ Read more])],
+    [#brief-item([Victoria Phillips Kennedy], source-name: [Eurogamer], [Turns out it is not just studios and live-service projects which are party to Sony's cancellation spree , as last night, it was announced that the PlayStation Remote Play-enabled car known as Afeela 1 has also been nixed.
 
- Read more])
+ Read more])],
+    [#brief-item([Last Week in AI], source-name: [Last Week in AI], [Anthropic releases Sonnet 4.6 
 
-    #brief-item([Edwin Evans-Thirlwell], source-name: [Rock Paper Shotgun], [Slay The Spire 2 's first actual proper major update is upon us, an avalanche of balancing tweaks and fixes for the roguelite deckbuilder that has approximately two goals: making some of those insectile cards less appalling, care of the previously announced Phobia Mode, and dialling back the prevalence of infinites – that is, card combos with effects that allow you to carry on playing them forever in a single turn.
+Related:
 
- Read more])
+ Claude Sonnet 4.6 model brings ‘much-improved coding skills’ and upgraded free tier 
 
-    #brief-item([Spencer Kaufman], source-name: [Consequence of Sound], [Ross “The Boss” Friedman, legendary guitarist of both The Dictators and Manowar, has died at age 72 after a battle with ALS, also known as Lou Gehrig’s Disease. Friedman’s death was announced by the Metal Hall of Fame, which stated, in part, “It is with deep sadness that we confirm…
+ Claude Sonnet 4.6 delivers frontier-level AI for free and cheap-seat users 
 
-Please click the link below to read the full article.])
+ Anthropic releases Claude Sonnet 4.6, continuing breakneck pace of AI model releases 
 
-    #brief-item([Victoria Phillips Kennedy], source-name: [Eurogamer], [As promised, the powers that be at Capcom have released an update for Resident Evil Requiem, which along with other fixes and such also adds the much-requested photo mode, so you can really capture all those nasties in their bloody glory (or, you could just take pics of Leon and Grace, your call).
+ 
+ Read more])],
+    [#brief-item([James Archer], source-name: [Rock Paper Shotgun], [Perhaps sensing competition in the field of Japan-flavoured arcade racing games , Forza Horizon 6 devs Playground Games have revealed the open-world vroomer’s system requirements. Agreeably, they’re a sensible balance of attainable low-end fare – at 1080p, a GTX 1650 and 16GB of RAM are apparently all that’s needed for 60fps – and the kind of hulking graphics bricks that you’d expect for 4K ray tracing. Only the most baby-oiled of hypercars for the RX 9070 XT owners, you understand, though support for lil’ handhelds like the Steam Deck is confirmed as well.
 
- Read more])
+ Read more])],
+    [#brief-item([Manuviraj Godara], source-name: [MakeUseOf], [I had tunnel-visioned myself into using Acrobat for everything PDF-related, from reading to highlighting. It was as if I was justifying the cost by using the program. But, as it turns out, Firefox already had all the PDF manipulation features I needed. Also, seeing Adobe's business practices, I'm better off without their tools , especially considering that the free version of Acrobat Reader is practically a running advertisement for Adobe's paid features.])],
+    [#brief-item([Fran Ruiz], source-name: [Eurogamer], [Dragon's Dogma 2 was a very special RPG even if some its bones could've used more work and the New Game Plus loop span its wheels without extra end-game content to give it juice. Still, like the original , it gained a dedicated following, so it's not surprising to read two years later folks asking for a Dark Arisen -like DLC. Now, Capcom has celebrated its second anniversary, but we're left with nothing but disappointment once again... or are we?
 
-    #brief-item([ScienceDaily], source-name: [ScienceDaily], [Researchers have identified a crucial ion channel, TMEM175, that acts like an overflow valve in the cell’s recycling system. It regulates acidity inside lysosomes, ensuring they function properly. When TMEM175 is faulty, toxic buildup can occur, contributing to diseases like Parkinson’s. This breakthrough reveals a promising new target for future therapies.])
+ Read more])],
+    [#brief-item([Last Week in AI], source-name: [Last Week in AI], [China’s Moonshot releases a new open source model Kimi K2.5 and a coding agent 
 
-    #brief-item([Mark Warren], source-name: [Rock Paper Shotgun], [Having reached the point of making their case to the European parliament, the Stop Killing Games 's organisers are having to think about keeping their campaign going in the long-term. For example, they're setting up set up NGOs to advocate on the issue of server shutdowns rendering online-only games impossible to play .
+class="captioned-image-container"\> 
 
-Ironically, though, one of the factors the group see as helping ensure their efforts don't end up fading into background noise is the depressing regularity with which games like Highguard are dying in a fashion that's difficult to ignore.
+class="image2-inset"\> 
 
- Read more])
+class="image-link-expand"\>
 
-    #brief-item([Mark Warren], source-name: [Rock Paper Shotgun], [Following Epic Games' mass layoffs , a Fortnite producer has said that the devs left behind "cannot even fully understand" the sort of impact the job cuts will have on the game during this year and into the future.
+class="pencraft pc-display-flex pc-gap-8 pc-reset"\> 
 
- Read more])
+Moonshot AI unveiled Kimi K2.5, an open-source, natively multimodal model trained on 15 trillion mixed visual and text tokens that understands text, images, and video. The company emphasizes strong agentic capabilities, citing “agent swarm” orchestration where multiple agents …
 
-    #brief-item([Oluwademilade Afolabi], source-name: [MakeUseOf], [I used to think I had my phone habits pretty much locked down. Then I started noticing the pattern. The same little actions, over and over, every single day. Toggling Wi-Fi, muting notifications at night, opening the same set of apps in the same order each morning. None of it felt like work, but together it added up in a way I couldn't ignore anymore.])
+ 
+ Read more])],
+    [#brief-item([Connor Makar], source-name: [Eurogamer], [Warframe 's next update - The Shadowgrapher - is fast approaching. A shot in a new direction for the sci-fi MMO, players will have to navigate through cramped corridors and inky pathways in the game's first explicitly horror-inspired game mode. But how exactly do you make a game with bullet jumping and space ninjas scary ?
 
-    #brief-item([Robert Purchese], source-name: [Eurogamer], [The wait is over. The spectacular Hades 2 - five stars, if you ask Eurogamer, which you should - is coming to Xbox and PlayStation 5 on 14th April. It'll also be a Game Pass game and a Play Anywhere title.
+ Read more])],
+    [#brief-item([Victoria Phillips Kennedy], source-name: [Eurogamer], [Microsoft has announced its next Xbox Partner Preview showcase will take place later this week, and focus on third-party games from the likes of Sega and GSC Game World .
 
- Read more])
+ Read more])],
+    [#brief-item([James Archer], source-name: [Rock Paper Shotgun], [STALKER 2: Heart of Chornobyl is getting its first proper expansion this year, titled Cost of Hope, and it looks stuffed to its icky mutant gills with classic STALKER series beats that the base game – while a powerfully engrossing survival FPS – missed out on. The Chornobyl Nuclear Power Plant returns as an explorable, doubtless horrible addition to the game’s open world, and the story concerns the conflict between the rival Freedom and Duty factions that’s been simmering since the original STALKER .
 
-    #brief-item([Vikki Blake], source-name: [Eurogamer], [Prolific former Valve writer, Chet Faliszek, has hit out at Epic Games founder Tim Sweeney, asking why anyone at Epic "should work hard" when staff have no agency and "the recent 1,000 job cuts didn't come because of shareholder pressure".
+ Read more])],
+    [#brief-item([ScienceDaily], source-name: [ScienceDaily], [Scientists have uncovered a new species of rhinoceros in the Canadian High Arctic, revealing that rhinos once lived far farther north than expected. The fossil, dating back 23 million years, is unusually complete and has helped reshape ideas about how these animals migrated between continents. Evidence suggests rhinos crossed from Europe to North America more recently than scientists once thought.])],
+    [#brief-item([ScienceDaily], source-name: [ScienceDaily], [Scientists have found a clever way to supercharge ultra-thin semiconductors by reshaping the space beneath them rather than altering the material itself. By placing a single-atom-thick layer of tungsten disulfide over tiny air cavities carved into a crystal, they created miniature “light traps” that dramatically boost brightness and optical effects—up to 20 times stronger emission and 25 times stronger nonlinear signals. These hollow structures, called Mie voids, concentrate light exactly where the material sits, overcoming a major limitation of atomically thin devices.])],
+    [#brief-item([Mark Warren], source-name: [Rock Paper Shotgun], [Up until Bethesda's announcement that it'll be getting some robot army DLC next month and the yassification of its faces by Nvidia's DLSS 5 tech , I'd not thought about seeing how Starfield 's modding scene is getting on for a little while. That's now changed, because they've finally gotten seamless custom animations working.
 
- Read more])
+ Read more])],
+    [#brief-item([Oisin Kuhnke], source-name: [Rock Paper Shotgun], [I'm going to say it: bullet hells are more stressful than Souls-likes. Why are there 10,000 orbs approaching me, promising me misery and death! And I have to both tactfully dodge them while also staging a front myself? The visual information alone is enough to deteriorate the mind, memorising a list of attack patterns from some big dude with a sword seems like chump change by comparison. So this leaves me quite sweet on DeeSicks, a roguelike take on the game with physics-based dice rolling where god has died and you become your own boss.
 
-    #brief-item([Julian Benson], source-name: [Rock Paper Shotgun], [Epic Games, the creator of Fortnite and the Unreal Engine, have announced plans to lay off more than 1000 staff. In a company-wide letter , CEO Tim Sweeney blamed both "industry-wide challenges" and "challenges unique to Epic", including a downturn in Fortnite's popularity.
+ Read more])],
+    [#brief-item([Renee Schettler], source-name: [Yoga Journal], [As you release old, ineffective patterns, you create space for something else to be your reality.
 
-In addition to the layoffs, the company have made more than \$500m in cuts by reducing contracting, marketing, and closing open roles. Sweenet says this puts the company "in a more stable place."
+The post Your Weekly Horoscope, March 29-April 4, 2026: Your Desires Taking Shape appeared first on Yoga Journal .])],
+    [#brief-item([Oisin Kuhnke], source-name: [Rock Paper Shotgun], [Project Hadar… It's a completely new game from CD Projekt Red, one that the Cyberpunk 2077 studio has been tinkering away at in the background for a while now . And yet! We know next to nothing about it, not even the genre (yes I know it's probably an RPG given CD Projekt's whole thing, I'm creating mystique here). But today was CD Projekt's most recent earnings report , so now we know… not much much, though we do have a better idea of where it's at.
 
-Sweeney, a strong advocate of AI, says the layoffs "aren't related to AI".
-
- Read more])
-
-    #brief-item([Matt Wales], source-name: [Eurogamer], [Sony has announced significant price increases for its PlayStation range, starting 2nd April, which will see the cost of a base PS5 climb by around £90 in the UK. The company is blaming the price bump - which it says it's making "after careful evaluation" - on what it calls "continued pressures in the global economic landscape".
-
- Read more])
-
-    #brief-item([ScienceDaily], source-name: [ScienceDaily], [Stable sea ice along Alaska’s coast is disappearing faster than expected, with the season shrinking by weeks and even months in recent decades. The ice is forming later in the fall and, in some places, breaking away earlier in spring. This trend is now hitting areas like the Beaufort Sea that were once relatively stable. For local communities, it means more dangerous travel, uncertain hunting conditions, and greater exposure to coastal erosion.])
-
-    #brief-item([ScienceDaily], source-name: [ScienceDaily], [Using a smartphone with long nails can be frustrating, forcing people to awkwardly tap with their fingertips instead of their nails. Now, researchers are working on a clear nail polish that could change that by turning fingernails into touchscreen-friendly tools. By experimenting with dozens of formulas, they discovered that combining common compounds like taurine and ethanolamine can help nails carry just enough electrical charge for screens to detect a touch.])
-
-    #brief-item([Victoria Phillips Kennedy], source-name: [Eurogamer], [Can you believe that Atomfall - Rebellion's pseudo-apocalyptic survival game, set in the rather splendid ol' chap that is 1950s rural England - is on the brink of its first birthday? It really doesn't seem that long ago Ian was telling me about his escapades bopping baddies over the head with a cricket bat as they weed against a wall .
-
- Read more])
-
-    #brief-item([Natalie Oganesyan], source-name: [Deadline Hollywood], [Alex Duong, a comedian, writer and actor based in Los Angeles, has died at the age of 42. Duong was diagnosed with alveolar rhabdomyosarcoma last year, a rare and aggressive cancer affecting soft tissue. He underwent surgery to remove a malignant growth that was blocking blood flow to his optic nerve and caused vision loss. […]])
-
-    #brief-item([Fran Ruiz], source-name: [Eurogamer], [Dragon's Dogma 2 was a very special RPG even if some its bones could've used more work and the New Game Plus loop span its wheels without extra end-game content to give it juice. Still, like the original , it gained a dedicated following, so it's not surprising to read two years later folks asking for a Dark Arisen -like DLC. Now, Capcom has celebrated its second anniversary, but we're left with nothing but disappointment once again... or are we?
-
- Read more])
-
-    #brief-item([ScienceDaily], source-name: [ScienceDaily], [A sweeping global report finds that migratory freshwater fish are in steep decline, with populations down roughly 81% since 1970. These species depend on long, connected rivers, but dams and human pressures are cutting off their routes. Hundreds of species now need coordinated international protection. Experts say restoring river connectivity is critical to preventing further collapse.])
-
+ Read more])],
   ))
 }
 
