@@ -181,6 +181,7 @@ def _render_feature(item, pq_map: dict, data_dir: Path, debug_mode: bool) -> str
     # Lead/body split
     lead, body_paras = split_feature_text(text, deck=deck)
     body_paras = _filter_orphaned_captions(body_paras)
+    body_paras = [p for p in body_paras if p.strip()]
     lead_escaped = _escape_typst(lead)
     fi = _first_alpha_index(lead)
 
@@ -213,7 +214,7 @@ def _render_feature(item, pq_map: dict, data_dir: Path, debug_mode: bool) -> str
         lines.append(f"  hero-caption: [{hero_caption}],")
     if deck_escaped:
         lines.append(f"  deck: [{deck_escaped}],")
-    lines.append(f"  lead-text: [{lead_escaped}],")
+    lines.append(f"  lead-text: {_typst_string(lead)},")
     lines.append(f"  lead-first-alpha: {fi},")
     lines.append(f"  body-paragraphs: {body_array},")
     if inline_pq != "none":
@@ -237,6 +238,7 @@ def _render_standard(item, pq_map: dict, data_dir: Path, debug_mode: bool) -> st
 
     # Paragraphs
     paragraphs = _filter_orphaned_captions(split_text_paragraphs(text))
+    paragraphs = [p for p in paragraphs if p.strip()]
 
     # Images
     images_data = []
@@ -336,8 +338,8 @@ def _render_brief(item) -> str:
     text = _escape_typst(getattr(item, "display_text", "") or "")
 
     if source_name:
-        return f"brief-item([{author}], source-name: [{source_name}], [{text}])\n"
-    return f"brief-item([{author}], [{text}])\n"
+        return f"brief-item([{author}], source-name: [{source_name}], [{text}]),"
+    return f"brief-item([{author}], [{text}]),"
 
 
 def build_typst_markup(edition: CuratedEdition, config: dict) -> str:
@@ -512,7 +514,7 @@ def build_typst_markup(edition: CuratedEdition, config: dict) -> str:
             if len(columns) == 1:
                 # Single-column row
                 col = columns[0]
-                out.append('{')
+                out.append('[')
                 if section_heading:
                     out.append(f'  #section-label([{_escape_typst(section_heading)}])')
 
@@ -528,7 +530,7 @@ def build_typst_markup(edition: CuratedEdition, config: dict) -> str:
                 if briefs:
                     brief_items = []
                     for b in briefs:
-                        brief_items.append('    #' + _render_brief(b))
+                        brief_items.append('    ' + _render_brief(b))
                     out.append('  #brief-group((')
                     out.extend(brief_items)
                     out.append('  ))')
@@ -537,7 +539,7 @@ def build_typst_markup(edition: CuratedEdition, config: dict) -> str:
                 for pq in row_pqs:
                     out.append('  #' + _render_pull_quote(pq))
 
-                out.append('}')
+                out.append(']')
                 out.append('')
             else:
                 # Multi-column row (grid)
@@ -550,22 +552,22 @@ def build_typst_markup(edition: CuratedEdition, config: dict) -> str:
 
                     col_lines = []
                     if ci == 0 and section_heading:
-                        col_lines.append(f'    section-label([{_escape_typst(section_heading)}])')
+                        col_lines.append(f'    #section-label([{_escape_typst(section_heading)}])')
 
                     for item in col.get("col_items", []):
                         if isinstance(item, CuratedThread):
-                            col_lines.append('    ' + _render_thread(item, data_dir))
+                            col_lines.append('    #' + _render_thread(item, data_dir))
                         elif hasattr(item, "layout_hint") and item.layout_hint == LayoutHint.FEATURE:
-                            col_lines.append('    ' + _render_feature(item, pq_map, data_dir, debug_mode))
+                            col_lines.append('    #' + _render_feature(item, pq_map, data_dir, debug_mode))
                         else:
-                            col_lines.append('    ' + _render_standard(item, pq_map, data_dir, debug_mode))
+                            col_lines.append('    #' + _render_standard(item, pq_map, data_dir, debug_mode))
 
                     briefs = col.get("briefs", [])
                     if briefs:
                         brief_items = []
                         for b in briefs:
                             brief_items.append('      ' + _render_brief(b))
-                        col_lines.append('    brief-group((')
+                        col_lines.append('    #brief-group((')
                         col_lines.extend(brief_items)
                         col_lines.append('    ))')
 
@@ -627,6 +629,8 @@ def render_typst_pdf(
         FileNotFoundError: If the ``typst`` CLI is not installed.
         subprocess.CalledProcessError: If Typst compilation fails.
     """
+    # Tested with Typst 0.13.1. Content/string semantics changed between
+    # 0.12 and 0.13 — templates.typ relies on 0.13.1+ behavior.
     typst_bin = shutil.which("typst")
     if typst_bin is None:
         raise FileNotFoundError(

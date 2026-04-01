@@ -148,10 +148,8 @@
         #set par(justify: true)
         #set text(body-font-size, hyphenate: true)
         #for (idx, para) in body-paragraphs.enumerate() {
-          if para.len() > 0 {
-            [#para]
-            v(0.05in)
-          }
+          [#para]
+          v(0.05in)
           if idx == inline-pq-idx and inline-pq != none {
             inline-pq
           }
@@ -218,10 +216,8 @@
           set text(body-font-size, hyphenate: true)
           let extra-images = if images.len() > 1 { images.slice(1) } else { () }
           for (idx, para) in paragraphs.enumerate() {
-            if para.len() > 0 {
-              [#para]
-              v(0.05in)
-            }
+            [#para]
+            v(0.05in)
             // Interleaved images
             let idx1 = idx + 1  // 1-based index matching Jinja loop.index
             if str(idx1) in insert-map {
